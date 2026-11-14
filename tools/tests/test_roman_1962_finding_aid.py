@@ -716,7 +716,7 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
             )
             for row in cls.base["entries"]
         }
-        unavailable = {cls.identity(row) for row in cls.base["untranslated"]}
+        unavailable = {cls.identity(row) for row in cls.base.get("untranslated", [])}
         if missing := affected - positive - unavailable:
             raise AssertionError(f"child exclusion targets missing from parent: {missing!r}")
         return {
@@ -729,7 +729,7 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
         source_established = self.source_established_unavailable_identities()
         typed = {
             self.identity(row): row
-            for row in self.base["untranslated"]
+            for row in self.base.get("untranslated", [])
             if isinstance(row.get("reason"), dict)
         }
         # The Latin backfill f523fde12..0616ee0dd ("Widen the backfill past the
@@ -817,7 +817,7 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
                 ("witness-gap", CUMMISKEY_SOURCE): 3,
             },
         )
-        self.assertEqual(len(typed), len(self.base["untranslated"]))
+        self.assertEqual(len(typed), len(self.base.get("untranslated", [])))
         rights_withheld = self.main_identities(
             {
                 "commune-summorum-pontificum": {

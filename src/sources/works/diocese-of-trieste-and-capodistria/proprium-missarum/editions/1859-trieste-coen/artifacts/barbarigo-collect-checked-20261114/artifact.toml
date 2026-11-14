@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.diocese-of-trieste-and-capodistria.proprium-missarum.1859-trieste-coen.barbarigo-collect-checked-20261114"
+edition_id = "edition.diocese-of-trieste-and-capodistria.proprium-missarum.1859-trieste-coen"
+artifact_type = "verified-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Printed at Trieste in 1859 (title page read on the page image). Its words are public domain in the United States by date of publication. The transcription adds no authorship; the NoC-NC page image itself is not tracked. Underlying historical text is excluded from the project CC BY 4.0 grant."
+rights_jurisdiction = "United States"
+provenance = "Transcribed on 2026-11-14 from the ONB page image 00000031 (printed p. 27), read directly; the ONB OCR was not used as authority. Retains the printing's spelling, capitals, ampersand, pointing and short conclusion."
+retrieved = "2026-11-14"
+sha256 = "44265855c78d9383f023f503a7fe5d502c8dfbbf41c0236956591bc3ff0a1b0c"
+byte_size = 219
+path = "src/sources/works/diocese-of-trieste-and-capodistria/proprium-missarum/editions/1859-trieste-coen/artifacts/barbarigo-collect-checked-20261114/latin.txt"
+derived_from = "artifact.diocese-of-trieste-and-capodistria.proprium-missarum.1859-trieste-coen.onb-iiif-image-00000031-01c5c01b"
+transformation = "Join printed line wraps and the line-end hyphenation pau-perum; preserve every source word, capital, ampersand and punctuation mark; one prayer on one line."
+encoding = "utf-8"
+indexable = true

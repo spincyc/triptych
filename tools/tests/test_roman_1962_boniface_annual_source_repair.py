@@ -139,7 +139,7 @@ class BonifaceAnnualSourceRepairTests(unittest.TestCase):
 
     def test_existing_english_postcommunion_absence_is_not_invented(self):
         ledger = tomllib.loads((ROOT / "src/sources/inventories/roman-1962-proper-translations-v1.toml").read_text())
-        rows = [r for r in ledger["untranslated"] if
+        rows = [r for r in ledger.get("untranslated", []) if
                 (r.get("mass"), r.get("form_id"), r.get("proper"), r.get("cycle"), r.get("occurrence"), r.get("lang"), r.get("extent")) ==
                 (MASS, "main", "Postcommunion", "all", 1, "en", "body")]
         self.assertEqual(1, len(rows))

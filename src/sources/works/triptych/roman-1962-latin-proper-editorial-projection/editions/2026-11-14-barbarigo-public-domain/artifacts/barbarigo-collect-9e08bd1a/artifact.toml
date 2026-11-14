@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-barbarigo-public-domain.barbarigo-collect-9e08bd1a"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-barbarigo-public-domain"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_jurisdiction = "United States"
+rights_basis = "The 1859 Trieste printing and the 1922 Tours Mame printing are public domain in the United States by date of publication. The entire Collect is witnessed in the 1859 diocesan proper; the 1962 printed conclusion prefix is literally witnessed in the 1922 Mame Father-directed formula. Declared orthography, pointing and line-wrap changes add no authorship. Project editorial layout alone is offered under CC BY 4.0; underlying received Latin is excluded. The 1962 facsimile supplies text-free target comparison only."
+sha256 = "9e08bd1aebae9cc0d0eb515ade2b7c624d368057b24758398b7ab4df8bd37172"
+byte_size = 295
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-14-barbarigo-public-domain/artifacts/barbarigo-collect-9e08bd1a/latin.txt"
+retrieved = "2026-11-14"
+encoding = "utf-8"
+indexable = true
+projected_from = ["artifact.diocese-of-trieste-and-capodistria.proprium-missarum.1859-trieste-coen.barbarigo-collect-checked-20261114", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-support-pages-20261026", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+provenance = "Exact 1859 Collect compared with the 1962 target on both page images on 2026-11-14; target conclusion prefix from the separately retained 1922 Mame control."
+transformation = "read on the 1962 typical-edition page images at 250 dpi; join printed line wraps and chant syllables; remove stress accents; expand printed ae/oe ligatures to ae/oe; normalise consonantal i to the calendar's declared j orthography; retain the target printing's pointing, capitals and conclusion at its printed length."

@@ -230,7 +230,7 @@ class Roman1962ChantAppointmentTest(unittest.TestCase):
             with self.subTest(mass=key, proper=name):
                 def same(row):
                     return (row.get('mass'), row.get('form_id'), row.get('proper'), row.get('cycle'), row.get('occurrence')) == (key, 'main', name, 'all', 1)
-                self.assertFalse(any(same(r) and r.get('lang') == 'en' for r in self.translations['untranslated']))
+                self.assertFalse(any(same(r) and r.get('lang') == 'en' for r in self.translations.get("untranslated", [])))
                 rows = [r for r in self.translations.get('entries', []) if same(r)]
                 self.assertEqual(len(rows), 1)
                 self.assertEqual([t['lang'] for t in rows[0]['translations']], ['en'])
@@ -303,7 +303,7 @@ class Roman1962ChantAppointmentTest(unittest.TestCase):
         identity = lambda row: (row.get('mass'), row.get('form_id'), row.get('proper'),
                                 row.get('cycle'), row.get('occurrence'), row.get('lang'))
         target = ('s-laurentii-martyris', 'main', 'Alleluia', 'all', 1, 'en')
-        self.assertFalse(any(identity(r) == target for r in self.translations['untranslated']))
+        self.assertFalse(any(identity(r) == target for r in self.translations.get("untranslated", [])))
         # eeab39fef: one confirmed Lasance entry for the normal-feast Alleluia only.
         english = [r for r in self.translations.get('entries', []) if identity(r)[:5] == target[:5]]
         self.assertEqual(len(english), 1)

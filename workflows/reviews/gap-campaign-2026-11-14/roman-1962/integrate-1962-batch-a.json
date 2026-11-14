@@ -1,0 +1,573 @@
+{
+ "schema": "triptych.gap-campaign-integration-review.v1",
+ "date": "2026-11-14",
+ "lane": "integrate-1962",
+ "batch": "A: roman-1962 core",
+ "decisions": "DECISIONS 8, 10 (a-e), 13a of the 2026-11-14 gap campaign",
+ "method": "Every installed Latin and English word re-read on page images on 2026-11-14 (CMAA 1962 facsimile; ONB Trieste 1859 page 31; Lasance 1946 printing PDF pp. 1029-1030; Ordo Sabbati Sancti 1951 pp. 5-6, 11, 21). Study English made from the Latin only, without recourse to approved liturgical English.",
+ "slots": [
+  {
+   "slot": [
+    "beatae-mariae-virginis-reginae",
+    "Collect"
+   ],
+   "latin_sha256": "0f59e36b02be2bcdd069651df0ffb2e8fd16036de99d8a93f0c4bb2e5635e8fe",
+   "latin_read": "1962 Vatican typical edition printed p. 540, artifact p. 621, no. 2683, left column foot and right column head",
+   "removed_untranslated": [
+    {
+     "mass": "beatae-mariae-virginis-reginae",
+     "form_id": "main",
+     "proper": "Collect",
+     "cycle": "all",
+     "occurrence": 1,
+     "lang": "en",
+     "extent": "body",
+     "availability": "unavailable",
+     "reason": {
+      "kind": "no-exemplar"
+     },
+     "note": "The source appointment is established by the registered 1962 CMAA facsimile, artifact621-622/printed540-541. No exact human English exemplar/publication binding is established for this owner; no English is supplied and no whole-witness absence is asserted."
+    }
+   ],
+   "english": {
+    "route": "project study translation",
+    "note": "Lane study draft accepted unchanged; 'who with you' renders the printed cue.",
+    "sha256": "cd96c287d4e7a357c6d132854d625fdacebe9296fc8d5bba53e5f2092d3d97dc"
+   }
+  },
+  {
+   "slot": [
+    "beatae-mariae-virginis-reginae",
+    "Alleluia (Tempore paschali)"
+   ],
+   "latin_sha256": "a46b83b45dce170f150390a92248d42099589d3fa3b1cfe0254931b2d28ffb97",
+   "latin_read": "1962 Vatican typical edition printed p. 540, artifact p. 621, no. 2686, right column",
+   "removed_untranslated": [
+    {
+     "mass": "beatae-mariae-virginis-reginae",
+     "form_id": "main",
+     "proper": "Alleluia (Tempore paschali)",
+     "cycle": "all",
+     "occurrence": 1,
+     "lang": "en",
+     "extent": "body",
+     "availability": "unavailable",
+     "reason": {
+      "kind": "no-exemplar"
+     },
+     "note": "The source appointment is established by the registered 1962 CMAA facsimile, artifact621-622/printed540-541. No exact human English exemplar/publication binding is established for this owner; no English is supplied and no whole-witness absence is asserted."
+    }
+   ],
+   "english": {
+    "route": "project study translation",
+    "note": "Lane draft corrected: 'stood firm' -> 'endured' (sustinuisti).",
+    "sha256": "69706eef22df8623a1b4eebc1a0069ac0dd038a36c238b07ec7ecc956b6dbb8b"
+   }
+  },
+  {
+   "slot": [
+    "assumptione-beatae-mariae-virginis",
+    "Collect"
+   ],
+   "latin_sha256": "789d2b5d328b3332995b838f5f3473f04efb406b0b616ebcf429c60d4cba5292",
+   "latin_read": "1962 Vatican typical edition printed p. [627], artifact p. 708, no. 3379, left column foot (printed number suppressed on the illustrated leaf)",
+   "removed_untranslated": [
+    {
+     "mass": "assumptione-beatae-mariae-virginis",
+     "form_id": "main",
+     "proper": "Collect",
+     "cycle": "all",
+     "occurrence": 1,
+     "lang": "en",
+     "extent": "body",
+     "availability": "unavailable",
+     "reason": {
+      "kind": "no-exemplar"
+     },
+     "note": "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
+    }
+   ],
+   "english": {
+    "route": "project study translation",
+    "note": "Lane draft revised: 'ever intent on things above ... sharers' -> 'ever intent upon the things above ... partakers' (consortes); meaning unchanged.",
+    "sha256": "5b653dd632ea420328d2a99d9a02e2db28ba0d039dfe4dd116beebcdc8dd4e76"
+   }
+  },
+  {
+   "slot": [
+    "assumptione-beatae-mariae-virginis",
+    "Secret"
+   ],
+   "latin_sha256": "f2e70833e762ffb2f044edb303ce5696af17cdf11ea73229fb8b1b78ac09e13a",
+   "latin_read": "1962 Vatican typical edition printed p. 628, artifact p. 709, no. 3385, left column foot and right column head",
+   "removed_untranslated": [
+    {
+     "mass": "assumptione-beatae-mariae-virginis",
+     "form_id": "main",
+     "proper": "Secret",
+     "cycle": "all",
+     "occurrence": 1,
+     "lang": "en",
+     "extent": "body",
+     "availability": "unavailable",
+     "reason": {
+      "kind": "no-exemplar"
+     },
+     "note": "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
+    }
+   ],
+   "english": {
+    "route": "project study translation",
+    "note": "Lane study draft accepted unchanged.",
+    "sha256": "ecf6bdf0a26733f7dbe93f68899f0a69e62c6696f90562e1f7ca4c30d4b1b830"
+   }
+  },
+  {
+   "slot": [
+    "s-ioseph-opificis-sponsi-beatae-mariae",
+    "Collect"
+   ],
+   "latin_sha256": "b6deff3c1071203a43250a49fa5ce643caa852ddec00e47ce8a3d58faf426f90",
+   "latin_read": "1962 Vatican typical edition printed p. 516, artifact p. 597, no. 2483, left column",
+   "removed_untranslated": [
+    {
+     "mass": "s-ioseph-opificis-sponsi-beatae-mariae",
+     "form_id": "main",
+     "proper": "Collect",
+     "cycle": "all",
+     "occurrence": 1,
+     "lang": "en",
+     "extent": "body",
+     "availability": "unavailable",
+     "reason": {
+      "kind": "no-exemplar"
+     },
+     "note": "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
+    }
+   ],
+   "english": {
+    "route": "project study translation",
+    "note": "Lane study draft accepted unchanged.",
+    "sha256": "e457140a7db06982c831145333a6581414de36fa7452037ff822fdec5a42f019"
+   }
+  },
+  {
+   "slot": [
+    "s-ioseph-opificis-sponsi-beatae-mariae",
+    "Secret"
+   ],
+   "latin_sha256": "a50bca0d23ee12c02795ec3102eec13eb43ef3b3b518df2d5017b4450d200585",
+   "latin_read": "1962 Vatican typical edition printed p. 517, artifact p. 598, no. 2491, left column",
+   "removed_untranslated": [
+    {
+     "mass": "s-ioseph-opificis-sponsi-beatae-mariae",
+     "form_id": "main",
+     "proper": "Secret",
+     "cycle": "all",
+     "occurrence": 1,
+     "lang": "en",
+     "extent": "body",
+     "availability": "unavailable",
+     "reason": {
+      "kind": "no-exemplar"
+     },
+     "note": "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
+    }
+   ],
+   "english": {
+    "route": "project study translation",
+    "note": "Lane study draft accepted unchanged.",
+    "sha256": "1f71a1dbc4212a7961e67e628d9ef0e59865115f30a79068f387351739641176"
+   }
+  },
+  {
+   "slot": [
+    "s-ioseph-opificis-sponsi-beatae-mariae",
+    "Postcommunion"
+   ],
+   "latin_sha256": "e69dcf2604c8999f56d9087fc80ae55031096482efe2eb53a1b408f76af84609",
+   "latin_read": "1962 Vatican typical edition printed p. 517, artifact p. 598, no. 2493, left column foot",
+   "removed_untranslated": [
+    {
+     "mass": "s-ioseph-opificis-sponsi-beatae-mariae",
+     "form_id": "main",
+     "proper": "Postcommunion",
+     "cycle": "all",
+     "occurrence": 1,
+     "lang": "en",
+     "extent": "body",
+     "availability": "unavailable",
+     "reason": {
+      "kind": "no-exemplar"
+     },
+     "note": "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
+    }
+   ],
+   "english": {
+    "route": "project study translation",
+    "note": "Lane draft corrected: 'confirm its rewards' -> 'confirm the rewards' (praemia confirment; 'its' was added).",
+    "sha256": "0a09d6b9e6bfb0a14b7b740f6cab96d86143ddd03a695ca002073b185b05567f"
+   }
+  },
+  {
+   "slot": [
+    "s-roberti-bellarmino-episcopi-confessoris-ecclesiae",
+    "Collect"
+   ],
+   "latin_sha256": "b059da38d9b46e46b5d1f1237013b31af0149886a72717e342a29596f5b5ca63",
+   "latin_read": "1962 Vatican typical edition printed p. 529, artifact p. 610, no. 2587, left column",
+   "removed_untranslated": [
+    {
+     "mass": "s-roberti-bellarmino-episcopi-confessoris-ecclesiae",
+     "form_id": "main",
+     "proper": "Collect",
+     "cycle": "all",
+     "occurrence": 1,
+     "lang": "en",
+     "extent": "body",
+     "availability": "unavailable",
+     "reason": {
+      "kind": "no-exemplar"
+     },
+     "note": "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
+    }
+   ],
+   "english": {
+    "route": "Lasance 1945 expression, 1946 printing, qualified carried",
+    "note": "Lasance/Walsh 1945 expression, title-dated 1946 Benziger printing, printed p. 1019 (PDF 1029), read on the page image 2026-11-14; its facing Latin is the target prayer (jura/ejus orthography, Per Dominum).",
+    "sha256": "d18e3a3cd5c1b4fff165898d74d1d96539de1d8e46c0dbda122abd3198df7105"
+   }
+  },
+  {
+   "slot": [
+    "s-roberti-bellarmino-episcopi-confessoris-ecclesiae",
+    "Postcommunion"
+   ],
+   "latin_sha256": "d093d4d3403ccdeb05df9ee8d73cea2d33a916a79735333513e65c45c609fe08",
+   "latin_read": "1962 Vatican typical edition printed p. 530, artifact p. 611, no. 2597, left column",
+   "removed_untranslated": [
+    {
+     "mass": "s-roberti-bellarmino-episcopi-confessoris-ecclesiae",
+     "form_id": "main",
+     "proper": "Postcommunion",
+     "cycle": "all",
+     "occurrence": 1,
+     "lang": "en",
+     "extent": "body",
+     "availability": "unavailable",
+     "reason": {
+      "kind": "no-exemplar"
+     },
+     "note": "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
+    }
+   ],
+   "english": {
+    "route": "Lasance 1945 expression, 1946 printing, qualified carried",
+    "note": "Lasance/Walsh 1945 expression, title-dated 1946 Benziger printing, printed p. 1020 (PDF 1030), read on the page image 2026-11-14; its facing Latin is the target prayer (jugiter orthography) with the shorter cue Per Dominum, against the target's Per Dominum nostrum; the English cue Through our Lord renders both.",
+    "sha256": "33800626d1d3c1155bac536fce3edf7ec2ecfa6212abe38ec5b7547130690638"
+   }
+  },
+  {
+   "slot": [
+    "s-gregorii-barbadici-episcopi-confessoris",
+    "Collect"
+   ],
+   "latin_sha256": "9e08bd1aebae9cc0d0eb515ade2b7c624d368057b24758398b7ab4df8bd37172",
+   "latin_read": "1962 Vatican typical edition printed p. 554, artifact p. 635, no. 2799, right column",
+   "removed_untranslated": [
+    {
+     "mass": "s-gregorii-barbadici-episcopi-confessoris",
+     "form_id": "main",
+     "proper": "Collect",
+     "cycle": "all",
+     "occurrence": 1,
+     "lang": "en",
+     "extent": "body",
+     "availability": "unavailable",
+     "reason": {
+      "kind": "no-exemplar"
+     },
+     "note": "No English whole-body exemplar is registered for this exact own source appointment; cited or Common components do not supply its wording."
+    }
+   ],
+   "english": {
+    "route": "project study translation",
+    "note": "Lane study draft accepted unchanged.",
+    "sha256": "d09881d1247d9dfaf804a57cf620adf9b121a40949110a534153ec32a6ef401e"
+   }
+  },
+  {
+   "slot": [
+    "s-pii-x-papae-confessoris",
+    "Collect"
+   ],
+   "latin_sha256": "aac8c621c21413171f77b24632aeec88f688f08eb8b096f7e1121b46348fbde0",
+   "latin_read": "1962 Vatican typical edition printed p. 648, artifact p. 729, no. 3556, right column",
+   "removed_untranslated": [
+    {
+     "mass": "s-pii-x-papae-confessoris",
+     "form_id": "main",
+     "proper": "Collect",
+     "cycle": "all",
+     "occurrence": 1,
+     "lang": "en",
+     "extent": "body",
+     "availability": "unavailable",
+     "reason": {
+      "kind": "no-exemplar"
+     },
+     "note": "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
+    }
+   ],
+   "english": {
+    "route": "project study translation",
+    "note": "Lane draft corrected: 'example' -> 'examples' (exempla).",
+    "sha256": "0fd7f3ba78d39b898273dcf21ae4d0bcc4b460f1b1c808c2f41a0b103c8c77ec"
+   }
+  },
+  {
+   "slot": [
+    "s-pii-x-papae-confessoris",
+    "Postcommunion"
+   ],
+   "latin_sha256": "5741806b5c3258f1fffe8289ff7880b1e3b489e9ba4cc1522024a545de4df884",
+   "latin_read": "1962 Vatican typical edition printed p. 649, artifact p. 730, no. 3566, right column",
+   "removed_untranslated": [
+    {
+     "mass": "s-pii-x-papae-confessoris",
+     "form_id": "main",
+     "proper": "Postcommunion",
+     "cycle": "all",
+     "occurrence": 1,
+     "lang": "en",
+     "extent": "body",
+     "availability": "unavailable",
+     "reason": {
+      "kind": "no-exemplar"
+     },
+     "note": "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
+    }
+   ],
+   "english": {
+    "route": "project study translation",
+    "note": "Lane study draft accepted unchanged.",
+    "sha256": "801e8123a43cfe0ff5f537bacd2de88ecfac82c5e59700003cf476ae425e4b24"
+   }
+  },
+  {
+   "slot": [
+    "s-antonii-mariae-claret-episcopi-confessoris",
+    "Collect"
+   ],
+   "latin_sha256": "bb9c430baff666688c73a638d3d155d8eb8e2e0d186fae88b353657b7d059cdf",
+   "latin_read": "1962 Vatican typical edition printed p. 694, artifact p. 775, no. 3923, left column",
+   "removed_untranslated": [
+    {
+     "mass": "s-antonii-mariae-claret-episcopi-confessoris",
+     "form_id": "main",
+     "proper": "Collect",
+     "cycle": "all",
+     "occurrence": 1,
+     "lang": "en",
+     "extent": "body",
+     "availability": "unavailable",
+     "reason": {
+      "kind": "no-exemplar"
+     },
+     "note": "The controlling 1962 Missal appoints the day's own Collect at no. 3923; no exact shared English whole-body exemplar is bound to this target."
+    }
+   ],
+   "english": {
+    "route": "project study translation",
+    "note": "Lane draft corrected: 'raised ... to the heights of apostolic virtues' -> 'exalted ... with apostolic virtues' (apostolicis virtutibus sublimasti).",
+    "sha256": "49a068780ff866a86000075b926e642ae834bac3726fc14081c0f15d011cc393"
+   }
+  },
+  {
+   "slot": [
+    "s-alberti-magni-episcopi-confessoris-ecclesiae",
+    "Collect"
+   ],
+   "latin_sha256": "f2f63001beb8036edf2b2813818177b69c8c0892b797245e4b33eac8ea25b837",
+   "latin_read": "1962 Vatican typical edition printed p. 719, artifact p. 800, no. 4106, left column foot and right column head",
+   "removed_untranslated": [],
+   "english": {
+    "route": "unchanged (existing Lasance English entry retained)"
+   }
+  },
+  {
+   "slot": [
+    "s-alberti-magni-episcopi-confessoris-ecclesiae",
+    "Secret"
+   ],
+   "latin_sha256": "9379cb9d8e91d6862641f626ef62091cd7faa5f7272f77cda50fbfe46bc3aa03",
+   "latin_read": "1962 Vatican typical edition printed p. 719, artifact p. 800, no. 4107, right column",
+   "removed_untranslated": [],
+   "english": {
+    "route": "unchanged (existing Lasance English entry retained)"
+   }
+  },
+  {
+   "slot": [
+    "s-alberti-magni-episcopi-confessoris-ecclesiae",
+    "Postcommunion"
+   ],
+   "latin_sha256": "8c9be1e540ebae6dee1b7c9d1c43b64143d3022117fe41bf5aa8eca2d4066005",
+   "latin_read": "1962 Vatican typical edition printed p. 719, artifact p. 800, no. 4108, right column",
+   "removed_untranslated": [],
+   "english": {
+    "route": "unchanged (existing Lasance English entry retained)"
+   }
+  },
+  {
+   "slot": [
+    "palm-sunday",
+    "Oration to Conclude the Procession"
+   ],
+   "latin_sha256": "45e33842a6cdc657100f959e67f044a04865f3d63752c5d9e9f3e3626bf18c1f",
+   "latin_read": "1962 Vatican typical edition printed p. 135, artifact p. 216, no. 843, right column",
+   "removed_untranslated": [
+    {
+     "mass": "palm-sunday",
+     "form_id": "main",
+     "proper": "Oration to Conclude the Procession",
+     "cycle": "all",
+     "occurrence": 1,
+     "lang": "en",
+     "extent": "body",
+     "availability": "unavailable",
+     "reason": {
+      "kind": "witness-gap",
+      "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+     },
+     "note": "Cummiskey printed p. 239 ends Ingrediente Domino and passes directly to the Mass; it has no English for the 1955 Domine Jesu Christe procession-conclusion prayer retained by the 1962 target."
+    }
+   ],
+   "english": {
+    "route": "project study translation",
+    "note": "Lane draft revised: 'mercifully grant' -> 'graciously grant' (concede propitius); 'All: Amen.' -> 'All R. Amen.' to keep the printed response marker.",
+    "sha256": "add289e301126150f1afa9b6ee6305c5044b6fa02dcca54bb05f8979a67d1eec"
+   }
+  },
+  {
+   "slot": [
+    "good-friday",
+    "Solemn Intercessions"
+   ],
+   "latin_sha256": "e0c78396ad6ee6189a103c8e01a6a1b41d62bc84ba69374856ddd26ea7c3d1cb",
+   "latin_read": "1962 Vatican typical edition printed p. 167-175, artifact p. 248-256, no. 933-950, chant and prose pages",
+   "removed_untranslated": [
+    {
+     "mass": "good-friday",
+     "form_id": "main",
+     "proper": "Solemn Intercessions",
+     "cycle": "all",
+     "occurrence": 1,
+     "lang": "en",
+     "extent": "body",
+     "availability": "unavailable",
+     "reason": {
+      "kind": "witness-gap",
+      "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+     },
+     "note": "Cummiskey printed pp. 289-291 retains an Emperor/N.N. petition and older Jewish-people wording where the 1962 target has all civil rulers and revised prayers. This composite slot is not an exact whole-body translation."
+    }
+   ],
+   "english": {
+    "route": "project study translation",
+    "note": "Whole-slot original study translation made by the integrate-1962 lane from the 1962 Latin (the lane supplied only U4 and U8; both revised for consistency: 'all who govern states' -> 'all who govern commonwealths', 'ministers' -> 'ministries' (ministeriis)). Lasance 1945 renders the pre-1955 intercessions 4 and 8 and so is not the English of this slot as a whole.",
+    "sha256": "6eb618c2e081c3a06c65fcae3c2a8565922271faa6139b590db70b6a813f442e"
+   }
+  },
+  {
+   "slot": [
+    "easter-vigil",
+    "Blessing of the Paschal Candle"
+   ],
+   "latin_sha256": "96b9c9b4d4de2bf20db0cbb0d8cb7b73aa3de91c25d169fc7c0dee334a33ce9a",
+   "latin_read": "1962 Vatican typical edition printed p. 183, artifact p. 264, no. 972-974, left column and right column head",
+   "removed_untranslated": [
+    {
+     "mass": "easter-vigil",
+     "form_id": "main",
+     "proper": "Blessing of the Paschal Candle",
+     "cycle": "all",
+     "occurrence": 1,
+     "lang": "en",
+     "extent": "body",
+     "availability": "unavailable",
+     "reason": {
+      "kind": "witness-gap",
+      "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+     },
+     "note": "Cummiskey's older Vigil has the blessing of five grains and then the candle procession/Exsultet, but lacks the 1955 incising and fixing formulas in the 1962 target."
+    }
+   ],
+   "english": {
+    "route": "project study translation",
+    "note": "Lane study draft accepted unchanged.",
+    "sha256": "0fee0b5110603c56b73c3e9b2f2eed444f373c82dde3ffb9c1eaba3217515bbc"
+   }
+  },
+  {
+   "slot": [
+    "easter-vigil",
+    "Exsultet (Praeconium paschale)"
+   ],
+   "latin_sha256": "a6d014d2da011fd012f03007574048df7ceaf10e9b8a8fac6ee3063cd6194973",
+   "latin_read": "1962 Vatican typical edition printed p. 185-194, artifact p. 266-275, no. 979, chant pages",
+   "removed_untranslated": [
+    {
+     "mass": "easter-vigil",
+     "form_id": "main",
+     "proper": "Exsultet (Praeconium paschale)",
+     "cycle": "all",
+     "occurrence": 1,
+     "lang": "en",
+     "extent": "body",
+     "availability": "unavailable",
+     "reason": {
+      "kind": "witness-gap",
+      "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+     },
+     "note": "Cummiskey printed pp. 301-304 ends with the older prayer for our pious King N. and heavenly victory; the 1962 target instead prays for all rulers and directs their thoughts to justice and peace. This composite body is not exact."
+    }
+   ],
+   "english": {
+    "route": "project study translation",
+    "note": "Whole-slot original study translation made by the integrate-1962 lane from the 1962 Latin (the lane supplied only span B); Lasance 1945 English renders the pre-1951 Praeconium and so is not the English of this slot as a whole. Span B follows the lane draft.",
+    "sha256": "f4eaae861a3bb2c1e698bf343fb2d39c245f3bab9a51cb41ab4d6fa0966c6847"
+   }
+  },
+  {
+   "slot": [
+    "easter-vigil",
+    "Renewal of Baptismal Promises"
+   ],
+   "latin_sha256": "1aa9de20d8abdce79ab00d0ae8adb3729bccb1b59ca5eb0d960dce4d15bcd803",
+   "latin_read": "1962 Vatican typical edition printed p. 209, artifact p. 290, no. 999, left column and right column head",
+   "removed_untranslated": [
+    {
+     "mass": "easter-vigil",
+     "form_id": "main",
+     "proper": "Renewal of Baptismal Promises",
+     "cycle": "all",
+     "occurrence": 1,
+     "lang": "en",
+     "extent": "body",
+     "availability": "unavailable",
+     "reason": {
+      "kind": "witness-gap",
+      "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+     },
+     "note": "The renewal of baptismal promises is a 1955 addition absent from Cummiskey's older Vigil sequence; no exact English witness body is present."
+    }
+   ],
+   "english": {
+    "route": "project study translation",
+    "note": "Lane draft revised: 'returning his love' -> 'loving him in return' (eum redamando); paragraph and dialogue breaks follow the printed page.",
+    "sha256": "356e9751ba6b5c36d1c81da2290d2f385dd7de6701a2b89d79b8804b05103f42"
+   }
+  }
+ ]
+}

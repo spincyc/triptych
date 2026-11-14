@@ -427,5 +427,25 @@ assert.equal(T.renderProper(withheld, {}, null, {orations: 'la'}).querySelector(
 """)
 
 
+class FiniteScopeKeyTests(unittest.TestCase):
+    """A general-token row is not claimed by a calendar-less finite key."""
+
+    def test_postconciliar_row_sharing_a_roman_finite_key_is_not_claimed(self):
+        import _proper_qualified_latin as PQ
+        row = latin_row(mass="good-friday", proper="Improperia")
+        self.assertTrue(PQ.finite_20261029.claims_row(row))
+        self.assertFalse(PQ._finite_20261029_claims(row))
+        self.assertEqual([], PQ.row_problems(row))
+
+    def test_a_row_reusing_a_finite_carrier_is_still_claimed(self):
+        import _proper_qualified_latin as PQ
+        carrier = ("artifact.triptych.roman-1962-latin-proper-editorial-projection."
+                   "editorial-projection-2026-10-29.improperia-whole-qualified-83cbd703")
+        row = latin_row(mass="good-friday", proper="Improperia",
+                        publication_source_ids=[CARRIER, carrier])
+        self.assertTrue(PQ._finite_20261029_claims(row))
+        self.assertTrue(PQ.row_problems(row))
+
+
 if __name__ == "__main__":
     unittest.main()

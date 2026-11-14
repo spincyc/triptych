@@ -1364,6 +1364,22 @@ role = "Separately identified Lasance antecedent where this exact 1946 printing 
 
 
 [[sources]]
+id = "lasance-1945-printing-1946-qualified-public-domain"
+source_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-qualified-english-d349d17a"
+label = "The New Roman Missal in Latin and English, revised 1945 expression, title-dated 1946 Benziger printing: English carried over Holy See Latin of 1931-1975 admitted on the qualified-public-domain basis"
+attests = "editio-typica-1920"
+attests_kind = "date-bound"
+attests_basis = "This physical printing is title-dated 1946 and its copyright leaf names 1937 and 1945. It is treated only as a dated witness of the 1945 hand-missal revision; each selected prayer is checked on its own page image and its facing Latin is compared with the 1962 target."
+witness_relation = "antecedent"
+witness_relation_basis = "Literal received English of the 1945 expression for a prayer whose facing Latin is the 1962 target prayer (a Holy See text of 1931-1975). The 1962 Missal has no English."
+rights = "qualified-public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Carried under src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml ([how_to_admit].english_carried; limit L6): the English is a derivative of Latin admitted there, and the book's own copyright lapsed: registrations A 110108 (1937) and A 192159 (1945) were not renewed (src/sources/inventories/lasance-new-roman-missal-rights-v1.toml), and the copyright leaf of this printing (PDF p. 10) reads Copyright, 1937, 1945, by Benziger Brothers, Inc., read on the page image on 2026-11-14. Published on a qualified basis (publication policy priority 6; confidence medium-low): English from a United States book whose own copyright was not renewed, translating a Holy See text first published in Vatican City in 1931-1975 whose Vatican term had, on this project's reading, expired before the 1996 U.S. restoration date. Not adjudicated; U.S. copyright only; not an approved liturgical translation."
+caution = "A lay hand missal of the 1945 revision, not an approved liturgical translation. Carried only for a prayer whose facing Latin is the 1962 target prayer; excluded lettered inserts 1298a-1298n and 1302a-1302d are outside this row. Nothing here may be used for recitation."
+role = "Qualified-public-domain counterpart of lasance-1945-printing-1946 for English over Holy See Latin of 1931-1975; it never relabels English over pre-1931 Latin."
+
+[[sources]]
 id = "project-created"
 source_id = ""
 label = "Triptych study English"
@@ -3892,18 +3908,6 @@ lang = "en"
 rights = "project-created"
 text = "All praise your name together and say: “Blessed is he who comes in the name of the Lord: Hosanna in the highest.”\n"
 
-[[untranslated]]
-mass = "palm-sunday"
-form_id = "main"
-proper = "Oration to Conclude the Procession"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "witness-gap", source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861" }
-note = "Cummiskey printed p. 239 ends Ingrediente Domino and passes directly to the Mass; it has no English for the 1955 Domine Jesu Christe procession-conclusion prayer retained by the 1962 target."
-
 [[entries]]
 mass = "good-friday"
 form_id = "main"
@@ -3929,18 +3933,6 @@ checked = "Original study English of the source-checked Latin. Literal same-Chri
 kind = "rubric"
 offset = 384
 text = "All respond:"
-
-[[untranslated]]
-mass = "good-friday"
-form_id = "main"
-proper = "Solemn Intercessions"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "witness-gap", source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861" }
-note = "Cummiskey printed pp. 289-291 retains an Emperor/N.N. petition and older Jewish-people wording where the 1962 target has all civil rulers and revised prayers. This composite slot is not an exact whole-body translation."
 
 [[entries]]
 mass = "good-friday"
@@ -4019,42 +4011,6 @@ checked = "Original study English of the source-checked Latin. Literal same-Chri
 kind = "rubric"
 offset = 201
 text = "R."
-
-[[untranslated]]
-mass = "easter-vigil"
-form_id = "main"
-proper = "Blessing of the Paschal Candle"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "witness-gap", source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861" }
-note = "Cummiskey's older Vigil has the blessing of five grains and then the candle procession/Exsultet, but lacks the 1955 incising and fixing formulas in the 1962 target."
-
-[[untranslated]]
-mass = "easter-vigil"
-form_id = "main"
-proper = "Exsultet (Praeconium paschale)"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "witness-gap", source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861" }
-note = "Cummiskey printed pp. 301-304 ends with the older prayer for our pious King N. and heavenly victory; the 1962 target instead prays for all rulers and directs their thoughts to justice and peace. This composite body is not exact."
-
-[[untranslated]]
-mass = "easter-vigil"
-form_id = "main"
-proper = "Renewal of Baptismal Promises"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "witness-gap", source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861" }
-note = "The renewal of baptismal promises is a 1955 addition absent from Cummiskey's older Vigil sequence; no exact English witness body is present."
 
 [[entries]]
 mass = "commune-festorum-bmv"
@@ -4419,30 +4375,6 @@ lang = "en"
 rights = "project-created"
 text = "O God, who rescue your Church, founded on the firmness of the apostolic rock, from the terror of the gates of hell: grant, we ask, that through the intercession of blessed Urban, your Martyr and Supreme Pontiff, she may be fortified with continual security, remaining steadfast in your strength. Through the Lord.\n"
 
-[[untranslated]]
-mass = "assumptione-beatae-mariae-virginis"
-form_id = "main"
-proper = "Collect"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
-
-[[untranslated]]
-mass = "assumptione-beatae-mariae-virginis"
-form_id = "main"
-proper = "Secret"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
-
 [[entries]]
 mass = "assumptione-beatae-mariae-virginis"
 form_id = "main"
@@ -4460,58 +4392,6 @@ rights = "project-created"
 text = "Having received the saving sacraments, O Lord, we ask you to grant that, through the merits and intercession of the Blessed Virgin Mary assumed into heaven, we may be led to the glory of the resurrection. Through our Lord.\n"
 notice = "Original study translation by Triptych; not an approved liturgical translation."
 
-[[untranslated]]
-mass = "s-ioseph-opificis-sponsi-beatae-mariae"
-form_id = "main"
-proper = "Collect"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
-
-[[untranslated]]
-mass = "s-ioseph-opificis-sponsi-beatae-mariae"
-form_id = "main"
-proper = "Secret"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
-
-[[untranslated]]
-mass = "s-ioseph-opificis-sponsi-beatae-mariae"
-form_id = "main"
-proper = "Postcommunion"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
-
-
-
-
-
-[[untranslated]]
-mass = "s-roberti-bellarmino-episcopi-confessoris-ecclesiae"
-form_id = "main"
-proper = "Collect"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
-
 [[entries]]
 mass = "s-roberti-bellarmino-episcopi-confessoris-ecclesiae"
 form_id = "main"
@@ -4528,21 +4408,6 @@ lang = "en"
 rights = "project-created"
 text = "We offer you sacrificial offerings, O Lord, as a sweet fragrance; and grant that, instructed by the counsels and examples of blessed Robert, we may run with an enlarged heart along the path of your commandments. Through our Lord.\n"
 notice = "Original study translation by Triptych; not an approved liturgical translation."
-
-[[untranslated]]
-mass = "s-roberti-bellarmino-episcopi-confessoris-ecclesiae"
-form_id = "main"
-proper = "Postcommunion"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
-
-
-
 
 [[entries]]
 mass = "s-augustini-episcopi-confessoris-ecclesiae-doctoris"
@@ -4569,31 +4434,6 @@ lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = "Give ear, O Lord, to our prayers, and by the intercession of blessed Augustin, thy conf. and bp. favourably bestow the effects of thy accustomed mercy on us, to whom thou hast given reason to trust in thy goodness. Thro’."
-
-[[untranslated]]
-mass = "s-pii-x-papae-confessoris"
-form_id = "main"
-proper = "Collect"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
-
-[[untranslated]]
-mass = "s-pii-x-papae-confessoris"
-form_id = "main"
-proper = "Postcommunion"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
-
 
 [[entries]]
 mass = "most-holy-name-of-jesus"
@@ -6039,31 +5879,6 @@ text_sha256 = "909648091cfad966a1e68e0710537cedc52dab4e7f6c37204c64cc1267ed39c7"
 checked = "Read 2026-10-19 on the registered Lasance facsimile page image at artifact p. 597 (printed p. 599, IA leaf n596), 200, 300 and 400 dpi: the direction is set in italic within parentheses; the period after it is upright and stays principal punctuation."
 actions = [{ kind = "rubric", offset = 130, text = "(here all kneel)" }]
 
-
-
-[[untranslated]]
-mass = "s-antonii-mariae-claret-episcopi-confessoris"
-form_id = "main"
-proper = "Collect"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "The controlling 1962 Missal appoints the day's own Collect at no. 3923; no exact shared English whole-body exemplar is bound to this target."
-
-[[untranslated]]
-mass = "s-gregorii-barbadici-episcopi-confessoris"
-form_id = "main"
-proper = "Collect"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No English whole-body exemplar is registered for this exact own source appointment; cited or Common components do not supply its wording."
 
 
 [[entries]]
@@ -22358,30 +22173,6 @@ rights = "public-domain"
 source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
 text = "Sanctify, O Lord, the gifts we offer, and, by the intercession of blessed John the Baptist, cleanse us through them from the stains of our sins. Through our Lord."
 
-[[untranslated]]
-mass = "beatae-mariae-virginis-reginae"
-form_id = "main"
-proper = "Alleluia (Tempore paschali)"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "The source appointment is established by the registered 1962 CMAA facsimile, artifact621-622/printed540-541. No exact human English exemplar/publication binding is established for this owner; no English is supplied and no whole-witness absence is asserted."
-
-[[untranslated]]
-mass = "beatae-mariae-virginis-reginae"
-form_id = "main"
-proper = "Collect"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "The source appointment is established by the registered 1962 CMAA facsimile, artifact621-622/printed540-541. No exact human English exemplar/publication binding is established for this owner; no English is supplied and no whole-witness absence is asserted."
-
 [[entries]]
 mass = "beatae-mariae-virginis-reginae"
 form_id = "main"
@@ -35859,3 +35650,518 @@ lang = "en"
 rights = "project-created"
 text = "Graciously receive our offerings, we beseech Thee, O Lord, and grant that, through the intercession of Saint Pius, Supreme Pontiff, we may celebrate these divine mysteries with sincere devotion and receive them with a faithful mind. Through our Lord.\n"
 notice = "Original study translation by Triptych; not an approved liturgical translation."
+
+# gap campaign integrate-1962 batch A (2026-11-14): 1962 core bodies admitted; see workflows/reviews/gap-campaign-2026-11-14/roman-1962/integrate-1962-batch-a.json
+[[entries]]
+mass = "beatae-mariae-virginis-reginae"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+source_latin_sha256 = "0f59e36b02be2bcdd069651df0ffb2e8fd16036de99d8a93f0c4bb2e5635e8fe"
+source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.queenship-collect"
+source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.queenship-collect-0f59e36b"]
+translation_review = "workflows/reviews/gap-campaign-2026-11-14/roman-1962/integrate-1962-batch-a.json"
+
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Grant us, we beseech you, O Lord, that we who celebrate the solemnity (commemoration) of the Blessed Virgin Mary, our Queen, may, fortified by her protection, deserve to obtain peace in the present and glory in the future. Through our Lord Jesus Christ, your Son: who with you.\n"
+notice = "Original study translation by Triptych of a Holy See text published here on a qualified basis (publication policy priority 6; confidence medium-low): its Vatican term had, on this project's reading, expired before the 1996 U.S. restoration date. Not adjudicated; U.S. copyright only; not an approved liturgical translation."
+
+[[entries]]
+mass = "beatae-mariae-virginis-reginae"
+form_id = "main"
+proper = "Alleluia (Tempore paschali)"
+cycle = "all"
+occurrence = 1
+source_latin_sha256 = "a46b83b45dce170f150390a92248d42099589d3fa3b1cfe0254931b2d28ffb97"
+source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.queenship-alleluia"
+source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.queenship-alleluia-a46b83b4"]
+translation_review = "workflows/reviews/gap-campaign-2026-11-14/roman-1962/integrate-1962-batch-a.json"
+
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Alleluia, alleluia. V. Blessed are you, Virgin Mary, who endured beneath the Cross of the Lord. Alleluia. V. Now you reign with him for ever. Alleluia.\n"
+notice = "Original study translation by Triptych of a Holy See text published here on a qualified basis (publication policy priority 6; confidence medium-low): its Vatican term had, on this project's reading, expired before the 1996 U.S. restoration date. Not adjudicated; U.S. copyright only; not an approved liturgical translation."
+
+[[entries]]
+mass = "assumptione-beatae-mariae-virginis"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+source_latin_sha256 = "789d2b5d328b3332995b838f5f3473f04efb406b0b616ebcf429c60d4cba5292"
+source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.assumption-collect"
+source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.assumption-collect-789d2b5d"]
+translation_review = "workflows/reviews/gap-campaign-2026-11-14/roman-1962/integrate-1962-batch-a.json"
+
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Almighty, everlasting God, who took up the immaculate Virgin Mary, Mother of your Son, body and soul into heavenly glory: grant, we beseech you, that, ever intent upon the things above, we may deserve to be partakers of her glory. Through the same Lord.\n"
+notice = "Original study translation by Triptych of a Holy See text published here on a qualified basis (publication policy priority 6; confidence medium-low): its Vatican term had, on this project's reading, expired before the 1996 U.S. restoration date. Not adjudicated; U.S. copyright only; not an approved liturgical translation."
+
+[[entries]]
+mass = "assumptione-beatae-mariae-virginis"
+form_id = "main"
+proper = "Secret"
+cycle = "all"
+occurrence = 1
+source_latin_sha256 = "f2e70833e762ffb2f044edb303ce5696af17cdf11ea73229fb8b1b78ac09e13a"
+source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.assumption-secret"
+source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.assumption-secret-f2e70833"]
+translation_review = "workflows/reviews/gap-campaign-2026-11-14/roman-1962/integrate-1962-batch-a.json"
+
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "May the offering of our devotion rise up to you, O Lord, and, through the intercession of the most blessed Virgin Mary, taken up into heaven, may our hearts, set aflame with the fire of charity, aspire to you unceasingly. Through our Lord.\n"
+notice = "Original study translation by Triptych of a Holy See text published here on a qualified basis (publication policy priority 6; confidence medium-low): its Vatican term had, on this project's reading, expired before the 1996 U.S. restoration date. Not adjudicated; U.S. copyright only; not an approved liturgical translation."
+
+[[entries]]
+mass = "s-ioseph-opificis-sponsi-beatae-mariae"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+source_latin_sha256 = "b6deff3c1071203a43250a49fa5ce643caa852ddec00e47ce8a3d58faf426f90"
+source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.joseph-worker-collect"
+source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.joseph-worker-collect-b6deff3c"]
+translation_review = "workflows/reviews/gap-campaign-2026-11-14/roman-1962/integrate-1962-batch-a.json"
+
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "O God, Creator of all things, who laid down the law of work for the human race: graciously grant that, by the example and patronage of Saint Joseph, we may accomplish the works you command and attain the rewards you promise. Through our Lord.\n"
+notice = "Original study translation by Triptych of a Holy See text published here on a qualified basis (publication policy priority 6; confidence medium-low): its Vatican term had, on this project's reading, expired before the 1996 U.S. restoration date. Not adjudicated; U.S. copyright only; not an approved liturgical translation."
+
+[[entries]]
+mass = "s-ioseph-opificis-sponsi-beatae-mariae"
+form_id = "main"
+proper = "Secret"
+cycle = "all"
+occurrence = 1
+source_latin_sha256 = "a50bca0d23ee12c02795ec3102eec13eb43ef3b3b518df2d5017b4450d200585"
+source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.joseph-worker-secret"
+source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.joseph-worker-secret-a50bca0d"]
+translation_review = "workflows/reviews/gap-campaign-2026-11-14/roman-1962/integrate-1962-batch-a.json"
+
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "The sacrificial gifts which we offer you, O Lord, from the works of our hands, make for us, through the interceding prayer of Saint Joseph, a pledge of unity and peace. Through our Lord.\n"
+notice = "Original study translation by Triptych of a Holy See text published here on a qualified basis (publication policy priority 6; confidence medium-low): its Vatican term had, on this project's reading, expired before the 1996 U.S. restoration date. Not adjudicated; U.S. copyright only; not an approved liturgical translation."
+
+[[entries]]
+mass = "s-ioseph-opificis-sponsi-beatae-mariae"
+form_id = "main"
+proper = "Postcommunion"
+cycle = "all"
+occurrence = 1
+source_latin_sha256 = "e69dcf2604c8999f56d9087fc80ae55031096482efe2eb53a1b408f76af84609"
+source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.joseph-worker-postcommunion"
+source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.joseph-worker-postcommunion-e69dcf26"]
+translation_review = "workflows/reviews/gap-campaign-2026-11-14/roman-1962/integrate-1962-batch-a.json"
+
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "May these holy things which we have received, O Lord, through the intercession of blessed Joseph, both bring our work to completion and confirm the rewards. Through our Lord.\n"
+notice = "Original study translation by Triptych of a Holy See text published here on a qualified basis (publication policy priority 6; confidence medium-low): its Vatican term had, on this project's reading, expired before the 1996 U.S. restoration date. Not adjudicated; U.S. copyright only; not an approved liturgical translation."
+
+[[entries]]
+mass = "s-roberti-bellarmino-episcopi-confessoris-ecclesiae"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945-printing-1946-qualified-public-domain"
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-bellarmine-collect-english"
+printed_page = "1019"
+ia_leaf = 1028
+ia_leaf_range = [1028, 1028]
+collated = "page-image, 2026-11-14"
+collation_result = "read-from-page"
+witness_note = "Lasance/Walsh 1945 expression, title-dated 1946 Benziger printing, printed p. 1019 (PDF 1029), read on the page image 2026-11-14; its facing Latin is the target prayer (jura/ejus orthography, Per Dominum). Carried on the qualified-public-domain basis as a derivative of Latin admitted under that basis (rights record L6; DECISIONS 10d)."
+
+[[entries.translations]]
+lang = "en"
+rights = "qualified-public-domain"
+source_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+text = "O God, who didst adorn blessed Robert, Thy Bishop and Doctor, with marvelous learning and virtue to expose the deceptions of error and to defend the rights of the Apostolic See, grant that, by his merits and intercession, love for the truth may increase in us and the souls of the erring may return to the unity of Thy Church. Through our Lord.\n"
+notice = "Published on a qualified basis (publication policy priority 6; confidence medium-low): English from a United States book whose own copyright was not renewed, translating a Holy See text first published in Vatican City in 1931-1975 whose Vatican term had, on this project's reading, expired before the 1996 U.S. restoration date. Not adjudicated; U.S. copyright only; not an approved liturgical translation."
+
+[[entries]]
+mass = "s-roberti-bellarmino-episcopi-confessoris-ecclesiae"
+form_id = "main"
+proper = "Postcommunion"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945-printing-1946-qualified-public-domain"
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-bellarmine-postcommunion-english"
+printed_page = "1020"
+ia_leaf = 1029
+ia_leaf_range = [1029, 1029]
+collated = "page-image, 2026-11-14"
+collation_result = "read-from-page"
+witness_note = "Lasance/Walsh 1945 expression, title-dated 1946 Benziger printing, printed p. 1020 (PDF 1030), read on the page image 2026-11-14; its facing Latin is the target prayer (jugiter orthography) with the shorter cue Per Dominum, against the target's Per Dominum nostrum; the English cue Through our Lord renders both. Carried on the qualified-public-domain basis as a derivative of Latin admitted under that basis (rights record L6; DECISIONS 10d)."
+
+[[entries.translations]]
+lang = "en"
+rights = "qualified-public-domain"
+source_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+text = "May the sacraments which we have received, O Lord, our God, inflame us with that fire of love which ardently consumed blessed Robert and led him to spend himself continually for Thy Church. Through our Lord.\n"
+notice = "Published on a qualified basis (publication policy priority 6; confidence medium-low): English from a United States book whose own copyright was not renewed, translating a Holy See text first published in Vatican City in 1931-1975 whose Vatican term had, on this project's reading, expired before the 1996 U.S. restoration date. Not adjudicated; U.S. copyright only; not an approved liturgical translation."
+
+[[entries]]
+mass = "s-gregorii-barbadici-episcopi-confessoris"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+source_latin_sha256 = "9e08bd1aebae9cc0d0eb515ade2b7c624d368057b24758398b7ab4df8bd37172"
+source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-barbarigo-public-domain.barbarigo-collect"
+source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-barbarigo-public-domain.barbarigo-collect-9e08bd1a", "artifact.diocese-of-trieste-and-capodistria.proprium-missarum.1859-trieste-coen.barbarigo-collect-checked-20261114", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-support-pages-20261026"]
+translation_review = "workflows/reviews/gap-campaign-2026-11-14/roman-1962/integrate-1962-batch-a.json"
+
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "O God, who willed that blessed Gregory, your Confessor and Bishop, should shine forth by pastoral care and compassion for the poor: graciously grant that we who celebrate his merits may imitate the examples of his charity. Through our Lord Jesus Christ, your Son: who lives and reigns with you in the unity.\n"
+notice = "Original study translation by Triptych; not an approved liturgical translation."
+
+[[entries]]
+mass = "s-pii-x-papae-confessoris"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+source_latin_sha256 = "aac8c621c21413171f77b24632aeec88f688f08eb8b096f7e1121b46348fbde0"
+source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.pius-x-collect"
+source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.pius-x-collect-aac8c621"]
+translation_review = "workflows/reviews/gap-campaign-2026-11-14/roman-1962/integrate-1962-batch-a.json"
+
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "O God, who, for the defence of the Catholic faith and the restoring of all things in Christ, filled Saint Pius, the Supreme Pontiff, with heavenly wisdom and apostolic fortitude: graciously grant that, following his ordinances and examples, we may obtain eternal rewards. Through the same Lord.\n"
+notice = "Original study translation by Triptych of a Holy See text published here on a qualified basis (publication policy priority 6; confidence medium-low): its Vatican term had, on this project's reading, expired before the 1996 U.S. restoration date. Not adjudicated; U.S. copyright only; not an approved liturgical translation."
+
+[[entries]]
+mass = "s-pii-x-papae-confessoris"
+form_id = "main"
+proper = "Postcommunion"
+cycle = "all"
+occurrence = 1
+source_latin_sha256 = "5741806b5c3258f1fffe8289ff7880b1e3b489e9ba4cc1522024a545de4df884"
+source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.pius-x-postcommunion"
+source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.pius-x-postcommunion-5741806b"]
+translation_review = "workflows/reviews/gap-campaign-2026-11-14/roman-1962/integrate-1962-batch-a.json"
+
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Refreshed by the power of the heavenly table, we beseech you, O Lord our God, that, through the intercession of Saint Pius, the Supreme Pontiff, we may be made strong in faith and of one mind in your charity. Through our Lord.\n"
+notice = "Original study translation by Triptych of a Holy See text published here on a qualified basis (publication policy priority 6; confidence medium-low): its Vatican term had, on this project's reading, expired before the 1996 U.S. restoration date. Not adjudicated; U.S. copyright only; not an approved liturgical translation."
+
+[[entries]]
+mass = "s-antonii-mariae-claret-episcopi-confessoris"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+source_latin_sha256 = "bb9c430baff666688c73a638d3d155d8eb8e2e0d186fae88b353657b7d059cdf"
+source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.claret-collect"
+source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.claret-collect-bb9c430b"]
+translation_review = "workflows/reviews/gap-campaign-2026-11-14/roman-1962/integrate-1962-batch-a.json"
+
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "O God, who exalted blessed Anthony Mary, your Confessor and Bishop, with apostolic virtues, and through him gathered new families of clerics and of virgins in the Church: grant, we beseech you, that, guided by his counsels and aided by his merits, we may strive unceasingly to seek the salvation of souls. Through our Lord.\n"
+notice = "Original study translation by Triptych of a Holy See text published here on a qualified basis (publication policy priority 6; confidence medium-low): its Vatican term had, on this project's reading, expired before the 1996 U.S. restoration date. Not adjudicated; U.S. copyright only; not an approved liturgical translation."
+
+[[entries]]
+mass = "palm-sunday"
+form_id = "main"
+proper = "Oration to Conclude the Procession"
+cycle = "all"
+occurrence = 1
+source_latin_sha256 = "45e33842a6cdc657100f959e67f044a04865f3d63752c5d9e9f3e3626bf18c1f"
+source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.palm-procession-oration"
+source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.palm-procession-oration-45e33842"]
+translation_review = "workflows/reviews/gap-campaign-2026-11-14/roman-1962/integrate-1962-batch-a.json"
+
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "O Lord Jesus Christ, our King and Redeemer, in whose honour we have sung solemn praises while bearing these branches: graciously grant that wherever these branches are carried, there the grace of your blessing may come down, and that, every wickedness and deception of the demons being overthrown, your right hand may protect those whom it has redeemed: who live and reign for ever and ever. All R. Amen.\n"
+notice = "Original study translation by Triptych of a Holy See text published here on a qualified basis (publication policy priority 6; confidence medium-low): its Vatican term had, on this project's reading, expired before the 1996 U.S. restoration date. Not adjudicated; U.S. copyright only; not an approved liturgical translation."
+
+[entries.translations.text_structure]
+text_sha256 = "add289e301126150f1afa9b6ee6305c5044b6fa02dcca54bb05f8979a67d1eec"
+checked = "Original study English of the page-checked Latin; response and role markers are nonspoken rubrics."
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 392
+text = "All R."
+
+[[entries]]
+mass = "good-friday"
+form_id = "main"
+proper = "Solemn Intercessions"
+cycle = "all"
+occurrence = 1
+source_latin_sha256 = "e0c78396ad6ee6189a103c8e01a6a1b41d62bc84ba69374856ddd26ea7c3d1cb"
+source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.solemn-intercessions"
+source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.solemn-intercessions-e0c78396", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
+translation_review = "workflows/reviews/gap-campaign-2026-11-14/roman-1962/integrate-1962-batch-a.json"
+
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Let us pray, dearly beloved, for the holy Church of God: that our God and Lord may deign to give her peace, to unite her and to guard her throughout the whole world: subjecting to her principalities and powers: and may he grant us, leading a quiet and tranquil life, to glorify God the Father almighty. Let us pray. V. Let us kneel. R. Arise.\n\nAlmighty everlasting God, who in Christ have revealed your glory to all nations: guard the works of your mercy; that your Church, spread throughout the whole world, may persevere with steadfast faith in the confession of your name. Through the same our Lord. All R. Amen.\n\nLet us pray also for our most blessed Pope N....: that our God and Lord, who chose him in the order of the episcopate, may keep him safe and unharmed for his holy Church, to rule the holy people of God. Let us pray. Let us kneel. Arise.\n\nAlmighty everlasting God, by whose judgement all things are founded: look graciously upon our prayers, and in your loving kindness preserve the Bishop chosen for us; that the Christian people, who are governed by you as their author, may under so great a Pontiff be increased in the merits of their faith. Through our Lord. All R. Amen.\n\nLet us pray also for all bishops, priests, deacons, subdeacons, acolytes, exorcists, lectors, porters, confessors, virgins, widows: and for all the holy people of God. Let us pray. Let us kneel. Arise.\n\nAlmighty everlasting God, by whose Spirit the whole body of the Church is sanctified and ruled: hear us as we make supplication for all its orders; that by the gift of your grace you may be faithfully served by all ranks. Through our Lord... in the unity of the same. All R. Amen.\n\nLet us pray also for all who govern commonwealths, and for their ministries and powers: that our God and Lord may direct their minds and hearts according to his will unto our lasting peace. Let us pray. Let us kneel. Arise.\n\nAlmighty everlasting God, in whose hand are the powers of all and the rights of all peoples: look kindly upon those who rule over us in authority; that everywhere on earth, under the protection of your right hand, both the integrity of religion and the security of the homeland may endure without ceasing. Through our Lord. All R. Amen.\n\nLet us pray also for our catechumens: that our God and Lord may open the ears of their inmost hearts and the door of mercy; that, having received through the laver of regeneration the remission of all their sins, they too may be found in Christ Jesus our Lord. Let us pray. Let us kneel. Arise.\n\nAlmighty everlasting God, who ever make your Church fruitful with new offspring: increase faith and understanding in our catechumens; that, reborn in the font of baptism, they may be joined to the children of your adoption. Through our Lord. All R. Amen.\n\nLet us pray, dearly beloved, to God the Father almighty, that he may purge the world of all errors: take away diseases: drive out famine: open prisons: loose chains: grant to travellers a return: to the sick health: to seafarers a haven of salvation. Let us pray. Let us kneel. Arise.\n\nAlmighty everlasting God, consolation of the sorrowful, strength of those who toil: let the prayers of those who cry out in any tribulation whatever come before you; that all may rejoice that your mercy was present to them in their necessities. Through our Lord. All R. Amen.\n\nLet us pray also for heretics and schismatics: that our God and Lord may rescue them from all their errors; and deign to call them back to holy mother Church, Catholic and apostolic. Let us pray. Let us kneel. Arise.\n\nAlmighty everlasting God, who save all, and will that none should perish: look upon the souls deceived by the fraud of the devil; that, all heretical perversity being laid aside, the hearts of the erring may come to their senses, and return to the unity of your truth. Through our Lord. All R. Amen.\n\nLet us pray also for the Jews: that our God and Lord may take away the veil from their hearts; that they too may acknowledge Jesus Christ our Lord. Let us pray. Let us kneel. Arise.\n\nAlmighty everlasting God, who do not drive away even the Jews from your mercy: hear the prayers which we offer for the blindness of that people; that, acknowledging the light of your truth, which is Christ, they may be rescued from their darkness. Through the same Lord. All R. Amen.\n\nLet us pray also for the pagans: that almighty God may take away iniquity from their hearts; that, forsaking their idols, they may be converted to the living and true God, and to his only Son Jesus Christ, our God and Lord. Let us pray. Let us kneel. Arise.\n\nAlmighty everlasting God, who seek always not the death of sinners, but their life: graciously receive our prayer, and free them from the worship of idols; and gather them to your holy Church, to the praise and glory of your name. Through our Lord Jesus Christ, your Son: who with you lives and reigns in the unity of the Holy Spirit, God, for ever and ever. All R. Amen.\n"
+notice = "Original study translation by Triptych of a Holy See text published here on a qualified basis (publication policy priority 6; confidence medium-low): its Vatican term had, on this project's reading, expired before the 1996 U.S. restoration date. Not adjudicated; U.S. copyright only; not an approved liturgical translation."
+
+[entries.translations.text_structure]
+text_sha256 = "6eb618c2e081c3a06c65fcae3c2a8565922271faa6139b590db70b6a813f442e"
+checked = "Original study English of the page-checked Latin; response and role markers are nonspoken rubrics."
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 316
+text = "V."
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 333
+text = "R."
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 603
+text = "All R."
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 1179
+text = "All R."
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 1664
+text = "All R."
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 2227
+text = "All R."
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 2779
+text = "All R."
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 3342
+text = "All R."
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 3861
+text = "All R."
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 4329
+text = "All R."
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 4961
+text = "All R."
+
+[[entries]]
+mass = "easter-vigil"
+form_id = "main"
+proper = "Blessing of the Paschal Candle"
+cycle = "all"
+occurrence = 1
+source_latin_sha256 = "96b9c9b4d4de2bf20db0cbb0d8cb7b73aa3de91c25d169fc7c0dee334a33ce9a"
+source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.paschal-candle-formulas"
+source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.paschal-candle-formulas-96b9c9b4"]
+translation_review = "workflows/reviews/gap-campaign-2026-11-14/roman-1962/integrate-1962-batch-a.json"
+
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Christ yesterday and today, the Beginning and the End, Alpha and Omega; his are the times and the ages; to him be glory and dominion through all the ages of eternity. Amen.\n\nBy his holy and glorious wounds may Christ the Lord guard and keep us. Amen.\n\nMay the light of Christ, rising in glory, dispel the darkness of heart and mind.\n"
+notice = "Original study translation by Triptych of a Holy See text published here on a qualified basis (publication policy priority 6; confidence medium-low): its Vatican term had, on this project's reading, expired before the 1996 U.S. restoration date. Not adjudicated; U.S. copyright only; not an approved liturgical translation."
+
+[[entries]]
+mass = "easter-vigil"
+form_id = "main"
+proper = "Exsultet (Praeconium paschale)"
+cycle = "all"
+occurrence = 1
+source_latin_sha256 = "a6d014d2da011fd012f03007574048df7ceaf10e9b8a8fac6ee3063cd6194973"
+source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.exsultet"
+source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.exsultet-a6d014d2", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
+translation_review = "workflows/reviews/gap-campaign-2026-11-14/roman-1962/integrate-1962-batch-a.json"
+
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Let the angelic host of heaven now exult: let the divine mysteries exult: and for the victory of so great a King let the trumpet of salvation sound. Let the earth also rejoice, made radiant by such great splendours: and, illumined by the brightness of the eternal King, let it know that it has lost the darkness of the whole world. Let mother Church also be glad, adorned with the splendours of so great a light: and let this hall resound with the mighty voices of the peoples. Wherefore, dearest brethren, you who stand by at the wondrous brightness of this holy light, call with me, I pray, upon the mercy of almighty God. That he who has deigned, for no merits of mine, to add me to the number of the Levites, may, pouring in the brightness of his light, enable me to fulfil the praise of this candle. Through our Lord Jesus Christ, his Son: who with him lives and reigns in the unity of the Holy Spirit, God.\n\nFor ever and ever. R. Amen. V. The Lord be with you. R. And with your spirit. V. Lift up your hearts. R. We have them unto the Lord. V. Let us give thanks to the Lord our God. R. It is fitting and just.\n\nIt is truly fitting and just to sound forth, with all the affection of heart and mind and with the service of the voice, the invisible God, the Father almighty, and his only-begotten Son, our Lord Jesus Christ. Who paid to the eternal Father the debt of Adam for us: and with his loving blood wiped out the bond of the ancient guilt. For these are the paschal feasts, in which that true Lamb is slain, by whose blood the doorposts of the faithful are consecrated. This is the night in which you first caused our fathers, the children of Israel, led out of Egypt, to cross the Red Sea with dry footsteps. This, then, is the night which purged away the darkness of sins by the illumination of the pillar. This is the night which today, throughout the whole world, restores to grace and unites to holiness those who believe in Christ, separated from the vices of the world and the gloom of sins. This is the night in which, the chains of death being destroyed, Christ ascended as victor from the realm of the dead. For it would have profited us nothing to be born, had it not profited us to be redeemed. O wondrous condescension of your loving kindness toward us! O inestimable love of charity: to redeem a slave, you delivered up your Son! O surely necessary sin of Adam, which was blotted out by the death of Christ! O happy fault, which merited to have such and so great a Redeemer! O night truly blessed, which alone merited to know the time and the hour in which Christ rose again from the realm of the dead! This is the night of which it is written: And the night shall be made light as the day: and the night is my illumination in my delights. The hallowing of this night, therefore, puts crimes to flight, washes faults away: and gives back innocence to the fallen, and joy to the sorrowful. It drives out hatreds, prepares concord, and bows down dominions.\n\nIn the grace of this night, therefore, receive, holy Father, the evening sacrifice of this incense: which most holy Church renders to you in this solemn offering of the candle, by the hands of her ministers, from the work of bees. But now we have come to know the proclamations of this column, which the gleaming fire kindles in honour of God. And though it be divided into parts, it knows no diminishing of the light it imparts. For it is fed by the melting waxes, which the mother bee brought forth for the substance of this precious lamp. O night truly blessed, which despoiled the Egyptians and enriched the Hebrews! Night in which heavenly things are joined to earthly, and things divine to human.\n\nWe beseech you therefore, O Lord, that this candle, consecrated to the honour of your name, may endure unfailing for the destroying of the gloom of this night. And, accepted as an odour of sweetness, may it mingle with the lights on high. May the morning star find its flames: that morning star, I say, which knows no setting; he who, returning from the realm of the dead, shone serenely upon the human race. We pray you, therefore, O Lord, that you deign, granting peaceful times, to rule, govern and keep with constant protection, in these paschal joys, us your servants, and all the clergy, and the most devout people, together with our most blessed Pope N. and our Bishop N. Look also upon those who rule over us in authority, and, by the ineffable gift of your loving kindness and mercy, direct their thoughts toward justice and peace, that from earthly toil they may come to the heavenly homeland with all your people. Through the same our Lord Jesus Christ, your Son: who with you lives and reigns in the unity of the Holy Spirit, God: for ever and ever. R. Amen.\n"
+notice = "Original study translation by Triptych of a Holy See text published here on a qualified basis (publication policy priority 6; confidence medium-low): its Vatican term had, on this project's reading, expired before the 1996 U.S. restoration date. Not adjudicated; U.S. copyright only; not an approved liturgical translation."
+
+[entries.translations.text_structure]
+text_sha256 = "f4eaae861a3bb2c1e698bf343fb2d39c245f3bab9a51cb41ab4d6fa0966c6847"
+checked = "Original study English of the page-checked Latin; response and role markers are nonspoken rubrics."
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 933
+text = "R."
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 942
+text = "V."
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 967
+text = "R."
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 992
+text = "V."
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 1016
+text = "R."
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 1047
+text = "V."
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 1090
+text = "R."
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 4748
+text = "R."
+
+[[entries]]
+mass = "easter-vigil"
+form_id = "main"
+proper = "Renewal of Baptismal Promises"
+cycle = "all"
+occurrence = 1
+source_latin_sha256 = "1aa9de20d8abdce79ab00d0ae8adb3729bccb1b59ca5eb0d960dce4d15bcd803"
+source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.renewal-of-baptismal-promises"
+source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.renewal-of-baptismal-promises-1aa9de20"]
+translation_review = "workflows/reviews/gap-campaign-2026-11-14/roman-1962/integrate-1962-batch-a.json"
+
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "On this most sacred night, dearly beloved brethren, holy Mother Church, recalling the death and burial of our Lord Jesus Christ, keeps vigil, loving him in return; and, celebrating his glorious resurrection, rejoices with gladness.\n\nBut since, as the Apostle teaches, we have been buried together with Christ through baptism into death, as Christ rose from the dead, so we too must walk in newness of life; knowing that our old self was crucified together with Christ, so that we may no longer serve sin. Let us therefore consider ourselves dead indeed to sin, but alive to God in Christ Jesus our Lord.\n\nWherefore, dearly beloved brethren, now that the Lenten observance is completed, let us renew the promises of holy Baptism, by which we once renounced Satan and his works, as also the world, which is the enemy of God, and promised to serve God faithfully in the holy Catholic Church.\n\nAnd so:\nCelebrant: Do you renounce Satan?\nAll: We renounce him.\nCelebrant: And all his works?\nAll: We renounce them.\nCelebrant: And all his pomps?\nAll: We renounce them.\nCelebrant: Do you believe in God, the Father almighty, Creator of heaven and earth?\nAll: We believe.\nCelebrant: Do you believe in Jesus Christ, his only Son, our Lord, who was born and who suffered?\nAll: We believe.\nCelebrant: Do you believe also in the Holy Spirit, the holy Catholic Church, the communion of Saints, the forgiveness of sins, the resurrection of the body, and life everlasting?\nAll: We believe.\nCelebrant: Now let us pray to God together, as our Lord Jesus Christ taught us to pray:\nAll: Our Father...\nCelebrant: And may almighty God, the Father of our Lord Jesus Christ, who has given us new birth by water and the Holy Spirit, and who has granted us the forgiveness of sins, keep us by his grace in the same Christ Jesus our Lord, unto life everlasting.\nAll: Amen.\n"
+notice = "Original study translation by Triptych of a Holy See text published here on a qualified basis (publication policy priority 6; confidence medium-low): its Vatican term had, on this project's reading, expired before the 1996 U.S. restoration date. Not adjudicated; U.S. copyright only; not an approved liturgical translation."
+
+[entries.translations.text_structure]
+text_sha256 = "356e9751ba6b5c36d1c81da2290d2f385dd7de6701a2b89d79b8804b05103f42"
+checked = "Original study English of the page-checked Latin; response and role markers are nonspoken rubrics."
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 898
+text = "Celebrant:"
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 932
+text = "All:"
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 954
+text = "Celebrant:"
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 984
+text = "All:"
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 1007
+text = "Celebrant:"
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 1037
+text = "All:"
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 1060
+text = "Celebrant:"
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 1144
+text = "All:"
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 1161
+text = "Celebrant:"
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 1259
+text = "All:"
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 1276
+text = "Celebrant:"
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 1455
+text = "All:"
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 1472
+text = "Celebrant:"
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 1560
+text = "All:"
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 1579
+text = "Celebrant:"
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 1833
+text = "All:"

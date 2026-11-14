@@ -103,7 +103,7 @@ class SeptemberCollectCorrectionTests(unittest.TestCase):
 
     def test_existing_exact_english_absence_is_retained(self):
         ledger = tomllib.loads((ROOT / "src/sources/inventories/roman-1962-proper-translations-v1.toml").read_text())
-        rows = [r for r in ledger["untranslated"] if (r.get("mass"),r.get("form_id"),r.get("proper"),r.get("cycle"),r.get("occurrence"),r.get("lang"),r.get("extent")) == (KEY.mass,"main","Collect","all",1,"en","body")]
+        rows = [r for r in ledger.get("untranslated", []) if (r.get("mass"),r.get("form_id"),r.get("proper"),r.get("cycle"),r.get("occurrence"),r.get("lang"),r.get("extent")) == (KEY.mass,"main","Collect","all",1,"en","body")]
         self.assertEqual(1,len(rows))
         self.assertEqual({"kind":"no-exemplar"},rows[0]["reason"])
         self.assertEqual("unavailable",rows[0]["availability"])

@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Only Latin already printed in the 1922 Tours Mame missal is transcribed: the Missal's own headings and rubrics of the Ordo Missae and Canon at the places the 1962 Ordinary frame names. The registered whole source records its United States publication-date basis (published 1922). Faithful transcription adds no exclusive right in these words and is excluded from Triptych CC BY 4.0. No word of the 1962 typical edition is taken from that book: every row is word-exact in this 1922 printing."
+rights_jurisdiction = "United States"
+provenance = "Complete registered Mame PDF rehashed to 9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005 on 2026-11-14 before reading. Every row was read on page images rendered at 200 dpi from original PDF pp. 385-392, 454-458, 463-466 and 469, with doubtful letters re-read at 400 dpi (PDF pp. 388, 465, 469), and compared word for word with the 1962 typical edition on its own page images (registered CMAA facsimile 648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a, PDF pp. 297-303, 380-391, 398-407) at 200 dpi, the small-print rubrics again at 400 dpi. Research lead: gap-campaign ord-ordinary lane, 2026-11-14; its transcriptions were leads only and were re-read here. No OCR text is authority."
+retrieved = "2026-11-14"
+sha256 = "918968d3a092174c0f6c036345edb39efca0287d53734e63966230bcf342638f"
+byte_size = 7278
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ordinary-headings-rubrics-latin-20261114/text.tsv"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+transformation = "Transcribe each selected heading or rubric exactly as Mame prints it: source letters, j, the ae/oe ligatures, stress accents, capitals and pointing retained; physical line wraps and line-end division hyphens joined; the typesetter's space before a colon closed up; small-capital incipits and decorative initials written in normal capitals. A row is a contiguous printed span cut only at a division the page prints (a period, a colon before spoken text, a heading line). No word is supplied, repaired or expanded."
+notes = "One header and one row per printed span; element_key is <section>-<element> of src/sources/inventories/roman-1962-ordo-missae-v1.toml, which joins each row as the Latin of an 1861 element whose own book prints no Latin there. Classes recorded in the inventory: a direct counterpart (the 1861 English renders this Latin) or the Missal's rubric at that place (the 1861 English is the lay book's own paraphrase). Each row is word-exact with the 1962 typical edition under the declared transformations; per-row passages record the comparison."

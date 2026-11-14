@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.dimissio-paschalis-en-20261114"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+artifact_type = "checked-bilingual-transcription"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Only the ordinary-page English of the 1946 printing of the 1945 revision is retained, under the registered United States nonrenewal finding for A 110108 and A 192159 (src/sources/inventories/lasance-new-roman-missal-rights-v1.toml); printed p. 537 is an ordinary page, not one of the excluded lettered inserts. No whole-book PDF, scan framing or watermark is retained."
+provenance = "Exact registered whole PDF (sha256 4573991d962eb6a6391bc2555b8445bdfebd84de1ccffd7828f84e74d308ca77) rendered on 2026-11-14 at artifact p. 547 / printed p. 537 (Holy Saturday, end of Mass) and read on the page image. The facing Latin reads 'Ite Missa est, allelúja, allelúja. / Deo grátias, allelúja, allelúja.', the same words as the 2002 paschal dismissal and the 1862 Pustet; this English renders those words."
+retrieved = "2026-11-14"
+sha256 = "4dd29c516555ff7d7399982985dabf9861bb148b8f843bd6852c9443e2160957"
+byte_size = 437
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/dimissio-paschalis-en-20261114/text.tsv"
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+transformation = "Transcribe the two English lines of the paschal dismissal; join the physical wrap and line-end division; keep words, capitals and pointing; record the versicle and response signs in source_marker_glyph, carrying the response sign as an R. prefix and the versicle sign not at all."
+indexable = true
+encoding = "utf-8"
+notes = "Header and two rows, element_key dimissio-paschalis. Historical human English facing identical Latin; not approved postconciliar English and not for recitation."

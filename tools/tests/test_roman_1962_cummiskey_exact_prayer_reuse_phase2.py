@@ -136,7 +136,7 @@ class CummiskeyExactPrayerReusePhase2Tests(unittest.TestCase):
         self.assertEqual(set(self.entries), targets)
         self.assertFalse(targets & {
             identity((r["mass"], r["proper"]))
-            for r in self.document["untranslated"]
+            for r in self.document.get("untranslated", [])
             if r["form_id"] == "main" and r["cycle"] == "all" and r["occurrence"] == 1
         })
         for target, row in self.entries.items():
@@ -346,7 +346,7 @@ class CummiskeyExactPrayerReusePhase2Tests(unittest.TestCase):
         # workflows/reviews/missal-reader-completion-2026-10-26; [[accepted]]
         # next17 in src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml).
         self.assertNotIn(refused, self.entries)
-        self.assertFalse([r for r in self.document["untranslated"]
+        self.assertFalse([r for r in self.document.get("untranslated", [])
                           if (r["mass"], r["form_id"], r["proper"], r["cycle"], r["occurrence"]) == refused])
         served = self.overlay[refused]
         self.assertEqual((served["witness"], served["collation_result"]), ("lefebvre-1925", "confirmed"))

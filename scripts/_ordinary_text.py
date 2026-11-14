@@ -95,6 +95,28 @@ def source_note_lines(
     return [style.note(line) for line in wrap(f"[ Source note: {note} ]", indent)]
 
 
+def witness_notices(ordinary: dict | None) -> dict[tuple[str, str], str]:
+    """Each witness's acknowledgement, keyed by (lang, source_id).
+
+    A notice a witness's rights carry with its words (the qualified-public-domain
+    record's verbatim notices) is printed beside every element that witness
+    supplies, as the browser prints it; a terminal reader is a surface too.
+    """
+    held: dict[tuple[str, str], str] = {}
+    for row in (ordinary or {}).get("translations") or []:
+        notice = row.get("acknowledgement") if isinstance(row, dict) else None
+        if isinstance(notice, str) and notice.strip():
+            held[(str(row.get("lang")), str(row.get("source_id")))] = notice
+    return held
+
+
+def notice_lines(translation: dict, notices: dict | None, style: Style, indent: str) -> list[str]:
+    notice = (notices or {}).get((str(translation.get("lang")), str(translation.get("source_id"))))
+    if not notice:
+        return []
+    return [style.note(line) for line in wrap(f"[ Notice: {notice} ]", indent)]
+
+
 def translation_applicability(translation: dict, context: dict | None = None) -> str:
     """Source heldness does not authorize executing a scoped language body."""
     if "applicability" not in translation:
@@ -142,6 +164,7 @@ def element_lines(
     show_rubrics: bool = True,
     why: bool = False,
     context: dict | None = None,
+    notices: dict | None = None,
 ) -> list[str]:
     """One element of the Ordinary, set as what it is. Never a blank.
 
@@ -176,6 +199,7 @@ def element_lines(
         lines.append("")
         lines.extend(indent + one for one in style.heading(str(selected["text"]).strip(), rule="-"))
         lines.extend(source_note_lines(selected, style, indent, why=why))
+        lines.extend(notice_lines(selected, notices, style, indent))
         if why and element.get("locus"):
             lines.append(indent + style.note(f"[{element['locus']}]"))
         return lines
@@ -228,6 +252,7 @@ def element_lines(
                     lines.append(line)
         else:
             lines.extend(wrap(text, body))
+        lines.extend(notice_lines(selected, notices, style, body))
         return lines
 
     # Absence, with the reason the element itself records, and never a blank.

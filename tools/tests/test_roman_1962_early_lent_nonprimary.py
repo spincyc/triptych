@@ -133,7 +133,7 @@ class EarlyLentNonprimary(unittest.TestCase):
  def test_exact_shared_english_whole_body_dispositions(self):
   received={(key,'main',name) for key,name,*_ in NEW_APPOINTMENTS};expected=received|{(key,fid,name) for key,fid,name,_ in MIXED}
   for key,fid,name in expected:
-   matches=[r for r in self.english['untranslated'] if (r['mass'],r.get('form_id','main'),r['proper'],r.get('occurrence',1),r.get('cycle','all'),r['lang'],r['extent'])==(key,fid,name,1,'all','en','body')]
+   matches=[r for r in self.english.get("untranslated", []) if (r['mass'],r.get('form_id','main'),r['proper'],r.get('occurrence',1),r.get('cycle','all'),r['lang'],r['extent'])==(key,fid,name,1,'all','en','body')]
    entries=[r for r in self.english['entries'] if (r['mass'],r.get('form_id','main'),r['proper'],r.get('occurrence',1),r.get('cycle','all'))==(key,fid,name,1,'all')]
    if (key,fid,name) in received:
     self.assertEqual((matches,len(entries)),([],1),(key,fid,name))

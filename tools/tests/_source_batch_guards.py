@@ -182,8 +182,8 @@ def historical_english_coverage(calendar):
  propers=runpy.run_path(str(ROOT/'tools/mass-propers'))
  document=yaml.load(historical_bytes(YAML_PATH),Loader=yaml.CSafeLoader)
  ledger=tomllib.loads(historical_text('src/sources/inventories/roman-1962-proper-translations-v1.toml'))
- all_targets={canonical(propers['translation_record_identity'](r,document))for table in ('entries','untranslated')for r in ledger[table]}
- require(len(all_targets)==len(ledger['entries'])+len(ledger['untranslated']),'historical English owner categories disjoint')
+ all_targets={canonical(propers['translation_record_identity'](r,document))for table in ('entries','untranslated')for r in ledger.get(table, [])}
+ require(len(all_targets)==len(ledger['entries'])+len(ledger.get('untranslated', [])),'historical English owner categories disjoint')
  positives=set(fixture()['english_219_keys']);require(positives<=all_targets,'historical positive cohort belongs to original target universe')
  excluded=set()
  if calendar=='roman-pre-1955':

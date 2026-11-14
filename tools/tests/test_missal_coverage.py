@@ -733,11 +733,11 @@ class RealCorpusCoverageTests(unittest.TestCase):
         import tomllib
         ledger = tomllib.loads((ROOT / "src/sources/inventories/roman-1962-proper-translations-v1.toml")
                                .read_text(encoding="utf-8"))
-        withheld = [row for row in ledger["untranslated"] if row["reason"]["kind"] == "rights-withheld"]
+        withheld = [row for row in ledger.get("untranslated", []) if row["reason"]["kind"] == "rights-withheld"]
         self.assertEqual({row["mass"] for row in withheld}, {"commune-summorum-pontificum"})
         historical = tomllib.loads(G.historical_text(
             "src/sources/inventories/roman-1962-proper-translations-v1.toml"))
-        old_withheld = [row for row in historical["untranslated"]
+        old_withheld = [row for row in historical.get("untranslated", [])
                         if row["reason"]["kind"] == "rights-withheld"]
         self.assertEqual(len(old_withheld), 5)
         self.assertEqual({row["mass"] for row in old_withheld}, {"commune-summorum-pontificum"})
@@ -755,10 +755,10 @@ class RealCorpusCoverageTests(unittest.TestCase):
             self.assertEqual(G.digest(G.canonical(row)),
                              G.fixture()["roman_current_english_absence"][G.canonical(identity)])
             self.assertNotIn("text", row)
-        historical_retyped = [row for row in historical["untranslated"] if "(C2 gap G3)" in row["note"]]
+        historical_retyped = [row for row in historical.get("untranslated", []) if "(C2 gap G3)" in row["note"]]
         self.assertEqual({row["reason"]["kind"] for row in historical_retyped}, {"no-exemplar"})
         original_ids = {self.propers.translation_record_identity(row) for row in historical_retyped}
-        retyped = [row for row in ledger["untranslated"] if "(C2 gap G3)" in row["note"]]
+        retyped = [row for row in ledger.get("untranslated", []) if "(C2 gap G3)" in row["note"]]
         remaining = {self.propers.translation_record_identity(row) for row in retyped}
         admitted = {identity for identity in original_ids if assert_current_english_owner(self, identity)}
         self.assertEqual(remaining, original_ids - admitted)
@@ -972,7 +972,7 @@ state = "unenumerated"
                          [dict(wanted, record="untranslated")])
         historical_parent = tomllib.loads(G.historical_text(
             "src/sources/inventories/roman-1962-proper-translations-v1.toml"))
-        records = [row for row in historical_parent["untranslated"]
+        records = [row for row in historical_parent.get("untranslated", [])
                    if (row["mass"], row["form_id"], row["proper"], row["cycle"], row["occurrence"])
                    == (wanted["mass"], "main", "Alleluia", "all", 1)]
         self.assertEqual(len(records), 1)

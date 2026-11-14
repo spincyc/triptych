@@ -61,7 +61,7 @@ class AfterPentecostSourceAppointmentTests(unittest.TestCase):
         english = tomllib.loads((ROOT / 'src/sources/inventories/roman-1962-proper-translations-v1.toml').read_text())
         identity = ('september-ember-wednesday', 'main', 'Oratio', 'all', 1)
         same = lambda r: (r.get('mass'), r.get('form_id'), r.get('proper'), r.get('cycle'), r.get('occurrence')) == identity
-        rows = [r for r in english['untranslated'] if same(r) and r.get('lang') == 'en']
+        rows = [r for r in english.get("untranslated", []) if same(r) and r.get('lang') == 'en']
         rows += [r for r in english['entries'] if same(r) and 'en' in [t['lang'] for t in r['translations']]]
         self.assertEqual(len(rows), 1)
         # da270a039: the no-exemplar absence became one confirmed Lefebvre entry (english22-latin3-source-adoption.json
