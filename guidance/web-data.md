@@ -57,6 +57,14 @@ Ordinary Lectern `open` and `snapshot` use this contract:
    stores these projections; clearing it costs recomputation of the requested
    records, not a full family build. A projection cache never repairs an
    authoritative source or updates a tracked expectation.
+5. Within one session, selected projections may share a calendar-wide
+   derivation each of them needs, such as a calendar's validated Latin
+   provenance or its oration-conclusion sources (`session_derived` in
+   `scripts/_corpus_index.py`). Every reuse re-reads and verifies each
+   canonical input that derivation consumed and records it as a dependency of
+   the reusing projection, so a disk-cache entry binds the inputs a fresh
+   derivation would. Index maintenance, checks and publication builds never
+   reuse derivations.
 
 `scripts/_reader_products.py` and the `_reader_*_products.py` modules route
 logical browser paths to the smallest supported unit of their existing owner:

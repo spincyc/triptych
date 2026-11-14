@@ -1,18 +1,13 @@
-"""Startup reveals a complete reading, and cancellation owns its children."""
+"""Startup reveals a complete reading after one index check."""
 from __future__ import annotations
 
 import asyncio
-import os
-from pathlib import Path
-import signal
-import sys
-import tempfile
 import threading
 import unittest
 from unittest.mock import patch
 
 from test_lectern import ROOT, TEXTUAL
-from lectern.preparation import _run
+from lectern import preparation
 from lectern.repo import Refused
 
 
@@ -178,42 +173,30 @@ class LoadingTests(unittest.IsolatedAsyncioTestCase):
                     self.assertEqual(app.focused.id, target)
 
 
-class PreparationProcessTests(unittest.IsolatedAsyncioTestCase):
-    async def test_child_exit_status_and_diagnostic_are_preserved(self):
-        status, detail = await _run([sys.executable, "-c",
-                                    "import sys; print('controlled refusal', file=sys.stderr); sys.exit(2)"])
-        self.assertEqual((status, detail), (2, "controlled refusal"))
+class PreparationTests(unittest.IsolatedAsyncioTestCase):
+    async def test_one_check_off_the_event_loop_opens_the_reading_session(self):
+        checked, threads = object(), []
 
-    @unittest.skipUnless(os.name == "posix" and Path("/proc").is_dir(), "Linux process groups")
-    async def test_cancel_stops_and_reaps_preparation_and_its_stubborn_producer(self):
-        (ROOT / ".scratch").mkdir(exist_ok=True)
-        with tempfile.TemporaryDirectory(dir=ROOT / ".scratch", prefix="lectern-loading-") as folder:
-            pidfile = Path(folder) / "pids"
-            child = ("import os, signal, time; from pathlib import Path; "
-                     "signal.signal(signal.SIGTERM, signal.SIG_IGN); "
-                     f"Path({str(pidfile)!r}).write_text(str(os.getppid())+' '+str(os.getpid())); "
-                     "time.sleep(60)")
-            parent = f"import subprocess, sys; subprocess.run([sys.executable, '-c', {child!r}])"
-            task = asyncio.create_task(_run([sys.executable, "-c", parent]))
-            pids = []
-            try:
-                await until(lambda: pidfile.exists() and len(pidfile.read_text().split()) == 2)
-                pids = [int(value) for value in pidfile.read_text().split()]
-                task.cancel()
-                with self.assertRaises(asyncio.CancelledError):
-                    await asyncio.wait_for(task, 5)
-                self.assertFalse(Path(f"/proc/{pids[0]}").exists(), "preflight must be reaped")
-                for pid in pids:
-                    state = Path(f"/proc/{pid}/stat")
-                    self.assertTrue(not state.exists() or state.read_text().split()[2] == "Z",
-                                    "no producer may remain running")
-            finally:
-                task.cancel()
-                for pid in pids:
-                    try:
-                        os.kill(pid, signal.SIGKILL)
-                    except ProcessLookupError:
-                        pass
+        def index(root):
+            threads.append(threading.current_thread())
+            return checked
+
+        with (patch("_corpus_index.CorpusIndex", side_effect=index) as constructed,
+              patch("lectern.bridge.BRIDGE_PROCESS.adopt") as adopt):
+            await preparation.prepare_products()
+        self.assertEqual(constructed.call_count, 1)
+        self.assertEqual(constructed.call_args.args, (ROOT,))
+        self.assertIsNot(threads[0], threading.main_thread())
+        adopt.assert_called_once_with(checked)
+
+    async def test_refusal_keeps_its_wording_and_opens_nothing(self):
+        from _corpus_index import CorpusIndexError
+
+        with (patch("_corpus_index.CorpusIndex", side_effect=CorpusIndexError("stale corpus index")),
+              patch("lectern.bridge.BRIDGE_PROCESS.adopt") as adopt,
+              self.assertRaisesRegex(Refused, "indexed reading data is unavailable: stale corpus index")):
+            await preparation.prepare_products()
+        adopt.assert_not_called()
 
 
 if __name__ == "__main__":

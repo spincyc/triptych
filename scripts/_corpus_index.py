@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import argparse
 import builtins
+import copy
 import fcntl
 from fnmatch import fnmatchcase
 from functools import wraps
@@ -93,6 +94,7 @@ _SOURCE_PATH = re.compile(
     r'(?:edition\.toml|artifacts/[^/]+/artifact\.toml|(?:segments|passages)/[^/]+\.toml))'
     r'|corpora/[^/]+\.toml)\Z')
 _ACTIVE: ContextVar[tuple | None] = ContextVar('corpus_verified_reads', default=None)
+_DERIVATIONS: ContextVar[dict | None] = ContextVar('corpus_session_derivations', default=None)
 _OPEN, _IO_OPEN = builtins.open, io.open
 _PATH_METHODS = {name: getattr(Path, name) for name in ('glob', 'rglob', 'exists', 'is_file', 'is_dir')}
 _PATCH_LOCK = threading.RLock()
@@ -206,9 +208,34 @@ def _git(root, *arguments):
     return result.stdout
 
 
+def _git_together(root, *commands):
+    """Run independent read-only Git queries concurrently; fail as ``_git`` does."""
+    env = {**os.environ, 'GIT_OPTIONAL_LOCKS': '0', 'GIT_NO_LAZY_FETCH': '1'}
+    processes = []
+    try:
+        for arguments in commands:
+            processes.append(subprocess.Popen(['git', '-C', str(root), *arguments],
+                                              stdout=subprocess.PIPE, stderr=subprocess.PIPE, env=env))
+        results = [process.communicate() for process in processes]
+    finally:
+        for process in processes:
+            if process.poll() is None:
+                process.kill()
+                process.wait()
+    for process, (_, stderr) in zip(processes, results):
+        if process.returncode:
+            raise CorpusIndexError('corpus index requires a Git checkout: ' + stderr.decode(errors='replace').strip())
+    return [stdout for stdout, _ in results]
+
+
 def _git_state(root):
+    # The untracked walk dominates; the modified-file stat pass and the staged
+    # listing run beside it. Their union is the single combined query's result.
+    staged, changed, untracked = _git_together(
+        root, ('ls-files', '--stage', '-z'), ('ls-files', '--modified', '--deleted', '-z'),
+        ('ls-files', '--others', '--exclude-standard', '-z'))
     entries = {}
-    for item in _git(root, 'ls-files', '--stage', '-z').split(b'\0'):
+    for item in staged.split(b'\0'):
         if not item:
             continue
         header, raw_path = item.split(b'\t', 1)
@@ -220,9 +247,8 @@ def _git_state(root):
         if stage != '0' or mode not in ('100644', '100755'):
             raise CorpusIndexError(f'unmerged or non-regular corpus input: {path}')
         entries[path] = (mode, oid)
-    dirty = {_relative(item.decode('utf-8')) for item in _git(
-        root, 'ls-files', '--modified', '--deleted', '--others', '--exclude-standard', '-z'
-    ).split(b'\0') if item and _covered(item.decode('utf-8'))}
+    dirty = {_relative(item.decode('utf-8')) for item in (changed + b'\0' + untracked).split(b'\0')
+             if item and _covered(item.decode('utf-8'))}
     return entries, dirty
 
 
@@ -484,6 +510,55 @@ class CorpusIndex:
             if failures:
                 _poison(failures[0])
                 raise failures[0]
+
+
+@contextmanager
+def session_derivations(cache):
+    """Let ``session_derived`` reuse whole derivations within one reader session.
+
+    The caller owns *cache* for one ``CorpusIndex`` lifetime. Maintenance,
+    checks and publication builds never enter this context, so each of their
+    derivations runs exactly as written.
+    """
+    token = _DERIVATIONS.set(cache)
+    try:
+        yield
+    finally:
+        _DERIVATIONS.reset(token)
+
+
+def session_derived(key, compute):
+    """Return ``compute()``, reusing an identical earlier derivation in session.
+
+    *key* names the derivation and every argument it depends on other than
+    verified canonical reads. A selected reader projection can need the same
+    calendar-wide derivation for every Mass it opens: reuse is limited to
+    that within one ``session_derivations`` and ``verified_reads`` context.
+    Reuse re-reads and verifies every canonical input the first computation
+    consumed and records each as the caller's own dependency, as the
+    computation would have. A computation that failed or poisoned the session
+    is not kept, and callers receive independent objects.
+    """
+    cache, active = _DERIVATIONS.get(), _ACTIVE.get()
+    if cache is None or active is None:
+        return compute()
+    index, dependencies, failures = active
+    held = cache.get(key)
+    if held is not None:
+        value, inputs = held
+        for relative in inputs:
+            index.read(relative)
+        return copy.deepcopy(value)
+    consumed, poisoned = {}, len(failures)
+    token = _ACTIVE.set((index, consumed, failures))
+    try:
+        value = compute()
+    finally:
+        _ACTIVE.reset(token)
+        dependencies.update(consumed)
+    if len(failures) == poisoned:
+        cache[key] = (copy.deepcopy(value), tuple(consumed))
+    return value
 
 
 class _ReadOnlyBytes(io.BytesIO):

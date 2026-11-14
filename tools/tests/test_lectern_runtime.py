@@ -143,7 +143,7 @@ class LecternRuntimeTests(unittest.TestCase):
         # Exercise real execve and Python's venv discovery. Only the expensive
         # product/UI consumers are stand-ins; the launcher and CLI are real.
         for name in ("tools/lectern", "scripts/_tooling.py", "scripts/lectern/__init__.py",
-                     "scripts/lectern/repo.py"):
+                     "scripts/lectern/repo.py", "scripts/lectern/preparation.py"):
             target = self.root / name
             target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(ROOT / name, target)
@@ -151,7 +151,8 @@ class LecternRuntimeTests(unittest.TestCase):
             "class CorpusIndexError(Exception): pass\n"
             "class CorpusIndex:\n    def __init__(self, root): pass\n")
         (self.root / "scripts/lectern/bridge.py").write_text(
-            "class Bridge:\n    def close(self): pass\nBRIDGE_PROCESS = Bridge()\n")
+            "class Bridge:\n    def adopt(self, index): pass\n    def close(self): pass\n"
+            "BRIDGE_PROCESS = Bridge()\n")
         (self.root / "scripts/lectern/snapshot.py").write_text(
             "import json, os, sys\n"
             "def render(**options):\n"

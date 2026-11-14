@@ -8,7 +8,8 @@ from __future__ import annotations
 import hashlib
 import json
 from pathlib import Path
-import tomllib
+
+import _calendars
 
 PUBLIC_SCHEMA = "triptych-oration-conclusion-source/v2"
 METHOD_ID = "missal-finite-oration-conclusion-execution-20261112-v2"
@@ -100,13 +101,13 @@ def source_controls(repository, controls, *, read_bytes=None, cache=None):
         parsed = None
         if "json_pointer" in control:
             require(path.suffix in {".json", ".toml"}, "pointer requires a structured source")
-            document = cached[1] if cached is not None else (tomllib.loads(raw.decode()) if path.suffix == ".toml" else json.loads(raw))
+            document = cached[1] if cached is not None else (_calendars.parse_toml(raw) if path.suffix == ".toml" else json.loads(raw))
             parsed = pointer(document, control["json_pointer"])
             require(hashlib.sha256(canonical(parsed).encode()).hexdigest() == control["sha256"], "pointed source record changed")
         else:
             require(sha(raw) == control["sha256"], "source control changed")
             if path.suffix == ".toml":
-                parsed = cached[1] if cached is not None else tomllib.loads(raw.decode())
+                parsed = cached[1] if cached is not None else _calendars.parse_toml(raw)
             elif path.suffix == ".json":
                 parsed = cached[1] if cached is not None else json.loads(raw)
         if cache is not None and cached is None:

@@ -21,9 +21,11 @@ class ReaderData:
     MEMORY_LIMIT = 32 * 1024 * 1024
     CACHE_VERSION = 2
 
-    def __init__(self, root: Path):
+    def __init__(self, root: Path, index: CorpusIndex | None = None):
         self.root = Path(root)
-        self.index = CorpusIndex(self.root)
+        # A caller that has just checked membership hands that index over, so
+        # one session does not repeat the Git scan before its first read.
+        self.index = index if index is not None else CorpusIndex(self.root)
         self._cancelled = threading.Event()
         self.index._reader_cancelled = self._cancelled
         self.cache = self.root / ".scratch/reader-data"
@@ -146,8 +148,8 @@ class ReaderData:
 
 
 @contextmanager
-def indexed_products(root: Path):
-    reader = ReaderData(root)
+def indexed_products(root: Path, index: CorpusIndex | None = None):
+    reader = ReaderData(root, index)
     try:
         yield reader
     finally:
