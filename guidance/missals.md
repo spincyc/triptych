@@ -17,7 +17,9 @@ station is the act, and the narrow `printed` exception where a surviving book
 declares itself one; `recensions.md` settles the departure model; `sources.md`
 settles retrieval, aliases and rights. Those govern. This document
 reports what applying them to the missals actually found, and where it found
-this repository disagreeing with itself.
+this repository disagreeing with itself. §10 records how each coherent missal
+received its one designator; the designator registry and its validator own the
+names.
 
 The record is `src/sources/inventories/missal-acquisition-audit-v1.toml`. Where
 this page and that file differ, the file is right: its counts are derived from
@@ -695,3 +697,109 @@ the list of Churches, the principal eucharistic book in each tradition, and the
 promulgating authority — and only then a search. **Do not extend the audit file
 to cover them.** A Roman-shaped row about an Eastern book is a reference that will
 resolve successfully and wrongly.
+
+## 10. One designator for each coherent missal
+
+Added 2026-11-14, closing the naming half of promise
+`missal-version-nomenclature-2026-10-30`. The maintainer asked for "single
+affirmative designators for every coherent missal the corpus has identified".
+The owner is `src/sources/inventories/missal-designators-v1.toml`; its list is
+not restated here. `scripts/_missal_designators.py` validates it from
+`check-calendar-masses`. Every reader, CLI and generated header takes the book's
+name from it through `_calendars`.
+
+**What a designator is.** A designator names what the book *is*: its edition
+state and year, such as "Roman Missal, 1962 typical edition" or "Roman Missal,
+2002 third typical edition, 2008 emended reprint". It never names what the book
+stands before or after, what the project holds of it, or which witness was read.
+Those facts go in the row's `qualification`. The validator refuses the relative
+words that once stood in for a name ("Pre-1955 Missal", "Postconciliar Missal",
+"witness study", "base with additions"). A control shows the derived short form,
+which is the designator's final segment ("1962 typical edition"). The short form
+is never stored.
+
+**Which books receive one.** A coherent missal is a whole altar book whose
+normative identity the records establish through a recorded instrument or
+official record:
+
+- a declared typical edition;
+- an officially issued emended reprint;
+- a rite's or use's edition issued by its competent authority, with a row in
+  `latin-missal-acts-v1.toml` or this audit's `[[acts]]`, or a checked decree
+  in the timeline or stage records;
+- an approved translation or adaptation.
+
+Everything else is a witness. Witnesses include conformed and commercial
+printings (Pustet 1862 and 1894, Desclée 1889, Mame 1922, Benziger 1942 and
+1962, the Bonn 2004 reprint), lay missals, critical editions and facsimiles,
+manuscripts, and partial books. The 1956 *Ordo Hebdomadae Sanctae*, the 1965
+and 1967 *Variationes* and the 1969 *Ordo Missae* are partial books. A witness
+keeps its source-library identity and appears in the registry only under the
+`witnesses` of the book it attests.
+
+**What `roman-pre-1955` is.** It is the 1920 typical edition, named "Roman
+Missal, 1920 typical edition". The evidence:
+
+- the calendar's own header has always identified its book as the Vatican
+  typical edition of 1920;
+- `recensions.json` maps `roman-1920` to it;
+- its `stands_before` boundaries are the two 1955 acts, and the 1920 edition
+  remained the typical edition until 1962, with decreed additions printed
+  *iuxta typicam*;
+- the accepted Bonn 2004 reprint of the 28th conformed edition (about 1954)
+  witnesses that state.
+
+The witness, the cut-off, the three collated Pentecost prayers and the
+uncollated inheritance from 1962 are limits. They belong in the qualification,
+not in the name. The superseded proposal "Bonn 2004 witness study" named a
+witness, and "2008 base with recorded additions" hedged. Both are refused. The
+same pattern carries the later decreed variations: the December 1962 Saint
+Joseph insertion, and the post-2008 calendar inscriptions in the postconciliar
+reader. Each is recorded as a qualification of the book it varies, not as
+another book.
+
+**Stable IDs.** The reader calendar keys `roman-pre-1955`, `roman-1962` and
+`postconciliar`, every URL and stored preference, the recension catalog ids and
+every source-library id are unchanged. They are opaque. `roman-pre-1955` is the
+historical key, kept for compatibility although `recensions.md` Rule 5 would
+not coin it today. It is never displayed as a name. `recensions.json` no longer
+labels a book state; only its interval gap describes itself, because a gap is
+not a book. Historical review records keep the labels they quote.
+
+**Settled as not coherent missals, with the reason:**
+
+| Candidate | Why it has no designator |
+| --- | --- |
+| The 1956–1960 interval | `roman-transition-1956-1960` is an interval gap. No whole-book state is recorded, and the 1956 Holy Week Ordo, typical or not, is a partial book. |
+| An 1884 typical edition | Act `editio-typica-1884` is "NOT ESTABLISHED HERE". The 1889 and 1894 printings attest a Leonine authority, not its edition. |
+| An alleged 1924 Roman typical edition | It is an unresolved lead in the timeline record, which says not to create a station from it. |
+| The December 1962 Canon insertion | It is a decreed variation within the 1962 typical edition, and is that row's qualification. |
+| Sarum, and the York, Aquileia and pre-Tridentine curial printings | No typical edition or promulgating act is recorded. The critical editions (Dickinson, Legg, Henderson, Lippe) are witnesses. |
+| Eastern Catholic books | They are deferred by §9. The stage records note a Chaldean 2020 and a Syro-Malabar 2003 typical edition for that separate track. |
+
+**Left for the maintainer.** Each of the following is a class decision. The
+records identify an authority statement but no act row, or their evidence
+conflicts. None has a designator until a record admits it:
+
+- order and archdiocesan editions with title-page or front-matter authority
+  only: Dominican 1553, Cistercian 1487, 1606 and 1657, Premonstratensian
+  1936, Ambrosian 1609, 1640, 1712 and 1751;
+- reported but unverified editions: Dominican 1933, 1939 and 1965,
+  Carmelite 1935/1937, Carthusian 1603, 1981 and 2021, Lyon 1866, 1904 and
+  1956, Braga 1538 and 1558, Mozarabic 1500 and 1804, Slavonic 1741;
+- the Ambrosian Latin *editio altera* of 2026, whose front matter is
+  unexamined;
+- the diocesan printings issued under an ordinary's mandate. The timeline
+  census holds dozens; it calls them witnesses and records no act row for them.
+
+The survey also found conflicts that the registry neither resolves nor hides:
+
+- the 1962 act carries two ids (`novo-rubricarum-corpore-1962` here,
+  `editio-typica-1962` in the act histories);
+- the audit's own `[counts]` (19 typical, 13 not) no longer match its rows
+  (18 and 14);
+- the Slavonic 1893 book is a typical edition in this audit but a printed
+  station in the act history.
+
+The registry follows the source-library edition record for the Slavonic book
+and treats it as an approved translation.

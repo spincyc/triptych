@@ -935,8 +935,9 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "missal-version-primary-sources"
   criterion = "Every represented missal version has an explicit source-supported name and version identity distinguishing edition, reform horizon, language and the actual contributing witnesses; uncertain exact correspondence is stated."
-  status = "open"
-  evidence = ["PROJECT-WORK.md", "guidance/missals.md"]
+  status = "pass"
+  evidence = ["src/sources/inventories/missal-designators-v1.toml", "scripts/_missal_designators.py", "tools/tests/test_missal_designators.py", "guidance/missals.md"]
+  check = "path_exists"
 
   [[deliverables.requirements]]
   id = "missal-version-consistent-consumers"

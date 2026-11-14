@@ -3412,27 +3412,77 @@ retain their own requirements.
 
 <!-- promised-deliverable: missal-version-nomenclature-2026-10-30 -->
 
-**In progress.** The maintainer requests source-supported names for every
-historical point represented by a missal, a firm versioning nomenclature across
-the project, retirement of the vague current label “Pre-1955,” and reader
-options only for missals with actual contributed content. A dedicated source
-and implementation lane is establishing edition, reform horizon, language and
-witness distinctions before applying the names consistently. A structural
-placeholder alone does not establish contributed text; actual Latin or English
-content does. Existing source and completeness qualifications remain binding.
+**In progress.** The maintainer asked for three things:
 
-The sourced matrix and implementation have independent bounded review. The
-proposed current reader names are “Roman Missal — Bonn 2004 witness study,”
-“Roman Missal — 1962 typical edition,” and “Roman Missal — 2008 base with
-recorded additions.” The first identifies the actual reprint witness rather
-than treating an inferred calendar horizon as an edition; the last distinguishes
-the 2008 emended reprint of the third typical edition from its recorded later
-additions. The 1962 reader qualification must distinguish the June edition from
-the separately decreed December insertion of Saint Joseph in the Canon.
-Application and final consumer validation remain pending after the current
-English checkpoint. Historical audit bytes and quoted historical labels remain
-evidence of their original state; compatibility preserves opaque existing IDs
-while current public labels and new reader keys use the sourced nomenclature.
+- source-supported names for every historical point represented by a missal;
+- a firm versioning nomenclature across the project, retiring the vague label
+  “Pre-1955”;
+- reader options only for missals with actual contributed content.
+
+On 2026-11-14 the maintainer sharpened the first two into "single affirmative
+designators for every coherent missal the corpus has identified". A designator
+names what the book is, never what it stands before or after.
+
+**Naming (2026-11-14).** One registry,
+`src/sources/inventories/missal-designators-v1.toml`, gives every coherent
+missal its one designator. It also records each missal's kind, year, language,
+act, sources, witnesses and a qualification for its limits.
+`scripts/_missal_designators.py` validates it inside `check-calendar-masses`:
+
+- every reference resolves;
+- every catalog book state and every reader calendar has exactly one row;
+- designators are affirmative and end with their own year;
+- the short form is derived, not stored.
+
+`propers.yaml` no longer writes `edition` or `edition_short`, and a restatement
+is refused. `recensions.json` no longer labels book states. `_calendars` hands
+the registry's name to every producer, CLI and reader.
+
+The three reader calendars keep their opaque keys:
+
+| Key | Designator |
+| --- | --- |
+| `roman-pre-1955` | Roman Missal, 1920 typical edition |
+| `roman-1962` | Roman Missal, 1962 typical edition |
+| `postconciliar` | Roman Missal, 2002 third typical edition, 2008 emended reprint |
+
+The witness, cut-off and inheritance limits are in each row's qualification,
+including the December 1962 Saint Joseph insertion and the post-2008
+inscriptions. The rule, the evidence for reading `roman-pre-1955` as the 1920
+typical edition, the books judged witnesses, and the open class decisions are
+in `guidance/missals.md` §10.
+
+The earlier proposals "Bonn 2004 witness study" and "2008 base with recorded
+additions" are superseded. They name a witness and a hedge, and the validator
+refuses both. Their review records under
+`workflows/reviews/missal-version-nomenclature-2026-10-30/` remain historical
+evidence and were not applied. No stable ID, URL key or stored preference
+changed, so no compatibility alias is needed.
+
+**Reader inclusion (2026-11-14).** The Propers manifest offers a missal only
+where `mass-propers.contributed_bodies` counts at least one published Latin or
+English Proper body of its own, from canonical coverage. A recension's inherited
+bodies do not count. Day, Propers and Lectern offer the missals in both the
+rubrics index and that manifest. All three current missals qualify; the 1920
+calendar qualifies through its three Bonn-collated Pentecost prayers.
+
+**Remaining.**
+
+- The coordinator's single regeneration:
+  - the browser-product descriptor (`calendar`, `rubrics`, `propers` and
+    `ordinary` families; the registry is now a declared `calendar` and
+    `rubrics` input);
+  - the tracked discovery under `src/index/`.
+
+  Until then, tracked generated metadata still carries the old labels, and
+  descriptor-, index- and published-data-dependent checks cannot pass. Those
+  checks are CLI parity, Lectern indexed reading and the browser harnesses.
+- Re-capture the `tools/lectern` day snapshot example, which still quotes
+  "1962 Missal", once the index is refreshed.
+- The prototype reader shell's hard-coded "1962 Missal" and "Postconciliar
+  Missal" labels.
+- The library shelf label "Postconciliar Missal".
+- The maintainer's class decisions listed in `guidance/missals.md` §10.
 
 ## Encyclical completion and English coverage, 2026-10-29
 

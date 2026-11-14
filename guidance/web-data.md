@@ -814,7 +814,20 @@ Selected reading has a separate contract. A
 calendar, Mass key and generation identity must agree before rendering; forms,
 choices, qualifications and rights-filtered wording remain owned by the
 ordinary producer. The static manifest advertises a thin `reader_file` and
-selected Mass payloads for all three offered calendars. Publication checks
+selected Mass payloads for every offered calendar.
+
+**Which missals are offered.** The Propers manifest (`structure/propers/index.json`,
+and its tracked discovery counterpart under `src/index/`) lists a missal only
+where `mass-propers.contributed_bodies` counts at least one published Latin or
+English Proper body that the missal itself contributes, from the same canonical
+coverage the page reports. Scripture reconstructions, incipits, citations,
+placeholders and empty records are not bodies, and a recension's inherited
+bodies are its base's: in a Mass it does not state, only bodies collated to its
+own witness count. A calendar that fails stays generated data and is not a
+choice. The rubrics index still states every calendar whose precedence can be
+resolved; Day, Propers and Lectern offer the missals present in both. Each
+manifest row also carries the registry's `edition_qualification`, the line the
+readers print beside the designator in their Selection details. Publication checks
 prove that the thin metadata is the exact projection of the complete public
 calendar and that each selected payload contains its complete source Mass,
 with the same generation and qualifications. The thin index's `source_sha256`
@@ -894,9 +907,10 @@ index it classifies. It carries the precedence table with its locus, the bases
 that assign each mass to a row, the rules that constitute a day the index has no
 formulary for, the commemoration ceilings, the oration rules, and — as much as
 the rest — what it does not decide. It does not name the book: `edition` and
-`edition_short` are read from the mass index, which is the file that identifies
-the printing, and a rubrics source that writes either of them out again is
-refused by `check-calendar-masses`. Every rule names the rubric number behind
+`edition_short` are the book's designator and its derived short form, read from
+the missal designator registry (`src/sources/inventories/missal-designators-v1.toml`,
+see `guidance/missals.md` §10), and a mass index or rubrics source that writes
+either of them out again is refused by `check-calendar-masses`. Every rule names the rubric number behind
 it, and every rule is transcribed from a collated in-repository publication
 rather than read afresh. Where the file departs from that publication it says so
 in `divergences` and does not silently choose.

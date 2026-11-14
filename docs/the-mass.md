@@ -7,9 +7,10 @@ chant, a different prayer, a different pair of readings — and those are the
 **propers**. Knowing what Mass is being said on a given day means knowing which
 propers are appointed for it.
 
-Two books of propers are in use. The **1962 Roman Missal** is the last edition
-before the Second Vatican Council; the **postconciliar Missal** (here the
-*editio typica tertia* of 2008) replaced it. They share a rite, a language, and
+Two books of propers are in use. The **Roman Missal, 1962 typical edition** is
+the last edition before the Second Vatican Council; the **Roman Missal, 2002
+third typical edition, 2008 emended reprint** is the current book of the rite
+that replaced it. They share a rite, a language, and
 a great many actual texts, but they cut the year differently, name the slots
 differently, and read scripture on entirely different schedules. This repository
 models both, side by side, and refuses to harmonize them where they genuinely
