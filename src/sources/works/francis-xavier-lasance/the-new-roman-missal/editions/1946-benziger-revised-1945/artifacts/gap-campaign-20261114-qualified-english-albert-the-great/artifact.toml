@@ -1,0 +1,19 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-qualified-english-albert-the-great"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "qualified-public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Carried under src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml ([how_to_admit].english_carried; limit L6): English of the 1945 Lasance/Walsh expression translating Holy See Latin admitted on that basis (the Mass of St Albert the Great, inserted in the Missal after his 1931 canonization); registrations A 110108 (1937) and A 192159 (1945) were not renewed (src/sources/inventories/lasance-new-roman-missal-rights-v1.toml), and this printing's copyright leaf (PDF p. 10) reads Copyright, 1937, 1945, by Benziger Brothers, Inc. Published on a qualified basis (publication policy priority 6; confidence medium-low): English from a United States book whose own copyright was not renewed, translating a Holy See text first published in Vatican City in 1931-1975 whose Vatican term had, on this project's reading, expired before the 1996 U.S. restoration date. Not adjudicated; U.S. copyright only; not an approved liturgical translation."
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+transformation = "Transcribe each selected English prayer from the 1946 printing's page image, joining line wraps and line-end hyphenation and keeping the printing's words, capitals, spelling and pointing; one prayer per TSV row."
+provenance = "Read on the page images of PDF pp. 1307-1308 (printed pp. 1289-1290) of the exact 1946 printing on 2026-11-14 by the integrate lane; the OCR layer was not used as authority."
+retrieved = "2026-11-14"
+sha256 = "da2db53a5b9d2e1954be07137e355aad601ba8e391eff1b9a1fb95a6099587d3"
+byte_size = 948
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/gap-campaign-20261114-qualified-english-albert-the-great/text.tsv"
+encoding = "utf-8"
+indexable = true

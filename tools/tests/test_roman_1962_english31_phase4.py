@@ -986,6 +986,26 @@ def accepted_baptismal_water_note():
   raise AssertionError("baptismal-water transition changes more than its English witness_note")
  return before,after
 
+# Gap campaign 2026-11-14: the St Albert the Great Lasance English is relabelled qualified-public-domain
+# (rights record limit L6) over Latin admitted on the Holy See basis, re-witnessed in the 1946 printing.
+# Only witness/locator metadata and the translation's rights, source_id and notice change; the words do not.
+ALBERT_RELABEL=ROOT/"workflows/reviews/gap-campaign-2026-11-14/roman-1962/albert-the-great-qualified-relabel.json"
+ALBERT_RELABEL_SHA="849d0f754b6926f0d5cc79cb1ba311eec331cfd57c9e89f2805ae0388fa30a2f"
+ALBERT_FIELDS={"artifact_id","collated","ia_leaf","ia_leaf_range","passage_id","translations","witness","witness_note"}
+def accepted_albert_relabel():
+ raw=ALBERT_RELABEL.read_bytes()
+ if sha(raw)!=ALBERT_RELABEL_SHA:raise AssertionError("Albert the Great relabel declaration changed")
+ out={}
+ for row in json.loads(raw)["rows"]:
+  before,after=row["before_binding"],row["after_binding"]
+  changed={k for k in set(before)|set(after) if before.get(k)!=after.get(k)}
+  if not (changed<=ALBERT_FIELDS and len(before["translations"])==len(after["translations"])==1
+          and before["translations"][0]["text"]==after["translations"][0]["text"]
+          and after["translations"][0]["rights"]=="qualified-public-domain"):
+   raise AssertionError("Albert the Great relabel changes more than its witness metadata and rights label")
+  out[tuple(row["target"])]=(before,after)
+ return out
+
 def prior_english_row(entries,key):
  """A frozen prior row, with each accepted metadata successor replaced by its exact predecessor."""
  for target,accepted in ((HOLY_NAME,accepted_holy_name_locator),(BAPTISMAL_WATER,accepted_baptismal_water_note)):
@@ -993,6 +1013,10 @@ def prior_english_row(entries,key):
    before,after=accepted()
    if entries[key]!=after:raise AssertionError("accepted successor is not installed exactly: "+repr(key))
    return before
+ if key[0]=="s-alberti-magni-episcopi-confessoris-ecclesiae":
+  before,after=accepted_albert_relabel()[key]
+  if entries[key]!=after:raise AssertionError("accepted successor is not installed exactly: "+repr(key))
+  return before
  return entries[key]
 
 COVERAGE = {'roman-1962': (1427, 219, 1208), 'roman-pre-1955': (1378, 206, 1172)}
