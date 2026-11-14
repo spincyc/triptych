@@ -3181,6 +3181,40 @@ and are not promised by this work unit.
 
 <!-- promised-deliverable: missal-reader-english-completion-2026-10-29 -->
 
+**Public-domain witness campaign, 2026-11-14.** The maintainer asked for the
+remaining 1962 and postconciliar gaps to be closed through deep research into
+public-domain witnesses, with sub-agents. Season lanes re-researched every
+postconciliar gap and the 1962 core against pre-1931 witnesses; an independent
+lane re-read every admission on page images before installation, and an
+independent fidelity review (229 items, 52 Latin bodies re-read) was applied.
+The maintainer also approved, on 2026-11-14, applying the Italian l. 633/1941
+arts. 11/29 twenty-year term if it held; the researched verdict was
+holds-with-limits at medium-low confidence, now recorded in
+`src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml` and marked on
+every text it admits by the `qualified-public-domain` token. Owning readiness
+moved as follows (represented targets; denominators changed where stray slots
+were removed or antiphons gained English):
+
+| Report | Before | After |
+|---|---|---|
+| 1962 Propers en / la | 1433/1451 · 1430/1451 | 1451/1451 · 1451/1451 |
+| 1962 Ordinary en / la | 197/200 · 131/200 | 197/200 · 183/200 |
+| Postconciliar Propers en / la | 218/579 · 33/446 | 369/567 · 191/532 |
+| Postconciliar Ordinary en / la | 36/72 · 33/72 | 40/72 · 35/72 |
+
+The remaining 1962 Ordinary rows are 13 lay-missal headings with no Latin
+counterpart (typed not applicable), three structural appointment placeholders
+and one unmatched rubric. Most remaining postconciliar rows are reform-era
+compositions, centonisations or Nova Vulgata adaptations for which no
+public-domain witness can exist; each lane's verdicts and searched corpora are
+in the text-free receipts under `workflows/reviews/gap-campaign-2026-11-14/`.
+Open items from this campaign: the Pentecost Ember Saturday longer Sequence
+(conflicts with the appointed-across Sequence span), ritual carriers v2 (never
+adopted), part-by-part publication of multi-part slots (Exsultet, Litany,
+Crux fidelis; needs per-span availability), the Bergomense (Cagin 1900) lead,
+and mixed British/American spelling and conclusion conventions across older
+study English.
+
 **Resumed 2026-11-12.** The maintainer requests completed oration sourcing and
 clean, complete English and Latin rendering for every daily Mass of the 1962
 and postconciliar missals, with useful parallel source and implementation work.
