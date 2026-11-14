@@ -1,0 +1,83 @@
+{
+  "schema": "triptych-easter-litany-fire-registration-metadata-addendum/v1",
+  "predecessor_proposal": {
+    "path": ".scratch/modern-partition-easter/orations-litany-fire-install-proposal/litany-fire-proposal.json",
+    "sha256": "1c8828fed98694e449573d43311122df759f675c38a860c516cfd272a4124eda",
+    "bytes": 33321
+  },
+  "predecessor_candidate": {
+    "path": ".scratch/modern-partition-easter/orations/next-four-candidates.json",
+    "sha256": "d89bdef446e560cff9e3f5ead83c329a654c83999527134b467aa4daa9f09aac",
+    "bytes": 41006
+  },
+  "independent_source_merits": {
+    "path": ".scratch/modern-easter-next-four-review/review.json",
+    "sha256": "c7d8eb6fcb4c27eb89ff620a88dbf1cf291eda73627d56427198a1e9c3e3767d",
+    "bytes": 31227
+  },
+  "scope": "Exactly two accepted source-qualified adapted-study prayers. Original25sourcefiles and allold/moderncomparison/Englishbodybytes remain unchanged. This addendum corrects copied candidate-only ending descriptions; that erroneous seventh-reading clause was not present in any of the25sourcefiles.",
+  "corrections": [
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Prayer after the Litany",
+        "all",
+        1
+      ],
+      "field": "full_ending_sources[0].extent",
+      "before": "Complete Per Christum Dominum nostrum. and separate R.Amen. above Benedictio Candelarum; freshly inspected; only response is used for the seventh-reading Qui-vivit ending.",
+      "after": "The complete Per Christum Dominum nostrum formula and its distinct R. Amen. response are used for this recipient, from Pustet1862AP776/printed[106]. The source donor retains its actually printed full ending. The earlier seventh-reading-specific clause does not apply here.",
+      "old_body_sha256": "19de2829bbdbbbdb9b260309ae3d3af85da3e74e4d17d4845d14fa2b5931e6f4",
+      "English_body_sha256": "752e057602e112260b39d351fe19936b8fc5a18dfeed0df7f9e223ae1bce5626",
+      "modern_comparison_full_body_sha256": "35a11b58ec27bbd92802591daa503e842cfe00a787bd34b985f6f9afd8065d5e",
+      "independent_merits": "accept-qualified-adapted-study-source-basis",
+      "qualified_basis": "ambiguous-but-defensible",
+      "whole_expression": "The entire 1922 prayer already supplies the same address, divine compassion, sacramental presence, new peoples born from the font, adoption, humble human ministry and divine accomplishment, in that order. The 2014 body contracts the two immediately repeated presence invocations to one. The modifier for great compassion consequently attaches directly to sacraments, but the invocation and its referent were already linked by the old parallel clauses. The shortening does not compose a different operative request or select and rearrange independent prayers. The exact old standard short ending changes the conclusion, independently controlled by the actual 2014 full printing. Evaluating those changes together, this is a defensible finite adaptation of the complete old prayer under policy section 1 basis 6. This is not a finding that every omission is unoriginal or that the modern Latin is word-for-word old.",
+      "strongest_contrary": "Contracting parallel invocations is an editorial choice, and the new full body combines the shortened invocation with a different length of conclusion. Abridgments can carry original authorship even without newly coined words. Here the immediate repetition is contracted without altering the series or interrelation of the operative petitions, and the independently old conclusion is specifically printed for this occasion; those concrete features support the bounded basis despite the editorial-choice objection.",
+      "source_limits": "1922 AP368 printed254 is a font-introduction prayer. Official 2014 AP28 printed55 places this prayer after the Litany and prints ministerio, matching 1922. Secondary2002 AP218 instead prints mysterio. The proposed English follows ministerio and must retain that 2014 qualification. Secondary2002 makes this prayer conditional on persons to be baptized; a general every-Vigil appointment is not proved by the papal booklet.",
+      "ending_and_response": "2014 prints the complete Per Christum conclusion and separate Amen, so there is no speculative expansion. Pustet AP776 independently supplies the complete old formula and response. Preserve the actual 1922 long Per Dominum ending in donor evidence."
+    },
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Blessing of the Fire",
+        "all",
+        1
+      ],
+      "field": "full_ending_sources[0].extent",
+      "before": "Complete Per Christum Dominum nostrum. and separate R.Amen. above Benedictio Candelarum; freshly inspected; only response is used for the seventh-reading Qui-vivit ending.",
+      "after": "The complete Per Christum Dominum nostrum formula and its distinct R. Amen. response are used for this recipient, from Pustet1862AP776/printed[106]. The source donor retains its actually printed full ending. The earlier seventh-reading-specific clause does not apply here.",
+      "old_body_sha256": "8234af8fd67aba45ffa4738ea6298d7c2d4f6fc8eb6c847c9f28af4687440380",
+      "English_body_sha256": "c73b39bef692cd7db0acacd0095b85b473d676d6e10a7903ee8ad1295f38c92f",
+      "modern_comparison_full_body_sha256": "62e98794640083bf8f40530cd5bcc7ad801df550287b5b1cb860b01513b28d9c",
+      "independent_merits": "accept-qualified-adapted-study-source-basis",
+      "qualified_basis": "ambiguous-but-defensible",
+      "whole_expression": "The complete first 1862 fire prayer supplies the whole ordered expression: God gives the faithful the fire of divine radiance through the Son; sanctifies this new fire; kindles heavenly desire through the paschal feasts; brings pure minds to the everlasting feasts of radiance. The 2014 prayer removes the explanatory cornerstone apposition and the fire-source/use modifiers; it retains each governing request, actor, object, purpose and their order. The old same-Christ qualifier is removed in favor of a separately old complete standard short formula that is actually printed in 2014. Taken together these bounded elisions simplify the complete existing prayer without composing a different request or assembling pieces from the other two old fire prayers. The unchanged interconnected petitions provide a defensible basis 6 for this exact study adaptation; the finding is deliberately qualified rather than an assertion of exact old identity.",
+      "strongest_contrary": "Removing cornerstone and flint removes a deliberate Christological and material correspondence. An editor could claim authorship in the resulting selective abridgment; merely observing that no new words were added would be inadequate. The retained radiance/fire/desire/feast progression and every operative petition already form a single complete 1862 unit in the same order. The removed clauses explain the Son and fire already named rather than supplying a new structural arrangement after deletion. This supports an ambiguous but defensible finite publication decision, not a universal exemption for deletions.",
+      "source_limits": "Pustet AP265 first left-column prayer, complete through its Amen, is the source; the second and third fire prayers are not donors. The page is identified by the Sabbato Sancto opening and signature12*, without inventing a printed page number. Official2014 AP2 printed3 controls the comparison; secondary2002 AP205 agrees after mechanical normalization. Neither authenticates 2008.",
+      "ending_and_response": "Old Pustet AP265 actually prints Per eumdem Christum; preserve it as evidence. The 2014 target directly prints complete Per Christum and Amen. Pustet AP776 independently supplies the exact complete short formula and separate response used for the new study text."
+    }
+  ],
+  "source_recovery": "Each of the25originalmanifested files was copied independently and hashchecked; no oldvalidationroot or hardlink was used.",
+  "runtime_limit": "Existing unbound projectstudy route checks exactowner/incipit and carries qualification but does not runtimeenforce source/Englishbodyhashes. Exact finite source adoption and installer checks must enforce the reviewed bytes. No source_latin binding or Latinadmission is supplied.",
+  "unselected_original_research_units_remain_withheld": [
+    [
+      "easter-vigil",
+      "main",
+      "Collect",
+      "all",
+      1
+    ],
+    [
+      "easter-sunday",
+      "main",
+      "Collect",
+      "all",
+      1
+    ]
+  ],
+  "Root_merits_and_registration_adoption": "pending",
+  "canonical_writes": false
+}
