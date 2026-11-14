@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.postconciliar-latin-proper-editorial-projection.2026-11-14-easter-thursday-communion-public-domain.easter-thursday-communion-2-cor-5-15-f8dee96c"
+edition_id = "edition.triptych.postconciliar-latin-proper-editorial-projection.2026-11-14-easter-thursday-communion-public-domain"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_jurisdiction = "United States"
+rights_basis = "The Tours Mame 1922 printing is public domain in the United States by date of publication and carries every word of this antiphon as a contiguous printed span. Declared orthography, case and pointing changes add no authorship. Project layout alone is offered under CC BY 4.0; underlying received Latin is excluded. The 2002 edition supplies text-free comparison only."
+sha256 = "f8dee96c7a22c1943392b436684c534718658864abddb15f09c8d38b7702dedf"
+byte_size = 130
+path = "src/sources/works/triptych/postconciliar-latin-proper-editorial-projection/editions/2026-11-14-easter-thursday-communion-public-domain/artifacts/easter-thursday-communion-2-cor-5-15-f8dee96c/latin.txt"
+retrieved = "2026-11-14"
+encoding = "utf-8"
+indexable = true
+projected_from = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.gap-campaign-20261114-paul-cross-alleluia-verse-67fd627f"]
+provenance = "Projected on 2026-11-14 from the checked Mame 1922 transcription to the 2002 target's spelling and pointing."
+transformation = "read the 2002 target on its digitally typeset text layer cross-checked against the rendered page, and the 1962 carrier on its page images; join printed line wraps; remove stress accents; expand printed ae/oe ligatures to ae/oe; use the calendar's i orthography; retain the 2002 target's pointing, capitals, line division and extent."

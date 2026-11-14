@@ -70,10 +70,27 @@ def _legacy_passage_exact(passage, artifact):
             and _digest(passage) == expected)
 
 
+# The general `qualified-public-domain` token (`_qualified_public_domain`) owns
+# its own rows. The finite 2026-10-29 roman-1962 scopes are keyed by
+# mass/form/proper without a calendar, so a postconciliar row on the general
+# token that merely shares such a key (good-friday Improperia) is not theirs;
+# a row that reuses any of their bodies, carriers, sources or markers still is.
+GENERAL_QUALIFIED_BASIS = "qualified-public-domain"
+
+
+def _finite_20261029_claims(row):
+    if not finite_20261029.claims_row(row):
+        return False
+    if not isinstance(row, dict) or row.get("publication_basis") != GENERAL_QUALIFIED_BASIS:
+        return True
+    return finite_20261029.claims_row(
+        {field: value for field, value in row.items() if field not in KEY_FIELDS})
+
+
 def row_problems(row):
     if finite_postconciliar.claims_row(row):
         return finite_postconciliar.row_problems(row)
-    if not _legacy_row_exact(row) and finite_20261029.claims_row(row):
+    if not _legacy_row_exact(row) and _finite_20261029_claims(row):
         return finite_20261029.row_problems(row)
     if not _qualified_row(row):
         return []
@@ -92,7 +109,7 @@ def authority_problems(root, *, row=None):
         return finite_postconciliar.authority_problems(root, row=row)
     if (row is not None and not _legacy_row_exact(row)
             and not _legacy_row_exact(row, inherited=True)
-            and finite_20261029.claims_row(row)):
+            and _finite_20261029_claims(row)):
         return finite_20261029.authority_problems(root)
     problems = []
     root = Path(root).resolve()
@@ -126,7 +143,7 @@ def inherited_row_exact(row):
         return True
     if _legacy_row_exact(row):
         return False
-    if finite_20261029.claims_row(row):
+    if _finite_20261029_claims(row):
         return finite_20261029.inherited_row_exact(row)
     key = tuple(row.get(field) for field in KEY_FIELDS)
     try:
@@ -141,7 +158,7 @@ def source_problems(row, sources, *, effective_calendar=""):
         return finite_postconciliar.source_problems(row, sources, effective_calendar=effective_calendar)
     if (not _legacy_row_exact(row)
             and not _legacy_row_exact(row, inherited=True)
-            and finite_20261029.claims_row(row)):
+            and _finite_20261029_claims(row)):
         return finite_20261029.source_problems(
             row, sources, effective_calendar=effective_calendar)
     if not _qualified_row(row):

@@ -18365,13 +18365,15 @@ sections:
           basis: "Said after the prostration and silent prayer, without the invitation Oremus. Either of the two prayers may be used."
         incipit: Reminiscere miserationum tuarum, Domine
         source: composed
+        text: "Reminiscere miserationum tuarum, Domine, et famulos tuos aeterna protectione sanctifica, pro quibus Christus, Filius tuus, per suum cruorem instituit paschale mysterium. Qui vivit et regnat in saecula saeculorum.\nR. Amen.\n"
+        text_structure:
+          text_sha256: "4adf6a6d46197d98e01fd3bb80b0a45f7c299a7eaff7b2f7323361c874e709ce"
+          checked: "2002 target and its 1962/1951 carrier read on 2026-11-14 (integrate-1962 lane); choir, division and response markers are nonspoken rubrics."
+          actions:
+          - kind: rubric
+            offset: 213
+            text: "R."
         notes: Said after the prostration and silent prayer, without the invitation Oremus.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Prayer (alternative)
         ordinary_disposition:
           kind: alternative
@@ -18545,18 +18547,143 @@ sections:
       - name: Improperia
         incipit: Popule meus, quid feci tibi?
         source: mixed
+        text: "I\n1 et 2 Popule meus, quid feci tibi?\nAut in quo contristavi te? Responde mihi!\n1 Quia eduxi te de terra Aegypti:\nparasti Crucem Salvatori tuo.\n1 Hagios o Theos.\n2 Sanctus Deus.\n1 Hagios Ischyros.\n2 Sanctus Fortis.\n1 Hagios Athanatos, eleison himas.\n2 Sanctus Immortalis, miserere nobis.\n1 et 2 Quia eduxi te per desertum quadraginta annis,\net manna cibavi te,\net introduxi te in terram satis bonam:\nparasti Crucem Salvatori tuo.\n1 Hagios o Theos.\n2 Sanctus Deus.\n1 Hagios Ischyros.\n2 Sanctus Fortis.\n1 Hagios Athanatos, eleison himas.\n2 Sanctus Immortalis, miserere nobis.\n\n1 et 2 Quid ultra debui facere tibi, et non feci?\nEgo quidem plantavi te\nvineam electam meam speciosissimam:\net tu facta es mihi nimis amara:\naceto namque sitim meam potasti,\net lancea perforasti latus Salvatori tuo.\n1 Hagios o Theos.\n2 Sanctus Deus.\n1 Hagios Ischyros.\n2 Sanctus Fortis.\n1 Hagios Athanatos, eleison himas.\n2 Sanctus Immortalis, miserere nobis.\n\nII\nCantores:\nEgo propter te flagellavi Aegyptum\ncum primogenitis suis:\net tu me flagellatum tradidisti.\n1 et 2 repetunt:\nPopule meus, quid feci tibi?\nAut in quo contristavi te? Responde mihi!\nCantores:\nEgo eduxi te de Aegypto,\ndemerso Pharaone in Mare Rubrum:\net tu me tradidisti principibus sacerdotum.\n1 et 2 repetunt:\nPopule meus...\nCantores:\nEgo ante te aperui mare:\net tu aperuisti lancea latus meum.\n1 et 2 repetunt:\nPopule meus...\nCantores:\nEgo ante te praeivi in columna nubis:\net tu me duxisti ad praetorium Pilati.\n1 et 2 repetunt:\nPopule meus...\nCantores:\nEgo te pavi manna per desertum:\net tu me cecidisti alapis et flagellis.\n1 et 2 repetunt:\nPopule meus...\nCantores:\nEgo te potavi aqua salutis de petra:\net tu me potasti felle et aceto.\n1 et 2 repetunt:\nPopule meus...\nCantores:\nEgo propter te Chananaeorum reges percussi:\net tu percussisti arundine caput meum.\n1 et 2 repetunt:\nPopule meus...\nCantores:\nEgo dedi tibi sceptrum regale:\net tu dedisti capiti meo spineam coronam.\n1 et 2 repetunt:\nPopule meus...\nCantores:\nEgo te exaltavi magna virtute:\net tu me suspendisti in patibulo Crucis.\n1 et 2 repetunt:\nPopule meus...\n"
+        text_structure:
+          text_sha256: "22cb3b5676a7bbc4c3ffb22de2a1fa02827d21d8738a4d92e05999ba5dcf09df"
+          checked: "2002 target and its 1962/1951 carrier read on 2026-11-14 (integrate-1962 lane); choir, division and response markers are nonspoken rubrics."
+          actions:
+          - kind: rubric
+            offset: 0
+            text: "I"
+          - kind: rubric
+            offset: 2
+            text: "1 et 2"
+          - kind: rubric
+            offset: 80
+            text: "1"
+          - kind: rubric
+            offset: 144
+            text: "1"
+          - kind: rubric
+            offset: 162
+            text: "2"
+          - kind: rubric
+            offset: 178
+            text: "1"
+          - kind: rubric
+            offset: 197
+            text: "2"
+          - kind: rubric
+            offset: 215
+            text: "1"
+          - kind: rubric
+            offset: 250
+            text: "2"
+          - kind: rubric
+            offset: 288
+            text: "1 et 2"
+          - kind: rubric
+            offset: 430
+            text: "1"
+          - kind: rubric
+            offset: 448
+            text: "2"
+          - kind: rubric
+            offset: 464
+            text: "1"
+          - kind: rubric
+            offset: 483
+            text: "2"
+          - kind: rubric
+            offset: 501
+            text: "1"
+          - kind: rubric
+            offset: 536
+            text: "2"
+          - kind: rubric
+            offset: 575
+            text: "1 et 2"
+          - kind: rubric
+            offset: 792
+            text: "1"
+          - kind: rubric
+            offset: 810
+            text: "2"
+          - kind: rubric
+            offset: 826
+            text: "1"
+          - kind: rubric
+            offset: 845
+            text: "2"
+          - kind: rubric
+            offset: 863
+            text: "1"
+          - kind: rubric
+            offset: 898
+            text: "2"
+          - kind: rubric
+            offset: 937
+            text: "II"
+          - kind: rubric
+            offset: 940
+            text: "Cantores:"
+          - kind: rubric
+            offset: 1041
+            text: "1 et 2 repetunt:"
+          - kind: rubric
+            offset: 1129
+            text: "Cantores:"
+          - kind: rubric
+            offset: 1241
+            text: "1 et 2 repetunt:"
+          - kind: rubric
+            offset: 1273
+            text: "Cantores:"
+          - kind: rubric
+            offset: 1343
+            text: "1 et 2 repetunt:"
+          - kind: rubric
+            offset: 1375
+            text: "Cantores:"
+          - kind: rubric
+            offset: 1462
+            text: "1 et 2 repetunt:"
+          - kind: rubric
+            offset: 1494
+            text: "Cantores:"
+          - kind: rubric
+            offset: 1576
+            text: "1 et 2 repetunt:"
+          - kind: rubric
+            offset: 1608
+            text: "Cantores:"
+          - kind: rubric
+            offset: 1688
+            text: "1 et 2 repetunt:"
+          - kind: rubric
+            offset: 1720
+            text: "Cantores:"
+          - kind: rubric
+            offset: 1813
+            text: "1 et 2 repetunt:"
+          - kind: rubric
+            offset: 1845
+            text: "Cantores:"
+          - kind: rubric
+            offset: 1928
+            text: "1 et 2 repetunt:"
+          - kind: rubric
+            offset: 1960
+            text: "Cantores:"
+          - kind: rubric
+            offset: 2042
+            text: "1 et 2 repetunt:"
         verses:
         - book: Micah
           ranges:
           - begin: {chapter: 6, verse: 3}
             end: {chapter: 6, verse: 4}
           ref: Micah 6:3-4
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Hymn at the Adoration of the Holy Cross
         incipit: Crux fidelis, inter omnes arbor una nobilis
         source: mixed
@@ -18644,31 +18771,63 @@ sections:
       - name: Inscription of the Paschal Candle
         incipit: Christus heri et hodie
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        text: "1. Christus heri et hodie;\n2. Principium et Finis;\n3. Alpha;\n4. et Omega.\n5. Ipsius sunt tempora;\n6. et saecula.\n7. Ipsi gloria et imperium;\n8. per universa aeternitatis saecula. Amen.\n"
+        text_structure:
+          text_sha256: "319ca85299fc5a09e35e30828e8763d0bda92be8209c60fef6ed935aa647c97b"
+          checked: "2002 target and its 1962/1951 carrier read on 2026-11-14 (integrate-1962 lane); choir, division and response markers are nonspoken rubrics."
+          actions:
+          - kind: rubric
+            offset: 0
+            text: "1."
+          - kind: rubric
+            offset: 27
+            text: "2."
+          - kind: rubric
+            offset: 51
+            text: "3."
+          - kind: rubric
+            offset: 61
+            text: "4."
+          - kind: rubric
+            offset: 74
+            text: "5."
+          - kind: rubric
+            offset: 98
+            text: "6."
+          - kind: rubric
+            offset: 113
+            text: "7."
+          - kind: rubric
+            offset: 141
+            text: "8."
       - name: Insertion of the Grains of Incense
         incipit: Per sua sancta vulnera gloriosa
         source: composed
+        text: "1. Per sua sancta vulnera\n2. gloriosa\n3. custodiat\n4. et conservet nos\n5. Christus Dominus. Amen.\n"
+        text_structure:
+          text_sha256: "a1e574b8e32e8d910dea1c90ce9eec78bdabad5ea41c8b17851cb0ca15da843b"
+          checked: "2002 target and its 1962/1951 carrier read on 2026-11-14 (integrate-1962 lane); choir, division and response markers are nonspoken rubrics."
+          actions:
+          - kind: rubric
+            offset: 0
+            text: "1."
+          - kind: rubric
+            offset: 26
+            text: "2."
+          - kind: rubric
+            offset: 38
+            text: "3."
+          - kind: rubric
+            offset: 51
+            text: "4."
+          - kind: rubric
+            offset: 71
+            text: "5."
         notes: The five grains of incense may be inserted in the form of a cross.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Lighting of the Paschal Candle
         incipit: Lumen Christi gloriose resurgentis
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        text: "Lumen Christi gloriose resurgentis\ndissipet tenebras cordis et mentis.\n"
       - name: Acclamation in the Procession
         incipit: Lumen Christi
         source: composed
@@ -23952,13 +24111,8 @@ sections:
               chapter: 5
               verse: 15
           ref: 2 Corinthians 5:15
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008
-        notes: "Source appointment antiphonary:easter-3-thursday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 63 / printed page 55, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. This is the weekday Mass appointed under the source weekday heading. Dated 2026-11-14 (gap campaign p3-easter-pentecost): the Missal's adapted antiphon is its own body beside the retained Scripture citation; no public-domain witness prints it word for word, so its Latin stays an explicit witness gap. Project study English of the adapted body is recorded in the translation overlay."
+        text: "Pro omnibus mortuus est Christus, ut et qui vivunt iam non sibi vivant, sed ei qui pro ipsis mortuus est et resurrexit, alleluia.\n"
+        notes: "Source appointment antiphonary:easter-3-thursday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 63 / printed page 55, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. This is the weekday Mass appointed under the source weekday heading. Since 2026-11-14 the Latin body is supplied on the plain public-domain basis: every word stands, as a contiguous printed span, in the Tours Mame 1922 Missal, printed p. 577 (St Paul of the Cross, Alleluia first verse); see the Latin provenance ledger."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: The Lectionary citations were read at 200
         dpi in the page images of the Ordo lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
         at artifact page 204, printed page 150, n. 276, the day headed there as Thursday, numbered there as feria 5, under
@@ -25212,13 +25366,8 @@ sections:
               chapter: 5
               verse: 15
           ref: 2 Corinthians 5:15
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008
-        notes: "Source appointment antiphonary:easter-5-thursday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 67 / printed page 59, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. This is the weekday Mass appointed under the source weekday heading. Dated 2026-11-14 (gap campaign p3-easter-pentecost): the Missal's adapted antiphon is its own body beside the retained Scripture citation; no public-domain witness prints it word for word, so its Latin stays an explicit witness gap. Project study English of the adapted body is recorded in the translation overlay."
+        text: "Pro omnibus mortuus est Christus, ut et qui vivunt iam non sibi vivant, sed ei qui pro ipsis mortuus est et resurrexit, alleluia.\n"
+        notes: "Source appointment antiphonary:easter-5-thursday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 67 / printed page 59, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. This is the weekday Mass appointed under the source weekday heading. Since 2026-11-14 the Latin body is supplied on the plain public-domain basis: every word stands, as a contiguous printed span, in the Tours Mame 1922 Missal, printed p. 577 (St Paul of the Cross, Alleluia first verse); see the Latin provenance ledger."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: The Lectionary citations were read at 200
         dpi in the page images of the Ordo lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
         at artifact page 208, printed page 154, n. 288, the day headed there as Thursday, numbered there as feria 5, under
@@ -29475,12 +29624,7 @@ sections:
       - name: Prayer after Communion
         incipit: Vivificet nos, quaesumus, Domine
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        text: "Vivificet nos, quaesumus, Domine, divina quam obtulimus et sumpsimus hostia, ut, perpetua tibi caritate coniuncti, fructum qui semper maneat afferamus. Per Christum Dominum nostrum.\n"
     - key: ot-14
       name: Fourteenth Sunday in Ordinary Time
       registry: pc-s40

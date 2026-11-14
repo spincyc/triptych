@@ -60,7 +60,7 @@ class LasanceAdventFirstThreeTests(unittest.TestCase):
             self.assertEqual((row['translations'][0]['lang'], row['translations'][0]['rights'], row['translations'][0]['source_id']), ('en', 'public-domain', EDITION))
             self.assertFalse({'speaker', 'actor', 'text_structure'} & set(row))
             self.assertIn('Former Cummiskey1861 lead remains unbound', row['witness_note'])
-        absences = [r for r in self.document['untranslated'] if r['mass'] == 'advent-1' and r['proper'] in EXPECTED]
+        absences = [r for r in self.document.get("untranslated", []) if r['mass'] == 'advent-1' and r['proper'] in EXPECTED]
         self.assertEqual(absences, [])
 
     def test_exact_payload_one_row_passages_and_private_page_proofs(self):

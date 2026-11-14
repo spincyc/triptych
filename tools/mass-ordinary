@@ -88,6 +88,18 @@ The base source row, its witness-specific absence, its metadata and order stay
 unchanged. Only the independently identified language side and its overall
 availability are added; a held side is never replaced by this path.
 
+An added side is not thereby a translation's source. Where the 1861 lay missal
+prints its own English direction at a place the Missal prints a Latin rubric,
+the added Latin side declares `counterpart = "rubric-at-place"`: the Missal's
+rubric at that place, beside a lay paraphrase that does not translate it. The
+claim is refused on anything but a rubric or heading, without a held side of
+the base witness, or without a `reading_note` saying so at the element.
+
+A heading or rubric may also take an `english_replacements` entry, carrying
+only `element`, `replaces` and `english`, where the base witness's English
+states a discipline the target edition does not; the replaced row stays in its
+artifact.
+
 That difference is a claim about identity, and an unlabelled claim is the failure
 this layer exists to prevent. A reader looking at a page headed `Missale Romanum,
 editio typica tertia` and seeing Latin under an element will take it for that
@@ -209,7 +221,7 @@ from _browser_products import ProductError, assert_working_output, committed_dat
 import _calendars  # noqa: E402
 import _missal_coverage  # noqa: E402
 import _qualified_public_domain  # noqa: E402
-from _ordinary_text import element_lines  # noqa: E402
+from _ordinary_text import element_lines, witness_notices  # noqa: E402
 from _tooling import (  # noqa: E402
     Example,
     Style,
@@ -590,7 +602,24 @@ ADDITIONAL_TEXT_FIELDS = {"element", "english", "latin", "english_turns",
                           "latin_turns", "turns_basis"}
 ADDITIONAL_SIDE_FIELDS = {"witness", "artifact", "element", "elements", "column",
                           "relation", "collation", "collation_finding",
-                          "target_wording", "note", "reading_note", "applicability"}
+                          "target_wording", "note", "reading_note", "applicability",
+                          "counterpart"}
+
+# What an added language side IS to the element's held side, where it is not a
+# translation of it.  `relation` says how the added text stands to the target
+# edition; it cannot say how the two languages of one element stand to each
+# other, and an artifact frame otherwise invites the reader to take facing
+# columns for a text and its translation.
+#
+#   rubric-at-place  the added text is the Missal's own rubric or heading
+#                    printed at this element's place; the held side is the
+#                    base witness's own direction (a lay paraphrase), not a
+#                    translation of it, and the added text is not its source.
+#
+# Declared only on an `additional_texts` side, only for a rubric or heading,
+# only beside a held side of the base witness, and only with a `reading_note`
+# that says it at the element.  Absent means no such claim is made.
+COUNTERPARTS = ("rubric-at-place",)
 
 # A complete, separately witnessed English body may replace a defective or
 # abbreviated base rendering. The old source artifact remains immutable, and
@@ -598,6 +627,10 @@ ADDITIONAL_SIDE_FIELDS = {"witness", "artifact", "element", "elements", "column"
 # a fallback or a licence to rewrite an edition's own words.
 ENGLISH_REPLACEMENT_FIELDS = {"element", "replaces", "english", "english_turns",
                               "turns_basis"}
+# A heading or rubric has no speaker and no turns: its replacement names the
+# exact old body and the new English block, and nothing else.
+UNSPOKEN_ENGLISH_REPLACEMENT_FIELDS = {"element", "replaces", "english"}
+SPOKEN_KINDS = ("prayer", "dialogue", "form")
 ENGLISH_REPLACES_FIELDS = {"witness", "artifact", "text_sha256"}
 
 # The same guard for an independently witnessed Latin body.
@@ -2344,9 +2377,24 @@ def artifact_additional_texts(
             raise SourceError(f"{where} for {local} needs a nonempty turns_basis for its source-row partition")
         if turns not in entry and basis is not None:
             raise SourceError(f"{where} for {local} states turns_basis without a turn partition")
-        translation = side_text(entry, lang, witnesses, restricted, library, key, name)
+        translation = side_text(entry, lang, witnesses, restricted, library, key, name,
+                                counterpart_allowed=True)
         if translation is None:
             raise SourceError(f"{where} for {local} did not resolve its declared {lang} side")
+        if "counterpart" in translation:
+            held_sides = [row for row in element.get("translations") or []
+                          if row["lang"] != lang]
+            if element.get("kind") not in ("rubric", "heading"):
+                raise SourceError(
+                    f"{where} for {local} declares counterpart on a {element.get('kind')}; "
+                    "it is defined for a rubric or heading only"
+                )
+            if (len(held_sides) != 1
+                    or held_sides[0].get("source_id") != section.get("witness")):
+                raise SourceError(
+                    f"{where} for {local} declares counterpart without a held side of "
+                    "the base witness for it to stand beside"
+                )
         element["translations"] = [*(element.get("translations") or []), translation]
         element["absent"][side] = None
 
@@ -2362,6 +2410,11 @@ def artifact_english_replacements(
     Latin, or inherit the old witness's turn partition. Application follows the
     base source's cuts and precedes conditional-span validation, so a replacement
     must still contain every declared conditional phrase exactly once.
+
+    A heading or rubric may be replaced too, where the base witness's words
+    state a discipline the target edition does not (the 1861 Preface headings).
+    Such an entry carries exactly `element`, `replaces` and `english`: no
+    speaker, turn partition or turns basis, because none applies.
     """
     declared = section.get("english_replacements")
     if declared is None:
@@ -2372,18 +2425,22 @@ def artifact_english_replacements(
     by_key = {element["key"].split("/", 1)[1]: element for element in elements}
     held = {}
     for entry in declared:
-        if not isinstance(entry, dict) or set(entry) != ENGLISH_REPLACEMENT_FIELDS:
-            raise SourceError(f"{where} entries carry exactly "
-                              f"{', '.join(sorted(ENGLISH_REPLACEMENT_FIELDS))}")
+        if not isinstance(entry, dict):
+            raise SourceError(f"{where} entries must be tables")
         local = entry.get("element")
         if not isinstance(local, str) or local not in by_key or local in held:
             raise SourceError(f"{where} must name each existing emitted element once")
         element = by_key[local]
+        spoken = element["kind"] in SPOKEN_KINDS
+        expected = ENGLISH_REPLACEMENT_FIELDS if spoken else UNSPOKEN_ENGLISH_REPLACEMENT_FIELDS
+        if set(entry) != expected:
+            raise SourceError(f"{where} for {local} ({element['kind']}) carries exactly "
+                              f"{', '.join(sorted(expected))}")
         if (local not in source_keys and element.get("occurrence_of") not in
                 {section["key"] + "/" + key for key in source_keys}):
             raise SourceError(f"{where} for {local} is not backed by the base English artifact")
-        if element["kind"] not in ("prayer", "dialogue", "form"):
-            raise SourceError(f"{where} for {local} must replace a spoken body")
+        if element["kind"] not in (*SPOKEN_KINDS, "heading", "rubric"):
+            raise SourceError(f"{where} for {local} must replace a spoken body, heading or rubric")
         replaces = entry.get("replaces")
         if not isinstance(replaces, dict) or set(replaces) != ENGLISH_REPLACES_FIELDS:
             raise SourceError(f"{where} for {local} replaces carries exactly "
@@ -2410,6 +2467,13 @@ def artifact_english_replacements(
             raise SourceError(f"{where} for {local} needs distinct nonempty source element keys")
         if block.get("relation") not in RELATIONS:
             raise SourceError(f"{where} for {local} needs an explicit source relation")
+        if not spoken:
+            translation = side_text(entry, "en", witnesses, restricted, library,
+                                    element["key"], name)
+            if translation is None or translation.get("turns"):
+                raise SourceError(f"{where} for {local} must resolve one unpartitioned English body")
+            held[local] = {"replaces": replaces, "translation": translation}
+            continue
         if not isinstance(entry.get("turns_basis"), str) or not entry["turns_basis"].strip():
             raise SourceError(f"{where} for {local} needs a source-specific turns_basis")
         translation = side_text(entry, "en", witnesses, restricted, library, element["key"], name)
@@ -3155,13 +3219,16 @@ def translation_applicability(block: dict, key: str, lang: str, name: str) -> di
 
 
 def side_text(entry: dict, lang: str, witnesses: dict, restricted: dict, library: dict,
-              key: str, name: str) -> dict | None:
+              key: str, name: str, *, counterpart_allowed: bool = False) -> dict | None:
     """One element's text in one language, from whichever edition holds it.
 
     Resolved identically for both languages. What differs between them is
     declared in the block --- the witness, the artifact, which of its elements,
     and the column --- and never inferred from which language is being asked
     for, so that adding the Latin could not quietly change what the English did.
+
+    `counterpart` (COUNTERPARTS) is accepted only where the caller is the
+    `additional_texts` join, which checks the element side of the claim.
     """
     side = SIDE_BLOCKS[lang]
     block = entry.get(side)
@@ -3221,6 +3288,25 @@ def side_text(entry: dict, lang: str, witnesses: dict, restricted: dict, library
     scope = translation_applicability(block, key, lang, name)
     if scope is not None:
         translation["applicability"] = scope
+    if "counterpart" in block:
+        counterpart = block["counterpart"]
+        if not counterpart_allowed:
+            raise SourceError(
+                f"{name}: element {key} declares counterpart for {lang} outside an "
+                "additional_texts side; only an added language may say it is not "
+                "the held language's source"
+            )
+        if counterpart not in COUNTERPARTS:
+            raise SourceError(
+                f"{name}: element {key} declares counterpart {counterpart!r} for "
+                f"{lang}; one of {', '.join(COUNTERPARTS)} is required"
+            )
+        if not translation.get("reading_note"):
+            raise SourceError(
+                f"{name}: element {key} declares counterpart {counterpart!r} for {lang} "
+                "without a reading_note; the relation must be said beside the words"
+            )
+        translation["counterpart"] = counterpart
     turns = structured_turns(
         entry, SIDE_BLOCKS[lang], library, artifact_id, named, column, key, name, text
     )
@@ -4324,6 +4410,7 @@ def render_ordinary(
             for condition in element.get("conditions") or []
             if condition.get("kind") == "unappointed"
         }
+        notices = witness_notices(one)
         for line in style.heading(one["title"], rule="="):
             print(line)
         if one.get("edition"):
@@ -4348,7 +4435,7 @@ def render_ordinary(
                     continue
                 for line in element_lines(
                     element, lang, style, indent="  ",
-                    show_rubrics=show_rubrics, why=verbose,
+                    show_rubrics=show_rubrics, why=verbose, notices=notices,
                 ):
                     print(line)
         if verbose:

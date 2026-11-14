@@ -133,7 +133,7 @@ class Roman1962SummerCommemorationAppointmentsTest(unittest.TestCase):
                 identity=(key,'main',name,'all',1)
                 def same(row):
                     return tuple(row.get(field) for field in ['mass','form_id','proper','cycle','occurrence'])==identity
-                self.assertFalse(any(same(row) and row.get('lang')=='en' for row in self.english['untranslated']))
+                self.assertFalse(any(same(row) and row.get('lang')=='en' for row in self.english.get("untranslated", [])))
                 rows=[r for r in self.english.get('entries',[]) if same(r)]
                 self.assertEqual(len(rows),1)
                 self.assertEqual([t['lang'] for t in rows[0]['translations']],['en'])

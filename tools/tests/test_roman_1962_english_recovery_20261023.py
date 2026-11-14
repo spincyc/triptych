@@ -338,7 +338,7 @@ class EnglishRecovery20261023Tests(unittest.TestCase):
         self.assertFalse(self.trouble)
         self.assertEqual(set(self.entries), set(ORACLES))
         missing = {self.p.translation_record_identity(r, self.doc)
-                   for r in tomllib.loads(LEDGER.read_text())["untranslated"]}
+                   for r in tomllib.loads(LEDGER.read_text()).get("untranslated", [])}
         self.assertFalse(set(ORACLES) & missing)
         for key, entry in self.entries.items():
             with self.subTest(target=key):

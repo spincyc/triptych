@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.dimissio-paschalis-la-20261114"
+edition_id = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The paschal dismissal and its response are printed in Pustet, Ratisbon 1862, printed p. 212. The registered whole facsimile establishes the publication-date and mechanical-reproduction United States public-domain basis. This faithful transcription adds no new wording; no chant, staff, rubric or modern target typography is reproduced."
+provenance = "Read directly on 2026-11-14 from a fresh 200 dpi raster of the complete hash-matched Pustet 1862 PDF (sha256 363d6fc3f556bf596f3b56d4efcb7be849b7e9904304ba886b7977c39e8f7474), artifact p. 298 / printed p. 212, right column, under the rubric for the Holy Saturday Mass; compared with the secondary 2002 Missal (Pentecost Sunday, Mass during the Day, artifact p. 267, text layer and rendered page) and with Lasance 1946 printed p. 537."
+retrieved = "2026-11-14"
+sha256 = "5ec17927986dbe0d253d533bb07e5134a0bb4bd1f2efb4d35058aa28b28e3abf"
+byte_size = 396
+path = "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/dimissio-paschalis-la-20261114/text.tsv"
+derived_from = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3"
+transformation = "Transcribe the two chanted lines as words: join the chant syllables and the line-end division, keep the source's j, stress accents and pointing, and render the barred response sign as R. Supply no comma, word or V. the page does not print."
+indexable = true
+encoding = "utf-8"
+notes = "Header and two rows, element_key dimissio-paschalis. The words agree with the 2002 Missal's paschal dismissal 'Ite, missa est, alleluia, alleluia. R. Deo gratias, alleluia, alleluia.' under j/i, accent and pointing (the 2002 comma after Ite) transformations only. The alternative formula the 2008 Variationes add for this formulary (Notitiae 44, entry for Missal p. 448) is new matter and not witnessed here."

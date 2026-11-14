@@ -1,0 +1,297 @@
+{
+ "schema": "triptych.gap-campaign-postconciliar-admission.v1",
+ "date": "2026-11-14",
+ "lane": "integrate-1962",
+ "batch": "C: postconciliar qualified and plain-public-domain finds (lane p6)",
+ "decisions": "DECISIONS 4a, 5, 9d, 11a, 12, 13 of the 2026-11-14 gap campaign",
+ "method": "2002 targets read on the secondary reproduction's text layer and rendered pages; 1962 carriers on CMAA page images; Ordo Sabbati Sancti 1951 pp. 5-6, 10-11; Mame 1922 PDF p. 691 at 400 dpi; Lasance 1946 PDF pp. 1003 and 1436. Study English from the Latin only.",
+ "records": [
+  {
+   "i": 107,
+   "slot": [
+    "good-friday",
+    "Prayer"
+   ],
+   "latin_sha256": "4adf6a6d46197d98e01fd3bb80b0a45f7c299a7eaff7b2f7323361c874e709ce",
+   "english": {
+    "route": "existing reviewed study English (2026-10-29) bound to the admitted Latin, english_study notice added; p6 draft not used"
+   },
+   "removed_untranslated": []
+  },
+  {
+   "i": 118,
+   "slot": [
+    "good-friday",
+    "Improperia"
+   ],
+   "latin_sha256": "22cb3b5676a7bbc4c3ffb22de2a1fa02827d21d8738a4d92e05999ba5dcf09df",
+   "english": null,
+   "removed_untranslated": []
+  },
+  {
+   "i": 123,
+   "slot": [
+    "easter-vigil",
+    "Inscription of the Paschal Candle"
+   ],
+   "latin_sha256": "319ca85299fc5a09e35e30828e8763d0bda92be8209c60fef6ed935aa647c97b",
+   "english": {
+    "route": "bound study translation, english_study notice",
+    "note": "p6 draft accepted, divided to the eight numbered Latin divisions and worded as the roman-1962 study draft of the same formula.",
+    "sha256": "f09fd708e4ab373d5e5b7ad4d792bad7c17975c9c0fedd59e8313512e0973f2d"
+   },
+   "removed_untranslated": [
+    {
+     "mass": "easter-vigil",
+     "form_id": "main",
+     "proper": "Inscription of the Paschal Candle",
+     "cycle": "all",
+     "occurrence": 1,
+     "lang": "en",
+     "extent": "body",
+     "availability": "unavailable",
+     "reason": {
+      "kind": "rights-withheld",
+      "source_id": "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21",
+      "surfaces": [
+       "corpus-data",
+       "public-git",
+       "command-line",
+       "download"
+      ]
+     },
+     "rights": "permission",
+     "witness": "icel-music-2010",
+     "source_id": "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21",
+     "witness_artifact_id": "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.lucernarium",
+     "verified_on_page": "2026-08-22",
+     "verified_artifact_page": 1,
+     "verified_heading": "THE EASTER VIGIL / First Part: The Solemn Beginning of the Vigil or Lucernarium / The Blessing of the Fire and Preparation of the Candle",
+     "verified_url": "https://www.icelweb.org/musicfolder/Lucernarium.pdf",
+     "quarantined_text_sha256": [
+      "e13493622c2bd1eed24e175f8c9e4ed6734f0eb00cbc422071db9225a9217184"
+     ],
+     "note": "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
+    }
+   ]
+  },
+  {
+   "i": 124,
+   "slot": [
+    "easter-vigil",
+    "Insertion of the Grains of Incense"
+   ],
+   "latin_sha256": "a1e574b8e32e8d910dea1c90ce9eec78bdabad5ea41c8b17851cb0ca15da843b",
+   "english": {
+    "route": "bound study translation, english_study notice",
+    "note": "p6 study draft accepted unchanged, one line per numbered division.",
+    "sha256": "650b00de7a5c095adbc75b39afdc72680fe224773de9e6f49e114d09e6361fed"
+   },
+   "removed_untranslated": [
+    {
+     "mass": "easter-vigil",
+     "form_id": "main",
+     "proper": "Insertion of the Grains of Incense",
+     "cycle": "all",
+     "occurrence": 1,
+     "lang": "en",
+     "extent": "body",
+     "availability": "unavailable",
+     "reason": {
+      "kind": "no-exemplar"
+     },
+     "note": "The candidate artifact does not match this source-owned Latin slot exactly (sanctissima in the candidate, sancta here), so it establishes neither this target's exact English nor a slot-specific publication basis. No English wording is retained."
+    }
+   ]
+  },
+  {
+   "i": 125,
+   "slot": [
+    "easter-vigil",
+    "Lighting of the Paschal Candle"
+   ],
+   "latin_sha256": "d4c801709a03ec231dacda4c2d30d8f05b85e4ab9b54b18a406ae5ab608c54b2",
+   "english": {
+    "route": "bound study translation, english_study notice",
+    "note": "p6 draft 'gloriously rising again, scatter' replaced by the wording of the roman-1962 study draft of the same Latin ('rising in glory, dispel'), so one formula has one study English.",
+    "sha256": "2262de78ddd027115cc3a9464ed7b100020de42514701134c0194f89fe422164"
+   },
+   "removed_untranslated": [
+    {
+     "mass": "easter-vigil",
+     "form_id": "main",
+     "proper": "Lighting of the Paschal Candle",
+     "cycle": "all",
+     "occurrence": 1,
+     "lang": "en",
+     "extent": "body",
+     "availability": "unavailable",
+     "reason": {
+      "kind": "no-exemplar"
+     },
+     "note": "The candidate artifact does not match this source-owned Latin slot exactly (gloriae in the candidate, gloriose here), so it establishes neither this target's exact English nor a slot-specific publication basis. No English wording is retained."
+    }
+   ]
+  },
+  {
+   "i": 312,
+   "slot": [
+    "ot-13",
+    "Prayer after Communion"
+   ],
+   "latin_sha256": "f2d5c07c95d53b0505ea69daed444f8fcba37d669e10e069a4a86a13244502ec",
+   "english": {
+    "route": "bound study translation, english_study notice",
+    "note": "p6 fallback study draft accepted unchanged (Lasance not carried, see provenance evidence).",
+    "sha256": "28a5142dcbad95f9d30ba075e1dd414275dad216dadd79df4073200d61f27975"
+   },
+   "removed_untranslated": [
+    {
+     "mass": "ot-13",
+     "form_id": "main",
+     "proper": "Prayer after Communion",
+     "cycle": "all",
+     "occurrence": 1,
+     "lang": "en",
+     "extent": "body",
+     "availability": "unavailable",
+     "reason": {
+      "kind": "rights-withheld",
+      "source_id": "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion",
+      "surfaces": [
+       "corpus-data",
+       "public-git",
+       "command-line",
+       "download"
+      ]
+     },
+     "rights": "permission",
+     "witness": "fdlc-mystagogy-2016",
+     "source_id": "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion",
+     "witness_artifact_id": "artifact.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion.combo-col-pac-78b-ordinary-trinity-13",
+     "verified_on_page": "2026-08-26",
+     "verified_artifact_page": 19,
+     "verified_printed_page": "19",
+     "verified_heading": "THIRTEENTH SUNDAY IN ORDINARY TIME / Prayer after Communion:",
+     "verified_url": "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78b_ORDINARY_Trin-13_SPI2016.pdf",
+     "quarantined_text_sha256": [
+      "c2ad7df085071dcfd683dafe4bb0637297018ba040152fdd1e16cd05e45d1b1f"
+     ],
+     "note": "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
+    }
+   ]
+  },
+  {
+   "i": 108,
+   "slot": [
+    "good-friday",
+    "Prayer (alternative)"
+   ],
+   "replaced_entry": {
+    "mass": "good-friday",
+    "form_id": "main",
+    "proper": "Prayer (alternative)",
+    "cycle": "all",
+    "occurrence": 1,
+    "incipit": "Deus, qui peccati veteris hereditariam mortem",
+    "relation": "variant",
+    "ancient_witness": "Wilson1894; printed75; BookI, sectionxli, second prayer before Passion, following Iterum dicit sacerdos: Oremus",
+    "witness_edition_id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
+    "witness_artifact_id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-opening2-wilson-pages52-61-75-9ea0918d",
+    "ancient_passage_id": "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-opening2-deus-qui-peccati-source",
+    "ancient_reading": "Deus, qui peccati veteris haereditariam mortem, in qua posteritatis genus omne successerat, Christi tui Domini nostri passione solvisti, dona ut conformes eidem facti, sicut imaginem terreni naturae necessitate portavimus, ita imaginem caelestis gratiae sanctificatione portemus, Christi Domini nostri. Qui tecum vivit",
+    "divergence": "The secondary2002 petition inserts Filii immediately after Christi before tui; substitutes da for dona; inserts hominis after terreni. These are explicit small grammatical/relationship clarifications of the same old petition, not silently declared orthography. The secondary2002 omits the ancient closing Christi Domini nostri. Qui tecum vivit, and supplies the common short conclusion Per Christum Dominum nostrum. with a separately marked R. Amen. The complete short formula and marked response are independently image-witnessed in old Lasance at artifact217/printed217. haereditariam/hereditariam is spelling; stress accents, capitalization and pointing differ. Ancient footnote markers8–10 are apparatus, not wording. No modern fullbody is retained in this proposal. The complete finite relationship, including all three small clarifications and common conclusion change, requires independent source and rights review before admission; no exact whole-word target fidelity or authenticated2008 reading is claimed. Study English only. Independently witnessed ancient petition with enumerated omission/grammatical variants and independently witnessed generic conclusion; not approved current liturgical English, not authenticated2008 correspondence, not an instruction for recitation. Complete old conclusion proof: passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-per-christum-conclusion.",
+    "translations": [
+     {
+      "lang": "en",
+      "rights": "project-created",
+      "text": "O God, who through the Passion of Christ your Son, our Lord, have undone the death inherited from ancient sin, into which the whole human race had fallen, grant that, made like him, as we have borne the image of the earthly man by the necessity of nature, so we may bear the image of the heavenly one through sanctification by grace. Through Christ our Lord.\nR. Amen."
+     }
+    ]
+   },
+   "english": {
+    "route": "p6 variant study draft on the qualified antecedent, english_study notice"
+   }
+  },
+  {
+   "i": 218,
+   "slot": [
+    "easter-3-thursday",
+    "Communion Antiphon"
+   ],
+   "latin_sha256": "f8dee96c7a22c1943392b436684c534718658864abddb15f09c8d38b7702dedf",
+   "removed_untranslated": [
+    {
+     "mass": "easter-3-thursday",
+     "form_id": "main",
+     "proper": "Communion Antiphon",
+     "cycle": "all",
+     "occurrence": 1,
+     "lang": "en",
+     "extent": "body",
+     "availability": "unavailable",
+     "witness_artifact_id": "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf",
+     "witness_passage_id": "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.seasonal-easter-3-thursday-communion-1-english-body",
+     "verified_artifact_page": 63,
+     "verified_printed_page": 55,
+     "verified_on_page": "2026-10-21",
+     "note": "Exact whole-English-body adaptation/addition positively inspected in the held registered ICEL2010 image, artifact page 63, printed page 55. The actually printed English antiphon body includes a sung/spoken Alleluia outside the cited Bible carrier. This is body text, not a rubric or a parenthesized compiler Psalm suggestion. Every offered English carrier that can render the exact citation lacks it; typed-refused carriers remain refused. No append-word reconstruction is supplied. The exact English exemplar is held under the registered restricted artifact; no unconditional publication basis for this clonable/downloadable route is established. Only this exact English target is accounted for. No protected wording, removed-body hash, Latin body classification/permission, inferred appended word or extra Scripture appointment is supplied.",
+     "reason": {
+      "kind": "rights-withheld",
+      "source_id": "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf",
+      "surfaces": [
+       "site-display",
+       "corpus-data",
+       "public-git",
+       "command-line",
+       "download"
+      ]
+     }
+    }
+   ],
+   "english": {
+    "route": "Lasance 1946 printing, plain public domain, publication-bound"
+   }
+  },
+  {
+   "i": 252,
+   "slot": [
+    "easter-5-thursday",
+    "Communion Antiphon"
+   ],
+   "latin_sha256": "f8dee96c7a22c1943392b436684c534718658864abddb15f09c8d38b7702dedf",
+   "removed_untranslated": [
+    {
+     "mass": "easter-5-thursday",
+     "form_id": "main",
+     "proper": "Communion Antiphon",
+     "cycle": "all",
+     "occurrence": 1,
+     "lang": "en",
+     "extent": "body",
+     "availability": "unavailable",
+     "witness_artifact_id": "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf",
+     "witness_passage_id": "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.seasonal-easter-5-thursday-communion-1-english-body",
+     "verified_artifact_page": 67,
+     "verified_printed_page": 59,
+     "verified_on_page": "2026-10-21",
+     "note": "Exact whole-English-body adaptation/addition positively inspected in the held registered ICEL2010 image, artifact page 67, printed page 59. The actually printed English antiphon body includes a sung/spoken Alleluia outside the cited Bible carrier. This is body text, not a rubric or a parenthesized compiler Psalm suggestion. Every offered English carrier that can render the exact citation lacks it; typed-refused carriers remain refused. No append-word reconstruction is supplied. The exact English exemplar is held under the registered restricted artifact; no unconditional publication basis for this clonable/downloadable route is established. Only this exact English target is accounted for. No protected wording, removed-body hash, Latin body classification/permission, inferred appended word or extra Scripture appointment is supplied.",
+     "reason": {
+      "kind": "rights-withheld",
+      "source_id": "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf",
+      "surfaces": [
+       "site-display",
+       "corpus-data",
+       "public-git",
+       "command-line",
+       "download"
+      ]
+     }
+    }
+   ],
+   "english": {
+    "route": "Lasance 1946 printing, plain public domain, publication-bound"
+   }
+  }
+ ]
+}

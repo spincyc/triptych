@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.triptych.postconciliar-ordinary-fraction-perceptio-study-english-20261114.study-english-20261114.fraction-perceptio-study-en"
+edition_id = "edition.triptych.postconciliar-ordinary-fraction-perceptio-study-english-20261114.study-english-20261114"
+artifact_type = "project-study-translation"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "New Triptych-authored study English under CC BY 4.0. Each prayer's Latin, compared word by word with an independently dated public-domain antecedent (Pustet 1862 printed p. 262; Missale Moguntinum 1482 fol. 122v), is that antecedent abridged, with at most one trivial word substitution; the study-English rule of src/sources/inventories/postconciliar-proper-translations-v1.toml therefore permits a project translation. No restricted Latin and no approved or historical English is reproduced."
+rights_jurisdiction = "United States"
+provenance = "Drafted from the gap-campaign ord-ordinary lane's study drafts (2026-11-14) and re-checked on 2026-11-14 against the secondary 2002 Missal (artifact pp. 367-368, text layer and rendered page) and the antecedents on their page images. Fraction: 'commingling' changed to 'commixture' and the clause reordered to 'be unto life eternal for us who receive it'. Perceptio: lane draft retained. No ICEL or other approved English was consulted."
+retrieved = "2026-11-14"
+sha256 = "97eded2caad0f425ff248429ef03b42fd338e556360a6a28f328c623798aeaa0"
+byte_size = 818
+path = "src/sources/works/triptych/postconciliar-ordinary-fraction-perceptio-study-english-20261114/editions/2026-11-14-study-english/artifacts/fraction-perceptio-study-en/text.tsv"
+projected_from = ["artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3", "artifact.archdiocese-of-mainz.missale-moguntinum.wurzburg-reyser-1482.fol-122v-perceptio-la-20261114"]
+transformation = "Translate the target Latin of each prayer freshly into English, rendering only words the antecedent also prints (with the one target substitution followed); add no conclusion, response, rubric or received English formula."
+indexable = true
+encoding = "utf-8"
+notes = "Header and two rows, element keys fractio and perceptio-corporis-et-sanguinis of src/sources/inventories/postconciliar-ordo-missae-v1.toml. Readers must label this project study English and show its non-recitation qualification."

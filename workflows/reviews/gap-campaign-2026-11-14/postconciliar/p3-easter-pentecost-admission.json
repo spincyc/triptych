@@ -728,7 +728,8 @@
    "route": "study-draft",
    "relation": "variant",
    "witness": "edition.catholic-church.vulgata-clementina.hetzenauer-1914",
-   "printed_page": "1126"
+   "printed_page": "1126",
+   "superseded_on_merge": "2026-11-14: dropped when feature/missal-reader 59337b18b7 was merged; that branch admits the Latin of this slot (Mame 1922 p. 577 Alleluia verse, exact selection) with Lasance 1946-printing antecedent English, which supersedes this study translation (see merge_resolution)."
   },
   {
    "target_index": 81,
@@ -858,7 +859,8 @@
    "route": "study-draft",
    "relation": "variant",
    "witness": "edition.catholic-church.vulgata-clementina.hetzenauer-1914",
-   "printed_page": "1126"
+   "printed_page": "1126",
+   "superseded_on_merge": "2026-11-14: dropped when feature/missal-reader 59337b18b7 was merged; that branch admits the Latin of this slot (Mame 1922 p. 577 Alleluia verse, exact selection) with Lasance 1946-printing antecedent English, which supersedes this study translation (see merge_resolution)."
   },
   {
    "target_index": 116,
@@ -1085,7 +1087,8 @@
   {
    "id": "artifact.catholic-church.vulgata-clementina.hetzenauer-1914.sacredbible-scan-1126-4260da4d",
    "sha256": "4260da4dc085d5e3c8b60daf28f51c04cef607f2ac44a66c3943303511281198",
-   "storage": "remote"
+   "storage": "remote",
+   "withdrawn_on_merge": "2026-11-14: unreferenced after the merge of 59337b18b7 (its only uses were targets 80 and 115); record removed."
   },
   {
    "id": "artifact.catholic-church.vulgata-clementina.hetzenauer-1914.sacredbible-scan-1147-75455e60",
@@ -3437,5 +3440,29 @@
    "change": "reworded to translate the target Latin more literally and avoid echoing approved English"
   }
  ],
- "integrator_review": "The integrate lane viewed every montage of the installed items (prep-p3/img/t<n>.png, including the held 2, 66/98/128, 111, 139 and the 7f evidence) and re-read every installed Latin word and every antecedent English word on them; study drafts were checked against the target Latin and revised where noted."
+ "integrator_review": "The integrate lane viewed every montage of the installed items (prep-p3/img/t<n>.png, including the held 2, 66/98/128, 111, 139 and the 7f evidence) and re-read every installed Latin word and every antecedent English word on them; study drafts were checked against the target Latin and revised where noted.",
+ "merge_resolution": {
+  "merged_on": "2026-11-14",
+  "merged_commit": "59337b18b7 (feature/missal-reader, 'Merge the 1962 core, Ordinary and qualified-basis admissions')",
+  "slots": [
+   {
+    "mass": "easter-3-thursday",
+    "form_id": "main",
+    "proper": "Communion Antiphon",
+    "target_index": 80,
+    "kept": "root entry and calendar body: Latin exact selection of the Mame 1922 p. 577 Alleluia verse (plain public domain) with Lasance 1946-printing antecedent English (integrate-1962 batch C)",
+    "dropped": "integrate-lane study English (variant against Hetzenauer 2 Cor 5:15), its witness-gap calendar status, its two text-free locus passages and the then-unreferenced Hetzenauer scan 1126 registration",
+    "reason": "The root admission supplies an exact public-domain Latin body and historical English for the same slot; a Latin-backed antecedent supersedes a study translation."
+   },
+   {
+    "mass": "easter-5-thursday",
+    "form_id": "main",
+    "proper": "Communion Antiphon",
+    "target_index": 115,
+    "kept": "root entry and calendar body: Latin exact selection of the Mame 1922 p. 577 Alleluia verse (plain public domain) with Lasance 1946-printing antecedent English (integrate-1962 batch C)",
+    "dropped": "integrate-lane study English (variant against Hetzenauer 2 Cor 5:15), its witness-gap calendar status, its two text-free locus passages and the then-unreferenced Hetzenauer scan 1126 registration",
+    "reason": "The root admission supplies an exact public-domain Latin body and historical English for the same slot; a Latin-backed antecedent supersedes a study translation."
+   }
+  ]
+ }
 }

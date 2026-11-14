@@ -1388,7 +1388,6 @@ publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-p
 publication_locator = "Pustet 1862 printed p. 364, R, Pro S. Saturnino. Secreta in Vigilia S. Andreae; original PDF p. 450; retained extract p. 2"
 publication_evidence = "Whole petition and short conclusion preexist on 1862 p.364, not in the later standalone referral. The 1862 printing is public domain in the United States. Under 17 U.S.C. 103(b), the 1962 edition contributes no new right in this preexisting complete petition. Explicit spelling, pointing and conclusion-length transformations follow guidance/propers-for-agents.md; the restricted control artifact is not publication authority."
 
-
 [[entries]]
 mass = "comm-s-silvestri-i-papae-confessoris"
 form = ""
@@ -1417,6 +1416,7 @@ publication_authority = "workflows/reviews/missal-english-completion-2026-10-29/
 publication_evidence = "The independently identified complete historical prayer and standard conclusion sources remain public domain in the United States. Only the exact measured contribution for this tuple may be used under workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json method english-completion-20261029-finite-latin-v1. The canonical finite coordinator decision and the closed source guard alone authorize this exact tuple; no prior grant fanout or universal short-word exemption is asserted. Project editorial layout alone is offered under CC BY 4.0; underlying received Latin is excluded. No whole modern edition, scan, image or unrelated act is cleared. Exact measured contribution: [\"bone→aeterne\", \"beatos apostolos→named single SupremePontiff\", \"quos→quem and pastores→pastorem agreement; remove Filii tui vicarios\", \"Expand literal per. cue only to actual target Per Dominum nostrum.\"]"
 publication_retrieved = "2026-10-29"
 note = "Publication is confined to exact root authority and closed guard approval. Original unavailable body/English refusal is retained in the source recovery receipt. Study English is a separate project-created translation."
+
 [[entries]]
 mass = "comm-s-theclae-virginis-martyris"
 form = ""
@@ -5888,6 +5888,7 @@ surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
 publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.lighted-candle-qualified-05954809", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.lighted-candle-old-prayer-latin-20261029-be854aa4", "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.lighted-candle-old-prayer-latin-20261029-1334bce8", "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7"]
 publication_locator = "Pustet1862 printed180 whole prayer; Wilson1894 printed81 and Gregorian1915 printed154 old intende paragraphs; exact qualified source passage physical1."
 publication_evidence = "Prospective exact whole-expression assessment under workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v2.json, method english-completion-20261029-finite-latin-v1; this source packet does not itself adopt that authority. Complete old prayer plus one object noun, agreement and independently old verb reading; no new clause. Contrary: retargeting the object and selecting a different verb may constitute modern redaction. Parent finite rights decision required."
+
 [[entries]]
 mass = "easter-vigil"
 form = ""
@@ -5921,8 +5922,31 @@ proper = "Blessing of the Paschal Candle"
 course = ""
 cycle = ""
 occurrence = 1
-text_sha256 = "186eadda4a345e8fdb790b8030f75bac32509c8be472dc43541d33f1c135e9ba"
-body_status = "removed"
+text_sha256 = "96b9c9b4d4de2bf20db0cbb0d8cb7b73aa3de91c25d169fc7c0dee334a33ce9a"
+provenance_status = "collated"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.paschal-candle-formulas"
+source_date = "2026-11-14 project editorial projection from the 1962 typical edition; first Holy See publication 1951"
+locator = "Projection artifact physical lines 1-5; 1962 Vatican typical edition printed p. 183, artifact p. 264, no. 972-974, left column and right column head"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.gap-campaign-20261114-paschal-candle-formulas"
+verification_locator = "1962 Vatican typical edition printed p. 183, artifact p. 264, no. 972-974, left column and right column head"
+transformations = ["read on the 1962 typical-edition page images at 250 dpi", "join printed line wraps and chant syllables", "remove stress accents", "expand printed ae/oe ligatures to ae/oe", "normalise consonantal i to the calendar's declared j orthography", "retain the target printing's pointing, capitals and conclusion at its printed length"]
+provenance_evidence = "The complete 1962 wording was read on the CMAA facsimile page images on 2026-11-14 (integrate-1962 lane, against the r1-roman-1962-core lane transcription) and the projection reproduces it exactly in the calendar's declared orthography. Registered artifact.catholic-church.missale-romanum.vatican-ordo-sabbati-sancti-1951.ia-searchable-pdf-3c9a9291 (restricted, not a carrier): title page (artifact p. 5) reads Typis Polyglottis Vaticanis MDCCCCLI and its verso (artifact p. 6) is blank, no notice, read on the page images 2026-11-14; artifact p. 11 (printed 9) prints formulas (1)-(5) of the grains and the lighting formula with the 1962 words. Wording read on the 1962 typical-edition page image; the printed numbering and the parenthesised incising rubrics are omitted from the spoken text."
+provenance_authority = "Triptych editorial projection verified by page-image collation against the 1962 target edition"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "qualified-public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.paschal-candle-formulas-96b9c9b4"]
+publication_locator = "src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml [admission] and [how_to_admit].latin_provenance_row; carrier artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.paschal-candle-formulas-96b9c9b4"
+publication_evidence = "A Holy See text first published in Vatican City in 1951 (rights record limits L1-L3; DECISIONS 8 and 10b). Registered artifact.catholic-church.missale-romanum.vatican-ordo-sabbati-sancti-1951.ia-searchable-pdf-3c9a9291 (restricted, not a carrier): title page (artifact p. 5) reads Typis Polyglottis Vaticanis MDCCCCLI and its verso (artifact p. 6) is blank, no notice, read on the page images 2026-11-14; artifact p. 11 (printed 9) prints formulas (1)-(5) of the grains and the lighting formula with the 1962 words. Wording read on the 1962 typical-edition page image; the printed numbering and the parenthesised incising rubrics are omitted from the spoken text."
+publication_authority = "src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml"
+notice = "Published on a qualified basis (publication policy priority 6; confidence medium-low): a Holy See text first published in Vatican City in 1931-1975 that lapsed into the U.S. public domain for want of a formality, and whose twenty-year Vatican term under Italian Law 633/1941 arts. 11 and 29, as applied by Vatican Law XII of 1960, had on this project's reading expired before the 1 January 1996 U.S. restoration date (17 U.S.C. 104A). Not adjudicated; U.S. copyright only; implies no ecclesiastical approval or permission."
+first_publication = "Ordo Sabbati Sancti quando Vigilia Paschalis instaurata peragitur, Typis Polyglottis Vaticanis 1951 (decree of 9 February 1951), printed pp. 8-9; the decree and Ordo also appear in Acta Apostolicae Sedis 43 (1951), pp. 128-137."
+first_publication_year = 1951
+first_publication_imprint = "Typis Polyglottis Vaticanis"
+first_publication_body = "Sacred Congregation of Rites"
+us_formality = "published-abroad-without-us-notice"
 
 [[entries]]
 mass = "easter-vigil"
@@ -6139,8 +6163,31 @@ proper = "Renewal of Baptismal Promises"
 course = ""
 cycle = ""
 occurrence = 1
-text_sha256 = "54cef0a77744ee788fb0d13989d114ae0fd94558f35c412b5ccf95cd682be2fc"
-body_status = "removed"
+text_sha256 = "1aa9de20d8abdce79ab00d0ae8adb3729bccb1b59ca5eb0d960dce4d15bcd803"
+provenance_status = "collated"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.renewal-of-baptismal-promises"
+source_date = "2026-11-14 project editorial projection from the 1962 typical edition; first Holy See publication 1956"
+locator = "Projection artifact physical lines 1-23; 1962 Vatican typical edition printed p. 209, artifact p. 290, no. 999, left column and right column head"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.gap-campaign-20261114-renewal-of-baptismal-promises"
+verification_locator = "1962 Vatican typical edition printed p. 209, artifact p. 290, no. 999, left column and right column head"
+transformations = ["read on the 1962 typical-edition page images at 250 dpi", "join printed line wraps and chant syllables", "remove stress accents", "expand printed ae/oe ligatures to ae/oe", "normalise consonantal i to the calendar's declared j orthography", "retain the target printing's pointing, capitals and conclusion at its printed length"]
+provenance_evidence = "The complete 1962 wording was read on the CMAA facsimile page images on 2026-11-14 (integrate-1962 lane, against the r1-roman-1962-core lane transcription) and the projection reproduces it exactly in the calendar's declared orthography. Mixed slot admitted whole (DECISIONS 10c). PD spans recorded: only the questions Et omnibus operibus eius? and Et omnibus pompis eius? stand word for word in the Rituale Romanum 1925 typical reprint, Ordo Baptismi Parvulorum, printed pp. 17-18; every other phrase is 1951-1956 composition or inflectional adaptation (Abrenuntiatis/Abrenuntiamus, Creditis/Credimus). AAS 44 (1952) registered artifact.acta-papal-archives.aas.044.vatican-pdf-b2a187b2. No renewal names the Ordo or the Vatican Polyglot Press (rights record), so us-notice-unrenewed holds for a 1951-1956 printing whether or not it carried a notice (DECISIONS 13a)."
+provenance_authority = "Triptych editorial projection verified by page-image collation against the 1962 target edition"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "qualified-public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.renewal-of-baptismal-promises-1aa9de20"]
+publication_locator = "src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml [admission] and [how_to_admit].latin_provenance_row; carrier artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.renewal-of-baptismal-promises-1aa9de20"
+publication_evidence = "A Holy See text first published in Vatican City in 1956 (rights record limits L1-L3; DECISIONS 8 and 10b). Mixed slot admitted whole (DECISIONS 10c). PD spans recorded: only the questions Et omnibus operibus eius? and Et omnibus pompis eius? stand word for word in the Rituale Romanum 1925 typical reprint, Ordo Baptismi Parvulorum, printed pp. 17-18; every other phrase is 1951-1956 composition or inflectional adaptation (Abrenuntiatis/Abrenuntiamus, Creditis/Credimus). AAS 44 (1952) registered artifact.acta-papal-archives.aas.044.vatican-pdf-b2a187b2. No renewal names the Ordo or the Vatican Polyglot Press (rights record), so us-notice-unrenewed holds for a 1951-1956 printing whether or not it carried a notice (DECISIONS 13a)."
+publication_authority = "src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml"
+notice = "Published on a qualified basis (publication policy priority 6; confidence medium-low): a Holy See text first published in Vatican City in 1931-1975 that lapsed into the U.S. public domain for want of a formality, and whose twenty-year Vatican term under Italian Law 633/1941 arts. 11 and 29, as applied by Vatican Law XII of 1960, had on this project's reading expired before the 1 January 1996 U.S. restoration date (17 U.S.C. 104A). Not adjudicated; U.S. copyright only; implies no ecclesiastical approval or permission."
+first_publication = "Ordo Hebdomadae Sanctae instauratus, editio typica, Typis Polyglottis Vaticanis 1956 (decree Maxima redemptionis of 16 November 1955, AAS 47 (1955) p. 840, prescribes the Ordo in its Vatican typical edition); not opened, so the wording is verified through the Missale Romanum editio typica 1962 reprint (DECISIONS 13a). The address was first printed in the Ordo Sabbati Sancti, Typis Polyglottis Vaticanis 1951, printed p. 34, with exspectans where 1962 reads celebrans; Acta Apostolicae Sedis 44 (1952), p. 61, prints celebrans but its re-typeset reconstruction also shows Existimamus and Satanam, unverified on a facsimile, so the earliest printing established for the exact 1962 wording is the 1956 typical Ordo."
+first_publication_year = 1956
+first_publication_imprint = "Typis Polyglottis Vaticanis"
+first_publication_body = "Sacred Congregation of Rites"
+us_formality = "us-notice-unrenewed"
 
 [[entries]]
 mass = "easter-vigil"
@@ -6558,7 +6605,6 @@ publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-p
 publication_locator = "Pustet Ratisbon 1862, printed fol. 45; text-layer lines 18333-18336; artifact rights_status public-domain on a book first published in 1862"
 publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
-
 [[entries]]
 mass = "good-friday"
 form = ""
@@ -6584,6 +6630,7 @@ surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
 publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.goodfriday-transfer-2026-10-30.three-antiphons-0911d4eb", "artifact.archdiocese-of-toledo.officia-propria-sanctorum.1626-madrid-typographia-regia.three-cross-antiphons-checked-20261030"]
 publication_locator = "1626 Madrid proper-office printing, printed55-56/PDF71-72; source passage passage.archdiocese-of-toledo.officia-propria-sanctorum.1626-madrid-typographia-regia.three-cross-antiphons-checked-20261030"
 publication_evidence = "The full three target expressions are already present in independently held 1626 public-domain source bodies. Target2 selects the complete contiguous expression ending redemit nos before the explicit old source suffix Alleluia. Source arrangement and modern placement remain separate. No general cento or inferred seasonal-suffix rule is asserted; only this exact finite per-expression/prefix relation is proposed."
+
 [[entries]]
 mass = "good-friday"
 form = ""
@@ -6661,6 +6708,7 @@ surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
 publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.improperia-whole-qualified-83cbd703", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.improperia-whole-checked-20261029-b8728178"]
 publication_locator = "Pustet1862 printed174-176; complete checked oldbody and complete pageimages; exact target carrier and finite authority."
 publication_evidence = "The whole old chant sequence, every principal hymn stanza and doxology, and the very same response sequence are independently proved in one1862 printing. No new sung clause, verse, stanza, or source selection appears: the sole substantive sung-word addition is the conventional adjective electam; choir changes and short instructions are functional, with response expansions expressly prescribed by the old whole source. This supports a separately bounded qualified-nonoriginal-adaptation proposal with moderate confidence, subject to root adoption after reviewing the entire modern arrangement and the strongest contrary. Namedauthority workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v2.json method english-completion-20261029-finite-latin-v1. Strongest contrary: Electam is an added descriptive word, not mere pointing or inflection. A modern edition may deliberately reshape performance by reassigning choir roles, expanding prescribed responses, splitting the psalm, and making the doxology mandatory; the overall selection/arrangement and concise new rubric wording must be assessed together for originality. An old complete sequence plus a one-word sung difference does not automatically prove that all modern editorial contributions are unprotected. No exact old printing of the target whole arrangement has been found in this bounded comparison; no holder permission is asserted."
+
 [[entries]]
 mass = "good-friday"
 form = ""
@@ -6746,8 +6794,31 @@ proper = "Solemn Intercessions"
 course = ""
 cycle = ""
 occurrence = 1
-text_sha256 = "fed2c1a100ca75e899e1adde61a110e07f7ae8c2e64b7a49199308ca1d2c84fa"
-body_status = "removed"
+text_sha256 = "e0c78396ad6ee6189a103c8e01a6a1b41d62bc84ba69374856ddd26ea7c3d1cb"
+provenance_status = "collated"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.solemn-intercessions"
+source_date = "2026-11-14 project editorial projection from the 1962 typical edition; first Holy See publication 1962"
+locator = "Projection artifact physical lines 1-35; 1962 Vatican typical edition printed p. 167-175, artifact p. 248-256, no. 933-950, chant and prose pages"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.gap-campaign-20261114-solemn-intercessions"
+verification_locator = "1962 Vatican typical edition printed p. 167-175, artifact p. 248-256, no. 933-950, chant and prose pages"
+transformations = ["read on the 1962 typical-edition page images at 250 dpi", "join printed line wraps and chant syllables", "remove stress accents", "expand printed ae/oe ligatures to ae/oe", "normalise consonantal i to the calendar's declared j orthography", "retain the target printing's pointing, capitals and conclusion at its printed length"]
+provenance_evidence = "The complete 1962 wording was read on the CMAA facsimile page images on 2026-11-14 (integrate-1962 lane, against the r1-roman-1962-core lane transcription) and the projection reproduces it exactly in the calendar's declared orthography. Mixed slot admitted whole on the weakest basis of its parts (DECISIONS 10c). PD spans recorded: intercessions 1-3, 5-7 and 9 (invitation and oration) stand word for word in Pustet Ratisbon 1862 printed pp. 170-173 and Tours Mame 1922 printed pp. 215-218 (Mame for U3 fideliter, Pustet for U5 baptismatis); the oration tail of intercession 8 from exaudi preces nostras to eruantur is also PD; intercession 4 and the rest of 8 are 1955/1959 matter. The section titles and rubrics are not part of the spoken slot. us-notice-unrenewed is chosen because it holds for each part's first printing 1955-1962 whether or not that printing carried a notice (no renewal names the Vatican Polyglot Press, the Sacred Congregation of Rites or the Ordo; rights record)."
+provenance_authority = "Triptych editorial projection verified by page-image collation against the 1962 target edition"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "qualified-public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.solemn-intercessions-e0c78396", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
+publication_locator = "src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml [admission] and [how_to_admit].latin_provenance_row; carrier artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.solemn-intercessions-e0c78396"
+publication_evidence = "A Holy See text first published in Vatican City in 1962 (rights record limits L1-L3; DECISIONS 8 and 10b). Mixed slot admitted whole on the weakest basis of its parts (DECISIONS 10c). PD spans recorded: intercessions 1-3, 5-7 and 9 (invitation and oration) stand word for word in Pustet Ratisbon 1862 printed pp. 170-173 and Tours Mame 1922 printed pp. 215-218 (Mame for U3 fideliter, Pustet for U5 baptismatis); the oration tail of intercession 8 from exaudi preces nostras to eruantur is also PD; intercession 4 and the rest of 8 are 1955/1959 matter. The section titles and rubrics are not part of the spoken slot. us-notice-unrenewed is chosen because it holds for each part's first printing 1955-1962 whether or not that printing carried a notice (no renewal names the Vatican Polyglot Press, the Sacred Congregation of Rites or the Ordo; rights record)."
+publication_authority = "src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml"
+notice = "Published on a qualified basis (publication policy priority 6; confidence medium-low): a Holy See text first published in Vatican City in 1931-1975 that lapsed into the U.S. public domain for want of a formality, and whose twenty-year Vatican term under Italian Law 633/1941 arts. 11 and 29, as applied by Vatican Law XII of 1960, had on this project's reading expired before the 1 January 1996 U.S. restoration date (17 U.S.C. 104A). Not adjudicated; U.S. copyright only; implies no ecclesiastical approval or permission."
+first_publication = "Missale Romanum, editio typica 1962 (Typis Polyglottis Vaticanis), printed pp. 167-175, nos. 933-950: the earliest opened Holy See printing of the slot's complete wording. Its intercession 4 (Pro res publicas moderantibus) was first printed in the Ordo Hebdomadae Sanctae instauratus, editio typica, Typis Polyglottis Vaticanis 1956 (decree Maxima redemptionis of 16 November 1955, AAS 47 (1955) p. 840, prescribes the Ordo in its Vatican typical edition); not opened, so the wording is verified through the Missale Romanum editio typica 1962 reprint (DECISIONS 13a); intercession 8 (Pro conversione Iudaeorum) carries the 1959 change of the Sacred Congregation of Rites, whose own first printing was not opened."
+first_publication_year = 1962
+first_publication_imprint = "Typis Polyglottis Vaticanis"
+first_publication_body = "Sacred Congregation of Rites"
+us_formality = "us-notice-unrenewed"
 
 [[entries]]
 mass = "good-friday"
@@ -7347,7 +7418,6 @@ publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-p
 publication_locator = "Pustet Ratisbon 1862, printed p. 159 (Feria V. in Coena Domini, Oratio); text-layer lines 31274-31289; artifact rights_status public-domain on a book first published in 1862"
 publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
-
 [[entries]]
 mass = "mass-of-the-lords-supper"
 form = ""
@@ -7373,6 +7443,7 @@ surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
 publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pange-source-prescribed-assembly-53086b37", "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.triduum-orations-21aa7a98", "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1879-volume-10.pange-lingua-latin-checked-20261029-15c03ec1"]
 publication_locator = "Prior cue publication record retained; independent1879Latin printed301–302; exact new project carrier and historical source artifacts."
 publication_evidence = "Each underlying component retains its independently recorded public-domain basis. Project owns only assembly and qualification. No new text from the modern target edition is asserted as public domain through mere official status or availability."
+
 [[entries]]
 mass = "mass-of-the-lords-supper"
 form = ""
@@ -7971,7 +8042,6 @@ publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-p
 publication_locator = "Pustet Ratisbon 1862, printed p. 379; text-layer lines 55018-55030 (heading 'Secreta.' at 55018, text 55020-55030); artifact rights_status public-domain on a book first published in 1862"
 publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
-
 [[entries]]
 mass = "palm-sunday"
 form = ""
@@ -7997,6 +8067,7 @@ surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
 publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.palm-blessing-qualified-800c4d2c", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.palm-blessing-whole-latin-20261029", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.palm-blessing-whole-page-20261029"]
 publication_locator = "Dominica in Palmis, printed p.134 / original PDF p.220, right column: complete Benedic prayer with actual Per Dominum. ending."
 publication_evidence = "The later whole body preserves the connected 1862 prayer: blessing branches, asking that bodily veneration be accomplished spiritually through devotion, victory over the enemy, and earnest love of mercy. Its entire petition arrangement is independently held before modern copyright. The finite adaptation consists of an ordinary alternative for other trees, a Latin ablative gender variant with the same meaning, punctuation and an independently held conventional conclusion. These differences are proposed together as a qualified nonoriginal adaptation under policy section 1 priority 6, rather than as literal whole-word identity. This exact target requires its own root assessment; no previous finite scope is extended. Authority workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v2.json; method english-completion-20261029-finite-latin-v1. Strongest contrary: The choice to widen the selectable object beyond palm and olive branches and to present a parenthesized formula is an editorial intervention in the ritual wording. A low originality threshold could protect a sufficiently creative selection or arrangement even where its nouns and formula are commonplace. No court ruling or holder permission for this exact later prayer is asserted, and the proposal therefore remains qualified and pending separate root adoption."
+
 [[entries]]
 mass = "palm-sunday"
 form = ""
@@ -8082,8 +8153,31 @@ proper = "Oration to Conclude the Procession"
 course = ""
 cycle = ""
 occurrence = 1
-text_sha256 = "0559fa07fc696853dbe02769d4202de6293451c6f82b0d64513834f79e1be709"
-body_status = "removed"
+text_sha256 = "45e33842a6cdc657100f959e67f044a04865f3d63752c5d9e9f3e3626bf18c1f"
+provenance_status = "collated"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.palm-procession-oration"
+source_date = "2026-11-14 project editorial projection from the 1962 typical edition; first Holy See publication 1956"
+locator = "Projection artifact physical lines 1-1; 1962 Vatican typical edition printed p. 135, artifact p. 216, no. 843, right column"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.gap-campaign-20261114-palm-procession-oration"
+verification_locator = "1962 Vatican typical edition printed p. 135, artifact p. 216, no. 843, right column"
+transformations = ["read on the 1962 typical-edition page images at 250 dpi", "join printed line wraps and chant syllables", "remove stress accents", "expand printed ae/oe ligatures to ae/oe", "normalise consonantal i to the calendar's declared j orthography", "retain the target printing's pointing, capitals and conclusion at its printed length"]
+provenance_evidence = "The complete 1962 wording was read on the CMAA facsimile page images on 2026-11-14 (integrate-1962 lane, against the r1-roman-1962-core lane transcription) and the projection reproduces it exactly in the calendar's declared orthography. The Ordo texts are not printed in AAS 47 (1955) (text layer searched by lane r1). No renewal names the Ordo Hebdomadae Sanctae, the Vatican Polyglot Press or the Sacred Congregation of Rites (rights record [us_english_witnesses].holy_see_latin_in_the_us), so us-notice-unrenewed holds whether or not the 1956 printing carried a notice (DECISIONS 13a). Wording read on the 1962 typical-edition page image."
+provenance_authority = "Triptych editorial projection verified by page-image collation against the 1962 target edition"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "qualified-public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.palm-procession-oration-45e33842"]
+publication_locator = "src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml [admission] and [how_to_admit].latin_provenance_row; carrier artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.palm-procession-oration-45e33842"
+publication_evidence = "A Holy See text first published in Vatican City in 1956 (rights record limits L1-L3; DECISIONS 8 and 10b). The Ordo texts are not printed in AAS 47 (1955) (text layer searched by lane r1). No renewal names the Ordo Hebdomadae Sanctae, the Vatican Polyglot Press or the Sacred Congregation of Rites (rights record [us_english_witnesses].holy_see_latin_in_the_us), so us-notice-unrenewed holds whether or not the 1956 printing carried a notice (DECISIONS 13a). Wording read on the 1962 typical-edition page image."
+publication_authority = "src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml"
+notice = "Published on a qualified basis (publication policy priority 6; confidence medium-low): a Holy See text first published in Vatican City in 1931-1975 that lapsed into the U.S. public domain for want of a formality, and whose twenty-year Vatican term under Italian Law 633/1941 arts. 11 and 29, as applied by Vatican Law XII of 1960, had on this project's reading expired before the 1 January 1996 U.S. restoration date (17 U.S.C. 104A). Not adjudicated; U.S. copyright only; implies no ecclesiastical approval or permission."
+first_publication = "Ordo Hebdomadae Sanctae instauratus, editio typica, Typis Polyglottis Vaticanis 1956 (decree Maxima redemptionis of 16 November 1955, AAS 47 (1955) p. 840, prescribes the Ordo in its Vatican typical edition); not opened, so the wording is verified through the Missale Romanum editio typica 1962 reprint (DECISIONS 13a); the oration is a 1955 composition of the restored Holy Week."
+first_publication_year = 1956
+first_publication_imprint = "Typis Polyglottis Vaticanis"
+first_publication_body = "Sacred Congregation of Rites"
+us_formality = "us-notice-unrenewed"
 
 [[entries]]
 mass = "palm-sunday"
@@ -8266,6 +8360,7 @@ surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
 publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.holyweek-antiphons-2026-10-29.ave-rex-60e6fd51", "artifact.diocese-of-york.manuale-et-processionale.1875-henderson.ave-rex-latin-checked-20261029"]
 publication_locator = "1875 Henderson York manual/processional; source passage passage.diocese-of-york.manuale-et-processionale.1875-henderson.ave-rex-latin-checked-20261029"
 publication_evidence = "The whole lexical body is independently attested in the identified pre-1931 source. Under the repository 103(b) holding, the later Missal contributes no exclusive right to these preexisting words. Only declared abbreviation/spelling, pointing and capitalization transformations are projected."
+
 [[entries]]
 mass = "palm-sunday"
 form = ""
@@ -10691,23 +10786,31 @@ proper = "Collect"
 course = ""
 cycle = ""
 occurrence = 1
-text_sha256 = "3a194e4c84c13ba8d47374e8001ad4f0b761b7e19582178f08cb97310020f03f"
-body_status = "removed"
+text_sha256 = "f2f63001beb8036edf2b2813818177b69c8c0892b797245e4b33eac8ea25b837"
 provenance_status = "collated"
-source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
-source_date = "1962"
-locator = "printed p. 719; digital p. 800; appointment and current-slot control"
-relationship = "collated-exact"
-verification_source_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.albert-the-great-collect"
-verification_locator = "artifact p. 1290; printed p. 1289; IA leaf n1289"
-transformations = ["join printed line wraps", "strip printed stress accents", "expand printed ae/oe ligatures to ae/oe", "normalize incidental spacing", "retain witness j orthography", "select the witness's abbreviated conclusion rather than the longer controlling-edition conclusion"]
-provenance_evidence = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/albert-the-great-collect.toml; visually collated 2026-08-26"
-provenance_authority = "1962 typica for appointment; registered Lasance page-image passage for the exact bounded wording"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.albert-collect"
+source_date = "2026-11-14 project editorial projection from the 1962 typical edition; first Holy See publication 1932"
+locator = "Projection artifact physical lines 1-1; 1962 Vatican typical edition printed p. 719, artifact p. 800, no. 4106, left column foot and right column head"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.gap-campaign-20261114-albert-collect"
+verification_locator = "1962 Vatican typical edition printed p. 719, artifact p. 800, no. 4106, left column foot and right column head"
+transformations = ["read on the 1962 typical-edition page images at 250 dpi", "join printed line wraps and chant syllables", "remove stress accents", "expand printed ae/oe ligatures to ae/oe", "normalise consonantal i to the calendar's declared j orthography", "retain the target printing's pointing, capitals and conclusion at its printed length"]
+provenance_evidence = "The complete 1962 wording was read on the CMAA facsimile page images on 2026-11-14 (integrate-1962 lane, against the r1-roman-1962-core lane transcription) and the projection reproduces it exactly in the calendar's declared orthography. AAS 24 (1932), registered artifact.acta-papal-archives.aas.024.vatican-pdf-91bb3136, p. 166 (re-typeset reconstruction; subjicienda/subicienda, ejus/eius, pointing, short cue). An earlier Dominican own printing was searched for by the albert-three lane (2026-11-12) and not found; a catalogued Dominican Albert insert is dated June 1933, after the AAS issue."
+provenance_authority = "Triptych editorial projection verified by page-image collation against the 1962 target edition"
 provenance_confidence = "high"
-publication_status = "withheld"
-publication_basis = "unresolved"
-surfaces = []
-note = "HOLD on corpus-data, public-git, web, download, print, and cli: exactness needs orthographic and spacing transformations beyond the approved line-wrap-only publication gate; no 1962-only expansion is published."
+publication_status = "permitted"
+publication_basis = "qualified-public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.albert-collect-f2f63001"]
+publication_locator = "src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml [admission] and [how_to_admit].latin_provenance_row; carrier artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.albert-collect-f2f63001"
+publication_evidence = "A Holy See text first published in Vatican City in 1932 (rights record limits L1-L3; DECISIONS 8 and 10b). AAS 24 (1932), registered artifact.acta-papal-archives.aas.024.vatican-pdf-91bb3136, p. 166 (re-typeset reconstruction; subjicienda/subicienda, ejus/eius, pointing, short cue). An earlier Dominican own printing was searched for by the albert-three lane (2026-11-12) and not found; a catalogued Dominican Albert insert is dated June 1933, after the AAS issue."
+publication_authority = "src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml"
+notice = "Published on a qualified basis (publication policy priority 6; confidence medium-low): a Holy See text first published in Vatican City in 1931-1975 that lapsed into the U.S. public domain for want of a formality, and whose twenty-year Vatican term under Italian Law 633/1941 arts. 11 and 29, as applied by Vatican Law XII of 1960, had on this project's reading expired before the 1 January 1996 U.S. restoration date (17 U.S.C. 104A). Not adjudicated; U.S. copyright only; implies no ecclesiastical approval or permission."
+first_publication = "Acta Apostolicae Sedis 24 (1932), no. 5 of 2 May 1932, p. 166: Sacred Congregation of Rites, Office and Mass of Saint Albert the Great, Bishop, Confessor and Doctor."
+first_publication_year = 1932
+first_publication_imprint = "Acta Apostolicae Sedis"
+first_publication_body = "Sacred Congregation of Rites"
+us_formality = "published-abroad-without-us-notice"
 
 [[entries]]
 mass = "s-alberti-magni-episcopi-confessoris-ecclesiae"
@@ -10716,23 +10819,31 @@ proper = "Postcommunion"
 course = ""
 cycle = ""
 occurrence = 1
-text_sha256 = "bce37e2d47a948576c33735055ce0ce47199729c379795a2c056c289cf7a9601"
-body_status = "removed"
+text_sha256 = "8c9be1e540ebae6dee1b7c9d1c43b64143d3022117fe41bf5aa8eca2d4066005"
 provenance_status = "collated"
-source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
-source_date = "1962"
-locator = "printed p. 719; digital p. 800; appointment and current-slot control"
-relationship = "collated-exact"
-verification_source_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.albert-the-great-postcommunion"
-verification_locator = "artifact p. 1291; printed p. 1290; IA leaf n1290"
-transformations = ["join printed line wraps", "strip printed stress accents", "expand printed ae/oe ligatures to ae/oe", "normalize incidental spacing", "retain witness j orthography"]
-provenance_evidence = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/albert-the-great-postcommunion.toml; visually collated 2026-08-26"
-provenance_authority = "1962 typica for appointment; registered Lasance page-image passage for the exact bounded wording"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.albert-postcommunion"
+source_date = "2026-11-14 project editorial projection from the 1962 typical edition; first Holy See publication 1932"
+locator = "Projection artifact physical lines 1-1; 1962 Vatican typical edition printed p. 719, artifact p. 800, no. 4108, right column"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.gap-campaign-20261114-albert-postcommunion"
+verification_locator = "1962 Vatican typical edition printed p. 719, artifact p. 800, no. 4108, right column"
+transformations = ["read on the 1962 typical-edition page images at 250 dpi", "join printed line wraps and chant syllables", "remove stress accents", "expand printed ae/oe ligatures to ae/oe", "normalise consonantal i to the calendar's declared j orthography", "retain the target printing's pointing, capitals and conclusion at its printed length"]
+provenance_evidence = "The complete 1962 wording was read on the CMAA facsimile page images on 2026-11-14 (integrate-1962 lane, against the r1-roman-1962-core lane transcription) and the projection reproduces it exactly in the calendar's declared orthography. AAS 24 (1932), registered artifact.acta-papal-archives.aas.024.vatican-pdf-91bb3136, p. 168 (re-typeset reconstruction; pointing, short cue). No earlier non-Vatican printing was found (albert-three lane, 2026-11-12)."
+provenance_authority = "Triptych editorial projection verified by page-image collation against the 1962 target edition"
 provenance_confidence = "high"
-publication_status = "withheld"
-publication_basis = "unresolved"
-surfaces = []
-note = "HOLD on corpus-data, public-git, web, download, print, and cli: exactness needs orthographic and spacing transformations beyond the approved line-wrap-only publication gate."
+publication_status = "permitted"
+publication_basis = "qualified-public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.albert-postcommunion-8c9be1e5"]
+publication_locator = "src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml [admission] and [how_to_admit].latin_provenance_row; carrier artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.albert-postcommunion-8c9be1e5"
+publication_evidence = "A Holy See text first published in Vatican City in 1932 (rights record limits L1-L3; DECISIONS 8 and 10b). AAS 24 (1932), registered artifact.acta-papal-archives.aas.024.vatican-pdf-91bb3136, p. 168 (re-typeset reconstruction; pointing, short cue). No earlier non-Vatican printing was found (albert-three lane, 2026-11-12)."
+publication_authority = "src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml"
+notice = "Published on a qualified basis (publication policy priority 6; confidence medium-low): a Holy See text first published in Vatican City in 1931-1975 that lapsed into the U.S. public domain for want of a formality, and whose twenty-year Vatican term under Italian Law 633/1941 arts. 11 and 29, as applied by Vatican Law XII of 1960, had on this project's reading expired before the 1 January 1996 U.S. restoration date (17 U.S.C. 104A). Not adjudicated; U.S. copyright only; implies no ecclesiastical approval or permission."
+first_publication = "Acta Apostolicae Sedis 24 (1932), no. 5 of 2 May 1932, p. 168: Sacred Congregation of Rites, Mass of Saint Albert the Great, Postcommunion."
+first_publication_year = 1932
+first_publication_imprint = "Acta Apostolicae Sedis"
+first_publication_body = "Sacred Congregation of Rites"
+us_formality = "published-abroad-without-us-notice"
 
 [[entries]]
 mass = "s-alberti-magni-episcopi-confessoris-ecclesiae"
@@ -10741,23 +10852,31 @@ proper = "Secret"
 course = ""
 cycle = ""
 occurrence = 1
-text_sha256 = "8337420edbcf5267c78e618ab26c6d06a966e352f9b488ba3a7085533ab1538a"
-body_status = "removed"
+text_sha256 = "9379cb9d8e91d6862641f626ef62091cd7faa5f7272f77cda50fbfe46bc3aa03"
 provenance_status = "collated"
-source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
-source_date = "1962"
-locator = "printed p. 719; digital p. 800; appointment and current-slot control"
-relationship = "collated-exact"
-verification_source_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.albert-the-great-secret"
-verification_locator = "artifact p. 1291; printed p. 1290; IA leaf n1290"
-transformations = ["join printed line wraps", "strip printed stress accents", "expand printed ae/oe ligatures to ae/oe", "normalize incidental spacing", "retain witness j orthography"]
-provenance_evidence = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/albert-the-great-secret.toml; visually collated 2026-08-26"
-provenance_authority = "1962 typica for appointment; registered Lasance page-image passage for the exact bounded wording"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.albert-secret"
+source_date = "2026-11-14 project editorial projection from the 1962 typical edition; first Holy See publication 1932"
+locator = "Projection artifact physical lines 1-1; 1962 Vatican typical edition printed p. 719, artifact p. 800, no. 4107, right column"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.gap-campaign-20261114-albert-secret"
+verification_locator = "1962 Vatican typical edition printed p. 719, artifact p. 800, no. 4107, right column"
+transformations = ["read on the 1962 typical-edition page images at 250 dpi", "join printed line wraps and chant syllables", "remove stress accents", "expand printed ae/oe ligatures to ae/oe", "normalise consonantal i to the calendar's declared j orthography", "retain the target printing's pointing, capitals and conclusion at its printed length"]
+provenance_evidence = "The complete 1962 wording was read on the CMAA facsimile page images on 2026-11-14 (integrate-1962 lane, against the r1-roman-1962-core lane transcription) and the projection reproduces it exactly in the calendar's declared orthography. AAS 24 (1932), registered artifact.acta-papal-archives.aas.024.vatican-pdf-91bb3136, p. 168 (re-typeset reconstruction; pointing, short cue). No earlier non-Vatican printing was found (albert-three lane, 2026-11-12)."
+provenance_authority = "Triptych editorial projection verified by page-image collation against the 1962 target edition"
 provenance_confidence = "high"
-publication_status = "withheld"
-publication_basis = "unresolved"
-surfaces = []
-note = "HOLD on corpus-data, public-git, web, download, print, and cli: exactness needs orthographic and spacing transformations beyond the approved line-wrap-only publication gate."
+publication_status = "permitted"
+publication_basis = "qualified-public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.albert-secret-9379cb9d"]
+publication_locator = "src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml [admission] and [how_to_admit].latin_provenance_row; carrier artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.albert-secret-9379cb9d"
+publication_evidence = "A Holy See text first published in Vatican City in 1932 (rights record limits L1-L3; DECISIONS 8 and 10b). AAS 24 (1932), registered artifact.acta-papal-archives.aas.024.vatican-pdf-91bb3136, p. 168 (re-typeset reconstruction; pointing, short cue). No earlier non-Vatican printing was found (albert-three lane, 2026-11-12)."
+publication_authority = "src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml"
+notice = "Published on a qualified basis (publication policy priority 6; confidence medium-low): a Holy See text first published in Vatican City in 1931-1975 that lapsed into the U.S. public domain for want of a formality, and whose twenty-year Vatican term under Italian Law 633/1941 arts. 11 and 29, as applied by Vatican Law XII of 1960, had on this project's reading expired before the 1 January 1996 U.S. restoration date (17 U.S.C. 104A). Not adjudicated; U.S. copyright only; implies no ecclesiastical approval or permission."
+first_publication = "Acta Apostolicae Sedis 24 (1932), no. 5 of 2 May 1932, p. 168: Sacred Congregation of Rites, Mass of Saint Albert the Great, Secret."
+first_publication_year = 1932
+first_publication_imprint = "Acta Apostolicae Sedis"
+first_publication_body = "Sacred Congregation of Rites"
+us_formality = "published-abroad-without-us-notice"
 
 [[entries]]
 mass = "s-andreae-corsini-episcopi-confessoris"
@@ -19176,7 +19295,6 @@ publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-p
 publication_locator = "Pustet Ratisbon 1862, Pustet Ratisbon 1862, printed p. 0; text-layer lines 105443-105461 (text layer only; this book's page images are not available to this lane); artifact rights_status public-domain"
 publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
-
 [[entries]]
 mass = "comm-s-agnetis-virginis-martyris-secundo"
 form = ""
@@ -19202,6 +19320,7 @@ surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
 publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.ki054-page-reading-orations-7d558094", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3"]
 publication_locator = "Pustet Ratisbon 1862, Die xxviii, S. Agnetis Virginis et Martyris Secundo, Secreta, printed p. 397; text-layer lines 57237-57243; read on the page image of the registered facsimile PDF at p. 483; artifact rights_status public-domain on a book first published in 1862"
 publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact and its registered facsimile PDF, read on a page image. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which requires exactly this pairing of 103(b) with a public-domain witness."
+
 [[entries]]
 mass = "s-ignatii-episcopi-martyris"
 form = ""
@@ -29499,7 +29618,6 @@ publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-p
 publication_locator = "Tours Mame 1922 PDF 607/printed 493 (feast-opening numeral suppressed), Collect crossing left foot to right top; PDF 609/printed 495, Secret, Communion and Postcommunion in left column. Registered public-domain artifact rights finding, United States."
 publication_evidence = "The bounded historical words stand independently in the registered public-domain Mame 1922 printing and separately owned derivative. Under 17 U.S.C. 103(b), the later target contributes no exclusive right in those preexisting words. Only declared orthography, pointing, feast selection and received conclusion length are projected; no new target alternative prayer word, source image or whole-edition clearance is supplied."
 
-
 [[entries]]
 mass = "nativitate-domini-octave"
 form = "Ad primam Missam in nocte"
@@ -30722,7 +30840,6 @@ publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-p
 publication_locator = "Mame Tours 1922 printed [410]/PDF[524]; separately retained checked historical derivative."
 publication_evidence = "The registered Mame 1922 parent artifact records its United States public-domain publication and mechanical-scan basis. This separately retained historical derivative preserves only directly checked preexisting words. Under 17 U.S.C. 103(b), the target edition contributes no exclusive right in that material. The canonical 1962 rights record governs; no modern source composition, protected page image or whole-edition clearance is inferred."
 
-
 [[entries]]
 mass = "pentecost-ember-saturday"
 form = "Longer form (forma missae longior)"
@@ -30748,7 +30865,6 @@ surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
 publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.ember-pentecost-september-5fdd4f00", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ember-pentecost-september-la-checked-ea162251"]
 publication_locator = "Mame Tours 1922 printed [411]/PDF[525]; separately retained checked historical derivative."
 publication_evidence = "The registered Mame 1922 parent artifact records its United States public-domain publication and mechanical-scan basis. This separately retained historical derivative preserves only directly checked preexisting words. Under 17 U.S.C. 103(b), the target edition contributes no exclusive right in that material. The canonical 1962 rights record governs; no modern source composition, protected page image or whole-edition clearance is inferred."
-
 
 [[entries]]
 mass = "pentecost-ember-saturday"
@@ -30776,7 +30892,6 @@ publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-p
 publication_locator = "Mame Tours 1922 printed [411]/PDF[525]; separately retained checked historical derivative."
 publication_evidence = "The registered Mame 1922 parent artifact records its United States public-domain publication and mechanical-scan basis. This separately retained historical derivative preserves only directly checked preexisting words. Under 17 U.S.C. 103(b), the target edition contributes no exclusive right in that material. The canonical 1962 rights record governs; no modern source composition, protected page image or whole-edition clearance is inferred."
 
-
 [[entries]]
 mass = "pentecost-ember-saturday"
 form = "Longer form (forma missae longior)"
@@ -30802,7 +30917,6 @@ surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
 publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.ember-pentecost-september-5fdd4f00", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ember-pentecost-september-la-checked-ea162251"]
 publication_locator = "Mame Tours 1922 printed [412]/PDF[526]; separately retained checked historical derivative."
 publication_evidence = "The registered Mame 1922 parent artifact records its United States public-domain publication and mechanical-scan basis. This separately retained historical derivative preserves only directly checked preexisting words. Under 17 U.S.C. 103(b), the target edition contributes no exclusive right in that material. The canonical 1962 rights record governs; no modern source composition, protected page image or whole-edition clearance is inferred."
-
 
 [[entries]]
 mass = "pentecost-ember-saturday"
@@ -30830,7 +30944,6 @@ publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-p
 publication_locator = "Mame Tours 1922 printed [413]/PDF[527]; separately retained checked historical derivative."
 publication_evidence = "The registered Mame 1922 parent artifact records its United States public-domain publication and mechanical-scan basis. This separately retained historical derivative preserves only directly checked preexisting words. Under 17 U.S.C. 103(b), the target edition contributes no exclusive right in that material. The canonical 1962 rights record governs; no modern source composition, protected page image or whole-edition clearance is inferred."
 
-
 [[entries]]
 mass = "pentecost-ember-saturday"
 form = "Longer form (forma missae longior)"
@@ -30856,7 +30969,6 @@ surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
 publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.ember-pentecost-september-5fdd4f00", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ember-pentecost-september-la-checked-ea162251"]
 publication_locator = "Mame Tours 1922 printed [413]/PDF[527]; separately retained checked historical derivative."
 publication_evidence = "The registered Mame 1922 parent artifact records its United States public-domain publication and mechanical-scan basis. This separately retained historical derivative preserves only directly checked preexisting words. Under 17 U.S.C. 103(b), the target edition contributes no exclusive right in that material. The canonical 1962 rights record governs; no modern source composition, protected page image or whole-edition clearance is inferred."
-
 
 [[entries]]
 mass = "pentecost-ember-saturday"
@@ -30884,7 +30996,6 @@ publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-p
 publication_locator = "Mame Tours 1922 printed [413]/PDF[527]; separately retained checked historical derivative."
 publication_evidence = "The registered Mame 1922 parent artifact records its United States public-domain publication and mechanical-scan basis. This separately retained historical derivative preserves only directly checked preexisting words. Under 17 U.S.C. 103(b), the target edition contributes no exclusive right in that material. The canonical 1962 rights record governs; no modern source composition, protected page image or whole-edition clearance is inferred."
 
-
 [[entries]]
 mass = "pentecost-ember-saturday"
 form = "Longer form (forma missae longior)"
@@ -30910,7 +31021,6 @@ surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
 publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.ember-pentecost-september-5fdd4f00", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ember-pentecost-september-la-checked-ea162251"]
 publication_locator = "Mame Tours 1922 printed [414]/PDF[528]; separately retained checked historical derivative."
 publication_evidence = "The registered Mame 1922 parent artifact records its United States public-domain publication and mechanical-scan basis. This separately retained historical derivative preserves only directly checked preexisting words. Under 17 U.S.C. 103(b), the target edition contributes no exclusive right in that material. The canonical 1962 rights record governs; no modern source composition, protected page image or whole-edition clearance is inferred."
-
 
 [[entries]]
 mass = "pentecost-ember-saturday"
@@ -30938,7 +31048,6 @@ publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-p
 publication_locator = "Mame Tours 1922 printed [414]/PDF[528]; separately retained checked historical derivative."
 publication_evidence = "The registered Mame 1922 parent artifact records its United States public-domain publication and mechanical-scan basis. This separately retained historical derivative preserves only directly checked preexisting words. Under 17 U.S.C. 103(b), the target edition contributes no exclusive right in that material. The canonical 1962 rights record governs; no modern source composition, protected page image or whole-edition clearance is inferred."
 
-
 [[entries]]
 mass = "pentecost-ember-saturday"
 form = "Shorter form"
@@ -30964,7 +31073,6 @@ surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
 publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.ember-pentecost-september-5fdd4f00", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ember-pentecost-september-la-checked-ea162251"]
 publication_locator = "Mame Tours 1922 printed [410]/PDF[524]; separately retained checked historical derivative."
 publication_evidence = "The registered Mame 1922 parent artifact records its United States public-domain publication and mechanical-scan basis. This separately retained historical derivative preserves only directly checked preexisting words. Under 17 U.S.C. 103(b), the target edition contributes no exclusive right in that material. The canonical 1962 rights record governs; no modern source composition, protected page image or whole-edition clearance is inferred."
-
 
 [[entries]]
 mass = "pentecost-ember-saturday"
@@ -30992,7 +31100,6 @@ publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-p
 publication_locator = "Mame Tours 1922 printed [411]/PDF[525]; separately retained checked historical derivative."
 publication_evidence = "The registered Mame 1922 parent artifact records its United States public-domain publication and mechanical-scan basis. This separately retained historical derivative preserves only directly checked preexisting words. Under 17 U.S.C. 103(b), the target edition contributes no exclusive right in that material. The canonical 1962 rights record governs; no modern source composition, protected page image or whole-edition clearance is inferred."
 
-
 [[entries]]
 mass = "pentecost-ember-saturday"
 form = "Shorter form"
@@ -31018,7 +31125,6 @@ surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
 publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.ember-pentecost-september-5fdd4f00", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ember-pentecost-september-la-checked-ea162251"]
 publication_locator = "Mame Tours 1922 printed [406]/PDF[520]; separately retained checked historical derivative."
 publication_evidence = "The registered Mame 1922 parent artifact records its United States public-domain publication and mechanical-scan basis. This separately retained historical derivative preserves only directly checked preexisting words. Under 17 U.S.C. 103(b), the target edition contributes no exclusive right in that material. The canonical 1962 rights record governs; no modern source composition, protected page image or whole-edition clearance is inferred."
-
 
 [[entries]]
 mass = "pentecost-ember-saturday"
@@ -31046,7 +31152,6 @@ publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-p
 publication_locator = "Mame Tours 1922 printed [414]/PDF[528]; separately retained checked historical derivative."
 publication_evidence = "The registered Mame 1922 parent artifact records its United States public-domain publication and mechanical-scan basis. This separately retained historical derivative preserves only directly checked preexisting words. Under 17 U.S.C. 103(b), the target edition contributes no exclusive right in that material. The canonical 1962 rights record governs; no modern source composition, protected page image or whole-edition clearance is inferred."
 
-
 [[entries]]
 mass = "pentecost-ember-saturday"
 form = "Shorter form"
@@ -31072,7 +31177,6 @@ surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
 publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.ember-pentecost-september-5fdd4f00", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ember-pentecost-september-la-checked-ea162251"]
 publication_locator = "Mame Tours 1922 printed [414]/PDF[528]; separately retained checked historical derivative."
 publication_evidence = "The registered Mame 1922 parent artifact records its United States public-domain publication and mechanical-scan basis. This separately retained historical derivative preserves only directly checked preexisting words. Under 17 U.S.C. 103(b), the target edition contributes no exclusive right in that material. The canonical 1962 rights record governs; no modern source composition, protected page image or whole-edition clearance is inferred."
-
 
 [[entries]]
 mass = "september-ember-saturday"
@@ -31100,7 +31204,6 @@ publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-p
 publication_locator = "Mame Tours 1922 printed [456]/PDF[570]; separately retained checked historical derivative."
 publication_evidence = "The registered Mame 1922 parent artifact records its United States public-domain publication and mechanical-scan basis. This separately retained historical derivative preserves only directly checked preexisting words. Under 17 U.S.C. 103(b), the target edition contributes no exclusive right in that material. The canonical 1962 rights record governs; no modern source composition, protected page image or whole-edition clearance is inferred."
 
-
 [[entries]]
 mass = "september-ember-saturday"
 form = "Longer form (forma missae longior)"
@@ -31126,7 +31229,6 @@ surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
 publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.ember-pentecost-september-5fdd4f00", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ember-pentecost-september-la-checked-ea162251"]
 publication_locator = "Mame Tours 1922 printed [457]/PDF[571]; separately retained checked historical derivative."
 publication_evidence = "The registered Mame 1922 parent artifact records its United States public-domain publication and mechanical-scan basis. This separately retained historical derivative preserves only directly checked preexisting words. Under 17 U.S.C. 103(b), the target edition contributes no exclusive right in that material. The canonical 1962 rights record governs; no modern source composition, protected page image or whole-edition clearance is inferred."
-
 
 [[entries]]
 mass = "september-ember-saturday"
@@ -31154,7 +31256,6 @@ publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-p
 publication_locator = "Mame Tours 1922 printed [457]/PDF[571]; separately retained checked historical derivative."
 publication_evidence = "The registered Mame 1922 parent artifact records its United States public-domain publication and mechanical-scan basis. This separately retained historical derivative preserves only directly checked preexisting words. Under 17 U.S.C. 103(b), the target edition contributes no exclusive right in that material. The canonical 1962 rights record governs; no modern source composition, protected page image or whole-edition clearance is inferred."
 
-
 [[entries]]
 mass = "september-ember-saturday"
 form = "Longer form (forma missae longior)"
@@ -31180,7 +31281,6 @@ surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
 publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.ember-pentecost-september-5fdd4f00", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ember-pentecost-september-la-checked-ea162251"]
 publication_locator = "Mame Tours 1922 printed [458]/PDF[572]; separately retained checked historical derivative."
 publication_evidence = "The registered Mame 1922 parent artifact records its United States public-domain publication and mechanical-scan basis. This separately retained historical derivative preserves only directly checked preexisting words. Under 17 U.S.C. 103(b), the target edition contributes no exclusive right in that material. The canonical 1962 rights record governs; no modern source composition, protected page image or whole-edition clearance is inferred."
-
 
 [[entries]]
 mass = "september-ember-saturday"
@@ -31208,7 +31308,6 @@ publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-p
 publication_locator = "Mame Tours 1922 printed [458, 459]/PDF[572, 573]; separately retained checked historical derivative."
 publication_evidence = "The registered Mame 1922 parent artifact records its United States public-domain publication and mechanical-scan basis. This separately retained historical derivative preserves only directly checked preexisting words. Under 17 U.S.C. 103(b), the target edition contributes no exclusive right in that material. The canonical 1962 rights record governs; no modern source composition, protected page image or whole-edition clearance is inferred."
 
-
 [[entries]]
 mass = "september-ember-saturday"
 form = "Longer form (forma missae longior)"
@@ -31234,7 +31333,6 @@ surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
 publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.ember-pentecost-september-5fdd4f00", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ember-pentecost-september-la-checked-ea162251"]
 publication_locator = "Mame Tours 1922 printed [459, 460]/PDF[573, 574]; separately retained checked historical derivative."
 publication_evidence = "The registered Mame 1922 parent artifact records its United States public-domain publication and mechanical-scan basis. This separately retained historical derivative preserves only directly checked preexisting words. Under 17 U.S.C. 103(b), the target edition contributes no exclusive right in that material. The canonical 1962 rights record governs; no modern source composition, protected page image or whole-edition clearance is inferred."
-
 
 [[entries]]
 mass = "september-ember-saturday"
@@ -31262,7 +31360,6 @@ publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-p
 publication_locator = "Mame Tours 1922 printed [461]/PDF[575]; separately retained checked historical derivative."
 publication_evidence = "The registered Mame 1922 parent artifact records its United States public-domain publication and mechanical-scan basis. This separately retained historical derivative preserves only directly checked preexisting words. Under 17 U.S.C. 103(b), the target edition contributes no exclusive right in that material. The canonical 1962 rights record governs; no modern source composition, protected page image or whole-edition clearance is inferred."
 
-
 [[entries]]
 mass = "september-ember-saturday"
 form = "Longer form (forma missae longior)"
@@ -31288,7 +31385,6 @@ surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
 publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.ember-pentecost-september-5fdd4f00", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ember-pentecost-september-la-checked-ea162251"]
 publication_locator = "Mame Tours 1922 printed [461]/PDF[575]; separately retained checked historical derivative."
 publication_evidence = "The registered Mame 1922 parent artifact records its United States public-domain publication and mechanical-scan basis. This separately retained historical derivative preserves only directly checked preexisting words. Under 17 U.S.C. 103(b), the target edition contributes no exclusive right in that material. The canonical 1962 rights record governs; no modern source composition, protected page image or whole-edition clearance is inferred."
-
 
 [[entries]]
 mass = "september-ember-saturday"
@@ -31316,7 +31412,6 @@ publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-p
 publication_locator = "Mame Tours 1922 printed [456]/PDF[570]; separately retained checked historical derivative."
 publication_evidence = "The registered Mame 1922 parent artifact records its United States public-domain publication and mechanical-scan basis. This separately retained historical derivative preserves only directly checked preexisting words. Under 17 U.S.C. 103(b), the target edition contributes no exclusive right in that material. The canonical 1962 rights record governs; no modern source composition, protected page image or whole-edition clearance is inferred."
 
-
 [[entries]]
 mass = "september-ember-saturday"
 form = "Shorter form"
@@ -31343,7 +31438,6 @@ publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-p
 publication_locator = "Mame Tours 1922 printed [457]/PDF[571]; separately retained checked historical derivative."
 publication_evidence = "The registered Mame 1922 parent artifact records its United States public-domain publication and mechanical-scan basis. This separately retained historical derivative preserves only directly checked preexisting words. Under 17 U.S.C. 103(b), the target edition contributes no exclusive right in that material. The canonical 1962 rights record governs; no modern source composition, protected page image or whole-edition clearance is inferred."
 
-
 [[entries]]
 mass = "september-ember-saturday"
 form = "Shorter form"
@@ -31369,7 +31463,6 @@ surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
 publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.ember-pentecost-september-5fdd4f00", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ember-pentecost-september-la-checked-ea162251"]
 publication_locator = "Mame Tours 1922 printed [461]/PDF[575]; separately retained checked historical derivative."
 publication_evidence = "The registered Mame 1922 parent artifact records its United States public-domain publication and mechanical-scan basis. This separately retained historical derivative preserves only directly checked preexisting words. Under 17 U.S.C. 103(b), the target edition contributes no exclusive right in that material. The canonical 1962 rights record governs; no modern source composition, protected page image or whole-edition clearance is inferred."
-
 
 [[entries]]
 mass = "september-ember-saturday"
@@ -31994,6 +32087,7 @@ surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
 publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase2-octnov-commemorations-20261022", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase2-octnov-commemoration-pages-20261022"]
 publication_locator = "Pustet 1862 printed p. 572, L, Pro sanctis Martyribus. Secreta; original PDF p. 658; retained extract p. 8"
 publication_evidence = "Complete petition preexists on 1862 p.572; target conclusion length is permitted by governing guidance. The 1862 printing is public domain in the United States. Under 17 U.S.C. 103(b), the 1962 edition contributes no new right in this preexisting complete petition. Explicit spelling, pointing and conclusion-length transformations follow guidance/propers-for-agents.md; the restricted control artifact is not publication authority."
+
 [[entries]]
 mass = "comm-s-sabbae-abbatis"
 form = ""
@@ -32435,6 +32529,7 @@ surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
 publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase3-winter-eighteen-orations-20261022", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase3-winter-oration-pages-20261022"]
 publication_locator = "Pustet Ratisbon 1862 printed p. 23, column L; original PDF p. 109; retained extract p. 4"
 publication_evidence = "Every word of the complete preexisting petition is independently witnessed in the registered US-public-domain Pustet Ratisbon 1862 printing, with only declared spelling/pointing, explicit rubric-directed blanks where stated, and actual target conclusion length under guidance/propers-for-agents.md. Under 17 U.S.C. 103(b), the restricted 1962 control is not publication authority. ejus/eius, cujus/cuius; pointing"
+
 [[entries]]
 mass = "comm-s-nicomedis-martyris"
 form = ""
@@ -32980,6 +33075,7 @@ surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
 publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase4-mayoct-alexander-twentytwo-orations-20261022", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase4-mayoct-alexander-oration-pages-20261022"]
 publication_locator = "Pustet PDF 532 / printed 446, right middle"
 publication_evidence = "Independent complete preexisting petition in US-public-domain Pustet Ratisbon 1862 under17 U.S.C.103(b), with only declared received spelling/pointing, the explicitly directed Hilary blank where stated, and actual target conclusion length under guidance/propers-for-agents.md. The restricted1962 target is control, not publication permission. No Lasance English nonrenewal dependency. whole-petition match; target conclusion length; preserve unsupported outside-Paschal whole-form obligation, no new branch."
+
 [[entries]]
 mass = "advent-3"
 form = ""
@@ -33499,6 +33595,7 @@ surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
 publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase5-latin22-pustet-projection-20261022", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-petitions-and-formulas-20261022", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-conclusion-authority-20261022"]
 publication_locator = "PDF 143 / printed 57; right; Super populum Oratio before FeriaSexta; historical formula passage.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-father-through-son"
 publication_evidence = "Independently complete preexisting Latin petition plus independently witnessed matching old standard formula prefix; under17USC103(b) the modern target adds no exclusive right in those words. Identified1862 Pustet printing has expired US published-work term. Only standard conclusion length changes: historical Per Dominum. to actual target Per Dominum nostrum.; nostrum is witnessed in one complete old standard formula, not borrowed from another petition. Target colon after tuo and comma after ut are pointing, not a petition variant. Whole printed conclusion ends Deus. No Amen or per omnia supplied. Its ejusdem belongs to this exemplar's explicit Spiritus sanctus petition. Every Father-directed target here stops BEFORE ejusdem, so no ejusdem word is inserted, deleted from a target, or carried into these petitions. Same-address standard conclusion prefix from passage.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-father-through-son; governing historical instructions passage.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-rubricae-generales-17 and passage.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-ritus-celebrandi-v-1. No historical proper is claimed to print its expanded target ending. Historical ending \"Per Dominum.\"; actual target ending \"Per Dominum nostrum.\". The restricted1962 control is not a publication basis. No English permissions or new P55 target attestation."
+
 [[entries]]
 mass = "holy-monday"
 form = ""
@@ -33836,6 +33933,7 @@ surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
 publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23.annual-oratio-early-20261023", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.annual-oratio-early-20261023-pages", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.annual-oratio-early-20261023-transcription"]
 publication_locator = "Mame Tours 1922, printed p. 132, original PDF p. 246, left top; complete Super populum Oratio; retained extract p. 13"
 publication_evidence = "Underlying Latin wording independently established in the United States public-domain Mame 1922 printing; where the actual target conclusion is longer or spells out an abbreviation, the already registered Pustet 1862 Father-through-Son formula supplies its contiguous prefix. 17 U.S.C. 103(b) supplies no exclusive modern-edition right in that preexisting material, as settled in missale-romanum-1962-facsimile-rights-v1.toml. Historical image pages and source transcription are retained offline; target scan and images are excluded. No pre-1955 target or English attestation follows."
+
 [[entries]]
 mass = "lent-3-thursday"
 form = ""
@@ -34173,6 +34271,7 @@ surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
 publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23.resume-oratio-late-mame-projection-20261023", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.resume-oratio-late-pages-20261023"]
 publication_locator = "Mame1922 original PDF271, printed157; left top; Oratio after Super populum and before next day; retained extract page8"
 publication_evidence = "Independently complete preexisting Latin petition plus any needed independently printed old standard formula prefix; under17USC103(b) the modern edition adds no exclusive right in these words. The identified Mame1922 printing has an expired United States published-work term. Historical ending 'Per Dominum nostrum Jesum Christum.'; actual target ending 'Per Dominum.'. Target shortens the explicit old conclusion; only terminal words omitted. Target pointing/capitalisation and declared j spelling are editorial transformations; no petition word changes. Restricted1962 control supplies no publication basis. No English permission or pre1955 target attestation."
+
 [[entries]]
 mass = "s-ioannis-damasceni-confessoris-ecclesiae-doctoris"
 form = ""
@@ -34432,6 +34531,7 @@ surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
 publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23.five-residual-20261023-projection", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.five-residual-20261023-complete-prayers", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.five-residual-20261023-control-pages", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.five-residual-20261023-complete-prayers", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.five-residual-20261023-control-pages"]
 publication_locator = "Pustet Ratisbon1862 original PDF885,886, printed xxv–xxvi; named August21 Visitation-convent heading PDF885 left lower; complete Postcommunion PDF886 left bottom"
 publication_evidence = "Independently witnessed complete historical Latin prayer, with expressly printed historical conclusion words where needed. Expired United States published-work terms and 17 USC 103(b); restricted modern target is verification only. Entire named petition identical. Mame1922 same proper explicitly prints Per Dominum... in unitate ejusdem.; its IX17 expressly supplies Per Dominum nostrum and In unitate ejusdem Spiritus Sancti. Pustet1862 same named proper independently prints Per Dominum nostrum. Only the word nostrum within this explicit historical cue is restored; the actual target ellipsis and stop after ejusdem are retained. No omitted intervening or terminal words are expanded. Target Ioanna/eiusdem to Joanna/ejusdem and historical coelestis to target caelestis are declared spelling only. No person or prayer word is adapted. No English permission or pre1955 target attestation."
+
 [[entries]]
 mass = "s-antonii-padua-confessoris-ecclesiae-doctoris"
 form = ""
@@ -37395,3 +37495,458 @@ surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
 publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pius-x-secret-qualified-20261113-44e8e1db", "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.wilson1915-lent4-sunday-postcommunion-20261113"]
 publication_locator = "Wilson 1915 artifact page 97, printed page 39; HEBD. IV. QUADRAGESIMAE / DIE DOMINICO AD HIERUSALEM / Ad complendum, before Alia oratio ad missam; not the following Monday prayer."
 publication_evidence = "Qualified nonoriginal-adaptation assessment for this exact complete expression at moderate confidence. The complete Wilson1915 Ad complendum supplies the entire distinctive paired petition: request to treat the holy sacramental object with sincere devotion and receive it with faithful mind, in that order. In this exact target, a conventional acceptance-of-offerings ablative preface qualifies the same divine grant; divine mysteries is an ordinary sacramental designation, and the saint/title/intercession insertion is conventional functional wording. Omission of always and the repeatedly-filled relative clause abbreviates the old temporality without adding a new literary relationship. Considered jointly, the alterations adapt the intact distinctive paired petition to a Secret and factual saint intercession. The brief acceptance condition and sacramental/intercessory wording do not create a separately expressive new narrative, image or extended arrangement. On that bounded whole-expression finding, I accept this exact Latin and its independently faithful fresh English under publication-policy1 priority6. Strongest contrary and disposition: The offering preface and intercession are real additions; this is neither a single name substitution nor an exact old whole, and functional role change does not itself prove nonoriginality. A low originality threshold can protect a creative new arrangement even from old words. Here the actual new arrangement is ordinary dependent offering-acceptance and intercession attached to one retained complete paired petition, rather than an independently individualized narrative or newly joined substantive petitions. The affirmative is limited to this exact expression at moderate confidence; no general saint/Secret adaptation permission follows. Decision: workflows/reviews/missal-reader-resume-2026-11-12/pius-secret/expression-merits-admission.json. Finite method english-completion-20261029-finite-latin-v1; scope roman-pius-secret-20261113-v1. Root adopted the exact whole-expression merits on 2026-11-13 at moderate publication confidence; exact source/owner binding and code-pinned finite runtime admission remain separate. This record creates no broader permission. Literal source short cues remain unchanged; conclusion execution is separately controlled."
+
+[[entries]]
+mass = "beatae-mariae-virginis-reginae"
+form = ""
+proper = "Collect"
+course = ""
+cycle = ""
+occurrence = 1
+text_sha256 = "0f59e36b02be2bcdd069651df0ffb2e8fd16036de99d8a93f0c4bb2e5635e8fe"
+provenance_status = "collated"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.queenship-collect"
+source_date = "2026-11-14 project editorial projection from the 1962 typical edition; first Holy See publication 1962"
+locator = "Projection artifact physical lines 1-1; 1962 Vatican typical edition printed p. 540, artifact p. 621, no. 2683, left column foot and right column head"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.gap-campaign-20261114-queenship-collect"
+verification_locator = "1962 Vatican typical edition printed p. 540, artifact p. 621, no. 2683, left column foot and right column head"
+transformations = ["read on the 1962 typical-edition page images at 250 dpi", "join printed line wraps and chant syllables", "remove stress accents", "expand printed ae/oe ligatures to ae/oe", "normalise consonantal i to the calendar's declared j orthography", "retain the target printing's pointing, capitals and conclusion at its printed length"]
+provenance_evidence = "The complete 1962 wording was read on the CMAA facsimile page images on 2026-11-14 (integrate-1962 lane, against the r1-roman-1962-core lane transcription) and the projection reproduces it exactly in the calendar's declared orthography. AAS 47 (1955), vatican.va AAS-47-1955-ocr.pdf sha256 87faf821...4eb74d58, p. 478 (re-typeset reconstruction; wording equal except the absent parenthetical, ejus/eius and the shorter cue). The 1962 typical edition carries no copyright notice (guidance/missals.md)."
+provenance_authority = "Triptych editorial projection verified by page-image collation against the 1962 target edition"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "qualified-public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.queenship-collect-0f59e36b"]
+publication_locator = "src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml [admission] and [how_to_admit].latin_provenance_row; carrier artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.queenship-collect-0f59e36b"
+publication_evidence = "A Holy See text first published in Vatican City in 1962 (rights record limits L1-L3; DECISIONS 8 and 10b). AAS 47 (1955), vatican.va AAS-47-1955-ocr.pdf sha256 87faf821...4eb74d58, p. 478 (re-typeset reconstruction; wording equal except the absent parenthetical, ejus/eius and the shorter cue). The 1962 typical edition carries no copyright notice (guidance/missals.md)."
+publication_authority = "src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml"
+notice = "Published on a qualified basis (publication policy priority 6; confidence medium-low): a Holy See text first published in Vatican City in 1931-1975 that lapsed into the U.S. public domain for want of a formality, and whose twenty-year Vatican term under Italian Law 633/1941 arts. 11 and 29, as applied by Vatican Law XII of 1960, had on this project's reading expired before the 1 January 1996 U.S. restoration date (17 U.S.C. 104A). Not adjudicated; U.S. copyright only; implies no ecclesiastical approval or permission."
+first_publication = "Missale Romanum, editio typica 1962 (Typis Polyglottis Vaticanis), printed p. 540, no. 2683: the earliest opened Holy See printing of the complete wording. The body without the parenthetical alternative (commemorationem) was first printed in Acta Apostolicae Sedis 47 (1955), p. 478 (Sacred Congregation of Rites, Office and Mass of the Queenship of the Blessed Virgin Mary); the alternative belongs to the 1960 rubrical adaptation."
+first_publication_year = 1962
+first_publication_imprint = "Typis Polyglottis Vaticanis"
+first_publication_body = "Sacred Congregation of Rites"
+us_formality = "published-abroad-without-us-notice"
+
+[[entries]]
+mass = "beatae-mariae-virginis-reginae"
+form = ""
+proper = "Alleluia (Tempore paschali)"
+course = ""
+cycle = ""
+occurrence = 1
+text_sha256 = "a46b83b45dce170f150390a92248d42099589d3fa3b1cfe0254931b2d28ffb97"
+provenance_status = "collated"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.queenship-alleluia"
+source_date = "2026-11-14 project editorial projection from the 1962 typical edition; first Holy See publication 1955"
+locator = "Projection artifact physical lines 1-1; 1962 Vatican typical edition printed p. 540, artifact p. 621, no. 2686, right column"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.gap-campaign-20261114-queenship-alleluia"
+verification_locator = "1962 Vatican typical edition printed p. 540, artifact p. 621, no. 2686, right column"
+transformations = ["read on the 1962 typical-edition page images at 250 dpi", "join printed line wraps and chant syllables", "remove stress accents", "expand printed ae/oe ligatures to ae/oe", "normalise consonantal i to the calendar's declared j orthography", "retain the target printing's pointing, capitals and conclusion at its printed length"]
+provenance_evidence = "The complete 1962 wording was read on the CMAA facsimile page images on 2026-11-14 (integrate-1962 lane, against the r1-roman-1962-core lane transcription) and the projection reproduces it exactly in the calendar's declared orthography. AAS 47 (1955), vatican.va AAS-47-1955-ocr.pdf sha256 87faf821...4eb74d58, p. 479 (re-typeset reconstruction; Alleluja/Alleluia and pointing only). The AAS volumes examined carry no copyright notice (rights record [[evidence.item]] AAS 47)."
+provenance_authority = "Triptych editorial projection verified by page-image collation against the 1962 target edition"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "qualified-public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.queenship-alleluia-a46b83b4"]
+publication_locator = "src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml [admission] and [how_to_admit].latin_provenance_row; carrier artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.queenship-alleluia-a46b83b4"
+publication_evidence = "A Holy See text first published in Vatican City in 1955 (rights record limits L1-L3; DECISIONS 8 and 10b). AAS 47 (1955), vatican.va AAS-47-1955-ocr.pdf sha256 87faf821...4eb74d58, p. 479 (re-typeset reconstruction; Alleluja/Alleluia and pointing only). The AAS volumes examined carry no copyright notice (rights record [[evidence.item]] AAS 47)."
+publication_authority = "src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml"
+notice = "Published on a qualified basis (publication policy priority 6; confidence medium-low): a Holy See text first published in Vatican City in 1931-1975 that lapsed into the U.S. public domain for want of a formality, and whose twenty-year Vatican term under Italian Law 633/1941 arts. 11 and 29, as applied by Vatican Law XII of 1960, had on this project's reading expired before the 1 January 1996 U.S. restoration date (17 U.S.C. 104A). Not adjudicated; U.S. copyright only; implies no ecclesiastical approval or permission."
+first_publication = "Acta Apostolicae Sedis 47 (1955), p. 479: Sacred Congregation of Rites, Mass of the Queenship of the Blessed Virgin Mary, Paschaltide Alleluia."
+first_publication_year = 1955
+first_publication_imprint = "Acta Apostolicae Sedis"
+first_publication_body = "Sacred Congregation of Rites"
+us_formality = "published-abroad-without-us-notice"
+
+[[entries]]
+mass = "assumptione-beatae-mariae-virginis"
+form = ""
+proper = "Collect"
+course = ""
+cycle = ""
+occurrence = 1
+text_sha256 = "789d2b5d328b3332995b838f5f3473f04efb406b0b616ebcf429c60d4cba5292"
+provenance_status = "collated"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.assumption-collect"
+source_date = "2026-11-14 project editorial projection from the 1962 typical edition; first Holy See publication 1950"
+locator = "Projection artifact physical lines 1-1; 1962 Vatican typical edition printed p. [627], artifact p. 708, no. 3379, left column foot (printed number suppressed on the illustrated leaf)"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.gap-campaign-20261114-assumption-collect"
+verification_locator = "1962 Vatican typical edition printed p. [627], artifact p. 708, no. 3379, left column foot (printed number suppressed on the illustrated leaf)"
+transformations = ["read on the 1962 typical-edition page images at 250 dpi", "join printed line wraps and chant syllables", "remove stress accents", "expand printed ae/oe ligatures to ae/oe", "normalise consonantal i to the calendar's declared j orthography", "retain the target printing's pointing, capitals and conclusion at its printed length"]
+provenance_evidence = "The complete 1962 wording was read on the CMAA facsimile page images on 2026-11-14 (integrate-1962 lane, against the r1-roman-1962-core lane transcription) and the projection reproduces it exactly in the calendar's declared orthography. AAS 42 (1950), registered artifact.acta-papal-archives.aas.042.vatican-pdf-0e49e17e, p. 793 (re-typeset reconstruction; Genitricem/Genetricem two received spellings, Immaculatam capitalised, eumdem/eundem). The AAS volumes examined carry no copyright notice."
+provenance_authority = "Triptych editorial projection verified by page-image collation against the 1962 target edition"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "qualified-public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.assumption-collect-789d2b5d"]
+publication_locator = "src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml [admission] and [how_to_admit].latin_provenance_row; carrier artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.assumption-collect-789d2b5d"
+publication_evidence = "A Holy See text first published in Vatican City in 1950 (rights record limits L1-L3; DECISIONS 8 and 10b). AAS 42 (1950), registered artifact.acta-papal-archives.aas.042.vatican-pdf-0e49e17e, p. 793 (re-typeset reconstruction; Genitricem/Genetricem two received spellings, Immaculatam capitalised, eumdem/eundem). The AAS volumes examined carry no copyright notice."
+publication_authority = "src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml"
+notice = "Published on a qualified basis (publication policy priority 6; confidence medium-low): a Holy See text first published in Vatican City in 1931-1975 that lapsed into the U.S. public domain for want of a formality, and whose twenty-year Vatican term under Italian Law 633/1941 arts. 11 and 29, as applied by Vatican Law XII of 1960, had on this project's reading expired before the 1 January 1996 U.S. restoration date (17 U.S.C. 104A). Not adjudicated; U.S. copyright only; implies no ecclesiastical approval or permission."
+first_publication = "Acta Apostolicae Sedis 42 (1950), p. 793: Sacred Congregation of Rites, Mass of the Assumption of the Blessed Virgin Mary (Signum magnum)."
+first_publication_year = 1950
+first_publication_imprint = "Acta Apostolicae Sedis"
+first_publication_body = "Sacred Congregation of Rites"
+us_formality = "published-abroad-without-us-notice"
+
+[[entries]]
+mass = "assumptione-beatae-mariae-virginis"
+form = ""
+proper = "Secret"
+course = ""
+cycle = ""
+occurrence = 1
+text_sha256 = "f2e70833e762ffb2f044edb303ce5696af17cdf11ea73229fb8b1b78ac09e13a"
+provenance_status = "collated"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.assumption-secret"
+source_date = "2026-11-14 project editorial projection from the 1962 typical edition; first Holy See publication 1950"
+locator = "Projection artifact physical lines 1-1; 1962 Vatican typical edition printed p. 628, artifact p. 709, no. 3385, left column foot and right column head"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.gap-campaign-20261114-assumption-secret"
+verification_locator = "1962 Vatican typical edition printed p. 628, artifact p. 709, no. 3385, left column foot and right column head"
+transformations = ["read on the 1962 typical-edition page images at 250 dpi", "join printed line wraps and chant syllables", "remove stress accents", "expand printed ae/oe ligatures to ae/oe", "normalise consonantal i to the calendar's declared j orthography", "retain the target printing's pointing, capitals and conclusion at its printed length"]
+provenance_evidence = "The complete 1962 wording was read on the CMAA facsimile page images on 2026-11-14 (integrate-1962 lane, against the r1-roman-1962-core lane transcription) and the projection reproduces it exactly in the calendar's declared orthography. AAS 42 (1950), registered artifact.acta-papal-archives.aas.042.vatican-pdf-0e49e17e, p. 794 (re-typeset reconstruction; capitalisation, jugiter/iugiter, shorter cue). The AAS volumes examined carry no copyright notice."
+provenance_authority = "Triptych editorial projection verified by page-image collation against the 1962 target edition"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "qualified-public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.assumption-secret-f2e70833"]
+publication_locator = "src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml [admission] and [how_to_admit].latin_provenance_row; carrier artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.assumption-secret-f2e70833"
+publication_evidence = "A Holy See text first published in Vatican City in 1950 (rights record limits L1-L3; DECISIONS 8 and 10b). AAS 42 (1950), registered artifact.acta-papal-archives.aas.042.vatican-pdf-0e49e17e, p. 794 (re-typeset reconstruction; capitalisation, jugiter/iugiter, shorter cue). The AAS volumes examined carry no copyright notice."
+publication_authority = "src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml"
+notice = "Published on a qualified basis (publication policy priority 6; confidence medium-low): a Holy See text first published in Vatican City in 1931-1975 that lapsed into the U.S. public domain for want of a formality, and whose twenty-year Vatican term under Italian Law 633/1941 arts. 11 and 29, as applied by Vatican Law XII of 1960, had on this project's reading expired before the 1 January 1996 U.S. restoration date (17 U.S.C. 104A). Not adjudicated; U.S. copyright only; implies no ecclesiastical approval or permission."
+first_publication = "Acta Apostolicae Sedis 42 (1950), p. 794: Sacred Congregation of Rites, Mass of the Assumption of the Blessed Virgin Mary, Secret."
+first_publication_year = 1950
+first_publication_imprint = "Acta Apostolicae Sedis"
+first_publication_body = "Sacred Congregation of Rites"
+us_formality = "published-abroad-without-us-notice"
+
+[[entries]]
+mass = "s-ioseph-opificis-sponsi-beatae-mariae"
+form = ""
+proper = "Collect"
+course = ""
+cycle = ""
+occurrence = 1
+text_sha256 = "b6deff3c1071203a43250a49fa5ce643caa852ddec00e47ce8a3d58faf426f90"
+provenance_status = "collated"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.joseph-worker-collect"
+source_date = "2026-11-14 project editorial projection from the 1962 typical edition; first Holy See publication 1956"
+locator = "Projection artifact physical lines 1-1; 1962 Vatican typical edition printed p. 516, artifact p. 597, no. 2483, left column"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.gap-campaign-20261114-joseph-worker-collect"
+verification_locator = "1962 Vatican typical edition printed p. 516, artifact p. 597, no. 2483, left column"
+transformations = ["read on the 1962 typical-edition page images at 250 dpi", "join printed line wraps and chant syllables", "remove stress accents", "expand printed ae/oe ligatures to ae/oe", "normalise consonantal i to the calendar's declared j orthography", "retain the target printing's pointing, capitals and conclusion at its printed length"]
+provenance_evidence = "The complete 1962 wording was read on the CMAA facsimile page images on 2026-11-14 (integrate-1962 lane, against the r1-roman-1962-core lane transcription) and the projection reproduces it exactly in the calendar's declared orthography. AAS 48 (1956), registered artifact.acta-papal-archives.aas.048.vatican-pdf-2a2867d8, p. 233 (re-typeset reconstruction; Joseph/Ioseph). The AAS volumes examined carry no copyright notice."
+provenance_authority = "Triptych editorial projection verified by page-image collation against the 1962 target edition"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "qualified-public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.joseph-worker-collect-b6deff3c"]
+publication_locator = "src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml [admission] and [how_to_admit].latin_provenance_row; carrier artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.joseph-worker-collect-b6deff3c"
+publication_evidence = "A Holy See text first published in Vatican City in 1956 (rights record limits L1-L3; DECISIONS 8 and 10b). AAS 48 (1956), registered artifact.acta-papal-archives.aas.048.vatican-pdf-2a2867d8, p. 233 (re-typeset reconstruction; Joseph/Ioseph). The AAS volumes examined carry no copyright notice."
+publication_authority = "src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml"
+notice = "Published on a qualified basis (publication policy priority 6; confidence medium-low): a Holy See text first published in Vatican City in 1931-1975 that lapsed into the U.S. public domain for want of a formality, and whose twenty-year Vatican term under Italian Law 633/1941 arts. 11 and 29, as applied by Vatican Law XII of 1960, had on this project's reading expired before the 1 January 1996 U.S. restoration date (17 U.S.C. 104A). Not adjudicated; U.S. copyright only; implies no ecclesiastical approval or permission."
+first_publication = "Acta Apostolicae Sedis 48 (1956), p. 233: Sacred Congregation of Rites, Office and Mass of Saint Joseph the Worker."
+first_publication_year = 1956
+first_publication_imprint = "Acta Apostolicae Sedis"
+first_publication_body = "Sacred Congregation of Rites"
+us_formality = "published-abroad-without-us-notice"
+
+[[entries]]
+mass = "s-ioseph-opificis-sponsi-beatae-mariae"
+form = ""
+proper = "Secret"
+course = ""
+cycle = ""
+occurrence = 1
+text_sha256 = "a50bca0d23ee12c02795ec3102eec13eb43ef3b3b518df2d5017b4450d200585"
+provenance_status = "collated"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.joseph-worker-secret"
+source_date = "2026-11-14 project editorial projection from the 1962 typical edition; first Holy See publication 1956"
+locator = "Projection artifact physical lines 1-1; 1962 Vatican typical edition printed p. 517, artifact p. 598, no. 2491, left column"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.gap-campaign-20261114-joseph-worker-secret"
+verification_locator = "1962 Vatican typical edition printed p. 517, artifact p. 598, no. 2491, left column"
+transformations = ["read on the 1962 typical-edition page images at 250 dpi", "join printed line wraps and chant syllables", "remove stress accents", "expand printed ae/oe ligatures to ae/oe", "normalise consonantal i to the calendar's declared j orthography", "retain the target printing's pointing, capitals and conclusion at its printed length"]
+provenance_evidence = "The complete 1962 wording was read on the CMAA facsimile page images on 2026-11-14 (integrate-1962 lane, against the r1-roman-1962-core lane transcription) and the projection reproduces it exactly in the calendar's declared orthography. AAS 48 (1956), registered artifact.acta-papal-archives.aas.048.vatican-pdf-2a2867d8, p. 236 (re-typeset reconstruction; Joseph/Ioseph). The AAS volumes examined carry no copyright notice."
+provenance_authority = "Triptych editorial projection verified by page-image collation against the 1962 target edition"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "qualified-public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.joseph-worker-secret-a50bca0d"]
+publication_locator = "src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml [admission] and [how_to_admit].latin_provenance_row; carrier artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.joseph-worker-secret-a50bca0d"
+publication_evidence = "A Holy See text first published in Vatican City in 1956 (rights record limits L1-L3; DECISIONS 8 and 10b). AAS 48 (1956), registered artifact.acta-papal-archives.aas.048.vatican-pdf-2a2867d8, p. 236 (re-typeset reconstruction; Joseph/Ioseph). The AAS volumes examined carry no copyright notice."
+publication_authority = "src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml"
+notice = "Published on a qualified basis (publication policy priority 6; confidence medium-low): a Holy See text first published in Vatican City in 1931-1975 that lapsed into the U.S. public domain for want of a formality, and whose twenty-year Vatican term under Italian Law 633/1941 arts. 11 and 29, as applied by Vatican Law XII of 1960, had on this project's reading expired before the 1 January 1996 U.S. restoration date (17 U.S.C. 104A). Not adjudicated; U.S. copyright only; implies no ecclesiastical approval or permission."
+first_publication = "Acta Apostolicae Sedis 48 (1956), p. 236: Sacred Congregation of Rites, Office and Mass of Saint Joseph the Worker, Secret."
+first_publication_year = 1956
+first_publication_imprint = "Acta Apostolicae Sedis"
+first_publication_body = "Sacred Congregation of Rites"
+us_formality = "published-abroad-without-us-notice"
+
+[[entries]]
+mass = "s-ioseph-opificis-sponsi-beatae-mariae"
+form = ""
+proper = "Postcommunion"
+course = ""
+cycle = ""
+occurrence = 1
+text_sha256 = "e69dcf2604c8999f56d9087fc80ae55031096482efe2eb53a1b408f76af84609"
+provenance_status = "collated"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.joseph-worker-postcommunion"
+source_date = "2026-11-14 project editorial projection from the 1962 typical edition; first Holy See publication 1956"
+locator = "Projection artifact physical lines 1-1; 1962 Vatican typical edition printed p. 517, artifact p. 598, no. 2493, left column foot"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.gap-campaign-20261114-joseph-worker-postcommunion"
+verification_locator = "1962 Vatican typical edition printed p. 517, artifact p. 598, no. 2493, left column foot"
+transformations = ["read on the 1962 typical-edition page images at 250 dpi", "join printed line wraps and chant syllables", "remove stress accents", "expand printed ae/oe ligatures to ae/oe", "normalise consonantal i to the calendar's declared j orthography", "retain the target printing's pointing, capitals and conclusion at its printed length"]
+provenance_evidence = "The complete 1962 wording was read on the CMAA facsimile page images on 2026-11-14 (integrate-1962 lane, against the r1-roman-1962-core lane transcription) and the projection reproduces it exactly in the calendar's declared orthography. AAS 48 (1956), registered artifact.acta-papal-archives.aas.048.vatican-pdf-2a2867d8, p. 236 (re-typeset reconstruction; Joseph/Ioseph, shorter cue). The AAS volumes examined carry no copyright notice."
+provenance_authority = "Triptych editorial projection verified by page-image collation against the 1962 target edition"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "qualified-public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.joseph-worker-postcommunion-e69dcf26"]
+publication_locator = "src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml [admission] and [how_to_admit].latin_provenance_row; carrier artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.joseph-worker-postcommunion-e69dcf26"
+publication_evidence = "A Holy See text first published in Vatican City in 1956 (rights record limits L1-L3; DECISIONS 8 and 10b). AAS 48 (1956), registered artifact.acta-papal-archives.aas.048.vatican-pdf-2a2867d8, p. 236 (re-typeset reconstruction; Joseph/Ioseph, shorter cue). The AAS volumes examined carry no copyright notice."
+publication_authority = "src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml"
+notice = "Published on a qualified basis (publication policy priority 6; confidence medium-low): a Holy See text first published in Vatican City in 1931-1975 that lapsed into the U.S. public domain for want of a formality, and whose twenty-year Vatican term under Italian Law 633/1941 arts. 11 and 29, as applied by Vatican Law XII of 1960, had on this project's reading expired before the 1 January 1996 U.S. restoration date (17 U.S.C. 104A). Not adjudicated; U.S. copyright only; implies no ecclesiastical approval or permission."
+first_publication = "Acta Apostolicae Sedis 48 (1956), p. 236: Sacred Congregation of Rites, Office and Mass of Saint Joseph the Worker, Postcommunion."
+first_publication_year = 1956
+first_publication_imprint = "Acta Apostolicae Sedis"
+first_publication_body = "Sacred Congregation of Rites"
+us_formality = "published-abroad-without-us-notice"
+
+[[entries]]
+mass = "s-roberti-bellarmino-episcopi-confessoris-ecclesiae"
+form = ""
+proper = "Collect"
+course = ""
+cycle = ""
+occurrence = 1
+text_sha256 = "b059da38d9b46e46b5d1f1237013b31af0149886a72717e342a29596f5b5ca63"
+provenance_status = "collated"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.bellarmine-collect"
+source_date = "2026-11-14 project editorial projection from the 1962 typical edition; first Holy See publication 1932"
+locator = "Projection artifact physical lines 1-1; 1962 Vatican typical edition printed p. 529, artifact p. 610, no. 2587, left column"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.gap-campaign-20261114-bellarmine-collect"
+verification_locator = "1962 Vatican typical edition printed p. 529, artifact p. 610, no. 2587, left column"
+transformations = ["read on the 1962 typical-edition page images at 250 dpi", "join printed line wraps and chant syllables", "remove stress accents", "expand printed ae/oe ligatures to ae/oe", "normalise consonantal i to the calendar's declared j orthography", "retain the target printing's pointing, capitals and conclusion at its printed length"]
+provenance_evidence = "The complete 1962 wording was read on the CMAA facsimile page images on 2026-11-14 (integrate-1962 lane, against the r1-roman-1962-core lane transcription) and the projection reproduces it exactly in the calendar's declared orthography. AAS 24 (1932), registered artifact.acta-papal-archives.aas.024.vatican-pdf-91bb3136, p. 164 (re-typeset reconstruction; jura/ejus, pointing). The 1923 Mass of Blessed Robert (Acta Romana S.I. III) is a different text. The Jesuit Acta Romana Societatis Iesu VI, fascicle IV dated 1931 (Romae, apud Curiam Praepositi Generalis), printed the same Mass at printed pp. 772-773 in a fascicle that cites AAS 24 (1932) p. 29 and so was printed in 1932; its title page reads AD USUM NOSTRORUM TANTUM (for the Society's members only), a restricted circulation treated here as a limited publication, so the first general publication is the AAS issue of 2 May 1932 in Vatican City. This ordering is an inference stated for review (rights record limit L2)."
+provenance_authority = "Triptych editorial projection verified by page-image collation against the 1962 target edition"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "qualified-public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.bellarmine-collect-b059da38"]
+publication_locator = "src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml [admission] and [how_to_admit].latin_provenance_row; carrier artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.bellarmine-collect-b059da38"
+publication_evidence = "A Holy See text first published in Vatican City in 1932 (rights record limits L1-L3; DECISIONS 8 and 10b). AAS 24 (1932), registered artifact.acta-papal-archives.aas.024.vatican-pdf-91bb3136, p. 164 (re-typeset reconstruction; jura/ejus, pointing). The 1923 Mass of Blessed Robert (Acta Romana S.I. III) is a different text. The Jesuit Acta Romana Societatis Iesu VI, fascicle IV dated 1931 (Romae, apud Curiam Praepositi Generalis), printed the same Mass at printed pp. 772-773 in a fascicle that cites AAS 24 (1932) p. 29 and so was printed in 1932; its title page reads AD USUM NOSTRORUM TANTUM (for the Society's members only), a restricted circulation treated here as a limited publication, so the first general publication is the AAS issue of 2 May 1932 in Vatican City. This ordering is an inference stated for review (rights record limit L2)."
+publication_authority = "src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml"
+notice = "Published on a qualified basis (publication policy priority 6; confidence medium-low): a Holy See text first published in Vatican City in 1931-1975 that lapsed into the U.S. public domain for want of a formality, and whose twenty-year Vatican term under Italian Law 633/1941 arts. 11 and 29, as applied by Vatican Law XII of 1960, had on this project's reading expired before the 1 January 1996 U.S. restoration date (17 U.S.C. 104A). Not adjudicated; U.S. copyright only; implies no ecclesiastical approval or permission."
+first_publication = "Acta Apostolicae Sedis 24 (1932), no. 5 of 2 May 1932, p. 164: Sacred Congregation of Rites, Office and Mass of Saint Robert Bellarmine, Bishop, Confessor and Doctor (decree of 23 December 1931)."
+first_publication_year = 1932
+first_publication_imprint = "Acta Apostolicae Sedis"
+first_publication_body = "Sacred Congregation of Rites"
+us_formality = "published-abroad-without-us-notice"
+
+[[entries]]
+mass = "s-roberti-bellarmino-episcopi-confessoris-ecclesiae"
+form = ""
+proper = "Postcommunion"
+course = ""
+cycle = ""
+occurrence = 1
+text_sha256 = "d093d4d3403ccdeb05df9ee8d73cea2d33a916a79735333513e65c45c609fe08"
+provenance_status = "collated"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.bellarmine-postcommunion"
+source_date = "2026-11-14 project editorial projection from the 1962 typical edition; first Holy See publication 1932"
+locator = "Projection artifact physical lines 1-1; 1962 Vatican typical edition printed p. 530, artifact p. 611, no. 2597, left column"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.gap-campaign-20261114-bellarmine-postcommunion"
+verification_locator = "1962 Vatican typical edition printed p. 530, artifact p. 611, no. 2597, left column"
+transformations = ["read on the 1962 typical-edition page images at 250 dpi", "join printed line wraps and chant syllables", "remove stress accents", "expand printed ae/oe ligatures to ae/oe", "normalise consonantal i to the calendar's declared j orthography", "retain the target printing's pointing, capitals and conclusion at its printed length"]
+provenance_evidence = "The complete 1962 wording was read on the CMAA facsimile page images on 2026-11-14 (integrate-1962 lane, against the r1-roman-1962-core lane transcription) and the projection reproduces it exactly in the calendar's declared orthography. AAS 24 (1932), registered artifact.acta-papal-archives.aas.024.vatican-pdf-91bb3136, p. 165 (re-typeset reconstruction; jugiter/iugiter, shorter cue). The 1923 Postcommunion of Blessed Robert has a different second clause. The Jesuit Acta Romana VI fascicle IV (dated 1931, printed 1932, AD USUM NOSTRORUM TANTUM) printed the same Mass at printed pp. 772-773; treated as a limited publication, so the first general publication is AAS of 2 May 1932 (inference stated for review, limit L2)."
+provenance_authority = "Triptych editorial projection verified by page-image collation against the 1962 target edition"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "qualified-public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.bellarmine-postcommunion-d093d4d3"]
+publication_locator = "src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml [admission] and [how_to_admit].latin_provenance_row; carrier artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.bellarmine-postcommunion-d093d4d3"
+publication_evidence = "A Holy See text first published in Vatican City in 1932 (rights record limits L1-L3; DECISIONS 8 and 10b). AAS 24 (1932), registered artifact.acta-papal-archives.aas.024.vatican-pdf-91bb3136, p. 165 (re-typeset reconstruction; jugiter/iugiter, shorter cue). The 1923 Postcommunion of Blessed Robert has a different second clause. The Jesuit Acta Romana VI fascicle IV (dated 1931, printed 1932, AD USUM NOSTRORUM TANTUM) printed the same Mass at printed pp. 772-773; treated as a limited publication, so the first general publication is AAS of 2 May 1932 (inference stated for review, limit L2)."
+publication_authority = "src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml"
+notice = "Published on a qualified basis (publication policy priority 6; confidence medium-low): a Holy See text first published in Vatican City in 1931-1975 that lapsed into the U.S. public domain for want of a formality, and whose twenty-year Vatican term under Italian Law 633/1941 arts. 11 and 29, as applied by Vatican Law XII of 1960, had on this project's reading expired before the 1 January 1996 U.S. restoration date (17 U.S.C. 104A). Not adjudicated; U.S. copyright only; implies no ecclesiastical approval or permission."
+first_publication = "Acta Apostolicae Sedis 24 (1932), no. 5 of 2 May 1932, p. 165: Sacred Congregation of Rites, Mass of Saint Robert Bellarmine, Postcommunion (decree of 23 December 1931)."
+first_publication_year = 1932
+first_publication_imprint = "Acta Apostolicae Sedis"
+first_publication_body = "Sacred Congregation of Rites"
+us_formality = "published-abroad-without-us-notice"
+
+[[entries]]
+mass = "s-gregorii-barbadici-episcopi-confessoris"
+form = ""
+proper = "Collect"
+course = ""
+cycle = ""
+occurrence = 1
+text_sha256 = "9e08bd1aebae9cc0d0eb515ade2b7c624d368057b24758398b7ab4df8bd37172"
+provenance_status = "collated"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-barbarigo-public-domain.barbarigo-collect"
+source_date = "2026-11-14 project editorial projection; antecedent Proprium Missarum Tergestinum 1859"
+locator = "Projection artifact physical line 1; Proprium Missarum, Tergeste: C. Coen 1859, printed p. 27 (ONB image 00000031), Oratio of B. Gregorius Barbadicus; conclusion control passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-father-conclusion-20261026"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.gap-campaign-20261114-barbarigo-collect"
+verification_locator = "1962 Vatican typical edition printed p. 554, artifact p. 635, no. 2799, right column"
+transformations = ["join printed line wraps and chant syllables", "remove stress accents", "expand printed ae/oe ligatures to ae/oe", "normalise consonantal i to the calendar's declared j orthography", "retain the target printing's pointing, capitals and conclusion at its printed length", "witness & expanded to et", "witness cujus/charitatis to the calendar's cujus/caritatis spelling", "witness capital P in Pastorali lowered to the target", "witness short cue Per Dominum carried at the target's printed conclusion prefix, literally witnessed in the 1922 Mame control"]
+provenance_evidence = "Both the 1859 witness (ONB page image 00000031 and title page image 00000005: Tergeste, cum typis C. Coen, MDCCCLIX) and the 1962 target (CMAA artifact p. 635) were read on their page images on 2026-11-14. Every word agrees; the differences are orthography (cujus, charitatis, &), capitalisation and pointing, and the conclusion length. Corroboration (OCR leads only): Fabris 1861 and Marino da Cadore 1838 quote the central clause as the feast's Collect."
+provenance_authority = "Triptych editorial projection verified by page-image collation against the 1962 target edition"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-barbarigo-public-domain.barbarigo-collect-9e08bd1a", "artifact.diocese-of-trieste-and-capodistria.proprium-missarum.1859-trieste-coen.barbarigo-collect-checked-20261114", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-support-pages-20261026"]
+publication_locator = "Proprium Missarum pro unitis dioecesibus Tergestina et Justinopolitana, Tergeste 1859, printed p. 27; tracked checked transcription with rights_status public-domain; Mame 1922 conclusion control printed p. 254"
+publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b): the whole Collect stands in a diocesan proper printed in 1859, public domain in the United States by date of publication (DECISIONS 10a). The page image is registered as a remote artifact and not tracked (ONB NoC-NC); the checked transcription is the tracked public-domain carrier."
+
+[[entries]]
+mass = "s-pii-x-papae-confessoris"
+form = ""
+proper = "Collect"
+course = ""
+cycle = ""
+occurrence = 1
+text_sha256 = "aac8c621c21413171f77b24632aeec88f688f08eb8b096f7e1121b46348fbde0"
+provenance_status = "collated"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.pius-x-collect"
+source_date = "2026-11-14 project editorial projection from the 1962 typical edition; first Holy See publication 1955"
+locator = "Projection artifact physical lines 1-1; 1962 Vatican typical edition printed p. 648, artifact p. 729, no. 3556, right column"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.gap-campaign-20261114-pius-x-collect"
+verification_locator = "1962 Vatican typical edition printed p. 648, artifact p. 729, no. 3556, right column"
+transformations = ["read on the 1962 typical-edition page images at 250 dpi", "join printed line wraps and chant syllables", "remove stress accents", "expand printed ae/oe ligatures to ae/oe", "normalise consonantal i to the calendar's declared j orthography", "retain the target printing's pointing, capitals and conclusion at its printed length"]
+provenance_evidence = "The complete 1962 wording was read on the CMAA facsimile page images on 2026-11-14 (integrate-1962 lane, against the r1-roman-1962-core lane transcription) and the projection reproduces it exactly in the calendar's declared orthography. AAS 47 (1955), vatican.va AAS-47-1955-ocr.pdf sha256 87faf821...4eb74d58, p. 254 (re-typeset reconstruction; ejus/eius, commas, eumdem/eundem; its reading consequantur for the printed consequamur is taken as a reconstruction error and was not verified on a facsimile). Wording is supplied only by the 1962 page image. The AAS volumes examined carry no copyright notice."
+provenance_authority = "Triptych editorial projection verified by page-image collation against the 1962 target edition"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "qualified-public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.pius-x-collect-aac8c621"]
+publication_locator = "src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml [admission] and [how_to_admit].latin_provenance_row; carrier artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.pius-x-collect-aac8c621"
+publication_evidence = "A Holy See text first published in Vatican City in 1955 (rights record limits L1-L3; DECISIONS 8 and 10b). AAS 47 (1955), vatican.va AAS-47-1955-ocr.pdf sha256 87faf821...4eb74d58, p. 254 (re-typeset reconstruction; ejus/eius, commas, eumdem/eundem; its reading consequantur for the printed consequamur is taken as a reconstruction error and was not verified on a facsimile). Wording is supplied only by the 1962 page image. The AAS volumes examined carry no copyright notice."
+publication_authority = "src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml"
+notice = "Published on a qualified basis (publication policy priority 6; confidence medium-low): a Holy See text first published in Vatican City in 1931-1975 that lapsed into the U.S. public domain for want of a formality, and whose twenty-year Vatican term under Italian Law 633/1941 arts. 11 and 29, as applied by Vatican Law XII of 1960, had on this project's reading expired before the 1 January 1996 U.S. restoration date (17 U.S.C. 104A). Not adjudicated; U.S. copyright only; implies no ecclesiastical approval or permission."
+first_publication = "Acta Apostolicae Sedis 47 (1955), p. 254: Sacred Congregation of Rites, Office and Mass of Saint Pius X, Pope and Confessor."
+first_publication_year = 1955
+first_publication_imprint = "Acta Apostolicae Sedis"
+first_publication_body = "Sacred Congregation of Rites"
+us_formality = "published-abroad-without-us-notice"
+
+[[entries]]
+mass = "s-pii-x-papae-confessoris"
+form = ""
+proper = "Postcommunion"
+course = ""
+cycle = ""
+occurrence = 1
+text_sha256 = "5741806b5c3258f1fffe8289ff7880b1e3b489e9ba4cc1522024a545de4df884"
+provenance_status = "collated"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.pius-x-postcommunion"
+source_date = "2026-11-14 project editorial projection from the 1962 typical edition; first Holy See publication 1955"
+locator = "Projection artifact physical lines 1-1; 1962 Vatican typical edition printed p. 649, artifact p. 730, no. 3566, right column"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.gap-campaign-20261114-pius-x-postcommunion"
+verification_locator = "1962 Vatican typical edition printed p. 649, artifact p. 730, no. 3566, right column"
+transformations = ["read on the 1962 typical-edition page images at 250 dpi", "join printed line wraps and chant syllables", "remove stress accents", "expand printed ae/oe ligatures to ae/oe", "normalise consonantal i to the calendar's declared j orthography", "retain the target printing's pointing, capitals and conclusion at its printed length"]
+provenance_evidence = "The complete 1962 wording was read on the CMAA facsimile page images on 2026-11-14 (integrate-1962 lane, against the r1-roman-1962-core lane transcription) and the projection reproduces it exactly in the calendar's declared orthography. AAS 47 (1955), vatican.va AAS-47-1955-ocr.pdf sha256 87faf821...4eb74d58, p. 255 (re-typeset reconstruction; its Mensas for Mensae is a reconstruction error; shorter cue). The AAS volumes examined carry no copyright notice."
+provenance_authority = "Triptych editorial projection verified by page-image collation against the 1962 target edition"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "qualified-public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.pius-x-postcommunion-5741806b"]
+publication_locator = "src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml [admission] and [how_to_admit].latin_provenance_row; carrier artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.pius-x-postcommunion-5741806b"
+publication_evidence = "A Holy See text first published in Vatican City in 1955 (rights record limits L1-L3; DECISIONS 8 and 10b). AAS 47 (1955), vatican.va AAS-47-1955-ocr.pdf sha256 87faf821...4eb74d58, p. 255 (re-typeset reconstruction; its Mensas for Mensae is a reconstruction error; shorter cue). The AAS volumes examined carry no copyright notice."
+publication_authority = "src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml"
+notice = "Published on a qualified basis (publication policy priority 6; confidence medium-low): a Holy See text first published in Vatican City in 1931-1975 that lapsed into the U.S. public domain for want of a formality, and whose twenty-year Vatican term under Italian Law 633/1941 arts. 11 and 29, as applied by Vatican Law XII of 1960, had on this project's reading expired before the 1 January 1996 U.S. restoration date (17 U.S.C. 104A). Not adjudicated; U.S. copyright only; implies no ecclesiastical approval or permission."
+first_publication = "Acta Apostolicae Sedis 47 (1955), p. 255: Sacred Congregation of Rites, Mass of Saint Pius X, Postcommunion."
+first_publication_year = 1955
+first_publication_imprint = "Acta Apostolicae Sedis"
+first_publication_body = "Sacred Congregation of Rites"
+us_formality = "published-abroad-without-us-notice"
+
+[[entries]]
+mass = "s-antonii-mariae-claret-episcopi-confessoris"
+form = ""
+proper = "Collect"
+course = ""
+cycle = ""
+occurrence = 1
+text_sha256 = "bb9c430baff666688c73a638d3d155d8eb8e2e0d186fae88b353657b7d059cdf"
+provenance_status = "collated"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.claret-collect"
+source_date = "2026-11-14 project editorial projection from the 1962 typical edition; first Holy See publication 1960"
+locator = "Projection artifact physical lines 1-1; 1962 Vatican typical edition printed p. 694, artifact p. 775, no. 3923, left column"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.gap-campaign-20261114-claret-collect"
+verification_locator = "1962 Vatican typical edition printed p. 694, artifact p. 775, no. 3923, left column"
+transformations = ["read on the 1962 typical-edition page images at 250 dpi", "join printed line wraps and chant syllables", "remove stress accents", "expand printed ae/oe ligatures to ae/oe", "normalise consonantal i to the calendar's declared j orthography", "retain the target printing's pointing, capitals and conclusion at its printed length"]
+provenance_evidence = "The complete 1962 wording was read on the CMAA facsimile page images on 2026-11-14 (integrate-1962 lane, against the r1-roman-1962-core lane transcription) and the projection reproduces it exactly in the calendar's declared orthography. AAS 52 (1960), registered artifact.holy-see.acta-apostolicae-sedis.volume-52-1960.vatican-ocr-pdf-c734079d, p. 719, Variationes in Breviario et Missali Romano n. 55 (re-typeset reconstruction; pointing, short cue). Possible earlier printings in a Claretian proper (beatification 1934, canonization 1950) were not acquired; if one of them first printed these words outside Vatican City, limit L2 would not be met, and that risk is stated here for review. The AAS volumes examined carry no copyright notice."
+provenance_authority = "Triptych editorial projection verified by page-image collation against the 1962 target edition"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "qualified-public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.claret-collect-bb9c430b"]
+publication_locator = "src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml [admission] and [how_to_admit].latin_provenance_row; carrier artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.claret-collect-bb9c430b"
+publication_evidence = "A Holy See text first published in Vatican City in 1960 (rights record limits L1-L3; DECISIONS 8 and 10b). AAS 52 (1960), registered artifact.holy-see.acta-apostolicae-sedis.volume-52-1960.vatican-ocr-pdf-c734079d, p. 719, Variationes in Breviario et Missali Romano n. 55 (re-typeset reconstruction; pointing, short cue). Possible earlier printings in a Claretian proper (beatification 1934, canonization 1950) were not acquired; if one of them first printed these words outside Vatican City, limit L2 would not be met, and that risk is stated here for review. The AAS volumes examined carry no copyright notice."
+publication_authority = "src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml"
+notice = "Published on a qualified basis (publication policy priority 6; confidence medium-low): a Holy See text first published in Vatican City in 1931-1975 that lapsed into the U.S. public domain for want of a formality, and whose twenty-year Vatican term under Italian Law 633/1941 arts. 11 and 29, as applied by Vatican Law XII of 1960, had on this project's reading expired before the 1 January 1996 U.S. restoration date (17 U.S.C. 104A). Not adjudicated; U.S. copyright only; implies no ecclesiastical approval or permission."
+first_publication = "Acta Apostolicae Sedis 52 (1960), p. 719: Sacred Congregation of Rites, proper parts for the feast of Saint Anthony Mary Claret."
+first_publication_year = 1960
+first_publication_imprint = "Acta Apostolicae Sedis"
+first_publication_body = "Sacred Congregation of Rites"
+us_formality = "published-abroad-without-us-notice"
+
+[[entries]]
+mass = "easter-vigil"
+form = ""
+proper = "Exsultet (Praeconium paschale)"
+course = ""
+cycle = ""
+occurrence = 1
+text_sha256 = "a6d014d2da011fd012f03007574048df7ceaf10e9b8a8fac6ee3063cd6194973"
+provenance_status = "collated"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.exsultet"
+source_date = "2026-11-14 project editorial projection from the 1962 typical edition; first Holy See publication 1951"
+locator = "Projection artifact physical lines 1-9; 1962 Vatican typical edition printed p. 185-194, artifact p. 266-275, no. 979, chant pages"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.gap-campaign-20261114-exsultet"
+verification_locator = "1962 Vatican typical edition printed p. 185-194, artifact p. 266-275, no. 979, chant pages"
+transformations = ["read on the 1962 typical-edition page images at 250 dpi", "join printed line wraps and chant syllables", "remove stress accents", "expand printed ae/oe ligatures to ae/oe", "normalise consonantal i to the calendar's declared j orthography", "retain the target printing's pointing, capitals and conclusion at its printed length"]
+provenance_evidence = "The complete 1962 wording was read on the CMAA facsimile page images on 2026-11-14 (integrate-1962 lane, against the r1-roman-1962-core lane transcription) and the projection reproduces it exactly in the calendar's declared orthography. Mixed slot admitted whole on the weakest basis of its parts (DECISIONS 10c). PD spans recorded: A = Exsultet iam ... conservare digneris (Pustet Ratisbon 1862, printed pp. 181-187, word for word after orthography) and C = Per eundem Dominum ... R. Amen. (Pustet 1862, printed p. 187); B = Respice etiam ad eos ... cum omni populo tuo is new 1951 matter. Registered artifact.catholic-church.missale-romanum.vatican-ordo-sabbati-sancti-1951.ia-searchable-pdf-3c9a9291 (restricted, not a carrier): title page reads Typis Polyglottis Vaticanis MDCCCCLI, verso blank (no notice), artifact p. 21 = printed 19 prints span B with the 1962 words (pointing and justitiam only), read on the page images 2026-11-14. Wording of the whole slot read on the 1962 typical-edition page images."
+provenance_authority = "Triptych editorial projection verified by page-image collation against the 1962 target edition"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "qualified-public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.exsultet-a6d014d2", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
+publication_locator = "src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml [admission] and [how_to_admit].latin_provenance_row; carrier artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.exsultet-a6d014d2"
+publication_evidence = "A Holy See text first published in Vatican City in 1951 (rights record limits L1-L3; DECISIONS 8 and 10b). Mixed slot admitted whole on the weakest basis of its parts (DECISIONS 10c). PD spans recorded: A = Exsultet iam ... conservare digneris (Pustet Ratisbon 1862, printed pp. 181-187, word for word after orthography) and C = Per eundem Dominum ... R. Amen. (Pustet 1862, printed p. 187); B = Respice etiam ad eos ... cum omni populo tuo is new 1951 matter. Registered artifact.catholic-church.missale-romanum.vatican-ordo-sabbati-sancti-1951.ia-searchable-pdf-3c9a9291 (restricted, not a carrier): title page reads Typis Polyglottis Vaticanis MDCCCCLI, verso blank (no notice), artifact p. 21 = printed 19 prints span B with the 1962 words (pointing and justitiam only), read on the page images 2026-11-14. Wording of the whole slot read on the 1962 typical-edition page images."
+publication_authority = "src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml"
+notice = "Published on a qualified basis (publication policy priority 6; confidence medium-low): a Holy See text first published in Vatican City in 1931-1975 that lapsed into the U.S. public domain for want of a formality, and whose twenty-year Vatican term under Italian Law 633/1941 arts. 11 and 29, as applied by Vatican Law XII of 1960, had on this project's reading expired before the 1 January 1996 U.S. restoration date (17 U.S.C. 104A). Not adjudicated; U.S. copyright only; implies no ecclesiastical approval or permission."
+first_publication = "Ordo Sabbati Sancti quando Vigilia Paschalis instaurata peragitur, Typis Polyglottis Vaticanis 1951 (decree of 9 February 1951), printed p. 19: first printing of the new petition Respice etiam ad eos, qui nos in potestate regunt ... cum omni populo tuo, which replaced the petition for the Emperor; the rest of the Praeconium is pre-1931 public-domain matter."
+first_publication_year = 1951
+first_publication_imprint = "Typis Polyglottis Vaticanis"
+first_publication_body = "Sacred Congregation of Rites"
+us_formality = "published-abroad-without-us-notice"

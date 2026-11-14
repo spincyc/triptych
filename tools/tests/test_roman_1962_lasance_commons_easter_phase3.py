@@ -197,7 +197,7 @@ class LasanceCommonsEasterPhase3Tests(unittest.TestCase):
         self.assertEqual(len(self.entries), 21)
         absences = {
             (r["mass"], r["form_id"], r["proper"], r["cycle"], r["occurrence"])
-            for r in self.document["untranslated"]
+            for r in self.document.get("untranslated", [])
         }
         self.assertFalse(targets & absences)
         for pair, source_key in EXPECTED.items():

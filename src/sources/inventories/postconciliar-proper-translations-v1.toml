@@ -3254,7 +3254,10 @@ sha256 = "c329b580d0432a032ca1b96115d148a178cac5e1a4f7c3ace5171e2683f24f91"
 
 [[english_quarantine.admission_receipts]]
 path = "workflows/reviews/gap-campaign-2026-11-14/postconciliar/p3-easter-pentecost-admission.json"
-sha256 = "c3ba6d97309dfae21a9eba3eed6a48a436da538b239fe4f62e5c4457b5a5d016"
+sha256 = "4dc965db3c60a9f3b6bfbe0dc5e78e43629c0863cc659889ea1f688ebbe77240"
+[[english_quarantine.admission_receipts]]
+path = "workflows/reviews/gap-campaign-2026-11-14/postconciliar/integrate-1962-admission.json"
+sha256 = "de69125a123aa7c189ee99bf0a717af932b0aabf6183d3be205c6ee37a9eebcd"
 
 [[sources]]
 id = "lasance-1945-printing-1946"
@@ -7789,10 +7792,14 @@ witness_artifact_id = "artifact.catholic-church.sacramentarium-gelasianum-vetus.
 ancient_passage_id = "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-opening2-reminiscere-source"
 ancient_reading = "Reminiscere miserationum tuarum, Domine, et famulos tuos aeterna protectione sanctifica, pro quibus Christus Filius tuus per suum cruorem nobis instituit paschale mysterium. Per Dominum nostrum."
 divergence = "The secondary2002 petition omits exactly nobis between cruorem and instituit. Every other petition word agrees after stress accents, punctuation and capitalization. The old generic conclusion Per Dominum nostrum. is replaced by Qui vivit et regnat in saecula saeculorum. with a separate R. Amen. The complete third-person conclusion is independently image-witnessed in the same1894 source at artifact145/printed52; this is a common formula, not a newly composed petition. The response remains a marked separate response in study English. Ancient source footnote16 is apparatus after quibus, and17 follows Per; neither is wording. Apparatus16 records other witnesses with Iesus, while Wilson maintext and inspected secondary both Christus without Iesus. Study English only. Independently witnessed ancient petition with enumerated omission/grammatical variants and independently witnessed generic conclusion; not approved current liturgical English, not authenticated2008 correspondence, not an instruction for recitation. Complete old conclusion proof: passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-opening2-qui-vivit-conclusion."
+source_latin_sha256 = "4adf6a6d46197d98e01fd3bb80b0a45f7c299a7eaff7b2f7323361c874e709ce"
+source_latin_passage_id = "passage.triptych.postconciliar-latin-proper-editorial-projection.2026-11-14-holy-see-qualified.good-friday-reminiscere"
+source_latin_publication_source_ids = ["artifact.triptych.postconciliar-latin-proper-editorial-projection.2026-11-14-holy-see-qualified.good-friday-reminiscere-4adf6a6d", "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.temporal-orations-20261112-short-third-person-formula-latin", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"]
 [[entries.translations]]
 lang = "en"
 rights = "project-created"
 text = "Remember your mercies, Lord, and sanctify your servants with everlasting protection, for whom Christ your Son established the Paschal mystery through his own blood. He lives and reigns for ever and ever.\nR. Amen."
+notice = "Original study translation by Triptych of a Holy See text published here on a qualified basis (publication policy priority 6; confidence medium-low): its Vatican term had, on this project's reading, expired before the 1996 U.S. restoration date. Not adjudicated; U.S. copyright only; not an approved liturgical translation."
 
 [[entries]]
 mass = "good-friday"
@@ -7802,16 +7809,19 @@ cycle = "all"
 occurrence = 1
 incipit = "Deus, qui peccati veteris hereditariam mortem"
 relation = "variant"
-ancient_witness = "Wilson1894; printed75; BookI, sectionxli, second prayer before Passion, following Iterum dicit sacerdos: Oremus"
-witness_edition_id = "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894"
-witness_artifact_id = "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-opening2-wilson-pages52-61-75-9ea0918d"
-ancient_passage_id = "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-opening2-deus-qui-peccati-source"
-ancient_reading = "Deus, qui peccati veteris haereditariam mortem, in qua posteritatis genus omne successerat, Christi tui Domini nostri passione solvisti, dona ut conformes eidem facti, sicut imaginem terreni naturae necessitate portavimus, ita imaginem caelestis gratiae sanctificatione portemus, Christi Domini nostri. Qui tecum vivit"
-divergence = "The secondary2002 petition inserts Filii immediately after Christi before tui; substitutes da for dona; inserts hominis after terreni. These are explicit small grammatical/relationship clarifications of the same old petition, not silently declared orthography. The secondary2002 omits the ancient closing Christi Domini nostri. Qui tecum vivit, and supplies the common short conclusion Per Christum Dominum nostrum. with a separately marked R. Amen. The complete short formula and marked response are independently image-witnessed in old Lasance at artifact217/printed217. haereditariam/hereditariam is spelling; stress accents, capitalization and pointing differ. Ancient footnote markers8–10 are apparatus, not wording. No modern fullbody is retained in this proposal. The complete finite relationship, including all three small clarifications and common conclusion change, requires independent source and rights review before admission; no exact whole-word target fidelity or authenticated2008 reading is claimed. Study English only. Independently witnessed ancient petition with enumerated omission/grammatical variants and independently witnessed generic conclusion; not approved current liturgical English, not authenticated2008 correspondence, not an instruction for recitation. Complete old conclusion proof: passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-per-christum-conclusion."
+ancient_witness = "Missale Romanum editio typica, Typis Polyglottis Vaticanis 1962, printed p. 162, no. 924 (first printed in the Ordo Hebdomadae Sanctae instauratus, 1956); a Holy See text of 1955/1956 admitted under src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml"
+witness_edition_id = "edition.catholic-church.missale-romanum.vatican-typica-1962"
+witness_artifact_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+ancient_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.gap-campaign-20261114-postconciliar-good-friday-deus-qui-peccati"
+ancient_reading = "Deus, qui peccati veteris hereditariam mortem, in qua posteritatis genus omne successerat, Christi tui, Domini nostri, passione solvisti: da, ut, conformes eidem facti; sicut imaginem terreni, naturae necessitate portavimus, ita imaginem caelestis, gratiae sanctificatione portemus. Per eundem Christum Dominum nostrum. Omnes respondent: Amen."
+divergence = "Re-based 2026-11-14 (DECISIONS 5, 13; lane p6 #108) from the Gelasian Wilson 1894 witness, against which the 2002 text shows three change-units (Filii, da for dona, hominis) and so exceeds the variant ceiling, to the 1955/1962 Holy See antecedent, which already reads da: the 2002 inserts Filii after Christi and hominis after terreni (two change-units, two new word-forms), and its conclusion Per Christum Dominum nostrum drops eundem (abridgment) with a marked R. Amen. Pointing, stress accents and capitalisation differ. The English follows the 2002 wording, rendering Filii and hominis. The 2002 Latin itself is not admitted (two inserted words have no witness); only this study English is published, as a variant of a qualified antecedent."
+witness_note = "Project-created study English of the 2002 prayer, a variant of the 1955/1962 Holy See text; not approved liturgical English, not authenticated 2008 correspondence, not for recitation."
+
 [[entries.translations]]
 lang = "en"
 rights = "project-created"
-text = "O God, who through the Passion of Christ your Son, our Lord, have undone the death inherited from ancient sin, into which the whole human race had fallen, grant that, made like him, as we have borne the image of the earthly man by the necessity of nature, so we may bear the image of the heavenly one through sanctification by grace. Through Christ our Lord.\nR. Amen."
+text = "O God, who by the passion of Christ your Son, our Lord, dissolved the inherited death of the ancient sin, to which the whole race of later generations had succeeded, grant that, being made conformed to him, as by the necessity of nature we have borne the image of the earthly man, so by the sanctification of grace we may bear the image of the heavenly. Through Christ our Lord.\nR. Amen."
+notice = "Original study translation by Triptych of a Holy See text published here on a qualified basis (publication policy priority 6; confidence medium-low): its Vatican term had, on this project's reading, expired before the 1996 U.S. restoration date. Not adjudicated; U.S. copyright only; not an approved liturgical translation."
 
 # --- Protected or unofficial English quarantined as text-free audit metadata ---
 #
@@ -8888,51 +8898,6 @@ quarantined_text_sha256 = ["5040fdbde799d437fdfed11861eca43d698e699b03d98c4d3369
 note = "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
 
 [[untranslated]]
-mass = "easter-vigil"
-form_id = "main"
-proper = "Inscription of the Paschal Candle"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "rights-withheld", source_id = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21", surfaces = ["corpus-data", "public-git", "command-line", "download"] }
-rights = "permission"
-witness = "icel-music-2010"
-source_id = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21"
-witness_artifact_id = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.lucernarium"
-verified_on_page = "2026-08-22"
-verified_artifact_page = 1
-verified_heading = "THE EASTER VIGIL / First Part: The Solemn Beginning of the Vigil or Lucernarium / The Blessing of the Fire and Preparation of the Candle"
-verified_url = "https://www.icelweb.org/musicfolder/Lucernarium.pdf"
-quarantined_text_sha256 = ["e13493622c2bd1eed24e175f8c9e4ed6734f0eb00cbc422071db9225a9217184"]
-note = "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
-
-[[untranslated]]
-mass = "easter-vigil"
-form_id = "main"
-proper = "Insertion of the Grains of Incense"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "The candidate artifact does not match this source-owned Latin slot exactly (sanctissima in the candidate, sancta here), so it establishes neither this target's exact English nor a slot-specific publication basis. No English wording is retained."
-
-[[untranslated]]
-mass = "easter-vigil"
-form_id = "main"
-proper = "Lighting of the Paschal Candle"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "The candidate artifact does not match this source-owned Latin slot exactly (gloriae in the candidate, gloriose here), so it establishes neither this target's exact English nor a slot-specific publication basis. No English wording is retained."
-
-[[untranslated]]
 mass = "good-friday"
 form_id = "main"
 proper = "Solemn Intercession III: For all orders and degrees of the faithful"
@@ -9275,28 +9240,6 @@ note = "An exact approved-English exemplar and locator were recorded, but the ap
 
 
 
-
-[[untranslated]]
-mass = "ot-13"
-form_id = "main"
-proper = "Prayer after Communion"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "rights-withheld", source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion", surfaces = ["corpus-data", "public-git", "command-line", "download"] }
-rights = "permission"
-witness = "fdlc-mystagogy-2016"
-source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion"
-witness_artifact_id = "artifact.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion.combo-col-pac-78b-ordinary-trinity-13"
-verified_on_page = "2026-08-26"
-verified_artifact_page = 19
-verified_printed_page = "19"
-verified_heading = "THIRTEENTH SUNDAY IN ORDINARY TIME / Prayer after Communion:"
-verified_url = "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78b_ORDINARY_Trin-13_SPI2016.pdf"
-quarantined_text_sha256 = ["c2ad7df085071dcfd683dafe4bb0637297018ba040152fdd1e16cd05e45d1b1f"]
-note = "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
 
 [[untranslated]]
 mass = "ot-14"
@@ -12757,6 +12700,143 @@ witness_note = "Project-created adapted study English from a complete independen
 translations = [{"lang" = "en", "rights" = "project-created", "text" = "God, through your Son you have bestowed the fire of your radiance upon the faithful. Sanctify this new fire, and grant that through these paschal feasts we may be so inflamed with heavenly desires that, with pure minds, we may reach the feasts of everlasting radiance. Through Christ our Lord. R. Amen."}]
 
 
+[[entries]]
+mass = "easter-vigil"
+form_id = "main"
+proper = "Inscription of the Paschal Candle"
+cycle = "all"
+occurrence = 1
+source_latin_sha256 = "319ca85299fc5a09e35e30828e8763d0bda92be8209c60fef6ed935aa647c97b"
+source_latin_passage_id = "passage.triptych.postconciliar-latin-proper-editorial-projection.2026-11-14-holy-see-qualified.easter-vigil-inscription"
+source_latin_publication_source_ids = ["artifact.triptych.postconciliar-latin-proper-editorial-projection.2026-11-14-holy-see-qualified.easter-vigil-inscription-319ca852"]
+
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "1. Christ yesterday and today;\n2. the Beginning and the End;\n3. Alpha;\n4. and Omega.\n5. His are the times;\n6. and the ages.\n7. To him be glory and dominion;\n8. through all the ages of eternity. Amen.\n"
+notice = "Original study translation by Triptych of a Holy See text published here on a qualified basis (publication policy priority 6; confidence medium-low): its Vatican term had, on this project's reading, expired before the 1996 U.S. restoration date. Not adjudicated; U.S. copyright only; not an approved liturgical translation."
+
+[entries.translations.text_structure]
+text_sha256 = "f09fd708e4ab373d5e5b7ad4d792bad7c17975c9c0fedd59e8313512e0973f2d"
+checked = "Original study English of the admitted Latin; division numerals are nonspoken markers."
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 0
+text = "1."
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 31
+text = "2."
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 61
+text = "3."
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 71
+text = "4."
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 85
+text = "5."
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 107
+text = "6."
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 124
+text = "7."
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 157
+text = "8."
+
+[[entries]]
+mass = "easter-vigil"
+form_id = "main"
+proper = "Insertion of the Grains of Incense"
+cycle = "all"
+occurrence = 1
+source_latin_sha256 = "a1e574b8e32e8d910dea1c90ce9eec78bdabad5ea41c8b17851cb0ca15da843b"
+source_latin_passage_id = "passage.triptych.postconciliar-latin-proper-editorial-projection.2026-11-14-holy-see-qualified.easter-vigil-grains"
+source_latin_publication_source_ids = ["artifact.triptych.postconciliar-latin-proper-editorial-projection.2026-11-14-holy-see-qualified.easter-vigil-grains-a1e574b8"]
+
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "1. By his holy wounds,\n2. glorious,\n3. may he guard\n4. and keep us,\n5. Christ the Lord. Amen.\n"
+notice = "Original study translation by Triptych of a Holy See text published here on a qualified basis (publication policy priority 6; confidence medium-low): its Vatican term had, on this project's reading, expired before the 1996 U.S. restoration date. Not adjudicated; U.S. copyright only; not an approved liturgical translation."
+
+[entries.translations.text_structure]
+text_sha256 = "650b00de7a5c095adbc75b39afdc72680fe224773de9e6f49e114d09e6361fed"
+checked = "Original study English of the admitted Latin; division numerals are nonspoken markers."
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 0
+text = "1."
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 23
+text = "2."
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 36
+text = "3."
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 52
+text = "4."
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 68
+text = "5."
+
+[[entries]]
+mass = "easter-vigil"
+form_id = "main"
+proper = "Lighting of the Paschal Candle"
+cycle = "all"
+occurrence = 1
+source_latin_sha256 = "d4c801709a03ec231dacda4c2d30d8f05b85e4ab9b54b18a406ae5ab608c54b2"
+source_latin_passage_id = "passage.triptych.postconciliar-latin-proper-editorial-projection.2026-11-14-holy-see-qualified.easter-vigil-lighting"
+source_latin_publication_source_ids = ["artifact.triptych.postconciliar-latin-proper-editorial-projection.2026-11-14-holy-see-qualified.easter-vigil-lighting-d4c80170"]
+
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "May the light of Christ, rising in glory,\ndispel the darkness of heart and mind.\n"
+notice = "Original study translation by Triptych of a Holy See text published here on a qualified basis (publication policy priority 6; confidence medium-low): its Vatican term had, on this project's reading, expired before the 1996 U.S. restoration date. Not adjudicated; U.S. copyright only; not an approved liturgical translation."
+
+[[entries]]
+mass = "ot-13"
+form_id = "main"
+proper = "Prayer after Communion"
+cycle = "all"
+occurrence = 1
+source_latin_sha256 = "f2d5c07c95d53b0505ea69daed444f8fcba37d669e10e069a4a86a13244502ec"
+source_latin_passage_id = "passage.triptych.postconciliar-latin-proper-editorial-projection.2026-11-14-holy-see-qualified.ot-13-postcommunion"
+source_latin_publication_source_ids = ["artifact.triptych.postconciliar-latin-proper-editorial-projection.2026-11-14-holy-see-qualified.ot-13-postcommunion-f2d5c07c", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"]
+
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "May the divine sacrifice which we have offered and received give us life, we pray, O Lord, so that, joined to you in perpetual charity, we may bear fruit that remains for ever. Through Christ our Lord.\n"
+notice = "Original study translation by Triptych of a Holy See text published here on a qualified basis (publication policy priority 6; confidence medium-low): its Vatican term had, on this project's reading, expired before the 1996 U.S. restoration date. Not adjudicated; U.S. copyright only; not an approved liturgical translation."
+
 # Gap campaign 2026-11-14, batch p2-lent-holyweek: twelve historical antecedent English uses and seventeen project study translations (two Easter Vigil duplicates dropped at the merge of f54a20f201); see workflows/reviews/gap-campaign-2026-11-14/postconciliar/p2-lent-holyweek-admission.json.
 [[entries]]
 mass = "ash-wednesday"
@@ -14768,17 +14848,26 @@ form_id = "main"
 proper = "Communion Antiphon"
 cycle = "all"
 occurrence = 1
-relation = "variant"
-ancient_reading = "et pro omnibus mortuus est Christus: ut, et qui vivunt, iam non sibi vivant, sed ei, qui pro ipsis mortuus est et resurrexit."
-divergence = "Target (secondary 2002 artifact page 240) against the Hetzenauer 1914 Vulgate, 2 Corinthians 5:15: Target omits the opening et of 2 Corinthians 5:15 (dropped word, discounted) and appends the paschal alleluia: the paschal alleluia appended by the Missal counts as one change unit and one new word-form (DECISIONS 7b, 5). The English follows the Missal. The comparison is bounded to the inspected target page; printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft reviewed for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
-ancient_witness = "edition.catholic-church.vulgata-clementina.hetzenauer-1914; printed p. 1126"
-witness_edition_id = "edition.catholic-church.vulgata-clementina.hetzenauer-1914"
-witness_artifact_id = "artifact.catholic-church.vulgata-clementina.hetzenauer-1914.sacredbible-scan-1126-4260da4d"
-ancient_passage_id = "passage.catholic-church.vulgata-clementina.hetzenauer-1914.gap-campaign-20261114-easter-pentecost-easter-3-thursday-main-communion-antiphon-1-study-source"
+witness = "lasance-1945-printing-1946"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "993"
+ia_leaf = 1002
+ia_leaf_range = [1002, 1002]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-easter-3-thursday-communion-english-source"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-thursday-communion-english-7d92aacd"
+publication_artifact_sha256 = "7d92aacdf6ce7a16d58f67ead17ed7c9e7e970d8970937d6b7cfe5487e57d415"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-easter-3-thursday-communion-english-publication"
+collated = "page-image, 2026-11-14"
+collation_result = "confirmed"
+witness_note = "Historical antecedent English from Lasance and Walsh, revised 1945, 1946 printing, printed p. 993 (Greater Alleluia of St Paul of the Cross, first verse), read on the page image on 2026-11-14. Its facing Latin Pro omnibus mortuus est Christus: ut, et qui vivunt jam non sibi vivant sed ei, qui pro ipsis mortuus est, et resurrexit. Alleluja is the 2002 Communion antiphon word for word (pointing, case, j/i). A missal's own rendering, not Douay-Rheims (DECISIONS 13c). Not approved liturgical English; not for recitation."
+
 [[entries.translations]]
 lang = "en"
-rights = "project-created"
-text = "Christ died for all, so that those also who live may no longer live for themselves, but for him who died for them and rose again, alleluia."
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Christ died for all; that they also who live may not now live to themselves, but to Him who died for them, and rose again. Alleluia."
 
 [[entries]]
 mass = "easter-3-friday"
@@ -15002,17 +15091,26 @@ form_id = "main"
 proper = "Communion Antiphon"
 cycle = "all"
 occurrence = 1
-relation = "variant"
-ancient_reading = "et pro omnibus mortuus est Christus: ut, et qui vivunt, iam non sibi vivant, sed ei, qui pro ipsis mortuus est et resurrexit."
-divergence = "Target (secondary 2002 artifact page 250) against the Hetzenauer 1914 Vulgate, 2 Corinthians 5:15: Target omits the opening et of 2 Corinthians 5:15 (dropped word, discounted) and appends the paschal alleluia: the paschal alleluia appended by the Missal counts as one change unit and one new word-form (DECISIONS 7b, 5). The English follows the Missal. The comparison is bounded to the inspected target page; printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft reviewed for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
-ancient_witness = "edition.catholic-church.vulgata-clementina.hetzenauer-1914; printed p. 1126"
-witness_edition_id = "edition.catholic-church.vulgata-clementina.hetzenauer-1914"
-witness_artifact_id = "artifact.catholic-church.vulgata-clementina.hetzenauer-1914.sacredbible-scan-1126-4260da4d"
-ancient_passage_id = "passage.catholic-church.vulgata-clementina.hetzenauer-1914.gap-campaign-20261114-easter-pentecost-easter-5-thursday-main-communion-antiphon-1-study-source"
+witness = "lasance-1945-printing-1946"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "993"
+ia_leaf = 1002
+ia_leaf_range = [1002, 1002]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-easter-5-thursday-communion-english-source"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-thursday-communion-english-7d92aacd"
+publication_artifact_sha256 = "7d92aacdf6ce7a16d58f67ead17ed7c9e7e970d8970937d6b7cfe5487e57d415"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-easter-5-thursday-communion-english-publication"
+collated = "page-image, 2026-11-14"
+collation_result = "confirmed"
+witness_note = "Historical antecedent English from Lasance and Walsh, revised 1945, 1946 printing, printed p. 993 (Greater Alleluia of St Paul of the Cross, first verse), read on the page image on 2026-11-14. Its facing Latin Pro omnibus mortuus est Christus: ut, et qui vivunt jam non sibi vivant sed ei, qui pro ipsis mortuus est, et resurrexit. Alleluja is the 2002 Communion antiphon word for word (pointing, case, j/i). A missal's own rendering, not Douay-Rheims (DECISIONS 13c). Not approved liturgical English; not for recitation."
+
 [[entries.translations]]
 lang = "en"
-rights = "project-created"
-text = "Christ died for all, so that those also who live may no longer live for themselves, but for him who died for them and rose again, alleluia."
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Christ died for all; that they also who live may not now live to themselves, but to Him who died for them, and rose again. Alleluia."
 
 [[entries]]
 mass = "easter-5-friday"

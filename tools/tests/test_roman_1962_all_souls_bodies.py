@@ -213,15 +213,15 @@ class AllSoulsBodyTests(unittest.TestCase):
 
     def test_existing_english_positive_and_absence_owners_remain_exact(self):
         ledger = tomllib.loads((ROOT / 'src/sources/inventories/roman-1962-proper-translations-v1.toml').read_text())
-        owners = {kind: [r for r in ledger[kind] if r['mass'] == MASS]
+        owners = {kind: [r for r in ledger.get(kind, []) if r['mass'] == MASS]
                   for kind in ('entries', 'untranslated')}
-        self.assertEqual((len(owners['entries']), len(owners['untranslated'])), (16, 0))
+        self.assertEqual((len(owners['entries']), len(owners.get('untranslated', []))), (16, 0))
         corrected = accepted_requiem_english()
         entries = {(row['form_id'], row['proper'], row['cycle'], row['occurrence']): row
                    for row in owners['entries']}
         self.assertLessEqual(set(corrected), set(entries))
         uncorrected = {'entries': [row for key, row in entries.items() if key not in corrected],
-                       'untranslated': owners['untranslated']}
+                       'untranslated': owners.get('untranslated', [])}
         self.assertEqual(digest(uncorrected), ENGLISH_OWNERS_HASH)
         for key, row in corrected.items():
             self.assertEqual(entries[key], row['new_entry'], key)
@@ -235,7 +235,7 @@ class AllSoulsBodyTests(unittest.TestCase):
             if key in corrected:
                 english = corrected[key]['new_English_sha256']
             self.assertEqual(text_sha256(entries[key]['translations'][0]['text']), english, key)
-        for row in owners['untranslated']:
+        for row in owners.get("untranslated", []):
             self.assertEqual(row['availability'], 'unavailable')
             self.assertNotIn('text', row)
         loader = importlib.machinery.SourceFileLoader('all_souls_mass_propers', str(ROOT / 'tools/mass-propers'))
