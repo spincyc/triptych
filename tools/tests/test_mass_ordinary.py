@@ -3038,9 +3038,12 @@ process.stdout.write(JSON.stringify({
             # typed not-a-text structural rows drop their redundant "Not
             # shown" notices, the contract tools/tests/
             # ordinary_structural_absence.mjs holds. No other row changes.
+            # Re-pinned 2026-11-14: rows 33 and 70 (Prayer over the Offerings,
+            # Prayer after Communion) carry the Latin the public-domain witness
+            # campaign admitted; their English and every other row hold.
             "ot_18_text": (
                 74,
-                "6303e0c1f46ea497de6bd08c249702785275a2effa60c6654bd8c33699e0fcfe",
+                "bc1bf18161ffcd00c1cfe0cbdf4011ea7960afe65ca365474f92e6932d69444a",
             ),
         }
         for key, (count, wanted_digest) in expected.items():
