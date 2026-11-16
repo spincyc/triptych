@@ -1,0 +1,718 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-extent",
+  "book_id": "byzantine-greek-1738-chrysostom-anaphora",
+  "title": "1738 Chrysostom anaphora complete constituent page/unit census",
+  "status": "complete",
+  "unresolved": [],
+  "omitted": [],
+  "expected_unit_ids": [
+    "unit.byz-greek-1738.chrysostom.dialogue",
+    "unit.byz-greek-1738.chrysostom.preface",
+    "unit.byz-greek-1738.chrysostom.sanctus",
+    "unit.byz-greek-1738.chrysostom.post-sanctus",
+    "unit.byz-greek-1738.chrysostom.institution-bread",
+    "unit.byz-greek-1738.chrysostom.institution-cup",
+    "unit.byz-greek-1738.chrysostom.anamnesis-oblation",
+    "unit.byz-greek-1738.chrysostom.invocation-gifts",
+    "unit.byz-greek-1738.chrysostom.communion-fruits",
+    "unit.byz-greek-1738.chrysostom.commemoration-saints",
+    "unit.byz-greek-1738.chrysostom.commemoration-theotokos",
+    "unit.byz-greek-1738.chrysostom.diptychs-departed",
+    "unit.byz-greek-1738.chrysostom.intercession-episcopate",
+    "unit.byz-greek-1738.chrysostom.intercession-world",
+    "unit.byz-greek-1738.chrysostom.commemoration-hierarch",
+    "unit.byz-greek-1738.chrysostom.intercession-city",
+    "unit.byz-greek-1738.chrysostom.closing-ekphonesis",
+    "unit.byz-greek-1738.chrysostom.commemoration-hierarch-footnote"
+  ],
+  "scope": "Complete Anaphora of the Liturgy of St John Chrysostom in the 1738 printing, as that book divides it: from the red deacon heading and Στῶμεν καλῶς (First pagination p. λʹ (provider PP36)) through the ekphonesis Καὶ δὸς ἡμῖν … τῶν αἰώνων that closes the intercessions (First pagination p. λεʹ (provider PP41)), with every red heading, rubric, diaconal and choir line printed inside it and the footnote on the hierarch commemoration. 18 units, 118 reading lines. Excludes everything before Στῶμεν καλῶς and from Καὶ ἔσται τὰ ἐλέη onward. Neither the whole Divine Liturgy nor the whole book is claimed; whole-book text coverage remains partial.",
+  "pages": [
+    {
+      "witness_id": "byz-greek-1738-anaphora-pages",
+      "ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "Title page PP5, retained for edition identity only."
+    },
+    {
+      "witness_id": "byz-greek-1738-anaphora-pages",
+      "ranges": [
+        [
+          2,
+          2
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.byz-greek-1738.chrysostom.dialogue",
+        "unit.byz-greek-1738.chrysostom.preface"
+      ],
+      "description": "Printed p. λʹ (30) (provider PP36); text before Στῶμεν καλῶς is outside the constituent."
+    },
+    {
+      "witness_id": "byz-greek-1738-anaphora-pages",
+      "ranges": [
+        [
+          3,
+          3
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.byz-greek-1738.chrysostom.preface",
+        "unit.byz-greek-1738.chrysostom.sanctus",
+        "unit.byz-greek-1738.chrysostom.post-sanctus"
+      ],
+      "description": "Printed p. λαʹ (31) (provider PP37)."
+    },
+    {
+      "witness_id": "byz-greek-1738-anaphora-pages",
+      "ranges": [
+        [
+          4,
+          4
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.byz-greek-1738.chrysostom.institution-bread",
+        "unit.byz-greek-1738.chrysostom.institution-cup",
+        "unit.byz-greek-1738.chrysostom.anamnesis-oblation",
+        "unit.byz-greek-1738.chrysostom.invocation-gifts"
+      ],
+      "description": "Printed p. λβʹ (32) (provider PP38)."
+    },
+    {
+      "witness_id": "byz-greek-1738-anaphora-pages",
+      "ranges": [
+        [
+          5,
+          5
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.byz-greek-1738.chrysostom.invocation-gifts",
+        "unit.byz-greek-1738.chrysostom.communion-fruits",
+        "unit.byz-greek-1738.chrysostom.commemoration-saints"
+      ],
+      "description": "Printed p. λγʹ (33) (provider PP39)."
+    },
+    {
+      "witness_id": "byz-greek-1738-anaphora-pages",
+      "ranges": [
+        [
+          6,
+          6
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.byz-greek-1738.chrysostom.commemoration-saints",
+        "unit.byz-greek-1738.chrysostom.commemoration-theotokos",
+        "unit.byz-greek-1738.chrysostom.diptychs-departed",
+        "unit.byz-greek-1738.chrysostom.intercession-episcopate",
+        "unit.byz-greek-1738.chrysostom.intercession-world"
+      ],
+      "description": "Printed p. λδʹ (34) (provider PP40)."
+    },
+    {
+      "witness_id": "byz-greek-1738-anaphora-pages",
+      "ranges": [
+        [
+          7,
+          7
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.byz-greek-1738.chrysostom.intercession-world",
+        "unit.byz-greek-1738.chrysostom.commemoration-hierarch",
+        "unit.byz-greek-1738.chrysostom.intercession-city",
+        "unit.byz-greek-1738.chrysostom.closing-ekphonesis",
+        "unit.byz-greek-1738.chrysostom.commemoration-hierarch-footnote"
+      ],
+      "description": "Printed p. λεʹ (35) (provider PP41); text from Καὶ ἔσται τὰ ἐλέη onward is outside the constituent."
+    }
+  ],
+  "normalization": "Line-by-line reading transcription made on 2026-10-22 directly from the page images of the parent facsimile (Google public viewer images at 1600 px width), with the retained 575 px whole-book images as a cross-check; no OCR or modern edition controls any word. Greek is polytonic as printed: letters, acute/grave/circumflex (including printed graves before punctuation), breathings, diaeresis, capitalization and punctuation follow the page. Iota subscripts are encoded only where printed; datives printed without one are kept so. Greek ano teleia is encoded U+00B7 and elision U+2019. Typographic ligatures and suprascript abbreviations (for example the καί ligature, ου and ος ligatures, suprascript τοῦ/τῶν/τὸν/αὐτοῦ/αὐτὸν/μετὰ forms) are expanded to the full printed word; the δια ligature is expanded in lowercase. Spaced small-capital headings are encoded as Unicode capitals with their printed accents and breathings; institution words keep the case in which each edition prints them. A red initial letter beginning black text belongs to the black text. Running heads, page numbers, signatures, catchwords, ornaments, drop-cap sizing and line-end word division are removed; words broken across lines or pages are joined. Each printed block of a different class (red heading, red rubric, black reading text, footnote) starts a new line, and every block is broken mechanically after each . · : or ; followed by a space (an ellipsis is never broken). The extent record classifies each physical line. Encoding: NFC UTF-8, LF line ends, one final LF.",
+  "source_boundary_audit": {
+    "start": "First pagination p. λʹ (provider PP36): red heading Ὁ ΔΙΆΚΟΝΟΣ and Στῶμεν καλῶς, after the people’s Creed incipit",
+    "end": "First pagination p. λεʹ (provider PP41): ekphonesis Καὶ δὸς ἡμῖν … τῶν αἰώνων., before the catchword ἘΚ- and the heading ἘΚΦΏΝΗΣΙΣ / Καὶ ἔσται on PP42; plus the hierarch footnote at the foot of λεʹ",
+    "unit_count": 18,
+    "reading_lines": 118,
+    "whitespace_tokens": 1192,
+    "whole_book_scan": "artifact.holy-see.akolouthiai-ton-anonymon.1738-rome-propaganda.google-pdf-eeef890f",
+    "whole_book_scan_pages": "PP36–PP41 = whole-scan PDF pages 36–41; title PP5 = page 5"
+  },
+  "serialization_line_classes": [
+    {
+      "unit_id": "unit.byz-greek-1738.chrysostom.dialogue",
+      "physical_lines": [
+        {
+          "line": 1,
+          "type": "red-heading"
+        },
+        {
+          "line": 2,
+          "type": "reading"
+        },
+        {
+          "line": 3,
+          "type": "reading"
+        },
+        {
+          "line": 4,
+          "type": "red-rubric"
+        },
+        {
+          "line": 5,
+          "type": "reading"
+        },
+        {
+          "line": 6,
+          "type": "red-rubric"
+        },
+        {
+          "line": 7,
+          "type": "red-heading"
+        },
+        {
+          "line": 8,
+          "type": "reading"
+        },
+        {
+          "line": 9,
+          "type": "reading"
+        },
+        {
+          "line": 10,
+          "type": "reading"
+        }
+      ]
+    },
+    {
+      "unit_id": "unit.byz-greek-1738.chrysostom.preface",
+      "physical_lines": [
+        {
+          "line": 11,
+          "type": "red-rubric"
+        },
+        {
+          "line": 12,
+          "type": "reading"
+        },
+        {
+          "line": 13,
+          "type": "reading"
+        },
+        {
+          "line": 14,
+          "type": "reading"
+        },
+        {
+          "line": 15,
+          "type": "reading"
+        },
+        {
+          "line": 16,
+          "type": "reading"
+        },
+        {
+          "line": 17,
+          "type": "reading"
+        },
+        {
+          "line": 18,
+          "type": "reading"
+        },
+        {
+          "line": 19,
+          "type": "reading"
+        }
+      ]
+    },
+    {
+      "unit_id": "unit.byz-greek-1738.chrysostom.sanctus",
+      "physical_lines": [
+        {
+          "line": 20,
+          "type": "red-heading"
+        },
+        {
+          "line": 21,
+          "type": "reading"
+        },
+        {
+          "line": 22,
+          "type": "red-rubric"
+        },
+        {
+          "line": 23,
+          "type": "red-rubric"
+        }
+      ]
+    },
+    {
+      "unit_id": "unit.byz-greek-1738.chrysostom.post-sanctus",
+      "physical_lines": [
+        {
+          "line": 24,
+          "type": "red-rubric"
+        },
+        {
+          "line": 25,
+          "type": "reading"
+        },
+        {
+          "line": 26,
+          "type": "reading"
+        },
+        {
+          "line": 27,
+          "type": "reading"
+        },
+        {
+          "line": 28,
+          "type": "reading"
+        }
+      ]
+    },
+    {
+      "unit_id": "unit.byz-greek-1738.chrysostom.institution-bread",
+      "physical_lines": [
+        {
+          "line": 29,
+          "type": "red-heading"
+        },
+        {
+          "line": 30,
+          "type": "reading"
+        },
+        {
+          "line": 31,
+          "type": "red-rubric"
+        },
+        {
+          "line": 32,
+          "type": "reading"
+        },
+        {
+          "line": 33,
+          "type": "red-rubric"
+        },
+        {
+          "line": 34,
+          "type": "red-rubric"
+        },
+        {
+          "line": 35,
+          "type": "reading"
+        },
+        {
+          "line": 36,
+          "type": "red-rubric"
+        }
+      ]
+    },
+    {
+      "unit_id": "unit.byz-greek-1738.chrysostom.institution-cup",
+      "physical_lines": [
+        {
+          "line": 37,
+          "type": "red-rubric"
+        },
+        {
+          "line": 38,
+          "type": "reading"
+        },
+        {
+          "line": 39,
+          "type": "red-heading"
+        },
+        {
+          "line": 40,
+          "type": "reading"
+        },
+        {
+          "line": 41,
+          "type": "red-rubric"
+        },
+        {
+          "line": 42,
+          "type": "reading"
+        }
+      ]
+    },
+    {
+      "unit_id": "unit.byz-greek-1738.chrysostom.anamnesis-oblation",
+      "physical_lines": [
+        {
+          "line": 43,
+          "type": "red-rubric"
+        },
+        {
+          "line": 44,
+          "type": "reading"
+        },
+        {
+          "line": 45,
+          "type": "reading"
+        },
+        {
+          "line": 46,
+          "type": "red-heading"
+        },
+        {
+          "line": 47,
+          "type": "reading"
+        }
+      ]
+    },
+    {
+      "unit_id": "unit.byz-greek-1738.chrysostom.invocation-gifts",
+      "physical_lines": [
+        {
+          "line": 48,
+          "type": "red-rubric"
+        },
+        {
+          "line": 49,
+          "type": "reading"
+        },
+        {
+          "line": 50,
+          "type": "reading"
+        },
+        {
+          "line": 51,
+          "type": "red-rubric"
+        },
+        {
+          "line": 52,
+          "type": "reading"
+        },
+        {
+          "line": 53,
+          "type": "red-rubric"
+        },
+        {
+          "line": 54,
+          "type": "reading"
+        },
+        {
+          "line": 55,
+          "type": "red-rubric"
+        },
+        {
+          "line": 56,
+          "type": "red-rubric"
+        },
+        {
+          "line": 57,
+          "type": "reading"
+        },
+        {
+          "line": 58,
+          "type": "red-rubric"
+        },
+        {
+          "line": 59,
+          "type": "red-rubric"
+        },
+        {
+          "line": 60,
+          "type": "reading"
+        },
+        {
+          "line": 61,
+          "type": "red-rubric"
+        },
+        {
+          "line": 62,
+          "type": "reading"
+        },
+        {
+          "line": 63,
+          "type": "red-rubric"
+        },
+        {
+          "line": 64,
+          "type": "reading"
+        },
+        {
+          "line": 65,
+          "type": "red-rubric"
+        },
+        {
+          "line": 66,
+          "type": "reading"
+        },
+        {
+          "line": 67,
+          "type": "red-rubric"
+        },
+        {
+          "line": 68,
+          "type": "reading"
+        },
+        {
+          "line": 69,
+          "type": "red-rubric"
+        },
+        {
+          "line": 70,
+          "type": "reading"
+        },
+        {
+          "line": 71,
+          "type": "red-rubric"
+        },
+        {
+          "line": 72,
+          "type": "reading"
+        },
+        {
+          "line": 73,
+          "type": "red-rubric"
+        },
+        {
+          "line": 74,
+          "type": "reading"
+        },
+        {
+          "line": 75,
+          "type": "red-rubric"
+        },
+        {
+          "line": 76,
+          "type": "reading"
+        },
+        {
+          "line": 77,
+          "type": "red-rubric"
+        },
+        {
+          "line": 78,
+          "type": "reading"
+        },
+        {
+          "line": 79,
+          "type": "red-rubric"
+        }
+      ]
+    },
+    {
+      "unit_id": "unit.byz-greek-1738.chrysostom.communion-fruits",
+      "physical_lines": [
+        {
+          "line": 80,
+          "type": "red-rubric"
+        },
+        {
+          "line": 81,
+          "type": "reading"
+        }
+      ]
+    },
+    {
+      "unit_id": "unit.byz-greek-1738.chrysostom.commemoration-saints",
+      "physical_lines": [
+        {
+          "line": 82,
+          "type": "reading"
+        },
+        {
+          "line": 83,
+          "type": "red-rubric"
+        },
+        {
+          "line": 84,
+          "type": "red-rubric"
+        }
+      ]
+    },
+    {
+      "unit_id": "unit.byz-greek-1738.chrysostom.commemoration-theotokos",
+      "physical_lines": [
+        {
+          "line": 85,
+          "type": "red-heading"
+        },
+        {
+          "line": 86,
+          "type": "reading"
+        }
+      ]
+    },
+    {
+      "unit_id": "unit.byz-greek-1738.chrysostom.diptychs-departed",
+      "physical_lines": [
+        {
+          "line": 87,
+          "type": "red-rubric"
+        },
+        {
+          "line": 88,
+          "type": "red-rubric"
+        },
+        {
+          "line": 89,
+          "type": "reading"
+        },
+        {
+          "line": 90,
+          "type": "reading"
+        },
+        {
+          "line": 91,
+          "type": "reading"
+        },
+        {
+          "line": 92,
+          "type": "red-rubric"
+        },
+        {
+          "line": 93,
+          "type": "red-rubric"
+        },
+        {
+          "line": 94,
+          "type": "reading"
+        },
+        {
+          "line": 95,
+          "type": "red-rubric"
+        },
+        {
+          "line": 96,
+          "type": "red-rubric"
+        },
+        {
+          "line": 97,
+          "type": "reading"
+        },
+        {
+          "line": 98,
+          "type": "red-rubric"
+        },
+        {
+          "line": 99,
+          "type": "reading"
+        }
+      ]
+    },
+    {
+      "unit_id": "unit.byz-greek-1738.chrysostom.intercession-episcopate",
+      "physical_lines": [
+        {
+          "line": 100,
+          "type": "reading"
+        },
+        {
+          "line": 101,
+          "type": "reading"
+        }
+      ]
+    },
+    {
+      "unit_id": "unit.byz-greek-1738.chrysostom.intercession-world",
+      "physical_lines": [
+        {
+          "line": 102,
+          "type": "reading"
+        },
+        {
+          "line": 103,
+          "type": "reading"
+        }
+      ]
+    },
+    {
+      "unit_id": "unit.byz-greek-1738.chrysostom.commemoration-hierarch",
+      "physical_lines": [
+        {
+          "line": 104,
+          "type": "red-heading"
+        },
+        {
+          "line": 105,
+          "type": "reading"
+        },
+        {
+          "line": 106,
+          "type": "red-rubric"
+        },
+        {
+          "line": 107,
+          "type": "red-rubric"
+        },
+        {
+          "line": 108,
+          "type": "reading"
+        },
+        {
+          "line": 109,
+          "type": "red-rubric"
+        },
+        {
+          "line": 110,
+          "type": "red-rubric"
+        }
+      ]
+    },
+    {
+      "unit_id": "unit.byz-greek-1738.chrysostom.intercession-city",
+      "physical_lines": [
+        {
+          "line": 111,
+          "type": "red-rubric"
+        },
+        {
+          "line": 112,
+          "type": "reading"
+        },
+        {
+          "line": 113,
+          "type": "reading"
+        },
+        {
+          "line": 114,
+          "type": "reading"
+        },
+        {
+          "line": 115,
+          "type": "reading"
+        }
+      ]
+    },
+    {
+      "unit_id": "unit.byz-greek-1738.chrysostom.closing-ekphonesis",
+      "physical_lines": [
+        {
+          "line": 116,
+          "type": "red-heading"
+        },
+        {
+          "line": 117,
+          "type": "reading"
+        }
+      ]
+    },
+    {
+      "unit_id": "unit.byz-greek-1738.chrysostom.commemoration-hierarch-footnote",
+      "physical_lines": [
+        {
+          "line": 118,
+          "type": "footnote"
+        }
+      ]
+    }
+  ]
+}

@@ -41,7 +41,13 @@ cold review requires restoration of the profile's Challoner scriptural English.
 The repair, repeated preflight and fresh cold study review pass. The 3,018-word
 concise study passes derivation, preflight and cold review without findings.
 The 1,207-word homily passes derivation, preflight and independent cold review
-without findings. Source/schema artifact validation is in progress.
+without findings. Source/schema artifact validation and its program gate pass.
+The reviewed source checkpoint is `348f9767c4`; canonical web conversion passes
+and records exact bytes for the pending independent web review. Seven unrelated
+upstream commits add the explicitly unreviewed Greek Chrysostom lane. Their
+changed paths do not overlap the four accepted content-review seals. Integration
+preserves both exact delivery-record sets and refreshes the source inventory and
+the family ledger without promoting its pending reviews.
 No web acceptance, terminal workflow acceptance, publication
 push or deployment is claimed.
 The fresh checkout's
@@ -6763,6 +6769,19 @@ deployment; the later documentation push triggers a separate automatic run.
 Earlier branch-only delivery statements below describe their dated batches.
 No whole-book, physical-print or full all-rite completion follows from main
 integration.
+
+**Greek Chrysostom anaphora lane on `main` without review, 16 November
+2026.** At the maintainer's request the unpublished `batch5/text-greek`
+commits (`9dfdf469d`, `beba6c641`) were rebased onto `main` and kept
+unreviewed. The 1738, 1754 and 1873 anaphora readings, their 59 passages,
+extent censuses and native-book records are tracked; the six page packages
+and facsimile PDFs are declared in offline-only evidence pack 0015, with no
+public route. Every passage stays `inspected`: no collation receipt, stage
+binding or text version exists, so these books are not checked native texts.
+The Sources reader shows the readings with that state. Row 6 of the batch-5
+work plan otherwise stands (1738 pp. 40–41, the 1873 supply declarations,
+the receipts and activation), and continues from `main` rather than the
+local branch.
 
 **Fifth parallel batch, 22 October 2026: published to `main` and verified
 live.** Implementation `0a1b78eb3` reached `origin/main` by an ordinary

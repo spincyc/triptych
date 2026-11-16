@@ -593,3 +593,46 @@ count, raster receipt or full-page inspection was produced. Physical print
 gates remain binding when an export is requested. Canonical web generation,
 independent web review, installation, publication and deployment remain
 later work; none is claimed by this stage.
+
+## Generate-web, iteration 0
+
+The existing edition-revision command reports `uncommitted: false` for
+the canonical, synthesis and homily outputs. All three identify commit
+`348f9767c498aa88d77afb1d235e5b5324717e64` and the derived revision
+`2026-11-16T19:26:47Z`. The first canonical and synthesis invocations
+exceeded their 60-second command limits; both were rerun successfully
+with a 240-second limit. The homily invocation completed successfully.
+No source checkpoint or revision declaration was changed.
+
+The prescribed `tools/tpt web-edition --provider gpt --output build/web`
+conversion completed successfully for this canonical document, with its
+existing fidelity audits. The existing `check-web-edition` command also
+passes: one eligible declaration. The generated Markdown retains the
+opening inventory, eleven appointed-text anchors, two separately anchored
+interpretations, each interpretation's four senses, concluding comparison,
+generated chronology and evidence, references, footnotes, derived revision
+and rights notice. Markdown spot-checks included the opening, interpretation
+boundaries and distillations, chronology, source notes and terminal metadata.
+These checks are conversion preparation, not an independent web inspection.
+
+The prescribed `snapshot-web` command created `research/web-artifact.json`
+for
+`build/web/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost.md`.
+Its SHA-256 is
+`5651d5a4ba782f602273fbc3a57809b29e42334fa584bdc78eeaf5f2d75e808d`.
+The receipt identifies review bytes and grants no approval.
+The conversion log is
+`.scratch/proper-study-68/generate-web-0000-conversion.log`.
+
+No conversion or declaration defect required repair. No new test or helper
+script was written. The existing tool-registry check still exits 1 with the
+two previously recorded `corpus-index` GROUPS/REACHES diagnostics; no shared
+tool was changed. The separate `tmt` executable remains unavailable.
+The repository-wide source inventory gate was not rerun in this conversion
+stage; its previously recorded failure remains unresolved.
+
+Accepted prose, research evidence, generation declarations and web eligibility
+are unchanged. Companion conversion and installation checks, independent web
+review, inspection receipts, release records, catalogs and publication remain
+downstream. No print export, commit, installation, push or deployment was
+performed.

@@ -4,8 +4,8 @@ provider = "gpt"
 audited_on = "2026-11-16"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 156
-source_surface_file_count = 3720
-snapshot = "sha256:5e67c1fb12b73549848dc4141a81621aebe5e10ef99e5b766b4c4d391112c8b6"
+source_surface_file_count = 3742
+snapshot = "sha256:15b069075cf190ba93f56e4d3a58e53e324cb1004dbba8a23a3c0605ef3bea76"
 
 [[owners]]
 id = "owner.articles.faith.four-last-things"
@@ -14526,14 +14526,38 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiph
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/evaluations/blocking-findings-v1.toml"
-sha256 = "d51a71fbe20b2fff99a4a0752aafeb38d4eedf9ad683f4e22da7d7c32c2c1ff8"
+sha256 = "82fa060af1bf8fba5be4a6356aa0a3408dce1445efeafc7b5c9883aaca7140a3"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/generated/scriptural-date-location-page.tex"
+sha256 = "82c97c59e9bf0ec0246594c1a7198e29562f8d7399267e27eec2a8f5b0f421d2"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/generated/scriptural-date-location.tex"
+sha256 = "a4b7543f8c5db16180d307b05a2cf91e0e26b82c8c350dac6b531984541ad20d"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/homily.tex"
+sha256 = "bd0bd1ceb7a72a67521ca4528f541383dfed806d01389177eb80cc1921797fbd"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/main.tex"
-sha256 = "6d163e91017ed9445c2ba60363fe57bcc1c88de33a605351cd0861b2f529a2d0"
+sha256 = "b7b74a71563ee89006f7c7d6d4a9f50ebddef27b68c437d628c593e812babcc1"
 kind = "publication-main"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/proper-components.toml"
+sha256 = "dc78ffc623cc5d5bdf0a938a50b0b6b4782da88bfe7d66cbdbb3a2e0a34f50ea"
+kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost"]
 
 [[files]]
@@ -14546,6 +14570,12 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-af
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/propers/verified.md"
 sha256 = "95fc03ca9cb29d8c6d1b139836bd28f5f4c0ba944a863adc068689515cae9c91"
 kind = "proper-verification"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/publication.toml"
+sha256 = "7f300016f08032c6b410a2e0dbc1c732c41f5346f642a2e25caf1acabc8ee494"
+kind = "publication-contract"
 owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost"]
 
 [[files]]
@@ -14579,6 +14609,12 @@ kind = "research-record"
 owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost"]
 
 [[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/research/production-review.md"
+sha256 = "085cd81392e749cdd6c5fd58bb4726449f9ffb49006e4731a4ef712368bcd358"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost"]
+
+[[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/research/review-dependencies.toml"
 sha256 = "7d9ee2c944dc3ba1d89c6752a799c3257de5d5bc8c45e8cbbdaaf2bd516c3d85"
 kind = "research-record"
@@ -14600,6 +14636,102 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-af
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/research/source-dispositions.toml"
 sha256 = "1c9452ad6bb1b090425977811c73141964275e3a3ea06671877b2526c8645ba6"
 kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/sections/00-opening.tex"
+sha256 = "d220f6d0b307c811fc030ba02ef6e358924f2f7695979370202efeb01297215c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/sections/10-appointed-text.tex"
+sha256 = "ac051152e139c789ca9d43f302dd65e476d46ca9cead4e5f8f7f4916605618e5"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/sections/20-commentary.tex"
+sha256 = "cc19639dd3dca5a36a8d4c1f603367de5b905c64f5ae83dcccfc3477b708ec9b"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/sections/30-deliverance-and-waiting.tex"
+sha256 = "422acd33ee1e3fe8748d0bec6dd8d63072d1ede07fe780130c582b9dcae7c48e"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/sections/40-prayer-and-conversion.tex"
+sha256 = "e19e9ecc68675caee875db0f67f49c5db949475ca144691a2d47f8a506b22d9e"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/sections/50-comparison.tex"
+sha256 = "fd3035ce979181672256281c7857b7bafef14e5aa9b8b87cc388f3a9c9cc56e2"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/sections/90-apparatus.tex"
+sha256 = "db9678251aecaf9b562d37db9c593c8e4a65124b5a1cd78c9fb3aa57f83ff85b"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/sections/concise/01-inventory.tex"
+sha256 = "760c2029e22f57b66359e125f49b00c49c7b007b8e02f155cfd96bed6d18c7de"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/sections/concise/02-overview.tex"
+sha256 = "bdd63e6f454b32bc49948a6fde86ee13b9e6cdb98d634c5176d111d512beee3f"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/sections/concise/04-themes.tex"
+sha256 = "fd4df2e20ccdb2b1df0d5c8869455c8ee074e0d15dfd0cc682d41ed12edad30c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/sections/concise/10-commentary.tex"
+sha256 = "3877274f4ecc86773922cc51372180e81095e3e8a97106f909607d573259c829"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/sections/concise/90-apparatus.tex"
+sha256 = "eeb156514fdcd9105d3049613d8a8ce5fdc387397ef1e4ac5a191f4643701df1"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/sections/homily/10-body.tex"
+sha256 = "9476bef4ad47274d104a71013089eb0bc23f419858d95e0a76181cf99d42b719"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/sections/homily/90-apparatus.tex"
+sha256 = "6cf6000bb794860eaa13b01512ae6e844b9b0d0b8d08d9661e340f6c1fd9ebb0"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/synthesis.tex"
+sha256 = "8dce9b0c2291aef1cbaa511d4dd28a6378eecc8244101e91c09ec35216f9ec6a"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/web-edition.toml"
+sha256 = "f3a77749f33c9f5253727ca760ab4bf1b29d47eef03218f4a0324b71446830d9"
+kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost"]
 
 [[files]]

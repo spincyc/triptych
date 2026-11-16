@@ -202,6 +202,33 @@ the review certifies neither PDF layout nor browser presentation.
 ## Source artifacts and publication
 
 All three independent content reviews have passed. Source/schema artifact
-validation iteration 0 is in progress at explicit `high` effort before the
-artifact gate, reviewed-source commit, canonical conversion and cold web
-review. No reader installation, terminal acceptance or publication is claimed.
+validation iteration 0 and its program gate pass. Reviewed source checkpoint
+`348f9767c498aa88d77afb1d235e5b5324717e64` precedes canonical web conversion.
+Conversion records SHA-256
+`5651d5a4ba782f602273fbc3a57809b29e42334fa584bdc78eeaf5f2d75e808d`
+in the web-artifact receipt. Independent web review is still pending.
+No reader installation, terminal acceptance or publication is claimed.
+
+### Upstream reconciliation before web review
+
+Main advanced seven commits to `13c6fbc37c`, adding the Greek Chrysostom source
+lane and its reader/release metadata. Comparing their changed paths against
+all four accepted content-review seals finds no overlap. A non-rewriting merge
+preserves the upstream lane's unreviewed and partial qualifications.
+
+The delivery-sidecar conflict is resolved as an exact union: all 16 archive
+and 5,573 artifact declarations from both parents retain identical fields,
+including the distinct hash-suffixed offline packs with ordinal 0015.
+All other top-level fields remain identical to both parents. The source-library
+validator passes on the integrated graph. The owning inventory refresh and
+explicit canonical-catalog acceptance refresh the derived ledger pins;
+`families = []` and all 168 pending owner reviews remain explicit. The research
+seal's 1,745 files match current inputs; the study, concise and homily seals
+also match after the same JSON serialization their engine uses. An initial
+direct Python comparison differed only because regex tuples become JSON lists.
+
+The complete source command passes the source graph, both publication
+inventories, containment, author-standing and formulary inventories, and all
+23 commentary tests, then reaches its 300-second limit in Catena accounting.
+It is not a complete-suite pass. The unfinished source targets are rerunning
+with a longer limit. Post-merge revision/conversion verification remains next.
