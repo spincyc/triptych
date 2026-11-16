@@ -106,6 +106,55 @@ events:
             rule: "Apply Maas's explicit A.U.C. 782 = A.D. 29 equivalence to his dated Ninth Journey."
             inputs: [chronology.maas-auc-782-ad-29-calibration]
 
+  - id: life-of-christ.prophecies-on-mount-olivet
+    title: Jesus foretells the destruction of Jerusalem, His second coming and the judgement
+    orientation_title: "Jesus foretells Jerusalem's ruin and His coming"
+    note: >-
+      Added 2026-11-16 by the Claude research stage (iteration 1) of the
+      Twenty-fourth and Last Sunday after Pentecost (1962). The subject is
+      Our Lord's speaking of the discourse, at the close of the Tuesday of
+      the last week in Maas's harmony. It is not the destruction of
+      Jerusalem (apostolic-age.destruction-of-jerusalem), the second coming
+      or the judgement: those are what the discourse prophesies, and no
+      prophetic-referent binding is made here, because the Fathers dispute
+      which verses speak of which (Chrysostom, Hom. in Mt. 76; Hilary, In
+      Mt. 25; Jerome, In Mt. IV).
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis_class: derived
+        orientation_qualification: "Maas's chronology"
+        basis: >-
+          Matthew 24:3 places the discourse on Mount Olivet, spoken to the
+          disciples privately, and Matthew 26:1 closes it. A. J. Maas, Jesus
+          Christ, Catholic Encyclopedia VIII (1910), III.B.3, heads the Ninth
+          Journey "February, A.U.C. 782- Passover, 782". His Holy Week
+          sequence places on Tuesday the fig-tree instruction and the Temple
+          disputes, and Maas closes that day: "Jesus ended this day by
+          uttering the prophecies concerning the destruction of Jerusalem,
+          His second coming, and the future judgement". Maas's express A.U.C.
+          782 = A.D. 29 equivalence supplies the calendar year within this
+          harmony, exactly as for the fig-tree instruction of the same day.
+        sources:
+          - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08377a-f81e2c23-article-text
+          - passage.catholic-encyclopedia.volume-8.new-york-1910.maas-ninth-journey-olivet-prophecies
+          - passage.catholic-encyclopedia.volume-8.new-york-1910.maas-journeys-six-seven-nine
+          - bible:douay-rheims:Matt.24.3
+          - bible:douay-rheims:Matt.26.1
+        note: >-
+          One identified traditional harmony's chronology of the speaking.
+          The derived year dates neither the events foretold nor the writing
+          of Matthew, and it does not resolve other traditional Passion
+          chronologies. "Tuesday" is Maas's day within the closing week and
+          stays in the basis; he names no date of the month.
+        date:
+          precision: year
+          from: {year: 29, era: ad}
+          label: "A.D. 29, derived from Maas's A.U.C. 782 final Jerusalem visit"
+          derivation:
+            rule: "Apply Maas's explicit A.U.C. 782 = A.D. 29 equivalence to his dated Ninth Journey."
+            inputs: [chronology.maas-auc-782-ad-29-calibration]
+
   - id: life-of-christ.nativity
     title: The Nativity of Our Lord
     note: >-

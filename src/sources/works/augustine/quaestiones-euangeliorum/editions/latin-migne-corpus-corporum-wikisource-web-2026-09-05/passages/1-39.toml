@@ -1,0 +1,16 @@
+schema = 1
+record_type = "passage"
+id = "passage.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05.1-39"
+edition_id = "edition.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05"
+artifact_id = "artifact.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05.wikisource-latin-text"
+artifact_sha256 = "aed43fd30cbd7a5bfe698c3930c360a6e4cb201f5da47951dc26a22c069c80e7"
+locus = "1.39"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Book I, question XXXIX, the whole answer on the parable of the fig tree (physical line 44, headed by the printing's reference [Ib. XXIV, 32.]). Read with questions XXXVIII (Mt 24:23-27) and XL (Mt 26:24): the fig tree is the human race; its branch grows tender when the sons of men advance through faith in Christ to spiritual fruits and the honour of adoption as sons of God shines in them."
+physical_line_ranges = [[44, 44]]
+text = "Quod Dominus dixit, Ab arbore autem fici discite similitudinem; arborem fici genus humanum intellige, propter pruritum carnis. Cum jam ramus ejus tener fuerit; id est, cum filii hominum per fidem Christi ad spirituales fructus profecerint, et in eis honor adoptionis filiorum Dei eminuerit."
+transcription_segments = [
+  { line = 44, text = "Quod Dominus dixit, Ab arbore autem fici discite similitudinem; arborem fici genus humanum intellige, propter pruritum carnis. Cum jam ramus ejus tener fuerit; id est, cum filii hominum per fidem Christi ad spirituales fructus profecerint, et in eis honor adoptionis filiorum Dei eminuerit." },
+]
+verified_on = "2026-11-16"
+notes = "Mechanically copied as one exact substring of retained raw line 44, omitting only the question numeral and the editor's bracketed Scripture reference that head the line ('XXXIX. [Ib. XXIV, 32.]'); no word was retyped, modernized or supplied. The whole answer is retained: the line ends where question XL begins on line 45. The wording is that of this dated digital transcription of Migne, PL 35; it was not collated with a page image of the printed column and is not presented as diplomatic. Augustine's own Latin, so no translator is involved. Registered 2026-11-16 by the source-registration stage of proper-study run 11c5af05fe374203 after the artifact's SHA-256 and byte size were recomputed and matched."
