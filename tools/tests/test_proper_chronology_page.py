@@ -223,16 +223,13 @@ class CompactOrientationTests(unittest.TestCase):
                 self.assertNotIn("Proposals span", self.display(
                     self.claim("61 A.D. to 63 A.D."), other))
 
-    def test_hidden_gaps_keep_their_evidence_and_passage_heading(self):
+    def test_distinct_relations_and_gaps_stay_visible_with_their_evidence(self):
         _, found, _ = page.projection(ALL_SAINTS, provider="claude")
         visible = wiring.compact_orientation_rows(found)
-        hidden = {row.key for row in found.orientation_rows} - {row.key for row in visible}
-        self.assertTrue(hidden)
-        self.assertEqual({row.passages for row in visible},
-                         {row.passages for row in found.orientation_rows})
+        self.assertEqual(visible, found.orientation_rows)
         table = wiring.render_orientation_table(found)
-        for key in hidden:
-            self.assertNotIn(key, table)
+        for row in visible:
+            self.assertIn(row.key, table)
         definitions = wiring.render_annotations_tex(found)
         for row in visible:
             if row.passage_start:
@@ -242,7 +239,7 @@ class CompactOrientationTests(unittest.TestCase):
         evidence = page.render(found, document=ALL_SAINTS, variant=page.EVIDENCE)
         self.assertIn("No date:", evidence)
         payload = wiring.annotation_payload(found)
-        self.assertEqual({row["key"] for row in payload["orientation_rows"] if not row["displayed"]}, hidden)
+        self.assertTrue(all(row["displayed"] for row in payload["orientation_rows"]))
 
     def test_compact_tex_keeps_each_contributing_claim_sealed(self):
         _, found, _ = page.projection(ALL_SAINTS, provider="claude")

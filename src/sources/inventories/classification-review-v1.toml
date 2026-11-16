@@ -1,8 +1,8 @@
 classification_schema = 1
 record_type = "publication-source-classification-review"
 audited_on = "2026-11-09"
-publication_snapshot = "sha256:6c0a4605c4c990fa213c1a7c0dea6d35e89b6b1134eae15642583c53c1b6a530"
-classification_snapshot = "sha256:3e31ca144b739b9ac7ffb3d846bc30d705061feed3f565c4ed29f5e5b665b738"
+publication_snapshot = "sha256:5262dc31ff36458d9ad31d553f3cdd370cbc6d5ae4cd735570629f348552ca79"
+classification_snapshot = "sha256:210b310a398314ad0e288ea2a7b063f0cd0b9df97aebdce2e9fe844cd4dd2336"
 
 [[classifications]]
 document = "articles/canon-law/clerical-celibacy-chastity-and-continence"
@@ -402,6 +402,10 @@ source_categories = ["finding-aid", "historical-primary", "institutional-current
 
 [[classifications]]
 document = "liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "repository-internal", "scholastic", "scripture", "secondary"]
+
+[[classifications]]
+document = "liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost"
 source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "repository-internal", "scholastic", "scripture", "secondary"]
 
 [[classifications]]

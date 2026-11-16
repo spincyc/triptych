@@ -22,10 +22,33 @@ The promised result is the current `proper-study` three-document family:
 expansive study, concise study and homily, genuine independent cold reviews,
 current source and reader gates, native print compilation, and validated
 publication to main followed by deployment and live-reader verification.
-No source research, authored documents, review acceptance, push or deployment
-has yet been completed for this target. The production plan records the exact
-authorization; detailed research and production evidence will belong to the
-canonical leaf and its workflow audit.
+Scope checkpoint `b6a1d69b04` records the exact authorization. Proper-study v19
+run `df0ccb9ecfdea6c9`, seeded at `cdae156296`, has passed its program scope
+gate and context stage. The context independently checks the institutional
+dated Ordo and governing Missal images, identifies the II-class Last Sunday
+formulary in the twenty-sixth Sunday slot, and inventories eleven elements.
+It preserves commemoration and local-calendar limits. Initial research passes
+with eleven-element text and rights records, two developed interpretations,
+canonical chronology and exact source bindings. Source registration and the
+research preflight pass. The first independent cold research review requires
+two repairs, to generated chronology context and exact interpretation evidence
+anchors. Research iteration 1 repairs both, and repeated registration and
+preflight pass. The second cold review confirms those repairs but finds one
+remaining commentary-extent registration gap. Research iteration 2 repairs it,
+registration and preflight pass again, and the third cold research review
+accepts the bounded evidence. The expansive-study preflight passes; its first
+cold review requires restoration of the profile's Challoner scriptural English.
+The repair, repeated preflight and fresh cold study review pass. The 3,018-word
+concise study passes derivation, preflight and cold review without findings.
+The 1,207-word homily passes derivation, preflight and independent cold review
+without findings. Source/schema artifact validation is in progress.
+No web acceptance, terminal workflow acceptance, publication
+push or deployment is claimed.
+The fresh checkout's
+isolated native TeX toolchain passes a package
+and embedded-font smoke test, which is not a publication compilation or review.
+Detailed progress and limitations belong to
+`workflows/reviews/gpt-1962-68-production-2026-11-16/CYCLES.md`.
 
 ## Indexed corpus access and reader performance
 

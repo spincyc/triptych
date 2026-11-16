@@ -1,0 +1,45 @@
+[document]
+type = "proper-study-v1"
+title = 'Twenty-fourth and Last Sunday after Pentecost'
+running-head = 'Last Sunday after Pentecost'
+
+[document.main]
+pdftitle = 'Twenty-fourth and Last Sunday after Pentecost: Deliverance, Waiting, and the Prayer for Healing'
+pdfsubject = 'An expansive source-first study of the 1962 Roman Missal for 22 November 2026'
+subtitle = 'Deliverance, Waiting, and the Prayer for Healing'
+source-line = '1962 Roman Missal; expansive study'
+occasion-line = '22 November 2026; second-class Sunday'
+body = [
+  { component = 'opening' },
+  { component = 'appointed-text' },
+  { component = 'commentary' },
+  { component = 'deliverance-and-waiting' },
+  { component = 'prayer-and-conversion' },
+  { component = 'comparison' },
+]
+apparatus = [{ component = 'study-apparatus' }]
+
+[document.synthesis]
+pdftitle = 'Twenty-fourth and Last Sunday after Pentecost: A Concise Study'
+pdfsubject = 'A concise comparison of two interpretations of the 1962 propers for 22 November 2026'
+subtitle = 'Deliverance, Waiting, and the Prayer for Healing'
+source-line = '1962 Roman Missal; concise study'
+occasion-line = '22 November 2026; second-class Sunday'
+opening = [
+  { component = 'concise-inventory' },
+  { component = 'concise-overview' },
+]
+body = [
+  { component = 'concise-themes' },
+  { component = 'concise-commentary' },
+  { component = 'concise-apparatus' },
+]
+
+[document.homily]
+pdftitle = 'Twenty-fourth and Last Sunday after Pentecost: Confidence in Prayer and the Grace to Change'
+pdfsubject = 'A homily for an adult parish assembly at the 1962 Mass on 22 November 2026'
+subtitle = 'Confidence in Prayer and the Grace to Change'
+source-line = '1962 Roman Missal; homily'
+occasion-line = '22 November 2026; adult parish assembly'
+homily = [{ component = 'homily-body' }]
+apparatus = [{ component = 'homily-apparatus' }]

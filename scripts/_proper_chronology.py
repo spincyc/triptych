@@ -1821,29 +1821,8 @@ def orientation_subject(row: OrientationRow, presentation: str = "") -> str:
 
 
 def compact_orientation_rows(found: AnnotationProjection) -> tuple[OrientationRow, ...]:
-    """The dated orientation, leaving repeated occasion gaps in the evidence.
-
-    Keep every appointed passage. Automatic occasion/event placeholders and
-    a relative formation bound beside a composition date belong in the
-    evidence, where the complete projection retains their exact scopes.
-    """
-    if found.presentation != ORIENTATION_V3:
-        return found.orientation_rows
-    dated = {row.passages for row in found.orientation_rows if row.group.claims}
-    composed = {row.passages for row in found.orientation_rows
-                if row.group.claims and row.group.relation == "composition"}
-    rows = tuple(row for row in found.orientation_rows
-                 if not (row.passages in dated and not row.group.claims
-                         and row.group.status == "research-pending"
-                         and row.group.relation in {"historical-setting", "narrated-event"})
-                 and not (row.passages in composed and row.group.relation == "final-formation"
-                          and row.group.claims
-                          and all(claim.precision in {"relative", "boundary"}
-                                  for claim in row.group.claims)))
-    return tuple(row._replace(
-        passage_start=index == 0 or row.passages != rows[index - 1].passages,
-        passage_end=index == len(rows) - 1 or row.passages != rows[index + 1].passages)
-        for index, row in enumerate(rows))
+    """Compact candidates within each row, never suppress a distinct question."""
+    return found.orientation_rows
 
 
 def orientation_date(row: OrientationRow, *, compact: bool = False) -> str:

@@ -120,6 +120,87 @@ class SharedTableTests(unittest.TestCase):
                                              for p in row.passages for locus in p.loci for c in row.group.claims)
                 self.assertEqual(actual_comparisons, expected_comparisons)
 
+    def test_last_sunday_keeps_psalm_occasions_beside_collection_composition(self):
+        found = chronology.dossier(BASE + "68-twenty-fourth-and-last-after-pentecost",
+                                   provider="gpt")._replace(presentation=chronology.ORIENTATION_V3)
+        projected = chronology.annotations(found)
+        rows = chronology.compact_orientation_rows(projected)
+        table = chronology.render_orientation_table(projected)
+        for element, loci in (("gradual", ("Ps.43.8", "Ps.43.9")),
+                              ("introit", ("Ps.84.2",))):
+            with self.subTest(element=element):
+                passage = [r for r in rows if r.passages[0].element_key == element
+                           and r.passages[0].loci == loci]
+                self.assertEqual([r.group.relation for r in passage],
+                                 ["historical-setting", "composition"])
+                occasion, composition = passage
+                self.assertEqual(occasion.group.claims, ())
+                self.assertEqual(chronology.orientation_date(occasion), "Occasion date unresolved")
+                self.assertIn(occasion.key, table)
+                self.assertEqual(composition.group.claims[0].subject,
+                                 "composition.psalms-of-the-sons-of-korah")
+                self.assertEqual(chronology.orientation_date(composition, compact=True),
+                                 "c. 740–536 B.C. (Korahite collection estimate)")
+                self.assertTrue(occasion.passage_start)
+                self.assertTrue(composition.passage_end)
+
+    def test_last_sunday_olivet_utterance_is_visible_and_undated(self):
+        found = chronology.dossier(BASE + "68-twenty-fourth-and-last-after-pentecost",
+                                   provider="gpt")._replace(presentation=chronology.ORIENTATION_V3)
+        projected = chronology.annotations(found)
+        rows = [r for r in chronology.compact_orientation_rows(projected)
+                if r.passages[0].element_key == "gospel"]
+        self.assertEqual([r.group.relation for r in rows], ["narrated-event", "composition"])
+        event, composition = rows
+        self.assertEqual(event.passages[0].loci,
+                         tuple(f"Matt.24.{verse}" for verse in range(15, 36)))
+        self.assertIn("Jesus speaks", event.context_label)
+        self.assertIn("Mount Olivet", event.context_label)
+        self.assertIn("bible:douay-rheims:Matt.24.3", event.context_sources)
+        self.assertEqual(event.group.claims, ())
+        self.assertEqual(chronology.orientation_date(event, compact=True), "Date unresolved")
+        self.assertIn(event.key, chronology.render_orientation_table(projected))
+        self.assertEqual(composition.group.claims[0].subject, "composition.gospel-of-matthew")
+        # Describing the utterance does not add chronology to the query answer.
+        self.assertFalse(any(c.relation in {"narrated-event", "utterance"}
+                             for c in found.element("gospel").claims))
+        context = next(c for c in found.orientation_contexts if c.label == event.context_label)
+        self.assertFalse(corpus._scope_covers(context.scope, "Matt", 24, 14))
+        self.assertFalse(corpus._scope_covers(context.scope, "Matt", 24, 36))
+
+    def test_composition_cannot_hide_a_different_final_formation_subject(self):
+        found = chronology.dossier(BASE + "68-twenty-fourth-and-last-after-pentecost",
+                                   provider="gpt")._replace(presentation=chronology.ORIENTATION_V3)
+        projected = chronology.annotations(found)
+        rows = [r for r in chronology.compact_orientation_rows(projected)
+                if r.passages[0].element_key == "introit"
+                and r.passages[0].loci[0].startswith("Jer.")]
+        self.assertEqual([r.group.relation for r in rows], ["composition", "final-formation"])
+        self.assertNotEqual(rows[0].group.claims[0].subject, rows[1].group.claims[0].subject)
+        table = chronology.render_orientation_table(projected)
+        for row in rows:
+            self.assertIn(row.key, table)
+
+    def test_last_sunday_web_table_retains_occasions_and_utterance(self):
+        found = chronology.dossier(BASE + "68-twenty-fourth-and-last-after-pentecost",
+                                   provider="gpt")._replace(presentation=chronology.ORIENTATION_V3)
+        projected = chronology.annotations(found)
+        web = load_tool("web-edition")
+        expanded, cells = web.expand_chronology_annotations(
+            chronology.render_orientation_table(projected),
+            chronology.render_annotations_tex(projected))
+        self.assertNotIn(r"\chronologyorientationrow", expanded)
+        rows = [cells[index:index + 3] for index in range(0, len(cells), 3)]
+        self.assertEqual(len(rows), 15)
+        self.assertEqual(sum("Occasion date unresolved" in row[2] for row in rows), 4)
+        self.assertEqual(sum(":" in row[0] for row in rows), 8)
+        gospel = next(index for index, row in enumerate(rows) if "Gospel:" in row[0])
+        self.assertIn("Mount Olivet", rows[gospel][1])
+        self.assertIn("Jesus speaks", rows[gospel][1])
+        self.assertEqual(rows[gospel][2], "Date unresolved")
+        self.assertIn("Composition:", rows[gospel + 1][1])
+        self.assertIn("Matthew", rows[gospel + 1][1])
+
     def test_context_does_not_supply_a_date_or_borrow_an_uncovered_passage(self):
         event = next(r for r in self.projection.orientation_rows if r.group.relation == "narrated-event")
         self.assertEqual(chronology.orientation_date(event), "Date unresolved")

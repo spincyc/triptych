@@ -25,6 +25,22 @@ subject_labels:
   critical.gospel-of-matthew: Greek Matthew
   critical.gospel-of-mark: Mark
 contexts:
+  - scope: {book: Matt, chapter: 24, first: 15, last: 35}
+    label: Jesus speaks of tribulation and his coming; Mount Olivet
+    sources:
+      - bible:douay-rheims:Matt.24.3
+      - bible:douay-rheims:Matt.24.4
+      - bible:douay-rheims:Matt.24.15
+      - bible:douay-rheims:Matt.24.21
+      - bible:douay-rheims:Matt.24.30
+      - bible:douay-rheims:Matt.24.35
+    basis: >-
+      Inspected 2026-11-16. Matthew 24:3 places Jesus and the questioning
+      disciples on Mount Olivet; verse 4 begins his reply, continued through
+      verses 15-35. The narrated episode is his speaking there, including
+      the warning of tribulation and promise of his coming, not the future
+      events he predicts or the writing of the Gospel. This description
+      supplies no event date.
   - scope: {book: Matt, chapter: 25, first: 1, last: 13}
     label: Jesus tells the ten virgins parable; Mount Olivet by narrative continuity
     sources:

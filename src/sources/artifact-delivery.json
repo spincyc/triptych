@@ -123,6 +123,14 @@
       "bytes": 3594240,
       "urls": [],
       "delivery": "offline-only"
+    },
+    {
+      "id": "6a0810ef70d78b533344a448413f40b52b041b93273d276eda05f04f9e23a102",
+      "name": "triptych-binaries-0015-6a0810ef70d78b53.tar",
+      "sha256": "6a0810ef70d78b533344a448413f40b52b041b93273d276eda05f04f9e23a102",
+      "bytes": 5928960,
+      "urls": [],
+      "delivery": "offline-only"
     }
   ],
   "artifacts": [
@@ -50830,6 +50838,46 @@
       "media_type": "image/png",
       "archive": "4cec21bc84c39fa738dbe6225251338053df2990e01f17e719d7eda1a9254d10",
       "member": "src/sources/works/jacques-paul-migne/patrologia-latina-volume-9/editions/1844-paris/artifacts/nonseasonal-hilary-page120-20261112/page120.png"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/last-sunday-trinity-archive-pages-20261116-b1129c12/source.tar",
+      "sha256": "b1129c124e9077a0b8c2bcac27a85cffe4d711ba5b15033142c1531d2fef3a89",
+      "bytes": 3092480,
+      "kind": "source-evidence",
+      "media_type": "application/x-tar",
+      "origin_url": "https://archive.org/download/bub_gb_E7sPAAAAIAAJ/bub_gb_E7sPAAAAIAAJ_images.tar",
+      "archive": "6a0810ef70d78b533344a448413f40b52b041b93273d276eda05f04f9e23a102",
+      "member": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/last-sunday-trinity-archive-pages-20261116-b1129c12/source.tar"
+    },
+    {
+      "path": "src/sources/works/holy-see/acta-apostolicae-sedis/editions/volume-4-1912/artifacts/pbc-response-pages-463-465-20261116-3725d450/source.pdf",
+      "sha256": "3725d45027d2f3195e393912a20e111e32bc712dd62826bfb8719f2a6e980133",
+      "bytes": 449941,
+      "kind": "source-evidence",
+      "media_type": "application/pdf",
+      "origin_url": "https://archive.org/download/AAS-04-1912/AAS-04-1912.pdf",
+      "archive": "6a0810ef70d78b533344a448413f40b52b041b93273d276eda05f04f9e23a102",
+      "member": "src/sources/works/holy-see/acta-apostolicae-sedis/editions/volume-4-1912/artifacts/pbc-response-pages-463-465-20261116-3725d450/source.pdf"
+    },
+    {
+      "path": "src/sources/works/jacques-paul-migne/patrologia-latina-volume-24/editions/1865-paris/artifacts/jeremiah-29-pages-451-452-20261116-b12f006b/source.pdf",
+      "sha256": "b12f006b00fa419d7d51c0f6797f86fd662a703b4abb8d064a163b6550c95046",
+      "bytes": 406153,
+      "kind": "source-evidence",
+      "media_type": "application/pdf",
+      "origin_url": "https://archive.org/download/sanctieusebiihie04jero/sanctieusebiihie04jero.pdf",
+      "archive": "6a0810ef70d78b533344a448413f40b52b041b93273d276eda05f04f9e23a102",
+      "member": "src/sources/works/jacques-paul-migne/patrologia-latina-volume-24/editions/1865-paris/artifacts/jeremiah-29-pages-451-452-20261116-b12f006b/source.pdf"
+    },
+    {
+      "path": "src/sources/works/prosper-gueranger/the-liturgical-year/editions/english-duffy-1883-volume-11/artifacts/last-sunday-pages-527-540-20261116-41ccf520/source.pdf",
+      "sha256": "41ccf5206b681a8b8a5cd5187825a2ddf25b0ccdc175a2793b37d5814abe3e2e",
+      "bytes": 1968861,
+      "kind": "source-evidence",
+      "media_type": "application/pdf",
+      "origin_url": "https://archive.org/download/liturgicalyear11gu/liturgicalyear11gu.pdf",
+      "archive": "6a0810ef70d78b533344a448413f40b52b041b93273d276eda05f04f9e23a102",
+      "member": "src/sources/works/prosper-gueranger/the-liturgical-year/editions/english-duffy-1883-volume-11/artifacts/last-sunday-pages-527-540-20261116-41ccf520/source.pdf"
     }
   ]
 }

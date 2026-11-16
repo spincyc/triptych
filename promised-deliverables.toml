@@ -9,7 +9,8 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "verified-appointment"
   criterion = "The dated context verifies the Twenty-fourth and Last Sunday after Pentecost, governing 1962 edition, rank, occurrence and complete appointed texts against identified witnesses, preserving local-calendar limits."
-  status = "open"
+  status = "pass"
+  evidence = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/research/context.md", "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/propers/verified.md", "workflows/reviews/gpt-1962-68-production-2026-11-16/CYCLES.md"]
 
   [[deliverables.requirements]]
   id = "accepted-three-documents"
