@@ -6721,6 +6721,19 @@ Earlier branch-only delivery statements below describe their dated batches.
 No whole-book, physical-print or full all-rite completion follows from main
 integration.
 
+**Greek Chrysostom anaphora lane on `main` without review, 16 November
+2026.** At the maintainer's request the unpublished `batch5/text-greek`
+commits (`9dfdf469d`, `beba6c641`) were rebased onto `main` and kept
+unreviewed. The 1738, 1754 and 1873 anaphora readings, their 59 passages,
+extent censuses and native-book records are tracked; the six page packages
+and facsimile PDFs are declared in offline-only evidence pack 0015, with no
+public route. Every passage stays `inspected`: no collation receipt, stage
+binding or text version exists, so these books are not checked native texts.
+The Sources reader shows the readings with that state. Row 6 of the batch-5
+work plan otherwise stands (1738 pp. 40–41, the 1873 supply declarations,
+the receipts and activation), and continues from `main` rather than the
+local branch.
+
 **Fifth parallel batch, 22 October 2026: published to `main` and verified
 live.** Implementation `0a1b78eb3` reached `origin/main` by an ordinary
 fast-forward. Main's lectern commits were merged in, not rebased. Pages run
