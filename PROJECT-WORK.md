@@ -7,6 +7,26 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-11-13.
 
+## GPT Last Sunday after Pentecost — 22 November 2026
+
+<!-- promised-deliverable: gpt-1962-68-production-2026-11-16 -->
+
+**In progress.** On 16 November 2026 the maintainer requested the upcoming
+Sunday's 1962 propers documents, reconciliation and publication to main.
+The calendar computation identifies 22 November as the Twenty-fourth and Last
+Sunday after Pentecost, permanent identity `68`; the workflow must independently
+verify the occurrence, rank, complete appointed texts and local-calendar limits
+against identified witnesses. Only the GPT target is authorized.
+
+The promised result is the current `proper-study` three-document family:
+expansive study, concise study and homily, genuine independent cold reviews,
+current source and reader gates, native print compilation, and validated
+publication to main followed by deployment and live-reader verification.
+No source research, authored documents, review acceptance, push or deployment
+has yet been completed for this target. The production plan records the exact
+authorization; detailed research and production evidence will belong to the
+canonical leaf and its workflow audit.
+
 ## Indexed corpus access and reader performance
 
 <!-- promised-deliverable: indexed-corpus-performance-2026-11-12 -->

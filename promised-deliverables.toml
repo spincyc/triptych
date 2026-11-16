@@ -1,6 +1,32 @@
 schema_version = 1
 
 [[deliverables]]
+id = "gpt-1962-68-production-2026-11-16"
+owner = "PROJECT-WORK.md"
+promise = "Complete the GPT 1962 three-document propers workflow for Sunday, 22 November 2026, reconcile the validated publication with main and push to main."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "verified-appointment"
+  criterion = "The dated context verifies the Twenty-fourth and Last Sunday after Pentecost, governing 1962 edition, rank, occurrence and complete appointed texts against identified witnesses, preserving local-calendar limits."
+  status = "open"
+
+  [[deliverables.requirements]]
+  id = "accepted-three-documents"
+  criterion = "The expansive study, concise study and homily reach terminal ACCEPTED through genuine independent proper-study reviews and source/publication gates, with verified archived results and cycle evidence."
+  status = "open"
+
+  [[deliverables.requirements]]
+  id = "reviewed-readers-and-print-compilation"
+  criterion = "All three reader outputs, catalog links and release records pass their required checks, and all three current native print bundles compile successfully."
+  status = "open"
+
+  [[deliverables.requirements]]
+  id = "main-and-live-verification"
+  criterion = "Validated commits reach origin/main without rewriting published history; the resulting Pages build, print-compile and deploy succeed, and all three live reader routes are verified."
+  status = "open"
+
+[[deliverables]]
 id = "indexed-corpus-performance-2026-11-12"
 owner = "guidance/web-data.md"
 promise = "Use a shared tracked metadata index over the existing corpus to accelerate fresh-checkout reading, terminal and Pages readers, and repeated builds without tracking duplicate complete reading bodies or requiring generated-product archives."
