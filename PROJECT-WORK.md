@@ -5,7 +5,20 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-11-13.
+Last reconciled: 2026-11-16.
+
+## Claude 1962 Twenty-fourth and Last Sunday after Pentecost, 2026-11-22
+
+<!-- promised-deliverable: claude-1962-68-last-after-pentecost-three-documents-2026-11-22 -->
+
+**In progress: authorized; seeding.** On 2026-11-16 the maintainer asked for
+the Claude 1962 proper-study documents for the upcoming Sunday and authorized
+publication to `main`. Sunday, 22 November 2026 is the Twenty-fourth and Last
+Sunday after Pentecost (II class), permanent identity `68`,
+`liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost`.
+St Cecilia (III class) is outranked. The production plan records the
+one-provider authorization. This is an independent Claude production: any GPT
+leaf for the same identity is not an input.
 
 ## Indexed corpus access and reader performance
 
