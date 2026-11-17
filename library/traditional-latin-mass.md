@@ -170,7 +170,20 @@ shared readings; a dedicated guide to the winter formulary remains planned.
 | 63 | **Twenty-third Sunday after Pentecost** | Planned | Planned |
 | 68 | **Twenty-fourth and Last Sunday after Pentecost** † | Planned | [Full Study Guide](../web/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost.html) · [Synthesis](../web/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost-synthesis.html) · [Homily](../web/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost-homily.html) |
 
+*For the four last Sundays of the year:*
+[The Four Last Things](faith.md#the-four-last-things) §<br>
+ChatGPT: [Death](../web/gpt/articles/faith/four-last-things-01-death.html) · [Judgment](../web/gpt/articles/faith/four-last-things-02-judgment.html) · [Hell](../web/gpt/articles/faith/four-last-things-03-hell.html) · [Heaven](../web/gpt/articles/faith/four-last-things-04-heaven.html)<br>
+Claude: [Death](../web/claude/articles/faith/four-last-things-01-death.html) · [Judgment](../web/claude/articles/faith/four-last-things-02-judgment.html) · [Hell](../web/claude/articles/faith/four-last-things-03-hell.html) · [Heaven](../web/claude/articles/faith/four-last-things-04-heaven.html)
+
 † These Sundays move with the date of Easter each year. How many Sundays after the Epiphany are kept before Septuagesima, and how many of the omitted ones are resumed after Pentecost before the Last Sunday after Pentecost, depend on the date of Easter.
+
+§ The Church keeps the last things before her as her year ends and begins
+again: she prays for all the faithful departed as November begins, hears on
+the Last Sunday after Pentecost the Lord's prophecy of the end of the world
+(Matthew 24:15–35), and on the First Sunday of Advent his coming in power and
+majesty (Luke 21:25–33). An old custom of preaching gave the four Sundays of
+Advent to the four last things; these essays serve the year's last Sundays
+and Advent alike.
 
 ### Resumed Sundays after the Epiphany
 

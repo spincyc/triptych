@@ -157,6 +157,57 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
     with self.assertRaisesRegex(ValueError, "resumed-epiphany-4 no longer takes what RESUMED_NOTE says"):
       producer.list_presentation(changed)
 
+  def test_1962_last_things_block_closes_the_after_pentecost_run(self):
+    """The Four Last Things block (roman-1962-propers.md, Reader list
+    presentation, 2026-11-17): beneath the Proper of Time table, not a row,
+    marked § with its own note after the † note, linking each provider's four
+    essays by subject. It owns none of them; library/faith.md does."""
+    landing = (ROOT / "library/traditional-latin-mass.md").read_text()
+    calendar = landing.split("## Sunday Propers Calendar", 1)[1].split("### Feasts Replacing a Sunday", 1)[0]
+    main = calendar.split("### Resumed Sundays after the Epiphany\n", 1)[0]
+    last_row = re.findall(r"^\| \d{2} \|.*$", main, re.MULTILINE)[-1]
+    self.assertTrue(last_row.startswith("| 68 | "))
+    block, dagger, note = main.split(last_row + "\n", 1)[1].strip().split("\n\n")
+    self.assertTrue(dagger.startswith("† "))
+    self.assertTrue(note.startswith("§ "))
+    self.assertEqual(landing.count("§"), 2)
+    self.assertEqual(landing.count("\n§ "), 1)
+    self.assertNotIn("](../pdf/", block)
+    # The series names its home and takes the mark; each provider's four
+    # essays stand on a line of their own.
+    lead, chatgpt, claude = block.split("<br>\n")
+    self.assertTrue(lead.endswith("\n[The Four Last Things](faith.md#the-four-last-things) §"), lead)
+    self.assertTrue(chatgpt.startswith("ChatGPT: ") and "/claude/" not in chatgpt)
+    self.assertTrue(claude.startswith("Claude: ") and "/gpt/" not in claude)
+
+    subjects = ("Death", "Judgment", "Hell", "Heaven")
+    expected = [(subject, provider, f"articles/faith/four-last-things-{number:02d}-{subject.lower()}")
+                for provider in ("gpt", "claude")
+                for number, subject in enumerate(subjects, 1)]
+    linked = re.findall(r"\[([^\]]+)\]\(\.\./web/([a-z]+)/([^)]+)\.html\)", block)
+    self.assertEqual(linked, expected)
+
+    # The essays keep exactly one catalog home. The ownership check counts the
+    # owner's legacy print links before reader links, so this block is not
+    # counted as a home; were faith.md to keep only reader links for them, the
+    # check would find two homes. This test fails first and names the rule.
+    from importlib.machinery import SourceFileLoader
+    from importlib.util import module_from_spec, spec_from_loader
+    loader = SourceFileLoader("last_things_catalog", str(ROOT / "tools/public-alpha"))
+    tool = module_from_spec(spec_from_loader(loader.name, loader))
+    loader.exec_module(tool)
+    manifest = tool.load_manifest()
+    primary, providers = tool.declared_providers(manifest)
+    publications = tool.publication_map(manifest)
+    occurrences = tool.catalog_occurrences(primary, providers, publications)[0]
+    faith = (ROOT / "library/faith.md").read_text()
+    for _, provider, leaf in expected:
+      self.assertEqual(publications[(provider, leaf)]["catalog"], "library/faith.md")
+      self.assertEqual(occurrences[(provider, leaf)], ["library/faith.md"],
+                       f"{provider}:{leaf} must keep one catalog home; guidance/repository.md "
+                       "§ Public navigation and catalog states when the 1962 block may link it")
+      self.assertIn(f"](../web/{provider}/{leaf}.html)", faith)
+
   def test_postconciliar_registry_and_reader_calendar_arithmetic(self):
     registry = (
       ROOT / "guidance/liturgy/postconciliar-propers-registry.md"

@@ -466,6 +466,19 @@ this catalog and visibly linked on that row; it never supplies a missing owner
 or declares another publication. Ordinary duplicate-owner, provider and hold
 checks still apply, and the markers are removed from rendered pages.
 
+**One related-reading block crosses catalogs (2026-11-17).** At the
+maintainer's request the 1962 Sunday calendar links the Four Last Things
+essays, which `library/faith.md` owns, from a short block beneath its Proper
+of Time table ([profile](liturgy/roman-1962-propers.md#reader-list-presentation)).
+It is the one exception to the rule above and to the cross-listing rule
+below, and a precedent only for a block the maintainer asks for: not a row,
+without a marker, owning nothing, and leaving the work's entry on its own
+catalog. The ownership check counts an owner's legacy print links before its
+reader links, which is the only reason the block is not counted as a second
+home; before `library/faith.md` drops those links for these essays, the check
+needs a cross-catalog reference that says so.
+`tools/tests/test_calendar_computation_guidance.py` fails first.
+
 The root landing tables expose exactly seven
 reader portals, in this order and with these muted liturgical-color identities:
 white `Faith`, gold `Scripture`, red `Liturgy`, green `History`, violet
