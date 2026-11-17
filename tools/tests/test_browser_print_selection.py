@@ -83,7 +83,7 @@ PRINT_STUB = """window.printCalls = 0; window.print = () => {
     closed: [...document.querySelectorAll('.browser-print-content details')]
       .filter(d => !d.closest('[hidden]') && !d.open).length,
     missing: document.querySelectorAll('.fragment-text.missing').length,
-    bodies: [...document.querySelectorAll('.fragment-text')]
+    bodies: [...document.querySelectorAll('.fragment-text:not(.snippet-text)')]
       .filter(n => !n.closest('[hidden]')).map(n => n.textContent),
     source: document.querySelector('.passage-source')?.textContent,
     passageText: document.querySelector('.passage-text')?.innerText,
@@ -155,9 +155,9 @@ class CompleteSelectionPrintTests(unittest.TestCase):
             {"do": "navigate", "url": route("catena", "#book=Gen&chapter=1&bible=douay-rheims")},
             wait("document.querySelectorAll('.fragment-body').length === 3 && document.querySelector('#reading').getAttribute('aria-busy') === 'false'"),
             eval_js(PRINT_STUB),
-            eval_js("window.beforeHash = location.hash; window.beforeDetails = [...document.querySelectorAll('#reading details')].map(d => d.open); document.querySelector('.browser-print-actions button').click()"),
+            eval_js("window.beforeHash = location.hash; window.beforeDetails = [...document.querySelectorAll('#reading details')].map(node => ({node, open: node.open})); document.querySelector('.browser-print-actions button').click()"),
             wait("!document.querySelector('.browser-print-actions button').disabled"),
-            eval_js("({calls: printCalls, snapshot: window.printSnapshot, hash: location.hash, beforeHash, restored: JSON.stringify(beforeDetails) === JSON.stringify([...document.querySelectorAll('#reading details')].map(d => d.open)), status: document.querySelector('.browser-print-status').textContent, requested: performance.getEntriesByType('resource').map(r => r.name).filter(n => n.includes('/catena/text/'))})", "result")
+            eval_js("({calls: printCalls, snapshot: window.printSnapshot, hash: location.hash, beforeHash, restored: beforeDetails.every(({node, open}) => node.isConnected && node.open === open) && [...document.querySelectorAll('#reading details')].filter(node => !beforeDetails.some(saved => saved.node === node)).every(node => !node.open), status: document.querySelector('.browser-print-status').textContent, requested: performance.getEntriesByType('resource').map(r => r.name).filter(n => n.includes('/catena/text/'))})", "result")
         ]}
         if blocked:
             plan["blocked"] = ["*structure/catena/text/" + selected_ids[-1] + ".json"]

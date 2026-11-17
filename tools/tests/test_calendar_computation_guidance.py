@@ -236,7 +236,7 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
   def test_sunday_catalog_links_only_installed_publications(self):
     # Keep the installed full-guide families aligned with the publication source
     # inventories and accepted catalogue installations. The inventories own the
-    # source records; this regression retains an explicit installed-PDF boundary.
+    # source records; generated PDFs are not publication inputs.
     permitted_full_guides = {
       *(f"{number:02d}-{slug}.pdf" for number, slug in (
         (39, "trinity-sunday"),
@@ -300,6 +300,19 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
       "pc-s44-eighteenth-sunday-in-ordinary-time-year-c.pdf",
     }
     corpus = json.loads((browser_data_root(ROOT) / 'structure/documents/corpus.json').read_text())
+    installed_readers = {}
+    for work in corpus["works"]:
+      if work["catalog"] not in (
+          "library/traditional-latin-mass.md", "library/novus-ordo-liturgy.md"):
+        continue
+      for edition in work["editions"]:
+        source = ROOT / edition["title_source"]
+        for issue in (edition, *edition.get("also", [])):
+          if issue["available"]["reader"]:
+            kind = issue.get("kind")
+            entrypoint = source.with_name(kind + ".tex") if kind in (
+              "synthesis", "homily") else source
+            installed_readers[issue["targets"]["reader"]] = entrypoint
     for owner, catalog in (
         ("liturgy/roman-rite/1962/propers/temporal/f02-all-saints", "library/traditional-latin-mass.md"),
         ("liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/"
@@ -314,21 +327,30 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
       self.assertEqual(edition["title_source"], "src/gpt/" + owner + "/main.tex")
       self.assertTrue((ROOT / edition["title_source"]).is_file())
       self.assertEqual(edition["status"], "alpha")
-      paths = {edition["pdf"], *(row["pdf"] for row in edition["also"])}
-      self.assertEqual(paths, {"pdf/gpt/" + owner + suffix
-                               for suffix in (".pdf", "-synthesis.pdf", "-homily.pdf")})
-      self.assertTrue(all((ROOT / path).is_file() for path in paths))
+      issues = (edition, *edition["also"])
+      paths = {issue["targets"]["reader"] for issue in issues}
+      self.assertEqual(paths, {"web/gpt/" + owner + suffix + ".html"
+                               for suffix in ("", "-synthesis", "-homily")})
+      for issue in issues:
+        self.assertTrue(issue["available"]["reader"])
+        self.assertTrue(issue["available"]["print"])
+        self.assertTrue(installed_readers[issue["targets"]["reader"]].is_file())
     for name in ("traditional-latin-mass.md", "novus-ordo-liturgy.md"):
       text = (ROOT / "library" / name).read_text()
       calendar = text.split("## Sunday Propers Calendar", 1)[1]
-      for target in re.findall(r"\]\((\.\./pdf/[^)]+\.pdf)\)", calendar):
-        if "m01-nuptial-mass.pdf" not in target:
+      for target in re.findall(
+          r"\]\((\.\./(?:pdf|web)/[^)]+\.(?:pdf|html))\)", calendar):
+        if target.startswith("../pdf/") and "m01-nuptial-mass.pdf" not in target:
           self.assertTrue(
             target.endswith("-synthesis.pdf")
             or target.rsplit("/", 1)[-1] in permitted_full_guides,
             target,
           )
-        self.assertTrue((ROOT / "library" / target).resolve().exists(), target)
+        reader = target.removeprefix("../")
+        if reader.startswith("pdf/"):
+          reader = "web/" + reader.removeprefix("pdf/").removesuffix(".pdf") + ".html"
+        self.assertIn(reader, installed_readers, target)
+        self.assertTrue(installed_readers[reader].is_file(), target)
 
   def test_approved_alpha_propers_do_not_regress_to_planned(self):
     traditional = (ROOT / "library/traditional-latin-mass.md").read_text()
