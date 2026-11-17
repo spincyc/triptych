@@ -1,0 +1,405 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "SYN-001",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/04-themes.tex:10-11; src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/04-themes.tex:89",
+      "problem": "The themes pages place the Gospel wrongly within the discourse. Line 10 says the Gospel 'is the second half of the answer Jesus gave on the Mount of Olivet'. The answer runs from Mt 24:4 to 25:46. The expansive study calls the pericope 'the second part' and gives the first part as vv. 4-14 (sections/10-each-element.tex:137-147), and the concise's own lines 98-99 say that v. 36 follows and is not read. Verses 15-35 are a middle portion, not the second half. Line 89, 'The Gospel begins at the fifteenth verse of the Lord's answer', is wrong too: verse 15 is a verse of the chapter, and the twelfth of the answer. The same slip is in the expansive study's sections/00-opening.tex:10-11, which contradicts that study's own section 10.",
+      "required_result": "State the Gospel's place in the discourse accurately. For example, line 10: 'The Gospel of this last Sunday after Pentecost is taken from the answer Jesus gave on the Mount of Olivet, when the disciples asked ...'. Line 89: 'The Gospel begins at verse 15 of the chapter, and the Missal drops the \"therefore\" that ties it to what goes before.'",
+      "severity": "advisory"
+    },
+    {
+      "id": "SYN-002",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/10-commentary.tex:185-189",
+      "problem": "This sentence does not parse: 'Augustine says that the Lord \"fittingly named the Church lightning here,\" spread through the whole world, makes the \"here\" and \"there\" the schisms ...'. A second main verb ('makes') has no subject or conjunction, so the reader cannot tell what Augustine identifies with what. The expansive study states it correctly (sections/30-flight-without-turning-back.tex:132-138): Augustine makes the lightning the Church itself, spread through the whole world.",
+      "required_result": "Rewrite the sentence so that each identification is Augustine's and can be read. For example: 'Augustine makes the lightning the Church, spread through the whole world: the Lord, he says, \"fittingly named the Church lightning here.\" The \"here\" and \"there\" are the schisms that hold some part of the earth, and the desert and the inner rooms are the \"dark and hidden meetings\" of heretics (Quaestiones Evangeliorum I.38).'",
+      "severity": "advisory"
+    },
+    {
+      "id": "SYN-003",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/10-commentary.tex:428-431 (with src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/04-themes.tex:117-118)",
+      "problem": "Register, isolated instance: a quotation is left beside the argument without its connection. In the second interpretation's paragraph on the Secret, Gregory's 'What is mortal life but a way?' and his counsel 'Do not then, my brethren, love what you see cannot stand for long' follow the Secret's two nouns, and the page does not say why Gregory bears on the Secret. The expansive study gives the reason at that point (sections/30-flight-without-turning-back.tex:196-204): 'Its verb, transe\u00e1mus, \"may we pass over,\" is a verb of travel'. The concise moved that clause to the themes page (04-themes.tex:117-118), where nothing uses it, and left the commentary without it.",
+      "required_result": "Give the plain connection where Gregory is quoted, and say it once. For example, at line 428: 'Its verb, transe\u00e1mus, \"may we pass over,\" is a verb of travel, and Gregory, preaching on Luke's account of the same discourse, asks, \"What is mortal life but a way?\" ...'. Then cut 'and transe\u00e1mus, \"may we pass over,\" is a verb of travel' from themes line 117-118, so that the sentence ends '... is the verb of the Gradual's Liber\u00e1sti.' Do not add a link that the expansive study does not make.",
+      "severity": "advisory"
+    },
+    {
+      "id": "SYN-004",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/10-commentary.tex:118-119; src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/10-commentary.tex:145-147 (cf. src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/04-themes.tex:41-44); src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/10-commentary.tex:269-270 (cf. src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/04-themes.tex:67-68); src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/10-commentary.tex:372-373 (cf. src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/10-commentary.tex:207-208); src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/10-commentary.tex:477-482 (cf. src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/10-commentary.tex:84-86, 296-302)",
+      "problem": "Register: restatement ('Say it once'), scattered. (a) Lines 118-119: 'His \"as it were\" keeps the feeding a likeness: they are nourished by imitating the Passion.' The second clause paraphrases the quotation just read at 116-117, and lines 441-442 make the point a third time. (b) Lines 145-147 repeat the themes page's statement (41-44) that the antiphon omits 'I will gather you out of all nations' before reaching their new point about the verb. (c) Lines 269-270 repeat themes 67-68: petitions look forward, thanks look back. (d) Lines 372-373 repeat Rupert's Gradual from 207-208. (e) The closing comparison re-tells 'sets Chrysostom's war first' (84-86) and the fig-tree split (296-302), where the profile asks a closing comparison to compare, not re-argue. Most of these sentences also add a step, and the re-citations at 382-383 and 425-427 carry new arguments and are not counted. So this is a set of scattered clauses, not a refrain through the document, and it is advisory. Removing it would also bring the 12-page proof further inside its range.",
+      "required_result": "Cut or fold the repeated clauses so that each fact is stated once, and keep every attribution. Rewrites: line 118-119: 'His \"as it were\" keeps the feeding a likeness.' Lines 145-147: 'The words the antiphon leaves out, \"and I will gather you out of all nations\" (Jer 29:14), use the Gospel's verb for the eagles, congregab\u00fantur, and for the angels who congreg\u00e1bunt el\u00e9ctos eius, \"shall gather together his elect\" (Mt 24:28, 31).' Lines 269-270: 'The third takes the sentence whole, petitions and thanks together (Col 1:9-14).' Lines 372-374: cut 'Rupert had already taken the Gradual for the thanks of those freed and the Offertory for their supplication;' and keep 'The Communion as assurance is Sicard's own.'",
+      "severity": "advisory"
+    },
+    {
+      "id": "SYN-005",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/10-commentary.tex:143",
+      "problem": "The heading 'Which captivity the Introit brings back' names only the first of the unit's three parts. Lines 145-176 treat the captivity (Jerome, Augustine, Rupert). Lines 178-191 give the second interpretation's use of Jeremias's warning against deceivers (Jer 29:8) beside the false christs. Lines 193-202 give the third's use of 'I think thoughts of peace' and God's sole knowledge of the future. A reader using the heading to find the second or third interpretation's reading of the Introit will not find it.",
+      "required_result": "Give the unit a heading that covers all three parts, for example 'What the Introit takes from Jeremias's letter' or 'The letter to the exiles'.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "observations": [
+    {
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/generated/scriptural-date-location-page.tex (proof page 2)",
+      "note": "Page-2 lookup performed on the rendered page. Gospel Matt. 24:15-35 gives 'Narrated event: Jesus foretells Jerusalem's ruin and His coming; Mount Olivet by narrative continuity', 'A.D. 29 (derived; Maas's chronology)', and 'Composition: Matthew; Semitic original associated with Palestine', 'Proposals span c. A.D. 38-68'. Communion Mark 11:24 gives 'Bethany to Jerusalem, before the Passion', A.D. 29 (derived). The lookup succeeded. Rows follow canonical book order, not Mass order, and the Psalm rows give a collection or author and a date but no place. Both are properties of the shared projection, not of this synthesis."
+    },
+    {
+      "location": ".scratch/workers/synthesis-review-0/build (independent proof)",
+      "note": "Independent make doc build: 12 pages; PDF SHA-256 6aee2657...; aux SHA-256 b7d6bd91... identical to the author's recorded aux. Inventory and the four sense markers are on page 1, the chronology on page 2, themes on pages 3-4, and commentary starts on page 5, with no overfull or underfull boxes. Page 4 is about three-quarters full. Page 11's running head reads 'Scope and References' although most of the page is commentary. These are print observations only, and no print edition was requested."
+    },
+    {
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/10-commentary.tex:71-72",
+      "note": "Bede's house is given as 'either this world or the flesh', where the expansive study gives the flesh only. This follows STU-015 and the Bede source text ('Domus namque nostra, vel mundus hic, vel ipsa in qua degimus, nostra intelligenda est caro'). The departure is faithful to the source and recorded upstream, so it is not a new unsupported claim."
+    },
+    {
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/10-commentary.tex:332-333",
+      "note": "'Hilary stresses that created things can cease, Jerome and Bede that they will be changed; they differ in emphasis and not in doctrine' compresses the expansive study (sections/40-words-that-do-not-pass.tex:108-109) and research/scope.md:575-577 exactly. The PL 9 OCR of In Mt. 26.3 reads 'coelum videlicet et terram, non futura' and 'habeant id in se necessitatis ut non sint'. 'Can cease' is a softer gloss than Hilary's 'non futura', and the harmonizing verdict is the study's own judgment. It is inherited, not introduced here, and the study owner may want to revisit it."
+    },
+    {
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/10-commentary.tex:96-98",
+      "note": "'Jerome, Hilary, Augustine and Chrysostom agree that the body is Christ's and the eagles are the saints' is inherited from the research. Chrysostom's identification of the carcase is implicit, and his eagles include 'the multitude of the angels'. The concise quotes that phrase at 121-122, so the reader can see the difference."
+    },
+    {
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/10-commentary.tex:81-82",
+      "note": "'On Chrysostom's account the passage is a fulfilled history, read on this Sunday as proof ...' drops the expansive study's conditional, 'Chrysostom's reading would make the passage a fulfilled history' (sections/30-flight-without-turning-back.tex:229-231). 'On Chrysostom's account' still marks this as a consequence of his view and not his words, so it is not raised."
+    },
+    {
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise (study-review advisories STU-012..STU-016)",
+      "note": "Confirmed in the concise: the eagles' feeding is not made Eucharistic (439-442); Fromage's credentials appear once (themes 133-134); no maxim closers were found; the Epistle division is Col 1:9-11 and 12-14; Aquinas reads the translation into the kingdom 'in two ways'."
+    }
+  ],
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-inventory",
+          "kind": "front-matter",
+          "path": "sections/concise/01-inventory.tex",
+          "references": [
+            "propers/verified.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "concise-inventory"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-overview",
+          "kind": "front-matter",
+          "path": "sections/concise/02-overview.tex",
+          "references": [
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "communion"
+          ],
+          "key": "concise-date-location",
+          "kind": "front-matter",
+          "path": "generated/scriptural-date-location-page.tex",
+          "references": [
+            "research/chronology-annotations.tex",
+            "research/chronology-table.tex",
+            "research/chronology.toml"
+          ]
+        },
+        {
+          "depends_on": [
+            "concise-overview"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-themes",
+          "kind": "front-matter",
+          "path": "sections/concise/04-themes.tex",
+          "references": [
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "concise-themes"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-commentary",
+          "kind": "integrated-commentary",
+          "path": "sections/concise/10-commentary.tex",
+          "references": [
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/concise/90-apparatus.tex",
+          "references": [
+            "propers/verified.md",
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Jerome",
+            "Hilary of Poitiers",
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Rupert of Deutz",
+            "Lucien Fromage"
+          ],
+          "carrying_authors": [
+            "Jerome",
+            "Hilary of Poitiers",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "where-the-body-is"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "where-the-body-is",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Hilary of Poitiers",
+            "Jerome",
+            "John Chrysostom",
+            "Augustine of Hippo",
+            "Bede",
+            "Gregory the Great",
+            "Thomas Aquinas",
+            "Lucien Fromage"
+          ],
+          "carrying_authors": [
+            "Hilary of Poitiers",
+            "Jerome"
+          ],
+          "component_keys": [
+            "flight-without-turning-back"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "flight-without-turning-back",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Gregory the Great",
+            "Augustine of Hippo",
+            "Hilary of Poitiers",
+            "Jerome",
+            "Bede",
+            "Thomas Aquinas",
+            "Sicard of Cremona"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Gregory the Great",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "words-that-do-not-pass"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "words-that-do-not-pass",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost",
+    "files": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/generated/scriptural-date-location-page.tex": "269abf89b614eafaadca6147f27b6055ddca7d066c5b42860f019a323ab360f4",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/propers/verified.md": "9bf2d74519747313f23d3e37d90ac9bcd6e944ef1aaa7b83f2919c3368869067",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/research/chronology-annotations.tex": "711d66e59277358c48d343f28dcdbfa6645b69d00b9f3ea9dd263315b8957457",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/research/chronology-table.tex": "ce6e1e19ca54e6afaece45d1105859c982a50c4fb970bc2deba24fae3247eb57",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/research/chronology.toml": "0804dfb30ea86cc6f4f81c254a099483814a0ae50fe682887a2f8114322a12e9",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/research/interpretations.md": "c5f8f52fed06f7b8bb2a695def2a6fdac077f6d36c2300346deccbd72ea6d57c",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/research/scope.md": "a747360e269b799d6710ae8b0984d4dd685e8228936788e008d23706fea63bb3",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/01-inventory.tex": "d101549d2449391980d33e51b47f9c834937c6db4890dd1b9242fe709900b536",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/02-overview.tex": "02e3e707544d06ddd640c8c496471fd08a19e3707303f364872eb7168c638a5e",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/04-themes.tex": "9f90f1b00698eb2a748c487ddf1b89bd6d896eea21d4838ba4c7ee6d0e15463b",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/10-commentary.tex": "d2e0ba53fae46cdaa3be20ad394245122be2aaf509a6e3f93473536ad28c42ec",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/90-apparatus.tex": "55cad37f01744708608645da32db887663d3ff74bff11bad80c30e3790e51c8d",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/synthesis.tex": "0dd6d3bcdfc6d914aa86d41e199c0792c7038c0cc641bfaace66369c03c315b4",
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "19",
+            "73706a2ab569c88974452c4aec8fe2b7540a23ad1192efa39d574ddfbd334645",
+            "11c5af05fe374203",
+            "81330987847deffe1a622b8d577531adead83907",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "synthesis",
+    "schema": 1
+  },
+  "stage": "synthesis-review",
+  "summary": "Artifact: the concise study synthesis.tex of src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost (01-inventory, 02-overview, generated/scriptural-date-location-page.tex, 04-themes, 10-commentary, 90-apparatus). Checked evidence: read the concise study whole and independently first, and recovered each interpretation's distinct answer from its prose before opening the study: (1) the end is an assembly of the scattered to Christ who suffered and rose (Jerome's Passion, Hilary's place of the Passion, Augustine's risen body), begun in the Introit's return 'from all places' and the Epistle's translation; (2) the commands of flight are spoken also to the hearers (Hilary, Jerome, Bede), with Chrysostom's Roman-war sense set first and the Secret as the prayer of those who keep the rule of the housetop; (3) the certainty of the promise rests on the speaker, argued from fulfilled prophecy (Chrysostom, Gregory) and God's certain future (Augustine), with the Communion read through Bede as a lesson in how to pray. All three match research/interpretations.md and the expansive study (sections 00-50), and each controlling claim, the Hilary/Chrysostom difference of method, the fig-tree split and the four-sense comparison survive. Authors are interleaved per question in every commentary unit. A script check found every quotation and Latin form of the concise in the expansive study; source spot checks: Bede on Mk 13:15-16 (PL OCR), Rupert De div. off. XII.23 (PL 170 OCR), Hilary In Mt. 26.3 (PL 9 OCR), Augustine En. in Ps. 84.4 (Latin), and Lasance and Douay English against propers/verified.md. Opening blocks: map of ten elements in order with exactly four sense rows, generated page 2, themes, commentary. Page-2 lookup performed: Gospel Matt. 24:15-35 -> 'Jesus foretells Jerusalem's ruin and His coming; Mount Olivet by narrative continuity', 'A.D. 29 (derived; Maas's chronology)', composition 'Proposals span c. A.D. 38-68'; the passage, occasion, place and date were found together in one row group. An independent build (make doc into my scratch) gave 12 pages with aux SHA-256 b7d6bd91... identical to the author's, the opening markers on pages 1, 2, 3-4 and 5, and no overfull boxes; themes and commentary run about 7,100 words against about 17,000 in the expansive study. Limits: no print edition was requested, so this is a source and proof review and claims no pagination acceptance; primary sources were checked in OCR and text layers, not page images, and the Greek Fathers only through the study's registered translations; the homily does not exist yet. Verdict: PASS. No blocking defect. Five advisories: an inaccurate placing of the Gospel in the discourse, one ungrammatical sentence on Augustine, one Gregory quotation left without its connection, scattered restatement, and a heading that names only a third of its unit."
+}

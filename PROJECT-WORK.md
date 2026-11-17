@@ -11,14 +11,37 @@ Last reconciled: 2026-11-16.
 
 <!-- promised-deliverable: claude-1962-68-last-after-pentecost-three-documents-2026-11-22 -->
 
-**In progress: authorized; seeding.** On 2026-11-16 the maintainer asked for
+**In progress: accepted and installed on the workspace branch; integration
+with `main` and deployment pending.** On 2026-11-16 the maintainer asked for
 the Claude 1962 proper-study documents for the upcoming Sunday and authorized
 publication to `main`. Sunday, 22 November 2026 is the Twenty-fourth and Last
 Sunday after Pentecost (II class), permanent identity `68`,
 `liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost`.
 St Cecilia (III class) is outranked. The production plan records the
 one-provider authorization. This is an independent Claude production: any GPT
-leaf for the same identity is not an input.
+leaf for the same identity is not an input, and none exists.
+
+Run `11c5af05fe374203` (`proper-study` v19), seeded at the authorization
+commit `8133098784`, reached ACCEPTED with 36 packets, 36 results and 16
+interventions. Of its seven cycles, four were content defects found by cold
+reviews: research once (the Gospel's narrated event missing from the
+chronology corpus, Lasance where the profile assigns the Douay-Rheims, and
+Sicard VIII.23 and 25 unread), the study twice (links credited to texts, then
+a fixed-formula overcorrection and Jerome's anagogy of Jer 29 reversed), and
+the homily once (paragraph closers). The study review passed in round three
+of four; the concise study passed its first review. The other three were the
+driver's: a host note that sent working projections to the wrong
+destination, three missing contribution lines in `generation-metadata.tex`,
+and a checkout without the native TeX runtime cache, hydrated with
+`scripts/_native_tex_assets.py hydrate --fetch` during installation. The
+checkpoint commits are `be0db94a74` (sources and the Olivet chronology event),
+`df490fc32c` (the leaf), `fe747f2d1b` (web receipt) and `caefcd2666`
+(installation: catalog row 68's Claude cell, three release records, products
+re-recorded, 61 bindings refreshed). Twelve advisories stand; SYN-001 and
+HOM-003 (where the Gospel begins within the Lord's answer) are worth a first
+revision. The run is archived in the leaf; the driver's account, with the
+defects left for other owners, is
+[CYCLES.md](workflows/reviews/claude-1962-68-production-2026-11-16/CYCLES.md).
 
 ## Indexed corpus access and reader performance
 

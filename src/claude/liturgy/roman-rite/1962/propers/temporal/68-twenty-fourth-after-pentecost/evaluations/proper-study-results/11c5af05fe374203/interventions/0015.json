@@ -1,0 +1,6 @@
+{
+  "encoded": false,
+  "stage": "install-publication",
+  "text": "Install-publication 0 returned BLOCKED (environment): the checkout had no native TeX runtime cache, so release-bindings status could not derive native-tex-catalog. The driver held that result back, hydrated the cache with the repository's own tool (scripts/_native_tex_assets.py hydrate --fetch from the declared public archives; 3048 files, runtime wasmtex-2026-47ff73bab1a2e548, check verified), and resumed the same installer on the same packet to finish the scoped release-binding refreshes and rewrite its result. No content changed.",
+  "timestamp": "2026-11-17T00:27:31Z"
+}

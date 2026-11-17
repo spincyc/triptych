@@ -18,13 +18,13 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "claude-68-native-acceptance"
   criterion = "A real proper-study version-19 run for provider claude, identity liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost, date 2026-11-22, audience adult parish assembly, reaches ACCEPTED with every required fresh cold review, and its results are archived in the leaf with a cycles record."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "workflows/reviews/claude-1962-68-production-2026-11-16/CYCLES.md", "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/evaluations/proper-study-results/11c5af05fe374203/record.md"]
 
   [[deliverables.requirements]]
   id = "claude-68-reviewed-publications"
   criterion = "The expansive study, concise study and homily sources pass their gates and reviews; the web reader conversion is reviewed and current; the catalog, inventories and release records are current and the publication gates pass."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md"]
 
   [[deliverables.requirements]]

@@ -1,0 +1,118 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/main.tex",
+  "disposition": "PASS",
+  "iteration": 0,
+  "notes": {
+    "checks": {
+      "_proper_study.py check (content, research, all require flags, source)": "exit 0",
+      "bindings-valid": "45 bindings pass",
+      "chronology-annotations-current": "pass",
+      "chronology-claims-supported": "pass",
+      "chronology-record-current": "pass",
+      "document-types refresh --check": "current",
+      "house-voice": "12 files pass",
+      "identifiers-resolve": "pass",
+      "provenance-matches-run": "run 11c5af05fe374203 v19 pass",
+      "references-used": "16 entries, 34 loci, all cited",
+      "relation-coverage": "3 lanes pass",
+      "restricted-not-reproduced": "4 restricted, none reproduced",
+      "structural-meta-labels": "76 inspected, pass",
+      "unquoted-not-quoted": "pass",
+      "web-edition probe": "build/tpt-runs/11c5af05fe374203/artifacts/author-study-0/web-probe converted"
+    },
+    "extent": {
+      "author_proof_pages": 31,
+      "exposition_words_approx": 13700,
+      "note": "Above the 6,000-10,000 planning range (not a quota); a substantial share is quoted Latin of the Fathers with English; within the 20-50 page extent. Proof built with pdfLaTeX in the worker scratch with a scratch revision stamp; no undefined reference or overfull box."
+    },
+    "files_to_commit": [
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/publication.toml",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/proper-components.toml",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/main.tex",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/generated/scriptural-date-location.tex",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/generation-metadata.tex",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/web-edition.toml",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/00-opening.tex",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/05-appointed-texts.tex",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/10-each-element.tex",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/20-where-the-body-is.tex",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/30-flight-without-turning-back.tex",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/40-words-that-do-not-pass.tex",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/50-comparison.tex",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/90-apparatus.tex",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/research/production-review.md"
+    ],
+    "files_to_commit_sha256": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/generated/scriptural-date-location.tex": "148369cfb8dc29ff41cc3c765675b21901a17800e6b7e9fed36dfdd7bc4973cb",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/generation-metadata.tex": "9d6ee8314d78cc699c88ce1bb290d772aa64c4a573d8be4d9d7931497bbc06bc",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/main.tex": "3016751954c8a7953cf76125f4314ddbb90978df77cfeebb37e1393b08686746",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/proper-components.toml": "dab78a7caf227ac5aa587a8a7b6f3371c9ce41c546090fae6229bbca58d82020",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/publication.toml": "a7e6d087668df79b7af52d7713b52392d4f6d5a563e1083159cc405c2b5f2953",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/research/production-review.md": "b94d50a4da5b7ef2f3b9b980d78592654ac316526d9956a848b16578efde6399",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/00-opening.tex": "377a045b0c7393c1cbda4f149cf912c29585848f7847bc605c2a32a80be88bd0",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/05-appointed-texts.tex": "657dd53934e106d693f91b5ac53af7a618044ff1cb70672eda2cd8e46e88c79a",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/10-each-element.tex": "5de94abe1853b463f0b7380f7f3b690c2786880c13e9e4f7241c914909aeedb3",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/20-where-the-body-is.tex": "e1e586211bb39c5c4a90511e3b489fc26490dd64e5e74b3cded5fc5245ac6c07",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/30-flight-without-turning-back.tex": "599e8d863e1ea966e8c43b8230161097f9aabb3586fb6bac834f4e576bb9e8cb",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/40-words-that-do-not-pass.tex": "fcb88f24ed1066d24772a04fa8db72fed7e1043fce7d8876a005258a26addf5c",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/50-comparison.tex": "f9c3898177bd89789bc85ffa4a8b18a9f02e5b25c0671cfa282dc05806d557e8",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/90-apparatus.tex": "23c17d9d9594a66e10e67f209aeb2440278cca1a86ff1084b184efd6c4426224",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/web-edition.toml": "fde871b7d8bece496c44f82fcb091a7e599012a418a6046953273487eaf8e7f6"
+    },
+    "generated_files": [
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/main.tex",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/generated/scriptural-date-location.tex"
+    ],
+    "host_register_checklist": [
+      "No X-answers-Y crediting of texts or Fathers with the study's connections; connections stated in the study's voice, Fathers credited with their own sentences",
+      "No opening or closing roll call; comparison has no summary close",
+      "No repeated inference labels",
+      "Paragraph-final restatements and maxims removed",
+      "Quotations checked against tracked bytes; Bede's Gregory of Neocaesarea and Augustine's tanquam kept to what the sentences carry; Hilary's sic ex humilitate mortis Dei gloria given with its list context",
+      "Reported views kept as the Fathers'; the Eucharistic reading of Mt 24:28 stated as the study's and Fromage's, with the Fathers' silence stated",
+      "No prose about the generated chronology's dates; no era-qualified dates",
+      "Production vocabulary (formulary, element, lane, join, carry, reading-as-interpretation) screened out of reader prose",
+      "Accipietis rendered as future throughout"
+    ],
+    "lanes": {
+      "flight-without-turning-back": {
+        "carrying": [
+          "Hilary of Poitiers",
+          "Jerome"
+        ]
+      },
+      "where-the-body-is": {
+        "carrying": [
+          "Jerome",
+          "Hilary of Poitiers",
+          "Augustine of Hippo"
+        ]
+      },
+      "words-that-do-not-pass": {
+        "carrying": [
+          "John Chrysostom",
+          "Gregory the Great",
+          "Augustine of Hippo"
+        ]
+      }
+    },
+    "provenance_note": "generation-metadata.tex names Claude Code CLI 2.1.325 as the installed version; the running build is not separately exposed.",
+    "research_review_advisories": "RES-005: Rupert XII.23 credited with the Gradual's thanksgiving and the Offertory as the brothers' supplication (Gen 50:17); Sicard VIII.25 with the Communion as certificatio. RES-006: Mitrale VIII.24 and Durandus not cited.",
+    "shared_defects_reported": [
+      "The study's sections are unnumbered, so \\ref{sec:date-location} and \\ref{lane-*} print an empty section number in the PDF (rendered as a bare section sign); the packet's suggestion to reference \\ref{sec:date-location} therefore cannot be followed usefully. The study names the appendix in words instead. Owner: the proper-study packet/guidance (or propers-format, if a named-reference macro is wanted)."
+    ],
+    "study_sections": [
+      "opening",
+      "appointed-texts",
+      "each-element",
+      "where-the-body-is",
+      "flight-without-turning-back",
+      "words-that-do-not-pass",
+      "comparison",
+      "scriptural-date-location (generated)",
+      "study-apparatus"
+    ]
+  },
+  "stage": "author-study",
+  "summary": "Authored the complete source-first expansive study of the 1962 Twenty-fourth and Last Sunday after Pentecost (22 November 2026): opening with occurrence and map, complete appointed Latin with Douay/Lasance English and every Vulgate departure named, each text in its setting, three whole-Mass interpretations (where-the-body-is; flight-without-turning-back; words-that-do-not-pass) each with its four senses and difficulty, comparison, scope appendix and References. Schema-2 manifest, generated main.tex and date-location appendix, provenance and web eligibility written; all study-preflight gate checks pass and the web probe converts."
+}

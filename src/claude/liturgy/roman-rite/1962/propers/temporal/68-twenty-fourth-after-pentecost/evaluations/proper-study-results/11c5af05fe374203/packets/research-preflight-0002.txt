@@ -1,0 +1,15 @@
+WORKFLOW: proper-study v19
+WORKFLOW_DIGEST: 73706a2ab569c88974452c4aec8fe2b7540a23ad1192efa39d574ddfbd334645
+RUN_ID: 11c5af05fe374203
+COMMIT: 81330987847deffe1a622b8d577531adead83907
+STAGE: research-preflight
+ITERATION: 2
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-11-22","proper":"liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost","provider":"claude","research_handoff":"none"}
+DOCUMENT_ROOT: src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: [{"id":"RES-004","location":"research/scope.md section 9 (Gradual Ps 43:8-9 and Introit Ps 84:2 rows: 'unresolved in the record and correctly so') and section 10 ('Held and not opened'); research/chronology-annotations.tex, historical-setting rows row-a16db10bcf3bfa76 and row-daf59e02c6c15663 (research-pending).","problem":"The occasion rows for Ps 43:8-9 and Ps 84:2 remain research-pending, and the expansive evidence notes will say so. Section 9 calls the unresolved occasion correct, while section 10 lists the held Psalm commentaries (Chrysostom PG 55, Theodoret, Cassiodorus, Bellarmine on Ps 43 and 84) as not opened. Under guidance/scripture-chronology.md an unresolved occasion is admissible as the selected corpus's absence, so this gates nothing. The record should not, however, imply that the received tradition was searched. Bellarmine, opened by this review (tracked O'Sullivan text, Psalms 43 and 84), reads both psalms of the Church and of Christ and dates no occasion.","required_result":"Either consult the held Psalm commentaries for a received historical occasion of Ps 43 and Ps 84 (for instance, whether any reads *avertisti captivitatem Jacob* of a particular return) and record the outcome, or say in section 9 that these rows report the corpus's absence and that the held commentaries were not searched for an occasion.","severity":"advisory"}]
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

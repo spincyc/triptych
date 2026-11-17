@@ -1,0 +1,262 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "HOM-001",
+      "location": "sections/homily/10-homily.tex l.54-56 (with the lead at l.49-50 and v.23 at l.50-51); l.75-77 (with v.35 at l.69-70 and l.49); l.87-88 (with l.81-83); l.121-122",
+      "problem": "Register, recurring in 4 of the speech's 12 paragraphs. These paragraphs end one sentence late, on a closer that restates the paragraph or turns it into a maxim (editorial.md, 'Say it once' and 'Each sentence adds something'). (1) l.54-56: 'Whoever tells you where Christ is hidden, or on what day he will come, is offering what the Lord did not give, and you need not believe him.' This repeats the lead at l.49-50 ('The Lord gives no date, and he warns against those who will claim to know more than he has said') and the verse quoted at l.50-51. It also softens the Lord's command, 'do not believe him', into a permission, 'you need not believe him'. (2) l.75-77: 'The disciples had asked for a date. What they were given is a word that will outlast the heaven and earth they could see.' This turns v.35, quoted six lines earlier, into a paired antithesis. It also repeats the no-date point made at l.49, which l.132 makes again. (3) l.87-88: 'When the Gradual says \"Thou hast delivered us,\" then, it speaks of a deliverance still to come in the words of one for whom it is already done.' This repeats l.81-83, which has already said that Augustine reads this verse as the future spoken in the form of the past, because it is as certain as if done. (4) l.121-122: 'The promise is as sure as the Lord's words, and its condition is in our own hands.' This is a balanced maxim closer after Bede's sentence. Its second clause also says more than either text. Mk 11:25 and Bede (In Marc. III on 11:25, source.txt l.339: 'si tamen in se peccantibus aliis primo ipsi dimittunt') state only the condition. As a theological claim, the clause puts forgiving others within our own unaided power, which is imprecise for an adult assembly. These closers are not instances, because each adds a step: l.66-67 (the promise made to the hearers), l.97-99 (what is already given as the ground of what is awaited) and l.109-110 (the captives' call to pray applied to us).",
+      "repair_target": "homily",
+      "required_result": "Each listed paragraph ends when its step ends, and says nothing twice. A closing sentence stays only if it adds a step not already on the page. The Lord's 'do not believe him' is not softened. No sentence says the condition of the promise lies in our own power. The application sentences at l.66-67, l.97-99 and l.109-110 stay, and no cut leaves a Father's words standing without the preacher's connection. Plain rewrites follow. (1) l.49-56: 'The Lord gives no date, and he warns against false christs and false prophets. \"Then if any man shall say to you, Lo here is Christ, or there: do not believe him.\" And then: \"For as lightning cometh out of the east and appeareth even into the west: so shall also the coming of the Son of man be.\" Chrysostom explains the comparison. Lightning needs no herald: even people sitting indoors see it, across the whole sky at once.' The paragraph ends there. (2) l.87-88: delete the sentence, so that the paragraph ends at 'what the prophet knows will be cannot fail to be.' (3) l.121-122: delete the sentence, so that the response at l.124-125 follows directly from Bede's condition. (4) l.75-77: delete both sentences. If the link back to the disciples' question is wanted, make it once, at the head of the paragraph: 'To the disciples' question, when these things would be, the Lord answers with a saying about his own words: \"Heaven and earth shall pass: but my words shall not pass.\"' The paragraph then ends on Gregory's explanation.",
+      "severity": "blocking"
+    },
+    {
+      "id": "HOM-002",
+      "location": "sections/homily/10-homily.tex l.38; l.84-85; l.95-97; l.107-109; l.118-121",
+      "problem": "Oral clarity: a few sentences are written for the page rather than for one hearing. (1) l.84-85 gives Augustine's 'Da prophetam' in the first person with no spoken marker: 'But give me a prophet to whom the future is as certain as the past is to you'. A hearer takes 'give me' as the preacher's own demand. (2) Three reported-speech sentences stack more subordinate clauses than one hearing holds: Jerome at l.107-109 (39 words, 'says that the Lord could certainly have fulfilled ... but he urges them to pray so that ...'); Bede at l.118-121 (40 words, with three nested 'that' clauses); and Chrysostom on Colossians at l.95-97 (34 words, ending 'because, he says, these are the causes of the other', where 'the other' points back across the whole sentence). (3) l.38 names Vespasian without saying who he was. The hearer has only 'the Roman war', two sentences earlier. Otherwise the speech's sentences, about 21 words on average, suit the ear. These are isolated instances.",
+      "required_result": "Each sentence carries one idea a listener can hold, and the hearer can tell who is speaking in each first-person sentence. Rewrites: l.107-109: 'St Jerome, commenting on the letter, says that the Lord could certainly have done what he promised without the captives' prayer. But he urges them to pray, so that they may be worthy to receive it.' l.118-121: 'St Bede, on that verse, says that those who are not yet perfect should ask for the forgiveness of their sins. They will surely obtain it, he says, provided that they first forgive those who sin against them.' l.84-85: 'But think, he says, of a prophet to whom the future is as certain as the past is to you.' l.38: '... when the Roman general Vespasian came.' l.95-97: '... speaks of what is already theirs and not of what will be laid up for them. These, he says, are the causes of what is still to come.'",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "homily-body",
+          "kind": "homily",
+          "path": "sections/homily/10-homily.tex",
+          "references": [
+            "propers/verified.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "homily-body"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "homily-note",
+          "kind": "terminal-apparatus",
+          "path": "sections/homily/90-note.tex",
+          "references": [
+            "propers/verified.md",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Jerome",
+            "Hilary of Poitiers",
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Rupert of Deutz",
+            "Lucien Fromage"
+          ],
+          "carrying_authors": [
+            "Jerome",
+            "Hilary of Poitiers",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "where-the-body-is"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "where-the-body-is",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Hilary of Poitiers",
+            "Jerome",
+            "John Chrysostom",
+            "Augustine of Hippo",
+            "Bede",
+            "Gregory the Great",
+            "Thomas Aquinas",
+            "Lucien Fromage"
+          ],
+          "carrying_authors": [
+            "Hilary of Poitiers",
+            "Jerome"
+          ],
+          "component_keys": [
+            "flight-without-turning-back"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "flight-without-turning-back",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Gregory the Great",
+            "Augustine of Hippo",
+            "Hilary of Poitiers",
+            "Jerome",
+            "Bede",
+            "Thomas Aquinas",
+            "Sicard of Cremona"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Gregory the Great",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "words-that-do-not-pass"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "words-that-do-not-pass",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost",
+    "files": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/homily.tex": "02aa44db978fbe57a956464974c7ec551fef0bef4fbba9322eb8002317cc7478",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/propers/verified.md": "9bf2d74519747313f23d3e37d90ac9bcd6e944ef1aaa7b83f2919c3368869067",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/research/interpretations.md": "c5f8f52fed06f7b8bb2a695def2a6fdac077f6d36c2300346deccbd72ea6d57c",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/research/scope.md": "a747360e269b799d6710ae8b0984d4dd685e8228936788e008d23706fea63bb3",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/homily/10-homily.tex": "45eebf5cb10f0d15180d6e6e35331131d12d133873b04484e473a967289e2128",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/homily/90-note.tex": "31532a698835e4dffd5aedb0da672e6d3a591a5a91c65d5cd6ccef982910d343",
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec",
+      "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "19",
+            "73706a2ab569c88974452c4aec8fe2b7540a23ad1192efa39d574ddfbd334645",
+            "11c5af05fe374203",
+            "81330987847deffe1a622b8d577531adead83907",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "Cold review of the homily of the Claude 1962 Twenty-fourth and Last Sunday after Pentecost (homily.tex; sections/homily/10-homily.tex and 90-note.tex). All sealed input hashes matched REVIEW_INPUTS. The spoken body was read continuously as a listener would hear it, then checked against its evidence. It makes one intelligible exegetical argument from the disciples' 'when?' to the certainty of the word that does not pass (Mt 24:34-35 with Chrysostom, Gregory and Augustine), uses the Gospel, Epistle, Gradual, Introit, Communion with Mk 11:25 and the Secret, gives one practicable response drawn from the text, and ends in hope. It passes the text-substitution test and has no invented anecdote, clerical identity, composed prayer, Latin or dated sources in the speech. Plain count 1,435 words, so 11.0-12.0 minutes at 120-130 wpm by arithmetic only; no timed delivery is claimed. Every quotation was checked: the Douay-Rheims (Challoner) verse texts (Mt 24:15, 23, 27, 34-36; Ps 23:6; Col 1:11, 13; Mk 11:25), Lasance in propers/verified.md (Introit, Gradual, Secret, Communion), Chrysostom in NPNF I.10 (76.1 at l.42355-42360, 76.3 at l.42517-42523, 77.1 at l.42855-42898) and NPNF I.13 (Hom. in Col. 2 at l.23892-23902), Gregory Hom. in Ev. I.1.3-4 (gregory-whole.txt l.17-18), Augustine En. in Ps. 43.8 (part-5 l.35) and Bede In Marc. III on 11:25 and IV on 13:14 (source.txt l.339, l.391). All are faithful, and the note's loci and review facts are accurate. Limit: Jerome, In Hier. V, PL 24 col. 893, was not independently re-read, because the page-image bytes are not present in this checkout. The sentence agrees with the research witness register and the reviewed study, and the note says so itself. The homily gives Chrysostom's answer on 'this generation' as his alone ('Chrysostom does not read it so'). That falls within the homily's latitude to choose one argument, so it is not raised. Verdict: CHANGES_REQUIRED on one recurring register pattern (HOM-001); HOM-002 is advisory."
+}

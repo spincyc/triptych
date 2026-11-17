@@ -1,0 +1,14 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/homily.tex",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "HOM-001",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "notes": "Files to commit: src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/homily/10-homily.tex, src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/homily/90-note.tex, src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/research/production-review.md. homily.tex, publication.toml and generation-metadata.tex are unchanged (refresh --check: current; no contribution line added for a revision iteration, following the author-study iterations 1-2 precedent). Author proof PDF SHA-256 c2ee29e3fa664a27d78b701501f8f6f1c03ffbee277ba42537535e61210a98b1 (scratch, uncommitted-sources revision line). No new source, locus or claim; Jerome PL 24 col. 893 still not re-read, as the note states. No upstream defects new.",
+  "stage": "derive-homily",
+  "summary": "Repaired HOM-001 in the spoken body: the four late paragraph closers are cut (lightning, Gregory on the passing word, Augustine on the Gradual, Bede's condition), so each paragraph ends when its step ends; the softened 'you need not believe him' and the 'condition in our own hands' clause are gone; the lightning lead now names the false christs and false prophets (v. 24); the application lines after Chrysostom's generation, Chrysostom's 'causes' and Jerome stand. All five HOM-002 advisories cleared (Vespasian glossed as the Roman general, Augustine's 'Da prophetam' reported, the Jerome/Bede/Colossians sentences split). Note and production-review updated; 1,342 spoken words, about 10.3-11.2 minutes by arithmetic; 4-page author proof and all homily content gates pass."
+}
