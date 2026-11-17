@@ -123,6 +123,14 @@
       "bytes": 3594240,
       "urls": [],
       "delivery": "offline-only"
+    },
+    {
+      "id": "89abd362d8033bf0adcd4ef43bad82467bfff38cb0a79535b266e433c47dc4b7",
+      "name": "triptych-binaries-0015-89abd362d8033bf0.tar",
+      "sha256": "89abd362d8033bf0adcd4ef43bad82467bfff38cb0a79535b266e433c47dc4b7",
+      "bytes": 16906240,
+      "urls": [],
+      "delivery": "offline-only"
     }
   ],
   "artifacts": [
@@ -50830,6 +50838,66 @@
       "media_type": "image/png",
       "archive": "4cec21bc84c39fa738dbe6225251338053df2990e01f17e719d7eda1a9254d10",
       "member": "src/sources/works/jacques-paul-migne/patrologia-latina-volume-9/editions/1844-paris/artifacts/nonseasonal-hilary-page120-20261112/page120.png"
+    },
+    {
+      "path": "src/sources/works/holy-see/akolouthiai-ton-anonymon/editions/1738-rome-propaganda/artifacts/chrysostom-facsimile-a190a9e3/chrysostom-anaphora-pages.pdf",
+      "sha256": "a190a9e311f1e518ca0f42afafe09773036a9c49654f7a386d3d749aa0c7b148",
+      "bytes": 3305731,
+      "kind": "source-evidence",
+      "media_type": "application/pdf",
+      "origin_url": "https://books.google.com/books?id=9M7HYcUH61oC",
+      "archive": "89abd362d8033bf0adcd4ef43bad82467bfff38cb0a79535b266e433c47dc4b7",
+      "member": "src/sources/works/holy-see/akolouthiai-ton-anonymon/editions/1738-rome-propaganda/artifacts/chrysostom-facsimile-a190a9e3/chrysostom-anaphora-pages.pdf"
+    },
+    {
+      "path": "src/sources/works/holy-see/akolouthiai-ton-anonymon/editions/1738-rome-propaganda/artifacts/chrysostom-pages-a16fc086/chrysostom-anaphora-pages.zip",
+      "sha256": "a16fc086c7d55f1d83b47d52a6bab5c0f34a6c3762e0f81a6480f9b7d74f3990",
+      "bytes": 3307738,
+      "kind": "source-evidence",
+      "media_type": "application/zip",
+      "origin_url": "https://books.google.com/books?id=9M7HYcUH61oC",
+      "archive": "89abd362d8033bf0adcd4ef43bad82467bfff38cb0a79535b266e433c47dc4b7",
+      "member": "src/sources/works/holy-see/akolouthiai-ton-anonymon/editions/1738-rome-propaganda/artifacts/chrysostom-pages-a16fc086/chrysostom-anaphora-pages.zip"
+    },
+    {
+      "path": "src/sources/works/holy-see/euchologion/editions/1754-rome-propaganda/artifacts/chrysostom-facsimile-407a99d3/chrysostom-anaphora-pages.pdf",
+      "sha256": "407a99d3c177cde72dc3f50cb91317ee63d6edb230418c36c6da68046b2a6929",
+      "bytes": 3361283,
+      "kind": "source-evidence",
+      "media_type": "application/pdf",
+      "origin_url": "https://books.google.com/books?id=B9BRAAAAcAAJ",
+      "archive": "89abd362d8033bf0adcd4ef43bad82467bfff38cb0a79535b266e433c47dc4b7",
+      "member": "src/sources/works/holy-see/euchologion/editions/1754-rome-propaganda/artifacts/chrysostom-facsimile-407a99d3/chrysostom-anaphora-pages.pdf"
+    },
+    {
+      "path": "src/sources/works/holy-see/euchologion/editions/1754-rome-propaganda/artifacts/chrysostom-pages-0f8c3cf7/chrysostom-anaphora-pages.zip",
+      "sha256": "0f8c3cf7efe9821cfdc51dd0569348fb2b38c496572e7f910fc1d31de3d06751",
+      "bytes": 3363532,
+      "kind": "source-evidence",
+      "media_type": "application/zip",
+      "origin_url": "https://books.google.com/books?id=B9BRAAAAcAAJ",
+      "archive": "89abd362d8033bf0adcd4ef43bad82467bfff38cb0a79535b266e433c47dc4b7",
+      "member": "src/sources/works/holy-see/euchologion/editions/1754-rome-propaganda/artifacts/chrysostom-pages-0f8c3cf7/chrysostom-anaphora-pages.zip"
+    },
+    {
+      "path": "src/sources/works/holy-see/euchologion/editions/1873-rome-propaganda/artifacts/chrysostom-facsimile-6b04aa5a/chrysostom-anaphora-pages.pdf",
+      "sha256": "6b04aa5adcd129cde959575207fc920b10b91f02210fb84367f9a57023dee3b1",
+      "bytes": 1512856,
+      "kind": "source-evidence",
+      "media_type": "application/pdf",
+      "origin_url": "https://books.google.com/books?id=m2TsEVn4SzcC",
+      "archive": "89abd362d8033bf0adcd4ef43bad82467bfff38cb0a79535b266e433c47dc4b7",
+      "member": "src/sources/works/holy-see/euchologion/editions/1873-rome-propaganda/artifacts/chrysostom-facsimile-6b04aa5a/chrysostom-anaphora-pages.pdf"
+    },
+    {
+      "path": "src/sources/works/holy-see/euchologion/editions/1873-rome-propaganda/artifacts/chrysostom-pages-afbcf671/chrysostom-anaphora-pages.zip",
+      "sha256": "afbcf671e471ea15f54f19973556b49d42500e17cff1e50661f2b29ab60c3413",
+      "bytes": 2040002,
+      "kind": "source-evidence",
+      "media_type": "application/zip",
+      "origin_url": "https://books.google.com/books?id=m2TsEVn4SzcC",
+      "archive": "89abd362d8033bf0adcd4ef43bad82467bfff38cb0a79535b266e433c47dc4b7",
+      "member": "src/sources/works/holy-see/euchologion/editions/1873-rome-propaganda/artifacts/chrysostom-pages-afbcf671/chrysostom-anaphora-pages.zip"
     }
   ]
 }
