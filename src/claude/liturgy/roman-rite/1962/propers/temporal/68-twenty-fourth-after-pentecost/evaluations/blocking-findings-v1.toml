@@ -49,13 +49,13 @@ provider = "claude"
 run_id = "11c5af05fe374203"
 workflow = "proper-study"
 workflow_version = 19
-stage = "homily-review"
-iteration = 1
+stage = "web-review"
+iteration = 0
 disposition = "PASS"
 standing = 0
 accepted_count = 1
 advisory_count = 12
-observation_count = 9
+observation_count = 11
 
 [[stages]]
 stage = "homily-review"
@@ -104,6 +104,18 @@ standing = 0
 accepted_count = 0
 advisory_count = 5
 observation_count = 7
+
+[[stages]]
+stage = "web-review"
+iteration = 0
+disposition = "PASS"
+run_id = "11c5af05fe374203"
+workflow = "proper-study"
+workflow_version = 19
+standing = 0
+accepted_count = 0
+advisory_count = 0
+observation_count = 2
 
 [[accepted]]
 stage = "research-review"
@@ -254,3 +266,13 @@ note = "'On Chrysostom's account the passage is a fulfilled history, read on thi
 stage = "synthesis-review"
 location = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise (study-review advisories STU-012..STU-016)"
 note = "Confirmed in the concise: the eagles' feeding is not made Eucharistic (439-442); Fromage's credentials appear once (themes 133-134); no maxim closers were found; the Epistle division is Col 1:9-11 and 12-14; Aquinas reads the translation into the kingdom 'in two ways'."
+
+[[observations]]
+stage = "web-review"
+location = "build/web/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost.md, Scriptural Date and Location > Evidence for each date, Alleluia, Gospel and Communion entries (generated/scriptural-date-location.tex lines 32, 46, 51)"
+note = "Generated source labels write article titles with straight TeX quotes ('David, King,', 'Chronology of the Life of Jesus Christ,', 'Jesus Christ,'). The web shows them, as the PDF does, with a closing curly quote at both ends (’David, King,’). The text is faithful to the source; the label text belongs to the chronology projection or source-library locus strings, not to this leaf."
+
+[[observations]]
+stage = "web-review"
+location = "build/web/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost.md, Appendix: Scope and Qualifications, Edition/Text control/Reception paragraphs (sections/90-apparatus.tex lines 17, 28, 53-54)"
+note = "The profile requires the scope appendix to name repository records (research/context.md, propers/verified.md, research/scope.md, research/interpretations.md). The reader shows them as plain code text that no site reader can open. The leaf follows the profile, and a sibling Claude reader (67) prints the same, so this is a converter or profile question, not a defect in this conversion."

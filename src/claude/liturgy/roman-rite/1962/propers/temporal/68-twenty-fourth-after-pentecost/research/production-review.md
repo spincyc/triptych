@@ -611,3 +611,79 @@ print acceptance; the canonical web reader and its independent review are
 later stages.
 
 **For other owners (not repaired here).** None outstanding.
+
+## Install-publication, iteration 0 (16 November 2026)
+
+**Completed reviews.** The engine's recorded results for this run, by stage.
+The SHA-256 is that of the accepting result as the run state records it. At
+installation every sealed review's current input object still equalled the
+object it accepted (the engine's own stale-review computation returned no
+finding).
+
+| Review | Iterations and dispositions | Accepting result SHA-256 |
+| --- | --- | --- |
+| Research review | 0 changes required (3 blocking); 1 pass, 1 advisory and 1 accepted (RES-006) | `3ea8752a907fa608ad900cc1f273fa1e41b8cf745bcedc7ee35763136109caff` |
+| Study review | 0-1 changes required (4 and 3 blocking); 2 pass, 5 advisories | `3b455aafc0c1f50b4364d023d99839104f87dd4e2aa3414da2e59902e36e3fd1` |
+| Synthesis review | 0 pass, 5 advisories | `ce88e8b41c0571bc4b8f495c44e889f854d00322a2971f1f9e1c425233d1c0ee` |
+| Homily review | 0 changes required (1 blocking); 1 pass, 1 advisory | `8f2de7621b1291547b7398c4ff9d70320d560420b29f8033a5f1f6f4b590c209` |
+| Artifact gates | 0 pass | `97af5c9c6c70bfc4459030f6b4c4d3ef1c5d44f458a9759ff4ab5fcbb5607d3c` |
+| Web review | 0 pass, no finding, 2 observations | `8dc675dff97cf35959fd77083ca2b3b85fabf1aaff339ac9a55cc39e25761ea8` |
+
+**Web edition.** Nothing is installed: the site converts the study and its
+companions from their canonical TeX when it is built. A fresh conversion of
+the canonical study with `tools/web-edition --provider claude` into this
+stage's scratch area is byte-identical to the reviewed conversion
+`build/web/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost.md`
+(SHA-256 `8b40f476fe32e78949582bc9a5baa3dd9bcf4947f600276edc2b0f19cc3366c0`,
+equal to `research/web-artifact.json` and to the web review's sealed bytes);
+its stamp is the committed author time of the leaf, `2026-11-16T22:24:00Z`.
+`web-edition.toml` now records the web review as the canonical reader's
+inspection (`inspected`, `inspected_by`, `inspection`, with that conversion
+hash). The review compared the reader with its sources and judged its
+presentation from the site renderer's HTML and the site CSS; it did not
+render the page in a browser, and the inspection record says so. Those three
+fields lie outside the content and render identities the review seals, and
+`reviewed` is unchanged. The synthesis and homily readers are
+converter-verified: no review of their own conversions ran, so no companion
+inspection is recorded.
+
+**Release records and catalog.** `make add-publication` with
+`PROVIDER=claude`, `STATUS=alpha` and `CATALOG=library/traditional-latin-mass.md`
+created the three records under
+`release/publications/claude/liturgy/roman-rite/1962/propers/temporal/` for
+the bare ID, `-synthesis` and `-homily`; none existed before. Each is `alpha`
+under the standing authorization `perpetual-public-repository-2026`. In
+`library/traditional-latin-mass.md`, row 68's Claude cell, which read
+`Planned`, now links Full Study Guide, Synthesis and Homily to the three
+readers in the document type's output order; no PDF is linked, because none
+is published. The page gains the one publication marker
+`claude:liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost`
+(the release's primary provider is `gpt`, so a Claude marker carries its
+provider prefix). The ChatGPT cell of row 68 still reads `Planned`; no other
+row and no other provider's entry was changed.
+
+**Checks before the shared records.** `tools/tpt web-edition check --leaf`
+for this leaf: 3 reader outputs convert with every fidelity audit.
+`tools/tpt check-web-edition` for the leaf: valid, 1 eligible. The
+publication-phase `scripts/_proper_study.py check` in source mode for
+22 November 2026, with the presentation, format, authority, orientation and
+orientation-v3 requirements: pass. `tools/tpt document-library check` scoped
+to this leaf: pass.
+
+**Shared records.** The Claude publication inventory and its classification
+review, the source-family ledger, the browser-product descriptor and the
+scoped release bindings each bind this file's bytes, so this stage refreshes
+them after this entry is written, in that order. Their outcomes are reported
+in the stage's result and in the run record, not here. The publication gate
+decides acceptance.
+
+**Review observations (not repaired here).** The web review raised no
+finding. Its two observations belong to shared owners. The generated
+Scriptural Date and Location evidence writes article titles in straight TeX
+quotes, which print and web both set with a closing mark at each end; the
+repair belongs to the chronology projection or the source-library locus
+strings. The scope appendix names repository records in code type that no
+site reader can open, as the profile asks and as the sibling Claude leaf 67
+also prints; that is a question for the converter or the profile. The
+standing advisories of the earlier reviews remain in
+`evaluations/blocking-findings-v1.toml` for their owners.
