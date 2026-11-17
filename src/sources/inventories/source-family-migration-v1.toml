@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-11-17"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:9514dfa0c5f07037004228f9bddc0ea232ed971694f2dfea46fad9c238bbda9c"
+inventory_snapshot = "sha256:bfb12cd3e6909437b395b9793fe50fc1d97dcf93c9ebcc94fe128975b71f2025"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:210b310a398314ad0e288ea2a7b063f0cd0b9df97aebdce2e9fe844cd4dd2336"
 canonical_catalog_snapshot = "sha256:3a2209bef596860a2047d54a82189086f4d2c73428f8619db5cd5fdf41f9d999"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:5d008987c32d0a4e93cde01ade2bf83b9c4a888c568e6946d62acaa7241daa88"
+snapshot = "sha256:ed1762a4c5f83890056f5973a5c1c3dd264a0728dd25b8a674cd02a8279488c6"
 families = []
 
 [[review_units]]
@@ -513,7 +513,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost"
-surface_snapshot = "sha256:2271a532454678081652dea846a6b4fe6b1d4ffb4c74c52fc2722a14c40156da"
+surface_snapshot = "sha256:8d986063f2c805926978ab2765b3cda0ea21a6524edca4b80e83e018c89c9362"
 review_state = "pending"
 
 [[review_units]]

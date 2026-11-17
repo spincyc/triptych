@@ -1071,3 +1071,59 @@ No upstream owner-boundary content defect was found; the tooling and
 inventory limits above are reported for their actual owners. No Git write,
 workflow advance, review restamping, publication or deployment was performed.
 This contribution stops at derive-homily.
+
+## Renewed source/web publication checkpoint, 17 November 2026
+
+The installation worker for `proper-study` v19, run `13ecdd1552c245ea`,
+iteration 0, checked the actual native engine results, not the historical
+run's acceptance. The engine's read-only review-currentness check found no
+stale research, study, synthesis, homily or canonical web review. All five
+review results are PASS at iteration 0. Their result SHA-256 identities are:
+
+| Review | Result SHA-256 |
+| --- | --- |
+| Research | `d195d2f0bf4775c08324c1a76f58eeba43035436bf98e85f68a5b0dc0115ab87` |
+| Study | `38e913520b51bbfa9b9c97bcdf883fa8962b92e60ec46f07abafe35ac9dd3011` |
+| Synthesis | `7ca48fbe89f8cb815073e3aa7b5fea8bf6dbfd71812aabb59094c33cdd27c3a8` |
+| Homily | `2cf0498cb7922398f26ff8e22dffe2ecdebbaf7a406d4d7f8834256321d65fe3` |
+| Canonical web | `e31e59ae0f436090b8d8ee760b087210966bca5d999f3d6ca622d2de1a43c7a3` |
+
+The research review seals 1,817 files under `proper-study-v5`; the study,
+synthesis and homily review seals contain 19, 16 and 10 files respectively.
+The canonical web review additionally seals the source-publication identities.
+`document-schema check --phase content --run-gates` passed for the leaf's
+three outputs. A fresh canonical conversion was byte-identical to
+`build/web/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost.md`,
+SHA-256 `d5562a4040789668a3c24d15adb24703ab1efade890157b45f1de982b95fd270`.
+
+The native web result records a complete Markdown/source comparison and
+focused Augustine, Chrysostom, Aquinas and Bede checks, 36 quotations,
+52 exact source notes, 45 ordered headings, separate four-sense lists,
+both tables, nine references and 114 working internal links. Actual Chromium
+content-preview sampling used 1280 by 1000 and 390 by 844 viewports. This was
+targeted visual sampling, not exhaustive browser-position, deployment,
+companion-reader or print inspection. The live Gutenberg catalogue returned
+HTTP 503 during that review; the retained evidence remained available.
+Only the canonical declaration's three operational inspection fields now
+record that passed review. Its eligibility-review date is unchanged.
+The synthesis and homily readers have no independent inspection receipt and
+remain converter-verified only.
+
+The three existing minimal release records correctly name `alpha` and
+`perpetual-public-repository-2026`; no release decision was changed. The
+existing row 68 GPT links already point to the three distinct readers in
+canonical, synthesis, homily order, with exactly one bare canonical marker
+under the manifest's GPT primary-provider rule. The catalog needed no edit.
+The distinct Claude identity and links, incoming Sunday order, resumed-Sunday
+adjacency and Easter-dependence note remain operative.
+
+This checkpoint records completed source and web review facts and wiring
+checks, not a terminal engine verdict or deployment. The worker's actual
+contribution is publication inspection/bookkeeping validation; no scholarly
+prose, evidence, historical review, generation provenance or shared style was
+revised. The original run `df0ccb9ecfdea6c9` and its archive remain historical
+records. Source/HTML publication requires no new print export, and none was
+requested or created here. Aggregate products, inventory refreshes and scoped
+release-binding checks are reported separately in the worker's scratch
+handoff under `.scratch/proper-study-68/renewed-install-publication-0000-`.
+No workflow advance, Git write or deployment is authorized by this checkpoint.

@@ -876,3 +876,158 @@ historical archive files and 143 original native files remain exact, with
 no extra original-run files. This is a checkpoint preservation/privacy
 check, not the required final newly reachable-object audit or a release
 approval.
+
+The exact staged checkpoint passes a second privacy/index audit:
+383 files, 35,905,907 text bytes, no unexpected path and no unstaged or
+untracked work. Its only change since the candidate audit is the expected
+progress-log append. The normal commit succeeds as
+`c5e60649b7b67596e6e3c0e73912fe76a083b732`, with both
+`e8aceadc4a7e1ebe8d4987815a636d82ddd9d59b` and
+`ad000a3f02be1801e50aa265c877d9c93a66b502` as parents.
+Its exact first-parent zero-context diff matches the staged audit
+(`65867175d800df7e855bdcc861849c60bc3965a57a854a6b13f80c24ffd663bf`);
+the configured identity and prepared message match, and the worktree is
+clean immediately afterwards. The material revision correctly has no
+`Edition-Revision: none` trailer. No blocked operation is retried and no
+history is rewritten.
+
+The existing revision owner independently reports `uncommitted: false`
+for all three GPT editions, each at `2026-11-17T18:35:07Z`.
+The exact `generate-web-0000` packet is dispatched to one fresh
+GPT-6.1 Sol process at explicit high effort. Its scope is conversion, the
+conversion receipt and actual mutable production/contribution facts, not
+accepted prose, sealed evidence or incoming Claude content. This is a
+local source checkpoint; nothing is pushed or published.
+
+The web-conversion worker returns PASS and its exact result is submitted.
+It independently confirms committed revision closures for all three
+editions and current inputs for all four source reviews, converts the
+canonical study, and records conversion SHA-256
+`d5562a4040789668a3c24d15adb24703ab1efade890157b45f1de982b95fd270`
+in the web-artifact receipt. Converter and supplemental fidelity checks
+pass. This prepares bytes for review; it is not installation or acceptance.
+
+The sealed `web-review-0000` packet is dispatched to one fresh
+GPT-6.1 Sol process at explicit xhigh effort, without the authoring
+conversation or a preferred verdict. In a separate scratch output, the
+coordinator starts selected native-bundle preparation and compilation for
+the three committed editions. Those disposable local compilations are
+neither reviewed print exports nor the full admitted-edition Pages gate.
+
+All three selected native compilations pass from source checkpoint
+`c5e60649b7`, with two settled passes each and empty problem lists:
+the study has 26 pages (558,586 bytes), the concise study ten
+(419,721 bytes), and the homily three (301,722 bytes). The existing
+artifact-phase component validator passes against disposable,
+byte-identical PDF/aux/log copies, including the physical opening markers,
+page limits and embedded Latin Modern fonts. No fonts, geometry, counters
+or padding are changed to obtain those results.
+
+These are host pdfTeX validations against the declared native runtime
+closure, not browser-WASM byte-identity claims; the compiler explicitly
+reports the host `pdftex.map` difference. The homily's rendered metadata
+check passes. The study and concise metadata checks exceed their initial
+100-second limits without a diagnostic and are rerun with 300-second
+limits; neither timeout is reported as a metadata PASS. Exact-artifact
+visual review and the full deployment compile remain separate.
+
+Both longer metadata reruns pass, so all three selected PDFs now pass the
+existing rendered-metadata validator. The homily's 301,722 bytes over
+three pages trigger the 75 KiB-per-page investigation. Its font inventory
+has twelve embedded subset Latin Modern records and its raster inventory
+is empty. The standard typography/compression is retained without a local
+override. Exact compiler JSON and these inspection limits are preserved
+separately under `NATIVE-PRINT-2026-11-17/`; the historical 16 November
+records are not changed.
+
+The independent web review returns PASS with no findings and is accepted
+by the engine. It independently regenerates the conversion and confirms
+the exact `d5562a4040789668a3c24d15adb24703ab1efade890157b45f1de982b95fd270`
+bytes, all 36 quotations, 52 notes, both interpretations and their separate
+four senses, both tables, nine references and 114 working internal links.
+Actual Chromium preview samples at 1280×1000 and 390×844 cover content
+boundaries, chronology, the scrollable inventory and source-note navigation.
+The review does not claim exhaustive browser positions, companions, print
+or deployment. The Gutenberg catalog URL returns HTTP 503 while retained
+source evidence remains available. The accepted result preserves these
+limits and changes no reviewed input.
+
+The emitted `install-publication-0000` packet is dispatched to one fresh
+GPT-6.1 Sol process at explicit high effort. Shared catalog, inventory,
+browser-product and scoped release-binding writes are serialized to that
+worker for this stage. It may record only actual GPT inspection/production
+facts and use the registered owners; it must preserve incoming Claude,
+the Sunday-list order, all existing source identities, authorization prose
+and historical workflow evidence. It may not commit, refresh tracked
+discovery indexes, advance the engine or claim deployment. Terminal
+acceptance, archival and final publication checks remain pending.
+
+The installation worker returns PASS, and the engine records its exact
+result. The three existing alpha release records and their authorization
+remain unchanged. The catalog retains the main-study/concise/homily order,
+the distinct incoming Claude slug and every unrelated cell. Inventory and
+family-ledger checks pass without promoting any of the 168 pending family
+reviews. The complete document catalog has 159 works, 223 documents and
+301 issues; its extents remain unmeasured.
+
+Two independent cold builds record thirteen browser-product families:
+29,587 files and 266,382,509 bytes, with aggregate identity
+`8bc3f52fc9c4138d157f4709a03f9f2107b79792684f5cc48208ee6a37f6070f`.
+The worker's complete checks and the driver's separate
+`tools/browser-products check --json` pass. These mechanical checks confer
+no new source or publication authority.
+
+The driver independently compares the release-binding delta against both
+exact owner commands: 22 selected paths followed by 74, all distinct.
+Exactly those 96 entries change: 23 updated hashes, 71 registered current
+inputs and two retired byte-identical Ordo relocation paths. All 24,801
+unselected bindings remain exact, and every one of the 24,895 current
+bindings matches its actual file bytes. Both Ordo identities remain
+distinct. Approval and authority fields are unchanged; rights prose changes
+only in its single generated source digest. No broad drift acceptance,
+new approval or source-identity rewrite occurs.
+
+The cache-dependent calendar regression reproduces its missing `pdf`
+field error. Both the test and producer match the fetched upstream version:
+the test still requires stored PDFs despite the source-only publication
+contract. Its test-only repair checks canonical TeX entrypoints, available
+reader routes and on-demand print availability, retaining the legacy
+full-guide restriction and checking current HTML catalog links too.
+
+The cache-dependent Catena print regression separately counts seven
+displayed excerpts as complete fragments and compares disclosure arrays
+before and after lazy materialization adds a context disclosure. A bounded
+browser probe confirms that all seven original disclosure nodes retain
+their exact states and the new context starts closed. The test now selects
+full fragment bodies separately from excerpts, checks the original nodes
+by identity and requires every new disclosure to remain closed. Its exact
+three-source full-text and request comparisons remain intact. No reader
+code, source payload or Claude publication changes.
+
+All 32 tests in the calendar-computation, proper-read-payload,
+browser-print-selection and proper-search modules then pass in 183.309
+seconds. Earlier failing attempts are superseded by this final run, not
+reported as passes. The two test-only repairs are committed separately in
+[26307b6959](https://github.com/spincyc/triptych/commit/26307b6959), with
+`Edition-Revision: none`; the reviewed edition wording remains untouched.
+The terminal native publication gate is still running. Terminal acceptance,
+fresh archival, integrated deployment gates, push and live verification are
+not yet claimed.
+
+A subsequent fetch finds six further upstream commits, ending at
+[bf03652429](https://github.com/spincyc/triptych/commit/bf03652429).
+They close the independently published Claude promise and move resumed
+Sundays into their own catalog/reader section under the maintainer's
+17 November request. That newer presentation supersedes the earlier
+adjacency rule; its incoming content is to be preserved, not re-reviewed
+or rewritten here.
+
+Comparing all 31 incoming paths with the five sealed review-input records
+finds no intersection for research, study, synthesis or homily. The changed
+1962 profile does intersect the web-review seal. The coordinator therefore
+stops the superseded terminal-gate process before integration. Its native
+state still awaits `publication-gates-0000`, with twenty results, no terminal
+disposition and no publication-gate result recorded. The interruption is
+not a gate PASS or FAIL. Existing packets, results and acceptance seals
+remain exact. After preserved-history reconciliation, the native gate must
+route any stale-review repair; no accepted review will be restamped.
