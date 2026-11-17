@@ -1031,3 +1031,22 @@ disposition and no publication-gate result recorded. The interruption is
 not a gate PASS or FAIL. Existing packets, results and acceptance seals
 remain exact. After preserved-history reconciliation, the native gate must
 route any stale-review repair; no accepted review will be restamped.
+
+Droid Shield refuses the installation-checkpoint commit on generated
+product-key hashes in `release/browser-products.json`. No retry, split,
+hash replacement or bypass follows. The maintainer commits the exact
+fifteen-file staged checkpoint externally as
+[9fbc024e72](https://github.com/spincyc/triptych/commit/9fbc024e72).
+Its parent, prepared message, trailer and 1,082 additions/544 deletions
+match the held candidate; the worktree is clean afterwards.
+
+The next preserved-history merge incorporates the six fetched commits.
+The work-register conflict retains both the GPT in-progress record and
+the incoming Claude completion account. The catalog and calendar tests
+merge both the new resumed-Sunday section and the source-only link checks.
+The three conflicting generated product/release records retain the
+committed GPT checkpoint provisionally; their owners must rederive the
+combined state before publication. They are not current acceptance proofs.
+All three focused catalog/order/note tests pass. No source wording,
+Claude leaf, source identity or accepted native record is revised by this
+integration.

@@ -250,9 +250,10 @@ class Propers(Surface):
         self.shown = ordinals
         listing = self.query_one("#propers-list", OptionList)
         listing.clear_options()
-        # The page's list presentation (adapter `catalogue`): a resumed Sunday
-        # after the Epiphany sits, by the data's order, under its Epiphanytide
-        # counterpart's heading, and a marked row's note closes its group.
+        # The page's list presentation (adapter `catalogue`): the resumed
+        # Sundays after the Epiphany form, by the data's order, their own group
+        # after the Last Sunday after Pentecost, and a marked row's note closes
+        # its group.
         notes = {note["mark"]: note["text"] for note in catalogue.get("notes") or []}
         marks: list[str] = []
 

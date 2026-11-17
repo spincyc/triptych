@@ -102,17 +102,21 @@ impose the postconciliar taxonomy on the 1962 books.
 
 ### Reader list presentation
 
-On 2026-11-16 the maintainer changed how reader lists present this series.
-Each resumed Sunday `64`–`67` is listed immediately after the Epiphanytide
-Sunday it resumes (`14`–`17`): the Third Sunday after the Epiphany, then its
-resumed form, then the Fourth, and so on. Where a list groups by season, the
-resumed Sundays appear in the Epiphany group. The after-Pentecost run therefore
-ends at `68`, and no list names a Sunday after Pentecost beyond the
-Twenty-fourth. The Sundays after the Epiphany (`13`–`17` and `64`–`67`) and
-`68` carry one marked note: they move with the date of Easter each year. The
-note states only that dependence;
-[calendar computation](calendar-computation.md#1962-sunday-computation) owns
-the arithmetic.
+On 2026-11-16 the maintainer changed how reader lists present this series,
+and on 2026-11-17 revised where the resumed Sundays stand. The resumed Sundays
+`64`–`67` form their own section, "Resumed Sundays", after the Twenty-fourth
+and Last Sunday after Pentecost (`68`): each is a full entry, in numeric order,
+not a sub-line of the Sunday it resumes, because it is a distinct formulary.
+The after-Pentecost run therefore ends at `68`, and no list names a Sunday
+after Pentecost beyond the Twenty-fourth. Two marked notes accompany the
+lists. The Sundays after the Epiphany (`13`–`17`) and `68` carry the first:
+they move with the date of Easter each year. The resumed Sundays carry the
+second, which says when a resumed Sunday is said and what differs from the
+Sunday it resumes: it keeps that Sunday's orations, Epistle and Gospel, sings
+the five chants of the Twenty-third Sunday after Pentecost, and belongs to the
+season after Pentecost. The notes state only that dependence and that
+difference; [calendar computation](calendar-computation.md#1962-sunday-computation)
+owns the arithmetic, and each resumed Mass's own record owns its texts.
 
 The rule binds the Proper of Time table in the
 [Traditional Latin Mass catalog](../../library/traditional-latin-mass.md), the
@@ -121,12 +125,17 @@ list, for every missal that holds these formularies (the 1962 Missal and its
 pre-1955 recension). It is presentation only. Identities, their numbering,
 keys, labels, seasons, and the calendar source's liturgical-year order are
 unchanged, and the production plan keeps the numeric order.
-`tools/mass-propers` (`RESUMED_LISTED_AFTER`, `EASTER_DEPENDENCE_NOTE`) is the
-one owner of the order, display season, and note that browser and terminal
-lists receive in the
-generated `listing` data; readers do not re-sort it. The catalog repeats the
-same note verbatim, and `tools/tests/test_calendar_computation_guidance.py`
-checks that the catalog's order and note agree with the producer.
+`tools/mass-propers` (`RESUMED_SUNDAYS`, `RESUMED_LIST_SEASON`,
+`RESUMED_NOTE`, `EASTER_DEPENDENCE_NOTE`) is the one owner of the order,
+display season, and notes that browser and terminal lists receive in the
+generated `listing` data; readers do not re-sort it, and each list numbers its
+marks (†, then ‡) in its own order. The catalog gives the resumed Sundays
+their own table under its Proper of Time table and repeats both notes
+verbatim, and `tools/tests/test_calendar_computation_guidance.py` checks that
+the catalog's order and notes agree with the producer. The producer refuses to
+describe a resumed Mass whose record no longer takes its counterpart's texts
+and the Twenty-third Sunday's chants, so the note cannot outlive the
+calendar source.
 
 ## Source Records and Text Control
 

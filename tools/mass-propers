@@ -221,25 +221,45 @@ CHAPTER = re.compile(r"^(\D*?)(\d+)")
 
 # How a reader's formulary lists present the Sundays after the Epiphany, as
 # guidance/liturgy/roman-1962-propers.md § Reader list presentation states
-# (maintainer request, 2026-11-16). This is list order and display only: the
-# calendar source keeps liturgical-year order, every Mass keeps its own key,
-# registry identity and season, and no consumer re-sorts what arrives here.
+# (maintainer requests, 2026-11-16 and 2026-11-17). This is list order and
+# display only: the calendar source keeps liturgical-year order, every Mass
+# keeps its own key, registry identity and season, and no consumer re-sorts
+# what arrives here.
 #
-# Each resumed Sunday is listed immediately after the Epiphanytide Sunday whose
-# orations, Epistle and Gospel it takes (its own `takes_from`), shown in that
-# Sunday's season group, so the after-Pentecost run ends at the Last Sunday.
-RESUMED_LISTED_AFTER = {
+# The resumed Sundays are listed together, each as a full entry in numeric
+# order, in their own group (RESUMED_LIST_SEASON) after the Last Sunday after
+# Pentecost, so the after-Pentecost run ends at the Last Sunday. Each takes its
+# orations, Epistle and Gospel from the Sunday after the Epiphany named here
+# (its own `takes_from`); RESUMED_NOTE says what differs and when it is said.
+RESUMED_SUNDAYS = {
     "resumed-epiphany-3": "epiphany-3",
     "resumed-epiphany-4": "epiphany-4",
     "resumed-epiphany-5": "epiphany-5",
     "resumed-epiphany-6": "epiphany-6",
 }
-# The Sundays whose keeping or place depends on Easter, each marked with one
-# note. guidance/liturgy/calendar-computation.md § 1962 Sunday computation owns
-# the arithmetic; this sentence only states the dependence.
+RESUMED_LISTED_AFTER = "last-sunday-after-pentecost"
+# What RESUMED_NOTE claims of each resumed Mass's record, checked before the
+# note is stamped: its own Propers are exactly these chants, each taken from
+# this Mass, and it keeps this season.
+RESUMED_CHANTS = ("Introit", "Gradual", "Alleluia", "Offertory", "Communion")
+RESUMED_CHANTS_FROM = "pentecost-23"
+RESUMED_SEASON = "after-pentecost"
+RESUMED_LIST_SEASON = "resumed-sundays"
+RESUMED_NOTE = (
+    "A resumed Sunday is said only in a year with more than twenty-four "
+    "Sundays after Pentecost, which depends on the date of Easter: the extra "
+    "Sundays before the Last Sunday after Pentecost take up Sundays after the "
+    "Epiphany that Septuagesima displaced. It keeps the orations, Epistle and "
+    "Gospel of the Sunday it resumes, but sings the Introit, Gradual, Alleluia, "
+    "Offertory and Communion of the Twenty-third Sunday after Pentecost, and "
+    "belongs to the season after Pentecost."
+)
+# The other Sundays whose keeping or place depends on Easter, each marked with
+# one note. guidance/liturgy/calendar-computation.md § 1962 Sunday computation
+# owns the arithmetic; this sentence only states the dependence.
 EASTER_DEPENDENT_SUNDAYS = (
     "epiphany-2", "epiphany-3", "epiphany-4", "epiphany-5", "epiphany-6",
-    *RESUMED_LISTED_AFTER, "last-sunday-after-pentecost",
+    "last-sunday-after-pentecost",
 )
 EASTER_DEPENDENCE_NOTE = (
     "These Sundays move with the date of Easter each year. How many Sundays "
@@ -375,43 +395,48 @@ def list_presentation(document: dict) -> dict[str, dict]:
     Read from the whole calendar, so a selected Mass carries exactly what the
     complete projection gives it. `season` is the group a list shows the Mass
     in where that differs from its own season; `note` is the sentence its mark
-    refers to. A resumed Sunday that no longer takes its counterpart's texts,
-    or whose counterpart is missing, is refused rather than listed by guess.
+    refers to. A resumed Sunday whose record no longer takes what the note
+    says, or whose counterpart is missing, is refused rather than described
+    by guess.
     """
     held = {mass.get("key"): (kind, mass) for kind, mass in masses_of(document)}
     listings: dict[str, dict] = {}
     for key in EASTER_DEPENDENT_SUNDAYS:
         if key in held:
             listings[key] = {"note": EASTER_DEPENDENCE_NOTE}
-    for key, counterpart in RESUMED_LISTED_AFTER.items():
+    for key, counterpart in RESUMED_SUNDAYS.items():
         if key not in held:
             continue
         kind, mass = held[key]
         taken = (mass.get(_calendars.TAKES_FROM) or {}).get("mass")
         if counterpart not in held or held[counterpart][0] != kind or taken != counterpart:
             raise ValueError(f"{key} must take its texts from {counterpart} of the same kind "
-                             "to be listed after it")
-        season = held[counterpart][1].get("season")
-        if season and season != mass.get("season"):
-            listings[key] = {**listings.get(key, {}), "season": season}
+                             "to be listed as a resumed Sunday")
+        own = [(proper.get("name"), (proper.get(_calendars.TAKES_FROM) or {}).get("mass"))
+               for proper in mass.get("propers") or []]
+        if (own != [(name, RESUMED_CHANTS_FROM) for name in RESUMED_CHANTS]
+                or RESUMED_CHANTS_FROM not in held or mass.get("season") != RESUMED_SEASON
+                or mass.get("forms")):
+            raise ValueError(f"{key} no longer takes what RESUMED_NOTE says; revise the note "
+                             "with guidance/liturgy/roman-1962-propers.md")
+        listings[key] = {"season": RESUMED_LIST_SEASON, "note": RESUMED_NOTE}
     return listings
 
 
 def list_order(masses: list[dict]) -> list[dict]:
-    """Masses in formulary-list order: each resumed Sunday after its counterpart.
+    """Masses in formulary-list order: the resumed Sundays after the Last Sunday.
 
-    Everything else keeps source order. A counterpart absent from a selection
-    leaves the resumed Sunday where it stands.
+    Everything else keeps source order. A selection without the Last Sunday
+    after Pentecost leaves the resumed Sundays where they stand.
     """
     keys = [mass["key"] for mass in masses]
-    moving = {key for key, counterpart in RESUMED_LISTED_AFTER.items()
-              if key in keys and counterpart in keys}
-    ordered = [mass for mass in masses if mass["key"] not in moving]
-    for key, counterpart in RESUMED_LISTED_AFTER.items():
-        if key in moving:
-            at = next(index for index, mass in enumerate(ordered) if mass["key"] == counterpart)
-            ordered.insert(at + 1, masses[keys.index(key)])
-    return ordered
+    if RESUMED_LISTED_AFTER not in keys:
+        return list(masses)
+    moving = [mass for mass in masses if mass["key"] in RESUMED_SUNDAYS]
+    moving.sort(key=lambda mass: list(RESUMED_SUNDAYS).index(mass["key"]))
+    ordered = [mass for mass in masses if mass["key"] not in RESUMED_SUNDAYS]
+    at = next(index for index, mass in enumerate(ordered) if mass["key"] == RESUMED_LISTED_AFTER)
+    return ordered[:at + 1] + moving + ordered[at + 1:]
 
 
 def propers_of(mass: dict) -> list[tuple[str, dict]]:
@@ -4098,7 +4123,7 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str], *,
             _missal_coverage.summarize(_missal_coverage.proper_units(built), "mass")
         )
         # Absent, like the recension stamp, where a list presents the Mass
-        # plainly; see RESUMED_LISTED_AFTER.
+        # plainly; see RESUMED_SUNDAYS.
         if built["key"] in listings:
             built["listing"] = dict(listings[built["key"]])
         masses.append(built)

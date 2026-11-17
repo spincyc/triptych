@@ -88,7 +88,7 @@ class ProperSearchTests(unittest.TestCase):
         valid["rows"] = [next(row for row in valid["rows"] if row["key"] == key)
                          for key in ("pentecost", "resumed-epiphany-3")]
         self.assertIsNone(valid["rows"][0]["listing"])
-        self.assertEqual(valid["rows"][1]["listing"]["season"], "epiphanytide")
+        self.assertEqual(valid["rows"][1]["listing"]["season"], "resumed-sundays")
         self.release.validate_proper_search_payload(valid, "search fixture", "roman-1962")
         mutations = (
             ("row body", lambda doc: doc["rows"][0].update(text="protected text")),

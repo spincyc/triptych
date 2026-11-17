@@ -83,16 +83,10 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
     landing = (ROOT / "library/traditional-latin-mass.md").read_text()
     parent_ids = re.findall(r"^\| (\d{2}) \| \*\*", landing, re.MULTILINE)
     self.assertEqual(sorted(parent_ids), [f"{n:02d}" for n in range(1, 69)])
-    # Reader list presentation (roman-1962-propers.md, 2026-11-16): each
-    # resumed Sunday follows the Epiphanytide Sunday it resumes, and the
-    # after-Pentecost run ends at 68.
-    resumed = {"14": "64", "15": "65", "16": "66", "17": "67"}
-    expected = []
-    for n in range(1, 64):
-      expected.append(f"{n:02d}")
-      if f"{n:02d}" in resumed:
-        expected.append(resumed[f"{n:02d}"])
-    self.assertEqual(parent_ids, expected + ["68"])
+    # Reader list presentation (roman-1962-propers.md, 2026-11-16 and
+    # 2026-11-17): the after-Pentecost run ends at 68, and the resumed Sundays
+    # follow in their own section, in numeric order.
+    self.assertEqual(parent_ids, [f"{n:02d}" for n in range(1, 64)] + ["68", "64", "65", "66", "67"])
     self.assertIn("| 27 | **Mass of the Lord's Supper** | Planned | Planned |", landing)
     self.assertIn(
       "| 28 | **Solemn Liturgical Action of the Passion and Death of the Lord** "
@@ -113,36 +107,55 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
     registry = {key: mass.get("registry") for key, mass in held.items()}
 
     landing = (ROOT / "library/traditional-latin-mass.md").read_text()
-    marked = re.findall(r"^\| (\d{2}) \| \*\*[^*]+\*\* † \|", landing, re.MULTILINE)
+    calendar = landing.split("## Sunday Propers Calendar", 1)[1].split("### Feasts Replacing a Sunday", 1)[0]
+    main, resumed = calendar.split("### Resumed Sundays after the Epiphany\n", 1)
+    marked = re.findall(r"^\| (\d{2}) \| \*\*[^*]+\*\* † \|", main, re.MULTILINE)
     self.assertEqual(sorted(marked),
                      sorted(registry[key] for key in producer.EASTER_DEPENDENT_SUNDAYS))
+    self.assertEqual(re.findall(r"^\| (\d{2}) \| \*\*[^*]+\*\* ‡ \|", resumed, re.MULTILINE),
+                     [registry[key] for key in producer.RESUMED_SUNDAYS])
+    self.assertEqual(re.findall(r"^\| (\d{2}) \| ", resumed, re.MULTILINE),
+                     [registry[key] for key in producer.RESUMED_SUNDAYS])
     self.assertEqual(landing.count("\n† "), 1)
-    self.assertIn("\n† " + producer.EASTER_DEPENDENCE_NOTE + "\n", landing)
-    rows = re.findall(r"^\| (\d{2}) \| \*\*", landing, re.MULTILINE)
-    for key, counterpart in producer.RESUMED_LISTED_AFTER.items():
-      self.assertEqual(rows[rows.index(registry[counterpart]) + 1], registry[key])
+    self.assertEqual(landing.count("\n‡ "), 1)
+    self.assertIn("\n† " + producer.EASTER_DEPENDENCE_NOTE + "\n", main)
+    self.assertTrue(resumed.rstrip().endswith("\n‡ " + producer.RESUMED_NOTE))
 
     # Presentation never rewrites the calendar: the resumed Masses keep their
-    # season and are only displayed in their counterpart's group.
+    # season and are only displayed in their own list group.
     listings = producer.list_presentation(document)
-    for key, counterpart in producer.RESUMED_LISTED_AFTER.items():
+    for key in producer.RESUMED_SUNDAYS:
       self.assertEqual(held[key]["season"], "after-pentecost")
-      self.assertEqual(listings[key], {"note": producer.EASTER_DEPENDENCE_NOTE,
-                                       "season": held[counterpart]["season"]})
-    self.assertEqual(set(listings), set(producer.EASTER_DEPENDENT_SUNDAYS))
+      self.assertEqual(listings[key], {"note": producer.RESUMED_NOTE,
+                                       "season": producer.RESUMED_LIST_SEASON})
+    for key in producer.EASTER_DEPENDENT_SUNDAYS:
+      self.assertEqual(listings[key], {"note": producer.EASTER_DEPENDENCE_NOTE})
+    self.assertEqual(set(listings),
+                     set(producer.EASTER_DEPENDENT_SUNDAYS) | set(producer.RESUMED_SUNDAYS))
     seasonal = [{"key": mass["key"]} for kind, mass in producer.masses_of(document)
                 if kind == "seasonal"]
     ordered = [mass["key"] for mass in producer.list_order(seasonal)]
-    self.assertEqual(ordered[ordered.index("epiphany-3"):ordered.index("epiphany-6") + 2], [
-      "epiphany-3", "resumed-epiphany-3", "epiphany-4", "resumed-epiphany-4",
-      "epiphany-5", "resumed-epiphany-5", "epiphany-6", "resumed-epiphany-6",
+    self.assertEqual(ordered[ordered.index("epiphany-2"):ordered.index("septuagesima")], [
+      "epiphany-2", "epiphany-3", "epiphany-4", "epiphany-5", "epiphany-6",
     ])
-    self.assertEqual(ordered[-3:], ["pentecost-23", "christ-the-king",
-                                    "last-sunday-after-pentecost"])
-    # A selection without the counterpart leaves the resumed Sunday in place.
+    self.assertEqual(ordered[-7:], [
+      "pentecost-23", "christ-the-king", "last-sunday-after-pentecost",
+      "resumed-epiphany-3", "resumed-epiphany-4", "resumed-epiphany-5", "resumed-epiphany-6",
+    ])
+    # A selection without the Last Sunday leaves the resumed Sundays in place.
     self.assertEqual([mass["key"] for mass in producer.list_order(
-      [{"key": "pentecost-23"}, {"key": "resumed-epiphany-3"}])],
-      ["pentecost-23", "resumed-epiphany-3"])
+      [{"key": "resumed-epiphany-3"}, {"key": "pentecost-23"}])],
+      ["resumed-epiphany-3", "pentecost-23"])
+
+    # The resumed note describes the record; a record that stops matching it
+    # is refused rather than described by guess.
+    import copy
+    changed = copy.deepcopy(document)
+    for _, mass in producer.masses_of(changed):
+      if mass["key"] == "resumed-epiphany-4":
+        mass["propers"] = mass["propers"][:-1]
+    with self.assertRaisesRegex(ValueError, "resumed-epiphany-4 no longer takes what RESUMED_NOTE says"):
+      producer.list_presentation(changed)
 
   def test_postconciliar_registry_and_reader_calendar_arithmetic(self):
     registry = (
