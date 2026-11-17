@@ -211,6 +211,9 @@ class PublicAlphaTest(unittest.TestCase):
             "masses": [{
                 **{field: mass[field] for field in
                    ("key", "name", "kind", "season", "date", "coverage")},
+                # The producer writes `listing` on every descriptor, null
+                # where the Mass carries no formulary-list presentation.
+                "listing": mass.get("listing"),
                 "forms": [{field: form.get(field) for field in ("id", "name", "ordinal")}
                           for form in mass.get("forms") or []],
             } for mass in masses],
