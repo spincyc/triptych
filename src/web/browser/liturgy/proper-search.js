@@ -196,6 +196,8 @@
       status.textContent = 'Showing ' + shown.length + ' of ' + found.length +
         ' form-qualified results in ' + options.editionLabel(edition) +
         (found.length > LIMIT ? '. Refine the search to see other results.' : '.');
+      // Marks are the browse list's own: numbered over the whole edition.
+      const notes = listNotes(index.rows);
       const list = document.createElement('ol');
       list.className = 'proper-search-results';
       shown.forEach(function (match) {
@@ -209,7 +211,7 @@
           click.preventDefault();
           options.select(edition, row);
         });
-        const mark = listMark(row, listNotes([row]));
+        const mark = listMark(row, notes);
         if (mark) link.textContent += ' ' + mark;
         item.appendChild(link);
         const identity = document.createElement('span');

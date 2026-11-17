@@ -40,33 +40,36 @@ assert.match(extent, /exact target/);
 assert.match(extent, /Bible text is separate from exact Missal wording/);
 assert.doesNotMatch(extent, /complete Missal/i);
 // Formulary-list presentation arrives with the data (roman-1962-propers.md
-// § Reader list presentation): each resumed Sunday follows its Epiphanytide
-// counterpart in that group, the after-Pentecost run ends at the Last Sunday,
-// and the Easter-dependent Sundays share one marked note.
+// § Reader list presentation): the after-Pentecost run ends at the Last
+// Sunday, the resumed Sundays follow in their own group, and the
+// Easter-dependent Sundays and the resumed Sundays each share one marked note.
+const resumed = ['resumed-epiphany-3', 'resumed-epiphany-4', 'resumed-epiphany-5', 'resumed-epiphany-6'];
 for (const index of [roman, earlier]) {
   const seasonal = index.rows.filter((row) => row.kind === 'seasonal');
   const order = seasonal.map((row) => row.key);
-  assert.deepEqual(order.slice(order.indexOf('epiphany-3'), order.indexOf('septuagesima')), [
-    'epiphany-3', 'resumed-epiphany-3', 'epiphany-4', 'resumed-epiphany-4',
-    'epiphany-5', 'resumed-epiphany-5', 'epiphany-6', 'resumed-epiphany-6',
+  assert.deepEqual(order.slice(order.indexOf('epiphany-2'), order.indexOf('septuagesima')), [
+    'epiphany-2', 'epiphany-3', 'epiphany-4', 'epiphany-5', 'epiphany-6',
   ]);
+  const last = order.indexOf('last-sunday-after-pentecost');
+  assert.deepEqual(order.slice(last + 1, last + 5), resumed);
   const afterPentecost = seasonal.filter((row) => search.listSeason(row) === 'after-pentecost');
   assert.equal(afterPentecost.at(-1).key, 'last-sunday-after-pentecost');
   assert.ok(!afterPentecost.some((row) => row.key.startsWith('resumed-')));
-  for (const key of ['resumed-epiphany-3', 'resumed-epiphany-6']) {
+  for (const key of resumed) {
     const row = seasonal.find((one) => one.key === key);
     assert.equal(row.season, 'after-pentecost');
-    assert.equal(search.listSeason(row), 'epiphanytide');
+    assert.equal(search.listSeason(row), 'resumed-sundays');
   }
   const notes = search.listNotes(seasonal);
-  assert.equal(notes.length, 1);
-  assert.equal(notes[0].mark, '†');
+  assert.deepEqual(notes.map((note) => note.mark), ['†', '‡']);
   assert.match(notes[0].text, /^These Sundays move with the date of Easter each year\./);
-  assert.deepEqual(seasonal.filter((row) => search.listMark(row, notes)).map((row) => row.key), [
-    'epiphany-2', 'epiphany-3', 'resumed-epiphany-3', 'epiphany-4', 'resumed-epiphany-4',
-    'epiphany-5', 'resumed-epiphany-5', 'epiphany-6', 'resumed-epiphany-6',
+  assert.match(notes[1].text, /^A resumed Sunday is said only in a year with more than twenty-four Sundays after Pentecost/);
+  assert.match(notes[1].text, /Introit, Gradual, Alleluia, Offertory and Communion of the Twenty-third Sunday after Pentecost/);
+  assert.deepEqual(seasonal.filter((row) => search.listMark(row, notes) === '†').map((row) => row.key), [
+    'epiphany-2', 'epiphany-3', 'epiphany-4', 'epiphany-5', 'epiphany-6',
     'last-sunday-after-pentecost',
   ]);
+  assert.deepEqual(seasonal.filter((row) => search.listMark(row, notes) === '‡').map((row) => row.key), resumed);
 }
 assert.deepEqual(search.listNotes(post.rows), []);
 assert.ok(post.rows.every((row) => row.listing === null));
