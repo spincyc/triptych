@@ -5,14 +5,13 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-11-16.
+Last reconciled: 2026-11-17.
 
 ## Claude 1962 Twenty-fourth and Last Sunday after Pentecost, 2026-11-22
 
 <!-- promised-deliverable: claude-1962-68-last-after-pentecost-three-documents-2026-11-22 -->
 
-**In progress: accepted and installed on the workspace branch; integration
-with `main` and deployment pending.** On 2026-11-16 the maintainer asked for
+**Complete: pushed to `main`, deployed and verified live.** On 2026-11-16 the maintainer asked for
 the Claude 1962 proper-study documents for the upcoming Sunday and authorized
 publication to `main`. Sunday, 22 November 2026 is the Twenty-fourth and Last
 Sunday after Pentecost (II class), permanent identity `68`,
@@ -42,6 +41,34 @@ HOM-003 (where the Gospel begins within the Lord's answer) are worth a first
 revision. The run is archived in the leaf; the driver's account, with the
 defects left for other owners, is
 [CYCLES.md](workflows/reviews/claude-1962-68-production-2026-11-16/CYCLES.md).
+
+After acceptance the run was archived with its inventory refresh
+(`2339fba574`). `origin/main` had moved by seven Greek Chrysostom commits, so
+they were merged (`28320b38c6`); every conflict was a derived value (product
+record, release manifest and rights digest, recomputed below, and the
+source-family ledger pin, re-pinned over the merged catalogue). The same push
+carried the maintainer's Sunday-list order (`7e7d9e4910`) and the two
+presentation passes (`b53533d449`, `8ac67eea92`), whose rules are dated
+2026-11-16 in their owning guidance, with one test-fixture fix the list order
+needed (`355c29a34d`). The corpus index, browser products (13 products,
+29,558 files) and the 28 bindings those changes moved were then refreshed
+(`d821bcbba7`, `8312ae6a65`, `abb0db1e14`, `ad000a3f02`). On `ad000a3f02` the
+local gates passed: `make check-deployment-sources`, the site build,
+`public-alpha verify --deployment-target github-pages` and `make
+check-release-bindings` (0 stale). Two local checks needed the host noted:
+on this btrfs volume (kernel 7.3) the site build's staging scan reads a stale
+directory listing ("staged artifact contents changed during build", also at
+the unmodified base), so the build and verify ran through a scratch wrapper
+that only rewinds that descriptor; and the host's Arch TeX Live opens
+`fonts/map/fontname/texfonts.map`, so `native-print-compile` typeset all three
+editions (32, 12 and 4 pages) but failed closure, as the already-published
+edition 67 does on this host. The maintainer pushed `ad000a3f02` to `main` as
+a fast-forward from `13c6fbc37c`. Pages run
+[44098807145](https://github.com/spincyc/triptych/actions/runs/44098807145)
+passed print-compile (the pinned toolchain), build and deploy. The three
+readers, the Traditional Latin Mass catalog (row 68 with the Claude cell and
+the dagger note), `assets/site.css`, `shared/browser-core.css` and
+`liturgy/propers-reader.js` are byte-identical live and in the local build.
 
 ## Indexed corpus access and reader performance
 

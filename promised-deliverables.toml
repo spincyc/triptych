@@ -4,7 +4,7 @@ schema_version = 1
 id = "claude-1962-68-last-after-pentecost-three-documents-2026-11-22"
 owner = "PROJECT-WORK.md"
 promise = "Complete the Claude 1962 Twenty-fourth and Last Sunday after Pentecost (68) proper-study workflow for Sunday 22 November 2026: produce the expansive study, concise study and homily with independent cold reviews and their web readers, publish to main and verify the deployment."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "claude-68-authorized"
@@ -30,7 +30,7 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "claude-68-main-and-pages"
   criterion = "The validated work reaches origin/main after the deploy gates pass locally, the Pages run (build, print-compile and deploy) succeeds, and the live reader routes match the local site build."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md"]
 
 [[deliverables]]
