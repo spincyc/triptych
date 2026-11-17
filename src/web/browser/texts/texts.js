@@ -66,6 +66,15 @@
     return issue.print_mode === 'manual' ? 'Export instructions' : 'Print view';
   }
 
+  /* A record's print link is a page action, drawn as the reader's Generate PDF
+     is (site.css, "Page actions"); only an action that makes the print carries
+     the accent and the page glyph. */
+  function printClass(issue) {
+    if (issue.print_mode === 'native-pdf') return 'print page-action page-action--pdf';
+    if (issue.print_mode === 'browser') return 'print page-action page-action--print';
+    return 'print page-action';
+  }
+
   /* The page a listing opens for one edition or companion: its reader, or
      its print page without the `print=1` request that would start a PDF. */
   function documentPage(issue) {
@@ -404,7 +413,7 @@
     }
     if (printTarget) {
       node.appendChild(document.createTextNode(' '));
-      node.appendChild(link('print', SITE + '/' + printTarget, printLabel(issue)));
+      node.appendChild(link(printClass(issue), SITE + '/' + printTarget, printLabel(issue)));
     } else if (absent) {
       node.appendChild(T.el('span', 'absent', absent));
     } else {

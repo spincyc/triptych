@@ -437,7 +437,11 @@ scoped reading interface. Proper-study actions are named **Full Study Guide**,
 **Synthesis** and **Homily** according to their declared output roles, and each
 leads to that output's own reader; an output without a reader (an ineligible
 leaf's) leads to its print page. **Generate PDF** remains the separate native
-printing action, first among the reader toolbar's actions. The shared
+printing action, first among the page actions at the end of the reader's
+one-line toolbar, before **Copy section link**; the toolbar's composition and
+the actions' look are owned by
+[corpus-browser-vision.md](corpus-browser-vision.md#page-actions)
+(2026-11-17). The shared
 presentation uses a broad responsive reading plane, collapsible section
 contents and stable section permalinks. Preserve source text, existing heading
 IDs, footnote targets, revision and rights notices. Reader controls belong
@@ -463,12 +467,15 @@ The complete-edition **Generate PDF** action renders the selected canonical
 TeX output with its original engine, templates and fonts. It lives on the
 output's print page, `print/<provider>/<output>.html`. Each document page
 carries one **Generate PDF** action at its top that links there with
-`?print=1`: first in a publication reader's toolbar, and at the head of the
-content on a source reader without that toolbar
-(`_native_print.reader_action_link`). Every link labelled **Generate PDF**
-uses the one shared look in
-[`native-print.css`](../src/web/browser/shared/native-print.css), as does the
-print page's own button. Catalogue tables do not carry it: since the
+`?print=1` (`_native_print.reader_action_link`): first among the page actions
+at the end of a publication reader's toolbar, and at the end of the breadcrumb
+row on a source reader without that toolbar (2026-11-17, superseding "at the
+head of the content", where it stood in a row of its own). Every **Generate
+PDF** control, the print page's own button included, is a page action with the
+one shared look in [`site.css`](../release/public-alpha/assets/site.css)
+([Page actions](corpus-browser-vision.md#page-actions)); since 2026-11-17
+[`native-print.css`](../src/web/browser/shared/native-print.css) keeps only
+the print page's layout and states. Catalogue tables do not carry it: since the
 maintainer's 2026-11-16 request they link each document's page
 ([repository](repository.md#public-navigation-and-catalog)), superseding the
 2026-11-06 rewriting of catalogue PDF links into this action. The same holds
