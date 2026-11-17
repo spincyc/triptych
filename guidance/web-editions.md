@@ -471,7 +471,9 @@ uses the one shared look in
 print page's own button. Catalogue tables do not carry it: since the
 maintainer's 2026-11-16 request they link each document's page
 ([repository](repository.md#public-navigation-and-catalog)), superseding the
-2026-11-06 rewriting of catalogue PDF links into this action. The Texts record
+2026-11-06 rewriting of catalogue PDF links into this action. The same holds
+for an instrument's table: Encyclicals links each source reader as `Read
+source`, and the reader carries the action (2026-11-16). The Texts record
 view and the Sources reader's complete-Bible print still request an edition's
 PDF from their own pages. Since the maintainer's 2026-11-06 request such a link
 does not leave the page. On a plain click

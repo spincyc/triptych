@@ -6,19 +6,18 @@
    held text, the link-button — is in `shared/browser-core.css` now. What is
    below is the map, which only this page draws, and this page's departures.
 
-   THE COLOUR BELOW IS NOT THE SECTION'S, AND THAT IS NOT A FALLBACK. Every
-   other page's palette arrives from the site's layout; this block overrides
-   `--section-accent` unconditionally, so published, the map and the panel
-   rules are brown while the headings and links stay the green the site gives
-   the history section. It has shipped that way and it is left alone here,
-   because this is a refactor: choosing between the brown and the green is a
-   design decision and it wants a maintainer, not a stylesheet cleanup. When it
-   is made, the answer is one line — either delete this block or add
-   `--section-ink` and its siblings beside it. */
+   THE PAGE WEARS ITS SECTION'S GREEN, MAP INCLUDED (2026-11-16). This block
+   used to override `--section-accent` with a brown, so the map and the panel
+   rules were brown while the headings and links were the green the site gives
+   the history section — a disagreement about what colour the section is that
+   this file left for a maintainer. The maintainer's 2026-11-16 request for one
+   uniform style in which each page keeps its own section colour and marks
+   settled it: the accent is the section's, and the weaker-claim colour is
+   mixed from it as the law page mixes its own
+   (guidance/corpus-browser-vision.md, "Shared tokens and page branding"). The
+   change-kind colours below are meanings, not branding, and stay. */
 .history-page {
-  --section-accent: #7a5230;
-  --section-line: #d9c9b6;
-  --weak-accent: #a98d6f;
+  --weak-accent: color-mix(in srgb, var(--section-accent) 55%, var(--surface, #fbfaf7));
 }
 
 .map {
@@ -393,7 +392,7 @@
   margin: 0 0 1.4rem;
   padding: 0.7rem 0.85rem;
   border: 1px solid var(--section-line);
-  border-radius: 6px;
+  border-radius: var(--radius, 0.2rem);
 }
 
 .junction-head {
@@ -490,21 +489,21 @@
 .catalogue-filter select,
 .catalogue-filter button {
   box-sizing: border-box;
-  min-height: 2.75rem;
+  min-height: var(--control-min, 2.75rem);
   min-width: 0;
   max-width: 100%;
   font: inherit;
   padding: 0.5rem;
-  color: var(--ink, #1b1b1b);
-  background: var(--panel, #fff);
-  border: 1px solid var(--section-accent);
-  border-radius: 0;
+  color: var(--ink);
+  background: var(--panel);
+  border: 1px solid var(--hairline-strong, var(--section-line));
+  border-radius: var(--radius, 0.2rem);
 }
 .catalogue-filter button { cursor: pointer; }
 .history-page :is(.history-views a, .catalogue-filter input, .catalogue-filter select,
   .catalogue-filter button, .catalogue-title, .catalogue-original summary,
   .catalogue-coverage summary, #catalogue-detail):focus-visible {
-  outline: 3px solid #185ea8;
+  outline: 3px solid var(--focus);
   outline-offset: 3px;
 }
 .catalogue-period { margin: 1.8rem 0 0.4rem; }
@@ -580,7 +579,7 @@
 .route-title { display: block; border: 0; background: transparent; padding: .25rem 0; color: var(--ink); text-align: left; font: inherit; font-size: 1.05rem; line-height: 1.4; text-decoration: underline; text-underline-offset: .16em; }
 .route-title { min-width: 0; max-width: 100%; overflow-wrap: anywhere; }
 .route-title:hover, .route-title.station-selected { text-decoration-thickness: 3px; }
-.route-title:focus-visible, .route-panel:focus-visible { outline: 3px solid #185ea8; outline-offset: 3px; }
+.route-title:focus-visible, .route-panel:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
 .route-reference { display: block; margin: .3rem 0 0; font-size: .85rem; line-height: 1.4; }
 .route-panel:nth-of-type(6n+1) { --route-color: #386650; }
 .route-panel:nth-of-type(6n+2) { --route-color: #77513c; }
@@ -652,32 +651,39 @@
 .network-legend { display:flex; flex-wrap:wrap; gap:.5rem 1.5rem; list-style:none; padding:0; }
 .network-legend li { display:flex; align-items:center; gap:.45rem; }
 .network-component { margin-block:2rem; max-width:100%; min-width:0; }
-.network-viewport { max-width:100%; overflow-x:auto; border:1px solid var(--rule,#ccc); background:#fffdf8; }
+.network-viewport { max-width:100%; overflow-x:auto; border:1px solid var(--section-line); background:#fffdf8; }
 .tradition-network { display:block; width:100%; min-width:1000px; height:auto; color:#34302c; }
 .network-node-label { fill:#34302c; stroke:#fffdf8; stroke-width:6px; paint-order:stroke; stroke-linejoin:round; font-family:inherit; }
-.tradition-network a:focus { outline:3px solid #176c79; }
+.tradition-network a:focus { outline:3px solid var(--focus); }
 .network-references { margin-block:1rem; }
 .network-references li { margin-block:.65rem; }
 @media print { .network-viewport { overflow:visible; } .tradition-network { min-width:0; } }
 .timeline-filter,.timeline-tools { display:flex; flex-wrap:wrap; gap:.65rem 1rem; align-items:end; margin-block:1rem; }
-.timeline-filter label { display:flex; flex-direction:column; gap:.2rem; min-width:0; max-width:100%; }
+/* The year controls are the shared controls (browser-core.css, "Controls"):
+   a field's name set as a column label, the control at the shared size, rule
+   and radius, a faint accent wash on a button's hover (2026-11-16). */
+.timeline-filter label,.timeline-tools label { display:flex; flex-direction:column; gap:.3rem; min-width:0; max-width:100%; font-size:.8rem; font-weight:650; letter-spacing:.02em; color:var(--section-ink); }
+.timeline-filter :is(select,input:not([type=checkbox]),button),.timeline-tools :is(select,button) { box-sizing:border-box; min-height:var(--control-min,2.75rem); max-width:100%; padding:.4rem .7rem; font:400 1rem/1.3 var(--sans); letter-spacing:normal; color:var(--ink); background:var(--panel); border:1px solid var(--hairline-strong,var(--section-line)); border-radius:var(--radius,.2rem); }
+.timeline-filter button,.timeline-tools button { cursor:pointer; }
+.timeline-filter button:hover:not(:disabled),.timeline-tools button:hover:not(:disabled) { border-color:var(--section-accent); background:color-mix(in srgb,var(--section-accent) 9%,var(--panel)); }
 .timeline-filter input[type=number] { width:7rem; }
-.timeline-filter .timeline-leads { display:block; padding:.4rem; }
+.timeline-filter .timeline-leads { display:flex; flex-direction:row; align-items:center; gap:.45rem; min-height:var(--control-min,2.75rem); font-size:1rem; font-weight:400; letter-spacing:normal; color:var(--ink); }
 .timeline-filter select { max-width:min(32rem,100%); }
-.timeline-key { padding:.6rem 1rem; border-left:3px solid var(--section-accent); background:var(--panel-bg,#f8f6f1); }
+.timeline-key { padding:.6rem 1rem; border-left:3px solid var(--section-accent); background:var(--panel); }
 .timeline-reading { display:grid; grid-template-columns:minmax(0,1fr); gap:1.5rem; align-items:start; }
 .timeline-main { min-width:0; }
-.timeline-chart { max-width:100%; max-height:75vh; overflow:auto; border:1px solid var(--rule,#ccc); background:#fffdf8; }
-.stage-timeline { display:block; max-width:none; font-family:system-ui,sans-serif; fill:#302c28; }
-.stage-timeline a:focus { outline:3px solid #176c79; }
-.stage-timeline a:hover rect { stroke:#7a5230; stroke-width:2; }
-.timeline-detail { border:1px solid var(--section-accent); padding:1.2rem; background:var(--panel-bg,#fffdf8); min-width:0; overflow-wrap:anywhere; }
+.timeline-chart { max-width:100%; max-height:75vh; overflow:auto; border:1px solid var(--section-line); background:#fffdf8; }
+.stage-timeline { display:block; max-width:none; font-family:var(--sans); fill:#302c28; }
+.stage-timeline a:focus { outline:3px solid var(--focus); }
+.stage-timeline a { color:var(--section-accent); }
+.stage-timeline a:hover rect { stroke:var(--section-accent); stroke-width:2; }
+.timeline-detail { border:1px solid var(--section-accent); padding:1.2rem; background:var(--panel); min-width:0; overflow-wrap:anywhere; }
 .timeline-detail h3,.timeline-detail h4 { margin-top:1.3rem; }
-.timeline-list-card { padding:1rem; margin-block:1rem; border-left:3px solid var(--section-accent); background:var(--panel-bg,#f8f6f1); }
+.timeline-list-card { padding:1rem; margin-block:1rem; border-left:3px solid var(--section-accent); background:var(--panel); }
 .stage-select,.timeline-change-link { text-align:left; white-space:normal; max-width:100%; overflow-wrap:anywhere; color:var(--section-accent); background:transparent; border:0; text-decoration:underline; padding:0; cursor:pointer; font:inherit; }
 .timeline-list-card>.stage-select { font-weight:700; font-size:1.1rem; }
 .timeline-change-link { display:block; margin-top:.8rem; }
-.stage-change { border-top:1px solid var(--rule,#ccc); padding-top:.4rem; }
+.stage-change { border-top:1px solid var(--section-line); padding-top:.4rem; }
 .stage-change h5 { font-size:1rem; }
 .stage-citations { padding-left:1.2rem; }
 .stage-citations li { margin-block:.8rem; }

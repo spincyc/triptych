@@ -4851,7 +4851,7 @@ def page_classes(source_relative: str, output_relative: str) -> str:
         "library/mariology.md",
         "library/law-and-church-discipline.md",
     }
-    if output_relative.startswith(("web/", "print/")):
+    if output_relative.startswith(("web/", "print/", *SOURCE_READER_SHELVES)):
         kind = "reader"
     elif source_relative == "README.md":
         kind = "home"
@@ -4874,8 +4874,32 @@ def page_classes(source_relative: str, output_relative: str) -> str:
     return " ".join(classes)
 
 
+# A print page (`print/…`) wears the colour and shelf of the web edition it
+# prints, breadcrumb included, as the reader beside it does. The source
+# readers — a papal document in its public-domain edition, a reading-plan
+# volume — are readers like any other and wear the colour and shelf
+# of the instrument that lists them, rather than standing as bare utility pages
+# with no section, no breadcrumb and the full page width (2026-11-16,
+# guidance/corpus-browser-vision.md, "Shared tokens and page branding").
+SOURCE_READER_SHELVES = {
+    "papal-documents/": ("white", "Papal Encyclicals", "encyclicals/index.html"),
+    "reading-plans/": ("gold", "The Story of Salvation", "scripture/index.html"),
+}
+
+
+def source_reader_shelf(relative: str) -> tuple[str, str, str] | None:
+    relative = relative.removeprefix("print/")
+    for prefix, shelf in SOURCE_READER_SHELVES.items():
+        if relative.startswith(prefix):
+            return shelf
+    return None
+
+
 def liturgical_section(source_relative: str) -> str | None:
     """Map every reader surface to one durable liturgical-color portal."""
+    shelf = source_reader_shelf(source_relative)
+    if shelf is not None:
+        return shelf[0]
     catalog_sections = {
         "library/faith.md": "white",
         "library/scripture.md": "gold",
@@ -4896,9 +4920,9 @@ def liturgical_section(source_relative: str) -> str | None:
     }
     if source_relative in catalog_sections:
         return catalog_sections[source_relative]
-    if not source_relative.startswith("web/"):
+    if not source_relative.startswith(("web/", "print/")):
         return None
-    normalized = "/" + source_relative.removeprefix("web/").split("/", 1)[-1] + "/"
+    normalized = "/" + source_relative.split("/", 1)[-1].split("/", 1)[-1] + "/"
     routes = (
         ("/articles/canon-law/", "black"),
         ("/theology/heresies/", "black"),
@@ -5048,7 +5072,10 @@ def missal_designator(calendar: str) -> str:
 
 def reader_shelf(source_relative: str) -> tuple[str, str] | None:
     """Resolve a web edition to the reader-facing shelf that owns its subject."""
-    if not source_relative.startswith("web/"):
+    shelf = source_reader_shelf(source_relative)
+    if shelf is not None:
+        return shelf[1], shelf[2]
+    if not source_relative.startswith(("web/", "print/")):
         return None
     # A missal's shelf is named by the book's designator, resolved only for
     # a page that sits on it.
@@ -5070,13 +5097,17 @@ def reader_shelf(source_relative: str) -> tuple[str, str] | None:
         ("/scripture/", "Scripture", "library/scripture.html"),
         ("/articles/", "Faith", "library/faith.html"),
     )
-    normalized = "/" + source_relative.removeprefix("web/").split("/", 1)[-1] + "/"
+    normalized = "/" + source_relative.split("/", 1)[-1].split("/", 1)[-1] + "/"
     for marker, calendar, destination in missal_shelves:
         if marker in normalized:
             return missal_designator(calendar), destination
     for marker, label, destination in routes:
         if marker in normalized:
             return label, destination
+    # A print page with no shelf of its own (a Bible's) names none rather
+    # than a library page that does not exist.
+    if source_relative.startswith("print/"):
+        return None
     return "Library", "library.html"
 
 

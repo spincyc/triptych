@@ -17,7 +17,13 @@
      place a shared colour, face, rule, focus or control size is declared;
      publication-reader.css and native-print.css read them rather than restate
      them. A page's own branding is the `--section-*` set below, chosen by its
-     `section-<colour>` class; nothing else varies by page. */
+     `section-<colour>` class; nothing else varies by page. The browser
+     instruments' stylesheet (src/web/browser/shared/browser-core.css) aliases
+     its older names to these, so they reach Sources, Publications, Scripture,
+     Commentary, History, Law, Encyclicals and Liturgy's Day and Propers too. */
+  --ink-soft: #55504a;
+  --notice: #7a2f2f;
+  --notice-bg: #f8ecea;
   --font-text: "Iowan Old Style", "Palatino Linotype", Palatino,
     "Book Antiqua", Georgia, "Times New Roman", serif;
   --font-ui: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
@@ -356,11 +362,11 @@ html:has(.sanctuary-table) { scroll-behavior: auto; }
 .dictionary-toolbar :is(input, select) {
   width: 100%;
   max-width: 100%;
-  min-height: 2.75rem;
+  min-height: var(--control-min);
   padding: 0.45rem 0.6rem;
-  border: 1px solid var(--line);
-  border-radius: 0;
-  background: var(--surface);
+  border: 1px solid var(--hairline-strong);
+  border-radius: var(--radius);
+  background: #fff;
   color: var(--ink);
   font: inherit;
 }
@@ -370,7 +376,7 @@ html:has(.sanctuary-table) { scroll-behavior: auto; }
 .dictionary-table-region:focus-visible,
 .dictionary-toolbar :is(input, select):focus-visible,
 .sanctuary-table :is(a, button, summary):focus-visible {
-  outline: 3px solid #245a99;
+  outline: 3px solid var(--focus-ring);
   outline-offset: -3px;
 }
 .sanctuary-table {
@@ -385,17 +391,14 @@ html:has(.sanctuary-table) { scroll-behavior: auto; }
   font-size: 0.94rem;
   line-height: 1.45;
 }
+/* The picture dictionary is the site's one table too ("Tables" below): its
+   own are only the fixed columns, the sort buttons and the disclosure rows. */
 .sanctuary-table :is(th, td) {
   padding: 0.65rem 0.7rem;
-  border: 0;
-  border-bottom: 1px solid var(--line);
   overflow-wrap: anywhere;
 }
 .sanctuary-table thead th {
   padding-block: 0.35rem;
-  border-block: 1px solid var(--line);
-  color: var(--ink);
-  background: #eeeae3;
   vertical-align: middle;
 }
 .sanctuary-table thead th:nth-child(1) { width: 104px; }
@@ -403,7 +406,7 @@ html:has(.sanctuary-table) { scroll-behavior: auto; }
 .sanctuary-table thead th:nth-child(3) { width: 10rem; }
 .sanctuary-table caption { padding: 0.25rem 0 0.6rem; color: var(--muted); font-size: 0.88rem; text-align: left; font-variant-numeric: tabular-nums; }
 .sanctuary-table [data-dictionary-sort] {
-  min-height: 2.75rem;
+  min-height: var(--control-min);
   padding: 0.25rem 0;
   border: 0;
   border-radius: 0;
@@ -417,9 +420,9 @@ html:has(.sanctuary-table) { scroll-behavior: auto; }
 .sanctuary-table [data-dictionary-sort]:disabled { cursor: default; }
 .sanctuary-table th[aria-sort="ascending"] button::after { content: " ↑"; }
 .dictionary-table-region .sanctuary-table .dictionary-row { background: transparent; }
-.dictionary-table-region .sanctuary-table .dictionary-row.is-expanded { background: #efebe4; }
+.dictionary-table-region .sanctuary-table .dictionary-row.is-expanded { background: var(--table-row-hover); }
 .sanctuary-table .dictionary-row > :nth-child(2) { font-weight: 650; }
-.sanctuary-table .dictionary-row > th { color: var(--ink); background: transparent; }
+.sanctuary-table .dictionary-row > th { color: var(--ink); }
 .sanctuary-table .dictionary-row .gallery-latin { display: block; margin-top: 0.2rem; font-size: 0.86rem; }
 .sanctuary-table .dictionary-row > th > br { display: none; }
 .sanctuary-table .dictionary-row > :nth-child(3) { color: var(--muted); font-size: 0.88rem; }
@@ -436,8 +439,8 @@ html:has(.sanctuary-table) { scroll-behavior: auto; }
 }
 .dictionary-image-toggle img { display: block; width: 100%; height: 100%; min-width: 0; min-height: 0; object-fit: contain; }
 .dictionary-image-toggle[aria-expanded="true"] { outline: 2px solid var(--ink); outline-offset: -2px; }
-.dictionary-row-toggle { display: flex; align-items: center; min-height: 2.75rem; font-size: 0.85rem; font-weight: 400; }
-.dictionary-table-region .sanctuary-table .dictionary-detail-row { background: #f3f0ea; }
+.dictionary-row-toggle { display: flex; align-items: center; min-height: var(--control-min); font-size: 0.85rem; font-weight: 400; }
+.dictionary-table-region .sanctuary-table .dictionary-detail-row { background: color-mix(in srgb, var(--table-row-hover) 60%, transparent); }
 .sanctuary-table .dictionary-detail-row > td { padding: 0; }
 .dictionary-details { margin: 0; }
 .dictionary-details > summary {
@@ -445,7 +448,7 @@ html:has(.sanctuary-table) { scroll-behavior: auto; }
   left: 0;
   width: var(--dictionary-visible-width, calc(100vw - 3rem));
   max-width: 100%;
-  min-height: 2.75rem;
+  min-height: var(--control-min);
   padding: 0.65rem 1rem;
   cursor: pointer;
   font-weight: 600;
@@ -473,7 +476,7 @@ html:has(.sanctuary-table) { scroll-behavior: auto; }
 .dictionary-notes dd { margin: 0.25rem 0 0; }
 .dictionary-notes p { margin: 0.6rem 0; }
 .dictionary-notes summary,
-.dictionary-views summary { min-height: 2.75rem; padding-block: 0.6rem; cursor: pointer; }
+.dictionary-views summary { min-height: var(--control-min); padding-block: 0.6rem; cursor: pointer; }
 .dictionary-notes :is(.gallery-definition, .gallery-related) { scroll-margin-top: 1rem; }
 .dictionary-notes .gallery-related { margin-top: 1rem; padding-top: 0.6rem; border-top: 1px solid var(--line); }
 .sanctuary-table .dictionary-empty td { padding: 1.2rem 0.7rem; }
@@ -610,11 +613,18 @@ html:has(.page-catalog, .page-home) { scroll-behavior: auto; }
   position: sticky;
   top: var(--catalogue-sticky-offset, 0px);
   z-index: 2;
+  container-type: scroll-state;
 }
-/* The sticky head needs an opaque ground over the rows that pass beneath it. */
+/* The sticky head needs an opaque ground over the rows that pass beneath it,
+   but only then: at rest an opaque head drew a pale band across the page's
+   corner wash (2026-11-16). Where the browser can ask whether the head is
+   stuck, it is transparent until it is; elsewhere it keeps the opaque ground. */
 .catalogue-table thead th {
   padding-block: 0.6rem;
   background: var(--surface);
+}
+@container scroll-state(stuck: none) {
+  .catalogue-table thead th { background: transparent; }
 }
 .section-white .catalogue-table { --section-ink: #70603a; }
 .section-gold .catalogue-table { --section-ink: #725000; }
@@ -626,6 +636,14 @@ html:has(.page-catalog, .page-home) { scroll-behavior: auto; }
   scroll-margin-block: calc(var(--catalogue-heading-height, 10rem) + var(--catalogue-sticky-offset, 0px) + 0.5rem) 0.5rem;
 }
 .catalogue-table td a:hover { text-decoration-color: currentColor; }
+/* A cell of links is at least wide enough for its usual names — `Full Study
+   Guide`, `Daily Prayer Book`, `Print edition` — to stand on one line: the
+   table's automatic layout otherwise squeezed a narrow provider column beside
+   a long descriptive one until a two-word name broke in two (2026-11-16). A
+   long title still wraps. Narrow screens reflow the row instead (below). */
+@media (min-width: 761px) {
+  .catalogue-table td:has(> a) { min-width: 10.5rem; }
+}
 /* A work's title: the one cell set in the reading face. */
 .catalogue-table tbody td:has(> strong) {
   color: var(--ink);
@@ -812,7 +830,7 @@ a.footnote-backref { text-decoration: none; }
      links were bare text about 24px tall. 2.75rem is 44px, the smallest target
      Apple's interface guidelines will call reliable. The height is spent on the
      touch box, not on chrome: the header's own padding gives most of it back. */
-  nav a { display: inline-flex; align-items: center; min-height: 2.75rem; }
+  nav a { display: inline-flex; align-items: center; min-height: var(--control-min); }
   .site-footer a { display: inline-block; padding-block: 0.35rem; }
   .page-shell { margin-top: 0; border-left: 0; border-right: 0; border-radius: 0; box-shadow: none; }
   table { display: block; overflow-x: auto; }

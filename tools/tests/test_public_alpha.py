@@ -368,6 +368,30 @@ class PublicAlphaTest(unittest.TestCase):
             self.tool.page_classes("CONTRIBUTING.md", "contributing.html"),
             "page-shell page-utility",
         )
+        # A source reader wears the colour and shelf of the instrument that
+        # lists it (guidance/corpus-browser-vision.md, 2026-11-16).
+        papal = "papal-documents/1751-02-20--example--en.html"
+        self.assertEqual(
+            self.tool.page_classes(papal, papal),
+            "page-shell page-reader reading section-toned section-white",
+        )
+        self.assertIn("Papal Encyclicals", self.tool.breadcrumb(papal, papal))
+        self.assertIn('href="../encyclicals/index.html"', self.tool.breadcrumb(papal, papal))
+        printed = "print/gpt/liturgy/roman-rite/1962/reference/guide.html"
+        self.assertEqual(
+            self.tool.page_classes(printed, printed),
+            "page-shell page-reader reading section-toned section-red",
+        )
+        printed_papal = "print/" + papal
+        self.assertIn("section-white", self.tool.page_classes(printed_papal, printed_papal))
+        self.assertIn('href="../../encyclicals/index.html"', self.tool.breadcrumb(printed_papal, printed_papal))
+        printed_bible = "print/bibles/douay-rheims.html"
+        self.assertEqual(self.tool.breadcrumb(printed_bible, printed_bible), "")
+        plan = "reading-plans/narrative-spine-story-douay-rheims.html"
+        self.assertEqual(
+            self.tool.page_classes(plan, plan),
+            "page-shell page-reader reading section-toned section-gold",
+        )
 
     def test_catalog_render_rejects_internal_reader_labels(self) -> None:
         with self.assertRaises(self.tool.ReleaseError) as failure:

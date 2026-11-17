@@ -33,10 +33,11 @@
  *     comment cited a contrast ratio, 8.3:1, measured on a colour no reader
  *     has ever seen.
  *   - `history.css` declared `--section-accent: #7a5230` with no guard at all,
- *     so it overrides the site's green ON THE PUBLISHED PAGE, leaving the map
- *     brown and the headings green. That one is left exactly as it was: it is
- *     a live disagreement about what colour the history section is, and
- *     settling it is a design decision, not a refactor.
+ *     so it overrode the site's green ON THE PUBLISHED PAGE, leaving the map
+ *     brown and the headings green. That was a live disagreement about what
+ *     colour the history section is; the maintainer's 2026-11-16 request for
+ *     one style with each page's own section colour settled it for the green,
+ *     and the override is gone.
  *
  * The fallbacks are gone. Three options were open. DERIVING BOTH FROM ONE
  * SOURCE is the rule this project follows everywhere else and is the one thing
@@ -61,18 +62,27 @@
      they are not conditioned on the reader's system preference. */
   color-scheme: only light;
 
-  --page: #fbfaf7;
-  --panel: #ffffff;
-  --ink: #1d1b17;
-  --ink-soft: #55504a;
-  /* The quietest text on the page is still text: references, positions and
-     meta lines are set in it, and a reader who cannot make them out cannot say
-     where they are. #7b746b measured 4.42:1 on --page, just under the 4.5:1
-     that body-sized text needs; #777067 measures 4.68:1 there and 4.89:1 on
-     --panel, at no visible cost to the hierarchy. */
-  --ink-faint: #777067;
-  --notice: #7a2f2f;
-  --notice-bg: #f8ecea;
+  /* SHARED ROLES ARE DECLARED ONCE, IN THE SITE'S STYLESHEET (2026-11-16).
+     `release/public-alpha/assets/site.css` declares ink, secondary ink, the
+     quiet grey, the notice colours, the three faces, the focus ring, rules,
+     radius and control size at its `:root`, and the layout loads it before
+     this file on every published page, Liturgy's Day and Propers included.
+     The names this file has always used are aliases of those roles, so one
+     change there reaches every instrument, and nothing here can drift from the
+     catalogues and readers again (guidance/corpus-browser-vision.md, "Shared
+     tokens and page branding"). The quiet grey was #777067 here and #6a635a
+     there; it is the site's now, which also raises its contrast (5.44:1 on the
+     site's surface, against 4.49:1).
+
+     Opened straight from the repository there is no site stylesheet and these
+     resolve to the neutral values under the standalone guard below. */
+  --ink-faint: var(--muted);
+  --serif: var(--font-text, serif);
+  --sans: var(--font-ui, sans-serif);
+  --mono: var(--font-mono, monospace);
+  --focus: var(--focus-ring, var(--section-ink));
+  --page: var(--surface);
+  --panel: #fff;
 
   /* The palette a page wears when nothing has dressed it — which now means
      exactly one case: a file opened straight from the repository, outside the
@@ -84,10 +94,7 @@
   --section-pale: #ddd7cc;
   --section-row: #efece6;
   --section-line: #cdc6b8;
-  --focus: var(--section-ink);
 
-  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua",
-    Georgia, "Times New Roman", serif;
   /* Running scripture is set in its own face, not the page's. A grotesque was
      asked for and a grotesque is what this is: Helvetica and Arial first, with
      Liberation and Nimbus covering Linux, so the same shapes land wherever the
@@ -106,6 +113,18 @@
   --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
     Arial, sans-serif;
   --measure: 65ch;
+}
+
+/* Opened straight from the repository, no site stylesheet declares the shared
+   roles the aliases above read, so they are given neutral values here and only
+   here. Published, the site header is present and this rule never applies. */
+:root:not(:has(> body > .site-header)) {
+  --ink: #1d1b17;
+  --ink-soft: #55504a;
+  --muted: #6a635a;
+  --surface: #fbfaf7;
+  --notice: #7a2f2f;
+  --notice-bg: #f8ecea;
 }
 
 
@@ -157,13 +176,10 @@ body:not(:has(> .site-header)) {
 .page-browser {
   --page: color-mix(in srgb, var(--section-accent) 4%, var(--surface, #fbfaf7));
   --panel: color-mix(in srgb, var(--section-accent) 2%, #fff);
-  /* Re-declared here rather than inherited from :root. A custom property whose
-     value is another var() is substituted where it is declared, so `--focus`
-     declared at :root resolves against the neutral fallback `--section-ink`
-     there and never against the section's. Declared here it resolves against
-     the section the layout actually set, and the focus ring is the section's
-     colour instead of grey. */
-  --focus: var(--section-ink);
+  /* The focus ring is the site's one `--focus-ring` on every page — the
+     catalogues, the readers, the Generate PDF control and these instruments —
+     rather than each section's ink (2026-11-16; it had been the section's ink
+     here and a blue ring everywhere else, Liturgy's Instrument included). */
   color: var(--ink);
   font-family: var(--sans);
   font-size: 1rem;
@@ -172,7 +188,10 @@ body:not(:has(> .site-header)) {
 
 /* ---- Skip link and screen-reader helpers ---- */
 
-.skip-link {
+/* Published, the layout's own skip link stands at the top of the page and
+   site.css draws it as on every other page; this one is the standalone page's
+   only, so it no longer re-positions the site's on the instruments. */
+body:not(:has(> .site-header)) .skip-link {
   position: absolute;
   left: -9999px;
   top: 0;
@@ -180,11 +199,11 @@ body:not(:has(> .site-header)) {
   background: var(--panel);
   color: var(--ink);
   border: 2px solid var(--focus);
-  border-radius: 0 0 6px 0;
+  border-radius: 0 0 var(--radius, 0.2rem) 0;
   z-index: 10;
 }
 
-.skip-link:focus { left: 0; }
+body:not(:has(> .site-header)) .skip-link:focus { left: 0; }
 
 .visually-hidden {
   position: absolute;
@@ -235,6 +254,36 @@ body:not(:has(> .site-header)) {
   font-weight: 400;
 }
 
+/* Published, an instrument's title is set as the site's catalogue titles are
+   (site.css, `.page-catalog > h1`): small capitals in the reading face, the
+   section's mark set apart at the right, and a short rule in the section's
+   accent beneath — one heading treatment on every page, each in its own
+   colour and mark (2026-11-16). The size stays an instrument's, smaller than a
+   catalogue's, because the controls and the text must reach the first view. */
+.page-browser .page-header h1 {
+  font-size: clamp(1.55rem, 4vw, 2.4rem);
+  font-weight: 400;
+  font-variant-caps: small-caps;
+  letter-spacing: 0.025em;
+}
+
+.page-browser .page-header h1::after {
+  display: block;
+  width: 4.5rem;
+  margin-top: 0.6rem;
+  border-bottom: 1px solid var(--section-accent);
+  content: "";
+  opacity: 0.9;
+}
+
+.page-browser .page-mark {
+  float: right;
+  margin: -0.08em 0 0.15em 0.5em;
+  font-size: 0.72em;
+  font-variant-caps: normal;
+  opacity: 0.62;
+}
+
 .lede {
   margin: 0;
   max-width: var(--measure);
@@ -259,8 +308,8 @@ body:not(:has(> .site-header)) {
   margin: 0 0 1.25rem;
   padding: 0.7rem 0.9rem;
   border: 1px solid var(--section-line);
-  border-left: 4px solid var(--section-accent);
-  border-radius: 4px;
+  border-left: 3px solid var(--section-accent);
+  border-radius: var(--radius, 0.2rem);
   background: var(--section-row);
   color: var(--section-ink);
   font-size: 0.9rem;
@@ -271,17 +320,20 @@ body:not(:has(> .site-header)) {
 
 /* ---- Controls ---- */
 
+/* The filter bar is an open band, not a card: the section's rule above it, a
+   hairline below, and the controls on the page's own ground — the same at
+   every width, where it used to be a white card on a desktop and this open
+   band only on a phone (2026-11-16, guidance/corpus-browser-vision.md,
+   "Controls"). Sizes, rules, radius and focus are the site's roles. */
 .controls {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.9rem 1rem;
   align-items: end;
   margin: 0 0 2rem;
-  padding: 1rem;
-  border: 1px solid var(--section-line);
-  border-top: 0.2rem solid var(--section-accent);
-  border-radius: 8px;
-  background: var(--panel);
+  padding: 0.85rem 0 1rem;
+  border-top: 2px solid var(--section-accent);
+  border-bottom: 1px solid var(--hairline);
 }
 
 .field {
@@ -298,41 +350,43 @@ body:not(:has(> .site-header)) {
 
 .field-narrow { flex: 1 1 11rem; }
 
+/* A field's name is set as a table's column labels are: sentence case in the
+   interface face, tinted by the section's ink. */
 .field label,
 .field-legend {
+  font-family: var(--sans);
   font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-weight: 650;
+  letter-spacing: 0.02em;
   color: var(--section-ink);
 }
 
 /* Every control the reader touches, sized once.
  *
- * Two numbers matter on a phone and neither is decorative. 2.75rem is 44px,
- * the smallest target Apple's interface guidelines will call reliable; a
- * `select` padded to 0.5rem measured about 37px, which is a miss waiting to
- * happen on a page whose whole purpose is choosing between things. And a form
- * control under 16px makes iOS Safari zoom the page on focus and leave it
- * zoomed, so `font: inherit` is load-bearing: it takes the 1rem set above, and
- * no control here may quietly set itself smaller.
+ * Two numbers matter on a phone and neither is decorative. `--control-min` is
+ * 2.75rem, 44px, the smallest target Apple's interface guidelines will call
+ * reliable; a `select` padded to 0.5rem measured about 37px, which is a miss
+ * waiting to happen on a page whose whole purpose is choosing between things.
+ * And a form control under 16px makes iOS Safari zoom the page on focus and
+ * leave it zoomed, so `font: inherit` is load-bearing: it takes the 1rem set
+ * above, and no control here may quietly set itself smaller.
  *
  * `input` is styled with `select` although no page in this repository styles a
  * bare input: a page that adds one otherwise gets Safari's own 13.3px default
  * and the zoom with it, and the defect arrives in a page rather than here. */
 .field select,
-.field input {
+.field input:not([type="checkbox"], [type="radio"]) {
   width: 100%;
-  min-height: 2.75rem;
+  min-height: var(--control-min, 2.75rem);
   padding: 0.5rem 0.6rem;
   font: inherit;
   color: var(--ink);
-  background: var(--page);
-  border: 1px solid var(--section-line);
-  border-radius: 5px;
+  background: var(--panel);
+  border: 1px solid var(--hairline-strong, var(--section-line));
+  border-radius: var(--radius, 0.2rem);
 }
 
-.field select:hover:not(:disabled) { border-color: var(--section-accent); }
+.field :is(select, input:not([type="checkbox"], [type="radio"])):hover:not(:disabled) { border-color: var(--section-accent); }
 
 .field select:disabled { opacity: 0.6; }
 
@@ -348,30 +402,45 @@ body:not(:has(> .site-header)) {
 }
 
 /* The label beside a checkbox is a name, not a field heading, so it drops the
-   uppercase weight `.field label` gives the labels above the selects. */
-.field-check label { font-weight: 400; }
+   weight and tint `.field label` gives the labels above the selects. */
+.field-check label { font-weight: 400; color: var(--ink); }
+
+/* The box itself is the platform's, at a size that matches the controls'
+   type and in the section's accent; drawn as a 44px field it read as an
+   empty text box (2026-11-16). The label beside it widens the target. */
+.field-check input { width: 1.15rem; height: 1.15rem; margin: 0; accent-color: var(--section-accent); }
 
 .field-steps { flex: 0 0 auto; }
 
 .steps { display: flex; gap: 0.5rem; }
 
-.steps button {
-  min-height: 2.75rem;
+/* A button beside the selects is drawn as they are; its hover is the Generate
+   PDF control's (native-print.css), a faint wash of the section's accent. The
+   instruments' browser-print button, Commentary's verse-focus buttons and the
+   Source Library's result pager are the same control. */
+.steps button,
+.passage-focus button,
+.finder-pages button,
+.browser-print-actions button {
+  min-height: var(--control-min, 2.75rem);
   padding: 0.5rem 0.9rem;
   font: inherit;
   color: var(--ink);
-  background: var(--page);
-  border: 1px solid var(--section-line);
-  border-radius: 5px;
+  background: var(--panel);
+  border: 1px solid var(--hairline-strong, var(--section-line));
+  border-radius: var(--radius, 0.2rem);
   cursor: pointer;
 }
 
-.steps button:hover:not(:disabled) {
+.steps button:hover:not(:disabled),
+.passage-focus button:hover:not(:disabled),
+.finder-pages button:hover:not(:disabled),
+.browser-print-actions button:hover:not(:disabled) {
   border-color: var(--section-accent);
-  background: var(--section-row);
+  background: color-mix(in srgb, var(--section-accent) 9%, var(--panel));
 }
 
-.steps button:disabled {
+:is(.steps, .passage-focus, .finder-pages) button:disabled {
   opacity: 0.45;
   cursor: default;
 }
@@ -528,7 +597,7 @@ body:not(:has(> .site-header)) {
   margin: 0.5rem 0 0;
   padding: 0.55rem 0.75rem;
   border-left: 3px solid var(--notice);
-  border-radius: 0 4px 4px 0;
+  border-radius: 0 var(--radius, 0.2rem) var(--radius, 0.2rem) 0;
   background: var(--notice-bg);
   color: var(--notice);
   font-size: 0.92rem;
@@ -564,8 +633,8 @@ body:not(:has(> .site-header)) {
   margin: 0 0 2rem;
   padding: 1rem 1.1rem;
   border: 1px solid var(--section-line);
-  border-top: 4px solid var(--section-accent);
-  border-radius: 8px;
+  border-top: 2px solid var(--section-accent);
+  border-radius: var(--radius, 0.2rem);
   background: var(--panel);
 }
 
@@ -662,8 +731,8 @@ body:not(:has(> .site-header)) {
   margin: 0 0 0.9rem;
   padding: 0.65rem 0.8rem;
   border: 1px solid var(--section-line);
-  border-left: 4px solid var(--weak-accent);
-  border-radius: 5px;
+  border-left: 3px solid var(--weak-accent);
+  border-radius: var(--radius, 0.2rem);
 }
 
 .change-head,
@@ -723,7 +792,7 @@ body:not(:has(> .site-header)) {
   margin: 0.4rem 0 0;
   padding: 0.5rem 0.6rem;
   background: rgba(0, 0, 0, 0.035);
-  border-radius: 4px;
+  border-radius: var(--radius, 0.2rem);
   font-size: 0.78rem;
   white-space: pre-wrap;
   overflow-x: auto;
@@ -796,8 +865,8 @@ body:not(:has(> .site-header)) {
 
 .work {
   border: 1px solid var(--section-line);
-  border-top: 0.2rem solid var(--section-accent);
-  border-radius: 0.2rem;
+  border-top: 2px solid var(--section-accent);
+  border-radius: var(--radius, 0.2rem);
   padding: 0.85rem 1rem 1rem;
   background: var(--panel);
 }
@@ -818,25 +887,16 @@ body:not(:has(> .site-header)) {
 .page-footer p:last-child { margin-bottom: 0; }
 
 .page-footer code {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-family: var(--mono);
   font-size: 0.95em;
 }
 
 @media (max-width: 34rem) {
   body:not(:has(> .site-header)) { padding: 1.25rem 1rem 3rem; }
 
-  /* The controls already span the full width of a phone, so the card drawn
-     around them is a border the reading measure pays for twice over and a
-     second frame inside the site's own. The accent rule stays, because that is
-     the identity; the box was the furniture. */
   .controls {
     gap: 0.75rem;
     margin-bottom: 1.5rem;
-    padding: 0.85rem 0 0;
-    border: 0;
-    border-top: 0.2rem solid var(--section-accent);
-    border-radius: 0;
-    background: none;
   }
 
   .field-steps { flex: 1 1 100%; }
@@ -898,12 +958,11 @@ body:not(:has(> .site-header)) {
 
 .page-browser.history-page .comparison-diff pre,
 .page-browser.history-page .catalogue-original pre {
-  font-family: "Triptych Punctus Elevatus", ui-monospace, SFMono-Regular,
-    Consolas, monospace;
+  font-family: "Triptych Punctus Elevatus", var(--mono);
 }
 
 .browser-print-actions { margin-block: 0.75rem; }
-.browser-print-actions button { min-height: 2.75rem; padding: 0.4rem 0.7rem; }
+.browser-print-actions button { padding: 0.4rem 0.9rem; }
 .browser-print-status { margin-block: 0.35rem; font-size: 0.9rem; }
 .browser-print-identity,
 .browser-print-refusal { display: none; }

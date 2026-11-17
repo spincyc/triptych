@@ -318,7 +318,10 @@ class PublicationTargetTests(unittest.TestCase):
             eval_js("({href: document.querySelector('.enc-reader-link').getAttribute('href'), label: document.querySelector('.enc-reader-link').textContent, extent: document.querySelector('.enc-extent').textContent, witness: document.querySelector('.enc-witness').textContent, text: document.body.textContent})", "result")
         ]})["result"]
         self.assertEqual(seen["href"], "../papal-documents/identified-witness.html")
-        self.assertIn("Read source · Print", seen["label"])
+        # The reader carries its own Generate PDF at the top; the table names
+        # only the document (guidance/web-editions.md, 2026-11-16).
+        self.assertIn("Read source", seen["label"])
+        self.assertNotIn("Print", seen["label"])
         self.assertEqual(seen["extent"], "Fragment")
         self.assertEqual(seen["witness"], reader["witness"])
         self.assertNotIn("source PDF", seen["text"])

@@ -148,7 +148,7 @@
     }
     link.appendChild(T.el('span', 'visually-hidden', labelOf(reader.language) + ' reading edition of ' + row.title + ', '));
     link.appendChild(document.createTextNode(
-      hasReader ? 'Read source · Print' : 'Source reader unavailable'));
+      hasReader ? 'Read source' : 'Source reader unavailable'));
     item.appendChild(link);
     if (reader.extent !== 'complete') {
       /* In words, not only a colour: a fragment or a damaged printing is a

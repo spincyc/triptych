@@ -3036,10 +3036,10 @@
             d:(node.clippedStart ? 'M '+(node.xStart+4)+' '+(node.y-5)+' l -4 5 4 5' : 'M '+node.xStart+' '+(node.y-6)+' V '+(node.y+6))+
               ' M '+node.xStart+' '+node.y+' H '+node.xEnd+
               (node.clippedEnd ? ' M '+(node.xEnd-4)+' '+(node.y-5)+' l 4 5 -4 5' : ' M '+node.xEnd+' '+(node.y-6)+' V '+(node.y+6)),
-            fill:'none',stroke:'#7a5230','stroke-width':2,'stroke-dasharray':'4 3','data-date-range':'date-uncertainty','data-date-clipped':(node.clippedStart ? 'start ' : '')+(node.clippedEnd ? 'end' : '')}));
+            fill:'none',stroke:'currentColor','stroke-width':2,'stroke-dasharray':'4 3','data-date-range':'date-uncertainty','data-date-clipped':(node.clippedStart ? 'start ' : '')+(node.clippedEnd ? 'end' : '')}));
           link.appendChild(svg(stage.status==='provisional' ? 'path' : 'circle',stage.status==='provisional'
-            ? {d:'M '+node.x+' '+(node.y-7)+' l 7 7 -7 7 -7 -7 z',fill:'#fff',stroke:'#7a5230','stroke-width':2}
-            : {cx:node.x,cy:node.y,r:6,fill:'#7a5230'}));
+            ? {d:'M '+node.x+' '+(node.y-7)+' l 7 7 -7 7 -7 -7 z',fill:'#fff',stroke:'currentColor','stroke-width':2}
+            : {cx:node.x,cy:node.y,r:6,fill:'currentColor'}));
           const keyLeft=node.x+48>model.width;
           const key=svg('text',{x:node.x+(keyLeft ? -14 : 14),y:node.y-10,'text-anchor':keyLeft ? 'end' : 'start','font-size':12}); key.textContent=node.key; link.appendChild(key);
           let y=node.labelY;
