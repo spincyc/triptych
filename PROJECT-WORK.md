@@ -72,19 +72,44 @@ All three current reader conversions pass fidelity checks. Fresh native
 preparation matches all 447 compiled payload files and all three retained
 compiler receipts, including their PDF hashes.
 
-The deployment source preflight completes its other members but fails the
-stale committed-input sources index, first reported at
-`src/index/sources/catalogue/0037.json`. The index is not refreshed while its
-inputs remain uncommitted. Site build/verification and live verification are
-therefore still pending. The inherited `corpus-index` tool-registry
+The earlier deployment source preflight failed the stale committed-input
+sources index, first reported at `src/index/sources/catalogue/0037.json`.
+That index was not refreshed while its inputs were uncommitted.
+The inherited `corpus-index` tool-registry
 GROUPS/REACHES findings are unchanged. Detailed measured results and limits
 are retained in the cycle record's `POST-ARCHIVE-CHECKS-2026-11-16.json`.
 No publication push or deployment is claimed.
-The installation checkpoint is staged but its commit is blocked by Droid
-Shield's potential-secret detection in generated browser-product keys.
-The maintainer directs continuation of checks with the commit pending.
-No bypass is attempted; committed-input discovery refresh and push remain
-blocked on that commit.
+The maintainer made the installation checkpoint outside Droid. The coordinator
+verified `6ef315fce5` against the held 96-file, 34,208-added-line zero-context
+diff audit: it matches exactly, uses the configured identity and leaves a clean
+worktree. No Shield setting or generated key is changed. A fresh fetch finds
+main four commits ahead with no upstream divergence; no rebase is needed at
+that observation. The owning committed-input index refresh and independent
+check now pass: 82,551 files, 58,469 records and 40,365,083 metadata bytes.
+The complete deployment-source gates also pass, followed by successful
+compilation of all 21 web figures. The full public-site build then refuses
+its final integrity check with “staged artifact contents changed during
+build.” No artifact is installed or pushed. The same refusal reproduces in
+the existing bounded-descriptor staging test. The topology scanner now opens
+a fresh descriptor relative to each held directory, avoiding inherited cursor
+position while retaining no-follow traversal and complete-tree checks.
+Two new regressions and that existing test pass; all five accepted content
+seals remain current without modification. The explicit eight-family product
+refresh and independent check pass, followed by all 166 publisher tests.
+Every one of the 29,540 product files retains its exact prior output hash and
+size; only the affected input commitments change. Scoped release-binding
+refresh and independent full status pass, preserving the other 24,769 bindings
+and all authorization prose. The actual default full-site build now succeeds,
+and explicit GitHub Pages target verification passes. The repair/release
+checkpoint must precede another committed-input index refresh and final
+publication checks at the committed snapshot.
+That seven-file repair/release checkpoint is staged, but Droid Shield blocks
+its commit on eight generated cache-key matches in
+`release/browser-products.json`. No retry or hash replacement is attempted.
+HEAD remains `6ef315fce5`; the earlier generated index changes remain
+unstaged and require rederivation after the new inputs are committed.
+Final-snapshot site verification, publication and live verification remain
+pending.
 Detailed progress and limitations belong to
 `workflows/reviews/gpt-1962-68-production-2026-11-16/CYCLES.md`.
 

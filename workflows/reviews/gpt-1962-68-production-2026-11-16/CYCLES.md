@@ -482,3 +482,122 @@ commit refusal. The required completion audit initially also reports missing
 evidence paths on the open main/live item. Its owner hold records are linked
 without changing that item's open status or pretending they prove deployment.
 The overall promise remains in progress; completion is not claimed.
+
+## External checkpoint and committed-input publication checks
+
+The maintainer makes the held checkpoint outside Droid using the prepared
+message, then reports success. The coordinator verifies commit
+`6ef315fce5886c1f1bab8e57af03cce46a25bd49`, the configured author/committer
+identity, and a clean worktree. Its complete zero-context diff matches the
+held SHA-256 `28f8ec79c15e15fec578be7870efc44573dcc8cc1c8a49b6de220f8de38d7c22`:
+96 files and 34,208 added lines. No generated key or Shield setting is
+changed and no blocked commit is retried. A fresh upstream fetch finds zero
+commits behind and four ahead; no history rewrite is necessary at that
+observation.
+
+The committed-input index owner can now refresh and independently check the
+discovery projections. Deployment-source gates, the site build and explicit
+GitHub Pages target verification remain required before push. The main/live
+promise is still open; neither this checkpoint nor the completed selected
+native compilations proves deployment or the full admitted compile gate.
+
+The owning `tools/corpus-index refresh --readers` and separate
+`tools/corpus-index check --readers` both pass: 82,551 files, 58,469 records
+and 40,365,083 metadata bytes. All generated changes remain in the owning
+index tree. A complete newly reachable object audit at the external
+checkpoint examines 278 objects, including 154 UTF-8 blobs totaling
+31,888,701 bytes, without an actual checkout/home prefix, private-key block
+or recognized credential-pattern match. It is scoped to that checkpoint and
+must be repeated for the final outgoing range.
+
+`make check-deployment-sources public-site` runs both requested targets in
+one invocation, sharing their dependency rather than replaying the expensive
+source gates twice. The complete deployment-source target passes, including
+the independently replayed corpus index and all calendar, proper, rubrics and
+Ordinary validators. Existing declared exceptions and qualification limits
+remain visible. All 21 web figures compile with the host's rootless pinned
+pdfTeX and the available PDF-to-SVG converter.
+
+The subsequent site-build recipe fails with “staged artifact contents changed
+during build,” so the overall make exits 2. No new artifact is installed.
+The publisher is byte-identical to current upstream. Investigation observes
+the original entry point and its failing topology comparison without
+changing or bypassing validation. Explicit artifact verification and all
+publication/live requirements remain pending.
+
+The read-only observation reproduces the production failure: the first
+topology scan returns zero entries against 58,193 expected, while a second
+scan sees the exact expected set with no missing or unexpected path.
+The existing bounded-descriptor staging regression independently fails with
+the same refusal. Removing the custom TeX library search path does not fix it.
+No artifact passes through that diagnostic run.
+
+A new regression explicitly supplies a consumed directory cursor. It fails
+against the original scanner, while a held-root replacement control passes.
+The minimal repair opens `.` with the existing no-follow directory flags
+relative to each held directory, lists through that fresh open description
+and closes it before recursion. It does not follow a pathname back to a
+replacement directory, change the caller's cursor, skip a path or relax a
+topology, identity, symlink, special-file or hard-link check.
+Both new regressions and the existing bounded-descriptor test pass.
+
+The first complete publisher suite runs 166 tests: 163 pass and three
+real-product tests refuse the intentionally stale product descriptor after
+the publisher code changes. That run is not a full-suite pass. The product
+owner names eight affected families: act-history, bibles, catena, documents,
+paragraphs, propers, readings and web-editions. Their explicit two-build
+refresh and subsequent independent product/full-suite checks remain required.
+All five accepted review seals are separately recomputed through their
+owning source-mode API and match the unchanged accepted results exactly;
+no review is restamped or renewed.
+
+The explicit product record completes its two independent cold builds and a
+separate complete product check passes. All 13 families remain present with
+29,540 files and 265,934,626 bytes; the reported products identity is
+`15dfcb06ec7e7ea60ac18e965000e98681da59bc2ea9e5f190d28c6558a24861`.
+An independent deep comparison against the pre-repair descriptor confirms
+the complete per-file output tables, counts, byte totals and path-set hashes
+remain identical for every family. Recipes, approval fields and all other
+non-input fields remain exact. Only the eight named families' input
+commitments change.
+
+After that refresh, the complete publisher suite passes all 166 tests,
+including the new cursor and held-root controls, existing bounded-descriptor
+test, and tamper/symlink/atomic-replacement protections. The earlier
+stale-product errors are superseded by this complete pass, not relabeled.
+The release owner is invoked with exactly `--only tools/public-alpha --only
+release/browser-products.json`; a separate full status check and the actual
+default site build plus explicit GitHub Pages target verification remain
+separate downstream checks.
+
+The scoped release refresh succeeds and a separate full status reports
+`exact: 0 stale binding(s)`. A deep before/after audit confirms exactly the
+publisher and descriptor bindings change, with no additions or removals;
+all 24,769 other bindings and unrelated authorization fields remain exact.
+The rights record changes only its generated digest, not approval prose.
+
+The actual `tools/public-alpha build` now completes successfully through
+the formerly failing full-artifact integrity check, without the observation
+helper or any validation bypass. A separate
+`tools/public-alpha verify --deployment-target github-pages` passes.
+This verifies the complete local site, not a deployment or a full native
+compile. The repair and current release inputs still need their checkpoint,
+followed by a committed-input index refresh and final publication targets.
+The main/live promise remains open.
+
+The seven coherent repair/release files are explicitly staged, excluding all
+earlier derived index changes. The normal checkpoint commit is refused by
+Droid Shield on eight generated `key` matches in
+`release/browser-products.json`. The new key values follow from the
+independently checked publisher-code closure; none is replaced or hidden.
+No retry, split commit, alternate publication path or Shield setting change
+is attempted. HEAD remains the external installation checkpoint
+`6ef315fce5886c1f1bab8e57af03cce46a25bd49`.
+
+The next prerequisite is an external repair/release checkpoint. The earlier
+57 modified tracked index files and three new index shards are intentionally
+left unstaged, not discarded: they must be rederived against the newly
+committed code/release inputs. Then the complete index and deployment/site
+targets must pass at the final snapshot before an outgoing-object audit,
+push and actual Pages/full-print/live verification. No deployment or overall
+completion is claimed.
