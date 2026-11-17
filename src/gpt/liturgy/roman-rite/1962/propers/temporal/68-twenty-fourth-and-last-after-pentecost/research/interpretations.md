@@ -114,11 +114,17 @@ PL 24 cols. 893–896, explicitly keeps the seventy-year waiting and calls
 the promised return future, not present. The liturgical shortening must
 not change that patience into a guarantee of easy circumstances.
 
-The attached *Benedixisti ... avertisti captivitatem Iacob* supplies a
-second, completed restoration. Augustine, Ps 84(85), §§1–13, reads the
-whole Psalm's continued *Converte nos* after remission as perfectly
-coherent: captivity to sin and mortality is not finally overcome merely
-because forgiveness has begun. This is why the **Collect's** prayer
+The attached *Benedixisti ... avertisti captivitatem Iacob* speaks restoration
+in the completed tense. Augustine, Ps 84(85), especially §§2–4 within §§1–13,
+does not infer that restoration had already happened for the prophet:
+prophetic certainty speaks the future as past, and the continued
+*Converte nos* proves that it remained future from that standpoint.
+His account of captivity as sin and mortality also reaches final freedom
+from death. The Christian assembly's application to forgiveness already
+received and consummation still awaited is this reading's editorial
+whole-Mass inference, supported directly by the Epistle's rescue and
+transfer, not Augustine's explanation of the prophet's temporal standpoint.
+Thus the **Collect's** prayer
 *Excita ... fructum ... remedia maiora* belongs to R1's temporal movement.
 People already called “faithful” need renewed wills to pursue fruit and
 receive further remedies. It is not a request to earn the first grace

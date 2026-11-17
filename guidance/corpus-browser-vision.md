@@ -250,6 +250,95 @@ Greek coverage where applicable.
 - Separate identity, status, and action. Unavailable, withheld, partial,
   unsupported, unread, and uncertain never collapse into one disabled style.
 
+### Shared tokens and page branding
+
+Since 2026-11-16 the roles above are declared once, as custom properties at
+the head of `release/public-alpha/assets/site.css`, which every site page loads
+first: `--font-text`, `--font-ui`, `--font-mono`, `--hairline`,
+`--hairline-strong`, `--focus-ring`, `--radius` and `--control-min`, beside the
+existing surface and ink colours. `publication-reader.css` and
+`native-print.css` read them instead of restating values, so a change there
+applies to catalogues, readers, print pages and the print controls together.
+A page's own branding is only its `section-<colour>` class: the `--section-*`
+accent, ink, wash, pale, row and line colours and the two section marks. No
+page forks a stylesheet for its identity. Since 2026-11-16 an instrument's
+title is set as a catalogue's is — small capitals in the reading face, a short
+rule in the section accent beneath, and the page mark set apart at the right —
+at an instrument's smaller size. The page mark is one of its section's two
+marks (Commentary's is now ✦ and History's ❦, formerly § and →), and the
+instrument wears its section's colour throughout: History's map and panels
+take the section's green instead of the brown `history.css` once forced on
+them. A print page (`print/…`) wears the section colour and breadcrumb of the
+web edition or source reader it prints; one with no shelf of its own (a
+Bible's) carries no breadcrumb. The source readers an instrument lists are readers
+too: a papal document (`papal-documents/`) wears white with the breadcrumb
+Library › Papal Encyclicals, and a reading-plan volume (`reading-plans/`)
+wears gold with Library › The Story of Salvation, at the reading measure,
+instead of standing as unbranded full-width utility pages
+(`tools/public-alpha`, `SOURCE_READER_SHELVES`).
+
+The browser instruments read the same roles (2026-11-16, superseding this
+section's first form, which left them on `browser-core.css`'s own copies).
+`site.css` also declares `--ink-soft` and the `--notice`/`--notice-bg` failure
+colours; `src/web/browser/shared/browser-core.css` declares no shared value of
+its own, and its older names (`--serif`, `--sans`, `--mono`, `--ink-faint`,
+`--focus`, `--page`) are aliases of these roles. Its neutral values apply only
+to a page opened straight from the repository, without the site layout. The
+focus ring is therefore the one blue `--focus-ring` on every page, instruments
+included, and the quiet grey is the site's `--muted`. Liturgy's Day and
+Propers load `browser-core.css`, so a role change reaches them wherever their
+files read these names. The Instrument's own `--instrument-*` palette in
+`reader-instrument.css` is not aliased: that file and the other production
+files under `src/web/browser/liturgy/` are protected until the Live Reader
+ritual-flow deliverable releases them
+([master plan](corpus-browser-master-plan.md#non-negotiable-boundaries),
+boundary 4; [implementation](corpus-browser-implementation.md) §14, D2 and
+D18), and nothing in this section edits them.
+
+### Controls
+
+Since 2026-11-16 every instrument's controls are one family drawn in
+`browser-core.css` from the roles above: a field's name is set as a column
+label is (sentence case, interface face, section ink); selects, inputs and
+buttons share `--control-min`, `--radius`, a `--hairline-strong` border on the
+raised surface, and the Generate PDF control's hover, a faint wash of the
+section accent ([web editions](web-editions.md#browser-printing)). The filter
+bar is an open band — the section's rule above, a hairline below — at every
+width rather than a card on a desktop. Panels, notices and work cards keep
+their section rule but share `--radius`. An instrument retunes a size or a
+column, never these roles. The same look covers History's year controls,
+Commentary's verse-focus buttons and the Source Library's result pager; a
+checkbox stays the platform's box in the section accent beside its name,
+never a control-sized field.
+
+### Tables
+
+One shared table component in `site.css` (2026-11-16, at the maintainer's
+request that tables stop feeling dated) replaces boxed cells and zebra rows
+everywhere a site page sets a table: open composition with hairline rules
+between rows, one firmer rule under the head and after the last row,
+sentence-case column labels in the interface face tinted by the section ink,
+tabular numerals, and a faint section-tinted row under a hovering pointer.
+Catalogue tables add the work title in the reading face, quieter descriptive
+columns, a muted `Planned` or dash state set apart in words and tone, middle
+dots between a cell's links, and a small `print edition` mark on a link to a
+document without a web reader. The sticky head and the narrow-screen reflow
+described under the Catalogue archetype are unchanged in behaviour; a reflowed
+row is one entry with a single rule beneath it, and a cell's several links
+stack one per line instead of wrapping around their separators. Reader document tables use the
+same rules inside their own scrolling region. The browser instruments' tables
+use them too (2026-11-16, superseding the earlier allowance for instrument
+overrides): Encyclicals and the Scripture plan keep only their density,
+columns, alignment and totals row, and Encyclicals' narrow-screen entries are
+ruled rows with the column label above each value, not boxed cards. Catena,
+History, Law, Sources and Publications set no table, and the protected Liturgy
+sets none. The sticky catalogue head is transparent until it is stuck, where
+the browser can tell (a scroll-state container query), so it draws no band
+across a page's corner wash. Above the reflow width a cell of links is at
+least wide enough for its usual names (`Full Study Guide`, `Print edition`) to
+stand on one line, so the automatic layout no longer squeezes a provider column
+until such a name breaks in two; a long title still wraps.
+
 Breakpoints are discovered from content rather than assigned to device names.
 The foundation prototype's breakpoints are starting hypotheses. Real routes
 must prove where navigation, dense rows, contextual rails, and text measures
@@ -291,7 +380,9 @@ group, not a tile wall:
    constraints visible and removable;
 3. honest count named by object type;
 4. grouped work rows with product title, collection, explicit provider,
-   Independent treatment labels, browser/PDF availability, and material state;
+   Independent treatment labels, browser/PDF availability, and material state —
+   where a row links a document, it links the document's page, and that page
+   carries the PDF action ([repository](repository.md#public-navigation-and-catalog));
 5. useful zero state that repeats the active constraint and offers a concrete
    recovery action.
 

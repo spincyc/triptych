@@ -250,6 +250,23 @@ class LiturgyAdapterTests(unittest.TestCase):
         self.assertIn("advent-1", [catalogue["rows"][one]["key"] for one in ordinals])
         self.assertEqual(bridge.call("liturgy", "search", "roman-1962", "zzzz no such words"), [])
 
+    def test_the_list_presentation_is_the_pages_own(self) -> None:
+        # roman-1962-propers.md § Reader list presentation, read by proper-search.js.
+        catalogue = bridge.call("liturgy", "catalogue", "roman-1962")
+        rows = [row for row in catalogue["rows"] if row["kind"] == "seasonal"]
+        keys = [row["key"] for row in rows]
+        at = keys.index("epiphany-6")
+        self.assertEqual(keys[at - 1:at + 2], ["resumed-epiphany-5", "epiphany-6", "resumed-epiphany-6"])
+        resumed = rows[at + 1]
+        self.assertEqual((resumed["season"], resumed["listSeason"]), ("after-pentecost", "epiphanytide"))
+        after = [row["key"] for row in rows if row["listSeason"] == "after-pentecost"]
+        self.assertEqual(after[-1], "last-sunday-after-pentecost")
+        self.assertEqual([note["mark"] for note in catalogue["notes"]], ["†"])
+        self.assertEqual({row["key"] for row in rows if row["mark"]},
+                         {"epiphany-2", "epiphany-3", "epiphany-4", "epiphany-5", "epiphany-6",
+                          "resumed-epiphany-3", "resumed-epiphany-4", "resumed-epiphany-5",
+                          "resumed-epiphany-6", "last-sunday-after-pentecost"})
+
 
 @unittest.skipUnless(NODE, "node is not installed; the reader's derivations run the browser's models under node")
 class PortedPageLogicTests(unittest.TestCase):
@@ -1350,6 +1367,49 @@ for attempt in range(int(sys.argv[3])):
             child.wait(timeout=5)
             child.stdin.close()
             child.stdout.close()
+
+
+@unittest.skipUnless(TEXTUAL, "Textual is required for the Propers list drawing")
+class PropersListPresentationTests(unittest.IsolatedAsyncioTestCase):
+    async def test_groups_marks_and_notes_follow_the_adapter(self) -> None:
+        from lectern.app import TriptychApp
+        from lectern.surfaces import propers
+        from textual.widgets import OptionList
+
+        note = "These Sundays move with the date of Easter each year."
+
+        def row(key, season, list_season=None, mark=""):
+            return {"key": key, "name": key, "kind": "seasonal", "form_id": "main", "form_name": None,
+                    "fixed_date": None, "season": season, "listSeason": list_season or season,
+                    "mark": mark, "coverageCounts": []}
+
+        catalogue = {"calendar": "fixture", "edition": None, "short": "fixture",
+                     "notes": [{"mark": "†", "text": note}],
+                     "rows": [row("epiphany-6", "epiphanytide", mark="†"),
+                              row("resumed-epiphany-6", "after-pentecost", "epiphanytide", "†"),
+                              row("septuagesima", "septuagesima"),
+                              row("pentecost-23", "after-pentecost"),
+                              row("last-sunday-after-pentecost", "after-pentecost", mark="†")]}
+        with patch.object(propers.Propers, "start", lambda self: None):
+            app = TriptychApp(start="propers")
+            async with app.run_test(size=(140, 42)) as pilot:
+                owner = await mounted_surface(app, pilot)
+                owner.calendar = "fixture"
+                owner.catalogues["fixture"] = catalogue
+                listing = owner.query_one("#propers-list", OptionList)
+
+                def drawn():
+                    return [(str(option.prompt).split("\n")[0], option.disabled)
+                            for option in listing.options]
+
+                owner.filter("fixture", "", list(range(5)))
+                self.assertEqual(drawn(), [
+                    ("epiphanytide", True), ("epiphany-6 †", False), ("resumed-epiphany-6 †", False),
+                    ("† " + note, True), ("septuagesima", True), ("septuagesima", False),
+                    ("after pentecost", True), ("pentecost-23", False),
+                    ("last-sunday-after-pentecost †", False), ("† " + note, True)])
+                owner.filter("fixture", "sixth", [1])
+                self.assertEqual(drawn(), [("resumed-epiphany-6 †", False), ("† " + note, True)])
 
 
 @unittest.skipUnless(TEXTUAL and NODE, "Textual and node are required for shared Propers notice regressions")

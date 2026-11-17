@@ -25,22 +25,20 @@ subject_labels:
   critical.gospel-of-matthew: Greek Matthew
   critical.gospel-of-mark: Mark
 contexts:
-  - scope: {book: Matt, chapter: 24, first: 15, last: 35}
-    label: Jesus speaks of tribulation and his coming; Mount Olivet
+  - scope: {book: Matt, chapter: 24, first: 3, last: 35}
+    label: Jesus foretells Jerusalem's ruin and His coming; Mount Olivet by narrative continuity
     sources:
       - bible:douay-rheims:Matt.24.3
-      - bible:douay-rheims:Matt.24.4
       - bible:douay-rheims:Matt.24.15
-      - bible:douay-rheims:Matt.24.21
-      - bible:douay-rheims:Matt.24.30
       - bible:douay-rheims:Matt.24.35
     basis: >-
-      Inspected 2026-11-16. Matthew 24:3 places Jesus and the questioning
-      disciples on Mount Olivet; verse 4 begins his reply, continued through
-      verses 15-35. The narrated episode is his speaking there, including
-      the warning of tribulation and promise of his coming, not the future
-      events he predicts or the writing of the Gospel. This description
-      supplies no event date.
+      Inspected 2026-11-16. Matthew 24:3 seats Jesus on Mount Olivet, where
+      the disciples come to him privately and ask when these things shall be
+      and what the sign of his coming; his answer runs through the fig tree
+      and the passing of heaven and earth at 24:35. The place of verses 4-35
+      is Olivet by narrative continuity from verse 3. This describes Jesus'
+      speaking of the discourse; it gives no date to the destruction of
+      Jerusalem or to the coming that the discourse foretells.
   - scope: {book: Matt, chapter: 25, first: 1, last: 13}
     label: Jesus tells the ten virgins parable; Mount Olivet by narrative continuity
     sources:
@@ -133,6 +131,13 @@ settings:
     label: Bethany to Jerusalem, before the Passion
     sources: [bible:douay-rheims:Mark.11.12, bible:douay-rheims:Mark.11.20, bible:douay-rheims:Mark.11.27]
     basis: The fig tree is encountered after leaving Bethany; the teaching precedes the return to Jerusalem and its Temple.
+  life-of-christ.prophecies-on-mount-olivet:
+    relation: narrated-event
+    label: Mount Olivet by narrative continuity
+    sources: [bible:douay-rheims:Matt.24.3, bible:douay-rheims:Matt.24.35]
+    basis: >-
+      Matthew 24:3 seats Jesus on Mount Olivet with the disciples, privately;
+      the rest of the discourse keeps that place by narrative continuity.
   composition.book-of-esther:
     relation: composition
     label: story at Susa; writing in Persia conjectured

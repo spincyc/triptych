@@ -2,7 +2,8 @@ appointed_text_completeness = "complete"
 
 # Appointed texts: image collation and publication controls
 
-Inspection: 16 November 2026. Governing formulary: *Dominica vigesima quarta
+Initial inspection: 16 November 2026; renewed bounded inspection and audit
+corrections: 17 November 2026. Governing formulary: *Dominica vigesima quarta
 et ultima post Pentecosten*, II class, Vatican typica 1962, pp. 422–424,
 nos. 1769–1778; Trinity Preface p. 293, no. 1082. Appointment, rank,
 occurrence and exclusions are established in `research/context.md`.
@@ -276,8 +277,10 @@ Creed follows in T and L; it is not a sentence of the lesson.
 **Comparison.** T/P have the complete biblical word sequence, with
 liturgical *In illo tempore: Dixit Iesus discipulis suis* and omission of
 B's *ergo* after *Cum*. Spelling includes T *intellegat/quattuor* versus
-older *intelligat/quatuor*. T ends its first page after *omnia haec*;
-*fiant* and v. 35 continue on p. 424. Do not stop at the page boundary.
+older *intelligat/quatuor*. T p. 423 ends after *cum videritis*;
+p. 424 begins *haec omnia* and completes vv. 33–35. Do not stop at the
+page boundary. The renewed image check corrects the former audit sentence,
+not the complete appointed transcription above.
 
 **Material defect in L's Latin, not its English:** at p. 738 the line after
 *qualis non* has the misplaced *fierit salva omnis caro: sed* instead of
@@ -398,9 +401,10 @@ name of the Lord. Hosanna in the highest.
 the older spelling *quotidie* corresponds to T *cotidie*. P's page break
 falls inside *in unius Trinitate substantiae*; L's falls inside
 *proprietas* / “confession.” These are not missing endings.
-The Sanctus is supplied from the independently inspected common text in
-P and L, not claimed to be printed in full at T's Preface locus. Its
-reproduction is contextual, not a twelfth proper. No Preface of Advent,
+T p. 293/no. 1082 (PDF 374) also prints the complete dialogue and Sanctus,
+as confirmed by the renewed image inspection. P supplies the independently
+checked historical Latin antecedent and L the historical English. The
+Sanctus is common ritual context, not a twelfth proper. No Preface of Advent,
 proper Canon insertion or alternative Eucharistic Prayer is imported.
 
 ## 10. Communion — Mk 11:24 adapted

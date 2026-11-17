@@ -1,0 +1,404 @@
+schema = 2
+record_type = "bindings"
+document = "liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"
+
+# Publication-local record of how this leaf's research used the reusable source
+# library. It supplements, and does not replace, propers/verified.md (text control,
+# publication basis and English), research/scope.md (reception matrix, witness
+# register, difficulties, disagreements, negative results and bounds) and
+# research/interpretations.md.
+#
+# States describe what the research stage (iteration 0) of run 11c5af05fe374203 did
+# with each record on 2026-11-16. 'inspected' means this stage read the bound locus
+# itself in the bytes named; 'verified' is claimed only for page images read to
+# control a form, a publication basis or quoted English (the 1962 facsimile, Pustet
+# 1862, Lasance 1945). Remote and restricted artifacts were fetched whole and matched
+# to their registered SHA-256 before any locus was read; tracked artifacts were
+# re-hashed and matched. This stage registered the two dated Ordo passages bound
+# last; it retained no bytes. Fingerprints were taken from tools/source-library
+# fingerprint on 2026-11-16. The Scripture chronology sources are cited by
+# research/chronology.toml and sealed with it.
+#
+# Reconciled by the source-registration stage (iteration 0) of the same run on
+# 2026-11-16. Every research receipt was re-hashed against its registered record
+# and matched, and each bound locus whose bytes are tracked or held in the run's
+# scratch area was reread. This stage recorded the Bede binding's lines in its
+# context (the work's locus grammar admits no loci for them), corrected the
+# Sicard binding's line range to the chapter's own left-column lines
+# (29976-29996), and added the last five bindings: the four tracked Catholic
+# Encyclopedia article texts that research read to inspect the chronology rows
+# (research/scope.md 9), reread here at the lines named, and the Augustinus.it
+# chronology table that this stage reacquired and read to date the Augustine
+# passages it admitted to the Catena (research/source-dispositions.toml).
+#
+# Revised by the research stage (iteration 1) of the same run on 2026-11-16,
+# answering the research review. The Sicard binding now also carries Mitrale
+# VIII.23 and VIII.25 at their column extents, read in the same tracked OCR
+# (hash recomputed and matched); the Durandus and Rupert contexts now say whose
+# words are whose (Durandus VI.142 reproduces Sicard VIII.25; Rupert is cited
+# only for what he writes); the Maas context records the Gospel's narrated-event
+# row this stage added to the shared chronology corpus; and one binding was
+# added last for the printed Maas page compared through Internet Archive's page
+# image of the registered facsimile's scan.
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+loci = ["DOMINICA VIGESIMA QUARTA et ultima post Pentecosten, printed pp. 422-424 = artifact PDF pp. 503-505, marginal nos. 1769-1778"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-16"
+source_fingerprint = "sha256:489586789f24da05ee18ba23686f134dd71e18c7a91bd4b22190fa922d10dd76"
+context = "The exact remote facsimile controls every Latin form, heading, rank, citation, marginal number, conclusion cue and boundary of this formulary. The whole file fetched on 2026-11-16 by the resolve-context stage of this run was re-hashed and matched to the registered SHA-256 and byte length by this stage before any page was rendered. PDF pp. 503 and 504 were read whole at 200 dpi and in 400-dpi crops of each column section; PDF p. 505 whole at 200 dpi. The rubrics cited for occurrence, rank and Preface are those research/context.md records from the same file."
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-last-sunday-after-pentecost-orations"
+loci = ["Collect at printed p. 423, no. 1770; artifact PDF p. 504. The 1962 prints this formulary under the heading DOMINICA XXIV ET ULTIMA POST PENTECOSTEN, which is also its running head on printed pp. 422-424; Secret at printed p. 424, no. 1776; artifact PDF p. 505; Postcommunion at printed p. 424, no. 1778; artifact PDF p. 505"]
+role = "context"
+states = ["cataloged", "inspected"]
+source_fingerprint = "sha256:3a484466f4e1b951e82b1e7b470154bacdf6a9ac29cd2d97afa88672bf104e69"
+context = "The 1962 owner record of this formulary's three orations, on which the Latin ledger's rows rest. Its loci were read and agree with this stage's own reading of PDF pp. 504-505; the wording in propers/verified.md was read on the page images, not taken from this record."
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3"
+loci = ["Dominica XXIV. et ultima post Pentecosten, printed pp. 359-360 = PDF pp. 445-446, the whole formulary and the preceding rubric for the Sundays left over after the Epiphany"]
+role = "rights-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-16"
+source_fingerprint = "sha256:53cf8c027d0647a872a62d51ef6884807380f4b5050ae98f65506b3578ce4fd8"
+context = "Public-domain antecedent controlling the publication basis of all ten elements under 17 U.S.C. 103(b) (propers/verified.md). The whole registered PDF was fetched on 2026-11-16 and matched; PDF pp. 445-446 were read whole on 200-dpi page images. Every word of every element's body stands there; the Gospel citation reads c. 24."
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+loci = ["physical lines 52719-52930"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:efd4426beabe5385be4e5df4542255c488fe460dee069ab999231255702d5b0f"
+context = "Tracked text layer, re-hashed and matched, used to locate the 1862 pages and kept unedited as propers/retrieved.txt pull 2. It controls no wording; its Gospel citation 'c. 21.' is an OCR error for the page's 'c. 24.'."
+
+[[bindings]]
+source_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+loci = ["Twenty-fourth and Last Sunday after Pentecost, printed pp. 736-740 = PDF pp. 734-738"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-16"
+source_fingerprint = "sha256:376ca4e5db5bd3291c6c11b085c73dafdd1a09a8a7af523652257183cc25d645"
+context = "Public-domain hand-missal English (non-renewal; lasance-new-roman-missal-rights-v1.toml) for all ten elements, including the Missal's chant forms, voluntatis Dei and the lessons' liturgical openings. The whole registered PDF was fetched on 2026-11-16 and matched; the five pages were read whole on 220-dpi page images."
+
+[[bindings]]
+source_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.new-roman-missal-text-80b34759"
+loci = ["physical lines 78751-79215"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:244feaa4640a598b268f6a3c82130d020246340db5f96e6b147ce2ba800e4c88"
+context = "Tracked text layer, re-hashed and matched, used to locate the Lasance pages and kept unedited as propers/retrieved.txt pull 3. It controls no wording."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-58-colossians-f1d99c90"
+loci = ["Col.1.9-14"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:06c3c5e04fba34cae98e1467242b5e3fc63bbef88a55a37845bf7527b33da821"
+context = "Clementine comparison text for the Epistle: voluntatis ejus against the Missal's Dei, the liturgical opening, pointing."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-47-matthew-2d02758d"
+loci = ["Matt.24.15-35"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:da1db83ff564af32d9e8dab7773456aa467a354ded799029638be74368323843"
+context = "Clementine comparison text for the Gospel: Cum ergo videritis, intelligat."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-21-psalms-d20e21f8"
+loci = ["Ps.43.8-9", "Ps.84.2", "Ps.129.1-2"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:1481d71b5253d2bf9644408f82c40a7cd90fce2191d6586d9fa24b0f62d49130"
+context = "Clementine comparison text for the Gradual, Introit verse, Alleluia and Offertory: salvasti enim nos, odientes nos, in saeculum, vocem meam."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-28-jeremias-b95e824b"
+loci = ["Jer.29.11-14"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:c98fbf3b45d0574987077decf419c93dd9b50901a4a298cd7df79eb64a54cdbe"
+context = "Clementine comparison text for the Introit's cento (research/context.md; propers/verified.md)."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-48-mark-ab7b8b95"
+loci = ["Mark.11.24"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:b735f8e604c3e75982f2a5b38d3f9340c60bf3764ae851e54be2a26cc50846fe"
+context = "Clementine comparison text for the Communion: Propterea dico vobis, omnia quaecumque, et evenient vobis."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-58-colossians-d17592ce"
+loci = ["Col.1.9-14"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:5cf6c513d39ffc83a9faab86e624dd181f93dfa845f96437b40365ff711ed0ca"
+context = "Douay English read through tools/tpt mass-propers show: carries the Epistle's body but not its liturgical opening or the Missal's Dei (his will)."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-47-matthew-dd0ba183"
+loci = ["Matt.24.15-35"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:ed47ecb092ecb6256fb84450e8ad39d0debf2efe6c65442199a76a7fb1a8b98b"
+context = "Douay English of the Gospel's body; compared with Lasance's lightly revised text (has not been found; show)."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-21-psalms-578f023d"
+loci = ["Ps.43.8-9", "Ps.84.2", "Ps.129.1-2"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:04b581584ed78f861cef34251b2da71ddc94429cd7228ea8cc6585a2aa4a5a41"
+context = "Douay English of the psalm verses; carries Ps 84:2 but not the Gradual's, Alleluia's or Offertory's liturgical forms."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-28-jeremias-85cef8bb"
+loci = ["Jer.29.11-14"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:aa0acf8fc81c44623550f83716eee76a3204969b5ad52d80d9304596862d1d07"
+context = "Douay English of the canonical verses behind the Introit's cento; does not carry the antiphon's form."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-48-mark-69b4cb75"
+loci = ["Mark.11.24"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:2b4848908df9163a705b6532d1b80e55d35bc75bf2826f2ba03cb69b9f7ff025"
+context = "Douay English of the verse behind the Communion; does not carry the antiphon's form."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.psalm-numbering-ee3c7757"
+loci = ["Ps.43.8-9", "Ps.84.2", "Ps.129.1-2"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:c3702f219d6641eb66186bd7d3d557375aec2843467d0d54aabe3397ec7e8fb7"
+context = "Psalm concordance resolving the Missal's Vulgate numbering to the Hebrew (44, 85, 130)."
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-10.ccel-web-2026-09-17.ccel-text-adb8f1c9"
+loci = ["Chrysostom, Hom. in Mt. 75.2, physical lines 41905-41923", "Hom. 76.1-4, lines 42301-42640", "Hom. 77.1, lines 42824-42930"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:0209917237dc0599614ab5b3a70d1563de63045007c4a8d4eb7776dd6ec37992"
+context = "English (Prevost-Riddle) of Chrysostom on Mt 24:15-36, re-hashed and matched: the abomination as the conqueror's statue; vv. 16-22 of the Roman war; 'then' leaping to the consummation; Antichrist; the lightning; the eagles as angels, martyrs and saints; the sign as the cross; the fig as necessity and spiritual summer; this generation as the believers; heaven and earth. The Greek was not read."
+
+[[bindings]]
+source_id = "artifact.jacques-paul-migne.patrologia-latina-volume-26.paris-1845.internet-archive-google-pdf-0d889bd6"
+loci = ["column-177", "column-178", "column-179", "column-180", "column-181", "pdf-page-96", "pdf-page-97", "pdf-page-98"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:1095d1f783cd68bdc017e71a2df9c85944875aa2184fa80ee60de0475e13b7df"
+context = "The whole registered PDF was fetched on 2026-11-16 and matched; PDF pp. 96-98 were read on 200-dpi column crops. Jerome's own readings of the abomination, the flight, the shortened days, the false christs, the lightning, the body and eagles (cadaver; the passion; the saints renewed), the signs, the fig, the generation and heaven and earth."
+
+[[bindings]]
+source_id = "artifact.jacques-paul-migne.patrologia-latina-volume-9.1844-paris.ia-djvu-text-db389fea"
+loci = ["column-718", "column-1053", "column-1054", "column-1055", "column-1056", "column-1057", "column-1058"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:1ffb9ec5d69f6ca5e9957af74962f6045bdead5118c600449e3c1fce55bee5bd"
+context = "Uncorrected tracked OCR, re-hashed and matched; no page image read. Hilary on Mt 24 (Antichrist; the housetop precept read of the regenerated; the pregnant as souls heavy with sin; winter and sabbath; the eagles gathered in loco passionis; heaven and earth from nothing; the fig-branch as Antichrist) and on Ps 129 (naturae suae est ut audiat; lemma vocem meam)."
+
+[[bindings]]
+source_id = "artifact.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05.wikisource-latin-text"
+loci = ["Quaestiones Evangeliorum I.37-39 and I.42, physical lines 42-44 and 47"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:09a10c393684ed493bbf5201cc5e886d0b259ae88f5aa8ea6343618f43ce6a8b"
+context = "Latin text not collated with a page image. Augustine on Mt 24:20 (winter and sabbath), 24:23-27 (the lightning as the Church), 24:32 (the fig as the human race) and 24:28 (the body taken to heaven; the eagles fed from it)."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.opera-editio-altera-veneta-tomus-3.venice-bettinelli-1745.ia-djvu-ocr-10aa155e"
+loci = ["Super Evangelium Matthaei c. 24, physical lines 39330-39500, 39849-39900, 39985-40000 (printed pp. 306-310)"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:9fcd48561f23ea12b2a7271b5cbcdeaee88f85652a5194fe6756bfb2b4aa558f"
+context = "Uncorrected OCR, re-hashed and matched. Aquinas's literal reading of Mt 24:15-22 (the Roman army, Pilate's eagle, Hadrian's idol, Agrippa), his report of Jerome and Augustine on vv. 23-28 (in his own words), the passion signified by the cadaver, and the sign as victory or cross."
+
+[[bindings]]
+source_id = "artifact.gregory-the-great.homiliae-in-evangelia.wikisource-web-2026-09-17.complete-extracted-text-dc25dd69"
+loci = ["1.1-6"]
+role = "analogue"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:dd03fd6ff09944af5ba01e741418ae3278e9bc68a08acb4d0cd4538129984eea"
+context = "Tracked Latin text, re-hashed and matched, not collated with a page image. Gregory on the Lukan parallel of Mt 24:29-35: the world's fruit is its ruin; the kingdom as summer; the passing word whose sentences remain; sequentium rerum certitudo est praeteritarum exhibitio."
+
+[[bindings]]
+source_id = "artifact.bede.in-marci-evangelium-expositio.2026-10-13-latin-wikisource-migne.latin-text-b8197766"
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:838ec2d9bdd3872f40f104399e97325542dc20fc47dd3b1b4d576e018c618fc2"
+context = "Tracked Latin text, re-hashed and matched. On Mk 11:25 the distinctio deprecantium (direct exegesis of the Communion's context). On Mk 13 (the Gospel's Marcan parallel) he gives Jerome's words on the abomination, the fig and the generation without naming him, and adds Pella, the spiritual flight, the fig as the Synagogue restored and the airy heaven that passes. Read at physical lines 338-339 (III, on Mk 11:22-25) and 390-391 and 400-401 (IV, on Mk 13:14-16 and 13:28-31), reread at source registration; the work record's locus grammar cannot express these loci, so they stand here rather than in loci."
+
+[[bindings]]
+source_id = "passage.john-chrysostom.homilies-on-colossians.ccel-web-2026-09-05.2.col-1.9-12"
+loci = ["2"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:9b731baaa53141d6cbcab084b9eeb8b3e4bc11eb95cae382eef24f1f3982fe69"
+context = "The admitted passage was read in its controlling NPNF I.13 text (binding below): ut impleamini as gentle reproof; faith coupled with conduct; strengthened in trials; patience and longsuffering; thanks with joy; the twofold honour of making worthy and giving; the lot as free gift."
+
+[[bindings]]
+source_id = "passage.john-chrysostom.homilies-on-colossians.ccel-web-2026-09-05.2.col-1.13-14"
+loci = ["2"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:d294b82f80a792e7c74d0313b92d1d684f9312c2efdc49c523dc114fc0d44691"
+context = "The admitted passage was read in its controlling text: delivered from the power of darkness; translated, both of us and of him; to the same honour as the Son; forgiveness before translation."
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-13.english-ccel-web-2026-09-05.ccel-npnf113-text-54274dd9"
+loci = ["Chrysostom, Hom. in Col. 2, physical lines 23769-24020"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:374d296602c0a52e4c252ad0e7704b9c9952d06f6b66b891bb391c8509c390db"
+context = "Controlling text of the two Chrysostom passages above, re-hashed and matched, read through the start of his comment on v. 15 for context."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.super-colossenses.latin-corpusthomisticum-web-2026-11-05.ccl-html-d055308f"
+loci = ["Super Col. c. 1 l. 2 (end) and l. 3 [87848]"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:1181b99646ceacb96e1ba4f36adbc6f23277001fcf4c4ba8471d1160c54e951f"
+context = "Restricted response fetched whole on 2026-11-16 and matched to its registered SHA-256 and size; no bytes retained. Aquinas on Col 1:9-14: prayer as ascensus mentis, non ut eum flectamus sed ut nos erigamus in eum; knowledge, virtue and endurance; patience and longanimitas; the saints' lot; potestas tenebrarum with Is 49:25; transtulit; redemption and remission. He reports the Glossa, Augustine and Gregory by name."
+
+[[bindings]]
+source_id = "artifact.jacques-paul-migne.patrologia-latina-volume-24.paris-1865.internet-archive-pdf-e55e8bd2"
+loci = ["column-893", "column-894", "pdf-page-451"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:c6fb33bd194ee93902e3c4fa9109a1ee8938e91070b51ef6794d8a119a51a682"
+context = "The whole registered PDF was fetched on 2026-11-16 and matched; PDF p. 451 was read on 200-dpi crops of col. 893 (lower half) and col. 894 (upper half). Future things known to God alone; prayer exhorted though God could fulfil without it (Mt 7:7); the anagogy of return ad locum nostrum Ecclesiam; his lemma is the Vulgate's, with words the antiphon omits."
+
+[[bindings]]
+source_id = "artifact.augustine.enarrationes-in-psalmos.latin-migne-corpus-corporum-wikisource-web-2026-09-05.wikisource-part-9-latin-text"
+loci = ["84.1-5"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:4ec924c6b55bfe5458a51ad4efa23e437507b846582d1d62cca86f8d68cc730d"
+context = "Tracked Latin text, re-hashed and matched, not collated with a page image. The past tense as certain with God; the captivity of Jacob as the captivity of sin (Rom 7:23-25) turned back by Christ; remissa iniquitate liberaris."
+
+[[bindings]]
+source_id = "artifact.augustine.enarrationes-in-psalmos.2026-10-23-latin-migne-wikisource.wikisource-part-5-latin"
+loci = ["43.6-10"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:16edefecc15179a8acb9a613c6fb0db5f298a8940ffbd524b3a8a1029bd0ee2c"
+context = "Tracked Latin text, re-hashed and matched, not collated with a page image. The past tense of Ps 43:8 'quia tam certum est quasi factum sit'; the mixing of future tenses in v. 9; his lemma reads et eos qui oderunt nos and in saecula (a textual datum, research/scope.md 2.3)."
+
+[[bindings]]
+source_id = "artifact.augustine.enarrationes-in-psalmos.english-npnf8-ccel-web-2026-09-05.ccel-npnf108-text-d6841950"
+loci = ["129.1-3"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:0a8fd6a45c963c52d5c8d09497820cfb88e5bf59d3a86a8a573856782e822f37"
+context = "Abridged English, re-hashed and matched; quotations are of the condensed English. This mortal life is our deep; the sinner's hope; propitiation as the sacrifice that redeemed captives. The Latin was not read."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.super-psalmos.latin-corpusthomisticum-web-2026-07-28.cps41-html-7879ef13"
+loci = ["43.n3", "43.n4"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:66f744004772a893ddc99e1fee0448e40bd7be7facf17846018a6edfdd0269e5"
+context = "Restricted response fetched whole on 2026-11-16 and matched; no bytes retained. Salvasti vel in praesenti vel in futuro; the saints' bodily and spiritual afflictions; tota die as eternity."
+
+[[bindings]]
+source_id = "artifact.sicard-of-cremona.mitrale.latin-migne-pl-213.ia-djvu-ocr-ea9fd813"
+loci = ["Mitrale VIII.23, Dominica vicesima tertia post Pentecosten, physical lines 29951-29975 (left column; the right column of the same lines carries the continuation of VIII.25)", "Mitrale VIII.24, Dominica vicesima quarta post Pentecosten, physical lines 29976-29996 (left column; the right column of the same lines belongs to another chapter)", "Mitrale VIII.25, Dominica vicesima quinta post Pentecosten, physical lines 29998-30015 (left column), continued in the right column at physical lines 29951-29980 to 'mentio continetur'"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:f7ef227833c6454f7bea588021ba7c000d14f6dc1220746e710f6f3d8a19f761"
+context = "Uncorrected OCR, re-hashed and matched. Three chapters. VIII.23 (tribute Gospel, Mt 22; Epistle Phil 3:21) reads this formulary's four Dicit Dominus chants of Israel's saved remnant: the Introit announces it, the Gradual Liberasti and Offertory De profundis answer, the Communion Amen dico vobis assures them of salvation (certificat de salute). VIII.24 shares only the Epistle (Col 1:9), with the Gospel of Mt 9:18-26 and no proper chants; its reasons for the borrowed chants are Sicard's. VIII.25 (lesson Jer 23, Gospel of the five loaves, Jn 6) reads the same chants with the lesson: the freed give thanks in the Gradual, pray in the Offertory, and in the Communion receive the assurance (certificationem) of their petition; the last Sunday's office belongs to both comings. Its Gradual clause rewords Rupert XII.23's sentence; its Communion reading is not Rupert's. Durandus VI.141 repeats VIII.24 and VI.142 reproduces VIII.25."
+
+[[bindings]]
+source_id = "artifact.william-durandus.rationale-divinorum-officiorum.1612-lyon-tomus-secundus.ia-djvu-ocr-b9b266dd"
+loci = ["Rationale VI.141, De Dominica vigesimaquarta post Pentecosten, physical lines 17445-17478", "VI.142, De xxv dominica post Pentecosten, lines 17482-17527 (printed pp. 413-414; the chapter ends before the Summa of VI.143 at line 17528)"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:5be12620687e1829e19de144d3c79009d8b9dce221c126174799a60e3facbb4a"
+context = "Uncorrected OCR, re-hashed and matched. VI.141 shares the Epistle and reports that some churches read Cum videritis abominationem (Mt 24) on that Sunday; his account of the borrowed chants repeats Sicard VIII.24. VI.142 reproduces Sicard VIII.25 almost word for word (the chants with Jer 23, the Communion's recipiunt sanctificationem for Sicard's certificationem, the office for both comings, the five Sundays to Christmas); its words on the chants are Sicard's and are cited as Sicard's. Its Gospel clause on the refreshment Joseph gave his brothers is not in VIII.25; it is the figure Rupert XII.23 gives (Joseph's banquet, signified by the five-loaves Gospel), and Durandus's immediate source for it is not established here."
+
+[[bindings]]
+source_id = "artifact.rupert-of-deutz.de-divinis-officiis.latin-migne-pl-170.ia-djvu-ocr-2e2ca850"
+loci = ["De divinis officiis XII.23, physical lines 23697-23776 (cols. 329-330)", "XII.24 heading, line 23779"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:7ec56124e31762f147f8aed197516894e92dc2d5ec7de99bcc91a9f11d1a98d3"
+context = "Uncorrected OCR, re-hashed and matched. Rupert reads the four Dicit Dominus chants (with Jer 23 and Jn 6) as Israel's remnant reconciled, prefigured in Joseph: the freed give thanks in the Gradual; the Offertory is the brothers' plea to Joseph (Gen 50:17); the Communion is Joseph's answer (Gen 50:19-21). Sicard VIII.25 later rewords his Gradual sentence and reads the Communion otherwise. His book has no chapter for a twenty-fourth Sunday."
+
+[[bindings]]
+source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1883-volume-11.ia-djvu-text-95cdb0fc"
+loci = ["vol-xi-p-501", "vol-xi-p-502", "vol-xi-p-503", "vol-xi-p-504", "vol-xi-p-505", "vol-xi-p-506", "vol-xi-p-507", "vol-xi-p-508", "vol-xi-p-509", "vol-xi-p-510", "vol-xi-p-511", "vol-xi-p-512", "vol-xi-p-513", "vol-xi-p-514"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:5704de4921a1ed8c6da6c88bc1235f8aa14d39ef3973edc2061508aaf727c16d"
+context = "Tracked text layer, re-hashed and matched. The continuation (Lucien Fromage) prints the formulary in Latin and English with commentary: the year's close; the Epistle as thanksgiving and prayer; a prayer on the coming with Eucharistic eagles; notes on the Secret and Postcommunion; a claim about when the Matthean Gospel came to this Sunday, not verified here."
+
+[[bindings]]
+source_id = "passage.fssp-france.ordo-du-mois.web-2026-11-16.2026-11-22"
+loci = ["November 2026; Sunday 22 November entry"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:40255daa083d2e10f2c445461377d82739e9f5b8e9214bc1924f9361b2bead1c"
+context = "Dated institutional witness of the occurrence chain research/context.md adopts, registered by this stage from the response the resolve-context stage fetched and hashed on 2026-11-16 (re-hashed and matched; no bytes retained): 24e et dernier dimanche, 2ème classe, vert. Not a controlling Missal."
+
+[[bindings]]
+source_id = "passage.icrsp-france.ordo.web-2026-11-16.2026-11-22"
+loci = ["2026-11-22"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:f03ac659aef9bd364ebe5117814132dcaa12aa2398afb97bcd3dddc81af24945"
+context = "Dated institutional witness of the occurrence chain, registered by this stage from the response the resolve-context stage fetched and hashed on 2026-11-16 (re-hashed and matched; no bytes retained): XXVIe et Dernier Dimanche apres la Pentecote (5e de nov.), IIe classe, vert, Messe propre (Dicit Dominus), Trinity Preface, no memorial. The Oratio pro Papa and the Office reckoning are the institute's."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12533a-cb9d9a25-article-text"
+loci = ["article 'Psalms', physical line 176"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:fb390d86dc25dc07c596f9fc077086505507490f09a054b5a5c25ff17ab4c7f7"
+context = "Tracked article text (hash recomputed and matched), read by research and reread by source registration to inspect the chronology record's Korahite rows for Ps 43 and Ps 84: these psalms seem to have been composed between the days of Isaias and the return from exile (line 176). A collection estimate, not an occasion (research/scope.md 9)."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08377a-f81e2c23-article-text"
+loci = ["A. J. Maas, 'Jesus Christ', the last week, physical line 134"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:fe5c1682bc9df4a6ffe2e0a61f7ac28267f049a6ffef975b9a78bc795774f656"
+context = "Tracked article text (hash recomputed and matched), read by research and reread by source registration at line 134: on Tuesday the withering of the fig tree provokes the instruction on the efficacy of faith (the Communion's event row), and Jesus ended this day by uttering the prophecies concerning the destruction of Jerusalem, His second coming, and the future judgement. Research (iteration 1) reread lines 131-134 and registered the second sentence as passage.catholic-encyclopedia.volume-8.new-york-1910.maas-ninth-journey-olivet-prophecies, the source of the Gospel's narrated-event row it added to the shared chronology corpus (research/scope.md 9)."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04131b-08367306-article-text"
+loci = ["'Epistle to the Colossians', dating paragraph, physical line 3"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:91a33dc8f172eab755c244ee0c93a4bad335ab7be33df8716c8264711389df78"
+context = "Tracked article text (hash recomputed and matched), read by research and reread by source registration at line 3: the captivity Epistles were written some time between A.D. 61 and 63, in Paul's first Roman captivity. Inspected against the chronology record's Epistle row (research/scope.md 9)."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8-article-text"
+loci = ["Ferdinand Prat, 'St. Paul', table of the chief dates in the life of Paul, physical line 45"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:83263e9b6b864dbc2776538285f276ac7740d8e39098d077148ce421ca998f4f"
+context = "Tracked article text (hash recomputed and matched), reread by source registration at line 45, the table research/scope.md 9 cites for the Epistle row: captivity at Rome, 60-62; (Philemon; Colossians; Ephesians; Philippians), 61."
+
+[[bindings]]
+source_id = "artifact.augustinus-it.enarrationes-chronology.2026-10-23-web-state.whole-html-a2938c5d"
+loci = ["Tavola cronologica, column heads and note 1, the Psalm 43 row (physical lines 269-279) and the Psalm 84 row (physical lines 654-664)"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:5c0f18d8472e66612ff885b073884ed87a9fcae9ff0eb187b18ffb60427bdaa2"
+context = "Remote modern chronology table, reacquired whole by source registration on 2026-11-16 and matched to its registered SHA-256 and byte size (26,466 bytes); no bytes retained. Read to date the Augustine passages this stage admitted to the Catena, not as evidence for any claim of the studies: for Psalm 43 Zarb gives Hippo, Lent 412; for Psalm 84 Zarb gives Hippo, after 410, with no closing year; the Rondet and La Bonnardiere cells are blank in both rows."
+
+[[bindings]]
+source_id = "segment.catholic-encyclopedia.volume-8.new-york-1910.jesus-christ-a-j-maas"
+loci = ["printed p. 381 (facsimile PDF p. 433), right column: the Ninth Journey's Holy Week paragraph, the close of the Tuesday"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:8e8a817f9ea9bb5f9e8b3023e571995e01195fa3bb72f5622e9bc6a06cb11aa2"
+context = "Compared by research (iteration 1) on 2026-11-16 in Internet Archive's page image of the scanned volume the registered facsimile reproduces (item catholicencyclop0008unse_u7y2, leaf n432); that image was not hash-matched to the registered PDF. Source registration (iteration 2) then acquired the complete registered facsimile PDF on 2026-11-16 (135,877,116 bytes, SHA-256 matched to the artifact record) and read PDF p. 433, headed printed p. 381, rendered from those exact bytes; no bytes are retained and the artifact stays remote. The printed sentence, right column, reads: Jesus ended this day by uttering the prophecies concerning the destruction of Jerusalem, His second coming, and the future judgment; these predictions are interrupted by the parable of the ten virgins, and of the talents. It agrees with the tracked article text except in spelling and that last phrase."

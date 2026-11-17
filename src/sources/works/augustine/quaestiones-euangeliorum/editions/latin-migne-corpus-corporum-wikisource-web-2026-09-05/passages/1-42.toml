@@ -1,0 +1,16 @@
+schema = 1
+record_type = "passage"
+id = "passage.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05.1-42"
+edition_id = "edition.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05"
+artifact_id = "artifact.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05.wikisource-latin-text"
+artifact_sha256 = "aed43fd30cbd7a5bfe698c3930c360a6e4cb201f5da47951dc26a22c069c80e7"
+locus = "1.42"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Book I, question XLII, the whole answer on the body and the eagles (physical line 47, headed by the printing's reference [Ib. XXIV, 28.]); the printing places it after questions on Mt 26 (XL-XLI). Read with questions XLI (Mt 26:15) and XLIII (Mt 26:29): the body is gathered to heaven, whither he raised the body taken in the man assumed, and it is called a carcass because he spoke these words when about to die; the eagles are the spiritual, who are fed as from his body by imitating his passion and humility."
+physical_line_ranges = [[47, 47]]
+text = "Quod Dominus dicit, Ubi fuerit corpus, illo congregabuntur aquilae; id est in coelum, quo hinc secum levavit corpus in homine suscepto: quod etiam cadaver ideo appellatum est, quia moriturus haec loquebatur. Illo congregabuntur aquilae, dictum est de spiritualibus, qui ejus passionem humilitatemque imitando, tanquam de ejus corpore saturantur. Corpus enim propter humilitatem pro nobis passionemque suscepit."
+transcription_segments = [
+  { line = 47, text = "Quod Dominus dicit, Ubi fuerit corpus, illo congregabuntur aquilae; id est in coelum, quo hinc secum levavit corpus in homine suscepto: quod etiam cadaver ideo appellatum est, quia moriturus haec loquebatur. Illo congregabuntur aquilae, dictum est de spiritualibus, qui ejus passionem humilitatemque imitando, tanquam de ejus corpore saturantur. Corpus enim propter humilitatem pro nobis passionemque suscepit." },
+]
+verified_on = "2026-11-16"
+notes = "Mechanically copied as one exact substring of retained raw line 47, omitting only the question numeral and the editor's bracketed Scripture reference that head the line ('XLII. [Ib. XXIV, 28.]'); no word was retyped, modernized or supplied. The whole answer is retained: the line ends where question XLIII begins on line 48. The question stands out of the gospel's order in the printing, after questions on Matthew 26; its own reference names Mt 24:28 and its lemma is that verse. The wording is that of this dated digital transcription of Migne, PL 35; it was not collated with a page image of the printed column and is not presented as diplomatic. Augustine's own Latin, so no translator is involved. Registered 2026-11-16 by the source-registration stage of proper-study run 11c5af05fe374203 after the artifact's SHA-256 and byte size were recomputed and matched."

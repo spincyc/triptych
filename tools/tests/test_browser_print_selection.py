@@ -264,7 +264,7 @@ class CompleteSelectionPrintTests(unittest.TestCase):
 
 
 class PublicationTargetTests(unittest.TestCase):
-    def test_html_targets_are_labelled_as_reader_and_print_without_pdf_or_current_pages(self):
+    def test_listing_links_the_document_page_without_a_pdf_action_or_current_pages(self):
         fixture = json.loads((DATA / "structure/documents/corpus.json").read_text())
         work = copy.deepcopy(fixture["works"][0])
         edition = work["editions"][0]
@@ -280,9 +280,10 @@ class PublicationTargetTests(unittest.TestCase):
             wait("document.querySelector('.edition-links a')"),
             eval_js("({links: [...document.querySelectorAll('.edition-links a')].map(a => ({label:a.textContent, path:a.getAttribute('href'), download:a.hasAttribute('download')})), tally: document.querySelector('#tally').textContent})", "result")
         ]})["result"]
-        self.assertEqual([link["label"] for link in seen["links"]], ["Read here", "Print / Generate PDF"])
-        self.assertEqual([link["path"] for link in seen["links"]],
-                         ["../web/gpt/real-reader.html", "../print/gpt/real-print.html"])
+        # A listing names the document's page; Generate PDF lives on that page
+        # (guidance/repository.md, "Public navigation and catalog", 2026-11-16).
+        self.assertEqual([link["label"] for link in seen["links"]], ["Read here"])
+        self.assertEqual([link["path"] for link in seen["links"]], ["../web/gpt/real-reader.html"])
         self.assertFalse(any(link["download"] for link in seen["links"]))
         self.assertNotIn("0 pages", seen["tally"])
         self.assertIn("page extents unmeasured", seen["tally"])
@@ -317,7 +318,10 @@ class PublicationTargetTests(unittest.TestCase):
             eval_js("({href: document.querySelector('.enc-reader-link').getAttribute('href'), label: document.querySelector('.enc-reader-link').textContent, extent: document.querySelector('.enc-extent').textContent, witness: document.querySelector('.enc-witness').textContent, text: document.body.textContent})", "result")
         ]})["result"]
         self.assertEqual(seen["href"], "../papal-documents/identified-witness.html")
-        self.assertIn("Read source · Print", seen["label"])
+        # The reader carries its own Generate PDF at the top; the table names
+        # only the document (guidance/web-editions.md, 2026-11-16).
+        self.assertIn("Read source", seen["label"])
+        self.assertNotIn("Print", seen["label"])
         self.assertEqual(seen["extent"], "Fragment")
         self.assertEqual(seen["witness"], reader["witness"])
         self.assertNotIn("source PDF", seen["text"])

@@ -437,7 +437,7 @@ scoped reading interface. Proper-study actions are named **Full Study Guide**,
 **Synthesis** and **Homily** according to their declared output roles, and each
 leads to that output's own reader; an output without a reader (an ineligible
 leaf's) leads to its print page. **Generate PDF** remains the separate native
-printing action. The shared
+printing action, first among the reader toolbar's actions. The shared
 presentation uses a broad responsive reading plane, collapsible section
 contents and stable section permalinks. Preserve source text, existing heading
 IDs, footnote targets, revision and rights notices. Reader controls belong
@@ -461,11 +461,22 @@ reader presentation change.
 
 The complete-edition **Generate PDF** action renders the selected canonical
 TeX output with its original engine, templates and fonts. It lives on the
-output's print page, `print/<provider>/<output>.html`. Each web reader carries
-a Print action that links there with `?print=1`, as does every other link that
-requests an edition's PDF: rewritten catalogue PDF links, the Texts catalogue
-and the Sources reader's complete-Bible print. Since the maintainer's
-2026-11-06 request such a link does not leave the page. On a plain click
+output's print page, `print/<provider>/<output>.html`. Each document page
+carries one **Generate PDF** action at its top that links there with
+`?print=1`: first in a publication reader's toolbar, and at the head of the
+content on a source reader without that toolbar
+(`_native_print.reader_action_link`). Every link labelled **Generate PDF**
+uses the one shared look in
+[`native-print.css`](../src/web/browser/shared/native-print.css), as does the
+print page's own button. Catalogue tables do not carry it: since the
+maintainer's 2026-11-16 request they link each document's page
+([repository](repository.md#public-navigation-and-catalog)), superseding the
+2026-11-06 rewriting of catalogue PDF links into this action. The same holds
+for an instrument's table: Encyclicals links each source reader as `Read
+source`, and the reader carries the action (2026-11-16). The Texts record
+view and the Sources reader's complete-Bible print still request an edition's
+PDF from their own pages. Since the maintainer's 2026-11-06 request such a link
+does not leave the page. On a plain click
 [`native-print.js`](../src/web/browser/shared/native-print.js) reads the
 edition's selection from its print page and generates the PDF in place, under
 a small progress popover beside the link: stage, progress bar, cancel, then the

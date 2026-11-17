@@ -151,6 +151,13 @@ opens that one identity for that one provider and nothing else, and it is an
 independent Claude production, not a companion to or a derivative of the GPT
 leaf for the same identity. It does not open the ordinary Sixth Sunday after
 the Epiphany or any other resumed Sunday.
+On 2026-11-16 the maintainer authorized the Claude 1962 Twenty-fourth and
+Last Sunday after Pentecost target, identity `68`, for Sunday, 22 November
+2026, on the same terms and under the same three-document contract, and
+authorized publication of the validated result to main. It opens that one
+identity for that one provider and nothing else, and it is an independent
+Claude production, not a companion to or a derivative of any other leaf. It
+does not open the GPT target for the same identity or any resumed Sunday.
 
 Each line below records one maintainer decision to open the boundary for
 one provider and one permanent identity. A line is the whole
@@ -220,6 +227,11 @@ The dated context must independently verify the last Sunday after Pentecost
 and its complete appointed texts; this decision opens no other target.
 
 - Authorized 2026-11-16: provider `gpt`, identity `liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost`.
+
+The maintainer separately authorized the following Claude target on the same
+date:
+
+- Authorized 2026-11-16: provider `claude`, identity `liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost`.
 
 ### Reference-only publication scope
 

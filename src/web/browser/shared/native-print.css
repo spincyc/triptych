@@ -1,35 +1,66 @@
-/* Generate PDF controls. Self-contained so papal readers, source pages and
-   publication pages render them alike; the :is() selectors outrank
-   page-family button rules such as `.publication-reader button`. */
-.native-print-actions { border-block: 1px solid var(--line, #b8b0a3); padding-block: 1rem; margin-block: 1rem; }
-.native-print-actions :is(button, [data-native-print-download]) {
-  display: inline-block;
+/* Generate PDF: one action, one look, wherever an edition offers it — the
+   reader toolbar, a source reader's head, and the print page's own button
+   (guidance/web-editions.md, "Browser printing"). Colours, focus and control
+   size come from the site's role tokens in site.css and the page's section
+   colour; the face is the page's own. The fallbacks only cover a page opened
+   outside the site.
+   The :is() selectors outrank page-family button rules such as
+   `.publication-reader button`. */
+.native-print-actions { border-block: 1px solid var(--hairline, var(--line, #b8b0a3)); padding-block: 1rem; margin-block: 1rem; }
+:is(.native-print-action, .native-print-actions :is(button, [data-native-print-download])) {
+  display: inline-flex;
   box-sizing: border-box;
-  min-height: 2.75rem;
+  align-items: center;
+  gap: .5rem;
+  min-height: var(--control-min, 2.75rem);
   margin-block: .25rem;
-  padding: .55rem .9rem;
-  border: 1px solid var(--muted, #6a635a);
-  border-radius: .2rem;
+  padding: .5rem .95rem;
+  border: 1px solid var(--hairline-strong, var(--muted, #6a635a));
+  border-radius: var(--radius, .2rem);
   background: var(--surface, #f8f5ef);
   color: var(--ink, #302d29);
+  /* The face is the host page's own (a papal reader's serif, the reader
+     toolbar's interface face); only the weight marks it as a control. */
   font: inherit;
-  line-height: 1.5;
+  font-weight: 600;
+  line-height: 1.4;
   text-decoration: none;
   vertical-align: middle;
+  white-space: nowrap;
   cursor: pointer;
 }
+/* The action itself carries the page's accent: Generate PDF on the print page
+   and the link that leads to it from a reader. */
+:is(.native-print-action, .native-print-actions [data-native-print-start]) {
+  border-color: var(--section-accent, var(--rubric, #8f3540));
+  color: var(--section-ink, var(--rubric-dark, #6f2831));
+}
+/* A small page glyph, drawn rather than fetched; it is decoration only. */
+:is(.native-print-action, .native-print-actions [data-native-print-start])::before {
+  content: "";
+  flex: none;
+  width: .7em;
+  height: .9em;
+  border: 1.5px solid currentColor;
+  border-radius: 1px;
+  background: linear-gradient(currentColor, currentColor) 50% 35% / 55% 1.5px no-repeat,
+    linear-gradient(currentColor, currentColor) 50% 65% / 55% 1.5px no-repeat;
+  opacity: .8;
+}
 .native-print-actions [data-native-print-download] {
-  border-color: var(--rubric-dark, #6f2831);
-  background: var(--rubric-dark, #6f2831);
+  border-color: var(--section-ink, var(--rubric-dark, #6f2831));
+  background: var(--section-ink, var(--rubric-dark, #6f2831));
   color: #fff;
 }
-.native-print-actions :is(button, [data-native-print-download]):hover:not(:disabled) {
-  border-color: var(--ink, #302d29);
-  text-decoration: underline;
-  text-underline-offset: .2em;
+:is(.native-print-action, .native-print-actions :is(button, [data-native-print-download])):hover:not(:disabled) {
+  background-color: color-mix(in srgb, var(--section-accent, #8f3540) 9%, var(--surface, #f8f5ef));
+  text-decoration: none;
 }
-.native-print-actions :is(button, [data-native-print-download]):focus-visible {
-  outline: 3px solid #1f5d8b;
+.native-print-actions [data-native-print-download]:hover {
+  background-color: var(--ink, #302d29) !important;
+}
+:is(.native-print-action, .native-print-actions :is(button, [data-native-print-download])):focus-visible {
+  outline: 3px solid var(--focus-ring, #1f5d8b);
   outline-offset: 2px;
 }
 .native-print-actions button:disabled {
@@ -37,6 +68,8 @@
   color: var(--muted, #6a635a);
   cursor: progress;
 }
+/* A source reader that has no reader toolbar carries the action at its head. */
+.print-actions { margin: 0 0 1.5rem; }
 .native-print-actions [hidden] { display: none !important; }
 .native-print-actions [data-native-print-status] { min-height: 1.5em; margin-block: .5rem 0; }
 /* An empty status leaves no gap; the live region stays in place for later messages. */
@@ -61,7 +94,7 @@
   background: var(--surface, #f8f5ef);
   box-shadow: 0 .4rem 1.2rem rgba(63, 52, 42, .16);
   color: var(--ink, #302d29);
-  font: .8125rem/1.4 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font: .8125rem/1.4 var(--font-ui, system-ui, sans-serif);
   overflow: visible;
 }
 .native-print-popover__head { display: flex; align-items: center; gap: .5rem; }
@@ -91,7 +124,7 @@
   cursor: pointer;
 }
 .native-print-popover__close:hover { color: var(--ink, #302d29); background: var(--line, #d2c8ba); }
-.native-print-popover :is(a, button):focus-visible { outline: 2px solid #1f5d8b; outline-offset: 1px; }
+.native-print-popover :is(a, button):focus-visible { outline: 2px solid var(--focus-ring, #1f5d8b); outline-offset: 1px; }
 .native-print-popover__bar {
   height: 4px;
   margin-top: .3rem;
@@ -128,12 +161,12 @@
 }
 
 @media (forced-colors: active) {
-  .native-print-actions :is(button, [data-native-print-download]) { border-color: ButtonText; }
+  :is(.native-print-action, .native-print-actions :is(button, [data-native-print-download])) { border-color: ButtonText; }
   .native-print-actions button:disabled { border-color: GrayText; color: GrayText; }
-  .native-print-actions :is(button, [data-native-print-download]):focus-visible { outline-color: Highlight; }
+  :is(.native-print-action, .native-print-actions :is(button, [data-native-print-download])):focus-visible { outline-color: Highlight; }
   .native-print-popover { border-color: CanvasText; }
   .native-print-popover__bar { border: 1px solid CanvasText; }
   .native-print-popover__fill { background: Highlight; }
   .native-print-popover :is(a, button):focus-visible { outline-color: Highlight; }
 }
-@media print { :is(.native-print-actions, .native-print-popover) { display: none !important; } }
+@media print { :is(.native-print-actions, .native-print-popover, .print-actions, .native-print-action) { display: none !important; } }

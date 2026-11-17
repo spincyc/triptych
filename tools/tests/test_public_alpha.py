@@ -211,6 +211,9 @@ class PublicAlphaTest(unittest.TestCase):
             "masses": [{
                 **{field: mass[field] for field in
                    ("key", "name", "kind", "season", "date", "coverage")},
+                # The producer writes `listing` on every descriptor, null
+                # where the Mass carries no formulary-list presentation.
+                "listing": mass.get("listing"),
                 "forms": [{field: form.get(field) for field in ("id", "name", "ordinal")}
                           for form in mass.get("forms") or []],
             } for mass in masses],
@@ -367,6 +370,30 @@ class PublicAlphaTest(unittest.TestCase):
         self.assertEqual(
             self.tool.page_classes("CONTRIBUTING.md", "contributing.html"),
             "page-shell page-utility",
+        )
+        # A source reader wears the colour and shelf of the instrument that
+        # lists it (guidance/corpus-browser-vision.md, 2026-11-16).
+        papal = "papal-documents/1751-02-20--example--en.html"
+        self.assertEqual(
+            self.tool.page_classes(papal, papal),
+            "page-shell page-reader reading section-toned section-white",
+        )
+        self.assertIn("Papal Encyclicals", self.tool.breadcrumb(papal, papal))
+        self.assertIn('href="../encyclicals/index.html"', self.tool.breadcrumb(papal, papal))
+        printed = "print/gpt/liturgy/roman-rite/1962/reference/guide.html"
+        self.assertEqual(
+            self.tool.page_classes(printed, printed),
+            "page-shell page-reader reading section-toned section-red",
+        )
+        printed_papal = "print/" + papal
+        self.assertIn("section-white", self.tool.page_classes(printed_papal, printed_papal))
+        self.assertIn('href="../../encyclicals/index.html"', self.tool.breadcrumb(printed_papal, printed_papal))
+        printed_bible = "print/bibles/douay-rheims.html"
+        self.assertEqual(self.tool.breadcrumb(printed_bible, printed_bible), "")
+        plan = "reading-plans/narrative-spine-story-douay-rheims.html"
+        self.assertEqual(
+            self.tool.page_classes(plan, plan),
+            "page-shell page-reader reading section-toned section-gold",
         )
 
     def test_catalog_render_rejects_internal_reader_labels(self) -> None:
@@ -939,9 +966,12 @@ class PublicAlphaTest(unittest.TestCase):
         self.assertIn("No publications from this section", empty)
 
     def test_source_first_print_link_remains_actionable_after_rewriting(self) -> None:
+        # A catalogue names the page it opens; a format label such as
+        # `Print options` becomes `Print edition` (guidance/repository.md,
+        # "Catalog links name documents, not formats", 2026-11-16).
         link = "[Print options](../print/gpt/work.html?view=print#edition)\n"
         rewritten = self.tool.rewrite_links("library/test.md", "library/test.html", link, {("gpt", "work")})
-        self.assertEqual(rewritten, link)
+        self.assertEqual(rewritten, "[Print edition](../print/gpt/work.html?view=print#edition)\n")
 
     def test_source_first_mixed_pdf_html_row_accepts_both_provider_markers(self) -> None:
         self.add_claude_publication("work", "release")
@@ -1937,7 +1967,10 @@ class PublicAlphaTest(unittest.TestCase):
             "--section-line:",
             ".section-toned h2",
             ".section-toned blockquote",
-            ".section-toned tbody tr:nth-child(even)",
+            # Tables carry the section colour in their head and hover row
+            # (corpus-browser-vision.md, "Tables", 2026-11-16), not zebra rows.
+            ".section-toned table {",
+            "--table-head-ink: var(--section-ink);",
             ".section-toned > h2::before",
         ):
             self.assertIn(token, css)

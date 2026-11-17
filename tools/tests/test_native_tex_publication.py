@@ -511,16 +511,32 @@ class PublicAlphaNativeTeXTest(unittest.TestCase):
         self.assertEqual(row["also"], corpus["works"][0]["editions"][0]["also"])
         self.assertEqual((self.root / relative).read_bytes(), original)
 
-    def test_legacy_pdf_catalog_action_generates_native_pdf_and_preserves_query_and_fragment(self):
+    def test_legacy_pdf_catalog_link_opens_the_document_page_and_preserves_query_and_fragment(self):
+        # Since 2026-11-16 a catalogue links each document's page; Generate PDF
+        # lives at the top of that page, never in the catalogue table.
         rewritten = self.tool.rewrite_links(
             "library/test.md", "library/test.html",
             "[PDF](../pdf/gpt/work.pdf?view=print#edition)\n", {("gpt", "work")},
         )
-        self.assertEqual(rewritten,
-            "[Generate PDF](../print/gpt/work.html?print=1&view=print#edition)\n")
+        self.assertEqual(rewritten, "[Read](../web/gpt/work.html?view=print#edition)\n")
+        self.assertNotIn("print=1", rewritten)
+        # A PDF link beside the Read link of the same document collapses to one link.
+        self.assertEqual(self.tool.rewrite_links(
+            "library/test.md", "library/test.html",
+            "| **Work** | [PDF](../pdf/gpt/work.pdf) · [Read](../web/gpt/work.html) | — |\n",
+            {("gpt", "work")},
+        ), "| **Work** | [Read](../web/gpt/work.html) | — |\n")
         self.assertIsNone(self.tool.source_to_output(
             "library/test.md", "library/test.html", "../pdf/gpt/held.pdf", {("gpt", "work")},
         ))
+
+    def test_non_catalogue_pdf_link_still_requests_the_native_pdf(self):
+        rewritten = self.tool.rewrite_links(
+            "docs/test.md", "docs/test.html",
+            "[PDF](../pdf/gpt/work.pdf?view=print#edition)\n", {("gpt", "work")},
+        )
+        self.assertEqual(rewritten,
+            "[Generate PDF](../print/gpt/work.html?print=1&view=print#edition)\n")
 
     def test_reader_link_without_a_reviewed_reader_leads_to_its_print_page(self):
         rewritten = self.tool.rewrite_links(
@@ -529,7 +545,8 @@ class PublicAlphaNativeTeXTest(unittest.TestCase):
             {("gpt", "work"), ("gpt", "work-synthesis")},
         )
         self.assertEqual(rewritten,
-            "[Read](../web/gpt/work.html) · [Synthesis](../print/gpt/work-synthesis.html#top)\n")
+            "[Read](../web/gpt/work.html) · [Synthesis<span class=\"catalogue-format\"> print edition</span>]"
+            "(../print/gpt/work-synthesis.html#top)\n")
 
     def install_reviewed_loader(self, extra=""):
         route = "native-tex/wasmtex-2026-47ff73bab1a2e548/wasmtex-pdftex.js"

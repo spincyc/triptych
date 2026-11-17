@@ -7,6 +7,7 @@
   const Adapters = window.LiturgyReaderStateAdapters;
   const Shell = window.TriptychReaderShell;
   const SearchController = window.TriptychProperSearchController;
+  const ListPresentation = window.TriptychProperSearch || null;
   const Compare = window.TriptychPropersCompare;
   const Study = window.TriptychPropersStudy;
   let ReadPayload = window.TriptychPropersReadPayload;
@@ -52,6 +53,7 @@
   const missalSelect = document.getElementById('reader-missal');
   const typeSelect = document.getElementById('reader-type');
   const formularySelect = document.getElementById('reader-formulary');
+  const formularyNotes = document.getElementById('reader-formulary-notes');
   const massFormField = document.getElementById('reader-mass-form-field');
   const massFormSelect = document.getElementById('reader-mass-form');
   if ((!massFormField || !massFormSelect) && (massFormField || massFormSelect ||
@@ -188,10 +190,16 @@
     return month >= 1 && month <= 12 && day >= 1 && day <= 31 ? [month, day] : null;
   }
 
+  // The data's list season groups the Mass (its own season is unchanged).
   function massGroup(mass) {
-    if (mass.season) return T.titleCase(mass.season);
+    const season = ListPresentation ? ListPresentation.listSeason(mass) : mass.season;
+    if (season) return T.titleCase(season);
     const date = massDate(mass);
     return date ? MONTHS[date[0] - 1] : null;
+  }
+
+  function showFormularyNotes(notes) {
+    if (ListPresentation) ListPresentation.showListNotes(formularyNotes, formularySelect, notes);
   }
 
   function groupByKind(masses) {
@@ -1039,13 +1047,16 @@
     const group = groups.find(function (row) { return row.kind === kind; });
     const masses = group ? group.masses : [];
     const language = orationsSelect.value || T.SOURCE_LANGUAGE;
+    const notes = ListPresentation ? ListPresentation.listNotes(masses) : [];
     T.fillSelect(formularySelect, masses.map(function (mass) {
       const coverage = (mass.coverage && mass.coverage.languages || []).find(function (row) {
         return row.lang === language;
       });
-      return { value: mass.key, label: (mass.name || mass.key) + (coverage
+      const mark = ListPresentation ? ListPresentation.listMark(mass, notes) : '';
+      return { value: mass.key, label: (mass.name || mass.key) + (mark ? ' ' + mark : '') + (coverage
         ? ' — ' + T.orationLanguageLabel(coverage) : ' — coverage not assessed'), group: massGroup(mass) };
     }));
+    showFormularyNotes(notes);
     placeholder(formularySelect, 'Choose a formulary…');
     if (value && masses.some(function (mass) { return mass.key === value; })) formularySelect.value = value;
   }
@@ -1181,6 +1192,7 @@
     const serial = ++runtime.browseSerial;
     typeSelect.replaceChildren();
     formularySelect.replaceChildren();
+    showFormularyNotes([]);
     fillMassForms(null, null);
     orationsSelect.replaceChildren();
     witnessSelect.replaceChildren();

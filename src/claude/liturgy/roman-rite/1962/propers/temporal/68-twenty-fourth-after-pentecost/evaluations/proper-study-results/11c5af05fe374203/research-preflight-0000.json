@@ -1,0 +1,14 @@
+{
+  "disposition": "FAIL",
+  "findings": [
+    {
+      "check": "source-projection-current",
+      "id": "GATE-SOURCE-PROJECTION-CURRENT",
+      "problem": "command exited 2: source-reader: <repo>/.scratch/browser-data-work/structure/sources has drifted from the sources at catalogue/0000.json, catalogue/0001.json, catalogue/0002.json (and 18952 more); regenerate the working projection, review it, then record browser products explicitly",
+      "required_result": "The strict working source-library projection must reflect the registered records. Generate it after source registration; aggregate browser products wait until publication declarations and release records exist.",
+      "severity": "blocking"
+    }
+  ],
+  "iteration": 0,
+  "stage": "research-preflight"
+}

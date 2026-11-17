@@ -436,9 +436,9 @@ key = "gospel"
 name = "Gospel"
 refs = ["Matthew 24:15-35"]
 loci = ["Matt.24.15", "Matt.24.16", "Matt.24.17", "Matt.24.18", "Matt.24.19", "Matt.24.20", "Matt.24.21", "Matt.24.22", "Matt.24.23", "Matt.24.24", "Matt.24.25", "Matt.24.26", "Matt.24.27", "Matt.24.28", "Matt.24.29", "Matt.24.30", "Matt.24.31", "Matt.24.32", "Matt.24.33", "Matt.24.34", "Matt.24.35"]
-status = "composition-only"
+status = "dated"
 reason = ""
-publication_status = "composition-only"
+publication_status = "dated"
 publication_reason = ""
 
 [[elements.claims]]
@@ -1149,6 +1149,124 @@ locus = "Matt.24.35"
 inherited = true
 scope = "Matt"
 
+[[elements.claims]]
+relation = "narrated-event"
+subject = "life-of-christ.prophecies-on-mount-olivet"
+title = "Jesus foretells the destruction of Jerusalem, His second coming and the judgement"
+label = "A.D. 29, derived from Maas's A.U.C. 782 final Jerusalem visit"
+date = "29 A.D."
+precision = "year"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "derived"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08377a-f81e2c23-article-text", "passage.catholic-encyclopedia.volume-8.new-york-1910.maas-ninth-journey-olivet-prophecies", "passage.catholic-encyclopedia.volume-8.new-york-1910.maas-journeys-six-seven-nine", "bible:douay-rheims:Matt.24.3", "bible:douay-rheims:Matt.26.1"]
+
+[[elements.claims.reaches]]
+locus = "Matt.24.15"
+inherited = false
+scope = "Matt.24.3-35"
+
+[[elements.claims.reaches]]
+locus = "Matt.24.16"
+inherited = false
+scope = "Matt.24.3-35"
+
+[[elements.claims.reaches]]
+locus = "Matt.24.17"
+inherited = false
+scope = "Matt.24.3-35"
+
+[[elements.claims.reaches]]
+locus = "Matt.24.18"
+inherited = false
+scope = "Matt.24.3-35"
+
+[[elements.claims.reaches]]
+locus = "Matt.24.19"
+inherited = false
+scope = "Matt.24.3-35"
+
+[[elements.claims.reaches]]
+locus = "Matt.24.20"
+inherited = false
+scope = "Matt.24.3-35"
+
+[[elements.claims.reaches]]
+locus = "Matt.24.21"
+inherited = false
+scope = "Matt.24.3-35"
+
+[[elements.claims.reaches]]
+locus = "Matt.24.22"
+inherited = false
+scope = "Matt.24.3-35"
+
+[[elements.claims.reaches]]
+locus = "Matt.24.23"
+inherited = false
+scope = "Matt.24.3-35"
+
+[[elements.claims.reaches]]
+locus = "Matt.24.24"
+inherited = false
+scope = "Matt.24.3-35"
+
+[[elements.claims.reaches]]
+locus = "Matt.24.25"
+inherited = false
+scope = "Matt.24.3-35"
+
+[[elements.claims.reaches]]
+locus = "Matt.24.26"
+inherited = false
+scope = "Matt.24.3-35"
+
+[[elements.claims.reaches]]
+locus = "Matt.24.27"
+inherited = false
+scope = "Matt.24.3-35"
+
+[[elements.claims.reaches]]
+locus = "Matt.24.28"
+inherited = false
+scope = "Matt.24.3-35"
+
+[[elements.claims.reaches]]
+locus = "Matt.24.29"
+inherited = false
+scope = "Matt.24.3-35"
+
+[[elements.claims.reaches]]
+locus = "Matt.24.30"
+inherited = false
+scope = "Matt.24.3-35"
+
+[[elements.claims.reaches]]
+locus = "Matt.24.31"
+inherited = false
+scope = "Matt.24.3-35"
+
+[[elements.claims.reaches]]
+locus = "Matt.24.32"
+inherited = false
+scope = "Matt.24.3-35"
+
+[[elements.claims.reaches]]
+locus = "Matt.24.33"
+inherited = false
+scope = "Matt.24.3-35"
+
+[[elements.claims.reaches]]
+locus = "Matt.24.34"
+inherited = false
+scope = "Matt.24.3-35"
+
+[[elements.claims.reaches]]
+locus = "Matt.24.35"
+inherited = false
+scope = "Matt.24.3-35"
+
 [[elements.publication_claims]]
 relation = "composition"
 subject = "composition.gospel-of-matthew"
@@ -1856,6 +1974,124 @@ scope = "Matt"
 locus = "Matt.24.35"
 inherited = true
 scope = "Matt"
+
+[[elements.publication_claims]]
+relation = "narrated-event"
+subject = "life-of-christ.prophecies-on-mount-olivet"
+title = "Jesus foretells the destruction of Jerusalem, His second coming and the judgement"
+label = "A.D. 29, derived from Maas's A.U.C. 782 final Jerusalem visit"
+date = "29 A.D."
+precision = "year"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "derived"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08377a-f81e2c23-article-text", "passage.catholic-encyclopedia.volume-8.new-york-1910.maas-ninth-journey-olivet-prophecies", "passage.catholic-encyclopedia.volume-8.new-york-1910.maas-journeys-six-seven-nine", "bible:douay-rheims:Matt.24.3", "bible:douay-rheims:Matt.26.1"]
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.24.15"
+inherited = false
+scope = "Matt.24.3-35"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.24.16"
+inherited = false
+scope = "Matt.24.3-35"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.24.17"
+inherited = false
+scope = "Matt.24.3-35"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.24.18"
+inherited = false
+scope = "Matt.24.3-35"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.24.19"
+inherited = false
+scope = "Matt.24.3-35"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.24.20"
+inherited = false
+scope = "Matt.24.3-35"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.24.21"
+inherited = false
+scope = "Matt.24.3-35"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.24.22"
+inherited = false
+scope = "Matt.24.3-35"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.24.23"
+inherited = false
+scope = "Matt.24.3-35"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.24.24"
+inherited = false
+scope = "Matt.24.3-35"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.24.25"
+inherited = false
+scope = "Matt.24.3-35"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.24.26"
+inherited = false
+scope = "Matt.24.3-35"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.24.27"
+inherited = false
+scope = "Matt.24.3-35"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.24.28"
+inherited = false
+scope = "Matt.24.3-35"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.24.29"
+inherited = false
+scope = "Matt.24.3-35"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.24.30"
+inherited = false
+scope = "Matt.24.3-35"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.24.31"
+inherited = false
+scope = "Matt.24.3-35"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.24.32"
+inherited = false
+scope = "Matt.24.3-35"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.24.33"
+inherited = false
+scope = "Matt.24.3-35"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.24.34"
+inherited = false
+scope = "Matt.24.3-35"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.24.35"
+inherited = false
+scope = "Matt.24.3-35"
 
 [[elements]]
 key = "offertory"

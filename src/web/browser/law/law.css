@@ -24,21 +24,23 @@
 .field-wide { flex: 3 1 18rem; }
 .field-action { display: flex; align-items: flex-end; }
 
+/* The page's one primary action, drawn as the site's other primary action,
+   Generate PDF, is (native-print.css): the section's accent edge and ink on the
+   raised surface, a faint accent wash on hover, the shared size and radius. */
 .submit {
-  padding: 0.42rem 1rem;
+  min-height: var(--control-min, 2.75rem);
+  padding: 0.5rem 1rem;
   border: 1px solid var(--section-accent);
-  border-radius: 4px;
-  background: var(--section-row);
+  border-radius: var(--radius, 0.2rem);
+  background: var(--panel);
   color: var(--section-ink);
-  font-family: var(--sans);
-  font-size: 0.85rem;
+  font: inherit;
   font-weight: 600;
   cursor: pointer;
 }
 
-.submit:hover,
-.submit:focus {
-  background: var(--section-pale);
+.submit:hover {
+  background: color-mix(in srgb, var(--section-accent) 9%, var(--panel));
 }
 
 /* --- The canon: the page's primary view -------------------------------- */
@@ -268,7 +270,7 @@
   margin: 0.6rem 0 0;
   padding: 0.55rem 0.7rem;
   border: 1px dashed var(--section-line);
-  border-radius: 5px;
+  border-radius: var(--radius, 0.2rem);
 }
 
 .claim-head {
@@ -373,7 +375,7 @@
   padding: 0.5rem 0.7rem;
   border: 1px solid var(--section-line);
   border-left: 4px solid var(--section-accent);
-  border-radius: 5px;
+  border-radius: var(--radius, 0.2rem);
 }
 
 /* A station with no act behind it is drawn as the weaker claim it is: the same
@@ -432,7 +434,7 @@
   margin: 0.25rem 0;
   padding: 0.35rem 0.6rem;
   border: 1px solid var(--section-line);
-  border-radius: 4px;
+  border-radius: var(--radius, 0.2rem);
 }
 
 .touched-summary {
@@ -475,7 +477,7 @@
   margin: 0 0 1.2rem;
   padding: 0.7rem 0.85rem;
   border: 1px solid var(--section-line);
-  border-radius: 6px;
+  border-radius: var(--radius, 0.2rem);
 }
 
 .body-note {

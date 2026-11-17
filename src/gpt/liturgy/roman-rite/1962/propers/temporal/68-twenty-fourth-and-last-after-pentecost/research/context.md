@@ -2,10 +2,12 @@ appointed_text_completeness = "complete"
 
 # Twenty-fourth and Last Sunday after Pentecost: context and source plan
 
-Resolved and source images inspected on 16 November 2026 (UTC), for Sunday,
-22 November 2026. This record establishes the celebration, complete appointment
-inventory and source plan; it is not a transcription or a completed reception
-study.
+Context independently renewed on 17 November 2026 (UTC), for the upcoming
+Sunday, 22 November 2026. The exact primary evidence acquired for this leaf on
+16 November was reused, rehashed and inspected; no new network retrieval is
+claimed. This record establishes the celebration, complete appointment inventory
+and source plan. It does not renew the earlier production's research or
+publication acceptance.
 
 ## Identity and governing authority
 
@@ -32,15 +34,17 @@ a rights restriction. No research handoff was supplied.
 
 ## Computation, dated witness and occurrence
 
-The repository's `calendar-days day` was independently run for `roman-1962`
-and 22 November 2026. It returns the Last Sunday and St Cecilia as candidates,
+The repository's `calendar-days day` was independently rerun on 17 November
+for `roman-1962` and 22 November 2026. It returns the Last Sunday and
+St Cecilia as candidates,
 and explicitly leaves rank adjudication undone. Its anchor queries give Easter
 on 5 April, Pentecost on 24 May, Trinity Sunday on 31 May, and the First Sunday
 of Advent on 29 November 2026. The Sunday span from 31 May through 22 November
 is 175 days, hence 26 inclusive Sunday slots. These are computed facts, not a
 dated Ordo's authority to celebrate.
 
-RG 18, read directly on CMAA physical leaf 10, supplies the governing rule.
+RG 18, independently reread on CMAA physical leaf 10 on 17 November,
+supplies the governing rule.
 In a 26-Sunday year its paragraph (b) inserts the Fifth and Sixth after
 Epiphany in nominal slots 24 and 25; the final paragraph always reserves the
 formulary numbered XXIV after Pentecost for the last place. Thus the civil
@@ -51,17 +55,21 @@ compressed when an earlier slot meets a feast.
 
 The official institutional
 [ICRSP Province of France November 2026 Ordo](https://icrspfrance.fr/ordo.php?d=2026-11-01#j2026-11-22)
-was independently consulted at entry `j2026-11-22`. It identifies Sunday,
+was independently reread in the retained original HTML at entry `j2026-11-22`
+on 17 November. It identifies Sunday,
 22 November 2026 as the twenty-sixth and last Sunday after Pentecost, II class,
 green, with Gloria, Creed and the Trinity Preface. Its Mass paragraph appoints
 the Last Sunday's own *Dicit Dominus* Mass. The complete monthly HTML response
 was acquired on 16 November 2026: 110,049 bytes, SHA-256
 `80547a13ad73edc5ab2840a9880b32279e37796d6398a547e4415c3689543c36`.
-The dated heading, flags, Office and Mass paragraphs were read at physical
-HTML lines 1096–1129; acquisition of the whole monthly response is not a claim
-to have inspected every day. This new delivery differs from the registered
-earlier November response; its identity and November 22 inspection must be
-registered rather than attached to that earlier artifact's hash or inspection.
+The exact response was rehashed on 17 November, and the dated heading, flags,
+Office and Mass paragraphs were reread at physical HTML lines 1096–1129.
+Acquisition of the whole monthly response is not inspection of every day.
+This delivery is already registered as
+`artifact.icrsp-france.ordo.2026-11-16-web.html-80547a13`; its manifest and this
+leaf's source records were read. It remains distinct from the earlier November
+response and from other registered deliveries of the same monthly URL. Neither
+an earlier inspection nor another delivery's hash substitutes for these bytes.
 
 The Institute's Mass paragraph also prescribes *Or. pro Papa*. This is its
 institutional direction, not an extra universal proper prayer or an option
@@ -71,13 +79,13 @@ not create a Mass reading cycle. This dated institutional witness confirms the
 temporal assignment within its own scope; the Missal and general calendar
 control this study's universal inventory.
 
-The [FSSPX dated Ordo](https://ordo.fsspx.org/day/2026-11-22?lang=en)
-was also read through its readable web response. Its dated title is XXVI Sunday
-after Pentecost; its Mass gives Col 1:9–14 and Mt 24:15–35, with the Trinity
-Preface. A separate direct attempt to acquire its original HTML returned HTTP
-403. No acquired-byte hash, source-text adoption or full-response verification
-is claimed for that corroborating consultation. The successful ICRSP response
-and Missal inspection do not depend on that failed acquisition.
+The earlier research also records a consultation of the
+[FSSPX dated Ordo](https://ordo.fsspx.org/day/2026-11-22?lang=en) through a
+readable service response and an HTTP 403 on direct original-HTML acquisition.
+Its separately registered derived Markdown is not an original-HTML witness.
+Neither that consultation nor the failed request was repeated on 17 November,
+and no renewed verification is claimed for it. The present occurrence judgment
+rests on the original ICRSP response and Missal images, not that corroboration.
 
 The Sanctorale's 22 November heading, printed p. 722, physical leaf 803,
 identifies St Cecilia, virgin and martyr, as III class. RG 91's precedence
@@ -96,7 +104,7 @@ Physical PDF leaves below are one-based, beginning with the first PDF page,
 not the viewer's printed-page labels. All eleven entries are required in this
 resolved Mass. Psalm citations give the Missal's Vulgate number first and the
 common modern Hebrew number in parentheses. Actual verse correspondence must
-still be checked in each English Bible witness.
+be preserved when the existing English Bible comparisons are rechecked.
 
 | Key | Liturgical place | Appointed text and boundary | Exact controlling locus |
 | --- | --- | --- | --- |
@@ -116,9 +124,13 @@ The printed Last-Sunday heading, not the running head, fixes the beginning:
 most of p. 422 still finishes the resumed Sixth after Epiphany. The Last
 Sunday's own Introit begins at no. 1769 below that preceding Postcommunion.
 Its inventory is printed in full; no cross-reference to another Sunday's
-lessons or orations is needed to supply it. The five chants have the same
-appointments as the late after-Pentecost sequence, but their actual Last-Sunday
-printings, repetitions and boundaries remain the target for collation.
+lessons or orations is needed to supply it. The actual Last-Sunday printings,
+repetitions and boundaries, rather than a different Sunday's chant text,
+remain the target for collation.
+The Gospel continues across the page turn: p. 423 ends *cum videritis*,
+and p. 424 begins *haec omnia*, completing Mt 24:33–35 before the Creed cue.
+The full unnotated Trinity Preface on p. 293 includes its dialogue and the
+printed Sanctus; the Sanctus is common ritual context, not a twelfth proper.
 
 There are no alternative lesson lengths, optional proper chants, Tract,
 Sequence, ritual blessing, seasonal replacement or proper Canon insertion in
@@ -134,22 +146,30 @@ post-Mass prayer has been appointed by this record.
 
 ## Direct inspection and evidence ceiling
 
-The existing source-library record was read before acquisition:
+The existing source-library record was reread before reusing the evidence:
 `artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf`.
 Its [CMAA delivery](https://media.churchmusicassociation.org/pdf/missale62.pdf)
-was acquired in full on 16 November 2026. The 82,815,941 bytes match its
+was acquired for this leaf in full on 16 November 2026, not newly acquired
+on 17 November. The 82,815,941 retained bytes were rehashed and match the
 registered SHA-256
 `648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a`.
-Physical leaves 10, 15, 16, 374, 503, 504, 505 and 803 were rendered and
-opened as page images. The checks above concern appointment, rank, boundaries,
-conclusion cues and inventory. No renewed word-for-word Latin transcription,
-historical-source image collation, English collation or reception sweep is
-claimed for this stage.
+Physical leaves 10, 15, 16, 374, 503, 504, 505 and 803 were newly rendered
+from those exact bytes at 200 dpi and opened individually on 17 November.
+The checks concern appointment, rank, boundaries, conclusion cues and inventory.
+The historical Pustet and Lasance images identified below were also reopened
+for their source routes and boundaries. These inspections are not a newly
+completed word-for-word Latin or English collation or a reception sweep.
 
 The Last Sunday's biblical citation headings agree with the resolved inventory
-at the inspected loci. No boundary discrepancy was found there. Research must
-still record all differences between Missal chant forms and their biblical
-verses, and between target and historical witnesses. In particular, the
+at the inspected loci. The eleven appointments remain unchanged. The existing
+`propers/verified.md` comparison for the Gospel formerly said that T ends
+its first page after *omnia haec*, with *fiant* on p. 424. The newly inspected
+T images instead show the page break stated above, before *haec omnia*.
+The renewed research corrects that audit sentence; no appointed verse is
+removed or added by the correction.
+
+The existing comparison audit must be rechecked against the actual witnesses,
+not inherited as an acceptance. In particular, the
 Offertory repeats words not repeated in the Alleluia; the Secret's conclusion
 cue is longer than those of the other two prayers; and the Introit omits and
 adapts material from its cited Jeremiah verses. A reference to the same verse
@@ -158,31 +178,50 @@ does not establish identical liturgical wording.
 ## Existing source library and lawful source plan
 
 The relevant library records, Latin-provenance and historical-English
-inventories were read as source leads, not accepted as a substitute for this
-leaf's inspections. Research will retain a focused unedited source pull in
-`propers/retrieved.txt`, facsimile-collated appointed texts and comparison audit
-in `propers/verified.md`, and claim-level research and source roles in
-`research/scope.md` and `research/source-bindings.toml`.
+inventory rows, existing bindings and review dependencies were read before
+reuse. `source-library validate` passed on 17 November; its metadata-only
+validation is not source-image inspection. A focused unedited source pull
+already exists in `propers/retrieved.txt`; appointed transcriptions and
+comparisons in `propers/verified.md`; and research and source roles in
+`research/scope.md` and `research/source-bindings.toml`. Those records supply
+inspectable evidence, not this fresh run's verdict. The following plan names
+the retained routes and the work still owed by the later research owner.
 
 | Material | Existing exact source route | Remaining research check |
 | --- | --- | --- |
-| Complete target Latin and appointments | Registered 1962 CMAA artifact; pp. 422–424/nos. 1769–1778; p. 293/no. 1082; RG 18, 91, 109 and 111 | Collate every word, introductory addition, repetition, punctuation, conclusion and boundary on the images; retain the independent appointment and rubric inspections |
-| Historical Latin orations | `src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/last-sunday-after-pentecost-orations.toml`; Collect printed p. 359, text-layer lines 52746–52753; Secret p. 360, lines 52893–52901; Postcommunion p. 360, lines 52913–52921; corresponding three `last-sunday-after-pentecost-*` passages under the registered 2026-09-03 Latin editorial projection | Reopen the historical page images. The older record expressly has only OCR inspection here, and its ledger supplies damaged readings through 1604/1570 corroboration; do not promote those inferences to an 1862 image check. Verify spelling, pointing and the Secret's longer target conclusion separately |
+| Complete target Latin and appointments | Registered 1962 CMAA artifact; pp. 422–424/nos. 1769–1778; p. 293/no. 1082; RG 18, 91, 109 and 111 | Appointment and boundaries independently rechecked here. Recheck the retained transcription word for word, including introductions, repetitions, punctuation and conclusions; correct the Gospel page-break audit sentence identified above |
+| Historical Latin orations | Pustet Ratisbon 1862 original images at printed pp. 359–360, archive images 000445–000446; registered bounded archive `last-sunday-trinity-archive-pages-20261116-b1129c12`; `passages/last-sunday-after-pentecost-orations.toml` and the three corresponding `last-sunday-after-pentecost-*` passages under the registered 2026-09-03 Latin editorial projection | Original images independently reopened on 17 November. They make the formerly damaged OCR words readable; do not carry the older OCR-only ceiling into the new inspection or rewrite its historical claim. Recheck each entire prayer against T, including spelling, pointing and the Secret's longer target conclusion |
 | Latin biblical lessons and chants | Target images above; the Last-Sunday appointment at Pustet 1862 printed pp. 359–360 and any explicit chant references it gives; `edition.catholic-church.vulgata-clementina.ebible-latvuc` for the complete biblical contexts and verse-keyed comparison | Establish each complete actual unit's preexisting wording, including adapted Jeremiah, liturgical introductions and the two different uses of Ps 129. The registered Vulgate is an electronic Clementine transcription, not a chant witness; neither its verse address nor its Gallican psalm wording establishes the chant's actual form |
-| English biblical passages | `edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581`, with its complete Gutenberg text and registered per-book verse artifacts | Read complete literary contexts and quote this composite electronic Challoner witness accurately. It is not one identified historical printing or an approved liturgical translation. Handle liturgical additions and chant variants only through an identified human witness; compose no substitute translation |
-| English Collect, Secret and Postcommunion | `roman-1962-proper-translations-v1.toml`, the three `last-sunday-after-pentecost` rows; Lasance/Walsh revised-1945 expression, c. 1955–56 printing: Collect printed p. 737/IA n734, Secret and Postcommunion p. 740/IA n737. The exact source-image passages are `resume-orations-phase2-2026-10-23-verify-last-sunday-after-pentecost--main--collect--all--1`, and corresponding `secret` and `postcommunion` records under that edition | Reopen and independently inspect those actual pages and their registered publication transcriptions. Distinguish zero-based IA leaves from one-based PDF pages (Collect 735; Secret/Postcommunion 738). Preserve actual historical English and abbreviated conclusions; the Secret's conclusion-table relationship is not literal equality of the whole Latin unit |
-| Alternative English orations | Cummiskey, Philadelphia 1861, `artifacts/temporal-orations-en/temporal-orations-en.tsv`, final three `post-pentecosten-ultima` rows: Collect printed p. 457/IA n465; Secret and Postcommunion p. 459/IA n467 | Reopen source images before choosing this alternative; verify the own heading, prayer identities and literal short conclusions. Do not import that pre-1955 book's extra prayers or rubrics |
-| Complete Trinity Preface, Latin and English | Target p. 293/no. 1082; Cummiskey 1861 `praefationes-la` and `praefationes-en` artifacts, common opening and Trinity insertion at printed pp. xxviii–xxix/IA n38–39; its `ordinarium-oblatio` records supply the dialogue at p. xxvii. Alternative complete historical English: Lasance passage `english-completion-20261029-ordinary-prefaces-complete-a-trinitate`, printed pp. 773–774, original PDF pages 772–773 | Check the entire Latin/English prayer and source-owned assembly, not only the Trinity insertion. The Lasance registered prayer explicitly excludes dialogue and Sanctus; Cummiskey's asterisk marks an insertion into the common opening. Collate every reproduced junction against its own received source; no invented prayer expansion |
-| Dated occurrence and excluded institutional addition | Exact new ICRSP response and bounded November 22 inspection identified above; Missal images supply universal authority | Register the actual dated delivery and inspection without retaining uncleared modern HTML in public sources. The earlier response's inspection reached November 15, not this date. Keep the failed direct FSSPX acquisition and its weaker consultation status distinct |
+| English biblical passages | `edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581`, with its complete Gutenberg text and registered per-book verse artifacts; the distinct complete historical liturgical English in Lasance printed pp. 736–740/PDF 734–738 | Recheck complete literary contexts and quote the composite electronic Challoner witness accurately. It is not one identified historical printing or an approved liturgical translation. Preserve the distinction between continuous Bible quotations and Lasance's human renderings of adapted chants and lesson openings; compose no substitute translation |
+| English Collect, Secret and Postcommunion | `roman-1962-proper-translations-v1.toml`, the three `last-sunday-after-pentecost` rows; Lasance/Walsh revised-1945 expression, c. 1955–56 printing: Collect printed p. 737/IA n734/PDF 735; Secret and Postcommunion p. 740/IA n737/PDF 738. Exact source-image passages: `resume-orations-phase2-2026-10-23-verify-last-sunday-after-pentecost--main--collect--all--1`, and corresponding `secret` and `postcommunion` records | These pages were reopened on 17 November for the source plan. Recheck every retained word and the registered publication transcriptions, preserving actual English and abbreviated conclusions. The Secret's conclusion-table relationship is not literal equality of the whole Latin unit; its English cue must not be expanded from memory |
+| Alternative English orations, unused lead | Cummiskey, Philadelphia 1861, `artifacts/temporal-orations-en/temporal-orations-en.tsv`, final three `post-pentecosten-ultima` rows: Collect printed p. 457/IA n465; Secret and Postcommunion p. 459/IA n467 | Not reopened or selected in this renewal. Reopen source images and establish the exact whole prayer before any substitution; import none of that book's older extra prayers or rubrics |
+| Complete Trinity Preface, Latin and English | T p. 293/no. 1082; Pustet printed pp. 251–252/archive images 000337–000338; Lasance dialogue PDF 770/visible printed p. 772, complete Preface and Sanctus PDF 772–773/printed pp. 773–774. The registered Lasance `english-completion-20261029-ordinary-prefaces-complete-a-trinitate` passage covers the prayer alone | Named images independently reopened for scope and junctions. Recheck common opening, entire Trinity clause, angelic conclusion, dialogue and Sanctus against each actual source. The bounded Lasance prayer passage excludes dialogue and Sanctus; the whole-PDF loci supply them separately. No invented assembly or prayer expansion |
+| Dated occurrence and excluded institutional addition | Exact registered ICRSP HTML `html-80547a13`, acquired 16 November, rehashed and its November 22 entry reread 17 November; Missal images supply universal authority | Keep the exact existing binding and delivery identity, actual dates and bounded inspection. Retain no uncleared modern HTML in public sources; do not import institutional *Or. pro Papa* or claim particular-calendar verification |
 
-The historical Missal image route is
-`artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3`,
-from Internet Archive item `bub_gb_E7sPAAAAIAAJ`. Its record warns of invalidly
-small PDF page boxes and identifies the separately registered complete original
-image archive `ia-original-page-images-tar-fd220b49`. Use the actual page images,
-resolving that delivery limitation rather than treating illegible rendering or
-damaged OCR as an absent antecedent. These historical pages have not been
-acquired or inspected in this stage.
+The adopted historical Latin image route is
+`artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-original-page-images-tar-fd220b49`,
+from Internet Archive item `bub_gb_E7sPAAAAIAAJ`, not its malformed PDF.
+The complete archive acquired for this leaf on 16 November was rehashed on
+17 November: 660,551,680 bytes, SHA-256
+`fd220b497c3cbd5186cd3562de8cf7eec1b8f2a6b399d182b15faf338b48a898`.
+The four inspected images are zero-based scandata leaves 336, 337, 444 and 445,
+respectively archive images 000337, 000338, 000445 and 000446. Their retained
+image bytes were compared exactly with the complete archive and the registered
+four-page preservation tar (3,092,480 bytes, SHA-256
+`b1129c124e9077a0b8c2bcac27a85cffe4d711ba5b15033142c1531d2fef3a89`).
+The original acquisition and 16 November inspection facts remain historical
+facts; the renewed inspection is 17 November, not another retrieval.
+
+The Lasance whole PDF acquired for this leaf on 16 November was also rehashed:
+75,268,976 bytes, SHA-256
+`6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70`.
+Its retained rasters at PDF 734–738, 770 and 772–773 were reopened on
+17 November. The heading at printed p. 736 establishes this Mass; the
+“Supplementary Mass No. 1” running head on p. 740 does not move the continuing
+Secret, Communion and Postcommunion into the next Mass. Lasance's older
+additional-prayer directions are not 1962 alternatives. Its Latin printing
+defect in Mt 24:21 is already identified in the audit; T and P, not that
+defective Latin line, control the antecedent comparison.
 
 The controlling publication routes are recorded in
 `src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml`,
@@ -196,7 +235,9 @@ route is independently witnessed preexisting Latin and the registered
 historical English, not a claim that the whole 1962 scan is freely
 redistributable. Lasance's U.S. nonrenewal basis is limited to the identified
 expression and ordinary numbered pages; its later lettered inserts are
-excluded. Cummiskey's 1861 wording has its separate U.S. public-domain basis.
+excluded. This adopts the recorded rights determination rather than claiming
+a new renewal search. Cummiskey remains an unused alternative, not an
+additional adopted text source.
 None becomes project-owned text or approved liturgical English. No modern
 Ordo translation or postconciliar text supplies this study's missing words.
 
@@ -211,9 +252,10 @@ invented additional appointed readings. The two ritual uses of Ps 129 remain
 separate appointments. The three prayers and complete Trinity Preface need
 their own textual and reception checks alongside the biblical units.
 
-Complete the passage-by-passage reception matrix and the two-to-five
-interpretation audit within this leaf; this context proposes no interpretive
-verdict. Generate biblical chronology only through `proper-chronology` and
+Independently recheck the existing passage-by-passage reception matrix and
+two-to-five-interpretation audit within this leaf; their existence is not a
+renewed acceptance, and this context proposes no interpretive verdict.
+Generate biblical chronology only through `proper-chronology` and
 the shared typed corpus, preserving all alternatives and unresolved states;
 this record supplies no biblical composition or event dates. Register all
 actually read sources, including governing calendar/rubric witnesses, and
@@ -223,7 +265,14 @@ reach them. No other proper leaf supplies liturgical text or research
 acceptance. There is no cross-family shared formulary dependency or new
 Makefile import to declare at this stage.
 
-The source-owner reservation in `main.tex` is unpublished scaffolding only.
-This stage completes context resolution and the concrete inventory/source
-plan; full text collation, reception research, source registration, authored
-documents and independent reviews remain the later owners' work.
+`main.tex` already exists as the canonical study entrypoint and was not
+overwritten or replaced with a reservation. All eleven element keys already
+exist in `proper-components.toml`; scope validation and permanent-identity
+validation passed in this renewal. No authored section, shared source record,
+other provider's publication or earlier run record was changed here.
+
+This stage completes only renewed context resolution and its inventory/source
+plan. Fresh full-text and reception research judgments, any source-registration
+updates, review closure and publication decisions remain their later owners'
+work. Particular calendars and present canonical permission to use the 1962
+book have not been researched or certified.

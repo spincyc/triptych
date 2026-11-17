@@ -250,14 +250,31 @@ class Propers(Surface):
         self.shown = ordinals
         listing = self.query_one("#propers-list", OptionList)
         listing.clear_options()
+        # The page's list presentation (adapter `catalogue`): a resumed Sunday
+        # after the Epiphany sits, by the data's order, under its Epiphanytide
+        # counterpart's heading, and a marked row's note closes its group.
+        notes = {note["mark"]: note["text"] for note in catalogue.get("notes") or []}
+        marks: list[str] = []
+
+        def close_group() -> None:
+            for mark in marks:
+                listing.add_option(Option(Ink()(f"{mark} {notes[mark]}", "italic $text-muted").line().content(),
+                                          disabled=True))
+            marks.clear()
+
         season = None
         for ordinal in ordinals:
             row = rows[ordinal]
-            if not query.strip() and row.get("season") != season:
-                season = row.get("season")
+            if not query.strip() and row.get("listSeason") != season:
+                close_group()
+                season = row.get("listSeason")
                 listing.add_option(Option(Ink()((season or row.get("kind") or "").replace("-", " "),
                                                 "bold $propers-color").content(), disabled=True))
             ink = Ink()(row["name"])
+            if row.get("mark"):
+                ink(f" {row['mark']}", "bold $propers-color")
+                if row["mark"] not in marks:
+                    marks.append(row["mark"])
             if row.get("form_name"):
                 ink(f" · {row['form_name']}", "italic")
             ink.line()
@@ -272,6 +289,7 @@ class Propers(Surface):
                 ink.line().line("  " + " · ".join(f"{one['lang']} {one['available']}/{one['occurrences']}"
                                                    for one in counts), "italic $text-muted")
             listing.add_option(Option(ink.content(), id=f"row-{ordinal}"))
+        close_group()
         active = None
         if self.reading and self.reading[0] == calendar:
             active = next((f"row-{ordinal}" for ordinal in ordinals if rows[ordinal]["key"] == self.reading[1]

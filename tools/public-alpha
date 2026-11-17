@@ -23,7 +23,7 @@ from collections import Counter, defaultdict
 from collections.abc import Callable, Iterable
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path, PurePosixPath
-from urllib.parse import parse_qsl, unquote, urlsplit
+from urllib.parse import parse_qsl, unquote, urlencode, urlsplit
 from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 # Shared CLI helpers live outside tools/ so that tmt's registry scan, which
 # requires every file in tools/ to be a registered tool, stays clean.
@@ -2617,6 +2617,25 @@ def validate_liturgical_public_data(
     return hashlib.sha256(raw).hexdigest()
 
 
+def valid_proper_listing(value: object) -> bool:
+    """A formulary-list presentation: a display season and/or one public note.
+
+    `mass-propers` owns the values (guidance/liturgy/roman-1962-propers.md
+    § Reader list presentation); this admits only their shape.
+    """
+    if not isinstance(value, dict) or not value or not set(value) <= {"season", "note"}:
+        return False
+    season, note = value.get("season"), value.get("note")
+    if season is not None and (not isinstance(season, str)
+                               or not SAFE_TYPED_KEY_RE.fullmatch(season)):
+        return False
+    return note is None or (
+        isinstance(note, str) and note.strip() == note and 0 < len(note) <= 500
+        and not any(ord(char) < 32 for char in note)
+        and "http://" not in note.casefold() and "https://" not in note.casefold()
+        and not RESTRICTED_AUTHORITY_REFERENCE_RE.search(note))
+
+
 def validate_proper_search_payload(payload: object, label: str, calendar: str) -> None:
     """Admit only a text-free, edition-qualified Proper discovery projection."""
     def fail(location: str, reason: str) -> None:
@@ -2659,9 +2678,11 @@ def validate_proper_search_payload(payload: object, label: str, calendar: str) -
     for ordinal, candidate in enumerate(root["rows"]):
         where = f"$.rows[{ordinal}]"
         row = fields(candidate, {
-            "key", "name", "kind", "season", "fixed_date", "form_id",
+            "key", "name", "kind", "season", "fixed_date", "listing", "form_id",
             "form_name", "incipits", "citations", "witnesses", "coverage",
         }, where)
+        if row["listing"] is not None and not valid_proper_listing(row["listing"]):
+            fail(f"{where}.listing", "must state only a list season and a public note")
         for field in ("key", "kind", "form_id"):
             key(row[field], f"{where}.{field}")
         identity = (row["key"], row["form_id"])
@@ -2930,7 +2951,8 @@ def _validate_proper_read_calendar(data_root: Path, row: dict, read, fail) -> tu
             "common_from", "common_sets", "coverage", "date", "key", "kind",
             "name", "propers", "registry", "season", "takes_from", "text_status",
         }
-        optional_mass_fields = {"forms", "ordinary_appointments", "ordinary_frame", "oration_relation"}
+        optional_mass_fields = {"forms", "ordinary_appointments", "ordinary_frame", "oration_relation",
+                                "listing"}
         if calendar == "postconciliar":
             optional_mass_fields.add("proper_source_paths")
         if calendar == "roman-pre-1955":
@@ -2939,6 +2961,8 @@ def _validate_proper_read_calendar(data_root: Path, row: dict, read, fail) -> tu
                 or not common_mass_fields <= set(mass)
                 or not set(mass) <= common_mass_fields | optional_mass_fields):
             fail(f"source Mass {ordinal} has unbound fields")
+        if "listing" in mass and not valid_proper_listing(mass["listing"]):
+            fail(f"source Mass {ordinal} has an invalid formulary-list presentation")
         key = mass.get("key")
         if (not isinstance(key, str)
                 or re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", key) is None
@@ -2959,6 +2983,7 @@ def _validate_proper_read_calendar(data_root: Path, row: dict, read, fail) -> tu
             "kind": mass.get("kind"),
             "season": mass.get("season"),
             "date": mass.get("date"),
+            "listing": mass.get("listing"),
             "coverage": mass.get("coverage"),
             "forms": [{"id": form.get("id"), "name": form.get("name"),
                        "ordinal": form.get("ordinal")} for form in forms],
@@ -4512,7 +4537,17 @@ def source_to_output(
     output_relative: str,
     target: str,
     included_ids: set[tuple[str, str]],
+    *,
+    document_page: bool = False,
 ) -> str | None:
+    """Resolve one source link to its published route.
+
+    `document_page` is the catalogue rule (guidance/repository.md, "Public
+    navigation and catalog", 2026-11-16): a catalogue names a document, so a
+    legacy PDF link resolves to that output's own page, its reader where one is
+    served and otherwise its print page, and never requests a PDF itself. The
+    Generate PDF action lives at the top of that page.
+    """
     target_parts = urlsplit(target)
     if target_parts.scheme or target_parts.netloc or target.startswith("//"):
         return target
@@ -4568,13 +4603,21 @@ def source_to_output(
     if destination is None and resolved_text.startswith("pdf/"):
         pdf_match = re.fullmatch(r"pdf/([a-z0-9-]+)/(.+)\.pdf", resolved_text)
         if pdf_match and (pdf_match.group(1), pdf_match.group(2)) in included_ids:
-            native_pdf_request = native_tex_declared()
-            route = publication_print_path if native_pdf_request else publication_reader_path
-            destination = route(pdf_match.group(1), pdf_match.group(2))
+            if document_page:
+                reader = publication_reader_path(pdf_match.group(1), pdf_match.group(2))
+                destination = (reader if reader in publication_reader_routes(included_ids)
+                               else publication_print_path(pdf_match.group(1), pdf_match.group(2)))
+            else:
+                native_pdf_request = native_tex_declared()
+                route = publication_print_path if native_pdf_request else publication_reader_path
+                destination = route(pdf_match.group(1), pdf_match.group(2))
         elif pdf_match and pdf_match.group(1) in {"papal-documents", "reading-plans"}:
             reader = source_reader_routes().get(resolved_text)
-            destination = native_print_pages()["readers"].get(reader, reader) if reader else None
-            native_pdf_request = destination is not None and native_tex_declared()
+            if document_page:
+                destination = reader
+            else:
+                destination = native_print_pages()["readers"].get(reader, reader) if reader else None
+                native_pdf_request = destination is not None and native_tex_declared()
     if destination is None:
         # A web edition's page exists only for an included publication, so the
         # link resolves against inclusion rather than against a bare path match.
@@ -4591,6 +4634,10 @@ def source_to_output(
     start = PurePosixPath(output_relative).parent.as_posix()
     relative = posixpath.relpath(destination, start if start != "." else ".")
     query = target_parts.query
+    if document_page and any(key == "print" for key, _ in parse_qsl(query)):
+        # A catalogue never starts a PDF; its link opens the document's page.
+        query = urlencode([(key, value) for key, value in parse_qsl(query, keep_blank_values=True)
+                           if key != "print"])
     if native_pdf_request and not any(key == "print" for key, _ in parse_qsl(query)):
         query = "print=1" + ("&" + query if query else "")
     if query:
@@ -4600,18 +4647,71 @@ def source_to_output(
     return relative
 
 
+def is_catalogue_source(source_relative: str) -> bool:
+    """The landing page and the library shelves: the site's link tables."""
+    return source_relative == "README.md" or source_relative.startswith("library/")
+
+
+# Catalogue link labels that name a format rather than a document. Each is
+# replaced by the label of the page the link now opens.
+CATALOGUE_FORMAT_LABELS = frozenset({
+    "PDF", "Read", "Read online", "Full PDF", "Full", "Research PDF", "Full print view",
+    "Synthesis PDF", "Synthesis print view", "Concise print options",
+    "Homily PDF", "Homily print view", "Homily print options",
+    "Print options", "Print view", "Generate PDF", "Print / Generate PDF",
+})
+CATALOGUE_DUPLICATE = "\x00"
+TABLE_CELL_SPLIT_RE = re.compile(r"(?<!\\)\|")
+
+
+def catalogue_document_link(label: str, target: str, rewritten: str) -> str:
+    """One uniform catalogue link to a document's own page.
+
+    A proper's outputs are named by their declared role (Full Study Guide,
+    Synthesis, Homily); any other output keeps a descriptive label (a title,
+    `Booklet`, `Treatise`) and a bare format label becomes `Read`. An output
+    without a web reader opens its print page, which says so in the link.
+    """
+    print_only = re.search(r"(?:^|/)print/", urlsplit(rewritten).path) is not None
+    edition = PDF_LINK_RE.search(target) or SOURCE_PUBLICATION_LINK_RE.search(target)
+    declaration = (publication_source_records().get(edition.groups()[:2])
+                   if edition and "/propers/" in target else None)
+    if declaration and declaration[0]["kind"].startswith("proper-"):
+        from _publication_reader import treatment_label
+        label = treatment_label(declaration[1]["role"], declaration[0]["kind"])
+    elif label.strip() in CATALOGUE_FORMAT_LABELS:
+        label = "Print edition" if print_only else "Read"
+    if print_only and label != "Print edition":
+        # The space sits inside the mark, so the link's underline stops at the
+        # label while unstyled text still reads `Booklet print edition`.
+        label += '<span class="catalogue-format"> print edition</span>'
+    return f"[{label}]({rewritten})"
+
+
+def collapse_catalogue_cell(cell: str) -> str:
+    """Remove a dropped duplicate link together with one adjacent separator."""
+    cell = re.sub(r"\s*·\s*" + CATALOGUE_DUPLICATE, "", cell)
+    cell = re.sub(CATALOGUE_DUPLICATE + r"\s*·\s*", "", cell)
+    return cell.replace(CATALOGUE_DUPLICATE, "")
+
+
 def rewrite_links(
     source_relative: str,
     output_relative: str,
     markdown_text: str,
     included_ids: set[tuple[str, str]],
 ) -> str:
+    catalogue = is_catalogue_source(source_relative)
     output_lines: list[str] = []
     for line in markdown_text.splitlines():
         catalog_entry = bool(
             PDF_LINK_RE.search(line) or source_catalog_ids(line)
             or CATALOG_PUBLICATION_ID_RE.search(line)
         )
+        # A catalogue cell names each document once: a legacy PDF link and the
+        # Read link beside it now lead to the same page, so the second is
+        # dropped together with its separator (`collapse_catalogue_cell`).
+        seen: set[str] = set()
 
         def replace(match: re.Match[str]) -> str:
             label = match.group(1)
@@ -4620,11 +4720,18 @@ def rewrite_links(
             if target.startswith("#") or EXTERNAL_RE.match(target) or target.startswith("//"):
                 return match.group(0)
             rewritten = source_to_output(
-                source_relative, output_relative, target, included_ids
+                source_relative, output_relative, target, included_ids,
+                document_page=catalogue,
             )
             if rewritten is None:
                 restricted_record = re.match(r"^(?:\.\./)*(?:src|guidance)/", target) is not None
                 return "" if catalog_entry and restricted_record else label
+            if catalogue:
+                destination = urlsplit(rewritten).path
+                if destination in seen:
+                    return CATALOGUE_DUPLICATE
+                seen.add(destination)
+                return catalogue_document_link(label, target, rewritten)
             pdf_link = PDF_LINK_RE.search(target)
             if pdf_link:
                 legacy_proper_labels = {
@@ -4642,8 +4749,22 @@ def rewrite_links(
                                    else "Print / Save as PDF", label)
             return f"[{label}]({rewritten})"
 
-        rewritten_line = MARKDOWN_LINK_RE.sub(replace, line)
-        rewritten_line = re.sub(r"(?:\s*·\s*)+$", "", rewritten_line).rstrip()
+        if catalogue:
+            cells = TABLE_CELL_SPLIT_RE.split(line) if line.lstrip().startswith("|") else [line]
+            parts = []
+            for cell in cells:
+                seen.clear()
+                parts.append(collapse_catalogue_cell(MARKDOWN_LINK_RE.sub(replace, cell)))
+            rewritten_line = "|".join(parts)
+        else:
+            rewritten_line = MARKDOWN_LINK_RE.sub(replace, line)
+        if catalogue and re.search(r"·\s*$", line):
+            # A link list wrapped across source lines keeps the separator that
+            # joins it to the next line; only a separator left by a dropped
+            # link is removed.
+            rewritten_line = re.sub(r"(?:\s*·\s*)+$", " ·", rewritten_line).rstrip()
+        else:
+            rewritten_line = re.sub(r"(?:\s*·\s*)+$", "", rewritten_line).rstrip()
         output_lines.append(rewritten_line)
     trailing_newline = "\n" if markdown_text.endswith("\n") else ""
     return "\n".join(output_lines) + trailing_newline
@@ -4730,7 +4851,7 @@ def page_classes(source_relative: str, output_relative: str) -> str:
         "library/mariology.md",
         "library/law-and-church-discipline.md",
     }
-    if output_relative.startswith(("web/", "print/")):
+    if output_relative.startswith(("web/", "print/", *SOURCE_READER_SHELVES)):
         kind = "reader"
     elif source_relative == "README.md":
         kind = "home"
@@ -4753,8 +4874,32 @@ def page_classes(source_relative: str, output_relative: str) -> str:
     return " ".join(classes)
 
 
+# A print page (`print/…`) wears the colour and shelf of the web edition it
+# prints, breadcrumb included, as the reader beside it does. The source
+# readers — a papal document in its public-domain edition, a reading-plan
+# volume — are readers like any other and wear the colour and shelf
+# of the instrument that lists them, rather than standing as bare utility pages
+# with no section, no breadcrumb and the full page width (2026-11-16,
+# guidance/corpus-browser-vision.md, "Shared tokens and page branding").
+SOURCE_READER_SHELVES = {
+    "papal-documents/": ("white", "Papal Encyclicals", "encyclicals/index.html"),
+    "reading-plans/": ("gold", "The Story of Salvation", "scripture/index.html"),
+}
+
+
+def source_reader_shelf(relative: str) -> tuple[str, str, str] | None:
+    relative = relative.removeprefix("print/")
+    for prefix, shelf in SOURCE_READER_SHELVES.items():
+        if relative.startswith(prefix):
+            return shelf
+    return None
+
+
 def liturgical_section(source_relative: str) -> str | None:
     """Map every reader surface to one durable liturgical-color portal."""
+    shelf = source_reader_shelf(source_relative)
+    if shelf is not None:
+        return shelf[0]
     catalog_sections = {
         "library/faith.md": "white",
         "library/scripture.md": "gold",
@@ -4775,9 +4920,9 @@ def liturgical_section(source_relative: str) -> str | None:
     }
     if source_relative in catalog_sections:
         return catalog_sections[source_relative]
-    if not source_relative.startswith("web/"):
+    if not source_relative.startswith(("web/", "print/")):
         return None
-    normalized = "/" + source_relative.removeprefix("web/").split("/", 1)[-1] + "/"
+    normalized = "/" + source_relative.split("/", 1)[-1].split("/", 1)[-1] + "/"
     routes = (
         ("/articles/canon-law/", "black"),
         ("/theology/heresies/", "black"),
@@ -4927,7 +5072,10 @@ def missal_designator(calendar: str) -> str:
 
 def reader_shelf(source_relative: str) -> tuple[str, str] | None:
     """Resolve a web edition to the reader-facing shelf that owns its subject."""
-    if not source_relative.startswith("web/"):
+    shelf = source_reader_shelf(source_relative)
+    if shelf is not None:
+        return shelf[1], shelf[2]
+    if not source_relative.startswith(("web/", "print/")):
         return None
     # A missal's shelf is named by the book's designator, resolved only for
     # a page that sits on it.
@@ -4949,13 +5097,17 @@ def reader_shelf(source_relative: str) -> tuple[str, str] | None:
         ("/scripture/", "Scripture", "library/scripture.html"),
         ("/articles/", "Faith", "library/faith.html"),
     )
-    normalized = "/" + source_relative.removeprefix("web/").split("/", 1)[-1] + "/"
+    normalized = "/" + source_relative.split("/", 1)[-1].split("/", 1)[-1] + "/"
     for marker, calendar, destination in missal_shelves:
         if marker in normalized:
             return missal_designator(calendar), destination
     for marker, label, destination in routes:
         if marker in normalized:
             return label, destination
+    # A print page with no shelf of its own (a Bible's) names none rather
+    # than a library page that does not exist.
+    if source_relative.startswith("print/"):
+        return None
     return "Library", "library.html"
 
 
@@ -5025,9 +5177,29 @@ def mark_catalogue_tables(rendered_html: str) -> str:
             classes.append("catalogue-propers-id")
         if proper and "Cycle" in headers:
             classes.append("catalogue-propers-cycle")
-        return '<table class="' + " ".join(classes) + '">' + match.group(2)
+        return ('<table class="' + " ".join(classes) + '">' + match.group(2)
+                + label_catalogue_cells(match.group(3)))
 
-    return re.sub(r"(<table>)(\s*<thead>.*?</thead>)", mark, rendered_html, flags=re.DOTALL)
+    return re.sub(r"(<table>)(\s*<thead>.*?</thead>)(.*?</table>)", mark, rendered_html,
+                  flags=re.DOTALL)
+
+
+# A provider cell with no admitted edition says so in words (`Planned`, or a
+# dash); the class sets that status apart from the links beside it.
+CATALOGUE_ABSENT_CELL_RE = re.compile(r"<td([^>]*)>\s*(Planned|—)\s*</td>")
+
+
+def label_catalogue_cells(body: str) -> str:
+    """Mark absent editions and quiet the separators between a cell's links.
+
+    The middle dot stays in the text, so a page without the stylesheet still
+    reads `Full Study Guide · Synthesis`; the class only sets its colour.
+    """
+    body = CATALOGUE_ABSENT_CELL_RE.sub(
+        lambda found: f'<td{found.group(1)} class="catalogue-absent">{found.group(2)}</td>'
+        if "class=" not in found.group(1) else found.group(0), body)
+    return re.sub(r"</a>\s*·\s*<a\b",
+                  '</a><span class="catalogue-sep"> · </span><a', body)
 
 
 # The shape a fence leaves behind when it is not recognised as a fence: a code
@@ -5104,11 +5276,16 @@ def render_page(
             content = expand(content, output_relative)
         except ReaderMarkupError as exc:
             raise ReleaseError(f"{output_relative}: {exc}") from exc
+    # Every document page with an admitted print edition carries one Generate
+    # PDF action at its top: in the reader's toolbar, or at the head of the
+    # content where there is no reader shell.
     target = native_print_pages()["readers"].get(output_relative)
+    action = ""
     if target is not None:
-        from _native_print import reader_action
-        content = reader_action(output_relative, target) + content
-    content, reader_head, reader_body = publication_reader_shell(content, output_relative)
+        from _native_print import reader_action_link
+        action = reader_action_link(output_relative, target)
+    content, reader_head, reader_body = publication_reader_shell(
+        content, output_relative, action=action)
     return wrap_in_layout(
         source_relative,
         output_relative,
@@ -5594,23 +5771,29 @@ def publication_reader_contexts() -> dict:
     return held_source_inventory("publication-reader-contexts", derive)
 
 
-def publication_reader_shell(content: str, relative: str, output_id: str = "") -> tuple[str, str, str]:
-    """Add screen navigation outside the exact canonical content/print parts."""
+def publication_reader_shell(content: str, relative: str, output_id: str = "", *,
+                             action: str = "") -> tuple[str, str, str]:
+    """Add screen navigation outside the exact canonical content/print parts.
+
+    `action` is the page's Generate PDF link: it leads the reader toolbar, or
+    heads the content of a page without the reader shell.
+    """
+    standalone = ('<p class="print-actions">' + action + '</p>' if action else "") + content
     parts = PurePosixPath(relative).parts
     if len(parts) < 3 or parts[0] not in {"web", "print"}:
-        return content, "", ""
+        return standalone, "", ""
     _, providers = declared_providers(load_manifest())
     if parts[1] not in providers:
-        return content, "", ""
+        return standalone, "", ""
     provider, separator, leaf = output_id.removeprefix("publication:").partition("/") if output_id else (parts[1], "/", "/".join(parts[2:]).removesuffix(".html"))
     context = publication_reader_contexts().get((provider, leaf)) if separator else None
     if context is None:
-        return content, "", ""
+        return standalone, "", ""
     from _publication_reader import wrap
     head = '<link rel="stylesheet" href="' + html.escape(relative_link(relative, "shared/publication-reader.css"), quote=True) + '">'
     body = ''.join('<script src="' + html.escape(relative_link(relative, "shared/" + name), quote=True) + '" defer></script>'
                    for name in ("catalogue-navigation.js", "publication-reader.js"))
-    return wrap(content, context, relative), head, body
+    return wrap(content, context, relative, action), head, body
 
 
 def render_print_page(relative: str, page: dict, preview: bool, authorization: dict) -> str:

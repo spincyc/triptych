@@ -1,0 +1,63 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/main.tex",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "STU-003",
+      "note": "Every listed instance rewritten. Reasons replace markers: Jer 29:14 congregabo / Mt 24:28, 31 congregabuntur, congregabunt (20); Jerome's in opere Dei / the Collect's divini operis (30); Hilary's cupiditate and Bede's desideria / the Secret's cupiditatibus and desideria (30, 00); the devil's darts aimed at the spirit / Aquinas's present spiritual deliverance (30); Hilary's nursing souls lacking bread and escape from sin / the Postcommunion (30); Fromage's eagles renewed by Communion / those who have just communicated (20); conditional steps for Augustine's deep (20), the passing heaven (40) and the Communion's future (40); the Communion difficulty now states that Hilary, Jerome and Aquinas also look to the one who prays, that none comments on Mark, and that this agreement is the interpretation's reason. 40 l.88 now opens 'Gregory finds a paradox in the second saying'. The comparison no longer uses 'hear'. production-review.md corrects the iteration-1 claim and describes this repair.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-007",
+      "note": "Checked Jerome, In Hier. V, PL 24 cols. 893-894, in the archive.org OCR. Lead: 'reads the promise, beyond its first sense, as the return of penitent sinners to the Church'. Body: 'The exiles of this sense are sinners, and the place to which they are brought back after penance is the Church.' Difficulty: 'Augustine does not comment on Jeremias: he reads the captivity of the psalm verse as sin, and this interpretation reads the antiphon's captivity the same way because the two captivities are sung in one chant.' Anagogical row: 'the penitent brought back from the confusion of this world to their own place, the Church'. The col. 891-892 sentence about being cast out was not quoted, because the reviewed research binds only cols. 893-894.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-008",
+      "note": "(a) 40: the lead ends 'The Fathers read here rest the certainty of the promise on the one who makes it'; l.81-83 and l.61-62 are deleted; the date refusal and the three answers stand once, in the difficulty, and the fig-tree choice once, at l.28. (b) 10: 'It names desire on both sides' and its paraphrase are cut. (c) The mente/vitiosum gloss is removed from 20, 30 and 10, and remains only in the 05 note. (d) 30 l.44-45 are cut, so the order of senses and its reason are stated once, in the difficulty. Other repeats removed while there: the 20 difficulty no longer repeats the omitted Jer 29:14 words or Jerome's anagogy; the 30 Postcommunion and Gradual paragraphs no longer paraphrase quotations just given.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 2,
+  "notes": {
+    "advisories_cleared": {
+      "STU-009": "The comparison now says only that the second sets Chrysostom's literal sense of the flight first. The unsupported 'all three agree on captivity' sentence is cut. The Secret sentence names each lane's use: hearts of all turned to one God, passage from earthly desires, desires for what does not pass. 'that his literal sense of the flight supplies' is dropped.",
+      "STU-010": "The anagogical row of lane 2 no longer has the eternal mountains; it begins with Jerome's shortened days (on 24:22) and ends with Hilary 25.7, as suggested.",
+      "STU-011": "The 05 Communion note names three departures (Amen dico vobis; quidquid for omnia quaecumque; et fiet vobis). Section 10 now reads 'the words with which the antiphon opens and closes, where it departs from the Vulgate's verse 24'."
+    },
+    "checks": {
+      "_proper_study.py check (content, research, all study-preflight require flags, source)": "exit 0",
+      "check-content-preflight research": "references-used, identifiers-resolve, bindings-valid, restricted-not-reproduced, relation-coverage, unquoted-not-quoted, structural-meta-labels, house-voice, the three chronology checks, and provenance-matches-run (run 11c5af05fe374203, proper-study v19): all pass",
+      "document-types refresh --check": "current",
+      "web-edition probe": "build/tpt-runs/11c5af05fe374203/artifacts/author-study-2/web-probe converted (exit 0)"
+    },
+    "extent": "By the same crude count, the exposition (opening, settings, interpretations and comparison) is about 140 words shorter than in iteration 1, at about 13,750. No print proof was made; the iteration-0 proof was 31 pages.",
+    "files_to_commit": [
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/00-opening.tex",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/05-appointed-texts.tex",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/10-each-element.tex",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/20-where-the-body-is.tex",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/30-flight-without-turning-back.tex",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/40-words-that-do-not-pass.tex",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/50-comparison.tex",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/research/production-review.md"
+    ],
+    "files_to_commit_sha256": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/research/production-review.md": "2f8c661d1cb260f953192f6ef6b6395274e60b0e35912ce087fabc4c247fc24e",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/00-opening.tex": "f129f0e05f123c01917df7359ae8ae8eb5a156d72f4ef8c67973344665e14aff",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/05-appointed-texts.tex": "0ce806e989eff7d97b82a16d8afa75d3318bb660055079e64409d5c08374905d",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/10-each-element.tex": "01459b410942ea15134067ac093754b61bc5b25bd9a4546b81b4698e8160d8cd",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/20-where-the-body-is.tex": "5ace33f24c7a0e317a5295feb8f259ba2a671c17b41756db2b116883312f8547",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/30-flight-without-turning-back.tex": "86c3c8a4a1140deef05949696f0ba992fb11333a70adc4f3d0535fa1399820b3",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/40-words-that-do-not-pass.tex": "670a587e58ca7cdbd4435aff1b2c37594d2b283374685e31dc6d4379a8593efd",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/50-comparison.tex": "38a2276c4ff13ab5fba6f305d7cca4678b1614aa477d4447b2eeb0b5cf4c376f"
+    },
+    "scratch": ".scratch/workers/author-study-2/sections-before holds the pre-revision section files and production-review.md, for diffing.",
+    "shared_defects_reported": [
+      "Repeating the iteration-1 report: the 1962 profile does not mark where glossing a public-domain oration English's departure from the Latin ends and the guide's own rendering begins. Owner: guidance/liturgy/roman-1962-propers.md (English rule)."
+    ],
+    "unchanged": "main.tex, generated/scriptural-date-location.tex, publication.toml, proper-components.toml, web-edition.toml, generation-metadata.tex, 90-apparatus.tex and all research evidence records are unchanged; document-types refresh --check reports current."
+  },
+  "stage": "author-study",
+  "summary": "Revised the expansive study for study review 1. The 'set beside' and 'heard ... as' frames are gone; each link now gives its reason in that sentence (a shared word, a shared condition, or a stated conditional step), and 'this interpretation' is kept to leads, difficulties and the fig-tree choice. Jerome's anagogy of Jer 29 is stated in his terms (penitent sinners brought back to the Church), and Augustine is credited only with the psalm verse. Repeated theses, lists and glosses are cut to one statement each, and the advisories STU-009, STU-010 and STU-011 are cleared."
+}

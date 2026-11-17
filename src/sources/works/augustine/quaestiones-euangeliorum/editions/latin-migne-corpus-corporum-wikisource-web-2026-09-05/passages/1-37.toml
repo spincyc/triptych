@@ -1,0 +1,16 @@
+schema = 1
+record_type = "passage"
+id = "passage.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05.1-37"
+edition_id = "edition.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05"
+artifact_id = "artifact.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05.wikisource-latin-text"
+artifact_sha256 = "aed43fd30cbd7a5bfe698c3930c360a6e4cb201f5da47951dc26a22c069c80e7"
+locus = "1.37"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Book I, question XXXVII, the whole answer on fleeing in winter or on the sabbath (physical line 42, headed by the printing's reference [Ib. XXIV, 20] under the book's title In Evangelium secundum Matthaeum, line 5, whose capitula list titles it Quod ait, Orate ne fiat fuga vestra hieme vel sabbato). Read with questions XXXVI (Mt 23:37) and XXXVIII (Mt 24:23-27) on either side: winter and sabbath are any hindrance that would hold the disciples back, rain or cold, or the sabbath on which a journey was not lawful; or else, that no one be found on that day in the sadness or the gladness of temporal things."
+physical_line_ranges = [[42, 42]]
+text = "Quod Dominus dixit, Orate ne fiat fuga vestra hieme vel sabbato, id est, ne impedimento aliquo detineamini: quia et hieme, imbribus vel frigore; et sabbato, in quo proficisci non licebat, impediebatur quis ab itinere. Vel aliud, ne in tristitia aut laetitia rerum temporalium quis inveniatur a die illa."
+transcription_segments = [
+  { line = 42, text = "Quod Dominus dixit, Orate ne fiat fuga vestra hieme vel sabbato, id est, ne impedimento aliquo detineamini: quia et hieme, imbribus vel frigore; et sabbato, in quo proficisci non licebat, impediebatur quis ab itinere. Vel aliud, ne in tristitia aut laetitia rerum temporalium quis inveniatur a die illa." },
+]
+verified_on = "2026-11-16"
+notes = "Mechanically copied as one exact substring of retained raw line 42, omitting only the question numeral and the editor's bracketed Scripture reference that head the line ('XXXVII. [Ib. XXIV, 20].'); no word was retyped, modernized or supplied. The whole answer is retained: the line ends where question XXXVIII begins on line 43. The wording is that of this dated digital transcription of Migne, PL 35; it was not collated with a page image of the printed column and is not presented as diplomatic. Augustine's own Latin, so no translator is involved. Registered 2026-11-16 by the source-registration stage of proper-study run 11c5af05fe374203 after the artifact's SHA-256 and byte size were recomputed and matched."

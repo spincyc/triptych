@@ -94,15 +94,15 @@
 .passage-focus input {
   width: 10rem;
   max-width: 100%;
-  min-height: 2.75rem;
+  min-height: var(--control-min, 2.75rem);
   padding: 0.4rem 0.6rem;
-  border: 1px solid var(--ink-faint);
-  border-radius: 0.2rem;
+  border: 1px solid var(--hairline-strong, var(--ink-faint));
+  border-radius: var(--radius, 0.2rem);
   color: var(--ink);
   background: var(--panel);
   font: inherit;
 }
-.passage-focus button { min-height: 2.75rem; }
+/* Its buttons are the shared controls' (browser-core.css, `.steps`). */
 .passage-focus p { flex-basis: 100%; margin: 0; font-size: 0.82rem; }
 #verse-help, .english-availability { color: var(--ink-soft); }
 #verse-error { color: var(--section-ink); font-weight: 600; }

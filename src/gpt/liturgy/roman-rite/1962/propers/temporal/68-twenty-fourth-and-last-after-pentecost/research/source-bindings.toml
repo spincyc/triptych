@@ -77,9 +77,9 @@ source_fingerprint = "sha256:0a40fabd7f269af0252b800ecd1fe429c40c1a2293b3624c7a4
 source_id = "artifact.augustine.enarrationes-in-psalmos.english-npnf8-ccel-web-2026-09-05.ccel-npnf108-text-d6841950"
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
-context = "Inspection extent: Enarrationes Ps43 (NPNF XLIV), §§1-20; physical14847-15211; Ps84 (NPNF LXXXV), §§1-13;41518-41952; Ps129 (NPNF CXXX), §§1-8;62171-62334. Augustine in historical abridged NPNF English. Complete Ps84 and129 expositions and stated partial Ps43 extent read. Distinguish Vulgate native Psalm numbers from English headings. Verse reasoning, not whole-Mass authorship, supports readings."
+context = "Inspection extent: Enarrationes Ps43 (NPNF XLIV), §§1-20 and opening §21 context; physical14847-15228, completing §20 in the renewed reading; Ps84 (NPNF LXXXV), §§1-13;41518-41952; Ps129 (NPNF CXXX), §§1-8;62171-62334. Augustine in historical abridged NPNF English. Complete Ps84 and129 expositions and stated partial Ps43 extent read. Distinguish Vulgate native Psalm numbers from English headings. Verse reasoning, not whole-Mass authorship, supports readings."
 source_fingerprint = "sha256:0a8fd6a45c963c52d5c8d09497820cfb88e5bf59d3a86a8a573856782e822f37"
-loci = ["43.1-20", "84.1-13", "129.1-8"]
+loci = ["43.1-20", "43.21", "84.1-13", "129.1-8"]
 
 [[bindings]]
 source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-13.english-ccel-web-2026-09-05.ccel-npnf113-text-54274dd9"
@@ -114,7 +114,7 @@ source_fingerprint = "sha256:838ec2d9bdd3872f40f104399e97325542dc20fc47dd3b1b4d5
 
 [[bindings]]
 source_id = "artifact.thomas-aquinas.super-colossenses.latin-corpusthomisticum-web-2026-11-05.ccl-html-d055308f"
-loci = ["Super Colossenses1, lectiones2-4;native87847-87849", "Private decoded derivative lines98-254"]
+loci = ["Super Colossenses1, lectiones2-4;native87847-87849", "Private decoded derivative lines98-253; line254 is the next heading"]
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
 context = "Exact restricted modern Latin HTML reacquired and read; prayer raises us, worthiness itself given, knowledge/action/growth, patience/longanimity/joy, rescue/transfer, and Son equality checked. No modern English translation or markup republished."
@@ -122,10 +122,10 @@ source_fingerprint = "sha256:1181b99646ceacb96e1ba4f36adbc6f23277001fcf4c4ba8471
 
 [[bindings]]
 source_id = "artifact.thomas-aquinas.super-matthaeum.latin-corpusthomisticum-chapters-21-25-2026-10-13.aquinas-matt-3d862a0e"
-loci = ["Super Matthaeum24, lectiones1-3;native87395-87397", "Private decoded derivative lines894-1204", "Matthew24:24 election analysis, lectio3;native87397;decoded derivative1068-1072"]
+loci = ["Super Matthaeum24, lectiones1-3;native87395-87397", "Private decoded derivative lines894-1233, including transition to unappointed Matthew24:36", "Matthew24:24 election analysis, lectio3;native87397;decoded derivative1068-1072"]
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
-context = "Exact restricted modern Latin HTML reacquired; actual appointed passage exposition read. Reported Hilary/Origen/Jerome are reported authorities, not independently inspected editions. No modern delivery bytes publicly retained."
+context = "Exact restricted modern Latin HTML retained; actual appointed passage exposition and renewed transition to Matthew24:36 read. This does not appoint verse36 or claim complete subsequent exposition. Reported Hilary/Origen/Jerome are reported authorities, not independently inspected editions. No modern delivery bytes publicly retained; rehashing retained bytes is not a new acquisition."
 source_fingerprint = "sha256:d15f96a4b0c743dc1293847645c47d79a118d40157b4e811ad3a083b29bd3db6"
 
 [[bindings]]
@@ -236,17 +236,17 @@ loci = ["Col.1.1-29"]
 source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-48-mark-ab7b8b95"
 role = "textual-control"
 states = ["cataloged", "acquired", "inspected"]
-context = "Inspection extent: Mark11:20-29. Continuous text and prayer/forgiveness context compared with the adapted Communion. Amen/quidquid/fiet are actual chant forms, not continuous Clementine text."
+context = "Inspection extent: Mark11 complete in the renewed reading, including the historically inspected20-29. Continuous text and prayer/forgiveness context compared with the adapted Communion. Amen/quidquid/fiet are actual chant forms, not continuous Clementine text."
 source_fingerprint = "sha256:b735f8e604c3e75982f2a5b38d3f9340c60bf3764ae851e54be2a26cc50846fe"
-loci = ["Mark.11.20-29"]
+loci = ["Mark.11.1-33"]
 
 [[bindings]]
 source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-47-matthew-2d02758d"
 role = "textual-control"
 states = ["cataloged", "acquired", "inspected"]
-context = "Inspection extent: Matthew24:1-40. Continuous Latin chapter passage returned and read for comparison, including appointed15-35 and introduction/ergo boundary. No whole-Matthew Latin inspection."
+context = "Inspection extent: Matthew24 complete in the renewed reading, including the historically inspected1-40. Continuous Latin chapter passage read for comparison, including appointed15-35 and introduction/ergo boundary. No whole-Matthew Latin inspection."
 source_fingerprint = "sha256:da1db83ff564af32d9e8dab7773456aa467a354ded799029638be74368323843"
-loci = ["Matt.24.1-40"]
+loci = ["Matt.24.1-51"]
 
 [[bindings]]
 source_id = "artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12533a-cb9d9a25-article-text"
@@ -258,7 +258,7 @@ source_fingerprint = "sha256:fb390d86dc25dc07c596f9fc077086505507490f09a054b5a5c
 
 [[bindings]]
 source_id = "artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08334a-dd4ae528-article-text"
-loci = ["Jeremias;physical15,41,45"]
+loci = ["Jeremias; historical15,41,45; renewed13-15,39-45"]
 role = "context"
 states = ["cataloged", "acquired", "inspected"]
 context = "Actual historical/literary paragraphs read:604first recension and later enlargement, not final-completion date or uniform Introit date."
@@ -266,7 +266,7 @@ source_fingerprint = "sha256:69f374bd4cba29594ff367333d729ed1d4031dbdfe43df91f4f
 
 [[bindings]]
 source_id = "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04131b-08367306-article-text"
-loci = ["Colossians, captivity/place/date discussion;physical3"]
+loci = ["Colossians, captivity/place/date discussion; historical3; renewed1-5"]
 role = "context"
 states = ["cataloged", "acquired", "inspected"]
 context = "Actual paragraph read:61-63composition, Rome/Caesarea distinction. Not an event narrated in the Epistle."
@@ -274,7 +274,7 @@ source_fingerprint = "sha256:91a33dc8f172eab755c244ee0c93a4bad335ab7be33df8716c8
 
 [[bindings]]
 source_id = "artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef-article-text"
-loci = ["Matthew, date/place discussion;physical201,203"]
+loci = ["Matthew, date/place discussion; historical201,203; renewed199-204"]
 role = "context"
 states = ["cataloged", "acquired", "inspected"]
 context = "Actual paragraphs read with reported early/late alternatives and Semitic-original Palestine association; do not average proposals or equate Greek and Semitic dates automatically."
@@ -282,7 +282,7 @@ source_fingerprint = "sha256:a5698ebe70292d9dc1c32df2c8cc440778cb8d0dc2f840f11d1
 
 [[bindings]]
 source_id = "artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c-article-text"
-loci = ["Synoptics;physical29,31"]
+loci = ["Synoptics; historical29,31; renewed27-32"]
 role = "context"
 states = ["cataloged", "acquired", "inspected"]
 context = "Actual dating paragraphs read: Matthew about50 and Mark60-70 retained as alternatives, not imposed as consensus."
@@ -290,7 +290,7 @@ source_fingerprint = "sha256:0a5a9e3b92db7d3a9953343ff8b1a04ec7baa2a01adbf31eadc
 
 [[bindings]]
 source_id = "artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09674b-f5a5a8a9-article-text"
-loci = ["Mark;physical39,43,63,65"]
+loci = ["Mark; historical39,43,63,65; renewed37-43,61-66"]
 role = "context"
 states = ["cataloged", "acquired", "inspected"]
 context = "Actual Mark chronology/place paragraphs read; early subscriptions and50-67proposal distinguished; Rome traditionally is qualified."
@@ -298,15 +298,15 @@ source_fingerprint = "sha256:5946f7fd5d40591fa1d547bcb4dcb0573b720fb85502fb974a2
 
 [[bindings]]
 source_id = "artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08377a-f81e2c23-article-text"
-loci = ["Jesus Christ;physical21,25,70-89,102-146", "Ninth journey and fig-tree instruction;AUC782=AD29 calibration"]
+loci = ["Jesus Christ; historical21,25,70-89,102-146; renewed21-25,122-147", "Ninth journey, fig-tree instruction and later Olivet discourse;AUC782=AD29 calibration"]
 role = "context"
 states = ["cataloged", "acquired", "inspected"]
-context = "Actual bounded article paragraphs read. Mark event date is derived within Maas chronology; Olivet discourse is investigated as a separate event lead, not an authorized manually added date."
+context = "Actual bounded article paragraphs read. Mark's fig-tree instruction and Matthew's separate Olivet utterance receive derived AD29 event dates within Maas chronology through the owning chronology generator. This is neither a consensus date nor a date for the final coming, nor a manually added chronology claim."
 source_fingerprint = "sha256:fe5c1682bc9df4a6ffe2e0a61f7ac28267f049a6ffef975b9a78bc795774f656"
 
 [[bindings]]
 source_id = "artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8-article-text"
-loci = ["St Paul, chronological paragraph;physical45"]
+loci = ["St Paul, chronological paragraph; historical45; renewed43-45"]
 role = "context"
 states = ["cataloged", "acquired", "inspected"]
 context = "Actual paragraph read: captivity60-62and composition of Colossians61. Not a second independent narrative event."
@@ -354,7 +354,7 @@ source_fingerprint = "sha256:f4d698ee3bc68e9257a7106cb2a663c8b5a4d2c78d05e3b3ad9
 
 [[bindings]]
 source_id = "artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03315a-9cb437e2-article-text"
-loci = ["Captivities, Babylonian captivity;especially27,41,45;also returned7,9,33,35,47,53"]
+loci = ["Captivities, Babylonian captivity;especially27,41,45;also historical7,9,33,35,47,53; renewed25-27,39-47"]
 role = "context"
 states = ["cataloged", "acquired", "inspected"]
 context = "597deportation and538return checked for orientation. Source rhetoric is not adopted; chronology only. Not a whole-article inspection."
@@ -362,7 +362,7 @@ source_fingerprint = "sha256:3254b80370b68a4603c9cb337e17cd9c051ebbe56f5de893a18
 
 [[bindings]]
 source_id = "artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04-article-text"
-loci = ["Biblical Chronology, post-destruction Jewish chronology;physical179;also175"]
+loci = ["Biblical Chronology, post-destruction Jewish chronology;physical179;also175; renewed175-179"]
 role = "context"
 states = ["cataloged", "acquired", "inspected"]
 context = "536return alternative read at179. The suspicious destruction-of-Jerusalem536at175 is not used: distinguish it from explicit return536in the next section."
@@ -370,7 +370,7 @@ source_fingerprint = "sha256:f8dd64daaeb2a33bcb9843f89a3b9572d7dda801f56a3c8092c
 
 [[bindings]]
 source_id = "artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05737b-06e3e070-article-text"
-loci = ["Ezechiel, opening biographical paragraph;physical3"]
+loci = ["Ezechiel, opening biographical paragraph; historical3; renewed1-3"]
 role = "context"
 states = ["cataloged", "acquired", "inspected"]
 context = "598deportation alternative checked as an anchor for Jeremiah letter, not a composition date for it."
@@ -378,7 +378,7 @@ source_fingerprint = "sha256:cacd76590ab9b2baaf6b39c94ad3340113f0add6ffcc98e7e6a
 
 [[bindings]]
 source_id = "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3-article-text"
-loci = ["David;physical3,5,13,17,19,21,29"]
+loci = ["David; historical3,5,13,17,19,21,29; renewed3-5,13-21,29"]
 role = "context"
 states = ["cataloged", "acquired", "inspected"]
 context = "Usual1055-1015reign and seven-and-half-year Hebron phase checked, with author reporting30-50years-later alternatives. Approximate1048-1015Jerusalem frame does not identify Psalm129date or firm authorship."
@@ -405,3 +405,177 @@ role = "context"
 states = ["cataloged", "acquired", "inspected"]
 context = "Readable November22day consultation rechecked: title, Gloria/Credo/Trinity flags, Col1:9-14and Mt24:15-35headings. Acquired means preserved service-rendered Markdown only, not the failed original HTML. Weaker corroboration than governing Missal and independently acquired ICRSP HTML. No modern English adoption, optional-Mass import or whole-year verification."
 source_fingerprint = "sha256:0e90929f9bee09da9e88a7ac10f7a6529413f084cc05287fba3919fc5f7e2b3e"
+
+[[bindings]]
+source_id = "artifact.new-liturgical-movement.stirring-collect-last-sunday.2026-11-17-web-service.service-markdown-e4daf429"
+loci = ["Minimal 226-byte returned navigation/body field and search snippets only"]
+role = "bibliographic"
+states = ["cataloged", "acquired", "inspected"]
+context = "Only the minimal returned field and search snippets were consulted as finding aids; no full commentary body, primary prayer history or attributed ancient quotation was verified. The exact service field, not original HTML, is identified without a public payload."
+source_fingerprint = "sha256:b8f1f6ca1cce1c5ae7a8c60b95934cc5399fa43f24608e9e7bd7cfcb3ab4c3f7"
+
+[[bindings]]
+source_id = "artifact.john-zuhlsdorf.colligite-fragmenta-last-sunday-after-pentecost.2026-11-17-web-service.service-markdown-5f0b4346"
+loci = ["Returned service commentary text; bounded modern consultation, not original HTML"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Modern commentary/service text was genuinely consulted, but no liturgical wording, translation, prayer-origin assertion, attributed Augustine/Fulgentius/Gregory/Schuster quotation or chronology from it was adopted as a controller. This rejected consultation is not relabelled an unread lead. The identity is the returned Markdown, not an original HTML acquisition or a historical printing."
+source_fingerprint = "sha256:a293d748316b1a48a2dee84def44f552240f2cd97e8e5779b1724a91649f5911"
+
+[[bindings]]
+source_id = "artifact.wdtprs.sunday-sermon-notes-last-sunday-2025.2026-11-17-web-service.service-markdown-03f2a220"
+loci = ["Returned service commentary text; bounded modern consultation, not original HTML"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Modern commentary/service text was genuinely consulted, but no liturgical wording, translation, prayer-origin assertion, attributed Augustine/Fulgentius/Gregory/Schuster quotation or chronology from it was adopted as a controller. This rejected consultation is not relabelled an unread lead. The identity is the returned Markdown, not an original HTML acquisition or a historical printing."
+source_fingerprint = "sha256:06244e321cdd02c4204abe3b7b439e90735d909f52bfecf95f11e4c85a756571"
+
+[[bindings]]
+source_id = "artifact.liturgia-latina.last-sunday-after-pentecost-2010.2026-11-17-web-service.service-markdown-5e701cdf"
+loci = ["Returned service commentary text; bounded modern consultation, not original HTML"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Modern commentary/service text was genuinely consulted, but no liturgical wording, translation, prayer-origin assertion, attributed Augustine/Fulgentius/Gregory/Schuster quotation or chronology from it was adopted as a controller. This rejected consultation is not relabelled an unread lead. The identity is the returned Markdown, not an original HTML acquisition or a historical printing."
+source_fingerprint = "sha256:cf4531dcc6ff2727a8a0fb98e7f6af0c908aede568596a7f1239822114a4dc1a"
+
+[[bindings]]
+source_id = "artifact.catholicism-org.collect-twenty-fourth-last-sunday.2026-11-17-web-service.service-markdown-51d27c05"
+loci = ["Returned service commentary text; bounded modern consultation, not original HTML"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Modern commentary/service text was genuinely consulted, but no liturgical wording, translation, prayer-origin assertion, attributed Augustine/Fulgentius/Gregory/Schuster quotation or chronology from it was adopted as a controller. This rejected consultation is not relabelled an unread lead. The identity is the returned Markdown, not an original HTML acquisition or a historical printing."
+source_fingerprint = "sha256:f8dfba0db1e1055eca4b9de42a3a9f52ef1eff98654152d46eb431ac360467cf"
+
+[[bindings]]
+source_id = "artifact.wdtprs.last-sunday-like-lightning-east-2025.2026-11-17-web-service.service-markdown-1d26e12a"
+loci = ["Returned service commentary text; bounded modern consultation, not original HTML"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Modern commentary/service text was genuinely consulted, but no liturgical wording, translation, prayer-origin assertion, attributed Augustine/Fulgentius/Gregory/Schuster quotation or chronology from it was adopted as a controller. This rejected consultation is not relabelled an unread lead. The identity is the returned Markdown, not an original HTML acquisition or a historical printing."
+source_fingerprint = "sha256:70ad62ff4520e31f0aad606ee4bdad6fae473a24fb465cef92dd2cd5ecb6743a"
+
+[[bindings]]
+source_id = "artifact.monumenta.jerome-commentarii-bnf00602-web-view.2026-11-17-web-service.service-markdown-8217b1bb"
+loci = ["Search discovery only; https://www.monumenta.ch/latein/show_missing_text.php?codex=bnf00602&this_page=Hieronymus%2C+Commentarii%2C+in+Ieremiam%2C+06%2C+32%2C++65&lang=0+AND+1%3D2--&tabelle=Hieronymus&no_right_page=1&last_bisstring=populus+in+Iudaeam%3A+tamen+spiritualiter&last_vor=y&last_satznummer=65&work_level=2"]
+role = "lead"
+states = ["cataloged"]
+context = "Uninspected search-return lead. search-return lead only; no whole-body inspection claim. The exact delivered service field is separately hash-identified in the library, but catalog-only binding states describe discovery use, not reading or verification of the whole body or the underlying HTML/PDF. Not an independent reception or quotation witness."
+
+[[bindings]]
+source_id = "artifact.anthony-of-padua.sermo-dominica-xxii-post-pentecosten.2026-11-17-dco-latin-service.service-markdown-3b800e06"
+role = "lead"
+states = ["cataloged"]
+context = "Uninspected search-return lead. search-return lead only; no whole-body inspection claim. The exact delivered service field is separately hash-identified in the library, but catalog-only binding states describe discovery use, not reading or verification of the whole body or the underlying HTML/PDF. Not an independent reception or quotation witness."
+
+[[bindings]]
+source_id = "artifact.catholiclibrary.nova-vulgata-jeremiah-29-web-view.2026-11-17-web-service.service-markdown-7edbfe26"
+loci = ["Search discovery only; https://catholiclibrary.org/bible/view?docId=Jer.novavul.html&chunk.id=00000029"]
+role = "lead"
+states = ["cataloged"]
+context = "Uninspected search-return lead. search-return lead only; no whole-body inspection claim. The exact delivered service field is separately hash-identified in the library, but catalog-only binding states describe discovery use, not reading or verification of the whole body or the underlying HTML/PDF. Not an independent reception or quotation witness."
+
+[[bindings]]
+source_id = "artifact.anthony-of-padua.sermo-dominica-xxii-post-pentecosten.2026-11-17-basilica-latin-service.service-markdown-82145361"
+loci = ["section-2", "section-8", "sections-10-11", "sections-16-17"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Latin service Markdown actually read in the named sermon sections, not original HTML or an inspected printing. Sections2,8 explicitly connect the shared Ego cogito Introit to mercy/debt release in DominicaXXII with Matthew18 and Philippians1; sections10-11,16-17 concern forgiveness, unresolved remitted-sins debate and fruit through Christ. Supplemental reception, not this whole Mass, Matthew24 commentary, or a carrying author. Exact45790-byte service field retained privately; edition/delivery rights unresolved."
+source_fingerprint = "sha256:a3dfde46f775895f63ed28245b956078b54c8130da64d411de6ae53905503ffd"
+
+[[bindings]]
+source_id = "artifact.musmed.dicit-dominus-chant-86198.2026-11-17-web-service.service-markdown-bbcab918"
+loci = ["Search discovery only; https://musmed.eu/chant/86198"]
+role = "lead"
+states = ["cataloged"]
+context = "Uninspected search-return lead. search-return lead only; no whole-body inspection claim. The exact delivered service field is separately hash-identified in the library, but catalog-only binding states describe discovery use, not reading or verification of the whole body or the underlying HTML/PDF. Not an independent reception or quotation witness."
+
+[[bindings]]
+source_id = "artifact.musica-hispanica.dicit-dominus-chant-108015.2026-11-17-web-service.service-markdown-42b02b79"
+loci = ["Search discovery only; https://musicahispanica.eu/chant/108015"]
+role = "lead"
+states = ["cataloged"]
+context = "Uninspected search-return lead. search-return lead only; no whole-body inspection claim. The exact delivered service field is separately hash-identified in the library, but catalog-only binding states describe discovery use, not reading or verification of the whole body or the underlying HTML/PDF. Not an independent reception or quotation witness."
+
+[[bindings]]
+source_id = "artifact.peter-canisius-michael-david-kang.november-18-2021-web-archive.2026-11-17-web-service.service-markdown-65fd351e"
+loci = ["Search discovery only; https://petercanisiusmichaeldavidkang.com/2021/11/18/"]
+role = "lead"
+states = ["cataloged"]
+context = "Uninspected search-return lead. search-return lead only; no whole-body inspection claim. The exact delivered service field is separately hash-identified in the library, but catalog-only binding states describe discovery use, not reading or verification of the whole body or the underlying HTML/PDF. Not an independent reception or quotation witness."
+
+[[bindings]]
+source_id = "artifact.peter-canisius-michael-david-kang.last-sunday-offertory-communion-2014.2026-11-17-web-service.service-markdown-481db881"
+loci = ["Search discovery only; https://petercanisiusmichaeldavidkang.com/2014/11/19/usus-antiquior-twenty-fourth-and-last-sunday-after-pentecost-ii-classis-sunday-23-november-2014-offertory-secret-prayer-of-the-priest-communion-and-post-communion-prayer/"]
+role = "lead"
+states = ["cataloged"]
+context = "Uninspected search-return lead. search-return lead only; no whole-body inspection claim. The exact delivered service field is separately hash-identified in the library, but catalog-only binding states describe discovery use, not reading or verification of the whole body or the underlying HTML/PDF. Not an independent reception or quotation witness."
+
+[[bindings]]
+source_id = "artifact.propria.last-sunday-propers-2020-web-sheet.2026-11-17-web-service.service-markdown-66658be6"
+loci = ["Search discovery only; https://propria.org/wp-content/uploads/2020/11/propers-for-last-sunday-after-pentecost.pdf"]
+role = "lead"
+states = ["cataloged"]
+context = "Uninspected search-return lead. search-return lead only; no whole-body inspection claim. The exact delivered service field is separately hash-identified in the library, but catalog-only binding states describe discovery use, not reading or verification of the whole body or the underlying HTML/PDF. Not an independent reception or quotation witness."
+
+[[bindings]]
+source_id = "artifact.ewtn.latin-prayers-library-9125.2026-11-17-web-service.service-markdown-422e2d97"
+loci = ["Search discovery only; https://www.ewtn.com/catholicism/library/latin-prayers-9125"]
+role = "lead"
+states = ["cataloged"]
+context = "Uninspected search-return lead. search-return lead only; no whole-body inspection claim. The exact delivered service field is separately hash-identified in the library, but catalog-only binding states describe discovery use, not reading or verification of the whole body or the underlying HTML/PDF. Not an independent reception or quotation witness."
+
+[[bindings]]
+source_id = "artifact.propria.last-sunday-propers-2018-web-sheet.2026-11-17-web-service.service-markdown-97c2d470"
+loci = ["Search discovery only; https://propria.org/wp-content/uploads/2018/10/propers-for-last-sunday-after-pentecost.pdf"]
+role = "lead"
+states = ["cataloged"]
+context = "Uninspected search-return lead. search-return lead only; no whole-body inspection claim. The exact delivered service field is separately hash-identified in the library, but catalog-only binding states describe discovery use, not reading or verification of the whole body or the underlying HTML/PDF. Not an independent reception or quotation witness."
+
+[[bindings]]
+source_id = "artifact.clerus.verbal-concordance-cimr2.2026-11-17-web-service.service-markdown-bcb3f277"
+loci = ["Search discovery only; https://www.clerus.org/clerus/dati/2004-09/13-13/CIMR2.htm"]
+role = "lead"
+states = ["cataloged"]
+context = "Uninspected search-return lead. search-return lead only; no whole-body inspection claim. The exact delivered service field is separately hash-identified in the library, but catalog-only binding states describe discovery use, not reading or verification of the whole body or the underlying HTML/PDF. Not an independent reception or quotation witness."
+
+[[bindings]]
+source_id = "artifact.studylight.mark-11-24-commentaries-web-view.2026-11-17-web-service.service-markdown-106d7a3e"
+loci = ["Search discovery only; https://www.studylight.org/commentary/mark/11-24.html"]
+role = "lead"
+states = ["cataloged"]
+context = "Uninspected search-return lead. search-return lead only; no whole-body inspection claim. The exact delivered service field is separately hash-identified in the library, but catalog-only binding states describe discovery use, not reading or verification of the whole body or the underlying HTML/PDF. Not an independent reception or quotation witness."
+
+[[bindings]]
+source_id = "artifact.enduring-word.mark-11-commentary-web-view.2026-11-17-web-service.service-markdown-f8d5b794"
+loci = ["Search discovery only; https://enduringword.com/bible-commentary/mark-11/"]
+role = "lead"
+states = ["cataloged"]
+context = "Uninspected search-return lead. search-return lead only; no whole-body inspection claim. The exact delivered service field is separately hash-identified in the library, but catalog-only binding states describe discovery use, not reading or verification of the whole body or the underlying HTML/PDF. Not an independent reception or quotation witness."
+
+[[bindings]]
+source_id = "artifact.scriptural-commentary.mark-11-24-26-prayer-forgiveness.2026-11-17-web-service.service-markdown-987f5871"
+loci = ["Search discovery only; http://scripturalcommentary.blogspot.com/2016/06/mark-1124-26-on-prayer-and-forgiveness.html"]
+role = "lead"
+states = ["cataloged"]
+context = "Uninspected search-return lead. search-return lead only; no whole-body inspection claim. The exact delivered service field is separately hash-identified in the library, but catalog-only binding states describe discovery use, not reading or verification of the whole body or the underlying HTML/PDF. Not an independent reception or quotation witness."
+
+[[bindings]]
+source_id = "artifact.biblehub.mark-11-24-commentaries-web-view.2026-11-17-web-service.service-markdown-fd61d97b"
+loci = ["Search discovery only; https://biblehub.com/commentaries/mark/11-24.htm"]
+role = "lead"
+states = ["cataloged"]
+context = "Uninspected search-return lead. search-return lead only; no whole-body inspection claim. The exact delivered service field is separately hash-identified in the library, but catalog-only binding states describe discovery use, not reading or verification of the whole body or the underlying HTML/PDF. Not an independent reception or quotation witness."
+
+[[bindings]]
+source_id = "work.internet-archive.the-gospel-according-to-st-mark-item"
+loci = ["Search discovery only; https://archive.org/stream/TheGospelAccordingToSt.Mark/The%20Gospel%20According%20to%20St.%20Mark_djvu.txt"]
+role = "lead"
+states = ["cataloged"]
+context = "Uninspected search-return lead. search-return lead only; no whole-body inspection claim. No body was returned; no empty artifact or invented OCR acquisition is registered. Not an independent reception or quotation witness."
+
+[[bindings]]
+source_id = "artifact.bibleword-ai.mark-11-24-web-commentary.2026-11-17-web-service.service-markdown-d3aae5de"
+loci = ["Search discovery only; https://bibleword.ai/bible/mark/11/24"]
+role = "lead"
+states = ["cataloged"]
+context = "Uninspected search-return lead. search-return lead only; no whole-body inspection claim. The exact delivered service field is separately hash-identified in the library, but catalog-only binding states describe discovery use, not reading or verification of the whole body or the underlying HTML/PDF. Not an independent reception or quotation witness."

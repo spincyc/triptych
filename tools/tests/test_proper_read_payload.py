@@ -83,6 +83,7 @@ class ProperReadPayloadTests(unittest.TestCase):
                 "kind": original.get("kind"),
                 "season": original.get("season"),
                 "date": original.get("date"),
+                "listing": original.get("listing"),
                 "coverage": original.get("coverage"),
                 "forms": [{"id": form.get("id"), "name": form.get("name"),
                            "ordinal": form.get("ordinal")}

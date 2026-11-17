@@ -601,3 +601,278 @@ committed code/release inputs. Then the complete index and deployment/site
 targets must pass at the final snapshot before an outgoing-object audit,
 push and actual Pages/full-print/live verification. No deployment or overall
 completion is claimed.
+
+## 17 November: external repair checkpoint and renewed upstream integration
+
+The maintainer creates `e8aceadc4a7e1ebe8d4987815a636d82ddd9d59b`
+outside Droid. The coordinator verifies its parent, configured identity,
+seven changed files and exact zero-context diff against the held audit:
+231 added lines, 48 removed, SHA-256
+`24bc0eba0adec971aad10271f8c333b86a5480292e10561446f30b255386706e`.
+The staged index is empty afterwards. No blocked commit is retried, no
+Shield setting changes, and the generated cache commitments are not
+substituted to obtain a commit.
+
+A fresh fetch reaches `ad000a3f02be1801e50aa265c877d9c93a66b502`,
+fifteen upstream commits beyond the previous observation. These include the
+independent Claude Last Sunday production, reader-list presentation, shared
+browser presentation and refreshed derived products. A non-rewriting merge
+preserves both branches' reviewed checkpoints. Before merging, all 57
+modified tracked index files and three new shards are preserved in a
+recoverable local stash. Every one of the sixty payload hashes is verified;
+no earlier stash is replaced. Those old generated rows are not blindly
+replayed over upstream metadata: their owner must regenerate the final index.
+
+The merge has ten conflicts in operational records, the catalog, shared
+source metadata and generated release records. Both provider authorizations,
+promises, catalog identities and three-reader link sets are retained.
+The upstream Epiphany/resumed-Sunday list order and Easter-dependence note
+remain intact. The two cursor regressions and original bounded-descriptor
+test all pass against the merged publisher.
+
+Two independently registered Ordo editions have different IDs but used the
+same directory name. Neither identity is collapsed or rebound. The GPT
+edition stays at `2026-11-16-web`; the incoming edition and its two child
+metadata records move to the matching `web-2026-11-16` directory. Their
+IDs, complete bytes, rights limits, hashes and frozen binding values are
+retained. No modern Ordo HTML is added. An exhaustive audit checks 58,480
+canonical manifests against their parent blobs and confirms both providers'
+publication sources remain byte-identical at this point.
+The first combined source validation identifies the two incoming child
+records still under the other edition; the metadata-only moves repair that
+structural error. Complete source validation is rerun, not relabeled.
+It then passes with 11,340 artifacts, 5 corpora, 14,433 editions,
+10,850 passages, 10,829 segments, 11,028 works and 4,767 bindings;
+736 external witnesses remain metadata-only. A second exhaustive
+post-relocation audit again matches all 58,480 canonical manifests to
+reviewed parent blobs, verifies the three relocated incoming records,
+and confirms all 3,417 Claude files match the incoming parent exactly.
+
+Generated release/product merge values remain provisional, not acceptance
+proofs. An intermediate descriptor merge fails its key-integrity check after
+editing through a redacted view. The exact committed incoming descriptor is
+restored wholesale, without reconstructing those fields; all thirteen keys
+are intact. The product owner must still record the combined inputs through
+its independent cold-build proof. The release owner must then establish the
+exact scoped bindings; no generated digest is hand-adopted as validation.
+
+Upstream also registers Maas's Olivet speaking event and its qualified
+A.D. 29 derivation. This dates the speaking in one identified harmony, not
+the events foretold or Matthew's composition. It changes the Gospel's
+chronology inputs and the earlier research seal. The original ACCEPTED run,
+its archived decisions and native records remain historical, not restamped.
+The precise source/chronology and review-currentness impact is checked before
+any new publication acceptance. All final source, product, release, index,
+site and deployment checks remain open for this integration state.
+
+Fresh native v19 run `13ecdd1552c245ea` is seeded at the actual local
+checkpoint while the incoming merge remains uncommitted. Its program
+scope gate passes and a fresh high-effort worker receives its exact
+`resolve-context-0000` packet. The original run's 143 native files remain
+hash-identical, with no added files. No earlier acceptance is copied into
+the fresh run.
+
+Seven catalog-order and calendar-arithmetic regressions pass against the
+resolved catalog. The complete twelve-test calendar module is not yet
+green: five errors require the current browser-product cache. A direct
+reproduction of the selection helper reports the absent sealed
+`structure/rubrics/postconciliar.json`, not a rejected JSON-format flag.
+The unchanged command owner needs prepared current products before these
+checks can be judged; the complete module must be rerun after that owner
+step.
+
+The fresh context worker then returns PASS after checking retained primary
+hashes, the dated ICRSP entry, calendar anchors and all eleven appointments.
+It inspects eight bounded source-page rasters directly when the normal
+contact-sheet helper lacks ImageMagick. It claims neither a new retrieval
+nor local-calendar certification. The worker's native settings independently
+confirm GPT-6.1 Sol at high effort. Its result is submitted to the engine;
+the emitted `research-0000` packet is dispatched to one new GPT-6.1 Sol
+process with explicit high effort. Research and all following reviews remain
+open.
+
+The research worker then returns PASS, and its result is submitted. It
+regenerates the three chronology outputs through their owning commands,
+corrects two source-image audit sentences and Augustine's prophetic
+temporal standpoint, and renews the bounded reception evidence. A new
+Anthony of Padua service-derived witness remains a registration candidate,
+not a collated printing, cleared public payload or carrying author. The
+fresh source-registration packet is dispatched at explicit high effort
+with the actual research receipts. Research approval still awaits its
+independent reviewer; the authored studies are not silently revised here.
+
+The merged native-print page/control and publication-reader modules pass
+all nineteen tests. An earlier combined invocation aborts during collection
+because the proper-read-payload module requires the absent current sealed
+product cache, even for its fixture methods. That complete module is
+deferred until the product-owner step; no result is claimed for tests that
+did not execute.
+
+Fresh source registration returns PASS and is submitted. It adds 69
+metadata manifests for 23 exact service witnesses, without retaining their
+rights-unresolved payloads publicly, and reconciles 75 bindings with 104
+dispositions: two reused admissions, forty deferred, six rejected,
+thirty-eight non-commentary uses and eighteen leads. No new passage is
+admitted. The original 51 binding identities, roles, states and central
+fingerprint pins remain unchanged; expanded local reading extents receive
+their actual binding-digest pins.
+
+The source worker's full `make check-sources` rerun passes, including
+47 existing tests, in 436.2 seconds after an initial 180-second timeout.
+Strict unsealed source projection generation and independent checking also
+pass. Owner refreshes preserve GPT classifications, `families = []` and
+all 168 pending review units. The inherited, separately run tool-registry
+check still reports the corpus-index group/reach omissions; no unrelated
+tooling repair is claimed. Preservation checks retain all original native
+and public-archive files, all 3,417 Claude files and all 858 release files.
+
+The engine's fresh research-preflight gate then passes in 150.6 seconds.
+Its exact sealed `research-review-0000` packet is dispatched to one new
+GPT-6.1 Sol process at explicit xhigh effort, without the authoring
+conversation or a desired verdict. The research review remains open.
+
+That independent review returns PASS with no findings after inspecting
+the retained Missal images, biblical payloads, reception loci, bindings,
+dispositions, rights limits, dependency closure and all fifteen chronology
+rows. Its consequential-difficulty test distinguishes Augustine's
+future-as-completed rescue from Bellarmine's remembered-rescue reading.
+The result authorizes bounded drafting, not later prose, quotation rights
+or web/print acceptance. The engine records it and emits
+`author-study-0000`, which is dispatched to one fresh GPT-6.1 Sol process
+at explicit high effort. Its scope excludes the sealed research evidence
+and the companion prose.
+
+The expansive-study worker returns PASS with 6,193 body words and passing
+research-mode, component, schema, provenance, generated-document and
+canonical-conversion checks. Its changes preserve the sealed research and
+companion prose. The resulting inventory-hash failure is repaired through
+the publication-inventory and family-ledger owners, not by editing generated
+pins. Their independent checks pass with 156 GPT publications, 3,775
+source-surface files, twelve owners and all 168 family-review units still
+pending.
+
+The engine records the author result and its study-preflight gate passes
+in 102.0 seconds. One fresh GPT-6.1 Sol process receives the complete sealed
+`study-review-0000` packet at explicit xhigh effort. It receives no authoring
+conversation or preferred verdict; study approval remains open.
+
+The independent study review returns PASS and the engine accepts its exact
+result. It checks the complete study and its argument-bearing witnesses,
+including the consequential-difficulty tests, and records one nonblocking
+advisory, `STU-001`. The research audit reverses the agent and object of
+Chrysostom's longsuffering/patience distinction; the study's own footnote is
+already correct. The review requests “those whom we can requite” versus
+“those whom we cannot,” not a change to the accepted study. That advisory
+is retained honestly, not promoted to a blocker or silently repaired outside
+the sealed research owner. This is source/content approval, not print-layout
+approval.
+
+The emitted `derive-synthesis-0000` packet is dispatched to one fresh
+GPT-6.1 Sol process at explicit high effort. Its scope is the concise study,
+its declarations and actual contribution/production audit, not upstream
+research or expansive-study prose.
+
+The concise-study worker returns PASS after renewing the comparison and
+preserving the fixed opening semantics and accepted evidence boundaries.
+The engine records its result and synthesis preflight passes in 61.4
+seconds. Its exact `synthesis-review-0000` packet is dispatched to one
+fresh GPT-6.1 Sol process at explicit xhigh effort, without an authoring
+conversation or preferred verdict.
+
+The concise edits again change the conservative publication-inventory
+hashes. Before owner refresh, the coordinator inspects the latest records
+and confirms neither inventory file enters the active review's sealed
+input closure. Both registered owners refresh their records, and their
+independent checks pass with 156 publications, 3,775 source-surface files,
+twelve owners, no classified families and all 168 review units pending.
+No sealed evidence is changed by this bookkeeping. Final whole-source and
+deployment checks still await the remaining production stages.
+
+The independent synthesis review returns PASS with no findings and is
+accepted by the engine. It reads the concise study before comparing it
+with the expansive study and checks the carrying witnesses and selected
+source images. Its chronology lookup distinguishes the qualified A.D. 29
+Olivet speaking event from Matthew's separate composition range. All
+sixteen sealed inputs remain exact. This approves source and HTML content,
+not PDF pagination or print layout.
+
+The emitted `derive-homily-0000` packet is dispatched to one fresh
+GPT-6.1 Sol process at explicit high effort. Its scope is the homily
+components, their declarations and the actual contribution/production
+audit. Research, both reviewed studies, shared sources, release records
+and incoming Claude content remain outside that author's edit authority.
+No new publication acceptance or deployment is claimed at dispatch.
+
+The homily author returns PASS and the engine records its exact result.
+The speech has 1,190 words, estimated at 10.3–10.8 minutes at 110–115
+words per minute; the author silently rereads it and claims no human-timed
+delivery. Its source/component/schema/provenance and reader-fidelity
+checks pass, while accepted upstream prose and historical evidence remain
+unchanged. Four conservative inventory hashes are stale after these edits.
+The registered inventory and family-ledger owners refresh them; separate
+checks pass with 156 publications, 3,775 source-surface files, twelve owners
+and all 168 family-review units still pending.
+
+Homily preflight then passes. Its exact sealed `homily-review-0000`
+packet is dispatched to one fresh GPT-6.1 Sol process at explicit xhigh
+effort, without the authoring conversation or a preferred verdict. The
+reviewer may write only its scratch evidence and result, not the reviewed
+artifact. Homily acceptance, the remaining native stages and publication
+remain open.
+
+While that read-only review runs, all ten tests in
+`tools.tests.test_browser_static` pass in 5.486 seconds against the merged
+browser and publisher. They cover script/harness parsing and built-page
+landmark/publishability rules, not the deferred cache-dependent payload,
+selection and search checks. Those still require the final product owner.
+
+The independent homily review returns PASS with no findings, and the
+engine accepts its exact result. The reviewer reads the speech continuously,
+checks its argument against both studies and the carrying biblical, Missal,
+Lasance, Chrysostom, Aquinas and Bede loci, and independently confirms the
+1,190-word count. Its timing remains an estimate; no audible rehearsal,
+human-timed performance, print-layout or web-layout approval is claimed.
+
+The emitted `build-artifacts-0000` packet is dispatched to one fresh
+GPT-6.1 Sol process at explicit high effort. It validates the three source
+outputs and accepted review closure without revising accepted prose,
+evidence, release records or incoming Claude content. Optional print export
+is not requested by that native packet; current selected native compilation
+remains a separate final check.
+
+Artifact validation returns PASS and the engine records it. The three
+source outputs, all component/content preflights and converter fidelity
+checks pass; the four accepted review seals independently match their
+current inputs. The validator edits no canonical record. Its broader
+`make check-sources` attempt stops at the standing-findings file hash,
+which the engine changed after the preceding inventory refresh. This is
+an open inventory-owner task, not a new scholarly finding. The inherited
+corpus-index registry omissions and unavailable `tmt` remain reported.
+
+The native artifact gates then pass in 149.2 seconds. The emitted web
+packet explicitly requires a coordinator commit before conversion:
+uncommitted source closures receive build-clock revision stamps and cannot
+provide stable review bytes. No web worker is dispatched before that
+checkpoint. The coordinator prepares the reviewed GPT source/evidence
+checkpoint together with the preserved-history integration, while keeping
+the existing product/release merge values provisional. No edition-revision
+suppression trailer may be applied to the renewed reader wording or
+changed-data chronology. Final products, release/index gates, site
+verification and publication remain pending.
+
+The final pre-web inventory reconciliation passes through both owners and
+their independent checks. The following complete `make check-sources` run
+then passes, including all 47 tests (23 source/containment, seventeen
+chronology-freshness and seven generated-document tests). It validates
+58,549 held manifests, 4,791 bindings and both provider inventories; the
+736 metadata-only witnesses and all 168 pending family-review units keep
+their existing qualifications.
+
+A checkpoint-candidate audit scans 383 text files totaling 35,904,910 bytes,
+finds no private-path or recognized credential-pattern match, and confirms
+that the only 69 untracked files are the reviewed registration manifests.
+All 3,417 incoming Claude files match their upstream Git blobs; all seventy
+historical archive files and 143 original native files remain exact, with
+no extra original-run files. This is a checkpoint preservation/privacy
+check, not the required final newly reachable-object audit or a release
+approval.

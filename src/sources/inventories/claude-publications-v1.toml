@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "claude"
-audited_on = "2026-11-11"
+audited_on = "2026-11-16"
 discovery_rule = "src/claude/**/main.tex"
-publication_count = 66
-source_surface_file_count = 2434
-snapshot = "sha256:8e1de96967ddf320b10297f7f270601a1884557b86c70d48ba7737f7dcae3e76"
+publication_count = 67
+source_surface_file_count = 2507
+snapshot = "sha256:325ec4fc4b86a880a8b8e6c3b78bf5f5dfd24c3f685475e484ff93fb62702e96"
 
 [[owners]]
 id = "owner.articles.faith.four-last-things"
@@ -567,6 +567,17 @@ inventory_state = "sources-categorized"
 source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "patristic", "repository-internal", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"
+relationship = "local"
+
+[[documents]]
+id = "liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"
+main = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "sources-categorized"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "patristic", "repository-internal", "scholastic", "scripture", "secondary"]
+[[documents.record_owners]]
+id = "liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"
 relationship = "local"
 
 [[documents]]
@@ -9822,6 +9833,444 @@ path = "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-aft
 sha256 = "ead3ea647a8e811c0bb57b7e67b311e59d6a25e5b6af4036b0bd70a573fb5e95"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/evaluations/blocking-findings-v1.toml"
+sha256 = "1193994bd5aac88ddfc36cf77d8235e0ed06dbd74267b9ec786d38dd61b87ed1"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/evaluations/proper-study-results/11c5af05fe374203/packets/artifact-gates-0000.txt"
+sha256 = "640de316d90e313a1b19f835ea4d25805664c8aef55e6032dfcdee98d9ab1d8b"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/evaluations/proper-study-results/11c5af05fe374203/packets/author-study-0000.txt"
+sha256 = "97bdc0c16c557351224424e1f25ac5a89d99312ec6714fa0465e6fe96eb508f1"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/evaluations/proper-study-results/11c5af05fe374203/packets/author-study-0001.txt"
+sha256 = "b75799f456a4fcacafe478227664541f2803e3e1235a29212472fa068da78cfa"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/evaluations/proper-study-results/11c5af05fe374203/packets/author-study-0002.txt"
+sha256 = "45acaff6693115712cad070a65a77f4e8cad406f02916133c9b75568acb61f48"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/evaluations/proper-study-results/11c5af05fe374203/packets/build-artifacts-0000.txt"
+sha256 = "9d65098090a059bfd41872d3d6ca6e1c96a995fc6c7698a83fd18c2cd7c0a689"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/evaluations/proper-study-results/11c5af05fe374203/packets/derive-homily-0000.txt"
+sha256 = "ca6eda008e522fc50f2303d9e17abf84339601643eb018629156b45193743081"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/evaluations/proper-study-results/11c5af05fe374203/packets/derive-homily-0001.txt"
+sha256 = "2402ee381ae289a92330d92c2ba0d5deeec630f1f2cb455bde737480f6dba344"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/evaluations/proper-study-results/11c5af05fe374203/packets/derive-synthesis-0000.txt"
+sha256 = "fda8115283d3d7c3bd01d3dfb953f2ab10992d95b3b90cfa9531dacdc44e25bc"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/evaluations/proper-study-results/11c5af05fe374203/packets/generate-web-0000.txt"
+sha256 = "b94c1e734d1884f028abcadc74d9a85666e5c437c7860113b94db6785b479e50"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/evaluations/proper-study-results/11c5af05fe374203/packets/homily-preflight-0000.txt"
+sha256 = "471e57b330ae032f124702c5aff40546b01b36f230df1da8577966e19afe9353"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/evaluations/proper-study-results/11c5af05fe374203/packets/homily-preflight-0001.txt"
+sha256 = "c187800866c4db8b6d7d30887e20cc28502fa19a89977a57c1ce90e560006f44"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/evaluations/proper-study-results/11c5af05fe374203/packets/homily-review-0000.txt"
+sha256 = "02a262ae3c48180f849626c52f6524d14e601534ccae30da87a483ad8754e254"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/evaluations/proper-study-results/11c5af05fe374203/packets/homily-review-0001.txt"
+sha256 = "d0d93113c889a87c1a96053d775b0a277f40abc60a230df7fef9e8feaae7340f"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/evaluations/proper-study-results/11c5af05fe374203/packets/install-publication-0000.txt"
+sha256 = "d4c9ff1d778cd09ec86cd4054f6265d5c1ada55b5f38abe136e63ca61b4e93dc"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/evaluations/proper-study-results/11c5af05fe374203/packets/publication-gates-0000.txt"
+sha256 = "f1bf4c4738a04d83cd1993deabd37ce1b3f3bf125486ebb74e59a68ec64c703a"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/evaluations/proper-study-results/11c5af05fe374203/packets/research-0000.txt"
+sha256 = "8f5a68fbb6f6bc03cb5f2dfacc2d25522ba867cc929374bcb734cfeb1885c70d"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/evaluations/proper-study-results/11c5af05fe374203/packets/research-0001.txt"
+sha256 = "0249a3e8521df417f01849951e60f395f5fee75ca6ede727a1a5d66fe0ac13f0"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/evaluations/proper-study-results/11c5af05fe374203/packets/research-preflight-0000.txt"
+sha256 = "d68a9b0de7bb06842ed4d3940d9e5c45465e71a11a3cb4f8db0ae1dcf92fb4e8"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/evaluations/proper-study-results/11c5af05fe374203/packets/research-preflight-0001.txt"
+sha256 = "4ab8e4d32e5dfeefd69a3cc83258723b309230a380ed2343fb0a77a1c1004b7c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/evaluations/proper-study-results/11c5af05fe374203/packets/research-preflight-0002.txt"
+sha256 = "ed2a6bd7263cdc4bff1833e64b15cff56a7f44871d063a15d117e75bf2caf7d0"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/evaluations/proper-study-results/11c5af05fe374203/packets/research-review-0000.txt"
+sha256 = "52d94070e34498a370021c9b1bc3f4beab76ec621076ea0f3ae20ff3176a1d23"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/evaluations/proper-study-results/11c5af05fe374203/packets/research-review-0001.txt"
+sha256 = "9f8f25ea562705f260559613ec361a9f2c686f17704f5e0cc3cedf84b98d4feb"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/evaluations/proper-study-results/11c5af05fe374203/packets/resolve-context-0000.txt"
+sha256 = "6b016db1fa03282adf720ae211c36c30804e2219679b54e82273cecb7a8fcbc5"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/evaluations/proper-study-results/11c5af05fe374203/packets/scope-gate-0000.txt"
+sha256 = "9cfa6f49b8e0c1dcbb598ab278878975fd18b35abba803041c5d8d90beec6dcf"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/evaluations/proper-study-results/11c5af05fe374203/packets/source-registration-0000.txt"
+sha256 = "dd6988d2b7d03f4bd8070d8724135b916ce25604f87462dfe6c7911ac1855cde"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/evaluations/proper-study-results/11c5af05fe374203/packets/source-registration-0001.txt"
+sha256 = "88412d49021d12e950f9b7a59aa7e915e666d68b65f07d38769fbf6a7d71a7a8"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/evaluations/proper-study-results/11c5af05fe374203/packets/source-registration-0002.txt"
+sha256 = "7528fb9efdbadc2352219337ad5fc7e2af8b6b36fcad6f0a54fc3dfb51f337df"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/evaluations/proper-study-results/11c5af05fe374203/packets/study-preflight-0000.txt"
+sha256 = "50cee3bc740934562a941bd910a955162b9bfc1025154bd886614c62fde84956"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/evaluations/proper-study-results/11c5af05fe374203/packets/study-preflight-0001.txt"
+sha256 = "9a7823133603bd9eb86ee43751739b366a31168a61dad3579a57843dcce7073d"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/evaluations/proper-study-results/11c5af05fe374203/packets/study-preflight-0002.txt"
+sha256 = "876229c06d380932284d2db578f00e9713bbb048190be3294341239d74a77b75"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/evaluations/proper-study-results/11c5af05fe374203/packets/study-review-0000.txt"
+sha256 = "ff41970ef6e08773ecc133c8a5a529c89f973345e07d11ee593a8693b060b07c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/evaluations/proper-study-results/11c5af05fe374203/packets/study-review-0001.txt"
+sha256 = "91205ce469b091ba592fcb7ec1ed5db6b554e7e49c0d8303e78a10517e2cc0e7"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/evaluations/proper-study-results/11c5af05fe374203/packets/study-review-0002.txt"
+sha256 = "f94ce60406cdff977610bb435341e1cca533dcf578d32286549a891d1cb78d88"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/evaluations/proper-study-results/11c5af05fe374203/packets/synthesis-preflight-0000.txt"
+sha256 = "807d5762f14a519719358df2a04634af60ecae693092b1fd050f1432770720a8"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/evaluations/proper-study-results/11c5af05fe374203/packets/synthesis-review-0000.txt"
+sha256 = "7e72eed4756175ef66b5b29f98b9216c534d804f6ff181300eb33d1617b06a1d"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/evaluations/proper-study-results/11c5af05fe374203/packets/web-review-0000.txt"
+sha256 = "e76f3bd570d31590678a2a125a2dfcfd023455c179473d67da9bd7247a484a8a"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/evaluations/proper-study-results/11c5af05fe374203/record.md"
+sha256 = "e5786d707e06d4e8732a1fc6abd98a16d26f1825847f380d493ef4827bcb16a9"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/generated/scriptural-date-location-page.tex"
+sha256 = "269abf89b614eafaadca6147f27b6055ddca7d066c5b42860f019a323ab360f4"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/generated/scriptural-date-location.tex"
+sha256 = "148369cfb8dc29ff41cc3c765675b21901a17800e6b7e9fed36dfdd7bc4973cb"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/homily.tex"
+sha256 = "02aa44db978fbe57a956464974c7ec551fef0bef4fbba9322eb8002317cc7478"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/main.tex"
+sha256 = "3016751954c8a7953cf76125f4314ddbb90978df77cfeebb37e1393b08686746"
+kind = "publication-main"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/proper-components.toml"
+sha256 = "dab78a7caf227ac5aa587a8a7b6f3371c9ce41c546090fae6229bbca58d82020"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/propers/retrieved.txt"
+sha256 = "dbdc45b4bf0b3b3603400171193b48079f26a84a1744fce093e05aa4d8420e8c"
+kind = "local-evidence-payload"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/propers/verified.md"
+sha256 = "9bf2d74519747313f23d3e37d90ac9bcd6e944ef1aaa7b83f2919c3368869067"
+kind = "proper-verification"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/publication.toml"
+sha256 = "313a6c8347b3b1dcd70b6b9cfcdd37f8c8894807358a4f08c2e0db9305efb6c6"
+kind = "publication-contract"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/research/chronology-annotations.tex"
+sha256 = "711d66e59277358c48d343f28dcdbfa6645b69d00b9f3ea9dd263315b8957457"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/research/chronology-table.tex"
+sha256 = "ce6e1e19ca54e6afaece45d1105859c982a50c4fb970bc2deba24fae3247eb57"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/research/chronology.toml"
+sha256 = "0804dfb30ea86cc6f4f81c254a099483814a0ae50fe682887a2f8114322a12e9"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/research/context.md"
+sha256 = "62079e7c75a5713d38af23874c2172c1ee9491be45b5c67ee38806c666978b8f"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/research/interpretations.md"
+sha256 = "c5f8f52fed06f7b8bb2a695def2a6fdac077f6d36c2300346deccbd72ea6d57c"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/research/production-review.md"
+sha256 = "d00ec98a5e11b785ab29f8e266846c78f717315eb5a896663ea6498b131a6906"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/research/review-dependencies.toml"
+sha256 = "dd95572a9c06ffe573efbe9aae97c45dfee5c66f74013d405df4546049d71f61"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/research/scope.md"
+sha256 = "a747360e269b799d6710ae8b0984d4dd685e8228936788e008d23706fea63bb3"
+kind = "research-scope"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/research/source-bindings.toml"
+sha256 = "21d804bc465ac1665ee7411334696bca71b4634f36870ddfef6dab262144a767"
+kind = "source-binding"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/research/source-dispositions.toml"
+sha256 = "6ceaf71d0ab7131af99a055d7824d2ffa667eef26d27de6eed4179a49eb16230"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/00-opening.tex"
+sha256 = "f129f0e05f123c01917df7359ae8ae8eb5a156d72f4ef8c67973344665e14aff"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/05-appointed-texts.tex"
+sha256 = "0ce806e989eff7d97b82a16d8afa75d3318bb660055079e64409d5c08374905d"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/10-each-element.tex"
+sha256 = "01459b410942ea15134067ac093754b61bc5b25bd9a4546b81b4698e8160d8cd"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/20-where-the-body-is.tex"
+sha256 = "5ace33f24c7a0e317a5295feb8f259ba2a671c17b41756db2b116883312f8547"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/30-flight-without-turning-back.tex"
+sha256 = "86c3c8a4a1140deef05949696f0ba992fb11333a70adc4f3d0535fa1399820b3"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/40-words-that-do-not-pass.tex"
+sha256 = "670a587e58ca7cdbd4435aff1b2c37594d2b283374685e31dc6d4379a8593efd"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/50-comparison.tex"
+sha256 = "38a2276c4ff13ab5fba6f305d7cca4678b1614aa477d4447b2eeb0b5cf4c376f"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/90-apparatus.tex"
+sha256 = "54be36c325b05983061cddd7cf0834d690b42f873b3631d11b2dec7968d922d2"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/01-inventory.tex"
+sha256 = "d101549d2449391980d33e51b47f9c834937c6db4890dd1b9242fe709900b536"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/02-overview.tex"
+sha256 = "02e3e707544d06ddd640c8c496471fd08a19e3707303f364872eb7168c638a5e"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/04-themes.tex"
+sha256 = "9f90f1b00698eb2a748c487ddf1b89bd6d896eea21d4838ba4c7ee6d0e15463b"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/10-commentary.tex"
+sha256 = "d2e0ba53fae46cdaa3be20ad394245122be2aaf509a6e3f93473536ad28c42ec"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/90-apparatus.tex"
+sha256 = "55cad37f01744708608645da32db887663d3ff74bff11bad80c30e3790e51c8d"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/homily/10-homily.tex"
+sha256 = "7ad855986a180b89e47424a55256fcdac36f2f59f04761fdb312e1fec9ee9a01"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/homily/90-note.tex"
+sha256 = "3f65aa382f58830bb9a1ac4fededda44cda7e9c67e583e48181c88b6684373eb"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/synthesis.tex"
+sha256 = "0dd6d3bcdfc6d914aa86d41e199c0792c7038c0cc641bfaace66369c03c315b4"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/web-edition.toml"
+sha256 = "0e164918fddb2082488a5997a0464f83f49f4a8d2b8dc8598f2bfee9a46e3ee3"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/blocking-findings-v1.toml"

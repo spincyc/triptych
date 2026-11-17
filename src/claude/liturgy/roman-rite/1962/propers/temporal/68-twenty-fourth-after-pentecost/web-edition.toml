@@ -1,0 +1,9 @@
+schema = 1
+record_type = "web-edition"
+document = "liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"
+eligibility = "eligible"
+blocking_constructs = []
+reviewed = "2026-11-16"
+inspected = "2026-11-16"
+inspected_by = "Anthropic Claude (claude-opus-5-5): proper-study v19 run 11c5af05fe374203 independent web-review iteration 0"
+inspection = "The web review reconverted the leaf with every converter fidelity audit and reproduced the reviewed bytes, then compared the complete canonical Markdown section by section with main.tex, every section it inputs, the generated Scriptural Date and Location source and the chronology table, by word sequence (18,378 source words) and by italic, bold and blockquote counts; checked the heading tree, the three interpretations with their own four senses, the ten proper anchors, unique ids and contents links in the site renderer's HTML, the rights colophon, the revision stamp and TeX debris (conversion SHA-256 8b40f476fe32e78949582bc9a5baa3dd9bcf4947f600276edc2b0f19cc3366c0). Presentation was judged from that HTML and the site CSS rules only: the page was not rendered in a browser at any width. The full-site build, the reader shell, the synthesis and homily readers and all PDFs were outside this inspection."

@@ -104,7 +104,7 @@ reason = "Liturgical text/rubric, translation or physical-wording control, not a
 [[sources]]
 id = "augustine-psalm-129-npnf-english"
 binding_index = 10
-binding_sha256 = "e04948299853c9ba29895b6e93fed39fb8e0276290213028b9953ed80620a5be"
+binding_sha256 = "c19be41a0439a1193de509bbf1e8f05cee9b063e19a5f5d6ca3fb76f6f896149"
 source_id = "artifact.augustine.enarrationes-in-psalmos.english-npnf8-ccel-web-2026-09-05.ccel-npnf108-text-d6841950"
 source_fingerprint = "sha256:0a8fd6a45c963c52d5c8d09497820cfb88e5bf59d3a86a8a573856782e822f37"
 locus = "Enarrationes in Psalmos 129, sections 1-8; physical 62171-62334; NPNF English heading Psalm 130"
@@ -117,20 +117,20 @@ missing_criteria = ["exact-natural-passage-boundary", "passage-transcription", "
 [[sources]]
 id = "augustine-psalm-43-npnf-english"
 binding_index = 10
-binding_sha256 = "e04948299853c9ba29895b6e93fed39fb8e0276290213028b9953ed80620a5be"
+binding_sha256 = "c19be41a0439a1193de509bbf1e8f05cee9b063e19a5f5d6ca3fb76f6f896149"
 source_id = "artifact.augustine.enarrationes-in-psalmos.english-npnf8-ccel-web-2026-09-05.ccel-npnf108-text-d6841950"
 source_fingerprint = "sha256:0a8fd6a45c963c52d5c8d09497820cfb88e5bf59d3a86a8a573856782e822f37"
-locus = "Enarrationes in Psalmos 43, sections 1-20; physical 14847-15211; NPNF English heading Psalm 44"
+locus = "Enarrationes in Psalmos 43, sections 1-20 and opening section21 context; physical14847-15228; NPNF English heading Psalm44"
 relationship = "direct-exegesis"
 disposition = "deferred"
-reason = "The historical English text was read, not its Latin original. The bound edition lacks explicit translator credits; establish the translator responsible for this Psalm and the abridgment boundaries before registering its wording. The inspected Psalm43 range stops inside section20; finish that natural section and reconcile its lemma numbering with canonical verses, rather than admitting the truncated pull."
+reason = "The historical abridged English text was read, not its Latin original. Renewed reading finishes section20 and includes the opening of section21; the former truncated-section20 objection is closed. Establish the responsible translator and abridgment, register the exact natural passage/transcription and composition-date basis, and reconcile native lemma numbering to canonical Scripture before admission. Opening section21 context does not imply the whole final section was read."
 scripture_extents = [{ token = "Ps", first_chapter = 43, first_verse = 1, last_chapter = 43, last_verse = 26 }]
 missing_criteria = ["exact-natural-passage-boundary", "passage-transcription", "translation-credits", "original-language-witness", "composition-date-basis", "scripture-edge"]
 
 [[sources]]
 id = "augustine-psalm-84-npnf-english"
 binding_index = 10
-binding_sha256 = "e04948299853c9ba29895b6e93fed39fb8e0276290213028b9953ed80620a5be"
+binding_sha256 = "c19be41a0439a1193de509bbf1e8f05cee9b063e19a5f5d6ca3fb76f6f896149"
 source_id = "artifact.augustine.enarrationes-in-psalmos.english-npnf8-ccel-web-2026-09-05.ccel-npnf108-text-d6841950"
 source_fingerprint = "sha256:0a8fd6a45c963c52d5c8d09497820cfb88e5bf59d3a86a8a573856782e822f37"
 locus = "Enarrationes in Psalmos 84, sections 1-13; physical 41518-41952; NPNF English heading Psalm 85"
@@ -310,7 +310,7 @@ missing_criteria = ["native-locus-model", "historical-print-collation", "passage
 [[sources]]
 id = "aquinas-colossians-1-lectures-2-3"
 binding_index = 15
-binding_sha256 = "b1a467f45ac8f71c86946a65797e817691d1eaf521fed6b2017b8ae5d7d23f20"
+binding_sha256 = "35a72b8dc46b78dc1febefc3caec71f36c51fe2f9528e3f4c009c95908436376"
 source_id = "artifact.thomas-aquinas.super-colossenses.latin-corpusthomisticum-web-2026-11-05.ccl-html-d055308f"
 source_fingerprint = "sha256:1181b99646ceacb96e1ba4f36adbc6f23277001fcf4c4ba8471d1160c54e951f"
 locus = "Super Colossenses1, lectiones2-3; native87847-87848; private decoded lines98-184; lectio2 expounds Col1:3-8, lectio3 Col1:9-14"
@@ -323,7 +323,7 @@ missing_criteria = ["publishable-passage-controller", "historical-original-colla
 [[sources]]
 id = "aquinas-colossians-1-lecture-4"
 binding_index = 15
-binding_sha256 = "b1a467f45ac8f71c86946a65797e817691d1eaf521fed6b2017b8ae5d7d23f20"
+binding_sha256 = "35a72b8dc46b78dc1febefc3caec71f36c51fe2f9528e3f4c009c95908436376"
 source_id = "artifact.thomas-aquinas.super-colossenses.latin-corpusthomisticum-web-2026-11-05.ccl-html-d055308f"
 source_fingerprint = "sha256:1181b99646ceacb96e1ba4f36adbc6f23277001fcf4c4ba8471d1160c54e951f"
 locus = "Super Colossenses1, lectio4; native87849; private decoded lines185-253; Col1:15-17"
@@ -336,13 +336,13 @@ missing_criteria = ["publishable-passage-controller", "historical-original-colla
 [[sources]]
 id = "aquinas-matthew-24-lectures-1-3"
 binding_index = 16
-binding_sha256 = "9df51e48e3052e9bf20e4d7d55d344d67e3ea46bf1eefa6fb9bc7073b77f05a0"
+binding_sha256 = "1f273b848f2e3c6441ff46387a0ddcc81bb041d86a63b020220371112b20242b"
 source_id = "artifact.thomas-aquinas.super-matthaeum.latin-corpusthomisticum-chapters-21-25-2026-10-13.aquinas-matt-3d862a0e"
 source_fingerprint = "sha256:d15f96a4b0c743dc1293847645c47d79a118d40157b4e811ad3a083b29bd3db6"
-locus = "Super Matthaeum24, lectiones1-3; native87395-87397; private decoded lines894-1204; election analysis: lectio3/native87397, decoded1068-1072"
+locus = "Super Matthaeum24, lectiones1-3; native87395-87397; private decoded894-1233 overall; candidate exposition Matthew24:1-35; the inspected transition to24:36 is separately dispositioned"
 relationship = "direct-exegesis"
 disposition = "deferred"
-reason = "The exact restricted modern Latin HTML was privately inspected and rehashed. The corrected election locus was reread within the actual native87397 section, not its navigation link: Aquinas reports Origen's divine-election explanation and then the apparent-elect alternative. Both occur at decoded1068-1072; neither admits Origen as an independently inspected witness. The completed holdings sweep includes a historical Venetian Opera omnia container, but that container was not collated at these lectiones; it does not clear redistribution of this modern HTML. A lawful historical original and separately checked lawful English witness remain needed; reported Hilary, Origen and Jerome are not independently inspected voices."
+reason = "The exact restricted modern Latin HTML was privately inspected and rehashed. The corrected election locus was reread within the actual native87397 section, not its navigation link: Aquinas reports Origen's divine-election explanation and then the apparent-elect alternative. Both occur at decoded1068-1072; neither admits Origen as an independently inspected witness. The completed holdings sweep includes a historical Venetian Opera omnia container, but that container was not collated at these lectiones; it does not clear redistribution of this modern HTML. A lawful historical original and separately checked lawful English witness remain needed; reported Hilary, Origen and Jerome are not independently inspected voices. Renewed inspection extends through decoded1233; its unappointed24:36 transition is a distinct deferred candidate, not an expansion of the appointment."
 scripture_extents = [{ token = "Matt", first_chapter = 24, first_verse = 1, last_chapter = 24, last_verse = 35 }]
 missing_criteria = ["publishable-passage-controller", "historical-original-collation", "english-witness", "passage-transcription", "composition-date-basis", "scripture-edge"]
 
@@ -708,10 +708,10 @@ reason = "Bible context or historical encyclopedia chronology/source-critical co
 [[sources]]
 id = "context-witness-30"
 binding_index = 30
-binding_sha256 = "eea5a23acb9149adeb63dd71ad56f175fc9d3f08a13f152a7f56736f453bca99"
+binding_sha256 = "b9d5ecd8e81cb1882971d50d1e57c928be3297e9bb9effa28786f44c17d53acd"
 source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-48-mark-ab7b8b95"
 source_fingerprint = "sha256:b735f8e604c3e75982f2a5b38d3f9340c60bf3764ae851e54be2a26cc50846fe"
-locus = "Mark.11.20-29"
+locus = "Mark.11.1-33"
 relationship = "not-commentary"
 disposition = "not-commentary"
 reason = "Bible context or historical encyclopedia chronology/source-critical control only; no reception-commentary passage or Scripture edge is claimed from this binding."
@@ -719,10 +719,10 @@ reason = "Bible context or historical encyclopedia chronology/source-critical co
 [[sources]]
 id = "context-witness-31"
 binding_index = 31
-binding_sha256 = "d3d9db903ee3995fb77ecd7f5ced02544dc4ebaae3bf575811474c4a8bd30972"
+binding_sha256 = "212ab24e0f195ed3e3639eaae5f058cfcb061183a3186201908367ab6adfae56"
 source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-47-matthew-2d02758d"
 source_fingerprint = "sha256:da1db83ff564af32d9e8dab7773456aa467a354ded799029638be74368323843"
-locus = "Matt.24.1-40"
+locus = "Matt.24.1-51"
 relationship = "not-commentary"
 disposition = "not-commentary"
 reason = "Bible context or historical encyclopedia chronology/source-critical control only; no reception-commentary passage or Scripture edge is claimed from this binding."
@@ -741,10 +741,10 @@ reason = "Bible context or historical encyclopedia chronology/source-critical co
 [[sources]]
 id = "context-witness-33"
 binding_index = 33
-binding_sha256 = "555149c345a183ecb9224f4bccc2271d96386cc7b644748d428a5576b814174c"
+binding_sha256 = "129441f09c776d2c20fcf7c1e012432a574f9612bb62c6cf216a7c8a208b81c4"
 source_id = "artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08334a-dd4ae528-article-text"
 source_fingerprint = "sha256:69f374bd4cba29594ff367333d729ed1d4031dbdfe43df91f4f2e540b51b7334"
-locus = "Jeremias;physical15,41,45"
+locus = "Jeremias; historical15,41,45; renewed13-15,39-45"
 relationship = "not-commentary"
 disposition = "not-commentary"
 reason = "Bible context or historical encyclopedia chronology/source-critical control only; no reception-commentary passage or Scripture edge is claimed from this binding."
@@ -752,10 +752,10 @@ reason = "Bible context or historical encyclopedia chronology/source-critical co
 [[sources]]
 id = "context-witness-34"
 binding_index = 34
-binding_sha256 = "bbdcbfd880a46f43cd414540f7e8b0d158b0aed0983b0662baddaef6cc2e730f"
+binding_sha256 = "af22f74223430e3db755ac14abd3fbeafa5f3dfa0a5a65971ca5c6d353911603"
 source_id = "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04131b-08367306-article-text"
 source_fingerprint = "sha256:91a33dc8f172eab755c244ee0c93a4bad335ab7be33df8716c8264711389df78"
-locus = "Colossians, captivity/place/date discussion;physical3"
+locus = "Colossians, captivity/place/date discussion; historical3; renewed1-5"
 relationship = "not-commentary"
 disposition = "not-commentary"
 reason = "Bible context or historical encyclopedia chronology/source-critical control only; no reception-commentary passage or Scripture edge is claimed from this binding."
@@ -763,10 +763,10 @@ reason = "Bible context or historical encyclopedia chronology/source-critical co
 [[sources]]
 id = "context-witness-35"
 binding_index = 35
-binding_sha256 = "e9e975b944e528e736ad0a75c36389f7cb35c7d37fc99e671b3c4640507ee45f"
+binding_sha256 = "f99004e6712db6f5ffb6a481d49060accd74924f0faf03ad89f2ca0747e8da15"
 source_id = "artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef-article-text"
 source_fingerprint = "sha256:a5698ebe70292d9dc1c32df2c8cc440778cb8d0dc2f840f11d127482a4c4d5dd"
-locus = "Matthew, date/place discussion;physical201,203"
+locus = "Matthew, date/place discussion; historical201,203; renewed199-204"
 relationship = "not-commentary"
 disposition = "not-commentary"
 reason = "Bible context or historical encyclopedia chronology/source-critical control only; no reception-commentary passage or Scripture edge is claimed from this binding."
@@ -774,10 +774,10 @@ reason = "Bible context or historical encyclopedia chronology/source-critical co
 [[sources]]
 id = "context-witness-36"
 binding_index = 36
-binding_sha256 = "21de62438ee510235dd679113f8ed7e229fb07bfaa7cf9514bb9c295f587aca7"
+binding_sha256 = "8643ba938815216038b2c8d08ae7fe65496de8cd0ccb8579086697a6ed9fa2bc"
 source_id = "artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c-article-text"
 source_fingerprint = "sha256:0a5a9e3b92db7d3a9953343ff8b1a04ec7baa2a01adbf31eadc28dc4e8f410d4"
-locus = "Synoptics;physical29,31"
+locus = "Synoptics; historical29,31; renewed27-32"
 relationship = "not-commentary"
 disposition = "not-commentary"
 reason = "Bible context or historical encyclopedia chronology/source-critical control only; no reception-commentary passage or Scripture edge is claimed from this binding."
@@ -785,10 +785,10 @@ reason = "Bible context or historical encyclopedia chronology/source-critical co
 [[sources]]
 id = "context-witness-37"
 binding_index = 37
-binding_sha256 = "00f3c7154f52502eecb76620fed42c7a520836b8683e7883690bf94175aa0470"
+binding_sha256 = "43c690aa8413328566ed7055efe533d1ebfdad6cf968b9f2983773aa017398ce"
 source_id = "artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09674b-f5a5a8a9-article-text"
 source_fingerprint = "sha256:5946f7fd5d40591fa1d547bcb4dcb0573b720fb85502fb974a2f628c7129aabb"
-locus = "Mark;physical39,43,63,65"
+locus = "Mark; historical39,43,63,65; renewed37-43,61-66"
 relationship = "not-commentary"
 disposition = "not-commentary"
 reason = "Bible context or historical encyclopedia chronology/source-critical control only; no reception-commentary passage or Scripture edge is claimed from this binding."
@@ -796,10 +796,10 @@ reason = "Bible context or historical encyclopedia chronology/source-critical co
 [[sources]]
 id = "context-witness-38"
 binding_index = 38
-binding_sha256 = "ede0117cf44895529f7012547a7c74da184152e4afa3547260cbc257edfe98f7"
+binding_sha256 = "a967e6d0abd06f5cdf9b689c20a8875e9bcc6fdc8cb2eaca5ad2f4c7e524fb4b"
 source_id = "artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08377a-f81e2c23-article-text"
 source_fingerprint = "sha256:fe5c1682bc9df4a6ffe2e0a61f7ac28267f049a6ffef975b9a78bc795774f656"
-locus = "Jesus Christ;physical21,25,70-89,102-146; Ninth journey and fig-tree instruction;AUC782=AD29 calibration"
+locus = "Jesus Christ; historical21,25,70-89,102-146; renewed21-25,122-147; Ninth journey, fig-tree instruction and later Olivet discourse;AUC782=AD29 calibration"
 relationship = "not-commentary"
 disposition = "not-commentary"
 reason = "Bible context or historical encyclopedia chronology/source-critical control only; no reception-commentary passage or Scripture edge is claimed from this binding."
@@ -807,7 +807,7 @@ reason = "Bible context or historical encyclopedia chronology/source-critical co
 [[sources]]
 id = "context-witness-39"
 binding_index = 39
-binding_sha256 = "f72bb585eda559e31f449e3beabb30a8363aa05cb03fbb5174f72b2962a26c19"
+binding_sha256 = "f227de0515c1a63764aad50d63d6209aa365e4b9e4c91a34ae58ea702b98eb4b"
 source_id = "artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8-article-text"
 source_fingerprint = "sha256:83263e9b6b864dbc2776538285f276ac7740d8e39098d077148ce421ca998f4f"
 locus = "St Paul, chronological paragraph;physical45"
@@ -875,10 +875,10 @@ reason = "Bible context or historical encyclopedia chronology/source-critical co
 [[sources]]
 id = "context-witness-45"
 binding_index = 45
-binding_sha256 = "7202b92c74529162deae06caa0b29ba5b008e468a3bcb85c9d29ae2d81d4ccbc"
+binding_sha256 = "560e0a08c565a026b03eaa2642b9ec991ad38398d3640c737f16cdc8fbc92718"
 source_id = "artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03315a-9cb437e2-article-text"
 source_fingerprint = "sha256:3254b80370b68a4603c9cb337e17cd9c051ebbe56f5de893a18193d614dafc83"
-locus = "Captivities, Babylonian captivity;especially27,41,45;also returned7,9,33,35,47,53"
+locus = "Captivities, Babylonian captivity;especially27,41,45;also historical7,9,33,35,47,53; renewed25-27,39-47"
 relationship = "not-commentary"
 disposition = "not-commentary"
 reason = "Bible context or historical encyclopedia chronology/source-critical control only; no reception-commentary passage or Scripture edge is claimed from this binding."
@@ -886,10 +886,10 @@ reason = "Bible context or historical encyclopedia chronology/source-critical co
 [[sources]]
 id = "context-witness-46"
 binding_index = 46
-binding_sha256 = "592da617fe607d29e66e53bddaaab441cb0c709aa0761d38eb8a0280bce1e04b"
+binding_sha256 = "aadb25f56e3643df62b47df2fa08028cf552df5679f3512247c4b4851d95ea05"
 source_id = "artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04-article-text"
 source_fingerprint = "sha256:f8dd64daaeb2a33bcb9843f89a3b9572d7dda801f56a3c8092c534c536cc7eed"
-locus = "Biblical Chronology, post-destruction Jewish chronology;physical179;also175"
+locus = "Biblical Chronology, post-destruction Jewish chronology;physical179;also175; renewed175-179"
 relationship = "not-commentary"
 disposition = "not-commentary"
 reason = "Bible context or historical encyclopedia chronology/source-critical control only; no reception-commentary passage or Scripture edge is claimed from this binding."
@@ -897,10 +897,10 @@ reason = "Bible context or historical encyclopedia chronology/source-critical co
 [[sources]]
 id = "context-witness-47"
 binding_index = 47
-binding_sha256 = "f179ac56aa521348b148e5daa45067ee25edda1973348493335b52acf5c8d8aa"
+binding_sha256 = "c1e054d4137cb3050bfdbc94ff493db4b787064a6c359de5528eec9298348a73"
 source_id = "artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05737b-06e3e070-article-text"
 source_fingerprint = "sha256:cacd76590ab9b2baaf6b39c94ad3340113f0add6ffcc98e7e6a7a966d8f1c9fc"
-locus = "Ezechiel, opening biographical paragraph;physical3"
+locus = "Ezechiel, opening biographical paragraph; historical3; renewed1-3"
 relationship = "not-commentary"
 disposition = "not-commentary"
 reason = "Bible context or historical encyclopedia chronology/source-critical control only; no reception-commentary passage or Scripture edge is claimed from this binding."
@@ -908,7 +908,7 @@ reason = "Bible context or historical encyclopedia chronology/source-critical co
 [[sources]]
 id = "context-witness-48"
 binding_index = 48
-binding_sha256 = "f4fb3ea071c2f33f4efab9043522bccdacbe16b5efef6ca7631afa15c87550ec"
+binding_sha256 = "f3f65d7249eb30669911f164d4b2ceca2c15ba0c6ebef01ee769080acafbdbf9"
 source_id = "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3-article-text"
 source_fingerprint = "sha256:f6d97140146a6cb3adcbb583db08c82f18a5f42f59b85e884f8feabb8380640d"
 locus = "David;physical3,5,13,17,19,21,29"
@@ -950,3 +950,275 @@ locus = "Readable November22day consultation rechecked: title, Gloria/Credo/Trin
 relationship = "not-commentary"
 disposition = "not-commentary"
 reason = "Institutional dated Ordo corroboration only; modern rights-limited delivery is not a reusable historical commentary text."
+
+[[sources]]
+id = "renewed-discovery-00"
+locus = "Minimal 226-byte returned navigation/body field and search snippets only"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "Finding-aid consultation only. The tiny returned field and snippets do not establish an inspected full commentary, a primary historical witness or an independently verified attributed quotation."
+binding_index = 52
+binding_sha256 = "8a653e8e67e5bddca128224e561011f0e90f071faa0d75b88e3e24adae6d853e"
+source_id = "artifact.new-liturgical-movement.stirring-collect-last-sunday.2026-11-17-web-service.service-markdown-e4daf429"
+source_fingerprint = "sha256:b8f1f6ca1cce1c5ae7a8c60b95934cc5399fa43f24608e9e7bd7cfcb3ab4c3f7"
+
+[[sources]]
+id = "renewed-discovery-01"
+locus = "Returned service commentary text; bounded modern consultation, not original HTML"
+relationship = "liturgical-commentary"
+disposition = "rejected"
+reason = "Rejected as a primary or independently authenticated historical commentary controller for this packet, not rejected as never read or as necessarily false. Modern returned text was consulted, but attributed quotations and prayer-origin claims require their own historical witnesses. No such passage is admitted or silently counted toward a saintly quota. Its candidate Scripture scope cannot be assigned from a modern page title, and exact modern delivery rights remain unresolved."
+scripture_extents = []
+missing_criteria = ["independent-primary-witness", "historical-attribution-verification", "scripture-extent", "publishable-passage-controller"]
+binding_index = 53
+binding_sha256 = "3969caf81f6dc87672ad5d53b57125a0cd6f416e144848a356c094777fb81251"
+source_id = "artifact.john-zuhlsdorf.colligite-fragmenta-last-sunday-after-pentecost.2026-11-17-web-service.service-markdown-5f0b4346"
+source_fingerprint = "sha256:a293d748316b1a48a2dee84def44f552240f2cd97e8e5779b1724a91649f5911"
+
+[[sources]]
+id = "renewed-discovery-02"
+locus = "Returned service commentary text; bounded modern consultation, not original HTML"
+relationship = "liturgical-commentary"
+disposition = "rejected"
+reason = "Rejected as a primary or independently authenticated historical commentary controller for this packet, not rejected as never read or as necessarily false. Modern returned text was consulted, but attributed quotations and prayer-origin claims require their own historical witnesses. No such passage is admitted or silently counted toward a saintly quota. Its candidate Scripture scope cannot be assigned from a modern page title, and exact modern delivery rights remain unresolved."
+scripture_extents = []
+missing_criteria = ["independent-primary-witness", "historical-attribution-verification", "scripture-extent", "publishable-passage-controller"]
+binding_index = 54
+binding_sha256 = "61932cb4d2a4bc32966ae00968239ea45151af2f2e631d28aae47b2142f63f20"
+source_id = "artifact.wdtprs.sunday-sermon-notes-last-sunday-2025.2026-11-17-web-service.service-markdown-03f2a220"
+source_fingerprint = "sha256:06244e321cdd02c4204abe3b7b439e90735d909f52bfecf95f11e4c85a756571"
+
+[[sources]]
+id = "renewed-discovery-03"
+locus = "Returned service commentary text; bounded modern consultation, not original HTML"
+relationship = "liturgical-commentary"
+disposition = "rejected"
+reason = "Rejected as a primary or independently authenticated historical commentary controller for this packet, not rejected as never read or as necessarily false. Modern returned text was consulted, but attributed quotations and prayer-origin claims require their own historical witnesses. No such passage is admitted or silently counted toward a saintly quota. Its candidate Scripture scope cannot be assigned from a modern page title, and exact modern delivery rights remain unresolved."
+scripture_extents = []
+missing_criteria = ["independent-primary-witness", "historical-attribution-verification", "scripture-extent", "publishable-passage-controller"]
+binding_index = 55
+binding_sha256 = "0f6bb705e90a0c64721117321a747b17d8a33ad879896d05a13a19829a9dd77d"
+source_id = "artifact.liturgia-latina.last-sunday-after-pentecost-2010.2026-11-17-web-service.service-markdown-5e701cdf"
+source_fingerprint = "sha256:cf4531dcc6ff2727a8a0fb98e7f6af0c908aede568596a7f1239822114a4dc1a"
+
+[[sources]]
+id = "renewed-discovery-04"
+locus = "Returned service commentary text; bounded modern consultation, not original HTML"
+relationship = "liturgical-commentary"
+disposition = "rejected"
+reason = "Rejected as a primary or independently authenticated historical commentary controller for this packet, not rejected as never read or as necessarily false. Modern returned text was consulted, but attributed quotations and prayer-origin claims require their own historical witnesses. No such passage is admitted or silently counted toward a saintly quota. Its candidate Scripture scope cannot be assigned from a modern page title, and exact modern delivery rights remain unresolved."
+scripture_extents = []
+missing_criteria = ["independent-primary-witness", "historical-attribution-verification", "scripture-extent", "publishable-passage-controller"]
+binding_index = 56
+binding_sha256 = "37e164d61d510ed21ba3b4a8f5d8aae8359c162be5f7a0d3972d8ab158449d95"
+source_id = "artifact.catholicism-org.collect-twenty-fourth-last-sunday.2026-11-17-web-service.service-markdown-51d27c05"
+source_fingerprint = "sha256:f8dfba0db1e1055eca4b9de42a3a9f52ef1eff98654152d46eb431ac360467cf"
+
+[[sources]]
+id = "renewed-discovery-05"
+locus = "Returned service commentary text; bounded modern consultation, not original HTML"
+relationship = "liturgical-commentary"
+disposition = "rejected"
+reason = "Rejected as a primary or independently authenticated historical commentary controller for this packet, not rejected as never read or as necessarily false. Modern returned text was consulted, but attributed quotations and prayer-origin claims require their own historical witnesses. No such passage is admitted or silently counted toward a saintly quota. Its candidate Scripture scope cannot be assigned from a modern page title, and exact modern delivery rights remain unresolved."
+scripture_extents = []
+missing_criteria = ["independent-primary-witness", "historical-attribution-verification", "scripture-extent", "publishable-passage-controller"]
+binding_index = 57
+binding_sha256 = "d6bef3196917267e472f71f73ad4bec4a034d382fdf4e7ede903759a37033152"
+source_id = "artifact.wdtprs.last-sunday-like-lightning-east-2025.2026-11-17-web-service.service-markdown-1d26e12a"
+source_fingerprint = "sha256:70ad62ff4520e31f0aad606ee4bdad6fae473a24fb465cef92dd2cd5ecb6743a"
+
+[[sources]]
+id = "renewed-discovery-06"
+locus = "Search discovery only; https://www.monumenta.ch/latein/show_missing_text.php?codex=bnf00602&this_page=Hieronymus%2C+Commentarii%2C+in+Ieremiam%2C+06%2C+32%2C++65&lang=0+AND+1%3D2--&tabelle=Hieronymus&no_right_page=1&last_bisstring=populus+in+Iudaeam%3A+tamen+spiritualiter&last_vor=y&last_satznummer=65&work_level=2"
+relationship = "lead"
+disposition = "lead"
+reason = "Search lead only; no actual source-body inspection, fragment admission or public payload. Exact service-delivery metadata is not proof of reading its whole body or acquiring the underlying original HTML/PDF."
+binding_index = 58
+binding_sha256 = "b3572a1cf7daed12aa430ddeb2db4b280e3a42e1dc88cc32051e483c43581906"
+source_id = "artifact.monumenta.jerome-commentarii-bnf00602-web-view.2026-11-17-web-service.service-markdown-8217b1bb"
+
+[[sources]]
+id = "renewed-discovery-07"
+locus = "Search discovery only; http://www.documentacatholicaomnia.eu/03d/1195-1231,_Antonius_Patavinus,_Sermo_047_Dominica_XXII_Post_Pentecosten,_LT.pdf"
+relationship = "lead"
+disposition = "lead"
+reason = "Search lead only; no actual source-body inspection, fragment admission or public payload. Exact service-delivery metadata is not proof of reading its whole body or acquiring the underlying original HTML/PDF."
+binding_index = 59
+binding_sha256 = "638591d3bed45d250bd6d6462af50860c1be57947c1a13307ff485e583c2f475"
+source_id = "artifact.anthony-of-padua.sermo-dominica-xxii-post-pentecosten.2026-11-17-dco-latin-service.service-markdown-3b800e06"
+
+[[sources]]
+id = "renewed-discovery-08"
+locus = "Search discovery only; https://catholiclibrary.org/bible/view?docId=Jer.novavul.html&chunk.id=00000029"
+relationship = "lead"
+disposition = "lead"
+reason = "Search lead only; no actual source-body inspection, fragment admission or public payload. Exact service-delivery metadata is not proof of reading its whole body or acquiring the underlying original HTML/PDF."
+binding_index = 60
+binding_sha256 = "cb2764334f2bd93415d7ab530d93a52b8f402a0c2b026f71abc4e65e5cf06150"
+source_id = "artifact.catholiclibrary.nova-vulgata-jeremiah-29-web-view.2026-11-17-web-service.service-markdown-7edbfe26"
+
+[[sources]]
+id = "anthony-xxii-shared-introit-latin-service"
+locus = "section-2; section-8; sections-10-11; sections-16-17"
+relationship = "liturgical-commentary"
+disposition = "deferred"
+reason = "Actual Latin shared-Introit reception, not whole-Last-Sunday commentary. The selected sections interpret petition, release, forgiving and fruitfulness within Matthew18/Philippians1. Section16 reports competing positions on remitted sins without deciding them. No public text, new verified passage or Scripture edge is licensed by this unresolved modern service delivery. Establish the Latin printing and exact natural passage/transcription, a separately lawful checked English expression, composition-date evidence and canonical edges before admission."
+scripture_extents = [{ token = "Jer", first_chapter = 29, first_verse = 11, last_chapter = 29, last_verse = 12 }, { token = "Jer", first_chapter = 29, first_verse = 14, last_chapter = 29, last_verse = 14 }, { token = "Matt", first_chapter = 18, first_verse = 23, last_chapter = 18, last_verse = 35 }, { token = "Phil", first_chapter = 1, first_verse = 6, last_chapter = 1, last_verse = 11 }]
+missing_criteria = ["identified-latin-edition", "exact-natural-passage-boundary", "passage-transcription", "english-witness", "composition-date-basis", "publishable-passage-controller", "scripture-edge"]
+binding_index = 61
+binding_sha256 = "21d9519f784dff17bb66d818cf8043b4ae4084483b1cce5b111ba62a3388dfc2"
+source_id = "artifact.anthony-of-padua.sermo-dominica-xxii-post-pentecosten.2026-11-17-basilica-latin-service.service-markdown-82145361"
+source_fingerprint = "sha256:a3dfde46f775895f63ed28245b956078b54c8130da64d411de6ae53905503ffd"
+
+[[sources]]
+id = "renewed-discovery-10"
+locus = "Search discovery only; https://musmed.eu/chant/86198"
+relationship = "lead"
+disposition = "lead"
+reason = "Search lead only; no actual source-body inspection, fragment admission or public payload. Exact service-delivery metadata is not proof of reading its whole body or acquiring the underlying original HTML/PDF."
+binding_index = 62
+binding_sha256 = "fa80e1f142ab6c64522a2bb886237ac58bc5a122900056d21bd2281d30f82f32"
+source_id = "artifact.musmed.dicit-dominus-chant-86198.2026-11-17-web-service.service-markdown-bbcab918"
+
+[[sources]]
+id = "renewed-discovery-11"
+locus = "Search discovery only; https://musicahispanica.eu/chant/108015"
+relationship = "lead"
+disposition = "lead"
+reason = "Search lead only; no actual source-body inspection, fragment admission or public payload. Exact service-delivery metadata is not proof of reading its whole body or acquiring the underlying original HTML/PDF."
+binding_index = 63
+binding_sha256 = "a1179e4999c41a38324bb4711615611969ad3956e9820e553372a58f12e8b064"
+source_id = "artifact.musica-hispanica.dicit-dominus-chant-108015.2026-11-17-web-service.service-markdown-42b02b79"
+
+[[sources]]
+id = "renewed-discovery-12"
+locus = "Search discovery only; https://petercanisiusmichaeldavidkang.com/2021/11/18/"
+relationship = "lead"
+disposition = "lead"
+reason = "Search lead only; no actual source-body inspection, fragment admission or public payload. Exact service-delivery metadata is not proof of reading its whole body or acquiring the underlying original HTML/PDF."
+binding_index = 64
+binding_sha256 = "7af9f39e204052e359281c736ef47d6cdf9cab338c5fbfcaaade0a5f18719155"
+source_id = "artifact.peter-canisius-michael-david-kang.november-18-2021-web-archive.2026-11-17-web-service.service-markdown-65fd351e"
+
+[[sources]]
+id = "renewed-discovery-13"
+locus = "Search discovery only; https://petercanisiusmichaeldavidkang.com/2014/11/19/usus-antiquior-twenty-fourth-and-last-sunday-after-pentecost-ii-classis-sunday-23-november-2014-offertory-secret-prayer-of-the-priest-communion-and-post-communion-prayer/"
+relationship = "lead"
+disposition = "lead"
+reason = "Search lead only; no actual source-body inspection, fragment admission or public payload. Exact service-delivery metadata is not proof of reading its whole body or acquiring the underlying original HTML/PDF."
+binding_index = 65
+binding_sha256 = "b83025a72208a9702cb635a5a5b0e10157272cc56b6744a920d9088ebabff008"
+source_id = "artifact.peter-canisius-michael-david-kang.last-sunday-offertory-communion-2014.2026-11-17-web-service.service-markdown-481db881"
+
+[[sources]]
+id = "renewed-discovery-14"
+locus = "Search discovery only; https://propria.org/wp-content/uploads/2020/11/propers-for-last-sunday-after-pentecost.pdf"
+relationship = "lead"
+disposition = "lead"
+reason = "Search lead only; no actual source-body inspection, fragment admission or public payload. Exact service-delivery metadata is not proof of reading its whole body or acquiring the underlying original HTML/PDF."
+binding_index = 66
+binding_sha256 = "733aeba2a99a2d7c66d8b96451e6ddfbf4c4d4cda838c003b7876ab86bb1de8e"
+source_id = "artifact.propria.last-sunday-propers-2020-web-sheet.2026-11-17-web-service.service-markdown-66658be6"
+
+[[sources]]
+id = "renewed-discovery-15"
+locus = "Search discovery only; https://www.ewtn.com/catholicism/library/latin-prayers-9125"
+relationship = "lead"
+disposition = "lead"
+reason = "Search lead only; no actual source-body inspection, fragment admission or public payload. Exact service-delivery metadata is not proof of reading its whole body or acquiring the underlying original HTML/PDF."
+binding_index = 67
+binding_sha256 = "d3c3b3a70add66464ee5ecca1df56e3260dabb5aabf91b3f93249935779bf096"
+source_id = "artifact.ewtn.latin-prayers-library-9125.2026-11-17-web-service.service-markdown-422e2d97"
+
+[[sources]]
+id = "renewed-discovery-16"
+locus = "Search discovery only; https://propria.org/wp-content/uploads/2018/10/propers-for-last-sunday-after-pentecost.pdf"
+relationship = "lead"
+disposition = "lead"
+reason = "Search lead only; no actual source-body inspection, fragment admission or public payload. Exact service-delivery metadata is not proof of reading its whole body or acquiring the underlying original HTML/PDF."
+binding_index = 68
+binding_sha256 = "f26f1f7175008b322672ee439d38a8c0123131413050535386e09c848e7c3b59"
+source_id = "artifact.propria.last-sunday-propers-2018-web-sheet.2026-11-17-web-service.service-markdown-97c2d470"
+
+[[sources]]
+id = "renewed-discovery-17"
+locus = "Search discovery only; https://www.clerus.org/clerus/dati/2004-09/13-13/CIMR2.htm"
+relationship = "lead"
+disposition = "lead"
+reason = "Search lead only; no actual source-body inspection, fragment admission or public payload. Exact service-delivery metadata is not proof of reading its whole body or acquiring the underlying original HTML/PDF."
+binding_index = 69
+binding_sha256 = "89044c5b4f6dbdc05be1b68753c2a3da94b6ce464592ef89a923c842d4ecce33"
+source_id = "artifact.clerus.verbal-concordance-cimr2.2026-11-17-web-service.service-markdown-bcb3f277"
+
+[[sources]]
+id = "renewed-discovery-18"
+locus = "Search discovery only; https://www.studylight.org/commentary/mark/11-24.html"
+relationship = "lead"
+disposition = "lead"
+reason = "Search lead only; no actual source-body inspection, fragment admission or public payload. Exact service-delivery metadata is not proof of reading its whole body or acquiring the underlying original HTML/PDF."
+binding_index = 70
+binding_sha256 = "6591507209d5cdbf07da385e0ea26da326562b8c556e01b9294137ef69cc4d88"
+source_id = "artifact.studylight.mark-11-24-commentaries-web-view.2026-11-17-web-service.service-markdown-106d7a3e"
+
+[[sources]]
+id = "renewed-discovery-19"
+locus = "Search discovery only; https://enduringword.com/bible-commentary/mark-11/"
+relationship = "lead"
+disposition = "lead"
+reason = "Search lead only; no actual source-body inspection, fragment admission or public payload. Exact service-delivery metadata is not proof of reading its whole body or acquiring the underlying original HTML/PDF."
+binding_index = 71
+binding_sha256 = "ff1c2aaaf13b8b64a89857e0bf22d7778b16d9d039716279c648b0f6506c71a6"
+source_id = "artifact.enduring-word.mark-11-commentary-web-view.2026-11-17-web-service.service-markdown-f8d5b794"
+
+[[sources]]
+id = "renewed-discovery-20"
+locus = "Search discovery only; http://scripturalcommentary.blogspot.com/2016/06/mark-1124-26-on-prayer-and-forgiveness.html"
+relationship = "lead"
+disposition = "lead"
+reason = "Search lead only; no actual source-body inspection, fragment admission or public payload. Exact service-delivery metadata is not proof of reading its whole body or acquiring the underlying original HTML/PDF."
+binding_index = 72
+binding_sha256 = "cb5d598739d492b1dc1a8e834576d7b3e9192d4b17c4e1344b1b993afe17b080"
+source_id = "artifact.scriptural-commentary.mark-11-24-26-prayer-forgiveness.2026-11-17-web-service.service-markdown-987f5871"
+
+[[sources]]
+id = "renewed-discovery-21"
+locus = "Search discovery only; https://biblehub.com/commentaries/mark/11-24.htm"
+relationship = "lead"
+disposition = "lead"
+reason = "Search lead only; no actual source-body inspection, fragment admission or public payload. Exact service-delivery metadata is not proof of reading its whole body or acquiring the underlying original HTML/PDF."
+binding_index = 73
+binding_sha256 = "e978e2ffc843524010178e7510eda68f2de61c88d29df090a5f03f87442155d7"
+source_id = "artifact.biblehub.mark-11-24-commentaries-web-view.2026-11-17-web-service.service-markdown-fd61d97b"
+
+[[sources]]
+id = "renewed-discovery-22"
+locus = "Search discovery only; https://archive.org/stream/TheGospelAccordingToSt.Mark/The%20Gospel%20According%20to%20St.%20Mark_djvu.txt"
+relationship = "lead"
+disposition = "lead"
+reason = "Search lead only; no actual source-body inspection, fragment admission or public payload. The archive OCR URL returned zero body bytes, so this binding names only the catalog work."
+binding_index = 74
+binding_sha256 = "e545c1e702376508584baed37391996aea5c2e73d5a88ad32fe209043c583b5a"
+source_id = "work.internet-archive.the-gospel-according-to-st-mark-item"
+
+[[sources]]
+id = "renewed-discovery-23"
+locus = "Search discovery only; https://bibleword.ai/bible/mark/11/24"
+relationship = "lead"
+disposition = "lead"
+reason = "Search lead only; no actual source-body inspection, fragment admission or public payload. Exact service-delivery metadata is not proof of reading its whole body or acquiring the underlying original HTML/PDF."
+binding_index = 75
+binding_sha256 = "95a8b65ebfba9c02683b052db52bb68834addead3a330655574d67734de7206f"
+source_id = "artifact.bibleword-ai.mark-11-24-web-commentary.2026-11-17-web-service.service-markdown-d3aae5de"
+
+[[sources]]
+id = "aquinas-matthew-24-36-transition"
+binding_index = 16
+binding_sha256 = "1f273b848f2e3c6441ff46387a0ddcc81bb041d86a63b020220371112b20242b"
+source_id = "artifact.thomas-aquinas.super-matthaeum.latin-corpusthomisticum-chapters-21-25-2026-10-13.aquinas-matt-3d862a0e"
+source_fingerprint = "sha256:d15f96a4b0c743dc1293847645c47d79a118d40157b4e811ad3a083b29bd3db6"
+locus = "Super Matthaeum24, native87397; transition into unappointed24:36 within renewed private decoded1205-1233"
+relationship = "analogue"
+disposition = "deferred"
+reason = "The renewed retained Latin read reaches the transition into Matthew24:36. This is contextual watchfulness reasoning beyond the appointed15-35, not a newly appointed verse or a complete subsequent natural section. Restricted modern delivery cannot become the publishable passage controller. Delimit and collate a lawful historical original, establish a lawful English expression, transcription, composition basis and Scripture edge before admission."
+scripture_extents = [{ token = "Matt", first_chapter = 24, first_verse = 36, last_chapter = 24, last_verse = 36 }]
+missing_criteria = ["complete-natural-passage", "publishable-passage-controller", "historical-original-collation", "english-witness", "passage-transcription", "composition-date-basis", "scripture-edge"]

@@ -444,7 +444,8 @@ class PublicationReaderBrowserTest(unittest.TestCase):
         payload = b"%PDF-1.4\n% Synthetic native-print protocol fixture\n%%EOF\n"
         published = json.loads((self.site / "PUBLICATION-MANIFEST.json").read_text())
         self.visit(FULL)
-        address = self.browser.js("return document.querySelector('.publication-reader__content > .print-actions a').href")
+        # The Generate PDF action leads the reader toolbar (2026-11-16).
+        address = self.browser.js("return document.querySelector('.publication-reader__actions > a.native-print-action').href")
         self.assertEqual(address, self.origin + "print/" + LEAF + ".html?print=1")
         for route in ("print/" + LEAF + ".html", SYNTHESIS, HOMILY):
             self.visit(route)

@@ -1,0 +1,15 @@
+WORKFLOW: proper-study v19
+WORKFLOW_DIGEST: 73706a2ab569c88974452c4aec8fe2b7540a23ad1192efa39d574ddfbd334645
+RUN_ID: 11c5af05fe374203
+COMMIT: 81330987847deffe1a622b8d577531adead83907
+STAGE: homily-preflight
+ITERATION: 1
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-11-22","proper":"liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost","provider":"claude","research_handoff":"none"}
+DOCUMENT_ROOT: src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: [{"id":"HOM-002","location":"sections/homily/10-homily.tex l.38; l.84-85; l.95-97; l.107-109; l.118-121","problem":"Oral clarity: a few sentences are written for the page rather than for one hearing. (1) l.84-85 gives Augustine's 'Da prophetam' in the first person with no spoken marker: 'But give me a prophet to whom the future is as certain as the past is to you'. A hearer takes 'give me' as the preacher's own demand. (2) Three reported-speech sentences stack more subordinate clauses than one hearing holds: Jerome at l.107-109 (39 words, 'says that the Lord could certainly have fulfilled ... but he urges them to pray so that ...'); Bede at l.118-121 (40 words, with three nested 'that' clauses); and Chrysostom on Colossians at l.95-97 (34 words, ending 'because, he says, these are the causes of the other', where 'the other' points back across the whole sentence). (3) l.38 names Vespasian without saying who he was. The hearer has only 'the Roman war', two sentences earlier. Otherwise the speech's sentences, about 21 words on average, suit the ear. These are isolated instances.","required_result":"Each sentence carries one idea a listener can hold, and the hearer can tell who is speaking in each first-person sentence. Rewrites: l.107-109: 'St Jerome, commenting on the letter, says that the Lord could certainly have done what he promised without the captives' prayer. But he urges them to pray, so that they may be worthy to receive it.' l.118-121: 'St Bede, on that verse, says that those who are not yet perfect should ask for the forgiveness of their sins. They will surely obtain it, he says, provided that they first forgive those who sin against them.' l.84-85: 'But think, he says, of a prophet to whom the future is as certain as the past is to you.' l.38: '... when the Roman general Vespasian came.' l.95-97: '... speaks of what is already theirs and not of what will be laid up for them. These, he says, are the causes of what is still to come.'","severity":"advisory"}]
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

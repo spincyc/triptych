@@ -83,7 +83,7 @@
 .edition-mark {
   flex: 0 0 auto;
   padding: 0.05rem 0.4rem;
-  border-radius: 0.15rem;
+  border-radius: var(--radius, 0.2rem);
   background: var(--section-pale);
   color: var(--section-ink);
   font-size: 0.72rem;
@@ -119,7 +119,7 @@
 /* A document with no recorded title shows its path instead, and the path must
    not be able to pass for a name. */
 .unrecorded {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-family: var(--mono);
   font-size: 0.86em;
   font-weight: 400;
   font-style: italic;
@@ -203,7 +203,7 @@
   padding: 1rem 1.2rem 1.2rem;
   border: 1px solid var(--section-line);
   border-left: 0.25rem solid var(--section-accent);
-  border-radius: 0.2rem;
+  border-radius: var(--radius, 0.2rem);
   background: var(--section-row);
 }
 
@@ -232,7 +232,7 @@
   right: 1.1rem;
   padding: 0.2rem 0.6rem;
   border: 1px solid var(--section-line);
-  border-radius: 0.15rem;
+  border-radius: var(--radius, 0.2rem);
   background: var(--panel);
   color: inherit;
   font: inherit;

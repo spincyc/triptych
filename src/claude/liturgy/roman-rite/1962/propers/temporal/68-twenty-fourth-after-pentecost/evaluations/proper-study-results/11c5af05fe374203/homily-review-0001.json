@@ -1,0 +1,254 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "HOM-003",
+      "location": "sections/homily/10-homily.tex l.29 (with l.25 and l.43-44); sections/homily/90-note.tex l.79-81 (with 10-homily.tex l.88-89)",
+      "problem": "Two small accuracy points. (1) l.29, 'The first part of his answer is about Judea.', directly follows l.25, 'Today's Gospel is taken from his answer.', so a hearer takes it as the start of the Lord's answer. The answer begins at Mt 24:4. Its first part, which the Mass does not read, warns against those who come saying 'I am Christ', speaks of wars, famines and persecution, and ends with the gospel preached in the whole world (vv. 4-14). The accepted expansive study says exactly this (sections/10-each-element.tex l.142-147: 'The first part of the answer, which the Mass does not read ...'). The sentence means the first part of today's Gospel (vv. 15-22), which is what l.43-44 then calls it ('its first part is a prophecy already fulfilled'). The synthesis review's SYN-001 found the same misplacement in the concise study. Nothing in the argument depends on it, and it is one sentence, so this is advisory. (2) The note's list of verses 'told in the speech's own words' ('Mt 24:1--3, 16--20, 24, 30--33, Ps 43:10, Jer 29:10 and Col 1:10, 14') leaves out Col 1:12. The speech tells that verse at l.88-89, 'he gives thanks to the Father' (Douay-Rheims: 'Giving thanks to God the Father'). The References range, Col 1:10--14, covers it, so no reader is misled about the source.",
+      "required_result": "(1) The sentence places the commands about Judea at the start of today's Gospel, not at the start of the Lord's answer. For example: 'Today's Gospel begins with Judea.' or 'The part of his answer read today begins with Judea.' (2) The note's list reads 'Col 1:10, 12, 14'.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 1,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "homily-body",
+          "kind": "homily",
+          "path": "sections/homily/10-homily.tex",
+          "references": [
+            "propers/verified.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "homily-body"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "homily-note",
+          "kind": "terminal-apparatus",
+          "path": "sections/homily/90-note.tex",
+          "references": [
+            "propers/verified.md",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Jerome",
+            "Hilary of Poitiers",
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Rupert of Deutz",
+            "Lucien Fromage"
+          ],
+          "carrying_authors": [
+            "Jerome",
+            "Hilary of Poitiers",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "where-the-body-is"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "where-the-body-is",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Hilary of Poitiers",
+            "Jerome",
+            "John Chrysostom",
+            "Augustine of Hippo",
+            "Bede",
+            "Gregory the Great",
+            "Thomas Aquinas",
+            "Lucien Fromage"
+          ],
+          "carrying_authors": [
+            "Hilary of Poitiers",
+            "Jerome"
+          ],
+          "component_keys": [
+            "flight-without-turning-back"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "flight-without-turning-back",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Gregory the Great",
+            "Augustine of Hippo",
+            "Hilary of Poitiers",
+            "Jerome",
+            "Bede",
+            "Thomas Aquinas",
+            "Sicard of Cremona"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Gregory the Great",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "words-that-do-not-pass"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "words-that-do-not-pass",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost",
+    "files": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/homily.tex": "02aa44db978fbe57a956464974c7ec551fef0bef4fbba9322eb8002317cc7478",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/propers/verified.md": "9bf2d74519747313f23d3e37d90ac9bcd6e944ef1aaa7b83f2919c3368869067",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/research/interpretations.md": "c5f8f52fed06f7b8bb2a695def2a6fdac077f6d36c2300346deccbd72ea6d57c",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/research/scope.md": "a747360e269b799d6710ae8b0984d4dd685e8228936788e008d23706fea63bb3",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/homily/10-homily.tex": "7ad855986a180b89e47424a55256fcdac36f2f59f04761fdb312e1fec9ee9a01",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/homily/90-note.tex": "3f65aa382f58830bb9a1ac4fededda44cda7e9c67e583e48181c88b6684373eb",
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec",
+      "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "19",
+            "73706a2ab569c88974452c4aec8fe2b7540a23ad1192efa39d574ddfbd334645",
+            "11c5af05fe374203",
+            "81330987847deffe1a622b8d577531adead83907",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "Cold review of the homily (homily.tex; sections/homily/10-homily.tex and 90-note.tex) for the Claude 1962 Twenty-fourth and Last Sunday after Pentecost, after the derive-homily iteration-1 repair. Heard continuously, it makes one argument. It starts from the disciples' question 'when?' and goes through the Gospel's fulfilled first part (Chrysostom, Hom. in Mt. 76.1; Bede on Pella), 'this generation' (Chrysostom 77.1) and the word that does not pass (Gregory, Hom. in Ev. I.1.4). It then reads the Gradual's past tense (Augustine, En. in Ps. 43.8), the Epistle's thanks (Chrysostom, Hom. in Col. 2), the Introit's promise with the command to pray (Jerome), and the Communion with Mk 11:25 and Bede. It gives one second-person response, to forgive before Communion, and closes on the Secret with Gregory's gladness at the world's end. It would not survive a change of readings, and it uses no device the profile excludes. The preacher states each difficulty, gives each Father's reasons in plain speech and draws the applications (paragraphs 3, 5, 8, 9, 11 and 12), so it is not a lecture assembled from quotations. HOM-001's four closers and HOM-002's five oral-clarity points are repaired. Checked: the Lasance quotations against propers/verified.md; every Douay-Rheims quotation against the registered Challoner verse texts (all exact); and Chrysostom 76.1, 76.3 and 77.1 (NPNF I.10), Hom. in Col. 2 (NPNF I.13), Gregory I.1.3-4, Bede on Mk 11:25 and 13:14, and Augustine 43.8 at their registered loci. Every paraphrase is faithful, and every Latin locus the note cites matches its source. The spoken body is 1,342 words by an independent count (66 sentences, mean 20 words), about 10.3-11.2 minutes at 120-130 words a minute; that is an estimate, not a timed delivery. Limits: Jerome, In Hier. V (PL 24 col. 893), was not re-read on the page image. The PDF is not hydrated in this checkout, and hydrating it would write outside this reviewer's scratch area. The speech matches the research record's transcription, and the note discloses the limit. Chrysostom was read in English only. No PDF was built; print review is a separate stage. Verdict: PASS, with one advisory (HOM-003)."
+}

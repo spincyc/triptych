@@ -1,0 +1,278 @@
+# Blocking findings standing against this publication, the
+# verdicts its evaluation lanes reached, and the observations
+# they recorded outside their own criteria. Written by tpt after
+# each evaluation of this leaf.
+#
+# One record, several stages. Every entry names the stage that
+# raised it, [[stages]] says what each stage last said, and an
+# evaluation replaces its own stage's entries and leaves every
+# other stage's alone -- so what the content evaluation found
+# still stands here after the synthesis evaluation has spoken. A
+# stage that looked and found nothing leaves an empty list
+# rather than no entry: "evaluated, nothing stands" and
+# "nobody has looked" are different facts, per stage.
+#
+# The keys directly below these comments describe the write that
+# last touched this file, and count every stage's entries
+# together. They are its summary line. What a given stage found
+# is in that stage's [[stages]] entry and in the entries naming
+# it -- reading the top-level stage as the record's one stage is
+# the mistake this schema exists to stop.
+#
+# It exists because a run's own results live under build/, which
+# is ignored, which `make clean` and `wt tidy` delete without
+# asking, and which nothing preserves between productions.
+#
+# Nothing reads this back into a run. Carrying findings from one
+# production into the next wants doing where the run's identity
+# can cover it -- a committed record, or this file's hash in the
+# run id and the acceptance audit -- and until then this is a
+# record for people.
+#
+# Escalations -- defects in artifacts no stage of the run may
+# write: guidance, the source library, the tools, the workflow --
+# are written here too, from the run's whole ledger, so that the
+# decision they ask of a maintainer outlives the run directory.
+#
+# Accepted findings are true defects a lane judged not worth a
+# repair round, with the reason it judged so. Advisories are
+# defects that did not merit blocking. Both are here because a
+# verdict that dies with the run is met again by the next cold
+# read as though nobody had ever weighed it, and weighed again --
+# which is how a document in good shape spends a whole iteration
+# budget. A later evaluation reads these before it raises.
+
+standing_findings_schema = 4
+record_type = "standing-blocking-findings"
+document = "liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost"
+provider = "claude"
+run_id = "11c5af05fe374203"
+workflow = "proper-study"
+workflow_version = 19
+stage = "web-review"
+iteration = 0
+disposition = "PASS"
+standing = 0
+accepted_count = 1
+advisory_count = 12
+observation_count = 11
+
+[[stages]]
+stage = "homily-review"
+iteration = 1
+disposition = "PASS"
+run_id = "11c5af05fe374203"
+workflow = "proper-study"
+workflow_version = 19
+standing = 0
+accepted_count = 0
+advisory_count = 1
+observation_count = 0
+
+[[stages]]
+stage = "research-review"
+iteration = 1
+disposition = "PASS"
+run_id = "11c5af05fe374203"
+workflow = "proper-study"
+workflow_version = 19
+standing = 0
+accepted_count = 1
+advisory_count = 1
+observation_count = 0
+
+[[stages]]
+stage = "study-review"
+iteration = 2
+disposition = "PASS"
+run_id = "11c5af05fe374203"
+workflow = "proper-study"
+workflow_version = 19
+standing = 0
+accepted_count = 0
+advisory_count = 5
+observation_count = 2
+
+[[stages]]
+stage = "synthesis-review"
+iteration = 0
+disposition = "PASS"
+run_id = "11c5af05fe374203"
+workflow = "proper-study"
+workflow_version = 19
+standing = 0
+accepted_count = 0
+advisory_count = 5
+observation_count = 7
+
+[[stages]]
+stage = "web-review"
+iteration = 0
+disposition = "PASS"
+run_id = "11c5af05fe374203"
+workflow = "proper-study"
+workflow_version = 19
+standing = 0
+accepted_count = 0
+advisory_count = 0
+observation_count = 2
+
+[[accepted]]
+stage = "research-review"
+id = "RES-006"
+severity = "accepted"
+location = "research/source-bindings.toml binding 34, VIII.24 locus ('physical lines 29976-29996'); research/source-dispositions.toml row sicard-mitrale-viii-24-col-1-9 (locus, and reason 'runs from its heading at line 29976 to line 29996'); research/scope.md section 5, Sicard row ('VIII.24 lines 29976-29996')."
+problem = "In the tracked PL 213 OCR (SHA-256 ea9fd813..., matched), Mitrale VIII.24's left-column text ends at line 29997 ('et ugs [ideo] proprio vacat officio.'). Lines 29995-29996 are blank, and CAPUT XXV begins at line 29998. The recorded bound stops one line short and leaves out the clause that ends the chapter's explanation of a Sunday without proper chants."
+required_result = "Whenever binding 34 is next touched, extend the VIII.24 bound to physical lines 29976-29997 in the binding locus, the disposition row and scope.md section 5, and recompute the binding digest."
+accepted_because = "The omitted clause only finishes the sentence ('vel quia haec Dominica saepius abundat, et ideo proprio vacat officio') whose substance scope.md section 6 already reports. Repairing it would re-pin binding 34 and its three disposition rows without changing any claim, and no reader of the studies is misled."
+
+[[advisories]]
+stage = "homily-review"
+id = "HOM-003"
+severity = "advisory"
+location = "sections/homily/10-homily.tex l.29 (with l.25 and l.43-44); sections/homily/90-note.tex l.79-81 (with 10-homily.tex l.88-89)"
+problem = "Two small accuracy points. (1) l.29, 'The first part of his answer is about Judea.', directly follows l.25, 'Today's Gospel is taken from his answer.', so a hearer takes it as the start of the Lord's answer. The answer begins at Mt 24:4. Its first part, which the Mass does not read, warns against those who come saying 'I am Christ', speaks of wars, famines and persecution, and ends with the gospel preached in the whole world (vv. 4-14). The accepted expansive study says exactly this (sections/10-each-element.tex l.142-147: 'The first part of the answer, which the Mass does not read ...'). The sentence means the first part of today's Gospel (vv. 15-22), which is what l.43-44 then calls it ('its first part is a prophecy already fulfilled'). The synthesis review's SYN-001 found the same misplacement in the concise study. Nothing in the argument depends on it, and it is one sentence, so this is advisory. (2) The note's list of verses 'told in the speech's own words' ('Mt 24:1--3, 16--20, 24, 30--33, Ps 43:10, Jer 29:10 and Col 1:10, 14') leaves out Col 1:12. The speech tells that verse at l.88-89, 'he gives thanks to the Father' (Douay-Rheims: 'Giving thanks to God the Father'). The References range, Col 1:10--14, covers it, so no reader is misled about the source."
+required_result = "(1) The sentence places the commands about Judea at the start of today's Gospel, not at the start of the Lord's answer. For example: 'Today's Gospel begins with Judea.' or 'The part of his answer read today begins with Judea.' (2) The note's list reads 'Col 1:10, 12, 14'."
+
+[[advisories]]
+stage = "research-review"
+id = "RES-005"
+severity = "advisory"
+location = "research/scope.md section 6, Sicard VIII.25 row, 'Use' column ('the Offertory as prayer and the Communion as the assurance (certificatio) of their petition are his, and differ from Rupert's Joseph'); research/interpretations.md, Notes for the author, third bullet ('Sicard VIII.25 is the source for the whole sequence as he states it ... Otherwise cite Rupert only for his own reading: the Offertory as the brothers' plea to Joseph')."
+problem = "Rupert XII.23 already reads the Offertory as the freed remnant's prayer before giving it the Joseph form: 'Supplicatio quoque qua dicimus in offerenda: De profundis clamavi ad te, Domine ... eidem rei vel tempori manifeste congruit. Dicent enim ad hunc magnum Joseph, fratres sui in illa die: Obsecramus ut obliviscaris sceleris fratrum' (PL 170 tracked OCR lines 23742-23748). Sicard VIII.25's 'in offerenda: De profundis, ad hoc porrigunt orationem' (PL 213 OCR lines 29953-29954, right column) rewords that, as his Gradual clause rewords Rupert's. Only the Communion as the certificatio of their petition departs from Rupert, who makes it Joseph's answer. The scope row credits the Offertory-as-prayer reading to Sicard as his own, and the author note leaves a study free to contrast Sicard's praying remnant with Rupert, which Rupert's supplicatio does not support."
+required_result = "In the scope section 6 Sicard VIII.25 row, say that Sicard's Offertory clause, like his Gradual clause, follows Rupert XII.23's supplicatio (PL 170 OCR lines 23742-23745), and credit Sicard as his own only with the Communion as the assurance (certificatio) of the remnant's petition, plus anything else research confirms is absent from Rupert. Adjust the author note so that a study naming the origin of the Offertory reading names Rupert."
+
+[[advisories]]
+stage = "study-review"
+id = "STU-012"
+severity = "advisory"
+location = "sections/30-flight-without-turning-back.tex l.217-220 (with l.73-76); Hilary, In Matth. 25.6, PL 9 OCR pl-9-djvu.txt l.85814"
+problem = "Hilary's 'cibum veri panis' at 25.6 is the perfect food of the knowledge of God, which souls still on milk lack. His words are: 'perfecti cibi virtute indigentes, tenui divinae cognitionis infirmoque gustatu imbuantur ... nec peccata effugerint, nec cibum veri panis acceperint'. At l.217-218 the study says that those who say the Postcommunion 'have received the food of the true bread that Hilary's nursing souls lack'. That uses Hilary's phrase as if it named the sacrament of the altar. The step from Hilary's food of knowledge to the Eucharist is the study's own, and the sentence does not say so. Section 20 l.226-228 does mark the same kind of step, stating that Jerome and Augustine do not speak of the Eucharist at their verse. The identification entered at iteration 1 ('have received that food'), and the iteration-2 rewrite kept it while removing the marker beside it. This is an isolated instance, so it is advisory."
+required_result = "The paragraph gives Hilary's own sense of the true bread and states the step to the sacrament as the study's, or it drops the borrowed phrase. Example 1: 'Hilary's nursing souls lack the solid food of the knowledge of God, which he calls \"the food of the true bread.\" Those who say the Postcommunion have received the bread of the altar, and what they ask in it, that \"whatever is evil in our hearts may be restored by its gift of healing\" (Lasance), is the other thing those souls lack, escape from their sins.' Example 2: 'Those who say the Postcommunion have received the sacrament. What they ask in it, that \"whatever is evil in our hearts may be restored by its gift of healing\" (Lasance), is what Hilary's nursing souls also lack, escape from their sins.' No rewrite attributes a Eucharistic sense to Hilary."
+
+[[advisories]]
+stage = "study-review"
+id = "STU-013"
+severity = "advisory"
+location = "sections/30-flight-without-turning-back.tex l.185-186; sections/40-words-that-do-not-pass.tex l.234-235"
+problem = "There are two maxim closers. (1) At 30 l.185-186, 'A comparative asks for more than staying on the roof.' ends the Collect paragraph with an aphorism. The sentence before it has already given propénsius, 'more readily'. The closer turns that observation into a maxim and reaches Jerome's roof through wordplay. (2) At 40 l.234-235, 'If heaven itself is to pass, desires that are to last must be for the one who made it.' is a maxim, and it equivocates. The same section reports at l.104-108 that Jerome and Bede say heaven and earth pass by change, not abolition. The Secret's cæléstia desidéria are desires for heavenly things, not for the sky that passes. These are two instances in two sections, not a recurring pattern, so this is advisory."
+required_result = "Each paragraph ends on what the text says. 30 l.182-186: '... and asks for the opposite of idleness: wills roused, and the fruit followed propénsius, \"more readily,\" where Lasance has \"more earnestly.\"' The closing sentence is dropped. 40 l.231-236: 'The Gospel says that heaven and earth will pass. The Secret asks that, \"being delivered from earthly desires, we may pass on to the enjoyments of heaven\" (Lasance), and its Latin calls what is passed to cæléstia desidéria, heavenly \"desires.\" Gregory says why the end of the world is no grief to those who love God:' The maxim is dropped, and Gregory's quotation makes the link."
+
+[[advisories]]
+stage = "study-review"
+id = "STU-014"
+severity = "advisory"
+location = "sections/20-where-the-body-is.tex l.226-227 and l.235-236; sections/40-words-that-do-not-pass.tex l.118-119 (with l.97-99 and l.146-148); sections/20-where-the-body-is.tex l.229-231 (with sections/10-each-element.tex l.241-242)"
+problem = "Some restatements remain after the repair of STU-008, whose listed instances are fixed. (1) The Postcommunion paragraph at 20 l.226 opens 'The Postcommunion is said by those who have just received the sacraments of the altar', and l.235-236 says it again: 'those who say the Postcommunion have just received it.' (2) At 40 l.118-119, 'Chrysostom made the same argument at 77.1.' repeats Chrysostom's 'from what is past, let him believe also the things to come', which l.97-99 already quotes. l.146-148 then names the Chrysostom and Gregory pairing a third time. (3) Fromage is introduced with his credentials at 10 l.241-242 ('the Solesmes monk who continued Dom Guéranger's The Liturgical Year') and again at 20 l.229-231 ('continuing Dom Guéranger's The Liturgical Year in the nineteenth century'). The instances are few and scattered, so this is advisory."
+required_result = "Each point is said once. 20 l.235-236: 'Fromage's eagles are renewed by Communion. Those who say the Postcommunion ask that \"whatever is evil in our hearts may be restored by its gift of healing\" (Lasance), and they ask it still on the way to the gathering of verse 31.' 40 l.118-119: delete 'Chrysostom made the same argument at 77.1.' and cite the locus where l.146-147 makes the pairing: 'Chrysostom (77.1) and Gregory argue from what has already happened to what will happen'. 20 l.229-231: 'Fromage prays on this Gospel for the elect ...', with the credentials kept at their first appearance in section 10."
+
+[[advisories]]
+stage = "study-review"
+id = "STU-015"
+severity = "advisory"
+location = "sections/30-flight-without-turning-back.tex l.118-119; Bede, In Marci evangelium expositio IV on 13:15-16, source.txt l.391"
+problem = "Bede gives two senses of the house: 'Domus namque nostra, vel mundus hic, vel ipsa in qua degimus, nostra intelligenda est caro', that is, our house is to be understood either as this world or as the flesh in which we live. The study reports only the flesh: 'The house he would go down into is the flesh, the \"earthly house of this habitation\" (2 Cor 5:1).' The dropped alternative is the one that fits Bede's own preceding clause, 'mundi carnisve desideria', which the study quotes at l.116-117. The report narrows Bede's reading but does not reverse it, so this is advisory."
+required_result = "Bede's alternative is kept. Example: 'The house he would go down into is, for Bede, either this world or the flesh, the \"earthly house of this habitation\" (2 Cor 5:1).'"
+
+[[advisories]]
+stage = "study-review"
+id = "STU-016"
+severity = "advisory"
+location = "sections/50-comparison.tex l.33; sections/10-each-element.tex l.196-197; sections/40-words-that-do-not-pass.tex l.157"
+problem = "Three small points of accuracy or clarity. (1) At 50 l.33 the third interpretation's Epistle cell reads 'Thanks for what is given, petition for what is not yet (1:9--12)'. The petition is vv.9-11 and the thanks for what is given are vv.12-14, the verses that section 40 itself uses ('hath delivered ... hath translated'). (2) At 10 l.196-197, 'what they say of the Gradual, the Offertory and the Communion is given in the first and third interpretations' leaves out that Rupert's reading of the Introit is also given (20 l.181-187, Joseph's banquet), so the pointer misdescribes what the reader will find. (3) At 40 l.157, 'St Thomas Aquinas gives the translation into the kingdom two times' reads as though he says the same thing twice. In fact he gives two readings, 'Et hoc fit quando liberamur a peccato ... Vel ad litteram, ut consequeremur vitam aeternam' (Super Col. cap. 1 lect. 3, confirmed)."
+required_result = "(1) 50 l.33 cites 1:9--14. (2) 10 l.196-197 reads, for example, '... what they say of these chants is given in the first and third interpretations.' (3) 40 l.157 reads, for example, 'St Thomas Aquinas reads the translation into the kingdom in two ways:'"
+
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-001"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/04-themes.tex:10-11; src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/04-themes.tex:89"
+problem = "The themes pages place the Gospel wrongly within the discourse. Line 10 says the Gospel 'is the second half of the answer Jesus gave on the Mount of Olivet'. The answer runs from Mt 24:4 to 25:46. The expansive study calls the pericope 'the second part' and gives the first part as vv. 4-14 (sections/10-each-element.tex:137-147), and the concise's own lines 98-99 say that v. 36 follows and is not read. Verses 15-35 are a middle portion, not the second half. Line 89, 'The Gospel begins at the fifteenth verse of the Lord's answer', is wrong too: verse 15 is a verse of the chapter, and the twelfth of the answer. The same slip is in the expansive study's sections/00-opening.tex:10-11, which contradicts that study's own section 10."
+required_result = "State the Gospel's place in the discourse accurately. For example, line 10: 'The Gospel of this last Sunday after Pentecost is taken from the answer Jesus gave on the Mount of Olivet, when the disciples asked ...'. Line 89: 'The Gospel begins at verse 15 of the chapter, and the Missal drops the \"therefore\" that ties it to what goes before.'"
+
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-002"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/10-commentary.tex:185-189"
+problem = "This sentence does not parse: 'Augustine says that the Lord \"fittingly named the Church lightning here,\" spread through the whole world, makes the \"here\" and \"there\" the schisms ...'. A second main verb ('makes') has no subject or conjunction, so the reader cannot tell what Augustine identifies with what. The expansive study states it correctly (sections/30-flight-without-turning-back.tex:132-138): Augustine makes the lightning the Church itself, spread through the whole world."
+required_result = "Rewrite the sentence so that each identification is Augustine's and can be read. For example: 'Augustine makes the lightning the Church, spread through the whole world: the Lord, he says, \"fittingly named the Church lightning here.\" The \"here\" and \"there\" are the schisms that hold some part of the earth, and the desert and the inner rooms are the \"dark and hidden meetings\" of heretics (Quaestiones Evangeliorum I.38).'"
+
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-003"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/10-commentary.tex:428-431 (with src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/04-themes.tex:117-118)"
+problem = "Register, isolated instance: a quotation is left beside the argument without its connection. In the second interpretation's paragraph on the Secret, Gregory's 'What is mortal life but a way?' and his counsel 'Do not then, my brethren, love what you see cannot stand for long' follow the Secret's two nouns, and the page does not say why Gregory bears on the Secret. The expansive study gives the reason at that point (sections/30-flight-without-turning-back.tex:196-204): 'Its verb, transeámus, \"may we pass over,\" is a verb of travel'. The concise moved that clause to the themes page (04-themes.tex:117-118), where nothing uses it, and left the commentary without it."
+required_result = "Give the plain connection where Gregory is quoted, and say it once. For example, at line 428: 'Its verb, transeámus, \"may we pass over,\" is a verb of travel, and Gregory, preaching on Luke's account of the same discourse, asks, \"What is mortal life but a way?\" ...'. Then cut 'and transeámus, \"may we pass over,\" is a verb of travel' from themes line 117-118, so that the sentence ends '... is the verb of the Gradual's Liberásti.' Do not add a link that the expansive study does not make."
+
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-004"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/10-commentary.tex:118-119; src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/10-commentary.tex:145-147 (cf. src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/04-themes.tex:41-44); src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/10-commentary.tex:269-270 (cf. src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/04-themes.tex:67-68); src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/10-commentary.tex:372-373 (cf. src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/10-commentary.tex:207-208); src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/10-commentary.tex:477-482 (cf. src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/10-commentary.tex:84-86, 296-302)"
+problem = "Register: restatement ('Say it once'), scattered. (a) Lines 118-119: 'His \"as it were\" keeps the feeding a likeness: they are nourished by imitating the Passion.' The second clause paraphrases the quotation just read at 116-117, and lines 441-442 make the point a third time. (b) Lines 145-147 repeat the themes page's statement (41-44) that the antiphon omits 'I will gather you out of all nations' before reaching their new point about the verb. (c) Lines 269-270 repeat themes 67-68: petitions look forward, thanks look back. (d) Lines 372-373 repeat Rupert's Gradual from 207-208. (e) The closing comparison re-tells 'sets Chrysostom's war first' (84-86) and the fig-tree split (296-302), where the profile asks a closing comparison to compare, not re-argue. Most of these sentences also add a step, and the re-citations at 382-383 and 425-427 carry new arguments and are not counted. So this is a set of scattered clauses, not a refrain through the document, and it is advisory. Removing it would also bring the 12-page proof further inside its range."
+required_result = "Cut or fold the repeated clauses so that each fact is stated once, and keep every attribution. Rewrites: line 118-119: 'His \"as it were\" keeps the feeding a likeness.' Lines 145-147: 'The words the antiphon leaves out, \"and I will gather you out of all nations\" (Jer 29:14), use the Gospel's verb for the eagles, congregabúntur, and for the angels who congregábunt eléctos eius, \"shall gather together his elect\" (Mt 24:28, 31).' Lines 269-270: 'The third takes the sentence whole, petitions and thanks together (Col 1:9-14).' Lines 372-374: cut 'Rupert had already taken the Gradual for the thanks of those freed and the Offertory for their supplication;' and keep 'The Communion as assurance is Sicard's own.'"
+
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-005"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/10-commentary.tex:143"
+problem = "The heading 'Which captivity the Introit brings back' names only the first of the unit's three parts. Lines 145-176 treat the captivity (Jerome, Augustine, Rupert). Lines 178-191 give the second interpretation's use of Jeremias's warning against deceivers (Jer 29:8) beside the false christs. Lines 193-202 give the third's use of 'I think thoughts of peace' and God's sole knowledge of the future. A reader using the heading to find the second or third interpretation's reading of the Introit will not find it."
+required_result = "Give the unit a heading that covers all three parts, for example 'What the Introit takes from Jeremias's letter' or 'The letter to the exiles'."
+
+[[observations]]
+stage = "study-review"
+location = "sections/30-flight-without-turning-back.tex l.225-234; sections/20-where-the-body-is.tex l.254-260; sections/40-words-that-do-not-pass.tex l.257-263"
+note = "Consequential-difficulty test, with each author's inference checked at its cited locus. Section 30: Hilary's claim that the housetop precept, taken literally, 'rationem dicti factique non recipit' (In Matth. 25.5, PL 9) and Chrysostom's reading of it as the Roman war (Hom. in Mt. 76.1-2) are both reported as they stand. The prose teaches the question of method and does not settle it. Section 20: Jerome In Hier. on Jer 29 (PL 24), 'Secundum anagogen ...', is now given as he gives it. Augustine is credited only with the captivity of Ps 84, and the step to the antiphon is marked as the interpretation's choice. Section 40: Chrysostom 77.1 ('of the believers'), Jerome on 24:34 ('genus hominum ... Judaeorum') and Bede on Mk 13:30 ('aut omne hominum significat genus, aut specialiter Judaeorum') match the answers given. All three pass."
+
+[[observations]]
+stage = "study-review"
+location = "sections/30-flight-without-turning-back.tex l.172-174"
+note = "At iteration 1 this sentence read 'are read together as the same kind of safety'. The iteration-2 rewrite states the link between the roof and the darts in the study's own voice and moves nothing into Jerome's or Aquinas's mouth. Jerome's roof as the place 'quo non possint ignita diaboli jacula pervenire' is confirmed in PL 26, and Aquinas's 'vel in praesenti ... spiritualiter tamen nocere non possunt' is confirmed at Super Psalmo 43 n. 3."
+
+[[observations]]
+stage = "synthesis-review"
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/generated/scriptural-date-location-page.tex (proof page 2)"
+note = "Page-2 lookup performed on the rendered page. Gospel Matt. 24:15-35 gives 'Narrated event: Jesus foretells Jerusalem's ruin and His coming; Mount Olivet by narrative continuity', 'A.D. 29 (derived; Maas's chronology)', and 'Composition: Matthew; Semitic original associated with Palestine', 'Proposals span c. A.D. 38-68'. Communion Mark 11:24 gives 'Bethany to Jerusalem, before the Passion', A.D. 29 (derived). The lookup succeeded. Rows follow canonical book order, not Mass order, and the Psalm rows give a collection or author and a date but no place. Both are properties of the shared projection, not of this synthesis."
+
+[[observations]]
+stage = "synthesis-review"
+location = ".scratch/workers/synthesis-review-0/build (independent proof)"
+note = "Independent make doc build: 12 pages; PDF SHA-256 6aee2657...; aux SHA-256 b7d6bd91... identical to the author's recorded aux. Inventory and the four sense markers are on page 1, the chronology on page 2, themes on pages 3-4, and commentary starts on page 5, with no overfull or underfull boxes. Page 4 is about three-quarters full. Page 11's running head reads 'Scope and References' although most of the page is commentary. These are print observations only, and no print edition was requested."
+
+[[observations]]
+stage = "synthesis-review"
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/10-commentary.tex:71-72"
+note = "Bede's house is given as 'either this world or the flesh', where the expansive study gives the flesh only. This follows STU-015 and the Bede source text ('Domus namque nostra, vel mundus hic, vel ipsa in qua degimus, nostra intelligenda est caro'). The departure is faithful to the source and recorded upstream, so it is not a new unsupported claim."
+
+[[observations]]
+stage = "synthesis-review"
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/10-commentary.tex:332-333"
+note = "'Hilary stresses that created things can cease, Jerome and Bede that they will be changed; they differ in emphasis and not in doctrine' compresses the expansive study (sections/40-words-that-do-not-pass.tex:108-109) and research/scope.md:575-577 exactly. The PL 9 OCR of In Mt. 26.3 reads 'coelum videlicet et terram, non futura' and 'habeant id in se necessitatis ut non sint'. 'Can cease' is a softer gloss than Hilary's 'non futura', and the harmonizing verdict is the study's own judgment. It is inherited, not introduced here, and the study owner may want to revisit it."
+
+[[observations]]
+stage = "synthesis-review"
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/10-commentary.tex:96-98"
+note = "'Jerome, Hilary, Augustine and Chrysostom agree that the body is Christ's and the eagles are the saints' is inherited from the research. Chrysostom's identification of the carcase is implicit, and his eagles include 'the multitude of the angels'. The concise quotes that phrase at 121-122, so the reader can see the difference."
+
+[[observations]]
+stage = "synthesis-review"
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise/10-commentary.tex:81-82"
+note = "'On Chrysostom's account the passage is a fulfilled history, read on this Sunday as proof ...' drops the expansive study's conditional, 'Chrysostom's reading would make the passage a fulfilled history' (sections/30-flight-without-turning-back.tex:229-231). 'On Chrysostom's account' still marks this as a consequence of his view and not his words, so it is not raised."
+
+[[observations]]
+stage = "synthesis-review"
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/concise (study-review advisories STU-012..STU-016)"
+note = "Confirmed in the concise: the eagles' feeding is not made Eucharistic (439-442); Fromage's credentials appear once (themes 133-134); no maxim closers were found; the Epistle division is Col 1:9-11 and 12-14; Aquinas reads the translation into the kingdom 'in two ways'."
+
+[[observations]]
+stage = "web-review"
+location = "build/web/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost.md, Scriptural Date and Location > Evidence for each date, Alleluia, Gospel and Communion entries (generated/scriptural-date-location.tex lines 32, 46, 51)"
+note = "Generated source labels write article titles with straight TeX quotes ('David, King,', 'Chronology of the Life of Jesus Christ,', 'Jesus Christ,'). The web shows them, as the PDF does, with a closing curly quote at both ends (’David, King,’). The text is faithful to the source; the label text belongs to the chronology projection or source-library locus strings, not to this leaf."
+
+[[observations]]
+stage = "web-review"
+location = "build/web/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost.md, Appendix: Scope and Qualifications, Edition/Text control/Reception paragraphs (sections/90-apparatus.tex lines 17, 28, 53-54)"
+note = "The profile requires the scope appendix to name repository records (research/context.md, propers/verified.md, research/scope.md, research/interpretations.md). The reader shows them as plain code text that no site reader can open. The leaf follows the profile, and a sibling Claude reader (67) prints the same, so this is a converter or profile question, not a defect in this conversion."

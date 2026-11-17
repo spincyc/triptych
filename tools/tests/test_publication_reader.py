@@ -123,7 +123,9 @@ class PublicationReaderTest(unittest.TestCase):
     def test_legacy_catalogue_labels_use_declared_output_role(self):
         from .test_public_alpha import load_tool
         tool = load_tool()
-        # Neither the old generic label nor the filename establishes a role.
+        # Neither the old generic label nor the filename establishes a role:
+        # the declaration does, whatever the catalogue source calls the link
+        # (catalogue links name documents by declared role since 2026-11-16).
         key = ("gpt", "propers/temporal/66-companion")
         declaration = ({"id": "gpt/propers/temporal/66", "kind": "proper-1962"}, {"role": "homily"})
         with mock.patch.object(tool, "publication_source_records", return_value={key: declaration}), \
@@ -133,7 +135,7 @@ class PublicationReaderTest(unittest.TestCase):
                              "[Homily](66-companion.html)")
             self.assertEqual(tool.rewrite_links("library/test.md", "library/test.html",
                              "[Synthesis](../pdf/gpt/propers/temporal/66-companion.pdf)", {key}),
-                             "[Synthesis](66-companion.html)")
+                             "[Homily](66-companion.html)")
 
 
 if __name__ == "__main__":

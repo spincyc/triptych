@@ -1,0 +1,476 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "STU-001",
+      "location": "sections/40-words-that-do-not-pass.tex l.264-270 (subsection 'A date, and an unconditioned promise', second difficulty)",
+      "problem": "The Communion's difficulty, a promise with no stated condition, is answered with 'Each of the Fathers cited puts the condition in the one who prays: Bede in faith working through love and in forgiveness, Hilary in faith's asking, Jerome in being found worthy to receive what was promised, Aquinas in the mind raised to God.' Only Bede comments on Mark's context. His words are on Mk 11:25 (In Marc. III), checked in the Bede Latin: 'Notanda distinctio deprecantium ... si tamen in se peccantibus aliis primo ipsi dimittunt'. Hilary's words are on Ps 129 (PL 9 OCR: 'sed orandus a nobis est ... fidei nostrae est ut precemur audiri'). Jerome's are on Jer 29:12, and Aquinas's are on Col 1:9, as the lane itself says at l.176-200. The sentence presents each of these sayings as that Father's answer to the Communion, and so moves the study's own join into three Fathers' mouths. research/scope.md 7.5 forbids this in terms: a study 'must not credit Hilary, Jerome or Aquinas with commenting on Mk 11:24; the join of their words to the Communion is the editor's.'",
+      "repair_target": "study",
+      "required_result": "The difficulty credits only Bede with a condition read in Mark's context (on 11:25). It names the texts Hilary, Jerome and Aquinas were speaking of, and states plainly that setting their words beside the Communion is this interpretation's step. For example: 'Bede, on the verse that follows in Mark, puts the condition in the one who prays: faith that works through love, and forgiveness of others. This interpretation sets beside it what Hilary says of the Offertory's psalm, that it belongs to our faith to pray to be heard, and what Jerome says of Jeremias's letter, that the exiles are urged to pray so as to be worthy of what was promised.' No sentence presents Hilary, Jerome or Aquinas as answering the Communion's promise.",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-002",
+      "location": "sections/10-each-element.tex l.193-197; sections/20-where-the-body-is.tex l.171-172 and l.204-206; sections/40-words-that-do-not-pass.tex l.226-228",
+      "problem": "The rule on liturgical commentators (guidance/liturgy/propers-three-documents.md, 'Liturgical commentators') keeps a commentator's other Mass to research/scope.md and 'at most one clause of the expansive study's scope appendix'. That clause is already in the apparatus (90-apparatus.tex l.65-67). The body prose mentions the other Masses three more times: 'in Masses whose lessons differed from this one' (10, l.195); 'who expounded these chants in a Mass of his own day' (20, l.171-172); and 'His Masses read other lessons' (40, l.226). Section 10 also says 'The Mass's chants were expounded as one sequence by Rupert of Deutz and Sicard of Cremona'. That is not so: each expounded the chants of his own Mass. Rupert XII.23 and Sicard VIII.23 and VIII.25 were checked in the PL 170 and PL 213 OCR. Separately, at 20 l.204-206 Rupert's Joseph reading of the Offertory and Communion ends with 'at the place of gathering, the brothers' request for pardon is granted'. This ties his reading of the chants to the Gospel's gathering of the eagles and the elect, which is the Gospel thesis of this interpretation. The rule forbids citing a commentator 'in support of a connection between that element and this formulary's Gospel', and the Rupert row of research/scope.md says he is 'never cited for a link between the chants and this formulary's Epistle or Gospel'.",
+      "repair_target": "study",
+      "required_result": "Apart from the one clause in the scope appendix, no sentence mentions Rupert's or Sicard's other Masses or their lessons, or says that one of them wrote of 'a Mass of his own day'. The Offertory paragraph in section 10 says only which chants Rupert and Sicard expound and where that is treated. In lane 1, Rupert's Joseph paragraph ends with what he says: the plea of Gen 50:17 and the answer of Gen 50:19-20. The step from his reading to the Gospel's 'place of gathering' is removed. If this interpretation joins the Communion to the Gospel's gathering at all, it does so in its own voice and on another ground, not by extending Rupert's Joseph.",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-003",
+      "location": "sections/20-where-the-body-is.tex l.12-15, 114-117, 194-196, 212-213, 215-217, 228-229; sections/30-flight-without-turning-back.tex l.15-19, 139-142, 172-173, 207-209, 262-263; sections/40-words-that-do-not-pass.tex l.235-236, 243-244; sections/10-each-element.tex l.245-247; sections/50-comparison.tex l.49-50",
+      "problem": "Across every interpretation, a link the study draws between two texts is stated as what a text says or is, with nothing to show that it is this interpretation's inference. The editorial rule 'Say what the texts say, plainly' forbids this under 'A text does what texts do'. Lane 1 (20): the Introit and Epistle 'speak of the same assembly, already begun' (l.12-15); 'The gathering that the antiphon does not sing is the one the Gospel gives at its close' (l.114-117); the cry from the depths 'is the voice of those who ... have not yet reached the place of gathering' (l.194-196); the Collect's petition 'is what the haste of Jerome's eagles requires' (l.212-213); the Secret's 'all of us' and 'to thee' 'are the many and the one centre to which they come' (l.215-217); 'At this Mass the gathering to the body has a present form at the altar' (l.228-229). Lane 2 (30): the Collect, Epistle and Secret, 'each is a prayer for those who are not to come down' (l.15-19); 'The antiphon is God's promise to those who did not follow them' (l.139-142); Hilary's and Jerome's flight 'is of the same kind' as the present deliverance Aquinas finds in Ps 43 (l.172-173); the Communion's promise 'is the answer given to such prayer', that is, to the prayer of Mt 24:20, though Mark sets the promise in another discourse (l.207-209); 'The Secret's passing over ... is the beginning of that arrival' (l.262-263). Lane 3 (40): the Secret's 'heavenly desires are for the things that do not pass with the world' (l.235-236); 'the Collect's greater remedies are, at this point of the Mass, partly given' (l.243-244). Section 10: 'the Postcommunion asks for the healing those remedies give' (l.245-247). Section 50 repeats the 30 l.142 inference as the Introit's sense in the second interpretation (l.49-50). The sentence at 30 l.142 also narrows Jeremias's promise, which is made to all the exiles (Jer 29:10-14). It goes beyond research/interpretations.md, which says of the Introit in this interpretation that 'the editor does not extend this'. Two of these sentences, 20 l.215-217 and 30 l.262-263, are paragraph closers that restate the paragraph.",
+      "repair_target": "study",
+      "required_result": "Each listed sentence either says what the text itself does (asks, sings, quotes, omits) or states the link once, in ordinary words, as this interpretation's. No fixed formula is repeated from paragraph to paragraph, and no repair moves the link into a Father's mouth. Example rewrites. 20 l.12-15: 'This interpretation hears the Introit's promise to bring back the captivity from all places, and the Epistle's thanks to the Father who has translated us into the kingdom, as the beginning of that assembly. Its warrant for the Introit is Jerome's anagogy of the return to the Church.' 30 l.207-209: 'Mark gives the Communion's promise in another setting, after the withered fig tree (Mk 11:20-24). This interpretation hears it as the promise that answers the Gospel's one command to pray.' 30 l.139-142: 'Jeremias's letter, which the Introit quotes, gave the exiles a like warning: Let not your prophets that are in the midst of you, and your diviners deceive you (Jer 29:8).' End the paragraph there, without making the antiphon a promise to a narrower group. 10 l.245-247: 'The Collect asked for greater remedies (remedia), and the Postcommunion asks for healing (medicatio), so both prayers speak of cure.' Section 50 l.49-50 follows whatever the repaired lane 2 says.",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-004",
+      "location": "sections/90-apparatus.tex l.46-48; sections/05-appointed-texts.tex l.95-97, 317-319, 364-366; sections/00-opening.tex l.70-72; sections/10-each-element.tex l.50-53, 205-208, 240-243; sections/30-flight-without-turning-back.tex l.188-190; sections/40-words-that-do-not-pass.tex l.187-188, 233-235",
+      "problem": "The 1962 profile (guidance/liturgy/roman-1962-propers.md) says 'English is never composed, translated, adapted, or paraphrased by the guide' and 'Do not supply a rendering of the project's own'. Lasance's English for all three orations is printed at 05 l.89-93, 310-315 and 358-362. The study still supplies its own English. It gives a complete sentence rendering of the Postcommunion at 05 l.364-366: 'through these sacraments which we have received, whatever is faulty in our mind may be healed by the gift of their medicine'. It repeats that rendering, unmarked, as the content of the prayer in the opening (00 l.70-72), and gives it clause by clause at 10 l.240-243. It gives its own renderings of the Collect's petition (05 l.95-97, 10 l.50-53, 40 l.188) and of the Secret's purpose clause (10 l.205-208, 30 l.188-190, 40 l.233-235), and the interpretations use these in place of Lasance. The apparatus says the opposite: 'no English is composed for a liturgical text' (90 l.47-48). A reader who compares the opening's Postcommunion with the appointed-text page finds two Englishes, and an apparatus that denies one of them exists.",
+      "repair_target": "study",
+      "required_result": "In reader prose the English of the orations is Lasance's, quoted and attributed. Where the study must show what the Latin says beyond Lasance, it glosses single Latin words: for example the plural sacramenta, mente 'mind' where Lasance has 'hearts', vitiosum 'faulty', remedia 'remedies', desideria 'desires'. It gives no full sentence rendering of an oration. The opening describes the Postcommunion in Lasance's words. The apparatus sentence at 90 l.46-48 says truthfully what the study does, for example: 'Where the Lasance English departs from the Latin of an oration, single Latin words are glossed literally; no English version of an oration is supplied.'",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-005",
+      "location": "sections/10-each-element.tex l.106-108, 164-165, 184-186; sections/30-flight-without-turning-back.tex l.85, 225, 232; sections/00-opening.tex l.116; sections/40-words-that-do-not-pass.tex l.81-82, 217-218",
+      "problem": "Six small accuracy slips. (1) At 10 l.106-108 Ps 43 is said to end 'Arise, why sleepest thou, O Lord?' (vv. 12, 18, 23). The psalm ends at v. 26, 'Arise, O Lord, help us and redeem us for thy name's sake'. (2) At 10 l.164-165 Jerome gives 'three historical possibilities' for the abomination, and 30 l.85 and l.232 and 00 l.116 say 'the historical senses'. One of the three is Antichrist, who has not yet come. The Latin that introduces them, which Bede transmits verbatim in In Marc. IV on 13:14 ('Potest autem simpliciter aut de Antichristo accipi'), calls them the plain sense, not history. (3) At 10 l.184-186 the interpretations are listed as flight, then eagles and gathering, then fig tree. The document orders them eagles and gathering (20), flight (30), fig tree (40). (4) At 40 l.217-218 Sicard 'reads the last three chants as a sequence'. In this Mass the last three chants are the Alleluia, Offertory and Communion; Sicard names the Gradual, Offertory and Communion after the Introit (VIII.25, PL 213 OCR). (5) At 30 l.225 the text speaks of 'Chrysostom's objection', but Chrysostom answers no one here; he gives the literal reading (76.1-2). (6) At 40 l.81-82, 'the faithful, the human race, or a people' summarizes the answers just given but leaves out Hilary's 'our generation' (26.3, quoted at l.73-74).",
+      "required_result": "(1) Read 'and near its end, Arise, why sleepest thou, O Lord? (v. 23)', or quote v. 26. (2) Use 'plain' or 'literal' senses or possibilities in place of 'historical'. (3) List the interpretations in the document's order. (4) Name the Gradual, Offertory and Communion. (5) Read 'Chrysostom's reading'. (6) Make the summary list account for every answer named, Hilary's included.",
+      "severity": "advisory"
+    },
+    {
+      "id": "STU-006",
+      "location": "sections/30-flight-without-turning-back.tex l.237-239; sections/40-words-that-do-not-pass.tex l.248-249; sections/00-opening.tex l.134-136",
+      "problem": "Three isolated register instances. (1) At 30 l.237-239 the disagreement between Hilary and Jerome ends with the disclaimer 'neither of them comments on the Collect or the Secret'. This narrates what the Fathers did not do, and is not part of the disagreement. (2) At 40 l.248-249 'the lightning, which needs no one to point it out' is Chrysostom's point (Hom. in Mt. 76.3, 'needs not a herald', checked in NPNF I.10), given in the study's own voice without his name. (3) At 00 l.134-136 a sentence describes the document's own order ('The Latin and English of the ten texts follow, then each text in its own setting, the three interpretations ...'), which the contents already give.",
+      "required_result": "Cut the clause at 30 l.238-239. At 40 l.249, name Chrysostom or cut the clause. Cut the roadmap sentence at 00 l.134-136; the pointer to the generated date appendix may stay.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "observations": [
+    {
+      "location": "sections/05-appointed-texts.tex l.95-97, 317-319, 364-366 against guidance/liturgy/roman-1962-propers.md (English rule)",
+      "note": "No gate or review criterion marks where noting a public-domain oration English's departure from the Latin ends and the guide's own rendering begins. The F01 evaluations record carries a standing observation on the same gap, so this looks like a missing criterion in the 1962 profile and not only a defect of this leaf."
+    }
+  ],
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "opening",
+          "kind": "front-matter",
+          "path": "sections/00-opening.tex",
+          "references": [
+            "propers/verified.md",
+            "research/context.md",
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "appointed-texts",
+          "kind": "appointed-text",
+          "path": "sections/05-appointed-texts.tex",
+          "references": [
+            "propers/verified.md",
+            "research/context.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "appointed-texts"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "each-element",
+          "kind": "proper-treatment",
+          "path": "sections/10-each-element.tex",
+          "references": [
+            "propers/verified.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "where-the-body-is",
+          "kind": "interpretive-lane",
+          "path": "sections/20-where-the-body-is.tex",
+          "references": [
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "flight-without-turning-back",
+          "kind": "interpretive-lane",
+          "path": "sections/30-flight-without-turning-back.tex",
+          "references": [
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "words-that-do-not-pass",
+          "kind": "interpretive-lane",
+          "path": "sections/40-words-that-do-not-pass.tex",
+          "references": [
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "where-the-body-is",
+            "flight-without-turning-back",
+            "words-that-do-not-pass"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "comparison",
+          "kind": "front-matter",
+          "path": "sections/50-comparison.tex",
+          "references": [
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "communion"
+          ],
+          "key": "scriptural-date-location",
+          "kind": "front-matter",
+          "path": "generated/scriptural-date-location.tex",
+          "references": [
+            "research/chronology-annotations.tex",
+            "research/chronology-table.tex",
+            "research/chronology.toml",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "study-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/90-apparatus.tex",
+          "references": [
+            "propers/verified.md",
+            "research/context.md",
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Jerome",
+            "Hilary of Poitiers",
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Rupert of Deutz",
+            "Lucien Fromage"
+          ],
+          "carrying_authors": [
+            "Jerome",
+            "Hilary of Poitiers",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "where-the-body-is"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "where-the-body-is",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Hilary of Poitiers",
+            "Jerome",
+            "John Chrysostom",
+            "Augustine of Hippo",
+            "Bede",
+            "Gregory the Great",
+            "Thomas Aquinas",
+            "Lucien Fromage"
+          ],
+          "carrying_authors": [
+            "Hilary of Poitiers",
+            "Jerome"
+          ],
+          "component_keys": [
+            "flight-without-turning-back"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "flight-without-turning-back",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Gregory the Great",
+            "Augustine of Hippo",
+            "Hilary of Poitiers",
+            "Jerome",
+            "Bede",
+            "Thomas Aquinas",
+            "Sicard of Cremona"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Gregory the Great",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "words-that-do-not-pass"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "words-that-do-not-pass",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost",
+    "files": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/generated/scriptural-date-location.tex": "148369cfb8dc29ff41cc3c765675b21901a17800e6b7e9fed36dfdd7bc4973cb",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/main.tex": "3016751954c8a7953cf76125f4314ddbb90978df77cfeebb37e1393b08686746",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/propers/verified.md": "9bf2d74519747313f23d3e37d90ac9bcd6e944ef1aaa7b83f2919c3368869067",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/research/chronology-annotations.tex": "711d66e59277358c48d343f28dcdbfa6645b69d00b9f3ea9dd263315b8957457",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/research/chronology-table.tex": "ce6e1e19ca54e6afaece45d1105859c982a50c4fb970bc2deba24fae3247eb57",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/research/chronology.toml": "0804dfb30ea86cc6f4f81c254a099483814a0ae50fe682887a2f8114322a12e9",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/research/context.md": "62079e7c75a5713d38af23874c2172c1ee9491be45b5c67ee38806c666978b8f",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/research/interpretations.md": "c5f8f52fed06f7b8bb2a695def2a6fdac077f6d36c2300346deccbd72ea6d57c",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/research/scope.md": "a747360e269b799d6710ae8b0984d4dd685e8228936788e008d23706fea63bb3",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/research/source-bindings.toml": "21d804bc465ac1665ee7411334696bca71b4634f36870ddfef6dab262144a767",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/00-opening.tex": "377a045b0c7393c1cbda4f149cf912c29585848f7847bc605c2a32a80be88bd0",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/05-appointed-texts.tex": "657dd53934e106d693f91b5ac53af7a618044ff1cb70672eda2cd8e46e88c79a",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/10-each-element.tex": "5de94abe1853b463f0b7380f7f3b690c2786880c13e9e4f7241c914909aeedb3",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/20-where-the-body-is.tex": "e1e586211bb39c5c4a90511e3b489fc26490dd64e5e74b3cded5fc5245ac6c07",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/30-flight-without-turning-back.tex": "599e8d863e1ea966e8c43b8230161097f9aabb3586fb6bac834f4e576bb9e8cb",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/40-words-that-do-not-pass.tex": "fcb88f24ed1066d24772a04fa8db72fed7e1043fce7d8876a005258a26addf5c",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/50-comparison.tex": "f9c3898177bd89789bc85ffa4a8b18a9f02e5b25c0671cfa282dc05806d557e8",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/90-apparatus.tex": "23c17d9d9594a66e10e67f209aeb2440278cca1a86ff1084b184efd6c4426224",
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "19",
+            "73706a2ab569c88974452c4aec8fe2b7540a23ad1192efa39d574ddfbd334645",
+            "11c5af05fe374203",
+            "81330987847deffe1a622b8d577531adead83907",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "study",
+    "schema": 1
+  },
+  "stage": "study-review",
+  "summary": "Cold review of the Claude 1962 expansive study for the Twenty-fourth and Last Sunday after Pentecost (src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost, main.tex with sections 00-90; the generated Scriptural Date and Location appendix was not reviewed as prose). The schema-2 manifest's complete mode agrees with propers/verified.md and with the production plan's 2026-11-16 authorization. The study has three distinct interpretations. Each carries its own literal, allegorical, moral and anagogical senses and rests on at least two Fathers who make developed contributions: Jerome, Hilary and Augustine; Hilary and Jerome; Chrysostom, Gregory and Augustine. Every element of the Mass is treated. Quotations were checked at tracked loci and every one checked is accurate: Chrysostom, Hom. in Mt. 75.2, 76.1-3 and 77.1, and Hom. in Col. 2 (NPNF I.10 and I.13); Hilary, In Mt. 25.3-26.3 and on Ps 129 (PL 9 OCR); Augustine, Quaest. Ev. I.37-39 and I.42, and En. in Ps. 43.8-10 and 84.3-5 (Latin), with 129.1 and 129.3 (NPNF I.8); Gregory, Hom. in Ev. I.1.1-5; Bede, In Marc. III on 11:23-25 and IV on 13:14-16 and 13:30-31; Aquinas, Super Mt. c. 24 (Venice OCR); Rupert, De div. off. XII.23; Sicard, Mitrale VIII.23 and VIII.25; Fromage, vol. 11 pp. 505, 509-510 and 513. The 1962 finding aid confirms that the three orations occur only in this Mass. Limits: Jerome's In Matthaeum and In Hieremiam were not re-read, because PL 26 is not held locally and the PL 24 OCR is unusable; his words were checked only where Bede or the PL 9 notes transmit them. Aquinas on Colossians and on Psalm 43 (Corpus Thomisticum) was not re-read. No print export was made. Consequential-difficulty test: Hilary, In Mt. 25.5 (PL 9 OCR), on the housetop precept. Hilary says the precept 'secundum humanam intelligentiam rationem dicti factique non recipit', calls the roof 'domus fastigium, et habitationis totius celsa perfectio' and says the one on it, 'regeneratione novus, spiritu celsus', 'non descendere in humiliora rerum saecularium cupiditate debebit'. 30-flight-without-turning-back.tex lines 48-69 and 221-236 report the inference accurately, set the question out and make the step from the letter to the soul intelligible. Outcome: pass. A second locus, Augustine En. 43.8 ('figura praeteriti de futuro dicitur ... quia tam certum est'), is taught accurately at 40-words-that-do-not-pass.tex lines 130-150. Verdict: CHANGES_REQUIRED, with four blocking findings and two advisories. The blocking findings are: three Fathers credited with answering the Communion's difficulty, which research/scope.md 7.5 forbids; the commentators' other Masses mentioned in body prose, and Rupert used to support a link to the Gospel; a recurring register pattern that credits texts with the study's own inferences; and the study's own English for the orations, which contradicts the apparatus."
+}

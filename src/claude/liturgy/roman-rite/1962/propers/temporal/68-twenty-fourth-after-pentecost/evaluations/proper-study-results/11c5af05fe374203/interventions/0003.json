@@ -1,0 +1,6 @@
+{
+  "encoded": false,
+  "stage": "source-registration",
+  "text": "Source-registration iteration 1 brief: the driver's earlier host note told workers to use unsealed --out destinations in their own scratch directories, so source-registration 0 generated the strict source-reader projection there and the preflight found the default working projection (.scratch/browser-data-work/structure/sources) stale. The corrected note says the run's working projections live at the producers' default working destination, which the gates check, and to omit --out there. No content instruction was added.",
+  "timestamp": "2026-11-16T15:19:17Z"
+}

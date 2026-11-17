@@ -20,12 +20,13 @@ These are generation choices, not a stored collection of 644 PDFs:
 Each edition has a small print page under `print/`: its title and edition or
 companion label, the **Generate PDF** controls, any earlier printed edition,
 and a link to read it online where a web reader exists. Web readers keep
-their reading presentation. Their Print action, like the Generate PDF links in
-the catalogues, typesets the edition without leaving the page: a small progress
-bar appears beside the link, and the PDF downloads when it is ready. Cancel it
-from that popover. Open the link in a new tab to use the print
+their reading presentation. Each carries a **Generate PDF** action at the top
+of the page, which typesets the edition without leaving the page: a small
+progress bar appears beside the link, and the PDF downloads when it is ready.
+Cancel it from that popover. Open the link in a new tab to use the print
 page instead, and select **Generate PDF** there; opening or reloading the print
-page does not start it. The selected edition includes its own notes,
+page does not start it. The library's tables link each document's page, not its
+PDF: open the document, then use its Generate PDF action. The selected edition includes its own notes,
 appendices, references, revision and rights notices. Companions, such as a
 proper's concise study or homily, select their own TeX entrypoint.
 

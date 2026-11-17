@@ -48,7 +48,8 @@ Monochrome-pencil visual references organized for six audiences.
 ## Sunday Propers Calendar
 
 The stable 1962 temporal series in liturgical-year order, beginning with the
-First Sunday of Advent. Each approved installed guide is linked; unavailable
+First Sunday of Advent; each resumed Sunday after the Epiphany is listed beside
+the Sunday it resumes. Each approved installed guide is linked; unavailable
 editions are shown as `Planned`.
 
 The Fifth Sunday after Epiphany and its resumed observance share their
@@ -101,6 +102,7 @@ shared readings; a dedicated guide to the winter formulary remains planned.
 <!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany -->
 <!-- triptych-publication-id: claude:liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany -->
 <!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost -->
+<!-- triptych-publication-id: claude:liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost -->
 
 | ID | Sunday | ChatGPT | Claude |
 | ---: | --- | --- | --- |
@@ -116,11 +118,15 @@ shared readings; a dedicated guide to the winter formulary remains planned.
 | 10 | **Epiphany of the Lord** | Planned | Planned |
 | 11 | **Holy Family (First Sunday after the Epiphany)** | Planned | Planned |
 | 12 | **Baptism of the Lord (Jan 13)** | Planned | Planned |
-| 13 | **Second Sunday after the Epiphany** | Planned | Planned |
-| 14 | **Third Sunday after the Epiphany** | Planned | Planned |
-| 15 | **Fourth Sunday after the Epiphany** | Planned | Planned |
-| 16 | **Fifth Sunday after the Epiphany** | Shared readings, resumed setting: [Full Study Guide](../web/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany.html) · [Synthesis](../web/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany-synthesis.html) · [Homily](../web/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany-homily.html) <!-- triptych-publication-reference: liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany --> <!-- triptych-publication-reference: liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany-synthesis --> <!-- triptych-publication-reference: liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany-homily --> | Planned |
-| 17 | **Sixth Sunday after the Epiphany** | Planned | Planned |
+| 13 | **Second Sunday after the Epiphany** † | Planned | Planned |
+| 14 | **Third Sunday after the Epiphany** † | Planned | Planned |
+| 64 | **Resumed Third Sunday after the Epiphany** † | Planned | Planned |
+| 15 | **Fourth Sunday after the Epiphany** † | Planned | Planned |
+| 65 | **Resumed Fourth Sunday after the Epiphany** † | Planned | Planned |
+| 16 | **Fifth Sunday after the Epiphany** † | Shared readings, resumed setting: [Full Study Guide](../web/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany.html) · [Synthesis](../web/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany-synthesis.html) · [Homily](../web/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany-homily.html) <!-- triptych-publication-reference: liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany --> <!-- triptych-publication-reference: liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany-synthesis --> <!-- triptych-publication-reference: liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany-homily --> | Planned |
+| 66 | **Resumed Fifth Sunday after the Epiphany** † | [Full Study Guide](../web/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany.html) · [Synthesis](../web/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany-synthesis.html) · [Homily](../web/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany-homily.html) | [Full Study Guide](../web/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany.html) · [Synthesis](../web/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany-synthesis.html) · [Homily](../web/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany-homily.html) |
+| 17 | **Sixth Sunday after the Epiphany** † | Planned | Planned |
+| 67 | **Resumed Sixth Sunday after the Epiphany** † | [Full Study Guide](../web/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany.html) · [Synthesis](../web/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-synthesis.html) · [Homily](../web/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-homily.html) | [Full Study Guide](../web/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany.html) · [Synthesis](../web/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-synthesis.html) · [Homily](../web/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-homily.html) |
 | 18 | **Septuagesima Sunday** | Planned | Planned |
 | 19 | **Sexagesima Sunday** | Planned | Planned |
 | 20 | **Quinquagesima Sunday** | Planned | Planned |
@@ -167,11 +173,9 @@ shared readings; a dedicated guide to the winter formulary remains planned.
 | 61 | **Twenty-first Sunday after Pentecost** | [Full Study Guide](../pdf/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.pdf) · [Synthesis](../pdf/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis.pdf) · [Homily](../pdf/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-homily.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.html) | [Full Study Guide](../pdf/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.pdf) · [Synthesis](../pdf/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis.pdf) · [Homily](../pdf/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-homily.pdf) · [Read](../web/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.html) |
 | 62 | **Twenty-second Sunday after Pentecost** | Planned | Planned |
 | 63 | **Twenty-third Sunday after Pentecost** | Planned | Planned |
-| 64 | **Resumed Third Sunday after the Epiphany** | Planned | Planned |
-| 65 | **Resumed Fourth Sunday after the Epiphany** | Planned | Planned |
-| 66 | **Resumed Fifth Sunday after the Epiphany** | [Full Study Guide](../web/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany.html) · [Synthesis](../web/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany-synthesis.html) · [Homily](../web/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany-homily.html) | [Full Study Guide](../web/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany.html) · [Synthesis](../web/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany-synthesis.html) · [Homily](../web/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany-homily.html) |
-| 67 | **Resumed Sixth Sunday after the Epiphany** | [Full Study Guide](../web/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany.html) · [Synthesis](../web/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-synthesis.html) · [Homily](../web/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-homily.html) | [Full Study Guide](../web/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany.html) · [Synthesis](../web/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-synthesis.html) · [Homily](../web/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-homily.html) |
-| 68 | **Twenty-fourth and Last Sunday after Pentecost** | [Full Study Guide](../web/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost.html) · [Synthesis](../web/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost-synthesis.html) · [Homily](../web/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost-homily.html) | Planned |
+| 68 | **Twenty-fourth and Last Sunday after Pentecost** † | [Full Study Guide](../web/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost.html) · [Synthesis](../web/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost-synthesis.html) · [Homily](../web/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost-homily.html) | [Full Study Guide](../web/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost.html) · [Synthesis](../web/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost-synthesis.html) · [Homily](../web/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost-homily.html) |
+
+† These Sundays move with the date of Easter each year. How many Sundays after the Epiphany are kept before Septuagesima, and how many of the omitted ones are resumed after Pentecost before the Last Sunday after Pentecost, depend on the date of Easter.
 
 ### Feasts Replacing a Sunday
 

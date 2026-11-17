@@ -1,0 +1,895 @@
+RETRIEVED -- Dominica vigesima quarta et ultima post Pentecosten (Twenty-fourth and Last
+Sunday after Pentecost), 1962 Missale Romanum, with its public-domain antecedent in the
+Pustet 1862 Missal and the 1945 Lasance hand missal that prints the formulary in English
+Unedited finding aid. NOT publication text. Optical-reading errors are preserved deliberately.
+
+Three machine pulls follow. None controls any published wording. Every Latin form in
+propers/verified.md was read on page images: the 1962 facsimile at 200 dpi whole and in
+400-dpi crops of each column section, the Pustet 1862 facsimile on 200-dpi page images
+rendered from the whole registered PDF, and the Lasance pages on 220-dpi page images. The
+pulls are kept so that a later reader can see what each text layer gives and where it fails.
+Retrieved and recorded on 2026-11-16 in the research stage (iteration 0) of proper-study run
+11c5af05fe374203.
+
+Each pull is reproduced byte for byte between its BEGIN and END lines, form feeds included.
+Where an extract does not end in a line feed, one line feed is added before the END line;
+each stated extract SHA-256 is of the bytes as the tool emitted them.
+==============================================================================
+PULL 1 -- the controlling facsimile's own embedded text layer, the formulary
+==============================================================================
+Represented edition : Missale Romanum, editio typica (Typis Polyglottis Vaticanis, 1962)
+Artifact            : artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+Retrieval URL       : https://media.churchmusicassociation.org/pdf/missale62.pdf
+Whole-file SHA-256  : 648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a
+                      82,815,941 bytes; fetched whole on 2026-11-16 (resolve-context stage
+                      of the same run) and re-hashed and matched by this stage before use.
+Method              : poppler pdftotext in -layout mode over artifact PDF pp. 503-505
+                      (printed pp. 422-424). The two-column layout is flattened line by
+                      line, so the columns interleave; drop capitals are detached or lost.
+Boundaries shown    : printed p. 422 opens inside the resumed Sixth Sunday after the
+                      Epiphany (the end of its Epistle, Gradual no. 1762, Alleluia
+                      no. 1763, Gospel no. 1764, Offertory no. 1765, Secret no. 1766,
+                      Communion no. 1767, Postcommunion no. 1768). The heading DOMINICA
+                      VIGESIMA QUARTA et ultima post Pentecosten / II classis follows in
+                      the right column and opens no. 1769. Printed p. 423 carries nos.
+                      1770-1774; printed p. 424 the end of the Gospel and nos. 1775-1778,
+                      after which the page is blank. The running heads ('Dominica XXIV et
+                      ultima post Pentecosten' on all three pages) do not bound the
+                      formulary.
+Known misreadings   : drop capitals detached or lost (D of Dicit, E of Excita, F of
+                      Fratres, I of In illo, P of Propitius, C of Concede); accents and
+                      ligatures as the layer renders them.
+Extract SHA-256     : f6ef5f6afe729be5f70cc6e2a7514c83ebe72183d9526a28ad98295b4c92a4b5
+                      (9,124 bytes, exactly as the tool emitted them)
+---------------------------------------------------------------- BEGIN PULL 1
+   422                 Dominica XXIV et ultima post Pentecosten
+    scitis quales fuerimus in vobis propter in parabolis ad turbas: et sine para-
+    vos. Et vos imitatores nostri facti estis, bolis non loquebatur eis: ut implere-
+    et Domini, excipientes verbum in tri- tur quod dictum erat per Prophetam
+    bulatione multa, cum gaudio Spiritus dicentem: Aperiam in parabolis os
+    Sancti: ita ut facti sitis forma omnibus meum, eructabo abscondita a consti-
+    credentibus in Macedonia, et in Achaia. tutione mundi.                      Credo.
+    A vobis enim diffamatus est sermo Do- Ant. ad Offertorium              Ps. 129, 1-2
+    mini, non solum in Macedonia, et in          De profundis clamavi ad te, Domi- 1765
+    Achaia, sed et in omni loco fides ve- ne: Domine, exaudi orationem meam:
+    stra, quae est ad Deum, profecta est, ita de profundis clamavi ad te, Domine.
+    ut non sit nobis necesse quidquam lo-
+    qui. Ipsi enim de nobis annuntiant qua-                     Secreta
+                                                                        Deus, mundet, 1766
+    lem introitum habuerimus ad vos: et
+    quomodo conversi estis ad Deum a         H      aec   nos oblatio,
+                                                      qusesumus, et renovet, gubernet
+    simulacris, servire Deo vivo et vero, et et protegat. Per Dominum.
+    exspectare Filium eius de cadis (quern       Praefatio de Ssma Trinitate.
+    suscitavit ex mortuis) Iesum, qui eri-
+    puit nos ab ira ventura.                   Ant. ad Communionem Marc. 11, 24
+    Graduale                       Ps. 43, 8-9   Amen dico vobis, quidquid orantes 1767
+17
+  62 Liberasti nos, Domine, ex afnigenti- petitis, credite quia accipietis, et fiet
+    bus nos: et eos, qui nos oderunt, confu- vobis.
+    disti. V. In Deo laudabimur tota die, et                 Postcommunio
+                                                                                        17
+    in nomine tuo confitebimur in saecula. /""^aelestibus, Domine, pasti deliciis: 68
+176) Alleluia, alleluia. V. Ps. 129, 1-2 De    \*s   quaesumus;    ut  semper   eadem,
+    profundis clamavi ad te, Domine: Do- per quae veraciter vivimus, appetamus.
+    mine, exaudi orationem meam. Alleluia. Per Dominum.
+           Sequentia sancti Evangelii secun-            DOMINICA
+            dum Matthseum. Mt. 13, 31-35        VIGESIMA QUARTA
+1764 J n illo tempore: Dixit Iesus turbis
+     JL parabolam hanc: Simile est regnum
+                                              et ultima post Pentecosten
+     caelorum grano sinapis, quod accipiens                 II classis
+     homo seminavit in agro suo: quod mi-         Antiphona ad Introitum
+     nimum quidem est omnibus seminibus:           Ierem. 29, 11, 12 et 14
+                                                     icit Dominus: Ego cogito co- 176^
+
+
+                                             D
+     cum autem creverit, maius est omnibus
+     oleribus, et fit arbor, ita ut volucres         I gitationes pacis, et non af-
+     caeli veniant et habitent in ramis eius.        ' flictionis: invocabitis me, et
+     Aliam parabolam locutus est eis: Simi-            ego exaudiam vos: et redu-
+     le est regnum caelorum fermento, quod cam captivitatem vestram de cunctis
+     acceptum mulier abscondit in farinae locis. Ps. 84, 2 Benedixisti, Domine,
+     satis tribus, donee fermentatum est terram tuam: avertisti captivitatem
+     totum. Haec omnia locutus est Iesus Iacob. V. Gloria Patri.
+                            Dominica XXIV et ultima post Pentecosten                        423
+
+                         Oratio                     propheta, stantem in loco sancto: qui
+1770
+       E   xcita, quaesumus, Domine, tuorum
+            fidelium voluntates: ut, divini ope-
+       ns fructum propensius exsequentes;
+                                                    legit, intellegat: tune qui in Iudsea sunt,
+                                                    fugiant ad montes: et qui in tecto, non
+                                                    descendat tollere aliquid de domo sua:
+       pietatis tuae remedia maiora perdpiant.      et qui in agro, non revertatur tollere
+       Per Dominum.                                 tiinicam suam. Vae autem praegnanti-
+                                                    bus et nutrientibus in illis diebus. Orate
+1771 Lectio Epistolae beati Pauli Apostoli          autem, ut non fiat fuga vestra in hie-
+          ad Colossenses.            Col. i, 9-14   me vel sabbato. Erit enim tune tribu-
+                                                    latio magna, qualis non fuit ab initio
+       F    ratres: Non cessamus pro vobis oran-
+             tes, et postulantes ut impleamini
+       agnitione voluntatis Dei, in omni sa-
+                                                    mundi usque modo, neque fiet. Et nisi
+                                                    breviati fuissent dies illi, non fieret salva
+       pientia et intellectu spiritali: ut ambu-    omnis caro: sed propter electos brevia-
+       letis digne Deo per omnia placentes:         buntur dies illi. Tune si quis vobis di-
+       in omni opere bono fructificantes, et        xerit: Ecce hie est Christus, aut illic: no-
+       crescentes in scientia Dei: in omni vir-     lite credere. Surgent enim pseudochri-
+       tiite confortati secundum potentiam          sti, et pseudoprophetae: et dabunt signa
+       claritatis eius in omni patientia, et lon-   magna et prodigia, ita ut in errorem
+       ganimitate cum gaudio, gratias agentes       inducantur (si fieri potest) etiam electi.
+       Deo Patri, qui dignos nos fecit in par-      Ecce praedixi vobis. Si ergo dixerint vo-
+       tem sortis sanctorum in lumine: qui          bis: Ecce in deserto est, nolite exire:
+       eripuit nos de potestate tenebrarum,         ecce in penetralibus, nolite credere. Sic-
+       et transtulit in regnum Filii dilectionis    ut enim fulgur exit ab Oriente, et pa-
+       suae, in quo habemus redemptionem            ret usque in Occidentem: ita erit et ad-
+       per sanguinem eius, remissionem pec-         ventus Filii hominis. Ubicumque fiierit
+       catorum.                                     corpus, illic congregabuntur et aquilae.
+                                                    Statim autem post tribulationem die-
+       Graduale                       Ps. 43, 8-9   rum illorum sol obscurabitur, et luna
+1772
+           Liberasti nos, Domine, ex affligenti-    non dabit lumen suum, et stellse cadent
+       bus nos: et eos, qui nos oderunt, con-       de caelo, et virtiites caelorum commove-
+       fudisti. V. In Deo laudabimur tota die,      biintur: et tune parebit signum Filii
+       et in nomine tuo confitebimur in             hominis in caelo: et tune plangent omnes
+       ssecula.                                     tribus terrae: et videbunt Filium homi-
+1773       Alleluia, alleluia. V. Ps. 129, 1-2 De   nis venientem in nubibus caeli cum vir-
+       profundis clamavi ad te, Domine: Do-         tiite multa, et maie state. Et mittet Ange-
+       mine, exaudi orationem meam. Alleluia.       los suos cum tuba et voce magna: et
+                                                    congregabunt electos eius a quatuor
+1774 , n r .Sequentia sancti Evangelii seciin-      ventis, a summis caelorum usque ad
+       r r dum Matthseum. Mt. 24, 15-35             terminos eorum. Ab arbore autem fici
+
+       I n illo tempore: Dixit Iesus discipulis
+          suis: Cum videritis abomination em
+       desolationis, quae dicta est a Daniele
+                                                    discite parabolam: cum iam ramus eius
+                                                    tener fuerit, et folia nata, scitis quia
+                                                    prope est aestas: ita et vos cum videritis
+    424                 Dominica XXIV et ultima post Pentecosten
+     haec omnia, scitote quia prope est in       terrenis cupiditatibus liberati, ad cae-
+     ianuis. Amen dico vobis, quia non prae-     lestia desideria transeamus. Per D6-
+     teribit generatio haec, donee omnia         minum nostrum.
+     haec fiant. Caelum et terra transibunt,        Praefatio de Ssma Trinitate.
+     verba autem mea non praeteribunt.
+        Credo.                                   Ant. ad Communionem Marc. 11, 24 1777
+     Ant. ad Offertorium         Ps. 129, 1-2       Amen dico vobis, quidquid orantes
+1775 De profundis clamavi ad te, Domi-           petitis, credite quia accipietis, et fiet
+     ne: Domine, exaudi orationem meam:          vobis.
+     de profundis clamavi ad te, Domine.                      Postcommunio
+                      Secreta                    /Concede nobis, quaesumus, Domine: 1778
+1776 ipropitius esto, Domine, supplicatio-       V-^ ut per haec sacramenta quae sump-
+     JL nibus nostris: et, populi tui oblatio-   simus, quidquid in nostra mente vi-
+     nibus precibusque susceptis, omnium         tiosum est, ipsorum medicationis dono
+     nostrum ad te corda converte; ut, a         curetur. Per Dominum.
+
+---------------------------------------------------------------- END PULL 1
+
+==============================================================================
+PULL 2 -- the public-domain antecedent's tracked text layer (Pustet 1862)
+==============================================================================
+Represented edition : Missale Romanum (Ratisbon: Pustet, 1862)
+Artifact            : artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf
+                      (whole-file SHA-256 f34bc7cf9293ffb353159e94118f4316bb4cc0a60230b315904dc77ba2502162,
+                      recomputed and matched 2026-11-16)
+Facsimile           : artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3
+                      https://archive.org/download/bub_gb_E7sPAAAAIAAJ/bub_gb_E7sPAAAAIAAJ.pdf
+                      (102,880,787 bytes, SHA-256 363d6fc3f556bf596f3b56d4efcb7be849b7e9904304ba886b7977c39e8f7474;
+                      fetched whole on 2026-11-16 and matched)
+Method              : physical lines 52719-52930 of the tracked layer, unedited.
+Boundaries shown    : the tail of the rubric on the Sundays left over after the Epiphany
+                      ('Et ultimo loco semper ponitur Missa Dominicae xxiv.'; 'Introitus
+                      autem, Graduale, Offertorium, et Communio in praedictis Dominicis
+                      semper dicuntur ut in Dominica vigesimatertia'), the heading
+                      'Dominica XXIV. et ultima post Pentecosten', the whole formulary
+                      (printed pp. 359-360 = PDF pp. 445-446), and the heading of the
+                      following 'Dominica III. quae superfuit post Epiphaniam'.
+Known misreadings   : the Gospel citation line reads 'c. 21.' on this layer; the page
+                      image (PDF p. 445, right column) reads 'c. 24.'. OCR damage
+                      elsewhere is left as found.
+Extract SHA-256     : d474fbd61ad0f0488bf7de9d23312206b5c7807bc4a87b5145c657b16130c22e
+                      (5,453 bytes)
+---------------------------------------------------------------- BEGIN PULL 2
+Et  ultimo  loco  semper  po- 
+nitnr  Missa  Dominicai  xxiv. 
+lipst  Pcntecosten. 
+
+1  Introitus  autem,  Graduale, 
+Offertorium,  et  Communio  in 
+pnedictis  Dominicis  semper 
+aicuntur  ut  in  Dominica  vi- 
+gesimatertia. 
+
+
+Dominica  XXIV. 
+
+ct  ultima  post  Pcnfecostcu. 
+
+Dlnlroilus.  Jeremiw  29. 
+Icit  D6minus :  Ego  c6- 
+gito  cogitationes  pa- 
+cis,  et  non  afflicti6nis: 
+invoc&bitis  me,  et  ego  exau- 
+diam  vos:  et  reducam  capti- 
+vitatem  vestram  de  cunctis 
+locis.  Ps.  84.  B^nedixisti  D6- 
+mine  terram  tuam:  avertisti 
+captivitatem  Jacob. 
+Y.  G16riaPatri. 
+
+Oratio. 
+
+EXcita,  quaBSumus  D6mine, 
+tu6rum  fid61ium  voluntd- 
+tes:  ut  divini  6peris  finctum 
+prop6nsius  exe<iu6ntes,  pietd- 
+tis  tuae  rem6dia  majora  per- 
+dpiant.  Per  D6minum. 
+Sccunda  Oratio.  A  cunctis 
+nos.  fol.  315. 
+
+Tertia  ad  libitum. 
+
+Lfctio  EplstolaB  be&ti  Pauli 
+Ap6stoli  ad  Coloss6nses.  c.  i. 
+
+TjlRatres.  Non  cessamus  pro 
+JJ  vobis  orantes  et  postulan- 
+tcs,  ut  impleamini  agniti6ne 
+volunt&tis  Dei,  in  omni  sa- 
+pientia  et  intellectu  spiritdli: 
+ut  ambuletis  digne  Deo  per 
+omnia  placentes:  in  omni 
+opere  bono  fructificantes,  et 
+
+
+cresc6ntes  in  sci6ntia  Dei:  in 
+omni  virttite  confort&ti  secun- 
+dum  potentiam  clarit&tis  ejus, 
+in  omni  patientia,  et  longani- 
+mit&te  cum  gaudio ,  gr&tias 
+agentes  Deo  ratri,  qui  dignos 
+nos  fecit  in  partem  sortis 
+sanct6rum  in  lumine :  qui  eri- 
+puit  nos  de  potest&te  tene- 
+Drdrum,  et  transtulit  in  re- 
+gnum  Filii  dilecti6nis  suse;  in 
+quo  hab6mus  redempti6nem 
+per  sanguiaem  ejus,  remis- 
+si6nem  peccatorum. 
+
+Graduale.  Ps.  43.  Liberasti 
+nos,  D6mine,  ex  affligentibus 
+nos:  et  eos,  qui  nos  od6runt, 
+confudfsti. 
+
+In  Deo  lauddbimur  tota 
+ie,  et  in  n6mine  tuo  confi- 
+t6bimur  in  saecula. 
+Alleluja,  alleluja. 
+Y.  Ps.  129.  De  profundis  cla- 
+m&vi  ad  te  D6mine,  D6mine 
+exaudi  orationem  meam.  Al- 
+leluja. 
+
+Sequ6ntia  sancti  Evang61ii  se- 
+cundum  Matthaeum.   c.  21. 
+
+IN  illo  t6mpore :  dixit  Jesus 
+discipulis  suis:  Cum  vide- 
+ntis  abominati6nem  desola- 
+ti6nis,  qu»  dicta  est  a  Da- 
+niele  proph6ta;  stantem  in 
+loco  sancto:  qui  legit,  intelli- 
+gat:  tunc  qui  in  Judsea  sunt, 
+fugiant  ad  montes:  et  qui  in 
+tecto ,  non  desc6ndat  tollere 
+dliquid  de  domo  sua:  et  qui 
+iu  agro,  non  revert&tur  tol- 
+lere  tunicam  suam.  Vae  autem 
+praegnantibus  et  nutrientibus 
+in  illis  diebus.  Ordte  autem, 
+ut  non  fiat  fuga  vestra  in 
+hieme,  vel  sabbato.  Erit  cnira 
+tunc  tribulatio  magna,  qualis 
+non  fuit  ab  iiritio  mundi  us- 
+
+
+Digitized  by  Google 
+
+
+Dom.  III.  <in;e  sur 
+
+
+)crtuit  post  Epiph 
+
+
+que  modo,  neque  fiet.  Et  nisi 
+brevi&ti  firissent  dies  illi,  non 
+fieret  salva  omnis  cafo:  sed 
+ropter  electos  breviabuntur 
+ies  illi.  Tunc  si  quis  vobis 
+dixerit:  Ecce  hic  est  Chri- 
+stus:  autillic:  nolite  cr6dere. 
+Surgent  enim  pseudochristi, 
+et  pseudoprophetse,  et  dabunt 
+signa  magna  et  prodigia,  ita 
+ut  in  errorem  inducAntur  (si 
+fieri  potest)  6tiam  electi.  Ecce 
+pradixi  vobis.  Si  ergo  dixe- 
+rint  vobis:  ecce  in  des£rto 
+est,  nolite  exire:  ecce  in  pe- 
+netr&iibus,  nolite  cr6dere.  I5i- 
+cut  enim  fulgur  exit  ab  Ori- 
+6nte,  et  paret  usque  in  Occi- 
+dontem:  ita  erit  et  adv6ntus 
+Fflii  h6minis.  Ubicfimque  fue- 
+rit  corpus,  illic  congregabun- 
+tur  et  dquil».  Statim  autem 
+post  tribulati6nem  di6rum  il- 
+forum  sol  obscur&bitur ,  et 
+luna  non  dabit  lumen  suum, 
+et  stellae  cadent  de  coelo,  et 
+virtutes  coel6rum  commove- 
+buntur:  et  tunc  jmrebit  si- 
+gnum  Filii  h6minis  in  ccelo: 
+et  tunc  plangent  omnes  tri- 
+busterrse:  et  videbunt  Filium 
+hominis  venientem  in  nubibus 
+coeli  cum  virtute  multa,  et 
+majest&te.  Et  mittet  Ange- 
+los  suos  cum  tuba,  et  voce 
+magna:  et  congregdbunt  el6- 
+ctos  ejus  aguatuor  ventis,  a 
+summis  coelorum  usque  ad 
+t£rminos  eorum.  Ab  arbore 
+autem  fici  dfscite  par&bolara: 
+cum  jara  ramus  ejus  tener 
+fuerit,  et  f61ia  nata,  scitis 
+quia  prope  est  aestas:  ita  et 
+vos  cum  vid6ritis  ruec  6mnia, 
+scitote  quia  prope  est  in  j&- 
+nuis.  Amen  dico  vobis,  quia 
+non  praeteribit  generdtio  hsec, 
+
+
+donec  6mnia  haec  fiant.  Coe- 
+lum  et  terra  transfbunt,  verba 
+autem  mea  non  prseteribunt. 
+Oredo. 
+
+Offertorium.  Ps.  129.  De  pro- 
+fundis  clam&vi  ad  te  Domi- 
+ne,  D6mine  exatidi  orati6nem 
+meam:  de  profundis  clam&vi 
+ad  te,  D6mine. 
+
+Secreta. 
+"pRopftius  esto,D6mine,  sup- 
+JT  nlicati6nibus  nostris:  et 
+populi  tui  oblati6nibus ,  pre- 
+cibtisque  susc6ptis,  6mmum 
+nostrum  ad  te  corda  conv6rte : 
+ut  a  terr&ris  cupidit&tibus 
+liberdti,  ad  coel£stia  desideria 
+transe&mus.  Per  Dominum. 
+
+Alia  Secrcta.  Exa6di  nos 
+Deus.  fol.  316. 
+
+Tertia  ad  libitum. 
+
+Communio.  Marci  11.  Amen 
+dico  vobis,  guidquid  or&ntes 
+p6titis,  cr6dite  quia  accipi6- 
+tis,  et  fiet  vobis. 
+
+Postcommunio. 
+
+COncede  nobis,  qusesumus 
+D6mine:  ut  per  haec  sa- 
+cram6nta  quse  sumpsimus, 
+quidquid  in  nostra  mente  vi- 
+ti6sum  est,  ips6rum  medica- 
+ti6nis  dono  cur6tur.  Per  D6- 
+minum. 
+
+Alia  Postcemmunio.  Mundet 
+et  mtiniat.  fol.  316. 
+Tertia  ad  libitum. 
+
+Dominica  111. 
+
+quap  supcrfuit  post  Epiphaniam, 
+ponrnda  sccunduni  superiorcm 
+---------------------------------------------------------------- END PULL 2
+
+==============================================================================
+PULL 3 -- the English hand missal's tracked text layer (Lasance 1945)
+==============================================================================
+Represented edition : F. X. Lasance, The New Roman Missal (New York: Benziger, revised 1945)
+Artifact            : artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.new-roman-missal-text-80b34759
+                      (whole-file SHA-256 80b34759fb18ec60f6205460c2ac24dc9e4a861938a94ef1f8e04a08a398ac9a,
+                      recomputed and matched 2026-11-16)
+Facsimile           : artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0
+                      https://archive.org/download/fr-lasance-missal-1937/fr-lasance-missal-1937.pdf
+                      (75,268,976 bytes, SHA-256 6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70;
+                      fetched whole on 2026-11-16 and matched)
+Method              : physical lines 78751-79215 of the tracked layer, unedited. The
+                      printed page is the PDF page plus two (printed p. 736 = PDF p. 734).
+Boundaries shown    : the heading 'Twenty-fourth and Last Sunday after Pentecost (Green)'
+                      on printed p. 736 to the Postcommunion on printed p. 740, followed
+                      by the heading of 'Supplementary Mass No. 1'. The layer interleaves
+                      the Latin and English columns and damages accents and drop capitals.
+Extract SHA-256     : c59eeea2c1c0c27f8bff71ba803561230fd53a9ef3fcdaa8dbbb8492b143b7e0
+                      (10,401 bytes)
+---------------------------------------------------------------- BEGIN PULL 3
+Twenty-fourth and Last Sunday after Pentecost 
+(Green) 
+
+
+In case there are more than 24 Sundays after Pentecost see 
+Supplementary Masses for extra Sundays after Pentecost on 
+page 740. The following Mass, however, is always said on the 
+last Sunday after Pentecost, that is, the Sunday preceding the 
+first Sunday of Advent. 
+
+
+The Beginning of Mass, page 756. 
+
+
+Introit. Jer. 29, 11, 12, 14 
+
+
+HE Lord saith, I think 
+
+thoughts of peace, and 
+not of affliction; you shall cal 
+upon Me and I will hear you; 
+and I will bring back your 
+captivity from all places. Ps. 
+84, 2. Lord, Thou hast blessed 
+Thy land: Thou hast turned 
+away the captivity of Jacob. 
+y. Glory. 
+
+
+Óicif Dóminus: Ego có- 
+
+gito cogitatiónes pacis, 
+et non afflictiónis: invocabitis 
+me, et ego exáudiam vos: et 
+redücam  captivitátem ves- 
+tram de cunctis locis. Ps. 84, 2. 
+Benedixisti, Dómine, terram 
+tuam: avertísti captivitátem 
+Jacob. y. Glória Patri. 
+
+
+Kyrie, page 761; Gloria, page 762. 
+
+
+http://ccwatershed.org 
+
+
+TWENTY-FOURTH SUNDAY AFTER PENTECOST 737 
+
+
+Prayer 
+
+
+"Íxcira, quesumus, Dómi- 
+ne, tuórum fidélium vo- 
+luntátes: ut divini óperis 
+fructum propénsius exsequén- 
+tes: pietátis tue remédia ma- 
+jóra percipiant. Per Dómi- 
+num. 
+
+
+ROUSE, we beseech Thee, 
+O Lord, the wills of Thy 
+faithful, that, by more ear- 
+nestly following after the fruit 
+of the divine work, they may 
+the: more abundantly partake 
+of Thy mercies, Through our 
+Lord. 
+
+
+Second Prayer, A cunctis, page 827; third at the choice of 
+
+
+the priest, pages 1494-1500. 
+
+
+Epistle. Col. 1, 9-14 
+
+
+-Léctio Epistole beáti Pauli 
+Apostoli ad Colossenses. 
+
+
+RATRES: Non cessámus 
+pro vobis orántes, e£ 
+postulántes ut impleámini ag- 
+nitióne voluntátis Dei, in 
+omni sapiéntia et intelléctu 
+Spiritáli: ut ambulétis digne 
+Deo per ómnia placéntes: in 
+omni ópere bono, fructifi- 
+cántes, eb crescéntes in scién- 
+tia Dei: in omni virtüte con- 
+fortati secündum poténtiam 
+claritátis ejus in omni pa- 
+tiéntia, et longanimitáte cum 
+gáudio, grátias agéntes Deo 
+Patri, qui dignos nos fecit in 
+partem sortis sanctórum in 
+Tümine: qui erípuit nos de po- 
+testáte tenebrárum, et tráns- 
+tulit in regnum Fílii dilectió- 
+nis sue, in quo habémus re- 
+demptiónem per sánguinem 
+ejus, remissiónem  peccató- 
+rum. 
+
+
+Gradual. 
+
+
+Liberásti nos, Dómine, ex 
+affligéntibus nos: et eos, qui 
+nos odérunt, confudisti. Y. In 
+Deo laudábimur tota die, et 
+in nómine tuo confitébimur in 
+
+
+' Lesson from the Epistle of 
+blessed Paul the Apostle to the 
+Colossians. 
+
+
+RETHREN, We cease not to 
+
+pray for you, and to beg 
+thát you may be filled with the 
+knowledge of the will of God, 
+in all wisdom and spiritual un- 
+derstanding; that you may 
+walk worthy of God, in all 
+things pleasing, being fruitful 
+in every good work, and in- 
+creasing in the knowledge of 
+God; strengthened with all 
+might according to the power 
+of. His glory, in all patience 
+and long-suffering with joy; 
+giving thanks to God the 
+Father, Who hath made us 
+worthy to be partakers of the 
+lot of the saints in light; Who 
+hath delivered us from the 
+power of darkness, and hath 
+translated us into the kingdom 
+of the Son of His love, in Whom 
+we have redemption through 
+His blood, the remission of sins. 
+
+
+Ps. 43, 8, 9 
+
+
+Thou hast delivered us, O 
+Lord, from them that afflict us: 
+and hast put them to shame 
+that hate us. V. In God we will 
+glory all the day: and in Thy 
+
+
+http://ccwatershed.org 
+
+
+738 TWENTY-FOURTH SUNDAY AFTER PENTECOST 
+
+
+name we will give praise for 
+ever. Alleluia, alleluia. Y. Ps. 
+129,1,2. From the depths I have 
+cried to Thee, O Lord: Lord, 
+hear my prayer. Alleluia. 
+
+
+Munda Cor Meum, page 763. 
+
+
+secula. Alleluia, alleluia. y. 
+Ps. 129, 1, 2. De profündis 
+clamávi ad te, Dómine: Dó- 
+mine, exáudi oratiónem me- 
+am. Allelüia. 
+
+
+Gospel. Matt. 24, 15-35 
+
+
+*B Continuation of the holy 
+Gospel according to St. Mat- 
+ihew. 
+
+
+T THAT time, Jesus said 
+
+to His disciples, When 
+you shall see the abomination 
+of desolation, which was spoken 
+of by Daniel the prophet, 
+standing in the holy place; he 
+that readeth, let him under- 
+stand: then they that are in 
+Judea, let them flee to the 
+mountains; and he that is on 
+the house-top, let him not come 
+down to take anything out of 
+his house; and he that is in 
+the field, let him not go back 
+to take his coat. And woe to 
+them that are with child, and 
+that give suck, in those days. 
+But pray that your flight be 
+not in the winter, or on the 
+sabbath: for there shall be 
+then great tribulation, such as 
+has not been found from the 
+beginning of the world until 
+now, neither shall be: and un- 
+less those days had been short- 
+ened, no flesh. should be saved; 
+but for the sake of the elect, 
+those days shall be shortened. 
+Then if any man shall say to 
+you, Lo, here is Christ, or 
+there; do not believe Him: for 
+there shall arise false Christs 
+and false prophets, and shall 
+show great signs and wonders, 
+insomuch as to deceive (if pos- 
+sible) even the elect. Behold, 
+
+
+HK Sequéntia sancti Evan- 
+gélii secundum Matthgeum.: 
+
+
+N ILLO témpore: Dixit Jesus 
+
+discipulis suis: Cum vi- 
+déritis abominatiónem deso- 
+latiónis, que dicta est a Dan- 
+iéle prophéta, stantem in loco 
+Sancto: qui legit, intélligat; 
+tune qui in Judzz sunt, fú- 
+giant ad montes: et qui in 
+tecto, non descéndat. tüllere 
+áliquid de domo sua: et qui 
+in agro, non revertátur tóllere 
+tünicam suam. Vz autem 
+pregnántibus, et nutriéntibus 
+in illis diébus. Oráte autem ut 
+non fiat fuga vestra in híeme, 
+vel sábbato. Erit enim tunc 
+tribulátio magna, qualis non 
+fierit salva omnis caro: sed 
+modo, neque fiet, Et nisi bre- 
+viáti fuíssent dies illij non 
+fierit salva omnis caro: sed 
+propter eléctos breviabüntur 
+dies illi. Tunc si quis vobis 
+díxerit: Ecce hic est Christus, 
+aut ilic: nolíte crédere. Sur- 
+gent enim pseudochristi, et 
+pseudoprophéte: et dabunt 
+signa magna, et prodígia, ita 
+ut in errórem inducantur (si 
+fíeri potest) étiam  elécti. 
+Ecce predíxi vobis. Si ergo 
+dixerint vobis: Ecce in de- 
+sérto est, nolíte exíre: ecce in 
+penetrélibus nolíte crédere. 
+Sicut enim fulgur exit ab 
+Oriénte, et paret usque jn Oc- 
+
+
+http://ccwatershed.org 
+
+
+< 
+
+
+TWENTY-FOURTH SUNDAY AFTER PENTECOST 739 
+
+
+cidéntem: ita erit et advén- 
+tus Fílii hóminis. Ubicumque 
+füerit corpus, illic congrega- 
+büntur et áquile. Statim au- 
+tem post tribulatiónem dié- 
+rum illórum sol obscurábitur, 
+et luna non dabit lumen su- 
+um, et stelle cadent de czlo, 
+et virtütes celórum commo- 
+vebüntur: et tunc parébit sig- 
+num Filii hóminis in celo: et 
+tunc plangent omnes tribus 
+terre: et vidébunt Fílium hó- 
+minis veniéntem in nübibus 
+celi cum virtüte multa, et 
+majestáte. Et mittet Angelos 
+suos cum tuba, et voce mag- 
+na: et congregábunt eléctos 
+ejus a quátuor ventis, a sum- 
+mis cel6rum usque ad térmi- 
+nos eórum. Ab árbore autem 
+fici díscite parábolam: cum 
+jam ramus ejus tener füerit, 
+et fólia nata, scitis quia prope 
+est estas: ita et vos cum vi- 
+Géritis hec ómnia, scitóte quia 
+prope est in jánuis. Amen dico 
+vobis, quia non preteríbit gen- 
+erátio hzc, donec ómnia hac 
+fiant. Czlum et terra transí- 
+bunt, verba autem mea non 
+preterfbunt. 
+
+
+I have told it to you before- 
+hand: if they therefore shall 
+Say to you, Behold, He is in 
+the desert, go ye not out; be- 
+hold, He is in the closets, be- 
+lieve it not. For as lightning 
+cometh out of the east, and 
+appeareth even into the west, 
+so shall also the coming of the 
+Son of man be. Wheresoever 
+the body shall be, there shall 
+the eagles also be gathered to- 
+gether. And immediately after 
+the tribulation of those days, 
+the sun shall be darkened, and 
+the moon shall not give her 
+light, and the stars shall fall 
+from heaven, and the powers 
+of heaven shall be moved; and 
+then shall appear the sign of 
+the Son of man in heaven, and 
+then shall all the tribes of the 
+earth mourn; and they shall 
+see the Son of man coming in 
+the clouds of heaven with much 
+power and majesty: and He 
+shall send His angels with a 
+trumpet and a great voice and 
+they shall gather together His 
+elect from the four winds, from 
+the farthest parts of the heav- 
+ens to the utmost bounds of 
+them. And from the fig-tree 
+
+
+learn a Parable: when the branch thereof is now tender, 
+and the leaves come forth, you know that summer is nigh. So 
+you also, when you shall see all these things, know ye that it 
+is nigh even at the doors. Amen I say to you, that this genera- 
+tion shall not pass till all these things be done. Heaven and 
+earth shall pass away, but My words shall not pass away. 
+
+
+Creed, page 765. 
+
+
+Offertory. Ps. 129, 1, 2 
+
+
+De profündis clamávi ad te, From the depths I have cried 
+Dómine: Dómine, exáudi ora- out to Thee, O Lord: Lord, hear 
+tiónem meam: de profündis my prayer: from the depths I 
+
+
+Clamávi ad te, Dómine. have cried out to Thee, O Lord. 
+
+
+Offertory Prayers, page 767. 
+
+
+http://ccwatershed.org 
+
+
+740 
+
+
+SUPPLEMENTARY MASS No. 1 
+
+
+Secret 
+
+
+our supplications, and 
+accept the offerings and pray- 
+ers of Thy people: turn all our 
+hearts unto Thee, that, being 
+delivered from earthly desires, 
+we may pass on to the enjoy- 
+ments of heaven. Through our 
+Lord. 
+
+
+B PROPITIOUS, O Lord, to 
+
+
+supplicatiónibus nos- 
+tris: et pópuli tui oblatióni- 
+bus, precibüsque  suscéptis, 
+ómnium nostrum ad te corda 
+convérte, ut a terrénis cupidi- 
+tatibus liberáti, ad coléstia 
+desidéria transeámus. Per 
+Dóminum. | 
+
+
+Piia esto Dómine 
+
+
+Second Secret, Graciously hear us, page 828; third at the 
+Choice of the priest, pages 1494-1500. 
+
+
+Preface for Sundays, page 773. 
+
+
+Communion. 
+
+Amen, I say to you, whatso- 
+ever you ask when you pray, 
+believe that you shall receive, 
+and it shall be done unto you. 
+
+
+Mark 11, 24 
+
+Amen, dico vobis, quidquid 
+orántes pétitis, crédite quia 
+accipiétis, et fiet vobis. 
+
+
+Postcommunion 
+
+
+RANT us, we beseech Thee, 
+
+O Lord, that, through 
+
+this sacrament which we have 
+
+received, whatever is evil in 
+
+our hearts may be restored by 
+
+its gift of healing. Through our 
+Lord. 
+
+Second Postcommunion, Ma; 
+
+
+ONCEDE nobis quesumus 
+
+Dómine: ut per hec 
+sacraménta que sümpsimus, 
+quidquid .in nostra mente 
+vitiósum est, ipsórum medi- 
+catiónis dono curétur. Per 
+---------------------------------------------------------------- END PULL 3

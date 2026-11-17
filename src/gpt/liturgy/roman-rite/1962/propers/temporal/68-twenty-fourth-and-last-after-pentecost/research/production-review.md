@@ -709,3 +709,365 @@ translation or second prose authority was introduced. This source/HTML stage
 does not supply print compilation, physical pagination, full-page inspection,
 terminal workflow acceptance, a push or deployment. Those remain distinct
 operations owned by the coordinator and any selected printing workflow.
+
+## Renewed research evidence, 17 November 2026
+
+The renewed research changed only this leaf's evidence: the context and
+appointed-text audit, research scope and interpretation reasoning, and outputs
+of the chronology record/`orientation-v3` generators. T's Gospel page break
+and complete Sanctus locus are corrected without changing the appointed
+transcription. R1 now distinguishes Augustine's prophetic temporal standpoint
+from its editorial Christian present application. The regenerated chronology
+includes the corpus's separately sourced Olivet utterance event, not a date
+for the final coming.
+
+The new source-registration handoff identifies 41 bound artifacts with renewed
+inspection extents, 24 external search-return identities with explicit reading
+limits, and one new Anthony of Padua service delivery. Its underlying Latin
+edition and modern-delivery rights remain unresolved; it has no invented
+source ID, new public payload or passage admission. The 12 retained receipt
+payloads and 38 bound tracked payloads match their recorded hashes and sizes.
+Historical source-binding and disposition actions have not been restamped.
+
+Existing content-preflight checks, source-library validation and containment
+validation passed. The content preflight resolves 51 bindings, seven scriptural
+elements, 22 corpus assertions and both whole-proper interpretive lanes.
+New one-off checks confirm complete mode, eleven appointed elements, both
+readings' four senses and element coverage, the three evidence corrections,
+the generated Olivet event and the exact Anthony receipt. These are evidence
+consistency checks, not new historical collation or independent acceptance.
+
+Byte comparisons preserve all 143 original accepted native-run files,
+70 public-archive files, 132 files of the Claude leaf, and 20 GPT authored
+TeX files covered by the retained baseline. No shared operational, rights,
+publication, index or release owner was changed. The edited evidence requires
+fresh downstream authoring/review and driver-owned inventory reconciliation.
+Run-provenance advancement, source registration, browser/print builds and
+publication acceptance were not performed by this research worker.
+
+The additional tool-registry integrity check did not pass: `corpus-index`
+is registered without a group or a declared reach in `scripts/_tooling.py`.
+Those shared tooling owners are outside this evidence stage and were not
+changed. This diagnostic is handed to the driver separately from the passing
+research checks; no repository-wide clean-check claim is made.
+
+## Renewed expansive-study authoring, iteration 0
+
+This is the author-study contribution for proper-study v19, run
+`13ecdd1552c245ea`, against seed `e8aceadc4a7e1ebe8d4987815a636d82ddd9d59b`.
+It does not reopen or replace the historical acceptance of run
+`df0ccb9ecfdea6c9`. The requested occurrence remains 22 November 2026,
+under the 1962 Roman calendar. The reviewed publication mode is complete,
+not reference-only. The existing declarations already express that mode,
+the eleven appointed elements, both interpretations and their four senses;
+no manifest migration or replacement text was needed.
+
+The complete study has been retained and renewed against the reviewed
+evidence. Detailed commentary and the first interpretation now distinguish
+Augustine's prophetic past tense in Psalm 84 from the subsequent Christian
+application. His argument concerns restoration still future from the
+prophet's standpoint, demonstrated by the continuing petition for conversion.
+The Christian application is explicitly drawn by placing that account beside
+the Epistle's received redemption and continuing prayer. It is not presented
+as Augustine's direct exposition of this Mass.
+
+The Gospel discussion now develops Chrysostom's treatment of “immediately”
+in Matthew 24:29: the final trial of Antichrist and the false prophets,
+rather than the earlier Judean emergency, immediately precedes the public
+coming. It also develops the body-and-eagles image through Chrysostom's
+gathered angels, martyrs and saints and Aquinas's account of the Passion and
+the saints. These are attributed passage interpretations; the whole-formulary
+construction remains editorial. The second interpretation retains its
+distinct question about prayer and the changed petitioner, with Aquinas and
+Bede as carrying authors. Bede supplies the immediate context of Mark
+11:22–23 and 25, not a separately attested verse-24 lemma.
+
+The author reread the relevant Augustine Psalm 43, 84 and 129 passages,
+Chrysostom on the appointed Colossians and Matthew passages, Aquinas's
+restricted Latin Colossians and Matthew derivatives, and Bede's Latin
+Mark context. The renewed research records and appointed-text audit were
+read as evidence, not replaced by the research review's PASS. This was
+bounded textual rereading, not a new facsimile inspection or a new collation
+of every underlying witness. No restricted delivery text or new Anthony
+quotation was added. Historical translations and attributed paraphrase
+retain their stated limitations and rights boundaries.
+
+The document-type generator refreshed the expansive study's Scriptural Date
+and Location appendix from the reviewed corpus projection. Its derived
+A.D. 29 Olivet event dates the utterance, not the final coming. The generated
+entrypoint itself needed no change. Shared generation provenance now names
+this packet's exact workflow, digest, run and seed, preserves the earlier
+contribution entries, and adds the actual renewed-study contribution.
+
+TeXcount over the opening, detailed commentary, both interpretations and
+concluding comparison reports **6,193 body words**, with **163 heading words**
+and **748 note words** separately. Appointed quotations, chronology and
+terminal apparatus are outside that body count. TeXcount completed, with
+its two installed-Perl precedence warnings.
+
+Existing research-mode component and content-preflight checks passed,
+including both whole-proper interpretations and the 75 source bindings.
+The publication source-schema check, generation-metadata check, exact
+run-provenance check and web-eligibility declaration check passed. The
+required canonical study conversion completed in this run's
+`artifacts/author-study-0/web-probe` directory. A new one-off author check
+used the site's locked Markdown 3.10.3 renderer to verify eleven unique
+appointed anchors, all 36 quotation blocks against the reviewed
+transcription, both four-senses lists, the changed exegesis, chronology,
+revision line and rights colophon. The comparison excludes editorial verse
+labels and normalizes wrapping and typographic markup; it is not fresh
+image collation or independent web acceptance.
+
+The source-library and source-inventory validation steps passed, but
+`make check-sources` failed its publication-inventory step: hashes for the
+renewed evidence and study-owned files are stale. Reconciliation belongs to
+the driver; no inventory was refreshed here. `tools/tpt --check` also
+reported the existing missing group and undeclared reach for `corpus-index`
+in shared tooling. The requested `tmt note` and `tmt check` could not run
+because `tmt` is unavailable. These are reported limits, not passing gates.
+
+Preservation comparisons against the author-entry baseline retain the
+143 historical native-run files, 70 public-archive files and 132 Claude
+leaf files, along with the GPT companion prose, sealed research evidence
+and declarations. The staged diff and the diff outside the permitted
+author paths remain unchanged. No companion was rederived or accepted,
+no historical web inspection was restamped, and no print export, visual
+review, publication integration, Git write or workflow advance was performed.
+The new conversion still requires the workflow's later independent review.
+
+## Renewed derive-synthesis, iteration 0
+
+This contribution answers proper-study v19 run `13ecdd1552c245ea`, seeded at
+`e8aceadc4a7e1ebe8d4987815a636d82ddd9d59b`. The accepted expansive study was
+read with the renewed research and appointed-text audit. The concise study
+now preserves Augustine's prophetic standpoint in Psalm 84, distinguishes
+Chrysostom's explanations of “then” and “immediately,” and compares his
+gathered angels, martyrs and saints with Aquinas's Passion-centred explanation
+of the body and eagles. The inventory's description of the Introit's psalm
+verse no longer implies that its past tense must recall an accomplished
+historical release. The concise References narrow the Augustine Psalm 84
+locus to the paragraphs actually used.
+
+Both controlling arguments remain distinct: deliverance received while final
+gathering and resurrection remain ahead, and confident petition that includes
+the petitioner's conversion. Augustine and Bellarmine still explain the
+Gradual's tense differently. Bede remains an interpreter of the Communion's
+adjacent sayings, not a separately attested verse-24 lemma; Origen remains
+reported through Aquinas; Colossians lectio 4 remains outside the appointed
+Epistle. No Anthony material, new evidence-dependent claim, prayer translation
+or restricted source text was added.
+
+The existing synthesis metadata, component-key regions, complete publication
+mode and synthesis-only memberships already state the required contract and
+were retained. Inventory, four overview rows, generated chronology, two
+thematic source blocks and developed commentary remain in their established
+order. All literal presentation markers stay in their proper owners.
+`document-types refresh` and its final check each report eight current outputs,
+no changed files and no stale assembly. Neither entrypoints nor generated
+chronology were hand-edited. The shared generation record retains the exact
+current run provenance and previous contributions and adds this actual
+concise-study contribution; no revision timestamp was written.
+
+### Measured extent and checks
+
+TeXcount, supplied a counting-only rule to ignore `zlabel` arguments, reports
+**3,315 body words**: 839 in the themes and 2,476 in the commentary.
+There are separately 77 heading words and 357 note words, 3,749 combined.
+Inventory, overview, generated chronology, terminal apparatus, title matter
+and generation display are excluded. The first count command failed because
+an option-file argument was mistaken for an inline rule. The corrected stdin
+rule completed successfully; the installed Perl's two precedence warnings
+remain. No canonical source was altered for counting.
+
+Existing synthesis component and full content-preflight checks passed on the
+final prose, including 75 bindings, 25 restricted sources not reproduced,
+both whole-proper interpretations, chronology support and reference use.
+Research-mode components also passed as a shared-manifest regression.
+Full-family source-schema validation reports one document, three outputs
+and zero errors. Generation metadata, exact run provenance, web eligibility
+and current document-type assembly passed. The initial preflight timed out
+after 60 seconds, following its binding check; the final complete run passed
+with a longer allowance.
+
+The selected synthesis was converted through the existing `convert_output`
+entrypoint and rendered with the site's locked Markdown renderer. Final
+Markdown SHA-256:
+`cb66957d5d4ee5c83ced78e7b07302dbc1440ddf0613c24ea5c5a5afff7a458b`;
+article HTML SHA-256:
+`a5bf9a020b6cd393277cf23c1e4af92166eaa9a32aa890d96be7f1fa02261078`.
+New inline author checks verify the declared output selection and memberships,
+ordered imports, literal markers, both generated chronology imports, eleven
+inventory entries, exactly four overview rows, all fifteen chronology rows,
+three rendered tables, 73 unique HTML IDs, 58 resolved internal links,
+the revised explanations and retained attribution bounds, and one derived
+revision display and rights notice without internal model metadata.
+The converted argument and terminal apparatus were read against the TeX.
+These are author source/conversion checks, not independent acceptance or
+a browser inspection. Logs and reports use the
+`.scratch/proper-study-68/renewed-derive-synthesis-0000-` prefix.
+
+### Owner boundaries
+
+No upstream argument or missing evidence required reopening the accepted
+research or expansive study. `make check-sources` nevertheless fails at the
+driver-owned publication inventory: the standing-findings record, four
+changed concise components and this audit have stale hashes. Its preceding source-library
+and inventory-schema validation steps pass. No inventory was refreshed.
+The separately reproduced shared-tooling defect remains: `corpus-index`
+has neither a group nor a declared reach in `scripts/_tooling.py`.
+`tmt` is unavailable, so its note and integrity commands could not run.
+
+Preservation checks cover the historical native run, its leaf archive,
+the Claude leaf, the GPT research and expansive-study owners, homily prose,
+declarations and historical inspection records. They remain unchanged from
+this dispatch's entry state. Only four concise components, the contribution
+record and this production audit changed. No temporary helper script was
+created. No print proof was requested or built; the 10--12-page target and
+exact physical opening-page positions remain unmeasured in this stage.
+No Git write, workflow advance, review restamping, publication or deployment
+was performed. The original accepted run and archive remain historical evidence.
+
+## Renewed derive-homily, iteration 0
+
+This contribution answers proper-study v19 run `13ecdd1552c245ea`, seeded at
+`e8aceadc4a7e1ebe8d4987815a636d82ddd9d59b`. Both reviewed studies were read.
+Only the homily's spoken component and terminal apparatus were revised,
+with this appended production record and an actual model-contribution entry.
+The shared provenance already states this run's exact header and was retained;
+all earlier contribution declarations remain. The original accepted run
+`df0ccb9ecfdea6c9` and its archive remain historical evidence.
+
+The speech addresses an **adult parish assembly** at the universal 1962
+Last Sunday after Pentecost on 22 November 2026. It develops the reviewed
+interpretation “The confident petitioner asks to be changed,” using the
+compatible distinction between present deliverance and continuing danger
+from “Deliverance begun, and the people who still wait.” Christ's warning
+about hidden claimants introduces the need for desire to follow his known
+words. Jeremiah's exiles must continue their commanded work while awaiting
+return; Paul's rescued believers still need knowledge, fruitful action and
+endurance. The Collect, Secret and Postcommunion ask God's action upon the
+people who pray, offer and receive.
+
+### The textual detail that changes the listener's understanding
+
+Confidence in prayer initially appears to concern obtaining a desired
+outward result. Matthew's warning makes the desire for rescue itself subject
+to Christ's direction: impressive signs do not authenticate the claimant.
+Colossians 1:12 says that God **made** the faithful worthy, so the capacity
+to receive belongs to his gift. Mark places the command to forgive while
+praying immediately after the assurance appointed at Communion. These
+details explain why confident petition includes receiving conversion rather
+than protecting an unchanged desire. The one practicable response is to ask
+for the good of the person against whom the listener holds a grievance,
+willing to receive God's help in forgiving. The speech states that response
+once and concludes with the communicant's further healing and the promised
+inheritance. Its reasoning depends on these particular appointments and
+their contexts, not merely on the general desirability of prayer.
+
+The cross-text connections are the homily's synthesis. Chrysostom is credited
+with the distinction between Judean flight and the final coming; Aquinas
+with the given worthiness, fruitful knowledge, adversity/delay distinction
+and prayer's ascent; Bede with faith working by love and pardon while
+forgiving. Bede's paragraph is on Mark 11:25, not a separate verse-24 lemma.
+The speech does not attribute its complete Mass argument to any of them.
+The former Augustine and Chrysostom-on-Colossians reference entries were
+removed because the renewed speech no longer uses those expositions.
+
+Evidence rereading covered the leaf's appointed texts, verification record,
+research scope, interpretation arguments and bindings; Chrysostom's NPNF
+Matthew homily 76 at physical lines 42301–42540; the retained restricted
+Aquinas Colossians derivative at lines 127–235, especially lectio 3;
+and Bede's Latin Mark entry at lines 330–339. The registered Challoner
+Jeremiah 29 was read, and one-off assertions checked the actual Colossians
+1:12, Mark 11:24–25 and Matthew 24:18,27 verse records. These are bounded
+textual checks, not new source acquisition, historical-print collation or
+image inspection. No research binding, source payload, rights inventory or
+accepted study was changed. The two short quotations retain their identified
+historical English; no new recited prayer or prayer translation was composed.
+
+### Delivery, assembly and checks
+
+TeXcount reports **1,190 spoken words**, excluding the title and terminal
+apparatus. A separate whitespace count agrees. At **110–115 words per
+minute**, the estimate is **10.3–10.8 minutes**. This is arithmetic, not a
+timed human delivery. The eighteen spoken paragraphs were reread silently
+for sense, sentence length, referents and oral transitions. No audible or
+human rehearsal is claimed.
+
+The existing `[document.homily]` fields, `homily` and `apparatus` regions
+already truthfully declare this edition and place its components by key.
+The manifest already gives the spoken component all eleven informing
+element keys and confines both homily components to homily mode.
+Those declarations were checked and retained without gratuitous changes.
+The required `document-types refresh --leaf` command reported the leaf
+current; no generated entrypoint or chronology snapshot needed rewriting.
+`homily.tex` remains generated, not hand-authored, with only the speech
+inside `properhomily` and the terminal note and References after it.
+No font, title, geometry or column override was added.
+
+Existing checks passed for homily-mode components, the complete homily
+content preflight, family source schema, generation metadata, exact
+run provenance and web eligibility. Preflight validates 75 source bindings,
+25 restricted sources not reproduced, both interpretation declarations and
+all five used References entries. The family schema reports one document,
+three outputs and zero errors. These checks establish their stated
+mechanical properties, not independent homily acceptance.
+
+The selected homily was converted through the existing `convert_output`
+entrypoint and rendered with the site's locked Markdown renderer.
+Markdown SHA-256:
+`676153b373968088db9255d7f7561984b5ab7f55707f8a749786ea686b06c3b8`;
+article HTML SHA-256:
+`654047eee1a9f6055e96415d09686293fcc5d50b090e4ccffe1479ecd82390d8`.
+New one-off author assertions verify the component-key declarations, mode
+membership and eleven-element research coverage; the single spoken import
+inside the shared environment; apparatus outside it; exact preservation
+and order of all eighteen spoken paragraphs in HTML; the brief quotations
+against their identified scriptural and historical liturgical sources;
+and one derived revision display and rights notice without internal model
+metadata. The first one-off layout assertion was too broad: it rejected the
+generated terminal colophon's ordinary paragraph-indent setting. Restricting
+it to prohibited page and column dimensions corrected that checker; the
+canonical layout was not altered to satisfy it.
+
+A final reconversion after appending this audit changed only the generated
+uncommitted-source revision display. A strict byte-for-byte comparison first
+failed on that field alone. The corrected final comparison permits only that
+single recognized derived timestamp to vary; the speech, apparatus and all
+other generated content must still match exactly. No timestamp declaration
+was written or frozen. Both raw output hashes remain scratch evidence.
+
+The converted argument and apparatus were read against the TeX. This is
+author source/conversion validation, not an independent web inspection,
+browser-layout review or new inspection receipt. No print export was
+requested or built. The installed TeXcount completed with its two Perl
+precedence warnings. `tmt note` and `tmt check` could not run because `tmt`
+is unavailable. `tools/tpt --check` separately reproduces the existing shared
+tooling defect: `corpus-index` has no group and no declared reach in
+`scripts/_tooling.py`. Those owners are outside this stage.
+
+The final `make check-sources` passes source-library validation and
+publication-inventory schema validation, then fails four stale publication
+hashes: the pre-existing standing-findings record, this appended audit and
+the two revised homily components. The latter two are consequences of this
+stage's authorized content edits, not inherited prose defects. The driver
+owns inventory reconciliation; no inventory was refreshed here. Generated
+entrypoint currency and the research- and synthesis-mode component checks
+also pass.
+
+Baseline SHA-256 comparisons confirm that only the two homily components,
+`generation-metadata.tex` and this audit changed within the 107-file GPT
+leaf. The seventy-file original leaf archive, 143-file historical native
+run and 132-file Claude leaf remain unchanged. Protected shared templates,
+guidance, library listings, release records, indexes and inventories also
+match the dispatch baseline. No file was added to or removed from either
+publication leaf. Final-newline, trailing-whitespace and conflict-marker
+checks pass for the four edited files.
+
+Evidence uses the `.scratch/proper-study-68/renewed-derive-homily-0000-`
+prefix. The new assertions are one-off author checks, distinct from the
+existing repository validators. No temporary helper script was created.
+No upstream owner-boundary content defect was found; the tooling and
+inventory limits above are reported for their actual owners. No Git write,
+workflow advance, review restamping, publication or deployment was performed.
+This contribution stops at derive-homily.

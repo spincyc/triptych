@@ -1,0 +1,69 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/main.tex",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "STU-001",
+      "note": "40 'A date, and an unconditioned promise': Bede alone, on Mk 11:25, gives the condition in Mark's context. Hilary (Ps 129), Jerome (Jer 29:12) and Aquinas (Col 1:9) are named with their texts. 'This interpretation sets beside Bede three sayings on other texts' marks the join as the study's. The earlier 'faith treats a thing promised as certain' sentence is also marked as the interpretation's, and Augustine is credited only with his reading of the psalms.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-002",
+      "note": "Removed 'in Masses whose lessons differed' (10), 'a Mass of his own day' (20) and 'His Masses read other lessons' (40). Section 10 now says only which chants Rupert and Sicard expound and where this is treated. Rupert's paragraph ends with Gen 50:19-20, and the step to the 'place of gathering' is gone. The scope-appendix clause is the only remaining mention.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-003",
+      "note": "Rewrote every listed sentence: 20 l.12-15, 114-117, 194-196, 212-217 and 228-229; 30 l.15-19, 139-142 (the paragraph now ends at Jer 29:8 with no narrowing), 172-173, 207-209 (now Mark's other setting, Mk 11:20-24) and 262-263 (the anagogical sense now ends with Hilary 25.7); 40 l.235-236 and 243-244; 10 l.245-247; and 50 l.49-50, which follows lane 2. Also fixed the same pattern in unlisted places: 20 'The Epistle names the same deliverance' and 'The Gradual is the thanks of those brought back'; the 30 Collect and Secret sentences; and the 40 lane opening. Inference markers are varied ('This interpretation reads/sets', 'heard here', 'set beside', 'Read beside Hilary', 'Heard with the Gospel's gathering in mind'), and no Father is given the link.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-004",
+      "note": "No sentence-length rendering of any oration remains. Opening, map, 10, 20, 30 and 40 quote Lasance with attribution. Departures are glossed by single words or short phrases: rem\u00e9dia, mai\u00f3ra, prop\u00e9nsius, cupidit\u00e1tibus, desid\u00e9ria, transe\u00e1mus, sacram\u00e9nta, mente, viti\u00f3sum and medicati\u00f3nis. The 05 notes on the Collect, Secret, Postcommunion and Gradual no longer render clauses. The map's paraphrased chant rows are now Lasance quotations. The opening names its English sources. The 90 apparatus sentence now reads: 'Where the Lasance English departs from the Latin of a chant or an oration, single Latin words or short phrases are glossed literally; no English version of a chant or an oration is supplied.'",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "notes": {
+    "advisories_cleared": {
+      "STU-005": "All six: (1) Ps 43:23 'near its end'; (2) 'plain senses' in 10, 30 (x2) and 00, and Jerome's winter/sabbath now read 'first of the captivity of Jerusalem under Titus and Vespasian'; (3) the interpretations listed in document order; (4) Sicard credited with the Gradual, Offertory and Communion; (5) 'Chrysostom's reading'; (6) the summary now includes Hilary's 'our generation'.",
+      "STU-006": "All three: the Collect/Secret disclaimer is cut, Chrysostom is named for 'needs not a herald' (76.3), and the opening's roadmap sentence is replaced by the English-source attribution and the pointer to the date appendix."
+    },
+    "checks": {
+      "_proper_study.py check (content, research, all study-preflight require flags, source)": "exit 0",
+      "check-content-preflight research": "references-used, identifiers-resolve, bindings-valid (45), restricted-not-reproduced, relation-coverage (3 lanes), unquoted-not-quoted, structural-meta-labels (76), house-voice (12 files), the three chronology checks and provenance-matches-run (run 11c5af05fe374203 v19): all pass",
+      "document-types refresh --check": "current",
+      "web-edition probe": "build/tpt-runs/11c5af05fe374203/artifacts/author-study-1/web-probe converted"
+    },
+    "extent": "The exposition is about 13,900 words, up about 260 from iteration 0. No print proof was made this iteration; the iteration-0 proof was 31 pages.",
+    "files_to_commit": [
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/00-opening.tex",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/05-appointed-texts.tex",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/10-each-element.tex",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/20-where-the-body-is.tex",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/30-flight-without-turning-back.tex",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/40-words-that-do-not-pass.tex",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/50-comparison.tex",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/90-apparatus.tex",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/research/production-review.md"
+    ],
+    "files_to_commit_sha256": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/research/production-review.md": "f8943b50e0f6ec8dac9808b3c9844b2d8e6230c76f14f1bb26feab7606b30ba4",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/00-opening.tex": "b2c6a3a6dde0499b61e81adb3be5718306b58be06368481ff5c712724ff1686f",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/05-appointed-texts.tex": "95ccefd8119ea3d3cbb6a43984598d7cdcea02a312b9498136df56a713b100b6",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/10-each-element.tex": "a3d3ab3cad840148a5efdbbba248637aa0b216b09e88a2bd3cf27652a2b8ba71",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/20-where-the-body-is.tex": "71ff1cfdb5e13420db32b79641c58e967f61c1c16708a01fcd570eaab5c55e83",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/30-flight-without-turning-back.tex": "cb0e6e3c85ee30d1164a90a2af82b34f892336c613dc55fea724b6bd3a2a2b80",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/40-words-that-do-not-pass.tex": "4d44206834381e64303c24280501d6155f0846cbd44b60450e577ad978358711",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/50-comparison.tex": "8767d3db070e2e3eac14e60664c15d92e6051af8b85dff8354a599cea0cf53ac",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/90-apparatus.tex": "54be36c325b05983061cddd7cf0834d690b42f873b3631d11b2dec7968d922d2"
+    },
+    "scratch": ".scratch/workers/author-study-1/sections-before holds the pre-revision section files, for diffing.",
+    "shared_defects_reported": [
+      "Repeating the study review's observation: the 1962 profile does not mark where glossing a public-domain oration English's departure from the Latin ends and the guide's own rendering begins. This revision glosses single words or short phrases only. Owner: guidance/liturgy/roman-1962-propers.md (English rule)."
+    ],
+    "unchanged": "main.tex, generated/scriptural-date-location.tex, publication.toml, proper-components.toml, web-edition.toml, generation-metadata.tex and all research evidence records are unchanged; document-types refresh --check reports current."
+  },
+  "stage": "author-study",
+  "summary": "Revised the expansive study for study review 0. The Communion's difficulty now credits only Bede (on Mk 11:25) with the condition and states the setting of Hilary, Jerome and Aquinas beside the Communion as this interpretation's step. The commentators' other Masses are confined to the scope clause, and Rupert's Joseph reading ends at Gen 50:19-20. Every flagged text-crediting link is rewritten as what the text does or as a varied, marked inference. The orations' English in reader prose and the map is Lasance's, with single-word glosses, and the apparatus says so. Most advisory slips are cleared."
+}
