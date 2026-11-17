@@ -1460,11 +1460,26 @@ def _apply_departures(document: dict, base: dict, base_name: str) -> dict:
     # `added`, and anything whose key the base does not hold. The latter is a
     # defect `recension_problems` reports; it is still carried here so that one
     # bad row does not silently remove a mass from the served calendar.
+    #
+    # Departure rows stand in the order the Missal prints the days they fall
+    # on, so an added mass follows the nearest earlier row's mass that its
+    # section serves; only where none is served does it go to the section's
+    # end. Appending them all put the pre-1955 Benedictio Palmarum after the
+    # Last Sunday after Pentecost instead of beside Palm Sunday.
+    rows = [(section, str(mass.get("key") or "")) for section, _, mass in departures_of(document)]
     for key, departure in stated.items():
         section = _section_for(document, key) or "seasonal"
         body = merged.setdefault(section, dict((base.get("sections") or {}).get(section) or {}, masses=[]))
+        masses = list(body.get("masses", []))
+        at = len(masses)
+        mine = [row for row_section, row in rows if row_section == section]
+        served = [str(mass.get("key") or "") for mass in masses]
+        for before in reversed(mine[:mine.index(key)] if key in mine else []):
+            if before in served:
+                at = served.index(before) + 1
+                break
         body["masses"] = [
-            *body.get("masses", []),
+            *masses[:at],
             _stamp(
                 departure,
                 calendar,
@@ -1474,6 +1489,7 @@ def _apply_departures(document: dict, base: dict, base_name: str) -> dict:
                 also=_also(departure),
                 act=str(departure.get(DEPARTURE_ACT) or ""),
             ),
+            *masses[at:],
         ]
 
     out = {k: v for k, v in document.items() if k != "sections"}

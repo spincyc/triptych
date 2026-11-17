@@ -161,6 +161,15 @@ calendar can differ in ways a numbering cannot:
 absences, and it is invisible to any matcher keyed on `(mass, proper-name)`
 because both sides genuinely hold the words.
 
+An `added` mass has no place in the base, so the served calendar seats it where
+its departure row stands: departure rows keep the order the Missal prints the
+days they fall on, and the added mass follows the nearest earlier row's mass
+that its section serves (`scripts/_calendars.py` `_apply_departures`). Only
+where no earlier row's mass is served does it go to the section's end. Until
+2026-11-17 every added mass went to the end, which listed the pre-1955
+Benedictio Palmarum after the Last Sunday after Pentecost instead of beside
+Palm Sunday.
+
 > **Rule 3.** A departure that cannot be established is recorded as
 > `unrecorded` and resolves to nothing. It is never guessed, and it never
 > silently falls back to the base.
