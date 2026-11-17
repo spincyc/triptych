@@ -94,6 +94,47 @@
       ' (Bible text is separate from exact Missal wording).';
   }
 
+  /* Formulary-list presentation. The order, the display season and each note
+   * arrive with the data (`listing`, stamped by mass-propers; see
+   * guidance/liturgy/roman-1962-propers.md § Reader list presentation). These
+   * helpers only read them, so the web browse list, its search results and the
+   * terminal reader show the same groups, marks and notes. */
+  const LIST_MARKS = ['†', '‡', '§'];
+
+  /** The season group a list shows an entry in: the stated list season, else its own. */
+  function listSeason(entry) {
+    return entry && (entry.listing && entry.listing.season || entry.season) || null;
+  }
+
+  /** The distinct notes a list's marked entries refer to, each with its mark, in list order. */
+  function listNotes(entries) {
+    const notes = [];
+    (entries || []).forEach(function (entry) {
+      const text = entry && entry.listing && entry.listing.note;
+      if (!text || notes.some(function (note) { return note.text === text; })) return;
+      notes.push({ mark: LIST_MARKS[notes.length] || '*'.repeat(notes.length + 1), text: text });
+    });
+    return notes;
+  }
+
+  /** The mark an entry carries among `notes`, or the empty string. */
+  function listMark(entry, notes) {
+    const text = entry && entry.listing && entry.listing.note;
+    const note = text && (notes || []).find(function (one) { return one.text === text; });
+    return note ? note.mark : '';
+  }
+
+  /** Write `notes` under a list and name them its description, or clear both. */
+  function showListNotes(element, select, notes) {
+    if (!element) return;
+    element.textContent = (notes || []).map(function (note) {
+      return note.mark + ' ' + note.text;
+    }).join(' ');
+    element.hidden = !(notes || []).length;
+    if (element.hidden) select.removeAttribute('aria-describedby');
+    else select.setAttribute('aria-describedby', element.id);
+  }
+
   function mount(options) {
     const form = options.form;
     const input = options.input;
@@ -168,6 +209,8 @@
           click.preventDefault();
           options.select(edition, row);
         });
+        const mark = listMark(row, listNotes([row]));
+        if (mark) link.textContent += ' ' + mark;
         item.appendChild(link);
         const identity = document.createElement('span');
         identity.className = 'proper-search-identity';
@@ -185,6 +228,12 @@
         extent.className = 'proper-search-coverage';
         extent.textContent = coverage(row);
         item.appendChild(extent);
+        if (mark) {
+          const note = document.createElement('span');
+          note.className = 'proper-search-coverage proper-search-note';
+          note.textContent = mark + ' ' + row.listing.note;
+          item.appendChild(note);
+        }
         list.appendChild(item);
       });
       results.appendChild(list);
@@ -196,5 +245,6 @@
   }
 
   return Object.freeze({ normalized: normalized, matches: matches, find: find,
-    coverage: coverage, mount: mount });
+    coverage: coverage, listSeason: listSeason, listNotes: listNotes, listMark: listMark,
+    showListNotes: showListNotes, mount: mount });
 });

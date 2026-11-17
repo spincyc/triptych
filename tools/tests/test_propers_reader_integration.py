@@ -536,8 +536,11 @@ class PropersReaderIntegrationTests(unittest.TestCase):
         # 1962 Ordinary on every Propers read so source-declared proper rites
         # (the Oratio super populum) bind without an Ordinary frame. That
         # 4-line change took 75,775 B to 75,919 B; retain a concrete 75 KiB
-        # ceiling.
-        self.assertLess(JS.stat().st_size, 75 * 1024)
+        # ceiling. 2026-11-16: the formulary list's season group, Easter marks
+        # and note (roman-1962-propers.md § Reader list presentation) took
+        # 76,675 B to about 77.4 KB, with the shared helpers kept in
+        # proper-search.js; retain a concrete 76 KiB ceiling.
+        self.assertLess(JS.stat().st_size, 76 * 1024)
         self.assertLess(EVENTS_JS.stat().st_size, 24 * 1024)
         self.assertLess(CSS.stat().st_size, SHELL_CSS.stat().st_size)
         self.assertNotIn(text(SHELL_JS), text(JS))

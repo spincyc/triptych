@@ -85,7 +85,10 @@ class ProperSearchTests(unittest.TestCase):
 
     def test_public_gate_rejects_body_and_private_metadata(self) -> None:
         valid = copy.deepcopy(self.search["roman-1962"])
-        valid["rows"] = [next(row for row in valid["rows"] if row["key"] == "pentecost")]
+        valid["rows"] = [next(row for row in valid["rows"] if row["key"] == key)
+                         for key in ("pentecost", "resumed-epiphany-3")]
+        self.assertIsNone(valid["rows"][0]["listing"])
+        self.assertEqual(valid["rows"][1]["listing"]["season"], "epiphanytide")
         self.release.validate_proper_search_payload(valid, "search fixture", "roman-1962")
         mutations = (
             ("row body", lambda doc: doc["rows"][0].update(text="protected text")),
@@ -94,6 +97,10 @@ class ProperSearchTests(unittest.TestCase):
             ("incipit body", lambda doc: doc["rows"][0]["incipits"][0].update(
                 text="a" * 161)),
             ("wrong calendar", lambda doc: doc.update(calendar="postconciliar")),
+            ("listing extra field", lambda doc: doc["rows"][1]["listing"].update(
+                registry="64")),
+            ("listing unsafe season", lambda doc: doc["rows"][1]["listing"].update(
+                season="Epiphany Time")),
         )
         for name, mutate in mutations:
             changed = copy.deepcopy(valid)

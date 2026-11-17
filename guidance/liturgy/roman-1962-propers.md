@@ -47,8 +47,10 @@ has actually published.
 
 ### Canonical temporal registry
 
-This profile owns the stable series. The reader catalog and production plan
-must reproduce this order exactly; neither may infer, rename, or renumber it.
+This profile owns the stable series. The production plan must reproduce this
+order exactly; the reader catalog reproduces it except as
+[Reader list presentation](#reader-list-presentation) states. Neither may
+infer, rename, or renumber it.
 On 2026-08-22 the maintainer authorized a one-time renumber from the original
 Lent-first order (where `01` was the First Sunday of Lent and `52` was
 Quinquagesima) to the current Advent-first liturgical-year order (where `01`
@@ -97,6 +99,34 @@ on 2026-08-22. They are planned proper-guide targets under
 `propers/temporal/`, ordered between Palm Sunday (`26`) and Easter Sunday
 (`30`). These are edition-identified English catalog names, not an attempt to
 impose the postconciliar taxonomy on the 1962 books.
+
+### Reader list presentation
+
+On 2026-11-16 the maintainer changed how reader lists present this series.
+Each resumed Sunday `64`–`67` is listed immediately after the Epiphanytide
+Sunday it resumes (`14`–`17`): the Third Sunday after the Epiphany, then its
+resumed form, then the Fourth, and so on. Where a list groups by season, the
+resumed Sundays appear in the Epiphany group. The after-Pentecost run therefore
+ends at `68`, and no list names a Sunday after Pentecost beyond the
+Twenty-fourth. The Sundays after the Epiphany (`13`–`17` and `64`–`67`) and
+`68` carry one marked note: they move with the date of Easter each year. The
+note states only that dependence;
+[calendar computation](calendar-computation.md#1962-sunday-computation) owns
+the arithmetic.
+
+The rule binds the Proper of Time table in the
+[Traditional Latin Mass catalog](../../library/traditional-latin-mass.md), the
+web Propers browse list and search results, and the terminal reader's Propers
+list, for every missal that holds these formularies (the 1962 Missal and its
+pre-1955 recension). It is presentation only. Identities, their numbering,
+keys, labels, seasons, and the calendar source's liturgical-year order are
+unchanged, and the production plan keeps the numeric order.
+`tools/mass-propers` (`RESUMED_LISTED_AFTER`, `EASTER_DEPENDENCE_NOTE`) is the
+one owner of the order, display season, and note that browser and terminal
+lists receive in the
+generated `listing` data; readers do not re-sort it. The catalog repeats the
+same note verbatim, and `tools/tests/test_calendar_computation_guidance.py`
+checks that the catalog's order and note agree with the producer.
 
 ## Source Records and Text Control
 

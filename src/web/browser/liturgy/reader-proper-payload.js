@@ -10,7 +10,7 @@
   const MASS_SCHEMA = 'triptych-propers-read-mass/v1';
   const ID = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
   const SHA = /^[a-f0-9]{64}$/;
-  const DESCRIPTOR_KEYS = ['key', 'name', 'kind', 'season', 'date', 'coverage', 'forms'];
+  const DESCRIPTOR_KEYS = ['key', 'name', 'kind', 'season', 'date', 'listing', 'coverage', 'forms'];
 
   function object(value) {
     return value !== null && typeof value === 'object' && !Array.isArray(value);
@@ -37,6 +37,7 @@
     return {
       key: mass.key, name: mass.name, kind: mass.kind,
       season: mass.season ?? null, date: mass.date ?? null,
+      listing: mass.listing ?? null,
       coverage: mass.coverage,
       forms: (mass.forms || []).map(function (form) {
         return { id: form.id, name: form.name, ordinal: form.ordinal };
@@ -313,6 +314,7 @@
           !ID.test(descriptor.key || '') || seen.has(descriptor.key) ||
           typeof descriptor.name !== 'string' || !descriptor.name ||
           typeof descriptor.kind !== 'string' || !descriptor.kind ||
+          (descriptor.listing !== null && !object(descriptor.listing)) ||
           !object(descriptor.coverage) || !Array.isArray(descriptor.forms) ||
           descriptor.forms.some(function (form) {
             return !object(form) || !same(Object.keys(form).sort(), ['id', 'name', 'ordinal']) ||

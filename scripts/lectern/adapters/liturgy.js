@@ -1110,11 +1110,14 @@ module.exports = function liturgy(realm) {
   /* Discovery: the published index, found and scored by the page's own search. */
   function catalogue(calendar) {
     const index = data('structure/propers/search/' + calendar + '.json');
+    // The page's own list presentation: the stated list season, marks and notes.
+    const notes = S.listNotes(index.rows);
     return {
-      calendar, edition: index.edition || null, short: index.edition_short || null,
+      calendar, edition: index.edition || null, short: index.edition_short || null, notes,
       rows: index.rows.map((row, ordinal) => ({
         ordinal, key: row.key, form_id: row.form_id, form_name: row.form_name || null, name: row.name,
         kind: row.kind, season: row.season || null, fixed_date: row.fixed_date || null,
+        listSeason: S.listSeason(row), mark: S.listMark(row, notes),
         coverage: S.coverage(row),
         coverageCounts: (row.coverage && row.coverage.languages || []).map((one) => ({
           lang: one.lang, available: one.available, occurrences: one.occurrences,

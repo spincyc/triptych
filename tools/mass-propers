@@ -219,6 +219,35 @@ RECENSION = _calendars.RECENSION
 # The chapter of a reference is its first number: "Psalm 25:1-3" is chapter 25.
 CHAPTER = re.compile(r"^(\D*?)(\d+)")
 
+# How a reader's formulary lists present the Sundays after the Epiphany, as
+# guidance/liturgy/roman-1962-propers.md § Reader list presentation states
+# (maintainer request, 2026-11-16). This is list order and display only: the
+# calendar source keeps liturgical-year order, every Mass keeps its own key,
+# registry identity and season, and no consumer re-sorts what arrives here.
+#
+# Each resumed Sunday is listed immediately after the Epiphanytide Sunday whose
+# orations, Epistle and Gospel it takes (its own `takes_from`), shown in that
+# Sunday's season group, so the after-Pentecost run ends at the Last Sunday.
+RESUMED_LISTED_AFTER = {
+    "resumed-epiphany-3": "epiphany-3",
+    "resumed-epiphany-4": "epiphany-4",
+    "resumed-epiphany-5": "epiphany-5",
+    "resumed-epiphany-6": "epiphany-6",
+}
+# The Sundays whose keeping or place depends on Easter, each marked with one
+# note. guidance/liturgy/calendar-computation.md § 1962 Sunday computation owns
+# the arithmetic; this sentence only states the dependence.
+EASTER_DEPENDENT_SUNDAYS = (
+    "epiphany-2", "epiphany-3", "epiphany-4", "epiphany-5", "epiphany-6",
+    *RESUMED_LISTED_AFTER, "last-sunday-after-pentecost",
+)
+EASTER_DEPENDENCE_NOTE = (
+    "These Sundays move with the date of Easter each year. How many Sundays "
+    "after the Epiphany are kept before Septuagesima, and how many of the "
+    "omitted ones are resumed after Pentecost before the Last Sunday after "
+    "Pentecost, depend on the date of Easter."
+)
+
 
 def load_calendar(root: Path, calendar: str, effective: bool = True) -> dict:
     """The calendar's document; for a recension, the base with departures applied.
@@ -338,6 +367,51 @@ def masses_of(document: dict) -> list[tuple[str, dict]]:
             if isinstance(mass, dict):
                 out.append((kind, mass))
     return out
+
+
+def list_presentation(document: dict) -> dict[str, dict]:
+    """The `listing` each Mass a formulary list presents specially carries.
+
+    Read from the whole calendar, so a selected Mass carries exactly what the
+    complete projection gives it. `season` is the group a list shows the Mass
+    in where that differs from its own season; `note` is the sentence its mark
+    refers to. A resumed Sunday that no longer takes its counterpart's texts,
+    or whose counterpart is missing, is refused rather than listed by guess.
+    """
+    held = {mass.get("key"): (kind, mass) for kind, mass in masses_of(document)}
+    listings: dict[str, dict] = {}
+    for key in EASTER_DEPENDENT_SUNDAYS:
+        if key in held:
+            listings[key] = {"note": EASTER_DEPENDENCE_NOTE}
+    for key, counterpart in RESUMED_LISTED_AFTER.items():
+        if key not in held:
+            continue
+        kind, mass = held[key]
+        taken = (mass.get(_calendars.TAKES_FROM) or {}).get("mass")
+        if counterpart not in held or held[counterpart][0] != kind or taken != counterpart:
+            raise ValueError(f"{key} must take its texts from {counterpart} of the same kind "
+                             "to be listed after it")
+        season = held[counterpart][1].get("season")
+        if season and season != mass.get("season"):
+            listings[key] = {**listings.get(key, {}), "season": season}
+    return listings
+
+
+def list_order(masses: list[dict]) -> list[dict]:
+    """Masses in formulary-list order: each resumed Sunday after its counterpart.
+
+    Everything else keeps source order. A counterpart absent from a selection
+    leaves the resumed Sunday where it stands.
+    """
+    keys = [mass["key"] for mass in masses]
+    moving = {key for key, counterpart in RESUMED_LISTED_AFTER.items()
+              if key in keys and counterpart in keys}
+    ordered = [mass for mass in masses if mass["key"] not in moving]
+    for key, counterpart in RESUMED_LISTED_AFTER.items():
+        if key in moving:
+            at = next(index for index, mass in enumerate(ordered) if mass["key"] == counterpart)
+            ordered.insert(at + 1, masses[keys.index(key)])
+    return ordered
 
 
 def propers_of(mass: dict) -> list[tuple[str, dict]]:
@@ -3656,6 +3730,7 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str], *,
         )
         for target in SYSTEMS
     }
+    listings = list_presentation(document)
     masses = []
     for kind, mass in (selected if selected is not None else masses_of(document)):
         propers = []
@@ -4022,6 +4097,10 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str], *,
         built["coverage"] = _missal_coverage.nested(
             _missal_coverage.summarize(_missal_coverage.proper_units(built), "mass")
         )
+        # Absent, like the recension stamp, where a list presents the Mass
+        # plainly; see RESUMED_LISTED_AFTER.
+        if built["key"] in listings:
+            built["listing"] = dict(listings[built["key"]])
         masses.append(built)
     manifest = (translation_manifest(masses, witnesses) if mass_keys is None
                 else translation_order)
@@ -4044,6 +4123,8 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str], *,
                     owner["translations"] = sorted(
                         owner["translations"], key=lambda t: order[witness_of(t)]
                     )
+    # The one formulary-list order every reader shows; pages do not re-sort.
+    masses = list_order(masses)
     if mass_keys is not None:
         return {"schema": "triptych-propers-selection/v1", "calendar": calendar,
                 "masses": masses}
@@ -4196,6 +4277,7 @@ def read_payloads(structure: dict, generation: str) -> tuple[dict, dict[str, dic
             "kind": mass.get("kind"),
             "season": mass.get("season"),
             "date": mass.get("date"),
+            "listing": mass.get("listing"),
             "coverage": mass.get("coverage"),
             "forms": [
                 {"id": form.get("id"), "name": form.get("name"),
@@ -4274,7 +4356,7 @@ def search_structure(structure: dict) -> dict:
             rows.append({
                 "key": mass["key"], "name": mass["name"],
                 "kind": mass["kind"], "season": mass.get("season"),
-                "fixed_date": mass.get("date"),
+                "fixed_date": mass.get("date"), "listing": mass.get("listing"),
                 "form_id": form["id"], "form_name": form["name"],
                 "incipits": incipits, "citations": citations,
                 "witnesses": witnesses,

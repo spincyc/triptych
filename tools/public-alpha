@@ -2617,6 +2617,25 @@ def validate_liturgical_public_data(
     return hashlib.sha256(raw).hexdigest()
 
 
+def valid_proper_listing(value: object) -> bool:
+    """A formulary-list presentation: a display season and/or one public note.
+
+    `mass-propers` owns the values (guidance/liturgy/roman-1962-propers.md
+    § Reader list presentation); this admits only their shape.
+    """
+    if not isinstance(value, dict) or not value or not set(value) <= {"season", "note"}:
+        return False
+    season, note = value.get("season"), value.get("note")
+    if season is not None and (not isinstance(season, str)
+                               or not SAFE_TYPED_KEY_RE.fullmatch(season)):
+        return False
+    return note is None or (
+        isinstance(note, str) and note.strip() == note and 0 < len(note) <= 500
+        and not any(ord(char) < 32 for char in note)
+        and "http://" not in note.casefold() and "https://" not in note.casefold()
+        and not RESTRICTED_AUTHORITY_REFERENCE_RE.search(note))
+
+
 def validate_proper_search_payload(payload: object, label: str, calendar: str) -> None:
     """Admit only a text-free, edition-qualified Proper discovery projection."""
     def fail(location: str, reason: str) -> None:
@@ -2659,9 +2678,11 @@ def validate_proper_search_payload(payload: object, label: str, calendar: str) -
     for ordinal, candidate in enumerate(root["rows"]):
         where = f"$.rows[{ordinal}]"
         row = fields(candidate, {
-            "key", "name", "kind", "season", "fixed_date", "form_id",
+            "key", "name", "kind", "season", "fixed_date", "listing", "form_id",
             "form_name", "incipits", "citations", "witnesses", "coverage",
         }, where)
+        if row["listing"] is not None and not valid_proper_listing(row["listing"]):
+            fail(f"{where}.listing", "must state only a list season and a public note")
         for field in ("key", "kind", "form_id"):
             key(row[field], f"{where}.{field}")
         identity = (row["key"], row["form_id"])
@@ -2930,7 +2951,8 @@ def _validate_proper_read_calendar(data_root: Path, row: dict, read, fail) -> tu
             "common_from", "common_sets", "coverage", "date", "key", "kind",
             "name", "propers", "registry", "season", "takes_from", "text_status",
         }
-        optional_mass_fields = {"forms", "ordinary_appointments", "ordinary_frame", "oration_relation"}
+        optional_mass_fields = {"forms", "ordinary_appointments", "ordinary_frame", "oration_relation",
+                                "listing"}
         if calendar == "postconciliar":
             optional_mass_fields.add("proper_source_paths")
         if calendar == "roman-pre-1955":
@@ -2939,6 +2961,8 @@ def _validate_proper_read_calendar(data_root: Path, row: dict, read, fail) -> tu
                 or not common_mass_fields <= set(mass)
                 or not set(mass) <= common_mass_fields | optional_mass_fields):
             fail(f"source Mass {ordinal} has unbound fields")
+        if "listing" in mass and not valid_proper_listing(mass["listing"]):
+            fail(f"source Mass {ordinal} has an invalid formulary-list presentation")
         key = mass.get("key")
         if (not isinstance(key, str)
                 or re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", key) is None
@@ -2959,6 +2983,7 @@ def _validate_proper_read_calendar(data_root: Path, row: dict, read, fail) -> tu
             "kind": mass.get("kind"),
             "season": mass.get("season"),
             "date": mass.get("date"),
+            "listing": mass.get("listing"),
             "coverage": mass.get("coverage"),
             "forms": [{"id": form.get("id"), "name": form.get("name"),
                        "ordinal": form.get("ordinal")} for form in forms],

@@ -82,7 +82,17 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
   def test_1962_reader_calendar_has_68_parents(self):
     landing = (ROOT / "library/traditional-latin-mass.md").read_text()
     parent_ids = re.findall(r"^\| (\d{2}) \| \*\*", landing, re.MULTILINE)
-    self.assertEqual(parent_ids, [f"{n:02d}" for n in range(1, 69)])
+    self.assertEqual(sorted(parent_ids), [f"{n:02d}" for n in range(1, 69)])
+    # Reader list presentation (roman-1962-propers.md, 2026-11-16): each
+    # resumed Sunday follows the Epiphanytide Sunday it resumes, and the
+    # after-Pentecost run ends at 68.
+    resumed = {"14": "64", "15": "65", "16": "66", "17": "67"}
+    expected = []
+    for n in range(1, 64):
+      expected.append(f"{n:02d}")
+      if f"{n:02d}" in resumed:
+        expected.append(resumed[f"{n:02d}"])
+    self.assertEqual(parent_ids, expected + ["68"])
     self.assertIn("| 27 | **Mass of the Lord's Supper** | Planned | Planned |", landing)
     self.assertIn(
       "| 28 | **Solemn Liturgical Action of the Passion and Death of the Lord** "
@@ -90,6 +100,49 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
       landing,
     )
     self.assertIn("| 29 | **Easter Vigil** | Planned | Planned |", landing)
+
+  def test_1962_list_presentation_has_one_owner(self):
+    """The catalog, and the producer every reader list reads, agree."""
+    from importlib.machinery import SourceFileLoader
+    from importlib.util import module_from_spec, spec_from_loader
+    loader = SourceFileLoader("list_presentation_producer", str(ROOT / "tools/mass-propers"))
+    producer = module_from_spec(spec_from_loader(loader.name, loader))
+    loader.exec_module(producer)
+    document = producer.load_calendar(ROOT / "src/sources/calendars", "roman-1962")
+    held = {mass["key"]: mass for _, mass in producer.masses_of(document)}
+    registry = {key: mass.get("registry") for key, mass in held.items()}
+
+    landing = (ROOT / "library/traditional-latin-mass.md").read_text()
+    marked = re.findall(r"^\| (\d{2}) \| \*\*[^*]+\*\* † \|", landing, re.MULTILINE)
+    self.assertEqual(sorted(marked),
+                     sorted(registry[key] for key in producer.EASTER_DEPENDENT_SUNDAYS))
+    self.assertEqual(landing.count("\n† "), 1)
+    self.assertIn("\n† " + producer.EASTER_DEPENDENCE_NOTE + "\n", landing)
+    rows = re.findall(r"^\| (\d{2}) \| \*\*", landing, re.MULTILINE)
+    for key, counterpart in producer.RESUMED_LISTED_AFTER.items():
+      self.assertEqual(rows[rows.index(registry[counterpart]) + 1], registry[key])
+
+    # Presentation never rewrites the calendar: the resumed Masses keep their
+    # season and are only displayed in their counterpart's group.
+    listings = producer.list_presentation(document)
+    for key, counterpart in producer.RESUMED_LISTED_AFTER.items():
+      self.assertEqual(held[key]["season"], "after-pentecost")
+      self.assertEqual(listings[key], {"note": producer.EASTER_DEPENDENCE_NOTE,
+                                       "season": held[counterpart]["season"]})
+    self.assertEqual(set(listings), set(producer.EASTER_DEPENDENT_SUNDAYS))
+    seasonal = [{"key": mass["key"]} for kind, mass in producer.masses_of(document)
+                if kind == "seasonal"]
+    ordered = [mass["key"] for mass in producer.list_order(seasonal)]
+    self.assertEqual(ordered[ordered.index("epiphany-3"):ordered.index("epiphany-6") + 2], [
+      "epiphany-3", "resumed-epiphany-3", "epiphany-4", "resumed-epiphany-4",
+      "epiphany-5", "resumed-epiphany-5", "epiphany-6", "resumed-epiphany-6",
+    ])
+    self.assertEqual(ordered[-3:], ["pentecost-23", "christ-the-king",
+                                    "last-sunday-after-pentecost"])
+    # A selection without the counterpart leaves the resumed Sunday in place.
+    self.assertEqual([mass["key"] for mass in producer.list_order(
+      [{"key": "pentecost-23"}, {"key": "resumed-epiphany-3"}])],
+      ["pentecost-23", "resumed-epiphany-3"])
 
   def test_postconciliar_registry_and_reader_calendar_arithmetic(self):
     registry = (

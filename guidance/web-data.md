@@ -809,6 +809,15 @@ incipits and citations with their slot and cycle identity, public translation
 witness labels, and form-scoped represented-unit coverage. A fixed calendar
 date is not a resolved civil date or an occurrence claim.
 
+The structure's Mass order is the one formulary-list order; readers do not
+re-sort it. A Mass that a list presents specially carries `listing` — a
+display `season` where it is grouped outside its own season, and a public
+`note` its mark refers to. The full structure omits the field elsewhere; each
+search row and read-catalog descriptor carries it as `null`. It is
+presentation, never a calendar fact: the Mass keeps its own `season`.
+[Reader list presentation](liturgy/roman-1962-propers.md#reader-list-presentation)
+owns the rule, and `proper-search.js` reads it for the web and terminal lists.
+
 The index carries no Proper body, source-side absence note, rights record,
 page locus, or citation conversion. It supplies only search and result-preview
 facts already admitted in the served structure. `public-alpha` enforces its
