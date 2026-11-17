@@ -109,8 +109,12 @@ class _Sections(HTMLParser):
                 break
 
 
-def wrap(content: str, context: dict, route: str) -> str:
-    """Surround the exact source rendering with static, accessible navigation."""
+def wrap(content: str, context: dict, route: str, action: str = "") -> str:
+    """Surround the exact source rendering with static, accessible navigation.
+
+    `action` is the page's Generate PDF link (`_native_print.reader_action_link`);
+    it leads the toolbar's actions, at the top of the document's page.
+    """
     def link(target):
         return escape(posixpath.relpath(target, posixpath.dirname(route) or "."), quote=True)
 
@@ -158,7 +162,8 @@ def wrap(content: str, context: dict, route: str) -> str:
         '<div class="publication-reader">'
         '<div class="publication-reader__toolbar">'
         '<div class="publication-reader__browse">' + before + selector + after + '</div>'
-        '<div class="publication-reader__actions"><button type="button" data-reader-copy-link hidden>Copy section link</button>'
+        '<div class="publication-reader__actions">' + action +
+        '<button type="button" data-reader-copy-link hidden>Copy section link</button>'
         '<span data-reader-status role="status" aria-live="polite"></span></div>'
         '<progress data-reader-progress max="100" value="0" aria-label="Reading progress"></progress></div>'
         '<p class="publication-reader__identity">' + escape(provider) + ' · ' + escape(current["label"]) + '</p>'

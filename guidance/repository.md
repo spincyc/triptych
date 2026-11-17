@@ -522,12 +522,32 @@ is plain text; it never replaces a released artifact's visible link.
 Title cells remain unlinked bold text.
 
 A componentized proper guide remains one catalog identity. Its provider cell
-links the available reader edition and declared print editions in source order.
-Schema 2 distinguishes research, synthesis, and homily; neither companion gets
-another work row or another source owner. Label a rights-limited or authorized
-reference-only research edition accurately. A companion without an HTML
-conversion may link a page explaining print options, with its available format stated
-plainly. Do not label that page as a PDF download.
+links each declared output in source order. Schema 2 distinguishes research,
+synthesis, and homily; neither companion gets another work row or another
+source owner. Label a rights-limited or authorized reference-only research
+edition accurately. A companion without an HTML conversion links its print
+page, with its available format stated plainly. Do not label that page as a
+PDF download.
+
+**Catalog links name documents, not formats (2026-11-16).** At the
+maintainer's request a catalog table no longer carries **Generate PDF**. A
+provider cell links each declared output's own page exactly once: its web
+reader, or its print page where it has no reader, which the cell marks
+`print edition`. A proper names its outputs by declared role (**Full Study
+Guide**, **Synthesis**, **Homily**); any other output keeps a descriptive
+label (a title, `Booklet`, `Treatise`), and a bare format label such as `PDF`
+or `Read` renders as **Read**. The **Generate PDF** action lives at the top of
+each document's page under [web editions](web-editions.md#browser-printing).
+This supersedes the 2026-11-06 rule that rewrote catalog PDF links into
+in-place Generate PDF actions, and the earlier rule that a provider cell links
+"the available reader edition and declared print editions". The publisher
+derives each rendered cell from the catalog source
+(`catalogue_document_link` in `tools/public-alpha`), so a legacy
+`[PDF](../pdf/…)` link and the `[Read](../web/…)` link beside it render as one
+link; new rows may name the reader routes directly, as in
+`[Full Study Guide](../web/…) · [Synthesis](../web/…-synthesis.html)`. Table
+presentation is owned by
+[corpus-browser-vision.md](corpus-browser-vision.md#tables).
 
 A named `ChatGPT` or `Claude` column contains only that provider's editions.
 Format labels need not repeat the provider. In mixed-provider legacy tables,

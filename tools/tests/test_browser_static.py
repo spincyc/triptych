@@ -189,7 +189,7 @@ class BrowserPagePublishabilityTest(unittest.TestCase):
 
   def test_a_page_with_a_pdf_link_loads_the_in_place_controller_once(self):
     """A print link generates in place only where the page loads the controller."""
-    action = '<p class="print-actions"><a href="../../print/gpt/a/b.html?print=1">Print / Generate PDF</a></p>'
+    action = '<p class="print-actions"><a class="native-print-action" href="../../print/gpt/a/b.html?print=1">Generate PDF</a></p>'
     reader = self.module.wrap_in_layout(
       "README.md", "web/gpt/a/b.html", "page-shell", "Reader", "", action + "<p>Text.</p>", False, {},
     )

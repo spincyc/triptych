@@ -939,9 +939,12 @@ class PublicAlphaTest(unittest.TestCase):
         self.assertIn("No publications from this section", empty)
 
     def test_source_first_print_link_remains_actionable_after_rewriting(self) -> None:
+        # A catalogue names the page it opens; a format label such as
+        # `Print options` becomes `Print edition` (guidance/repository.md,
+        # "Catalog links name documents, not formats", 2026-11-16).
         link = "[Print options](../print/gpt/work.html?view=print#edition)\n"
         rewritten = self.tool.rewrite_links("library/test.md", "library/test.html", link, {("gpt", "work")})
-        self.assertEqual(rewritten, link)
+        self.assertEqual(rewritten, "[Print edition](../print/gpt/work.html?view=print#edition)\n")
 
     def test_source_first_mixed_pdf_html_row_accepts_both_provider_markers(self) -> None:
         self.add_claude_publication("work", "release")
@@ -1937,7 +1940,10 @@ class PublicAlphaTest(unittest.TestCase):
             "--section-line:",
             ".section-toned h2",
             ".section-toned blockquote",
-            ".section-toned tbody tr:nth-child(even)",
+            # Tables carry the section colour in their head and hover row
+            # (corpus-browser-vision.md, "Tables", 2026-11-16), not zebra rows.
+            ".section-toned table {",
+            "--table-head-ink: var(--section-ink);",
             ".section-toned > h2::before",
         ):
             self.assertIn(token, css)

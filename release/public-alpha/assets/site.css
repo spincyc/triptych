@@ -11,8 +11,24 @@
   --gold: #9f7018;
   --blue: #3f7180;
   --shadow: 0 0.8rem 2.4rem rgba(63, 52, 42, 0.085);
-  font-family: "Iowan Old Style", "Palatino Linotype", Palatino,
+
+  /* Semantic roles (guidance/corpus-browser-vision.md, "Semantic visual
+     system"). Every site page loads this file first, so these are the one
+     place a shared colour, face, rule, focus or control size is declared;
+     publication-reader.css and native-print.css read them rather than restate
+     them. A page's own branding is the `--section-*` set below, chosen by its
+     `section-<colour>` class; nothing else varies by page. */
+  --font-text: "Iowan Old Style", "Palatino Linotype", Palatino,
     "Book Antiqua", Georgia, "Times New Roman", serif;
+  --font-ui: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Consolas, monospace;
+  --hairline: rgba(48, 45, 41, 0.13);
+  --hairline-strong: rgba(48, 45, 41, 0.32);
+  --focus-ring: #1f5d8b;
+  --radius: 0.2rem;
+  --control-min: 2.75rem;
+  font-family: var(--font-text);
 }
 
 * { box-sizing: border-box; }
@@ -32,7 +48,7 @@ body {
 
 a { color: var(--rubric); text-decoration-thickness: 0.08em; text-underline-offset: 0.16em; }
 a:hover { color: var(--rubric-dark); }
-a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+a:focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 3px; }
 
 .skip-link {
   position: fixed;
@@ -78,20 +94,20 @@ a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
 .brand span {
   max-width: 42rem;
   color: var(--muted);
-  font-family: system-ui, sans-serif;
+  font-family: var(--font-ui);
   font-size: 0.73rem;
   letter-spacing: 0.055em;
   line-height: 1.35;
 }
 
-nav { display: flex; gap: 1.1rem; font-family: system-ui, sans-serif; font-size: 0.9rem; font-weight: 650; }
+nav { display: flex; gap: 1.1rem; font-family: var(--font-ui); font-size: 0.9rem; font-weight: 650; }
 nav a { color: var(--ink); text-decoration: none; }
 
 .release-banner {
   padding: 0.65rem 1rem;
   color: #fff;
   background: var(--banner);
-  font-family: system-ui, sans-serif;
+  font-family: var(--font-ui);
   font-size: 0.88rem;
   text-align: center;
 }
@@ -310,7 +326,7 @@ h6 {
   margin-top: 1.4rem;
   margin-bottom: 0.3rem;
   color: var(--muted);
-  font-family: system-ui, sans-serif;
+  font-family: var(--font-ui);
   font-size: 0.82rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -332,7 +348,7 @@ html:has(.sanctuary-table) { scroll-behavior: auto; }
   align-items: end;
   gap: 0.7rem 1rem;
   margin: 1.25rem 0 0.6rem;
-  font-family: system-ui, sans-serif;
+  font-family: var(--font-ui);
   font-size: 0.88rem;
 }
 .dictionary-toolbar label { display: grid; gap: 0.25rem; min-width: 0; }
@@ -512,7 +528,7 @@ html:has(.sanctuary-table) { scroll-behavior: auto; }
   margin-bottom: 0.6rem;
   color: var(--section-ink, var(--rubric-dark));
   content: "Contents";
-  font-family: system-ui, sans-serif;
+  font-family: var(--font-ui);
   font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -527,17 +543,50 @@ html:has(.sanctuary-table) { scroll-behavior: auto; }
 }
 .page-shell.reading dd { margin: 0.2rem 0 0.85rem 1.25rem; }
 
-table { width: 100%; margin: 1.4rem 0; border-collapse: collapse; font-family: system-ui, sans-serif; font-size: 0.94rem; }
-th, td { padding: 0.82rem 0.9rem; border: 1px solid var(--line); text-align: left; vertical-align: top; }
-th { color: var(--rubric-dark); background: #f1ebe2; }
-tbody tr:nth-child(even) { background: #fbf8f3; }
-.section-toned th,
-.section-toned td { border-color: var(--section-line); }
-.section-toned th {
-  color: var(--section-ink);
-  background: var(--section-pale);
+/* Tables — one shared component (guidance/corpus-browser-vision.md,
+   "Tables", 2026-11-16). Open composition: no cell boxes and no zebra
+   stripes; hairline rules between rows, one firmer rule under the head,
+   sentence-case column labels in the interface face, tabular numerals, and a
+   faint section-tinted row under the pointer. A page's section colour reaches
+   a table only through `--table-head-ink` and `--table-row-hover`. */
+table {
+  --table-head-ink: var(--muted);
+  --table-row-hover: rgba(48, 45, 41, 0.035);
+  width: 100%;
+  margin: 1.6rem 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-family: var(--font-ui);
+  font-size: 0.94rem;
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
 }
-.section-toned tbody tr:nth-child(even) { background: var(--section-row); }
+th, td {
+  padding: 0.72rem 0.9rem;
+  border: 0;
+  border-bottom: 1px solid var(--hairline);
+  text-align: left;
+  vertical-align: top;
+}
+th { color: var(--ink); font-weight: 650; }
+thead th {
+  padding-block: 0.55rem;
+  border-bottom: 1px solid var(--hairline-strong);
+  color: var(--table-head-ink);
+  background: transparent;
+  font-size: 0.8rem;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+  vertical-align: bottom;
+}
+tbody tr:last-child > :is(th, td) { border-bottom-color: var(--hairline-strong); }
+@media (hover: hover) {
+  tbody tr:hover > :is(th, td) { background-color: var(--table-row-hover); }
+}
+.section-toned table {
+  --table-head-ink: var(--section-ink);
+  --table-row-hover: color-mix(in srgb, var(--section-accent) 7%, transparent);
+}
 
 /* Catalogue columns compare publications; give their format links room before
    spending height on wrapping. Reading pages keep their own text measure. */
@@ -551,45 +600,81 @@ html:has(.page-catalog, .page-home) { scroll-behavior: auto; }
 /* Apps can opt a table into this component without adopting a landing layout.
    The sticky offset accommodates an owning app's persistent navigation. */
 .catalogue-table {
-  --catalogue-cell-padding: 0.4rem 0.6rem;
+  --catalogue-cell-padding: 0.78rem 0.9rem;
   display: table;
   overflow: visible;
-  border-collapse: separate;
-  border-spacing: 0;
-  line-height: 1.4;
+  line-height: 1.45;
 }
-.catalogue-table :is(th, td) {
-  padding: var(--catalogue-cell-padding);
-  border-width: 0 1px 1px 0;
-}
-.catalogue-table tr > :first-child { border-left-width: 1px; }
-.catalogue-table thead tr:first-child > th { border-top-width: 1px; }
+.catalogue-table :is(th, td) { padding: var(--catalogue-cell-padding); }
 .catalogue-table thead {
   position: sticky;
   top: var(--catalogue-sticky-offset, 0px);
   z-index: 2;
 }
-.catalogue-table th { background: var(--section-pale, #f1ebe2); }
+/* The sticky head needs an opaque ground over the rows that pass beneath it. */
+.catalogue-table thead th {
+  padding-block: 0.6rem;
+  background: var(--surface);
+}
 .section-white .catalogue-table { --section-ink: #70603a; }
 .section-gold .catalogue-table { --section-ink: #725000; }
 .page-home .catalogue-table:first-of-type a { color: var(--rubric-dark); }
 .catalogue-table td a {
   display: inline-block;
+  font-weight: 560;
+  text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
   scroll-margin-block: calc(var(--catalogue-heading-height, 10rem) + var(--catalogue-sticky-offset, 0px) + 0.5rem) 0.5rem;
 }
-.catalogue-table tbody td:has(> strong) { font-weight: 600; }
+.catalogue-table td a:hover { text-decoration-color: currentColor; }
+/* A work's title: the one cell set in the reading face. */
+.catalogue-table tbody td:has(> strong) {
+  color: var(--ink);
+  font-family: var(--font-text);
+  font-size: 1.02rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
 .catalogue-table tbody td > strong { font-weight: inherit; }
+/* Descriptive last columns (Focus, Role, Best for …) are secondary text. */
+.catalogue-table-notes tbody td:last-child { color: var(--muted); font-size: 0.9rem; }
+/* Stable series identifiers. */
+.catalogue-table-id tbody td:first-child {
+  width: 3.5rem;
+  color: var(--muted);
+  font-size: 0.86rem;
+  white-space: nowrap;
+}
+/* The links of one cell, in source order, separated by a quiet middle dot. */
+.catalogue-sep { color: var(--hairline-strong); }
+/* Planned or absent editions are a status, set apart from the links in words
+   and in tone, never by colour alone. */
+.catalogue-table .catalogue-absent { color: var(--muted); font-size: 0.88rem; font-style: italic; }
+/* An output without a web reader opens its print page, and says so. The mark
+   is part of the link's name; as an inline block it takes no underline, and
+   its leading space (kept for unstyled text) collapses into the margin. */
+.catalogue-format {
+  display: inline-block;
+  margin-left: 0.45em;
+  color: var(--muted);
+  font-size: 0.72em;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+/* The landing's portal table carries each portal's own colour and mark: a
+   narrow rule, the mark, and a light wash on the title cell only. */
 .page-home table:first-of-type td,
 .page-library-root table:first-of-type td {
-  border-color: var(--line);
-  background: rgba(248, 245, 239, 0.78);
+  border-color: var(--hairline);
+  background: transparent;
 }
 .page-home table:first-of-type td:first-child,
 .page-library-root table:first-of-type td:first-child {
   width: 28%;
-  border-left: 0.32rem solid var(--portal-accent);
-  font-family: "Iowan Old Style", "Palatino Linotype", Palatino,
-    "Book Antiqua", Georgia, serif;
+  border-left: 3px solid var(--portal-accent);
+  background: linear-gradient(90deg, color-mix(in srgb, var(--portal-pale) 75%, transparent), color-mix(in srgb, var(--portal-pale) 20%, transparent));
+  font-family: var(--font-text);
   font-size: 1.08rem;
 }
 .page-home table:first-of-type td:first-child::before,
@@ -627,12 +712,8 @@ html:has(.page-catalog, .page-home) { scroll-behavior: auto; }
 .page-library-root table:first-of-type tbody tr:nth-child(6) { --portal-accent: #da8aa0; --portal-pale: #f2d7df; --portal-symbol: "✷"; }
 .page-home table:first-of-type tbody tr:nth-child(7),
 .page-library-root table:first-of-type tbody tr:nth-child(7) { --portal-accent: #484d57; --portal-pale: #cfd1d3; --portal-symbol: "§"; }
-.page-home table:first-of-type tbody td,
-.page-library-root table:first-of-type tbody td {
-  background: var(--portal-pale);
-}
 
-code, pre { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+code, pre { font-family: var(--font-mono); }
 code { padding: 0.1rem 0.28rem; border-radius: 0.2rem; background: #f0ebe4; font-size: 0.9em; }
 pre { overflow-x: auto; padding: 1rem; background: #2e2925; color: #f8f5ef; border-radius: 0.3rem; }
 pre code { padding: 0; background: transparent; }
@@ -657,7 +738,7 @@ blockquote { margin-left: 0; padding-left: 1rem; border-left: 0.25rem solid var(
   align-items: center;
   margin: -0.2rem 0 1.5rem;
   color: var(--muted);
-  font-family: system-ui, sans-serif;
+  font-family: var(--font-ui);
   font-size: 0.88rem;
 }
 .breadcrumb a { color: inherit; text-decoration-color: var(--gold); }
@@ -686,7 +767,7 @@ a.footnote-backref { text-decoration: none; }
   margin: 0 auto;
   padding: 0 1.25rem 2.8rem;
   color: var(--muted);
-  font-family: system-ui, sans-serif;
+  font-family: var(--font-ui);
   font-size: 0.84rem;
   text-align: center;
 }
@@ -735,7 +816,7 @@ a.footnote-backref { text-decoration: none; }
   .site-footer a { display: inline-block; padding-block: 0.35rem; }
   .page-shell { margin-top: 0; border-left: 0; border-right: 0; border-radius: 0; box-shadow: none; }
   table { display: block; overflow-x: auto; }
-  .catalogue-table { --catalogue-cell-padding: 0.4rem 0.35rem; font-size: 0.875rem; }
+  .catalogue-table { --catalogue-cell-padding: 0.45rem 0.4rem; font-size: 0.875rem; }
   .catalogue-table :is(th, td) {
     min-width: 0;
     overflow-wrap: anywhere;
@@ -749,14 +830,29 @@ a.footnote-backref { text-decoration: none; }
   :is(.catalogue-details-2, .catalogue-details-3, .catalogue-details-4) tr {
     display: grid;
     grid-template-columns: repeat(var(--catalogue-detail-columns), minmax(0, 1fr));
+    border-bottom: 1px solid var(--hairline);
   }
+  /* A reflowed row is one entry: the rule runs under the row, not under each
+     of its lines, and the title sits close above its links. */
+  :is(.catalogue-details-2, .catalogue-details-3, .catalogue-details-4) :is(th, td) { border-bottom: 0; }
+  :is(.catalogue-details-2, .catalogue-details-3, .catalogue-details-4) thead tr,
+  :is(.catalogue-details-2, .catalogue-details-3, .catalogue-details-4) tbody tr:last-child {
+    border-bottom-color: var(--hairline-strong);
+  }
+  :is(.catalogue-details-2, .catalogue-details-3, .catalogue-details-4) tbody td:has(> strong) { padding-bottom: 0.1rem; }
+  /* In a narrow column a cell's several links stack, one per line, instead of
+     wrapping around their separators. */
+  .catalogue-table td:has(> .catalogue-sep) > a { display: block; width: fit-content; margin-block: 0.1rem 0.3rem; }
+  .catalogue-table td > .catalogue-sep { display: none; }
+  /* The reflowed head is a compact key to the row below, not a second row. */
+  :is(.catalogue-details-2, .catalogue-details-3, .catalogue-details-4) thead tr { padding-block: 0.3rem; }
+  :is(.catalogue-details-2, .catalogue-details-3, .catalogue-details-4) thead th { padding-block: 0.15rem; }
+  .catalogue-table-id tbody td:first-child { width: auto; }
   :is(.catalogue-details-2, .catalogue-details-3, .catalogue-details-4) tr > :first-child { grid-column: 1 / -1; grid-row: 1; }
   :is(.catalogue-details-2, .catalogue-details-3, .catalogue-details-4) tr > :nth-child(n + 2) { grid-row: 2; }
-  :is(.catalogue-details-2, .catalogue-details-3, .catalogue-details-4) tr > :nth-child(2) { border-left-width: 1px; }
   .catalogue-table-id tr { grid-template-columns: 3rem repeat(var(--catalogue-detail-columns), minmax(0, 1fr)); }
   .catalogue-table-id tr > :first-child { grid-column: 1; }
   .catalogue-table-id tr > :nth-child(2) { grid-column: 2 / -1; grid-row: 1; }
-  .catalogue-table-id tr > :nth-child(3) { border-left-width: 1px; }
   .catalogue-table-notes.catalogue-details-2 tr {
     grid-template-columns: minmax(3rem, 1fr) minmax(0, 3fr);
   }
@@ -766,10 +862,9 @@ a.footnote-backref { text-decoration: none; }
   .catalogue-table-notes.catalogue-details-3 tr > :last-child {
     grid-column: 1 / -1;
     grid-row: 3;
-    border-left-width: 1px;
   }
   .catalogue-propers-cycle tr { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .catalogue-propers tr > :nth-last-child(2) { grid-column: 1; border-left-width: 1px; }
+  .catalogue-propers tr > :nth-last-child(2) { grid-column: 1; }
   .catalogue-propers tr > :last-child { grid-column: 2; }
   .catalogue-propers-id tr { grid-template-columns: 2.1rem repeat(2, minmax(0, 1fr)); }
   .catalogue-propers-id tr > :first-child { grid-column: 1; }
@@ -781,7 +876,6 @@ a.footnote-backref { text-decoration: none; }
     grid-column: 2;
     grid-row: 1;
     justify-self: end;
-    border-left-width: 0;
   }
   .catalogue-propers-id.catalogue-propers-cycle tr {
     grid-template-columns: 3.7rem repeat(2, minmax(0, 1fr));
@@ -791,13 +885,11 @@ a.footnote-backref { text-decoration: none; }
     grid-column: 2 / -1;
     padding-right: 3.2rem;
     justify-self: stretch;
-    border-left-width: 1px;
   }
   .catalogue-propers-id.catalogue-propers-cycle tr > :nth-child(3) {
     grid-column: 3;
     grid-row: 1;
     justify-self: end;
-    border-left-width: 0;
   }
   /* The dossier's four columns need up to about 570px of unbreakable words,
      against 342px of measure at a 390px phone, so each row is set as two lines

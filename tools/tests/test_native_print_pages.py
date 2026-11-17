@@ -77,8 +77,8 @@ class PrintPageTests(unittest.TestCase):
                               reader="sources/index.html#edition=edition.x", reader_label="Find it <here>")
         self.assertIn('href="../../sources/index.html#edition=edition.x">Find it &lt;here&gt;</a>', page["html"])
         action = native.reader_action("papal-documents/x.html", "print/papal-documents/x.html")
-        self.assertEqual(action, '<p class="print-actions"><a href="../print/papal-documents/x.html?print=1">'
-                                 'Print / Generate PDF</a></p>')
+        self.assertEqual(action, '<p class="print-actions"><a class="native-print-action" '
+                                 'href="../print/papal-documents/x.html?print=1">Generate PDF</a></p>')
         with self.assertRaises(native.NativePrintError):
             native.reader_action("web/gpt/x.html", "web/gpt/x.html")
 

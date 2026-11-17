@@ -66,6 +66,24 @@
     return issue.print_mode === 'manual' ? 'Export instructions' : 'Print view';
   }
 
+  /* The page a listing opens for one edition or companion: its reader, or
+     its print page without the `print=1` request that would start a PDF. */
+  function documentPage(issue) {
+    const reader = M.readerTarget(issue);
+    if (reader) return { href: reader, reader: true };
+    const printed = M.printTarget(issue);
+    if (!printed) return null;
+    return { href: printed.replace(/([?&])print=1(&|$)/, function (match, lead, tail) {
+      return tail ? lead : '';
+    }), reader: false };
+  }
+
+  /* What a print-only page is: a fixed-layout recipe's page gives export
+     instructions; every other one offers Generate PDF. */
+  function pageLabel(issue) {
+    return issue.print_mode === 'manual' ? 'Export instructions' : 'Print edition';
+  }
+
   function day(stamp) {
     return String(stamp || '').slice(0, 10);
   }
@@ -175,23 +193,23 @@
     }
     row.appendChild(meta);
 
+    /* A listing links each document's own page, never a PDF action: the
+       reader where there is one, otherwise the edition's print page, where
+       Generate PDF lives (guidance/repository.md, "Public navigation and
+       catalog", 2026-11-16). The full record below keeps its print links. */
     const where = T.el('p', 'edition-links');
-    const readerTarget = M.readerTarget(edition);
-    const printTarget = M.printTarget(edition);
-    if (readerTarget) {
-      where.appendChild(link('read', SITE + '/' + readerTarget, 'Read here'));
-    }
-    if (printTarget) {
-      where.appendChild(link('print', SITE + '/' + printTarget, printLabel(edition)));
+    const page = documentPage(edition);
+    if (page) {
+      where.appendChild(link(page.reader ? 'read' : 'print', SITE + '/' + page.href,
+        page.reader ? 'Read here' : pageLabel(edition)));
     } else {
       where.appendChild(T.el('span', 'absent', 'Print view unavailable'));
     }
     for (const issue of edition.also || []) {
-      const target = M.printTarget(issue);
-      if (!target) continue;
-      where.appendChild(
-        link('print', SITE + '/' + target, T.titleCase(issue.kind) + ' · ' + printLabel(issue))
-      );
+      const companion = documentPage(issue);
+      if (!companion) continue;
+      where.appendChild(link(companion.reader ? 'read' : 'print', SITE + '/' + companion.href,
+        T.titleCase(issue.kind) + (companion.reader ? '' : ' · ' + pageLabel(issue).toLowerCase())));
     }
     row.appendChild(where);
     return row;

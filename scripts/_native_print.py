@@ -4,8 +4,8 @@ The native typesetters can build more documents than the public site admits.
 This module narrows them to the site's publication dispositions, declared
 reading volumes, publishable Bible editions and advertised papal witnesses.
 Each admitted edition has one thin print page that carries the Generate PDF
-controls and the edition's selection. A reader page carries a Print action
-linking there; on a plain click the controller reads that selection and
+controls and the edition's selection. A reader page carries a Generate PDF
+action linking there; on a plain click the controller reads that selection and
 generates the PDF in place, so the reader stays on the page.
 It never builds a PDF, fetches a source, or treats an archive as current text.
 """
@@ -239,15 +239,23 @@ def _link(route: str, target: str) -> str:
     return html.escape(posixpath.relpath(path, posixpath.dirname(route) or ".") + hash_ + fragment, quote=True)
 
 
-def reader_action(route: str, target: str) -> str:
-    """The Print action a reader page carries to its edition's print page.
+def reader_action_link(route: str, target: str) -> str:
+    """The one Generate PDF action a document page carries at its top.
 
-    A plain click generates the PDF in place (`link_extras`); the link itself
-    still opens the print page in a new tab or without JavaScript.
+    It links to the edition's print page with `print=1`. A plain click
+    generates the PDF in place (`link_extras`); the link itself still opens the
+    print page in a new tab or without JavaScript. Catalogues never carry it:
+    they link the document's page, and the action lives there
+    (guidance/web-editions.md, "Browser printing", 2026-11-16).
     """
     _need(target.startswith("print/") and target.endswith(".html"), "invalid print page route")
-    return ('<p class="print-actions"><a href="' + _link(route, target) + '?print=1">'
-            'Print / Generate PDF</a></p>')
+    return ('<a class="native-print-action" href="' + _link(route, target) + '?print=1">'
+            'Generate PDF</a>')
+
+
+def reader_action(route: str, target: str) -> str:
+    """The Generate PDF action standing alone at the head of a page's content."""
+    return '<p class="print-actions">' + reader_action_link(route, target) + '</p>'
 
 
 def landing(identity: str, route: str, context: dict, *, label: str, reader: str | None = None,

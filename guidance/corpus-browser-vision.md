@@ -250,6 +250,42 @@ Greek coverage where applicable.
 - Separate identity, status, and action. Unavailable, withheld, partial,
   unsupported, unread, and uncertain never collapse into one disabled style.
 
+### Shared tokens and page branding
+
+Since 2026-11-16 the roles above are declared once, as custom properties at
+the head of `release/public-alpha/assets/site.css`, which every site page loads
+first: `--font-text`, `--font-ui`, `--font-mono`, `--hairline`,
+`--hairline-strong`, `--focus-ring`, `--radius` and `--control-min`, beside the
+existing surface and ink colours. `publication-reader.css` and
+`native-print.css` read them instead of restating values, so a change there
+applies to catalogues, readers, print pages and the print controls together.
+A page's own branding is only its `section-<colour>` class: the `--section-*`
+accent, ink, wash, pale, row and line colours and the two section marks. No
+page forks a stylesheet for its identity. The browser instruments keep
+`browser-core.css`'s own tokens, which the protected Liturgy reads; folding
+them into these is separate work, because every value change there reaches
+Liturgy.
+
+### Tables
+
+One shared table component in `site.css` (2026-11-16, at the maintainer's
+request that tables stop feeling dated) replaces boxed cells and zebra rows
+everywhere a site page sets a table: open composition with hairline rules
+between rows, one firmer rule under the head and after the last row,
+sentence-case column labels in the interface face tinted by the section ink,
+tabular numerals, and a faint section-tinted row under a hovering pointer.
+Catalogue tables add the work title in the reading face, quieter descriptive
+columns, a muted `Planned` or dash state set apart in words and tone, middle
+dots between a cell's links, and a small `print edition` mark on a link to a
+document without a web reader. The sticky head and the narrow-screen reflow
+described under the Catalogue archetype are unchanged in behaviour; a reflowed
+row is one entry with a single rule beneath it, and a cell's several links
+stack one per line instead of wrapping around their separators. Reader document tables use the
+same rules inside their own scrolling region. A browser instrument's table
+(Encyclicals, Scripture) inherits these element rules wherever its own
+stylesheet does not override them, and adopts the `catalogue-table` component
+only when its owning work opts in. The protected Liturgy sets no table.
+
 Breakpoints are discovered from content rather than assigned to device names.
 The foundation prototype's breakpoints are starting hypotheses. Real routes
 must prove where navigation, dense rows, contextual rails, and text measures
@@ -291,7 +327,9 @@ group, not a tile wall:
    constraints visible and removable;
 3. honest count named by object type;
 4. grouped work rows with product title, collection, explicit provider,
-   Independent treatment labels, browser/PDF availability, and material state;
+   Independent treatment labels, browser/PDF availability, and material state —
+   where a row links a document, it links the document's page, and that page
+   carries the PDF action ([repository](repository.md#public-navigation-and-catalog));
 5. useful zero state that repeats the active constraint and offers a concrete
    recovery action.
 

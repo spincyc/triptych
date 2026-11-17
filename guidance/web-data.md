@@ -1148,7 +1148,7 @@ and a source reader's edition from its reader path under `print/`. The page is
 small and carries no edition text: title and edition or companion label, what
 Generate PDF does, the native controls, any earlier TeX PDF in the
 [print archive](../release/print-archive.json), and a link to the edition's web
-reader where one exists. Reader pages carry only a Print action that links
+reader where one exists. Reader pages carry only a Generate PDF action that links
 there; a plain click generates the PDF in place from this page's selection
 ([web editions](web-editions.md#browser-printing)). Since 2026-11-04 every admitted output of an eligible or conditional
 leaf, companions included, has a web reader; the outputs of the 15 ineligible
