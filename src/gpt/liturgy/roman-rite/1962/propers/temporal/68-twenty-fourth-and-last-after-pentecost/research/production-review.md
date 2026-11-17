@@ -636,3 +636,76 @@ are unchanged. Companion conversion and installation checks, independent web
 review, inspection receipts, release records, catalogs and publication remain
 downstream. No print export, commit, installation, push or deployment was
 performed.
+
+## Install-publication, iteration 0
+
+### Independent reviews and current identities
+
+The engine has accepted research review iteration 2, study review iteration 1,
+concise review iteration 0, homily review iteration 0 and canonical web review
+iteration 0 for proper-study v19 run `df0ccb9ecfdea6c9`. The actual results are
+under `build/tpt-runs/df0ccb9ecfdea6c9/results/`. A fresh invocation of the
+engine's read-only review-currentness check finds no stale review among those
+five results, and their exact hashes match the engine's recorded hashes.
+The four source-review seals contain 1,745, 19, 16 and 10 files respectively.
+The web review additionally seals the current typed source-publication
+identities and canonical conversion. No receipt or acceptance was renewed.
+
+Full-family content-schema validation with its existing owning validators
+passes: one leaf, three ordered authored outputs, zero errors. A fresh canonical
+conversion agrees byte for byte with both the reviewed Markdown and
+`research/web-artifact.json`, SHA-256
+`5651d5a4ba782f602273fbc3a57809b29e42334fa584bdc78eeaf5f2d75e808d`.
+The accepted content, evidence and output identities remain those recorded in
+the source-artifact section above. The operational web-inspection fields are
+excluded from those identities by the schema contract.
+
+### Recorded web inspection and publication wiring
+
+The canonical web review passed on 16 November 2026. It compared the complete
+Markdown with the canonical TeX, generated chronology, appointed-text
+verification and focused cited sources. Its locked site-renderer checks covered
+36 quotation blocks, 49 source notes, both tables and 108 internal links.
+It performed no browser, responsive-layout, print or companion-reader
+inspection. One external Gutenberg catalog reference returned HTTP 503;
+registered local Bible evidence remained available, and the other seven
+external references resolved. These are the review's actual limits.
+
+`web-edition.toml` now records that inspection's date, reviewing provider and
+run, method and exact conversion hash. It adds no companion inspection.
+After all three release decisions were created, the existing
+`tools/tpt web-edition check --leaf` command passed all three output conversions
+with their fidelity audits. The concise and homily readers remain
+converter-verified only.
+
+The release tool created one `alpha` record per output under
+`release/publications/gpt/liturgy/roman-rite/1962/propers/temporal/`, for
+`68-twenty-fourth-and-last-after-pentecost`, its `-synthesis` companion and its
+`-homily` companion. Each names `perpetual-public-repository-2026`; identity
+and catalog are derived rather than copied into the records.
+The existing row 68 in `library/traditional-latin-mass.md` now links those
+three readers in declared order, in the ChatGPT cell only. Its Claude cell
+remains planned. Exactly one unqualified canonical marker follows the release
+manifest's primary-provider rule. No extra work row, source-apparatus link or
+absent PDF link was added, and no converted text was tracked.
+
+### Publication validation boundary
+
+Installation logs and additional read-only review-identity comparisons use
+the `.scratch/proper-study-68/install-publication-0000-` prefix.
+Aggregate browser-product recording/checking, scoped release-binding refreshes
+and terminal publication checks are separate mechanical events; their actual
+outcomes are recorded in
+`workflows/reviews/gpt-1962-68-production-2026-11-16/CYCLES.md` and the engine
+results rather than represented here as a new independent review.
+The first release-binding status command correctly refused the stale aggregate
+browser descriptor before any refresh. An initially malformed inline
+review-closure command failed; the corrected read-only command completed and
+found no stale review.
+
+There were no forwarded or carried findings and no upstream source or evidence
+repair. No new shared test, retained helper script, prayer text, source
+translation or second prose authority was introduced. This source/HTML stage
+does not supply print compilation, physical pagination, full-page inspection,
+terminal workflow acceptance, a push or deployment. Those remain distinct
+operations owned by the coordinator and any selected printing workflow.

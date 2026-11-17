@@ -1,0 +1,15 @@
+WORKFLOW: proper-study v19
+WORKFLOW_DIGEST: 73706a2ab569c88974452c4aec8fe2b7540a23ad1192efa39d574ddfbd334645
+RUN_ID: df0ccb9ecfdea6c9
+COMMIT: cdae1562964b77f5ce00c022420bfcbbe75967cd
+STAGE: research-preflight
+ITERATION: 2
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-11-22","proper":"liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost","provider":"gpt","research_handoff":"none"}
+DOCUMENT_ROOT: src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: [{"id":"RES-068-FROMAGE-PAGE","location":"src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/research/interpretations.md:179-183,401-404; src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/research/scope.md:267-268","problem":"The references place Fromage's Communion text and explanatory sentence about the Postcommunion's cure of remaining faults on printed page 514. In the retained 1883 Duffy witness, both occur on printed page 513 (PDF page 539). Printed page 514 continues the Postcommunion prayer and supplies the closing ode; it does not contain that explanatory sentence. The underlying interpretation is supported, but its pinpoint locator is off by one page.","repair_target":"research","required_result":"Point the Communion and medicinal explanatory sentence to printed page 513. Use pages 513\u2013514 only where the citation genuinely includes the complete Postcommunion prayer spanning the page break. Correct the corresponding reception-matrix and interpretation references consistently.","severity":"advisory"}]
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

@@ -5,7 +5,7 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-11-13.
+Last reconciled: 2026-11-16.
 
 ## GPT Last Sunday after Pentecost — 22 November 2026
 
@@ -43,16 +43,48 @@ concise study passes derivation, preflight and cold review without findings.
 The 1,207-word homily passes derivation, preflight and independent cold review
 without findings. Source/schema artifact validation and its program gate pass.
 The reviewed source checkpoint is `348f9767c4`; canonical web conversion passes
-and records exact bytes for the pending independent web review. Seven unrelated
+and records exact bytes for independent web review. Seven unrelated
 upstream commits add the explicitly unreviewed Greek Chrysostom lane. Their
 changed paths do not overlap the four accepted content-review seals. Integration
 preserves both exact delivery-record sets and refreshes the source inventory and
-the family ledger without promoting its pending reviews.
-No web acceptance, terminal workflow acceptance, publication
-push or deployment is claimed.
-The fresh checkout's
-isolated native TeX toolchain passes a package
-and embedded-font smoke test, which is not a publication compilation or review.
+the family ledger without promoting its pending reviews. The source-maintenance
+targets pass across an initial partial run and its successful remainder.
+Merge checkpoint `06ee087d65` preserves the committed edition revisions and
+byte-identical canonical conversion. Fresh independent web review passes without
+findings. Publication installation, its direct checks and the engine's
+terminal publication gate pass; the run is **ACCEPTED**. All three selected
+native print bundles compile successfully in two passes each; their exact
+receipts are retained under the cycle record's `NATIVE-PRINT-2026-11-16/`.
+That is not visual print-layout approval or the full deployment compile gate.
+The terminal run's public archive holds 32 results and 32 verbatim packets.
+It reproduces byte for byte; all 143 native files remain unchanged. A separately
+opted-in artifact-path export policy removes only the exact checkout prefix
+from canonical top-level artifact paths, with a schema-3 hash/pointer receipt.
+Only research iteration 0 changes, at its notes and artifact-path fields.
+All 68 archive tests pass, including the real-run reproduction. Default and
+existing schema-1/2 exports remain byte-identical to the previous tool.
+Post-archive source inventories and all 13 browser-product families pass:
+29,540 files and 265,934,626 bytes. Full release-binding verification reports
+zero stale bindings after refreshing only the descriptor binding; all 24,770
+other bindings and unrelated authorization fields are preserved. All five
+accepted review seals are recomputed and remain current, without restamping.
+All three current reader conversions pass fidelity checks. Fresh native
+preparation matches all 447 compiled payload files and all three retained
+compiler receipts, including their PDF hashes.
+
+The deployment source preflight completes its other members but fails the
+stale committed-input sources index, first reported at
+`src/index/sources/catalogue/0037.json`. The index is not refreshed while its
+inputs remain uncommitted. Site build/verification and live verification are
+therefore still pending. The inherited `corpus-index` tool-registry
+GROUPS/REACHES findings are unchanged. Detailed measured results and limits
+are retained in the cycle record's `POST-ARCHIVE-CHECKS-2026-11-16.json`.
+No publication push or deployment is claimed.
+The installation checkpoint is staged but its commit is blocked by Droid
+Shield's potential-secret detection in generated browser-product keys.
+The maintainer directs continuation of checks with the commit pending.
+No bypass is attempted; committed-input discovery refresh and push remain
+blocked on that commit.
 Detailed progress and limitations belong to
 `workflows/reviews/gpt-1962-68-production-2026-11-16/CYCLES.md`.
 

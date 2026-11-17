@@ -2,22 +2,22 @@
  "editorial_approval": false,
  "inputs": {
   "families": {
-   "act-history": "cc859878aeb4386d98ccff8aeb463b1fa3c40fa144b438dee7a7aad4681af2c8",
-   "bibles": "3eb8f966ecce3a379f3c1366674bf47b3a5f4dab50ae6dfd4986bd6df5b683ac",
+   "act-history": "2acd726ddedb36df470f8556e945de679bfb3b3193216d1c93152ce02d944a15",
+   "bibles": "b982bfaa863c3aba01b934aa35d730cca9e44d15aac2069895bfac156b525dcb",
    "calendar": "b975449a08c2959ec224e2f2981baa7142c5321e0ea4d5765f913f08ac70d542",
-   "catena": "02b92eea14a2e7b072755dd481336b0d551826b32072bb807ce9b451d934a14e",
-   "documents": "7f9f3d902c7a6fc602684a5cf065c43ee35acf56247d36a9774cba5364d71a6b",
+   "catena": "5197c6a8515590c6de67ebaa3b2fcbf372877183e12f82990a349a0f13674b45",
+   "documents": "b538d0f8d6d62f1a68182a245289f437a6b50a5d4e21f919c9b8a1b978e526f6",
    "encyclicals": "b2107f50a66949a245e48fe8c319e309abc3e007abbeaf9ba202174c55759587",
-   "ordinary": "6db292cd614cb634347a8ec43930116d6e5dafafcfb4d3900df6dade9b848241",
-   "paragraphs": "f23371a8bdafea40ca91766789eda713bf9a3c73a1f5175e12e8f6b9951bbf6d",
-   "propers": "97c68ffc7594135bd884a03dfb83deec9f8a9861b8728849a9f8d40d8f7997c4",
-   "readings": "f23371a8bdafea40ca91766789eda713bf9a3c73a1f5175e12e8f6b9951bbf6d",
+   "ordinary": "416a5c8b150996742ebecf33f8720772f012fb74691e0e99f3d718b83a6c8955",
+   "paragraphs": "672b3d379137f3d47245a4cf1f5199b142022be8c231c51354032a3ead5fc01c",
+   "propers": "8463c4b2b2d73779344971dd9e58e60294b87e7b92b53b3650a98505ae09878f",
+   "readings": "672b3d379137f3d47245a4cf1f5199b142022be8c231c51354032a3ead5fc01c",
    "rubrics": "5095d0c84a19bfa11b4beda5ff0e98141d7cdd66af6b160afca26f430a450e8d",
-   "sources": "969ba6f4b3a048e857aea47f60b19a1cd96631ce46640b8184222c2d21ff4a29",
-   "web-editions": "30ac754be89e8cab831bcd23d469a9fd0396bc96125f3cc42801d9cf61189c56"
+   "sources": "53cd90e4fcc33ea84bdcc9c34b205ce6314b0dcb66ac85183167d97d91508173",
+   "web-editions": "0ea57e18edcf09bacae4e846b9d99c7bc0dcb2005bd7a037e51de7786017e073"
   },
   "schema": "triptych-browser-product-aggregate-inputs/v1",
-  "sha256": "188e37515c8dc9ad80dc176142f9c5ac290e25990311d44bd5cb7dd81a4cb2fd"
+  "sha256": "0d896cad001baff08b5e47ca17cee20bbcf60eeb078647ee48ce437ff34c5288"
  },
  "products": [
   {
@@ -33,14 +33,14 @@
    "inputs": {
     "content": "389e32acb55dcd142e28780594ad989b7fb338ed9ff230d9e5ccd22482ad8eaa",
     "count": 9525,
-    "generator": "487fbcbe6a9e38ebf8a0c2debfdb20e1b3547d7492380d7c3ea1984142d2c4af",
+    "generator": "9a5af3c5494ffd9669ae4ca6c94682c235af296640d0c796bdb44e49ccd753e8",
     "lock": "47a6c6994f512bee2aac6a3fa2b2a1e97ee413b5297e0c9449c66b622006a052",
     "membership": "9bd004d8db5bac6554781c0b8d0f21bfdb7c8115439caf9116597048712b90f1",
     "rights": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "3eb8f966ecce3a379f3c1366674bf47b3a5f4dab50ae6dfd4986bd6df5b683ac"
+    "sha256": "b982bfaa863c3aba01b934aa35d730cca9e44d15aac2069895bfac156b525dcb"
    },
-   "key": "bf382dcce969cd5aef961c843274b345683ea7e7f492e06336d2aefd18dadc79",
+   "key": "f565498538077e6934f7dd2f6af4426f661e3544fc4c76c9913d5afeed9cb1aa",
    "path_set_sha256": "14d56894543c1e5457683c8b4a392258e6dfd6703dd6afbf8ffd704a9b039014"
   },
   {
@@ -72,7 +72,7 @@
    "files": {
     "structure/act-history/catalogue.json": {
      "bytes": 11583022,
-     "sha256": "d550ec090cf28c396971cbce3b3ecef87016b9d54d48f78e327f04c3cf9439d8"
+     "sha256": "ce49f901ce558eb0a4434e041ae2ecc878c7a7966d99064560d7043ce02d3bdd"
     },
     "structure/act-history/code-of-canon-law.json": {
      "bytes": 64570,
@@ -1136,127 +1136,127 @@
     },
     "structure/act-history/comparisons/brightman-1896-greek-basil-chrysostom-anamnesis-oblation.json": {
      "bytes": 283537,
-     "sha256": "395557dc6f076674f881849a8b8da7aefca983808207fd8ddd1c85d0d4b05b5a"
+     "sha256": "6fa65effaafb3dd70257a1bb1e4f054c06809707303b177ee19c79bd4c7d57f1"
     },
     "structure/act-history/comparisons/brightman-1896-greek-basil-chrysostom-invocation-gifts.json": {
      "bytes": 290625,
-     "sha256": "f6bb68f3ff32559ba25af184dbfd4e06ecfb6b066127348b580efa4eef9be9c9"
+     "sha256": "3c04323cf5e75523c18a2d9c070c978853850c61e05497dd0435928734c3676d"
     },
     "structure/act-history/comparisons/brightman-1896-greek-basil-james-anamnesis-oblation.json": {
      "bytes": 292364,
-     "sha256": "138f69f943a5a19c3706ec0ad350844df87bb27a61b65c64ab8c0151f6619d2f"
+     "sha256": "58208979ddf7934936bdcd28bf2f4b85ce5473dc9f21983e1785fb6eb4834ab4"
     },
     "structure/act-history/comparisons/brightman-1896-greek-basil-james-invocation-gifts.json": {
      "bytes": 297589,
-     "sha256": "6e4c34cbe63ff90a778a0d86ec8ae3056e63aac9e908408b4b68b625f57b49b1"
+     "sha256": "c4bbd3a65120a4a997ac671ab9b5197f6e31521795395d72efb7f3b23991b344"
     },
     "structure/act-history/comparisons/brightman-1896-greek-chrysostom-james-anamnesis-oblation.json": {
      "bytes": 291395,
-     "sha256": "dfcbb9ef3416b330bdcf11f668babab78eaa4bc398ee487baf4a5cfe815f6bd3"
+     "sha256": "50fe2e4f6baa8eac2de391963a70b46f292a0adac0eca2d2879f1f3aa08a161d"
     },
     "structure/act-history/comparisons/brightman-1896-greek-chrysostom-james-invocation-gifts.json": {
      "bytes": 292690,
-     "sha256": "27e6a3edeec254feba2c48676bf021997edd72c658f7c50ad89a2a1d07094f4c"
+     "sha256": "38f8e4e49d40bcb1889d4887d85bc35f1cc8e525f7d20d722c3eab21faf76b85"
     },
     "structure/act-history/comparisons/carmelite-1574-1621-october-05-calendar.json": {
      "bytes": 263233,
-     "sha256": "05aff51eb625d9bb47a6cdcbb82e75bf4d9b889e329da5bfa18de1163c3bb3a9"
+     "sha256": "99262e389d22090c7d40db73520eb497eeaa948d2acafa8719f5687304d09a5e"
     },
     "structure/act-history/comparisons/cistercian-1606-1657-canon-constituents.json": {
      "bytes": 824649,
-     "sha256": "8b051a68ca1ddcfb3eacd49a5737799ea6d80682773dd804cadc1029eab19bbb"
+     "sha256": "44928a9f51340def3b633d30b14a2c72314f6d7e70d633b3383b94ce398ef9d9"
     },
     "structure/act-history/comparisons/cistercian-1606-1657-confiteor.json": {
      "bytes": 344571,
-     "sha256": "0f79e1c984b44c2157709ab0515c189f2d09619e4b59ade6f13089f1b1f063e9"
+     "sha256": "57ccb814fa5e490a79d62d333752172c7b46554d67fe61cbc1a71c17c23c5950"
     },
     "structure/act-history/comparisons/cistercian-1606-1657-offertory-constituents.json": {
      "bytes": 453881,
-     "sha256": "825b11ebb05265797d6c7a736c0bad88b3284372b215e511d720394780509e78"
+     "sha256": "3dfd4ee35689f1ce12017f1e5b389eb997877333a60d3344dd04a6ca8e74c58d"
     },
     "structure/act-history/comparisons/cistercian-1606-1657-orate-response.json": {
      "bytes": 345987,
-     "sha256": "faa0d2adac3d312cae78977c904962594f3c1d192d6dee93578efa83a2e28573"
+     "sha256": "dc43845dfd3cfeef2151e2c054aa4c8ee7ff283b59f40d6af224a61ea5b5bf84"
     },
     "structure/act-history/comparisons/cistercian-1606-1657-pater-noster-first-chant.json": {
      "bytes": 411792,
-     "sha256": "888092914ece436b851bcbc0fe24d0355bf41fc3470238b3cfa902739cde83fb"
+     "sha256": "c4a3e1d12d38ee52562cebba87559dbfd6984a2dcc4691a87eb4a080bfdfeab6"
     },
     "structure/act-history/comparisons/cistercian-1606-1657-suscipe-trinitas.json": {
      "bytes": 347038,
-     "sha256": "0f5ea0f54defaa86b5512aea9515bdaeba0a9c7ef3dd6a8672abbcd2c292a484"
+     "sha256": "ff4c8a51ba17c8dfa43729f67358ecf153a4a2798d89a0dcf9e1cf521ce808ed"
     },
     "structure/act-history/comparisons/dominican-1550-1604-suscepimus-collect.json": {
      "bytes": 262545,
-     "sha256": "ebe91b3e3840b110e9da75a0588e8b48a698b7954594704ed6bc58d23f242a21"
+     "sha256": "2bf32b851fa793fbdcb53eb2609ca5b8e23fc87eb9fb433468a7b9bf59e231fd"
     },
     "structure/act-history/comparisons/mozarabic-1500-1755-benedictio-panis.json": {
      "bytes": 307103,
-     "sha256": "6f97abb21d8fd7a35c755eaba9ccc9dedc338855e5972bb4b9937e7538c187a8"
+     "sha256": "aa7bb812cd997ecdbd38bdb9ed60624e8fb68709d720c77563111c78a8d8e0a4"
     },
     "structure/act-history/comparisons/mozarabic-1500-1804-benedictio-panis.json": {
      "bytes": 305824,
-     "sha256": "1634444b14d5b1427c2331b48d57eb25dcfe8b6572afdcca861f158e54a739fe"
+     "sha256": "3465cf2357268b0d3cba424a228c35358475a73025366448784b2e7cde0a9c2f"
     },
     "structure/act-history/comparisons/mozarabic-1755-1804-benedictio-panis.json": {
      "bytes": 304308,
-     "sha256": "6fa9d7cd82b04f924ce2a686a1066681b955a5af8ce54737282a3b6db5e7ba28"
+     "sha256": "0915ef8a2c7a2701a894f672284aa586eea417bbda29c6f86ed35cb38ae2a21c"
     },
     "structure/act-history/comparisons/roman-canon-memento-wilson-r-and-cummiskey-1861.json": {
      "bytes": 300735,
-     "sha256": "3651d3ac1fa829d1cd89864bf6f620314bfd19af0892e17f0a4373fe0deafb6f"
+     "sha256": "093f14f3a4956751c39e72a8a82f5d4e4452cf5daa2fa82f42595575c79e03f3"
     },
     "structure/act-history/comparisons/roman-hanc-igitur-gelasian-and-cummiskey-1861.json": {
      "bytes": 308010,
-     "sha256": "344647c0669fcf95aff2086b1ffbac7c06f5f6e3e3dbec7fa6546c387f76e82d"
+     "sha256": "0b665da860c98b39ff23e8410d92eefac0dbfc4041baac48187188c6f5b3eab4"
     },
     "structure/act-history/comparisons/roman-hanc-igitur-gelasian-and-stowe.json": {
      "bytes": 285443,
-     "sha256": "cbe58046fedfbe2e2018df77e515a856b68fa3d52909e129477eaa4ce4ccf7ce"
+     "sha256": "299025b2d506420724671e9e6ee441787027478820d5056975299bbff52b2e57"
     },
     "structure/act-history/comparisons/roman-hanc-igitur-gregorian-and-cummiskey-1861.json": {
      "bytes": 303027,
-     "sha256": "75caec2184f2eb5e84b3be9c158f0b125f169876278b0329f1f64d75aaa2d00f"
+     "sha256": "59aca28c68491d11b1b0bfc082d3649955788466e5c13c4e0f3e5d3f10d0ecef"
     },
     "structure/act-history/comparisons/roman-hanc-igitur-gregorian-and-gelasian.json": {
      "bytes": 274521,
-     "sha256": "3405ca5ae687d852ed3e59c8dae8ebdcee9d2aafabd62c6c3e8d383e87bccaa7"
+     "sha256": "8d2f1d558a0f8f586e10e74844fab50e8456d960dadc16ad20884f736f9380c1"
     },
     "structure/act-history/comparisons/roman-hanc-igitur-gregorian-and-stowe.json": {
      "bytes": 280219,
-     "sha256": "e133a1d6cc632fb52d1ba6f4eb2824f0abfdf53077255ba6f3b4973f5680f867"
+     "sha256": "8b1c11148650d317a2771506363fa63e62e4a6ab212feffdcd07abeb8c9f8c7e"
     },
     "structure/act-history/comparisons/roman-hanc-igitur-stowe-and-cummiskey-1861.json": {
      "bytes": 313900,
-     "sha256": "cec8ed9906d4612e824f6d6ec0aee3e898730d91b7317bc89b4f7d0df5bc8093"
+     "sha256": "2ac6853759ea6f9f96f49ee0310dbbdd93f6fe290d0f3f43d548d696d7f68c0f"
     },
     "structure/act-history/comparisons/roman-quam-oblationem-gelasian-and-cummiskey-1861.json": {
      "bytes": 307607,
-     "sha256": "137b1c1da562db6fb0048ad6128e7f454a50c9b6c90904f6fc89d6d1189e93c8"
+     "sha256": "55acfcc12c8a6b2506e0b13880f9a9a10ff73f404602ab44a35b68913f74ef67"
     },
     "structure/act-history/comparisons/roman-quam-oblationem-gelasian-and-stowe.json": {
      "bytes": 281616,
-     "sha256": "83ff8c5c08059e57b6ce0ae42d05ecc7cc5dc6968a33293cb55f7db88ec5a279"
+     "sha256": "5649dcd35f561d5f30dcbcaf6226d676b8e6ee84b76d96960332daf19322f306"
     },
     "structure/act-history/comparisons/roman-quam-oblationem-gregorian-and-cummiskey-1861.json": {
      "bytes": 303230,
-     "sha256": "649d4d18984b000572e29f4c753da85fce0a5a44fffec8462143cf8fb84ecf86"
+     "sha256": "a9de6df6d2e605650bc13a0f6f2aa3ea1822894caa9e0425614a59ac5d387ca9"
     },
     "structure/act-history/comparisons/roman-quam-oblationem-gregorian-and-gelasian.json": {
      "bytes": 274853,
-     "sha256": "7d2ca27d696f399d910d81f98ea2a0ae8f8bef38e31354068a0571dba84938ad"
+     "sha256": "b937a9bf014a5104170c1db9e46d8bc247fe29cac4342421042c5d3fc6e48e12"
     },
     "structure/act-history/comparisons/roman-quam-oblationem-gregorian-and-stowe.json": {
      "bytes": 277030,
-     "sha256": "4b80bc10631d25ac7bdda43d2fc5f0c4fb8063ce739351761198122ec1a84407"
+     "sha256": "3babd6ac92802c8a7208b15ad8865c1a89d7f0a44ac9a516d0ccc850f00addbe"
     },
     "structure/act-history/comparisons/roman-quam-oblationem-stowe-and-cummiskey-1861.json": {
      "bytes": 309944,
-     "sha256": "203d4cc3516c670317e87eaccd6ab2dc36ddd7c20af8b335b49d2d608e57cf76"
+     "sha256": "6e603d3059ef92929a6adb8f3632eb9c9f71caafe6401011d39ccd4979e2885b"
     },
     "structure/act-history/comparisons/roman-sanctus-stowe-and-cummiskey-1861.json": {
      "bytes": 310628,
-     "sha256": "845d9fcd7cefb5555050ff586051b86e9ab955c16ea46a4c6291d4cba880a7f2"
+     "sha256": "ec313b6aaec48059f4ac903e76cfb02fc7b574c18cd6ea46ff11d507d87aa04f"
     },
     "structure/act-history/index.json": {
      "bytes": 337,
@@ -2301,16 +2301,16 @@
    },
    "id": "act-history",
    "inputs": {
-    "content": "bac5219857686ab62193bb69b5e1adfea22211432afeb7ec03f7d1507ecb441c",
-    "count": 81036,
-    "generator": "2a7a5cf66c75a6b864e20e51af67a1a349bfe87c143baf133ea536d8dd12d464",
+    "content": "92eb17ddbf07a1077424df45ba6b60be29730ef620dcef3f34ffcf5b478abb7c",
+    "count": 81158,
+    "generator": "5b292cabcb94801875b50dc5242ebe04fa6fdbb0cab70ff6751c3e9b58ff4ba4",
     "lock": "62ed728e10b17c7b6dfeb6374c13b017114a326e33d3fc30e66f4b6576f87306",
-    "membership": "8bbe39c9f00b4459a21c1fca2dced8890ae07d129a9d6a79aabca8448c3e4640",
-    "rights": "102899406fad179bc06de1d42e2c0c57378e189934843bc8b7a7f07c01d9a0a8",
+    "membership": "a96d8a9b19469be6f9097a92f49745c1b4052d027884a0dc8cb2703840805840",
+    "rights": "14d6678172d4b9b0afe9e3daaad3f330c05ba8958a687e109cc9042691f1c9cc",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "cc859878aeb4386d98ccff8aeb463b1fa3c40fa144b438dee7a7aad4681af2c8"
+    "sha256": "2acd726ddedb36df470f8556e945de679bfb3b3193216d1c93152ce02d944a15"
    },
-   "key": "5a923ef8f0746136d900a1486b2eeb492de66ee5adcb4f49ee8dddcdfec16b62",
+   "key": "c2367a01cd98c29850e2c11fff215b73ebb2bfd0e1323461866f90fa1c987d5e",
    "path_set_sha256": "6c79229e3b84cc13de7dec10eb7e12bccf9e7f43de5a0b920b2ac014966e1eee"
   },
   {
@@ -12443,39 +12443,39 @@
    },
    "id": "catena",
    "inputs": {
-    "content": "13a7468881e84cdbbc9e7516d31182c03fb72f45f16a2d82237361b9b35d19d8",
-    "count": 72861,
-    "generator": "487fbcbe6a9e38ebf8a0c2debfdb20e1b3547d7492380d7c3ea1984142d2c4af",
+    "content": "20c3d82039b67b4d2f51e8c0f88837b57de8bd25c78df250dc2ab9d734a5aeec",
+    "count": 72876,
+    "generator": "9a5af3c5494ffd9669ae4ca6c94682c235af296640d0c796bdb44e49ccd753e8",
     "lock": "62ed728e10b17c7b6dfeb6374c13b017114a326e33d3fc30e66f4b6576f87306",
-    "membership": "5ff1db84aa74b0bb7f116f0dceb088f0d2c7b9a22bcc58a75b1a4cc72ab8e690",
-    "rights": "7eb4d6d0fcc9df3aa1f7f68ed39542b8fd577eb3999d9b90dd7c549e2c0597be",
+    "membership": "53542f1a4a32061a77f9cb9c9bb4032db93f9c7f3a2921748b73e170b750d981",
+    "rights": "ec483450eefc03fbc0c6998a3d039c50fb4c9ad5d63d0a7e749073b3cd228348",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "02b92eea14a2e7b072755dd481336b0d551826b32072bb807ce9b451d934a14e"
+    "sha256": "5197c6a8515590c6de67ebaa3b2fcbf372877183e12f82990a349a0f13674b45"
    },
-   "key": "c61efb68fb78a3f2f7fb061e2b6c1265a43c8101efcd4e1dfdef61a65ef5661d",
+   "key": "366369df1935e6903deb3e0ab2c2049b2aea711bffe27fe7db2277bdba943beb",
    "path_set_sha256": "2c1042d5e009e9893eb5ec2eaaf352196ec624373e1078b6628765fe1bcdbfb0"
   },
   {
-   "bytes": 1246842,
+   "bytes": 1251871,
    "count": 1,
    "files": {
     "structure/documents/corpus.json": {
-     "bytes": 1246842,
-     "sha256": "6573db59abd194b2a672938db091a9686dc6a22578087ade4092d0c7fd5ba8d9"
+     "bytes": 1251871,
+     "sha256": "561db06979c799bc4fa682be78f2ec5c8242ec36fc2d033c23bd6aee29a9cc91"
     }
    },
    "id": "documents",
    "inputs": {
-    "content": "7ab90f3266d253a93f31cc28fe4b613a0b53e3a8b7c4b224ae13576daba33f03",
-    "count": 82248,
-    "generator": "487fbcbe6a9e38ebf8a0c2debfdb20e1b3547d7492380d7c3ea1984142d2c4af",
+    "content": "27e9c1fd0f8b6d4f23e27331bc593006a72432c01c59c3879f5d6e2c870de8bc",
+    "count": 82373,
+    "generator": "9a5af3c5494ffd9669ae4ca6c94682c235af296640d0c796bdb44e49ccd753e8",
     "lock": "62ed728e10b17c7b6dfeb6374c13b017114a326e33d3fc30e66f4b6576f87306",
-    "membership": "5fa1cef93cbfc5c19d142003ca03faa1686b6dba140f6e2f648d06814247dfee",
-    "rights": "d7c5bd149bf1b268e25509d6f95ca25dfa73df23a3eeb6d91985f1caf4016d20",
+    "membership": "05a3684a17a7bae343adc76c5b11ce19f065370a700a3eb0c0582c235797782a",
+    "rights": "8f02f36e4006bd553e7b94f8fd9b5bbfe63b9e3d8224559e5683224d11585df7",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "7f9f3d902c7a6fc602684a5cf065c43ee35acf56247d36a9774cba5364d71a6b"
+    "sha256": "b538d0f8d6d62f1a68182a245289f437a6b50a5d4e21f919c9b8a1b978e526f6"
    },
-   "key": "c9e0ca16a2780c9d30e39c86a2344aa6308a0b65b659cdfbf356cbb13b7086d5",
+   "key": "aee52ff57bbb4cd4f40de6aabb15017882ef8def1b7b2a9f9874d517e6982a58",
    "path_set_sha256": "0ec113e99b049bb781b04b2631e34ca3f3d0a90d0fdf95112ab234089debe48b"
   },
   {
@@ -12501,16 +12501,16 @@
    },
    "id": "ordinary",
    "inputs": {
-    "content": "83cabfd1166c8bfbee2c705327862008f95f2bf3158991f0c7b8d251d95ec639",
-    "count": 72759,
+    "content": "292a39a9b63ccc9beb5c387b1ecff4e91063f1bbae554b0ab3280d84702e6ad1",
+    "count": 72774,
     "generator": "bf788d11f33648496e6781dcc301c2e4bc6bea7f12847e4c890fcd497ee5a850",
     "lock": "62ed728e10b17c7b6dfeb6374c13b017114a326e33d3fc30e66f4b6576f87306",
-    "membership": "4a55eaf03a30001d3a37b998022e14e25d82d4ed3a864572c6796ad98104bdaf",
-    "rights": "7eb4d6d0fcc9df3aa1f7f68ed39542b8fd577eb3999d9b90dd7c549e2c0597be",
+    "membership": "81d4232f9b62e5449d14d2abc17a741389627966f6197841dbe2b0b7584093da",
+    "rights": "ec483450eefc03fbc0c6998a3d039c50fb4c9ad5d63d0a7e749073b3cd228348",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "6db292cd614cb634347a8ec43930116d6e5dafafcfb4d3900df6dade9b848241"
+    "sha256": "416a5c8b150996742ebecf33f8720772f012fb74691e0e99f3d718b83a6c8955"
    },
-   "key": "4006f524e77905fc87ea31ec5ce6c5ca4d1b575a0081d8bf3e565add607c4b73",
+   "key": "5dd613c2bf7dc72cbe361e1ae4dbde2c8b551e8205e4e1b7cd2ca76d13bca91b",
    "path_set_sha256": "8d6628d20ee36a40306d533a98efeaafbdf1ff3b8fd15fcaa53e9afc4ae63513"
   },
   {
@@ -34712,16 +34712,16 @@
    },
    "id": "paragraphs",
    "inputs": {
-    "content": "83cabfd1166c8bfbee2c705327862008f95f2bf3158991f0c7b8d251d95ec639",
-    "count": 72860,
-    "generator": "487fbcbe6a9e38ebf8a0c2debfdb20e1b3547d7492380d7c3ea1984142d2c4af",
+    "content": "292a39a9b63ccc9beb5c387b1ecff4e91063f1bbae554b0ab3280d84702e6ad1",
+    "count": 72875,
+    "generator": "9a5af3c5494ffd9669ae4ca6c94682c235af296640d0c796bdb44e49ccd753e8",
     "lock": "62ed728e10b17c7b6dfeb6374c13b017114a326e33d3fc30e66f4b6576f87306",
-    "membership": "a63ebc83ad1e7e2d5d4f60a1debea07178a2095a74eb859c272650bc6cdf5338",
-    "rights": "7eb4d6d0fcc9df3aa1f7f68ed39542b8fd577eb3999d9b90dd7c549e2c0597be",
+    "membership": "40585933e860bf34796e063cfb194d063324e8775f0ab8ca125bc725d9876bb8",
+    "rights": "ec483450eefc03fbc0c6998a3d039c50fb4c9ad5d63d0a7e749073b3cd228348",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "f23371a8bdafea40ca91766789eda713bf9a3c73a1f5175e12e8f6b9951bbf6d"
+    "sha256": "672b3d379137f3d47245a4cf1f5199b142022be8c231c51354032a3ead5fc01c"
    },
-   "key": "c189426e42f5a36cbdc876cce4cf4050991fc87c240c5ba4d47a42be895c22d2",
+   "key": "34127c63db56619643cd5292012d4d0eb9bb552649afa88540d49e78f7787988",
    "path_set_sha256": "9de3712da5253ae1811b47967cb17448685f69729faff8a58c640179f9049796"
   },
   {
@@ -41179,16 +41179,16 @@
    },
    "id": "propers",
    "inputs": {
-    "content": "832e9c478836a660b18426d90f615971d2134e5f84b19a7cfc8d3f5181e1621c",
-    "count": 80930,
-    "generator": "487fbcbe6a9e38ebf8a0c2debfdb20e1b3547d7492380d7c3ea1984142d2c4af",
+    "content": "c26a60f475b925e92c5c44fa6cd8fb26ea0a0889bd3250cf7bb0d2d72f03d132",
+    "count": 81052,
+    "generator": "9a5af3c5494ffd9669ae4ca6c94682c235af296640d0c796bdb44e49ccd753e8",
     "lock": "62ed728e10b17c7b6dfeb6374c13b017114a326e33d3fc30e66f4b6576f87306",
-    "membership": "749742bbc5d4c045f00c7764a94b27ed43ba23ba4d4941841e0347b435f49648",
-    "rights": "f645799998fdbf3872c0f71507b4822d631bc696aa105ceb46af47ee518fd4eb",
+    "membership": "0722e7f08afd5054f1becc24a3d23b25ea034742e2e8e0beae15075f47edbf6d",
+    "rights": "382276b67cfb454e2ceb95a444632df5ca9130a78bb311af676f2d9f7b8b6b36",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "97c68ffc7594135bd884a03dfb83deec9f8a9861b8728849a9f8d40d8f7997c4"
+    "sha256": "8463c4b2b2d73779344971dd9e58e60294b87e7b92b53b3650a98505ae09878f"
    },
-   "key": "f68fea0b1d8877129befe3ae17337139c20a234badd673a3488432eab37fab71",
+   "key": "ff6f76011c0cd92b1c81235838fdc993386b91b704d03f4f4b8c537e8bbd3dde",
    "path_set_sha256": "0ba0c92a1963add22611ae6e6d331d55cbc2742b8d3a9fd72080c23a6e42d3d3"
   },
   {
@@ -41202,16 +41202,16 @@
    },
    "id": "readings",
    "inputs": {
-    "content": "83cabfd1166c8bfbee2c705327862008f95f2bf3158991f0c7b8d251d95ec639",
-    "count": 72860,
-    "generator": "487fbcbe6a9e38ebf8a0c2debfdb20e1b3547d7492380d7c3ea1984142d2c4af",
+    "content": "292a39a9b63ccc9beb5c387b1ecff4e91063f1bbae554b0ab3280d84702e6ad1",
+    "count": 72875,
+    "generator": "9a5af3c5494ffd9669ae4ca6c94682c235af296640d0c796bdb44e49ccd753e8",
     "lock": "62ed728e10b17c7b6dfeb6374c13b017114a326e33d3fc30e66f4b6576f87306",
-    "membership": "a63ebc83ad1e7e2d5d4f60a1debea07178a2095a74eb859c272650bc6cdf5338",
-    "rights": "7eb4d6d0fcc9df3aa1f7f68ed39542b8fd577eb3999d9b90dd7c549e2c0597be",
+    "membership": "40585933e860bf34796e063cfb194d063324e8775f0ab8ca125bc725d9876bb8",
+    "rights": "ec483450eefc03fbc0c6998a3d039c50fb4c9ad5d63d0a7e749073b3cd228348",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "f23371a8bdafea40ca91766789eda713bf9a3c73a1f5175e12e8f6b9951bbf6d"
+    "sha256": "672b3d379137f3d47245a4cf1f5199b142022be8c231c51354032a3ead5fc01c"
    },
-   "key": "012312f539564e6762c13af9e4f27afc2c62074c8034fb27c6266a13d1f529d3",
+   "key": "aca311ad25724598cdb88de10653d7db8b5cbf8858858276a71d0b62310f02db",
    "path_set_sha256": "508b7a8e33c837e26653f6d32011065feafebd126ee7022fefa70a2cccadeabf"
   },
   {
@@ -41250,8 +41250,8 @@
    "path_set_sha256": "b33143518fe47bc2375691f3ef5f78ffee0bc633c3fbb8507344ae056d6b7216"
   },
   {
-   "bytes": 67262672,
-   "count": 19000,
+   "bytes": 67273438,
+   "count": 19003,
    "files": {
     "structure/sources/catalogue/0000.json": {
      "bytes": 68444,
@@ -41402,8 +41402,8 @@
      "sha256": "59ef5bef27e87e47b211839641a5170903b8bb45562c45c7b8ad1ab504302c62"
     },
     "structure/sources/catalogue/0037.json": {
-     "bytes": 64612,
-     "sha256": "9cfa46fe0e89b4696dba6bfc9a2d55eeffe36595d6907e4161204e304926dea8"
+     "bytes": 64801,
+     "sha256": "db7e639f34a99984bff6754c74b06f3bd63b41cf0f228e895694b5fe47d7bf30"
     },
     "structure/sources/catalogue/0038.json": {
      "bytes": 54191,
@@ -41574,32 +41574,32 @@
      "sha256": "c63b5b9fefe367e1fb59ca4eedd3d80c9921ee03e3d9bfc0ef6da295d82b722d"
     },
     "structure/sources/catalogue/0080.json": {
-     "bytes": 76934,
-     "sha256": "c5f7842a81dec8e264aee135a04e7ff431e0ff18c1b4f1f57c15d1efec7f0c14"
+     "bytes": 77184,
+     "sha256": "e0c00d3d751f0560a087020bdad1964448f3e153f4273c1be3a419891a4d25eb"
     },
     "structure/sources/catalogue/0081.json": {
-     "bytes": 96587,
-     "sha256": "dca01b9c83d18b6e7d900147ab639345acbb457c5d7337a4fac2da8bd4c3b777"
+     "bytes": 96463,
+     "sha256": "147a8f7992d39f63286f566e17cee4617e1099349809a2ad45c5cbf5fb046c13"
     },
     "structure/sources/catalogue/0082.json": {
-     "bytes": 65471,
-     "sha256": "48bacf119b1432e40766fcaa4d578c8712e3a3d6da3138b7b74f6dbcd8057126"
+     "bytes": 65631,
+     "sha256": "5a42acad0fea4dd3d856abd09b22b075334843094b721b55d973b39712fd25e2"
     },
     "structure/sources/catalogue/0083.json": {
-     "bytes": 86692,
-     "sha256": "a85bb3f144242ba14a56cae06b09cda927c07ab7b7d82831ce7acf2e36b61d12"
+     "bytes": 86323,
+     "sha256": "18c607d99ab04307b1c9ae4abdf0b4bf9bf0252d2abb3fea7087866fba3de5a3"
     },
     "structure/sources/catalogue/0084.json": {
-     "bytes": 83827,
-     "sha256": "158d4b31e91b72985cd8bad14393bfd922c6c56e96325d3412b9eab2110ae1d3"
+     "bytes": 83866,
+     "sha256": "cb1e3342fb792b7f909bcd3b631e54b7cafc6cbe6317f5035edd89d7051ebee1"
     },
     "structure/sources/catalogue/0085.json": {
-     "bytes": 73926,
-     "sha256": "d72ec753c155fc2b078246ced687fab449cde53ab26763cabbf0063552d2ba45"
+     "bytes": 74368,
+     "sha256": "7217772f3d95b406b21c622ab7346b653fb268f620419e7ca362a82d00bacd6f"
     },
     "structure/sources/catalogue/0086.json": {
-     "bytes": 10538,
-     "sha256": "c7dbd0d49a859c2251498b41f7d76a72489084ecdb7f9331a00b0ce96eafc906"
+     "bytes": 10705,
+     "sha256": "7d1135664db0fea83986e96f1f29b877985dce770eac8bbb5d31cdfcb1448fc8"
     },
     "structure/sources/editions/a-m-de-noboa/preparacion-y-accion-de-gracias-para-la-santa-misa/1851-madrid-aguado-1851.json": {
      "bytes": 2361,
@@ -68586,8 +68586,8 @@
      "sha256": "6322b32c05b1e7dffe9e0fa2c39c7d0d9bc1fd3b209cd7d5909a48f3ec0c541e"
     },
     "structure/sources/editions/catholic-church/missale-romanum/1862-pustet-ratisbon-1862.json": {
-     "bytes": 2383455,
-     "sha256": "fa1013cd34de138e6618b339c85c52d404ea4a1aa02ab3596783f7d21122a1c4"
+     "bytes": 2384772,
+     "sha256": "b645572a08af078fd8886bbfd5f6699f181815910f91594392cad9f6e293c708"
     },
     "structure/sources/editions/catholic-church/missale-romanum/1889-1889-tournai-desclee-leo-xiii-recognitum.json": {
      "bytes": 5169,
@@ -73774,8 +73774,8 @@
      "sha256": "40b009dadc2ac511758570562022c54fa2925f21a58902c5301e030cfdee5eab"
     },
     "structure/sources/editions/holy-see/acta-apostolicae-sedis/1912-volume-4-1912.json": {
-     "bytes": 11124,
-     "sha256": "6d22baecd81f34417a9b4a9c57b93a153af674f4dc07f0962e7e501083d29caf"
+     "bytes": 12087,
+     "sha256": "15cc6bbc888521f9b9fec22136685c94bba59c5c0b44b8e0a12b4c274fcd5438"
     },
     "structure/sources/editions/holy-see/acta-apostolicae-sedis/1913-1913-acta-aas-005.json": {
      "bytes": 5037,
@@ -74913,6 +74913,10 @@
      "bytes": 2067,
      "sha256": "62b805bbb3f1418eddd0e0500641e6b53061511380176339d73a1ca811f017a5"
     },
+    "structure/sources/editions/icrsp-france/ordo/2026-2026-11-16-web.json": {
+     "bytes": 1368,
+     "sha256": "d8c13c3a3aefd3baf8364f2efab8a790db6c83f20be05fec67948119b18ab035"
+    },
     "structure/sources/editions/icrsp-france/textes-de-la-messe/2026-2026-10-26-web.json": {
      "bytes": 2433,
      "sha256": "0ea2b6c33a2118fa39bcfc8f928eafb5a785494d538fe08c79d0754a0e480786"
@@ -75034,8 +75038,8 @@
      "sha256": "5e9397179abe7009942a73870fa449ecd6d9168cc58e06c19f7c6948e50ab719"
     },
     "structure/sources/editions/jacques-paul-migne/patrologia-latina-volume-24/1865-1865-paris.json": {
-     "bytes": 11259,
-     "sha256": "923281583d8f496bd20b928d311a5b1edf11dc77ee621133e75427efaf6919e7"
+     "bytes": 12510,
+     "sha256": "3cf9763abee001d777f276792522e7413b67d8ef2ad17f61bb708963b656835c"
     },
     "structure/sources/editions/jacques-paul-migne/patrologia-latina-volume-26/1845-paris-1845.json": {
      "bytes": 11161,
@@ -97670,8 +97674,8 @@
      "sha256": "b3816b849eb5a60c5f28c12cb94a65b7dbbdeae553b9b9978762b09879eccbff"
     },
     "structure/sources/editions/prosper-gueranger/the-liturgical-year/1883-english-duffy-1883-volume-11.json": {
-     "bytes": 13598,
-     "sha256": "b35863613e8677567003d87643ddbab348cc1acf01ea1fb7747a86166fc1c7a0"
+     "bytes": 15669,
+     "sha256": "7c1b44ebf00f0b0dc929589e508054a0c181de02444065f4e8aa22a005b36cf1"
     },
     "structure/sources/editions/prosper-gueranger/the-liturgical-year/1890-english-duffy-1890-volume-12.json": {
      "bytes": 9563,
@@ -97716,6 +97720,10 @@
     "structure/sources/editions/prosper-gueranger/the-liturgical-year/1913-french-oudin-1913-volume-13.json": {
      "bytes": 8885,
      "sha256": "a66937eac08930cbcadac555b37e4c994e8a2a34f6af57b682033c0402389a01"
+    },
+    "structure/sources/editions/prosper-gueranger/the-liturgical-year/2026-english-sensusfidelium-web-2026-11-16.json": {
+     "bytes": 1760,
+     "sha256": "55b52925043100ee6af2c43205b07be421f793435684ababdc53495d301f0eaa"
     },
     "structure/sources/editions/protestant-episcopal-church-in-the-united-states-of-america/book-of-common-prayer/1867-mohawk-williams-new-york-1867.json": {
      "bytes": 3431,
@@ -98148,6 +98156,10 @@
     "structure/sources/editions/society-of-jesus/acta-romana-societatis-iesu/undated-volume-vi-bound.json": {
      "bytes": 2362,
      "sha256": "e6e45a9ea0d435ab8c4ce4b5a6e03ba0f6693e281e4e4fad1338f80c93f942c3"
+    },
+    "structure/sources/editions/society-of-saint-pius-x/ordo/2026-web-2026-11-16.json": {
+     "bytes": 1239,
+     "sha256": "39ab8f7c258a4eaf79e6f8369896587cf4f334f964abc037bc8dcbdca69b982c"
     },
     "structure/sources/editions/staatsbibliothek-zu-berlin/gesamtkatalog-der-wiegendrucke/2026-2026-10-20.json": {
      "bytes": 2354,
@@ -99314,8 +99326,8 @@
      "sha256": "ffaf08c0f47cd6ab1d4761546a9e290ce69420b185c891d67395fcc17d5d9d5e"
     },
     "structure/sources/index.json": {
-     "bytes": 196128,
-     "sha256": "66eb03dcc0163e34e869efc8ff9b5dfa38cc64e3e8281a70efde78706c5cdbb1"
+     "bytes": 196171,
+     "sha256": "7c60ba888ccd1c4575b748e37af4c3d3e61023d58ec1789533e6fcf1d57a120c"
     },
     "structure/sources/text/passage.abbey-of-saint-gall.hartker-antiphonary.1900-solesmes-facsimile.fulgentibus-latin-checked-20261029.json": {
      "bytes": 1546,
@@ -117256,21 +117268,21 @@
    },
    "id": "sources",
    "inputs": {
-    "content": "03185692295d8e94e1e696699b448193d6f8a4afa28053e92275a1a30af01224",
-    "count": 80940,
+    "content": "66bbe102aa3dc7ddf9bd349b88b4c46b6cc73f0a788343be8f816ae9e67842b5",
+    "count": 81062,
     "generator": "9de3c7196f34f9e0ed3b845bc5336d409992c83aba0c1353510968d32e8fbcf2",
     "lock": "62ed728e10b17c7b6dfeb6374c13b017114a326e33d3fc30e66f4b6576f87306",
-    "membership": "99cdd1e1575b9a4ca5aa9354a1ba0aed15e1f095e384a4cdfac3e9ed593794fe",
-    "rights": "e9845f7abf960ba54b88a602913bc8549f5cd15e8f0d4440ad1b4e389174601b",
+    "membership": "d83677499863e28f013427ca31f581ee8adc70708d3cfba790a52b6104e5bf6d",
+    "rights": "1668fa980bd97fecfb82f6d24a6e6b904045f74d0e1dc5ab84e5c0d1483905a1",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "969ba6f4b3a048e857aea47f60b19a1cd96631ce46640b8184222c2d21ff4a29"
+    "sha256": "53cd90e4fcc33ea84bdcc9c34b205ce6314b0dcb66ac85183167d97d91508173"
    },
-   "key": "8eceaa2bf9e37c48c58eafc615c0d93c2b03faf29aba2b874a0c585c23006d23",
-   "path_set_sha256": "abedf930b9a325004ae042829071e8e4e8c8559fa85c1b433cc247c48f68617d"
+   "key": "c8e9e774a9bba9ec78400587dca3c3d640c68d7be7be6f5d9b4566c88b8c6d0d",
+   "path_set_sha256": "d6427f0f6903d095497d95429608a0451bdb657010ed9b16828f2581fda9a4af"
   },
   {
-   "bytes": 27165039,
-   "count": 279,
+   "bytes": 27314962,
+   "count": 282,
    "files": {
     "web-editions/claude/articles/canon-law/clerical-celibacy-chastity-and-continence.json": {
      "bytes": 201884,
@@ -117389,164 +117401,164 @@
      "sha256": "1eb0e38bcc357fba502e37648f3487efc173ee6b97008b5bd3882123fd517a7a"
     },
     "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost.json": {
-     "bytes": 115246,
-     "sha256": "a9b00952cc2d1cfba0ca8affe0714901206273a10f0dc864b858f50f46c955cd"
+     "bytes": 115364,
+     "sha256": "fb99aed525ae6b0a5b8a8af4c086b30bcc4d589a55fc133be4faac7b8f793ae0"
     },
     "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost-synthesis.json": {
-     "bytes": 57098,
-     "sha256": "edb11ef85dffbd9f4d86eb6a712d61ff08f1ff7126cc44870fc4e9502845c665"
+     "bytes": 57298,
+     "sha256": "65b635131d1abcf853ac28f1da6b7d01018bbf695d094c274079b7dc1f991908"
     },
     "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost.json": {
-     "bytes": 138458,
-     "sha256": "6941792d747bf8ebe57cac380177c3650065055dbd37b04f5af324045b70eca3"
+     "bytes": 138658,
+     "sha256": "e91a77e984eab455a6cb11d47c97966113989f3f44a1a5dd394c6b8274e35f40"
     },
     "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost-synthesis.json": {
-     "bytes": 85659,
-     "sha256": "b86096bc382b699b8f75045009b528271c046254a63ef6b7dbbe844789f102e5"
+     "bytes": 85831,
+     "sha256": "7063f1fb42130aa4e18346d04c6e2bb00c71251c59b9691efd4cc624933eb1ee"
     },
     "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost.json": {
-     "bytes": 162683,
-     "sha256": "1c0d6afd553332c6813e7142d08d49ec72a4f17d6316739e0cfa50e0da41f4e1"
+     "bytes": 162855,
+     "sha256": "7355b338f8f4403da79a02c273404db77d244f7f399d9b7dd6e8b045867e39a1"
     },
     "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost-synthesis.json": {
-     "bytes": 95624,
-     "sha256": "c00488868539877cc211eeb997c0604a50843029990e6221ba9d392f7dfc3293"
+     "bytes": 95796,
+     "sha256": "0728541dc25984560888a7cf1e3e717073d7a684f231564c1d4455dc2313c2b2"
     },
     "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.json": {
-     "bytes": 165759,
-     "sha256": "f145b311b0b5706fb617d69b9989d4f207f0bb590a72d5a016b329095a2cfb21"
+     "bytes": 165931,
+     "sha256": "0202d70342c3da82dc8f3af36b1c9ca4f474fd1dbf5d863714aa86ad191087f2"
     },
     "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost-synthesis.json": {
-     "bytes": 94702,
-     "sha256": "2dc614f2262eaea5a19c28f6ad4a6f0aec9115f17f2b21311ec53abd155ff0f4"
+     "bytes": 94874,
+     "sha256": "2667627a4c7f362cfb39f36452d5719006b2aa7956a380921dbc87c2bdff3f9b"
     },
     "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.json": {
-     "bytes": 200250,
-     "sha256": "a29fd53f2282a50a21aa02a36bb3ed45d3160f2d58b026a526ad8518343a8205"
+     "bytes": 200422,
+     "sha256": "54a489d15586c4fb8f7fe01e76ef0b6091ab0c58a0fe47724059d9fead2e9a62"
     },
     "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost-synthesis.json": {
-     "bytes": 126270,
-     "sha256": "bc715f9bd83cba3c3474b2c6b1f92911ef884c649dd318be562c524854a956b4"
+     "bytes": 126455,
+     "sha256": "ef53d4a5ab31fafed649d769e04a94e9553e466a35a9a19f54bffb0cc3cd5553"
     },
     "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.json": {
-     "bytes": 171693,
-     "sha256": "7b9f9065712a01cdc1aaf1eccf4429476517e4485783ec7e56080d43b6220a7e"
+     "bytes": 171878,
+     "sha256": "ed83be4f36ee7b624edad78b97f815e852b2d956c2a9a1c93ca24d5d7cec2640"
     },
     "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost-synthesis.json": {
-     "bytes": 140677,
-     "sha256": "4bada9b974c3dca057cb294923161a39664957ee80c8eacb8e8d792e92e7bffb"
+     "bytes": 140903,
+     "sha256": "ff22202b47b4d6ec9e1ff7acb2388969a24819d03ad03a107e0493d6b35a63e0"
     },
     "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost.json": {
-     "bytes": 208921,
-     "sha256": "dbd80ccb1236ae8df711d5379b91010fba4f6353ed0dbc55c08ac2c4ff2ae9ee"
+     "bytes": 209147,
+     "sha256": "a9cc72f696ce878bdd2e4e20d94fefc33d67a1cd33ca51a352b345fe01b77dfc"
     },
     "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-homily.json": {
      "bytes": 14048,
      "sha256": "be454f2bd6f42e767de322fdc2e02fa64461c891204a2041e902d5f592ffa6d5"
     },
     "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-synthesis.json": {
-     "bytes": 44217,
-     "sha256": "f8a338ae4e82a52f45210b8acbb7cbed1623cd077d77d8e78e266bcaa214df21"
+     "bytes": 44443,
+     "sha256": "8ef9d6da38eae95c8455d08b204bbb19dd5df7a274d35f4de923d8df4123d56e"
     },
     "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.json": {
-     "bytes": 118425,
-     "sha256": "565fe69a53710e2d067b268cdb8f3e06fe990392f12dbfe9b048ce46ed7b761d"
+     "bytes": 118651,
+     "sha256": "0f3446809be42b7aa3247ff91f6255a921beb2dc14994b76dd36c78efa885dda"
     },
     "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost-homily.json": {
      "bytes": 14820,
      "sha256": "7126a38c6ee9986219babd2bf3dfb58c5fea7d1212e0092f7410abeb55de85e3"
     },
     "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost-synthesis.json": {
-     "bytes": 53572,
-     "sha256": "d4f1656a0bc8a507870b74a291b2781fde80a554eee3b5ac97d3464530cb3df9"
+     "bytes": 53744,
+     "sha256": "5515a1e5b5fc1acaa4f244fffc04d020276e7536115aa3a814786a1062e00d0f"
     },
     "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost.json": {
-     "bytes": 132136,
-     "sha256": "cfa625831026da8ba14fc8aa0bd7676fe0a0e59f1d4aaef49378d28bcdd7c9e8"
+     "bytes": 132308,
+     "sha256": "0cbbe0a9e2b9f6e8a3ff7caa3b856f09aa7ca1b7cba338c71145fa45c3c8491d"
     },
     "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-homily.json": {
      "bytes": 14620,
      "sha256": "25a001545ef79b308431d9ae6c5a8144958912524f1dedc9b745aa0564446235"
     },
     "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-synthesis.json": {
-     "bytes": 57069,
-     "sha256": "e006d0133114633396dc89b3499d0d0f693e83d9b022de876d1af462d86a750b"
+     "bytes": 57308,
+     "sha256": "8bcde5aa869d390a636e32d9b40712a3e9d882583f73a55c2f59225f910d4bfe"
     },
     "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.json": {
-     "bytes": 137966,
-     "sha256": "bb63489e694f21db8122e61b80bdded50819064f684eabebef251ac998706165"
+     "bytes": 138205,
+     "sha256": "1e4270fe909a53e8a64359899315726aa29da34d8cd896d3c4ac80ddd20fb6c7"
     },
     "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost-homily.json": {
      "bytes": 14542,
      "sha256": "9a0c9a90d99ab165573dbb6adafb95ca2d964b49010a2b8945df68a821a3de7c"
     },
     "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost-synthesis.json": {
-     "bytes": 57628,
-     "sha256": "511f6d40da195612bccf429b8a910401fd4bec5f956de5510ac3d21c816a017d"
+     "bytes": 57813,
+     "sha256": "61acba6135a02b3bf9235b0d3cfdbaa2d898a7bf7a904cffdb0a4101d6cd2d18"
     },
     "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost.json": {
-     "bytes": 127341,
-     "sha256": "90e31430e574a737fb9c56b0e0c833ea7b3d86b37db9503590ff6c5832659ab7"
+     "bytes": 127526,
+     "sha256": "ec8557ecfe3a67e267d30ead1d19efbf1a3cc5dfd4a68fd4866c00d059d50ba1"
     },
     "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-homily.json": {
      "bytes": 15064,
      "sha256": "b93d6b56722e5e2dd1870d1287a6d2b230cb846b0e9cc8333ab7928718ffbb01"
     },
     "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis.json": {
-     "bytes": 56655,
-     "sha256": "84b76ea9a5e30af23cd920f2e0e4197a6f0dc0bf50b0588fe4c5a4a0e4d130cb"
+     "bytes": 56915,
+     "sha256": "a0cca2238c11e0ecac49398e7b611e5b6e7a1f30493c82ca69bde32f4d0e93e9"
     },
     "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.json": {
-     "bytes": 147967,
-     "sha256": "8959eb07ea73d82259f856744046e000e1aff64d4c4f6cdc3ef70a16a1e72820"
+     "bytes": 148227,
+     "sha256": "3b36b8dff796ff8e8c25cebe8ba53af1bd3dbc0db2f1aa2a243b812b02fb012f"
     },
     "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany-homily.json": {
      "bytes": 19813,
      "sha256": "2b488f2e25974362419dbe01fa4a512b1e126f08e00f88ab3175dccb27660e53"
     },
     "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany-synthesis.json": {
-     "bytes": 49811,
-     "sha256": "c3f92337e4223899f038c00fd232cef016faa2378e78ddf1b93bd26d4fe4841b"
+     "bytes": 50097,
+     "sha256": "f78aca1372dd11b3786da92acbec021878e9b1a34171415eb830ccbba54c2605"
     },
     "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany.json": {
-     "bytes": 120033,
-     "sha256": "1e51c9f1ee6ef07b27ee274570fd7144d5ac0eb9ede9a77c87b5c1717273a0e0"
+     "bytes": 120319,
+     "sha256": "46e7de4615026673cdd0b3f97261ff51ac4741523a81d3eaaeb54d16d2b04c26"
     },
     "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-homily.json": {
      "bytes": 18238,
      "sha256": "a2a02ae122c6a60e6a86fa54fcd8deaccbeb528a2f0fb300f45deaefb68b0cd1"
     },
     "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-synthesis.json": {
-     "bytes": 50903,
-     "sha256": "bf09c059a9c0887ab39ee260ad420a5f317416ffb148d1a5c912c45ef87d97eb"
+     "bytes": 51189,
+     "sha256": "16437054769339ac2f43a24a6d25a6ba824e121082adf495312698fe0b151a81"
     },
     "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany.json": {
-     "bytes": 119968,
-     "sha256": "47ecd5b4db2b8e7ae403d4ed2b2a5a603cfa4ffe078d75f3f3988347f6cda4cf"
+     "bytes": 120254,
+     "sha256": "6280c0b741d58347fee58c595065cfae9158fb0978fdfbf922a3802ec4e27778"
     },
     "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-homily.json": {
      "bytes": 19859,
      "sha256": "59ab9fbb9fec913b67fb6ef3afd2c6744f22edb0cf552ee0165f623b89088732"
     },
     "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-synthesis.json": {
-     "bytes": 51270,
-     "sha256": "694814e424beee4017cb98003e513aeb2cf47d02005da70e4b64155bb645ea60"
+     "bytes": 51555,
+     "sha256": "b8467758ec4d8686da729d913f8cebf54cf1debd25b2d337d05217450b0a67d7"
     },
     "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king.json": {
-     "bytes": 128754,
-     "sha256": "230248a5ebcf0c58e4afce751cf029f30da31fb7d28dee06d386e0ef78017f69"
+     "bytes": 129039,
+     "sha256": "4ddbdaed3ab9ad5ab10bcaa16263bffe768e9cee58672d944e467d6e5feb70bb"
     },
     "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-homily.json": {
      "bytes": 20395,
      "sha256": "14706e4b71aa55667f144f789b1014531b5231682da54162234edcbca0662914"
     },
     "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-synthesis.json": {
-     "bytes": 48035,
-     "sha256": "a65eba3478483673a966648579b7c56da8f94a9dd3036e7165f6fa7e876eef64"
+     "bytes": 48163,
+     "sha256": "76de1141d8c781ac2005c054f4a9f0c0b0884b129e766aa31b837b720d4769b1"
     },
     "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints.json": {
-     "bytes": 118406,
-     "sha256": "6e332aec5ae55d69f57aeabf093127eb956dd7c40f771258124b0d30989c4cbb"
+     "bytes": 118534,
+     "sha256": "29275d9737c6561a048f039cfc8d6685bc25b7c69ea53f500e0d58aaaa919473"
     },
     "web-editions/claude/liturgy/roman-rite/1962/reference/assembling-the-mass.json": {
      "bytes": 146356,
@@ -117566,63 +117578,63 @@
     },
     "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a.json": {
      "bytes": 86474,
-     "sha256": "c6a014a5a81a8aeeef90c50413f24ec840d7bf53ecd2d9cfeeeb7f42414d5eb8"
+     "sha256": "683e4d2a73954e106be6bdb44b63e2ee82ba328281404df37e3d7f1d76bda57d"
     },
     "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a-synthesis.json": {
      "bytes": 57837,
-     "sha256": "9a4f3b57293e8ebdc8930ef65968d2b1fd1e5b70c5fb08ed24a72fce8cbb4e91"
+     "sha256": "585b7907ee906574e7118ec8948af1cca317113fdb745128882c969868dc5b78"
     },
     "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a.json": {
      "bytes": 116943,
-     "sha256": "68775ee041f01bca5682928ad3ba5b462d88ded57522fbed951dafb8c88fa31b"
+     "sha256": "812f08ecabccf9e467f9cea624da7e084fe325c746d1affa44d85e89797c2446"
     },
     "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-homily.json": {
      "bytes": 16254,
      "sha256": "3be3c11fab0dc41241eb2cddc6370f67f75e87894062306fe79eb8abda949eeb"
     },
     "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-synthesis.json": {
-     "bytes": 44542,
-     "sha256": "73a6fa645f81a39b79788c787ad121b2a229fc35c00186565f33c44182db5ff6"
+     "bytes": 44714,
+     "sha256": "73fdeab434f4670d8b45c77a56b862499f3af84caf8e25079eb9a60675e9c0c9"
     },
     "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.json": {
-     "bytes": 126208,
-     "sha256": "8c27c56770b6ccc8cf20e6908de3dd24319421e1774f77f65614a2803b673fac"
+     "bytes": 126380,
+     "sha256": "dc8432100dc5748a5e413a8cf5258400e5e9f276a691544ab443b937dca7f28f"
     },
     "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a-homily.json": {
      "bytes": 19551,
      "sha256": "f324a58a8d044edc6a50f8a59b0c05942fcc058ba7b9bc7b6b09fa4c204362cb"
     },
     "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a-synthesis.json": {
-     "bytes": 57896,
-     "sha256": "4d267a990986b5e7724017be41340c6c12742083ba4c71124be872ee497b6024"
+     "bytes": 58014,
+     "sha256": "2b2054c2bbab813627e9a69927c382bcbc575a385d05e75d539f4dc434c2e3a7"
     },
     "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a.json": {
-     "bytes": 135367,
-     "sha256": "1f69b6bd7a47b26b3a41f3ef4dc59ad44cefe14507cf8878210cf0801ba5fdea"
+     "bytes": 135485,
+     "sha256": "afc99d45f085b4d8b9ef435c5f8b1f7ef392536a757bf32f3b758a87c87e787d"
     },
     "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-homily.json": {
      "bytes": 19685,
      "sha256": "5f8c00b7e8e8d14849549df757ee68157f6acb04bc0f95062dd49af230a094e2"
     },
     "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-synthesis.json": {
-     "bytes": 54967,
-     "sha256": "3f49f46c61a707309d2f02c9b83482dccbf3026dcfa78170c0255766a47911da"
+     "bytes": 55044,
+     "sha256": "fda185390f1803c8d45e2169185e2081577ac73d6389c07a5becc911389ec4e8"
     },
     "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.json": {
-     "bytes": 154464,
-     "sha256": "be0ff634215008dfdc3fa79229db5ee7685bd2ce1684e33afac6f783034a25d0"
+     "bytes": 154541,
+     "sha256": "c6656519d96b095638d880109634bc6e328e6a76a52e228e0a3904d4df1a7648"
     },
     "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-homily.json": {
      "bytes": 20885,
      "sha256": "2a5898f0af7dd91eb5a601b616f43f2645722a3d36f809a202ba691114ab62f7"
     },
     "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis.json": {
-     "bytes": 53934,
-     "sha256": "12fa1f3b5cc4456e9f622a4900770c768941c676f6bbde004a505535d7830031"
+     "bytes": 54118,
+     "sha256": "71cfd663775157d24f91123803ded484eb995aba9ee29e8a2e209c81b68df795"
     },
     "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.json": {
-     "bytes": 142032,
-     "sha256": "edf9c8ccc0a5972f865019a9251a3467aab5373e8160bb290b855fcd5805960c"
+     "bytes": 142216,
+     "sha256": "68249aea3ba53fce8afa1f12ade4e54e4b31eb65dda819b191c909065b9ab6ba"
     },
     "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar.json": {
      "bytes": 143364,
@@ -117970,199 +117982,211 @@
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass.json": {
      "bytes": 67144,
-     "sha256": "865af30748b0b5f0fbeed97c9f53e5e4c365fab4a3455202b9acc98d0a2bff32"
+     "sha256": "826ddd510b9c20a0992654a16bce25df3587a52019ce865ab9b5114c96b8a35b"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/39-trinity-sunday.json": {
-     "bytes": 51856,
-     "sha256": "db8b61e5b2bbd4d04c161c01c39cedcc2984fb86ac7d851c2af90e5cc546080a"
+     "bytes": 51920,
+     "sha256": "fd40f683b7b5ef2b81716b5dc03312ff0860f3e64e73c12606377eec73aae55d"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/41-second-after-pentecost.json": {
-     "bytes": 47179,
-     "sha256": "5ba99c6c8d4edd042d844cc93e6fbf37d55418fdf0cfa21bc357b7bf4fc0f7b8"
+     "bytes": 47351,
+     "sha256": "e5ddf03530bb948fb1d3fbe1ac94d4530bee09ce5ec8e40d96335491c396ad04"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/43-third-after-pentecost.json": {
-     "bytes": 47521,
-     "sha256": "81814dbce3eee027621cae1fcd99b8e984cd4e77a91699fb51d66cd02d214e6a"
+     "bytes": 47693,
+     "sha256": "3ca3c7139c3aea81e281540058169d7d55723e263df153f5bcef62849fe948de"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/44-fourth-after-pentecost.json": {
-     "bytes": 41992,
-     "sha256": "9f1d4aa2d1a9657f98194ca79bb4a59d626642d5b5b51b84e3593811df8ffea1"
+     "bytes": 42218,
+     "sha256": "41047f5ee8b0b87a860cf16a7f89fb0cca7c49b605609d0e4d97db663e9786eb"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/45-fifth-after-pentecost.json": {
-     "bytes": 51898,
-     "sha256": "83a5571031cf184fd3b55d9ccd7a25b1a91a6576c2b63163d11fa82e247991c1"
+     "bytes": 52178,
+     "sha256": "5065b89b3ff79363ac39f910c8912c52883c60afdbca9a66b305e89c3a7ab09e"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/46-sixth-after-pentecost.json": {
-     "bytes": 49179,
-     "sha256": "1f264f07e0ad1be17296ad88cd2088dcf98e3a22a2b53038efe4a4f4441eb29a"
+     "bytes": 49405,
+     "sha256": "73fcd874b2c67ff605ebdf166b6100f5ab1d7c963c7baf53357877bcad5ad3ad"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/47-seventh-after-pentecost.json": {
-     "bytes": 54219,
-     "sha256": "ae01c350b40315a8185aec2a4a1378beb75b65cdcb5003ba99117b1e85e14a7e"
+     "bytes": 54337,
+     "sha256": "7bca94eb0f56573d77828a6e30da9121125a7b1af5407539d9c389b134c92153"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost.json": {
-     "bytes": 50523,
-     "sha256": "a5c6ead3abc1f8424e490e8a6646bfcdb8b0b56146bd51fda18f5bfb6531b237"
+     "bytes": 50641,
+     "sha256": "701313adbe7a6b867ca93207ecaf8fd4f7cf3182442c1571a83c8dc1ca85b7ca"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost-synthesis.json": {
-     "bytes": 30209,
-     "sha256": "6b6835c6c3c8bc75ceefa27b58e4365a2b1e3d1abe7f0d517a7a80b9b28c03c4"
+     "bytes": 30409,
+     "sha256": "47db8304d9018768a67f1c54b9b0d0db14cccf9a28bad9a3a64350c983019a53"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost.json": {
-     "bytes": 61663,
-     "sha256": "85f852f7513733030af7b1476a15d6e3ef764fc7ba2fdb02ad8d9131597c2c4b"
+     "bytes": 61863,
+     "sha256": "c657f1824ff0baa6a3f8ff6cbbbae50daff0b660211276a9da4843f43cbdf81e"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost-synthesis.json": {
-     "bytes": 40507,
-     "sha256": "e01e78c0545f57fd2f639dedae960da9d701e3a0488807e9b98acfed260f1a50"
+     "bytes": 40733,
+     "sha256": "a7c60dd9d9321278d2ad671debf5d816ae0f391e01f7d78ab87e59d4ecf39976"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost.json": {
-     "bytes": 78716,
-     "sha256": "87cee81e522e75d06e63e9782b38e0b21ed7a02f8a6a6c5f498899582bb18e41"
+     "bytes": 78942,
+     "sha256": "2f7800ed9a8fe5a92a59a20c7c43e6c95c9996296ec406e1d2104a973a2c7140"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost-synthesis.json": {
-     "bytes": 61754,
-     "sha256": "0606431846a608980174c18281bf145fdc03afdf7ff38c22eaabf0c0119c51a9"
+     "bytes": 61926,
+     "sha256": "8bddb85ef3493fd993d1805ca0e1085768db396d68f2fdf3f52dd0a4c2ea7dca"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost.json": {
-     "bytes": 92060,
-     "sha256": "a177c393b3fcf10fa32a5e1619f2f1276cd86172ef2059ac98163c275500f596"
+     "bytes": 92232,
+     "sha256": "072cf6d6326d0fd0393acb3cd8b11556de2d5cbc840a30755472d1fc9b52144f"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost-synthesis.json": {
-     "bytes": 65140,
-     "sha256": "f2cefafc1732a94f24f5ef3d7ac0d9c18b050a1b2c99bd686a2c879a9f58a77f"
+     "bytes": 65312,
+     "sha256": "98dbad7238465af5c1c962c48c0e031ef9302b84088d5134d804753afe6b9ac2"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.json": {
-     "bytes": 100752,
-     "sha256": "0a3b874584c7ce0b9e6b410626df2d7cf99f36192e129d73c91a117742db8f55"
+     "bytes": 100924,
+     "sha256": "f8d8fb3a1c4e0ac228915e439068b8a70895dd92fe064a02098850a56ea749db"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost-synthesis.json": {
-     "bytes": 78492,
-     "sha256": "25b00c8060c7a20d5cc59d5bd760c89d75ea5df5782013d013ce97a2f14dc3c6"
+     "bytes": 78664,
+     "sha256": "1e84959631c76ceda53d513b9d87fdaea98c845f216d96efdac1c707b6d89ca8"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.json": {
-     "bytes": 118557,
-     "sha256": "de03bde9ef843ba1192bcf762d17e7d6b763ae727773431c1cfc0c88c9867826"
+     "bytes": 118729,
+     "sha256": "dadb9c6285f32378236ce9204bee36ee5d9904d23ee2e4e85344bdc5228d8c3a"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost-synthesis.json": {
-     "bytes": 66766,
-     "sha256": "4dcefe3008aece224f89afa82f5246b66dbd8128f5b1f6e90dabf4477c4905ad"
+     "bytes": 66938,
+     "sha256": "92409a4197802231cabe73184cced24e1e5dfa831f18cb05eaccb273ceb451ba"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost.json": {
-     "bytes": 88687,
-     "sha256": "8c71872ad162729f756e91efa705ca63b7e004e11828b3b6348d6b00e7522baf"
+     "bytes": 88859,
+     "sha256": "9b3e46425963e578f4c7bb6b229c0da6f26639500db373b81c2360a986d9f22e"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost-synthesis.json": {
-     "bytes": 62884,
-     "sha256": "18c7f6a6e3ba9d3978f13ff959a299b7f9a8888094538fca2f6165eb28c935f8"
+     "bytes": 63069,
+     "sha256": "17bd8cffb7e83b84ab154951c75a1bce4e403a009135a7f1af78b6bfd861332a"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.json": {
-     "bytes": 76541,
-     "sha256": "b7eee034822817f6d50cbae2854f6ac0a31e3cd713277bc242bae02d19fbc384"
+     "bytes": 76726,
+     "sha256": "eb164cf667273a1ae6bbad07c3eabe3b7e8b0864e5c7239f7c21820d951dbd1d"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost-synthesis.json": {
-     "bytes": 64594,
-     "sha256": "ee603debd3e420b30466e819fba6e82333d76fc7e95c65f42f81c4fd71eda2e2"
+     "bytes": 64820,
+     "sha256": "e483dd5167fa0c4244435acd2992242a0a161cd1e8597e3cc604a2678dd57426"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost.json": {
-     "bytes": 87772,
-     "sha256": "a06843b0e464c322f7de1685ee54046de1957da4b9072ca9486e6075d924c357"
+     "bytes": 87998,
+     "sha256": "cafc95c60f763c3ace506da53ec28bd326390f68f55d748e6f12068e7c612905"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-homily.json": {
      "bytes": 11873,
      "sha256": "d9fc6df6058716bbb95424c08175f2adc8511fc7d0c117d755aa1acdba303df1"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-synthesis.json": {
-     "bytes": 38807,
-     "sha256": "658dccf044dab78294327fa3f34d64fd55951dba4f4ef45b316ea62200f6bcd6"
+     "bytes": 39033,
+     "sha256": "deb7e0c3d01f47a2062d4249c2bef6d956c30de924fbae67e1281c0ba3570bf4"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.json": {
-     "bytes": 81301,
-     "sha256": "d6217f3e36726502d001e253c00dbf6ed11c706e42594c5e6ddc4f83886150f7"
+     "bytes": 81527,
+     "sha256": "5f978af0b7a49ac082dff2da248c50459b9ef8a07ca30e27eaebfd7be4eeabf8"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-homily.json": {
      "bytes": 11988,
      "sha256": "b52aa86f628c20914139052c08212368764dde6569e95fd7128f7d3ebc5bbc6b"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-synthesis.json": {
-     "bytes": 37475,
-     "sha256": "072c687c8229ab54b3817571496726cb5157d52b2ad4e182e8849c6188f627b9"
+     "bytes": 37714,
+     "sha256": "ca38920d8274aa535e71ede319f827f1b2d298a2ce85b5de8bda47665176af41"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.json": {
-     "bytes": 73923,
-     "sha256": "387db2aa973bbaaf50a2816c62540aafd10139f168d2180ca876c543854cdb98"
+     "bytes": 74162,
+     "sha256": "40c1c7812cb043a849a6b66eacd4c4668592ba2fbb5574e23d6caa38dc15efe3"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost-homily.json": {
      "bytes": 12109,
      "sha256": "e94579c391c1cb192fc5731380ba9dfdedcf2ae7d66d210584a7eb5d42815999"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost-synthesis.json": {
-     "bytes": 38821,
-     "sha256": "0f1602a8c1dbcce161c6d34562aac5e3315ae8c15b3fd52eaaa58ace2f22475a"
+     "bytes": 39006,
+     "sha256": "c34783c637cde9a1ee91ea758e6dcfebcab8571a1b530dbf185de57870b11c67"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost.json": {
-     "bytes": 78749,
-     "sha256": "f4c70a0c52cdc1e7d3baedf66e2ef4b038e2fa1e1d1489fd4113bd6a23c3e1a5"
+     "bytes": 78934,
+     "sha256": "afa5cb91ed9e3eeec06b33f4822e81ff333fc4af1064c78d6a8990b822e84bfb"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-homily.json": {
      "bytes": 11765,
      "sha256": "9d524b93456bb84cbb9d4cb30989c54d3f7578e3159b1c9501a28b5b563b9220"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis.json": {
-     "bytes": 36192,
-     "sha256": "eed680e814e53a99ffd00b802c726572b586cbc2bfd20904a84ff9bd3a6ae645"
+     "bytes": 36452,
+     "sha256": "601ee3aea315efd5eea72a178c3ec75e134daa1a0342e57c4a12ca8efa910dfb"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.json": {
-     "bytes": 86084,
-     "sha256": "832a598b2ee1df95382450eff978341c075129e0717ff2c6e6f7e80a23b1bbc8"
+     "bytes": 86344,
+     "sha256": "79b2ae80643f77bae8680a9c932f6f7d310a6ac331f182ed133e9e1998e8fdd9"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany-homily.json": {
      "bytes": 12115,
      "sha256": "35c9f8febfeed35e2fbd003c3c086b6ba56b837e333f3e5497184dfba39b79b8"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany-synthesis.json": {
-     "bytes": 34576,
-     "sha256": "cc51fd9a1e23b2fafc69b0e4ecef3cbda5d6c2da3da4e9df03289554743adac2"
+     "bytes": 34862,
+     "sha256": "d887e2bc1b73fb0295d58c13deed16d0fcd0dac0d57cbf3522ce5ed3072a9fea"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany.json": {
-     "bytes": 73046,
-     "sha256": "d9c47948a2076271c8e980625375b1b4d9d6c87d7c09971c5e4c09e2fbb792f1"
+     "bytes": 73332,
+     "sha256": "c6369c883d4a86a4ff5d5d4413798d0cd7673bbe6a90e3b47492efc003a6fd47"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-homily.json": {
      "bytes": 12188,
      "sha256": "502a8d984102cdfc519c749d9ad7e5ce4ba7c768478346ed01deb1e52057c91b"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-synthesis.json": {
-     "bytes": 37374,
-     "sha256": "cbb6c508194d8c6e5fadc2fade34bc164205e2468e2fa3db85cd2486e12d1887"
+     "bytes": 37660,
+     "sha256": "63132e39186c71ebfef93eaea7a030cf2fc439abc16675ab6e780b8fa1d0ebd0"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany.json": {
-     "bytes": 82726,
-     "sha256": "186d1d177358003838df03613569118c87ada2cc0a07cb811af5d0a0afcccbf4"
+     "bytes": 83012,
+     "sha256": "f8ba05fe7cd53a3450f7eed6da55aa0f6b179a6e3ee7759fd7a03c818bf618fc"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost-homily.json": {
+     "bytes": 11925,
+     "sha256": "8a48f2c8643a88b009816adb48ed02956fa4c635733f2c14cb58a19acc61ef55"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost-synthesis.json": {
+     "bytes": 32868,
+     "sha256": "65d97edf2f73612da9b0ad262b59bc1b0389d84807df63b2621f6528b2bae47e"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost.json": {
+     "bytes": 85695,
+     "sha256": "bc16e90857eef24d1808ddc308eabf030c833954b526b72acce025e2191b1323"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-homily.json": {
      "bytes": 11571,
      "sha256": "7c2f2260da7850ae00159a51de3bbe18b4df43208a3521ba41cd7ae21fadacfd"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-synthesis.json": {
-     "bytes": 36966,
-     "sha256": "923e796afc9d0c02e6bddb51aa737d45b54e7dbe8e8cc7d0fdb6efe4f96c5bd5"
+     "bytes": 37251,
+     "sha256": "956020b40e8cb857dff5cd8e360c051832900d9dbfea63c1629bc15aa84349e4"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king.json": {
-     "bytes": 72355,
-     "sha256": "f204261785bb3b65c600399e42672ae8d53af4c07445d0f6322550d0b99d24c5"
+     "bytes": 72640,
+     "sha256": "206fce03c247363727eade9069eeffaca5803ea24528e769d54f399ed1428192"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-homily.json": {
      "bytes": 11845,
      "sha256": "d3fee350c376097a976b5fce9c88cfebba44d064907fd14a11225275c15d1583"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-synthesis.json": {
-     "bytes": 36222,
-     "sha256": "e6f3936558101f97ed4593a37b217dcd879a3bcc5164baf41cb8ede93255c8e7"
+     "bytes": 36350,
+     "sha256": "6c12894c8d4744876401fae99a346b7e046e198e2ea6e23cfef7d2ea8eb8f8d3"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints.json": {
-     "bytes": 76257,
-     "sha256": "2344502dbfbeb6d46f60f505ca9e22a387c778deffb0408a7ec519f2e2e11cbb"
+     "bytes": 76385,
+     "sha256": "c8ae462a168e0c0c126390de1a31d47bc59735fb9fd78b57273b944d5dc8c993"
     },
     "web-editions/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass.json": {
      "bytes": 123244,
@@ -118185,136 +118209,136 @@
      "sha256": "fcafbc13562c021b8431733ee9e7784dc6f31977997cd2998e719d40a3b12a33"
     },
     "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-synthesis.json": {
-     "bytes": 35789,
-     "sha256": "87bb6fdd0bd30b3a0ba19addcdec280f35d6cbbfb0e810e00f415efe8391083b"
+     "bytes": 35917,
+     "sha256": "083577e21926eb7f45ee908322a6f5d271b8346d1be4aaf69579f4f1b3043efe"
     },
     "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc.json": {
-     "bytes": 66104,
-     "sha256": "b309e2324060b68e13e2463a8d94c5a736bf3cf2e623d18c423d089d8555550e"
+     "bytes": 66232,
+     "sha256": "dcb7398b9fe13c793fb6042a05eda58bec97e8f974f5e02e62bee9c65b690797"
     },
     "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s26-most-holy-trinity-year-a.json": {
      "bytes": 46359,
-     "sha256": "a1792b2dd855b61f1805c0731869bb5ae0bbe31099ab7d91aa84527a5655de8f"
+     "sha256": "202fe7cfcba6dd14b5d9bec424b40c4d6d5f470a347da9a33b838c2253245dde"
     },
     "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s27-most-holy-body-and-blood-of-christ-year-a.json": {
      "bytes": 49915,
-     "sha256": "81ed7cf77d5fd36297cd178d066d31198cba34188f0715228e03b167e0ec51f8"
+     "sha256": "bb22a0868062d2167db741a5131d0e3be64bac811a8e8cdac493c1e30c649db0"
     },
     "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s37-eleventh-sunday-in-ordinary-time-year-a.json": {
      "bytes": 36051,
-     "sha256": "26cbe6deb8d4a79e00af1985aecfc591ce228e62ffb5a0f2d3c59f7b51ea18aa"
+     "sha256": "6b7c438cf6a41c87fa4608e98da443f4073e10e0cc9ee71602dd87951df223ae"
     },
     "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s38-twelfth-sunday-in-ordinary-time-year-a.json": {
      "bytes": 35636,
-     "sha256": "116b6a20e780d8db0a503ad1bee675fa575c4e13c3dcd34476acf61ed61f87ee"
+     "sha256": "e17595c0e68577de4e62d0d6a72dbea8825f24671b3178f35399c2ec087a5e85"
     },
     "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s39-thirteenth-sunday-in-ordinary-time-year-a.json": {
      "bytes": 36371,
-     "sha256": "6f8431c786255529b5efcc26825443b498767546c0e07800d7893dcb3017c02c"
+     "sha256": "87fd28a0980b30e6aae9010f1dfb7887de95f590842cd341be3429620aef622e"
     },
     "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-fourteenth-sunday-in-ordinary-time-year-a.json": {
      "bytes": 38345,
-     "sha256": "bfd5f9d3a6cd0a0822fadeb97581b4920228441d8cdc0402bc77ec5de1a3498f"
+     "sha256": "660bf201c63802ac544c330eaee841b7984281d915b4ea6cee9c28dffa788cda"
     },
     "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-fifteenth-sunday-in-ordinary-time-year-a.json": {
      "bytes": 40002,
-     "sha256": "35e44d4cd898a6d662d940d07a2fd0b2e34ef82cb56ef22ff0166d3199b35e15"
+     "sha256": "f21d1c41a57d479b220d199265da41c7af37788b7564f75e5f8dbe0e68a48ea0"
     },
     "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a.json": {
      "bytes": 41316,
-     "sha256": "6f6fa513d74f73e64ee1df83e0bb41ee6b7a196efe20a7625522b2ed68c8fbe4"
+     "sha256": "b07e573d725223717cdc7d886de9328b586ccb0b95533f9210c001ed1ac97534"
     },
     "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a-synthesis.json": {
      "bytes": 32346,
-     "sha256": "b3301a750c3730b2b4c40f7d53dadf574a78f5e75502d411bcc0e90a249d7015"
+     "sha256": "9a65c8e72a867654182fcba65c7d4ee166c9699ea257ba006edba7b4f098ad45"
     },
     "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a.json": {
      "bytes": 49119,
-     "sha256": "beef96a1890f87d981ccc69bcc7ab88ce88e8d9909dd35a34b72480b7ae5d37b"
+     "sha256": "154569f7f87a2a92bb3644946cf3eafbd21885d0cff672c43058025f577ddd90"
     },
     "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-a-synthesis.json": {
      "bytes": 21564,
-     "sha256": "b08cc7d1eb1520cfea9a9e724356ffec587e9b40ca5c67990d2a2b0a320c08ef"
+     "sha256": "d868bf79bd94dbedc6890850f3e62129ba24a77757fbd799620742037ce28783"
     },
     "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-a.json": {
      "bytes": 45215,
-     "sha256": "cc652fd82c651a04bf66393f4b5df49d452d42cf39b8048787cc3d4157b50100"
+     "sha256": "e8333bbe7de08dce14cfdcf765a08ce35639d8791eb2d7cf60d0ecc54f0c7411"
     },
     "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-b-synthesis.json": {
      "bytes": 20071,
-     "sha256": "d0686b6b5a186db375ff51884584427a09db55fae6dc582e81c7787bef271cde"
+     "sha256": "d618c5fbeca39fb39e767c366f6ec52b8b72e2d9355e14dc34fc0af2241c4b72"
     },
     "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-b.json": {
      "bytes": 33627,
-     "sha256": "c5bdc1f15a6851adeec4e2154d5bead9b95e6ff97cf26454d99d795ca9dbfd9a"
+     "sha256": "66748c5ae1462f92be696192d566c08e58e630758aa91a5e48801ac43869063f"
     },
     "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c-synthesis.json": {
      "bytes": 14585,
-     "sha256": "2ace92b656ff8243d74d763573810ce672a3a67e9de456dd57cabb6767e3014f"
+     "sha256": "4a45b6597c2cb9fa2f0e19981bba2dbfb4b1a837e00d292052333126187f436b"
     },
     "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c.json": {
      "bytes": 28905,
-     "sha256": "e26d77b64908fbbbb4c89fe70593cb7f6679b5fe0ecb714fcdccc9c71af30f92"
+     "sha256": "0496a5153568f53b2f960a2b9281f82b17c4e3935c538d6abf01464b232bbd07"
     },
     "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-homily.json": {
      "bytes": 12401,
      "sha256": "cb464db4fff81bcdc6608804603a5bb7c15ac913ead30d28dcd854efa53ed3c6"
     },
     "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-synthesis.json": {
-     "bytes": 37977,
-     "sha256": "5488539ba8c178c0759e464ef8706e33d28aee6981179ef89590ba3418de1684"
+     "bytes": 38149,
+     "sha256": "239a8aa3a48b177c71e14c5fefbdb18bc6f03251053c746813d093a916db8f42"
     },
     "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.json": {
-     "bytes": 74681,
-     "sha256": "3c213ef6409bd13c982540fadbb37d34278005371fe44436b8a21866b3ef7e67"
+     "bytes": 74853,
+     "sha256": "f04daafd43e59046187c90144a0a857fc686184eb1f99c1312ef2cceb9bc729f"
     },
     "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-homily.json": {
      "bytes": 12851,
      "sha256": "f84c13be2ccd9619f7e55a712e88590d2927af805ae3ad5a70e06f8cb1039ae2"
     },
     "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-synthesis.json": {
-     "bytes": 37724,
-     "sha256": "5322b23aab6e57e9e295e131a9c88c598779dbb42412f067dcefb509d1164e7a"
+     "bytes": 37788,
+     "sha256": "874934c5af6efdd84ff5d86671a3fbe8c52be7d7ee3103d5af5131ec786d5af7"
     },
     "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a.json": {
-     "bytes": 82089,
-     "sha256": "20fc376c79a360b6ddb697dc671af670dfb619e249d3dd415bc1a97a9c8a987b"
+     "bytes": 82153,
+     "sha256": "b345e6f5072a3860a66597aedc3c65e500d1d3565a58d2af22bc9c78b0196fd1"
     },
     "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-homily.json": {
      "bytes": 11506,
      "sha256": "306931e143f28393a02bc341b0095d21389547563600328b90ac472f50060765"
     },
     "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-synthesis.json": {
-     "bytes": 36788,
-     "sha256": "4371eb651d220143ca17526b17d5dbe0d8299419f1b46444037a699cf7eb1838"
+     "bytes": 36865,
+     "sha256": "920884f98f174ce14b98d37d8b0f1f4486d7dbc5279bcd9d5de351558631d316"
     },
     "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.json": {
-     "bytes": 79399,
-     "sha256": "cfc71023a1f0111dae8e8030c8ddf51638cf7b05c11aeb7e9219a419bd02f0ee"
+     "bytes": 79476,
+     "sha256": "278026917da850f0728be6091841ef2b4bca0db068a83301f7b0a54135381645"
     },
     "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-homily.json": {
      "bytes": 12174,
      "sha256": "b8f96b059e693f66d6418d2e57aaf3f8e21c86e13d284e66a9a3ffb405116317"
     },
     "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis.json": {
-     "bytes": 35857,
-     "sha256": "c254dbed12761fe5d5f9db481b8df03738368df066cc401e00b960fb48beee7a"
+     "bytes": 36041,
+     "sha256": "03388943b94a5c1d9033442b62fe75cda0ca379d0fc679491b066faf9ad7eab1"
     },
     "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.json": {
-     "bytes": 76643,
-     "sha256": "2b3ad730a8af393e1436e3c4a14bd077e328d49ad0dad0056cafdb5ff5cfdd83"
+     "bytes": 76827,
+     "sha256": "b3738eab0fbf3053a2e6d489cff0e5f53020b94d66450073cd5a08d0a8a53805"
     },
     "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a-homily.json": {
      "bytes": 13064,
      "sha256": "f7d2cc20c1b06f9dfcc1a92c743f7b25b322c7154c248afd420db2e7fabbac1e"
     },
     "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a-synthesis.json": {
-     "bytes": 38092,
-     "sha256": "37f6e7f6028b3b471d05b4caca16d653685c2fe015e924f3f4d3f81df617e14c"
+     "bytes": 38285,
+     "sha256": "55c1a28e97cffa4de40c85766ae7d0c8ef9325f24cab1b4be3ef1d0300e334b0"
     },
     "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a.json": {
-     "bytes": 74269,
-     "sha256": "b63f17e7e39593b48b53635eccc544b3a311a8450373bf571f9b5a46ee730ed7"
+     "bytes": 74462,
+     "sha256": "944657e9492e518df378c2294466b8ead4ae1854a9a9b46b5626acab3ff4532a"
     },
     "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar.json": {
      "bytes": 86113,
@@ -118385,23 +118409,23 @@
      "sha256": "e2f772b0680d93c81ca46dc2118d13132ff538679677b2970464e5748b9d962f"
     },
     "web-editions/index.json": {
-     "bytes": 172108,
-     "sha256": "30dd160d77f7f1ea115a232e185332908518b21cdd99e9b71a0cd8348a31b15e"
+     "bytes": 174083,
+     "sha256": "6fd5405588676bf2c1ec5e128f18c3999eef8a504dff0d977fc269ded8106239"
     }
    },
    "id": "web-editions",
    "inputs": {
-    "content": "e12c13108f2e0f4bef80fa6cb0e13a6ab758cd5523120e6acd212eaf6ed5a3d7",
-    "count": 82168,
-    "generator": "487fbcbe6a9e38ebf8a0c2debfdb20e1b3547d7492380d7c3ea1984142d2c4af",
+    "content": "2f8bfc45ebe28dc8b43a3220559aaa8a721dd257ae34e08a19a4b4642fa3a4ed",
+    "count": 82293,
+    "generator": "9a5af3c5494ffd9669ae4ca6c94682c235af296640d0c796bdb44e49ccd753e8",
     "lock": "62ed728e10b17c7b6dfeb6374c13b017114a326e33d3fc30e66f4b6576f87306",
-    "membership": "6fdb4dfe70bcd139d47f5a2bd0953befc8172fdc1343c581595dd3a40ec75a57",
-    "rights": "d7c5bd149bf1b268e25509d6f95ca25dfa73df23a3eeb6d91985f1caf4016d20",
+    "membership": "14ba96bf13c4eb0387d01fd023e25f91d0b7b0b4bf7c2ce8249ad4ab37984a14",
+    "rights": "8f02f36e4006bd553e7b94f8fd9b5bbfe63b9e3d8224559e5683224d11585df7",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "30ac754be89e8cab831bcd23d469a9fd0396bc96125f3cc42801d9cf61189c56"
+    "sha256": "0ea57e18edcf09bacae4e846b9d99c7bc0dcb2005bd7a037e51de7786017e073"
    },
-   "key": "f89ea9a0d8ff5462769ada6bb92ab97d6ff35f1fa1797dc556872583f75f7818",
-   "path_set_sha256": "62d1a07fe98ba09c64cc17f21f34da31eb69498d2cac095e30334a0bafd8f257"
+   "key": "7452641c6b5e46afa80cab619ce30ccbfb6ec4e3f8938c08213fe8f499e42356",
+   "path_set_sha256": "2df83942a5cf5d0b375af7d7f8504d623db87758751da72560cdb821d5a03228"
   }
  ],
  "proof": "two-independent-cold-builds-byte-parity",

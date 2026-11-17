@@ -230,5 +230,255 @@ direct Python comparison differed only because regex tuples become JSON lists.
 The complete source command passes the source graph, both publication
 inventories, containment, author-standing and formulary inventories, and all
 23 commentary tests, then reaches its 300-second limit in Catena accounting.
-It is not a complete-suite pass. The unfinished source targets are rerunning
-with a longer limit. Post-merge revision/conversion verification remains next.
+It is not a complete-suite pass. The unfinished source targets then pass with
+a longer limit: held-corpus accounting, all 17 generated-chronology freshness
+tests, all seven generated-document freshness tests, and the family ledger.
+Together the two invocations cover every source-maintenance target on these
+integrated inputs; the timed-out first invocation is not relabeled a pass.
+
+Merge checkpoint `06ee087d65` retains all three editions' committed revision
+`2026-11-16T19:26:47Z` from `348f9767c4`, with no uncommitted source closure.
+Reconversion after the merge matches the exact canonical Markdown hash above.
+The engine accepts generate-web iteration 0 and dispatches a fresh independent
+web reviewer at explicit `xhigh` effort.
+
+An early three-bundle native-print preparation refuses the missing publication
+disposition. It produces no successful compilation. Installation must first
+establish the publication records, after which preparation and compilation
+remain required. No print-layout acceptance is inferred.
+
+### Independent web review and installation
+
+The fresh web review passes without findings. It compares the complete
+canonical conversion with TeX, generated chronology, the appointed-text
+verification and focused cited commentary loci. Its read-only checks confirm
+all 36 quotation blocks, 49 source notes, both tables and 108 internal links
+without missing targets or duplicate IDs. Seven external references resolve;
+the Gutenberg catalog returns HTTP 503, with registered local Bible evidence
+available. This review does not inspect companion readers, browser layout,
+responsive behavior or print output.
+
+The engine accepts that result and dispatches the installation stage at explicit
+`high` effort. Installation creates the three publication dispositions and
+works through browser-product recording and scoped release-binding refresh.
+It has not yet supplied a passing installation result.
+
+### Selected native print compilation
+
+Once the publication dispositions exist, the coordinator prepares all three
+served source bundles and runs the existing native compiler with three jobs.
+All three pass in two settled passes, with no reported problems: expansive
+26 pages, concise 10 pages, homily 3 pages. Exact summary and per-edition JSON
+are retained in `NATIVE-PRINT-2026-11-16/`.
+
+The host reports pdfTeX 1.40.29, TeX Live 2026/Arch Linux. Its generated
+`pdftex.map` differs from the browser runtime inventory, as the receipts
+record. The check proves the selected bundles' compilation and runtime file
+closure, not exact browser bytes, full admitted-corpus compilation, physical
+opening-page placement, a full-page inspection or print-layout approval.
+
+### Installation worker completion
+
+Install-publication iteration 0 completes the source/HTML wiring without
+changing the reviewed prose, evidence, generated chronology or entrypoints.
+The canonical web declaration records the actual inspection described above;
+the companion readers remain converter-verified, without inspection receipts.
+A fresh conversion retains SHA-256
+`5651d5a4ba782f602273fbc3a57809b29e42334fa584bdc78eeaf5f2d75e808d`.
+The engine's read-only currentness check finds no stale review among the five
+accepted research, study, concise, homily and web results; their result hashes
+remain exact.
+
+The release tool creates three minimal `alpha` decisions under the existing
+standing authorization. Only the ChatGPT cell of row 68 gains reader links,
+in Full Study Guide, Synthesis, Homily order. The Claude cell remains planned;
+one canonical marker is added, without another row or any absent PDF link.
+The owning source-inventory and family-ledger refreshes update the three
+changed leaf-record hashes and their derived snapshots. They promote no
+source-family review: all 168 remain pending and `families = []`.
+
+Complete `browser-products record` and `check` both pass for 13 families,
+29,540 files and 265,934,626 bytes. The resulting product identity is
+`aab956c4373fffb491e408d4d0f6772df9529c6cd2684ad7c57c86ad39320e77`.
+This includes the deterministic document catalog: 158 works, 222 documents
+and 298 outputs. Its independent `structure --check` passes.
+
+The completed release comparison identifies exactly 59 relevant paths.
+Scoped refresh adopts 54 new bindings and updates five existing hashes:
+the catalog, browser descriptor, the two committed chronology modules and
+the chronology orientation source. Every newly recognized external-source
+record belongs to the accepted research seal. The refresh uses an explicit
+`--only` for each path, not wholesale adoption. Its supplemental audit
+confirms that all unrelated site bindings and other authorization fields
+remain unchanged. The rights record changes only its generated digest.
+
+The installation worker runs the existing publication checks directly:
+
+- full-family content schema with owning gates: one leaf, three outputs,
+  zero errors;
+- complete `make check-sources`, exit 0, superseding the earlier incomplete
+  and stale-inventory attempts without relabeling them;
+- all three leaf reader conversions with their fidelity audits;
+- source-mode publication validation with every required contract flag;
+- `make check-release-bindings`: all 13 products current, zero stale bindings;
+- scoped public-alpha validation, including global source, release and
+  authorization validation for 298 publications;
+- scoped document-library validation and the complete catalog currency check;
+- `git diff --check`.
+
+Supplemental inline wiring, conversion-hash, review-hash and scoped-refresh
+audits pass. No shared test or retained helper script is added. Logs and audit
+reports use `.scratch/proper-study-68/install-publication-0000-`; the worker
+result is `.scratch/proper-study-68/results/install-publication-0000.json`.
+Two early direct catalog refresh attempts and an early release-status attempt
+time out; later complete commands above pass. An unsupported status option
+and mistaken read-only audit assertions are corrected, not counted as passes.
+The existing tool-registry `corpus-index` GROUPS/REACHES failure remains,
+and `tmt` is unavailable; neither is represented as repaired.
+
+This is a passing installation worker result, not terminal workflow acceptance
+or deployment verification. The worker does not advance the engine, commit,
+push, compile print output or deploy. The coordinator's separate native-print
+record above is preserved; its stated limits remain. The coordinator still
+owns terminal gating, committed discovery refresh and publication operations.
+
+The engine accepts install-publication iteration 0 and prepares the program-run
+publication-gates packet. The validated installation and exact native-print
+receipts are staged, but the checkpoint commit is blocked by Droid Shield's
+potential-secret detection in generated `release/browser-products.json` keys.
+No bypass, retry or change to those keys is attempted. The maintainer directs
+the coordinator to continue checks with the commit pending. The engine's
+terminal publication gate is therefore run without another commit.
+
+Terminal acceptance, privacy-safe archiving, final discovery/deployment checks
+and push remain outstanding. Committed-input discovery refresh and push still
+require resolution of the blocked commit; no complete or deployed state is
+claimed.
+
+## Terminal publication gate and verified public archive
+
+The coordinator runs the dispatched program gate with
+`tools/tpt proper-study <proper> advance df0ccb9ecfdea6c9 --run-gate`.
+Publication-gates iteration 0 passes, with no findings or escalations.
+The engine's terminal disposition is **ACCEPTED**. The staged installation
+checkpoint is still uncommitted; the coordinator does not bypass the Shield
+blocker or attempt another commit.
+
+The real terminal archive initially refuses the absolute `artifact_path` in
+research iteration 0 under the existing notes-only option. Native bytes and
+recorded hashes are not edited. Only after terminal acceptance, the archive
+tool gains the separate `--relativize-artifact-paths` opt-in. It removes only
+the exact current-root prefix and separator from a top-level string
+`artifact_path` with a canonical repository-descendant suffix. Traversal,
+noncanonical forms, control characters and symlink escapes refuse; unrelated
+absolute paths and private content in substantive or nested fields still
+refuse the whole export. The two existing options and default privacy checks
+retain their original behavior. The registry usage and operator contract
+document the new option.
+
+Ten new regressions first fail without the new policy, except the deliberate
+old-option refusal test. The final complete archive suite passes all 68 tests,
+with no skip once this real run is included in the reproduction fixtures.
+An independent comparison against the previous committed tool also finds
+byte-identical complete exports for default, schema-1 notes-only, schema-2
+handles-only and schema-2 combined modes. An attempted unsupported
+`--examples` invocation exits 2; the supported `--help` invocation succeeds
+and includes the registered executable examples.
+
+The coordinator exports the accepted run with
+`tools/proper-study-run-archive df0ccb9ecfdea6c9 --cycles workflows/reviews/gpt-1962-68-production-2026-11-16/CYCLES.md --redact-repository-paths --relativize-artifact-paths`
+and repeats it with
+`--output .scratch/proper-study-68/archive-reproduced`.
+Both exports succeed and all 70 files match byte for byte. The archive holds
+32 results, 32 verbatim packets, both seed records, terminal status/replay,
+the explicit derivative record and its schema-3 receipt. No intervention is
+invented. All 143 native file hashes match a separately captured pre-export
+snapshot. Each original input hash, archived hash, packet byte and unchanged
+result field is independently verified against the retained run, rather than
+accepted solely from the new transform.
+
+Only `research-0000.json` changes: 34 exact current-root prefixes in top-level
+notes strings and one in `/artifact_path`. All other inputs remain exact;
+decisions and seals remain unchanged. The receipt SHA-256 is
+`e1a2b5bc5fe77696b6e91c14efdb42161e6411471219faa18179afc9586a355b`.
+The derived copies are not mislabeled as native bytes or renewed acceptance.
+`ARCHIVE-VERIFICATION-2026-11-16.json` retains the measured comparisons and
+tool hash. Source/product, committed-input index and deployment checks are
+separate downstream work. No commit, push or deployment is claimed.
+
+## Post-archive verification and publication hold
+
+The source inventory initially identifies the archive's 32 packets and
+`record.md` as new source-bearing files. Its owning refresh and subsequent
+check pass. The complete source graph validates. The family ledger's owning
+canonical-catalog refresh and check preserve zero accepted families and all
+168 pending review units; no scholarship is promoted.
+
+The complete two-build browser-product record and independent check pass for
+all 13 families, 29,540 files and 265,934,626 bytes. The current product identity
+is `69b3369ce9d114e1bd0fac83aa85ae8e5e66e542879bde2ec5211874673497d5`.
+Another complete check after release maintenance confirms the same identity.
+No generated product body is tracked.
+
+Release status invocations initially time out at 120 and 600 seconds. A
+bounded stack diagnostic shows active product-input and full liturgical-data
+validation; none of these interrupted runs is counted as a pass. An
+independent byte audit checks all 24,771 recorded inputs and finds only
+`release/browser-products.json` changed, with none missing. The coordinator
+therefore runs the owning refresh with exactly
+`--only release/browser-products.json`, without broad adoption. That command
+and a separate full `release-bindings status` both complete successfully.
+The latter reports `exact: 0 stale binding(s)`. A deep before/after audit
+confirms only that one site binding changes; all 24,770 siblings, the complete
+binding set and unrelated manifest/authorization fields remain exact. Only the
+generated rights digest and its hash change; approval prose remains exact.
+
+The required `make check-deployment-sources` invocation exits 2. Its other
+members finish without a reported failure, including the complete source
+graph, delivery declarations, publication schemas/catalogue, browser products,
+17 proper-chronology freshness tests and seven generated-document tests.
+The failing member is `check-corpus-index`, which first reports
+`src/index/sources/catalogue/0037.json` stale. That is not a deployment pass.
+The governing index contract requires committing canonical inputs first, so
+the coordinator does not refresh indexes against the uncommitted installation
+and archive or hand-edit a shard to clear the gate. `make public-site` and
+deployment-target verification await that prerequisite and a fresh site.
+
+A new scoped `web-edition check --leaf gpt/<proper> --jobs 3` passes all three
+reader conversions and fidelity audits, writing no maintained reader copy.
+Fresh selected native preparation is byte-compared against the successfully
+compiled preparation: all 447 payload files match, and the complete prepared
+index matches after only its output-directory relocation. Every current
+bundle/render hash matches its compiler receipt; each retained PDF matches
+its recorded bytes and SHA-256. The receipts still record 26, 10 and three
+pages, two settled passes each and no problems. This does not add visual
+print approval or satisfy the full deployment compile gate.
+
+All five accepted review seals are independently recomputed with their
+owning source-mode API and normalized through JSON, then compared with the
+unmodified engine results and state hashes. All remain current. This is
+currentness verification, not a new review or a renewed acceptance. The native
+run's 143 hashes remain unchanged. The inherited `tpt --check` findings remain
+the existing `corpus-index` GROUPS/REACHES omissions; the new usage entry is
+valid JSON and the archive CLI and all three captured examples pass.
+
+`POST-ARCHIVE-CHECKS-2026-11-16.json` retains the measured currentness, scoped
+release audit and the exact deployment blocker. The appointment, terminal
+acceptance/archive and reviewed-reader/native-compilation requirements pass.
+`main-and-live-verification` remains open and the overall promise remains
+in progress. The maintainer chose to leave the Shield-blocked commit pending.
+No commit retry, bypass, push, site deployment or live-route verification is
+performed. The next authorized sequence is external resolution of the commit,
+committed-input index refresh/check, complete deployment gates/site
+build/verification, exact outgoing-range audit, push and Pages/full-print/live
+verification. Closure is not claimed before those events.
+
+The held checkpoint is checked again: all 68 archive tests pass without a
+skip, and the complete product check confirms the same identity. Scoped
+staging and privacy checks cover 96 coherent files, with no actual checkout
+prefix, machine-root or credential-pattern match in added text, no binary
+files and no unstaged or untracked work. This does not override Shield's
+commit refusal. The required completion audit initially also reports missing
+evidence paths on the open main/live item. Its owner hold records are linked
+without changing that item's open status or pretending they prove deployment.
+The overall promise remains in progress; completion is not claimed.

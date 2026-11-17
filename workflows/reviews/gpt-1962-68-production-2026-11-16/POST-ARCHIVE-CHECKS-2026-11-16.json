@@ -1,0 +1,150 @@
+{
+  "accepted_review_currentness": {
+    "findings": [],
+    "reviews": [
+      {
+        "current": true,
+        "iteration": 2,
+        "sealed_file_count": 1745,
+        "sha256": "7f09f162efd7beb4d2bcbccb3faeb3800fefcb1325db2071188b98f0d24a1816",
+        "stage": "research-review"
+      },
+      {
+        "current": true,
+        "iteration": 1,
+        "sealed_file_count": 19,
+        "sha256": "52c09e184a1e7da83b278339287f2b1050b1fd81a789f8927bc6f31b4bc4bdd5",
+        "stage": "study-review"
+      },
+      {
+        "current": true,
+        "iteration": 0,
+        "sealed_file_count": 16,
+        "sha256": "b97d91dc2f68330e5e819eaea6c6cf02899b4ab1ef20a8318e80ab710f46c85a",
+        "stage": "synthesis-review"
+      },
+      {
+        "current": true,
+        "iteration": 0,
+        "sealed_file_count": 10,
+        "sha256": "d7c4cbafc7f182a51db8c2e740123e8b51662e1dcfb772532ea6261be1b02215",
+        "stage": "homily-review"
+      },
+      {
+        "current": true,
+        "iteration": 0,
+        "sealed_file_count": 0,
+        "sha256": "48dd53955c48add30064b6505312fca377a7449dd16d34f1e464889fdb0e89d2",
+        "stage": "web-review"
+      }
+    ]
+  },
+  "archive_tool_tests": {
+    "skips": 0,
+    "status": "pass",
+    "tests": 68
+  },
+  "archive_verification": {
+    "path": "workflows/reviews/gpt-1962-68-production-2026-11-16/ARCHIVE-VERIFICATION-2026-11-16.json",
+    "sha256": "57b45702b0f71c75481b9c17ffa1b9bb433313602493beb117e2106f22b5bec2"
+  },
+  "as_of": "2026-11-16",
+  "browser_products": {
+    "bytes": 265934626,
+    "files": 29540,
+    "products": 13,
+    "products_identity": "69b3369ce9d114e1bd0fac83aa85ae8e5e66e542879bde2ec5211874673497d5",
+    "status": "ok"
+  },
+  "deployment_source_preflight": {
+    "blocker": "committed-input sources reader index is stale",
+    "command": "make check-deployment-sources",
+    "generated_document_tests": 7,
+    "index_refresh_attempted": false,
+    "inputs_must_be_committed_first": true,
+    "observed_exit_code": 2,
+    "other_members_finished_without_reported_failure": true,
+    "proper_chronology_tests": 17,
+    "reported_stale_paths": [
+      "src/index/sources/catalogue/0037.json"
+    ]
+  },
+  "native_print_currentness": {
+    "all_pdf_receipt_hashes_verified": true,
+    "editions": [
+      {
+        "bundle_sha256": "439382842cc495867be20f4106505fd1e1f7bc1a26808900c5990d956f239784",
+        "id": "publication:gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost",
+        "pages": 26,
+        "passes": 2,
+        "pdf_bytes": 556617,
+        "pdf_sha256": "3644f6cc78be405bff87517ef3f4b7d559145665ce856c6005312f02ec798cd3",
+        "render_sha256": "a12d7725f1c6be493719e433809e51fb2429aa22826f106b6b370ffd9f826f0d"
+      },
+      {
+        "bundle_sha256": "85fa2953d5dc579b1920601ad5c7ca83a1a0272486e7ca2ba948cd33e4237e97",
+        "id": "publication:gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost-homily",
+        "pages": 3,
+        "passes": 2,
+        "pdf_bytes": 301468,
+        "pdf_sha256": "86b7590edfdb9ca3441e47e31caff4a0e1f0bd74d08151b5b7566b19be96d8b3",
+        "render_sha256": "d49d61271ba7754681b9b1304f78105ac85f7b5fa024bda4ff2292dc35b25233"
+      },
+      {
+        "bundle_sha256": "b17a8ac6023dcea0954900ad1abaae4221c4932da917b88b61a23e4ee5aa1196",
+        "id": "publication:gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost-synthesis",
+        "pages": 10,
+        "passes": 2,
+        "pdf_bytes": 417505,
+        "pdf_sha256": "65ca8d8b44ce29b5bd3a5255bd4b70f8203e621da9a973d8b573435f43f9a172",
+        "render_sha256": "7d43cc6e7451c1fef12d226d95d61e166a936ce22c4c29b63594cf05231b6cc0"
+      }
+    ],
+    "fresh_preparation_equals_compiled_preparation": true,
+    "full_deployment_compile_gate": false,
+    "identical_prepared_payload_files": 447,
+    "scope": "selected",
+    "source_revision": "06ee087d65af1f040cc8764a8051f989984d9e97",
+    "visual_print_approval": false
+  },
+  "native_run_files_unchanged": 143,
+  "readers": {
+    "checked_outputs": 3,
+    "fidelity_audits": "pass",
+    "observed_exit_code": 0,
+    "summary": "Web editions convert: 3 reader output(s), 0 figure(s).",
+    "visual_browser_review": false
+  },
+  "release_binding_audit": {
+    "added_bindings": [],
+    "changed_site_bindings": [
+      "release/browser-products.json"
+    ],
+    "full_status_observed_exit_code": 0,
+    "full_status_summary": "exact: 0 stale binding(s)",
+    "retained_site_bindings": 24770,
+    "retired_bindings": [],
+    "rights_digest_only_updated": true,
+    "rights_prose_preserved": true,
+    "unrelated_manifest_fields_preserved": true
+  },
+  "remaining_actions": [
+    "Resolve the Shield-blocked commit externally; no bypass or retry was attempted.",
+    "Commit the validated inputs before running tools/corpus-index refresh --readers, then check --readers.",
+    "Pass make check-deployment-sources, make public-site and public-alpha verify --deployment-target github-pages.",
+    "Audit the exact outgoing object range, push main, and verify Pages build, full print-compile, deploy and all three live readers.",
+    "Close main-and-live-verification only after those events."
+  ],
+  "source_family_review_state": "source-family-migration valid: families=0 review_units=168 screened=0 pending=168 trace_records=0 atomic_citation_coverage=false",
+  "source_graph": "source-library valid: artifact=11338 corpus=5 edition=14431 passage=10838 segment=10829 work=11028 bindings=4722 external-witnesses=736:metadata-only",
+  "state": "publication-on-hold",
+  "terminal_disposition": "ACCEPTED",
+  "tool_registry_check": {
+    "inherited_findings": [
+      "tpt: corpus-index: registered but in no group (see GROUPS in scripts/_tooling.py)",
+      "tpt: corpus-index: undeclared reach (see REACHES in scripts/_tooling.py)"
+    ],
+    "observed_exit_code": 1
+  },
+  "workflow_run_id": "df0ccb9ecfdea6c9"
+}

@@ -496,6 +496,23 @@ review seals remain unchanged. Without this new option, exports using only
 `--redact-repository-paths` retain their existing schema-1 receipt and bytes
 when no recognized operation handle is present.
 
+`--relativize-artifact-paths` is a third, independent opt-in. Only a retained
+result's top-level string `artifact_path` may lose the exact current checkout
+prefix plus separator, and only when its suffix is a canonical repository
+descendant. Empty or absolute suffixes, dot or traversal components, duplicate
+separators, backslashes, control characters and symlink escapes refuse the
+archive. Relative artifact paths stay byte-exact. This option does not rewrite
+notes, nested artifact fields, decisions, findings, review seals or other
+files; all residual private content still refuses the entire export.
+
+With the artifact-path option, receipt schema 3 lists enabled notes-path,
+operation-handle and artifact-path policies in that fixed order, with original
+and archived file hashes and per-policy JSON-pointer counts. `record.md`
+declares the derivative. The verified native run, packets and acceptance remain
+unchanged. Without this option, existing default exports and schema-1/2
+derivatives retain their behavior and bytes. Archive tooling changes belong
+after terminal acceptance, not inside a live sealed run.
+
 While a run is live, land nothing that its stages do not own. The
 `proper-study-v4` and `proper-study-v5` research seals cover every module the chronology
 computation compiles, `scripts/_tooling.py` included, so registering any tool
