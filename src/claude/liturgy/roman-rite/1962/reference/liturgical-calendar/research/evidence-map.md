@@ -46,6 +46,10 @@ numbers of the 1960 code; "Missal rubrics" marks part three.
 | Outside the seasons with proper ferial formularies the weekday Mass is the previous Sunday's | Missal rubrics n. 299 | checked paraphrase | — |
 | The Ember Saturday and *Sitientes* ordination Mass is of the Saturday even against a I or II class feast | Missal rubrics n. 300 | checked paraphrase | The same rule in pre-1955 form was seen in the comparison witness |
 
+**Corrected on 2026-11-18:** "The Acta number this 11" is withdrawn. That numeral was a recognition
+error of the vatican.va OCR rendering; the microfilm page facsimile of *Acta* p. 598 (PDF p. 10)
+prints **14**. See `source-audit.md`.
+
 ## Vigils, octaves, Ember days, Rogations
 
 | Claim | Witness | State | Qualification |

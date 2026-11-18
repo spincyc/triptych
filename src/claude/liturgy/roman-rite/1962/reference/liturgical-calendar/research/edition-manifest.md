@@ -30,6 +30,11 @@ which it was left. `read` means the identified passage was rendered and examined
 | *Variationes*, *Caput II*, n. 13, abolishing the Suffrage of All Saints and the commemoration of the Cross | *Acta* 52 (1960), same annex | read |
 | *Calendarium Breviarii et Missalis Romani* printed in the Acta at 686 and following, with the tables of occurrence and concurrence and their *Notanda* to p. 705 | *Acta* 52 (1960) | located and described; not collated entry by entry, and the tables are not reproduced |
 
+**Corrected on 2026-11-18:** the "400 dpi" readings of *Acta* pp. 598 and 599 in the first row were
+renderings of the vatican.va PDF, which is an OCR re-typesetting and not a page image. Both pages
+were re-read on 2026-11-18 on the microfilm page facsimile `artifact.holy-see.acta-apostolicae-sedis.volume-52-1960.ia-microfilm-issue-pdf-51e41032`; see the correction in
+`source-audit.md`.
+
 ## The typical edition and its calendar
 
 | Part | Where read | State |

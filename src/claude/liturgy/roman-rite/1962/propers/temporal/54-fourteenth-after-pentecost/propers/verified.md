@@ -24,7 +24,10 @@ omits the appointed-text component.
   particularising the general rule at RG 117. Read on a page image of AAS 52
   (1960) p. 619 and, without a verbal difference, at Missale Romanum 1962,
   *Rubricae generales* p. XX. Recorded here as an inference from the general
-  rubrics, not as a reading of pp. 394–396. **Corrected 2026-08-27 by the
+  rubrics, not as a reading of pp. 394–396. **Corrected 2026-11-18:** the "page image of AAS 52 (1960) p. 619" above
+  was a rendering of the Holy See's re-typeset OCR digitisation, not a facsimile; the
+  reading was re-collated on the microfilm facsimile `artifact.holy-see.acta-apostolicae-sedis.volume-52-1960.ia-microfilm-issue-pdf-51e41032`
+  (PDF p. 31, rendered at 300 dpi) on 2026-11-18 and agrees. **Corrected 2026-08-27 by the
   authoring stage:** this record previously attributed the colour to a
   temporal-season rule of part three, which is the wrong part of the code.
 - **Printed location.** Printed pages 394–396. The formulary opens low in the
@@ -1302,3 +1305,5 @@ above.** They are declared in the guide and are not filled in by the project.
 5. The Gospel's incipit `In illo témpore: Dixit Iesus discípulis suis:`. It
    corresponds to nothing in Matthew and so to nothing in the Douay, and is
    likewise not translated.
+
+**Re-collation of 2026-11-18 (AAS 52, 1960).** The *Acta* 52 readings this guide cites at pp. 594 (*Rubricarum instructum* n. 2) and 598 (*Rubricae generales* nn. 14 and 16) were read before on the Holy See's re-typeset OCR digitisation. On 2026-11-18 they were re-read on the page facsimile `artifact.holy-see.acta-apostolicae-sedis.volume-52-1960.ia-microfilm-issue-pdf-51e41032` (PDF pp. 6 and 10, 300 dpi, with 600 dpi crops) and agree.

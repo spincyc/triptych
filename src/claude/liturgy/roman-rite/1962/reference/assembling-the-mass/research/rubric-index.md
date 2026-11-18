@@ -69,6 +69,10 @@ Missalis Romani*, same. `RGBR n` = *Rubricae generales Breviarii Romani*, the se
 | What the reform abolished: the Suffrage and the commemoration of the Cross | *Variationes* cap. II n. 13 | D | *Acta* p. 708, read as a page image |
 | What the reform abolished: the seasonal orations | *Variationes* cap. IV n. 18 | D | *Acta* p. 709, read as a page image |
 
+**Corrected on 2026-11-18:** the two *Acta* "page images" above were renderings of the vatican.va
+OCR re-typesetting, not of the print. Both pages were re-read on 2026-11-18 on the microfilm page
+facsimile (PDF pp. 122-123) and agree; see `edition-manifest.md`.
+
 ## Decision four — the Mass category
 
 | Rule as published | Locus | Class | Note |

@@ -14,6 +14,16 @@ what was done with them for this publication and what was not.
 | Pre-1955 comparison Missal, Internet Archive DjVuTXT derivative | `artifact.catholic-church.missale-romanum.unidentified-pre-1955-witness-ia-1947.ia-djvu-ocr-724a04fa`, SHA-256 `724a04fa…4bcb` | hash recomputed on the retained working copy during the re-audit and matched | title page, copyright line, and approval leaf; the resumption rubric; the Ember Day note; *Additiones et Variationes* nn. on occurrence and on the number of orations; the general rubrics scanned for a precedence table |
 | Benziger *editio iuxta typicam* 1962, Internet Archive DjVuTXT derivative | `artifact.catholic-church.missale-romanum.benziger-iuxta-typicam-1962.ia-djvu-ocr`, SHA-256 `2a2da44d…85ce` | hash recomputed on the retained working copy and matched the already-registered value | the front-matter Ember Day note only |
 
+**Corrected on 2026-11-18.** The *Acta* artifact in the first row is not a page facsimile. It is
+ABBYY FineReader's re-typesetting of its own optical recognition, with no page raster, so the
+"rendered page images" of pp. 598 and 599 named there, and the *Acta* side of the 260-450 dpi
+images claimed under Method, showed the OCR and not the 1960 print. On 2026-11-18 both pages were
+re-read on the page facsimile `artifact.holy-see.acta-apostolicae-sedis.volume-52-1960.ia-microfilm-issue-pdf-51e41032` (microfilm PDF pp. 10 and 11 at 300 dpi; n. 18 d also in a
+600 dpi crop). The print numbers n. 14 **14** and reads *nn. 104-105* in both nn. 15 and 16; n. 18 d
+does read *et XVII, quae inscribitur VI*. Verification event 2 and the discrepancy table are
+corrected in their own places below. The other *Acta* loci of verification event 1 were read in the
+optical text and were not re-collated by this correction.
+
 No payload of any of these is retained in the repository. All four carry `rights_status =
 "unresolved"`; quotation is limited to the rules the publication states.
 
@@ -38,6 +48,11 @@ reported and not resolved by preference.
    *nn. 104-105*, and *XXVII* respectively. Each Acta reading is impossible on its face and each
    Missal reading is not. The volume's own *Corrigenda* records one correction, to p. 179, and does
    not reach pp. 598-599.
+   **Corrected on 2026-11-18:** two of these three *Acta* readings were recognition errors of the OCR
+   rendering, not print. On the microfilm facsimile (PDF p. 10) n. 14 is numbered **14** and nn. 15
+   and 16 read *nn. 104-105*, as the Missal does. Only n. 18 d, *XVII* for *XXVII* (PDF p. 11), is a
+   divergence of the printed *Acta*, so the four divergences are two: n. 18 d and the Missal
+   decree's date.
 3. **The Missal decree's date divergence confirmed.** The 23 June 1962 decree recites *Motu proprio
    "Rubricarum instructum" diei 23 iulii anno 1960 … posteroque die … promulgato*; the same volume
    reprints the letter with its own date of 25 July 1960, and the promulgating decree is of 26 July.
@@ -118,3 +133,10 @@ reported and not resolved by preference.
 | 1962 Missal decree dates *Rubricarum instructum* to 23 July | collation section | Missal misprint; internally inconsistent |
 | *Tabella temporaria* prints 16 for 1996 | collation section | printing or scanning defect; perpetual table and computation both give 26 |
 | September Ember dating differs between the pre-1955 and the 1960-code books | collation section | change observed; instrument and date not established |
+
+**Corrected on 2026-11-18:** the first two rows are withdrawn as *Acta* discrepancies. The print
+numbers n. 14 correctly and reads *nn. 104-105* in nn. 15 and 16 (microfilm facsimile PDF p. 10);
+the publication's collation section was revised on 2026-11-18 to withdraw both. The n. 18 d row stands,
+confirmed on the print (PDF p. 11).
+
+**Re-collation of 2026-11-18 (independent review).** On the page facsimile `artifact.holy-see.acta-apostolicae-sedis.volume-52-1960.ia-microfilm-issue-pdf-51e41032`, rendered at 300 dpi with 600 dpi crops, the *Acta* Latin this reference quotes from the *Variationes* agrees with the publication: *Variationes* n. 6 b (printed p. 706, microfilm PDF p. 120; quoted at `sections/60-sanctoral.tex`) and n. 13 (p. 708, PDF p. 122; quoted at `sections/80-commemorations.tex`). The same review read the code's end at n. 530 on p. 685 (PDF p. 99), the *Notanda* ending on p. 705 (PDF p. 119), and the *Variationes in Martyrologio* ending at n. 61 on p. 729 (PDF p. 143), followed by the *Declaratio* (p. 730) and *Ordinationes* (p. 732); the publication's page extents were corrected accordingly.
