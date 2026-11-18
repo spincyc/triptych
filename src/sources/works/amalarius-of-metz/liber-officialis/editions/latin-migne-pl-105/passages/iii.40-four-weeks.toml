@@ -1,0 +1,17 @@
+schema = 1
+record_type = "passage"
+id = "passage.amalarius-of-metz.liber-officialis.latin-migne-pl-105.iii.40-four-weeks"
+edition_id = "edition.amalarius-of-metz.liber-officialis.latin-migne-pl-105"
+artifact_id = "artifact.amalarius-of-metz.liber-officialis.latin-migne-pl-105.iii.40-four-weeks-checked-text-5ab7f168"
+artifact_sha256 = "5ab7f168589e39e901519f072ddf195d4811e5d8c20b8396c97d698c17760efc"
+locus = "III.40"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Liber officialis III.40: the author of the Missal or Antiphoner urges the same preparation over four weeks; the reason given is that man works well or ill through the five senses and through the four elements either falls or rises. PL 105 col. 1158, lower right column of leaf n584."
+physical_line_ranges = [[1, 2]]
+text = "Auctor Missalis sive Antiphonarii, eamdem præparationem hortatur nos facere per quatuor hebdomadas. Sicut enim homo internunciis quinque sensibus ad animam bene aut male operatur, ita per quatuor elementa aut ruit ad mala corporalia, aut surgit ad bona."
+transcription_segments = [
+  { line = 1, text = "Auctor Missalis sive Antiphonarii, eamdem præparationem hortatur nos facere per quatuor hebdomadas." },
+  { line = 2, text = "Sicut enim homo internunciis quinque sensibus ad animam bene aut male operatur, ita per quatuor elementa aut ruit ad mala corporalia, aut surgit ad bona." },
+]
+verified_on = "2026-11-18"
+notes = "Read on the page image of leaf n584. The print sets a space before the comma after 'corporalia'; it is closed up here."

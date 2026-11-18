@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.third-plenary-council-of-baltimore.catechism-of-christian-doctrine-no-3.new-york-benziger-1921.contrition-angelus-mercy-checked-08a9cc16"
+edition_id = "edition.third-plenary-council-of-baltimore.catechism-of-christian-doctrine-no-3.new-york-benziger-1921"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Public domain in the United States by publication date. The title page (PDF p. 3) and its imprimatur and copyright leaf (PDF p. 4) identify the 1921 Benziger Brothers printing 'In Accordance with the New Canon Law', with copyright lines of 1885, 1901 and 1921: it was published in the United States in 1921. A work published in the United States before 1931 is out of United States copyright: that is the line guidance/missals.md section 5 records from Cornell's public-domain chart, and because it moves every January it is written here as derived for calendar year 2026 and not as a standing rule. This file is literal historical wording of that printing, transcribed and checked against its page images; it adds no translation, paraphrase or editorial wording beyond the declared mechanical normalizations, and the bracketed locators are bare finding labels."
+retrieved = "2026-11-18"
+sha256 = "08a9cc16365f7c497744d39bce7ebf8fd6e7e59d399a6727ec45de8427eb61ca"
+byte_size = 2829
+indexable = true
+encoding = "utf-8"
+path = "src/sources/works/third-plenary-council-of-baltimore/catechism-of-christian-doctrine-no-3/editions/new-york-benziger-1921/artifacts/contrition-angelus-mercy-checked-08a9cc16/checked.txt"
+derived_from = "artifact.third-plenary-council-of-baltimore.catechism-of-christian-doctrine-no-3.new-york-benziger-1921.ia-djvu-text-c5216d04"
+transformation = "Hand transcription made from the page images, rendered locally with pdftoppm from the registered facsimile; the parent OCR was used only to locate the pages and was diffed word by word against this file afterwards, every difference being resolved on the image. No source text passed through a language model. Typographic quotation marks are rendered as straight ASCII quotes; thin spaces before ? ! ; : are removed; line-end hyphenation is joined (a compound printed with a hyphen keeps it); footnote reference numerals are omitted; italics are not marked; small capitals are rendered in mixed case, with full capitals kept where printed larger. One sense unit per line, each prefixed by a bracketed locator that is a finding label, not printed text. Selected questions only: the Act of Contrition among the prayers (p. 6), questions 43-45 on the Angelus (pp. 14-15), 107-108 (p. 27) and 813, 819-820 on the works of mercy (pp. 171-173)."
+provenance = "Image check against artifact.third-plenary-council-of-baltimore.catechism-of-christian-doctrine-no-3.new-york-benziger-1921.ia-pdf-508f4e3f on 2026-11-18: PDF pp. 8, 16-17, 29 and 173-175."
+notes = "The Angelus collect prints a stop-like mark after 'through the same' before 'Christ Our Lord'; it is on the page and in the OCR and is kept. The p. 6 Act of Contrition has a semicolon after 'hell', Q. 107 a comma; neither has Amen."

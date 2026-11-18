@@ -1,0 +1,17 @@
+schema = 1
+record_type = "passage"
+id = "passage.jacques-paul-migne.patrologia-latina-volume-184.1879-paris-garnier.scala-claustralium-headnote-attribution"
+edition_id = "edition.jacques-paul-migne.patrologia-latina-volume-184.1879-paris-garnier"
+artifact_id = "artifact.jacques-paul-migne.patrologia-latina-volume-184.1879-paris-garnier.scala-claustralium-headnote-attribution-checked-text-993eae55"
+artifact_sha256 = "993eae55cdac924924399b1b271c4b4b41fc5fcd2ad37a489750c60d610943c8"
+locus = "column-475"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The Migne editors' italic headnote to the Scala claustralium sive tractatus de modo orandi, on its transmission and attribution, read across PL 184 columns 475-476 (PDF page 242), between the end of the preceding work and the heading EPISTOLA DOMINI GUIGONIS CARTHUSIENSIS, Ad fratrem Gervasium, de vita contemplativa."
+physical_line_ranges = [[1, 2]]
+text = "Hic Tractatus inter opera S. Augustini (modo in tomo VI) reperitur sub hoc titulo, « Scala Paradisi, » cum hac Doctorum Lovaniensium Censura: « Hoc opusculum fertur etiam inter opera D. Bernardi, quanquam nec illius videatur esse. » In codice vero manuscripto Cartusiæ Coloniensis Guigoni (Cartusiæ majoris Priori quinto?) tribuitur."
+transcription_segments = [
+  { line = 1, text = "Hic Tractatus inter opera S. Augustini (modo in tomo VI) reperitur sub hoc titulo, « Scala Paradisi, » cum hac Doctorum Lovaniensium Censura: « Hoc opusculum fertur etiam inter opera D. Bernardi, quanquam nec illius videatur esse. »" },
+  { line = 2, text = "In codice vero manuscripto Cartusiæ Coloniensis Guigoni (Cartusiæ majoris Priori quinto?) tribuitur." },
+]
+verified_on = "2026-11-18"
+notes = "This is the editors' text, not the treatise. It reports the Louvain theologians' censure that the work, printed among Augustine's works as Scala Paradisi and also among Bernard's, seems to be neither's, and the Cologne Charterhouse manuscript's ascription to Guigo, with the editors' own query whether he is the fifth prior of the Grande Chartreuse. The rest of the headnote (an opusculum of similar argument in Chifflet's Manuale Solitariorum under the name of another Guigo, and the inscription following the Cologne codex) is not transcribed. 'quan-quam' is divided across a line end and read quanquam. Its presence in a volume of Bernard's works is no evidence of Bernard's authorship."

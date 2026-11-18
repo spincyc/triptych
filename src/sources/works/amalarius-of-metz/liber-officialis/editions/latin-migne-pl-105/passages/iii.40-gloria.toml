@@ -1,0 +1,17 @@
+schema = 1
+record_type = "passage"
+id = "passage.amalarius-of-metz.liber-officialis.latin-migne-pl-105.iii.40-gloria"
+edition_id = "edition.amalarius-of-metz.liber-officialis.latin-migne-pl-105"
+artifact_id = "artifact.amalarius-of-metz.liber-officialis.latin-migne-pl-105.iii.40-gloria-checked-text-dc2ce7a0"
+artifact_sha256 = "dc2ce7a07ef7ab033f05438bc6bfa85113779a2d27925ba984cd9514a4187676"
+locus = "III.40"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Liber officialis III.40: Amalarius reports having seen, in former time, the Gloria in excelsis Deo omitted on the days of Advent and in some places the dalmatics, and gives the reason (to signify the time of the Old Testament). PL 105 col. 1159, left column of leaf n585. The chapter goes on to say that the hymn, intermitted for a time, is taken up more eagerly when it returns on the night of the Nativity."
+physical_line_ranges = [[1, 2]]
+text = "Vidi tempore prisco, Gloria in excelsis Deo, prætermitti in diebus Adventus Domini, et in aliquibus locis dalmaticas. Habet enim et istud aliquid rationis, ad insinuandum tempus Veteris Testamenti."
+transcription_segments = [
+  { line = 1, text = "Vidi tempore prisco, Gloria in excelsis Deo, prætermitti in diebus Adventus Domini, et in aliquibus locis dalmaticas." },
+  { line = 2, text = "Habet enim et istud aliquid rationis, ad insinuandum tempus Veteris Testamenti." },
+]
+verified_on = "2026-11-18"
+notes = "Read on the page image of leaf n585. The printing has 'prætermitti' with the ligature where R1's dossier gives 'praetermitti'."

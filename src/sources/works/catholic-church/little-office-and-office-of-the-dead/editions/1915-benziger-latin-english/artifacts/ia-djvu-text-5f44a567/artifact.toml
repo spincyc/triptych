@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.little-office-and-office-of-the-dead.benziger-latin-english-1915.ia-djvu-text-5f44a567"
+edition_id = "edition.catholic-church.little-office-and-office-of-the-dead.benziger-latin-english-1915"
+artifact_type = "ocr-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The identified book was published at New York by Benziger Brothers in 1915; the approval leaf (PDF p. 10, read on the image on 2026-11-18) prints Nihil obstat Remigius Lafort, Imprimatur John Cardinal Farley, New York, June 10, 1915, and COPYRIGHT, 1915, BY BENZIGER BROTHERS. A United States work first published in 1915 has no remaining United States copyright term in 2026: a work published before 1931 is out of copyright on the line guidance/missals.md section 5 records, written here as derived for calendar year 2026. The bytes are the Internet Archive's optical character recognition of its own page images and add no human authorship (Bridgeman Art Library v. Corel Corp., 36 F. Supp. 2d 191 (S.D.N.Y. 1999)). GOOGLE: case-insensitive probes over the whole file returned 'google' 0, 'usage guidelines' 0 and 'digitized by' 0, and over the whole PDF's embedded text 0; the item is a Library of Congress copy scanned by the Internet Archive (scribe8.capitolhill), not a Google digitisation. No host rights label is relied upon."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/littleofficeofbl00newy/littleofficeofbl00newy_djvu.txt"
+provenance = "Fetched whole over HTTPS from the source_url with curl -sSL on 2026-11-18 into lane A2's scratch directory, hashed with sha256sum before use, and copied here unaltered. The byte size, 382,545, and the SHA-1, 9b411464418e3ee5965be44eb1c85261c3831b48, were compared with the Internet Archive metadata API's file listing for the item (https://archive.org/metadata/littleofficeofbl00newy) and matched. The SHA-256 equals that of the copies research lanes R2 and R4 fetched on 2026-11-18. No source text passed through a language model at any point between the server and this hash."
+retrieved = "2026-11-18"
+sha256 = "5f44a567db82985891c8bc7f5c0a4559b1dea71a7fb7dbe351631281f645618c"
+byte_size = 382545
+path = "src/sources/works/catholic-church/little-office-and-office-of-the-dead/editions/1915-benziger-latin-english/artifacts/ia-djvu-text-5f44a567/littleofficeofbl00newy_djvu.txt"
+encoding = "utf-8"
+indexable = true
+notes = "The complete Internet Archive DjVuTXT optical text layer of item littleofficeofbl00newy: 16,669 LF-terminated lines, valid UTF-8, no CR bytes. Completeness check: byte size and SHA-1 equal the item's own file listing. Uncorrected optical recognition: a locating and searching layer, not a text of record; wording quoted from it must be collated against the page images of the same item's PDF, and a raw-line negative over it is evidence about the recognition, not about the printed page. It is the text layer of the same item as the PDF, recognised from the item's original page images rather than from the PDF's bytes, so no derived_from edge is asserted. Advent material: rubrics at about lines 310-420 (printed pp. 11-13); the In Adventu variants recur through the Hours from about line 915; the Compline final antiphon Alma Redemptoris from about line 3045 (printed pp. 82-85). The book sets Latin on even and English on odd pages, so a unit's Latin and English are on facing pages."

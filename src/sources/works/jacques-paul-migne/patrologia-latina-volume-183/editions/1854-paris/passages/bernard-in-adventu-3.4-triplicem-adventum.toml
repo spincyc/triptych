@@ -1,0 +1,20 @@
+schema = 1
+record_type = "passage"
+id = "passage.jacques-paul-migne.patrologia-latina-volume-183.1854-paris.bernard-in-adventu-3.4-triplicem-adventum"
+edition_id = "edition.jacques-paul-migne.patrologia-latina-volume-183.1854-paris"
+artifact_id = "artifact.jacques-paul-migne.patrologia-latina-volume-183.1854-paris.bernard-in-adventu-3.4-triplicem-adventum-checked-text-83c9a85d"
+artifact_sha256 = "83c9a85d4389ec252dfbe23926eca63c46cc750005628073dbb8bb36724629ef"
+locus = "column-45"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Bernard of Clairvaux, Sermones in adventu Domini, sermo III, the last sentence of section 3 and the opening of section 4: the coming ad homines, in homines, contra homines. Read on PL 183 column 45 (PDF page 29, left column) whole."
+physical_line_ranges = [[1, 5]]
+text = "Hæc autem unde nosti, nisi quia non solum ad te, sed etiam in te venit? Triplicem enim ejus adventum novimus; ad homines, in homines, contra homines. Ad omnes quidem indifferenter, non autem ita in omnes, aut contra omnes. Sed quia primus et tertius noti sunt, utpote manifesti; de secundo, qui spiritualis et occultus est, ipsum audi dicentem: Si quis diligit me, sermonem meum servabit, et Pater meus diliget eum, et ad eum veniemus, et mansionem apud eum faciemus. Beatus, apud quem mansionem facies, Domine Jesu."
+transcription_segments = [
+  { line = 1, text = "Hæc autem unde nosti, nisi quia non solum ad te, sed etiam in te venit?" },
+  { line = 2, text = "Triplicem enim ejus adventum novimus; ad homines, in homines, contra homines." },
+  { line = 3, text = "Ad omnes quidem indifferenter, non autem ita in omnes, aut contra omnes." },
+  { line = 4, text = "Sed quia primus et tertius noti sunt, utpote manifesti; de secundo, qui spiritualis et occultus est, ipsum audi dicentem: Si quis diligit me, sermonem meum servabit, et Pater meus diliget eum, et ad eum veniemus, et mansionem apud eum faciemus." },
+  { line = 5, text = "Beatus, apud quem mansionem facies, Domine Jesu." },
+]
+verified_on = "2026-11-18"
+notes = "This is the to/into/against triad; the three comings of sermo V (in carne, in spiritu, in gloria) are a different scheme. Here the secundus (in homines) is the hidden spiritual coming and the tertius is the coming against men."

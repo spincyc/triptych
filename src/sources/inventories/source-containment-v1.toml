@@ -492,6 +492,7 @@ unresolved = "Agobard of Lyons and Theodulf of Orleans are named by author only;
 [[containers.constituents]]
 author = "Amalarius of Metz"
 title = "De ecclesiasticis officiis"
+work_id = "work.amalarius-of-metz.liber-officialis"
 locator = "the four books, as the volume's Elenchus lists them"
 basis = "Container description."
 
@@ -867,6 +868,19 @@ author = "Augustine of Hippo"
 title = "Soliloquies"
 whole = true
 basis = "Description: 'and the Soliloquies'."
+
+[[containers]]
+id = "work.nicene-and-post-nicene-fathers.series-1-volume-8"
+manifest_sha256 = "86aa616c050886cc2cc05ebd58ba7efe2bd74c0fb50d0a69750f9325e883a555"
+status = "resolved"
+basis = "Description: 'containing Augustine's Enarrationes in Psalmos in the English of the Oxford Library of the Fathers, edited, annotated and condensed by A. Cleveland Coxe.'"
+
+[[containers.constituents]]
+author = "Augustine of Hippo"
+title = "Enarrationes in Psalmos"
+work_id = "work.augustine.enarrationes-in-psalmos"
+scripture = ["Psalms 1-150"]
+basis = "Description; the edition new-york-1888's notes and the volume title page it quotes ('condensed from the six volumes of the Oxford translation'), and Coxe's preface (PDF page 11), which says the Psalter is preserved entire with as much of the comment as was possible. Every Psalm is reached, in a condensed English, so the constituent is not marked whole. Psalm numbers are Augustine's, which are the Vulgate's; the printing's running heads use the English Bible's (printed page 107: Psalm XXXVIII for Vulgate 37)."
 
 [[containers]]
 id = "work.nicene-and-post-nicene-fathers.series-1-volume-10"
@@ -1539,8 +1553,8 @@ basis = "Segment segment.council-of-laodicea.canons.joannou-greek-latin-french-1
 id = "work.mansi.sacrorum-conciliorum-collectio"
 manifest_sha256 = "7dc04988a19146d50933ce28e001b589e236161b0394a279cb5590b9f2a35eb3"
 status = "partial"
-basis = "Description: 'Its volumes are container witnesses: the councils and papal acts printed within them retain their own identity.' Edition notes for tomus II and tomus XXI name the councils they carry."
-unresolved = "Only the councils the two registered tomes' notes name are listed; the collection prints many more, and the registered artifacts are single leaves."
+basis = "Description: 'Its volumes are container witnesses: the councils and papal acts printed within them retain their own identity.' Edition notes for tomus II, tomus III and tomus XXI name the councils they carry."
+unresolved = "Only the councils the registered tomes' notes name are listed; the collection prints many more, and the registered tomus II and XXI artifacts are single leaves."
 
 [[containers.constituents]]
 author = "Council of Elvira"
@@ -1571,6 +1585,12 @@ author = "Council of Pisa of 1135"
 title = "Acts, as printed"
 locator = "tomus XXI, coll. 489-490"
 basis = "Edition notes, tomus XXI."
+
+[[containers.constituents]]
+author = "Council of Saragossa (380)"
+title = "Canons"
+locator = "tomus III, coll. 633-636; canon IV at coll. 634-635"
+basis = "Edition notes for florence-1759-tomus-3."
 
 [[containers]]
 id = "work.martin-gerbert.monumenta-veteris-liturgiae-alemannicae"
@@ -24301,6 +24321,13 @@ title = "Regula canonicorum"
 basis = "work.jacques-paul-migne.patrologia-latina-volume-105's description of the same volume."
 locator = "as that volume's Elenchus lists it"
 
+[[containers.constituents]]
+author = "Amalarius of Metz"
+title = "De ecclesiasticis officiis (Liber officialis)"
+work_id = "work.amalarius-of-metz.liber-officialis"
+locator = "Lib. III cap. XL 'De adventu Domini' at cols. 1158-1159 (leaves n584-n585)"
+basis = "Running head 'DE ECCLESIASTICIS OFFICIIS LIBRI IV. — LIB. III.' read on leaf n584, registered as artifact.amalarius-of-metz.liber-officialis.latin-migne-pl-105.ia-leaf-n584-ce55796b."
+
 [[containers]]
 id = "artifact.berno-of-reichenau.libellus-de-quibusdam-rebus-ad-missae-officium-pertinentibus.latin-migne-pl-142.ia-djvu-ocr-991758f7"
 manifest_sha256 = "88c9f2cbb39278eb8925311fe0ad0960462dbf407aaa99a81e76635ee73e3c15"
@@ -24776,6 +24803,7 @@ basis = "The Elenchus."
 [[containers.constituents]]
 author = "Honorius Augustodunensis"
 title = "Sacramentarium"
+work_id = "work.honorius-augustodunensis.sacramentarium"
 locator = "Operum pars tertia, liturgica, from col. 737, physical line 58310, directly after Gemma animae"
 basis = "The Elenchus; its heading located in the layer."
 
@@ -24939,8 +24967,8 @@ basis = "Work description ('the sermons In festo S. Michaelis begin at about col
 [[containers.constituents]]
 author = "Bernard of Clairvaux"
 title = "Sermones de Adventu Domini"
-locator = "at the head of the Sermones de tempore, from col. 35 (optical text)"
-basis = "Work description ('the optical text's running heads place the sermons De adventu Domini at their head (col. 35)')."
+locator = "from col. 35: sermo I col. 35 (PDF p. 24), III.4 col. 45, IV col. 47, V cols. 50-51 (PDF pp. 31-32), read on the images"
+basis = "Work description ('the optical text's running heads place the sermons De adventu Domini at their head (col. 35)'); passages bernard-in-adventu-* in edition.jacques-paul-migne.patrologia-latina-volume-183.1854-paris, read on the images on 2026-11-18."
 
 [[containers.constituents]]
 author = "Bernard of Clairvaux"
@@ -24962,6 +24990,14 @@ work_id = "work.bernard-of-clairvaux.sermones-super-cantica-canticorum"
 locator = "from col. 785, as the Elenchus lists it (Operum tomus IV)"
 extent_unresolved = "The Elenchus gives only the opening column; how many of the sermons this volume prints was not read."
 basis = "Work description ('Operum tomus IV, Sermones in Cantica (col. 785)', from the Elenchus)."
+
+[[containers.constituents]]
+author = "Bernard of Clairvaux"
+title = "Homiliae super Missus est"
+work_id = "work.bernard-of-clairvaux.homiliae-super-missus-est"
+locator = "homily IV section 8 at cols. 83-84, artifact PDF page 48; the series' full extent not established"
+basis = "Passages bernard-missus-est-4.8-exspectat-angelus and -surge-curre-aperi in edition.jacques-paul-migne.patrologia-latina-volume-183.1854-paris, read on the image."
+
 [[containers]]
 id = "work.jacques-paul-migne.patrologia-latina-volume-107"
 manifest_sha256 = "876a62dfffc9e2a51a25c277ab733b3e97feef182425e55abd3fdc004e5e6fbf"
@@ -65644,3 +65680,146 @@ title = "Missale Gothicum"
 work_id = "work.catholic-church.missale-gothicum"
 locator = "Book III, from printed p. 188 / artifact p. 226"
 basis = "Edition notes and the heading passage above; the Postnomina at artifact p. 295 / printed p. 258 belongs to this contained collection."
+
+[[containers]]
+id = "work.bernard-of-clairvaux.st-bernards-sermons-for-the-seasons-volume-1"
+manifest_sha256 = "3919a077c8f03dd713bb9f313a2b2143285c112bbaa059fc4c2743086cff9e6e"
+status = "partial"
+basis = "Work description, which transcribes the volume's contents (artifact PDF pages 19-22, read in the text layer and checked on the images for the Advent and Virgin Mother entries); Advent and Missus est passages verified on the page images on 2026-11-18."
+unresolved = "The six Christmas Eve sermons, five Christmas Day sermons, Holy Innocents, Circumcision and Octave sermons and the Hymn to the Name of Jesus are not joined to library work records; the volume's second and third volumes are not registered."
+
+[[containers.constituents]]
+author = "Bernard of Clairvaux"
+title = "Sermones de Adventu Domini"
+whole = true
+locator = "Sermons for Advent I-VII, printed pp. 1-51 (artifact PDF page = printed page + 22)"
+basis = "Work description (contents); passages bernard-in-adventu-1.1-opening, -3.4-three-comings, -4.1-two-advents, -5.1, -5.2, -5.3 read on PDF pages 23-64."
+
+[[containers.constituents]]
+author = "Bernard of Clairvaux"
+title = "Homiliae super Missus est"
+work_id = "work.bernard-of-clairvaux.homiliae-super-missus-est"
+whole = true
+locator = "On the Glories of the Virgin Mother, Author's Preface and four sermons, from printed p. 53; homily IV section 8 at printed pp. 124-126"
+basis = "Work description (contents); passages bernard-missus-est-4.8-angel-awaits and -arise-run-open read on PDF pages 146-148."
+
+[[containers.constituents]]
+author = "Bernard of Clairvaux"
+title = "Sermones in psalmum XC Qui habitat"
+work_id = "work.bernard-of-clairvaux.sermones-in-psalmum-qui-habitat"
+whole = true
+locator = "Sermons on Psalm XC, Author's Preface and seventeen sermons"
+basis = "Work description (contents, read in the text layer only)."
+
+[[containers]]
+id = "work.bernard-of-clairvaux.sermons-of-st-bernard-on-advent-and-christmas"
+manifest_sha256 = "6993c9ee77c9c358b547bcafb76dcb13419619560a2ecb82c6db740bdbad5dfb"
+status = "partial"
+basis = "Work description, from Hedley's introduction (printed p. v, read on the image) and the printed contents (PDF pages 5-6)."
+unresolved = "The Vigil (I, IV, VI), Christmas Day (1-5), Circumcision and Epiphany sermons are not joined to library work records. Hedley (pp. vi-vii) says the Circumcision sermon has been combined with Sermon 15 on the Canticles, so that sermon is a composite."
+
+[[containers.constituents]]
+author = "Bernard of Clairvaux"
+title = "Sermones de Adventu Domini"
+locator = "sermons I-II only, from printed p. 1"
+basis = "Hedley's introduction, printed p. v: 'Of the seven sermons, De Adventu Domini ... we have here the first two.'"
+
+[[containers.constituents]]
+author = "Bernard of Clairvaux"
+title = "Homiliae super Missus est"
+work_id = "work.bernard-of-clairvaux.homiliae-super-missus-est"
+locator = "homilies I-IV, printed pp. 33-74 (IV from p. 60); homily IV section 8 at printed pp. 68-70, artifact PDF pages 80-82"
+extent_unresolved = "Hedley says a few omissions were made throughout the volume without listing them; the homilies are present but whether each is complete has not been established."
+basis = "Hedley's introduction, printed p. v ('Then follow the four homilies on the text Missus est'); printed contents; passages read on PDF pages 80-82."
+
+[[containers]]
+id = "work.jacques-paul-migne.patrologia-latina-volume-54"
+manifest_sha256 = "7265cc304ec44d0c5e3d0d3b90c2eb9f1b695629159f9278e69ef4ad9d5c3538"
+status = "partial"
+basis = "Work description, which transcribes the volume's own Elenchus (artifact PDF page 10, read on the image)."
+unresolved = "The Ballerini general preface, Quesnel's prefaces, the Life by Anastasius, Schoenemann's notice and the editors' dissertations, observations and notes are editorial matter and are not listed as constituents; the Appendix of sermons attributed to Leo (col. 477) and the fragments (col. 1255) are not joined to any record."
+
+[[containers.constituents]]
+author = "Leo the Great"
+title = "Sermones"
+whole = true
+locator = "Sermones in praecipuis anni festivitatibus, from col. 117; the nine De jejunio decimi mensis (Ballerini XII-XX) near their head: XII.4 cols. 171-172, XIII cols. 172-173, XIX cols. 185-186 (artifact PDF page p carries cols. 2p-13 and 2p-12)"
+basis = "Elenchus (col. 117); passages leo-sermo-12.4, -13 (two), -19.1, -19.2 read on PDF pages 92, 93 and 99."
+
+[[containers.constituents]]
+author = "Leo the Great"
+title = "Epistolae"
+whole = true
+locator = "Operum genuinorum pars altera, from col. 551"
+basis = "Elenchus (col. 551)."
+
+[[containers]]
+id = "work.jacques-paul-migne.patrologia-latina-volume-184"
+manifest_sha256 = "a4cdd5d4a3f951e8fd5878e6aae7e2312496f806188698c9e722437224ba4a3c"
+status = "partial"
+basis = "Work description, which transcribes the Elenchus (artifact PDF page 8, read in the text layer); the Scala claustralium read on the image at PDF page 242."
+unresolved = "The record names the Elenchus items only 'among others'; the Sermo panegyricus, Meditationes piissimae, De interiori domo, Aelred's sermon, Nicholas of Clairvaux's sermons and the further tracts are not joined to library work records, and most column numbers were not checked on the images."
+
+[[containers.constituents]]
+author = "Guigo the Carthusian"
+title = "Scala claustralium"
+locator = "cols. 475 to about 484 (the next Elenchus item begins at col. 485), artifact PDF page 242 onward (PDF page p carries cols. 2p-9 and 2p-8); printed as Epistola domini Guigonis Carthusiensis ad fratrem Gervasium"
+basis = "Elenchus ('Scala claustralium, sive de modo orandi (475)'); headnote and caput I-II read on the image (passages scala-claustralium-*). The authorship is the Cologne manuscript's ascription reported by the editors, with their own query; it is not a Bernard work."
+
+[[containers.constituents]]
+author = "Guigo the Carthusian"
+title = "Epistola seu Tractatus ad Fratres de Monte Dei"
+locator = "from col. 307, printed under the name Guigonis, prioris V majoris Carthusiae"
+basis = "Elenchus as transcribed in the work description; the author is given as the volume prints it."
+
+[[containers.constituents]]
+author = "Gilbert of Hoyland"
+title = "Sermones in Cantica"
+locator = "from col. 9"
+basis = "Elenchus as transcribed in the work description."
+
+[[containers.constituents]]
+author = "William of Saint-Thierry"
+title = "De contemplando Deo"
+locator = "from col. 365"
+basis = "Elenchus as transcribed in the work description."
+
+[[containers]]
+id = "work.friedrich-maassen.concilia-aevi-merovingici"
+manifest_sha256 = "f4e98627476f78ec42fe310d2f2a65e0b579f3f8adadde4c3f980842e37ed70a"
+status = "partial"
+basis = "Description: 'A container witness: each council printed in it is a work of its own', naming the second Council of Tours (567) and the first Council of Macon; edition notes for 1893-hannover-mgh-concilia-1 give their pages."
+unresolved = "Only the two councils the record names are listed; the volume prints the Gallic councils of 511-695."
+
+[[containers.constituents]]
+author = "Council of Tours (567)"
+title = "Canons"
+locator = "pp. 121 ff.; canon XVIII (XVII) at p. 126, ll. 20-28 (passage tours-567-c18)"
+basis = "Work description and edition notes; passage of the edition."
+
+[[containers.constituents]]
+author = "Council of Macon (581/583)"
+title = "Canons"
+locator = "pp. 155 ff.; canon IX at p. 157, ll. 14-17 (passage macon-c9)"
+basis = "Work description and edition notes; passage of the edition."
+
+[[containers]]
+id = "artifact.gregory-of-tours.historia-francorum.1884-mgh-ss-rer-merov-1-arndt.ia-djvu-text-c3507e0b"
+manifest_sha256 = "debabaae1b71993c6b1e755facdd8ecd98c8e9e502a423d5cc5c3aeff47444f4"
+status = "resolved"
+basis = "Artifact notes: 'The complete DjVuTXT optical text layer of item monumentagerman01hann, covering both parts bound in the item (Arndt's Historia Francorum and Krusch's Miracula and minor works).' The owning edition's notes: 'pars II (Miracula and minor works, ed. Krusch, 1885) is bound in the same item and is not registered here.'"
+
+[[containers.constituents]]
+author = "Gregory of Tours"
+title = "Historia Francorum"
+work_id = "work.gregory-of-tours.historia-francorum"
+whole = true
+locator = "pars I (1884), ed. W. Arndt; Book X chapter 31 at printed pp. 444-445"
+basis = "The owning edition; its notes give pars I and the X.31 pages."
+
+[[containers.constituents]]
+author = "Gregory of Tours"
+title = "Miracula et opera minora"
+whole = true
+locator = "pars II (1885), ed. B. Krusch"
+basis = "Artifact notes and the owning edition's notes, which name pars II as bound in the same item; the library holds no work record for it."

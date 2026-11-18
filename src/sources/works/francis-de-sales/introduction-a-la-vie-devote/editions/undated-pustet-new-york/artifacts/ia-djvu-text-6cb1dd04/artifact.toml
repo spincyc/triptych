@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.francis-de-sales.introduction-a-la-vie-devote.pustet-new-york-undated.ia-djvu-text-6cb1dd04"
+edition_id = "edition.francis-de-sales.introduction-a-la-vie-devote.pustet-new-york-undated"
+artifact_type = "ocr-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Public domain in the United States, accepted by the maintainer on 2026-11-18. The book is a United States printing ('Printed in U. S. A.', title verso, PDF p. 8) by Frederick Pustet & Co. and prints no copyright notice on its title page or verso (PDF pp. 7-8), the places the 1909 Copyright Act required a book's notice. If it was published before 1931 it is out of United States copyright by term (the line guidance/missals.md section 5 records from Cornell's public-domain chart, derived for calendar year 2026); if it was published in the United States between 1931 and 1977 without notice, it entered the public domain on publication. The publication year and the place where this translation first appeared were not established; the maintainer accepted that residual doubt. The bytes are the Internet Archive's optical character recognition of its own page images; machine recognition adds no human authorship, and a faithful mechanical reproduction of a public-domain printing is not original (Bridgeman Art Library v. Corel Corp., 36 F. Supp. 2d 191 (S.D.N.Y. 1999)). A case-insensitive probe of the whole file for \"google\" returned 0 matches, so the repository's rule on Google front matter (src/sources/inventories/google-usage-guidelines-rights-v1.toml) is not engaged. No host rights label is relied on."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/introductiontodefran/introductiontodefran_djvu.txt"
+provenance = "Fetched whole over HTTPS from the source_url with curl on 2026-11-18, hashed with sha256sum before use, and copied here unaltered; the SHA-256 equals the value recorded when the same file was first fetched as a finding aid that day, and the byte size and SHA-1 were compared with the Internet Archive metadata API's file listing for the item (archive.org/metadata/introductiontodefran) and matched. No source text passed through a language model between the server and this hash."
+retrieved = "2026-11-18"
+sha256 = "6cb1dd04be70ea6f6481d8079314c076c8299163dd79b5df81e8db2523fc99ef"
+byte_size = 669492
+path = "src/sources/works/francis-de-sales/introduction-a-la-vie-devote/editions/undated-pustet-new-york/artifacts/ia-djvu-text-6cb1dd04/introductiontodefran_djvu.txt"
+encoding = "utf-8"
+indexable = true
+notes = "The Internet Archive DjVuTXT optical text layer of item introductiontodefran: 14,648 LF-terminated lines. Completeness check: the byte size, 669,492, and the SHA-1, 81956a6773177900cb05cd2b65ddf36bdbbb9702, equal the item's own file listing for this file. Uncorrected optical recognition: a locating and searching layer, not a text of record (it reads 'denied' for 'defiled' in II.19); wording quoted from it is collated against the page images of the PDF registered beside it. It is the text layer of the same item as that facsimile, recognised from the item's original page images rather than from the PDF's bytes, so no derived_from edge is asserted."

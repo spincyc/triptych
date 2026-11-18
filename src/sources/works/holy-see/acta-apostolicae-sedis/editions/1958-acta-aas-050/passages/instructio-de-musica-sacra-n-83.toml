@@ -1,0 +1,20 @@
+schema = 1
+record_type = "passage"
+id = "passage.acta-papal-archives.aas.050.1958-acta-aas-050.instructio-de-musica-sacra-n-83"
+edition_id = "edition.acta-papal-archives.aas.050.1958-acta-aas-050"
+artifact_id = "artifact.acta-papal-archives.aas.050.1958-acta-aas-050.instructio-de-musica-sacra-nn-81-83-checked-text-14343045"
+artifact_sha256 = "14343045277e1d75fbaf1151782c7c7cbefa1adcb53dbe98d6d025cb77735a0f"
+locus = "aas-50-p-654-instructio-de-musica-sacra-n-83"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Sacred Congregation of Rites, Instructio de musica sacra et sacra liturgia ad mentem Litterarum encyclicarum Pii Papae XII 'Musicae sacrae disciplina' et 'Mediator Dei', heading on printed p. 630; section F), n. 83, the whole number: the exceptions to n. 81, among them the organ or harmonium alone on the Third Sunday of Advent and the Fourth of Lent, and organ or harmonium alone in Mass and Vespers only to sustain the singing; local Ordinaries may determine further. Printed p. 654; microfilm PDF p. 106."
+physical_line_ranges = [[4, 8]]
+text = "83. Pro diebus tamen temporibusque ut supra prohibitis, sequentes statuuntur exceptiones: a) Organi et aliorum instrumentorum sonus permittitur diebus festis de praecepto et feriatis (exceptis dominicis) necnon festis patroni principalis loci, tituli vel anniversarii dedicationis ecclesiae propriae et tituli aut fundatoris familiae religiosae; vel si solemnitas aliqua extraordinaria occurrat; b) Organi tantum aut harmonii sonus permittitur in dominicis tertia Adventus et quarta Quadragesimae; necnon feria quinta infra Hebdomadam sanctam in Missa chrismatis, et ab initio Missae solemnis vespertinae in « Cena Domini » usque ad finem hymni Gloria in excelsis Deo; c) Item organi tantum aut harmonii sonus permittitur in Missa et in Vesperis, solummodo ad cantum sustentandum. Ordinarii locorum has prohibitiones vel permissiones, secundum probatas locorum aut regionum consuetudines, pressius determinare possunt."
+transcription_segments = [
+  { line = 4, text = "83. Pro diebus tamen temporibusque ut supra prohibitis, sequentes statuuntur exceptiones:" },
+  { line = 5, text = "a) Organi et aliorum instrumentorum sonus permittitur diebus festis de praecepto et feriatis (exceptis dominicis) necnon festis patroni principalis loci, tituli vel anniversarii dedicationis ecclesiae propriae et tituli aut fundatoris familiae religiosae; vel si solemnitas aliqua extraordinaria occurrat;" },
+  { line = 6, text = "b) Organi tantum aut harmonii sonus permittitur in dominicis tertia Adventus et quarta Quadragesimae; necnon feria quinta infra Hebdomadam sanctam in Missa chrismatis, et ab initio Missae solemnis vespertinae in « Cena Domini » usque ad finem hymni Gloria in excelsis Deo;" },
+  { line = 7, text = "c) Item organi tantum aut harmonii sonus permittitur in Missa et in Vesperis, solummodo ad cantum sustentandum." },
+  { line = 8, text = "Ordinarii locorum has prohibitiones vel permissiones, secundum probatas locorum aut regionum consuetudines, pressius determinare possunt." },
+]
+verified_on = "2026-11-18"
+notes = "Read on the microfilm page image at 150 dpi; 'Organi et aliorum instrumentorum sonus', 'Organi', 'organi', 'harmonii sonus' and 'Gloria in excelsis Deo' are italic in the printing. The guillemets are printed with inner spaces. The vatican.va OCR layer agrees in wording at n. 81 a) and n. 83 b)."

@@ -1,0 +1,18 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-de-sales.introduction-a-la-vie-devote.pustet-new-york-undated.ia-pdf-4a4b360a"
+edition_id = "edition.francis-de-sales.introduction-a-la-vie-devote.pustet-new-york-undated"
+artifact_type = "facsimile-pdf"
+media_type = "application/pdf"
+storage = "remote"
+rights_status = "public-domain"
+rights_basis = "Public domain in the United States, accepted by the maintainer on 2026-11-18. The book is a United States printing ('Printed in U. S. A.', title verso, PDF p. 8) by Frederick Pustet & Co. and prints no copyright notice on its title page or verso (PDF pp. 7-8), the places the 1909 Copyright Act required a book's notice. If it was published before 1931 it is out of United States copyright by term (the line guidance/missals.md section 5 records from Cornell's public-domain chart, derived for calendar year 2026); if it was published in the United States between 1931 and 1977 without notice, it entered the public domain on publication. The publication year and the place where this translation first appeared were not established; the maintainer accepted that residual doubt. The page scan itself adds no authorship."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/introductiontodefran/introductiontodefran.pdf"
+provenance = "Fetched whole over HTTPS from the source_url with curl on 2026-11-18 and hashed with sha256sum; the byte size and SHA-1 (b2da0b0df7a209be62c836e921f0b4c684a8b659) were compared with the Internet Archive metadata API's file listing for the item and matched. Pages were rendered locally with pdftoppm and read on the images. The bytes are not retained."
+retrieved = "2026-11-18"
+sha256 = "4a4b360addc41d4e83c7dcd86b15bdb99b18ea74e69f009608fb651e9a901ea7"
+byte_size = 23633297
+page_count = 400
+indexable = false
+notes = "The 400-page Internet Archive PDF of item introductiontodefran. Title page PDF p. 7; Part II chapter XIX on printed pp. 105-107 = PDF pp. 133-135 (PDF page = printed page + 28 there). A case-insensitive probe of the PDF's embedded text for \"google\" returned 0 matches. The item's DjVuTXT layer (669,492 bytes, SHA-1 81956a6773177900cb05cd2b65ddf36bdbbb9702, SHA-256 6cb1dd04be70ea6f6481d8079314c076c8299163dd79b5df81e8db2523fc99ef) is registered beside it as artifact ia-djvu-text-6cb1dd04."

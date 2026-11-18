@@ -8,7 +8,12 @@ scope: 'Bounded record-level review of every pre-change unmapped passage with ex
   read all numbered unmapped question bodies and checked admitted natural subjects against the held canonical
   Genesis text; specifically noted multiple-locus and overlong-source units remain open. A subsequent
   exact-hash review records the acquired John 21:24-25 English Catena Aurea unit separately: its text
-  is checked, but its translator credit remains unestablished.'
+  is checked, but its translator credit remains unestablished. A 2026-11-18 record-level review of the
+  Advent-primer acquisitions adds the eligible inspected units that took no fragment edge: liturgical
+  commentators'' Advent chapters, a Catena unit blocked on translator credit, and a digital witness superseded
+  by its collated printed page. It also reviews that intake''s text-bearing units printed inside containers
+  (NPNF volumes, Patrologia Latina 54, Bute''s Breviary) whose constituent author is eligible, which the
+  gate reads under the container''s scope and so does not require.'
 reviews:
 - passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.100
   passage_sha256: e61208a6fd4feee8b60fe9f08c88b5f253f0dbe6365aac1912ac790fe9fadea9
@@ -2511,3 +2516,417 @@ reviews:
   basis: The checked record supplies rabbinic, classical or antiquarian evidence about cloths or customs.
     Its use by a biblical study is contextual evidence, not primary exposition of the study's scriptural
     passage.
+- passage_id: passage.amalarius-of-metz.liber-de-ordine-antiphonarii.latin-migne-pl-105.xxx-gregory
+  passage_sha256: 4942abed103b661032387f9b28e53e8824ea5d68a5e86e9305d79179d41da470
+  disposition: no-scripture-commentary
+  basis: The checked text and its context were read in the passage record. It explains that Advent may be begun
+    in the fifth or the fourth week, following the authors of the Lectionary, Antiphoner and Missal, whose author
+    Amalarius believes to be Gregory. It quotes or expounds no biblical lemma; it is liturgical commentary on the
+    Advent rite, not exposition of Scripture, and no edge is inferred from the season's readings or from any incidental
+    citation. The existing evidence state is preserved.
+- passage_id: passage.amalarius-of-metz.liber-officialis.latin-migne-pl-105.iii.40-five-weeks
+  passage_sha256: a3ae23efe5e1401e0030758bc4b3e5699bc38ae44f7270d78619eb1d1c13ca02
+  disposition: no-scripture-commentary
+  basis: The checked text and its context were read in the passage record. It explains that old Missals and Lectionaries
+    head the fifth week before Christmas and carry as many Sunday lessons and gospels. It quotes or expounds no
+    biblical lemma; naming that there are gospels is not commenting on one; it is liturgical commentary on the Advent
+    rite, not exposition of Scripture, and no edge is inferred from the season's readings or from any incidental
+    citation. The existing evidence state is preserved.
+- passage_id: passage.amalarius-of-metz.liber-officialis.latin-migne-pl-105.iii.40-four-weeks
+  passage_sha256: 88d92d96d4cd3fe5de73e2cdf83d921d5a8a776179a9f5fb82b533e8a763957d
+  disposition: no-scripture-commentary
+  basis: The checked text and its context were read in the passage record. It explains the four-week preparation
+    urged by the author of the Missal or Antiphoner, by the five senses and the four elements. It quotes or expounds
+    no biblical lemma; it is liturgical commentary on the Advent rite, not exposition of Scripture, and no edge
+    is inferred from the season's readings or from any incidental citation. The existing evidence state is preserved.
+- passage_id: passage.amalarius-of-metz.liber-officialis.latin-migne-pl-105.iii.40-gloria
+  passage_sha256: bca5eeb706de52eab3d6259f2b6a7e91584c319f43a4f264c71cb3c881964df4
+  disposition: no-scripture-commentary
+  basis: The checked text and its context were read in the passage record. It explains the omission of the Gloria
+    in excelsis and of dalmatics in Advent as signifying the time of the Old Testament. It quotes or expounds no
+    biblical lemma; the hymn's angelic opening is named as a chant, not expounded as Luke 2:14; it is liturgical
+    commentary on the Advent rite, not exposition of Scripture, and no edge is inferred from the season's readings
+    or from any incidental citation. The existing evidence state is preserved.
+- passage_id: passage.amalarius-of-metz.liber-officialis.latin-migne-pl-105.iii.40-gregorialis
+  passage_sha256: ccc77ce2d92ea1805a90275062357a4fd0e12b5192a5292004e4339641f2ee3e
+  disposition: no-scripture-commentary
+  basis: The checked text and its context were read in the passage record. It explains the five weeks of the lectionary
+    as the five ages and the Missal's and Antiphoner's recalling of the Nativity through Law, Prophets, Psalms and
+    the beginning of the Gospel. It quotes or expounds no biblical lemma; the following clause on Gabriel sent to
+    Zachary lies outside the transcribed extent; it is liturgical commentary on the Advent rite, not exposition
+    of Scripture, and no edge is inferred from the season's readings or from any incidental citation. The existing
+    evidence state is preserved.
+- passage_id: passage.honorius-augustodunensis.sacramentarium.1895-garnier-migne-pl-172.xci
+  passage_sha256: c09312ff6fd9e275748d966b6f54aaa7bc137cf59dcf32659ca5ff8b734b2a47
+  disposition: no-scripture-commentary
+  basis: The checked text and its context were read in the passage record. It explains the intermission of the Gloria
+    in excelsis and the dalmatic in the four weeks as signifying the Old Testament under patriarchs, judges, kings
+    and prophets. It quotes or expounds no biblical lemma; it is liturgical commentary on the Advent rite, not exposition
+    of Scripture, and no edge is inferred from the season's readings or from any incidental citation. The existing
+    evidence state is preserved.
+- passage_id: passage.john-beleth.summa-de-ecclesiasticis-officiis.latin-migne-pl-202.lxiv-omitted
+  passage_sha256: 8297a278b40398d1ec3a4eda4c79538c17afabd082fcc3f3ec6b775be320bbe0
+  disposition: no-scripture-commentary
+  basis: The checked text and its context were read in the passage record. It explains which songs of joy (Te Deum,
+    Gloria in excelsis, Ite, missa est) are omitted in Advent and why the Alleluia is not. It quotes or expounds
+    no biblical lemma; it is liturgical commentary on the Advent rite, not exposition of Scripture, and no edge
+    is inferred from the season's readings or from any incidental citation. The existing evidence state is preserved.
+- passage_id: passage.john-beleth.summa-de-ecclesiasticis-officiis.latin-migne-pl-202.lxiv-te-deum
+  passage_sha256: 20db26530831dadefff47630ecce0b0d618b4768e9f5d64df3bc273678882f60
+  disposition: no-scripture-commentary
+  basis: The checked text and its context were read in the passage record. It explains why the Te Deum is silent
+    in Advent. It quotes or expounds no biblical lemma; it is liturgical commentary on the Advent rite, not exposition
+    of Scripture, and no edge is inferred from the season's readings or from any incidental citation. The existing
+    evidence state is preserved.
+- passage_id: passage.john-beleth.summa-de-ecclesiasticis-officiis.latin-migne-pl-202.lxiv-triplex
+  passage_sha256: 849ca780e46de09f06096e9c84fbc03ba5ef5ca6c4fe03e229069c3b74eb2547
+  disposition: no-scripture-commentary
+  basis: The checked sentence states the doctrine of Christ's threefold coming (in the flesh, in the mind through
+    the Holy Spirit, in majesty at the judgment) within a chapter on what Advent omits. It quotes and expounds no
+    biblical lemma; a doctrinal summary is not exposition of a Scripture locus, and no edge is inferred from the
+    passages that teach the comings. The existing evidence state is preserved.
+- passage_id: passage.rupert-of-deutz.de-divinis-officiis.latin-migne-pl-170.iii.1
+  passage_sha256: 89f23a927e70512dc35d323a592419a580057e74d3e4f8af81eee55fb4313d7e
+  disposition: no-scripture-commentary
+  basis: 'The checked text and its context were read in the passage record. It explains why the season before the
+    Nativity is called adventus: its whole ecclesiastical order is arranged for contemplation of the Lord''s coming.
+    It quotes or expounds no biblical lemma; it is liturgical commentary on the Advent rite, not exposition of Scripture,
+    and no edge is inferred from the season''s readings or from any incidental citation. The existing evidence state
+    is preserved.'
+- passage_id: passage.rupert-of-deutz.de-divinis-officiis.latin-migne-pl-170.iii.2-gloria
+  passage_sha256: f1c3e964247c4d477dfed40ab25a77e22bb8cc57f7b3bdf7bf15d1c67d17738a
+  disposition: no-scripture-commentary
+  basis: The checked text and its context were read in the passage record. It explains why the Gloria in excelsis
+    is not said and Ite missa est is omitted in Advent. It quotes or expounds no biblical lemma; it is liturgical
+    commentary on the Advent rite, not exposition of Scripture, and no edge is inferred from the season's readings
+    or from any incidental citation. The existing evidence state is preserved.
+- passage_id: passage.sicard-of-cremona.mitrale.latin-migne-pl-213.v.1-duplex
+  passage_sha256: 15a286ec8c72bd17f85b867719217bde553a77f370dcb5c33713948dc0837219
+  disposition: no-scripture-commentary
+  basis: The checked sentence states that Advent is celebrated for a twofold cause because the Lord's coming is
+    twofold, in humility and in majesty. It quotes and expounds no biblical lemma; a doctrinal summary is not exposition
+    of a Scripture locus, and no edge is inferred from the passages that teach the comings. The existing evidence
+    state is preserved.
+- passage_id: passage.sicard-of-cremona.mitrale.latin-migne-pl-213.v.1-five-four
+  passage_sha256: f490886c2ed7fca451f45c6a00c40315a540c74df715f085f49bb66c18db5357
+  disposition: no-scripture-commentary
+  basis: The checked text and its context were read in the passage record. It explains why some office books mark
+    five Advent weeks (the five ages) and others four (Law, Psalms, Prophets and the books of the Gentiles). It
+    quotes or expounds no biblical lemma; it is liturgical commentary on the Advent rite, not exposition of Scripture,
+    and no edge is inferred from the season's readings or from any incidental citation. The existing evidence state
+    is preserved.
+- passage_id: passage.william-durandus.rationale-divinorum-officiorum.1612-lyon-tomus-secundus.vi.2-alleluia
+  passage_sha256: 997de4c8e9cece1c254e7665712dc1caab8f9d4585b205e674c7ac39a46f1776
+  disposition: no-scripture-commentary
+  basis: The checked text and its context were read in the passage record. It explains the question why the Alleluia
+    is not silent in Advent and its solution, that the Advent fast is partly of exultation and partly of mourning.
+    It quotes or expounds no biblical lemma; it is liturgical commentary on the Advent rite, not exposition of Scripture,
+    and no edge is inferred from the season's readings or from any incidental citation. The existing evidence state
+    is preserved.
+- passage_id: passage.william-durandus.rationale-divinorum-officiorum.1612-lyon-tomus-secundus.vi.2-five-and-four
+  passage_sha256: 1e695e0472b9be71b7791e32e48d8096f6366b19064ac68b19de22fa462aea64
+  disposition: no-scripture-commentary
+  basis: The checked text and its context were read in the passage record. It explains where the preparation of
+    Advent begins (the fifth or the fourth Sunday before Christmas) and how old graduals, lectionaries and new antiphoners
+    title it. It quotes or expounds no biblical lemma; it is liturgical commentary on the Advent rite, not exposition
+    of Scripture, and no edge is inferred from the season's readings or from any incidental citation. The existing
+    evidence state is preserved.
+- passage_id: passage.william-durandus.rationale-divinorum-officiorum.1612-lyon-tomus-secundus.vi.2-gloria
+  passage_sha256: 049c7e5a7a18c450a80c8a9ab0fdf9be1ccd2f840cf7d85f3451e9f76f3ecfd8
+  disposition: no-scripture-commentary
+  basis: The checked text and its context were read in the passage record. It explains why the Gloria in excelsis
+    is silent in Advent, to be sung more devoutly on the night of the Nativity. It quotes or expounds no biblical
+    lemma; the hymn is named as a chant, not expounded as Luke 2:14; it is liturgical commentary on the Advent rite,
+    not exposition of Scripture, and no edge is inferred from the season's readings or from any incidental citation.
+    The existing evidence state is preserved.
+- passage_id: passage.william-durandus.rationale-divinorum-officiorum.1612-lyon-tomus-secundus.vi.2.2
+  passage_sha256: e477c57f56b90d800f926b70aef1bfed148d8848792f32044d8e856720629fcc
+  disposition: no-scripture-commentary
+  basis: The checked text and its context were read in the passage record. It explains Durandus's report that Peter
+    instituted the Advent weeks and the four weeks as the fourfold coming of the Son of God. It quotes or expounds
+    no biblical lemma; the Peter attribution is a reported legend; it is liturgical commentary on the Advent rite,
+    not exposition of Scripture, and no edge is inferred from the season's readings or from any incidental citation.
+    The existing evidence state is preserved.
+- passage_id: passage.william-durandus.rationale-divinorum-officiorum.1612-lyon-tomus-secundus.vi.2.3
+  passage_sha256: 80e17cc4ab18e10202388255ea4cd599c41b4a365b5216f25fa836ffc3e214fe
+  disposition: no-scripture-commentary
+  basis: The checked text and its context were read in the passage record. It explains what each of the four comings
+    frees and that the Church celebrates only two of them. It quotes or expounds no biblical lemma; it is liturgical
+    commentary on the Advent rite, not exposition of Scripture, and no edge is inferred from the season's readings
+    or from any incidental citation. The existing evidence state is preserved.
+- passage_id: passage.thomas-aquinas.catena-aurea-in-ioannem.1874-english-oxford-ia.gregory-on-john-1-23
+  passage_sha256: 243099d9a942f2512426b723216de6ea8a79126d340a37f6ffde690109df80b1
+  disposition: needs-admission
+  basis: 'The checked Gregory comment in the historical English Catena Aurea expounds I am the voice of one crying
+    in the wilderness: John is the voice because he precedes the Word. Its natural extent is John 1:23 and its text,
+    image check and boundaries are recorded. As for the John 21:24-25 unit of the same edition, the 1874 Oxford
+    edition does not establish an individual translator in the evidence reviewed, and Catena admission requires
+    documentary translator credit for a translation; the series editor must not be relabeled as translator. Establish
+    and register that credit before adding the known John 1:23 edge.'
+- passage_id: passage.augustine.enarrationes-in-psalmos.english-npnf8-ccel-web-2026-09-05.37.13
+  passage_sha256: 23aa7e40bc405898cb64768e38d592dbb456cc7198c0c737e93db10134e61bf0
+  disposition: needs-admission
+  basis: The inspected CCEL lines expound the lemma All my desire is before Thee (Vulgate Psalm 37:10) and would
+    take that edge, but this digital edition names no translator, so it cannot pass the translation-credit gate.
+    The same English, collated against printed page 107, is now held as the verified passage passage.nicene-and-post-nicene-fathers.series-1-volume-8.new-york-1888.augustine-enarr-in-ps-37.13,
+    which carries the Psalm 37:10 edge under the 1888 edition's credited Oxford translators. Admitting this record
+    as well would hang one text twice; it stays unmapped as the digital witness unless the printed passage is withdrawn.
+- passage_id: passage.nicene-and-post-nicene-fathers.series-1-volume-1.new-york-1886.augustine-confessiones-8.12.29
+  passage_sha256: 454feafc82ff2041c6152522e479da05fb0118778165b21e7aae8f0996948cbc
+  disposition: incidental-citation
+  basis: The checked section narrates Augustine's taking up and reading Romans 13:13-14 in the garden at Milan and
+    the certainty that followed. The verse is quoted as the text he read, not expounded; no edge is inferred from
+    Romans 13:13-14.
+- passage_id: passage.nicene-and-post-nicene-fathers.series-1-volume-1.new-york-1886.augustine-epistula-130.18
+  passage_sha256: 9a0689e6158b2f6e2d88851039569b5ddc61300a1a857fc3ad986fe52fbc630b
+  disposition: incidental-citation
+  basis: The checked section of the letter to Proba teaches that continual desire is continual prayer and glosses
+    the Apostle's Pray without ceasing (1 Thessalonians 5:17) in the course of that argument. The letter's unit
+    is a teaching on prayer, not a bounded exposition of the verse; no edge is inferred from 1 Thessalonians 5:17.
+- passage_id: passage.nicene-and-post-nicene-fathers.series-1-volume-7.new-york-1888.augustine-tract-in-io-4.1
+  passage_sha256: 299430afe0081fba3835226bfbc83e43fee29701a1d079c8afed0df61d1c60ca
+  disposition: needs-admission
+  basis: The checked opening of Tractate IV (on John 1:19-33) introduces the Baptist's humility and his office of
+    pointing Christ out. It quotes no lemma and does not identify which verse of the lection it treats; an extent
+    of the whole lection would assert that the section expounds verses it does not reach. Establish the section's
+    own scriptural limit before admission.
+- passage_id: passage.nicene-and-post-nicene-fathers.series-2-volume-7.new-york-1894.cyril-catechesis-15.1
+  passage_sha256: 568a5821888ae8b88a0649ad083ef5c522b3f15e2a8c1faa99c14e10018ec1c2
+  disposition: incidental-citation
+  basis: The checked opening of Catechetical Lecture XV states the doctrine of the two advents of Christ. Its scriptural
+    phrases (rain on a fleece, light as a garment, enduring the Cross) are allusions in support of that doctrine,
+    not an exposition of any of them; no edge is inferred.
+- passage_id: passage.nicene-and-post-nicene-fathers.series-2-volume-7.new-york-1894.cyril-catechesis-15.2
+  passage_sha256: 5de188a421cb7df2311b32920141f619fa7e6622f15796e0dbfeaecf65a0ad97
+  disposition: incidental-citation
+  basis: The checked sentences cite Malachi 3:1-2 as prophecy of the two comings. The Malachi text is a proof for
+    the catechetical doctrine of the lecture, which expounds the Creed's clause on the coming in glory; the lecture
+    is not a commentary unit on Malachi, and no edge is inferred from Malachi 3:1-2.
+- passage_id: passage.nicene-and-post-nicene-fathers.series-2-volume-7.new-york-1894.cyril-catechesis-15.4
+  passage_sha256: f59bf9a865f289ce26e0f40fd1624bc6e7ca286c09d5d0497613ed29464b4470
+  disposition: incidental-citation
+  basis: The checked sentences warn against curiosity about the time of the end, citing Acts 1:7 and Matthew 24:44
+    in support. They are prooftexts for catechetical counsel, not expounded; no edge is inferred.
+- passage_id: passage.nicene-and-post-nicene-fathers.series-2-volume-7.new-york-1894.cyril-catechesis-15.26
+  passage_sha256: 76b88b32b16038f8910fdc007bb5b23236a70f8b57b5d25bfb374fd7170a0c70
+  disposition: incidental-citation
+  basis: The checked section urges the works of mercy of Matthew 25:35-36 as the way to the kingdom, adding that
+    they need no allegory but fulfilment, and closes with the foolish virgins. The quotations serve the lecture's
+    exhortation on the judgment; the passage is not a bounded exposition of Matthew 25, and no edge is inferred.
+- passage_id: passage.nicene-and-post-nicene-fathers.series-2-volume-12.new-york-1895.leo-sermo-12.4
+  passage_sha256: d62ec1c8354cd226217e82885cc1bb7fc02fdc68593eff069e446c0477c37f12
+  disposition: no-scripture-commentary
+  basis: The checked section exhorts to the December fast, setting out prayer, fasting and almsgiving and the Ember
+    observance. It expounds no biblical lemma; it is Leo's pastoral teaching on fasting and almsgiving, and no edge
+    is inferred from the season or from any allusion. Leo is an eligible author, but the record is unmapped on its
+    Scripture applicability, not its authorship.
+- passage_id: passage.nicene-and-post-nicene-fathers.series-2-volume-12.new-york-1895.leo-sermo-16.2
+  passage_sha256: 8a69f47d29658c5349194fdea3731dd346b4085b8b7bbbd9d4fd15417e055535
+  disposition: incidental-citation
+  basis: The checked sentences commend almsgiving and fasting as aids to prayer at the December fast and cite the
+    merciful man doeth good to his own soul (Proverbs 11:17) in support. The quotation is a prooftext for the exhortation,
+    not expounded; no edge is inferred.
+- passage_id: passage.nicene-and-post-nicene-fathers.series-2-volume-12.new-york-1895.leo-sermo-17.1
+  passage_sha256: 102b1531937466ff6cb05a9e6387b0fcd0b5544250c22a56c0487413e3b19610
+  disposition: no-scripture-commentary
+  basis: The checked sentences exhorts to the December fast as thanksgiving for the harvest, with almsgiving. It
+    expounds no biblical lemma; it is Leo's pastoral teaching on fasting and almsgiving, and no edge is inferred
+    from the season or from any allusion. Leo is an eligible author, but the record is unmapped on its Scripture
+    applicability, not its authorship.
+- passage_id: passage.nicene-and-post-nicene-fathers.series-2-volume-12.new-york-1895.leo-sermo-17.2
+  passage_sha256: 82598a4701bb62dc421a7112bc3b8d2eb4f831790a39ad1b4314aa9656169786
+  disposition: no-scripture-commentary
+  basis: The checked sentences exhorts to the December fast by urging the Christian giver to generosity. It expounds
+    no biblical lemma; it is Leo's pastoral teaching on fasting and almsgiving, and no edge is inferred from the
+    season or from any allusion. Leo is an eligible author, but the record is unmapped on its Scripture applicability,
+    not its authorship.
+- passage_id: passage.nicene-and-post-nicene-fathers.series-2-volume-12.new-york-1895.leo-sermo-19.1
+  passage_sha256: 32284da1fac5256b5c23e423edeee528adacc9c03d1a0080add50d1ffe594100
+  disposition: needs-admission
+  basis: The checked English sentences opens Leo's eighth sermon on the December fast by quoting the Saviour's warning
+    against hearts overcharged with surfeiting, drunkenness and the cares of this life (Luke 21:34) and applying
+    it to the near but hidden day. That is a direct application of Luke 21:34 and would take that edge. The library
+    holds no work record for Leo's Sermones, so the constituent cannot be named for a constituent_of edge or checked
+    for date and translation credit; register Leo's Sermones as a work and review the edge then.
+- passage_id: passage.nicene-and-post-nicene-fathers.series-2-volume-12.new-york-1895.leo-sermo-19.2-four-fasts
+  passage_sha256: 25f832494b5a995ae8b5a14c7c76ba419554ad2f7e276174b5164c82739718ef
+  disposition: no-scripture-commentary
+  basis: The checked sentences exhorts to the December fast by the four seasonal fasts, likened to the four gospels
+    as a figure, not an exposition of them. It expounds no biblical lemma; it is Leo's pastoral teaching on fasting
+    and almsgiving, and no edge is inferred from the season or from any allusion. Leo is an eligible author, but
+    the record is unmapped on its Scripture applicability, not its authorship.
+- passage_id: passage.nicene-and-post-nicene-fathers.series-2-volume-12.new-york-1895.leo-sermo-19.2-mind-fast
+  passage_sha256: aca5fa17204e2f7b72308e38c09faccc9e30cdd1173498a5e5769e9d9b6eb3f3
+  disposition: no-scripture-commentary
+  basis: The checked sentence exhorts to the December fast, asking the mind to fast from vices. It expounds no biblical
+    lemma; it is Leo's pastoral teaching on fasting and almsgiving, and no edge is inferred from the season or from
+    any allusion. Leo is an eligible author, but the record is unmapped on its Scripture applicability, not its
+    authorship.
+- passage_id: passage.nicene-and-post-nicene-fathers.series-2-volume-12.new-york-1895.leo-sermo-19.3
+  passage_sha256: 5b51b3a8539adafff899bc2f9e211d13818b55fa9ea7d8dec3aaa20b68faf31d
+  disposition: no-scripture-commentary
+  basis: The checked section exhorts to the December fast with bounteous alms. It expounds no biblical lemma; it
+    is Leo's pastoral teaching on fasting and almsgiving, and no edge is inferred from the season or from any allusion.
+    Leo is an eligible author, but the record is unmapped on its Scripture applicability, not its authorship.
+- passage_id: passage.jacques-paul-migne.patrologia-latina-volume-54.1881-paris-garnier.leo-sermo-12.4-tria-ad-religiosas-actiones
+  passage_sha256: e6abfa44e8b7a9254f173908a74c3fe12ccc5d7779a8f5ea3f46bdd9202180b4
+  disposition: no-scripture-commentary
+  basis: The checked Latin chapter exhorts to the December fast, setting out oratio, jejunium and eleemosyna and
+    the Ember observance. It expounds no biblical lemma; it is Leo's pastoral teaching on fasting and almsgiving,
+    and no edge is inferred from the season or from any allusion. Leo is an eligible author, but the record is unmapped
+    on its Scripture applicability, not its authorship.
+- passage_id: passage.jacques-paul-migne.patrologia-latina-volume-54.1881-paris-garnier.leo-sermo-13-fiat-refectio-pauperis
+  passage_sha256: 73a48c80cec03a838a597feb09dc56a0aed9a42c71de7cd1c0c4277b17ca9716
+  disposition: no-scripture-commentary
+  basis: The checked Latin half-sermon exhorts to the December fast by joining works of mercy to it, with the Ember
+    notice. It expounds no biblical lemma; it is Leo's pastoral teaching on fasting and almsgiving, and no edge
+    is inferred from the season or from any allusion. Leo is an eligible author, but the record is unmapped on its
+    Scripture applicability, not its authorship.
+- passage_id: passage.jacques-paul-migne.patrologia-latina-volume-54.1881-paris-garnier.leo-sermo-13-virtuti-cibus-jejunium
+  passage_sha256: 1a8793ca9052f503f9e40bc95f27c9b1924f8188a333532ed9276e6bf9ce28c8
+  disposition: no-scripture-commentary
+  basis: The checked Latin half-sermon exhorts to the December fast as a thank-offering for the harvest; its appropinquamus
+    Deo et resistentes diabolo echoes James 4:7-8 without expounding it. It expounds no biblical lemma; it is Leo's
+    pastoral teaching on fasting and almsgiving, and no edge is inferred from the season or from any allusion. Leo
+    is an eligible author, but the record is unmapped on its Scripture applicability, not its authorship.
+- passage_id: passage.jacques-paul-migne.patrologia-latina-volume-54.1881-paris-garnier.leo-sermo-19.1-cavete-ne-graventur
+  passage_sha256: 053d39e7deb5633ff3b5ae61b9f3ebb3ad51fa1804b89faefed429777abf3f5e
+  disposition: needs-admission
+  basis: The checked Latin sentences opens Leo's eighth sermon on the December fast by quoting the Saviour's warning
+    against hearts overcharged with surfeiting, drunkenness and the cares of this life (Luke 21:34) and applying
+    it to the near but hidden day. That is a direct application of Luke 21:34 and would take that edge. The library
+    holds no work record for Leo's Sermones, so the constituent cannot be named for a constituent_of edge or checked
+    for date and translation credit; register Leo's Sermones as a work and review the edge then.
+- passage_id: passage.jacques-paul-migne.patrologia-latina-volume-54.1881-paris-garnier.leo-sermo-19.2-quatuor-jejunia
+  passage_sha256: b25151a3206fab3b15e3ced61701070100e6b3ae657f959bd9d501072024baa3
+  disposition: no-scripture-commentary
+  basis: The checked Latin sentences exhorts to the December fast by the four seasonal fasts, likened to the four
+    gospels as a figure, not an exposition of them. It expounds no biblical lemma; it is Leo's pastoral teaching
+    on fasting and almsgiving, and no edge is inferred from the season or from any allusion. Leo is an eligible
+    author, but the record is unmapped on its Scripture applicability, not its authorship.
+- passage_id: passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.advent-primer-advent-1-mattins-lesson-4
+  passage_sha256: 537cf48090f680aebc6be8a31b470d951ea4df12474f62e193dbfb8cb689ce13
+  disposition: needs-admission
+  basis: The checked Matins lesson in Bute's English Breviary opens Leo's eighth sermon on the December fast by
+    quoting the Saviour's warning against hearts overcharged with surfeiting, drunkenness and the cares of this
+    life (Luke 21:34) and applying it to the near but hidden day. That is a direct application of Luke 21:34 and
+    would take that edge. It is also a liturgical lesson in a book that is not a declared anthology, and the library
+    holds no work record for Leo's Sermones, so the constituent cannot be named for a constituent_of edge or checked
+    for date and translation credit; register Leo's Sermones as a work and review the edge then.
+- passage_id: passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.advent-primer-advent-1-mattins-lesson-7
+  passage_sha256: deff67bea09d07a9b00946edd6c5a0fccf35924115ffaeb952a7ac1861157060
+  disposition: needs-admission
+  basis: 'The checked Matins lesson in Bute''s English Breviary prints, under its own heading, Gregory the Great''s
+    exposition of the signs before the end (Homily I on the Gospels, after the incipit Luke 21:25); in substance
+    it is direct commentary on Luke 21:25-26. It cannot take an edge as it stands: the Breviary is a liturgical
+    book, not a declared anthology, so the Father''s work cannot be named through constituent_of, the edition names
+    no translator in its record, and a liturgical lesson may abridge the Father''s text. Admit the exposition through
+    the Father''s own work and edition, or declare the lesson''s constituent identity, translator credit and relation
+    to the source text, before adding the Luke 21:25-26 edge.'
+- passage_id: passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.advent-primer-advent-2-mattins-lesson-5
+  passage_sha256: c6509eeecab21e45040834d5695c64d743f3687b2220cc72462158f8d5c5b3d6
+  disposition: needs-admission
+  basis: 'The checked Matins lesson in Bute''s English Breviary prints, under its own heading, Jerome''s exposition
+    of the rod out of the root of Jesse and its flower (Commentary on Isaiah IV, on Isaiah 11:1); in substance it
+    is direct commentary on Isaiah 11:1. It cannot take an edge as it stands: the Breviary is a liturgical book,
+    not a declared anthology, so the Father''s work cannot be named through constituent_of, the edition names no
+    translator in its record, and a liturgical lesson may abridge the Father''s text. Admit the exposition through
+    the Father''s own work and edition, or declare the lesson''s constituent identity, translator credit and relation
+    to the source text, before adding the Isaiah 11:1 edge.'
+- passage_id: passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.advent-primer-advent-2-mattins-lesson-7
+  passage_sha256: 62fbec4a6948dfaa9835ae598361e6d864bf0c1fb9d88ebdedda728eb7009db5
+  disposition: needs-admission
+  basis: 'The checked Matins lesson in Bute''s English Breviary prints, under its own heading, Gregory the Great''s
+    exposition of the works of Christ that became a stumbling-block (Homily VI on the Gospels, printed as X, after
+    the incipit Matthew 11:2-3); in substance it is direct commentary on Matthew 11:2-6. It cannot take an edge
+    as it stands: the Breviary is a liturgical book, not a declared anthology, so the Father''s work cannot be named
+    through constituent_of, the edition names no translator in its record, and a liturgical lesson may abridge the
+    Father''s text. Admit the exposition through the Father''s own work and edition, or declare the lesson''s constituent
+    identity, translator credit and relation to the source text, before adding the Matthew 11:2-6 edge.'
+- passage_id: passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.advent-primer-advent-2-mattins-lesson-8
+  passage_sha256: e6088c6aaf2238d47478e9b368c93d8dd39ff084d2cdbd99b0e684876e80a293
+  disposition: needs-admission
+  basis: 'The checked Matins lesson in Bute''s English Breviary prints, under its own heading, Gregory the Great''s
+    exposition of blessed is he whosoever shall not be offended in Me (the homily continued); in substance it is
+    direct commentary on Matthew 11:6. It cannot take an edge as it stands: the Breviary is a liturgical book, not
+    a declared anthology, so the Father''s work cannot be named through constituent_of, the edition names no translator
+    in its record, and a liturgical lesson may abridge the Father''s text. Admit the exposition through the Father''s
+    own work and edition, or declare the lesson''s constituent identity, translator credit and relation to the source
+    text, before adding the Matthew 11:6 edge.'
+- passage_id: passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.advent-primer-advent-3-mattins-lesson-4
+  passage_sha256: fc4221194ac53f4a87789b6614cd6d04a9e7d04388025289f7225e863f9b60ae
+  disposition: no-scripture-commentary
+  basis: The checked Matins lesson (Leo's second sermon on the December fast, in Bute's English) exhorts to the
+    December fast as a thank-offering for the gathered harvest. It expounds no biblical lemma; it is Leo's pastoral
+    teaching on fasting and almsgiving, and no edge is inferred from the season or from any allusion. Leo is an
+    eligible author, but the record is unmapped on its Scripture applicability, not its authorship.
+- passage_id: passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.advent-primer-advent-3-mattins-lesson-5
+  passage_sha256: 904d021eb17bf767bf86e7b30b4746e3b675475db7c277304f4fab5dfc34a23c
+  disposition: no-scripture-commentary
+  basis: The checked Matins lesson (the same sermon continued) exhorts to the December fast, fasting as the bread
+    of strength joined to works of mercy. It expounds no biblical lemma; it is Leo's pastoral teaching on fasting
+    and almsgiving, and no edge is inferred from the season or from any allusion. Leo is an eligible author, but
+    the record is unmapped on its Scripture applicability, not its authorship.
+- passage_id: passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.advent-primer-advent-3-mattins-lesson-6
+  passage_sha256: 5a66eca13f9f90867779b3d29fdb52c4a5d30bf37b450d9e748cb4f846e01770
+  disposition: no-scripture-commentary
+  basis: The checked Matins lesson (the same sermon concluded) exhorts to the December fast with works of mercy
+    and the Ember notice. It expounds no biblical lemma; it is Leo's pastoral teaching on fasting and almsgiving,
+    and no edge is inferred from the season or from any allusion. Leo is an eligible author, but the record is unmapped
+    on its Scripture applicability, not its authorship.
+- passage_id: passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.advent-primer-advent-3-mattins-lesson-7
+  passage_sha256: 8c8b6f6bd4e2e4ea29f3e1624f143c35ef63493b6d59e8087356c5d66a986310
+  disposition: needs-admission
+  basis: 'The checked Matins lesson in Bute''s English Breviary prints, under its own heading, Gregory the Great''s
+    exposition of the Baptist''s confession I am not the Christ (Homily VII on the Gospels, after the incipit John
+    1:19); in substance it is direct commentary on John 1:19-20. It cannot take an edge as it stands: the Breviary
+    is a liturgical book, not a declared anthology, so the Father''s work cannot be named through constituent_of,
+    the edition names no translator in its record, and a liturgical lesson may abridge the Father''s text. Admit
+    the exposition through the Father''s own work and edition, or declare the lesson''s constituent identity, translator
+    credit and relation to the source text, before adding the John 1:19-20 edge.'
+- passage_id: passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.advent-primer-advent-4-mattins-lesson-4
+  passage_sha256: b56f3a4332720f18d277ff5d00bff45a2a3c4df15d4c08542f4069e4b6a257d9
+  disposition: incidental-citation
+  basis: The checked Matins lesson (Leo's first sermon on the December fast, in Bute's English) teaches that man,
+    made in God's image, is raised by the grace of the Second Adam, citing 1 Corinthians 15:22. The citation supports
+    the sermon's exhortation and is not expounded; no edge is inferred from it or from the allusion to Genesis 1:26.
+- passage_id: passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.advent-primer-advent-4-mattins-lesson-7
+  passage_sha256: e1c4231d4c37fea153d37692aaeaa49352b8776d51949b8896e4f87b1ecba9b3
+  disposition: needs-admission
+  basis: 'The checked Matins lesson in Bute''s English Breviary prints, under its own heading, Gregory the Great''s
+    exposition of O generation of vipers, who hath warned you to flee from the wrath to come? (Homily XX on the
+    Gospels); in substance it is direct commentary on Luke 3:7. It cannot take an edge as it stands: the Breviary
+    is a liturgical book, not a declared anthology, so the Father''s work cannot be named through constituent_of,
+    the edition names no translator in its record, and a liturgical lesson may abridge the Father''s text. Admit
+    the exposition through the Father''s own work and edition, or declare the lesson''s constituent identity, translator
+    credit and relation to the source text, before adding the Luke 3:7 edge.'
+- passage_id: passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.advent-primer-ember-friday-mattins-lesson-1
+  passage_sha256: 803cad5b5ce8108dd06adf929b42077fba0179ec4b016a6e3ae1fae7f0adca3b
+  disposition: needs-admission
+  basis: 'The checked Matins lesson in Bute''s English Breviary prints, under its own heading, Ambrose''s exposition
+    of Mary''s going into the hill country (Commentary on Luke II, after the incipit Luke 1:39); in substance it
+    is direct commentary on Luke 1:39. It cannot take an edge as it stands: the Breviary is a liturgical book, not
+    a declared anthology, so the Father''s work cannot be named through constituent_of, the edition names no translator
+    in its record, and a liturgical lesson may abridge the Father''s text. Admit the exposition through the Father''s
+    own work and edition, or declare the lesson''s constituent identity, translator credit and relation to the source
+    text, before adding the Luke 1:39 edge.'
+- passage_id: passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.advent-primer-ember-saturday-mattins-lesson-1
+  passage_sha256: 9fd4e854a2341caaad7d5709614761da757725096758814ffc3f009efa875938
+  disposition: needs-admission
+  basis: 'The checked Matins lesson in Bute''s English Breviary prints, under its own heading, Gregory the Great''s
+    exposition of the rulers named at the Forerunner''s coming (Homily XX on the Gospels, after the incipit Luke
+    3:1); in substance it is direct commentary on Luke 3:1-2. It cannot take an edge as it stands: the Breviary
+    is a liturgical book, not a declared anthology, so the Father''s work cannot be named through constituent_of,
+    the edition names no translator in its record, and a liturgical lesson may abridge the Father''s text. Admit
+    the exposition through the Father''s own work and edition, or declare the lesson''s constituent identity, translator
+    credit and relation to the source text, before adding the Luke 3:1-2 edge.'
+- passage_id: passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.advent-primer-ember-wednesday-mattins-lesson-1
+  passage_sha256: fd25443ac7e8a5c65da1cc73486284dec730103edaeaa872b6d516b075717721
+  disposition: needs-admission
+  basis: 'The checked Matins lesson in Bute''s English Breviary prints, under its own heading, Ambrose''s exposition
+    of why the Virgin was espoused (Commentary on Luke II, after the incipit Luke 1:26); in substance it is direct
+    commentary on Luke 1:26-27. It cannot take an edge as it stands: the Breviary is a liturgical book, not a declared
+    anthology, so the Father''s work cannot be named through constituent_of, the edition names no translator in
+    its record, and a liturgical lesson may abridge the Father''s text. Admit the exposition through the Father''s
+    own work and edition, or declare the lesson''s constituent identity, translator credit and relation to the source
+    text, before adding the Luke 1:26-27 edge.'

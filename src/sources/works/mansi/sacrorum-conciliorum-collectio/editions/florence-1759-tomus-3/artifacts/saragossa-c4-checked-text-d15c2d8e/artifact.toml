@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.mansi.sacrorum-conciliorum-collectio.florence-1759-tomus-3.saragossa-c4-checked-text-d15c2d8e"
+edition_id = "edition.mansi.sacrorum-conciliorum-collectio.florence-1759-tomus-3"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Fourth-century conciliar Latin as printed at Florence in 1759, in a 1901 photographic reprint; Public domain in the United States by publication date. The title page of this copy, read on the page image at PDF p. 9, prints FLORENTIAE MDCCLIX (1759); the facsimile reprint leaf at PDF p. 8 is dated 1901, and a photographic reprint adds no new authorship to the 1759 text. A work first published abroad before 1931 is out of United States copyright: that is the line guidance/missals.md section 5 records from Cornell's public-domain chart as current on 1 January 2026, and because it moves every January it is written here as derived for calendar year 2026 and not as a standing rule. Restoration under 17 U.S.C. 104A cannot keep it protected: a restored term runs no longer than ninety-five years from publication, and ninety-five years from 1901 ended with 1996. No life-based term is relied on."
+rights_jurisdiction = "United States"
+provenance = "Transcribed on 2026-11-18 from coll. 633-635 (PDF pp. 335-336) of the hashed PDF 8389cff9e6717eff1a8759ced2a5a11352caa0d100ddf2dc7199b1306aa7ddab, rendered at 80 dpi and cropped at 200-300 dpi; the OCR layer was a finding aid only."
+retrieved = "2026-11-18"
+sha256 = "d15c2d8e13b908cb85daa1c31afa26d195d634a066fdcc12ed89b5e5ac4b8350"
+byte_size = 772
+path = "src/sources/works/mansi/sacrorum-conciliorum-collectio/editions/florence-1759-tomus-3/artifacts/saragossa-c4-checked-text-d15c2d8e/mansi-iii-coll633-635-saragossa.txt"
+derived_from = "artifact.mansi.sacrorum-conciliorum-collectio.florence-1759-tomus-3.ia-pdf-8389cff9"
+transformation = "Read the named printed page(s) as image(s) of the parent artifact and transcribe the quoted extent with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced locator naming the printed page or column; preserve the printing's wording, spelling, capitalization, accents and punctuation; join line-end hyphenation; expand nothing; omit running heads, marginal numbers and footnote markers unless a line says otherwise. Long s is transcribed as s; the æ ligature and the ampersand are kept as printed. Asterisks keying the marginal variants are omitted and the variants are given as separate margin lines."
+indexable = true
+encoding = "utf-8"

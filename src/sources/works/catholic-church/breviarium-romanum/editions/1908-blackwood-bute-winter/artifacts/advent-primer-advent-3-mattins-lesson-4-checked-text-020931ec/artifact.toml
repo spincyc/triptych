@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.advent-primer-advent-3-mattins-lesson-4-checked-text-020931ec"
+edition_id = "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The identified English book was published by William Blackwood and Sons in 1908. Its 1908 printed contents have no remaining United States copyright term in 2026: a 95-year maximum term ended before 2026, and any URAA restoration supplies only the remainder of the otherwise applicable United States term. Faithful mechanical scans and project transcription of those public-domain English words add no human authorship. The stated basis is publication date and mechanical reproduction, not Internet Archive availability or a host label. This covers the historical human translation, not approved modern English or any modern editorial addition. This focused transcription is made from page images rendered from the hashed parent facsimile and contains no Internet Archive markup or text-layer bytes."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription collated against the printed page images of the hashed Internet Archive facsimile romanbreviaryref01cathuoft (parent artifact english-completion-20261029-postconciliar-bute1908-pdf, SHA-256 6792c0e5...f8ce6b5, 1044 pages; printed page = PDF page - 84 in this range), on 2026-11-18; the tracked optical text layer ia-djvu-text-4f48bba8 was used only to locate the pages. Printed page 240, PDF page 324."
+retrieved = "2026-11-18"
+sha256 = "020931ecc41dc0c1806063583021410794a35d45b795ff960d07b8da1e1cd94e"
+byte_size = 824
+path = "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/artifacts/advent-primer-advent-3-mattins-lesson-4-checked-text-020931ec/advent-primer-advent-3-mattins-lesson-4.txt"
+derived_from = "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-pdf"
+transformation = "Read the named printed pages as images rendered at 170 dots per inch (with 300 and 400 dots per inch crops where a reading was doubtful) from the hashed parent facsimile with pdftoppm, and transcribe the named lessons, headings, chants and prayers with one sense unit (a sentence, a printed heading, or a printed verse line) per LF-terminated UTF-8 line, each prefixed by a braced printed-page and office-position locator; preserve the printed wording, capitalization, spelling, punctuation, diaereses, ligatures and typographic quotation marks; render drop capitals and the small capitals that follow them, and small-capital LORD and JESUS, in uppercase; join line-end hyphenation except in printed compounds, and close the printer's spaces before punctuation, after opening quotation marks and around mid-line hyphens; omit running heads, page numbers and footnote reference numerals, and transcribe a footnote only where a line's locator names it."
+indexable = true
+encoding = "utf-8"

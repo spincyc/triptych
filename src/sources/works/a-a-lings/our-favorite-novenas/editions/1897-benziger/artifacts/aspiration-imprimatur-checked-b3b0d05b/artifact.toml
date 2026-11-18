@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.a-a-lings.our-favorite-novenas.benziger-1897.aspiration-imprimatur-checked-b3b0d05b"
+edition_id = "edition.a-a-lings.our-favorite-novenas.benziger-1897"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Public domain in the United States by publication date. The approbation leaf (PDF p. 8) prints 'COPYRIGHT, 1897, BY BENZIGER BROTHERS.': the text was published in the United States in 1897. This copy's own printing year is not printed; the leaves read carry no later notice, and a reprint of the 1897 text adds no new term to it. A work published in the United States before 1931 is out of United States copyright: that is the line guidance/missals.md section 5 records from Cornell's public-domain chart, and because it moves every January it is written here as derived for calendar year 2026 and not as a standing rule. This file is literal historical wording of that printing, transcribed and checked against its page images; it adds no translation, paraphrase or editorial wording beyond the declared mechanical normalizations, and the bracketed locators are bare finding labels."
+retrieved = "2026-11-18"
+sha256 = "b3b0d05be84935933bc4ee4897ecf4297fefc4d1b29ca267cd34eb719dfa3349"
+byte_size = 871
+indexable = true
+encoding = "utf-8"
+path = "src/sources/works/a-a-lings/our-favorite-novenas/editions/1897-benziger/artifacts/aspiration-imprimatur-checked-b3b0d05b/checked.txt"
+derived_from = "artifact.a-a-lings.our-favorite-novenas.benziger-1897.ia-djvu-text-a1669305"
+transformation = "Hand transcription made from the page images, rendered locally with pdftoppm from the registered facsimile; the parent OCR was used only to locate the pages and was diffed word by word against this file afterwards, every difference being resolved on the image. No source text passed through a language model. Typographic quotation marks are rendered as straight ASCII quotes; thin spaces before ? ! ; : are removed; line-end hyphenation is joined (a compound printed with a hyphen keeps it); footnote reference numerals are omitted; italics are not marked; small capitals are rendered in mixed case, with full capitals kept where printed larger. One sense unit per line, each prefixed by a bracketed locator that is a finding label, not printed text. Selected lines only: the approbation leaf and the Christmas aspiration with its note on p. 29."
+provenance = "Image check against artifact.a-a-lings.our-favorite-novenas.benziger-1897.ia-pdf-5d78f2f3 on 2026-11-18: PDF p. 8 and PDF p. 37 (printed p. 29), the latter at 220 dpi."
+notes = "The terminal stop after 'Censor Librorum' is not legible on the image and is not supplied. The OCR reads '1 and' for the drop-capital 'Hail'."

@@ -1,0 +1,21 @@
+schema = 1
+record_type = "passage"
+id = "passage.jacques-paul-migne.patrologia-latina-volume-54.1881-paris-garnier.leo-sermo-12.4-tria-ad-religiosas-actiones"
+edition_id = "edition.jacques-paul-migne.patrologia-latina-volume-54.1881-paris-garnier"
+artifact_id = "artifact.jacques-paul-migne.patrologia-latina-volume-54.1881-paris-garnier.leo-sermo-12.4-tria-ad-religiosas-actiones-checked-text-4e968b32"
+artifact_sha256 = "4e968b32af58eac545da5bff7c35b799bb0097a4252ac618a3ac5ebdfa64dade"
+locus = "column-171"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Leo the Great, Sermo XII [al. XI], De jejunio decimi mensis I, chapter IV entire: prayer, fasting and almsgiving, and the Wednesday and Friday fast with the Saturday vigil at St Peter's. Read on PL 54 column 171 (PDF page 92, left column, from Cap. IV) and column 172 (right column, to Amen and the heading of Sermo XIII)."
+physical_line_ranges = [[1, 6]]
+text = "Tria vero sunt quæ maxime ad religiosas pertinent actiones, oratio scilicet, jejunium, et eleemosyna, quibus exercendis omne quidem tempus acceptum, sed illud est studiosius observandum, quod apostolicis accepimus traditionibus consecratum; sicut etiam decimus hic mensis morem refert veteris instituti, ut tria illa de quibus locutus sum diligentius exsequamur. Oratione enim propitiatio Dei quæritur, jejunio concupiscentia carnis exstinguitur, eleemosynis peccata redimuntur; simulque per omnia Dei in nobis imago renovatur, si et in laudem ejus semper parati, et ad purificationem nostram sine cessatione solliciti, et ad sustentationem proximi indesinenter simus intenti. Hæc triplex observantia, dilectissimi, omnium virtutum comprehendit effectus. Hæc ad imaginem et similitudinem Dei pervenit, et a Spiritu sancto inseparabiles facit. Quia in orationibus permanet fides recta; in jejuniis innocens vita, in eleemosynis mens benigna. Quarta igitur et sexta feria jejunemus; sabbato autem apud beatissimum apostolum Petrum vigilias celebremus; qui et orationes, et jejunia, et eleemosynas nostras precibus suis dignabitur adjuvare."
+transcription_segments = [
+  { line = 1, text = "Tria vero sunt quæ maxime ad religiosas pertinent actiones, oratio scilicet, jejunium, et eleemosyna, quibus exercendis omne quidem tempus acceptum, sed illud est studiosius observandum, quod apostolicis accepimus traditionibus consecratum; sicut etiam decimus hic mensis morem refert veteris instituti, ut tria illa de quibus locutus sum diligentius exsequamur." },
+  { line = 2, text = "Oratione enim propitiatio Dei quæritur, jejunio concupiscentia carnis exstinguitur, eleemosynis peccata redimuntur; simulque per omnia Dei in nobis imago renovatur, si et in laudem ejus semper parati, et ad purificationem nostram sine cessatione solliciti, et ad sustentationem proximi indesinenter simus intenti." },
+  { line = 3, text = "Hæc triplex observantia, dilectissimi, omnium virtutum comprehendit effectus." },
+  { line = 4, text = "Hæc ad imaginem et similitudinem Dei pervenit, et a Spiritu sancto inseparabiles facit." },
+  { line = 5, text = "Quia in orationibus permanet fides recta; in jejuniis innocens vita, in eleemosynis mens benigna." },
+  { line = 6, text = "Quarta igitur et sexta feria jejunemus; sabbato autem apud beatissimum apostolum Petrum vigilias celebremus; qui et orationes, et jejunia, et eleemosynas nostras precibus suis dignabitur adjuvare." },
+]
+verified_on = "2026-11-18"
+notes = "Ballerini numbering; this is NPNF2-12 Sermon XII.4. The page prints sciiicet (broken l), eteleemosyna and si mulque run together or split by the compositor; read scilicet, et eleemosyna, simulque. The bold marginal 43 and the reference (Dan. iv, 24) are omitted. The editors' notes (i)-(l) record variants: promptum for acceptum (Homiliary of Paul the Deacon), sumus intenti (Quesnel), in jejunio (others) for in jejuniis, and a Vatican addition after adjuvare."

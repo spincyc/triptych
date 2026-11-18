@@ -1,0 +1,23 @@
+schema = 1
+record_type = "passage"
+id = "passage.ambrose.expositio-evangelii-secundum-lucam.csel-32-4-schenkl-1902.ambrose-expositio-lucae-2.26"
+edition_id = "edition.ambrose.expositio-evangelii-secundum-lucam.csel-32-4-schenkl-1902"
+artifact_id = "artifact.ambrose.expositio-evangelii-secundum-lucam.csel-32-4-schenkl-1902.ambrose-expositio-lucae-2.26-checked-text-c65747b6"
+artifact_sha256 = "c65747b693832e2e4306fd09b53e0086b896ca3bb98ac8a445c00d98669900b1"
+locus = "2.26"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "CSEL 32/4 printed page 55, lines 5-15 (PDF page 108). The whole of section 26 of book II, on Elizabeth's beata quae credidisti (Luke 1:45) and the soul of Mary in each believer: it opens with the letter-spaced lemma et beata quae credidisti, on the line where Schenkl's marginal 26 stands, and ends at custodiat, before section 27 quaecumque igitur talis esse potuerit anima. The page's running head reads Expositio euangelii Lucae II 24-27 (1289 E-1290 E)."
+physical_line_ranges = [[1, 8]]
+text = "et beata quae credidisti. uides non dubitasse Mariam, sed credidisse et ideo fructum fidei consecutam. beata inquit quae credidisti. sed et uos beati, qui audistis et credidistis; quaecumque enim crediderit anima et concipit et generat dei uerbum et opera eius agnoscit. sit in singulis Mariae anima, ut magnificet dominum, sit in singulis spiritus Mariae, ut exsultet in deo, si secundum carnem una mater est Christi, secundum fidem tamen omnium fructus est Christus; omnis enim anima accipit dei uerbum, si tamen inmaculata et inmunis a uitiis intemerato castimoniam pudore custodiat."
+transcription_segments = [
+  { line = 1, text = "et beata quae credidisti." },
+  { line = 2, text = "uides non dubitasse Mariam, sed credidisse et ideo fructum fidei consecutam." },
+  { line = 3, text = "beata inquit quae credidisti." },
+  { line = 4, text = "sed et uos beati, qui audistis et credidistis;" },
+  { line = 5, text = "quaecumque enim crediderit anima et concipit et generat dei uerbum et opera eius agnoscit." },
+  { line = 6, text = "sit in singulis Mariae anima, ut magnificet dominum, sit in singulis spiritus Mariae, ut exsultet in deo," },
+  { line = 7, text = "si secundum carnem una mater est Christi, secundum fidem tamen omnium fructus est Christus;" },
+  { line = 8, text = "omnis enim anima accipit dei uerbum, si tamen inmaculata et inmunis a uitiis intemerato castimoniam pudore custodiat." },
+]
+verified_on = "2026-11-18"
+notes = "CSEL AGAINST MIGNE (the R3 dossier's wording): no word differs within the dossier's quoted extent. Differences are orthographic and of punctuation only: dei uerbum for Dei Verbum with no comma before et opera; dominum, sit for Dominum: sit; Christi, secundum for Christi; secundum; Christus; omnis for Christus. Omnis (the dossier stops at Christus). The section continues omnis enim anima accipit dei uerbum, si tamen inmaculata et inmunis a uitiis intemerato castimoniam pudore custodiat, which the dossier does not quote. PAGE: the marks after Mariam, dominum and Christi are broken sorts that show on the scan almost as full stops even at 600 dots per inch; they are transcribed as commas, as the run of the sentence and the optical text both have them, and that judgement is recorded here. Apparatus for these lines: 10 dm X; 11 dno PG; 14 uitiis est X, uitiis sit G, uitiis sit et T; 15 custodiatque eum X. CATENA: the Catena Aurea's Ambrose on Luke 1:46-47 (passage ambrose-on-luke-1-46-47 of the 1843 Oxford Catena on Luke) keeps only the spiritus clause, si secundum carnem and omnis enim anima accipit (rendered receives) of this section, dropping quaecumque enim crediderit anima et concipit et generat dei uerbum and sit in singulis Mariae anima, ut magnificet dominum, and prefixes the close of section 27 (p. 56)."

@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.thomas-aquinas.catena-aurea-in-ioannem.1874-english-oxford-ia.gregory-on-john-1-23-checked-text-ff7e5127"
+edition_id = "edition.thomas-aquinas.catena-aurea-in-ioannem.1874-english-oxford-ia"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces a few sentences of the Oxford English Catena Aurea on John, new edition published in 1874, which is in the United States public domain by date of publication (the parent facsimile's rights_basis gives the evidence). It is transcribed from page images rendered from the hashed Google/Internet Archive facsimile and contains none of Google's front matter or its Digitized by Google page-foot stamp, no Internet Archive markup and no optical-text bytes. Historical wording is excluded from Triptych CC BY authorship."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription collated against the page image of the hashed Internet Archive facsimile pdf-c4ab25fb (SHA-256 c4ab25fb...ecfb) on 2026-11-18; the retained optical text ocr-109bb1e4 was used only to locate the page. Printed page 49, PDF page 58."
+retrieved = "2026-11-18"
+sha256 = "ff7e51278fbe215b0d0ed6f5286cb11b6a703ae59114cae5a2d88c843ebc60b2"
+byte_size = 368
+path = "src/sources/works/thomas-aquinas/catena-aurea-in-ioannem/editions/1874-english-oxford-ia/artifacts/gregory-on-john-1-23-checked-text-ff7e5127/gregory-on-john-1-23.txt"
+derived_from = "artifact.thomas-aquinas.catena-aurea-in-ioannem.1874-english-oxford-ia.pdf-c4ab25fb"
+transformation = "Read the named printed page as an image rendered at 150 dots per inch, with the comment and its margin at 250 dots per inch, from the hashed facsimile with pdftoppm, and transcribe the quoted comment with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced Gospel-verse-and-Father locator; preserve the printed wording, spelling, capitalization and punctuation; print the small-capital Father label in ordinary capitals and lower case with its printed stop; join line-end hyphenation and close the printer's spaces before punctuation; omit italics, running heads, page numbers, signatures, Google's page-foot stamp and the marginal attributions, which are recorded in the passage notes."
+indexable = true
+encoding = "utf-8"

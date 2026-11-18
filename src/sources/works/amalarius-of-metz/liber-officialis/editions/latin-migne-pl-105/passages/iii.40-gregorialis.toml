@@ -1,0 +1,17 @@
+schema = 1
+record_type = "passage"
+id = "passage.amalarius-of-metz.liber-officialis.latin-migne-pl-105.iii.40-gregorialis"
+edition_id = "edition.amalarius-of-metz.liber-officialis.latin-migne-pl-105"
+artifact_id = "artifact.amalarius-of-metz.liber-officialis.latin-migne-pl-105.iii.40-gregorialis-checked-text-b2d48c9e"
+artifact_sha256 = "b2d48c9e29e50c809e3b7c305219b8e4ad676af4f9bae273c3d9eb53f5a362a6"
+locus = "III.40"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Liber officialis III.40: the lectionary's five weeks answer the five ages of the world; the Missal 'which is called Gregorian' and the Antiphoner make us recall the Nativity proclaimed through three orders of books (Law, Prophets, Psalms) and a fourth, the beginning of the Gospel. PL 105 col. 1158, right column of leaf n584. The second sentence continues beyond the transcribed extent ('in quo narratur Gabriel archangelus missus ad Zachariam...')."
+physical_line_ranges = [[1, 2]]
+text = "Auctor lectionarii excitat fidem nostram ad recolendum Domini nostri Jesu Christi venturi in mundum præconium per quinque ætates mundi. Auctor Missalis, qui vocatur Gregorialis, et Antiphonarii, nos tangit, ut recolamus nativitatem Domini celebratam per tres ordines librorum, scilicet legis, Prophetarum, et Psalmorum, necnon et per quartum, id est, principium Evangelii,"
+transcription_segments = [
+  { line = 1, text = "Auctor lectionarii excitat fidem nostram ad recolendum Domini nostri Jesu Christi venturi in mundum præconium per quinque ætates mundi." },
+  { line = 2, text = "Auctor Missalis, qui vocatur Gregorialis, et Antiphonarii, nos tangit, ut recolamus nativitatem Domini celebratam per tres ordines librorum, scilicet legis, Prophetarum, et Psalmorum, necnon et per quartum, id est, principium Evangelii," },
+]
+verified_on = "2026-11-18"
+notes = "Read on the page image of leaf n584. Letters of 'Auctor' and 'Antiphonarii' in the second sentence are damaged in the print ('Au-tor', 'phona..ii'); the readings given are the only ones the visible strokes and the parallel at col. 1158 below ('Auctor Missalis sive Antiphonarii') admit. The OCR reads 'Autor'. R1's dossier joined this sentence and the later 'per quatuor hebdomadas' sentence with an ellipsis as though one quotation; they are separate sentences (see passage iii.40-four-weeks)."

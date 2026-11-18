@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.council-of-trent.catechismus-romanus.donovan-baltimore-lucas-brothers.satisfaction-prayer-fasting-alms-checked-15f940ef"
+edition_id = "edition.council-of-trent.catechismus-romanus.donovan-baltimore-lucas-brothers"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Public domain in the United States. Donovan's translation is dated Maynooth, 10 June 1829 (preface, PDF p. 17); this undated Baltimore printing by James Young for Lucas Brothers prints no copyright notice on its title or verso (PDF pp. 7-8). Published in the United States before 1931 on any reading of its nineteenth-century imprint, and in any case without notice. A work published in the United States before 1931 is out of United States copyright: that is the line guidance/missals.md section 5 records from Cornell's public-domain chart, and because it moves every January it is written here as derived for calendar year 2026 and not as a standing rule. This file is literal historical wording of that printing, transcribed and checked against its page images; it adds no translation, paraphrase or editorial wording beyond the declared mechanical normalizations, and the bracketed locators are bare finding labels."
+retrieved = "2026-11-18"
+sha256 = "15f940effb654cf364f68d2f84ebd7712697dcbcfb7404634214d3c5018b6ecb"
+byte_size = 1776
+indexable = true
+encoding = "utf-8"
+path = "src/sources/works/council-of-trent/catechismus-romanus/editions/1829-donovan-baltimore-lucas-brothers/artifacts/satisfaction-prayer-fasting-alms-checked-15f940ef/checked.txt"
+derived_from = "artifact.council-of-trent.catechismus-romanus.donovan-baltimore-lucas-brothers.ia-djvu-text-83a948ed"
+transformation = "Hand transcription made from the page images, rendered locally with pdftoppm from the registered facsimile; the parent OCR was used only to locate the pages and was diffed word by word against this file afterwards, every difference being resolved on the image. No source text passed through a language model. Typographic quotation marks are rendered as straight ASCII quotes; thin spaces before ? ! ; : are removed; line-end hyphenation is joined (a compound printed with a hyphen keeps it); footnote reference numerals are omitted; italics are not marked; small capitals are rendered in mixed case, with full capitals kept where printed larger. One sense unit per line, each prefixed by a bracketed locator that is a finding label, not printed text. Selected paragraphs only: the margin note and paragraph on the three heads of satisfaction (Part II, On the Sacrament of Penance, p. 204) and two extracts on prayer joined to fasting and alms (Part IV, On Prayer, p. 332)."
+provenance = "Image check against artifact.council-of-trent.catechismus-romanus.donovan-baltimore-lucas-brothers.ia-pdf-e4adfb13 on 2026-11-18: PDF pp. 210 and 338."
+notes = "Footnote reference numerals after 'pride of life,' and after the p. 332 extract are omitted. The p. 332 text between the two extracts is not transcribed."

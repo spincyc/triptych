@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.amalarius-of-metz.liber-officialis.latin-migne-pl-105.iii.40-gloria-checked-text-dc2ce7a0"
+edition_id = "edition.amalarius-of-metz.liber-officialis.latin-migne-pl-105"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces a few sentences of Amalarius of Metz's Latin as printed in Migne's Patrologia Latina volume 105 (Paris: J.-P. Migne), a printing published long before 1931 and in the public domain in the United States (guidance/missals.md section 5, Cornell's chart as current on 1 January 2026); the underlying medieval text is likewise public domain. A faithful transcription adds no original authorship, and nothing of the Internet Archive's delivery is reproduced."
+rights_jurisdiction = "United States"
+provenance = "Triptych transcription made on 2026-11-18 by acquisition lane A3 (fork F2) from the page image artifact.amalarius-of-metz.liber-officialis.latin-migne-pl-105.ia-leaf-n585-0610c398 (sha256 0610c398b1a1a38e36429afce004d8be70071c1b7666ff06ccf631db9f24dd4a), read on the image itself. The retained optical text layer artifact.amalarius-of-metz.liber-de-ordine-antiphonarii.latin-migne-pl-105.ia-djvu-ocr-f6438466 was used only to find the locus (OCR line 125733); where it differs, the page governs. No source text passed through a language model between the server and these bytes other than the transcriber's reading of the image."
+retrieved = "2026-11-18"
+sha256 = "dc2ce7a07ef7ab033f05438bc6bfa85113779a2d27925ba984cd9514a4187676"
+byte_size = 237
+path = "src/sources/works/amalarius-of-metz/liber-officialis/editions/latin-migne-pl-105/artifacts/iii.40-gloria-checked-text-dc2ce7a0/amalarius-lib-off-iii-40-gloria.txt"
+derived_from = "artifact.amalarius-of-metz.liber-officialis.latin-migne-pl-105.ia-leaf-n585-0610c398"
+transformation = "Read the named column on the parent page image (local crops of the unmodified fetched bytes, enlarged for small type) and transcribe the quoted extent with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced locator naming the volume column; preserve the printing's wording, spelling (including j and the ae/oe ligatures as printed), capitalization and punctuation; join line-end hyphenation; normalize inter-word spacing to one space after punctuation where the compressed setting omits it; italics are not marked; expand nothing."
+indexable = true
+encoding = "utf-8"

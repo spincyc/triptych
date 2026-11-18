@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.jacques-paul-migne.patrologia-latina-volume-54.1881-paris-garnier.ia-djvu-text-581056f8"
+edition_id = "edition.jacques-paul-migne.patrologia-latina-volume-54.1881-paris-garnier"
+artifact_type = "ocr-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The volume was published at Paris in 1881 (both title pages, artifact PDF pages 7 and 9 of the registered scan, read on the images), and a work first published abroad before 1931 is out of United States copyright; that line is the one guidance/missals.md records as current on 1 January 2026 and it moves every January, so it is written here as derived for calendar year 2026 and not as a standing rule. Restoration under 17 U.S.C. 104A could not reach it: ninety-five years from 1881 ran out in 1976. The Latin text is a reprint of an eighteenth-century edition of fifth-century works. THE GOOGLE QUESTION WAS DECIDED ON THESE BYTES. Probes run case-insensitively over the whole file with runs of non-alphanumeric characters collapsed: \"usage guidelines\" 0; \"about google book search\" 0; \"this is a digital copy\" 0; \"digitized by google\" 0; \"google book search\" 0; \"google\" 0. No notice, licence, reservation or condition of any kind appears in the file. A faithful mechanical reproduction of a public-domain work is not original authorship (Bridgeman Art Library v. Corel Corp., 36 F. Supp. 2d 191 (S.D.N.Y. 1999)), and machine optical character recognition adds no human authorship on top of it. NOT RELIED ON: that the item is available, that the download succeeded, or that any host marks the scan public domain."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/patrologiaecursu0054mign/patrologiaecursu0054mign_djvu.txt"
+provenance = "Fetched whole over HTTPS from the source_url with curl on 2026-11-18, hashed with sha256sum before use, and moved here unaltered. The SHA-1 (5735a209619adf70ee86658671314758df83ba5b) and byte size (5,298,310) match the Internet Archive item's own file list (archive.org/metadata/patrologiaecursu0054mign, read 2026-11-18); the SHA-256 equals that of the copy fetched by the Advent primer's phase 2 research lane the same day, which was compared and not copied. Before registration the library's source records and containment inventory were searched for Leo the Great, Leo Magnus, Leonis Magni, PL 54, Patrologia Latina 54, patrologia-latina-volume-54 and patrologiaecursu0054mign: no record named this volume or item, and no work record of Leo the Great exists (his sermons are held in English only inside Nicene and Post-Nicene Fathers, Second Series, volume 12). No source text passed through a language model at any point in the path from the server to this hash."
+retrieved = "2026-11-18"
+sha256 = "581056f8499f86f1184d24e61d80baa44af90137b6663398508fd8629fe8c63d"
+byte_size = 5298310
+path = "src/sources/works/jacques-paul-migne/patrologia-latina-volume-54/editions/1881-paris-garnier/artifacts/ia-djvu-text-581056f8/patrologiaecursu0054mign_djvu.txt"
+encoding = "utf-8"
+indexable = true
+notes = "Uncorrected optical text of the whole volume, 133,760 LF-terminated lines, valid UTF-8, no CR bytes. Completeness check: byte size and SHA-1 equal the item's own file listing. The optical order across Migne's two print columns and the footnotes is unreliable, and words run together (for example 'Fiatrefectio' for 'Fiat refectio'). QUOTE FROM THIS ARTIFACT ONLY AFTER CHECKING THE PAGE IMAGE of artifact.jacques-paul-migne.patrologia-latina-volume-54.1881-paris-garnier.ia-pdf-c8a9f9ec. It is the text layer of the same item as that scan, recognised from the item's original page images, so no derived_from edge is asserted."

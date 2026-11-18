@@ -1,0 +1,24 @@
+schema = 1
+record_type = "passage"
+id = "passage.gregory-of-tours.historia-francorum.1927-dalton-oxford-volume-2.x.31-fasts"
+edition_id = "edition.gregory-of-tours.historia-francorum.1927-dalton-oxford-volume-2"
+artifact_id = "artifact.gregory-of-tours.historia-francorum.1927-dalton-oxford-volume-2.x.31-fasts-checked-text-ead089aa"
+artifact_sha256 = "ead089aac9f28b5c2128b3778dd4d72745b25987f0c2f10ffb16b666fce78a42"
+locus = "X.31"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Book X chapter 31: the list of Perpetuus's fasts, under the italic heading Fasts., printed p. 472 (PDF p. 484), with Dalton's footnotes 1-3 dating the Nativity of St John, the burial of St Martin and the Nativity of St Hilary. The list of Vigils follows on the same page."
+physical_line_ranges = [[1, 9]]
+text = "Fasts. After Pentecost, the fourth and sixth days of the week to the Nativity of Saint John. From the first of September to the first of October, two fasts each week. From the first of October to the burial of our lord Martin, two fasts each week. From the burial of our lord Martin to the Nativity of our Lord, three fasts each week. From the Nativity of the holy Hilary to the middle of February, two fasts each week. 14th June. 11th November. 13th January."
+transcription_segments = [
+  { line = 1, text = "Fasts." },
+  { line = 2, text = "After Pentecost, the fourth and sixth days of the week to the Nativity of Saint John." },
+  { line = 3, text = "From the first of September to the first of October, two fasts each week." },
+  { line = 4, text = "From the first of October to the burial of our lord Martin, two fasts each week." },
+  { line = 5, text = "From the burial of our lord Martin to the Nativity of our Lord, three fasts each week." },
+  { line = 6, text = "From the Nativity of the holy Hilary to the middle of February, two fasts each week." },
+  { line = 7, text = "14th June." },
+  { line = 8, text = "11th November." },
+  { line = 9, text = "13th January." },
+]
+verified_on = "2026-11-18"
+notes = "Read on the page image. Footnote markers 1, 2 and 3 stand after 'John', 'Martin' (first occurrence) and 'Hilary' and are given as separate lines. Dalton renders 'Post quinquagesimam' as 'After Pentecost'. The text layer reads the same words."

@@ -1,0 +1,24 @@
+schema = 1
+record_type = "passage"
+id = "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.advent-sundays-a3"
+edition_id = "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915"
+artifact_id = "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.advent-sundays-a3-checked-text-4215f99a"
+artifact_sha256 = "4215f99a73789bd8c507ed97b40cd50525e6cd8b3b47af17cb21e136993ab1ec"
+locus = "Mense Decembrio, Orationes de Aduentu Domini; printed pp. 113-116; source PDF pages 171-174"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The Hadrianum's Advent: 'Mense Decembrio orationes de aduentu Domini' with Dominica prima (collect 'Excita domine quaesumus potentiam tuam et ueni . ut ab iminentibus'), Dominica secunda (p. 113), Dominica .III. ad sanctum Petrum (p. 114), the Ember days, and after the Ember Saturday 'Die dominica uacat' (p. 116) with its collect 'Excita domine potentiam tuam et ueni . et magna nobis', followed by the 'Aliae orationes de aduentu'. Four Sundays, the last without its own station."
+physical_line_ranges = [[1, 9]]
+text = "MENSE DECEMBRIO ORATIONES DE ADUENTU DOMINI. DOMINICA PRIMA. Excita domine quaesumus potentiam tuam et ueni . ut ab iminentibus peccatorum nostrorum periculis . te mereamur protegente eripi . te liberante saluari . qui uiuis et regnas cum deo patre in unitate spiritus sancti deus per omnia sęcula sęculorum. DOMINICA SECUNDA. DOMINICA .III. AD SANCTUM PETRUM. DIE DOMINICA UACAT. Excita domine potentiam tuam et ueni . et magna nobis uirtute succurre . ut per auxilium gratię tuę . quod nostra peccata prępediunt . indulgentia tuę propitiationis acceleret . qui uiuis et regnas cum deo patre. Die om. CO : Huic titulo adscribit C numeros cxcii. ALIAE ORATIONES DE ADUENTU."
+transcription_segments = [
+  { line = 1, text = "MENSE DECEMBRIO ORATIONES DE ADUENTU DOMINI." },
+  { line = 2, text = "DOMINICA PRIMA." },
+  { line = 3, text = "Excita domine quaesumus potentiam tuam et ueni . ut ab iminentibus peccatorum nostrorum periculis . te mereamur protegente eripi . te liberante saluari . qui uiuis et regnas cum deo patre in unitate spiritus sancti deus per omnia sęcula sęculorum." },
+  { line = 4, text = "DOMINICA SECUNDA." },
+  { line = 5, text = "DOMINICA .III. AD SANCTUM PETRUM." },
+  { line = 6, text = "DIE DOMINICA UACAT." },
+  { line = 7, text = "Excita domine potentiam tuam et ueni . et magna nobis uirtute succurre . ut per auxilium gratię tuę . quod nostra peccata prępediunt . indulgentia tuę propitiationis acceleret . qui uiuis et regnas cum deo patre." },
+  { line = 8, text = "Die om. CO : Huic titulo adscribit C numeros cxcii." },
+  { line = 9, text = "ALIAE ORATIONES DE ADUENTU." },
+]
+verified_on = "2026-11-18"
+notes = "Read on the page images. The headings on pp. 113, 114 and 116 were cropped at 220 dpi. Apparatus note 2 on p. 116 records that C and O omit 'Die' and that C numbers the title cxcii. The 'uacat' Sunday's collect is the second collect of the Gelasian LXXX (Wilson 1894 p. 214), which reads 'gloriae tuae' where this has 'gratię tuę'. The text layer runs the first collect's words together ('Excitadominequaesumuspotentiamtuamet') as the printing does, and reads 'DOM^INICA UACAT.\"\"'."

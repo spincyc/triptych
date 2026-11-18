@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.alphonsus-liguori.the-incarnation-birth-and-infancy-of-jesus-christ.grimm-1886.ia-djvu-text-571b32b3"
+edition_id = "edition.alphonsus-liguori.the-incarnation-birth-and-infancy-of-jesus-christ.grimm-1886"
+artifact_type = "ocr-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Public domain in the United States by publication date. The approbation leaf (PDF p. 10) prints 'Copyright, 1886, by Elias Frederick Schauer.': the English text was published in the United States in 1886. This copy's title page reads SECOND EDITION and is undated; the leaves read carry no later notice, and a reprint of the 1886 text adds no new term to it. A work published in the United States before 1931 is out of United States copyright: that is the line guidance/missals.md section 5 records from Cornell's public-domain chart, and because it moves every January it is written here as derived for calendar year 2026 and not as a standing rule. The bytes are the Internet Archive's optical character recognition of its own page images; machine recognition adds no human authorship, and a faithful mechanical reproduction of a public-domain printing is not original (Bridgeman Art Library v. Corel Corp., 36 F. Supp. 2d 191 (S.D.N.Y. 1999)). A case-insensitive probe of the whole file for \"google\" returned 0 matches, so the repository's rule on Google front matter (src/sources/inventories/google-usage-guidelines-rights-v1.toml) is not engaged. No host rights label is relied on."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/incarnationofjes04liguuoft/incarnationofjes04liguuoft_djvu.txt"
+provenance = "Fetched whole over HTTPS from the source_url with curl on 2026-11-18, hashed with sha256sum before use, and copied here unaltered; the byte size and SHA-1 were compared with the Internet Archive metadata API's file listing for the item (archive.org/metadata/incarnationofjes04liguuoft) and matched. No source text passed through a language model between the server and this hash."
+retrieved = "2026-11-18"
+sha256 = "571b32b37ce99ddb09af490e17e96e49373373a01267d111868184e2e795eacb"
+byte_size = 1030051
+path = "src/sources/works/alphonsus-liguori/the-incarnation-birth-and-infancy-of-jesus-christ/editions/1886-grimm-benziger-volume-4/artifacts/ia-djvu-text-571b32b3/incarnationofjes04liguuoft_djvu.txt"
+encoding = "utf-8"
+indexable = true
+notes = "The Internet Archive DjVuTXT optical text layer of item incarnationofjes04liguuoft: 22,430 LF-terminated lines, valid UTF-8, no CR bytes. Completeness check: the byte size, 1,030,051, and the SHA-1, 3899f7122c52109cb354bafbcbb05d8e3bc33657, equal the item's own file listing for this file. Uncorrected optical recognition: a locating and searching layer, not a text of record; wording quoted from it is collated against the page images of the PDF registered beside it, and a raw-line negative over it is evidence about the recognition, not about the printed page. It is the text layer of the same item as that facsimile, recognised from the item's original page images rather than from the PDF's bytes, so no derived_from edge is asserted."

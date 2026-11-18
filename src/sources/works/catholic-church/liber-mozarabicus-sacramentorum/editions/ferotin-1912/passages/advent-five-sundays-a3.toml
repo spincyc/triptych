@@ -1,0 +1,25 @@
+schema = 1
+record_type = "passage"
+id = "passage.catholic-church.liber-mozarabicus-sacramentorum.ferotin-1912.advent-five-sundays-a3"
+edition_id = "edition.catholic-church.liber-mozarabicus-sacramentorum.ferotin-1912"
+artifact_id = "artifact.catholic-church.liber-mozarabicus-sacramentorum.ferotin-1912.advent-five-sundays-a3-checked-text-41f39863"
+artifact_sha256 = "41f39863469b12e76bfcc4b2c892f8f71fc80b8e31133d76accb1d65f94a5b96"
+locus = "Missae de Aduentu Domini I-V; cols. 9 and 22; source PDF pages 101 and 107"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The opening of Ferotin's Liber sacramentorum: 'Missae de Adventu Domini', I 'De primo dominico', with his note that the printed Mozarabic missal and breviary count six Sundays of Advent but the ancient manuscripts never more than five; and V 'Missa in dominico quinto de Adventu Domini' (col. 22), whose number 'quinto' is lacking in the codex."
+physical_line_ranges = [[1, 10]]
+text = "LIBER SACRAMENTORVM MISSAE DE ADVENTV DOMINI I DE PRIMO DOMINICO. Le missel imprimé compte six dimanches de l'Avent, et il en est de même dans le bréviaire (Voy. Patrol. lat., t. LXXXV, col. 109-139, et t. LXXXVI, col. 47-107). Mais il importe de remarquer que les anciens textes manuscrits ne mentionnent jamais plus de cinq dimanches. V MISSA IN DOMINICO QVINTO DE ADVENTV DOMINI. quinto deest in Cod Je retrouve cette messe dans un manuscrit de Tolède (n° 35.1, ancien 30.1), aujourd'hui à la bibliothèque Nationale de Madrid, où il porte la cote Hh. 69."
+transcription_segments = [
+  { line = 1, text = "LIBER SACRAMENTORVM" },
+  { line = 2, text = "MISSAE DE ADVENTV DOMINI" },
+  { line = 3, text = "I" },
+  { line = 4, text = "DE PRIMO DOMINICO." },
+  { line = 5, text = "Le missel imprimé compte six dimanches de l'Avent, et il en est de même dans le bréviaire (Voy. Patrol. lat., t. LXXXV, col. 109-139, et t. LXXXVI, col. 47-107)." },
+  { line = 6, text = "Mais il importe de remarquer que les anciens textes manuscrits ne mentionnent jamais plus de cinq dimanches." },
+  { line = 7, text = "V" },
+  { line = 8, text = "MISSA IN DOMINICO QVINTO DE ADVENTV DOMINI." },
+  { line = 9, text = "quinto deest in Cod" },
+  { line = 10, text = "Je retrouve cette messe dans un manuscrit de Tolède (n° 35.1, ancien 30.1), aujourd'hui à la bibliothèque Nationale de Madrid, où il porte la cote Hh. 69." },
+]
+verified_on = "2026-11-18"
+notes = "Read on the page images. The first page (PDF p. 101) is unnumbered; it is cols. 9-10 by sequence (PDF p. 102 is headed 11 and 12). Col. 22 is read from the running head on PDF p. 107 ('21 V. Dom. Adventvs ... Liber Sacramentorvm. 22'). The apparatus reading 27 is italic 'deest in Cod'. Note 1 to Missa V continues beyond the transcribed sentence. The text layer reads 'dan' for 'dans' and splits the note across columns."

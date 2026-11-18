@@ -1,0 +1,21 @@
+schema = 1
+record_type = "passage"
+id = "passage.friedrich-maassen.concilia-aevi-merovingici.1893-hannover-mgh-concilia-1.macon-c9"
+edition_id = "edition.friedrich-maassen.concilia-aevi-merovingici.1893-hannover-mgh-concilia-1"
+artifact_id = "artifact.friedrich-maassen.concilia-aevi-merovingici.1893-hannover-mgh-concilia-1.macon-c9-checked-text-855246a0"
+artifact_sha256 = "855246a0cb127eb41c576d2746a575b61a4bb2a0bcfaa5ed10f381f0821d333b"
+locus = "Concilium Matisconense a. 583, c. IX"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "First Council of Macon, canon IX: fasting on Monday, Wednesday and Friday from St Martin's day to Christmas, the Sacrifice offered in the Lenten order, and the canons read in those days. Printed p. 157, ll. 14-17 (PDF p. 179), under the running head 'CONCILIUM MATISCONENSE A. 583.', with the apparatus to ll. 14-15 and Maassen's notes 10 and 11."
+physical_line_ranges = [[1, 6]]
+text = "CONCILIUM MATISCONENSE A. 583. IX. Ut a feria sancti Martini usque natale Domini secunda, quarta et sexta sabbati ieiunetur et sacrificia quadragensimali debeant ordine caelebrari. In quibus diebus cannones legendos esse speciali definitione sancimus, ut nullus se fateatur per ignorantiam deliquisse. 14 IX] XI B feria] festivitate B usque ad natalem α 15 ieiunentur et sacrificium quadragesimale debito quemadmodum ordine celebrentur Crab. quadragesimali B debebunt B Idem ordo iam a Perpetuo episcopo Turonensi institutus erat his verbis: De depositione domni Martini usque natale Domini terna in septimana ieiunia. Greg. Turon. H. Fr. X, 31 (SS. Rer. Merov. I, 445). Cf. Duchesne, Origines du culte chrétien p. 275."
+transcription_segments = [
+  { line = 1, text = "CONCILIUM MATISCONENSE A. 583." },
+  { line = 2, text = "IX. Ut a feria sancti Martini usque natale Domini secunda, quarta et sexta sabbati ieiunetur et sacrificia quadragensimali debeant ordine caelebrari." },
+  { line = 3, text = "In quibus diebus cannones legendos esse speciali definitione sancimus, ut nullus se fateatur per ignorantiam deliquisse." },
+  { line = 4, text = "14 IX] XI B feria] festivitate B usque ad natalem α 15 ieiunentur et sacrificium quadragesimale debito quemadmodum ordine celebrentur Crab. quadragesimali B debebunt B" },
+  { line = 5, text = "Idem ordo iam a Perpetuo episcopo Turonensi institutus erat his verbis: De depositione domni Martini usque natale Domini terna in septimana ieiunia. Greg. Turon. H. Fr. X, 31 (SS. Rer. Merov. I, 445)." },
+  { line = 6, text = "Cf. Duchesne, Origines du culte chrétien p. 275." },
+]
+verified_on = "2026-11-18"
+notes = "Read on the page images at 150 and 300 dpi. Maassen dates the council 583 (running head); Hefele, History of the Councils IV p. 403, dates it 581 (passage of that edition). Codex B reads 'festivitate' for 'feria' and numbers the canon XI. Note 10 ties the canon to Perpetuus's order in Gregory, Historia Francorum X.31, quoting the Martinmas-to-Christmas line as Arndt prints it (MGH p. 445). Note 10 and 11 are set in italic except the quoted Gregory line, which is roman. Footnote markers 10 and 11 in the canon are omitted. Apparatus line 16 (canones, legendus, spatiale, sanctiamus) is not transcribed."

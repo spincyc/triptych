@@ -1,0 +1,17 @@
+schema = 1
+record_type = "passage"
+id = "passage.sicard-of-cremona.mitrale.latin-migne-pl-213.v.1-five-four"
+edition_id = "edition.sicard-of-cremona.mitrale.latin-migne-pl-213"
+artifact_id = "artifact.sicard-of-cremona.mitrale.latin-migne-pl-213.v.1-five-four-checked-text-72b398a5"
+artifact_sha256 = "72b398a5968a0ff75065ce3196c750f029b59f7a20003854853da5b5d4c4d991"
+locus = "V.1"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Mitrale V.1: in some office books (lectionary and evangeliary) five weeks are marked, for the five ages of the world before Christ; in others (antiphoner and gradual) only four, for the Law, the Psalms, the Prophets and the books of the Gentiles. PL 213 col. 192, right column of leaf n101."
+physical_line_ranges = [[1, 2]]
+text = "In officialibus autem quibusdam, ut in lectionario et evangeliario quinque notantur hebdomadæ propter quinque ætates sæculi præcedentis, in quibus præcessit venturi præconium Salvatoris: et in quibus electi fuere, qui credidere, speravere et dilexere Adventum Domini. In quibusdam vero, ut in antiphonario et graduali duntaxat quatuor attitulantur propter legem, psalmos, prophetias et gentilium libros, in quibus omnibus adventus Domini prænotabatur."
+transcription_segments = [
+  { line = 1, text = "In officialibus autem quibusdam, ut in lectionario et evangeliario quinque notantur hebdomadæ propter quinque ætates sæculi præcedentis, in quibus præcessit venturi præconium Salvatoris: et in quibus electi fuere, qui credidere, speravere et dilexere Adventum Domini." },
+  { line = 2, text = "In quibusdam vero, ut in antiphonario et graduali duntaxat quatuor attitulantur propter legem, psalmos, prophetias et gentilium libros, in quibus omnibus adventus Domini prænotabatur." },
+]
+verified_on = "2026-11-18"
+notes = "Read on the page image of leaf n101. The l of 'sæculi' is broken in the print (OCR 'szecu.i'). The print sets a space before the colon; it is closed up here. LOCATOR CORRECTION: R1's dossier gives OCR lines 15125-15140 for this passage; it stands at OCR lines 14215-14224, on the same leaf as the twofold coming."

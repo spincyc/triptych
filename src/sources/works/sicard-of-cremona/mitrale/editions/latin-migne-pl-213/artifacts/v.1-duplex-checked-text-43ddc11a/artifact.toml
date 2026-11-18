@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.sicard-of-cremona.mitrale.latin-migne-pl-213.v.1-duplex-checked-text-43ddc11a"
+edition_id = "edition.sicard-of-cremona.mitrale.latin-migne-pl-213"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces a few sentences of Sicard of Cremona's Latin as printed in Migne's Patrologia Latina volume 213 (Paris: J.-P. Migne), a printing published long before 1931 and in the public domain in the United States (guidance/missals.md section 5, Cornell's chart as current on 1 January 2026); the underlying medieval text is likewise public domain. A faithful transcription adds no original authorship, and nothing of the Internet Archive's delivery is reproduced."
+rights_jurisdiction = "United States"
+provenance = "Triptych transcription made on 2026-11-18 by acquisition lane A3 (fork F2) from the page image artifact.sicard-of-cremona.mitrale.latin-migne-pl-213.ia-leaf-n101-871d0b88 (sha256 871d0b881a62222a4b21bd4b335390a11c3264eccacbfa727feebe1fb05d3b16), read on the image itself. The retained optical text layer artifact.sicard-of-cremona.mitrale.latin-migne-pl-213.ia-djvu-ocr-ea9fd813 was used only to find the locus (OCR line 14187; the book heading LIBER QUINTUS stands at OCR line 14004); where it differs, the page governs. No source text passed through a language model between the server and these bytes other than the transcriber's reading of the image."
+retrieved = "2026-11-18"
+sha256 = "43ddc11a00d3b11034676362b8c959b5bbf5e3efed017662943c8aae51872324"
+byte_size = 169
+path = "src/sources/works/sicard-of-cremona/mitrale/editions/latin-migne-pl-213/artifacts/v.1-duplex-checked-text-43ddc11a/sicard-mitrale-v-1-duplex.txt"
+derived_from = "artifact.sicard-of-cremona.mitrale.latin-migne-pl-213.ia-leaf-n101-871d0b88"
+transformation = "Read the named column on the parent page image (local crops of the unmodified fetched bytes, enlarged for small type) and transcribe the quoted extent with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced locator naming the volume column; preserve the printing's wording, spelling (including j and the ae/oe ligatures as printed), capitalization and punctuation; join line-end hyphenation; normalize inter-word spacing to one space after punctuation where the compressed setting omits it; italics are not marked; expand nothing."
+indexable = true
+encoding = "utf-8"

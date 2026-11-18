@@ -1,0 +1,26 @@
+schema = 1
+record_type = "passage"
+id = "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.advent-five-missae-a3"
+edition_id = "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894"
+artifact_id = "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.advent-missae-a3-checked-text-d4a8d64a"
+artifact_sha256 = "d4a8d64a2781e1442ce36e7711aca7877ee5f697d28a662dc8a4439bc50f73c1"
+locus = "Book II, sections LXXX-LXXXIV; printed pp. 214-218; source PDF pages 307-311"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The five Advent missae of the Vatican Gelasian (V.), Book II LXXX 'Orationes de Adventum Domini' and LXXXI-LXXXIV 'Item alia Missa', with the first collect 'Excita, Domine, potentiam tuam' and Wilson's note 1 that the five correspond to the five Sundays before Christmas in R. (Rheinau) and S. (St Gall), with Men. (Menard) reckoning backward from Christmas."
+physical_line_ranges = [[1, 11]]
+text = "LXXX. ORATIONES DE ADVENTUM DOMINI. Excita, Domine, potentiam tuam, et veni, et quod ecclesiae tuae usque in finem saeculi promisisti clementer operare. Per. This Missa and the four which follow it apparently correspond to the five Missae provided by R. and S. for the five Sundays before Christmas Day. Men. likewise has five Missae for these weeks, reckoning backward from Christmas. S. has also a series of three Missae and R. has two Missae for the weekdays of Advent, while R. S. and Men. have each a series of ‘Aliae Orationes de Adventu,’ with which, probably, the prayers contained in the latter part of lxxxiv were intended to correspond, though they have not in V. any separate title, and appear (most likely by accident) as if they were additional Postcommunions for the last of the five Advent Missae. de adventum Domini, so V. LXXXI. ITEM ALIA MISSA. LXXXII. ITEM ALIA MISSA. LXXXIII. ITEM ALIA MISSA. LXXXIV. ITEM ALIA MISSA."
+transcription_segments = [
+  { line = 1, text = "LXXX." },
+  { line = 2, text = "ORATIONES DE ADVENTUM DOMINI." },
+  { line = 3, text = "Excita, Domine, potentiam tuam, et veni, et quod ecclesiae tuae usque in finem saeculi promisisti clementer operare. Per." },
+  { line = 4, text = "This Missa and the four which follow it apparently correspond to the five Missae provided by R. and S. for the five Sundays before Christmas Day." },
+  { line = 5, text = "Men. likewise has five Missae for these weeks, reckoning backward from Christmas." },
+  { line = 6, text = "S. has also a series of three Missae and R. has two Missae for the weekdays of Advent, while R. S. and Men. have each a series of ‘Aliae Orationes de Adventu,’ with which, probably, the prayers contained in the latter part of lxxxiv were intended to correspond, though they have not in V. any separate title, and appear (most likely by accident) as if they were additional Postcommunions for the last of the five Advent Missae." },
+  { line = 7, text = "de adventum Domini, so V." },
+  { line = 8, text = "LXXXI. ITEM ALIA MISSA." },
+  { line = 9, text = "LXXXII. ITEM ALIA MISSA." },
+  { line = 10, text = "LXXXIII. ITEM ALIA MISSA." },
+  { line = 11, text = "LXXXIV. ITEM ALIA MISSA." },
+]
+verified_on = "2026-11-18"
+notes = "Read on the page images (PDF pp. 307-311). Section numbers and headings were read at 250 dpi on each page; printed pp. 214 and 215 were read on the images, and pp. 216-218 from the text layer's running heads and the sequence. Wilson's note 1 runs from p. 214 to the top of p. 215 and is transcribed whole; note 2 is the reading 'de adventum' of V. The text layer garbles the marginal sigla into the prayer ('lggg', 'prom1s1st1')."

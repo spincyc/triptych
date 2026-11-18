@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.gregory-of-tours.historia-francorum.1884-mgh-ss-rer-merov-1-arndt.ia-djvu-text-c3507e0b"
+edition_id = "edition.gregory-of-tours.historia-francorum.1884-mgh-ss-rer-merov-1-arndt"
+artifact_type = "ocr-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Public domain in the United States by publication date. The part title of this copy, read on the page image at PDF p. 13, prints HANNOVERAE / IMPENSIS BIBLIOPOLII HAHNIANI / MDCCCLXXXIIII (1884), and the tome title MDCCCLXXXV (1885). A work first published abroad before 1931 is out of United States copyright: that is the line guidance/missals.md section 5 records from Cornell's public-domain chart as current on 1 January 2026, and because it moves every January it is written here as derived for calendar year 2026 and not as a standing rule. Restoration under 17 U.S.C. 104A cannot keep it protected: a restored term runs no longer than ninety-five years from publication, and ninety-five years from 1885 ended with 1980. No life-based term is relied on. The bytes are the Internet Archive's optical character recognition of its own page images and add no human authorship (Bridgeman v. Corel). Probes over the whole file for \"google\" and \"usage guidelines\" return 0; a University of Toronto Internet Archive scan, not a Google digitisation. No host rights label is relied upon."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/monumentagerman01hann/monumentagerman01hann_djvu.txt"
+provenance = "Fetched whole over HTTPS with curl -sSL on 2026-11-18 and hashed; byte size 5,089,896 and SHA-1 f2542431d74549841455d03e59584020351f3cdc equal the item's file listing at archive.org/metadata/monumentagerman01hann. Not fetched by the R1 research lane, which did not search MGH. No source text passed through a language model."
+retrieved = "2026-11-18"
+sha256 = "c3507e0b49dae572e9ee0dee4b80e4e51d3eface0388ab5fb8422f8fc1b0f840"
+byte_size = 5089896
+path = "src/sources/works/gregory-of-tours/historia-francorum/editions/1884-mgh-ss-rer-merov-1-arndt/artifacts/ia-djvu-text-c3507e0b/monumentagerman01hann_djvu.txt"
+encoding = "utf-8"
+indexable = true
+notes = "The complete DjVuTXT optical text layer of item monumentagerman01hann, covering both parts bound in the item (Arndt's Historia Francorum and Krusch's Miracula and minor works). Uncorrected recognition of a page with apparatus and superscript sigla: it misreads superscripts as letters (for example 'ieiunias' for ieiunia with apparatus mark g at X.31) and garbles italic type. A locating layer only."

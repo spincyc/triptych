@@ -1,0 +1,23 @@
+schema = 1
+record_type = "passage"
+id = "passage.jacques-paul-migne.patrologia-latina-volume-183.1854-paris.bernard-in-adventu-5.2-sic-serva"
+edition_id = "edition.jacques-paul-migne.patrologia-latina-volume-183.1854-paris"
+artifact_id = "artifact.jacques-paul-migne.patrologia-latina-volume-183.1854-paris.bernard-in-adventu-5.2-sic-serva-checked-text-f0ba36f9"
+artifact_sha256 = "f0ba36f95091501cdf61694ebbce7f50f195617979b66a46bfaac038faac8e5c"
+locus = "column-51"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Bernard of Clairvaux, Sermones in adventu Domini, sermo V, section 2, from Sic serva sermonem Dei to the end of the section: the word of God kept as the body keeps its food. Read on PL 183 column 51 (PDF page 32, left column) with the whole of sections 2 and 3 on that column."
+physical_line_ranges = [[1, 8]]
+text = "Sic serva sermonem Dei, quomodo melius servare potes cibum corporis tui. Nam et ille panis vivus est, et cibus mentis. Panis terrenus dum in arca est, potest a fure tolli, potest a mure corrodi, potest vetustate corrumpi. Ubi vero comederis illum, quid horum timeas? Hoc modo custodi verbum Dei: beati enim qui custodiunt illud. Ergo trajiciatur in viscera quædam animæ tuæ; transeat in affectiones tuas, et in mores tuos. Comede bonum, et delectabitur in crassitudine anima tua. Ne obliviscaris comedere panem tuum, ne exarescat cor tuum, sed adipe et pinguedine repleatur anima tua."
+transcription_segments = [
+  { line = 1, text = "Sic serva sermonem Dei, quomodo melius servare potes cibum corporis tui." },
+  { line = 2, text = "Nam et ille panis vivus est, et cibus mentis." },
+  { line = 3, text = "Panis terrenus dum in arca est, potest a fure tolli, potest a mure corrodi, potest vetustate corrumpi." },
+  { line = 4, text = "Ubi vero comederis illum, quid horum timeas?" },
+  { line = 5, text = "Hoc modo custodi verbum Dei: beati enim qui custodiunt illud." },
+  { line = 6, text = "Ergo trajiciatur in viscera quædam animæ tuæ; transeat in affectiones tuas, et in mores tuos." },
+  { line = 7, text = "Comede bonum, et delectabitur in crassitudine anima tua." },
+  { line = 8, text = "Ne obliviscaris comedere panem tuum, ne exarescat cor tuum, sed adipe et pinguedine repleatur anima tua." },
+]
+verified_on = "2026-11-18"
+notes = "The section's first half (Sed ne cui forte inventitia videantur ... memoriam facile delet oblivio) stands above on the same column and is not transcribed here."

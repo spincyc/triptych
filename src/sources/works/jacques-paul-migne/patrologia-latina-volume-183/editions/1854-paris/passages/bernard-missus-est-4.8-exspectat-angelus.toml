@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jacques-paul-migne.patrologia-latina-volume-183.1854-paris.bernard-missus-est-4.8-exspectat-angelus"
+edition_id = "edition.jacques-paul-migne.patrologia-latina-volume-183.1854-paris"
+artifact_id = "artifact.jacques-paul-migne.patrologia-latina-volume-183.1854-paris.bernard-missus-est-4.8-exspectat-angelus-checked-text-feb7b133"
+artifact_sha256 = "feb7b1336611f596fe122aac97b74e6fc5ec25115e42e32635ae838c2fd2548d"
+locus = "column-83"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Bernard of Clairvaux, Homiliae super Missus est (De laudibus Virginis Matris), homily IV, section 8: the angel and the world await Mary's answer. Read on PL 183 column 83 (PDF page 48, left column) whole, from the end of section 7 through section 8 to the column's foot."
+physical_line_ranges = [[1, 4]]
+text = "Exspectat angelus responsum: tempus est enim ut revertatur ad Deum qui misit illum. Exspectamus et nos, o Domina, verbum miserationis, quos miserabiliter premit sententia damnationis. Et ecce offertur tibi pretium salutis nostræ: statim liberabimur si consentis. In sempiterno Dei Verbo facti sumus omnes, et ecce morimur: in tuo brevi responso sumus reficiendi, ut ad vitam revocemur."
+transcription_segments = [
+  { line = 1, text = "Exspectat angelus responsum: tempus est enim ut revertatur ad Deum qui misit illum." },
+  { line = 2, text = "Exspectamus et nos, o Domina, verbum miserationis, quos miserabiliter premit sententia damnationis." },
+  { line = 3, text = "Et ecce offertur tibi pretium salutis nostræ: statim liberabimur si consentis." },
+  { line = 4, text = "In sempiterno Dei Verbo facti sumus omnes, et ecce morimur: in tuo brevi responso sumus reficiendi, ut ad vitam revocemur." },
+]
+verified_on = "2026-11-18"
+notes = "Ink blots on the scan touch tempus, damnationis and nostræ; each is legible. The passage stops at revocemur; the section continues with Hoc supplicat a te, o pia Virgo, flebilis Adam."

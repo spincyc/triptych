@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.jacques-paul-migne.patrologia-latina-volume-54.1881-paris-garnier.leo-sermo-13-virtuti-cibus-jejunium-checked-text-262ed363"
+edition_id = "edition.jacques-paul-migne.patrologia-latina-volume-54.1881-paris-garnier"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces a few sentences of Leo the Great's fifth-century Latin sermons as printed in the 1881 Paris (Garnier) printing of Patrologia Latina volume 54, which is in the United States public domain by date of publication (the parent scan's rights_basis gives the evidence and reasoning). It is transcribed from page images rendered from the hashed Internet Archive scan and contains no Internet Archive markup, no optical-text bytes and none of the Ballerini editors' notes."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription collated against the page images of the hashed Internet Archive scan ia-pdf-c8a9f9ec (SHA-256 c8a9f9ec0b3f...), on 2026-11-18; the tracked optical text ia-djvu-text-581056f8 was used only to locate the pages. Column 172, PDF page 92."
+retrieved = "2026-11-18"
+sha256 = "262ed3634a82b4fe0afa92fe62f9163244634c6b60a9cd04d5cfbea0b422b273"
+byte_size = 679
+path = "src/sources/works/jacques-paul-migne/patrologia-latina-volume-54/editions/1881-paris-garnier/artifacts/leo-sermo-13-virtuti-cibus-jejunium-checked-text-262ed363/leo-sermo-13-virtuti-cibus-jejunium.txt"
+derived_from = "artifact.jacques-paul-migne.patrologia-latina-volume-54.1881-paris-garnier.ia-pdf-c8a9f9ec"
+transformation = "Read the named columns as images rendered at 200 dots per inch from the hashed scan with pdftoppm, cropped to one print column at a time (with a 300 dots per inch crop where a mark needed settling), and transcribe the quoted sentences with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced sermon-and-chapter locator using the Ballerini numbering printed on the page; preserve the printed wording, spelling (including j and the ae and oe ligatures), capitalization and punctuation; close the printer's spaces before colons, semicolons and question marks, restore word spaces the compositor ran together, and join line-end hyphenation; omit italics and small capitals, the inline scriptural references in parentheses, the bold marginal numbers of the earlier edition, column letters and the editors' note letters."
+indexable = true
+encoding = "utf-8"

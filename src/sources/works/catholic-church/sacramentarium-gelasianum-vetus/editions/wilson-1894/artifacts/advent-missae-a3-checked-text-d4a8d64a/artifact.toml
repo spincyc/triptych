@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.advent-missae-a3-checked-text-d4a8d64a"
+edition_id = "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Literal readings and editorial notes of the Oxford 1894 Wilson printing, public domain in the United States by date of publication. The transcription carries only printed book text; no Google digitisation notice or watermark text is reproduced."
+rights_jurisdiction = "United States"
+provenance = "Transcribed on 2026-11-18 from the page images of the whole PDF, re-fetched over HTTPS with curl -sSL on 2026-11-18; its SHA-256 006a38a39250d39c9745acfb4f4a098374027e719dc7ad7e32972fa6a82489bc and byte size 13,625,474 equal the registered artifact. Pages rendered with pdftoppm at 120 dpi and cropped at 250 dpi; the OCR layer was a finding aid only. No source text passed through a language model."
+retrieved = "2026-11-18"
+sha256 = "d4a8d64a2781e1442ce36e7711aca7877ee5f697d28a662dc8a4439bc50f73c1"
+byte_size = 1072
+path = "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/advent-missae-a3-checked-text-d4a8d64a/gelasian-advent-missae.txt"
+derived_from = "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.internet-archive-pdf-006a38a3"
+transformation = "Read the named printed page(s) as image(s) of the parent artifact and transcribe the quoted extent with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced locator naming the printed page or column; preserve the printing's wording, spelling, capitalization, accents and punctuation; join line-end hyphenation; expand nothing; omit running heads, marginal numbers and footnote markers unless a line says otherwise. Small capitals are given as capitals. Folio markers ('/' and '[fo. ...'), superscript footnote numbers and letters, marginal witness sigla and the printed gamma after 'Per.' are omitted; spacing around the edition's medial points is normalised to ' . ' where the edition prints it."
+indexable = true
+encoding = "utf-8"

@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.friedrich-maassen.concilia-aevi-merovingici.1893-hannover-mgh-concilia-1.tours-567-c18-checked-text-395b039a"
+edition_id = "edition.friedrich-maassen.concilia-aevi-merovingici.1893-hannover-mgh-concilia-1"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Sixth-century conciliar Latin and Maassen's apparatus as printed at Hannover in 1893; Public domain in the United States by publication date. The title page of this copy, read on the page image at PDF p. 9, prints HANNOVERAE ... MDCCCLXXXXIII (1893). A work first published abroad before 1931 is out of United States copyright: that is the line guidance/missals.md section 5 records from Cornell's public-domain chart as current on 1 January 2026, and because it moves every January it is written here as derived for calendar year 2026 and not as a standing rule. Restoration under 17 U.S.C. 104A cannot keep it protected: a restored term runs no longer than ninety-five years from publication, and ninety-five years from 1893 ended with 1988. No life-based term is relied on."
+rights_jurisdiction = "United States"
+provenance = "Transcribed on 2026-11-18 from printed p. 126 (PDF p. 148) of the hashed PDF cd313fbe2a4ace4a821c41014ece7b2b9ff412468c16840fcff290041f02c98b, rendered at 150 dpi and cropped at 300 dpi; the OCR layer was a finding aid only."
+retrieved = "2026-11-18"
+sha256 = "395b039a9388ca6d0ce3a4a2fa9a57a522851e27cb90c9b86f5ec47e6ba6ab18"
+byte_size = 827
+path = "src/sources/works/friedrich-maassen/concilia-aevi-merovingici/editions/1893-hannover-mgh-concilia-1/artifacts/tours-567-c18-checked-text-395b039a/maassen-tours-567-c18-p126.txt"
+derived_from = "artifact.friedrich-maassen.concilia-aevi-merovingici.1893-hannover-mgh-concilia-1.ia-pdf-cd313fbe"
+transformation = "Read the named printed page(s) as image(s) of the parent artifact and transcribe the quoted extent with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced locator naming the printed page or column; preserve the printing's wording, spelling, capitalization, accents and punctuation; join line-end hyphenation; expand nothing; omit running heads, marginal numbers and footnote markers unless a line says otherwise."
+indexable = true
+encoding = "utf-8"

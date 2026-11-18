@@ -1,0 +1,21 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.little-office-and-office-of-the-dead.benziger-latin-english-1915.advent-primer-20261118-advent-form-checked-37140ae7"
+edition_id = "edition.catholic-church.little-office-and-office-of-the-dead.benziger-latin-english-1915"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The identified book was published at New York by Benziger Brothers in 1915; the approval leaf (PDF p. 10, read on the image on 2026-11-18) prints Nihil obstat Remigius Lafort, Imprimatur John Cardinal Farley, New York, June 10, 1915, and COPYRIGHT, 1915, BY BENZIGER BROTHERS. A United States work first published in 1915 has no remaining United States copyright term in 2026: a work published before 1931 is out of copyright on the line guidance/missals.md section 5 records, written here as derived for calendar year 2026. This focused transcription reproduces only the printed Latin and unnamed historical English of that book and adds no authorship; no modern text is reproduced."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/littleofficeofbl00newy/littleofficeofbl00newy.pdf"
+provenance = "Transcribed by lane A2 from page images of the exact registered whole PDF artifact.catholic-church.little-office-and-office-of-the-dead.benziger-latin-english-1915.english-completion-20261029-postconciliar-mariamajor-pdf (SHA-256 26530fac6a18a0b0065827dfda4e7d9ed1a3e7bfae7ca7b1f22017b766703a62, re-fetched whole on 2026-11-18 and matched before use)."
+retrieved = "2026-11-18"
+sha256 = "37140ae777715a7b2dd1e9db2e9cd35df018c9eac47b70d361d2f2ec0856a6a0"
+byte_size = 3211
+path = "src/sources/works/catholic-church/little-office-and-office-of-the-dead/editions/1915-benziger-latin-english/artifacts/advent-primer-20261118-advent-form-checked-37140ae7/advent.txt"
+derived_from = "artifact.catholic-church.little-office-and-office-of-the-dead.benziger-latin-english-1915.english-completion-20261029-postconciliar-mariamajor-pdf"
+transformation = "Read on page images rendered at 150 dpi from the exact registered whole PDF; PDF page = printed page + 6 throughout pp. 11-85, checked on every running folio opened. One sense unit, verse line or heading per LF-terminated UTF-8 line, each prefixed by a braced printed-page locator. Latin: printed acute stress accents removed and the ligatures ae and oe expanded (æ to ae, œ to oe); otherwise spelling, capitalization and pointing as printed. English: as printed, apostrophe U+2019. The book's italic V. and R. are transcribed V. and R.; italic and roman are not distinguished; the asterisk is kept; the printer's space before : ; ! and ? is not reproduced; physical line wraps and division hyphens are joined. Units are grouped Latin then English, so the line order is not the page order. The OCR text layer was used only to find the pages."
+indexable = true
+encoding = "utf-8"
+notes = "The Advent form of the Little Office as this 1915 book states and prints it: rubrics 1, 7, 8 and 14 (printed pp. 11-13, PDF 17-19); the first Vespers antiphon In Adventu with its English (pp. 28-29, PDF 34-35); and at Compline the final antiphon Alma Redemptoris Mater, Latin and English, with its Advent versicle and collect and the Christmastide change of versicle (pp. 82-85, PDF 88-91). The Latin and English rubrics for the Christmastide change DISAGREE in this book: the Latin reads A Vigilia Nativitatis usque ad totam diem Purificationis, the English From the First Vespers of Christmas until the Second Vespers of the Purification; both are transcribed and neither is preferred. The English Alma is a metrical rendering: Caswall's 1849 text (Lyra Catholica p. 38) with a different last line and different pointing and capitals; the book names no translator. Other Advent changes (Vespers chapter Is 11, Magnificat antiphon, collect Deus qui de beatae, Compline chapter Is 7, Matins lessons from Luke 1) are not transcribed here. The book calls itself conformable to the recent Pontifical Decrees; it is a 1915 witness, not a 1962 one. 46 LF-terminated lines."

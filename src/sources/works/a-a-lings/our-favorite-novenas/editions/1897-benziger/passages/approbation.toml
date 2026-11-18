@@ -1,0 +1,22 @@
+schema = 1
+record_type = "passage"
+id = "passage.a-a-lings.our-favorite-novenas.benziger-1897.approbation"
+edition_id = "edition.a-a-lings.our-favorite-novenas.benziger-1897"
+artifact_id = "artifact.a-a-lings.our-favorite-novenas.benziger-1897.aspiration-imprimatur-checked-b3b0d05b"
+artifact_sha256 = "b3b0d05be84935933bc4ee4897ecf4297fefc4d1b29ca267cd34eb719dfa3349"
+locus = "approbation"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-18"
+context = "Approbation and copyright leaf, PDF p. 8."
+notes = "Dates the text to 1897; the copy's printing year is not printed."
+physical_line_ranges = [[1, 7]]
+text = "Nihil Obstat. THOMAS L. KINKEAD, Censor Librorum Imprimatur ✠MICHAEL AUGUSTINE, Archbishop of New York. New York, February 6, 1897. COPYRIGHT, 1897, BY BENZIGER BROTHERS. Printed in the United States of America"
+transcription_segments = [
+  { line = 1, text = "Nihil Obstat." },
+  { line = 2, text = "THOMAS L. KINKEAD, Censor Librorum" },
+  { line = 3, text = "Imprimatur" },
+  { line = 4, text = "✠MICHAEL AUGUSTINE, Archbishop of New York." },
+  { line = 5, text = "New York, February 6, 1897." },
+  { line = 6, text = "COPYRIGHT, 1897, BY BENZIGER BROTHERS." },
+  { line = 7, text = "Printed in the United States of America" },
+]

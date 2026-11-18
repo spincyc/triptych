@@ -1,0 +1,20 @@
+schema = 1
+record_type = "passage"
+id = "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.ambrose-on-luke-1-39"
+edition_id = "edition.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia"
+artifact_id = "artifact.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.ambrose-on-luke-1-39-checked-text-ac2bd7a5"
+artifact_sha256 = "ac2bd7a50a34663ee92edc4cedb0546dc6807acebcccad51729c47c6153b6e4f"
+locus = "Luke 1:39, Ambrose (Expositio in Lucam II.19, with II.21 condensed in the second comment); Catena printed pages 37-38 (Part I, 1843), facsimile PDF pages 59-60"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Two Ambrose comments on Mary's going into the hill country with haste (Luke 1:39): the first from AMBROSE; at the foot of page 37, after the lemma Luke 1:39-45, to with haste! on page 38; the second, after an interposed Origen comment (For Jesus who was in her womb hastened to sanctify John ... with haste.), from AMBROSE; to public talk, where THEOPHYL. begins. Origen's comment is not transcribed; the two Ambrose comments are not contiguous in print."
+physical_line_ranges = [[1, 5]]
+text = "Ambrose; The Angel, when he announced the hidden mysteries to the Virgin, that he might build up her faith by an example, related to her the conception of a barren woman. When Mary heard it, it was not that she disbelieved the oracle, or was uncertain about the messenger, or doubtful of the example, but rejoicing in the fulfilment of her wish, and conscientious in the observance of her duty, she gladly went forth into the hill country. For what could Mary now, filled with God, but ascend into the higher parts with haste! Ambrose; The grace of the Holy Spirit knows not of slow workings. Learn, ye virgins, not to loiter in the streets, nor mix in public talk."
+transcription_segments = [
+  { line = 1, text = "Ambrose; The Angel, when he announced the hidden mysteries to the Virgin, that he might build up her faith by an example, related to her the conception of a barren woman." },
+  { line = 2, text = "When Mary heard it, it was not that she disbelieved the oracle, or was uncertain about the messenger, or doubtful of the example, but rejoicing in the fulfilment of her wish, and conscientious in the observance of her duty, she gladly went forth into the hill country." },
+  { line = 3, text = "For what could Mary now, filled with God, but ascend into the higher parts with haste!" },
+  { line = 4, text = "Ambrose; The grace of the Holy Spirit knows not of slow workings." },
+  { line = 5, text = "Learn, ye virgins, not to loiter in the streets, nor mix in public talk." },
+]
+verified_on = "2026-11-18"
+notes = "The margin of page 38, beside filled with God, reads plena Deo. COLLATION WITH CSEL 32/4 p. 52 (passage ambrose-expositio-lucae-2.19 of the CSEL edition): the first comment renders II.19 from et ideo angelus to contenderet, omitting morale est omnibus ...; rejoicing in the fulfilment of her wish, and conscientious in the observance of her duty, she gladly went forth renders laeta pro uoto, religiosa pro officio, festina pro gaudio. The second comment joins nescit tarda molimina sancti spiritus gratia (the close of II.19) to a condensed discite, uirgines, non ... demorari in plateis, non ... in publico miscere sermones (II.21). OCR AGAINST PAGE (ocr-1455eb5f lines 2230-2246): buildup for build up; P-ena for the marginal plena; otherwise the wording agrees."

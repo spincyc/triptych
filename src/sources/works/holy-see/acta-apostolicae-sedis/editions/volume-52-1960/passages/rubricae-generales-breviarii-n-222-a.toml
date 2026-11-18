@@ -1,0 +1,17 @@
+schema = 1
+record_type = "passage"
+id = "passage.holy-see.acta-apostolicae-sedis.volume-52-1960.rubricae-generales-breviarii-n-222-a"
+edition_id = "edition.holy-see.acta-apostolicae-sedis.volume-52-1960"
+artifact_id = "artifact.holy-see.acta-apostolicae-sedis.volume-52-1960.rubricae-generales-breviarii-n-222-a-checked-text-e92b380f"
+artifact_sha256 = "e92b380fc9d5d7168f043531c0aadc82101483d770015f3cfe93e27d9608135a"
+locus = "aas-52-p-635-rubricae-generales-breviarii-n-222-a"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Rubricae generales Breviarii Romani (pars secunda), III De lectionibus Officii unius Nocturni, n. 222, opening and letter a): in the Office of a vigil or of a feria with a homily all three lessons are of the homily on the day's Gospel. Printed p. 635; microfilm PDF p. 47."
+physical_line_ranges = [[1, 2]]
+text = "222. In Officio feriali, ordo trium lectionum hic est: a) si agitur de Officio vigiliae vel feriae cum homilia, tres lectiones dicuntur de homilia in Evangelium diei;"
+transcription_segments = [
+  { line = 1, text = "222. In Officio feriali, ordo trium lectionum hic est:" },
+  { line = 2, text = "a) si agitur de Officio vigiliae vel feriae cum homilia, tres lectiones dicuntur de homilia in Evangelium diei;" },
+]
+verified_on = "2026-11-18"
+notes = "Read on the microfilm page image at 150 dpi. The vatican.va OCR layer agrees in wording at this extent."

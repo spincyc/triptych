@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.jacques-paul-migne.patrologia-latina-volume-184.1879-paris-garnier.scala-claustralium-2-quaerite-legendo-checked-text-a148c764"
+edition_id = "edition.jacques-paul-migne.patrologia-latina-volume-184.1879-paris-garnier"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces a few sentences of the twelfth-century Scala claustralium, and of the editors' Latin headnote to it, as printed in the 1879 Paris (Garnier) printing of Patrologia Latina volume 184, which is in the United States public domain by date of publication (the parent scan's rights_basis gives the evidence and reasoning). It is transcribed from page images rendered from the hashed Internet Archive scan and contains no Internet Archive markup and no optical-text bytes."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription collated against the page images of the hashed Internet Archive scan ia-pdf-a7a5a940 (SHA-256 a7a5a940a0e4...), the PIMS Toronto scan patrologiaecursu184mign, on 2026-11-18; the tracked optical text ia-djvu-text-cd6cbb65 was used only to locate the page. Column 476, PDF page 242."
+retrieved = "2026-11-18"
+sha256 = "a148c764118b5868f7bbb4088a319c6e0ac45db323791474a3cbf16b0bc357f9"
+byte_size = 711
+path = "src/sources/works/jacques-paul-migne/patrologia-latina-volume-184/editions/1879-paris-garnier/artifacts/scala-claustralium-2-quaerite-legendo-checked-text-a148c764/scala-claustralium-2-quaerite-legendo.txt"
+derived_from = "artifact.jacques-paul-migne.patrologia-latina-volume-184.1879-paris-garnier.ia-pdf-a7a5a940"
+transformation = "Read the named columns as images rendered at 200 dots per inch from the hashed scan with pdftoppm, cropped to one print column at a time (the full-width headnote read across overlapping crops), and transcribe the quoted sentences with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced chapter-and-section locator; preserve the printed wording, spelling (including j and the ae and oe ligatures), capitalization, punctuation and guillemets with their printed spacing; close the printer's spaces before colons, semicolons and question marks and join line-end hyphenation; omit italics and small capitals, the inline scriptural references in parentheses, the bold marginal numbers of the earlier edition and column letters."
+indexable = true
+encoding = "utf-8"

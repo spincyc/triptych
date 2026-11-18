@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-8.new-york-1888.augustine-enarr-in-ps-37.13-checked-text-a088c500"
+edition_id = "edition.nicene-and-post-nicene-fathers.series-1-volume-8.new-york-1888"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces a few sentences of the Oxford Library of the Fathers English translation of Augustine's Enarrationes in Psalmos as condensed by A. Cleveland Coxe and published in 1888 in the Nicene and Post-Nicene Fathers, first series, volume VIII, which is in the United States public domain by date of publication (the parent facsimile's rights_basis gives the evidence and the reasoning). It is transcribed from page images rendered from the hashed Internet Archive facsimile and contains no Internet Archive markup or text-layer bytes."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription collated against the printed page image of the hashed Internet Archive facsimile ia-facsimile-pdf-ed10ab29 (SHA-256 ed10ab29a779cf36619874600509648915be0ea94c33545af2713d2ea3cc7540), on 2026-11-18; the facsimile's own optical text layer was used only to locate the page, and the CCEL web text of the same volume was collated against the page after it was read. Printed page 107, left column, PDF page 125."
+retrieved = "2026-11-18"
+sha256 = "a088c500552f7fccb1e39b4e1bcc78c9e4232745a80cf9cee504ba8956202fb9"
+byte_size = 865
+path = "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-8/editions/new-york-1888/artifacts/augustine-enarr-in-ps-37.13-checked-text-a088c500/augustine-enarr-in-ps-37.13.txt"
+derived_from = "artifact.nicene-and-post-nicene-fathers.series-1-volume-8.new-york-1888.ia-facsimile-pdf-ed10ab29"
+transformation = "Read the named printed page as an image rendered at 150 dots per inch from the hashed facsimile with pdftoppm, and its left column again at 300 dots per inch, and transcribe the quoted sentences with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced locator giving the printing's own Psalm number (English numbering, here XXXVIII for Vulgate Psalm 37) and section; preserve the printed wording, capitalization, spelling, punctuation and typographic quotation marks and apostrophes; join line-end hyphenation and close the printer's spaces inside and before quotation marks and punctuation; omit running heads, page numbers, section numbers, footnote markers and italics."
+indexable = true
+encoding = "utf-8"

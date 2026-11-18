@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.john-beleth.summa-de-ecclesiasticis-officiis.latin-migne-pl-202.lxiv-triplex-checked-text-3bcf73ce"
+edition_id = "edition.john-beleth.summa-de-ecclesiasticis-officiis.latin-migne-pl-202"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces a few sentences of John Beleth's Latin as printed in Migne's Patrologia Latina volume 202 (Paris: J.-P. Migne), a printing published long before 1931 and in the public domain in the United States (guidance/missals.md section 5, Cornell's chart as current on 1 January 2026); the underlying medieval text is likewise public domain. A faithful transcription adds no original authorship, and nothing of the Internet Archive's delivery is reproduced."
+rights_jurisdiction = "United States"
+provenance = "Triptych transcription made on 2026-11-18 by acquisition lane A3 (fork F2) from the page image artifact.john-beleth.summa-de-ecclesiasticis-officiis.latin-migne-pl-202.ia-leaf-n41-79bf6824 (sha256 79bf6824ac6f6124aa29785a7d76388f1e35378f9dd6a5c1f1dfcc1eadcc9ace), read on the image itself. The retained optical text layer artifact.john-beleth.summa-de-ecclesiasticis-officiis.latin-migne-pl-202.ia-djvu-ocr-22b781bf was used only to find the locus (R1's dossier cites OCR lines 4789-4792); where it differs, the page governs. No source text passed through a language model between the server and these bytes other than the transcriber's reading of the image."
+retrieved = "2026-11-18"
+sha256 = "3bcf73ced4fc79d27cf11ff1d16270dc5e845b69de6c4c44ec6e8beade8ca766"
+byte_size = 201
+path = "src/sources/works/john-beleth/summa-de-ecclesiasticis-officiis/editions/latin-migne-pl-202/artifacts/lxiv-triplex-checked-text-3bcf73ce/beleth-summa-lxiv-triplex.txt"
+derived_from = "artifact.john-beleth.summa-de-ecclesiasticis-officiis.latin-migne-pl-202.ia-leaf-n41-79bf6824"
+transformation = "Read the named column on the parent page image (local crops of the unmodified fetched bytes, enlarged for small type) and transcribe the quoted extent with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced locator naming the volume column; preserve the printing's wording, spelling (including j and the ae/oe ligatures as printed), capitalization and punctuation; join line-end hyphenation; normalize inter-word spacing to one space after punctuation where the compressed setting omits it; italics are not marked; expand nothing."
+indexable = true
+encoding = "utf-8"

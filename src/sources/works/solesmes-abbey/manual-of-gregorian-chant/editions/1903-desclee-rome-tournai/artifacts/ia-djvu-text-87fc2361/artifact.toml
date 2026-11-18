@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.solesmes-abbey.manual-of-gregorian-chant.desclee-1903.ia-djvu-text-87fc2361"
+edition_id = "edition.solesmes-abbey.manual-of-gregorian-chant.desclee-1903"
+artifact_type = "ocr-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Public domain in the United States by publication date. The title page of this copy (PDF p. 11, read on the image on 2026-11-18) reads A MANUAL OF GREGORIAN CHANT COMPILED FROM THE SOLESMES BOOKS AND FROM ANCIENT MANUSCRIPTS. SOCIETY OF SAINT JOHN THE EVANGELIST DESCLEE, LEFEBVRE & Co., Publishers to the Holy See & Printers to the S. Congr. of Rites. ROME. - TOURNAI (Belgium). 1903.; its verso (PDF p. 12) prints two Roman imprimaturs of 9 October 1903 and the reservation Jus proprietatis sibi reservant Editores. A work first published abroad in 1903 is out of United States copyright on the pre-1931 line guidance/missals.md section 5 records, written here as derived for calendar year 2026; the publishers' reservation of rights does not extend a United States term. Restoration under 17 U.S.C. 104A cannot keep it protected: a restored term runs no longer than ninety-five years from publication, and ninety-five years from 1903 ended with 1998. No life-based term is relied on. The bytes are the Internet Archive's optical character recognition of its own page images and add no human authorship (Bridgeman Art Library v. Corel Corp., 36 F. Supp. 2d 191 (S.D.N.Y. 1999)). GOOGLE: case-insensitive probes over the whole file returned 'google' 0, 'usage guidelines' 0 and 'digitized by' 0, and over the whole PDF's embedded text 0; this is an Internet Archive Scribe scan of a Brigham Young University copy. No host rights label is relied upon."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/manualofgregoria00dela/manualofgregoria00dela_djvu.txt"
+provenance = "Fetched whole over HTTPS from the source_url with curl -sSL on 2026-11-18 into lane A2's scratch directory, hashed with sha256sum before use, and copied here unaltered. The byte size, 662,112, and the SHA-1, 68d81ba39abcafbf70421076cff485c4ab0cf960, were compared with the Internet Archive metadata API's file listing for the item (https://archive.org/metadata/manualofgregoria00dela) and matched. The SHA-256 equals that of the copy research lane R2 fetched on 2026-11-18. No source text passed through a language model at any point between the server and this hash."
+retrieved = "2026-11-18"
+sha256 = "87fc23619b322a807dbaa00a46a86991a546c8fbf28b65169fb1acd5a81bcf59"
+byte_size = 662112
+path = "src/sources/works/solesmes-abbey/manual-of-gregorian-chant/editions/1903-desclee-rome-tournai/artifacts/ia-djvu-text-87fc2361/manualofgregoria00dela_djvu.txt"
+encoding = "utf-8"
+indexable = true
+notes = "The complete Internet Archive DjVuTXT optical text layer of item manualofgregoria00dela: 66,972 LF-terminated lines, valid UTF-8, no CR bytes. Completeness check: byte size and SHA-1 equal the item's own file listing. Uncorrected optical recognition: a locating and searching layer, not a text of record; wording quoted from it must be collated against the page images of the same item's PDF, and a raw-line negative over it is evidence about the recognition, not about the printed page. It is the text layer of the same item as the PDF, recognised from the item's original page images rather than from the PDF's bytes, so no derived_from edge is asserted. The Advent Rorate is at about lines 54861-55173; chant text under notation is recognised with syllable breaks and much noise."

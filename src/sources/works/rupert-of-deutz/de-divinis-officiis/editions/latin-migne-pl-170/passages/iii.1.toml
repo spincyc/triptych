@@ -1,0 +1,16 @@
+schema = 1
+record_type = "passage"
+id = "passage.rupert-of-deutz.de-divinis-officiis.latin-migne-pl-170.iii.1"
+edition_id = "edition.rupert-of-deutz.de-divinis-officiis.latin-migne-pl-170"
+artifact_id = "artifact.rupert-of-deutz.de-divinis-officiis.latin-migne-pl-170.iii.1-checked-text-4b490cca"
+artifact_sha256 = "4b490ccae05744dd892b2886de952f520a282742a54f8e0997d307deb271c69e"
+locus = "III.1"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "De divinis officiis, liber III, caput primum 'De Adventu', the chapter's opening sentence: why the season before the Nativity is called adventus. PL 170 col. 55, left column, on leaf n33."
+physical_line_ranges = [[1, 1]]
+text = "Tempus, quod Dominicæ nativitatis memoriam antecedit, ideo adventus nuncupatur, quia totus ejus ecclesiasticus ordo juxta contemplationem adventus Domini dispositus est."
+transcription_segments = [
+  { line = 1, text = "Tempus, quod Dominicæ nativitatis memoriam antecedit, ideo adventus nuncupatur, quia totus ejus ecclesiasticus ordo juxta contemplationem adventus Domini dispositus est." },
+]
+verified_on = "2026-11-18"
+notes = "Read on the page image of leaf n33 at full resolution. The printing has Dominicæ with the ligature; the OCR reads 'Dominice'. LOCUS CORRECTION: R1's dossier gives this sentence as III.2 at coll. 57-58; the image shows it is III.1 (CAPUT PRIMUM, De Adventu) at col. 55. III.2 is 'De prima Dominica adventus Domini'."

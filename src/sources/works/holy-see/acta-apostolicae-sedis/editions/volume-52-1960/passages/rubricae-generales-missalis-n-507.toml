@@ -1,0 +1,20 @@
+schema = 1
+record_type = "passage"
+id = "passage.holy-see.acta-apostolicae-sedis.volume-52-1960.rubricae-generales-missalis-n-507"
+edition_id = "edition.holy-see.acta-apostolicae-sedis.volume-52-1960"
+artifact_id = "artifact.holy-see.acta-apostolicae-sedis.volume-52-1960.rubricae-generales-missalis-n-507-checked-text-990c303a"
+artifact_sha256 = "990c303a5f505bb2c0edb67d783d06884a7406bf6b6effe012224329bab0a6a4"
+locus = "aas-52-pp-680-681-rubricae-generales-missalis-n-507"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Rubricae generales Missalis Romani (pars tertia), L) De conclusione Missae, n. 507, the whole number: Mass ends with Ite, missa est; Benedicamus Domino only on Holy Thursday evening and before a procession; Requiescant in pace in Masses for the dead. No exception is made for Advent or for Masses without the Gloria. Printed pp. 680-681; microfilm PDF pp. 94-95."
+physical_line_ranges = [[1, 5]]
+text = "507. In fine Missae dicitur Ite, missa est, cui respondetur Deo gratias. Attamen: a) in Missa vespertina in Cena Domini quam sequitur solemnis repositio Ssm̃i Sacramenti, et in aliis Missis quas sequitur aliqua processio, dicitur Benedicamus Domino, cui respondetur Deo gratias; b) infra octavam Paschatis, in Missis de Tempore, ad Ite, missa est et ad sequens Deo gratias duplex additur Alleluia; c) in Missis defunctorum dicitur Requiescant in pace, cui respondetur Amen."
+transcription_segments = [
+  { line = 1, text = "507. In fine Missae dicitur Ite, missa est, cui respondetur Deo gratias." },
+  { line = 2, text = "Attamen:" },
+  { line = 3, text = "a) in Missa vespertina in Cena Domini quam sequitur solemnis repositio Ssm̃i Sacramenti, et in aliis Missis quas sequitur aliqua processio, dicitur Benedicamus Domino, cui respondetur Deo gratias;" },
+  { line = 4, text = "b) infra octavam Paschatis, in Missis de Tempore, ad Ite, missa est et ad sequens Deo gratias duplex additur Alleluia;" },
+  { line = 5, text = "c) in Missis defunctorum dicitur Requiescant in pace, cui respondetur Amen." },
+]
+verified_on = "2026-11-18"
+notes = "Read on the microfilm page images at 150 dpi. 'Ssm̃i' is printed with a tilde over the m, carried here as m with U+0303. The number ends with c) at the head of p. 681, where n. 508 begins. The vatican.va OCR layer agrees in wording."

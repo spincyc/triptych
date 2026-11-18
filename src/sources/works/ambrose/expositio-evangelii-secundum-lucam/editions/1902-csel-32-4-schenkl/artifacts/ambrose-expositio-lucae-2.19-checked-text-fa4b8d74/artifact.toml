@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.ambrose.expositio-evangelii-secundum-lucam.csel-32-4-schenkl-1902.ambrose-expositio-lucae-2.19-checked-text-fa4b8d74"
+edition_id = "edition.ambrose.expositio-evangelii-secundum-lucam.csel-32-4-schenkl-1902"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces a few sentences of Ambrose's fourth-century Latin as edited by Karl Schenkl in CSEL 32/4, published in 1902, which is in the United States public domain by date of publication (the parent scan's rights_basis gives the reasoning). It is transcribed from page images rendered from the hashed Google/Internet Archive scan and contains none of Google's front matter, no optical-text bytes and none of Schenkl's apparatus."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription collated against the page images of the hashed Internet Archive scan ia-pdf-46c21dca (SHA-256 46c21dca...f57f) on 2026-11-18; the remote DjVu optical text ia-djvu-ocr-expositioevange00schegoog (SHA-256 b7b25e52...45c8) was used only to locate the pages. Printed page 52, PDF page 105."
+retrieved = "2026-11-18"
+sha256 = "fa4b8d747d07a8134d217decada32fae837d108cf6711d8c0e6be71da95e28ac"
+byte_size = 606
+path = "src/sources/works/ambrose/expositio-evangelii-secundum-lucam/editions/1902-csel-32-4-schenkl/artifacts/ambrose-expositio-lucae-2.19-checked-text-fa4b8d74/ambrose-expositio-lucae-2.19.txt"
+derived_from = "artifact.ambrose.expositio-evangelii-secundum-lucam.csel-32-4-schenkl-1902.ia-pdf-46c21dca"
+transformation = "Read the named printed pages as images rendered at 200 dots per inch (300 and 600 dots per inch for doubtful punctuation) from the hashed scan with pdftoppm, and transcribe the quoted sentences with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced book-and-section locator; preserve the printed wording, Schenkl's orthography (u for consonantal v, lower-case initials after full stops, lower-case deus, dominus and spiritus) and punctuation; close the printer's spaces before semicolons and question marks and join line-end hyphenation; omit the letter-spacing that marks scriptural lemmata, the marginal section numbers, line numbers, Maurist column letters and scriptural references, the running head and the apparatus."
+indexable = true
+encoding = "utf-8"

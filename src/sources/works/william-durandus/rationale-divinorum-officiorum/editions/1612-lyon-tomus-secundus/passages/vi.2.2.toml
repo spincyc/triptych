@@ -1,0 +1,17 @@
+schema = 1
+record_type = "passage"
+id = "passage.william-durandus.rationale-divinorum-officiorum.1612-lyon-tomus-secundus.vi.2.2"
+edition_id = "edition.william-durandus.rationale-divinorum-officiorum.1612-lyon-tomus-secundus"
+artifact_id = "artifact.william-durandus.rationale-divinorum-officiorum.1612-lyon-tomus-secundus.vi.2-peter-quadruplex-checked-text-1d9b7ad7"
+artifact_sha256 = "1d9b7ad720dca393b03311b87543628f3fb3bb1287c2632c6212f3b452deef64"
+locus = "VI.2.2"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Rationale VI.2 'De Tempore Aduentus', article 2 (marginal numeral 2): Durandus reports that blessed Peter first instituted three full weeks before Christmas and a fourth never completed, and explains the four weeks by the fourfold coming of the Son of God. The Peter attribution is Durandus's report of a legend and is to be presented as such. Folio 255 verso (leaf n15)."
+physical_line_ranges = [[1, 2]]
+text = "Prænotandũ igitur est quòd B.Petrus primò instituit tres septimanas integras ante natale venerari, in cõmemorationẽ aduẽtus Christi: & quartã, quæ tñ nũquã perficitur, ꝗa vigilia natalis non est de aduẽtu: vt infra dicetur. Agitur ergo aduentus Dñi per quatuor septimanas ad magnificãdũ, ꝙ est quadruplex aduẽtus filij Dei: sed vltima nunquã finitur, ꝗa sanctorũ gloria, quæ dabitur in vltimo aduentu, s. ad iudiciũ, nunquã terminabitur."
+transcription_segments = [
+  { line = 1, text = "Prænotandũ igitur est quòd B.Petrus primò instituit tres septimanas integras ante natale venerari, in cõmemorationẽ aduẽtus Christi: & quartã, quæ tñ nũquã perficitur, ꝗa vigilia natalis non est de aduẽtu: vt infra dicetur." },
+  { line = 2, text = "Agitur ergo aduentus Dñi per quatuor septimanas ad magnificãdũ, ꝙ est quadruplex aduẽtus filij Dei: sed vltima nunquã finitur, ꝗa sanctorũ gloria, quæ dabitur in vltimo aduentu, s. ad iudiciũ, nunquã terminabitur." },
+]
+verified_on = "2026-11-18"
+notes = "Read on the page image of leaf n15, enlarged. Long s given as s; abbreviations kept, not expanded (see transformation): 'tñ' tamen, 'ꝗa' quia, 'ꝙ' quod, 'Dñi' Domini, 's.' scilicet. 'ante na-|tale' is divided at the line end without a printed hyphen and is joined. The article continues 'Primus aduẽtus est in carnem'. LOCATOR CORRECTION: R1's dossier gives this chapter as 'pp. 155-158'; the volume is numbered by folio and the OCR misreads the folio numeral 2 as 1 ('158' for 258): the chapter runs from fol. 255v to at least fol. 258r."

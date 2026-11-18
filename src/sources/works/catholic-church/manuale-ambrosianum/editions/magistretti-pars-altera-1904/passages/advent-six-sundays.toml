@@ -1,0 +1,26 @@
+schema = 1
+record_type = "passage"
+id = "passage.catholic-church.manuale-ambrosianum.magistretti-pars-altera-1904.advent-six-sundays"
+edition_id = "edition.catholic-church.manuale-ambrosianum.magistretti-pars-altera-1904"
+artifact_id = "artifact.catholic-church.manuale-ambrosianum.magistretti-pars-altera-1904.advent-sundays-checked-text-2cf2993a"
+artifact_sha256 = "2cf2993af6538b2ccc278a359ab9f02f027f2d4ae4776e5f3fcb43e996e1a69e"
+locus = "printed pp. 1-41; Proprium de tempore, Dominica I-VI de Adventu"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The opening of the Manuale's Proprium (p. 1: the manual begins at the deposition of St Martin, 11 November) and the headings of the six Sundays of Ambrosian Advent: Dominica I de Adventu (p. 24, after the Saturday before it), II (p. 26), III (p. 29), IIII (p. 32), V (p. 35), VI (p. 41). The running heads divide the season into 'A festo S. Martini ad Dominicam I Adventus' and 'A Dominica I Adventus ad Nativitatem'."
+physical_line_ranges = [[1, 11]]
+text = "INCIPIT LIBER MANUALIS SECUNDUM INSTITUTIONEM AMBROSIANAE ECCLESIAE DIE XI MEN. NOVEMBRIS DEPOSITIO S. MARTINI EPISC. PROPR. SS. A FESTO S. MARTINI AD DOM. I ADV. SABBATO ANTE DOMINICAM DE ADVENTU. DOMINICA I DE ADVENTU. DOMINICA II DE ADVENTU. DOMINICA III DE ADVENTU. A DOMINICA I ADVENTUS AD NATIVITATEM DOMINICA IIII DE ADVENTU. DOMINICA V DE ADVENTU. DOMINICA VI DE ADVENTU."
+transcription_segments = [
+  { line = 1, text = "INCIPIT LIBER MANUALIS SECUNDUM INSTITUTIONEM AMBROSIANAE ECCLESIAE" },
+  { line = 2, text = "DIE XI MEN. NOVEMBRIS DEPOSITIO S. MARTINI EPISC." },
+  { line = 3, text = "PROPR. SS. A FESTO S. MARTINI AD DOM. I ADV." },
+  { line = 4, text = "SABBATO ANTE DOMINICAM DE ADVENTU." },
+  { line = 5, text = "DOMINICA I DE ADVENTU." },
+  { line = 6, text = "DOMINICA II DE ADVENTU." },
+  { line = 7, text = "DOMINICA III DE ADVENTU." },
+  { line = 8, text = "A DOMINICA I ADVENTUS AD NATIVITATEM" },
+  { line = 9, text = "DOMINICA IIII DE ADVENTU." },
+  { line = 10, text = "DOMINICA V DE ADVENTU." },
+  { line = 11, text = "DOMINICA VI DE ADVENTU." },
+]
+verified_on = "2026-11-18"
+notes = "Read on the page images; each heading line is a separate sense unit, and the offices under them are not transcribed. Running heads on rectos pp. 5-23 read 'A FESTO S. MARTINI AD DOMINICAM I ADVENTUS' (seen in the text layer, p. 3 on the image in abbreviated form); pp. 29-41 'A DOMINICA I ADVENTUS AD NATIVITATEM' (image pp. 29, 35, 41). The fourth Sunday is printed 'IIII'. The apparatus at p. 24 records that codex M has 'In Sabbato primo de Adventu' for the heading at l. 10. R1's dossier cited 'pars III / 1904'; this is Monumenta veteris liturgiae Ambrosianae III = Manuale pars altera (1904); pars prima (Monumenta II, IA manualeambrosian02cath) is dated 1905 on its own verso and is not registered."
