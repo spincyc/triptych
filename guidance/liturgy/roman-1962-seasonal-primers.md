@@ -30,7 +30,8 @@ spiritual director.
   belongs to the Proper of Time). The Sunday Propers Calendar may cue a primer
   without owning it: the Advent primer, whose season opens that table, is cued
   by one italic line above the table, carrying a
-  `triptych-publication-reference` marker, and a ◇ note after the † note
+  `triptych-publication-reference` marker, and a ◇ note after the † and §
+  notes
   ([reader list presentation](roman-1962-propers.md#reader-list-presentation)).
   The cue for a later season is decided when that primer is added.
 - A leaf is on the `liturgy-reference-v1`

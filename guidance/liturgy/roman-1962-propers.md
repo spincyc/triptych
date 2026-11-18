@@ -118,6 +118,15 @@ season after Pentecost. The notes state only that dependence and that
 difference; [calendar computation](calendar-computation.md#1962-sunday-computation)
 owns the arithmetic, and each resumed Mass's own record owns its texts.
 
+On 2026-11-18 the maintainer added a cue for the Advent primer, whose season
+opens the table. One italic line stands directly above the Proper of Time
+table, `*Before the season:* [Advent: A Primer](…) ◇`, and a ◇ note after the
+§ note says what the primer covers and that each Sunday's Mass stays with its
+guide. The cue is a link, not a row: it has no ID, owns nothing, and the
+primer's entry stays in the catalog's Seasonal Primers section
+([seasonal primers](roman-1962-seasonal-primers.md)). It binds the catalog
+only; the web Propers browse list and the terminal reader's list carry no cue.
+
 The rule binds the Proper of Time table in the
 [Traditional Latin Mass catalog](../../library/traditional-latin-mass.md), the
 web Propers browse list and search results, and the terminal reader's Propers

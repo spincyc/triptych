@@ -1,0 +1,45 @@
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"
+
+[document]
+type = "liturgy-reference-v1"
+
+[document.main]
+pdftitle = "Advent: A Primer for the Season of the Lord's Coming"
+pdfsubject = 'A primer for keeping Advent in the 1962 Roman Rite under the 1960 Rubricae generales: the three comings of the Lord; how the Church came to keep the season; the four Sundays, the Ember Days, the last days and the Vigil, with their stations and the Fathers on each; watching with the Fathers; renewing prayer; fasting and almsgiving, with the law of 1962 and of now kept apart; a graded rule of life; preparing for confession; daily readings and the prayers of the season.'
+pdfkeywords = 'Advent, 1962 Roman Rite, Church Fathers, Ember Days, O Antiphons, Rorate, fasting, prayer, confession'
+title-style = "series-detail"
+series-line = 'A Triptych Seasonal Primer'
+title = 'Advent'
+subtitle = "A Primer for the Season of the Lord's Coming"
+title-detail = '''\textit{Missale Romanum} and \textit{Breviarium Romanum} of 1962\\[0.35em]
+under the \textit{Rubricae Breviarii et Missalis Romani} of 26 July 1960'''
+title-notice = '''This primer prepares a reader to keep the season. It is not a liturgical
+book, a directory of law, or a substitute for a confessor or director: the books, the
+Church's law and a competent Ordo govern; see the terminal \textit{Scope, Method, and
+Qualifications} appendix.'''
+body = [
+  'sections/00-how-to-keep-this-book',
+  'sections/10-three-comings',
+  'sections/12-history',
+  'sections/14-shape',
+  'sections/20-first-sunday',
+  'sections/22-second-sunday',
+  'sections/24-third-sunday',
+  'sections/26-ember-days',
+  'sections/28-fourth-sunday',
+  'sections/29-last-days-and-vigil',
+  'sections/30-watching-with-the-fathers',
+  'sections/32-renewing-prayer',
+  'sections/34-fasting-and-almsgiving',
+  'sections/36-rule-of-life',
+  'sections/38-confession',
+  'sections/39-at-the-threshold',
+]
+apparatus = [
+  'sections/90-daily-readings',
+  'sections/92-prayers',
+  { source = 'sections/95-scope', roles = ['scope-appendix'] },
+  { source = 'sections/99-references', roles = ['references'] },
+]

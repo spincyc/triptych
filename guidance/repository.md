@@ -465,7 +465,11 @@ that same catalog uses an explicit
 repeated HTML destination. A reference must name a declared output owned by
 this catalog and visibly linked on that row; it never supplies a missing owner
 or declares another publication. Ordinary duplicate-owner, provider and hold
-checks still apply, and the markers are removed from rendered pages.
+checks still apply, and the markers are removed from rendered pages. The
+1962 Sunday calendar's cue line for the Advent primer is such a reference: a
+line above the table rather than a row, carrying its marker on the same line as
+its link, with the primer's own row in the same catalog's Seasonal Primers
+section ([profile](liturgy/roman-1962-seasonal-primers.md)).
 
 **One related-reading block crosses catalogs (2026-11-17).** At the
 maintainer's request the 1962 Sunday calendar links the Four Last Things

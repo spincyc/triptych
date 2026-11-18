@@ -14923,3 +14923,60 @@ publications is a maintainer's call and is not made here.
 removed unreviewed; see "The Claude Fourteenth Sunday withdrawn, 2026-10-01".
 The general question above is untouched: a withdrawn leaf now declares
 `withdrawn` and needs no edition, but a held one still does.
+
+## Claude Advent primer for the 1962 calendar, 2026-11-18
+
+<!-- promised-deliverable: claude-advent-primer-1962-2026-11-18 -->
+
+The maintainer asked for a Claude primer for Advent in the 1962 Roman Rite: a
+comprehensive, deeply patristic and scriptural preparation for the season, on
+its history and what each Sunday represents, on fasting and anticipation, and
+on spiritual renewal and the renewal of prayer and daily prayer. It must not
+replace or duplicate the per-Sunday proper guides, and it is the smaller first
+member of a series whose larger second member will be a primer for Lent. The
+work was to proceed in phases: a plan for the document and each section;
+research lanes; collation lanes that acquire full source texts into the shared
+corpus and cross-reference them; then cold generation from those records. The
+calendar's Sunday table is to signpost the primer unobtrusively.
+
+Decisions taken with the maintainer: a new series, kind `seasonal-primer-1962`,
+at `liturgy/roman-rite/1962/seasons/advent`; about 15,000 to 20,000 words; all
+four practical aids (daily reading table, graded rule of life, prayer texts,
+preparation for confession); a `## Seasonal Primers` catalog section, an
+italic cue line directly above the Sunday table, and a ◇ note after the †
+note.
+
+**Done.** The series profile and kind (commit 3b4ea2114b). The witnesses'
+acquisition into the source library (8397e48fd8). A cold writer drafted the
+leaf's sections from the plan and the collated evidence only; two independent
+cold reviews followed, and a fix pass applied every accepted finding
+(`research/cold-review.md`). The leaf is installed with its release record,
+its catalog row under Seasonal Primers, and the cue above the Sunday table.
+
+**AAS 52 correction (maintainer's decisions of 2026-11-18).** Verification for
+the primer found that the Holy See's AAS 52 (1960) "-ocr.pdf" is a
+re-typesetting of its own optical recognition, not a facsimile, so readings
+earlier recorded as "page images" of it were OCR. The dependent records were
+re-collated on a microfilm facsimile of issue no. 10 (15 August 1960): two of
+the 1962 calendar reference's four reported Acta divergences (nn. 14–16) were
+OCR artefacts and are withdrawn; n. 18 d's *XVII* is genuine print. The
+maintainer also directed: the Trent and *Gemma animae* locus patterns widened;
+the NPNF first series vol. 1 and 7 imprints corrected with their ids kept; the
+1960 rubrics segment's id kept with its true extent (to p. 729) noted; every
+moved fingerprint's consumers reviewed and re-pinned; and the published
+wording of the calendar reference, the Fourteenth and Fifteenth Sunday guides,
+*Assembling the Mass*, the Augustine biography, the Heaven essay and a GPT
+research note corrected.
+
+**Open.** The browser-product record, the corpus index and the release
+bindings for the primer and the six revised editions. Follow-ups found on the
+way, not owned by this deliverable: the web-edition converter deletes a group
+that follows `\noindent` or `\smallskip`, so a note written
+`\smallskip\noindent{\small ...}` vanishes from the web edition without an
+audit failure unless it holds a checked payload (the primer's 69 notes were
+rewritten to a form that survives); print-document cannot decode a Latin-1
+LaTeX log, so the Heaven essay's build fails; the
+decree of 3 December 1960 (AAS 52, pp. 985–986) has no facsimile in the
+library; the calendar's other Acta loci were read only in the OCR; no witness
+was found for the Advent wreath, the Jesse tree, or Advent Friday abstinence in
+the United States after 1918.

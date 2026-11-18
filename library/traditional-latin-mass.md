@@ -5,6 +5,7 @@
 Studies of the books and calendar in force in 1962. These are widely called the *Traditional Latin Mass* or the *Extraordinary Form*; this library names them by their own titles and dates.
 
 On this page: [Core and reference works](#core-and-reference-works) ·
+[Seasonal primers](#seasonal-primers) ·
 [Altar server guides](#altar-server-guides) ·
 [Sunday propers calendar](#sunday-propers-calendar) ·
 [Other Masses](#other-masses)
@@ -16,6 +17,17 @@ On this page: [Core and reference works](#core-and-reference-works) ·
 | **The Ordinary and Order of the Mass** | [PDF](../pdf/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.html) | [PDF](../pdf/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.pdf) · [Read](../web/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.html) | Stable texts, ritual sequence, and theological exposition. |
 | **Assembling the Mass** | [PDF](../pdf/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass.html) | [PDF](../pdf/claude/liturgy/roman-rite/1962/reference/assembling-the-mass.pdf) · [Read](../web/claude/liturgy/roman-rite/1962/reference/assembling-the-mass.html) | Calendar, precedence, Mass classes, formularies, and commemorations. |
 | **The 1962 Roman Calendar** | [PDF](../pdf/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar.html) | [PDF](../pdf/claude/liturgy/roman-rite/1962/reference/liturgical-calendar.pdf) · [Read](../web/claude/liturgy/roman-rite/1962/reference/liturgical-calendar.html) | Construction history and complete recurring universal and United States inventories. |
+
+## Seasonal Primers
+
+Preparation for a season of the 1962 year and a companion through it: its
+history, its Sundays and proper days, the Fathers' teaching, and a rule of
+prayer and penance. Each Sunday's Mass stays with its guide in the
+[Sunday propers calendar](#sunday-propers-calendar).
+
+| Season | ChatGPT | Claude | Focus |
+| --- | --- | --- | --- |
+| **Advent** | — | [Read](../web/claude/liturgy/roman-rite/1962/seasons/advent.html) | The Lord's three comings and how the Church came to keep the season; the four Sundays, the Ember Days, the last days and the Vigil with their stations and the Fathers; prayer, fasting and almsgiving, a graded rule of life and confession; daily readings and the prayers of the season. |
 
 <a id="altar-server-guides"></a>
 ## Altar Server Guides
@@ -103,6 +115,8 @@ shared readings; a dedicated guide to the winter formulary remains planned.
 <!-- triptych-publication-id: claude:liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany -->
 <!-- triptych-publication-id: claude:liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost -->
 
+*Before the season:* [Advent: A Primer](../web/claude/liturgy/roman-rite/1962/seasons/advent.html) ◇ <!-- triptych-publication-reference: claude:liturgy/roman-rite/1962/seasons/advent -->
+
 | ID | Sunday | ChatGPT | Claude |
 | ---: | --- | --- | --- |
 | 01 | **First Sunday of Advent** | Planned | Planned |
@@ -184,6 +198,12 @@ the Last Sunday after Pentecost the Lord's prophecy of the end of the world
 majesty (Luke 21:25–33). An old custom of preaching gave the four Sundays of
 Advent to the four last things; these essays serve the year's last Sundays
 and Advent alike.
+
+◇ The Advent primer prepares for the season as a whole: its history, its
+Sundays and Ember Days, the Fathers' teaching on the Lord's coming, and a
+rule of prayer, fasting and confession for the four weeks. Each Sunday's
+Mass stays with its guide in this table; the primer is listed under
+[Seasonal primers](#seasonal-primers).
 
 ### Resumed Sundays after the Epiphany
 
