@@ -14,7 +14,7 @@ from .reference import (
 )
 
 
-KINDS = {"article-faith", "article-canon-law", "article-scripture", "biography", "history-parish", "history-translation", "history-account"}
+KINDS = {"article-faith", "article-canon-law", "article-scripture", "biography", "history-parish", "history-translation", "history-account", "seasonal-primer-1962"}
 RECORDS = {
     "biography": ("scope", "source-audit", "chronology", "tradition-audit"),
     "history-parish": ("scope", "source-audit", "evidence-map", "pastor-succession"),

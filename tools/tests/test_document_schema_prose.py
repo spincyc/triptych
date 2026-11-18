@@ -23,7 +23,7 @@ class ProseChecks(unittest.TestCase):
         return target
 
     def record(self, kind="article-faith"):
-        leaf = {"article-faith": "articles/faith/example", "article-canon-law": "articles/canon-law/example", "biography": "biographies/example", "history-account": "history/example/01-study", "history-parish": "history/catholic-parish-histories/01-example"}[kind]
+        leaf = {"article-faith": "articles/faith/example", "article-canon-law": "articles/canon-law/example", "biography": "biographies/example", "history-account": "history/example/01-study", "history-parish": "history/catholic-parish-histories/01-example", "seasonal-primer-1962": "liturgy/roman-rite/1962/seasons/example"}[kind]
         record = {"kind": kind, "provider": "gpt", "leaf": leaf, "id": f"gpt/{leaf}", "source_dir": f"src/gpt/{leaf}", "entrypoint": "main.tex", "structure": []}
         for role in ("scope", "source-audit"):
             self.role(record, role, f"research/{role}.md", "An actual research record.\n")
@@ -53,6 +53,16 @@ class ProseChecks(unittest.TestCase):
         self.role(record, "chronology", "research/chronology.md", "| Key | Event | Source |\n|---|---|---|\n| life-a | Event one | Witness one |\n| life-a | Event two | Witness two |\n")
         self.role(record, "tradition-audit", "research/tradition-audit.md", "Earliest witness and later reception.\n")
         self.assertIn("chronology: duplicate stable ledger key", check(self.root, record))
+
+    def test_seasonal_primer_requires_substantive_scope_and_source_audit(self):
+        # roman-1962-seasonal-primers.md, Required records: the scope and the
+        # claim-to-source matrix are ledgers, checked like an article's.
+        record = self.record("seasonal-primer-1962")
+        self.assertEqual([], check(self.root, record))
+        self.put(record, "research/source-audit.md", "| Claim | Witness | Locus |\n|---|---|---|\n| The station | | p. 1 |\n")
+        self.assertIn("source-audit: empty ledger field", check(self.root, record))
+        self.put(record, "research/scope.md", "# Scope\n")
+        self.assertIn("scope: record contains no substantive content", check(self.root, record))
 
     def test_history_does_not_require_orientation_timeline(self):
         record = self.record("history-account")

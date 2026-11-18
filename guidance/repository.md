@@ -133,6 +133,7 @@ src/<provider>/
       propers/{temporal,ritual}/
       ordinary/
       reference/
+      seasons/                    seasonal primers
     postconciliar/<edition-locale>/
       propers/
         registry/                 edition-owned registry records
@@ -587,7 +588,7 @@ Sort by a profile's stable series order or by occurrence or governing event
 date where one applies; otherwise use a deliberate reader sequence, keeping a
 canonical work and its derived companions together.
 
-On the 1962 page list the Ordinary first, assembly and calendar references second, and proper guides in their compact series table. Keep each curriculum's modules and assessment or reference companions together on its owning catalog page, grouped in prerequisite order. Keep novenas and their short forms together on the Prayer page. Every postconciliar entry names its exact books, edition, language, territory, and date; comparative or discursive works remain with their substantive study category.
+On the 1962 page list the Ordinary first, assembly and calendar references second, seasonal primers third, and proper guides in their compact series table. Keep each curriculum's modules and assessment or reference companions together on its owning catalog page, grouped in prerequisite order. Keep novenas and their short forms together on the Prayer page. Every postconciliar entry names its exact books, edition, language, territory, and date; comparative or discursive works remain with their substantive study category.
 
 `CONTRIBUTING.md` keeps an ordinary-language no-Git path, an isolated agent workflow, and an experimental-branch path. Feedback triggers verification rather than becoming authority. Submissions retain ownership, accept the applicable outbound license, and identify third-party material and its distribution basis.
 
