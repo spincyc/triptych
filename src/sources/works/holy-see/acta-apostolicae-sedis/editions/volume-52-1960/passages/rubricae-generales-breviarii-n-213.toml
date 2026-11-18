@@ -1,0 +1,16 @@
+schema = 1
+record_type = "passage"
+id = "passage.holy-see.acta-apostolicae-sedis.volume-52-1960.rubricae-generales-breviarii-n-213"
+edition_id = "edition.holy-see.acta-apostolicae-sedis.volume-52-1960"
+artifact_id = "artifact.holy-see.acta-apostolicae-sedis.volume-52-1960.rubricae-generales-breviarii-n-213-checked-text-7aa90a91"
+artifact_sha256 = "7aa90a9192dd38d32d4b3beaa8a9b1fb697c8c06e003a0d339143b11dc5c454e"
+locus = "aas-52-p-634-rubricae-generales-breviarii-n-213"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Rubricae generales Breviarii Romani (pars secunda), the chapter on the lessons at Matins (L, De lectionibus ad Matutinum), I De lectionibus in genere, n. 213, the whole number: lessons of the occurring Scripture that cannot be said on their assigned day are omitted, even when they are the beginnings of books, except the beginning of 1 Corinthians, which is read on the preceding Saturday when the First Sunday after Epiphany falls on 13 January. Printed p. 634; microfilm PDF p. 46."
+physical_line_ranges = [[1, 1]]
+text = "213. Lectiones de Scriptura occurrenti, si die assignato dici nequeunt, omittuntur, etsi agatur de initiis librorum, excepto initio Epistolae I ad Corinthios, quod, cum die 13 ianuarii occurrit dominica I post Epiphaniam, sabbato praecedenti legitur."
+transcription_segments = [
+  { line = 1, text = "213. Lectiones de Scriptura occurrenti, si die assignato dici nequeunt, omittuntur, etsi agatur de initiis librorum, excepto initio Epistolae I ad Corinthios, quod, cum die 13 ianuarii occurrit dominica I post Epiphaniam, sabbato praecedenti legitur." },
+]
+verified_on = "2026-11-18"
+notes = "Read on the microfilm page image at 300 dpi and in a 600 dpi crop; the line-end hyphenation Epipha-niam is joined. The vatican.va OCR layer agrees in wording at this extent (it letter-spaces 'c u m')."

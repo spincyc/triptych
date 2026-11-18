@@ -1910,7 +1910,7 @@ title = "Rubricae Breviarii et Missalis Romani"
 work_id = "work.catholic-church.rubricae-breviarii-et-missalis-romani"
 whole = true
 locator = "Acta Apostolicae Sedis, volume 52: artifact pp. 597-740"
-basis = "segment segment.catholic-church.rubricae-breviarii-et-missalis-romani.latin-aas-52-1960.aas-52-1960-pages-597-740: The complete promulgated code with its accompanying Variationes, from the heading RUBRICAE BREVIARII ET MISSALIS ROMANI on printed p. 597 through the end of the Variationes in Martyrologio Romano on p. 740."
+basis = "segment segment.catholic-church.rubricae-breviarii-et-missalis-romani.latin-aas-52-1960.aas-52-1960-pages-597-740: The complete promulgated code with its accompanying Variationes, from the heading RUBRICAE BREVIARII ET MISSALIS ROMANI on printed p. 597 through the end of the Variationes in Martyrologio Romano on p. 729; the segment's range continues through p. 740 over other acts (a Declaratio, other Ordinationes and the issue's index), as its notes record."
 
 [[containers.constituents]]
 author = "Francis"
@@ -24708,7 +24708,7 @@ basis = "The Elenchus."
 
 [[containers]]
 id = "work.honorius-augustodunensis.gemma-animae"
-manifest_sha256 = "47851b8ae38de79ae6689679c102dfa0fd58209063bd28592c5b62ac85f922cc"
+manifest_sha256 = "2294b108a7c9e8b6c0344c10422649ee5c05052f9fcc1af6dcabfc4fad775139"
 status = "partial"
 basis = "Container-shaped by derivation: its 1895 edition's whole-volume PL 172 text layer (artifact.honorius-augustodunensis.gemma-animae.1895-garnier-migne-pl-172.ia-djvu-ocr-2ebfcb5f) carries the separately registered Speculum Ecclesiae, whose segment points into it. Gemma animae itself is the record's own work. The volume's other works are entered under that artifact's own entry below, from its Elenchus."
 unresolved = "Only the constituent registered through a segment is listed here; the volume's remaining works are listed under the whole-volume artifact's entry and are not repeated."
@@ -24722,7 +24722,7 @@ basis = "segment segment.honorius-augustodunensis.speculum-ecclesiae.1895-garnie
 
 [[containers]]
 id = "artifact.honorius-augustodunensis.gemma-animae.1895-garnier-migne-pl-172.ia-djvu-ocr-2ebfcb5f"
-manifest_sha256 = "a45668c1b80e08c294546dd4d3f727a712719d481e77aa0fd2402bf9e00ff8cc"
+manifest_sha256 = "b8e9e1a0b99b99b0b31a5b7f404f5c16a4fc6e93fdda5e20d7c24da3a7666916"
 status = "resolved"
 basis = "The layer's own Elenchus at lines 430-515 ('ELENCHUS AUCTORUM ET OPERUM QUI IN HOC TOMO CLXXII CONTINENTUR'), read in full on 2026-09-22; the title page, read on leaf n4, names the same authors. The Elenchus's column figures are damaged in the layer and are not recorded as figures except where the text was located."
 
@@ -24730,9 +24730,8 @@ basis = "The layer's own Elenchus at lines 430-515 ('ELENCHUS AUCTORUM ET OPERUM
 author = "Honorius Augustodunensis"
 title = "Gemma animae"
 work_id = "work.honorius-augustodunensis.gemma-animae"
-whole = true
 locator = "cols. 541-738, physical lines 42628-58295"
-basis = "The owning edition; its heading and explicit located in the layer."
+basis = "The owning edition; its heading and explicit located in the layer. The scan lacks cols. 639-642 (one leaf: the end of Book II and the opening of III.1), verified on Internet Archive leaves n320 and n321 on 2026-11-18; the 1854 edition's facsimile (PDF p. 51) carries them."
 
 [[containers.constituents]]
 author = "Honorius Augustodunensis"

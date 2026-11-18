@@ -1,0 +1,18 @@
+schema = 1
+record_type = "passage"
+id = "passage.holy-see.acta-apostolicae-sedis.volume-52-1960.rubricae-generales-breviarii-n-221-a"
+edition_id = "edition.holy-see.acta-apostolicae-sedis.volume-52-1960"
+artifact_id = "artifact.holy-see.acta-apostolicae-sedis.volume-52-1960.rubricae-generales-breviarii-n-221-a-checked-text-3dced8fe"
+artifact_sha256 = "3dced8fe526571146d949641a88592751fa13c3f8b665e1d56f2fc59e1df867b"
+locus = "aas-52-p-635-rubricae-generales-breviarii-n-221-a"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Rubricae generales Breviarii Romani (pars secunda), III De lectionibus Officii unius Nocturni, n. 221, opening and letter a): in the Officium ordinarium the first and second lessons are of Scripture, ordinarily of the occurring Scripture unless proper or specially assigned lessons are had; the first is the one the Breviary marks first and the second joins the second and third, the intermediate responsory omitted. n. 169 (printed p. 627, microfilm PDF p. 39) assigns the Officium ordinarium to III-class feasts and to the Saturday Office of St Mary and sends their first and second lessons to n. 221 a. Printed p. 635; microfilm PDF p. 47."
+physical_line_ranges = [[1, 3]]
+text = "221. In Officio ordinario, ordo trium lectionum hic est: a) Lectio prima et secunda dicuntur de Scriptura; et quidem ordinarie de Scriptura occurrenti, nisi propriae vel specialiter assignatae habeantur. Prima autem lectio Sacrae Scripturae ea est, quae in Breviario ut prima notatur; altera vero efficitur ex secunda et tertia in unam coniunctis, omisso responsorio intermedio."
+transcription_segments = [
+  { line = 1, text = "221. In Officio ordinario, ordo trium lectionum hic est:" },
+  { line = 2, text = "a) Lectio prima et secunda dicuntur de Scriptura; et quidem ordinarie de Scriptura occurrenti, nisi propriae vel specialiter assignatae habeantur." },
+  { line = 3, text = "Prima autem lectio Sacrae Scripturae ea est, quae in Breviario ut prima notatur; altera vero efficitur ex secunda et tertia in unam coniunctis, omisso responsorio intermedio." },
+]
+verified_on = "2026-11-18"
+notes = "Read on the microfilm page image at 300 dpi and in a 600 dpi crop; the line-end hyphenation coniunc-tis is joined. The vatican.va OCR layer agrees in wording at this extent except that it reads 'responsoria' where the print has 'responsorio'. The number itself says 'In Officio ordinario', not 'festa III classis'; the III-class scope comes from n. 169, read on the microfilm page image at 100 dpi and not transcribed here. Letter b) follows on the same page and was read but not transcribed."

@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "claude"
-audited_on = "2026-11-16"
+audited_on = "2026-11-18"
 discovery_rule = "src/claude/**/main.tex"
 publication_count = 67
 source_surface_file_count = 2507
-snapshot = "sha256:325ec4fc4b86a880a8b8e6c3b78bf5f5dfd24c3f685475e484ff93fb62702e96"
+snapshot = "sha256:fd95be0cf8361a9b83ca4edfafe331e8e9770a3f53007c7933e478a12fcc128f"
 
 [[owners]]
 id = "owner.articles.faith.four-last-things"
@@ -1616,7 +1616,7 @@ owners = ["articles/faith/four-last-things-02-judgment"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-02-judgment/research/source-bindings.toml"
-sha256 = "fa2c7bc80fd7a5119d26509830e2e2236d0d24ca6cdc9181a0f163f08fe1ad2d"
+sha256 = "e170705d4e54587141dee70ed71c3bb2a7d53cb723554045cfa591bfb8f51d86"
 kind = "source-binding"
 owners = ["articles/faith/four-last-things-02-judgment"]
 
@@ -2738,7 +2738,7 @@ owners = ["articles/scripture/the-linen-cloths-at-the-empty-tomb"]
 
 [[files]]
 path = "src/claude/articles/scripture/the-linen-cloths-at-the-empty-tomb/research/source-bindings.toml"
-sha256 = "a92cadeb984f340f81273c8e6ebf061f7e1e3127bb4ec81fe23a58862fe5c99f"
+sha256 = "7e29fbc2e5938a00c7436ad0ef92f9671d113f43b1edef4b98f018b47cbd144a"
 kind = "source-binding"
 owners = ["articles/scripture/the-linen-cloths-at-the-empty-tomb"]
 
@@ -4718,7 +4718,7 @@ owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/source-bindings.toml"
-sha256 = "3c55208c68f29d2338617403e4336ab90da5ad46988afaab0560e2b8cfb7cd71"
+sha256 = "f7da20f60d5878f3edc794c55be8063f56477101d8e3ea4a51ee7624767c3960"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
 
@@ -5876,7 +5876,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost/research/source-bindings.toml"
-sha256 = "8ceff619a3d04c2ba18d12c116f47606eae4756afc4736b203fbc172e7b78caa"
+sha256 = "f534a69fac948b06da39d8d6833fa91e8525d54e69cf72326b09ff726fdeacf4"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost"]
 
@@ -6038,7 +6038,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost/research/source-bindings.toml"
-sha256 = "fde63ab607ed46135227b7868ef3d8d8464296e87bac86c4c3ad23c8d3788b03"
+sha256 = "e74d6605b298eb65268956b2d8eb03da0f8eb577be85b2f6abf145a573cb881b"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost"]
 
@@ -6764,7 +6764,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-penteco
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/source-bindings.toml"
-sha256 = "edbd30fbe3f47e69ff22cc83e1de882e1093b556cd438a965081b1dc31114a3b"
+sha256 = "a0c43eddd1c7a3cd8019e483c4ce866fdc3f583ac37f5f7878f18c21aa2f81b4"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
 
@@ -7328,7 +7328,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecos
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/research/source-bindings.toml"
-sha256 = "e2a09a53ce99eb14423b41bf43e4848cf56a3fb2af741830aa571336498ecce3"
+sha256 = "a71ce6f5db1a860ce2c359a16a677d24b6b8ce22084697d25df2119a07cec445"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost"]
 
@@ -7736,7 +7736,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecos
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/source-bindings.toml"
-sha256 = "21a9b661528a50532543350c7da88f152df81334f081b0919cc88f29e6bf90f9"
+sha256 = "bcf99d9314ef7f0b2685e8378e133de17dbc9aaf085be3709cf9c39e795d7201"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost"]
 
@@ -8144,7 +8144,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/research/source-bindings.toml"
-sha256 = "f35fe5106303613e2da00d64ad366e53b1f259a71ce0dfe174ffbddd777cfe31"
+sha256 = "20e6744c5fd51d290e8004c7993681a509827bcb66b47965d428f6794f2f016a"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost"]
 
@@ -8726,7 +8726,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentec
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/source-bindings.toml"
-sha256 = "9f9ea7c6e5387b8e60397ecfb643a9ae88f25c02881b7de65c451b26a509c695"
+sha256 = "63d1735ff6ad9cb4d922648aa339b8c83825294900a916d1dd56544ee2cf5254"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost"]
 
@@ -9182,7 +9182,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiph
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/source-bindings.toml"
-sha256 = "be821134b020fd0dea9da54b0880b5ad5375ffbad597782d4e094333770b9dd0"
+sha256 = "55ed658f2a3d0a616c8f47447f06adf90c9bc619071ce274fe5267ce09059749"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany"]
 
@@ -11396,7 +11396,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/source-bindings.toml"
-sha256 = "c7b5f5167d468a3feb601234b4013d552122b28834b17f53f4ed65eb356a32b9"
+sha256 = "99ccd12284f060c9589b677e3cebb06003341e69b49b86458a255f7a6f138a92"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
@@ -11552,7 +11552,7 @@ owners = ["liturgy/roman-rite/1962/reference/assembling-the-mass"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/research/source-bindings.toml"
-sha256 = "f176bf71486ea15a8a3e4fcc6181e0ca6d27f34240ad9f216c4680175f5f9a2f"
+sha256 = "8fe8f78aaf1697d5a39efa917ba8e43e4214cd2785c2f0a219fae2604e686c7f"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/reference/assembling-the-mass"]
 
@@ -11852,7 +11852,7 @@ owners = ["liturgy/roman-rite/comparative/two-missals-one-sacrifice"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice/research/source-bindings.toml"
-sha256 = "b070d567a6492810d0cdd46b33176c22ca695ca84d5b9f06fef977ef26f719b9"
+sha256 = "403d7600fe826fe3921fcfe1041b10d53a6eb3cae4ff68bd0c5daf28e3746cd9"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/comparative/two-missals-one-sacrifice"]
 
@@ -13616,7 +13616,7 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/research/source-bindings.toml"
-sha256 = "cc3add2c6ebec49e77735a698933071d9f9fdcfa632e1698e03853f9c0fbdad1"
+sha256 = "b97f6f86602c30ec74ea02aa6df026d2b5975fd8a3ed09ba585b9623d6386a14"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a"]
 
@@ -14180,7 +14180,7 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/source-bindings.toml"
-sha256 = "45d4f20bb94030636fbc695c9ea1871f43921186e68539507cf31b9f5810577a"
+sha256 = "c317db95ecc1f70bc597767e0d338f90fcfe8fabaf3a4f5ef320236246163098"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
 
