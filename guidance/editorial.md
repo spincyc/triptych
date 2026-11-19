@@ -475,6 +475,23 @@ articles of faith) are held to these tests as well:
   reader will use them: a table, a short note, the appendix.
 - **Read it aloud.** A paragraph should read well aloud from a lectern or at
   a family table. If it would not, it is not finished.
+- **Let the work disappear.** The book does not narrate itself: no "this
+  book has followed", "this book's thread", "in these pages", "the next
+  chapter is about", and few section-number references in running prose. A
+  link between two places is made by the thing itself (the manger, the
+  bread, the verse), not by pointing at the plan. Cross-references belong
+  where the reader is sent to use something (a table, a prayer, an
+  examination). Other publications are listed in the references, not
+  advertised in the body.
+- **Let the source have the last word.** Do not follow a quotation with a
+  maxim that restates it ("The one who was born by the road is the Way.").
+  If the Father has said it, stop; if the point needs saying, say what the
+  quotation does not.
+- **Pray the Church's words, faithfully rendered.** A prayer the reader is
+  asked to say is printed in a received translation that renders the Latin
+  printed beside it; when a witness's English is free or borrowed from
+  another prayer, use a closer received translation, not one of the book's
+  own ([received prayer](#rights-quotation-and-received-prayer)).
 
 These are judgements, like those above, and a reviewer reports a failure as a
 register defect under the same criterion. A teaching or devotional work also
@@ -482,6 +499,11 @@ has a reader review before release: a reviewer who has not seen the
 production reads the work as its reader would and reports flat, stilted,
 repetitive or machine-register passages, and missed moments the sources
 offered, by section.
+The second Advent draft, written to these tests, cleared the ledger
+vocabulary but drew 126 findings from its blind reader, chiefly self-narration,
+restating maxims, research voice in history and law, a confession counsel given
+four ways, and a Collect whose English did not translate its Latin; the record is
+the primer's `research/cold-review.md`.
 
 ## Illustration and page composition
 

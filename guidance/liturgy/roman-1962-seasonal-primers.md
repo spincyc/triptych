@@ -102,30 +102,40 @@ scope appendix.
 
 ## Reader-facing order
 
-Title, contents, then four parts and the apparatus. The body opens on the
-season itself, not on how to use the book; that is one short paragraph at the
-end of the opening chapter.
+Title, contents, then four parts and the apparatus. The book opens with a
+short word to the reader (how to use it, in one paragraph) and then on the
+season itself. The practical part comes before the weeks, because the reader
+makes a rule and plans confession before the season begins; the book ends on
+the eve of the feast, so that the last thing read is the threshold of what the
+season prepares. The blind reader review of the second Advent draft found the
+earlier order (keeping the season last, after the feast) sent the reader from
+Bethlehem back to the first week.
 
 1. **The season**: what the Church is waiting for or turning from, and why;
    the season's name, its theology in the Fathers, and its history told as a
-   story.
-2. **Through the season**: one chapter per Sunday and proper day or group of
+   story. The Hours, the Breviary and Missal, and the Bible translation used
+   are explained in plain words before the book relies on them.
+2. **Keeping the season**: watching, prayer, fasting and almsgiving, a
+   graded rule of life and confession, with one counsel on each practical
+   question (when to confess, what to give) said once and held to
+   throughout.
+3. **Through the season**: one chapter per Sunday and proper day or group of
    days, in liturgical order, each walking the reader through what the Church
    sings and reads that week and what the Fathers saw in it, with the week's
    practice folded in.
-3. **Toward the feast**: the mysteries of the feast the season prepares,
+4. **Toward the feast**: the mysteries of the feast the season prepares,
    read from the Fathers and the feast's own texts at incipit length, so that
    the reader arrives ready (for Advent: Bethlehem, the manger, the swaddling
-   bands and the wonderful exchange). It does not become a primer for the
-   next season.
-4. **Keeping the season**: watching, prayer, fasting and almsgiving, a
-   graded rule of life, confession, and preparing the house and the night of
-   the feast.
+   bands and the wonderful exchange), ending with the eve and night of the
+   feast. It does not become a primer for the next season.
 
 Appendices: a daily reading table keyed to the season's weeks and days (dated
 where the 1962 books date them), with the Office's Scripture lesson or a stated
-course and one patristic reading with locus; prayers of the season; `Scope,
-Method, and Qualifications`; references. The daily table is computed from the
+course and one patristic reading with locus; prayers of the season; a short
+appendix about the book (titled for the reader, such as "About This Book")
+that states plainly which books and translations were used, the law then and
+now, and what the book leaves out, without a record of what was searched for
+or not found (that belongs in `research/source-audit.md`); references. The daily table is computed from the
 books, not from one civil year, so it serves every year the season's length
 allows; a worked year may be named in the scope appendix.
 
