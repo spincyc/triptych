@@ -1,0 +1,23 @@
+schema = 1
+record_type = "passage"
+id = "passage.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.8.1-bethlehem"
+edition_id = "edition.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878"
+artifact_id = "artifact.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.8.1-bethlehem-checked-text-3f9b22a4"
+artifact_sha256 = "3f9b22a4810132aa0641e60b1d5b580978066ce8ea6898033490064b66dc6443"
+locus = "8.1"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "PL 76 col. 1104 A-B (Garnier 1878 reprint), facsimile PDF page 552, right column, top. Homily VIII section 1, from Qui bene etiam in Bethlehem nascitur to alienum est ubi descendit, after which Gregory turns to Isaiah's All flesh is grass and the manger (passage 8.1-manger). It follows directly on the census sentence and its contrast with the reprobate (Psalm 68:29)."
+physical_line_ranges = [[1, 8]]
+text = "Qui bene etiam in Bethlehem nascitur: Bethlehem quippe domus panis interpretatur. Ipse namque est qui ait: Ego sum panis vivus, qui de cælo descendi. Locus ergo in quo Dominus nascitur, domus panis antea vocatus est, quia futurum profecto erat ut ille ibi per materiam carnis appareret, qui electorum mentis interna satietate reficeret. Qui non in parentum domo, sed in via nascitur, ut profecto ostenderet, quia per humanitatem suam quam assumpserat quasi in alieno nascebatur. Alienum videlicet non secundum potestatem dico, sed secundum naturam. Nam de potestate ejus scriptum est: In propria venit. In natura etenim sua ante tempora natus est. in nostra venit ex tempore. Qui ergo æternus permanens temporalis apparuit. alienum est ubi descendit."
+transcription_segments = [
+  { line = 1, text = "Qui bene etiam in Bethlehem nascitur: Bethlehem quippe domus panis interpretatur." },
+  { line = 2, text = "Ipse namque est qui ait: Ego sum panis vivus, qui de cælo descendi." },
+  { line = 3, text = "Locus ergo in quo Dominus nascitur, domus panis antea vocatus est, quia futurum profecto erat ut ille ibi per materiam carnis appareret, qui electorum mentis interna satietate reficeret." },
+  { line = 4, text = "Qui non in parentum domo, sed in via nascitur, ut profecto ostenderet, quia per humanitatem suam quam assumpserat quasi in alieno nascebatur." },
+  { line = 5, text = "Alienum videlicet non secundum potestatem dico, sed secundum naturam." },
+  { line = 6, text = "Nam de potestate ejus scriptum est: In propria venit." },
+  { line = 7, text = "In natura etenim sua ante tempora natus est. in nostra venit ex tempore." },
+  { line = 8, text = "Qui ergo æternus permanens temporalis apparuit. alienum est ubi descendit." },
+]
+verified_on = "2026-11-19"
+notes = "Scriptural references printed in parentheses are omitted from the lines: (Joan. vi, 41, 52) after descendi and (Joan. i, 11) after venit. The bold 1461 embedded before ostenderet is earlier-edition pagination and is omitted. PRINTED PUNCTUATION KEPT: the page prints natus est. in nostra and apparuit. alienum, each a full stop followed by a lower-case word, read at 600 dots per inch; they are kept as printed and not normalized to commas. The italic ligature in cælo was read at 1200 dots per inch as ae, not oe. The printer set eratut without a space; it is written erat ut. OCR AGAINST PAGE (ia-djvu-text-13c0bbad lines 87382-87400): word differences, optical text first: Bethlehemnascitur for Bethlehem nascitur; cwlo for caelo; eratut for erat ut; inlerna for interna; ia for via; naturaetenim for natura etenim; vobis exempla proponitis ad majora semper ascen g m for in; anernus for aeternus; descen for descendit; it also interleaves marginal, running-head or other-column text (Joan vi 41 32; 1461; Joan i II)."

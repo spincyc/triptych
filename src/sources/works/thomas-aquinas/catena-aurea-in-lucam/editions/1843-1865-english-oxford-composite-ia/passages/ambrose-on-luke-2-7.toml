@@ -1,0 +1,20 @@
+schema = 1
+record_type = "passage"
+id = "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.ambrose-on-luke-2-7"
+edition_id = "edition.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia"
+artifact_id = "artifact.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.ambrose-on-luke-2-7-checked-text-46e80520"
+artifact_sha256 = "46e80520bb9ca9bf14b7f55db80b0d9493a18c9787c2adf77fa3ae4a08f53d30"
+locus = "Luke 2:7, Ambrose (Expos. in Luc. II.41-42); Catena printed page 68 (Part I, 1843), facsimile PDF page 90"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The whole of the Ambrose comment that closes the commentary on Luke 2:6-7, from AMBROSE; to redeemed also at the foot of page 68; page 69 begins with the lemma Luke 2:8-12."
+physical_line_ranges = [[1, 5]]
+text = "Ambrose; On thy account then am I weak, in thee am I strong. On thy account am I poor, in thee am I rich. Consider not what thou seest, but acknowledge that thou art redeemed. I owe more, O Lord Jesus, to Thy sufferings that I am redeemed, than to Thy works that I am created. It were no advantage to be born, had it not advantaged me to be redeemed also."
+transcription_segments = [
+  { line = 1, text = "Ambrose; On thy account then am I weak, in thee am I strong." },
+  { line = 2, text = "On thy account am I poor, in thee am I rich." },
+  { line = 3, text = "Consider not what thou seest, but acknowledge that thou art redeemed." },
+  { line = 4, text = "I owe more, O Lord Jesus, to Thy sufferings that I am redeemed, than to Thy works that I am created." },
+  { line = 5, text = "It were no advantage to be born, had it not advantaged me to be redeemed also." },
+]
+verified_on = "2026-11-19"
+notes = "No marginal attribution stands beside this label. OCR AGAINST PAGE (ocr-1455eb5f lines 3659-3665): the optical text gives the same words."

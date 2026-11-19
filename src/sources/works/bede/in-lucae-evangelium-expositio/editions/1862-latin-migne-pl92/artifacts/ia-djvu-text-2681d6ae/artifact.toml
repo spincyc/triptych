@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.bede.in-lucae-evangelium-expositio.latin-migne-pl92-1862.ia-djvu-text-2681d6ae"
+edition_id = "edition.bede.in-lucae-evangelium-expositio.latin-migne-pl92-1862"
+artifact_type = "ocr-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Public domain in the United States by publication date. The title pages of this copy, read on the page images at PDF pp. 5 and 7 of the registered facsimile, print Paris and 1862 (PATROLOGIAE LATINAE TOMUS XCII. / VENERABILIS BEDAE TOMUS TERTIUS. / EXCUDEBATUR ET VENIT APUD J.-P. MIGNE EDITOREM ... 1862). A work first published abroad before 1931 is out of United States copyright: that is the line guidance/missals.md records as current on 1 January 2026, and because it moves every January it is written here as derived for calendar year 2026 and not as a standing rule. Restoration under 17 U.S.C. 104A cannot keep it protected: ninety-five years from 1862 ended with 1957. No life-based term is relied on. The underlying text is Bede's eighth-century Latin. The bytes are the Internet Archive's optical character recognition of its own page images; machine recognition of a public-domain printing adds no human authorship, and a faithful mechanical reproduction is not original (Bridgeman Art Library v. Corel Corp., 36 F. Supp. 2d 191 (S.D.N.Y. 1999)). THE GOOGLE QUESTION WAS DECIDED ON THESE BYTES: probes run case-insensitively over the whole file with runs of non-alphanumeric characters collapsed returned \"usage guidelines\" 0 and \"google\" 0. This is an Internet Archive Scribe scan made at the University of Toronto, not a Google digitisation, so src/sources/inventories/google-usage-guidelines-rights-v1.toml is not engaged. NOT RELIED ON: that the item is available, that the download succeeded, or any host rights label."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/patrologiaecur92mign/patrologiaecur92mign_djvu.txt"
+provenance = "Fetched whole over HTTPS from the source_url with curl on 2026-11-19 and hashed with sha256sum before use; the byte size and SHA-1 were compared with the Internet Archive metadata API's file listing for the item (archive.org/metadata/patrologiaecur92mign) and matched. No source text passed through a language model at any point between the server and this hash. Moved here unaltered."
+retrieved = "2026-11-19"
+sha256 = "2681d6aefdb74ff407152fe4b20052cfe0613677503de2c50f00dcf8ab6700e4"
+byte_size = 3783644
+path = "src/sources/works/bede/in-lucae-evangelium-expositio/editions/1862-latin-migne-pl92/artifacts/ia-djvu-text-2681d6ae/patrologiaecur92mign_djvu.txt"
+encoding = "utf-8"
+indexable = true
+notes = "The complete Internet Archive DjVuTXT optical text layer of item patrologiaecur92mign: 75,365 LF-terminated lines, valid UTF-8, no CR bytes. Completeness check: the byte size, 3,783,644, and the SHA-1, 54d272b0f43c4edb3fd87a1b7e8e76fde4dfd2a4, equal the item's own file listing for this file. It covers the whole printed volume, including the expositions of Matthew, Mark, John and Acts that the volume also prints; only the exposition of Luke belongs to this edition. Uncorrected optical recognition: a locating and searching layer, not a text of record; the two printed columns of each page are often interleaved line by line. Wording quoted from it must be collated against the page images of artifact.bede.in-lucae-evangelium-expositio.latin-migne-pl92-1862.ia-pdf-832f5281. It is the text layer of the same item as that facsimile, recognised from the item's original page images rather than from the PDF's bytes, so no derived_from edge is asserted."

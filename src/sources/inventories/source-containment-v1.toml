@@ -1068,6 +1068,20 @@ whole = true
 basis = "Edition notes; edition.jerome.de-viris-illustribus.english-richardson-npnf2-3."
 
 [[containers]]
+id = "work.nicene-and-post-nicene-fathers.series-2-volume-4"
+manifest_sha256 = "d9d4a0a666a4b958083d14c096a1f2cf614594c2f0366def5f84cc0247daf684"
+status = "partial"
+basis = "Description: 'select works and letters of Athanasius of Alexandria in English, edited with prolegomena by Archibald Robertson, among them his own translation of the treatise On the Incarnation of the Word'. Three verified passages of that treatise are filed under edition.nicene-and-post-nicene-fathers.series-2-volume-4.new-york-1892."
+unresolved = "The volume's other works and letters of Athanasius are not enumerated; the description says 'select works and letters' without naming them."
+
+[[containers.constituents]]
+author = "Athanasius of Alexandria"
+title = "De incarnatione Verbi"
+work_id = "work.athanasius-of-alexandria.de-incarnatione-verbi"
+whole = true
+basis = "Description; edition notes: the treatise runs from printed page 36 (PDF page 132), and the introduction says the translation is the one printed in 1885 by the present translator."
+
+[[containers]]
 id = "work.nicene-and-post-nicene-fathers.series-2-volume-5"
 manifest_sha256 = "d7f013a1c553bde8d26f95c6d03a7abbad567bb4e1d077ccd55ff94ce9043c0c"
 status = "partial"
@@ -1125,7 +1139,7 @@ id = "work.nicene-and-post-nicene-fathers.series-2-volume-7"
 manifest_sha256 = "a056b02fdafced3b74d1dc6c6d177c53162cf7ecbda0252929ff93527bcd26ed"
 status = "partial"
 basis = "Description: 'Edwin Hamilton Gifford's translation of the Catechetical Lectures of Cyril of Jerusalem and the orations and letters of Gregory Nazianzen'."
-unresolved = "Gregory Nazianzen's orations and letters are not enumerated; none is named."
+unresolved = "Gregory Nazianzen's orations and letters are not enumerated beyond Orations 29 and 38, which passages filed under the volume edition name."
 
 [[containers.constituents]]
 author = "Cyril of Jerusalem and the Jerusalem catechetical tradition"
@@ -1133,6 +1147,20 @@ title = "Catechetical Lectures"
 work_id = "work.cyril-of-jerusalem.catechetical-lectures"
 whole = true
 basis = "Description."
+
+[[containers.constituents]]
+author = "Gregory of Nazianzus"
+title = "Oratio 29"
+work_id = "work.gregory-of-nazianzus.oration-29"
+whole = true
+basis = "Passages passage.nicene-and-post-nicene-fathers.series-2-volume-7.new-york-1894.gregory-oration-29.19-made-god, -29.19-swaddling and -29.20-bread, read on printed pages 308-309 (PDF 382-383), where the oration (printed as Oration XXIX, The Third Theological Oration, On the Son) closes and Oration XXX begins."
+
+[[containers.constituents]]
+author = "Gregory of Nazianzus"
+title = "Oratio XXXVIII: In Theophania"
+work_id = "work.gregory-of-nazianzus.oration-38"
+whole = true
+basis = "Passages passage.nicene-and-post-nicene-fathers.series-2-volume-7.new-york-1894.gregory-oration-38.1, -38.13-word-took-flesh, -38.13-new-commingling and -38.17, read on printed pages 345-351 (PDF 419-425), where the oration is printed as Oration XXXVIII, On the Theophany, or Birthday of Christ."
 
 [[containers]]
 id = "work.nicene-and-post-nicene-fathers.series-2-volume-8"
@@ -1204,7 +1232,7 @@ unresolved = "Which of Leo's sermons and letters the volume prints is not stated
 author = "Leo the Great"
 title = "Sermones"
 extent_unresolved = "The description says 'the letters and sermons of Leo the Great' without saying whether the volume prints all of them or a selection."
-basis = "Description; edition notes: 'Feltoe numbers Leo's sermons and their internal sections'."
+basis = "Description; edition notes: 'Feltoe numbers Leo's sermons and their internal sections'. Sermons XXI (On the Feast of the Nativity, I) and LIV (On the Passion, III) are read on printed pages 128-129 and 166 (PDF 186-187, 236), passages leo-sermo-21.1-3 and leo-sermo-54.4-wondrous-exchange."
 
 [[containers.constituents]]
 author = "Leo the Great"
@@ -65822,3 +65850,103 @@ title = "Miracula et opera minora"
 whole = true
 locator = "pars II (1885), ed. B. Krusch"
 basis = "Artifact notes and the owning edition's notes, which name pars II as bound in the same item; the library holds no work record for it."
+
+# ---------------------------------------------------------------------------
+# Whole Migne volume layers entered 2026-11-19 with the Advent primer revision
+# (Gregory's Homiliae in Evangelia in PL 76, Bede on Luke in PL 92, and
+# Augustine's Sermones 185 and 191 in PL 38). Each is filed under the
+# constituent a lane was reading; PL 92 stays under the Bede edition as filed.
+# ---------------------------------------------------------------------------
+
+[[containers]]
+id = "artifact.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.ia-djvu-text-13c0bbad"
+manifest_sha256 = "36d9b0ce0ecb014814ed82335b70a65189ab1464730e43e200d425035de31191"
+status = "partial"
+basis = "Artifact notes and the volume's own contents page (Elenchus, PDF p. 4, read on the image 2026-11-19): the continuation of the Moralia from book XVII to the end (col. 9), Homiliae in Ezechielem (col. 781), Homiliae XL in Evangelia (col. 1075), Oratio ad plebem de mortalitate (col. 1311), indexes (cols. 1313, 1343). Homily I read at col. 1077, Homily VIII at cols. 1103-1104."
+unresolved = "The Oratio ad plebem de mortalitate and the indexes have no library work record; extents of the Moralia and Ezechiel constituents were not collated."
+
+[[containers.constituents]]
+author = "Gregory the Great"
+title = "Homiliae in Evangelia"
+work_id = "work.gregory-the-great.homiliae-in-evangelia"
+whole = true
+locator = "PL 76 cols. 1075-1312"
+basis = "Contents page (col. 1075) and direct page-image reading of Homilies I and VIII on 2026-11-19."
+
+[[containers.constituents]]
+author = "Gregory the Great"
+title = "Moralia in Iob"
+work_id = "work.gregory-the-great.moralia-in-iob"
+locator = "books XVII-XXXV, PL 76 cols. 9-782"
+basis = "Contents page: Librorum Moralium continuatio, a libro XVII usque ad finem, col. 9; the optical text carries Liber trigesimus quartus."
+
+[[containers.constituents]]
+author = "Gregory the Great"
+title = "Homiliae in Hiezechihelem prophetam"
+work_id = "work.gregory-the-great.homiliae-in-hiezechihelem-prophetam"
+locator = "from PL 76 col. 781"
+basis = "Contents page: Homiliae in Ezechielem, col. 781."
+
+[[containers]]
+id = "artifact.bede.in-lucae-evangelium-expositio.latin-migne-pl92-1862.ia-djvu-text-2681d6ae"
+manifest_sha256 = "8b31aadacf660589fa6832b2aa8dbaf65079fdf8cf29c02f3824d404f0d69b7a"
+status = "partial"
+basis = "Artifact notes and the volume's own contents page (Elenchus, PDF p. 8, read 2026-11-19): Bede's expositions of Matthew (col. 9), Mark, Luke (col. 301), John (col. 633) and Acts (col. 937), De nominibus locorum (col. 1033), index (col. 1039). Luke 2:7 read at col. 331."
+unresolved = "Matthew, John and Acts constituents and De nominibus locorum are not matched to library records here; the Mark extent was not collated in this scan."
+
+[[containers.constituents]]
+author = "Bede the Venerable"
+title = "In Lucae evangelium expositio"
+work_id = "work.bede.in-lucae-evangelium-expositio"
+whole = true
+locator = "PL 92 from col. 301; Luke 2:7 at col. 331 (PDF p. 170)"
+basis = "Contents page and direct page-image reading on 2026-11-19."
+
+[[containers.constituents]]
+author = "Bede the Venerable"
+title = "In Marci evangelium expositio"
+work_id = "work.bede.in-marci-evangelium-expositio"
+locator = "PL 92, before col. 301"
+basis = "Contents page: in Evangelium S. Marci."
+
+[[containers]]
+id = "artifact.augustine.sermo-185.1845-migne-pl38.ia-djvu-text-de2c5a46"
+manifest_sha256 = "42f35a07bb6ae23f8521f62387c65d8cfbf86b8896264a376b8d1bb94ecc02d9"
+status = "partial"
+basis = "Artifact notes: 'The complete Internet Archive DjVuTXT optical text layer ... the whole of PL 38 (Augustine's sermons, first part)'; 'it serves edition.augustine.sermo-191.1845-migne-pl38 as well'. Leaf records name Sermo CLXXXIV and Sermo CXC on the same pages."
+unresolved = "The volume's other sermons are not enumerated."
+
+[[containers.constituents]]
+author = "Augustine of Hippo"
+title = "Sermo CLXXXV"
+work_id = "work.augustine.sermo-185"
+whole = true
+basis = "edition.augustine.sermo-185.1845-migne-pl38 (from column 997)."
+
+[[containers.constituents]]
+author = "Augustine of Hippo"
+title = "Sermo CXCI"
+work_id = "work.augustine.sermo-191"
+whole = true
+basis = "edition.augustine.sermo-191.1845-migne-pl38 (from column 1009)."
+
+[[containers]]
+id = "artifact.augustine.sermo-185.1845-migne-pl38.ia-pdf-829acec8"
+manifest_sha256 = "f62752eebf4a9c3c2b9b7db519d03c97da4d51e489f2d3a63075fe81d18b46d1"
+status = "partial"
+basis = "The complete PL 38 facsimile, 755 pages, of the same item as the optical layer above (series title page dated 1845)."
+unresolved = "As for the optical layer: the volume's other sermons are not enumerated."
+
+[[containers.constituents]]
+author = "Augustine of Hippo"
+title = "Sermo CLXXXV"
+work_id = "work.augustine.sermo-185"
+whole = true
+basis = "edition.augustine.sermo-185.1845-migne-pl38 (from column 997)."
+
+[[containers.constituents]]
+author = "Augustine of Hippo"
+title = "Sermo CXCI"
+work_id = "work.augustine.sermo-191"
+whole = true
+basis = "edition.augustine.sermo-191.1845-migne-pl38 (from column 1009)."

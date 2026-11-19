@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.ambrose.expositio-evangelii-secundum-lucam.csel-32-4-schenkl-1902.ambrose-expositio-lucae-2.42-checked-text-58fe5adf"
+edition_id = "edition.ambrose.expositio-evangelii-secundum-lucam.csel-32-4-schenkl-1902"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces a few sentences of Ambrose's fourth-century Latin as edited by Karl Schenkl in CSEL 32/4, published in 1902, which is in the United States public domain by date of publication (the parent scan's rights_basis gives the reasoning). It is transcribed from page images rendered from the hashed Google/Internet Archive scan and contains none of Google's front matter, no optical-text bytes and none of Schenkl's apparatus."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription collated against the page images of the hashed Internet Archive scan ia-pdf-46c21dca (SHA-256 46c21dca...f57f, re-fetched whole on 2026-11-19 and rehashed to the registered digest) on 2026-11-19; the remote DjVu optical text ia-djvu-ocr-expositioevange00schegoog (SHA-256 b7b25e52...45c8, re-fetched and rehashed) was used only to locate the pages. Printed pages 64-65, PDF pages 117-118."
+retrieved = "2026-11-19"
+sha256 = "58fe5adf4ee038751f4053a16da972d6b5cd2c43424423fc16895fc00c207600"
+byte_size = 495
+path = "src/sources/works/ambrose/expositio-evangelii-secundum-lucam/editions/1902-csel-32-4-schenkl/artifacts/ambrose-expositio-lucae-2.42-checked-text-58fe5adf/ambrose-expositio-lucae-2.42.txt"
+derived_from = "artifact.ambrose.expositio-evangelii-secundum-lucam.csel-32-4-schenkl-1902.ia-pdf-46c21dca"
+transformation = "Read the named printed pages as images rendered at 150 dots per inch (400 dots per inch for doubtful marks) from the hashed scan with pdftoppm, and transcribe the quoted sentences with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced book-and-section locator; preserve the printed wording, Schenkl's orthography (u for consonantal v, lower-case initials after full stops, lower-case deus, dominus and spiritus) and punctuation; close the printer's spaces before semicolons and question marks and join line-end hyphenation; omit the letter-spacing that marks scriptural lemmata, the marginal section numbers, line numbers, Maurist column letters and scriptural references, the running head and the apparatus, which is summarized in the passage notes."
+indexable = true
+encoding = "utf-8"

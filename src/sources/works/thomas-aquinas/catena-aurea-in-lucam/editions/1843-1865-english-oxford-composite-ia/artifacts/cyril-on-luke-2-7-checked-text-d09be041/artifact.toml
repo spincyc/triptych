@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.cyril-on-luke-2-7-checked-text-d09be041"
+edition_id = "edition.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces a few sentences of the Oxford English Catena Aurea on Luke, Part I published in 1843, which is in the United States public domain by date of publication (the parent facsimile's rights_basis gives the evidence). It is transcribed from page images rendered from the hashed Internet Archive facsimile and contains no Internet Archive markup or optical-text bytes. Historical wording is excluded from Triptych CC BY authorship."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription collated against the page images of the hashed Internet Archive facsimile pdf-a63aa18e (SHA-256 a63aa18e...7291, re-fetched whole on 2026-11-19 and rehashed to the registered digest) on 2026-11-19; the retained optical text ocr-1455eb5f was used only to locate the pages. Printed page 68, PDF page 90."
+retrieved = "2026-11-19"
+sha256 = "d09be041c3ead494ae9801c3cf1bf48e3bc74833458507f4d6ce9b8d0828ad7a"
+byte_size = 332
+path = "src/sources/works/thomas-aquinas/catena-aurea-in-lucam/editions/1843-1865-english-oxford-composite-ia/artifacts/cyril-on-luke-2-7-checked-text-d09be041/cyril-on-luke-2-7.txt"
+derived_from = "artifact.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.pdf-a63aa18e"
+transformation = "Read the named printed pages as images rendered at 150 dots per inch (250 dots per inch for doubtful punctuation, ligatures and the marginal attributions) from the hashed facsimile with pdftoppm, and transcribe the quoted comment with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced Gospel-verse-and-Father locator; preserve the printed wording, spelling, the ae ligature, capitalization and punctuation, with typographic apostrophes; print the small-capital Father label in ordinary capitals and lower case with its printed stop or semicolon; join line-end hyphenation of single words and close the printer's spaces before punctuation; omit italics, running heads, page numbers, signatures, footnotes and the marginal attributions and references, which are recorded in the passage notes."
+indexable = true
+encoding = "utf-8"

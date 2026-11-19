@@ -1,0 +1,26 @@
+schema = 1
+record_type = "passage"
+id = "passage.ambrose.expositio-evangelii-secundum-lucam.csel-32-4-schenkl-1902.ambrose-expositio-lucae-2.41"
+edition_id = "edition.ambrose.expositio-evangelii-secundum-lucam.csel-32-4-schenkl-1902"
+artifact_id = "artifact.ambrose.expositio-evangelii-secundum-lucam.csel-32-4-schenkl-1902.ambrose-expositio-lucae-2.41-checked-text-7cbf8e7c"
+artifact_sha256 = "7cbf8e7cc59b43aec6996850ece5d86a7a52bb0b05e2a78cbc8fae6649ad9b9b"
+locus = "2.41"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "CSEL 32/4 printed pages 63 (last line) and 64, lines 1-12 (PDF pages 116-117), Maurist column letters D (page 63) and E and F (page 64) in the margin; the running head of page 63 reads Expositio euangelii Lucae II 39-41 (1294 D-1295 D). The second half of section 41 of book II, on Luke 2:7, from ille igitur paruulus (the last line of page 63) to the end of the section, non prodesset nasci, nisi redimi profuisset; section 42 (Sed nemo) follows. Section 41 opens on page 63 line 16 with nec quemquam mouere debet, on why John passed over Christ's infancy and Luke describes it."
+physical_line_ranges = [[1, 11]]
+text = "ille igitur paruulus, ille infantulus fuit, ut tu uir possis esse perfectus: ille inuolutus in pannis ut tu mortis laqueis absolutus: ille in praesaepibus, ut tu in altaribus: ille in terris, ut tu in stellis: ille alium locum in eo deuersorio non habebat, ut tu plures haberes in caelestibus mansiones. qui cum diues inquit esset, propter uos pauper factus est, ut illius inopia uos ditaremini. meum ergo paupertas illa patrimonium est et infirmitas domini mea uirtus est. maluit sibi egere, ut omnibus abundaret. me illi infantiae uagientis abluunt fletus, mea lacrimae illae delicta lauerunt. plus igitur, domine Iesu, iniuriis tuis debeo quod redemtus sum quam operibus quod creatus sum. non prodesset nasci, nisi redimi profuisset."
+transcription_segments = [
+  { line = 1, text = "ille igitur paruulus, ille infantulus fuit, ut tu uir possis esse perfectus:" },
+  { line = 2, text = "ille inuolutus in pannis ut tu mortis laqueis absolutus:" },
+  { line = 3, text = "ille in praesaepibus, ut tu in altaribus:" },
+  { line = 4, text = "ille in terris, ut tu in stellis:" },
+  { line = 5, text = "ille alium locum in eo deuersorio non habebat, ut tu plures haberes in caelestibus mansiones." },
+  { line = 6, text = "qui cum diues inquit esset, propter uos pauper factus est, ut illius inopia uos ditaremini." },
+  { line = 7, text = "meum ergo paupertas illa patrimonium est et infirmitas domini mea uirtus est." },
+  { line = 8, text = "maluit sibi egere, ut omnibus abundaret." },
+  { line = 9, text = "me illi infantiae uagientis abluunt fletus, mea lacrimae illae delicta lauerunt." },
+  { line = 10, text = "plus igitur, domine Iesu, iniuriis tuis debeo quod redemtus sum quam operibus quod creatus sum." },
+  { line = 11, text = "non prodesset nasci, nisi redimi profuisset." },
+]
+verified_on = "2026-11-19"
+notes = "APPARATUS at the foot of page 64 for these lines, as printed: the words ut tu mortis ... praesepio stand in the margin of P; mortis laqueis absolutus PaCLX, sis mortis laqueis absolutus A, mortis laqueis absolutus sis chi, mortis laqueis absoluaris B; praesepio P (in quo mox ut tu in ras.) L; stellis V (in mg. celis), caelis alpha chi; eodem LX; deuersurio P, diuersorio B (di ex de) cet.; caelestibus sedibus PL, cf. Ephes. 2, 6; illa] illius E gamma T; me illi] ille P, illius alpha C; uagientes X; meae F; sum om. PL; nisi] si A. So the Maurist-Migne wording of this sentence (in praesepio for in praesaepibus, a finite verb with absolutus, illius for illi) is attested in Schenkl's apparatus but is not his text. PAGE READING: a small mark after illa on page 64 line 7 is a speck, not a letter or apostrophe; the apparatus lemma illa] confirms the word. Letter-spaced scriptural words (qui cum diues esset, propter uos pauper factus est, ut illius inopia uos ditaremini) are transcribed without the spacing. OCR AGAINST PAGE (ia-djvu-ocr-expositioevange00schegoog lines 5480-5517): word differences, optical text first: illa' for illa; infirraitas for infirmitas; lesu for Iesu; it also interleaves marginal, running-head or other-column text (2 loh 1 3 3 loh 1 9 5 loh 1 10 sq 6 loh 1 14 7 loh 1 30 10 l; E; 5; F ...)."

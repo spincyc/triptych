@@ -1,5 +1,5 @@
 schema: triptych-catena-held-passage-review/v1
-reviewed_on: '2026-11-07'
+reviewed_on: '2026-11-19'
 scope: 'Bounded record-level review of every pre-change unmapped passage with explicit text: 114 verified
   records and 202 inspected records, plus ten Luther passages removed from the active mapping. The controlling
   metadata, text, context and notes determine these dispositions. This is not new image collation, work-wide
@@ -13,7 +13,9 @@ scope: 'Bounded record-level review of every pre-change unmapped passage with ex
   commentators'' Advent chapters, a Catena unit blocked on translator credit, and a digital witness superseded
   by its collated printed page. It also reviews that intake''s text-bearing units printed inside containers
   (NPNF volumes, Patrologia Latina 54, Bute''s Breviary) whose constituent author is eligible, which the
-  gate reads under the container''s scope and so does not require.'
+  gate reads under the container''s scope and so does not require. A 2026-11-19 record-level review of
+  the second Advent-primer intake adds two Augustine Christmas sermons and two Gregory Homily I sections that
+  take no fragment edge.'
 reviews:
 - passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.100
   passage_sha256: e61208a6fd4feee8b60fe9f08c88b5f253f0dbe6365aac1912ac790fe9fadea9
@@ -2930,3 +2932,36 @@ reviews:
     its record, and a liturgical lesson may abridge the Father''s text. Admit the exposition through the Father''s
     own work and edition, or declare the lesson''s constituent identity, translator credit and relation to the source
     text, before adding the Luke 1:26-27 edge.'
+- passage_id: passage.augustine.sermo-185.1845-migne-pl38.185.1
+  passage_sha256: 3e26378ab57df72469adbbbff836658e4c57189ee6058db5ca089e49e31451f5
+  disposition: needs-admission
+  basis: The checked section quotes Veritas de terra orta est, et justitia de coelo prospexit (Psalm 84:12 Vulgate)
+    and expounds it clause by clause (Veritas quae est in sinu Patris, de terra orta est ...); that is a direct
+    exposition of Psalm 84:12 and would take that edge once the address is checked against the held Clementine Psalter.
+    Ephesians 5:14 (Surge, qui dormis) is quoted as a prooftext and takes no edge.
+- passage_id: passage.augustine.sermo-191.1845-migne-pl38.191.1
+  passage_sha256: 23e7a0928e928d60bb9a9c7a8f903141a2f21766ad8674b85df261f061c5ff5e
+  disposition: incidental-citation
+  basis: The checked section is a Christmas paradox catalogue (ut esuriret panis, ut sitiret fons ...). Its echoes
+    of John 1:3 and 1:14 (per quod facta sunt, caro factum) are allusions inside Augustine's own sentences, not
+    an expounded lemma; no edge is inferred.
+- passage_id: passage.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.1.1
+  passage_sha256: cd82b445c4b30a6dfd63d33dbde24ebc419aa1287f3deffab391bcc2e5c83d09
+  disposition: needs-admission
+  basis: The checked opening two sentences of Homily I, read after the printed lection Luke 21:25-32, say why the
+    Lord foretells the evils that follow the ageing world and the blows that precede its end (to restrain love of
+    the world, and to make the hearers fear the near judgment). They paraphrase the lection as a whole and quote
+    or expound no verse of it. The acquiring lane proposed a Luke 21:25-26 edge; it is not adopted, because these
+    sentences state the purpose of the whole prophecy rather than expounding the signs of verses 25-26, and the
+    excerpt does not settle whether its natural extent is the whole lection or those verses. Settle that extent
+    from the rest of section 1 (Huic etenim lectioni) before admitting an edge.
+- passage_id: passage.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.1.5
+  passage_sha256: ff2c909fed649cf5f12d0f6b2c17c356316e3e472eae4cf78813f131dcba31e0
+  disposition: needs-admission
+  basis: The checked opening of Homily I section 5 (Ecce, fratres mei, jam cernimus quod audiebamus) applies the
+    foretold distress of nations of the lection to Rome's present calamities and, by the simile of an ageing body,
+    to the world's old age, ending Nolite ergo diligere quem videtis diu stare non posse. It quotes no verse and
+    expounds no lemma's wording; it is homiletic application of Luke 21:25-26, not exposition of it. The acquiring
+    lane proposed a Luke 21:25-26 edge; it is not adopted. Whether application without a quoted lemma takes an edge
+    is the open admission question (the Leo Sermo 19.1 reviews treat a quoted and applied verse as edge-bearing);
+    decide it before admitting one.

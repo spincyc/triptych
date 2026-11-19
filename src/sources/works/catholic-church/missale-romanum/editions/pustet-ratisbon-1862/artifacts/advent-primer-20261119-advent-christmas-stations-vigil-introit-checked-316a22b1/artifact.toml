@@ -1,0 +1,21 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.advent-primer-20261119-advent-christmas-stations-vigil-introit-checked-316a22b1"
+edition_id = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Faithful transcription of Latin headings and a complete Introit printed in the identified 1862 Ratisbon Pustet Missale Romanum, public domain in the United States by publication date before 1931 (the line as derived for calendar year 2026); its maximum possible United States term expired before URAA restoration. Mechanical transcription with declared accent, ligature and line-wrap normalization adds no authorship. The basis reaches only these historical words, not any modern edition, layout or apparatus. The Google Books page stamps on the scan are not text of the book and are not reproduced."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/bub_gb_E7sPAAAAIAAJ/bub_gb_E7sPAAAAIAAJ.pdf"
+provenance = "Transcribed by lane X1 of the Advent primer revision from page images of the exact registered whole PDF artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3 (SHA-256 363d6fc3f556bf596f3b56d4efcb7be849b7e9904304ba886b7977c39e8f7474, 102,880,787 bytes, matched with sha256sum before use on 2026-11-19). No source text passed through a language model."
+retrieved = "2026-11-19"
+sha256 = "316a22b1a803608bf75e7e20272b74831d9061c7ce1fb3bdde4f0a2ca06f0219"
+byte_size = 639
+path = "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/advent-primer-20261119-advent-christmas-stations-vigil-introit-checked-316a22b1/latin.txt"
+derived_from = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3"
+transformation = "Read on page images rendered with pdftoppm from the exact registered whole PDF at 150-300 dpi on 2026-11-19 (artifact page = printed page + 86 on the pages opened: p. 1 = PDF 87, p. 14 = PDF 100, p. 16 = PDF 102, p. 17 = PDF 103, p. 19 = PDF 105). One heading, rubric label or sense unit per LF-terminated UTF-8 line, each prefixed by a braced printed-page locator. Joined: line wraps and division hyphens. Removed: stress accents (where the coarse scan shows them). Expanded: the ae and oe ligatures. Kept as printed: spelling (Majorem, ejus), capitalization, abbreviations, citations, pointing and the versicle sign, rendered U+2123. The tracked OCR artifact missale-romanum-1862-text-f34bc7cf was used only to find the pages."
+indexable = true
+encoding = "utf-8"
+notes = "Pustet 1862 Missale Romanum: Advent I title and station (p. 1), the Vigil of the Nativity title, station and whole Introit (p. 14), and the three Christmas Mass titles with stations (pp. 16, 17, 19). Public-domain Latin witness paired with the text-free 1962 control passages of this lane. 13 LF-terminated lines."

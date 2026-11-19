@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.ante-nicene-fathers.volume-1.buffalo-1887.irenaeus-adversus-haereses-5.praef-checked-text-f4b5cc69"
+edition_id = "edition.ante-nicene-fathers.volume-1.buffalo-1887"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces one sentence of the English translation of Irenaeus, Against Heresies, published at Buffalo in 1887 in The Ante-Nicene Fathers, volume I, which is in the United States public domain by date of publication: a work first published before 1931 is out of United States copyright, the line guidance/missals.md records as current on 1 January 2026, written here as derived for calendar year 2026 and not as a standing rule (the parent facsimile record gives the title-page evidence). It is transcribed from page images rendered from that hashed Internet Archive facsimile and contains no Internet Archive markup or text-layer bytes."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription from the printed page image of the hashed Internet Archive facsimile artifact.ante-nicene-fathers.volume-1.buffalo-1887.ia-facsimile-pdf-b50e358e (SHA-256 b50e358eebf85f06794c4dba16777eb6d27a35688a6c7a828b46c9d2190be8cc), printed page 526, PDF page 544, on 2026-11-19, from a local copy fetched whole over HTTPS with curl the same day whose SHA-256 equals that record. The tracked optical text layer ia-djvu-ocr-12cdc519 was used only to locate the page. Filed under this volume edition, which holds the facsimile it derives from, rather than under edition.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887, whose work locus pattern admits no preface."
+retrieved = "2026-11-19"
+sha256 = "f4b5cc6958eae0ddd57f246c83b40199a4cb64571e4bd252ee08fd8ca497e509"
+byte_size = 443
+path = "src/sources/works/ante-nicene-fathers/volume-1/editions/buffalo-1887/artifacts/irenaeus-adversus-haereses-5.praef-checked-text-f4b5cc69/irenaeus-adversus-haereses-5.praef.txt"
+derived_from = "artifact.ante-nicene-fathers.volume-1.buffalo-1887.ia-facsimile-pdf-b50e358e"
+transformation = "Read printed page 526 as an image rendered at 240 dots per inch from the hashed facsimile with pdftoppm, cropped to half-columns, and transcribe the closing sentence of the preface to Book V with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced locator; preserve the printed wording, capitalization, spelling and punctuation; join line-end hyphenation; omit footnote markers and italics."
+indexable = true
+encoding = "utf-8"
+notes = "Checked transcription of the close of the preface to Book V of Irenaeus, Against Heresies, in the Roberts and Rambaut translation, read on the page image of the Ante-Nicene Fathers volume I facsimile (printed page 526, PDF page 544). The page prints stedfast."
