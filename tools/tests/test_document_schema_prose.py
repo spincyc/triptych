@@ -64,6 +64,14 @@ class ProseChecks(unittest.TestCase):
         self.put(record, "research/scope.md", "# Scope\n")
         self.assertIn("scope: record contains no substantive content", check(self.root, record))
 
+    def test_gloss_label_is_refused_in_reader_prose(self):
+        # editorial.md, "Write to the reader with gravity and wonder".
+        record = self.record("seasonal-primer-1962")
+        self.put(record, "main.tex", "\\begin{document}\nThe Mass opens \\textit{Ad te levavi} (gloss: to thee I have lifted up).\n\\end{document}")
+        self.assertTrue(any("gloss label" in e for e in check(self.root, record)))
+        self.put(record, "main.tex", "\\begin{document}\nThe Mass opens \\textit{Ad te levavi}, \"To thee have I lifted up my soul.\" A gloss on a word is fine.\n\\end{document}")
+        self.assertEqual([], check(self.root, record))
+
     def test_history_does_not_require_orientation_timeline(self):
         record = self.record("history-account")
         self.role(record, "evidence-map", "research/evidence-map.md", "The principal interpretive claim has an exact witness.\n")

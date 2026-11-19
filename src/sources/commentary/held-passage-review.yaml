@@ -15,7 +15,7 @@ scope: 'Bounded record-level review of every pre-change unmapped passage with ex
   (NPNF volumes, Patrologia Latina 54, Bute''s Breviary) whose constituent author is eligible, which the
   gate reads under the container''s scope and so does not require. A 2026-11-19 record-level review of
   the second Advent-primer intake adds two Augustine Christmas sermons and two Gregory Homily I sections that
-  take no fragment edge.'
+  take no fragment edge, and the Homily XX heading with its apparatus footnotes.'
 reviews:
 - passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.100
   passage_sha256: e61208a6fd4feee8b60fe9f08c88b5f253f0dbe6365aac1912ac790fe9fadea9
@@ -2965,3 +2965,11 @@ reviews:
     lane proposed a Luke 21:25-26 edge; it is not adopted. Whether application without a quoted lemma takes an edge
     is the open admission question (the Leo Sermo 19.1 reviews treat a quoted and applied verse as edge-bearing);
     decide it before admitting one.
+- passage_id: passage.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.20-heading
+  passage_sha256: 999662c56275cbdb6cb53feda5561321474c756d0dda604320a8bca3a9e8ed26
+  disposition: no-scripture-commentary
+  basis: The checked unit is the number and heading of Homily XX (Habita ad populum in basilica sancti Joannis
+    Baptistae, Sabbato quatuor temporum ante Natalem Christi) and Migne's three apparatus footnotes on its number,
+    place and day. It states where and when the homily was delivered and quotes or expounds no verse; the printed
+    lection Luke 3:1-11 that follows is not part of the unit. No edge is inferred; this bounded finding concerns
+    the heading, not the homily.

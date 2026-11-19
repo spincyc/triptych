@@ -3,6 +3,11 @@
 Status: phase 1 plan, 2026-11-18. Later phases append their results to the
 records named below; this file keeps the governing scope and section plan.
 
+The first version's section plan below is superseded by the second
+version's plan at the end of this file (2026-11-19); the work identity,
+reader, boundary and law sections still govern, except that practical
+proposals are now folded into the prose rather than labelled as counsel.
+
 ## Work identity
 
 | Field | Value |
@@ -176,3 +181,56 @@ applied to the held leaf. In summary:
   reprint; the 1958 instruction without a day of the month); the omitted
   Appendix D entries were added.
 
+## Second version: plan (2026-11-19)
+
+The maintainer rejected the first version's prose on 19 November 2026 ("chock
+full of ai jargon", "poor pedagogical flow", "stilted, boring, repetitive",
+without gravity, needing "more wow moments" and a tie to Christmas, "a rough
+draft of ai for ai"). The book was rewritten whole, to the amended
+`guidance/editorial.md` ("Write to the reader with gravity and wonder") and
+the amended series profile ("Reader-facing order", "Craft"). Three new
+source lanes registered and verified the texts the plan needed (commit
+5d80e9d284); the daily table was rebuilt; one writer wrote the body in one
+voice; a blind reader review and an accuracy review followed, then one fix
+pass (`cold-review.md`, "Second version").
+
+### Order
+
+A short word to the reader, then four parts. The practical part comes before
+the weeks so that a rule is made and confession planned before the season
+opens; the book ends on the holy night.
+
+| Part | Chapter (file) | The moment that carries it, and its source |
+| --- | --- | --- |
+| Front matter | To the Reader (`05`) | How to use the book; the Hours, Breviary, Missal and Douay-Rheims explained before they are relied on. |
+| One: The Coming | The Ox Knows His Owner (`10`) | Isaiah 1:3, the first lesson of Matins on the First Sunday (BR88; Bute): the ass knows his master's *praesepe*, the Latin Gospel's word for the manger; *O magnum mysterium* (Christmas Matins); Gregory Nazianzen, Oration 38.17, "Know as Isaiah bids thee, thine Owner"; Ambrose on the lowing ox (Exp. Luc. II). |
+| One: The Coming | Three Comings (`12`) | Cyril of Jerusalem's two advents; Bernard's hidden middle coming and the bread that may be "heard and eaten". |
+| One: The Coming | How the Church Learned to Keep Advent (`14`) | Tours and Perpetuus; Leo's fast of the tenth month; Gregory preaching the end of the world on the Second Sunday; Durandus on the Alleluia kept and the Gloria held back; Beleth on the Te Deum. |
+| Two: Keeping Advent | Watch (`20`) | The master who girds himself and serves his watching servants (Luke 12:37); Cyril, "no need of allegory, but to fulfil what is said". |
+| Two: Keeping Advent | The Day's Prayer (`22`) | The Sunday Collect said each morning (Lasance); *En clara vox*; the Angelus as the Ember Wednesday Gospel turned into prayer. |
+| Two: Keeping Advent | Fasting and Almsgiving (`24`) | Leo, "Fasting hath ever been the bread of strength"; the law then and now side by side, never merged. |
+| Two: Keeping Advent | A Rule for the Season (`26`) | Three graded measures; "Choose less than you think you can do." |
+| Two: Keeping Advent | Confession (`28`) | Bernard: Juda signifies confession, the road to the house of bread; an examination by the Sundays (the book's own questions, so marked); go in the Ember week. |
+| Three: Through the Weeks | First week (`30`) | The station at St Mary Major, where the season will end at the Manger; Romans 13 and Augustine's conversion; Gregory on the world grown old. |
+| Three: Through the Weeks | Second week (`31`) | "Go and relate to John"; the station at Holy Cross and the scandal of the Cross; the Immaculate Conception's Collect (Lasance). |
+| Three: Through the Weeks | Third week (`32`) | *Gaudete*; "there hath stood one in the midst of you, whom you know not" set against Isaiah 1:3. |
+| Three: Through the Weeks | The Ember Days (`33`) | Bernard, "Say the word and receive the Word", and Mary's answer; Ambrose on the Visitation; the dew in the furnace (Daniel 3). |
+| Three: Through the Weeks | Fourth week (`34`) | *Rorate* and Gideon's fleece (Bernard; the 1 January antiphon); the fifteenth year of Tiberius. |
+| Three: Through the Weeks | The great antiphons (`35`) | *Adonai* and the burning bush; *ero cras* in the antiphons' initials read backward, stated as a fact of the letters only. |
+| Three: Through the Weeks | The Vigil (`36`) | The Introit from Exodus 16: the manna and the dew, *pluam* and Isaiah's *pluant*; the Martyrology's proclamation; Bernard's "O short word". |
+| Four: Toward Bethlehem | The House of Bread (`40`) | Gregory the Great, Homily 8 (Christmas Matins): Bethlehem, "the house of bread", where the Bread from heaven is born; Cyril of Alexandria and Bede on the manger; Gregory's hay turned to wheat; Ambrose, *ille in praesaepibus, ut tu in altaribus*. |
+| Four: Toward Bethlehem | Wrapped and Laid (`42`) | Luke 2:7 and 23:53 with the Vulgate's one verb, *involvit*; bound in the cradle (Bede) and bound in the Passion; born outside, dying outside (Gregory; Hebrews 13:12); the myrrh at both ends; Isaiah 11:10, "his sepulchre shall be glorious"; Nazianzen's swathing bands of the grave. |
+| Four: Toward Bethlehem | The Wonderful Exchange (`44`) | *O admirabile commercium* (Circumcision, Lauds); Augustine, Sermon 191, "that the Bread might hunger"; Sermon 185, *Perisses, nisi venisset*; Athanasius, On the Incarnation 54. |
+| Four: Toward Bethlehem | The Holy Night (`48`) | The first Mass's station at St Mary Major *ad Praesepe*, at the Manger (1962 Missal); Gregory's three Masses and short sermon; *A solis ortus* at Lauds; Leo, "It would be unlawful to be sad to-day"; Nazianzen, "Christ is born, glorify ye Him", as the book's last word. |
+
+Appendices: A, daily readings (Isaiah by the week, the O antiphons by date,
+a Father and a verse for each day); B, prayers and hymns in Latin and English
+from received witnesses, with Lasance's English for the Mass Collects; C,
+About This Book (what the book draws on, the law then and now, what it does
+not treat); D, references.
+
+Left out for want of a verified source (listed so a later revision can look
+for one): St Mary Major's relics of the crib; Holy Cross built to hold the
+relics of the Cross; the Rorate votive Mass and the household customs of the
+wreath, St Nicholas and the Jesse tree; a 1962 Breviary's own statement of
+the Te Deum's omission; St Jerome's Vigil homily in the Breviary's text.

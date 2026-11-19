@@ -6075,15 +6075,21 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "new-witnesses"
   criterion = "The Christmas Matins lessons and responsory, the hymns, the Missal stations and Vigil Introit, and the Fathers on Bethlehem, the manger, the swaddling bands and the exchange (Gregory, Ambrose, the Catena on Luke, Gregory Nazianzen, Leo, Bernard, Athanasius, Irenaeus, Augustine) are acquired and verified on page images in the source library."
-  status = "open"
+  status = "pass"
   evidence = [
-    "src/sources/works",
+    "src/sources/works/catholic-church/breviarium-romanum",
+    "src/sources/works/catholic-church/martyrologium-romanum",
+    "src/sources/works/gregory-the-great/homiliae-in-evangelia/editions/1878-latin-migne-pl76-garnier",
+    "src/sources/works/thomas-aquinas/catena-aurea-in-lucam",
+    "src/sources/works/nicene-and-post-nicene-fathers/series-2-volume-4",
+    "src/sources/works/augustine/sermo-191",
+    "src/sources/inventories/source-containment-v1.toml",
   ]
 
   [[deliverables.requirements]]
   id = "rewritten"
   criterion = "Every chapter and appendix is rewritten to the plan in research/scope.md: four parts, a named moment from the sources in each chapter, short-form attribution in the body, no labelled glosses or production vocabulary, a Christmas part, and only verified quotations."
-  status = "open"
+  status = "pass"
   evidence = [
     "src/claude/liturgy/roman-rite/1962/seasons/advent/sections",
   ]
@@ -6091,7 +6097,7 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "reviewed"
   criterion = "A blind reader review and an accuracy review have read the whole, every finding is dispositioned in research/cold-review.md, and the fixes are applied."
-  status = "open"
+  status = "pass"
   evidence = [
     "src/claude/liturgy/roman-rite/1962/seasons/advent/research/cold-review.md",
   ]

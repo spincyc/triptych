@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.20-heading-checked-text-93a35bf5"
+edition_id = "edition.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces a few sentences of Gregory the Great's sixth-century Latin as printed in Migne's Patrologia Latina 76 (Garnier reprint, Paris, 1878), which is in the United States public domain by date of publication (the parent scan's rights_basis gives the reasoning). It is transcribed from page images rendered from the hashed Internet Archive scan and contains no optical-text bytes. It also reproduces the three short apparatus footnotes Migne prints to the heading, which report the Maurist editors' manuscript readings and add no copyrightable modern authorship."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription collated against the page images of the hashed Internet Archive scan ia-pdf-4cd0ddfd (SHA-256 4cd0ddfd...7cc4; the local copy fetched whole by lane X2 on 2026-11-19 was matched with sha256sum before use) on 2026-11-19; the tracked optical text ia-djvu-text-13c0bbad and the PDF's embedded text were used only to locate the page. No source text passed through a language model. PL 76 col. 1159 C, with footnotes 4-6 at the foot of cols. 1159-1160, PDF page 580."
+retrieved = "2026-11-19"
+sha256 = "93a35bf55c8e9daadb19cb95f3ff8ac82a4b2d913dc47ed61de6b20af70084b5"
+byte_size = 442
+path = "src/sources/works/gregory-the-great/homiliae-in-evangelia/editions/1878-latin-migne-pl76-garnier/artifacts/20-heading-checked-text-93a35bf5/20-heading.txt"
+derived_from = "artifact.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.ia-pdf-4cd0ddfd"
+transformation = "Read the named page as images rendered at 150 dots per inch (whole page) and 400 dots per inch (crops of the heading and the footnotes) from the hashed scan with pdftoppm, and transcribe the homily's number, its heading, and the three footnotes Migne attaches to them, with one sense unit (the number, the heading, or one whole footnote) per LF-terminated UTF-8 line, each prefixed by a braced locator; preserve the printed wording, Migne's orthography (j, the ae ligature, capitals) and punctuation; close the printer's space before a colon and supply the space the printer omitted between words set solid; join a footnote that runs from the foot of one column to the next; omit italics, the footnote reference numerals in the heading, the gospel heading and pericope that follow, column letters and running heads, all of which are recorded in the passage notes."
+indexable = true
+encoding = "utf-8"

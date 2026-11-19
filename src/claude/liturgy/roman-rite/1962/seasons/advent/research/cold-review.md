@@ -84,3 +84,74 @@ rubrics' treatment of an O antiphon on a feast is not stated, so the Vigil
 section cites only n. 109's privileged commemoration; that the 1962
 Breviary's Vigil homily is Jerome's rests on the 1888 Breviary and
 n. 222 a, and the text says so.
+
+## Second version (2026-11-19)
+
+The maintainer judged the first version's prose unfit on 19 November 2026
+(`scope.md`, "Second version: plan"). The book was rewritten whole and given
+two independent reviews of the new draft: a blind reader review, by a
+reviewer who saw only the printed book and the editorial standard, and an
+accuracy review against the checked transcriptions. Their findings were
+dispositioned by the coordinating session and applied in one fix pass by the
+writer.
+
+### Reader review
+
+Verdict: would put it in a parishioner's hands after one firm revision.
+Strongest: Wrapped and Laid; the Vigil; The Ox Knows His Owner (the Ember
+Days close behind). Weakest: the scope appendix ("an audit log"); the history
+chapter; the day's prayer. 126 findings: machine register 56, repetition 33,
+flat or stilted 28, gravity and wonder 24, teaching order 14, fidelity or
+print 10. The ledger vocabulary of the first version was gone; what remained
+was:
+
+- the book narrating itself ("this book's thread", "everything this book has
+  gathered") and many section-number references;
+- maxims restating the quotation just given;
+- the research voice in history, law and provenance, and an appendix that
+  recorded what was not read;
+- the practical part placed after Christmas although the reader was told to
+  make a rule before the First Sunday;
+- four different counsels on when to go to confession;
+- the First Sunday Collect in an English (Bute, 1908) that does not render
+  the Latin printed beside it, its ending borrowed from another Collect.
+
+Dispositions: all adopted except the worked year in Appendix A (kept as one
+plain note) and the colophon's revision line (the project's standard). The
+book was reordered (a word to the reader; The Coming; Keeping Advent; Through
+the Weeks; Toward Bethlehem, ending with the holy night); self-narration was
+removed and cross-references kept only where the reader is sent to use
+something; one confession counsel (the Ember week) is given once; the Mass
+Collects are printed in F. X. Lasance's *New Roman Missal* English (1945),
+which renders the Latin; the book's own renderings of Mass texts were removed
+under the received-prayer rule; the scope appendix was rewritten as "About
+This Book", stating what is used. Additions the reader asked for were made
+only from verified records (the Immaculate Conception's Collect, Bute's Ember
+Friday lesson, Beleth on the Te Deum, Isaiah 11:10). Not made for want of a
+verified source: St Mary Major's crib relics, Holy Cross and the relics of the
+Cross, the Rorate votive Mass and the household customs, a 1962 Breviary's
+statement of the Te Deum's omission.
+
+### Accuracy review
+
+586 quoted segments checked by script against the checked transcriptions
+(525 exact; 32 differing only in Bute's display capitals; 6 in nested quote
+marks; 23 the book's own renderings, each checked against its Latin). Every
+ellipsis marks a real omission in one witness; the 40 prayer texts of
+Appendix B each occur whole in a single witness. No misquotation, no
+composed or conflated prayer, no first-version correction reintroduced.
+
+16 findings, none high, all adopted: Luke wrote in Greek, so *praesepe* is the
+Latin Gospel's word (A1); an indirect rendering of the Advent II Collect made
+the Son its addressee (A2) and one of the Vigil Collect made it a thanksgiving
+(A3); Amalarius found five weeks in old Missals and lectionaries both (A4);
+the older Sunday arrangement is not shown to be a five-week count (A5);
+Hefele's editorial parenthesis was printed as the council's (A6); the Ember
+Saturday's two forms (A7, A8); the 1917 Friday abstinence omitted from the
+law table (A9); a prayer manual records the 1889 list rather than making it
+(A10); the Vigil Introit's "glory" reading marked as the book's own (A11);
+the weekday Mass rule's support (A12); the own-rendering list (A13); the
+Latin antiphon has rain, not dew, on the fleece (A14); the Catena's "Father's
+house" for Bede's *parentum* (A15); ledger hygiene (A16). The 1917 canon
+1252 §1 and the 1960 Missal rubric n. 299 were registered as verified
+passages at install so that A9 and A12 rest on the law itself.
