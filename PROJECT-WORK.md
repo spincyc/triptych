@@ -15008,5 +15008,25 @@ and drops the labelled gloss; the prose check refuses a printed
 "(gloss: …)". The rewrite is planned chapter by chapter before any prose,
 with new witnesses for Christmas acquired first.
 
-**Open.** Source acquisition, the rewrite, reviews, bindings and install.
+**Done (2026-11-19).** Three source lanes registered and verified 174
+records for Christmas Matins, the hymns, the Missal stations, the
+Martyrology and eleven Fathers (5d80e9d284). The book was rewritten whole in
+four parts after a word to the reader: The Coming; Keeping Advent; Through
+the Weeks; Toward Bethlehem, ending on the holy night. Each chapter rests on
+a moment its sources give (`research/scope.md`, "Second version: plan"). A
+blind reader review (126 findings) and an accuracy review (16, none high, no
+misquotation) were dispositioned and applied (`research/cold-review.md`). The
+reader review produced three more editorial tests and the new part order
+(8c19b08566). The Mass Collects are in Lasance's 1945 English. The audit,
+bindings and references were rebuilt; canon 1252 §1 (1917), Missal rubric n.
+299 (1960), Bute's Psalter notes on the Hours and Gregory's Homily 20 heading
+were registered so that no printed claim rests on an unregistered reading
+(2c70b8d8a5). Browser products, release bindings and the corpus index were
+refreshed and the deployment gates passed.
+
+**Not done, for want of a verified source.** St Mary Major's crib relics; Holy
+Cross built for the relics of the Cross; the Rorate votive Mass and the
+household customs (wreath, St Nicholas, Jesse tree); a 1962 Breviary's own
+statement of the Te Deum's omission. No 1961–62 Breviary is held; the Office
+texts rest on the 1888 Breviary and Bute's English, as About This Book says.
 

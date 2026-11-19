@@ -6030,7 +6030,7 @@ state = "complete"
   status = "pass"
   evidence = [
     "src/claude/liturgy/roman-rite/1962/seasons/advent/publication.toml",
-    "src/claude/liturgy/roman-rite/1962/seasons/advent/sections/36-rule-of-life.tex",
+    "src/claude/liturgy/roman-rite/1962/seasons/advent/sections/26-rule-of-life.tex",
     "src/claude/liturgy/roman-rite/1962/seasons/advent/sections/90-daily-readings.tex",
     "src/claude/liturgy/roman-rite/1962/seasons/advent/sections/92-prayers.tex",
   ]
@@ -6060,7 +6060,7 @@ state = "complete"
 id = "claude-advent-primer-1962-revision-2026-11-19"
 owner = "src/claude/liturgy/roman-rite/1962/seasons"
 promise = "Rewrite the published Claude Advent primer after the maintainer judged it (2026-11-19) full of AI jargon, stilted, repetitive, without gravity, pedagogical flow or wow moments, and not tied to Christmas: a full pass written to a believer preparing for the season, with deeper patristic theology, devotional force, and a part that prepares for Christmas (Bethlehem as house of bread, the Bread of Life laid in a manger, the swaddling bands and the burial linen, the wonderful exchange); acquire the new witnesses; and amend the project and series guidance so the defects do not recur."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "guidance-amended"
@@ -6105,7 +6105,13 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "installed"
   criterion = "Bindings, source audit and references match the new text; the PDF and web edition build and are inspected; inventories, browser products, release bindings and the corpus index are refreshed; deployment gates pass."
-  status = "open"
+  status = "pass"
   evidence = [
     "src/claude/liturgy/roman-rite/1962/seasons/advent/research/source-bindings.toml",
+    "src/claude/liturgy/roman-rite/1962/seasons/advent/research/source-audit.md",
+    "src/claude/liturgy/roman-rite/1962/seasons/advent/sections/99-references.tex",
+    "src/sources/inventories/claude-publications-v1.toml",
+    "release/browser-products.json",
+    "release/public-alpha.json",
+    "src/index/sources/index.json",
   ]
