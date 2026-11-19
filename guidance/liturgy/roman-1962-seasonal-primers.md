@@ -43,12 +43,16 @@ spiritual director.
 
 ## Governing priorities
 
-1. Let the liturgy, Scripture and the Fathers carry the work. A major witness
-   is expounded at identified loci, not listed.
-2. Keep law, custom and counsel apart at every practical claim.
-3. Own the season, not its formularies.
-4. Give the reader something to do each day of the season.
-5. Put work-wide scope, editions, law and as-of date in the terminal appendix.
+1. Write to a believer preparing to keep the season, with the gravity of
+   what it prepares for (`guidance/editorial.md`, "Write to the reader with
+   gravity and wonder").
+2. Let the liturgy, Scripture and the Fathers teach, at length and at their
+   best. A major Father is expounded in his own words, not listed.
+3. Lead the season into the feast it prepares: Advent ends at the manger,
+   Lent at the empty tomb.
+4. Own the season, not its Masses; give the reader something to do each day.
+5. Keep law, custom and counsel distinct and accurate, without letting the
+   law's apparatus displace the teaching.
 
 ## Boundary with the proper guides
 
@@ -70,16 +74,23 @@ body of law, territory and date, and keeps three things apart:
 | --- | --- | --- |
 | Law | the 1917 Code's fast days; the 1983 Code's penitential days | stated with canon, territory and as-of date; the 1962-horizon law and the law now are never merged |
 | Custom | St Martin's Lent; the Rorate Mass at dawn | attributed to its documented time and place |
-| Counsel | a graded rule of life | labelled as the primer's own proposal, with a word on prudence and direction |
+| Counsel | a graded rule of life | written as advice to the reader; the word on prudence and direction is said once, where the rule of life begins |
 
 A historical fast is not presented as a present obligation, and a present
-freedom is not presented as the tradition's whole teaching.
+freedom is not presented as the tradition's whole teaching. In the body, law
+is stated briefly where the reader acts on it (a short table or note in the
+fasting chapter); the canons, territories and dates in full belong to the
+scope appendix.
 
 ## Witnesses and texts
 
-- The Fathers and Doctors speak at length in identified human translations;
-  Latin may stand with a gloss labelled as the project's. English Scripture
-  comes from a registered public-domain witness.
+- The Fathers and Doctors speak at length in identified human translations.
+  Latin is translated in the sentence where it stands, never under a label;
+  where the translation is the primer's own, the scope appendix says so once.
+  English Scripture comes from a registered public-domain witness.
+- In the body a quotation carries its author and work with the place, in
+  short form; edition, translator and page are in the references, and each
+  prayer's witness is named there against the prayer.
 - Every text offered for prayer reproduces an identified received witness
   (`guidance/editorial.md`, "Rights, quotation, and received prayer"); where
   no public-domain English exists, the Latin stands alone.
@@ -91,15 +102,25 @@ freedom is not presented as the tradition's whole teaching.
 
 ## Reader-facing order
 
-Title, a short note on how to keep the book, contents, then three parts and
-the apparatus:
+Title, contents, then four parts and the apparatus. The body opens on the
+season itself, not on how to use the book; that is one short paragraph at the
+end of the opening chapter.
 
-1. **The season**: its name and meaning, its history, its shape.
-2. **The Sundays and days**: one section per Sunday and proper day or group
-   of days, in liturgical order.
-3. **Keeping the season**: the Fathers' teaching on its spiritual work;
-   prayer; fasting and almsgiving; a graded rule of life; preparation for
-   confession; a short close.
+1. **The season**: what the Church is waiting for or turning from, and why;
+   the season's name, its theology in the Fathers, and its history told as a
+   story.
+2. **Through the season**: one chapter per Sunday and proper day or group of
+   days, in liturgical order, each walking the reader through what the Church
+   sings and reads that week and what the Fathers saw in it, with the week's
+   practice folded in.
+3. **Toward the feast**: the mysteries of the feast the season prepares,
+   read from the Fathers and the feast's own texts at incipit length, so that
+   the reader arrives ready (for Advent: Bethlehem, the manger, the swaddling
+   bands and the wonderful exchange). It does not become a primer for the
+   next season.
+4. **Keeping the season**: watching, prayer, fasting and almsgiving, a
+   graded rule of life, confession, and preparing the house and the night of
+   the feast.
 
 Appendices: a daily reading table keyed to the season's weeks and days (dated
 where the 1962 books date them), with the Office's Scripture lesson or a stated
@@ -107,6 +128,22 @@ course and one patristic reading with locus; prayers of the season; `Scope,
 Method, and Qualifications`; references. The daily table is computed from the
 books, not from one civil year, so it serves every year the season's length
 allows; a worked year may be named in the scope appendix.
+
+## Craft
+
+The first Advent draft failed on register, not on facts
+(`src/claude/liturgy/roman-rite/1962/seasons/advent/research/cold-review.md`).
+A primer is built so that it cannot fail that way again:
+
+- The plan in `research/scope.md` names, for each chapter, the moment that
+  will stop the reader (a Father's saying, a fact of the texts, a coincidence
+  the books themselves make) and its source, before any prose is written. A
+  chapter without one is replanned, not padded.
+- Each chapter teaches one thing in order and hands the reader to the next.
+  Nothing is introduced twice; no closing label recurs from chapter to
+  chapter.
+- Dates of a particular year, page references and editions stay out of the
+  body; the daily table and the appendix hold them.
 
 ## Required records
 
@@ -118,6 +155,8 @@ Each leaf keeps `research/scope.md` (plan and boundary),
 
 Every quotation resolves to a held witness at an exact locus; every prayer
 text to a received witness; every law statement to a body of law, territory
-and date; every counsel is labelled; the per-Sunday sections stay inside the
-boundary above; and a cold review has checked attribution and voice against
-`guidance/editorial.md`.
+and date; the per-Sunday chapters stay inside the boundary above; a cold
+review has checked attribution and accuracy; and a reader review, by a
+reviewer who has not seen the production, has read the whole as its reader
+would against `guidance/editorial.md`, "Write to the reader with gravity and
+wonder", with every reported passage rewritten.

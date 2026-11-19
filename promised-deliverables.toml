@@ -6055,3 +6055,51 @@ state = "complete"
     "release/public-alpha.json",
     "src/index/documents/corpus.json",
   ]
+
+[[deliverables]]
+id = "claude-advent-primer-1962-revision-2026-11-19"
+owner = "src/claude/liturgy/roman-rite/1962/seasons"
+promise = "Rewrite the published Claude Advent primer after the maintainer judged it (2026-11-19) full of AI jargon, stilted, repetitive, without gravity, pedagogical flow or wow moments, and not tied to Christmas: a full pass written to a believer preparing for the season, with deeper patristic theology, devotional force, and a part that prepares for Christmas (Bethlehem as house of bread, the Bread of Life laid in a manger, the swaddling bands and the burial linen, the wonderful exchange); acquire the new witnesses; and amend the project and series guidance so the defects do not recur."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "guidance-amended"
+  criterion = "The editorial standard and the seasonal-primer profile name the defects (machine vocabulary, labelled glosses, ledger-style citation, repeated templates, flatness) and require earned wonder, teaching order, a reader review and the Christmas part; a mechanical check refuses a printed gloss label."
+  status = "pass"
+  evidence = [
+    "guidance/editorial.md",
+    "guidance/liturgy/roman-1962-seasonal-primers.md",
+    "guidance/articles.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "new-witnesses"
+  criterion = "The Christmas Matins lessons and responsory, the hymns, the Missal stations and Vigil Introit, and the Fathers on Bethlehem, the manger, the swaddling bands and the exchange (Gregory, Ambrose, the Catena on Luke, Gregory Nazianzen, Leo, Bernard, Athanasius, Irenaeus, Augustine) are acquired and verified on page images in the source library."
+  status = "open"
+  evidence = [
+    "src/sources/works",
+  ]
+
+  [[deliverables.requirements]]
+  id = "rewritten"
+  criterion = "Every chapter and appendix is rewritten to the plan in research/scope.md: four parts, a named moment from the sources in each chapter, short-form attribution in the body, no labelled glosses or production vocabulary, a Christmas part, and only verified quotations."
+  status = "open"
+  evidence = [
+    "src/claude/liturgy/roman-rite/1962/seasons/advent/sections",
+  ]
+
+  [[deliverables.requirements]]
+  id = "reviewed"
+  criterion = "A blind reader review and an accuracy review have read the whole, every finding is dispositioned in research/cold-review.md, and the fixes are applied."
+  status = "open"
+  evidence = [
+    "src/claude/liturgy/roman-rite/1962/seasons/advent/research/cold-review.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "installed"
+  criterion = "Bindings, source audit and references match the new text; the PDF and web edition build and are inspected; inventories, browser products, release bindings and the corpus index are refreshed; deployment gates pass."
+  status = "open"
+  evidence = [
+    "src/claude/liturgy/roman-rite/1962/seasons/advent/research/source-bindings.toml",
+  ]

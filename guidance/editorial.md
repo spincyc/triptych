@@ -332,7 +332,7 @@ antithesis reported as the source's.
   every text takes its place in one movement, or that a verse is the whole in
   miniature. Where importance is a real claim, its evidence is the sentence:
   say what the text does and who reads it that way. "Then the words on which
-  the feast turns:" is "Jesus answers:".
+  the feast turns:" is "Jesus says to Pilate:".
 - **Deny only what someone holds.** A "not X but Y" needs an X that a source,
   the text, or a reader with good reason puts forward; otherwise state Y.
   "The inheritance is not territory. It is the nations baptized and taught"
@@ -343,7 +343,12 @@ antithesis reported as the source's.
   subject of what it actually does: say, ask, sing, quote, keep, omit,
   repeat, address. It does not give an interpretation its order, supply a
   moment, carry a reading, hold two ideas together, or name a connection that
-  someone else draws. When a link between texts is a Father's, name the
+  someone else draws. Nor do texts and authors trade moves as if in a
+  ledger: a Father or a prayer does not "answer" another text, a Gospel does
+  not "name" what it narrates, and the Office does not "give", "set" or
+  "bind" a lesson; a Father says, preaches, writes, asks or prays, and the
+  Church reads, sings and keeps. "Answer" is for someone answering a question
+  actually put. When a link between texts is a Father's, name the
   Father. When it is the study's own inference, state it once as an
   inference — "taken this way, the Secret's offering is the asking of Ps 2:8"
   — rather than crediting it to the Secret, and never by crediting it to a
@@ -358,7 +363,10 @@ antithesis reported as the source's.
   aloud.
 - **Use the reader's words.** The production's working vocabulary is not the
   reader's: "formulary", "element", "lane", "witness" as a term of art,
-  "carry", "join", "govern", "movement", "grammar" as a metaphor, and
+  "locus", "incipit", "gloss", "binding", "as-of", "counsel" as a label, the
+  book or its apparatus as the subject of a sentence ("this primer gives",
+  "the book keeps apart"), "carry", "join", "govern", "movement", "grammar"
+  as a metaphor, and
   "reading" for one of a study's interpretations, which collides with the
   Mass's own readings. Write "the Mass", "the texts", "the Collect", "this
   interpretation", or the Father's name. Terms of art the subject needs —
@@ -380,8 +388,8 @@ antithesis reported as the source's.
   owns the homily's rule.
 - **Plain is not flat.** The cure for ornament is argument, not a stack of
   authorities. The writer still makes the argument in the work's own voice:
-  states the difficulty, says what a Father saw in the words and why it
-  answers, and draws the conclusion. Quote where the reader needs the words
+  states the difficulty, says what a Father saw in the words and how that
+  resolves it, and draws the conclusion. Quote where the reader needs the words
   themselves, no longer than the step needs, and otherwise give the Father's
   point in plain sentences. Translate Latin when it first appears and leave
   none for the reader to construe; keep dates and credentials for the
@@ -410,6 +418,70 @@ changing a sentence's grammatical subject, is part of how liturgical texts came
 to be credited with the study's inferences. The
 `proper-study` review fragments carry this section as a criterion from
 version 14, and register defects are judged and reported there.
+
+## Write to the reader with gravity and wonder
+
+The section above guards against borrowed profundity. It is not a recipe for
+flat prose, and a work that obeys it by stripping itself to attributions,
+qualifications and inventories has failed in the other direction. On 19
+November 2026 the maintainer judged the first Claude Advent primer "chock full
+of ai jargon", with "poor pedagogical flow", "stilted, boring, repetitive",
+without gravity or understanding, "a rough draft of ai for ai", and named
+"answers" among phrases "inhuman in their artificiality". That draft had
+passed the screens and two cold reviews; it labelled every Latin phrase
+"(gloss: …)", followed every quotation with an edition-and-page line, closed
+each section with the same "Counsel for the week", and missed the strongest
+things its own sources said. The record is the primer's
+`research/cold-review.md`.
+
+Teaching and devotional works (primers, studies, homilies, biographies,
+articles of faith) are held to these tests as well:
+
+- **Write to a person.** The reader is a believer who wants to understand
+  and to pray, not a reviewer checking the production. Every body sentence
+  is written to that person, and the vocabulary that exists for the audit
+  stays in the apparatus ([Use the reader's words](#say-what-the-texts-say-plainly)).
+- **Translate in the sentence.** Latin is rendered where it stands, as a good
+  book does: the Mass opens *Ad te levavi*, "To thee have I lifted up my
+  soul." Never print a label such as "(gloss: …)". Who made a translation
+  is recorded once, in the scope appendix or the references.
+- **Cite like a book.** In the body a quotation carries its author and work
+  with the place, in a short form ("St Leo the Great, Sermon 21 on the
+  Nativity"). Edition, translator, page and the status of a text go to the
+  references, keyed so a reader can find them; a received prayer's witness
+  is named there against the prayer, which satisfies
+  [the received-prayer rule](#rights-quotation-and-received-prayer). A
+  profile may keep fuller in-line citation where its readers use it
+  (a proper study's apparatus); a reading book does not.
+- **Lead with the true thing that astonishes.** The Fathers and the liturgy
+  are full of connections that stop a reader: Bethlehem is "the house of
+  bread", and the Bread that came down from heaven is born there (Gregory the
+  Great, Homily 8 on the Gospels); St Luke wraps the child and lays him in
+  the manger with the two verbs he uses for the body wrapped and laid in the
+  tomb (Luke 2:7, 23:53). Build each major section of a teaching or
+  devotional work around at least one such moment, found in the sources and
+  given plainly with its source. This is the opposite of unearned
+  profundity: the wonder is in the material and the reader can check it. The
+  writer does not announce it, label it, or explain it twice.
+- **Teach in order.** Lead from what the reader knows to what the reader
+  does not: introduce a term, a figure or a practice before relying on it,
+  let each section prepare the next, and end a part where its teaching ends.
+  A closing template repeated section after section is a form, not teaching;
+  vary the counsel and fold it into the section it belongs to.
+- **Weigh the subject.** The coming of God in the flesh, judgment, the
+  sacraments and the poor are written of with the seriousness the Church
+  gives them. A particular year's dates, calendar arithmetic and legal
+  mechanics stay out of passages meant for reflection, and appear where the
+  reader will use them: a table, a short note, the appendix.
+- **Read it aloud.** A paragraph should read well aloud from a lectern or at
+  a family table. If it would not, it is not finished.
+
+These are judgements, like those above, and a reviewer reports a failure as a
+register defect under the same criterion. A teaching or devotional work also
+has a reader review before release: a reviewer who has not seen the
+production reads the work as its reader would and reports flat, stilted,
+repetitive or machine-register passages, and missed moments the sources
+offered, by section.
 
 ## Illustration and page composition
 

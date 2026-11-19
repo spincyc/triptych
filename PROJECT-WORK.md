@@ -14984,3 +14984,29 @@ decree of 3 December 1960 (AAS 52, pp. 985–986) has no facsimile in the
 library; the calendar's other Acta loci were read only in the OCR; no witness
 was found for the Advent wreath, the Jesse tree, or Advent Friday abstinence in
 the United States after 1918.
+
+## Claude Advent primer revision, 2026-11-19
+
+<!-- promised-deliverable: claude-advent-primer-1962-revision-2026-11-19 -->
+
+**Request.** The maintainer read the published primer and wrote that it is
+"chock full of ai jargon, has poor pedagogical flow, is stilted, boring,
+repetitive", does not "approach the season with gravity, understanding",
+"needs to have more wow moments", "should tie into christmas with preparation
+materiel (e.g. bethlehem means house of bread, christ the bread of life, laid
+in a manger ; leaves the world bound and executed, enters the world bound and
+laid in a feed trough )", needs "more deep theological depth, and devotional
+impact", and reads like "a rough draft of ai for ai"; "phrases like 'answers'
+are inhuman in their artificiality". A full pass, driven to completion, with
+the project and series guidance amended so the defects do not recur.
+
+**Decisions.** The editorial standard gains "Write to the reader with gravity
+and wonder" and loses the examples that modelled "answers"; the series
+profile is restructured into four parts with a part leading into the feast,
+requires a planned source-found moment per chapter and a blind reader review,
+and drops the labelled gloss; the prose check refuses a printed
+"(gloss: …)". The rewrite is planned chapter by chapter before any prose,
+with new witnesses for Christmas acquired first.
+
+**Open.** Source acquisition, the rewrite, reviews, bindings and install.
+
