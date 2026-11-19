@@ -1,5 +1,5 @@
 {
- "generation_commit": "58c80b65c196e8048a97aff88cf8a3a2ed01210c",
+ "generation_commit": "a35e8a821568f0e93d5b01c2810fd0d3acc8d3a1",
  "readers": {
   "claude/articles/canon-law/clerical-celibacy-chastity-and-continence": {
    "canonical": "articles/canon-law/clerical-celibacy-chastity-and-continence",
@@ -3513,6 +3513,53 @@
    "release_status": "alpha",
    "source_format": "latex",
    "title": "The 1962 Roman Calendar: Rules, Ranks, and Reckoning"
+  },
+  "claude/liturgy/roman-rite/1962/seasons/advent": {
+   "canonical": "liturgy/roman-rite/1962/seasons/advent",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:claude/liturgy/roman-rite/1962/seasons/advent"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "contents": true,
+    "document": "liturgy/roman-rite/1962/seasons/advent",
+    "eligibility": "eligible",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-18",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/claude/liturgy/roman-rite/1962/seasons/advent/generation-metadata.tex",
+    "src/claude/liturgy/roman-rite/1962/seasons/advent/main.tex"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/claude/liturgy/roman-rite/1962/seasons/advent",
+    "src/common"
+   ],
+   "document": "liturgy/roman-rite/1962/seasons/advent",
+   "edition": "main",
+   "entrypoint": "src/claude/liturgy/roman-rite/1962/seasons/advent/main.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:claude/liturgy/roman-rite/1962/seasons/advent",
+   "kind": "seasonal-primer-1962",
+   "provider": "claude",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "Advent: A Primer for the Season of the Lord's Coming"
   },
   "claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice": {
    "canonical": "liturgy/roman-rite/comparative/two-missals-one-sacrifice",

@@ -1,12 +1,12 @@
 {
  "advisory": "Derived from each document's current sources and publication manifest. Titles are evaluated out of the source preamble; a document whose sources state no title is carried with the reason in place of one and is never given an invented name. Production provenance is what each document records about itself, field by field, omitting any field its record says was not recoverable; comparing it against the workflows declared below is a finding aid and never an authority, and nothing in this repository gates on it. Print availability names an on-demand source recipe, not an installed download or a reviewed rendering. Page counts are unknown until a particular rendering is inspected; counts from an earlier rendering do not describe the current print styles.",
  "counted": {
-  "documents": 222,
-  "issues": 298,
+  "documents": 223,
+  "issues": 299,
   "pages": 0,
-  "pages_unmeasured": 222,
+  "pages_unmeasured": 223,
   "titles_unrecorded": 0,
-  "works": 158
+  "works": 159
  },
  "models": [
   {
@@ -18,7 +18,7 @@
    "id": "claude-opus-5-5[1m]"
   },
   {
-   "documents": 69,
+   "documents": 70,
    "id": "claude-opus-5-5"
   },
   {
@@ -56,7 +56,7 @@
  ],
  "providers": [
   {
-   "documents": 67,
+   "documents": 68,
    "id": "claude",
    "label": "Claude"
   },
@@ -90,7 +90,7 @@
   },
   {
    "id": "liturgy",
-   "works": 65
+   "works": 66
   },
   {
    "id": "theology",
@@ -1157,7 +1157,7 @@
      },
      "provider": "claude",
      "reviewed": "2026-10-27",
-     "revised": "2026-10-27T17:08:17Z",
+     "revised": "2026-11-18T20:22:19Z",
      "status": "alpha",
      "subject": "On Heaven and the Vision of God. The Four Last Things, IV",
      "targets": {
@@ -2144,7 +2144,7 @@
      },
      "provider": "claude",
      "reviewed": "2026-07-25",
-     "revised": "2026-07-25T10:55:24Z",
+     "revised": "2026-11-18T20:22:19Z",
      "status": "alpha",
      "subject": "A source-first historical biography of Saint Augustine of Hippo",
      "targets": {
@@ -8083,7 +8083,7 @@
      },
      "provider": "claude",
      "reviewed": "2026-09-24",
-     "revised": "2026-11-17T18:37:42Z",
+     "revised": "2026-11-18T20:22:19Z",
      "status": "hold",
      "subject": "Full source-first companion to the 1962 Roman Missal propers, including complete appointed texts, per-element reception, source-grounded and exploratory synthesis, and documented cultural afterlives",
      "targets": {},
@@ -8451,7 +8451,7 @@
      },
      "provider": "claude",
      "reviewed": "2026-09-24",
-     "revised": "2026-11-17T18:37:42Z",
+     "revised": "2026-11-18T20:22:19Z",
      "status": "alpha",
      "subject": "Full source-first companion to the 1962 Roman Missal propers, including complete appointed texts, per-element reception, source-grounded and exploratory synthesis, and documented cultural afterlives",
      "targets": {
@@ -11706,7 +11706,7 @@
      },
      "provider": "claude",
      "reviewed": "2026-07-26",
-     "revised": "2026-07-27T23:09:14Z",
+     "revised": "2026-11-18T20:22:19Z",
      "status": "alpha",
      "subject": "A working reference for the 1960 Codex rubricarum as printed in the 1962 Missale Romanum: determining the liturgical day, applying the table of precedence, disposing of the impeded day by omission, commemoration, transfer or reposition, testing which category of Mass is admitted, and assembling the formulary from Ordinary, Proper and Common through the Preface and the Last Gospel, with six worked cases and the contested readings preserved",
      "targets": {
@@ -11794,7 +11794,7 @@
      },
      "provider": "claude",
      "reviewed": "2026-07-26",
-     "revised": "2026-07-29T11:28:02Z",
+     "revised": "2026-11-18T20:22:19Z",
      "status": "alpha",
      "subject": "An edition-specific reference to the calendar of the 1962 Missale Romanum under the 1960 Rubricae generales: the temporal cycle and its seasons, the I-IV class system that replaced the double and semidouble grades, occurrence and concurrence, commemorations, the movable computation from Easter, the resumed Epiphany Sundays, Ember and Rogation days, vigils and octaves, the sanctoral structure, and the table of precedence.",
      "targets": {
@@ -13240,6 +13240,58 @@
     }
    ],
    "leaf": "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan",
+   "section": "liturgy"
+  },
+  {
+   "catalog": "library/traditional-latin-mass.md",
+   "catalog_page": "library/traditional-latin-mass.html",
+   "editions": [
+    {
+     "authorization": "perpetual-public-repository-2026",
+     "available": {
+      "print": true,
+      "reader": true
+     },
+     "contributions": [
+      {
+       "model": "claude-opus-5-5",
+       "qualifiers": "unexposed: reasoning-effort and sampling configuration",
+       "runtime": "Anthropic Claude Code agent, coordinating session (series profile and document-kind wiring; section plan; dispatch and integration of the research, acquisition, collation, verification, writing and review lanes; source-record corrections decided by the maintainer on 18 November 2026; typesetting, web edition and installation); Claude Code CLI 2.1.326 installed, the running build not separately exposed"
+      },
+      {
+       "model": "claude-opus-5-5",
+       "qualifiers": "unexposed: reasoning-effort and sampling configuration",
+       "runtime": "Anthropic Claude Code harness subagents, fresh general-purpose sessions with no inherited conversation (four research lanes and their forks; four source-acquisition and page-image verification lanes and their forks; two verification lanes; the consumer review of moved source fingerprints; the cold writer of the primer, who read only the profile, the editorial standard, the plan and the collated evidence; the independent reviews of the published-text corrections and the two cold reviews of the primer); Claude Code CLI 2.1.326 installed, the running build not separately exposed"
+      },
+      {
+       "model": "claude-opus-5-5",
+       "qualifiers": "dispatch-declared-effort=high; unexposed: sampling configuration",
+       "runtime": "Anthropic Claude Code harness subagents, fresh general-purpose sessions with no inherited conversation (the collation lane that built the claim-to-source matrix, bindings and writer's pack; the cross-reference lane that accounted the new passages in the catena and registered NPNF first series vol.~VIII); Claude Code CLI 2.1.326 installed, the running build not separately exposed"
+      }
+     ],
+     "derivation": "authored",
+     "eligibility": "eligible",
+     "id": "claude/liturgy/roman-rite/1962/seasons/advent",
+     "models": [
+      "claude-opus-5-5"
+     ],
+     "pages": null,
+     "print_mode": "browser",
+     "provider": "claude",
+     "reviewed": "2026-11-18",
+     "revised": "2026-11-18T21:48:50Z",
+     "status": "alpha",
+     "subject": "A primer for keeping Advent in the 1962 Roman Rite under the 1960 Rubricae generales: the three comings of the Lord; how the Church came to keep the season; the four Sundays, the Ember Days, the last days and the Vigil, with their stations and the Fathers on each; watching with the Fathers; renewing prayer; fasting and almsgiving, with the law of 1962 and of now kept apart; a graded rule of life; preparing for confession; daily readings and the prayers of the season.",
+     "targets": {
+      "print": "print/claude/liturgy/roman-rite/1962/seasons/advent.html",
+      "reader": "web/claude/liturgy/roman-rite/1962/seasons/advent.html"
+     },
+     "title": "Advent: A Primer for the Season of the Lord's Coming",
+     "title_source": "src/claude/liturgy/roman-rite/1962/seasons/advent/main.tex",
+     "web": "web/claude/liturgy/roman-rite/1962/seasons/advent.html"
+    }
+   ],
+   "leaf": "liturgy/roman-rite/1962/seasons/advent",
    "section": "liturgy"
   },
   {

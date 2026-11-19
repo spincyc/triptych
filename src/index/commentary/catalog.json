@@ -1,6 +1,12 @@
 {
  "absence_editions": [
   "edition.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100",
+  "edition.ambrose.expositio-evangelii-secundum-lucam.csel-32-4-schenkl-1902",
+  "edition.ambrose.expositio-evangelii-secundum-lucam.latin-migne-corpus-corporum-web-2026-07-25",
+  "edition.ambrose.expositio-evangelii-secundum-lucam.latin-migne-corpus-corporum-web-2026-09-05",
+  "edition.ambrose.expositio-evangelii-secundum-lucam.latin-migne-corpus-corporum-wikisource-web-2026-09-05",
+  "edition.ambrose.expositio-evangelii-secundum-lucam.latin-migne-wikisource-book-5",
+  "edition.ambrose.expositio-evangelii-secundum-lucam.latin-wikisource-web-2026-09-05",
   "edition.ambrose.hexameron.latin-migne-pl-14",
   "edition.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115",
   "edition.augustine.de-genesi-ad-litteram.migne-pl-34",
@@ -960,7 +966,7 @@
    },
    {
     "chapters": 150,
-    "fragments": 16,
+    "fragments": 17,
     "languages": [
      "en",
      "la"
@@ -1447,7 +1453,7 @@
    },
    {
     "chapters": 28,
-    "fragments": 14,
+    "fragments": 19,
     "languages": [
      "en",
      "la"
@@ -1516,7 +1522,7 @@
    },
    {
     "chapters": 24,
-    "fragments": 2,
+    "fragments": 11,
     "languages": [
      "en",
      "la"
@@ -1553,7 +1559,7 @@
    },
    {
     "chapters": 21,
-    "fragments": 9,
+    "fragments": 10,
     "languages": [
      "en",
      "la"
@@ -3700,7 +3706,9 @@
    "33": [],
    "34": [],
    "36": [],
-   "37": [],
+   "37": [
+    "passage.nicene-and-post-nicene-fathers.series-1-volume-8.new-york-1888.augustine-enarr-in-ps-37.13"
+   ],
    "39": [],
    "4": [],
    "40": [],
@@ -3964,9 +3972,16 @@
    "7": []
   },
   "47-matt": {
-   "1": [],
+   "1": [
+    "passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.jerome-on-matthew-1-18",
+    "passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.jerome-on-matthew-1-19",
+    "passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.jerome-on-matthew-1-21"
+   ],
    "10": [],
-   "11": [],
+   "11": [
+    "passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.gregory-on-matthew-11-7",
+    "passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.gregory-on-matthew-11-9"
+   ],
    "12": [],
    "13": [
     "passage.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05.1-10",
@@ -4042,7 +4057,14 @@
    "9": []
   },
   "49-luke": {
-   "1": [],
+   "1": [
+    "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.ambrose-on-luke-1-38",
+    "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.ambrose-on-luke-1-39",
+    "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.ambrose-on-luke-1-46-47",
+    "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.bede-on-luke-1-47",
+    "passage.ambrose.expositio-evangelii-secundum-lucam.csel-32-4-schenkl-1902.ambrose-expositio-lucae-2.19",
+    "passage.ambrose.expositio-evangelii-secundum-lucam.csel-32-4-schenkl-1902.ambrose-expositio-lucae-2.26"
+   ],
    "10": [],
    "11": [],
    "12": [],
@@ -4055,14 +4077,19 @@
    "19": [],
    "2": [],
    "20": [],
-   "21": [],
+   "21": [
+    "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.gregory-on-luke-21-28"
+   ],
    "22": [],
    "23": [],
    "24": [
     "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.luke-24-50-53-text",
     "passage.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.vi-lk-24.12"
    ],
-   "3": [],
+   "3": [
+    "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.gregory-on-luke-3-4",
+    "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.gregory-on-luke-3-5"
+   ],
    "4": [],
    "5": [],
    "6": [],
@@ -4071,7 +4098,9 @@
    "9": []
   },
   "50-john": {
-   "1": [],
+   "1": [
+    "passage.nicene-and-post-nicene-fathers.series-1-volume-7.new-york-1888.augustine-tract-in-io-4.7"
+   ],
    "10": [],
    "11": [],
    "12": [],
@@ -12596,7 +12625,7 @@
     {
      "blocked": 0,
      "chapter": 1,
-     "fragments": 0,
+     "fragments": 1,
      "held": true,
      "leads": 17,
      "refused": 0,
@@ -13628,7 +13657,7 @@
     {
      "blocked": 0,
      "chapter": 1,
-     "fragments": 0,
+     "fragments": 6,
      "held": true,
      "leads": 15,
      "refused": 0,
@@ -13646,7 +13675,7 @@
     {
      "blocked": 0,
      "chapter": 3,
-     "fragments": 0,
+     "fragments": 2,
      "held": true,
      "leads": 15,
      "refused": 0,
@@ -13808,7 +13837,7 @@
     {
      "blocked": 0,
      "chapter": 21,
-     "fragments": 0,
+     "fragments": 1,
      "held": true,
      "leads": 25,
      "refused": 0,
@@ -14069,7 +14098,7 @@
     {
      "blocked": 0,
      "chapter": 1,
-     "fragments": 0,
+     "fragments": 3,
      "held": true,
      "leads": 15,
      "refused": 0,
@@ -14159,7 +14188,7 @@
     {
      "blocked": 0,
      "chapter": 11,
-     "fragments": 0,
+     "fragments": 2,
      "held": true,
      "leads": 16,
      "refused": 0,
@@ -15629,7 +15658,7 @@
     {
      "blocked": 0,
      "chapter": 37,
-     "fragments": 0,
+     "fragments": 1,
      "held": true,
      "leads": 15,
      "refused": 0,
