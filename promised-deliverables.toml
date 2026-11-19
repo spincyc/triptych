@@ -5983,7 +5983,7 @@ state = "complete"
 id = "claude-advent-primer-1962-2026-11-18"
 owner = "src/claude/liturgy/roman-rite/1962/seasons"
 promise = "Author and publish a Claude seasonal primer for Advent in the 1962 Roman Rite, the first of a primer series to be followed by a larger one for Lent: a comprehensive, deeply patristic and scriptural preparation for the season covering its history, what each Sunday represents, fasting and anticipation, spiritual renewal and the renewal of daily prayer, with a daily reading table, a graded rule of life, an appendix of prayer texts and a preparation for confession; produced in phases (section plan, parallel research, acquisition and collation into the shared corpus with cross-references, cold generation from those records), without duplicating the per-Sunday proper guides, and signposted from the 1962 calendar by an unobtrusive cue."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "series-profile-and-kind"
@@ -6046,5 +6046,12 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "installed-and-cued"
   criterion = "The PDF and web edition are built, gate-checked and inspected; a release record exists; the Traditional Latin Mass catalog carries a Seasonal Primers row and an unobtrusive cue above the Sunday table with a same-line publication-reference marker; and release bindings and the corpus index are refreshed."
-  status = "open"
-  evidence = []
+  status = "pass"
+  evidence = [
+    "release/publications/claude/liturgy/roman-rite/1962/seasons/advent.json",
+    "library/traditional-latin-mass.md",
+    "tools/tests/test_calendar_computation_guidance.py",
+    "release/browser-products.json",
+    "release/public-alpha.json",
+    "src/index/documents/corpus.json",
+  ]

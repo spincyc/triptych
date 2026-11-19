@@ -14968,9 +14968,13 @@ wording of the calendar reference, the Fourteenth and Fifteenth Sunday guides,
 *Assembling the Mass*, the Augustine biography, the Heaven essay and a GPT
 research note corrected.
 
-**Open.** The browser-product record, the corpus index and the release
-bindings for the primer and the six revised editions. Follow-ups found on the
-way, not owned by this deliverable: the web-edition converter deletes a group
+Browser products were re-recorded, the release bindings refreshed for the
+paths this work changed and adopted, scoped, for the library records it added
+or first brought into the site, and the corpus index refreshed. Complete on
+2026-11-18.
+
+**Follow-ups** found on the way, not owned by this deliverable: the
+web-edition converter deletes a group
 that follows `\noindent` or `\smallskip`, so a note written
 `\smallskip\noindent{\small ...}` vanishes from the web edition without an
 audit failure unless it holds a checked payload (the primer's 69 notes were
