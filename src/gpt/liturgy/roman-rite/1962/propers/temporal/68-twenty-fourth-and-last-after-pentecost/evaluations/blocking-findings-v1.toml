@@ -50,11 +50,11 @@ run_id = "13ecdd1552c245ea"
 workflow = "proper-study"
 workflow_version = 19
 stage = "research-review"
-iteration = 3
+iteration = 4
 disposition = "CHANGES_REQUIRED"
 standing = 2
 accepted_count = 0
-advisory_count = 1
+advisory_count = 2
 observation_count = 8
 
 [[stages]]
@@ -71,14 +71,14 @@ observation_count = 0
 
 [[stages]]
 stage = "research-review"
-iteration = 3
+iteration = 4
 disposition = "CHANGES_REQUIRED"
 run_id = "13ecdd1552c245ea"
 workflow = "proper-study"
 workflow_version = 19
 standing = 2
 accepted_count = 0
-advisory_count = 0
+advisory_count = 1
 observation_count = 0
 
 [[stages]]
@@ -119,21 +119,29 @@ observation_count = 0
 
 [[findings]]
 stage = "research-review"
-id = "RES-RUPERT-SHARED-CHANT-RECEPTION"
+id = "RES-USCCB-COMPARISON-BINDING"
 severity = "blocking"
-location = "research/scope.md:264–274, 479–523 and 1111–1122; research/interpretations.md:130–165 and 189–216; research/source-bindings.toml; research/source-dispositions.toml"
-problem = "The repaired Fromage section properly treats the Last-Sunday Introit on p. 503 as wording, but leaves out the substantial earlier reception signposted by the same chapter's p. 501, where Fromage names Abbot Rupert's explanation of the preceding formulary's shared elements. Fromage XI pp. 487–489 (original PDF pp. 513–515) explicitly identifies and translates Rupert of Deutz, De divinis officiis XII.23. I read both that English witness and the original Latin chapter in PL 170 cols. 329–330, IA leaf n170, with the held OCR at physical lines 23696–23778. The Latin shows Rupert taking the Introit's promise of peace as Christ welcoming Israel through the figure of Joseph, reading the Gradual as thanksgiving for release, making the Offertory the brothers' plea for pardon, and taking the Communion as Joseph's reassuring answer. His lessons include a different Jeremiah text and John 6. Neither the zero result from the 40-entry formulary index nor the present Anthony handoff accounts for this material medieval reading of four shared chants, which bears directly on both research arguments, particularly the way R1 connects promised deliverance, present distress and the two final chants."
-required_result = "Check and bind or defer the exact Rupert and Fromage/Shepherd loci with their distinct source roles, identify the four shared chant incipits and the actual Scripture reach of each explanation, and record the different lessons and unconfirmed elements in research. Explain how Rupert's Joseph reading compares with the proposed readings, with his own Gospel pairing and eschatological application kept at their actual extent. Treat his contribution under the inventory's ecclesiastical-writer standing and keep the p. 503 Introit and Collect boundary already repaired. Record the reason if the reading is limited to research; no additional whole-Mass interpretation is required. The primary image is available at https://archive.org/download/patrologiaecursu0170mign/page/n170_w1200.jpg."
+location = "research/scope.md:650–658 and research/source-bindings.toml; research/source-dispositions.toml"
+problem = "The dossier explicitly reports inspecting the exact USCCB NABRE Matthew introduction and adopts it for the selected Greek-Matthew chronology comparison. The generated chronology seal does include passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-21.matthew-introduction and its ancestry, but neither that passage nor its controlling restricted 3578ab41 artifact has a publication-local binding or disposition. The ledger therefore omits a claimed checked source which supplies a row to both studies."
+required_result = "Reconcile the actual inspection and use of the chronology introduction against the exact registered passage and its controlling delivery. Add a publication-local chronology/context binding with an accurate locus, evidence state and fingerprint, and a corresponding non-commentary disposition for the chronology use. If the leaf used the registered verified passage summary or a later delivery, give that source and inspection state accurately. Preserve the distinction between the post-70 lower bound, the source’s later preference, and the conjectural Antioch location without retaining restricted HTML."
 repair_target = "research"
 
 [[findings]]
 stage = "research-review"
-id = "RES-UNBOUND-CHECKED-WITNESSES"
+id = "RES-JEROME-JEREMIAH-NATIVE-EXTENT"
 severity = "blocking"
-location = "research/scope.md:292–309, 311–326 and 380–396; research/source-bindings.toml:583–646; research/source-dispositions.toml:1241–1288 and 1386–1423"
-problem = "The additions register the Basel PDF, modern Aquinas HTML, and historical Oxford extracts, but leave other evidence used by those same rows outside the binding and disposition ledger. The Basel row uses the separate Zürich e-rara title page at https://www.e-rara.ch/zuz/content/titleinfo/7285107 for copy identity and the Public Domain Mark; the PDF's manifest cites that page but has no bound title-page artifact. The Aquinas row uses the Parma 1863 optical witness as the historical collation route, yet only the modern HTML is bound. The already registered Parma OCR artifact thomas-aquinas.opera-omnia-volume-14.1863-parma.ia-complete-ocr-02c6dc25 locates the lectio at physical lines 102798 onward and its constituent in the contents at 114294–114296. The Augustine row says checked publisher and library listings establish that Roland Teske translated Questions on the Gospels. The CiNii record BB16379660 confirms that exact component in its contents, but it has no local binding; the claimed publisher listing has no exact locus or identity. These are metadata and finding-aid uses. Their limits do not erase the actual consultations or the evidence they supply."
-required_result = "Bind each actually consulted catalogue or optical delivery at its precise locus and evidence state and give the checked controls non-commentary dispositions. Retain the Parma OCR as a finding aid and record whether the Zürich catalogue is an independent bibliographic/rights witness; distinguish both from the exact PDF or HTML they help identify. Identify and bind the precise publisher listing if it was actually read, or narrow the claim to the independently identifiable CiNii catalogue and accurately describe any other search return. Keep Teske's translation text uninspected and uncleared unless actual additional evidence is obtained, and preserve the current Catena extract and constituent limits."
+location = "research/scope.md:264,346 and research/source-bindings.toml:132–137; research/source-dispositions.toml:363–373"
+problem = "The reception matrix calls Jer 29:10–14 a single Jerome lemma, and the deferred row gives only that five-verse range as the natural passage candidate. In the exact PL 24 facsimile on PDF p. 451, col. 893 begins the native ‘Vers. 10 seqq.’ unit and col. 894 begins a new ‘Vers. 14 seqq.’ unit. The second commentary continues on PDF p. 452 through col. 895 and the start of col. 896, before the ‘Vers. 21 seqq.’ heading. The five verses correctly name the overlap this study uses, but the current row clips the second printed unit and the matrix conflates two source loci."
+required_result = "Keep Jer 29:10–14 as the study’s selected use. Identify the two native units and their print boundaries in the matrix and binding, and disposition the natural candidate extents with the actual inspection limits. If the longer native unit is only partly checked, name the checked portion and what remains before admission. Keep the existing constituent, collation, rights, date and Scripture-edge limits tied to the exact witness."
 repair_target = "research"
+
+[[advisories]]
+stage = "research-review"
+id = "RES-THEOPHYLACT-MATRIX-PERIOD"
+severity = "advisory"
+location = "research/scope.md:262,274"
+problem = "The Communion matrix places the medieval Theophylact in the column labeled ‘Direct ancient exegesis actually read’. The source identity and his supporting standing are correctly given in the nearby dossier, so this is a table classification error."
+required_result = "Keep Bede’s contextual exegesis in the ancient column and place Theophylact’s direct Mark 11:24–25 exposition in the medieval column with its original supporting status."
 
 [[advisories]]
 stage = "study-review"

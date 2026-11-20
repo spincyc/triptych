@@ -362,14 +362,27 @@ missing_criteria = ["publishable-passage-controller", "historical-original-colla
 [[sources]]
 id = "jerome-jeremiah-29-10-14"
 binding_index = 17
-binding_sha256 = "5193ac22fac4c3978409f43801c90f1bce5ffe37ca32b1a82a373557dc299c45"
+binding_sha256 = "b07a7b1dff098a115b412c03ac29bfa79aa127c802da82b9e6d47c2f9be7f8c1"
 source_id = "artifact.jacques-paul-migne.patrologia-latina-volume-24.paris-1865.internet-archive-pdf-e55e8bd2"
 source_fingerprint = "sha256:c6fb33bd194ee93902e3c4fa9109a1ee8938e91070b51ef6794d8a119a51a682"
-locus = "In Ieremiam V, Jeremiah29:10-14; PL24cols893-896; PDF451-452"
+locus = "In Ieremiam V, Vers. 10 seqq., PL 24 col. 893 through the text above Vers. 14 seqq. in col. 894, PDF 451. The lemma ends after the opening clause of Jer 29:14."
 relationship = "direct-exegesis"
 disposition = "deferred"
-reason = "The Latin printed locus was image-inspected in the exact PL24 volume; failed OCR is not its proof. No constituent Jerome work/edition/segment at this locus, mechanically checked passage transcription, or lawful checked English translation has been established. Register truthful constituent ownership before assigning the anthology pages to Jerome; retain the broad prophecy versus liturgical adaptation distinction."
+reason = "The complete native unit was read on the exact 1865 Latin facsimile. Its public-domain print and scan provide the rights basis for that original-language witness. Admission still needs a constituent work, edition and segment for Jerome, a mechanically checked transcription, separate lawful and checked English evidence, composition-date evidence for the work and a canonical Scripture edge. The whole-verse candidate reaches v. 14 because the lemma includes its first clause. The study draws on the broader prophecy to explain the adapted Introit."
 scripture_extents = [{ token = "Jer", first_chapter = 29, first_verse = 10, last_chapter = 29, last_verse = 14 }]
+missing_criteria = ["constituent-work-edition-segment", "passage-transcription", "english-witness", "composition-date-basis", "scripture-edge"]
+
+[[sources]]
+id = "jerome-jeremiah-29-14-20"
+binding_index = 17
+binding_sha256 = "b07a7b1dff098a115b412c03ac29bfa79aa127c802da82b9e6d47c2f9be7f8c1"
+source_id = "artifact.jacques-paul-migne.patrologia-latina-volume-24.paris-1865.internet-archive-pdf-e55e8bd2"
+source_fingerprint = "sha256:c6fb33bd194ee93902e3c4fa9109a1ee8938e91070b51ef6794d8a119a51a682"
+locus = "In Ieremiam V, Vers. 14 seqq., beginning at Et reducam captivitatem vestram midway through Jer 29:14, PL 24 col. 894 (PDF 451) through col. 895 and the opening of col. 896 (PDF 452), before Vers. 21 seqq. The printed lemma ends at Jer 29:20."
+relationship = "direct-exegesis"
+disposition = "deferred"
+reason = "Read the whole native unit on the exact public-domain 1865 Latin facsimile, including the warning to those left in Jerusalem, the reported interpretation and Jerome's response before the next heading. The study uses the opening gathering clause in v. 14. The whole-verse candidate includes vv. 14–20 because the printed unit expounds the rest of v. 14 and the following six verses. Admission still needs constituent registration for these anthology pages, a mechanically checked transcription through the end of the unit, separate lawful and checked English evidence, composition-date evidence for the work and a canonical Scripture edge."
+scripture_extents = [{ token = "Jer", first_chapter = 29, first_verse = 14, last_chapter = 29, last_verse = 20 }]
 missing_criteria = ["constituent-work-edition-segment", "passage-transcription", "english-witness", "composition-date-basis", "scripture-edge"]
 
 [[sources]]
@@ -1543,3 +1556,14 @@ locus = "Physical HTML lines 582–590 translators and editor, 654–675 ISBN an
 relationship = "not-commentary"
 disposition = "not-commentary"
 reason = "The publisher identifies the library-edition variant and confirms the contributors and contents at volume level. CiNii supplies the component-specific translator attribution."
+
+[[sources]]
+id = "nabre-usccb-matthew-introduction-chronology"
+binding_index = 92
+binding_sha256 = "625200466d2a55911080277c39cf6782a036e059b807d6ce40942ecba832d050"
+source_id = "passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-21.matthew-introduction"
+source_fingerprint = "sha256:31bd0451bc1d27c0a08ce7c93a7e9c294e6b390e99204ebbe59f3b401c9997dd"
+locus = "Registered summary of the Matthew introduction, final five prose paragraphs on authorship, sources, composition and place, with the narrative overview of chapters 19–25."
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The registered passage summary supplies the selected post-A.D. 70 lower bound for Greek Matthew in the studies' Catholic critical comparison. The source considers a date at least a decade later probable and gives Antioch as a possible location. The pin reaches the original restricted HTML controller, whose historical verification is documented in the registry. This inspection concerns the summary."

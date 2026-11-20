@@ -132,10 +132,11 @@ the direct whole-Mass liturgical reception.
 pacis ... reducam captivitatem* is spoken by the Lord, not an assurance
 the congregation invents for itself. In Jer 29 it opposes false promises
 of a quick return; the omitted verses require patient life and prayer in
-Babylon and whole-hearted seeking. Jerome, *In Ieremiam* V on 29:10–14,
-PL 24 cols. 893–896, explicitly keeps the seventy-year waiting and calls
-the promised return future, not present. The liturgical shortening must
-not change that patience into a guarantee of easy circumstances.
+Babylon and whole-hearted seeking. Jerome, *In Ieremiam* V, reads the
+seventy-year wait in the unit beginning at 29:10 (PL 24 cols. 893–894).
+He explains the gathering on that timetable in the opening of the next
+unit, which begins within v. 14 (col. 894). The Introit compresses this
+promise made to people who still had years to wait.
 
 The attached *Benedixisti ... avertisti captivitatem Iacob* speaks restoration
 in the completed tense. Augustine, Ps 84(85), especially §§2–4 within §§1–13,
@@ -329,9 +330,10 @@ Bellarmine further clarify captivity and medicine.
 
    Aquinas, Col 1 lectio 3, explains why petition matters even though
    God knows what is needed. Prayer raises the petitioner to God.
-   Jerome, *In Ieremiam* V on 29:10–14, likewise finds that prayer
-   disposes the exiles to receive a return already promised. R2 reads
-   confidence as participation in God's good purpose. Forgiving the
+   Jerome, *In Ieremiam* V, in the unit headed “Vers. 10 seqq.”
+   (PL 24 cols. 893–894), likewise finds that prayer disposes the exiles
+   to receive a return already promised. R2 reads confidence as
+   participation in God's good purpose. Forgiving the
    neighbor is one concrete act of that participation.
 
 3. **Appointed difficulty: *Excita ... voluntates; ad te corda
