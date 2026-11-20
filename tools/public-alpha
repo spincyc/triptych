@@ -4,7 +4,9 @@
 from __future__ import annotations
 
 import argparse
-from contextlib import contextmanager, nullcontext
+from concurrent.futures import Future, ThreadPoolExecutor
+from contextlib import ExitStack, contextmanager, nullcontext
+from contextvars import copy_context
 import hashlib
 import html
 from html.parser import HTMLParser
@@ -22,7 +24,7 @@ import unicodedata
 from collections import Counter, defaultdict
 from collections.abc import Callable, Iterable
 from datetime import date, datetime, timedelta, timezone
-from functools import cache
+from functools import cache, lru_cache
 from pathlib import Path, PurePosixPath
 from urllib.parse import parse_qsl, unquote, urlencode, urlsplit
 from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
@@ -34,7 +36,7 @@ from _corpus import (  # noqa: E402
     CorpusError,
     eligible_document_ids as corpus_eligible_document_ids,
 )
-from _scanning import markers_for, present  # noqa: E402
+from _scanning import markers_for  # noqa: E402
 import _qualified_public_domain  # noqa: E402
 from _browser_products import MANIFEST_RELATIVE as BROWSER_PRODUCTS_MANIFEST_RELATIVE  # noqa: E402
 from _markdown_render import (  # noqa: E402
@@ -252,7 +254,8 @@ ORDINARY_LANGUAGE_ABSENCE_LOCATION_RE = re.compile(
     r"^\$\.language_absences\[[0-9]+\]$"
 )
 _PROTECTED_IDENTITY_PATTERNS: dict[str, re.Pattern[str] | None] = {}
-_PROTECTED_IDENTITY_MARKERS: dict[str, tuple[int, tuple[str, ...], tuple[str, ...]]] = {}
+_PROTECTED_IDENTITY_MARKERS: dict[str, tuple[int, tuple[str, ...], frozenset[str] | None]] = {}
+_IDENTITY_TOKEN = re.compile(r"[a-z0-9._-]+")
 # Short enough that every identity has one, long enough to be rare in prose.
 MARKER_LENGTH = 8
 _POSTCONCILIAR_QUARANTINE_HASHES: dict[
@@ -261,7 +264,7 @@ _POSTCONCILIAR_QUARANTINE_HASHES: dict[
 # One command's held map of the copied browser/data inputs; see
 # `held_repository_inputs`. Empty outside a command, so a caller that is not
 # one --- a test, another tool --- always computes the map afresh.
-_HELD_WEB_DATA_FILES: list[dict[str, dict[str, Path]]] = []
+_HELD_WEB_DATA_FILES: list[dict[str, dict[str, Path] | Future]] = []
 # These are command-local inventories of captured source identities and routes.
 # No PDF bytes or installed-file timestamps participate in source publication.
 _HELD_SOURCE_INVENTORIES: list[dict[tuple[str, str], object]] = []
@@ -333,7 +336,12 @@ PAGE_MAP = {
     "release/public-alpha/404.md": "404.html",
 }
 FIXED_ARTIFACT_INPUT_PATHS = {
+    ".github/scripts/pages-native-reference.py",
+    ".github/scripts/verify-native-print.py",
+    ".github/workflows/pages.yml",
     ".github/web-figure-digests.json",
+    "scripts/_native_print_reference.py",
+    "scripts/_web_figure_build.py",
     "release/public-alpha/layout.html",
     "release/public-alpha/assets/site.css",
     "release/public-alpha/assets/social-card.png",
@@ -1012,7 +1020,7 @@ def publication_source_records() -> dict[tuple[str, str], tuple[dict, dict]]:
         from _document_schema import discover, validate
         result = {}
         assembly = document_assembly()
-        for record in discover(ROOT):
+        for record in discover(ROOT, assembly=assembly):
             report = validate(ROOT, record, phase="source", run_gates=False,
                               assembly=assembly)
             if report.get("errors"):
@@ -1804,15 +1812,15 @@ def protected_source_identity_pattern() -> re.Pattern[str] | None:
         (
             min(len(identity) for identity in protected),
             markers_for(protected),
-            tuple(sorted(protected)),
+            frozenset(protected) if all(_IDENTITY_TOKEN.fullmatch(identity) for identity in protected) else None,
         )
         if protected
-        else (0, (), ())
+        else (0, (), frozenset())
     )
     return pattern
 
 
-def protected_source_identity_markers() -> tuple[int, tuple[str, ...], tuple[str, ...]]:
+def protected_source_identity_markers() -> tuple[int, tuple[str, ...], frozenset[str] | None]:
     """A sound, cheap pre-filter for the pattern above: (minimum, markers).
 
     Searching the pattern is the most expensive thing `prepare` does --- 132 KB
@@ -1838,7 +1846,7 @@ def protected_source_identity_markers() -> tuple[int, tuple[str, ...], tuple[str
     cache_key = str(ROOT.resolve())
     if cache_key not in _PROTECTED_IDENTITY_MARKERS:
         protected_source_identity_pattern()
-    return _PROTECTED_IDENTITY_MARKERS.get(cache_key, (0, (), ()))
+    return _PROTECTED_IDENTITY_MARKERS.get(cache_key, (0, (), frozenset()))
 
 
 def _quarantine_canonical(value: object) -> str:
@@ -2039,6 +2047,25 @@ def postconciliar_quarantined_text_hashes() -> frozenset[str]:
     return _quarantine_fingerprints()[1]
 
 
+def _quarantine_matcher(negative: frozenset[str]):
+    """Compare both the decoded wording and its normalized spelling."""
+    def match(value):
+        exact = hashlib.sha256(value.encode("utf-8")).hexdigest()
+        if exact in negative:
+            return exact
+        normalized = unicodedata.normalize("NFC", " ".join(value.split()))
+        if normalized != value:
+            digest = hashlib.sha256(normalized.encode("utf-8")).hexdigest()
+            if digest in negative:
+                return digest
+        return None
+
+    # Envelopes repeat the same words, identifiers and labels throughout the
+    # corpus. Bound both the count and the length retained by this one scan.
+    short = lru_cache(maxsize=8192)(match)
+    return lambda value: short(value) if len(value) <= 1024 else match(value)
+
+
 def _address(trail: tuple) -> str:
     """The `$.key[0]` breadcrumb a walk would have concatenated on the way down.
 
@@ -2120,13 +2147,13 @@ def validate_liturgical_public_data(
     """
     return _validate_liturgical_public_data(
         path, logical_relative=logical_relative, proper_reader_binding=proper_reader_binding,
-        quarantined_text_hashes=None, conclusions=_ConclusionSources(),
+        quarantine_match=None, conclusions=_ConclusionSources(),
     )
 
 
 def _validate_liturgical_public_data(
     path: Path, *, logical_relative: str | None,
-    proper_reader_binding: str | None = None, quarantined_text_hashes: frozenset[str] | None,
+    proper_reader_binding: str | None = None, quarantine_match: Callable[[str], str | None] | None,
     conclusions: _ConclusionSources,
 ) -> str | None:
     if logical_relative is None:
@@ -2162,8 +2189,8 @@ def _validate_liturgical_public_data(
         if len(parts) != 4:
             raise ReleaseError(f"{label}: public Proper search must be one calendar file")
         validate_proper_search_payload(payload, label, path.stem)
-    if quarantined_text_hashes is None:
-        quarantined_text_hashes = postconciliar_quarantined_text_hashes()
+    if quarantine_match is None:
+        quarantine_match = _quarantine_matcher(postconciliar_quarantined_text_hashes())
 
     def visit_quarantined(value: object, trail: tuple = ()) -> None:
         # The breadcrumb is carried as a tuple and rendered only if something
@@ -2181,19 +2208,7 @@ def _validate_liturgical_public_data(
             return
         if not isinstance(value, str):
             return
-        candidates = {
-            value,
-            unicodedata.normalize("NFC", " ".join(value.split())),
-        }
-        matched_hash = next(
-            (
-                digest
-                for candidate in candidates
-                if (digest := hashlib.sha256(candidate.encode("utf-8")).hexdigest())
-                in quarantined_text_hashes
-            ),
-            None,
-        )
+        matched_hash = quarantine_match(value)
         if matched_hash is not None:
             raise ReleaseError(
                 f"{label} {_address(trail)}: quarantined English body sha256 "
@@ -2416,25 +2431,9 @@ def _validate_liturgical_public_data(
     protected_minimum, protected_markers, protected_ids = (
         protected_source_identity_markers()
     )
-    # One reduced scan of the whole file decides whether any protected identity
-    # is in it at all; `_scanning.present` says why that is exact. Almost no
-    # file carries one, and for those the per-string regex below --- 132 KB of
-    # alternation, asked of every string --- can be skipped entirely. Where a
-    # file does carry one, nothing is skipped and the regex still names the
-    # exact identity and location, which is what the error has to say.
-    #
-    # Scanned over the DECODED payload, never over the file's raw text. The
-    # walk below sees decoded string values, so `"artifact\u002eprobe"` reaches
-    # it as `artifact.probe` while the raw bytes hold no such substring; a
-    # pre-filter reading the raw text would answer "no identity here" and skip
-    # the whole file, which is a rights gate passing what it could not see.
-    # `ensure_ascii=False` keeps the decoded characters, and no character an
-    # identity is made of is one JSON escapes, so an identity in any string
-    # appears literally here.
-    file_carries_identity = bool(
-        present(json.dumps(payload, ensure_ascii=False), protected_ids, protected_markers)
-    )
-
+    # The regex uses the same characters for both boundaries. If every
+    # protected ID consists of them, a match must occupy one whole token.
+    # Unusual IDs retain the original escaped regex and boundary semantics.
     def visit(value: object, location: str = "$") -> None:
         if isinstance(value, list):
             for index, item in enumerate(value):
@@ -2445,15 +2444,22 @@ def _validate_liturgical_public_data(
             # shortest identity, or holding no identity's leading characters.
             # See protected_source_identity_markers.
             searchable = (
-                file_carries_identity
-                and protected_identity is not None
+                protected_identity is not None
                 and len(value) >= protected_minimum
                 and any(marker in value for marker in protected_markers)
             )
-            match = protected_identity.search(value) if searchable else None
-            if match is not None:
+            if searchable:
+                if protected_ids is None:
+                    match = protected_identity.search(value)
+                    identity = match.group() if match else None
+                else:
+                    identity = next((token for token in _IDENTITY_TOKEN.findall(value)
+                                     if token in protected_ids), None)
+            else:
+                identity = None
+            if identity is not None:
                 raise ReleaseError(
-                    f"{label} {location}: protected source identity {match.group(0)!r} "
+                    f"{label} {location}: protected source identity {identity!r} "
                     "belongs only in the source-study record"
                 )
             if RESTRICTED_AUTHORITY_REFERENCE_RE.search(value):
@@ -3126,7 +3132,7 @@ def browser_product_source_paths(products, manifest: dict) -> set[str]:
 
 
 @contextmanager
-def held_repository_inputs():
+def held_repository_inputs(*, prefetch_web=False):
     """Hold verified products and inventories for exactly one operation."""
     context = nullcontext()
     product_error = ()
@@ -3134,15 +3140,34 @@ def held_repository_inputs():
         from _browser_products import ProductError, verified_products
         product_error = ProductError
         context = verified_products(ROOT)
+    reference_revision = None
+    if _native_reference_loader() is not None:
+        reference_revision = os.environ["GITHUB_SHA"]
+        _require_reference_checkout(reference_revision)
     try:
         with context:
-            _HELD_WEB_DATA_FILES.append({})
+            web = {}
+            _HELD_WEB_DATA_FILES.append(web)
             _HELD_SOURCE_INVENTORIES.append({})
             try:
-                yield
+                with ExitStack() as stack:
+                    scan = None
+                    if (prefetch_web and browser_products_declared()
+                            and (getattr(os, "process_cpu_count", os.cpu_count)() or 1) > 1):
+                        # The checkout and the private verified products are already held.
+                        # The data scan is independent of release/print work and every
+                        # consumer waits on this same result, including its exceptions.
+                        pool = stack.enter_context(ThreadPoolExecutor(max_workers=1))
+                        scan = pool.submit(copy_context().run, _scan_web_data_files)
+                        web[str(ROOT.resolve())] = scan
+                    yield
+                    if scan is not None:
+                        scan.result()
             finally:
                 _HELD_SOURCE_INVENTORIES.pop()
                 _HELD_WEB_DATA_FILES.pop()
+        if reference_revision is not None:
+            _require_reference_checkout(reference_revision)
     except ValueError as exc:
         # ProductError inherits ValueError; avoid changing other validation
         # exceptions raised by a caller inside this operation.
@@ -3167,7 +3192,8 @@ def web_data_files() -> dict[str, Path]:
     if key not in held:
         held[key] = _scan_web_data_files()
     # A copy, so no caller can edit the map the rest of the command will read.
-    return dict(held[key])
+    result = held[key]
+    return dict(result.result() if isinstance(result, Future) else result)
 
 
 def browser_font_files() -> dict[str, Path]:
@@ -3224,6 +3250,7 @@ def _scan_web_data_files() -> dict[str, Path]:
     # ledger and every receipt again after the last payload, including membership.
     quarantine_signature, quarantined_text_hashes = _quarantine_fingerprints()
     conclusions = _ConclusionSources()
+    quarantine_match = _quarantine_matcher(quarantined_text_hashes)
     reader_metadata, validated_sources = [], {}
     for relative, path in inputs:
         if path.is_dir() and not path.is_symlink():
@@ -3239,14 +3266,14 @@ def _scan_web_data_files() -> dict[str, Path]:
             reader_metadata.append((relative, path))
         else:
             validated_sources[relative] = _validate_liturgical_public_data(
-                path, logical_relative=relative, quarantined_text_hashes=quarantined_text_hashes, conclusions=conclusions,
+                path, logical_relative=relative, quarantine_match=quarantine_match, conclusions=conclusions,
             )
         files[(SITE_DATA_ROOT / relative).as_posix()] = path
     reader_bindings = validate_propers_read_payload_sources(data_root, validated_sources=validated_sources)
     for relative, path in reader_metadata:
         _validate_liturgical_public_data(
             path, logical_relative=relative, proper_reader_binding=reader_bindings.get(relative),
-            quarantined_text_hashes=quarantined_text_hashes, conclusions=conclusions,
+            quarantine_match=quarantine_match, conclusions=conclusions,
         )
     conclusions.check_current()
     if _quarantine_fingerprints()[0] != quarantine_signature:
@@ -5685,6 +5712,39 @@ def native_tex_declared() -> bool:
             or (ROOT / "src/common/native-tex-runtime.json").exists())
 
 
+def _require_reference_checkout(revision):
+    from _native_print_service import ServiceError, assert_source
+    try:
+        assert_source(ROOT, revision, complete_checkout=True)
+    except ServiceError as exc:
+        raise ReleaseError(f"native print reference needs the clean source checkout: {exc}") from exc
+
+
+def _native_reference_loader():
+    """Only a separately authenticated workflow result can supply native source transports."""
+    directory = os.environ.get("TRIPTYCH_NATIVE_REFERENCE_DIR")
+    digest = os.environ.get("TRIPTYCH_NATIVE_REFERENCE_SHA256")
+    if directory is None and digest is None:
+        return None
+    if not directory or not re.fullmatch(r"[a-f0-9]{64}", digest or ""):
+        raise ReleaseError("native print reference requires a directory and an authenticated SHA-256")
+    run_id = os.environ.get("GITHUB_RUN_ID", "")
+    attempt = os.environ.get("GITHUB_RUN_ATTEMPT", "")
+    push_sha = os.environ.get("GITHUB_SHA", "")
+    if (os.environ.get("GITHUB_ACTIONS") != "true" or not re.fullmatch(r"[1-9][0-9]*", run_id)
+            or not re.fullmatch(r"[1-9][0-9]*", attempt)
+            or not re.fullmatch(r"[a-f0-9]{40}", push_sha)):
+        raise ReleaseError("native print reference needs the current GitHub Actions run, attempt, and revision")
+
+    def load(*, root, documents, revision):
+        if revision != push_sha:
+            raise ReleaseError("native print reference revision differs from the current checkout")
+        from _native_print_reference import load_reference_catalog
+        return load_reference_catalog(Path(directory), root=root, documents=documents, revision=revision,
+                                      run_id=run_id, run_attempt=attempt, expected_sha256=digest)
+    return load
+
+
 def native_tex_catalog() -> dict:
     empty = {"selections": {}, "assets": {}, "source_paths": []}
     if not native_tex_declared():
@@ -5694,7 +5754,10 @@ def native_tex_catalog() -> dict:
             return native_tex_catalog()
     def derive():
         from _native_tex_publication import catalog
-        return catalog(ROOT, assembly=document_assembly())
+        reference = _native_reference_loader()
+        if reference is None:
+            return catalog(ROOT, assembly=document_assembly())
+        return catalog(ROOT, assembly=document_assembly(), source_loader=reference)
     return held_source_inventory("native-tex-catalog", derive)
 
 
@@ -7750,6 +7813,7 @@ def main() -> int:
         action="store_true",
         help="with build, require and verify existing browser products without generating them",
     )
+    parser.add_argument("--figure-runner", help="with build, prepare the web figures using host or docker:<image>")
     parser.add_argument("--provider", help="with check --document, select one proper's provider")
     parser.add_argument("--document", help="with check --provider, select this canonical proper's three source outputs")
     with_examples(parser, tuple(e for verb in EXAMPLES for e in EXAMPLES[verb]))
@@ -7764,11 +7828,13 @@ def main() -> int:
             raise ReleaseError(f"--preview is not meaningful with {args.command}")
         if args.prepared_products and args.command != "build":
             raise ReleaseError("--prepared-products is valid only for build")
+        if args.figure_runner is not None and args.command != "build":
+            raise ReleaseError("--figure-runner is valid only for build")
         if args.command == "build" and not args.prepared_products:
             prepare_browser_products()
         # One command, one scan of the copied browser/data inputs, released
         # when this command ends. See `held_repository_inputs`.
-        with held_repository_inputs():
+        with held_repository_inputs(prefetch_web=args.command in {"build", "verify"}):
             manifest = load_manifest()
             installed_scope = None
             if args.provider or args.document:
@@ -7792,6 +7858,19 @@ def main() -> int:
                     print("publication scope: " + ", ".join(leaf for _, leaf in sorted(installed_scope)))
                     print("This source-policy check is not a deployment verification.")
             elif args.command == "build":
+                if args.figure_runner is not None:
+                    from _web_edition_figures import FigureError
+                    from _web_figure_build import prepare
+                    products = held_browser_products()
+                    if products is None:
+                        raise ReleaseError("web figures require verified web-edition products")
+                    candidates = os.environ.get("TRIPTYCH_WEB_FIGURE_CANDIDATES")
+                    try:
+                        report = prepare(ROOT, products, web_figures_root(), runner=args.figure_runner,
+                                         candidates=Path(candidates) if candidates is not None else None)
+                    except FigureError as error:
+                        raise ReleaseError(f"web-edition figures: {error}") from error
+                    print(json.dumps(report, sort_keys=True))
                 output = build_site(manifest, publications, args.preview)
                 verify_command = "verify --preview" if args.preview else "verify"
                 print(

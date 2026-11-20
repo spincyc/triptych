@@ -86,15 +86,21 @@ def _git(root: Path, *arguments: str) -> str:
     return result.stdout.strip()
 
 
-def assert_source(root: Path, revision: str) -> None:
+def assert_source(root: Path, revision: str, *, complete_checkout: bool = False) -> None:
     """Refuse drift and uncommitted source changes, including added source inputs."""
     if _git(root, "rev-parse", "HEAD") != revision:
         raise ServiceError("The compiler source revision changed; restart the service.", 409)
-    # Ignored compiler output may be writable, but it cannot become source.
+    # The hosted compiler has a bounded set of source directories. A Pages
+    # reference additionally depends on discovery over the canonical checkout.
+    roots = () if complete_checkout else ("src", "release", "scripts", "tools", "Makefile")
     if (_git(root, "status", "--porcelain=v1", "--untracked-files=no")
-            or _git(root, "ls-files", "--others", "--exclude-standard", "--",
-                    "src", "release", "scripts", "tools", "Makefile")):
+            or _git(root, "ls-files", "--others", "--directory", "--no-empty-directory",
+                    "--exclude-standard", "--", *roots)):
         raise ServiceError("The compiler source snapshot has uncommitted changes.", 503)
+    if complete_checkout and _git(root, "ls-files", "--others", "--ignored", "--exclude-standard",
+                                  "--directory", "--no-empty-directory", "--", "src", "release",
+                                  "scripts", "tools", "library", "workflows", "guidance", ".github"):
+        raise ServiceError("The native reference checkout has ignored files in a canonical source directory.", 503)
 
 
 def admitted_selections(root: Path) -> dict:

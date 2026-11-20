@@ -391,7 +391,8 @@ def build_catalog(root: Path, *, documents: dict, revision: str,
             "assets": dict(sorted(assets.items())), "source_paths": source_paths}
 
 
-def catalog(root: Path, *, documents=None, revision=None, scratch_root=None, assembly=None) -> dict:
+def catalog(root: Path, *, documents=None, revision=None, scratch_root=None,
+            assembly=None, source_loader=None) -> dict:
     """Derive offline.  Callers may hold it only within one source snapshot.
 
     `assembly` lets the caller share its operation-scoped document assembly.
@@ -403,8 +404,11 @@ def catalog(root: Path, *, documents=None, revision=None, scratch_root=None, ass
     root = Path(root).resolve()
     documents = admitted_documents(root) if documents is None else documents
     revision = source_revision(root) if revision is None else revision
-    sources = prepare_catalog(root, scratch_root=scratch_root,
-                              documents=documents, revision=revision, assembly=assembly)
+    if source_loader is None:
+        sources = prepare_catalog(root, scratch_root=scratch_root,
+                                  documents=documents, revision=revision, assembly=assembly)
+    else:
+        sources = source_loader(root=root, documents=documents, revision=revision)
     # The release dispositions and web declarations decide the admitted universe.
     sources["source_paths"] = sorted({*sources["source_paths"], *admission_inputs(root)})
     return build_catalog(root, documents=documents, revision=revision,

@@ -2620,6 +2620,25 @@ class PublicAlphaTest(unittest.TestCase):
                     str(failure.exception),
                 )
 
+    def test_protected_ids_match_the_decoded_value_and_exact_token_boundaries(self):
+        relative = "src/web/data/structure/propers/identities.json"
+        manifest = "src/sources/works/test/id/editions/test/artifacts/data/artifact.toml"
+        for identity in ("artifact.fixture.secret", "artifact.Fixture+secret"):
+            self.write(manifest, (f'id = "{identity}"\nedition_id = "edition.id"\n'
+                                  'rights_status = "licensed"\n').encode())
+            self.tool._PROTECTED_IDENTITY_PATTERNS.clear()
+            self.tool._PROTECTED_IDENTITY_MARKERS.clear()
+            for text, blocked in ((f"({identity})", True), (identity + ".longer", False),
+                                  ("x" + identity, False), (" " + identity + "/", True)):
+                with self.subTest(text=text):
+                    raw = json.dumps({"notes": text}).replace("artifact.", r"artifact\u002e")
+                    self.write(relative, raw.encode())
+                    if blocked:
+                        with self.assertRaisesRegex(self.tool.ReleaseError, "protected source identity"):
+                            self.tool.validate_liturgical_public_data(self.root / relative)
+                    else:
+                        self.tool.validate_liturgical_public_data(self.root / relative)
+
     def test_liturgy_quarantine_rejects_metadata_free_exact_text_value(self) -> None:
         for relative in (
             "src/web/data/structure/propers/test.json",
