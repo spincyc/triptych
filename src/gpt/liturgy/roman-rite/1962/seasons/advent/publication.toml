@@ -1,0 +1,30 @@
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"
+
+[document]
+type = "liturgy-reference-v1"
+
+[document.main]
+pdftitle = "Advent: Keeping Watch for Christ"
+pdfsubject = "A seasonal primer on the history, prayer, and Sundays of Advent in the 1962 Roman Rite and on preparing for Christmas."
+pdfkeywords = "Advent, 1962 Roman Rite, Church Fathers, prayer, fasting, Christmas"
+title-style = "series-detail"
+series-line = "A Triptych Seasonal Primer"
+title = "Advent"
+subtitle = "Keeping Watch for Christ"
+title-detail = '''A primer for the 1962 Roman Rite'''
+body = [
+  "sections/05-before-advent",
+  "sections/10-the-coming",
+  "sections/12-history",
+  "sections/20-keeping-advent",
+  "sections/30-through-advent",
+  "sections/40-bethlehem",
+]
+apparatus = [
+  "sections/90-daily-readings",
+  "sections/92-prayers",
+  { source = "sections/95-about", roles = ["scope-appendix"] },
+  { source = "sections/99-references", roles = ["references"] },
+]

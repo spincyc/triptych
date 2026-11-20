@@ -1,8 +1,8 @@
 classification_schema = 1
 record_type = "publication-source-classification-review"
-audited_on = "2026-11-09"
-publication_snapshot = "sha256:5262dc31ff36458d9ad31d553f3cdd370cbc6d5ae4cd735570629f348552ca79"
-classification_snapshot = "sha256:210b310a398314ad0e288ea2a7b063f0cd0b9df97aebdce2e9fe844cd4dd2336"
+audited_on = "2026-11-20"
+publication_snapshot = "sha256:bfea686660b01b98ed6007e850c8e2cd1c31302f7dff5910a0146b8a29bd2b0d"
+classification_snapshot = "sha256:3fb9e328a4212d8169aaa4939776c938e948cdcc922053f8393fcba8be969000"
 
 [[classifications]]
 document = "articles/canon-law/clerical-celibacy-chastity-and-continence"
@@ -405,10 +405,6 @@ document = "liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epip
 source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "repository-internal", "scholastic", "scripture", "secondary"]
 
 [[classifications]]
-document = "liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost"
-source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "repository-internal", "scholastic", "scripture", "secondary"]
-
-[[classifications]]
 document = "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"
 source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "repository-internal", "scripture", "secondary"]
 
@@ -475,6 +471,10 @@ source_categories = ["finding-aid", "historical-primary", "institutional-current
 [[classifications]]
 document = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan"
 source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "secondary"]
+
+[[classifications]]
+document = "liturgy/roman-rite/1962/seasons/advent"
+source_categories = ["canon-law", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "prayer-devotional", "repository-internal", "scripture"]
 
 [[classifications]]
 document = "liturgy/roman-rite/comparative/two-missals-one-sacrifice"

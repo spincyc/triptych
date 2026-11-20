@@ -29,8 +29,8 @@ spiritual director.
   season in liturgical-year order and with no two-digit ID cell (that pattern
   belongs to the Proper of Time). The Sunday Propers Calendar may cue a primer
   without owning it: the Advent primer, whose season opens that table, is cued
-  by one italic line above the table, carrying a
-  `triptych-publication-reference` marker, and a ◇ note after the † and §
+  by one italic lead-in above the table, carrying a
+  `triptych-publication-reference` marker for each edition link, and a ◇ note after the † and §
   notes
   ([reader list presentation](roman-1962-propers.md#reader-list-presentation)).
   The cue for a later season is decided when that primer is added.
@@ -53,6 +53,11 @@ spiritual director.
 4. Own the season, not its Masses; give the reader something to do each day.
 5. Keep law, custom and counsel distinct and accurate, without letting the
    law's apparatus displace the teaching.
+
+Give each subject as much space as its sources and teaching warrant. A
+reader can keep the daily rule while reading the full study in stages.
+When preparing a synopsis, draw its teaching and citations from the
+reviewed full study.
 
 ## Boundary with the proper guides
 
@@ -152,6 +157,10 @@ A primer is built so that it cannot fail that way again:
 - Each chapter teaches one thing in order and hands the reader to the next.
   Nothing is introduced twice; no closing label recurs from chapter to
   chapter.
+- Read the rule of life as a person about to try it tomorrow. Give a time
+  tied to an ordinary part of the day, a prayer or passage the reader can
+  find, and a way to resume after a missed day. Give more time and fuller
+  prayer as ways of keeping the same rule.
 - Dates of a particular year, page references and editions stay out of the
   body; the daily table and the appendix hold them.
 

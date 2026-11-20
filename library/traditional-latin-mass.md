@@ -27,7 +27,7 @@ prayer and penance. Each Sunday's Mass stays with its guide in the
 
 | Season | ChatGPT | Claude | Focus |
 | --- | --- | --- | --- |
-| **Advent** | — | [Read](../web/claude/liturgy/roman-rite/1962/seasons/advent.html) | The Lord's three comings and how the Church came to keep the season; the four Sundays, the Ember Days, the last days and the Vigil with their stations and the Fathers; prayer, fasting and almsgiving, a graded rule of life and confession; daily readings and the prayers of the season. |
+| **Advent** | [Advent: Keeping Watch for Christ](../web/gpt/liturgy/roman-rite/1962/seasons/advent.html) | [Advent: A Primer for the Season of the Lord's Coming](../web/claude/liturgy/roman-rite/1962/seasons/advent.html) | The history of Advent, its Sundays and winter Ember Days, daily prayer and penance, and the journey to Christmas. |
 
 <a id="altar-server-guides"></a>
 ## Altar Server Guides
@@ -116,7 +116,7 @@ shared readings; a dedicated guide to the winter formulary remains planned.
 <!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost -->
 <!-- triptych-publication-id: claude:liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost -->
 
-*Before the season:* [Advent: A Primer](../web/claude/liturgy/roman-rite/1962/seasons/advent.html) ◇ <!-- triptych-publication-reference: claude:liturgy/roman-rite/1962/seasons/advent -->
+*Advent primer* · [ChatGPT](../web/gpt/liturgy/roman-rite/1962/seasons/advent.html) · [Claude](../web/claude/liturgy/roman-rite/1962/seasons/advent.html) ◇ <!-- triptych-publication-reference: liturgy/roman-rite/1962/seasons/advent --> <!-- triptych-publication-reference: claude:liturgy/roman-rite/1962/seasons/advent -->
 
 | ID | Sunday | ChatGPT | Claude |
 | ---: | --- | --- | --- |

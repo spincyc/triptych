@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.roman-calendar.chronography-of-354-depositio-martyrum.mommsen-1892-latin.primary-text-c218b393"
+edition_id = "edition.roman-calendar.chronography-of-354-depositio-martyrum.mommsen-1892-latin"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Complete manuscript-derived Latin list as printed in the public-domain 1892 Mommsen edition. The checked diplomatic transcription and layout normalization add no editorial text to the source."
+rights_jurisdiction = "United States"
+provenance = "Print-image-checked against PDF pages 87 and 88 of the exact 1892 primary witness. The Internet Archive text layer and the Pearse HTML transcription supplied locating and comparison aids. The PDF images control the reading. Pearse omits some lines that are supplied by the print source here, such as the commemoration at the Pretextatae on p. 71."
+retrieved = "2026-11-20"
+sha256 = "c218b39384330e70c3620bbf537cf553587daf2b174f092eb8e0c445a6a6b6e5"
+byte_size = 2031
+path = "src/sources/works/roman-calendar/chronography-of-354-depositio-martyrum/editions/1892-mommsen-latin/artifacts/primary-text-c218b393/depositio-martirum.txt"
+encoding = "utf-8"
+indexable = true
+derived_from = "artifact.roman-calendar.chronography-of-354-depositio-martyrum.mommsen-1892-latin.ia-facsimile-1421d388"
+transformation = "Join the date and the commemoration of each entry, preserve the order of entries and month headings, normalize small-cap numerals to capitals, join column continuations and line-end hyphenation, and prefix each UTF-8 output line with its printed page."
+notes = "36 lines cover the entire primary body of section XII, from the manuscript title and first entry on p. 71 through the last entry on p. 72. Running heads, manuscript folio and line number marks, Mommsen's prefatory paragraph and the critical apparatus are outside this representation and remain available in the complete parent artifact."

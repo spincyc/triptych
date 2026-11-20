@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-11-20"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:711e57f0743fde9c59b9713e5d9e99844f22f15cd4a236067afa8b3a95a72399"
+inventory_snapshot = "sha256:fac44c6264133bf587d583b5841c86d98cdcb0023a177ddaf4136a530e41bf33"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
-classification_snapshot = "sha256:210b310a398314ad0e288ea2a7b063f0cd0b9df97aebdce2e9fe844cd4dd2336"
-canonical_catalog_snapshot = "sha256:364bf492764665dde7172c9ce9d8d5dd6038122cd89b521c1fa4b733d99f6974"
+classification_snapshot = "sha256:3fb9e328a4212d8169aaa4939776c938e948cdcc922053f8393fcba8be969000"
+canonical_catalog_snapshot = "sha256:bb395aea4b3c76e72885fca456a675d2ced814e46a231dd2e07b0e4f5d23d730"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:748e6659232b6956ca61ad47324fd6f8fe2f39dab86e62360a60bfa1dd9a0fc3"
+snapshot = "sha256:0ac99ea16b40eb251e37c213fea890c1acb99ef754fee4085e95a21cf8cdaff7"
 families = []
 
 [[review_units]]
@@ -512,11 +512,6 @@ surface_snapshot = "sha256:392aa87f957d6cb8a8b52f565ba1870a9d45c7259cccf5081a7e5
 review_state = "pending"
 
 [[review_units]]
-owner_id = "liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost"
-surface_snapshot = "sha256:bace60cd39588eb1ac2627dadb404a8990e2b45a604943406188c2e91539761b"
-review_state = "pending"
-
-[[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"
 surface_snapshot = "sha256:07184153452aa700f74c5aebc2af7c83737f9b16b70b2639fdf902d65f143ecb"
 review_state = "pending"
@@ -599,6 +594,11 @@ review_state = "pending"
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan"
 surface_snapshot = "sha256:3f6eaf84357cb6a2208c8fd142db6a9a41ba57bbab146de9c9edce52d784952e"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "liturgy/roman-rite/1962/seasons/advent"
+surface_snapshot = "sha256:59e5b6a2dcb5e383d8e74c0e9a1b3a90f0c124ae251832eb02dca15ec21b3dfa"
 review_state = "pending"
 
 [[review_units]]
