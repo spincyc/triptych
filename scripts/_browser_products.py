@@ -7,6 +7,7 @@ whole operation, so changing a cache pathname cannot change bytes being served.
 from __future__ import annotations
 
 import argparse
+from concurrent.futures import ThreadPoolExecutor
 from contextlib import contextmanager
 from contextvars import ContextVar
 from dataclasses import dataclass
@@ -858,9 +859,9 @@ def verified_products(root: Path, *, cache_root=None, product_ids=None) -> Itera
             _HELD.reset(token)
 
 
-def _generate(root, out, product_ids=None, *, cached_editions=None):
+def _generate(root, out, product_ids=None, *, cached_editions=None, record_jobs=None):
     from _browser_product_recipes import generate
-    generate(root, out, product_ids=product_ids, cached_editions=cached_editions)
+    generate(root, out, product_ids=product_ids, cached_editions=cached_editions, record_jobs=record_jobs)
 
 
 def _install(root, product, generated, cache_root, *, source_files=None):
@@ -1099,6 +1100,33 @@ def _family_products(files, recipes, inputs):
     return products
 
 
+def _record_passes(root, first, second, ids):
+    """Generate and inventory each proof separately before adopting either."""
+    # Before Python 3.13 a child cannot inherit a CPU-count limit. Keep the
+    # original serial passes there. Also respect the real affinity when the
+    # caller's PYTHON_CPU_COUNT is larger than the available machine.
+    process_count = getattr(os, "process_cpu_count", None)
+    available = (process_count() or 1) if process_count else None
+    if available is not None and hasattr(os, "sched_getaffinity"):
+        available = min(available, len(os.sched_getaffinity(0)))
+
+    def generate(out, jobs):
+        _generate(root, out, ids, record_jobs=jobs)
+        return _inventory(out)
+
+    if available is None or available < 4:
+        outputs = generate(first, available)
+        replay = generate(second, available)
+    else:
+        with ThreadPoolExecutor(max_workers=2) as pool:
+            first_run = pool.submit(generate, first, (available + 1) // 2)
+            second_run = pool.submit(generate, second, available // 2)
+            outputs = first_run.result()
+            replay = second_run.result()
+    _compare(replay, outputs)
+    return outputs
+
+
 def record(root: Path, *, cache_root=None) -> dict:
     root = _safe_directory(root)
     descriptor_before = _read(root, MANIFEST_RELATIVE) if os.path.lexists(root / MANIFEST_RELATIVE) else None
@@ -1130,10 +1158,7 @@ def record(root: Path, *, cache_root=None) -> dict:
         if changed:
             first, second = Path(temporary) / "first", Path(temporary) / "second"
             ids = [recipe["id"] for recipe in changed]
-            _generate(root, first, ids)
-            outputs = _inventory(first)
-            _generate(root, second, ids)
-            _compare(_inventory(second), outputs)
+            outputs = _record_passes(root, first, second, ids)
             products = _family_products(outputs, changed, family_inputs)
         else:
             products = []

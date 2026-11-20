@@ -8,6 +8,7 @@ from pathlib import Path
 import shutil
 import sys
 import tempfile
+import threading
 import subprocess
 import unittest
 from unittest.mock import patch
@@ -41,7 +42,7 @@ class BrowserProductsTests(unittest.TestCase):
         self.manifest = products.record(self.root, cache_root=self.cache)
         self.generated.clear()
 
-    def generate(self, root, out, product_ids=None):
+    def generate(self, root, out, product_ids=None, *, record_jobs=None):
         self.generated.append(tuple(product_ids or ("a", "b")))
         self.assertFalse((root / "src/web/data").exists())
         for family in product_ids or ("a", "b"):
@@ -63,6 +64,73 @@ class BrowserProductsTests(unittest.TestCase):
         products.record(self.root, cache_root=self.cache)
         self.assertEqual(self.generated, [("a", "b"), ("a", "b")])
         self.assertIs(self.manifest["editorial_approval"], False)
+
+    def test_record_splits_one_cpu_budget_between_independent_passes(self):
+        both = threading.Barrier(2, timeout=5)
+        calls = {}
+        def generate(root, out, ids, *, record_jobs):
+            calls[out.name] = (out, record_jobs)
+            both.wait()
+            self.generate(root, out, ids)
+
+        with patch.object(products.os, "process_cpu_count", create=True, return_value=8), \
+             patch.object(products.os, "sched_getaffinity", create=True, return_value=set(range(5))), \
+             patch.object(products, "_generate", side_effect=generate):
+            shutil.rmtree(self.cache)
+            result = products.record(self.root, cache_root=self.cache)
+        self.assertEqual(result, self.manifest)
+        self.assertEqual(calls["first"][1], 3)
+        self.assertEqual(calls["second"][1], 2)
+        self.assertNotEqual(calls["first"][0], calls["second"][0])
+        self.assertEqual(self.generated, [("a", "b"), ("a", "b")])
+
+    def test_limited_record_runs_passes_in_order_and_preserves_descriptor_on_failure(self):
+        descriptor = (self.root / products.MANIFEST_RELATIVE).read_bytes()
+        calls = []
+        def generate(root, out, ids, *, record_jobs):
+            calls.append((out.name, record_jobs, threading.get_ident()))
+            if out.name == "second":
+                raise products.ProductError("second pass refused")
+            self.generate(root, out, ids)
+
+        with patch.object(products.os, "process_cpu_count", create=True, return_value=2), \
+             patch.object(products.os, "sched_getaffinity", create=True, return_value=set(range(8))), \
+             patch.object(products, "_generate", side_effect=generate), patch.object(products, "_install") as install:
+            shutil.rmtree(self.cache)
+            with self.assertRaisesRegex(products.ProductError, "second pass refused"):
+                products.record(self.root, cache_root=self.cache)
+        self.assertEqual(calls, [(name, 2, threading.get_ident()) for name in ("first", "second")])
+        self.assertEqual(descriptor, (self.root / products.MANIFEST_RELATIVE).read_bytes())
+        install.assert_not_called()
+
+    def test_older_interpreter_preserves_the_original_serial_recipe_schedule(self):
+        calls = []
+        def generate(root, out, ids, *, record_jobs):
+            calls.append((out.name, record_jobs, threading.get_ident()))
+            self.generate(root, out, ids)
+
+        with patch.object(products.os, "process_cpu_count", create=True, new=None), \
+             patch.object(products, "_generate", side_effect=generate):
+            shutil.rmtree(self.cache)
+            self.assertEqual(products.record(self.root, cache_root=self.cache), self.manifest)
+        self.assertEqual(calls, [(name, None, threading.get_ident()) for name in ("first", "second")])
+
+    def test_concurrent_record_reports_the_first_pass_failure_and_joins_both(self):
+        second_failed = threading.Event()
+        def fail(root, out, ids, *, record_jobs):
+            if out.name == "second":
+                second_failed.set()
+            else:
+                self.assertTrue(second_failed.wait(timeout=5))
+            raise products.ProductError(out.name + " failed")
+
+        with patch.object(products.os, "process_cpu_count", create=True, return_value=4), \
+             patch.object(products.os, "sched_getaffinity", create=True, return_value=set(range(4))), \
+             patch.object(products, "_generate", side_effect=fail), patch.object(products, "_install") as install:
+            shutil.rmtree(self.cache)
+            with self.assertRaisesRegex(products.ProductError, "first failed"):
+                products.record(self.root, cache_root=self.cache)
+        install.assert_not_called()
 
     def test_check_hit_never_generates(self):
         products.check(self.root, cache_root=self.cache)
@@ -274,9 +342,9 @@ class BrowserProductsTests(unittest.TestCase):
     def test_two_build_disagreement_never_writes_descriptor(self):
         before = (self.root / products.MANIFEST_RELATIVE).read_bytes()
         shutil.rmtree(self.cache)
-        def nondeterministic(root, out, ids):
+        def nondeterministic(root, out, ids, *, record_jobs):
             self.generate(root, out, ids)
-            (out / "structure/a/index.json").write_text(str(len(self.generated)))
+            (out / "structure/a/index.json").write_text(json.dumps(out.name))
         with patch.object(products, "_generate", side_effect=nondeterministic):
             with self.assertRaises(products.ProductError):
                 products.record(self.root, cache_root=self.cache)
@@ -422,9 +490,10 @@ class BrowserProductsTests(unittest.TestCase):
     def test_descriptor_change_during_record_is_not_overwritten(self):
         changed = self.root / products.MANIFEST_RELATIVE
         original_generate = self.generate
-        def editing(root, out, ids):
+        def editing(root, out, ids, *, record_jobs):
             original_generate(root, out, ids)
-            changed.write_text("concurrent descriptor edit")
+            if out.name == "first":
+                changed.write_text("concurrent descriptor edit")
         shutil.rmtree(self.cache)
         with patch.object(products, "_generate", side_effect=editing):
             with self.assertRaisesRegex(products.ProductError, "descriptor changed"):
@@ -988,7 +1057,7 @@ class BrowserCandidateReuseTests(unittest.TestCase):
         self.recipes[0].update(id="web-editions", output_prefixes=["web-editions"], delivery="site-build")
         calls = []
         fixed = "web-editions/gpt/fixed.json"
-        def generate(root, out, ids, *, cached_editions=None):
+        def generate(root, out, ids, *, cached_editions=None, record_jobs=None):
             calls.append(cached_editions)
             self.assertEqual(ids, ["web-editions"])
             (out / "web-editions/gpt").mkdir(parents=True)

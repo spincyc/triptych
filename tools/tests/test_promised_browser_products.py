@@ -60,7 +60,7 @@ class PromisedBrowserProductsTests(unittest.TestCase):
         path.write_text(text)
         return path
 
-    def generate(self, root, out, product_ids=None):
+    def generate(self, root, out, product_ids=None, *, record_jobs=None):
         path = out / "structure/demo/index.json"
         path.parent.mkdir(parents=True)
         path.write_text(json.dumps({"text": "Exact fixture words."}) + "\n")

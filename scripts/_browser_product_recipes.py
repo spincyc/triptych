@@ -226,9 +226,11 @@ def _files(out: Path) -> set[str]:
     return found
 
 
-def _run(root: Path, out: Path, recipe: dict, environment: dict, *, cached_editions=None) -> None:
+def _run(root: Path, out: Path, recipe: dict, environment: dict, *, cached_editions=None, reader_jobs=None) -> None:
     arguments = [value.replace("{root}", str(root)).replace("{out}", str(out)) for value in recipe["argv"]]
     arguments[0] = str(root / arguments[0])
+    if reader_jobs is not None:
+        arguments.extend(["--jobs", str(reader_jobs)])
     if "--out" not in arguments:
         arguments.extend(["--out", str(out)])
     program = _COLD_INPUT_GUARD + (
@@ -276,7 +278,7 @@ print(json.dumps(owner["build_products"](Path(sys.argv[3]), cached=cached)))
         print(f"web-editions: {finished.stdout.strip()}", file=sys.stderr, flush=True)
 
 
-def generate(root: Path, out: Path, product_ids=None, *, environment=None, cached_editions=None) -> dict:
+def generate(root: Path, out: Path, product_ids=None, *, environment=None, cached_editions=None, record_jobs=None) -> dict:
     """Derive selected families offline; omitted families never enter staging.
 
     Cross-layer checks consume product dependencies only after generation.
@@ -284,8 +286,11 @@ def generate(root: Path, out: Path, product_ids=None, *, environment=None, cache
     Source parsers may share newly populated process caches, but inherited
     stat-keyed disk caches and stale Python bytecode cannot seed a cold build.
     `environment` adds variables for an observer such as the input audit; it
-    cannot re-enable a cache or bytecode this function disables.
+    cannot re-enable a cache or bytecode this function disables. A recording
+    pass shares its assigned CPU budget between families and reader conversions.
     """
+    if record_jobs is not None and (record_jobs < 1 or cached_editions):
+        raise RecipeError("a recording pass requires a positive job budget and cold editions")
     _validate_recipes(list(RECIPES))
     root, out = Path(root).resolve(), Path(out).absolute()
     if out.is_symlink() or out == root / "src/web/data":
@@ -320,11 +325,23 @@ def generate(root: Path, out: Path, product_ids=None, *, environment=None, cache
         # run one after another they left all but one core idle. Collection
         # stays in recipe order, so which failure is reported, and everything
         # moved into `out`, does not depend on scheduling.
-        with ThreadPoolExecutor(max_workers=len(selected)) as pool:
+        order = selected
+        workers = len(selected)
+        if record_jobs is not None:
+            # Start the long reader pool alongside its siblings. Limit the
+            # number of memory-heavy family writers in each independent pass.
+            order = sorted(selected, key=lambda recipe: recipe["id"] != "web-editions")
+            workers = min(3, record_jobs, len(selected))
+            # Reader forks get their explicit slots below. Nested projection
+            # pools inside any one child must not claim those slots again.
+            environment["PYTHON_CPU_COUNT"] = "1"
+        with ThreadPoolExecutor(max_workers=workers) as pool:
             runs = {}
-            for recipe in selected:
+            for recipe in order:
                 name = recipe["id"]
                 options = {"cached_editions": cached_editions} if name == "web-editions" and cached_editions else {}
+                if record_jobs is not None and name == "web-editions":
+                    options["reader_jobs"] = record_jobs - workers + 1
                 runs[name] = pool.submit(_run, root, Path(state) / name, recipe, environment, **options)
         for recipe in selected:
             runs[recipe["id"]].result()

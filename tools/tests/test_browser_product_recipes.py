@@ -118,9 +118,15 @@ class RecipeTests(unittest.TestCase):
             self.assertNotIn("knox", {edition["id"] for edition in manifest["bibles"]})
 
     def test_independent_passes_cannot_inherit_parser_or_bytecode_caches(self):
+        from concurrent.futures import ThreadPoolExecutor
+        import threading
         environments = []
+        both = threading.Barrier(2, timeout=5)
         def capture(root, out, recipe, environment):
             environments.append(environment.copy())
+            cache = Path(environment["TRIPTYCH_LIBRARY_CACHE_DIR"])
+            cache.mkdir()  # both passes must own a new empty cache
+            both.wait()
             (out / "bibles.json").write_text('{"bibles": []}')
         inherited = {key: "1" for key in (
             "TRIPTYCH_CORPUS_CACHE", "TRIPTYCH_YAML_CACHE",
@@ -128,8 +134,11 @@ class RecipeTests(unittest.TestCase):
         )}
         inherited.update(PYTHONPYCACHEPREFIX="old-python-cache", TRIPTYCH_LIBRARY_CACHE_DIR="old-library-cache")
         with tempfile.TemporaryDirectory(dir=SCRATCH) as temporary, patch.dict(os.environ, inherited), patch.object(recipes, "_run", side_effect=capture):
-            for name in ("first", "second"):
-                recipes.generate(ROOT, Path(temporary) / name, ["bibles"])
+            with ThreadPoolExecutor(max_workers=2) as pool:
+                runs = [pool.submit(recipes.generate, ROOT, Path(temporary) / name, ["bibles"], record_jobs=1)
+                        for name in ("first", "second")]
+                for run in runs:
+                    run.result()
         self.assertEqual(len(environments), 2)
         for environment in environments:
             for name in inherited:
@@ -166,6 +175,43 @@ class RecipeTests(unittest.TestCase):
              patch.object(recipes, "_run", side_effect=failing):
             with self.assertRaisesRegex(recipes.RecipeError, "second failed"):
                 recipes.generate(ROOT, Path(temporary) / "data")
+
+    def test_record_bounds_family_processes_and_assigns_remaining_slots_to_readers(self):
+        import threading
+        # The web family is last in canonical order and must start alongside
+        # siblings, without changing the order in which results are consumed.
+        names = ["a", "b", "c", "web-editions"]
+        table = tuple(recipes._recipe(name, f"structure/{name}", [f"scripts/{name}.py"], ["src/sources"],
+                                      delivery="browser-data") for name in names)
+        web = threading.Event()
+        limits = {}
+        def run(root, out, recipe, environment, *, reader_jobs=None):
+            name = recipe["id"]
+            if name == "web-editions":
+                web.set()
+            else:
+                self.assertTrue(web.wait(timeout=5))
+            limits[name] = (environment["PYTHON_CPU_COUNT"], reader_jobs)
+            target = out / "structure" / name / "index.json"
+            target.parent.mkdir(parents=True)
+            target.write_text("{}")
+
+        with tempfile.TemporaryDirectory(dir=SCRATCH) as temporary, patch.object(recipes, "RECIPES", table), \
+             patch.object(recipes, "ThreadPoolExecutor", wraps=recipes.ThreadPoolExecutor) as pool, \
+             patch.object(recipes, "_run", side_effect=run):
+            report = recipes.generate(ROOT, Path(temporary) / "data", record_jobs=5)
+        self.assertEqual([item["id"] for item in report["products"]], names)
+        pool.assert_called_once_with(max_workers=3)
+        self.assertEqual(limits, {"a": ("1", None), "b": ("1", None), "c": ("1", None), "web-editions": ("1", 3)})
+
+    def test_cold_reader_command_receives_the_explicit_budget(self):
+        recipe = next(item for item in recipes.RECIPES if item["id"] == "web-editions")
+        with tempfile.TemporaryDirectory(dir=SCRATCH) as temporary, patch.object(recipes.subprocess, "run") as run:
+            run.return_value.returncode = 0
+            recipes._run(ROOT, Path(temporary), recipe, {}, reader_jobs=3)
+        command = run.call_args.args[0]
+        self.assertEqual(command[command.index("--jobs") + 1], "3")
+        self.assertIsNone(run.call_args.kwargs["input"])
 
     def test_a_wrong_family_output_cannot_enter_staging(self):
         def wrong(root, out, recipe, environment):
