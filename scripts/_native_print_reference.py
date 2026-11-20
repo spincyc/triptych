@@ -18,6 +18,7 @@ from _native_print_compile import partition
 from _native_tex_publication import _source_pack_assets
 
 SCHEMA = "triptych-native-print-reference/v1"
+PUBLICATION_SCHEMA = "triptych-native-print-reference/v2"
 _DIGEST = re.compile(r"[0-9a-f]{64}\Z")
 _NUMBER = re.compile(r"[1-9][0-9]*\Z")
 _SOURCE = re.compile(r"native-tex/sources/[0-9a-f]{64}\.json\Z")
@@ -50,7 +51,7 @@ def _regular(path):
 
 
 def write_reference_catalog(directory: Path, catalog: dict, *, run_id: str, run_attempt: str,
-                            shard: tuple[int, int] | None = None) -> str:
+                            shard: tuple[int, int] | None = None, publication_parts: dict | None = None) -> str:
     """Atomically export a canonical catalog produced by this trusted operation."""
     revision = catalog["source_revision"]
     _origin(revision, run_id, run_attempt)
@@ -73,6 +74,8 @@ def write_reference_catalog(directory: Path, catalog: dict, *, run_id: str, run_
     manifest = {"schema": SCHEMA, "source_revision": revision, "run_id": run_id,
                 "run_attempt": run_attempt, "shard": list(shard) if shard else None,
                 "bundles": catalog["bundles"], "checkout_assets": checkout_assets}
+    if publication_parts is not None:
+        manifest.update(schema=PUBLICATION_SCHEMA, publication_parts=publication_parts)
     manifest_bytes = bundles.canonical(manifest) + b"\n"
     with tempfile.TemporaryDirectory(dir=directory.parent) as temporary:
         stage = Path(temporary) / "reference"
@@ -106,24 +109,48 @@ def _inventory(directory):
     return paths
 
 
-def _read_reference(directory, *, root, documents, revision, run_id, run_attempt, expected_sha256,
-                    shard, source_inputs):
-    """Read one sealed artifact. For shards, restore the pre-sharing representation."""
+def _manifest(directory, revision, run_id, run_attempt, expected_sha256, shard):
     directory = _directory(directory)
     _need(isinstance(expected_sha256, str) and _DIGEST.fullmatch(expected_sha256),
           "invalid independent manifest digest")
     body = _regular(directory / "catalog.json").read_bytes()
     _need(bundles._sha(body) == expected_sha256, "manifest digest differs from its authenticated artifact")
     manifest = json.loads(body)
-    _need(isinstance(manifest, dict) and set(manifest) == {
-        "schema", "source_revision", "run_id", "run_attempt", "shard", "bundles", "checkout_assets"}
-        and manifest["schema"] == SCHEMA and manifest["source_revision"] == revision
+    fields = {"schema", "source_revision", "run_id", "run_attempt", "shard", "bundles", "checkout_assets"}
+    if isinstance(manifest, dict) and manifest.get("schema") == PUBLICATION_SCHEMA:
+        fields.add("publication_parts")
+    _need(isinstance(manifest, dict) and set(manifest) == fields
+        and manifest["schema"] in {SCHEMA, PUBLICATION_SCHEMA} and manifest["source_revision"] == revision
         and manifest["run_id"] == run_id, "wrong reference schema, revision or workflow run")
     attempt = manifest["run_attempt"]
     _need(isinstance(attempt, str) and _NUMBER.fullmatch(attempt) and
           (int(attempt) <= int(run_attempt) if shard else attempt == run_attempt),
           "wrong reference run attempt")
     _need(manifest["shard"] == (list(shard) if shard else None), "wrong shard assignment")
+    return manifest
+
+
+def publication_parts(directory, *, revision, run_id, run_attempt, expected_sha256):
+    """Read the publication portions of this consumer's separately authenticated merged catalog."""
+    _origin(revision, run_id, run_attempt)
+    manifest = _manifest(directory, revision, run_id, run_attempt, expected_sha256, None)
+    _need(manifest["schema"] == PUBLICATION_SCHEMA, "missing authenticated publication source expectations")
+    return manifest["publication_parts"]
+
+
+def _read_reference(directory, *, root, documents, revision, run_id, run_attempt, expected_sha256,
+                    shard, source_inputs, collect_publications=None):
+    """Read one sealed artifact. For shards, restore the pre-sharing representation."""
+    directory = _directory(directory)
+    manifest = _manifest(directory, revision, run_id, run_attempt, expected_sha256, shard)
+    if collect_publications is not None:
+        number = str(shard[0])
+        about = manifest.get("publication_parts")
+        _need(isinstance(about, dict) and set(about) == {number}, "missing or unexpected publication partition")
+        part = about[number]
+        _need(isinstance(part, dict) and part.get("attempt") == manifest["run_attempt"],
+              "publication producer differs from native producer")
+        collect_publications[number] = part
     routes, omitted = manifest["bundles"], manifest["checkout_assets"]
     _need(isinstance(routes, dict) and routes and set(routes) == set(documents),
           "reference editions differ from the current admissions or partition")
@@ -216,7 +243,7 @@ def load_reference_catalog(directory: Path, *, root: Path, documents: dict, revi
 
 
 def merge_reference_catalogs(directory: Path, *, root: Path, documents: dict, revision: str, run_id: str,
-                             run_attempt: str, shards: int, expected_keys: dict) -> dict:
+                             run_attempt: str, shards: int, expected_keys: dict, publication_parts=None) -> dict:
     """Require every source-built partition and apply the full catalog's sharing policy once."""
     _origin(revision, run_id, run_attempt)
     directory, root = _directory(directory), Path(root).resolve()
@@ -229,7 +256,7 @@ def merge_reference_catalogs(directory: Path, *, root: Path, documents: dict, re
         editions, assets = _read_reference(directory / str(number), root=root, documents=selection,
                                            revision=revision, run_id=run_id, run_attempt=run_attempt,
                                            expected_sha256=expected_keys[str(number)], shard=(number, shards),
-                                           source_inputs=inputs)
+                                           source_inputs=inputs, collect_publications=publication_parts)
         prepared.update(editions)
         for route, body in assets.items():
             _need(artwork.setdefault(route, body) == body, "conflicting native artwork across shards")

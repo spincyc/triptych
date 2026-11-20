@@ -341,6 +341,7 @@ FIXED_ARTIFACT_INPUT_PATHS = {
     ".github/workflows/pages.yml",
     ".github/web-figure-digests.json",
     "scripts/_native_print_reference.py",
+    "scripts/_publication_source_reference.py",
     "scripts/_web_figure_build.py",
     "release/public-alpha/layout.html",
     "release/public-alpha/assets/site.css",
@@ -1040,6 +1041,32 @@ def publication_source_records() -> dict[tuple[str, str], tuple[dict, dict]]:
     return dict(held_source_inventory("publication-records", derive))
 
 
+def _hold_pages_publication_sources(shards: int) -> None:
+    """Verify and install this operation's independent current-run publication source expectations."""
+    if not _HELD_SOURCE_INVENTORIES or _native_reference_loader() is None:
+        raise ReleaseError("publication source reference requires a protected Pages operation")
+    from _native_print import admitted_documents
+    from _native_print_reference import publication_parts
+    from _publication_source_reference import verify_partitions
+    revision = os.environ["GITHUB_SHA"]
+    run_id, attempt = os.environ["GITHUB_RUN_ID"], os.environ["GITHUB_RUN_ATTEMPT"]
+    _require_reference_checkout(revision)
+    parts = publication_parts(Path(os.environ["TRIPTYCH_NATIVE_REFERENCE_DIR"]), revision=revision,
+                              run_id=run_id, run_attempt=attempt,
+                              expected_sha256=os.environ["TRIPTYCH_NATIVE_REFERENCE_SHA256"])
+    records, identities = verify_partitions(ROOT, admitted_documents(ROOT), revision, run_id, attempt, shards, parts)
+    if any(not SAFE_ID_RE.fullmatch(leaf) for _, leaf in records):
+        raise ReleaseError("invalid publication source output identity")
+    _require_reference_checkout(revision)
+    held = _HELD_SOURCE_INVENTORIES[-1]
+    root = str(ROOT.resolve())
+    entries = {(root, "publication-records"): records, (root, "publication-reference-owners"): frozenset(identities)}
+    entries.update({(root, "publication-identity:" + owner): identity for owner, identity in identities.items()})
+    if held.keys() & entries.keys():
+        raise ReleaseError("publication source facts already present before authenticated loading")
+    held.update(entries)
+
+
 def prefetch_publication_dependencies(keys: Iterable[tuple[str, str]]) -> None:
     """Prepare the dependency traces needed by this set of source identities."""
     if not _HELD_SOURCE_INVENTORIES:
@@ -1050,6 +1077,11 @@ def prefetch_publication_dependencies(keys: Iterable[tuple[str, str]]) -> None:
     records = publication_source_records()
     # Companions share their owner's source directory. Missing keys and failed
     # traces are reported by the same per-publication lookup as before.
+    reference_owners = _HELD_SOURCE_INVENTORIES[-1].get((str(ROOT.resolve()), "publication-reference-owners"))
+    if reference_owners is not None:
+        keys = [key for key in keys if key not in records or records[key][0]["id"] not in reference_owners]
+        if not keys:
+            return
     owners = dict.fromkeys(ROOT / records[key][0]["source_dir"] for key in keys if key in records)
     document_assembly().prefetch_dependencies(owners)
 
@@ -6720,65 +6752,21 @@ def _artifact_topology_errors(
     return errors
 
 
-def _open_artifact_parent(
-    root_fd: int,
-    relative: PurePosixPath,
-    topology: dict[str, os.stat_result],
-) -> int:
-    """Open every parent of an inventoried file from the held artifact root."""
-    directory_fd = os.dup(root_fd)
-    parent = PurePosixPath()
-    try:
-        for component in relative.parts[:-1]:
-            parent /= component
-            label = parent.as_posix()
-            expected = topology.get(label)
-            if expected is None or not stat.S_ISDIR(expected.st_mode):
-                raise ReleaseError(f"artifact path changed during verification: {label}")
-            try:
-                entry = os.stat(
-                    component, dir_fd=directory_fd, follow_symlinks=False
-                )
-                child_fd = os.open(
-                    component, DIRECTORY_OPEN_FLAGS, dir_fd=directory_fd
-                )
-            except OSError as exc:
-                raise ReleaseError(
-                    f"artifact path changed during verification: {label}"
-                ) from exc
-            if (
-                not stat.S_ISDIR(entry.st_mode)
-                or _artifact_entry_identity(entry)
-                != _artifact_entry_identity(expected)
-                or not _same_inode(entry, os.fstat(child_fd))
-            ):
-                os.close(child_fd)
-                raise ReleaseError(f"artifact path changed during verification: {label}")
-            os.close(directory_fd)
-            directory_fd = child_fd
-        return directory_fd
-    except BaseException:
-        os.close(directory_fd)
-        raise
-
-
 def _read_artifact_regular_file(
-    root_fd: int,
+    parent_fd: int,
+    name: str,
     relative: str,
     expected: os.stat_result,
-    topology: dict[str, os.stat_result],
 ) -> bytes:
-    """Capture one inventoried file through a no-follow descriptor chain."""
+    """Capture one inventoried file from its held, verified parent."""
     if not getattr(os, "O_NOFOLLOW", 0):
         raise ReleaseError("safe no-follow artifact file opens are unavailable")
-    path = PurePosixPath(relative)
-    parent_fd = _open_artifact_parent(root_fd, path, topology)
     descriptor: int | None = None
     try:
         try:
-            entry = os.stat(path.name, dir_fd=parent_fd, follow_symlinks=False)
+            entry = os.stat(name, dir_fd=parent_fd, follow_symlinks=False)
             descriptor = os.open(
-                path.name,
+                name,
                 os.O_RDONLY
                 | getattr(os, "O_CLOEXEC", 0)
                 | getattr(os, "O_NOFOLLOW", 0)
@@ -6808,7 +6796,59 @@ def _read_artifact_regular_file(
     finally:
         if descriptor is not None:
             os.close(descriptor)
-        os.close(parent_fd)
+
+
+@contextmanager
+def _held_artifact_directory(
+    parent_fd: int, name: str, relative: str, expected: os.stat_result
+):
+    identity = _artifact_entry_identity(expected)
+    message = f"artifact path changed during verification: {relative}"
+
+    def check_entry() -> None:
+        try:
+            entry = os.stat(name, dir_fd=parent_fd, follow_symlinks=False)
+        except OSError as exc:
+            raise ReleaseError(message) from exc
+        if _artifact_entry_identity(entry) != identity:
+            raise ReleaseError(message)
+
+    check_entry()
+    try:
+        child_fd = os.open(name, DIRECTORY_OPEN_FLAGS, dir_fd=parent_fd)
+    except OSError as exc:
+        raise ReleaseError(message) from exc
+    try:
+        if _artifact_entry_identity(os.fstat(child_fd)) != identity:
+            raise ReleaseError(message)
+        yield child_fd
+        check_entry()
+    finally:
+        os.close(child_fd)
+
+
+def _copy_artifact_entries(
+    root_fd: int, snapshot: Path, topology: dict[str, os.stat_result]
+) -> None:
+    """Hold inventoried parents across sibling reads and recheck each on return."""
+    children = defaultdict(list)
+    for relative, entry in topology.items():
+        parent, _, name = relative.rpartition("/")
+        children[parent].append((name, relative, entry))
+
+    def copy(parent_fd: int, directory: Path, parent: str) -> None:
+        for name, relative, expected in children.get(parent, ()):
+            destination = directory / name
+            if stat.S_ISREG(expected.st_mode):
+                destination.write_bytes(
+                    _read_artifact_regular_file(parent_fd, name, relative, expected)
+                )
+            elif stat.S_ISDIR(expected.st_mode):
+                with _held_artifact_directory(parent_fd, name, relative, expected) as child_fd:
+                    destination.mkdir()
+                    copy(child_fd, destination, relative)
+
+    copy(root_fd, snapshot, "")
 
 
 @contextmanager
@@ -6829,19 +6869,7 @@ def _capture_artifact_snapshot(
                 temporary_fd, temporary_path, "artifact", create=False
             )
             snapshot = _descriptor_path(snapshot_fd)
-            for relative, entry in sorted(
-                topology.items(),
-                key=lambda item: (len(PurePosixPath(item[0]).parts), item[0]),
-            ):
-                destination = snapshot.joinpath(*PurePosixPath(relative).parts)
-                if stat.S_ISDIR(entry.st_mode):
-                    destination.mkdir()
-                elif stat.S_ISREG(entry.st_mode):
-                    destination.write_bytes(
-                        _read_artifact_regular_file(
-                            root_fd, relative, entry, topology
-                        )
-                    )
+            _copy_artifact_entries(root_fd, snapshot, topology)
             yield snapshot
         finally:
             if snapshot_fd is not None:

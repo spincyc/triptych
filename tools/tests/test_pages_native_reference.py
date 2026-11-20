@@ -109,6 +109,36 @@ class NativeReferenceDownloadTests(unittest.TestCase):
         self.assertEqual({}, pages.select_artifacts([dict(original, expired=True)], "42", self.revision))
         self.assertEqual({}, pages.select_artifacts([dict(original, name="github-pages")], "42", self.revision))
 
+    def test_download_retries_the_same_id_and_discards_partial_bytes(self):
+        body = self.archive()
+        artifact = self.artifact(1, body)
+        destination = self.root / "1"
+        command = ["gh", "api", "repo/actions/artifacts/51/zip"]
+        attempts = []
+
+        def download(argv, *, stdout, check, timeout):
+            attempts.append(list(argv))
+            if len(attempts) == 1:
+                stdout.write(b"partial response" * 40)
+                raise subprocess.CalledProcessError(1, argv)
+            stdout.write(body)
+
+        with patch.object(pages.subprocess, "run", side_effect=download), patch.object(pages.time, "sleep") as wait:
+            digest = pages.fetch_partition("repo/actions", artifact, destination)
+        self.assertEqual(attempts, [command, command])
+        wait.assert_called_once_with(2)
+        self.assertEqual(digest, hashlib.sha256(b"test catalog\n").hexdigest())
+
+    def test_persistent_download_failure_keeps_the_partition_unavailable(self):
+        item = self.artifact(1, self.archive())
+        destination = self.root / "1"
+        failure = subprocess.TimeoutExpired("gh", timeout=90)
+        with patch.object(pages.subprocess, "run", side_effect=failure) as download, patch.object(pages.time, "sleep"):
+            with self.assertRaises(subprocess.TimeoutExpired):
+                pages.fetch_partition("repo/actions", item, destination)
+        self.assertEqual(download.call_count, 5)
+        self.assertFalse(destination.exists())
+
     def test_wrong_archive_or_unexpected_member_fails_before_merge(self):
         good = self.archive()
         for member in ("catalog.json", "../escape", "/escape", "native-tex/../../escape"):
@@ -117,7 +147,7 @@ class NativeReferenceDownloadTests(unittest.TestCase):
             if member == "catalog.json":
                 body += b"changed"
             with self.subTest(member=member), tempfile.TemporaryDirectory(dir=self.root) as directory:
-                with patch.object(pages.subprocess, "run", side_effect=lambda cmd, *, stdout, check: stdout.write(body)):
+                with patch.object(pages.subprocess, "run", side_effect=lambda cmd, *, stdout, check, timeout: stdout.write(body)):
                     with self.assertRaises(ValueError):
                         pages.fetch_partition("repo/actions", item, Path(directory) / "1")
                 self.assertFalse((Path(directory) / "escape").exists())
@@ -130,7 +160,7 @@ class NativeReferenceDownloadTests(unittest.TestCase):
                "PAGES_NATIVE_REFERENCE_DIR": str(self.root / "merged")}
         expected = hashlib.sha256(b"test catalog\n").hexdigest()
 
-        def run(cmd, *, stdout, check):
+        def run(cmd, *, stdout, check, timeout):
             self.assertIn(cmd[-1], [f"repos/o/r/actions/artifacts/{a['id']}/zip" for a in partitions])
             stdout.write(body)
 
@@ -140,6 +170,7 @@ class NativeReferenceDownloadTests(unittest.TestCase):
             if cmd[0] == "gh":
                 self.assertEqual(cmd[-1], "repos/o/r/actions/runs/42/artifacts?per_page=100")
                 return json.dumps([{"artifacts": partitions}]).encode()
+            self.assertIn("--publication-sources", cmd)
             refs = Path(cmd[cmd.index("--references") + 1])
             keys = json.loads(Path(cmd[cmd.index("--expected-keys") + 1]).read_bytes())
             self.assertEqual({p.name for p in refs.iterdir()}, {str(n) for n in range(1, 9)})

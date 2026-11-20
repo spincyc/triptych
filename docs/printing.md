@@ -132,7 +132,13 @@ the browser's pass policy.
 It also exports its source partition for the Pages writer and verifier. Each
 independently checks the Actions archive digests, source revision, admitted
 editions and checkout inputs, then reassembles the full catalog with its
-shared text and source packs.
+shared text and source packs. Each print worker uses the same document assembly
+to validate its assigned publication owners and derive the admitted content,
+evidence, render and edition identities. The partition covers every source
+declaration, including held and Markdown-only owners. The writer and verifier
+each reconcile the authenticated partitions with their own checkout's source
+census and admissions and recheck the physical inputs and projected web
+declarations. Generated source hashes come from the worker's actual assembly.
 Locally, `make check-native-print-compile` prepares and compiles the entire
 set. The gate requires a PDF and settled references within each edition's
 pass limit, exact admission membership, and closure over the bundle and the

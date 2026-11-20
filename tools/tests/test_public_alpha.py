@@ -3008,17 +3008,17 @@ class PublicAlphaTest(unittest.TestCase):
             external_identity = external.stat()
 
             def swap_at_read_boundary(
-                root_fd: int,
+                parent_fd: int,
+                name: str,
                 relative: str,
                 expected,
-                topology,
             ) -> bytes:
                 nonlocal swapped
                 if relative == "PUBLICATION-MANIFEST.json" and not swapped:
                     artifact.rename(held)
                     artifact.symlink_to(external)
                     swapped = True
-                return original_read(root_fd, relative, expected, topology)
+                return original_read(parent_fd, name, relative, expected)
 
             def guarded_open(path, flags: int, *args, **kwargs):
                 dir_fd = kwargs.get("dir_fd")
@@ -3076,6 +3076,53 @@ class PublicAlphaTest(unittest.TestCase):
                     artifact.unlink()
                 if held.exists():
                     held.rename(artifact)
+
+    def test_snapshot_holds_each_directory_once_and_captures_empty_directories(self) -> None:
+        source = self.root / "artifact"
+        files = {
+            "a/b/one.json": b"one", "a/b/two.json": b"two", "a/three.json": b"three"
+        }
+        for name, data in files.items():
+            self.write("artifact/" + name, data)
+        (source / "empty").mkdir()
+        descriptor = os.open(source, self.tool.DIRECTORY_OPEN_FLAGS)
+        self.addCleanup(os.close, descriptor)
+        topology = self.tool._scan_artifact_topology(descriptor)
+        with mock.patch.object(os, "open", wraps=os.open) as opens:
+            with self.tool._capture_artifact_snapshot(descriptor, topology) as snapshot:
+                paths = {p.relative_to(snapshot).as_posix() for p in snapshot.rglob("*")}
+                self.assertEqual(paths, set(topology))
+                self.assertEqual({k: (snapshot / k).read_bytes() for k in files}, files)
+                names = [call.args[0] for call in opens.call_args_list]
+                for name in ("a", "b", "empty"):
+                    self.assertEqual(names.count(name), 1)
+
+    def test_snapshot_rejects_replaced_held_parent_before_accepting_siblings(self) -> None:
+        source = self.root / "artifact"
+        self.write("artifact/nested/a.json", b"a")
+        self.write("artifact/nested/b.json", b"b")
+        alternate = self.root / "alternate"
+        self.write("alternate/b.json", b"external")
+        descriptor = os.open(source, self.tool.DIRECTORY_OPEN_FLAGS)
+        self.addCleanup(os.close, descriptor)
+        topology = self.tool._scan_artifact_topology(descriptor)
+        read = self.tool._read_artifact_regular_file
+        captured = {}
+
+        def replace_after_read(parent_fd, name, relative, expected):
+            data = read(parent_fd, name, relative, expected)
+            captured[relative] = data
+            if name == "a.json":
+                (source / "nested").rename(self.root / "moved")
+                (source / "nested").symlink_to(alternate, target_is_directory=True)
+            return data
+
+        with mock.patch.object(
+            self.tool, "_read_artifact_regular_file", side_effect=replace_after_read
+        ), self.assertRaisesRegex(self.tool.ReleaseError, "artifact path changed during verification: nested"):
+            with self.tool._capture_artifact_snapshot(descriptor, topology):
+                self.fail("captured a directory replaced during verification")
+        self.assertEqual(captured, {"nested/a.json": b"a", "nested/b.json": b"b"})
 
     def test_cleanup_swap_cannot_redirect_build_deletion_outside_output_root(
         self,

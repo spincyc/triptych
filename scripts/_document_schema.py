@@ -798,7 +798,14 @@ def load_manifest(root: Path, path: Path, *, output_entrypoint: str | None = Non
     return _normalise(root, data, path, output_entrypoint=output_entrypoint, assembly=assembly)
 
 
-def discover(root: Path = ROOT, *, assembly=None) -> list[dict]:
+def publication_owners(root: Path) -> set[str]:
+    """Every owner discovery must validate, including orphan manifests."""
+    source = root / "src"
+    return {path.parent.relative_to(source).as_posix() for provider in PROVIDERS
+            for name in ("main.tex", MANIFEST) for path in (source / provider).rglob(name)}
+
+
+def discover(root: Path = ROOT, *, assembly=None, owners=None) -> list[dict]:
     """All main.tex leaves, including invalid/missing declarations as records."""
     from _document_types import Assembly
 
@@ -807,6 +814,8 @@ def discover(root: Path = ROOT, *, assembly=None) -> list[dict]:
     records = []
     for provider in PROVIDERS:
         for main in sorted((root / "src" / provider).rglob("main.tex")):
+            if owners is not None and main.parent.relative_to(root / "src").as_posix() not in owners:
+                continue
             manifest = main.parent / MANIFEST
             try:
                 record = load_manifest(root, manifest, assembly=assembly) if manifest.is_file() else _normalise(
@@ -823,6 +832,8 @@ def discover(root: Path = ROOT, *, assembly=None) -> list[dict]:
     known = {r["manifest_path"] for r in records}
     for provider in PROVIDERS:
         for manifest in sorted((root / "src" / provider).rglob(MANIFEST)):
+            if owners is not None and manifest.parent.relative_to(root / "src").as_posix() not in owners:
+                continue
             relative = manifest.relative_to(root).as_posix()
             if relative not in known:
                 leaf = manifest.parent.relative_to(root / "src" / provider).as_posix()

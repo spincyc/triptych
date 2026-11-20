@@ -100,7 +100,18 @@ def wait_for_corpus_gate(env):
 def fetch_partition(endpoint, artifact, destination):
     archive = destination.with_suffix(".zip")
     with archive.open("xb") as output:
-        subprocess.run(["gh", "api", f"{endpoint}/artifacts/{artifact['id']}/zip"], stdout=output, check=True)
+        # Actions can list a new artifact before its immutable download is available.
+        command = ["gh", "api", f"{endpoint}/artifacts/{artifact['id']}/zip"]
+        for delay in (2, 4, 8, 16, None):
+            try:
+                subprocess.run(command, stdout=output, check=True, timeout=90)
+                break
+            except (subprocess.CalledProcessError, subprocess.TimeoutExpired):
+                if delay is None:
+                    raise
+                output.seek(0)
+                output.truncate()
+                time.sleep(delay)
     with archive.open("rb") as incoming:
         digest = hashlib.file_digest(incoming, "sha256").hexdigest()
     if archive.stat().st_size != artifact["size_in_bytes"] or f"sha256:{digest}" != artifact["digest"]:
@@ -172,7 +183,7 @@ def prepare(env):
         manifest.write_text(json.dumps(keys), encoding="utf-8")
         merged = subprocess.check_output([
             sys.executable, ".github/scripts/verify-native-print.py", "merge",
-            "--references", str(partitions), "--expected-keys", str(manifest), "--out", str(output),
+            "--publication-sources", "--references", str(partitions), "--expected-keys", str(manifest), "--out", str(output),
             "--shards", str(SHARDS), "--revision", revision, "--run-id", run_id,
             "--run-attempt", env["GITHUB_RUN_ATTEMPT"]], text=True).strip()
         if not re.fullmatch(r"[0-9a-f]{64}", merged):
@@ -205,12 +216,6 @@ def prepared_inputs(reference, authenticate, report, *, figure_runner=None):
             scan = checks.submit(copy_context().run, tool.web_data_files)
             before = tool.MANIFEST_PATH.read_bytes()
             manifest = tool.load_manifest()
-            publications = tool.validate_manifest(manifest, require_active_release=True)
-            included = tool.included_publications(publications, False)
-            tool.prefetch_publication_dependencies(included)
-            for key in included:
-                tool.publication_source_identity(*key)
-            report("current publication dependencies and identities prepared")
             if figure_runner:
                 from _web_figure_build import prepare as prepare_figures
                 products = tool.held_browser_products()
@@ -225,6 +230,12 @@ def prepared_inputs(reference, authenticate, report, *, figure_runner=None):
                 raise ValueError("invalid protected native reference digest")
             os.environ["TRIPTYCH_NATIVE_REFERENCE_SHA256"] = digest
             report("native reference authenticated")
+            tool._hold_pages_publication_sources(SHARDS)
+            publications = tool.validate_manifest(manifest, require_active_release=True)
+            included = tool.included_publications(publications, False)
+            for key in included:
+                tool.publication_source_identity(*key)
+            report("current publication dependencies and identities verified")
             scan.result()
         yield tool, before, manifest
     tool._require_reference_checkout(revision)
@@ -293,13 +304,17 @@ def verify_site():
         verifier = Path(temporary.name) / "verifier"
         reference = spawn([sys.executable, __file__, "--digest"], stdout=subprocess.PIPE, text=True,
                           env={**env, "PAGES_NATIVE_REFERENCE_DIR": str(verifier)})
-        succeeded(spawn(["make", "prepare-browser-data"], env=env))
-        report("browser products prepared; starting complete source gates and site assembly")
+        # GNU Make can fill every slot with sibling gates while the writer's
+        # rights prerequisite runs. Finish both prerequisites in this invocation
+        # so public-site-artifact is ready on the next invocation's first visit.
+        prerequisites = ("prepare-browser-data", "check-curriculum-source-rights")
+        succeeded(spawn(["make", "-j2", *prerequisites], env=env))
+        report("browser products and source rights verified; starting remaining gates and site assembly")
         writer_dir = Path(temporary.name) / "writer"
         writer_reference = spawn([sys.executable, __file__, "--digest"], stdout=subprocess.PIPE, text=True,
                                  env={**env, "PAGES_NATIVE_REFERENCE_DIR": str(writer_dir)})
         with writer_reference.stdout as pipe:
-            writer = spawn(["make", "-j3", "--assume-old=prepare-browser-data", "pages-site",
+            writer = spawn(["make", "-j3", *(f"--assume-old={goal}" for goal in prerequisites), "pages-site",
                             f"WEB_FIGURES_RUNNER=docker:{image}"], pass_fds=(pipe.fileno(),),
                            env={**env, "PAGES_NATIVE_REFERENCE_DIR": str(writer_dir),
                                 "PAGES_WRITER_REFERENCE_FD": str(pipe.fileno())})

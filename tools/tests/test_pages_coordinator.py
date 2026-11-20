@@ -39,7 +39,7 @@ if os.environ["FAIL"] == "early" and role == "verifier":
         ready.write(b"R")
     time.sleep(90)
 if os.environ["FAIL"] == "hold-reference":
-    stages = ["initial-policy", "browser-scan", "identities"] + (["figures"] if role == "writer" else [])
+    stages = ["browser-scan"] + (["figures"] if role == "writer" else [])
     for stage in stages:
         with open(stage + "-" + role, "rb") as work:
             assert work.read() == b"ready"
@@ -47,12 +47,15 @@ failure = os.environ["FAIL"]
 print("invalid" if failure in ("digest", "digest-" + role) else ("a" if role == "verifier" else "b") * 64)
 """
 MAKEFILE = """
-.PHONY: pages-site prepare-browser-data writer gate
+.PHONY: pages-site prepare-browser-data check-curriculum-source-rights writer gate
 prepare-browser-data:
 	@echo prepare >> preparations
 	@test "$(FAIL)" != "prepare"
+check-curriculum-source-rights:
+	@echo rights >> rights-checks
+	@test "$(FAIL)" != "rights"
 pages-site: writer gate
-writer: | prepare-browser-data
+writer: check-curriculum-source-rights | prepare-browser-data
 	@echo bbbbbbbb > "$$PAGES_NATIVE_REFERENCE_DIR.sha256"
 	@"$$COORDINATOR_PYTHON" "$$COORDINATOR_TOOL" --build-site '$(WEB_FIGURES_RUNNER)'
 gate:
@@ -85,10 +88,7 @@ def validate_manifest(manifest, require_active_release):
     if not policies.exists():
         assert SNAPSHOT.get() == "private browser snapshot"
         assert os.environ["TRIPTYCH_NATIVE_REFERENCE_DIR"].endswith("/" + role)
-        assert "TRIPTYCH_NATIVE_REFERENCE_SHA256" not in os.environ
-        if failure == "hold-reference":
-            with open("initial-policy-" + role, "wb") as signal:
-                signal.write(b"ready")
+        assert Path("source-facts-" + role).exists()
     with open(policies, "a") as policy:
         print("check", file=policy)
     if role == "verifier" and failure == "expired" and Path("gate-complete").exists():
@@ -132,21 +132,18 @@ def verify_output(manifest, publications, path, preview):
 def included_publications(publications, preview):
     return {("gpt", "one"): {}, ("claude", "two"): {}}
 
-def prefetch_publication_dependencies(keys):
-    assert "TRIPTYCH_NATIVE_REFERENCE_SHA256" not in os.environ
-    assert tuple(keys) == (("gpt", "one"), ("claude", "two"))
-    Path("prefetched-" + role).touch()
+def _hold_pages_publication_sources(shards):
+    assert shards == 8
+    assert os.environ["TRIPTYCH_NATIVE_REFERENCE_SHA256"] == ("a" if role == "verifier" else "b") * 64
+    assert os.environ["TRIPTYCH_NATIVE_REFERENCE_DIR"].endswith("/" + role)
+    Path("source-facts-" + role).touch()
 
 def publication_source_identity(provider, output):
-    assert Path("prefetched-" + role).exists()
-    assert "TRIPTYCH_NATIVE_REFERENCE_SHA256" not in os.environ
+    assert Path("source-facts-" + role).exists()
     with open("identities-checked-" + role, "a") as log:
         print(provider, output, file=log)
     if failure == "identity-" + role:
         raise ValueError("unapproved source identity")
-    if failure == "hold-reference" and output == "two":
-        with open("identities-" + role, "wb") as signal:
-            signal.write(b"ready")
 
 def held_browser_products():
     return SNAPSHOT.get()
@@ -218,7 +215,7 @@ class PagesCoordinatorTests(unittest.TestCase):
         (work / "Makefile").write_text(MAKEFILE)
         (work / "fetch-reference.py").write_text(REFERENCE)
         for name in ["prewarmed", "reference-started", "figures-writer",
-                     *(s + "-" + role for role in ("writer", "verifier") for s in ("initial-policy", "browser-scan", "identities"))]:
+                     *(s + "-" + role for role in ("writer", "verifier") for s in ("browser-scan",))]:
             os.mkfifo(work / name)
         env = {**os.environ, "FAIL": failure, "PYTHONPATH": str(work), "COORDINATOR_TOOL": str(COORDINATOR),
                "COORDINATOR_PYTHON": sys.executable, "TRIPTYCH_WEB_FIGURE_CANDIDATES": "figure-candidates", "RUNNER_TEMP": str(work), "GITHUB_SHA": "a" * 40,
@@ -229,6 +226,7 @@ class PagesCoordinatorTests(unittest.TestCase):
             capture_output=True, text=True, timeout=15,
         )
         self.assertEqual((work / "preparations").read_text().splitlines(), ["prepare"])
+        self.assertEqual((work / "rights-checks").read_text().splitlines(), ["rights"])
         return work, result
 
     def test_independent_preparation_and_successful_full_make_precede_artifact(self):
@@ -251,13 +249,13 @@ class PagesCoordinatorTests(unittest.TestCase):
         self.assertEqual(positions, sorted(positions))
 
     def test_failed_source_gate_product_preparation_or_reference_prevents_artifact_access(self):
-        for failure in ("gate", "prepare", "digest", "scan", "dirty-first", "digest-writer",
+        for failure in ("gate", "prepare", "rights", "digest", "scan", "dirty-first", "digest-writer",
                         "identity-writer", "identity-verifier", "figures"):
             with self.subTest(failure=failure):
                 work, result = self.run_build(failure)
                 self.assertNotEqual(result.returncode, 0)
                 self.assertFalse((work / "opened-artifact").exists())
-                if failure == "prepare":
+                if failure in ("prepare", "rights"):
                     self.assertFalse((work / "writer-complete").exists())
 
     def test_checkout_manifest_and_active_release_are_checked_after_full_make(self):

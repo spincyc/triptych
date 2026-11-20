@@ -222,13 +222,20 @@ def parse_shard(value: str) -> tuple[int, int]:
 
 
 def prepare(root: Path, out: Path, *, only=(), shard=None, export_reference=None,
-            run_id=None, run_attempt=None) -> dict:
+            run_id=None, run_attempt=None, publication_sources=False) -> dict:
     """Prepare the admitted universe (or an explicit subset) through the bundle API."""
     from _native_print import admitted_documents, source_revision
     import _native_print_bundles as bundles
     root = Path(root).resolve()
-    documents = admitted_documents(root)
     revision = source_revision(root)
+    assembly_args = {}
+    if publication_sources:
+        _need(export_reference is not None, "publication sources require a reference export")
+        from _native_print_service import assert_source
+        from _document_types import Assembly
+        assert_source(root, revision, complete_checkout=True)
+        assembly_args["assembly"] = Assembly(root)
+    documents = admitted_documents(root)
     _need(not (only and shard), "--only and --shard are mutually exclusive")
     _need((export_reference is None and run_id is None and run_attempt is None)
           or (export_reference is not None and shard is not None and run_id and run_attempt),
@@ -242,14 +249,21 @@ def prepare(root: Path, out: Path, *, only=(), shard=None, export_reference=None
     except (OSError, ValueError, subprocess.CalledProcessError) as error:
         raise CompileError("cannot read the source revision's commit time") from error
     catalog = bundles.prepare_catalog(root, documents=documents, revision=revision,
-                                      output_ids=selected or None)
+                                      output_ids=selected or None, **assembly_args)
     wanted = {identity: documents[identity] for identity in selected} if selected else documents
     index = materialize(catalog, wanted, out, revision=revision, epoch=epoch,
                         scope="shard" if shard else ("selected" if selected else "admitted"), shard=shard)
     if export_reference is not None:
         from _native_print_reference import write_reference_catalog
+        publication_parts = None
+        if publication_sources:
+            from _publication_source_reference import prepare_partition
+            publication_parts = {str(shard[0]): prepare_partition(
+                root, documents, revision, run_id, run_attempt, shard, assembly_args["assembly"])}
+            assert_source(root, revision, complete_checkout=True)
         index["reference_sha256"] = write_reference_catalog(export_reference, catalog, run_id=run_id,
-                                                            run_attempt=run_attempt, shard=shard)
+                                                            run_attempt=run_attempt, shard=shard,
+                                                            publication_parts=publication_parts)
         _write_json(out / "index.json", index)
     return index
 
@@ -690,6 +704,7 @@ def main(argv=None, *, examples=None) -> int:
     with_examples(first, (examples or {}).get("prepare", ()))
     first.add_argument("--out", help=f"work directory (default: {DEFAULT_OUT})")
     first.add_argument("--export-reference", type=Path, help="export this source-prepared Pages shard")
+    first.add_argument("--publication-sources", action="store_true", help="include validated publication source identities")
     first.add_argument("--run-id", help="workflow run that produced the exported reference")
     first.add_argument("--run-attempt", help="workflow attempt that produced the exported reference")
     selection = first.add_mutually_exclusive_group()
@@ -708,7 +723,8 @@ def main(argv=None, *, examples=None) -> int:
         if arguments.verb == "prepare":
             shard = parse_shard(arguments.shard) if arguments.shard is not None else None
             index = prepare(root, out, only=arguments.only, shard=shard, export_reference=arguments.export_reference,
-                            run_id=arguments.run_id, run_attempt=arguments.run_attempt)
+                            run_id=arguments.run_id, run_attempt=arguments.run_attempt,
+                            publication_sources=arguments.publication_sources)
             engines = {}
             for edition in index["editions"].values():
                 engines[edition["engine"]] = engines.get(edition["engine"], 0) + 1

@@ -26,6 +26,7 @@ def main():
     merge.add_argument("--out", type=Path, required=True)
     merge.add_argument("--shards", type=int, required=True)
     merge.add_argument("--revision", required=True)
+    merge.add_argument("--publication-sources", action="store_true", help="require the complete publication source census")
     merge.add_argument("--run-id", required=True)
     merge.add_argument("--run-attempt", required=True)
     args = parser.parse_args()
@@ -37,10 +38,13 @@ def main():
             from _native_print_reference import merge_reference_catalogs, write_reference_catalog
             if args.revision != source_revision(ROOT):
                 raise ValueError("reference revision differs from this checkout")
+            parts = {} if args.publication_sources else None
             result = merge_reference_catalogs(args.references, root=ROOT, documents=admitted_documents(ROOT),
                                               revision=args.revision, run_id=args.run_id, run_attempt=args.run_attempt,
-                                              shards=args.shards, expected_keys=json.loads(args.expected_keys.read_bytes()))
-            print(write_reference_catalog(args.out, result, run_id=args.run_id, run_attempt=args.run_attempt))
+                                              shards=args.shards, expected_keys=json.loads(args.expected_keys.read_bytes()),
+                                              publication_parts=parts)
+            print(write_reference_catalog(args.out, result, run_id=args.run_id, run_attempt=args.run_attempt,
+                                          publication_parts=parts))
         else:
             count = join(args.receipts, args.shards, args.revision, args.site_key)
             print(f"Verified {count} compiled native print editions against the Pages artifact.")

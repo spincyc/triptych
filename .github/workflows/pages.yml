@@ -277,7 +277,7 @@ jobs:
           gate_pid=$!
           status=0
           python tools/tpt native-print-compile prepare --shard "$PRINT_SHARD" --out "$PRINT_COMPILE_OUT" \
-            --export-reference "$RUNNER_TEMP/native-print-reference" --run-id "$GITHUB_RUN_ID" \
+            --publication-sources --export-reference "$RUNNER_TEMP/native-print-reference" --run-id "$GITHUB_RUN_ID" \
             --run-attempt "$GITHUB_RUN_ATTEMPT" || status=$?
           wait "$image_pid" || status=$?
           wait "$gate_pid" || status=$?

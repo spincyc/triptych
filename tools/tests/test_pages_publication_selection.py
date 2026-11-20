@@ -99,7 +99,7 @@ sys.path.insert(0, str(ROOT))
 MANIFEST_PATH = Path("release/browser-products.json")
 OUTPUT_ROOT = Path("build/public-alpha")
 load_manifest = validate_manifest = site_source_paths = _require_reference_checkout = Mock()
-artifact_authorization = web_data_files = prefetch_publication_dependencies = publication_source_identity = Mock()
+artifact_authorization = web_data_files = _hold_pages_publication_sources = publication_source_identity = Mock()
 held_browser_products = web_figures_root = Mock()
 def included_publications(publications, preview):
     return {}
@@ -162,6 +162,31 @@ generated = {tuple(command) for command in json.loads(os.environ["DEPLOYMENT_TES
 ready = root / "build/browser-data/verified-ready"
 if " ".join(args) == os.environ.get("DEPLOYMENT_TEST_FAIL"):
     raise SystemExit("deliberate source gate failure")
+if os.environ.get("DEPLOYMENT_TEST_WRITER_SLOT"):
+    # Keep the first three sibling gates occupied until the actual writer
+    # starts. If rights share their Make invocation, let two take slots
+    # before completing rights to reproduce the hosted scheduling order.
+    gates = {("tools/tpt", "document-schema", "check", "--include-sources"): "schema",
+             ("tools/tpt", "document-library", "check"): "catalogue",
+             ("tools/tpt", "check-calendar-masses"): "masses"}
+    def wait_for(*names):
+        deadline = time.monotonic() + 5
+        while not all((root / name).exists() for name in names):
+            if time.monotonic() >= deadline:
+                raise SystemExit(f"{args} blocked waiting for {names}")
+            time.sleep(.01)
+    if tuple(args) in gates:
+        (root / gates[tuple(args)]).touch()
+        wait_for("writer-started")
+    elif args[:3] == ["-m", "unittest", "-v"]:
+        if "PAGES_WRITER_REFERENCE_FD" in os.environ:
+            wait_for("schema", "catalogue")
+        (root / "rights-passed").touch()
+    elif args[:2] == [".github/scripts/pages-native-reference.py", "--build-site"]:
+        if not ready.is_file() or not (root / "rights-passed").is_file():
+            raise SystemExit("writer started before its prerequisites passed")
+        wait_for("schema", "catalogue")
+        (root / "writer-started").touch()
 if os.environ.get("DEPLOYMENT_TEST_OVERLAP"):
     peers = {
         ("tools/tpt", "browser-products", "build"): ("products", "corpus"),
@@ -479,8 +504,8 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         self.assertEqual(commands.count(verify), 1)
         self.assertEqual(commands.count(VERIFY_TARGET), 1)
         self.assertLess(commands.index(verify), commands.index(VERIFY_TARGET))
-        prep_make = ("make", "prepare-browser-data")
-        writer = ("make", "-j3", "--assume-old=prepare-browser-data", "pages-site",
+        prep_make = ("make", "-j2", "prepare-browser-data", "check-curriculum-source-rights")
+        writer = ("make", "-j3", "--assume-old=prepare-browser-data", "--assume-old=check-curriculum-source-rights", "pages-site",
                   "WEB_FIGURES_RUNNER=docker:" + self.pages()["env"]["TEXLIVE_IMAGE"])
         self.assertEqual(commands.count(prep_make), 1)
         self.assertEqual([command for command in commands
@@ -584,6 +609,27 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         for marker in ("products", "corpus", "site", "days", "rubrics"):
             self.assertTrue((self.root / marker).exists(), marker)
+
+    def test_prepared_writer_runs_while_the_other_make_slots_are_blocked(self):
+        result = self.run_pages_commands(env={**self.env, "DEPLOYMENT_TEST_WRITER_SLOT": "1"})
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertTrue((self.root / "writer-started").is_file())
+        for name in ("schema", "catalogue", "masses"):
+            self.assertTrue((self.root / name).is_file(), name)
+        self.assertIn(VERIFY_OUTPUT, self.commands())
+
+    def test_a_retry_rechecks_writer_rights_with_a_prior_site_present(self):
+        result = self.run_pages_commands()
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        rights = next(command for command in self.commands() if command[:3] == ("-m", "unittest", "-v"))
+        self.log.unlink()
+        result = self.run_pages_commands(cache_hit=True, env={**self.env, "DEPLOYMENT_TEST_FAIL": " ".join(rights)})
+        self.assertNotEqual(result.returncode, 0)
+        self.assertTrue((self.root / "build/public-alpha/site/index.html").is_file())
+        self.assertIn(rights, self.commands())
+        self.assertFalse(any(command[:2] == (".github/scripts/pages-native-reference.py", "--build-site")
+                             for command in self.commands()))
+        self.assertNotIn(VERIFY_OUTPUT, self.commands())
 
     def test_verifier_cannot_use_the_builders_reference_if_its_own_authentication_fails(self):
         result = self.run_pages_commands(env={**self.env, "DEPLOYMENT_TEST_FAIL_VERIFY_REFERENCE": "1"})
