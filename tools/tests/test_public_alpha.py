@@ -2139,6 +2139,44 @@ class PublicAlphaTest(unittest.TestCase):
         self.tool.verify_output(self.manifest, publications, output, preview=False)
         return publications, output
 
+    def test_prepared_html_is_independent_of_the_artifact_and_still_checked(self) -> None:
+        publications, output = self.build_verified_artifact()
+        with self.tool.held_repository_inputs(), mock.patch.object(
+            self.tool, "render_source_page", wraps=self.tool.render_source_page
+        ) as render:
+            self.tool.prepare_verification_source_pages(self.manifest, publications, False)
+            prepared = render.call_count
+            self.assertGreater(prepared, 0)
+            self.tool.verify_output(self.manifest, publications, output, False)
+            self.assertEqual(render.call_count, prepared)
+            index = output / "index.html"
+            index.write_text(index.read_text() + "changed")
+            self.tool.write_checksums(output)
+            with self.assertRaisesRegex(self.tool.ReleaseError, "rendered page does not match"):
+                self.tool.verify_output(self.manifest, publications, output, False)
+            self.assertEqual(render.call_count, prepared)
+
+    def test_prepared_html_is_scoped_to_policy_admissions_routes_and_operation(self) -> None:
+        scope = {("gpt", "work")}
+        with mock.patch.object(self.tool, "render_source_page", return_value="fresh") as render:
+            with self.tool.held_repository_inputs():
+                self.tool._verification_source_page_renderer(scope, False, {"x": 1}, prepare=True)
+                render.reset_mock()
+                def get(ids=scope, preview=False, auth=None, route="index.html"):
+                    render_page = self.tool._verification_source_page_renderer(
+                        ids, preview, {"x": 1} if auth is None else auth
+                    )
+                    return render_page("README.md", route)
+                self.assertEqual(get(), "fresh")
+                render.assert_not_called()
+                for args in ((set(), False, None, "index.html"), (scope, True, None, "index.html"),
+                             (scope, False, {"x": 2}, "index.html"), (scope, False, None, "moved.html")):
+                    self.assertEqual(get(*args), "fresh")
+                self.assertEqual(render.call_count, 4)
+            with self.tool.held_repository_inputs():
+                self.assertEqual(get(), "fresh")
+            self.assertEqual(render.call_count, 5)
+
     def test_verifier_passes_when_every_site_source_matches_its_approved_hash(
         self,
     ) -> None:

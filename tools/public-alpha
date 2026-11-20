@@ -6954,6 +6954,37 @@ def _verify_output_contents(
             _require_artifact_topology_matches(output_fd, topology)
 
 
+def _verification_source_page_renderer(included_ids, preview, authorization, *, prepare=False):
+    """Use only canonical HTML prepared inside this verifier's held source operation."""
+    def render(source, route):
+        return render_source_page(source, route, included_ids, preview, authorization)
+
+    retained = held_source_inventory("verified-source-page-expectations", dict)
+    if not retained and not prepare:
+        return render
+    # Refreshed policy objects compare by value. Include the entire authorization,
+    # including its approved source hashes, not only the fields rendered today.
+    binding = (frozenset(included_ids), preview, hashlib.sha256(json.dumps(
+        authorization, sort_keys=True, ensure_ascii=False,
+    ).encode("utf-8")).digest())
+    if prepare:
+        pages = {**PAGE_MAP, **included_document_pages(included_ids)}
+        retained[binding] = {(source, route): render(source, route) for source, route in pages.items()}
+    expected = retained.get(binding, {})
+    def lookup(source, route):
+        key = (source, route)
+        return expected[key] if key in expected else render(source, route)
+    return lookup
+
+
+def prepare_verification_source_pages(manifest, publications, preview):
+    """Pre-render from canonical inputs without inspecting the deployment tree."""
+    included = included_publications(publications, preview)
+    _verification_source_page_renderer(
+        set(included), preview, artifact_authorization(manifest, included), prepare=True,
+    )
+
+
 def _verify_snapshot_contents(
     manifest: dict,
     publications: dict[tuple[str, str], dict],
@@ -7036,17 +7067,12 @@ def _verify_snapshot_contents(
         errors.append("artifact manifest does not exactly match the release policy")
     included_ids = set(included)
     rendered_pages = {**PAGE_MAP, **included_document_pages(included_ids)}
+    expected_source_page = _verification_source_page_renderer(included_ids, preview, expected_authorization)
     for source_relative, output_relative in rendered_pages.items():
         html_path = output / output_relative
         if html_path.is_file() and html_path.read_text(
             encoding="utf-8", errors="replace"
-        ) != render_source_page(
-            source_relative,
-            output_relative,
-            included_ids,
-            preview,
-            expected_authorization,
-        ):
+        ) != expected_source_page(source_relative, output_relative):
             errors.append(f"{output_relative}: rendered page does not match its approved source")
 
     for figure, source_path in included_web_figures(included_ids).items():

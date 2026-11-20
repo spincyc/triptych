@@ -135,7 +135,14 @@ def site_source_paths(manifest):
         with open("prewarmed", "wb") as signal:
             signal.write(b"W")
 
+def prepare_verification_source_pages(manifest, publications, preview):
+    assert role == "verifier" and not preview
+    assert SNAPSHOT.get() == "private browser snapshot"
+    assert not Path("opened-artifact").exists()
+    Path("rendered-source-expectations").touch()
+
 def verify_output(manifest, publications, path, preview):
+    assert Path("rendered-source-expectations").exists()
     assert not preview and path == OUTPUT_ROOT / "site"
     assert Path("gate-complete").exists()
     assert os.environ["TRIPTYCH_NATIVE_REFERENCE_SHA256"] == "a" * 64

@@ -101,6 +101,7 @@ OUTPUT_ROOT = Path("build/public-alpha")
 load_manifest = validate_manifest = source_print_pages = site_source_paths = _require_reference_checkout = Mock()
 artifact_authorization = web_data_files = _hold_pages_publication_sources = publication_source_identity = Mock()
 held_browser_products = web_figures_root = prefetch_reader_markdown = Mock()
+prepare_verification_source_pages = Mock()
 held_source_admissions = lambda root: nullcontext()
 def included_publications(publications, preview):
     return {}

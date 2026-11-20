@@ -250,7 +250,7 @@ def prepared_inputs(reference, authenticate, report, *, figure_runner=None):
                 tool.publication_source_identity(*key)
             report("current publication dependencies and identities verified")
             scan.result()
-        yield tool, before, manifest
+        yield tool, before, manifest, publications
     tool._require_reference_checkout(revision)
 
 
@@ -271,7 +271,7 @@ def build_site(figure_runner):
     reference = Path(os.environ["PAGES_NATIVE_REFERENCE_DIR"])
     with os.fdopen(int(os.environ["PAGES_WRITER_REFERENCE_FD"]), "r") as receipt:
         with prepared_inputs(reference, lambda: receipt.read().strip(), report, figure_runner=figure_runner) as held:
-            tool, before, early_manifest = held
+            tool, before, early_manifest, _ = held
             tool.site_source_paths(early_manifest)
             report("writer canonical sources ready")
             manifest, publications = current_policy(tool, before)
@@ -342,9 +342,11 @@ def verify_site():
             succeeded(reference)
             return digest
 
-        with prepared_inputs(verifier, authenticate, report) as (tool, before, manifest):
+        with prepared_inputs(verifier, authenticate, report) as (tool, before, manifest, publications):
             tool.site_source_paths(manifest)
             report("independent source expectations ready")
+            tool.prepare_verification_source_pages(manifest, publications, False)
+            report("independent canonical HTML expectations ready")
             succeeded(writer)
             succeeded(writer_reference)
             manifest, publications = current_policy(tool, before)
