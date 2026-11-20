@@ -98,7 +98,7 @@ ROOT = Path.cwd()
 sys.path.insert(0, str(ROOT))
 MANIFEST_PATH = Path("release/browser-products.json")
 OUTPUT_ROOT = Path("build/public-alpha")
-load_manifest = validate_manifest = site_source_paths = _require_reference_checkout = Mock()
+load_manifest = validate_manifest = source_print_pages = site_source_paths = _require_reference_checkout = Mock()
 artifact_authorization = web_data_files = _hold_pages_publication_sources = publication_source_identity = Mock()
 held_browser_products = web_figures_root = Mock()
 held_source_admissions = lambda root: nullcontext()
@@ -331,12 +331,9 @@ else:
         upload = next(step for step in steps if step.get("with", {}).get("name", "").startswith("native-print-reference-"))
         self.assertLess(steps.index(prepare), steps.index(upload))
         self.assertNotIn("if", upload)  # GitHub only uploads following successful steps.
-        docker = self.write("print-bin/docker", '#!/bin/sh\n[ "$1" = build ]\n')
-        docker.chmod(0o755)
         temporary = self.root / "partitions" / str(shard)
         temporary.mkdir(exist_ok=True, parents=True)
         shard_env = {**env, "GITHUB_RUN_ID": "1", "GITHUB_RUN_ATTEMPT": "1",
-                     "PATH": str(docker.parent) + os.pathsep + env["PATH"],
                      "RUNNER_TEMP": str(temporary), "PRINT_SHARD": f"{shard}/8",
                      "PRINT_COMPILE_OUT": str(temporary / "compile")}
         result = self.shell(prepare["run"], env=shard_env)
@@ -593,6 +590,26 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
                 self.assertIn("deliberate source gate failure", result.stderr)
                 self.assertTrue((self.root / f"partitions/{shard}/native-print-reference/index.json").is_file())
                 self.assertFalse((received / str(shard)).exists())
+
+    def test_checked_source_is_shared_before_building_the_print_toolchain(self):
+        received = self.root / "uploads"
+        received.mkdir()
+        env = {**self.env, **self.pages()["env"], "GITHUB_RUN_ID": "1", "DEPLOYMENT_TEST_REFERENCES": str(received)}
+        # This runner's Docker executable fails; source preparation and upload must still succeed.
+        result = self.run_partition(env, 2)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertTrue((received / "2").is_file())
+        steps = {step["name"]: step for step in self.pages()["jobs"]["print-compile"]["steps"]}
+        share = "Share the source-derived native partition with the site builder"
+        build = "Build the pinned print toolchain"
+        compile_ = "Compile every edition in the partition from its bundle alone"
+        self.assertLess(list(steps).index(share), list(steps).index(build))
+        self.assertLess(list(steps).index(build), list(steps).index(compile_))
+        for name in (build, compile_):
+            self.assertNotIn("if", steps[name])
+        result = self.shell(steps[build]["run"], env=env)
+        self.assertEqual(result.returncode, 99)
+        self.assertIn("forbidden deployment executable: docker", result.stderr)
 
     def test_local_aggregate_corpus_workers_follow_capacity_and_jobserver(self):
         marker = self.root / "corpus-workers"
@@ -873,17 +890,18 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
                 if "uses" in step:
                     self.assertRegex(step["uses"], r"@[0-9a-f]{40}$")
         compile_steps = {step["name"]: step for step in jobs["print-compile"]["steps"]}
-        toolchain = compile_steps["Prepare this partition and build the pinned print toolchain"]["run"]
-        self.assertIn('python tools/tpt native-print-compile prepare --shard "$PRINT_SHARD"', toolchain)
-        self.assertIn('wait "$image_pid" || status=$?', toolchain)
-        self.assertIn('exit "$status"', toolchain)
+        prepare = compile_steps["Prepare and validate the source partition"]["run"]
+        self.assertIn('python tools/tpt native-print-compile prepare --shard "$PRINT_SHARD"', prepare)
+        self.assertIn('wait "$gate_pid" || status=$?', prepare)
+        self.assertIn('exit "$status"', prepare)
+        toolchain = compile_steps["Build the pinned print toolchain"]["run"]
         self.assertIn("--target toolchain", toolchain)
         self.assertIn('"PRINT_BASE=$TEXLIVE_IMAGE"', toolchain)
         self.assertIn('"ARCH_SNAPSHOT=$ARCH_SNAPSHOT"', toolchain)
         compiled = compile_steps["Compile every edition in the partition from its bundle alone"]["run"]
         self.assertIn("--network none", compiled)
         self.assertIn("native-print-compile compile", compiled)
-        self.assertNotIn("--only", toolchain + compiled)
+        self.assertNotIn("--only", prepare + compiled)
         for step in jobs["print-compile"]["steps"]:
             if "if" in step:
                 self.assertEqual(step["if"], "${{ !cancelled() }}")

@@ -224,6 +224,9 @@ def prepared_inputs(reference, authenticate, report, *, figure_runner=None):
             report("canonical admission and owner census ready")
             before = tool.MANIFEST_PATH.read_bytes()
             manifest = tool.load_manifest()
+            # Source readers use the held browser products and checkout alone.
+            # Both the route census and site assembly consume this same derivation.
+            tool.source_print_pages()
             if figure_runner:
                 from _web_figure_build import prepare as prepare_figures
                 products = tool.held_browser_products()

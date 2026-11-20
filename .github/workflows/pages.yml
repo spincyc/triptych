@@ -285,18 +285,11 @@ jobs:
       - name: Install source preparation dependencies
         run: python -m pip install --disable-pip-version-check -r requirements-public-alpha.txt -r requirements-tools.txt
 
-      # The service image's `toolchain` stage: the pinned TeX Live image plus
-      # archive-pinned XeTeX and Latin Babel support, verified by its own font
-      # and hyphenation probes. The anonymous base pull needs no token.
-      - name: Prepare this partition and build the pinned print toolchain
+      - name: Prepare and validate the source partition
         run: |
           set -euo pipefail
           [[ "$TEXLIVE_IMAGE" =~ ^ghcr\.io/[a-z0-9._/-]+@sha256:[0-9a-f]{64}$ ]] || { echo 'TEXLIVE_IMAGE must name an immutable digest' >&2; exit 1; }
           [[ "$ARCH_SNAPSHOT" =~ ^[0-9]{4}/[0-9]{2}/[0-9]{2}$ ]] || { echo 'ARCH_SNAPSHOT must name a daily archive' >&2; exit 1; }
-          docker build --target toolchain \
-            --build-arg "PRINT_BASE=$TEXLIVE_IMAGE" --build-arg "ARCH_SNAPSHOT=$ARCH_SNAPSHOT" \
-            --tag "triptych-print-compile:$GITHUB_RUN_ID" containers/native-print &
-          image_pid=$!
           # These gates read canonical sources. Their reference cannot be
           # uploaded until they pass, even if the same job is retried.
           (
@@ -310,7 +303,6 @@ jobs:
           python tools/tpt native-print-compile prepare --shard "$PRINT_SHARD" --out "$PRINT_COMPILE_OUT" \
             --publication-sources --export-reference "$RUNNER_TEMP/native-print-reference" --run-id "$GITHUB_RUN_ID" \
             --run-attempt "$GITHUB_RUN_ATTEMPT" || status=$?
-          wait "$image_pid" || status=$?
           wait "$gate_pid" || status=$?
           exit "$status"
 
@@ -322,6 +314,15 @@ jobs:
           overwrite: true
           if-no-files-found: error
           retention-days: 14
+
+      # The service image's `toolchain` stage: the pinned TeX Live image plus
+      # archive-pinned XeTeX and Latin Babel support, verified by its own font
+      # and hyphenation probes. The anonymous base pull needs no token.
+      - name: Build the pinned print toolchain
+        run: |
+          docker build --target toolchain \
+            --build-arg "PRINT_BASE=$TEXLIVE_IMAGE" --build-arg "ARCH_SNAPSHOT=$ARCH_SNAPSHOT" \
+            --tag "triptych-print-compile:$GITHUB_RUN_ID" containers/native-print
 
       - name: Compile every edition in the partition from its bundle alone
         run: |

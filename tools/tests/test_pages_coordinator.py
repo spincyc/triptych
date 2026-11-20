@@ -39,7 +39,7 @@ if os.environ["FAIL"] == "early" and role == "verifier":
         ready.write(b"R")
     time.sleep(90)
 if os.environ["FAIL"] == "hold-reference":
-    stages = ["browser-scan", "admission-census"] + (["figures"] if role == "writer" else [])
+    stages = ["browser-scan", "admission-census", "source-readers"] + (["figures"] if role == "writer" else [])
     for stage in stages:
         with open(stage + "-" + role, "rb") as work:
             assert work.read() == b"ready"
@@ -114,7 +114,19 @@ def web_data_files():
     Path("scanned" + role).touch()
 
 
+def source_print_pages():
+    assert SNAPSHOT.get() == "private browser snapshot"
+    assert Path("held-census-" + role).is_file()
+    assert "TRIPTYCH_NATIVE_REFERENCE_SHA256" not in os.environ
+    if failure == "source-readers":
+        raise ValueError("invalid canonical source reader")
+    if failure == "hold-reference":
+        with open("source-readers-" + role, "wb") as signal:
+            signal.write(b"ready")
+    Path("prepared-readers-" + role).touch()
+
 def site_source_paths(manifest):
+    assert Path("prepared-readers-" + role).is_file()
     assert Path("held-census-" + role).is_file()
     assert Path("scanned" + role).exists()
     assert os.environ["TRIPTYCH_NATIVE_REFERENCE_DIR"].endswith("/" + role)
@@ -231,7 +243,7 @@ class PagesCoordinatorTests(unittest.TestCase):
         (work / "Makefile").write_text(MAKEFILE)
         (work / "fetch-reference.py").write_text(REFERENCE)
         for name in ["prewarmed", "reference-started", "figures-writer",
-                     *(s + "-" + role for role in ("writer", "verifier") for s in ("browser-scan", "admission-census"))]:
+                     *(s + "-" + role for role in ("writer", "verifier") for s in ("browser-scan", "admission-census", "source-readers"))]:
             os.mkfifo(work / name)
         env = {**os.environ, "FAIL": failure, "PYTHONPATH": str(work), "COORDINATOR_TOOL": str(COORDINATOR),
                "COORDINATOR_PYTHON": sys.executable, "TRIPTYCH_WEB_FIGURE_CANDIDATES": "figure-candidates", "RUNNER_TEMP": str(work), "GITHUB_SHA": "a" * 40,
@@ -265,7 +277,7 @@ class PagesCoordinatorTests(unittest.TestCase):
         self.assertEqual(positions, sorted(positions))
 
     def test_failed_source_gate_product_preparation_or_reference_prevents_artifact_access(self):
-        for failure in ("gate", "prepare", "rights", "digest", "scan", "dirty-first", "digest-writer",
+        for failure in ("gate", "prepare", "rights", "digest", "scan", "source-readers", "dirty-first", "digest-writer",
                         "identity-writer", "identity-verifier", "figures"):
             with self.subTest(failure=failure):
                 work, result = self.run_build(failure)
