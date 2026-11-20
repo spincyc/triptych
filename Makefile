@@ -259,7 +259,7 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	check-document-schemas check-document-content check-artifact-delivery \
 	check-snapshot-delivery check-papal-inputs \
 	prepare-browser-data check-browser-products check-corpus-index deployment-source-gates \
-	pages-site pages-site-members public-site-artifact pages-native-reference \
+	pages-site pages-site-members pages-source-checks pages-protected-writer public-site-artifact pages-native-reference \
 	deployment-calendar-days deployment-calendar-masses deployment-calendar-rubrics deployment-propers \
 	check-source-evidence print-document \
 	check-source-inventory check-source-inventory-tool \
@@ -517,6 +517,21 @@ DEPLOYMENT_SOURCE_MEMBERS := check-curriculum-source-rights check-corpus-index \
 	check-artifact-delivery check-snapshot-delivery check-papal-inputs \
 	deployment-calendar-days deployment-propers deployment-calendar-rubrics check-mass-ordinary
 
+# The print partitions and corpus runner own the canonical checks; the site
+# writer runs its rights prerequisite. Every other deployment gate belongs to
+# the independently scheduled source runner, including future gate additions.
+PAGES_CANONICAL_SOURCE_GATES := check-corpus-index check-proper-chronology-current check-source-graph
+PAGES_REMOTE_SOURCE_GATES := $(filter-out $(PAGES_CANONICAL_SOURCE_GATES) check-curriculum-source-rights,$(DEPLOYMENT_SOURCE_MEMBERS))
+pages-source-checks: $(PAGES_REMOTE_SOURCE_GATES)
+ifneq ($(filter pages-source-checks,$(MAKECMDGOALS)),)
+$(PAGES_REMOTE_SOURCE_GATES): private export PYTHON_CPU_COUNT := 1
+endif
+
+# The Actions coordinator waits for this target before independent artifact
+# read-back. A local pages-site invocation still runs its own source checks.
+pages-protected-writer: public-site-artifact
+	@$(PYTHON) .github/scripts/pages-native-reference.py --deployment-gates
+
 # Bootstrap bounded concurrency when the caller supplied no jobserver. Keep
 # ordinary liturgical derivation and rights checks in the source publication
 # gate; neither this target nor its prerequisites installs or fetches PDFs.
@@ -530,19 +545,13 @@ check-deployment-sources: deployment-source-gates
 pages-site: pages-site-members
 endif
 
-# What the Pages build job runs: the whole deployment source gate beside the
-# site build instead of before it. The build is one process and the gates fill
-# the runner's other cores; the site is listed first so that it takes the first
-# job slot the verified products free. A failing gate still fails this target,
-# and with it the workflow step, before `public-alpha verify` runs or anything
-# is uploaded: the site may be assembled, but it never leaves the runner.
-# `make public-site` keeps the stricter local order, gates before assembly.
+# A local pages-site invocation assembles the site beside the source gates;
+# public-site retains its stricter local order, gates before assembly.
 ifeq ($(and $(strip $(PAGES_NATIVE_REFERENCE_DIR)),$(filter pages-site pages-site-members,$(MAKECMDGOALS))),)
 pages-site-members: public-site-artifact deployment-source-gates
 else
 # Chronology and source graph gate their two print references. The dedicated
 # corpus-index job gates completion after all local prerequisites finish.
-PAGES_CANONICAL_SOURCE_GATES := check-corpus-index check-proper-chronology-current check-source-graph
 PAGES_LOCAL_SOURCE_GATES := $(filter-out $(PAGES_CANONICAL_SOURCE_GATES),$(DEPLOYMENT_SOURCE_MEMBERS))
 pages-site-members: public-site-artifact $(PAGES_LOCAL_SOURCE_GATES)
 	@$(PYTHON) .github/scripts/pages-native-reference.py --corpus-gate
@@ -783,7 +792,7 @@ help:
 		'make prepare-public-alpha  Print current candidate hashes; grants no approval' \
 		'make public-preview  Build a private no-index preview with review candidates' \
 		'make public-site  Build the fail-closed, history-free public artifact' \
-		'make pages-site  Run the deployment source gates beside the public artifact build, as Pages does' \
+		'make pages-site  Run the deployment source gates beside the public artifact build' \
 		'make print-document DOCUMENT=<qualified-id> [PRINT_EDITION=main] [PRINT_OUT=.scratch/print-document]  Build one optional PDF and receipt' \
 		'make verify-public-preview  Recheck the existing private preview artifact' \
 		'make verify-public-site  Recheck the existing public artifact' \

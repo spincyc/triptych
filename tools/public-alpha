@@ -36,6 +36,7 @@ from _corpus import (  # noqa: E402
     CorpusError,
     eligible_document_ids as corpus_eligible_document_ids,
 )
+from _native_print import held_source_admissions  # noqa: E402
 from _scanning import markers_for  # noqa: E402
 import _qualified_public_domain  # noqa: E402
 from _browser_products import MANIFEST_RELATIVE as BROWSER_PRODUCTS_MANIFEST_RELATIVE  # noqa: E402

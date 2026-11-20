@@ -6,6 +6,7 @@ import re
 from pathlib import Path
 
 import _document_schema as schema
+from _native_print import publication_source_owners
 import _native_print_bundles as bundles
 from _native_print_reference import _origin
 
@@ -22,7 +23,7 @@ def _need(condition, message):
 def _assign(root, documents, count):
     """Put an admitted owner with a worker that already ran its native assembly."""
     _need(type(count) is int and count > 0, "invalid partition count")
-    owners = schema.publication_owners(root)
+    owners = publication_source_owners(root)
     numbers = {key: index % count + 1 for index, key in enumerate(sorted(documents))}
     selections = {}
     for key, doc in sorted(documents.items()):

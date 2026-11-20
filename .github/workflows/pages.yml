@@ -86,12 +86,13 @@ jobs:
       - name: Hydrate and verify native TeX runtime assets
         run: python scripts/_native_tex_assets.py hydrate --fetch
 
-      # The descriptor's digest selects candidates cheaply. pages-site checks
+      # The descriptor's digest selects candidates cheaply. Browser preparation checks
       # current canonical sources and every selected file before publication.
       # A prefix match supplies candidate family entries only. The source gate
       # verifies current family identities and every byte before any consumer
       # reads them; a miss derives the exact products offline from sources.
-      - name: Restore browser product candidates
+      - &browser-restore
+        name: Restore browser product candidates
         id: browser-cache
         uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
@@ -102,14 +103,16 @@ jobs:
 
       # This optional public pack contains untrusted candidates, never authority.
       # Only explicit CI bootstrap may fetch it; ordinary builds remain offline.
-      - name: Bootstrap optional browser product candidates
+      - &browser-bootstrap
+        name: Bootstrap optional browser product candidates
         if: steps.browser-cache.outputs.cache-hit != 'true'
         run: python scripts/_browser_cache_bootstrap.py --fetch
 
       # Web readers are converted from canonical TeX at build time (the
       # `web-editions` product family). Install exactly the pinned official
       # converter so a cold family reproduces the committed bytes.
-      - name: Install the pinned web-edition converter
+      - &browser-converter
+        name: Install the pinned web-edition converter
         run: |
           set -euo pipefail
           python scripts/_install_web_edition_pandoc.py --fetch --bin-dir "$RUNNER_TEMP/web-edition-toolchain"
@@ -185,7 +188,8 @@ jobs:
     permissions:
       contents: read
     steps:
-      - name: Check out repository
+      - &source-checkout
+        name: Check out repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           persist-credentials: false
@@ -193,19 +197,46 @@ jobs:
           filter: blob:none
 
       # Changed-path Bloom filters accelerate the edition revision queries.
-      - name: Index changed paths in Git history
+      - &source-history
+        name: Index changed paths in Git history
         run: git rev-parse HEAD | git commit-graph write --stdin-commits --changed-paths
 
-      - name: Set up Python
+      - &source-python
+        name: Set up Python
         uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
         with:
           python-version: "3.13"
 
-      - name: Install source preparation dependencies
+      - &source-dependencies
+        name: Install source preparation dependencies
         run: python -m pip install --disable-pip-version-check -r requirements-public-alpha.txt -r requirements-tools.txt
 
       - name: Run canonical source check
         run: make check-corpus-index
+
+  # This runner verifies its own browser product bytes before their consumers.
+  # It needs the converter on a cold miss, and shares no output with the writer.
+  source-checks:
+    name: Deployment source checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    permissions:
+      contents: read
+    env:
+      TRIPTYCH_BROWSER_DATA_ROOT: build/browser-data
+      PYTHONDONTWRITEBYTECODE: "1"
+    steps:
+      - *source-checkout
+      - *source-history
+      - *source-python
+      - *source-dependencies
+      - *browser-restore
+      - *browser-bootstrap
+      - *browser-converter
+      - name: Run deployment source checks
+        run: |
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+          make -j4 pages-source-checks
 
   # Every admitted print edition (provider publications and companions, Bibles,
   # papal selections, reading-plan volumes) is typeset from the exact source
@@ -322,7 +353,7 @@ jobs:
   # from the exact site it verified and uploaded. A partial retry can reuse
   # successful sibling shards from the same run and source revision.
   print-verify:
-    needs: [build, print-compile, corpus-check]
+    needs: [build, print-compile, corpus-check, source-checks]
     runs-on: ubuntu-latest
     timeout-minutes: 5
     permissions:

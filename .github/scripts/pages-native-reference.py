@@ -1,7 +1,7 @@
 """Retrieve the canonical native inputs produced by the print jobs in this Pages run."""
 from concurrent.futures import ThreadPoolExecutor
 from contextvars import copy_context
-from contextlib import contextmanager
+from contextlib import ExitStack, contextmanager
 import hashlib
 import json
 import os
@@ -21,7 +21,8 @@ from types import SimpleNamespace
 
 
 SHARDS = 8
-CORPUS_JOB = "canonical-check (check-corpus-index)"
+CORPUS_GATE = ("canonical-check (check-corpus-index)", "Run canonical source check")
+DEPLOYMENT_GATE = ("Deployment source checks", "Run deployment source checks")
 
 
 def select_artifacts(artifacts, run_id, revision):
@@ -55,26 +56,27 @@ def latest_jobs(endpoint, *, prior_attempts=False):
     return [job for job in jobs if job["run_attempt"] == newest[job["name"]]]
 
 
-def corpus_gate_passed(jobs, run_id, revision, attempt):
-    """Check the completed corpus-index job and the step that ran its Make target."""
-    matches = [job for job in jobs if job["name"] == CORPUS_JOB]
+def source_gate_passed(jobs, run_id, revision, attempt, gate):
+    """Require one matching job and exactly one successful canonical Make step."""
+    job_name, step_name = gate
+    matches = [job for job in jobs if job["name"] == job_name]
     if not matches:
         return False
     job = matches[0]
     if (len(matches) != 1 or str(job["run_id"]) != run_id or job["head_sha"] != revision
             or not 1 <= job["run_attempt"] <= attempt):
-        raise ValueError("unexpected canonical corpus job identity")
+        raise ValueError(f"unexpected source job identity for {job_name}")
     if job["status"] != "completed":
         return False
-    checks = [step["conclusion"] for step in job["steps"] if step["name"] == "Run canonical source check"]
-    if job["conclusion"] == "success" and checks == ["success"]:
+    checks = [(step.get("status"), step["conclusion"]) for step in job["steps"] if step["name"] == step_name]
+    if job["conclusion"] == "success" and checks == [("completed", "success")]:
         return True
     if job["run_attempt"] < attempt:
         return False  # a rerun of the failed gate may still be queued
-    raise ValueError(f"{CORPUS_JOB} did not pass its source check ({job['conclusion']})")
+    raise ValueError(f"{job_name} did not pass its source check ({job['conclusion']})")
 
 
-def wait_for_corpus_gate(env):
+def wait_for_source_gates(env, gates):
     revision, run_id = env["GITHUB_SHA"], env["GITHUB_RUN_ID"]
     if subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip() != revision:
         raise ValueError("the checkout differs from the current Pages run")
@@ -91,10 +93,12 @@ def wait_for_corpus_gate(env):
                 raise
         else:
             failures = 0
-            if corpus_gate_passed(jobs, run_id, revision, attempt):
+            # Inspect every result even while another runner is still queued.
+            results = [source_gate_passed(jobs, run_id, revision, attempt, gate) for gate in gates]
+            if all(results):
                 return
         time.sleep(5)
-    raise ValueError("timed out waiting for the canonical corpus check")
+    raise ValueError("timed out waiting for the required source checks")
 
 
 def fetch_partition(endpoint, artifact, destination):
@@ -208,12 +212,16 @@ def prepared_inputs(reference, authenticate, report, *, figure_runner=None):
     tool = SimpleNamespace(**runpy.run_path("tools/public-alpha"))
     revision = os.environ["GITHUB_SHA"]
     tool._require_reference_checkout(revision)
-    with tool.held_repository_inputs(prefetch_web=False):
+    with tool.held_repository_inputs(prefetch_web=False), ExitStack() as sources:
         report("verified browser snapshot acquired")
         # A directory with no digest refuses any premature native source use.
         os.environ["TRIPTYCH_NATIVE_REFERENCE_DIR"] = str(reference)
         with ThreadPoolExecutor(max_workers=1) as checks:
             scan = checks.submit(copy_context().run, tool.web_data_files)
+            # Native downloads are already independent processes. Census only
+            # this clean checkout while the browser scan and retrieval run.
+            sources.enter_context(tool.held_source_admissions(tool.ROOT))
+            report("canonical admission and owner census ready")
             before = tool.MANIFEST_PATH.read_bytes()
             manifest = tool.load_manifest()
             if figure_runner:
@@ -309,12 +317,12 @@ def verify_site():
         # so public-site-artifact is ready on the next invocation's first visit.
         prerequisites = ("prepare-browser-data", "check-curriculum-source-rights")
         succeeded(spawn(["make", "-j2", *prerequisites], env=env))
-        report("browser products and source rights verified; starting remaining gates and site assembly")
+        report("browser products and source rights verified; starting site assembly")
         writer_dir = Path(temporary.name) / "writer"
         writer_reference = spawn([sys.executable, __file__, "--digest"], stdout=subprocess.PIPE, text=True,
                                  env={**env, "PAGES_NATIVE_REFERENCE_DIR": str(writer_dir)})
         with writer_reference.stdout as pipe:
-            writer = spawn(["make", "-j3", *(f"--assume-old={goal}" for goal in prerequisites), "pages-site",
+            writer = spawn(["make", "-j3", *(f"--assume-old={goal}" for goal in prerequisites), "pages-protected-writer",
                             f"WEB_FIGURES_RUNNER=docker:{image}"], pass_fds=(pipe.fileno(),),
                            env={**env, "PAGES_NATIVE_REFERENCE_DIR": str(writer_dir),
                                 "PAGES_WRITER_REFERENCE_FD": str(pipe.fileno())})
@@ -361,7 +369,9 @@ if __name__ == "__main__":
         if sys.argv[1:] == ["--verify-site"]:
             verify_site()
         elif sys.argv[1:] == ["--corpus-gate"]:
-            wait_for_corpus_gate(os.environ)
+            wait_for_source_gates(os.environ, (CORPUS_GATE,))
+        elif sys.argv[1:] == ["--deployment-gates"]:
+            wait_for_source_gates(os.environ, (CORPUS_GATE, DEPLOYMENT_GATE))
         elif len(sys.argv) == 3 and sys.argv[1] == "--build-site":
             build_site(sys.argv[2])
         elif sys.argv[1:] == ["--digest"]:
@@ -369,6 +379,6 @@ if __name__ == "__main__":
         elif not sys.argv[1:]:
             prepare(os.environ)
         else:
-            raise ValueError("expected --verify-site, --corpus-gate, --digest or no argument")
+            raise ValueError("expected --verify-site, --corpus-gate, --deployment-gates, --digest or no argument")
     except (KeyError, OSError, ValueError, zipfile.BadZipFile, subprocess.SubprocessError) as error:
         sys.exit(f"native print reference: {error}")

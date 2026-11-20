@@ -39,7 +39,7 @@ if os.environ["FAIL"] == "early" and role == "verifier":
         ready.write(b"R")
     time.sleep(90)
 if os.environ["FAIL"] == "hold-reference":
-    stages = ["browser-scan"] + (["figures"] if role == "writer" else [])
+    stages = ["browser-scan", "admission-census"] + (["figures"] if role == "writer" else [])
     for stage in stages:
         with open(stage + "-" + role, "rb") as work:
             assert work.read() == b"ready"
@@ -47,14 +47,14 @@ failure = os.environ["FAIL"]
 print("invalid" if failure in ("digest", "digest-" + role) else ("a" if role == "verifier" else "b") * 64)
 """
 MAKEFILE = """
-.PHONY: pages-site prepare-browser-data check-curriculum-source-rights writer gate
+.PHONY: pages-protected-writer prepare-browser-data check-curriculum-source-rights writer gate
 prepare-browser-data:
 	@echo prepare >> preparations
 	@test "$(FAIL)" != "prepare"
 check-curriculum-source-rights:
 	@echo rights >> rights-checks
 	@test "$(FAIL)" != "rights"
-pages-site: writer gate
+pages-protected-writer: writer gate
 writer: check-curriculum-source-rights | prepare-browser-data
 	@echo bbbbbbbb > "$$PAGES_NATIVE_REFERENCE_DIR.sha256"
 	@"$$COORDINATOR_PYTHON" "$$COORDINATOR_TOOL" --build-site '$(WEB_FIGURES_RUNNER)'
@@ -115,6 +115,7 @@ def web_data_files():
 
 
 def site_source_paths(manifest):
+    assert Path("held-census-" + role).is_file()
     assert Path("scanned" + role).exists()
     assert os.environ["TRIPTYCH_NATIVE_REFERENCE_DIR"].endswith("/" + role)
     assert os.environ["TRIPTYCH_NATIVE_REFERENCE_SHA256"] == ("a" if role == "verifier" else "b") * 64
@@ -132,7 +133,22 @@ def verify_output(manifest, publications, path, preview):
 def included_publications(publications, preview):
     return {("gpt", "one"): {}, ("claude", "two"): {}}
 
+@contextmanager
+def held_source_admissions(root):
+    assert root == ROOT and not os.environ.get("TRIPTYCH_NATIVE_REFERENCE_SHA256")
+    assert clean.exists() and SNAPSHOT.get() == "private browser snapshot"
+    path = Path("held-census-" + role)
+    path.touch(exist_ok=False)
+    try:
+        if failure == "hold-reference":
+            with open("admission-census-" + role, "wb") as signal:
+                signal.write(b"ready")
+        yield
+    finally:
+        path.unlink()
+
 def _hold_pages_publication_sources(shards):
+    assert Path("held-census-" + role).is_file()
     assert shards == 8
     assert os.environ["TRIPTYCH_NATIVE_REFERENCE_SHA256"] == ("a" if role == "verifier" else "b") * 64
     assert os.environ["TRIPTYCH_NATIVE_REFERENCE_DIR"].endswith("/" + role)
@@ -215,7 +231,7 @@ class PagesCoordinatorTests(unittest.TestCase):
         (work / "Makefile").write_text(MAKEFILE)
         (work / "fetch-reference.py").write_text(REFERENCE)
         for name in ["prewarmed", "reference-started", "figures-writer",
-                     *(s + "-" + role for role in ("writer", "verifier") for s in ("browser-scan",))]:
+                     *(s + "-" + role for role in ("writer", "verifier") for s in ("browser-scan", "admission-census"))]:
             os.mkfifo(work / name)
         env = {**os.environ, "FAIL": failure, "PYTHONPATH": str(work), "COORDINATOR_TOOL": str(COORDINATOR),
                "COORDINATOR_PYTHON": sys.executable, "TRIPTYCH_WEB_FIGURE_CANDIDATES": "figure-candidates", "RUNNER_TEMP": str(work), "GITHUB_SHA": "a" * 40,

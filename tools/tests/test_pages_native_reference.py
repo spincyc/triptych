@@ -24,12 +24,12 @@ class CorpusGateTests(unittest.TestCase):
     def jobs(self):
         return [{"name": f"canonical-check ({gate})", "run_id": 42, "head_sha": self.revision, "run_attempt": 2,
                  "status": "completed", "conclusion": "success",
-                 "steps": [{"name": "Run canonical source check", "conclusion": "success"}]}
+                 "steps": [{"name": "Run canonical source check", "status": "completed", "conclusion": "success"}]}
                 for gate in ("check-corpus-index", "check-proper-chronology-current", "check-source-graph")]
 
     def test_exact_latest_same_source_job_results_and_executed_steps(self):
         first, *rest = self.jobs()
-        passed = lambda jobs: pages.corpus_gate_passed(jobs, "42", self.revision, 2)
+        passed = lambda jobs: pages.source_gate_passed(jobs, "42", self.revision, 2, pages.CORPUS_GATE)
         self.assertTrue(passed([dict(first, run_attempt=1), *rest]))  # partial rerun retained a success
         self.assertFalse(passed(rest))
         self.assertFalse(passed([dict(first, status="in_progress", conclusion=None), *rest]))
@@ -42,6 +42,35 @@ class CorpusGateTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             passed([first, first, *rest])
 
+    def test_other_runner_must_complete_its_own_canonical_step_on_this_run_and_source(self):
+        gate = pages.DEPLOYMENT_GATE
+        source = dict(self.jobs()[0], name=gate[0], run_attempt=1,
+                      steps=[{"name": gate[1], "status": "completed", "conclusion": "success"}])
+        check = lambda jobs: pages.source_gate_passed(jobs, "42", self.revision, 2, gate)
+        self.assertFalse(check(self.jobs()))
+        self.assertTrue(check([source]))  # latest successful job retained on a partial retry
+        self.assertFalse(check([dict(source, conclusion="failure")]))
+        self.assertFalse(check([dict(source, run_attempt=2, status="queued", conclusion=None)]))
+        for change in ({"run_id": 43}, {"head_sha": "b" * 40}, {"run_attempt": 3},
+                       {"steps": []}, {"steps": source["steps"] * 2},
+                       {"steps": [{"name": pages.CORPUS_GATE[1], "status": "completed", "conclusion": "success"}]},
+                       {"steps": [{"name": gate[1], "status": "in_progress", "conclusion": "success"}]},
+                       {"steps": [{"name": gate[1], "conclusion": "skipped"}]}):
+            with self.subTest(change=change), self.assertRaises(ValueError):
+                check([{**source, "run_attempt": 2, **change}])
+        with self.assertRaises(ValueError):
+            check([source, source])
+
+    def test_failed_other_runner_is_reported_while_corpus_is_still_missing(self):
+        job_name, step_name = pages.DEPLOYMENT_GATE
+        failure = dict(self.jobs()[0], name=job_name, conclusion="failure",
+                       steps=[{"name": step_name, "conclusion": "failure"}])
+        with patch.object(pages.subprocess, "check_output", return_value=self.revision), \
+             patch.object(pages, "latest_jobs", return_value=[failure]), \
+             patch.object(pages.time, "sleep") as sleep, self.assertRaisesRegex(ValueError, job_name):
+            pages.wait_for_source_gates(self.env, (pages.CORPUS_GATE, pages.DEPLOYMENT_GATE))
+        sleep.assert_not_called()
+
     def test_retry_selects_latest_execution_even_across_api_pages(self):
         first, second, third = self.jobs()
         stale = dict(first, run_attempt=1)
@@ -53,7 +82,7 @@ class CorpusGateTests(unittest.TestCase):
         query.assert_called_once_with(["gh", "api", "--paginate", "--slurp",
                                        "run/jobs?filter=all&per_page=100"], timeout=30)
         self.assertCountEqual(selected, [running, retained, third])
-        self.assertFalse(pages.corpus_gate_passed(selected, "42", self.revision, 2))
+        self.assertFalse(pages.source_gate_passed(selected, "42", self.revision, 2, pages.CORPUS_GATE))
 
     def test_poll_retries_interruptions_and_requires_all_successes(self):
         failed = subprocess.CalledProcessError(1, ["gh", "api"])
@@ -61,21 +90,21 @@ class CorpusGateTests(unittest.TestCase):
         with patch.object(pages.subprocess, "check_output", return_value=self.revision), \
                 patch.object(pages.time, "sleep"), \
                 patch.object(pages, "latest_jobs", side_effect=[failed, running, self.jobs()]) as query:
-            pages.wait_for_corpus_gate(self.env)
+            pages.wait_for_source_gates(self.env, (pages.CORPUS_GATE,))
             self.assertEqual(query.call_count, 3)
             query.assert_called_with("repos/o/r/actions/runs/42", prior_attempts=True)
         with patch.object(pages.subprocess, "check_output", return_value=self.revision), \
                 patch.object(pages.time, "sleep"), patch.object(pages, "latest_jobs", side_effect=failed) as query, \
                 self.assertRaises(subprocess.CalledProcessError):
-            pages.wait_for_corpus_gate(self.env)
+            pages.wait_for_source_gates(self.env, (pages.CORPUS_GATE,))
         self.assertEqual(query.call_count, 3)
         with patch.object(pages.subprocess, "check_output", return_value=self.revision), \
                 patch.object(pages.time, "sleep"), patch.object(pages.time, "monotonic", side_effect=[0, 1, 10000]), \
                 patch.object(pages, "latest_jobs", return_value=running), self.assertRaisesRegex(ValueError, "timed out"):
-            pages.wait_for_corpus_gate(self.env)
+            pages.wait_for_source_gates(self.env, (pages.CORPUS_GATE,))
         with patch.object(pages.subprocess, "check_output", return_value="wrong"), \
                 patch.object(pages, "latest_jobs") as query, self.assertRaisesRegex(ValueError, "checkout"):
-            pages.wait_for_corpus_gate(self.env)
+            pages.wait_for_source_gates(self.env, (pages.CORPUS_GATE,))
         query.assert_not_called()
 
 

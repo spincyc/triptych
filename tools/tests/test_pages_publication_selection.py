@@ -101,6 +101,7 @@ OUTPUT_ROOT = Path("build/public-alpha")
 load_manifest = validate_manifest = site_source_paths = _require_reference_checkout = Mock()
 artifact_authorization = web_data_files = _hold_pages_publication_sources = publication_source_identity = Mock()
 held_browser_products = web_figures_root = Mock()
+held_source_admissions = lambda root: nullcontext()
 def included_publications(publications, preview):
     return {}
 def build_site(manifest, publications, preview):
@@ -162,31 +163,6 @@ generated = {tuple(command) for command in json.loads(os.environ["DEPLOYMENT_TES
 ready = root / "build/browser-data/verified-ready"
 if " ".join(args) == os.environ.get("DEPLOYMENT_TEST_FAIL"):
     raise SystemExit("deliberate source gate failure")
-if os.environ.get("DEPLOYMENT_TEST_WRITER_SLOT"):
-    # Keep the first three sibling gates occupied until the actual writer
-    # starts. If rights share their Make invocation, let two take slots
-    # before completing rights to reproduce the hosted scheduling order.
-    gates = {("tools/tpt", "document-schema", "check", "--include-sources"): "schema",
-             ("tools/tpt", "document-library", "check"): "catalogue",
-             ("tools/tpt", "check-calendar-masses"): "masses"}
-    def wait_for(*names):
-        deadline = time.monotonic() + 5
-        while not all((root / name).exists() for name in names):
-            if time.monotonic() >= deadline:
-                raise SystemExit(f"{args} blocked waiting for {names}")
-            time.sleep(.01)
-    if tuple(args) in gates:
-        (root / gates[tuple(args)]).touch()
-        wait_for("writer-started")
-    elif args[:3] == ["-m", "unittest", "-v"]:
-        if "PAGES_WRITER_REFERENCE_FD" in os.environ:
-            wait_for("schema", "catalogue")
-        (root / "rights-passed").touch()
-    elif args[:2] == [".github/scripts/pages-native-reference.py", "--build-site"]:
-        if not ready.is_file() or not (root / "rights-passed").is_file():
-            raise SystemExit("writer started before its prerequisites passed")
-        wait_for("schema", "catalogue")
-        (root / "writer-started").touch()
 if os.environ.get("DEPLOYMENT_TEST_OVERLAP"):
     peers = {
         ("tools/tpt", "browser-products", "build"): ("products", "corpus"),
@@ -232,12 +208,16 @@ elif args[:3] == ["tools/tpt", "native-print-compile", "prepare"] and "--export-
     export = Path(args[args.index("--export-reference") + 1])
     export.mkdir(parents=True, exist_ok=True)
     (export / "index.json").write_text(os.environ["PRINT_SHARD"])
-elif args == [".github/scripts/pages-native-reference.py", "--corpus-gate"]:
+elif args in ([".github/scripts/pages-native-reference.py", "--corpus-gate"],
+              [".github/scripts/pages-native-reference.py", "--deployment-gates"]):
     if "DEPLOYMENT_TEST_GATE_RESULTS" in os.environ:
         import runpy
         helper = runpy.run_path(os.environ["DEPLOYMENT_TEST_COORDINATOR"])
         jobs = json.loads(os.environ["DEPLOYMENT_TEST_GATE_RESULTS"])
-        assert helper["corpus_gate_passed"](jobs, "1", os.environ["GITHUB_SHA"], 1)
+        gates = [helper["CORPUS_GATE"]]
+        if args[-1] == "--deployment-gates":
+            gates.append(helper["DEPLOYMENT_GATE"])
+        assert all(helper["source_gate_passed"](jobs, "1", os.environ["GITHUB_SHA"], 1, gate) for gate in gates)
 elif (args == [".github/scripts/pages-native-reference.py", "--verify-site"] or
       args[:2] == [".github/scripts/pages-native-reference.py", "--build-site"]):
     # Run the real scheduling and failure barriers. Its --digest child enters
@@ -277,8 +257,9 @@ elif args in ([".github/scripts/pages-native-reference.py"], ["--digest"]):
     with open(os.environ["GITHUB_OUTPUT"], "a") as output:
         output.write("native-reference-sha256=" + digest + "\n")
 elif tuple(args) in allowed:
-    if ("DEPLOYMENT_TEST_GATE_RESULTS" in os.environ and "PAGES_NATIVE_REFERENCE_DIR" in os.environ
-            and os.environ.get("PYTHON_CPU_COUNT") != "1"):
+    if "DEPLOYMENT_TEST_GATE_RESULTS" in os.environ and "PAGES_WRITER_REFERENCE_FD" in os.environ:
+        raise SystemExit("remote source check unexpectedly ran in the writer checkout")
+    if os.environ.get("DEPLOYMENT_TEST_SOURCE_RUNNER") and os.environ.get("PYTHON_CPU_COUNT") != "1":
         raise SystemExit("a hosted source check exceeded its reserved runner slot")
     if tuple(args) in generated and not ready.is_file():
         raise SystemExit("generated consumer ran before browser product preparation")
@@ -365,6 +346,29 @@ else:
             (Path(env["DEPLOYMENT_TEST_REFERENCES"]) / str(shard)).touch()
         return result
 
+    def run_source_checks(self, env, job, cache_hit):
+        # A separate checkout and product store; the combined observation log
+        # lets the test count each gate across all the real workflow commands.
+        self.source_runner = Path(self.enterContext(tempfile.TemporaryDirectory(dir=self.root.parent)))
+        runner = self.source_runner
+        subprocess.run(["git", "clone", "--quiet", "--no-local", str(self.root), str(runner)], check=True)
+        shutil.copyfile(self.root / "Makefile", runner / "Makefile")
+        (runner / "runner-temp").mkdir()
+        checker_env = {**env, **job["env"], "DEPLOYMENT_TEST_ROOT": str(runner), "DEPLOYMENT_TEST_SOURCE_RUNNER": "1",
+                       "GITHUB_WORKSPACE": str(runner), "RUNNER_TEMP": str(runner / "runner-temp"),
+                       "GITHUB_PATH": str(runner / "workflow-path"), "GITHUB_OUTPUT": str(runner / "workflow-output")}
+        executed = []
+        for step in job["steps"]:
+            if "run" not in step or (cache_hit and step.get("if") == "steps.browser-cache.outputs.cache-hit != 'true'"):
+                continue
+            result = subprocess.run(["bash", "-euo", "pipefail", "-c", step["run"]], cwd=runner, env=checker_env,
+                                    capture_output=True, text=True, timeout=30)
+            executed.append({"name": step["name"], "status": "completed",
+                             "conclusion": "failure" if result.returncode else "success"})
+            if result.returncode:
+                break
+        return executed
+
     def run_pages_commands(self, *, env=None, cache_hit=False):
         # The checkout's Git accelerators operate only on this fixture's own repository.
         if not (self.root / ".git").is_dir():
@@ -374,6 +378,7 @@ else:
                             "commit", "--quiet", "--allow-empty", "-m", "Fixture checkout"], check=True)
         # The workflow-level declarations every step sees, such as TEXLIVE_IMAGE.
         env = {**(env or self.env), **{name: str(value) for name, value in self.pages()["env"].items()}}
+        env["GITHUB_SHA"] = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=self.root, text=True).strip()
         references = self.root / "uploaded-partitions"
         shutil.rmtree(references, ignore_errors=True)
         references.mkdir()
@@ -386,9 +391,14 @@ else:
         step = next(step for step in corpus["steps"] if step["name"] == "Run canonical source check")
         result = self.shell(step["run"], env=env)
         outcome = "success" if result.returncode == 0 else "failure"
-        env["DEPLOYMENT_TEST_GATE_RESULTS"] = json.dumps([{
-            "name": corpus["name"], "status": "completed", "conclusion": outcome, "run_id": 1,
-            "run_attempt": 1, "head_sha": env["GITHUB_SHA"], "steps": [{"name": step["name"], "conclusion": outcome}]}])
+        def job_result(name, steps):
+            successful = all(item["conclusion"] == "success" for item in steps)
+            return {"name": name, "status": "completed", "conclusion": "success" if successful else "failure",
+                    "run_id": 1, "run_attempt": 1, "head_sha": env["GITHUB_SHA"], "steps": steps}
+        source = self.pages()["jobs"]["source-checks"]
+        env["DEPLOYMENT_TEST_GATE_RESULTS"] = json.dumps([
+            job_result(corpus["name"], [{"name": step["name"], "status": "completed", "conclusion": outcome}]),
+            job_result(source["name"], self.run_source_checks(env, source, cache_hit))])
         descriptor = self.root / "release/browser-products.json"
         if not descriptor.exists():
             self.write("release/browser-products.json", json.dumps({"products": [
@@ -505,7 +515,7 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         self.assertEqual(commands.count(VERIFY_TARGET), 1)
         self.assertLess(commands.index(verify), commands.index(VERIFY_TARGET))
         prep_make = ("make", "-j2", "prepare-browser-data", "check-curriculum-source-rights")
-        writer = ("make", "-j3", "--assume-old=prepare-browser-data", "--assume-old=check-curriculum-source-rights", "pages-site",
+        writer = ("make", "-j3", "--assume-old=prepare-browser-data", "--assume-old=check-curriculum-source-rights", "pages-protected-writer",
                   "WEB_FIGURES_RUNNER=docker:" + self.pages()["env"]["TEXLIVE_IMAGE"])
         self.assertEqual(commands.count(prep_make), 1)
         self.assertEqual([command for command in commands
@@ -520,14 +530,16 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         self.assertLess(commands.index(writer_reference), commands.index(build))
         self.assertEqual(commands.count(("--digest", "verifier")), 1)
         self.assertLess(commands.index(("--digest", "verifier")), commands.index(verify))
+        source_prepared = ("tools/tpt", "browser-products", "build")
+        self.assertEqual(commands.count(source_prepared), 1)
         for command in GENERATED_CONSUMERS:
-            self.assertLess(commands.index(prepared), commands.index(command))
+            self.assertLess(commands.index(source_prepared), commands.index(command))
         # Pages runs the gates beside the site build, so only the rights cases
         # (a prerequisite of the build) are ordered before it; every gate is
         # ordered before verification, which only a passing step reaches.
         for command in SOURCE_COMMANDS:
             self.assertLess(commands.index(command), commands.index(verify))
-        barrier = (".github/scripts/pages-native-reference.py", "--corpus-gate")
+        barrier = (".github/scripts/pages-native-reference.py", "--deployment-gates")
         self.assertEqual(commands.count(barrier), 1)
         self.assertLess(commands.index(build), commands.index(barrier))
         self.assertLess(commands.index(barrier), commands.index(verify))
@@ -565,7 +577,7 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         self.assertIn("did not pass its source check", result.stderr)
         self.assertEqual(len(list((self.root / "uploaded-partitions").iterdir())), 8)
         self.assertTrue((self.root / "build/public-alpha/site/index.html").is_file())
-        self.assertIn((".github/scripts/pages-native-reference.py", "--corpus-gate"), self.commands())
+        self.assertIn((".github/scripts/pages-native-reference.py", "--deployment-gates"), self.commands())
         self.assertNotIn(VERIFY_OUTPUT, self.commands())
 
     def test_failed_shard_source_gate_cannot_upload_its_prepared_reference(self):
@@ -610,13 +622,17 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         for marker in ("products", "corpus", "site", "days", "rubrics"):
             self.assertTrue((self.root / marker).exists(), marker)
 
-    def test_prepared_writer_runs_while_the_other_make_slots_are_blocked(self):
-        result = self.run_pages_commands(env={**self.env, "DEPLOYMENT_TEST_WRITER_SLOT": "1"})
+    def test_gate_membership_is_derived_and_runs_in_an_independent_checkout(self):
+        makefile = (self.root / "Makefile").read_text().replace(
+            "DEPLOYMENT_SOURCE_MEMBERS := ", "DEPLOYMENT_SOURCE_MEMBERS := future-source-check ", 1)
+        self.write("Makefile", makefile + "\nfuture-source-check:\n\t@touch future-gate-ran\n")
+        result = self.run_pages_commands()
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
-        self.assertTrue((self.root / "writer-started").is_file())
-        for name in ("schema", "catalogue", "masses"):
-            self.assertTrue((self.root / name).is_file(), name)
-        self.assertIn(VERIFY_OUTPUT, self.commands())
+        self.assertTrue((self.source_runner / "future-gate-ran").is_file())
+        self.assertFalse((self.root / "future-gate-ran").exists())
+        for checkout in (self.root, self.source_runner):
+            self.assertTrue((checkout / "build/browser-data/verified-ready").is_file())
+        self.assertFalse((self.source_runner / "build/public-alpha/site").exists())
 
     def test_a_retry_rechecks_writer_rights_with_a_prior_site_present(self):
         result = self.run_pages_commands()
@@ -671,8 +687,10 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
                 shutil.rmtree(self.root / "build", ignore_errors=True)
                 result = self.run_pages_commands(env={**self.env, "DEPLOYMENT_TEST_FAIL": gate})
                 self.assertNotEqual(result.returncode, 0)
-                remote = " ".join(CANONICAL_GATE_COMMANDS["check-corpus-index"])
-                message = "did not pass its source check" if gate == remote else "deliberate source gate failure"
+                local = {" ".join(CANONICAL_GATE_COMMANDS[name]) for name in
+                         ("check-proper-chronology-current", "check-source-graph")}
+                remote = {" ".join(command) for command in SOURCE_COMMANDS} - local
+                message = "did not pass its source check" if gate in remote else "deliberate source gate failure"
                 self.assertIn(message, result.stderr)
                 commands = self.commands()
                 self.assertNotIn(VERIFY_OUTPUT, commands)
@@ -752,7 +770,7 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         result = self.run_pages_commands(cache_hit=True)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         commands = self.commands()
-        self.assertEqual(commands.count(("tools/tpt", "browser-products", "build")), 1)
+        self.assertEqual(commands.count(("tools/tpt", "browser-products", "build")), 2)
         self.assertEqual(commands.count(("scripts/_native_tex_assets.py", "hydrate", "--fetch")), 1)
         self.assertNotIn(("tools/tpt", "browser-products", "prune"), commands)
         self.assertNotIn(("tools/tpt", "document-library", "structure", "--check"), commands)
@@ -818,18 +836,20 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         self.assertEqual(workflow["concurrency"], {
             "group": "${{ github.ref == 'refs/heads/main' && 'pages' || format('pages-verify-{0}', github.ref) }}",
             "cancel-in-progress": False})
-        self.assertEqual(set(jobs), {"build", "corpus-check", "print-compile", "print-verify", "deploy"})
+        self.assertEqual(set(jobs), {"build", "corpus-check", "source-checks", "print-compile", "print-verify", "deploy"})
         self.assertEqual(workflow["permissions"], {"contents": "read"})
         self.assertNotIn("needs", jobs["build"])
         self.assertNotIn("needs", jobs["print-compile"])
         self.assertNotIn("needs", jobs["corpus-check"])
+        self.assertNotIn("needs", jobs["source-checks"])
+        self.assertEqual(jobs["source-checks"]["permissions"], {"contents": "read"})
         self.assertEqual(jobs["corpus-check"]["permissions"], {"contents": "read"})
         self.assertEqual(jobs["corpus-check"]["name"], "canonical-check (check-corpus-index)")
         self.assertEqual(jobs["build"]["permissions"], {"contents": "read", "pages": "read", "actions": "read"})
         self.assertEqual(jobs["print-compile"]["permissions"], {"contents": "read"})
         deploy = jobs["deploy"]
         self.assertEqual(deploy["needs"], ["print-verify"])
-        self.assertEqual(sorted(jobs["print-verify"]["needs"]), ["build", "corpus-check", "print-compile"])
+        self.assertEqual(sorted(jobs["print-verify"]["needs"]), ["build", "corpus-check", "print-compile", "source-checks"])
         self.assertEqual(jobs["print-verify"]["permissions"], {"contents": "read"})
         steps = {step["name"]: step for step in jobs["build"]["steps"]}
         self.assertIn("site-key --site build/public-alpha/site --revision", steps[

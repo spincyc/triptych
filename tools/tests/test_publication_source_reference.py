@@ -180,6 +180,70 @@ class PublicationReferenceTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "publication partition"):
             self.merge()
 
+    def test_held_pages_census_joins_real_sources_once_and_releases_all_facts(self):
+        import _native_print as admissions
+        from _native_tex_publication import catalog
+        for leaf in ("alpha", "beta", "held"):
+            directory = self.root / "src/gpt/articles/faith" / leaf
+            (directory / "web-edition.toml").write_text('eligibility="eligible"\n')
+            disposition = self.root / "release/publications/gpt/articles/faith" / (leaf + ".json")
+            disposition.parent.mkdir(parents=True, exist_ok=True)
+            disposition.write_text(json.dumps({"status": "hold" if leaf == "held" else "alpha"}))
+        self.git("add", ".")
+        self.commit()
+        # This fixture provides publications only. Admission and withdrawal
+        # still use the normal disk-based declaration and release selectors.
+        with patch.dict(printing.EDITIONS, {}, clear=True), patch.dict(os.environ, {"GITHUB_SHA": self.revision}):
+            self.docs = admissions.admitted_documents(self.root)
+            self.assertEqual(len(self.docs), 2)
+            paths = admissions.admission_inputs(self.root)
+            self.assertEqual(len(paths), 6)  # held edition still controls admission
+            owners = schema.publication_owners(self.root)
+            self.assertEqual(len(owners), 4)  # includes the Markdown-only leaf
+            self.prepare()
+            digest = self.merge()
+            env = {"TRIPTYCH_NATIVE_REFERENCE_DIR": str(self.merged), "TRIPTYCH_NATIVE_REFERENCE_SHA256": digest}
+            with (patch.dict(os.environ, env), self.tool.held_repository_inputs(),
+                  patch.object(admissions, "_admitted_recipes", wraps=admissions._admitted_recipes) as recipes,
+                  patch.object(schema, "publication_owners", wraps=schema.publication_owners) as census):
+                with admissions.held_source_admissions(self.root):
+                    self.tool._hold_pages_publication_sources(2)
+                    # The publisher receives the same source catalog and
+                    # membership as a fresh pass through the native selector.
+                    with (patch("_native_tex_assets.public_manifest", return_value={}),
+                          patch("_native_tex_assets.payload_paths", return_value={}),
+                          patch("_native_tex_publication.build_catalog", side_effect=lambda root, **kw: kw)):
+                        native_inputs = catalog(self.root, source_loader=self.tool._native_reference_loader())
+                    self.assertEqual(native_inputs["documents"], self.docs)
+                    self.assertTrue(set(paths) <= set(native_inputs["source_catalog"]["source_paths"]))
+                    self.assertEqual(admissions.publication_source_owners(self.root), owners)
+                    # Mutable API results belong to the caller.
+                    key = next(iter(self.docs))
+                    admissions.admitted_documents(self.root)[key]["title"] = "changed"
+                    admissions.admission_inputs(self.root).clear()
+                    admissions.publication_source_owners(self.root).clear()
+                    self.assertEqual(admissions.admitted_documents(self.root), self.docs)
+                    self.assertEqual(admissions.admission_inputs(self.root), paths)
+                    self.assertEqual(admissions.publication_source_owners(self.root), owners)
+                    self.assertEqual(recipes.call_count, 1)
+                    self.assertEqual(census.call_count, 1)
+                    self.assertEqual(admissions.publication_source_owners(self.work), set())
+                self.assertEqual(admissions.admission_inputs(self.root), paths)
+                self.assertEqual(recipes.call_count, 2)
+            # A change after discovery and before accepting the authenticated
+            # partitions must still fail the real full-checkout guard.
+            with patch.dict(os.environ, env):
+                with self.assertRaisesRegex(self.tool.ReleaseError, "clean"):
+                    with self.tool.held_repository_inputs(), admissions.held_source_admissions(self.root):
+                        added = self.root / "src/gpt/articles/faith/extra/main.tex"
+                        added.parent.mkdir()
+                        added.write_text("New canonical owner.")
+                        self.tool._hold_pages_publication_sources(2)
+            self.assertEqual(admissions.publication_source_owners(self.root), owners | {"gpt/articles/faith/extra"})
+            with self.assertRaisesRegex(admissions.NativePrintError, "disposition"):
+                with admissions.held_source_admissions(self.root):
+                    self.fail("invalid new edition acquired a held census")
+
     def test_an_unadmitted_owner_with_a_missing_manifest_blocks_source_export(self):
         (self.leaf.parent / "held/publication.toml").unlink()
         self.commit()
