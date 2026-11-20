@@ -126,8 +126,13 @@ remain part of the recipe.
 
 Every admitted edition is also compiled before the site deploys. The Pages
 `print-compile` matrix divides the sorted admission list into eight disjoint
-partitions. Each runner prepares and typesets its editions in the pinned TeX
-Live toolchain with the engine the bundle names and the browser's pass policy.
+partitions. Each runner prepares its bundles from the checkout and typesets
+them in the pinned TeX Live toolchain with the engine the bundle names and
+the browser's pass policy.
+It also exports its source partition for the Pages writer and verifier. Each
+independently checks the Actions archive digests, source revision, admitted
+editions and checkout inputs, then reassembles the full catalog with its
+shared text and source packs.
 Locally, `make check-native-print-compile` prepares and compiles the entire
 set. The gate requires a PDF and settled references within each edition's
 pass limit, exact admission membership, and closure over the bundle and the

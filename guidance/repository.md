@@ -326,12 +326,17 @@ make check
 make public-site
 ```
 
-The Pages build job runs `make pages-site`: the same deployment source gates
-and site build as `make check-deployment-sources` and `make public-site`, but
-with the gates beside the single-process site build instead of before it. A
-failing gate fails that step, so `public-alpha verify`, cache retention and the
-upload never follow it; the site it may have assembled never leaves the runner.
-Locally, `make public-site` keeps the stricter order.
+The Pages build job prepares browser products, then runs `make pages-site`
+while a separate verifier prepares its own expected inputs. Three print
+workers run the corpus index, chronology and source graph checks before
+sharing their native source partitions. The writer and verifier independently
+retrieve all eight partitions from the same Actions run. Only after Make and
+every source gate succeed does the verifier open the assembled site, check
+its contents and confirm its GitHub Pages authorization. Cache retention and
+artifact upload follow successful verification. Locally, `make public-site`
+runs all source gates before building. The standalone command
+`tools/tpt public-alpha verify --deployment-target github-pages` derives
+its expected inputs from the checkout.
 
 `make` and `make all` select the source-only site path. `make pdf` remains an
 explicit developer opt-in for a corpus PDF build; it is not a normal check or
