@@ -259,7 +259,8 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	check-document-schemas check-document-content check-artifact-delivery \
 	check-snapshot-delivery check-papal-inputs \
 	prepare-browser-data check-browser-products check-corpus-index deployment-source-gates \
-	pages-site pages-site-members public-site-artifact \
+	pages-site pages-site-members public-site-artifact pages-native-reference \
+	deployment-calendar-days deployment-calendar-masses deployment-calendar-rubrics deployment-propers \
 	check-source-evidence print-document \
 	check-source-inventory check-source-inventory-tool \
 	check-source-family-migration check-source-family-migration-tool \
@@ -437,7 +438,7 @@ check-act-history: | prepare-browser-data
 # The committed descriptor binds exact canonical inputs and output membership.
 # Warm builds verify cached bytes; misses derive only missing families offline.
 prepare-browser-data:
-	@$(PYTHON) $(BROWSER_PRODUCTS_TOOL) build
+	@$(PYTHON) $(BROWSER_PRODUCTS_TOOL) build $(if $(filter 1,$(TRIPTYCH_BROWSER_PRUNE)),--prune)
 
 # A strictly read-only diagnostic; publication preparation already performs this
 # verification, so it does not run a duplicate full cache check here.
@@ -493,10 +494,11 @@ check-publication-inventories: check-source-graph
 
 # The two-build product descriptor covers the complete input, policy and output
 # closure. Publication verifies it once before consumers.
-DEPLOYMENT_SOURCE_MEMBERS := check-curriculum-source-rights check-document-schemas \
+DEPLOYMENT_SOURCE_MEMBERS := check-curriculum-source-rights check-corpus-index \
+	check-proper-chronology-current check-source-graph check-document-schemas \
+	check-document-catalogue deployment-calendar-masses check-generated-documents-current \
 	check-artifact-delivery check-snapshot-delivery check-papal-inputs \
-	check-document-catalogue check-source-graph check-proper-chronology-current \
-	check-generated-documents-current check-corpus-index
+	deployment-calendar-days deployment-propers deployment-calendar-rubrics check-mass-ordinary
 
 # Bootstrap bounded concurrency when the caller supplied no jobserver. Keep
 # ordinary liturgical derivation and rights checks in the source publication
@@ -518,25 +520,51 @@ endif
 # and with it the workflow step, before `public-alpha verify` runs or anything
 # is uploaded: the site may be assembled, but it never leaves the runner.
 # `make public-site` keeps the stricter local order, gates before assembly.
+ifeq ($(and $(strip $(PAGES_NATIVE_REFERENCE_DIR)),$(filter pages-site pages-site-members,$(MAKECMDGOALS))),)
 pages-site-members: public-site-artifact deployment-source-gates
-
-# For Pages every gate also waits for the verified products, which only some of
-# them read: a cold product build then has the runner's cores to itself, and the
-# gates overlap the site build instead. Other goals keep the members' own order.
-ifneq ($(filter pages-site pages-site-members,$(MAKECMDGOALS)),)
-$(DEPLOYMENT_SOURCE_MEMBERS): | prepare-browser-data
+else
+# The three source-only gates run on print shards before their reference
+# uploads. Assembly requires all eight references from this workflow run.
+PAGES_PRINT_SOURCE_GATES := check-corpus-index check-proper-chronology-current check-source-graph
+PAGES_LOCAL_SOURCE_GATES := $(filter-out $(PAGES_PRINT_SOURCE_GATES),$(DEPLOYMENT_SOURCE_MEMBERS))
+pages-site-members: public-site-artifact $(PAGES_LOCAL_SOURCE_GATES)
+$(PAGES_LOCAL_SOURCE_GATES): private export PYTHON_CPU_COUNT := 1
 endif
 
-public-site-artifact: check-curriculum-source-rights | prepare-browser-data
-	@$(WEB_FIGURES)
-	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) build --prepared-products
+public-site-artifact: check-curriculum-source-rights | prepare-browser-data $(if $(strip $(PAGES_NATIVE_REFERENCE_DIR)),pages-native-reference)
+	@set -eu; \
+	if [ -n "$${PAGES_NATIVE_REFERENCE_DIR:-}" ]; then \
+		TRIPTYCH_NATIVE_REFERENCE_SHA256=$$(cat -- "$$PAGES_NATIVE_REFERENCE_DIR.sha256"); \
+		case "$$TRIPTYCH_NATIVE_REFERENCE_SHA256" in *[!0-9a-f]*) echo 'Invalid native reference digest' >&2; exit 1;; esac; \
+		[ "$${#TRIPTYCH_NATIVE_REFERENCE_SHA256}" -eq 64 ] || { echo 'Invalid native reference digest' >&2; exit 1; }; \
+		export TRIPTYCH_NATIVE_REFERENCE_SHA256 TRIPTYCH_NATIVE_REFERENCE_DIR="$$PAGES_NATIVE_REFERENCE_DIR"; \
+	fi; \
+	$(PYTHON) $(PUBLIC_ALPHA_TOOL) build --prepared-products --figure-runner '$(WEB_FIGURES_RUNNER)'
 
-deployment-source-gates: $(DEPLOYMENT_SOURCE_MEMBERS) | prepare-browser-data
-	@$(PYTHON) tools/tpt calendar-days check
+pages-native-reference:
+	@$(PYTHON) .github/scripts/pages-native-reference.py
+
+deployment-source-gates: $(DEPLOYMENT_SOURCE_MEMBERS)
+
+# Each concurrent Make recipe owns one runner slot. On Pages' Python 3.13
+# this also bounds the process and thread pools that discover CPU capacity.
+# Standalone corpus-index checks retain their own parallelism.
+deployment-source-gates: export PYTHON_CPU_COUNT := 1
+
+# These publication checks must fail when a dependency is unavailable. Ordinary
+# make check has its own optional PyYAML recipes. The mass tables checker
+# reads canonical sources; the other four compare prepared browser products.
+deployment-calendar-masses:
 	@$(PYTHON) tools/tpt check-calendar-masses
+
+deployment-calendar-days: | prepare-browser-data
+	@$(PYTHON) tools/tpt calendar-days check
+
+deployment-propers: | prepare-browser-data
 	@$(PYTHON) tools/tpt mass-propers structure --check
+
+deployment-calendar-rubrics: | prepare-browser-data
 	@$(PYTHON) tools/tpt calendar-rubrics check
-	@$(PYTHON) tools/tpt mass-ordinary check
 
 # Research replay is explicit and may require already hydrated evidence. It
 # never downloads it automatically. The publication gate above remains useful
@@ -821,16 +849,12 @@ check-public-alpha: check-curriculum-source-rights | prepare-browser-data
 prepare-public-alpha: check-curriculum-source-rights | prepare-browser-data
 	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) prepare
 
-# check-deployment-sources has verified the products, in a sub-make when the
-# caller gave no jobserver, so the site compiles its figures in its own recipe:
-# web-figures would verify the products a second time.
+# Compile figures from the same verified reader products that the site consumes.
 public-preview: check-deployment-sources
-	@$(WEB_FIGURES)
-	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) build --preview --prepared-products
+	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) build --preview --prepared-products --figure-runner '$(WEB_FIGURES_RUNNER)'
 
 public-site: check-deployment-sources
-	@$(WEB_FIGURES)
-	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) build --prepared-products
+	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) build --prepared-products --figure-runner '$(WEB_FIGURES_RUNNER)'
 
 verify-public-preview: check-curriculum-source-rights | prepare-browser-data
 	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) verify --preview

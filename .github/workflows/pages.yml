@@ -41,10 +41,9 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       print-site-key: ${{ steps.print-site-key.outputs.key }}
-    # Cold shared-assembly builds can consume most of a two-hour budget before
-    # independent artifact verification. Allow both full-corpus passes to finish.
     timeout-minutes: 180
     permissions:
+      actions: read
       contents: read
       pages: read
     env:
@@ -135,17 +134,16 @@ jobs:
         run: |
           timeout 15s python .github/scripts/bootstrap-web-figures.py .scratch/pages-web-figures || echo "Continuing with available figure candidates"
 
-      # pages-site prepares and verifies the committed product descriptor before
-      # source gates and consumers. Missing families reproduce its exact bytes
-      # offline; stale inputs fail without a whole-corpus research replay. It
-      # then runs every check-deployment-sources gate beside the site build, on
-      # the runner's other cores, and fails this step if any gate fails, so
-      # neither verification nor upload follows a failed gate. Its figure step
-      # (tools/web-edition figures) double-compiles missing or changed TikZ
-      # figures inside the pinned TeX image. An authenticated hit needs no
-      # image pull. The site still checks every reader's figure set.
+      # Source-only checks start alongside product preparation. Before the
+      # site builder reads the native sources, Make retrieves the exact source
+      # partitions derived by this run's print jobs. Source gates and site
+      # assembly must both succeed before the verifier or upload starts.
       - name: Validate sources and build public artifact
+        id: pages-build
         env:
+          GH_TOKEN: ${{ github.token }}
+          PAGES_NATIVE_REFERENCE_DIR: ${{ runner.temp }}/native-print-reference
+          TRIPTYCH_BROWSER_PRUNE: ${{ steps.browser-cache.outputs.cache-hit != 'true' && '1' || '' }}
           TRIPTYCH_WEB_FIGURE_CANDIDATES: .scratch/pages-web-figures
         run: |
           set -euo pipefail
@@ -158,13 +156,6 @@ jobs:
           rm -rf -- .scratch/pages-web-figures
           cp -R build/web-figures .scratch/pages-web-figures
 
-      # Keep the restored path constant so GitHub can reuse older per-family
-      # candidates. Save mechanically verified products before the independent
-      # site verification, so a later failure does not repeat the cold build.
-      - name: Retain verified current browser products
-        if: steps.browser-cache.outputs.cache-hit != 'true'
-        run: python tools/tpt browser-products prune
-
       - name: Save verified browser products
         if: steps.browser-cache.outputs.cache-hit != 'true'
         uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
@@ -172,7 +163,19 @@ jobs:
           path: build/browser-data
           key: triptych-browser-products-v1-${{ hashFiles('release/browser-products.json') }}
 
+      # The verifier gets its expected bytes from the print workers again.
+      # The site assembly step cannot supply or replace its trust anchor.
+      - name: Authenticate the native print reference for verification
+        id: verify-reference
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PAGES_NATIVE_REFERENCE_DIR: ${{ runner.temp }}/verified-native-print-reference
+        run: python .github/scripts/pages-native-reference.py
+
       - name: Verify artifact and GitHub Pages compatibility
+        env:
+          TRIPTYCH_NATIVE_REFERENCE_DIR: ${{ runner.temp }}/verified-native-print-reference
+          TRIPTYCH_NATIVE_REFERENCE_SHA256: ${{ steps.verify-reference.outputs.native-reference-sha256 }}
         run: python tools/tpt public-alpha verify --deployment-target github-pages
 
       - name: Identify every print bundle in the verified artifact
@@ -252,10 +255,32 @@ jobs:
             --build-arg "PRINT_BASE=$TEXLIVE_IMAGE" --build-arg "ARCH_SNAPSHOT=$ARCH_SNAPSHOT" \
             --tag "triptych-print-compile:$GITHUB_RUN_ID" containers/native-print &
           image_pid=$!
+          # These gates read canonical sources. Their reference cannot be
+          # uploaded until they pass, even if the same job is retried.
+          (
+            case "$PRINT_SHARD" in
+              1/*) PYTHON_CPU_COUNT=2 make check-corpus-index ;;
+              2/*) make check-proper-chronology-current ;;
+              3/*) make check-source-graph ;;
+            esac
+          ) &
+          gate_pid=$!
           status=0
-          python tools/tpt native-print-compile prepare --shard "$PRINT_SHARD" --out "$PRINT_COMPILE_OUT" || status=$?
+          python tools/tpt native-print-compile prepare --shard "$PRINT_SHARD" --out "$PRINT_COMPILE_OUT" \
+            --export-reference "$RUNNER_TEMP/native-print-reference" --run-id "$GITHUB_RUN_ID" \
+            --run-attempt "$GITHUB_RUN_ATTEMPT" || status=$?
           wait "$image_pid" || status=$?
+          wait "$gate_pid" || status=$?
           exit "$status"
+
+      - name: Share the source-derived native partition with the site builder
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: native-print-reference-${{ github.run_id }}-shard-${{ matrix.shard }}
+          path: ${{ runner.temp }}/native-print-reference
+          overwrite: true
+          if-no-files-found: error
+          retention-days: 14
 
       - name: Compile every edition in the partition from its bundle alone
         run: |

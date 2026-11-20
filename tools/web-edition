@@ -4191,24 +4191,6 @@ def product_row_json(identity: str, *, indexed: bool = False) -> int:
     return 0
 
 
-def figure_records_from_products() -> list[dict]:
-    """Every figure record of the verified web-edition products."""
-    from _browser_products import ProductError, verified_products
-    try:
-        with verified_products(ROOT, product_ids=["web-editions"]) as products:
-            index = json.loads(products.files[f"{PRODUCT_PREFIX}/index.json"].read_bytes())
-            if index.get("schema") != INDEX_SCHEMA:
-                raise ConversionError("unsupported web-edition product index")
-            records = []
-            for row in index["editions"]:
-                if row["figures"]:
-                    record = json.loads(products.files[row["path"]].read_bytes())
-                    records.extend(record["figures"])
-            return records
-    except (ProductError, KeyError) as error:
-        raise ConversionError(f"web-edition products are not available: {error}") from error
-
-
 def figures_main(argv: list[str]) -> int:
     parser = argparse.ArgumentParser(
         prog="web-edition figures",
@@ -4222,21 +4204,16 @@ def figures_main(argv: list[str]) -> int:
     parser.add_argument("--force", action="store_true",
                         help="recompile even when the directory already holds every current figure")
     arguments = parser.parse_args(argv)
+    from _browser_products import ProductError, verified_products
+    from _web_figure_build import prepare
     try:
-        records = figure_records_from_products()
-        wanted = sorted({record["id"] for record in records})
-        if arguments.candidates is None and not arguments.force and not web_figures.check(arguments.out, wanted):
-            print(json.dumps({"figures": len(wanted), "out": str(arguments.out),
-                              "status": "current"}, sort_keys=True))
-            return 0
-        manifest = web_figures.compile_figures(records, arguments.out, root=ROOT,
-                                               runner=arguments.runner, candidates=arguments.candidates,
-                                               force=arguments.force)
-    except (ConversionError, web_figures.FigureError) as error:
+        with verified_products(ROOT, product_ids=["web-editions"]) as products:
+            report = prepare(ROOT, products, arguments.out, runner=arguments.runner,
+                             candidates=arguments.candidates, force=arguments.force)
+    except (ProductError, web_figures.FigureError) as error:
         print(f"web-edition figures: {error}", file=sys.stderr)
         return 1
-    print(json.dumps({"figures": len(manifest["figures"]), "out": str(arguments.out),
-                      "toolchain": manifest["toolchain"]}, sort_keys=True))
+    print(json.dumps(report, sort_keys=True))
     return 0
 
 

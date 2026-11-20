@@ -1015,8 +1015,15 @@ def last_build_stats() -> dict:
     return {key: list(value) for key, value in _BUILD_STATS.get().items()}
 
 
-def build(root: Path, *, cache_root=None) -> dict:
+def build(root: Path, *, cache_root=None, prune=False) -> dict:
     root = _safe_directory(root)
+    manifest = _build(root, cache_root)
+    if prune:
+        _prune_verified(root, manifest, cache_root)
+    return manifest
+
+
+def _build(root: Path, cache_root) -> dict:
     stats = {"reused_families": [], "generated_families": []}
     _BUILD_STATS.set(stats)
     before = _read(root, MANIFEST_RELATIVE)
@@ -1158,6 +1165,12 @@ def prune(root: Path, *, cache_root=None) -> dict:
     """Remove obsolete disposable keys only after proving the current cache."""
     root = _safe_directory(root)
     manifest = check(root, cache_root=cache_root)
+    _prune_verified(root, manifest, cache_root)
+    return manifest
+
+
+def _prune_verified(root: Path, manifest: dict, cache_root) -> None:
+    """Caller holds the store's exclusive lock across verification and pruning."""
     parent = _safe_directory(cache_directory(root, cache_root))
     keep = {products_identity(manifest), *(product["key"] for product in manifest["products"])}
     try:
@@ -1183,7 +1196,6 @@ def prune(root: Path, *, cache_root=None) -> dict:
                                             "entries": {product["key"]: candidate_hint(product["files"]) for product in products}})
     except (OSError, safe_files.SafeFileError) as error:
         raise ProductError(f"cannot safely prune browser cache: {error}") from error
-    return manifest
 
 
 @contextmanager
@@ -1274,6 +1286,8 @@ def main(argv=None, *, examples=None):
         child.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
         child.add_argument("--cache-root", type=Path)
         child.add_argument("--json", action="store_true")
+        if verb == "build":
+            child.add_argument("--prune", action="store_true", help="remove obsolete cache keys after this build verifies the current store")
         if verb == "audit":
             child.add_argument("--family", action="append", dest="families", metavar="ID",
                                help="Audit only this family (repeatable); default every family.")
@@ -1284,6 +1298,8 @@ def main(argv=None, *, examples=None):
         if args.verb == "key":
             manifest = load_manifest(args.root)
             _current(args.root, manifest)
+        elif args.verb == "build":
+            manifest = build(args.root, cache_root=args.cache_root, prune=args.prune)
         else:
             manifest = globals()[args.verb](args.root, cache_root=args.cache_root)
         result = {"status": "ok", "products_identity": products_identity(manifest), "family_keys": {product["id"]: product["key"] for product in manifest["products"]}, "products": len(manifest["products"]), "files": len(_expected(manifest)), "bytes": sum(value["bytes"] for value in _expected(manifest).values())}

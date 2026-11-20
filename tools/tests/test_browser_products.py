@@ -350,6 +350,19 @@ class BrowserProductsTests(unittest.TestCase):
         self.assertFalse(obsolete.exists())
         products.check(self.root, cache_root=self.cache)
 
+    def test_build_can_prune_under_the_same_verified_cache_lock(self):
+        obsolete = self.cache / ("a" * 64)
+        obsolete.mkdir()
+        with patch.object(products, "check", wraps=products.check) as validate:
+            products.build(self.root, cache_root=self.cache, prune=True)
+        self.assertEqual(validate.call_count, 1)
+        self.assertFalse(obsolete.exists())
+        obsolete.mkdir()
+        self.payload().write_text("corrupt")
+        with self.assertRaises(products.ProductError):
+            products.build(self.root, cache_root=self.cache, prune=True)
+        self.assertTrue(obsolete.is_dir())
+
     def test_prune_refuses_unknown_or_unsafe_entries(self):
         for name, link in (("unknown", False), ("a" * 64, True)):
             path = self.cache / name

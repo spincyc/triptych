@@ -23,7 +23,6 @@ ROOT = Path(__file__).resolve().parents[2]
 
 # Independent coverage contract: changing the gate requires a coverage decision.
 SOURCE_COMMANDS = {
-    ("tools/tpt", "browser-products", "build"),
     ("tools/tpt", "document-schema", "check", "--include-sources"),
     ("tools/tpt", "artifact-store", "check"),
     ("tools/tpt", "snapshot-store", "check"),
@@ -38,6 +37,11 @@ SOURCE_COMMANDS = {
     ("tools/tpt", "mass-ordinary", "check"),
     ("-m", "unittest", "tools.tests.test_generated_proper_chronology_freshness", "-v"),
     ("-m", "unittest", "tools.tests.test_generated_documents_freshness", "-v"),
+}
+PRINT_GATE_COMMANDS = {
+    1: ("tools/tpt", "corpus-index", "check", "--readers"),
+    2: ("-m", "unittest", "tools.tests.test_generated_proper_chronology_freshness", "-v"),
+    3: ("tools/tpt", "source-library", "validate"),
 }
 GENERATED_CONSUMERS = {
     ("tools/tpt", "document-schema", "check", "--include-sources"),
@@ -98,6 +102,7 @@ import json
 import os
 from pathlib import Path
 import sys
+import time
 
 args = sys.argv[1:]
 root = Path(os.environ["DEPLOYMENT_TEST_ROOT"])
@@ -108,9 +113,27 @@ generated = {tuple(command) for command in json.loads(os.environ["DEPLOYMENT_TES
 ready = root / "build/browser-data/verified-ready"
 if " ".join(args) == os.environ.get("DEPLOYMENT_TEST_FAIL"):
     raise SystemExit("deliberate source gate failure")
+if os.environ.get("DEPLOYMENT_TEST_OVERLAP"):
+    peers = {
+        ("tools/tpt", "browser-products", "build"): ("products", "corpus"),
+        ("tools/tpt", "corpus-index", "check", "--readers"): ("corpus", "site"),
+        ("tools/tpt", "public-alpha", "build", "--prepared-products", "--figure-runner", "host"): ("site", None),
+        ("tools/tpt", "calendar-days", "check"): ("days", "rubrics"),
+        ("tools/tpt", "calendar-rubrics", "check"): ("rubrics", "days"),
+    }
+    if tuple(args) in peers:
+        started, expected = peers[tuple(args)]
+        if started == "corpus" and os.environ.get("PYTHON_CPU_COUNT") != "1":
+            raise SystemExit("corpus workers could occupy the other Make slots")
+        (root / started).touch()
+        deadline = time.monotonic() + 10
+        while expected and not (root / expected).exists():
+            if time.monotonic() >= deadline:
+                raise SystemExit(f"{started} blocked while waiting for {expected}")
+            time.sleep(0.01)
 if args == ["-"]:
     exec(compile(sys.stdin.read(), "workflow-stdin", "exec"))
-elif args == ["tools/tpt", "browser-products", "build"]:
+elif args in (["tools/tpt", "browser-products", "build"], ["tools/tpt", "browser-products", "build", "--prune"]):
     ready.parent.mkdir(parents=True, exist_ok=True)
     ready.write_text("exact current products verified; no evidence downloads\n")
 elif args == ["tools/tpt", "browser-products", "prune"]:
@@ -129,13 +152,25 @@ elif args == ["scripts/_native_tex_assets.py", "hydrate", "--fetch"]:
     pass  # Verify browser compiler inputs; no compiler executes in deployment.
 elif args[:3] == ["scripts/_install_web_edition_pandoc.py", "--fetch", "--bin-dir"] and len(args) == 4:
     pass  # The pinned web-edition converter, for a cold web-editions family.
-elif args[:4] == ["tools/tpt", "web-edition", "figures", "--runner"] and len(args) == 5:
-    if not ready.is_file():
-        raise SystemExit("web figures compiled before product verification")
-    if not args[4].startswith(("docker:", "host")):
-        raise SystemExit("web figures need an explicit runner")
-    (root / "build/web-figures").mkdir(parents=True, exist_ok=True)
-    (root / ".scratch").mkdir(exist_ok=True)
+elif args[:3] == ["tools/tpt", "native-print-compile", "prepare"] and "--export-reference" in args:
+    export = Path(args[args.index("--export-reference") + 1])
+    export.mkdir(parents=True, exist_ok=True)
+    (export / "index.json").write_text(os.environ["PRINT_SHARD"])
+elif args == [".github/scripts/pages-native-reference.py"]:
+    if "DEPLOYMENT_TEST_REFERENCES" in os.environ:
+        received = Path(os.environ["DEPLOYMENT_TEST_REFERENCES"])
+        if {item.name for item in received.iterdir()} != {str(number) for number in range(1, 9)}:
+            raise SystemExit("the run did not upload every required partition")
+    reference = Path(os.environ["PAGES_NATIVE_REFERENCE_DIR"])
+    reference.mkdir(parents=True, exist_ok=True)
+    (reference / "catalog.json").write_text("{}")
+    if reference.name == "verified-native-print-reference" and os.environ.get("DEPLOYMENT_TEST_FAIL_VERIFY_REFERENCE"):
+        raise SystemExit("independent reference authentication failed")
+    digest = os.environ.get("DEPLOYMENT_TEST_REFERENCE_DIGEST", ("e" if reference.name == "verified-native-print-reference" else "d") * 64)
+    if digest != "missing":
+        Path(str(reference) + ".sha256").write_text(digest + "\n")
+    with open(os.environ["GITHUB_OUTPUT"], "a") as output:
+        output.write("native-reference-sha256=" + digest + "\n")
 elif tuple(args) in allowed:
     if tuple(args) in generated and not ready.is_file():
         raise SystemExit("generated consumer ran before browser product preparation")
@@ -148,13 +183,24 @@ elif args[:3] == ["-m", "pip", "install"]:
         raise SystemExit("unexpected deployment dependency install")
 elif args[:2] == ["tools/tpt", "check-proper-components"] and args[-1] in {"--list-synthesis", "--list-homily"}:
     pass  # Make's parse-time discovery, not PDF compilation.
-elif args == ["tools/tpt", "public-alpha", "build", "--prepared-products"]:
+elif args[:5] == ["tools/tpt", "public-alpha", "build", "--prepared-products", "--figure-runner"] and len(args) == 6:
+    if not args[5].startswith(("docker:", "host")):
+        raise SystemExit("web figures need an explicit runner")
+    if "PAGES_NATIVE_REFERENCE_DIR" in os.environ:
+        if (os.environ.get("TRIPTYCH_NATIVE_REFERENCE_DIR") != os.environ["PAGES_NATIVE_REFERENCE_DIR"]
+                or os.environ.get("TRIPTYCH_NATIVE_REFERENCE_SHA256") != "d" * 64):
+            raise SystemExit("public site did not receive the verified runner reference")
+    (root / "build/web-figures").mkdir(parents=True, exist_ok=True)
+    (root / ".scratch").mkdir(exist_ok=True)
     if not ready.is_file():
         raise SystemExit("publication ran before product verification")
     target = root / "build/public-alpha/site/index.html"
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text("<html><body>source fixture</body></html>\n")
 elif args == ["tools/tpt", "public-alpha", "verify", "--deployment-target", "github-pages"]:
+    if (os.environ.get("TRIPTYCH_NATIVE_REFERENCE_DIR") != str(root / "runner-temp/verified-native-print-reference")
+            or os.environ.get("TRIPTYCH_NATIVE_REFERENCE_SHA256") != "e" * 64):
+        raise SystemExit("verification did not receive its independent reference and digest")
     if not (root / "build/public-alpha/site/index.html").is_file():
         raise SystemExit("verification ran before the source artifact existed")
 else:
@@ -184,6 +230,28 @@ else:
     def pages(self):
         return yaml.safe_load((ROOT / ".github/workflows/pages.yml").read_text(encoding="utf-8"))
 
+    def run_partition(self, env, shard):
+        job = self.pages()["jobs"]["print-compile"]
+        steps = job["steps"]
+        prepare = next(step for step in steps if "--export-reference" in step.get("run", ""))
+        upload = next(step for step in steps if step.get("with", {}).get("name", "").startswith("native-print-reference-"))
+        self.assertLess(steps.index(prepare), steps.index(upload))
+        self.assertNotIn("if", upload)  # GitHub only uploads following successful steps.
+        docker = self.write("print-bin/docker", '#!/bin/sh\n[ "$1" = build ]\n')
+        docker.chmod(0o755)
+        temporary = self.root / "partitions" / str(shard)
+        temporary.mkdir(exist_ok=True, parents=True)
+        shard_env = {**env, "GITHUB_RUN_ID": "1", "GITHUB_RUN_ATTEMPT": "1",
+                     "PATH": str(docker.parent) + os.pathsep + env["PATH"],
+                     "RUNNER_TEMP": str(temporary), "PRINT_SHARD": f"{shard}/8",
+                     "PRINT_COMPILE_OUT": str(temporary / "compile")}
+        result = self.shell(prepare["run"], env=shard_env)
+        if result.returncode == 0:
+            index = temporary / "native-print-reference/index.json"
+            self.assertEqual(index.read_text(), f"{shard}/8")
+            (Path(env["DEPLOYMENT_TEST_REFERENCES"]) / str(shard)).touch()
+        return result
+
     def run_pages_commands(self, *, env=None, cache_hit=False):
         # The checkout's Git accelerators operate only on this fixture's own repository.
         if not (self.root / ".git").is_dir():
@@ -193,16 +261,39 @@ else:
                             "commit", "--quiet", "--allow-empty", "-m", "Fixture checkout"], check=True)
         # The workflow-level declarations every step sees, such as TEXLIVE_IMAGE.
         env = {**(env or self.env), **{name: str(value) for name, value in self.pages()["env"].items()}}
+        references = self.root / "uploaded-partitions"
+        shutil.rmtree(references, ignore_errors=True)
+        references.mkdir()
+        env["DEPLOYMENT_TEST_REFERENCES"] = str(references)
+        for shard in self.pages()["jobs"]["print-compile"]["strategy"]["matrix"]["shard"]:
+            result = self.run_partition(env, shard)
+            if result.returncode:
+                return result
         descriptor = self.root / "release/browser-products.json"
         if not descriptor.exists():
             self.write("release/browser-products.json", json.dumps({"products": [
                 {"id": "calendar-days", "key": "c" * 64},
             ]}))
-        for step in self.pages()["jobs"]["build"]["steps"]:
+        outputs_by_step = {}
+        for i, step in enumerate(self.pages()["jobs"]["build"]["steps"]):
             if cache_hit and step.get("if") == "steps.browser-cache.outputs.cache-hit != 'true'":
                 continue
             if "run" in step:
-                result = self.shell(step["run"], env=env)
+                output_file = self.root / ("step-output-" + str(i))
+                output_file.unlink(missing_ok=True)
+                step_env = {**env, "GITHUB_OUTPUT": str(output_file)}
+                for key, value in step.get("env", {}).items():
+                    if key == "TRIPTYCH_BROWSER_PRUNE":
+                        self.assertEqual(value, "${{ steps.browser-cache.outputs.cache-hit != 'true' && '1' || '' }}")
+                        value = "" if cache_hit else "1"
+                    elif key == "TRIPTYCH_NATIVE_REFERENCE_SHA256":
+                        self.assertEqual(value, "${{ steps.verify-reference.outputs.native-reference-sha256 }}")
+                        value = outputs_by_step["verify-reference"]["native-reference-sha256"]
+                    value = value.replace("${{ runner.temp }}", env["RUNNER_TEMP"])
+                    step_env[key] = value
+                result = self.shell(step["run"], env=step_env)
+                if "id" in step and output_file.exists():
+                    outputs_by_step[step["id"]] = dict(line.split("=", 1) for line in output_file.read_text().splitlines())
                 if result.returncode:
                     return result
         return result
@@ -274,9 +365,10 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         self.assertTrue((self.root / "build/public-alpha/site/index.html").is_file())
         self.assertEqual(list(self.root.rglob("*.pdf")), [])
-        for command in SOURCE_COMMANDS:
+        for command in SOURCE_COMMANDS | {("tools/tpt", "browser-products", "build")}:
             with self.subTest(command=command):
                 self.assertEqual(self.commands().count(command), 1)
+        self.assertNotIn((".github/scripts/pages-native-reference.py",), self.commands())
 
     def test_actual_pages_commands_run_each_source_gate_once_without_pdf_outputs(self):
         self.assertFalse((self.root / "pdf").exists())
@@ -288,11 +380,18 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
                 self.assertEqual(Counter(commands)[command], 1)
         rights = [command for command in commands if command[:3] == ("-m", "unittest", "-v")]
         self.assertEqual(len(rights), 1)
-        build = ("tools/tpt", "public-alpha", "build", "--prepared-products")
+        build = ("tools/tpt", "public-alpha", "build", "--prepared-products",
+                 "--figure-runner", "docker:" + self.pages()["env"]["TEXLIVE_IMAGE"])
         verify = ("tools/tpt", "public-alpha", "verify", "--deployment-target", "github-pages")
         self.assertEqual(commands.count(build), 1)
         self.assertEqual(commands.count(verify), 1)
-        prepared = ("tools/tpt", "browser-products", "build")
+        prepared = ("tools/tpt", "browser-products", "build", "--prune")
+        self.assertEqual(commands.count(prepared), 1)
+        reference_calls = [i for i, command in enumerate(commands) if command == (".github/scripts/pages-native-reference.py",)]
+        self.assertEqual(len(reference_calls), 2)
+        self.assertLess(reference_calls[0], commands.index(build))
+        self.assertLess(commands.index(build), reference_calls[1])
+        self.assertLess(reference_calls[1], commands.index(verify))
         for command in GENERATED_CONSUMERS:
             self.assertLess(commands.index(prepared), commands.index(command))
         # Pages runs the gates beside the site build, so only the rights cases
@@ -301,16 +400,68 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         for command in SOURCE_COMMANDS:
             self.assertLess(commands.index(command), commands.index(verify))
         self.assertLess(commands.index(rights[0]), commands.index(build))
-        # And every gate waits for the products, so that a cold product build
-        # has the runner to itself.
-        for command in (SOURCE_COMMANDS - {prepared}) | {rights[0]}:
-            self.assertLess(commands.index(prepared), commands.index(command))
         runtime = ("scripts/_native_tex_assets.py", "hydrate", "--fetch")
         self.assertEqual(commands.count(runtime), 1)
         self.assertLess(commands.index(runtime), commands.index(build))
         self.assertLess(commands.index(build), commands.index(verify))
         self.assertFalse((self.root / "pdf").exists())
         self.assertEqual(list(self.root.rglob("*.pdf")), [])
+
+    def test_only_reference_backed_pages_omits_the_three_matrix_gates(self):
+        env = {**self.env, "PAGES_NATIVE_REFERENCE_DIR": str(self.root / "native-reference")}
+        remote = set(PRINT_GATE_COMMANDS.values())
+        for target, environment, expected in (
+                ("pages-site", env, SOURCE_COMMANDS - remote),
+                ("pages-site", self.env, SOURCE_COMMANDS),
+                ("check-deployment-sources", env, SOURCE_COMMANDS),
+                ("pages-site check-deployment-sources", env, SOURCE_COMMANDS)):
+            with self.subTest(target=target, protected=environment is env):
+                self.log.unlink(missing_ok=True)
+                result = self.shell(f"make -j4 {target}", env=environment)
+                self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+                self.assertEqual(set(self.commands()) & SOURCE_COMMANDS, expected)
+                for command in expected:
+                    self.assertEqual(self.commands().count(command), 1)
+
+    def test_failed_shard_source_gate_cannot_upload_its_prepared_reference(self):
+        received = self.root / "uploads"
+        received.mkdir()
+        for shard, command in PRINT_GATE_COMMANDS.items():
+            with self.subTest(shard=shard):
+                env = {**self.env, **self.pages()["env"], "DEPLOYMENT_TEST_REFERENCES": str(received),
+                       "DEPLOYMENT_TEST_FAIL": " ".join(command)}
+                result = self.run_partition(env, shard)
+                self.assertNotEqual(result.returncode, 0)
+                self.assertIn("deliberate source gate failure", result.stderr)
+                self.assertTrue((self.root / f"partitions/{shard}/native-print-reference/index.json").is_file())
+                self.assertFalse((received / str(shard)).exists())
+
+    def test_four_slots_overlap_products_sources_site_and_calendar_checks(self):
+        # Product preparation must overlap the cold corpus check, the site
+        # must start before that check finishes, and independent calendar
+        # checks must be able to meet after product verification.
+        result = self.shell("make -j4 pages-site", env={**self.env, "DEPLOYMENT_TEST_OVERLAP": "1"})
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        for marker in ("products", "corpus", "site", "days", "rubrics"):
+            self.assertTrue((self.root / marker).exists(), marker)
+
+    def test_verifier_cannot_use_the_builders_reference_if_its_own_authentication_fails(self):
+        result = self.run_pages_commands(env={**self.env, "DEPLOYMENT_TEST_FAIL_VERIFY_REFERENCE": "1"})
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("independent reference authentication failed", result.stderr)
+        self.assertTrue((self.root / "build/public-alpha/site/index.html").is_file())
+        self.assertFalse(any(command[:3] == ("tools/tpt", "public-alpha", "verify") for command in self.commands()))
+
+    def test_missing_or_malformed_native_digest_blocks_site_assembly(self):
+        for digest in ("missing", "wrong", "g" * 64):
+            with self.subTest(digest=digest):
+                path = self.root / digest
+                self.log.unlink(missing_ok=True)
+                result = self.shell("make -j4 public-site-artifact", env={**self.env,
+                    "PAGES_NATIVE_REFERENCE_DIR": str(path), "DEPLOYMENT_TEST_REFERENCE_DIGEST": digest})
+                self.assertNotEqual(result.returncode, 0)
+                self.assertIn((".github/scripts/pages-native-reference.py",), self.commands())
+                self.assertFalse(any(command[:3] == ("tools/tpt", "public-alpha", "build") for command in self.commands()))
 
     def test_each_new_source_gate_failure_prevents_verification_and_upload(self):
         # Pages assembles the site beside the gates, so a failed gate may leave
@@ -319,7 +470,8 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         verify = ("tools/tpt", "public-alpha", "verify", "--deployment-target", "github-pages")
         before_make = ["scripts/_native_tex_assets.py hydrate --fetch",
                        "scripts/_browser_cache_bootstrap.py --fetch",
-                       "tools/tpt browser-products build",
+                       "tools/tpt browser-products build --prune",
+                       ".github/scripts/pages-native-reference.py",
                        "-m unittest -v " + " ".join(
                            "tools.tests.test_curriculum_liturgical_rights.CurriculumLiturgicalRightsTests." + name
                            for name in ("test_hash_only_registry_is_complete_and_well_formed",
@@ -341,19 +493,19 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
                 if gate in before_make:
                     # Nothing the site build needs may be skipped: its own
                     # prerequisites still stop assembly outright.
-                    self.assertNotIn(("tools/tpt", "public-alpha", "build", "--prepared-products"), commands)
+                    self.assertFalse(any(command[:3] == ("tools/tpt", "public-alpha", "build") for command in commands))
                     self.assertFalse((self.root / "build/public-alpha/site").exists())
 
     def test_each_source_gate_failure_prevents_local_artifact_construction(self):
         # `make public-site` keeps the strict order: no gate, no assembly.
-        for gate in sorted(" ".join(command) for command in SOURCE_COMMANDS):
+        for gate in sorted(["tools/tpt browser-products build", *(" ".join(command) for command in SOURCE_COMMANDS)]):
             with self.subTest(gate=gate):
                 self.log.unlink(missing_ok=True)
                 shutil.rmtree(self.root / "build", ignore_errors=True)
                 result = self.shell("make public-site", env={**self.env, "DEPLOYMENT_TEST_FAIL": gate})
                 self.assertNotEqual(result.returncode, 0)
                 self.assertIn("deliberate source gate failure", result.stderr)
-                self.assertNotIn(("tools/tpt", "public-alpha", "build", "--prepared-products"), self.commands())
+                self.assertFalse(any(command[:3] == ("tools/tpt", "public-alpha", "build") for command in self.commands()))
                 self.assertFalse((self.root / "build/public-alpha/site").exists())
 
     def test_pages_reaches_every_deployment_source_gate_and_the_site_build(self):
@@ -372,7 +524,7 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         self.assertEqual(set(site) - {"public-site", "check-deployment-sources"} - set(reached), set())
         body = "\n".join(reached.values())
         self.assertIn("$(PUBLIC_ALPHA_TOOL) build --prepared-products", body)
-        self.assertIn("$(WEB_FIGURES)", body)
+        self.assertIn("--figure-runner '$(WEB_FIGURES_RUNNER)'", body)
 
     def test_consumers_prepare_products_once_before_serial_or_parallel_reads(self):
         for jobs in ("-j1", "-j4"):
@@ -415,9 +567,8 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         self.assertEqual(restore["with"]["restore-keys"].strip(), "triptych-browser-products-v1-")
         names = [step["name"] for step in steps]
         self.assertLess(names.index(restore["name"]), names.index("Validate sources and build public artifact"))
-        self.assertLess(names.index("Retain verified current browser products"), names.index(save["name"]))
-        self.assertLess(names.index("Validate sources and build public artifact"),
-                        names.index("Retain verified current browser products"))
+        self.assertLess(names.index("Validate sources and build public artifact"), names.index(save["name"]))
+        self.assertNotIn("Retain verified current browser products", names)
         self.assertLess(names.index(save["name"]), names.index("Verify artifact and GitHub Pages compatibility"))
         self.assertEqual(save["if"], "steps.browser-cache.outputs.cache-hit != 'true'")
 
@@ -465,7 +616,7 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         self.assertEqual(workflow["permissions"], {"contents": "read"})
         self.assertNotIn("needs", jobs["build"])
         self.assertNotIn("needs", jobs["print-compile"])
-        self.assertEqual(jobs["build"]["permissions"], {"contents": "read", "pages": "read"})
+        self.assertEqual(jobs["build"]["permissions"], {"contents": "read", "pages": "read", "actions": "read"})
         self.assertEqual(jobs["print-compile"]["permissions"], {"contents": "read"})
         deploy = jobs["deploy"]
         self.assertEqual(deploy["needs"], ["print-verify"])
