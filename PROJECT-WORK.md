@@ -5,7 +5,7 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-11-17.
+Last reconciled: 2026-11-20.
 
 ## GPT Last Sunday after Pentecost — 22 November 2026
 
@@ -118,6 +118,26 @@ and affected review acceptance must therefore be checked again. Earlier
 passing gates describe their earlier snapshot, not this integration state.
 Final-snapshot site verification, publication and live verification remain
 pending.
+
+On 20 November the maintainer resumed the November 22 production and
+authorized publication to `main`. Reconciliation commit `c0049e5d7e` merges
+upstream `f8601528b0` with the local reviewed family. The catalog now includes
+the GPT full guide, synthesis and homily beside the existing Claude editions.
+All three GPT reader conversions pass, and all three selected native print
+bundles compile in two passes. The native v19 review comparison still routes
+the research and web input changes to their owners. The expansive study,
+synthesis and homily seals are current at this checkpoint. A cold canonical
+conversion differs from the retained reviewed Markdown only in its derived
+revision timestamp. The renewed run, final release checks and deployment
+are open.
+
+The combined source inventory and migration ledger validate. Two cold
+browser builds agree, and the independent product check verifies all 13
+families and 29,967 files. The scoped binding refresh adopts 119 inputs and
+updates six existing input digests. The authorization and publication
+decisions are unchanged. Reconciliation-specific catalog and chronology
+regressions pass on the combined corpus.
+
 Detailed progress and limitations belong to
 `workflows/reviews/gpt-1962-68-production-2026-11-16/CYCLES.md`.
 
