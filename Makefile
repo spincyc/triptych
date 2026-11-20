@@ -549,6 +549,10 @@ pages-site-members: public-site-artifact $(PAGES_LOCAL_SOURCE_GATES)
 $(PAGES_LOCAL_SOURCE_GATES): private export PYTHON_CPU_COUNT := 1
 endif
 
+ifneq ($(strip $(PAGES_WRITER_REFERENCE_FD)),)
+public-site-artifact: check-curriculum-source-rights | prepare-browser-data
+	@$(PYTHON) .github/scripts/pages-native-reference.py --build-site '$(WEB_FIGURES_RUNNER)'
+else
 public-site-artifact: check-curriculum-source-rights | prepare-browser-data $(if $(strip $(PAGES_NATIVE_REFERENCE_DIR)),pages-native-reference)
 	@set -eu; \
 	if [ -n "$${PAGES_NATIVE_REFERENCE_DIR:-}" ]; then \
@@ -558,6 +562,7 @@ public-site-artifact: check-curriculum-source-rights | prepare-browser-data $(if
 		export TRIPTYCH_NATIVE_REFERENCE_SHA256 TRIPTYCH_NATIVE_REFERENCE_DIR="$$PAGES_NATIVE_REFERENCE_DIR"; \
 	fi; \
 	$(PYTHON) $(PUBLIC_ALPHA_TOOL) build --prepared-products --figure-runner '$(WEB_FIGURES_RUNNER)'
+endif
 
 pages-native-reference:
 	@$(PYTHON) .github/scripts/pages-native-reference.py

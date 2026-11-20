@@ -92,10 +92,22 @@ from pathlib import Path
 import subprocess
 from unittest.mock import Mock
 
+import os
+import sys
+ROOT = Path.cwd()
+sys.path.insert(0, str(ROOT))
 MANIFEST_PATH = Path("release/browser-products.json")
 OUTPUT_ROOT = Path("build/public-alpha")
 load_manifest = validate_manifest = site_source_paths = _require_reference_checkout = Mock()
-artifact_authorization = included_publications = web_data_files = Mock()
+artifact_authorization = web_data_files = prefetch_publication_dependencies = publication_source_identity = Mock()
+held_browser_products = web_figures_root = Mock()
+def included_publications(publications, preview):
+    return {}
+def build_site(manifest, publications, preview):
+    assert not preview
+    subprocess.run(["python", "tools/tpt", "public-alpha", "build", "--prepared-products",
+                    "--figure-runner", os.environ["DEPLOYMENT_TEST_FIGURE_RUNNER"]], check=True)
+    return ROOT / "build/public-alpha/site"
 
 def held_repository_inputs(*, prefetch_web):
     assert not prefetch_web
@@ -107,6 +119,8 @@ def verify_output(manifest, publications, site, include_drafts):
 def validate_deployment_target(authorization, target):
     subprocess.run(["python", "public-alpha.validate_deployment_target", target], check=True)
 ''')
+        self.write("_web_figure_build.py", 'import os\ndef prepare(root, products, output, *, runner, candidates):\n'
+                   '    os.environ["DEPLOYMENT_TEST_FIGURE_RUNNER"] = runner\n    return {}\n')
         self.bin = self.root / "bin"
         self.log = self.root / "commands.jsonl"
         self.env = {**os.environ, "PATH": f"{self.bin}{os.pathsep}{os.environ['PATH']}",
@@ -138,7 +152,8 @@ if args[:5] == ["tools/tpt", "corpus-index", "check", "--readers", "--jobs"]:
     args = args[:4]
 make = Path(sys.argv[0]).name == "make"
 with open(os.environ["DEPLOYMENT_TEST_LOG"], "a", encoding="utf-8") as log:
-    log.write(json.dumps(["make", *args] if make else args) + "\n")
+    observed = [*args, Path(os.environ["PAGES_NATIVE_REFERENCE_DIR"]).name] if args == ["--digest"] else args
+    log.write(json.dumps(["make", *args] if make else observed) + "\n")
 if make:
     executable = os.environ["DEPLOYMENT_TEST_MAKE"]
     os.execv(executable, [executable, *args])
@@ -198,13 +213,17 @@ elif args == [".github/scripts/pages-native-reference.py", "--corpus-gate"]:
         helper = runpy.run_path(os.environ["DEPLOYMENT_TEST_COORDINATOR"])
         jobs = json.loads(os.environ["DEPLOYMENT_TEST_GATE_RESULTS"])
         assert helper["corpus_gate_passed"](jobs, "1", os.environ["GITHUB_SHA"], 1)
-elif args == [".github/scripts/pages-native-reference.py", "--verify-site"]:
+elif (args == [".github/scripts/pages-native-reference.py", "--verify-site"] or
+      args[:2] == [".github/scripts/pages-native-reference.py", "--build-site"]):
     # Run the real scheduling and failure barriers. Its --digest child enters
     # this same boundary double in place of fetching GitHub artifacts.
     coordinator = Path(os.environ["DEPLOYMENT_TEST_COORDINATOR"])
     namespace = {"__name__": "fixture_coordinator", "__file__": __file__}
     exec(compile(coordinator.read_bytes(), str(coordinator), "exec"), namespace)
-    namespace["verify_site"]()
+    if args[1] == "--verify-site":
+        namespace["verify_site"]()
+    else:
+        namespace["build_site"](args[2])
 elif args in ([".github/scripts/pages-native-reference.py"], ["--digest"]):
     if "DEPLOYMENT_TEST_REFERENCES" in os.environ:
         received = Path(os.environ["DEPLOYMENT_TEST_REFERENCES"])
@@ -214,6 +233,11 @@ elif args in ([".github/scripts/pages-native-reference.py"], ["--digest"]):
     reference.mkdir(parents=True, exist_ok=True)
     (reference / "catalog.json").write_text("{}")
     if args == ["--digest"]:
+        if reference.name == "writer":
+            digest = os.environ.get("DEPLOYMENT_TEST_REFERENCE_DIGEST", "d" * 64)
+            if digest != "missing":
+                print(digest)
+            sys.exit(0)
         assert reference.name == "verifier"
         if os.environ.get("DEPLOYMENT_TEST_FAIL_VERIFY_REFERENCE"):
             deadline = time.monotonic() + 8
@@ -465,12 +489,12 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         prepared = ("tools/tpt", "browser-products", "build", "--prune")
         self.assertEqual(commands.count(prepared), 1)
         self.assertLess(commands.index(prepared), commands.index(writer))
-        writer_reference = (".github/scripts/pages-native-reference.py",)
+        writer_reference = ("--digest", "writer")
         self.assertEqual(commands.count(writer_reference), 1)
-        self.assertLess(commands.index(writer), commands.index(writer_reference))
+        self.assertLess(commands.index(prepared), commands.index(writer_reference))
         self.assertLess(commands.index(writer_reference), commands.index(build))
-        self.assertEqual(commands.count(("--digest",)), 1)
-        self.assertLess(commands.index(("--digest",)), commands.index(verify))
+        self.assertEqual(commands.count(("--digest", "verifier")), 1)
+        self.assertLess(commands.index(("--digest", "verifier")), commands.index(verify))
         for command in GENERATED_CONSUMERS:
             self.assertLess(commands.index(prepared), commands.index(command))
         # Pages runs the gates beside the site build, so only the rights cases
@@ -586,7 +610,7 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         before_make = ["scripts/_native_tex_assets.py hydrate --fetch",
                        "scripts/_browser_cache_bootstrap.py --fetch",
                        "tools/tpt browser-products build --prune",
-                       ".github/scripts/pages-native-reference.py",
+                       "--digest",
                        "-m unittest -v " + " ".join(
                            "tools.tests.test_curriculum_liturgical_rights.CurriculumLiturgicalRightsTests." + name
                            for name in ("test_hash_only_registry_is_complete_and_well_formed",
@@ -659,8 +683,8 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         site = make_reached("public-site", makefile)
         self.assertEqual(set(site) - {"public-site", "check-deployment-sources"} - set(reached), set())
         body = "\n".join(reached.values())
-        self.assertIn("$(PUBLIC_ALPHA_TOOL) build --prepared-products", body)
-        self.assertIn("--figure-runner '$(WEB_FIGURES_RUNNER)'", body)
+        self.assertIn(".github/scripts/pages-native-reference.py --build-site '$(WEB_FIGURES_RUNNER)'", body)
+        self.assertIn("$(PUBLIC_ALPHA_TOOL) build --prepared-products --figure-runner '$(WEB_FIGURES_RUNNER)'", makefile)
 
     def test_consumers_prepare_products_once_before_serial_or_parallel_reads(self):
         for jobs in ("-j1", "-j4"):

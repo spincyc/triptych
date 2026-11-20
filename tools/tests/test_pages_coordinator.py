@@ -30,18 +30,21 @@ import sys
 import time
 
 assert sys.argv[1:] == ["--digest"]
-assert os.environ["PAGES_NATIVE_REFERENCE_DIR"].endswith("/verifier")
-if os.environ["FAIL"] == "early":
+role = Path(os.environ["PAGES_NATIVE_REFERENCE_DIR"]).name
+assert role in {"writer", "verifier"}
+if os.environ["FAIL"] == "early" and role == "verifier":
     signal.signal(signal.SIGTERM, signal.SIG_IGN)
     Path("reference-pid").write_text(str(os.getpid()))
     with open("reference-started", "wb") as ready:
         ready.write(b"R")
     time.sleep(90)
 if os.environ["FAIL"] == "hold-reference":
-    for stage in ("initial-policy", "browser-scan"):
-        with open(stage, "rb") as work:
+    stages = ["initial-policy", "browser-scan", "identities"] + (["figures"] if role == "writer" else [])
+    for stage in stages:
+        with open(stage + "-" + role, "rb") as work:
             assert work.read() == b"ready"
-print("invalid" if os.environ["FAIL"] == "digest" else "a" * 64)
+failure = os.environ["FAIL"]
+print("invalid" if failure in ("digest", "digest-" + role) else ("a" if role == "verifier" else "b") * 64)
 """
 MAKEFILE = """
 .PHONY: pages-site prepare-browser-data writer gate
@@ -51,7 +54,7 @@ prepare-browser-data:
 pages-site: writer gate
 writer: | prepare-browser-data
 	@echo bbbbbbbb > "$$PAGES_NATIVE_REFERENCE_DIR.sha256"
-	@touch writer-complete
+	@"$$COORDINATOR_PYTHON" "$$COORDINATOR_TOOL" --build-site '$(WEB_FIGURES_RUNNER)'
 gate:
 	@if [ "$(FAIL)" = early ]; then cat reference-started > /dev/null; exit 2; fi
 	@cat prewarmed > gate-check
@@ -66,33 +69,37 @@ from pathlib import Path
 import os
 
 SNAPSHOT = ContextVar("snapshot")
+ROOT = Path.cwd()
 MANIFEST_PATH = Path("manifest")
 OUTPUT_ROOT = Path("output")
 failure = os.environ["FAIL"]
+role = "writer" if "PAGES_WRITER_REFERENCE_FD" in os.environ else "verifier"
+policies = Path("policies" if role == "verifier" else "writer-policies")
+clean = Path("clean-checks" if role == "verifier" else "writer-clean-checks")
 
 def load_manifest():
     return {"text": MANIFEST_PATH.read_text()}
 
 def validate_manifest(manifest, require_active_release):
     assert require_active_release
-    if not Path("policies").exists():
+    if not policies.exists():
         assert SNAPSHOT.get() == "private browser snapshot"
-        assert os.environ["TRIPTYCH_NATIVE_REFERENCE_DIR"].endswith("/verifier")
+        assert os.environ["TRIPTYCH_NATIVE_REFERENCE_DIR"].endswith("/" + role)
         assert "TRIPTYCH_NATIVE_REFERENCE_SHA256" not in os.environ
         if failure == "hold-reference":
-            with open("initial-policy", "wb") as signal:
+            with open("initial-policy-" + role, "wb") as signal:
                 signal.write(b"ready")
-    with open("policies", "a") as policy:
+    with open(policies, "a") as policy:
         print("check", file=policy)
-    if failure == "expired" and Path("gate-complete").exists():
+    if role == "verifier" and failure == "expired" and Path("gate-complete").exists():
         raise ValueError("expired release")
     return {}
 
 def _require_reference_checkout(revision):
     assert revision == os.environ["GITHUB_SHA"]
-    with open("clean-checks", "a") as checks:
+    with open(clean, "a") as checks:
         print("clean", file=checks)
-    if (failure == "dirty-first" or (failure == "dirty" and Path("gate-complete").exists())
+    if role == "verifier" and (failure == "dirty-first" or (failure == "dirty" and Path("gate-complete").exists())
             or (failure == "dirty-final" and Path("checked-end").exists())):
         raise ValueError("dirty checkout")
 
@@ -100,29 +107,59 @@ def web_data_files():
     assert SNAPSHOT.get() == "private browser snapshot"
     if failure == "hold-reference":
         assert "TRIPTYCH_NATIVE_REFERENCE_SHA256" not in os.environ
-        with open("browser-scan", "wb") as signal:
+        with open("browser-scan-" + role, "wb") as signal:
             signal.write(b"ready")
     if failure == "scan":
         raise ValueError("browser JSON scan failed")
-    Path("scanned").touch()
+    Path("scanned" + role).touch()
 
 
 def site_source_paths(manifest):
-    assert Path("scanned").exists()
-    assert os.environ["TRIPTYCH_NATIVE_REFERENCE_DIR"].endswith("/verifier")
-    assert os.environ["TRIPTYCH_NATIVE_REFERENCE_SHA256"] == "a" * 64
-    with open("prewarmed", "wb") as signal:
-        signal.write(b"W")
+    assert Path("scanned" + role).exists()
+    assert os.environ["TRIPTYCH_NATIVE_REFERENCE_DIR"].endswith("/" + role)
+    assert os.environ["TRIPTYCH_NATIVE_REFERENCE_SHA256"] == ("a" if role == "verifier" else "b") * 64
+    if role == "verifier":
+        with open("prewarmed", "wb") as signal:
+            signal.write(b"W")
 
 def verify_output(manifest, publications, path, preview):
     assert not preview and path == OUTPUT_ROOT / "site"
     assert Path("gate-complete").exists()
     assert os.environ["TRIPTYCH_NATIVE_REFERENCE_SHA256"] == "a" * 64
-    assert os.environ["TRIPTYCH_NATIVE_REFERENCE_DIR"].endswith("/verifier")
+    assert os.environ["TRIPTYCH_NATIVE_REFERENCE_DIR"].endswith("/" + role)
     Path("opened-artifact").touch()
 
 def included_publications(publications, preview):
-    return []
+    return {("gpt", "one"): {}, ("claude", "two"): {}}
+
+def prefetch_publication_dependencies(keys):
+    assert "TRIPTYCH_NATIVE_REFERENCE_SHA256" not in os.environ
+    assert tuple(keys) == (("gpt", "one"), ("claude", "two"))
+    Path("prefetched-" + role).touch()
+
+def publication_source_identity(provider, output):
+    assert Path("prefetched-" + role).exists()
+    assert "TRIPTYCH_NATIVE_REFERENCE_SHA256" not in os.environ
+    with open("identities-checked-" + role, "a") as log:
+        print(provider, output, file=log)
+    if failure == "identity-" + role:
+        raise ValueError("unapproved source identity")
+    if failure == "hold-reference" and output == "two":
+        with open("identities-" + role, "wb") as signal:
+            signal.write(b"ready")
+
+def held_browser_products():
+    return SNAPSHOT.get()
+
+def web_figures_root():
+    return ROOT / "web-figures"
+
+def build_site(manifest, publications, preview):
+    assert role == "writer" and not preview
+    assert Path("scannedwriter").exists() and Path("figures-ready").exists()
+    assert os.environ["TRIPTYCH_NATIVE_REFERENCE_SHA256"] == "b" * 64
+    Path("writer-complete").touch()
+    return ROOT / "output/site"
 
 def artifact_authorization(manifest, items):
     return {}
@@ -137,12 +174,32 @@ def held_repository_inputs(*, prefetch_web):
     assert not prefetch_web
     assert "TRIPTYCH_NATIVE_REFERENCE_DIR" not in os.environ
     assert "TRIPTYCH_NATIVE_REFERENCE_SHA256" not in os.environ
-    assert Path("clean-checks").exists()
+    assert clean.exists()
     SNAPSHOT.set("private browser snapshot")
     yield
-    if failure == "final":
+    if role == "verifier" and failure == "final":
         raise ValueError("final source drift")
-    Path("checked-end").touch()
+    if role == "verifier":
+        Path("checked-end").touch()
+"""
+
+
+FIGURES = """
+from pathlib import Path
+import os
+def prepare(root, products, out, *, runner, candidates):
+    assert root == Path.cwd() and out == root / "web-figures"
+    assert products == "private browser snapshot"
+    assert runner == "docker:" + os.environ["TEXLIVE_IMAGE"]
+    assert candidates == Path("figure-candidates")
+    assert "TRIPTYCH_NATIVE_REFERENCE_SHA256" not in os.environ
+    if os.environ["FAIL"] == "figures":
+        raise ValueError("figure source failed")
+    if os.environ["FAIL"] == "hold-reference":
+        with open("figures-writer", "wb") as signal:
+            signal.write(b"ready")
+    Path("figures-ready").touch()
+    return {"ok": True}
 """
 
 
@@ -156,12 +213,15 @@ class PagesCoordinatorTests(unittest.TestCase):
         work = Path(temporary.name)
         (work / "tools").mkdir()
         (work / "tools/public-alpha").write_text(PUBLIC_ALPHA)
+        (work / "_web_figure_build.py").write_text(FIGURES)
         (work / "manifest").write_text("approved\n")
         (work / "Makefile").write_text(MAKEFILE)
         (work / "fetch-reference.py").write_text(REFERENCE)
-        for name in ("prewarmed", "reference-started", "initial-policy", "browser-scan"):
+        for name in ["prewarmed", "reference-started", "figures-writer",
+                     *(s + "-" + role for role in ("writer", "verifier") for s in ("initial-policy", "browser-scan", "identities"))]:
             os.mkfifo(work / name)
-        env = {**os.environ, "FAIL": failure, "RUNNER_TEMP": str(work), "GITHUB_SHA": "a" * 40,
+        env = {**os.environ, "FAIL": failure, "PYTHONPATH": str(work), "COORDINATOR_TOOL": str(COORDINATOR),
+               "COORDINATOR_PYTHON": sys.executable, "TRIPTYCH_WEB_FIGURE_CANDIDATES": "figure-candidates", "RUNNER_TEMP": str(work), "GITHUB_SHA": "a" * 40,
                "TEXLIVE_IMAGE": "ghcr.io/a/b@sha256:" + "a" * 64,
                "TRIPTYCH_NATIVE_REFERENCE_SHA256": "d" * 64, "TRIPTYCH_NATIVE_REFERENCE_DIR": "untrusted"}
         result = subprocess.run(
@@ -178,13 +238,21 @@ class PagesCoordinatorTests(unittest.TestCase):
         self.assertEqual((work / "policies").read_text().splitlines(), ["check", "check"])
         self.assertTrue((work / "opened-artifact").exists())
         self.assertTrue((work / "checked-end").exists())
-        events = ["starting independent reference retrieval", "independent source expectations ready",
-                  "opening the assembled artifact", "artifact, deployment target and final source checks passed"]
+        self.assertTrue((work / "writer-complete").exists())
+        writer_events = ["writer canonical sources ready", "site written to output/site", "writer final source checks passed"]
+        marker_positions = [result.stdout.index(event) for event in writer_events]
+        self.assertEqual(marker_positions, sorted(marker_positions))
+        for role in ("verifier", "writer"):
+            self.assertEqual((work / ("identities-checked-" + role)).read_text().splitlines(), ["gpt one", "claude two"])
+        events = ["starting independent reference retrieval", "verified browser snapshot acquired",
+                  "independent source expectations ready", "opening the assembled artifact",
+                  "artifact read-back and deployment target passed", "artifact, deployment target and final source checks passed"]
         positions = [result.stdout.index(event) for event in events]
         self.assertEqual(positions, sorted(positions))
 
     def test_failed_source_gate_product_preparation_or_reference_prevents_artifact_access(self):
-        for failure in ("gate", "prepare", "digest", "scan", "dirty-first"):
+        for failure in ("gate", "prepare", "digest", "scan", "dirty-first", "digest-writer",
+                        "identity-writer", "identity-verifier", "figures"):
             with self.subTest(failure=failure):
                 work, result = self.run_build(failure)
                 self.assertNotEqual(result.returncode, 0)

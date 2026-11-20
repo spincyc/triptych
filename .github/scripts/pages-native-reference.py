@@ -1,6 +1,7 @@
 """Retrieve the canonical native inputs produced by the print jobs in this Pages run."""
 from concurrent.futures import ThreadPoolExecutor
 from contextvars import copy_context
+from contextlib import contextmanager
 import hashlib
 import json
 import os
@@ -184,6 +185,77 @@ def prepare(env):
         return merged
 
 
+def clear_native_reference():
+    for key in ("TRIPTYCH_NATIVE_REFERENCE_DIR", "TRIPTYCH_NATIVE_REFERENCE_SHA256"):
+        os.environ.pop(key, None)
+
+
+@contextmanager
+def prepared_inputs(reference, authenticate, report, *, figure_runner=None):
+    """Hold this operation's own checked inputs and admit only its authenticated native reference."""
+    clear_native_reference()
+    tool = SimpleNamespace(**runpy.run_path("tools/public-alpha"))
+    revision = os.environ["GITHUB_SHA"]
+    tool._require_reference_checkout(revision)
+    with tool.held_repository_inputs(prefetch_web=False):
+        report("verified browser snapshot acquired")
+        # A directory with no digest refuses any premature native source use.
+        os.environ["TRIPTYCH_NATIVE_REFERENCE_DIR"] = str(reference)
+        with ThreadPoolExecutor(max_workers=1) as checks:
+            scan = checks.submit(copy_context().run, tool.web_data_files)
+            before = tool.MANIFEST_PATH.read_bytes()
+            manifest = tool.load_manifest()
+            publications = tool.validate_manifest(manifest, require_active_release=True)
+            included = tool.included_publications(publications, False)
+            tool.prefetch_publication_dependencies(included)
+            for key in included:
+                tool.publication_source_identity(*key)
+            report("current publication dependencies and identities prepared")
+            if figure_runner:
+                from _web_figure_build import prepare as prepare_figures
+                products = tool.held_browser_products()
+                if products is None:
+                    raise tool.ReleaseError("web figures require verified web-edition products")
+                candidates = os.environ.get("TRIPTYCH_WEB_FIGURE_CANDIDATES")
+                figures = prepare_figures(tool.ROOT, products, tool.web_figures_root(), runner=figure_runner,
+                                          candidates=Path(candidates) if candidates is not None else None)
+                print(json.dumps(figures, sort_keys=True), flush=True)
+            digest = authenticate()
+            if not re.fullmatch(r"[0-9a-f]{64}", digest):
+                raise ValueError("invalid protected native reference digest")
+            os.environ["TRIPTYCH_NATIVE_REFERENCE_SHA256"] = digest
+            report("native reference authenticated")
+            scan.result()
+        yield tool, before, manifest
+    tool._require_reference_checkout(revision)
+
+
+def current_policy(tool, before):
+    tool._require_reference_checkout(os.environ["GITHUB_SHA"])
+    if before != tool.MANIFEST_PATH.read_bytes():
+        raise ValueError("release manifest changed during Pages build")
+    manifest = tool.load_manifest()
+    return manifest, tool.validate_manifest(manifest, require_active_release=True)
+
+
+def build_site(figure_runner):
+    start = time.monotonic()
+
+    def report(message):
+        print(f"Pages writer +{time.monotonic() - start:.2f}s: {message}", flush=True)
+
+    reference = Path(os.environ["PAGES_NATIVE_REFERENCE_DIR"])
+    with os.fdopen(int(os.environ["PAGES_WRITER_REFERENCE_FD"]), "r") as receipt:
+        with prepared_inputs(reference, lambda: receipt.read().strip(), report, figure_runner=figure_runner) as held:
+            tool, before, early_manifest = held
+            tool.site_source_paths(early_manifest)
+            report("writer canonical sources ready")
+            manifest, publications = current_policy(tool, before)
+            output = tool.build_site(manifest, publications, False)
+            report(f"site written to {output.relative_to(tool.ROOT)}; rechecking source snapshot")
+    report("writer final source checks passed")
+
+
 def verify_site():
     """Prepare independent release inputs while the full, separately gated Pages build runs."""
     start = time.monotonic()
@@ -198,9 +270,9 @@ def verify_site():
     children = set()
     env = {**os.environ, **dict.fromkeys(
         ("GITHUB_OUTPUT", "GITHUB_ENV", "GITHUB_PATH", "GITHUB_STATE", "GITHUB_STEP_SUMMARY"), os.devnull)}
+    clear_native_reference()
     for key in ("TRIPTYCH_NATIVE_REFERENCE_DIR", "TRIPTYCH_NATIVE_REFERENCE_SHA256"):
         env.pop(key, None)
-        os.environ.pop(key, None)
 
     def spawn(command, **kwargs):
         child = subprocess.Popen(command, start_new_session=True, **kwargs)
@@ -223,47 +295,36 @@ def verify_site():
                           env={**env, "PAGES_NATIVE_REFERENCE_DIR": str(verifier)})
         succeeded(spawn(["make", "prepare-browser-data"], env=env))
         report("browser products prepared; starting complete source gates and site assembly")
-        writer = spawn(["make", "-j3", "--assume-old=prepare-browser-data", "pages-site",
-                        f"WEB_FIGURES_RUNNER=docker:{image}"],
-                       env={**env, "PAGES_NATIVE_REFERENCE_DIR": str(Path(temporary.name) / "writer")})
-        tool = SimpleNamespace(**runpy.run_path("tools/public-alpha"))
-        tool._require_reference_checkout(env["GITHUB_SHA"])
-        with tool.held_repository_inputs(prefetch_web=False):
-            # The browser snapshot is open. A directory without an authenticated
-            # digest makes the public verifier refuse any premature native read.
-            os.environ["TRIPTYCH_NATIVE_REFERENCE_DIR"] = str(verifier)
-            with ThreadPoolExecutor(max_workers=1) as checks:
-                scan = checks.submit(copy_context().run, tool.web_data_files)
-                before = tool.MANIFEST_PATH.read_bytes()
-                manifest = tool.load_manifest()
-                tool.validate_manifest(manifest, require_active_release=True)
-                report("independent browser snapshot open and initial release policy checked")
-                # A failed gate may finish before the parallel GitHub download.
-                with os.fdopen(os.pidfd_open(writer.pid), "rb") as exit_fd, reference.stdout:
-                    ready, _, _ = select.select((exit_fd, reference.stdout), (), ())
-                    if exit_fd in ready and writer.wait():
-                        raise subprocess.CalledProcessError(writer.returncode, writer.args)
-                    digest = reference.stdout.read().strip()
-                succeeded(reference)
-                # Only this independent fetch supplies the verifier's trust anchor.
-                if not re.fullmatch(r"[0-9a-f]{64}", digest):
-                    raise ValueError("invalid independent native reference digest")
-                os.environ["TRIPTYCH_NATIVE_REFERENCE_SHA256"] = digest
-                report("independent native reference authenticated")
-                scan.result()
+        writer_dir = Path(temporary.name) / "writer"
+        writer_reference = spawn([sys.executable, __file__, "--digest"], stdout=subprocess.PIPE, text=True,
+                                 env={**env, "PAGES_NATIVE_REFERENCE_DIR": str(writer_dir)})
+        with writer_reference.stdout as pipe:
+            writer = spawn(["make", "-j3", "--assume-old=prepare-browser-data", "pages-site",
+                            f"WEB_FIGURES_RUNNER=docker:{image}"], pass_fds=(pipe.fileno(),),
+                           env={**env, "PAGES_NATIVE_REFERENCE_DIR": str(writer_dir),
+                                "PAGES_WRITER_REFERENCE_FD": str(pipe.fileno())})
+
+        def authenticate():
+            # A failed gate may finish before the parallel GitHub download.
+            with os.fdopen(os.pidfd_open(writer.pid), "rb") as exit_fd, reference.stdout:
+                ready, _, _ = select.select((exit_fd, reference.stdout), (), ())
+                if exit_fd in ready and writer.wait():
+                    raise subprocess.CalledProcessError(writer.returncode, writer.args)
+                digest = reference.stdout.read().strip()
+            succeeded(reference)
+            return digest
+
+        with prepared_inputs(verifier, authenticate, report) as (tool, before, manifest):
             tool.site_source_paths(manifest)
             report("independent source expectations ready")
             succeeded(writer)
-            tool._require_reference_checkout(env["GITHUB_SHA"])
-            if before != tool.MANIFEST_PATH.read_bytes():
-                raise ValueError("release manifest changed during Pages build")
-            manifest = tool.load_manifest()
-            publications = tool.validate_manifest(manifest, require_active_release=True)
+            succeeded(writer_reference)
+            manifest, publications = current_policy(tool, before)
             report("all source gates passed; opening the assembled artifact for read-back")
             tool.verify_output(manifest, publications, tool.OUTPUT_ROOT / "site", False)
             tool.validate_deployment_target(tool.artifact_authorization(
                 manifest, tool.included_publications(publications, False)), "github-pages")
-        tool._require_reference_checkout(env["GITHUB_SHA"])
+            report("artifact read-back and deployment target passed; rechecking source snapshot")
         report("artifact, deployment target and final source checks passed")
     finally:
         for sig in (signal.SIGTERM, signal.SIGKILL):
@@ -286,6 +347,8 @@ if __name__ == "__main__":
             verify_site()
         elif sys.argv[1:] == ["--corpus-gate"]:
             wait_for_corpus_gate(os.environ)
+        elif len(sys.argv) == 3 and sys.argv[1] == "--build-site":
+            build_site(sys.argv[2])
         elif sys.argv[1:] == ["--digest"]:
             print(prepare({**os.environ, "GITHUB_OUTPUT": os.devnull}))
         elif not sys.argv[1:]:
