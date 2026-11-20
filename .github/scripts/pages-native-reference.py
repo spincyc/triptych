@@ -5,13 +5,17 @@ import json
 import os
 from pathlib import Path, PurePosixPath
 import re
+import runpy
+import select
 import shutil
+import signal
 import stat
 import subprocess
 import sys
 import tempfile
 import time
 import zipfile
+from types import SimpleNamespace
 
 
 SHARDS = 8
@@ -121,10 +125,104 @@ def prepare(env):
         stamp.replace(output.with_name(output.name + ".sha256"))
         with open(env["GITHUB_OUTPUT"], "a", encoding="utf-8") as step:
             print(f"native-reference-sha256={merged}", file=step)
+        return merged
+
+
+def verify_site():
+    """Prepare independent release inputs while the full, separately gated Pages build runs."""
+    start = time.monotonic()
+
+    def report(message):
+        print(f"Pages verification +{time.monotonic() - start:.2f}s: {message}", flush=True)
+
+    report("starting independent reference retrieval and browser product preparation")
+    image = os.environ["TEXLIVE_IMAGE"]
+    if not re.fullmatch(r"ghcr\.io/[a-z0-9._/-]+@sha256:[0-9a-f]{64}", image):
+        raise ValueError("TEXLIVE_IMAGE must name an immutable digest")
+    children = set()
+    env = {**os.environ, **dict.fromkeys(
+        ("GITHUB_OUTPUT", "GITHUB_ENV", "GITHUB_PATH", "GITHUB_STATE", "GITHUB_STEP_SUMMARY"), os.devnull)}
+    for key in ("TRIPTYCH_NATIVE_REFERENCE_DIR", "TRIPTYCH_NATIVE_REFERENCE_SHA256"):
+        env.pop(key, None)
+
+    def spawn(command, **kwargs):
+        child = subprocess.Popen(command, start_new_session=True, **kwargs)
+        children.add(child)
+        return child
+
+    def succeeded(child):
+        if status := child.wait():
+            raise subprocess.CalledProcessError(status, child.args)
+        children.remove(child)
+
+    def interrupt(signum, _frame):
+        raise InterruptedError(f"Pages coordination interrupted by signal {signum}")
+
+    temporary = tempfile.TemporaryDirectory(dir=env["RUNNER_TEMP"], prefix="pages-verified-")
+    prior = signal.signal(signal.SIGTERM, interrupt)
+    try:
+        verifier = Path(temporary.name) / "verifier"
+        reference = spawn([sys.executable, __file__, "--digest"], stdout=subprocess.PIPE, text=True,
+                          env={**env, "PAGES_NATIVE_REFERENCE_DIR": str(verifier)})
+        succeeded(spawn(["make", "prepare-browser-data"], env=env))
+        report("browser products prepared; starting complete source gates and site assembly")
+        writer = spawn(["make", "-j3", "--assume-old=prepare-browser-data", "pages-site",
+                        f"WEB_FIGURES_RUNNER=docker:{image}"],
+                       env={**env, "PAGES_NATIVE_REFERENCE_DIR": str(Path(temporary.name) / "writer")})
+        # A failed gate may finish before the parallel GitHub download.
+        with os.fdopen(os.pidfd_open(writer.pid), "rb") as exit_fd, reference.stdout:
+            ready, _, _ = select.select((exit_fd, reference.stdout), (), ())
+            if exit_fd in ready and writer.wait():
+                raise subprocess.CalledProcessError(writer.returncode, writer.args)
+            digest = reference.stdout.read().strip()
+        succeeded(reference)
+        # Only this independent fetch supplies the verifier's trust anchor.
+        if not re.fullmatch(r"[0-9a-f]{64}", digest):
+            raise ValueError("invalid independent native reference digest")
+        os.environ.update(TRIPTYCH_NATIVE_REFERENCE_DIR=str(verifier), TRIPTYCH_NATIVE_REFERENCE_SHA256=digest)
+        report("independent native reference authenticated")
+        tool = SimpleNamespace(**runpy.run_path("tools/public-alpha"))
+        with tool.held_repository_inputs(prefetch_web=True):
+            before = tool.MANIFEST_PATH.read_bytes()
+            manifest = tool.load_manifest()
+            tool.validate_manifest(manifest, require_active_release=True)
+            tool.site_source_paths(manifest)
+            report("independent source expectations ready")
+            succeeded(writer)
+            tool._require_reference_checkout(env["GITHUB_SHA"])
+            if before != tool.MANIFEST_PATH.read_bytes():
+                raise ValueError("release manifest changed during Pages build")
+            manifest = tool.load_manifest()
+            publications = tool.validate_manifest(manifest, require_active_release=True)
+            report("all source gates passed; opening the assembled artifact for read-back")
+            tool.verify_output(manifest, publications, tool.OUTPUT_ROOT / "site", False)
+            tool.validate_deployment_target(tool.artifact_authorization(
+                manifest, tool.included_publications(publications, False)), "github-pages")
+        report("artifact, deployment target and final source checks passed")
+    finally:
+        for sig in (signal.SIGTERM, signal.SIGKILL):
+            for child in children:
+                try:
+                    os.killpg(child.pid, sig)
+                except ProcessLookupError:
+                    pass
+            if children and sig == signal.SIGTERM:
+                time.sleep(.25)
+        for child in children:
+            child.wait()
+        temporary.cleanup()
+        signal.signal(signal.SIGTERM, prior)
 
 
 if __name__ == "__main__":
     try:
-        prepare(os.environ)
+        if sys.argv[1:] == ["--verify-site"]:
+            verify_site()
+        elif sys.argv[1:] == ["--digest"]:
+            print(prepare({**os.environ, "GITHUB_OUTPUT": os.devnull}))
+        elif not sys.argv[1:]:
+            prepare(os.environ)
+        else:
+            raise ValueError("expected --verify-site, --digest or no argument")
     except (KeyError, OSError, ValueError, zipfile.BadZipFile, subprocess.CalledProcessError) as error:
         sys.exit(f"native print reference: {error}")
