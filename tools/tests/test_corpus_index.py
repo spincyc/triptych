@@ -309,7 +309,11 @@ def discovery_files(spine):
     value = trigger.read_text() if trigger.exists() else '{}'
     return {'other.json': '{}'} if value == 'membership' else {'fixture.json': value}
 """)
-        with patch.object(readers, 'ORDER', ('sources',)):
+        scratch = self.root / '.scratch' / ('long-workspace-name-' * 6)
+        scratch.mkdir(parents=True)
+        with (patch.object(readers, 'ORDER', ('sources',)),
+              patch.dict(os.environ, TMPDIR=str(scratch)),
+              patch.object(tempfile, 'tempdir', str(scratch))):
             corpus.refresh(self.root, readers=True)
             report = corpus.refresh(self.root, readers=True, check=True, jobs=2)
             self.assertEqual(report['reader_surfaces'], ['sources'])

@@ -227,7 +227,9 @@ def _check_all(root, jobs):
         # The producers install process-local path and cache policies. Each
         # worker reads the root bound above, and authenticates every shard it uses.
         from concurrent.futures import ProcessPoolExecutor
-        with ProcessPoolExecutor(max_workers=min(jobs, len(ORDER))) as pool:
+        from multiprocessing import get_context
+        # A fresh interpreter needs no fork-server socket in the caller's TMPDIR.
+        with ProcessPoolExecutor(max_workers=min(jobs, len(ORDER)), mp_context=get_context('spawn')) as pool:
             checks = [pool.submit(_check_worker, surface, root, index.identity) for surface in ORDER]
             for check in checks:
                 check.result()
