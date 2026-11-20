@@ -236,6 +236,8 @@ def prepared_inputs(reference, authenticate, report, *, figure_runner=None):
                 figures = prepare_figures(tool.ROOT, products, tool.web_figures_root(), runner=figure_runner,
                                           candidates=Path(candidates) if candidates is not None else None)
                 print(json.dumps(figures, sort_keys=True), flush=True)
+                tool.prefetch_reader_markdown()
+                report("writer reader Markdown prepared")
             digest = authenticate()
             if not re.fullmatch(r"[0-9a-f]{64}", digest):
                 raise ValueError("invalid protected native reference digest")

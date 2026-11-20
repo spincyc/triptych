@@ -5381,6 +5381,43 @@ def reject_internal_reader_labels(source_relative: str, rendered_html: str) -> N
                 )
 
 
+def prefetch_reader_markdown() -> None:
+    """Convert checked reader Markdown while the Pages writer awaits native source."""
+    from _native_print import admitted_documents
+    rows = web_edition_products()
+    if rows is None or not _HELD_SOURCE_INVENTORIES:
+        return
+    admitted = admitted_documents(ROOT)
+    included = {key for key in rows if "publication:" + "/".join(key) in admitted}
+    prepared = {}
+    for key in sorted(included):
+        markdown = web_edition_record(*key)["markdown"]
+        # Relative Markdown links require current page/print routes. Leave
+        # those editions on the ordinary renderer once the routes are ready.
+        targets = (match.group(2).lstrip() for match in MARKDOWN_LINK_RE.finditer(markdown))
+        if any(not (target.startswith(("#", "//")) or EXTERNAL_RE.match(target)) for target in targets):
+            continue
+        source = "web/" + "/".join(key) + ".md"
+        rewritten = rewrite_links(source, publication_reader_path(*key), markdown, included)
+        try:
+            prepared[source] = (rewritten, render_markdown(rewritten, ROOT))
+        except MarkdownRenderError as exc:
+            raise ReleaseError(str(exc)) from exc
+    _HELD_SOURCE_INVENTORIES[-1][(str(ROOT.resolve()), "prepared-reader-markdown")] = prepared
+
+
+def _page_markdown_html(source_relative: str, markdown_text: str) -> str:
+    # Only the pinned Markdown conversion is reusable. Current route links,
+    # figure expansion, table semantics and the native reader shell run normally.
+    if source_relative.startswith("web/") and _HELD_SOURCE_INVENTORIES:
+        prepared = _HELD_SOURCE_INVENTORIES[-1].get((str(ROOT.resolve()), "prepared-reader-markdown"))
+        item = prepared.pop(source_relative, None) if prepared else None
+        if item is not None and item[0] == markdown_text:
+            require_locked_markdown_dependency()
+            return item[1]
+    return render_markdown(page_body_markdown(source_relative, markdown_text), ROOT)
+
+
 def render_page(
     source_relative: str,
     markdown_text: str,
@@ -5391,8 +5428,8 @@ def render_page(
     body_extra: str = "",
 ) -> str:
     try:
-        content = add_table_header_scopes(drop_empty_table_heads(render_markdown(
-            page_body_markdown(source_relative, markdown_text), ROOT,
+        content = add_table_header_scopes(drop_empty_table_heads(_page_markdown_html(
+            source_relative, markdown_text,
         )))
     except MarkdownRenderError as exc:
         raise ReleaseError(str(exc)) from exc

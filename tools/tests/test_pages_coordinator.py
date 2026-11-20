@@ -173,6 +173,10 @@ def publication_source_identity(provider, output):
     if failure == "identity-" + role:
         raise ValueError("unapproved source identity")
 
+def prefetch_reader_markdown():
+    assert role == "writer" and "TRIPTYCH_NATIVE_REFERENCE_SHA256" not in os.environ
+    assert Path("held-census-" + role).is_file() and SNAPSHOT.get() == "private browser snapshot"
+
 def held_browser_products():
     return SNAPSHOT.get()
 

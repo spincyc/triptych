@@ -1649,6 +1649,36 @@ class PublicAlphaTest(unittest.TestCase):
                 self.tool.require_locked_markdown_dependency()
         self.assertIn("does not match the bound dependency lock", str(failure.exception))
 
+    def test_writer_reuses_only_its_exact_reader_markdown_and_expands_figures_at_the_route(self):
+        figure = "0" * 64
+        raw = f'# Test\n\n[ref](#test)\n\n<img src="web-figures/{figure}.svg">\n'
+        keys = [("gpt", name) for name in ("exact", "changed", "linked", "held", "bad-pin")]
+        records = {key: {"markdown": raw if key[1] != "linked" else "[reader](../other.md)"} for key in keys}
+        declared = {"publication:gpt/" + name: {} for name in ("exact", "changed", "linked", "bad-pin")}
+        authorization = self.manifest["authorizations"]["test-authorization"]
+
+        def render(name, markdown):
+            return self.tool.render_page(f"web/gpt/{name}.md", markdown, f"web/gpt/{name}.html", False, authorization)
+
+        expected = render("exact", raw)
+        changed = render("changed", raw + "Different.\n")
+        linked = render("linked", "[reader](reader.html)")
+        with (self.tool.held_repository_inputs(), mock.patch("_native_print.admitted_documents", return_value=declared),
+              mock.patch.object(self.tool, "web_edition_products", return_value=dict.fromkeys(keys)),
+              mock.patch.object(self.tool, "web_edition_record", side_effect=lambda *k: records[k]),
+              mock.patch.object(self.tool, "render_markdown", wraps=self.tool.render_markdown) as convert):
+            self.tool.prefetch_reader_markdown()
+            self.assertEqual(convert.call_count, 3)
+            self.assertEqual(render("exact", raw), expected)
+            self.assertIn(f'../../web-figures/{figure}.svg', expected)
+            self.assertEqual(convert.call_count, 3)
+            self.assertEqual(render("changed", raw + "Different.\n"), changed)
+            self.assertEqual(render("linked", "[reader](reader.html)"), linked)
+            self.assertEqual(convert.call_count, 5)
+            self.write("requirements-public-alpha.txt", b"Markdown==0.0.0\n")
+            with self.assertRaisesRegex(self.tool.ReleaseError, "dependency lock"):
+                render("bad-pin", raw)
+
     def test_long_form_contents_marker_renders_linked_unique_anchors(self) -> None:
         headings = "\n\n".join(
             f"## Part {number}\n\n### Detail {number}\n\nText {number}."
