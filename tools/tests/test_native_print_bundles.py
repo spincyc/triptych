@@ -305,6 +305,75 @@ class NativeSourceBundleTests(unittest.TestCase):
         self.assertEqual(result["input_contract"], "owning-native-source-producer/v1")
         self.assertFalse(any(path.suffix == ".pdf" for path in self.root.rglob("*")))
 
+    def test_catalog_overlaps_validation_without_sharing_the_assembly_or_changing_routes(self):
+        import os
+        import threading
+        from _document_types import Assembly
+        import _edition_revision as revision
+
+        companion = self.leaf / "synthesis.tex"
+        companion.write_text("Distinct concise prose.\n")
+        key = self.identity + "-synthesis"
+        documents = {**self.documents, key: dict(self.documents[self.identity], id=key, edition="synthesis")}
+        concise = dict(self.recipe, id=key, edition="synthesis", document=self.recipe["document"] + "-synthesis",
+                       entrypoint=companion.relative_to(self.root).as_posix())
+        recipes = {"main": self.recipe, "synthesis": concise}
+        checks_started, traces_started = threading.Event(), threading.Event()
+        owner = threading.get_ident()
+        assembly = Assembly(self.root)
+
+        def metadata(*_):
+            checks_started.set()
+            self.assertTrue(traces_started.wait(5))
+
+        def traces(leaves, *, jobs):
+            self.assertEqual(owner, threading.get_ident())
+            self.assertEqual(list(leaves), [self.leaf, self.leaf])
+            self.assertEqual(jobs, 4)
+            traces_started.set()
+            self.assertTrue(checks_started.wait(5))
+
+        def revisions(root, selections, *, assembly, repository, jobs):
+            self.assertEqual(owner, threading.get_ident())
+            self.assertIs(assembly, operation)
+            self.assertEqual(jobs, 4)
+
+        operation = assembly
+        with patch.object(printing, "select", side_effect=lambda _, edition, **kw: recipes[edition]), \
+                patch.object(printing, "_declared_dependencies_many", side_effect=lambda root, rows: {
+                    r["id"]: sorted({*r["dependencies"], r["entrypoint"]}) for r in rows}), \
+                patch.object(revision, "Repository"):
+            with patch.object(os, "process_cpu_count", return_value=1, create=True), \
+                    patch.object(printing, "_run"), patch.object(revision, "prefetch_revisions"):
+                serial = bundles.prepare_catalog(self.root, documents=documents, revision=self.revision)
+            with patch.object(os, "process_cpu_count", return_value=6, create=True), \
+                    patch.object(printing, "_run", side_effect=metadata), \
+                    patch.object(assembly, "prefetch_dependencies", side_effect=traces), \
+                    patch.object(revision, "prefetch_revisions", side_effect=revisions):
+                parallel = bundles.prepare_catalog(self.root, documents=documents, revision=self.revision,
+                                                   assembly=assembly)
+        self.assertEqual(parallel, serial)
+        self.assertEqual(set(parallel["bundles"]), {self.identity, key})
+
+    def test_metadata_failure_precedes_prefetch_failure_and_nothing_is_published(self):
+        import os
+        from _document_types import Assembly
+
+        assembly = Assembly(self.root)
+        documents = {**self.documents, self.identity + "-second": self.documents[self.identity]}
+        with patch.object(os, "process_cpu_count", return_value=4, create=True), \
+                patch.object(printing, "select", return_value=self.recipe), \
+                patch.object(assembly, "prefetch_dependencies", side_effect=ValueError("trace failed")) as prefetch, \
+                patch.object(bundles, "prepare_bundle") as prepare:
+            with patch.object(printing, "check_many", side_effect=printing.PrintError("metadata failed")), \
+                    self.assertRaisesRegex(printing.PrintError, "metadata failed"):
+                bundles.prepare_catalog(self.root, documents=documents, revision=self.revision, assembly=assembly)
+            with patch.object(printing, "check_many", return_value=[]), \
+                    self.assertRaisesRegex(ValueError, "trace failed"):
+                bundles.prepare_catalog(self.root, documents=documents, revision=self.revision, assembly=assembly)
+            self.assertEqual(prefetch.call_count, 2)
+            prepare.assert_not_called()
+
     def test_catalog_binds_routes_bytes_hashes_and_exact_output_universe(self):
         with patch.object(printing, "select", return_value=self.recipe), \
                 patch.object(printing, "check_many", side_effect=lambda recipes, **_: [

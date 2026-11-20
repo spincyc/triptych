@@ -9,6 +9,8 @@ from __future__ import annotations
 
 import base64
 from collections import Counter, defaultdict
+from concurrent.futures import ThreadPoolExecutor
+from contextvars import copy_context
 import gzip
 import hashlib
 import json
@@ -580,27 +582,44 @@ def prepare_catalog(root: Path = ROOT, *, scratch_root: Path | None = None,
         papal = {row["id"]: row for row in printing._papal_records(root, printing._papal_plan(root))}
     recipes = [papal.get(identity) or printing.select(documents[identity]["document"],
                documents[identity]["edition"], root=root) for identity in wanted]
-    checked = printing.check_many(recipes, root=root)
-    assets, prepared = {}, {}
-    inputs = _CatalogInputs(root)
-    # One view of the work tree serves every publication's revision stamp.
-    # Without one, each publication bundle refuses with the reason itself.
-    repository = None
-    if any(recipe["family"] == "publication" for recipe in checked):
+    publications = [recipe for recipe in recipes if recipe["family"] == "publication"]
+
+    def prefetch(jobs=None):
+        if not publications:
+            return None
         from _edition_revision import Repository, RevisionError, prefetch_revisions
         try:
             repository = Repository(root)
         except RevisionError:
-            repository = None
-        # The leaves' chronology traces are independent processes; run them
-        # side by side before the closures below ask for them one by one.
+            repository = None  # Individual bundles report the reason where the stamp is used.
         assembly.prefetch_dependencies(
-            root / "src" / recipe["provider"] / recipe["canonical"] for recipe in checked
-            if recipe["family"] == "publication")
+            (root / "src" / recipe["provider"] / recipe["canonical"] for recipe in publications),
+            jobs=jobs)
         if repository is not None:
-            prefetch_revisions(root, [(recipe["provider"], recipe["document"]) for recipe in checked
-                                      if recipe["family"] == "publication"],
-                               repository=repository, assembly=assembly)
+            prefetch_revisions(root, [(recipe["provider"], recipe["document"]) for recipe in publications],
+                               repository=repository, assembly=assembly, jobs=jobs)
+        return repository
+
+    available = getattr(os, "process_cpu_count", os.cpu_count)() or 1
+    if len(publications) < 2 or available < 4:
+        checked = printing.check_many(recipes, root=root)
+        repository = prefetch()
+    else:
+        # Recipe metadata and Make checks read sources independently of the
+        # caller's Assembly. Only its owning thread prepares projections and
+        # revisions. Split the available subprocess slots across the two gates.
+        check_jobs = min(4, available // 3)
+        with ThreadPoolExecutor(max_workers=1) as pool:
+            validation = pool.submit(copy_context().run, printing.check_many, recipes,
+                                     root=root, jobs=check_jobs)
+            try:
+                repository = prefetch(available - check_jobs)
+            except Exception:
+                validation.result()  # A metadata failure precedes a prefetch failure.
+                raise
+            checked = validation.result()
+    assets, prepared = {}, {}
+    inputs = _CatalogInputs(root)
     for identity, recipe in zip(wanted, checked, strict=True):
         bundle = prepare_bundle(identity, root=root, scratch_root=scratch_root, documents=documents,
                                 revision=revision, recipe=recipe, _catalog_inputs=inputs,
