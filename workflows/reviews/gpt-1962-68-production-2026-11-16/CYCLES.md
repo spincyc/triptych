@@ -1184,4 +1184,55 @@ Communion promise and Mark's command to forgive. Its 1,151 spoken words
 take approximately ten minutes. Native homily preflight and independent
 homily review iteration 1 pass. The review records one advisory about
 distinguishing the people who flee Judea from the Gospel's questioners.
-The three authored sources now proceed to artifact and reader validation.
+The source artifact worker and program gate pass for all three outputs.
+Their checks cover the output schema, generated entrypoints and chronology,
+and all four current source review seals.
+
+### Canonical reader conversion
+
+All three edition revision checks identify the committed source checkpoint
+`898e6b42e6`. The repository's pinned Pandoc 3.11 conversion records the
+canonical reader SHA-256
+`0f2e2ebe7b7e544bd2bd2b589873959ca3830f1d088a2ccadf77630d9307399b`.
+Conversion checks preserve both arguments and their four senses, all 57
+source notes in order, the eleven appointed anchors and 125 internal links.
+The native web review receives this exact conversion.
+
+Web review iteration 2 reproduces the conversion byte for byte and
+compares all 36 quotations, 57 source notes and 38 Challoner verse
+occurrences with their sources. A locked Chromium content preview checks
+the full study's tables, sections and footnote navigation at desktop and
+mobile widths. The reviewer finds repeated conclusions at five points
+in the first interpretation and returns the study to its author.
+Inconsistent italics across paragraphs of three Latin quotations remain
+an advisory. Project Gutenberg returns HTTP 503 during the link check.
+
+The first author repair removes the repeated conclusions and preserves the
+accepted evidence seal of 1,874 files and 24 computations. Cold study
+review iteration 3 finds that the revised Offertory paragraph assigns
+ritual actions to the congregation. The next author repair checks the
+1962 Missal's `Ritus servandus` VII.1–5 and VII.9, keeps the antiphon and
+Secret distinct, and restores Mark 11:24–25 beside the Communion promise.
+Source and conversion checks pass with the research seal current. Cold
+study review iteration 4 accepts the revised study against the Missal,
+Mark and Bede, leaving one advisory on the Latin and NPNF section numbers
+for Augustine's Psalm 84 exposition. The companions return to derivation
+against this accepted study.
+
+Synthesis derivation iteration 3 checks the revised Offertory, Secret,
+and Communion passages. Native preflight passes, and the cold review
+confirms the opening order and chronology lookup. It asks for more of
+the cited reasoning in the thematic opening and restoration of Aquinas's
+qualification about the timing and form of temporal answers. Its local
+ten-page compilation and page inspection concern that synthesis
+checkpoint. The source findings return to concise-study derivation.
+
+### Native print compilation of the reviewed sources
+
+The selected compilation of source checkpoint `898e6b42e6` passes two
+settled pdfTeX runs for each bundle. The expansive study has 26 pages, the
+concise study 10 and the homily 3. The exact summary and per-edition
+receipts are in `NATIVE-PRINT-2026-11-20/`. They cover compilation under
+the recorded host runtime. The receipts report the host's generated
+`pdftex.map` as the runtime member with different bytes. Visual layout
+inspection and the full Pages compilation are separate checks.

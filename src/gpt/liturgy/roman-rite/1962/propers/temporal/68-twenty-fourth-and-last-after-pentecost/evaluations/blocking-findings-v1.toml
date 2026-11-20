@@ -49,12 +49,12 @@ provider = "gpt"
 run_id = "13ecdd1552c245ea"
 workflow = "proper-study"
 workflow_version = 19
-stage = "homily-review"
-iteration = 1
-disposition = "PASS"
-standing = 0
+stage = "synthesis-review"
+iteration = 3
+disposition = "CHANGES_REQUIRED"
+standing = 3
 accepted_count = 0
-advisory_count = 3
+advisory_count = 6
 observation_count = 0
 
 [[stages]]
@@ -83,7 +83,7 @@ observation_count = 0
 
 [[stages]]
 stage = "study-review"
-iteration = 2
+iteration = 4
 disposition = "PASS"
 run_id = "13ecdd1552c245ea"
 workflow = "proper-study"
@@ -95,27 +95,54 @@ observation_count = 0
 
 [[stages]]
 stage = "synthesis-review"
-iteration = 2
-disposition = "PASS"
+iteration = 3
+disposition = "CHANGES_REQUIRED"
 run_id = "13ecdd1552c245ea"
 workflow = "proper-study"
 workflow_version = 19
-standing = 0
+standing = 2
 accepted_count = 0
-advisory_count = 0
+advisory_count = 2
 observation_count = 0
 
 [[stages]]
 stage = "web-review"
-iteration = 1
-disposition = "PASS"
+iteration = 2
+disposition = "CHANGES_REQUIRED"
 run_id = "13ecdd1552c245ea"
 workflow = "proper-study"
 workflow_version = 19
-standing = 0
+standing = 1
 accepted_count = 0
-advisory_count = 0
+advisory_count = 1
 observation_count = 0
+
+[[findings]]
+stage = "synthesis-review"
+id = "SYN-THEMES-TWO-FULL-PAGES"
+severity = "blocking"
+location = "sections/concise/04-themes.tex:20–28, 41–56, 59–65, 83–88, 107–112 (native synthesis pp. 3–4)"
+problem = "Both forced breaks cut off the themes prose about 2.3 and 2.8 inches above their page’s footnote rule. The four sections cover the appointments in order, but the comparison of the Gradual’s past and future speech at lines 41–44 gives two conclusions without showing how the verses move from the past tense to the future. At lines 59–65 the reader is told that Chrysostom explains the obstacles to escape, without hearing what he says about a pregnant woman or a nursing mother. The Offertory and Secret at lines 83–88 are reported consecutively before the prose moves on to the Preface. These compressed bridges leave the required two-page opening underdeveloped."
+required_result = "Use details already supported in the expansive study to make both pages substantive at the current type size. The Gradual paragraph could begin, “The singers thank God for rescue and promise to praise him forever. Augustine takes the future praise as a clue that the rescue also lies ahead. Bellarmine hears people who remember being rescued and now need help again.” The line on Chrysostom could develop the scene. “Jesus tells someone on a roof to leave his possessions in the house. Chrysostom asks how a pregnant woman could make such a hurried escape or a nursing mother leave her infant behind.” The repeated Offertory cry can lead into the Secret by explaining what help the worshippers are now asking for as they bring their gifts. Keep the developed commentary on page 5 and check both themes pages with the settled rendering."
+repair_target = "synthesis"
+
+[[findings]]
+stage = "synthesis-review"
+id = "SYN-COMMUNION-TEMPORAL-PRAYER-BOUND"
+severity = "blocking"
+location = "sections/concise/10-commentary.tex:244–259, 278–298 (native synthesis p. 8)"
+problem = "The Communion question asks what Jesus’ assurance allows readers to expect. It reports Theophylact’s broad assurance, Bede’s specific assurance of pardon and the physical help in Bede’s account of Gregory. The revised flight paragraph teaches that continued danger cannot reveal someone else’s faith, but it drops the expansive study’s conclusion for the person praying in that danger. The need may be real and legitimately the subject of prayer, and the timing and form of help remain with God (sections/40-prayer-and-conversion.tex:273–290 and research/interpretations.md:486–497). Without this qualification the section leaves the reader to infer whether confident petition warrants expecting the particular temporal result requested."
+required_result = "State beside the conjunction of Mark’s assurance, Bede’s example and Matthew’s flight that Christ teaches disciples to ask for real help while entrusting the timing and form of that help to God. Keep Bede’s particular assurance about pardon and retain the concrete case in which God gives someone the capacity to forgive while the conflict continues. Present the conclusion as the study’s inference across those passages."
+repair_target = "synthesis"
+
+[[findings]]
+stage = "web-review"
+id = "WEB-STUDY-RESTATEMENT-001"
+severity = "blocking"
+location = "sections/30-deliverance-and-waiting.tex lines 3–7, 44–51, 102–107, 119–124 and 137–142 (canonical Markdown lines 413, 425, 439, 445 and 449)"
+problem = "Several paragraphs in the first interpretation state a point and then restate it before moving the argument forward. The opening says three times that rescue has occurred and that endurance remains necessary. The Bellarmine paragraph explains the contrast in tense twice around the empty sentence ‘The difference concerns how the verse says what it says.’ The paragraph applying Jeremiah opens with an empty label and ends by generalizing the application it has just made. The paragraph on continuing prayer restates the need to grow after Chrysostom’s comparison with competitors, and the paragraph on Job states twice that joy can coexist with grief. The repeated summaries slow the development of an otherwise distinct argument, and they recur through the section under the editorial register criterion."
+required_result = "State each step once while retaining the concrete evidence, attribution and distinction between past rescue and future fulfilment. At lines 3–7, for example, write ‘Paul thanks the Father for rescuing the faithful from darkness and asks him to strengthen them so they can endure.’ At lines 44–51, write ‘Bellarmine hears the past tense as thanksgiving for rescues already received. The people who remember those rescues now lament a fresh affliction. On either account, the faithful can thank God while they suffer.’ The preceding paragraph already explains Augustine’s prophetic perfect. At lines 102–107, keep Jeremiah’s work in exile and its specific application to the Collect. At lines 119–124 and 137–142, let the competitors and Job supply the conclusions without repeating the points in general terms."
+repair_target = "study"
 
 [[advisories]]
 stage = "homily-review"
@@ -137,6 +164,30 @@ required_result = "Use the Lasance capitalization in the historical English tran
 stage = "study-review"
 id = "STU-PINPOINT-001"
 severity = "advisory"
-location = "sections/20-commentary.tex:29–38; sections/30-deliverance-and-waiting.tex:84–91"
-problem = "Both footnotes cite the full Psalm 84 exposition, which contains the argument they report, but direct the reader especially to §§2–4 or §§2–5. Augustine explicitly asks why the prophet still prays for a restoration just called accomplished in Latin §6, on Ps 84:5. Section 4 supports the distinct explanation of Jacob’s captivity as bondage to sin."
-required_result = "Include Latin §6 among the highlighted pinpoints, or distinguish §4 for captivity and §6 for the inference from the later petition. Keep the existing argument and broad reference where relevant."
+location = "sections/30-deliverance-and-waiting.tex:58–63; sections/20-commentary.tex:29–38"
+problem = "The general citation of Augustine's exposition of Psalm 84 contains the argument, but the highlighted section ranges are ambiguous across editions. The later request for conversion is the explicit evidence for the prophetic past in Latin §6 and NPNF Psalm LXXXV §4. The part of the same exposition on bondage to sin is Latin §4."
+required_result = "Name the numbering of the edition used. For the inference from the later request for conversion, cite Latin §6 or NPNF Psalm LXXXV §4, and distinguish the pinpoint for captivity where both claims share a footnote."
+
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-BEDE-MOUNTAIN-REFERENT"
+severity = "advisory"
+location = "sections/concise/10-commentary.tex:261–276"
+problem = "The mountain in Bede signifies the devil himself, who lifts himself up in pride. The concise passage identifies it with the devil’s pride instead, which makes Bede’s next step about casting out spiritual mountains harder to follow. His exact distinction appears in In Marci evangelium expositio III, registered Latin transcription line 338, and the expansive study states it at sections/40-prayer-and-conversion.tex:255–263."
+required_result = "Say that Bede sees the devil in the mountain because the devil raises himself against God in pride."
+
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-AUGUSTINE-PS84-VOLUME"
+severity = "advisory"
+location = "sections/concise/90-apparatus.tex:53–56 (native synthesis p. 10)"
+problem = "The bibliography sends readers to Migne PL 36 for Augustine’s Latin exposition of Psalm 84. The registered part-9 Latin witness used for the Psalm 84 claims is from PL 37, as recorded in research/source-bindings.toml:637."
+required_result = "Correct the volume to PL 37 for Psalm 84 and keep the Latin and English section number conventions distinct."
+
+[[advisories]]
+stage = "web-review"
+id = "WEB-LATIN-QUOTATION-EMPHASIS-001"
+severity = "advisory"
+location = "sections/10-appointed-text.tex at proper-epistle, proper-gospel and proper-preface (canonical Markdown lines 95–97, 167–169 and 265–271)"
+problem = "The web renderer italicizes the opening paragraph only in each of the three multi-paragraph Latin quotations, even though the shared Latin quotation environment sets the entire block in italics. In the Gospel, for example, the introduction is italic and the whole lesson is upright. The Latin and English remain distinct quotations with complete wording, so the difference is typographic."
+required_result = "Apply the same Latin presentation to every paragraph in these quotation blocks while preserving the paragraph breaks and the separate labelled English quotations."

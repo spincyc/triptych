@@ -161,8 +161,14 @@ prayer reasoning and prose repairs. Fresh image collation establishes the
 correct Gospel spelling and Trinity Preface pointing and records the TeX
 handoff. The corrected research passes native review. The expansive study,
 concise synthesis and spoken homily each pass independent source review.
-The exact web conversion review, final installation, deployment checks and
-live verification are open.
+Web review reproduces the exact conversion and confirms the quotation,
+source-note and navigation checks. It routes recurring restatements in the
+first interpretation back to the study. The first source revision repairs
+them, and the subsequent study review finds and routes an Offertory
+attribution against the 1962 Missal. The second source revision corrects that
+attribution and restores Mark 11:24–25 beside the Communion promise. The
+research seal remains current. Final source and reader acceptance,
+installation, deployment and live verification are open.
 
 Detailed progress and limitations belong to
 `workflows/reviews/gpt-1962-68-production-2026-11-16/CYCLES.md`.

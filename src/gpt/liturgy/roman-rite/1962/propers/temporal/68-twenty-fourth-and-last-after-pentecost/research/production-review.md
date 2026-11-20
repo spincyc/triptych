@@ -1463,3 +1463,149 @@ notice. The author probe Markdown SHA-256 is
 The live research, study and synthesis input seals each match their accepted
 seals across 1,874, 19 and 16 file entries, respectively. The conversion is
 an author check of the selected edition's source fidelity.
+
+## Expansive-study register revision, iteration 3
+
+This authoring pass answers `WEB-STUDY-RESTATEMENT-001` for proper-study
+v19, run `13ecdd1552c245ea`. The pass reviewed the entire first
+interpretation, from its opening through its four senses. Paul gives
+thanks for rescue and asks for strength to endure in one sentence.
+Augustine's future deliverance and Bellarmine's remembered rescues
+remain distinct, with a single inference from the two accounts to
+the Gradual and Alleluia. Jeremiah's instructions in Babylon lead to the
+specific application to the Collect. Chrysostom's competitors explain
+why Paul goes on praying for people whose faith and love he already knows.
+Chrysostom distinguishes Paul's joyful thanksgiving from Job's thanksgiving
+in anguish.
+
+Chrysostom distinguishes the interval after the siege from the immediate
+succession of the final trial and Christ's coming. Matthew's move from
+Herod's death to John's preaching explains the interval that “then” can
+leave unspoken. In verse 29, the coming immediately follows the later
+deception, which Chrysostom expects God to limit for the elect's sake, as
+he limited the siege. Christ will be as visible as lightning, so a claimant
+who offers to disclose his hidden location is claiming to know something
+everyone will see.
+The resurrection paragraph uses Augustine's reasoning about Christ's risen
+flesh. The closing paragraphs proceed from the Offertory and Secret to the
+Trinity Preface and the request for sacramental healing. The four senses
+retain the Gradual's two interpretations and the difference between
+present release and the final gathering and resurrection.
+
+The author checked these claims in the registered English NPNF texts of
+Augustine, Psalms XLIV §§6–8, LXXXV §§2–5 and CXXX §§3–8, and Chrysostom,
+Colossians homily 2 and Matthew homilies 76–77 at the cited passages. The
+author read Bellarmine on Psalm 43, native vv. 7–9, in the registered
+O'Sullivan abridgment, and Jeremiah 29:4–14 in the registered Challoner
+text. The retained image of PL 24, facsimile p. 451, shows the start of
+Jerome's two adjacent units. The retained images of Fromage's printed
+pp. 503 and 513 confirm his applications to the Collect and Postcommunion.
+The Jeremiah–Collect link and the relation of the Gradual to the Alleluia
+are the study's inferences. The complete appointed text continues under
+the publication bases in `propers/verified.md` and `research/scope.md`.
+
+TeXcount reports **5,640 body words**, **166 heading words** and **960
+words outside the body** across the opening, detailed commentary, both
+interpretations and comparison. The count excludes the appointed quotations,
+generated chronology and terminal apparatus.
+
+The recomputed research seal matched the accepted seal across 1,874 files
+and 24 computation entries. The research-mode component, content and
+publication schema checks passed, along with generated-source currentness,
+generation metadata, exact run provenance and web eligibility. The final
+prose passed the checks for used references, house voice, structural labels
+and claims supported by the generated chronology.
+
+The author probe passed with Pandoc 3.11 and the locked Markdown 3.10.3
+renderer. The rendered study has all 36 quotation blocks from the preceding
+probe, eleven unique appointed anchors, both four-senses lists, the chronology
+anchor and one revision display. Probe Markdown SHA-256:
+`ada709bcf2e53bb2d6e496433e02e6a2d8d73013d03539e673ef025394fbbc77`.
+The converter advisory `WEB-LATIN-QUOTATION-EMPHASIS-001` remains open.
+The TeX environment sets each entire Latin block in italics. The renderer
+emphasizes only the opening paragraph in the Epistle, Gospel and Preface
+dialogue. Each block retains its wording, paragraph breaks and the separate
+historical English that follows it. The probe records author verification
+for the subsequent independent review.
+
+## Expansive-study Offertory and Communion revision, iteration 4
+
+The first interpretation now identifies the repeated cry as the Offertory
+antiphon and places the people's offering and prayer in the Secret.
+`STU-OFFERTORY-ACTOR-001` was repaired. The author checked the antiphon
+and Secret in the CMAA 1962 Missal facsimile, printed p. 424, nos.
+1775–1776 (PDF p. 505). On printed pp. LVIII–LIX (PDF pp. 60–61),
+`Ritus servandus` VII.1–5 assigns the antiphon and offering of the
+host and chalice to the celebrant. VII.7 describes the invitation to
+prayer before the Secret and VII.9 describes how the ministers handle
+the gifts at Solemn Mass. The study connects the prayer for heavenly
+desires with Augustine's account of hope for bodily resurrection.
+
+The author also addressed the advisory `STU-COMMUNION-CONTEXT-001`.
+The paragraph on Communion now states Christ's call for faith and the
+command to forgive in the next verse. The author checked the Missal's
+Communion and Postcommunion at nos. 1777–1778 on the same page, Mk
+11:22–25 in the registered Douay–Rheims text, and Bede's treatment of
+verses 22–23 and 25 in the registered Latin transcription of book III,
+lines 338–339. Bede's further assurance there concerns the prayer for
+pardon. Fromage's comment on the cure of the communicant's remaining
+faults was checked in the 1883 facsimile, vol. XI, printed p. 513
+(PDF p. 539), and is cited with the Postcommunion.
+
+TeXcount reports **5,641 body words**, **166 heading words** and **972
+words outside the body** across the opening, detailed commentary, both
+interpretations and comparison. This count excludes the appointed
+quotations, generated chronology and terminal apparatus. The research-mode
+component and content checks, publication source and content schemas,
+generated-source currentness, generation metadata, exact run provenance
+and web declaration passed. The recomputed research seal matched the
+accepted seal across 1,874 file entries and 24 computation entries.
+
+The author probe passed with Pandoc 3.11 and Markdown 3.10.3. The rendered
+study contains the revised passages and their citations, all 36 quotation
+blocks from the iteration-3 probe, eleven unique appointed anchors, both
+four-senses lists, the chronology anchor and one revision display.
+Probe Markdown SHA-256:
+`f406f475c62d7988c9e8323af8f834b52ac7544e85632d60395826ba9ed01a50`.
+The converter advisory `WEB-LATIN-QUOTATION-EMPHASIS-001` persists in
+the Epistle, Gospel and Preface dialogue. Only the first paragraph in
+each of those Latin blocks renders in italics. This pass performed
+author verification of the study source and its converter output.
+
+## Renewed concise-study authoring, iteration 3
+
+The concise study follows the accepted fourth review of the expansive
+study. It attributes the repeated cry to the Offertory antiphon and the
+petition for the people's offerings, prayers and changed hearts to the
+Secret. The Communion comparison gives Mark's reason for forgiving
+others and keeps Bede's assurance specific to pardon. The Gospel
+comparison brings Christ's instruction to pray about the flight into
+the discussion of petition in danger. It also gives Chrysostom's reason
+for expecting God to limit the later trial for the elect's sake.
+Chrysostom's account of Job supplies the example of thanksgiving in
+sorrow beside Paul's joy for the benefits already received.
+
+The author read the retained page images of the 1962 Missal, printed
+p. 424, nos. 1775–1778 (PDF p. 505), and Fromage, vol. XI, printed
+p. 513 (PDF p. 539). The revised attributions were checked against
+the registered Challoner Mk 11:22–25, Bede's Latin transcription at
+lines 338–339, and the historical NPNF English of Chrysostom's
+Matthew homily 76.2–3 and Colossians homily 2 at 1:11–12.
+The comparison retains the Psalm 84 pinpoints in Latin §6 for the
+prophet's later request and §§4–5 for captivity to sin and its release.
+
+TeXcount reports **3,178 body words**, 703 in the themes and 2,475 in
+the detailed commentary, with 77 heading words and 704 note words
+counted separately. This excludes the inventory, overview, generated
+chronology, terminal apparatus, title and revision display.
+
+The source and content schemas, synthesis component check, content
+preflight, generation metadata, currentness of generated sources,
+exact run provenance and web declaration passed. The live study seal
+matches the accepted study seal across all 19 files. The selected
+synthesis conversion renders all eleven appointed rows, the four
+overview senses and 16 chronology rows in order. It has 89 unique
+anchors, 74 resolved local links, one revision display and one rights
+notice. The probe Markdown SHA-256 is
+`a504031687ad29b1017ef075750e7abea79839e2c814b42a962d520b8241fea4`.
+The probe checked source and conversion fidelity for this authoring pass.
