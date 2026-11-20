@@ -13,6 +13,12 @@ from _product_data import browser_data_root
 
 ROOT = Path(__file__).resolve().parents[2]
 
+LAST_THINGS_READERS = [
+  (subject, provider, f"articles/faith/four-last-things-{number:02d}-{subject.lower()}")
+  for provider in ("gpt", "claude")
+  for number, subject in enumerate(("Death", "Judgment", "Hell", "Heaven"), 1)
+]
+
 
 def tool_json(*arguments: str) -> dict:
   completed = subprocess.run(
@@ -183,12 +189,8 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
     self.assertTrue(chatgpt.startswith("ChatGPT: ") and "/claude/" not in chatgpt)
     self.assertTrue(claude.startswith("Claude: ") and "/gpt/" not in claude)
 
-    subjects = ("Death", "Judgment", "Hell", "Heaven")
-    expected = [(subject, provider, f"articles/faith/four-last-things-{number:02d}-{subject.lower()}")
-                for provider in ("gpt", "claude")
-                for number, subject in enumerate(subjects, 1)]
     linked = re.findall(r"\[([^\]]+)\]\(\.\./web/([a-z]+)/([^)]+)\.html\)", block)
-    self.assertEqual(linked, expected)
+    self.assertEqual(linked, LAST_THINGS_READERS)
 
     # The essays keep exactly one catalog home. The ownership check counts the
     # owner's legacy print links before reader links, so this block is not
@@ -204,7 +206,7 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
     publications = tool.publication_map(manifest)
     occurrences = tool.catalog_occurrences(primary, providers, publications)[0]
     faith = (ROOT / "library/faith.md").read_text()
-    for _, provider, leaf in expected:
+    for _, provider, leaf in LAST_THINGS_READERS:
       self.assertEqual(publications[(provider, leaf)]["catalog"], "library/faith.md")
       self.assertEqual(occurrences[(provider, leaf)], ["library/faith.md"],
                        f"{provider}:{leaf} must keep one catalog home; guidance/repository.md "
@@ -420,9 +422,6 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
     corpus = json.loads((browser_data_root(ROOT) / 'structure/documents/corpus.json').read_text())
     installed_readers = {}
     for work in corpus["works"]:
-      if work["catalog"] not in (
-          "library/traditional-latin-mass.md", "library/novus-ordo-liturgy.md"):
-        continue
       for edition in work["editions"]:
         source = ROOT / edition["title_source"]
         for issue in (edition, *edition.get("also", [])):
@@ -430,7 +429,7 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
             kind = issue.get("kind")
             entrypoint = source.with_name(kind + ".tex") if kind in (
               "synthesis", "homily") else source
-            installed_readers[issue["targets"]["reader"]] = entrypoint
+            installed_readers[issue["targets"]["reader"]] = (entrypoint, work["catalog"])
     for owner, catalog in (
         ("liturgy/roman-rite/1962/propers/temporal/f02-all-saints", "library/traditional-latin-mass.md"),
         ("liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/"
@@ -452,7 +451,10 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
       for issue in issues:
         self.assertTrue(issue["available"]["reader"])
         self.assertTrue(issue["available"]["print"])
-        self.assertTrue(installed_readers[issue["targets"]["reader"]].is_file())
+        source, _ = installed_readers[issue["targets"]["reader"]]
+        self.assertTrue(source.is_file())
+    related_readers = {f"../web/{provider}/{leaf}.html"
+                       for _, provider, leaf in LAST_THINGS_READERS}
     for name in ("traditional-latin-mass.md", "novus-ordo-liturgy.md"):
       text = (ROOT / "library" / name).read_text()
       calendar = text.split("## Sunday Propers Calendar", 1)[1]
@@ -468,7 +470,12 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
         if reader.startswith("pdf/"):
           reader = "web/" + reader.removeprefix("pdf/").removesuffix(".pdf") + ".html"
         self.assertIn(reader, installed_readers, target)
-        self.assertTrue(installed_readers[reader].is_file(), target)
+        source, owner = installed_readers[reader]
+        expected_owner = f"library/{name}"
+        if name == "traditional-latin-mass.md" and target in related_readers:
+          expected_owner = "library/faith.md"
+        self.assertEqual(owner, expected_owner, target)
+        self.assertTrue(source.is_file(), target)
 
   def test_approved_alpha_propers_do_not_regress_to_planned(self):
     traditional = (ROOT / "library/traditional-latin-mass.md").read_text()

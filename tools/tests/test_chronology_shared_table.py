@@ -144,7 +144,7 @@ class SharedTableTests(unittest.TestCase):
                 self.assertTrue(occasion.passage_start)
                 self.assertTrue(composition.passage_end)
 
-    def test_last_sunday_olivet_utterance_is_visible_and_undated(self):
+    def test_last_sunday_olivet_discourse_has_its_own_qualified_date(self):
         found = chronology.dossier(BASE + "68-twenty-fourth-and-last-after-pentecost",
                                    provider="gpt")._replace(presentation=chronology.ORIENTATION_V3)
         projected = chronology.annotations(found)
@@ -152,21 +152,25 @@ class SharedTableTests(unittest.TestCase):
                 if r.passages[0].element_key == "gospel"]
         self.assertEqual([r.group.relation for r in rows], ["narrated-event", "composition"])
         event, composition = rows
-        self.assertEqual(event.passages[0].loci,
-                         tuple(f"Matt.24.{verse}" for verse in range(15, 36)))
-        self.assertIn("Jesus speaks", event.context_label)
-        self.assertIn("Mount Olivet", event.context_label)
+        loci = tuple(f"Matt.24.{verse}" for verse in range(15, 36))
+        self.assertEqual(event.passages[0].loci, loci)
+        subject = chronology.orientation_subject(event, presentation=chronology.ORIENTATION_V3)
+        self.assertIn("Narrated event: Jesus foretells", subject)
+        self.assertEqual(event.setting_label, "Mount Olivet by narrative continuity")
         self.assertIn("bible:douay-rheims:Matt.24.3", event.context_sources)
-        self.assertEqual(event.group.claims, ())
-        self.assertEqual(chronology.orientation_date(event, compact=True), "Date unresolved")
+        claim, = event.group.claims
+        self.assertEqual(claim.subject, "life-of-christ.prophecies-on-mount-olivet")
+        maas = ("passage.catholic-encyclopedia.volume-8.new-york-1910."
+                "maas-ninth-journey-olivet-prophecies")
+        self.assertIn(maas, claim.sources)
+        self.assertEqual({(reach.locus, reach.scope, reach.inherited) for reach in claim.reaches},
+                         {(locus, "Matt.24.3-35", False) for locus in loci})
+        self.assertEqual(chronology.orientation_date(event, compact=True),
+                         "A.D. 29 (derived; Maas's chronology)")
         self.assertIn(event.key, chronology.render_orientation_table(projected))
         self.assertEqual(composition.group.claims[0].subject, "composition.gospel-of-matthew")
-        # Describing the utterance does not add chronology to the query answer.
-        self.assertFalse(any(c.relation in {"narrated-event", "utterance"}
-                             for c in found.element("gospel").claims))
-        context = next(c for c in found.orientation_contexts if c.label == event.context_label)
-        self.assertFalse(corpus._scope_covers(context.scope, "Matt", 24, 14))
-        self.assertFalse(corpus._scope_covers(context.scope, "Matt", 24, 36))
+        self.assertEqual({c.relation for c in found.element("gospel").claims},
+                         {"narrated-event", "composition"})
 
     def test_composition_cannot_hide_a_different_final_formation_subject(self):
         found = chronology.dossier(BASE + "68-twenty-fourth-and-last-after-pentecost",
@@ -181,7 +185,7 @@ class SharedTableTests(unittest.TestCase):
         for row in rows:
             self.assertIn(row.key, table)
 
-    def test_last_sunday_web_table_retains_occasions_and_utterance(self):
+    def test_last_sunday_web_table_retains_occasions_and_olivet_date(self):
         found = chronology.dossier(BASE + "68-twenty-fourth-and-last-after-pentecost",
                                    provider="gpt")._replace(presentation=chronology.ORIENTATION_V3)
         projected = chronology.annotations(found)
@@ -196,8 +200,8 @@ class SharedTableTests(unittest.TestCase):
         self.assertEqual(sum(":" in row[0] for row in rows), 8)
         gospel = next(index for index, row in enumerate(rows) if "Gospel:" in row[0])
         self.assertIn("Mount Olivet", rows[gospel][1])
-        self.assertIn("Jesus speaks", rows[gospel][1])
-        self.assertEqual(rows[gospel][2], "Date unresolved")
+        self.assertIn("Narrated event: Jesus foretells", rows[gospel][1])
+        self.assertEqual(rows[gospel][2], "A.D.~29 (derived; Maas's chronology)")
         self.assertIn("Composition:", rows[gospel + 1][1])
         self.assertIn("Matthew", rows[gospel + 1][1])
 
