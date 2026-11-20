@@ -11,6 +11,7 @@ import tempfile
 import tomllib
 import unittest
 import yaml
+from functools import cache
 from pathlib import Path
 from unittest.mock import patch
 
@@ -26,6 +27,17 @@ LOADER = importlib.machinery.SourceFileLoader(
 SPEC = importlib.util.spec_from_loader(LOADER.name, LOADER)
 PREFLIGHT = importlib.util.module_from_spec(SPEC)
 LOADER.exec_module(PREFLIGHT)
+
+
+def preflight_operation():
+    """Give the real preflight checks one real Assembly per read-only root."""
+    return patch.object(document_types, "Assembly", cache(document_types.Assembly))
+
+
+def independent_inputs(test):
+    """Keep a substituted upstream corpus or registry in its own cache namespace."""
+    test.independent_inputs = True
+    return test
 
 
 def generated_leaves(root: Path) -> list[Path]:
@@ -65,21 +77,31 @@ class GeneratedProperChronologyFreshnessTests(unittest.TestCase):
     def test_every_adopted_projection_and_authored_claim_is_current(self):
         leaves = generated_leaves(ROOT)
         self.assertTrue(leaves, "No generated chronology consumers discovered")
-        for leaf in leaves:
-            for name in ("chronology-record-current", "chronology-annotations-current",
-                         "chronology-claims-supported"):
-                with self.subTest(leaf=str(leaf.relative_to(ROOT)), check=name):
-                    problems, _ = PREFLIGHT.CHECKS[name](leaf, ROOT)
-                    self.assertEqual(problems, [])
+        with preflight_operation():
+            for leaf in leaves:
+                for name in ("chronology-record-current", "chronology-annotations-current",
+                             "chronology-claims-supported"):
+                    with self.subTest(leaf=str(leaf.relative_to(ROOT)), check=name):
+                        problems, _ = PREFLIGHT.CHECKS[name](leaf, ROOT)
+                        self.assertEqual(problems, [])
 
 
 class FreshnessFixture(unittest.TestCase):
-    def setUp(self):
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
         scratch = ROOT / ".scratch/assembly-gates"
         scratch.mkdir(parents=True, exist_ok=True)
-        self.temp = tempfile.TemporaryDirectory(dir=scratch)
-        self.addCleanup(self.temp.cleanup)
-        self.root = Path(self.temp.name)
+        cls.workspace = Path(cls.enterClassContext(tempfile.TemporaryDirectory(dir=scratch)))
+
+    def setUp(self):
+        # Each case gets fresh leaves and links. A stable path lets the production
+        # readers reuse their parsed, immutable source library between cases.
+        test = getattr(self, self._testMethodName)
+        name = self._testMethodName if getattr(test, "independent_inputs", False) else "shared"
+        self.root = self.workspace / name
+        self.root.mkdir()
+        self.addCleanup(shutil.rmtree, self.root)
         relative = Path("src/claude/liturgy/roman-rite/1962/propers/temporal/"
                         "57-seventeenth-after-pentecost")
         self.leaf = self.root / relative
@@ -112,6 +134,7 @@ class FreshnessRefusalTests(FreshnessFixture):
         path.write_text(text.replace("Occasion date unresolved.", "", 1))
         self.assertTrue(self.problems("chronology-annotations-current"))
 
+    @independent_inputs
     def test_a_changed_corpus_refuses_both_unchanged_consumer_artifacts(self):
         # Change an actual upstream claim while leaving the consumer intact.
         held = corpus.load()
@@ -147,10 +170,11 @@ class AssemblyFreshnessTests(FreshnessFixture):
         (self.root / "guidance").symlink_to(ROOT / "guidance")
 
     def assert_current(self):
-        for name in ("chronology-record-current", "chronology-annotations-current",
-                     "chronology-claims-supported"):
-            with self.subTest(check=name):
-                self.assertEqual(self.problems(name), [])
+        with preflight_operation():
+            for name in ("chronology-record-current", "chronology-annotations-current",
+                         "chronology-claims-supported"):
+                with self.subTest(check=name):
+                    self.assertEqual(self.problems(name), [])
 
     def test_missing_snapshots_use_the_live_assembly_without_writing(self):
         assembly = document_types.Assembly(self.root)
@@ -168,6 +192,7 @@ class AssemblyFreshnessTests(FreshnessFixture):
         self.assert_current()
         self.assertTrue(all(path.read_text() == "Stale generated snapshot.\n" for path in generated))
 
+    @independent_inputs
     def test_changed_corpus_reaches_checks_without_refreshing_snapshots(self):
         held = corpus.load()
         subject = "israel.monarchy.david-traditional-era"
@@ -192,10 +217,11 @@ class AssemblyFreshnessTests(FreshnessFixture):
     def test_authored_date_page_cannot_hide_behind_fresh_assembly(self):
         path = self.leaf / "sections/duplicate-dates.tex"
         path.write_text(r"\section*{Scriptural Date and Location}" + "\n")
-        for name in ("chronology-record-current", "chronology-annotations-current",
-                     "chronology-claims-supported"):
-            with self.subTest(check=name), self.assertRaisesRegex(ValueError, "authored generated content"):
-                self.problems(name)
+        with preflight_operation():
+            for name in ("chronology-record-current", "chronology-annotations-current",
+                         "chronology-claims-supported"):
+                with self.subTest(check=name), self.assertRaisesRegex(ValueError, "authored generated content"):
+                    self.problems(name)
 
     def test_wrong_scope_is_not_treated_as_an_absent_projection(self):
         path = self.leaf / "research/chronology-profile-comparisons.toml"
@@ -205,6 +231,7 @@ class AssemblyFreshnessTests(FreshnessFixture):
         with self.assertRaises(ValueError):
             self.problems("chronology-record-current")
 
+    @independent_inputs
     def test_malformed_shared_corpus_is_refused(self):
         sources = self.root / "src/sources"
         sources.unlink()
@@ -218,6 +245,7 @@ class AssemblyFreshnessTests(FreshnessFixture):
         with self.assertRaises((ValueError, yaml.YAMLError)):
             self.problems("chronology-record-current")
 
+    @independent_inputs
     def test_missing_appointment_input_remains_explicitly_pending(self):
         # Appointment ownership forbids symlink aliases outside the root.
         (self.root / "guidance").unlink()
