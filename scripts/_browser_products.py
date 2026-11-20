@@ -864,7 +864,25 @@ def _generate(root, out, product_ids=None, *, cached_editions=None, record_jobs=
     generate(root, out, product_ids=product_ids, cached_editions=cached_editions, record_jobs=record_jobs)
 
 
-def _install(root, product, generated, cache_root, *, source_files=None):
+def _copy_product_files(source: Path, files: dict, destination: Path):
+    """Copy declared bytes once from held no-follow source directories."""
+    directories = set()
+
+    def copy_file(descriptor, leaf, name):
+        body = safe_files._read_file_at(descriptor, leaf, name)
+        if {"sha256": _sha(body), "bytes": len(body)} != files[name]:
+            raise ProductError(f"product changed before install: {name}")
+        target = destination / name
+        if target.parent not in directories:
+            target.parent.mkdir(parents=True, exist_ok=True)
+            directories.add(target.parent)
+        with target.open("xb") as output:
+            output.write(body)
+
+    _visit_files(_absolute(source), (_relative(name) for name in files), copy_file)
+
+
+def _install(root, product, cache_root, sources, *, recheck_sources=False):
     parent = _safe_directory(cache_directory(root, cache_root), create=True)
     with safe_files._open_directory(Path("/"), parent.as_posix().lstrip("/")) as cache_fd:
         marker_fd = os.open(".browser-products-cache-v1", os.O_WRONLY | os.O_CREAT | os.O_NOFOLLOW | os.O_NONBLOCK, 0o644, dir_fd=cache_fd)
@@ -882,19 +900,18 @@ def _install(root, product, generated, cache_root, *, source_files=None):
     # filesystem. Refuse a cross-device promotion instead of partial copying.
     with tempfile.TemporaryDirectory(prefix="install-", dir=_scratch(root)) as temporary:
         staged = Path(temporary) / "entry"
-        staged.mkdir()
-        for name, expected in product["files"].items():
-            body = _read(generated, name)
-            if {"sha256": _sha(body), "bytes": len(body)} != expected:
-                raise ProductError(f"generated product changed before install: {name}")
-            target = staged / "data" / name
-            target.parent.mkdir(parents=True, exist_ok=True)
-            target.write_bytes(body)
-        _compare(_inventory(staged / "data"), product["files"])
-        if source_files is not None:
-            # A matching hint only selected this source. Recheck its entire
-            # membership after copying, before any current key is promoted.
-            _compare(_inventory(generated), source_files)
+        out = staged / "data"
+        out.mkdir(parents=True)
+        sources = tuple(sources)
+        for source, files in sources:
+            _copy_product_files(source, files, out)
+        _compare(_inventory(out), product["files"])
+        if recheck_sources:
+            # Cached inputs must still match in full before publishing the
+            # current key, including membership outside the selected paths.
+            for source, files in sources:
+                entry_data = _cache_entry_data(parent, source.parent.name)
+                _compare(_inventory(entry_data), files)
         try:
             with safe_files._open_directory(Path("/"), parent.as_posix().lstrip("/")) as cache_fd:
                 with safe_files._open_directory(Path("/"), staged.parent.as_posix().lstrip("/")) as staging_fd:
@@ -942,24 +959,14 @@ def assert_working_output(root: Path, target: Path) -> Path:
 
 def _assemble(root, manifest, cache_root):
     combined = {"key": products_identity(manifest), "files": _expected(manifest)}
-    entry = cache_directory(root, cache_root) / combined["key"]
+    parent = cache_directory(root, cache_root)
+    entry = parent / combined["key"]
     if entry.exists() or entry.is_symlink():
         _compare(_inventory(_cache_data(root, combined, cache_root)), combined["files"])
-        _remember_candidate(root, cache_directory(root, cache_root), combined)
+        _remember_candidate(root, parent, combined)
         return
-    with tempfile.TemporaryDirectory(prefix="aggregate-", dir=_scratch(root)) as temporary:
-        out = Path(temporary) / "data"
-        out.mkdir()
-        for product in manifest["products"]:
-            target = _cache_data(root, product, cache_root)
-            for name, identity in product["files"].items():
-                body = _read(target, name)
-                if {"sha256": _sha(body), "bytes": len(body)} != identity:
-                    raise ProductError(f"family changed while assembling aggregate: {name}")
-                destination = out / name
-                destination.parent.mkdir(parents=True, exist_ok=True)
-                destination.write_bytes(body)
-        _install(root, combined, out, cache_root)
+    sources = ((_cache_data(root, product, cache_root), product["files"]) for product in manifest["products"])
+    _install(root, combined, cache_root, sources, recheck_sources=True)
 
 
 def _reuse_candidate(root, product, entries, cache_root):
@@ -973,7 +980,7 @@ def _reuse_candidate(root, product, entries, cache_root):
         actual = validate_candidate_entry(cache_directory(root, cache_root), key, hint)
         _compare(actual, product["files"])
         data = _cache_entry_data(cache_directory(root, cache_root), key)
-        _install(root, product, data, cache_root, source_files=product["files"])
+        _install(root, product, cache_root, [(data, product["files"])], recheck_sources=True)
         return True
     return False
 
@@ -1072,7 +1079,7 @@ def _build(root: Path, cache_root) -> dict:
             if before != _read(root, MANIFEST_RELATIVE):
                 raise ProductError("browser product descriptor changed during cold build")
             for product in missing:
-                _install(root, product, out, cache_root)
+                _install(root, product, cache_root, [(out, product["files"])])
     if stats["reused_families"] and not missing:
         _current(root, manifest)
     if before != _read(root, MANIFEST_RELATIVE):
@@ -1170,7 +1177,7 @@ def record(root: Path, *, cache_root=None) -> dict:
                     "proof": PROOF, "editorial_approval": False}
         _validate_manifest(manifest)
         for product in products:
-            _install(root, product, first, cache_root)
+            _install(root, product, cache_root, [(first, product["files"])])
         for product in manifest["products"]:
             _remember_candidate(root, cache_directory(root, cache_root), product)
         _assemble(root, manifest, cache_root)

@@ -383,6 +383,57 @@ class BrowserProductsTests(unittest.TestCase):
                 products.assert_working_output(self.root, aggregate / "new")
         self.assertEqual(products.assert_working_output(self.root, self.root / ".scratch/work"), self.root / ".scratch/work")
 
+    def test_missing_aggregate_copies_each_declared_file_once(self):
+        key = products.products_identity(self.manifest)
+        shutil.rmtree(self.cache / key)
+        names = {tuple(Path(name).parts): name for product in self.manifest["products"] for name in product["files"]}
+        written = []
+        open_path = Path.open
+
+        def record_write(path, mode="r", *args, **kwargs):
+            if mode in {"wb", "xb"}:
+                for parts, name in names.items():
+                    if path.parts[-len(parts):] == parts:
+                        written.append(name)
+            return open_path(path, mode, *args, **kwargs)
+
+        with patch.object(Path, "open", record_write):
+            products._assemble(self.root, self.manifest, self.cache)
+        self.assertCountEqual(written, names.values())
+        products.check(self.root, cache_root=self.cache)
+
+    def test_aggregate_refuses_family_membership_drift_before_promotion(self):
+        key = products.products_identity(self.manifest)
+        shutil.rmtree(self.cache / key)
+        family = self.cache / self.manifest["products"][0]["key"] / "data"
+        visit = products._visit_files
+
+        def perturb(source, names, copy_file):
+            visit(source, names, copy_file)
+            if source == family:
+                (source / "raced.json").write_text("{}")
+
+        with patch.object(products, "_visit_files", side_effect=perturb):
+            with self.assertRaisesRegex(products.ProductError, "differ"):
+                products._assemble(self.root, self.manifest, self.cache)
+        self.assertFalse((self.cache / key).exists())
+
+    def test_corrupt_staged_aggregate_is_not_published_and_a_retry_succeeds(self):
+        key = products.products_identity(self.manifest)
+        shutil.rmtree(self.cache / key)
+        copy_verified = products._copy_product_files
+
+        def corrupt(source, files, out):
+            copy_verified(source, files, out)
+            (out / next(iter(files))).write_text("corrupt staged bytes")
+
+        with patch.object(products, "_copy_product_files", side_effect=corrupt):
+            with self.assertRaisesRegex(products.ProductError, "differ"):
+                products._assemble(self.root, self.manifest, self.cache)
+        self.assertFalse((self.cache / key).exists())
+        products._assemble(self.root, self.manifest, self.cache)
+        products.check(self.root, cache_root=self.cache)
+
     def test_corrupt_stable_aggregate_rejected(self):
         aggregate = products.committed_data_root(self.root, cache_root=self.cache)
         (aggregate / "structure/a/index.json").write_text("bad")
@@ -1009,13 +1060,12 @@ class BrowserCandidateReuseTests(unittest.TestCase):
     def test_candidate_membership_race_cannot_promote_a_current_key(self):
         current = self.new_input_epoch()
         before = self.index_path.read_bytes()
-        reading = products._read
-        def mutate(root, name):
-            body = reading(root, name)
+        visit = products._visit_files
+        def mutate(root, names, copy_file):
+            visit(root, names, copy_file)
             if root == self.old_data:
                 (self.old_data / "raced.json").write_text("{}")
-            return body
-        with patch.object(products, "_read", side_effect=mutate):
+        with patch.object(products, "_visit_files", side_effect=mutate):
             with self.assertRaisesRegex(products.ProductError, "differ"):
                 products.build(self.root, cache_root=self.cache)
         self.assertFalse((self.cache / current["key"]).exists())
@@ -1024,13 +1074,12 @@ class BrowserCandidateReuseTests(unittest.TestCase):
 
     def test_candidate_reuse_still_brackets_current_inputs_and_descriptor(self):
         self.new_input_epoch()
-        reading = products._read
-        def mutate(root, name):
-            body = reading(root, name)
+        visit = products._visit_files
+        def mutate(root, names, copy_file):
+            visit(root, names, copy_file)
             if root == self.old_data:
                 (self.root / "src/a/input.txt").write_text("concurrent source edit")
-            return body
-        with patch.object(products, "_read", side_effect=mutate):
+        with patch.object(products, "_visit_files", side_effect=mutate):
             with self.assertRaisesRegex(products.ProductError, "inputs changed"):
                 products.build(self.root, cache_root=self.cache)
 
