@@ -1040,6 +1040,20 @@ def publication_source_records() -> dict[tuple[str, str], tuple[dict, dict]]:
     return dict(held_source_inventory("publication-records", derive))
 
 
+def prefetch_publication_dependencies(keys: Iterable[tuple[str, str]]) -> None:
+    """Prepare the dependency traces needed by this set of source identities."""
+    if not _HELD_SOURCE_INVENTORIES:
+        return
+    keys = sorted(keys)
+    if not keys:
+        return
+    records = publication_source_records()
+    # Companions share their owner's source directory. Missing keys and failed
+    # traces are reported by the same per-publication lookup as before.
+    owners = dict.fromkeys(ROOT / records[key][0]["source_dir"] for key in keys if key in records)
+    document_assembly().prefetch_dependencies(owners)
+
+
 def publication_source_identity(provider: str, leaf: str) -> dict:
     from _document_schema import identities
     records = publication_source_records()
@@ -3398,6 +3412,7 @@ def site_source_paths(manifest: dict | None = None) -> set[str]:
                    for path in web_data_files().values() if path not in product_files)
     if products is not None:
         browser.update(browser_product_source_paths(products, manifest))
+    prefetch_publication_dependencies(included)
     publication_inputs = set()
     for provider, leaf in included:
         identity = publication_source_identity(provider, leaf)
@@ -4225,6 +4240,7 @@ def candidate_inventory_data(
     """Return current hashes without granting or recording release authority."""
     primary, providers = declared_providers(manifest)
     errors: list[str] = []
+    prefetch_publication_dependencies(key for key, row in publications.items() if row["status"] != "hold")
     source_revisions = []
     for key in sorted(publications):
         provider, leaf = key
@@ -4356,6 +4372,7 @@ def artifact_manifest_data(
 ) -> dict:
     primary, _ = declared_providers(manifest)
     readers = publication_reader_routes(included)
+    prefetch_publication_dependencies(included)
     publication_entries = []
     for key, publication in sorted(included.items()):
         provider, leaf = key
