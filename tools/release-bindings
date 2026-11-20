@@ -409,7 +409,7 @@ class Divergence(NamedTuple):
     actual: str
 
 
-def site_source_divergences(authorization: dict) -> list[Divergence]:
+def site_source_divergences(authorization: dict, *, recognized: set[str] | None = None) -> list[Divergence]:
     """Every way the site record fails to describe the renderer's inputs.
 
     The one comparison in this tool. ``status`` reports it, ``refresh``
@@ -426,7 +426,8 @@ def site_source_divergences(authorization: dict) -> list[Divergence]:
     authorization under a green line the whole time.
     """
     recorded = recorded_site_sources(authorization)
-    recognized = recognized_site_sources()
+    if recognized is None:
+        recognized = recognized_site_sources()
     divergences: list[Divergence] = []
     for source in sorted(recorded):
         path = ROOT / source
@@ -465,11 +466,14 @@ def compute_site_hashes(
     authorization: dict,
     adopt: bool = False,
     only: list[str] | None = None,
+    *,
+    recognized: set[str] | None = None,
 ) -> dict[str, str]:
     site_sources = recorded_site_sources(authorization)
     # Refresh re-derives the recorded inputs only; adoption reconciles the
     # record with the set the renderer currently recognizes.
-    recognized = recognized_site_sources() if adopt else set()
+    if recognized is None:
+        recognized = recognized_site_sources() if adopt else set()
 
     def in_scope(source: str) -> bool:
         return only is None or any(
@@ -583,12 +587,15 @@ def refresh(manifest: dict, adopt: bool = False, only: list[str] | None = None) 
     # against; `status` reports this same list without writing anything. Only
     # the stale kind names a rewritten hash: the set differences are reported
     # below as adoptions and retirements, from the same comparison.
+    # Deriving the renderer's exact input set assembles every publication.
+    # Scope both the comparison and any adoption to that same observation.
+    recognized = recognized_site_sources()
     diverged = {
         divergence.source
-        for divergence in site_source_divergences(authorization)
+        for divergence in site_source_divergences(authorization, recognized=recognized)
         if divergence.kind == "stale"
     }
-    site_hashes = compute_site_hashes(authorization, adopt, only)
+    site_hashes = compute_site_hashes(authorization, adopt, only, recognized=recognized)
     recorded = authorization["site_sources"]
     for source in sorted(set(site_hashes) - set(recorded)):
         changes.append(f"adopted site {source}")
