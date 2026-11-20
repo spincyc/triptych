@@ -1859,16 +1859,10 @@ class PublicAlphaTest(unittest.TestCase):
         )
         makefile = (REPOSITORY_ROOT / "Makefile").read_text(encoding="utf-8")
         self.assertIn("public-site: check-deployment-sources", makefile)
-        self.assertIn(
-            "python tools/tpt public-alpha verify --deployment-target github-pages",
-            workflow,
-        )
+        verify = "run: python .github/scripts/pages-native-reference.py --verify-site"
+        self.assertEqual(workflow.count(verify), 1)
+        self.assertLess(workflow.index(verify), workflow.index("actions/upload-pages-artifact"))
         self.assertIn("pages-site-members: public-site-artifact deployment-source-gates", makefile)
-        self.assertLess(workflow.index("make pages-site"), workflow.index("--deployment-target github-pages"))
-        self.assertLess(
-            workflow.index("--deployment-target github-pages"),
-            workflow.index("actions/upload-pages-artifact"),
-        )
 
     def test_root_landings_use_the_exact_section_hierarchy(self) -> None:
         expected = [

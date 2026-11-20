@@ -168,10 +168,11 @@ class PublicAlphaBrowserProductsTest(unittest.TestCase):
         def prepare(root, products, out, *, runner, candidates):
             self.assertIs(products, self.held)
             self.assertEqual(root, self.root)
-            self.assertEqual(out, self.root / "build/web-figures")
+            self.assertEqual(out, self.root / "fixture-figures")
             self.assertEqual(runner, "host")
             return {"figures": 0}
-        with mock.patch("_web_figure_build.prepare", side_effect=prepare) as compile_figures:
+        with mock.patch.dict(self.tool.os.environ, {"TRIPTYCH_WEB_FIGURES_ROOT": "fixture-figures"}), \
+                mock.patch("_web_figure_build.prepare", side_effect=prepare) as compile_figures:
             status, _, stderr = self.fixture.run_main("build", "--prepared-products", "--figure-runner", "host")
             self.assertEqual(status, 0, stderr)
             self.assertEqual(len(self.snapshots), 1)
