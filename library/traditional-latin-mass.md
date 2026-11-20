@@ -25,9 +25,25 @@ history, its Sundays and proper days, the Fathers' teaching, and a rule of
 prayer and penance. Each Sunday's Mass stays with its guide in the
 [Sunday propers calendar](#sunday-propers-calendar).
 
-| Season | ChatGPT | Claude | Focus |
+The calendar runs from Advent 2026 to the eve of Advent 2027. Dates name the
+feast, Sunday or day shown in the [2026–27 Ordo](https://propria.org/ordo-2027/).
+Most seasons open at First Vespers, the evening prayer on the preceding day.
+Lent begins at Matins on Ash Wednesday. Easter and the Pentecost octave
+each begin at the Mass of the vigil. [General Rubrics, nos. 71–77](https://archive.org/download/sim_acta-apostolicae-sedis_1960-08-15_52_10/sim_acta-apostolicae-sedis_1960-08-15_52_10.pdf#page=19)
+
+| Season and day in 2026–27 | ChatGPT | Claude | Focus |
 | --- | --- | --- | --- |
-| **Advent** | [Advent: Keeping Watch for Christ](../web/gpt/liturgy/roman-rite/1962/seasons/advent.html) | [Advent: A Primer for the Season of the Lord's Coming](../web/claude/liturgy/roman-rite/1962/seasons/advent.html) | The history of Advent, its Sundays and winter Ember Days, daily prayer and penance, and the journey to Christmas. |
+| **Advent**<br>First Sunday of Advent, Nov 29 | [Advent: Keeping Watch for Christ](../web/gpt/liturgy/roman-rite/1962/seasons/advent.html) | [Advent: A Primer for the Season of the Lord's Coming](../web/claude/liturgy/roman-rite/1962/seasons/advent.html) | The history of Advent, its Sundays and winter Ember Days, daily prayer and penance, and the journey to Christmas. |
+| **Christmas**<br>Christmas Day, Dec 25 | Planned | Planned | The three Masses of the Nativity and the saints whose feasts fall within its octave. |
+| **Epiphany**<br>Epiphany, Jan 6 | Planned | Planned | The Magi at Bethlehem, the baptism in the Jordan and the wedding at Cana. |
+| **Time after Epiphany**<br>Jan 14 | Planned | Planned | The Sundays after Epiphany and the signs by which the disciples come to know Christ. |
+| **Septuagesima**<br>Septuagesima Sunday, Jan 24 | Planned | Planned | The farewell to the Alleluia and the three Sundays of preparation for Lent. |
+| **Lent**<br>Ash Wednesday, Feb 10 | Planned | Planned | Ashes, the fast, the Sunday Gospels and the Church’s preparation of catechumens for baptism. |
+| **Passiontide**<br>Passion Sunday, Mar 14 | Planned | Planned | Holy Week opens on Palm Sunday (Mar 21). The Sacred Triduum follows from Holy Thursday through Holy Saturday (Mar 25–27). |
+| **Easter**<br>Easter Sunday, Mar 28 | Planned | Planned | Baptism at the Easter Vigil, the octave of the Resurrection and the appearances of the risen Christ. |
+| **Ascensiontide**<br>Ascension Thursday, May 6 | Planned | Planned | Christ’s return to the Father and the disciples’ prayer as they await the Holy Spirit. |
+| **Octave of Pentecost**<br>Pentecost Sunday, May 16 | Planned | Planned | The descent of the Holy Spirit and the Ember Days kept during the octave. |
+| **Time after Pentecost**<br>Trinity Sunday, May 23 | Planned | Planned | The long course of Sunday Gospels, the Epiphany Sundays resumed near its end, and the last Sunday before Advent returns on Nov 28. |
 
 <a id="altar-server-guides"></a>
 ## Altar Server Guides
