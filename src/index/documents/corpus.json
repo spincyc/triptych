@@ -13301,6 +13301,11 @@
        "model": "GPT-6",
        "qualifiers": "client=Codex; unexposed: exact model variant, reasoning configuration, client version, server revision",
        "runtime": "OpenAI Codex API coordinating agent and harness subagents, unexposed: client version, server revision. Planned, researched, collated, drafted, reviewed, and verified the Advent primer."
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "client=Codex; unexposed: exact model variant, client version, server revision",
+       "runtime": "OpenAI Codex API client, unexposed: client version and server revision. Researched the historical witnesses and revised the preparation, weekly teaching, daily readings and apparatus for the Advent formation edition."
       }
      ],
      "derivation": "authored",
@@ -13313,7 +13318,7 @@
      "print_mode": "browser",
      "provider": "gpt",
      "reviewed": "2026-11-20",
-     "revised": "2026-11-20T14:39:32Z",
+     "revised": "2026-11-20T19:20:39Z",
      "status": "alpha",
      "subject": "A seasonal primer on the history, prayer, and Sundays of Advent in the 1962 Roman Rite and on preparing for Christmas.",
      "targets": {

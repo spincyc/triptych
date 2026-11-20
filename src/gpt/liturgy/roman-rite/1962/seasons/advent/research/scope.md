@@ -76,3 +76,20 @@ independently, even when reading the full study in stages.
   exact received wording. Expansive means real teaching and primary evidence
   for each additional section, with focused subheadings to support a later
   synopsis and distinct loci for the bindings.
+
+## Plan for the formation revision
+
+| Place in the study | Teaching and its witness |
+| --- | --- |
+| Before the season | Open a calendar and a Bible before the First Sunday. Francis de Sales asks how a tradesman could spend the working day in church. Let a reader choose a time, a person to remember and a real occasion for charity in the life already entrusted to them (Introduction I.3). |
+| The history | Read a feast list, a council's attendance rule and a bishop's fast schedule on their own terms. Follow the prayers a priest said in the old sacramentaries and the songs a choir learned at St Gall. See what the antiphoner adds to the account given by the Missal. |
+| Prayer at Mass and at home | Take one petition in the Collect into the week. Learn to meditate with Francis de Sales, especially the flowers kept from his walk in a garden and his return from prayer to work (II.5–8). At home connect the increasing light of a wreath to Zachary's prophecy, and child and adult to an actual Gospel page (Directory on Popular Piety 98, 104). |
+| Waiting amid loss | Augustine addresses a widow who cares for others. Follow his reading of Paul's unanswered petition and his recognition of Anna as a teacher of prayer (Letter 130.20–21, 25–30). Give someone spending Advent bereaved or in a sickroom a way to pray and someone else a way to accompany them. |
+| Fasting and confession | Ask who benefits from the fast and when they will receive the gift. Retain one direction for arranging confession, distinguish sorrow, absolution, penance and repair. Account for the 1959 faculty for the Vigil alongside the present law. |
+| The four Sundays | Follow the psalm into both the entrance chant and offertory, the news brought back to John, the peace given to Paul, and the Fourth Sunday's request for haste. Retain the proper's station and Scripture and give each week its own practice. |
+| Days that overlap | Hear Ahaz and Mary at Ember Wednesday, Mary's journey on Friday, and the three young men blessing God inside the furnace on Saturday. Read the seven O titles as petitions (especially the King who joins two peoples and the man made of dust). Provide reading cues for reachable days and distinguish the home course from the actual liturgy on December 8 and 24. |
+| The threshold of Christmas | Bring the prayer of the household to the Vigil and the shepherds' sign. Keep the substantial patristic study of the crib, Eucharist and Resurrection, with the Mass in the Night at the end. |
+
+The child's question about keeping Advent after Christ has already been
+born gives the first part its closing question. Read Pius XII on returning
+to Bethlehem in *Mediator Dei* 151–155, 165.
