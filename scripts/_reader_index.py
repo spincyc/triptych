@@ -56,40 +56,42 @@ def surface_for(path):
                  if any(_under(path, prefix) for prefix in prefixes)), None)
 
 
-def _input(surface, path):
-    if path.startswith('src/index/'):
-        return False
-    from _corpus_index import AUTHORITIES
-    return (any(_under(path, prefix) for prefix in (*COMMON, *SURFACES[surface]))
-            or path in AUTHORITIES or '/' not in path)
-
-
 def fingerprints(file_rows):
     """Canonical inputs for all surfaces, including ones not generated yet."""
-    result = {}
+    from _corpus_index import AUTHORITIES
+    sources = {}
+    scopes = {}
     for surface in ORDER:
         source = hashlib.sha256()
         source.update(json.dumps([SCHEMA, surface, COMMON, SURFACES[surface]], separators=(',', ':')).encode())
-        for path, row in sorted(file_rows.items()):
-            if _input(surface, path):
-                source.update(f'{path}\0{row[1]}\0{row[2]}\n'.encode())
-        result[surface] = source.hexdigest()
-    return result
+        sources[surface] = source
+        scopes[surface] = tuple(prefix + '/' for prefix in (*COMMON, *SURFACES[surface]))
+    for path, row in sorted(file_rows.items()):
+        if path.startswith('src/index/'):
+            continue
+        encoded = f'{path}\0{row[1]}\0{row[2]}\n'.encode()
+        common = path in AUTHORITIES or '/' not in path
+        for surface, prefixes in scopes.items():
+            if common or path.startswith(prefixes) or path in SURFACES[surface] or path in COMMON:
+                sources[surface].update(encoded)
+    return {surface: source.hexdigest() for surface, source in sources.items()}
 
 
 def bindings(file_rows, inputs=None):
     """Bind indexed SHA-256/size rows; callers already checked canonical bytes."""
     inputs = fingerprints(file_rows) if inputs is None else inputs
     result = {}
-    for surface in ORDER:
-        outputs = [path for path in sorted(file_rows) if surface_for(path) == surface]
-        if not outputs:
-            continue
+    outputs = {}
+    for path in sorted(path for path in file_rows if path.startswith('src/index/')):
+        surface = surface_for(path)
+        if surface is not None:
+            outputs.setdefault(surface, []).append(path)
+    for surface, paths in outputs.items():
         target = hashlib.sha256()
-        for path in outputs:
+        for path in paths:
             row = file_rows[path]
             target.update(f'{path}\0{row[1]}\0{row[2]}\n'.encode())
-        result[surface] = {'inputs': inputs[surface], 'outputs': target.hexdigest(), 'files': len(outputs)}
+        result[surface] = {'inputs': inputs[surface], 'outputs': target.hexdigest(), 'files': len(paths)}
     return result
 
 
@@ -187,50 +189,81 @@ def _write(root, path, data):
         target.write_bytes(data)
 
 
-def maintain(root, *, full=False, check=False):
-    """Called under corpus-index's one writer lock; skip unchanged derivations."""
+def _surface_files(surface, root, index, *, check):
+    from _corpus_index import CorpusIndexError
+    files = build_surface(surface, root, index, check=check)
+    if not files or any(surface_for(path) != surface or not isinstance(data, bytes)
+                        for path, data in files.items()):
+        raise CorpusIndexError(f'invalid {surface} reader-index producer membership')
+    existing = {path for path in index.paths('src/index/') if surface_for(path) == surface}
+    return files, existing
+
+
+def _check_surface(surface, root, index):
+    from _corpus_index import CorpusIndexError, _safe_read
+    files, existing = _surface_files(surface, root, index, check=True)
+    if existing != set(files):
+        raise CorpusIndexError(f'stale {surface} reader index membership')
+    for path, data in files.items():
+        if _safe_read(root, path)[0] != data:
+            raise CorpusIndexError(f'stale {surface} reader index: {path}')
+
+
+def _check_worker(surface, root, identity):
+    from _corpus_index import CorpusIndex, CorpusIndexError
+    index = CorpusIndex(root, _bind=False)
+    if index.identity != identity:
+        raise CorpusIndexError('corpus index changed during reader verification')
+    _check_surface(surface, root, index)
+
+
+def _check_all(root, jobs):
+    from _corpus_index import CorpusIndex, _refresh_unlocked
+    index = CorpusIndex(root)
+    if jobs == 1:
+        for surface in ORDER:
+            _check_surface(surface, root, index)
+    else:
+        # The producers install process-local path and cache policies. Each
+        # worker reads the root bound above, and authenticates every shard it uses.
+        from concurrent.futures import ProcessPoolExecutor
+        with ProcessPoolExecutor(max_workers=min(jobs, len(ORDER))) as pool:
+            checks = [pool.submit(_check_worker, surface, root, index.identity) for surface in ORDER]
+            for check in checks:
+                check.result()
+    # Independently hash every source, parse every record, and compare all
+    # shard bytes and the complete root to the snapshot used by the producers.
+    report = _refresh_unlocked(root, check=True, expected_identity=index.identity)
+    return {**report, 'reader_surfaces': list(ORDER), 'reader_reused': []}
+
+
+def maintain(root, *, full=False, check=False, jobs=1):
+    """Replay every read-only check, or refresh changed surfaces in dependency order."""
     from _corpus_index import (CorpusIndex, CorpusIndexError, _generate,
-                               _refresh_unlocked, _json, _safe_read)
-    snapshot, _ = _generate(root, full=full and not check, validate_readers=False)
+                               _refresh_unlocked, _json)
+    if check:
+        return _check_all(root, jobs)
+    snapshot, _ = _generate(root, full=full, validate_readers=False)
     index = CorpusIndex(root, _bind=False, _snapshot=snapshot)
     prior = _proof(root)
     before = index.manifest['readers']
     before_inputs = index.manifest['reader_inputs']
-    selected = [surface for surface in ORDER if check or full or prior.get(surface) != before.get(surface)
+    selected = [surface for surface in ORDER if full or prior.get(surface) != before.get(surface)
                 or surface not in before]
-    rebuilt = []
     for surface in selected:
-        files = build_surface(surface, root, index, check=check)
-        if not files or any(surface_for(path) != surface or not isinstance(data, bytes)
-                            for path, data in files.items()):
-            raise CorpusIndexError(f'invalid {surface} reader-index producer membership')
-        existing = set(index.paths('src/index/'))
-        existing = {path for path in existing if surface_for(path) == surface}
-        if check:
-            if existing != set(files):
-                raise CorpusIndexError(f'stale {surface} reader index membership')
-            for path, data in files.items():
-                if _safe_read(root, path)[0] != data:
-                    raise CorpusIndexError(f'stale {surface} reader index: {path}')
-        else:
-            for path, data in files.items():
-                _write(root, path, data)
-            for path in existing - set(files):
-                (root / path).unlink()
-            # Later surfaces may consume metadata just generated by an owner.
-            snapshot, _ = _generate(root, full=full and not check, validate_readers=False)
-            index = CorpusIndex(root, _bind=False, _snapshot=snapshot)
-        rebuilt.append(surface)
-    # A full refresh never reloads the prior index: its contract may be the
-    # very thing being refreshed (for example a changed authority list).
-    final_snapshot, _ = _generate(root, full=full and not check, validate_readers=False)
+        files, existing = _surface_files(surface, root, index, check=False)
+        for path, data in files.items():
+            _write(root, path, data)
+        for path in existing - set(files):
+            (root / path).unlink()
+        # Later surfaces may consume metadata just generated by an owner.
+        snapshot, _ = _generate(root, full=full, validate_readers=False)
+        index = CorpusIndex(root, _bind=False, _snapshot=snapshot)
+    final_snapshot, _ = _generate(root, full=full, validate_readers=False)
     final_manifest = json.loads(final_snapshot['index.json'])
     final = final_manifest['readers']
     if final_manifest['reader_inputs'] != before_inputs:
         raise CorpusIndexError('canonical inputs changed during reader derivation; refresh again')
-    if check:
-        validate_bindings(root, final)
-    else:
-        _write(root, PROOF, _json({'schema': SCHEMA, 'surfaces': final}))
-    report = _refresh_unlocked(root, full=full, check=check)
-    return {**report, 'reader_surfaces': rebuilt, 'reader_reused': [name for name in ORDER if name not in rebuilt]}
+    _write(root, PROOF, _json({'schema': SCHEMA, 'surfaces': final}))
+    report = _refresh_unlocked(root, full=full)
+    return {**report, 'reader_surfaces': selected, 'reader_reused': [name for name in ORDER if name not in selected]}

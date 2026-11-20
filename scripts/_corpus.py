@@ -740,14 +740,31 @@ class _Revisions:
     def __init__(self, root: Path):
         self.root = Path(root).resolve()
         self._repository = None
+        self._assembly = None
 
-    def display(self, provider: str, entry: str) -> str:
-        from _edition_revision import Repository, RevisionError, revision_for_entrypoint
+    def _prepare(self):
+        from _document_types import Assembly
+        from _edition_revision import Repository
+        if self._repository is None:
+            self._repository, self._assembly = Repository(self.root), Assembly(self.root)
+
+    def prefetch(self, editions):
+        from _edition_revision import RevisionError, prefetch_revisions
         try:
-            if self._repository is None:
-                self._repository = Repository(self.root)
+            self._prepare()
+            self._assembly.prefetch_dependencies(self.root / "src" / provider / leaf for provider, leaf in editions)
+            prefetch_revisions(self.root, editions, repository=self._repository, assembly=self._assembly)
+        except RevisionError as error:
+            raise CorpusError(str(error)) from error
+
+    def display(self, provider: str, entry: str, leaf: str) -> str:
+        from _edition_revision import RevisionError, revision, revision_for_entrypoint
+        try:
+            self._prepare()
+            if entry == f"src/{provider}/{leaf}/main.tex":
+                return revision(self.root, provider, leaf, repository=self._repository, assembly=self._assembly).display
             return revision_for_entrypoint(self.root, provider, self.root / entry,
-                                           repository=self._repository).display
+                                           repository=self._repository, assembly=self._assembly).display
         except RevisionError as error:
             raise CorpusError(f"{entry}: {error}") from error
 
@@ -779,7 +796,7 @@ class Document:
         """The whole edition's derived "Last revised" value, as its pages print it."""
         whole = next(issue for issue in self.issues if issue.kind == FULL)
         revisions = self.revisions or _Revisions(ROOT)
-        return revisions.display(self.provider, whole.entry)
+        return revisions.display(self.provider, whole.entry, self.leaf)
 
     @property
     def key(self) -> tuple[str, str]:

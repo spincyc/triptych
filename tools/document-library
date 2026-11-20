@@ -941,8 +941,16 @@ def catalogue(rows: tuple[Document, ...], by_key: dict[tuple[str, str], Document
               *, root: Path = ROOT) -> dict:
     """The whole corpus, keyed by work, as one object the page fetches once."""
     editions_of: dict[str, list[Document]] = {}
+    batches = {}
     for document in rows:
         editions_of.setdefault(document.leaf, []).append(document)
+        if document.revisions is not None and "revised" not in vars(document):
+            whole = next(issue for issue in document.issues if issue.kind == FULL)
+            if whole.entry == f"src/{document.provider}/{document.leaf}/main.tex":
+                batches.setdefault(document.revisions, []).append(document.key)
+    for revisions, editions in batches.items():
+        if len(editions) > 1:
+            revisions.prefetch(editions)
 
     works: dict[str, dict] = {}
     for document in rows:

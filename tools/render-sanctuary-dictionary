@@ -664,7 +664,7 @@ def caption_claims(record: dict) -> tuple[str, str]:
 
 
 @functools.lru_cache(maxsize=4)
-def _source_note_library(root: Path):
+def _source_library_module(root: Path):
     path = root / "tools/source-library"
     loader = importlib.machinery.SourceFileLoader("rsd_source_library", str(path))
     spec = importlib.util.spec_from_loader(loader.name, loader)
@@ -672,7 +672,67 @@ def _source_note_library(root: Path):
     module = importlib.util.module_from_spec(spec)
     sys.modules[spec.name] = module
     loader.exec_module(module)
-    return module.load_library(root, check_binding_fingerprints=False)
+    return module
+
+
+def _source_note_lookup(root: Path):
+    """Resolve selected manifests using canonical directory shapes and exact record IDs."""
+    owner = _source_library_module(root)
+    selected = owner.Library(root=root, source_root=root / "src/sources", publication_roots=[])
+    works = selected.source_root / "works"
+
+    @functools.cache
+    def artifact_directories():
+        # Some historic IDs use an edition alias or a different author/work
+        # slug. Only matching artifact names need a metadata read.
+        by_name = {}
+        for path in works.glob("*/*/editions/*/artifacts/*/artifact.toml"):
+            by_name.setdefault(path.parent.name, []).append(path)
+        return by_name
+
+    @functools.cache
+    def full_library():
+        # An ID is authoritative even if its location uses older conventions.
+        return owner.load_library(root, check_binding_fingerprints=False)
+
+    def candidates(identifier, nearby):
+        if nearby is not None:
+            yield nearby
+        parts = identifier.split(".")
+        if len(parts) < 4 or not all(re.fullmatch(r"[a-z0-9][a-z0-9-]*", part) for part in parts):
+            return
+        kind, author, work, edition = parts[:4]
+        editions = works / author / work / "editions"
+        if kind == "edition":
+            yield editions / edition / "edition.toml"
+            yield from sorted(editions.glob("*/edition.toml"))
+        elif kind in {"segment", "passage"} and len(parts) >= 5:
+            yield editions / edition / (kind + "s") / ("-".join(parts[4:]) + ".toml")
+        elif kind == "artifact" and len(parts) >= 5:
+            yield editions / edition / "artifacts" / parts[-1] / "artifact.toml"
+            yield from artifact_directories().get(parts[-1], ())
+
+    @functools.cache
+    def lookup(identifier, nearby=None):
+        if not isinstance(identifier, str):
+            return None
+        for path in candidates(identifier, nearby):
+            require(not owner._path_contains_symlink(path, root), f"redirected source-note manifest: {path}")
+            if not path.is_file():
+                continue
+            data = owner._read_toml(selected, path)
+            if data is None or data.get("id") != identifier:
+                continue
+            common = owner._validate_common_record(selected, path, data)
+            require(common is not None and not selected.errors, f"invalid source-note manifest: {path}")
+            record = owner.Record(path, *common, data)
+            owner._validate_strings(selected, record)
+            owner._validate_record_path(selected, record)
+            require(not selected.errors, f"invalid source-note record: {path}")
+            return record
+        return full_library().records.get(identifier)
+
+    return lookup
 
 
 def source_reference_text(edition: dict) -> tuple[str, str]:
@@ -694,19 +754,25 @@ def source_reference_text(edition: dict) -> tuple[str, str]:
     return value["edition"].strip().removesuffix("."), (value.get("imprint") or "").strip()
 
 
-def source_note_metadata(root: Path, records: list[dict], library=None) -> tuple[dict, dict, set[Path]]:
+def source_note_metadata(root: Path, records: list[dict], library=None, *, lookup=None) -> tuple[dict, dict, set[Path]]:
     """Resolve exact source metadata, without acquiring or reading witness bytes."""
-    library = library if library is not None else _source_note_library(root.resolve())
+    if lookup is None:
+        lookup = _source_note_lookup(root.resolve()) if library is None else (
+            lambda identifier, nearby=None: library.records.get(identifier))
     editions, bindings = {}, {}
     inputs = {root.resolve() / "tools/source-library"}
     for record in records:
         for source in record["sources"]:
             binding = source["binding"]
-            target = library.records.get(binding)
+            target = lookup(binding)
             require(target is not None, f"{record['id']}: unknown source-note binding {binding}")
             inputs.add(target.path.resolve())
             edition_id = target.record_id if target.record_type == "edition" else target.data.get("edition_id")
-            edition = library.records.get(edition_id)
+            if target.record_type == "edition":
+                edition = target
+            else:
+                parent = target.path.parents[2 if target.record_type == "artifact" else 1]
+                edition = lookup(edition_id, parent / "edition.toml")
             require(edition is not None and edition.record_type == "edition",
                     f"{binding}: source note has no identified edition")
             require(isinstance(edition.data.get("title"), str) and bool(edition.data["title"].strip()),
@@ -734,8 +800,8 @@ def edition_source_note_inputs(root: Path, owner: Path, selection_id: str) -> se
     return source_note_inputs(root, selected_records)
 
 
-def source_notes_tex(records: list[dict], edition: dict, root: Path, library=None) -> list[str]:
-    editions, bindings, _ = source_note_metadata(root, records, library)
+def source_notes_tex(records: list[dict], edition: dict, root: Path, library=None, *, lookup=None) -> list[str]:
+    editions, bindings, _ = source_note_metadata(root, records, library, lookup=lookup)
     source_numbers = {key: number for number, key in enumerate(sorted(editions), 1)}
     lines = ["\\gdef\\RSDPrintSourceNotes{%", "\\RSDSourceNotesStart"]
     for number, record in enumerate(records, 1):
@@ -1526,6 +1592,7 @@ def main() -> int:
                     f"{manifest_artwork_assets.get(artwork['id'])}",
                 )
         args.output.mkdir(parents=True, exist_ok=True)
+        notes = _source_note_lookup(REPOSITORY_ROOT)
         for edition in selections["editions"]:
             chosen = [
                 record for record in records.values()
@@ -1542,7 +1609,7 @@ def main() -> int:
                 f"% edition: {edition['id']}",
             ]
             body.extend(dense_edition_tex(chosen, edition, artwork_render_owners))
-            body.extend(source_notes_tex(chosen, edition, REPOSITORY_ROOT))
+            body.extend(source_notes_tex(chosen, edition, REPOSITORY_ROOT, lookup=notes))
             data = ("\n".join(body) + "\n").encode()
             (args.output / f"{edition['id']}.tex").write_bytes(data)
             if edition["id"] == "ed-altar-server":

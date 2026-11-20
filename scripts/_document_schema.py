@@ -1043,7 +1043,8 @@ def _source_index(root: Path, *, refresh: bool = False) -> dict[str, Path]:
     return _SOURCE_INDEX[root]
 
 
-def _evidence_ancestry(root: Path, evidence: set[Path], *, source_ids=()) -> set[Path]:
+def _evidence_ancestry(root: Path, evidence: set[Path], *, source_ids=(),
+                       validated_toml: set[bytes] | None = None) -> set[Path]:
     """Follow declared owners and source-library ancestry, without payload IO."""
     evidence = {p for p in evidence if p.name not in OPERATIONAL_RECORDS}
     result = set(evidence)
@@ -1057,7 +1058,16 @@ def _evidence_ancestry(root: Path, evidence: set[Path], *, source_ids=()) -> set
         seen.add(path)
         if path.suffix != ".toml":
             continue
-        data = tomllib.loads(path.read_text(encoding="utf-8"))
+        text = path.read_text(encoding="utf-8")
+        if validated_toml is not None and path.name not in {"source-bindings.toml", "review-dependencies.toml"}:
+            # Other TOMLs contribute their bytes, but have no edges to follow.
+            # Validate every distinct text once, retaining only its digest.
+            digest = hashlib.sha256(text.encode("utf-8")).digest()
+            if digest not in validated_toml:
+                tomllib.loads(text)
+                validated_toml.add(digest)
+            continue
+        data = tomllib.loads(text)
         if path.name == "source-bindings.toml":
             for binding in data.get("bindings", []):
                 if isinstance(binding, dict) and isinstance(binding.get("source_id"), str):
@@ -1217,7 +1227,8 @@ def identities(root: Path, record: dict, *, output: str | None = None, assembly=
     # witness blobs. Exhaustive source-byte validation remains an owning gate.
     generated_evidence = evidence.intersection(virtual)
     evidence = _evidence_ancestry(root, {p for p in evidence
-                                      if p not in virtual and _metadata_path(p, root)})
+                                      if p not in virtual and _metadata_path(p, root)},
+                                  validated_toml=assembly.validated_evidence_toml)
     evidence.update(generated_evidence)
     declaration = _raw_manifest(record)
     web_declaration = leaf_dir / "web-edition.toml"

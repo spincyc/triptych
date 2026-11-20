@@ -756,6 +756,9 @@ class Assembly:
     def __init__(self, root: Path = ROOT, *, projections: dict | None = None):
         self.root = Path(root).resolve()
         self.projections = projections
+        # Syntax validation can be shared for identical evidence documents.
+        # Source identities still hash every leaf's actual inputs.
+        self.validated_evidence_toml: set[bytes] = set()
         self._types: dict[str, DocumentType] | None = None
         self._declarations: dict[Path, Declaration | None] = {}
         self._files: dict[Path, dict[Path, str]] = {}
