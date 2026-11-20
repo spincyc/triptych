@@ -22,6 +22,7 @@ import unicodedata
 from collections import Counter, defaultdict
 from collections.abc import Callable, Iterable
 from datetime import date, datetime, timedelta, timezone
+from functools import cache
 from pathlib import Path, PurePosixPath
 from urllib.parse import parse_qsl, unquote, urlencode, urlsplit
 from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
@@ -1911,7 +1912,7 @@ def _quarantine_receipt_signature(roots: tuple[Path, ...]) -> tuple:
                  for root in roots for path in sorted(root.glob("*admission.json")))
 
 
-def postconciliar_quarantined_text_hashes() -> frozenset[str]:
+def _quarantine_fingerprints() -> tuple[tuple, frozenset[str]]:
     """Conserve baseline, active and admitted old hashes without retaining bodies.
 
     This is an independent negative scanner. Historical fingerprints and source
@@ -1924,7 +1925,7 @@ def postconciliar_quarantined_text_hashes() -> frozenset[str]:
         if cache_key in _POSTCONCILIAR_QUARANTINE_HASHES:
             roots, signature, hashes = _POSTCONCILIAR_QUARANTINE_HASHES[cache_key]
             if signature == _quarantine_receipt_signature(roots):
-                return hashes
+                return (cache_key, signature), hashes
         document = tomllib.loads(inventory.read_text(encoding="utf-8"))
     except (OSError, UnicodeError, tomllib.TOMLDecodeError) as exc:
         raise ReleaseError(f"cannot read postconciliar quarantine ledger {label}: {exc}") from exc
@@ -2030,7 +2031,11 @@ def postconciliar_quarantined_text_hashes() -> frozenset[str]:
         raise ReleaseError(f"cannot read postconciliar quarantine admission receipts: {exc}") from exc
     hashes = frozenset(values)
     _POSTCONCILIAR_QUARANTINE_HASHES[cache_key] = ordered_roots, signature, hashes
-    return hashes
+    return (cache_key, signature), hashes
+
+
+def postconciliar_quarantined_text_hashes() -> frozenset[str]:
+    return _quarantine_fingerprints()[1]
 
 
 def _address(trail: tuple) -> str:
@@ -2044,6 +2049,65 @@ def _address(trail: tuple) -> str:
     )
 
 
+class _ConclusionSources:
+    """The independently validated authorities used by one public data scan."""
+
+    def __init__(self):
+        self.rows = None
+        self.owner_model = None
+        self.calendars = {}
+
+    def authority_rows(self):
+        import _oration_endings
+        if self.rows is None:
+            _, self.rows = _oration_endings.authority(ROOT)
+        return self.rows
+
+    def calendar(self, calendar):
+        if self.owner_model is None:
+            from importlib.machinery import SourceFileLoader
+            from importlib.util import module_from_spec, spec_from_loader
+            loader = SourceFileLoader("_public_alpha_conclusion_owner", str(ROOT / "tools" / "mass-propers"))
+            self.owner_model = module_from_spec(spec_from_loader(loader.name, loader))
+            sys.modules[loader.name] = self.owner_model
+            loader.exec_module(self.owner_model)
+        if calendar not in self.calendars:
+            document = self.owner_model.load_calendar(ROOT / "src/sources/calendars", calendar)
+            self.calendars[calendar] = self.owner_model._calendars.mass_index(document)
+        return self.calendars[calendar]
+
+    def source_form(self, calendar, borrowed):
+        """Resolve the donor's exact display label with the owning source model."""
+        donor = self.calendar(calendar).get(borrowed.get("mass"))
+        if donor is None:
+            raise ValueError("conclusion borrowed source mass is absent")
+        label = borrowed.get("form")
+        if label is None:
+            label = ""
+        if not isinstance(label, str):
+            raise ValueError("conclusion borrowed source form label is invalid")
+        _, trouble = self.owner_model._calendars._form_propers(donor, label)
+        if trouble:
+            raise ValueError(f"conclusion borrowed source form: {trouble}")
+        if label and len([form for form in donor.get("forms") or []
+                          if isinstance(form, dict) and form.get("name") == label]) != 1:
+            raise ValueError("conclusion borrowed source form is ambiguous")
+        return self.owner_model.form_id_for_label(donor, label)
+
+    def check_current(self):
+        # Reopen both authorities from their owning readers after the last
+        # payload. A later scan starts empty, as does standalone validation.
+        fresh = _ConclusionSources()
+        try:
+            if self.rows is not None and self.rows != fresh.authority_rows():
+                raise ValueError("finite conclusion authority changed")
+            for name, masses in self.calendars.items():
+                if masses != fresh.calendar(name):
+                    raise ValueError(f"{name} conclusion donor sources changed")
+        except (ValueError, OSError) as exc:
+            raise ReleaseError(f"conclusion inputs changed during the public data scan: {exc}") from exc
+
+
 def validate_liturgical_public_data(
     path: Path, *, logical_relative: str | None = None,
     proper_reader_binding: str | None = None,
@@ -2053,6 +2117,17 @@ def validate_liturgical_public_data(
     Generators own the positive inclusion rules. This release gate independently
     refuses protected or quarantined content even in a hash-valid product.
     """
+    return _validate_liturgical_public_data(
+        path, logical_relative=logical_relative, proper_reader_binding=proper_reader_binding,
+        quarantined_text_hashes=None, conclusions=_ConclusionSources(),
+    )
+
+
+def _validate_liturgical_public_data(
+    path: Path, *, logical_relative: str | None,
+    proper_reader_binding: str | None = None, quarantined_text_hashes: frozenset[str] | None,
+    conclusions: _ConclusionSources,
+) -> str | None:
     if logical_relative is None:
         try:
             relative = path.relative_to(ROOT / WEB_DATA_ROOT_RELATIVE)
@@ -2086,7 +2161,8 @@ def validate_liturgical_public_data(
         if len(parts) != 4:
             raise ReleaseError(f"{label}: public Proper search must be one calendar file")
         validate_proper_search_payload(payload, label, path.stem)
-    quarantined_text_hashes = postconciliar_quarantined_text_hashes()
+    if quarantined_text_hashes is None:
+        quarantined_text_hashes = postconciliar_quarantined_text_hashes()
 
     def visit_quarantined(value: object, trail: tuple = ()) -> None:
         # The breadcrumb is carried as a tuple and rendered only if something
@@ -2125,44 +2201,10 @@ def validate_liturgical_public_data(
 
     name_seen: set[tuple] = set()
     execution_seen: set[tuple] = set()
-    conclusion_authority = None
     actor_sources = None
     actor_seen: set[tuple] = set()
-    conclusion_owner_model = None
-    conclusion_source_documents = {}
-
-    def conclusion_source_form(calendar: str, borrowed: dict) -> str:
-        """Resolve the donor's exact display label with the owning source model."""
-        nonlocal conclusion_owner_model
-        if conclusion_owner_model is None:
-            from importlib.machinery import SourceFileLoader
-            from importlib.util import module_from_spec, spec_from_loader
-            loader = SourceFileLoader("_public_alpha_conclusion_owner", str(ROOT / "tools" / "mass-propers"))
-            specification = spec_from_loader(loader.name, loader)
-            conclusion_owner_model = module_from_spec(specification)
-            sys.modules[loader.name] = conclusion_owner_model
-            loader.exec_module(conclusion_owner_model)
-        if calendar not in conclusion_source_documents:
-            document = conclusion_owner_model.load_calendar(ROOT / "src/sources/calendars", calendar)
-            conclusion_source_documents[calendar] = conclusion_owner_model._calendars.mass_index(document)
-        donor = conclusion_source_documents[calendar].get(borrowed.get("mass"))
-        if donor is None:
-            raise ValueError("conclusion borrowed source mass is absent")
-        label = borrowed.get("form")
-        if label is None:
-            label = ""
-        if not isinstance(label, str):
-            raise ValueError("conclusion borrowed source form label is invalid")
-        _, trouble = conclusion_owner_model._calendars._form_propers(donor, label)
-        if trouble:
-            raise ValueError(f"conclusion borrowed source form: {trouble}")
-        if label and len([form for form in donor.get("forms") or []
-                          if isinstance(form, dict) and form.get("name") == label]) != 1:
-            raise ValueError("conclusion borrowed source form is ambiguous")
-        return conclusion_owner_model.form_id_for_label(donor, label)
-
     def visit_execution(value: object, trail: tuple = (), mass_key: str | None = None) -> None:
-        nonlocal conclusion_authority, actor_sources
+        nonlocal actor_sources
         if isinstance(value, list):
             for index, item in enumerate(value): visit_execution(item, trail + (index,), mass_key)
         elif isinstance(value, dict):
@@ -2235,9 +2277,8 @@ def validate_liturgical_public_data(
                         import _missal_coverage
                         if not isinstance(item, list) or len(item) != 1:
                             raise ValueError("one finite conclusion descriptor required")
-                        if conclusion_authority is None:
-                            _, conclusion_authority = _oration_endings.authority(ROOT)
-                        source = _oration_endings.validate_public(item[0], ROOT, authority_rows=conclusion_authority)
+                        source = _oration_endings.validate_public(
+                            item[0], ROOT, authority_rows=conclusions.authority_rows())
                         target = source["target"]
                         if source.get("schema") == "triptych-oration-conclusion-source/v2":
                             calendar = source["calendar"]
@@ -2245,7 +2286,7 @@ def validate_liturgical_public_data(
                                 raise ValueError("conclusion execution outside its source calendar propers")
                             borrowed = value.get("taken_from") or {}
                             owner = borrowed.get("mass") or mass_key
-                            form = conclusion_source_form(source["calendar"], borrowed) if borrowed else value.get("form_id")
+                            form = conclusions.source_form(source["calendar"], borrowed) if borrowed else value.get("form_id")
                             proper = borrowed.get("proper") or value.get("name")
                             if [owner, form, proper] != target[:3]:
                                 raise ValueError("conclusion descriptor source owner differs")
@@ -2275,7 +2316,7 @@ def validate_liturgical_public_data(
                                 raise ValueError("conclusion execution outside Roman1962 propers")
                             borrowed = value.get("taken_from") or {}
                             owner = borrowed.get("mass") or mass_key
-                            form = conclusion_source_form(source["calendar"], borrowed) if borrowed else value.get("form_id")
+                            form = conclusions.source_form(source["calendar"], borrowed) if borrowed else value.get("form_id")
                             proper = borrowed.get("proper") or value.get("name")
                             if [owner, form, proper] != target[:3]:
                                 raise ValueError("conclusion descriptor source owner differs")
@@ -3178,6 +3219,10 @@ def _scan_web_data_files() -> dict[str, Path]:
     data_root = browser_data_root()
     inputs = (sorted(browser_delivery_files(products).items()) if products is not None else
               [(path.relative_to(data_root).as_posix(), path) for path in sorted(data_root.rglob("*"))])
+    # Every payload in this scan uses the same negative fingerprints. Check the
+    # ledger and every receipt again after the last payload, including membership.
+    quarantine_signature, quarantined_text_hashes = _quarantine_fingerprints()
+    conclusions = _ConclusionSources()
     reader_metadata, validated_sources = [], {}
     for relative, path in inputs:
         if path.is_dir() and not path.is_symlink():
@@ -3192,12 +3237,19 @@ def _scan_web_data_files() -> dict[str, Path]:
         if PurePosixPath(relative).parts[:3] == ("structure", "propers", "reader"):
             reader_metadata.append((relative, path))
         else:
-            validated_sources[relative] = validate_liturgical_public_data(path, logical_relative=relative)
+            validated_sources[relative] = _validate_liturgical_public_data(
+                path, logical_relative=relative, quarantined_text_hashes=quarantined_text_hashes, conclusions=conclusions,
+            )
         files[(SITE_DATA_ROOT / relative).as_posix()] = path
     reader_bindings = validate_propers_read_payload_sources(data_root, validated_sources=validated_sources)
     for relative, path in reader_metadata:
-        validate_liturgical_public_data(path, logical_relative=relative,
-                                       proper_reader_binding=reader_bindings.get(relative))
+        _validate_liturgical_public_data(
+            path, logical_relative=relative, proper_reader_binding=reader_bindings.get(relative),
+            quarantined_text_hashes=quarantined_text_hashes, conclusions=conclusions,
+        )
+    conclusions.check_current()
+    if _quarantine_fingerprints()[0] != quarantine_signature:
+        raise ReleaseError("postconciliar quarantine inputs changed during the public data scan")
 
     offered = offered_bible_ids()
     for bible_id in offered:
@@ -6241,10 +6293,10 @@ def parsed_html(path: Path) -> LinkParser:
     return parser
 
 
-def verify_links(output: Path) -> list[str]:
+def verify_links(output: Path, parse: Callable[[Path], LinkParser] = parsed_html) -> list[str]:
     errors: list[str] = []
     parsers = {
-        path.resolve(): (path.relative_to(output), parsed_html(path))
+        path.resolve(): (path.relative_to(output), parse(path))
         for path in output.rglob("*.html")
     }
     output_resolved = output.resolve()
@@ -6280,6 +6332,7 @@ def verify_catalog_reachability(
     manifest: dict,
     included: dict[tuple[str, str], dict],
     output: Path,
+    parse: Callable[[Path], LinkParser] = parsed_html,
 ) -> list[str]:
     """Require each admitted edition's reader or native print action in its catalog."""
     errors: list[str] = []
@@ -6307,7 +6360,7 @@ def verify_catalog_reachability(
         local_paths = catalog_local_paths.get(catalog_output)
         if local_paths is None:
             local_paths = set()
-            for href in parsed_html(catalog_path).links:
+            for href in parse(catalog_path).links:
                 parts = urlsplit(href)
                 if not parts.scheme and not parts.netloc:
                     local_paths.add(unquote(parts.path))
@@ -6541,7 +6594,17 @@ def _scan_artifact_topology(
             finally:
                 os.close(child_fd)
 
-    scan(root_fd, PurePosixPath())
+    # A held directory descriptor may expose an older enumeration after
+    # children have been written (btrfs). Open "." on the same inode for a
+    # fresh scan, just as each child directory is opened above.
+    try:
+        scan_fd = os.open(".", DIRECTORY_OPEN_FLAGS, dir_fd=root_fd)
+    except OSError as exc:
+        raise ReleaseError(f"cannot safely open artifact root for enumeration: {exc}") from exc
+    try:
+        scan(scan_fd, PurePosixPath())
+    finally:
+        os.close(scan_fd)
     return entries
 
 
@@ -6948,6 +7011,9 @@ def _verify_snapshot_contents(
         relative for relative, asset in native_tex_catalog()["assets"].items()
         if asset.get("kind") == "source-text"
     }
+    # Privacy, fragment and catalog checks read the same private artifact
+    # snapshot. Discard its parsed links and anchors with this verification.
+    parse_html = cache(parsed_html)
     for path in output.rglob("*"):
         relative = path.relative_to(output).as_posix()
         if (not path.is_file() or path.suffix not in TEXT_SUFFIXES | {".svg"}
@@ -6962,7 +7028,7 @@ def _verify_snapshot_contents(
         # The links a page carries are a property of the page, so it is parsed
         # once here rather than once per excluded publication.
         links = (
-            [unquote(href) for href in parsed_html(path).links]
+            [unquote(href) for href in parse_html(path).links]
             if path.suffix == ".html"
             else ()
         )
@@ -7039,8 +7105,8 @@ def _verify_snapshot_contents(
                 errors.append(f"{html_path.relative_to(output)}: public indexing is enabled")
 
     errors.extend(verify_link_previews(output, preview, expected_authorization))
-    errors.extend(verify_links(output))
-    errors.extend(verify_catalog_reachability(manifest, included, output))
+    errors.extend(verify_links(output, parse_html))
+    errors.extend(verify_catalog_reachability(manifest, included, output, parse_html))
     errors.extend(verify_web_data(output, pdf_aliases))
     checksum_path = output / "SHA256SUMS"
     if not checksum_path.is_file():
@@ -7678,6 +7744,11 @@ def main() -> int:
         choices=("github-pages",),
         help="with verify, reject conditions the named deployment target cannot enforce",
     )
+    parser.add_argument(
+        "--prepared-products",
+        action="store_true",
+        help="with build, require and verify existing browser products without generating them",
+    )
     parser.add_argument("--provider", help="with check --document, select one proper's provider")
     parser.add_argument("--document", help="with check --provider, select this canonical proper's three source outputs")
     with_examples(parser, tuple(e for verb in EXAMPLES for e in EXAMPLES[verb]))
@@ -7690,7 +7761,9 @@ def main() -> int:
             raise ReleaseError("--deployment-target is valid only for public artifact verification")
         if args.preview and args.command in {"check", "prepare"}:
             raise ReleaseError(f"--preview is not meaningful with {args.command}")
-        if args.command == "build":
+        if args.prepared_products and args.command != "build":
+            raise ReleaseError("--prepared-products is valid only for build")
+        if args.command == "build" and not args.prepared_products:
             prepare_browser_products()
         # One command, one scan of the copied browser/data inputs, released
         # when this command ends. See `held_repository_inputs`.

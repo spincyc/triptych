@@ -143,6 +143,70 @@ class PublicAlphaBrowserProductsTest(unittest.TestCase):
             "editorial_approval": False,
         })
 
+    def test_prepared_cli_build_opens_a_fresh_verified_snapshot_without_generation(self):
+        self.fixture.authorize_current_inputs()
+        for flags, preparations in (([], [self.root]), (["--prepared-products"], [])):
+            with self.subTest(flags=flags):
+                self.prepared.clear()
+                self.snapshots.clear()
+                result, _, stderr = self.fixture.run_main("build", *flags)
+                self.assertEqual(result, 0, stderr)
+                self.assertEqual(self.prepared, preparations)
+                self.assertEqual(len(self.snapshots), 1)
+
+        self.failure = "cache output hash changed"
+        result, _, stderr = self.fixture.run_main("build", "--prepared-products")
+        self.assertEqual(result, 1)
+        self.assertIn(self.failure, stderr)
+        self.assertEqual(self.prepared, [])
+
+    def test_prepared_flag_is_only_accepted_for_build(self):
+        for command in ("verify", "check", "prepare"):
+            with self.subTest(command=command):
+                result, _, stderr = self.fixture.run_main(command, "--prepared-products")
+                self.assertEqual(result, 1)
+                self.assertIn("--prepared-products is valid only for build", stderr)
+
+    def test_bulk_conclusion_sources_reopen_and_refuse_a_changed_authority_or_donor(self):
+        import _oration_endings
+        sources = self.tool._ConclusionSources()
+        with mock.patch.object(_oration_endings, "authority", side_effect=[
+            (None, {"first": 1}), ValueError("authority changed"),
+        ]) as load:
+            self.assertEqual(sources.authority_rows(), {"first": 1})
+            self.assertEqual(sources.authority_rows(), {"first": 1})
+            self.assertEqual(load.call_count, 1)
+            with self.assertRaisesRegex(self.tool.ReleaseError, "authority changed"):
+                sources.check_current()
+            self.assertEqual(load.call_count, 2)
+        sources = self.tool._ConclusionSources()
+        sources.calendars["roman-1962"] = {"held": {}}
+        with mock.patch.object(type(sources), "calendar", return_value={"new": {}}):
+            with self.assertRaisesRegex(self.tool.ReleaseError, "donor sources changed"):
+                sources.check_current()
+
+    def test_scan_rechecks_quarantine_ledger_after_the_last_payload(self):
+        ledger = self.root / self.tool.POSTCONCILIAR_TRANSLATIONS_RELATIVE
+        validate = self.tool.validate_propers_read_payload_sources
+
+        def change_ledger(*args, **kwargs):
+            with ledger.open("a", encoding="utf-8") as file:
+                file.write("\n")
+            return validate(*args, **kwargs)
+
+        with self.tool.held_repository_inputs(), mock.patch.object(
+            self.tool, "validate_propers_read_payload_sources", side_effect=change_ledger,
+        ), self.assertRaisesRegex(self.tool.ReleaseError, "quarantine inputs changed"):
+            self.tool.web_data_files()
+
+    def test_all_link_checks_share_one_parse_of_each_snapshot_page(self):
+        publications, output = self.build()
+        with mock.patch.object(self.tool, "parsed_html", wraps=self.tool.parsed_html) as parse:
+            self.tool.verify_output(self.manifest, publications, output, False)
+        pages = [call.args[0] for call in parse.call_args_list]
+        self.assertEqual(len(pages), len(list(output.rglob("*.html"))))
+        self.assertEqual(len(pages), len(set(pages)))
+
     def test_rewriting_artifact_checksums_cannot_hide_changed_product_bytes(self):
         publications, output = self.build()
         (output / "browse/structure/sources/index.json").write_text('{"works":["tampered"]}\n')

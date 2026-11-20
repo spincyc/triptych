@@ -107,6 +107,30 @@ def _fingerprints(root: Path, paths, cache: dict | None = None) -> list[dict]:
     return result
 
 
+class _CatalogInputs:
+    """Hold one dependency snapshot until the entire source catalog is ready."""
+
+    def __init__(self, root: Path):
+        self.root = root
+        self.observed = {}
+        self.leaves = {}
+
+    def fingerprints(self, paths):
+        names = sorted(set(paths))
+        _fingerprints(self.root, (name for name in names if name not in self.observed),
+                      self.observed)
+        return [self.observed[name][1] for name in names]
+
+    def verify(self):
+        # Reopen every distinct path, including selection-only inputs, with
+        # the original symlink/regular-file checks. ctime catches edits which
+        # restore the original size, contents or modification time.
+        for name, (signature, _) in self.observed.items():
+            after = _source(self.root, name).stat()
+            current = (after.st_dev, after.st_ino, after.st_size, after.st_mtime_ns, after.st_ctime_ns)
+            _need(current == signature, "canonical native print inputs changed during preparation: " + name)
+
+
 def _file(value: str, payload: bytes) -> dict:
     value = _relative(value)
     try:
@@ -286,33 +310,42 @@ def _binary_selection(root: Path, recipe: dict, kind: str, dependencies: set[str
     return selected
 
 
-def _publication_inputs(root: Path, recipe: dict, assembly=None):
+def _publication_inputs(root: Path, recipe: dict, assembly=None, *, leaves=None):
     from _document_schema import _literal_closure, load_manifest
     from _document_types import Assembly
     assembly = assembly or Assembly(root)
     dependencies = set(recipe["dependencies"])
     manifest_path = root / f"src/{recipe['provider']}/{recipe['canonical']}/publication.toml"
     _need(manifest_path.is_file(), "native source bundle requires a declared publication manifest")
-    declaration = load_manifest(root, manifest_path)
     # The literal graph is an independent supplement to Make's conservative
     # owned/shared input sets. Computed inputs retain their original definitions;
     # their selected typed-family closure is provided by the owning Make graph.
-    literal, computed = _literal_closure(root, declaration, assembly=assembly)
+    leaf = manifest_path.parent
+    if leaves is None:
+        leaves = {}
+    if leaf not in leaves:
+        declaration = load_manifest(root, manifest_path, assembly=assembly)
+        literal, computed = _literal_closure(root, declaration, assembly=assembly)
+        leaves[leaf] = (declaration["kind"], computed,
+                        {path.relative_to(root).as_posix() for path in literal},
+                        {path.relative_to(root).as_posix() for path in assembly.dependencies(leaf)},
+                        {path.relative_to(root).as_posix() for path in assembly.files(leaf)})
+    kind, computed, literal_names, projection_inputs, virtual = leaves[leaf]
     dependencies.add(manifest_path.relative_to(root).as_posix())
-    dependencies.update(path.relative_to(root).as_posix() for path in literal)
-    if declaration["kind"] == "pictorial-dictionary":
+    dependencies.update(literal_names)
+    if kind == "pictorial-dictionary":
         dependencies.add("tools/render-sanctuary-dictionary")
         base = f"src/{recipe['provider']}/{_DICTIONARY}"
         dependencies.add(base + "/research/artwork-manifest.toml")
         dependencies.update(path.relative_to(root).as_posix()
                             for path in (root / base / "shared").rglob("*.toml"))
-    allowed_binary = _binary_selection(root, recipe, declaration["kind"], dependencies, assembly)
+    # Only per-edition Make/literal inputs participate in artwork selection.
+    # Projection dependencies may include evidence which should never mount.
+    allowed_binary = _binary_selection(root, recipe, kind, dependencies, assembly)
     dependencies.update(allowed_binary)
-    dependencies.update(path.relative_to(root).as_posix()
-                        for path in assembly.dependencies(manifest_path.parent))
-    dependencies.difference_update(path.relative_to(root).as_posix()
-                                   for path in assembly.files(manifest_path.parent))
-    return dependencies, computed, declaration["kind"], allowed_binary
+    dependencies.update(projection_inputs)
+    dependencies.difference_update(virtual)
+    return dependencies, computed, kind, allowed_binary
 
 
 def _revision_file(root: Path, recipe: dict, repository=None, assembly=None) -> tuple[str, bytes]:
@@ -337,12 +370,12 @@ def _publication_files(root: Path, recipe: dict, work: Path, dependencies, kind,
     assembly = assembly or Assembly(root)
     files = {}
     for value in sorted(dependencies):
-        path = _source(root, value)
-        if path.suffix.lower() in _RENDER_SUFFIXES:
+        suffix = posixpath.splitext(value)[1].lower()
+        if suffix in _RENDER_SUFFIXES:
             _need(value.startswith((f"src/{recipe['provider']}/", "src/common/")),
                   "native publication render input has no provider/shared owner: " + value)
-            if path.suffix.lower() in _TEXT_SUFFIXES or value in allowed_binary:
-                files[value] = path.read_bytes()
+            if suffix in _TEXT_SUFFIXES or value in allowed_binary:
+                files[value] = _source(root, value).read_bytes()
     leaf = root / "src" / recipe["provider"] / recipe["canonical"]
     files.update((path.relative_to(root).as_posix(), text.encode("utf-8"))
                  for path, text in assembly.files(leaf).items()
@@ -386,7 +419,7 @@ def prepare_bundle(output_id: str, *, root: Path = ROOT, scratch_root: Path | No
                    documents: dict | None = None, revision: str | None = None,
                    recipe: dict | None = None, fingerprint_cache: dict | None = None,
                    external_assets: dict[str, bytes] | None = None, _checked: bool = False,
-                   revision_repository=None, assembly=None) -> dict:
+                   revision_repository=None, assembly=None, _catalog_inputs=None) -> dict:
     """Prepare one publicly admitted native output; never invoke a TeX engine.
 
     Explicit documents/recipe/revision permit a publisher to hold one verified
@@ -415,16 +448,19 @@ def prepare_bundle(output_id: str, *, root: Path = ROOT, scratch_root: Path | No
     dependencies = set(recipe["dependencies"])
     dependencies.update(value for value in ("Makefile", "scripts/_native_print_bundles.py", "scripts/_print_document.py")
                         if (root / value).is_file())
-    guarded_inputs = _fingerprints(root, dependencies, fingerprint_cache)
+    fingerprints = (_catalog_inputs.fingerprints if _catalog_inputs is not None
+                    else lambda paths: _fingerprints(root, paths, fingerprint_cache))
+    guarded_inputs = fingerprints(dependencies)
     computed, kind, allowed_binary = [], None, set()
     if recipe["family"] == "publication":
         dependencies, computed, kind, allowed_binary = _publication_inputs(
-            root, dict(recipe, dependencies=dependencies), assembly)
+            root, dict(recipe, dependencies=dependencies), assembly,
+            leaves=None if _catalog_inputs is None else _catalog_inputs.leaves)
     else:
         software = ("tools/typeset-bible",) if recipe["family"] in {"bible", "reading-plan"} else (
             "scripts/_typeset_papal.py", "scripts/_papal_collection.py")
         dependencies.update(value for value in software if (root / value).is_file())
-    inputs = _fingerprints(root, dependencies, fingerprint_cache)
+    inputs = fingerprints(dependencies)
     scratch = _scratch(root, scratch_root)
     with tempfile.TemporaryDirectory(prefix="source-", dir=scratch) as temporary:
         work = Path(temporary)
@@ -450,9 +486,10 @@ def prepare_bundle(output_id: str, *, root: Path = ROOT, scratch_root: Path | No
                   "computed_source_inputs": computed, "files": records, "source_inputs": inputs,
                   "runtime_requirement": "matching-versioned-engine-format-packages-and-original-fonts",
                   "review_status": "source-prepared-not-render-reviewed"}
-        _need(inputs == _fingerprints(root, dependencies, fingerprint_cache), "canonical native print inputs changed during preparation")
-        _need(guarded_inputs == _fingerprints(root, (row["path"] for row in guarded_inputs), fingerprint_cache),
-              "canonical native print inputs changed during selection")
+        if _catalog_inputs is None:
+            _need(inputs == fingerprints(dependencies), "canonical native print inputs changed during preparation")
+            _need(guarded_inputs == fingerprints(row["path"] for row in guarded_inputs),
+                  "canonical native print inputs changed during selection")
     bundle["render_sha256"] = render_identity(bundle)
     bundle["content_sha256"] = _sha(canonical(bundle))
     validate_bundle(bundle)
@@ -544,7 +581,8 @@ def prepare_catalog(root: Path = ROOT, *, scratch_root: Path | None = None,
     recipes = [papal.get(identity) or printing.select(documents[identity]["document"],
                documents[identity]["edition"], root=root) for identity in wanted]
     checked = printing.check_many(recipes, root=root)
-    routes, assets, source_paths, cache, prepared = {}, {}, set(), {}, {}
+    routes, assets, source_paths, prepared = {}, {}, set(), {}
+    inputs = _CatalogInputs(root)
     # One view of the work tree serves every publication's revision stamp.
     # Without one, each publication bundle refuses with the reason itself.
     repository = None
@@ -565,7 +603,7 @@ def prepare_catalog(root: Path = ROOT, *, scratch_root: Path | None = None,
                                repository=repository, assembly=assembly)
     for identity, recipe in zip(wanted, checked, strict=True):
         bundle = prepare_bundle(identity, root=root, scratch_root=scratch_root, documents=documents,
-                                revision=revision, recipe=recipe, fingerprint_cache=cache,
+                                revision=revision, recipe=recipe, _catalog_inputs=inputs,
                                 external_assets=assets, _checked=True, revision_repository=repository,
                                 assembly=assembly)
         prepared[identity] = bundle
@@ -582,6 +620,7 @@ def prepare_catalog(root: Path = ROOT, *, scratch_root: Path | None = None,
         _need(route not in assets, "duplicate native source bundle transport")
         assets[route] = payload
         routes[identity] = {"route": route, "bytes": len(payload), "sha256": _sha(payload)}
+    inputs.verify()
     return {"schema": CATALOG_SCHEMA, "source_revision": revision, "bundles": routes,
             "assets": assets, "source_paths": sorted(source_paths)}
 

@@ -529,7 +529,7 @@ endif
 
 public-site-artifact: check-curriculum-source-rights | prepare-browser-data
 	@$(WEB_FIGURES)
-	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) build
+	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) build --prepared-products
 
 deployment-source-gates: $(DEPLOYMENT_SOURCE_MEMBERS) | prepare-browser-data
 	@$(PYTHON) tools/tpt calendar-days check
@@ -826,11 +826,11 @@ prepare-public-alpha: check-curriculum-source-rights | prepare-browser-data
 # web-figures would verify the products a second time.
 public-preview: check-deployment-sources
 	@$(WEB_FIGURES)
-	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) build --preview
+	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) build --preview --prepared-products
 
 public-site: check-deployment-sources
 	@$(WEB_FIGURES)
-	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) build
+	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) build --prepared-products
 
 verify-public-preview: check-curriculum-source-rights | prepare-browser-data
 	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) verify --preview

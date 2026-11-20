@@ -110,6 +110,21 @@ class NativeSourceBundleTests(unittest.TestCase):
         self.assertIn("src/gpt/articles/faith/example/body.tex", [row["path"] for row in result["files"]])
         self.assertIn("src/gpt/articles/faith/example/body.tex", [row["path"] for row in result["source_inputs"]])
 
+    def test_catalog_rechecks_sources_after_the_last_bundle(self):
+        body = self.leaf / "body.tex"
+        original = bundles._externalize
+        def replace_during_packaging(bundle, assets, **options):
+            result = original(bundle, assets, **options)
+            if "shared_text" in options:
+                body.write_bytes(body.read_bytes().replace(b"Exact", b"Other"))
+            return result
+        with patch.object(printing, "select", return_value=self.recipe), \
+                patch.object(printing, "check_many", side_effect=lambda recipes, **_: [
+                    dict(row, status="valid", validation={"source": "pass"}) for row in recipes]), \
+                patch.object(bundles, "_externalize", side_effect=replace_during_packaging):
+            with self.assertRaisesRegex(bundles.BundleError, "changed during preparation.*body.tex"):
+                bundles.prepare_catalog(self.root, documents=self.documents, revision=self.revision)
+
     def test_shared_template_and_generated_page_replace_snapshots_and_change_render_identity(self):
         from types import SimpleNamespace
         from _document_types import Assembly
