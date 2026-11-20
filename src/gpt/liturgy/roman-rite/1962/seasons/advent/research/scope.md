@@ -4,8 +4,7 @@
 
 An evergreen primer for a person keeping Advent with the 1962 Roman Missal.
 The work follows the universal 1962 calendar and identifies United States
-discipline where it discusses current local practice. The body takes about
-half an hour at a reflective pace. The daily readings and prayer appendix
+discipline where it discusses current local practice. The body is the full study and can be read over several evenings. The daily readings and prayer appendix
 are for use throughout the season. The future Lent primer can use the same
 order at greater length.
 
@@ -39,3 +38,41 @@ provider-neutral holdings, filling whole-text gaps where lawful. Write from
 the collated evidence in a fresh session, then read the whole as a prospective
 reader and check the claims and quotations independently. Preserve the sources,
 reviews and public reader checks with the edition.
+## Expanded Advent study
+
+The maintainer clarified on November 20 that the full study should have as
+many sections as the sources sustain. A later pass can derive synopsis
+editions from the full text. Develop the significant material already in
+the corpus. Let readers use the existing short rule and daily appendix
+independently, even when reading the full study in stages.
+
+* The season. Teach what it means to await the same Lord first born among
+  Israel and coming to judge. Give the promises of David's house more room.
+  Use one early Father on the two comings and Bernard on the Lord dwelling
+  with those who keep his word. Expand the historical story far enough to
+  show how the inherited Roman books took their shape in the printed Missal
+  and in 1962, with concrete continuity and a genuine difference wherever
+  verified. Explain the stational calendar once, when the first station
+  comes into view.
+* Keeping Advent. Teach with examples how to set a time and learn to pray
+  from a passage, what to do when words or attention fail, what prayer and
+  fasting have to do with mercy, and how to approach confession and repair
+  wrong. Keep one short and one fuller rule. Trace the difference between
+  personal freedom and the 1962 books' inherited observances.
+* Through Advent. Let each Sunday have room for a real argument from its
+  Mass and the Fathers. Under separate subtitles give the Ember Days and
+  the last dated evenings their own shape. Teach the relation of lessons,
+  prayer and charity rather than listing all the components of the Mass.
+  Keep stations and the textual details that actually open a passage.
+* Our Lady and coming to Christmas. Give Mary and the Word made flesh room
+  between the preparation of John and the Vigil. Show what she does and
+  says, distinguish the December feast's precedence and Marian preparation
+  when cited, and use a major Father or doctor at his best. Shape a more
+  spacious Christmas approach around Joseph, the manger, arrest and burial
+  with the risen Lord, the Eucharist, and adoption. Keep the Advent endpoint
+  and no duplicate proper.
+* Apparatus. Keep the domestic reading plan, prayers, book and law appendix,
+  concordance, and references reachable from the relevant chapters. Preserve
+  exact received wording. Expansive means real teaching and primary evidence
+  for each additional section, with focused subheadings to support a later
+  synopsis and distinct loci for the bindings.

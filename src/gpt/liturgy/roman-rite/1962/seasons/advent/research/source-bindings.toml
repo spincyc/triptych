@@ -10,8 +10,8 @@ role = "direct-witness"
 states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-11-18"
 source_fingerprint = "sha256:a582f68337f24ed8de61165aeab4eb9323e230ee0ee19305d0dcde5cde8c1db8"
-claim_keys = ["coming-jerusalem"]
-context = "Coming jerusalem."
+claim_keys = ["coming-jerusalem", "coming-cyril-expanded"]
+context = "Coming jerusalem. Coming cyril expanded."
 
 [[bindings]]
 source_id = "passage.nicene-and-post-nicene-fathers.series-2-volume-7.new-york-1894.cyril-catechesis-15.2"
@@ -25,12 +25,12 @@ context = "Coming jerusalem."
 
 [[bindings]]
 source_id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-7.ccel-web-2026-10-06.ccel-text-56d84cfa"
-loci = ["Catechetical Lecture XV.1–3, lines 16156–16210"]
+loci = ["Catechetical Lecture XV.1–3, lines 16156–16210", "Catechetical Lecture XV §§1–2, latter part of §1 on Christ judged and Judge, §2 on Malachi and Paul's fire, lines 16165–16210"]
 role = "direct-witness"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:1f357ee73bda8276cc25eb0133278376e91529929c0187de2d364f9c3b192261"
-claim_keys = ["coming-jerusalem"]
-context = "Coming jerusalem."
+claim_keys = ["coming-jerusalem", "coming-cyril-expanded"]
+context = "Coming jerusalem. Coming cyril expanded."
 
 [[bindings]]
 source_id = "passage.bernard-of-clairvaux.st-bernards-sermons-for-the-seasons-volume-1.1921-dublin-browne-and-nolan.bernard-in-adventu-5.1"
@@ -144,7 +144,7 @@ context = "History roman books."
 
 [[bindings]]
 source_id = "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.pdf-text-layout-6ca97fd7"
-loci = ["Wilson pp. 113–116, §§150–157"]
+loci = ["Wilson pp. 113–116, §§150–157", "Wilson p. 113, §151.1; Excita domine corda nostra"]
 role = "direct-witness"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:0da5f3259e645fa4908aa632beef47483824fccf4e5b83ddc7e60b0f313fe9bb"
@@ -193,12 +193,12 @@ context = "Keeping prayer."
 
 [[bindings]]
 source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-1.ccel-web-2026-10-13.ccel-text-21000696"
-loci = ["Letter 130 to Proba, §§18–20 and 31, lines 43561–43632 and 43914–43930"]
+loci = ["Letter 130 to Proba, §§18–20 and 31, lines 43561–43632 and 43914–43930", "Augustine, Confessions 8.12.28–29, lines 11828–11873, quotation at 11852"]
 role = "direct-witness"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:8107c8312db683f3a6bfab04fe1f0992df14d62972def172358894ca9f8ac889"
-claim_keys = ["keeping-prayer"]
-context = "Keeping prayer."
+claim_keys = ["keeping-prayer", "advent-sunday-i-augustine"]
+context = "Keeping prayer. Advent sunday i augustine."
 
 [[bindings]]
 source_id = "passage.nicene-and-post-nicene-fathers.series-2-volume-12.new-york-1895.leo-sermo-16.2"
@@ -212,12 +212,12 @@ context = "Keeping fast."
 
 [[bindings]]
 source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
-loci = ["Proprium de Tempore, printed pp. 1–20"]
+loci = ["Proprium de Tempore, printed pp. 1–20", "Proprium de tempore: In vigilia Nativitatis Domini, printed p. 15 (PDF 96), Introit and Collect no. 99", "Printed p. 5 no. 29; p. 6 nos. 36 and 38; pp. 7–8 nos. 45 and 47; p. 8 heading of longer Mass; p. 10 nos. 63 and 66; p. 14 no. 94"]
 role = "direct-witness"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:489586789f24da05ee18ba23686f134dd71e18c7a91bd4b22190fa922d10dd76"
-claim_keys = ["calendar-and-mass"]
-context = "Calendar and mass."
+claim_keys = ["calendar-and-mass", "christmas-vigil-introit", "sundays-ember-and-communion"]
+context = "Calendar and mass. Christmas vigil introit. Sundays ember and communion."
 
 [[bindings]]
 source_id = "passage.holy-see.acta-apostolicae-sedis.volume-52-1960.rubricae-generales-n-20"
@@ -306,17 +306,17 @@ role = "direct-witness"
 states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-09-03"
 source_fingerprint = "sha256:84657cc381dcc41fa132794a504160bdfa5177eab34e8fc4d8f950cba3cd7005"
-claim_keys = ["calendar-and-mass"]
-context = "Calendar and mass."
+claim_keys = ["calendar-and-mass", "history-venice"]
+context = "Calendar and mass. History venice."
 
 [[bindings]]
 source_id = "artifact.gregory-the-great.homiliae-in-evangelia.wikisource-web-2026-09-17.complete-extracted-text-dc25dd69"
-loci = ["1.1", "1.3", "6.1-2", "7.1-3", "8.1", "20.2-4"]
+loci = ["1.1", "1.3", "6.1-2", "7.1-3", "8.1", "20.2-4", "1"]
 role = "direct-witness"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:dd03fd6ff09944af5ba01e741418ae3278e9bc68a08acb4d0cd4538129984eea"
-claim_keys = ["sundays-gregory"]
-context = "Sundays gregory."
+claim_keys = ["sundays-gregory", "history-gregory-heading"]
+context = "Sundays gregory. History gregory heading."
 
 [[bindings]]
 source_id = "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.advent-primer-advent-1-mattins-lesson-7"
@@ -369,24 +369,14 @@ claim_keys = ["prayer-alma"]
 context = "Prayer alma."
 
 [[bindings]]
-source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-vigil-nativity-lord-orations"
-loci = ["Secret at printed p. 16, no. 105; artifact PDF p. 97 (marginal number read on the page image); Postcommunion at printed p. 16, no. 107; artifact PDF p. 97 (marginal number read on the page image)"]
-role = "direct-witness"
-states = ["cataloged", "acquired", "inspected", "verified"]
-verified_on = "2026-09-03"
-source_fingerprint = "sha256:bfb1d49b7a3349582ffb9322c617078dea1fbe5a4b125c469d7f6e123d151c5b"
-claim_keys = ["vigil-and-christmas"]
-context = "Vigil and christmas."
-
-[[bindings]]
 source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.advent-primer-20261119-advent-christmas-stations"
 loci = ["Proprium de tempore: Dominica I Adventus, printed p. 1 (PDF 82); In vigilia Nativitatis Domini, printed p. 15 (PDF 96); Ad primam Missam in nocte, p. 17 (PDF 98); Ad secundam Missam in aurora, p. 19 (PDF 100); Ad tertiam Missam in die Nativitatis Domini, p. 20 (PDF 101); station headings"]
 role = "direct-witness"
 states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-11-19"
 source_fingerprint = "sha256:9507fce3b0e7a1a1674561f6bbbb04a5d71e560d795e7f76b772dd60c1b6cd2b"
-claim_keys = ["vigil-and-christmas"]
-context = "Vigil and christmas."
+claim_keys = ["vigil-and-christmas", "history-venice"]
+context = "Vigil and christmas. History venice."
 
 [[bindings]]
 source_id = "passage.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.8.1-bethlehem"
@@ -567,9 +557,210 @@ context = "Prayer magnificat."
 
 [[bindings]]
 source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.gutenberg-text-7d10da78"
-loci = ["Rom.13.11-14", "Luke.21.25-36", "Is.1.10-18", "Is.2.1-5", "Is.11.1-10", "Ps.24.1-10", "1Thess.5.1-11", "Rom.15.4-13", "Matt.11.2-10", "Is.35.1-10", "Is.40.1-11", "Is.42.1-9", "Is.61.1-4", "Luke.4.16-22", "Luke.7.18-28", "Phil.4.4-7", "John.1.19-28", "Phil.1.3-14", "John.14.21-27", "Luke.1.26-38", "Is.45.5-8", "Luke.1.39-47", "Dan.3.46-51", "1Cor.4.1-5", "Luke.3.1-14", "Mich.5.2-5", "Luke.1.67-79", "Heb.1.1-6", "John.6.47-51", "John.1.1-14", "Matt.1.18-21", "Luke.2.1-14", "Ps.24.1-3", "Is.9.2", "Is.9.6-7", "Is.22.22", "Is.35.5-6", "Is.40.6-8", "Is.42.7", "Is.45.8", "Is.61.1", "Is.64.1", "Dan.3.49-50", "Matt.21.9", "Luke.1.26-55", "Luke.2.7-14", "Luke.3.1-6", "Luke.3.10-14", "Luke.21.25-34", "Luke.23.50-53", "John.6.51-52", "John.12.24-25", "John.14.23", "John.18.4", "John.18.12", "Rom.15.4", "Gal.4.4-7", "Eph.2.14-18", "Phil.1.12-14", "1Thess.5.17", "Tit.2.11-15"]
+loci = ["Rom.13.11-14", "Luke.21.25-36", "Is.1.10-18", "Is.2.1-5", "Is.11.1-10", "Ps.24.1-10", "1Thess.5.1-11", "Rom.15.4-13", "Matt.11.2-10", "Is.35.1-10", "Is.40.1-11", "Is.42.1-9", "Is.61.1-4", "Luke.4.16-22", "Luke.7.18-28", "Phil.4.4-7", "John.1.19-28", "Phil.1.3-14", "John.14.21-27", "Luke.1.26-38", "Is.45.5-8", "Luke.1.39-47", "Dan.3.46-51", "1Cor.4.1-5", "Luke.3.1-14", "Mich.5.2-5", "Luke.1.67-79", "Heb.1.1-6", "John.6.47-51", "John.1.1-14", "Matt.1.18-21", "Luke.2.1-14", "Ps.24.1-3", "Is.9.2", "Is.9.6-7", "Is.22.22", "Is.35.5-6", "Is.40.6-8", "Is.42.7", "Is.45.8", "Is.61.1", "Is.64.1", "Dan.3.49-50", "Matt.21.9", "Luke.1.26-55", "Luke.2.7-14", "Luke.3.1-6", "Luke.3.10-14", "Luke.21.25-34", "Luke.23.50-53", "John.6.51-52", "John.12.24-25", "John.14.23", "John.18.4", "John.18.12", "Rom.15.4", "Gal.4.4-7", "Eph.2.14-18", "Phil.1.12-14", "1Thess.5.17", "Tit.2.11-15", "Ps.24.5", "Ps.69.2", "Is.58.3-8", "Ps.50.12", "Luke.19.5-10", "Ex.16.6-7", "Ex.16.13-15", "Matt.1.1-17", "Matt.1.22-25", "Mich.5.2-4", "1Kings.16.1", "1Kings.16.11", "1Kings.16.19", "John.10.17-18", "John.20.19-20", "John.6.54-57", "2Kings.7.1-29", "3Kings.8.17-20", "Is.9.2-7", "Luke.1.26-33", "Luke.1.54-55", "Luke.1.67-75", "Ps.103.2", "Mal.3.1-3", "1Cor.3.12-15", "1Cor.15.49", "Acts.1.7", "Matt.25.1-13", "Matt.25.31-40", "John.20.22-23", "Eph.3.16-17", "Rom.15.7-13", "Is.7.10-15", "Is.11.1-5", "Is.11.10", "Is.35.4-6", "Is.45.1-8", "John.3.26", "Matt.5.5", "Luke.7.20-22", "Dan.3.47-51", "Wis.8.1", "Ex.3.1-10", "Ex.6.6", "Ex.19.1-20.26", "Luke.1.76-79", "Matt.1.22-23", "Luke.1.28", "Luke.1.42"]
 role = "direct-witness"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:192362da4273317daa469770d5b137a16215f015fc72fae410c0ece2bf70e03f"
-claim_keys = ["scripture-course", "scripture-in-the-body"]
-context = "Scripture course. Scripture in the body."
+claim_keys = ["scripture-course", "scripture-in-the-body", "keeping-scripture", "christmas-bible-expansion", "coming-scripture-expanded", "sundays-scripture-expanded"]
+context = "Scripture course. Scripture in the body. Keeping scripture. Christmas bible expansion. Coming scripture expanded. Sundays scripture expanded."
+
+[[bindings]]
+source_id = "passage.john-cassian.conlationes.gibson-english-ccel-2026-11-20.10.10"
+loci = ["Conference X, chapter 10, Of the method of continual prayer"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:ffb2c9a78a03a00bd082a5ca2685c121492a9c2dc11e56f659919d97dc81398d"
+claim_keys = ["keeping-cassian"]
+context = "Keeping cassian."
+
+[[bindings]]
+source_id = "passage.council-of-trent.catechismus-romanus.donovan-baltimore-lucas-brothers.part-2.penance.satisfaction-three-heads"
+loci = ["Part II, Penance, satisfaction under three heads"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-18"
+source_fingerprint = "sha256:e7d092fce0b63f63bc55e3d93d1053c93026e36ed8979512c0d53776e461697a"
+claim_keys = ["keeping-penance"]
+context = "Keeping penance."
+
+[[bindings]]
+source_id = "passage.bernard-of-clairvaux.st-bernards-sermons-for-the-seasons-volume-1.1921-dublin-browne-and-nolan.bernard-missus-est-4.8-angel-awaits"
+loci = ["Bernard of Clairvaux, Homiliae super Missus est IV.8 (Fourth Sermon on the Virgin Mother)"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-18"
+source_fingerprint = "sha256:cc8b34c480ebf5f4170ff1679bf3cced488d7181f4008f02721037bc1f884b44"
+claim_keys = ["christmas-mary-consent"]
+context = "Christmas mary consent."
+
+[[bindings]]
+source_id = "passage.bernard-of-clairvaux.st-bernards-sermons-for-the-seasons-volume-1.1921-dublin-browne-and-nolan.bernard-missus-est-4.8-arise-run-open"
+loci = ["Bernard of Clairvaux, Homiliae super Missus est IV.8 (Fourth Sermon on the Virgin Mother)"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-18"
+source_fingerprint = "sha256:8d46e19747ea622564138920c02a29371f9d6fea255ba7b8661b0fdc95c4332d"
+claim_keys = ["christmas-mary-consent"]
+context = "Christmas mary consent."
+
+[[bindings]]
+source_id = "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.3.22.4.ocr"
+loci = ["3.22.4"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:d7006bfe33f7fd78c97721e0b05f9c235cce3f8222b51189841772276d3fb760"
+claim_keys = ["christmas-mary-eve"]
+context = "Christmas mary eve."
+
+[[bindings]]
+source_id = "passage.holy-see.acta-apostolicae-sedis.volume-52-1960.rubricae-generales-n-15"
+loci = ["aas-52-p-598-rubricae-generales-n-15"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-18"
+source_fingerprint = "sha256:f2d23dea01ef2313547285ec663d0c2cb798587609a9b3cc0a6ec26992939cc8"
+claim_keys = ["christmas-immaculate-feast"]
+context = "Christmas immaculate feast."
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.immaculate-conception-selected-feast-four-propers-word-collation-2026-10-20"
+loci = ["1962 CMAA PDF 518/printed 437 (opening numeral suppressed), Collect 1873 crossing left foot to right top; PDF 519/printed 438, Secret 1881, Communion 1882 and Postcommunion 1883 in right column."]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-20"
+source_fingerprint = "sha256:2d2687a757e8e15ed0390ca372639a248044283d1fc35d1f018eafc68e219fb7"
+claim_keys = ["christmas-immaculate-feast"]
+context = "Christmas immaculate feast."
+
+[[bindings]]
+source_id = "segment.pius-ix.ineffabilis-deus.1855-murphy-english.complete-english-ocr"
+loci = ["Definition, p. 95, OCR lines 2556–2566"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:32ddcdb1eee7314b6776176d5357ea56ff6bc1e7cd647366f1a9d7fcf9dab800"
+claim_keys = ["christmas-immaculate-definition"]
+context = "Christmas immaculate definition."
+
+[[bindings]]
+source_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-remaining-strict12-verify-vigil-nativity-lord--main--collect--all--1"
+loci = ["Christmas Eve, printed133 heading and own Prayer, through135 ending.; printed pp. 133-135; PDF 134,135,136"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-23"
+source_fingerprint = "sha256:96d78368b4e73d0923a121edd97de3f94e408345ab4c348842cfd6836eda8008"
+claim_keys = ["christmas-vigil-collect"]
+context = "Christmas vigil collect."
+
+[[bindings]]
+source_id = "passage.cyril-of-alexandria.commentary-on-john.english-pusey-randell-lfc-1874-1885.book-4-jn-6.51-58"
+loci = ["4"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:273d8fd61dbf70e919349f7d0d35457802a83306c4d76804658fda1c062e13d8"
+claim_keys = ["christmas-cyril-life"]
+context = "Christmas cyril life."
+
+[[bindings]]
+source_id = "passage.nicene-and-post-nicene-fathers.series-2-volume-4.new-york-1892.athanasius-de-incarnatione-54.2-3"
+loci = ["Athanasius of Alexandria, De Incarnatione Verbi 54.2-3 (On the Incarnation of the Word)"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-19"
+source_fingerprint = "sha256:819080e8f82621ac56be96e961bdae23ecd752f6cd2ef9527f608e9722b765a4"
+claim_keys = ["christmas-wonderful-exchange"]
+context = "Christmas wonderful exchange."
+
+[[bindings]]
+source_id = "passage.nicene-and-post-nicene-fathers.series-2-volume-7.new-york-1894.cyril-catechesis-15.4"
+loci = ["Cyril of Jerusalem, Catechesis XV.4"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-18"
+source_fingerprint = "sha256:fc4f253fe9a59b29c0f76c89d2176b20d2d98d9a99cdb570fbd34f3fa656b85e"
+claim_keys = ["coming-cyril-expanded"]
+context = "Coming cyril expanded."
+
+[[bindings]]
+source_id = "passage.nicene-and-post-nicene-fathers.series-2-volume-7.new-york-1894.cyril-catechesis-15.26"
+loci = ["Cyril of Jerusalem, Catechesis XV.26"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-18"
+source_fingerprint = "sha256:76c9221f91ea8fc8971aaf6aacd29ed490bb3cdc27e1157c8581739913cae11b"
+claim_keys = ["coming-cyril-expanded"]
+context = "Coming cyril expanded."
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.quo-primum-1570"
+loci = ["Bulla Quo primum of Pius V, 14 July 1570, front matter, artifact PDF pp. 3-4"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:b82e5e6e73612c17cfdb3aee985702b2f450351bffd8a085e9d3339f7bede891"
+claim_keys = ["history-venice"]
+context = "History venice."
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.venice-1570.missale-romanum-1570-text-563f4dd2"
+loci = ["Associated facsimile leaves n52–54, n55, n57, n67–68, the numbering of Advent Sundays, Introit, station, collect, Gospel and arrangement in de Tempore; bases of claims are the inspected page images, see appendix-references.md", "Associated facsimile leaves n52 bottom, n53 left, n54 bottom right; 1570's Advent I instructions after the Collect and at the dismissal; see appendix-references.md"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:e76b722596e6d4f31cf9ec2c7d4af5d34cbac1377e03b6926b67866f545a32d4"
+claim_keys = ["history-venice"]
+context = "History venice."
+
+[[bindings]]
+source_id = "artifact.holy-see.acta-apostolicae-sedis.volume-52-1960.vatican-ocr-pdf-c734079d"
+loci = ["AAS 52 p. 671, no. 434; for the rank of these Sundays and permitted commemorations see nos. 11 and 111a"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:81a7d012c7b0dca864e8070cd06bc7377e30c50e4cfd6097ce32d667c7eefa7d"
+claim_keys = ["history-venice"]
+context = "History venice."
+
+[[bindings]]
+source_id = "passage.holy-see.acta-apostolicae-sedis.volume-52-1960.rubricae-generales-missalis-n-507"
+loci = ["aas-52-pp-680-681-rubricae-generales-missalis-n-507"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-18"
+source_fingerprint = "sha256:b98b470c11092ed4a9ce240f8e7d67e68e33ad60bd21443966c35eee6b999935"
+claim_keys = ["history-venice"]
+context = "History venice."
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-11.ccel-web-2026-09-17.ccel-text-8bdb50c6"
+loci = ["John Chrysostom, Homilies on Romans 24, on Rom. 13:11–14, lines 46756–46846"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:7d98baa780dd6a78202b5e9f7bd92f641eae103c1a9e2deb89f324578bc47cab"
+claim_keys = ["advent-sunday-i-chrysostom"]
+context = "Advent sunday i chrysostom."
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-10.ccel-web-2026-09-17.ccel-text-adb8f1c9"
+loci = ["John Chrysostom, Homilies on Matthew 36.2–3, lines 22615–22709"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:0209917237dc0599614ab5b3a70d1563de63045007c4a8d4eb7776dd6ec37992"
+claim_keys = ["advent-sunday-ii-chrysostom"]
+context = "Advent sunday ii chrysostom."
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-13.english-ccel-web-2026-09-05.ccel-npnf113-text-54274dd9"
+loci = ["John Chrysostom, Homilies on Philippians 14, on Phil. 4:4–7, lines 22275–22365"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:374d296602c0a52e4c252ad0e7704b9c9952d06f6b66b891bb391c8509c390db"
+claim_keys = ["advent-sunday-iii-chrysostom"]
+context = "Advent sunday iii chrysostom."
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-12.ccel-web-2026-09-28.ccel-text-10a3454d"
+loci = ["John Chrysostom, Homilies on First Corinthians 11.1, 5, lines 5172–5206, 5358–5404"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:c72d9f88324042269c8b3ece8011d4a9732317bb6ce9105acd5d3690f1794509"
+claim_keys = ["advent-sunday-iv-chrysostom"]
+context = "Advent sunday iv chrysostom."

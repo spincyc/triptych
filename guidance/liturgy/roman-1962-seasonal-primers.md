@@ -54,6 +54,11 @@ spiritual director.
 5. Keep law, custom and counsel distinct and accurate, without letting the
    law's apparatus displace the teaching.
 
+Give each subject as much space as its sources and teaching warrant. A
+reader can keep the daily rule while reading the full study in stages.
+When preparing a synopsis, draw its teaching and citations from the
+reviewed full study.
+
 ## Boundary with the proper guides
 
 The proper guides own each formulary: its texts, components, senses,

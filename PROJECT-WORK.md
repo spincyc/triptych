@@ -15035,7 +15035,7 @@ texts rest on the 1888 Breviary and Bute's English, as About This Book says.
 
 <!-- promised-deliverable: gpt-advent-primer-1962-2026-11-20 -->
 
-A compact seasonal primer for a reader preparing for Christmas and for the
+A seasonal primer for a reader preparing for Christmas and for the
 four Sundays that precede it. The independent GPT edition follows the
 seasonal-primer profile and shares its source library with the Claude
 edition. A section plan precedes three parallel research lanes, collation of
@@ -15053,3 +15053,14 @@ seven dated antiphons. The [review record](src/gpt/liturgy/roman-rite/1962/seaso
 accounts for the corrections. The source files and reader conversion pass
 their focused checks. The release and discovery records still need their
 checkout-wide verification.
+
+The maintainer clarified that the main work should be expansive, with each
+subject given the space its sources warrant, and that a later pass can
+derive synopsis editions from it. The expanded study adds the Davidic
+promises and Cyril of Jerusalem on judgment, the 1570 Venice Missal,
+Cassian on distraction in prayer, Chrysostom on the Sunday readings,
+separate sections for the Ember Days and O Antiphons, and a fuller
+approach to Christmas through the Annunciation, the Vigil and the
+Eucharist. The corpus now includes Gibson's full translation of
+Cassian's *Conferences*. The expanded draft was read as a whole and
+revised. The synopsis editions are a later work.

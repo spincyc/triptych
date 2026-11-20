@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+edition_id = "edition.john-cassian.conlationes.gibson-english-ccel-2026-11-20"
+artifact_type = "digital-text"
+media_type = "text/plain; charset=utf-8"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+id = "artifact.john-cassian.conlationes.gibson-english-ccel-2026-11-20.primary-text-c2fddbfe"
+storage = "tracked"
+rights_basis = "Gibson's 1894 English translation, introductions and notes are public domain in the United States. The retained text contains no CCEL category header or generated link list."
+derived_from = "artifact.john-cassian.conlationes.gibson-english-ccel-2026-11-20.ccel-download-b950bb24"
+transformation = "The title and Parts I to III are extracted mechanically. The catalog heading and generated References link list are dropped, and one terminal newline is kept."
+retrieved = "2026-11-20"
+sha256 = "c2fddbfe91b25bfa85b064fc4a1117383e143628c31d44fb1629b3d9a250a690"
+byte_size = 1319272
+path = "src/sources/works/john-cassian/conlationes/editions/2026-11-20-gibson-english-ccel-2026-11-20/artifacts/primary-text-c2fddbfe/conferences.txt"
+indexable = true
+encoding = "utf-8"
+provenance = "Mechanically extracted the title and all three historical parts before the CCEL References link list from the authenticated download, removing its catalog wrapper and normalizing the final newline. No wording was transcribed through a model."

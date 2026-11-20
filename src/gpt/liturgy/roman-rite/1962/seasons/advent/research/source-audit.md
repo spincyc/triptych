@@ -32,3 +32,50 @@ particular portions inspected for this book.
 | discipline-current | 1983 Code cc. 1249–1253 and the United States bishops' statement, especially §§4–7, 17, 22–25, with the U.S. complementary norm. Official sources re-opened November 20, 2026. | Universal norm and United States disposition are identified separately. The personal rule proposes no general legal obligation of an Advent fast. |
 | scripture-course | Checked Scripture wording against the held Challoner witness and the chapter and verse bounds against the registered Bible. | Weekday choices are a domestic course, with December 24 superseding any remaining weekday choices. |
 | scripture-in-the-body | Compared quotations to the held Douay–Rheims, including Luke 21:28, Matthew 11:3 and 6, John 1:26 and 14:23, and Luke 2:12. The body loci are in the whole-Bible binding. | Opening words omitted in an excerpt are outside the quotation. |
+
+## Evidence for the expanded edition
+
+| Claim key | Checked source and use |
+| --- | --- |
+| coming-scripture-expanded | Douay–Rheims 2 Kings 7 and 3 Kings 8 supply Nathan's promise and Solomon's Temple, addressed by modern book name in the prose. Isaiah 9 and 11, Luke 1, Malachi 3, Psalms 103, 1 Corinthians 3 and 15, Acts 1 and Matthew 25 give the latter parts of the argument. |
+| coming-cyril-expanded | Cyril of Jerusalem, Lecture 15.1–2, 4 and 26. Swaddling and light, Christ judged and coming to judge, the refiner and builder, the time of the coming, and practising mercy while keeping the lamp alight were read in Gifford's NPNF II.7. The line about things fairer than the present was checked at the passage for §4, p. 105. |
+| history-gregory-heading | The heading of Gregory's Homily 1 in the complete Latin artifact, physical lines 10–14, places the preaching on the second Sunday at St Peter's. The heading is evidence of a different pairing, without inferring a date of reform. |
+| history-venice | Checked the first and fourth Sundays in the 1570 Venice edition and the intermediate Sunday headings. The 1962 comparison uses the first and fourth Sunday propers and the general Mass rubrics, AAS 52 pp. 671 and 680–681, nos. 434 and 507. The 1570 Advent I instructions give extra prayers and the change of dismissal on omission of the Gloria. The 1962 general rule permits certain additions; the prose says what the ordinary Sunday Mass does. |
+| keeping-cassian | Cassian, Conferences 10.10, read directly in the complete Gibson English held in the corpus. His exhausted reader, recollected conversations and warning against elation support the counsel. The recited words are Psalm 69:2 in Douay–Rheims, not the wording of Gibson's English Psalm. |
+| keeping-scripture | Psalm 24 provides the example of sustained reading. Isaiah 58 places penitence beside justice and bread for the hungry. Psalm 50 and Zacchaeus supply the examination and restitution. John 20:22–23 supports the Lord giving his apostles the ministry of forgiveness. |
+| keeping-penance | The 1829 Donovan Roman Catechism, Part II, Penance, names prayer, fasting and alms as forms of satisfaction. The chapter applies this to a present household and makes no new law. |
+| advent-sunday-i-chrysostom | Chrysostom, Romans 24, NPNF I.11 lines 46756–46846, interprets the swallow, rising before daybreak, and putting on Christ himself. |
+| advent-sunday-i-augustine | Augustine, Confessions 8.12.28–29, NPNF I.1 lines 11828–11873, tells of tears under the fig tree and Paul's words in Romans. “Take up and read” is at line 11852 of the held volume. |
+| advent-sunday-ii-chrysostom | Chrysostom, Matthew 36.2–3, NPNF I.10 lines 22615–22709, reads the mission in terms of the disciples' difficulty and Christ's deeds. Gregory's descent-to-the-dead interpretation remains his own reading. |
+| advent-sunday-iii-chrysostom | Chrysostom, Philippians 14, NPNF I.13 lines 22275–22365, joins mourning for sin, forbearance and joy in the Lord. The Beatitude citation uses Douay–Rheims verse numbering. |
+| advent-sunday-iv-chrysostom | Chrysostom, First Corinthians 11.1, 5, NPNF I.12 lines 5172–5206 and 5358–5404, considers judgment of hidden conduct and motives at Corinth. |
+| sundays-ember-and-communion | The 1962 Missal's numbered propers give the Third Sunday's Isaiah 35:4 Communion and the Fourth Sunday's Marian Offertory. Ember lessons on pp. 5–14, including the longer rite's introductory rubric and prayer for ordinations, supply the additional detail. The relation between Isaiah's dew and the fire is the book's meditation on successive lessons. |
+| sundays-scripture-expanded | New Sunday and weekday citations read against the whole Douay–Rheims witness, including Ephesians 3, Romans 15, Isaiah's promises, Exodus' deliverance and Sinai, and Zachary's prophecy in Luke 1. |
+| christmas-mary-consent | Bernard, Fourth Sermon on the Virgin Mother, §8, Mount Melleray English pp. 124–126 and PL 183 cols. 83–84. “Say the word and receive the Word” is the checked historical English. |
+| christmas-mary-eve | Irenaeus, Against Heresies 3.22.4, Roberts–Rambaut ANF 1, lines 57537–57601, on Eve and Mary. Used in paraphrase. |
+| christmas-immaculate-feast | The 1962 Missal p. 437 no. 1873 and AAS 52 p. 598 no. 15 give the Collect and precedence of the feast on December 8. |
+| christmas-immaculate-definition | Pius IX, Ineffabilis Deus, definition, 1855 Murphy/Dolman pp. 95, lines 2556–2566 of the OCR, corroborated in the Holy See text. Used in paraphrase. |
+| christmas-vigil-introit | 1962 Missal p. 15, PDF p. 96, Introit from Exodus 16:6–7. The Scripture develops this in 16:13–15. |
+| christmas-vigil-collect | 1962 Missal p. 15 no. 99 independently located in the facsimile, and Lasance 1945 pp. 133–135. The earlier passage ID addresses the other Vigil orations; the precise Collect binding here replaces it. |
+| christmas-cyril-life | Cyril of Alexandria, Commentary on John 4.2, Pusey pp. 408–425, on John 6:51–58, especially 6:56 in the commentary. His explanation and wax comparison are paraphrased. |
+| christmas-wonderful-exchange | Athanasius, On the Incarnation 54.2–3, Robertson NPNF II.4 p. 65. The checked translation names the exchange. The surrounding prose distinguishes grace from the nature of the eternal Son. |
+| christmas-bible-expansion | The additional loci bind the desert bread, David's line, Bethlehem and the shepherd, Jesus' voluntary offering of himself and the risen Lord's hands. The Matthew sequence distinguishes the Vigil reading from the verses that follow it. |
+
+### The 1570 pages
+
+The registered Venice OCR is a finding aid under the same edition. The
+historical comparison was checked against the archived page images
+([Internet Archive item](https://archive.org/details/messale-tridentino-di-san-pio-v-1570)).
+The images read were n52–54 (ff. 1r–2r), n55 and n57 (the second and third
+Sunday headings), and n67–68 (ff. 8v–9r). Their SHA-256 values were recorded
+from acquired bytes.
+
+| Image | SHA-256 |
+| --- | --- |
+| n52 | 039473124dd737f32b86fad10e47889a7939a9d063eec8a329e80d4d8859cb83 |
+| n53 | 0263355118dda75fc7401ecbc91b16a88454c151316c117df100fcff74391ce5 |
+| n54 | 4b2ca47050a04dddd6e451490e59604d685342d2abc41cfce7827f984196b666 |
+| n55 | 2a458c473f620c62f9037aa6492ab48431b59b371a242dd8bdbaf834f42e6feb |
+| n57 | e1d6b5d35e7eadc5f74bbd33dc0a1e8525d599db4577a0ef921c9e83ac3bb892 |
+| n67 | f3649e3fcb9fb53c340fbfc777f27e3f00658113f16a6afc2b351eb7aa2a2184 |
+| n68 | 900f36c6ae306fa42e63b4d2896b1ccda36fbf906c93d866f3351dc5968c7d39 |

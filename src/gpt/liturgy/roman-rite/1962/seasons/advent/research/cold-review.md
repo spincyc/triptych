@@ -41,3 +41,26 @@ quotations and the Nazianzen quotation matched the checked witnesses.
 The author proof also checked that all eleven Bible quotations in the body
 match the held Challoner text. No previous author's body or private
 research judgment was imported.
+
+## Expanded edition
+
+The maintainer asked for an expansive main study that could subsequently
+supply synopsis editions. The expansion added four independent teaching
+lanes in the same sequence and used the existing evidence where possible.
+The complete Gibson Conferences were acquired. The additions were checked
+against the exact loci in the expanded source audit. A reader who had
+seen only the initial manuscript reviewed all five expanded sections
+without the source or dispatch records.
+
+The reader asked to move the Baptist's reed back into the discussion of
+the Gospel before Paul's Epistle. That order, a single practical
+application, and the chronological order of the O Antiphons are restored.
+The history keeps Nathan's two houses and the difference in dismissal
+between the 1570 and 1962 books, and drops incidental punctuation about a
+vacant Sunday. The daily rule applies after a missed day as well as a
+missed evening, and the confession section now speaks of absolution.
+The Marian opening starts at her consent and does not recount the
+Visitation again. The closing returns to Titus's instruction for how to
+live. The arrest remains in one sentence, at the maintainer's request,
+while Luke's swaddling and burial and Nazianzen's use of them carry the
+argument.
