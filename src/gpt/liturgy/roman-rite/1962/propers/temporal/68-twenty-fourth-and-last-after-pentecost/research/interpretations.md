@@ -297,8 +297,8 @@ Bellarmine further clarify captivity and medicine.
    a royal place to someone not fitted for it would not be the whole
    benefit. God both fits and grants, both rescues and transfers.
    The consequence is stronger than “God helps good people”: the gift
-   includes a new capacity and standing. Yet the preceding *ambulari
-   digne ... fructificantes* shows a real ensuing life, not an
+   includes a new capacity and standing. Yet the preceding *ut ambuletis
+   digne Deo ... fructificantes* shows a real ensuing life, not an
    inert label. Grace's priority and fruitful cooperation are not
    alternatives. This inference distinguishes R2's account of changed
    persons from R1's account of delayed consummation.

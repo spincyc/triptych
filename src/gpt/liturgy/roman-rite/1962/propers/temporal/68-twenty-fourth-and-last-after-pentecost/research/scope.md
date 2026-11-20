@@ -58,6 +58,15 @@ T is the 1962 Vatican typica; P is Pustet 1862; L is Lasance/Walsh's
 revised-1945 expression in the later c. 1955–56 printing. No source is
 relabeled as a different printing because of its download filename.
 
+The 20 November 2026 image check reused the three originally acquired
+files after their sizes and SHA-256 digests matched the records in
+`propers/verified.md`. It checked the Gospel at T pp. 423–424, P pp. 359–360
+and L pp. 738–739, the Preface thanksgiving at T p. 293, P pp. 251–252 and
+L pp. 773–774, and Col 1:10 at T p. 423, P p. 359 and L p. 737. The
+corrections concern the appointed Latin and the witness comparisons. The
+inherited Latin and historical English continue under their recorded
+publication bases.
+
 The historical image archive, not Pustet's malformed PDF, was obtained and
 opened at printed pp. 359–360 and 251–252. Its own complete original PNGs
 make the formerly inferred Collect/Secret OCR readings readable: *fructum,
@@ -70,9 +79,10 @@ Material textual cautions:
 
 * The Introit is a liturgical composite of Jer 29:11, 12, 14 with omissions,
   followed by Ps 84:2. It is not continuous Jeremiah and contains no v. 13.
-* The Epistle really prints *voluntatis Dei* in T, P and L; *eius* belongs
-  to the continuous Clementine Bible. *Fratres* replaces the continuing
-  letter's opening, and *per sanguinem eius* is retained.
+* The Epistle prints *voluntatis Dei* and *ut ambuletis digne Deo* in T,
+  P and L. *Eius* belongs to the continuous Clementine Bible in Col 1:9.
+  *Fratres* replaces the continuing letter's opening, and *per sanguinem
+  eius* is retained.
 * The Gradual's *Liberasti / Domine / eos qui nos oderunt / in saecula*,
   the two chants' *orationem* rather than *vocem*, and the Communion's
   *Amen / quidquid / fiet* are actual liturgical forms. Bible words may
@@ -82,6 +92,8 @@ Material textual cautions:
   from “cried out.” A single generic Psalm extract would lose that evidence.
 * L p. 738 has a real Latin printing defect within Mt 24:21, duplicating
   material from v. 22. T and P control that Latin; L's English is intact.
+  All three witnesses spell *quatuor* with one t in Mt 24:31. The audit
+  retains the surrounding 1962 punctuation.
 * The Secret's T conclusion cue is *Per Dominum nostrum*, not P/L's
   *Per Dominum*. The English remains L's literal “Through our Lord.”
   Its same-witness conclusion-table transcription establishes the family,
@@ -94,6 +106,8 @@ Material textual cautions:
 * The complete Trinity thanksgiving, not merely *Qui cum unigenito*,
   includes common opening and angelic conclusion; dialogue and Sanctus
   junction have their separately inspected historical Ordinary witnesses.
+  T's opening groups the address as *Domine, sancte Pater, omnipotens
+  aeterne Deus:* and the audit records the older P/L pointing separately.
   The 1962 Ordinary as a whole has not been re-collated.
 
 The primary English Bible source is the registered Gutenberg Challoner text.

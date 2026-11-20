@@ -1149,3 +1149,39 @@ source classifications, validates the combined corpus, and replays the
 ordinary strict reader projection across 19,384 files. The migration ledger
 keeps all 169 units pending. The final registration passes 47 tests under
 `make -j4 check-sources` and the individual handoff checks.
+
+## Editorial review of the revised family
+
+Research review iteration 5 accepts the merged dossier. The next expansive
+study incorporates the checked direct reception of Mark 11 and the bounded
+Augustine readings of Matthew 24. Its cold review finds two governing-Latin
+discrepancies, missing chant reasoning in the second interpretation, an
+incomplete prayer inference, and recurring prose detours. Research iteration
+6 rechecks the typica and its two historical witnesses. Registration
+reproduces twelve page proofs within the existing 93 bindings. Its exact
+preflight and source-readiness checks pass. An extra corpus-wide Make replay
+ends with SIGTERM during chronology.
+
+Independent research review iteration 6 accepts the corrected evidence. The
+Lasance image at printed p. 774 establishes the capital W in "He Who
+cometh" and resolves the capitalization advisory by direct inspection. The
+study owner applies the Latin changes and checks all 36 quotation blocks
+against the verified text. The study repairs explain the Psalm verse and
+Alleluia, give Theophylact and Bede their distinct claims, and connect the
+Communion's promise to the Secret's petition. Native preflight and independent
+study review iteration 2 pass. The Psalm 84 pinpoint remains an advisory.
+
+The concise study is then derived from the accepted study. Its first cold
+review asks for the appointed Trinity Preface's actual address and a more
+direct comparison. The second author pass distinguishes the prayer's address
+to the Father and its confession of the three Persons, states Aquinas's
+prayer distinction and repairs the repeated conclusions. Focused source and
+HTML checks pass. Native synthesis preflight and independent review iteration
+2 pass with zero findings.
+
+The revised homily connects the prayer about the flight from Judea to the
+Communion promise and Mark's command to forgive. Its 1,151 spoken words
+take approximately ten minutes. Native homily preflight and independent
+homily review iteration 1 pass. The review records one advisory about
+distinguishing the people who flee Judea from the Gospel's questioners.
+The three authored sources now proceed to artifact and reader validation.

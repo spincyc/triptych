@@ -3,7 +3,9 @@ appointed_text_completeness = "complete"
 # Appointed texts: image collation and publication controls
 
 Initial inspection: 16 November 2026; renewed bounded inspection and audit
-corrections: 17 November 2026. Governing formulary: *Dominica vigesima quarta
+corrections: 17 November 2026. The Gospel and Trinity Preface corrections
+below follow a further image check on 20 November 2026.
+Governing formulary: *Dominica vigesima quarta
 et ultima post Pentecosten*, II class, Vatican typica 1962, pp. 422–424,
 nos. 1769–1778; Trinity Preface p. 293, no. 1082. Appointment, rank,
 occurrence and exclusions are established in `research/context.md`.
@@ -54,9 +56,10 @@ not lexical emendations. Ritual cross/response signs are represented in
 labels; paragraph layout and some Latin pointing are normalized rather than
 diplomatic. The three orations retain T's pointing, checked also against the
 registered editorial projection; material P/T differences are noted below.
-Textual boundaries and words were
-compared independently with T and P; English was compared with L's images,
-not repaired from its OCR. The pull in `retrieved.txt` remains uncorrected.
+The Gospel at Mt 24:30–32 and the Preface thanksgiving retain T's pointing.
+Textual boundaries and words were compared independently with T and P.
+L's images control the historical English. The pull in `retrieved.txt`
+remains uncorrected.
 Short prayer conclusions and the doxology cue are not expanded.
 
 ## 1. Introit — Jer 29:11, 12, 14 adapted; Ps 84(85):2
@@ -225,10 +228,10 @@ post tribulationem dierum illorum sol obscurabitur, et luna non dabit
 lumen suum, et stellae cadent de caelo, et virtutes caelorum commovebuntur:
 et tunc parebit signum Filii hominis in caelo: et tunc plangent omnes
 tribus terrae: et videbunt Filium hominis venientem in nubibus caeli
-cum virtute multa et maiestate. Et mittet Angelos suos cum tuba et voce
-magna: et congregabunt electos eius a quattuor ventis, a summis caelorum
+cum virtute multa, et maiestate. Et mittet Angelos suos cum tuba et voce
+magna: et congregabunt electos eius a quatuor ventis, a summis caelorum
 usque ad terminos eorum. Ab arbore autem fici discite parabolam: cum
-iam ramus eius tener fuerit et folia nata, scitis quia prope est aestas:
+iam ramus eius tener fuerit, et folia nata, scitis quia prope est aestas:
 ita et vos cum videritis haec omnia, scitote quia prope est in ianuis.
 Amen dico vobis, quia non praeteribit generatio haec, donec omnia haec
 fiant. Caelum et terra transibunt, verba autem mea non praeteribunt.
@@ -276,11 +279,12 @@ Creed follows in T and L; it is not a sentence of the lesson.
 
 **Comparison.** T/P have the complete biblical word sequence, with
 liturgical *In illo tempore: Dixit Iesus discipulis suis* and omission of
-B's *ergo* after *Cum*. Spelling includes T *intellegat/quattuor* versus
-older *intelligat/quatuor*. T p. 423 ends after *cum videritis*;
-p. 424 begins *haec omnia* and completes vv. 33–35. Do not stop at the
-page boundary. The renewed image check corrects the former audit sentence,
-not the complete appointed transcription above.
+B's *ergo* after *Cum*. At v. 15, T reads *intellegat* and both P and L
+read *intelligat*. At v. 31, T p. 423, right column, P p. 360 and L p. 739
+all print *quátuor* with one t. In the adjoining phrases all three point
+*multa, et maiestate* and *tener fuerit, et folia*. P and L also print a
+comma after *tuba*. T p. 423 ends after *cum videritis*. T p. 424 begins
+*haec omnia* and completes vv. 33–35.
 
 **Material defect in L's Latin, not its English:** at p. 738 the line after
 *qualis non* has the misplaced *fierit salva omnis caro: sed* instead of
@@ -363,11 +367,11 @@ P. Let us give thanks to the Lord our God. R. It is meet and just.
 **Latin**
 
 Vere dignum et iustum est, aequum et salutare, nos tibi semper et ubique
-gratias agere: Domine sancte, Pater omnipotens, aeterne Deus: Qui cum
-unigenito Filio tuo et Spiritu Sancto unus es Deus, unus es Dominus:
+gratias agere: Domine, sancte Pater, omnipotens aeterne Deus: Qui cum
+unigenito Filio tuo, et Spiritu Sancto, unus es Deus, unus es Dominus:
 non in unius singularitate personae, sed in unius Trinitate substantiae.
 Quod enim de tua gloria, revelante te, credimus, hoc de Filio tuo, hoc
-de Spiritu Sancto sine differentia discretionis sentimus. Ut in
+de Spiritu Sancto, sine differentia discretionis sentimus. Ut in
 confessione verae sempiternaeque Deitatis, et in personis proprietas,
 et in essentia unitas, et in maiestate adoretur aequalitas. Quam laudant
 Angeli atque Archangeli, Cherubim quoque ac Seraphim: qui non cessant
@@ -397,10 +401,16 @@ Holy, holy, holy, Lord God of hosts. The heavens and the earth are full
 of Thy glory. Hosanna in the highest. Blessed is He Who cometh in the
 name of the Lord. Hosanna in the highest.
 
-**Comparison.** Entire Preface and dialogue word sequence attested by P;
-the older spelling *quotidie* corresponds to T *cotidie*. P's page break
-falls inside *in unius Trinitate substantiae*; L's falls inside
-*proprietas* / “confession.” These are not missing endings.
+**Comparison.** P attests the entire Preface and dialogue word sequence.
+T p. 293 groups the address as *Domine, sancte Pater, omnipotens aeterne
+Deus:* with a colon before *Qui*. P p. 251 and L p. 773 group the same
+words as *Domine sancte, Pater omnipotens, aeterne Deus.* with a full stop
+before *Qui*. L's historical English follows its own printed address.
+In the adjoining clauses T points *Filio tuo, et Spiritu Sancto, unus es
+Deus* and *de Spiritu Sancto, sine differentia*. P and L spell the word
+before *una voce* as *quotidie*. T prints *cotidie*. P's page break falls
+inside *in unius Trinitate substantiae*. L's falls inside *proprietas*
+in Latin and “confession” in English.
 T p. 293/no. 1082 (PDF 374) also prints the complete dialogue and Sanctus,
 as confirmed by the renewed image inspection. P supplies the independently
 checked historical Latin antecedent and L the historical English. The

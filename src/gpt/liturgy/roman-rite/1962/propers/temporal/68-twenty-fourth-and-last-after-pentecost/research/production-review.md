@@ -1216,3 +1216,250 @@ here; no terminal workflow acceptance or deployment is asserted by this
 entry. Accepted prose, research evidence, generation provenance and shared
 implementation remain unchanged. No print export, Git write, index refresh,
 archive operation or workflow advance is part of this contribution.
+
+## Renewed expansive-study authoring, iteration 1
+
+This contribution answers the author-study packet for proper-study v19, run
+`13ecdd1552c245ea`, against seed `e8aceadc4a7e1ebe8d4987815a636d82ddd9d59b`.
+The complete-mode study covers the eleven appointments of the universal 1962
+Mass for 22 November 2026 and develops the two interpretations with their
+separate four senses.
+
+The first interpretation now gives Augustine's inference from the future verbs
+of praise and his example from the Passion Psalm, citing the Latin and NPNF
+section numbers separately. It distinguishes Bellarmine's remembered rescues
+at the equivalent Vulgate verses. Both interpretations locate Jerome's
+Jeremiah 29:10–14 discussion at the split between his two printed units.
+The second quotes the appointed `ut ambuletis digne Deo` and
+`fructificantes` from Missal p. 423, no. 1771, and identifies the native
+Aquinas lecture on Colossians. It also develops Augustine's distinct
+application of the lightning image to the Church's public presence.
+Theophylact's direct explanation of Mark 11:24–25, including his image
+of the petitioner in tears as if clasping the Lord's feet, is attributed
+separately from Bede's exposition of the surrounding verses. Aquinas and
+Bede remain the second interpretation's carrying authors. Theophylact's
+place in its author list reflects his contribution as a medieval
+ecclesiastical writer.
+
+The author read Augustine's Psalm 43 §§8–9 and
+*Quaestiones euangeliorum* I.38 and Bede's Mark paragraphs in the
+registered Latin transcriptions. The author inspected the retained
+Basel facsimile detail at fols. 69r–v, the Jeremiah lemma boundaries
+on PL 24 PDF p. 451 and the Fromage pages 503 and 513. The Theophylact
+citation uses the folios and canonical verses. The verso's running
+head reads “Cap XII.” Citations to Fromage distinguish the printed
+chants, the paragraph explaining the Collect on p. 503 and the
+distinct explanations of the Secret and Postcommunion on p. 513.
+The chronology note cites Maas and the September NABRE introduction
+used by the generated appendix. The November corroborating delivery
+remains separately identified in the research record. These are bounded
+readings of the registered sources and reviewed evidence. They add no
+blanket verification or rights judgment for whole editions, no new
+liturgical translation and no facsimile reproduction. Historical English
+and the appointed Latin keep their registered publication bases.
+
+TeXcount reports **6,354 body words**, with **165 heading words**
+and **922 words outside the body** across the opening, detailed commentary,
+both interpretations and the comparison. Appointed quotations, chronology
+and terminal apparatus are outside that count. The study and companions
+retain their existing typed regions and the chronology is generated.
+The document-type refresh and currentness check left the generated files
+byte-identical. The recomputed research seal matches the accepted one
+exactly, including 1,874 file entries, 16 chronology computation entries
+and eight source-admission computation entries. The complete appointed
+text, publication and web declarations, and companion prose and entrypoints
+also matched the research-review baseline.
+
+The research-mode component and content checks, publication schema check,
+generation metadata and exact run-provenance checks, and web-eligibility
+declaration check passed. Content preflight validated 93 bindings and the
+16 generated chronology rows. The canonical conversion used Pandoc 3.11
+and the locked Markdown 3.10.3 renderer. Its author check found 11 unique
+appointed anchors, both sets of four senses and all 36 appointed quotation
+blocks identical to the preceding conversion. It also verified the revised
+citations, chronology target and one revision timestamp. The resulting probe
+Markdown SHA-256 is
+`91a9097dd2a9514113374c1f60fdb99f6d119b7235a51ddb948fd76f5a97b930`.
+This is an author source and conversion check. Independent source and web
+review belong to later stages, and no print proof was requested.
+
+## Renewed expansive-study authoring, iteration 2
+
+The study now follows the accepted Gospel and Trinity Preface
+transcriptions. Comparison with the 1962 Missal at printed p. 423,
+no. 1774, and p. 293, no. 1082, confirmed the single t in
+`a quatuor ventis` and the revised pointing of the surrounding clauses
+and the Preface's address. The Lasance/Walsh Preface keeps its own
+historical English. The image of printed p. 774 (PDF p. 773) confirms
+the capital W in “Blessed is He Who cometh.”
+
+The second interpretation now uses the Introit's Psalm 84 verse with
+Augustine's reading of Romans 7, the Alleluia's request to be heard
+before the Gospel, and the repeated Offertory cry in relation to the
+Secret's prayer for converted hearts. The author read Theophylact's
+Mark 11:24–25 lemma and explanation at Basel fols. 69r–v, the registered
+Bede transcription at lines 338–339, and Aquinas's
+*Super Colossenses* 1, lectio 3 at anchor 87848. The prose distinguishes
+Theophylact's account of the faith Christ asks for from Bede's specific
+assurance of pardon and his account of Gregory of Neocaesarea. The
+connection from Aquinas's account of prayer to the Secret is the
+study's inference. Augustine and Chrysostom remain the first
+interpretation's carrying authors, and Aquinas and Bede carry the second.
+
+The flight and healing paragraphs now use Chrysostom's concrete questions
+and Augustine's explanation of sacramental healing. The first
+interpretation relates the Preface's thanksgiving and angelic conclusion
+to the actual words of the Sanctus. Its literal distillation preserves
+the difference between Augustine and Bellarmine over the Gradual's tense.
+
+TeXcount reports **6,278 body words**, **165 heading words** and
+**939 words outside the body** across the opening, detailed commentary,
+both interpretations and comparison. The count excludes the appointed
+quotations, generated chronology and terminal apparatus. Both
+interpretations have four senses. The companion, generated and
+declaration sources match their pre-edit hashes. The recomputed research
+seal matches the accepted seal across 1,874 files and 24 computation
+entries.
+
+The research-mode component and content checks, publication schema,
+generation metadata, exact run provenance, generated-source currentness
+and web declaration passed. All 26 appointed Latin and Lasance/Walsh
+blocks and all ten Challoner blocks agree with `propers/verified.md`
+after whitespace normalization. With Pandoc 3.11 and Markdown 3.10.3,
+the canonical conversion preserves all 36 quotation blocks. The six
+Latin readings are the only changes to those blocks from the preceding
+probe. The converted study has eleven unique appointed anchors, both
+sets of four senses, the generated chronology target and one revision
+timestamp. Verification in this authoring pass covers sources and web
+conversion.
+
+## Renewed concise-study authoring, iteration 1
+
+The concise study compares deliverance already received with the final
+gathering still awaited, and the confidence of petitioners with their need
+for changed desires. It distinguishes Augustine's prophetic tense in the
+Gradual from Bellarmine's remembered rescues and records both sets of
+verse numbers. The Psalm 84 notes cite Latin §6 for the prophet's prayer
+for the restoration he foresees and §§4–5 for the captivity to sin and
+its release. The Jerome notes locate prayer and gathering in the two
+adjacent units at PL 24, cols. 893–894.
+
+The detailed comparison distinguishes Augustine's application of the
+lightning to the public presence of the Church from Chrysostom's account
+of the public final coming. The Communion paragraph identifies the
+endings in Challoner and Lasance/Walsh separately. It gives Theophylact's
+direct explanation from Basel fols. 69r–v and cites the registered Bede
+transcription at lines 338–339 for his explanation of the mountain and his
+specific assurance of pardon. The application of Aquinas's account of prayer
+to the Secret is the study's own inference. Fromage's comments on the Collect,
+Secret and Postcommunion point to pp. 503 and 513 of the continuation.
+
+TeXcount reports **3,403 body words**, 765 in the themes and 2,638 in the
+detailed commentary, with 77 heading words and 640 note words counted
+separately. The count excludes the inventory, overview, generated chronology,
+terminal apparatus, title and revision display.
+
+The component check, all 12 synthesis content checks, document schema,
+exact generation provenance, web declaration and typed assembly passed.
+The source checks covered 93 bindings, 16 chronology rows and nine references.
+Typed refresh found all eight generated files current. The live research
+seal matches the accepted research seal across 1,874 files and all recorded
+computation inputs. The live expansive-study seal matches its accepted
+19-file seal.
+
+The declared synthesis entrypoint converted with Pandoc 3.11 and rendered
+with the locked Markdown 3.10.3 renderer. The three tables have 11 inventory
+rows, four senses and 16 chronology rows. The HTML has 83 distinct anchors,
+68 resolved local links, the revised wording and attributions, one revision
+display and one rights notice. The uncommitted-source probe Markdown SHA-256
+is `fc55ccf8d8638ba81026eebe8437ef6773e2d77a40c886c31ada91b334e9bdb1`.
+This authoring check covers source and conversion fidelity. Independent
+companion review and physical print pagination remain separate.
+
+## Renewed concise-study authoring, iteration 2
+
+The themes describe the Trinity Preface's direct thanksgiving to the
+Father and its confession of distinct persons, one divine essence and
+equal majesty. The 1962 Missal, p. 293, no. 1082, and Lasance/Walsh,
+pp. 773–774, were checked on the page images. The connection between
+the angels' praise and the Secret's petition for heavenly desire is
+the study's inference. The commentary follows the order of prayer and
+petition in Aquinas, `Super Colossenses` 1, lectio 3, anchor 87848.
+
+The Gradual and Alleluia now show how Augustine's future deliverance
+and Bellarmine's remembered rescues each give a reason to praise God
+while asking for help. The themes compare the Collect's request for
+further remedies with the Postcommunion's request for the mysteries to
+cure remaining faults. The exiles, Gospel and closing commentary
+paragraphs end with their particular claims and applications.
+
+TeXcount reports **3,209 body words**, 731 in the themes and 2,478 in
+the detailed commentary, with 77 heading words and 669 note words
+counted separately. The count excludes the inventory, overview,
+generated chronology, terminal apparatus, title and revision display.
+
+The synthesis component and content checks, publication schema, exact
+generation provenance, web declaration and generated-source currentness
+passed. The accepted expansive-study seal matched. All 1,874 research
+files and 24 computation inputs matched their accepted hashes. The
+three web readers passed conversion checks, and a separate conversion
+of the final synthesis source verified the revised passages and the
+single revision display. The resulting Markdown SHA-256 is
+`84ceee1a7d935447ee7063bed610ab028b5c3e5a89e2d506aabe5ec0eb6d674f`.
+
+## Renewed homily authoring, iteration 1
+
+The homily for the adult parish assembly on 22 November 2026 develops
+“The confident petitioner asks to be changed” from the reviewed studies.
+It draws on “Deliverance begun, and the people who still wait” for
+Chrysostom's distinction between the flight from Judea and Christ's public
+coming to gather his people.
+
+Matthew 24:20 changes how the listener hears the assurance at Communion.
+Christ asks the disciples to pray about the season and day of their flight
+while promising that the days of distress will be shortened for the elect.
+The listener can ask for quite specific help while danger remains. The
+Communion's adaptation of Mk 11:24 says “it shall be done unto you.” In
+Mark's next verse Jesus tells the same petitioners to forgive while they
+stand in prayer. The listener can therefore ask both for help with the
+trouble and for the help needed to forgive. Paul's “made us worthy” names
+God as the giver of their capacity to live with him, which is why the
+faithful can ask him to stir their wills, turn their hearts and heal the
+faults that remain. The spoken response is to pray for the good of the
+person against whom one holds a grievance. The conclusion returns to the
+healing asked of Christ after Communion and to the inheritance Paul names.
+The argument depends on the appointed instruction about flight, the
+particular promise at Communion and its Markan context, and the Mass's
+own requests for the petitioners to be changed.
+
+The author checked the appointed Gospel, Collect, Epistle, Offertory,
+Secret, Communion and Postcommunion on 1962 Missal images of printed
+pp. 423–424 (PDF pp. 504–505). The short English Communion quotation and
+Epistle phrase were checked on Lasance/Walsh printed pp. 740 and 737
+(PDF pp. 738 and 735). The author read the Introit in the verified record
+and the pertinent Matthew, Jeremiah, Colossians and Mark passages in the
+registered Challoner texts. Theophylact's direct explanation of Mk
+11:24–25 was read at Basel fols. 69r–v. Bede's assurance concerns pardon,
+at line 339 of the registered transcription of book III. Aquinas on
+Colossians 1, lectio 3, anchor 87848, and Chrysostom's Matthew homily 76,
+§§1–3, supply the other attributed explanations. These are readings at
+the cited passages and inspections of the identified pages.
+
+TeXcount and a whitespace count agree on **1,151 spoken words** across
+12 paragraphs, excluding the title and apparatus. At **110–115 words per
+minute**, the estimated delivery is **10.0–10.5 minutes**. The speech was
+reread silently, in order, for sense, sentence length, and transitions.
+
+The typed refresh and currentness check found all eight generated files
+current. The homily component check, publication content schema, generation
+metadata and web declaration passed. Content preflight passed for all six
+used references, 93 bindings and both interpretation declarations. The
+generation provenance matches the run header. The selected homily converted with
+Pandoc 3.11 and the locked Markdown renderer. The rendered article preserved
+all 12 spoken paragraphs in order, with the source-and-delivery note and
+References after the speech, one derived revision display and one rights
+notice. The author probe Markdown SHA-256 is
+`35a144aac769381db6a0845ce2818400d8583fe2840c059be7d11287a7da1862`.
+The live research, study and synthesis input seals each match their accepted
+seals across 1,874, 19 and 16 file entries, respectively. The conversion is
+an author check of the selected edition's source fidelity.

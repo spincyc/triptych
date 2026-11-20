@@ -149,8 +149,20 @@ native preflight. The new cold review verified all eleven appointments and
 returned six findings. Its repair packet addresses the oration proof chain,
 Psalm 129's proposed occasion, the dates for the two forms of Matthew,
 commentary extents, Fromage's use as a text witness, and Theophylact's direct
-exposition of the Communion text. Research corrections are underway. Source
-registration follows.
+exposition of the Communion text. Later repairs added the exact Augustine
+and Rupert witnesses, completed the consulted-source bindings, and separated
+Jerome's native Jeremiah units. A second merge at `aca5937f67` incorporates
+upstream `9a229454da` and its separately published Advent study. The combined
+source registration and native research preflight pass. Independent research
+review iteration 5 accepts the current evidence. The expansive study
+revision passes its author-stage checks. Cold study review iteration 1
+finds two governing-Latin discrepancies and asks for precise chant coverage,
+prayer reasoning and prose repairs. Fresh image collation establishes the
+correct Gospel spelling and Trinity Preface pointing and records the TeX
+handoff. The corrected research passes native review. The expansive study,
+concise synthesis and spoken homily each pass independent source review.
+The exact web conversion review, final installation, deployment checks and
+live verification are open.
 
 Detailed progress and limitations belong to
 `workflows/reviews/gpt-1962-68-production-2026-11-16/CYCLES.md`.

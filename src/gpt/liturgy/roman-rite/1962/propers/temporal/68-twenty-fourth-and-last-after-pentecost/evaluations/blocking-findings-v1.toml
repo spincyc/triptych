@@ -49,41 +49,41 @@ provider = "gpt"
 run_id = "13ecdd1552c245ea"
 workflow = "proper-study"
 workflow_version = 19
-stage = "research-review"
-iteration = 4
-disposition = "CHANGES_REQUIRED"
-standing = 2
+stage = "homily-review"
+iteration = 1
+disposition = "PASS"
+standing = 0
 accepted_count = 0
-advisory_count = 2
-observation_count = 8
+advisory_count = 3
+observation_count = 0
 
 [[stages]]
 stage = "homily-review"
-iteration = 0
+iteration = 1
 disposition = "PASS"
 run_id = "13ecdd1552c245ea"
 workflow = "proper-study"
 workflow_version = 19
 standing = 0
 accepted_count = 0
-advisory_count = 0
+advisory_count = 1
 observation_count = 0
 
 [[stages]]
 stage = "research-review"
-iteration = 4
-disposition = "CHANGES_REQUIRED"
+iteration = 6
+disposition = "PASS"
 run_id = "13ecdd1552c245ea"
 workflow = "proper-study"
 workflow_version = 19
-standing = 2
+standing = 0
 accepted_count = 0
 advisory_count = 1
 observation_count = 0
 
 [[stages]]
 stage = "study-review"
-iteration = 0
+iteration = 2
 disposition = "PASS"
 run_id = "13ecdd1552c245ea"
 workflow = "proper-study"
@@ -91,11 +91,11 @@ workflow_version = 19
 standing = 0
 accepted_count = 0
 advisory_count = 1
-observation_count = 8
+observation_count = 0
 
 [[stages]]
 stage = "synthesis-review"
-iteration = 0
+iteration = 2
 disposition = "PASS"
 run_id = "13ecdd1552c245ea"
 workflow = "proper-study"
@@ -117,76 +117,26 @@ accepted_count = 0
 advisory_count = 0
 observation_count = 0
 
-[[findings]]
-stage = "research-review"
-id = "RES-USCCB-COMPARISON-BINDING"
-severity = "blocking"
-location = "research/scope.md:650–658 and research/source-bindings.toml; research/source-dispositions.toml"
-problem = "The dossier explicitly reports inspecting the exact USCCB NABRE Matthew introduction and adopts it for the selected Greek-Matthew chronology comparison. The generated chronology seal does include passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-21.matthew-introduction and its ancestry, but neither that passage nor its controlling restricted 3578ab41 artifact has a publication-local binding or disposition. The ledger therefore omits a claimed checked source which supplies a row to both studies."
-required_result = "Reconcile the actual inspection and use of the chronology introduction against the exact registered passage and its controlling delivery. Add a publication-local chronology/context binding with an accurate locus, evidence state and fingerprint, and a corresponding non-commentary disposition for the chronology use. If the leaf used the registered verified passage summary or a later delivery, give that source and inspection state accurately. Preserve the distinction between the post-70 lower bound, the source’s later preference, and the conjectural Antioch location without retaining restricted HTML."
-repair_target = "research"
-
-[[findings]]
-stage = "research-review"
-id = "RES-JEROME-JEREMIAH-NATIVE-EXTENT"
-severity = "blocking"
-location = "research/scope.md:264,346 and research/source-bindings.toml:132–137; research/source-dispositions.toml:363–373"
-problem = "The reception matrix calls Jer 29:10–14 a single Jerome lemma, and the deferred row gives only that five-verse range as the natural passage candidate. In the exact PL 24 facsimile on PDF p. 451, col. 893 begins the native ‘Vers. 10 seqq.’ unit and col. 894 begins a new ‘Vers. 14 seqq.’ unit. The second commentary continues on PDF p. 452 through col. 895 and the start of col. 896, before the ‘Vers. 21 seqq.’ heading. The five verses correctly name the overlap this study uses, but the current row clips the second printed unit and the matrix conflates two source loci."
-required_result = "Keep Jer 29:10–14 as the study’s selected use. Identify the two native units and their print boundaries in the matrix and binding, and disposition the natural candidate extents with the actual inspection limits. If the longer native unit is only partly checked, name the checked portion and what remains before admission. Keep the existing constituent, collation, rights, date and Scripture-edge limits tied to the exact witness."
-repair_target = "research"
+[[advisories]]
+stage = "homily-review"
+id = "HOM-GOS-001"
+severity = "advisory"
+location = "sections/homily/10-body.tex:9–13"
+problem = "The second mention of 'the disciples' can sound like the very disciples who asked Jesus about the Temple would have to flee in Judea. Chrysostom's Homily 76 §1 expressly places the Apostles elsewhere by the time of the siege, and Mt 24:16 gives the warning to those in Judea. The reading of the two events and the prayer Jesus asks for remain clear."
+required_result = "Name those in Judea as the people who must heed the warning and flee. Keep the disciples' question and Christ's final gathering in their present roles."
 
 [[advisories]]
 stage = "research-review"
-id = "RES-THEOPHYLACT-MATRIX-PERIOD"
+id = "RES-LASANCE-SANCTUS-CASE"
 severity = "advisory"
-location = "research/scope.md:262,274"
-problem = "The Communion matrix places the medieval Theophylact in the column labeled ‘Direct ancient exegesis actually read’. The source identity and his supporting standing are correctly given in the nearby dossier, so this is a table classification error."
-required_result = "Keep Bede’s contextual exegesis in the ancient column and place Theophylact’s direct Mark 11:24–25 exposition in the medieval column with its original supporting status."
+location = "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/propers/verified.md:401"
+problem = "The retained historical English at the Sanctus junction capitalizes “Who” where Lasance printed p. 774 (PDF p. 773) has “who” in the phrase “Blessed is He who cometh.” This isolated case difference leaves the wording and meaning intact."
+required_result = "Use the Lasance capitalization in the historical English transcription."
 
 [[advisories]]
 stage = "study-review"
-id = "STU-001"
+id = "STU-PINPOINT-001"
 severity = "advisory"
-location = "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/research/scope.md:759-761"
-problem = "The audit describes Chrysostom's distinction as longsuffering toward those able to requite us and patience toward those unable to do so. This reverses the agent and object. The bound NPNF XIII source, ccel-npnf113-text-54274dd9/source.txt:23854-23860, says longsuffering concerns those whom WE can requite, and patience those whom we cannot. This is nonblocking for the study: sections/30-deliverance-and-waiting.tex:128-131 correctly preserves that relation and develops Aquinas's different adversity/delay distinction without substituting it for Chrysostom's."
-required_result = "Correct the research audit to say: 'Longsuffering toward those whom we can requite, and patience toward those whom we cannot, is his stated Colossians distinction.' Preserve the already-correct study footnote and the distinction from Aquinas."
-
-[[observations]]
-stage = "study-review"
-location = "proper-components.toml; sections/10-appointed-text.tex; sections/90-apparatus.tex:16-59; guidance/liturgy/propers-production-plan.md:229"
-note = "The declared complete mode matches the source records and actual study. Inspected the target Latin at Missal pp. 422-424 and Trinity Preface p. 293, the Pustet 1862 antecedents at pp. 359-360 and 251-252, and the retained Lasance/Walsh English at pp. 736-740, dialogue PDF 770 and Preface/Sanctus PDF 772-773. The study separates continuous Challoner verses from adapted liturgical English, preserves the historical abbreviated conclusions, explains the awkward Postcommunion rendering and does not import older additional orations. Reference-only labeling is not applicable."
-
-[[observations]]
-stage = "study-review"
-location = "sections/30-deliverance-and-waiting.tex; sections/40-prayer-and-conversion.tex; sections/50-comparison.tex"
-note = "The first interpretation explains accomplished redemption alongside future resurrection and gathering, with developed reasoning from Augustine and Chrysostom. The second explains confident petition as including a recipient made worthy, converted and forgiving, with developed reasoning from Aquinas and Bede. Their different consequences are recoverable from the arguments themselves, not only the headings or four-senses summaries. Each uses the orations, both uses of Psalm 129, Preface and Communion within its reasoning. Their complementarity is not presented as doctrinal rivalry. No recurring blocking register pattern or coverage roll call found."
-
-[[observations]]
-stage = "study-review"
-location = "sections/30-deliverance-and-waiting.tex:19-96"
-note = "Consequential-difficulty test passed: Augustine, Enarrationes 43.5-8 and 13 (bound NPNF VIII source, especially physical lines 14953-15015 and 15060-15090), explains the apparently accomplished rescue through prophetic certainty, future praise and present affliction. Bellarmine's Psalm 43 explanation instead remembers rescues actually received; the study preserves that real exegetical difference. Augustine 84.4 makes restoration future from the prophet's standpoint. The study states that inference before identifying its Christian application through the Epistle; it does not misattribute an already-accomplished Christian restoration to the prophet."
-
-[[observations]]
-stage = "study-review"
-location = "sections/30-deliverance-and-waiting.tex:143-216"
-note = "Consequential-difficulty test passed: Chrysostom, Matthew homily 76.2-3 (bound NPNF X source, physical lines 42462-42484 and 42527-42539), distinguishes the indefinite 'then' at Matthew 24:23 from 'immediately' after the final Antichrist/false-prophet trial at 24:29. The study teaches the distinct referents rather than making every temporal word indefinite. Homily 77 supports its account of 'this generation' as the believing people, without promising the first hearers' individual survival. The bodily urgency of Judean flight remains intact."
-
-[[observations]]
-stage = "study-review"
-location = "sections/40-prayer-and-conversion.tex:19-101,177-191,239-324"
-note = "Consequential-difficulty test passed: Aquinas, Super Colossenses 1 lectio 3, native 87848, grounds worthiness in God's making and explains prayer as raising the petitioner to God. Checked those Latin passages against the retained HTML, not an inferred English translation. Bede, In Marci III, the adjacent Mark 11:22-23 and 25 paragraphs (bound Latin source lines 338-339), combines the possibility of miraculous action with faith working through love and forgiveness of others. The study accurately identifies this as immediate-context exegesis, not a separately quoted verse-24 lemma. Aquinas's reported Origen explanation of election is also identified as reported, not independently collated Origen."
-
-[[observations]]
-stage = "study-review"
-location = "sections/20-commentary.tex; sections/30-deliverance-and-waiting.tex; sections/40-prayer-and-conversion.tex; sections/90-apparatus.tex"
-note = "Jerome's In Ieremiam V on 29:10-14 was checked on PL 24 PDF 451-452, cols. 893-896: delayed return, prayer preparing recipients and spiritual extension support the uses made here. Fromage's Collect explanation at printed pp. 503-504 and Secret/Postcommunion discussion at pp. 512-514 support the study, with the remaining-fault explanation correctly pinpointed at p. 513. The continuation is not attributed personally to Gueranger or counted toward the saintly-author requirement. Augustine's De Trinitate III.4.10, III.10.21 and opening III.11 support the sacramental-health and immutable-God analogues. These are not misrepresented as direct commentaries on the exact prayers or as the Fathers' own whole-Mass syntheses."
-
-[[observations]]
-stage = "study-review"
-location = ".scratch/proper-study-68/renewed-study-review-0000-evidence-check.json; research/source-bindings.toml"
-note = "Existing checks run independently: check-content-preflight, research edition, passed all reported checks; check-proper-components, content phase/research edition, passed. Reviewer-written checks also passed: seven retained binary/HTML payloads matched their registered SHA-256 and byte size; seven argument-bearing Aquinas derivative ranges matched decoded original HTML text ignoring whitespace; all ten Challoner quotation blocks matched the registered Bible verses unchanged except whitespace. These checks supplement, rather than replace, the manual source and argument review."
-
-[[observations]]
-stage = "study-review"
-location = "Review scope and limits"
-note = "Reviewed the authored canonical study, not prior reviewer verdicts or the author's conversation. The generated chronology appendix remains outside this authored-prose judgment; no contradictory authored dating claim was found. No optional print export was built or approved, and no full-page publication-layout inspection is claimed. Historical NPNF English and the identified Bede/Bellarmine transcriptions were checked at the used loci, not newly collated against Greek, manuscripts or their complete historical printings. Catalog-only leads and rejected consultations were not treated as supporting witnesses. No deliverable, research record, shared source, inventory, release/index record, accepted-run file or archive was edited, and the workflow was not advanced."
+location = "sections/20-commentary.tex:29–38; sections/30-deliverance-and-waiting.tex:84–91"
+problem = "Both footnotes cite the full Psalm 84 exposition, which contains the argument they report, but direct the reader especially to §§2–4 or §§2–5. Augustine explicitly asks why the prophet still prays for a restoration just called accomplished in Latin §6, on Ps 84:5. Section 4 supports the distinct explanation of Jacob’s captivity as bondage to sin."
+required_result = "Include Latin §6 among the highlighted pinpoints, or distinguish §4 for captivity and §6 for the inference from the later petition. Keep the existing argument and broad reference where relevant."
