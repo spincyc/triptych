@@ -132,6 +132,10 @@ import time
 
 args = sys.argv[1:]
 root = Path(os.environ["DEPLOYMENT_TEST_ROOT"])
+if args[:5] == ["tools/tpt", "corpus-index", "check", "--readers", "--jobs"]:
+    assert len(args) == 6 and 1 <= int(args[5]) <= 3 and os.environ["PYTHON_CPU_COUNT"] == args[5]
+    (root / "corpus-workers").write_text(args[5])
+    args = args[:4]
 make = Path(sys.argv[0]).name == "make"
 with open(os.environ["DEPLOYMENT_TEST_LOG"], "a", encoding="utf-8") as log:
     log.write(json.dumps(["make", *args] if make else args) + "\n")
@@ -161,7 +165,9 @@ if os.environ.get("DEPLOYMENT_TEST_OVERLAP"):
             if time.monotonic() >= deadline:
                 raise SystemExit(f"{started} blocked while waiting for {expected}")
             time.sleep(0.01)
-if args == ["-"]:
+if args[:1] == ["-c"]:
+    os.execv(sys.executable, [sys.executable, *args])
+elif args == ["-"]:
     exec(compile(sys.stdin.read(), "workflow-stdin", "exec"))
 elif args in (["tools/tpt", "browser-products", "build"], ["tools/tpt", "browser-products", "build", "--prune"]):
     ready.parent.mkdir(parents=True, exist_ok=True)
@@ -222,6 +228,9 @@ elif args in ([".github/scripts/pages-native-reference.py"], ["--digest"]):
     with open(os.environ["GITHUB_OUTPUT"], "a") as output:
         output.write("native-reference-sha256=" + digest + "\n")
 elif tuple(args) in allowed:
+    if ("DEPLOYMENT_TEST_GATE_RESULTS" in os.environ and "PAGES_NATIVE_REFERENCE_DIR" in os.environ
+            and os.environ.get("PYTHON_CPU_COUNT") != "1"):
+        raise SystemExit("a hosted source check exceeded its reserved runner slot")
     if tuple(args) in generated and not ready.is_file():
         raise SystemExit("generated consumer ran before browser product preparation")
 elif args[:3] == ["-m", "unittest", "-v"]:
@@ -524,11 +533,30 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
                 self.assertTrue((self.root / f"partitions/{shard}/native-print-reference/index.json").is_file())
                 self.assertFalse((received / str(shard)).exists())
 
+    def test_local_aggregate_corpus_workers_follow_capacity_and_jobserver(self):
+        marker = self.root / "corpus-workers"
+        cases = (
+            ("make -j4 check-deployment-sources", "12", 3),
+            ("make -j4 check-deployment-sources", "8", 2),
+            ("make -j4 check-deployment-sources", "2", 1),
+            ("make -j4 PYTHON_CPU_COUNT=8 check-deployment-sources", "12", 2),
+            ("make -j1 check-deployment-sources", "12", 3),
+            ("make -j check-deployment-sources", "12", 1),
+            ("make PDF_JOBS=2 check-deployment-sources", "4", 2),
+            ("make check-corpus-index", "12", None),
+        )
+        for command, capacity, expected in cases:
+            with self.subTest(command=command, capacity=capacity):
+                marker.unlink(missing_ok=True)
+                result = self.shell(command, env={**self.env, "PYTHON_CPU_COUNT": capacity})
+                self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+                self.assertEqual(int(marker.read_text()) if marker.exists() else None, expected)
+
     def test_four_slots_overlap_products_sources_site_and_calendar_checks(self):
         # Product preparation must overlap the cold corpus check, the site
         # must start before that check finishes, and independent calendar
         # checks must be able to meet after product verification.
-        result = self.shell("make -j4 pages-site", env={**self.env, "DEPLOYMENT_TEST_OVERLAP": "1"})
+        result = self.shell("make -j4 pages-site", env={**self.env, "DEPLOYMENT_TEST_OVERLAP": "1", "PYTHON_CPU_COUNT": "4"})
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         for marker in ("products", "corpus", "site", "days", "rubrics"):
             self.assertTrue((self.root / marker).exists(), marker)

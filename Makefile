@@ -445,8 +445,25 @@ prepare-browser-data:
 check-browser-products:
 	@$(PYTHON) $(BROWSER_PRODUCTS_TOOL) check
 
+# GNU Make normalizes --jobs=N to -jN in the active jobserver's MAKEFLAGS.
+# A serial invocation has one slot. Bare -j permits unlimited concurrent gates.
+override _TRIPTYCH_SOURCE_SLOTS = $(if $(filter -j,$(MAKEFLAGS)),0,$(or $(patsubst -j%,%,$(filter -j%,$(MAKEFLAGS))),1))
 check-corpus-index:
-	@$(PYTHON) tools/tpt corpus-index check --readers
+	@set -eu; set --; \
+	if [ -n "$${_TRIPTYCH_CORPUS_CAPACITY:-}" ]; then \
+		capacity=$$_TRIPTYCH_CORPUS_CAPACITY; slots=$(_TRIPTYCH_SOURCE_SLOTS); \
+		case "$$capacity" in \
+			default) capacity=$$(PYTHON_CPU_COUNT=default $(PYTHON) -c 'import os; print(len(os.sched_getaffinity(0)) if hasattr(os, "sched_getaffinity") else os.cpu_count() or 1)');; \
+			*[!0-9]*|0) echo "PYTHON_CPU_COUNT must be a positive integer or default" >&2; exit 1;; \
+		esac; \
+		workers=1; \
+		if [ "$$slots" -gt 0 ] && [ "$$capacity" -ge "$$slots" ]; then \
+			workers=$$(expr "$$capacity" / "$$slots"); \
+			[ "$$workers" -le 3 ] || workers=3; \
+		fi; \
+		export PYTHON_CPU_COUNT="$$workers"; set -- --jobs "$$workers"; \
+	fi; \
+	$(PYTHON) tools/tpt corpus-index check --readers "$$@"
 
 # Default validation checks logical identities, rights, bindings and the exact
 # external-delivery metadata without hydrating optional evidence bytes.
@@ -547,9 +564,9 @@ pages-native-reference:
 
 deployment-source-gates: $(DEPLOYMENT_SOURCE_MEMBERS)
 
-# Each concurrent Make recipe owns one runner slot. On Pages' Python 3.13
-# this also bounds the process and thread pools that discover CPU capacity.
-# Standalone corpus-index checks retain their own parallelism.
+# Keep one CPU per concurrent gate, and let the corpus reader use up to three
+# of its share of the caller's capacity. A direct corpus check uses its defaults.
+deployment-source-gates: export _TRIPTYCH_CORPUS_CAPACITY := $(or $(PYTHON_CPU_COUNT),default)
 deployment-source-gates: export PYTHON_CPU_COUNT := 1
 
 # These publication checks must fail when a dependency is unavailable. Ordinary
