@@ -1,14 +1,14 @@
 migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
-audited_on = "2026-11-19"
+audited_on = "2026-11-20"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:8dbdc8e10b16bab497429ac2df09b1d2d3bc0f5cf0409eb5e7fac40db6d7b3a9"
+inventory_snapshot = "sha256:bb779817b8240cba36827cc27065d279a49daaf3c342d5a102ae94847169614d"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
-classification_snapshot = "sha256:3e31ca144b739b9ac7ffb3d846bc30d705061feed3f565c4ed29f5e5b665b738"
-canonical_catalog_snapshot = "sha256:26b41f0d38ae9c38c8c2c54e714602a9f07bf5546785b353be7da6bbfccb8a6f"
+classification_snapshot = "sha256:3fb9e328a4212d8169aaa4939776c938e948cdcc922053f8393fcba8be969000"
+canonical_catalog_snapshot = "sha256:d4870b1a4f7299267bed37258a0ffa3d91f907581fa68d511f2ab7c075e4f269"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:ccac8db29a2d587c69824c943c7ec2dd7feac7fa9a251e74d449cc47e8a3e4af"
+snapshot = "sha256:493b49be8a0ef96a4b94303ab0735a72ef1dd7b99005b4a069034d040a4a270f"
 families = []
 
 [[review_units]]
@@ -594,6 +594,11 @@ review_state = "pending"
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan"
 surface_snapshot = "sha256:3f6eaf84357cb6a2208c8fd142db6a9a41ba57bbab146de9c9edce52d784952e"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "liturgy/roman-rite/1962/seasons/advent"
+surface_snapshot = "sha256:b36de07221fb190ac2191fb06f7822be973400e6e566b06a8cb69e40e4c92c34"
 review_state = "pending"
 
 [[review_units]]
