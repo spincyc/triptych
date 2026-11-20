@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "gpt"
-audited_on = "2026-11-18"
+audited_on = "2026-11-20"
 discovery_rule = "src/gpt/**/main.tex"
-publication_count = 155
-source_surface_file_count = 3707
-snapshot = "sha256:8dbdc8e10b16bab497429ac2df09b1d2d3bc0f5cf0409eb5e7fac40db6d7b3a9"
+publication_count = 156
+source_surface_file_count = 3725
+snapshot = "sha256:908a5560f000d42822b689f89e44ae1a52764029edefe1e7d4c5e6726d2edb29"
 
 [[owners]]
 id = "owner.articles.faith.four-last-things"
@@ -1581,6 +1581,17 @@ relationship = "local"
 [[documents.record_owners]]
 id = "owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"
 relationship = "source-owner"
+
+[[documents]]
+id = "liturgy/roman-rite/1962/seasons/advent"
+main = "src/gpt/liturgy/roman-rite/1962/seasons/advent/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "sources-categorized"
+source_categories = ["canon-law", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "prayer-devotional", "repository-internal", "scripture"]
+[[documents.record_owners]]
+id = "liturgy/roman-rite/1962/seasons/advent"
+relationship = "local"
 
 [[documents]]
 id = "liturgy/roman-rite/comparative/two-missals-one-sacrifice"
@@ -17650,6 +17661,114 @@ path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sha
 sha256 = "7c9e699faacca34f3d6c3063d31b3783a2cc4f01c05d97f5ec8805678cf64bfd"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/seasons/advent/format.tex"
+sha256 = "6fb52bfcf7fb7ff3ad2cabe169813233ea1c1758c5ad45853eb7f2defa9156f6"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/seasons/advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/seasons/advent/main.tex"
+sha256 = "bf624517280df46ab2f324b3af6d6f76b4b3f0087e04903f9b44c47c21fd583a"
+kind = "publication-main"
+owners = ["liturgy/roman-rite/1962/seasons/advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/seasons/advent/publication.toml"
+sha256 = "0598fda09a37cc7294c18d98a0f75ac86b9bc3441ce5212bd58aff07af620498"
+kind = "publication-contract"
+owners = ["liturgy/roman-rite/1962/seasons/advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/seasons/advent/research/cold-review.md"
+sha256 = "e15e9b37288cc93089b75cc4326ef68ea460ced49b28a4b80bdbfec8ca61c3b9"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/seasons/advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/seasons/advent/research/scope.md"
+sha256 = "595cb7465d89b1038136f3925a9e06ea59ccb962c963c2a593d0357c399002a3"
+kind = "research-scope"
+owners = ["liturgy/roman-rite/1962/seasons/advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/seasons/advent/research/source-audit.md"
+sha256 = "2530abae16edd00ea5b19dbcb0e98dce95fd9a6180764adbe5c902c8b4a1c850"
+kind = "legacy-source-audit"
+owners = ["liturgy/roman-rite/1962/seasons/advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/seasons/advent/research/source-bindings.toml"
+sha256 = "6b36c5eecbc9d0efa3614998b4ff7853cd43559912f0411fc7b4538261da966d"
+kind = "source-binding"
+owners = ["liturgy/roman-rite/1962/seasons/advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/seasons/advent/sections/05-before-advent.tex"
+sha256 = "af5ecfbf83b53636f482526f5f4a04f5dac61930af2c8516c2817384c5a69f04"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/seasons/advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/seasons/advent/sections/10-the-coming.tex"
+sha256 = "d685fa70a13a6ef9a48df4468de85a0eb41d101686c51ddb62199578074fa6f3"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/seasons/advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/seasons/advent/sections/12-history.tex"
+sha256 = "2a6f0c7f9abc64bc00c950a248cee9842fd88405f6a8144b7e3912427e679f29"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/seasons/advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/seasons/advent/sections/20-keeping-advent.tex"
+sha256 = "8e12d68dbadc251256952927593e52d3daddf170419d9ec74e4a3d9c338d629c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/seasons/advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/seasons/advent/sections/30-through-advent.tex"
+sha256 = "e0e13121e7cc7d0a398dd1cd5a3f4b9d81995b09a7799e660e25415c373f14d1"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/seasons/advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/seasons/advent/sections/40-bethlehem.tex"
+sha256 = "421da4271cf0d71c16cc983ebac1a3626d865d61a1c3d491a91b6e1541e77c15"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/seasons/advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/seasons/advent/sections/90-daily-readings.tex"
+sha256 = "12577b4fc987172619f24f2c2f1966a55ef5811504d78353bd53030d41b9ebf4"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/seasons/advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/seasons/advent/sections/92-prayers.tex"
+sha256 = "20c4a0ad9b6b3729ca9892f4b21ddc9f84555553510bcfcf884954fc18d6936b"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/seasons/advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/seasons/advent/sections/95-about.tex"
+sha256 = "410fee99d293e7553e703c4d2297de4e4bbc47d05c83ad79de9ebad80a7d3068"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/seasons/advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/seasons/advent/sections/99-references.tex"
+sha256 = "932d49320b6ebcd98ba674985601d8c33aa9303483e616841894fa99de40dc30"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/seasons/advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/seasons/advent/web-edition.toml"
+sha256 = "3019e1ece65e0c3a73b69dad80c99844d895cf455a1246b90fc3e8352bfe3e42"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/seasons/advent"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/comparative/two-missals-one-sacrifice/format.tex"

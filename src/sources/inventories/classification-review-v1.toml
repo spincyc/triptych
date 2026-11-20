@@ -1,8 +1,8 @@
 classification_schema = 1
 record_type = "publication-source-classification-review"
-audited_on = "2026-11-09"
-publication_snapshot = "sha256:6c0a4605c4c990fa213c1a7c0dea6d35e89b6b1134eae15642583c53c1b6a530"
-classification_snapshot = "sha256:3e31ca144b739b9ac7ffb3d846bc30d705061feed3f565c4ed29f5e5b665b738"
+audited_on = "2026-11-20"
+publication_snapshot = "sha256:bfea686660b01b98ed6007e850c8e2cd1c31302f7dff5910a0146b8a29bd2b0d"
+classification_snapshot = "sha256:3fb9e328a4212d8169aaa4939776c938e948cdcc922053f8393fcba8be969000"
 
 [[classifications]]
 document = "articles/canon-law/clerical-celibacy-chastity-and-continence"
@@ -471,6 +471,10 @@ source_categories = ["finding-aid", "historical-primary", "institutional-current
 [[classifications]]
 document = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan"
 source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "secondary"]
+
+[[classifications]]
+document = "liturgy/roman-rite/1962/seasons/advent"
+source_categories = ["canon-law", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "prayer-devotional", "repository-internal", "scripture"]
 
 [[classifications]]
 document = "liturgy/roman-rite/comparative/two-missals-one-sacrifice"

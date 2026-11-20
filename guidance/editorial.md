@@ -456,13 +456,18 @@ articles of faith) are held to these tests as well:
 - **Lead with the true thing that astonishes.** The Fathers and the liturgy
   are full of connections that stop a reader: Bethlehem is "the house of
   bread", and the Bread that came down from heaven is born there (Gregory the
-  Great, Homily 8 on the Gospels); St Luke wraps the child and lays him in
-  the manger with the two verbs he uses for the body wrapped and laid in the
-  tomb (Luke 2:7, 23:53). Build each major section of a teaching or
+  Great, Homily 8 on the Gospels); Mary wraps the child and lays him in a
+  manger, and Joseph of Arimathea wraps his body and lays it in a tomb
+  (Luke 2:7, 23:53). Build each major section of a teaching or
   devotional work around at least one such moment, found in the sources and
   given plainly with its source. This is the opposite of unearned
   profundity: the wonder is in the material and the reader can check it. The
   writer does not announce it, label it, or explain it twice.
+- **Read the parallel at its proper level.** When two scenes recall one
+  another, name who acts and what happens in each. Check the original before
+  making a verbal claim. Luke describes a parallel action with different
+  Greek verbs in the manger and tomb scenes. A meditation can draw them
+  together without claiming that Luke marked the likeness with a repeated word.
 - **Teach in order.** Lead from what the reader knows to what the reader
   does not: introduce a term, a figure or a practice before relying on it,
   let each section prepare the next, and end a part where its teaching ends.

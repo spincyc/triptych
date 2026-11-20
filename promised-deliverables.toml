@@ -6115,3 +6115,33 @@ state = "complete"
     "release/public-alpha.json",
     "src/index/sources/index.json",
   ]
+
+[[deliverables]]
+id = "gpt-advent-primer-1962-2026-11-20"
+owner = "src/gpt/liturgy/roman-rite/1962/seasons/advent"
+promise = "Create a compact, independent GPT primer for Advent in the 1962 Roman Rite. Cover the history, four Sundays, Scripture and the Fathers, daily prayer, fasting, almsgiving and confession, and prepare the reader for Christmas. Work from a section plan through parallel research, whole-source collation and a cold draft. Give the primer one discreet cue in the Sunday Propers Calendar and carry lessons from the work into the editorial and seasonal-primer guidance."
+state = "candidate"
+
+  [[deliverables.requirements]]
+  id = "plan-and-witnesses"
+  criterion = "A section plan precedes research, and the source audit and bindings attest the held witnesses and the collation used for writing."
+  status = "pass"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/seasons/advent/research/scope.md",
+    "src/gpt/liturgy/roman-rite/1962/seasons/advent/research/source-audit.md",
+    "src/gpt/liturgy/roman-rite/1962/seasons/advent/research/source-bindings.toml",
+  ]
+
+  [[deliverables.requirements]]
+  id = "primer-and-review"
+  criterion = "The manuscript follows the plan and the profile, teaches spiritual practice, leads into the Nativity, and has independent reader and accuracy reviews with findings dispositioned."
+  status = "pass"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/seasons/advent/sections",
+    "src/gpt/liturgy/roman-rite/1962/seasons/advent/research/cold-review.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "catalogue-and-validation"
+  criterion = "The manuscript, provider-neutral evidence, generated reader and catalog links pass the applicable source and publication checks, with one cue above the Sunday Propers Calendar."
+  status = "open"

@@ -15030,3 +15030,26 @@ household customs (wreath, St Nicholas, Jesse tree); a 1962 Breviary's own
 statement of the Te Deum's omission. No 1961–62 Breviary is held; the Office
 texts rest on the 1888 Breviary and Bute's English, as About This Book says.
 
+
+## GPT Advent primer for the 1962 Roman Rite, 2026-11-20
+
+<!-- promised-deliverable: gpt-advent-primer-1962-2026-11-20 -->
+
+A compact seasonal primer for a reader preparing for Christmas and for the
+four Sundays that precede it. The independent GPT edition follows the
+seasonal-primer profile and shares its source library with the Claude
+edition. A section plan precedes three parallel research lanes, collation of
+the full witnesses, and a fresh draft. The calendar will carry one cue to the
+seasonal primer beside the existing links to the proper guides.
+
+The plan and its scope are in
+[src/gpt/liturgy/roman-rite/1962/seasons/advent/research/scope.md](src/gpt/liturgy/roman-rite/1962/seasons/advent/research/scope.md).
+
+The draft and its two reviews are complete. The corpus now holds the full
+Latin calendar section *Depositio Martirum*, checked against Mommsen's
+printed pages. The remaining witnesses were reused from the shared library.
+The book has a five-minute daily rule, a fuller one, a reading course and
+seven dated antiphons. The [review record](src/gpt/liturgy/roman-rite/1962/seasons/advent/research/cold-review.md)
+accounts for the corrections. The source files and reader conversion pass
+their focused checks. The release and discovery records still need their
+checkout-wide verification.
