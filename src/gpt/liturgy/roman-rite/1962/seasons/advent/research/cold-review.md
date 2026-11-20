@@ -64,3 +64,22 @@ Visitation again. The closing returns to Titus's instruction for how to
 live. The arrest remains in one sentence, at the maintainer's request,
 while Luke's swaddling and burial and Nazianzen's use of them carry the
 argument.
+
+## Formation revision
+
+A fresh reader read the complete study and both practical appendices in book
+order. A second reviewer checked attributions, the calendar and Scripture
+against the witnesses. The following revisions resulted.
+
+| What a reader or source check found | Revision |
+| --- | --- |
+| The opening left the last evenings ambiguous. Instructions about restarting after a missed day or the Immaculate Conception could send a reader to the wrong week. | Give the O dates at the door, and resume with the row for the day actually reached. |
+| The first uses of the Missal, Breviary and Magnificat preceded their explanations. Calendar arithmetic and the dismissal delayed the historical story. | Identify the books and canticle where the reader encounters them. Shorten the counting and dismissal and name the three Gelasian prayers as petitions of one Mass. |
+| Zachary blesses God before addressing John. His canticle was too easily mistaken for a Sunday Mass reading. Augustine was Proba's correspondent. Francis de Sales compares two occupations with religious lives. | Correct the order and speakers and keep the family's Gospel at home. Restore the comparisons to their named sources. |
+| The movement from sorrow for sin to bereavement on Gaudete Sunday needed room. Ember Wednesday withheld Mary's answer. Paul wrote to Rome. | Let Paul's thanksgiving and prayer for peace speak to grief, give Mary's consent in Luke, and identify Isaiah's words in Paul's letter. |
+| The Gospel at the crib gives the shepherds news before a sign. Several works cited in the body lacked their own references. | Restore “born to you,” remove the repeated explanation of the sign, and identify the two new historical books, Ambrose, Pius XII and Leo's December sermon in the references. |
+| December 21 can coincide with two Ember Days. The Office can commemorate an Advent feria at a feast's Vespers. A Douay–Rheims reading stopped one verse before the promised flesh. | Cover Friday and Saturday, the Mass at which ordination takes place, and the Sunday exception. Qualify the Office appointment. Read John 6 through verse 52 and give an unambiguous Exodus reference for Sinai. |
+
+The final accuracy read also distinguished the deacon's dismissal at Solemn
+Mass, directed the reader to Bute p. 230 for the reed, and kept the Sinai
+passage and the verse numbering of John explicit.

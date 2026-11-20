@@ -220,16 +220,19 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
     in the page's Seasonal Primers section, which owns it."""
     landing = (ROOT / "library/traditional-latin-mass.md").read_text()
     leaf = "liturgy/roman-rite/1962/seasons/advent"
-    link = f"[Advent: A Primer](../web/claude/{leaf}.html)"
-    marker = f"<!-- triptych-publication-reference: claude:{leaf} -->"
 
     calendar = landing.split("## Sunday Propers Calendar", 1)[1].split("### Feasts Replacing a Sunday", 1)[0]
     main = calendar.split("### Resumed Sundays after the Epiphany\n", 1)[0]
     before_table, table_and_after = main.split("\n| ID | Sunday |", 1)
     cue = before_table.rstrip("\n").rsplit("\n", 1)[-1]
-    self.assertEqual(cue, f"*Before the season:* {link} ◇ {marker}")
+    self.assertTrue(cue.startswith("*Advent primer*"))
+    self.assertIn("◇", cue)
+    for provider, label, prefix in (("gpt", "ChatGPT", ""), ("claude", "Claude", "claude:")):
+      self.assertIn(f"[{label}](../web/{provider}/{leaf}.html)", cue)
+      marker = f"<!-- triptych-publication-reference: {prefix}{leaf} -->"
+      self.assertIn(marker, cue)
+      self.assertEqual(landing.count(marker), 1)
     self.assertTrue(table_and_after.split("\n", 3)[2].startswith("| 01 | **First Sunday of Advent**"))
-    self.assertEqual(landing.count(marker), 1)
     self.assertEqual(landing.count("◇"), 2)
 
     notes = table_and_after.strip().split("\n\n")
@@ -244,9 +247,13 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
     self.assertLess(landing.index("## Core and Reference Works"), landing.index("## Seasonal Primers"))
     self.assertLess(landing.index("## Seasonal Primers"), landing.index("## Sunday Propers Calendar"))
     rows = [line for line in primers.splitlines() if line.startswith("| **")]
-    self.assertEqual(len(rows), 1)
-    self.assertTrue(rows[0].startswith("| **Advent** | "), rows[0])
-    self.assertIn(f"](../web/claude/{leaf}.html)", rows[0])
+    self.assertEqual([row.split("**")[1] for row in rows], [
+      "Advent", "Christmas", "Epiphany", "Time after Epiphany", "Septuagesima",
+      "Lent", "Passiontide", "Easter", "Ascensiontide", "Octave of Pentecost",
+      "Time after Pentecost",
+    ])
+    for provider in ("gpt", "claude"):
+      self.assertIn(f"](../web/{provider}/{leaf}.html)", rows[0])
     self.assertIn("[Seasonal primers](#seasonal-primers)", landing.split("## Core and Reference Works", 1)[0])
 
     # One owner: the Seasonal Primers row, not the cue line.
@@ -259,8 +266,9 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
     primary, providers = tool.declared_providers(manifest)
     publications = tool.publication_map(manifest)
     occurrences = tool.catalog_occurrences(primary, providers, publications)[0]
-    self.assertEqual(publications[("claude", leaf)]["catalog"], "library/traditional-latin-mass.md")
-    self.assertEqual(occurrences[("claude", leaf)], ["library/traditional-latin-mass.md"])
+    for provider in ("gpt", "claude"):
+      self.assertEqual(publications[(provider, leaf)]["catalog"], "library/traditional-latin-mass.md")
+      self.assertEqual(occurrences[(provider, leaf)], ["library/traditional-latin-mass.md"])
 
   def test_postconciliar_registry_and_reader_calendar_arithmetic(self):
     registry = (

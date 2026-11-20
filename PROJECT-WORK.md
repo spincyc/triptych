@@ -15071,3 +15071,14 @@ edition passed the source and web conversion checks and rendered as an
 eighteen-page book. Two independent browser builds produced identical
 outputs. The refreshed discovery index and the scoped site-source binding
 record agree with the current corpus.
+
+## Advent formation and the seasonal primer catalog, 2026-11-20
+
+<!-- promised-deliverable: gpt-advent-formation-and-season-table-2026-11-20 -->
+
+The maintainer requested a deeper historical and practical study for the GPT
+Advent reader and a plan covering the coming changes of season. Revise the
+1962 Advent leaf, verify its teaching and household reading course, and mark
+forthcoming subjects in the Seasonal Primers table. Use the coming liturgical
+year for the catalog horizon. The reader's plan and evidence are kept in the
+leaf's research records.

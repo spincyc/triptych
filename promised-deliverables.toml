@@ -6153,3 +6153,19 @@ state = "complete"
     "release/public-alpha.json",
     "src/index/documents/corpus.json",
   ]
+
+[[deliverables]]
+id = "gpt-advent-formation-and-season-table-2026-11-20"
+owner = "src/gpt/liturgy/roman-rite/1962/seasons/advent"
+promise = "Deepen the GPT Advent primer's historical account and teach readers how to prepare before Advent and pray through its weeks. Extend the 1962 seasonal primer table to cover the coming year's changes of season."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "formation"
+  criterion = "The published study supplies verified historical witnesses, worked prayer and preparation, the proper days and a reusable daily course, with source and reader review."
+  status = "open"
+
+  [[deliverables.requirements]]
+  id = "season-table"
+  criterion = "The seasonal primer table identifies the upcoming changes in the 1962 calendar and distinguishes planned studies from readable editions."
+  status = "open"
