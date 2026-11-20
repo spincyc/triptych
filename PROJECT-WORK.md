@@ -15082,3 +15082,13 @@ Advent reader and a plan covering the coming changes of season. Revise the
 forthcoming subjects in the Seasonal Primers table. Use the coming liturgical
 year for the catalog horizon. The reader's plan and evidence are kept in the
 leaf's research records.
+
+The revised study gives readers a first prayer before Advent, a rule they can
+return to on a working day, and Scripture and patristic readings to keep
+through the Christmas Vigil. The [source audit](src/gpt/liturgy/roman-rite/1962/seasons/advent/research/source-audit.md)
+identifies the Gelasian prayers, the St Gall chant pages and the other witnesses.
+The [reader and accuracy reviews](src/gpt/liturgy/roman-rite/1962/seasons/advent/research/cold-review.md)
+record the resulting corrections. The web edition and the 23-page print proof
+were checked, including the four reading tables and all seven antiphons.
+The [seasonal primer table](library/traditional-latin-mass.md#seasonal-primers)
+dates ten further planned subjects through the return of Advent in 2027.
