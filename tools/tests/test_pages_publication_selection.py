@@ -29,6 +29,7 @@ SOURCE_COMMANDS = {
     ("tools/tpt", "snapshot-store", "check"),
     ("scripts/_papal_input_receipt.py", "check"),
     ("tools/tpt", "document-library", "check"),
+    ("tools/tpt", "corpus-index", "check", "--readers"),
     ("tools/tpt", "source-library", "validate"),
     ("tools/tpt", "calendar-days", "check"),
     ("tools/tpt", "check-calendar-masses"),
@@ -47,7 +48,6 @@ GENERATED_CONSUMERS = {
     ("tools/tpt", "mass-ordinary", "check"),
 }
 CACHE_ACTION = "55cc8345863c7cc4c66a329aec7e433d2d1c52a9"
-PRODUCT_IDENTITY = "a" * 64
 RIGHTS_TESTS = {
     "test_hash_only_registry_is_complete_and_well_formed",
     "test_allowlist_exactly_matches_tracked_curriculum_sources",
@@ -83,11 +83,11 @@ def cache_directory(root):
         self.log = self.root / "commands.jsonl"
         self.env = {**os.environ, "PATH": f"{self.bin}{os.pathsep}{os.environ['PATH']}",
                     "GITHUB_WORKSPACE": str(self.root), "PYTHONDONTWRITEBYTECODE": "1",
+                    "GIT_CEILING_DIRECTORIES": str(self.root.parent),
                     "DEPLOYMENT_TEST_LOG": str(self.log), "DEPLOYMENT_TEST_ROOT": str(self.root),
                     "DEPLOYMENT_TEST_SOURCE_COMMANDS": json.dumps(sorted(SOURCE_COMMANDS)),
                     "DEPLOYMENT_TEST_GENERATED_CONSUMERS": json.dumps(sorted(GENERATED_CONSUMERS)),
-                    "DEPLOYMENT_TEST_PRODUCT_IDENTITY": PRODUCT_IDENTITY,
-                    "GITHUB_OUTPUT": str(self.root / "workflow-output"),
+                    "GITHUB_SHA": "1" * 40, "GITHUB_OUTPUT": str(self.root / "workflow-output"),
                     "GITHUB_PATH": str(self.root / "workflow-path"),
                     "RUNNER_TEMP": str(self.root / "runner-temp"),
                     "DEPLOYMENT_TEST_RIGHTS": json.dumps(sorted(RIGHTS_TESTS))}
@@ -110,16 +110,21 @@ if " ".join(args) == os.environ.get("DEPLOYMENT_TEST_FAIL"):
     raise SystemExit("deliberate source gate failure")
 if args == ["-"]:
     exec(compile(sys.stdin.read(), "workflow-stdin", "exec"))
-elif args == ["tools/tpt", "browser-products", "key"]:
-    print(os.environ["DEPLOYMENT_TEST_PRODUCT_IDENTITY"])
 elif args == ["tools/tpt", "browser-products", "build"]:
     ready.parent.mkdir(parents=True, exist_ok=True)
     ready.write_text("exact current products verified; no evidence downloads\n")
 elif args == ["tools/tpt", "browser-products", "prune"]:
     if not ready.is_file():
         raise SystemExit("cache retention ran before product verification")
+elif args == [".github/scripts/verify-native-print.py", "site-key", "--site", "build/public-alpha/site",
+              "--revision", os.environ["GITHUB_SHA"]]:
+    if not (root / "build/public-alpha/site/index.html").is_file():
+        raise SystemExit("print set measured before site build")
+    print("b" * 64)
 elif args == ["scripts/_browser_cache_bootstrap.py", "--fetch"]:
     pass  # Optional untrusted candidates; the product build authenticates them.
+elif args == [".github/scripts/bootstrap-web-figures.py", ".scratch/pages-web-figures"]:
+    pass  # Optional bounded download on the first figure cache miss.
 elif args == ["scripts/_native_tex_assets.py", "hydrate", "--fetch"]:
     pass  # Verify browser compiler inputs; no compiler executes in deployment.
 elif args[:3] == ["scripts/_install_web_edition_pandoc.py", "--fetch", "--bin-dir"] and len(args) == 4:
@@ -129,6 +134,8 @@ elif args[:4] == ["tools/tpt", "web-edition", "figures", "--runner"] and len(arg
         raise SystemExit("web figures compiled before product verification")
     if not args[4].startswith(("docker:", "host")):
         raise SystemExit("web figures need an explicit runner")
+    (root / "build/web-figures").mkdir(parents=True, exist_ok=True)
+    (root / ".scratch").mkdir(exist_ok=True)
 elif tuple(args) in allowed:
     if tuple(args) in generated and not ready.is_file():
         raise SystemExit("generated consumer ran before browser product preparation")
@@ -141,7 +148,7 @@ elif args[:3] == ["-m", "pip", "install"]:
         raise SystemExit("unexpected deployment dependency install")
 elif args[:2] == ["tools/tpt", "check-proper-components"] and args[-1] in {"--list-synthesis", "--list-homily"}:
     pass  # Make's parse-time discovery, not PDF compilation.
-elif args == ["tools/tpt", "public-alpha", "build"]:
+elif args == ["tools/tpt", "public-alpha", "build", "--prepared-products"]:
     if not ready.is_file():
         raise SystemExit("publication ran before product verification")
     target = root / "build/public-alpha/site/index.html"
@@ -178,6 +185,12 @@ else:
         return yaml.safe_load((ROOT / ".github/workflows/pages.yml").read_text(encoding="utf-8"))
 
     def run_pages_commands(self, *, env=None, cache_hit=False):
+        # The checkout's Git accelerators operate only on this fixture's own repository.
+        if not (self.root / ".git").is_dir():
+            subprocess.run(["git", "init", "-q", str(self.root)], check=True)
+            subprocess.run(["git", "-C", str(self.root), "-c", "user.name=Pages fixture",
+                            "-c", "user.email=fixture@example.invalid", "-c", "commit.gpgSign=false",
+                            "commit", "--quiet", "--allow-empty", "-m", "Fixture checkout"], check=True)
         # The workflow-level declarations every step sees, such as TEXLIVE_IMAGE.
         env = {**(env or self.env), **{name: str(value) for name, value in self.pages()["env"].items()}}
         descriptor = self.root / "release/browser-products.json"
@@ -275,7 +288,7 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
                 self.assertEqual(Counter(commands)[command], 1)
         rights = [command for command in commands if command[:3] == ("-m", "unittest", "-v")]
         self.assertEqual(len(rights), 1)
-        build = ("tools/tpt", "public-alpha", "build")
+        build = ("tools/tpt", "public-alpha", "build", "--prepared-products")
         verify = ("tools/tpt", "public-alpha", "verify", "--deployment-target", "github-pages")
         self.assertEqual(commands.count(build), 1)
         self.assertEqual(commands.count(verify), 1)
@@ -305,7 +318,7 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         # cache retention and upload are later steps that never run.
         verify = ("tools/tpt", "public-alpha", "verify", "--deployment-target", "github-pages")
         before_make = ["scripts/_native_tex_assets.py hydrate --fetch",
-                       "tools/tpt browser-products key", "scripts/_browser_cache_bootstrap.py --fetch",
+                       "scripts/_browser_cache_bootstrap.py --fetch",
                        "tools/tpt browser-products build",
                        "-m unittest -v " + " ".join(
                            "tools.tests.test_curriculum_liturgical_rights.CurriculumLiturgicalRightsTests." + name
@@ -328,7 +341,7 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
                 if gate in before_make:
                     # Nothing the site build needs may be skipped: its own
                     # prerequisites still stop assembly outright.
-                    self.assertNotIn(("tools/tpt", "public-alpha", "build"), commands)
+                    self.assertNotIn(("tools/tpt", "public-alpha", "build", "--prepared-products"), commands)
                     self.assertFalse((self.root / "build/public-alpha/site").exists())
 
     def test_each_source_gate_failure_prevents_local_artifact_construction(self):
@@ -340,7 +353,7 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
                 result = self.shell("make public-site", env={**self.env, "DEPLOYMENT_TEST_FAIL": gate})
                 self.assertNotEqual(result.returncode, 0)
                 self.assertIn("deliberate source gate failure", result.stderr)
-                self.assertNotIn(("tools/tpt", "public-alpha", "build"), self.commands())
+                self.assertNotIn(("tools/tpt", "public-alpha", "build", "--prepared-products"), self.commands())
                 self.assertFalse((self.root / "build/public-alpha/site").exists())
 
     def test_pages_reaches_every_deployment_source_gate_and_the_site_build(self):
@@ -358,7 +371,7 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         site = make_reached("public-site", makefile)
         self.assertEqual(set(site) - {"public-site", "check-deployment-sources"} - set(reached), set())
         body = "\n".join(reached.values())
-        self.assertIn("$(PUBLIC_ALPHA_TOOL) build", body)
+        self.assertIn("$(PUBLIC_ALPHA_TOOL) build --prepared-products", body)
         self.assertIn("$(WEB_FIGURES)", body)
 
     def test_consumers_prepare_products_once_before_serial_or_parallel_reads(self):
@@ -373,15 +386,6 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
                 self.assertEqual(commands.count(prepared), 1)
                 for consumer in GENERATED_CONSUMERS & set(commands):
                     self.assertLess(commands.index(prepared), commands.index(consumer))
-
-    def test_invalid_product_identity_never_reaches_cache_preparation(self):
-        for identity in ("", "not-a-content-hash", PRODUCT_IDENTITY + "\nextra=untrusted"):
-            with self.subTest(identity=identity):
-                self.log.unlink(missing_ok=True)
-                result = self.run_pages_commands(env={**self.env, "DEPLOYMENT_TEST_PRODUCT_IDENTITY": identity})
-                self.assertNotEqual(result.returncode, 0)
-                self.assertIn("Invalid browser product content identity", result.stderr)
-                self.assertNotIn(("tools/tpt", "browser-products", "build"), self.commands())
 
     def test_exact_cache_hit_still_verifies_products_and_skips_cache_retention(self):
         ready = self.root / "build/browser-data/verified-ready"
@@ -407,10 +411,9 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         self.assertEqual(save["with"]["path"], restore["with"]["path"])
         self.assertEqual(save["with"]["key"], restore["with"]["key"])
         self.assertEqual(restore["with"]["key"],
-                         "triptych-browser-products-v1-${{ steps.browser-products.outputs.identity }}")
+                         "triptych-browser-products-v1-${{ hashFiles('release/browser-products.json') }}")
         self.assertEqual(restore["with"]["restore-keys"].strip(), "triptych-browser-products-v1-")
         names = [step["name"] for step in steps]
-        self.assertLess(names.index("Identify exact browser products"), names.index(restore["name"]))
         self.assertLess(names.index(restore["name"]), names.index("Validate sources and build public artifact"))
         self.assertLess(names.index("Retain verified current browser products"), names.index(save["name"]))
         self.assertLess(names.index("Validate sources and build public artifact"),
@@ -422,7 +425,7 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         steps = self.pages()["jobs"]["build"]["steps"]
         actions = [step["uses"].partition("@")[0] for step in steps if "uses" in step]
         self.assertEqual(actions, ["actions/checkout", "actions/setup-python", "actions/cache", "actions/cache/restore",
-                                   "actions/cache/save", "actions/configure-pages",
+                                   "actions/cache", "actions/cache/save", "actions/configure-pages",
                                    "actions/upload-pages-artifact"])
         upload = next(step for step in steps if step.get("uses", "").startswith("actions/upload-pages-artifact@"))
         self.assertEqual(upload["with"]["path"], "build/public-alpha/site")
@@ -434,6 +437,12 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         self.assertEqual(runtime["with"]["path"], ".scratch/native-tex-runtime")
         self.assertEqual(runtime["with"]["key"],
                          "triptych-native-tex-v1-${{ hashFiles('src/common/native-tex-runtime.json') }}")
+        candidates = next(step for step in steps if step["name"] == "Restore web figure candidates")
+        self.assertEqual(candidates["uses"], f"actions/cache@{CACHE_ACTION}")
+        build = next(step for step in steps if step["name"] == "Validate sources and build public artifact")
+        self.assertEqual(candidates["with"]["path"], build["env"]["TRIPTYCH_WEB_FIGURE_CANDIDATES"])
+        self.assertIn("hashFiles('.github/web-figure-digests.json', 'scripts/_web_edition_figures.py')",
+                      candidates["with"]["key"])
         commands = "\n".join(step.get("run", "") for step in steps)
         # The build host installs no TeX. The only TeX it runs is web figure
         # compilation, inside the pinned TEXLIVE_IMAGE, through make.
@@ -449,36 +458,52 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
     def test_only_deploy_publishes_and_it_waits_for_the_print_compile_gate(self):
         workflow = self.pages()
         jobs = workflow["jobs"]
-        self.assertEqual(set(jobs), {"build", "print-compile", "deploy"})
+        self.assertEqual(workflow["concurrency"], {
+            "group": "${{ github.ref == 'refs/heads/main' && 'pages' || format('pages-verify-{0}', github.ref) }}",
+            "cancel-in-progress": False})
+        self.assertEqual(set(jobs), {"build", "print-compile", "print-verify", "deploy"})
         self.assertEqual(workflow["permissions"], {"contents": "read"})
         self.assertNotIn("needs", jobs["build"])
         self.assertNotIn("needs", jobs["print-compile"])
         self.assertEqual(jobs["build"]["permissions"], {"contents": "read", "pages": "read"})
         self.assertEqual(jobs["print-compile"]["permissions"], {"contents": "read"})
         deploy = jobs["deploy"]
-        self.assertEqual(sorted(deploy["needs"]), ["build", "print-compile"])
-        self.assertNotIn("if", deploy)
+        self.assertEqual(deploy["needs"], ["print-verify"])
+        self.assertEqual(sorted(jobs["print-verify"]["needs"]), ["build", "print-compile"])
+        self.assertEqual(jobs["print-verify"]["permissions"], {"contents": "read"})
+        steps = {step["name"]: step for step in jobs["build"]["steps"]}
+        self.assertIn("site-key --site build/public-alpha/site --revision", steps[
+            "Identify every print bundle in the verified artifact"]["run"])
+        self.assertLess(list(steps).index("Verify artifact and GitHub Pages compatibility"),
+                        list(steps).index("Identify every print bundle in the verified artifact"))
+        verify = jobs["print-verify"]["steps"][-1]
+        self.assertIn("join --receipts .scratch/print-shards --shards 8", verify["run"])
+        self.assertEqual(verify["env"]["SITE_KEY"], "${{ needs.build.outputs.print-site-key }}")
+        self.assertEqual(jobs["print-compile"]["strategy"]["matrix"]["shard"], list(range(1, 9)))
+        self.assertEqual(jobs["print-compile"]["strategy"]["max-parallel"], 8)
+        self.assertEqual(deploy["if"], "github.ref == 'refs/heads/main'")
         self.assertEqual(deploy["permissions"], {"pages": "write", "id-token": "write"})
         self.assertEqual(deploy["environment"]["name"], "github-pages")
         self.assertEqual([step["uses"].partition("@")[0] for step in deploy["steps"]], ["actions/deploy-pages"])
         self.assertNotIn("environment", jobs["build"])
         self.assertNotIn("environment", jobs["print-compile"])
         # Every action outside the build job is pinned to a full commit.
-        for name in ("print-compile", "deploy"):
+        for name in ("print-compile", "print-verify", "deploy"):
             for step in jobs[name]["steps"]:
                 if "uses" in step:
                     self.assertRegex(step["uses"], r"@[0-9a-f]{40}$")
         compile_steps = {step["name"]: step for step in jobs["print-compile"]["steps"]}
-        self.assertIn("python tools/tpt native-print-compile prepare",
-                      compile_steps["Prepare every admitted native print bundle"]["run"])
-        toolchain = compile_steps["Build the pinned print toolchain"]["run"]
+        toolchain = compile_steps["Prepare this partition and build the pinned print toolchain"]["run"]
+        self.assertIn('python tools/tpt native-print-compile prepare --shard "$PRINT_SHARD"', toolchain)
+        self.assertIn('wait "$image_pid" || status=$?', toolchain)
+        self.assertIn('exit "$status"', toolchain)
         self.assertIn("--target toolchain", toolchain)
         self.assertIn('"PRINT_BASE=$TEXLIVE_IMAGE"', toolchain)
         self.assertIn('"ARCH_SNAPSHOT=$ARCH_SNAPSHOT"', toolchain)
-        compiled = compile_steps["Compile every admitted edition from its bundle alone"]["run"]
+        compiled = compile_steps["Compile every edition in the partition from its bundle alone"]["run"]
         self.assertIn("--network none", compiled)
         self.assertIn("native-print-compile compile", compiled)
-        self.assertNotIn("--only", compile_steps["Prepare every admitted native print bundle"]["run"] + compiled)
+        self.assertNotIn("--only", toolchain + compiled)
         for step in jobs["print-compile"]["steps"]:
             if "if" in step:
                 self.assertEqual(step["if"], "${{ !cancelled() }}")

@@ -1,8 +1,8 @@
 """Compile every admitted native print edition from its source bundle alone.
 
-`prepare` materializes the exact source transports the Pages build publishes
-under `native-tex/sources/` for the whole admitted print universe, and refuses
-when the admitted and materialized sets differ. `compile` then typesets each
+`prepare` materializes the whole admitted print universe or a disjoint shard
+of it. Pages compares every shard's compiled mounts and invocation against
+the independently verified site, across raw and compressed source transports. `compile` then typesets each
 edition with the engine its bundle names, under the browser's compilation
 policy in `src/web/browser/shared/native-tex.js`: at least two passes, at most
 the bundle's maximum, settled auxiliary files, and the same fatal-log patterns.
@@ -144,7 +144,7 @@ def _reset(out: Path) -> None:
 
 
 def materialize(catalog: dict, documents: dict, out: Path, *, revision: str, epoch: int,
-                scope: str = "admitted") -> dict:
+                scope: str = "admitted", shard: tuple[int, int] | None = None) -> dict:
     """Write each served bundle's mounted tree exactly as the browser receives it."""
     import _native_print_bundles as bundles
     _need(isinstance(catalog, dict) and catalog.get("schema") == bundles.CATALOG_SCHEMA,
@@ -200,18 +200,36 @@ def materialize(catalog: dict, documents: dict, out: Path, *, revision: str, epo
                               "render_sha256": bundle.get("render_sha256"), "files": files}
     index = {"schema": INDEX_SCHEMA, "scope": scope, "source_revision": revision,
              "source_date_epoch": epoch, "admitted": sorted(admitted), "editions": editions}
+    if shard is not None:
+        index["shard"] = list(shard)
     _write_json(out / "index.json", index)
     return index
 
 
-def prepare(root: Path, out: Path, *, only=()) -> dict:
+def partition(identities, number: int, count: int) -> list[str]:
+    """Spread adjacent editions across runners and assign each exactly once."""
+    _need(1 <= number <= count, "invalid native print shard")
+    selected = sorted(identities)[number - 1::count]
+    _need(selected, "empty native print shard")
+    return selected
+
+
+def parse_shard(value: str) -> tuple[int, int]:
+    _need(re.fullmatch(r"[1-9][0-9]*/[1-9][0-9]*", value), "expected a shard number/count")
+    number, count = map(int, value.split("/"))
+    _need(number <= count, "invalid native print shard")
+    return number, count
+
+
+def prepare(root: Path, out: Path, *, only=(), shard=None) -> dict:
     """Prepare the admitted universe (or an explicit subset) through the bundle API."""
     from _native_print import admitted_documents, source_revision
     import _native_print_bundles as bundles
     root = Path(root).resolve()
     documents = admitted_documents(root)
     revision = source_revision(root)
-    selected = sorted(set(only))
+    _need(not (only and shard), "--only and --shard are mutually exclusive")
+    selected = partition(documents, *shard) if shard is not None else sorted(set(only))
     for identity in selected:
         _need(identity in documents, "not an admitted native print edition: " + identity)
     try:
@@ -223,7 +241,7 @@ def prepare(root: Path, out: Path, *, only=()) -> dict:
                                       output_ids=selected or None)
     wanted = {identity: documents[identity] for identity in selected} if selected else documents
     return materialize(catalog, wanted, out, revision=revision, epoch=epoch,
-                       scope="selected" if selected else "admitted")
+                       scope="shard" if shard else ("selected" if selected else "admitted"), shard=shard)
 
 
 def load_runtime(path: Path) -> dict:
@@ -494,7 +512,7 @@ def compile_all(out: Path, *, runtime_path: Path, jobs: int) -> dict:
     except (OSError, ValueError) as error:
         raise CompileError("no prepared native print work tree; run prepare first") from error
     _need(isinstance(index, dict) and index.get("schema") == INDEX_SCHEMA
-          and index.get("scope") in {"admitted", "selected"}, "unsupported native print work index")
+          and index.get("scope") in {"admitted", "selected", "shard"}, "unsupported native print work index")
     editions = index["editions"]
     _need(isinstance(editions, dict) and sorted(editions) == index["admitted"],
           "admitted and materialized native print editions differ")
@@ -532,6 +550,7 @@ def compile_all(out: Path, *, runtime_path: Path, jobs: int) -> dict:
         except Exception as error:  # A defect in one edition must not hide the others.
             receipt = {"schema": RECEIPT_SCHEMA, "id": identity, "engine": edition["engine"],
                        "status": "fail", "problems": ["gate error: " + repr(error)]}
+        receipt["source_revision"] = index["source_revision"]
         _write_json(out / "receipts" / (edition["directory"] + ".json"), receipt)
         if receipt["status"] != "pass":
             print("FAIL " + identity + ": " + "; ".join(receipt["problems"][:3]), file=sys.stderr, flush=True)
@@ -558,8 +577,93 @@ def compile_all(out: Path, *, runtime_path: Path, jobs: int) -> dict:
                "runtime_members_with_other_host_bytes": sorted(differing),
                "jobs": jobs, "wall_seconds": round(wall, 1),
                "cpu_seconds": round(after.ru_utime + after.ru_stime - before.ru_utime - before.ru_stime, 1)}
+    if index["scope"] == "shard":
+        summary["shard"] = index["shard"]
     _write_json(out / "summary.json", summary)
     return summary
+
+
+def edition_set_key(renders: dict[str, str], revision: str) -> str:
+    """One digest over every edition ID, mounted input identity and exact source revision."""
+    _need(renders and _REVISION.fullmatch(revision), "empty native print set or invalid revision")
+    value = {"source_revision": revision, "renders": renders}
+    return _sha(json.dumps(value, sort_keys=True, separators=(",", ":")).encode())
+
+
+def site_key(site: Path, revision: str) -> str:
+    """Read the actual verified artifact including the mountable raw and gzip source bytes."""
+    import _native_print_bundles as bundles
+    from _native_tex_publication import _source_pack_assets
+    source = site / bundles.SOURCE_ROUTE
+    _need(source.is_dir() and not source.is_symlink(), "missing native source bundle directory")
+    # Each pack may serve several editions. The publication verifier compares
+    # both compressed bytes and every expanded member with the bundle rows.
+    packs = {}
+    for path in (site / "native-tex/source-packs").glob("*.bin"):
+        _need(path.is_file() and not path.is_symlink(), "invalid native source pack")
+        packs[path.relative_to(site).as_posix()] = path.read_bytes()
+    assets = {}
+    renders = {}
+    for path in source.iterdir():
+        _need(path.is_file() and not path.is_symlink() and path.suffix == ".json",
+              "unexpected native print bundle route: " + path.name)
+        bundle = json.loads(path.read_bytes())
+        _need(isinstance(bundle, dict) and bundle.get("source_revision") == revision
+              and path.stem == bundle.get("content_sha256") and _HASH.fullmatch(path.stem),
+              "native print bundle revision or content route differs: " + path.name)
+        _need(bundle.get("render_sha256") is not None, "native print bundle lacks its render identity")
+        _source_pack_assets(bundle, packs)  # includes validate_bundle and recomputes render_identity
+        for row in bundle["files"]:
+            if row["encoding"] != "url":
+                continue
+            if row["href"] not in assets:
+                target = source / row["href"]  # validate_bundle already constrained its exact route
+                _need(target.is_file() and not target.is_symlink(), "missing native source asset")
+                assets[row["href"]] = target.stat().st_size, _file_sha(target)
+            _need(assets[row["href"]] == (row["bytes"], row["sha256"]), "native source asset differs")
+        identity = bundle["output_id"]
+        _need(identity not in renders, "duplicate served native print edition: " + identity)
+        renders[identity] = bundle["render_sha256"]
+    return edition_set_key(renders, revision)
+
+
+def join(shards: Path, count: int, revision: str, expected: str) -> int:
+    """Require all current-run partitions to cover exactly the independently verified site."""
+    _need(count > 0 and _HASH.fullmatch(expected), "invalid shard count or expected site key")
+    folders = list(shards.iterdir())
+    _need(len(folders) == count, "missing or extra native print shard artifact")
+    renders, assignments = {}, {}
+    for folder in folders:
+        summary = json.loads((folder / "summary.json").read_bytes())
+        _need(summary.get("schema") == SUMMARY_SCHEMA and summary.get("scope") == "shard"
+              and summary.get("status") == "pass" and summary.get("failed") == []
+              and summary.get("source_revision") == revision, "failed, incomplete or stale native print shard")
+        shard = summary.get("shard")
+        _need(isinstance(shard, list) and len(shard) == 2 and all(type(n) is int for n in shard)
+              and 1 <= shard[0] <= count and shard[1] == count and shard[0] not in assignments,
+              "invalid or duplicate native print shard number")
+        members = set()
+        for path in (folder / "receipts").iterdir():
+            receipt = json.loads(path.read_bytes())
+            identity = receipt["id"]
+            _need(receipt.get("schema") == RECEIPT_SCHEMA and receipt.get("status") == "pass"
+                  and receipt.get("problems") == [] and receipt.get("source_revision") == revision
+                  and type(receipt.get("pages")) is int and receipt["pages"] > 0
+                  and type(receipt.get("passes")) is int
+                  and OPTIONS["minimum_passes"] <= receipt["passes"] <= OPTIONS["max_passes"]
+                  and _HASH.fullmatch(receipt.get("pdf_sha256") or "")
+                  and _HASH.fullmatch(receipt.get("render_sha256") or "")
+                  and path.name == directory_name(identity) + ".json" and identity not in renders,
+                  "invalid, failed, duplicate or stale native print receipt: " + identity)
+            renders[identity] = receipt["render_sha256"]
+            members.add(identity)
+        _need(members and len(members) == summary.get("editions"), "incomplete native print shard receipts")
+        assignments[shard[0]] = members
+    for number, members in assignments.items():
+        _need(members == set(partition(renders, number, count)), "native print receipt assigned to wrong shard")
+    _need(edition_set_key(renders, revision) == expected,
+          "compiled native print editions or render identities differ from the verified Pages site")
+    return len(renders)
 
 
 def _out(root: Path, value: str | None) -> Path:
@@ -575,7 +679,9 @@ def main(argv=None, *, examples=None) -> int:
     first = verbs.add_parser("prepare", help="materialize every admitted native print bundle")
     with_examples(first, (examples or {}).get("prepare", ()))
     first.add_argument("--out", help=f"work directory (default: {DEFAULT_OUT})")
-    first.add_argument("--only", action="append", default=[], metavar="ID",
+    selection = first.add_mutually_exclusive_group()
+    selection.add_argument("--shard", metavar="NUMBER/COUNT", help="one disjoint partition of the full admissions")
+    selection.add_argument("--only", action="append", default=[], metavar="ID",
                        help="prepare only this admitted edition; repeatable; never a deployment gate")
     second = verbs.add_parser("compile", help="typeset each prepared edition and fail closed")
     with_examples(second, (examples or {}).get("compile", ()))
@@ -587,7 +693,8 @@ def main(argv=None, *, examples=None) -> int:
     try:
         out = _out(root, arguments.out)
         if arguments.verb == "prepare":
-            index = prepare(root, out, only=arguments.only)
+            shard = parse_shard(arguments.shard) if arguments.shard is not None else None
+            index = prepare(root, out, only=arguments.only, shard=shard)
             engines = {}
             for edition in index["editions"].values():
                 engines[edition["engine"]] = engines.get(edition["engine"], 0) + 1

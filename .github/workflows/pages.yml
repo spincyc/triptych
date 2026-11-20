@@ -10,12 +10,14 @@ on:
   workflow_dispatch:
 
 # Each job widens this explicitly. Only `deploy` can publish: it alone holds
-# the Pages write and OIDC grants, and it needs both `build` and `print-compile`.
+# the Pages write and OIDC grants after the verified site and print shards agree.
 permissions:
   contents: read
 
 concurrency:
-  group: pages
+  # Main retains its production lock. A branch timing run never queues or
+  # supersedes a production deployment.
+  group: ${{ github.ref == 'refs/heads/main' && 'pages' || format('pages-verify-{0}', github.ref) }}
   cancel-in-progress: false
 
 # These declarations are the shared immutable TeX baseline. The manual print
@@ -37,6 +39,8 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      print-site-key: ${{ steps.print-site-key.outputs.key }}
     # Cold shared-assembly builds can consume most of a two-hour budget before
     # independent artifact verification. Allow both full-corpus passes to finish.
     timeout-minutes: 180
@@ -57,6 +61,10 @@ jobs:
           persist-credentials: false
           fetch-depth: 0
           filter: blob:none
+
+      # Changed-path Bloom filters accelerate the edition revision queries.
+      - name: Index changed paths in Git history
+        run: git rev-parse HEAD | git commit-graph write --stdin-commits --changed-paths
 
       - name: Set up Python
         uses: actions/setup-python@v6
@@ -79,14 +87,8 @@ jobs:
       - name: Hydrate and verify native TeX runtime assets
         run: python scripts/_native_tex_assets.py hydrate --fetch
 
-      - name: Identify exact browser products
-        id: browser-products
-        run: |
-          set -euo pipefail
-          identity="$(python tools/tpt browser-products key)"
-          [[ "$identity" =~ ^[0-9a-f]{64}$ ]] || { echo 'Invalid browser product content identity' >&2; exit 1; }
-          printf 'identity=%s\n' "$identity" >> "$GITHUB_OUTPUT"
-
+      # The descriptor's digest selects candidates cheaply. pages-site checks
+      # current canonical sources and every selected file before publication.
       # A prefix match supplies candidate family entries only. The source gate
       # verifies current family identities and every byte before any consumer
       # reads them; a miss derives the exact products offline from sources.
@@ -95,7 +97,7 @@ jobs:
         uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: build/browser-data
-          key: triptych-browser-products-v1-${{ steps.browser-products.outputs.identity }}
+          key: triptych-browser-products-v1-${{ hashFiles('release/browser-products.json') }}
           restore-keys: |
             triptych-browser-products-v1-
 
@@ -114,21 +116,47 @@ jobs:
           python scripts/_install_web_edition_pandoc.py --fetch --bin-dir "$RUNNER_TEMP/web-edition-toolchain"
           printf '%s\n' "$RUNNER_TEMP/web-edition-toolchain" >> "$GITHUB_PATH"
 
+      # Only the checkout binds a figure's source, compiler, image, SVG size
+      # and SHA-256. A restored file is just a candidate for those checks.
+      - name: Restore web figure candidates
+        id: figure-cache
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: .scratch/pages-web-figures
+          key: triptych-pages-figures-v1-${{ runner.arch }}-${{ hashFiles('.github/web-figure-digests.json', 'scripts/_web_edition_figures.py') }}
+          restore-keys: |
+            triptych-pages-figures-v1-${{ runner.arch }}-
+
+      # The first run can recover the preceding deployment's SVGs without a
+      # multi-gigabyte image pull. A partial download is usable; the compiler
+      # verifies candidates again and double-compiles every remaining miss.
+      - name: Bootstrap optional published web figure candidates
+        if: steps.figure-cache.outputs.cache-hit == ''
+        run: |
+          timeout 15s python .github/scripts/bootstrap-web-figures.py .scratch/pages-web-figures || echo "Continuing with available figure candidates"
+
       # pages-site prepares and verifies the committed product descriptor before
       # source gates and consumers. Missing families reproduce its exact bytes
       # offline; stale inputs fail without a whole-corpus research replay. It
       # then runs every check-deployment-sources gate beside the site build, on
       # the runner's other cores, and fails this step if any gate fails, so
       # neither verification nor upload follows a failed gate. Its figure step
-      # (tools/web-edition figures) compiles each web edition's TikZ figures,
-      # twice and refused unless byte-identical, inside the pinned TeX image (no
-      # network); the SVGs are not committed products, and the site build checks
-      # every reader's figure set against them.
+      # (tools/web-edition figures) double-compiles missing or changed TikZ
+      # figures inside the pinned TeX image. An authenticated hit needs no
+      # image pull. The site still checks every reader's figure set.
       - name: Validate sources and build public artifact
+        env:
+          TRIPTYCH_WEB_FIGURE_CANDIDATES: .scratch/pages-web-figures
         run: |
           set -euo pipefail
           [[ "$TEXLIVE_IMAGE" =~ ^ghcr\.io/[a-z0-9._/-]+@sha256:[0-9a-f]{64}$ ]] || { echo 'TEXLIVE_IMAGE must name an immutable digest' >&2; exit 1; }
           make pages-site WEB_FIGURES_RUNNER="docker:$TEXLIVE_IMAGE"
+
+      - name: Retain current web figures
+        if: steps.figure-cache.outputs.cache-hit != 'true'
+        run: |
+          rm -rf -- .scratch/pages-web-figures
+          cp -R build/web-figures .scratch/pages-web-figures
 
       # Keep the restored path constant so GitHub can reuse older per-family
       # candidates. Save mechanically verified products before the independent
@@ -142,10 +170,17 @@ jobs:
         uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: build/browser-data
-          key: triptych-browser-products-v1-${{ steps.browser-products.outputs.identity }}
+          key: triptych-browser-products-v1-${{ hashFiles('release/browser-products.json') }}
 
       - name: Verify artifact and GitHub Pages compatibility
         run: python tools/tpt public-alpha verify --deployment-target github-pages
+
+      - name: Identify every print bundle in the verified artifact
+        id: print-site-key
+        run: |
+          key="$(python .github/scripts/verify-native-print.py site-key --site build/public-alpha/site --revision "$GITHUB_SHA")"
+          [[ "$key" =~ ^[0-9a-f]{64}$ ]] || exit 1
+          printf 'key=%s\n' "$key" >> "$GITHUB_OUTPUT"
 
       - name: Configure Pages
         uses: actions/configure-pages@v6
@@ -172,11 +207,17 @@ jobs:
   print-compile:
     runs-on: ubuntu-latest
     timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix:
+        shard: [1, 2, 3, 4, 5, 6, 7, 8]
     permissions:
       contents: read
     env:
       PYTHONDONTWRITEBYTECODE: "1"
       PRINT_COMPILE_OUT: .scratch/native-print-compile
+      PRINT_SHARD: ${{ matrix.shard }}/${{ strategy.job-total }}
 
     steps:
       # Bundles carry each edition's derived revision stamp; see `build`.
@@ -187,6 +228,10 @@ jobs:
           fetch-depth: 0
           filter: blob:none
 
+      # Changed-path Bloom filters accelerate the edition revision queries.
+      - name: Index changed paths in Git history
+        run: git rev-parse HEAD | git commit-graph write --stdin-commits --changed-paths
+
       - name: Set up Python
         uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
         with:
@@ -195,22 +240,24 @@ jobs:
       - name: Install source preparation dependencies
         run: python -m pip install --disable-pip-version-check -r requirements-public-alpha.txt -r requirements-tools.txt
 
-      - name: Prepare every admitted native print bundle
-        run: python tools/tpt native-print-compile prepare --out "$PRINT_COMPILE_OUT"
-
       # The service image's `toolchain` stage: the pinned TeX Live image plus
       # archive-pinned XeTeX and Latin Babel support, verified by its own font
       # and hyphenation probes. The anonymous base pull needs no token.
-      - name: Build the pinned print toolchain
+      - name: Prepare this partition and build the pinned print toolchain
         run: |
           set -euo pipefail
           [[ "$TEXLIVE_IMAGE" =~ ^ghcr\.io/[a-z0-9._/-]+@sha256:[0-9a-f]{64}$ ]] || { echo 'TEXLIVE_IMAGE must name an immutable digest' >&2; exit 1; }
           [[ "$ARCH_SNAPSHOT" =~ ^[0-9]{4}/[0-9]{2}/[0-9]{2}$ ]] || { echo 'ARCH_SNAPSHOT must name a daily archive' >&2; exit 1; }
           docker build --target toolchain \
             --build-arg "PRINT_BASE=$TEXLIVE_IMAGE" --build-arg "ARCH_SNAPSHOT=$ARCH_SNAPSHOT" \
-            --tag "triptych-print-compile:$GITHUB_RUN_ID" containers/native-print
+            --tag "triptych-print-compile:$GITHUB_RUN_ID" containers/native-print &
+          image_pid=$!
+          status=0
+          python tools/tpt native-print-compile prepare --shard "$PRINT_SHARD" --out "$PRINT_COMPILE_OUT" || status=$?
+          wait "$image_pid" || status=$?
+          exit "$status"
 
-      - name: Compile every admitted edition from its bundle alone
+      - name: Compile every edition in the partition from its bundle alone
         run: |
           set -euo pipefail
           docker run --rm --network none --user "$(id -u):$(id -g)" \
@@ -227,7 +274,8 @@ jobs:
         if: ${{ !cancelled() }}
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         with:
-          name: native-print-compile-${{ github.run_id }}-${{ github.run_attempt }}
+          name: native-print-compile-${{ github.run_id }}-shard-${{ matrix.shard }}
+          overwrite: true
           path: |
             ${{ env.PRINT_COMPILE_OUT }}/summary.json
             ${{ env.PRINT_COMPILE_OUT }}/receipts/
@@ -235,9 +283,40 @@ jobs:
           if-no-files-found: warn
           retention-days: 14
 
-  # Publishing is this job's only act, and it needs both gates.
-  deploy:
+  # Read only the receipts from this workflow run. The build computed its key
+  # from the exact site it verified and uploaded. A partial retry can reuse
+  # successful sibling shards from the same run and source revision.
+  print-verify:
     needs: [build, print-compile]
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - name: Check out the receipt verifier
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /.github/scripts/verify-native-print.py
+            /scripts/_native_print_compile.py
+
+      - name: Download this run's native print receipts
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8
+        with:
+          pattern: native-print-compile-${{ github.run_id }}-shard-*
+          path: .scratch/print-shards
+
+      - name: Match all compiled mounts to the verified artifact
+        env:
+          SITE_KEY: ${{ needs.build.outputs.print-site-key }}
+        run: python .github/scripts/verify-native-print.py join --receipts .scratch/print-shards --shards 8 --revision "$GITHUB_SHA" --site-key "$SITE_KEY"
+
+  # Publishing is this job's only act. Both gates must have passed the join.
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    needs: [print-verify]
     runs-on: ubuntu-latest
     timeout-minutes: 15
     permissions:
