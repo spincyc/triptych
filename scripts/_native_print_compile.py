@@ -221,7 +221,8 @@ def parse_shard(value: str) -> tuple[int, int]:
     return number, count
 
 
-def prepare(root: Path, out: Path, *, only=(), shard=None) -> dict:
+def prepare(root: Path, out: Path, *, only=(), shard=None, export_reference=None,
+            run_id=None, run_attempt=None) -> dict:
     """Prepare the admitted universe (or an explicit subset) through the bundle API."""
     from _native_print import admitted_documents, source_revision
     import _native_print_bundles as bundles
@@ -229,6 +230,9 @@ def prepare(root: Path, out: Path, *, only=(), shard=None) -> dict:
     documents = admitted_documents(root)
     revision = source_revision(root)
     _need(not (only and shard), "--only and --shard are mutually exclusive")
+    _need((export_reference is None and run_id is None and run_attempt is None)
+          or (export_reference is not None and shard is not None and run_id and run_attempt),
+          "reference export requires --shard, --export-reference, --run-id and --run-attempt")
     selected = partition(documents, *shard) if shard is not None else sorted(set(only))
     for identity in selected:
         _need(identity in documents, "not an admitted native print edition: " + identity)
@@ -240,8 +244,14 @@ def prepare(root: Path, out: Path, *, only=(), shard=None) -> dict:
     catalog = bundles.prepare_catalog(root, documents=documents, revision=revision,
                                       output_ids=selected or None)
     wanted = {identity: documents[identity] for identity in selected} if selected else documents
-    return materialize(catalog, wanted, out, revision=revision, epoch=epoch,
-                       scope="shard" if shard else ("selected" if selected else "admitted"), shard=shard)
+    index = materialize(catalog, wanted, out, revision=revision, epoch=epoch,
+                        scope="shard" if shard else ("selected" if selected else "admitted"), shard=shard)
+    if export_reference is not None:
+        from _native_print_reference import write_reference_catalog
+        index["reference_sha256"] = write_reference_catalog(export_reference, catalog, run_id=run_id,
+                                                            run_attempt=run_attempt, shard=shard)
+        _write_json(out / "index.json", index)
+    return index
 
 
 def load_runtime(path: Path) -> dict:
@@ -679,6 +689,9 @@ def main(argv=None, *, examples=None) -> int:
     first = verbs.add_parser("prepare", help="materialize every admitted native print bundle")
     with_examples(first, (examples or {}).get("prepare", ()))
     first.add_argument("--out", help=f"work directory (default: {DEFAULT_OUT})")
+    first.add_argument("--export-reference", type=Path, help="export this source-prepared Pages shard")
+    first.add_argument("--run-id", help="workflow run that produced the exported reference")
+    first.add_argument("--run-attempt", help="workflow attempt that produced the exported reference")
     selection = first.add_mutually_exclusive_group()
     selection.add_argument("--shard", metavar="NUMBER/COUNT", help="one disjoint partition of the full admissions")
     selection.add_argument("--only", action="append", default=[], metavar="ID",
@@ -694,12 +707,16 @@ def main(argv=None, *, examples=None) -> int:
         out = _out(root, arguments.out)
         if arguments.verb == "prepare":
             shard = parse_shard(arguments.shard) if arguments.shard is not None else None
-            index = prepare(root, out, only=arguments.only, shard=shard)
+            index = prepare(root, out, only=arguments.only, shard=shard, export_reference=arguments.export_reference,
+                            run_id=arguments.run_id, run_attempt=arguments.run_attempt)
             engines = {}
             for edition in index["editions"].values():
                 engines[edition["engine"]] = engines.get(edition["engine"], 0) + 1
-            print(json.dumps({"editions": len(index["editions"]), "engines": dict(sorted(engines.items())),
-                              "scope": index["scope"], "status": "prepared"}, sort_keys=True))
+            result = {"editions": len(index["editions"]), "engines": dict(sorted(engines.items())),
+                      "scope": index["scope"], "status": "prepared"}
+            if "reference_sha256" in index:
+                result["reference_sha256"] = index["reference_sha256"]
+            print(json.dumps(result, sort_keys=True))
             return 0
         _need(arguments.jobs >= 1, "--jobs requires a positive integer")
         runtime = Path(arguments.runtime)

@@ -581,7 +581,7 @@ def prepare_catalog(root: Path = ROOT, *, scratch_root: Path | None = None,
     recipes = [papal.get(identity) or printing.select(documents[identity]["document"],
                documents[identity]["edition"], root=root) for identity in wanted]
     checked = printing.check_many(recipes, root=root)
-    routes, assets, source_paths, prepared = {}, {}, set(), {}
+    assets, prepared = {}, {}
     inputs = _CatalogInputs(root)
     # One view of the work tree serves every publication's revision stamp.
     # Without one, each publication bundle refuses with the reason itself.
@@ -607,20 +607,27 @@ def prepare_catalog(root: Path = ROOT, *, scratch_root: Path | None = None,
                                 external_assets=assets, _checked=True, revision_repository=repository,
                                 assembly=assembly)
         prepared[identity] = bundle
-        source_paths.update(row["path"] for row in bundle["source_inputs"])
+    result = package_catalog(prepared, assets, revision)
+    inputs.verify()
+    return result
+
+
+def package_catalog(prepared: dict, assets: dict, revision: str) -> dict:
+    """Consume prepared editions and apply the canonical sharing policy to their full cohort."""
+    routes, source_paths = {}, set()
     occurrences = Counter(row["sha256"] for bundle in prepared.values() for row in bundle["files"]
                           if row["encoding"] == "utf8" and row["bytes"] > 0
                           and PurePosixPath(row["path"]).suffix.lower() in _TEXT_SUFFIXES)
     shared_text = {digest for digest, count in occurrences.items() if count > 1}
-    for identity in wanted:
+    for identity in sorted(prepared):
         original = prepared.pop(identity)
+        source_paths.update(row["path"] for row in original["source_inputs"])
         bundle = _externalize(original, assets, shared_text=shared_text)
         payload = canonical(bundle) + b"\n"
         route = SOURCE_ROUTE + "/" + bundle["content_sha256"] + ".json"
         _need(route not in assets, "duplicate native source bundle transport")
         assets[route] = payload
         routes[identity] = {"route": route, "bytes": len(payload), "sha256": _sha(payload)}
-    inputs.verify()
     return {"schema": CATALOG_SCHEMA, "source_revision": revision, "bundles": routes,
             "assets": assets, "source_paths": sorted(source_paths)}
 
