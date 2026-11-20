@@ -176,6 +176,37 @@ jobs:
           path: build/public-alpha/site
           include-hidden-files: true
 
+  corpus-check:
+    name: canonical-check (check-corpus-index)
+    runs-on: ubuntu-latest
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+    timeout-minutes: 45
+    permissions:
+      contents: read
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          filter: blob:none
+
+      # Changed-path Bloom filters accelerate the edition revision queries.
+      - name: Index changed paths in Git history
+        run: git rev-parse HEAD | git commit-graph write --stdin-commits --changed-paths
+
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.13"
+
+      - name: Install source preparation dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements-public-alpha.txt -r requirements-tools.txt
+
+      - name: Run canonical source check
+        run: make check-corpus-index
+
   # Every admitted print edition (provider publications and companions, Bibles,
   # papal selections, reading-plan volumes) is typeset from the exact source
   # bundle the site serves under native-tex/, with the engine that bundle names
@@ -239,7 +270,6 @@ jobs:
           # uploaded until they pass, even if the same job is retried.
           (
             case "$PRINT_SHARD" in
-              1/*) PYTHON_CPU_COUNT=2 make check-corpus-index ;;
               2/*) make check-proper-chronology-current ;;
               3/*) make check-source-graph ;;
             esac
@@ -292,7 +322,7 @@ jobs:
   # from the exact site it verified and uploaded. A partial retry can reuse
   # successful sibling shards from the same run and source revision.
   print-verify:
-    needs: [build, print-compile]
+    needs: [build, print-compile, corpus-check]
     runs-on: ubuntu-latest
     timeout-minutes: 5
     permissions:

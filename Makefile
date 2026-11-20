@@ -523,11 +523,12 @@ endif
 ifeq ($(and $(strip $(PAGES_NATIVE_REFERENCE_DIR)),$(filter pages-site pages-site-members,$(MAKECMDGOALS))),)
 pages-site-members: public-site-artifact deployment-source-gates
 else
-# The three source-only gates run on print shards before their reference
-# uploads. Assembly requires all eight references from this workflow run.
-PAGES_PRINT_SOURCE_GATES := check-corpus-index check-proper-chronology-current check-source-graph
-PAGES_LOCAL_SOURCE_GATES := $(filter-out $(PAGES_PRINT_SOURCE_GATES),$(DEPLOYMENT_SOURCE_MEMBERS))
+# Chronology and source graph gate their two print references. The dedicated
+# corpus-index job gates completion after all local prerequisites finish.
+PAGES_CANONICAL_SOURCE_GATES := check-corpus-index check-proper-chronology-current check-source-graph
+PAGES_LOCAL_SOURCE_GATES := $(filter-out $(PAGES_CANONICAL_SOURCE_GATES),$(DEPLOYMENT_SOURCE_MEMBERS))
 pages-site-members: public-site-artifact $(PAGES_LOCAL_SOURCE_GATES)
+	@$(PYTHON) .github/scripts/pages-native-reference.py --corpus-gate
 $(PAGES_LOCAL_SOURCE_GATES): private export PYTHON_CPU_COUNT := 1
 endif
 

@@ -1,5 +1,6 @@
 """Retrieve the canonical native inputs produced by the print jobs in this Pages run."""
 from concurrent.futures import ThreadPoolExecutor
+from contextvars import copy_context
 import hashlib
 import json
 import os
@@ -19,6 +20,7 @@ from types import SimpleNamespace
 
 
 SHARDS = 8
+CORPUS_JOB = "canonical-check (check-corpus-index)"
 
 
 def select_artifacts(artifacts, run_id, revision):
@@ -36,8 +38,62 @@ def select_artifacts(artifacts, run_id, revision):
     return selected
 
 
-def latest_jobs(endpoint):
-    return json.loads(subprocess.check_output(["gh", "api", f"{endpoint}/jobs?per_page=100"]))["jobs"]
+def latest_jobs(endpoint, *, prior_attempts=False):
+    if not prior_attempts:
+        return json.loads(subprocess.check_output(["gh", "api", f"{endpoint}/jobs?per_page=100"], timeout=30))["jobs"]
+    # A partial rerun can retain successful jobs from a preceding attempt.
+    # Carry the latest execution of each job name, including duplicates so
+    # the caller can reject ambiguous identities.
+    pages = json.loads(subprocess.check_output(["gh", "api", "--paginate", "--slurp",
+                      f"{endpoint}/jobs?filter=all&per_page=100"], timeout=30))
+    jobs = [job for page in pages for job in page["jobs"]]
+    newest = {}
+    for job in jobs:
+        name = job["name"]
+        newest[name] = max(newest.get(name, 0), job["run_attempt"])
+    return [job for job in jobs if job["run_attempt"] == newest[job["name"]]]
+
+
+def corpus_gate_passed(jobs, run_id, revision, attempt):
+    """Check the completed corpus-index job and the step that ran its Make target."""
+    matches = [job for job in jobs if job["name"] == CORPUS_JOB]
+    if not matches:
+        return False
+    job = matches[0]
+    if (len(matches) != 1 or str(job["run_id"]) != run_id or job["head_sha"] != revision
+            or not 1 <= job["run_attempt"] <= attempt):
+        raise ValueError("unexpected canonical corpus job identity")
+    if job["status"] != "completed":
+        return False
+    checks = [step["conclusion"] for step in job["steps"] if step["name"] == "Run canonical source check"]
+    if job["conclusion"] == "success" and checks == ["success"]:
+        return True
+    if job["run_attempt"] < attempt:
+        return False  # a rerun of the failed gate may still be queued
+    raise ValueError(f"{CORPUS_JOB} did not pass its source check ({job['conclusion']})")
+
+
+def wait_for_corpus_gate(env):
+    revision, run_id = env["GITHUB_SHA"], env["GITHUB_RUN_ID"]
+    if subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip() != revision:
+        raise ValueError("the checkout differs from the current Pages run")
+    attempt = int(env["GITHUB_RUN_ATTEMPT"])
+    run = f"repos/{env['GITHUB_REPOSITORY']}/actions/runs/{run_id}"
+    deadline = time.monotonic() + 90 * 60
+    failures = 0
+    while time.monotonic() < deadline:
+        try:
+            jobs = latest_jobs(run, prior_attempts=attempt > 1)
+        except (subprocess.CalledProcessError, subprocess.TimeoutExpired):
+            failures += 1
+            if failures >= 3:
+                raise
+        else:
+            failures = 0
+            if corpus_gate_passed(jobs, run_id, revision, attempt):
+                return
+        time.sleep(5)
+    raise ValueError("timed out waiting for the canonical corpus check")
 
 
 def fetch_partition(endpoint, artifact, destination):
@@ -144,6 +200,7 @@ def verify_site():
         ("GITHUB_OUTPUT", "GITHUB_ENV", "GITHUB_PATH", "GITHUB_STATE", "GITHUB_STEP_SUMMARY"), os.devnull)}
     for key in ("TRIPTYCH_NATIVE_REFERENCE_DIR", "TRIPTYCH_NATIVE_REFERENCE_SHA256"):
         env.pop(key, None)
+        os.environ.pop(key, None)
 
     def spawn(command, **kwargs):
         child = subprocess.Popen(command, start_new_session=True, **kwargs)
@@ -169,23 +226,31 @@ def verify_site():
         writer = spawn(["make", "-j3", "--assume-old=prepare-browser-data", "pages-site",
                         f"WEB_FIGURES_RUNNER=docker:{image}"],
                        env={**env, "PAGES_NATIVE_REFERENCE_DIR": str(Path(temporary.name) / "writer")})
-        # A failed gate may finish before the parallel GitHub download.
-        with os.fdopen(os.pidfd_open(writer.pid), "rb") as exit_fd, reference.stdout:
-            ready, _, _ = select.select((exit_fd, reference.stdout), (), ())
-            if exit_fd in ready and writer.wait():
-                raise subprocess.CalledProcessError(writer.returncode, writer.args)
-            digest = reference.stdout.read().strip()
-        succeeded(reference)
-        # Only this independent fetch supplies the verifier's trust anchor.
-        if not re.fullmatch(r"[0-9a-f]{64}", digest):
-            raise ValueError("invalid independent native reference digest")
-        os.environ.update(TRIPTYCH_NATIVE_REFERENCE_DIR=str(verifier), TRIPTYCH_NATIVE_REFERENCE_SHA256=digest)
-        report("independent native reference authenticated")
         tool = SimpleNamespace(**runpy.run_path("tools/public-alpha"))
-        with tool.held_repository_inputs(prefetch_web=True):
-            before = tool.MANIFEST_PATH.read_bytes()
-            manifest = tool.load_manifest()
-            tool.validate_manifest(manifest, require_active_release=True)
+        tool._require_reference_checkout(env["GITHUB_SHA"])
+        with tool.held_repository_inputs(prefetch_web=False):
+            # The browser snapshot is open. A directory without an authenticated
+            # digest makes the public verifier refuse any premature native read.
+            os.environ["TRIPTYCH_NATIVE_REFERENCE_DIR"] = str(verifier)
+            with ThreadPoolExecutor(max_workers=1) as checks:
+                scan = checks.submit(copy_context().run, tool.web_data_files)
+                before = tool.MANIFEST_PATH.read_bytes()
+                manifest = tool.load_manifest()
+                tool.validate_manifest(manifest, require_active_release=True)
+                report("independent browser snapshot open and initial release policy checked")
+                # A failed gate may finish before the parallel GitHub download.
+                with os.fdopen(os.pidfd_open(writer.pid), "rb") as exit_fd, reference.stdout:
+                    ready, _, _ = select.select((exit_fd, reference.stdout), (), ())
+                    if exit_fd in ready and writer.wait():
+                        raise subprocess.CalledProcessError(writer.returncode, writer.args)
+                    digest = reference.stdout.read().strip()
+                succeeded(reference)
+                # Only this independent fetch supplies the verifier's trust anchor.
+                if not re.fullmatch(r"[0-9a-f]{64}", digest):
+                    raise ValueError("invalid independent native reference digest")
+                os.environ["TRIPTYCH_NATIVE_REFERENCE_SHA256"] = digest
+                report("independent native reference authenticated")
+                scan.result()
             tool.site_source_paths(manifest)
             report("independent source expectations ready")
             succeeded(writer)
@@ -198,6 +263,7 @@ def verify_site():
             tool.verify_output(manifest, publications, tool.OUTPUT_ROOT / "site", False)
             tool.validate_deployment_target(tool.artifact_authorization(
                 manifest, tool.included_publications(publications, False)), "github-pages")
+        tool._require_reference_checkout(env["GITHUB_SHA"])
         report("artifact, deployment target and final source checks passed")
     finally:
         for sig in (signal.SIGTERM, signal.SIGKILL):
@@ -218,11 +284,13 @@ if __name__ == "__main__":
     try:
         if sys.argv[1:] == ["--verify-site"]:
             verify_site()
+        elif sys.argv[1:] == ["--corpus-gate"]:
+            wait_for_corpus_gate(os.environ)
         elif sys.argv[1:] == ["--digest"]:
             print(prepare({**os.environ, "GITHUB_OUTPUT": os.devnull}))
         elif not sys.argv[1:]:
             prepare(os.environ)
         else:
-            raise ValueError("expected --verify-site, --digest or no argument")
-    except (KeyError, OSError, ValueError, zipfile.BadZipFile, subprocess.CalledProcessError) as error:
+            raise ValueError("expected --verify-site, --corpus-gate, --digest or no argument")
+    except (KeyError, OSError, ValueError, zipfile.BadZipFile, subprocess.SubprocessError) as error:
         sys.exit(f"native print reference: {error}")

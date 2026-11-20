@@ -37,6 +37,10 @@ if os.environ["FAIL"] == "early":
     with open("reference-started", "wb") as ready:
         ready.write(b"R")
     time.sleep(90)
+if os.environ["FAIL"] == "hold-reference":
+    for stage in ("initial-policy", "browser-scan"):
+        with open(stage, "rb") as work:
+            assert work.read() == b"ready"
 print("invalid" if os.environ["FAIL"] == "digest" else "a" * 64)
 """
 MAKEFILE = """
@@ -57,9 +61,11 @@ gate:
 """
 PUBLIC_ALPHA = """
 from contextlib import contextmanager
+from contextvars import ContextVar
 from pathlib import Path
 import os
 
+SNAPSHOT = ContextVar("snapshot")
 MANIFEST_PATH = Path("manifest")
 OUTPUT_ROOT = Path("output")
 failure = os.environ["FAIL"]
@@ -69,6 +75,13 @@ def load_manifest():
 
 def validate_manifest(manifest, require_active_release):
     assert require_active_release
+    if not Path("policies").exists():
+        assert SNAPSHOT.get() == "private browser snapshot"
+        assert os.environ["TRIPTYCH_NATIVE_REFERENCE_DIR"].endswith("/verifier")
+        assert "TRIPTYCH_NATIVE_REFERENCE_SHA256" not in os.environ
+        if failure == "hold-reference":
+            with open("initial-policy", "wb") as signal:
+                signal.write(b"ready")
     with open("policies", "a") as policy:
         print("check", file=policy)
     if failure == "expired" and Path("gate-complete").exists():
@@ -77,10 +90,27 @@ def validate_manifest(manifest, require_active_release):
 
 def _require_reference_checkout(revision):
     assert revision == os.environ["GITHUB_SHA"]
-    if failure == "dirty":
+    with open("clean-checks", "a") as checks:
+        print("clean", file=checks)
+    if (failure == "dirty-first" or (failure == "dirty" and Path("gate-complete").exists())
+            or (failure == "dirty-final" and Path("checked-end").exists())):
         raise ValueError("dirty checkout")
 
+def web_data_files():
+    assert SNAPSHOT.get() == "private browser snapshot"
+    if failure == "hold-reference":
+        assert "TRIPTYCH_NATIVE_REFERENCE_SHA256" not in os.environ
+        with open("browser-scan", "wb") as signal:
+            signal.write(b"ready")
+    if failure == "scan":
+        raise ValueError("browser JSON scan failed")
+    Path("scanned").touch()
+
+
 def site_source_paths(manifest):
+    assert Path("scanned").exists()
+    assert os.environ["TRIPTYCH_NATIVE_REFERENCE_DIR"].endswith("/verifier")
+    assert os.environ["TRIPTYCH_NATIVE_REFERENCE_SHA256"] == "a" * 64
     with open("prewarmed", "wb") as signal:
         signal.write(b"W")
 
@@ -104,7 +134,11 @@ def validate_deployment_target(authorization, target):
 
 @contextmanager
 def held_repository_inputs(*, prefetch_web):
-    assert prefetch_web
+    assert not prefetch_web
+    assert "TRIPTYCH_NATIVE_REFERENCE_DIR" not in os.environ
+    assert "TRIPTYCH_NATIVE_REFERENCE_SHA256" not in os.environ
+    assert Path("clean-checks").exists()
+    SNAPSHOT.set("private browser snapshot")
     yield
     if failure == "final":
         raise ValueError("final source drift")
@@ -125,7 +159,7 @@ class PagesCoordinatorTests(unittest.TestCase):
         (work / "manifest").write_text("approved\n")
         (work / "Makefile").write_text(MAKEFILE)
         (work / "fetch-reference.py").write_text(REFERENCE)
-        for name in ("prewarmed", "reference-started"):
+        for name in ("prewarmed", "reference-started", "initial-policy", "browser-scan"):
             os.mkfifo(work / name)
         env = {**os.environ, "FAIL": failure, "RUNNER_TEMP": str(work), "GITHUB_SHA": "a" * 40,
                "TEXLIVE_IMAGE": "ghcr.io/a/b@sha256:" + "a" * 64,
@@ -138,8 +172,9 @@ class PagesCoordinatorTests(unittest.TestCase):
         return work, result
 
     def test_independent_preparation_and_successful_full_make_precede_artifact(self):
-        work, result = self.run_build()
+        work, result = self.run_build("hold-reference")
         self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual((work / "clean-checks").read_text().splitlines(), ["clean"] * 3)
         self.assertEqual((work / "policies").read_text().splitlines(), ["check", "check"])
         self.assertTrue((work / "opened-artifact").exists())
         self.assertTrue((work / "checked-end").exists())
@@ -149,7 +184,7 @@ class PagesCoordinatorTests(unittest.TestCase):
         self.assertEqual(positions, sorted(positions))
 
     def test_failed_source_gate_product_preparation_or_reference_prevents_artifact_access(self):
-        for failure in ("gate", "prepare", "digest"):
+        for failure in ("gate", "prepare", "digest", "scan", "dirty-first"):
             with self.subTest(failure=failure):
                 work, result = self.run_build(failure)
                 self.assertNotEqual(result.returncode, 0)
@@ -172,6 +207,13 @@ class PagesCoordinatorTests(unittest.TestCase):
                 self.assertNotEqual(result.returncode, 0)
                 self.assertTrue((work / "opened-artifact").exists())
                 self.assertFalse((work / "checked-end").exists())
+
+    def test_late_checkout_drift_after_snapshot_closes_fails_verification(self):
+        work, result = self.run_build("dirty-final")
+        self.assertNotEqual(result.returncode, 0)
+        self.assertTrue((work / "opened-artifact").exists())
+        self.assertTrue((work / "checked-end").exists())
+        self.assertNotIn("artifact, deployment target and final source checks passed", result.stdout)
 
     def test_early_gate_failure_kills_a_stalled_reference_download(self):
         start = time.monotonic()

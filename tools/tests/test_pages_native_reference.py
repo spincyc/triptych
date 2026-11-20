@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+import subprocess
 from unittest.mock import patch
 import zipfile
 
@@ -14,6 +15,68 @@ ROOT = Path(__file__).resolve().parents[2]
 SPEC = importlib.util.spec_from_file_location("pages_native_reference", ROOT / ".github/scripts/pages-native-reference.py")
 pages = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(pages)
+
+
+class CorpusGateTests(unittest.TestCase):
+    revision = "a" * 40
+    env = {"GITHUB_SHA": revision, "GITHUB_RUN_ID": "42", "GITHUB_REPOSITORY": "o/r", "GITHUB_RUN_ATTEMPT": "2"}
+
+    def jobs(self):
+        return [{"name": f"canonical-check ({gate})", "run_id": 42, "head_sha": self.revision, "run_attempt": 2,
+                 "status": "completed", "conclusion": "success",
+                 "steps": [{"name": "Run canonical source check", "conclusion": "success"}]}
+                for gate in ("check-corpus-index", "check-proper-chronology-current", "check-source-graph")]
+
+    def test_exact_latest_same_source_job_results_and_executed_steps(self):
+        first, *rest = self.jobs()
+        passed = lambda jobs: pages.corpus_gate_passed(jobs, "42", self.revision, 2)
+        self.assertTrue(passed([dict(first, run_attempt=1), *rest]))  # partial rerun retained a success
+        self.assertFalse(passed(rest))
+        self.assertFalse(passed([dict(first, status="in_progress", conclusion=None), *rest]))
+        for change in ({"run_id": 13}, {"head_sha": "b" * 40}, {"run_attempt": 3},
+                       {"conclusion": "cancelled"},
+                       {"conclusion": "skipped"}, {"conclusion": "failure"}, {"steps": []},
+                       {"steps": [{"name": "Run canonical source check", "conclusion": "skipped"}]}):
+            with self.subTest(change=change), self.assertRaises(ValueError):
+                passed([dict(first, **change), *rest])
+        with self.assertRaises(ValueError):
+            passed([first, first, *rest])
+
+    def test_retry_selects_latest_execution_even_across_api_pages(self):
+        first, second, third = self.jobs()
+        stale = dict(first, run_attempt=1)
+        running = dict(first, status="queued", conclusion=None)
+        retained = dict(second, run_attempt=1)
+        result = json.dumps([{"jobs": [stale, retained]}, {"jobs": [third, running]}])
+        with patch.object(pages.subprocess, "check_output", return_value=result) as query:
+            selected = pages.latest_jobs("run", prior_attempts=True)
+        query.assert_called_once_with(["gh", "api", "--paginate", "--slurp",
+                                       "run/jobs?filter=all&per_page=100"], timeout=30)
+        self.assertCountEqual(selected, [running, retained, third])
+        self.assertFalse(pages.corpus_gate_passed(selected, "42", self.revision, 2))
+
+    def test_poll_retries_interruptions_and_requires_all_successes(self):
+        failed = subprocess.CalledProcessError(1, ["gh", "api"])
+        running = self.jobs()[1:]
+        with patch.object(pages.subprocess, "check_output", return_value=self.revision), \
+                patch.object(pages.time, "sleep"), \
+                patch.object(pages, "latest_jobs", side_effect=[failed, running, self.jobs()]) as query:
+            pages.wait_for_corpus_gate(self.env)
+            self.assertEqual(query.call_count, 3)
+            query.assert_called_with("repos/o/r/actions/runs/42", prior_attempts=True)
+        with patch.object(pages.subprocess, "check_output", return_value=self.revision), \
+                patch.object(pages.time, "sleep"), patch.object(pages, "latest_jobs", side_effect=failed) as query, \
+                self.assertRaises(subprocess.CalledProcessError):
+            pages.wait_for_corpus_gate(self.env)
+        self.assertEqual(query.call_count, 3)
+        with patch.object(pages.subprocess, "check_output", return_value=self.revision), \
+                patch.object(pages.time, "sleep"), patch.object(pages.time, "monotonic", side_effect=[0, 1, 10000]), \
+                patch.object(pages, "latest_jobs", return_value=running), self.assertRaisesRegex(ValueError, "timed out"):
+            pages.wait_for_corpus_gate(self.env)
+        with patch.object(pages.subprocess, "check_output", return_value="wrong"), \
+                patch.object(pages, "latest_jobs") as query, self.assertRaisesRegex(ValueError, "checkout"):
+            pages.wait_for_corpus_gate(self.env)
+        query.assert_not_called()
 
 
 class NativeReferenceDownloadTests(unittest.TestCase):
