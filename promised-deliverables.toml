@@ -6120,7 +6120,7 @@ state = "complete"
 id = "gpt-advent-primer-1962-2026-11-20"
 owner = "src/gpt/liturgy/roman-rite/1962/seasons/advent"
 promise = "Create an expansive, independent GPT primer for Advent in the 1962 Roman Rite. Cover the history, four Sundays, Scripture and the Fathers, daily prayer, fasting, almsgiving and confession, and prepare the reader for Christmas. Work from a section plan through parallel research, whole-source collation and a cold draft. Give the primer one discreet cue in the Sunday Propers Calendar and carry lessons from the work into the editorial and seasonal-primer guidance."
-state = "candidate"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "plan-and-witnesses"
@@ -6144,4 +6144,12 @@ state = "candidate"
   [[deliverables.requirements]]
   id = "catalogue-and-validation"
   criterion = "The manuscript, provider-neutral evidence, generated reader and catalog links pass the applicable source and publication checks, with one cue above the Sunday Propers Calendar."
-  status = "open"
+  status = "pass"
+  evidence = [
+    "library/traditional-latin-mass.md",
+    "src/gpt/liturgy/roman-rite/1962/seasons/advent/web-edition.toml",
+    "src/gpt/liturgy/roman-rite/1962/seasons/advent/research/cold-review.md",
+    "release/browser-products.json",
+    "release/public-alpha.json",
+    "src/index/documents/corpus.json",
+  ]

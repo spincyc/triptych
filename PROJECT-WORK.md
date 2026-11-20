@@ -15051,8 +15051,7 @@ printed pages. The remaining witnesses were reused from the shared library.
 The book has a five-minute daily rule, a fuller one, a reading course and
 seven dated antiphons. The [review record](src/gpt/liturgy/roman-rite/1962/seasons/advent/research/cold-review.md)
 accounts for the corrections. The source files and reader conversion pass
-their focused checks. The release and discovery records still need their
-checkout-wide verification.
+their focused checks.
 
 The maintainer clarified that the main work should be expansive, with each
 subject given the space its sources warrant, and that a later pass can
@@ -15064,3 +15063,11 @@ approach to Christmas through the Annunciation, the Vigil and the
 Eucharist. The corpus now includes Gibson's full translation of
 Cassian's *Conferences*. The expanded draft was read as a whole and
 revised. The synopsis editions are a later work.
+
+The [Traditional Latin Mass catalogue](library/traditional-latin-mass.md)
+now links both Advent editions in a short line above the Sunday calendar
+and records their owning entry under Seasonal Primers. The expanded GPT
+edition passed the source and web conversion checks and rendered as an
+eighteen-page book. Two independent browser builds produced identical
+outputs. The refreshed discovery index and the scoped site-source binding
+record agree with the current corpus.
