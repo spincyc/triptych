@@ -371,6 +371,28 @@ outputs = ["synthesis"]
         self.assertNotEqual(audit["content"]["sha256"], changed["content"]["sha256"])
         self.assertNotEqual(audit["outputs"]["canonical"]["sha256"], changed["outputs"]["canonical"]["sha256"])
 
+    def test_toml_syntax_is_reused_only_for_current_text_without_dependency_edges(self):
+        source = self.leaf / "research/ordinary.toml"
+        source.write_text('description = "shared"\n')
+        checked = set()
+        with mock.patch.object(schema.tomllib, "loads", wraps=schema.tomllib.loads) as parse:
+            for _ in range(2):
+                self.assertEqual(schema._evidence_ancestry(self.root, {source}, validated_toml=checked),
+                                 {source})
+            self.assertEqual(parse.call_count, 1)
+            source.write_text('invalid = [')
+            with self.assertRaises(schema.tomllib.TOMLDecodeError):
+                schema._evidence_ancestry(self.root, {source}, validated_toml=checked)
+            self.assertEqual(parse.call_count, 2)
+        # An equal, well-formed table at a binding path still contributes edges.
+        text = '[[bindings]]\nsource_id = "unknown"\n'
+        source.write_text(text)
+        schema._evidence_ancestry(self.root, {source}, validated_toml=checked)
+        binding = source.with_name("source-bindings.toml")
+        binding.write_text(text)
+        with self.assertRaisesRegex(schema.SchemaError, "no canonical metadata record"):
+            schema._evidence_ancestry(self.root, {binding}, validated_toml=checked)
+
     def test_review_dependency_metadata_changes_evidence_not_content(self):
         dependency = self.root / "src/sources/inventories/rights.toml"
         dependency.parent.mkdir(parents=True)

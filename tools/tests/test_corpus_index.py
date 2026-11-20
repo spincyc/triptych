@@ -294,6 +294,41 @@ class CorpusIndexTests(unittest.TestCase):
             corpus.refresh(self.root, readers=True, check=True)
             self.assertEqual(builder.call_count, len(readers.ORDER))
 
+    def test_parallel_check_replays_content_and_membership_in_worker(self):
+        self.put('tools/source-reader', """from pathlib import Path
+def load(args):
+    assert args.strict
+def corpus(loaded):
+    return []
+def tally(works):
+    return 0
+def spine(works, count):
+    return {}
+def discovery_files(spine):
+    trigger = Path(__file__).resolve().parents[1] / '.scratch/injected-result'
+    value = trigger.read_text() if trigger.exists() else '{}'
+    return {'other.json': '{}'} if value == 'membership' else {'fixture.json': value}
+""")
+        with patch.object(readers, 'ORDER', ('sources',)):
+            corpus.refresh(self.root, readers=True)
+            report = corpus.refresh(self.root, readers=True, check=True, jobs=2)
+            self.assertEqual(report['reader_surfaces'], ['sources'])
+            self.assertEqual(report['hashed'], report['files'])
+            self.assertEqual(report['parsed'], report['records'])
+            for value, message in [('changed', 'stale sources reader index:'),
+                                   ('membership', 'stale sources reader index membership')]:
+                with self.subTest(value=value):
+                    self.put('.scratch/injected-result', value)
+                    with self.assertRaisesRegex(corpus.CorpusIndexError, message):
+                        corpus.refresh(self.root, readers=True, check=True, jobs=2)
+
+    def test_full_index_check_parses_the_bytes_it_just_hashed(self):
+        original = corpus._safe_read
+        with patch.object(corpus, '_safe_read', wraps=original) as reads:
+            report = corpus.refresh(self.root, check=True)
+        self.assertEqual(report['parsed'], 2)
+        self.assertEqual(sum(call.args[1] == self.work for call in reads.call_args_list), 1)
+
     def test_generic_refresh_cannot_bless_stale_reader_derivation(self):
         with patch.object(readers, 'build_surface', side_effect=self._surface):
             corpus.refresh(self.root, readers=True)

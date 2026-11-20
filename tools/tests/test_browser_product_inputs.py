@@ -194,7 +194,9 @@ class RepositoryClosureTests(unittest.TestCase):
         # `_tooling` names every tool as data; the calendar must not inherit them.
         self.assertIn("scripts/_tooling.py", self.code["calendar"])
         self.assertNotIn("tools/mass-propers", self.code["calendar"])
-        self.assertNotIn("tools/public-alpha", self.code["propers"])
+        # The propers reader indexes now reach public-alpha through act-history.
+        # artifact-store is still named only as registry data in this closure.
+        self.assertNotIn("tools/artifact-store", self.code["propers"])
         self.assertLess(len(self.code["calendar"]), len(self.code["documents"]))
 
 
