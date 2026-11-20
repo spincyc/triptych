@@ -395,7 +395,7 @@ def derived_kind_and_outputs(root: Path, leaf_dir: Path, data: dict) -> tuple[st
     return kind, outputs if isinstance(outputs, list) else []
 
 
-def _complete(root: Path, data: dict, provider: str, leaf: str) -> dict:
+def _complete(root: Path, data: dict, provider: str, leaf: str, *, assembly=None) -> dict:
     """The manifest as written plus everything derived (DERIVED_MANIFEST_FIELDS).
 
     Only absent fields are supplied: an explicit value stays, and the checks in
@@ -431,7 +431,7 @@ def _complete(root: Path, data: dict, provider: str, leaf: str) -> dict:
         if isinstance(data.get("structure", []), list) else data.get("structure")
     if not isinstance(explicit, list):
         return result
-    sections = _section_items(root, leaf_dir, explicit)
+    sections = _section_items(root, leaf_dir, explicit, assembly=assembly)
     declared = {item.get("role") for item in explicit + sections}
     items = []
     if "body" not in declared:
@@ -449,14 +449,15 @@ def _complete(root: Path, data: dict, provider: str, leaf: str) -> dict:
     return result
 
 
-def _section_items(root: Path, leaf_dir: Path, explicit: list[dict]) -> list[dict]:
+def _section_items(root: Path, leaf_dir: Path, explicit: list[dict], *, assembly=None) -> list[dict]:
     """Structure roles of the sections the leaf's [document] regions place."""
     if not (leaf_dir / MANIFEST).is_file():
         return []
     import _document_types  # noqa: PLC0415
 
     try:
-        decl = _document_types.declaration(root, leaf_dir)
+        decl = (assembly.declaration(leaf_dir) if assembly is not None
+                else _document_types.declaration(root, leaf_dir))
     except _document_types.DocumentTypeError:
         return []  # `_normalise` reports the declaration's own error
     if decl is None:
@@ -588,12 +589,14 @@ def _structure_paths(root: Path, record: dict, item: dict, *, must_exist: bool =
 
 
 def _normalise(root: Path, data: dict, manifest_path: Path | None, *,
-               output_entrypoint: str | None = None) -> dict:
+               output_entrypoint: str | None = None, assembly=None) -> dict:
+    if assembly is not None and assembly.root != root:
+        raise SchemaError("document assembly belongs to another repository")
     _strict(data, MANIFEST_FIELDS, "publication")
     declared = data
     if manifest_path is not None:
         provider, leaf = _identity(root, manifest_path.parent)
-        data = _complete(root, data, provider, leaf)
+        data = _complete(root, data, provider, leaf, assembly=assembly)
     if type(data.get("schema_version")) is not int or data["schema_version"] != 1:
         raise SchemaError("schema_version must be 1")
     provider, leaf = _id(data.get("id"))
@@ -626,7 +629,10 @@ def _normalise(root: Path, data: dict, manifest_path: Path | None, *,
         import _document_types  # noqa: PLC0415
 
         try:
-            _document_types.declaration(root, leaf_dir)
+            if assembly is None:
+                _document_types.declaration(root, leaf_dir)
+            else:
+                assembly.declaration(leaf_dir)
         except _document_types.DocumentTypeError as exc:
             raise SchemaError(f"document type: {exc}") from exc
     if not isinstance(data.get("outputs"), list) or not data["outputs"]:
@@ -770,7 +776,8 @@ def _acyclic(nodes: dict[str, list[str]], label: str) -> None:
         visit(key)
 
 
-def load_manifest(root: Path, path: Path, *, output_entrypoint: str | None = None) -> dict:
+def load_manifest(root: Path, path: Path, *, output_entrypoint: str | None = None,
+                  assembly=None) -> dict:
     """Validate a declaration, requiring all outputs unless one edition is selected.
 
     Staged edition consumers require their own and shared input files. All
@@ -788,19 +795,22 @@ def load_manifest(root: Path, path: Path, *, output_entrypoint: str | None = Non
         data = tomllib.loads(path.read_text(encoding="utf-8"))
     except (OSError, tomllib.TOMLDecodeError) as exc:
         raise SchemaError(f"cannot read {path.relative_to(root)}: {exc}") from exc
-    return _normalise(root, data, path, output_entrypoint=output_entrypoint)
+    return _normalise(root, data, path, output_entrypoint=output_entrypoint, assembly=assembly)
 
 
-def discover(root: Path = ROOT) -> list[dict]:
+def discover(root: Path = ROOT, *, assembly=None) -> list[dict]:
     """All main.tex leaves, including invalid/missing declarations as records."""
+    from _document_types import Assembly
+
     root = Path(root).resolve()
+    assembly = Assembly(root) if assembly is None else assembly
     records = []
     for provider in PROVIDERS:
         for main in sorted((root / "src" / provider).rglob("main.tex")):
             manifest = main.parent / MANIFEST
             try:
-                record = load_manifest(root, manifest) if manifest.is_file() else _normalise(
-                    root, adapter_manifest(root, main.parent), None)
+                record = load_manifest(root, manifest, assembly=assembly) if manifest.is_file() else _normalise(
+                    root, adapter_manifest(root, main.parent), None, assembly=assembly)
             except (SchemaError, OSError, UnicodeError) as exc:
                 leaf = main.parent.relative_to(root / "src" / provider).as_posix()
                 record = {"id": f"{provider}/{leaf}", "provider": provider, "leaf": leaf,
@@ -817,7 +827,7 @@ def discover(root: Path = ROOT) -> list[dict]:
             if relative not in known:
                 leaf = manifest.parent.relative_to(root / "src" / provider).as_posix()
                 try:
-                    future = load_manifest(root, manifest)
+                    future = load_manifest(root, manifest, assembly=assembly)
                     if future["source_format"] != "markdown":
                         raise SchemaError("orphan manifest has no canonical main.tex source")
                     records.append(future)
@@ -1343,7 +1353,7 @@ def validate(root: Path, record: dict, *, phase: str = "source", run_gates: bool
         path = root / record["manifest_path"] if record.get("manifest_path") else None
         raw = record["manifest_declared"] if path is not None and "manifest_declared" in record \
             else _raw_manifest(record)
-        checked = _normalise(root, raw, path)
+        checked = _normalise(root, raw, path, assembly=assembly)
         if require_manifest and checked["manifest_origin"] != "declared":
             report["errors"].append("missing publication.toml; adapter discovery is not a manifest")
         _literal_closure(root, checked, assembly=assembly)

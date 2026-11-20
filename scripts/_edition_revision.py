@@ -166,18 +166,72 @@ class Revision:
                 "closure": list(self.closure)}
 
 
-def _git(root: Path, *arguments: str) -> str:
+def _git_bytes(root: Path, *arguments: str, input_bytes: bytes | None = None) -> bytes:
     environment = {key: value for key, value in os.environ.items()
                    if key not in {"GIT_DIR", "GIT_WORK_TREE", "GIT_INDEX_FILE"}}
     environment["GIT_LITERAL_PATHSPECS"] = "1"  # closure paths are files, never patterns
     try:
         run = subprocess.run(["git", *arguments], cwd=root, env=environment,
-                             capture_output=True, text=True)
+                             capture_output=True, input=input_bytes)
     except OSError as error:
         raise RevisionError(f"cannot run git: {error}") from error
     if run.returncode:
-        raise RevisionError(f"git {arguments[0]} failed: {run.stderr.strip()[-500:]}")
+        raise RevisionError(f"git {arguments[0]} failed: {os.fsdecode(run.stderr).strip()[-500:]}")
     return run.stdout
+
+
+def _git(root: Path, *arguments: str) -> str:
+    return os.fsdecode(_git_bytes(root, *arguments))
+
+
+class _HistoryPaths:
+    """Shorten path lists without changing any parent comparison made by git log.
+
+    One bit names one commit/parent tree comparison (including roots against
+    the empty tree). If two path lists change on exactly the same edges, Git
+    makes exactly the same merge simplification and returns the same commits
+    in the same order. Git still performs the history walk and reads trailers.
+    """
+
+    def __init__(self, root: Path):
+        self.tip = _git(root, "rev-parse", "HEAD").strip()
+        graph = _git_bytes(root, "rev-list", "--parents", self.tip)
+        edges = []
+        for line in graph.splitlines():
+            commit, *parents = line.split()
+            edges.extend(commit + b" " + parent for parent in parents)
+            if not parents:
+                edges.append(commit)
+        # Specify each merge parent separately. -t also records directory
+        # changes when a path used to be a directory. NULs delimit all paths.
+        rows = _git_bytes(root, "diff-tree", "--stdin", "--root", "--no-renames",
+                          "--always", "--format=%x00%H", "--name-only", "-r", "-t", "-z",
+                          input_bytes=b"\n".join(edges) + b"\n")
+        self.changes: dict[str, int] = {}
+        records = rows.removeprefix(b"\0").split(b"\0\0")
+        if len(records) != len(edges):
+            raise RevisionError("git returned incomplete per-parent history")
+        for i, (edge, record) in enumerate(zip(edges, records)):
+            commit, _, names = record.partition(b"\0")
+            if commit != edge.split(b" ", 1)[0]:
+                raise RevisionError("git returned an unexpected history edge")
+            if names:
+                bit = 1 << i
+                for raw in names.removeprefix(b"\n").removesuffix(b"\0").split(b"\0"):
+                    path = os.fsdecode(raw)
+                    self.changes[path] = self.changes.get(path, 0) | bit
+
+    def reduce(self, paths):
+        # Cover the union with real paths from this exact query. Common corpus
+        # inputs often have identical histories or are subsumed by another.
+        representatives = {self.changes.get(path, 0): path for path in paths}
+        covered = 0
+        kept = []
+        for mask in sorted(representatives, key=int.bit_count, reverse=True):
+            if mask & ~covered:
+                covered |= mask
+                kept.append(representatives[mask])
+        return kept
 
 
 class Repository:
@@ -199,12 +253,29 @@ class Repository:
                 "this clone is shallow, so the last commit to change an edition's sources "
                 "may be missing from it; revision stamps need full history "
                 "(git fetch --unshallow, or actions/checkout with fetch-depth: 0)")
+        self._history_paths: _HistoryPaths | None = None
+        self._large_walks = 0
         self._tracked: set[str] | None = None
         self._changed: set[str] | None = None
         self._pre_images: dict[str, tuple[str | None, set[str]]] = {}
         # Stamps `prefetch_revisions` derived for this same state, or the
         # error deriving each raised; `revision` answers from them unchanged.
         self._revisions: dict[tuple[str, str], object] = {}
+
+    def prepare_history(self):
+        if self._history_paths is None:
+            self._history_paths = _HistoryPaths(self.root)
+
+    def history(self, paths, revision):
+        if self._history_paths is None and len(paths) >= 64:
+            self._large_walks += 1
+            if self._large_walks >= 2:
+                self.prepare_history()
+        if self._history_paths is not None:
+            if revision == "HEAD":
+                revision = self._history_paths.tip
+            paths = self._history_paths.reduce(paths)
+        return history_of(self.root, paths, revision) if paths else []
 
     def pre_image(self, commit: str) -> tuple[str | None, set[str]]:
         """A commit's first parent and the paths it changed, read without blobs."""
@@ -305,12 +376,12 @@ def _dictionary_generator(root: Path):
     return module
 
 
-def _render_data(root: Path, provider_root: Path, entry: Path) -> set[Path]:
+def _render_data(root: Path, provider_root: Path, entry: Path, assembly=None) -> set[Path]:
     manifest = entry.parent / "publication.toml"
     if not manifest.is_file():
         return set()
     try:
-        data = load_manifest(root, manifest, output_entrypoint=entry.name)
+        data = load_manifest(root, manifest, output_entrypoint=entry.name, assembly=assembly)
     except (OSError, SchemaError, ValueError) as error:
         raise RevisionError(f"cannot read {manifest.relative_to(root)}: {error}") from error
     role = next((output.get("role") for output in data.get("outputs", [])
@@ -422,7 +493,7 @@ def closure(root: Path, provider: str, entry: Path, *, assembly=None) -> Closure
 
     members = {path for path in seen | graphics
                if path.is_relative_to(provider_root) and path.name != GENERATION_METADATA}
-    members.update(_render_data(root, provider_root, entry))
+    members.update(_render_data(root, provider_root, entry, assembly))
     virtual = {path for path in members if assembly.generated(path) is not None}
     for path in virtual:
         members.update(assembly.content_dependencies(path))
@@ -479,7 +550,7 @@ def _last_revision(repository: "Repository", paths, leaf: str, revision: str, de
     paths = sorted(set(paths))
     if not paths:
         return None
-    history = history_of(repository.root, paths, revision)
+    history = repository.history(paths, revision)
     best = max(((seconds, commit) for seconds, commit, skipped in history if not skipped), default=None)
     current = set(paths)
     for _seconds, commit, skipped in history:
@@ -583,6 +654,9 @@ def prefetch_revisions(root: Path, editions, *, repository: Repository, assembly
             closures[(provider, document)] = (entry, closure(root, provider, entry, assembly=assembly))
         except Exception as error:  # held, and raised where this edition is asked for
             closures[(provider, document)] = error
+
+    if any(not isinstance(row, Exception) and len(row[1].paths) >= 64 for row in closures.values()):
+        repository.prepare_history()
 
     def finish(key):
         held = closures[key]

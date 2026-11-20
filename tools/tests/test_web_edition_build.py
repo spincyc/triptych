@@ -34,6 +34,70 @@ DRIVER = importlib.util.module_from_spec(SPEC)
 sys.modules[SPEC.name] = DRIVER
 SPEC.loader.exec_module(DRIVER)
 
+
+class EditionCandidateTests(unittest.TestCase):
+    def setUp(self):
+        import _browser_products as products
+        self.root = Path(self.enterContext(tempfile.TemporaryDirectory()))
+        self.cache = self.root / "cache"
+        self.key = "1" * 64
+        self.data = self.cache / self.key / "data"
+        self.rows = [{"provider": "gpt", "document": name} for name in ("a", "b", "d")]
+        self.records = {name: {
+            "id": "gpt/" + name, "provider": "gpt", "output": name, "canonical": name,
+            "edition": "main", "eligibility": "eligible", "blocking_constructs": [],
+            "markdown_sha256": name * 64, "figures": [],
+        } for name in ("a", "b", "c", "d")}
+        self.enterContext(mock.patch.object(DRIVER, "reader_outputs", return_value=self.rows))
+        self.enterContext(mock.patch.object(DRIVER, "pinned_pandoc", return_value={"pandoc": "fixture"}))
+        self.convert = self.enterContext(mock.patch.object(DRIVER, "convert_rows", side_effect=
+            lambda rows, **kwargs: [self.records[row["document"]] for row in rows]))
+        self.cold = self.root / "cold"
+        DRIVER.build_products(self.cold)
+        self.convert.reset_mock()
+        inventory = products._inventory(self.cold)
+        self.product = {"id": "web-editions", "files": inventory}
+        # a still matches, b was edited, c is no longer admitted, and d is new.
+        target = self.data / "web-editions/gpt"
+        target.mkdir(parents=True)
+        for name in ("a", "b", "c"):
+            record = dict(self.records[name])
+            if name == "b":
+                record["markdown_sha256"] = "0" * 64
+            (target / (name + ".json")).write_bytes(DRIVER.canonical_json(record))
+        (target.parent / "index.json").write_bytes(b"{}")
+        self.entries = {self.key: products.candidate_hint(products._inventory(self.data))}
+
+    def warm_build(self, out):
+        import _browser_products as products
+        cached = products._reusable_web_editions(self.product, self.cache, self.entries)
+        return DRIVER.build_products(out, cached=cached)
+
+    def test_changed_new_and_removed_editions_match_the_complete_cold_build(self):
+        import _browser_products as products
+        warm = self.root / "warm"
+        stats = self.warm_build(warm)
+        self.assertEqual(stats, {"editions": 3, "reused": 1, "converted": 2})
+        self.assertEqual(self.convert.call_args.args[0], self.rows[1:])
+        self.assertEqual(products._inventory(warm), products._inventory(self.cold))
+
+    def test_tampered_candidate_is_refused_before_conversion(self):
+        import _browser_products as products
+        (self.data / "web-editions/gpt/a.json").write_text("{}")
+        with self.assertRaisesRegex(products.ProductError, "inventory hint"):
+            self.warm_build(self.root / "warm")
+        self.convert.assert_not_called()
+
+    def test_symlink_cannot_supply_an_edition_even_with_expected_bytes(self):
+        import _browser_products as products
+        path = self.data / "web-editions/gpt/a.json"
+        path.unlink()
+        path.symlink_to(self.cold / "web-editions/gpt/a.json")
+        with self.assertRaisesRegex(products.ProductError, "unsafe product"):
+            self.warm_build(self.root / "warm")
+        self.convert.assert_not_called()
+
+
 class EditionSelectionTests(unittest.TestCase):
     """A companion is the edition its own entrypoint selects."""
 

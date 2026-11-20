@@ -39,6 +39,21 @@ class DocumentAssemblyTests(unittest.TestCase):
         self.assertTrue(self.assembly().is_file(generated))
         self.assertFalse(generated.exists())
 
+    def test_type_and_leaf_declarations_are_loaded_once_per_operation(self):
+        self.declare()
+        sibling = self.leaf.with_name("sibling")
+        shutil.copytree(self.leaf, sibling)
+        manifest = sibling / "publication.toml"
+        manifest.write_text(manifest.read_text().replace("fixture/leaf", "fixture/sibling"))
+        assembly = self.assembly()
+        with patch.object(types, "discover_types", wraps=types.discover_types) as discover:
+            self.assertIs(assembly.declaration(self.leaf), assembly.declaration(self.leaf))
+            self.assertEqual(assembly.declaration(sibling).document, "fixture/sibling")
+            discover.assert_called_once_with(self.root)
+        manifest.write_text(manifest.read_text().replace("fixture-v1", "missing"))
+        with self.assertRaisesRegex(types.DocumentTypeError, "missing"):
+            self.assembly().declaration(sibling)
+
     def test_prefetched_dependency_traces_finish_exactly_as_asked_one_at_a_time(self):
         self.declare()
         traced = []

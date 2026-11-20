@@ -38,6 +38,25 @@ class RecipeTests(unittest.TestCase):
         self.assertEqual(recipe["output_prefixes"], ["web-editions"])
         self.assertEqual(recipe["input_trees"], ["src", "release/publications"])
 
+    def test_only_build_supplies_authenticated_editions_to_the_child(self):
+        with tempfile.TemporaryDirectory(dir=SCRATCH) as directory:
+            root = Path(directory)
+            tool = root / "tools/web-edition"
+            tool.parent.mkdir()
+            tool.write_text(
+                "import json, sys\nfrom pathlib import Path\n"
+                "def build_products(out, *, cached):\n"
+                "    (out / 'result.json').write_bytes(cached['web-editions/gpt/one.json'])\n"
+                "    return {'reused': len(cached)}\n"
+                "if __name__ == '__main__':\n"
+                "    (Path(sys.argv[-1]) / 'result.json').write_bytes(b'cold')\n")
+            recipe = {"id": "web-editions", "argv": ["tools/web-edition", "products"]}
+            args = root, root, recipe, dict(os.environ)
+            recipes._run(*args, cached_editions={"web-editions/gpt/one.json": "café".encode()})
+            self.assertEqual((root / "result.json").read_text(), "café")
+            recipes._run(*args)
+            self.assertEqual((root / "result.json").read_bytes(), b"cold")
+
     def test_review_records_are_excluded_and_calendar_and_bible_scopes_are_narrow(self):
         # Audited 2026-11-12: no producer opens these records, and these
         # families read nothing outside the narrowed trees.

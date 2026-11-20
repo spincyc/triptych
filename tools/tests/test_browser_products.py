@@ -322,12 +322,12 @@ class BrowserProductsTests(unittest.TestCase):
             products.check(self.root, cache_root=self.cache)
 
     def test_hash_each_shared_input_once_per_phase(self):
-        real = products._read
+        real = products.safe_files._file_hash_at
         paths = []
-        def reading(root, name):
+        def hashing(directory, leaf, name):
             paths.append(name)
-            return real(root, name)
-        with patch.object(products, "_read", side_effect=reading):
+            return real(directory, leaf, name)
+        with patch.object(products.safe_files, "_file_hash_at", side_effect=hashing):
             products._identity_batch(self.root)
         self.assertEqual(paths.count("scripts/generator.py"), 1)
         self.assertEqual(paths.count("requirements-tools.txt"), 1)
@@ -708,6 +708,9 @@ class BrowserIdentityLoopTests(unittest.TestCase):
                    self.recipe("b", ["scope-neighbor", "exact"], ["scope"], [])]
         with patch.object(products, "_paths", return_value=found), \
              patch.object(products, "_read", side_effect=lambda root, name: name.encode()), \
+             patch.object(products, "_input_hashes", side_effect=lambda root, names: {
+                 name: {"path": name, "sha256": products._sha(name.encode()), "bytes": len(name)}
+                 for name in names}), \
              patch.object(products.safe_files, "_external_identities", return_value={}):
             actual = products._identity_batch(self.root, recipes)
             self.assertEqual(actual, _c7_identity_reference(self.root, recipes))
@@ -749,16 +752,16 @@ class BrowserIdentityLoopTests(unittest.TestCase):
         self.assertNotEqual(replaced["content"], removed["content"])
 
     def test_both_discoveries_remain_fresh_and_reject_membership_mutation(self):
-        reading = products._read
+        hashing = products.safe_files._file_hash_at
         paths = products._paths
-        def mutate(root, name):
-            body = reading(root, name)
+        def mutate(directory, leaf, name):
+            identity = hashing(directory, leaf, name)
             if name == "src/a/live.txt":
                 (self.root / "src/a/new.txt").write_text("new member")
-            return body
+            return identity
         with patch.object(products.safe_files, "_external_identities", return_value={}), \
              patch.object(products, "_paths", wraps=paths) as discoveries, \
-             patch.object(products, "_read", side_effect=mutate):
+             patch.object(products.safe_files, "_file_hash_at", side_effect=mutate):
             with self.assertRaisesRegex(products.ProductError, "membership changed"):
                 products._identity_batch(self.root, self.recipes)
         self.assertEqual(discoveries.call_count, 2)
@@ -967,6 +970,28 @@ class BrowserCandidateReuseTests(unittest.TestCase):
         with patch.object(products, "_reuse_candidate", side_effect=AssertionError("record reused candidate bytes")):
             products.record(self.root, cache_root=self.cache)
         self.assertEqual(self.generated, [("a", "b"), ("a", "b")])
+
+    def test_web_editions_build_reuses_one_record_but_record_always_runs_cold(self):
+        self.recipes[0].update(id="web-editions", output_prefixes=["web-editions"], delivery="site-build")
+        calls = []
+        fixed = "web-editions/gpt/fixed.json"
+        def generate(root, out, ids, *, cached_editions=None):
+            calls.append(cached_editions)
+            self.assertEqual(ids, ["web-editions"])
+            (out / "web-editions/gpt").mkdir(parents=True)
+            (out / fixed).write_bytes((cached_editions or {}).get(fixed, b'{"fixed":true}'))
+            (out / "web-editions/gpt/new.json").write_text(json.dumps((root / "src/a/input.txt").read_text()))
+            (out / "web-editions/index.json").write_text("{}")
+        with patch.object(products, "_generate", side_effect=generate):
+            products.record(self.root, cache_root=self.cache)
+            (self.root / "src/a/input.txt").write_text("edited")
+            self.manifest = products.record(self.root, cache_root=self.cache)
+            self.assertEqual(calls, [None] * 4)
+            shutil.rmtree(self.cache / self.family("web-editions")["key"])
+            shutil.rmtree(self.cache / products.products_identity(self.manifest))
+            products.build(self.root, cache_root=self.cache)
+            self.assertEqual(calls[4:], [{fixed: b'{"fixed":true}'}])
+            products.check(self.root, cache_root=self.cache)
 
     def test_prune_keeps_only_current_hints_and_still_rejects_arbitrary_files(self):
         self.new_input_epoch()

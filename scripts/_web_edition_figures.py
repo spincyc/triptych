@@ -7,9 +7,9 @@ standalone document compiled (the leaf's own preamble and the picture), the
 bytes of every repository file that preamble inputs, and this generator's
 version. It does not cover the TeX toolchain: the SVG bytes depend on it, so
 they are never committed and never enter the browser-product descriptor. They
-are compiled at site-build time -- in CI inside the pinned print toolchain
-image, locally with the host's TeX -- and each figure is compiled twice in
-fresh directories, refused unless both SVGs are byte-identical.
+are compiled twice in fresh directories with the host's TeX or the pinned Pages
+image, refused unless both SVGs are byte-identical. Pages can reuse those bytes
+under independently tracked source, compiler, image and SVG identities.
 
 Nothing here decides admission or review; the converter and the site do.
 """
@@ -21,9 +21,11 @@ import html
 import json
 import os
 from pathlib import Path
+import platform
 import re
 import shlex
 import shutil
+import stat
 import subprocess
 import tempfile
 
@@ -420,8 +422,48 @@ def _runner_command(runner: str, root: Path, script: Path) -> list[str]:
     raise FigureError(f"unknown figure runner: {runner}")
 
 
-def compile_figures(records: list[dict], out: Path, *, root: Path, runner: str = "host") -> dict:
-    """Compile each distinct figure twice; write ``<id>.svg`` and ``manifest.json``."""
+PAGES_DIGESTS = ".github/web-figure-digests.json"
+
+
+def _pages_proof(root: Path, runner: str) -> dict:
+    """Only the checkout can bind a source identity and toolchain to SVG bytes."""
+    if not runner.startswith("docker:") or not re.search(r"@sha256:[0-9a-f]{64}$", runner):
+        raise FigureError("the Pages figure cache requires a digest-pinned Docker runner")
+    try:
+        proof = json.loads((root / PAGES_DIGESTS).read_text(encoding="utf-8"))
+    except (OSError, ValueError) as exc:
+        raise FigureError(f"cannot read {PAGES_DIGESTS}: {exc}") from exc
+    if proof["schema"] != "triptych-pages-figure-digests/v1":
+        raise FigureError(f"unsupported {PAGES_DIGESTS} schema")
+    if (runner != proof["toolchain"]["runner"]
+            or [platform.system(), platform.machine()] != proof["platform"]
+            or _sha(Path(__file__).read_bytes()) != proof["compiler_sha256"]):
+        return {}
+    return proof
+
+
+def _candidate(directory: Path, figure: str, expected: dict) -> bytes | None:
+    """Read only a bounded regular file. The cache's own manifest has no role."""
+    try:
+        parent = os.open(directory, os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW)
+        try:
+            fd = os.open(f"{figure}.svg", os.O_RDONLY | os.O_NOFOLLOW | os.O_NONBLOCK, dir_fd=parent)
+            with os.fdopen(fd, "rb") as stream:
+                status = os.fstat(fd)
+                if (not stat.S_ISREG(status.st_mode) or status.st_nlink != 1
+                        or status.st_size != expected["bytes"]):
+                    return None
+                data = stream.read(expected["bytes"] + 1)
+        finally:
+            os.close(parent)
+    except OSError:
+        return None
+    return data if len(data) == expected["bytes"] and _sha(data) == expected["sha256"] else None
+
+
+def compile_figures(records: list[dict], out: Path, *, root: Path, runner: str = "host",
+                    candidates: Path | None = None, force: bool = False) -> dict:
+    """Double-compile each miss. Only digest-pinned Pages builds reuse candidates."""
     root = Path(root).resolve()
     out = Path(out).absolute()
     figures: dict[str, dict] = {}
@@ -430,7 +472,25 @@ def compile_figures(records: list[dict], out: Path, *, root: Path, runner: str =
             raise FigureError("invalid figure identity")
         if identity(record["tex"], record["inputs"]) != record["id"]:
             raise FigureError(f"figure source no longer matches its identity: {record['id']}")
-        figures.setdefault(record["id"], record)
+        previous = figures.setdefault(record["id"], record)
+        if candidates is not None and previous["provider"] != record["provider"]:
+            raise FigureError(f"one figure identity has two provider search paths: {record['id']}")
+    proof = _pages_proof(root, runner) if candidates is not None else {}
+    expected: dict[str, dict] = {}
+    accepted: dict[str, bytes] = {}
+    for figure, record in figures.items():
+        row = proof.get("figures", {}).get(figure)
+        if row is None or row["provider"] != record["provider"]:
+            continue
+        # Resolve against today's checkout as TeX would, including provider
+        # overrides. A verified reader record must still describe those bytes.
+        if input_closure(root, record["provider"], record["tex"]) != record["inputs"]:
+            raise FigureError(f"figure inputs differ from the verified reader: {figure}")
+        expected[figure] = row
+        if not force and candidates is not None:
+            data = _candidate(candidates, figure, row)
+            if data is not None:
+                accepted[figure] = data
     out.mkdir(parents=True, exist_ok=True)
     for existing in out.iterdir():
         if existing.name == "manifest.json" or (existing.suffix == ".svg" and _ID.fullmatch(existing.stem)):
@@ -447,7 +507,21 @@ def compile_figures(records: list[dict], out: Path, *, root: Path, runner: str =
         scripts = []
         for figure, record in sorted(figures.items()):
             provider = record["provider"]
-            texinputs = f"{root / 'src' / provider}:{root / 'src'}:"
+            if figure in accepted:
+                continue
+            inputs_root = root
+            if figure in expected:
+                # Compile recorded figures from the exact input set in their
+                # identity. Other checkout files cannot shadow image packages.
+                inputs_root = work / figure / "inputs"
+                for item in record["inputs"]:
+                    target = inputs_root / item["path"]
+                    target.parent.mkdir(parents=True, exist_ok=True)
+                    data = (root / item["path"]).read_bytes()
+                    if _sha(data) != item["sha256"]:
+                        raise FigureError(f"figure input changed during compilation: {item['path']}")
+                    target.write_bytes(data)
+            texinputs = f"{inputs_root / 'src' / provider}:{inputs_root / 'src'}:"
             for copy in ("a", "b"):
                 job = work / figure / copy
                 job.mkdir(parents=True)
@@ -461,14 +535,22 @@ def compile_figures(records: list[dict], out: Path, *, root: Path, runner: str =
         path = work / "compile.sh"
         path.write_text(_SCRIPT_HEAD.format(versions=shlex.quote(str(versions)),
                                             joblist=shlex.quote(str(joblist))), encoding="utf-8")
-        finished = subprocess.run(_runner_command(runner, root, path), capture_output=True, text=True)
-        if finished.returncode:
-            raise FigureError("figure compilation failed:\n" + (finished.stderr or finished.stdout)[-4000:])
+        if scripts or not proof:
+            mount = work if expected and set(figures) == expected.keys() else root
+            finished = subprocess.run(_runner_command(runner, mount, path), capture_output=True, text=True)
+            if finished.returncode:
+                raise FigureError("figure compilation failed:\n" + (finished.stderr or finished.stdout)[-4000:])
+            toolchain = {"runner": runner,
+                         "pdflatex": (versions / "pdflatex.txt").read_text().strip(),
+                         "pdftocairo": (versions / "pdftocairo.txt").read_text().strip()}
+        else:
+            toolchain = proof["toolchain"]
         manifest = {"schema": SCHEMA, "generator": FIGURE_GENERATOR_VERSION, "figures": {},
-                    "toolchain": {"runner": runner,
-                                  "pdflatex": (versions / "pdflatex.txt").read_text().strip(),
-                                  "pdftocairo": (versions / "pdftocairo.txt").read_text().strip()}}
-        for figure in sorted(figures):
+                    "toolchain": toolchain}
+        for figure, svg in accepted.items():
+            (out / f"{figure}.svg").write_bytes(svg)
+            manifest["figures"][figure] = {"sha256": _sha(svg), "bytes": len(svg)}
+        for figure in sorted(figures.keys() - accepted.keys()):
             first = work / figure / "a"
             second = work / figure / "b"
             if any((job / "pages.txt").read_text().strip() != "1" for job in (first, second)):
@@ -478,8 +560,12 @@ def compile_figures(records: list[dict], out: Path, *, root: Path, runner: str =
                 raise FigureError(f"figure SVG is not deterministic: {figure}")
             if not svg.lstrip().startswith((b"<?xml", b"<svg")) or b"<svg" not in svg:
                 raise FigureError(f"figure compiler wrote no SVG: {figure}")
+            digest = _sha(svg)
+            if figure in expected and (digest != expected[figure]["sha256"]
+                                       or len(svg) != expected[figure]["bytes"]):
+                raise FigureError(f"clean figure compilation differs from {PAGES_DIGESTS}: {figure}")
             (out / f"{figure}.svg").write_bytes(svg)
-            manifest["figures"][figure] = {"sha256": _sha(svg), "bytes": len(svg)}
+            manifest["figures"][figure] = {"sha256": digest, "bytes": len(svg)}
         (out / "manifest.json").write_text(
             json.dumps(manifest, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
         return manifest

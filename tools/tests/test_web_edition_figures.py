@@ -3,9 +3,11 @@ from __future__ import annotations
 import json
 from pathlib import Path
 import shutil
+import subprocess
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -190,6 +192,116 @@ class CheckTests(unittest.TestCase):
         command = figures._runner_command("docker:ghcr.io/example/tex@sha256:" + "0" * 64, ROOT, ROOT / "x.sh")
         self.assertEqual(command[:4], ["docker", "run", "--rm", "--network"])
         self.assertIn("none", command)
+
+
+class PagesCacheTests(unittest.TestCase):
+    runner = "docker:ghcr.io/example/tex@sha256:" + "1" * 64
+
+    def setUp(self):
+        tree = FixtureTree()
+        self.addCleanup(tree.cleanup)
+        self.root = tree.root
+        self.cache = tree.root / "candidates"
+        self.cache.mkdir()
+        self.out = tree.root / "out"
+        bodies = (BODY, BODY.replace("God first loves", "Second figure"))
+        self.records = [figures.extract(body, HEAD, root=self.root, provider="gpt",
+                                        entrypoint=tree.entry)[1][0] for body in bodies]
+        self.svgs = {r["id"]: f"<svg>{index}</svg>".encode() for index, r in enumerate(self.records)}
+        self.proof = {"schema": "triptych-pages-figure-digests/v1",
+                      "platform": [figures.platform.system(), figures.platform.machine()],
+                      "compiler_sha256": figures._sha(Path(figures.__file__).read_bytes()),
+                      "toolchain": {"runner": self.runner, "pdflatex": "test", "pdftocairo": "test"},
+                      "figures": {}}
+        for figure, svg in self.svgs.items():
+            self.proof["figures"][figure] = {"provider": "gpt", "sha256": figures._sha(svg), "bytes": len(svg)}
+            (self.cache / f"{figure}.svg").write_bytes(svg)
+        (tree.root / figures.PAGES_DIGESTS).parent.mkdir()
+        self.write_proof()
+
+    def write_proof(self):
+        (self.root / figures.PAGES_DIGESTS).write_text(json.dumps(self.proof))
+
+    def build(self, **kwargs):
+        return figures.compile_figures(self.records, self.out, root=self.root, candidates=self.cache,
+                                       runner=kwargs.pop("runner", self.runner), **kwargs)
+
+    def run_jobs(self, command, **kwargs):
+        work = Path(command[-1]).parent
+        for tool in ("pdflatex", "pdftocairo"):
+            (work / "versions" / f"{tool}.txt").write_text("test")
+        self.jobs = []
+        for line in (work / "jobs.txt").read_text().splitlines():
+            job = Path(line).parent
+            figure = job.parent.name
+            self.jobs.append((figure, job.name))
+            (job / "pages.txt").write_text("1")
+            (job / "figure.svg").write_bytes(self.svgs[figure])
+        return subprocess.CompletedProcess(command, 0, "", "")
+
+    def test_warm_figures_use_only_the_current_checked_bytes(self):
+        (self.cache / "manifest.json").write_text("not a manifest")
+        with patch.object(figures.subprocess, "run", side_effect=AssertionError("unexpected compiler")):
+            self.assertEqual(self.build()["toolchain"], self.proof["toolchain"])
+        self.assertEqual(figures.check(self.out, self.svgs), [])
+
+    def test_self_consistent_forged_candidate_recompiles_just_the_miss_twice(self):
+        figure = self.records[0]["id"]
+        forged = b"<svg>X</svg>"
+        (self.cache / f"{figure}.svg").write_bytes(forged)
+        (self.cache / "manifest.json").write_text(json.dumps({"figures": {
+            figure: {"sha256": figures._sha(forged), "bytes": len(forged)}}}))
+        with patch.object(figures.subprocess, "run", side_effect=self.run_jobs):
+            self.build()
+        self.assertEqual(self.jobs, [(figure, "a"), (figure, "b")])
+        self.assertEqual((self.out / f"{figure}.svg").read_bytes(), self.svgs[figure])
+
+    def test_changed_image_compiler_or_absent_proof_never_reuses_a_candidate(self):
+        both = {(figure, copy) for figure in self.svgs for copy in ("a", "b")}
+        with patch.object(figures.subprocess, "run", side_effect=self.run_jobs):
+            self.build(runner=self.runner[:-1] + "2")
+            self.assertEqual(set(self.jobs), both)
+            with patch.object(figures.platform, "machine", return_value="another-machine"):
+                self.build()
+            self.assertEqual(set(self.jobs), both)
+            self.build(force=True)
+            self.assertEqual(set(self.jobs), both)
+            self.proof["compiler_sha256"] = "0" * 64
+            self.write_proof()
+            self.build()
+            self.assertEqual(set(self.jobs), both)
+            self.proof["compiler_sha256"] = figures._sha(Path(figures.__file__).read_bytes())
+            figure = self.records[0]["id"]
+            del self.proof["figures"][figure]
+            self.write_proof()
+            self.build()
+            self.assertEqual(self.jobs, [(figure, "a"), (figure, "b")])
+
+    def test_same_source_id_cannot_reuse_stale_input_or_a_shadowed_preamble(self):
+        override = self.root / "src/gpt/common/preamble.tex"
+        override.parent.mkdir()
+        override.write_text(PREAMBLE)
+        with self.assertRaisesRegex(figures.FigureError, "inputs differ"):
+            self.build()
+        override.unlink()
+        (self.root / "src/common/preamble.tex").write_text(PREAMBLE + "% edit")
+        with self.assertRaisesRegex(figures.FigureError, "inputs differ"):
+            self.build()
+
+    def test_missing_or_symlinked_files_require_clean_pinned_result(self):
+        figure = self.records[0]["id"]
+        path = self.cache / f"{figure}.svg"
+        verified = self.root / "verified.svg"
+        path.rename(verified)
+        with patch.object(figures.subprocess, "run", side_effect=self.run_jobs):
+            self.build()
+            self.assertEqual(self.jobs, [(figure, "a"), (figure, "b")])
+            path.symlink_to(verified)
+            self.svgs[figure] = b"<svg>drift</svg>"
+            with self.assertRaisesRegex(figures.FigureError, "clean figure compilation differs"):
+                self.build()
+        with self.assertRaisesRegex(figures.FigureError, "digest-pinned"):
+            self.build(runner="host")
 
 
 @unittest.skipUnless(all(shutil.which(tool) for tool in ("pdflatex", "pdftocairo", "pdfinfo")),

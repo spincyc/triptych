@@ -3909,6 +3909,7 @@ def share_parent_state() -> None:
         state = _edition_revision.Repository(ROOT)
         state.tracked()
         state.changed()
+        state.prepare_history()
         _SHARED["repository"] = state
 
     for step in (
@@ -4092,7 +4093,7 @@ def check_main(argv: list[str]) -> int:
     return 0
 
 
-def build_products(out: Path, *, jobs: int | None = None) -> dict:
+def build_products(out: Path, *, jobs: int | None = None, cached: dict[str, bytes] | None = None) -> dict:
     """Write every reader output as one JSON product below ``out``.
 
     Each output converts in its own process forked from a parent that has
@@ -4107,20 +4108,33 @@ def build_products(out: Path, *, jobs: int | None = None) -> dict:
     destination = out / PRODUCT_PREFIX
     if destination.exists():
         raise ConversionError(f"product destination already exists: {destination}")
-    records = convert_rows(rows, jobs=jobs)
+    # Only browser-products build passes editions, after checking their exact
+    # bytes against the current descriptor. The CLI and cold proofs pass none.
+    cached = cached or {}
+    paths = [f"{PRODUCT_PREFIX}/{row['provider']}/{row['document']}.json" for row in rows]
+    missing = [row for row, path in zip(rows, paths) if path not in cached]
+    converted = iter(convert_rows(missing, jobs=jobs)) if missing else iter(())
     index = []
-    for record in records:
-        relative = f"{PRODUCT_PREFIX}/{record['provider']}/{record['output']}.json"
+    for relative in paths:
+        if relative in cached:
+            body = cached[relative]
+            record = json.loads(body)
+        else:
+            record = next(converted)
+            body = canonical_json(record)
         path = out / relative
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_bytes(canonical_json(record))
+        path.write_bytes(body)
         index.append({key: record[key] for key in (
             "id", "provider", "output", "canonical", "edition", "eligibility",
             "blocking_constructs", "markdown_sha256")}
             | {"path": relative, "figures": [figure["id"] for figure in record["figures"]]})
     (destination / "index.json").write_bytes(canonical_json(
         {"schema": INDEX_SCHEMA, "toolchain": toolchain, "editions": index}))
-    return {"editions": len(index)}
+    summary = {"editions": len(index)}
+    if cached:
+        summary.update(reused=len(index) - len(missing), converted=len(missing))
+    return summary
 
 
 def product_json(identity: str) -> int:
@@ -4203,18 +4217,21 @@ def figures_main(argv: list[str]) -> int:
                         help="figure directory the site build reads (default build/web-figures)")
     parser.add_argument("--runner", default="host",
                         help="host, or docker:<image> to compile in the pinned TeX image")
+    parser.add_argument("--candidates", type=Path, default=os.environ.get("TRIPTYCH_WEB_FIGURE_CANDIDATES"),
+                        help="untrusted SVG cache for a digest-pinned Pages runner")
     parser.add_argument("--force", action="store_true",
                         help="recompile even when the directory already holds every current figure")
     arguments = parser.parse_args(argv)
     try:
         records = figure_records_from_products()
         wanted = sorted({record["id"] for record in records})
-        if not arguments.force and not web_figures.check(arguments.out, wanted):
+        if arguments.candidates is None and not arguments.force and not web_figures.check(arguments.out, wanted):
             print(json.dumps({"figures": len(wanted), "out": str(arguments.out),
                               "status": "current"}, sort_keys=True))
             return 0
         manifest = web_figures.compile_figures(records, arguments.out, root=ROOT,
-                                               runner=arguments.runner)
+                                               runner=arguments.runner, candidates=arguments.candidates,
+                                               force=arguments.force)
     except (ConversionError, web_figures.FigureError) as error:
         print(f"web-edition figures: {error}", file=sys.stderr)
         return 1
