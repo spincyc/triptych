@@ -1395,18 +1395,49 @@ def _pictorial_object_details(record: dict, definition: str, references: dict) -
     }
 
 
-def pictorial_gallery_selection() -> tuple[dict[str, set[str]], set[str]]:
+def _pictorial_gallery_selection(root: Path) -> tuple[dict[str, set[str]], set[str]]:
     """Use the native editions' positive artwork selection and its source closure."""
     from _native_print_artwork import DICTIONARY, DICTIONARY_LEAVES, dictionary_artwork
 
     editions, inputs = {}, set()
     for leaf in DICTIONARY_LEAVES:
         try:
-            editions[leaf], sources = dictionary_artwork(ROOT, "gpt", DICTIONARY + "/" + leaf)
+            editions[leaf], sources = dictionary_artwork(root, "gpt", DICTIONARY + "/" + leaf)
         except (OSError, ValueError) as exc:
             raise ReleaseError(f"cannot select dictionary artwork for {leaf}: {exc}") from exc
         inputs.update(sources)
     return editions, inputs
+
+
+@contextmanager
+def _held_pictorial_selection(root: Path):
+    def snapshot():
+        editions, sources = _pictorial_gallery_selection(root)
+        paths = sources.union(*editions.values())
+        # The selector reads both the records choosing each image and the image
+        # itself. Bind both even when a content edit leaves membership unchanged.
+        try:
+            hashes = {name: sha256(root / name) for name in paths}
+        except OSError as exc:
+            raise ReleaseError(f"cannot verify canonical pictorial selection: {exc}") from exc
+        return editions, sources, hashes
+
+    editions, sources, hashes = snapshot()
+    yield editions, sources
+    # Fresh discovery also sees added/removed records and checks canonical
+    # symlink, selection and artwork rules again before accepting the operation.
+    if snapshot() != (editions, sources, hashes):
+        raise ReleaseError("canonical pictorial selection changed during operation")
+
+
+def pictorial_gallery_selection() -> tuple[dict[str, set[str]], set[str]]:
+    stack = _HELD_SOURCE_INVENTORIES[-1].get("exit-stack") if _HELD_SOURCE_INVENTORIES else None
+    if stack is None:
+        return _pictorial_gallery_selection(ROOT)
+    editions, sources = held_source_inventory(
+        "pictorial-selection", lambda: stack.enter_context(_held_pictorial_selection(ROOT.resolve()))
+    )
+    return {leaf: set(paths) for leaf, paths in editions.items()}, set(sources)
 
 
 def pictorial_gallery_data(edition: str | None = None) -> list[dict]:
@@ -3198,6 +3229,7 @@ def held_repository_inputs(*, prefetch_web=False):
             _HELD_SOURCE_INVENTORIES.append({})
             try:
                 with ExitStack() as stack:
+                    _HELD_SOURCE_INVENTORIES[-1]["exit-stack"] = stack
                     scan = None
                     if (prefetch_web and browser_products_declared()
                             and (getattr(os, "process_cpu_count", os.cpu_count)() or 1) > 1):

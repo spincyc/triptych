@@ -2955,6 +2955,30 @@ class PublicAlphaTest(unittest.TestCase):
         verify_output.assert_not_called()
         self.assertTrue((output / "SHA256SUMS").is_file())
 
+    def test_held_pictorial_selection_rechecks_source_bytes_and_membership(self) -> None:
+        self.write("art/image.png", b"one")
+        self.write("records/current.toml", b"current")
+        def discover(root):
+            records = {p.relative_to(root).as_posix() for p in (root / "records").glob("*.toml")}
+            return {"small": {"art/image.png"}}, records
+
+        with mock.patch.object(self.tool, "_pictorial_gallery_selection", side_effect=discover) as select:
+            for relative in ("art/image.png", "records/current.toml", "records/added.toml"):
+                with self.subTest(relative=relative), self.assertRaisesRegex(
+                    self.tool.ReleaseError, "pictorial selection changed"
+                ), self.tool.held_repository_inputs():
+                    self.tool.pictorial_gallery_selection()
+                    self.write(relative, b"changed")
+            self.assertEqual(select.call_count, 6)
+            select.reset_mock()
+            with self.tool.held_repository_inputs():
+                first, sources = self.tool.pictorial_gallery_selection()
+                first["small"].clear()
+                sources.clear()
+                self.assertEqual(self.tool.pictorial_gallery_selection(), discover(self.root))
+                self.assertEqual(select.call_count, 1)
+            self.assertEqual(select.call_count, 2)
+
     def test_build_refuses_symlinked_output_root_without_deleting_external_target(
         self,
     ) -> None:
