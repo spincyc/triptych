@@ -1609,3 +1609,112 @@ anchors, 74 resolved local links, one revision display and one rights
 notice. The probe Markdown SHA-256 is
 `a504031687ad29b1017ef075750e7abea79839e2c814b42a962d520b8241fea4`.
 The probe checked source and conversion fidelity for this authoring pass.
+
+## Concise-study opening and petition revision, iteration 4
+
+`SYN-THEMES-TWO-FULL-PAGES` was repaired. The opening follows the
+Gradual's past-tense rescue and future praise, then the Psalm's lament.
+It explains why Augustine takes the rescue as still to come and why
+Bellarmine hears thanks for help already received. The Gospel summary
+includes Chrysostom's account of the pregnant woman and the nursing
+mother, the seasonal and Sabbath obstacles to flight, and the difference
+between a hidden claimant and Christ's visible coming. The Offertory
+returns to the cry from the depths. The people offering their gifts ask
+in the Secret for the particular help of a change in what they desire.
+
+`SYN-COMMUNION-TEMPORAL-PRAYER-BOUND` was repaired. The Communion
+comparison draws on Mk 11:22–25, Bede's account of Gregory of Neocaesarea
+and Mt 24:15–22 to say that disciples can ask for real help and entrust
+its timing and form to God. It retains Bede's assurance of pardon for
+people who first forgive and the example of God giving a person the
+capacity to forgive while the conflict continues.
+
+The author checked the Gradual's verbs in Augustine's Psalm 43, Latin
+§§8–9, and Bellarmine's explanation around native vv. 6–9 in the
+registered O'Sullivan abridgment. The flight details were checked in
+Chrysostom's Matthew homily 76 in NPNF X. The Offertory sequence and
+Secret were checked in the retained CMAA Missal image, printed p. 424,
+nos. 1775–1776, and Fromage's comment in vol. XI, printed p. 513. The
+Communion inference follows the expansive study's second interpretation
+and its boundary in `research/interpretations.md`. The author also
+addressed `SYN-BEDE-MOUNTAIN-REFERENT` using Bede's registered Latin
+transcription, line 338, and `SYN-AUGUSTINE-PS84-VOLUME` using the
+registered PL 37 derivative and its source binding.
+
+TeXcount reports **3,558 body words**, 1,080 in the themes and 2,478 in
+the detailed commentary. The count excludes physical-page markers, 77
+heading words and 714 note words, as well as the inventory, overview,
+generated chronology, terminal apparatus, title and revision display.
+
+The synthesis source and content schemas, edition selection, component
+contract, content preflight, typed assembly, web declaration, generation
+metadata and exact run provenance passed. The selected native proof settled
+in two pdfTeX passes at 10 physical pages. The artifact checks confirmed the
+inventory and four senses on page 1, chronology on page 2, themes on pages
+3–4, and detailed commentary starting on page 5. The author inspected page
+rasters 3, 4, 5 and 8. On pages 3 and 4, body text ends approximately 0.64
+and 0.72 inches above the footnote rules, respectively. The proof uses
+embedded Latin Modern fonts and has no overfull boxes or unsettled
+references. This was a focused author proof of the revised synthesis.
+
+- PDF SHA-256 `0c6d35f611645c5c0caab235b8addbb707a4f494d546c5f7d29cf7d72a3f5b2c`
+- Auxiliary SHA-256 `ad45aa65a40e5aa93ec0512ec6dd205ca1f997cdd85caed4370ef4348437c377`
+- Log SHA-256 `f9edc660ef6793d5bd532ebfc8aeb5633690cd24216eeaecd1882e4a8929d5e8`
+
+The selected web conversion and locked Markdown renderer preserved the
+revised arguments, all eleven appointed rows, four overview senses and 16
+chronology rows. The reader contains 89 unique anchors, 74 resolved local
+links, one revision display and one rights notice. The converter Markdown
+SHA-256 is `ca819d78da90d13b813d0d6d847399ea41b8bd270a0a45c974e11674f74adf9f`.
+The expansive study still matches its accepted 19-file input seal.
+
+## Homily derivation, iteration 2
+
+The homily for an adult parish assembly on 22 November 2026 retains the
+prayer-and-conversion interpretation and uses the deliverance-and-waiting
+interpretation for Chrysostom's distinction between the flight from Judea
+and Christ's final gathering. The people in Judea must flee. The disciples
+ask about the Temple and Christ's coming. The revision makes the distinction
+in both the spoken text and the source note, addressing the earlier advisory
+`HOM-GOS-001`.
+
+Matthew 24:20 asks for prayer about the timing of an escape. Verse 22 promises
+shortened days for the elect, who still face the danger. This changes how the
+assembly hears the assurance from Mk 11:24 at Communion. A person can keep
+asking God for relief while trouble lasts and entrust to him how and when
+help comes. In Mk 11:25 Jesus asks that same person to forgive while praying
+so that the Father will forgive them. The concrete response is to ask God
+for the good of the person who caused the wrong and for help in forgiving
+them. That help can come while the wrong still awaits redress. At the
+Offertory the antiphon repeats its cry. As the gifts are offered, the prayer
+for the disposition of the people who offer them belongs to the Secret.
+
+The author checked the Missal's target Introit, Collect, Epistle, Gospel,
+Offertory, Secret, Communion and Postcommunion on the CMAA facsimile images,
+printed pp. 422–424 (PDF pp. 503–505), and the two brief English quotations
+in Lasance/Walsh, pp. 737 and 740 (PDF pp. 735 and 738). The author read the
+registered Challoner texts for Ps 129(130):1–2, Jer 29:4–14, Mt 24:1–3,
+15–35, Mk 11:20–25 and Col 1:9–14. The reading of the Judean warning,
+including the difficulties of winter and Sabbath travel, follows Chrysostom's
+Matthew homily 76 in NPNF X. The author checked the prayer and grace claims
+in Aquinas, *Super Colossenses* 1, lectio 3, anchor 87848, the description of
+trust in the Basel 1525 Theophylact facsimile, fols. 69r–v, and Bede's
+assurance about pardon in his Mark commentary, book III, registered Latin
+transcription, line 339.
+
+The spoken body has **1,156 words** in **13 paragraphs**. TeXcount and a
+whitespace count agree. At 110–115 words per minute, the estimated delivery
+is **10.1–10.5 minutes**. The author reread the prose silently in sequence
+for sense, breath and transitions.
+
+The typed refresh found eight generated files current. The homily component
+contract, publication content schema, homily content preflight, web declaration,
+generation metadata and exact run provenance passed. All three readers passed
+the web converter's fidelity checks. These are author checks.
+
+For review, the phrasing behind `SYN-GOSPEL-FLIGHT-AUDIENCE` also occurs in
+`sections/30-deliverance-and-waiting.tex` and
+`sections/40-prayer-and-conversion.tex`. Their references to the timing or
+conditions of the flight can imply that the disciples who posed the question
+in Matthew are themselves the people told to flee. The distinction follows
+Mt 24:16 and Chrysostom's homily 76.1.

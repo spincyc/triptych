@@ -1227,6 +1227,31 @@ qualification about the timing and form of temporal answers. Its local
 ten-page compilation and page inspection concern that synthesis
 checkpoint. The source findings return to concise-study derivation.
 
+The Advent primer update advances upstream to `43afdcae97`. Its 58
+changed paths do not intersect the current research, study or synthesis
+review inputs. Reconciliation commit `a05440b4bc` keeps the incoming
+Advent sources and catalog changes and regenerates the two conflicting
+inventories. The GPT source inventory validates 157 publications and
+3,796 files. The family ledger validates with all 169 units still pending.
+The 49 focused calendar, catalog and chronology tests pass on the
+reconciled files.
+
+The next synthesis develops the actual steps in the Gradual, the flight
+from Judea and the Offertory's relation to the Secret. It preserves
+Aquinas's distinction between the good sought and the timing and form
+of help. Native preflight and independent synthesis review iteration 4
+pass. The reviewer matches all 16 sealed source files and the current
+focused PDF, inspects all ten pages and checks the reconstructed reader
+body. The themes occupy pp. 3–4 and the commentary begins on p. 5.
+Three wording advisories remain in the accepted result.
+
+The final homily states explicitly who must flee Judea and relates the
+prayer for relief to the timing and form of God's answer. Its 1,156
+spoken words take about ten minutes. Native preflight and independent
+homily review iteration 2 pass. The reviewer retains local advisories on
+the Collect's wording and the study's distinction between Jesus's
+hearers and people in Judea.
+
 ### Native print compilation of the reviewed sources
 
 The selected compilation of source checkpoint `898e6b42e6` passes two

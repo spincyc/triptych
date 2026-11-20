@@ -49,24 +49,24 @@ provider = "gpt"
 run_id = "13ecdd1552c245ea"
 workflow = "proper-study"
 workflow_version = 19
-stage = "synthesis-review"
-iteration = 3
-disposition = "CHANGES_REQUIRED"
-standing = 3
+stage = "homily-review"
+iteration = 2
+disposition = "PASS"
+standing = 1
 accepted_count = 0
-advisory_count = 6
+advisory_count = 8
 observation_count = 0
 
 [[stages]]
 stage = "homily-review"
-iteration = 1
+iteration = 2
 disposition = "PASS"
 run_id = "13ecdd1552c245ea"
 workflow = "proper-study"
 workflow_version = 19
 standing = 0
 accepted_count = 0
-advisory_count = 1
+advisory_count = 2
 observation_count = 0
 
 [[stages]]
@@ -95,14 +95,14 @@ observation_count = 0
 
 [[stages]]
 stage = "synthesis-review"
-iteration = 3
-disposition = "CHANGES_REQUIRED"
+iteration = 4
+disposition = "PASS"
 run_id = "13ecdd1552c245ea"
 workflow = "proper-study"
 workflow_version = 19
-standing = 2
+standing = 0
 accepted_count = 0
-advisory_count = 2
+advisory_count = 3
 observation_count = 0
 
 [[stages]]
@@ -118,24 +118,6 @@ advisory_count = 1
 observation_count = 0
 
 [[findings]]
-stage = "synthesis-review"
-id = "SYN-THEMES-TWO-FULL-PAGES"
-severity = "blocking"
-location = "sections/concise/04-themes.tex:20–28, 41–56, 59–65, 83–88, 107–112 (native synthesis pp. 3–4)"
-problem = "Both forced breaks cut off the themes prose about 2.3 and 2.8 inches above their page’s footnote rule. The four sections cover the appointments in order, but the comparison of the Gradual’s past and future speech at lines 41–44 gives two conclusions without showing how the verses move from the past tense to the future. At lines 59–65 the reader is told that Chrysostom explains the obstacles to escape, without hearing what he says about a pregnant woman or a nursing mother. The Offertory and Secret at lines 83–88 are reported consecutively before the prose moves on to the Preface. These compressed bridges leave the required two-page opening underdeveloped."
-required_result = "Use details already supported in the expansive study to make both pages substantive at the current type size. The Gradual paragraph could begin, “The singers thank God for rescue and promise to praise him forever. Augustine takes the future praise as a clue that the rescue also lies ahead. Bellarmine hears people who remember being rescued and now need help again.” The line on Chrysostom could develop the scene. “Jesus tells someone on a roof to leave his possessions in the house. Chrysostom asks how a pregnant woman could make such a hurried escape or a nursing mother leave her infant behind.” The repeated Offertory cry can lead into the Secret by explaining what help the worshippers are now asking for as they bring their gifts. Keep the developed commentary on page 5 and check both themes pages with the settled rendering."
-repair_target = "synthesis"
-
-[[findings]]
-stage = "synthesis-review"
-id = "SYN-COMMUNION-TEMPORAL-PRAYER-BOUND"
-severity = "blocking"
-location = "sections/concise/10-commentary.tex:244–259, 278–298 (native synthesis p. 8)"
-problem = "The Communion question asks what Jesus’ assurance allows readers to expect. It reports Theophylact’s broad assurance, Bede’s specific assurance of pardon and the physical help in Bede’s account of Gregory. The revised flight paragraph teaches that continued danger cannot reveal someone else’s faith, but it drops the expansive study’s conclusion for the person praying in that danger. The need may be real and legitimately the subject of prayer, and the timing and form of help remain with God (sections/40-prayer-and-conversion.tex:273–290 and research/interpretations.md:486–497). Without this qualification the section leaves the reader to infer whether confident petition warrants expecting the particular temporal result requested."
-required_result = "State beside the conjunction of Mark’s assurance, Bede’s example and Matthew’s flight that Christ teaches disciples to ask for real help while entrusting the timing and form of that help to God. Keep Bede’s particular assurance about pardon and retain the concrete case in which God gives someone the capacity to forgive while the conflict continues. Present the conclusion as the study’s inference across those passages."
-repair_target = "synthesis"
-
-[[findings]]
 stage = "web-review"
 id = "WEB-STUDY-RESTATEMENT-001"
 severity = "blocking"
@@ -146,11 +128,19 @@ repair_target = "study"
 
 [[advisories]]
 stage = "homily-review"
-id = "HOM-GOS-001"
+id = "HOM-COLLECT-FRUIT-001"
 severity = "advisory"
-location = "sections/homily/10-body.tex:9–13"
-problem = "The second mention of 'the disciples' can sound like the very disciples who asked Jesus about the Temple would have to flee in Judea. Chrysostom's Homily 76 §1 expressly places the Apostles elsewhere by the time of the siege, and Mt 24:16 gives the warning to those in Judea. The reading of the two events and the prayer Jesus asks for remain clear."
-required_result = "Name those in Judea as the people who must heed the warning and flee. Keep the disciples' question and Christ's final gathering in their present roles."
+location = "sections/homily/10-body.tex:48–51"
+problem = "Immediately after naming the Collect, ‘the fruit of our work’ blurs whose work the prayer names. At Missal p. 423, no. 1770, the faithful pursue the fruit of God's work and ask to receive greater remedies. The passage already preserves the faithful's dependence on God, so this is a local imprecision."
+required_result = "Preserve the difference between God's work and the faithful's response in the sentence explaining the Collect. For example, ‘We ask God to stir our wills so that we will follow through on what he has begun in us and receive the healing we still need.’"
+
+[[advisories]]
+stage = "homily-review"
+id = "HOM-STUDY-FLIGHT-AUDIENCE-001"
+severity = "advisory"
+location = "sections/30-deliverance-and-waiting.tex:114–115 and sections/40-prayer-and-conversion.tex:273–279"
+problem = "‘When they will have to flee’ and ‘their flight’ make the disciples who hear the reply sound like the particular people who will flee. Matthew 24:16 directs the flight to those in Judea, and Chrysostom's homily 76.1 explicitly distinguishes the apostles in his treatment of the Sabbath. The spoken homily separates the two groups."
+required_result = "In the two study passages, say that Jesus tells his hearers to pray about the flight from Judea and names those in Judea as the people who must flee. Retain both the promise for the elect and the argument about asking for help while danger persists."
 
 [[advisories]]
 stage = "research-review"
@@ -170,19 +160,27 @@ required_result = "Name the numbering of the edition used. For the inference fro
 
 [[advisories]]
 stage = "synthesis-review"
-id = "SYN-BEDE-MOUNTAIN-REFERENT"
+id = "SYN-GOSPEL-FLIGHT-AUDIENCE"
 severity = "advisory"
-location = "sections/concise/10-commentary.tex:261–276"
-problem = "The mountain in Bede signifies the devil himself, who lifts himself up in pride. The concise passage identifies it with the devil’s pride instead, which makes Bede’s next step about casting out spiritual mountains harder to follow. His exact distinction appears in In Marci evangelium expositio III, registered Latin transcription line 338, and the expansive study states it at sections/40-prayer-and-conversion.tex:255–263."
-required_result = "Say that Bede sees the devil in the mountain because the devil raises himself against God in pride."
+location = "sections/concise/04-themes.tex:72–80 and sections/concise/10-commentary.tex:278–285"
+problem = "Saying that Jesus tells the disciples to pray about when they themselves will flee blurs the scope of the two instructions. Matthew 24:16 names people in Judea as those who must flee. Chrysostom’s Matthew homily 76.1 says the Apostles would be absent during the siege and draws attention to the Sabbath observance of those in Judea. The local wording leaves the distinction between the Judean emergency and the final coming intelligible."
+required_result = "Say that Jesus tells his hearers to pray that the Judean flight will fall neither in winter nor on a Sabbath. Describe the people in Judea as those instructed to flee, and retain the application to prayer for real help in danger."
 
 [[advisories]]
 stage = "synthesis-review"
-id = "SYN-AUGUSTINE-PS84-VOLUME"
+id = "SYN-BEDE-PERFECT-FAITH"
 severity = "advisory"
-location = "sections/concise/90-apparatus.tex:53–56 (native synthesis p. 10)"
-problem = "The bibliography sends readers to Migne PL 36 for Augustine’s Latin exposition of Psalm 84. The registered part-9 Latin witness used for the Psalm 84 claims is from PL 37, as recorded in research/source-bindings.toml:637."
-required_result = "Correct the volume to PL 37 for Psalm 84 and keep the Latin and English section number conventions distinct."
+location = "sections/concise/10-commentary.tex:270–276"
+problem = "The phrase ‘effective faith’ weakens the distinction Bede makes in In Marci evangelium expositio III on Mk 11:25, registered Latin transcription line 339. He describes perfect faith working through love in connection with moving spiritual mountains and then assures people still short of that perfection that they can obtain pardon by asking and first forgiving others. The surrounding sentences retain both groups and the assurance about pardon."
+required_result = "Name perfect faith working through love as Bede’s description of the faith that can move spiritual mountains, and keep his distinct assurance of pardon for those still growing in faith."
+
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-SECRET-ENGLISH-NUANCE"
+severity = "advisory"
+location = "sections/concise/10-commentary.tex:193–201"
+problem = "The explanation of the English ‘enjoyments of heaven’ says that the Latin names what the offerers will come to desire. The 1962 Missal, p. 424, no. 1776, speaks of passing to heavenly desires, while Lasance/Walsh, p. 740, expresses their object in its received English. Fromage’s explanation of a change of desire in the preceding sentence conveys the underlying petition."
+required_result = "Say that the Latin asks that the offerers come to desire heavenly things, and identify ‘enjoyments of heaven’ as Lasance/Walsh’s rendering if the comparison is retained."
 
 [[advisories]]
 stage = "web-review"
