@@ -644,3 +644,67 @@ role = "reception"
 states = ["cataloged", "acquired", "inspected"]
 context = "Pattison's public-domain Oxford English Catena Aurea on Matthew in the registered CCEL derivative. The three attributed extracts and their boundaries were compared with the full Augustine Latin questions. They witness anthology transmission and do not control the full constituent. No I.42 extract was identified in the Matthew 24 grouping."
 source_fingerprint = "sha256:a20a42738d002266a696f9ee7bad2f93e00da53f0fc1eedaa815ec8cdca270f5"
+
+[[bindings]]
+source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1883-volume-11.ia-pdf-f1893738"
+loci = ["vol-xi-p-487", "vol-xi-p-488", "vol-xi-p-489"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "The rehashed 1883 public-domain facsimile was image-read at PDF pp. 513–515 in the Twenty-third-Sunday chapter. The quotation starts on p. 487 below Fromage's framing, continues through the Introit and the lessons on p. 488, and ends with the three remaining chants and footnote 3 on p. 489 before MASS. Shepherd's English renders Fromage's selected quotation of Rupert and omits the Latin's Ps 21:27 allusion. Fromage's framing prints Jer 23:5–8. Rupert quotes the new-exodus promise. Separate from the Last-Sunday text and commentary bound at pp. 501–514."
+source_fingerprint = "sha256:180faa2feba4fd64d6c049b1361b8adddb9712fb6b990b7fcb4dc426ba725283"
+
+[[bindings]]
+source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1883-volume-11.ia-djvu-text-95cdb0fc"
+loci = ["vol-xi-p-487", "vol-xi-p-488", "vol-xi-p-489", "vol-xi-p-501"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Uncorrected Internet Archive OCR of Duffy XI. Physical lines 29217–29312 locate Fromage's frame, Shepherd's Rupert quotation and the transition to MASS at pp. 487–489. Lines 30003–30015 locate the Last-Sunday recurrence note and Rupert cross-reference at p. 501. The 1883 page images control the wording and quotation boundaries."
+source_fingerprint = "sha256:5704de4921a1ed8c6da6c88bc1235f8aa14d39ef3973edc2061508aaf727c16d"
+
+[[bindings]]
+source_id = "artifact.rupert-of-deutz.de-divinis-officiis.latin-migne-pl-170.ia-djvu-ocr-2e2ca850"
+loci = ["De divinis officiis XII.23, PL 170 cols. 329–330, IA leaf n170; OCR physical lines 23696–23778, with heading and opening interleaved at 23762–23770"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Public-domain uncorrected OCR of the same IA item as the Latin facsimile. It locates the chapter and its distinct uses of the four chants, but interleaves columns and misreads letters. The independently read n170 page image controls the text and reading order."
+source_fingerprint = "sha256:7ec56124e31762f147f8aed197516894e92dc2d5ec7de99bcc91a9f11d1a98d3"
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.opera-omnia-volume-14.1863-parma.ia-complete-ocr-02c6dc25"
+loci = ["Physical lines 102798–102889: In Jeremiam cap. 29 opening division, with vv. 10–14 at 102850–102887", "Physical lines 114294–114296: contents, entry for In Jeremiam from printed p. 577 and start of In Threnos at p. 668"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "The rehashed Parma optical layer independently locates the historical print for eventual image collation. The OCR's recognition defects limit this use to finding the text. The modern Corpus Thomisticum [85174] HTML remains the inspected direct exegesis witness."
+source_fingerprint = "sha256:31b59669c8b760c4cdad3cd9e682a73e60b6f9f94fda17edb12e01095c3ae5cc"
+
+[[bindings]]
+source_id = "artifact.rupert-of-deutz.de-divinis-officiis.latin-migne-pl-170.ia-leaf-n170-a8beafb9"
+loci = ["Internet Archive patrologiaecursu0170mign leaf n170, PL 170 cols. 329–330, full XII.23 from the heading De Dominica vicesima tertia post Pentecosten in the lower left column through the final Gen 50 quotation in the right column before CAPUT XXIV"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Read in column order from the complete one-leaf facsimile. Rupert’s own Twenty-third Sunday links the openings of the shared Introit, Gradual, Offertory and Communion with the new-exodus lesson, the feeding in John 6 and Joseph’s reconciliation. The image controls the Latin and its Ps 21:27 allusion, which Shepherd’s English selection omits. The older lessons differ from the Last Sunday’s appointments."
+source_fingerprint = "sha256:082f0e2ab15452ca6ae4b81b30eb9cfc6eb11cb7f8eeae0d6d2b9b340eaac9b5"
+
+[[bindings]]
+source_id = "artifact.theophylact-of-ohrid.enarratio-in-evangelium-marci.1525-basel-oecolampadius.e-rara-title-7285107-html-78766ade"
+loci = ["Title/Bibliographic Metadata, physical HTML line 82; use conditions at displayLicenseInfo, Public Domain Mark and source credit, lines 100–105."]
+role = "rights-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Read the copy identifiers and the institution’s use panel. The Public Domain Mark and source credit concern the Basel digitized book. The separate bounded PDF supplies the checked chapter images."
+source_fingerprint = "sha256:f9035fb751974ac32dd9be743b9dae8acb3cfa2d3216c6d60acf641ecdfaaac5"
+
+[[bindings]]
+source_id = "artifact.augustine.new-testament-i-and-ii.2014-new-city-press-library.cinii-bb16379660-html-d510ce74"
+loci = ["Physical HTML lines 622–627 bibliographic block and 869–876 Contents (収録内容), specifically component and translator at line 875."]
+role = "bibliographic"
+states = ["cataloged", "acquired", "inspected"]
+context = "Read the imprint and the component credit. The catalogue assigns the Questions on the Gospels constituent of the 2014 library edition to Roland Teske. This is bibliographic evidence. Translation text and reuse rights remain unverified."
+source_fingerprint = "sha256:d2c5578021426728a11677768427dc9ddf616049dcafadf1e922b2454e5435dc"
+
+[[bindings]]
+source_id = "artifact.augustine.new-testament-i-and-ii.2014-new-city-press-library.focolare-library-listing-522-html-2c8217ab"
+loci = ["Physical HTML lines 582–590 translators and editor, 654–675 ISBN and date, and 758–760 About the book."]
+role = "bibliographic"
+states = ["cataloged", "acquired", "inspected"]
+context = "Read the listing for the exact library-edition variant and ISBN, confirming date, editor, volume-level translator credits and the presence of Questions on the Gospels. CiNii gives the constituent-specific translator credit."
+source_fingerprint = "sha256:722ebff72b5bcb8f538a576001fe6eb56086a27a4c6ae1961a173774e5714a4b"

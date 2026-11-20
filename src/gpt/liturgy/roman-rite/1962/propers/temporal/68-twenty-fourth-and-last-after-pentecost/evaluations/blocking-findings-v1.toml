@@ -50,11 +50,11 @@ run_id = "13ecdd1552c245ea"
 workflow = "proper-study"
 workflow_version = 19
 stage = "research-review"
-iteration = 2
+iteration = 3
 disposition = "CHANGES_REQUIRED"
 standing = 2
 accepted_count = 0
-advisory_count = 2
+advisory_count = 1
 observation_count = 8
 
 [[stages]]
@@ -71,14 +71,14 @@ observation_count = 0
 
 [[stages]]
 stage = "research-review"
-iteration = 2
+iteration = 3
 disposition = "CHANGES_REQUIRED"
 run_id = "13ecdd1552c245ea"
 workflow = "proper-study"
 workflow_version = 19
 standing = 2
 accepted_count = 0
-advisory_count = 1
+advisory_count = 0
 observation_count = 0
 
 [[stages]]
@@ -119,29 +119,21 @@ observation_count = 0
 
 [[findings]]
 stage = "research-review"
-id = "RES-MATTHEW-AUGUSTINE-RECEPTION"
+id = "RES-RUPERT-SHARED-CHANT-RECEPTION"
 severity = "blocking"
-location = "research/scope.md:270 and 354–360, research/interpretations.md:143–155 and 360–373, research/source-bindings.toml, research/source-dispositions.toml"
-problem = "The Gospel reception matrix gives Chrysostom and Aquinas, but the uncapped Vulgate-numbered Matthew 24:15–35 discovery also returns four existing Augustine passages as verified fragments without indexed work leads. Quaestiones euangeliorum I.37, I.38, I.39 and I.42 are absent from this leaf's matrix, bindings and dispositions. The retained Migne PL 35 Latin derivative at physical lines 42–44 and 47, the four complete question records and their canonical edges establish their actual extents as Matthew 24:20, 23–27, 32 and 28 respectively. I.38 reads the east-to-west lightning as the manifest worldwide Church, and the local and private claims as regional schisms and hidden meetings. This is a material ancient alternative to the dossier's use of the lightning as the visibility of Christ's final coming in both interpretations. I.42 locates the body in heaven and relates the eagles' feeding to imitating Christ's passion and humility, which also bears on the existing eagles and Eucharist comparison."
-required_result = "Read the four exact question loci and their adjacent boundaries, reconcile the existing registered passages, controller and canonical edges in the reception matrix and source ledgers, and record what each contributes. Compare I.38 explicitly with Chrysostom, Homily 76 on Matthew 24:23–27, in the interpretation plan. Distinguish their referents and what each implies for recognizing a counterfeit, and keep Augustine's scope at his own verses. Address the relevant alternative in I.42 where the existing plan compares the eagles. The two existing whole-Mass arguments can stand if their source attributions and limits are stated accurately."
+location = "research/scope.md:264–274, 479–523 and 1111–1122; research/interpretations.md:130–165 and 189–216; research/source-bindings.toml; research/source-dispositions.toml"
+problem = "The repaired Fromage section properly treats the Last-Sunday Introit on p. 503 as wording, but leaves out the substantial earlier reception signposted by the same chapter's p. 501, where Fromage names Abbot Rupert's explanation of the preceding formulary's shared elements. Fromage XI pp. 487–489 (original PDF pp. 513–515) explicitly identifies and translates Rupert of Deutz, De divinis officiis XII.23. I read both that English witness and the original Latin chapter in PL 170 cols. 329–330, IA leaf n170, with the held OCR at physical lines 23696–23778. The Latin shows Rupert taking the Introit's promise of peace as Christ welcoming Israel through the figure of Joseph, reading the Gradual as thanksgiving for release, making the Offertory the brothers' plea for pardon, and taking the Communion as Joseph's reassuring answer. His lessons include a different Jeremiah text and John 6. Neither the zero result from the 40-entry formulary index nor the present Anthony handoff accounts for this material medieval reading of four shared chants, which bears directly on both research arguments, particularly the way R1 connects promised deliverance, present distress and the two final chants."
+required_result = "Check and bind or defer the exact Rupert and Fromage/Shepherd loci with their distinct source roles, identify the four shared chant incipits and the actual Scripture reach of each explanation, and record the different lessons and unconfirmed elements in research. Explain how Rupert's Joseph reading compares with the proposed readings, with his own Gospel pairing and eschatological application kept at their actual extent. Treat his contribution under the inventory's ecclesiastical-writer standing and keep the p. 503 Introit and Collect boundary already repaired. Record the reason if the reading is limited to research; no additional whole-Mass interpretation is required. The primary image is available at https://archive.org/download/patrologiaecursu0170mign/page/n170_w1200.jpg."
 repair_target = "research"
 
 [[findings]]
 stage = "research-review"
-id = "RES-FROMAGE-INTROIT-ROLE"
+id = "RES-UNBOUND-CHECKED-WITNESSES"
 severity = "blocking"
-location = "research/source-dispositions.toml:448 and 544, research/source-bindings.toml:143, research/scope.md:264, 434–447 and 660–661, research/interpretations.md:13"
-problem = "The facsimile and OCR rows classify the Introit of Fromage's Last-Sunday chapter as liturgical commentary and assign it Jeremiah 29:11–12,14 and Psalm 84:2 candidate extents. The scope calls it the commented Introit. Duffy XI pp. 501–503 (PDF 527–529) gives structural observations about the recurring chants and the year-end Gospel, then prints the bilingual Introit on p. 503. The prose directly after that chant expressly explains the Collect's plea for God to move the faithful's wills. The same chapter's OCR confirms the boundary. The misclassification assigns the chant's scriptural extent to commentary that does not expound it."
-required_result = "Record the p. 503 Introit in both source dispositions as checked wording evidence and remove its candidate commentary extents. Keep the p. 501 statement about chant recurrence as structural context at its own locus and the p. 503 paragraph as Collect commentary. Align the scope matrix, binding descriptions and interpretation audit accordingly. If another exact locus is used for Fromage's reception of the shared Introit, identify and inspect that locus independently and give it its actual scope."
+location = "research/scope.md:292–309, 311–326 and 380–396; research/source-bindings.toml:583–646; research/source-dispositions.toml:1241–1288 and 1386–1423"
+problem = "The additions register the Basel PDF, modern Aquinas HTML, and historical Oxford extracts, but leave other evidence used by those same rows outside the binding and disposition ledger. The Basel row uses the separate Zürich e-rara title page at https://www.e-rara.ch/zuz/content/titleinfo/7285107 for copy identity and the Public Domain Mark; the PDF's manifest cites that page but has no bound title-page artifact. The Aquinas row uses the Parma 1863 optical witness as the historical collation route, yet only the modern HTML is bound. The already registered Parma OCR artifact thomas-aquinas.opera-omnia-volume-14.1863-parma.ia-complete-ocr-02c6dc25 locates the lectio at physical lines 102798 onward and its constituent in the contents at 114294–114296. The Augustine row says checked publisher and library listings establish that Roland Teske translated Questions on the Gospels. The CiNii record BB16379660 confirms that exact component in its contents, but it has no local binding; the claimed publisher listing has no exact locus or identity. These are metadata and finding-aid uses. Their limits do not erase the actual consultations or the evidence they supply."
+required_result = "Bind each actually consulted catalogue or optical delivery at its precise locus and evidence state and give the checked controls non-commentary dispositions. Retain the Parma OCR as a finding aid and record whether the Zürich catalogue is an independent bibliographic/rights witness; distinguish both from the exact PDF or HTML they help identify. Identify and bind the precise publisher listing if it was actually read, or narrow the claim to the independently identifiable CiNii catalogue and accurately describe any other search return. Keep Teske's translation text uninspected and uncleared unless actual additional evidence is obtained, and preserve the current Catena extract and constituent limits."
 repair_target = "research"
-
-[[advisories]]
-stage = "research-review"
-id = "RES-ORIENTATION-ROW-COUNT"
-severity = "advisory"
-location = "research/scope.md:533"
-problem = "The orientation audit says fifteen displayed relation rows. The checked orientation-v3 output contains sixteen rows across the stated eight passage groups, including the Matthew critical composition comparison and both Jeremiah relations."
-required_result = "Correct the incidental count to sixteen or omit the count. The generated row set supplies the expected coverage."
 
 [[advisories]]
 stage = "study-review"

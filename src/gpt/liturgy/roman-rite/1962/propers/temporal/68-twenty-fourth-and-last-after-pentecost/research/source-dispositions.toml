@@ -1421,3 +1421,125 @@ disposition = "deferred"
 reason = "Pattison’s Oxford English Catena gives the fig tree, faith and adoption. Its prefatory connective and rendition of the flesh gloss differ from the Latin question, and it gives no opening lemma. Admission would require a verified anthology passage with its distinct transmission recorded."
 missing_criteria = ["constituent-passage-controller", "historical-print-collation", "transmission-review", "scripture-edge"]
 scripture_extents = [{ token = "Matt", first_chapter = 24, first_verse = 32, last_chapter = 24, last_verse = 32 }]
+
+[[sources]]
+id = "fromage-shepherd-rupert-twenty-third-sunday"
+binding_index = 84
+binding_sha256 = "a3de4914f84486080b168e8544c59cfa5ca439c688f598859ef4bb2448d7798d"
+source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1883-volume-11.ia-pdf-f1893738"
+source_fingerprint = "sha256:180faa2feba4fd64d6c049b1361b8adddb9712fb6b990b7fcb4dc426ba725283"
+locus = "Duffy 1883 XI, pp. 487–489 (PDF pp. 513–515), the quotation beginning after Fromage's introduction and ending before MASS, with p. 489 n. 3"
+relationship = "liturgical-commentary"
+disposition = "deferred"
+reason = "Fromage's selected quotation in Shepherd's public-domain English transmits Rupert's four-chant sequence and the older lessons. Rupert reads release and pardon through Joseph. The English omits the explicit Ps 21:27 allusion and abbreviates the separate Jeremiah lesson. The verse addresses record the actual candidate reach, with the Gradual and Offertory limited to their opening clauses."
+missing_criteria = ["checked-passage-transcription", "complete-latin-to-english-transmission-review", "composition-date-basis", "scripture-edge"]
+scripture_extents = [
+  { token = "Jer", first_chapter = 29, first_verse = 11, last_chapter = 29, last_verse = 11 },
+  { token = "Ps", first_chapter = 43, first_verse = 8, last_chapter = 43, last_verse = 8 },
+  { token = "Ps", first_chapter = 129, first_verse = 1, last_chapter = 129, last_verse = 1 },
+  { token = "Mark", first_chapter = 11, first_verse = 24, last_chapter = 11, last_verse = 24 },
+  { token = "Jer", first_chapter = 23, first_verse = 7, last_chapter = 23, last_verse = 8 },
+  { token = "John", first_chapter = 6, first_verse = 9, last_chapter = 6, last_verse = 11 },
+  { token = "Gen", first_chapter = 50, first_verse = 17, last_chapter = 50, last_verse = 17 },
+  { token = "Gen", first_chapter = 50, first_verse = 19, last_chapter = 50, last_verse = 21 },
+]
+
+[[sources]]
+id = "fromage-rupert-quotation-framing"
+binding_index = 84
+binding_sha256 = "a3de4914f84486080b168e8544c59cfa5ca439c688f598859ef4bb2448d7798d"
+source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1883-volume-11.ia-pdf-f1893738"
+source_fingerprint = "sha256:180faa2feba4fd64d6c049b1361b8adddb9712fb6b990b7fcb4dc426ba725283"
+locus = "Duffy 1883 XI, p. 487 (PDF p. 513), Fromage's introduction above the quotation; p. 489 (PDF p. 515), n. 3 and transition to MASS"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "Used to identify the quoted constituent, its chapter and the boundary with Fromage's framing and the ensuing Mass. Fromage's introductory Jer 23:5–8 quotation does not extend Rupert's actual separately quoted lesson."
+
+[[sources]]
+id = "fromage-shepherd-rupert-ocr-locator"
+binding_index = 85
+binding_sha256 = "d28c0159b46937100a71402b614f78b758429385e62aebb22c3d51946c681996"
+source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1883-volume-11.ia-djvu-text-95cdb0fc"
+source_fingerprint = "sha256:5704de4921a1ed8c6da6c88bc1235f8aa14d39ef3973edc2061508aaf727c16d"
+locus = "OCR physical lines 29217–29312 and 30003–30015, corresponding to printed pp. 487–489 and 501"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "OCR locates the English quotation and Fromage's Last-Sunday reference to it. The facsimile gives the authoritative wording and quotation boundaries for that historical English expression."
+
+[[sources]]
+id = "rupert-de-divinis-officiis-xii-23-migne-ocr-locator"
+binding_index = 86
+binding_sha256 = "b6465faac4b6ce669ac118e338ad287e1b3e9e06e3306773083372f7a32b06fd"
+source_id = "artifact.rupert-of-deutz.de-divinis-officiis.latin-migne-pl-170.ia-djvu-ocr-2e2ca850"
+source_fingerprint = "sha256:7ec56124e31762f147f8aed197516894e92dc2d5ec7de99bcc91a9f11d1a98d3"
+locus = "De divinis officiis XII.23, PL 170 cols. 329–330, IA leaf n170; physical lines 23696–23778, heading and opening at 23762–23770 in the interleaved OCR"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "Optical finding aid for the printed chapter. It runs the two columns together and cannot control the chapter's wording or order."
+
+[[sources]]
+id = "aquinas-in-jeremiam-parma-1863-ocr-locator"
+binding_index = 87
+binding_sha256 = "0d9abdecac7113819b0b4eccfedc800513829784e8aac3a440bb1500d32adedf"
+source_id = "artifact.thomas-aquinas.opera-omnia-volume-14.1863-parma.ia-complete-ocr-02c6dc25"
+source_fingerprint = "sha256:31b59669c8b760c4cdad3cd9e682a73e60b6f9f94fda17edb12e01095c3ae5cc"
+locus = "Physical lines 102798–102889, cap. 29 lectio 1; contents at 114294–114296"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The historical volume's defective OCR locates the chapter and the commentary in the contents. It supplies a historical print collation route, distinct from the exact modern HTML used as evidence for the lectio's exegesis."
+
+[[sources]]
+id = "rupert-de-divinis-officiis-xii-23-latin"
+binding_index = 88
+binding_sha256 = "28b52bada7e49a4a1cb10155937d97ff6a260cb88070e84dd7640df46fbfc824"
+source_id = "artifact.rupert-of-deutz.de-divinis-officiis.latin-migne-pl-170.ia-leaf-n170-a8beafb9"
+source_fingerprint = "sha256:082f0e2ab15452ca6ae4b81b30eb9cfc6eb11cb7f8eeae0d6d2b9b340eaac9b5"
+locus = "Internet Archive patrologiaecursu0170mign leaf n170, PL 170 cols. 329–330, full XII.23 from the heading De Dominica vicesima tertia post Pentecosten in the lower left column through the final Gen 50 quotation in the right column before CAPUT XXIV"
+relationship = "liturgical-commentary"
+disposition = "deferred"
+reason = "Rupert reads the openings of four chants within his own Twenty-third Sunday, joining the older Jeremiah lesson and the feeding in John to Christ’s reception of Israel through the Joseph figure. The proposed extents mark those chant clauses and the scriptural units expounded with them. The opening prayer and remnant citations and the earlier Joseph story provide context. The fully read chapter is available as an exact facsimile, but the shared corpus still needs a checked passage transcription, a supported composition date or an explicit unestablished-date record, and validated Scripture edges."
+missing_criteria = ["checked-passage-transcription", "composition-date-basis", "scripture-edge"]
+scripture_extents = [
+  { token = "Jer", first_chapter = 29, first_verse = 11, last_chapter = 29, last_verse = 11 },
+  { token = "Ps", first_chapter = 43, first_verse = 8, last_chapter = 43, last_verse = 8 },
+  { token = "Ps", first_chapter = 129, first_verse = 1, last_chapter = 129, last_verse = 1 },
+  { token = "Mark", first_chapter = 11, first_verse = 24, last_chapter = 11, last_verse = 24 },
+  { token = "Jer", first_chapter = 23, first_verse = 7, last_chapter = 23, last_verse = 8 },
+  { token = "John", first_chapter = 6, first_verse = 9, last_chapter = 6, last_verse = 11 },
+  { token = "Ps", first_chapter = 21, first_verse = 27, last_chapter = 21, last_verse = 27 },
+  { token = "Gen", first_chapter = 50, first_verse = 17, last_chapter = 50, last_verse = 17 },
+  { token = "Gen", first_chapter = 50, first_verse = 19, last_chapter = 50, last_verse = 21 },
+]
+
+[[sources]]
+id = "theophylact-zurich-e-rara-title-record-7285107"
+binding_index = 89
+binding_sha256 = "d5158fc009104fd1b43d6d33f8521e14c3d53b00fe05ffdf9f5853dcf43918db"
+source_id = "artifact.theophylact-of-ohrid.enarratio-in-evangelium-marci.1525-basel-oecolampadius.e-rara-title-7285107-html-78766ade"
+source_fingerprint = "sha256:f9035fb751974ac32dd9be743b9dae8acb3cfa2d3216c6d60acf641ecdfaaac5"
+locus = "Title/Bibliographic Metadata, physical HTML line 82; use conditions at displayLicenseInfo, Public Domain Mark and source credit, lines 100–105."
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The independent institutional title record supplies copy identifiers, Public Domain Mark and requested source credit. The chapter images are delivered through a separate PDF."
+
+[[sources]]
+id = "augustine-quaestiones-teske-cinii-bb16379660"
+binding_index = 90
+binding_sha256 = "04136b0e3ad4cecde2207c946817577b60e79199d2cb755f70de5423b8188642"
+source_id = "artifact.augustine.new-testament-i-and-ii.2014-new-city-press-library.cinii-bb16379660-html-d510ce74"
+source_fingerprint = "sha256:d2c5578021426728a11677768427dc9ddf616049dcafadf1e922b2454e5435dc"
+locus = "Physical HTML lines 622–627 bibliographic block and 869–876 Contents (収録内容), specifically component and translator at line 875."
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "Independent library metadata explicitly identifies Roland Teske as translator of the named constituent. No translation wording or collation was available for inspection, and a redistribution basis for the translation remains unresolved."
+
+[[sources]]
+id = "augustine-quaestiones-teske-focolare-library-listing"
+binding_index = 91
+binding_sha256 = "bca8388e5815f098c56177d079a017215bfa6fd386fa82a8b2897bbf47ef515b"
+source_id = "artifact.augustine.new-testament-i-and-ii.2014-new-city-press-library.focolare-library-listing-522-html-2c8217ab"
+source_fingerprint = "sha256:722ebff72b5bcb8f538a576001fe6eb56086a27a4c6ae1961a173774e5714a4b"
+locus = "Physical HTML lines 582–590 translators and editor, 654–675 ISBN and date, and 758–760 About the book."
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The publisher identifies the library-edition variant and confirms the contributors and contents at volume level. CiNii supplies the component-specific translator attribution."

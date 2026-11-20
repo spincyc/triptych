@@ -15,8 +15,9 @@ chapter explains several parts of the received Mass. The five printed
 chants, including the Introit on p. 503, supply wording evidence. The
 opening note on p. 501 describes the recurrence of the chants. The
 paragraph following the Introit expounds the Collect's petition for
-grace-assisted action. Theophylact and Fromage contribute as
-ecclesiastical writers. The carrying authors are named in each reading.
+grace-assisted action. Fromage's preceding chapter transmits Rupert's
+reading of four shared chants. Theophylact, Rupert and Fromage contribute
+as ecclesiastical writers. The carrying authors are named in each reading.
 
 ## R1. Deliverance is certain without being complete in the present
 
@@ -494,6 +495,56 @@ support a moral/theological reading, not clinical explanations of
 unanswered prayer.
 
 ## Concrete comparison for the future studies
+
+### Rupert's reading of the shared chants
+
+Rupert of Deutz, *De divinis officiis* XII.23 (PL 170, cols. 329–330),
+anticipates at the entrance what he expects Christ to do for the remnant
+of Israel at the end of the world. The peace clause from Jer 29:11
+promises welcome at Christ's table. The opening of Ps 43:8 supplies the
+thanksgiving of those freed from spiritual captivity. The opening of
+Ps 129:1 voices Joseph's brothers' plea in Gen 50:17. The opening of
+Mk 11:24 answers in the voice of Joseph, who reassures and promises to
+feed them (Gen 50:19–21). At the end the speakers and addressees matter.
+Penitents ask for pardon, and the one they wronged answers with care.
+
+**R1** also connects the peaceful intention, thanks, distress and
+reassurance. Rupert's Church gives thanks now for a deliverance whose
+recipients will give thanks in the future. He makes the Gradual the
+future remnant's thanksgiving. Augustine explains how a prophet can
+speak of future rescue as past. Bellarmine reads the same past tense
+as a memory of deliverance. These are three distinct inferences. R1
+sets the acclamation and renewed Offertory cry in the time of a Church
+already rescued and still awaiting the gathering described in this
+Mass's Gospel. Rupert's specific eschatological subject is Israel's
+future reception at Christ's table. He finds it prefigured in Joseph
+and signified by his Gospel's five loaves, which he reads as the five
+books of Moses opened to Israel. The Jeremiah lesson he pairs with that
+Gospel is Jer 23:7–8, about a new exodus. This gives a parallel way of
+joining promise and thanksgiving across time, with its own lesson and
+Gospel (John 6).
+
+**R2** also hears the last two chants as related petition and answer.
+Rupert makes a particular pardon and reconciliation legible through
+Joseph and his brothers. In R2 the Secret itself asks that the
+offerers' hearts turn toward God. Theophylact explains the faith of
+the one praying in Mk 11:24. Bede follows the injunction in Mk 11:25
+to the petitioner's obligation to forgive. Rupert's narrative gives
+the pardon-seekers a voice and puts the forgiving answer in the mouth
+of the one petitioned. This complements the question of what needs to
+change in the person who prays. It supplies neither R2's account of
+the Secret nor its inference from the Marcan context.
+
+Fromage's Twenty-third-Sunday quotation in Shepherd's English (Duffy
+XI, pp. 487–489) transmits this sequence, and his Last-Sunday p. 501
+names the earlier explanation. The study's two arguments keep their
+own carrying authors and their appointed Colossians and Matthew. The
+Joseph comparison stays in research because the older lessons and
+Rupert's particular eschatological application are needed to account
+for its force and limits. The printed Introit on p. 503 and Fromage's
+following Collect commentary retain their separate roles.
+
+### Comparison of the two proposed readings
 
 | Same appointed words | R1's question, inference and consequence | R2's question, inference and consequence |
 | --- | --- | --- |

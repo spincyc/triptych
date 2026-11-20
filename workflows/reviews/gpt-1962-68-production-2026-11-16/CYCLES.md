@@ -1111,3 +1111,22 @@ retains them as deferred anthology witnesses. The updated ledger has 83
 bindings, 122 dispositions and 10 admitted passages. The strict source
 projection replays all 19,378 files. `make -j4 check-sources` and the
 source-mode handoff both exit successfully.
+
+The third cold research review confirmed those repairs and found two further
+gaps. Fromage's recurrence note leads to Rupert of Deutz's reading of four
+shared chants, and three catalogue deliveries and one optical finding aid
+needed exact bindings. The next research pass checked Rupert XII.23 on the
+Migne page images and the historical English quotation in Duffy XI,
+pp. 487–489. The comparison records their different lessons, the chant
+extents and the distinct claims of Rupert and the current two readings. It
+also corrects the direction of requital in the Chrysostom audit.
+
+Source registration verifies the one-leaf Rupert image by offline archive
+roundtrip and registers the three catalogue responses under restricted
+metadata records. The ledger has 91 bindings and 131 dispositions. The ten
+Catena admissions retain their exact bytes. The strict source projection
+replays 19,379 files, and `make -j4 check-sources` exits successfully after
+all 47 tests and the family ledger check. Rupert's excerpt awaits checked
+transcription, composition-date treatment and exact Scripture edges before
+Catena admission. The new evidence proceeds to native preflight and cold
+review.
