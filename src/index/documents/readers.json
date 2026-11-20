@@ -1,5 +1,5 @@
 {
- "generation_commit": "d89176fface71e947f0ad454ec933f6a46308179",
+ "generation_commit": "1aca0759c13108fd3ad51c559da8fc2ec2dc3267",
  "readers": {
   "claude/articles/canon-law/clerical-celibacy-chastity-and-continence": {
    "canonical": "articles/canon-law/clerical-celibacy-chastity-and-continence",
@@ -10989,6 +10989,53 @@
    "release_status": "alpha",
    "source_format": "latex",
    "title": "The Liturgical Calendar of the 1962 Roman Missal"
+  },
+  "gpt/liturgy/roman-rite/1962/seasons/advent": {
+   "canonical": "liturgy/roman-rite/1962/seasons/advent",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:gpt/liturgy/roman-rite/1962/seasons/advent"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "contents": true,
+    "document": "liturgy/roman-rite/1962/seasons/advent",
+    "eligibility": "eligible",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-20",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/gpt/liturgy/roman-rite/1962/seasons/advent/generation-metadata.tex",
+    "src/gpt/liturgy/roman-rite/1962/seasons/advent/main.tex"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/gpt/liturgy/roman-rite/1962/seasons/advent",
+    "src/common"
+   ],
+   "document": "liturgy/roman-rite/1962/seasons/advent",
+   "edition": "main",
+   "entrypoint": "src/gpt/liturgy/roman-rite/1962/seasons/advent/main.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:gpt/liturgy/roman-rite/1962/seasons/advent",
+   "kind": "seasonal-primer-1962",
+   "provider": "gpt",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "Advent: Keeping Watch for Christ"
   },
   "gpt/liturgy/roman-rite/comparative/two-missals-one-sacrifice": {
    "canonical": "liturgy/roman-rite/comparative/two-missals-one-sacrifice",
