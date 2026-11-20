@@ -1,75 +1,30 @@
-/* Generate PDF: one action, one look, wherever an edition offers it — the
-   reader toolbar, a source reader's head, and the print page's own button
-   (guidance/web-editions.md, "Browser printing"). Colours, focus and control
-   size come from the site's role tokens in site.css and the page's section
-   colour; the face is the page's own. The fallbacks only cover a page opened
-   outside the site.
-   The :is() selectors outrank page-family button rules such as
-   `.publication-reader button`. */
+/* The print page's Generate PDF controls. Every Generate PDF control — the
+   reader toolbar's, a source reader's in its breadcrumb row, and this page's
+   own button — is a page action, drawn once by site.css (`.page-action`,
+   guidance/corpus-browser-vision.md, "Page actions", 2026-11-17); this file
+   adds only the print page's layout and its states: busy, ready, status and
+   progress. Colours, focus and sizes come from the site's role tokens and the
+   page's section colour. The fallbacks only cover a page opened outside the
+   site. */
 .native-print-actions { border-block: 1px solid var(--hairline, var(--line, #b8b0a3)); padding-block: 1rem; margin-block: 1rem; }
-:is(.native-print-action, .native-print-actions :is(button, [data-native-print-download])) {
-  display: inline-flex;
-  box-sizing: border-box;
+.native-print-actions__controls {
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: .5rem;
-  min-height: var(--control-min, 2.75rem);
-  margin-block: .25rem;
-  padding: .5rem .95rem;
-  border: 1px solid var(--hairline-strong, var(--muted, #6a635a));
-  border-radius: var(--radius, .2rem);
-  background: var(--surface, #f8f5ef);
-  color: var(--ink, #302d29);
-  /* The face is the host page's own (a papal reader's serif, the reader
-     toolbar's interface face); only the weight marks it as a control. */
-  font: inherit;
-  font-weight: 600;
-  line-height: 1.4;
-  text-decoration: none;
-  vertical-align: middle;
-  white-space: nowrap;
-  cursor: pointer;
+  gap: .375rem;
+  margin-block: .75rem 0;
 }
-/* The action itself carries the page's accent: Generate PDF on the print page
-   and the link that leads to it from a reader. */
-:is(.native-print-action, .native-print-actions [data-native-print-start]) {
-  border-color: var(--section-accent, var(--rubric, #8f3540));
-  color: var(--section-ink, var(--rubric-dark, #6f2831));
-}
-/* A small page glyph, drawn rather than fetched; it is decoration only. */
-:is(.native-print-action, .native-print-actions [data-native-print-start])::before {
-  content: "";
-  flex: none;
-  width: .7em;
-  height: .9em;
-  border: 1.5px solid currentColor;
-  border-radius: 1px;
-  background: linear-gradient(currentColor, currentColor) 50% 35% / 55% 1.5px no-repeat,
-    linear-gradient(currentColor, currentColor) 50% 65% / 55% 1.5px no-repeat;
-  opacity: .8;
-}
-.native-print-actions [data-native-print-download] {
+/* The finished PDF is the one filled control: the result, not another choice. */
+.native-print-actions .native-print-actions__download {
+  --page-action-surface: var(--section-ink, var(--rubric-dark, #6f2831));
   border-color: var(--section-ink, var(--rubric-dark, #6f2831));
-  background: var(--section-ink, var(--rubric-dark, #6f2831));
   color: #fff;
 }
-:is(.native-print-action, .native-print-actions :is(button, [data-native-print-download])):hover:not(:disabled) {
-  background-color: color-mix(in srgb, var(--section-accent, #8f3540) 9%, var(--surface, #f8f5ef));
-  text-decoration: none;
+.native-print-actions .native-print-actions__download:hover:not(:disabled) {
+  --page-action-surface: var(--ink, #302d29);
+  border-color: var(--ink, #302d29);
+  color: #fff;
 }
-.native-print-actions [data-native-print-download]:hover {
-  background-color: var(--ink, #302d29) !important;
-}
-:is(.native-print-action, .native-print-actions :is(button, [data-native-print-download])):focus-visible {
-  outline: 3px solid var(--focus-ring, #1f5d8b);
-  outline-offset: 2px;
-}
-.native-print-actions button:disabled {
-  border-style: dashed;
-  color: var(--muted, #6a635a);
-  cursor: progress;
-}
-/* A source reader that has no reader toolbar carries the action at its head. */
-.print-actions { margin: 0 0 1.5rem; }
 .native-print-actions [hidden] { display: none !important; }
 .native-print-actions [data-native-print-status] { min-height: 1.5em; margin-block: .5rem 0; }
 /* An empty status leaves no gap; the live region stays in place for later messages. */
@@ -161,9 +116,6 @@
 }
 
 @media (forced-colors: active) {
-  :is(.native-print-action, .native-print-actions :is(button, [data-native-print-download])) { border-color: ButtonText; }
-  .native-print-actions button:disabled { border-color: GrayText; color: GrayText; }
-  :is(.native-print-action, .native-print-actions :is(button, [data-native-print-download])):focus-visible { outline-color: Highlight; }
   .native-print-popover { border-color: CanvasText; }
   .native-print-popover__bar { border: 1px solid CanvasText; }
   .native-print-popover__fill { background: Highlight; }

@@ -566,8 +566,8 @@ loci = [
 ]
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
-source_fingerprint = "sha256:874a719c08a9888ab068e34d623af6e59b7b6af5e5f169b19c7c9f1d13a40384"
-context = "Restricted registered facsimile fetched on 2026-10-15 and hashed to the registered SHA-256 and byte length; PDF pp. 92-93 (PL 172, cols. 723-726) read as page images at 120 dpi; nothing retained (research/scope.md 2.1, 3.3)."
+source_fingerprint = "sha256:bf5bb7ad8f19eef318d7c513f8ad396c399cced310150ced140257d16c5958a2"
+context = "Restricted registered facsimile fetched on 2026-10-15 and hashed to the registered SHA-256 and byte length; PDF pp. 92-93 (PL 172, cols. 723-726) read as page images at 120 dpi; nothing retained (research/scope.md 2.1, 3.3). Metadata review 2026-11-18: the fingerprint moved because the Gemma animae locus_pattern widened from book IV to books I-IV and the 1854 edition's notes now list III.1 among its checked chapters; its loci still match, and the bound artifact is unchanged."
 
 [[bindings]]
 source_id = "artifact.honorius-augustodunensis.gemma-animae.1895-garnier-migne-pl-172.ia-djvu-ocr-2ebfcb5f"
@@ -579,8 +579,8 @@ loci = [
 ]
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
-source_fingerprint = "sha256:472c828bf45f8c1c1d4e99c11211b27a8834e420d9bc76cf99a1d51833bfdffb"
-context = "Tracked OCR, physical lines 57085-57215, read to locate the passage; its interleaved columns drop words, so the facsimile above controls."
+source_fingerprint = "sha256:665511bc1fd8296ba8431c2e3e3717b6e29df4fa145e1b6706a78bf81dafd667"
+context = "Tracked OCR, physical lines 57085-57215, read to locate the passage; its interleaved columns drop words, so the facsimile above controls. Metadata review 2026-11-18: the fingerprint moved because the Gemma animae locus_pattern widened from book IV to books I-IV and the PL 172 text layer's notes now record that its scan lacks cols. 639-642; nothing cited here falls in that leaf, and the bytes are unchanged."
 
 [[bindings]]
 source_id = "artifact.sicard-of-cremona.mitrale.latin-migne-pl-213.ia-djvu-ocr-ea9fd813"

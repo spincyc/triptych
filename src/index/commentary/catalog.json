@@ -1,6 +1,12 @@
 {
  "absence_editions": [
   "edition.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100",
+  "edition.ambrose.expositio-evangelii-secundum-lucam.csel-32-4-schenkl-1902",
+  "edition.ambrose.expositio-evangelii-secundum-lucam.latin-migne-corpus-corporum-web-2026-07-25",
+  "edition.ambrose.expositio-evangelii-secundum-lucam.latin-migne-corpus-corporum-web-2026-09-05",
+  "edition.ambrose.expositio-evangelii-secundum-lucam.latin-migne-corpus-corporum-wikisource-web-2026-09-05",
+  "edition.ambrose.expositio-evangelii-secundum-lucam.latin-migne-wikisource-book-5",
+  "edition.ambrose.expositio-evangelii-secundum-lucam.latin-wikisource-web-2026-09-05",
   "edition.ambrose.hexameron.latin-migne-pl-14",
   "edition.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115",
   "edition.augustine.de-genesi-ad-litteram.migne-pl-34",
@@ -8,10 +14,12 @@
   "edition.augustine.epistolae-ad-galatas-expositio.2026-09-05-wikisource-migne",
   "edition.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05",
   "edition.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25",
+  "edition.bede.in-lucae-evangelium-expositio.latin-migne-pl92-1862",
   "edition.bede.in-marci-evangelium-expositio.1862-migne-pl-92",
   "edition.bede.in-marci-evangelium-expositio.2026-10-13-latin-wikisource-migne",
   "edition.bede.in-principium-genesis.latin-migne-pl-91",
   "edition.gregory-the-great.homiliae-in-evangelia.latin-migne-corpus-corporum-web-2026-07-25",
+  "edition.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878",
   "edition.gregory-the-great.homiliae-in-evangelia.pl76-facsimile-web-2026-09-17",
   "edition.gregory-the-great.homiliae-in-evangelia.wikisource-web-2026-09-17",
   "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23",
@@ -960,7 +968,7 @@
    },
    {
     "chapters": 150,
-    "fragments": 16,
+    "fragments": 17,
     "languages": [
      "en",
      "la"
@@ -1447,7 +1455,7 @@
    },
    {
     "chapters": 28,
-    "fragments": 14,
+    "fragments": 19,
     "languages": [
      "en",
      "la"
@@ -1516,7 +1524,7 @@
    },
    {
     "chapters": 24,
-    "fragments": 2,
+    "fragments": 37,
     "languages": [
      "en",
      "la"
@@ -1553,7 +1561,7 @@
    },
    {
     "chapters": 21,
-    "fragments": 9,
+    "fragments": 10,
     "languages": [
      "en",
      "la"
@@ -3700,7 +3708,9 @@
    "33": [],
    "34": [],
    "36": [],
-   "37": [],
+   "37": [
+    "passage.nicene-and-post-nicene-fathers.series-1-volume-8.new-york-1888.augustine-enarr-in-ps-37.13"
+   ],
    "39": [],
    "4": [],
    "40": [],
@@ -3964,9 +3974,16 @@
    "7": []
   },
   "47-matt": {
-   "1": [],
+   "1": [
+    "passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.jerome-on-matthew-1-18",
+    "passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.jerome-on-matthew-1-19",
+    "passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.jerome-on-matthew-1-21"
+   ],
    "10": [],
-   "11": [],
+   "11": [
+    "passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.gregory-on-matthew-11-7",
+    "passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.gregory-on-matthew-11-9"
+   ],
    "12": [],
    "13": [
     "passage.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05.1-10",
@@ -4042,7 +4059,14 @@
    "9": []
   },
   "49-luke": {
-   "1": [],
+   "1": [
+    "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.ambrose-on-luke-1-38",
+    "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.ambrose-on-luke-1-39",
+    "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.ambrose-on-luke-1-46-47",
+    "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.bede-on-luke-1-47",
+    "passage.ambrose.expositio-evangelii-secundum-lucam.csel-32-4-schenkl-1902.ambrose-expositio-lucae-2.19",
+    "passage.ambrose.expositio-evangelii-secundum-lucam.csel-32-4-schenkl-1902.ambrose-expositio-lucae-2.26"
+   ],
    "10": [],
    "11": [],
    "12": [],
@@ -4053,16 +4077,48 @@
    "17": [],
    "18": [],
    "19": [],
-   "2": [],
+   "2": [
+    "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.gregory-on-luke-2-1-5",
+    "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.bede-on-luke-2-6-7-bethlehem",
+    "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.bede-on-luke-2-6-7-house-of-bread",
+    "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.gregory-on-luke-2-6-7-bethlehem",
+    "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.ambrose-on-luke-2-7",
+    "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.bede-on-luke-2-7-inn",
+    "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.bede-on-luke-2-7-manger",
+    "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.bede-on-luke-2-7-swaddling",
+    "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.chrysostom-on-luke-2-7",
+    "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.cyril-on-luke-2-7",
+    "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.gregory-on-luke-2-7-strange-country",
+    "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.jerome-on-luke-2-7",
+    "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.gregory-on-luke-2-8-9",
+    "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.bede-on-luke-2-9",
+    "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.bede-on-luke-2-12",
+    "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.maximus-on-luke-2-12",
+    "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.bede-on-luke-2-13-14",
+    "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.chrysostom-on-luke-2-14",
+    "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.gregory-on-luke-2-14",
+    "passage.ambrose.expositio-evangelii-secundum-lucam.csel-32-4-schenkl-1902.ambrose-expositio-lucae-2.41",
+    "passage.ambrose.expositio-evangelii-secundum-lucam.csel-32-4-schenkl-1902.ambrose-expositio-lucae-2.42",
+    "passage.ambrose.expositio-evangelii-secundum-lucam.csel-32-4-schenkl-1902.ambrose-expositio-lucae-2.43",
+    "passage.bede.in-lucae-evangelium-expositio.latin-migne-pl92-1862.i-lk-2.7",
+    "passage.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.8.1-masses-and-census",
+    "passage.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.8.1-bethlehem",
+    "passage.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.8.1-manger"
+   ],
    "20": [],
-   "21": [],
+   "21": [
+    "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.gregory-on-luke-21-28"
+   ],
    "22": [],
    "23": [],
    "24": [
     "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.luke-24-50-53-text",
     "passage.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.vi-lk-24.12"
    ],
-   "3": [],
+   "3": [
+    "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.gregory-on-luke-3-4",
+    "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.gregory-on-luke-3-5"
+   ],
    "4": [],
    "5": [],
    "6": [],
@@ -4071,7 +4127,9 @@
    "9": []
   },
   "50-john": {
-   "1": [],
+   "1": [
+    "passage.nicene-and-post-nicene-fathers.series-1-volume-7.new-york-1888.augustine-tract-in-io-4.7"
+   ],
    "10": [],
    "11": [],
    "12": [],
@@ -12596,7 +12654,7 @@
     {
      "blocked": 0,
      "chapter": 1,
-     "fragments": 0,
+     "fragments": 1,
      "held": true,
      "leads": 17,
      "refused": 0,
@@ -13628,7 +13686,7 @@
     {
      "blocked": 0,
      "chapter": 1,
-     "fragments": 0,
+     "fragments": 6,
      "held": true,
      "leads": 15,
      "refused": 0,
@@ -13637,7 +13695,7 @@
     {
      "blocked": 0,
      "chapter": 2,
-     "fragments": 0,
+     "fragments": 26,
      "held": true,
      "leads": 16,
      "refused": 0,
@@ -13646,7 +13704,7 @@
     {
      "blocked": 0,
      "chapter": 3,
-     "fragments": 0,
+     "fragments": 2,
      "held": true,
      "leads": 15,
      "refused": 0,
@@ -13808,7 +13866,7 @@
     {
      "blocked": 0,
      "chapter": 21,
-     "fragments": 0,
+     "fragments": 1,
      "held": true,
      "leads": 25,
      "refused": 0,
@@ -14069,7 +14127,7 @@
     {
      "blocked": 0,
      "chapter": 1,
-     "fragments": 0,
+     "fragments": 3,
      "held": true,
      "leads": 15,
      "refused": 0,
@@ -14159,7 +14217,7 @@
     {
      "blocked": 0,
      "chapter": 11,
-     "fragments": 0,
+     "fragments": 2,
      "held": true,
      "leads": 16,
      "refused": 0,
@@ -15629,7 +15687,7 @@
     {
      "blocked": 0,
      "chapter": 37,
-     "fragments": 0,
+     "fragments": 1,
      "held": true,
      "leads": 15,
      "refused": 0,

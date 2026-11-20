@@ -1,0 +1,18 @@
+schema = 1
+record_type = "passage"
+id = "passage.council-of-trent.canones-et-decreta.latin-tauchnitz-1887.sessio-24-ref-matr-10"
+edition_id = "edition.council-of-trent.canones-et-decreta.latin-tauchnitz-1887"
+artifact_id = "artifact.council-of-trent.canones-et-decreta.latin-tauchnitz-1887.sessio-24-ref-matr-10-a3-checked-text-8fddf286"
+artifact_sha256 = "8fddf28625d2bb63dcdf1c4575f1ab0dd626d5720a5fed46b47510418981cd95"
+locus = "sessio-24-reformatio-matrimonii-10"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Session XXIV, Decretum de reformatione matrimonii, chapter X 'Nuptiarum solennitates certis temporibus prohibentur': the ancient prohibitions of solemn nuptials are to be kept from Advent to Epiphany and from Ash Wednesday to the octave of Easter inclusive. Printed p. 153, scan page n160. Not the doctrinal canons on matrimony, nor chapter X of the session's general Decretum de reformatione."
+physical_line_ranges = [[1, 3]]
+text = "C. X. Nuptiarum solennitates certis temporibus prohibentur. Ab Adventu Domini nostri Iesu Christi usque in diem Epiphaniae, et a feria quarta Cinerum usque in octavam Paschatis inclusive, antiquas solennium nuptiarum prohibitiones diligenter ab omnibus observari sancta synodus praecipit; in aliis vero temporibus nuptias solenniter celebrari permittit, quas episcopi, ut ea qua decet modestia et honestate fiant, curabunt. Sancta enim res est matrimonium et sancte tractandum."
+transcription_segments = [
+  { line = 1, text = "C. X. Nuptiarum solennitates certis temporibus prohibentur." },
+  { line = 2, text = "Ab Adventu Domini nostri Iesu Christi usque in diem Epiphaniae, et a feria quarta Cinerum usque in octavam Paschatis inclusive, antiquas solennium nuptiarum prohibitiones diligenter ab omnibus observari sancta synodus praecipit; in aliis vero temporibus nuptias solenniter celebrari permittit, quas episcopi, ut ea qua decet modestia et honestate fiant, curabunt." },
+  { line = 3, text = "Sancta enim res est matrimonium et sancte tractandum." },
+]
+verified_on = "2026-11-18"
+notes = "Read on the page image. The locus slot 'reformatio-matrimonii' names the Decretum de reformatione matrimonii, distinguishing it from the session's general Decretum de reformatione; the work's locus pattern gained that slot on 2026-11-18, when this passage was re-locused from 'sessio-24-decretum-10'. The footnote anchor 1) after 'prohibitiones' is omitted; the footnote (citing Laodicea, 'conc. Salegunst.', Nicholas I and the Decretals) is not transcribed because one numeral in it could not be settled on the image."

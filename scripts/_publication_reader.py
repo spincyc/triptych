@@ -112,8 +112,12 @@ class _Sections(HTMLParser):
 def wrap(content: str, context: dict, route: str, action: str = "") -> str:
     """Surround the exact source rendering with static, accessible navigation.
 
-    `action` is the page's Generate PDF link (`_native_print.reader_action_link`);
-    it leads the toolbar's actions, at the top of the document's page.
+    The toolbar is one line: previous, the document selector and next, then
+    the page actions at its end (guidance/corpus-browser-vision.md, "Page
+    actions", 2026-11-17). `action` is the page's Generate PDF link
+    (`_native_print.reader_action_link`); it leads those actions, before Copy
+    section link. Previous and Next show a short word; their accessible names
+    keep the full phrase, and the selector's name is its `aria-label`.
     """
     def link(target):
         return escape(posixpath.relpath(target, posixpath.dirname(route) or "."), quote=True)
@@ -131,8 +135,9 @@ def wrap(content: str, context: dict, route: str, action: str = "") -> str:
             text = direction + (" celebration" if proper else " document")
             browse.append((direction, '<a class="publication-reader__adjacent" rel="' +
                            ("prev" if direction == "Previous" else "next") + '" href="' + link(choice["href"]) +
-                           '" title="' + escape(choice["title"] + suffix, quote=True) + '">' +
-                           escape(text + suffix) + '</a>'))
+                           '" title="' + escape(choice["title"] + suffix, quote=True) + '" aria-label="' +
+                           escape(text + suffix, quote=True) + '"><span class="publication-reader__adjacent-label">' +
+                           escape(direction) + '</span></a>'))
     options = []
     for choice in choices:
         selected = ' selected' if choice["owner"] == context["owner"] else ''
@@ -141,7 +146,8 @@ def wrap(content: str, context: dict, route: str, action: str = "") -> str:
     before = next((markup for direction, markup in browse if direction == "Previous"), '')
     after = next((markup for direction, markup in browse if direction == "Next"), '')
     selector_label = "Sunday / celebration" if proper else "Document"
-    selector = ('<label class="publication-reader__document publication-reader__select-label" hidden>' + selector_label +
+    selector = ('<label class="publication-reader__document publication-reader__select-label" hidden>'
+                '<span class="publication-reader__field-name">' + selector_label + '</span>'
                 '<select data-reader-document-select aria-label="' + selector_label + '">' + ''.join(options) + '</select></label>')
     treatments = ''.join('<a href="' + link(output["href"]) + '"' +
                          (' aria-current="page"' if output["key"] == current["key"] else '') + '>' +
@@ -162,8 +168,8 @@ def wrap(content: str, context: dict, route: str, action: str = "") -> str:
         '<div class="publication-reader">'
         '<div class="publication-reader__toolbar">'
         '<div class="publication-reader__browse">' + before + selector + after + '</div>'
-        '<div class="publication-reader__actions">' + action +
-        '<button type="button" data-reader-copy-link hidden>Copy section link</button>'
+        '<div class="publication-reader__actions page-actions">' + action +
+        '<button type="button" class="page-action page-action--copy" data-reader-copy-link hidden>Copy section link</button>'
         '<span data-reader-status role="status" aria-live="polite"></span></div>'
         '<progress data-reader-progress max="100" value="0" aria-label="Reading progress"></progress></div>'
         '<p class="publication-reader__identity">' + escape(provider) + ' · ' + escape(current["label"]) + '</p>'

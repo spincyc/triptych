@@ -1,0 +1,17 @@
+schema = 1
+record_type = "passage"
+id = "passage.amalarius-of-metz.liber-officialis.latin-migne-pl-105.iii.40-five-weeks"
+edition_id = "edition.amalarius-of-metz.liber-officialis.latin-migne-pl-105"
+artifact_id = "artifact.amalarius-of-metz.liber-officialis.latin-migne-pl-105.iii.40-five-weeks-checked-text-c5882fdb"
+artifact_sha256 = "c5882fdb9524502d1a122945957af557f66dd32f6718cf5a546d96c30749c966"
+locus = "III.40"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Liber officialis (De ecclesiasticis officiis) III.40 'De adventu Domini', its opening sentences: the old Missals and Lectionaries mark the fifth week before Christmas, with as many Sunday lessons and gospels. PL 105 col. 1158, right column of leaf n584, under the heading CAPUT XL."
+physical_line_ranges = [[1, 2]]
+text = "In antiquis libris Missalium et Lectionariorum reperitur scriptum, Hebdomada quinta ante Natalem Domini. Totidem enim lectiones habentur in Lectionario, et totidem Evangelia a tempore memorato per dies Dominicos usque ad Nativitatem Domini."
+transcription_segments = [
+  { line = 1, text = "In antiquis libris Missalium et Lectionariorum reperitur scriptum, Hebdomada quinta ante Natalem Domini." },
+  { line = 2, text = "Totidem enim lectiones habentur in Lectionario, et totidem Evangelia a tempore memorato per dies Dominicos usque ad Nativitatem Domini." },
+]
+verified_on = "2026-11-18"
+notes = "Read on the page image of leaf n584. The i of 'Nativitatem' is damaged in the print. The OCR interleaves this column with the facing one (line 125694), so its line numbers are only approximate locators."

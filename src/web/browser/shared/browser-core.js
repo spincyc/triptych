@@ -3546,14 +3546,18 @@ window.Triptych = (function () {
   function bindPrint(options) {
     const root = options.root;
     root.classList.add('browser-print-content');
-    const actions = el('div', 'browser-print-actions');
-    const button = el('button', null, options.label || 'Print this selection');
+    // A page action (site.css, "Page actions"): at the end of its header,
+    // beside the first line under the title.
+    const actions = el('div', 'browser-print-actions page-actions');
+    const button = el('button', 'page-action page-action--print', options.label || 'Print this selection');
     button.type = 'button';
     const status = el('p', 'browser-print-status');
     status.setAttribute('role', 'status');
     actions.appendChild(button);
     actions.appendChild(status);
-    (options.host || root.parentNode).appendChild(actions);
+    const host = options.host || root.parentNode;
+    host.classList.add('page-actions-host');
+    host.appendChild(actions);
     const identity = el('p', 'browser-print-identity');
     const refusal = el('p', 'browser-print-refusal',
       'This selection is not ready to print. Use the page’s Print button to load and check the complete selection.');

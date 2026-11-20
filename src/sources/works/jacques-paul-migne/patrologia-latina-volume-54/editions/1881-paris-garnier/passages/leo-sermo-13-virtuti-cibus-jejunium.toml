@@ -1,0 +1,20 @@
+schema = 1
+record_type = "passage"
+id = "passage.jacques-paul-migne.patrologia-latina-volume-54.1881-paris-garnier.leo-sermo-13-virtuti-cibus-jejunium"
+edition_id = "edition.jacques-paul-migne.patrologia-latina-volume-54.1881-paris-garnier"
+artifact_id = "artifact.jacques-paul-migne.patrologia-latina-volume-54.1881-paris-garnier.leo-sermo-13-virtuti-cibus-jejunium-checked-text-262ed363"
+artifact_sha256 = "262ed3634a82b4fe0afa92fe62f9163244634c6b60a9cd04d5cfbea0b422b273"
+locus = "column-172"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Leo the Great, Sermo XIII [al. XII], De jejunio decimi mensis II, the first half of the sermon (which is undivided): the December fast as a thank-offering for the harvest, and fasting as the food of virtue. Read on PL 54 column 172 (PDF page 92, right column) from the sermon's heading and synopsis through the column's foot."
+physical_line_ranges = [[1, 5]]
+text = "Quod temporis ratio et devotionis nostræ admonet consuetudo, pastorali vobis, dilectissimi, sollicitudine prædicamus, decimi mensis celebrandum esse jejunium, quo pro consummata perceptione omnium fructuum, dignissime largitori eorum Deo continentiæ libamen offertur. Quid enim potest efficacius esse jejunio, cujus observantia appropinquamus Deo, et resistentes diabolo, vitia blanda superamus? Semper enim virtuti cibus jejunium fuit. De abstinentia prodeunt castæ cogitationes, rationabiles voluntates, salubriora consilia. Et per voluntarias afflictiones caro concupiscentiis moritur, virtutibus spiritus innovatur."
+transcription_segments = [
+  { line = 1, text = "Quod temporis ratio et devotionis nostræ admonet consuetudo, pastorali vobis, dilectissimi, sollicitudine prædicamus, decimi mensis celebrandum esse jejunium, quo pro consummata perceptione omnium fructuum, dignissime largitori eorum Deo continentiæ libamen offertur." },
+  { line = 2, text = "Quid enim potest efficacius esse jejunio, cujus observantia appropinquamus Deo, et resistentes diabolo, vitia blanda superamus?" },
+  { line = 3, text = "Semper enim virtuti cibus jejunium fuit." },
+  { line = 4, text = "De abstinentia prodeunt castæ cogitationes, rationabiles voluntates, salubriora consilia." },
+  { line = 5, text = "Et per voluntarias afflictiones caro concupiscentiis moritur, virtutibus spiritus innovatur." },
+]
+verified_on = "2026-11-18"
+notes = "Ballerini note (o) says enim in Semper enim virtuti cibus jejunium fuit was added from their own codices; note (n) records the variants diligentissime and dignissimo for dignissime; note (m) vestræ for nostræ. The Latin names only the tenth month; it says nothing of Advent. Bute's breviary reads this sermon at Advent III Matins (verification in that edition's own passages)."

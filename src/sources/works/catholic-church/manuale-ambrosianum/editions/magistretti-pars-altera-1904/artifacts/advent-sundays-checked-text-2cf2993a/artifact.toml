@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.manuale-ambrosianum.magistretti-pars-altera-1904.advent-sundays-checked-text-2cf2993a"
+edition_id = "edition.catholic-church.manuale-ambrosianum.magistretti-pars-altera-1904"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Eleventh-century liturgical headings as printed at Milan in 1904; Public domain in the United States by publication date. The verso of the title leaf of this copy, read on the page image at PDF p. 8, prints Mediolani - ex Typographeo Humberti Allegretti - 1904, and the title page (PDF p. 7) is the one the edition record reads as M DCCCC IV; the reservation 'Quae a lege sunt iura reservantur' on that leaf has no effect on United States term. A work first published abroad before 1931 is out of United States copyright: that is the line guidance/missals.md section 5 records from Cornell's public-domain chart as current on 1 January 2026, and because it moves every January it is written here as derived for calendar year 2026 and not as a standing rule. Restoration under 17 U.S.C. 104A cannot keep it protected: a restored term runs no longer than ninety-five years from publication, and ninety-five years from 1904 ended with 1999. No life-based term is relied on."
+rights_jurisdiction = "United States"
+provenance = "Transcribed on 2026-11-18 from printed pp. 1, 3, 24, 26, 29, 32, 35 and 41 (PDF pp. 11, 13, 34, 36, 39, 42, 45, 51) of the hashed PDF 679897e7d1a6ff72608480cec4c01b658e55e363c2f25801bd55b257f2f7fa56, rendered at 100 dpi and cropped at 150 dpi; the OCR layer was a finding aid only."
+retrieved = "2026-11-18"
+sha256 = "2cf2993af6538b2ccc278a359ab9f02f027f2d4ae4776e5f3fcb43e996e1a69e"
+byte_size = 507
+path = "src/sources/works/catholic-church/manuale-ambrosianum/editions/magistretti-pars-altera-1904/artifacts/advent-sundays-checked-text-2cf2993a/magistretti-advent-sunday-headings.txt"
+derived_from = "artifact.catholic-church.manuale-ambrosianum.magistretti-pars-altera-1904.ia-pdf-679897e7"
+transformation = "Read the named printed page(s) as image(s) of the parent artifact and transcribe the quoted extent with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced locator naming the printed page or column; preserve the printing's wording, spelling, capitalization, accents and punctuation; join line-end hyphenation; expand nothing; omit running heads, marginal numbers and footnote markers unless a line says otherwise."
+indexable = true
+encoding = "utf-8"

@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-7.new-york-1894.gregory-oration-29.19-made-god-checked-text-01f051a4"
+edition_id = "edition.nicene-and-post-nicene-fathers.series-2-volume-7.new-york-1894"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces a few sentences of Charles Gordon Browne and James Edward Swallow's English translation of the orations of Gregory Nazianzen, published at New York in 1894 in the Nicene and Post-Nicene Fathers, second series, volume VII, which is in the United States public domain by date of publication (the parent facsimile's rights_basis gives the evidence and the reasoning). It is transcribed from page images rendered from the hashed Internet Archive facsimile and contains no Internet Archive markup or text-layer bytes."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription collated against the printed page images of the hashed Internet Archive facsimile ia-facsimile-pdf-5d94f176 (SHA-256 5d94f1762d7a5ca4c0852f9766eb7a87a916f7467de6a2316489f4749075d286), on 2026-11-19, read from a local copy of the same file whose SHA-256 was recomputed and found equal before any page was rendered; the facsimile's own optical text layer was used only to locate the pages, and the CCEL web text of the same volume was collated against the page after it was read. Printed page 308, PDF page 382."
+retrieved = "2026-11-19"
+sha256 = "01f051a4e3dc90286f157511b789cc02163d81d8ee0d18e5e3e46c40f8f0cdc9"
+byte_size = 733
+path = "src/sources/works/nicene-and-post-nicene-fathers/series-2-volume-7/editions/new-york-1894/artifacts/gregory-oration-29.19-made-god-checked-text-01f051a4/gregory-oration-29.19-made-god.txt"
+derived_from = "artifact.nicene-and-post-nicene-fathers.series-2-volume-7.new-york-1894.ia-facsimile-pdf-5d94f176"
+transformation = "Read the named printed pages as images rendered at 240 dots per inch from the hashed facsimile with pdftoppm, cropped to half-columns (with a 400 dots per inch crop where a mark needed settling), and transcribe the quoted sentences with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced locator; preserve the printed wording, capitalization, spelling, punctuation, dashes and typographic quotation marks and apostrophes; set words printed in small capitals (God, Lord, and opening words) in ordinary capitalization; join line-end hyphenation and close the printer's spaces before punctuation; omit running heads, page numbers, section numbers, section summaries, footnote markers and italics."
+indexable = true
+encoding = "utf-8"

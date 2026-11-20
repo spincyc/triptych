@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.holy-see.acta-apostolicae-sedis.volume-52-1960.rubricae-generales-breviarii-n-220"
+edition_id = "edition.holy-see.acta-apostolicae-sedis.volume-52-1960"
+artifact_id = "artifact.holy-see.acta-apostolicae-sedis.volume-52-1960.rubricae-generales-breviarii-n-220-checked-text-85c2f3ec"
+artifact_sha256 = "85c2f3ec4c7cb3e5f510f076c6962ea84daa1cfabf9dd87c356b49dec4ee5828"
+locus = "aas-52-pp-634-635-rubricae-generales-breviarii-n-220"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Rubricae generales Breviarii Romani (pars secunda), the chapter on the lessons, III De lectionibus Officii unius Nocturni, n. 220, the whole number: on Sundays the first two lessons are of the occurring Scripture and the third is of the homily on the day's Gospel. Printed pp. 634-635; microfilm PDF pp. 46-47."
+physical_line_ranges = [[1, 4]]
+text = "220. In Officio dominicali, ordo trium lectionum hic est: a) Lectio prima et secunda dicuntur de Scriptura occurrenti, ut in Proprio. Prima autem lectio Sacrae Scripturae ea est, quae in Breviario nunc ut prima notatur; altera vero efficitur ex secunda et tertia in unam coniunctis, omisso responsorio intermedio. b) Lectio tertia dicitur de homilia in Evangelium diei; et sumitur ea quae nunc in Breviario ponitur tamquam prima tertii Nocturni."
+transcription_segments = [
+  { line = 1, text = "220. In Officio dominicali, ordo trium lectionum hic est:" },
+  { line = 2, text = "a) Lectio prima et secunda dicuntur de Scriptura occurrenti, ut in Proprio." },
+  { line = 3, text = "Prima autem lectio Sacrae Scripturae ea est, quae in Breviario nunc ut prima notatur; altera vero efficitur ex secunda et tertia in unam coniunctis, omisso responsorio intermedio." },
+  { line = 4, text = "b) Lectio tertia dicitur de homilia in Evangelium diei; et sumitur ea quae nunc in Breviario ponitur tamquam prima tertii Nocturni." },
+]
+verified_on = "2026-11-18"
+notes = "Read on the microfilm page images at 150 dpi. The vatican.va OCR layer agrees in wording at this extent. The chapter's own number was not read on these pages."

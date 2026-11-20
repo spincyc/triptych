@@ -1,0 +1,23 @@
+schema = 1
+record_type = "passage"
+id = "passage.gregory-of-tours.historia-francorum.1838-guadet-taranne-tomus-2.x.31-fasts"
+edition_id = "edition.gregory-of-tours.historia-francorum.1838-guadet-taranne-tomus-2"
+artifact_id = "artifact.gregory-of-tours.historia-francorum.1838-guadet-taranne-tomus-2.x.31-fasts-checked-text-d2f6c008"
+artifact_sha256 = "d2f6c00830c80129f815e66a086f333c7911de504c203fe8d9174ca7dae57220"
+locus = "X.31"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Book X chapter 31 (section 6 of this edition's numbering): Perpetuus's institution of the fasts and the list DE JEJUNIIS, printed p. 274 (PDF p. 282), with footnote (1) attached to the line 'A (1) depositione domni Martini usque natale Domini'."
+physical_line_ranges = [[1, 8]]
+text = "Hic instituit jejunia, vigiliasque, qualiter per circulum anni observarentur, quod hodieque apud nos tenetur scriptum, quorum ordo hic est. DE JEJUNIIS. Post Quinquagesimam, quarta et sexta feria usque natale sancti Johannis. De calendis septembris usque calendas octobris, bina in septimana jejunia. De calendis octobris usque depositionem domni Martini, bina in septimana jejunia. A (1) depositione domni Martini usque natale Domini, terna in septimana jejunia. De natali sancti Hilarii usque medium februarium, bina in septimana jejunia. (1) Iste articulus non habetur in cod. Regio."
+transcription_segments = [
+  { line = 1, text = "Hic instituit jejunia, vigiliasque, qualiter per circulum anni observarentur, quod hodieque apud nos tenetur scriptum, quorum ordo hic est." },
+  { line = 2, text = "DE JEJUNIIS." },
+  { line = 3, text = "Post Quinquagesimam, quarta et sexta feria usque natale sancti Johannis." },
+  { line = 4, text = "De calendis septembris usque calendas octobris, bina in septimana jejunia." },
+  { line = 5, text = "De calendis octobris usque depositionem domni Martini, bina in septimana jejunia." },
+  { line = 6, text = "A (1) depositione domni Martini usque natale Domini, terna in septimana jejunia." },
+  { line = 7, text = "De natali sancti Hilarii usque medium februarium, bina in septimana jejunia." },
+  { line = 8, text = "(1) Iste articulus non habetur in cod. Regio." },
+]
+verified_on = "2026-11-18"
+notes = "Read on the page image. The footnote marker (1) stands after 'A' at the head of the Martinmas-to-Christmas line, so this edition reports that its 'cod. Regius' lacks that line. Arndt's MGH apparatus (1884, p. 445) instead reports that codex p (Paris 10848) lacks the preceding October-to-Martinmas line and gives no omission of the Martinmas line. R1's dossier read the G-T footnote correctly but did not have the MGH evidence. OCR differences: the text layer reads 'vigibasque', 'quabter', 'tenetiir', 'depositiohe', 'natab'."

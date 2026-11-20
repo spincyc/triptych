@@ -5277,8 +5277,8 @@ def render_page(
         except ReaderMarkupError as exc:
             raise ReleaseError(f"{output_relative}: {exc}") from exc
     # Every document page with an admitted print edition carries one Generate
-    # PDF action at its top: in the reader's toolbar, or at the head of the
-    # content where there is no reader shell.
+    # PDF action at its top: at the end of the reader's toolbar, or at the end
+    # of the breadcrumb row where there is no reader shell (`page_bar`).
     target = native_print_pages()["readers"].get(output_relative)
     action = ""
     if target is not None:
@@ -5286,6 +5286,10 @@ def render_page(
         action = reader_action_link(output_relative, target)
     content, reader_head, reader_body = publication_reader_shell(
         content, output_relative, action=action)
+    actions = ""
+    if action and not reader_head:
+        from _native_print import reader_action
+        actions = reader_action(output_relative, target)
     return wrap_in_layout(
         source_relative,
         output_relative,
@@ -5300,7 +5304,21 @@ def render_page(
             '<script src="' + relative_link(output_relative, "shared/catalogue-navigation.js")
             + '"></script>' if catalogue else ""
         ) + reader_body + body_extra,
+        actions=actions,
     )
+
+
+def page_bar(breadcrumb_html: str, actions: str = "") -> str:
+    """The row above a page's content: its breadcrumb, then its page actions.
+
+    A page without the reader toolbar carries its actions (a source reader's
+    Generate PDF) at the end of this row rather than in a row of their own
+    (guidance/corpus-browser-vision.md, "Page actions", 2026-11-17). Without
+    actions the breadcrumb stands as before.
+    """
+    if not actions:
+        return breadcrumb_html
+    return '<div class="page-bar">' + breadcrumb_html + actions + '</div>'
 
 
 def wrap_in_layout(
@@ -5317,6 +5335,7 @@ def wrap_in_layout(
     declared_description: str = "",
     declared_robots: str = "",
     content_element: str = "main",
+    actions: str = "",
 ) -> str:
     """Put one page's content inside the site's chrome.
 
@@ -5329,6 +5348,9 @@ def wrap_in_layout(
     plain `<div>` where the content already declares its own `<main>`, so the
     published page never nests one inside the other. `render_browser_page`
     decides which from the page itself.
+
+    `actions` is the page's own page actions, set at the end of its breadcrumb
+    row (`page_bar`).
     """
     if content_element not in ("main", "div"):
         raise ReleaseError(f"unsupported layout content element: {content_element!r}")
@@ -5336,7 +5358,7 @@ def wrap_in_layout(
     # PDF in place. Print pages and browser apps load the controller themselves.
     from _native_print import SCRIPT as NATIVE_PRINT_SCRIPT, link_extras
     if NATIVE_PRINT_SCRIPT not in body_extra:
-        print_head, print_body = link_extras(output_relative, content)
+        print_head, print_body = link_extras(output_relative, actions + content)
         head_extra += print_head
         body_extra += print_body
     template = (TEMPLATE_ROOT / "layout.html").read_text(encoding="utf-8")
@@ -5392,7 +5414,7 @@ def wrap_in_layout(
         "{{HOME_CURRENT}}": home_current,
         "{{ABOUT_CURRENT}}": about_current,
         "{{FEEDBACK_CURRENT}}": feedback_current,
-        "{{BREADCRUMB}}": breadcrumb_html,
+        "{{BREADCRUMB}}": page_bar(breadcrumb_html, actions),
         "{{CONTENT}}": content,
         "{{BODY_EXTRA}}": body_extra,
     }
@@ -5775,10 +5797,11 @@ def publication_reader_shell(content: str, relative: str, output_id: str = "", *
                              action: str = "") -> tuple[str, str, str]:
     """Add screen navigation outside the exact canonical content/print parts.
 
-    `action` is the page's Generate PDF link: it leads the reader toolbar, or
-    heads the content of a page without the reader shell.
+    `action` is the page's Generate PDF link: it leads the reader toolbar's
+    page actions. A page without the reader shell (empty head) returns its
+    content unchanged, and its caller sets the action in the breadcrumb row.
     """
-    standalone = ('<p class="print-actions">' + action + '</p>' if action else "") + content
+    standalone = content
     parts = PurePosixPath(relative).parts
     if len(parts) < 3 or parts[0] not in {"web", "print"}:
         return standalone, "", ""
@@ -5796,12 +5819,14 @@ def publication_reader_shell(content: str, relative: str, output_id: str = "", *
     return wrap(content, context, relative, action), head, body
 
 
-def render_print_page(relative: str, page: dict, preview: bool, authorization: dict) -> str:
+def render_print_page(relative: str, page: dict, preview: bool, authorization: dict,
+                      *, actions: str = "") -> str:
     content, reader_head, reader_body = publication_reader_shell(page["html"], relative, page.get("output_id", ""))
     rendered = wrap_in_layout(
         relative, relative, page_classes(relative, relative), page["title"],
         breadcrumb(relative, relative), content, preview, authorization,
         head_extra=page.get("head_extra", "") + reader_head, body_extra=page.get("body_extra", "") + reader_body,
+        actions=actions,
     )
     if len(rendered.encode("utf-8")) > PREVIEW_DOCUMENT_LIMIT:
         raise ReleaseError(f"{relative}: print HTML exceeds the existing 1 MB budget")
@@ -5882,10 +5907,11 @@ def render_source_print_page(
     if not isinstance(title, str) or not title.strip():
         raise ReleaseError(f"source reader has no title: {relative}")
     target = native_print_pages()["readers"].get(relative)
+    actions = ""
     if target is not None:
         from _native_print import reader_action
-        page = {**page, "html": reader_action(relative, target) + page["html"]}
-    return render_print_page(relative, page, preview, authorization)
+        actions = reader_action(relative, target)
+    return render_print_page(relative, page, preview, authorization, actions=actions)
 
 
 # Presentation order only: canonical object records continue to own names,

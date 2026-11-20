@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.augustine.sermo-185.1845-migne-pl38.ia-djvu-text-de2c5a46"
+edition_id = "edition.augustine.sermo-185.1845-migne-pl38"
+artifact_type = "ocr-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Public domain in the United States by publication date: the printing was published at Paris in 1845 (series title page, PDF page 8 of artifact.augustine.sermo-185.1845-migne-pl38.ia-pdf-829acec8, read on the image), and a work first published abroad before 1931 is out of United States copyright with no term running, the line guidance/missals.md section 5 records as current on 1 January 2026, written here as derived for calendar year 2026 and not as a standing rule. The bytes are the Internet Archive's optical character recognition of the item's page images; machine recognition of a public-domain printing adds no human authorship (Bridgeman Art Library v. Corel Corp., 36 F. Supp. 2d 191, S.D.N.Y. 1999). THE GOOGLE QUESTION WAS DECIDED ON THESE BYTES: probes run case-insensitively over the whole file with runs of non-alphanumeric characters collapsed returned \"usage guidelines\" 0, \"about google book search\" 0, \"this is a digital copy\" 0, \"google book search\" 0, \"this is a reproduction of a library book\" 1, \"digitized by google\" 371 and \"google\" 380. Lines 1-7 are the recognized text of Google's short reproduction notice, and the Digitized by Google occurrences are the recognized page-foot stamps; all of it is Google's prose, not the book's, kept in the exact bytes and disposed of under src/sources/inventories/google-usage-guidelines-rights-v1.toml, never quoted, cited or counted as Migne's or Augustine's text and not licensed under Triptych's licence. NOT RELIED ON: that the item is available, that the download succeeded, or any host rights label."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/patrologiae_cursus_completus_lat_vol_038/patrologiae_cursus_completus_lat_vol_038_djvu.txt"
+provenance = "Fetched whole over HTTPS from the source_url with curl on 2026-11-19, hashed with sha256sum before use, and copied here unaltered. The byte size, 5,272,833, and the SHA-1, f67820062f09c6a6bbe5191a33c0ace1cd8d6e8d, equal the item's own file listing (archive.org/metadata/patrologiae_cursus_completus_lat_vol_038, read 2026-11-19). The library held no record of this item (repository search for patrologiae_cursus_completus_lat_vol_038 and patrologia-latina-volume-38 over the source records: none). No source text passed through a language model at any point between the server and this hash."
+retrieved = "2026-11-19"
+sha256 = "de2c5a4605cb998251fd6467c5f4328550de4dfee023709796fac9edb70d2716"
+byte_size = 5272833
+path = "src/sources/works/augustine/sermo-185/editions/1845-migne-pl38/artifacts/ia-djvu-text-de2c5a46/patrologiae_cursus_completus_lat_vol_038_djvu.txt"
+encoding = "utf-8"
+indexable = true
+notes = "The complete Internet Archive DjVuTXT optical text layer of item patrologiae_cursus_completus_lat_vol_038, the whole of PL 38 (Augustine's sermons, first part): 104,444 LF-terminated lines, valid UTF-8, no CR bytes. Completeness check: byte size and SHA-1 equal the item's own file listing. Filed under this constituent edition as the narrowest exact witness retrieved; it serves edition.augustine.sermo-191.1845-migne-pl38 as well. Uncorrected optical recognition: a locating and searching layer, not a text of record (it reads the heading In Natali Domini, II of Sermo CLXXXV as In Natali Domini, m). Wording quoted from it must be collated against the page images. It is the text layer of the same item as artifact.augustine.sermo-185.1845-migne-pl38.ia-pdf-829acec8, recognised from the item's page images rather than from the PDF's bytes, so no derived_from edge is asserted."

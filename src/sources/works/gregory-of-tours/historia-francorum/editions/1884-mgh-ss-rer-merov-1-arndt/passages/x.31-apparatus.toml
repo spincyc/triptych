@@ -1,0 +1,29 @@
+schema = 1
+record_type = "passage"
+id = "passage.gregory-of-tours.historia-francorum.1884-mgh-ss-rer-merov-1-arndt.x.31-apparatus"
+edition_id = "edition.gregory-of-tours.historia-francorum.1884-mgh-ss-rer-merov-1-arndt"
+artifact_id = "artifact.gregory-of-tours.historia-francorum.1884-mgh-ss-rer-merov-1-arndt.x.31-apparatus-checked-text-922d9077"
+artifact_sha256 = "922d9077b629be110a7237bdd5c4f20deb4f81041f60bd0f2d92de76eb745f97"
+locus = "X.31"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Arndt's apparatus to the X.31 fast list (p. 445, notes h-p) and his preface on the authority of X.31 (p. 19, ll. 23-37): the chapter was suspected by Cointius and rejected as interpolated by Kries; the best codices are truncated before it; it survives in A 1, D 9, D 11 and in p (Paris 10848), whose subscription shows it was copied from a complete codex."
+physical_line_ranges = [[1, 14]]
+text = "Cap. 31. A 1. D. g. l. p. De — ieiunia des. p. depositio A 1. vii D 5. A A 1. sancti add. p. in add. A 1; ad add. g. tria D 5. septemana p. Ultimum (X, 31) Historiae Francorum caput cum a Cointio suspectum iudicatum esset, Kries v. cl. ut interpolatum prorsus eicere voluit. Gravi casu evenit, ut optimis codicibus finis truncatus sit, quare caput ultimum in illis desideratur, quod codices B 1 et 2 habuisse ex indice libro X. praemisso intelligitur. Sunt etiam qui illud servaverint: Primus codex Casinensis, A 1, qui quamvis minoris aetatis sit quam alii, tamen inter bonos numerandus est, secundus Beccensis (D 9), tertius Claromontanus (D 11). E quibus unus (p = Parisiensis 10848) hanc subscriptionem fert: Explicit liber decimus sancti Gregorii Turonensis episcopi de gestis Francorum, qua ex codice integro illum exscriptum esse indicatur. Itaque huius capitis auctoritas libris scriptis satis confirmata est."
+transcription_segments = [
+  { line = 1, text = "Cap. 31. A 1. D. g. l. p." },
+  { line = 2, text = "De — ieiunia des. p." },
+  { line = 3, text = "depositio A 1." },
+  { line = 4, text = "vii D 5." },
+  { line = 5, text = "A A 1." },
+  { line = 6, text = "sancti add. p." },
+  { line = 7, text = "in add. A 1; ad add. g." },
+  { line = 8, text = "tria D 5." },
+  { line = 9, text = "septemana p." },
+  { line = 10, text = "Ultimum (X, 31) Historiae Francorum caput cum a Cointio suspectum iudicatum esset, Kries v. cl. ut interpolatum prorsus eicere voluit." },
+  { line = 11, text = "Gravi casu evenit, ut optimis codicibus finis truncatus sit, quare caput ultimum in illis desideratur, quod codices B 1 et 2 habuisse ex indice libro X. praemisso intelligitur." },
+  { line = 12, text = "Sunt etiam qui illud servaverint: Primus codex Casinensis, A 1, qui quamvis minoris aetatis sit quam alii, tamen inter bonos numerandus est, secundus Beccensis (D 9), tertius Claromontanus (D 11)." },
+  { line = 13, text = "E quibus unus (p = Parisiensis 10848) hanc subscriptionem fert: Explicit liber decimus sancti Gregorii Turonensis episcopi de gestis Francorum, qua ex codice integro illum exscriptum esse indicatur." },
+  { line = 14, text = "Itaque huius capitis auctoritas libris scriptis satis confirmata est." },
+]
+verified_on = "2026-11-18"
+notes = "Read on the page images at 300 dpi. Mark h stands on 'De' and on 'ieiunia' of the line 'De Kalendis Octobris usque depositionem domni Martini bina in septimana ieiunia', so codex p omits the October-to-Martinmas line, not the Martinmas-to-Christmas line. Marks i-p stand on the Martinmas-to-Christmas line: A 1 reads 'A' for 'De' and 'depositio', adds 'in'; D 5 reads 'vii' for 'domni' and 'tria' for 'terna'; p adds 'sancti' and spells 'septemana'. Contrast Guadet-Taranne 1838 p. 274, whose footnote (1) says the Martinmas-to-Christmas line ('A depositione domni Martini usque natale Domini') is not in its 'cod. Regio' (passage of that edition). The two editions report different omissions in different manuscripts; neither is harmonised here. Preface lines 31-34 between the transcribed sentences (the codices with the larger part of the chapter) are omitted."

@@ -151,8 +151,8 @@ source_id = "artifact.honorius-augustodunensis.gemma-animae.1895-garnier-migne-p
 loci = ["IV.67", "IV.68", "IV.86"]
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
-context = "Read discovery OCR at index-located native chapters. IV.67–68 are rejected as matches to this Collect: the short common incipit conceals a different petition. IV.86 receives the actual adversity petition within an older Salus populi formulary and return-from-exile construction. This is an analogue only, not this postconciliar Sunday and not an eligible saint/Father quota witness; needs image collation before quotation. Checked native scope: Gemma animae IV.67–68; IV.86."
-source_fingerprint = "sha256:472c828bf45f8c1c1d4e99c11211b27a8834e420d9bc76cf99a1d51833bfdffb"
+context = "Read discovery OCR at index-located native chapters. IV.67–68 are rejected as matches to this Collect: the short common incipit conceals a different petition. IV.86 receives the actual adversity petition within an older Salus populi formulary and return-from-exile construction. This is an analogue only, not this postconciliar Sunday and not an eligible saint/Father quota witness; needs image collation before quotation. Checked native scope: Gemma animae IV.67–68; IV.86. Metadata review 2026-11-18: the fingerprint moved because the Gemma animae locus_pattern widened from book IV to books I-IV and the PL 172 text layer's notes now record that its scan lacks cols. 639-642; nothing cited here falls in that leaf, and the bytes are unchanged."
+source_fingerprint = "sha256:665511bc1fd8296ba8431c2e3e3717b6e29df4fa145e1b6706a78bf81dafd667"
 
 [[bindings]]
 source_id = "artifact.berno-of-reichenau.libellus-de-quibusdam-rebus-ad-missae-officium-pertinentibus.latin-migne-pl-142.ia-djvu-ocr-991758f7"

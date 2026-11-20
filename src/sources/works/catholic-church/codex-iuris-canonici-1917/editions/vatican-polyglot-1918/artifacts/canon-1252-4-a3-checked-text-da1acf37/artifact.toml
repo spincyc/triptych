@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.codex-iuris-canonici-1917.vatican-polyglot-1918.canon-1252-4-a3-checked-text-da1acf37"
+edition_id = "edition.catholic-church.codex-iuris-canonici-1917.vatican-polyglot-1918"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The 1917 Latin code in its 1918 Vatican printing, public domain in the United States by date of publication."
+rights_jurisdiction = "United States"
+provenance = "Transcribed on 2026-11-18 from the page image(s) named in each line's locator; the OCR layer was a finding aid only. No source text passed through a language model."
+retrieved = "2026-11-18"
+sha256 = "da1acf376309ee899771e42d670d1b2c9f27d452ee180942a8e4dcdd51c3bf77"
+byte_size = 237
+path = "src/sources/works/catholic-church/codex-iuris-canonici-1917/editions/vatican-polyglot-1918/artifacts/canon-1252-4-a3-checked-text-da1acf37/cic1917-canon-1252-4.txt"
+derived_from = "artifact.catholic-church.codex-iuris-canonici-1917.vatican-polyglot-1918.leaf-n412-a3-2a8021f5"
+transformation = "Read the named printed page(s) as image(s) of the parent artifact and transcribe the quoted extent with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced locator naming the printed page or column; preserve the printing's wording, spelling, capitalization, accents and punctuation; join line-end hyphenation; expand nothing; omit running heads, marginal numbers and footnote markers unless a line says otherwise."
+indexable = true
+encoding = "utf-8"

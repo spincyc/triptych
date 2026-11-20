@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.jacques-paul-migne.patrologia-latina-volume-183.1854-paris.bernard-in-adventu-4.1-duo-adventus-checked-text-1280a8a1"
+edition_id = "edition.jacques-paul-migne.patrologia-latina-volume-183.1854-paris"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces a few sentences of Bernard of Clairvaux's twelfth-century Latin as printed in the 1854 Paris volume of the Patrologia Latina, which is in the United States public domain by date of publication (the parent scan's rights_basis gives the reasoning). It is transcribed from page images rendered from the hashed Internet Archive scan and contains no Internet Archive markup, no optical-text bytes and none of the editors' notes."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription collated against the page images of the hashed Internet Archive scan internet-archive-pdf-7a1e1e7a (SHA-256 7a1e1e7a...5fd1), fetched whole again and re-hashed on 2026-11-18; the tracked optical text ia-djvu-text-44995734 was used only to locate the pages. Column 47, PDF page 30."
+retrieved = "2026-11-18"
+sha256 = "1280a8a19fdce3166686256137fd9054227863b15b5a017b0fc9ef538c7efa6f"
+byte_size = 722
+path = "src/sources/works/jacques-paul-migne/patrologia-latina-volume-183/editions/1854-paris/artifacts/bernard-in-adventu-4.1-duo-adventus-checked-text-1280a8a1/bernard-in-adventu-4.1-duo-adventus.txt"
+derived_from = "artifact.jacques-paul-migne.patrologia-latina-volume-183.1854-paris.internet-archive-pdf-7a1e1e7a"
+transformation = "Read the named columns as images rendered at 200 dots per inch from the hashed scan with pdftoppm, cropped to one print column at a time, and transcribe the quoted sentences with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced work-sermon-and-section locator; preserve the printed wording, spelling (including j and the ae and oe ligatures as printed), capitalization and punctuation; close the printer's spaces before colons, semicolons and question marks and join line-end hyphenation; omit italics, the inline scriptural references in parentheses, the bold marginal page numbers of the earlier edition, column letters and footnote markers."
+indexable = true
+encoding = "utf-8"

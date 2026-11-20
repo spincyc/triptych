@@ -1529,7 +1529,7 @@ Augustine, Theodoret, and Bellarmine are compared by exact psalm and lemma. Aqui
 
 **Evidence:**
 
-- Augustine, Enarrationes in Psalmos 85.1–6 (New Advent heading Exposition on Psalm 86); J. E. Tweed, NPNF 1.8 (Buffalo, 1888), New Advent revised web text, https://www.newadvent.org/fathers/1801086.htm.
+- Augustine, Enarrationes in Psalmos 85.1–6 (New Advent heading Exposition on Psalm 86); J. E. Tweed, NPNF 1.8 (New York, 1888), New Advent revised web text, https://www.newadvent.org/fathers/1801086.htm.
 
 **Qualification and checked extent:** Iteration 1 re-entry directly rechecked the identified underlying source and target locus; retained interpretive claim confirmed. Direct reception, underlying work and numbered locus inspected in the edition-identified historical English translation; no fresh Latin or page-image collation. The poor/holy clauses treated in §§2–4 belong to the complete psalm context but are omitted by the appointed Introit. Underlying 1888 translation is public domain in the United States; exact modern host markup requires its own registration rights disposition.
 
@@ -1697,7 +1697,7 @@ Augustine, Theodoret, and Bellarmine are compared by exact psalm and lemma. Aqui
 
 **Evidence:**
 
-- Augustine, Enarrationes in Psalmos 46.3, with 46.2 for the preceding summons to praise by voice and good works; on Vulgate Psalm 46:3 (modern Psalm 47:2), Nicene and Post-Nicene Fathers, first series, vol. 8 (Buffalo: Christian Literature Publishing Co., 1888), English translation by J. E. Tweed, New Advent “Psalm 47.” https://www.newadvent.org/fathers/1801047.htm
+- Augustine, Enarrationes in Psalmos 46.3, with 46.2 for the preceding summons to praise by voice and good works; on Vulgate Psalm 46:3 (modern Psalm 47:2), Nicene and Post-Nicene Fathers, first series, vol. 8 (New York: The Christian Literature Company, 1888), English translation by J. E. Tweed, New Advent “Psalm 47.” https://www.newadvent.org/fathers/1801047.htm
 
 **Qualification and checked extent:** Iteration 1 re-entry directly rechecked the identified underlying source and target locus; retained interpretive claim confirmed. Direct paragraph 3 checked as reception of the material parallel to the Alleluia’s ending, rather than as commentary on the Alleluia’s principal Psalm 94 attribution. Augustine identifies the exalted king with the crucified and ascended Christ and explicitly includes Jewish apostles and believers in the kingship before widening it to all nations. The surrounding homily carries historical anti-Jewish polemic: do not detach its collective language for application to present Jews, and preserve its express inclusion of believing Israel. This establishes an exegetical reading of a parallel scriptural clause, not the origin or transmission of the chant’s wording. Historical English translation checked without a new Latin collation.
 
@@ -1883,7 +1883,7 @@ Cyril, Augustine, Chrysostom, and Aquinas directly comment on the Johannine text
 
 **Evidence:**
 
-- Augustine, In Iohannis Evangelium tractatus 26.10–20, particularly 26.13, 15–18, on John 6:48–59; translated by John Gibb, Nicene and Post-Nicene Fathers, first series, vol. 7 (Buffalo: Christian Literature Publishing Co., 1888), New Advent complete Tractate 26. https://www.newadvent.org/fathers/1701026.htm
+- Augustine, In Iohannis Evangelium tractatus 26.10–20, particularly 26.13, 15–18, on John 6:48–59; translated by John Gibb, Nicene and Post-Nicene Fathers, first series, vol. 7 (New York: The Christian Literature Company, 1888), New Advent complete Tractate 26. https://www.newadvent.org/fathers/1701026.htm
 
 **Qualification and checked extent:** Iteration 1 re-entry directly rechecked the identified underlying source and target locus; retained interpretive claim confirmed. Direct English edition checked across the appointed lemma and surrounding argument. Section 13 identifies Christ’s body with the body animated by his Spirit and cites the one bread/one body of 1 Corinthians 10:17; sections 15 and 18 distinguish the sacrament visibly received from its saving reality of holy fellowship and abiding in Christ. Sections 11 and 18 retain the possibility of unworthy reception; section 16 retains the future bodily resurrection despite temporal death. Do not flatten this into either a merely symbolic account or automatic salvation through outward eating. Any bracketed editorial supplementation in this old translation requires separate attribution if quoted; no new Latin collation was undertaken.
 

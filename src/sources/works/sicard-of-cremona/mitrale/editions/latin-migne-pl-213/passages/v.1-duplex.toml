@@ -1,0 +1,17 @@
+schema = 1
+record_type = "passage"
+id = "passage.sicard-of-cremona.mitrale.latin-migne-pl-213.v.1-duplex"
+edition_id = "edition.sicard-of-cremona.mitrale.latin-migne-pl-213"
+artifact_id = "artifact.sicard-of-cremona.mitrale.latin-migne-pl-213.v.1-duplex-checked-text-43ddc11a"
+artifact_sha256 = "43ddc11a00d3b11034676362b8c959b5bbf5e3efed017662943c8aae51872324"
+locus = "V.1"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Mitrale V.1 'Dominica prima de Adventu': the Lord's coming is celebrated for a twofold cause, for his coming is twofold, the first in humility, the second in majesty. PL 213 col. 192, right column of leaf n101. The sentence continues past the colon."
+physical_line_ranges = [[1, 2]]
+text = "Adventum Domini ex causa duplici celebramus: duplex est enim adventus Domini. Primus fuit in humilitate, secundus erit in majestate:"
+transcription_segments = [
+  { line = 1, text = "Adventum Domini ex causa duplici celebramus: duplex est enim adventus Domini." },
+  { line = 2, text = "Primus fuit in humilitate, secundus erit in majestate:" },
+]
+verified_on = "2026-11-18"
+notes = "Read on the page image of leaf n101. The print sets a space before each colon; it is closed up here. The OCR reads 'adventus. Domini' with a spurious stop."

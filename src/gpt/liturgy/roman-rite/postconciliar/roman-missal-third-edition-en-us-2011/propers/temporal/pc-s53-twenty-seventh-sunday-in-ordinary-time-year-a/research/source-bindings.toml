@@ -207,16 +207,16 @@ source_id = "artifact.honorius-augustodunensis.gemma-animae.1895-garnier-migne-p
 loci = ["IV.65"]
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
-context = "Checked witness locator: Gemma animae IV.65; physical lines 56283-56332. Bounded formulary search matched only the shared Collect. OCR read; no independent page-image collation. Different older Mass with different surrounding elements; not evidence of postconciliar whole-Mass interpretation or eligible author quota."
-source_fingerprint = "sha256:472c828bf45f8c1c1d4e99c11211b27a8834e420d9bc76cf99a1d51833bfdffb"
+context = "Checked witness locator: Gemma animae IV.65; physical lines 56283-56332. Bounded formulary search matched only the shared Collect. OCR read; no independent page-image collation. Different older Mass with different surrounding elements; not evidence of postconciliar whole-Mass interpretation or eligible author quota. Metadata review 2026-11-18: the fingerprint moved because the Gemma animae locus_pattern widened from book IV to books I-IV and the PL 172 text layer's notes now record that its scan lacks cols. 639-642; nothing cited here falls in that leaf, and the bytes are unchanged."
+source_fingerprint = "sha256:665511bc1fd8296ba8431c2e3e3717b6e29df4fa145e1b6706a78bf81dafd667"
 
 [[bindings]]
 source_id = "passage.honorius-augustodunensis.gemma-animae.1854-migne-pl-172.iv.65"
 loci = ["IV.65"]
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
-context = "Retained 1854 checked transcription, physical lines 1-11 / PL 172:714-715, and its source records reread on 2026-09-28 alongside the 1895 OCR. Its declared facsimile ancestry controls the derivative's provenance, without claiming a new page-image collation. Collect-only historical reception; own heading and differing elements recorded in scope.md."
-source_fingerprint = "sha256:60f8b47126edefd120c5bf6ffba4209b1118c3a2357673c5baec2d58d593fdd2"
+context = "Retained 1854 checked transcription, physical lines 1-11 / PL 172:714-715, and its source records reread on 2026-09-28 alongside the 1895 OCR. Its declared facsimile ancestry controls the derivative's provenance, without claiming a new page-image collation. Collect-only historical reception; own heading and differing elements recorded in scope.md. Metadata review 2026-11-18: the fingerprint moved because the Gemma animae locus_pattern widened from book IV to books I-IV and the 1854 edition's notes now list III.1 among its checked chapters; its loci still match, and the bound record and its artifact are unchanged."
+source_fingerprint = "sha256:e72140ed7b6ccd357cb1b8884eed9cc11aba0ddf786675c846996cb77d190d3f"
 
 [[bindings]]
 source_id = "passage.international-commission-on-english-in-the-liturgy.publication-policies.2013-amended-booklet.global-computer-networks"

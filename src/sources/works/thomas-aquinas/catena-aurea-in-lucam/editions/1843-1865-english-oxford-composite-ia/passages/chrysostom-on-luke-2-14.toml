@@ -1,0 +1,18 @@
+schema = 1
+record_type = "passage"
+id = "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.chrysostom-on-luke-2-14"
+edition_id = "edition.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia"
+artifact_id = "artifact.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.chrysostom-on-luke-2-14-checked-text-2985f3b0"
+artifact_sha256 = "2985f3b05271613f2a73f880cee8a492802576427a2661dff7897f49df0eb20e"
+locus = "Luke 2:14, Chrysostom (as the Catena gives it); Catena printed pages 72-73 (Part I, 1843), facsimile PDF pages 94-95"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The whole of the second Chrysostom comment under the lemma Luke 2:13-14, from CHRYS. at the foot of page 72 to earthly things on page 73, where ORIGEN; But in a mystery begins."
+physical_line_ranges = [[1, 3]]
+text = "Chrys. Behold the wonderful working of God. He first brings Angels down to men, and then brings men up to heaven. The heaven became earth, when it was about to receive earthly things."
+transcription_segments = [
+  { line = 1, text = "Chrys. Behold the wonderful working of God." },
+  { line = 2, text = "He first brings Angels down to men, and then brings men up to heaven." },
+  { line = 3, text = "The heaven became earth, when it was about to receive earthly things." },
+]
+verified_on = "2026-11-19"
+notes = "No marginal attribution stands beside this label. OCR AGAINST PAGE (ocr-1455eb5f lines 3882-3891): the optical text gives the same words; it also interleaves marginal, running-head or other-column text (cap 13 VER 15 20 ST LUKE 73)."

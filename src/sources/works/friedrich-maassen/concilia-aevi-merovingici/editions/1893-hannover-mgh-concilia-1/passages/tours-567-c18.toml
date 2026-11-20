@@ -1,0 +1,20 @@
+schema = 1
+record_type = "passage"
+id = "passage.friedrich-maassen.concilia-aevi-merovingici.1893-hannover-mgh-concilia-1.tours-567-c18"
+edition_id = "edition.friedrich-maassen.concilia-aevi-merovingici.1893-hannover-mgh-concilia-1"
+artifact_id = "artifact.friedrich-maassen.concilia-aevi-merovingici.1893-hannover-mgh-concilia-1.tours-567-c18-checked-text-395b039a"
+artifact_sha256 = "395b039a9388ca6d0ce3a4a2fa9a57a522851e27cb90c9b86f5ec47e6ba6ab18"
+locus = "Concilium Turonense a. 567, c. XVIII (XVII)"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Second Council of Tours (567), canon XVIII in Maassen's numbering (XVII in the older editions, Hefele's c. 17): the monks' fasts through the year, ending 'de Decembre usque natale Domini omni die ieiunent'. Printed p. 126, ll. 20-26 (PDF p. 148), with the apparatus to ll. 25-26; the canon continues to p. 127."
+physical_line_ranges = [[1, 5]]
+text = "XVIII. (XVII.) De ieiuniis vero antiqua a monachis instituta conserventur, ut de pascha usque quinquagessima excepto rogationes omne die fratribus prandium praeparetur; post quinquagessima tota ebdomada ex asse ieiunent. Postea usque kalendas Agusti ter septimana ieiunent: secunda, quarta et sexta die excepto his, qui aliqua infirmitate constricti sunt. Augusto, quia cotidie missae sanctorum sunt, prandium habeant; Septembro toto et Octobro et Novembro, sicut prius dictum est, ter in septimana, de Decembre usque natale Domini omni die ieiunent. 25 septembrio B, in Septembri edd. et octobro scripsimus, Octobri Sur. Sirm., om. α novembrio B, Novembri edd. 26 decembrio B, Decembri edd. natalem Crab. Sur. utroque loco"
+transcription_segments = [
+  { line = 1, text = "XVIII. (XVII.) De ieiuniis vero antiqua a monachis instituta conserventur, ut de pascha usque quinquagessima excepto rogationes omne die fratribus prandium praeparetur; post quinquagessima tota ebdomada ex asse ieiunent." },
+  { line = 2, text = "Postea usque kalendas Agusti ter septimana ieiunent: secunda, quarta et sexta die excepto his, qui aliqua infirmitate constricti sunt." },
+  { line = 3, text = "Augusto, quia cotidie missae sanctorum sunt, prandium habeant; Septembro toto et Octobro et Novembro, sicut prius dictum est, ter in septimana, de Decembre usque natale Domini omni die ieiunent." },
+  { line = 4, text = "25 septembrio B, in Septembri edd. et octobro scripsimus, Octobri Sur. Sirm., om. α novembrio B, Novembri edd." },
+  { line = 5, text = "26 decembrio B, Decembri edd. natalem Crab. Sur. utroque loco" },
+]
+verified_on = "2026-11-18"
+notes = "Read on the page image. Spellings (quinquagessima, ebdomada, Agusti, Septembro, Octobro, Decembre) are the edition's, following the manuscripts. Footnote marker 4 (at 'statuerunt', l. 28) lies outside the extent. In the apparatus, 'et octobro scripsimus ... om. α' means 'et Octobro' is Maassen's restoration and his manuscript family α omits October. The text layer reads 'Decembre' correctly but garbles the apparatus ('ag us', 'Xo-vrmbri')."

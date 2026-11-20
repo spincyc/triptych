@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.8.1-manger-checked-text-2849e39d"
+edition_id = "edition.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces a few sentences of Gregory the Great's sixth-century Latin as printed in Migne's Patrologia Latina 76 (Garnier reprint, Paris, 1878), which is in the United States public domain by date of publication (the parent scan's rights_basis gives the reasoning). It is transcribed from page images rendered from the hashed Internet Archive scan and contains no optical-text bytes and none of Migne's footnotes."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription collated against the page images of the hashed Internet Archive scan ia-pdf-4cd0ddfd (SHA-256 4cd0ddfd...7cc4) on 2026-11-19; the tracked optical text ia-djvu-text-13c0bbad was used only to locate the page. PL 76 col. 1104 B, PDF page 552."
+retrieved = "2026-11-19"
+sha256 = "2849e39dc8c79667a897f3a2d03e913585f40909d8a532473da1cbe7ee787bd2"
+byte_size = 375
+path = "src/sources/works/gregory-the-great/homiliae-in-evangelia/editions/1878-latin-migne-pl76-garnier/artifacts/8.1-manger-checked-text-2849e39d/8.1-manger.txt"
+derived_from = "artifact.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.ia-pdf-4cd0ddfd"
+transformation = "Read the named page as images rendered at 300 dots per inch (600 and 1200 dots per inch for doubtful punctuation and ligatures) from the hashed scan with pdftoppm, and transcribe the quoted sentences with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced locator; preserve the printed wording, Migne's orthography (j, the ae and oe ligatures, capitals) and punctuation, including printed punctuation that departs from the sense; close the printer's spaces before colons, semicolons and question marks and supply the space the printer omitted after a comma or between words set solid; join line-end hyphenation; omit italics, the bold earlier-edition page numbers embedded in the text, footnote markers, scriptural references printed in parentheses, column letters and running heads, all of which are recorded in the passage notes."
+indexable = true
+encoding = "utf-8"

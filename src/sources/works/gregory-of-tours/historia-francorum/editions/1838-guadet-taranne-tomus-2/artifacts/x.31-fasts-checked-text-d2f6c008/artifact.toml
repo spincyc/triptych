@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.gregory-of-tours.historia-francorum.1838-guadet-taranne-tomus-2.x.31-fasts-checked-text-d2f6c008"
+edition_id = "edition.gregory-of-tours.historia-francorum.1838-guadet-taranne-tomus-2"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Gregory of Tours' Latin and an editor's one-line footnote in an 1838 Paris printing; Public domain in the United States by publication date. The title page of this copy, read on the page image at PDF p. 7, prints PARISIIS ... 1838. A work first published abroad before 1931 is out of United States copyright: that is the line guidance/missals.md section 5 records from Cornell's public-domain chart as current on 1 January 2026, and because it moves every January it is written here as derived for calendar year 2026 and not as a standing rule. Restoration under 17 U.S.C. 104A cannot keep it protected: a restored term runs no longer than ninety-five years from publication, and ninety-five years from 1838 ended with 1933. No life-based term is relied on."
+rights_jurisdiction = "United States"
+provenance = "Transcribed on 2026-11-18 from printed p. 274 (PDF p. 282) of the hashed PDF f4ba5d56453f68fa6f52a30e21e5008da281e6a4a8ca8a1f6d4403b5b1c8ffdb, rendered at 150 dpi; the OCR layer was a finding aid only."
+retrieved = "2026-11-18"
+sha256 = "d2f6c00830c80129f815e66a086f333c7911de504c203fe8d9174ca7dae57220"
+byte_size = 665
+path = "src/sources/works/gregory-of-tours/historia-francorum/editions/1838-guadet-taranne-tomus-2/artifacts/x.31-fasts-checked-text-d2f6c008/guadet-taranne-x31-p274.txt"
+derived_from = "artifact.gregory-of-tours.historia-francorum.1838-guadet-taranne-tomus-2.ia-pdf-f4ba5d56"
+transformation = "Read the named printed page(s) as image(s) of the parent artifact and transcribe the quoted extent with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced locator naming the printed page or column; preserve the printing's wording, spelling, capitalization, accents and punctuation; join line-end hyphenation; expand nothing; omit running heads and marginal numbers; the footnote marker (1) is kept where printed because the footnote is transcribed."
+indexable = true
+encoding = "utf-8"

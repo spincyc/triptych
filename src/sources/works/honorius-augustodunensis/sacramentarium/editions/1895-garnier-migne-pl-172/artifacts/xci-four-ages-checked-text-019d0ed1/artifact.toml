@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.honorius-augustodunensis.sacramentarium.1895-garnier-migne-pl-172.xci-four-ages-checked-text-019d0ed1"
+edition_id = "edition.honorius-augustodunensis.sacramentarium.1895-garnier-migne-pl-172"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces a few sentences of Honorius Augustodunensis's Latin as printed in the 1895 Garnier reissue of Migne's Patrologia Latina volume 172, a printing published long before 1931 and in the public domain in the United States (guidance/missals.md section 5, Cornell's chart as current on 1 January 2026); the underlying medieval text is likewise public domain. A faithful transcription adds no original authorship, and nothing of the Internet Archive's delivery is reproduced."
+rights_jurisdiction = "United States"
+provenance = "Triptych transcription made on 2026-11-18 by acquisition lane A3 (fork F2) from the page image artifact.honorius-augustodunensis.sacramentarium.1895-garnier-migne-pl-172.ia-leaf-n398-377138a1 (sha256 377138a17f59edf96dab8b48b8ed130b5bb62bde48a99cecbf36cc982bc3753b), read on the image itself. The retained optical text layer artifact.honorius-augustodunensis.gemma-animae.1895-garnier-migne-pl-172.ia-djvu-ocr-2ebfcb5f was used only to find the locus (OCR line 63136; the heading 'Cap. XCI. ... De Adventu Domini' stands at OCR lines 63056-63062); where it differs, the page governs. No source text passed through a language model between the server and these bytes other than the transcriber's reading of the image."
+retrieved = "2026-11-18"
+sha256 = "019d0ed10a646a33d14bab47f103f4ef95fb6e25cb207edb9e83ac098b476248"
+byte_size = 286
+path = "src/sources/works/honorius-augustodunensis/sacramentarium/editions/1895-garnier-migne-pl-172/artifacts/xci-four-ages-checked-text-019d0ed1/honorius-sacramentarium-xci.txt"
+derived_from = "artifact.honorius-augustodunensis.sacramentarium.1895-garnier-migne-pl-172.ia-leaf-n398-377138a1"
+transformation = "Read the named column on the parent page image (local crops of the unmodified fetched bytes, enlarged for small type) and transcribe the quoted extent with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced locator naming the volume column; preserve the printing's wording, spelling (including j and the ae/oe ligatures as printed), capitalization and punctuation; join line-end hyphenation; normalize inter-word spacing to one space after punctuation where the compressed setting omits it; italics are not marked; expand nothing."
+indexable = true
+encoding = "utf-8"

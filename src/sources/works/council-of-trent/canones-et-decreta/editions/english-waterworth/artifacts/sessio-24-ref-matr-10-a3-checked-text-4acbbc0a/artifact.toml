@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.council-of-trent.canones-et-decreta.english-waterworth.sessio-24-ref-matr-10-a3-checked-text-4acbbc0a"
+edition_id = "edition.council-of-trent.canones-et-decreta.english-waterworth"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "J. Waterworth's 1848 London translation in an undated reprint, public domain in the United States by date of publication."
+rights_jurisdiction = "United States"
+provenance = "Transcribed on 2026-11-18 from the page image artifact.council-of-trent.canones-et-decreta.english-waterworth.leaf-n477-a3-c5e95779 (full image and a lossless jpegtran crop); the OCR layer was a finding aid only. No source text passed through a language model."
+retrieved = "2026-11-18"
+sha256 = "4acbbc0a35c52e1a5f695aa6c6c487c581672fc2c8aa4d173eae582ed82bc0a6"
+byte_size = 563
+path = "src/sources/works/council-of-trent/canones-et-decreta/editions/english-waterworth/artifacts/sessio-24-ref-matr-10-a3-checked-text-4acbbc0a/waterworth-s24-ref-matr-c10.txt"
+derived_from = "artifact.council-of-trent.canones-et-decreta.english-waterworth.leaf-n477-a3-c5e95779"
+transformation = "Read the named printed page(s) as image(s) of the parent artifact and transcribe the quoted extent with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced locator naming the printed page or column; preserve the printing's wording, spelling, capitalization, accents and punctuation; join line-end hyphenation; expand nothing; omit running heads, marginal numbers and footnote markers unless a line says otherwise."
+indexable = true
+encoding = "utf-8"

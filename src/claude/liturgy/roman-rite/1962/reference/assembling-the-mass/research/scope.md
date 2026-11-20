@@ -120,6 +120,9 @@ transcription is reproduced in the publication.
 - Every numbered rubric cited in the publication was read at its own locus. Every rubric
   quoted in Latin was additionally read as a page image (260 dpi for the Missal facsimile,
   200 dpi for the *Acta*).
+  **Corrected on 2026-11-18:** the *Acta* "page images" were renderings of an OCR re-typesetting,
+  not of the print; the quoted *Acta* wording was re-read on the microfilm page facsimile on
+  2026-11-18 and agrees (see `edition-manifest.md`).
 - Build, log review, every-page visual review and web-edition conversion are recorded in
   `source-audit.md`.
 - This is an internal source audit. It is not independent specialist, theological, canonical

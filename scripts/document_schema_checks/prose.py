@@ -14,7 +14,7 @@ from .reference import (
 )
 
 
-KINDS = {"article-faith", "article-canon-law", "article-scripture", "biography", "history-parish", "history-translation", "history-account"}
+KINDS = {"article-faith", "article-canon-law", "article-scripture", "biography", "history-parish", "history-translation", "history-account", "seasonal-primer-1962"}
 RECORDS = {
     "biography": ("scope", "source-audit", "chronology", "tradition-audit"),
     "history-parish": ("scope", "source-audit", "evidence-map", "pastor-succession"),
@@ -112,6 +112,13 @@ def check(root: Path, record: dict) -> list[str]:
     if len(audit_paths) != len(set(audit_paths)):
         errors.append("distinct research roles must not alias the same record")
     view = source_view(root, record)
+    # editorial.md, "Write to the reader with gravity and wonder": Latin and
+    # Greek are translated in the sentence, never under a printed label. The
+    # first Advent primer labelled 36 phrases this way (2026-11-19).
+    for line_number, line in enumerate(view.text.splitlines(), 1):
+        if re.search(r"\(\s*gloss\s*:", line, re.I):
+            errors.append(f"reader-facing gloss label \"(gloss: …)\" at expanded line {line_number}; translate in the sentence")
+            break
     if record["kind"] == "article-canon-law":
         _legal_scope(root, record, view, errors)
     if record["kind"] == "history-parish":

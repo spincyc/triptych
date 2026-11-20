@@ -1,0 +1,17 @@
+schema = 1
+record_type = "passage"
+id = "passage.bernard-of-clairvaux.sermons-of-st-bernard-on-advent-and-christmas.1909-london-washbourne.hedley-introduction-liberty-circumcision"
+edition_id = "edition.bernard-of-clairvaux.sermons-of-st-bernard-on-advent-and-christmas.1909-london-washbourne"
+artifact_id = "artifact.bernard-of-clairvaux.sermons-of-st-bernard-on-advent-and-christmas.1909-london-washbourne.hedley-introduction-liberty-circumcision-checked-text-b36578bb"
+artifact_sha256 = "b36578bb951007af8b412474a1102b6992be9e71f9adf715713a829181aa8a58"
+locus = "Hedley, Introduction, printed pp. vi-vii"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Bishop J. C. Hedley's introduction, the two sentences on the liberty taken with the text and the combined Circumcision sermon, read on printed pages vi-vii (PDF pages 8-9) whole."
+physical_line_ranges = [[1, 2]]
+text = "In one or two places considerable liberty has been taken with the text of the sermons. We are informed, in regard to the sermon on the Circumcision (p. 135), that this sermon has been combined with one on the same subject in the saint’s commentary on the Canticle of Canticles."
+transcription_segments = [
+  { line = 1, text = "In one or two places considerable liberty has been taken with the text of the sermons." },
+  { line = 2, text = "We are informed, in regard to the sermon on the Circumcision (p. 135), that this sermon has been combined with one on the same subject in the saint’s commentary on the Canticle of Canticles." },
+]
+verified_on = "2026-11-18"
+notes = "The page shows 'in r egard' with a spacing fault; transcribed as 'in regard'. On p. vii Hedley also says the translation misses the tanquam fulgur egrediens (the italic f is broken on the scan and reads like a t)."

@@ -362,12 +362,15 @@
     if (head.querySelector('[data-complete-bible-print]')) return;
     const complete = M.biblePrintForEdition(biblePrints, edition.id);
     if (!complete) return;
-    const line = T.el('p', 'complete-bible-print');
-    const link = T.el('a', null, 'Print complete edition');
+    // The edition's PDF is a page action (site.css, "Page actions"), at the end
+    // of the reader head, beside the first line under its title.
+    const line = T.el('p', 'complete-bible-print page-actions');
+    const link = T.el('a', 'page-action page-action--pdf', 'Print complete edition');
     link.href = T.sitePath(complete.href);
     link.setAttribute('aria-label', 'Print complete edition — ' + complete.label);
     link.dataset.completeBiblePrint = complete.id;
     line.appendChild(link);
+    head.classList.add('page-actions-host');
     head.appendChild(line);
   }
 

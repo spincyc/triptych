@@ -1042,6 +1042,13 @@ that change, printing the three seasonal orations by cross-reference (`The other
 on page 120`, p. 345; `The other Secrets, as on page 130` and `The other Postcommunions, as on
 page 131`, p. 355) (LIT-020).
 
+**Corrected on 2026-11-18:** the "220 dpi rendering" of AAS 52 p. 709 above was a rendering of the
+vatican.va `AAS-52-1960-ocr.pdf`, which is ABBYY FineReader's re-typesetting of its own OCR with no
+page raster, not an image of the 1960 print. On 2026-11-18 p. 709 was re-read on the microfilm page
+facsimile `artifact.holy-see.acta-apostolicae-sedis.volume-52-1960.ia-microfilm-issue-pdf-51e41032` (PDF p. 123, 300 dpi): under the running head *Sacra Congregatio Rituum*, *Caput IV
+Variationes in Proprio de Tempore*, n. 18 reads `Orationes pro diversitate Temporum abolentur.`
+The quotation agrees. *Rubricae generales* n. 18 on p. 599 (PDF p. 11) was confirmed there as well.
+
 **English.** All three orations have a tracked public-domain English witness and passage
 records: `artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en`,
 sha256 `c79e9500b1b3a50f4ed3f6096b9bf89012f16bf79a8d24c1ed365b295ec1bae0`, 38,946 bytes, lines
@@ -1147,6 +1154,13 @@ repository derivative and finding aid, keys `pentecost-12` through `pentecost-18
 `lent-1-thursday`, `lent-1-ember-friday`, `lent-2-saturday`, `lent-4-tuesday`, `lent-4-thursday`,
 `pentecost-7`. Hesbert's *Antiphonale Missarum Sextuplex* only through gregorien.info's index
 (see §11).
+
+**Corrected on 2026-11-18:** the AAS 52 entry above describes a rendering of the OCR re-typesetting
+`AAS-52-1960-ocr.pdf`, not a page image of the print. Printed pp. 709 and 599 were re-read on
+2026-11-18 on the microfilm page facsimile
+`artifact.holy-see.acta-apostolicae-sedis.volume-52-1960.ia-microfilm-issue-pdf-51e41032` (PDF
+pp. 123 and 11): the quoted *Variationes* sentence and the subject of *Rubricae generales* n. 18
+agree. P. 600 was not re-read. See the correction under **Rubric** above.
 
 **Not opened by the liturgical-history lane, with the reason:** Hesbert's own pages (rights);
 Rheinau, S. Gallen 348, Pamelius and Menard, the four books Wilson's Gelasian apparatus cites

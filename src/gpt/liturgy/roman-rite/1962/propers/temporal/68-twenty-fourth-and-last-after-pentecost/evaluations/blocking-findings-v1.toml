@@ -50,12 +50,12 @@ run_id = "13ecdd1552c245ea"
 workflow = "proper-study"
 workflow_version = 19
 stage = "web-review"
-iteration = 0
+iteration = 1
 disposition = "PASS"
 standing = 0
 accepted_count = 0
 advisory_count = 1
-observation_count = 9
+observation_count = 8
 
 [[stages]]
 stage = "homily-review"
@@ -107,7 +107,7 @@ observation_count = 0
 
 [[stages]]
 stage = "web-review"
-iteration = 0
+iteration = 1
 disposition = "PASS"
 run_id = "13ecdd1552c245ea"
 workflow = "proper-study"
@@ -115,7 +115,7 @@ workflow_version = 19
 standing = 0
 accepted_count = 0
 advisory_count = 0
-observation_count = 1
+observation_count = 0
 
 [[advisories]]
 stage = "study-review"
@@ -164,8 +164,3 @@ note = "Existing checks run independently: check-content-preflight, research edi
 stage = "study-review"
 location = "Review scope and limits"
 note = "Reviewed the authored canonical study, not prior reviewer verdicts or the author's conversation. The generated chronology appendix remains outside this authored-prose judgment; no contradictory authored dating claim was found. No optional print export was built or approved, and no full-page publication-layout inspection is claimed. Historical NPNF English and the identified Bede/Bellarmine transcriptions were checked at the used loci, not newly collated against Greek, manuscripts or their complete historical printings. Catalog-only leads and rejected consultations were not treated as supporting witnesses. No deliverable, research record, shared source, inventory, release/index record, accepted-run file or archive was edited, and the workflow was not advanced."
-
-[[observations]]
-stage = "web-review"
-location = ".scratch/proper-study-68/renewed-web-review-0000/evidence.md"
-note = "Independent inspection details, source-locus reasoning, existing and reviewer-added checks, corrected diagnostic-only failures, screenshots, link availability and preservation hashes are recorded in the assigned scratch directory."

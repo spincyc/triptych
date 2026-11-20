@@ -1,0 +1,20 @@
+schema = 1
+record_type = "passage"
+id = "passage.ambrose.expositio-evangelii-secundum-lucam.csel-32-4-schenkl-1902.ambrose-expositio-lucae-2.19"
+edition_id = "edition.ambrose.expositio-evangelii-secundum-lucam.csel-32-4-schenkl-1902"
+artifact_id = "artifact.ambrose.expositio-evangelii-secundum-lucam.csel-32-4-schenkl-1902.ambrose-expositio-lucae-2.19-checked-text-fa4b8d74"
+artifact_sha256 = "fa4b8d747d07a8134d217decada32fae837d108cf6711d8c0e6be71da95e28ac"
+locus = "2.19"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "CSEL 32/4 printed page 52, lines 6-16 (PDF page 105), Maurist column 1288 D-E in the margin. The whole of section 19 of book II, on Mary's journey into the hill country (Luke 1:39-40): it opens after the letter-spaced lemma Exsurgens autem Maria ... salutauit Elisabet and ends at gratia, before section 20 discite et uos, sanctae mulieres. Schenkl's marginal 19 stands on the line where morale est begins and his 20 on the line where discite begins, so nescit tarda molimina sancti spiritus gratia closes section 19."
+physical_line_ranges = [[1, 5]]
+text = "morale est omnibus, ut qui fidem exigunt fidem adstruant. et ideo angelus cum abscondita nuntiaret, ut fides adstrueretur exemplo, senioris feminae sterilisque conceptum uirgini Mariae nuntiauit, ut possibile deo omne quod ei placuerit adsereret. ubi audiuit hoc Maria, non quasi incredula de oraculo nec quasi incerta de nuntio nec quasi dubitans de exemplo, sed quasi laeta pro uoto, religiosa pro officio, festina pro gaudio in montana perrexit. quo enim iam deo plena nisi ad superiora cum festinatione contenderet? nescit tarda molimina sancti spiritus gratia."
+transcription_segments = [
+  { line = 1, text = "morale est omnibus, ut qui fidem exigunt fidem adstruant." },
+  { line = 2, text = "et ideo angelus cum abscondita nuntiaret, ut fides adstrueretur exemplo, senioris feminae sterilisque conceptum uirgini Mariae nuntiauit, ut possibile deo omne quod ei placuerit adsereret." },
+  { line = 3, text = "ubi audiuit hoc Maria, non quasi incredula de oraculo nec quasi incerta de nuntio nec quasi dubitans de exemplo, sed quasi laeta pro uoto, religiosa pro officio, festina pro gaudio in montana perrexit." },
+  { line = 4, text = "quo enim iam deo plena nisi ad superiora cum festinatione contenderet?" },
+  { line = 5, text = "nescit tarda molimina sancti spiritus gratia." },
+]
+verified_on = "2026-11-18"
+notes = "CSEL AGAINST MIGNE (the R3 dossier's Wikisource/PL 15 wording): no word differs within the dossier's quoted extent. Differences are orthographic and of punctuation only: uoto for voto; lower-case deo and spiritus; no comma before in montana perrexit (Migne festina pro gaudio, in montana); no comma before nisi (Migne Deo plena, nisi). Apparatus at the foot of the page for these lines: 9 exemplo (v. l. exemplum C), sterelisque P, 16 sps sci X (abbreviation only); none touches the quoted sentences' sense. OCR AGAINST PAGE: the optical text reads these lines correctly except for layout noise."

@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.william-durandus.rationale-divinorum-officiorum.1612-lyon-tomus-secundus.vi.2-gloria-checked-text-09b8036f"
+edition_id = "edition.william-durandus.rationale-divinorum-officiorum.1612-lyon-tomus-secundus"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces a few sentences of William Durandus's Latin as printed in the Lyon 1612 edition of the Rationale divinorum officiorum, tomus secundus, a printing published long before 1931 and in the public domain in the United States (guidance/missals.md section 5, Cornell's chart as current on 1 January 2026); the underlying medieval text is likewise public domain. A faithful transcription adds no original authorship, and nothing of the Internet Archive's delivery is reproduced."
+rights_jurisdiction = "United States"
+provenance = "Triptych transcription made on 2026-11-18 by acquisition lane A3 (fork F2) from the page image artifact.william-durandus.rationale-divinorum-officiorum.1612-lyon-tomus-secundus.ia-leaf-n16-b40a7aed (sha256 b40a7aed287f98baa689826a18379eccebbb895cfd7f76f2c23619a26d409b84), read on the image itself. The retained optical text layer artifact.william-durandus.rationale-divinorum-officiorum.1612-lyon-tomus-secundus.ia-djvu-ocr-b9b266dd was used only to find the locus (OCR lines 624-627, where it reads 'C3cecur' for tacetur); where it differs, the page governs. No source text passed through a language model between the server and these bytes other than the transcriber's reading of the image."
+retrieved = "2026-11-18"
+sha256 = "09b8036f1ab5aff3700c5b815c7fba9bc9b936d9fcd8c5057c25dc8f9d55c90d"
+byte_size = 143
+path = "src/sources/works/william-durandus/rationale-divinorum-officiorum/editions/1612-lyon-tomus-secundus/artifacts/vi.2-gloria-checked-text-09b8036f/durandus-rationale-vi-2-gloria.txt"
+derived_from = "artifact.william-durandus.rationale-divinorum-officiorum.1612-lyon-tomus-secundus.ia-leaf-n16-b40a7aed"
+transformation = "Read the named folio page on the parent page image (local crops of the unmodified fetched bytes, enlarged) and transcribe the quoted extent with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced locator naming the folio page. Long s is transcribed as s; every other letterform is kept as printed: u/v and i/j as printed, ae/oe ligatures and e-caudata (ę), grave accents, the ampersand. Abbreviations are NOT expanded: a suspension stroke over a letter is given by the corresponding Unicode tilde letter (ã ẽ õ ũ ñ), q with a stroke through the descender (quia) by U+A757 ꝗ, the quod sign by U+A759 ꝙ, and the scilicet sign (long s with period) by 's.'. Line-end division is joined, and inter-word spacing after punctuation is normalized to one space where the compressed setting omits it."
+indexable = true
+encoding = "utf-8"

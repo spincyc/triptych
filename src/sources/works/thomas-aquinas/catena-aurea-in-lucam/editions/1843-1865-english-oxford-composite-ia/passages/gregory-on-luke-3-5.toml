@@ -1,0 +1,17 @@
+schema = 1
+record_type = "passage"
+id = "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.gregory-on-luke-3-5"
+edition_id = "edition.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia"
+artifact_id = "artifact.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.gregory-on-luke-3-5-checked-text-b4701c1a"
+artifact_sha256 = "b4701c1a16595bbcb857396d5818a99a6a70ff4852a4f3e348ce23ac79200f35"
+locus = "Luke 3:5, Gregory (Hom. in Ev. 20.6; margin Greg. ubi sup.); Catena printed page 112 (Part I, 1843), facsimile PDF page 134"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The whole of the Gregory comment on the crooked made straight and the rough ways smooth (Luke 3:5), from GREG. after Gregory of Nyssa's comment to meekness, where CHRYS. begins."
+physical_line_ranges = [[1, 2]]
+text = "Greg. But the crooked places are become straight, when the hearts of the wicked, perverted by a course of injustice, are directed to the rule of justice. But the rough ways are changed to smooth, when fierce and savage dispositions by the influence of Divine grace return to gentleness and meekness."
+transcription_segments = [
+  { line = 1, text = "Greg. But the crooked places are become straight, when the hearts of the wicked, perverted by a course of injustice, are directed to the rule of justice." },
+  { line = 2, text = "But the rough ways are changed to smooth, when fierce and savage dispositions by the influence of Divine grace return to gentleness and meekness." },
+]
+verified_on = "2026-11-18"
+notes = "The margin reads Greg. ubi sup., referring back to Greg. 20. in Ev. higher on the page; the wording answers Hom. 20.6 (Prava directa fiunt cum malorum corda per injustitiam detorta ad justitiae regulam diriguntur; Wikisource artifact complete-extracted-text-dc25dd69 line 238). OCR AGAINST PAGE (ocr-1455eb5f lines 5808-5818): straiglit for straight; Greg, for the marginal Greg.; otherwise the wording agrees."

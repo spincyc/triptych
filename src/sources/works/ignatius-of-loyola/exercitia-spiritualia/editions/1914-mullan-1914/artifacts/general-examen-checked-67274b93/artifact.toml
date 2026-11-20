@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.ignatius-of-loyola.exercitia-spiritualia.mullan-1914.general-examen-checked-67274b93"
+edition_id = "edition.ignatius-of-loyola.exercitia-spiritualia.mullan-1914"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The identified 1914 printed English text (New York: P. J. Kenedy & Sons, 1914, title page PDF p. 6) is public domain in the United States by publication before 1931, as the parent artifact records; this file is literal historical wording of that printing checked against its page images, adding no translation, paraphrase or editorial wording beyond the declared mechanical normalizations. It carries none of the Google digitisation wrapper or labels."
+retrieved = "2026-11-18"
+sha256 = "67274b934d48fbb582e42acb523035ad22dd5ccfa599442834e5b4e49de9d410"
+byte_size = 813
+indexable = true
+encoding = "utf-8"
+path = "src/sources/works/ignatius-of-loyola/exercitia-spiritualia/editions/1914-mullan-1914/artifacts/general-examen-checked-67274b93/checked.txt"
+derived_from = "artifact.ignatius-of-loyola.exercitia-spiritualia.mullan-1914.historical-ocr-fe256c5b"
+transformation = "Hand transcription made from the page images, rendered locally with pdftoppm from the Internet Archive PDF named in the provenance; the parent OCR was used only to locate the pages and was diffed word by word against this file afterwards, every difference being resolved on the image. No source text passed through a language model. Typographic quotation marks are rendered as straight ASCII quotes; thin spaces before ? ! ; : are removed; line-end hyphenation is joined (a compound printed with a hyphen keeps it); footnote reference numerals are omitted; italics are not marked; small capitals are rendered in mixed case, with full capitals kept where printed larger. One sense unit per line, each prefixed by a bracketed locator that is a finding label, not printed text. Selected lines only: the Method for Making the General Examen, printed pp. 30-31, complete. The parent's lines 1911-1950 carry this text with the OCR noise 'in r it' and a stray 'I', and with a Google digitisation label between the pages; neither is printed text."
+provenance = "Image check on 2026-11-18 against PDF pp. 55-56 (printed pp. 30-31) of https://archive.org/download/TheSpiritualExercisesOfStIgnatius/TheSpiritualExercisesOfStIgnatius.pdf, SHA-256 638efa98cba848ff9928aa5c5e40bdb25ed1c0aa9e7de80ee97a21a1cddadb44, 3,056,595 bytes, SHA-1 7fd7042b9d0d7390028c1a0a260e7117360cfcf8 equal to the item's file listing. That PDF is a Google digitisation and is not registered here; its rights disposition is the same open question as this edition's raw OCR."
+notes = "Printed pp. 30-31 carry no marginal paragraph numbers; the later standard numbering (nn. 43 and following) cannot be verified in this witness and is not supplied."

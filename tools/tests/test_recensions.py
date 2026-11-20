@@ -804,6 +804,19 @@ class TrackedRecensionTest(unittest.TestCase):
         base = _calendars.mass_index(_calendars.load_document(self.root, "roman-1962"))
         self.assertIn("chrism-mass", base)
 
+    def test_an_added_mass_stands_where_its_departure_row_stands(self):
+        """Departure rows keep the Missal's day order; an added mass follows it.
+
+        Appending every added mass put the Benedictio Palmarum after the Last
+        Sunday after Pentecost, so the pre-1955 lists showed a second Holy Week
+        group at the end of the year.
+        """
+        document = _calendars.load_document(self.root, "roman-pre-1955")
+        seasonal = [mass["key"] for mass in document["sections"]["seasonal"]["masses"]]
+        at = seasonal.index("palm-sunday")
+        self.assertEqual(seasonal[at:at + 3], ["palm-sunday", "blessing-of-palms", "holy-monday"])
+        self.assertEqual(seasonal.count("blessing-of-palms"), 1)
+
     def test_holy_week_gaps_are_typed_absences_not_placeholder_propers(self):
         """Structural departures never manufacture an appointed Proper slot."""
         document = _calendars.load_document(self.root, "roman-pre-1955", effective=False)

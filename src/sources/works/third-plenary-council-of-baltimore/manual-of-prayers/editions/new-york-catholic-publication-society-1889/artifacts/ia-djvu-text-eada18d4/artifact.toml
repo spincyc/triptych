@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.third-plenary-council-of-baltimore.manual-of-prayers.new-york-catholic-publication-society-1889.ia-djvu-text-eada18d4"
+edition_id = "edition.third-plenary-council-of-baltimore.manual-of-prayers.new-york-catholic-publication-society-1889"
+artifact_type = "ocr-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Public domain in the United States by publication date. The edition prints 'Copyright, 1888, by Clarence E. Woodman' (title verso) and Cardinal Gibbons's approval of 17 May 1889 (PDF p. 6): the book was published in the United States in 1889. Its printed 'All rights reserved' is a lapsed nineteenth-century claim. A work published in the United States before 1931 is out of United States copyright: that is the line guidance/missals.md section 5 records from Cornell's public-domain chart, and because it moves every January it is written here as derived for calendar year 2026 and not as a standing rule. The bytes are the Internet Archive's optical character recognition of its own page images; machine recognition adds no human authorship, and a faithful mechanical reproduction of a public-domain printing is not original (Bridgeman Art Library v. Corel Corp., 36 F. Supp. 2d 191 (S.D.N.Y. 1999)). A case-insensitive probe of the whole file for \"google\" returned 0 matches, so the repository's rule on Google front matter (src/sources/inventories/google-usage-guidelines-rights-v1.toml) is not engaged. No host rights label is relied on."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/manualofprayersf00wood/manualofprayersf00wood_djvu.txt"
+provenance = "Fetched whole over HTTPS from the source_url with curl on 2026-11-18, hashed with sha256sum before use, and copied here unaltered; the byte size and SHA-1 were compared with the Internet Archive metadata API's file listing for the item (archive.org/metadata/manualofprayersf00wood) and matched. No source text passed through a language model between the server and this hash."
+retrieved = "2026-11-18"
+sha256 = "eada18d4949720fcef1f031d067136c3dba908d2d3142c62f15bcfe54fc0c33f"
+byte_size = 1379047
+path = "src/sources/works/third-plenary-council-of-baltimore/manual-of-prayers/editions/new-york-catholic-publication-society-1889/artifacts/ia-djvu-text-eada18d4/manualofprayersf00wood_djvu.txt"
+encoding = "utf-8"
+indexable = true
+notes = "The Internet Archive DjVuTXT optical text layer of item manualofprayersf00wood: 46,810 LF-terminated lines, valid UTF-8, no CR bytes. Completeness check: the byte size, 1,379,047, and the SHA-1, d8017976cd6b938f324d63b2463d3e9de4192681, equal the item's own file listing for this file. Uncorrected optical recognition: a locating and searching layer, not a text of record; wording quoted from it is collated against the page images of the PDF registered beside it, and a raw-line negative over it is evidence about the recognition, not about the printed page. It is the text layer of the same item as that facsimile, recognised from the item's original page images rather than from the PDF's bytes, so no derived_from edge is asserted."

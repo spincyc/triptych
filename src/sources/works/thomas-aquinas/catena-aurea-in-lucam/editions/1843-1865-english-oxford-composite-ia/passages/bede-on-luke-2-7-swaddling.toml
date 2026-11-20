@@ -1,0 +1,17 @@
+schema = 1
+record_type = "passage"
+id = "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.bede-on-luke-2-7-swaddling"
+edition_id = "edition.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia"
+artifact_id = "artifact.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.bede-on-luke-2-7-swaddling-checked-text-52006fae"
+artifact_sha256 = "52006faee8806e56c44fde0b88af91cdcd4820ca758605d06f496c7aea92f6c8"
+locus = "Luke 2:7, Bede (In Lucam I); Catena printed pages 67-68 (Part I, 1843), facsimile PDF pages 89-90"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The whole of the Bede comment on the swaddling clothes, from BEDE; at the foot of page 67 to the way of peace on page 68, where GREEK EX. (Metaphrastes in the margin) begins."
+physical_line_ranges = [[1, 2]]
+text = "Bede; He who clothes the whole world with its varied beauty, is wrapped up in common linen, that we might be able to receive the best robe; He by Whom all things are made, is folded both hands and feet, that our hands might be raised up for every good work, and our feet directed in the way of peace."
+transcription_segments = [
+  { line = 1, text = "Bede; He who clothes the whole world with its varied beauty, is wrapped up in common linen, that we might be able to receive the best robe;" },
+  { line = 2, text = "He by Whom all things are made, is folded both hands and feet, that our hands might be raised up for every good work, and our feet directed in the way of peace." },
+]
+verified_on = "2026-11-19"
+notes = "No marginal attribution stands beside this label. OCR AGAINST PAGE (ocr-1455eb5f lines 3614-3628): the optical text gives the same words; it also interleaves marginal, running-head or other-column text (d Helvidius wrote a book to prove after our Lord's birth He ; Meta)."

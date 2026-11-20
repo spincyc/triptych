@@ -1,0 +1,17 @@
+schema = 1
+record_type = "passage"
+id = "passage.john-beleth.summa-de-ecclesiasticis-officiis.latin-migne-pl-202.lxiv-omitted"
+edition_id = "edition.john-beleth.summa-de-ecclesiasticis-officiis.latin-migne-pl-202"
+artifact_id = "artifact.john-beleth.summa-de-ecclesiasticis-officiis.latin-migne-pl-202.lxiv-omitted-checked-text-c55b4156"
+artifact_sha256 = "c55b41561007e09bc8311edb2cf574b4c7329d31435a5384fc32e0c82ed2efea"
+locus = "LXIV"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Summa de ecclesiasticis officiis cap. LXIV 'Quae omittenda sunt in Adventu', its opening: the Te Deum, Gloria in excelsis and Ite, missa est are omitted in Advent as in Septuagesima, but the Alleluia is not, because the season is partly one of joy. PL 202 col. 71, left column of leaf n41."
+physical_line_ranges = [[1, 2]]
+text = "Omittenda sunt in Adventu, ut in Septuagesima, quædam cantica lætitiæ, quemadmodum Te Deum laudamus, Gloria in excelsis, Ite, missa est. Verum enimvero cum tempus istud partim sit lætitiæ, non subticetur Alleluia, sicut in Septuagesima, quod tempus totum mœroris est."
+transcription_segments = [
+  { line = 1, text = "Omittenda sunt in Adventu, ut in Septuagesima, quædam cantica lætitiæ, quemadmodum Te Deum laudamus, Gloria in excelsis, Ite, missa est." },
+  { line = 2, text = "Verum enimvero cum tempus istud partim sit lætitiæ, non subticetur Alleluia, sicut in Septuagesima, quod tempus totum mœroris est." },
+]
+verified_on = "2026-11-18"
+notes = "Read on the page image of leaf n41. Ligatures æ and œ as printed."

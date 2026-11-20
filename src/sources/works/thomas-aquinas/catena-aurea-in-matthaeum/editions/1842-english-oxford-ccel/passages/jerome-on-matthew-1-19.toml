@@ -1,0 +1,16 @@
+schema = 1
+record_type = "passage"
+id = "passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.jerome-on-matthew-1-19"
+edition_id = "edition.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel"
+artifact_id = "artifact.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.text-130e334a"
+artifact_sha256 = "130e334a0e087ba2ff7f2afc9f803921b4d1de16ed45d682c1756c0c14e3cd67"
+locus = "Matthew 1:19, Jerome (Comm. in Matt. I; unlabelled beyond \"Jerome\" in the CCEL text)"
+states = ["cataloged", "acquired", "inspected"]
+context = "Jerome's two comments on Matthew 1:19 in the Catena's block on that verse: how Joseph is called just (line 277), and Joseph's silence as a testimony to Mary (line 280); lines 278-279 between them are Chrysostom and Augustine and are not part of this passage."
+physical_line_ranges = [[277, 277], [280, 280]]
+text = "Jerome: But how is Joseph thus called, “just,” when he is ready to hide his wife’s sin? For the Law enacts, that not only the doers of evil, but they who are privy to any evil done, shall be held to be guilty. Jerome: Or this may be considered a testimony to Mary, that Joseph, confident in her purity, and wondering at what had happened, covered in silence that mystery which he could not explain."
+transcription_segments = [
+  { line = 277, text = "Jerome: But how is Joseph thus called, “just,” when he is ready to hide his wife’s sin? For the Law enacts, that not only the doers of evil, but they who are privy to any evil done, shall be held to be guilty." },
+  { line = 280, text = "Jerome: Or this may be considered a testimony to Mary, that Joseph, confident in her purity, and wondering at what had happened, covered in silence that mystery which he could not explain." },
+]
+notes = "Exact CCEL English digital witness inspected on 2026-11-18; no facsimile collation (no page image of the 1842 Oxford printing is registered for this edition), and no collation with Jerome's Latin. Not verified. Identification: the Catena labels the comment only \"Jerome\". The Roman Breviary reads Jerome's homily on Matthew 1:18-21 at Matins of the Vigil of the Nativity, headed \"Homilia sancti Hieronymi Presbyteri. Lib. I. Comment. in c. 1. Matth.\" with the incipit \"Quare non de simplici virgine, sed de desponsata concipitur?\" (`passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.advent-primer-20261118-vigil-nativity-matins`, verified on page images of the 1888 Pustet printing, p. 174), which this comment renders; the comment is that commentary's, not the Contra Helvidium the Catena cites separately in the same block."

@@ -1,0 +1,21 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.edward-caswall.lyra-catholica.london-1849.advent-primer-20261119-jesu-redemptor-omnium-en-checked-d3c3f631"
+edition_id = "edition.edward-caswall.lyra-catholica.london-1849"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The 1849 London printing is in the public domain in the United States on the pre-1931 line as derived for calendar year 2026, and 17 U.S.C. 104A restoration is unavailable because United Kingdom protection for a translator who died in 1878 ended in 1948; the edition's ia-djvu-ocr record argues the case in full. This focused transcription reproduces only Caswall's printed English and the Latin incipits he prints as headings; it adds no authorship. The Google page-foot stamp on the page images is not text of the book and is not reproduced."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/LyraCatholica1849/LyraCatholica1849.pdf"
+provenance = "Transcribed by lane X1 of the Advent primer revision from page images of the exact registered PDF artifact.edward-caswall.lyra-catholica.london-1849.ia-scan-pdf. No source text passed through a language model."
+retrieved = "2026-11-19"
+sha256 = "d3c3f6316641e856416756cac1a54a835ed7b82186fd79062e13d1cd1ce6820c"
+byte_size = 1250
+path = "src/sources/works/edward-caswall/lyra-catholica/editions/london-1849/artifacts/advent-primer-20261119-jesu-redemptor-omnium-en-checked-d3c3f631/english.txt"
+derived_from = "artifact.edward-caswall.lyra-catholica.london-1849.ia-scan-pdf"
+transformation = "Read on page images rendered at 100 and 250 dpi, with a doubtful point at 500 dpi, from the exact registered whole PDF (SHA-256 c8f7b620f69a376613e1e8956b41c4047485aee0ab3d5726be60b666305238f9, matched with sha256sum before use on 2026-11-19); artifact page = printed page + 38 throughout pp. 48-51, checked on every running folio opened. One printed verse line or heading per LF-terminated UTF-8 line, each prefixed by a braced printed-page locator. Wording, spelling, elision, capitalization and pointing as printed; the apostrophe is U+2019. Not reproduced: indentation of the second and fourth lines, stanza spacing, the capital-and-small-capital setting of each hymn's first word (rendered in ordinary case), the printer's space before ! : ; and ?, running heads, rules and the Google stamp. Headings in capitals are transcribed in capitals; the blackletter day heading in ordinary case. The OCR text layer was used only to find the pages."
+indexable = true
+encoding = "utf-8"
+notes = "Printed pp. 48-49, artifact pages 86-87: the Christmas Vespers and Matins hymn in seven stanzas, the seventh the doxology. 31 LF-terminated lines."

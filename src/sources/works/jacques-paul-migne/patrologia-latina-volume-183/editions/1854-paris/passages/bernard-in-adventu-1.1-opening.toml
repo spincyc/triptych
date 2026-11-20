@@ -1,0 +1,17 @@
+schema = 1
+record_type = "passage"
+id = "passage.jacques-paul-migne.patrologia-latina-volume-183.1854-paris.bernard-in-adventu-1.1-opening"
+edition_id = "edition.jacques-paul-migne.patrologia-latina-volume-183.1854-paris"
+artifact_id = "artifact.jacques-paul-migne.patrologia-latina-volume-183.1854-paris.bernard-in-adventu-1.1-opening-checked-text-af253de3"
+artifact_sha256 = "af253de3a61e320e64c20f93a89bfb4ff3599d3b1550cbea5b57800bf4bfe586"
+locus = "column-35"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Bernard of Clairvaux, Sermones in adventu Domini, sermo I (De Adventu Domini, et sex circumstantiis ejus), the opening sentences of section 1 on the name of Advent. Read on PL 183 column 35 (PDF page 24, left column) from the volume's heading SANCTI BERNARDI ... SERMONES DE TEMPORE, IN ADVENTU DOMINI, through the whole column."
+physical_line_ranges = [[1, 2]]
+text = "Hodie, fratres, celebramus Adventus initium; cujus utique, sicut et cæterarum solemnitatum nomen quidem celebre satis, et notum mundo, sed ratio nominis forte non ita. Infelices enim filii Adam, omissis veris et salutaribus studiis, caduca potius et transitoria quærunt."
+transcription_segments = [
+  { line = 1, text = "Hodie, fratres, celebramus Adventus initium; cujus utique, sicut et cæterarum solemnitatum nomen quidem celebre satis, et notum mundo, sed ratio nominis forte non ita." },
+  { line = 2, text = "Infelices enim filii Adam, omissis veris et salutaribus studiis, caduca potius et transitoria quærunt." },
+]
+verified_on = "2026-11-18"
+notes = "The bold marginal numbers 703-717 before the heading are the earlier edition's pagination and are omitted. OCR AGAINST PAGE: the scan's initial reads Ilodie; the word is Hodie."

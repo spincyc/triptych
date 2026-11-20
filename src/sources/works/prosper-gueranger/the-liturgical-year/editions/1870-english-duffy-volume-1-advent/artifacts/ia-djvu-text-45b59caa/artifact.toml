@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1870-volume-1.ia-djvu-text-45b59caa"
+edition_id = "edition.prosper-gueranger.the-liturgical-year.english-duffy-1870-volume-1"
+artifact_type = "ocr-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Public domain in the United States by publication date. The title page of this copy (PDF p. 9, read on the image on 2026-11-18) reads THE LITURGICAL YEAR. BY THE VERY REV. DOM PROSPER GUERANGER, ABBOT OF SOLESMES. Translated from the French, BY THE REV. DOM LAURENCE SHEPHERD, MONK OF THE ENGLISH-BENEDICTINE CONGREGATION. ADVENT. SECOND EDITION. DUBLIN: JAMES DUFFY, 15, WELLINGTON-QUAY; AND 22 PATERNOSTER-ROW, LONDON. 1870. A work first published abroad before 1931 is out of United States copyright: that is the line guidance/missals.md section 5 records from Cornell's public-domain chart as current on 1 January 2026, written here as derived for calendar year 2026. Restoration under 17 U.S.C. 104A cannot keep it protected: a restored term runs no longer than ninety-five years from publication, and ninety-five years from 1870 ended with 1965. No life-based term is relied on. The bytes are the Internet Archive's optical character recognition (ABBYY FineReader 8.0 per the item metadata) of its own page images and add no human authorship (Bridgeman Art Library v. Corel Corp., 36 F. Supp. 2d 191 (S.D.N.Y. 1999)). GOOGLE: case-insensitive probes over the whole file returned 'google' 0, 'usage guidelines' 0 and 'digitized by' 0, and over the whole PDF's embedded text 0; this is an Internet Archive Scribe scan of a University of North Carolina copy. No host rights label is relied upon."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/liturgicalyear01gura/liturgicalyear01gura_djvu.txt"
+provenance = "Fetched whole over HTTPS from the source_url with curl -sSL on 2026-11-18 into lane A2's scratch directory, hashed with sha256sum before use, and copied here unaltered. The byte size, 1,168,560, and the SHA-1, baf124b922fdefee3dd5d53fa76bbaeb59832035, were compared with the Internet Archive metadata API's file listing for the item (https://archive.org/metadata/liturgicalyear01gura) and matched. The SHA-256 equals that of the copy research lane R1 fetched (.scratch/advent-primer/research/R1/fetched/SHA256SUMS). No source text passed through a language model at any point between the server and this hash."
+retrieved = "2026-11-18"
+sha256 = "45b59caabc685651577c26eaef32fbf7e62ff99678af061e989c18fad8c3106a"
+byte_size = 1168560
+path = "src/sources/works/prosper-gueranger/the-liturgical-year/editions/1870-english-duffy-volume-1-advent/artifacts/ia-djvu-text-45b59caa/liturgicalyear01gura_djvu.txt"
+encoding = "utf-8"
+indexable = true
+notes = "The complete Internet Archive DjVuTXT optical text layer of item liturgicalyear01gura: 38,052 LF-terminated lines, valid UTF-8, no CR bytes. Completeness check: byte size and SHA-1 equal the item's own file listing. Uncorrected optical recognition: a locating and searching layer, not a text of record; wording quoted from it must be collated against the page images of the same item's PDF, and a raw-line negative over it is evidence about the recognition, not about the printed page. It is the text layer of the same item as the PDF, recognised from the item's original page images rather than from the PDF's bytes, so no derived_from edge is asserted. Chapter the First, THE HISTORY OF ADVENT, is lines 1260-1560 (the heading ADVENT at line 1257); the Rorate caeli with English runs from its heading at line 10748 to its last refrain at line 10862, where the two columns are interleaved."

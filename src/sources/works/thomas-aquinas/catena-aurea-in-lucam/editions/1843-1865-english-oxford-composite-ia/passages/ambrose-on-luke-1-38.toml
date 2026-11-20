@@ -1,0 +1,24 @@
+schema = 1
+record_type = "passage"
+id = "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.ambrose-on-luke-1-38"
+edition_id = "edition.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia"
+artifact_id = "artifact.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.ambrose-on-luke-1-38-checked-text-c46d94ee"
+artifact_sha256 = "c46d94eec464b05463bb6e3df095cf2d096c836f8dbc3365a1e58cec7f2d76d5"
+locus = "Luke 1:38, Ambrose (Expositio in Lucam II, on Ecce ancilla Domini); Catena printed page 36 (Part I, 1843), facsimile PDF page 58"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The whole of the Ambrose comment on Behold the handmaid of the Lord, from AMBROSE; after Augustine's comment to the conception of the wish, where GREEK EX. begins. No marginal attribution stands beside it; the margin note Geo-meter. belongs to the Greek Expositor that follows."
+physical_line_ranges = [[1, 9]]
+text = "Ambrose; Behold now the humility, the devotion of the virgin. For it follows, But Mary said, Behold the handmaid of the Lord. She calls herself His handmaid, who is chosen to be His mother, so far was she from being exalted by the sudden promise. At the same time also by calling herself handmaid, she claimed to herself in no other way the prerogative of such great grace than that she might do what was commanded her. For about to bring forth One meek and lowly, she was bound herself to shew forth lowliness. As it follows, Be it unto me according to thy word. You have her submission, you see her wish. Behold the handmaid of the Lord, signifies the readiness of duty. Be it unto me according to thy word, the conception of the wish."
+transcription_segments = [
+  { line = 1, text = "Ambrose; Behold now the humility, the devotion of the virgin." },
+  { line = 2, text = "For it follows, But Mary said, Behold the handmaid of the Lord." },
+  { line = 3, text = "She calls herself His handmaid, who is chosen to be His mother, so far was she from being exalted by the sudden promise." },
+  { line = 4, text = "At the same time also by calling herself handmaid, she claimed to herself in no other way the prerogative of such great grace than that she might do what was commanded her." },
+  { line = 5, text = "For about to bring forth One meek and lowly, she was bound herself to shew forth lowliness." },
+  { line = 6, text = "As it follows, Be it unto me according to thy word." },
+  { line = 7, text = "You have her submission, you see her wish." },
+  { line = 8, text = "Behold the handmaid of the Lord, signifies the readiness of duty." },
+  { line = 9, text = "Be it unto me according to thy word, the conception of the wish." },
+]
+verified_on = "2026-11-18"
+notes = "The Catena gives no book or section; the comment answers Ambrose's Expositio in Lucam book II (the Annunciation sections), which was not collated in CSEL here. OCR AGAINST PAGE (ocr-1455eb5f lines 2169-2180): thy icord for thy word; the marginal Geo- intrudes into the last line; otherwise the wording agrees."

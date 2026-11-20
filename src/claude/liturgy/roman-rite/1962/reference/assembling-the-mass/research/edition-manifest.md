@@ -49,8 +49,22 @@ page numbering equals printed page numbering in this volume.
 | John XXIII, *Rubricarum instructum*, 25 July 1960 | 593–595 | Approving act; three-part division; effective 1 January 1961 | In full, optical text layer |
 | S.R.C., *Decretum generale quo novus rubricarum Breviarii ac Missalis Romani codex promulgatur*, 26 July 1960 | 596 | Promulgating decree | In full, optical text layer |
 | *Rubricae Breviarii et Missalis Romani* | 597–705 | Textual control; source of RGBR 237–238 | Pars prima and pars tertia compared against the Missal at the rules used; RGBR 237–239 read as a page image |
-| *Variationes in Breviario et Missali Romano* | 706–740 | What the reform abolished | Cap. II n. 13 and cap. IV n. 18 read as 200 dpi page images; the rest not read line by line |
+| *Variationes in Breviario et Missali Romano* | 706–729 | What the reform abolished | Cap. II n. 13 and cap. IV n. 18 read as 200 dpi page images; the rest not read line by line |
 | S. Congregatio Concilii, *Novus index statuitur dierum festorum, quibus inest obligatio litandi Sacrum pro populo*, 3 December 1960 | 985–986 | The contemporaneous *festa de praecepto* list, cited once | In full, optical text layer |
+
+**Corrected on 2026-11-18.** The *Acta* artifact named above is not a scanned page facsimile. It is
+ABBYY FineReader's re-typesetting of its own optical recognition, with no page raster, so the
+"page images" read from it (RGBR 237-239; *Variationes* cap. II n. 13 and cap. IV n. 18 at
+200 dpi) were renderings of the OCR, not of the 1960 print. On 2026-11-18 the *Acta* wording this
+publication quotes or summarises was re-read on the microfilm page facsimile `artifact.holy-see.acta-apostolicae-sedis.volume-52-1960.ia-microfilm-issue-pdf-51e41032` at 300 dpi, and
+it agrees: *Rubricarum instructum* art. 1, art. 3 and n. 5 (pp. 594-595, PDF pp. 6-7); the
+decree's binding clause (p. 596, PDF p. 8); RGBR 237-239 (p. 637, PDF p. 49); RGMR 530, the last
+number of the code (p. 685, PDF p. 99); *Variationes* cap. II n. 13 (p. 708, PDF p. 122) and
+cap. IV n. 18 (p. 709, PDF p. 123). The code's opening at p. 597 (PDF p. 9), RGMR 269 at p. 643
+(PDF p. 55) and the *Tabella occurrentiae*, *Tabella concurrentiae* and *Notanda* at pp. 703-705
+(PDF pp. 117-119) were located on the facsimile; the tables' cells were not collated. The *Novus
+index* at pp. 985-986 lies outside that facsimile, which covers pp. 593-740 only; no page facsimile
+of it is registered, and it remains read in the optical text only.
 
 **Difference between the two witnesses of the code.** The *Acta* prints the code under the
 title *Rubricae Breviarii et Missalis Romani* divided into *Pars prima* and numbered

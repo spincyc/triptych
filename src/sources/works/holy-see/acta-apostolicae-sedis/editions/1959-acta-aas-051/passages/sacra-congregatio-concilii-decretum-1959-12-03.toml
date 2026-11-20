@@ -1,0 +1,23 @@
+schema = 1
+record_type = "passage"
+id = "passage.acta-papal-archives.aas.051.1959-acta-aas-051.sacra-congregatio-concilii-decretum-1959-12-03"
+edition_id = "edition.acta-papal-archives.aas.051.1959-acta-aas-051"
+artifact_id = "artifact.acta-papal-archives.aas.051.1959-acta-aas-051.sacra-congregatio-concilii-decretum-1959-12-03-checked-text-c11efadb"
+artifact_sha256 = "c11efadb4a7034a67fdc0ad066bef6601520143bfda5617898e578ab90241b5a"
+locus = "aas-51-p-918-sacra-congregatio-concilii-decretum-1959-12-03"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Sacred Congregation of the Council, decree Facultas anticipandi obligationem abstinentiae et ieiunii pervigilii Nativitatis D. N. Iesu Christi, 3 December 1959, the whole act: John XXIII grants all the faithful the faculty (gratiam ... anticipandi) to anticipate the obligation of abstinence and fast of the Vigil of the Nativity from 24 to 23 December. Printed p. 918; microfilm PDF p. 90."
+physical_line_ranges = [[1, 8]]
+text = "SACRA CONGREGATIO CONCILII DECRETUM FACULTAS ANTICIPANDI OBLIGATIONEM ABSTINENTIAE ET IEIUNII PERVIGILII NATIVITATIS D. N. IESU CHRISTI. Plurimorum Episcoporum ex multis Nationibus votis obsecundans, Ssm̃us Dominus Noster Ioannes Pp. XXIII, praesenti Sacrae Congregationis Concilii Decreto, gratiam deinceps anticipandi obligationem abstinentiae et ieiunii a die vigesima quarta, pervigilio Nativitatis Domini Nostri Iesu Christi, ad diem vigesimam tertiam mensis Decembris omnibus orbis catholici fidelibus concedere dignatus est. Datum Roma, die 3 Decembris 1959. P. Card. Ciriaci, Praefectus L. ✠ S. P. Palazzini, a Secretis"
+transcription_segments = [
+  { line = 1, text = "SACRA CONGREGATIO CONCILII" },
+  { line = 2, text = "DECRETUM" },
+  { line = 3, text = "FACULTAS ANTICIPANDI OBLIGATIONEM ABSTINENTIAE ET IEIUNII PERVIGILII NATIVITATIS D. N. IESU CHRISTI." },
+  { line = 4, text = "Plurimorum Episcoporum ex multis Nationibus votis obsecundans, Ssm̃us Dominus Noster Ioannes Pp. XXIII, praesenti Sacrae Congregationis Concilii Decreto, gratiam deinceps anticipandi obligationem abstinentiae et ieiunii a die vigesima quarta, pervigilio Nativitatis Domini Nostri Iesu Christi, ad diem vigesimam tertiam mensis Decembris omnibus orbis catholici fidelibus concedere dignatus est." },
+  { line = 5, text = "Datum Roma, die 3 Decembris 1959." },
+  { line = 6, text = "P. Card. Ciriaci, Praefectus" },
+  { line = 7, text = "L. ✠ S." },
+  { line = 8, text = "P. Palazzini, a Secretis" },
+]
+verified_on = "2026-11-18"
+notes = "Read on the microfilm page image at 150 dpi and the heading and body again at 300 dpi. 'Datum Roma' is the printing's own reading, not an OCR error as the Advent-primer dossier marked it ('[sic, OCR]'). The dossier's quotation omits the opening clause 'Plurimorum Episcoporum ex multis Nationibus votis obsecundans'. 'Ssm̃us' carries a tilde over the m, given as U+0303."

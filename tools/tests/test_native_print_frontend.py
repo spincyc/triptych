@@ -307,9 +307,11 @@ def interactive_fixture():
             + '<script>window.downloads=0;document.querySelector("[data-native-print-download]").addEventListener("click",'
             + 'event=>{event.preventDefault();downloads++;});new MutationObserver(records=>{announcements+=records.length;})'
             + '.observe(document.querySelector("[data-native-print-status]"),{childList:true,characterData:true,subtree:true});</script>')
-    page = ('<!doctype html><html><head>' + head + '</head><body style="font-family:Georgia,serif">'
-            + body + '</body></html>')
+    # The site stylesheet draws every page action (site.css, "Page actions").
+    page = ('<!doctype html><html><head><link rel="stylesheet" href="../assets/site.css">' + head
+            + '</head><body style="font-family:Georgia,serif">' + body + '</body></html>')
     return {"papal-documents/example.html": page,
+            "assets/site.css": (ROOT / "release/public-alpha/assets/site.css").read_text(),
             "shared/native-print.js": (ROOT / "src/web/browser/shared/native-print.js").read_text(),
             "shared/native-print.css": (ROOT / "src/web/browser/shared/native-print.css").read_text()}
 
@@ -355,7 +357,9 @@ class NativeInteractionTests(unittest.TestCase):
             act("fetch(document.querySelector('[data-native-print-download]').href).then(response=>response.text())", "blob"),
             act("keys", "keys"), act("progressTexts", "progressTexts"),
         ]})
-        self.assertEqual(observed["style"]["font"], "Georgia, serif", observed)
+        # Since 2026-11-17 a page action is set in the interface face whatever
+        # face the page reads in (corpus-browser-vision.md, "Page actions").
+        self.assertTrue(observed["style"]["font"].startswith("system-ui"), observed)
         self.assertEqual(observed["style"]["border"], "solid")
         self.assertEqual(observed["style"]["statusHeight"], 0)
         self.assertEqual(observed["keys"], [{"prevented": False, "shift": False}, {"prevented": False, "shift": True},

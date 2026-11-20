@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.acta-papal-archives.aas.051.1959-acta-aas-051.sacra-congregatio-concilii-decretum-1959-12-03-checked-text-c11efadb"
+edition_id = "edition.acta-papal-archives.aas.051.1959-acta-aas-051"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "qualified-public-domain"
+rights_basis = "Admitted under src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml, [how_to_admit].carrier_artifact. This focused transcription carries only the quoted extent of the act. First publication of these words: Acta Apostolicae Sedis 51 (1959), numbers 16-17 of 10-17 December 1959, the Holy See's official gazette printed in Vatican City (first_publication_imprint Acta Apostolicae Sedis; first_publication_body Sacred Congregation of the Council; first_publication_year 1959): the decree Facultas anticipandi obligationem abstinentiae et ieiunii pervigilii Nativitatis D. N. Iesu Christi of 3 December 1959. us_formality published-abroad-without-us-notice: the AAS printings examined by that record carry no copyright notice, and none is visible on the printed pages read here; the record's L3 residual risk applies (Twin Books Corp. v. Walt Disney Co., 83 F.3d 1162 (9th Cir. 1996), may treat a foreign-language work published abroad without notice as unpublished in the United States). Published on a qualified basis (publication policy priority 6; confidence medium-low): a Holy See text first published in Vatican City in 1931-1975 that lapsed into the U.S. public domain for want of a formality, and whose twenty-year Vatican term under Italian Law 633/1941 arts. 11 and 29, as applied by Vatican Law XII of 1960, had on this project's reading expired before the 1 January 1996 U.S. restoration date (17 U.S.C. 104A). Not adjudicated; U.S. copyright only; implies no ecclesiastical approval or permission."
+rights_jurisdiction = "United States"
+provenance = "Triptych transcription by acquisition lane A3 (fork F1) on 2026-11-18, read on page images rendered with pdftoppm from the hashed microfilm PDF artifact.acta-papal-archives.aas.051.1959-acta-aas-051.ia-microfilm-issue-pdf-2ee02eb6 (sha256 2ee02eb6771437ca2b16711a8c38ed0da0db78f8db1f5c6593dbbb58310ff35a): printed p. 918 (PDF p. 90) at 150 dpi, with the title and text cropped at 300 dpi. The vatican.va OCR PDF artifact.acta-papal-archives.aas.051.vatican-pdf-bd1d2910 (re-fetched whole on 2026-11-18; SHA-256 bd1d291049c06c7d11468e1b8d03eb09e31f0ae3b75d8b8c177dd8ebbb169e1f equal to the registered digest and to the Advent-primer research lane's fetched copy) and its pdftotext layer were used only to find the page. No source text passed through a language model between the server and the hash."
+retrieved = "2026-11-18"
+sha256 = "c11efadb4a7034a67fdc0ad066bef6601520143bfda5617898e578ab90241b5a"
+byte_size = 836
+path = "src/sources/works/holy-see/acta-apostolicae-sedis/editions/1959-acta-aas-051/artifacts/sacra-congregatio-concilii-decretum-1959-12-03-checked-text-c11efadb/sacra-congregatio-concilii-decretum-1959-12-03.txt"
+derived_from = "artifact.acta-papal-archives.aas.051.1959-acta-aas-051.ia-microfilm-issue-pdf-2ee02eb6"
+transformation = "Read the named printed page(s) as images rendered from the parent microfilm PDF and transcribe the quoted extent with one printed paragraph or list item per LF-terminated UTF-8 line, each prefixed by a braced locator naming volume, printed page and number; preserve the printing's wording, spelling, capitals, abbreviations and punctuation; join line-end hyphenation; italics and small capitals are not marked; the thin space the printing sets before a colon or semicolon is not reproduced; running heads omitted."
+indexable = true
+encoding = "utf-8"
+notes = "The title is set in small capitals and transcribed in capitals; 'Ciriaci' is set in small capitals; the cross in 'L. ✠ S.' is the printing's cross symbol."

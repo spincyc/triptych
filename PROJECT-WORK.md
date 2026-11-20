@@ -15037,3 +15037,110 @@ publications is a maintainer's call and is not made here.
 removed unreviewed; see "The Claude Fourteenth Sunday withdrawn, 2026-10-01".
 The general question above is untouched: a withdrawn leaf now declares
 `withdrawn` and needs no edition, but a held one still does.
+
+## Claude Advent primer for the 1962 calendar, 2026-11-18
+
+<!-- promised-deliverable: claude-advent-primer-1962-2026-11-18 -->
+
+The maintainer asked for a Claude primer for Advent in the 1962 Roman Rite: a
+comprehensive, deeply patristic and scriptural preparation for the season, on
+its history and what each Sunday represents, on fasting and anticipation, and
+on spiritual renewal and the renewal of prayer and daily prayer. It must not
+replace or duplicate the per-Sunday proper guides, and it is the smaller first
+member of a series whose larger second member will be a primer for Lent. The
+work was to proceed in phases: a plan for the document and each section;
+research lanes; collation lanes that acquire full source texts into the shared
+corpus and cross-reference them; then cold generation from those records. The
+calendar's Sunday table is to signpost the primer unobtrusively.
+
+Decisions taken with the maintainer: a new series, kind `seasonal-primer-1962`,
+at `liturgy/roman-rite/1962/seasons/advent`; about 15,000 to 20,000 words; all
+four practical aids (daily reading table, graded rule of life, prayer texts,
+preparation for confession); a `## Seasonal Primers` catalog section, an
+italic cue line directly above the Sunday table, and a ◇ note after the †
+note.
+
+**Done.** The series profile and kind (commit 3b4ea2114b). The witnesses'
+acquisition into the source library (8397e48fd8). A cold writer drafted the
+leaf's sections from the plan and the collated evidence only; two independent
+cold reviews followed, and a fix pass applied every accepted finding
+(`research/cold-review.md`). The leaf is installed with its release record,
+its catalog row under Seasonal Primers, and the cue above the Sunday table.
+
+**AAS 52 correction (maintainer's decisions of 2026-11-18).** Verification for
+the primer found that the Holy See's AAS 52 (1960) "-ocr.pdf" is a
+re-typesetting of its own optical recognition, not a facsimile, so readings
+earlier recorded as "page images" of it were OCR. The dependent records were
+re-collated on a microfilm facsimile of issue no. 10 (15 August 1960): two of
+the 1962 calendar reference's four reported Acta divergences (nn. 14–16) were
+OCR artefacts and are withdrawn; n. 18 d's *XVII* is genuine print. The
+maintainer also directed: the Trent and *Gemma animae* locus patterns widened;
+the NPNF first series vol. 1 and 7 imprints corrected with their ids kept; the
+1960 rubrics segment's id kept with its true extent (to p. 729) noted; every
+moved fingerprint's consumers reviewed and re-pinned; and the published
+wording of the calendar reference, the Fourteenth and Fifteenth Sunday guides,
+*Assembling the Mass*, the Augustine biography, the Heaven essay and a GPT
+research note corrected.
+
+Browser products were re-recorded, the release bindings refreshed for the
+paths this work changed and adopted, scoped, for the library records it added
+or first brought into the site, and the corpus index refreshed. Complete on
+2026-11-18.
+
+**Follow-ups** found on the way, not owned by this deliverable: the
+web-edition converter deletes a group
+that follows `\noindent` or `\smallskip`, so a note written
+`\smallskip\noindent{\small ...}` vanishes from the web edition without an
+audit failure unless it holds a checked payload (the primer's 69 notes were
+rewritten to a form that survives); print-document cannot decode a Latin-1
+LaTeX log, so the Heaven essay's build fails; the
+decree of 3 December 1960 (AAS 52, pp. 985–986) has no facsimile in the
+library; the calendar's other Acta loci were read only in the OCR; no witness
+was found for the Advent wreath, the Jesse tree, or Advent Friday abstinence in
+the United States after 1918.
+
+## Claude Advent primer revision, 2026-11-19
+
+<!-- promised-deliverable: claude-advent-primer-1962-revision-2026-11-19 -->
+
+**Request.** The maintainer read the published primer and wrote that it is
+"chock full of ai jargon, has poor pedagogical flow, is stilted, boring,
+repetitive", does not "approach the season with gravity, understanding",
+"needs to have more wow moments", "should tie into christmas with preparation
+materiel (e.g. bethlehem means house of bread, christ the bread of life, laid
+in a manger ; leaves the world bound and executed, enters the world bound and
+laid in a feed trough )", needs "more deep theological depth, and devotional
+impact", and reads like "a rough draft of ai for ai"; "phrases like 'answers'
+are inhuman in their artificiality". A full pass, driven to completion, with
+the project and series guidance amended so the defects do not recur.
+
+**Decisions.** The editorial standard gains "Write to the reader with gravity
+and wonder" and loses the examples that modelled "answers"; the series
+profile is restructured into four parts with a part leading into the feast,
+requires a planned source-found moment per chapter and a blind reader review,
+and drops the labelled gloss; the prose check refuses a printed
+"(gloss: …)". The rewrite is planned chapter by chapter before any prose,
+with new witnesses for Christmas acquired first.
+
+**Done (2026-11-19).** Three source lanes registered and verified 174
+records for Christmas Matins, the hymns, the Missal stations, the
+Martyrology and eleven Fathers (5d80e9d284). The book was rewritten whole in
+four parts after a word to the reader: The Coming; Keeping Advent; Through
+the Weeks; Toward Bethlehem, ending on the holy night. Each chapter rests on
+a moment its sources give (`research/scope.md`, "Second version: plan"). A
+blind reader review (126 findings) and an accuracy review (16, none high, no
+misquotation) were dispositioned and applied (`research/cold-review.md`). The
+reader review produced three more editorial tests and the new part order
+(8c19b08566). The Mass Collects are in Lasance's 1945 English. The audit,
+bindings and references were rebuilt; canon 1252 §1 (1917), Missal rubric n.
+299 (1960), Bute's Psalter notes on the Hours and Gregory's Homily 20 heading
+were registered so that no printed claim rests on an unregistered reading
+(2c70b8d8a5). Browser products, release bindings and the corpus index were
+refreshed and the deployment gates passed.
+
+**Not done, for want of a verified source.** St Mary Major's crib relics; Holy
+Cross built for the relics of the Cross; the Rorate votive Mass and the
+household customs (wreath, St Nicholas, Jesse tree); a 1962 Breviary's own
+statement of the Te Deum's omission. No 1961–62 Breviary is held; the Office
+texts rest on the 1888 Breviary and Bute's English, as About This Book says.
+

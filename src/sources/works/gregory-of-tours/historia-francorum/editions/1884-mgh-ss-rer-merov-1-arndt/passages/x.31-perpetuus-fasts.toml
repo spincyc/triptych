@@ -1,0 +1,24 @@
+schema = 1
+record_type = "passage"
+id = "passage.gregory-of-tours.historia-francorum.1884-mgh-ss-rer-merov-1-arndt.x.31-perpetuus-fasts"
+edition_id = "edition.gregory-of-tours.historia-francorum.1884-mgh-ss-rer-merov-1-arndt"
+artifact_id = "artifact.gregory-of-tours.historia-francorum.1884-mgh-ss-rer-merov-1-arndt.x.31-perpetuus-fasts-checked-text-2137c1c7"
+artifact_sha256 = "2137c1c7eb0844b66fb73f3acde84c9fec5c98ba8029a40edea4327cb70d6b49"
+locus = "X.31"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Book X chapter 31: Perpetuus, sixth bishop of Tours, and his list of fasts (De ieiuniis), printed pp. 444 ll. 25-30 and 445 ll. 1-9 (PDF pp. 468-469); the De vigiliis list follows at l. 10."
+physical_line_ranges = [[1, 9]]
+text = "Sextus ordinatur Perpetuus, de genere et ipse, ut aiunt, senatorio et propinquus decessoris sui, dives valde et per multas civitates habens possessiones. Hic, submota basilica, quam prius Bricius episcopus aedificaverat super sanctum Martinum, aedificavit aliam ampliorem miro opere, in cuius absida beatum corpus ipsius venerabilis sancti transtulit. Hic instituit ieiunia vigiliasque, qualiter per circulum anni observarentur, quod hodieque apud nos tenetur scriptum, quorum ordo hic est. De ieiuniis. Post quinquagesimam quarta, sexta feria usque ad natale sancti Iohannis. De Kalendis Septembris usque Kalendas Octobris bina in septimana ieiunia. De Kalendis Octobris usque depositionem domni Martini bina in septimana ieiunia. De depositione domni Martini usque natale Domini terna in septimana ieiunia. De natale sancti Hilarii usque medio Februario bina in septimana ieiunia."
+transcription_segments = [
+  { line = 1, text = "Sextus ordinatur Perpetuus, de genere et ipse, ut aiunt, senatorio et propinquus decessoris sui, dives valde et per multas civitates habens possessiones." },
+  { line = 2, text = "Hic, submota basilica, quam prius Bricius episcopus aedificaverat super sanctum Martinum, aedificavit aliam ampliorem miro opere, in cuius absida beatum corpus ipsius venerabilis sancti transtulit." },
+  { line = 3, text = "Hic instituit ieiunia vigiliasque, qualiter per circulum anni observarentur, quod hodieque apud nos tenetur scriptum, quorum ordo hic est." },
+  { line = 4, text = "De ieiuniis." },
+  { line = 5, text = "Post quinquagesimam quarta, sexta feria usque ad natale sancti Iohannis." },
+  { line = 6, text = "De Kalendis Septembris usque Kalendas Octobris bina in septimana ieiunia." },
+  { line = 7, text = "De Kalendis Octobris usque depositionem domni Martini bina in septimana ieiunia." },
+  { line = 8, text = "De depositione domni Martini usque natale Domini terna in septimana ieiunia." },
+  { line = 9, text = "De natale sancti Hilarii usque medio Februario bina in septimana ieiunia." },
+]
+verified_on = "2026-11-18"
+notes = "Read on the page images at 300 dpi. Superscript apparatus marks (e, f, g, h on p. 444; a-w on p. 445) are omitted from the transcription; the readings that bear on the Martinmas lines are the separate passage x.31-apparatus. The list is set in italic in this edition. OCR differences: the text layer reads 'ieiunias' (the apparatus mark g read as s), 'subraota', 'sanctura Martinura', 'quorura', and garbles the italic list throughout. Guadet-Taranne (1838) prints 'A depositione', with A 1, for this edition's 'De depositione'."

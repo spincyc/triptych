@@ -105,8 +105,10 @@ evidence is merely a different error.
 
 Quote English scripture from a registered public-domain witness, never
 from a translation under copyright and never from one composed for the
-occasion. A gloss on a Hebrew or Greek word is labelled a gloss, not a
-translation.
+occasion. A gloss on a Hebrew or Greek word gives the word's sense in the
+sentence and is not passed off as a published translation; it carries no
+"(gloss: …)" label (`guidance/editorial.md`, "Write to the reader with
+gravity and wonder").
 
 ## Canon law
 

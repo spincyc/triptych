@@ -118,6 +118,15 @@ season after Pentecost. The notes state only that dependence and that
 difference; [calendar computation](calendar-computation.md#1962-sunday-computation)
 owns the arithmetic, and each resumed Mass's own record owns its texts.
 
+On 2026-11-18 the maintainer added a cue for the Advent primer, whose season
+opens the table. One italic line stands directly above the Proper of Time
+table, `*Before the season:* [Advent: A Primer](…) ◇`, and a ◇ note after the
+§ note says what the primer covers and that each Sunday's Mass stays with its
+guide. The cue is a link, not a row: it has no ID, owns nothing, and the
+primer's entry stays in the catalog's Seasonal Primers section
+([seasonal primers](roman-1962-seasonal-primers.md)). It binds the catalog
+only; the web Propers browse list and the terminal reader's list carry no cue.
+
 The rule binds the Proper of Time table in the
 [Traditional Latin Mass catalog](../../library/traditional-latin-mass.md), the
 web Propers browse list and search results, and the terminal reader's Propers
@@ -136,6 +145,31 @@ the catalog's order and notes agree with the producer. The producer refuses to
 describe a resumed Mass whose record no longer takes its counterpart's texts
 and the Twenty-third Sunday's chants, so the note cannot outlive the
 calendar source.
+
+On 2026-11-17 the maintainer asked that the catalog also offer the Four Last
+Things essays for the four last Sundays of the year, with a note on the
+custom of preaching them. No fixed rows are those Sundays: which formularies
+fall on them changes with the date of Easter (resumed Sundays may precede the
+Last Sunday), and Christ the King or All Saints can take one of them, so the
+essays are not pinned to rows. A short block follows the Proper of Time table,
+before its notes: the series' name, linked to its Faith catalog entry and
+marked §, then one line per provider linking Death, Judgment, Hell and Heaven
+by subject. The § note follows the † note. Only the catalog carries them; the
+browser and terminal lists do not.
+
+The note says what the evidence supports and no more: the liturgy's own turn
+to the last things as the year ends and begins (All Souls; the Last Sunday's
+Gospel, Matthew 24:15–35; the First Sunday of Advent's, Luke 21:25–33), and an
+old custom that gave the four Sundays of Advent to them in preaching (for
+example F. R. H. H. Noyes, *Advent Addresses, or Meditations on the Four Last
+Things*, London 1871; the Church of England's *The Promise of His Glory*,
+1991, names them the traditional summary of Advent's themes). It does not say
+that the Church has long preached them on the Sundays before Advent: the
+search found that only as recent parish practice and as the 1991 book's
+proposal to take them up from the Sundays before Advent, so a later edit
+should not add the claim without new evidence. Linking another catalog's work
+is the exception [repository](../repository.md#public-navigation-and-catalog)
+records; the same test checks the block's place, links, marks and owner.
 
 ## Source Records and Text Control
 

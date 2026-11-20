@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.augustine.sermo-191.1845-migne-pl38.191.1-checked-text-29aef2f4"
+edition_id = "edition.augustine.sermo-191.1845-migne-pl38"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces a few sentences of Augustine's Latin as printed in Migne's Patrologia Latina volume 38, published at Paris in 1845, which is in the United States public domain by date of publication (the parent leaf's rights_basis gives the reasoning). It is transcribed from the page image and contains no Internet Archive markup, no text-layer bytes and none of Google's matter."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription from the hashed Internet Archive leaf image ia-leaf-n511-d82d3097 (SHA-256 d82d3097a74f5dfe32be4244ae34848286739ab6893f5b2c87d7cb7b84241c99), read on 2026-11-19 and checked against PDF page 512 of the hashed complete scan of the volume artifact.augustine.sermo-185.1845-migne-pl38.ia-pdf-829acec8 (SHA-256 829acec8f612dccfc909efd9d11d5a8f6e0743cb4951918424792524da5f960d), which shows the same page; the volume's optical text layer was used only to locate the page. PL 38 columns 1009-1010."
+retrieved = "2026-11-19"
+sha256 = "29aef2f4491617a59fff01e8e3c6156e814e05e41aa00c21be71c80105b2718c"
+byte_size = 1259
+path = "src/sources/works/augustine/sermo-191/editions/1845-migne-pl38/artifacts/191.1-checked-text-29aef2f4/191.1.txt"
+derived_from = "artifact.augustine.sermo-191.1845-migne-pl38.ia-leaf-n511-d82d3097"
+transformation = "Read the leaf on the image, and the same page of the complete scan of the volume rendered at 300 dots per inch with pdftoppm and cropped to half-columns (with a higher-resolution crop where a mark needed settling), and transcribe the quoted sentences with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced locator; preserve the printed wording, spelling, capitalization, punctuation and the ligatures æ and œ; join line-end hyphenation and close the printer's spaces before punctuation; omit running heads, column numbers, the italic chapter summary, footnote markers, inline scripture references in parentheses and italics."
+indexable = true
+encoding = "utf-8"

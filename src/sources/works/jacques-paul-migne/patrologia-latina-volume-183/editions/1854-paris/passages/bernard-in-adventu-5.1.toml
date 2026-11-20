@@ -1,0 +1,26 @@
+schema = 1
+record_type = "passage"
+id = "passage.jacques-paul-migne.patrologia-latina-volume-183.1854-paris.bernard-in-adventu-5.1"
+edition_id = "edition.jacques-paul-migne.patrologia-latina-volume-183.1854-paris"
+artifact_id = "artifact.jacques-paul-migne.patrologia-latina-volume-183.1854-paris.bernard-in-adventu-5.1-checked-text-3ba65d87"
+artifact_sha256 = "3ba65d877df2c9327257e920e4cf461f7a353b9c252f026f9ab4cb788f920df7"
+locus = "column-50"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Bernard of Clairvaux, Sermones in adventu Domini, sermo V (De medio adventu, et triplici innovatione), section 1 entire: the hidden middle coming between the coming in the flesh and the coming in glory. Read on PL 183 column 50 (PDF page 31, right column, from the sermon's heading) and column 51 (PDF page 32, left column, to the head of section 2)."
+physical_line_ranges = [[1, 11]]
+text = "Diximus nuper his qui deargentaverunt pennas suas, dormiendum inter medios cleros, duos significantes adventus: sed ubi sit dormiendum non diximus. Tertius enim quidam adventus est medius inter illos; in quo delectabiliter dormiunt qui eum norunt. Illi enim duo manifesti sunt, sed non iste. In priori quidem in terris visus, et cum hominibus conversatus est; quando, sicut ipse testatur, et viderunt, et oderunt. In posteriore vero videbit omnis caro salutare Dei nostri; et videbunt in quem transfixerunt. Medius occultus est, in quo soli eum in seipsis vident electi, et salvæ fiunt animæ eorum. In primo ergo venit in carne et infirmitate; in hoc medio, in spiritu et virtute; in ultimo, in gloria et majestate. Per virtutem enim pervenitur ad gloriam: quia Dominus virtutum ipse est Rex gloriæ. Et item alibi ait idem propheta: Ut viderem virtutem tuam, et gloriam tuam. Adventus siquidem iste medius, via quædam est, per quam a primo venitur ad ultimum. In primo Christus fuit redemptio nostra: in ultimo apparebit vita nostra: in isto ut dormiamus inter medios cleros, requies est et consolatio nostra."
+transcription_segments = [
+  { line = 1, text = "Diximus nuper his qui deargentaverunt pennas suas, dormiendum inter medios cleros, duos significantes adventus: sed ubi sit dormiendum non diximus." },
+  { line = 2, text = "Tertius enim quidam adventus est medius inter illos; in quo delectabiliter dormiunt qui eum norunt." },
+  { line = 3, text = "Illi enim duo manifesti sunt, sed non iste." },
+  { line = 4, text = "In priori quidem in terris visus, et cum hominibus conversatus est; quando, sicut ipse testatur, et viderunt, et oderunt." },
+  { line = 5, text = "In posteriore vero videbit omnis caro salutare Dei nostri; et videbunt in quem transfixerunt." },
+  { line = 6, text = "Medius occultus est, in quo soli eum in seipsis vident electi, et salvæ fiunt animæ eorum." },
+  { line = 7, text = "In primo ergo venit in carne et infirmitate; in hoc medio, in spiritu et virtute; in ultimo, in gloria et majestate." },
+  { line = 8, text = "Per virtutem enim pervenitur ad gloriam: quia Dominus virtutum ipse est Rex gloriæ." },
+  { line = 9, text = "Et item alibi ait idem propheta: Ut viderem virtutem tuam, et gloriam tuam." },
+  { line = 10, text = "Adventus siquidem iste medius, via quædam est, per quam a primo venitur ad ultimum." },
+  { line = 11, text = "In primo Christus fuit redemptio nostra: in ultimo apparebit vita nostra: in isto ut dormiamus inter medios cleros, requies est et consolatio nostra." },
+]
+verified_on = "2026-11-18"
+notes = "The page prints the bold marginal number 729 inside the sentence Per virtutem enim pervenitur ad gloriam; it is the earlier edition's page number and is omitted. OCR AGAINST PAGE: the optical text's 'via quidam' and 'salve. fiunt anim:' read on the page as 'via quædam' and 'salvæ fiunt animæ'. Bernard's sequence is primus, medius, ultimus; the Mount Melleray English numbers the comings first, second, third (see its passage bernard-in-adventu-5.1)."

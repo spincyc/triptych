@@ -1,0 +1,21 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.edward-caswall.lyra-catholica.london-1849.advent-primer-20261118-en-clara-vox-en-checked-9d8975b0"
+edition_id = "edition.edward-caswall.lyra-catholica.london-1849"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The 1849 London printing is in the public domain in the United States on the pre-1931 line as derived for calendar year 2026, and 17 U.S.C. 104A restoration is unavailable because United Kingdom protection for a translator who died in 1878 ended in 1948; the edition's ia-djvu-ocr record argues the case in full. This focused transcription reproduces only Caswall's printed English and the Latin incipits he prints as headings; it adds no authorship. The Google page-foot stamp on the page images is not text of the book and is not reproduced."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/LyraCatholica1849/LyraCatholica1849.pdf"
+provenance = "Transcribed by lane A2 from page images of the exact registered PDF artifact.edward-caswall.lyra-catholica.london-1849.ia-scan-pdf."
+retrieved = "2026-11-18"
+sha256 = "9d8975b06fc792f58bcf42efe70cd31442ed0c675302deded53b2e21b484e8ba"
+byte_size = 851
+path = "src/sources/works/edward-caswall/lyra-catholica/editions/london-1849/artifacts/advent-primer-20261118-en-clara-vox-en-checked-9d8975b0/english.txt"
+derived_from = "artifact.edward-caswall.lyra-catholica.london-1849.ia-scan-pdf"
+transformation = "Read on page images rendered at 250 dpi from the exact registered whole PDF (SHA-256 c8f7b620f69a376613e1e8956b41c4047485aee0ab3d5726be60b666305238f9, re-fetched whole on 2026-11-18 and matched before use); artifact page = printed page + 38 throughout pp. 38-47, checked on every running folio opened. One printed verse line or heading per LF-terminated UTF-8 line, each prefixed by a braced printed-page locator. Wording, spelling, elision, capitalization and pointing as printed; the apostrophe is U+2019 and the double quotation marks U+201C and U+201D, which is what the printing sets. Not reproduced: indentation of the second and fourth lines, stanza spacing, the capital-and-small-capital setting of each hymn's first word (rendered in ordinary case), the printer's space before ! : ; and ?, running heads, rules and the Google stamp. Headings in capitals or blackletter are transcribed as words with their printed capitalization where it is capitals, otherwise in ordinary case. The OCR text layer was used only to find the pages."
+indexable = true
+encoding = "utf-8"
+notes = "Printed pp. 46-47, artifact pages 84-85: the Advent Lauds hymn in five stanzas, the fifth the doxology. Stanza lines 3-6, 7-10, 11-14, 15-18, 19-22. 22 LF-terminated lines."

@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.alphonsus-liguori.the-incarnation-birth-and-infancy-of-jesus-christ.grimm-1886.advent-novena-checked-da94092e"
+edition_id = "edition.alphonsus-liguori.the-incarnation-birth-and-infancy-of-jesus-christ.grimm-1886"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Public domain in the United States by publication date. The approbation leaf (PDF p. 10) prints 'Copyright, 1886, by Elias Frederick Schauer.': the English text was published in the United States in 1886. This copy's title page reads SECOND EDITION and is undated; the leaves read carry no later notice, and a reprint of the 1886 text adds no new term to it. A work published in the United States before 1931 is out of United States copyright: that is the line guidance/missals.md section 5 records from Cornell's public-domain chart, and because it moves every January it is written here as derived for calendar year 2026 and not as a standing rule. This file is literal historical wording of that printing, transcribed and checked against its page images; it adds no translation, paraphrase or editorial wording beyond the declared mechanical normalizations, and the bracketed locators are bare finding labels."
+retrieved = "2026-11-18"
+sha256 = "da94092e7edcaf4af86d4c67692f092a50cc54e2a71a3d449fdab69d42fe8026"
+byte_size = 14599
+indexable = true
+encoding = "utf-8"
+path = "src/sources/works/alphonsus-liguori/the-incarnation-birth-and-infancy-of-jesus-christ/editions/1886-grimm-benziger-volume-4/artifacts/advent-novena-checked-da94092e/checked.txt"
+derived_from = "artifact.alphonsus-liguori.the-incarnation-birth-and-infancy-of-jesus-christ.grimm-1886.ia-djvu-text-571b32b3"
+transformation = "Hand transcription made from the page images, rendered locally with pdftoppm from the registered facsimile; the parent OCR was used only to locate the pages and was diffed word by word against this file afterwards, every difference being resolved on the image. No source text passed through a language model. Typographic quotation marks are rendered as straight ASCII quotes; thin spaces before ? ! ; : are removed; line-end hyphenation is joined (a compound printed with a hyphen keeps it); footnote reference numerals are omitted; italics are not marked; small capitals are rendered in mixed case, with full capitals kept where printed larger. One sense unit per line, each prefixed by a bracketed locator that is a finding label, not printed text. Epigraphs are omitted. In the contents, the dot leaders are replaced by ' | ' before the printed page number. Each meditation is represented by its number, day heading and title as printed, and its opening sentence only; Advent I carries its first two sentences, and the openings of Advent IX (at 'diminished it;'), Novena III (at 'is come;') and Novena IV (at 'world;') stop at a clause boundary within the sentence. The asterisks at Meditation XIV and at the Novena heading are kept because their footnotes are transcribed. No other wording is altered."
+provenance = "Image check against artifact.alphonsus-liguori.the-incarnation-birth-and-infancy-of-jesus-christ.grimm-1886.ia-pdf-2ca29198 on 2026-11-18: printed pp. 7-8, 12, 172-235 and 300-301 (PDF pp. 11-12, 16, 176-239, 304-305)."
+notes = "Heading wording differs from the contents in four places, each as printed: II contents 'mystery of the Incarnation', heading 'Mystery of Incarnation'; XIII contents 'so much to gain', heading 'so much in order to gain'; Novena VII contents 'ingratitude of man caused', heading 'Ingratitude of Men has caused'; the contents read 'For the Novena of Christmas', the section heading 'for the Novena for Christmas'. Meditation XV's 'Second Sunday.' is the printed reading (by sequence it is the Third Sunday). In the chaplet the page prints 'R. Have Mercy' with a capital M in 2 and 'Have mercy O Lord' without a comma in 5; the OCR misreads 'R.' in 7."

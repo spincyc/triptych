@@ -1,0 +1,21 @@
+schema = 1
+record_type = "passage"
+id = "passage.karl-joseph-von-hefele.conciliengeschichte.1895-edinburgh-english-volume-4.macon-c9"
+edition_id = "edition.karl-joseph-von-hefele.conciliengeschichte.1895-edinburgh-english-volume-4"
+artifact_id = "artifact.karl-joseph-von-hefele.conciliengeschichte.1895-edinburgh-english-volume-4.macon-c9-checked-text-f6bd0d2e"
+artifact_sha256 = "f6bd0d2e94d51f920ce813e9081b3575631bd2a45777978706db643b8380aa46"
+locus = "vol. IV, pp. 403-404"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Hefele's introduction to the first Synod of Macon, which he dates 581, and his summary of its canon 9: the Monday-Wednesday-Friday fast from St Martin's day to Christmas, the Sacrifice in the Lenten manner, and the reading of the canons. Printed pp. 403-404 (PDF pp. 419-420)."
+physical_line_ranges = [[1, 6]]
+text = "We have spoken of the supposed Synod of Grado, of A.D. 579, in the history of the controversy on the three chapters (sec. 280), and therefore we now pass on to the first Synod of Macon (Matisconensis I.), which was summoned by the Frankish King Guntrum in the year 581. It was attended by twenty-one bishops from several ecclesiastical provinces, and the most distinguished were the four archbishops, Priscus of Lyons, Evantius of Vienne, Artemius of Sens, and Remedius of Bourges. The Synod occupied itself, according to the Præfatio of the minutes, partly with public affairs, partly with the care of the poor, and drew up nineteen canons:— 9. From S. Martin's Day until Christmas, a fast must be kept on Monday, Wednesday, and Friday of each week (sabbati, cf. Du Cange, s.v.). The Sacrifice must be offered after the manner of the Lenten season. The canons, too, shall be read at this time, so that no one may plead ignorance in defence of a fault."
+transcription_segments = [
+  { line = 1, text = "We have spoken of the supposed Synod of Grado, of A.D. 579, in the history of the controversy on the three chapters (sec. 280), and therefore we now pass on to the first Synod of Macon (Matisconensis I.), which was summoned by the Frankish King Guntrum in the year 581." },
+  { line = 2, text = "It was attended by twenty-one bishops from several ecclesiastical provinces, and the most distinguished were the four archbishops, Priscus of Lyons, Evantius of Vienne, Artemius of Sens, and Remedius of Bourges." },
+  { line = 3, text = "The Synod occupied itself, according to the Præfatio of the minutes, partly with public affairs, partly with the care of the poor, and drew up nineteen canons:—" },
+  { line = 4, text = "9. From S. Martin's Day until Christmas, a fast must be kept on Monday, Wednesday, and Friday of each week (sabbati, cf. Du Cange, s.v.)." },
+  { line = 5, text = "The Sacrifice must be offered after the manner of the Lenten season." },
+  { line = 6, text = "The canons, too, shall be read at this time, so that no one may plead ignorance in defence of a fault." },
+]
+verified_on = "2026-11-18"
+notes = "Read on the page images. Hefele dates the synod 581; Maassen's edition carries it under A. 583 (passage of that edition), the date discrepancy R1 flagged. Hefele's 'of each week' glosses 'sabbati' as the week; his summary does not record codex B's 'festivitate' for 'feria'. The text layer splits 'kept on Monday' across lines and reads 'Martin s'."

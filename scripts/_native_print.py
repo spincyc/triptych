@@ -246,16 +246,22 @@ def reader_action_link(route: str, target: str) -> str:
     generates the PDF in place (`link_extras`); the link itself still opens the
     print page in a new tab or without JavaScript. Catalogues never carry it:
     they link the document's page, and the action lives there
-    (guidance/web-editions.md, "Browser printing", 2026-11-16).
+    (guidance/web-editions.md, "Browser printing", 2026-11-16). It is a page
+    action, drawn by site.css (guidance/corpus-browser-vision.md, "Page
+    actions", 2026-11-17).
     """
     _need(target.startswith("print/") and target.endswith(".html"), "invalid print page route")
-    return ('<a class="native-print-action" href="' + _link(route, target) + '?print=1">'
-            'Generate PDF</a>')
+    return ('<a class="native-print-action page-action page-action--pdf" href="'
+            + _link(route, target) + '?print=1">Generate PDF</a>')
 
 
 def reader_action(route: str, target: str) -> str:
-    """The Generate PDF action standing alone at the head of a page's content."""
-    return '<p class="print-actions">' + reader_action_link(route, target) + '</p>'
+    """The Generate PDF action of a page without the reader toolbar.
+
+    The publisher sets it at the end of the page's breadcrumb row
+    (`tools/public-alpha`, `page_bar`), never in a row of its own.
+    """
+    return '<p class="page-actions print-actions">' + reader_action_link(route, target) + '</p>'
 
 
 def landing(identity: str, route: str, context: dict, *, label: str, reader: str | None = None,
@@ -388,9 +394,10 @@ def controls(identity: str, route: str, context: dict) -> str:
                       + '). It may precede the current text.</p>')
     return ('<section class="native-print-actions" data-native-print="' + html.escape(identity, quote=True)
             + '"><p>The PDF uses this edition’s original TeX typography, fonts and page layout.</p>'
-            + '<button type="button" data-native-print-start>Generate PDF</button> '
-            + '<button type="button" data-native-print-cancel hidden>Cancel</button> '
-            + '<a data-native-print-download hidden>Download PDF</a>'
+            + '<p class="native-print-actions__controls">'
+            + '<button type="button" class="page-action page-action--pdf" data-native-print-start>Generate PDF</button> '
+            + '<button type="button" class="page-action" data-native-print-cancel hidden>Cancel</button> '
+            + '<a class="page-action native-print-actions__download" data-native-print-download hidden>Download PDF</a></p>'
             + '<p data-native-print-status role="status" aria-live="polite"></p>'
             + '<p class="native-print-progress" data-native-print-progress></p>' + historical
             + '<noscript><p>JavaScript is required to request a newly typeset PDF.</p></noscript>'

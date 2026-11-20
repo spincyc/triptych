@@ -157,6 +157,111 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
     with self.assertRaisesRegex(ValueError, "resumed-epiphany-4 no longer takes what RESUMED_NOTE says"):
       producer.list_presentation(changed)
 
+  def test_1962_last_things_block_closes_the_after_pentecost_run(self):
+    """The Four Last Things block (roman-1962-propers.md, Reader list
+    presentation, 2026-11-17): beneath the Proper of Time table, not a row,
+    marked § with its own note after the † note, linking each provider's four
+    essays by subject. It owns none of them; library/faith.md does."""
+    landing = (ROOT / "library/traditional-latin-mass.md").read_text()
+    calendar = landing.split("## Sunday Propers Calendar", 1)[1].split("### Feasts Replacing a Sunday", 1)[0]
+    main = calendar.split("### Resumed Sundays after the Epiphany\n", 1)[0]
+    last_row = re.findall(r"^\| \d{2} \|.*$", main, re.MULTILINE)[-1]
+    self.assertTrue(last_row.startswith("| 68 | "))
+    # The § note follows the † note; the Advent primer's ◇ note, if present,
+    # comes last (test_1962_advent_primer_cue_above_the_table).
+    block, dagger, note, *rest = main.split(last_row + "\n", 1)[1].strip().split("\n\n")
+    self.assertTrue(dagger.startswith("† "))
+    self.assertTrue(note.startswith("§ "))
+    self.assertTrue(all(paragraph.startswith("◇ ") for paragraph in rest), rest)
+    self.assertEqual(landing.count("§"), 2)
+    self.assertEqual(landing.count("\n§ "), 1)
+    self.assertNotIn("](../pdf/", block)
+    # The series names its home and takes the mark; each provider's four
+    # essays stand on a line of their own.
+    lead, chatgpt, claude = block.split("<br>\n")
+    self.assertTrue(lead.endswith("\n[The Four Last Things](faith.md#the-four-last-things) §"), lead)
+    self.assertTrue(chatgpt.startswith("ChatGPT: ") and "/claude/" not in chatgpt)
+    self.assertTrue(claude.startswith("Claude: ") and "/gpt/" not in claude)
+
+    subjects = ("Death", "Judgment", "Hell", "Heaven")
+    expected = [(subject, provider, f"articles/faith/four-last-things-{number:02d}-{subject.lower()}")
+                for provider in ("gpt", "claude")
+                for number, subject in enumerate(subjects, 1)]
+    linked = re.findall(r"\[([^\]]+)\]\(\.\./web/([a-z]+)/([^)]+)\.html\)", block)
+    self.assertEqual(linked, expected)
+
+    # The essays keep exactly one catalog home. The ownership check counts the
+    # owner's legacy print links before reader links, so this block is not
+    # counted as a home; were faith.md to keep only reader links for them, the
+    # check would find two homes. This test fails first and names the rule.
+    from importlib.machinery import SourceFileLoader
+    from importlib.util import module_from_spec, spec_from_loader
+    loader = SourceFileLoader("last_things_catalog", str(ROOT / "tools/public-alpha"))
+    tool = module_from_spec(spec_from_loader(loader.name, loader))
+    loader.exec_module(tool)
+    manifest = tool.load_manifest()
+    primary, providers = tool.declared_providers(manifest)
+    publications = tool.publication_map(manifest)
+    occurrences = tool.catalog_occurrences(primary, providers, publications)[0]
+    faith = (ROOT / "library/faith.md").read_text()
+    for _, provider, leaf in expected:
+      self.assertEqual(publications[(provider, leaf)]["catalog"], "library/faith.md")
+      self.assertEqual(occurrences[(provider, leaf)], ["library/faith.md"],
+                       f"{provider}:{leaf} must keep one catalog home; guidance/repository.md "
+                       "§ Public navigation and catalog states when the 1962 block may link it")
+      self.assertIn(f"](../web/{provider}/{leaf}.html)", faith)
+
+  def test_1962_advent_primer_cue_above_the_table(self):
+    """The Advent primer cue (roman-1962-seasonal-primers.md, Collection
+    identity; roman-1962-propers.md, Reader list presentation, 2026-11-18):
+    one italic line directly above the Proper of Time table links the
+    primer's reader with a same-catalog publication reference, and a ◇ note
+    after the † and § notes says what it covers. The primer's own row stands
+    in the page's Seasonal Primers section, which owns it."""
+    landing = (ROOT / "library/traditional-latin-mass.md").read_text()
+    leaf = "liturgy/roman-rite/1962/seasons/advent"
+    link = f"[Advent: A Primer](../web/claude/{leaf}.html)"
+    marker = f"<!-- triptych-publication-reference: claude:{leaf} -->"
+
+    calendar = landing.split("## Sunday Propers Calendar", 1)[1].split("### Feasts Replacing a Sunday", 1)[0]
+    main = calendar.split("### Resumed Sundays after the Epiphany\n", 1)[0]
+    before_table, table_and_after = main.split("\n| ID | Sunday |", 1)
+    cue = before_table.rstrip("\n").rsplit("\n", 1)[-1]
+    self.assertEqual(cue, f"*Before the season:* {link} ◇ {marker}")
+    self.assertTrue(table_and_after.split("\n", 3)[2].startswith("| 01 | **First Sunday of Advent**"))
+    self.assertEqual(landing.count(marker), 1)
+    self.assertEqual(landing.count("◇"), 2)
+
+    notes = table_and_after.strip().split("\n\n")
+    self.assertTrue(notes[-1].startswith("◇ "), notes[-1])
+    self.assertIn("[Seasonal primers](#seasonal-primers)", notes[-1])
+    self.assertLess(main.index("\n† "), main.index("\n§ "))
+    self.assertLess(main.index("\n§ "), main.index("\n◇ "))
+
+    # The row that owns the primer: Seasonal Primers, after the core works
+    # and before the Sunday table, with no two-digit ID cell.
+    primers = landing.split("## Seasonal Primers", 1)[1].split("\n## ", 1)[0]
+    self.assertLess(landing.index("## Core and Reference Works"), landing.index("## Seasonal Primers"))
+    self.assertLess(landing.index("## Seasonal Primers"), landing.index("## Sunday Propers Calendar"))
+    rows = [line for line in primers.splitlines() if line.startswith("| **")]
+    self.assertEqual(len(rows), 1)
+    self.assertTrue(rows[0].startswith("| **Advent** | "), rows[0])
+    self.assertIn(f"](../web/claude/{leaf}.html)", rows[0])
+    self.assertIn("[Seasonal primers](#seasonal-primers)", landing.split("## Core and Reference Works", 1)[0])
+
+    # One owner: the Seasonal Primers row, not the cue line.
+    from importlib.machinery import SourceFileLoader
+    from importlib.util import module_from_spec, spec_from_loader
+    loader = SourceFileLoader("advent_primer_catalog", str(ROOT / "tools/public-alpha"))
+    tool = module_from_spec(spec_from_loader(loader.name, loader))
+    loader.exec_module(tool)
+    manifest = tool.load_manifest()
+    primary, providers = tool.declared_providers(manifest)
+    publications = tool.publication_map(manifest)
+    occurrences = tool.catalog_occurrences(primary, providers, publications)[0]
+    self.assertEqual(publications[("claude", leaf)]["catalog"], "library/traditional-latin-mass.md")
+    self.assertEqual(occurrences[("claude", leaf)], ["library/traditional-latin-mass.md"])
+
   def test_postconciliar_registry_and_reader_calendar_arithmetic(self):
     registry = (
       ROOT / "guidance/liturgy/postconciliar-propers-registry.md"

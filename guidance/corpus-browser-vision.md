@@ -256,8 +256,9 @@ Since 2026-11-16 the roles above are declared once, as custom properties at
 the head of `release/public-alpha/assets/site.css`, which every site page loads
 first: `--font-text`, `--font-ui`, `--font-mono`, `--hairline`,
 `--hairline-strong`, `--focus-ring`, `--radius` and `--control-min`, beside the
-existing surface and ink colours. `publication-reader.css` and
-`native-print.css` read them instead of restating values, so a change there
+existing surface and ink colours (and, since 2026-11-17, `--control-compact`
+for a top bar's controls; see [Page actions](#page-actions)).
+`publication-reader.css` and `native-print.css` read them instead of restating values, so a change there
 applies to catalogues, readers, print pages and the print controls together.
 A page's own branding is only its `section-<colour>` class: the `--section-*`
 accent, ink, wash, pale, row and line colours and the two section marks. No
@@ -301,8 +302,8 @@ Since 2026-11-16 every instrument's controls are one family drawn in
 `browser-core.css` from the roles above: a field's name is set as a column
 label is (sentence case, interface face, section ink); selects, inputs and
 buttons share `--control-min`, `--radius`, a `--hairline-strong` border on the
-raised surface, and the Generate PDF control's hover, a faint wash of the
-section accent ([web editions](web-editions.md#browser-printing)). The filter
+raised surface, and the page actions' hover, a faint wash of the section
+accent ([Page actions](#page-actions)). The filter
 bar is an open band — the section's rule above, a hairline below — at every
 width rather than a card on a desktop. Panels, notices and work cards keep
 their section rule but share `--radius`. An instrument retunes a size or a
@@ -310,6 +311,51 @@ column, never these roles. The same look covers History's year controls,
 Commentary's verse-focus buttons and the Source Library's result pager; a
 checkbox stays the platform's box in the section accent beside its name,
 never a control-sized field.
+
+### Page actions
+
+Since 2026-11-17, at the maintainer's request that Generate PDF and Copy
+section link stop floating above the reader bar, that their row fold into the
+row before it, that the bar take less room, and that such links be placed and
+styled alike on every page, what a page lets a reader do with it is one
+component in `site.css`: `.page-action` controls inside a `.page-actions`
+group. This supersedes the 2026-11-16 rule that `native-print.css` owns the
+Generate PDF look; that file now keeps only the print page's layout and its
+busy, ready, status and progress states.
+
+- **Look.** A page action is a compact control (`--control-compact`, 2.25rem,
+  rising to `--control-min` under a coarse pointer) in the interface face at
+  one size whatever face the page reads in, on the raised surface with a
+  `--hairline-strong` border, `--radius` corners, the section-accent wash on
+  hover and the shared `--focus-ring`. The action that makes the page's own
+  print (`page-action--pdf` for Generate PDF and the Source Library's Print
+  complete edition, `page-action--print` for an instrument's browser Print)
+  carries the section accent and a small drawn page glyph; Copy section link
+  (`page-action--copy`) is neutral with a drawn copy glyph; any other action
+  (Cancel, a record's Print view) is plain. Glyphs are CSS drawings, never a
+  font or icon asset.
+- **Place.** A page's actions sit together at the inline end of its top bar,
+  on that bar's line, and never in a row of their own above the content: at
+  the end of the publication reader's toolbar (on web readers and their print
+  pages), at the end of the breadcrumb row on a page without that toolbar
+  (`.page-bar`, written by `tools/public-alpha` `page_bar`: papal and
+  reading-plan source readers), and at the inline end of an instrument's
+  header or the Source Library's reader head, beside the first line under its
+  title (`.page-actions-host`). A narrow screen may move a group under its
+  bar, but it stays one group. The print page's own Generate PDF controls are the page's
+  content, not a bar, and keep their place, in the same look.
+- **The reader toolbar** is one line: Previous, the document selector and
+  Next, then the page actions, every control the same compact height on one
+  centre line. The selector's name is its `aria-label` (its caption is
+  visually hidden), because the caption above it made the browse group taller
+  than the actions, which then sat half a caption higher than the controls
+  beside them. Previous and Next show a short word and an arrow; their
+  accessible names keep the full phrase and any treatment fallback. On a narrow
+  screen they become arrows either side of the selector and the actions share
+  the line beneath equally: two lines where there were four.
+
+The protected Liturgy entrances keep their own Share and Print actions
+(`reader-share-print.*`) until their owning deliverable releases those files.
 
 ### Tables
 

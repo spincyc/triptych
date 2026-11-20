@@ -1,0 +1,21 @@
+schema = 1
+record_type = "passage"
+id = "passage.holy-see.acta-apostolicae-sedis.volume-52-1960.rubricae-generales-n-137"
+edition_id = "edition.holy-see.acta-apostolicae-sedis.volume-52-1960"
+artifact_id = "artifact.holy-see.acta-apostolicae-sedis.volume-52-1960.rubricae-generales-n-137-checked-text-3e16a97d"
+artifact_sha256 = "3e16a97d9b63f1fbd0d1604ad8b4752fdfe23f2558ee19349149de19eb87aae1"
+locus = "aas-52-p-621-rubricae-generales-n-137"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Rubricae generales (Rubricae Breviarii et Missalis Romani, pars prima), caput XIX De usu et qualitate paramentorum, n. 137, the whole number and the last of pars prima: deacon and subdeacon wear dalmatic and tunicle when ministering, and folded chasubles and the broad stole are no longer used. Printed p. 621; microfilm PDF p. 33."
+physical_line_ranges = [[1, 6]]
+text = "137. Dalmatica et tunicella utuntur diaconus, respective subdiaconus, quando sacerdoti ministrant: a) in Missa; b) in benedictionibus ad altare; c) in processionibus. Attamen cum sacerdos celebrans stat sine pluviali, etiam ministri stant sine dalmatica et tunicella. Planetae plicatae et stola latior amplius non adhibentur."
+transcription_segments = [
+  { line = 1, text = "137. Dalmatica et tunicella utuntur diaconus, respective subdiaconus, quando sacerdoti ministrant:" },
+  { line = 2, text = "a) in Missa;" },
+  { line = 3, text = "b) in benedictionibus ad altare;" },
+  { line = 4, text = "c) in processionibus." },
+  { line = 5, text = "Attamen cum sacerdos celebrans stat sine pluviali, etiam ministri stant sine dalmatica et tunicella." },
+  { line = 6, text = "Planetae plicatae et stola latior amplius non adhibentur." },
+]
+verified_on = "2026-11-18"
+notes = "Read on the microfilm page image at 150 dpi. The vatican.va OCR layer agrees in wording at this extent."

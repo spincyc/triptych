@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.advent-sundays-a3-checked-text-4215f99a"
+edition_id = "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Literal readings and apparatus of the London 1915 Henry Bradshaw Society printing, public domain in the United States by date of publication."
+rights_jurisdiction = "United States"
+provenance = "Transcribed on 2026-11-18 from the page images of the whole PDF, re-fetched over HTTPS with curl -sSL on 2026-11-18 because the tracked payload was not present in this worktree; its SHA-256 96fd93c73f8c9df47b6911981155b8b02cf2f2183ca6e87baad15128682d8681 and byte size 28,655,931 equal the registered artifact. Pages rendered with pdftoppm at 110 dpi and cropped at 220 dpi; the OCR layer was a finding aid only. No source text passed through a language model."
+retrieved = "2026-11-18"
+sha256 = "4215f99a73789bd8c507ed97b40cd50525e6cd8b3b47af17cb21e136993ab1ec"
+byte_size = 767
+path = "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/advent-sundays-a3-checked-text-4215f99a/hadrianum-advent-sundays.txt"
+derived_from = "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7"
+transformation = "Read the named printed page(s) as image(s) of the parent artifact and transcribe the quoted extent with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced locator naming the printed page or column; preserve the printing's wording, spelling, capitalization, accents and punctuation; join line-end hyphenation; expand nothing; omit running heads, marginal numbers and footnote markers unless a line says otherwise. Small capitals are given as capitals. Folio markers ('/' and '[fo. ...'), superscript footnote numbers and letters, marginal witness sigla and the printed gamma after 'Per.' are omitted; spacing around the edition's medial points is normalised to ' . ' where the edition prints it. The edition's e-caudata (ę) is kept. The half-brackets around 'INICA UACAT.' in the p. 116 heading are omitted."
+indexable = true
+encoding = "utf-8"

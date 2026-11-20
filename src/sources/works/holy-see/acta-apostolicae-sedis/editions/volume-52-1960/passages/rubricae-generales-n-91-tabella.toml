@@ -1,0 +1,25 @@
+schema = 1
+record_type = "passage"
+id = "passage.holy-see.acta-apostolicae-sedis.volume-52-1960.rubricae-generales-n-91-tabella"
+edition_id = "edition.holy-see.acta-apostolicae-sedis.volume-52-1960"
+artifact_id = "artifact.holy-see.acta-apostolicae-sedis.volume-52-1960.rubricae-generales-n-91-tabella-checked-text-ecc9047d"
+artifact_sha256 = "ecc9047df61bd53f95d931a339cec169605b4378670e49596353bbba5f8a7775"
+locus = "aas-52-pp-610-612-rubricae-generales-n-91-tabella"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Rubricae generales (Rubricae Breviarii et Missalis Romani, pars prima), caput XI De praecedentia dierum liturgicorum, n. 91 and its Tabella dierum liturgicorum secundum ordinem praecedentiae disposita, selected lines: the Immaculate Conception at line 4, the Vigil of the Nativity at line 5 and the Sundays of Advent at line 6 among first-class days; the Advent ferias of 17-23 December and the Advent Ember days at line 18 of the second class; the other Advent ferias at line 25 of the third class. Printed pp. 610-612; microfilm PDF pp. 22-24."
+physical_line_ranges = [[1, 10]]
+text = "91. Praecedentia dierum liturgicorum, sublatis quibuslibet aliis titulis vel normis, unice regitur ex sequenti TABELLA DIERUM LITURGICORUM SECUNDUM ORDINEM PRAECEDENTIAE DISPOSITA Dies liturgici I classis 4. Festa Immaculatae Conceptionis et Assumptionis B. Mariae Virg. 5. Vigilia et dies octavus Nativitatis Domini. 6. Dominicae Adventus, Quadragesimae et Passionis, et dominica in albis. Dies liturgici II classis 18. Feriae II classis, nempe: Adventus a die 17 ad diem 23 decembris inclusive, et feriae Quatuor Temporum Adventus, Quadragesimae et mensis septembris. Dies liturgici III classis 25. Feriae Adventus usque ad diem 16 decembris inclusive, exceptis feriis Quatuor Temporum."
+transcription_segments = [
+  { line = 1, text = "91. Praecedentia dierum liturgicorum, sublatis quibuslibet aliis titulis vel normis, unice regitur ex sequenti" },
+  { line = 2, text = "TABELLA DIERUM LITURGICORUM SECUNDUM ORDINEM PRAECEDENTIAE DISPOSITA" },
+  { line = 3, text = "Dies liturgici I classis" },
+  { line = 4, text = "4. Festa Immaculatae Conceptionis et Assumptionis B. Mariae Virg." },
+  { line = 5, text = "5. Vigilia et dies octavus Nativitatis Domini." },
+  { line = 6, text = "6. Dominicae Adventus, Quadragesimae et Passionis, et dominica in albis." },
+  { line = 7, text = "Dies liturgici II classis" },
+  { line = 8, text = "18. Feriae II classis, nempe: Adventus a die 17 ad diem 23 decembris inclusive, et feriae Quatuor Temporum Adventus, Quadragesimae et mensis septembris." },
+  { line = 9, text = "Dies liturgici III classis" },
+  { line = 10, text = "25. Feriae Adventus usque ad diem 16 decembris inclusive, exceptis feriis Quatuor Temporum." },
+]
+verified_on = "2026-11-18"
+notes = "Read on the microfilm page images at 150 dpi. The table begins on p. 610 and continues across p. 611 to p. 612; a reader citing 'the table on p. 610' for line 18 or 25 is citing the wrong page (the Advent-primer dossier's 'p. 610 ... line 18'). The vatican.va OCR layer agrees in wording at these lines."

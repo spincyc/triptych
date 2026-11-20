@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bernard-of-clairvaux.st-bernards-sermons-for-the-seasons-volume-1.1921-dublin-browne-and-nolan.bernard-missus-est-4.8-angel-awaits"
+edition_id = "edition.bernard-of-clairvaux.st-bernards-sermons-for-the-seasons-volume-1.1921-dublin-browne-and-nolan"
+artifact_id = "artifact.bernard-of-clairvaux.st-bernards-sermons-for-the-seasons-volume-1.1921-dublin-browne-and-nolan.bernard-missus-est-4.8-angel-awaits-checked-text-d556402b"
+artifact_sha256 = "d556402b80ce8e946dd340cf4fac8711a744b8bdba0fe4a0baeb9c49f3807ee2"
+locus = "Bernard of Clairvaux, Homiliae super Missus est IV.8 (Fourth Sermon on the Virgin Mother)"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "From the Fourth Sermon on the Virgin Mother (Bernard's fourth homily super Missus est), the appeal for Mary's answer, read on printed page 124 (PDF page 146) whole. Collated against PL 183 column 83 (homily IV, section 8, Exspectat angelus responsum)."
+physical_line_ranges = [[1, 4]]
+text = "Behold the Angel now awaits thy answer: “it is time that he should return to the Lord Who sent him.” We also, O Lady, await from thy lips the sentence of mercy and compassion, we who are so miserably groaning under the sentence of condemnation. For lo! the price of our salvation is now offered to thee: if thou wilt only consent, we shall at once be set at liberty. We have been created by the eternal Word of God, and behold we die: by thy momentary word we must be renewed and restored to life."
+transcription_segments = [
+  { line = 1, text = "Behold the Angel now awaits thy answer: “it is time that he should return to the Lord Who sent him.”" },
+  { line = 2, text = "We also, O Lady, await from thy lips the sentence of mercy and compassion, we who are so miserably groaning under the sentence of condemnation." },
+  { line = 3, text = "For lo! the price of our salvation is now offered to thee: if thou wilt only consent, we shall at once be set at liberty." },
+  { line = 4, text = "We have been created by the eternal Word of God, and behold we die: by thy momentary word we must be renewed and restored to life." },
+]
+verified_on = "2026-11-18"
+notes = "The second sentence's inner quotation, 'it is time that he should return to the Lord Who sent him', is printed in quotation marks though the Latin tempus est enim ut revertatur ad Deum qui misit illum stands in Migne without quotation marks or a scriptural reference; the marks are reproduced as printed."

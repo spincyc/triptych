@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.bernard-of-clairvaux.st-bernards-sermons-for-the-seasons-volume-1.1921-dublin-browne-and-nolan.bernard-missus-est-4.8-angel-awaits-checked-text-d556402b"
+edition_id = "edition.bernard-of-clairvaux.st-bernards-sermons-for-the-seasons-volume-1.1921-dublin-browne-and-nolan"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces a few sentences of the Mount Melleray English translation of Bernard of Clairvaux published at Dublin in 1921, which is in the United States public domain by date of publication (the parent facsimile's rights_basis gives the evidence and the reasoning). It is transcribed from page images rendered from the hashed Internet Archive facsimile and contains no Internet Archive markup or text-layer bytes."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription collated against the printed page images of the hashed Internet Archive facsimile ia-pdf-a943f64a (SHA-256 a943f64a...23e6d0), on 2026-11-18; the tracked optical text layer ia-djvu-text-a66ad9a3 was used only to locate the pages. Printed page 124, PDF page 146."
+retrieved = "2026-11-18"
+sha256 = "d556402b80ce8e946dd340cf4fac8711a744b8bdba0fe4a0baeb9c49f3807ee2"
+byte_size = 570
+path = "src/sources/works/bernard-of-clairvaux/st-bernards-sermons-for-the-seasons-volume-1/editions/1921-dublin-browne-and-nolan/artifacts/bernard-missus-est-4.8-angel-awaits-checked-text-d556402b/bernard-missus-est-4.8-angel-awaits.txt"
+derived_from = "artifact.bernard-of-clairvaux.st-bernards-sermons-for-the-seasons-volume-1.1921-dublin-browne-and-nolan.ia-pdf-a943f64a"
+transformation = "Read the named printed pages as images rendered at 150 dots per inch from the hashed facsimile with pdftoppm, and transcribe the quoted sentences with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced constituent-sermon-and-section locator; preserve the printed wording, capitalization, spelling, punctuation and typographic quotation marks; join line-end hyphenation and close the printer's spaces before punctuation; omit running heads, page numbers and footnote markers. The English carries no section numbers: the section in each locator is assigned by collation with the Latin of Patrologia Latina 183 read on its page images."
+indexable = true
+encoding = "utf-8"

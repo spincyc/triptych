@@ -1,8 +1,8 @@
 classification_schema = 1
 record_type = "publication-source-classification-review"
-audited_on = "2026-11-16"
-publication_snapshot = "sha256:642dc85a7062dffb478493cedcc5a8592d57ffe8d642dec61107bd42d23c3c77"
-classification_snapshot = "sha256:3eca5f9067e1f8b7ec45fc84a5fe998f9bd929220f2a30694096f290db777a97"
+audited_on = "2026-11-18"
+publication_snapshot = "sha256:eabf7a22a0a0a078120f974501b5b7be42793463203fbe2b5c36c61a4bcae088"
+classification_snapshot = "sha256:f29469264e127844f41bef2701ead7edab2076a3e0ecd6c687bd3498f485f817"
 
 [[classifications]]
 document = "articles/canon-law/clerical-celibacy-chastity-and-continence"
@@ -199,6 +199,10 @@ source_categories = ["canon-law", "finding-aid", "historical-primary", "liturgic
 [[classifications]]
 document = "liturgy/roman-rite/1962/reference/liturgical-calendar"
 source_categories = ["canon-law", "finding-aid", "historical-primary", "liturgical", "magisterial", "secondary"]
+
+[[classifications]]
+document = "liturgy/roman-rite/1962/seasons/advent"
+source_categories = ["canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "prayer-devotional", "repository-internal", "scholastic", "scripture", "secondary"]
 
 [[classifications]]
 document = "liturgy/roman-rite/comparative/two-missals-one-sacrifice"

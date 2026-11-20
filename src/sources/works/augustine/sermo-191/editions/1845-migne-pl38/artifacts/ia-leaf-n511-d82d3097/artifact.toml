@@ -1,0 +1,18 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.augustine.sermo-191.1845-migne-pl38.ia-leaf-n511-d82d3097"
+edition_id = "edition.augustine.sermo-191.1845-migne-pl38"
+artifact_type = "page-scan-image"
+media_type = "image/jpeg"
+storage = "remote"
+rights_status = "public-domain"
+rights_basis = "The printing reproduced here was published at Paris in 1845 (series title page, PDF page 8 of the complete scan of the volume, read on the image), and a work first published abroad before 1931 is out of United States copyright with no term running; that line is the one guidance/missals.md section 5 records as current on 1 January 2026, written here as derived for calendar year 2026 and not as a standing rule. A faithful photographic reproduction of a public-domain printing adds no original authorship of its own (Bridgeman Art Library v. Corel Corp., 36 F. Supp. 2d 191, S.D.N.Y. 1999). The scan is Google's digitization (Google Books id _iZKAAAAcAAJ); the leaf's foot carries Google's Digitized by Google stamp, which is Google's and not the book's, is kept in the exact bytes and is disposed of under src/sources/inventories/google-usage-guidelines-rights-v1.toml, never quoted, cited or counted as Migne's or Augustine's text. The bytes are not retained, on the duplication ground guidance/sources.md gives for remote: this page image reproduces one leaf of the volume whose complete optical text layer is retained in this repository at artifact.augustine.sermo-185.1845-migne-pl38.ia-djvu-text-de2c5a46, and that retained file is what a reader with no network opens to read the words cited from this leaf. The retained layer is uncorrected optical recognition, so a reader who needs the printed letterform must re-fetch the image at the recorded URL."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/patrologiae_cursus_completus_lat_vol_038/page/n511.jpg"
+provenance = "Internet Archive page rendition of one leaf of the volume, fetched over HTTPS with curl (following the redirect to the item's BookReader image server) on 2026-11-19 and hashed with sha256sum; a second fetch the same day returned identical bytes. The leaf was compared on the image with PDF page 512 of the complete scan of the volume artifact.augustine.sermo-185.1845-migne-pl38.ia-pdf-829acec8 and shows the same page. No source text passed through a language model at any point between the server and this hash."
+retrieved = "2026-11-19"
+sha256 = "d82d3097a74f5dfe32be4244ae34848286739ab6893f5b2c87d7cb7b84241c99"
+byte_size = 1250769
+page_count = 1
+indexable = false
+notes = "One page image, leaf n511 = PDF page 512 = PL 38 columns 1009-1010 (the close of Sermo CXC and Sermo CXCI from its heading), 2049x3111 pixels, greyscale JPEG. One leaf only."

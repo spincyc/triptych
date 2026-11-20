@@ -1,0 +1,23 @@
+schema = 1
+record_type = "passage"
+id = "passage.holy-see.acta-apostolicae-sedis.volume-52-1960.rubricae-generales-n-109"
+edition_id = "edition.holy-see.acta-apostolicae-sedis.volume-52-1960"
+artifact_id = "artifact.holy-see.acta-apostolicae-sedis.volume-52-1960.rubricae-generales-n-109-checked-text-5da48d4f"
+artifact_sha256 = "5da48d4fd5523ac0cb126dd2ef11e6a45cb49b0841a57ef595a7e1dd79338e3f"
+locus = "aas-52-p-615-rubricae-generales-n-109"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Rubricae generales (Rubricae Breviarii et Missalis Romani, pars prima), caput XVI De commemorationibus, n. 109, the whole number: the commemoration of a Sunday and of the ferias of Advent are privileged commemorations. Printed p. 615; microfilm PDF p. 27."
+physical_line_ranges = [[1, 8]]
+text = "109. Commemorationes privilegiatae sunt commemorationes: a) de dominica; b) de die liturgico I classis; c) de diebus infra octavam Nativitatis Domini; d) de feriis Quatuor Temporum mensis septembris; e) de feriis Adventus, Quadragesimae et Passionis; f) de Litaniis maioribus, in Missa. Omnes aliae commemorationes sunt commemorationes ordinariae."
+transcription_segments = [
+  { line = 1, text = "109. Commemorationes privilegiatae sunt commemorationes:" },
+  { line = 2, text = "a) de dominica;" },
+  { line = 3, text = "b) de die liturgico I classis;" },
+  { line = 4, text = "c) de diebus infra octavam Nativitatis Domini;" },
+  { line = 5, text = "d) de feriis Quatuor Temporum mensis septembris;" },
+  { line = 6, text = "e) de feriis Adventus, Quadragesimae et Passionis;" },
+  { line = 7, text = "f) de Litaniis maioribus, in Missa." },
+  { line = 8, text = "Omnes aliae commemorationes sunt commemorationes ordinariae." },
+]
+verified_on = "2026-11-18"
+notes = "Read on the microfilm page image at 150 dpi. The vatican.va OCR layer agrees in wording at this extent."

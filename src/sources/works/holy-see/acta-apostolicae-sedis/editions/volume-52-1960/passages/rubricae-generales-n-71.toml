@@ -1,0 +1,17 @@
+schema = 1
+record_type = "passage"
+id = "passage.holy-see.acta-apostolicae-sedis.volume-52-1960.rubricae-generales-n-71"
+edition_id = "edition.holy-see.acta-apostolicae-sedis.volume-52-1960"
+artifact_id = "artifact.holy-see.acta-apostolicae-sedis.volume-52-1960.rubricae-generales-n-71-checked-text-ae65429e"
+artifact_sha256 = "ae65429eab28f6a146d652dc8565078421d6a44517cf199b0551e0eb510439de"
+locus = "aas-52-p-607-rubricae-generales-n-71"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Rubricae generales (Rubricae Breviarii et Missalis Romani, pars prima), caput VIII De anni temporibus, A) De tempore Adventus, n. 71, with its subheading: the season of Advent runs from I Vespers of the First Sunday to None inclusive of the Vigil of the Nativity. Printed p. 607; microfilm PDF p. 19."
+physical_line_ranges = [[1, 2]]
+text = "A) De tempore Adventus 71. Tempus sacri Adventus decurrit a I Vesperis dominicae I Adventus usque ad Nonam inclusive vigiliae Nativitatis Domini."
+transcription_segments = [
+  { line = 1, text = "A) De tempore Adventus" },
+  { line = 2, text = "71. Tempus sacri Adventus decurrit a I Vesperis dominicae I Adventus usque ad Nonam inclusive vigiliae Nativitatis Domini." },
+]
+verified_on = "2026-11-18"
+notes = "Read on the microfilm page image at 150 dpi. The vatican.va OCR layer agrees in wording at this extent."

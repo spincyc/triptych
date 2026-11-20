@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.intro-advent-missae-a3-checked-text-18dcdbcf"
+edition_id = "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Literal readings and editorial notes of the Oxford 1894 Wilson printing, public domain in the United States by date of publication. The transcription carries only printed book text; no Google digitisation notice or watermark text is reproduced."
+rights_jurisdiction = "United States"
+provenance = "Transcribed on 2026-11-18 from the page images of the whole PDF, re-fetched over HTTPS with curl -sSL on 2026-11-18; its SHA-256 006a38a39250d39c9745acfb4f4a098374027e719dc7ad7e32972fa6a82489bc and byte size 13,625,474 equal the registered artifact. Pages rendered with pdftoppm at 120 dpi and cropped at 250 dpi; the OCR layer was a finding aid only. No source text passed through a language model."
+retrieved = "2026-11-18"
+sha256 = "18dcdbcfb7f1b170d138c86c1116eef9a5a18b349bd1b8def5feac5489fd876b"
+byte_size = 587
+path = "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/intro-advent-missae-a3-checked-text-18dcdbcf/gelasian-intro-lxxi.txt"
+derived_from = "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.internet-archive-pdf-006a38a3"
+transformation = "Read the named printed page(s) as image(s) of the parent artifact and transcribe the quoted extent with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced locator naming the printed page or column; preserve the printing's wording, spelling, capitalization, accents and punctuation; join line-end hyphenation; expand nothing; omit running heads, marginal numbers and footnote markers unless a line says otherwise."
+indexable = true
+encoding = "utf-8"

@@ -1,0 +1,17 @@
+schema = 1
+record_type = "passage"
+id = "passage.gregory-of-tours.historia-francorum.1927-dalton-oxford-volume-2.x.31-perpetuus"
+edition_id = "edition.gregory-of-tours.historia-francorum.1927-dalton-oxford-volume-2"
+artifact_id = "artifact.gregory-of-tours.historia-francorum.1927-dalton-oxford-volume-2.x.31-perpetuus-checked-text-ecf23288"
+artifact_sha256 = "ecf232881dc2eb3933d9d9e8e985772e690e7ad8a9f7a5123abee046f707be63"
+locus = "X.31"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Book X chapter 31, the catalogue of the bishops of Tours: Perpetuus, the sixth bishop, and his institution of the fasts and vigils, printed p. 471 (PDF p. 483), with the list following on p. 472."
+physical_line_ranges = [[1, 2]]
+text = "The sixth bishop consecrated was Perpetuus, likewise said to be descended from a senatorial family, and to have been a relative of his predecessor. It was he who instituted the fasts and vigils to be observed during the course of the year; of these we to-day preserve a written list, the order being as follows:"
+transcription_segments = [
+  { line = 1, text = "The sixth bishop consecrated was Perpetuus, likewise said to be descended from a senatorial family, and to have been a relative of his predecessor." },
+  { line = 2, text = "It was he who instituted the fasts and vigils to be observed during the course of the year; of these we to-day preserve a written list, the order being as follows:" },
+]
+verified_on = "2026-11-18"
+notes = "Read on the page image. The printing sets a thin space before the semicolon after 'year'; spacing is not reproduced. The asterisk after 'Perpetuus' (a reference to Dalton's commentary) is omitted. R1's dossier gave p. 472 for this sentence; it is on p. 471."

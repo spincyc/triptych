@@ -228,6 +228,46 @@ Triptych’s CC BY 4.0 grant. John’s retained short Google reproduction statem
 and digitizer markings follow the existing Google usage-guidelines inventory;
 they are not attributed to Aquinas. No full-volume physical collation is claimed.
 
+### Advent primer witnesses (18 November 2026)
+
+For the Advent primer, the source library retains the complete Internet
+Archive DjVuTXT optical text layers of twenty-four historical books, each
+under its own edition record in `src/sources/works/`: the Mount Melleray
+*St. Bernard's Sermons for the Seasons*, vol. I (Dublin, 1921); *Sermons of
+St. Bernard on Advent and Christmas* (London, 1909); Migne's *Patrologia
+Latina* vols. 54 (1881) and 184 (1879); the Marquess of Bute's *Roman
+Breviary*, Winter (1908); the *Breviarium Romanum*, pars hiemalis (Ratisbon,
+1888); the *Little Office of the Blessed Virgin Mary* (New York, 1915); *The
+Raccolta* (1910); *A Manual of Gregorian Chant* (Rome and Tournai, 1903);
+Guéranger's *The Liturgical Year*, vol. I, Advent (Dublin, 1870); Alphonsus
+Liguori's *The Incarnation, Birth and Infancy of Jesus Christ* (New York,
+1886); A. A. Lings's *Our Favorite Novenas* (New York, 1897); an undated
+Pustet printing of Francis de Sales's *Introduction to a Devout Life*
+(New York), which prints no copyright notice; *A Manual of
+Prayers for the Use of the Catholic Laity* (New York, 1889); the Baltimore
+*Catechism of Christian Doctrine No. 3* (New York, 1921); Donovan's
+*Catechism of the Council of Trent* (Baltimore, translation of 1829);
+Gregory of Tours's *Historia Francorum* (Paris, 1838; Hanover, 1884) and
+Dalton's *History of the Franks*, vol. II (Oxford, 1927); Maassen's *Concilia
+aevi Merovingici* (Hanover, 1893); Hefele's *History of the Councils*,
+vols. II and IV (Edinburgh, 1876 and 1895); Mansi's *Sacrorum conciliorum
+collectio*, tom. III (the 1901 reprint of Florence, 1759); and Magistretti's
+*Manuale Ambrosianum*, pars altera (Milan, 1904). Each artifact record states
+its public-domain basis in the United States (publication before 1931,
+derived for calendar year 2026, or, for the undated de Sales, a United States
+printing without notice, accepted by the maintainer on 18 November 2026), its byte size and hash checked against the
+item's own file listing, and the result of its search for Google front
+matter. The layers are uncorrected machine recognition kept for locating and
+searching: they are not facsimiles, corrected transcriptions or independent
+witnesses. The short checked transcriptions beside them, and those taken from
+held scans of the *Nicene and Post-Nicene Fathers*, the *Catena Aurea*, CSEL
+32/4, Mullan's 1914 translation of the *Spiritual Exercises*, the
+sacramentaries, the 1917 Code, the Council of Trent, the 1960
+rubrics and the medieval liturgical commentators, were read by hand against
+page images; each records its normalizations. Their historical wording keeps
+its own status and is not offered under Triptych's CC BY 4.0 licence. Users
+must determine their status in other jurisdictions.
+
 ## Liturgical and Scriptural Texts
 
 Scripture, Missal formularies, Orders of Mass, rubrics, chants, and texts from

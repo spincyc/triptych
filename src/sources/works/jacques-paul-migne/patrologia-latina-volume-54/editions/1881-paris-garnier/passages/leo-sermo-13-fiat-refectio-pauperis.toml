@@ -1,0 +1,22 @@
+schema = 1
+record_type = "passage"
+id = "passage.jacques-paul-migne.patrologia-latina-volume-54.1881-paris-garnier.leo-sermo-13-fiat-refectio-pauperis"
+edition_id = "edition.jacques-paul-migne.patrologia-latina-volume-54.1881-paris-garnier"
+artifact_id = "artifact.jacques-paul-migne.patrologia-latina-volume-54.1881-paris-garnier.leo-sermo-13-fiat-refectio-pauperis-checked-text-511628c1"
+artifact_sha256 = "511628c12e28aa9340aa32a620a3372702f3deac375b09168bba02099daa1e61"
+locus = "column-172"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Leo the Great, Sermo XIII [al. XII], De jejunio decimi mensis II, the second half of the sermon to its end: almsgiving to supply the fast, the works of mercy, and the Ember notice. Read on PL 54 column 172 (PDF page 92, right column, lower half) and column 173 (PDF page 93, left column, to Amen and the heading of Sermo XIV)."
+physical_line_ranges = [[1, 7]]
+text = "Sed quia non solo jejunio animarum nostrarum salus acquiritur, jejunium nostrum misericordiis pauperum suppleamus. Impendamus virtuti, quod subtrahimus voluptati. Fiat refectio pauperis, abstinentia jejunantis. Studeamus viduarum defensioni, pupillorum utilitati, lugentium consolationi, dissidentium paci. Suscipiatur peregrinus, adjuvetur oppressus, vestiatur nudus, foveatur ægrotus; ut quicumque nostrum de justis laboribus auctori bonorum omnium Deo sacrificium hujus pietatis obtulerit, ab eodem regni cœlestis præmium percipere mereatur. Quarta igitur et sexta feria jejunemus; sabbato autem apud beatum Petrum apostolum pariter vigilemus, cujus suffragantibus meritis, quæ poscimus, impetrare possimus, per Dominum nostrum Jesum Christum, qui cum Patre et sancto Spiritu vivit et regnat in sæcula sæculorum. Amen."
+transcription_segments = [
+  { line = 1, text = "Sed quia non solo jejunio animarum nostrarum salus acquiritur, jejunium nostrum misericordiis pauperum suppleamus." },
+  { line = 2, text = "Impendamus virtuti, quod subtrahimus voluptati." },
+  { line = 3, text = "Fiat refectio pauperis, abstinentia jejunantis." },
+  { line = 4, text = "Studeamus viduarum defensioni, pupillorum utilitati, lugentium consolationi, dissidentium paci." },
+  { line = 5, text = "Suscipiatur peregrinus, adjuvetur oppressus, vestiatur nudus, foveatur ægrotus; ut quicumque nostrum de justis laboribus auctori bonorum omnium Deo sacrificium hujus pietatis obtulerit, ab eodem regni cœlestis præmium percipere mereatur." },
+  { line = 6, text = "Quarta igitur et sexta feria jejunemus; sabbato autem apud beatum Petrum apostolum pariter vigilemus, cujus suffragantibus meritis, quæ poscimus, impetrare possimus, per Dominum nostrum Jesum Christum, qui cum Patre et sancto Spiritu vivit et regnat in sæcula sæculorum." },
+  { line = 7, text = "Amen." },
+]
+verified_on = "2026-11-18"
+notes = "The bold marginal 44 inside vestiatur nudus is omitted. Leo's Ember notice here (Wednesday and Friday fast, Saturday vigil at St Peter's) parallels the close of Sermo XII.4; this one names beatum Petrum apostolum where XII.4 has beatissimum apostolum Petrum. Ballerini notes (q) in solo jejunio and (r) recipere record single-codex variants."

@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.ambrose-on-luke-1-46-47-checked-text-26b47d08"
+edition_id = "edition.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces a few sentences of the Oxford English Catena Aurea on Luke, Part I published in 1843 and Part II in 1865, which is in the United States public domain by date of publication (the parent facsimile's rights_basis gives the evidence). It is transcribed from page images rendered from the hashed Internet Archive facsimile and contains no Internet Archive markup or optical-text bytes. Historical wording is excluded from Triptych CC BY authorship."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription collated against the page images of the hashed Internet Archive facsimile pdf-a63aa18e (SHA-256 a63aa18e...7291) on 2026-11-18; the retained optical text ocr-1455eb5f was used only to locate the pages. Printed page 43, PDF page 65."
+retrieved = "2026-11-18"
+sha256 = "26b47d082067390a8c51004bc2dcf799903a40b0ec67a386ce792b5be64b1aa4"
+byte_size = 622
+path = "src/sources/works/thomas-aquinas/catena-aurea-in-lucam/editions/1843-1865-english-oxford-composite-ia/artifacts/ambrose-on-luke-1-46-47-checked-text-26b47d08/ambrose-on-luke-1-46-47.txt"
+derived_from = "artifact.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.pdf-a63aa18e"
+transformation = "Read the named printed pages as images rendered at 150 dots per inch (250 and 500 dots per inch for doubtful punctuation and the marginal attributions) from the hashed facsimile with pdftoppm, and transcribe the quoted comment with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced Gospel-verse-and-Father locator; preserve the printed wording, spelling, the ae ligature, capitalization and punctuation, with typographic apostrophes; print the small-capital Father label in ordinary capitals and lower case with its printed stop or semicolon; join line-end hyphenation and close the printer's spaces before punctuation; omit italics, running heads, page numbers, signatures and the marginal attributions and references, which are recorded in the passage notes."
+indexable = true
+encoding = "utf-8"

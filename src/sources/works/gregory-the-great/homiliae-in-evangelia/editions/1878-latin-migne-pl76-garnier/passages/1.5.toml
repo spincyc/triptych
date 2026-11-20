@@ -1,0 +1,21 @@
+schema = 1
+record_type = "passage"
+id = "passage.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.1.5"
+edition_id = "edition.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878"
+artifact_id = "artifact.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.1.5-world-grown-old-checked-text-7989f99e"
+artifact_sha256 = "7989f99eaa3f515fef3254314dbc1f94d7d773d1c7d6bf4b7fbe853791527ad9"
+locus = "1.5"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "PL 76 col. 1080 C-D (Garnier 1878 reprint), facsimile PDF page 540, right column. Homily I section 5 from its opening Ecce, fratres mei to diu stare non posse; the section continues with 1 John 2:15 (Praecepta apostolica in animo ponite) and the storm of the day before yesterday."
+physical_line_ranges = [[1, 6]]
+text = "Ecce, fratres mei, jam cernimus quod audiebamus. Novis quotidie et crebrescentibus malis mundus urgetur. Ex illa plebe innumera quanti remanseritis aspicitis; et tamen adhuc quotidie flagella urgent, repentini casus opprimunt, novæ nos et improvisæ clades affligunt. Sicut enim in juventute viget corpus, forte et incolume manet pectus, torosa cervix, plena sunt bronchia; in annis autem senilibus statura curvatur, cervix exsiccata deponitur, frequentibus suspiriis pectus urgetur, virtus deficit, loquentis verba anhelitus intercidit; nam etsi languor desit, plerumque sensibus ipsa sua salus ægritudo est: ita mundus in annis prioribus velut in juventute viguit, ad propagandam humani generis prolem robustus fuit, salute corporum viridis, opulentia rerum pinguis; at nunc ipsa sua senectute deprimitur, et quasi ad vicinam mortem molestiis crescentibus urgetur. Nolite ergo, fratres mei, diligere quem videtis diu stare non posse."
+transcription_segments = [
+  { line = 1, text = "Ecce, fratres mei, jam cernimus quod audiebamus." },
+  { line = 2, text = "Novis quotidie et crebrescentibus malis mundus urgetur." },
+  { line = 3, text = "Ex illa plebe innumera quanti remanseritis aspicitis; et tamen adhuc quotidie flagella urgent, repentini casus opprimunt, novæ nos et improvisæ clades affligunt." },
+  { line = 4, text = "Sicut enim in juventute viget corpus, forte et incolume manet pectus, torosa cervix, plena sunt bronchia; in annis autem senilibus statura curvatur, cervix exsiccata deponitur, frequentibus suspiriis pectus urgetur, virtus deficit, loquentis verba anhelitus intercidit; nam etsi languor desit, plerumque sensibus ipsa sua salus ægritudo est:" },
+  { line = 5, text = "ita mundus in annis prioribus velut in juventute viguit, ad propagandam humani generis prolem robustus fuit, salute corporum viridis, opulentia rerum pinguis; at nunc ipsa sua senectute deprimitur, et quasi ad vicinam mortem molestiis crescentibus urgetur." },
+  { line = 6, text = "Nolite ergo, fratres mei, diligere quem videtis diu stare non posse." },
+]
+verified_on = "2026-11-19"
+notes = "The bold 1439 embedded after pectus is earlier-edition pagination and is omitted, as are the footnote markers 6 (before anhelitus; footnote: Turon., anhelitus intercipit) and 7 (before molestiis; footnote: C. Germ., Corb., Bigot. et duo pr. Gemet., molestiis crebrescentibus. Longip., molestiis crescentibus crebrius. Consentit Ed. Antuerp.). The mark after aspicitis is faint and was read at 600 dots per inch as a semicolon. The page prints bronchia. The spaces the printer set before semicolons and colons are closed. OCR AGAINST PAGE (ia-djvu-text-13c0bbad lines 85528-85549): word differences, optical text first: illaplebe for illa plebe; reet for remanseritis aspicitis et; Sieut for Sicut; pectusurgetur virtusdeficit for pectus urgetur virtus deficit; juventuteviguit for juventute viguit; dilibemus Optandum nobis est citius pergere atque ad rj gere for diligere; it also interleaves marginal, running-head or other-column text (1439; c; 7)."

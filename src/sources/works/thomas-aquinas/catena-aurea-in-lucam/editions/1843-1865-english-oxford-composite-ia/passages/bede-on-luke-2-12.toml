@@ -1,0 +1,17 @@
+schema = 1
+record_type = "passage"
+id = "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.bede-on-luke-2-12"
+edition_id = "edition.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia"
+artifact_id = "artifact.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.bede-on-luke-2-12-checked-text-d25b4678"
+artifact_sha256 = "d25b4678597e4101d6db9c9c38677a780b5ed24a2de87885370e3145811fb0f2"
+locus = "Luke 2:12, Bede (as the Catena gives it); Catena printed page 70 (Part I, 1843), facsimile PDF page 92"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The whole of the Bede comment on the sign given to the shepherds, from BEDE; to but in a manger, where MAXIMUS; begins."
+physical_line_ranges = [[1, 2]]
+text = "Bede; The infancy of the Saviour was impressed upon us, both by frequent heraldings of Angels and testimonies of Evangelists, that we might be the more deeply penetrated in our hearts by what has been done for us. And we may observe, that the sign given us of the new-born Saviour was, that He would be found not clothed in Tyrian purple, but wrapped in poor swaddling clothes, not laying on gilded couches, but in a manger."
+transcription_segments = [
+  { line = 1, text = "Bede; The infancy of the Saviour was impressed upon us, both by frequent heraldings of Angels and testimonies of Evangelists, that we might be the more deeply penetrated in our hearts by what has been done for us." },
+  { line = 2, text = "And we may observe, that the sign given us of the new-born Saviour was, that He would be found not clothed in Tyrian purple, but wrapped in poor swaddling clothes, not laying on gilded couches, but in a manger." },
+]
+verified_on = "2026-11-19"
+notes = "No marginal attribution stands beside this label. new-born is hyphenated at a line end on the page (new- / born); the hyphen is kept because the word is a compound and the Catena elsewhere prints new born as two words (page 68). OCR AGAINST PAGE (ocr-1455eb5f lines 3752-3759): word differences, optical text first: newborn for new born; it also interleaves marginal, running-head or other-column text (Maxim)."

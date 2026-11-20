@@ -89,7 +89,7 @@ entrypoint: its text lives in the section files the regions place.
 
 ## Genre routing
 
-The registry provides the 37 kinds and their exact required-role lists. These
+The registry provides the 38 kinds and their exact required-role lists. These
 families preserve the material differences between genres:
 
 | Registered kinds | Structure retained by the owning profile |
@@ -99,6 +99,7 @@ families preserve the material differences between genres:
 | `history-parish`, `history-translation`, `history-account` | Source-grounded historical sequence and evidence map; pastor succession for parish histories and periodized edition/language history for translations. |
 | `novena`, `novena-companion` | Nine distinct received day prayers and their audit; the companion imports exact canonical prayers mechanically. |
 | `proper-1962`, `proper-postconciliar` | Appointed sources, actual component-schema version, exact edition/territory/cycle/branches, interpretations and component membership. |
+| `seasonal-primer-1962` | The season's history, Sundays and days, patristic teaching and practice, inside the proper guides' boundary; law, custom and counsel kept apart; received prayer witnesses only. |
 | `mass-ordinary`, `mass-comparison` | Ordered sequence inventory with speech, action, mode and conditional status; comparisons keep each edition's own trail. |
 | `assembly-reference`, `calendar-reference` | Rubric decisions and worked cases, or complete normative calendar inventory with exact governing editions. |
 | `curriculum-guide`, `curriculum-reference`, `curriculum-memory` | Course dependencies, reference selection, memory recurrence, shared vocabulary and answer ownership. |

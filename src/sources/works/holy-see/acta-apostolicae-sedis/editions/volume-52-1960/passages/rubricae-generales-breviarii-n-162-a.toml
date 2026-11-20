@@ -1,0 +1,17 @@
+schema = 1
+record_type = "passage"
+id = "passage.holy-see.acta-apostolicae-sedis.volume-52-1960.rubricae-generales-breviarii-n-162-a"
+edition_id = "edition.holy-see.acta-apostolicae-sedis.volume-52-1960"
+artifact_id = "artifact.holy-see.acta-apostolicae-sedis.volume-52-1960.rubricae-generales-breviarii-n-162-a-checked-text-538a2317"
+artifact_sha256 = "538a2317773930384906a969930768e498001d677aab7f22591e9c7bee106605"
+locus = "aas-52-p-625-rubricae-generales-breviarii-n-162-a"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Rubricae generales Breviarii Romani (pars secunda), caput IV De ordinando divino Officio, n. 162, opening and letter a): all Sundays except Easter and Pentecost have Matins of one nocturn of nine psalms and three lessons. Printed p. 625; microfilm PDF p. 37."
+physical_line_ranges = [[1, 2]]
+text = "162. Matutinum cum unico Nocturno novem psalmorum et trium lectionum habent: a) dominicae omnes, praeter dominicas Paschatis et Pentecostes;"
+transcription_segments = [
+  { line = 1, text = "162. Matutinum cum unico Nocturno novem psalmorum et trium lectionum habent:" },
+  { line = 2, text = "a) dominicae omnes, praeter dominicas Paschatis et Pentecostes;" },
+]
+verified_on = "2026-11-18"
+notes = "Read on the microfilm page image at 150 dpi. The vatican.va OCR layer agrees in wording at this extent."

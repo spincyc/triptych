@@ -33,6 +33,13 @@ has a dated resolution.
 | CON-CIT-003 | The controlling Missal, printed p. 397, and the corrected Cummiskey Secret and Postcommunion passage records | repaired | The source-library owner corrected the Secret's number to 1589 and the Postcommunion's number to 1591 and incipit to *Mentes nostras et corpora possideat*. This leaf re-read the page and corrected records, repinned both fingerprints in `research/source-bindings.toml`, and recorded completion in `research/scope.md` and `propers/verified.md`. English payloads did not change. |
 | CON-PRO-003 | Commit `b27036f9b856bd8f662f51b6e6128bd90a5ed633` and the current profile | already repaired | The 2026-09-11 guidance repair reconciled the audit fields: anchors, mechanism, nearest located precedent or analogue, search boundary, controlling limit. The printed proposal carries Fruit; this leaf's research audit owes no new Fruit field. |
 
+**Corrected on 2026-11-18:** the "registered Holy See AAS 52 scan" of SYN-CON-009 is the vatican.va
+`AAS-52-1960-ocr.pdf`, ABBYY FineReader's re-typesetting of its own OCR with no page raster, so
+re-reading it re-read the OCR and not the 1960 print. Printed pp. 599 and 709 were re-read on
+2026-11-18 on the microfilm page facsimile
+`artifact.holy-see.acta-apostolicae-sedis.volume-52-1960.ia-microfilm-issue-pdf-51e41032` (PDF
+pp. 11 and 123) and agree with both instruments as the leaf identifies them.
+
 The full-leaf revision also completed these straightforward research-record
 repairs from the interrupted work:
 
@@ -160,6 +167,9 @@ the Augustine text re-matches
 `3909c029b75092eb11f8c353b295b24c5fb3bcf8d7ba52f196040914b7a6692b`;
 the AAS scan fetched for this review re-matches
 `c734079d1a9393f09595bd95dd5900ad30e9c5a2bc6939a8bfd84e048f414702`.
+**Corrected on 2026-11-18:** that "AAS scan" is an OCR re-typesetting, not a page facsimile;
+its digest identifies the file and says nothing about the print. See the correction after the
+findings table above.
 
 At this handoff the artifacts are ready for independent content and
 visual/web review. This authoring record does not itself assert independent

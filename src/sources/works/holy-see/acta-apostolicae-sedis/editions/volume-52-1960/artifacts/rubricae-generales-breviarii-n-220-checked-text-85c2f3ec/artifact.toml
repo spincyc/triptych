@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.holy-see.acta-apostolicae-sedis.volume-52-1960.rubricae-generales-breviarii-n-220-checked-text-85c2f3ec"
+edition_id = "edition.holy-see.acta-apostolicae-sedis.volume-52-1960"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "qualified-public-domain"
+rights_basis = "Admitted under src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml, [how_to_admit].carrier_artifact. This focused transcription carries only the quoted extent of the act. First publication of these words: Acta Apostolicae Sedis 52 (1960), number 10 of 15 August 1960, the Holy See's official gazette printed in Vatican City (first_publication_imprint Acta Apostolicae Sedis; first_publication_body Sacred Congregation of Rites; first_publication_year 1960): Rubricae Breviarii et Missalis Romani (Rubricae generales and the rubrics of the Breviary and Missal), promulgated by the Sacred Congregation of Rites' general decree of 26 July 1960. us_formality published-abroad-without-us-notice: the AAS printings examined by that record carry no copyright notice, and none is visible on the printed pages read here; the record's L3 residual risk applies (Twin Books Corp. v. Walt Disney Co., 83 F.3d 1162 (9th Cir. 1996), may treat a foreign-language work published abroad without notice as unpublished in the United States). Published on a qualified basis (publication policy priority 6; confidence medium-low): a Holy See text first published in Vatican City in 1931-1975 that lapsed into the U.S. public domain for want of a formality, and whose twenty-year Vatican term under Italian Law 633/1941 arts. 11 and 29, as applied by Vatican Law XII of 1960, had on this project's reading expired before the 1 January 1996 U.S. restoration date (17 U.S.C. 104A). Not adjudicated; U.S. copyright only; implies no ecclesiastical approval or permission."
+rights_jurisdiction = "United States"
+provenance = "Triptych transcription by acquisition lane A3 (fork F1) on 2026-11-18, read on page images rendered with pdftoppm from the hashed microfilm PDF artifact.holy-see.acta-apostolicae-sedis.volume-52-1960.ia-microfilm-issue-pdf-51e41032 (sha256 51e410326167f846750a6b8e69ff4edcffd3e1dd5db1d610da66c480ab6cd6ed): printed pp. 634-635 (PDF pp. 46-47) at 150 dpi. The vatican.va OCR PDF artifact.holy-see.acta-apostolicae-sedis.volume-52-1960.vatican-ocr-pdf-c734079d (re-fetched whole on 2026-11-18; SHA-256 c734079d1a9393f09595bd95dd5900ad30e9c5a2bc6939a8bfd84e048f414702 equal to the registered digest and to the Advent-primer research lane's fetched copy) and its pdftotext layer were used only to find the page. No source text passed through a language model between the server and the hash."
+retrieved = "2026-11-18"
+sha256 = "85c2f3ec4c7cb3e5f510f076c6962ea84daa1cfabf9dd87c356b49dec4ee5828"
+byte_size = 548
+path = "src/sources/works/holy-see/acta-apostolicae-sedis/editions/volume-52-1960/artifacts/rubricae-generales-breviarii-n-220-checked-text-85c2f3ec/rubricae-generales-breviarii-n-220.txt"
+derived_from = "artifact.holy-see.acta-apostolicae-sedis.volume-52-1960.ia-microfilm-issue-pdf-51e41032"
+transformation = "Read the named printed page(s) as images rendered from the parent microfilm PDF and transcribe the quoted extent with one printed paragraph or list item per LF-terminated UTF-8 line, each prefixed by a braced locator naming volume, printed page and number; preserve the printing's wording, spelling, capitals, abbreviations and punctuation; join line-end hyphenation; italics and small capitals are not marked; the thin space the printing sets before a colon or semicolon is not reproduced; running heads omitted."
+indexable = true
+encoding = "utf-8"

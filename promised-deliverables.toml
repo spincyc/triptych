@@ -6007,3 +6007,140 @@ state = "complete"
     "PROJECT-WORK.md",
     "guidance/corpus-browser-roadmap.md",
   ]
+
+[[deliverables]]
+id = "claude-advent-primer-1962-2026-11-18"
+owner = "src/claude/liturgy/roman-rite/1962/seasons"
+promise = "Author and publish a Claude seasonal primer for Advent in the 1962 Roman Rite, the first of a primer series to be followed by a larger one for Lent: a comprehensive, deeply patristic and scriptural preparation for the season covering its history, what each Sunday represents, fasting and anticipation, spiritual renewal and the renewal of daily prayer, with a daily reading table, a graded rule of life, an appendix of prayer texts and a preparation for confession; produced in phases (section plan, parallel research, acquisition and collation into the shared corpus with cross-references, cold generation from those records), without duplicating the per-Sunday proper guides, and signposted from the 1962 calendar by an unobtrusive cue."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "series-profile-and-kind"
+  criterion = "A seasonal-primer series profile and the seasonal-primer-1962 document kind exist, are routed from AGENTS.md and the schema registry, and pass the document-schema checks and their unit tests."
+  status = "pass"
+  evidence = [
+    "guidance/liturgy/roman-1962-seasonal-primers.md",
+    "src/common/document-schemas/registry.toml",
+    "tools/tests/test_document_schema_prose.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "phased-plan-and-research"
+  criterion = "The leaf's research/scope.md records the section plan and the findings of each research phase, and research/source-audit.md maps every historical, liturgical and legal claim the primer makes to a keyed source row with its bounds."
+  status = "pass"
+  evidence = [
+    "src/claude/liturgy/roman-rite/1962/seasons/advent/research/scope.md",
+    "src/claude/liturgy/roman-rite/1962/seasons/advent/research/source-audit.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "witnesses-in-the-shared-corpus"
+  criterion = "The primer's witnesses are acquired into the provider-neutral source library as work, edition, artifact and passage records with checked transcriptions where quoted, with containment, catena accounting, THIRD_PARTY notices and the family-migration ledger current, and the leaf binds them through schema-2 source bindings."
+  status = "pass"
+  evidence = [
+    "src/claude/liturgy/roman-rite/1962/seasons/advent/research/source-bindings.toml",
+    "src/sources/inventories/source-family-migration-v1.toml",
+    "src/sources/commentary/fragment-loci.yaml",
+  ]
+
+  [[deliverables.requirements]]
+  id = "aas-52-correction"
+  criterion = "As the maintainer decided on 2026-11-18: the AAS 52 (1960) records distinguish the Holy See's re-typeset OCR digitisation from the microfilm facsimile and record re-collation of dependent readings on the microfilm; the 1962 calendar reference withdraws the two divergences that were OCR artefacts and states its method and page extents truly; the Fourteenth and Fifteenth Sunday guides and Assembling the Mass no longer describe the OCR as page images or a scan; and the consumers of every moved source fingerprint are reviewed and re-pinned."
+  status = "pass"
+  evidence = [
+    "src/sources/works/holy-see/acta-apostolicae-sedis/editions/volume-52-1960/artifacts/vatican-ocr-pdf-c734079d/artifact.toml",
+    "src/claude/liturgy/roman-rite/1962/reference/liturgical-calendar/sections/90-collation.tex",
+    "src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/sections/90-scope.tex",
+  ]
+
+  [[deliverables.requirements]]
+  id = "primer-content"
+  criterion = "The leaf liturgy/roman-rite/1962/seasons/advent holds a body of about 15,000 to 20,000 words with the daily reading table, prayer texts, scope and references appendices; every quotation agrees with a checked transcription; law, custom and counsel are kept apart and the 1962 law and present law are never merged; and no proper guide is duplicated, linked or promised."
+  status = "pass"
+  evidence = [
+    "src/claude/liturgy/roman-rite/1962/seasons/advent/publication.toml",
+    "src/claude/liturgy/roman-rite/1962/seasons/advent/sections/26-rule-of-life.tex",
+    "src/claude/liturgy/roman-rite/1962/seasons/advent/sections/90-daily-readings.tex",
+    "src/claude/liturgy/roman-rite/1962/seasons/advent/sections/92-prayers.tex",
+  ]
+
+  [[deliverables.requirements]]
+  id = "cold-review"
+  criterion = "Two independent cold reviews (quotations, attributions, claims and law; voice, boundary, structure and usefulness) are dispositioned in the leaf's research/cold-review.md, and every accepted finding is fixed."
+  status = "pass"
+  evidence = [
+    "src/claude/liturgy/roman-rite/1962/seasons/advent/research/cold-review.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "installed-and-cued"
+  criterion = "The PDF and web edition are built, gate-checked and inspected; a release record exists; the Traditional Latin Mass catalog carries a Seasonal Primers row and an unobtrusive cue above the Sunday table with a same-line publication-reference marker; and release bindings and the corpus index are refreshed."
+  status = "pass"
+  evidence = [
+    "release/publications/claude/liturgy/roman-rite/1962/seasons/advent.json",
+    "library/traditional-latin-mass.md",
+    "tools/tests/test_calendar_computation_guidance.py",
+    "release/browser-products.json",
+    "release/public-alpha.json",
+    "src/index/documents/corpus.json",
+  ]
+
+[[deliverables]]
+id = "claude-advent-primer-1962-revision-2026-11-19"
+owner = "src/claude/liturgy/roman-rite/1962/seasons"
+promise = "Rewrite the published Claude Advent primer after the maintainer judged it (2026-11-19) full of AI jargon, stilted, repetitive, without gravity, pedagogical flow or wow moments, and not tied to Christmas: a full pass written to a believer preparing for the season, with deeper patristic theology, devotional force, and a part that prepares for Christmas (Bethlehem as house of bread, the Bread of Life laid in a manger, the swaddling bands and the burial linen, the wonderful exchange); acquire the new witnesses; and amend the project and series guidance so the defects do not recur."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "guidance-amended"
+  criterion = "The editorial standard and the seasonal-primer profile name the defects (machine vocabulary, labelled glosses, ledger-style citation, repeated templates, flatness) and require earned wonder, teaching order, a reader review and the Christmas part; a mechanical check refuses a printed gloss label."
+  status = "pass"
+  evidence = [
+    "guidance/editorial.md",
+    "guidance/liturgy/roman-1962-seasonal-primers.md",
+    "guidance/articles.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "new-witnesses"
+  criterion = "The Christmas Matins lessons and responsory, the hymns, the Missal stations and Vigil Introit, and the Fathers on Bethlehem, the manger, the swaddling bands and the exchange (Gregory, Ambrose, the Catena on Luke, Gregory Nazianzen, Leo, Bernard, Athanasius, Irenaeus, Augustine) are acquired and verified on page images in the source library."
+  status = "pass"
+  evidence = [
+    "src/sources/works/catholic-church/breviarium-romanum",
+    "src/sources/works/catholic-church/martyrologium-romanum",
+    "src/sources/works/gregory-the-great/homiliae-in-evangelia/editions/1878-latin-migne-pl76-garnier",
+    "src/sources/works/thomas-aquinas/catena-aurea-in-lucam",
+    "src/sources/works/nicene-and-post-nicene-fathers/series-2-volume-4",
+    "src/sources/works/augustine/sermo-191",
+    "src/sources/inventories/source-containment-v1.toml",
+  ]
+
+  [[deliverables.requirements]]
+  id = "rewritten"
+  criterion = "Every chapter and appendix is rewritten to the plan in research/scope.md: four parts, a named moment from the sources in each chapter, short-form attribution in the body, no labelled glosses or production vocabulary, a Christmas part, and only verified quotations."
+  status = "pass"
+  evidence = [
+    "src/claude/liturgy/roman-rite/1962/seasons/advent/sections",
+  ]
+
+  [[deliverables.requirements]]
+  id = "reviewed"
+  criterion = "A blind reader review and an accuracy review have read the whole, every finding is dispositioned in research/cold-review.md, and the fixes are applied."
+  status = "pass"
+  evidence = [
+    "src/claude/liturgy/roman-rite/1962/seasons/advent/research/cold-review.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "installed"
+  criterion = "Bindings, source audit and references match the new text; the PDF and web edition build and are inspected; inventories, browser products, release bindings and the corpus index are refreshed; deployment gates pass."
+  status = "pass"
+  evidence = [
+    "src/claude/liturgy/roman-rite/1962/seasons/advent/research/source-bindings.toml",
+    "src/claude/liturgy/roman-rite/1962/seasons/advent/research/source-audit.md",
+    "src/claude/liturgy/roman-rite/1962/seasons/advent/sections/99-references.tex",
+    "src/sources/inventories/claude-publications-v1.toml",
+    "release/browser-products.json",
+    "release/public-alpha.json",
+    "src/index/sources/index.json",
+  ]

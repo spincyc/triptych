@@ -21,6 +21,10 @@ image, not merely in an optical text layer:
 - Missal facsimile at 260 dpi, artifact pages 10, 15, 16, 18 (bottom crop), 21, 26, 27, 29,
   31, 32, 33, 545, 786.
 - *Acta* at 200 dpi, printed pages 708 and 709.
+- **Corrected on 2026-11-18:** the *Acta* "page images" above, and the "Holy See scan" of the
+  table, were renderings of the vatican.va PDF, which is an OCR re-typesetting with no page raster.
+  Pages 708 and 709 were re-read on 2026-11-18 on the microfilm page facsimile `artifact.holy-see.acta-apostolicae-sedis.volume-52-1960.ia-microfilm-issue-pdf-51e41032` (PDF pp. 122-123,
+  300 dpi) and agree. See the correction in `edition-manifest.md`.
 
 **Optical text layer with layout preserved.** The remainder of the code in both witnesses, the
 *Ritus servandus*, the *Ordo Missae*, the prefaces, and the individual formularies named in the

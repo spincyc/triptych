@@ -1127,3 +1127,92 @@ requested or created here. Aggregate products, inventory refreshes and scoped
 release-binding checks are reported separately in the worker's scratch
 handoff under `.scratch/proper-study-68/renewed-install-publication-0000-`.
 No workflow advance, Git write or deployment is authorized by this checkpoint.
+
+## Renewed generate-web, iteration 1
+
+This conversion-only contribution answers proper-study v19 run
+`13ecdd1552c245ea`. The existing revision command reports
+`uncommitted: false` for the canonical, synthesis and homily editions.
+Their derived revision remains `2026-11-17T18:35:07Z`.
+The required canonical conversion and a separate cold reconversion agree
+byte for byte: 86,493 bytes, SHA-256
+`d5562a4040789668a3c24d15adb24703ab1efade890157b45f1de982b95fd270`.
+The required `snapshot-web` command records that identity; the receipt is
+unchanged. Identical Markdown does not renew the stale input-bound review.
+
+Existing conversion fidelity checks, web-declaration validation and the
+generated-assembly currency check pass. A new one-off source comparison
+checks 107 narrative paragraphs in order, all 36 quotations and 52 notes,
+eleven appointed anchors, both interpretations' separate four-sense lists,
+two tables and 114 resolved internal links through the locked site renderer.
+The single paragraph containing a section-number reference was read against
+the source and checked through its resolved link. Revision and rights remain
+visible; internal model and run metadata remain absent. These are preparation
+checks, not independent review or browser inspection.
+
+Two initial one-off assertions failed because the checker discarded an
+autolink and misclassified the leaf's quotation environments. Correcting
+those comparisons required no source or converter change. The existing
+tool-registry check still fails for `corpus-index`'s missing group and
+undeclared reach; `tmt` remains unavailable. These unrelated limits were not
+repaired. Evidence is under
+`.scratch/proper-study-68/renewed-generate-web-0001/`.
+
+`STALE-WEB-REVIEW` remains open for the next independent reviewer of the
+current input closure and these exact bytes. No inspection date or approval
+was renewed. Accepted prose and research, declarations, native results and
+historical archives were not revised. No companion conversion, print export,
+installation, index or release refresh, Git write or workflow advance was
+performed.
+
+## Renewed installation, iteration 1
+
+This installation contribution answers `proper-study` v19 run
+`13ecdd1552c245ea`, after the history-preserving integration of the revised
+resumed-Sunday presentation. The engine's read-only review-currentness
+comparison finds no stale research, expansive-study, concise-study, homily
+or canonical web review against the current combined sources. The four
+source reviews remain the actual iteration-0 native results listed above.
+The new canonical web review is iteration 1, with native result SHA-256
+`5e781c4cec438a7e7a90de6f4ba6244cc921f34c970da1ec4754f79f8fd91523`.
+No result, input seal, historical archive or standing research advisory was
+edited or renewed by this installer.
+
+The independent reviewer read the complete canonical Markdown and compared
+the TeX and generated chronology, with focused Augustine 43.4–8, 13,
+Chrysostom Matthew 76.2–3, Aquinas Colossians 1 lectio 3 and Bede Mark III
+checks. Its actual comparisons cover 36 quotations, 52 notes, 45 headings,
+119 authored paragraphs, both separate four-sense lists, two tables,
+nine references and 114 internal links. Actual Chromium content-preview
+sampling used 1280 by 1000 and 390 by 844 viewports. This is not exhaustive
+browser-position, deployment, companion-reader, print or fresh facsimile
+inspection. The review records the live Gutenberg HTTP 503 and the
+hash-correct retained biblical artifacts separately.
+
+The canonical inspection now names that actual iteration-1 review.
+Its date, method, conversion hash and stated limits remain accurate;
+the declaration's eligibility-review date is unchanged. No companion
+inspection was invented. An installer-owned cold conversion is exactly
+byte-identical to the reviewed canonical Markdown and its existing receipt:
+86,493 bytes, SHA-256
+`d5562a4040789668a3c24d15adb24703ab1efade890157b45f1de982b95fd270`.
+The existing content-schema check with its owning validators passes for
+one leaf and all three outputs.
+
+All three existing minimal release records correctly retain `alpha` and
+`perpetual-public-repository-2026`. The current catalog row already links
+the GPT canonical, concise and homily readers in declared order and has
+exactly one GPT-primary canonical marker. It links no absent GPT PDF.
+No catalog edit is needed: the incoming Claude links and completion records,
+Last Sunday followed by the separate resumed-Sundays table, and both
+presentation notes remain intact.
+
+The installation worker's aggregate product, inventory and exact scoped
+release-binding commands, before/after comparisons and terminal-check
+outcomes are retained under
+`.scratch/proper-study-68/renewed-install-publication-0001/`.
+Those mechanical outcomes are distinct from the native reviews recorded
+here; no terminal workflow acceptance or deployment is asserted by this
+entry. Accepted prose, research evidence, generation provenance and shared
+implementation remain unchanged. No print export, Git write, index refresh,
+archive operation or workflow advance is part of this contribution.

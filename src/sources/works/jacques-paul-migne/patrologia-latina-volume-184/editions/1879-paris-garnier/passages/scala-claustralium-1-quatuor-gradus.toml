@@ -1,0 +1,24 @@
+schema = 1
+record_type = "passage"
+id = "passage.jacques-paul-migne.patrologia-latina-volume-184.1879-paris-garnier.scala-claustralium-1-quatuor-gradus"
+edition_id = "edition.jacques-paul-migne.patrologia-latina-volume-184.1879-paris-garnier"
+artifact_id = "artifact.jacques-paul-migne.patrologia-latina-volume-184.1879-paris-garnier.scala-claustralium-1-quatuor-gradus-checked-text-f382bf03"
+artifact_sha256 = "f382bf0333f8d447d83d405d68d802f55faae045481fd14bf4ce849cd3fac82a"
+locus = "column-475"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Scala claustralium (Epistola Guigonis ad fratrem Gervasium), caput primum, Descriptio quatuor graduum exercitationum spiritualium, section 1 entire: lectio, meditatio, oratio, contemplatio and their definitions. Read on PL 184 column 475 (PDF page 242, left column, from the letter's greeting) and column 476 (right column, to the heading of caput II)."
+physical_line_ranges = [[1, 9]]
+text = "Cum die quadam, corporali manuum labore occupatus, de spiritualis hominis exercitio cogitare cœpissem, quatuor spirituales gradus animo cogitanti se subito obtulerunt: scilicet, lectio, meditatio, oratio, et contemplatio. Hæc est Scala Claustralium, qua de terra in cœlum sublevantur; gradibus quidem distincta paucis, immensæ tamen et incredibilis magnitudinis. Cujus extrema pars terræ innixa est; superior vero nubes penetrat, et secreta cœlorum rimatur Hi gradus sicut nominibus et numero, ita ordine et munere sunt distincti. Quorum proprietates et officia quidem singula quid circa nos efficiant, quomodo inter se invicem differant et præemineant, si quis diligenter inspiciat, quidquid laboris aut studii impenderit in eis, breve reputabit et facile, præ utilitatis et dulcedinis magnitudine. Est autem lectio, sedula Scripturarum cum animi intentione inspectio. Meditatio, est studiosa mentis actio, occultæ veritatis notitiam ductu propriæ rationis investigans. Oratio, est devota cordis intentio in Deum pro malis amovendis, et bonis adipiscendis. Contemplatio, est mentis in Deum suspensæ elevatio, æternæ dulcedinis gaudia degustans."
+transcription_segments = [
+  { line = 1, text = "Cum die quadam, corporali manuum labore occupatus, de spiritualis hominis exercitio cogitare cœpissem, quatuor spirituales gradus animo cogitanti se subito obtulerunt: scilicet, lectio, meditatio, oratio, et contemplatio." },
+  { line = 2, text = "Hæc est Scala Claustralium, qua de terra in cœlum sublevantur; gradibus quidem distincta paucis, immensæ tamen et incredibilis magnitudinis." },
+  { line = 3, text = "Cujus extrema pars terræ innixa est; superior vero nubes penetrat, et secreta cœlorum rimatur" },
+  { line = 4, text = "Hi gradus sicut nominibus et numero, ita ordine et munere sunt distincti." },
+  { line = 5, text = "Quorum proprietates et officia quidem singula quid circa nos efficiant, quomodo inter se invicem differant et præemineant, si quis diligenter inspiciat, quidquid laboris aut studii impenderit in eis, breve reputabit et facile, præ utilitatis et dulcedinis magnitudine." },
+  { line = 6, text = "Est autem lectio, sedula Scripturarum cum animi intentione inspectio." },
+  { line = 7, text = "Meditatio, est studiosa mentis actio, occultæ veritatis notitiam ductu propriæ rationis investigans." },
+  { line = 8, text = "Oratio, est devota cordis intentio in Deum pro malis amovendis, et bonis adipiscendis." },
+  { line = 9, text = "Contemplatio, est mentis in Deum suspensæ elevatio, æternæ dulcedinis gaudia degustans." },
+]
+verified_on = "2026-11-18"
+notes = "The page prints 'Hæ est Scala Claustralium' (the c of Hæc is missing or broken) and no stop after 'rimatur' before 'Hi gradus'; the first is read Hæc and the second is transcribed as printed, without a stop. The bold marginal 313 inside 'pro malis amovendis' is omitted."

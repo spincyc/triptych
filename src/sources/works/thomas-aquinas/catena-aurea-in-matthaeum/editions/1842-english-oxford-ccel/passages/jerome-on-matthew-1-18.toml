@@ -1,0 +1,16 @@
+schema = 1
+record_type = "passage"
+id = "passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.jerome-on-matthew-1-18"
+edition_id = "edition.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel"
+artifact_id = "artifact.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.text-130e334a"
+artifact_sha256 = "130e334a0e087ba2ff7f2afc9f803921b4d1de16ed45d682c1756c0c14e3cd67"
+locus = "Matthew 1:18, Jerome (Comm. in Matt. I; unlabelled beyond \"Jerome\" in the CCEL text)"
+states = ["cataloged", "acquired", "inspected"]
+context = "Jerome's comment on Matthew 1:18 in the Catena's block on that verse: the three reasons Christ was conceived of a virgin espoused (line 238), with the unlabelled paragraph that continues it with Ignatius's fourth reason (line 239), between Remigius (line 237) and Pseudo-Chrysostom (line 240)."
+physical_line_ranges = [[238, 239]]
+text = "Jerome: But why is He conceived not of a Virgin merely, but of a Virgin espoused? First, that by the descent of Joseph, Mary’s family might be made known; secondly, that she might not be stoned by the Jews as an adulteress; thirdly, that in her flight into Egypt she might have the comfort of a husband. The Martyr Ignatius [margin note: vid. Ign. ad Eph. 19] adds yet a fourth reason, namely, that His birth might be hid from the Devil, looking for Him to be born of a wife and not of a virgin."
+transcription_segments = [
+  { line = 238, text = "Jerome: But why is He conceived not of a Virgin merely, but of a Virgin espoused? First, that by the descent of Joseph, Mary’s family might be made known; secondly, that she might not be stoned by the Jews as an adulteress; thirdly, that in her flight into Egypt she might have the comfort of a husband." },
+  { line = 239, text = "The Martyr Ignatius [margin note: vid. Ign. ad Eph. 19] adds yet a fourth reason, namely, that His birth might be hid from the Devil, looking for Him to be born of a wife and not of a virgin." },
+]
+notes = "Exact CCEL English digital witness inspected on 2026-11-18; no facsimile collation (no page image of the 1842 Oxford printing is registered for this edition), and no collation with Jerome's Latin. Not verified. Identification: the Catena labels the comment only \"Jerome\". The Roman Breviary reads Jerome's homily on Matthew 1:18-21 at Matins of the Vigil of the Nativity, headed \"Homilia sancti Hieronymi Presbyteri. Lib. I. Comment. in c. 1. Matth.\" with the incipit \"Quare non de simplici virgine, sed de desponsata concipitur?\" (`passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.advent-primer-20261118-vigil-nativity-matins`, verified on page images of the 1888 Pustet printing, p. 174), which this comment renders; the comment is that commentary's, not the Contra Helvidium the Catena cites separately in the same block."

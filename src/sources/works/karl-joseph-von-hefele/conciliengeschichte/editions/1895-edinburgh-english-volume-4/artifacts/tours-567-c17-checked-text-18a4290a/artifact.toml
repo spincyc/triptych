@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.karl-joseph-von-hefele.conciliengeschichte.1895-edinburgh-english-volume-4.tours-567-c17-checked-text-18a4290a"
+edition_id = "edition.karl-joseph-von-hefele.conciliengeschichte.1895-edinburgh-english-volume-4"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "An English translation printed at Edinburgh in 1895; Public domain in the United States by publication date. The title page of this copy, read on the page image at PDF p. 9, prints EDINBURGH: / T. & T. CLARK, 38 GEORGE STREET. / 1895. A work first published abroad before 1931 is out of United States copyright: that is the line guidance/missals.md section 5 records from Cornell's public-domain chart as current on 1 January 2026, and because it moves every January it is written here as derived for calendar year 2026 and not as a standing rule. Restoration under 17 U.S.C. 104A cannot keep it protected: a restored term runs no longer than ninety-five years from publication, and ninety-five years from 1895 ended with 1990. No life-based term is relied on."
+rights_jurisdiction = "United States"
+provenance = "Transcribed on 2026-11-18 from printed p. 391 (PDF p. 407) of the hashed PDF d5719edf5b30c75dd6705432be9bc465fd5e5885723cad26a68fa0d67d927e03, rendered at 120 dpi; the OCR layer was a finding aid only."
+retrieved = "2026-11-18"
+sha256 = "18a4290a31785c0e876ceee88c96a979f99b858b5a0c0fc55896f25c30518618"
+byte_size = 831
+path = "src/sources/works/karl-joseph-von-hefele/conciliengeschichte/editions/1895-edinburgh-english-volume-4/artifacts/tours-567-c17-checked-text-18a4290a/hefele-iv-p391-tours-c17.txt"
+derived_from = "artifact.karl-joseph-von-hefele.conciliengeschichte.1895-edinburgh-english-volume-4.ia-pdf-d5719edf"
+transformation = "Read the named printed page(s) as image(s) of the parent artifact and transcribe the quoted extent with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced locator naming the printed page or column; preserve the printing's wording, spelling, capitalization, accents and punctuation; join line-end hyphenation; expand nothing; omit running heads, marginal numbers and footnote markers unless a line says otherwise."
+indexable = true
+encoding = "utf-8"

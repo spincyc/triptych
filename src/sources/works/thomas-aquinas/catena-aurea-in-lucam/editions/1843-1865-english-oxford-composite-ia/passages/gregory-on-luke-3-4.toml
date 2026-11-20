@@ -1,0 +1,17 @@
+schema = 1
+record_type = "passage"
+id = "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.gregory-on-luke-3-4"
+edition_id = "edition.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia"
+artifact_id = "artifact.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.gregory-on-luke-3-4-checked-text-6d72200e"
+artifact_sha256 = "6d72200e84e9e48df0159180da5787c9a648dc041f010dee897aecfa68999f88"
+locus = "Luke 3:4, Gregory (Hom. in Ev. 7.2 and 20.3, as the margin reads Greg. 7, 20. in Ev.); Catena printed page 110 (Part I, 1843), facsimile PDF page 132"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The whole of the Gregory comment on the lemma Luke 3:4 (The voice of one crying in the wilderness), from GREG. after Ambrose's voice-and-Word comment to good preaching, where ORIGEN begins."
+physical_line_ranges = [[1, 2]]
+text = "Greg. John cries in the desert because he brings the glad tidings of redemption to deserted and forsaken Judæa, but what he cries is explained in the words, Prepare ye the way of the Lord. For they who preach true faith and good works, what else do they than prepare the way for the Lord’s coming into the hearts of the hearers, that they might make the paths of God straight, forming pure thoughts in the mind by the word of good preaching."
+transcription_segments = [
+  { line = 1, text = "Greg. John cries in the desert because he brings the glad tidings of redemption to deserted and forsaken Judæa, but what he cries is explained in the words, Prepare ye the way of the Lord." },
+  { line = 2, text = "For they who preach true faith and good works, what else do they than prepare the way for the Lord’s coming into the hearts of the hearers, that they might make the paths of God straight, forming pure thoughts in the mind by the word of good preaching." },
+]
+verified_on = "2026-11-18"
+notes = "LOCUS CORRECTION: the R3 dossier assigns this comment to Hom. 20.3 alone. The margin, read at 300 dots per inch, reads Greg. 7, 20. in Ev., and the Latin bears it out: the first sentence (John cries in the desert ... deserted and forsaken Judaea) answers Hom. 7.2 (Qui etiam in deserto clamat, quia derelictae destitutaeque Judaeae solatium Redemptoris annuntiat; Wikisource artifact complete-extracted-text-dc25dd69 line 81), and the rest (For they who preach true faith and good works ...) answers Hom. 20.3 (Omnis qui fidem rectam et bona opera praedicat ...; same artifact line 235). The Catena joins the two without a mark. OCR AGAINST PAGE (ocr-1455eb5f lines 5706-5716): the margin reads 7  20. with the comma lost; Judaea for Judæa; otherwise the wording agrees."

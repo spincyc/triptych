@@ -40,7 +40,7 @@
     --reader-accent: var(--section-ink, var(--rubric-dark, #6f2831));
     --reader-focus: var(--focus-ring, #1f5d8b);
     --reader-sans: var(--font-ui, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif);
-    --reader-toolbar-height: 5.25rem;
+    --reader-toolbar-height: 3.25rem;
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     min-width: 0;
@@ -54,20 +54,29 @@
     outline-offset: 3px;
   }
 
-  .publication-reader :is(button, select, input) {
+  /* A page action (site.css, "Page actions") keeps the shared look; these
+     are the reader's own fields. */
+  .publication-reader :is(button, select, input):not(.page-action) {
     max-width: 100%;
-    min-height: 2.75rem;
-    border: 1px solid var(--reader-muted);
-    border-radius: .2rem;
+    min-height: var(--control-compact, 2.25rem);
+    border: 1px solid var(--hairline-strong, var(--reader-muted));
+    border-radius: var(--radius, .2rem);
     background: var(--reader-panel);
     color: var(--reader-ink);
     font: inherit;
   }
 
   .publication-reader :is(button, select) { cursor: pointer; }
-  .publication-reader button { padding: .6rem .9rem; }
-  .publication-reader button:disabled { cursor: wait; }
+  .publication-reader button:not(.page-action) { padding: .4rem .8rem; }
+  .publication-reader button:not(.page-action):disabled { cursor: wait; }
 
+  /* One compact line (2026-11-17, at the maintainer's request that the
+     actions stop floating above the bar and the bar take less room):
+     Previous, the document selector and Next, then the page actions at the
+     line's end, every control the same compact height and centred on one
+     axis. The selector's name is its aria-label rather than a caption above
+     it: that caption made the browse group taller than the actions, which
+     were then centred half a caption above the controls beside them. */
   .publication-reader__toolbar {
     position: sticky;
     top: 0;
@@ -76,18 +85,18 @@
     grid-column: 1 / -1;
     flex-wrap: wrap;
     align-items: center;
-    gap: .65rem 1.25rem;
-    padding: .8rem 0;
+    gap: .5rem 1.25rem;
+    padding: .5rem 0;
     border-block: 1px solid var(--reader-line);
     background: var(--reader-panel);
-    font: 500 .85rem/1.4 var(--reader-sans);
+    font: 600 .8125rem/1.25 var(--reader-sans);
   }
 
   .publication-reader__browse {
     display: flex;
-    flex: 1 1 34rem;
-    align-items: end;
-    gap: .5rem;
+    flex: 1 1 22rem;
+    align-items: center;
+    gap: .375rem;
     min-width: 0;
   }
 
@@ -97,13 +106,14 @@
     flex: 0 0 auto;
     align-items: center;
     justify-content: center;
-    min-height: 2.75rem;
-    padding: .6rem .8rem;
-    border: 1px solid var(--reader-line);
-    border-radius: .2rem;
+    gap: .4em;
+    min-height: var(--control-compact, 2.25rem);
+    padding: .3rem .75rem;
+    border: 1px solid var(--hairline-strong, var(--reader-line));
+    border-radius: var(--radius, .2rem);
     color: var(--reader-ink);
     text-decoration: none;
-    overflow-wrap: anywhere;
+    white-space: nowrap;
   }
 
   .publication-reader__browse > span[aria-disabled] {
@@ -111,43 +121,50 @@
     border-style: dashed;
   }
 
+  /* Drawn arrows, outside the accessible name the link's aria-label gives. */
+  .publication-reader__adjacent[rel="prev"]::before,
+  .publication-reader__adjacent[rel="next"]::after {
+    color: var(--reader-muted);
+    font-size: 1.25em;
+    font-weight: 400;
+    line-height: 1;
+  }
+  .publication-reader__adjacent[rel="prev"]::before { content: "‹"; }
+  .publication-reader__adjacent[rel="next"]::after { content: "›"; }
+
   .publication-reader__document {
-    display: grid;
-    flex: 1 1 24rem;
-    gap: .3rem;
+    display: flex;
+    flex: 1 1 12rem;
     min-width: 0;
   }
 
-  .publication-reader__browse label {
-    color: var(--reader-muted);
-    font-size: .72rem;
-    font-weight: 650;
-    letter-spacing: .035em;
+  .publication-reader__field-name {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
   }
 
   .publication-reader__browse select {
     width: 100%;
     min-width: 0;
-    padding: .55rem 2rem .55rem .65rem;
-    font: 550 .88rem/1.4 var(--reader-sans);
+    padding: .3rem 2rem .3rem .7rem;
+    font: 600 .8125rem/1.25 var(--reader-sans);
     text-overflow: ellipsis;
   }
 
   .publication-reader__actions {
-    display: flex;
-    flex: 0 1 auto;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: .4rem .75rem;
-    min-width: 0;
+    flex: none;
+    margin-inline-start: auto;
   }
 
-  .publication-reader__actions button { border-color: var(--reader-line); }
-
   .publication-reader [data-reader-status] {
-    max-width: 23rem;
+    max-width: 16rem;
     color: var(--reader-muted);
-    font-size: .78rem;
+    font-size: .75rem;
+    font-weight: 500;
     overflow-wrap: anywhere;
   }
 
@@ -191,8 +208,8 @@
     grid-row: 2;
     flex-wrap: wrap;
     gap: .2rem 1.5rem;
-    margin: 0 0 1.75rem;
-    padding: .35rem 0 0;
+    margin: 0 0 1.5rem;
+    padding: .2rem 0 0;
     border: 0;
     border-bottom: 1px solid var(--reader-line);
     font: 550 .85rem/1.4 var(--reader-sans);
@@ -203,8 +220,8 @@
     grid-column: 2;
     grid-row: 2;
     align-items: center;
-    margin: 0 0 1.75rem;
-    padding: .65rem 0 .65rem 1.25rem;
+    margin: 0 0 1.5rem;
+    padding: .5rem 0 .5rem 1.25rem;
     border-bottom: 1px solid var(--reader-line);
     color: var(--reader-muted);
     font: .75rem/1.5 var(--reader-sans);
@@ -213,8 +230,8 @@
   .publication-reader__treatments a {
     display: inline-flex;
     align-items: center;
-    min-height: 2.75rem;
-    padding: .65rem .1rem;
+    min-height: var(--control-compact, 2.25rem);
+    padding: .45rem .1rem;
     border-bottom: 3px solid transparent;
     color: var(--reader-muted);
     text-decoration: none;
@@ -408,10 +425,6 @@
   .publication-reader__content .toc::before { color: var(--reader-muted); }
   .publication-reader__content .toc li { margin-top: .25rem; }
 
-  /* Generate PDF leads the toolbar's actions; native-print.css owns its look.
-     The extra class outranks that file's :is() selectors for placement only. */
-  .publication-reader .publication-reader__actions .native-print-action { margin-block: 0; }
-
   .publication-reader__content :is(pre, code) { overflow-wrap: anywhere; }
   .publication-reader__content pre { max-width: 100%; overflow-x: auto; }
 
@@ -501,7 +514,6 @@
 
   @media (hover: hover) {
     .publication-reader__browse > a:hover,
-    .publication-reader__actions button:hover,
     .publication-reader__toc a:hover {
       background: color-mix(in srgb, var(--reader-accent) 6%, var(--reader-panel));
       color: var(--reader-accent);
@@ -516,8 +528,7 @@
       padding-inline: 1.25rem;
     }
 
-    .publication-reader__toolbar { gap: .5rem; }
-    .publication-reader__browse { flex-basis: 30rem; }
+    .publication-reader__toolbar { gap: .5rem 1rem; }
 
     .publication-reader__layout,
     .publication-reader__layout:has(> .publication-reader__toc:not([open])) {
@@ -568,39 +579,41 @@
       border-radius: 0;
     }
 
+    /* Two lines: Previous and Next become arrows either side of the
+       selector, and the page actions share the line beneath it equally. */
     .publication-reader__toolbar {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: .4rem;
-      padding-block: .6rem;
+      gap: .375rem;
+      padding-block: .45rem;
     }
 
-    .publication-reader__browse,
-    .publication-reader__actions { display: contents; }
+    .publication-reader__browse { flex-basis: 100%; }
 
-    .publication-reader__document { grid-column: 1 / -1; order: -1; }
+    .publication-reader__browse > :is(a, span[aria-disabled]) {
+      width: var(--control-compact, 2.25rem);
+      padding: 0;
+    }
+    .publication-reader__adjacent-label {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+    .publication-reader__adjacent:is([rel="prev"], [rel="next"])::before,
+    .publication-reader__adjacent:is([rel="prev"], [rel="next"])::after { color: var(--reader-ink); font-size: 1.5em; }
 
-    .publication-reader__browse > :is(a, span[aria-disabled]),
-    .publication-reader__actions :is(button, .native-print-action) {
-      align-self: stretch;
+    .publication-reader__actions {
+      flex: 1 1 100%;
+      margin: 0;
+    }
+    .publication-reader__actions .page-action {
+      flex: 1 1 0;
       min-width: 0;
-      min-height: 2.75rem;
-      padding: .45rem .35rem;
-      font-size: .77rem;
-      text-align: center;
-      overflow-wrap: anywhere;
-    }
-
-    /* Its label wraps between words, never inside one; the glyph gives way. */
-    .publication-reader .publication-reader__actions .native-print-action {
-      justify-content: center;
       white-space: normal;
-      overflow-wrap: normal;
     }
-    .publication-reader .publication-reader__actions .native-print-action::before { display: none; }
 
-    .publication-reader [data-reader-status],
-    .publication-reader__share-field { grid-column: 1 / -1; }
+    .publication-reader [data-reader-status] { flex-basis: 100%; max-width: none; }
     .publication-reader__identity {
       grid-column: 1 / -1;
       margin: .5rem 0 0;

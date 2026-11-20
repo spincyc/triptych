@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.council-of-trent.catechismus-romanus.donovan-baltimore-lucas-brothers.ia-djvu-text-83a948ed"
+edition_id = "edition.council-of-trent.catechismus-romanus.donovan-baltimore-lucas-brothers"
+artifact_type = "ocr-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Public domain in the United States. Donovan's translation is dated Maynooth, 10 June 1829 (preface, PDF p. 17); this undated Baltimore printing by James Young for Lucas Brothers prints no copyright notice on its title or verso (PDF pp. 7-8). Published in the United States before 1931 on any reading of its nineteenth-century imprint, and in any case without notice. A work published in the United States before 1931 is out of United States copyright: that is the line guidance/missals.md section 5 records from Cornell's public-domain chart, and because it moves every January it is written here as derived for calendar year 2026 and not as a standing rule. The bytes are the Internet Archive's optical character recognition of its own page images; machine recognition adds no human authorship, and a faithful mechanical reproduction of a public-domain printing is not original (Bridgeman Art Library v. Corel Corp., 36 F. Supp. 2d 191 (S.D.N.Y. 1999)). A case-insensitive probe of the whole file for \"google\" returned 0 matches, so the repository's rule on Google front matter (src/sources/inventories/google-usage-guidelines-rights-v1.toml) is not engaged. No host rights label is relied on."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/thecatechismofth00donouoft/thecatechismofth00donouoft_djvu.txt"
+provenance = "Fetched whole over HTTPS from the source_url with curl on 2026-11-18, hashed with sha256sum before use, and copied here unaltered; the byte size and SHA-1 were compared with the Internet Archive metadata API's file listing for the item (archive.org/metadata/thecatechismofth00donouoft) and matched. No source text passed through a language model between the server and this hash."
+retrieved = "2026-11-18"
+sha256 = "83a948edd1b3ff716df09c78d3c85ad3fd77f53f6956740bd3186447dbf1c90e"
+byte_size = 1538676
+path = "src/sources/works/council-of-trent/catechismus-romanus/editions/1829-donovan-baltimore-lucas-brothers/artifacts/ia-djvu-text-83a948ed/thecatechismofth00donouoft_djvu.txt"
+encoding = "utf-8"
+indexable = true
+notes = "The Internet Archive DjVuTXT optical text layer of item thecatechismofth00donouoft: 29,262 LF-terminated lines, valid UTF-8, no CR bytes. Completeness check: the byte size, 1,538,676, and the SHA-1, e285f6bac4850b270781ecfeaf65c7cd10821f97, equal the item's own file listing for this file. Uncorrected optical recognition: a locating and searching layer, not a text of record; wording quoted from it is collated against the page images of the PDF registered beside it, and a raw-line negative over it is evidence about the recognition, not about the printed page. It is the text layer of the same item as that facsimile, recognised from the item's original page images rather than from the PDF's bytes, so no derived_from edge is asserted."

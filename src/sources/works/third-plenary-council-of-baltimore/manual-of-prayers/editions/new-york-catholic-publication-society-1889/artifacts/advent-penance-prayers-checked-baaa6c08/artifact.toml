@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.third-plenary-council-of-baltimore.manual-of-prayers.new-york-catholic-publication-society-1889.advent-penance-prayers-checked-baaa6c08"
+edition_id = "edition.third-plenary-council-of-baltimore.manual-of-prayers.new-york-catholic-publication-society-1889"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Public domain in the United States by publication date. The edition prints 'Copyright, 1888, by Clarence E. Woodman' (title verso) and Cardinal Gibbons's approval of 17 May 1889 (PDF p. 6): the book was published in the United States in 1889. Its printed 'All rights reserved' is a lapsed nineteenth-century claim. A work published in the United States before 1931 is out of United States copyright: that is the line guidance/missals.md section 5 records from Cornell's public-domain chart, and because it moves every January it is written here as derived for calendar year 2026 and not as a standing rule. This file is literal historical wording of that printing, transcribed and checked against its page images; it adds no translation, paraphrase or editorial wording beyond the declared mechanical normalizations, and the bracketed locators are bare finding labels."
+retrieved = "2026-11-18"
+sha256 = "baaa6c08650697d8c7a88f90fcda2e304944d6f8140ecfb7936e650515c1880e"
+byte_size = 3898
+indexable = true
+encoding = "utf-8"
+path = "src/sources/works/third-plenary-council-of-baltimore/manual-of-prayers/editions/new-york-catholic-publication-society-1889/artifacts/advent-penance-prayers-checked-baaa6c08/checked.txt"
+derived_from = "artifact.third-plenary-council-of-baltimore.manual-of-prayers.new-york-catholic-publication-society-1889.ia-djvu-text-eada18d4"
+transformation = "Hand transcription made from the page images, rendered locally with pdftoppm from the registered facsimile; the parent OCR was used only to locate the pages and was diffed word by word against this file afterwards, every difference being resolved on the image. No source text passed through a language model. Typographic quotation marks are rendered as straight ASCII quotes; thin spaces before ? ! ; : are removed; line-end hyphenation is joined (a compound printed with a hyphen keeps it); footnote reference numerals are omitted; italics are not marked; small capitals are rendered in mixed case, with full capitals kept where printed larger. One sense unit per line, each prefixed by a bracketed locator that is a finding label, not printed text. Selected lines only: the fasting and abstinence tables and the closed times for marriage (pp. 18-19), the Act of Contrition (p. 54), the Angelus in Latin and English (pp. 55-56) and the Act of Contrition in the rite of confession (p. 286). Footnote order is moved to follow the list it annotates. The Latin and English Angelus, printed in parallel, are given Latin first."
+provenance = "Image check against artifact.third-plenary-council-of-baltimore.manual-of-prayers.new-york-catholic-publication-society-1889.ia-pdf-c64f9d31 on 2026-11-18: PDF pp. 26-27, 62-64 and 294."
+notes = "The Angelus prints no 'Ora pro nobis' versicle and response in either language: p. 56 passes from the third Ave/Hail Mary directly to Oremus / Let us pray; this is the printed text, not a lost OCR column. A '(1)' reference mark on THE ANGELUS heading was not resolved to its note. The OCR drops 'until' in 'from Ash Wednesday until Low Sunday'."

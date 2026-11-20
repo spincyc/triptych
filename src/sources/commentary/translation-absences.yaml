@@ -40,7 +40,7 @@
 #   partial-public-domain some public-domain text exists, but not the whole work
 #   not-surveyed          nobody has looked; this is data, not an estimate
 schema: triptych-commentary-translation-absences/v1
-updated: 2026-11-08
+updated: 2026-11-18
 
 question: >-
   for each work the catena holds, is there a public-domain English translation
@@ -100,6 +100,19 @@ absences:
   reason: The held editions and checked Latin excerpts were reviewed for Catena admission. No English
     edition is registered for this work; English translation availability and redistribution rights have
     not been surveyed. This is a catalog boundary, not a finding that no English translation exists.
+  overturned_by: An edition-identified English translation survey and a registered lawful English witness
+    with checked passage text.
+- work_id: work.ambrose.expositio-evangelii-secundum-lucam
+  language: en
+  finding: not-surveyed
+  checked_on: '2026-11-18'
+  reason: The CSEL 32/4 Latin edition and its checked excerpts II.19 and II.26 were reviewed for Catena
+    admission. No English edition of the Expositio is registered. The CSEL edition record notes that no
+    English translation was retrieved in the sweep that registered it and that the modern English of
+    Ide M. Ni Riain is under copyright and was not sought; no survey of earlier or public-domain English
+    was made. The Catena Aurea's Oxford English renders some of Ambrose's sentences inside Aquinas's
+    compilation, which is a different work and not an English edition of the Expositio. This is a catalog
+    boundary, not a finding that no public-domain English translation exists.
   overturned_by: An edition-identified English translation survey and a registered lawful English witness
     with checked passage text.
 - 'work_id': 'work.augustine.quaestiones-euangeliorum'

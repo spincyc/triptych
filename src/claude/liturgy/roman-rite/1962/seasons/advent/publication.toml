@@ -1,0 +1,47 @@
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"
+
+[document]
+type = "liturgy-reference-v1"
+
+[document.main]
+pdftitle = "Advent: A Primer for the Season of the Lord's Coming"
+pdfsubject = 'A primer for keeping Advent in the 1962 Roman Rite: the three comings of the Lord; how the Church came to keep the season; watching, prayer, fasting and almsgiving, a rule for the season and confession; the weeks of the season, the Ember Days, the O antiphons and the Vigil, with the Fathers on each; Bethlehem, the House of Bread, the swaddling bands and the manger, the wonderful exchange and the holy night; with daily readings, the prayers and hymns of the season, and the law then and now.'
+pdfkeywords = 'Advent, 1962 Roman Rite, Church Fathers, Ember Days, O Antiphons, Rorate, fasting, prayer, confession'
+title-style = "series-detail"
+series-line = 'A Triptych Seasonal Primer'
+title = 'Advent'
+subtitle = "A Primer for the Season of the Lord's Coming"
+title-detail = '''\textit{Missale Romanum} and \textit{Breviarium Romanum} of 1962\\[0.35em]
+under the \textit{Rubricae Breviarii et Missalis Romani} of 26 July 1960'''
+title-notice = '''For the Church's law and the services of your own church, follow your
+parish and its calendar; \textit{About This Book} says what this book draws on.'''
+body = [
+  'sections/05-to-the-reader',
+  'sections/10-the-ox-knows-his-owner',
+  'sections/12-three-comings',
+  'sections/14-history',
+  'sections/20-watching',
+  'sections/22-prayer',
+  'sections/24-fasting-and-almsgiving',
+  'sections/26-rule-of-life',
+  'sections/28-confession',
+  'sections/30-first-week',
+  'sections/31-second-week',
+  'sections/32-third-week',
+  'sections/33-ember-days',
+  'sections/34-fourth-week',
+  'sections/35-o-antiphons',
+  'sections/36-vigil',
+  'sections/40-house-of-bread',
+  'sections/42-wrapped-and-laid',
+  'sections/44-wonderful-exchange',
+  'sections/48-the-holy-night',
+]
+apparatus = [
+  'sections/90-daily-readings',
+  'sections/92-prayers',
+  { source = 'sections/95-scope', roles = ['scope-appendix'] },
+  { source = 'sections/99-references', roles = ['references'] },
+]

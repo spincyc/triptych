@@ -1,0 +1,17 @@
+schema = 1
+record_type = "passage"
+id = "passage.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.8.1-manger"
+edition_id = "edition.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878"
+artifact_id = "artifact.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.8.1-manger-checked-text-2849e39d"
+artifact_sha256 = "2849e39dc8c79667a897f3a2d03e913585f40909d8a532473da1cbe7ee787bd2"
+locus = "8.1"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "PL 76 col. 1104 B (Garnier 1878 reprint), facsimile PDF page 552, right column. Homily VIII section 1, from Et quia per prophetam dicitur to jejuna remanerent, directly after the Bethlehem passage (8.1-bethlehem) and before Quid autem est quod vigilantibus pastoribus angelus apparet."
+physical_line_ranges = [[1, 2]]
+text = "Et quia per prophetam dicitur: Omnis caro fenum, factus homo, fenum nostrum vertit in frumentum, qui de semetipso ait: Nisi granum frumenti cadens in terram mortuum fuerit, ipsum solum manet. Unde et natus in præsepio reclinatur, ut fideles omnes videlicet sancta animalia, carnis suæ frumento reficeret, ne ab æternæ intelligentiæ pabulo jejuna remanerent."
+transcription_segments = [
+  { line = 1, text = "Et quia per prophetam dicitur: Omnis caro fenum, factus homo, fenum nostrum vertit in frumentum, qui de semetipso ait: Nisi granum frumenti cadens in terram mortuum fuerit, ipsum solum manet." },
+  { line = 2, text = "Unde et natus in præsepio reclinatur, ut fideles omnes videlicet sancta animalia, carnis suæ frumento reficeret, ne ab æternæ intelligentiæ pabulo jejuna remanerent." },
+]
+verified_on = "2026-11-19"
+notes = "Scriptural references printed in parentheses are omitted from the lines: (Isai. xl, 6) after fenum, whose numeral prints in small capitals that read as xi on the scan, and (Joan. xii, 24) after manet. The printer set frumentum,qui and Nisigranum without spaces; the spaces are supplied. Footnote 7 (on ne ab aeternae) reads 1 Carnut. et pauci, ne ab interna. PAGE READING: the last word prints remanerenl, its final t without a crossbar (read at 600 dots per inch); it is transcribed remanerent and the broken letter recorded here. OCR AGAINST PAGE (ia-djvu-text-13c0bbad lines 87400-87408): word differences, optical text first: feniiin Isai xi 6 for fenum; quide for qui de; Nisigranwn for Nisi granum; prasepio for praesepio; su for suae; reliceret 7 for reficeret; reternae for aeternae; pabnlo for pabulo; remanerenl Quid autem est for remanerent; it also interleaves marginal, running-head or other-column text (Joan xn 24)."

@@ -1,0 +1,18 @@
+schema = 1
+record_type = "passage"
+id = "passage.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.8.1-masses-and-census"
+edition_id = "edition.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878"
+artifact_id = "artifact.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.8.1-masses-and-census-checked-text-8312ebef"
+artifact_sha256 = "8312ebefa30e7aaa93aaf35c3252a08019ee367a597f5e919ddb0f78b7fb2f4f"
+locus = "8.1"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "PL 76 col. 1103 D (Garnier 1878 reprint), facsimile PDF page 552, left column. The opening of Homily VIII, preached in the basilica of St Mary on Christmas Day (the heading reads Habita ad populum in basilica beatae Mariae Virginis, in die Natalis Domini; the lection is Luke 2:1-14). From Quia, largiente Domino to ascriberet in aeternitate?, after which Gregory turns to the reprobate (Quo contra de reprobis per Prophetam dicitur). The homily prints no section number 1; section 2 begins Regem vero natum in col. 1104 C."
+physical_line_ranges = [[1, 3]]
+text = "Quia, largiente Domino, missarum solemnia ter hodie celebraturi sumus, loqui diu de Evangelica lectione non possumus. Sed nos aliquid vel breviter dicere Redemptoris nostri nativitas ipsa compellit. Quid est quod nascituro Domino mundus describitur, nisi hoc quod aperte monstratur, quia ille veniebat in carne, qui electos suos ascriberet in æternitate?"
+transcription_segments = [
+  { line = 1, text = "Quia, largiente Domino, missarum solemnia ter hodie celebraturi sumus, loqui diu de Evangelica lectione non possumus." },
+  { line = 2, text = "Sed nos aliquid vel breviter dicere Redemptoris nostri nativitas ipsa compellit." },
+  { line = 3, text = "Quid est quod nascituro Domino mundus describitur, nisi hoc quod aperte monstratur, quia ille veniebat in carne, qui electos suos ascriberet in æternitate?" },
+]
+verified_on = "2026-11-19"
+notes = "Before Quia the page prints the bold number 1460, the pagination of an earlier edition embedded in Migne's text, which is not Gregory's and is omitted; footnote 6 (on quia ille veniebat) reads Excusi, quia ille apparebat in carne, i.e. the printed editions read apparebat. The printer set Quia,largiente Domino,missarum without spaces after the commas; the spaces are supplied. OCR AGAINST PAGE (ia-djvu-text-13c0bbad lines 87453-87479): word differences, optical text first: largienteDomino for largiente Domino; 2 Regem vero natum angelus nun ... [interleaved text of the other column, 97 words] ... ntenterhodie for ter hodie; descrihitur for describitur; it also interleaves marginal, running-head or other-column text (D tionem prionsdiscordi postponunt et quos prius; 6)."

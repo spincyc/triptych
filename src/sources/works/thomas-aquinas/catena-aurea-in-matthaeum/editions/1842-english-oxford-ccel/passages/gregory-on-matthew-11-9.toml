@@ -1,0 +1,15 @@
+schema = 1
+record_type = "passage"
+id = "passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.gregory-on-matthew-11-9"
+edition_id = "edition.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel"
+artifact_id = "artifact.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.text-130e334a"
+artifact_sha256 = "130e334a0e087ba2ff7f2afc9f803921b4d1de16ed45d682c1756c0c14e3cd67"
+locus = "Matthew 11:9, Gregory (Hom. in Ev. 6.5, as the CCEL label reads Greg, Hom. in Ev., vi. 5)"
+states = ["cataloged", "acquired", "inspected"]
+context = "The whole Gregory comment on more than a prophet in the Catena's commentary on Matthew 11:7-10, on line 2902, between Chrysostom (line 2901) and Jerome (line 2903)."
+physical_line_ranges = [[2902, 2902]]
+text = "Greg, Hom. in Ev., vi. 5: The office of a prophet is to foretel things to come, not to shew them present. John therefore is more than a prophet, because Him whom he had foretold by going before Him, the same he shewed as present by pointing Him out."
+transcription_segments = [
+  { line = 2902, text = "Greg, Hom. in Ev., vi. 5: The office of a prophet is to foretel things to come, not to shew them present. John therefore is more than a prophet, because Him whom he had foretold by going before Him, the same he shewed as present by pointing Him out." },
+]
+notes = "Exact CCEL English digital witness inspected on 2026-11-18; no facsimile collation (no page image of the 1842 Oxford printing is registered for this edition, and none was added: the edition record describes a digital transcription, not a facsimile-collated edition, and a facsimile of the printing would be a different exact witness to be registered on its own evidence), and no collation with Gregory's Latin. Not verified. The label is printed in the CCEL text as Greg, with a comma for the stop."

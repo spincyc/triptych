@@ -1,0 +1,20 @@
+schema = 1
+record_type = "passage"
+id = "passage.jacques-paul-migne.patrologia-latina-volume-183.1854-paris.bernard-in-adventu-4.1-duo-adventus"
+edition_id = "edition.jacques-paul-migne.patrologia-latina-volume-183.1854-paris"
+artifact_id = "artifact.jacques-paul-migne.patrologia-latina-volume-183.1854-paris.bernard-in-adventu-4.1-duo-adventus-checked-text-1280a8a1"
+artifact_sha256 = "1280a8a19fdce3166686256137fd9054227863b15b5a017b0fc9ef538c7efa6f"
+locus = "column-47"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Bernard of Clairvaux, Sermones in adventu Domini, sermo IV (De duplici adventu, et studio verarum virtutum; alias, De duplici adventu, et pennis deargentatis), the opening of section 1. Read on PL 183 column 47 (PDF page 30, left column) from the sermon's heading to the head of section 2."
+physical_line_ranges = [[1, 5]]
+text = "Dignum est, fratres, ut tota cum devotione Domini celebretis Adventum, delectati tanta consolatione, stupefacti tanta dignatione, inflammati tanta dilectione. Nec vero solum cogitetis adventum, quo venit quærere et salvum facere quod perierat, sed et illum nihilominus, quo veniet et assumet nos ad seipsum. Utinam circa hos duos adventus jugi meditatione versemini, ruminantes in cordibus vestris, quantum in priore præstiterit, quantum promiserit in secundo! Utinam certe dormiatis inter medios cleros! Hæc sunt enim duo brachia sponsi, inter quæ sponsa dormiens aiebat: Læva ejus sub capite meo, et dextera ejus amplexabitur me."
+transcription_segments = [
+  { line = 1, text = "Dignum est, fratres, ut tota cum devotione Domini celebretis Adventum, delectati tanta consolatione, stupefacti tanta dignatione, inflammati tanta dilectione." },
+  { line = 2, text = "Nec vero solum cogitetis adventum, quo venit quærere et salvum facere quod perierat, sed et illum nihilominus, quo veniet et assumet nos ad seipsum." },
+  { line = 3, text = "Utinam circa hos duos adventus jugi meditatione versemini, ruminantes in cordibus vestris, quantum in priore præstiterit, quantum promiserit in secundo!" },
+  { line = 4, text = "Utinam certe dormiatis inter medios cleros!" },
+  { line = 5, text = "Hæc sunt enim duo brachia sponsi, inter quæ sponsa dormiens aiebat: Læva ejus sub capite meo, et dextera ejus amplexabitur me." },
+]
+verified_on = "2026-11-18"
+notes = "The scan's type is broken or blotted in Dignum, stupefacti and cogitetis (it shows Dignu-n, :tupefacti, cogit-tis); the words are read from the surviving letters and context and are not in doubt."

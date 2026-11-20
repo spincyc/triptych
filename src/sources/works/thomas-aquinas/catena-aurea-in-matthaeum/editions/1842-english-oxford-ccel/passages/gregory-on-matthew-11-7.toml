@@ -1,0 +1,16 @@
+schema = 1
+record_type = "passage"
+id = "passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.gregory-on-matthew-11-7"
+edition_id = "edition.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel"
+artifact_id = "artifact.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.text-130e334a"
+artifact_sha256 = "130e334a0e087ba2ff7f2afc9f803921b4d1de16ed45d682c1756c0c14e3cd67"
+locus = "Matthew 11:7, Gregory (Hom. in Ev. 6.2, as the CCEL label reads Greg., Hom in Ev. vi. 2)"
+states = ["cataloged", "acquired", "inspected"]
+context = "The whole Gregory comment on A reed shaken by the wind? in the Catena's commentary on Matthew 11:7-10, from the label on line 2894 to The Lord’s meaning then is, on line 2895, where Jerome's comment (line 2896) supplies the rest of the sentence. Chrysostom precedes on line 2893."
+physical_line_ranges = [[2894, 2895]]
+text = "Greg., Hom in Ev. vi. 2: This He proposes, not to assert, but to deny. For if but a breath of air touch a reed, it bends it one way or other; a type of the carnal mind, which leans to either side, according as the breath of praise or detraction reaches it. A reed shaken by the wind John was not, for no variety of circumstance bent him from his uprightness. The Lord’s meaning then is,"
+transcription_segments = [
+  { line = 2894, text = "Greg., Hom in Ev. vi. 2: This He proposes, not to assert, but to deny. For if but a breath of air touch a reed, it bends it one way or other; a type of the carnal mind, which leans to either side, according as the breath of praise or detraction reaches it." },
+  { line = 2895, text = "A reed shaken by the wind John was not, for no variety of circumstance bent him from his uprightness. The Lord’s meaning then is," },
+]
+notes = "Exact CCEL English digital witness inspected on 2026-11-18; no facsimile collation (no page image of the 1842 Oxford printing is registered for this edition, and none was added: the edition record describes a digital transcription, not a facsimile-collated edition, and a facsimile of the printing would be a different exact witness to be registered on its own evidence), and no collation with Gregory's Latin. Not verified. The CCEL text splits one sentence across two labels: Gregory's The Lord’s meaning then is, runs on into Jerome's Was it for this ye went out ..., so the comment as given here ends mid-sentence by the Catena's own construction, not by truncation. The R3 dossier's Bute OCR (lines 33103-33117) was not consulted."

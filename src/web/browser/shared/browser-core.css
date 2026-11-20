@@ -414,14 +414,13 @@ body:not(:has(> .site-header)) .skip-link:focus { left: 0; }
 
 .steps { display: flex; gap: 0.5rem; }
 
-/* A button beside the selects is drawn as they are; its hover is the Generate
-   PDF control's (native-print.css), a faint wash of the section's accent. The
-   instruments' browser-print button, Commentary's verse-focus buttons and the
-   Source Library's result pager are the same control. */
+/* A button beside the selects is drawn as they are; its hover is the page
+   actions' (site.css, "Page actions"), a faint wash of the section's accent.
+   Commentary's verse-focus buttons and the Source Library's result pager are
+   the same control. The instruments' Print button is a page action itself. */
 .steps button,
 .passage-focus button,
-.finder-pages button,
-.browser-print-actions button {
+.finder-pages button {
   min-height: var(--control-min, 2.75rem);
   padding: 0.5rem 0.9rem;
   font: inherit;
@@ -434,8 +433,7 @@ body:not(:has(> .site-header)) .skip-link:focus { left: 0; }
 
 .steps button:hover:not(:disabled),
 .passage-focus button:hover:not(:disabled),
-.finder-pages button:hover:not(:disabled),
-.browser-print-actions button:hover:not(:disabled) {
+.finder-pages button:hover:not(:disabled) {
   border-color: var(--section-accent);
   background: color-mix(in srgb, var(--section-accent) 9%, var(--panel));
 }
@@ -961,9 +959,16 @@ body:not(:has(> .site-header)) .skip-link:focus { left: 0; }
   font-family: "Triptych Punctus Elevatus", var(--mono);
 }
 
-.browser-print-actions { margin-block: 0.75rem; }
-.browser-print-actions button { padding: 0.4rem 0.9rem; }
-.browser-print-status { margin-block: 0.35rem; font-size: 0.9rem; }
+/* The Print button bindPrint adds to an instrument's header is a page action
+   at the header's end, beside the first line under its title (site.css, "Page
+   actions", `.page-actions-host`, 2026-11-17); its status wraps beneath it. */
+.browser-print-status {
+  margin: 0;
+  color: var(--ink-soft);
+  font: 0.8125rem/1.3 var(--sans);
+}
+.browser-print-actions .browser-print-status { flex-basis: 100%; text-align: end; }
+.browser-print-status:empty { display: none; }
 .browser-print-identity,
 .browser-print-refusal { display: none; }
 

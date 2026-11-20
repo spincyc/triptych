@@ -1,0 +1,20 @@
+schema = 1
+record_type = "passage"
+id = "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.bede-on-luke-2-9"
+edition_id = "edition.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia"
+artifact_id = "artifact.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.bede-on-luke-2-9-checked-text-2a73f7aa"
+artifact_sha256 = "2a73f7aadab1e867069a733f1696b1adbbfb50b93160ede5761d2f973610ad4a"
+locus = "Luke 2:9, Bede (Homily on the Nativity, as the margin cites it); Catena printed page 69 (Part I, 1843), facsimile PDF page 91"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The whole of the Bede comment under the lemma Luke 2:8-12, from BEDE; No where to celestial light, where GREEK EX. (Geometer in the margin) begins."
+physical_line_ranges = [[1, 5]]
+text = "Bede; No where in the whole course of the Old Testament do we find that the Angels who so constantly appear to the Patriarchs, came in the day time. This privilege was rightly kept for this time when there arose in the darkness a light to them that were true of heart. Hence it follows, and the glory of God shone round about them. He is sent forth from the womb, but He shines from heaven. He lies in a common inn, but He lives in celestial light."
+transcription_segments = [
+  { line = 1, text = "Bede; No where in the whole course of the Old Testament do we find that the Angels who so constantly appear to the Patriarchs, came in the day time." },
+  { line = 2, text = "This privilege was rightly kept for this time when there arose in the darkness a light to them that were true of heart." },
+  { line = 3, text = "Hence it follows, and the glory of God shone round about them." },
+  { line = 4, text = "He is sent forth from the womb, but He shines from heaven." },
+  { line = 5, text = "He lies in a common inn, but He lives in celestial light." },
+]
+verified_on = "2026-11-19"
+notes = "MARGIN beside the label: Bede Hom. inter Hyem. de Sanctis v.; Ps. 112, 4. OCR AGAINST PAGE (ocr-1455eb5f lines 3700-3717): word differences, optical text first: m Hyem for in; timege for time; dai'kness for darkness; God43' ' for God; it also interleaves marginal, running-head or other-column text (Bede; Bom inter; v)."

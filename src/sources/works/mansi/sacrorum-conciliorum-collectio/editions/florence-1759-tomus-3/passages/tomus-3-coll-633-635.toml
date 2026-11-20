@@ -1,0 +1,23 @@
+schema = 1
+record_type = "passage"
+id = "passage.mansi.sacrorum-conciliorum-collectio.florence-1759-tomus-3.tomus-3-coll-633-635"
+edition_id = "edition.mansi.sacrorum-conciliorum-collectio.florence-1759-tomus-3"
+artifact_id = "artifact.mansi.sacrorum-conciliorum-collectio.florence-1759-tomus-3.saragossa-c4-checked-text-d15c2d8e"
+artifact_sha256 = "d15c2d8e13b908cb85daa1c31afa26d195d634a066fdcc12ed89b5e5ac4b8350"
+locus = "tomus-3-coll-633-635"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Council of Saragossa (Caesaraugustanum, aera 418 = A.D. 380), against the Priscillianists: the heading and titulus IV (col. 633) and canon IV (coll. 634-635), forbidding absence from church on the twenty-one days from 17 December (a 16. Kalendas Januarii) to Epiphany. The marginal variants key to 'Viginti & uno' and to 'his decretis'."
+physical_line_ranges = [[1, 8]]
+text = "CONCILIUM CÆSARAUGUSTANUM DUODECIM EPISCOPORUM, SUB DAMASO, contra Priscillianistas celebratum: æra CDXVIII. IV. Ut tribus hebdomadis, quæ sunt ante Epiphaniam ab ecclesia nemo recedat. IV. Item legit: Viginti & uno die, quo a 16. Kalendas Januarii usque in diem Epiphaniæ, quæ est 8. Idus Januarii, continuis diebus, nulli liceat de ecclesia se absentare, nec latere in domibus, nec secedere ad villam, nec montes petere, nec nudis pedibus incedere, sed concurrere ad ecclesiam. Quod qui non observaverit, his decretis anathema sit in perpetuum. Ab universis episcopis dictum est: Anathema sit. vicesimo & primo. de suspectis al. susceptis."
+transcription_segments = [
+  { line = 1, text = "CONCILIUM CÆSARAUGUSTANUM DUODECIM EPISCOPORUM, SUB DAMASO, contra Priscillianistas celebratum: æra CDXVIII." },
+  { line = 2, text = "IV. Ut tribus hebdomadis, quæ sunt ante Epiphaniam ab ecclesia nemo recedat." },
+  { line = 3, text = "IV." },
+  { line = 4, text = "Item legit: Viginti & uno die, quo a 16. Kalendas Januarii usque in diem Epiphaniæ, quæ est 8. Idus Januarii, continuis diebus, nulli liceat de ecclesia se absentare, nec latere in domibus, nec secedere ad villam, nec montes petere, nec nudis pedibus incedere, sed concurrere ad ecclesiam." },
+  { line = 5, text = "Quod qui non observaverit, his decretis anathema sit in perpetuum." },
+  { line = 6, text = "Ab universis episcopis dictum est: Anathema sit." },
+  { line = 7, text = "vicesimo & primo." },
+  { line = 8, text = "de suspectis al. susceptis." },
+]
+verified_on = "2026-11-18"
+notes = "Read on the page images. The italic letters a-e and k-l before the heading lines and the canon are Mansi's footnote and source markers and are omitted; footnotes 1 and 2 at the foot of col. 633-634 (Harduinus on the Isidorian collection and the Paris Jesuit codex) are not transcribed. The Mansi locus pattern allows one column range; the extent runs from the heading at col. 633 to the close of canon IV at col. 635. The text layer reads 'nullt' for 'nulli' and splits the columns. Hefele II p. 293 summarises this canon (passage of that edition)."

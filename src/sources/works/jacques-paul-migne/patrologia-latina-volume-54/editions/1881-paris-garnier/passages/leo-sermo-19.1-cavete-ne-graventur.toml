@@ -1,0 +1,18 @@
+schema = 1
+record_type = "passage"
+id = "passage.jacques-paul-migne.patrologia-latina-volume-54.1881-paris-garnier.leo-sermo-19.1-cavete-ne-graventur"
+edition_id = "edition.jacques-paul-migne.patrologia-latina-volume-54.1881-paris-garnier"
+artifact_id = "artifact.jacques-paul-migne.patrologia-latina-volume-54.1881-paris-garnier.leo-sermo-19.1-cavete-ne-graventur-checked-text-3c40ef78"
+artifact_sha256 = "3c40ef78e10d9f5c49bbed035c1fd35d9135c88c36e32583d4ee3f3ad209f5a8"
+locus = "column-185"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Leo the Great, Sermo XIX [al. XVIII], De jejunio decimi mensis VIII, the opening of chapter I: Christ's warning against surfeiting, applied to the hidden but near day. Read on PL 54 column 185 (PDF page 99, left column, from the sermon's heading and synopsis) and column 186 (right column, through chapter I and the opening of chapter II)."
+physical_line_ranges = [[1, 3]]
+text = "Cum de adventu regni Dei, et de fine temporum mundi discipulos suos Salvator instrueret, totamque Ecclesiam suam in apostolis erudiret: Cavete, inquit, ne forte graventur corda vestra in crapula, et ebrietate, et cogitationibus sæcularibus. Quod utique præceptum, dilectissimi, ad nos specialius pertinere cognoscimus, quibus denuntiatus dies, etiam si occultus, non dubitatur esse vicinus. Ad cujus adventum omnem hominem convenit præparari: ne quem aut ventri deditum aut curis sæcularibus inveniat implicatum."
+transcription_segments = [
+  { line = 1, text = "Cum de adventu regni Dei, et de fine temporum mundi discipulos suos Salvator instrueret, totamque Ecclesiam suam in apostolis erudiret: Cavete, inquit, ne forte graventur corda vestra in crapula, et ebrietate, et cogitationibus sæcularibus." },
+  { line = 2, text = "Quod utique præceptum, dilectissimi, ad nos specialius pertinere cognoscimus, quibus denuntiatus dies, etiam si occultus, non dubitatur esse vicinus." },
+  { line = 3, text = "Ad cujus adventum omnem hominem convenit præparari: ne quem aut ventri deditum aut curis sæcularibus inveniat implicatum." },
+]
+verified_on = "2026-11-18"
+notes = "The page prints Cnm (broken u) for Cum. Between vestra and in the scan shows a mark like a semicolon with no space, examined at 300 dots per inch; it is not in the Vulgate (Luke xxi. 34) and is transcribed as a word space, so this reading is uncertain at that one point. Ballerini note (h) says they preferred the older lectionaries' et de fine temporum mundi to the other reading et de mundi fine ac temporum; note (i) ne quemquam for ne quem; note (j) potus satietate for satietate. The Latin says denuntiatus dies, etiam si occultus, non dubitatur esse vicinus: the day of the Lord's coming, not the liturgical Advent."

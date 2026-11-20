@@ -239,7 +239,7 @@ class InPlaceGenerationTests(unittest.TestCase):
         # 1. No navigation: same document, same address, click default prevented.
         self.assertTrue(preparing["marker"], preparing)
         self.assertEqual(preparing["location"], "/" + READER)
-        self.assertEqual(preparing["clicks"], [{"id": "print-actions", "prevented": True}])
+        self.assertEqual(preparing["clicks"], [{"id": "page-actions print-actions", "prevented": True}])
         # 2. The selection comes from the print page; resources resolve against it.
         self.assertEqual(preparing["fetches"], [origin + "/" + PRINT])
         call = preparing["calls"][0]

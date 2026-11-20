@@ -1,0 +1,16 @@
+schema = 1
+record_type = "passage"
+id = "passage.rupert-of-deutz.de-divinis-officiis.latin-migne-pl-170.iii.2-gloria"
+edition_id = "edition.rupert-of-deutz.de-divinis-officiis.latin-migne-pl-170"
+artifact_id = "artifact.rupert-of-deutz.de-divinis-officiis.latin-migne-pl-170.iii.2-gloria-checked-text-e44abebf"
+artifact_sha256 = "e44abebf8277c5fcfa41e2e21cf48105b10dbd1e83531fc3905fffd8c4021c8b"
+locus = "III.2"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "De divinis officiis III.2, the section 'Cur in adventu non utuntur consuetis vestibus sacris diaconus et subdiaconus', its last sentence: in Advent the Gloria in excelsis is not said and Ite missa est is omitted. 'Eamdem ob causam' refers to the preceding sentences, explaining why deacon and subdeacon do not then use their customary sacred vestments. PL 170 col. 58, right column, on leaf n34, immediately above CAPUT III."
+physical_line_ranges = [[1, 1]]
+text = "Eamdem ob causam, Gloria in excelsis Deo tunc non dicitur, et Ite missa est intermittitur, quia videlicet illud tempus signat, ut dictum est, quo adhuc exspectabatur gaudium pacis, et illud quod nunc usque solliciti præstolamur, consummationem nostræ salutis."
+transcription_segments = [
+  { line = 1, text = "Eamdem ob causam, Gloria in excelsis Deo tunc non dicitur, et Ite missa est intermittitur, quia videlicet illud tempus signat, ut dictum est, quo adhuc exspectabatur gaudium pacis, et illud quod nunc usque solliciti præstolamur, consummationem nostræ salutis." },
+]
+verified_on = "2026-11-18"
+notes = "Read on the page image of leaf n34. The setting is compressed ('dicitur,et', 'est,quo'); spacing after punctuation is normalized. Italics of Gloria in excelsis Deo and Ite missa est are not marked."
