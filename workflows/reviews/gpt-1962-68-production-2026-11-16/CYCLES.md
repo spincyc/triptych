@@ -1130,3 +1130,22 @@ all 47 tests and the family ledger check. Rupert's excerpt awaits checked
 transcription, composition-date treatment and exact Scripture edges before
 Catena admission. The new evidence proceeds to native preflight and cold
 review.
+
+The fourth cold review confirmed the appointment and the two interpretive
+arguments. It identified a missing local binding for the inspected
+Greek-Matthew comparison and a Jerome admission candidate that conflated
+the study's verses with two native units. Checkpoint `32c1bcc962` binds the
+registered September USCCB summary and distinguishes Jer. 29:10–14a from
+29:14b–20 with the split located in the PL 24 witness. The separately checked
+20 November URL response is registered as restricted metadata. It corroborates
+the chronology summary and controls only its own consultation. A scope audit
+reconciles all 22 cited chronology witnesses.
+
+During those repairs upstream `main` advanced to `9a229454da`. Merge
+`aca5937f67` carries the published Advent study and its approved source
+classification into the combined tree. The incoming path list is disjoint
+from the existing proper 68 review seals. Source registration preserves both
+source classifications, validates the combined corpus, and replays the
+ordinary strict reader projection across 19,384 files. The migration ledger
+keeps all 169 units pending. The final registration passes 47 tests under
+`make -j4 check-sources` and the individual handoff checks.

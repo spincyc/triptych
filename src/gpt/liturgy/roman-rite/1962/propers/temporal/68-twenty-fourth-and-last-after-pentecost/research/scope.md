@@ -686,8 +686,8 @@ reinspection. A separate HTTPS response on 20 November 2026 measured
 `f62cda94001144a404b48e90daba7448685bf7d4b301d090effe6650cccf8783`.
 Three paragraphs from the concluding discussion of authorship, date and
 place were read in that delivery. They confirm the lower bound, later
-preference and conjectural location recorded in the summary. The restricted
-HTML is represented by its identity and hash.
+preference and conjectural location recorded in the summary. Binding 93
+records the restricted delivery and the three inspected paragraphs.
 [USCCB Matthew introduction](https://bible.usccb.org/bible/matthew/0)
 
 Missing-event inquiry was made rather than accepting composition-only answers:
@@ -1269,8 +1269,8 @@ are original-language corroborations of the already used Psalm
 expositions. The Latin derivatives, their rights and exact verified
 passages are pinned in the bindings and disposition ledger.
 
-The ledger holds **92 bindings and 133 dispositions**, comprising ten
-admitted uses, 40 deferred candidates, six rejected consultations, 59
+The ledger holds **93 bindings and 134 dispositions**, comprising ten
+admitted uses, 40 deferred candidates, six rejected consultations, 60
 non-commentary uses and 18 catalogue-only leads. The admissions reuse the
 two Chrysostom and eight Augustine passages and their existing Scripture
 edges. The modern English Mark lead remains catalogue-only.

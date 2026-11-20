@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-11-20"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:fac44c6264133bf587d583b5841c86d98cdcb0023a177ddaf4136a530e41bf33"
+inventory_snapshot = "sha256:d5274f7e4da4f55779982bc2fe484c9e326ba5a0444ec99d1b1fa51015f7f8fa"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
-classification_snapshot = "sha256:3fb9e328a4212d8169aaa4939776c938e948cdcc922053f8393fcba8be969000"
-canonical_catalog_snapshot = "sha256:bb395aea4b3c76e72885fca456a675d2ced814e46a231dd2e07b0e4f5d23d730"
+classification_snapshot = "sha256:69201dbf6789497bd5b8b868add2ae1d2bb99a3c72363536c0a401fe3978f871"
+canonical_catalog_snapshot = "sha256:4f44be6325cce1b0fe92f451cc749f392ff5d09f449ac5be591caf7f18d622ce"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:0ac99ea16b40eb251e37c213fea890c1acb99ef754fee4085e95a21cf8cdaff7"
+snapshot = "sha256:d57764a7b5a16679bf2f6dd96c50aea83af4ec1f65982d1285f3416c56c819bc"
 families = []
 
 [[review_units]]
@@ -509,6 +509,11 @@ review_state = "pending"
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"
 surface_snapshot = "sha256:392aa87f957d6cb8a8b52f565ba1870a9d45c7259cccf5081a7e540fdaf09533"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost"
+surface_snapshot = "sha256:9b948ca11764dce5fed8ebd24217f5c06d926691aabc8fdbdeba525a4a4b8a93"
 review_state = "pending"
 
 [[review_units]]
