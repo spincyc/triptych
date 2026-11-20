@@ -49,12 +49,12 @@ provider = "gpt"
 run_id = "13ecdd1552c245ea"
 workflow = "proper-study"
 workflow_version = 19
-stage = "web-review"
+stage = "research-review"
 iteration = 1
-disposition = "PASS"
-standing = 0
+disposition = "CHANGES_REQUIRED"
+standing = 6
 accepted_count = 0
-advisory_count = 1
+advisory_count = 3
 observation_count = 8
 
 [[stages]]
@@ -71,14 +71,14 @@ observation_count = 0
 
 [[stages]]
 stage = "research-review"
-iteration = 0
-disposition = "PASS"
+iteration = 1
+disposition = "CHANGES_REQUIRED"
 run_id = "13ecdd1552c245ea"
 workflow = "proper-study"
 workflow_version = 19
-standing = 0
+standing = 6
 accepted_count = 0
-advisory_count = 0
+advisory_count = 2
 observation_count = 0
 
 [[stages]]
@@ -116,6 +116,76 @@ standing = 0
 accepted_count = 0
 advisory_count = 0
 observation_count = 0
+
+[[findings]]
+stage = "research-review"
+id = "RES-APPOINTED-PROOF-SEAL"
+severity = "blocking"
+location = "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/research/review-dependencies.toml:3"
+problem = "The packet seal binds the inventory and complete edition containers for the appointed text but omits adopted child proof records cited by the verified record. The missing paths include the 1962 Missal temporal oration proof, the three Latin editorial projection passages, and the Lasance Last Sunday verification/publication leaves and conclusion-table verification/transcription records. These supply the exact boundaries and rights for the three publishable orations and their conclusions. See src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/propers/verified.md:331 and src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/research/context.md:190."
+required_result = "Bind the adopted exact verification, editorial projection, transcription and publication records in the same-family dependencies or actual use records. Compile a fresh immutable seal and verify those exact paths appear with their hashes."
+repair_target = "research"
+
+[[findings]]
+stage = "research-review"
+id = "RES-CHRONOLOGY-PS129-RELATION"
+severity = "blocking"
+location = "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/generated/scriptural-date-location.tex:29-37"
+problem = "Both Vulgate Psalm 129 uses display the whole c. 1048–1015 BC Jerusalem reign as the date for a proposed composition after David’s sin. At Haydock’s printed p. 790, Berthier gives a conditional relative occasion and supplies no absolute date. The kingship bound begins before the candidate occasion and dates the tenure. The governing relation is at src/sources/chronology/orientation.yaml:620."
+required_result = "Correct both canonical source relations and regenerate the appendix and concise orientation rows. Keep the actual occasion unresolved, retain the qualified after-the-sin proposal, and omit the reign dates or explicitly present them as a separate author reference era."
+repair_target = "research"
+
+[[findings]]
+stage = "research-review"
+id = "RES-CHRONOLOGY-MATTHEW-SUBJECT"
+severity = "blocking"
+location = "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/generated/scriptural-date-location.tex:44-47"
+problem = "The A.D. 38–68 composition range for the generic Gospel of Matthew presents Durand’s c. A.D. 50 alongside other Gospel dates. The CE locus offers c. 50 for the hypothesized Aramaic original and expressly leaves the Greek version’s date unknown. Some early alternatives in src/sources/chronology/composition.yaml:14 concern that original as well. The relevant 1912 AAS response distinguishes original-language Matthew from the Greek version."
+required_result = "Scope each supported date and alternative to the witness’s actual composition subject. Separate the putative Semitic original from the Greek Gospel where the evidence distinguishes them, preserve the uncertainty, and regenerate the reader rows and appendix from the corrected source records."
+repair_target = "research"
+
+[[findings]]
+stage = "research-review"
+id = "RES-CHECKED-SCRIPTURE-EXTENTS"
+severity = "blocking"
+location = "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/research/source-dispositions.toml:1214"
+problem = "Aquinas’s Matthew 24 candidate at native [87397], physical lines 1205–1233, is recorded as v. 36 only. The checked Latin moves into Noah at physical line 1219, then touches vv. 38–39 through line 1233. The Bellarmine Psalm 43 row at line 233 gives Vulgate 43:1–26 as candidate extent while it explicitly checks native explanations 1–22, through Vulgate v. 23. The Psalm 84 row at line 246 records a complete span through physical line 3031, although Psalm 84 ends at line 3017 and the remaining substantive portion extends into the next Psalm. The Chrysostom Colossians v. 15 transition also returns to v. 14 within the recorded span."
+required_result = "Record the actual Scripture ranges of each checked span separately from candidate and appointed extents, bind or disposition the extra Scripture actually checked, and qualify the partial runs. Preserve the existing bounded Colossians admissions where their exact checked content fits, and identify both units touched in the distinct transition row."
+repair_target = "research"
+
+[[findings]]
+stage = "research-review"
+id = "RES-FROMAGE-WORDING-AND-COMMENTARY"
+severity = "blocking"
+location = "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/research/scope.md:779"
+problem = "Fromage’s Duffy 1883 chapter is called commentary on ten elements. Printed p. 506 gives the Gradual and Alleluia as bilingual texts after the Epistle discussion. Printed p. 513 gives the Offertory and Communion followed by distinct comments on the Secret and Postcommunion. These four chants supply text evidence, including the older Communion’s physical acciepietis type error, without independent exposition. At src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/research/interpretations.md:301 the claim that Fromage connects all three orations attributes the study’s joined argument to three separate discussions in the historical witness."
+required_result = "Collate and label the four textual parallels as wording evidence, distinguish the compositor’s error and the shared target formula, and correct their intake and prospective commentary roles. Retain the independently supported exposition and separate Fromage’s comments on individual prayers from the editor’s full-Mass inference."
+repair_target = "research"
+
+[[findings]]
+stage = "research-review"
+id = "RES-COMMUNION-DIRECT-RECEPTION"
+severity = "blocking"
+location = "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/research/scope.md:235"
+problem = "The research identifies Bede’s Mark 11:22–23, 25 context and keeps a modern Theophylact route as a lead. The independently opened Basel 1525 Oecolampadius Theophylact witness, Mark XI fol. 69r–v, directly explains the appointed Mark 11:24 and then 25. It connects confidence to ardent communion with God, whole-hearted prayer and pardoning others. R2 tests the v. 24 promise using an author whose retained exposition passes from v. 23 to v. 25, so the new direct witness materially affects the boundary of the argument. Exact images, provenance and interpretation appear in .scratch/complete-proper-68/research-review-0001/verification.md."
+required_result = "Check and disposition the exact historical Theophylact locus and its rights, keeping the separate modern translation lead independently classified. Compare what his direct treatment of v. 24 contributes to the Bede and Aquinas argument. Keep the eligible controlling authors and the ecclesiastical writer’s distinct supporting standing."
+repair_target = "research"
+
+[[advisories]]
+stage = "research-review"
+id = "RES-CHRONOLOGY-MAAS-CITATION"
+severity = "advisory"
+location = "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/generated/scriptural-date-location.tex:46-51"
+problem = "The appendix advertises the source’s own words and puts the editorial A.D. 29 conversion sentence in quotation marks. Maas gives A.U.C. 782. The additional Mark event locator includes the Third and Fifth Journeys although his Ninth journey controls the Tuesday sequence."
+required_result = "Preserve the derived A.D. date as editorial text, reserve the quotation treatment for actual source wording and give the exact chronology calibration and relevant Ninth journey loci."
+
+[[advisories]]
+stage = "research-review"
+id = "RES-JEREMIAH-EXACT-ROUTE"
+severity = "advisory"
+location = "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/research/scope.md:219"
+problem = "The recorded Aquinas attempt stopped at an incorrect Jeremiah page or an inaccessible path. The independent bounded search located and read cap. 29 lectio 1, native [85174], with direct exposition of peaceful intent, prayer and return. The route and exact locus are in .scratch/complete-proper-68/research-review-0001/verification.md. Jerome and the other retained sources already give substantial support to the underlying Introit reasoning."
+required_result = "Add the exact checked route to the next reception reconciliation and disposition it with appropriate delivery rights and natural extent if used."
 
 [[advisories]]
 stage = "study-review"

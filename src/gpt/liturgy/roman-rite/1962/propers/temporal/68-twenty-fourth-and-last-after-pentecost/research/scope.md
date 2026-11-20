@@ -220,9 +220,11 @@ Proportionate second searches, also on 16 November:
   located the modern Aquinas Institute/Emmaus volume and commentary
   announcement, not a checked lawful English passage. A guessed Corpus
   Thomisticum Jeremiah URL returned 404; the aquinas.cc lead redirected
-  to chapter 28 and was not responsibly read as chapter 29. No claim from
-  Aquinas's Jeremiah commentary is retained. Jerome's original PL images
-  supply the direct reading instead.
+  to chapter 28. The renewed check used Corpus Thomisticum's actual
+  <https://www.corpusthomisticum.org/cph.html>, cap. 29 lectio 1,
+  native [85174], displayed lines 985–996. This checks the exiles' waiting,
+  God's peaceful intention, prayer and the return. Jerome's PL images supply
+  the principal direct reading. The new Aquinas check is supplemental.
 * Theodoret/Psalms 44, 85, 130 searches located the modern Hill translation
   and JSTOR volume (73–150), plus Bellarmine's available historical text.
   No Theodoret passage was read. The discovery lists also expose
@@ -232,11 +234,11 @@ Proportionate second searches, also on 16 November:
   New Advent homilies 75–77 and Colossians homily 2; retained CCEL
   NPNF constituent text, rather than search snippets, supplies the
   reasoning used here.
-* Bede/Mk 11:24–25/faith/forgiveness search yielded mainly modern
-  commentary sites, not an additional checked patristic text. The
-  registered Latin Bede was read directly. Aquinas's Catena and
-  Theophylact remain discoverable leads, not second independently
-  checked witnesses.
+* Bede/Mk 11:24–25/faith/forgiveness searches initially yielded chiefly modern
+  commentary sites. The registered Latin Bede and the Basel 1525
+  Theophylact on Mark 11:24–25 were checked at their actual loci. Theophylact
+  gives direct commentary on v. 24. Aquinas's Catena remains a lead. The
+  separate modern English archive lead stays uninspected and uncleared.
 * Exact Last-Sunday/incpit queries for *Excita*, *Propitius esto* and
   *Concede nobis* located modern Propria sheets and liturgical blogs
   recycling the *Liturgical Year*. The full 1883 witness, not those
@@ -252,26 +254,77 @@ as theological authorities. No new anonymous “patristic consensus” is assert
 
 ## 5. Reception matrix: passage, adaptation and prayer
 
-Every exact witness below is identified at artifact level in
-`source-bindings.toml`. “Checked” means the stated native locus was read,
-not that the entire artifact or every related work was verified.
+Existing exact witnesses are identified at artifact level in
+`source-bindings.toml`. The two renewed acquisitions are identified by their
+delivery hashes below for source registration. “Checked” refers to the stated
+native locus.
 
 | Appointed unit and users | Direct ancient exegesis actually read | Medieval/later saintly and liturgical reception actually read | Retained use, distinction, negative limit |
 | --- | --- | --- | --- |
-| Jer 29:11,12,14 composite — Introit | Jerome, *In Ieremiam* V, lemma 29:10–14, PL 24 cols. 893–896, Latin; PDF 451–452 images | Fromage continuation, Last Sunday, Introit/Collect, pp. 503–504; Aquinas Jeremiah searched but not read | Jerome rejects immediate return, distinguishes God's known peace from human impatience, and explains prayer as disposing recipients to receive. His spiritual rest after this life's dispersion is an extension beyond the historical return. No Father is said to have interpreted the chant's exact redaction. |
-| Ps 84(85):2 — Introit psalm verse | Augustine, *Enarrationes*, Ps 84; NPNF heading LXXXV, §§1–13, complete exposition | Bellarmine/O'Sullivan, Ps 84, complete explanation; Fromage's printed Introit | Augustine's captivity is ultimately sin/death. In §§2–4 the completed tense prophesies restoration still future for the prophet; *Converte nos* demonstrates its noncompletion at that standpoint. Applying it to a Christian assembly already forgiven yet awaiting consummation is an editorial inference, not that tense argument. Bellarmine carries restoration to resurrection and final peace. Neither identifies the chant compiler's purpose. Theodoret/Cassiodorus leads remain uninspected. |
+| Jer 29:11,12,14 composite — Introit | Jerome, *In Ieremiam* V, lemma 29:10–14, PL 24 cols. 893–896, Latin; PDF 451–452 images | Fromage continuation, Last Sunday, Introit/Collect, pp. 503–504; Aquinas, *In Jeremiam* 29 lectio 1, [85174], directly treats 29:10–14 within its reading of 29:1–15 | Jerome rejects immediate return, distinguishes God's known peace from human impatience, and explains prayer as disposing recipients to receive. His spiritual rest after this life's dispersion is an extension beyond the historical return. No Father is said to have interpreted the chant's exact redaction. |
+| Ps 84(85):2 — Introit psalm verse | Augustine, *Enarrationes*, Ps 84; NPNF heading LXXXV, §§1–13, complete exposition | Bellarmine/O'Sullivan, Ps 84, native explanations 1–13 (Vg. 84:2–14); Fromage's printed Introit | Augustine's captivity is ultimately sin/death. In §§2–4 the completed tense prophesies restoration still future for the prophet; *Converte nos* demonstrates its noncompletion at that standpoint. Applying it to a Christian assembly already forgiven yet awaiting consummation is an editorial inference, not that tense argument. Bellarmine carries restoration to resurrection and final peace. Neither identifies the chant compiler's purpose. Theodoret/Cassiodorus leads remain uninspected. |
 | *Excita, quaesumus* — Collect | No direct patristic exposition of this exact oration located in the bounded search | Fromage pp. 503–504 explains grace-assisted good works and the divine Mover of the will. Aquinas, *Super Colossenses* 1, lectio 3, is a doctrinal/exegetical analogue, not this prayer's commentary | The plea for stirred wills precedes the pursuit of fruit and greater remedies. Do not turn grace-enabled growth into antecedent self-merit. Non-saint Fromage does not count toward the two-author requirement. |
-| Col 1:9–14, adapted opening — Epistle | Chrysostom, *Homilies on Colossians* 2, exposition of 1:9–14, NPNF13 lines 23765–24054 | Aquinas, *Super Colossenses* 1, lectio 3/native 87848 on Col 1:9–14, with lectio 2/native 87847 on the preceding 1:3–8; both read in Latin. Fromage pp. 504–507 | Knowledge issues in works and endurance; made worthy, not merely handed a prize. Rescue plus transfer is a double gift. Continued prayer for people already faithful is not denial of their grace. Lectio 2 supplies qualified universal-preaching context; lectio 4's Col 1:15–17 exposition is separately accounted for under the Preface, not added to the appointment. |
-| Ps 43(44):8–9 liturgical form — Gradual | Augustine, Ps 43; NPNF heading XLIV, §§1–20 read, especially §§5–8 | Bellarmine Ps 43, explanation vv. 1–22 read, especially native vv. 7–9; Fromage p. 506 | Real difference: Augustine explicitly makes the perfect tense prophetic certainty about future rescue; Bellarmine takes it as remembered actual rescues. Both preserve present faithful suffering. Native commentary vv. 7–8 correspond to the Mass's Vulgate 8–9; do not shift the appointment. |
-| Ps 129(130):1–2, *orationem*, Alleluias — Alleluia | Augustine, Ps 129; NPNF heading CXXX, §§1–8, complete exposition | Bellarmine Ps 129, complete explanation; Fromage p. 506 | Crying from mortality/sin is hope, not abandonment. Augustine's resurrection-morning and Bellarmine's all-life watch are complementary spiritual extensions from later verses, not words appointed here. Greek Psalm leads not independently inspected. |
-| Mt 24:15–35 — Gospel | Chrysostom, homilies 75–77, bounded reads: 75 lines 41724–42003; 76 lines 42301–42700; 77 lines 42824–42993. Historical English NPNF10 | Aquinas, *Super Matthaeum* 24, lectiones 1–3, native anchors 87395–87397, Latin; local parsed lines 894–1204; Fromage pp. 508–513 | Concrete Judean flight is not erased by final-coming application. “Then” need not mean the next moment. Public lightning, sign/cross, gathering, enduring generation and abiding words ground hope without a timetable. Aquinas reports multiple authorities: reported Hilary/Origen/Jerome are not independently checked editions. |
-| Ps 129(130):1–2 with repeated opening — Offertory | Same direct Augustine Psalm exposition, not an invented second source | Same Bellarmine Psalm; Fromage pp. 512–513 at the actual Offertory | Distinct ritual position/repetition. Connecting the persistent cry with the offering and the Secret is editorial whole-Mass synthesis, not a claim that Augustine discussed this antiphon's liturgical repetition. |
+| Col 1:9–14, adapted opening — Epistle | Chrysostom, *Homilies on Colossians* 2, exposition of 1:9–14, NPNF13 lines 23765–24002, with 24003–24054 separately checked at the 1:14–15 transition | Aquinas, *Super Colossenses* 1, lectio 3/native 87848 on Col 1:9–14, with lectio 2/native 87847 on the preceding 1:3–8; both read in Latin. Fromage pp. 504–507 | Knowledge issues in works and endurance; made worthy, not merely handed a prize. Rescue plus transfer is a double gift. Continued prayer for people already faithful is not denial of their grace. Lectio 2 supplies qualified universal-preaching context; lectio 4's Col 1:15–17 exposition is separately accounted for under the Preface, not added to the appointment. |
+| Ps 43(44):8–9 liturgical form — Gradual | Augustine, Ps 43; NPNF heading XLIV, §§1–20 read, especially §§5–8 | Bellarmine Ps 43, native explanations 1–22 (Vg. 43:2–23), especially 7–9; Fromage p. 506 supplies wording | Real difference: Augustine explicitly makes the perfect tense prophetic certainty about future rescue; Bellarmine takes it as remembered actual rescues. Both preserve present faithful suffering. Native commentary vv. 7–8 correspond to the Mass's Vulgate 8–9; do not shift the appointment. |
+| Ps 129(130):1–2, *orationem*, Alleluias — Alleluia | Augustine, Ps 129; NPNF heading CXXX, §§1–8, complete exposition | Bellarmine Ps 129, complete explanation; Fromage p. 506 supplies wording | Crying from mortality/sin is hope, not abandonment. Augustine's resurrection-morning and Bellarmine's all-life watch are complementary spiritual extensions from later verses, not words appointed here. Greek Psalm leads not independently inspected. |
+| Mt 24:15–35 — Gospel | Chrysostom, homilies 75–77, bounded reads: 75 lines 41724–42003; 76 lines 42301–42700; 77 lines 42824–42993. Historical English NPNF10 | Aquinas, *Super Matthaeum* 24, lectiones 1–3, native anchors 87395–87397, Latin; local parsed lines 894–1205 through the final words on v. 35, with continuation into vv. 36–39 separately checked; Fromage pp. 508–513 | Concrete Judean flight is not erased by final-coming application. “Then” need not mean the next moment. Public lightning, sign/cross, gathering, enduring generation and abiding words ground hope without a timetable. Aquinas reports multiple authorities: reported Hilary/Origen/Jerome are not independently checked editions. |
+| Ps 129(130):1–2 with repeated opening — Offertory | Same direct Augustine Psalm exposition, not an invented second source | Same Bellarmine Psalm; Fromage p. 513 supplies Offertory wording | Distinct ritual position/repetition. Connecting the persistent cry with the offering and the Secret is editorial whole-Mass synthesis, not a claim that Augustine discussed this antiphon's liturgical repetition. |
 | *Propitius esto* — Secret | No exact patristic oration commentary located; Augustine, *De Trinitate* III.4.10 is a Eucharistic analogue | Fromage p. 513, actual Secret and surrounding explanation; Aquinas Col 1 lectio 3 on prayer is an analogue | God is asked both to accept offerings/prayers and to turn the offerers' hearts from earthly cravings to heavenly desires. A request for converted desire qualifies, rather than weakens, the Communion promise. |
 | Trinity Preface, dialogue/opening/proper/conclusion/junction — Preface | Augustine, *De Trinitate* III preface §3, III.4.10, III.10.21/III.11 opening, doctrinal analogues; Chrysostom Col homily 2 on Father's/Son's undivided agency, also an analogue | Aquinas, *Super Colossenses* 1, lectio 4/native 87849, expounding Col 1:15–17 on the Son's equal invisible nature, creation and conservation of all things; doctrinal illumination, not a direct Preface commentary or part of the appointed Col 1:9–14 | Distinction of persons, unity of essence, equality of majesty are the prayer's own assertions. The angels praise God, not another god beside Father/Son/Spirit. Do not turn the earthly/heavenly union of praise into a new claim about the prayer's origin. No exact saintly Preface exposition was verified in the search. |
-| Mk 11:24, *Amen / quidquid / fiet* — Communion | Bede, *In Marci evangelium expositio* III, Mk 11 entry, Latin transcription lines 330–339; particularly 338–339 on 11:22–23 and 25 | Fromage p. 513 (PDF 539) quotes the Communion; Aquinas Col 1 lectio 3 on the purpose of prayer is an analogue | Bede's checked passage does not separately quote the v. 24 lemma: it is direct exegesis of its immediate faith/forgiveness context. Faith works by love; those not at the perfection of mountain-moving should seek pardon and forgive others. No “whatever I imagine must happen” reading. |
+| Mk 11:24, *Amen / quidquid / fiet* — Communion | Bede, *In Marci evangelium expositio* III, Latin transcription lines 338–339 on 11:22–23 and 25; Theophylact, Basel 1525 fol. 69r–v, directly on 11:24–25 | Fromage p. 513 (PDF 539) supplies wording; Aquinas Col 1 lectio 3 is an analogue on the purpose of prayer | Bede explains faith working through love and seeking pardon while forgiving others. Theophylact directly explains v. 24 as ardent communion with God in prayer, then includes pardoning others at v. 25. Aquinas and Bede carry R2. Theophylact contributes as an ecclesiastical writer. |
 | *Concede nobis* — Postcommunion | No exact patristic exposition located; Bede's Temple-cleansing paragraph at line 334, and Augustine *De Trinitate* III.4.10, are analogues | Fromage p. 513 (PDF 539) explains sacramental cure of remaining defects; the prayer itself spans pp. 513–514 (PDF 539–540). Bellarmine Ps 129 vv. 4–8 is a penitential analogue | Sacramental reception and need of further cure coexist. Do not teach automatic final perseverance or absolution of unrepented grave sin from the fact of Communion. The Latin asks cure of *vitiosum*, not preservation/restoration of evil. |
 
 ### Actual close readings and disagreements
+
+**Theophylact on the Communion.** The 1525 Basel printing by Andreas
+Cratander, *Enarrationes in quatuor Evangelia*, in Johannes Oecolampadius's
+Latin translation, was checked at *In Marcum* XI, fol. 69r–v. The Mark
+11:24–25 lemma begins at the bottom of fol. 69r and the commentary ends
+on 69v before the lemma for the return to Jerusalem. Theophylact reads
+faith as reaching toward God with the whole heart. The petitioner,
+united to God, prays ardently and entrusts himself wholly to him. In the
+next verse he includes forgiving the brother who has offended the petitioner.
+Bede explains the mountain and forgiveness from the surrounding verses,
+and Aquinas explains what prayer does in the petitioner. Theophylact
+adds an explanation from the appointed verse itself. His standing is
+ecclesiastical writer under the author's standing inventory.
+
+The [Zentralbibliothek Zürich catalogue](https://www.e-rara.ch/zuz/content/titleinfo/7285107)
+identifies B 82 | G, VD 16 B 4601, [DOI 10.3931/e-rara-23526](https://doi.org/10.3931/e-rara-23526)
+and the Public Domain Mark. The [bounded image delivery](https://www.e-rara.ch/download/pdf/7311653.pdf)
+was retrieved 20 November 2026 and verified against the reviewer copy:
+1,633,434 bytes, SHA-256
+`e72b2cd4c08f661d8b809522c50306adc34ccae66f57f5c21a9978bce4c835ee`.
+The PDF opens with a cover and carries fols. 68r–69v, from the end of
+chapter X through the opening of chapter XII. The checked images are
+PDF pp. 4–5. The historical Latin facsimile is retained through the
+source library's exact offline delivery, and the Mark 11:24–25 passage
+is deferred pending a checked transcription and admission review.
+The modern English archive route,
+`work.internet-archive.the-gospel-according-to-st-mark-item`, remains a
+catalog-only lead with unresolved delivery rights. The original Greek
+has a separate route in PG 123, cols. 487–682. The retained 1842 Oxford
+English *Catena Aurea*, Mark XI, physical line 2123, also gives an
+attributed extract on both verses. It is a lawful anthology parallel.
+Greek collation and a complete direct English expression remain open.
+
+**Aquinas on the Jeremiah context.** The [Corpus Thomisticum delivery](https://www.corpusthomisticum.org/cph.html)
+of the Parma 1863 Latin, encoded by Roberto Busa and revised by Enrique
+Alarcón, was retrieved 20 November 2026: 484,893 bytes, SHA-256
+`3728512c5a0e1a42422ddd1f3e13e41096537a8c0c0b7ef8b30a45b541e7f907`.
+Cap. 29 lectio 1, native [85174], displayed lines 985–996, runs from
+the letter's setting to the v. 15 transition. At lines 993–996 Aquinas
+reads the promise of peaceful restoration and the exiles' prayer,
+including invocation by voice, approach in mind and bodily worship.
+He gives going to the temple as another reading of the approach.
+This supplements Jerome on Jeremiah 29:10–14. The restricted modern HTML
+stays in private custody. Its exact artifact and the candidate extent of
+Jeremiah 29:1–15 are registered as deferred direct exegesis. The registered
+Parma volume's optical layer locates the same lectio, with the historical
+commentary at printed pp. 577–667. Image collation, a reusable text and
+admission review remain open. The Aquinas Institute's modern English
+edition does not establish a redistributable English witness.
+
 
 **Jerome.** PL 24 cols. 893–896, on 29:10–14, keeps the long historical
 waiting against false prophecy; only God knows his peace-intent fully.
@@ -378,6 +431,21 @@ target's inventory; its Mass pp. 503–514 prints all ten non-Preface
 elements. It does not print the Trinity Preface there and retains older
 additional-orations directions, which do not govern 1962.
 
+The four chants have distinct textual uses. On printed p. 506 (PDF 532),
+the Gradual's Latin shares *Liberasti nos, Domine*, *et eos qui nos oderunt*
+and *in saecula* with the target. Shepherd's English begins “Thou hast
+saved us,” where Lasance has “Thou hast delivered us.” The Alleluia shares
+the target's doubled opening, single closing and *orationem meam*. The
+preceding prose finishes the Epistle exposition. On printed p. 513 (PDF 539),
+the Offertory also has *orationem meam*, repeats the opening and lacks the
+Alleluias. Its English begins “Out of the depths.” The Communion shares
+the target's *Amen dico vobis*, *quidquid*, *quia* and *fiet* formula. The
+physical Duffy page has the compositor's transposition *acciepietis* where
+the target has *accipietis*. The parallel English “shall receive” confirms
+the intended reading. The commentary after the Offertory interprets the
+Secret, and the commentary after the Communion interprets the Postcommunion.
+The four chants serve as wording evidence with no independent exposition.
+
 The commentary joins grace-assisted fruitfulness, continuing Pauline
 prayer, thanksgiving and progressive union with Christ. It reads the
 final judgment not solely as terror but as the Church's desire for her
@@ -425,14 +493,15 @@ by the corpus, not a survey of all contemporary scholarship.
 | CE XII (1911), “Psalms,” New Advent 12533a | complete sons-of-Korah paragraph, local article line 176 | Guild attribution may mean composition or collection; proposed era from Isaias to return from exile is not the date of every remembered event or a particular siege. Ps 43 and 84 have their own titles; no exact occasion is supplied. |
 | CE VIII (1910), “Jeremias,” 08334a | historical/literary discussion, local lines 15, 41, 45 | First recension and later enlargement concern book formation; the independently read 29:1–3 letter setting is more local. Neither becomes a uniform date for the composite Introit. |
 | CE IV (1908), “Colossians,” 04131b; CE XI (1911), “St Paul,” 11567b | Colossians captivity paragraph, line 3; Paul's chronological paragraph, line 45 | Preserve A.D. 61–63 and 61 as the corpus gives them. Rome/Caesarea dispute concerns composition location; these are not dates of an event narrated in 1:9–14. |
-| CE X (1911), “Matthew,” 10057a; CE XIV (1912), “Synoptics,” 14530a | Matthew dating paragraphs, lines 201, 203; Synoptics lines 29, 31 | Preserve alternatives 38–45, 40–42, 40–45, 60–68, 64–67 and about 50. Aramaic Matthew and its Greek rendering are not automatically the same dated subject. No choice is made by averaging them. |
-| CE IX (1910), “Mark,” 09674b; CE XIV, “Synoptics” | Mark lines 39, 43, 63, 65; Synoptics line 31 | The early subscriptions and later preferences differ; the corpus retains 38–40, 40, 43, 50–67, 60–70. These are composition claims, not dates for the withered tree. |
-| A.J. Maas, CE VIII (1910), “Jesus Christ,” 08377a | article lines 21,25 and 102–146, especially ninth journey 129–134 | Explicit AUC782=AD29 calibration was read, along with the fig-tree/faith instruction and later predictions of Jerusalem's destruction, second coming and judgement in the final journey. The regenerated Mark and Matthew event dates are derived Maas chronology, not consensus dates or composition dates. |
+| Jacquier, CE X (1911), “Gospel of St. Matthew,” 10057a; Durand, CE XIV (1912), “The New Testament,” 14530a | Jacquier's original-language testimony at line 55, separate Greek translation hypothesis at 121, and dating at 201–203; Durand at line 29 | Jacquier's c. A.D. 40–42 and 60–68 follow Eusebius's Hebrew-at-departure testimony. His c. A.D. 64–67 is inferred from Irenaeus's testimony about a Gospel for the Hebrews in their own language. Durand's c. A.D. 50 dates his putative Aramaic original, and he expressly leaves the Greek rendering's date undetermined. Jacquier reports c. A.D. 38–45 and c. A.D. 40–45 generically; the corpus preserves those reports with unresolved scope outside the default candidate set. |
+| NABRE Matthew introduction, USCCB edition | Exact registered introductory passage on authorship, sources, composition and place | The post-A.D. 70 proposal concerns the extant Greek Gospel and reflects the majority scholarly account reported there. The comparison row carries its Catholic critical profile, independent of the Semitic-original proposals. Antioch remains conjectural. |
+| CE IX (1910), “Mark,” 09674b; CE XIV, “The New Testament” | Mark lines 39, 43, 63, 65; Durand line 31 | The early subscriptions and later preferences differ; the corpus retains 38–40, 40, 43, 50–67, 60–70. These are composition claims, not dates for the withered tree. |
+| A.J. Maas, CE VIII (1910), “Jesus Christ,” 08377a | Printed p. 378 for the era equation; Ninth Journey heading and Tuesday on pp. 380–381, normalized article lines 129–134 | The quoted heading gives A.U.C. 782. The editorial A.D. 29 follows Maas's explicit equation at p. 378. The fig-tree instruction and the Olivet predictions are distinct episodes in his Tuesday sequence. |
 | Haydock, 1859 commentary in Loreto 2014 memorial facsimile | exact PDF p. 826, printed p. 790, Psalm 129 heading and notes, image-read | The text says David **might** have composed it after his sin (Berthier), and also applies it to captives/sinners/purgatory. “Might” is not secure Davidic attribution; the Psalm's own title is anonymous “song of degrees.” No identified occasion becomes certain. Modern front matter/whole PDF remain uncleared. |
-| PBC, 26 June 1912, AAS 4 pp. 463–465 | all three actual pages read; item I questions I–IX distinguished from item II and shared approval | Historical responsum V preserves Mark/Luke's order after Matthew; VI rejects dating them as late as the destruction of Jerusalem. It supplies a historical boundary in this corpus, not an exact year or a newly asserted present-day disciplinary prohibition. |
+| PBC, 26 June 1912, AAS 4 pp. 463–465 | all three actual pages read; item I questions I–IX distinguished from item II and shared approval | Historical responsum V on p. 464 places Mark and Luke after Matthew's original-language Gospel and allows that both may precede the Greek version. VI rejects placing Mark and Luke as late as the destruction of Jerusalem or Luke after the siege began. The response gives no absolute year for either form of Matthew. |
 | CE VIII (1910), “Isaias,” 08179b; CE III (1908), “Captivities,” 03315a; “Biblical Chronology,” 03731a | Isaias lines 9,11 (also returned 25,29,33,47); Captivities especially 27,41,45 (also 7,9,33,35,47,53); Biblical Chronology 175,179 | The underlying 740 B.C. ministry anchor and alternative 538/536 B.C. returns were read. The orientation's c. 740–536 B.C. is an outer collection frame, not an individual Psalm date. The suspicious “destruction of Jerusalem 536” at line 175 is not the evidence: line 179 explicitly dates the **return** to 536. |
 | CE V (1909), “Ezechiel,” 05737b, and CE III “Captivities” | actual Ezechiel opening paragraph, line 3; Captivities line 27 | The deportation is dated 598 versus 597 B.C. The orientation's “after the deportation of c. 598–597 B.C. (possibly in that same year)” dates the letter relative to that anchor, not within a closed two-year composition interval. |
-| CE IV (1908), “David,” 04642b; 2 Kings 5:1–6 and 11:1–4 | David actual paragraphs 3,5,13,17,19,21,29; exact registered Bible verses | Corbett reports the usual 1055–1015 B.C. reign, also alternatives 30–50 years later, and seven and a half years at Hebron before Jerusalem. Subtracting 7.5 and rounding yields c. 1048 B.C. for the Jerusalem phase's beginning. The generated c. 1048–1015 B.C. frame is conditional on Haydock/Berthier's proposed attribution and this traditional chronology; it does not date the sin or fix Psalm 129's composition. |
+| CE IV (1908), “David,” 04642b; 2 Kings 5:1–6 and 11:1–4 | David actual paragraphs 3,5,13,17,19,21,29; exact registered Bible verses | Corbett reports the usual 1055–1015 B.C. reign and alternatives 30–50 years later. The first seven and a half years are at Hebron. These figures concern tenure. The two Psalm 129 rows omit any regnal estimate and retain Berthier's conditional relative proposal alongside the unresolved occasion. |
 
 Missing-event inquiry was made rather than accepting composition-only answers:
 Jer 29's letter concerns Jerusalem/Babylon and future return, not a diary
@@ -588,9 +657,9 @@ conditional chronology and the superseded Sensus Fidelium delivery, has an
 explicit disposition. Native work loci and canonical candidate Scripture
 extents remain distinct. Unresolved Scripture reach is explicitly empty
 with `scripture-extent` missing, not filled from an adjacent appointment.
-Separate Fromage rows preserve all seven scriptural uses and the unassigned
-introduction/prayer material; neither Fromage nor a verse commentator is
-made the author of a modern whole-Mass synthesis.
+Separate Fromage rows distinguish four scriptural chants used for wording,
+the commented Introit, Epistle and Gospel, and the introduction and prayers.
+The full-Mass synthesis remains an editorial argument.
 
 The existing discovery receipts and containment-aware research sweep remain
 the original/English search record; no second, fictitious sweep or new
@@ -762,13 +831,19 @@ a newly acquired printing, a new admitted passage, or a new rights clearance.
 * The retained restricted Aquinas Latin deliveries were reread through the
   decoded derivatives: Colossians 1 lectiones 2–4, native 87847–87849,
   lines 98–253; Matthew 24 lectiones 1–3, native 87395–87397,
-  lines 894–1233, including the transition to the unappointed 24:36.
+  lines 894–1233. At line 1205 the last words on v. 35 give way to v. 36.
+  The checked continuation reaches Noah (vv. 37–39) and ends inside the
+  discussion of v. 39. These later verses are contextual to the appointment.
   The election alternatives remain reported exegesis, not an independent
   Origen witness or permission to teach the failure of God's election.
   Col 1:15–17 remains a Preface analogue, outside the appointed Epistle.
 * Bellarmine/O'Sullivan's three Psalm ranges and Bede's Latin Mark entry,
-  lines 330–339, were reread. These remain web transcriptions, not new
-  collations of their historical printings. Bede's charity and forgiveness
+  lines 330–339, were reread in held transcriptions. The Psalm 43 span
+  covers the first 22 native explanations (Vg. 43:2–23). The whole
+  abridged Psalm 84 exposition ends at physical 3017. The previously
+  included 3021–3031 belong to Psalm 85 and contain its opening through
+  Vg. 85:4, separately deferred as context. Historical-print collation
+  remains open. Bede's charity and forgiveness
   argument belongs to the immediate Mark 11:22–23,25 context; there is no
   separately quoted verse-24 lemma in this inspected entry.
 * Jerome's PL 24, PDF 451–452, cols. 893–896, was reread on the images.
@@ -781,9 +856,11 @@ a newly acquired printing, a new admitted passage, or a new rights clearance.
   covered PDF 529, 530 and 536–540, not every chapter image.
   The textual pinpoints are Collect p. 503; Epistle pp. 504–506;
   Gradual/Alleluia p. 506; Gospel pp. 507–508 with exposition through
-  p. 512; final chants and prayers pp. 513–514. He comments on ten elements,
-  not the Trinity Preface. The continuation is Fromage's, translated by
-  Laurence Shepherd, not a new Guéranger or saintly-quota attribution.
+  p. 512; final chants and prayers pp. 513–514. Four chants are textual
+  parallels, and the Secret and Postcommunion have distinct comments on
+  p. 513. The historical chapter prints ten of the appointed texts.
+  The Trinity Preface is absent. Laurence Shepherd translates Fromage's
+  continuation.
 * The chronology source bodies listed in §7 were inspected at their actual
   dated subjects, including Haydock PDF 826 and AAS 4 PDF 463–465.
   The regenerated record and `orientation-v3` now include Maas's distinct
@@ -835,9 +912,9 @@ the Trinity Preface was established by these bounded searches.
 One new result was followed and its actual Latin service response read:
 Anthony of Padua, *Sermones dominicales*, **Dominica XXII post Pentecosten**,
 at <https://www.santantonio.org/en/node/875?latin=1>. The response identifies
-that sermon and numbers its sections, but its precise Latin edition was not
-established. This is a new, unregistered delivery candidate, not a fabricated
-existing source ID. The preserved UTF-8 service Markdown is 45,790 bytes,
+that sermon and numbers its sections. Its precise Latin edition remains
+unresolved. The exact service delivery is registered as a restricted
+artifact. The preserved UTF-8 service Markdown is 45,790 bytes,
 SHA-256 `8214536185b632d6571f0ee7f06e5f49501954286b9cf3f0e37652dcbc2ee0c2`,
 read 17 November 2026 after a successful service response. It is not original
 HTML, and no rights clearance for the modern delivery is asserted.
@@ -855,10 +932,9 @@ explicitly leaves the question undecided; neither side is adopted here as
 settled doctrine. This is valuable **direct reception of the shared adapted
 Introit in a different Mass**, not direct reception of this complete formulary.
 
-For source registration, preserve this exact service identity without a public
-payload unless its rights are established. Identify its Latin edition, natural
-passage boundaries, transcript, composition basis and actual Scripture edges
-before any passage admission. Sections 2 and 8 relate the chant's
+The service identity remains registered without a public payload. Its Latin
+edition, natural passage boundaries, transcript, composition basis and actual
+Scripture edges need verification before admission. Sections 2 and 8 relate the chant's
 Jer 29:11–12,14 to Mt 18:23–35; they do not expound Mt 24:15–35.
 The findings are a supplemental R2 lead, not a replacement carrying author,
 new public quotation, or reason to alter the present studies at this stage.
@@ -866,12 +942,10 @@ new public quotation, or reason to alter the present studies at this stage.
 ### Handoff limits
 
 Renewed byte checks match all 12 retained receipt payloads and all 38 bound
-tracked payloads. These are preservation checks, not renewed acquisitions or
-proof that every payload was read in full. Existing binding and disposition
-records retain their historical actions; source registration must reconcile
-the new Anthony candidate, search-return consultations and expanded bounded
-inspection with those records. No source fingerprint or historical verification
-date was silently rewritten. The two defensible research readings remain R1
+tracked payloads. These checks establish preservation. The binding and
+disposition records document the bounded inspection, the retained Anthony
+service delivery and the search-return consultations. The two defensible
+research readings remain R1
 (real rescue and awaited consummation, carried by Augustine and Chrysostom)
 and R2 (grace-formed prayer and desire, carried by Aquinas and Bede), each
 with all four senses and the whole appointed Mass. Fresh authoring and
@@ -886,14 +960,15 @@ appointments. The original 51 binding identities and all their central
 fingerprints remain unchanged. Local use and digest pins now distinguish
 the completed Augustine Ps 43 §20 (with opening §21 context through physical
 15228), Aquinas's Colossians decoded endpoint 253, Matthew decoded endpoint
-1233 with a separate deferred 24:36 transition, complete Clementine Mk 11
+1233 with a separately deferred transition whose actual bounds are now
+mapped as 24:35–39, complete Clementine Mk 11
 and Mt 24, and the expanded chronology-source readings. Maas's Olivet
 utterance is no longer a merely uninvestigated lead: the owning chronology
 generator supplies the separately qualified derived A.D. 29 event date.
 No source-manifest alteration, new acquisition, or final-coming date follows
 from these local corrections.
 
-There are now **75 bindings and 104 dispositions**: two reused admissions,
+That registration recorded **75 bindings and 104 dispositions**: two reused admissions,
 40 deferred candidates, six rejected consultations, 38 not-commentary
 controls or finding aids, and 18 catalog-only leads. The only admitted
 passages remain Chrysostom's historical-English Colossians 1:9–12 and
@@ -952,3 +1027,20 @@ or source-family screening. The GPT inventory and bootstrap family-ledger
 refresh may update hashes only; exact classifications, `families = []` and
 pending review states remain in force. No Claude review, publication prose,
 accepted native run or public archive is part of this stage.
+
+## 12. Basel, Jeremiah and Maas source registration, 20 November 2026
+
+Bindings 76–79 record the checked Basel Latin witness, Corpus Thomisticum
+Jeremiah delivery, Maas era-equivalence paragraph and the Oxford English
+catena extract. The Basel facsimile, Jeremiah lectio and English extract
+retain deferred direct-exegesis dispositions in the source queue. The chapter PDF and the lectio's natural extent carry their
+separate bounds in §5 and the binding records. The Maas p. 378 passage
+anchors the era equivalence; the two Ninth Journey passages identify the
+Tuesday episodes. The generated chronology gives the derived A.D. 29
+outside the quotation of Maas's A.U.C. heading.
+
+The current ledger has **79 bindings and 109 dispositions**: two existing
+Chrysostom admissions, 36 deferred candidates, six rejected consultations,
+47 historical or textual controls and finding aids, and 18 catalog-only
+leads. The three new direct-exegesis candidates await the checks named in
+the queue. The modern English Mark lead remains catalog-only.

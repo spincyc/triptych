@@ -138,6 +138,20 @@ updates six existing input digests. The authorization and publication
 decisions are unchanged. Reconciliation-specific catalog and chronology
 regressions pass on the combined corpus.
 
+The first scoped refresh used Git's rename-aware path list. The subsequent
+public-alpha check found two old Ordo paths still bound after their relocation.
+Final release refresh must include both retired paths along with the current
+inputs. The native publication gate routed the refreshed research closure to
+research first and carried the web finding forward.
+
+Research and registration reproduced the merged input seal and passed the
+native preflight. The new cold review verified all eleven appointments and
+returned six findings. Its repair packet addresses the oration proof chain,
+Psalm 129's proposed occasion, the dates for the two forms of Matthew,
+commentary extents, Fromage's use as a text witness, and Theophylact's direct
+exposition of the Communion text. Research corrections are underway. Source
+registration follows.
+
 Detailed progress and limitations belong to
 `workflows/reviews/gpt-1962-68-production-2026-11-16/CYCLES.md`.
 

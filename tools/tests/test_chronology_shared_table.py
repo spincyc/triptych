@@ -43,10 +43,18 @@ class SharedTableTests(unittest.TestCase):
                   for row in self.projection.orientation_rows for p in row.passages
                   for locus in p.loci for c in row.group.claims}
         self.assertEqual(actual, expected)
+        matthew = "composition.gospel-of-matthew"
+        evidence = corpus.chronology("Matt.5.1", evidence=True)
+        preserved = {a.claim.date.label for a in evidence.assertions
+                     if a.subject == matthew and a.claim.answerability == "preserved"}
+        self.assertEqual(preserved, {"about A.D. 38-45", "the years 40-45"})
+        answerable = {a.claim.date.label for a in evidence.assertions
+                      if a.subject == matthew and a.claim.answerability == "answerable"}
         for key in ("gospel", "alleluia", "communion"):
-            self.assertEqual(sum(c.subject == "composition.gospel-of-matthew"
-                                 for row in self.projection.orientation_rows
-                                 if row.passages[0].element_key == key for c in row.group.claims), 6)
+            visible = [c.label for row in self.projection.orientation_rows
+                       if row.passages[0].element_key == key for c in row.group.claims
+                       if c.subject == matthew]
+            self.assertCountEqual(visible, answerable)
 
     def test_different_undated_episodes_and_appointed_forms_keep_their_identity(self):
         other = chronology.dossier(BASE + "66-resumed-fifth-after-epiphany", provider="gpt")
@@ -150,10 +158,12 @@ class SharedTableTests(unittest.TestCase):
         projected = chronology.annotations(found)
         rows = [r for r in chronology.compact_orientation_rows(projected)
                 if r.passages[0].element_key == "gospel"]
-        self.assertEqual([r.group.relation for r in rows], ["narrated-event", "composition"])
-        event, composition = rows
+        self.assertEqual([r.group.relation for r in rows],
+                         ["narrated-event", "composition", "composition"])
+        event, semitic, greek = rows
         loci = tuple(f"Matt.24.{verse}" for verse in range(15, 36))
-        self.assertEqual(event.passages[0].loci, loci)
+        for row in rows:
+            self.assertEqual(row.passages[0].loci, loci)
         subject = chronology.orientation_subject(event, presentation=chronology.ORIENTATION_V3)
         self.assertIn("Narrated event: Jesus foretells", subject)
         self.assertEqual(event.setting_label, "Mount Olivet by narrative continuity")
@@ -163,12 +173,23 @@ class SharedTableTests(unittest.TestCase):
         maas = ("passage.catholic-encyclopedia.volume-8.new-york-1910."
                 "maas-ninth-journey-olivet-prophecies")
         self.assertIn(maas, claim.sources)
+        self.assertEqual(claim.label, "February, A.U.C. 782- Passover, 782")
         self.assertEqual({(reach.locus, reach.scope, reach.inherited) for reach in claim.reaches},
                          {(locus, "Matt.24.3-35", False) for locus in loci})
         self.assertEqual(chronology.orientation_date(event, compact=True),
                          "A.D. 29 (derived; Maas's chronology)")
         self.assertIn(event.key, chronology.render_orientation_table(projected))
-        self.assertEqual(composition.group.claims[0].subject, "composition.gospel-of-matthew")
+        self.assertEqual({c.subject for c in semitic.group.claims}, {"composition.gospel-of-matthew"})
+        self.assertEqual(semitic.group.requested_profile, "")
+        self.assertEqual(greek.group.requested_profile, "catholic-critical-v1")
+        greek_claim, = greek.group.claims
+        self.assertEqual(greek_claim.subject, "critical.gospel-of-matthew")
+        nabre = ("passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition."
+                 "english-usccb-web-2026-09-21.matthew-introduction")
+        self.assertIn(nabre, greek_claim.sources)
+        for claim in (*semitic.group.claims, greek_claim):
+            self.assertEqual({(reach.locus, reach.scope, reach.inherited) for reach in claim.reaches},
+                             {(locus, "Matt", True) for locus in loci})
         self.assertEqual({c.relation for c in found.element("gospel").claims},
                          {"narrated-event", "composition"})
 
@@ -195,15 +216,25 @@ class SharedTableTests(unittest.TestCase):
             chronology.render_annotations_tex(projected))
         self.assertNotIn(r"\chronologyorientationrow", expanded)
         rows = [cells[index:index + 3] for index in range(0, len(cells), 3)]
-        self.assertEqual(len(rows), 15)
+        self.assertEqual(len(rows), 16)
         self.assertEqual(sum("Occasion date unresolved" in row[2] for row in rows), 4)
         self.assertEqual(sum(":" in row[0] for row in rows), 8)
+        for element in ("Alleluia", "Offertory"):
+            psalm = next(index for index, row in enumerate(rows)
+                         if f"{element}: Ps. 129:1--2 (Vg.; Heb. 130)" in row[0])
+            self.assertEqual(rows[psalm][1:], ["Historical setting", "Occasion date unresolved"])
+            self.assertEqual(rows[psalm + 1][1:], ["Composition: David after his sin (proposed)",
+                                                  "Disputed: Possibly after David's sin"])
         gospel = next(index for index, row in enumerate(rows) if "Gospel:" in row[0])
         self.assertIn("Mount Olivet", rows[gospel][1])
         self.assertIn("Narrated event: Jesus foretells", rows[gospel][1])
         self.assertEqual(rows[gospel][2], "A.D.~29 (derived; Maas's chronology)")
-        self.assertIn("Composition:", rows[gospel + 1][1])
-        self.assertIn("Matthew", rows[gospel + 1][1])
+        self.assertEqual(rows[gospel + 1][1:],
+                         ["Composition: Putative Semitic Matthew; associated with Palestine in Eusebius",
+                          "Proposals span c.~A.D.~40--68"])
+        self.assertEqual(rows[gospel + 2][1:],
+                         ["Composition, Catholic critical comparison: Greek Matthew; Antioch suggested",
+                          "Post-A.D.~70 date"])
 
     def test_context_does_not_supply_a_date_or_borrow_an_uncovered_passage(self):
         event = next(r for r in self.projection.orientation_rows if r.group.relation == "narrated-event")
@@ -278,11 +309,11 @@ class SharedTableTests(unittest.TestCase):
         self.assertEqual(chronology._passage_display_v3("Alleluia Verse", (adapted,)),
                          "Alleluia Verse: Cf. Eph. 1:17–18")
         rendered = chronology.render_annotations_tex(self.projection)
-        self.assertIn("Proposals span c.~A.D.~38--68", rendered)
+        self.assertIn("Proposals span c.~A.D.~40--68", rendered)
         self.assertIn("221--204 B.C.", rendered)
         self.assertIn("c.~1060 B.C. (flight from Saul; Haydock edition reporting Ussher)", rendered)
         self.assertIn("{A. M. 2944, A. C. 1060}", rendered)
-        self.assertIn("Composition: Matthew", rendered)
+        self.assertIn("Composition: Putative Semitic Matthew", rendered)
         # Source wording remains sealed, not rewritten to match typography.
         claim = next(c for row in self.projection.orientation_rows for c in row.group.claims
                      if c.subject == "composition.book-of-wisdom")

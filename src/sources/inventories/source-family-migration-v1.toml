@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-11-20"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:9d0d4c47285777aadf9b5aec6a6a68965dd24b84a622d7aecc4e791886213e89"
+inventory_snapshot = "sha256:39171ee4c1b2770b0aaae78f6898f011e94fe38a1d0c12b1b47ce35f7bdcdf85"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:210b310a398314ad0e288ea2a7b063f0cd0b9df97aebdce2e9fe844cd4dd2336"
-canonical_catalog_snapshot = "sha256:8c92126a2359503736d26a1489a15732c786c225f3424ce5d78782244c72d18a"
+canonical_catalog_snapshot = "sha256:3b2dea6a4d75608f4d5ede36220ea6b6392bf40a68c421c10647ac5776d396c2"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:3bc29d19033f88e019abe48ac93a2e41fdcb50e3c05fdcb0ffeebc56bf036136"
+snapshot = "sha256:13d086f189d4a62f4019e954246385ecc42a8001763ac173976b8f2c8a764b3b"
 families = []
 
 [[review_units]]
@@ -513,7 +513,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost"
-surface_snapshot = "sha256:43548b15c3ccbf1bc34f97b39c7c1556d7f4d80f687d8921218bbeaff332c400"
+surface_snapshot = "sha256:f265ea0262eef1c8b76e841ab7a221cba0834d984cf95372c4f7bbde3957e1e8"
 review_state = "pending"
 
 [[review_units]]

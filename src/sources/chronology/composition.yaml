@@ -12,17 +12,18 @@ updated: '2026-11-02'
 units:
   # --- nt-composition ----------------------------------------------------
   - id: composition.gospel-of-matthew
-    title: The Gospel of St Matthew
+    title: Putative Semitic original of Matthew
     scope: {book: Matt}
     note: >-
-      The Catholic Encyclopedia's article on the First Gospel opens its section
-      on the date by saying that "Ancient ecclesiastical writers are at variance
-      as to the date of the composition of the First Gospel" and closes its
-      survey of modern opinion with "In our day opinion is rather divided". It
-      settles nothing, so every claim below is disputed and none is preferred.
+      Jacquier's and Durand's dated proposals about the putative Semitic original
+      remain disputed. Jacquier's reports using the underspecified title "First
+      Gospel" remain in the evidence with their subject ambiguity. Durand
+      expressly leaves the date of the Greek rendering uncertain. The Greek
+      Gospel is the distinct subject of critical.gospel-of-matthew.
     dates:
       - profile: catholic-traditional-v1
         disposition: disputed
+        answerability: preserved
         basis_class: reported-traditional
         basis: >-
           Jacquier's article "Gospel of St. Matthew" in the Catholic
@@ -36,13 +37,11 @@ units:
           - artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef
           - artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c
         note: >-
-          "About A.D. 38-45" is the encyclopedia's own conversion of the
-          ancients' reckoning in years after the Ascension; the eight-year and
-          fifteen-year figures are what the sources themselves state. The caution
-          that "we must not expect from the ancients the precision of our modern
-          chronology" is Durand's, in "The New Testament" (Catholic Encyclopedia,
-          vol. 14, New York, 1912), and not this article's; it is cited here as
-          his.
+          Jacquier converts the reported eight and fifteen years after the
+          Ascension to approximately A.D. 38-45. The report does not specify
+          an expression for each author. It cannot date either form as a group.
+          The separate caution about expecting modern precision from the
+          ancients is Durand's in volume 14.
         date:
           precision: interval
           from: {year: 38, era: ad}
@@ -60,9 +59,9 @@ units:
           Eusebius, Matthew wrote his Gospel in Hebrew when he left Palestine."
         sources: [artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef]
         note: >-
-          The article itself calls the twelve-year tradition "admittedly not
-          too reliable" and immediately offers the alternative reckoning that
-          produces about the year 60-68 from the same peg.
+          The proposed date applies to the Hebrew Gospel of the departure
+          tradition. Jacquier qualifies the twelve-year reckoning and gives
+          approximately A.D. 60-68 from the same peg.
         date:
           precision: interval
           from: {year: 40, era: ad}
@@ -77,7 +76,8 @@ units:
           definitive departure of the Apostles about the year 60, in which
           event the writing of the Gospel would have taken place about the year
           60-68." The article presents this beside the 40-42 reckoning without
-          choosing between them.
+          choosing between them. Both reckonings concern the Gospel Matthew
+          is said to have written in Hebrew at his departure from Palestine.
         sources: [artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef]
         date:
           precision: interval
@@ -94,9 +94,11 @@ units:
           consequently about the years 64-67."
         sources: [artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef]
         note: >-
-          The article at once qualifies the testimony: "However, this text
-          presents difficulties of interpretation which render its meaning
-          uncertain and prevent us from deducing any positive conclusion."
+          The article's earlier section on the original language gives the
+          fuller testimony from Against Heresies III.1.1. Irenaeus speaks of
+          a Gospel issued among the Hebrews in their own language. The
+          numerical interval is Jacquier's inference, and he judges the
+          testimony too uncertain to settle the date.
         date:
           precision: interval
           from: {year: 64, era: ad}
@@ -104,6 +106,7 @@ units:
           label: "about the years 64-67"
       - profile: catholic-traditional-v1
         disposition: disputed
+        answerability: preserved
         basis_class: reported-traditional
         basis: >-
           For modern opinion the same article states: "In our day opinion is
@@ -112,6 +115,12 @@ units:
           body, as against the individual figures it goes on to list.
         sources: [artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef]
         note: >-
+          Jacquier does not assign a language to the aggregate estimate or
+          resolve the subject among the individually reported proposals.
+          His separate discussion of Synoptic relations specifically identifies
+          Belser's 59-60 as a proposed Greek translation, distinct from the
+          date of the Hebrew writing. This aggregate estimate dates neither
+          expression in the default query.
           The same sentence records individual Catholic departures from 40-45 —
           Patrizi 36-39, Aberle 37, Belser 41-42, Conely 40-50, Schafer 50-51,
           and Hug, Reuschl, Schanz and Rose 60-67 — which are not authored
@@ -262,10 +271,11 @@ units:
         basis: >-
           The Pontifical Biblical Commission's responsa of 26 June 1912, read
           directly in Acta Apostolicae Sedis 4 (1912) 463-465, maintain the
-          traditional order after Matthew, with Mark second and Luke third
-          (responsum V), while allowing the second and third Gospels to precede
-          the Greek version of Matthew. Responsum VI rejects putting Mark and
-          Luke as late as Jerusalem's destruction or after its siege had begun.
+          traditional order after Matthew's original-language Gospel, with
+          Mark second and Luke third (responsum V), while allowing the second
+          and third Gospels to precede the Greek version of Matthew.
+          Responsum VI rejects dating Mark and Luke as late as Jerusalem's
+          destruction and rejects dating Luke after the siege had begun.
           The ruling gives an order and an upper bound but no year.
         sources:
           - passage.pontifical-biblical-commission.de-auctore-tempore-et-veritate-evangeliorum-marci-et-lucae.latin-aas-4-1912.responsa-i-ix
@@ -281,9 +291,9 @@ units:
           relative:
             of: composition.gospel-of-matthew
             statement: >-
-              second, after Matthew, and not as late as the destruction of
-              Jerusalem or after the siege had begun
-          label: "after Matthew, and not as late as the destruction of Jerusalem"
+              second, after Matthew's original-language Gospel, and before
+              the destruction of Jerusalem
+          label: "after Matthew's original-language Gospel and before Jerusalem's destruction"
 
   - id: composition.gospel-of-luke
     title: The Gospel of St Luke
@@ -2863,11 +2873,9 @@ units:
         sources:
           - passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-129-possible-davidic-composition
         note: >-
-          A proposed occasion for composition, not an attribution in the
-          anonymous biblical heading or a settled historical finding. David's
-          penitence is a reusable subject whose scriptural context is the
-          reign at Jerusalem. The calendar orientation gives the wider regnal
-          frame as an estimate only; it does not assign this psalm a year.
+          The biblical heading leaves the author and occasion unresolved.
+          Berthier gives a conditional time relation to David's sin without
+          proposing an absolute date. The regnal years date David's tenure.
         date:
           precision: boundary
           boundary:
@@ -2993,8 +3001,9 @@ units:
           This is a critical lower bound on the Greek Gospel, not an exact
           date, closed interval, narrated-event date or date of an Aramaic
           predecessor. The probable later decade remains a qualification,
-          not a new exact endpoint. Traditional alternatives remain unchanged
-          and take precedence for this relation in the default cascade.
+          not a new exact endpoint. Where the default cascade selects a
+          traditional claim on the putative Semitic original, an explicit
+          comparison query can retrieve this distinct Greek subject.
         date:
           precision: boundary
           boundary:

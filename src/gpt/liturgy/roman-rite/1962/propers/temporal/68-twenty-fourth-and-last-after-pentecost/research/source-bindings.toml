@@ -83,10 +83,10 @@ loci = ["43.1-20", "43.21", "84.1-13", "129.1-8"]
 
 [[bindings]]
 source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-13.english-ccel-web-2026-09-05.ccel-npnf113-text-54274dd9"
-loci = ["John Chrysostom, Homilies on Colossians2;1:9-14;physical23765-24054"]
+loci = ["John Chrysostom, Homilies on Colossians 2; Col 1:9-14, physical 23765-24002; Col 1:15 lemma and return to 1:14, physical 24003-24054"]
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
-context = "Actual constituent homily read through the appointed lesson; not every later exhortation of homily2 or every constituent of NPNF13 inspected. Historical English, not Greek original. Fitting and giving the inheritance, rescue and transfer, and continued prayer checked."
+context = "Actual constituent homily read through the appointed lesson; not every later exhortation of homily2 or every constituent of NPNF13 inspected. Historical English, not Greek original. Fitting and giving the inheritance, rescue and transfer, and continued prayer checked. The final checked stretch introduces the verse 15 lemma, postpones its exposition and returns to verse 14 and its application."
 source_fingerprint = "sha256:374d296602c0a52e4c252ad0e7704b9c9952d06f6b66b891bb391c8509c390db"
 
 [[bindings]]
@@ -99,7 +99,7 @@ source_fingerprint = "sha256:0209917237dc0599614ab5b3a70d1563de63045007c4a8d4eb7
 
 [[bindings]]
 source_id = "artifact.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.historical-text-357551e1"
-loci = ["Psalm43, explanations vv.1-22;physical1603-1647", "Psalm84 complete;2987-3031", "Psalm129 complete;4679-4696"]
+loci = ["Psalm 43 heading and native explanations 1-22, Vulgate 43:2-23; physical 1603-1647", "Psalm 84 heading and complete exposition in this abridgment, Vulgate 84:2-14; physical 2987-3017", "Psalm 85 opening, Vulgate 85:1-4; physical 3021-3031", "Psalm129 complete;4679-4696"]
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
 context = "Bellarmine through historical O Sullivan abridged English web transcription. Read actual paragraphs; no fresh1866 image collation. Preserve remembered-rescue versus Augustine prophetic-perfect difference, and misery/mercy/medicine reasoning. Use attributed paraphrase."
@@ -122,10 +122,10 @@ source_fingerprint = "sha256:1181b99646ceacb96e1ba4f36adbc6f23277001fcf4c4ba8471
 
 [[bindings]]
 source_id = "artifact.thomas-aquinas.super-matthaeum.latin-corpusthomisticum-chapters-21-25-2026-10-13.aquinas-matt-3d862a0e"
-loci = ["Super Matthaeum24, lectiones1-3;native87395-87397", "Private decoded derivative lines894-1233, including transition to unappointed Matthew24:36", "Matthew24:24 election analysis, lectio3;native87397;decoded derivative1068-1072"]
+loci = ["Super Matthaeum24, lectiones1-3;native87395-87397", "Private decoded derivative lines894-1233, including end of Matthew 24:35 and unappointed 24:36-39 in physical 1205-1233", "Matthew24:24 election analysis, lectio3;native87397;decoded derivative1068-1072"]
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
-context = "Exact restricted modern Latin HTML retained; actual appointed passage exposition and renewed transition to Matthew24:36 read. This does not appoint verse36 or claim complete subsequent exposition. Reported Hilary/Origen/Jerome are reported authorities, not independently inspected editions. No modern delivery bytes publicly retained; rehashing retained bytes is not a new acquisition."
+context = "Exact restricted modern Latin HTML retained; actual appointed passage exposition checked, with a separate continuation touching Matthew 24:35-39 and breaking inside the discussion of verse 39. The Mass ends at verse 35. Reported Hilary/Origen/Jerome are reported authorities, not independently inspected editions. No modern delivery bytes publicly retained; rehashing retained bytes is not a new acquisition."
 source_fingerprint = "sha256:d15f96a4b0c743dc1293847645c47d79a118d40157b4e811ad3a083b29bd3db6"
 
 [[bindings]]
@@ -140,7 +140,7 @@ loci = ["pdf-page-451", "pdf-page-452"]
 source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1883-volume-11.ia-pdf-f1893738"
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
-context = "Inspection extent: Lucien Fromage continuation, Last Sunday, printed501-514; Mass printed503-514; PDF529-532 and535-540 images. Exact1883 facsimile acquired; only listed images opened, with whole chapter read in separately bound OCR. Not Gueranger-authored or a saintly quota witness. All ten non-Preface elements appear; older additional-oration discipline excluded."
+context = "Inspection extent: Lucien Fromage continuation, Last Sunday, printed501-514; Mass printed503-514; PDF529-532 and535-540 images. Exact1883 facsimile acquired; only listed images opened, with whole chapter read in separately bound OCR. Not Gueranger-authored or a saintly quota witness. All ten non-Preface texts appear. The Gradual and Alleluia on p. 506 and Offertory and Communion on p. 513 are wording evidence. Separate comments follow the two final chants, on the Secret and Postcommunion. Older additional-orations directions are outside this appointment."
 source_fingerprint = "sha256:180faa2feba4fd64d6c049b1361b8adddb9712fb6b990b7fcb4dc426ba725283"
 loci = ["vol-xi-p-503", "vol-xi-p-504", "vol-xi-p-505", "vol-xi-p-506", "vol-xi-p-509", "vol-xi-p-510", "vol-xi-p-511", "vol-xi-p-512", "vol-xi-p-513", "vol-xi-p-514"]
 
@@ -148,7 +148,7 @@ loci = ["vol-xi-p-503", "vol-xi-p-504", "vol-xi-p-505", "vol-xi-p-506", "vol-xi-
 source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1883-volume-11.ia-djvu-text-95cdb0fc"
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
-context = "Inspection extent: Twenty-fourth and Last Sunday after Pentecost;printed501-514;physical29970-30899. Complete chapter read in OCR including introductory historical discussion and all Mass commentary; historical claims about medieval adoption not independently established. Author is Lucien Fromage, translator Laurence Shepherd. No Trinity Preface commentary occurs in this chapter."
+context = "Inspection extent: Twenty-fourth and Last Sunday after Pentecost;printed501-514;physical29970-30899. Complete chapter read in OCR, including the opening historical discussion and Mass commentary. Four listed chants are textual parallels, and the exact facsimile supplies their spellings. Historical claims about medieval adoption remain unverified. Author is Lucien Fromage, translator Laurence Shepherd. No Trinity Preface commentary occurs in this chapter."
 source_fingerprint = "sha256:5704de4921a1ed8c6da6c88bc1235f8aa14d39ef3973edc2061508aaf727c16d"
 loci = ["vol-xi-p-501", "vol-xi-p-502", "vol-xi-p-503", "vol-xi-p-504", "vol-xi-p-505", "vol-xi-p-506", "vol-xi-p-507", "vol-xi-p-508", "vol-xi-p-509", "vol-xi-p-510", "vol-xi-p-511", "vol-xi-p-512", "vol-xi-p-513", "vol-xi-p-514"]
 
@@ -579,3 +579,36 @@ loci = ["Search discovery only; https://bibleword.ai/bible/mark/11/24"]
 role = "lead"
 states = ["cataloged"]
 context = "Uninspected search-return lead. search-return lead only; no whole-body inspection claim. The exact delivered service field is separately hash-identified in the library, but catalog-only binding states describe discovery use, not reading or verification of the whole body or the underlying HTML/PDF. Not an independent reception or quotation witness."
+
+[[bindings]]
+source_id = "artifact.theophylact-of-ohrid.enarratio-in-evangelium-marci.1525-basel-oecolampadius.e-rara-mark-chapter-xi-pdf-e72b2cd4"
+loci = ["In Marcum XI, fols. 69r–v, PDF pp. 4–5, lemma and exposition of Mark 11:24–25"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Oecolampadius's Basel 1525 Latin translation. The reading starts at the foot of 69r with the lemma, continues onto 69v and ends before the return to Jerusalem. The fig-tree discussion on 69r was read as context. Theophylact supplies supporting direct reception for the Communion and R2 as an ecclesiastical writer."
+source_fingerprint = "sha256:45e4d8ba4deb9a08ef7e0379936eed160aa0110f96acd32891ceeff0dfa023dd"
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.in-jeremiam-prophetam-expositio.latin-corpusthomisticum-web-2026-11-20.cph-html-3728512c"
+loci = ["Cap. 29 lectio 1, native [85174], displayed lines 985–996"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "The modern electronic witness presents the Parma Latin. The checked lectio is on Jeremiah 29:1–15 and ends after the opening comment on v. 15. Its reading of peaceful intent, prayer and restoration in vv. 10–14 supplements Jerome, who carries the direct reading. Restricted HTML remains in private custody."
+source_fingerprint = "sha256:492c992e2eab5dcc3eb5335273b091b35ddaff90d183b98ba916eb180ca6fe7f"
+
+[[bindings]]
+source_id = "passage.catholic-encyclopedia.volume-8.new-york-1910.maas-era-calibration-auc-782"
+loci = ["A. J. Maas, 'Jesus Christ,' 'The Year of the Death of Christ,' printed p. 378, left column"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Both equations of A.D. 29 and A.U.C. 782 were checked in the exact normalized article and printed p. 378. The equivalence calibrates Maas's chronology. His separate Ninth Journey accounts control the fig-tree and Olivet episodes."
+source_fingerprint = "sha256:eeb5d31669ea23a33bdd2bec50123294238fb058e77cf5dbfca33f19c9e746a4"
+verified_on = "2026-11-20"
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.catena-aurea-in-marcum.1842-english-oxford-ccel.text-790ed587"
+loci = ["Catena Aurea in Marcum XI, Oxford English chapter-body derivative, physical line 2123, with 2104–2127 as context"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Aquinas's Catena labels a historical English extract Theophylact and gives his account of fervent faith, union with God, prayer and forgiveness on Mark 11:24–25. The English is the 1842 Oxford translation of the catena's selection. The exact normalized CCEL derivative was read and rehashed. The selected wording includes adaptations and is distinct from the direct Basel Latin witness."
+source_fingerprint = "sha256:325217fa7bafbcf82ea40449ad8fc7ed0ef4e709b32d339e8103b539ce64d370"

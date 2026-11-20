@@ -8,11 +8,11 @@ editions, reading extents and access limits are in `scope.md` and the
 bindings. Vulgate Psalm numbers precede modern numbers.
 
 Both constructions below are **editorial whole-formulary synthesis**.
-Augustine, Chrysostom, Aquinas, Bede, Jerome and Bellarmine interpret the
-particular Scriptures or doctrine cited, not this complete Mass. Fromage's
-1883 chapter does interpret the received Mass; his status as an
-ecclesiastical writer does not make him one of the two eligible carrying
-authors. No historic school, compiler's design or consensus is invented.
+Augustine, Chrysostom, Aquinas, Bede, Theophylact, Jerome and Bellarmine
+interpret the particular Scriptures or doctrine cited. Fromage's 1883
+chapter explains several parts of the received Mass. Four chants are
+printed as bilingual texts. Theophylact and Fromage contribute as
+ecclesiastical writers. The carrying authors are named in each reading.
 
 ## R1. Deliverance is certain without being complete in the present
 
@@ -161,9 +161,9 @@ lead to hearts turned toward God and passage from earthly cravings
 to heavenly desires. The pastoral application is not a ban on responsible
 earthly work. It is release from treating present possessions or survival
 as the final good—the kind of attachment the Gospel's urgent flight
-exposes. This integration is the editor's, with Fromage pp. 512–513
-as direct reception of the prayers, not Augustine's commentary on the
-antiphon's liturgical repetition.
+exposes. Fromage prints the Offertory's repetition on p. 513 and directs
+his following comment to the Secret's turning of desire. The connection
+between the chant, the prayer and the Gospel's warning is the editor's.
 
 The prescribed **Trinity Preface** identifies the final good as the one
 living God: three persons, one essence, equal majesty. The earthly
@@ -241,11 +241,11 @@ of the sacrament.
 
 **Carrying eligible authors:** Thomas Aquinas (canonized Doctor) and
 Bede the Venerable (Father, canonized Doctor). Aquinas supplies the
-causality of grace/prayer and Bede the indispensable Markan qualification
-of apparent unlimited efficacy. Chrysostom contributes a distinct
-checked confirmation on *dignos fecit*. Augustine and Bellarmine further
-clarify captivity/medicine. These are compatible, not a dispute between
-“divine action” and “human action.”
+causality of grace and prayer. Bede explains effective faith and
+forgiveness in the Markan context. Theophylact's direct reading of
+v. 24 is supporting evidence from an ecclesiastical writer. Chrysostom
+contributes a distinct confirmation on *dignos fecit*. Augustine and
+Bellarmine further clarify captivity and medicine.
 
 ### The consequential words and two principal inferences
 
@@ -277,36 +277,42 @@ clarify captivity/medicine. These are compatible, not a dispute between
    immediate instruction about faith, mountain and forgiving while
    praying. That exact native scope must survive the citation.
 
-   Bede first allows an actual miracle when necessary, giving the
-   historical Gregory Thaumaturgus example; the text is not reduced
-   to “a miracle never happens.” He then reads the mountain as
-   spiritual pride/the devil and identifies effective faith as
-   *quae per dilectionem operatur*. Those not yet able to command
-   mountains should not stop praying. They should ask forgiveness,
-   and may be sure of receiving **if they first forgive those who
-   have sinned against them**. The conditional belongs to his checked
-   v. 25 reasoning and the Gospel context, not an editorial inserted
-   condition in the Communion's Latin.
+   Bede allows an actual miracle when necessary, adducing the report
+   about Gregory Thaumaturgus. He reads the mountain spiritually as
+   the devil who exalts himself in pride, and identifies effective
+   faith as *quae per dilectionem operatur*. Those still short of such
+   perfection should ask for pardon. In Bede's reading of v. 25,
+   they can be confident of receiving it if they first forgive
+   those who have offended them.
 
-   Aquinas, Col 1 lectio 3, explains why petition is needed despite
-   divine knowledge: it raises us to God rather than bending God's
-   will. Jerome, *In Ieremiam* V on 29:10–14, makes a compatible
-   inference from a promised return that is still to be prayed for:
-   the petitioner becomes disposed to receive what is promised.
-   R2 consequently reads confident prayer as participation in God's
-   good purpose, not leverage over him. Forgiveness tests that
-   participation concretely; it is not a reason to blame every sick,
-   poor or afflicted person for deficient faith.
+   Theophylact, *In Marcum* XI, Basel 1525, fol. 69r–v, interprets the
+   appointed v. 24 directly. Faith extends the whole heart toward God.
+   In ardent prayer the petitioner is united to God and gives himself
+   wholly to him. Theophylact then brings in pardoning others from v. 25.
+   Bede identifies a concrete consequence of charity in the
+   surrounding context. Theophylact's direct reading explains what
+   gives the petitioner's confidence its shape in v. 24 itself.
+   Both locate the explicit injunction to forgive in the next verse.
+
+   Aquinas, Col 1 lectio 3, explains why petition matters even though
+   God knows what is needed. Prayer raises the petitioner to God.
+   Jerome, *In Ieremiam* V on 29:10–14, likewise finds that prayer
+   disposes the exiles to receive a return already promised. R2 reads
+   confidence as participation in God's good purpose. Forgiving the
+   neighbor is one concrete act of that participation.
 
 3. **Appointed difficulty: *Excita ... voluntates; ad te corda
    converte; quidquid ... vitiosum ... curetur*.** These are addressed
    to God by believers, offerers and communicants, not simply by
    people outside the Church. Their grammar attributes the stirring,
    turning and curing to divine action while asking for the faithful's
-   active fruit and changed desire. Fromage's checked commentary
-   on the actual Collect/Secret/Postcommunion connects the three.
-   That direct liturgical reception confirms the editorial joining;
-   Aquinas/Bede supply the independently developed eligible reasoning.
+   active fruit and changed desire. Fromage's Collect comment on
+   p. 503 concerns grace-assisted fruit. His separate remarks on
+   p. 513 ask for the Secret's change of desire and describe the
+   Postcommunion as cure of what remains faulty. The editor brings
+   those three discussions into one argument about divine agency
+   and the petitioner, with Aquinas and Bede supplying the carrying
+   exegesis.
 
 ### Whole-Mass argument: hearing, willing, offering and being cured
 
@@ -397,11 +403,10 @@ toward the real triune God, not a vague spiritual satisfaction;
 joining the angels' praise is an act of grateful worship.
 
 At **Communion**, confidence follows this offered prayer of
-conversion. The promise is not silently rewritten, but Bede's
-faith/love/forgiveness context answers its apparent unrestricted
-scope. A communicant praying for reconciliation cannot coherently
-treat resentment as an untouchable entitlement. Conversely,
-the **Postcommunion** openly asks that whatever remains *vitiosum*
+conversion. Theophylact reads the verse's believing petitioner as
+giving himself wholly to God. Bede's account of forgiving a neighbor
+shows what the surrounding Gospel asks of a person praying for pardon.
+The **Postcommunion** then asks that whatever remains *vitiosum*
 in the mind be cured by the received mysteries' medicinal gift.
 It does not claim that the worshipper must have no defect left
 before asking for medicine, or that receiving mechanically
