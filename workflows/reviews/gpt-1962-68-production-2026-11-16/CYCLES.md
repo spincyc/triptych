@@ -1050,3 +1050,64 @@ combined state before publication. They are not current acceptance proofs.
 All three focused catalog/order/note tests pass. No source wording,
 Claude leaf, source identity or accepted native record is revised by this
 integration.
+
+## Reconciliation and renewed evidence review, 20 November 2026
+
+The coordinator merged upstream `f8601528b0` at `c0049e5d7e` and carried
+forward the pending web inspection record. Independent conversion found one
+changed line in the 86,493-byte canonical Markdown. The revision stamp moved
+to `2026-11-17T18:37:42Z` through the upstream calendar dependency. The old
+digest was `d5562a4040789668a3c24d15adb24703ab1efade890157b45f1de982b95fd270`.
+The cold conversion and sealed web product both produced
+`991f71a11d81f84da96fff56608f0c74f50b0d166d46a7ea2f7d04c206943283`.
+All three selected native bundles compiled in two passes at this checkpoint.
+
+Two complete offline browser builds agreed at `28b6be8782`. The independent
+cache check counted 13 families and 29,967 files. The scoped binding refresh
+adopted 119 inputs and updated six recorded hashes. A later policy check
+found two retired Ordo paths that the initial rename-aware Git path list had
+omitted. That membership correction remains for the next release refresh.
+The catalog and chronology regressions were reconciled against the combined
+corpus in `5432a93356`.
+
+Run `13ecdd1552c245ea` reported stale research and web inputs at native
+publication gate iteration 1 and routed first to research. The research
+worker reproduced the seal within its time limit. Research registration
+and preflight passed. A fresh independent review verified the appointments
+and returned six findings covering exact oration proof records, chronologies
+of Psalm 129 and Matthew, checked commentary extents, Fromage's relation to
+the chant texts, and direct reception of the Communion text.
+
+Checkpoint `a4e07b4396` applies the research repairs. The research seal
+now includes the prayer-specific proof chain. Psalm 129's calendar date
+is unresolved and Berthier's conditional after-the-sin proposal is recorded.
+Matthew's Semitic-original proposals and the Greek Gospel comparison have
+their own rows in the target dossier. The Maas calibration cites the
+verified p. 378 paragraph. Fromage's chant evidence is classified as
+wording evidence, and his actual separate oration discussions support the
+editorial synthesis. The research also separates Theophylact's direct
+exposition of Mark 11:24–25 from the Oxford catena's historical English
+excerpt and from the modern lead. The physical Basel evidence has a
+hash-verified local offline pack. The Corpus Thomisticum delivery has a
+restricted metadata record.
+
+The final registration reconciles 79 bindings and 109 dispositions. The
+strict source projection checks 19,378 files. The 88 focused tests,
+corpus-wide chronology and assembly checks, 1,903-row canonical coverage
+check, and the native research preflight pass. A draft TeX auxiliary record
+places the 16-row chronology on physical page 2. The local print wrapper's
+dependency check refused its in-checkout toolchain paths. The final native
+bundle check remains an independent release requirement.
+
+The next cold review matched 1,838 seal entries and found two remaining
+problems. The uncapped discovery output listed four Augustine Gospel
+questions outside the work leads, and Fromage's printed Introit was still
+classified as commentary. The research correction binds the exact Augustine
+passages and compares his reading of the lightning and eagles at their
+respective Gospel loci with the other witnesses. It separates Fromage's
+Introit text and chant recurrence from his Collect exposition. Source
+registration locates three bounded Oxford English Catena parallels and
+retains them as deferred anthology witnesses. The updated ledger has 83
+bindings, 122 dispositions and 10 admitted passages. The strict source
+projection replays all 19,378 files. `make -j4 check-sources` and the
+source-mode handoff both exit successfully.

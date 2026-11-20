@@ -375,7 +375,7 @@ missing_criteria = ["constituent-work-edition-segment", "passage-transcription",
 [[sources]]
 id = "fromage-last-sunday-facsimile-alleluia"
 binding_index = 18
-binding_sha256 = "1a527028d213b832ae86d74c87b18a5f37549c24e60f4de272351cab390d981e"
+binding_sha256 = "4c2496cedfb25f2d8a9f71df6f75f2a2318047bcd01cfda27478de4d2f362f34"
 source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1883-volume-11.ia-pdf-f1893738"
 source_fingerprint = "sha256:180faa2feba4fd64d6c049b1361b8adddb9712fb6b990b7fcb4dc426ba725283"
 locus = "Duffy 1883 XI, Last Sunday; Alleluia, printed p. 506/PDF 532, Vulgate Ps 129:1-2"
@@ -386,7 +386,7 @@ reason = "The bilingual chant carries the double opening and single closing Alle
 [[sources]]
 id = "fromage-last-sunday-facsimile-communion"
 binding_index = 18
-binding_sha256 = "1a527028d213b832ae86d74c87b18a5f37549c24e60f4de272351cab390d981e"
+binding_sha256 = "4c2496cedfb25f2d8a9f71df6f75f2a2318047bcd01cfda27478de4d2f362f34"
 source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1883-volume-11.ia-pdf-f1893738"
 source_fingerprint = "sha256:180faa2feba4fd64d6c049b1361b8adddb9712fb6b990b7fcb4dc426ba725283"
 locus = "Duffy 1883 XI, Last Sunday; Communion, printed p. 513/PDF 539, Mark 11:24 adapted"
@@ -397,10 +397,10 @@ reason = "The printed Latin shares the target’s Amen dico vobis, quidquid, qui
 [[sources]]
 id = "fromage-last-sunday-facsimile-epistle"
 binding_index = 18
-binding_sha256 = "1a527028d213b832ae86d74c87b18a5f37549c24e60f4de272351cab390d981e"
+binding_sha256 = "4c2496cedfb25f2d8a9f71df6f75f2a2318047bcd01cfda27478de4d2f362f34"
 source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1883-volume-11.ia-pdf-f1893738"
 source_fingerprint = "sha256:180faa2feba4fd64d6c049b1361b8adddb9712fb6b990b7fcb4dc426ba725283"
-locus = "Lucien Fromage continuation, The Liturgical Year XI, Last Sunday; epistle; printed501-514; PDF529-532,535-540 only image-inspected"
+locus = "Duffy 1883 XI, Last Sunday, Epistle exposition, printed pp. 504–506/PDF 530–532, from the paragraph after the Epistle to the Gradual heading"
 relationship = "liturgical-commentary"
 disposition = "deferred"
 reason = "The historical1883 volume is the authority, not the Sensus Fidelium transcription. Attribute the continuation to Lucien Fromage, with Laurence Shepherd as translator, not Guéranger authorship or an eligible saintly quota author. Only the named images were inspected; other chapter pages are not image-verified. Separate complete natural commentary paragraphs from the printed liturgical texts and establish their exact image/transcription alignment, constituent controller and composition-date basis before admission. No Preface commentary occurs here; older additional orations are excluded."
@@ -410,10 +410,10 @@ missing_criteria = ["constituent-attribution-controller", "complete-natural-pass
 [[sources]]
 id = "fromage-last-sunday-facsimile-gospel"
 binding_index = 18
-binding_sha256 = "1a527028d213b832ae86d74c87b18a5f37549c24e60f4de272351cab390d981e"
+binding_sha256 = "4c2496cedfb25f2d8a9f71df6f75f2a2318047bcd01cfda27478de4d2f362f34"
 source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1883-volume-11.ia-pdf-f1893738"
 source_fingerprint = "sha256:180faa2feba4fd64d6c049b1361b8adddb9712fb6b990b7fcb4dc426ba725283"
-locus = "Lucien Fromage continuation, The Liturgical Year XI, Last Sunday; gospel; printed501-514; PDF529-532,535-540 only image-inspected"
+locus = "Duffy 1883 XI, Last Sunday, Gospel exposition, printed pp. 508–512/PDF 534–538; opening three lines checked in OCR, continuation through the end image-inspected"
 relationship = "liturgical-commentary"
 disposition = "deferred"
 reason = "The historical1883 volume is the authority, not the Sensus Fidelium transcription. Attribute the continuation to Lucien Fromage, with Laurence Shepherd as translator, not Guéranger authorship or an eligible saintly quota author. Only the named images were inspected; other chapter pages are not image-verified. Separate complete natural commentary paragraphs from the printed liturgical texts and establish their exact image/transcription alignment, constituent controller and composition-date basis before admission. No Preface commentary occurs here; older additional orations are excluded."
@@ -423,7 +423,7 @@ missing_criteria = ["constituent-attribution-controller", "complete-natural-pass
 [[sources]]
 id = "fromage-last-sunday-facsimile-gradual"
 binding_index = 18
-binding_sha256 = "1a527028d213b832ae86d74c87b18a5f37549c24e60f4de272351cab390d981e"
+binding_sha256 = "4c2496cedfb25f2d8a9f71df6f75f2a2318047bcd01cfda27478de4d2f362f34"
 source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1883-volume-11.ia-pdf-f1893738"
 source_fingerprint = "sha256:180faa2feba4fd64d6c049b1361b8adddb9712fb6b990b7fcb4dc426ba725283"
 locus = "Duffy 1883 XI, Last Sunday; Gradual, printed p. 506/PDF 532, Vulgate Ps 43:8-9"
@@ -432,35 +432,44 @@ disposition = "not-commentary"
 reason = "The historical Latin has the appointed Gradual’s distinctive Liberasti nos, Domine, et eos qui nos oderunt and in saecula. Shepherd’s English begins Thou hast saved us. The preceding paragraph concludes the Epistle exposition. The Gradual is printed bilingually without an independent comment."
 
 [[sources]]
-id = "fromage-last-sunday-facsimile-introduction-and-prayers"
+id = "fromage-last-sunday-facsimile-structure"
 binding_index = 18
-binding_sha256 = "1a527028d213b832ae86d74c87b18a5f37549c24e60f4de272351cab390d981e"
+binding_sha256 = "4c2496cedfb25f2d8a9f71df6f75f2a2318047bcd01cfda27478de4d2f362f34"
 source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1883-volume-11.ia-pdf-f1893738"
 source_fingerprint = "sha256:180faa2feba4fd64d6c049b1361b8adddb9712fb6b990b7fcb4dc426ba725283"
-locus = "Lucien Fromage continuation, Last Sunday introduction and Collect/Secret/Postcommunion exposition; printed501-514; Postcommunion explanatory sentence printed513/PDF539, prayer printed513-514/PDF539-540"
+locus = "Duffy 1883 XI, Last Sunday introduction pp. 501–503/PDF 527–529, recurrence note on p. 501/PDF 527"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The introduction describes the recurring chants and the placement of the year-end Gospel. This use records the historical structure of the Mass."
+
+[[sources]]
+id = "fromage-last-sunday-facsimile-prayers"
+binding_index = 18
+binding_sha256 = "4c2496cedfb25f2d8a9f71df6f75f2a2318047bcd01cfda27478de4d2f362f34"
+source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1883-volume-11.ia-pdf-f1893738"
+source_fingerprint = "sha256:180faa2feba4fd64d6c049b1361b8adddb9712fb6b990b7fcb4dc426ba725283"
+locus = "Duffy 1883 XI, Last Sunday, Collect commentary between the Introit and Collect, printed p. 503/PDF 529, Secret and Postcommunion comments printed p. 513/PDF 539, Postcommunion text pp. 513–514/PDF 539–540"
 relationship = "liturgical-commentary"
 disposition = "deferred"
-reason = "The historical chapter includes introductory and non-scriptural prayer exposition, not a Trinity Preface treatment. No canonical Scripture reach has been established for these parts. Do not invent one from the nearby appointments; constituent ownership, natural boundaries, exact transcription and composition-date basis still need registration."
+reason = "The p. 503 paragraph explains God moving the faithful’s wills for fruitful works. The p. 513 prose addresses the Secret and Postcommunion. The actual Scripture reach of these prayer comments is unestablished. Constituent ownership, natural boundaries, exact transcription and composition-date basis still need registration."
 scripture_extents = []
 missing_criteria = ["scripture-extent", "constituent-attribution-controller", "complete-natural-passage", "passage-transcription", "composition-date-basis", "scripture-edge"]
 
 [[sources]]
 id = "fromage-last-sunday-facsimile-introit"
 binding_index = 18
-binding_sha256 = "1a527028d213b832ae86d74c87b18a5f37549c24e60f4de272351cab390d981e"
+binding_sha256 = "4c2496cedfb25f2d8a9f71df6f75f2a2318047bcd01cfda27478de4d2f362f34"
 source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1883-volume-11.ia-pdf-f1893738"
 source_fingerprint = "sha256:180faa2feba4fd64d6c049b1361b8adddb9712fb6b990b7fcb4dc426ba725283"
-locus = "Lucien Fromage continuation, The Liturgical Year XI, Last Sunday; introit; printed501-514; PDF529-532,535-540 only image-inspected"
-relationship = "liturgical-commentary"
-disposition = "deferred"
-reason = "The historical1883 volume is the authority, not the Sensus Fidelium transcription. Attribute the continuation to Lucien Fromage, with Laurence Shepherd as translator, not Guéranger authorship or an eligible saintly quota author. Only the named images were inspected; other chapter pages are not image-verified. Separate complete natural commentary paragraphs from the printed liturgical texts and establish their exact image/transcription alignment, constituent controller and composition-date basis before admission. No Preface commentary occurs here; older additional orations are excluded."
-scripture_extents = [{ token = "Jer", first_chapter = 29, first_verse = 11, last_chapter = 29, last_verse = 12 }, { token = "Jer", first_chapter = 29, first_verse = 14, last_chapter = 29, last_verse = 14 }, { token = "Ps", first_chapter = 84, first_verse = 2, last_chapter = 84, last_verse = 2 }]
-missing_criteria = ["constituent-attribution-controller", "complete-natural-passage", "image-transcription-alignment", "passage-transcription", "composition-date-basis", "scripture-edge"]
+locus = "Duffy 1883 XI, Last Sunday, Introit, printed p. 503/PDF 529, bilingual antiphon, Psalm verse and doxology cue"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The p. 503 Introit is a printed witness to the historical wording. The following prose expressly explains the Collect. The recurrence of the chants is treated separately on p. 501."
 
 [[sources]]
 id = "fromage-last-sunday-facsimile-offertory"
 binding_index = 18
-binding_sha256 = "1a527028d213b832ae86d74c87b18a5f37549c24e60f4de272351cab390d981e"
+binding_sha256 = "4c2496cedfb25f2d8a9f71df6f75f2a2318047bcd01cfda27478de4d2f362f34"
 source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1883-volume-11.ia-pdf-f1893738"
 source_fingerprint = "sha256:180faa2feba4fd64d6c049b1361b8adddb9712fb6b990b7fcb4dc426ba725283"
 locus = "Duffy 1883 XI, Last Sunday; Offertory, printed p. 513/PDF 539, Vulgate Ps 129:1-2"
@@ -471,7 +480,7 @@ reason = "The bilingual chant has orationem meam, repeats De profundis clamavi a
 [[sources]]
 id = "fromage-last-sunday-ocr-alleluia"
 binding_index = 19
-binding_sha256 = "2334e7ea79599182c1f70e2833a7ef596a077980a393469419f48038d39dd783"
+binding_sha256 = "9c6c182979376c69a8a2bfa73a69862eb9bec952e7367db995c27d7de1818e44"
 source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1883-volume-11.ia-djvu-text-95cdb0fc"
 source_fingerprint = "sha256:5704de4921a1ed8c6da6c88bc1235f8aa14d39ef3973edc2061508aaf727c16d"
 locus = "Duffy 1883 XI, Last Sunday; Alleluia, printed p. 506/PDF 532, Vulgate Ps 129:1-2; OCR witness for chapter physical 29970-30899"
@@ -482,7 +491,7 @@ reason = "The bilingual chant carries the double opening and single closing Alle
 [[sources]]
 id = "fromage-last-sunday-ocr-communion"
 binding_index = 19
-binding_sha256 = "2334e7ea79599182c1f70e2833a7ef596a077980a393469419f48038d39dd783"
+binding_sha256 = "9c6c182979376c69a8a2bfa73a69862eb9bec952e7367db995c27d7de1818e44"
 source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1883-volume-11.ia-djvu-text-95cdb0fc"
 source_fingerprint = "sha256:5704de4921a1ed8c6da6c88bc1235f8aa14d39ef3973edc2061508aaf727c16d"
 locus = "Duffy 1883 XI, Last Sunday; Communion, printed p. 513/PDF 539, Mark 11:24 adapted; OCR witness for chapter physical 29970-30899"
@@ -493,10 +502,10 @@ reason = "The printed Latin shares the target’s Amen dico vobis, quidquid, qui
 [[sources]]
 id = "fromage-last-sunday-ocr-epistle"
 binding_index = 19
-binding_sha256 = "2334e7ea79599182c1f70e2833a7ef596a077980a393469419f48038d39dd783"
+binding_sha256 = "9c6c182979376c69a8a2bfa73a69862eb9bec952e7367db995c27d7de1818e44"
 source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1883-volume-11.ia-djvu-text-95cdb0fc"
 source_fingerprint = "sha256:5704de4921a1ed8c6da6c88bc1235f8aa14d39ef3973edc2061508aaf727c16d"
-locus = "Lucien Fromage continuation, The Liturgical Year XI, Last Sunday; epistle; printed501-514; physical29970-30899, complete chapter read"
+locus = "Duffy 1883 XI, Last Sunday, Epistle exposition, printed pp. 504–506, OCR lines 30165–30277"
 relationship = "liturgical-commentary"
 disposition = "deferred"
 reason = "The historical1883 volume is the authority, not the Sensus Fidelium transcription. Attribute the continuation to Lucien Fromage, with Laurence Shepherd as translator, not Guéranger authorship or an eligible saintly quota author. OCR supplies the whole chapter but is not a new image-collated transcription. Separate complete natural commentary paragraphs from the printed liturgical texts and establish their exact image/transcription alignment, constituent controller and composition-date basis before admission. No Preface commentary occurs here; older additional orations are excluded."
@@ -506,10 +515,10 @@ missing_criteria = ["constituent-attribution-controller", "complete-natural-pass
 [[sources]]
 id = "fromage-last-sunday-ocr-gospel"
 binding_index = 19
-binding_sha256 = "2334e7ea79599182c1f70e2833a7ef596a077980a393469419f48038d39dd783"
+binding_sha256 = "9c6c182979376c69a8a2bfa73a69862eb9bec952e7367db995c27d7de1818e44"
 source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1883-volume-11.ia-djvu-text-95cdb0fc"
 source_fingerprint = "sha256:5704de4921a1ed8c6da6c88bc1235f8aa14d39ef3973edc2061508aaf727c16d"
-locus = "Lucien Fromage continuation, The Liturgical Year XI, Last Sunday; gospel; printed501-514; physical29970-30899, complete chapter read"
+locus = "Duffy 1883 XI, Last Sunday, Gospel exposition, printed pp. 508–512, OCR lines 30459–30461 and 30503–30672, with page apparatus"
 relationship = "liturgical-commentary"
 disposition = "deferred"
 reason = "The historical1883 volume is the authority, not the Sensus Fidelium transcription. Attribute the continuation to Lucien Fromage, with Laurence Shepherd as translator, not Guéranger authorship or an eligible saintly quota author. OCR supplies the whole chapter but is not a new image-collated transcription. Separate complete natural commentary paragraphs from the printed liturgical texts and establish their exact image/transcription alignment, constituent controller and composition-date basis before admission. No Preface commentary occurs here; older additional orations are excluded."
@@ -519,7 +528,7 @@ missing_criteria = ["constituent-attribution-controller", "complete-natural-pass
 [[sources]]
 id = "fromage-last-sunday-ocr-gradual"
 binding_index = 19
-binding_sha256 = "2334e7ea79599182c1f70e2833a7ef596a077980a393469419f48038d39dd783"
+binding_sha256 = "9c6c182979376c69a8a2bfa73a69862eb9bec952e7367db995c27d7de1818e44"
 source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1883-volume-11.ia-djvu-text-95cdb0fc"
 source_fingerprint = "sha256:5704de4921a1ed8c6da6c88bc1235f8aa14d39ef3973edc2061508aaf727c16d"
 locus = "Duffy 1883 XI, Last Sunday; Gradual, printed p. 506/PDF 532, Vulgate Ps 43:8-9; OCR witness for chapter physical 29970-30899"
@@ -528,35 +537,44 @@ disposition = "not-commentary"
 reason = "The historical Latin has the appointed Gradual’s distinctive Liberasti nos, Domine, et eos qui nos oderunt and in saecula. Shepherd’s English begins Thou hast saved us. The preceding paragraph concludes the Epistle exposition. The Gradual is printed bilingually without an independent comment. The physical facsimile controls wording, including the Communion’s type error."
 
 [[sources]]
-id = "fromage-last-sunday-ocr-introduction-and-prayers"
+id = "fromage-last-sunday-ocr-structure"
 binding_index = 19
-binding_sha256 = "2334e7ea79599182c1f70e2833a7ef596a077980a393469419f48038d39dd783"
+binding_sha256 = "9c6c182979376c69a8a2bfa73a69862eb9bec952e7367db995c27d7de1818e44"
 source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1883-volume-11.ia-djvu-text-95cdb0fc"
 source_fingerprint = "sha256:5704de4921a1ed8c6da6c88bc1235f8aa14d39ef3973edc2061508aaf727c16d"
-locus = "Lucien Fromage continuation, Last Sunday introduction and Collect/Secret/Postcommunion exposition; printed501-514; Postcommunion explanatory sentence printed513, prayer printed513-514"
+locus = "Duffy 1883 XI, Last Sunday introduction pp. 501–503, OCR lines 29991–30077, recurrence note at lines 29995–30005"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The introduction describes the recurring chants and the placement of the year-end Gospel. This use records the historical structure of the Mass."
+
+[[sources]]
+id = "fromage-last-sunday-ocr-prayers"
+binding_index = 19
+binding_sha256 = "9c6c182979376c69a8a2bfa73a69862eb9bec952e7367db995c27d7de1818e44"
+source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1883-volume-11.ia-djvu-text-95cdb0fc"
+source_fingerprint = "sha256:5704de4921a1ed8c6da6c88bc1235f8aa14d39ef3973edc2061508aaf727c16d"
+locus = "Duffy 1883 XI, Last Sunday, Collect commentary on p. 503 at OCR lines 30098–30104, Secret and Postcommunion comments on p. 513, Postcommunion text pp. 513–514"
 relationship = "liturgical-commentary"
 disposition = "deferred"
-reason = "The historical chapter includes introductory and non-scriptural prayer exposition, not a Trinity Preface treatment. No canonical Scripture reach has been established for these parts. Do not invent one from the nearby appointments; constituent ownership, natural boundaries, exact transcription and composition-date basis still need registration."
+reason = "The p. 503 paragraph explains God moving the faithful’s wills for fruitful works. The p. 513 prose addresses the Secret and Postcommunion. The actual Scripture reach of these prayer comments is unestablished. Constituent ownership, natural boundaries, exact transcription and composition-date basis still need registration."
 scripture_extents = []
 missing_criteria = ["scripture-extent", "constituent-attribution-controller", "complete-natural-passage", "passage-transcription", "composition-date-basis", "scripture-edge"]
 
 [[sources]]
 id = "fromage-last-sunday-ocr-introit"
 binding_index = 19
-binding_sha256 = "2334e7ea79599182c1f70e2833a7ef596a077980a393469419f48038d39dd783"
+binding_sha256 = "9c6c182979376c69a8a2bfa73a69862eb9bec952e7367db995c27d7de1818e44"
 source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1883-volume-11.ia-djvu-text-95cdb0fc"
 source_fingerprint = "sha256:5704de4921a1ed8c6da6c88bc1235f8aa14d39ef3973edc2061508aaf727c16d"
-locus = "Lucien Fromage continuation, The Liturgical Year XI, Last Sunday; introit; printed501-514; physical29970-30899, complete chapter read"
-relationship = "liturgical-commentary"
-disposition = "deferred"
-reason = "The historical1883 volume is the authority, not the Sensus Fidelium transcription. Attribute the continuation to Lucien Fromage, with Laurence Shepherd as translator, not Guéranger authorship or an eligible saintly quota author. OCR supplies the whole chapter but is not a new image-collated transcription. Separate complete natural commentary paragraphs from the printed liturgical texts and establish their exact image/transcription alignment, constituent controller and composition-date basis before admission. No Preface commentary occurs here; older additional orations are excluded."
-scripture_extents = [{ token = "Jer", first_chapter = 29, first_verse = 11, last_chapter = 29, last_verse = 12 }, { token = "Jer", first_chapter = 29, first_verse = 14, last_chapter = 29, last_verse = 14 }, { token = "Ps", first_chapter = 84, first_verse = 2, last_chapter = 84, last_verse = 2 }]
-missing_criteria = ["constituent-attribution-controller", "complete-natural-passage", "image-transcription-alignment", "passage-transcription", "composition-date-basis", "scripture-edge"]
+locus = "Duffy 1883 XI, Last Sunday, printed p. 503, OCR lines 30083–30096, bilingual Introit through the repeat cue"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The OCR marks the beginning and end of the printed Introit. The facsimile controls wording. The paragraph starting at line 30098 addresses the Collect."
 
 [[sources]]
 id = "fromage-last-sunday-ocr-offertory"
 binding_index = 19
-binding_sha256 = "2334e7ea79599182c1f70e2833a7ef596a077980a393469419f48038d39dd783"
+binding_sha256 = "9c6c182979376c69a8a2bfa73a69862eb9bec952e7367db995c27d7de1818e44"
 source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1883-volume-11.ia-djvu-text-95cdb0fc"
 source_fingerprint = "sha256:5704de4921a1ed8c6da6c88bc1235f8aa14d39ef3973edc2061508aaf727c16d"
 locus = "Duffy 1883 XI, Last Sunday; Offertory, printed p. 513/PDF 539, Vulgate Ps 129:1-2; OCR witness for chapter physical 29970-30899"
@@ -1269,3 +1287,137 @@ disposition = "deferred"
 reason = "The Oxford English anthology preserves an attributed extract on both verses. Its compilation and adaptation require a separate check of the constituent's original boundaries and correspondence. The line is a public-domain English parallel and cannot by itself control a complete direct English translation."
 missing_criteria = ["constituent-passage-controller", "original-constituent-collation", "transmission-review", "composition-date-basis", "scripture-edge"]
 scripture_extents = [{ token = "Mark", first_chapter = 11, first_verse = 24, last_chapter = 11, last_verse = 25 }]
+[[sources]]
+id = "augustine-quaestiones-i-37"
+binding_index = 80
+binding_sha256 = "a6ed6d4c01520bf38be302d9b0e9aaac7ad0e3460ab3df1c0833ae88572a019c"
+source_id = "artifact.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05.wikisource-latin-text"
+source_fingerprint = "sha256:09a10c393684ed493bbf5201cc5e886d0b259ae88f5aa8ea6343618f43ce6a8b"
+locus = "Quaestiones euangeliorum I.37, complete question, physical line 42"
+relationship = "direct-exegesis"
+disposition = "admitted"
+reason = "The complete answer explains the hindrances to flight and offers an alternative about temporal sadness and gladness. The canonical edge is Matthew 24:20."
+passage_ids = ["passage.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05.1-37"]
+
+[[sources]]
+id = "augustine-quaestiones-i-38"
+binding_index = 80
+binding_sha256 = "a6ed6d4c01520bf38be302d9b0e9aaac7ad0e3460ab3df1c0833ae88572a019c"
+source_id = "artifact.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05.wikisource-latin-text"
+source_fingerprint = "sha256:09a10c393684ed493bbf5201cc5e886d0b259ae88f5aa8ea6343618f43ce6a8b"
+locus = "Quaestiones euangeliorum I.38, complete question, physical line 43"
+relationship = "direct-exegesis"
+disposition = "admitted"
+reason = "The complete answer identifies the lightning with the manifest worldwide Church and the rival claims with regions and hidden assemblies. The canonical edge is Matthew 24:23–27."
+passage_ids = ["passage.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05.1-38"]
+
+[[sources]]
+id = "augustine-quaestiones-i-39"
+binding_index = 80
+binding_sha256 = "a6ed6d4c01520bf38be302d9b0e9aaac7ad0e3460ab3df1c0833ae88572a019c"
+source_id = "artifact.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05.wikisource-latin-text"
+source_fingerprint = "sha256:09a10c393684ed493bbf5201cc5e886d0b259ae88f5aa8ea6343618f43ce6a8b"
+locus = "Quaestiones euangeliorum I.39, complete question, physical line 44"
+relationship = "direct-exegesis"
+disposition = "admitted"
+reason = "The complete answer reads the fig tree as humanity and its tender branch as growth in faith and adoption. The canonical edge is Matthew 24:32."
+passage_ids = ["passage.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05.1-39"]
+
+[[sources]]
+id = "augustine-quaestiones-i-42"
+binding_index = 80
+binding_sha256 = "a6ed6d4c01520bf38be302d9b0e9aaac7ad0e3460ab3df1c0833ae88572a019c"
+source_id = "artifact.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05.wikisource-latin-text"
+source_fingerprint = "sha256:09a10c393684ed493bbf5201cc5e886d0b259ae88f5aa8ea6343618f43ce6a8b"
+locus = "Quaestiones euangeliorum I.42, complete question, physical line 47"
+relationship = "direct-exegesis"
+disposition = "admitted"
+reason = "The complete answer locates Christ’s human body in heaven and explains the spiritual eagles feeding through imitation of Christ’s Passion and humility. The canonical edge is Matthew 24:28."
+passage_ids = ["passage.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05.1-42"]
+
+[[sources]]
+id = "augustine-enarratio-ps-43-section-8-latin"
+binding_index = 81
+binding_sha256 = "a77e4ddcb7615611368407917cbeb5c9f523b32b1becd0845fa19732c9dc94be"
+source_id = "artifact.augustine.enarrationes-in-psalmos.2026-10-23-latin-migne-wikisource.wikisource-part-5-latin"
+source_fingerprint = "sha256:16edefecc15179a8acb9a613c6fb0db5f298a8940ffbd524b3a8a1029bd0ee2c"
+locus = "Enarratio on Psalm 43, complete §8, physical line 35"
+relationship = "direct-exegesis"
+disposition = "admitted"
+reason = "The complete section interprets the completed rescue as a future deliverance so certain that the prophet speaks of it as past. The canonical edge is Vulgate Psalm 43:8."
+passage_ids = ["passage.augustine.enarrationes-in-psalmos.2026-10-23-latin-migne-wikisource.43.8"]
+
+[[sources]]
+id = "augustine-enarratio-ps-43-section-9-latin"
+binding_index = 81
+binding_sha256 = "a77e4ddcb7615611368407917cbeb5c9f523b32b1becd0845fa19732c9dc94be"
+source_id = "artifact.augustine.enarrationes-in-psalmos.2026-10-23-latin-migne-wikisource.wikisource-part-5-latin"
+source_fingerprint = "sha256:16edefecc15179a8acb9a613c6fb0db5f298a8940ffbd524b3a8a1029bd0ee2c"
+locus = "Enarratio on Psalm 43, complete §9, physical line 35"
+relationship = "direct-exegesis"
+disposition = "admitted"
+reason = "The complete section explains how the future verbs of praise show that the earlier past tense foretells future deliverance. The canonical edge is Vulgate Psalm 43:9."
+passage_ids = ["passage.augustine.enarrationes-in-psalmos.2026-10-23-latin-migne-wikisource.43.9"]
+
+[[sources]]
+id = "augustine-enarratio-ps-84-section-3-latin"
+binding_index = 82
+binding_sha256 = "092953f574ef9859a3cef8eaa91625e2c28a204dc9a88b340d5301597840d392"
+source_id = "artifact.augustine.enarrationes-in-psalmos.latin-migne-corpus-corporum-wikisource-web-2026-09-05.wikisource-part-9-latin-text"
+source_fingerprint = "sha256:4ec924c6b55bfe5458a51ad4efa23e437507b846582d1d62cca86f8d68cc730d"
+locus = "Enarratio on Psalm 84, complete §3, physical line 77"
+relationship = "direct-exegesis"
+disposition = "admitted"
+reason = "The complete section explains the opening blessing in the past tense as prophecy of future restoration. The canonical edge is Vulgate Psalm 84:2."
+passage_ids = ["passage.augustine.enarrationes-in-psalmos.latin-migne-corpus-corporum-wikisource-web-2026-09-05.84-3"]
+
+[[sources]]
+id = "augustine-enarratio-ps-84-section-4-latin"
+binding_index = 82
+binding_sha256 = "092953f574ef9859a3cef8eaa91625e2c28a204dc9a88b340d5301597840d392"
+source_id = "artifact.augustine.enarrationes-in-psalmos.latin-migne-corpus-corporum-wikisource-web-2026-09-05.wikisource-part-9-latin-text"
+source_fingerprint = "sha256:4ec924c6b55bfe5458a51ad4efa23e437507b846582d1d62cca86f8d68cc730d"
+locus = "Enarratio on Psalm 84, complete §4, physical line 78"
+relationship = "direct-exegesis"
+disposition = "admitted"
+reason = "The complete section interprets Jacob’s captivity as the bondage of sin from which Christ liberates. The canonical edge is Vulgate Psalm 84:2."
+passage_ids = ["passage.augustine.enarrationes-in-psalmos.latin-migne-corpus-corporum-wikisource-web-2026-09-05.84-4"]
+
+[[sources]]
+id = "augustine-quaestiones-i-37-oxford-catena-extract"
+binding_index = 83
+binding_sha256 = "75fa7ce13ebc068b699bfe97780b90e57069a77ee423b858338dbeb3aa9069fe"
+source_id = "artifact.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.text-130e334a"
+source_fingerprint = "sha256:a20a42738d002266a696f9ee7bad2f93e00da53f0fc1eedaa815ec8cdca270f5"
+locus = "Catena Aurea on Matthew 24, attributed Quaestiones euangeliorum I.37 extract, physical line 5856"
+relationship = "analogue"
+disposition = "deferred"
+reason = "Pattison’s Oxford English Catena gives the question’s alternative about temporal joy and sorrow. The extract omits Augustine’s first answer about hindrances to flight. Admission would require a verified anthology passage with its distinct transmission recorded."
+missing_criteria = ["constituent-passage-controller", "historical-print-collation", "transmission-review", "scripture-edge"]
+scripture_extents = [{ token = "Matt", first_chapter = 24, first_verse = 20, last_chapter = 24, last_verse = 20 }]
+
+[[sources]]
+id = "augustine-quaestiones-i-38-oxford-catena-extract"
+binding_index = 83
+binding_sha256 = "75fa7ce13ebc068b699bfe97780b90e57069a77ee423b858338dbeb3aa9069fe"
+source_id = "artifact.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.text-130e334a"
+source_fingerprint = "sha256:a20a42738d002266a696f9ee7bad2f93e00da53f0fc1eedaa815ec8cdca270f5"
+locus = "Catena Aurea on Matthew 24, attributed Quaestiones euangeliorum I.38 extract, physical lines 5897–5898"
+relationship = "analogue"
+disposition = "deferred"
+reason = "Pattison’s Oxford English Catena transmits the worldwide Church and hidden assemblies of Augustine’s question. It omits the Jerusalem starting point and the closing explanation of the lightning. Admission would require a verified anthology passage with its distinct transmission recorded."
+missing_criteria = ["constituent-passage-controller", "historical-print-collation", "transmission-review", "scripture-edge"]
+scripture_extents = [{ token = "Matt", first_chapter = 24, first_verse = 23, last_chapter = 24, last_verse = 27 }]
+
+[[sources]]
+id = "augustine-quaestiones-i-39-oxford-catena-extract"
+binding_index = 83
+binding_sha256 = "75fa7ce13ebc068b699bfe97780b90e57069a77ee423b858338dbeb3aa9069fe"
+source_id = "artifact.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.text-130e334a"
+source_fingerprint = "sha256:a20a42738d002266a696f9ee7bad2f93e00da53f0fc1eedaa815ec8cdca270f5"
+locus = "Catena Aurea on Matthew 24, attributed Quaestiones euangeliorum I.39 extract, physical line 5960"
+relationship = "analogue"
+disposition = "deferred"
+reason = "Pattison’s Oxford English Catena gives the fig tree, faith and adoption. Its prefatory connective and rendition of the flesh gloss differ from the Latin question, and it gives no opening lemma. Admission would require a verified anthology passage with its distinct transmission recorded."
+missing_criteria = ["constituent-passage-controller", "historical-print-collation", "transmission-review", "scripture-edge"]
+scripture_extents = [{ token = "Matt", first_chapter = 24, first_verse = 32, last_chapter = 24, last_verse = 32 }]

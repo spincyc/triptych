@@ -140,15 +140,15 @@ loci = ["pdf-page-451", "pdf-page-452"]
 source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1883-volume-11.ia-pdf-f1893738"
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
-context = "Inspection extent: Lucien Fromage continuation, Last Sunday, printed501-514; Mass printed503-514; PDF529-532 and535-540 images. Exact1883 facsimile acquired; only listed images opened, with whole chapter read in separately bound OCR. Not Gueranger-authored or a saintly quota witness. All ten non-Preface texts appear. The Gradual and Alleluia on p. 506 and Offertory and Communion on p. 513 are wording evidence. Separate comments follow the two final chants, on the Secret and Postcommunion. Older additional-orations directions are outside this appointment."
+context = "Inspection extent: Lucien Fromage continuation, Last Sunday, printed pp. 501–514, with images inspected at PDF 527–532 and 535–540. The p. 501 recurrence note and pp. 501–503 introduction give structural context. The bilingual Introit on p. 503 is wording evidence, as are the Gradual and Alleluia on p. 506 and the Offertory and Communion on p. 513. The next paragraph on p. 503 expressly comments on the Collect. Separate comments on p. 513 address the Secret and Postcommunion. The chapter has ten non-Preface texts and older additional-orations directions outside the 1962 appointment."
 source_fingerprint = "sha256:180faa2feba4fd64d6c049b1361b8adddb9712fb6b990b7fcb4dc426ba725283"
-loci = ["vol-xi-p-503", "vol-xi-p-504", "vol-xi-p-505", "vol-xi-p-506", "vol-xi-p-509", "vol-xi-p-510", "vol-xi-p-511", "vol-xi-p-512", "vol-xi-p-513", "vol-xi-p-514"]
+loci = ["vol-xi-p-501", "vol-xi-p-502", "vol-xi-p-503", "vol-xi-p-504", "vol-xi-p-505", "vol-xi-p-506", "vol-xi-p-509", "vol-xi-p-510", "vol-xi-p-511", "vol-xi-p-512", "vol-xi-p-513", "vol-xi-p-514"]
 
 [[bindings]]
 source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1883-volume-11.ia-djvu-text-95cdb0fc"
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
-context = "Inspection extent: Twenty-fourth and Last Sunday after Pentecost;printed501-514;physical29970-30899. Complete chapter read in OCR, including the opening historical discussion and Mass commentary. Four listed chants are textual parallels, and the exact facsimile supplies their spellings. Historical claims about medieval adoption remain unverified. Author is Lucien Fromage, translator Laurence Shepherd. No Trinity Preface commentary occurs in this chapter."
+context = "Inspection extent: Lucien Fromage, Last Sunday, printed pp. 501–514, OCR physical lines 29970–30899, translated by Laurence Shepherd. Lines 29991–30077 locate the structural introduction, 30083–30096 the printed Introit, and 30098–30104 the separate Collect commentary. Five printed chants are textual parallels. The facsimile controls their spellings. Historical claims about medieval adoption remain unverified."
 source_fingerprint = "sha256:5704de4921a1ed8c6da6c88bc1235f8aa14d39ef3973edc2061508aaf727c16d"
 loci = ["vol-xi-p-501", "vol-xi-p-502", "vol-xi-p-503", "vol-xi-p-504", "vol-xi-p-505", "vol-xi-p-506", "vol-xi-p-507", "vol-xi-p-508", "vol-xi-p-509", "vol-xi-p-510", "vol-xi-p-511", "vol-xi-p-512", "vol-xi-p-513", "vol-xi-p-514"]
 
@@ -612,3 +612,35 @@ role = "reception"
 states = ["cataloged", "acquired", "inspected"]
 context = "Aquinas's Catena labels a historical English extract Theophylact and gives his account of fervent faith, union with God, prayer and forgiveness on Mark 11:24–25. The English is the 1842 Oxford translation of the catena's selection. The exact normalized CCEL derivative was read and rehashed. The selected wording includes adaptations and is distinct from the direct Basel Latin witness."
 source_fingerprint = "sha256:325217fa7bafbcf82ea40449ad8fc7ed0ef4e709b32d339e8103b539ce64d370"
+
+[[bindings]]
+source_id = "artifact.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05.wikisource-latin-text"
+loci = ["Quaestiones euangeliorum I.37–39 and I.42, physical lines 42–44 and 47", "Adjacent question boundaries, physical lines 41–48"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Four complete Latin questions checked against the registered passages and canonical edges. I.37 comments on Matt 24:20, I.38 on 24:23–27, I.39 on 24:32 and I.42 on 24:28. Migne PL 35 digital transcription through Corpus Corporum and Wikisource, without a newly collated page image or English expression."
+source_fingerprint = "sha256:09a10c393684ed493bbf5201cc5e886d0b259ae88f5aa8ea6343618f43ce6a8b"
+
+[[bindings]]
+source_id = "artifact.augustine.enarrationes-in-psalmos.2026-10-23-latin-migne-wikisource.wikisource-part-5-latin"
+loci = ["43.8", "43.9"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Exact Migne PL 36 Latin derivative, physical line 35, confirms the prophetic use of the past tense and the inference from the following future verbs. The two existing edges correspond to Vulgate Ps 43:8 and 43:9. The registered derivative carries CC BY-SA 4.0 for protected transcription contributions. Publication use is attributed paraphrase."
+source_fingerprint = "sha256:16edefecc15179a8acb9a613c6fb0db5f298a8940ffbd524b3a8a1029bd0ee2c"
+
+[[bindings]]
+source_id = "artifact.augustine.enarrationes-in-psalmos.latin-migne-corpus-corporum-wikisource-web-2026-09-05.wikisource-part-9-latin-text"
+loci = ["84.3", "84.4"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Exact Migne PL 37 Latin derivative, physical lines 77–78, confirms the prophetic past of the first clause and the captivity of sin from which Christ frees people in the second. The two existing passage records cover Vulgate Ps 84:2 at their separate native sections. Publication use is attributed paraphrase."
+source_fingerprint = "sha256:4ec924c6b55bfe5458a51ad4efa23e437507b846582d1d62cca86f8d68cc730d"
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.text-130e334a"
+loci = ["Matthew 24, Augustine Quaestiones euangeliorum I.37, physical line 5856", "Matthew 24, Augustine Quaestiones euangeliorum I.38, physical lines 5897–5898", "Matthew 24, Augustine Quaestiones euangeliorum I.39, physical line 5960"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Pattison's public-domain Oxford English Catena Aurea on Matthew in the registered CCEL derivative. The three attributed extracts and their boundaries were compared with the full Augustine Latin questions. They witness anthology transmission and do not control the full constituent. No I.42 extract was identified in the Matthew 24 grouping."
+source_fingerprint = "sha256:a20a42738d002266a696f9ee7bad2f93e00da53f0fc1eedaa815ec8cdca270f5"

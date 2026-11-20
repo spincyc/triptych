@@ -2,16 +2,20 @@
 
 These are research arguments, not a finished study or homily. The object is
 the universal 1962 formulary resolved for 22 November 2026 in `context.md`,
-including its prescribed Trinity Preface. The complete appointed wording
-and its human English witnesses are in `propers/verified.md`; checked
-editions, reading extents and access limits are in `scope.md` and the
-bindings. Vulgate Psalm numbers precede modern numbers.
+including its prescribed Trinity Preface. `propers/verified.md` gives the
+complete appointed wording and the collation audit for its historical
+English witnesses. `scope.md` and the bindings record the
+checked editions, reading extents and access limits. Vulgate Psalm numbers
+precede modern numbers.
 
 Both constructions below are **editorial whole-formulary synthesis**.
 Augustine, Chrysostom, Aquinas, Bede, Theophylact, Jerome and Bellarmine
 interpret the particular Scriptures or doctrine cited. Fromage's 1883
-chapter explains several parts of the received Mass. Four chants are
-printed as bilingual texts. Theophylact and Fromage contribute as
+chapter explains several parts of the received Mass. The five printed
+chants, including the Introit on p. 503, supply wording evidence. The
+opening note on p. 501 describes the recurrence of the chants. The
+paragraph following the Introit expounds the Collect's petition for
+grace-assisted action. Theophylact and Fromage contribute as
 ecclesiastical writers. The carrying authors are named in each reading.
 
 ## R1. Deliverance is certain without being complete in the present
@@ -74,7 +78,25 @@ the direct whole-Mass liturgical reception.
    afflicted morally worse because they have children. He then distinguishes
    the later coming from the earlier siege; Mt 24:23's “then” is not a
    requirement of immediate chronological succession. The final coming
-   is public as lightning, unlike private claimants. On 24:34 he interprets
+   is public as lightning. In homily 76, §§2–3 on Mt 24:23–27, even
+   impressive signs can come from deceivers who direct people to a
+   particular place. Christ's glory will be seen everywhere at once
+   and needs no herald.
+   The hearer can refuse the summons to go looking for him.
+
+   Augustine, *Quaestiones euangeliorum* I.38 on 24:23–27, takes east and
+   west as the whole world reached by the Gospel from Jerusalem. The
+   lightning is the Church's manifest authority throughout that world.
+   “Here” and “there” are schisms that claim Christ for a region, and the
+   chambers and desert are hidden gatherings of heretics. Augustine's
+   hearer tests a claim to possess Christ against the Church's worldwide,
+   public communion. Chrysostom's hearer tests a purported final advent
+   against the universal, immediate visibility of Christ himself. R1
+   follows Chrysostom for the depiction of the final coming. Augustine's
+   answer treats this set of verses and supplies a different ground for
+   discernment during the waiting.
+
+   In homily 77, on 24:34, Chrysostom interprets
    “generation” as the generation of believers: the Church is not extinguished
    by the catastrophes he has just described. Its continuance is the
    relevant pledge, not a computed final date.
@@ -129,7 +151,7 @@ Thus the **Collect's** prayer
 People already called “faithful” need renewed wills to pursue fruit and
 receive further remedies. It is not a request to earn the first grace
 by their unassisted future performance. Fromage's direct Collect
-commentary, pp. 503–504, makes this grace-assisted growth explicit.
+commentary on p. 503 (PDF 529) makes this grace-assisted growth explicit.
 
 **Thanksgiving and a cry can coexist.** The **Epistle's** already-given
 rescue is followed by a **Gradual** of certain/remembered rescue and an
@@ -142,17 +164,27 @@ reasoning shows why the depths are compatible with hope. The Church
 sings the cry with Alleluias without declaring affliction unreal.
 
 The **Gospel** makes the danger concrete before promising its end.
-Flight is a responsible act, not deficient faith. Neither false messiahs'
-private rooms nor a marvel can replace the public Son of man's coming.
-The visible lightning, cosmic shaking and gathering by angels express
-judgment beyond the disciple's private interior life. Aquinas's checked
-comments on *cadaver/aquilae* report attraction of the saints to Christ
-and his Passion; Chrysostom likewise links the eagles with the gathered
-saints/martyrs. Fromage's further Eucharistic application is actual
-liturgical reception, not a zoological identification or a literal
-definition of *cadaver*. The appointments end with Christ's abiding
-words: the visible order changes, but his promise is more stable.
-This supplies the basis for waiting, not another calendar cipher.
+Augustine I.37 reads the winter weather and sabbath travel restriction
+in v. 20 as real hindrances to flight and offers a further reading
+about being caught up in temporal grief or pleasure on that day. For
+Chrysostom the lightning depicts the visibility of the final coming.
+At v. 28 he takes the eagles as the company
+of angels, martyrs and all the saints. In *Super Matthaeum* 24, lectio 3,
+Aquinas reads the gathering as a further sign of the manifest coming
+and connects the body with the signs of Christ's Passion.
+
+Augustine I.42 locates the body in heaven, where Christ took the human
+body he had assumed. Christ speaks of a corpse because he is about to
+die. The eagles are spiritual people fed as from his body when they
+imitate his Passion and humility. Fromage, p. 510 (PDF 536), connects
+reception of Christ's Blood with the renewal of the eagles' youth, and
+takes their hunger after exile as desire for the Body they will see at
+the eternal Pasch. On the same page he also speaks of sharing Christ's
+suffering and humiliation. R1 follows Chrysostom on the gathering and
+preserves the difference between Augustine's explanation of the feeding
+image through imitation and Fromage's Eucharistic application. The
+Gospel ends with Christ's assurance that his words endure when heaven
+and earth pass away.
 
 **The still-waiting offer and receive.** The **Offertory** returns to
 *De profundis* and actually repeats its opening. Now the cry accompanies
@@ -368,9 +400,17 @@ election; he also gives the alternative of those elect only in
 appearance. R2 infers that apparent members must not presume
 immunity to deception. This does not replace literal Judean danger
 with a moral allegory. R1 gives the historical/final distinction its
-fullest home. Here the public lightning and abiding *verba mea*
-explain why desire and discernment must be governed by the known
-Lord rather than a secret claimant's success.
+fullest home. Augustine I.38 supplies a distinct reason for R2's present
+discernment. A group that claims Christ for its own territory or hides its
+teaching from the Church's public life contradicts the worldwide reach
+Augustine sees in the lightning. Aquinas in the same lectio explicitly
+attributes to Augustine the criteria of consistency across places and
+public teaching, and also reads the lightning as Christ's manifest coming.
+Christ's abiding *verba mea* give the disciple grounds to judge what the
+claimant teaches. In v. 32 Augustine I.39 reads the tender fig branch as
+human beings advancing through faith to spiritual fruit and manifesting
+their adoption. That gives R2 an analogy for the Collect's prayer for
+fruitfulness.
 
 **An accepted offering is accompanied by the conversion of its
 offerer.** At the **Offertory**, *De profundis* is cried again and
@@ -459,7 +499,7 @@ unanswered prayer.
 | --- | --- | --- |
 | *eripuit / transtulit* beside continuing *patientia* | How can rescue be past while trial remains? Chrysostom distinguishes the double gift from the need for further growth; Augustine supplies prophetic future certainty. Trial does not cancel rescue. | Who produced the worthiness and new life? Aquinas reads *fecit* causally, Chrysostom says God fits as well as gives. Thanksgiving displaces self-sufficiency and enables responsible fruit. |
 | *Liberasti* followed by *De profundis* | The change from praise to lament preserves the interval before full deliverance; Augustine's prophetic use of the perfect tense and Bellarmine's remembered rescue remain distinct options. Endure without calling God unfaithful. | Rescue elicits praise of God; misery honestly confessed remains capable of mercy. Ask for medicine rather than claiming that gratitude eliminates the need for it. |
-| *generatio haec / verba mea non praeteribunt* | How do these words survive a failed contemporary timetable? The believing generation/public final gathering account avoids identifying every warning with one siege or one lifespan. No end-date arithmetic. | Whom should believers trust amid spectacular claims? Abiding words and public revelation defeat the attempt to satisfy desire through a secret counterfeit. Discernment is an aspect of converted willing. |
+| *fulgur / generatio haec / verba mea non praeteribunt* | How will the faithful recognize Christ's final coming while enduring deception? For Chrysostom, Christ's glory will appear to all at once. The believing generation endures through catastrophe. | How can believers judge competing claims to possess Christ now? For Augustine I.38, the worldwide Church's public authority exposes claims that confine Christ to a region or a hidden group. Discernment is an aspect of converted willing. |
 | *quidquid ... fiet vobis* | Confidence is compatible with waiting and incomplete visible fulfilment. Present nourishment is not a guarantee of temporal security. | Bede's faith working through love and forgiveness, with Aquinas's prayer raising us to God, prevents a technique of control. Forgive concretely; ask for the healing of the petitioner. |
 | *remedia / curetur* | Why medicine after an accomplished rescue? Grace is real but its consummation is future. Do not infer abandonment from remaining weakness. | What does God grant? A will capable of fruit, a heart turned from cravings, a mind cured of defects. Do not defend those defects as conditions God must accommodate. |
 
@@ -473,9 +513,11 @@ Neither entailment is required by the checked texts.
 For the concise study, interleave these answers at the actual paired
 questions rather than summarize two sets of generic headings. Give the
 siege/final-coming distinction, Gradual tense dispute and “this
-generation” their fullest home in R1; give *dignos fecit*, the
-faith/forgiveness context of Communion and the three divine-action
-verbs their fullest home in R2. Cross-reference shared doctrinal
+generation” their fullest home in R1. Compare the referents of the
+lightning and the implications for discernment where that image first
+appears. Give *dignos fecit*, the faith and forgiveness context of
+Communion and the three divine-action verbs their fullest home in R2.
+Cross-reference shared doctrinal
 explanations instead of duplicating them.
 
 For the later homily, a defensible single argument for this adult

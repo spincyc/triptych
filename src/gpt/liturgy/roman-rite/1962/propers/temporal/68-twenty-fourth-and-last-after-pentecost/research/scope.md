@@ -261,13 +261,13 @@ native locus.
 
 | Appointed unit and users | Direct ancient exegesis actually read | Medieval/later saintly and liturgical reception actually read | Retained use, distinction, negative limit |
 | --- | --- | --- | --- |
-| Jer 29:11,12,14 composite — Introit | Jerome, *In Ieremiam* V, lemma 29:10–14, PL 24 cols. 893–896, Latin; PDF 451–452 images | Fromage continuation, Last Sunday, Introit/Collect, pp. 503–504; Aquinas, *In Jeremiam* 29 lectio 1, [85174], directly treats 29:10–14 within its reading of 29:1–15 | Jerome rejects immediate return, distinguishes God's known peace from human impatience, and explains prayer as disposing recipients to receive. His spiritual rest after this life's dispersion is an extension beyond the historical return. No Father is said to have interpreted the chant's exact redaction. |
+| Jer 29:11,12,14 composite — Introit | Jerome, *In Ieremiam* V, lemma 29:10–14, PL 24 cols. 893–896, Latin; PDF 451–452 images | Aquinas, *In Jeremiam* 29 lectio 1, [85174], directly treats 29:10–14 within its reading of 29:1–15. Fromage's Last-Sunday Introit on p. 503 (PDF 529) supplies wording evidence. | Jerome rejects immediate return, distinguishes God's known peace from human impatience, and explains prayer as disposing recipients to receive. His spiritual rest after this life's dispersion is an extension beyond the historical return. Fromage's p. 501 recurrence note concerns the structure of the Mass. See the separate Anthony of Padua handoff below for reception of the shared Introit. |
 | Ps 84(85):2 — Introit psalm verse | Augustine, *Enarrationes*, Ps 84; NPNF heading LXXXV, §§1–13, complete exposition | Bellarmine/O'Sullivan, Ps 84, native explanations 1–13 (Vg. 84:2–14); Fromage's printed Introit | Augustine's captivity is ultimately sin/death. In §§2–4 the completed tense prophesies restoration still future for the prophet; *Converte nos* demonstrates its noncompletion at that standpoint. Applying it to a Christian assembly already forgiven yet awaiting consummation is an editorial inference, not that tense argument. Bellarmine carries restoration to resurrection and final peace. Neither identifies the chant compiler's purpose. Theodoret/Cassiodorus leads remain uninspected. |
-| *Excita, quaesumus* — Collect | No direct patristic exposition of this exact oration located in the bounded search | Fromage pp. 503–504 explains grace-assisted good works and the divine Mover of the will. Aquinas, *Super Colossenses* 1, lectio 3, is a doctrinal/exegetical analogue, not this prayer's commentary | The plea for stirred wills precedes the pursuit of fruit and greater remedies. Do not turn grace-enabled growth into antecedent self-merit. Non-saint Fromage does not count toward the two-author requirement. |
-| Col 1:9–14, adapted opening — Epistle | Chrysostom, *Homilies on Colossians* 2, exposition of 1:9–14, NPNF13 lines 23765–24002, with 24003–24054 separately checked at the 1:14–15 transition | Aquinas, *Super Colossenses* 1, lectio 3/native 87848 on Col 1:9–14, with lectio 2/native 87847 on the preceding 1:3–8; both read in Latin. Fromage pp. 504–507 | Knowledge issues in works and endurance; made worthy, not merely handed a prize. Rescue plus transfer is a double gift. Continued prayer for people already faithful is not denial of their grace. Lectio 2 supplies qualified universal-preaching context; lectio 4's Col 1:15–17 exposition is separately accounted for under the Preface, not added to the appointment. |
+| *Excita, quaesumus* — Collect | No direct patristic exposition of this exact oration located in the bounded search | Fromage's paragraph on p. 503 (PDF 529), between the printed Introit and Collect, expressly explains the Collect. Aquinas, *Super Colossenses* 1, lectio 3, gives a doctrinal analogue. | Fromage describes the divine Mover's action on the will and good works done with grace as preparation for greater grace. The plea for stirred wills precedes the pursuit of fruit and greater remedies. Fromage contributes as an ecclesiastical writer. |
+| Col 1:9–14, adapted opening — Epistle | Chrysostom, *Homilies on Colossians* 2, exposition of 1:9–14, NPNF13 lines 23765–24002, with 24003–24054 separately checked at the 1:14–15 transition | Aquinas, *Super Colossenses* 1, lectio 3/native 87848 on Col 1:9–14, with lectio 2/native 87847 on the preceding 1:3–8; both read in Latin. Fromage pp. 504–506 | Knowledge issues in works and endurance; made worthy, not merely handed a prize. Rescue plus transfer is a double gift. Continued prayer for people already faithful is not denial of their grace. Lectio 2 supplies qualified universal-preaching context; lectio 4's Col 1:15–17 exposition is separately accounted for under the Preface, not added to the appointment. |
 | Ps 43(44):8–9 liturgical form — Gradual | Augustine, Ps 43; NPNF heading XLIV, §§1–20 read, especially §§5–8 | Bellarmine Ps 43, native explanations 1–22 (Vg. 43:2–23), especially 7–9; Fromage p. 506 supplies wording | Real difference: Augustine explicitly makes the perfect tense prophetic certainty about future rescue; Bellarmine takes it as remembered actual rescues. Both preserve present faithful suffering. Native commentary vv. 7–8 correspond to the Mass's Vulgate 8–9; do not shift the appointment. |
 | Ps 129(130):1–2, *orationem*, Alleluias — Alleluia | Augustine, Ps 129; NPNF heading CXXX, §§1–8, complete exposition | Bellarmine Ps 129, complete explanation; Fromage p. 506 supplies wording | Crying from mortality/sin is hope, not abandonment. Augustine's resurrection-morning and Bellarmine's all-life watch are complementary spiritual extensions from later verses, not words appointed here. Greek Psalm leads not independently inspected. |
-| Mt 24:15–35 — Gospel | Chrysostom, homilies 75–77, bounded reads: 75 lines 41724–42003; 76 lines 42301–42700; 77 lines 42824–42993. Historical English NPNF10 | Aquinas, *Super Matthaeum* 24, lectiones 1–3, native anchors 87395–87397, Latin; local parsed lines 894–1205 through the final words on v. 35, with continuation into vv. 36–39 separately checked; Fromage pp. 508–513 | Concrete Judean flight is not erased by final-coming application. “Then” need not mean the next moment. Public lightning, sign/cross, gathering, enduring generation and abiding words ground hope without a timetable. Aquinas reports multiple authorities: reported Hilary/Origen/Jerome are not independently checked editions. |
+| Mt 24:15–35 — Gospel | Chrysostom, homilies 75–77, bounded reads: 75 lines 41724–42003; 76 lines 42301–42700; 77 lines 42824–42993, historical English NPNF10. Augustine, *Quaestiones euangeliorum* I.37, I.38, I.39 and I.42, Latin PL 35 derivative, lines 42–44 and 47, on 24:20,23–27,32,28 respectively. | Aquinas, *Super Matthaeum* 24, lectiones 1–3, native anchors 87395–87397, Latin; local parsed lines 894–1205 through the final words on v. 35, with continuation into vv. 36–39 separately checked. Fromage pp. 508–512, especially p. 510 on the eagles. | Chrysostom distinguishes the Judean flight from the public final coming. Augustine sees the Church's worldwide visibility in the lightning and reads the eagles' feeding as imitation of Christ's Passion and humility. The four questions have their own verse extents. Aquinas reports multiple authorities: reported Hilary/Origen/Jerome are not independently checked editions. |
 | Ps 129(130):1–2 with repeated opening — Offertory | Same direct Augustine Psalm exposition, not an invented second source | Same Bellarmine Psalm; Fromage p. 513 supplies Offertory wording | Distinct ritual position/repetition. Connecting the persistent cry with the offering and the Secret is editorial whole-Mass synthesis, not a claim that Augustine discussed this antiphon's liturgical repetition. |
 | *Propitius esto* — Secret | No exact patristic oration commentary located; Augustine, *De Trinitate* III.4.10 is a Eucharistic analogue | Fromage p. 513, actual Secret and surrounding explanation; Aquinas Col 1 lectio 3 on prayer is an analogue | God is asked both to accept offerings/prayers and to turn the offerers' hearts from earthly cravings to heavenly desires. A request for converted desire qualifies, rather than weakens, the Communion promise. |
 | Trinity Preface, dialogue/opening/proper/conclusion/junction — Preface | Augustine, *De Trinitate* III preface §3, III.4.10, III.10.21/III.11 opening, doctrinal analogues; Chrysostom Col homily 2 on Father's/Son's undivided agency, also an analogue | Aquinas, *Super Colossenses* 1, lectio 4/native 87849, expounding Col 1:15–17 on the Son's equal invisible nature, creation and conservation of all things; doctrinal illumination, not a direct Preface commentary or part of the appointed Col 1:9–14 | Distinction of persons, unity of essence, equality of majesty are the prayer's own assertions. The angels praise God, not another god beside Father/Son/Spirit. Do not turn the earthly/heavenly union of praise into a new claim about the prayer's origin. No exact saintly Preface exposition was verified in the search. |
@@ -359,6 +359,64 @@ public lightning, the cross and gathering to exclude secret claimants.
 eschatological reach, not a permission to schedule the end within a
 single contemporary lifespan.
 
+**Augustine's Gospel questions.** The [registered Latin web expression](https://la.wikisource.org/w/index.php?title=Quaestiones_Evangeliorum_(ed._Migne)&action=raw)
+transmits Migne, PL 35, through Corpus Corporum and Wikisource. The retained
+Latin derivative acquired 5 September 2026 is 117,690 bytes, SHA-256
+`aed43fd30cbd7a5bfe698c3930c360a6e4cb201f5da47951dc26a22c069c80e7`.
+The source's rights record identifies the underlying Latin and the
+normalized derivative as public domain. The original wiki delivery is a
+separate registered identity. Inspection covered physical lines 41–48 of
+the derivative and the four complete registered questions, with their
+existing canonical edges. The derivative supplies Augustine's Latin;
+page-image collation and a complete checked English expression remain open.
+
+| Question and actual Matthew extent | What Augustine explains |
+| --- | --- |
+| I.37, line 42, 24:20 | Winter rain or cold and the sabbath restriction can delay flight. His alternative concerns being found absorbed in the sadness or gladness of temporal things on that day. The preceding question is on 23:37 and the next on 24:23–27. |
+| I.38, line 43, 24:23–27 | The east and west are the whole world to which the Gospel spreads from Jerusalem. Lightning is the brightness and manifest authority of the worldwide Church. Regional schisms claim Christ for a part of the earth. Chambers and desert are the occult or small assemblies in which heretics deceive. Luke 24:47 and Matthew 26:64 support the argument within the question. I.37 and I.39 bound it. |
+| I.39, line 44, 24:32 | The fig tree signifies humanity in its fleshly condition. The tender branch is the advance through faith in Christ to spiritual fruit when the honor of adoption becomes visible. The following question turns to Judas in 26:24. |
+| I.42, line 47, 24:28 | Heaven is where Christ brought the body he assumed. The impending death explains the word “corpse.” Spiritual people feed as from his body through imitating his Passion and humility. This question returns to Matthew 24 between I.41 on 26:15 and I.43 on 26:29. |
+
+The registered Oxford English *Catena Aurea* on Matthew, translated by
+Mark Pattison, supplies three identified extracts in its historical text
+as transmitted by CCEL. Line 5856 gives I.37's alternative about temporal
+joy and sorrow. Lines 5897–5898 give I.38's worldwide Church and hidden
+assemblies, with the Jerusalem reference and concluding explanation omitted.
+Line 5960 gives I.39's fig-tree interpretation through adoption, rendering
+the opening flesh gloss as temptation and omitting Augustine's initial lemma.
+The Matthew 24 grouping carries no expressly attributed I.42 extract.
+These are public-domain anthology witnesses for the named loci. The complete
+Latin questions control the study's account. A search for *Quaestiones
+evangeliorum* and *Questions on the Gospels* in the source catalog, CCEL,
+and public bibliographic results also identified Roland Teske's translation
+in Boniface Ramsey,
+ed., [*New Testament I and II*](https://ci.nii.ac.jp/ncid/BB16379660)
+(New City Press, 2014). The checked publisher and library listings
+establish the translation's identity. Its text and a basis for redistribution
+remain unverified.
+
+Chrysostom, homily 76, §§2–3 (NPNF10 lines 42452–42525), takes the lightning
+as Christ's glory appearing everywhere at once at the final advent. He
+reads the places named by the deceivers and their wonders as reasons to
+refuse the summons, since Christ's coming will need no herald. Augustine's
+contrast in I.38 is between the Church manifest across the world and
+groups that claim Christ for a province or a hidden meeting. Their
+criteria answer related questions about recognition at different points
+in the Church's life. I.38 gives an alternative referent for 24:23–27.
+The rest of the appointed discourse requires its own exegesis.
+
+At v. 28 Chrysostom identifies the eagles as the company of angels,
+martyrs and all the saints. Aquinas reads the gathering as a further
+sign of Christ's manifest coming and connects the body with his Passion
+(lectio 3, native 87397, decoded lines 1092–1098). Augustine I.42
+locates the body in heaven and explains the feeding through imitation.
+Fromage on p. 510 (PDF 536) takes the renewal of the eagles' youth as
+the effect of receiving Christ's Blood and their hunger in exile as
+desire for the Body they will see at the eternal Pasch. On the same
+page he also describes the believers sharing Christ's suffering and
+humiliation. The account of feeding in I.42 and the Eucharistic
+application on p. 510 have distinct emphases.
+
 **Aquinas.** Col 1 lectiones 2–3 (native 87847–87848) expound 1:3–14:
 the preceding thanksgiving and the appointed prayer respectively.
 Lectio 4 (native 87849) expounds 1:15–17, beyond the appointed Epistle;
@@ -424,14 +482,23 @@ Dom Lucien Fromage's continuation of *The Liturgical Year*, translated
 by Laurence Shepherd, Dublin: Duffy, 1883, volume XI, chapter “The
 Twenty-fourth and Last Sunday after Pentecost,” printed pp. 501–514,
 was read in the full tracked OCR (lines 29990–30899, with boundary
-material) and in selected actual Mass page images: PDF 529–532 and
-535–540. This is not a claim that PDF 527–540 were all image-read.
+material) and in selected page images, PDF 527–532 and 535–540.
 The literal text, repeated chants and full biblical lessons share the
 target's inventory; its Mass pp. 503–514 prints all ten non-Preface
 elements. It does not print the Trinity Preface there and retains older
 additional-orations directions, which do not govern 1962.
 
-The four chants have distinct textual uses. On printed p. 506 (PDF 532),
+The introduction on p. 501 (PDF 527, OCR 29991–30005) describes the
+recurrence of the Introit, Gradual, Offertory and Communion from the
+Twenty-third Sunday. The account of the placement of Matthew's Gospel
+at the year's close continues onto p. 503. On that page (PDF 529, OCR
+30083–30096) the bilingual Introit gives the historical wording of the
+composite Jeremiah antiphon, Psalm verse and doxology cue. The prose that
+follows (OCR 30098–30104) expressly expounds the Collect's petition that
+God move the faithful's wills. The Jeremiah and Psalm extents belong to
+the printed chant.
+
+On printed p. 506 (PDF 532),
 the Gradual's Latin shares *Liberasti nos, Domine*, *et eos qui nos oderunt*
 and *in saecula* with the target. Shepherd's English begins “Thou hast
 saved us,” where Lasance has “Thou hast delivered us.” The Alleluia shares
@@ -444,13 +511,13 @@ physical Duffy page has the compositor's transposition *acciepietis* where
 the target has *accipietis*. The parallel English “shall receive” confirms
 the intended reading. The commentary after the Offertory interprets the
 Secret, and the commentary after the Communion interprets the Postcommunion.
-The four chants serve as wording evidence with no independent exposition.
+All five printed chants serve as wording evidence.
 
 The commentary joins grace-assisted fruitfulness, continuing Pauline
 prayer, thanksgiving and progressive union with Christ. It reads the
-final judgment not solely as terror but as the Church's desire for her
-Lord; the eagles' attraction to the body receives a Eucharistic
-application to renewed hunger for Christ's Blood. Secret detachment
+final judgment as the consummation for which the Church longs and applies
+the eagles image to Eucharistic reception and to the desire for Christ
+at the eternal Pasch. Secret detachment
 and the Postcommunion's remaining cure are explained at their actual
 places. These are checked reception of the received Mass, unlike the
 verse commentators' reception of its parts.
@@ -530,7 +597,7 @@ titles/whole poems, Col 1, Mt 24:1–3 and its discourse, and Mk 11.
 A place/episode description does not independently establish a year.
 The complete table, not an element-wide composite annotation pasted
 beside Jeremiah alone, is the intended page-2 input.
-Its fifteen displayed relation rows use the corpus's compact calendar
+Its sixteen displayed relation rows use the corpus's compact calendar
 frames and proposal spans. All four Psalm uses retain their own
 “Occasion date unresolved” row, including Ps 43:8–9 and Ps 84:2
 beside their explicitly Korahite-collection-wide composition estimate.
@@ -657,14 +724,15 @@ conditional chronology and the superseded Sensus Fidelium delivery, has an
 explicit disposition. Native work loci and canonical candidate Scripture
 extents remain distinct. Unresolved Scripture reach is explicitly empty
 with `scripture-extent` missing, not filled from an adjacent appointment.
-Separate Fromage rows distinguish four scriptural chants used for wording,
-the commented Introit, Epistle and Gospel, and the introduction and prayers.
+Separate Fromage rows distinguish the five printed chants used for wording,
+the structural introduction, and the commentary on the Epistle, Gospel
+and prayers.
 The full-Mass synthesis remains an editorial argument.
 
-The existing discovery receipts and containment-aware research sweep remain
-the original/English search record; no second, fictitious sweep or new
-negative whole-library result is claimed. The Aquinas historical-container
-leads have not become collated original-language witnesses. Missing print
+The discovery receipts and containment-aware research sweep establish the
+main search boundary. The additional English check in §5 is specific to
+Augustine's four Gospel questions. The Aquinas historical-container leads
+have not become collated original-language witnesses. Missing print
 collation, translation credits or expression separation, constituent
 ownership, natural passage boundaries, composition-date evidence and
 Scripture edges are listed concretely in each applicable row.
@@ -853,10 +921,11 @@ a newly acquired printing, a new admitted passage, or a new rights clearance.
   The modern promotional line in the held English derivative stays excluded.
 * Fromage's complete Last-Sunday chapter, Duffy 1883 XI pp. 501–514,
   was reread in the bound OCR, lines 29970–30899. Renewed image inspection
-  covered PDF 529, 530 and 536–540, not every chapter image.
-  The textual pinpoints are Collect p. 503; Epistle pp. 504–506;
+  covered PDF 529, 530 and 536–540. The later boundary check also opened
+  PDF 527–529. The textual pinpoints are the printed Introit and separate
+  Collect commentary on p. 503, Epistle pp. 504–506,
   Gradual/Alleluia p. 506; Gospel pp. 507–508 with exposition through
-  p. 512; final chants and prayers pp. 513–514. Four chants are textual
+  p. 512; final chants and prayers pp. 513–514. Five chants are textual
   parallels, and the Secret and Postcommunion have distinct comments on
   p. 513. The historical chapter prints ten of the appointed texts.
   The Trinity Preface is absent. Laurence Shepherd translates Fromage's
@@ -1039,8 +1108,43 @@ anchors the era equivalence; the two Ninth Journey passages identify the
 Tuesday episodes. The generated chronology gives the derived A.D. 29
 outside the quotation of Maas's A.U.C. heading.
 
-The current ledger has **79 bindings and 109 dispositions**: two existing
-Chrysostom admissions, 36 deferred candidates, six rejected consultations,
-47 historical or textual controls and finding aids, and 18 catalog-only
-leads. The three new direct-exegesis candidates await the checks named in
-the queue. The modern English Mark lead remains catalog-only.
+### Reception sweep and source reuse on 20 November 2026
+
+Uncapped Vulgate discovery was repeated for the seven appointed passages,
+with the exact Jeremiah composite `29:11–12,14`. The eligible-work counts
+in the order of the earlier sweep were 10, 18, 12, 15, 14, 16 and 11.
+The lead output records direct holdings and container routes, including
+Jerome in PL 24 and medieval Matthew commentaries in collected editions.
+The checked holding records preserve the matched extent, including
+unreviewed work candidates. They supply discovery evidence for those
+works. Inspection is confined to the named witnesses in this dossier.
+The formulary lookup again compared 40 indexed loci and returned zero
+listed and zero structural matches. The manually inspected Fromage
+chapter supplies the documented match outside this index.
+
+The same run returned ten distinct mapped fragments. Under the
+Augustine Psalm leads are the two Latin passages for Ps 43 §§8–9
+(Vulgate 43:8 and 43:9) and the two for Ps 84 §§3–4 (the two clauses
+of Vulgate 84:2). The two Chrysostom Colossians passages remain separate
+at 1:9–12 and 1:13–14. All four Augustine Gospel questions in §5
+appear only under `fragments_without_lead`. Their passage records and
+canonical edges establish the four partial overlaps with the appointed
+Matthew reading.
+
+The checked Latin Psalm 43 sections match their exact controller, the
+PL 36 Wikisource derivative at physical line 35. In §8 Augustine
+explains the past as prophecy of a future deliverance already certain.
+In §9 he takes the ensuing future praise as evidence for that reading.
+The Ps 84 sections match the PL 37 Latin Wikisource derivative at
+physical lines 77–78. In §3 Augustine explains the prophetic past of the
+opening blessing. In §4 he invokes Romans 7 to identify Jacob's captivity
+as bondage to sin and says that Christ releases people from it. These
+are original-language corroborations of the already used Psalm
+expositions. The Latin derivatives, their rights and exact verified
+passages are pinned in the bindings and disposition ledger.
+
+The current ledger has **83 bindings and 122 dispositions**. Its ten
+admitted uses reuse the two Chrysostom and eight Augustine passages and
+their existing Scripture edges. It also has 37 deferred candidates, six
+rejected consultations, 51 historical or textual controls and finding aids,
+and 18 catalog-only leads. The modern English Mark lead remains catalog-only.
