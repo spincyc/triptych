@@ -224,6 +224,18 @@ class PublicAlphaBrowserProductsTest(unittest.TestCase):
                     self.tool.web_data_files()
             scan.assert_called_once()
 
+    def test_reference_checkout_is_rechecked_after_a_successful_operation(self):
+        import os
+        revision = "a" * 40
+        with mock.patch.object(self.tool, "_native_reference_loader", return_value=object()), \
+                mock.patch.dict(os.environ, {"GITHUB_SHA": revision}), \
+                mock.patch.object(self.tool, "_require_reference_checkout",
+                                  side_effect=[None, self.tool.ReleaseError("checkout changed")]) as guard:
+            with self.assertRaisesRegex(self.tool.ReleaseError, "checkout changed"):
+                with self.tool.held_repository_inputs():
+                    guard.assert_called_once_with(revision)
+            self.assertEqual(guard.call_args_list, [mock.call(revision), mock.call(revision)])
+
     def test_scan_rechecks_quarantine_ledger_after_the_last_payload(self):
         ledger = self.root / self.tool.POSTCONCILIAR_TRANSLATIONS_RELATIVE
         validate = self.tool.validate_propers_read_payload_sources
