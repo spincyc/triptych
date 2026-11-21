@@ -1320,5 +1320,20 @@ The next installation pass takes those exact paths from the gate log.
 The coordinator and installation worker trace 15 direct dependencies
 and six ancestors in the source-binding closure. The owning release tool
 adopts those exact 21 paths. The resulting 25,539 bindings preserve the
-25,518 prior entries and the other authorization fields. The next
-terminal gate rechecks the complete release.
+25,518 prior entries and the other authorization fields. Checkpoint
+`864ce4a5c8` records that repair.
+
+Terminal publication gate iteration 3 passes the exact source publication
+contract, release status with zero stale bindings, scoped public-alpha
+and global authorization validation for 303 publications, document catalog
+currency and all three web conversions. Proper-study v19 run
+`13ecdd1552c245ea` reaches **ACCEPTED**.
+
+The public archive reproduces byte for byte at a second destination.
+It preserves all 91 packets and 91 results verbatim across 187 files.
+All 413 pre-existing native files retain their exact bytes. The archive
+identity and terminal result hash are in
+`ARCHIVE-VERIFICATION-2026-11-20.json`.
+The refreshed GPT inventory validates 157 publications and 3,888
+source-surface files. The family ledger again validates with 169
+units pending.

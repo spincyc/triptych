@@ -16,13 +16,13 @@ state = "in_progress"
   id = "accepted-three-documents"
   criterion = "The expansive study, concise study and homily reach terminal ACCEPTED through genuine independent proper-study reviews and source/publication gates, with verified archived results and cycle evidence."
   status = "pass"
-  evidence = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/evaluations/proper-study-results/df0ccb9ecfdea6c9/record.md", "workflows/reviews/gpt-1962-68-production-2026-11-16/ARCHIVE-VERIFICATION-2026-11-16.json", "workflows/reviews/gpt-1962-68-production-2026-11-16/CYCLES.md"]
+  evidence = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/evaluations/proper-study-results/13ecdd1552c245ea/record.md", "workflows/reviews/gpt-1962-68-production-2026-11-16/ARCHIVE-VERIFICATION-2026-11-20.json", "workflows/reviews/gpt-1962-68-production-2026-11-16/CYCLES.md"]
 
   [[deliverables.requirements]]
   id = "reviewed-readers-and-print-compilation"
   criterion = "All three reader outputs, catalog links and release records pass their required checks, and all three current native print bundles compile successfully."
   status = "pass"
-  evidence = ["workflows/reviews/gpt-1962-68-production-2026-11-16/POST-ARCHIVE-CHECKS-2026-11-16.json", "workflows/reviews/gpt-1962-68-production-2026-11-16/NATIVE-PRINT-2026-11-16/summary.json", "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/web-edition.toml", "workflows/reviews/gpt-1962-68-production-2026-11-16/CYCLES.md"]
+  evidence = ["workflows/reviews/gpt-1962-68-production-2026-11-16/NATIVE-PRINT-FINAL-2026-11-20/summary.json", "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/web-edition.toml", "workflows/reviews/gpt-1962-68-production-2026-11-16/CYCLES.md"]
 
   [[deliverables.requirements]]
   id = "main-and-live-verification"

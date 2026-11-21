@@ -1,0 +1,15 @@
+WORKFLOW: proper-study v19
+WORKFLOW_DIGEST: 73706a2ab569c88974452c4aec8fe2b7540a23ad1192efa39d574ddfbd334645
+RUN_ID: 13ecdd1552c245ea
+COMMIT: e8aceadc4a7e1ebe8d4987815a636d82ddd9d59b
+STAGE: synthesis-preflight
+ITERATION: 2
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-11-22","proper":"liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost","provider":"gpt","research_handoff":"none"}
+DOCUMENT_ROOT: src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: [{"id":"SYN-AQUINAS-001","location":"sections/concise/10-commentary.tex:192\u2013200","problem":"The opening sentence calls the ascent of the mind Aquinas\u2019s explanation of Paul\u2019s petition, though Aquinas uses it to distinguish praying from petitioning in Super Colossenses 1, lectio 3, native anchor 87848. The paragraph still conveys both the petitioner\u2019s orientation to God and the reality of the requested gifts. The accepted formulation in sections/40-prayer-and-conversion.tex:85\u201396 states the distinction and its sequence more precisely.","required_result":"State the two acts in order. Aquinas says prayer raises the mind to God and prepares the person to ask. In petition the person asks for particular gifts, which here include knowledge, virtue and endurance.","severity":"advisory"}]
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

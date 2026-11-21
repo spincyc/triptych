@@ -1,0 +1,14 @@
+{
+  "artifact_path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/publication.toml",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "GATE-RELEASE-BINDINGS",
+      "note": "The exact-path refresh exited 0. Compared the 25,539-entry site authorization with its prior inventory and verified the updated rights inventory digest ed91f42878cb20d6bc9f742f8e6cb334234275182f9ba920bd5ff1e9debf67a3.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 3,
+  "stage": "install-publication",
+  "summary": "The scoped refresh added all 21 source and rights records named by the release-binding gate to the standing site authorization. Each digest matches the accepted research-review seal and the current file, and all 25,518 existing bindings were preserved."
+}

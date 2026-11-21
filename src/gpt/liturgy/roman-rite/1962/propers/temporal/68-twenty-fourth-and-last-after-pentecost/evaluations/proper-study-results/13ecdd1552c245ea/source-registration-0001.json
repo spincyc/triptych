@@ -1,0 +1,17 @@
+{
+  "artifact_path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/research/source-dispositions.toml",
+  "disposition": "PASS",
+  "iteration": 1,
+  "notes": [
+    "Reconciled the eleven appointments, reception matrix, chronology and renewed consultations in research/scope.md with the exact current bindings and disposition pins. The two admissions, 40 deferrals, six rejections, 38 non-commentary rows and 18 leads account for the full handoff. The renewed research took up no new witness. No tracked source, fingerprint, evidence state or verification date needed revision.",
+    "All 75 registered source IDs, both admitted passage IDs and all 46 deferred or rejected keys with their reasons, missing criteria and candidate extents are in .scratch/complete-proper-68/source-registration-0001/registration-reconciliation.json.",
+    "The reused admissions are passage.john-chrysostom.homilies-on-colossians.ccel-web-2026-09-05.2.col-1.13-14 and passage.john-chrysostom.homilies-on-colossians.ccel-web-2026-09-05.2.col-1.9-12. Both match all 238 ordered transcription segments, their NPNF13 controller and constituent segment, the Ashworth credit, the recorded unestablished composition date and the Vulgate Scripture edges.",
+    "Checked aliases and the uncapped containment-aware discovery and formulary receipts. The alternate Augustine Latin holdings have different controllers from the English witnesses used here. The Bede PL 92 image holding is bounded to Mark 10, and the Mark 11 OCR holding supplies a collation route. The Aquinas historical container holdings and Anthony translations remain leads for the checked loci. The exact Latin Anthony service capture stays deferred, with its shared Introit and distinct Gospel context preserved.",
+    "Rehashed 13 receipt payloads and 38 bound tracked payloads. Compared the 51 historical binding manifests and 41 renewed handoff manifest rows. Matched the 23 nonempty service fields to their exact recorded artifacts and confirmed the empty Mark search return has a work identity only. The whole Pustet archive contains 902 PNG and 20 JPEG members. Results are in .scratch/complete-proper-68/source-registration-0001/payload-audit.json.",
+    "All four preserved facsimiles match the exact offline-only pack and the independent copies. Pack and source IDs are in .scratch/complete-proper-68/source-registration-0001/offline-facsimile-audit.json. Restricted exact deliveries keep their metadata and rights limits.",
+    "The binding-digest replay, source-mode source-dispositions, tools/source-library validate, python3 scripts/_catena.py check, strict source-reader generation and strict replay, make check-sources, and git diff --check all passed. The strict projection verified 19,375 files under .scratch/browser-data-work-work/structure/sources. The generated texts for the two admitted passages match their canonical records. Anthony\u2019s restricted Latin service capture appears as metadata only.",
+    "All eleven sealed leaf files still match the native research seal. The family ledger remains pending with 168 review units."
+  ],
+  "stage": "source-registration",
+  "summary": "Reconciled the current research with 75 registered sources and 104 dispositions. Independently verified both existing Chrysostom admissions, the retained evidence, and the strict working source projection."
+}

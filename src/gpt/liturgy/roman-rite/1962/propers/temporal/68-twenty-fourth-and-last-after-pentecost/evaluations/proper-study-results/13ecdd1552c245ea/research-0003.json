@@ -1,0 +1,26 @@
+{
+  "artifact_path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/research/scope.md",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "RES-MATTHEW-AUGUSTINE-RECEPTION",
+      "note": "Checked the retained PL 35 derivative at lines 41\u201348, the complete questions I.37, I.38, I.39 and I.42, and the existing edges at Matthew 24:20, 23\u201327, 32 and 28. The matrix, controller binding and four admitted uses now agree. The interpretation plan compares I.38 with Chrysostom's Homily 76 on 24:23\u201327 and distinguishes the tests for a counterfeit. It also compares I.42's nourishment by imitation of Christ's Passion and humility with the readings of the gathering and Fromage's Eucharistic application.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-FROMAGE-INTROIT-ROLE",
+      "note": "Rehashed Duffy XI and image-read printed pp. 501\u2013503, PDF 527\u2013529. The two Introit rows now record wording evidence at printed p. 503 with no commentary extents. The introduction's structural explanation of the recurring chants has its own locus and the p. 503 prayer paragraph remains Collect commentary. The matrix, exact binding contexts, disposition pins and interpretation audit agree.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 3,
+  "notes": [
+    "Changed research/scope.md, research/interpretations.md, research/source-bindings.toml and research/source-dispositions.toml under the GPT leaf. The complete appointed-text mode remains in effect under the production plan. The original appointed source and chronology records remain authoritative. The incidental count now matches the 16 orientation-v3 rows across eight groups, including both Jeremiah relations and the critical Greek Matthew comparison.",
+    "Replayed uncapped Vulgate discovery for all seven appointed passages and the 40-locus formulary query. Receipts are .scratch/complete-proper-68/research-0003/discover.jsonl and .scratch/complete-proper-68/research-0003/formulary.json. Checked both the work-lead holdings and the ten mapped fragments. The four Matthew fragments appear outside the lead joins. The two existing Chrysostom Colossians and four Latin Augustine Psalm fragments appear under leads. Checked the four Psalm passages against their controllers as corroboration of the existing NPNF exegesis. The local ledger now has 82 bindings and 119 dispositions, with ten reused admissions, 34 deferrals, six rejections, 51 non-commentary uses and 18 leads.",
+    "No new retrieval was needed. The existing whole-PDF receipt is .scratch/proper-study-68/evidence/liturgical-year-11.pdf.receipt.json. The 35,074,623-byte PDF matches SHA-256 f1893738042058151a791e4ec2eb38d817b9e27fe030d93ede336fe7beccb705. Fresh scratch image renders cover PDF 527\u2013529 and 536. The bound OCR supplies the checked line boundaries. The three tracked Augustine controllers and all eight registered passage/edge pairs were checked in .scratch/complete-proper-68/research-0003/held-fragment-check.log. The Gospel questions use the registered PL 35 Latin derivative, with printed-image collation and an English expression still open.",
+    "Native source-dispositions and source-mode research preflight passed. Source-library metadata validation, the restricted-text screen, both chronology freshness checks, the document-types freshness check and git diff --check passed. The source-mode proper-study-v5 research seal in .scratch/complete-proper-68/research-0003/seal.json contains 1,856 exact file hashes, 16 chronology and eight admission computation hashes. Recomputed every hash and confirmed all 32 declared dependencies and eight reused Augustine passage records. Seal SHA-256 ff64a827c72466d81632457c5020916749d6b2b2ee382f0cec2590ed3f5aa723.",
+    "The discoveries and the source checks are bounded to their named corpora and loci. The historical claims in the Duffy introduction and the uninspected original-language or modern leads retain their recorded limitations. All registration uses existing identities and edges. The shared source ledgers and reader products were outside this packet's edit scope."
+  ],
+  "stage": "research",
+  "summary": "Reconciled Augustine's four Matthew questions and their existing canonical edges, distinguishing his reading of the lightning and eagles from Chrysostom, Aquinas and Fromage. Corrected the Fromage facsimile and OCR roles and retained both whole-Mass interpretations."
+}

@@ -1,0 +1,48 @@
+{
+  "artifact_path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/research/scope.md",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "RES-APPOINTED-PROOF-SEAL",
+      "note": "Declared the 1962 Missal temporal proof, the Pustet oration verification, the three Latin projections, the six exact Lasance Last-Sunday verification and publication leaves, and the same-witness Lasance conclusion-table verification and transcription. Recomputed the native source-mode seal and matched every new proof-record hash. The two associated public-domain transcription payloads were separately matched to their sealed artifact manifests.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-CHRONOLOGY-PS129-RELATION",
+      "note": "The shared corpus keeps the two unresolved occasion cells and Berthier\u2019s conditional composition proposal without the Jerusalem regnal span. Regenerated both Psalm 129 placements in the target reader data and appendix.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-CHRONOLOGY-MATTHEW-SUBJECT",
+      "note": "Scoped four disputed estimates to the putative Semitic original and preserved Jacquier\u2019s two ambiguous estimates outside default candidates. The target separately projects the extant Greek Gospel\u2019s Catholic critical comparison. Durand\u2019s uncertainty and the original-language order in AAS 4 (1912), p. 464, remain explicit.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-CHECKED-SCRIPTURE-EXTENTS",
+      "note": "Recorded Matthew 24:35\u201339 at native [87397] through the partial v. 39 discussion, Bellarmine\u2019s actual Psalm 43 and 84 exposition bounds plus the separately deferred Psalm 85 opening, and the Colossians 1:14\u201315 transition. Both bounded Colossians admissions retain their exact prior passages and native limits.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-FROMAGE-WORDING-AND-COMMENTARY",
+      "note": "Collated the two Duffy facsimile pages and classified the Gradual, Alleluia, Offertory and Communion as textual parallels in both the facsimile and derivative OCR dispositions. Recorded acciepietis as a printing error and distinguished independent prayer comments from the editor\u2019s three-prayer inference.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-COMMUNION-DIRECT-RECEPTION",
+      "note": "Reopened the exact Basel 1525 fol. 69r\u2013v Mark 11:24\u201325 locus and matched the fresh delivery to the cold reviewer\u2019s bytes. R2 uses its direct interpretation as supporting ecclesiastical reception, with Aquinas and Bede as the carrying authors. The uninspected modern English lead retains its separate disposition. Exact public-domain artifact and deferred passage handoff are ready for source registration.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 2,
+  "notes": [
+    "Evidence and receipts under .scratch/complete-proper-68/research-0002/. Source registration must resolve the exact Basel Theophylact and restricted Aquinas Jeremiah identities against the source library, add honest bindings and explicit deferred dispositions, and recompute the post-registration seal. No new Catena admission is asserted.",
+    "Theophylact exact acquisition: .scratch/complete-proper-68/research-0002/theophylact-basel1525-mark11.receipt.json. The retained chapter PDF matches the cold reviewer SHA-256 e72b2cd4c08f661d8b809522c50306adc34ccae66f57f5c21a9978bce4c835ee and is 1,633,434 bytes. The retained edition carries e-rara\u2019s Public Domain Mark. The checked lemma and exposition at fol. 69r\u2013v end before the Jerusalem return lemma on 69v. The full PDF extends into Mark XII. The separately listed modern English archive lead remains catalog-only.",
+    "Jeremiah advisory: .scratch/complete-proper-68/research-0002/aquinas-in-jeremiam.receipt.json. The fresh Corpus Thomisticum HTML is 484,893 bytes, SHA-256 3728512c5a0e1a42422ddd1f3e13e41096537a8c0c0b7ef8b30a45b541e7f907. Cap. 29, lectio 1, native [85174], checked at displayed lines 985\u2013996. The modern delivery remains in private custody. Register metadata and the exact deferred Scripture relation, keeping Jerome as the main direct Introit witness.",
+    "Maas advisory: the appendix renders A.D. 29 as editorial derivation, with the source\u2019s A.U.C. 782 heading quoted. Mark now cites the relevant Ninth Journey episode and the p. 378/p. 380\u2013381 facsimile evidence. For a narrower display citation restricted to p. 378 alone, .scratch/complete-proper-68/research-0002/maas-calibration-passage-handoff.json gives the existing exact text controller, line 25, the proposed passage ID and the independently reopened p. 378 facsimile locator. The current cited facsimile record also covers the Sixth and Seventh Journeys.",
+    "The final native proper-study-v5 source-mode research seal exited 0 within 240 seconds with 1,833 source files, 16 chronology computation hashes, eight source-admission computation hashes and 22 cited chronology source IDs. Every recorded file and computation hash matched. Seal SHA-256 d394ac4a111dd205dd8b23385840a56ac56908047610ca37d3779d5c1ff211bd. .scratch/complete-proper-68/research-0002/proof-seal-check.json lists 16 additional exact proof records and the two separately rehashed public-domain payloads.",
+    "Shared chronology validation, targeted record and orientation checks, document-type check, source-mode source-dispositions check, source-mode research preflight, and git diff --check passed. The current target table contains 16 rows. The ledger holds 75 existing bindings and 105 dispositions: two admitted, 33 deferred, six rejected, 46 not-commentary and 18 leads. The uncapped passage search returned 10, 18, 12, 15, 14, 16 and 11 eligible leads respectively. The formulary check covered 40 indexed loci with zero listed or structural matches. Fromage\u2019s historical chapter supplies the documented manual match.",
+    "The modified shared corpus serves other Psalm 129, Matthew and Maas consumers. Only the GPT proper 68 dossier and generated appendix were regenerated by this research dispatch. Other live consumer impacts belong to coordinator verification. The 1962 appointed-text publication remains complete."
+  ],
+  "stage": "research",
+  "summary": "Repaired the six forwarded findings for GPT proper 68, regenerated its chronology, and verified the exact appointed-text proofs in a fresh native seal. Mark 11:24\u201325 now has a checked historical Theophylact witness in the interpretation and the source-registration handoff."
+}

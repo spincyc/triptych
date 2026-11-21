@@ -175,8 +175,13 @@ thematic argument, temporal prayer and the Judean flight. The three
 committed outputs pass artifact validation and native print compilation.
 The canonical reader passes independent source and desktop/mobile
 preview checks at its exact conversion hash. Its inspection is recorded
-in the leaf. The shared browser-product and release-binding verification,
-terminal acceptance, deployment and live verification are open.
+in the leaf. After the exact shared browser-product and release-binding
+verification, terminal publication gate iteration 3 passes and refreshed
+proper-study v19 run `13ecdd1552c245ea` reaches **ACCEPTED**.
+The renewed run archive preserves 91 packets and 91 results verbatim
+and reproduces byte for byte. All 413 pre-existing native files retain
+their exact bytes. The committed-input deployment checks and live
+verification are open.
 
 Detailed progress and limitations belong to
 `workflows/reviews/gpt-1962-68-production-2026-11-16/CYCLES.md`.

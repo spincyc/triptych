@@ -1,0 +1,202 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "HOM-COLLECT-FRUIT-001",
+      "location": "sections/homily/10-body.tex:48\u201351",
+      "problem": "Immediately after naming the Collect, \u2018the fruit of our work\u2019 blurs whose work the prayer names. At Missal p. 423, no. 1770, the faithful pursue the fruit of God's work and ask to receive greater remedies. The passage already preserves the faithful's dependence on God, so this is a local imprecision.",
+      "required_result": "Preserve the difference between God's work and the faithful's response in the sentence explaining the Collect. For example, \u2018We ask God to stir our wills so that we will follow through on what he has begun in us and receive the healing we still need.\u2019",
+      "severity": "advisory"
+    },
+    {
+      "id": "HOM-STUDY-FLIGHT-AUDIENCE-001",
+      "location": "sections/30-deliverance-and-waiting.tex:114\u2013115 and sections/40-prayer-and-conversion.tex:273\u2013279",
+      "problem": "\u2018When they will have to flee\u2019 and \u2018their flight\u2019 make the disciples who hear the reply sound like the particular people who will flee. Matthew 24:16 directs the flight to those in Judea, and Chrysostom's homily 76.1 explicitly distinguishes the apostles in his treatment of the Sabbath. The spoken homily separates the two groups.",
+      "required_result": "In the two study passages, say that Jesus tells his hearers to pray about the flight from Judea and names those in Judea as the people who must flee. Retain both the promise for the elect and the argument about asking for help while danger persists.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 2,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "homily-body",
+          "kind": "homily",
+          "path": "sections/homily/10-body.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [],
+          "key": "homily-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/homily/90-apparatus.tex",
+          "references": []
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "preface",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Bede",
+            "Jerome",
+            "Robert Bellarmine",
+            "Lucien Fromage"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "deliverance-and-waiting"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "deliverance-and-waiting",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Bede",
+            "Jerome",
+            "Robert Bellarmine",
+            "Lucien Fromage",
+            "Theophylact of Ohrid"
+          ],
+          "carrying_authors": [
+            "Thomas Aquinas",
+            "Bede"
+          ],
+          "component_keys": [
+            "prayer-and-conversion"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "prayer-and-conversion",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost",
+    "files": {
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec",
+      "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/homily.tex": "bd0bd1ceb7a72a67521ca4528f541383dfed806d01389177eb80cc1921797fbd",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/research/interpretations.md": "432475c19c6cd7b6cdaa29457ebbd7cdf39a5ede42a611a77b70a514eb2da383",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/research/scope.md": "f3f2a5a5832cfbfc0f40154898c57d6aca1fe2be615a1df037701264d1ccdc25",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/research/source-bindings.toml": "d84e32f0260f000db37366ab17451eba2adc224414cf4480c1ffa46dd483f088",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/sections/homily/10-body.tex": "b1dfd5dae0c8ce1011a770f8a347d72f1fc4c01bdeedf5fa7227a701bf8734d4",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/sections/homily/90-apparatus.tex": "084fd5e640bf20dbb4ce0ceb2a0570a9e69f428545e5ff1932e20bfaa609fcd2"
+    },
+    "generation_provenance": {
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "19",
+            "73706a2ab569c88974452c4aec8fe2b7540a23ad1192efa39d574ddfbd334645",
+            "13ecdd1552c245ea",
+            "e8aceadc4a7e1ebe8d4987815a636d82ddd9d59b",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gpt",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "I read homily.tex, its spoken body and its terminal note, and compared them with the two study interpretations. I checked the 1962 Missal images at printed pp. 422\u2013424 and rubric 18, the dated Ordo entry, Lasance/Walsh pp. 737 and 740, the registered Challoner passages, Chrysostom's Matthew homily 76, Aquinas's Colossians lecture at anchor 87848, Theophylact at fols. 69r\u2013v, and Bede's Latin transcription at line 339. Matthew's prayer about the flight and promise of shortened days support asking for relief while danger persists. Mark's command to forgive while praying and the Secret's petition for changed desires give that trust a concrete act before relief comes. The speech is intelligible on one hearing and reaches Eucharistic hope through the Postcommunion. TeXcount confirms 1,156 spoken words, or an estimated 10.1\u201310.5 minutes at 110\u2013115 words per minute. This is a source and speech PASS with two local advisories."
+}
