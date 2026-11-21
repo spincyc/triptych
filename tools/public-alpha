@@ -3556,14 +3556,25 @@ def require_locked_markdown_dependency() -> None:
         raise ReleaseError(str(exc)) from exc
 
 
-def load_manifest() -> dict:
+def _manifest_text() -> str:
     try:
-        manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError) as exc:
+        return MANIFEST_PATH.read_text(encoding="utf-8")
+    except OSError as exc:
+        raise ReleaseError(f"Cannot read {MANIFEST_PATH.relative_to(ROOT)}: {exc}") from exc
+
+
+def _parse_manifest(text: str) -> dict:
+    try:
+        manifest = json.loads(text)
+    except json.JSONDecodeError as exc:
         raise ReleaseError(f"Cannot read {MANIFEST_PATH.relative_to(ROOT)}: {exc}") from exc
     if manifest.get("schema_version") != 2:
         raise ReleaseError("release/public-alpha.json must use schema_version 2")
     return manifest
+
+
+def load_manifest() -> dict:
+    return _parse_manifest(_manifest_text())
 
 
 def declared_providers(manifest: dict) -> tuple[str, list[str]]:
@@ -6028,6 +6039,18 @@ def publication_reader_contexts() -> dict:
     return held_source_inventory("publication-reader-contexts", derive)
 
 
+def _reader_providers():
+    """Reuse the routing projection only when the current release text is identical."""
+    if not _HELD_SOURCE_INVENTORIES:
+        return declared_providers(load_manifest())[1]
+    previous = held_source_inventory("reader-provider-declaration", dict)
+    current = _manifest_text()
+    if current != previous.get("text"):
+        providers = declared_providers(_parse_manifest(current))[1]
+        previous.update(text=current, providers=tuple(providers))
+    return previous["providers"]
+
+
 def publication_reader_shell(content: str, relative: str, output_id: str = "", *,
                              action: str = "") -> tuple[str, str, str]:
     """Add screen navigation outside the exact canonical content/print parts.
@@ -6040,8 +6063,7 @@ def publication_reader_shell(content: str, relative: str, output_id: str = "", *
     parts = PurePosixPath(relative).parts
     if len(parts) < 3 or parts[0] not in {"web", "print"}:
         return standalone, "", ""
-    _, providers = declared_providers(load_manifest())
-    if parts[1] not in providers:
+    if parts[1] not in _reader_providers():
         return standalone, "", ""
     provider, separator, leaf = output_id.removeprefix("publication:").partition("/") if output_id else (parts[1], "/", "/".join(parts[2:]).removesuffix(".html"))
     context = publication_reader_contexts().get((provider, leaf)) if separator else None

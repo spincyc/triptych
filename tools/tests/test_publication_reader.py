@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 from pathlib import Path
+import json
+import tempfile
 import sys
 import unittest
 from unittest import mock
@@ -119,6 +121,40 @@ class PublicationReaderTest(unittest.TestCase):
                 self.assertIn("catalogue-navigation.js", tail)
             self.assertEqual(tool.publication_reader_shell(body, "liturgy/day.html"), (body, "", ""))
             self.assertEqual(tool.publication_reader_shell(body, "print/bibles/clementine.html"), (body, "", ""))
+
+    def test_held_reader_provider_gate_reuses_only_exact_current_manifest_text(self):
+        from .test_public_alpha import load_tool
+        tool = load_tool()
+        self.add("work")
+        contexts = self.contexts()
+        article = "<article><h2 id='one'>One</h2></article>"
+        route = "web/claude/work.html"
+        def render():
+            return tool.publication_reader_shell(article, route, "publication:gpt/work")
+
+        with tempfile.TemporaryDirectory() as directory:
+            tool.ROOT = Path(directory)
+            tool.MANIFEST_PATH = tool.ROOT / "release.json"
+            approved = json.dumps({"schema_version": 2, "provider": "gpt", "providers": ["gpt", "claude"]})
+            tool.MANIFEST_PATH.write_text(approved)
+            with mock.patch.object(tool, "publication_reader_contexts", return_value=contexts):
+                cold = render()
+                self.assertIn("publication-reader", cold[0])
+                with mock.patch.object(tool, "_parse_manifest", wraps=tool._parse_manifest) as parse:
+                    with tool.held_repository_inputs():
+                        self.assertEqual(render(), cold)
+                        self.assertEqual(render(), cold)
+                        self.assertEqual(parse.call_count, 1)
+                        tool.MANIFEST_PATH.write_text(approved.replace("claude", "scribe"))
+                        self.assertEqual(render(), (article, "", ""))
+                        tool.MANIFEST_PATH.write_text("{")
+                        with self.assertRaisesRegex(tool.ReleaseError, "Cannot read release.json"):
+                            render()
+                        tool.MANIFEST_PATH.write_text(approved)
+                        self.assertEqual(render(), cold)
+                    with tool.held_repository_inputs():
+                        self.assertEqual(render(), cold)
+                    self.assertEqual(parse.call_count, 5)
 
     def test_legacy_catalogue_labels_use_declared_output_role(self):
         from .test_public_alpha import load_tool
