@@ -171,9 +171,12 @@ research seal remains current and the revised study passes independent
 review. Reconciliation `a05440b4bc` incorporates the latest upstream
 Advent updates and revalidates the combined source inventory. The revised
 synthesis and homily pass independent review after checking the expanded
-thematic argument, temporal prayer and the Judean flight. Final artifact
-and reader acceptance, installation, deployment and live verification
-are open.
+thematic argument, temporal prayer and the Judean flight. The three
+committed outputs pass artifact validation and native print compilation.
+The canonical reader passes independent source and desktop/mobile
+preview checks at its exact conversion hash. Its inspection is recorded
+in the leaf. The shared browser-product and release-binding verification,
+terminal acceptance, deployment and live verification are open.
 
 Detailed progress and limitations belong to
 `workflows/reviews/gpt-1962-68-production-2026-11-16/CYCLES.md`.

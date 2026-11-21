@@ -1718,3 +1718,31 @@ For review, the phrasing behind `SYN-GOSPEL-FLIGHT-AUDIENCE` also occurs in
 conditions of the flight can imply that the disciples who posed the question
 in Matthew are themselves the people told to flee. The distinction follows
 Mt 24:16 and Chrysostom's homily 76.1.
+
+
+## Renewed source and web publication, install-publication iteration 2
+
+In `proper-study` v19 run `13ecdd1552c245ea`, independent research review
+iteration 6 and source reviews for the expansive study (iteration 4), concise
+study (iteration 4), and homily (iteration 2) passed. Source artifact gates
+passed at iteration 2. The source entrypoints are `main.tex`, `synthesis.tex`
+and `homily.tex`, in the order declared by `publication.toml`.
+
+The canonical study passed independent web review iteration 3 on 20 November
+2026 (21 November 00:15:30 UTC). The reviewer compared the converted text with
+the canonical TeX, appointed-text audit, generated chronology and selected
+commentary loci, then sampled Chromium article previews at 1280 × 1000 and
+390 × 844. The generated Markdown, the independent review copy and a fresh
+conversion from the current sources agree byte for byte. The SHA-256 is
+`48adb1a4bbf78075f4276153ba2e3de9935a9fcc9a8d68530dfe29e45f03a951`,
+recorded in `research/web-artifact.json` and in the inspection in
+`web-edition.toml`. The review recorded advisories for the emphasis of later
+paragraphs in three Latin quotations and for the distinction between Jesus'
+hearers and the people in Judea told to flee in the two interpretations.
+The synthesis and homily web readers have converter fidelity checks.
+
+The three GPT editions retain their `alpha` decisions under
+`perpetual-public-repository-2026`. Row 68 in
+`library/traditional-latin-mass.md` links the three GPT readers in declared
+order and carries one GPT canonical publication marker. The three source
+outputs and their readers are the deliverables of this publication stage.

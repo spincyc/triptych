@@ -1252,7 +1252,7 @@ homily review iteration 2 pass. The reviewer retains local advisories on
 the Collect's wording and the study's distinction between Jesus's
 hearers and people in Judea.
 
-### Native print compilation of the reviewed sources
+### Native print compilation of the earlier source checkpoint
 
 The selected compilation of source checkpoint `898e6b42e6` passes two
 settled pdfTeX runs for each bundle. The expansive study has 26 pages, the
@@ -1261,3 +1261,33 @@ receipts are in `NATIVE-PRINT-2026-11-20/`. They cover compilation under
 the recorded host runtime. The receipts report the host's generated
 `pdftex.map` as the runtime member with different bytes. Visual layout
 inspection and the full Pages compilation are separate checks.
+
+### Native print compilation of the final source checkpoint
+
+All three selected bundles at source checkpoint `668307b5dd` compile
+in two settled pdfTeX passes. The expansive study has 25 pages, the
+concise study 10 and the homily 3. The exact portable summary and
+per-edition receipts are in `NATIVE-PRINT-FINAL-2026-11-20/`. The
+expansive study's generated chronology appears before its terminal
+apparatus, and the synthesis's separate opening-page proof is recorded
+above. The host compilation receipts retain the `pdftex.map` byte
+difference and cover the three selected bundles.
+
+### Final source artifact and reader conversion
+
+The source artifact worker and program gate confirm all four accepted
+source review seals, the three output identities, the typed entrypoints,
+and the generated 16-row chronology. The full study's revision resolves to
+`60877b3fb1` and both companions to `668307b5dd`, with all source closures
+committed. The canonical Markdown has 83,753 bytes and SHA-256
+`48adb1a4bbf78075f4276153ba2e3de9935a9fcc9a8d68530dfe29e45f03a951`.
+Conversion checks find both distinct four-sense lists, eleven appointed
+anchors and 62 source notes.
+
+Independent web review iteration 3 reproduces those exact bytes and
+accepts the canonical reader. It compares all 36 quotations and checks
+both tables, source notes, evidence relations and the terminal colophon.
+Chromium article previews at desktop and mobile widths verify chronology,
+the inventory and note navigation. The review records advisories on
+Latin quotation styling and the audience of the Judean flight warning.
+The current review proceeds to publication installation.

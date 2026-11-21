@@ -49,12 +49,12 @@ provider = "gpt"
 run_id = "13ecdd1552c245ea"
 workflow = "proper-study"
 workflow_version = 19
-stage = "homily-review"
-iteration = 2
+stage = "web-review"
+iteration = 3
 disposition = "PASS"
-standing = 1
+standing = 0
 accepted_count = 0
-advisory_count = 8
+advisory_count = 9
 observation_count = 0
 
 [[stages]]
@@ -107,24 +107,15 @@ observation_count = 0
 
 [[stages]]
 stage = "web-review"
-iteration = 2
-disposition = "CHANGES_REQUIRED"
+iteration = 3
+disposition = "PASS"
 run_id = "13ecdd1552c245ea"
 workflow = "proper-study"
 workflow_version = 19
-standing = 1
+standing = 0
 accepted_count = 0
-advisory_count = 1
+advisory_count = 2
 observation_count = 0
-
-[[findings]]
-stage = "web-review"
-id = "WEB-STUDY-RESTATEMENT-001"
-severity = "blocking"
-location = "sections/30-deliverance-and-waiting.tex lines 3–7, 44–51, 102–107, 119–124 and 137–142 (canonical Markdown lines 413, 425, 439, 445 and 449)"
-problem = "Several paragraphs in the first interpretation state a point and then restate it before moving the argument forward. The opening says three times that rescue has occurred and that endurance remains necessary. The Bellarmine paragraph explains the contrast in tense twice around the empty sentence ‘The difference concerns how the verse says what it says.’ The paragraph applying Jeremiah opens with an empty label and ends by generalizing the application it has just made. The paragraph on continuing prayer restates the need to grow after Chrysostom’s comparison with competitors, and the paragraph on Job states twice that joy can coexist with grief. The repeated summaries slow the development of an otherwise distinct argument, and they recur through the section under the editorial register criterion."
-required_result = "State each step once while retaining the concrete evidence, attribution and distinction between past rescue and future fulfilment. At lines 3–7, for example, write ‘Paul thanks the Father for rescuing the faithful from darkness and asks him to strengthen them so they can endure.’ At lines 44–51, write ‘Bellarmine hears the past tense as thanksgiving for rescues already received. The people who remember those rescues now lament a fresh affliction. On either account, the faithful can thank God while they suffer.’ The preceding paragraph already explains Augustine’s prophetic perfect. At lines 102–107, keep Jeremiah’s work in exile and its specific application to the Collect. At lines 119–124 and 137–142, let the competitors and Job supply the conclusions without repeating the points in general terms."
-repair_target = "study"
 
 [[advisories]]
 stage = "homily-review"
@@ -186,6 +177,14 @@ required_result = "Say that the Latin asks that the offerers come to desire heav
 stage = "web-review"
 id = "WEB-LATIN-QUOTATION-EMPHASIS-001"
 severity = "advisory"
-location = "sections/10-appointed-text.tex at proper-epistle, proper-gospel and proper-preface (canonical Markdown lines 95–97, 167–169 and 265–271)"
-problem = "The web renderer italicizes the opening paragraph only in each of the three multi-paragraph Latin quotations, even though the shared Latin quotation environment sets the entire block in italics. In the Gospel, for example, the introduction is italic and the whole lesson is upright. The Latin and English remain distinct quotations with complete wording, so the difference is typographic."
-required_result = "Apply the same Latin presentation to every paragraph in these quotation blocks while preserving the paragraph breaks and the separate labelled English quotations."
+location = "sections/10-appointed-text.tex at proper-epistle, proper-gospel and the dialogue under proper-preface (canonical Markdown lines 95–97, 167–169 and 265–271)"
+problem = "The renderer italicizes the first paragraph of these three Latin blocks. Their later paragraphs are upright even though the shared Latin environment italicizes the entire block. The browser preserves all words, paragraph breaks and separate English witness labels."
+required_result = "Apply the same Latin styling to every paragraph of these three blocks and preserve the paragraph breaks and separately labelled English quotations."
+
+[[advisories]]
+stage = "web-review"
+id = "WEB-JUDEAN-FLIGHT-AUDIENCE-001"
+severity = "advisory"
+location = "sections/30-deliverance-and-waiting.tex:114–115 and sections/40-prayer-and-conversion.tex:273–279 (canonical Markdown lines 451 and 553)"
+problem = "The two sentences imply that the disciples listening on Mount Olivet will themselves have to flee. Matthew 24:16 specifies the people in Judea, and Chrysostom explicitly distinguishes them from the apostles in Homily on Matthew 76.1. The appointed Gospel and the surrounding study correctly identify Judea."
+required_result = "Say that Jesus asks his hearers to pray that the Judean flight will fall neither in winter nor on the Sabbath. Retain the separate promise that the days will be shortened for the elect and the application to praying while danger lasts."
