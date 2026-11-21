@@ -1,181 +1,161 @@
 # Roman 1962 Seasonal Handbooks
 
-This profile governs handbooks for the liturgical seasons of the 1962 Roman
-Rite: works that prepare a reader to keep a season and accompany the reader
-through it. A handbook gives the season's meaning, its history, what its
-Sundays and proper days show, the Fathers' and the Scriptures' teaching on
-it, and the practice of prayer, penance and the sacraments it calls for. It
-does not govern the proper guides of the season's Masses
-(`guidance/liturgy/roman-1962-propers.md`), calendar inventories
-(`guidance/liturgy/roman-calendar-references.md`), assembly questions
-(`guidance/liturgy/roman-1962-assembly.md`) or discursive articles
-(`guidance/articles.md`). Universal evidence, voice, rights and metadata rules
-remain in `guidance/editorial.md`; paths and build rules in
-`guidance/repository.md`.
-
-The maintainer asked for the series on 2026-11-18, with Advent first and Lent
-to follow in 2027 at a larger scale. A handbook is study and spiritual reading,
-not a liturgical book, a directory of law, or a substitute for a confessor or
-spiritual director.
+A seasonal handbook is for someone who wants to understand the season of
+the Church year they are entering and to keep it at Mass, in the Hours and
+at home. Every volume gives a history of the season, an interpretation of
+its liturgy, spiritual counsel, and a course of readings and prayers for
+each week and each day. A reader opening the book halfway through the
+season should be able to begin that day.
 
 ## Collection identity
 
-- A leaf is `src/<provider>/liturgy/roman-rite/1962/seasons/<season>`, where
-  `<season>` is the season's English name in lower case (`advent`, `lent`).
-  The season is the one the 1962 books name; a handbook that spans more than one
-  (Lent with Passiontide, say) says so in its scope and title.
-- The kind is `seasonal-handbook-1962`. Its catalog home is
-  `library/traditional-latin-mass.md`, section "Seasonal Handbooks", one row per
-  season in liturgical-year order and with no two-digit ID cell (that pattern
-  belongs to the Proper of Time). The Sunday Propers Calendar may cue a handbook
-  without owning it: the Advent handbook, whose season opens that table, is cued
-  by one italic lead-in above the table, carrying a
-  `triptych-publication-reference` marker for each edition link, and a ◇ note after the † and §
-  notes
-  ([reader list presentation](roman-1962-propers.md#reader-list-presentation)).
-  The cue for a later season is decided when that handbook is added.
-- A leaf is on the `liturgy-reference-v1`
-  [document type](../document-schemas.md#document-types): its `[document]`
-  table declares the title lines, the body and apparatus section lists, and
-  its options (endnotes where the handbook uses notes).
-- Identify the work by the 1962 books and their rubrics (1960 *Codex
-  Rubricarum*), the universal calendar, and any named territorial layer.
+A publication lives at `src/<provider>/liturgy/roman-rite/1962/seasons/<season>`.
+Use the lower-case English season name and identify the books, calendar,
+territorial scope and any subdivisions covered. The universal reference is
+the 1962 Roman Rite under the 1960 *Codex Rubricarum*. The provider's leaf
+uses the `seasonal-handbook-1962` kind and the `liturgy-reference-v1`
+document type. Its manifest owns the title, ordered body and apparatus.
+The [editorial standard](../editorial.md), [repository guidance](../repository.md),
+[document schemas](../document-schemas.md) and [source policy](../sources.md) apply.
 
-## Governing priorities
+List the seasons in liturgical order under “Seasonal Handbooks” in
+`library/traditional-latin-mass.md`. Each row identifies the season,
+its opening day, and the available provider editions. Advent also has an
+italic cue above the Sunday Propers Calendar, with a
+`triptych-publication-reference` for each edition and a ◇ note after † and §.
+The [Proper of Time profile](roman-1962-propers.md#reader-list-presentation)
+owns that presentation. Keep the published reader paths stable.
 
-1. Write to a believer preparing to keep the season, with the gravity of
-   what it prepares for (`guidance/editorial.md`, "Write to the reader with
-   gravity and wonder").
-2. Let the liturgy, Scripture and the Fathers teach, at length and at their
-   best. A major Father is expounded in his own words, not listed.
-3. Lead the season into the feast it prepares: Advent ends at the manger,
-   Lent at the empty tomb.
-4. Own the season, not its Masses; give the reader something to do each day.
-5. Keep law, custom and counsel distinct and accurate, without letting the
-   law's apparatus displace the teaching.
+## Historical analysis
 
-Give each subject as much space as its sources and teaching warrant. A
-reader can keep the daily rule while reading the full study in stages.
-When preparing a synopsis, draw its teaching and citations from the
-reviewed full study.
+Build the account around questions the evidence can answer. When and where
+is the feast attested? When do identifiable preparations, cycles of Sundays
+or sequences of lessons appear? What did Christians in different churches
+actually do, and how did a particular Roman order come down to the books of
+1962? For seasons with several phases, carry the history of each far enough
+to explain what the reader encounters.
 
-## Boundary with the proper guides
+Put dated witnesses in conversation. A calendar establishes an observance
+in a community, a council can prescribe attendance, a sermon can tell what
+a preacher asked of his hearers, and a sacramentary or antiphoner can bear
+witness to a prayer or chant in its place. Identify the place, approximate
+date, genre and limits of the evidence. Distinguish the date of a surviving
+copy from the date proposed for its contents. Follow significant changes
+of duration, texts, rank, discipline and custom to the 1962 horizon.
+Give rival explanations and gaps their due. Show at least one continuity
+and, where the books differ, let the reader see what changed.
 
-The proper guides own each formulary: its texts, components, senses,
-chronology and homily. For each Sunday and proper day a handbook gives the
-station, the governing text or two at incipit length (a collect may be quoted
-whole), the day's place in the season's movement, and a patristic reading of
-it. It prints no complete proper and no component inventory, and it does not
-link a proper guide that is not yet published. Where another catalog's work
-serves the season (the Four Last Things essays for Advent), the handbook names
-it and does not restate it.
+## Liturgical analysis
 
-## Law, custom and counsel
+Begin with the boundaries given in the books, including the Hours at which
+the season opens and closes. Trace its movement through all Sundays, proper
+weekdays, vigils, octaves or Ember Days that belong to it. Explain how the
+ordinary ferias inherit the week's liturgy and how fixed feasts and movable
+days meet. Use the [calendar computation guidance](calendar-computation.md)
+and the relevant rubrics for occurrences and commemorations. Identify any
+territorial layer used.
 
-Every statement about fasting, abstinence, precept or closed times names its
-body of law, territory and date, and keeps three things apart:
+Read the Missal together with the Breviary. Follow a petition from the
+collect into the lessons or chants, a prophetic reading into the Gospel,
+or a word heard at Mass into a responsory or an antiphon of the Hours.
+Explain what that relation asks the congregation to hear or do. Introduce
+the books, the names of the Hours and the Roman stations when they first
+matter. Give Latin incipits with their sense in the sentence. Name the
+book, edition and precise locus for an appointment. An earlier Breviary
+can furnish a historical reading or an English prayer, while the 1962
+books govern the day's observance.
 
-| Kind | Example | How it is written |
-| --- | --- | --- |
-| Law | the 1917 Code's fast days; the 1983 Code's penitential days | stated with canon, territory and as-of date; the 1962-horizon law and the law now are never merged |
-| Custom | St Martin's Lent; the Rorate Mass at dawn | attributed to its documented time and place |
-| Counsel | a graded rule of life | written as advice to the reader; the word on prudence and direction is said once, where the rule of life begins |
+Each Sunday and group of proper days should have room for sustained
+exposition. Give the station where relevant, a governing text or two at
+incipit length, and a Father's reading of the mystery. A collect can be
+quoted whole when its witness and publication rights allow. The
+[proper guides](roman-1962-propers.md) own the full formularies,
+component inventories and individual homilies.
 
-A historical fast is not presented as a present obligation, and a present
-freedom is not presented as the tradition's whole teaching. In the body, law
-is stated briefly where the reader acts on it (a short table or note in the
-fasting chapter); the canons, territories and dates in full belong to the
-scope appendix.
+## Fathers, popes and spiritual writers
 
-## Witnesses and texts
+Let Scripture set the question and give the reader enough of a writer's
+argument to follow the answer. Draw on a range of Greek and Latin Fathers,
+the preaching and teaching of several popes, saints from different
+centuries and callings, and other renowned spiritual authors. Seek the
+voices of women and of Christians addressing households as well as clergy
+and monastics. Choose each work for what it illuminates. Give an author
+room to reason from a phrase, an image or a difficulty in the text, then
+show how another witness deepens the reading or gives it a different
+emphasis. A bibliography alone cannot do this work.
 
-- The Fathers and Doctors speak at length in identified human translations.
-  Latin is translated in the sentence where it stands, never under a label;
-  where the translation is the handbook's own, the scope appendix says so once.
-  English Scripture comes from a registered public-domain witness.
-- In the body a quotation carries its author and work with the place, in
-  short form; edition, translator and page are in the references, and each
-  prayer's witness is named there against the prayer.
-- Every text offered for prayer reproduces an identified received witness
-  (`guidance/editorial.md`, "Rights, quotation, and received prayer"); where
-  no public-domain English exists, the Latin stands alone.
-- A devotion's origin is stated as documented, once, without inflating its
-  antiquity or debunking it.
-- Quotations are checked against held bytes in the source library; whole
-  public-domain texts a handbook relies on are acquired there under
-  `guidance/sources.md`.
+Identify the writing and its genre. A pope preaching to his congregation,
+a pope teaching in an encyclical, a Father whose homily is read at Matins,
+and an author counseling a particular correspondent speak in different
+settings. Explain those settings wherever they change the sense or
+authority of a passage. Later spiritual writing can teach someone how to
+pray an ancient text without supplying evidence for its origin. Use
+identified human translations. Cite work and locus beside the reading,
+and edition, translator and page in the references. Check quoted words
+against held witnesses and paraphrase rights-restricted texts.
 
-## Reader-facing order
+## Weekly and daily use
 
-Title, contents, then four parts and the apparatus. The book opens with a
-short word to the reader (how to use it, in one paragraph) and then on the
-season itself. The practical part comes before the weeks, because the reader
-makes a rule and plans confession before the season begins; the book ends on
-the eve of the feast, so that the last thing read is the threshold of what the
-season prepares. The blind reader review of the second Advent draft found the
-earlier order (keeping the season last, after the feast) sent the reader from
-Bethlehem back to the first week.
+Open with a short invitation that sends an early reader to the first week
+and a latecomer to today. Before the weekly chapters, help the reader
+choose a time and place for prayer, read Scripture slowly, intercede for a
+person, and carry the fruit into work, charity and sacramental life.
+Offer a short and a fuller way to keep the same rule, and a way to begin
+again after a missed day. Adapt counsel to the sick, the bereaved, and
+those praying alone or with children as the subject calls for it.
 
-1. **The season**: what the Church is waiting for or turning from, and why;
-   the season's name, its theology in the Fathers, and its history told as a
-   story. The Hours, the Breviary and Missal, and the Bible translation used
-   are explained in plain words before the book relies on them.
-2. **Keeping the season**: watching, prayer, fasting and almsgiving, a
-   graded rule of life and confession, with one counsel on each practical
-   question (when to confess, what to give) said once and held to
-   throughout.
-3. **Through the season**: one chapter per Sunday and proper day or group of
-   days, in liturgical order, each walking the reader through what the Church
-   sings and reads that week and what the Fathers saw in it, with the week's
-   practice folded in.
-4. **Toward the feast**: the mysteries of the feast the season prepares,
-   read from the Fathers and the feast's own texts at incipit length, so that
-   the reader arrives ready (for Advent: Bethlehem, the manger, the swaddling
-   bands and the wonderful exchange), ending with the eve and night of the
-   feast. It does not become a handbook for the next season.
+Give **each week** a Scripture reading, a located reading from the
+tradition, a received prayer, and a concrete practice drawn from the
+week's liturgy. Give **each occurring day** an identifiable Scripture
+passage, a patristic or other spiritual reading with a usable locus, and a
+specific prayer the reader can actually say. Print the prayer in the book
+or direct the reader to its exact place in a named accessible witness.
+A psalm or canticle given by verse can itself be the prayer. Repetition
+can teach a collect by heart. Explain why it is worth praying through
+the week. A question to consider can help the reader enter prayer.
 
-Appendices: a daily reading table keyed to the season's weeks and days (dated
-where the 1962 books date them), with the Office's Scripture lesson or a stated
-course and one patristic reading with locus; prayers of the season; a short
-appendix about the book (titled for the reader, such as "About This Book")
-that states plainly which books and translations were used, the law then and
-now, and what the book leaves out, without a record of what was searched for
-or not found (that belongs in `research/source-audit.md`); references. The daily table is computed from the
-books, not from one civil year, so it serves every year the season's length
-allows; a worked year may be named in the scope appendix.
+Mark the difference between what is appointed at Mass or in the Office and
+the course chosen for home. Use recurring weekdays and fixed dates. Give
+one clear route through shortened weeks, feasts, vigils and overlaps, and
+say what to do when a date displaces the usual reading. Keep the underlying
+plan usable throughout the calendar cycle. If a worked year helps, put it
+in the scope appendix. Check the earliest and latest openings and every
+distinct occurrence the instructions treat differently.
 
-## Craft
+## Prayer, law and custom
 
-The first Advent draft failed on register, not on facts
-(`src/claude/liturgy/roman-rite/1962/seasons/advent/research/cold-review.md`).
-A handbook is built so that it cannot fail that way again:
+Use Scripture from a registered public-domain witness. Every prayer
+offered as a text for recitation must reproduce an identified received
+witness. Name the witness of each prayer and observe its rights. Where
+only the Latin can be reproduced, print that text and identify an
+accessible received translation when available. A suggested intention
+or act of mercy may accompany a prayer. Explain a devotion's origin
+where it first helps the reader.
 
-- The plan in `research/scope.md` names, for each chapter, the moment that
-  will stop the reader (a Father's saying, a fact of the texts, a coincidence
-  the books themselves make) and its source, before any prose is written. A
-  chapter without one is replanned, not padded.
-- Each chapter teaches one thing in order and hands the reader to the next.
-  Nothing is introduced twice; no closing label recurs from chapter to
-  chapter.
-- Read the rule of life as a person about to try it tomorrow. Give a time
-  tied to an ordinary part of the day, a prayer or passage the reader can
-  find, and a way to resume after a missed day. Give more time and fuller
-  prayer as ways of keeping the same rule.
-- Dates of a particular year, page references and editions stay out of the
-  body; the daily table and the appendix hold them.
+Every statement about fasting, abstinence, precept or closed times needs
+a body of law, territory and date. State what applied in the historical
+period, what the 1962 worshipper encountered, and what governs the reader
+now. Give the short practical answer where needed and the full canons and
+territorial authority in the scope appendix. Identify local customs by
+time and place and present personal disciplines as counsel.
 
-## Required records
+## Shape of a volume and review
 
-Each leaf keeps `research/scope.md` (plan and boundary),
-`research/source-audit.md` (claim-to-source matrix and quotation checks),
-`research/source-bindings.toml`, and the record of its cold review.
+Put the short word to the reader first, then the theology and history,
+then preparation for prayer and the sacraments. Walk through the weeks in
+order and end the body at the season's liturgical threshold. For Advent
+this is the Vigil and the holy night, with the Fathers on Bethlehem, the
+manger, the swaddling bands and the wonderful exchange. For a festal
+season, unfold the feast and its observance through the conclusion given
+by its books. Keep the daily course, prayer texts, scope and references
+easy to find. A synopsis draws its teaching from the reviewed full study.
 
-## Profile gate
-
-Every quotation resolves to a held witness at an exact locus; every prayer
-text to a received witness; every law statement to a body of law, territory
-and date; the per-Sunday chapters stay inside the boundary above; a cold
-review has checked attribution and accuracy; and a reader review, by a
-reviewer who has not seen the production, has read the whole as its reader
-would against `guidance/editorial.md`, "Write to the reader with gravity and
-wonder", with every reported passage rewritten.
+Keep `research/scope.md` (boundaries, chapter plan and the passage that
+makes each chapter worth reading), `research/source-audit.md` (claims,
+exact loci, quotation checks and limits), `research/source-bindings.toml`,
+and `research/cold-review.md`. The academic and devotional claims are
+reviewed against their sources. A fresh reader reads the whole in order
+and tries a week and a day, including an overlap, with only what the
+publication gives them. Record and resolve the findings, check the
+generated reader, and follow the repository's print review contract when
+issuing a print edition.
