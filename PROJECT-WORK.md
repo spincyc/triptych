@@ -11,7 +11,7 @@ Last reconciled: 2026-11-20.
 
 <!-- promised-deliverable: gpt-1962-68-production-2026-11-16 -->
 
-**In progress.** On 16 November 2026 the maintainer requested the upcoming
+**Complete.** On 16 November 2026 the maintainer requested the upcoming
 Sunday's 1962 propers documents, reconciliation and publication to main.
 The calendar computation identifies 22 November as the Twenty-fourth and Last
 Sunday after Pentecost, permanent identity `68`; the workflow must independently
@@ -180,8 +180,27 @@ verification, terminal publication gate iteration 3 passes and refreshed
 proper-study v19 run `13ecdd1552c245ea` reaches **ACCEPTED**.
 The renewed run archive preserves 91 packets and 91 results verbatim
 and reproduces byte for byte. All 413 pre-existing native files retain
-their exact bytes. The committed-input deployment checks and live
-verification are open.
+their exact bytes. The current three native print bundles pass two
+settled compilation runs each, at 25, 10 and 3 pages.
+
+The committed discovery indexes verify 84,005 files and 59,285
+records. At `c2fe9fd10acb234937e9e30266eabd7a0252c1c8`, the
+complete local Pages build and GitHub Pages target verification pass.
+The independent release check reports zero stale bindings. The
+publication advances `origin/main` from `43afdcae97` to `c2fe9fd10a`
+as a fast-forward. Build, print compilation and deployment all pass.
+[GitHub Pages run 44868582984](https://github.com/spincyc/triptych/actions/runs/44868582984).
+
+At 06:30 UTC on 21 November 2026, all three live reader responses
+and the Traditional Latin Mass catalog match the verified local files
+byte for byte. The deployed checksum inventory has 46,118 entries.
+The live and local inventories differ on three SVG figures outside
+these readers. Each hash below agrees with the local inventory and
+the fetched HTML.
+
+- Full study — `a23b13cb01be76e479bb46adcea6fd0b199f9cc2a03ec21a048a98175e88dd93`.
+- Synthesis — `08f1d01f5029c743934b0136dd3a1629fad3ef88199b526457b3c16c7c4bc355`.
+- Homily — `64538c423a85858800132eb5c09eab352fbd3968a25bc8456447ee44b6195534`.
 
 Detailed progress and limitations belong to
 `workflows/reviews/gpt-1962-68-production-2026-11-16/CYCLES.md`.
