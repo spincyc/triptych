@@ -1291,3 +1291,20 @@ Chromium article previews at desktop and mobile widths verify chronology,
 the inventory and note navigation. The review records advisories on
 Latin quotation styling and the audience of the Judean flight warning.
 The current review proceeds to publication installation.
+
+The installation worker records that inspection and reproduces the
+canonical conversion independently. It checks the three existing alpha
+records, the canonical marker and the ordered catalog links, then verifies
+all three reader conversions and all five review seals. Those leaf
+records and the final selected-print receipts are committed in
+`c85f91571f`. The full source gate passes 47 tests, both provider
+inventories and the family ledger. Complete browser-product recording
+and independent verification agree on 13 families, 29,977 files and
+268,763,229 bytes. All 14 calendar tests pass against that descriptor.
+
+The scoped release refresh includes both deleted Ordo paths in its
+outgoing path list. It records 25,518 site bindings, adopting 135 paths,
+retiring the two former Ordo paths and updating eleven existing hashes.
+The comparison confirms every moved binding against its exact file and
+preserves the other authorization fields. The rights record changes its
+generated inventory digest.
