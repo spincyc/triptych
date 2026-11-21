@@ -260,7 +260,7 @@ class ShardChecks(Workspace):
             gate.site_key(self.site, REVISION)
 
 
-@unittest.skipUnless(have("pdflatex", "pdfinfo"), "host pdfTeX and poppler are required")
+@unittest.skipUnless(have("pdflatex", "kpsewhich", "pdfinfo"), "host pdfTeX and poppler are required")
 class PdfTeXGate(Workspace):
     def test_synthetic_bundle_compiles_from_its_bundle_and_runtime_alone(self):
         self.prepare()
@@ -288,6 +288,16 @@ class PdfTeXGate(Workspace):
         self.assertEqual(summary["status"], "fail")
         self.assertTrue(any(problem.startswith("opened a file outside the bundle and the runtime: ")
                             and problem.endswith("/size10.clo") for problem in receipt["problems"]), receipt)
+
+    def test_external_font_alias_map_still_fails_closure(self):
+        # Explicitly open it even on hosts that do not consult an alias map automatically.
+        alias = self.work / "texfonts.map"
+        alias.write_text("% host font aliases\n", encoding="utf-8")
+        source = (r'\openin0="' + str(alias) + r'"\relax\closein0').encode()
+        self.prepare(GOOD.replace(b"\\begin{document}", source + b"\n\\begin{document}"))
+        summary, (receipt,) = self.compile()
+        self.assertEqual(summary["status"], "fail")
+        self.assertIn(f"opened a file outside the bundle and the runtime: {alias}", receipt["problems"])
 
     def test_work_tree_file_outside_the_bundle_is_a_closure_violation(self):
         index = self.prepare(b"\\documentclass{article}\n" + LMODERN + b"\\begin{document}\n\\input{stray}\n\\end{document}\n")

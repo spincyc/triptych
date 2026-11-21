@@ -401,6 +401,8 @@ class Gate:
         maximum = edition["options"]["max_passes"]
         minimum = edition["options"]["minimum_passes"]
         extra = {"SOURCE_DATE_EPOCH": str(environment["SOURCE_DATE_EPOCH"])}
+        if engine == "pdftex":
+            extra["TEXFONTMAPS"] = os.pathsep.join((".", str(self.out / "pdftex-maps")))
         if "TEXINPUTS" in edition["environment"]:
             extra["TEXINPUTS"] = edition["environment"]["TEXINPUTS"]
         if engine == "xetex":
@@ -497,6 +499,22 @@ class Gate:
         return receipt
 
 
+def _pdftex_maps(out: Path, runtime: dict) -> None:
+    """Expose the runtime's map names without importing host-only font aliases."""
+    directory = out / "pdftex-maps"
+    directory.mkdir()
+    map_format = EXTENSION_FORMATS[".map"]
+    names = [name for name, member in runtime["members"].items() if map_format in member["formats"]]
+    if names:
+        found = subprocess.run(["kpsewhich", "--progname=pdflatex", "--format=map", *names],
+                               cwd=directory, env=_clean_environment({}), capture_output=True, text=True,
+                               timeout=300).stdout.splitlines()
+        for path in sorted(set(map(Path, found))):
+            member = runtime_member(runtime, path.name)
+            if member and map_format in member["formats"] and path.is_absolute():
+                (directory / path.name).symlink_to(path)
+
+
 def _fonts(out: Path, runtime: dict) -> int:
     """A fontconfig world holding only the runtime's OpenType faces, by name."""
     fonts = out / "fonts"
@@ -557,8 +575,12 @@ def compile_all(out: Path, *, runtime_path: Path, jobs: int) -> dict:
     runtime = load_runtime(runtime_path)
     engines = sorted({edition["engine"] for edition in editions.values()})
     required = [ENGINES[engine] for engine in engines] + ["pdfinfo"] + (["xdvipdfmx"] if "xetex" in engines else [])
+    if "pdftex" in engines:
+        required.append("kpsewhich")
     missing = [binary for binary in required if not shutil.which(binary)]
     _need(not missing, "missing TeX toolchain programs: " + ", ".join(missing))
+    if "pdftex" in engines:
+        _pdftex_maps(out, runtime)
     located = _fonts(out, runtime)
     (out / "receipts").mkdir()
     gate = Gate(out, runtime)
