@@ -1308,3 +1308,17 @@ retiring the two former Ordo paths and updating eleven existing hashes.
 The comparison confirms every moved binding against its exact file and
 preserves the other authorization fields. The rights record changes its
 generated inventory digest.
+
+The terminal gate's publication schema, public-alpha, document catalog
+and three web-edition checks pass. Its release status check identifies
+21 still-unrecorded dependencies because the scoped path list counted
+edited files and omitted already-tracked records newly used by the site.
+All 21 files match the accepted research seal and upstream bytes. They
+cover the Holy See rights inventory, Lasance Preface and oration proofs,
+the Oxford English Catena metadata and the three Latin oration passages.
+The next installation pass takes those exact paths from the gate log.
+The coordinator and installation worker trace 15 direct dependencies
+and six ancestors in the source-binding closure. The owning release tool
+adopts those exact 21 paths. The resulting 25,539 bindings preserve the
+25,518 prior entries and the other authorization fields. The next
+terminal gate rechecks the complete release.
