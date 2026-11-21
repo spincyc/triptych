@@ -542,9 +542,15 @@ class DriverConversionTests(unittest.TestCase):
                 "\\fi\n",
                 encoding="utf-8",
             )
-            with mock.patch.object(DRIVER, "SRC", root / "src"), mock.patch.object(
-                    DRIVER, "edition_revision", return_value="2026-08-16T00:00:00Z"):
+            from _document_types import Assembly
+            assembly = Assembly(root)
+            with mock.patch.object(DRIVER, "SRC", root / "src"), \
+                    mock.patch("_document_types.Assembly", return_value=assembly) as construct, \
+                    mock.patch("_edition_revision.revision_for_entrypoint") as revision:
+                revision.return_value.display = "2026-08-16T00:00:00Z"
                 written = DRIVER.convert("gpt", "doc", out=root / "out")
+            construct.assert_called_once_with(root)
+            self.assertIs(revision.call_args.kwargs["assembly"], assembly)
             output = written.read_text(encoding="utf-8")
             self.assertIn("Complete textual equivalent.", output)
             self.assertNotIn("print only", output)

@@ -3175,12 +3175,12 @@ def audit_output(
     return failures
 
 
-def edition_revision(provider: str, entry: Path) -> str:
+def edition_revision(provider: str, entry: Path, *, assembly=None) -> str:
     """The edition's derived "Last revised" value; scripts/_edition_revision.py owns the rule."""
     from _edition_revision import RevisionError, revision_for_entrypoint
     try:
         return revision_for_entrypoint(SRC.parent, provider, entry,
-                                       repository=_SHARED.get("repository")).display
+                                       repository=_SHARED.get("repository"), assembly=assembly).display
     except (RevisionError, ValueError) as exc:
         raise ConversionError(f"cannot derive the revision stamp: {exc}") from exc
 
@@ -3323,7 +3323,7 @@ def convert_markdown(provider: str, leaf: str, *, selected: dict | None = None,
         body += "\n\\TriptychRightsNotice\n"
     # The stamp is derived, not tracked: print it where the metadata record
     # is read, as the PDF does, or else just before the rights colophon.
-    stamp = f"\\AIDocumentRevisionTimestamp{{{edition_revision(provider, main)}}}\n"
+    stamp = f"\\AIDocumentRevisionTimestamp{{{edition_revision(provider, main, assembly=assembly)}}}\n"
     at = body.find(r"\AIGenerationProvenance")
     at = at if at >= 0 else body.find(r"\TriptychRightsNotice")
     body = body[:at] + stamp + body[at:]
