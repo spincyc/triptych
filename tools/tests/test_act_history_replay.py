@@ -166,5 +166,80 @@ class ActHistoryReplayTests(unittest.TestCase):
                 replay._replay(self.root, self.root / replay.SCRATCH / "cold-data")
 
 
+class ReplayGraphTests(unittest.TestCase):
+    def setUp(self):
+        import _eucharistic_texts as texts
+        from test_eucharistic_history import library_edition
+        self.texts = texts
+        self.root = Path(self.enterContext(tempfile.TemporaryDirectory()))
+        self.edition = "edition.library-link"
+        self.path = library_edition(self.root, self.edition)
+        work = self.root / "src/sources/works/test/library-link/work.toml"
+        with work.open("a") as stream:
+            stream.write('languages=["la"]\n')
+        self.module = texts._library_module()
+        self.enterContext(mock.patch.object(self.module, "LIBRARY_CACHE_FLOOR", 1))
+        self.enterContext(mock.patch.dict(os.environ, {
+            "TRIPTYCH_LIBRARY_CACHE": "1",
+            "TRIPTYCH_LIBRARY_CACHE_DIR": str(self.root / "private-graph-cache"),
+        }))
+        self.load = self.enterContext(mock.patch.object(self.module, "load_library", wraps=self.module.load_library))
+
+    def sources(self):
+        return self.texts._Sources(self.root, self.texts._load_library(self.root))
+
+    def test_replay_shares_only_the_checked_graph_and_preserves_each_receipt(self):
+        ordinary = self.sources()
+        ordinary.use(self.edition)
+        for index in range(2):
+            with replay._fresh_caches(SimpleNamespace(ROOT=self.root), self.root / f"proof-{index}"):
+                first = self.sources()
+                first.use(self.edition)
+                first.use("work.library-link")["languages"].append("local adapter edit")
+                second = self.sources()
+                self.assertIs(first.library, second.library)
+                self.assertEqual((set(), {}), (second.used, second.inputs))
+                second.use(self.edition)
+                self.assertEqual(second.use("work.library-link")["languages"], ["la"])
+                self.assertEqual(second.metadata(), ordinary.metadata())
+                self.assertEqual(second.inputs, ordinary.inputs)
+        self.assertIsNot(self.sources().library, second.library)
+        self.assertEqual(self.load.call_count, 4)
+
+    def test_membership_is_revalidated_before_success_and_after_failure(self):
+        unknown = self.root / "src/sources/works/orphan.toml"
+        with self.assertRaisesRegex(self.texts.AdapterError, "membership or inputs changed"):
+            with self.texts.replay_library(self.root):
+                self.sources()
+                unknown.write_text('schema=1\n')
+        with self.assertRaisesRegex(self.texts.AdapterError, "Source library prevents text export"):
+            self.sources()
+        unknown.unlink()
+        self.assertIn(self.edition, self.sources().library.records)
+
+    def test_exact_manifest_refuses_same_size_restored_mtime_edits(self):
+        initial = self.path.read_bytes()
+        changed = initial.replace(b"Synthetic edition", b"Different edition")
+        self.assertEqual(len(initial), len(changed))
+        for timing in ("before first use", "after last use"):
+            with self.subTest(timing=timing):
+                self.path.write_bytes(initial)
+                old = self.path.stat()
+                with self.assertRaisesRegex(self.texts.AdapterError, "Source manifest changed"):
+                    with self.texts.replay_library(self.root):
+                        sources = self.sources()
+                        if timing == "after last use":
+                            sources.use(self.edition)
+                        self.path.write_bytes(changed)
+                        os.utime(self.path, ns=(old.st_atime_ns, old.st_mtime_ns))
+                        if timing == "before first use":
+                            sources.use(self.edition)
+
+    def test_sparse_or_disabled_disk_cache_retains_normal_validation(self):
+        with mock.patch.object(self.module, "LIBRARY_CACHE_FLOOR", 1000), self.texts.replay_library(self.root):
+            self.assertIsNot(self.sources().library, self.sources().library)
+        self.assertEqual(self.load.call_count, 2)
+
+
 if __name__ == "__main__":
     unittest.main()
