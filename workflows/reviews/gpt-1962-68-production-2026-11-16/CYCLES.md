@@ -1337,3 +1337,12 @@ identity and terminal result hash are in
 The refreshed GPT inventory validates 157 publications and 3,888
 source-surface files. The family ledger again validates with 169
 units pending.
+
+Two cold post-archive product builds agree, and the independent check
+verifies all 13 families. The archive changes the input commitments of
+act history, documents, propers, sources and web editions. Each of the
+29,977 output files keeps its exact former hash and size. The resulting
+product identity is
+`b832566663ee8855e11e7515d533c2d1946d6d5941f233f146ccadbc74720ce4`.
+The scoped binding refresh records the new browser descriptor. The
+comparison confirms all 25,538 other bindings and authorization fields.
