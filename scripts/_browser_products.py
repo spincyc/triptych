@@ -343,7 +343,7 @@ def _input_hashes(root: Path, names: set[str]) -> dict:
     return values
 
 
-def _identity_batch(root: Path, recipes=None) -> dict:
+def _identity_batch(root: Path, recipes=None, *, capture_files=None) -> dict:
     """One fresh content-hash pass for overlapping family closures per phase."""
     root = _safe_directory(root)
     recipes = _recipes() if recipes is None else recipes
@@ -401,6 +401,13 @@ def _identity_batch(root: Path, recipes=None) -> dict:
         raise ProductError("canonical input membership changed while hashing")
     for name in sorted({name for marked in markers.values() for name in marked} - categories.keys()):
         categories[name] = _component(name)
+    # Supply optional build-only recovery with already hashed canonical bytes.
+    # External witnesses and normalized release-policy rows have different
+    # identity semantics and cannot stand for a raw input fingerprint.
+    for family, records in (capture_files or {}).items():
+        records.update((name, values[name]) for name in memberships.get(family, ())
+                       if name not in external and name != "release/public-alpha.json"
+                       and not name.startswith("release/rights/"))
     result = {}
     for key, members in memberships.items():
         components = {category: [] for category in ("content", "rights", "generator", "lock")}
@@ -654,8 +661,8 @@ def _compare(actual, expected):
     raise ProductError(f"browser product bytes/membership differ (missing={missing[:4]}, extra={extra[:4]}, changed={changed[:4]}); remove the corrupt exact cache entry and run `browser-products build`, or review inputs and explicitly `browser-products record`")
 
 
-def _current(root, manifest):
-    current = _identity_batch(root)
+def _current(root, manifest, *, capture_files=None):
+    current = _identity_batch(root, capture_files=capture_files)
     stale = sorted(product["id"] for product in manifest["products"] if product["inputs"] != _commitment(current[product["id"]]))
     if stale or manifest["inputs"] != _commitment(current[None]):
         raise ProductError(f"browser product inputs changed ({', '.join(stale) or 'aggregate'}); review source/rights/code changes and run `browser-products record` explicitly")
@@ -985,6 +992,90 @@ def _reuse_candidate(root, product, entries, cache_root):
     return False
 
 
+def _candidate_family_data(cache_root, key, prefix):
+    """Select a single-family directory; matching payloads still require full verification."""
+    path = _absolute(cache_root) / key / "data"
+    try:
+        for part in prefix:
+            with safe_files._open_directory(Path("/"), path.as_posix().lstrip("/")) as directory:
+                if set(os.listdir(directory)) != {part}:
+                    return None
+            path = path / part
+    except FileNotFoundError:
+        return None
+    except (OSError, safe_files.SafeFileError) as error:
+        raise ProductError(f"unsafe browser candidate directory: {key}") from error
+    return _cache_entry_data(cache_root, key)
+
+
+def _refresh_history_fingerprints(body: bytes, name: str, inputs: dict) -> bytes | None:
+    """Propose bytes for a current proof. Candidate paths never select file reads."""
+    try:
+        payload = _decode(body)
+        if not isinstance(payload, dict):
+            return None
+        groups = [payload.get("inputs")]
+        if name.endswith("/catalogue.json"):
+            stages = payload.get("stage_history")
+            if not isinstance(stages, dict):
+                return None
+            groups.append(stages.get("inputs"))
+        else:
+            groups.append(payload.get("tool_inputs"))
+        for rows in groups:
+            if not isinstance(rows, list):
+                return None
+            for row in rows:
+                if not isinstance(row, dict) or not isinstance(row.get("path"), str):
+                    return None
+                record = inputs.get(row["path"])
+                if record is not None and set(row) == {"path", "sha256", "byte_size"}:
+                    row.update(sha256=record["sha256"], byte_size=record["bytes"])
+        # The history producer uses two-space JSON. Formatting changes are
+        # ordinary misses, since the current proof checks the complete bytes.
+        return (json.dumps(payload, ensure_ascii=False, sort_keys=True, indent=2) + "\n").encode()
+    except (ProductError, RecursionError, UnicodeError):
+        return None
+
+
+def _recover_history_candidate(root, product, entries, cache_root, inputs):
+    """Try complete previous families before running the canonical cold replay."""
+    cache = cache_directory(root, cache_root)
+    wanted = product["files"]
+    for key, hint in sorted(entries.items()):
+        if hint["count"] != len(wanted):
+            continue
+        data = _candidate_family_data(cache, key, ("structure", "act-history"))
+        if data is None:
+            continue
+        previous = validate_candidate_entry(cache, key, hint)
+        if previous.keys() != wanted.keys():
+            continue
+        changed = [name for name in wanted if previous[name] != wanted[name]]
+        if any(not re.fullmatch(r"structure/act-history/(?:catalogue|comparisons/[a-z0-9-]+)\.json", name)
+               or previous[name]["bytes"] > 2 * wanted[name]["bytes"] for name in changed):
+            continue
+        with tempfile.TemporaryDirectory(prefix="history-", dir=_scratch(root)) as temporary:
+            snapshot = Path(temporary)
+            for name in changed:
+                before = _read(data, name)
+                if {"sha256": _sha(before), "bytes": len(before)} != previous[name]:
+                    raise ProductError(f"candidate history changed while reading: {name}")
+                after = _refresh_history_fingerprints(before, name, inputs)
+                if after is None or {"sha256": _sha(after), "bytes": len(after)} != wanted[name]:
+                    break
+                target = snapshot / name
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_bytes(after)
+            else:
+                exact = {name: value for name, value in wanted.items() if previous[name] == value}
+                _copy_product_files(data, exact, snapshot)
+                _compare(_inventory(_cache_entry_data(cache, key)), previous)
+                _install(root, product, cache_root, [(snapshot, wanted)])
+                return True
+    return False
+
+
 def _reusable_web_editions(product: dict, cache_root: Path, entries: dict) -> dict[str, bytes]:
     """Read only editions whose exact bytes have a current cold-build proof."""
     wanted = dict(product["files"])
@@ -993,16 +1084,9 @@ def _reusable_web_editions(product: dict, cache_root: Path, entries: dict) -> di
     for key in sorted(entries):
         # A family owns only web-editions/. The aggregate and other families
         # are unrelated, as are hints whose entry has already been evicted.
-        data = _absolute(cache_root) / key / "data"
-        try:
-            with safe_files._open_directory(Path("/"), data.as_posix().lstrip("/")) as directory:
-                if set(os.listdir(directory)) != {"web-editions"}:
-                    continue
-        except FileNotFoundError:
+        data = _candidate_family_data(cache_root, key, ("web-editions",))
+        if data is None:
             continue
-        except (OSError, safe_files.SafeFileError) as error:
-            raise ProductError(f"unsafe browser candidate directory: {key}") from error
-        data = _cache_entry_data(cache_root, key)
         inventory = validate_candidate_entry(cache_root, key, entries[key])
         for name in wanted.keys() - cached.keys():
             expected = wanted[name]
@@ -1046,7 +1130,10 @@ def _build(root: Path, cache_root) -> dict:
             raise ProductError("browser product descriptor changed during build")
         _remember_candidate(root, parent, aggregate)
         return checked
-    _current(root, manifest)
+    history_inputs = {}
+    needs_history = any(p["id"] == "act-history" and not os.path.lexists(parent / p["key"])
+                        for p in manifest["products"])
+    _current(root, manifest, capture_files={"act-history": history_inputs} if needs_history else None)
     missing = []
     for product in manifest["products"]:
         entry = cache_directory(root, cache_root) / product["key"]
@@ -1057,10 +1144,14 @@ def _build(root: Path, cache_root) -> dict:
     entries = load_candidate_index(cache_directory(root, cache_root))["entries"]
     cold = []
     for product in missing:
-        if _reuse_candidate(root, product, entries, cache_root):
+        reused = _reuse_candidate(root, product, entries, cache_root)
+        if not reused and product["id"] == "act-history":
+            reused = _recover_history_candidate(root, product, entries, cache_root, history_inputs)
+        if reused:
             stats["reused_families"].append(product["id"])
         else:
             cold.append(product)
+    del history_inputs
     missing = cold
     if missing:
         with tempfile.TemporaryDirectory(prefix="cold-", dir=_scratch(root)) as temporary:

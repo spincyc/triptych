@@ -1102,6 +1102,63 @@ class BrowserCandidateReuseTests(unittest.TestCase):
             products.record(self.root, cache_root=self.cache)
         self.assertEqual(self.generated, [("a", "b"), ("a", "b")])
 
+    def history_epochs(self, *, update_body=False):
+        from _eucharistic_history import fingerprint, json_bytes
+        self.recipes[0].update(id="act-history", output_prefixes=["structure/act-history"])
+        calls = []
+
+        def generate(root, out, ids, *, record_jobs=None):
+            calls.append(tuple(ids))
+            target = out / "structure/act-history"
+            (target / "comparisons").mkdir(parents=True)
+            content = root / "src/a/input.txt"
+            inputs = [fingerprint(root, content)]
+            tools = [fingerprint(root, root / "scripts/_helper.py")]
+            (target / "catalogue.json").write_bytes(json_bytes({"inputs": inputs, "stage_history": {"inputs": inputs}}))
+            (target / "comparisons/test.json").write_bytes(json_bytes({
+                "inputs": inputs, "tool_inputs": tools, "passage": content.read_text() if update_body else "fixed",
+            }))
+            (target / "index.json").write_bytes(b"{}\n")
+
+        self.enterContext(patch.object(products, "_generate", side_effect=generate))
+        with patch.object(products, "_recover_history_candidate", side_effect=AssertionError("record used a candidate")):
+            old = products.record(self.root, cache_root=self.cache)
+            (self.root / "src/a/input.txt").write_text("new authority\n")
+            (self.root / "scripts/_helper.py").write_text("# new producer\n")
+            self.manifest = products.record(self.root, cache_root=self.cache)
+        self.assertEqual(calls, [("act-history",)] * 4)
+        shutil.rmtree(self.cache / self.family("act-history")["key"])
+        shutil.rmtree(self.cache / products.products_identity(self.manifest))
+        return next(p for p in old["products"] if p["id"] == "act-history"), calls
+
+    def test_history_reuses_current_proven_bytes_after_refreshing_source_and_producer_fingerprints(self):
+        old, calls = self.history_epochs()
+        # A valid, unrelated prior version is tried before the matching family.
+        wrong = "0" * 64
+        data = self.cache / wrong / "data"
+        shutil.copytree(self.cache / old["key"] / "data", data)
+        (data / "structure/act-history/comparisons/test.json").write_bytes(b'{"inputs":42}')
+        index = products.load_candidate_index(self.cache)
+        index["entries"][wrong] = products.candidate_hint(products._inventory(data))
+        self.write_index(index)
+        products.build(self.root, cache_root=self.cache)
+        self.assertEqual(calls, [("act-history",)] * 4)
+        self.assertIn("act-history", products.last_build_stats()["reused_families"])
+        products.check(self.root, cache_root=self.cache)
+
+    def test_history_changed_passage_runs_the_canonical_producer(self):
+        _, calls = self.history_epochs(update_body=True)
+        products.build(self.root, cache_root=self.cache)
+        self.assertEqual(calls, [("act-history",)] * 5)
+        self.assertEqual(["act-history"], products.last_build_stats()["generated_families"])
+
+    def test_history_candidate_corruption_is_fatal(self):
+        old, calls = self.history_epochs()
+        (self.cache / old["key"] / "data/structure/act-history/index.json").write_text("corrupt")
+        with self.assertRaisesRegex(products.ProductError, "inventory hint"):
+            products.build(self.root, cache_root=self.cache)
+        self.assertEqual(calls, [("act-history",)] * 4)
+
     def test_web_editions_build_reuses_one_record_but_record_always_runs_cold(self):
         self.recipes[0].update(id="web-editions", output_prefixes=["web-editions"], delivery="site-build")
         calls = []
