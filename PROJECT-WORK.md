@@ -7,6 +7,17 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-11-20.
 
+## Seasonal handbooks and GPT Advent, 2026-11-21
+
+<!-- promised-deliverable: seasonal-handbooks-gpt-advent-2026-11-21 -->
+
+In progress. Rename the 1962 seasonal collection, revise its editorial
+profile, and rework the GPT Advent edition. Each handbook is to teach the
+season's history and liturgy, bring Fathers, popes, saints and spiritual
+writers into the study, and give readers Scripture and prayer for every
+week and day. The Claude Advent edition belongs to the renamed series. The
+requested manuscript revision is the GPT edition.
+
 ## GPT Last Sunday after Pentecost — 22 November 2026
 
 <!-- promised-deliverable: gpt-1962-68-production-2026-11-16 -->

@@ -133,7 +133,7 @@ src/<provider>/
       propers/{temporal,ritual}/
       ordinary/
       reference/
-      seasons/                    seasonal primers
+      seasons/                    seasonal handbooks
     postconciliar/<edition-locale>/
       propers/
         registry/                 edition-owned registry records
@@ -466,10 +466,10 @@ repeated HTML destination. A reference must name a declared output owned by
 this catalog and visibly linked on that row; it never supplies a missing owner
 or declares another publication. Ordinary duplicate-owner, provider and hold
 checks still apply, and the markers are removed from rendered pages. The
-1962 Sunday calendar's cue line for the Advent primer is such a reference: a
+1962 Sunday calendar's cue line for the Advent handbook is such a reference: a
 line above the table rather than a row, carrying its marker on the same line as
-its link, with the primer's own row in the same catalog's Seasonal Primers
-section ([profile](liturgy/roman-1962-seasonal-primers.md)).
+its link, with the handbook's own row in the same catalog's Seasonal Handbooks
+section ([profile](liturgy/roman-1962-seasonal-handbooks.md)).
 
 **One related-reading block crosses catalogs (2026-11-17).** At the
 maintainer's request the 1962 Sunday calendar links the Four Last Things
@@ -592,7 +592,7 @@ Sort by a profile's stable series order or by occurrence or governing event
 date where one applies; otherwise use a deliberate reader sequence, keeping a
 canonical work and its derived companions together.
 
-On the 1962 page list the Ordinary first, assembly and calendar references second, seasonal primers third, and proper guides in their compact series table. Keep each curriculum's modules and assessment or reference companions together on its owning catalog page, grouped in prerequisite order. Keep novenas and their short forms together on the Prayer page. Every postconciliar entry names its exact books, edition, language, territory, and date; comparative or discursive works remain with their substantive study category.
+On the 1962 page list the Ordinary first, assembly and calendar references second, seasonal handbooks third, and proper guides in their compact series table. Keep each curriculum's modules and assessment or reference companions together on its owning catalog page, grouped in prerequisite order. Keep novenas and their short forms together on the Prayer page. Every postconciliar entry names its exact books, edition, language, territory, and date; comparative or discursive works remain with their substantive study category.
 
 `CONTRIBUTING.md` keeps an ordinary-language no-Git path, an isolated agent workflow, and an experimental-branch path. Feedback triggers verification rather than becoming authority. Submissions retain ownership, accept the applicable outbound license, and identify third-party material and its distribution basis.
 

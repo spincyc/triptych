@@ -5,7 +5,7 @@
 Studies of the books and calendar in force in 1962. These are widely called the *Traditional Latin Mass* or the *Extraordinary Form*; this library names them by their own titles and dates.
 
 On this page: [Core and reference works](#core-and-reference-works) ·
-[Seasonal primers](#seasonal-primers) ·
+[Seasonal handbooks](#seasonal-handbooks) ·
 [Altar server guides](#altar-server-guides) ·
 [Sunday propers calendar](#sunday-propers-calendar) ·
 [Other Masses](#other-masses)
@@ -18,12 +18,14 @@ On this page: [Core and reference works](#core-and-reference-works) ·
 | **Assembling the Mass** | [PDF](../pdf/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass.html) | [PDF](../pdf/claude/liturgy/roman-rite/1962/reference/assembling-the-mass.pdf) · [Read](../web/claude/liturgy/roman-rite/1962/reference/assembling-the-mass.html) | Calendar, precedence, Mass classes, formularies, and commemorations. |
 | **The 1962 Roman Calendar** | [PDF](../pdf/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar.html) | [PDF](../pdf/claude/liturgy/roman-rite/1962/reference/liturgical-calendar.pdf) · [Read](../web/claude/liturgy/roman-rite/1962/reference/liturgical-calendar.html) | Construction history and complete recurring universal and United States inventories. |
 
-## Seasonal Primers
+<a id="seasonal-primers"></a>
 
-Preparation for a season of the 1962 year and a companion through it: its
-history, its Sundays and proper days, the Fathers' teaching, and a rule of
-prayer and penance. Each Sunday's Mass stays with its guide in the
-[Sunday propers calendar](#sunday-propers-calendar).
+## Seasonal Handbooks
+
+Follow the history of each season and the way the 1962 Missal and Breviary
+teach it. Read with the Fathers, popes, saints and spiritual writers, then
+use the readings and prayers for the week and day. Each Sunday's Mass has
+its own study in the [Sunday propers calendar](#sunday-propers-calendar).
 
 The calendar runs from Advent 2026 to the eve of Advent 2027. Dates name the
 feast, Sunday or day shown in the [2026–27 Ordo](https://propria.org/ordo-2027/).
@@ -33,7 +35,7 @@ each begin at the Mass of the vigil. [General Rubrics, nos. 71–77](https://arc
 
 | Season and day in 2026–27 | ChatGPT | Claude | Focus |
 | --- | --- | --- | --- |
-| **Advent**<br>First Sunday of Advent, Nov 29 | [Advent: Keeping Watch for Christ](../web/gpt/liturgy/roman-rite/1962/seasons/advent.html) | [Advent: A Primer for the Season of the Lord's Coming](../web/claude/liturgy/roman-rite/1962/seasons/advent.html) | The history of Advent, its Sundays and winter Ember Days, daily prayer and penance, and the journey to Christmas. |
+| **Advent**<br>First Sunday of Advent, Nov 29 | [Advent: Keeping Watch for Christ](../web/gpt/liturgy/roman-rite/1962/seasons/advent.html) | [Advent: A Primer for the Season of the Lord's Coming](../web/claude/liturgy/roman-rite/1962/seasons/advent.html) | Advent at Mass and in the Hours, the Fathers on the coming of Christ, and a course of readings and prayers through Christmas Eve. |
 | **Christmas**<br>Christmas Day, Dec 25 | Planned | Planned | The three Masses of the Nativity and the saints whose feasts fall within its octave. |
 | **Epiphany**<br>Epiphany, Jan 6 | Planned | Planned | The Magi at Bethlehem, the baptism in the Jordan and the wedding at Cana. |
 | **Time after Epiphany**<br>Jan 14 | Planned | Planned | The Sundays after Epiphany and the signs by which the disciples come to know Christ. |
@@ -132,7 +134,7 @@ shared readings; a dedicated guide to the winter formulary remains planned.
 <!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost -->
 <!-- triptych-publication-id: claude:liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost -->
 
-*Advent primer* · [ChatGPT](../web/gpt/liturgy/roman-rite/1962/seasons/advent.html) · [Claude](../web/claude/liturgy/roman-rite/1962/seasons/advent.html) ◇ <!-- triptych-publication-reference: liturgy/roman-rite/1962/seasons/advent --> <!-- triptych-publication-reference: claude:liturgy/roman-rite/1962/seasons/advent -->
+*Advent handbook* · [ChatGPT](../web/gpt/liturgy/roman-rite/1962/seasons/advent.html) · [Claude](../web/claude/liturgy/roman-rite/1962/seasons/advent.html) ◇ <!-- triptych-publication-reference: liturgy/roman-rite/1962/seasons/advent --> <!-- triptych-publication-reference: claude:liturgy/roman-rite/1962/seasons/advent -->
 
 | ID | Sunday | ChatGPT | Claude |
 | ---: | --- | --- | --- |
@@ -216,11 +218,10 @@ majesty (Luke 21:25–33). An old custom of preaching gave the four Sundays of
 Advent to the four last things; these essays serve the year's last Sundays
 and Advent alike.
 
-◇ The Advent primer prepares for the season as a whole: its history, its
-Sundays and Ember Days, the Fathers' teaching on the Lord's coming, and a
-rule of prayer, fasting and confession for the four weeks. Each Sunday's
-Mass stays with its guide in this table; the primer is listed under
-[Seasonal primers](#seasonal-primers).
+◇ For the four weeks together, the Advent handbooks follow the Sunday and
+Ember liturgies to Christmas Eve. The GPT edition pairs Scripture and
+spiritual reading with prayers for each week and day.
+[Seasonal handbooks](#seasonal-handbooks).
 
 ### Resumed Sundays after the Epiphany
 

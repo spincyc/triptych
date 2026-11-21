@@ -434,7 +434,7 @@ each section with the same "Counsel for the week", and missed the strongest
 things its own sources said. The record is the primer's
 `research/cold-review.md`.
 
-Teaching and devotional works (primers, studies, homilies, biographies,
+Teaching and devotional works (handbooks, studies, homilies, biographies,
 articles of faith) are held to these tests as well:
 
 - **Write to a person.** The reader is a believer who wants to understand

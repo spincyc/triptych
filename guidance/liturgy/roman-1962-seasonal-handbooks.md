@@ -1,8 +1,8 @@
-# Roman 1962 Seasonal Primers
+# Roman 1962 Seasonal Handbooks
 
-This profile governs primers for the liturgical seasons of the 1962 Roman
+This profile governs handbooks for the liturgical seasons of the 1962 Roman
 Rite: works that prepare a reader to keep a season and accompany the reader
-through it. A primer gives the season's meaning, its history, what its
+through it. A handbook gives the season's meaning, its history, what its
 Sundays and proper days show, the Fathers' and the Scriptures' teaching on
 it, and the practice of prayer, penance and the sacraments it calls for. It
 does not govern the proper guides of the season's Masses
@@ -14,7 +14,7 @@ remain in `guidance/editorial.md`; paths and build rules in
 `guidance/repository.md`.
 
 The maintainer asked for the series on 2026-11-18, with Advent first and Lent
-to follow in 2027 at a larger scale. A primer is study and spiritual reading,
+to follow in 2027 at a larger scale. A handbook is study and spiritual reading,
 not a liturgical book, a directory of law, or a substitute for a confessor or
 spiritual director.
 
@@ -22,22 +22,22 @@ spiritual director.
 
 - A leaf is `src/<provider>/liturgy/roman-rite/1962/seasons/<season>`, where
   `<season>` is the season's English name in lower case (`advent`, `lent`).
-  The season is the one the 1962 books name; a primer that spans more than one
+  The season is the one the 1962 books name; a handbook that spans more than one
   (Lent with Passiontide, say) says so in its scope and title.
-- The kind is `seasonal-primer-1962`. Its catalog home is
-  `library/traditional-latin-mass.md`, section "Seasonal Primers", one row per
+- The kind is `seasonal-handbook-1962`. Its catalog home is
+  `library/traditional-latin-mass.md`, section "Seasonal Handbooks", one row per
   season in liturgical-year order and with no two-digit ID cell (that pattern
-  belongs to the Proper of Time). The Sunday Propers Calendar may cue a primer
-  without owning it: the Advent primer, whose season opens that table, is cued
+  belongs to the Proper of Time). The Sunday Propers Calendar may cue a handbook
+  without owning it: the Advent handbook, whose season opens that table, is cued
   by one italic lead-in above the table, carrying a
   `triptych-publication-reference` marker for each edition link, and a ◇ note after the † and §
   notes
   ([reader list presentation](roman-1962-propers.md#reader-list-presentation)).
-  The cue for a later season is decided when that primer is added.
+  The cue for a later season is decided when that handbook is added.
 - A leaf is on the `liturgy-reference-v1`
   [document type](../document-schemas.md#document-types): its `[document]`
   table declares the title lines, the body and apparatus section lists, and
-  its options (endnotes where the primer uses notes).
+  its options (endnotes where the handbook uses notes).
 - Identify the work by the 1962 books and their rubrics (1960 *Codex
   Rubricarum*), the universal calendar, and any named territorial layer.
 
@@ -62,12 +62,12 @@ reviewed full study.
 ## Boundary with the proper guides
 
 The proper guides own each formulary: its texts, components, senses,
-chronology and homily. For each Sunday and proper day a primer gives the
+chronology and homily. For each Sunday and proper day a handbook gives the
 station, the governing text or two at incipit length (a collect may be quoted
 whole), the day's place in the season's movement, and a patristic reading of
 it. It prints no complete proper and no component inventory, and it does not
 link a proper guide that is not yet published. Where another catalog's work
-serves the season (the Four Last Things essays for Advent), the primer names
+serves the season (the Four Last Things essays for Advent), the handbook names
 it and does not restate it.
 
 ## Law, custom and counsel
@@ -91,7 +91,7 @@ scope appendix.
 
 - The Fathers and Doctors speak at length in identified human translations.
   Latin is translated in the sentence where it stands, never under a label;
-  where the translation is the primer's own, the scope appendix says so once.
+  where the translation is the handbook's own, the scope appendix says so once.
   English Scripture comes from a registered public-domain witness.
 - In the body a quotation carries its author and work with the place, in
   short form; edition, translator and page are in the references, and each
@@ -102,7 +102,7 @@ scope appendix.
 - A devotion's origin is stated as documented, once, without inflating its
   antiquity or debunking it.
 - Quotations are checked against held bytes in the source library; whole
-  public-domain texts a primer relies on are acquired there under
+  public-domain texts a handbook relies on are acquired there under
   `guidance/sources.md`.
 
 ## Reader-facing order
@@ -132,7 +132,7 @@ Bethlehem back to the first week.
    read from the Fathers and the feast's own texts at incipit length, so that
    the reader arrives ready (for Advent: Bethlehem, the manger, the swaddling
    bands and the wonderful exchange), ending with the eve and night of the
-   feast. It does not become a primer for the next season.
+   feast. It does not become a handbook for the next season.
 
 Appendices: a daily reading table keyed to the season's weeks and days (dated
 where the 1962 books date them), with the Office's Scripture lesson or a stated
@@ -148,7 +148,7 @@ allows; a worked year may be named in the scope appendix.
 
 The first Advent draft failed on register, not on facts
 (`src/claude/liturgy/roman-rite/1962/seasons/advent/research/cold-review.md`).
-A primer is built so that it cannot fail that way again:
+A handbook is built so that it cannot fail that way again:
 
 - The plan in `research/scope.md` names, for each chapter, the moment that
   will stop the reader (a Father's saying, a fact of the texts, a coincidence

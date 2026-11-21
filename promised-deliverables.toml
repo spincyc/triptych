@@ -6019,7 +6019,7 @@ state = "complete"
   criterion = "A seasonal-primer series profile and the seasonal-primer-1962 document kind exist, are routed from AGENTS.md and the schema registry, and pass the document-schema checks and their unit tests."
   status = "pass"
   evidence = [
-    "guidance/liturgy/roman-1962-seasonal-primers.md",
+    "guidance/liturgy/roman-1962-seasonal-handbooks.md",
     "src/common/document-schemas/registry.toml",
     "tools/tests/test_document_schema_prose.py",
   ]
@@ -6097,7 +6097,7 @@ state = "complete"
   status = "pass"
   evidence = [
     "guidance/editorial.md",
-    "guidance/liturgy/roman-1962-seasonal-primers.md",
+    "guidance/liturgy/roman-1962-seasonal-handbooks.md",
     "guidance/articles.md",
   ]
 
@@ -6211,3 +6211,21 @@ state = "complete"
     "library/traditional-latin-mass.md",
     "tools/tests/test_calendar_computation_guidance.py",
   ]
+
+[[deliverables]]
+id = "seasonal-handbooks-gpt-advent-2026-11-21"
+owner = "src/gpt/liturgy/roman-rite/1962/seasons/advent"
+promise = "Rename the seasonal collection to Handbooks, set a source-based historical, liturgical and spiritual standard for every season, and rewrite the GPT Advent edition with readings and prayers for each week and day."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "series-profile-and-catalog"
+  criterion = "The catalog, profile, schema and reader entry points identify Seasonal Handbooks and the profile sets out what a complete season requires."
+  status = "open"
+  evidence = ["library/traditional-latin-mass.md", "src/common/document-schemas/registry.toml"]
+
+  [[deliverables.requirements]]
+  id = "advent-history-liturgy-and-prayer"
+  criterion = "The revised GPT study traces the development of Advent, reads its Mass and Office with Fathers, popes, saints and other writers, and provides an evergreen course of weekly and daily readings paired with received prayers, reviewed in its reader form."
+  status = "open"
+  evidence = ["src/gpt/liturgy/roman-rite/1962/seasons/advent/research/source-audit.md", "src/gpt/liturgy/roman-rite/1962/seasons/advent/research/cold-review.md", "src/gpt/liturgy/roman-rite/1962/seasons/advent/sections/90-daily-readings.tex"]
