@@ -51,6 +51,11 @@ CYCLES = "workflows/reviews/fixture/CYCLES.md"
 # Committed archives whose run directories a working checkout may still hold.
 REPRODUCIBLE = (
     (
+        "df0ccb9ecfdea6c9",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost",
+        "workflows/reviews/gpt-1962-68-production-2026-11-16/CYCLES.md",
+    ),
+    (
         "9c1136f1f8d1241c",
         "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost",
         "workflows/reviews/claude-1962-60-production-2026-10-07/CYCLES.md",
@@ -469,6 +474,142 @@ class PublicDerivativeTests(Fixture):
         self.assertEqual(list(empty.iterdir()), [])
 
 
+class ArtifactPathDerivativeTests(Fixture):
+    def test_existing_options_still_refuse_absolute_artifact_paths(self) -> None:
+        self.retained_result(artifact_path=f"{self.root}/research/evidence.md")
+        for options in ({}, {"redact_repository_paths": True},
+                        {"redact_operation_handles": True},
+                        {"redact_repository_paths": True, "redact_operation_handles": True}):
+            with self.subTest(options=options):
+                self.assertIn("private absolute filesystem path", self.refusal(**options))
+
+    def test_only_the_top_level_artifact_path_changes_with_a_complete_receipt(self) -> None:
+        path, original = self.retained_result(
+            artifact_path=f"{self.root}/research/evidence.md", notes="Read research/evidence.md.",
+            summary="The bounded evidence supports the finding.",
+            review_inputs={"files": {"src/sources/work.toml": "b" * 64}},
+            findings=[{"id": "F1", "severity": "accepted"}])
+        native, original_bytes = tree(self.run_dir), path.read_bytes()
+        dest = self.archived(relativize_artifact_paths=True)
+        self.assertEqual(json.loads((dest / path.name).read_text()),
+                         {**original, "artifact_path": "research/evidence.md"})
+        self.assertEqual(tree(self.run_dir), native)
+        receipt = json.loads((dest / ARCHIVER.REDACTION_RECEIPT).read_text())
+        self.assertEqual((receipt["schema"], receipt["run_id"]), (3, RUN))
+        self.assertEqual(receipt["operations"], [
+            {"policy": ARCHIVER.ARTIFACT_PATH_POLICY, "operation": ARCHIVER.ARTIFACT_PATH_OPERATION}])
+        row = next(item for item in receipt["files"] if item["path"] == path.name)
+        self.assertEqual(row, {
+            "path": path.name, "native_sha256": sha(original_bytes),
+            "archived_sha256": sha((dest / path.name).read_bytes()),
+            "changes": [{"json_pointer": "/artifact_path", "replacements": 1,
+                         "policy": ARCHIVER.ARTIFACT_PATH_POLICY}]})
+        for item in receipt["files"]:
+            self.assertEqual(item["archived_sha256"], sha((dest / item["path"]).read_bytes()))
+            if item["path"] != path.name:
+                self.assertEqual(item["native_sha256"], item["archived_sha256"])
+                self.assertEqual(item["changes"], [])
+        record = (dest / "record.md").read_text()
+        self.assertIn("explicitly declared public derivatives", record)
+        self.assertIn("`artifact_path`", record)
+        self.assertIn(row["native_sha256"], record)
+        self.assertIn(row["archived_sha256"], record)
+        self.assertFalse(any(str(self.root).encode() in data for data in tree(dest).values()))
+
+    def test_all_three_policies_are_independent_and_receipted_in_fixed_order(self) -> None:
+        path, original = self.retained_result(
+            artifact_path=f"{self.root}/research/evidence.md",
+            notes=f"Read {self.root}/research/audit.md; aggregate session12345.")
+        dest = self.archived(relativize_artifact_paths=True, redact_repository_paths=True,
+                             redact_operation_handles=True)
+        self.assertEqual(json.loads((dest / path.name).read_text()), {
+            **original, "artifact_path": "research/evidence.md",
+            "notes": "Read research/audit.md; <operation-handle>."})
+        receipt = json.loads((dest / ARCHIVER.REDACTION_RECEIPT).read_text())
+        self.assertEqual(receipt["schema"], 3)
+        policies = [ARCHIVER.REDACTION_POLICY, ARCHIVER.OPERATION_HANDLE_POLICY,
+                    ARCHIVER.ARTIFACT_PATH_POLICY]
+        self.assertEqual([row["policy"] for row in receipt["operations"]], policies)
+        changed = next(row["changes"] for row in receipt["files"] if row["path"] == path.name)
+        self.assertEqual(changed, [
+            {"json_pointer": "/notes", "replacements": 1, "policy": policies[0]},
+            {"json_pointer": "/notes", "replacements": 1, "policy": policies[1]},
+            {"json_pointer": "/artifact_path", "replacements": 1, "policy": policies[2]}])
+
+    def test_substantive_fields_nested_paths_and_artifact_handles_still_refuse(self) -> None:
+        absolute = f"{self.root}/research/evidence.md"
+        for field, value in (
+            ("summary", f"Checked {absolute}"),
+            ("review_inputs", {"paths": [absolute]}),
+            ("findings", [{"problem": f"Inspect {absolute}"}]),
+            ("notes", [{"text": f"Inspect {absolute}"}]),
+            ("outputs", [{"artifact_path": absolute}]),
+            ("artifact_path", {"path": absolute}),
+            ("artifact_path", f"{self.root}/research/aggregate session12345.json"),
+        ):
+            with self.subTest(field=field, value=value):
+                self.build()
+                fields = {"artifact_path": absolute, field: value}
+                self.retained_result(**fields)
+                self.refusal(relativize_artifact_paths=True, redact_repository_paths=True,
+                             redact_operation_handles=True)
+
+    def test_other_absolute_and_noncanonical_artifact_paths_refuse(self) -> None:
+        for value in (
+            str(self.root.parent / "external/evidence.md"), str(self.root) + "-other/evidence.md",
+            str(self.root), str(self.root) + "/", str(self.root) + "/../external/evidence.md",
+            str(self.root) + "/research//evidence.md", str(self.root) + "/./research/evidence.md",
+            str(self.root) + "/research/evidence.md/", str(self.root) + "/research/\0evidence.md",
+            r"C:\fixture\evidence.md", r"\\fixture-host\evidence.md",
+            f"https://example.test/source?path={self.root}/research/evidence.md",
+        ):
+            with self.subTest(value=value):
+                self.retained_result(artifact_path=value)
+                self.refusal(relativize_artifact_paths=True)
+
+    def test_a_symlink_cannot_make_an_external_artifact_a_repository_descendant(self) -> None:
+        with tempfile.TemporaryDirectory(dir=self.root.parent) as outside:
+            (self.root / "linked").symlink_to(outside, target_is_directory=True)
+            self.retained_result(artifact_path=f"{self.root}/linked/evidence.md")
+            self.assertIn("canonical repository descendant",
+                          self.refusal(relativize_artifact_paths=True))
+
+    def test_relative_artifact_paths_keep_their_exact_native_bytes(self) -> None:
+        path, _ = self.retained_result(artifact_path="research/evidence.md")
+        original = path.read_bytes()
+        dest = self.archived(relativize_artifact_paths=True)
+        self.assertEqual((dest / path.name).read_bytes(), original)
+        receipt = json.loads((dest / ARCHIVER.REDACTION_RECEIPT).read_text())
+        self.assertTrue(all(row["native_sha256"] == row["archived_sha256"]
+                            and row["changes"] == [] for row in receipt["files"]))
+
+    def test_reproduction_is_deterministic_and_preserves_native_state(self) -> None:
+        self.retained_result(artifact_path=f"{self.root}/research/evidence.md",
+                             notes=f"Read {self.root}/research/audit.md.")
+        before = tree(self.run_dir)
+        options = {"relativize_artifact_paths": True, "redact_repository_paths": True}
+        first = self.archived(output=self.root / "first", **options)
+        second = self.archived(output=self.root / "second", **options)
+        self.assertEqual(tree(first), tree(second))
+        self.assertEqual(tree(self.run_dir), before)
+
+    def test_native_hash_is_verified_before_artifact_path_relativization(self) -> None:
+        path, _ = self.retained_result(artifact_path=f"{self.root}/research/evidence.md")
+        path.write_bytes(path.read_bytes() + b"\n")
+        self.assertIn("result hash mismatch", self.refusal(relativize_artifact_paths=True))
+
+    def test_cli_wires_the_separately_opted_in_artifact_path_policy(self) -> None:
+        path, _ = self.retained_result(artifact_path=f"{self.root}/research/evidence.md")
+        native = tree(self.run_dir)
+        with mock.patch("builtins.print"):
+            result = ARCHIVER.main([
+                RUN, "--cycles", CYCLES, "--root", str(self.root), "--relativize-artifact-paths"])
+        self.assertEqual(result, 0)
+        self.assertEqual(json.loads((self.leaf_archive / path.name).read_text())["artifact_path"],
+                         "research/evidence.md")
+        self.assertEqual(tree(self.run_dir), native)
+
+
 class OperationHandleTests(Fixture):
     # Synthetic fixture identifiers, never live execution handles.
     handle = "aggregate session12345"
@@ -790,8 +931,25 @@ class ReproductionTests(unittest.TestCase):
             committed = ROOT / leaf / "evaluations" / "proper-study-results" / run
             if not (ROOT / "build" / "tpt-runs" / run).is_dir() or not committed.is_dir():
                 continue
-            with self.subTest(run=run), tempfile.TemporaryDirectory() as scratch:
-                dest, _ = ARCHIVER.archive_run(ROOT, run, cycles, str(Path(scratch) / run))
+            options = {}
+            receipt_path = committed / ARCHIVER.REDACTION_RECEIPT
+            if receipt_path.is_file():
+                receipt = json.loads(receipt_path.read_text())
+                self.assertIn(receipt["schema"], (1, 2, 3))
+                policies = ({receipt["policy"]} if receipt["schema"] == 1 else
+                            {item["policy"] for item in receipt["operations"]})
+                arguments = {
+                    ARCHIVER.REDACTION_POLICY: "redact_repository_paths",
+                    ARCHIVER.OPERATION_HANDLE_POLICY: "redact_operation_handles",
+                    ARCHIVER.ARTIFACT_PATH_POLICY: "relativize_artifact_paths",
+                }
+                self.assertLessEqual(policies, arguments.keys())
+                options = {arguments[policy]: True for policy in policies}
+            scratch_root = ROOT / ".scratch" / "proper-study-run-archive-reproduction"
+            scratch_root.mkdir(parents=True, exist_ok=True)
+            with self.subTest(run=run), tempfile.TemporaryDirectory(dir=scratch_root) as scratch:
+                dest, _ = ARCHIVER.archive_run(
+                    ROOT, run, cycles, str(Path(scratch) / run), **options)
                 self.assertEqual(tree(dest), tree(committed))
                 reproduced += 1
         if not reproduced:

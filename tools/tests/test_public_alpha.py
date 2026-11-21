@@ -3639,6 +3639,40 @@ class PublicAlphaTest(unittest.TestCase):
             finally:
                 os.close(root_fd)
 
+    def test_artifact_scan_does_not_inherit_or_change_the_directory_cursor(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "one.txt").write_text("one\n", encoding="utf-8")
+            (root / "nested").mkdir()
+            (root / "nested/two.txt").write_text("two\n", encoding="utf-8")
+            root_fd = os.open(root, self.tool.DIRECTORY_OPEN_FLAGS)
+            try:
+                with os.scandir(root_fd) as entries:
+                    next(entries)
+                    position = os.lseek(root_fd, 0, os.SEEK_CUR)
+                self.assertGreater(position, 0)
+                os.lseek(root_fd, position, os.SEEK_SET)
+                topology = self.tool._scan_artifact_topology(root_fd)
+                self.assertEqual({"one.txt", "nested", "nested/two.txt"}, set(topology))
+                self.assertEqual(position, os.lseek(root_fd, 0, os.SEEK_CUR))
+            finally:
+                os.close(root_fd)
+
+    def test_artifact_scan_stays_anchored_when_the_directory_is_replaced(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            parent = Path(directory)
+            root = parent / "staging"
+            root.mkdir()
+            (root / "held.txt").write_text("held\n", encoding="utf-8")
+            root_fd = os.open(root, self.tool.DIRECTORY_OPEN_FLAGS)
+            try:
+                root.rename(parent / "held")
+                root.mkdir()
+                (root / "replacement.txt").write_text("replacement\n", encoding="utf-8")
+                self.assertEqual({"held.txt"}, set(self.tool._scan_artifact_topology(root_fd)))
+            finally:
+                os.close(root_fd)
+
     def test_verify_rejects_target_replaced_after_held_tree_was_checked(self) -> None:
         self.authorize_current_inputs()
         publications = self.tool.validate_manifest(self.manifest)

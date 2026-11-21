@@ -1,0 +1,15 @@
+{
+  "artifact_path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/research/source-dispositions.toml",
+  "disposition": "PASS",
+  "iteration": 5,
+  "notes": [
+    "Registered edition.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-11-20 and artifact.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-11-20.matthew-introduction-f62cda94. Replayed the full response in memory and matched 84,437 bytes and SHA-256 f62cda94001144a404b48e90daba7448685bf7d4b301d090effe6650cccf8783. The research handoff records inspection of the three concluding paragraphs. Further extraction attempts sometimes returned HTTP 403. The new edition contains two metadata manifests and the browser projection contains one restricted artifact identity and zero passages.",
+    "Binding 93 and disposition nabre-usccb-matthew-introduction-live-chronology-check record the live comparison. The 21 September registered passage summary remains the chronology controller. All 92 prior bindings and 133 prior dispositions retain their exact values. The earlier September HTML remains unavailable for exact reinspection.",
+    "The updated handoff covers 93 bindings and 134 dispositions. It retains ten existing Catena admissions, 40 deferrals, six rejections, 60 non-commentary uses and 18 catalogue-only leads. The Jerome deferrals remain pinned to the printed units split within Jer 29:14. They require constituent work, edition and segment registration, a checked transcription, lawful checked English evidence, composition-date evidence and Scripture edges.",
+    ".scratch/complete-proper-68/source-registration-0005/registration-reconciliation.json lists all ten retained passage IDs and every deferred or rejected key with its exact missing criteria.",
+    "The combined GPT inventory covers 157 publications and 3,794 source-surface files. The reviewed Advent and Last Sunday classification rows match their merged and pre-merge baselines exactly. The family migration ledger records 169 pending review units and zero reviewed families.",
+    "Passed source-library validate, the exact source-mode source-dispositions and research-record checks, inventory and family checks, strict source projection generation and replay for 19,384 working files, make -j4 check-sources with 47 tests, and git diff --check."
+  ],
+  "stage": "source-registration",
+  "summary": "Registered the exact 20 November USCCB Matthew introduction as restricted metadata and bound the live consultation as corroborating evidence. Reconciled the merged GPT inventories with both reviewed classifications and passed the source-registration checks."
+}

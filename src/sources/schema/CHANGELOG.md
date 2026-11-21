@@ -1,5 +1,17 @@
 # Source Schema Changelog
 
+## Complete chronology relation display — corrected 2026-11-16
+
+The compact proper-chronology projection retains distinct occasion, narrated
+event and final-formation rows even when the appointed passage also has a
+composition date. Only candidates within the same subject and relation are
+compacted. An unresolved occasion or event is not dated by the passage's
+composition frame. Regression tests cover Psalm occasion gaps, the undated
+Matthew 24 utterance and a separate Jeremias formation bound.
+
+This corrects presentation to the existing chronology contract; no source
+schema, date assertion, fingerprint, rights or evidence-state meaning changes.
+
 ## Further bounded English source-admission ownership — added 2026-10-30
 
 The papal inventory additionally owns the exact report/scope pairs

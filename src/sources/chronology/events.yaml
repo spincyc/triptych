@@ -87,11 +87,11 @@ events:
           disciples' wonder at the withered fig tree and Jesus' instruction
           on the efficacy of faith. Mark 11:20-25 gives that episode and
           instruction. Maas's express A.U.C. 782 = A.D. 29 equivalence
-          supplies the calendar year within this harmony.
+          on printed p. 378 supplies the calendar year within this harmony.
         sources:
           - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08377a-f81e2c23-article-text
           - passage.catholic-encyclopedia.volume-8.new-york-1910.maas-ninth-journey-fig-tree
-          - passage.catholic-encyclopedia.volume-8.new-york-1910.maas-journeys-three-five
+          - passage.catholic-encyclopedia.volume-8.new-york-1910.maas-era-calibration-auc-782
           - bible:douay-rheims:Mark.11.20
           - bible:douay-rheims:Mark.11.24
         note: >-
@@ -101,7 +101,7 @@ events:
         date:
           precision: year
           from: {year: 29, era: ad}
-          label: "A.D. 29, derived from Maas's A.U.C. 782 final Jerusalem visit"
+          label: "February, A.U.C. 782- Passover, 782"
           derivation:
             rule: "Apply Maas's explicit A.U.C. 782 = A.D. 29 equivalence to his dated Ninth Journey."
             inputs: [chronology.maas-auc-782-ad-29-calibration]
@@ -133,12 +133,13 @@ events:
           disputes, and Maas closes that day: "Jesus ended this day by
           uttering the prophecies concerning the destruction of Jerusalem,
           His second coming, and the future judgement". Maas's express A.U.C.
-          782 = A.D. 29 equivalence supplies the calendar year within this
-          harmony, exactly as for the fig-tree instruction of the same day.
+          782 = A.D. 29 equivalence on printed p. 378 supplies the calendar
+          year within this harmony, as it does for the fig-tree instruction
+          of the same day.
         sources:
           - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08377a-f81e2c23-article-text
           - passage.catholic-encyclopedia.volume-8.new-york-1910.maas-ninth-journey-olivet-prophecies
-          - passage.catholic-encyclopedia.volume-8.new-york-1910.maas-journeys-six-seven-nine
+          - passage.catholic-encyclopedia.volume-8.new-york-1910.maas-era-calibration-auc-782
           - bible:douay-rheims:Matt.24.3
           - bible:douay-rheims:Matt.26.1
         note: >-
@@ -150,7 +151,7 @@ events:
         date:
           precision: year
           from: {year: 29, era: ad}
-          label: "A.D. 29, derived from Maas's A.U.C. 782 final Jerusalem visit"
+          label: "February, A.U.C. 782- Passover, 782"
           derivation:
             rule: "Apply Maas's explicit A.U.C. 782 = A.D. 29 equivalence to his dated Ninth Journey."
             inputs: [chronology.maas-auc-782-ad-29-calibration]
@@ -537,13 +538,12 @@ events:
         basis_class: traditional-catholic
         basis: >-
           Maas's article "Jesus Christ" in the Catholic Encyclopedia (vol. 8,
-          New York 1910), in its chronological discussion of the Crucifixion,
+          New York 1910), printed p. 378, in its discussion of the year of the Crucifixion,
           identifies the forty-second year before Jerusalem's destruction as
           "A.D. 29, or A.U.C. 782" and repeats the same equivalence when it
           counts twelve years back from the preaching to the Gentiles.
         sources:
-          - passage.catholic-encyclopedia.volume-8.new-york-1910.maas-journeys-three-five
-          - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08377a-f81e2c23-article-text
+          - passage.catholic-encyclopedia.volume-8.new-york-1910.maas-era-calibration-auc-782
         note: >-
           The claim records only the era equivalence Maas prints. Keeping it in
           a dedicated single-claim anchor makes its identity machine-checkable;

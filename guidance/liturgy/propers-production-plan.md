@@ -220,6 +220,17 @@ must independently verify the resumed Sunday and its appointed texts.
 
 - Authorized 2026-11-09: provider `gpt`, identity `liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany`.
 
+The maintainer's 16 November 2026 request opens the GPT target below for
+Sunday, 22 November 2026, under the current three-document contract and
+authorizes reconciliation and publication of the validated result to main.
+The dated context must independently verify the last Sunday after Pentecost
+and its complete appointed texts; this decision opens no other target.
+
+- Authorized 2026-11-16: provider `gpt`, identity `liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost`.
+
+The maintainer separately authorized the following Claude target on the same
+date:
+
 - Authorized 2026-11-16: provider `claude`, identity `liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost`.
 
 ### Reference-only publication scope

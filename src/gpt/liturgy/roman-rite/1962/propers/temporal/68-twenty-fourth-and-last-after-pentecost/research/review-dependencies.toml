@@ -1,0 +1,43 @@
+# Source-ID ancestry and generated chronology inputs are sealed separately.
+# These are the additional controlling authority, rights and discovery owners.
+paths = [
+  "src/sources/calendars/roman-1962/propers.yaml",
+  "src/sources/calendars/roman-1962/rubrics.yaml",
+  "src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml",
+  "src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml",
+  "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml",
+  "src/sources/inventories/roman-1962-proper-translations-v1.toml",
+  "src/sources/inventories/lasance-new-roman-missal-rights-v1.toml",
+  "src/sources/inventories/author-standing-v1.toml",
+  "src/sources/inventories/source-containment-v1.toml",
+  "src/sources/commentary/passage-commentary-index.yaml",
+  "src/sources/commentary/formulary-loci.yaml",
+  "src/sources/commentary/fragment-loci.yaml",
+  # Biblical intertexts checked to bound Rupert's Joseph argument.
+  "src/sources/bibles/clementine-vulgate/chapters/Gen/42.json",
+  "src/sources/bibles/clementine-vulgate/chapters/Gen/43.json",
+  "src/sources/bibles/clementine-vulgate/chapters/1Tim/2.json",
+  "src/sources/bibles/clementine-vulgate/chapters/Rom/9.json",
+  "src/sources/bibles/clementine-vulgate/chapters/Ps/21.json",
+  "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/last-sunday-trinity-archive-pages-20261116-b1129c12/artifact.toml",
+  "src/sources/works/jacques-paul-migne/patrologia-latina-volume-24/editions/1865-paris/artifacts/jeremiah-29-pages-451-452-20261116-b12f006b/artifact.toml",
+  "src/sources/works/prosper-gueranger/the-liturgical-year/editions/english-duffy-1883-volume-11/artifacts/last-sunday-pages-527-540-20261116-41ccf520/artifact.toml",
+  "src/sources/works/holy-see/acta-apostolicae-sedis/editions/volume-4-1912/artifacts/pbc-response-pages-463-465-20261116-3725d450/artifact.toml",
+  # Exact adopted proof, publication, and transcription children.
+  "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/temporal-last-sunday-after-pentecost-orations.toml",
+  "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/last-sunday-after-pentecost-orations.toml",
+  "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/last-sunday-after-pentecost-collect.toml",
+  "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/last-sunday-after-pentecost-postcommunion.toml",
+  "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/last-sunday-after-pentecost-secret.toml",
+  "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-phase2-2026-10-23-publish-last-sunday-after-pentecost--main--collect--all--1.toml",
+  "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-phase2-2026-10-23-publish-last-sunday-after-pentecost--main--postcommunion--all--1.toml",
+  "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-phase2-2026-10-23-publish-last-sunday-after-pentecost--main--secret--all--1.toml",
+  "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-phase2-2026-10-23-verify-last-sunday-after-pentecost--main--collect--all--1.toml",
+  "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-phase2-2026-10-23-verify-last-sunday-after-pentecost--main--postcommunion--all--1.toml",
+  "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-phase2-2026-10-23-verify-last-sunday-after-pentecost--main--secret--all--1.toml",
+  "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-conclusion-table-2026-10-23-verify.toml",
+  "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-conclusion-table-2026-10-23-transcription.toml",
+  "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/resume-orations-conclusion-table-2026-10-23-7dbb4a25/artifact.toml",
+  "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-ordinary-prefaces-complete-a-trinitate.toml",
+  "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-ordinary-prefaces-complete-a-en/artifact.toml"
+]

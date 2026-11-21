@@ -1,0 +1,15 @@
+{
+  "artifact_path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/research/source-dispositions.toml",
+  "disposition": "PASS",
+  "iteration": 6,
+  "notes": [
+    "Rechecked the 1962 typica CMAA facsimile, the Pustet 1862 original-image archive and the revised Lasance/Walsh historical facsimile under bindings 1, 2 and 5. The three acquisitions match their registered SHA-256, byte size and measured extent. Reproduced eight PDF page proofs and four original archive members from the matched bytes and reread the disputed Gospel, Trinity Preface and Col 1:10 loci.",
+    "The repairs use the same three bound witnesses at the same loci and for the same roles. The handoff retains 93 bindings and 134 dispositions, including ten admitted passages, 40 deferrals, six rejections, 60 non-commentary uses and 18 catalogue-only leads. This iteration added zero registrations and zero admissions. The reconciliation receipt lists the exact IDs, fingerprints, admitted passages, and every deferred or rejected key with its missing criteria.",
+    "Receipts are in .scratch/complete-proper-68/source-registration-0006/. See registration-reconciliation.json, witness-bytes.log, witness-page-replay.log and witness-loci.log.",
+    "The inventory refresh updates 12 file hashes for this study. The GPT inventory covers 157 publications and 3,794 source-surface files. The family ledger refreshed one owner, retains 169 pending units and zero reviewed families, and carries the same classification and canonical catalogue snapshots.",
+    "Passed source-library validate, the source-mode source-dispositions and research-records checks, the inventory and family checks, git diff --check, and strict source-reader replay. The ordinary .scratch/browser-data-work source projection is current for 19,384 files. Existing source registrations and a current strict projection made regeneration unnecessary.",
+    "The additional make -j4 check-sources process ended with SIGTERM (exit 143) during the corpus-wide chronology test. The source graph, both inventories and the focused family check had already passed. This result claims the bounded source replay and the two native preflight inputs."
+  ],
+  "stage": "source-registration",
+  "summary": "Verified the transcription repair against three exact, previously registered Missal witnesses and refreshed the study's source inventory and family ledger entry. Both native research-preflight checks passed."
+}

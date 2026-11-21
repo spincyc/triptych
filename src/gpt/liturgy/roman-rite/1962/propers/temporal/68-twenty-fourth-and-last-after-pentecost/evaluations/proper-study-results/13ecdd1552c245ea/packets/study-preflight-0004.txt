@@ -1,0 +1,15 @@
+WORKFLOW: proper-study v19
+WORKFLOW_DIGEST: 73706a2ab569c88974452c4aec8fe2b7540a23ad1192efa39d574ddfbd334645
+RUN_ID: 13ecdd1552c245ea
+COMMIT: e8aceadc4a7e1ebe8d4987815a636d82ddd9d59b
+STAGE: study-preflight
+ITERATION: 4
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-11-22","proper":"liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost","provider":"gpt","research_handoff":"none"}
+DOCUMENT_ROOT: src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: [{"id":"STU-COMMUNION-CONTEXT-001","location":"sections/30-deliverance-and-waiting.tex:184\u2013192","problem":"The revision replaces the explicit context of faith and forgiveness with a sentence about where the study will discuss the surrounding verses. The fuller account in the second interpretation still explains Bede\u2019s distinction and Mark\u2019s context.","required_result":"State the qualification where the Communion promise is invoked. For example, \u2018At Communion, Christ calls for faith in prayer before the answer is visible. In the next verse in Mark, he tells those who pray to forgive.\u2019 Keep Bede\u2019s citation attached to the surrounding sayings and Fromage\u2019s account attached to the Postcommunion.","severity":"advisory"},{"id":"WEB-LATIN-QUOTATION-EMPHASIS-001","location":"sections/10-appointed-text.tex at proper-epistle, proper-gospel and proper-preface (canonical Markdown lines 95\u201397, 167\u2013169 and 265\u2013271)","problem":"The web renderer italicizes the opening paragraph only in each of the three multi-paragraph Latin quotations, even though the shared Latin quotation environment sets the entire block in italics. In the Gospel, for example, the introduction is italic and the whole lesson is upright. The Latin and English remain distinct quotations with complete wording, so the difference is typographic.","required_result":"Apply the same Latin presentation to every paragraph in these quotation blocks while preserving the paragraph breaks and the separate labelled English quotations.","severity":"advisory"}]
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

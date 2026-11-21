@@ -6002,6 +6002,14 @@ class StoredDateAgreesWithItsLabelTests(unittest.TestCase):
             "A.U.C. 782 = A.D. 29 calibration; the dedicated calibration "
             "test below checks both endpoints and the dependency, so this "
             "exception does not exempt its numerical values from checking."),
+        "event:life-of-christ.faith-and-prayer-after-the-fig-tree#0": (
+            "The exact source label dates the Ninth Journey in A.U.C. 782. "
+            "Maas's separate era equivalence supplies A.D. 29 for the "
+            "fig-tree teaching within that journey."),
+        "event:life-of-christ.prophecies-on-mount-olivet#0": (
+            "The exact source label dates the Ninth Journey in A.U.C. 782. "
+            "Maas's separate era equivalence supplies A.D. 29 for the "
+            "speaking of the discourse within that journey."),
         "event:apostolic-age.famine-under-claudius#0": (
             "The label is the article's own phrase 'precisely in this year' "
             "and prints no figure; the year 44 is the one the sentence it "
@@ -6091,7 +6099,7 @@ class StoredDateAgreesWithItsLabelTests(unittest.TestCase):
                 f"  {identifier}: stores {missing} under label {label!r}"
                 for identifier, (label, missing) in sorted(undeclared.items())))
 
-    def test_the_exception_list_is_exactly_the_claims_whose_labels_are_prose(
+    def test_the_exception_list_is_exactly_the_claims_with_an_unlabelled_year(
             self) -> None:
         """An exception that has started agreeing with its label is a claim
         nobody is checking any more."""
@@ -6127,20 +6135,25 @@ class StoredDateAgreesWithItsLabelTests(unittest.TestCase):
                                 f"{endpoint.era} under label {date.label!r}")
         self.assertEqual(wrong, [])
 
-    def test_cana_source_era_is_converted_only_through_its_named_calibration(self) -> None:
+    def test_maas_source_years_are_converted_through_the_named_calibration(self) -> None:
         held = _chronology.load()
-        claim = held.events["life-of-christ.healing-of-the-rulers-son-at-cana"].claims[0]
         anchor_id = "chronology.maas-auc-782-ad-29-calibration"
         anchor = held.events[anchor_id].claims[0]
-        self.assertEqual(claim.basis_class, "derived")
-        self.assertEqual(claim.date.derivation["inputs"], [anchor_id])
-        self.assertEqual(claim.date.label,
-                         "Passover, A.U.C. 779 - about Pentecost, 780")
         self.assertEqual(anchor.date.label, "A.U.C. 782 = A.D. 29")
         self.assertEqual(anchor.date.begin.year, 29)
-        for endpoint, auc in zip((claim.date.begin, claim.date.end), (779, 780)):
-            self.assertEqual(endpoint.era, "ad")
-            self.assertEqual(endpoint.year, anchor.date.begin.year + auc - 782)
+        ninth_journey = "February, A.U.C. 782- Passover, 782"
+        for event, source_label, source_years in (
+                ("healing-of-the-rulers-son-at-cana", "Passover, A.U.C. 779 - about Pentecost, 780", (779, 780)),
+                ("faith-and-prayer-after-the-fig-tree", ninth_journey, (782, 782)),
+                ("prophecies-on-mount-olivet", ninth_journey, (782, 782))):
+            with self.subTest(event=event):
+                claim = held.events[f"life-of-christ.{event}"].claims[0]
+                self.assertEqual(claim.basis_class, "derived")
+                self.assertEqual(claim.date.derivation["inputs"], [anchor_id])
+                self.assertEqual(claim.date.label, source_label)
+                for endpoint, auc in zip((claim.date.begin, claim.date.end), source_years):
+                    self.assertEqual(endpoint.era, "ad")
+                    self.assertEqual(endpoint.year, anchor.date.begin.year + auc - 782)
 
 
 # --- PCC-40: retained text later than the edition it hangs under ------------

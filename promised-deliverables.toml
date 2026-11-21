@@ -1,6 +1,36 @@
 schema_version = 1
 
 [[deliverables]]
+id = "gpt-1962-68-production-2026-11-16"
+owner = "PROJECT-WORK.md"
+promise = "Complete the GPT 1962 three-document propers workflow for Sunday, 22 November 2026, reconcile the validated publication with main and push to main."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "verified-appointment"
+  criterion = "The dated context verifies the Twenty-fourth and Last Sunday after Pentecost, governing 1962 edition, rank, occurrence and complete appointed texts against identified witnesses, preserving local-calendar limits."
+  status = "pass"
+  evidence = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/research/context.md", "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/propers/verified.md", "workflows/reviews/gpt-1962-68-production-2026-11-16/CYCLES.md"]
+
+  [[deliverables.requirements]]
+  id = "accepted-three-documents"
+  criterion = "The expansive study, concise study and homily reach terminal ACCEPTED through genuine independent proper-study reviews and source/publication gates, with verified archived results and cycle evidence."
+  status = "pass"
+  evidence = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/evaluations/proper-study-results/13ecdd1552c245ea/record.md", "workflows/reviews/gpt-1962-68-production-2026-11-16/ARCHIVE-VERIFICATION-2026-11-20.json", "workflows/reviews/gpt-1962-68-production-2026-11-16/CYCLES.md"]
+
+  [[deliverables.requirements]]
+  id = "reviewed-readers-and-print-compilation"
+  criterion = "All three reader outputs, catalog links and release records pass their required checks, and all three current native print bundles compile successfully."
+  status = "pass"
+  evidence = ["workflows/reviews/gpt-1962-68-production-2026-11-16/NATIVE-PRINT-FINAL-2026-11-20/summary.json", "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/web-edition.toml", "workflows/reviews/gpt-1962-68-production-2026-11-16/CYCLES.md"]
+
+  [[deliverables.requirements]]
+  id = "main-and-live-verification"
+  criterion = "Validated commits reach origin/main without rewriting published history; the resulting Pages build, print-compile and deploy succeed, and all three live reader routes are verified."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "workflows/reviews/gpt-1962-68-production-2026-11-16/CYCLES.md"]
+
+[[deliverables]]
 id = "claude-1962-68-last-after-pentecost-three-documents-2026-11-22"
 owner = "PROJECT-WORK.md"
 promise = "Complete the Claude 1962 Twenty-fourth and Last Sunday after Pentecost (68) proper-study workflow for Sunday 22 November 2026: produce the expansive study, concise study and homily with independent cold reviews and their web readers, publish to main and verify the deployment."
@@ -32,7 +62,6 @@ state = "complete"
   criterion = "The validated work reaches origin/main after the deploy gates pass locally, the Pages run (build, print-compile and deploy) succeeds, and the live reader routes match the local site build."
   status = "pass"
   evidence = ["PROJECT-WORK.md"]
-
 [[deliverables]]
 id = "indexed-corpus-performance-2026-11-12"
 owner = "guidance/web-data.md"

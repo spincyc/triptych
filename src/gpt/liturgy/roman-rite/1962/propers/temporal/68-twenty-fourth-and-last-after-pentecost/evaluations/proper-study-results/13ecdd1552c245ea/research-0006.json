@@ -1,0 +1,20 @@
+{
+  "artifact_path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/propers/verified.md",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "STU-TEXT-001",
+      "note": "The research records now give the typica's single-t quatuor at printed p. 423/no. 1774 and its original Preface address punctuation at p. 293/no. 1082, with the adjoining clauses and the older Pustet and Lasance pointing recorded. Synchronization of the authored quotations belongs to the following study stage.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 6,
+  "notes": [
+    "Changed propers/verified.md, research/scope.md and research/interpretations.md in the packet's GPT leaf. Complete-text mode and the existing source and rights bindings still apply. The review-5 advisory is confirmed by Col 1:10 in typica p. 423/no. 1771, Pustet p. 359 and Lasance p. 737. The audit now quotes 'ut ambuletis digne Deo ... fructificantes'.",
+    "The 20 November 2026 comparison reused the registered acquisitions. Rehashes, byte counts and new page proofs are in .scratch/complete-proper-68/research-0006/ under source-bytes.sha256, source-byte-counts.txt and image-evidence.sha256. Original bytes and receipts remain in .scratch/proper-study-68/evidence/ under missale62.pdf with missale62.pdf.preservation.receipt.json, pustet1862-images.tar with pustet1862-images.receipt.json, and lasance.pdf with lasance.pdf.receipt.json. The source registration handoff uses the existing source IDs, fingerprints and dispositions.",
+    "Study authoring still needs to synchronize sections/10-appointed-text.tex with the corrected Gospel and Preface Latin blocks. The Gospel changes are 'multa, et maiestate', 'a quatuor ventis', and 'tener fuerit, et folia'. The Preface changes are 'Domine, sancte Pater, omnipotens aeterne Deus:', 'Filio tuo, et Spiritu Sancto, unus', and 'de Spiritu Sancto, sine'. Lasance/Walsh's Preface English is retained as printed.",
+    "The exact research-record check in source mode with disposition validation, the chronology record and orientation-v3 annotations checks, and focused checks of the Latin changes, unchanged historical English, and leaf file hashes passed."
+  ],
+  "stage": "research",
+  "summary": "Rechecked the disputed Gospel and Trinity Preface readings in the three hash-matched Missal witnesses. Corrected the appointed Latin, the historical comparison, and the Colossians wording in the interpretation audit."
+}

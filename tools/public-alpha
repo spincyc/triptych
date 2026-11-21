@@ -6747,7 +6747,12 @@ def _scan_artifact_topology(
 
     def scan(directory_fd: int, parent: PurePosixPath) -> None:
         try:
-            names = sorted(os.listdir(directory_fd))
+            # A fresh open description cannot inherit a shared directory cursor.
+            listing_fd = os.open(".", DIRECTORY_OPEN_FLAGS, dir_fd=directory_fd)
+            try:
+                names = sorted(os.listdir(listing_fd))
+            finally:
+                os.close(listing_fd)
         except OSError as exc:
             raise ReleaseError(f"cannot safely scan artifact directory {parent}: {exc}") from exc
         for name in names:

@@ -1,0 +1,13 @@
+{
+  "artifact_path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/publication.toml",
+  "disposition": "PASS",
+  "iteration": 1,
+  "notes": [
+    "Content schema validation with owning validators and leaf web conversion checks passed for main.tex, synthesis.tex and homily.tex. The three existing alpha records use perpetual-public-repository-2026. Traditional Latin Mass catalog row 68 has the ordered GPT reader links and one primary-provider canonical marker. The sealed document catalogue and all three web product file hashes match the descriptor.",
+    "Full browser record and separate check agree on identity 6b6aab96c59ed1d902c7bd2d2dec5d1feafd4e2bcbce298993460265c425b9ad, 13 families, 29,967 files and 268,634,715 bytes. The scoped binding refresh reported 127 changes. The coordinator's global release status and scoped public-alpha check are pending.",
+    "The build/web canonical Markdown and research/web-artifact.json match the inspection's historical SHA-256 d5562a4040789668a3c24d15adb24703ab1efade890157b45f1de982b95fd270. The independent cold conversion and sealed browser product agree on current SHA-256 991f71a11d81f84da96fff56608f0c74f50b0d166d46a7ea2f7d04c206943283. Both Markdown files are 86,493 bytes. The only changed line reads Last revised (UTC) 2026-11-17T18:37:42Z, up from 2026-11-17T18:35:07Z. The revision tool identifies commit 82a6cc06cce1bf6bcf38db3246dfab2d6c530fda and includes scripts/_calendars.py in the canonical projection closure. The inspection and receipt still describe web-review iteration 1.",
+    "The latest native study, synthesis and homily seals remain current. Research drift includes scripts/_calendars.py, the fragment-loci and translation-absences maps, and source-containment-v1.toml. The exact recomputed web seal preserves the content identity and changes the evidence and render identities. The research owner must revalidate its evidence closure. The web owner must regenerate and obtain independent review of the exact current conversion and source closure. Evidence logs are in .scratch/complete-proper-68/install-stage/."
+  ],
+  "stage": "install-publication",
+  "summary": "Verified the GPT Last Sunday source and reader wiring after the merge. The coordinator completed the source inventory refresh, full browser record and check, and scoped release-binding refresh. STALE-RESEARCH-REVIEW and STALE-WEB-REVIEW remain open, and the current canonical Markdown differs from the inspected receipt at the Git-derived revision stamp. Route those changes through their owning stages before terminal acceptance."
+}

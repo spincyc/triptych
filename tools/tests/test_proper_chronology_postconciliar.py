@@ -215,7 +215,8 @@ class PostconciliarChronologyTests(unittest.TestCase):
         composition_path = corpus / "composition.yaml"
         data = yaml.safe_load(composition_path.read_text())
         unit = next(item for item in data["units"] if item["id"] == "composition.gospel-of-matthew")
-        unit["dates"][0]["date"]["label"] += " (fixture correction)"
+        claim = next(date for date in unit["dates"] if date.get("answerability", "answerable") == "answerable")
+        claim["date"]["label"] += " (fixture correction)"
         composition_path.write_text(yaml.safe_dump(data, sort_keys=False))
         for command, refusal in (("record", "not what the corpus now answers"),
                                  ("annotations", "not the current chronology annotation projection")):

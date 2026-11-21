@@ -60,8 +60,7 @@ SECTION_INTRO = (
     "author's era, and the writing or formation of the text. The Date column "
     "gives calendar orientation. A proposal span summarizes the extent of "
     "numerical dates in the sources, including gaps between proposals. "
-    "Undated occasions and relative formation bounds beside a composition "
-    "date are left to the evidence. "
+    "Undated occasions and events remain distinct from composition dates. "
     "The complete alternatives and their evidence follow the table."
 )
 EVIDENCE_INTRO = (
@@ -73,8 +72,8 @@ EVIDENCE_INTRO = (
 PAGE_LEGEND = (
     "\\emph{c.}: approximately. Proposal spans summarize numerical alternatives, "
     "including gaps between them. \\emph{Disputed}: no preferred answer. "
-    "An author's era does not date a poem's occasion; undated occasions are "
-    "omitted. \\emph{(derived)} marks a calculation from the sources."
+    "An author's era does not date a poem's occasion. "
+    "\\emph{(derived)} marks a calculation from the sources."
 )
 SHEET_POINTER = (
     "The evidence for every date, with its sources, is set out in the "

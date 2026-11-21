@@ -1,0 +1,323 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "SYN-THEMES-TWO-FULL-PAGES",
+      "location": "sections/concise/04-themes.tex:20\u201328, 41\u201356, 59\u201365, 83\u201388, 107\u2013112 (native synthesis pp. 3\u20134)",
+      "problem": "Both forced breaks cut off the themes prose about 2.3 and 2.8 inches above their page\u2019s footnote rule. The four sections cover the appointments in order, but the comparison of the Gradual\u2019s past and future speech at lines 41\u201344 gives two conclusions without showing how the verses move from the past tense to the future. At lines 59\u201365 the reader is told that Chrysostom explains the obstacles to escape, without hearing what he says about a pregnant woman or a nursing mother. The Offertory and Secret at lines 83\u201388 are reported consecutively before the prose moves on to the Preface. These compressed bridges leave the required two-page opening underdeveloped.",
+      "repair_target": "synthesis",
+      "required_result": "Use details already supported in the expansive study to make both pages substantive at the current type size. The Gradual paragraph could begin, \u201cThe singers thank God for rescue and promise to praise him forever. Augustine takes the future praise as a clue that the rescue also lies ahead. Bellarmine hears people who remember being rescued and now need help again.\u201d The line on Chrysostom could develop the scene. \u201cJesus tells someone on a roof to leave his possessions in the house. Chrysostom asks how a pregnant woman could make such a hurried escape or a nursing mother leave her infant behind.\u201d The repeated Offertory cry can lead into the Secret by explaining what help the worshippers are now asking for as they bring their gifts. Keep the developed commentary on page 5 and check both themes pages with the settled rendering.",
+      "severity": "blocking"
+    },
+    {
+      "id": "SYN-COMMUNION-TEMPORAL-PRAYER-BOUND",
+      "location": "sections/concise/10-commentary.tex:244\u2013259, 278\u2013298 (native synthesis p. 8)",
+      "problem": "The Communion question asks what Jesus\u2019 assurance allows readers to expect. It reports Theophylact\u2019s broad assurance, Bede\u2019s specific assurance of pardon and the physical help in Bede\u2019s account of Gregory. The revised flight paragraph teaches that continued danger cannot reveal someone else\u2019s faith, but it drops the expansive study\u2019s conclusion for the person praying in that danger. The need may be real and legitimately the subject of prayer, and the timing and form of help remain with God (sections/40-prayer-and-conversion.tex:273\u2013290 and research/interpretations.md:486\u2013497). Without this qualification the section leaves the reader to infer whether confident petition warrants expecting the particular temporal result requested.",
+      "repair_target": "synthesis",
+      "required_result": "State beside the conjunction of Mark\u2019s assurance, Bede\u2019s example and Matthew\u2019s flight that Christ teaches disciples to ask for real help while entrusting the timing and form of that help to God. Keep Bede\u2019s particular assurance about pardon and retain the concrete case in which God gives someone the capacity to forgive while the conflict continues. Present the conclusion as the study\u2019s inference across those passages.",
+      "severity": "blocking"
+    },
+    {
+      "id": "SYN-BEDE-MOUNTAIN-REFERENT",
+      "location": "sections/concise/10-commentary.tex:261\u2013276",
+      "problem": "The mountain in Bede signifies the devil himself, who lifts himself up in pride. The concise passage identifies it with the devil\u2019s pride instead, which makes Bede\u2019s next step about casting out spiritual mountains harder to follow. His exact distinction appears in In Marci evangelium expositio III, registered Latin transcription line 338, and the expansive study states it at sections/40-prayer-and-conversion.tex:255\u2013263.",
+      "required_result": "Say that Bede sees the devil in the mountain because the devil raises himself against God in pride.",
+      "severity": "advisory"
+    },
+    {
+      "id": "SYN-AUGUSTINE-PS84-VOLUME",
+      "location": "sections/concise/90-apparatus.tex:53\u201356 (native synthesis p. 10)",
+      "problem": "The bibliography sends readers to Migne PL 36 for Augustine\u2019s Latin exposition of Psalm 84. The registered part-9 Latin witness used for the Psalm 84 claims is from PL 37, as recorded in research/source-bindings.toml:637.",
+      "required_result": "Correct the volume to PL 37 for Psalm 84 and keep the Latin and English section number conventions distinct.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 3,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-inventory",
+          "kind": "front-matter",
+          "path": "sections/concise/01-inventory.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-overview",
+          "kind": "front-matter",
+          "path": "sections/concise/02-overview.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-chronology",
+          "kind": "front-matter",
+          "path": "generated/scriptural-date-location-page.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml",
+            "research/chronology.toml",
+            "research/chronology-annotations.tex",
+            "research/chronology-table.tex"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-themes",
+          "kind": "front-matter",
+          "path": "sections/concise/04-themes.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-commentary",
+          "kind": "integrated-commentary",
+          "path": "sections/concise/10-commentary.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [],
+          "key": "concise-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/concise/90-apparatus.tex",
+          "references": []
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "preface",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Bede",
+            "Jerome",
+            "Robert Bellarmine",
+            "Lucien Fromage"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "deliverance-and-waiting"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "deliverance-and-waiting",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Bede",
+            "Jerome",
+            "Robert Bellarmine",
+            "Lucien Fromage",
+            "Theophylact of Ohrid"
+          ],
+          "carrying_authors": [
+            "Thomas Aquinas",
+            "Bede"
+          ],
+          "component_keys": [
+            "prayer-and-conversion"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "prayer-and-conversion",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost",
+    "files": {
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/generated/scriptural-date-location-page.tex": "82c97c59e9bf0ec0246594c1a7198e29562f8d7399267e27eec2a8f5b0f421d2",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/research/chronology-annotations.tex": "7468fdd07af2a61adca867f3c11096e04a78c693f232fb13e8d98e1b2496435a",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/research/chronology-table.tex": "6666ecbec4f7ab81ca016d90afdb4596b536cebeb7d7c78a2359a3679a0ad60c",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/research/chronology.toml": "a2bd3ca5aadcd0262a045f301e7092e7e7a33f55390ba4f2bd55e8ca998aea8a",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/research/interpretations.md": "432475c19c6cd7b6cdaa29457ebbd7cdf39a5ede42a611a77b70a514eb2da383",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/research/scope.md": "f3f2a5a5832cfbfc0f40154898c57d6aca1fe2be615a1df037701264d1ccdc25",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/research/source-bindings.toml": "d84e32f0260f000db37366ab17451eba2adc224414cf4480c1ffa46dd483f088",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/sections/concise/01-inventory.tex": "726af3abc1779de7db2d16f76b02d06daf72b9026bf8e86915c6931984217f96",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/sections/concise/02-overview.tex": "bdd63e6f454b32bc49948a6fde86ee13b9e6cdb98d634c5176d111d512beee3f",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/sections/concise/04-themes.tex": "b1d2f37901d057976a8bf46fb536af2cc3174a99782ac52adad57b8c45cbccf6",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/sections/concise/10-commentary.tex": "ed0f1d50426553f2307b95bd15d2796f480420296fb8fed965ac3697fa1c5104",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/sections/concise/90-apparatus.tex": "18ed54d4ba5e46d77988d295e30ff58eeb6a8d6c764b0e11f5ffaaa004ad0e62",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/synthesis.tex": "8dce9b0c2291aef1cbaa511d4dd28a6378eecc8244101e91c09ec35216f9ec6a"
+    },
+    "generation_provenance": {
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "19",
+            "73706a2ab569c88974452c4aec8fe2b7540a23ad1192efa39d574ddfbd334645",
+            "13ecdd1552c245ea",
+            "e8aceadc4a7e1ebe8d4987815a636d82ddd9d59b",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gpt",
+    "review": "synthesis",
+    "schema": 1
+  },
+  "stage": "synthesis-review",
+  "summary": "Read synthesis.tex independently, then checked the expansive study against the cited Missal, Lasance/Walsh, Augustine, Bellarmine, Chrysostom, Jerome, Aquinas, Bede, Theophylact and Fromage loci. The interpretations distinguish deliverance already begun from the final rescue still awaited and explain how God changes those who pray with confidence. Inspected all ten pages of the selected native host-pdfTeX synthesis (SHA-256 2dfed600e8530e1dc4a571cf0e29f49f77d212f85317ca65557e2411115979ac) and checked the settled page markers. Page 1 has eleven appointments and four sense rows, page 2 alone locates Matthew 24:15\u201335 at Mount Olivet where Jesus foretells Jerusalem\u2019s ruin and his coming, and its derived A.D. 29 event date is readily distinguished from both composition rows. Commentary starts on page 5. The underdeveloped themes pages and the lost qualification about the timing and form of help in prayer require revision."
+}

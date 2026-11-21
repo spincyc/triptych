@@ -1,0 +1,190 @@
+# Blocking findings standing against this publication, the
+# verdicts its evaluation lanes reached, and the observations
+# they recorded outside their own criteria. Written by tpt after
+# each evaluation of this leaf.
+#
+# One record, several stages. Every entry names the stage that
+# raised it, [[stages]] says what each stage last said, and an
+# evaluation replaces its own stage's entries and leaves every
+# other stage's alone -- so what the content evaluation found
+# still stands here after the synthesis evaluation has spoken. A
+# stage that looked and found nothing leaves an empty list
+# rather than no entry: "evaluated, nothing stands" and
+# "nobody has looked" are different facts, per stage.
+#
+# The keys directly below these comments describe the write that
+# last touched this file, and count every stage's entries
+# together. They are its summary line. What a given stage found
+# is in that stage's [[stages]] entry and in the entries naming
+# it -- reading the top-level stage as the record's one stage is
+# the mistake this schema exists to stop.
+#
+# It exists because a run's own results live under build/, which
+# is ignored, which `make clean` and `wt tidy` delete without
+# asking, and which nothing preserves between productions.
+#
+# Nothing reads this back into a run. Carrying findings from one
+# production into the next wants doing where the run's identity
+# can cover it -- a committed record, or this file's hash in the
+# run id and the acceptance audit -- and until then this is a
+# record for people.
+#
+# Escalations -- defects in artifacts no stage of the run may
+# write: guidance, the source library, the tools, the workflow --
+# are written here too, from the run's whole ledger, so that the
+# decision they ask of a maintainer outlives the run directory.
+#
+# Accepted findings are true defects a lane judged not worth a
+# repair round, with the reason it judged so. Advisories are
+# defects that did not merit blocking. Both are here because a
+# verdict that dies with the run is met again by the next cold
+# read as though nobody had ever weighed it, and weighed again --
+# which is how a document in good shape spends a whole iteration
+# budget. A later evaluation reads these before it raises.
+
+standing_findings_schema = 4
+record_type = "standing-blocking-findings"
+document = "liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost"
+provider = "gpt"
+run_id = "13ecdd1552c245ea"
+workflow = "proper-study"
+workflow_version = 19
+stage = "web-review"
+iteration = 3
+disposition = "PASS"
+standing = 0
+accepted_count = 0
+advisory_count = 9
+observation_count = 0
+
+[[stages]]
+stage = "homily-review"
+iteration = 2
+disposition = "PASS"
+run_id = "13ecdd1552c245ea"
+workflow = "proper-study"
+workflow_version = 19
+standing = 0
+accepted_count = 0
+advisory_count = 2
+observation_count = 0
+
+[[stages]]
+stage = "research-review"
+iteration = 6
+disposition = "PASS"
+run_id = "13ecdd1552c245ea"
+workflow = "proper-study"
+workflow_version = 19
+standing = 0
+accepted_count = 0
+advisory_count = 1
+observation_count = 0
+
+[[stages]]
+stage = "study-review"
+iteration = 4
+disposition = "PASS"
+run_id = "13ecdd1552c245ea"
+workflow = "proper-study"
+workflow_version = 19
+standing = 0
+accepted_count = 0
+advisory_count = 1
+observation_count = 0
+
+[[stages]]
+stage = "synthesis-review"
+iteration = 4
+disposition = "PASS"
+run_id = "13ecdd1552c245ea"
+workflow = "proper-study"
+workflow_version = 19
+standing = 0
+accepted_count = 0
+advisory_count = 3
+observation_count = 0
+
+[[stages]]
+stage = "web-review"
+iteration = 3
+disposition = "PASS"
+run_id = "13ecdd1552c245ea"
+workflow = "proper-study"
+workflow_version = 19
+standing = 0
+accepted_count = 0
+advisory_count = 2
+observation_count = 0
+
+[[advisories]]
+stage = "homily-review"
+id = "HOM-COLLECT-FRUIT-001"
+severity = "advisory"
+location = "sections/homily/10-body.tex:48–51"
+problem = "Immediately after naming the Collect, ‘the fruit of our work’ blurs whose work the prayer names. At Missal p. 423, no. 1770, the faithful pursue the fruit of God's work and ask to receive greater remedies. The passage already preserves the faithful's dependence on God, so this is a local imprecision."
+required_result = "Preserve the difference between God's work and the faithful's response in the sentence explaining the Collect. For example, ‘We ask God to stir our wills so that we will follow through on what he has begun in us and receive the healing we still need.’"
+
+[[advisories]]
+stage = "homily-review"
+id = "HOM-STUDY-FLIGHT-AUDIENCE-001"
+severity = "advisory"
+location = "sections/30-deliverance-and-waiting.tex:114–115 and sections/40-prayer-and-conversion.tex:273–279"
+problem = "‘When they will have to flee’ and ‘their flight’ make the disciples who hear the reply sound like the particular people who will flee. Matthew 24:16 directs the flight to those in Judea, and Chrysostom's homily 76.1 explicitly distinguishes the apostles in his treatment of the Sabbath. The spoken homily separates the two groups."
+required_result = "In the two study passages, say that Jesus tells his hearers to pray about the flight from Judea and names those in Judea as the people who must flee. Retain both the promise for the elect and the argument about asking for help while danger persists."
+
+[[advisories]]
+stage = "research-review"
+id = "RES-LASANCE-SANCTUS-CASE"
+severity = "advisory"
+location = "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/propers/verified.md:401"
+problem = "The retained historical English at the Sanctus junction capitalizes “Who” where Lasance printed p. 774 (PDF p. 773) has “who” in the phrase “Blessed is He who cometh.” This isolated case difference leaves the wording and meaning intact."
+required_result = "Use the Lasance capitalization in the historical English transcription."
+
+[[advisories]]
+stage = "study-review"
+id = "STU-PINPOINT-001"
+severity = "advisory"
+location = "sections/30-deliverance-and-waiting.tex:58–63; sections/20-commentary.tex:29–38"
+problem = "The general citation of Augustine's exposition of Psalm 84 contains the argument, but the highlighted section ranges are ambiguous across editions. The later request for conversion is the explicit evidence for the prophetic past in Latin §6 and NPNF Psalm LXXXV §4. The part of the same exposition on bondage to sin is Latin §4."
+required_result = "Name the numbering of the edition used. For the inference from the later request for conversion, cite Latin §6 or NPNF Psalm LXXXV §4, and distinguish the pinpoint for captivity where both claims share a footnote."
+
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-GOSPEL-FLIGHT-AUDIENCE"
+severity = "advisory"
+location = "sections/concise/04-themes.tex:72–80 and sections/concise/10-commentary.tex:278–285"
+problem = "Saying that Jesus tells the disciples to pray about when they themselves will flee blurs the scope of the two instructions. Matthew 24:16 names people in Judea as those who must flee. Chrysostom’s Matthew homily 76.1 says the Apostles would be absent during the siege and draws attention to the Sabbath observance of those in Judea. The local wording leaves the distinction between the Judean emergency and the final coming intelligible."
+required_result = "Say that Jesus tells his hearers to pray that the Judean flight will fall neither in winter nor on a Sabbath. Describe the people in Judea as those instructed to flee, and retain the application to prayer for real help in danger."
+
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-BEDE-PERFECT-FAITH"
+severity = "advisory"
+location = "sections/concise/10-commentary.tex:270–276"
+problem = "The phrase ‘effective faith’ weakens the distinction Bede makes in In Marci evangelium expositio III on Mk 11:25, registered Latin transcription line 339. He describes perfect faith working through love in connection with moving spiritual mountains and then assures people still short of that perfection that they can obtain pardon by asking and first forgiving others. The surrounding sentences retain both groups and the assurance about pardon."
+required_result = "Name perfect faith working through love as Bede’s description of the faith that can move spiritual mountains, and keep his distinct assurance of pardon for those still growing in faith."
+
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-SECRET-ENGLISH-NUANCE"
+severity = "advisory"
+location = "sections/concise/10-commentary.tex:193–201"
+problem = "The explanation of the English ‘enjoyments of heaven’ says that the Latin names what the offerers will come to desire. The 1962 Missal, p. 424, no. 1776, speaks of passing to heavenly desires, while Lasance/Walsh, p. 740, expresses their object in its received English. Fromage’s explanation of a change of desire in the preceding sentence conveys the underlying petition."
+required_result = "Say that the Latin asks that the offerers come to desire heavenly things, and identify ‘enjoyments of heaven’ as Lasance/Walsh’s rendering if the comparison is retained."
+
+[[advisories]]
+stage = "web-review"
+id = "WEB-LATIN-QUOTATION-EMPHASIS-001"
+severity = "advisory"
+location = "sections/10-appointed-text.tex at proper-epistle, proper-gospel and the dialogue under proper-preface (canonical Markdown lines 95–97, 167–169 and 265–271)"
+problem = "The renderer italicizes the first paragraph of these three Latin blocks. Their later paragraphs are upright even though the shared Latin environment italicizes the entire block. The browser preserves all words, paragraph breaks and separate English witness labels."
+required_result = "Apply the same Latin styling to every paragraph of these three blocks and preserve the paragraph breaks and separately labelled English quotations."
+
+[[advisories]]
+stage = "web-review"
+id = "WEB-JUDEAN-FLIGHT-AUDIENCE-001"
+severity = "advisory"
+location = "sections/30-deliverance-and-waiting.tex:114–115 and sections/40-prayer-and-conversion.tex:273–279 (canonical Markdown lines 451 and 553)"
+problem = "The two sentences imply that the disciples listening on Mount Olivet will themselves have to flee. Matthew 24:16 specifies the people in Judea, and Chrysostom explicitly distinguishes them from the apostles in Homily on Matthew 76.1. The appointed Gospel and the surrounding study correctly identify Judea."
+required_result = "Say that Jesus asks his hearers to pray that the Judean flight will fall neither in winter nor on the Sabbath. Retain the separate promise that the days will be shortened for the elect and the application to praying while danger lasts."

@@ -125,10 +125,34 @@
       "delivery": "offline-only"
     },
     {
+      "id": "6a0810ef70d78b533344a448413f40b52b041b93273d276eda05f04f9e23a102",
+      "name": "triptych-binaries-0015-6a0810ef70d78b53.tar",
+      "sha256": "6a0810ef70d78b533344a448413f40b52b041b93273d276eda05f04f9e23a102",
+      "bytes": 5928960,
+      "urls": [],
+      "delivery": "offline-only"
+    },
+    {
       "id": "89abd362d8033bf0adcd4ef43bad82467bfff38cb0a79535b266e433c47dc4b7",
       "name": "triptych-binaries-0015-89abd362d8033bf0.tar",
       "sha256": "89abd362d8033bf0adcd4ef43bad82467bfff38cb0a79535b266e433c47dc4b7",
       "bytes": 16906240,
+      "urls": [],
+      "delivery": "offline-only"
+    },
+    {
+      "id": "fc34acbcc44cb4c3ef7073627d26ac195b470d7effdcc6aee6d7480d5f899cfc",
+      "name": "triptych-binaries-0017-fc34acbcc44cb4c3.tar",
+      "sha256": "fc34acbcc44cb4c3ef7073627d26ac195b470d7effdcc6aee6d7480d5f899cfc",
+      "bytes": 1638400,
+      "urls": [],
+      "delivery": "offline-only"
+    },
+    {
+      "id": "fd655a821d1028df0e035541e1e49d9d777e64bd7b972a624edd43ba7fcac3ec",
+      "name": "triptych-binaries-0018-fd655a821d1028df.tar",
+      "sha256": "fd655a821d1028df0e035541e1e49d9d777e64bd7b972a624edd43ba7fcac3ec",
+      "bytes": 1187840,
       "urls": [],
       "delivery": "offline-only"
     }
@@ -50840,6 +50864,46 @@
       "member": "src/sources/works/jacques-paul-migne/patrologia-latina-volume-9/editions/1844-paris/artifacts/nonseasonal-hilary-page120-20261112/page120.png"
     },
     {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/last-sunday-trinity-archive-pages-20261116-b1129c12/source.tar",
+      "sha256": "b1129c124e9077a0b8c2bcac27a85cffe4d711ba5b15033142c1531d2fef3a89",
+      "bytes": 3092480,
+      "kind": "source-evidence",
+      "media_type": "application/x-tar",
+      "origin_url": "https://archive.org/download/bub_gb_E7sPAAAAIAAJ/bub_gb_E7sPAAAAIAAJ_images.tar",
+      "archive": "6a0810ef70d78b533344a448413f40b52b041b93273d276eda05f04f9e23a102",
+      "member": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/last-sunday-trinity-archive-pages-20261116-b1129c12/source.tar"
+    },
+    {
+      "path": "src/sources/works/holy-see/acta-apostolicae-sedis/editions/volume-4-1912/artifacts/pbc-response-pages-463-465-20261116-3725d450/source.pdf",
+      "sha256": "3725d45027d2f3195e393912a20e111e32bc712dd62826bfb8719f2a6e980133",
+      "bytes": 449941,
+      "kind": "source-evidence",
+      "media_type": "application/pdf",
+      "origin_url": "https://archive.org/download/AAS-04-1912/AAS-04-1912.pdf",
+      "archive": "6a0810ef70d78b533344a448413f40b52b041b93273d276eda05f04f9e23a102",
+      "member": "src/sources/works/holy-see/acta-apostolicae-sedis/editions/volume-4-1912/artifacts/pbc-response-pages-463-465-20261116-3725d450/source.pdf"
+    },
+    {
+      "path": "src/sources/works/jacques-paul-migne/patrologia-latina-volume-24/editions/1865-paris/artifacts/jeremiah-29-pages-451-452-20261116-b12f006b/source.pdf",
+      "sha256": "b12f006b00fa419d7d51c0f6797f86fd662a703b4abb8d064a163b6550c95046",
+      "bytes": 406153,
+      "kind": "source-evidence",
+      "media_type": "application/pdf",
+      "origin_url": "https://archive.org/download/sanctieusebiihie04jero/sanctieusebiihie04jero.pdf",
+      "archive": "6a0810ef70d78b533344a448413f40b52b041b93273d276eda05f04f9e23a102",
+      "member": "src/sources/works/jacques-paul-migne/patrologia-latina-volume-24/editions/1865-paris/artifacts/jeremiah-29-pages-451-452-20261116-b12f006b/source.pdf"
+    },
+    {
+      "path": "src/sources/works/prosper-gueranger/the-liturgical-year/editions/english-duffy-1883-volume-11/artifacts/last-sunday-pages-527-540-20261116-41ccf520/source.pdf",
+      "sha256": "41ccf5206b681a8b8a5cd5187825a2ddf25b0ccdc175a2793b37d5814abe3e2e",
+      "bytes": 1968861,
+      "kind": "source-evidence",
+      "media_type": "application/pdf",
+      "origin_url": "https://archive.org/download/liturgicalyear11gu/liturgicalyear11gu.pdf",
+      "archive": "6a0810ef70d78b533344a448413f40b52b041b93273d276eda05f04f9e23a102",
+      "member": "src/sources/works/prosper-gueranger/the-liturgical-year/editions/english-duffy-1883-volume-11/artifacts/last-sunday-pages-527-540-20261116-41ccf520/source.pdf"
+    },
+    {
       "path": "src/sources/works/holy-see/akolouthiai-ton-anonymon/editions/1738-rome-propaganda/artifacts/chrysostom-facsimile-a190a9e3/chrysostom-anaphora-pages.pdf",
       "sha256": "a190a9e311f1e518ca0f42afafe09773036a9c49654f7a386d3d749aa0c7b148",
       "bytes": 3305731,
@@ -50898,6 +50962,26 @@
       "origin_url": "https://books.google.com/books?id=m2TsEVn4SzcC",
       "archive": "89abd362d8033bf0adcd4ef43bad82467bfff38cb0a79535b266e433c47dc4b7",
       "member": "src/sources/works/holy-see/euchologion/editions/1873-rome-propaganda/artifacts/chrysostom-pages-afbcf671/chrysostom-anaphora-pages.zip"
+    },
+    {
+      "path": "src/sources/works/theophylact-of-ohrid/enarratio-in-evangelium-marci/editions/1525-basel-oecolampadius/artifacts/e-rara-mark-chapter-xi-pdf-e72b2cd4/mark-chapter-xi.pdf",
+      "sha256": "e72b2cd4c08f661d8b809522c50306adc34ccae66f57f5c21a9978bce4c835ee",
+      "bytes": 1633434,
+      "kind": "source-evidence",
+      "media_type": "application/pdf",
+      "origin_url": "https://www.e-rara.ch/download/pdf/7311653.pdf",
+      "archive": "fc34acbcc44cb4c3ef7073627d26ac195b470d7effdcc6aee6d7480d5f899cfc",
+      "member": "src/sources/works/theophylact-of-ohrid/enarratio-in-evangelium-marci/editions/1525-basel-oecolampadius/artifacts/e-rara-mark-chapter-xi-pdf-e72b2cd4/mark-chapter-xi.pdf"
+    },
+    {
+      "path": "src/sources/works/rupert-of-deutz/de-divinis-officiis/editions/latin-migne-pl-170/artifacts/ia-leaf-n170-a8beafb9/rupert-ia-n170.jpg",
+      "sha256": "a8beafb98c3b7d866208c67a8cdcd931af19064b6841dbcfbc97cd93ae17acb3",
+      "bytes": 1181514,
+      "kind": "source-evidence",
+      "media_type": "image/jpeg",
+      "origin_url": "https://archive.org/download/patrologiaecursu0170mign/page/n170_w1200.jpg",
+      "archive": "fd655a821d1028df0e035541e1e49d9d777e64bd7b972a624edd43ba7fcac3ec",
+      "member": "src/sources/works/rupert-of-deutz/de-divinis-officiis/editions/latin-migne-pl-170/artifacts/ia-leaf-n170-a8beafb9/rupert-ia-n170.jpg"
     }
   ]
 }

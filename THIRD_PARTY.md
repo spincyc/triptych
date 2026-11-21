@@ -12,6 +12,24 @@ when an artifact manifest records an affirmative distribution basis. Those
 bytes keep their own status and are not offered under Triptych's CC BY 4.0
 license merely because they are committed beside project-created metadata.
 
+The bounded Basel 1525 *In Marcum* facsimile preserves Johannes Oecolampadius's
+Latin translation of Theophylact of Ohrid as printed by Andreas Cratander.
+Zentralbibliothek Zürich, B 82 | G, holds the digitized copy. The e-rara
+catalogue marks it [Public Domain Mark](https://www.e-rara.ch/zuz/content/titleinfo/7285107),
+with [DOI 10.3931/e-rara-23526](https://doi.org/10.3931/e-rara-23526).
+The translation is public domain in the United States by publication date.
+The preserved five-page PDF contains an e-rara cover and fols. 68r–69v.
+Its exact bytes are available through a verified offline-only pack. This
+basis covers the historical Latin witness. The modern English translation
+is a separate expression.
+
+The historical Latin of Thomas Aquinas's *In Jeremiam prophetam expositio*
+and its Parma 1863 printing are public domain in the United States. The exact
+[Corpus Thomisticum delivery](https://www.corpusthomisticum.org/cph.html)
+credits Roberto Busa and Enrique Alarcón and expressly reserves all rights in
+the electronic edition. Its manifest records the acquired hash, extent and
+locators. The HTML and the modern edition's text stay in private custody.
+
 The retained complete USFM book members from eBible.org preserve the native
 Bible text, chapter and verse markers, file identifiers, and publisher notes
 byte for byte. They cover selected complete books from the

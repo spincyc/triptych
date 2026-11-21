@@ -1,0 +1,539 @@
+{
+  "awaiting_result_for": null,
+  "current_stage": "ACCEPTED",
+  "disposition": "ACCEPTED",
+  "escalations": [],
+  "iteration": 91,
+  "packet_hash": "7ffc65f59d44bb71e60898bfa4e28e206273cb93a6a5a6d2f8a3a42990fca0fc",
+  "packet_path": "build/tpt-runs/13ecdd1552c245ea/packets/publication-gates-0003.txt",
+  "packets_emitted": 91,
+  "repo_commit": "e8aceadc4a7e1ebe8d4987815a636d82ddd9d59b",
+  "results_received": 91,
+  "run_id": "13ecdd1552c245ea",
+  "stage_failures": {
+    "artifact-gates": 0,
+    "homily-preflight": 0,
+    "homily-review": 0,
+    "publication-gates": 0,
+    "research-preflight": 0,
+    "research-review": 0,
+    "scope-gate": 0,
+    "study-preflight": 0,
+    "study-review": 0,
+    "synthesis-preflight": 0,
+    "synthesis-review": 0,
+    "web-review": 0
+  },
+  "stage_iterations": {
+    "artifact-gates": 3,
+    "author-study": 5,
+    "build-artifacts": 3,
+    "derive-homily": 3,
+    "derive-synthesis": 5,
+    "generate-web": 4,
+    "homily-preflight": 3,
+    "homily-review": 3,
+    "install-publication": 4,
+    "publication-gates": 4,
+    "research": 7,
+    "research-preflight": 7,
+    "research-review": 7,
+    "resolve-context": 1,
+    "scope-gate": 1,
+    "source-registration": 7,
+    "study-preflight": 5,
+    "study-review": 5,
+    "synthesis-preflight": 5,
+    "synthesis-review": 5,
+    "web-review": 4
+  },
+  "stage_novel": {
+    "artifact-gates": 0,
+    "homily-preflight": 0,
+    "homily-review": 0,
+    "publication-gates": 0,
+    "research-preflight": 0,
+    "research-review": 0,
+    "scope-gate": 0,
+    "study-preflight": 0,
+    "study-review": 0,
+    "synthesis-preflight": 0,
+    "synthesis-review": 0,
+    "web-review": 0
+  },
+  "stage_repeats": {
+    "artifact-gates": 0,
+    "homily-preflight": 0,
+    "homily-review": 0,
+    "publication-gates": 0,
+    "research-preflight": 0,
+    "research-review": 0,
+    "scope-gate": 0,
+    "study-preflight": 0,
+    "study-review": 0,
+    "synthesis-preflight": 0,
+    "synthesis-review": 0,
+    "web-review": 0
+  },
+  "standing_findings": [],
+  "transitions": [
+    {
+      "disposition": "PASS",
+      "from": "scope-gate",
+      "to": "resolve-context"
+    },
+    {
+      "disposition": "PASS",
+      "from": "resolve-context",
+      "to": "research"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research",
+      "to": "source-registration"
+    },
+    {
+      "disposition": "PASS",
+      "from": "source-registration",
+      "to": "research-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research-preflight",
+      "to": "research-review"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research-review",
+      "to": "author-study"
+    },
+    {
+      "disposition": "PASS",
+      "from": "author-study",
+      "to": "study-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "study-preflight",
+      "to": "study-review"
+    },
+    {
+      "disposition": "PASS",
+      "from": "study-review",
+      "to": "derive-synthesis"
+    },
+    {
+      "disposition": "PASS",
+      "from": "derive-synthesis",
+      "to": "synthesis-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "synthesis-preflight",
+      "to": "synthesis-review"
+    },
+    {
+      "disposition": "PASS",
+      "from": "synthesis-review",
+      "to": "derive-homily"
+    },
+    {
+      "disposition": "PASS",
+      "from": "derive-homily",
+      "to": "homily-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "homily-preflight",
+      "to": "homily-review"
+    },
+    {
+      "disposition": "PASS",
+      "from": "homily-review",
+      "to": "build-artifacts"
+    },
+    {
+      "disposition": "PASS",
+      "from": "build-artifacts",
+      "to": "artifact-gates"
+    },
+    {
+      "disposition": "PASS",
+      "from": "artifact-gates",
+      "to": "generate-web"
+    },
+    {
+      "disposition": "PASS",
+      "from": "generate-web",
+      "to": "web-review"
+    },
+    {
+      "disposition": "PASS",
+      "from": "web-review",
+      "to": "install-publication"
+    },
+    {
+      "disposition": "PASS",
+      "from": "install-publication",
+      "to": "publication-gates"
+    },
+    {
+      "disposition": "FAIL",
+      "from": "publication-gates",
+      "to": "generate-web"
+    },
+    {
+      "disposition": "PASS",
+      "from": "generate-web",
+      "to": "web-review"
+    },
+    {
+      "disposition": "PASS",
+      "from": "web-review",
+      "to": "install-publication"
+    },
+    {
+      "disposition": "PASS",
+      "from": "install-publication",
+      "to": "publication-gates"
+    },
+    {
+      "disposition": "FAIL",
+      "from": "publication-gates",
+      "to": "research"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research",
+      "to": "source-registration"
+    },
+    {
+      "disposition": "PASS",
+      "from": "source-registration",
+      "to": "research-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research-preflight",
+      "to": "research-review"
+    },
+    {
+      "disposition": "CHANGES_REQUIRED",
+      "from": "research-review",
+      "to": "research"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research",
+      "to": "source-registration"
+    },
+    {
+      "disposition": "PASS",
+      "from": "source-registration",
+      "to": "research-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research-preflight",
+      "to": "research-review"
+    },
+    {
+      "disposition": "CHANGES_REQUIRED",
+      "from": "research-review",
+      "to": "research"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research",
+      "to": "source-registration"
+    },
+    {
+      "disposition": "PASS",
+      "from": "source-registration",
+      "to": "research-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research-preflight",
+      "to": "research-review"
+    },
+    {
+      "disposition": "CHANGES_REQUIRED",
+      "from": "research-review",
+      "to": "research"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research",
+      "to": "source-registration"
+    },
+    {
+      "disposition": "PASS",
+      "from": "source-registration",
+      "to": "research-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research-preflight",
+      "to": "research-review"
+    },
+    {
+      "disposition": "CHANGES_REQUIRED",
+      "from": "research-review",
+      "to": "research"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research",
+      "to": "source-registration"
+    },
+    {
+      "disposition": "PASS",
+      "from": "source-registration",
+      "to": "research-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research-preflight",
+      "to": "research-review"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research-review",
+      "to": "author-study"
+    },
+    {
+      "disposition": "PASS",
+      "from": "author-study",
+      "to": "study-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "study-preflight",
+      "to": "study-review"
+    },
+    {
+      "disposition": "CHANGES_REQUIRED",
+      "from": "study-review",
+      "to": "research"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research",
+      "to": "source-registration"
+    },
+    {
+      "disposition": "PASS",
+      "from": "source-registration",
+      "to": "research-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research-preflight",
+      "to": "research-review"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research-review",
+      "to": "author-study"
+    },
+    {
+      "disposition": "PASS",
+      "from": "author-study",
+      "to": "study-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "study-preflight",
+      "to": "study-review"
+    },
+    {
+      "disposition": "PASS",
+      "from": "study-review",
+      "to": "derive-synthesis"
+    },
+    {
+      "disposition": "PASS",
+      "from": "derive-synthesis",
+      "to": "synthesis-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "synthesis-preflight",
+      "to": "synthesis-review"
+    },
+    {
+      "disposition": "CHANGES_REQUIRED",
+      "from": "synthesis-review",
+      "to": "derive-synthesis"
+    },
+    {
+      "disposition": "PASS",
+      "from": "derive-synthesis",
+      "to": "synthesis-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "synthesis-preflight",
+      "to": "synthesis-review"
+    },
+    {
+      "disposition": "PASS",
+      "from": "synthesis-review",
+      "to": "derive-homily"
+    },
+    {
+      "disposition": "PASS",
+      "from": "derive-homily",
+      "to": "homily-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "homily-preflight",
+      "to": "homily-review"
+    },
+    {
+      "disposition": "PASS",
+      "from": "homily-review",
+      "to": "build-artifacts"
+    },
+    {
+      "disposition": "PASS",
+      "from": "build-artifacts",
+      "to": "artifact-gates"
+    },
+    {
+      "disposition": "PASS",
+      "from": "artifact-gates",
+      "to": "generate-web"
+    },
+    {
+      "disposition": "PASS",
+      "from": "generate-web",
+      "to": "web-review"
+    },
+    {
+      "disposition": "CHANGES_REQUIRED",
+      "from": "web-review",
+      "to": "author-study"
+    },
+    {
+      "disposition": "PASS",
+      "from": "author-study",
+      "to": "study-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "study-preflight",
+      "to": "study-review"
+    },
+    {
+      "disposition": "CHANGES_REQUIRED",
+      "from": "study-review",
+      "to": "author-study"
+    },
+    {
+      "disposition": "PASS",
+      "from": "author-study",
+      "to": "study-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "study-preflight",
+      "to": "study-review"
+    },
+    {
+      "disposition": "PASS",
+      "from": "study-review",
+      "to": "derive-synthesis"
+    },
+    {
+      "disposition": "PASS",
+      "from": "derive-synthesis",
+      "to": "synthesis-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "synthesis-preflight",
+      "to": "synthesis-review"
+    },
+    {
+      "disposition": "CHANGES_REQUIRED",
+      "from": "synthesis-review",
+      "to": "derive-synthesis"
+    },
+    {
+      "disposition": "PASS",
+      "from": "derive-synthesis",
+      "to": "synthesis-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "synthesis-preflight",
+      "to": "synthesis-review"
+    },
+    {
+      "disposition": "PASS",
+      "from": "synthesis-review",
+      "to": "derive-homily"
+    },
+    {
+      "disposition": "PASS",
+      "from": "derive-homily",
+      "to": "homily-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "homily-preflight",
+      "to": "homily-review"
+    },
+    {
+      "disposition": "PASS",
+      "from": "homily-review",
+      "to": "build-artifacts"
+    },
+    {
+      "disposition": "PASS",
+      "from": "build-artifacts",
+      "to": "artifact-gates"
+    },
+    {
+      "disposition": "PASS",
+      "from": "artifact-gates",
+      "to": "generate-web"
+    },
+    {
+      "disposition": "PASS",
+      "from": "generate-web",
+      "to": "web-review"
+    },
+    {
+      "disposition": "PASS",
+      "from": "web-review",
+      "to": "install-publication"
+    },
+    {
+      "disposition": "PASS",
+      "from": "install-publication",
+      "to": "publication-gates"
+    },
+    {
+      "disposition": "FAIL",
+      "from": "publication-gates",
+      "to": "install-publication"
+    },
+    {
+      "disposition": "PASS",
+      "from": "install-publication",
+      "to": "publication-gates"
+    },
+    {
+      "disposition": "PASS",
+      "from": "publication-gates",
+      "to": "ACCEPTED"
+    }
+  ],
+  "workflow_digest": "73706a2ab569c88974452c4aec8fe2b7540a23ad1192efa39d574ddfbd334645",
+  "workflow_id": "proper-study",
+  "workflow_version": 19
+}

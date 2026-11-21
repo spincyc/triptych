@@ -1,0 +1,136 @@
+{
+  "all_nonresult_inputs_verbatim": true,
+  "all_packets_verbatim": true,
+  "archive_files": 70,
+  "archive_tool_sha256": "1c159df7436292e5e9d90f1d1cad34b56695ab4e05e247047b63d137dc92734a",
+  "byte_identical_reproduction": true,
+  "changed_results": [
+    {
+      "archived_sha256": "2ee6ae703532f8ae7c5599f2e56e989deb53c99333d182d414fb173448db5d0d",
+      "changes": [
+        {
+          "json_pointer": "/notes/0",
+          "policy": "repository-root-prefix-in-result-notes-v1",
+          "replacements": 9
+        },
+        {
+          "json_pointer": "/notes/1",
+          "policy": "repository-root-prefix-in-result-notes-v1",
+          "replacements": 1
+        },
+        {
+          "json_pointer": "/notes/2",
+          "policy": "repository-root-prefix-in-result-notes-v1",
+          "replacements": 1
+        },
+        {
+          "json_pointer": "/notes/3",
+          "policy": "repository-root-prefix-in-result-notes-v1",
+          "replacements": 1
+        },
+        {
+          "json_pointer": "/notes/4",
+          "policy": "repository-root-prefix-in-result-notes-v1",
+          "replacements": 1
+        },
+        {
+          "json_pointer": "/notes/5",
+          "policy": "repository-root-prefix-in-result-notes-v1",
+          "replacements": 1
+        },
+        {
+          "json_pointer": "/notes/6",
+          "policy": "repository-root-prefix-in-result-notes-v1",
+          "replacements": 1
+        },
+        {
+          "json_pointer": "/notes/7",
+          "policy": "repository-root-prefix-in-result-notes-v1",
+          "replacements": 1
+        },
+        {
+          "json_pointer": "/notes/8",
+          "policy": "repository-root-prefix-in-result-notes-v1",
+          "replacements": 1
+        },
+        {
+          "json_pointer": "/notes/9",
+          "policy": "repository-root-prefix-in-result-notes-v1",
+          "replacements": 1
+        },
+        {
+          "json_pointer": "/notes/10",
+          "policy": "repository-root-prefix-in-result-notes-v1",
+          "replacements": 1
+        },
+        {
+          "json_pointer": "/notes/11",
+          "policy": "repository-root-prefix-in-result-notes-v1",
+          "replacements": 1
+        },
+        {
+          "json_pointer": "/notes/12",
+          "policy": "repository-root-prefix-in-result-notes-v1",
+          "replacements": 1
+        },
+        {
+          "json_pointer": "/notes/13",
+          "policy": "repository-root-prefix-in-result-notes-v1",
+          "replacements": 1
+        },
+        {
+          "json_pointer": "/notes/15",
+          "policy": "repository-root-prefix-in-result-notes-v1",
+          "replacements": 9
+        },
+        {
+          "json_pointer": "/notes/16",
+          "policy": "repository-root-prefix-in-result-notes-v1",
+          "replacements": 3
+        },
+        {
+          "json_pointer": "/artifact_path",
+          "policy": "repository-root-prefix-in-result-artifact-path-v1",
+          "replacements": 1
+        }
+      ],
+      "native_sha256": "d03f66970b21488a2172ec4c25a4bdffe6fca663342633fe4b3fb5d2332c0714",
+      "path": "research-0000.json"
+    }
+  ],
+  "legacy_export_compatibility": [
+    {
+      "byte_identical": true,
+      "files": 12,
+      "mode": "default"
+    },
+    {
+      "byte_identical": true,
+      "files": 13,
+      "mode": "schema-1-notes"
+    },
+    {
+      "byte_identical": true,
+      "files": 13,
+      "mode": "schema-2-handles"
+    },
+    {
+      "byte_identical": true,
+      "files": 13,
+      "mode": "schema-2-both"
+    }
+  ],
+  "native_files_unchanged": 143,
+  "packets": 32,
+  "receipt_schema": 3,
+  "redaction_receipt_sha256": "e1a2b5bc5fe77696b6e91c14efdb42161e6411471219faa18179afc9586a355b",
+  "replacement_counts": {
+    "repository-root-prefix-in-result-artifact-path-v1": 1,
+    "repository-root-prefix-in-result-notes-v1": 34
+  },
+  "repository_root_absent": true,
+  "results": 32,
+  "run_id": "df0ccb9ecfdea6c9",
+  "terminal_disposition": "ACCEPTED",
+  "unmodified_native_hashes_verified": true
+}

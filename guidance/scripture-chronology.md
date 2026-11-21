@@ -1479,6 +1479,11 @@ order and identify distinct appointed uses, including long/short alternatives
 and a response drawn from the Psalm it accompanies. All comparisons,
 dispositions and source alternatives stay beside their own passage.
 
+A composition date never suppresses that passage's unresolved occasion or
+narrated event, nor a separate final-formation bound. These answer different
+questions. Compacting candidate dates within one subject and relation (§10.3)
+does not authorize hiding the other relations in definitions or evidence notes.
+
 On 2026-11-03 the remaining three v1 consumers were explicitly migrated and
 all ten orientation consumers received this grouping repair. The former
 equal-answer grouping repeated unrelated chants together and could print

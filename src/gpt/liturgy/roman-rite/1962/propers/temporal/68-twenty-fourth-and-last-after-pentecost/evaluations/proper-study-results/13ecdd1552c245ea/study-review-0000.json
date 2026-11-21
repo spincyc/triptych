@@ -1,0 +1,386 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "STU-001",
+      "location": "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/research/scope.md:759-761",
+      "problem": "The audit describes Chrysostom's distinction as longsuffering toward those able to requite us and patience toward those unable to do so. This reverses the agent and object. The bound NPNF XIII source, ccel-npnf113-text-54274dd9/source.txt:23854-23860, says longsuffering concerns those whom WE can requite, and patience those whom we cannot. This is nonblocking for the study: sections/30-deliverance-and-waiting.tex:128-131 correctly preserves that relation and develops Aquinas's different adversity/delay distinction without substituting it for Chrysostom's.",
+      "repair_target": "research",
+      "required_result": "Correct the research audit to say: 'Longsuffering toward those whom we can requite, and patience toward those whom we cannot, is his stated Colossians distinction.' Preserve the already-correct study footnote and the distinction from Aquinas.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "observations": [
+    {
+      "location": "proper-components.toml; sections/10-appointed-text.tex; sections/90-apparatus.tex:16-59; guidance/liturgy/propers-production-plan.md:229",
+      "note": "The declared complete mode matches the source records and actual study. Inspected the target Latin at Missal pp. 422-424 and Trinity Preface p. 293, the Pustet 1862 antecedents at pp. 359-360 and 251-252, and the retained Lasance/Walsh English at pp. 736-740, dialogue PDF 770 and Preface/Sanctus PDF 772-773. The study separates continuous Challoner verses from adapted liturgical English, preserves the historical abbreviated conclusions, explains the awkward Postcommunion rendering and does not import older additional orations. Reference-only labeling is not applicable."
+    },
+    {
+      "location": "sections/30-deliverance-and-waiting.tex; sections/40-prayer-and-conversion.tex; sections/50-comparison.tex",
+      "note": "The first interpretation explains accomplished redemption alongside future resurrection and gathering, with developed reasoning from Augustine and Chrysostom. The second explains confident petition as including a recipient made worthy, converted and forgiving, with developed reasoning from Aquinas and Bede. Their different consequences are recoverable from the arguments themselves, not only the headings or four-senses summaries. Each uses the orations, both uses of Psalm 129, Preface and Communion within its reasoning. Their complementarity is not presented as doctrinal rivalry. No recurring blocking register pattern or coverage roll call found."
+    },
+    {
+      "location": "sections/30-deliverance-and-waiting.tex:19-96",
+      "note": "Consequential-difficulty test passed: Augustine, Enarrationes 43.5-8 and 13 (bound NPNF VIII source, especially physical lines 14953-15015 and 15060-15090), explains the apparently accomplished rescue through prophetic certainty, future praise and present affliction. Bellarmine's Psalm 43 explanation instead remembers rescues actually received; the study preserves that real exegetical difference. Augustine 84.4 makes restoration future from the prophet's standpoint. The study states that inference before identifying its Christian application through the Epistle; it does not misattribute an already-accomplished Christian restoration to the prophet."
+    },
+    {
+      "location": "sections/30-deliverance-and-waiting.tex:143-216",
+      "note": "Consequential-difficulty test passed: Chrysostom, Matthew homily 76.2-3 (bound NPNF X source, physical lines 42462-42484 and 42527-42539), distinguishes the indefinite 'then' at Matthew 24:23 from 'immediately' after the final Antichrist/false-prophet trial at 24:29. The study teaches the distinct referents rather than making every temporal word indefinite. Homily 77 supports its account of 'this generation' as the believing people, without promising the first hearers' individual survival. The bodily urgency of Judean flight remains intact."
+    },
+    {
+      "location": "sections/40-prayer-and-conversion.tex:19-101,177-191,239-324",
+      "note": "Consequential-difficulty test passed: Aquinas, Super Colossenses 1 lectio 3, native 87848, grounds worthiness in God's making and explains prayer as raising the petitioner to God. Checked those Latin passages against the retained HTML, not an inferred English translation. Bede, In Marci III, the adjacent Mark 11:22-23 and 25 paragraphs (bound Latin source lines 338-339), combines the possibility of miraculous action with faith working through love and forgiveness of others. The study accurately identifies this as immediate-context exegesis, not a separately quoted verse-24 lemma. Aquinas's reported Origen explanation of election is also identified as reported, not independently collated Origen."
+    },
+    {
+      "location": "sections/20-commentary.tex; sections/30-deliverance-and-waiting.tex; sections/40-prayer-and-conversion.tex; sections/90-apparatus.tex",
+      "note": "Jerome's In Ieremiam V on 29:10-14 was checked on PL 24 PDF 451-452, cols. 893-896: delayed return, prayer preparing recipients and spiritual extension support the uses made here. Fromage's Collect explanation at printed pp. 503-504 and Secret/Postcommunion discussion at pp. 512-514 support the study, with the remaining-fault explanation correctly pinpointed at p. 513. The continuation is not attributed personally to Gueranger or counted toward the saintly-author requirement. Augustine's De Trinitate III.4.10, III.10.21 and opening III.11 support the sacramental-health and immutable-God analogues. These are not misrepresented as direct commentaries on the exact prayers or as the Fathers' own whole-Mass syntheses."
+    },
+    {
+      "location": ".scratch/proper-study-68/renewed-study-review-0000-evidence-check.json; research/source-bindings.toml",
+      "note": "Existing checks run independently: check-content-preflight, research edition, passed all reported checks; check-proper-components, content phase/research edition, passed. Reviewer-written checks also passed: seven retained binary/HTML payloads matched their registered SHA-256 and byte size; seven argument-bearing Aquinas derivative ranges matched decoded original HTML text ignoring whitespace; all ten Challoner quotation blocks matched the registered Bible verses unchanged except whitespace. These checks supplement, rather than replace, the manual source and argument review."
+    },
+    {
+      "location": "Review scope and limits",
+      "note": "Reviewed the authored canonical study, not prior reviewer verdicts or the author's conversation. The generated chronology appendix remains outside this authored-prose judgment; no contradictory authored dating claim was found. No optional print export was built or approved, and no full-page publication-layout inspection is claimed. Historical NPNF English and the identified Bede/Bellarmine transcriptions were checked at the used loci, not newly collated against Greek, manuscripts or their complete historical printings. Catalog-only leads and rejected consultations were not treated as supporting witnesses. No deliverable, research record, shared source, inventory, release/index record, accepted-run file or archive was edited, and the workflow was not advanced."
+    }
+  ],
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "opening",
+          "kind": "front-matter",
+          "path": "sections/00-opening.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "appointed-text",
+          "kind": "appointed-text",
+          "path": "sections/10-appointed-text.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml",
+            "propers/verified.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "commentary",
+          "kind": "proper-treatment",
+          "path": "sections/20-commentary.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "deliverance-and-waiting",
+          "kind": "interpretive-lane",
+          "path": "sections/30-deliverance-and-waiting.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "prayer-and-conversion",
+          "kind": "interpretive-lane",
+          "path": "sections/40-prayer-and-conversion.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "comparison",
+          "kind": "front-matter",
+          "path": "sections/50-comparison.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "historical-appendix",
+          "kind": "front-matter",
+          "path": "generated/scriptural-date-location.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml",
+            "research/chronology.toml",
+            "research/chronology-annotations.tex",
+            "research/chronology-table.tex"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [],
+          "key": "study-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/90-apparatus.tex",
+          "references": []
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "preface",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Bede",
+            "Jerome",
+            "Robert Bellarmine",
+            "Lucien Fromage"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "deliverance-and-waiting"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "deliverance-and-waiting",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Bede",
+            "Jerome",
+            "Robert Bellarmine",
+            "Lucien Fromage"
+          ],
+          "carrying_authors": [
+            "Thomas Aquinas",
+            "Bede"
+          ],
+          "component_keys": [
+            "prayer-and-conversion"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "prayer-and-conversion",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost",
+    "files": {
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/generated/scriptural-date-location.tex": "5256b2f8d4333f71a7f6c20f9d2a22bfeeb303a3581309bdbd902c0d83844041",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/main.tex": "b7b74a71563ee89006f7c7d6d4a9f50ebddef27b68c437d628c593e812babcc1",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/propers/verified.md": "dde8067a1aae4549579a432642471dd8beadc73abae080240b6a2873a1d57014",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/research/chronology-annotations.tex": "31839e2233dbd78a289133ea660934210084bbfbd9094ac3632029d3ff91da50",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/research/chronology-table.tex": "46d9bc2fa11077b8b95088af503d02e41dc0968550dd28f90b2b072d499a1e78",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/research/chronology.toml": "eec06c485c26750c7661a47503cbe10f57cf8f7c795d3fad7f9ca6a982ba70f1",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/research/interpretations.md": "f839bb6734bed25f9516c3829f3fd220c3c12fcd09b36f7de4f7615e9c3246a8",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/research/scope.md": "dd6934b3f10e0d42e1cf9cb8443fe07ccd340d8ab7e2ec87f32cb2222faf21b8",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/research/source-bindings.toml": "0b44c12ad9aa9970dd64b984b3391a039b98d25f0e31a26c567472147f2815ed",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/sections/00-opening.tex": "d220f6d0b307c811fc030ba02ef6e358924f2f7695979370202efeb01297215c",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/sections/10-appointed-text.tex": "ac051152e139c789ca9d43f302dd65e476d46ca9cead4e5f8f7f4916605618e5",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/sections/20-commentary.tex": "a86bedf70f7389f0ebf5962fa2a0d4dca35189e20e8cc902812d13464ae58ad1",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/sections/30-deliverance-and-waiting.tex": "55527e3fde4cfc7a8829e364e1598c7fa36334c15ceca81e659bc70da1ced9a9",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/sections/40-prayer-and-conversion.tex": "e19e9ecc68675caee875db0f67f49c5db949475ca144691a2d47f8a506b22d9e",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/sections/50-comparison.tex": "fd3035ce979181672256281c7857b7bafef14e5aa9b8b87cc388f3a9c9cc56e2",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/sections/90-apparatus.tex": "db9678251aecaf9b562d37db9c593c8e4a65124b5a1cd78c9fb3aa57f83ff85b"
+    },
+    "generation_provenance": {
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "19",
+            "73706a2ab569c88974452c4aec8fe2b7540a23ad1192efa39d574ddfbd334645",
+            "13ecdd1552c245ea",
+            "e8aceadc4a7e1ebe8d4987815a636d82ddd9d59b",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gpt",
+    "review": "study",
+    "schema": 1
+  },
+  "stage": "study-review",
+  "summary": "Independently reviewed the complete canonical expansive study at src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost, including main.tex, all seven authored sections, manifests, verified texts, interpretation matrix, source bindings, scope and review dependencies. Checked the argument-bearing Augustine, Chrysostom, Aquinas, Bede, Jerome, Bellarmine and Fromage passages against their identified witnesses, with facsimile inspection for the relevant Missal, historical English, Jerome and Fromage loci. The complete appointed-text mode is consistent with the authorization and actual contents. Both interpretations provide distinct, developed arguments, meaningful engagement with all eleven appointed elements, substantive contributions from their eligible carrying authors and their own four senses. Consequential-difficulty tests passed at Augustine's prophetic perfect, Chrysostom's Gospel transitions, and Aquinas's and Bede's accounts of petition and conversion. No blocking defect found. One advisory corrects a reversed relation in the research audit, not the study. This is source/content review, not print-layout approval or a fresh critical-edition collation; generated chronology was not re-reviewed as authored prose."
+}

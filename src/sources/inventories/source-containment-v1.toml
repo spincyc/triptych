@@ -668,8 +668,8 @@ basis = "Container description."
 id = "work.thomas-aquinas.opera-omnia-volume-14"
 manifest_sha256 = "cfe33a678d3d848ec6631c524c38f7eb98468ac8e500ccc163ef445353d90239"
 status = "partial"
-basis = "Work title: 'Opera omnia, volume 14: Expositio in aliquot libros Veteris Testamenti et in Psalmos L'; description: 'the biblical commentaries remain separate constituent works.' Segments into the volume for the Isaiah commentary."
-unresolved = "The title names 'some books of the Old Testament' without saying which; only Isaiah (by segment) and the Psalms (by title) are established."
+basis = "Work title: 'Opera omnia, volume 14: Expositio in aliquot libros Veteris Testamenti et in Psalmos L'; description: 'the biblical commentaries remain separate constituent works.' The Isaiah segment and the exact volume OCR table of contents locate distinct constituents."
+unresolved = "Only the Isaiah, Psalms and Jeremiah constituents are recorded here. The remaining table-of-contents entries are outside this bounded review."
 
 [[containers.constituents]]
 author = "Thomas Aquinas"
@@ -684,6 +684,14 @@ title = "Postilla super Psalmos"
 work_id = "work.thomas-aquinas.super-psalmos"
 locator = "the exposition the volume title calls 'in Psalmos L'"
 basis = "Container title; the index's alias group for Postilla super Psalmos includes 'expositio in psalmos'. Which psalms the volume reaches the record does not state beyond that title; the extent-gating table in guidance/reading-plan-for-agents.md records the Postilla stopping at Psalm 54."
+
+[[containers.constituents]]
+author = "Thomas Aquinas"
+title = "In Ieremiam prophetam expositio"
+work_id = "work.thomas-aquinas.in-jeremiam-prophetam-expositio"
+scripture = ["Jeremiah 1-42"]
+locator = "printed pp. 577–667; cap. 29 lectio 1 begins near physical line 102798 in the retained optical layer"
+basis = "The retained Parma volume OCR lists In Jeremiam at 577 and the next work at 668 in its contents, physical lines 114294–114296. The optical layer locates the lectio's opening. Corpus Thomisticum identifies the same printed extent at https://www.corpusthomisticum.org/reoptedi.html and presents the corresponding Parma text through chapter 42. The OCR is a discovery route for image collation."
 
 [[containers]]
 id = "work.thomas-aquinas.in-omnes-pauli-epistolas-commentaria"

@@ -1,0 +1,15 @@
+WORKFLOW: proper-study v19
+WORKFLOW_DIGEST: 73706a2ab569c88974452c4aec8fe2b7540a23ad1192efa39d574ddfbd334645
+RUN_ID: 13ecdd1552c245ea
+COMMIT: e8aceadc4a7e1ebe8d4987815a636d82ddd9d59b
+STAGE: study-preflight
+ITERATION: 3
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-11-22","proper":"liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost","provider":"gpt","research_handoff":"none"}
+DOCUMENT_ROOT: src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: [{"id":"WEB-LATIN-QUOTATION-EMPHASIS-001","location":"sections/10-appointed-text.tex at proper-epistle, proper-gospel and proper-preface (canonical Markdown lines 95\u201397, 167\u2013169 and 265\u2013271)","problem":"The web renderer italicizes the opening paragraph only in each of the three multi-paragraph Latin quotations, even though the shared Latin quotation environment sets the entire block in italics. In the Gospel, for example, the introduction is italic and the whole lesson is upright. The Latin and English remain distinct quotations with complete wording, so the difference is typographic.","required_result":"Apply the same Latin presentation to every paragraph in these quotation blocks while preserving the paragraph breaks and the separate labelled English quotations.","severity":"advisory"}]
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

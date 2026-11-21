@@ -5,7 +5,205 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-11-17.
+Last reconciled: 2026-11-20.
+
+## GPT Last Sunday after Pentecost — 22 November 2026
+
+<!-- promised-deliverable: gpt-1962-68-production-2026-11-16 -->
+
+**Complete.** On 16 November 2026 the maintainer requested the upcoming
+Sunday's 1962 propers documents, reconciliation and publication to main.
+The calendar computation identifies 22 November as the Twenty-fourth and Last
+Sunday after Pentecost, permanent identity `68`; the workflow must independently
+verify the occurrence, rank, complete appointed texts and local-calendar limits
+against identified witnesses. Only the GPT target is authorized.
+
+The promised result is the current `proper-study` three-document family:
+expansive study, concise study and homily, genuine independent cold reviews,
+current source and reader gates, native print compilation, and validated
+publication to main followed by deployment and live-reader verification.
+Scope checkpoint `b6a1d69b04` records the exact authorization. Proper-study v19
+run `df0ccb9ecfdea6c9`, seeded at `cdae156296`, has passed its program scope
+gate and context stage. The context independently checks the institutional
+dated Ordo and governing Missal images, identifies the II-class Last Sunday
+formulary in the twenty-sixth Sunday slot, and inventories eleven elements.
+It preserves commemoration and local-calendar limits. Initial research passes
+with eleven-element text and rights records, two developed interpretations,
+canonical chronology and exact source bindings. Source registration and the
+research preflight pass. The first independent cold research review requires
+two repairs, to generated chronology context and exact interpretation evidence
+anchors. Research iteration 1 repairs both, and repeated registration and
+preflight pass. The second cold review confirms those repairs but finds one
+remaining commentary-extent registration gap. Research iteration 2 repairs it,
+registration and preflight pass again, and the third cold research review
+accepts the bounded evidence. The expansive-study preflight passes; its first
+cold review requires restoration of the profile's Challoner scriptural English.
+The repair, repeated preflight and fresh cold study review pass. The 3,018-word
+concise study passes derivation, preflight and cold review without findings.
+The 1,207-word homily passes derivation, preflight and independent cold review
+without findings. Source/schema artifact validation and its program gate pass.
+The reviewed source checkpoint is `348f9767c4`; canonical web conversion passes
+and records exact bytes for independent web review. Seven unrelated
+upstream commits add the explicitly unreviewed Greek Chrysostom lane. Their
+changed paths do not overlap the four accepted content-review seals. Integration
+preserves both exact delivery-record sets and refreshes the source inventory and
+the family ledger without promoting its pending reviews. The source-maintenance
+targets pass across an initial partial run and its successful remainder.
+Merge checkpoint `06ee087d65` preserves the committed edition revisions and
+byte-identical canonical conversion. Fresh independent web review passes without
+findings. Publication installation, its direct checks and the engine's
+terminal publication gate pass; the run is **ACCEPTED**. All three selected
+native print bundles compile successfully in two passes each; their exact
+receipts are retained under the cycle record's `NATIVE-PRINT-2026-11-16/`.
+That is not visual print-layout approval or the full deployment compile gate.
+The terminal run's public archive holds 32 results and 32 verbatim packets.
+It reproduces byte for byte; all 143 native files remain unchanged. A separately
+opted-in artifact-path export policy removes only the exact checkout prefix
+from canonical top-level artifact paths, with a schema-3 hash/pointer receipt.
+Only research iteration 0 changes, at its notes and artifact-path fields.
+All 68 archive tests pass, including the real-run reproduction. Default and
+existing schema-1/2 exports remain byte-identical to the previous tool.
+Post-archive source inventories and all 13 browser-product families pass:
+29,540 files and 265,934,626 bytes. Full release-binding verification reports
+zero stale bindings after refreshing only the descriptor binding; all 24,770
+other bindings and unrelated authorization fields are preserved. All five
+accepted review seals are recomputed and remain current, without restamping.
+All three current reader conversions pass fidelity checks. Fresh native
+preparation matches all 447 compiled payload files and all three retained
+compiler receipts, including their PDF hashes.
+
+The earlier deployment source preflight failed the stale committed-input
+sources index, first reported at `src/index/sources/catalogue/0037.json`.
+That index was not refreshed while its inputs were uncommitted.
+The inherited `corpus-index` tool-registry
+GROUPS/REACHES findings are unchanged. Detailed measured results and limits
+are retained in the cycle record's `POST-ARCHIVE-CHECKS-2026-11-16.json`.
+No publication push or deployment is claimed.
+The maintainer made the installation checkpoint outside Droid. The coordinator
+verified `6ef315fce5` against the held 96-file, 34,208-added-line zero-context
+diff audit: it matches exactly, uses the configured identity and leaves a clean
+worktree. No Shield setting or generated key is changed. A fresh fetch finds
+main four commits ahead with no upstream divergence; no rebase is needed at
+that observation. The owning committed-input index refresh and independent
+check now pass: 82,551 files, 58,469 records and 40,365,083 metadata bytes.
+The complete deployment-source gates also pass, followed by successful
+compilation of all 21 web figures. The full public-site build then refuses
+its final integrity check with “staged artifact contents changed during
+build.” No artifact is installed or pushed. The same refusal reproduces in
+the existing bounded-descriptor staging test. The topology scanner now opens
+a fresh descriptor relative to each held directory, avoiding inherited cursor
+position while retaining no-follow traversal and complete-tree checks.
+Two new regressions and that existing test pass; all five accepted content
+seals remain current without modification. The explicit eight-family product
+refresh and independent check pass, followed by all 166 publisher tests.
+Every one of the 29,540 product files retains its exact prior output hash and
+size; only the affected input commitments change. Scoped release-binding
+refresh and independent full status pass, preserving the other 24,769 bindings
+and all authorization prose. The actual default full-site build now succeeds,
+and explicit GitHub Pages target verification passes. The repair/release
+checkpoint must precede another committed-input index refresh and final
+publication checks at the committed snapshot.
+That seven-file repair/release checkpoint was initially blocked by Droid
+Shield on eight generated cache-key matches in `release/browser-products.json`.
+No retry or hash replacement was attempted. On 17 November the maintainer
+committed it externally as `e8aceadc4a`. Its seven files and 231 added lines
+match the held zero-context diff exactly, with the configured identity.
+A new fetch finds fifteen upstream commits, including the independent Claude
+production and shared reader changes. Integration preserves the reviewed
+history rather than rewriting it. All sixty earlier generated index payloads
+are hash-verified in a recoverable stash before the merge. The shared source
+merge must retain both distinct Ordo edition IDs; the upstream Olivet
+narrated-event date also changes the GPT research inputs. Current chronology
+and affected review acceptance must therefore be checked again. Earlier
+passing gates describe their earlier snapshot, not this integration state.
+Final-snapshot site verification, publication and live verification remain
+pending.
+
+On 20 November the maintainer resumed the November 22 production and
+authorized publication to `main`. Reconciliation commit `c0049e5d7e` merges
+upstream `f8601528b0` with the local reviewed family. The catalog now includes
+the GPT full guide, synthesis and homily beside the existing Claude editions.
+All three GPT reader conversions pass, and all three selected native print
+bundles compile in two passes. The native v19 review comparison still routes
+the research and web input changes to their owners. The expansive study,
+synthesis and homily seals are current at this checkpoint. A cold canonical
+conversion differs from the retained reviewed Markdown only in its derived
+revision timestamp. The renewed run, final release checks and deployment
+are open.
+
+The combined source inventory and migration ledger validate. Two cold
+browser builds agree, and the independent product check verifies all 13
+families and 29,967 files. The scoped binding refresh adopts 119 inputs and
+updates six existing input digests. The authorization and publication
+decisions are unchanged. Reconciliation-specific catalog and chronology
+regressions pass on the combined corpus.
+
+The first scoped refresh used Git's rename-aware path list. The subsequent
+public-alpha check found two old Ordo paths still bound after their relocation.
+Final release refresh must include both retired paths along with the current
+inputs. The native publication gate routed the refreshed research closure to
+research first and carried the web finding forward.
+
+Research and registration reproduced the merged input seal and passed the
+native preflight. The new cold review verified all eleven appointments and
+returned six findings. Its repair packet addresses the oration proof chain,
+Psalm 129's proposed occasion, the dates for the two forms of Matthew,
+commentary extents, Fromage's use as a text witness, and Theophylact's direct
+exposition of the Communion text. Later repairs added the exact Augustine
+and Rupert witnesses, completed the consulted-source bindings, and separated
+Jerome's native Jeremiah units. A second merge at `aca5937f67` incorporates
+upstream `9a229454da` and its separately published Advent study. The combined
+source registration and native research preflight pass. Independent research
+review iteration 5 accepts the current evidence. The expansive study
+revision passes its author-stage checks. Cold study review iteration 1
+finds two governing-Latin discrepancies and asks for precise chant coverage,
+prayer reasoning and prose repairs. Fresh image collation establishes the
+correct Gospel spelling and Trinity Preface pointing and records the TeX
+handoff. The corrected research passes native review. The expansive study,
+concise synthesis and spoken homily each pass independent source review.
+Web review reproduces the exact conversion and confirms the quotation,
+source-note and navigation checks. It routes recurring restatements in the
+first interpretation back to the study. The first source revision repairs
+them, and the subsequent study review finds and routes an Offertory
+attribution against the 1962 Missal. The second source revision corrects that
+attribution and restores Mark 11:24–25 beside the Communion promise. The
+research seal remains current and the revised study passes independent
+review. Reconciliation `a05440b4bc` incorporates the latest upstream
+Advent updates and revalidates the combined source inventory. The revised
+synthesis and homily pass independent review after checking the expanded
+thematic argument, temporal prayer and the Judean flight. The three
+committed outputs pass artifact validation and native print compilation.
+The canonical reader passes independent source and desktop/mobile
+preview checks at its exact conversion hash. Its inspection is recorded
+in the leaf. After the exact shared browser-product and release-binding
+verification, terminal publication gate iteration 3 passes and refreshed
+proper-study v19 run `13ecdd1552c245ea` reaches **ACCEPTED**.
+The renewed run archive preserves 91 packets and 91 results verbatim
+and reproduces byte for byte. All 413 pre-existing native files retain
+their exact bytes. The current three native print bundles pass two
+settled compilation runs each, at 25, 10 and 3 pages.
+
+The committed discovery indexes verify 84,005 files and 59,285
+records. At `c2fe9fd10acb234937e9e30266eabd7a0252c1c8`, the
+complete local Pages build and GitHub Pages target verification pass.
+The independent release check reports zero stale bindings. The
+publication advances `origin/main` from `43afdcae97` to `c2fe9fd10a`
+as a fast-forward. Build, print compilation and deployment all pass.
+[GitHub Pages run 44868582984](https://github.com/spincyc/triptych/actions/runs/44868582984).
+
+At 06:30 UTC on 21 November 2026, all three live reader responses
+and the Traditional Latin Mass catalog match the verified local files
+byte for byte. The deployed checksum inventory has 46,118 entries.
+The live and local inventories differ on three SVG figures outside
+these readers. Each hash below agrees with the local inventory and
+the fetched HTML.
+
+- Full study — `a23b13cb01be76e479bb46adcea6fd0b199f9cc2a03ec21a048a98175e88dd93`.
+- Synthesis — `08f1d01f5029c743934b0136dd3a1629fad3ef88199b526457b3c16c7c4bc355`.
+- Homily — `64538c423a85858800132eb5c09eab352fbd3968a25bc8456447ee44b6195534`.
+
+Detailed progress and limitations belong to
+`workflows/reviews/gpt-1962-68-production-2026-11-16/CYCLES.md`.
 
 ## Claude 1962 Twenty-fourth and Last Sunday after Pentecost, 2026-11-22
 
@@ -17,8 +215,8 @@ publication to `main`. Sunday, 22 November 2026 is the Twenty-fourth and Last
 Sunday after Pentecost (II class), permanent identity `68`,
 `liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost`.
 St Cecilia (III class) is outranked. The production plan records the
-one-provider authorization. This is an independent Claude production: any GPT
-leaf for the same identity is not an input, and none exists.
+one-provider authorization. This is an independent Claude production: no GPT
+leaf for the same identity existed at its seed, and none was an input.
 
 Run `11c5af05fe374203` (`proper-study` v19), seeded at the authorization
 commit `8133098784`, reached ACCEPTED with 36 packets, 36 results and 16

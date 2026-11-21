@@ -1,0 +1,14 @@
+{
+  "disposition": "FAIL",
+  "findings": [
+    {
+      "check": "release-bindings",
+      "id": "GATE-RELEASE-BINDINGS",
+      "problem": "command exited 2: make: *** [Makefile:843: check-release-bindings] Error 1",
+      "required_result": "The site authorization must bind the current reader-facing sources.",
+      "severity": "blocking"
+    }
+  ],
+  "iteration": 2,
+  "stage": "publication-gates"
+}

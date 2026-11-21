@@ -1,0 +1,314 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "SYN-GOSPEL-FLIGHT-AUDIENCE",
+      "location": "sections/concise/04-themes.tex:72\u201380 and sections/concise/10-commentary.tex:278\u2013285",
+      "problem": "Saying that Jesus tells the disciples to pray about when they themselves will flee blurs the scope of the two instructions. Matthew 24:16 names people in Judea as those who must flee. Chrysostom\u2019s Matthew homily 76.1 says the Apostles would be absent during the siege and draws attention to the Sabbath observance of those in Judea. The local wording leaves the distinction between the Judean emergency and the final coming intelligible.",
+      "required_result": "Say that Jesus tells his hearers to pray that the Judean flight will fall neither in winter nor on a Sabbath. Describe the people in Judea as those instructed to flee, and retain the application to prayer for real help in danger.",
+      "severity": "advisory"
+    },
+    {
+      "id": "SYN-BEDE-PERFECT-FAITH",
+      "location": "sections/concise/10-commentary.tex:270\u2013276",
+      "problem": "The phrase \u2018effective faith\u2019 weakens the distinction Bede makes in In Marci evangelium expositio III on Mk 11:25, registered Latin transcription line 339. He describes perfect faith working through love in connection with moving spiritual mountains and then assures people still short of that perfection that they can obtain pardon by asking and first forgiving others. The surrounding sentences retain both groups and the assurance about pardon.",
+      "required_result": "Name perfect faith working through love as Bede\u2019s description of the faith that can move spiritual mountains, and keep his distinct assurance of pardon for those still growing in faith.",
+      "severity": "advisory"
+    },
+    {
+      "id": "SYN-SECRET-ENGLISH-NUANCE",
+      "location": "sections/concise/10-commentary.tex:193\u2013201",
+      "problem": "The explanation of the English \u2018enjoyments of heaven\u2019 says that the Latin names what the offerers will come to desire. The 1962 Missal, p. 424, no. 1776, speaks of passing to heavenly desires, while Lasance/Walsh, p. 740, expresses their object in its received English. Fromage\u2019s explanation of a change of desire in the preceding sentence conveys the underlying petition.",
+      "required_result": "Say that the Latin asks that the offerers come to desire heavenly things, and identify \u2018enjoyments of heaven\u2019 as Lasance/Walsh\u2019s rendering if the comparison is retained.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 4,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-inventory",
+          "kind": "front-matter",
+          "path": "sections/concise/01-inventory.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-overview",
+          "kind": "front-matter",
+          "path": "sections/concise/02-overview.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-chronology",
+          "kind": "front-matter",
+          "path": "generated/scriptural-date-location-page.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml",
+            "research/chronology.toml",
+            "research/chronology-annotations.tex",
+            "research/chronology-table.tex"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-themes",
+          "kind": "front-matter",
+          "path": "sections/concise/04-themes.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-commentary",
+          "kind": "integrated-commentary",
+          "path": "sections/concise/10-commentary.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [],
+          "key": "concise-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/concise/90-apparatus.tex",
+          "references": []
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "preface",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Bede",
+            "Jerome",
+            "Robert Bellarmine",
+            "Lucien Fromage"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "deliverance-and-waiting"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "deliverance-and-waiting",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Bede",
+            "Jerome",
+            "Robert Bellarmine",
+            "Lucien Fromage",
+            "Theophylact of Ohrid"
+          ],
+          "carrying_authors": [
+            "Thomas Aquinas",
+            "Bede"
+          ],
+          "component_keys": [
+            "prayer-and-conversion"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "prayer-and-conversion",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost",
+    "files": {
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/generated/scriptural-date-location-page.tex": "82c97c59e9bf0ec0246594c1a7198e29562f8d7399267e27eec2a8f5b0f421d2",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/research/chronology-annotations.tex": "7468fdd07af2a61adca867f3c11096e04a78c693f232fb13e8d98e1b2496435a",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/research/chronology-table.tex": "6666ecbec4f7ab81ca016d90afdb4596b536cebeb7d7c78a2359a3679a0ad60c",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/research/chronology.toml": "a2bd3ca5aadcd0262a045f301e7092e7e7a33f55390ba4f2bd55e8ca998aea8a",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/research/interpretations.md": "432475c19c6cd7b6cdaa29457ebbd7cdf39a5ede42a611a77b70a514eb2da383",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/research/scope.md": "f3f2a5a5832cfbfc0f40154898c57d6aca1fe2be615a1df037701264d1ccdc25",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/research/source-bindings.toml": "d84e32f0260f000db37366ab17451eba2adc224414cf4480c1ffa46dd483f088",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/sections/concise/01-inventory.tex": "726af3abc1779de7db2d16f76b02d06daf72b9026bf8e86915c6931984217f96",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/sections/concise/02-overview.tex": "bdd63e6f454b32bc49948a6fde86ee13b9e6cdb98d634c5176d111d512beee3f",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/sections/concise/04-themes.tex": "4e67797d46cfff3165f6310457bc44109fc8a396a16fdeb4335840ca8183ee4a",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/sections/concise/10-commentary.tex": "9a8bec30934f362648770dd2bbcf074c71052b9a49d4b6dc80d2c55e8ff81437",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/sections/concise/90-apparatus.tex": "8de8460e524e3c3a7602c19f69c1371ddd9a2c89c344ac0ee3019bcaa3fe3ead",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/synthesis.tex": "8dce9b0c2291aef1cbaa511d4dd28a6378eecc8244101e91c09ec35216f9ec6a"
+    },
+    "generation_provenance": {
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "19",
+            "73706a2ab569c88974452c4aec8fe2b7540a23ad1192efa39d574ddfbd334645",
+            "13ecdd1552c245ea",
+            "e8aceadc4a7e1ebe8d4987815a636d82ddd9d59b",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gpt",
+    "review": "synthesis",
+    "schema": 1
+  },
+  "stage": "synthesis-review",
+  "summary": "The concise source and freshly regenerated HTML preserve the distinction between deliverance already begun and prayer that changes the petitioner, including the restored qualification on asking for earthly help, checked against the expansive study and the relevant loci in the 1962 Missal, Lasance/Walsh, Jerome, Augustine, Bellarmine, Chrysostom, Aquinas, Bede, Theophylact and Fromage. I matched all 16 sealed source files and inspected all ten pages of the focused pdfTeX proof (SHA-256 0c6d35f611645c5c0caab235b8addbb707a4f494d546c5f7d29cf7d72a3f5b2c), confirming eleven appointments and four senses on page 1, the chronology alone on page 2, substantive themes on pages 3\u20134 and developed comparison beginning on page 5, with no blocking defect in this scope: the Gospel lookup paired Mt 24:15\u201335 with Jesus foretelling Jerusalem\u2019s ruin and his coming on Mount Olivet by narrative continuity, dated A.D. 29 in the displayed derivation from Maas, with composition listed separately."
+}

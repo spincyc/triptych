@@ -187,9 +187,9 @@ class ChronologyAssemblyCacheTests(unittest.TestCase):
             before = types.Assembly(checkout).read_text(table)
             orientation = sources / "chronology/orientation.yaml"
             text = orientation.read_text()
-            self.assertIn("composition.gospel-of-matthew: Matthew", text)
-            orientation.write_text(text.replace("composition.gospel-of-matthew: Matthew",
-                                                "composition.gospel-of-matthew: Updated Matthew label"))
+            label = "composition.gospel-of-matthew: Putative Semitic Matthew"
+            self.assertIn(label, text)
+            orientation.write_text(text.replace(label, "composition.gospel-of-matthew: Updated Matthew label"))
             after = types.Assembly(checkout).read_text(table)
             self.assertNotEqual(before, after)
             self.assertIn("Updated Matthew label", after)

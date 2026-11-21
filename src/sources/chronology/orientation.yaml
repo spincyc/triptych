@@ -5,7 +5,7 @@ numbering: vulgate
 # Presentation names for these existing temporal subjects. The source title,
 # all original claim labels and source citations remain in the audit record.
 subject_labels:
-  composition.gospel-of-matthew: Matthew
+  composition.gospel-of-matthew: Putative Semitic Matthew
   composition.gospel-of-mark: Mark
   composition.gospel-of-john: John
   composition.apocalypse: Apocalypse
@@ -174,7 +174,7 @@ settings:
       the attributed author's reign, not a psalm's otherwise unknown occasion.
   composition.gospel-of-matthew:
     relation: composition
-    label: Semitic original associated with Palestine
+    label: associated with Palestine in Eusebius
     sources:
     - artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef-article-text
     basis: 'Jacquier''s date discussion reports Eusebius: Matthew wrote in Hebrew when he
@@ -617,30 +617,6 @@ calendar_estimates:
       enlarged received form after it. This is approximate calendar context
       for that first scroll, not a completion year or a composition date of
       every constituent; the final-formation bound remains open.
-  - subject: composition.psalm-129-possible-davidic-composition
-    relation: composition
-    profile: catholic-traditional-v1
-    date:
-      precision: interval
-      from: {year: 1048, era: bc}
-      to: {year: 1015, era: bc}
-      label: "c. 1048–1015 B.C."
-    qualification: "traditional Jerusalem chronology"
-    inputs: [composition.psalm-129-possible-davidic-composition, israel.monarchy.david-traditional-era, israel.monarchy.david-reign, israel.monarchy.david-repentance]
-    sources:
-      - passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-129-possible-davidic-composition
-      - passage.catholic-encyclopedia.volume-4.new-york-1908.corbett-david-usual-chronology
-      - artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3-article-text
-      - bible:douay-rheims:2Kings.5.5
-      - bible:douay-rheims:2Kings.11.1
-    basis: >-
-      Berthier's conditional proposal in Haydock puts composition after David's
-      sin. Corbett places that sin during the Jerusalem reign, after the seven
-      and a half years at Hebron, within his reported reign of 1055–1015 B.C.
-      Subtracting seven and a half from 1055 and rounding to a calendar year
-      yields approximately 1048 B.C. for the beginning of the Jerusalem phase.
-      The estimate gives that entire phase, not the year of the sin or a
-      narrower date for the poem. Both attribution and chronology are qualified.
   - subject: israel.monarchy.david-traditional-era
     relation: traditional-attribution
     profile: catholic-traditional-v1

@@ -1,0 +1,27 @@
+{
+  "artifact_path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/research/scope.md",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "RES-RUPERT-SHARED-CHANT-RECEPTION",
+      "note": "Image-read complete PL 170 cols. 329\u2013330, IA n170, and Duffy XI pp. 487\u2013489, whole-PDF pp. 513\u2013515. Documented actual chant clauses, Jer 23:7\u20138 and John 6, the remnant and Joseph typology, and the English witness\u2019s abbreviated quotation. Compared the argument with both existing readings in research, kept Rupert\u2019s ecclesiastical-writer standing, and verified the distinct p. 501 cross-reference and p. 503 wording/Collect roles. Deferred Catena admission and handed off the precise Latin image for registration.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-UNBOUND-CHECKED-WITNESSES",
+      "note": "Bound the Parma 1863 OCR at physical lines 102798\u2013102889 and 114294\u2013114296 as a non-commentary finding aid. Independently read the Z\u00fcrich copy and rights record and rechecked CiNii plus the exact Focolare Media product listing. CiNii identifies Teske\u2019s translation of the component. The publisher confirms the volume and credits. Three exact metadata-only artifact and disposition receipts are ready. Teske\u2019s text remains uninspected and uncleared. Existing Oxford Catena and direct-exegesis limits were preserved.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 4,
+  "notes": [
+    "Changed only scope.md, interpretations.md, source-bindings.toml, source-dispositions.toml and review-dependencies.toml under the GPT proper research leaf. The new intertext dependencies are the canonical Vulgate chapter records at Gen 42\u201343, 1 Tim 2, Rom 9 and Ps 21. The appointed texts, date and chronology were not revised.",
+    "Exact source-registration handoff is .scratch/complete-proper-68/research-0004/source-registration-handoff.json, SHA-256 d28e5457b8c152f0b5d2ba9b578fbdb7dc086ab354d9dc6f9899e3b0e174f64c. Relative filenames in it resolve beside the receipt. It names four new bounded artifact identities to register from actual bytes: the public-domain Rupert JPEG and the three exact modern HTML deliveries, whose redistribution is unresolved. Record the HTML identities, rights and hashes without distributing the payloads. The Duffy parent is already bound, and the mechanically extracted three pages are an inspection aid from that exact parent. Its receipt, parent PDF and viewable pages remain in the assigned scratch area.",
+    "The existing bindings 84\u201387 control Duffy printed pp. 487\u2013489, the Duffy OCR and cross-reference, Rupert\u2019s PL 170 OCR, and the Parma OCR. They bring the pre-registration ledger to 87 bindings and 127 dispositions, including 10 admissions, 38 deferrals, six rejections, 55 non-commentary uses and 18 leads. The prior 83 bindings and all 122 prior dispositions were preserved. No new Catena admission is asserted.",
+    "Replayed the exhaustive seven-passage Vulgate discovery and 40-locus formulary comparison. The fresh JSON outputs in this scratch directory matched the previous byte streams. Zero indexed formulary results still stands within the index. The manual Rupert and Fromage witnesses bound the actual positive evidence.",
+    "Reread NPNF XIII physical lines 23854\u201323860 and corrected Chrysostom\u2019s distinction to longsuffering toward those whom we can requite and patience toward those whom we cannot. Aquinas\u2019s adversity and delay distinction remains separate.",
+    "Source-library metadata validation, native source-dispositions, source-mode research-record preflight and git diff --check passed for the current registered bindings. Source registration owns the four new artifact records and the post-registration projection and seal."
+  ],
+  "stage": "research",
+  "summary": "Verified Rupert\u2019s Latin chapter and its Fromage\u2013Shepherd reception, bounded the four shared chants, and compared his Joseph reading with both existing interpretations. Reconciled the checked bibliographic and optical controls and supplied exact receipts for source registration."
+}
