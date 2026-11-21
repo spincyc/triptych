@@ -1,4 +1,4 @@
-# Exact witnesses used in the Advent primer. Claim keys resolve in source-audit.md.
+# Exact witnesses used in the Advent handbook. Claim keys resolve in source-audit.md.
 schema = 2
 record_type = "bindings"
 document = "liturgy/roman-rite/1962/seasons/advent"
@@ -144,12 +144,12 @@ context = "History roman books."
 
 [[bindings]]
 source_id = "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.pdf-text-layout-6ca97fd7"
-loci = ["Wilson pp. 113–116, §§150–157", "Wilson p. 113, §151.1; Excita domine corda nostra"]
+loci = ["Wilson pp. 113–116, §§150–157", "Wilson p. 113, §151.1; Excita domine corda nostra", "Introduction p. xxi; references by Wilson to the three ninth-century manuscript witnesses"]
 role = "direct-witness"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:0da5f3259e645fa4908aa632beef47483824fccf4e5b83ddc7e60b0f313fe9bb"
 claim_keys = ["history-roman-books"]
-context = "History roman books."
+context = "History roman books. Hadrian's reply to Charles."
 
 [[bindings]]
 source_id = "passage.amalarius-of-metz.liber-officialis.latin-migne-pl-105.iii.40-five-weeks"
@@ -193,12 +193,12 @@ context = "Keeping prayer."
 
 [[bindings]]
 source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-1.ccel-web-2026-10-13.ccel-text-21000696"
-loci = ["Letter 130 to Proba, §§18–20 and 31, lines 43561–43632 and 43914–43930", "Augustine, Confessions 8.12.28–29, lines 11828–11873, quotation at 11852", "Letter 130.17–21, 25–30, lines 43544–43665 and 43745–43913"]
+loci = ["Letter 130 to Proba, §§18–20 and 31, lines 43561–43632 and 43914–43930", "Augustine, Confessions 8.12.28–29, lines 11828–11873, quotation at 11852", "Letter 130.17–21, 25–30, lines 43544–43665 and 43745–43913", "Confessions 9.11.27–28 and 9.13.35–37, lines 12963–13006 and 13181–13240"]
 role = "direct-witness"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:8107c8312db683f3a6bfab04fe1f0992df14d62972def172358894ca9f8ac889"
-claim_keys = ["keeping-prayer", "advent-sunday-i-augustine", "prayer-and-waiting"]
-context = "Keeping prayer. Advent sunday i augustine. Proba's family, the capacity to receive, the Lord's Prayer, and prayer in affliction."
+claim_keys = ["keeping-prayer", "advent-sunday-i-augustine", "prayer-and-waiting", "household-monica"]
+context = "Keeping prayer. Advent sunday i augustine. Proba's family, the capacity to receive, the Lord's Prayer, and prayer in affliction. Monica's request at Ostia, reported by her son, and Augustine's prayer for both his parents."
 
 [[bindings]]
 source_id = "passage.nicene-and-post-nicene-fathers.series-2-volume-12.new-york-1895.leo-sermo-16.2"
@@ -212,12 +212,12 @@ context = "Keeping fast."
 
 [[bindings]]
 source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
-loci = ["Proprium de Tempore, printed pp. 1–20", "Proprium de tempore: In vigilia Nativitatis Domini, printed p. 15 (PDF 96), Introit and Collect no. 99", "Printed p. 5 no. 29; p. 6 nos. 36 and 38; pp. 7–8 nos. 45 and 47; p. 8 heading of longer Mass; p. 10 nos. 63 and 66; p. 14 no. 94", "Precedence table in the Missal, p. xvii, nos. 16, 18; pp. 1–16, nos. 7, 22, 31–38, 52, 63–69, 76–78, 89, 100; Ember Saturday ordination rubric, p. 8; Immaculate Conception, pp. 437–438; St Thomas, p. 441, nos. 1903–1908"]
+loci = ["Proprium de Tempore, printed pp. 1–20", "Proprium de tempore: In vigilia Nativitatis Domini, printed p. 15 (PDF 96), Introit and Collect no. 99", "Printed p. 5 no. 29; p. 6 nos. 36 and 38; pp. 7–8 nos. 45 and 47; p. 8 heading of longer Mass; p. 10 nos. 63 and 66; p. 14 no. 94", "Precedence table in the Missal, p. xvii, nos. 16, 18; pp. 1–16, nos. 7, 22, 31–38, 52, 63–69, 76–78, 89, 100; Ember Saturday ordination rubric, p. 8; Immaculate Conception, pp. 437–438; St Thomas, p. 441, nos. 1903–1908", "Printed pp. 1–3 (including the weekday rubric after Advent I), p. 4 no. 22 and pp. 14–17", "Canon Missae, Memento etiam, no. 1109, within printed pp. 308–311 (PDF pp. 389–392)"]
 role = "direct-witness"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:489586789f24da05ee18ba23686f134dd71e18c7a91bd4b22190fa922d10dd76"
-claim_keys = ["calendar-and-mass", "christmas-vigil-introit", "sundays-ember-and-communion", "weekly-reading-course"]
-context = "Calendar and mass. Christmas vigil introit. Sundays ember and communion. Reading-course boundaries and Masses displaced or prescribed on particular dates."
+claim_keys = ["calendar-and-mass", "christmas-vigil-introit", "sundays-ember-and-communion", "weekly-reading-course", "season-mass-office", "weekday-mass", "prayer-gaudete", "household-monica"]
+context = "Calendar and mass. Christmas vigil introit. Sundays ember and communion. Reading-course boundaries and Masses displaced or prescribed on particular dates. Mass and Office comparison, ferial formulary and the Gaudete Collect."
 
 [[bindings]]
 source_id = "passage.holy-see.acta-apostolicae-sedis.volume-52-1960.rubricae-generales-n-20"
@@ -266,8 +266,8 @@ role = "direct-witness"
 states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-11-19"
 source_fingerprint = "sha256:ba322ea0a01a577dc7bc8136adc20aeef38de4e529b9bbfb48897b4e76a70d9c"
-claim_keys = ["calendar-and-mass"]
-context = "Calendar and mass."
+claim_keys = ["calendar-and-mass", "weekday-mass"]
+context = "Calendar and mass. Relation between the proper ferial Mass and the Mass of the preceding Sunday."
 
 [[bindings]]
 source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-advent-1-orations"
@@ -557,12 +557,12 @@ context = "Prayer magnificat."
 
 [[bindings]]
 source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.gutenberg-text-7d10da78"
-loci = ["Rom.13.11-14", "Luke.21.25-36", "Is.1.10-18", "Is.2.1-5", "Is.11.1-10", "Ps.24.1-10", "1Thess.5.1-11", "Rom.15.4-13", "Matt.11.2-10", "Is.35.1-10", "Is.40.1-11", "Is.42.1-9", "Is.61.1-4", "Luke.4.16-22", "Luke.7.18-28", "Phil.4.4-7", "John.1.19-28", "Phil.1.3-14", "John.14.21-27", "Luke.1.26-38", "Is.45.5-8", "Luke.1.39-47", "Dan.3.46-51", "1Cor.4.1-5", "Luke.3.1-14", "Mich.5.2-5", "Luke.1.67-79", "Heb.1.1-6", "John.6.47-51", "John.1.1-14", "Matt.1.18-21", "Luke.2.1-14", "Ps.24.1-3", "Is.9.2", "Is.9.6-7", "Is.22.22", "Is.35.5-6", "Is.40.6-8", "Is.42.7", "Is.45.8", "Is.61.1", "Is.64.1", "Dan.3.49-50", "Matt.21.9", "Luke.1.26-55", "Luke.2.7-14", "Luke.3.1-6", "Luke.3.10-14", "Luke.21.25-34", "Luke.23.50-53", "John.6.51-52", "John.12.24-25", "John.14.23", "John.18.4", "John.18.12", "Rom.15.4", "Gal.4.4-7", "Eph.2.14-18", "Phil.1.12-14", "1Thess.5.17", "Tit.2.11-15", "Ps.24.5", "Ps.69.2", "Is.58.3-8", "Ps.50.12", "Luke.19.5-10", "Ex.16.6-7", "Ex.16.13-15", "Matt.1.1-17", "Matt.1.22-25", "Mich.5.2-4", "1Kings.16.1", "1Kings.16.11", "1Kings.16.19", "John.10.17-18", "John.20.19-20", "John.6.54-57", "2Kings.7.1-29", "3Kings.8.17-20", "Is.9.2-7", "Luke.1.26-33", "Luke.1.54-55", "Luke.1.67-75", "Ps.103.2", "Mal.3.1-3", "1Cor.3.12-15", "1Cor.15.49", "Acts.1.7", "Matt.25.1-13", "Matt.25.31-40", "John.20.22-23", "Eph.3.16-17", "Rom.15.7-13", "Is.7.10-15", "Is.11.1-5", "Is.11.10", "Is.35.4-6", "Is.45.1-8", "John.3.26", "Matt.5.5", "Luke.7.20-22", "Dan.3.47-51", "Wis.8.1", "Ex.3.1-10", "Ex.6.6", "Ex.19.1-20.26", "Luke.1.76-79", "Matt.1.22-23", "Luke.1.28", "Luke.1.42", "Matt.6.1-6", "Matt.6.16-18", "Luke.1.59-79", "Luke.2.36-38", "2Cor.12.7-10", "Gen.2.7", "Ecclus.24.5", "Is.19.20-22", "Luke.1.18-20", "Luke.1.56", "John.1.29", "John.20.24-29", "Rom.1.1-6", "Eph.2.14-20", "John.6.47-52"]
+loci = ["Rom.13.11-14", "Luke.21.25-36", "Is.1.10-18", "Is.2.1-5", "Is.11.1-10", "Ps.24.1-10", "1Thess.5.1-11", "Rom.15.4-13", "Matt.11.2-10", "Is.35.1-10", "Is.40.1-11", "Is.42.1-9", "Is.61.1-4", "Luke.4.16-22", "Luke.7.18-28", "Phil.4.4-7", "John.1.19-28", "Phil.1.3-14", "John.14.21-27", "Luke.1.26-38", "Is.45.5-8", "Luke.1.39-47", "Dan.3.46-51", "1Cor.4.1-5", "Luke.3.1-14", "Mich.5.2-5", "Luke.1.67-79", "Heb.1.1-6", "John.6.47-51", "John.1.1-14", "Matt.1.18-21", "Luke.2.1-14", "Ps.24.1-3", "Is.9.2", "Is.9.6-7", "Is.22.22", "Is.35.5-6", "Is.40.6-8", "Is.42.7", "Is.45.8", "Is.61.1", "Is.64.1", "Dan.3.49-50", "Matt.21.9", "Luke.1.26-55", "Luke.2.7-14", "Luke.3.1-6", "Luke.3.10-14", "Luke.21.25-34", "Luke.23.50-53", "John.6.51-52", "John.12.24-25", "John.14.23", "John.18.4", "John.18.12", "Rom.15.4", "Gal.4.4-7", "Eph.2.14-18", "Phil.1.12-14", "1Thess.5.17", "Tit.2.11-15", "Ps.24.5", "Ps.69.2", "Is.58.3-8", "Ps.50.12", "Luke.19.5-10", "Ex.16.6-7", "Ex.16.13-15", "Matt.1.1-17", "Matt.1.22-25", "Mich.5.2-4", "1Kings.16.1", "1Kings.16.11", "1Kings.16.19", "John.10.17-18", "John.20.19-20", "John.6.54-57", "2Kings.7.1-29", "3Kings.8.17-20", "Is.9.2-7", "Luke.1.26-33", "Luke.1.54-55", "Luke.1.67-75", "Ps.103.2", "Mal.3.1-3", "1Cor.3.12-15", "1Cor.15.49", "Acts.1.7", "Matt.25.1-13", "Matt.25.31-40", "John.20.22-23", "Eph.3.16-17", "Rom.15.7-13", "Is.7.10-15", "Is.11.1-5", "Is.11.10", "Is.35.4-6", "Is.45.1-8", "John.3.26", "Matt.5.5", "Luke.7.20-22", "Dan.3.47-51", "Wis.8.1", "Ex.3.1-10", "Ex.6.6", "Ex.19.1-20.26", "Luke.1.76-79", "Matt.1.22-23", "Luke.1.28", "Luke.1.42", "Matt.6.1-6", "Matt.6.16-18", "Luke.1.59-79", "Luke.2.36-38", "2Cor.12.7-10", "Gen.2.7", "Ecclus.24.5", "Is.19.20-22", "Luke.1.18-20", "Luke.1.56", "John.1.29", "John.20.24-29", "Rom.1.1-6", "Eph.2.14-20", "John.6.47-52", "Luke.3.23-38", "Cant.2.6", "Ps.24.1-5", "Rom.15.5-6", "Rom.15.13", "Luke.1.38", "Luke.2.14", "John.20.28", "Is.1.1-3", "Luke.1.30-31", "Ps.84.8", "Ps.84.13"]
 role = "direct-witness"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:192362da4273317daa469770d5b137a16215f015fc72fae410c0ece2bf70e03f"
-claim_keys = ["scripture-course", "scripture-in-the-body", "keeping-scripture", "christmas-bible-expansion", "coming-scripture-expanded", "sundays-scripture-expanded", "formation-scripture", "weekly-reading-course"]
-context = "Scripture course. Scripture in the body. Keeping scripture. Christmas bible expansion. Coming scripture expanded. Sundays scripture expanded. Additional household and Ember readings, O titles and calendrical alternatives."
+claim_keys = ["scripture-course", "scripture-in-the-body", "keeping-scripture", "christmas-bible-expansion", "coming-scripture-expanded", "sundays-scripture-expanded", "formation-scripture", "weekly-reading-course", "prayer-scripture", "handbook-scripture", "season-mass-office"]
+context = "Scripture course. Scripture in the body. Keeping scripture. Christmas bible expansion. Coming scripture expanded. Sundays scripture expanded. Additional household and Ember readings, O titles and calendrical alternatives. Luke's genealogy, the bride's rest, Mass and Office readings, and the received Scripture prayers used at home."
 
 [[bindings]]
 source_id = "passage.john-cassian.conlationes.gibson-english-ccel-2026-11-20.10.10"
@@ -712,12 +712,12 @@ context = "History venice."
 
 [[bindings]]
 source_id = "artifact.holy-see.acta-apostolicae-sedis.volume-52-1960.vatican-ocr-pdf-c734079d"
-loci = ["AAS 52 p. 671, no. 434; for the rank of these Sundays and permitted commemorations see nos. 11 and 111a"]
+loci = ["AAS 52 p. 671, no. 434; for the rank of these Sundays and permitted commemorations see nos. 11 and 111a", "AAS 52 pp. 594–595 (effective date); pp. 625–626 nos. 162, 166c; pp. 634–635 no. 220", "AAS 52 pp. 598–599 (nos. 15, 30a), 615–616 (nos. 108, 109a, 111a)", "General Rubrics nos. 109e, 111c, 300, 468 for St Thomas, the Ember Mass with ordinations and commemoration"]
 role = "direct-witness"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:81a7d012c7b0dca864e8070cd06bc7377e30c50e4cfd6097ce32d667c7eefa7d"
-claim_keys = ["history-venice"]
-context = "History venice."
+claim_keys = ["history-venice", "history-advent-reforms", "season-mass-office", "christmas-immaculate-feast", "weekly-reading-course"]
+context = "History venice. The effective date of the rubrics and the structure of Sunday Matins. Precedence of December 8 with commemoration of the displaced Advent Sunday, and the December 24 Vigil on a Sunday."
 
 [[bindings]]
 source_id = "passage.holy-see.acta-apostolicae-sedis.volume-52-1960.rubricae-generales-missalis-n-507"
@@ -740,12 +740,12 @@ context = "Advent sunday i chrysostom."
 
 [[bindings]]
 source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-10.ccel-web-2026-09-17.ccel-text-adb8f1c9"
-loci = ["John Chrysostom, Homilies on Matthew 36.2–3, lines 22615–22709"]
+loci = ["John Chrysostom, Homilies on Matthew 36.2–3, lines 22615–22709", "Homily 50 on Matthew, §§4–5, lines 29313–29387"]
 role = "direct-witness"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:0209917237dc0599614ab5b3a70d1563de63045007c4a8d4eb7776dd6ec37992"
-claim_keys = ["advent-sunday-ii-chrysostom", "john-in-prison"]
-context = "Advent sunday ii chrysostom. Chrysostom explicitly weighs and rejects the descent-to-the-dead interpretation."
+claim_keys = ["advent-sunday-ii-chrysostom", "john-in-prison", "mercy-chrysostom"]
+context = "Advent sunday ii chrysostom. Chrysostom explicitly weighs and rejects the descent-to-the-dead interpretation. The gold cup and the cup of water; priority of caring for the hungry, alongside honestly earned gifts at the altar."
 
 [[bindings]]
 source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-13.english-ccel-web-2026-09-05.ccel-npnf113-text-54274dd9"
@@ -877,3 +877,214 @@ states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:c3702f219d6641eb66186bd7d3d557375aec2843467d0d54aabe3397ec7e8fb7"
 claim_keys = ["formation-scripture"]
 context = "Row 40 of the concordance identifies Psalm 24 as Psalm 25 in a modern Bible."
+[[bindings]]
+source_id = "passage.bernard-of-clairvaux.st-bernards-sermons-for-the-seasons-volume-1.1921-dublin-browne-and-nolan.bernard-in-adventu-4.1-two-advents"
+loci = ["Bernard of Clairvaux, Sermones in adventu Domini IV.1 (Fourth Sermon for Advent)"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-18"
+source_fingerprint = "sha256:4b3de0fecbbabefead16b3dd7b307eb25bd19de87660b29c6d464afadd9e58bf"
+claim_keys = ["coming-bridegroom"]
+context = "Bernard reads the Bridegroom's two arms as the advents that sustain the waiting Church."
+
+[[bindings]]
+source_id = "artifact.teresa-of-avila.libro-de-la-vida.lewis-zimmerman-1904.ia-ocr-3b63bc87"
+loci = ["Life 9.4–7, pp. 64–65, and 11.10–16, pp. 78–81"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:4bf3afe998c687e14f41c824e9999030dd911161d3699ccd69f1a31259f96334"
+claim_keys = ["keeping-teresa"]
+context = "Gethsemane at bedtime, speaking in the dark, and the gardener with an empty bucket. Pastoral applications to Advent are the handbook's."
+
+[[bindings]]
+source_id = "passage.ignatius-of-loyola.exercitia-spiritualia.mullan-1914.general-examen"
+loci = ["Method for Making the General Examen (pp. 30-31)"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-18"
+source_fingerprint = "sha256:669049be003c9732739dcac6010db5c46ed76abcac77cac7b7d9f2022d6bd03a"
+claim_keys = ["keeping-ignatius"]
+context = "Five points of the evening review, from thanksgiving to amendment, followed by the Our Father."
+
+[[bindings]]
+source_id = "artifact.papal.leo-xiii.hf-l-xiii-enc-15081889-quamquam-pluries.2026-10-26-vatican-la.latin-text-9b0e7c64245f"
+loci = ["paragraphs 3–5 in the official English numbering, especially the end of paragraph 4 and the opening of paragraph 5; Latin physical lines 13–17"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:3a4c91185016b24567179f45b69652521a62a1c62d4e25caa7a684b09905953a"
+claim_keys = ["joseph-patronage"]
+context = "Marriage and the Holy Family, the Church's adoption in Christ, guardianship, work and the cost of providing for a household."
+
+[[bindings]]
+source_id = "passage.nicene-and-post-nicene-fathers.series-2-volume-7.new-york-1894.gregory-oration-29.19-made-god"
+loci = ["Gregory Nazianzen, Oration XXIX (The Third Theological Oration, On the Son).19"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-19"
+source_fingerprint = "sha256:b971232a45e07107cbcda309352e329c4d460d6bd80a8dfb6fd3af34e94c8989"
+claim_keys = ["bethlehem-nazianzen-person"]
+context = "What the Word continued to be and what he assumed in order to save humanity."
+
+[[bindings]]
+source_id = "passage.nicene-and-post-nicene-fathers.series-2-volume-7.new-york-1894.gregory-oration-29.20-bread"
+loci = ["Gregory Nazianzen, Oration XXIX (The Third Theological Oration, On the Son).20"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-19"
+source_fingerprint = "sha256:8cd88a488e9de51f166d91f562ce0cc6e11c6f64973e633c2074045ff5845dbc"
+claim_keys = ["bethlehem-nazianzen-person"]
+context = "Hunger and feeding the thousands, weariness and giving rest."
+
+[[bindings]]
+source_id = "passage.nicene-and-post-nicene-fathers.series-2-volume-12.new-york-1895.leo-sermo-21.1"
+loci = ["Leo the Great, Sermo XXI.1"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-19"
+source_fingerprint = "sha256:203d5e2d0e0e722029a3c4f83d50df6bfeb39cdb4fbbd3bd6ade8557471d8bfa"
+claim_keys = ["christmas-leo-dignity"]
+context = "The persons invited to rejoice and the appeal to the baptized to remember whose temple and whose members they are."
+
+[[bindings]]
+source_id = "passage.nicene-and-post-nicene-fathers.series-2-volume-12.new-york-1895.leo-sermo-21.3"
+loci = ["Leo the Great, Sermo XXI.3"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-19"
+source_fingerprint = "sha256:2758e0e903ab62cc9f6008e955c40cd8f52d89ab782e5334e7cd3c5c83cd6d8f"
+claim_keys = ["christmas-leo-dignity"]
+context = "The persons invited to rejoice and the appeal to the baptized to remember whose temple and whose members they are."
+
+[[bindings]]
+source_id = "artifact.alphonsus-liguori.the-incarnation-birth-and-infancy-of-jesus-christ.grimm-1886.ia-pdf-2ca29198"
+loci = ["Meditations for the Novena for Christmas VIII (December 23), printed pp. 232–234, PDF pp. 236–238"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:ca850ef902a594c3bd2c7ce69141f2a10c59bc1acfc25837ea5ba80746472cce"
+claim_keys = ["christmas-alphonsus"]
+context = "Alphonsus reads Titus 2 and turns from the birth and final coming to a personal request for pardon."
+
+[[bindings]]
+source_id = "passage.friedrich-maassen.concilia-aevi-merovingici.1893-hannover-mgh-concilia-1.tours-567-c18"
+loci = ["Concilium Turonense a. 567, c. XVIII (XVII)"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-18"
+source_fingerprint = "sha256:9fa132a98f866c4454017dd587cb3601921a2344230c1e3bd0ba7139a42b0283"
+claim_keys = ["history-tours-monks"]
+context = "Second Council of Tours (567), canon XVIII in Maassen's numbering (XVII in the older editions, Hefele's c. 17): the monks' fasts through the year, ending 'de Decembre usque natale Domini omni die ieiunent'. Printed p. 126, ll. 20-26 (PDF p. 148), with the apparatus to ll. 25-26; the canon continues to p. 127."
+
+[[bindings]]
+source_id = "passage.william-durandus.rationale-divinorum-officiorum.1612-lyon-tomus-secundus.vi.2.2"
+loci = ["VI.2.2"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-18"
+source_fingerprint = "sha256:c087ebace4b434cb59183d60e5839f42e6fb4e4b6d48a0e7c06d47005b711d41"
+claim_keys = ["history-durandus"]
+context = "Rationale VI.2 'De Tempore Aduentus', article 2 (marginal numeral 2): Durandus reports that blessed Peter first instituted three full weeks before Christmas and a fourth never completed, and explains the four weeks by the fourfold coming of the Son of God. The Peter attribution is Durandus's report of a legend and is to be presented as such. Folio 255 verso (leaf n15)."
+
+[[bindings]]
+source_id = "passage.william-durandus.rationale-divinorum-officiorum.1612-lyon-tomus-secundus.vi.2-gloria"
+loci = ["VI.2"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-18"
+source_fingerprint = "sha256:e5cf17e0ea116bf99fc8b2f5165f04ed8cc8ce01158ddf5186dd9c40be408de7"
+claim_keys = ["history-durandus"]
+context = "Rationale VI.2: in Advent the Gloria in excelsis, which belongs to the Nativity, is silent, so that it may be sung the more devoutly and eagerly on the night of the Nativity. Folio 256 recto (leaf n16), last lines. The sentence continues on the verso: 'ad notandum hunc hymnum primò fuisse nocte illa ab angelis decantatum'."
+
+[[bindings]]
+source_id = "passage.william-durandus.rationale-divinorum-officiorum.1612-lyon-tomus-secundus.vi.2-alleluia"
+loci = ["VI.2"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-18"
+source_fingerprint = "sha256:5bca80680b06a7e561d0a46a87f4188384f479be2cfa0dbc72f94ef6bb8d592c"
+claim_keys = ["history-durandus"]
+context = "Rationale VI.2: the question why the Alleluia is not silent in Advent, a season of fasting in which weddings are not celebrated, and its solution: this fast is partly of exultation and partly of mourning. Folio 256 verso (leaf n17). The text goes on to explain the exultation by the first coming and the mourning by the second."
+
+[[bindings]]
+source_id = "passage.amalarius-of-metz.liber-officialis.latin-migne-pl-105.iii.40-gloria"
+loci = ["III.40"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-18"
+source_fingerprint = "sha256:2ffa6ca7f4d4f5b73a9df498da7424a1cc25245076269603034ef88056977d49"
+claim_keys = ["history-durandus"]
+context = "Amalarius's account of the omission of the Gloria."
+
+[[bindings]]
+source_id = "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.internet-archive-pdf-006a38a3"
+loci = ["Wilson, introduction p. lxxi and p. 214 note 1"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:3c079cbeca2f2ff2e2691ea20542a0e220b52401f0ffe9de578d32c3d85952a7"
+claim_keys = ["history-gelasian"]
+context = "Wilson's editorial reconstruction of the groups."
+
+[[bindings]]
+source_id = "artifact.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712.ia-text-pdf-180769e3"
+loci = ["Printed pp. 12, 15 (PDF pp. 50, 53), sixth Sunday rubric, first Mass entrance and second Mass Gospel"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:d876e6c152e9372fe82b3156b86bd46e9ccd8dd65c0b098b937e22c57fd7601a"
+claim_keys = ["history-milan"]
+context = "Two Masses in specified Milanese churches, the second with the Annunciation."
+
+[[bindings]]
+source_id = "artifact.holy-see.acta-apostolicae-sedis.volume-47-1955.vatican-ocr-pdf-87faf821"
+loci = ["AAS 47 (1955), pp. 218–220, effective date and title II no. 11"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:15f85a004a0b3c6d92ea26bfb687ed4a089445548249dee82515ad634f2a5173"
+claim_keys = ["history-advent-reforms"]
+context = "Reduction of octaves and date of entry into force."
+
+[[bindings]]
+source_id = "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-pdf"
+loci = ["Bute, Winter, December Kalendar p. lxxvi"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:dfec0bea7679eced6b26dec737f6d4069e7693f1a23b41f84f039c3e64529ceb"
+claim_keys = ["history-advent-reforms"]
+context = "The earlier calendar surrounding December 8."
+
+[[bindings]]
+source_id = "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.advent-primer-creator-alme-siderum"
+loci = ["Proper of the Season, Saturday before Advent Sunday, Vespers, Hymn (Creator alme siderum, Newman's 'Creator of the starry pole'), with Verse and Answer; printed p. 213"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-18"
+source_fingerprint = "sha256:184a69b9a876526c4a45c3da7cbf11b1a091a948a2f88ea11951bf06938692c7"
+claim_keys = ["season-mass-office"]
+context = "The complete English Vespers hymn of Advent as printed, line by line, with Bute's footnote on its origin and translator and the following Verse and Answer (Drop down, ye heavens), read on printed page 213 (PDF page 297, with 300 dpi crops of the hymn and footnote)."
+
+[[bindings]]
+source_id = "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.advent-primer-20261119-advent-1-mattins-lesson-1"
+loci = ["Proper of the Season, First Sunday of Advent, Mattins, first nocturn, First Lesson (Isa. i. 1); printed p. 214"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-19"
+source_fingerprint = "sha256:a4a8b6111394a25feae4ff7bb93ab6d01460e339b57d908544281719f0d5b7e7"
+claim_keys = ["season-mass-office"]
+context = "The nocturn heading, lesson heading and whole First Lesson of Advent Sunday Mattins, read on printed p. 214 (PDF p. 298), left column, to the First Responsory."
+
+[[bindings]]
+source_id = "artifact.solesmes-abbey.liber-usualis.desclee-1961-english-rubrics.facsimile-c931bed8"
+loci = ["1961 prefatory corrections p. LXXII (PDF p. 72); Advent pp. 317–318, 323–326 (PDF pp. 463–464, 469–472); dated O antiphons pp. 340–342 (PDF pp. 486–488)"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:6e1a9f0a3df4f5dc8f9b606944dcb73eef93969632b5b88e1fec25a02827ae57"
+claim_keys = ["season-mass-office", "prayer-antiphons"]
+context = "The First Sunday Office and chants, read with the revised rubrics; O antiphons with the Magnificat."
+
+[[bindings]]
+source_id = "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.advent-primer-advent-3-collect"
+loci = ["Proper of the Season, Third Sunday of Advent, Lauds, Prayer (Aurem tuam, quaesumus, Domine); printed p. 243"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-18"
+source_fingerprint = "sha256:1d897bdd363b763d318376b74b367ef78006c2876b9c157fcd66cf7ee4d19752"
+claim_keys = ["prayer-gaudete"]
+context = "Complete received English Collect printed by Bute at Lauds of Advent III."

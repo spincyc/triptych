@@ -97,3 +97,33 @@ from acquired bytes.
 | ember-ambrose | Ambrose, *Exposition of Luke* II.14–15, 19–21, in the held Latin (lines 34, 40). Ember Friday wording checked in Bute's Winter Breviary, pp. 252–253, first Matins lesson. The earlier English witness supplies wording, not the 1962 order of precedence. |
 | ember-leo | Leo, Sermon 12.3–4 (Feltoe), on gratitude after a poor harvest and keeping the Saturday vigil with St Peter. The fifth-century sermon and the 1962 station are dated separately. |
 | weekly-reading-course | Read the 1962 Missal, pp. 1–16, 437–438 and 441, alongside the table of precedence. Checked the shortest and longest Advent and weekday/feast collisions over a Gregorian 400-year cycle. The daily questions and assigned patristic excerpts are readings for home. The long Ember Saturday includes the furnace, and the Mass at which orders are conferred keeps its Ember formulary. |
+
+## Handbook revision, November 21, 2026
+
+Current discipline was checked again against the [1983 Code, canons
+1249–1253](https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann1244-1253_en.html),
+the U.S. bishops’ [1966 pastoral statement, especially §§5–9, 22–25](https://www.usccb.org/prayer-and-worship/liturgical-year-and-calendar/lent/us-bishops-pastoral-statement-on-penance-and-abstinence),
+and their [complementary norm](https://www.usccb.org/beliefs-and-teachings/what-we-believe/canon-law/complementary-norms/canons-1252-and-1253-observance-of-fast-and-abstinence).
+The weekday course proposes personal prayer and practices of mercy.
+
+| Claim keys | Witness, reading and limits |
+| --- | --- |
+| history-tours-monks | Second Council of Tours (567), c. 18, specifies a December fast for monks. Gregory of Tours, *Histories* 10.31, describes Perpetuus's earlier local schedule. First Council of Mâcon, c. 9, names three weekdays. Keep the addressees and jurisdictions distinct. |
+| history-durandus, history-milan | Durandus, *Rationale* VI.2, fols. 255v–256v, interprets the Alleluia, Gloria and shortened fourth week. His attribution to Peter is medieval testimony about origins. The Milanese Missal of 1712, pp. 12, 15, witnesses a different sixth Sunday, two Masses and the Incarnation Gospel. It supplies no date for the beginning of Ambrosian practice. |
+| history-advent-reforms | Compare the 1570 Venetian and 1962 Roman Missals at Advent I and IV, the 1955 reform (*AAS* 47, pp. 219–220), and John XXIII's *Rubricarum instructum* 1–2. The simplification taking effect in 1956 precedes the 1960 rubrics. *General Rubrics* 434 and 507 govern the prayers and dismissal at the 1962 horizon. |
+| season-mass-office, weekday-mass | 1961 *Liber Usualis*, pp. 317–318, 323–326, the 1962 Missal, pp. 1–2, and Breviary rubrics 162, 166, 220. Romans 13 runs from the chapter at First Vespers to the Sunday Epistle and Little Hours. The antiphon for the Magnificat changes at Second Vespers. Distinguish the three Sunday lessons under the new rubrics from the nine in Bute (1908). The inherited ferial Mass keeps the Gradual and omits the Alleluia verse. |
+| coming-bridegroom, season-participation | Bernard, Advent sermon 4.1, Mount Melleray edition, pp. 32–33, on the two hands of Canticles 2:6. Pius XII, *Mediator Dei* 153–155, 165, on the Christian's participation in Christ's mysteries and return to Bethlehem. The encyclical is paraphrased from the Holy See's text. |
+| keeping-teresa, keeping-ignatius | Teresa of Ávila, *Life* 9.4–7 and 11.10–16 (Lewis/Zimmerman, 1904, pp. 64–65, 78–81). Her account of Gethsemane and the dry well addresses perseverance in prayer. Ignatius, *Spiritual Exercises*, General Examen (Mullan, pp. 30–31), gives five points and concludes with the Our Father. Their application to an Advent evening is the handbook's counsel. |
+| household-monica, mercy-chrysostom | Augustine reports his mother's request in *Confessions* 9.11.27–28, then prays for both parents in 9.13.35–37 (NPNF I.1). Chrysostom, *Homily 50 on Matthew* 4–5 (NPNF I.10), puts the cup on the altar beside the thirsty man. Preserve both his esteem for the altar and his demand that the hungry be fed. |
+| joseph-patronage, handbook-scripture | Leo XIII, *Quamquam pluries* 3–5. Paragraph 4 gives Joseph’s lineage and work. Paragraph 5 addresses workers. Compare the registered Latin with the official English on Joseph's guardianship and work. Distinguish the pope's argument from Matthew's account. For the genealogies and Mary, compare Luke 3:23–38 with Irenaeus, *Against Heresies* 3.22.4. |
+| bethlehem-nazianzen-person, christmas-leo-dignity | Gregory of Nazianzus, *Oration* 29.19–20, NPNF II.7, pp. 308–309. The acts attributed to the Incarnate Son illuminate both the Nativity and Easter. Leo, Nativity Sermon 21.1, 3 (Feltoe, pp. 128–129), separately addresses his hearers and urges the baptized to remember their dignity. |
+| christmas-alphonsus | Alphonsus Liguori, meditation VIII for December 23, Grimm translation (1886), vol. IV, pp. 232–234. The citation of Titus, the straw, and the petition for pardon were checked against the three printed pages. The scene is a meditation. |
+| prayer-scripture, prayer-gaudete | The course pairs each recurring day with Scripture, spiritual reading and a received prayer. All twenty prayer texts were compared with their registered witnesses after normalizing whitespace. Bute, *Roman Breviary*, Winter, p. 243, gives the Gaudete collect in full at Lauds. Compare its petition with the 1962 Missal, p. 4, no. 22. The Douay–Rheims supplies the biblical prayers. |
+| weekly-reading-course | Checked all 10,003 Advent dates in 2000–2399. Three full weeks and up to six days before the Vigil give 27 recurring rows. A Sunday Vigil leaves zero fourth-week rows. All seven Christmas weekdays and both St Thomas–Ember overlaps occurred. December 19, 2026 is Ember Saturday and the evening of O Root of Jesse. The domestic course keeps both observances locatable. |
+
+On a Sunday December 8, the Immaculate Conception takes precedence
+(*General Rubrics* 15). The displaced Sunday receives a privileged
+commemoration, admitted on a first-class day at Mass and in the Office
+(nos. 108, 109a, 111a, *AAS* 52, pp. 598, 615). The Christmas Vigil on a
+Sunday has its own express exception (no. 30a).
+The Advent feria is itself a privileged commemoration at the weekday Mass of St Thomas (nos. 108, 109e, 111c). Nos. 300 and 468 govern the ordination Mass on Ember Saturday and the use of its full form.

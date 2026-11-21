@@ -286,6 +286,12 @@ page images; each records its normalizations. Their historical wording keeps
 its own status and is not offered under Triptych's CC BY 4.0 licence. Users
 must determine their status in other jurisdictions.
 
+The GPT Advent handbook also cites the 1961 Desclée *Liber Usualis* with
+English rubrics. The source library identifies the facsimile by digest and
+records its printed copyright notice. The handbook uses page references
+and descriptions of the services. Rights to the scan, its notation and its
+English rubrics remain unresolved. [Edition and evidence](src/sources/works/solesmes-abbey/liber-usualis/editions/desclee-1961-english-rubrics/edition.toml)
+
 ## Liturgical and Scriptural Texts
 
 Scripture, Missal formularies, Orders of Mass, rubrics, chants, and texts from

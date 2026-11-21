@@ -2,16 +2,35 @@
 
 ## Reader and scope
 
-An evergreen primer for a person keeping Advent with the 1962 Roman Missal.
+An evergreen handbook for a person keeping Advent with the 1962 Roman Missal.
 The work follows the universal 1962 calendar and identifies United States
 discipline where it discusses current local practice. The body is the full study and can be read over several evenings. The daily readings and prayer appendix
-are for use throughout the season. The future Lent primer can use the same
+are for use throughout the season. The future Lent handbook can use the same
 order at greater length.
 
 This is the independent GPT edition. External witnesses belong to the
 shared corpus. The draft uses the verified witnesses and the plan below
 as its starting point. The individual Mass texts and their exposition
 belong to the proper guides.
+
+## Handbook revision, November 21, 2026
+
+Follow the prayers of one Sunday from First Vespers through the Mass and
+the following ferias. Read dated Roman and regional evidence according
+to what its book or author can attest. Compare the 1962 rubrics with
+earlier witnesses before treating a borrowed Office text as an appointment.
+In the chapters on the home, grief and almsgiving, pair the Fathers'
+exegesis with the counsel of later saints and the application made by
+popes to the needs of their hearers. Give each author a passage, a question
+and a setting in which the reader can understand the advice.
+
+The daily course should work even for a reader who starts on December 21.
+Pair the week's Scripture and spiritual reading with a specific prayer,
+and do the same for each possible day. Test all seven weekdays of Christmas,
+the Sunday Vigil, December 8, the Ember Days, St Thomas, and the seven dated
+evenings. Quoted prayers belong in the appendix under the names by which
+the course calls them. The older plans below record the development of this
+edition.
 
 ## Section plan
 

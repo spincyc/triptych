@@ -83,3 +83,31 @@ against the witnesses. The following revisions resulted.
 The final accuracy read also distinguished the deacon's dismissal at Solemn
 Mass, directed the reader to Bute p. 230 for the reed, and kept the Sinai
 passage and the verse numbering of John explicit.
+
+## Seasonal handbook, November 21, 2026
+
+An independent reader read the generated GPT edition from the opening
+invitation through the prayers, references and rights notice. The reader
+tried a full second week, an ordinary weekday, December 8, 2024 (Advent II),
+December 21, 2024 (St Thomas and Ember Saturday), and December 24, 2023
+(the Sunday Vigil). The instructions led to the appropriate readings and
+prayers in each case. The reader singled out Gregory and Chrysostom's
+different answers to John's question from prison and the First Sunday
+from Vespers to Vespers as passages where the liturgy invited a second
+reading of Scripture.
+
+| Reader's finding | Revision and check |
+| --- | --- |
+| Ambrose on the question of Zachary was difficult to pursue in English from the fourth Wednesday. | Link the row to the English account under Ember Wednesday. It identifies Ambrose, *On Luke* 2.14–15. |
+| An arrival on a feast or dated evening required searching the book for the promised prayer. | Link the opening invitation and date directions to the prayer course, Mary's chapters, the dated O evenings and the Vigil. Point the third week directly to Bute's complete Gaudete collect. |
+| On a Sunday December 8 a worshipper could wonder where the Sunday collect went. | Explain its place after the feast's collect. An independent accuracy check verified the privilege and its contrast with the Sunday Vigil against General Rubrics 15, 30a, 108, 109a and 111a. |
+| The citation for Joseph’s royal descent and work named the paragraph that draws the lesson for workers. | Cite *Quamquam pluries* 4–5 in the chapter and 3–5 for the whole discussion. Check the distinction against the Holy See’s English and the bound Latin. |
+
+An independent accuracy review also checked the 400-year occurrence
+count, the sources for local fasts and Milan’s sixth Sunday, the three
+lessons at Sunday Matins, and a sample of the spiritual writers. It
+confirmed the Teresa, Pius XII and Gregory Nazianzen readings. At the
+weekday Mass of St Thomas the book now identifies the commemoration of
+the Advent feria. In a selected print proof some tables continued
+across a page turn. Their column headings now repeat. In the generated
+reader the date directions and invitation resolve to the named sections.

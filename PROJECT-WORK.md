@@ -11,12 +11,17 @@ Last reconciled: 2026-11-20.
 
 <!-- promised-deliverable: seasonal-handbooks-gpt-advent-2026-11-21 -->
 
-In progress. Rename the 1962 seasonal collection, revise its editorial
-profile, and rework the GPT Advent edition. Each handbook is to teach the
-season's history and liturgy, bring Fathers, popes, saints and spiritual
-writers into the study, and give readers Scripture and prayer for every
-week and day. The Claude Advent edition belongs to the renamed series. The
-requested manuscript revision is the GPT edition.
+The 1962 catalog now lists Seasonal Handbooks and retains the old bookmark.
+The [series profile](guidance/liturgy/roman-1962-seasonal-handbooks.md)
+requires sustained historical and liturgical analysis, teaching from Fathers,
+popes, saints and spiritual authors, and readings with received prayer for
+every week and occurring day. The GPT Advent edition includes the Roman
+and regional history, a walk from Vespers to Vespers, the four Sundays and
+Ember Days, the seven O evenings and the Vigil. Its 27 recurring rows and
+dated instructions were tested across 400 years. Both the reader and
+accuracy reviews are recorded in the [edition](src/gpt/liturgy/roman-rite/1962/seasons/advent/research/cold-review.md).
+The Claude volume retains its own text and publication title within the
+renamed series.
 
 ## GPT Last Sunday after Pentecost — 22 November 2026
 
