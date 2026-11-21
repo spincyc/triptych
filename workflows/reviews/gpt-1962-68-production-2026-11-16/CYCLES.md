@@ -1346,3 +1346,5 @@ product identity is
 `b832566663ee8855e11e7515d533c2d1946d6d5941f233f146ccadbc74720ce4`.
 The scoped binding refresh records the new browser descriptor. The
 comparison confirms all 25,538 other bindings and authorization fields.
+Committed-input discovery refresh with reader indexes passes for 84,005
+files, 59,285 records and 41,120,922 metadata bytes.

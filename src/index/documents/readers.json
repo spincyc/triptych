@@ -1,5 +1,5 @@
 {
- "generation_commit": "6e81e3791345f558fb1dc1886cae15a4579c6f6b",
+ "generation_commit": "d3dc4f73c64420d8ee3ea152072c3f8b61e0b451",
  "readers": {
   "claude/articles/canon-law/clerical-celibacy-chastity-and-continence": {
    "canonical": "articles/canon-law/clerical-celibacy-chastity-and-continence",
@@ -10615,6 +10615,156 @@
    "release_status": "alpha",
    "source_format": "latex",
    "title": "Resumed Sixth Sunday after the Epiphany: Faith Taking Root"
+  },
+  "gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost": {
+   "canonical": "liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "document": "liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost",
+    "eligibility": "eligible",
+    "inspected": "2026-11-20",
+    "inspected_by": "gpt, proper-study v19 run 13ecdd1552c245ea, web-review iteration 3",
+    "inspection": "Compared the canonical study Markdown with the TeX, appointed-text audit, generated chronology and selected Augustine, Chrysostom, Bellarmine, Bede and Aquinas loci. Checked 36 quotation blocks, eleven proper anchors, both four-sense lists, two tables, 62 source notes, and the revision and rights display. Sampled Chromium article previews at 1280 × 1000 and 390 × 844 for responsive chronology, internal links and note navigation. Conversion SHA-256 48adb1a4bbf78075f4276153ba2e3de9935a9fcc9a8d68530dfe29e45f03a951.",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-16",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/generation-metadata.tex",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/main.tex",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/proper-components.toml"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost",
+    "src/common"
+   ],
+   "document": "liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost",
+   "edition": "main",
+   "entrypoint": "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/main.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost",
+   "kind": "proper-1962",
+   "provider": "gpt",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "Twenty-fourth and Last Sunday after Pentecost: Deliverance, Waiting, and the Prayer for Healing"
+  },
+  "gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost-homily": {
+   "canonical": "liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost-homily"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "document": "liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost",
+    "eligibility": "eligible",
+    "inspected": "2026-11-20",
+    "inspected_by": "gpt, proper-study v19 run 13ecdd1552c245ea, web-review iteration 3",
+    "inspection": "Compared the canonical study Markdown with the TeX, appointed-text audit, generated chronology and selected Augustine, Chrysostom, Bellarmine, Bede and Aquinas loci. Checked 36 quotation blocks, eleven proper anchors, both four-sense lists, two tables, 62 source notes, and the revision and rights display. Sampled Chromium article previews at 1280 × 1000 and 390 × 844 for responsive chronology, internal links and note navigation. Conversion SHA-256 48adb1a4bbf78075f4276153ba2e3de9935a9fcc9a8d68530dfe29e45f03a951.",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-16",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/generation-metadata.tex",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/homily.tex",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/proper-components.toml"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost",
+    "src/common"
+   ],
+   "document": "liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost-homily",
+   "edition": "homily",
+   "entrypoint": "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/homily.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost-homily",
+   "kind": "proper-1962",
+   "provider": "gpt",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "Twenty-fourth and Last Sunday after Pentecost: Confidence in Prayer and the Grace to Change"
+  },
+  "gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost-synthesis": {
+   "canonical": "liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost-synthesis"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "document": "liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost",
+    "eligibility": "eligible",
+    "inspected": "2026-11-20",
+    "inspected_by": "gpt, proper-study v19 run 13ecdd1552c245ea, web-review iteration 3",
+    "inspection": "Compared the canonical study Markdown with the TeX, appointed-text audit, generated chronology and selected Augustine, Chrysostom, Bellarmine, Bede and Aquinas loci. Checked 36 quotation blocks, eleven proper anchors, both four-sense lists, two tables, 62 source notes, and the revision and rights display. Sampled Chromium article previews at 1280 × 1000 and 390 × 844 for responsive chronology, internal links and note navigation. Conversion SHA-256 48adb1a4bbf78075f4276153ba2e3de9935a9fcc9a8d68530dfe29e45f03a951.",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-16",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/generation-metadata.tex",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/proper-components.toml",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/synthesis.tex"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost",
+    "src/common"
+   ],
+   "document": "liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost-synthesis",
+   "edition": "synthesis",
+   "entrypoint": "src/gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost/synthesis.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:gpt/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost-synthesis",
+   "kind": "proper-1962",
+   "provider": "gpt",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "Twenty-fourth and Last Sunday after Pentecost: A Concise Study"
   },
   "gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king": {
    "canonical": "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king",
