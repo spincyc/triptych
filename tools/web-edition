@@ -2345,7 +2345,9 @@ def severed_runs(sources: str, markdown: str, span: int = 6) -> list[str]:
     """
     if not sources.strip():
         return []
-    runs = source_word_runs(sources)
+    # WORD_RE tokens contain no whitespace. Spaces preserve whole-word matches,
+    # and a newline separates source runs no output window may straddle.
+    runs = "\n".join(f" {' '.join(run)} " for run in source_word_runs(sources))
     blocks = prose_blocks(markdown)
     severed = []
     for index, block in enumerate(blocks[1:], start=1):
@@ -2356,12 +2358,7 @@ def severed_runs(sources: str, markdown: str, span: int = 6) -> list[str]:
         tail = [w.casefold() for w in WORD_RE.findall(block)][:span]
         if len(head) < span or len(tail) < span:
             continue
-        joined = head + tail
-        if any(
-            run[start : start + len(joined)] == joined
-            for run in runs
-            for start in range(len(run) - len(joined) + 1)
-        ):
+        if " ".join(("", *head, *tail, "")) in runs:
             severed.append(f"{previous[-40:]!r} then {block[:40]!r}")
     return severed
 
