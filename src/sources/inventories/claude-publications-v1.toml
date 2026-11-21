@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "claude"
-audited_on = "2026-11-19"
+audited_on = "2026-11-21"
 discovery_rule = "src/claude/**/main.tex"
 publication_count = 68
 source_surface_file_count = 2539
-snapshot = "sha256:ffed04c213c2bc931cfff3e8b3129c7b505fc877a060585ae3b35e1cb9385c54"
+snapshot = "sha256:40ad64851705ce17df9abee6e9388544b4df23f05fea38fe81995938c98ba3f6"
 
 [[owners]]
 id = "owner.articles.faith.four-last-things"
@@ -11827,13 +11827,13 @@ owners = ["liturgy/roman-rite/1962/seasons/advent"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/seasons/advent/main.tex"
-sha256 = "60b87a1756c49f53e4ff3d88faef3d78585ab7f6f20bead4f9d2e0c086ea81e4"
+sha256 = "c61da33c589e0dac2dd18ac5a93bd3b175be7212af4e597febdbaf51054ac0f3"
 kind = "publication-main"
 owners = ["liturgy/roman-rite/1962/seasons/advent"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/seasons/advent/publication.toml"
-sha256 = "738f5de0a814aad828bf3d65197c30ef0f8f97146aa3c47954b54a90cef2d8f7"
+sha256 = "603b143ed9f1c7b331c1317857e1e10eb3e61ee5a606fdb5cfa51e53f394f0e2"
 kind = "publication-contract"
 owners = ["liturgy/roman-rite/1962/seasons/advent"]
 

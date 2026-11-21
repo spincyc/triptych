@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "gpt"
-audited_on = "2026-11-20"
+audited_on = "2026-11-21"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 157
-source_surface_file_count = 3888
-snapshot = "sha256:ac1d9ba743e784158c60386346e013e248fd0c80362c543a0471a77dcc33508b"
+source_surface_file_count = 3889
+snapshot = "sha256:d0a325c212c2ab12d3a54c207d148218ea76d950c1ac8999f24a9161146abb75"
 
 [[owners]]
 id = "owner.articles.faith.four-last-things"
@@ -18647,115 +18647,121 @@ owners = ["liturgy/roman-rite/1962/seasons/advent"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/seasons/advent/main.tex"
-sha256 = "5d70b377a554ca3d28831e0574c237474f39cdd3fa8acffc52fa8b6f0071ed2d"
+sha256 = "e7e0b52604c46b5ddd372888f8aadcb4861071d15f80573597238d1ea8eb1a9b"
 kind = "publication-main"
 owners = ["liturgy/roman-rite/1962/seasons/advent"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/seasons/advent/publication.toml"
-sha256 = "b20ad6e24121f2db20e685a0320d42803e124f7179bdb4345576c24a1751393b"
+sha256 = "b7a0a422853e27b867e760668b217fb13aaf24bf955dc5549910161c024286b2"
 kind = "publication-contract"
 owners = ["liturgy/roman-rite/1962/seasons/advent"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/seasons/advent/research/cold-review.md"
-sha256 = "e725217b8733a5fa0471d7154a7159318cbc8d088d0c72ac8d64f71b75f332c7"
+sha256 = "94c14ba48641ce44325c6a39d909cde7765bdbadcc3d58c1cc25568c38d3a0c9"
 kind = "research-record"
 owners = ["liturgy/roman-rite/1962/seasons/advent"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/seasons/advent/research/scope.md"
-sha256 = "15be7457a2d3abfe81b66e11c92d1ed7fd862c13ee69aee7e9e98585d9a48731"
+sha256 = "c1fd74b29c694b5f37293afb1c1f7fb7f2ad2e522d1de45b78cb9e8cb4ad25ed"
 kind = "research-scope"
 owners = ["liturgy/roman-rite/1962/seasons/advent"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/seasons/advent/research/source-audit.md"
-sha256 = "fd4024f0bdcc3147d42c0143854dfdbf2576bb31ec43df96d9b58703ab5f50ea"
+sha256 = "432da070a4668358a95a17250e242c94a31b5a760f7d69e92563b074cdf465f5"
 kind = "legacy-source-audit"
 owners = ["liturgy/roman-rite/1962/seasons/advent"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/seasons/advent/research/source-bindings.toml"
-sha256 = "694366c6eb78d81c81962e192dd766b50432b5493428e412ef8a98a0a36130c0"
+sha256 = "3c3f0d64ee55470c323ab699e506865750e51b50f521ab407d8186825640a2c5"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/seasons/advent"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/seasons/advent/sections/05-before-advent.tex"
-sha256 = "a4867fa301a69fa42b8fadd2a7ab636f1fe45427d31121480f3424859d6d52ae"
+sha256 = "41c9a752b505cf7832e9edda4547561f2343f8865a020b6707f75e87f1c957ca"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/seasons/advent"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/seasons/advent/sections/10-the-coming.tex"
-sha256 = "ecfe7189fc2eaed81aabeb83907e26df151f96329b954f8b86d1126bf981331e"
+sha256 = "87deb34d42a709a4ab61674f8000375f4255e45471a1474ed4b0d769dcb5ed37"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/seasons/advent"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/seasons/advent/sections/12-history.tex"
-sha256 = "8703715c493c6d6e35ae11ed3fca489c545446e3933b0d0b475ad3e6d0b38455"
+sha256 = "ba7edb865f2b05adb10f8f0534f7bc046e336d70323dae496a466078cbf5a667"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/seasons/advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/seasons/advent/sections/14-mass-and-office.tex"
+sha256 = "6ce2200bee9c7bb027d0e239371f07f37a48644a7cd9faefdd031c4efe712fcb"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/seasons/advent"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/seasons/advent/sections/20-keeping-advent.tex"
-sha256 = "21af739715f3189da087ab1dfb276061e04d6c9082ebcfbac30bf00191d5c093"
+sha256 = "8f606f65c7541daf331651d77df7bcf8112f80b1704414fd39828ceb16d84bfa"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/seasons/advent"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/seasons/advent/sections/22-household.tex"
-sha256 = "54f8c0a736aaf411756ad160ddf6c967cb3bb229f0342fe8d973a67e3ef8e6a6"
+sha256 = "087b04bbf8a0c436494e40cf8ca731ac7edb34ba1b2c866a988041c6dcb7b7bd"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/seasons/advent"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/seasons/advent/sections/24-mercy.tex"
-sha256 = "6e997a61f7aa7e845a39aa6673938052d2358d3e76795a2fb39a12e3c635bd80"
+sha256 = "e98893ba6a9535b6296bc2891a04d71672a55f362e635df9b52815932d5fbcc6"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/seasons/advent"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/seasons/advent/sections/30-through-advent.tex"
-sha256 = "bb7a9135a75f58a287bcb0c7cc4b8e19bedbd8c558a19b7d80ef6364ae08079b"
+sha256 = "6c6f78e754c57dd5232eff0b1941afcf95325596094ceb528af5a916c6a91890"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/seasons/advent"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/seasons/advent/sections/40-bethlehem.tex"
-sha256 = "492e9eee277ecf23bf3578c2ecd2a5f1ea0833780d39f185e00523ede3fbf138"
+sha256 = "36f614d72b937523fc7993354a408eff26b6be8ac81b0a447d4a98da59a8d10d"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/seasons/advent"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/seasons/advent/sections/90-daily-readings.tex"
-sha256 = "77fb431b8d56a2b2cb24dde81a491306e0eab6c84506437699692fcb2fd75423"
+sha256 = "0b51c6f2c279c3052414bc2245d94fca6a9d135c2f04889dd6f82aac599ec54a"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/seasons/advent"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/seasons/advent/sections/92-prayers.tex"
-sha256 = "20c4a0ad9b6b3729ca9892f4b21ddc9f84555553510bcfcf884954fc18d6936b"
+sha256 = "da63d3939a9dda087032354e31b66bcb9bb87054b4f407226908c70bff008301"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/seasons/advent"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/seasons/advent/sections/95-about.tex"
-sha256 = "aa65f6f313fe527c99e57cc28cab46590fa1a416eeddb2d8f68cef30156d7e26"
+sha256 = "d98f668730cf68aa933d47a694437bfddb8a0e30c99dbe7c3baf86d686ba0168"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/seasons/advent"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/seasons/advent/sections/99-references.tex"
-sha256 = "9e2ebd49bd7f377c70af55c3fec1bfb94f205fe50f71ae3a8a2246d10f85e2d1"
+sha256 = "fea6cb184e256a95e92f4aaa132795cdf37af7e3fcbb5897a301c2214b5e7466"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/seasons/advent"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/seasons/advent/web-edition.toml"
-sha256 = "3019e1ece65e0c3a73b69dad80c99844d895cf455a1246b90fc3e8352bfe3e42"
+sha256 = "ac0b827b5ec9bec3732e2056c341c40a59744fea7be0b692bd052648c041df6e"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/seasons/advent"]
 
