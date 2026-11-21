@@ -7,6 +7,10 @@ never implies historical deletion. No adapter infers ancestry or earlier text.
 from __future__ import annotations
 
 from collections import Counter
+from contextlib import contextmanager
+from contextvars import ContextVar
+from copy import deepcopy
+from dataclasses import dataclass, field
 from datetime import date
 import csv
 import hashlib
@@ -17,6 +21,7 @@ import json
 import re
 from pathlib import Path
 import sys
+import tomllib
 from urllib.parse import quote
 
 import _calendars
@@ -639,7 +644,7 @@ def _tool_inputs() -> list[dict]:
     return result
 
 
-def _load_library(root: Path):
+def _library_module():
     # Executable code comes only from this checkout, never from a data root.
     name = "_eucharistic_texts_source_library"
     if name not in sys.modules:
@@ -648,9 +653,71 @@ def _load_library(root: Path):
         module = importlib.util.module_from_spec(spec)
         sys.modules[name] = module
         loader.exec_module(module)
-    library = sys.modules[name].load_library(root, check_binding_fingerprints=False)
+    return sys.modules[name]
+
+
+@dataclass
+class _ReplayGraph:
+    root: Path
+    entry: Path | None = None
+    library: object | None = None
+    manifests: dict[Path, bytes] = field(default_factory=dict)
+
+    def pin(self, record, body: bytes) -> None:
+        if record.path in self.manifests:
+            if self.manifests[record.path] != body:
+                raise AdapterError(f"Source manifest changed during the cold replay: {record.path}")
+            return
+        # Compare first use with the graph itself. A same-size edit with a
+        # restored mtime cannot pair new bytes with an old rights declaration.
+        try:
+            current = tomllib.loads(body.decode("utf-8"))
+        except (UnicodeError, tomllib.TOMLDecodeError) as error:
+            raise AdapterError(f"Cannot parse source manifest: {record.path}") from error
+        if current != record.data:
+            raise AdapterError(f"Source manifest changed during the cold replay: {record.path}")
+        self.manifests[record.path] = body
+
+    def check(self, current: Path | None) -> None:
+        if self.entry is not None and self.entry != current:
+            raise AdapterError("Source library membership or inputs changed during the cold replay")
+
+
+_REPLAY_GRAPH = ContextVar("eucharistic_replay_graph", default=None)
+
+
+@contextmanager
+def replay_library(root: Path):
+    """Reuse a graph only within one cold replay and its private library cache."""
+    graph = _ReplayGraph(root.resolve())
+    token = _REPLAY_GRAPH.set(graph)
+    try:
+        yield
+        if graph.entry is not None:
+            graph.check(_library_module()._library_cache_entry(graph.root, False))
+            for path, expected in graph.manifests.items():
+                if path.read_bytes() != expected:
+                    raise AdapterError(f"Source manifest changed during the cold replay: {path}")
+    finally:
+        _REPLAY_GRAPH.reset(token)
+
+
+def _load_library(root: Path):
+    module = _library_module()
+    graph = _REPLAY_GRAPH.get()
+    entry = None
+    if graph is not None and graph.root == root:
+        if graph.library is not None:
+            return graph.library
+        # The owner rediscovers source and publication membership before and
+        # after the replay. Only hold a result it actually sealed for this key.
+        entry = module._library_cache_entry(root, False)
+    library = module.load_library(root, check_binding_fingerprints=False)
     if library.errors:
         raise AdapterError("Source library prevents text export: " + "; ".join(library.errors))
+    if entry is not None and entry.is_file():
+        graph.entry, graph.library = entry, library
+        graph.check(module._library_cache_entry(root, False))
     return library
 
 
@@ -679,7 +746,14 @@ class _Sources:
         if source_id in self.used:
             return data
         self.used.add(source_id)
-        self.pin(self.library.records[source_id].path)
+        record = self.library.records[source_id]
+        body = self.pin(record.path)
+        graph = _REPLAY_GRAPH.get()
+        if graph is not None and graph.library is self.library:
+            graph.pin(record, body)
+            # Payloads expose nested manifest fields. An adapter owns its copy,
+            # including every used-source set and input receipt.
+            self.records[source_id] = data = deepcopy(data)
         for field in ("work_id", "edition_id", "artifact_id", "segment_id", "derived_from"):
             parent = data.get(field)
             if isinstance(parent, str):

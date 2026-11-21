@@ -56,6 +56,7 @@ def _fresh_caches(tool, scratch: Path):
     replay affordable. The before/after source digest brackets all of them.
     """
     import _calendars
+    import _eucharistic_texts
     import _proper_latin
 
     environment = {
@@ -75,7 +76,10 @@ def _fresh_caches(tool, scratch: Path):
     _proper_latin.SOURCE_LIBRARY_CACHE_DIR = scratch / "proper-library-cache"
     os.environ.update(environment)
     try:
-        yield
+        with _eucharistic_texts.replay_library(tool.ROOT):
+            yield
+    except _eucharistic_texts.AdapterError as error:
+        raise ReplayError(f"independent source library replay failed: {error}") from error
     finally:
         _calendars._YAML_CACHE = prior_yaml
         _proper_latin.SOURCE_LIBRARY_CACHE_DIR = prior_library
