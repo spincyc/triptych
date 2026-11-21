@@ -349,7 +349,10 @@ revision, edition membership and mounted render inputs across those jobs
 to the verified site's bundles. The temporary PDFs are discarded. The
 equivalent local command is `make check-native-print-compile`, documented in
 `docs/printing.md`. A manual Pages workflow run on a feature branch runs the
-checks and uploads run-scoped artifacts. Only the main branch deploys.
+checks and uploads run-scoped artifacts. To reproduce an editorial push, supply
+the 64-character digest from its earlier “Cache restored from key” log as
+`browser_cache_baseline`. Both readers of the cache start from that version
+and validate it against the current checkout. Only the main branch deploys.
 
 `docs/printing.md` gives the single-document print commands. A print request
 selects one stable document identity, one declared edition, and an output

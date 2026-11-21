@@ -8,6 +8,11 @@ on:
       - PROJECT-WORK.md
       - promised-deliverables.toml
   workflow_dispatch:
+    inputs:
+      browser_cache_baseline:
+        description: Prior browser cache digest for a feature branch timing run
+        required: false
+        type: string
 
 # Each job widens this explicitly. Only `deploy` can publish: it alone holds
 # the Pages write and OIDC grants after the verified site and print shards agree.
@@ -26,6 +31,7 @@ concurrency:
 # ARCH_SNAPSHOT. The `build` job runs TEXLIVE_IMAGE only to compile web-edition
 # figures (TikZ to SVG); it installs none of these packages.
 env:
+  BROWSER_CACHE_BASELINE: ${{ github.ref != 'refs/heads/main' && inputs.browser_cache_baseline || '' }}
   ARCH_IMAGE: archlinux@sha256:82b1b08faae9d61e3e7e13d562f4d09114d939105b0d59ff34140f3bd418593a
   ARCH_SNAPSHOT: "2026/09/04"
   ARCH_PACKAGES: >-
@@ -97,15 +103,15 @@ jobs:
         uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: build/browser-data
-          key: triptych-browser-products-v1-${{ hashFiles('release/browser-products.json') }}
-          restore-keys: |
-            triptych-browser-products-v1-
+          key: triptych-browser-products-v1-${{ env.BROWSER_CACHE_BASELINE || hashFiles('release/browser-products.json') }}
+          restore-keys: ${{ !env.BROWSER_CACHE_BASELINE && 'triptych-browser-products-v1-' || '' }}
+          fail-on-cache-miss: ${{ env.BROWSER_CACHE_BASELINE != '' }}
 
       # This optional public pack contains untrusted candidates, never authority.
       # Only explicit CI bootstrap may fetch it; ordinary builds remain offline.
       - &browser-bootstrap
         name: Bootstrap optional browser product candidates
-        if: steps.browser-cache.outputs.cache-hit != 'true'
+        if: steps.browser-cache.outputs.cache-hit != 'true' || env.BROWSER_CACHE_BASELINE != ''
         run: python scripts/_browser_cache_bootstrap.py --fetch
 
       # Web readers are converted from canonical TeX at build time (the
@@ -144,7 +150,7 @@ jobs:
       - name: Validate sources, build and verify public artifact
         env:
           GH_TOKEN: ${{ github.token }}
-          TRIPTYCH_BROWSER_PRUNE: ${{ steps.browser-cache.outputs.cache-hit != 'true' && '1' || '' }}
+          TRIPTYCH_BROWSER_PRUNE: ${{ (steps.browser-cache.outputs.cache-hit != 'true' || env.BROWSER_CACHE_BASELINE != '') && '1' || '' }}
           TRIPTYCH_WEB_FIGURE_CANDIDATES: .scratch/pages-web-figures
         run: python .github/scripts/pages-native-reference.py --verify-site
 

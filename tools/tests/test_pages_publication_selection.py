@@ -50,6 +50,7 @@ GENERATED_CONSUMERS = {
     ("tools/tpt", "calendar-rubrics", "check"),
     ("tools/tpt", "mass-ordinary", "check"),
 }
+BOOTSTRAP_CONDITION = "steps.browser-cache.outputs.cache-hit != 'true' || env.BROWSER_CACHE_BASELINE != ''"
 CACHE_ACTION = "55cc8345863c7cc4c66a329aec7e433d2d1c52a9"
 VERIFY_STEP = "Validate sources, build and verify public artifact"
 VERIFY_OUTPUT = ("public-alpha.verify_output", "build/public-alpha/site", "False")
@@ -356,7 +357,7 @@ else:
                        "GITHUB_PATH": str(runner / "workflow-path"), "GITHUB_OUTPUT": str(runner / "workflow-output")}
         executed = []
         for step in job["steps"]:
-            if "run" not in step or (cache_hit and step.get("if") == "steps.browser-cache.outputs.cache-hit != 'true'"):
+            if "run" not in step or (cache_hit and step.get("if") == BOOTSTRAP_CONDITION):
                 continue
             result = subprocess.run(["bash", "-euo", "pipefail", "-c", step["run"]], cwd=runner, env=checker_env,
                                     capture_output=True, text=True, timeout=30)
@@ -402,7 +403,7 @@ else:
                 {"id": "calendar-days", "key": "c" * 64},
             ]}))
         for i, step in enumerate(self.pages()["jobs"]["build"]["steps"]):
-            if cache_hit and step.get("if") == "steps.browser-cache.outputs.cache-hit != 'true'":
+            if cache_hit and step.get("if") == BOOTSTRAP_CONDITION:
                 continue
             if "run" in step:
                 output_file = self.root / ("step-output-" + str(i))
@@ -410,7 +411,7 @@ else:
                 step_env = {**env, "GITHUB_OUTPUT": str(output_file)}
                 for key, value in step.get("env", {}).items():
                     if key == "TRIPTYCH_BROWSER_PRUNE":
-                        self.assertEqual(value, "${{ steps.browser-cache.outputs.cache-hit != 'true' && '1' || '' }}")
+                        self.assertEqual(value, "${{ (" + BOOTSTRAP_CONDITION + ") && '1' || '' }}")
                         value = "" if cache_hit else "1"
                     elif key == "GH_TOKEN":
                         self.assertEqual(value, "${{ github.token }}")
@@ -753,7 +754,7 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         self.assertNotIn("if", step)
         self.assertEqual(step["env"], {
             "GH_TOKEN": "${{ github.token }}",
-            "TRIPTYCH_BROWSER_PRUNE": "${{ steps.browser-cache.outputs.cache-hit != 'true' && '1' || '' }}",
+            "TRIPTYCH_BROWSER_PRUNE": "${{ (" + BOOTSTRAP_CONDITION + ") && '1' || '' }}",
             "TRIPTYCH_WEB_FIGURE_CANDIDATES": ".scratch/pages-web-figures",
         })
         reached = make_reached("pages-site", makefile)
@@ -809,10 +810,15 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         self.assertEqual(save["uses"], f"actions/cache/save@{CACHE_ACTION}")
         self.assertEqual(restore["with"]["path"], "build/browser-data")
         self.assertEqual(save["with"]["path"], restore["with"]["path"])
-        self.assertEqual(save["with"]["key"], restore["with"]["key"])
+        self.assertEqual(save["with"]["key"], "triptych-browser-products-v1-${{ hashFiles('release/browser-products.json') }}")
         self.assertEqual(restore["with"]["key"],
-                         "triptych-browser-products-v1-${{ hashFiles('release/browser-products.json') }}")
-        self.assertEqual(restore["with"]["restore-keys"].strip(), "triptych-browser-products-v1-")
+                         "triptych-browser-products-v1-${{ env.BROWSER_CACHE_BASELINE || hashFiles('release/browser-products.json') }}")
+        self.assertEqual(restore["with"]["restore-keys"],
+                         "${{ !env.BROWSER_CACHE_BASELINE && 'triptych-browser-products-v1-' || '' }}")
+        self.assertEqual(restore["with"]["fail-on-cache-miss"], "${{ env.BROWSER_CACHE_BASELINE != '' }}")
+        self.assertEqual(self.pages()["env"]["BROWSER_CACHE_BASELINE"],
+                         "${{ github.ref != 'refs/heads/main' && inputs.browser_cache_baseline || '' }}")
+        self.assertEqual(by_name["Bootstrap optional browser product candidates"]["if"], BOOTSTRAP_CONDITION)
         names = [step["name"] for step in steps]
         self.assertLess(names.index(restore["name"]), names.index(VERIFY_STEP))
         self.assertLess(names.index(VERIFY_STEP), names.index(save["name"]))
