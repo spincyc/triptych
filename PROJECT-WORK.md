@@ -5,7 +5,7 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-11-20.
+Last reconciled: 2026-11-21.
 
 ## Seasonal handbooks and GPT Advent, 2026-11-21
 
@@ -22,6 +22,11 @@ dated instructions were tested across 400 years. Both the reader and
 accuracy reviews are recorded in the [edition](src/gpt/liturgy/roman-rite/1962/seasons/advent/research/cold-review.md).
 The Claude volume retains its own text and publication title within the
 renamed series.
+
+The selected GPT print export comprises 32 pages. Source validation and
+the catalog regression suite passed. The browser recorder compared two
+independent builds and recorded the 13 families in
+[the product descriptor](release/browser-products.json).
 
 ## GPT Last Sunday after Pentecost — 22 November 2026
 
