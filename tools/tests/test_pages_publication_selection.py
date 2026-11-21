@@ -45,7 +45,6 @@ CANONICAL_GATE_COMMANDS = {
 }
 GENERATED_CONSUMERS = {
     ("tools/tpt", "document-schema", "check", "--include-sources"),
-    ("tools/tpt", "document-library", "check"),
     ("tools/tpt", "calendar-days", "check"),
     ("tools/tpt", "mass-propers", "structure", "--check"),
     ("tools/tpt", "calendar-rubrics", "check"),
@@ -767,6 +766,13 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         body = "\n".join(reached.values())
         self.assertIn(".github/scripts/pages-native-reference.py --build-site '$(WEB_FIGURES_RUNNER)'", body)
         self.assertIn("$(PUBLIC_ALPHA_TOOL) build --prepared-products --figure-runner '$(WEB_FIGURES_RUNNER)'", makefile)
+
+    def test_catalogue_replays_the_source_without_preparing_browser_products(self):
+        result = self.shell("make check-document-catalogue")
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        commands = self.commands()
+        self.assertIn(("tools/tpt", "document-library", "check"), commands)
+        self.assertNotIn(("tools/tpt", "browser-products", "build"), commands)
 
     def test_consumers_prepare_products_once_before_serial_or_parallel_reads(self):
         for jobs in ("-j1", "-j4"):

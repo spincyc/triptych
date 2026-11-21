@@ -511,9 +511,9 @@ check-publication-inventories: check-source-graph
 
 # The two-build product descriptor covers the complete input, policy and output
 # closure. Publication verifies it once before consumers.
-DEPLOYMENT_SOURCE_MEMBERS := check-curriculum-source-rights check-corpus-index \
+DEPLOYMENT_SOURCE_MEMBERS := check-document-catalogue check-curriculum-source-rights check-corpus-index \
 	check-proper-chronology-current check-source-graph check-document-schemas \
-	check-document-catalogue deployment-calendar-masses check-generated-documents-current \
+	deployment-calendar-masses check-generated-documents-current \
 	check-artifact-delivery check-snapshot-delivery check-papal-inputs \
 	deployment-calendar-days deployment-propers deployment-calendar-rubrics check-mass-ordinary
 
@@ -835,9 +835,9 @@ check-web-editions:
 check-proper-components:
 	@$(PYTHON) $(PROPER_COMPONENT_CHECKER) --provider $(PROVIDER)
 
-# Source titles and identities are checked independently of the descriptor's
-# exact catalogue projection. PDF metadata belongs to the optional print lane.
-check-document-catalogue: | prepare-browser-data
+# The checker derives the catalogue from source and replays the browser model
+# over that result. It can start while the other gates prepare browser data.
+check-document-catalogue:
 	@$(PYTHON) $(DOCUMENT_LIBRARY_TOOL) check
 
 # Two claims again, and the first is the one that governs. `check` proves that
