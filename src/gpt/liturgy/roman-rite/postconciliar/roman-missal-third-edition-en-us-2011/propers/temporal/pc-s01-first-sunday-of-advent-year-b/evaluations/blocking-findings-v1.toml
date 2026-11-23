@@ -50,16 +50,16 @@ run_id = "ef7f86e26fddcac6"
 workflow = "proper-study"
 workflow_version = 20
 stage = "homily-review"
-iteration = 0
+iteration = 1
 disposition = "PASS"
-standing = 0
+standing = 1
 accepted_count = 0
-advisory_count = 2
+advisory_count = 3
 observation_count = 0
 
 [[stages]]
 stage = "homily-review"
-iteration = 0
+iteration = 1
 disposition = "PASS"
 run_id = "ef7f86e26fddcac6"
 workflow = "proper-study"
@@ -83,7 +83,19 @@ observation_count = 0
 
 [[stages]]
 stage = "study-review"
-iteration = 1
+iteration = 2
+disposition = "PASS"
+run_id = "ef7f86e26fddcac6"
+workflow = "proper-study"
+workflow_version = 20
+standing = 0
+accepted_count = 0
+advisory_count = 0
+observation_count = 0
+
+[[stages]]
+stage = "synthesis-review"
+iteration = 2
 disposition = "PASS"
 run_id = "ef7f86e26fddcac6"
 workflow = "proper-study"
@@ -94,29 +106,46 @@ advisory_count = 1
 observation_count = 0
 
 [[stages]]
-stage = "synthesis-review"
-iteration = 1
-disposition = "PASS"
+stage = "web-review"
+iteration = 0
+disposition = "CHANGES_REQUIRED"
 run_id = "ef7f86e26fddcac6"
 workflow = "proper-study"
 workflow_version = 20
-standing = 0
+standing = 1
 accepted_count = 0
-advisory_count = 0
+advisory_count = 1
 observation_count = 0
+
+[[findings]]
+stage = "web-review"
+id = "WEB-JEROME-LINK-001"
+severity = "blocking"
+location = "sections/90-apparatus.tex:67, References item 7, rendered Markdown line 426"
+problem = "The link to Jerome’s Commentary on Isaiah, the source for notes 9–11 and 13, fails in a browser. Chromium reports ERR_CERT_DATE_INVALID. The certificate for documentacatholicaomnia.eu expired on 23 November 2026 at 14:07:08 UTC. The conversion preserves the URL supplied in the study. The printed pages and citations are accurate."
+required_result = "Give readers a working route from item 7 to the cited part IV, book XVII, pp. 149–159, and follow it using normal browser certificate checks. The same www host and path over HTTP currently returns the complete 643374-byte PDF with SHA-256 97785e2b71a8bdc60e866af2309a205b119bce40cc16a237692a2cdda41ab7e9, identical to the checked witness. A working HTTPS copy of that witness or a renewed certificate on the existing route would also resolve this."
+repair_target = "study"
 
 [[advisories]]
 stage = "homily-review"
-id = "HOM-001"
+id = "HOM-ISA-001"
 severity = "advisory"
-location = "sections/homily-10-spoken.tex, line 7, opening sentence"
-problem = "The phrase “the one hour he was to have watched” can sound as if Peter knew in advance how long Jesus expected him to stay awake. In Mark 14:34 Jesus asks the three to keep watch, and only on returning in verse 37 does he mention an hour."
-required_result = "Keep the hour in Jesus’ question on his return. For example, “Jesus calls him Simon and asks if he couldn’t stay awake for one hour.”"
+location = "sections/homily-10-spoken.tex line 9, “they can hardly remember anyone”"
+problem = "Isaiah 64:6 makes a present confession that no one calls on God. The homily turns that into a recollection and leaves room for exceptions. The following paragraph still makes the point that the people are praying as they confess their neglect."
+required_result = "Let the hearer recognize the confession in the first reading. For example, “They tell God that no one among them even calls on him.”"
 
 [[advisories]]
-stage = "study-review"
-id = "STU-ISA-002"
+stage = "synthesis-review"
+id = "SYN-004"
 severity = "advisory"
-location = "sections/30-turned-to-god.tex:19, second sentence, on Jerome’s use of Psalm 79:4"
-problem = "“He pictures them” assigns the confession and psalm prayer specifically to Isaiah’s ancient speakers. At p. 158 Jerome shifts to “Nos autem” and invites his readers to invoke the Lord with him. The citation of Psalm 79:4 is correct, and the next sentence already distinguishes its use at Mass."
-required_result = "Give Jerome’s invitation its first-person force. For example, “Jerome invites his readers to confess their sin, hear God’s promise of pardon and ask in the words of Psalm 79:4 to see his face and be saved.”"
+location = "sections/synthesis-05-commentary.tex:22, Jerome on Isaiah 64 and the Sunday psalm response"
+problem = "Calling the shift ‘surprising’ anticipates the reader’s reaction. Later, ‘sings those words too’ follows a sentence about confessing a fault and leaves the reader to decide whether the congregation sings a confession or the petition to see God’s face. Jerome’s Latin distinguishes the two."
+required_result = "Open directly with ‘When Isaiah says God has hidden his face, Jerome begins to pray with his readers.’ At the transition to Mass, name what both people sing, for example ‘Beside him another worshipper sings the same plea to see God’s face.’"
+
+[[advisories]]
+stage = "web-review"
+id = "WEB-PSALM-HEADINGS-001"
+severity = "advisory"
+location = "sections/90-apparatus.tex:23 and 37, rendered Markdown lines 372, 376 and 390"
+problem = "Under the level-three heading “When an Advent common psalm is sung,” Psalm 25 and Psalm 85 both render at level five. The reader contents lists headings through level four, so neither named option appears there, although both passages remain legible in the article."
+required_result = "Place the two psalm headings immediately below their common parent at the next heading level, so a reader using the article outline can navigate directly to either alternative."
