@@ -44,3 +44,9 @@ The content-schema check with the owning validators reported one publication, th
 | Homily | `fafcef47665819541560d8a462504fade23d25a672e1268d4233322194ef048d` |
 
 These identities apply at source validation. The evidence check covered audit and binding metadata and the controlling source records. This stage covered source editions only.
+
+## Source and web publication
+
+On 23 November 2026 the accepted research, expansive and concise reviews (iteration 2), homily review (iteration 1) and canonical web review (iteration 1) each matched its engine-recorded result hash and current input seal. A fresh conversion of the expansive study reproduced the independently reviewed Markdown byte for byte, SHA-256 `3ad53333802f697b048ece8d9965478f66f8ea6ba90f2f6628713a6a1994387c`. The reviewer compared it with all eight authored sections, followed the archived Jerome reference and checked the twelve appointed-text anchors, twenty-four notes, three tables and the two seasonal psalm headings in Chromium.
+
+Each of the three source editions has its own alpha release decision under the standing public-repository authorization. The postconciliar Sunday catalog lists the expansive study, concise study and homily in the ChatGPT cell for Year B. The canonical reader carries the independent inspection. The companions have converter verification.
