@@ -1,0 +1,57 @@
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"
+
+[[structure]]
+role = "review-dependencies"
+source = "research/review-dependencies.toml"
+
+[[structure]]
+role = "chronology-inputs"
+source = "research/chronology-inputs.toml"
+
+[document]
+type = "proper-study-v1"
+title = 'First Sunday of Advent'
+source-line = 'Roman Missal, Third Edition --- United States, Year B'
+running-head = 'First Sunday of Advent, Year B'
+
+[document.main]
+pdftitle = 'First Sunday of Advent, Year B: The people who wait for Christ'
+pdfsubject = 'Study of the United States Mass for 29 November 2026'
+subtitle = 'The people who wait for Christ'
+occasion-line = '29 November 2026'
+front = 'none'
+body = [
+  { component = 'opening' },
+  { component = 'study-map' },
+  { component = 'treatment' },
+  { component = 'texts' },
+  { component = 'turned-to-god' },
+  { component = 'household-work' },
+  { component = 'comparison' },
+]
+apparatus = [{ component = 'apparatus' }]
+
+[document.synthesis]
+pdftitle = 'First Sunday of Advent, Year B: Concise study'
+pdfsubject = 'Grace, conversion and the work of watching in the United States Mass for 29 November 2026'
+subtitle = 'Who will open the door?'
+occasion-line = 'Concise study --- 29 November 2026'
+opening = [
+  { component = 'concise-inventory' },
+  { component = 'concise-overview' },
+]
+body = [
+  { component = 'concise-themes' },
+  { component = 'concise-commentary' },
+  { component = 'concise-apparatus' },
+]
+
+[document.homily]
+pdftitle = 'First Sunday of Advent, Year B: The hour Jesus asked of Peter'
+pdfsubject = 'Keeping watch with Christ, a homily for the U.S. First Sunday of Advent, 29 November 2026'
+subtitle = 'The hour Jesus asked of Peter'
+occasion-line = 'Homily --- 29 November 2026'
+homily = [{ component = 'spoken' }]
+apparatus = [{ component = 'homily-notes' }]

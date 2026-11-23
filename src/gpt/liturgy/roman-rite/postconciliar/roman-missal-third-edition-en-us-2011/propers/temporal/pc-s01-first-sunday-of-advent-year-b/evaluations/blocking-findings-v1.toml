@@ -49,12 +49,24 @@ provider = "gpt"
 run_id = "ef7f86e26fddcac6"
 workflow = "proper-study"
 workflow_version = 20
-stage = "research-review"
-iteration = 2
+stage = "homily-review"
+iteration = 0
 disposition = "PASS"
 standing = 0
 accepted_count = 0
-advisory_count = 0
+advisory_count = 2
+observation_count = 0
+
+[[stages]]
+stage = "homily-review"
+iteration = 0
+disposition = "PASS"
+run_id = "ef7f86e26fddcac6"
+workflow = "proper-study"
+workflow_version = 20
+standing = 0
+accepted_count = 0
+advisory_count = 1
 observation_count = 0
 
 [[stages]]
@@ -68,3 +80,43 @@ standing = 0
 accepted_count = 0
 advisory_count = 0
 observation_count = 0
+
+[[stages]]
+stage = "study-review"
+iteration = 1
+disposition = "PASS"
+run_id = "ef7f86e26fddcac6"
+workflow = "proper-study"
+workflow_version = 20
+standing = 0
+accepted_count = 0
+advisory_count = 1
+observation_count = 0
+
+[[stages]]
+stage = "synthesis-review"
+iteration = 1
+disposition = "PASS"
+run_id = "ef7f86e26fddcac6"
+workflow = "proper-study"
+workflow_version = 20
+standing = 0
+accepted_count = 0
+advisory_count = 0
+observation_count = 0
+
+[[advisories]]
+stage = "homily-review"
+id = "HOM-001"
+severity = "advisory"
+location = "sections/homily-10-spoken.tex, line 7, opening sentence"
+problem = "The phrase “the one hour he was to have watched” can sound as if Peter knew in advance how long Jesus expected him to stay awake. In Mark 14:34 Jesus asks the three to keep watch, and only on returning in verse 37 does he mention an hour."
+required_result = "Keep the hour in Jesus’ question on his return. For example, “Jesus calls him Simon and asks if he couldn’t stay awake for one hour.”"
+
+[[advisories]]
+stage = "study-review"
+id = "STU-ISA-002"
+severity = "advisory"
+location = "sections/30-turned-to-god.tex:19, second sentence, on Jerome’s use of Psalm 79:4"
+problem = "“He pictures them” assigns the confession and psalm prayer specifically to Isaiah’s ancient speakers. At p. 158 Jerome shifts to “Nos autem” and invites his readers to invoke the Lord with him. The citation of Psalm 79:4 is correct, and the next sentence already distinguishes its use at Mass."
+required_result = "Give Jerome’s invitation its first-person force. For example, “Jerome invites his readers to confess their sin, hear God’s promise of pardon and ask in the words of Psalm 79:4 to see his face and be saved.”"
