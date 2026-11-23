@@ -233,6 +233,12 @@ date:
 
 - Authorized 2026-11-16: provider `claude`, identity `liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost`.
 
+The maintainer's 22 November 2026 request opens the GPT First Sunday of
+Advent for Sunday, 29 November 2026, and authorizes publication of the
+reviewed three-document set to main.
+
+- Authorized 2026-11-22: provider `gpt`, identity `liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent`.
+
 ### Reference-only publication scope
 
 An additional authorization here replaces full appointed-text reproduction
