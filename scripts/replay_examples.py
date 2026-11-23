@@ -76,6 +76,7 @@ SCRATCH: dict[str, tuple[str, ...]] = {
     "calendar-rubrics": (".scratch/example-web",),
     "citations": ("build/example-cal",),
     "commentary-work-index": ("build/example-corpus.yaml",),
+    "corpus-index": (".scratch/example-corpus-index",),
     "document-library": (".scratch/document-catalog/example-catalogue",),
     "harvest": ("build/example-harvest", "build/example-discovery.yaml"),
     "index-bible": (".scratch/example-index", ".scratch/example-bibles"),
@@ -115,6 +116,12 @@ PREPARE: dict[str, tuple[object, ...]] = {
         "tools/calendar-rubrics structure --out .scratch/example-web",
     ),
     "citations": (("copy", "src/sources/calendars", "build/example-cal"),),
+    "corpus-index": (
+        ("mkdir", ".scratch/example-corpus-index/src/sources/corpora"),
+        ("copy-file", "src/sources/corpora/ancient-sacramentaries-2026-08-01.toml",
+         ".scratch/example-corpus-index/src/sources/corpora"),
+        "git init -q .scratch/example-corpus-index",
+    ),
     "index-bible": (
         "tools/index-bible build --bible douay-rheims --bible-root .scratch/example-bibles",
         "tools/index-bible build --bible clementine-vulgate --bible-root .scratch/example-bibles",

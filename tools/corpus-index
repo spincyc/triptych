@@ -6,6 +6,44 @@ import sys
 sys.dont_write_bytecode = True
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 from _corpus_index import main
+from _tooling import Example
+
+EXAMPLES = {
+    'refresh': (
+        Example(
+            'tools/corpus-index refresh --root .scratch/example-corpus-index',
+            (
+                "corpus-index: 1 files, 1 records, 7264 metadata bytes; ok",
+            ),
+            'Writes the canonical index in a one-record Git checkout. Prepare it with '
+            'python scripts/replay_examples.py --tool corpus-index. Omit --root to index Triptych.',
+        ),
+        Example(
+            'tools/corpus-index refresh --root .scratch/example-corpus-index --json',
+            (
+                "{\"bytes\":7264,\"files\":1,\"hashed\":0,\"parsed\":0,\"records\":1,\"reused\":1,\"root_bytes\":6130,\"status\":\"ok\",\"v\":1}",
+            ),
+            'A repeat refresh reports how many unchanged entries it reused.',
+        ),
+    ),
+    'check': (
+        Example(
+            'tools/corpus-index check --root .scratch/example-corpus-index',
+            (
+                "corpus-index: 1 files, 1 records, 7264 metadata bytes; ok",
+            ),
+            'Checks the index against the source bytes without replacing it.',
+        ),
+        Example(
+            'tools/corpus-index check --root .scratch/example-corpus-index --json',
+            (
+                "{\"bytes\":7264,\"files\":1,\"hashed\":1,\"parsed\":1,\"records\":1,\"reused\":0,\"root_bytes\":6130,\"status\":\"ok\",\"v\":1}",
+            ),
+            'Reports the independently hashed files and parsed source records. In a full '
+            'Triptych checkout, check --readers --jobs 2 also verifies reader indexes with two workers.',
+        ),
+    ),
+}
 
 if __name__ == '__main__':
-    raise SystemExit(main())
+    raise SystemExit(main(examples=EXAMPLES['refresh'] + EXAMPLES['check']))

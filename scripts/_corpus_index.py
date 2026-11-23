@@ -828,15 +828,18 @@ def refresh(root, *, full=False, check=False, readers=False, jobs=1):
         return _refresh_unlocked(root, full=full, check=check)
 
 
-def main(argv=None):
+def main(argv=None, *, examples=()):
+    from _tooling import with_examples
+
     parser = argparse.ArgumentParser(description=__doc__)
+    with_examples(parser, examples)
     parser.add_argument('command', choices=('refresh', 'check'))
     parser.add_argument('--root', type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument('--full', action='store_true', help='independently hash and parse every input')
     parser.add_argument('--json', action='store_true')
     parser.add_argument('--readers', action='store_true', help='derive/replay every thin reader index before the canonical index')
     parser.add_argument('--jobs', type=int, metavar='N',
-                        help='concurrent independent reader checks (default: up to three)')
+                        help='concurrent workers for check --readers (default: up to three)')
     args = parser.parse_args(argv)
     if args.jobs is not None and (args.command != 'check' or not args.readers or args.jobs < 1):
         parser.error('--jobs requires check --readers and a positive integer')

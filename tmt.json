@@ -308,7 +308,7 @@
       "purpose": "Build and verify a thin canonical corpus address and hash index.",
       "requires": [],
       "stage": "draft",
-      "usage": "corpus-index {refresh,check} [--root DIR] [--full] [--readers] [--json]"
+      "usage": "corpus-index {refresh,check} [--root DIR] [--full] [--readers] [--json] (check --readers also accepts --jobs N)"
     },
     "document-library": {
       "idempotent": true,
