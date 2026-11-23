@@ -65958,3 +65958,24 @@ title = "Sermo CXCI"
 work_id = "work.augustine.sermo-191"
 whole = true
 basis = "edition.augustine.sermo-191.1845-migne-pl38 (from column 1009)."
+
+[[containers]]
+id = "work.thomas-nimmo-taylor.soeur-therese-of-lisieux"
+manifest_sha256 = "482480c059f4ac9fbaaa8fee89a376a56a15decda50fe3ef499c746d395c5153"
+status = "partial"
+basis = "The Burns & Oates fifteenth-thousand printing, contents pp. vii–viii (PDF pp. 15–16), lists the autobiography, devotional material, letters, poems, favours and cause documents. The registered autobiography segment bounds the memoir. The editor identifies the historical English poetry translation on p. 328."
+unresolved = "The letters, prayers, reminiscences, favours and cause documents in the compilation have no individual extent assessment here."
+
+[[containers.constituents]]
+author = "Thérèse of Lisieux"
+title = "Histoire d'une âme"
+work_id = "work.therese-of-lisieux.histoire-dune-ame"
+locator = "Edited English Autobiography, printed pp. 13–189, OCR lines 801–8875. Chapter V begins on p. 71."
+basis = "The contents identify eleven chapters and place the epilogue at p. 191. The registered constituent segment.therese-of-lisieux.histoire-dune-ame.taylor-fifteenth-thousand.autobiography bounds the title through the explicit end of the autobiography, before the editor’s epilogue. This describes the extent of this historical English version."
+
+[[containers.constituents]]
+author = "Thérèse of Lisieux"
+title = "Poésies"
+work_id = "work.therese-of-lisieux.poesies"
+locator = "Selected Poems, printed pp. 321–328, OCR lines 14832–15157."
+basis = "The contents on p. viii name five poems, beginning with My Song of To-day and ending with Why I Love Thee, Mary. The editor’s note on p. 328 credits Susan L. Emery’s English translation published by the Carmel of Boston. These pages contain a selection."

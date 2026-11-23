@@ -1,8 +1,8 @@
 classification_schema = 1
 record_type = "publication-source-classification-review"
-audited_on = "2026-11-20"
-publication_snapshot = "sha256:57b4bff05921085674ef83d4faa1635c37f7f1079b464e9c345fd55da3a2272e"
-classification_snapshot = "sha256:69201dbf6789497bd5b8b868add2ae1d2bb99a3c72363536c0a401fe3978f871"
+audited_on = "2026-11-23"
+publication_snapshot = "sha256:fcdc70486804a2c0dda4cc35e980bbba8dfbd5c55c30815e8a327004d1fe1f4e"
+classification_snapshot = "sha256:750087740d8a38257d222aee9ced2f0816bbc86241ca86995e8d2422a53805c3"
 
 [[classifications]]
 document = "articles/canon-law/clerical-celibacy-chastity-and-continence"
@@ -563,6 +563,10 @@ source_categories = ["finding-aid", "historical-primary", "institutional-current
 [[classifications]]
 document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"
 source_categories = ["canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "scripture", "secondary"]
+
+[[classifications]]
+document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent"
+source_categories = ["canon-law", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "prayer-devotional", "repository-internal", "scripture"]
 
 [[classifications]]
 document = "theology/angelology"

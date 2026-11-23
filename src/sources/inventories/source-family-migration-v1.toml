@@ -1,14 +1,14 @@
 migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
-audited_on = "2026-11-21"
+audited_on = "2026-11-23"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:d0a325c212c2ab12d3a54c207d148218ea76d950c1ac8999f24a9161146abb75"
+inventory_snapshot = "sha256:10dc6e15887f588aec93cdf8e9a97aaa6e9c1151fba97e8b34bef87024db7204"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
-classification_snapshot = "sha256:69201dbf6789497bd5b8b868add2ae1d2bb99a3c72363536c0a401fe3978f871"
-canonical_catalog_snapshot = "sha256:fa3dce6609b8b570ae48ce0717cabcc906f9bbfead9d31de4822d1f5a41ff0d5"
+classification_snapshot = "sha256:750087740d8a38257d222aee9ced2f0816bbc86241ca86995e8d2422a53805c3"
+canonical_catalog_snapshot = "sha256:d0ac968e55cef8bb515bd26e596059310300bd2cf74f79bda3b4a56fe81f8796"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:f1e20e40489cf95ed80345d98a22ba19c9f5b9805f02a4631d62c2225fbe800c"
+snapshot = "sha256:7ce186efd17bc8e8d6f951468483bb27599f11102af0c728652616b9cfe40e39"
 families = []
 
 [[review_units]]
@@ -709,6 +709,11 @@ review_state = "pending"
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"
 surface_snapshot = "sha256:42932d44473d95df06af258fe457502e2ca03be212ebc8736231ccd5dc23e5b8"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent"
+surface_snapshot = "sha256:0c01fc6ea021f4ce89e8114683a068d0ee8a9277d5a134990e72ae199d38b943"
 review_state = "pending"
 
 [[review_units]]
