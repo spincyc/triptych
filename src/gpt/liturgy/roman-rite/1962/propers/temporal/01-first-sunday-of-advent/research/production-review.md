@@ -140,3 +140,30 @@ The themes contain 906 substantive words and the commentary 3,014, for **3,920**
 A silent read for an adult parish assembly identified an ambiguity in “In the psalm we sang after the Epistle there is a line asking that those who act unjustly be put to shame.” The revised paragraph distinguishes what the biblical singer asks in Challoner, Ps 24:4, from what the assembly sings in the Gradual, Missal no. 4. After Paul's warning about contention (Rom 13:13), the assembly asks God to teach his paths. The listener who enlisted a friend's sympathy can tell that friend the part he left out about his own conduct. The terminal note identifies the contributions of Gregory, *Homiliae in Evangelia* I.1.1–5, Chrysostom, *Homilies on Romans* 24 on Rom 13:11–14, and Augustine, *Enarrationes*, English Psalm LXXXV §§10, 12. TeXcount reports 1,171 spoken words. At 105–115 words per minute the estimated delivery is 10.2–11.2 minutes.
 
 The generated entrypoints were current. The homily component, content and run-provenance checks passed. The selected reader conversion preserved the two revised passages, the word count and the references.
+
+## Publication after the Lasance collation
+
+The first publication gate returned the family to research. In the same
+proper-study v19 run, the independent research, expansive study, concise
+study and homily reviews each passed at iteration 3. The artifact gates
+passed at iteration 2. The five current review input records, including the
+web review, exactly matched fresh calculations in the deployment environment.
+
+On 23 November 2026 the canonical reader passed independent web review at
+iteration 2. The reviewer compared 226 authored text units and all 37
+footnotes with the TeX and checked the revised Gospel and Offertory against
+Lasance and Walsh, pp. 104–105. In Chromium at 1280 and 390 CSS pixels the
+review covered both four-sense readings, the eleven appointments, the
+chronology and all 86 in-article links. Nine external references responded
+successfully. Project Gutenberg returned a maintenance page. The standing
+advisories concern italic styling in the Introit and Preface and the wording
+of a shared chronology label.
+
+A fresh canonical conversion matched the reviewed Markdown byte for byte
+(SHA-256 `85dc4b5eac1700b1ca797c50db83e7f3caca68275ee84639d895d5d17377a2e1`).
+All three outputs passed the source schema and web conversion checks.
+The canonical inspection is recorded in `web-edition.toml`. The concise study
+and homily carry converter verification. The three release records retain
+the standing `perpetual-public-repository-2026` authorization. Row 01 of the
+traditional Latin Mass catalog links the study, synthesis and homily in the
+declared order with one canonical marker for the family.
