@@ -49,10 +49,10 @@ provider = "gpt"
 run_id = "2eec8ccb8f69387e"
 workflow = "proper-study"
 workflow_version = 19
-stage = "research-review"
-iteration = 1
-disposition = "PASS"
-standing = 0
+stage = "study-review"
+iteration = 0
+disposition = "CHANGES_REQUIRED"
+standing = 5
 accepted_count = 0
 advisory_count = 1
 observation_count = 0
@@ -68,6 +68,63 @@ standing = 0
 accepted_count = 0
 advisory_count = 1
 observation_count = 0
+
+[[stages]]
+stage = "study-review"
+iteration = 0
+disposition = "CHANGES_REQUIRED"
+run_id = "2eec8ccb8f69387e"
+workflow = "proper-study"
+workflow_version = 19
+standing = 5
+accepted_count = 0
+advisory_count = 0
+observation_count = 0
+
+[[findings]]
+stage = "study-review"
+id = "STU-001"
+severity = "blocking"
+location = "sections/40-the-promised-son.tex, line 33, from the Secret to the Preface"
+problem = "After the Collect's address to the Son, “their approaching him” makes the Son appear to be the Secret's addressee too. The next singular “he” in “What he needs if he is to approach with a pure heart” can still refer to the Son. The actual prayer distinguishes the people who need cleansing, the holy gifts through which they seek it, and the Father addressed through his Son. The Sunday English printed at sections/10-appointed-text.tex, lines 130–139, expressly says “before Thee who art their author.”"
+required_result = "Name the worshippers who need cleansing and the Father to whom the priest prays through Christ. If the paragraph then considers their receiving the Son in Communion, introduce that separately in the study's own voice. Retain the Preface's confession of the Son's and Spirit's equal majesty."
+repair_target = "study"
+
+[[findings]]
+stage = "study-review"
+id = "STU-002"
+severity = "blocking"
+location = "sections/30-the-judge.tex, lines 27–29, on taste and delight at Communion"
+problem = "The exposition proceeds directly from the chant's “goodness” to Augustine explaining what the hearer can “taste”. This obscures the actual word that prompts his inference. In the cited NPNF Psalm LXXXV §12 he reads “the Lord shall give sweetness” and immediately explains it as delight in doing justice. The Missal's no. 9 has benignitatem, rendered “goodness” by both appointed English witnesses. Hunger for a changed delight is a controlling claim of this interpretation."
+required_result = "At the first full explanation of the Communion verse, give the two actual wordings and trace Augustine's inference from his own phrase to the former thief's delight in giving. Then show how that explanation illuminates the goodness the congregation sings of. The historical English and the Mass text already supply the evidence."
+repair_target = "study"
+
+[[findings]]
+stage = "study-review"
+id = "STU-003"
+severity = "blocking"
+location = "sections/30-the-judge.tex, line 11; sections/40-the-promised-son.tex, line 9; sections/20-commentary.tex, line 49"
+problem = "Three statements assign different grammatical actions to appointed texts. The Introit has the singer tell God “I have lifted” (levavi), yet the first interpretation calls this a “demand to lift up her soul”. The second illustrates what the singer “has already done” by his trust, although confido is present. At the Postcommunion “ask what reverence they may show” reads like a request for instruction. The Latin and the historical English ask to receive mercy so that the people may prepare with fitting reverence. These distinctions affect the study's comparison of the speakers and of what they await."
+required_result = "Keep the Introit's declaration distinct from Jesus' imperative in Luke. The singer has lifted his soul and now says that he trusts God. At the Postcommunion state the petition for mercy and the purpose of preparing for the feast with due reverence. Retain the separate contrast between the psalm's perfect and the prayer's petition."
+repair_target = "study"
+
+[[findings]]
+stage = "study-review"
+id = "STU-004"
+severity = "blocking"
+location = "sections/40-the-promised-son.tex, lines 17, 33 and 35"
+problem = "In the second interpretation, several paragraphs argue against positions no cited author or preceding sentence proposes. Human beings are imagined giving the world a savior by themselves; a worshipper's increased charity is denied the power to bring Christ to the altar; and celebrating Christmas is set against a second birth or a communicant forgetting whom he has received. These foils recur precisely where the reader needs the positive link among Spirit, mother, communicant and feast."
+required_result = "Remove the unsupported alternatives while keeping the genuine exegetical distinctions. For example, at line 17, “Bellarmine hears two acts in the verse. The Spirit overshadows Mary, and Mary bears the Son.” At line 35, “Guéranger hears the choir sing of Mary's child in the future tense just after the faithful have received him. They await the feast of the birth of the same Lord who has given himself to them.” At line 33, state what Thomas says can grow in the worshipper and how that prepares the person to receive Christ."
+repair_target = "study"
+
+[[findings]]
+stage = "study-review"
+id = "STU-005"
+severity = "blocking"
+location = "generation-metadata.tex, line 2, the expansive study author's contribution"
+problem = "The required qualifier argument is a sentence. Running tools/check-generation-metadata --provider gpt --document liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent exits 1 on that argument. The production record identifies the same source error in the attempted export. This is a defect in the author's tracked contribution declaration and can be verified without producing a PDF."
+required_result = "Preserve the actual author model, requested effort and known limits in the qualifier syntax the validator accepts, using key=value for exposed qualifiers and an explicit unexposed field naming any covered unavailable components. Re-run the selected document's source metadata check and record its actual outcome."
+repair_target = "study"
 
 [[advisories]]
 stage = "research-review"
