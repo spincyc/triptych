@@ -49,8 +49,8 @@ provider = "gpt"
 run_id = "2eec8ccb8f69387e"
 workflow = "proper-study"
 workflow_version = 19
-stage = "homily-review"
-iteration = 3
+stage = "web-review"
+iteration = 2
 disposition = "PASS"
 standing = 0
 accepted_count = 0
@@ -107,7 +107,7 @@ observation_count = 0
 
 [[stages]]
 stage = "web-review"
-iteration = 1
+iteration = 2
 disposition = "PASS"
 run_id = "2eec8ccb8f69387e"
 workflow = "proper-study"
@@ -161,17 +161,17 @@ required_result = "State the explanation directly in one sentence, for example, 
 stage = "web-review"
 id = "WEB-002"
 severity = "advisory"
-location = "Canonical Markdown lines 49–51 (Introit) and 207–213 (Preface dialogue), corresponding to the multi-paragraph latinproper blocks in sections/10-appointed-text.tex."
-problem = "The shared Latin quotation style covers the whole block in the source. Chromium displays only the first paragraph in italics. The repeated Introit antiphon and the final three Latin exchanges of the Preface dialogue switch to the upright treatment used for the English. The words and quotation boundaries survive."
-required_result = "Carry the Latin quotation’s italic style through every paragraph in each multi-paragraph block. Verify the repeated antiphon and the final three exchanges in the rendered reader."
+location = "Canonical Markdown lines 49–51 and 207–213, the Introit and Preface Latin dialogue in sections/10-appointed-text.tex."
+problem = "In Chromium the repeated Introit antiphon and the final three exchanges of the Latin Preface dialogue switch to upright type. The shared latinproper environment specifies italics throughout each block. Their words, order and quotation boundaries survive."
+required_result = "Carry the italic style through every paragraph of these Latin quotation blocks while retaining the existing English witness treatment."
 
 [[advisories]]
 stage = "web-review"
 id = "WEB-003"
 severity = "advisory"
-location = "Canonical Markdown lines 470 and 478, Evidence for each date, Introit composition. The shared date label belongs to src/sources/chronology/composition.yaml, critical.psalms.latest-composition-boundary, lines 3114–3116."
-problem = "The chronology evidence introduces “the source’s own words” and puts the corpus label in quotation marks. The NABRE Psalms introduction expresses both claims but uses different words, including “there is no sure way of dating any Psalm.” The chronological boundary and its qualification are accurate. The canonical TeX and web conversion agree, and the shared evidence label predates this round."
-required_result = "In the shared chronology record and its projection, use verified source wording where a passage is quoted, or distinguish the corpus paraphrase from a direct quotation. Preserve both the approximate upper bound and the uncertainty about individual psalms. Recheck the regenerated evidence note against the NABRE introduction."
+location = "Canonical Markdown lines 470 and 478, Introit composition under Evidence for each date. The shared label is critical.psalms.latest-composition-boundary in src/sources/chronology/composition.yaml."
+problem = "The chronology presents the shared corpus label in quotation marks as the source’s own words. The NABRE Psalms introduction supports the date bound and the uncertainty about individual psalms, but expresses them differently."
+required_result = "Identify the corpus wording as a paraphrase or quote the introduction exactly, preserving the composition bound and the uncertainty about individual psalms."
 
 [[observations]]
 stage = "study-review"

@@ -273,3 +273,10 @@ Psalm 24 are heard in the Gradual. Its independent review returned no
 findings. The 1,171 spoken words give an estimated 10.2–11.2 minutes.
 The [three native print receipts](NATIVE-PRINT/summary.json) record 22, 10
 and 3 pages for the final texts at `38f8408b7b`.
+
+The final cold web reader compared the revised article with the Lasance
+page images and the two interpretations. All 86 internal links resolved
+in the browser at both widths. The revised reader's SHA-256 is
+`85dc4b5eac1700b1ca797c50db83e7f3caca68275ee84639d895d5d17377a2e1`.
+The two advisories on Latin italics and the shared chronology paraphrase
+remain recorded with that passing result.
