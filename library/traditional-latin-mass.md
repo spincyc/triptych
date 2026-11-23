@@ -89,6 +89,7 @@ Twenty-third Sunday after Pentecost
 Row 16 also links the existing resumed study and its companions for their
 shared readings; a dedicated guide to the winter formulary remains planned.
 
+<!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent -->
 <!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/39-trinity-sunday -->
 <!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/41-second-after-pentecost -->
 <!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/43-third-after-pentecost -->
@@ -138,7 +139,7 @@ shared readings; a dedicated guide to the winter formulary remains planned.
 
 | ID | Sunday | ChatGPT | Claude |
 | ---: | --- | --- | --- |
-| 01 | **First Sunday of Advent** | Planned | Planned |
+| 01 | **First Sunday of Advent** | [Full Study Guide](../web/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent.html) · [Synthesis](../web/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent-synthesis.html) · [Homily](../web/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent-homily.html) | Planned |
 | 02 | **Second Sunday of Advent** | Planned | Planned |
 | 03 | **Third Sunday of Advent** | Planned | Planned |
 | 04 | **Fourth Sunday of Advent** | Planned | Planned |

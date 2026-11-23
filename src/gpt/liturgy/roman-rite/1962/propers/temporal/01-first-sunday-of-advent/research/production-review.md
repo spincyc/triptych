@@ -85,3 +85,29 @@ The ten-page author proof places the eleven appointments and four senses on page
 The terminal note gives the appointments in the 1962 Missal, pp. [1]–2, and the exact Scripture passages. Gregory's weary traveler still wants the journey to continue (*Homiliae in Evangelia* I.1.3). Chrysostom's runners make a greater effort near the prize (*Homilies on Romans* 24, on Rom 13:11). Augustine's changed delight at the Communion verse (*Enarrationes*, English Psalm LXXXV §12) informs the hope that the injured person can come to enjoy his neighbor's welcome. The parish example is the homily’s own.
 
 A silent read for an adult parish assembly replaced “Gregory asks them” after the mention of the dead with “Gregory asks the survivors.” TeXcount returns 1,172 words for the speech alone, an estimated 10.2–11.2 minutes at 105–115 words per minute. The edition generator reported the entrypoint current. The selected reader conversion preserved the revised passages, word count and references.
+
+## Publication of the three reader editions
+
+In proper-study v19 run `2eec8ccb8f69387e`, independent research review
+passed at iteration 1. The independent reviews of the expansive study, concise
+study and homily each passed at iteration 2. The source artifact gates passed
+at iteration 1. Before publication all five independent review input seals
+were recomputed and matched the recorded results. The source manifest resolves
+the three entrypoints `main.tex`, `synthesis.tex` and `homily.tex`.
+
+The canonical reader passed independent web review on 22 November 2026
+(23 November at 05:42 UTC), iteration 1. The reviewer compared the converted
+text with its canonical sources and tested 86 in-article links in desktop and
+mobile previews. The two web advisories concern the upright styling of later
+paragraphs in two Latin quotations and the wording of a shared chronology
+evidence label. A fresh conversion matched the reviewed reader byte for byte.
+Its SHA-256 is
+`d54d81eb859eebaa6c66ef27ed115a5014c4ecf118160aac5ba67f8dbe8baadf`,
+recorded in `research/web-artifact.json` and `web-edition.toml`.
+The selected web-edition check passed for all three readers. The concise and
+homily readers carry converter verification.
+
+The three GPT release records apply the standing
+`perpetual-public-repository-2026` authorization. Row 01 of the traditional
+Latin Mass catalog links the full study guide, synthesis and homily in that
+order. One primary-provider catalog marker identifies the canonical family.
