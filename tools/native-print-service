@@ -14,6 +14,13 @@ EXAMPLES = {
                 "Starts a persistent loopback service; requires the deployed immutable renderer digest."),
         Example('tools/native-print-service serve --port 8081 --origin http://localhost:8000 --toolchain-id "$TRIPTYCH_PRINT_TOOLCHAIN"', (),
                 "Starts a local preview service for the explicitly allowed browser origin."),
+        Example(
+            "tools/native-print-service serve --port 0",
+            (
+                "native-print-service: The native print port is invalid.",
+            ),
+            "Reject an invalid listening port before opening a socket or starting the compiler.",
+        ),
     ),
 }
 

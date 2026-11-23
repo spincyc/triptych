@@ -100,6 +100,9 @@ class DeclarationTests(unittest.TestCase):
                     "tools/knox-bible fetch --root build/knox",
                     "tools/lectern open --surface day --date 2026-12-25",
                     "tools/lectern open --surface catena --ref 'John 1'",
+                    'tools/native-print-service serve --toolchain-id "$TRIPTYCH_PRINT_TOOLCHAIN"',
+                    'tools/native-print-service serve --port 8081 --origin http://localhost:8000 '
+                    '--toolchain-id "$TRIPTYCH_PRINT_TOOLCHAIN"',
                     "tools/release-bindings refresh",
                     "tools/release-bindings migrate-publications",
                 ]
@@ -646,8 +649,10 @@ class GateTests(unittest.TestCase):
         tool_ids = set(
             re.findall(r"tools/tpt\s+([a-z][a-z0-9-]*)", workflow)
         )
+        reached_targets = set()
         for target in make_targets:
             reached = make_reached(target, makefile)
+            reached_targets.update(reached)
             self.assertIn(
                 target, reached, f"workflow invokes missing target {target}"
             )
@@ -656,6 +661,9 @@ class GateTests(unittest.TestCase):
                 for variable in re.findall(r"\$\(([A-Z_]+_TOOL)\)", body):
                     self.assertIn(variable, tool_variables)
                     tool_ids.add(tool_variables[variable])
+
+        required = make_reached("deployment-source-gates", makefile).keys() - {"deployment-source-gates"}
+        self.assertEqual(required - reached_targets, set(), "Pages omits a deployment source gate")
 
         # Inspect the Python entrypoints invoked directly by Actions and the
         # publication tool loaded by the coordinator, as well as the Make tools.
