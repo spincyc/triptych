@@ -612,12 +612,30 @@ class GateTests(unittest.TestCase):
                 )
                 installed_imports.update(distribution_imports[distribution])
 
-        make_targets = set(
-            re.findall(r"^\s*(?:run:\s+)?make\s+([a-z][a-z0-9-]*)", workflow,
-                       flags=re.MULTILINE)
-        )
-        self.assertIn("pages-site", make_targets)
-        self.assertIn("deployment-source-gates", make_reached("pages-site", makefile))
+        coordinator_path = ".github/scripts/pages-native-reference.py"
+        self.assertRegex(workflow, rf"(?m)^\s*run: python {re.escape(coordinator_path)} --verify-site$")
+        coordinator = (ROOT / coordinator_path).read_text(encoding="utf-8")
+        make_targets = set(re.findall(
+            r"(?m)^[ \t]*(?:run:[ \t]+|[^#\s)]+\)[ \t]+)?make[ \t]+(?:-j\d+[ \t]+)?([a-z][a-z0-9-]*)",
+            workflow,
+        ))
+        distributed = {"pages-source-checks", "check-corpus-index",
+                       "check-proper-chronology-current", "check-source-graph"}
+        self.assertEqual(distributed - make_targets, set())
+
+        # The coordinator prebuilds the protected writer's prerequisites and
+        # then runs the writer. Follow that Make invocation as well.
+        coordinator_tree = ast.parse(coordinator)
+        verify_site = next(node for node in coordinator_tree.body
+                           if isinstance(node, ast.FunctionDef) and node.name == "verify_site")
+        for node in ast.walk(verify_site):
+            match node:
+                case ast.Call(func=ast.Name(id="spawn"),
+                              args=[ast.List(elts=[ast.Constant(value="make"), *arguments]), *_]):
+                    make_targets.update(arg.value for arg in arguments if isinstance(arg, ast.Constant)
+                                        and isinstance(arg.value, str) and MAKE_WORD.fullmatch(arg.value))
+        self.assertIn("pages-protected-writer", make_targets)
+        self.assertIn("public-site-artifact", make_reached("pages-protected-writer", makefile))
         tool_variables = dict(
             re.findall(
                 r"^([A-Z_]+_TOOL)\s*:=\s*tools/tpt\s+([a-z][a-z0-9-]*)",
@@ -639,7 +657,12 @@ class GateTests(unittest.TestCase):
                     self.assertIn(variable, tool_variables)
                     tool_ids.add(tool_variables[variable])
 
-        pending = [ROOT / "tools/tpt"] + [
+        # Inspect the Python entrypoints invoked directly by Actions and the
+        # publication tool loaded by the coordinator, as well as the Make tools.
+        scripts = re.findall(r"\bpython3?\s+((?:\.github/)?scripts/[a-zA-Z0-9_-]+\.py)\b", workflow)
+        scripts += re.findall(r'runpy\.run_path\("(tools/[a-z0-9-]+)"\)', coordinator)
+        self.assertIn("tools/public-alpha", scripts)
+        pending = [ROOT / relative for relative in scripts] + [ROOT / "tools/tpt"] + [
             ROOT / "tools" / tool_id for tool_id in sorted(tool_ids)
         ]
         seen: set[Path] = set()
