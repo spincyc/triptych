@@ -25,3 +25,18 @@ The homily for the adult parish assembly of 29 November 2026 follows “The peop
 The spoken component contains 1,121 whitespace-delimited words, excluding its title and terminal matter. At 105 words per minute the estimated duration is 10 minutes 40 seconds. A silent textual rehearsal checked the scene changes, the distinction between the Sunday Gospel and the later garden scene, pronouns, and the ending. The invitation was compared with the service without thanks in the Thirty-second Sunday Year A homily and the duties associated with the coin in the Twenty-ninth Sunday Year A homily. No human reading was timed.
 
 The homily component and content checks passed, including use of all four References entries. The three-output content schema, run provenance and conversion of the homily entrypoint to its web reader also passed at author submission.
+
+## Validation of the three source editions
+
+The content-schema check with the owning validators reported one publication, three outputs and zero errors. The generated entrypoints and chronology were current. The study places the date-and-location appendix before its terminal apparatus. The concise study places the date-and-location table between its overview and themes. The homily places the spoken text before the source and delivery notes. All three import the shared generation record. The accepted research (iteration 2), study (1), concise study (1) and homily (0) result hashes matched the workflow record, and their recorded review inputs matched the current inputs.
+
+| Source identity | SHA-256 |
+| --- | --- |
+| Content | `60a28b5d620d2e587f9534e29ac07c4359a7b0cbb64335f9502d31b5c548d03e` |
+| Evidence metadata | `9d6c226bf7173af3b830b348a8b4d67b511690392ad3e6b1d3ff8c87dcf685c6` |
+| Render inputs | `60fbfe77389de0d3d08233a8bd59bfdf84c2564a1fd1b8ebfc55da1a04c50a2c` |
+| Expansive study | `0991c4ce41da0abd6332c74b186f2b30eb3e8e522c540170055ffcfae7fd2650` |
+| Concise study | `aec3227e3e8893c4e40570a2594a6aae94427012d9dec9f8f5fb7880c663e04a` |
+| Homily | `e491cca1be6c9018fca79afe66d4a732b107e60d452195e58f5b3623df071c91` |
+
+These identities apply at source validation. The evidence check covered audit and binding metadata and the controlling source records. This stage covered source editions only.
