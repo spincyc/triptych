@@ -49,7 +49,7 @@ provider = "gpt"
 run_id = "2eec8ccb8f69387e"
 workflow = "proper-study"
 workflow_version = 19
-stage = "study-review"
+stage = "synthesis-review"
 iteration = 3
 disposition = "PASS"
 standing = 0
@@ -95,7 +95,7 @@ observation_count = 1
 
 [[stages]]
 stage = "synthesis-review"
-iteration = 2
+iteration = 3
 disposition = "PASS"
 run_id = "2eec8ccb8f69387e"
 workflow = "proper-study"
@@ -159,11 +159,11 @@ required_result = "Identify propers/verified.md as the collation and research/sc
 
 [[advisories]]
 stage = "synthesis-review"
-id = "SYN-NAV-001"
+id = "SYN-AUG-085-ATTR"
 severity = "advisory"
-location = "sections/concise/10-commentary.tex:56–64, subsection heading on proof page 8"
-problem = "The heading ‘After the people have received’ takes a reader looking for Communion first to the Offertory, the Secret and the Preface. Those two paragraphs develop the approach to Communion and belong here, but the heading describes only the second half of the subsection."
-required_result = "A heading such as ‘From the Offertory to the Postcommunion’ would identify the full span of the discussion."
+location = "sections/concise/04-themes.tex:14, the Alleluia paragraph"
+problem = "The paragraph credits Augustine with posing a question about what the singers have asked to receive and then answering it. In English Psalm LXXXV §6 he asks what light brings joy, identifies Christ as the light, and directly explains the psalm’s ‘salvation’ as Christ. The concise study gives the right interpretation but assigns its framing question to him."
+required_result = "State the explanation directly in one sentence, for example, ‘Augustine understands the salvation they ask to receive as Christ himself.’ The following sentence can then draw the study’s connection to the Son’s human face."
 
 [[advisories]]
 stage = "web-review"
