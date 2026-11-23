@@ -239,6 +239,13 @@ reviewed three-document set to main.
 
 - Authorized 2026-11-22: provider `gpt`, identity `liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent`.
 
+The maintainer's 23 November 2026 request opens the U.S. postconciliar
+First Sunday of Advent, Year B, for Sunday, 29 November 2026. The GPT
+study, concise companion and homily may be published to main on completion
+of the proper-study workflow.
+
+- Authorized 2026-11-23: provider `gpt`, identity `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b`.
+
 ### Reference-only publication scope
 
 An additional authorization here replaces full appointed-text reproduction
