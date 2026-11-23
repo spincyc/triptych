@@ -250,3 +250,9 @@ The new cold reader independently rendered printed page 105 of the revised
 its Offertory has a semicolon after “my trust” and a colon after “ashamed.”
 The reading and its punctuation were returned to the research owner for
 comparison against the right-hand column.
+
+The next cold research review accepted the new Gospel and Offertory.
+The study now gives the corrected sentences in its separately credited
+Lasance paragraphs. The complete paragraphs agree in the source and
+HTML. A new 22-page proof also prints “the whole world. For the powers
+of heaven shall be moved” and the two stops in the Offertory.

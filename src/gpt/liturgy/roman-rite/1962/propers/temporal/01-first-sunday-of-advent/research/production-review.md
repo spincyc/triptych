@@ -126,3 +126,9 @@ outside the substantive count of 6,990 words in the five expository sections.
 The source manifest, generated entrypoints, research-mode component checks,
 content preflight, and run provenance all passed. The web probe converted with
 Pandoc 3.11 and Python Markdown 3.10.3.
+
+## Concise study, derive-synthesis iteration 3
+
+The Gospel summary follows Luke 21:25–28 from the nations hearing the sea and fearing what is to come to the sight of the Son of Man and his promise to the disciples. At the Offertory the inventory specifies that the Latin entrance antiphon is repeated. The commentary shows why an English reader might miss the repetition. In Lasance and Walsh the Introit has “O Lord” after “To Thee” on p. 103. The Offertory proceeds from “To Thee” to “have I lifted up my soul” on p. 105.
+
+The themes contain 906 substantive words and the commentary 3,014, for **3,920** under the count used above. The source manifest, generated entrypoints, synthesis components, content preflight and run provenance passed their checks. The converted synthesis reader preserves the Gospel summary and both revisions at the Offertory.

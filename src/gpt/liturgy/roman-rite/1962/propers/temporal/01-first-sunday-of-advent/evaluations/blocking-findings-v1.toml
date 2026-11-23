@@ -49,13 +49,13 @@ provider = "gpt"
 run_id = "2eec8ccb8f69387e"
 workflow = "proper-study"
 workflow_version = 19
-stage = "research-review"
+stage = "study-review"
 iteration = 3
 disposition = "PASS"
 standing = 0
 accepted_count = 0
 advisory_count = 8
-observation_count = 0
+observation_count = 1
 
 [[stages]]
 stage = "homily-review"
@@ -83,7 +83,7 @@ observation_count = 0
 
 [[stages]]
 stage = "study-review"
-iteration = 2
+iteration = 3
 disposition = "PASS"
 run_id = "2eec8ccb8f69387e"
 workflow = "proper-study"
@@ -91,7 +91,7 @@ workflow_version = 19
 standing = 0
 accepted_count = 0
 advisory_count = 2
-observation_count = 0
+observation_count = 1
 
 [[stages]]
 stage = "synthesis-review"
@@ -145,17 +145,17 @@ required_result = "Transcribe the opening punctuation as printed in the Lasance 
 stage = "study-review"
 id = "STU-LUKE-ADDRESS"
 severity = "advisory"
-location = "sections/30-the-judge.tex:5, immediately after the reference to raising their heads"
-problem = "The phrase 'change of addressee' and the closing question can give the impression that Jesus first addresses the frightened nations. The Missal introduces the entire speech as addressed to his disciples. The paragraph itself correctly distinguishes speaking of the nations from speaking to the disciples."
-required_result = "State the change from description to exhortation directly. For example, 'Jesus has been telling his disciples what others will fear. Now he tells the disciples what they themselves may hope for.'"
+location = "sections/30-the-judge.tex:5"
+problem = "The expression “change of addressee” blurs the distinction that the next sentences explain. In the Missal Jesus addresses his disciples throughout. He first describes how other people will react, then tells the disciples to lift their heads."
+required_result = "Say directly that Jesus turns from describing the nations’ fear to promising the disciples their redemption."
 
 [[advisories]]
 stage = "study-review"
 id = "STU-SCOPE-RECORDS"
 severity = "advisory"
-location = "sections/90-apparatus.tex:5–9, Appendix: Scope and Qualifications"
-problem = "Readers get precise edition references and a description of the commentary's scope, but the appendix omits the pointers to the detailed text collation and research record called for in the 1962 profile's Terminal Apparatus section."
-required_result = "Add a short pointer in the appendix identifying propers/verified.md for the element-by-element collation and research/scope.md for the reception search and its limits."
+location = "sections/90-apparatus.tex:5–9"
+problem = "The appendix identifies the historical editions and their limits, but readers looking for the line-by-line collation or the account of the reception search get no pointer to those two records."
+required_result = "Identify propers/verified.md as the collation and research/scope.md as the record of the exegetical sources and search limits."
 
 [[advisories]]
 stage = "synthesis-review"
@@ -180,3 +180,8 @@ severity = "advisory"
 location = "Canonical Markdown lines 470 and 478, Evidence for each date, Introit composition. The shared date label belongs to src/sources/chronology/composition.yaml, critical.psalms.latest-composition-boundary, lines 3114–3116."
 problem = "The chronology evidence introduces “the source’s own words” and puts the corpus label in quotation marks. The NABRE Psalms introduction expresses both claims but uses different words, including “there is no sure way of dating any Psalm.” The chronological boundary and its qualification are accurate. The canonical TeX and web conversion agree, and the shared evidence label predates this round."
 required_result = "In the shared chronology record and its projection, use verified source wording where a passage is quoted, or distinguish the corpus paraphrase from a direct quotation. Preserve both the approximate upper bound and the uncertainty about individual psalms. Recheck the regenerated evidence note against the NABRE introduction."
+
+[[observations]]
+stage = "study-review"
+location = "propers/verified.md:17 and sections/10-appointed-text.tex:21, 23"
+note = "The extra comma after the Introit’s “O Lord” is visible on comparison with Lasance, p. 103, and remains the existing research advisory RES-LASANCE-INTROIT-P103. The study faithfully prints the reading in its current research record."
