@@ -49,24 +49,24 @@ provider = "gpt"
 run_id = "2eec8ccb8f69387e"
 workflow = "proper-study"
 workflow_version = 19
-stage = "synthesis-review"
+stage = "homily-review"
 iteration = 3
 disposition = "PASS"
 standing = 0
 accepted_count = 0
-advisory_count = 8
+advisory_count = 7
 observation_count = 1
 
 [[stages]]
 stage = "homily-review"
-iteration = 2
+iteration = 3
 disposition = "PASS"
 run_id = "2eec8ccb8f69387e"
 workflow = "proper-study"
 workflow_version = 19
 standing = 0
 accepted_count = 0
-advisory_count = 1
+advisory_count = 0
 observation_count = 0
 
 [[stages]]
@@ -116,14 +116,6 @@ standing = 0
 accepted_count = 0
 advisory_count = 2
 observation_count = 0
-
-[[advisories]]
-stage = "homily-review"
-id = "HOM-GRADUAL-ORAL-CUE"
-severity = "advisory"
-location = "sections/homily/10-body.tex:15, the two sentences introducing the omitted petition"
-problem = "On first hearing, “In the psalm we sang after the Epistle there is a line” sounds as though the assembly actually sang the plea for the unjust to be put to shame. The next sentence clears this up, after the listener has had to revise that impression."
-required_result = "Identify the change on first mention, for example, “After the Epistle we sang only part of the psalm. We passed over the line asking that those who act unjustly be put to shame.” The next sentence can then give the words the assembly did sing."
 
 [[advisories]]
 stage = "research-review"

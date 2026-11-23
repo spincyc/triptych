@@ -263,3 +263,13 @@ The study now gives the corrected sentences in its separately credited
 Lasance paragraphs. The complete paragraphs agree in the source and
 HTML. A new 22-page proof also prints “the whole world. For the powers
 of heaven shall be moved” and the two stops in the Offertory.
+
+The independent study reader accepted both collated paragraphs. The concise
+commentary now distinguishes the repeated Latin antiphon from Lasance's
+two English openings. Its 3,920 words of exposition fill ten pages. The
+concise reader verified the comparison and the opening arrangement. The
+final homily clarifies what Jesus tells his disciples and which words of
+Psalm 24 are heard in the Gradual. Its independent review returned no
+findings. The 1,171 spoken words give an estimated 10.2–11.2 minutes.
+The [three native print receipts](NATIVE-PRINT/summary.json) record 22, 10
+and 3 pages for the final texts at `38f8408b7b`.
