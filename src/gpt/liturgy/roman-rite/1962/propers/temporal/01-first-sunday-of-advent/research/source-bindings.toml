@@ -1,0 +1,274 @@
+schema = 2
+record_type = "bindings"
+document = "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+loci = ["Tempus Adventus pp. [1]–3, nos. 1–10, PDF 82–84; p. 293/no.1082, PDF374; RG 109,111(a) PDF16; Saturninus at PDF509"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Verified target images, complete appointments, boundaries and Trinity thanksgiving."
+source_fingerprint = "sha256:489586789f24da05ee18ba23686f134dd71e18c7a91bd4b22190fa922d10dd76"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3"
+loci = ["Printed 1–3, PDF 87–89; pp.251–252, PDF337–338"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Read all Sunday entries and prefatory ordinary junctions from page images. Additional historical prayers excluded."
+source_fingerprint = "sha256:53cf8c027d0647a872a62d51ef6884807380f4b5050ae98f65506b3578ce4fd8"
+
+[[bindings]]
+source_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+loci = ["Printed pp.103–106 and 772–774; PDF104–107,770,772–773"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Exact historical English including biblical introductions, doxology, orations and communion, and full ordinary junctions. Boundaries and omissions recorded in verified.md."
+source_fingerprint = "sha256:376ca4e5db5bd3291c6c11b085c73dafdd1a09a8a7af523652257183cc25d645"
+
+[[bindings]]
+source_id = "artifact.holy-see.acta-apostolicae-sedis.volume-4-1912.internet-archive-vatican-ocr-pdf-e071e825"
+loci = ["AAS 4 (1912), 464, responsa VI–VII"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Read Latin about siege, the order of Luke and Acts, and Roman imprisonment."
+source_fingerprint = "sha256:46757a7e52dba390f8e3054e0da5c2896688d183110222ffb1102f4dcf687721"
+
+[[bindings]]
+source_id = "artifact.ambrose.expositio-evangelii-secundum-lucam.latin-migne-corpus-corporum-web-2026-07-25.wikisource-liber-x-2868e872"
+loci = ["10.39", "10.40", "10.41", "10.42", "10.43", "10.44", "10.45"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Checked extent: Expositio in Lucam X.39–45; wikitext lines 42–46; Luke 21:26–30. Read the cloud/prophets, light cloud/Incarnation, and alternative figures of tree, faith and leaves. The lemma is not identical to the 1962 liturgical text."
+source_fingerprint = "sha256:fffe23583795acf9fcd2b8c2b600681c78c7c72d5b2833501eedb4edc5248b8a"
+
+[[bindings]]
+source_id = "artifact.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.wikisource-in-lucam-116db0ca"
+loci = ["Lc.21.28", "Lc.21.29", "Lc.21.30", "Lc.21.31", "Lc.21.32", "Lc.21.33"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Checked extent: In Lucam VI, Lk 21:28–33; PL 92, cols.589–590, lines 1996–2005. Direct alternative glosses of generation in 590C; adjacent trees and heavens."
+source_fingerprint = "sha256:a8214a57556d9412ed34e019cedb24cfaeaa8a7160276453c7b23875c0214805"
+
+[[bindings]]
+source_id = "artifact.cyril-of-alexandria.commentary-on-luke.english-payne-smith-pearse-web-2026-09-05.cyril-on-luke-13-sermons-135-145-9939da72"
+loci = ["Payne Smith, Oxford 1859, sermones CXXXIX and CXL, transition Lk 21:5–13 to 21:37–22:6"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Inspected for the appointment. No separate sermon on Luke 21:25–33 between these headings; do not attribute a direct exposition from this volume."
+source_fingerprint = "sha256:6f29963409a110759436e50e8ea28d6f47f95be2e0e594f96d9b9be244ff9210"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+loci = ["Physical lines 13185–13515 and 40815–40884"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Focused archival OCR for the finding aid, independently checked on the Pustet page images."
+source_fingerprint = "sha256:efd4426beabe5385be4e5df4542255c488fe460dee069ab999231255702d5b0f"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.advent-1-orations"
+loci = ["Collect at printed p. 1; text-layer lines 13230-13240 (heading 'Oremus. Oratio.' at 13230, body 13231-13240); Secret at printed p. 3; text-layer lines 13400-13406 (heading 'Secreta.' at 13400, body 13402-13406); Postcommunion at printed p. 3; text-layer lines 13446-13453 (heading 'Postcommunio.' at 13446, body 13448-13453)"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Historical oration loci inspected and corroborated on the source PDF. Checked extent: Printed pp.1,3, specific inherited Advent orations."
+source_fingerprint = "sha256:dd07a8e6f22b56983b3ba7cd2a65a52bb0b07b57fe2479787923f71d2f4a1489"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.primary-advent-1-epistle-checked-2026-10-20"
+loci = ["Mame 1922 source locus: {\"artifact_page\": 116, \"column\": \"left\", \"dated_appointment_context\": \"Previous Mame AP115 printed1 visibly opens Dominica I Adventus; AP116 running title repeats Dominica I Adventus. The Epistle is directly printed under this dated Mass.\", \"following_node\": \"Graduale. Ps. 24, 3 et 4.\", \"heading\": \"Léctio Epístolæ beáti Pauli Apóstoli ad Romános\", \"printed_page\": \"2\", \"printed_reference\": \"Rom. 13, 11-14\"}. Retained historical derivative physical lines [145, 150]."]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Read six retained Latin lines against 1962 images; no claim of a fresh inspection of the whole Mame volume. Checked extent: Advent I, printed p.2, PDF116L; retained derivative lines 145–150."
+source_fingerprint = "sha256:68f3657d1aedc7ea98a8f2c3b84663d15dbc51713977ff456b6a58e64fdc1e87"
+
+[[bindings]]
+source_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.publish-advent-1--main--collect--all--1"
+loci = ["advent-1/collect"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Checked the registered bounded claim and the corresponding Lasance and 1962 page images. Checked extent: Advent I collect; Lasance and T loci as in the individual record."
+source_fingerprint = "sha256:d1992438db68e71cef52684ab5aff515f177835234827d118af26e791f63d35b"
+
+[[bindings]]
+source_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.verify-advent-1--main--collect--all--1"
+loci = ["advent-1/collect"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Checked the registered bounded claim and the corresponding Lasance and 1962 page images. Checked extent: Advent I collect; Lasance and T loci as in the individual record."
+source_fingerprint = "sha256:26dccfa67678f88483a84114136a9fe2635826811eabbe6735ee3c6ab554c7d9"
+
+[[bindings]]
+source_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.publish-advent-1--main--secret--all--1"
+loci = ["advent-1/secret"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Checked the registered bounded claim and the corresponding Lasance and 1962 page images. Checked extent: Advent I secret; Lasance and T loci as in the individual record."
+source_fingerprint = "sha256:1c8845eacfc79b98288b353489788f1141b843dbe10a9ed8439f3915f8e5fe41"
+
+[[bindings]]
+source_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.verify-advent-1--main--secret--all--1"
+loci = ["advent-1/secret"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Checked the registered bounded claim and the corresponding Lasance and 1962 page images. Checked extent: Advent I secret; Lasance and T loci as in the individual record."
+source_fingerprint = "sha256:713cc8011a5b9e917dc526587cf80f8085388ac65b43e851922d066e43033733"
+
+[[bindings]]
+source_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.publish-advent-1--main--postcommunion--all--1"
+loci = ["advent-1/postcommunion"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Checked the registered bounded claim and the corresponding Lasance and 1962 page images. Checked extent: Advent I postcommunion; Lasance and T loci as in the individual record."
+source_fingerprint = "sha256:68994856684d6094f44e2ec35b73ac13099f4a8429a2701a94fab14120e46571"
+
+[[bindings]]
+source_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.verify-advent-1--main--postcommunion--all--1"
+loci = ["advent-1/postcommunion"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Checked the registered bounded claim and the corresponding Lasance and 1962 page images. Checked extent: Advent I postcommunion; Lasance and T loci as in the individual record."
+source_fingerprint = "sha256:e71875e54f71a96ce800eee264e536217c06e019f4f6e6aa0a14afaa122585d5"
+
+[[bindings]]
+source_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-complete-a-trinitate"
+loci = ["Complete historical English Preface trinitate, printed pp.773–774; bounded source-image proof"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Historical English Preface checked independently on full source images. Dialogue and Sanctus have separate page coverage. Checked extent: Lasance pp.773–774, PDF772–773, Preface through the colon."
+source_fingerprint = "sha256:77a1ad4d1f2bc3794150553e6484910871cbf310165093197ebefc89daff1192"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-21-psalms-578f023d"
+loci = ["Ps.24.1-22", "Ps.47.1-15", "Ps.79.1-20", "Ps.84.1-14"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Checked extent: Ps 24, 84 complete; 47 and 79 prayer echoes. Read Douay–Rheims, Challoner Bible in chapter projection; compare with Lasance and the Latin forms."
+source_fingerprint = "sha256:04b581584ed78f861cef34251b2da71ddc94429cd7228ea8cc6585a2aa4a5a41"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-52-romans-4d45c497"
+loci = ["Rom.13.1-14"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Checked extent: Rom 13 complete, especially 8–14. Read Douay–Rheims, Challoner Bible in chapter projection; compare with Lasance and the Latin forms."
+source_fingerprint = "sha256:1b6036a02c7bcc743d143f4f4e17bb6927cb1f4d8dfff9115aeb3250cf287c64"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-49-luke-d8269c33"
+loci = ["Luke.21.1-38"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Checked extent: Luke 21 complete, particularly 20–38. Read Douay–Rheims, Challoner Bible in chapter projection; compare with Lasance and the Latin forms."
+source_fingerprint = "sha256:b6acab91674d3bbe04726da30c835175a133104d3db53fcf3f8e45b1d5b4ba6e"
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-21-psalms-d20e21f8"
+loci = ["Ps.24.1-4", "Ps.47.10", "Ps.79.3", "Ps.84.1-2", "Ps.84.8", "Ps.84.13"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Checked extent: Ps 24:1–4,47:10,79:3,84:1–2,8,13. Clementine psalter titles and verse wording, separate from chant adaptation."
+source_fingerprint = "sha256:1481d71b5253d2bf9644408f82c40a7cd90fce2191d6586d9fa24b0f62d49130"
+
+[[bindings]]
+source_id = "artifact.augustine.enarrationes-in-psalmos.english-npnf8-ccel-web-2026-09-05.ccel-npnf108-text-d6841950"
+loci = ["24.1-5", "47.8-9", "79.2-3", "84.2-3,6,12-13"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Checked extent: Augustine, English NPNF Ps XXV §§1–5, XLVIII §§8–9, LXXX §§2–3, LXXXV §§2–3,6,12–13. Historical English corroboration; XLVIII and LXXX concern scriptural echoes of two prayers, not a commentary on those prayers."
+source_fingerprint = "sha256:0a8fd6a45c963c52d5c8d09497820cfb88e5bf59d3a86a8a573856782e822f37"
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-11.ccel-web-2026-09-17.ccel-text-8bdb50c6"
+loci = ["Chrysostom, Homily XXIV on Romans 13:11–14, beginning at physical lines 46736ff."]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Historical English NPNF text corroborates direct lemmata and comparison with the runner near the prize."
+source_fingerprint = "sha256:7d98baa780dd6a78202b5e9f7bd92f641eae103c1a9e2deb89f324578bc47cab"
+
+[[bindings]]
+source_id = "artifact.gregory-the-great.homiliae-in-evangelia.wikisource-web-2026-09-17.complete-extracted-text-dc25dd69"
+loci = ["1.1-5"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Checked extent: Gregory, Homiliae in Evangelia I, hom. 1 §§1–5, lines 13–19. Latin. Actual Lukan pericope: fear/love, head/mind, summer and finality, spoken word; Gregory’s heading specifies his own place and Sunday."
+source_fingerprint = "sha256:dd03fd6ff09944af5ba01e741418ae3278e9bc68a08acb4d0cd4538129984eea"
+
+[[bindings]]
+source_id = "artifact.augustine.de-trinitate.1887-haddan-english-web-2026-09-29.complete-page-text-07b2f4f0"
+role = "analogue"
+states = ["cataloged", "acquired", "inspected"]
+context = "Checked extent: Augustine, De Trinitate III, preface §3, physical line 13. Being sent does not imply an inferior divine nature in the Son or Spirit. A doctrinal parallel for the Preface, not direct commentary on the prayer."
+source_fingerprint = "sha256:fdaf226e939cedaac6a306b7a55acd6578946135ecf5251e8e0028176e237aaf"
+
+[[bindings]]
+source_id = "artifact.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.historical-text-357551e1"
+loci = ["Bellarmine, Commentary on the Book of Psalms: Vulgate Ps 24 vv.1–4, Ps 84 lemmata for 8,13, Ps 47 and 79 on the proper echoes"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "O’Sullivan’s historical English, chapter and verse lemmata checked; his printed exposition paragraph 12 corresponds to the Communion’s Douay v.13."
+source_fingerprint = "sha256:85b019a495120f1320c91743bdd127eef0ccb54126e0247bcb0298f9fb7c3344"
+
+[[bindings]]
+source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1870-volume-1.ia-pdf-b1dac6bc"
+loci = ["vol-i-p-134", "vol-i-p-137", "vol-i-p-138"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Checked extent: First Sunday of Advent, pp.134,137–138 (PDF150,153–154). Read Shepherd’s exact Gradual vocative, Guéranger’s Virgin/earth and Eucharistic reading, and the endpoint before older additional postcommunions."
+source_fingerprint = "sha256:da20f977d1d327a787b47a811a4913a4bdaa07e3a70a45a178d74eadf2add4bc"
+
+[[bindings]]
+source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1870-volume-1.ia-djvu-text-45b59caa"
+loci = ["vol-i-p-127", "vol-i-p-130", "vol-i-p-131", "vol-i-p-133", "vol-i-p-134", "vol-i-p-135", "vol-i-p-136", "vol-i-p-137"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Checked extent: Guéranger, The Liturgical Year, Advent, First Sunday pp.127ff., especially 133–138; physical lines 8704–9493. Historical liturgical commentary on the Epistle, Gospel and Communion and parallel orations; OCR used for ideas and locus, not for exact quotations."
+source_fingerprint = "sha256:1d8034d8c49335cfa0b95c6473da3bab76378c97bf83cf22648ab1410635864c"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3-article-text"
+loci = ["Corbett, David, King, opening chronology"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Read bounded historical work at the named locus; date belongs to the typed chronology subject."
+source_fingerprint = "sha256:f6d97140146a6cb3adcbb583db08c82f18a5f42f59b85e884f8feabb8380640d"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8-article-text"
+loci = ["Paul, chronology of apostolate and composition of Romans"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Read bounded historical work at the named locus; date belongs to the typed chronology subject."
+source_fingerprint = "sha256:83263e9b6b864dbc2776538285f276ac7740d8e39098d077148ce421ca998f4f"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12533a-cb9d9a25-article-text"
+loci = ["Psalms, Korahite authorship/period"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Read bounded historical work at the named locus; date belongs to the typed chronology subject."
+source_fingerprint = "sha256:fb390d86dc25dc07c596f9fc077086505507490f09a054b5a5c25ff17ab4c7f7"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c-article-text"
+loci = ["Synoptics, dating the Third Gospel"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Read bounded historical work at the named locus; date belongs to the typed chronology subject."
+source_fingerprint = "sha256:0a5a9e3b92db7d3a9953343ff8b1a04ec7baa2a01adbf31eadc28dc4e8f410d4"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05485a-66d722ae-article-text"
+loci = ["Epistles, dating Romans"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Read bounded historical work at the named locus; date belongs to the typed chronology subject."
+source_fingerprint = "sha256:1f1fff0c74949e159b7c41798a891333e64322a070bdbc6ded225800858f1456"
+
+[[bindings]]
+source_id = "passage.pontifical-biblical-commission.de-auctore-tempore-et-veritate-evangeliorum-marci-et-lucae.latin-aas-4-1912.responsa-i-ix"
+loci = ["responsa-i-ix"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Latin responses read on the reacquired AAS PDF; relative bound, no absolute year in this witness. Checked extent: AAS IV, p.464, responsa VI and VII."
+source_fingerprint = "sha256:bfd0d8ccb0b19b093c81145ef7a767e5ceca93476dff495d146e0d8c0672631f"
