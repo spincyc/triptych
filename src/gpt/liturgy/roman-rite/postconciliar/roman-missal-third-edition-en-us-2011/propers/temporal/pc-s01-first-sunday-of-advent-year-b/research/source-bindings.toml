@@ -52,7 +52,7 @@ source_fingerprint = "sha256:46757a7e52dba390f8e3054e0da5c2896688d183110222ffb11
 
 [[bindings]]
 source_id = "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e"
-loci = ["Praenotanda 93, printed XL; no. 2 (B), printed 5 (physical 59), with acclamation cross-reference to no. 1"]
+loci = ["Praenotanda 93, printed XL; no. 2 (B), printed 5 (physical 59), with acclamation cross-reference to no. 1; nos. 173–174, printed 97 (physical 151), Advent sung responses and psalms"]
 role = "official-control"
 states = ["cataloged", "acquired", "inspected"]
 context = "Image collation of no. 2; official Latin order gives subverse cues and seasonal method."
@@ -131,7 +131,7 @@ source_fingerprint = "sha256:838ec2d9bdd3872f40f104399e97325542dc20fc47dd3b1b4d5
 
 [[bindings]]
 source_id = "artifact.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.historical-text-357551e1"
-loci = ["Psalm 24, explanations 1–3", "Psalm 79, explanations 1–3, 14–18", "Psalm 84, explanations 7, 10–12"]
+loci = ["Psalm 24, explanations 1–5, 8–10, 14", "Psalm 79, explanations 1–3, 14–18", "Psalm 84, explanations 7–13"]
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
 context = "Robert Bellarmine, John O’Sullivan English; among the inspected paragraphs: prayer of trust, restoring the vineyard, requested salvation, virginal fruit."
@@ -155,7 +155,7 @@ source_fingerprint = "sha256:0a5a9e3b92db7d3a9953343ff8b1a04ec7baa2a01adbf31eadc
 
 [[bindings]]
 source_id = "artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8-article-text"
-loci = ["Paul’s chronology and Corinthian letters"]
+loci = ["St. Paul, Third mission: First Corinthians written at Ephesus before the Pasch and his departure"]
 role = "context"
 states = ["cataloged", "acquired", "inspected"]
 context = "Read the bounded chronological discussion in the retained historical article text; the date belongs to its named subject."
@@ -206,7 +206,7 @@ source_id = "artifact.united-states-conference-of-catholic-bishops.daily-reading
 loci = ["Lectionary 2, all five Scripture units including response"]
 role = "official-control"
 states = ["cataloged", "acquired", "inspected"]
-context = "Complete dated U.S. page; protected proclamation, not study English."
+context = "Dated U.S. Lectionary notice: CCD holds the Lectionary rights; the separate Psalm refrain credit is International Committee on English in the Liturgy, Inc., © 1968, 1981, 1997. Written permission required."
 source_fingerprint = "sha256:c63be5bb5a96bd9ff8e51f709014b64b9f0856d28432a474dbf1dfad1764d584"
 
 [[bindings]]
@@ -235,7 +235,7 @@ source_fingerprint = "sha256:22ba450dad5ea54b90bfd0503a3ab4661fc400d960caa9a3b87
 
 [[bindings]]
 source_id = "artifact.augustine.enarrationes-in-psalmos.2026-11-23-new-advent.psalm-25-8c204a06"
-loci = ["24.1-4"]
+loci = ["24.1-5,8-10,14"]
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
 context = "Direct exposition of the entrance source. Modern host revises historical NPNF copy; whole HTML has modern matter."
@@ -251,7 +251,7 @@ source_fingerprint = "sha256:adf1fddde624a5c9ac95b3206c8146b1feae6092c5f8600ed9f
 
 [[bindings]]
 source_id = "artifact.augustine.enarrationes-in-psalmos.2026-11-23-new-advent.psalm-85-cd5bf125"
-loci = ["84.2-4,6,9-13"]
+loci = ["84.2-4,6-13"]
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
 context = "Direct on both sung verses. Keep the two readings of truth springing from earth distinct from the moral explanation of the next verse."
@@ -259,10 +259,10 @@ source_fingerprint = "sha256:06a38be75055dafef6347904cf2d05fafa1f8b6f898e861bb86
 
 [[bindings]]
 source_id = "artifact.john-chrysostom.homilies-on-first-corinthians.2026-11-23-new-advent.homily-1-c49cfa84"
-loci = ["Homily 1 on First Corinthians, §§3–4, on 1:3"]
+loci = ["Homily 1 on First Corinthians, §§3–4, on 1:2–3 (address and salutation)"]
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
-context = "Direct on grace, peace and humility. Read the end of the greeting. Historical English with modern host editing."
+context = "Section 3 first construes the address to Corinth and to all who invoke Christ (v. 2), then expounds the grace-and-peace salutation (v. 3); §4 treats humility. The Sunday begins at v. 3. Historical English with modern host editing."
 source_fingerprint = "sha256:ef66fb6a7d94c6893a734059e6db25ec795020ccec1d8a293e729218b66785ce"
 
 [[bindings]]
@@ -314,7 +314,7 @@ source_fingerprint = "sha256:fcb94ecd9e25ba477503d3d51512c79f9de8377300a8d6e3321
 
 [[bindings]]
 source_id = "artifact.robert-bellarmine.commentary-on-the-book-of-psalms.osullivan-duffy-1866.commons-ia-facsimile-78b290d4"
-loci = ["Psalm 24, PDF pp. 68–69", "Psalm 79, PDF pp. 253–256", "Psalm 84, PDF pp. 267–269"]
+loci = ["Psalm 24, PDF pp. 68–71", "Psalm 79, PDF pp. 253–256", "Psalm 84, PDF pp. 267–269"]
 role = "textual-control"
 states = ["cataloged", "acquired", "inspected"]
 context = "Reacquired the complete registered 1866 PDF and checked its hash. Compared the English expositions as an independent print locator and wording control on the retained eCatholic derivative."
@@ -322,10 +322,10 @@ source_fingerprint = "sha256:6221c39e003611f5ca8e53a39ee29224a806934ad8bbe85d5bf
 
 [[bindings]]
 source_id = "segment.augustine.enarrationes-in-psalmos.1888-english-npnf-anonymous-first-thirty.psalm-25"
-loci = ["24.1-4"]
+loci = ["24.1-5,8-10,14"]
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
-context = "Read the bounded CCEL lines 6850–6875 with the subsequent section marker. Independently checked the three registered, unrevised anonymous NPNF English passages alongside the modern New Advent version."
+context = "Inspected the anonymous NPNF I.8 English of Psalm XXV §§1–5, 8–10 and 14 in CCEL lines 6850–6952, including adjacent sections; separated the historical wording and attribution from New Advent’s revision."
 source_fingerprint = "sha256:ebe8bdbf416e0a448fb704aca2e82b347eddf5d3b419e9032a9af1780d28a529"
 
 [[bindings]]
@@ -335,3 +335,35 @@ role = "reception"
 states = ["cataloged", "acquired", "inspected"]
 context = "Historical NPNF I.12 English, distinct from the wording of the New Advent revision. Checked the first three paragraphs of Homily II in their context, including both thanksgiving and the transition to verse 7, using the exact registered volume and segment."
 source_fingerprint = "sha256:1dd95173d47e8f9a664fd63a5b1e39ac0f9bd07bf4270605721861ba7916ca29"
+
+[[bindings]]
+source_id = "artifact.archdiocese-of-louisville.season-of-advent-2023.2026-11-23-diocesan-web.advent-2023-web-extract-a0f83c1d"
+loci = ["pp. 3–4, Music (Lectionary 173–174) and Blessing of the Advent Wreath (Book of Blessings 1509, 1519–1520)"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Archdiocese of Louisville, Season of Advent 2023. The complete saved JSON serialization of the numbered research-tool extraction of the four-page diocesan PDF, including retrieval metadata. Direct PDF retrieval returned HTTP 403. The digest identifies the extraction."
+source_fingerprint = "sha256:d87b3e73dd29fd5946e064b581dc84ebc36e3858a63b5c92df91be434a4c99f3"
+
+[[bindings]]
+source_id = "artifact.catholic-church.de-benedictionibus.2026-11-23-catholic-culture-1989-us-transcription.advent-wreath-html-6be75b4e"
+loci = ["nos. 1509, 1514–1520: household provision, order I within Mass, two prayers and first candle"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Book of Blessings, U.S. ICEL English, Liturgical Press 1989, Catholic Culture transcription. The full web delivery of the online order supplies the editors’ source credit and both within-Mass prayers."
+source_fingerprint = "sha256:54dbef193648435ce288a6f65aef03dcd47dfbdc266252cb4261d00d1dc00396"
+
+[[bindings]]
+source_id = "artifact.catholic-church.ordo-lectionum-missae.2026-11-23-modern-psalter-us-common-psalms.psalm-25-html-7c1bbedd"
+loci = ["no. 174/1, Ps 25:4–5, 8–9, 10 and 14, refrain based on v. 1"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Modern Psalter, U.S. Lectionary musical witness, Common Psalms (1) Advent. Complete HTML response for U.S. Lectionary 174, first setting; site navigation, lyrics, and links to musical arrangements included."
+source_fingerprint = "sha256:edb1c01f8a5d73c6b7734cbe0d3d7585ecc1635e05d154759a117d0c6e4f0d04"
+
+[[bindings]]
+source_id = "artifact.catholic-church.ordo-lectionum-missae.2026-11-23-modern-psalter-us-common-psalms.psalm-85-html-1447f8f2"
+loci = ["no. 174/2, Ps 85:9–10, 11–12, 13–14, refrain based on v. 8a"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Modern Psalter, U.S. Lectionary musical witness, Common Psalms (2) Advent. Complete HTML response for U.S. Lectionary 174, second setting; site navigation, lyrics, and links to musical arrangements included."
+source_fingerprint = "sha256:9b561aeabd17bd7c1e9187856967154c9b8795b6fc0f7b2b1fc4d97fe0466791"

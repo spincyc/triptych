@@ -150,6 +150,11 @@ contexts:
 
 # Places qualify the named date relation; they never supply a date.
 settings:
+  life-of-christ.closing-charge-to-watch:
+    relation: narrated-event
+    label: on Mount Olivet opposite the Temple
+    sources: [bible:douay-rheims:Mark.13.3, bible:douay-rheims:Mark.13.4, bible:douay-rheims:Mark.13.37]
+    basis: Mark places the private question on Olivet and closes Jesus' continuing answer with the charge to all.
   life-of-christ.parables-by-the-sea:
     relation: narrated-event
     label: Sea of Galilee

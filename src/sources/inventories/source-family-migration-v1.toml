@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-11-23"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:8a23210c14c395d81ed2beb8427df591a7a8fbb5bba21c45ac00c0f4d9774827"
+inventory_snapshot = "sha256:f742ffc04bf0071352f583be08dd8d9639322444e6f476d6403e9cc24e0482c0"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:b81d2e6e83b0a027cbba9f20363666599321498813029db9dce27248732a2db9"
-canonical_catalog_snapshot = "sha256:fe2df60223e3aa0245c970b42cac6cb83348474bf9f491e3ee542e6487079f34"
+canonical_catalog_snapshot = "sha256:ebb9b6b6f931483562b1bc4ca0ce4945b206af3e7924d1edde596a0e93a5b96c"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:ffbd2fb876f11a208cc94740cce62aa56efd5891a730d20fdf497072f8dff474"
+snapshot = "sha256:bc16fa2eae467f552d312eee6072c43d44dce7181deaf6dbcc83645400c5b0e6"
 families = []
 
 [[review_units]]
@@ -628,7 +628,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"
-surface_snapshot = "sha256:5c98460e1edcffd3703a64bb6080a0b045deaf1432b2882727f1a55ccd8ff43b"
+surface_snapshot = "sha256:b00b94c723638ccec7df7eb52276146aa0fd1751dbf5459caaf9d835adecace3"
 review_state = "pending"
 
 [[review_units]]

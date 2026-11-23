@@ -4,8 +4,8 @@ provider = "gpt"
 audited_on = "2026-11-23"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 160
-source_surface_file_count = 4029
-snapshot = "sha256:8a23210c14c395d81ed2beb8427df591a7a8fbb5bba21c45ac00c0f4d9774827"
+source_surface_file_count = 4030
+snapshot = "sha256:f742ffc04bf0071352f583be08dd8d9639322444e6f476d6403e9cc24e0482c0"
 
 [[owners]]
 id = "owner.articles.faith.four-last-things"
@@ -20224,8 +20224,14 @@ kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.postconciliar.roman-missal-third-edition-en-us-2011-propers"]
 
 [[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/blocking-findings-v1.toml"
+sha256 = "fdb186d949c21bc981bbd59500606b308b03186e46c17c5892146bcdc7b15eae"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/instance/manifest.md"
-sha256 = "053755b41a49761544e569de689fd9c824b73e4b84a97b71c310cb774ea094a5"
+sha256 = "e054344a643de91d6c50a0efe1739c000149f9eb320db8ba5b35d3045c9ca380"
 kind = "instance-manifest"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
 
@@ -20237,19 +20243,19 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/propers/verified.md"
-sha256 = "23a39675830bb2c945a540135d7b85003eb900a6c68fbbb49f12d39911e993b3"
+sha256 = "79f5ae1cb162fc0a82f527d6b0ea84ae4751355264958da6c52a548025f54adc"
 kind = "proper-verification"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/chronology-annotations.tex"
-sha256 = "8720bdb2bbade571d9c0a5a74e2b79b1dac1759c6bb9a6be4fa03a0dc6ef026a"
+sha256 = "3c88c430a6bb1f786e43346c3a978352a6b38b1a49a6d1391fa1517b36253c46"
 kind = "research-record"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/chronology-inputs.toml"
-sha256 = "aee543c4598940aab44537f0671598586e1c051bd08ce54a26f782a08f4460fd"
+sha256 = "10e8abeb3e5cebdeed32a483d9d595e53db4f6ca9bbe2d112a32f42c1b223e00"
 kind = "research-record"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
 
@@ -20261,49 +20267,49 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/chronology-table.tex"
-sha256 = "e5385f23a8556b3adbeaa7b6a02ab42b15d8a9d83c64c3254b7550aa5a6901af"
+sha256 = "efcc0350c13a4048393a318cacc3a21f045e567a687eebfef25be3d996d4e100"
 kind = "research-record"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/chronology.toml"
-sha256 = "102fe1794c795a36f2cdf5f3b8694691f09c3c539ff7009bbb5ab15870a47e2b"
+sha256 = "5328173ad2f9b80d502cdf91c0c3dd260728cb39238fb3974bdcfdfdc0170804"
 kind = "research-record"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/context.md"
-sha256 = "5729f2c4eb9011de4f541c73defcd8b9457236fd2c9823778c2dbf0d6c1b3572"
+sha256 = "a6b424bbfb0cd1c2cf50d01b0eface02fc1b7d3e80dfbaf4b79b795df072a9c9"
 kind = "research-record"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/interpretations.md"
-sha256 = "9513a305824743dcb0cbcc94b94862e851ef5f5b907cabc670d68336b14c9ffb"
+sha256 = "8bb5c851ce82ccf7856bffc04cc60007d055c5508e94760483d98aa02de9452f"
 kind = "research-record"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/review-dependencies.toml"
-sha256 = "206530707a55f694c3bb22381bef47742b6712e57d54676eb11616a965ab7f32"
+sha256 = "663f0f4ee7f18d7eba626175aa2c32fc0a69451829d323f78c45efe2fda07b61"
 kind = "research-record"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/scope.md"
-sha256 = "cbe2b768d8b43bec3ffeff9f275c917eefbabec5cefafd7d8e8ba740476c87c8"
+sha256 = "c26c456d658d5980dd146932cacbff55438a07aa8bdde3ac19443b737915e723"
 kind = "research-scope"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/source-bindings.toml"
-sha256 = "e0ffb515cd3376d8a87f053a52481bb09fe25a0fec7ae434e68b88749b3b4b20"
+sha256 = "b336e950a10ee2dae45db2d59614c1e0d91fcedac9cb522d00bcc0c0ce296a3b"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/source-dispositions.toml"
-sha256 = "87e02afe93df95ec7841f37960a5778b087d21b8c99b861a482185ffc487b128"
+sha256 = "fc3510e4f805c44ec803a076015aad8071520933ec73bd3192b3bacf29adb200"
 kind = "research-record"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
 

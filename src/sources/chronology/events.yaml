@@ -156,6 +156,39 @@ events:
             rule: "Apply Maas's explicit A.U.C. 782 = A.D. 29 equivalence to his dated Ninth Journey."
             inputs: [chronology.maas-auc-782-ad-29-calibration]
 
+  - id: life-of-christ.closing-charge-to-watch
+    title: Jesus charges all the disciples to keep watch
+    note: >-
+      The spoken conclusion in Mark 13:33–37 is part of the Olivet
+      discourse. The servants and their householder are Jesus' comparison.
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis_class: derived
+        orientation_qualification: "Maas's chronology; Passion dates disputed"
+        basis: >-
+          Mark 13:3–4 places Jesus opposite the Temple on Mount Olivet.
+          His answer to the four disciples ends at 13:33–37 with the
+          servants' tasks and the charge to all. In his Ninth Journey
+          Maas puts the discourse at the close of Tuesday before the
+          Passion, within A.U.C. 782, which he equates to A.D. 29.
+          The year of this speech follows that chronology of the discourse.
+        sources:
+          - bible:douay-rheims:Mark.13.3
+          - bible:douay-rheims:Mark.13.4
+          - bible:douay-rheims:Mark.13.33
+          - bible:douay-rheims:Mark.13.34
+          - bible:douay-rheims:Mark.13.37
+          - passage.catholic-encyclopedia.volume-8.new-york-1910.maas-ninth-journey-olivet-prophecies
+          - passage.catholic-encyclopedia.volume-8.new-york-1910.maas-era-calibration-auc-782
+        date:
+          precision: approximate-year
+          from: {year: 29, era: ad}
+          label: "c. A.D. 29"
+          derivation:
+            rule: "Date the closing charge within the Olivet discourse in Maas's harmony."
+            inputs: [life-of-christ.prophecies-on-mount-olivet]
+
   - id: life-of-christ.nativity
     title: The Nativity of Our Lord
     note: >-
