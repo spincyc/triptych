@@ -174,6 +174,13 @@ now asks writers and cold readers to make these checks before completion.
 The examples here preserve what happened in the trial. Future studies can
 use the guidance without adding a before-and-after exercise to every audit.
 
+An [independent review of the adopted guidance](EDITORIAL-REVIEW.md) checked
+the survey excerpts against the published editions and the changes against
+the Advent sources. It accepted the guidance for all three genres. It also
+identified a passage that needed another sentence. Listeners need to hear
+Christ say that the signs announce the nearness of the kingdom. The trial
+covers this Advent set and the three preceding Sundays.
+
 ### Web reader
 
 The first web reviewer compared the converted article with the TeX and
