@@ -1,12 +1,12 @@
 {
  "advisory": "Derived from each document's current sources and publication manifest. Titles are evaluated out of the source preamble; a document whose sources state no title is carried with the reason in place of one and is never given an invented name. Production provenance is what each document records about itself, field by field, omitting any field its record says was not recoverable; comparing it against the workflows declared below is a finding aid and never an authority, and nothing in this repository gates on it. Print availability names an on-demand source recipe, not an installed download or a reviewed rendering. Page counts are unknown until a particular rendering is inspected; counts from an earlier rendering do not describe the current print styles.",
  "counted": {
-  "documents": 225,
-  "issues": 303,
+  "documents": 226,
+  "issues": 306,
   "pages": 0,
-  "pages_unmeasured": 225,
+  "pages_unmeasured": 226,
   "titles_unrecorded": 0,
-  "works": 160
+  "works": 161
  },
  "models": [
   {
@@ -31,11 +31,11 @@
   },
   {
    "documents": 31,
-   "id": "claude-opus-5[1m]"
+   "id": "GPT-6"
   },
   {
-   "documents": 30,
-   "id": "GPT-6"
+   "documents": 31,
+   "id": "claude-opus-5[1m]"
   },
   {
    "documents": 27,
@@ -65,7 +65,7 @@
    "label": "Claude"
   },
   {
-   "documents": 157,
+   "documents": 158,
    "id": "gpt",
    "label": "GPT"
   }
@@ -94,7 +94,7 @@
   },
   {
    "id": "liturgy",
-   "works": 67
+   "works": 68
   },
   {
    "id": "theology",
@@ -108,9 +108,9 @@
    "version": "7"
   },
   {
-   "digest": "73706a2ab569c88974452c4aec8fe2b7540a23ad1192efa39d574ddfbd334645",
+   "digest": "9829722276b1a1f662a2c7a4f5e7e2562394d5ef83911bb94d8b729393f1feec",
    "id": "proper-study",
-   "version": "19"
+   "version": "20"
   },
   {
    "digest": "554deb5ea754b30ce3ecf47b3a615d7f40c8404a73c82558c8b63413e0132ef7",
@@ -5948,7 +5948,7 @@
      "provider": "gpt",
      "rationale": "The guide's reading path is carried by a TikZ flow diagram whose nodes and ordering are argument, not decoration; a web edition needs an accessible equivalent before the diagram may be dropped or replaced.",
      "reviewed": "2026-07-25",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "Exposition of the common 1962 Nuptial Mass propers",
      "targets": {
@@ -5961,6 +5961,101 @@
     }
    ],
    "leaf": "liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass",
+   "section": "liturgy"
+  },
+  {
+   "catalog": "library/traditional-latin-mass.md",
+   "catalog_page": "library/traditional-latin-mass.html",
+   "editions": [
+    {
+     "also": [
+      {
+       "available": {
+        "print": true,
+        "reader": true
+       },
+       "derivation": "authored",
+       "id": "gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent-synthesis",
+       "kind": "synthesis",
+       "pages": null,
+       "print_mode": "browser",
+       "subject": "A concise study of the First Sunday of Advent in the 1962 Roman Missal, 29 November 2026",
+       "targets": {
+        "print": "print/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent-synthesis.html",
+        "reader": "web/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent-synthesis.html"
+       },
+       "title": "First Sunday of Advent: The Lord Whom We Await"
+      },
+      {
+       "available": {
+        "print": true,
+        "reader": true
+       },
+       "derivation": "authored",
+       "id": "gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent-homily",
+       "kind": "homily",
+       "pages": null,
+       "print_mode": "browser",
+       "subject": "A homily for an adult parish assembly at the 1962 Mass on 29 November 2026",
+       "targets": {
+        "print": "print/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent-homily.html",
+        "reader": "web/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent-homily.html"
+       },
+       "title": "First Sunday of Advent: When You Look Up"
+      }
+     ],
+     "authorization": "perpetual-public-repository-2026",
+     "available": {
+      "print": true,
+      "reader": true
+     },
+     "contributions": [
+      {
+       "model": "GPT-6",
+       "qualifiers": "requested_effort=high; unexposed: exact model variant and runtime qualifiers beyond requested effort",
+       "runtime": "Codex API agent. Authored the expansive study from the reviewed Advent I research, assembled its bilingual appointments, prepared its publication and component declarations, and revised the study after its first independent review. Reconciled the Gospel and Offertory with the corrected Lasance and Walsh transcription. Client and server revision unexposed."
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "requested_effort=high; unexposed: exact model variant and runtime qualifiers beyond requested effort",
+       "runtime": "Codex API agent. Wrote the concise study from the accepted expansive study, compared its interpretations, prepared the concise edition declaration, revised the attribution and commentary after independent review, and checked the runners and the traveler against Chrysostom and Gregory when deriving the comparison again. Distinguished the Latin antiphon from the two English openings in Lasance and Walsh and revised the Gospel summary against the collated text. Client and server revision unexposed."
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "requested_effort=high; unexposed: exact model variant and runtime qualifiers beyond requested effort",
+       "runtime": "Codex API agent. Wrote the homily and its source and delivery note from the two reviewed studies and revised the patristic comparisons and the explanation of the Gospel after independent review. Worked the Gradual’s selection from Psalm 24 into the application to a quarrel. Revised the opening against Luke’s account of the powers of heaven and clarified which words in Psalm 24 the Gradual omits. Client and server revision unexposed."
+      }
+     ],
+     "derivation": "authored",
+     "eligibility": "eligible",
+     "id": "gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+     "models": [
+      "GPT-6"
+     ],
+     "pages": null,
+     "print_mode": "browser",
+     "produced": {
+      "run_id": "2eec8ccb8f69387e",
+      "seed_commit": "2bab048acfa5b0b4474e72cc03a91df9b6597747",
+      "workflow_digest": "73706a2ab569c88974452c4aec8fe2b7540a23ad1192efa39d574ddfbd334645",
+      "workflow_id": "proper-study",
+      "workflow_version": "19"
+     },
+     "provider": "gpt",
+     "reviewed": "2026-11-22",
+     "revised": "2026-11-23T07:56:45Z",
+     "status": "alpha",
+     "subject": "The Mass of the First Sunday of Advent in the 1962 Roman Missal, 29 November 2026",
+     "targets": {
+      "print": "print/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent.html",
+      "reader": "web/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent.html"
+     },
+     "title": "First Sunday of Advent: When Your Redemption Draws Near",
+     "title_source": "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/main.tex",
+     "web": "web/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent.html"
+    }
+   ],
+   "leaf": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
    "section": "liturgy"
   },
   {
@@ -6056,7 +6151,7 @@
      "provider": "gpt",
      "rationale": "The guide's reading path is carried by a TikZ flow diagram whose nodes and ordering are argument, not decoration; a web edition needs an accessible equivalent before the diagram may be dropped or replaced.",
      "reviewed": "2026-07-25",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "Source-audited preparation guide to the 1962 Roman Missal propers",
      "targets": {
@@ -6159,7 +6254,7 @@
      "provider": "gpt",
      "rationale": "The guide's reading path is carried by a TikZ flow diagram whose nodes and ordering are argument, not decoration; a web edition needs an accessible equivalent before the diagram may be dropped or replaced.",
      "reviewed": "2026-07-25",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "Source-audited preparation guide to the 1962 Roman Missal propers",
      "targets": {
@@ -6253,7 +6348,7 @@
      },
      "provider": "gpt",
      "reviewed": "2026-09-24",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "Source-audited preparation guide to the 1962 Roman Missal propers",
      "targets": {
@@ -6361,7 +6456,7 @@
      },
      "provider": "gpt",
      "reviewed": "2026-09-24",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "Source-audited preparation guide to the 1962 Roman Missal propers",
      "targets": {
@@ -6465,7 +6560,7 @@
      "provider": "gpt",
      "rationale": "The guide's reading path is carried by a TikZ flow diagram whose nodes and ordering are argument, not decoration; a web edition needs an accessible equivalent before the diagram may be dropped or replaced.",
      "reviewed": "2026-07-25",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "Source-audited preparation guide to the 1962 Roman Missal propers",
      "targets": {
@@ -6563,7 +6658,7 @@
      "provider": "gpt",
      "rationale": "The guide's reading path is carried by a TikZ flow diagram whose nodes and ordering are argument, not decoration; a web edition needs an accessible equivalent before the diagram may be dropped or replaced.",
      "reviewed": "2026-07-25",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "Source-audited preparation guide to the 1962 Roman Missal propers",
      "targets": {
@@ -6672,7 +6767,7 @@
      "provider": "gpt",
      "rationale": "The guide's reading path is carried by a TikZ flow diagram whose nodes and ordering are argument, not decoration; a web edition needs an accessible equivalent before the diagram may be dropped or replaced.",
      "reviewed": "2026-07-25",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "Source-audited preparation guide to the 1962 Roman Missal propers",
      "targets": {
@@ -6750,7 +6845,7 @@
      },
      "provider": "claude",
      "reviewed": "2026-09-24",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "A source-first companion to the propers of the Eighth Sunday after Pentecost in the 1962 Missale Romanum: the appointed Latin collated against the Vatican typical edition, the formulary's place in the temporal cycle, its themes and movement, detailed commentary on Romans 8:12-17 and the parable of the unjust steward (Luke 16:1-9) with the disagreements of the interpretive tradition, documented cultural afterlives, exploratory editorial proposals, and terminal scope apparatus",
      "targets": {
@@ -6861,7 +6956,7 @@
      "provider": "gpt",
      "rationale": "The guide's reading path is carried by a TikZ flow diagram whose nodes and ordering are argument, not decoration; a web edition needs an accessible equivalent before the diagram may be dropped or replaced.",
      "reviewed": "2026-07-25",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "Source-audited preparation guide to the 1962 Roman Missal propers",
      "targets": {
@@ -6989,7 +7084,7 @@
      },
      "provider": "claude",
      "reviewed": "2026-09-24",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "Full source-first companion to the 1962 Roman Missal propers, including complete appointed texts, per-element reception, source-grounded and exploratory synthesis, and documented cultural afterlives",
      "targets": {
@@ -7133,7 +7228,7 @@
      },
      "provider": "gpt",
      "reviewed": "2026-09-24",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "Full source-audited guide to the 1962 Roman Missal propers",
      "targets": {
@@ -7256,7 +7351,7 @@
      },
      "provider": "gpt",
      "reviewed": "2026-09-24",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "Full source-audited guide to the 1962 Roman Missal propers",
      "targets": {
@@ -7363,7 +7458,7 @@
      },
      "provider": "claude",
      "reviewed": "2026-09-24",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "Full source-first companion to the 1962 Roman Missal propers, including complete appointed texts, per-element reception, source-grounded and exploratory synthesis, and documented cultural afterlives",
      "targets": {
@@ -7456,7 +7551,7 @@
      },
      "provider": "gpt",
      "reviewed": "2026-09-24",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "Full source-audited guide to the 1962 Roman Missal propers",
      "targets": {
@@ -7559,7 +7654,7 @@
      },
      "provider": "claude",
      "reviewed": "2026-09-24",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "Full source-first companion to the 1962 Roman Missal propers, including complete appointed texts, per-element reception, source-grounded and exploratory synthesis, and documented cultural afterlives",
      "targets": {
@@ -7658,7 +7753,7 @@
      },
      "provider": "gpt",
      "reviewed": "2026-09-24",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "Full source-audited guide to the 1962 Roman Missal propers",
      "targets": {
@@ -7771,7 +7866,7 @@
      },
      "provider": "claude",
      "reviewed": "2026-09-24",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "Full source-first companion to the 1962 Roman Missal propers, including complete appointed texts, per-element reception, source-grounded and exploratory synthesis, and documented cultural afterlives",
      "targets": {
@@ -7865,7 +7960,7 @@
      },
      "provider": "gpt",
      "reviewed": "2026-09-24",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "Full source-audited guide to the 1962 Roman Missal propers",
      "targets": {
@@ -8087,7 +8182,7 @@
      },
      "provider": "claude",
      "reviewed": "2026-09-24",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "hold",
      "subject": "Full source-first companion to the 1962 Roman Missal propers, including complete appointed texts, per-element reception, source-grounded and exploratory synthesis, and documented cultural afterlives",
      "targets": {},
@@ -8203,7 +8298,7 @@
      },
      "provider": "gpt",
      "reviewed": "2026-09-24",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "Full source-audited guide to the 1962 Roman Missal propers",
      "targets": {
@@ -8455,7 +8550,7 @@
      },
      "provider": "claude",
      "reviewed": "2026-09-24",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "Full source-first companion to the 1962 Roman Missal propers, including complete appointed texts, per-element reception, source-grounded and exploratory synthesis, and documented cultural afterlives",
      "targets": {
@@ -8614,7 +8709,7 @@
      },
      "provider": "gpt",
      "reviewed": "2026-09-24",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "Full source-audited guide to the 1962 Roman Missal propers",
      "targets": {
@@ -8825,7 +8920,7 @@
      },
      "provider": "claude",
      "reviewed": "2026-09-24",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "Full source-first companion to the 1962 Roman Missal propers, including complete appointed texts, per-element reception, source-grounded and exploratory synthesis, and documented cultural afterlives",
      "targets": {
@@ -8923,7 +9018,7 @@
      },
      "provider": "gpt",
      "reviewed": "2026-09-24",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "The complete appointed texts and commentary on the Sixteenth Sunday after Pentecost in the 1962 Roman Missal",
      "targets": {
@@ -9067,7 +9162,7 @@
      },
      "provider": "claude",
      "reviewed": "2026-09-24",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "Expansive study of the 1962 Missale Romanum proper for the Seventeenth Sunday after Pentecost: appointed texts, each element in its setting, three readings of the whole formulary with their four senses, and a comparison",
      "targets": {
@@ -9211,7 +9306,7 @@
      },
      "provider": "gpt",
      "reviewed": "2026-09-24",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "An expansive study of the 1962 Roman Missal propers for 20 September 2026",
      "targets": {
@@ -9363,7 +9458,7 @@
      },
      "provider": "claude",
      "reviewed": "2026-09-22",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "Expansive study of the 1962 Missale Romanum proper for the Eighteenth Sunday after Pentecost: appointed texts, each element in its setting, three readings of the whole formulary with their four senses, and a comparison",
      "targets": {
@@ -9485,7 +9580,7 @@
      },
      "provider": "claude",
      "reviewed": "2026-09-30",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "Expansive study of the 1962 Missale Romanum proper for the Nineteenth Sunday after Pentecost: appointed texts, each element in its setting, three readings of the whole formulary with their four senses, and a comparison",
      "targets": {
@@ -9608,7 +9703,7 @@
      },
      "provider": "gpt",
      "reviewed": "2026-09-28",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "An expansive study of the 1962 Roman Missal propers for 4 October 2026",
      "targets": {
@@ -9719,7 +9814,7 @@
      },
      "provider": "claude",
      "reviewed": "2026-10-07",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "Expansive study of the 1962 Missale Romanum proper for the Twentieth Sunday after Pentecost: appointed texts, each element in its setting, three readings of the whole formulary with their four senses, and a comparison",
      "targets": {
@@ -9827,7 +9922,7 @@
      },
      "provider": "gpt",
      "reviewed": "2026-10-05",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "An expansive study of the 1962 Roman Missal propers for 11 October 2026",
      "targets": {
@@ -9934,7 +10029,7 @@
      },
      "provider": "claude",
      "reviewed": "2026-10-15",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "Expansive study of the 1962 Missale Romanum proper for the Twenty-first Sunday after Pentecost: appointed texts, each element in its setting, three readings of the whole formulary with their four senses, and a comparison",
      "targets": {
@@ -10057,7 +10152,7 @@
      },
      "provider": "gpt",
      "reviewed": "2026-10-13",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "An expansive study of the 1962 Roman Missal propers for 18 October 2026",
      "targets": {
@@ -10177,7 +10272,7 @@
      },
      "provider": "claude",
      "reviewed": "2026-11-05",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "Expansive study of the 1962 Missale Romanum proper of the Fifth Sunday after the Epiphany as resumed in the twenty-fourth place after Pentecost, said on Sunday 8 November 2026: the appointed texts, each text in its setting, three interpretations of the whole Mass with their four senses, a comparison, and the scriptural date and location of its passages",
      "targets": {
@@ -10280,7 +10375,7 @@
      },
      "provider": "gpt",
      "reviewed": "2026-11-02",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "An expansive study of the 1962 Roman Missal for 8 November 2026",
      "targets": {
@@ -10405,7 +10500,7 @@
      },
      "provider": "claude",
      "reviewed": "2026-11-11",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "Expansive study of the 1962 Missale Romanum proper of the Sixth Sunday after the Epiphany as resumed in the twenty-fifth place after Pentecost, said on Sunday 15 November 2026: the appointed texts, each text in its setting, three interpretations of the whole Mass with their four senses, a comparison, and the scriptural date and location of its passages",
      "targets": {
@@ -10517,7 +10612,7 @@
      },
      "provider": "gpt",
      "reviewed": "2026-11-09",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "An expansive study of the 1962 Roman Missal for 15 November 2026",
      "targets": {
@@ -10627,7 +10722,7 @@
      },
      "provider": "claude",
      "reviewed": "2026-11-16",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "Expansive study of the 1962 Missale Romanum proper of the Twenty-fourth and Last Sunday after Pentecost, said on Sunday 22 November 2026: the appointed texts, each text in its setting, three interpretations of the whole Mass with their four senses, a comparison, and the scriptural date and location of its passages",
      "targets": {
@@ -10793,7 +10888,7 @@
      },
      "provider": "gpt",
      "reviewed": "2026-11-16",
-     "revised": "2026-11-20T23:03:28Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "An expansive source-first study of the 1962 Roman Missal for 22 November 2026",
      "targets": {
@@ -10910,7 +11005,7 @@
      },
      "provider": "claude",
      "reviewed": "2026-10-19",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "Expansive study of the 1962 Missale Romanum proper of the feast of Our Lord Jesus Christ the King, last Sunday of October, as said on 25 October 2026: appointed texts, each text in its setting, three interpretations of the whole Mass with their four senses, a comparison, and the scriptural date and location of its passages",
      "targets": {
@@ -11048,7 +11143,7 @@
      },
      "provider": "gpt",
      "reviewed": "2026-10-23",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "An expansive study of the 1962 Roman Missal texts for 25 October 2026",
      "targets": {
@@ -11194,7 +11289,7 @@
      },
      "provider": "claude",
      "reviewed": "2026-10-27",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "Expansive study of the 1962 Missale Romanum proper of the feast of All Saints, as said on Sunday 1 November 2026 with the commemoration of the Twenty-third Sunday after Pentecost: appointed texts, each text in its setting, three interpretations of the whole Mass with their four senses, a comparison, and the scriptural date and location of its passages",
      "targets": {
@@ -11302,7 +11397,7 @@
      },
      "provider": "gpt",
      "reviewed": "2026-10-25",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "An expansive study of the 1962 Roman Missal propers for 1 November 2026",
      "targets": {
@@ -13840,7 +13935,7 @@
      },
      "provider": "gpt",
      "reviewed": "2026-10-26",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "Roman Missal Third Edition, United States: expansive study for 1 November 2026",
      "targets": {
@@ -15591,7 +15686,7 @@
      },
      "provider": "claude",
      "reviewed": "2026-09-19",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "Expansive study of the proper of the Twenty-fifth Sunday in Ordinary Time, Year A, in the Roman Missal, Third Edition, for the dioceses of the United States of America, with Lectionary no. 133: appointed texts, each element in its setting, three interpretations of the whole formulary with their four senses, and a comparison",
      "targets": {
@@ -15745,7 +15840,7 @@
      },
      "provider": "gpt",
      "reviewed": "2026-09-24",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "Roman Missal, Third Edition, United States 2011: expansive study of the propers for 20 September 2026",
      "targets": {
@@ -15867,7 +15962,7 @@
      },
      "provider": "claude",
      "reviewed": "2026-09-25",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "Expansive study of the proper of the Twenty-sixth Sunday in Ordinary Time, Year A, in the Roman Missal, Third Edition, for the dioceses of the United States of America, with Lectionary no. 136: appointed texts, each element in its setting, three interpretations of the whole formulary with their four senses, and a comparison",
      "targets": {
@@ -15978,7 +16073,7 @@
      },
      "provider": "gpt",
      "reviewed": "2026-09-28",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "Roman Missal Third Edition, United States: expansive proper study for 4 October 2026",
      "targets": {
@@ -16080,7 +16175,7 @@
      },
      "provider": "claude",
      "reviewed": "2026-10-08",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "Expansive study of the proper of the Twenty-eighth Sunday in Ordinary Time, Year A, in the Roman Missal, Third Edition, for the dioceses of the United States of America, with Lectionary no. 142: appointed texts, each element in its setting, three interpretations of the whole formulary with their four senses, and a comparison",
      "targets": {
@@ -16193,7 +16288,7 @@
      },
      "provider": "gpt",
      "reviewed": "2026-10-06",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "Roman Missal Third Edition, United States: expansive proper study for 11 October 2026",
      "targets": {
@@ -16330,7 +16425,7 @@
      },
      "provider": "claude",
      "reviewed": "2026-10-16",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "Expansive study of the proper of the Twenty-ninth Sunday in Ordinary Time, Year A, in the Roman Missal, Third Edition, for the dioceses of the United States of America, with Lectionary no. 145: appointed texts, each element in its setting, three interpretations of the whole formulary with their four senses, and a comparison",
      "targets": {
@@ -16448,7 +16543,7 @@
      },
      "provider": "gpt",
      "reviewed": "2026-10-14",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "Roman Missal Third Edition, United States: expansive proper study for 18 October 2026",
      "targets": {
@@ -16548,7 +16643,7 @@
      },
      "provider": "gpt",
      "reviewed": "2026-11-05",
-     "revised": "2026-11-20T16:24:13Z",
+     "revised": "2026-11-23T01:52:33Z",
      "status": "alpha",
      "subject": "Expansive study of the postconciliar Roman Rite propers for 8 November 2026, United States",
      "targets": {

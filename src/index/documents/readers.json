@@ -1,5 +1,5 @@
 {
- "generation_commit": "2c7e60587b4d3872f58a3dd50f3d606b4c5b1339",
+ "generation_commit": "4bba8f8cb42e5653e8eba5d76d6099b67bbbbeba",
  "readers": {
   "claude/articles/canon-law/clerical-celibacy-chastity-and-continence": {
    "canonical": "articles/canon-law/clerical-celibacy-chastity-and-continence",
@@ -8613,6 +8613,156 @@
    "release_status": "alpha",
    "source_format": "latex",
    "title": "Nuptial Mass: Missa votiva pro sponsis"
+  },
+  "gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent": {
+   "canonical": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+    "eligibility": "eligible",
+    "inspected": "2026-11-23",
+    "inspected_by": "gpt, proper-study v19 run 2eec8ccb8f69387e, web-review iteration 2",
+    "inspection": "Compared 226 authored text units and all 37 footnotes with the canonical TeX and checked the revised Gospel and Offertory against Lasance and Walsh, pp. 104–105. Inspected both four-sense readings, all eleven appointments, the chronology and all 86 in-article links in Chromium at 1280 and 390 CSS pixels. Conversion SHA-256 85dc4b5eac1700b1ca797c50db83e7f3caca68275ee84639d895d5d17377a2e1.",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-22",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/generation-metadata.tex",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/main.tex",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/proper-components.toml"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+    "src/common"
+   ],
+   "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+   "edition": "main",
+   "entrypoint": "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/main.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+   "kind": "proper-1962",
+   "provider": "gpt",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "First Sunday of Advent: When Your Redemption Draws Near"
+  },
+  "gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent-homily": {
+   "canonical": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent-homily"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+    "eligibility": "eligible",
+    "inspected": "2026-11-23",
+    "inspected_by": "gpt, proper-study v19 run 2eec8ccb8f69387e, web-review iteration 2",
+    "inspection": "Compared 226 authored text units and all 37 footnotes with the canonical TeX and checked the revised Gospel and Offertory against Lasance and Walsh, pp. 104–105. Inspected both four-sense readings, all eleven appointments, the chronology and all 86 in-article links in Chromium at 1280 and 390 CSS pixels. Conversion SHA-256 85dc4b5eac1700b1ca797c50db83e7f3caca68275ee84639d895d5d17377a2e1.",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-22",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/generation-metadata.tex",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/homily.tex",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/proper-components.toml"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+    "src/common"
+   ],
+   "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent-homily",
+   "edition": "homily",
+   "entrypoint": "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/homily.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent-homily",
+   "kind": "proper-1962",
+   "provider": "gpt",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "First Sunday of Advent: When You Look Up"
+  },
+  "gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent-synthesis": {
+   "canonical": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent-synthesis"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+    "eligibility": "eligible",
+    "inspected": "2026-11-23",
+    "inspected_by": "gpt, proper-study v19 run 2eec8ccb8f69387e, web-review iteration 2",
+    "inspection": "Compared 226 authored text units and all 37 footnotes with the canonical TeX and checked the revised Gospel and Offertory against Lasance and Walsh, pp. 104–105. Inspected both four-sense readings, all eleven appointments, the chronology and all 86 in-article links in Chromium at 1280 and 390 CSS pixels. Conversion SHA-256 85dc4b5eac1700b1ca797c50db83e7f3caca68275ee84639d895d5d17377a2e1.",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-22",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/generation-metadata.tex",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/proper-components.toml",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/synthesis.tex"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+    "src/common"
+   ],
+   "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent-synthesis",
+   "edition": "synthesis",
+   "entrypoint": "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/synthesis.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent-synthesis",
+   "kind": "proper-1962",
+   "provider": "gpt",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "First Sunday of Advent: The Lord Whom We Await"
   },
   "gpt/liturgy/roman-rite/1962/propers/temporal/39-trinity-sunday": {
    "canonical": "liturgy/roman-rite/1962/propers/temporal/39-trinity-sunday",
