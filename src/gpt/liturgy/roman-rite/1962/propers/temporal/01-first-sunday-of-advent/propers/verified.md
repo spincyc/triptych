@@ -2,7 +2,7 @@ appointed_text_completeness = "complete"
 
 # *Dominica prima Adventus*, I classis
 
-One-based PDF pages throughout. Checked on 22 November 2026. **T** is the 1962 Vatican typical edition, *Proprium de tempore*, pp. [1]–2 (PDF 82–83), the ferial continuation on p. 3 (84), and p. 293 (374). **P** is Pustet, Ratisbon 1862, *Dominica I Adventus*, pp. 1–3 (87–89), Trinity Preface pp. 251–252 (337–338). **L** is the 1945 revised Lasance, *New Roman Missal*, First Sunday of Advent, pp. 103–106 (104–107), and pp. 772–774 (770, 772–773). The Lasance file duplicates printed p. 773. Hashes, acquisition URLs, rights and document bindings are recorded in research/scope.md and research/source-bindings.toml. Page images supplied the words, including the prayer conclusions. The archival OCR in retrieved.txt has broken drop capitals and mixes the columns.
+One-based PDF pages throughout. Checked on 22 November 2026. **T** is the 1962 Vatican typical edition, *Proprium de tempore*, pp. [1]–2 (PDF 82–83), the ferial continuation on p. 3 (84), and p. 293 (374). **P** is Pustet, Ratisbon 1862, *Dominica I Adventus*, pp. 1–3 (87–89), Trinity Preface pp. 251–252 (337–338). **L** is the 1945 revised Lasance, *New Roman Missal*, First Sunday of Advent, pp. 103–106 (104–107), pp. 772–774 (770, 772–773), and Prayer Conclusions, p. 819 (818). The Lasance file duplicates printed p. 773. Hashes, acquisition URLs, rights and document bindings are recorded in research/scope.md and research/source-bindings.toml. Page images supplied the words, including the prayer conclusions. The archival OCR in retrieved.txt has broken drop capitals and mixes the columns.
 
 Latin below follows T with accents, case, and i/j or ae/æ as transcribed; line breaks, initials, printer's crosses and response signs are typographical. Both historical missals attest the inherited Latin in their own spelling. Scriptural study English comes from the registered Douay–Rheims, Challoner revision (D), aligned to the appointed words. L supplies the printed English liturgical introductions, response frames, minor doxology, orations, and Preface. Its own scriptural translation is retained as an edition-specific comparison. The Gradual's additional vocative is separately attested by Guéranger’s English translator Laurence Shepherd. In particular L's entrance and Offertory translations differ although their Latin antiphons agree.
 
@@ -18,15 +18,17 @@ T no. 1, 82L; P 87L; L 104. Psalm 24 (25):1–3 and verse 4b. The antiphon in T 
 
 ## 2. Collect
 
-T no. 2, 82R; P 87R; L 104. T and P print the full Son-addressed conclusion. L prints its short form. The omission of the Gloria in excelsis on seasonal Masses from this Sunday through Christmas Eve leaves the entrance doxology intact.
+T no. 2, 82R; P 87R; L 104. T and P print the full Son-addressed conclusion. L’s Sunday page prints its short form and directs the reader by footnote to Prayer Conclusions, p. 819 (PDF 818). The last entry there gives the ending for a prayer addressed directly to God the Son. The omission of the Gloria in excelsis on seasonal Masses from this Sunday through Christmas Eve leaves the entrance doxology intact.
 
 **Latin.** Orémus. Excita, quǽsumus, Dómine, poténtiam tuam, et veni: ut ab imminéntibus peccatórum nostrórum perículis, te mereámur protegénte éripi, te liberánte salvári: Qui vivis et regnas cum Deo Patre in unitáte Spíritus Sancti, Deus: per ómnia sǽcula sæculórum. R. Amen.
 
 **English.** Bestir, O Lord, Thy might, we pray Thee and come; That, defended by Thee, we may deserve rescue from approaching dangers brought on by our sins, and being set free by Thee, obtain our salvation. Who livest.
 
+**Full conclusion in place of the Sunday cue “Who livest.”** Who livest and reignest, with God the Father, in the unity of the Holy Ghost, God, world without end. **R.** Amen.
+
 ## 3. Epistle
 
-T no. 3, 82R–83L; P 88L–R; L 105. The Mame 1922 registered transcription of printed p. 2, 116L, supplies an additional comparison. It reads *jam*, *Abjiciámus*, *commessatiónibus*, *Jesum* where T prints *iam*, *Abiciámus*, *comessatiónibus*, *Iesum*. Romans 13:11 starts with a biblical connective which the liturgical introduction replaces. The reading stops in 13:14 before Paul's further clause about provision for the flesh.
+T no. 3, 82R–83L; P 88L–R; L 105. The Mame 1922 registered transcription of printed p. 2, 116L, supplies an additional comparison. It reads *jam*, *Abjiciámus*, *commessatiónibus*, *Jesum* where T prints *iam*, *Abiciámus*, *comessatiónibus*, *Iesum*. Clementine Romans 13:11 begins *Et hoc scientes tempus: quia hora est*. T introduces the hearers as *Fratres* in place of *Et hoc* and omits *tempus* after *Scientes*. P has the same words. Both retain *hora*. D’s “knowing the season” and L’s “knowing the time” both express the biblical noun *tempus*, which has no counterpart at that point in the appointed Latin. At the other end, the reading stops after putting on Christ (13:14a), before Paul’s further clause about provision for the flesh.
 
 **Latin.** Léctio Epístolæ beáti Pauli Apóstoli ad Romános. Fratres: Sciéntes, quia hora est iam nos de somno súrgere. Nunc enim própior est nostra salus, quam cum credídimus. Nox præcéssit, dies autem appropinquávit. Abiciámus ergo ópera tenebrárum, et induámur arma lucis. Sicut in die honéste ambulémus: non in comessatiónibus, et ebrietátibus, non in cubílibus, et impudicítiis, non in contentióne, et æmulatióne: sed induímini Dóminum Iesum Christum.
 
@@ -76,15 +78,17 @@ T no. 7, 83R; P 89L; L 106. Psalm 24 (25):1–3. No psalm verse, doxology or rep
 
 ## 8. Secret
 
-T no. 8, 83R; P 89L; L 106. P prints *Per Dominum.* here. P's full received conclusion is visible on p. 2, 88L, after *Ecclesiae tuae*. L's short ending is retained below. The masculine addressee supplied by the historical English resolves the translator's understanding of *principium*.
+T no. 8, 83R; P 89L; L 106. P prints *Per Dominum.* here. P's full received conclusion is visible on p. 2, 88L, after *Ecclesiae tuae*. L gives the Sunday cue below. Its full form for a prayer addressed to the Father is the first entry on p. 819 (PDF 818). The masculine addressee supplied by the historical English resolves the translator's understanding of *principium*.
 
 **Latin.** Hæc sacra nos, Dómine, poténti virtúte mundátos, ad suum fáciant purióres veníre princípium. Per Dóminum nostrum Iesum Christum, Fílium tuum: Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus: per ómnia sǽcula sæculórum. R. Amen.
 
 **English.** Cleansing us by their mighty power, may these Holy Mysteries, O Lord, make us come more pure before Thee who art their author. Through our Lord.
 
+**Full conclusion in place of the Sunday cue “Through our Lord.”** Through Our Lord Jesus Christ, Thy Son, Who liveth and reigneth with Thee in the unity of the Holy Ghost, God, world without end. **R.** Amen.
+
 ## 9. Preface of the Most Holy Trinity
 
-T appointment 83R, thanksgiving p. 293/no. 1082, 374. P pp. 251–252, 337–338; L pp. 772–774, 770 and 772–773. The Secret ending is also printed as the first cue of the Preface; it is said once. The common Sanctus follows the appointed thanksgiving. Latin here uses expanded ligatures and omits stress accents. P and L spell T’s *cotidie* as *quotidie*. Their grouping of the address is *Domine sancte, Pater omnipotens, aeterne Deus.* T groups it as below. The ferial reuse has the common Preface.
+T appointment 83R, thanksgiving p. 293/no. 1082, 374. P pp. 251–252, 337–338; L pp. 772–774, 770 and 772–773. The first exchange below repeats the last words of the Secret and its response for reference. After the Secret’s Amen, continue with *Dominus vobiscum* (“The Lord be with you”). The common Sanctus follows the appointed thanksgiving. Latin here uses expanded ligatures and omits stress accents. P and L spell T’s *cotidie* as *quotidie*. Their grouping of the address is *Domine sancte, Pater omnipotens, aeterne Deus.* T groups it as below. The ferial reuse has the common Preface.
 
 **Dialogue — Latin / L historical English**
 
@@ -158,3 +162,5 @@ T no. 10, 83R; P 89R; L 107. L's running head already says “Second Sunday of A
 **Latin.** Orémus. Suscipiámus, Dómine, misericórdiam tuam in médio templi tui: ut reparatiónis nostræ ventúra solémnia cóngruis honóribus præcedámus. Per Dóminum nostrum.
 
 **English.** May we receive Thy mercy, O Lord, in the midst of Thy temple, that with due reverence we may prepare for the coming festival of our redemption. Through our Lord.
+
+L’s Sunday cue “Through our Lord.” and T’s *Per Dóminum nostrum* abbreviate the Father-addressed conclusion. L p. 819 (PDF 818), first entry, supplies its full English form and the response Amen, transcribed at §8 above.

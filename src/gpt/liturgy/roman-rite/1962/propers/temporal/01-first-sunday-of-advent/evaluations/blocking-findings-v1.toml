@@ -1,0 +1,105 @@
+# Blocking findings standing against this publication, the
+# verdicts its evaluation lanes reached, and the observations
+# they recorded outside their own criteria. Written by tpt after
+# each evaluation of this leaf.
+#
+# One record, several stages. Every entry names the stage that
+# raised it, [[stages]] says what each stage last said, and an
+# evaluation replaces its own stage's entries and leaves every
+# other stage's alone -- so what the content evaluation found
+# still stands here after the synthesis evaluation has spoken. A
+# stage that looked and found nothing leaves an empty list
+# rather than no entry: "evaluated, nothing stands" and
+# "nobody has looked" are different facts, per stage.
+#
+# The keys directly below these comments describe the write that
+# last touched this file, and count every stage's entries
+# together. They are its summary line. What a given stage found
+# is in that stage's [[stages]] entry and in the entries naming
+# it -- reading the top-level stage as the record's one stage is
+# the mistake this schema exists to stop.
+#
+# It exists because a run's own results live under build/, which
+# is ignored, which `make clean` and `wt tidy` delete without
+# asking, and which nothing preserves between productions.
+#
+# Nothing reads this back into a run. Carrying findings from one
+# production into the next wants doing where the run's identity
+# can cover it -- a committed record, or this file's hash in the
+# run id and the acceptance audit -- and until then this is a
+# record for people.
+#
+# Escalations -- defects in artifacts no stage of the run may
+# write: guidance, the source library, the tools, the workflow --
+# are written here too, from the run's whole ledger, so that the
+# decision they ask of a maintainer outlives the run directory.
+#
+# Accepted findings are true defects a lane judged not worth a
+# repair round, with the reason it judged so. Advisories are
+# defects that did not merit blocking. Both are here because a
+# verdict that dies with the run is met again by the next cold
+# read as though nobody had ever weighed it, and weighed again --
+# which is how a document in good shape spends a whole iteration
+# budget. A later evaluation reads these before it raises.
+
+standing_findings_schema = 4
+record_type = "standing-blocking-findings"
+document = "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"
+provider = "gpt"
+run_id = "2eec8ccb8f69387e"
+workflow = "proper-study"
+workflow_version = 19
+stage = "research-review"
+iteration = 0
+disposition = "CHANGES_REQUIRED"
+standing = 3
+accepted_count = 0
+advisory_count = 1
+observation_count = 0
+
+[[stages]]
+stage = "research-review"
+iteration = 0
+disposition = "CHANGES_REQUIRED"
+run_id = "2eec8ccb8f69387e"
+workflow = "proper-study"
+workflow_version = 19
+standing = 3
+accepted_count = 0
+advisory_count = 1
+observation_count = 0
+
+[[findings]]
+stage = "research-review"
+id = "RES-001"
+severity = "blocking"
+location = "propers/verified.md §§2, 8 and 11; research/context.md, Sources for the complete bilingual text; research/scope.md, Extent and rights"
+problem = "The English Collect stops at “Who livest” and the Secret at “Through our Lord,” even though their 1962 Latin entries give the full conclusions and response. The assertion of a complete bilingual record overlooks the footnote attached to the Collect in Lasance, printed p. 103 (PDF 104). It directs the reader to Prayer Conclusions, printed p. 819 (PDF 818), where Lasance explains that these are abbreviations and prints the complete English formulas and Amens. The same table identifies the Postcommunion cue. The distinction matters when the interpretation identifies the Son as the Collect’s addressee from words an English reader cannot currently see."
+required_result = "Preserve each historical Sunday cue and supply the full source-checked English conclusion and response for the full Latin Collect and Secret. Identify the Postcommunion’s abbreviated form and its expansion by reference. Mark the Secret/Preface junction so the ending is read once. Bind the existing Lasance Prayer Conclusions transcription or the directly inspected table, update the local use and disposition records, and keep these ordinary formulas distinct from the target page’s typography."
+repair_target = "research"
+
+[[findings]]
+stage = "research-review"
+id = "RES-002"
+severity = "blocking"
+location = "propers/verified.md §3, Epistle; research/scope.md, Romans 13:11–14a row"
+problem = "The account explains the change to the biblical connective but omits a second change at the very words under interpretation. Clementine Romans 13:11 has ‘Et hoc scientes tempus: quia hora est’; the Vatican page [1], no. 3 (PDF 82R), and Pustet p. 2 (PDF 88L) have ‘Fratres: Scientes, quia hora est’. The Douay Bible’s ‘knowing the season’ and Lasance’s ‘knowing the time’ both retain a noun absent from the sung or read Latin. As recorded, a drafter could make the Missal name the season or assign Chrysostom’s complete biblical lemma to its opening."
+required_result = "Record both differences at the opening of Romans and the separate cut at 13:14a. Identify whose wording ‘season’ and ‘time’ are, preserve the received English verbatim, and distinguish the Fathers’ or Aquinas’s biblical lemma from the wording appointed in 1962."
+repair_target = "research"
+
+[[findings]]
+stage = "research-review"
+id = "RES-003"
+severity = "blocking"
+location = "research/source-dispositions.toml, augustine-ccel-psalm-84, augustine-new-advent-psalm-85, gueranger-shepherd-page-137 and gueranger-ocr-first-sunday; research/interpretations.md, second interpretation, Offertory"
+problem = "Two witnesses’ typed extents diverge from the inspected pages. In both Augustine deliveries the recorded §§2–3 cover Vulgate Ps 84:2–4. The lemma for 84:5 opens §4, outside the named sections, although both records claim 84:2–5. Conversely the comparison explicitly uses Guéranger’s comment on the Offertory at pp. 135–136, where he introduces the offering of bread and wine and the repeated Ps 24:1–3. The OCR disposition lists Romans, Luke and Ps 84 only. The PDF disposition also places the Communion exposition after its lemma, while p. 137 prints the explanatory paragraph immediately above COMMUNION."
+required_result = "Align each Augustine record’s native sections and scriptural extent with the material actually checked, inspecting and naming §4 if retaining v. 5. Account explicitly for Guéranger’s used commentary on the Ps 24 chants in the appropriate record, distinguish the English Gradual text used for collation, and correct the position of the Communion exposition on p. 137. Retain the existing admission or deferral status wherever its basis still applies."
+repair_target = "research"
+
+[[advisories]]
+stage = "research-review"
+id = "RES-004"
+severity = "advisory"
+location = "research/interpretations.md, Point of comparison; research/scope.md, Communion row"
+problem = "The comparison correctly distinguishes Augustine and Bellarmine on the appointed earth yielding fruit. Augustine’s neighboring treatment already contains both themes: Enarrationes on Vulgate Ps 84 §10 interprets truth springing from the earth at v. 12 as Christ born of Mary, §11 gives confession as another reading of that same verse, and §12 turns to changed conduct at the Communion verse. That sequence would let the reader locate precisely where the two authors’ emphases diverge."
+required_result = "If expanding the comparison, situate Augustine’s §12 beside §§10–11 and distinguish his Marian interpretation of the preceding verse from Bellarmine’s Marian interpretation of the Communion verse itself. Extend the registered checked loci if drawing on these paragraphs."

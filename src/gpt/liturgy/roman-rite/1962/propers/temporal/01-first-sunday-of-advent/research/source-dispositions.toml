@@ -28,10 +28,10 @@ reason = "The source establishes the appointed liturgical or biblical wording an
 [[sources]]
 id = "lasance-1945-advent"
 binding_index = 3
-binding_sha256 = "ec93cb95d02ddf285a4adfc174c298e9d122f32d04ec2943360b9e63b845faf7"
+binding_sha256 = "cfaa33e95236cddc5ede0e5802ddd1765e9f831446fa1c5f4beaa36b013df2fa"
 source_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
 source_fingerprint = "sha256:376ca4e5db5bd3291c6c11b085c73dafdd1a09a8a7af523652257183cc25d645"
-locus = "Printed pp.103–106 and 772–774; PDF104–107,770,772–773"
+locus = "Printed pp. 103–106, 772–774 and 819 (PDF 104–107, 770, 772–773 and 818)"
 relationship = "not-commentary"
 disposition = "not-commentary"
 reason = "The source establishes the appointed liturgical or biblical wording and its bounds."
@@ -254,7 +254,7 @@ reason = "The chapter text controls scriptural context and wording; it is Script
 [[sources]]
 id = "augustine-first-psalm-appointments"
 binding_index = 22
-binding_sha256 = "29ea84bf4c1c4dfed3c7dae2d425a44f0e70a5d6f6fe13d8a353c511cbb32b7d"
+binding_sha256 = "c596ba7ee4151db7756c6bf4fee2952d4219b17bba2880c2f0776ac014795e31"
 source_id = "artifact.augustine.enarrationes-in-psalmos.english-npnf8-ccel-web-2026-09-05.ccel-npnf108-text-d6841950"
 source_fingerprint = "sha256:0a8fd6a45c963c52d5c8d09497820cfb88e5bf59d3a86a8a573856782e822f37"
 locus = "Enarrationes on Vulgate Psalm 24 §§1–5, NPNF English XXV"
@@ -266,7 +266,7 @@ passage_ids = ["passage.augustine.enarrationes-in-psalmos.1888-english-npnf-anon
 [[sources]]
 id = "augustine-ccel-psalm-47"
 binding_index = 22
-binding_sha256 = "29ea84bf4c1c4dfed3c7dae2d425a44f0e70a5d6f6fe13d8a353c511cbb32b7d"
+binding_sha256 = "c596ba7ee4151db7756c6bf4fee2952d4219b17bba2880c2f0776ac014795e31"
 source_id = "artifact.augustine.enarrationes-in-psalmos.english-npnf8-ccel-web-2026-09-05.ccel-npnf108-text-d6841950"
 source_fingerprint = "sha256:0a8fd6a45c963c52d5c8d09497820cfb88e5bf59d3a86a8a573856782e822f37"
 locus = "Enarrationes on Vulgate Psalm 47, sections 8–9; historical NPNF I.8"
@@ -279,7 +279,7 @@ missing_criteria = ["establish-section-specific-historical-translator"]
 [[sources]]
 id = "augustine-ccel-psalm-79"
 binding_index = 22
-binding_sha256 = "29ea84bf4c1c4dfed3c7dae2d425a44f0e70a5d6f6fe13d8a353c511cbb32b7d"
+binding_sha256 = "c596ba7ee4151db7756c6bf4fee2952d4219b17bba2880c2f0776ac014795e31"
 source_id = "artifact.augustine.enarrationes-in-psalmos.english-npnf8-ccel-web-2026-09-05.ccel-npnf108-text-d6841950"
 source_fingerprint = "sha256:0a8fd6a45c963c52d5c8d09497820cfb88e5bf59d3a86a8a573856782e822f37"
 locus = "Enarrationes on Vulgate Psalm 79, sections 2–3; historical NPNF I.8"
@@ -292,14 +292,14 @@ missing_criteria = ["establish-section-specific-historical-translator"]
 [[sources]]
 id = "augustine-ccel-psalm-84"
 binding_index = 22
-binding_sha256 = "29ea84bf4c1c4dfed3c7dae2d425a44f0e70a5d6f6fe13d8a353c511cbb32b7d"
+binding_sha256 = "c596ba7ee4151db7756c6bf4fee2952d4219b17bba2880c2f0776ac014795e31"
 source_id = "artifact.augustine.enarrationes-in-psalmos.english-npnf8-ccel-web-2026-09-05.ccel-npnf108-text-d6841950"
 source_fingerprint = "sha256:0a8fd6a45c963c52d5c8d09497820cfb88e5bf59d3a86a8a573856782e822f37"
-locus = "Enarrationes on Vulgate Psalm 84, sections 2–3, 6, 12–13; historical NPNF I.8"
+locus = "NPNF I.8, Psalm LXXXV, §§2–4, 6, 10–13 (Vulgate Ps 84:2–5, 7–8, 12–14)"
 relationship = "direct-exegesis"
 disposition = "deferred"
 reason = "The full CCEL delivery is held. Its Oxford front matter, lines 326–343, assigns different parts to an anonymous translator, Tweed, Scratton and Wilkins; some boundaries extend into adjoining volumes. The anonymous first thirty have been separately resolved. The specific Oxford volume and translator for this later psalm need collation."
-scripture_extents = [{ token = "Ps", first_chapter = 84, first_verse = 2, last_chapter = 84, last_verse = 5 }, { token = "Ps", first_chapter = 84, first_verse = 7, last_chapter = 84, last_verse = 8 }, { token = "Ps", first_chapter = 84, first_verse = 13, last_chapter = 84, last_verse = 14 }]
+scripture_extents = [{ token = "Ps", first_chapter = 84, first_verse = 2, last_chapter = 84, last_verse = 5 }, { token = "Ps", first_chapter = 84, first_verse = 7, last_chapter = 84, last_verse = 8 }, { token = "Ps", first_chapter = 84, first_verse = 12, last_chapter = 84, last_verse = 14 }]
 missing_criteria = ["establish-section-specific-historical-translator"]
 
 [[sources]]
@@ -406,27 +406,38 @@ missing_criteria = ["collate-full-paragraph-with-duffy-1866-page"]
 [[sources]]
 id = "gueranger-shepherd-page-137"
 binding_index = 27
-binding_sha256 = "1dd44f20b301412a80a28665d8636d5400ab6b0f1bf4550be2770e0270db290d"
+binding_sha256 = "b4f9382a00fe7f547a913a4587e1416a688151974dc79ddb7294a5352da00e03"
 source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1870-volume-1.ia-pdf-b1dac6bc"
 source_fingerprint = "sha256:da20f977d1d327a787b47a811a4913a4bdaa07e3a70a45a178d74eadf2add4bc"
-locus = "Advent, First Sunday, printed pp.134,137–138; the Communion exposition follows its own lemma"
+locus = "Advent, First Sunday, pp. 135–136, introduction to the Offertory (Ps 24:1–3), and p. 137, Eucharistic and Marian exposition immediately above COMMUNION (Ps 84:13)"
 relationship = "liturgical-commentary"
 disposition = "deferred"
-reason = "The commentary applies Scripture at Mass. The series work record names Guéranger and continuators with French and English as work languages; the present volume is his French composed text in Shepherd’s English translation. Before presenting the excerpt the Catena needs a truthful constituent voice and author for this volume. The OCR also contains two-column overlaps."
-scripture_extents = [{ token = "Ps", first_chapter = 84, first_verse = 13, last_chapter = 84, last_verse = 13 }]
+reason = "The commentary applies Scripture at Mass. The series work record names Guéranger and continuators with French and English as work languages; the present volume is his French composed text in Shepherd’s English translation. Before presenting the excerpt the Catena needs a truthful constituent voice and author for this volume."
+scripture_extents = [{ token = "Ps", first_chapter = 24, first_verse = 1, last_chapter = 24, last_verse = 3 }, { token = "Ps", first_chapter = 84, first_verse = 13, last_chapter = 84, last_verse = 13 }]
 missing_criteria = ["resolve-volume-author-and-shepherd-translation-voice"]
+
+[[sources]]
+id = "gueranger-shepherd-gradual-wording"
+binding_index = 27
+binding_sha256 = "b4f9382a00fe7f547a913a4587e1416a688151974dc79ddb7294a5352da00e03"
+source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1870-volume-1.ia-pdf-b1dac6bc"
+source_fingerprint = "sha256:da20f977d1d327a787b47a811a4913a4bdaa07e3a70a45a178d74eadf2add4bc"
+locus = "Advent, p. 134 (PDF 150), English Gradual response (Ps 24:3b) ending in O Lord"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "Shepherd’s printed historical English supplies the additional vocative in the Gradual. This use collates chant wording."
 
 [[sources]]
 id = "gueranger-ocr-first-sunday"
 binding_index = 28
-binding_sha256 = "e3bdc33e1eec648e006a5e1863aba7560c0eb3ca9dcbeedbeedd721273b070cf"
+binding_sha256 = "ece2375e32fd991cb3d2fe5ba2a082a43c3be2facc5423de5243e9f072410547"
 source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1870-volume-1.ia-djvu-text-45b59caa"
 source_fingerprint = "sha256:1d8034d8c49335cfa0b95c6473da3bab76378c97bf83cf22648ab1410635864c"
-locus = "Advent, First Sunday, pp.127,130–137; Epistle, Gospel and Communion expositions"
+locus = "Advent, First Sunday, pp. 130–131, confidence of the Church in the Introit (Ps 24:1–3, verse 4b); pp. 133–135, Epistle and Gospel; pp. 135–136, the returning Ps 24:1–3 during the offering of bread and wine; p. 137, commentary above the Communion (Ps 84:13)"
 relationship = "liturgical-commentary"
 disposition = "deferred"
 reason = "The commentary applies Scripture at Mass. The series work record names Guéranger and continuators with French and English as work languages; the present volume is his French composed text in Shepherd’s English translation. Before presenting the excerpt the Catena needs a truthful constituent voice and author for this volume. The OCR also contains two-column overlaps."
-scripture_extents = [{ token = "Rom", first_chapter = 13, first_verse = 11, last_chapter = 13, last_verse = 14 }, { token = "Luke", first_chapter = 21, first_verse = 25, last_chapter = 21, last_verse = 33 }, { token = "Ps", first_chapter = 84, first_verse = 13, last_chapter = 84, last_verse = 13 }]
+scripture_extents = [{ token = "Ps", first_chapter = 24, first_verse = 1, last_chapter = 24, last_verse = 4 }, { token = "Rom", first_chapter = 13, first_verse = 11, last_chapter = 13, last_verse = 14 }, { token = "Luke", first_chapter = 21, first_verse = 25, last_chapter = 21, last_verse = 33 }, { token = "Ps", first_chapter = 84, first_verse = 13, last_chapter = 84, last_verse = 13 }]
 missing_criteria = ["resolve-volume-author-and-shepherd-translation-voice", "collate-ocr-to-complete-print-paragraph"]
 
 [[sources]]
@@ -533,14 +544,14 @@ missing_criteria = ["redistribution-basis-for-new-advent-revision"]
 [[sources]]
 id = "augustine-new-advent-psalm-85"
 binding_index = 38
-binding_sha256 = "3610f3cd7d2a98c16c739b5d2d8f70f2bb689136bcf2e0af84fb40acce65455e"
+binding_sha256 = "5e195ab23fdcd77f1192c569e7214993e1f27ee675bff18f3244d026b676c560"
 source_id = "artifact.augustine.enarrationes-in-psalmos.2026-11-22-new-advent.psalm-85-46d857d1"
 source_fingerprint = "sha256:adc6733339b0a9ba745a01c14e83689cc8fb05d31d43d7abefe82660d68db0d8"
-locus = "Exposition on Psalm 85, §§2–3,6,12–13; Vg Ps84:2–3,8,13–14"
+locus = "New Advent, Exposition on Psalm 85, §§2–4, 6, 10–13 (Vulgate Ps 84:2–5, 7–8, 12–14)"
 relationship = "direct-exegesis"
 disposition = "deferred"
 reason = "The exact response is Kevin Knight’s modern English revision. Its independent redistribution terms have not been established. The separately credited NPNF printing remains available without conflating the two expressions."
-scripture_extents = [{ token = "Ps", first_chapter = 84, first_verse = 2, last_chapter = 84, last_verse = 5 }, { token = "Ps", first_chapter = 84, first_verse = 7, last_chapter = 84, last_verse = 8 }, { token = "Ps", first_chapter = 84, first_verse = 13, last_chapter = 84, last_verse = 14 }]
+scripture_extents = [{ token = "Ps", first_chapter = 84, first_verse = 2, last_chapter = 84, last_verse = 5 }, { token = "Ps", first_chapter = 84, first_verse = 7, last_chapter = 84, last_verse = 8 }, { token = "Ps", first_chapter = 84, first_verse = 12, last_chapter = 84, last_verse = 14 }]
 missing_criteria = ["redistribution-basis-for-new-advent-revision"]
 
 [[sources]]
@@ -603,3 +614,25 @@ locus = "Tavola cronologica, row 11–32, Zarb column; rows 79 and 84"
 relationship = "not-commentary"
 disposition = "not-commentary"
 reason = "This use establishes historical chronology or attribution. It supplies no verse commentary for the chain."
+
+[[sources]]
+id = "lasance-prayer-conclusions"
+binding_index = 44
+binding_sha256 = "8aeba2f006ca561255c358585663fcd0ce54b83571276b0dad05cfd536634d15"
+source_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-transcription"
+source_fingerprint = "sha256:2b1d13c57a9ad7f5524694d7da91fad82062655ed5e45d40d11846c53f70c5b5"
+locus = "Prayer Conclusions, printed p. 819 (PDF 818). First entry, Through our Lord; last entry, Who livest; each with its separate response."
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The table supplies the English ordinary conclusions of the Father-addressed Secret and Postcommunion and of the Son-addressed Collect."
+
+[[sources]]
+id = "clementine-romans"
+binding_index = 45
+binding_sha256 = "85fee5f5933595197124ff535649acac998184eeb90dad590b71178f097c6284"
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-52-romans-b5092f0e"
+source_fingerprint = "sha256:ea1ee4fa64e6aba7f80af9f1c6ef053bdfaaed70f99b318dbe7d10ed2db4b697"
+locus = "Romans 13:8–14, especially vv. 11 and 14"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The biblical Latin establishes the connective, the noun tempus, and the last clause of v. 14 in the comparison with the appointed text."
