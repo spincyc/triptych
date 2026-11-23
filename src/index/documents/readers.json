@@ -1,5 +1,5 @@
 {
- "generation_commit": "3c57e267d2a6982bb5d3b51d0a455d0f2d945c91",
+ "generation_commit": "5f4b65240c099b84fc33d54e74ea80df16b72dca",
  "readers": {
   "claude/articles/canon-law/clerical-celibacy-chastity-and-continence": {
    "canonical": "articles/canon-law/clerical-celibacy-chastity-and-continence",
@@ -11573,6 +11573,156 @@
    "release_status": "alpha",
    "source_format": "latex",
    "title": "All Saints: a concise comparison"
+  },
+  "gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b": {
+   "canonical": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+    "eligibility": "eligible",
+    "inspected": "2026-11-23",
+    "inspected_by": "GPT, proper-study v20 run ef7f86e26fddcac6, web-review iteration 1",
+    "inspection": "Compared the canonical conversion with all eight authored sections. Chromium review checked both interpretations and their four senses, twelve appointed-text anchors, twenty-four notes, three tables, both seasonal psalm headings and the archived Jerome reference. Markdown SHA-256 3ad53333802f697b048ece8d9965478f66f8ea6ba90f2f6628713a6a1994387c.",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-23",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/generation-metadata.tex",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/main.tex",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/proper-components.toml"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+    "src/common"
+   ],
+   "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+   "edition": "main",
+   "entrypoint": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/main.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+   "kind": "proper-postconciliar",
+   "provider": "gpt",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "First Sunday of Advent, Year B: The people who wait for Christ"
+  },
+  "gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b-homily": {
+   "canonical": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b-homily"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+    "eligibility": "eligible",
+    "inspected": "2026-11-23",
+    "inspected_by": "GPT, proper-study v20 run ef7f86e26fddcac6, web-review iteration 1",
+    "inspection": "Compared the canonical conversion with all eight authored sections. Chromium review checked both interpretations and their four senses, twelve appointed-text anchors, twenty-four notes, three tables, both seasonal psalm headings and the archived Jerome reference. Markdown SHA-256 3ad53333802f697b048ece8d9965478f66f8ea6ba90f2f6628713a6a1994387c.",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-23",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/generation-metadata.tex",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/homily.tex",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/proper-components.toml"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+    "src/common"
+   ],
+   "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b-homily",
+   "edition": "homily",
+   "entrypoint": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/homily.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b-homily",
+   "kind": "proper-postconciliar",
+   "provider": "gpt",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "First Sunday of Advent, Year B: When Jesus found Peter asleep"
+  },
+  "gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b-synthesis": {
+   "canonical": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b-synthesis"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+    "eligibility": "eligible",
+    "inspected": "2026-11-23",
+    "inspected_by": "GPT, proper-study v20 run ef7f86e26fddcac6, web-review iteration 1",
+    "inspection": "Compared the canonical conversion with all eight authored sections. Chromium review checked both interpretations and their four senses, twelve appointed-text anchors, twenty-four notes, three tables, both seasonal psalm headings and the archived Jerome reference. Markdown SHA-256 3ad53333802f697b048ece8d9965478f66f8ea6ba90f2f6628713a6a1994387c.",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-23",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/generation-metadata.tex",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/proper-components.toml",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/synthesis.tex"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+    "src/common"
+   ],
+   "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b-synthesis",
+   "edition": "synthesis",
+   "entrypoint": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/synthesis.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b-synthesis",
+   "kind": "proper-postconciliar",
+   "provider": "gpt",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "First Sunday of Advent, Year B: Concise study"
   },
   "gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s26-most-holy-trinity-year-a": {
    "canonical": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s26-most-holy-trinity-year-a",
