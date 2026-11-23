@@ -292,6 +292,13 @@ records its printed copyright notice. The handbook uses page references
 and descriptions of the services. Rights to the scan, its notation and its
 English rubrics remain unresolved. [Edition and evidence](src/sources/works/solesmes-abbey/liber-usualis/editions/desclee-1961-english-rubrics/edition.toml)
 
+The postconciliar Advent handbook draws on Thérèse of Lisieux’s account of
+Christmas 1886 in T. N. Taylor’s historical English collection, *Sœur Thérèse
+of Lisieux* (London, Burns & Oates, fifteenth thousand). The source library
+retains the historical edition’s uncorrected OCR for discovery. The page images
+on pp. 71–72 control the retelling. The edition record distinguishes Taylor’s
+editorial credit from the unidentified translator. [Edition and rights](src/sources/works/thomas-nimmo-taylor/soeur-therese-of-lisieux/editions/burns-oates-fifteenth-thousand/edition.toml)
+
 ## Liturgical and Scriptural Texts
 
 Scripture, Missal formularies, Orders of Mass, rubrics, chants, and texts from

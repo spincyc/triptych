@@ -6,7 +6,7 @@ A single-edition liturgical reference study set as one deep-study sequence:
 the Roman calendar references (guidance/liturgy/roman-calendar-references.md),
 the assembly references (roman-1962-assembly.md), and the expositions and
 comparisons of the Ordinary and Order of Mass (ordinary-expositions.md), and
-the seasonal handbooks (roman-1962-seasonal-handbooks.md). The
+the seasonal handbooks of the 1962 and postconciliar Roman books. The
 type owns the preamble, the PDF metadata, the heading style, the front matter
 (a title page with roman-numbered contents, a compact heading over the
 contents, or none where the first section sets its own), the optional endnotes
@@ -15,7 +15,7 @@ leaf supplies its metadata and title lines, the ordered sections of its body
 and apparatus (with any raw keep-together or scope-appendix macro between
 them), and its option choices; doc-local macros stay in its format.tex.
 """
-kinds = ["calendar-reference", "assembly-reference", "mass-ordinary", "mass-comparison", "seasonal-handbook-1962"]
+kinds = ["calendar-reference", "assembly-reference", "mass-ordinary", "mass-comparison", "seasonal-handbook-1962", "seasonal-handbook-postconciliar"]
 
 # Title lines, as each front option and title style uses them: series-line is
 # the small-capitals series line above the title; title-detail the edition or

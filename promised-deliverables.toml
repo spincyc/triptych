@@ -6229,3 +6229,21 @@ state = "complete"
   criterion = "The revised GPT study traces the development of Advent, reads its Mass and Office with Fathers, popes, saints and other writers, and provides an evergreen course of weekly and daily readings paired with received prayers, reviewed in its reader form."
   status = "pass"
   evidence = ["src/gpt/liturgy/roman-rite/1962/seasons/advent/research/source-audit.md", "src/gpt/liturgy/roman-rite/1962/seasons/advent/research/cold-review.md", "src/gpt/liturgy/roman-rite/1962/seasons/advent/sections/90-daily-readings.tex"]
+
+[[deliverables]]
+id = "postconciliar-advent-and-seasonal-catalogs"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent"
+promise = "Research the case for distinct Advent handbooks, issue the U.S. postconciliar volume with historical and devotional teaching and the whole recurring reading course, and give the catalogs concise tables and the public pages shared typography."
+state = "candidate"
+
+  [[deliverables.requirements]]
+  id = "handbook"
+  criterion = "The printed and web handbook has verified historical and spiritual witnesses, liturgical comparison, and readings for every Sunday cycle and occurring Advent weekday."
+  status = "pass"
+  evidence = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/research/source-audit.md", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/research/cold-review.md", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/research/lectionary-audit.md"]
+
+  [[deliverables.requirements]]
+  id = "presentation"
+  criterion = "The two seasonal catalogs use recurring boundaries, link existing editions and identify planned volumes. The site shares font roles, and catalog tables retain only useful adjacent copy."
+  status = "pass"
+  evidence = ["library/traditional-latin-mass.md", "library/novus-ordo-liturgy.md", "release/public-alpha/assets/site.css"]

@@ -1,0 +1,29 @@
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"
+
+[document]
+type = "liturgy-reference-v1"
+
+[document.main]
+pdftitle = "Advent: Come, Lord Jesus"
+pdfsubject = "A handbook of Advent for the Roman Missal, the United States Lectionary for Mass, and the Liturgy of the Hours."
+pdfkeywords = "Advent, Roman Missal, Scripture, Church Fathers, prayer, Liturgy of the Hours, Christmas"
+title-style = "series-detail"
+series-line = "A Triptych Seasonal Handbook"
+title = "Advent"
+subtitle = "Come, Lord Jesus"
+title-detail = "The Roman Missal and the United States Lectionary"
+body = [
+  "sections/05-to-the-reader",
+  "sections/10-history",
+  "sections/20-witnesses",
+  "sections/30-mass-and-hours",
+  "sections/40-sunday-readings",
+  "sections/50-daily-readings",
+  "sections/60-christmas",
+]
+apparatus = [
+  { source = "sections/90-edition", roles = ["scope-appendix"] },
+  { source = "sections/99-references", roles = ["references"] },
+]
