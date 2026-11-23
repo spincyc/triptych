@@ -326,22 +326,33 @@ make check
 make public-site
 ```
 
-The Pages build job runs `make pages-site`: the same deployment source gates
-and site build as `make check-deployment-sources` and `make public-site`, but
-with the gates beside the single-process site build instead of before it. A
-failing gate fails that step, so `public-alpha verify`, cache retention and the
-upload never follow it; the site it may have assembled never leaves the runner.
-Locally, `make public-site` keeps the stricter order.
+The Pages build job prepares browser products, then runs `make pages-site`
+while a separate verifier prepares its own expected inputs. A dedicated
+worker checks the full corpus index. Two print workers check chronology and
+the source graph before sharing their native source partitions. The writer
+and verifier independently retrieve all eight partitions from the same
+Actions run. After Make and every source gate succeed, the verifier opens
+the assembled site, checks its contents and confirms its GitHub Pages
+authorization. Cache retention and
+artifact upload follow successful verification. Locally, `make public-site`
+runs all source gates before building. The standalone command
+`tools/tpt public-alpha verify --deployment-target github-pages` derives
+its expected inputs from the checkout.
 
 `make` and `make all` select the source-only site path. `make pdf` remains an
 explicit developer opt-in for a corpus PDF build; it is not a normal check or
 deployment prerequisite. Prefer the selected-document print command for an
-individual edition. Pages deploys only after its `print-compile` job
-(`make check-native-print-compile`, owned by `docs/printing.md`) has compiled
-every admitted edition from its served source bundle against the browser
-runtime's file closure; that job is a verification gate whose PDFs are
-discarded, not the superseded deploy-time corpus typeset, a prepared-PDF
-collection or a print review.
+individual edition. Pages partitions the complete admitted catalog across
+parallel print jobs. Each job compiles its editions against the browser
+runtime's file closure. Before deployment, the receipt verifier matches the
+revision, edition membership and mounted render inputs across those jobs
+to the verified site's bundles. The temporary PDFs are discarded. The
+equivalent local command is `make check-native-print-compile`, documented in
+`docs/printing.md`. A manual Pages workflow run on a feature branch runs the
+checks and uploads run-scoped artifacts. To reproduce an editorial push, supply
+the 64-character digest from its earlier “Cache restored from key” log as
+`browser_cache_baseline`. Both readers of the cache start from that version
+and validate it against the current checkout. Only the main branch deploys.
 
 `docs/printing.md` gives the single-document print commands. A print request
 selects one stable document identity, one declared edition, and an output

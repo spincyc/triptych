@@ -4,7 +4,9 @@
 from __future__ import annotations
 
 import argparse
-from contextlib import contextmanager, nullcontext
+from concurrent.futures import Future, ThreadPoolExecutor
+from contextlib import ExitStack, contextmanager, nullcontext
+from contextvars import copy_context
 import hashlib
 import html
 from html.parser import HTMLParser
@@ -22,6 +24,7 @@ import unicodedata
 from collections import Counter, defaultdict
 from collections.abc import Callable, Iterable
 from datetime import date, datetime, timedelta, timezone
+from functools import cache, lru_cache
 from pathlib import Path, PurePosixPath
 from urllib.parse import parse_qsl, unquote, urlencode, urlsplit
 from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
@@ -33,7 +36,8 @@ from _corpus import (  # noqa: E402
     CorpusError,
     eligible_document_ids as corpus_eligible_document_ids,
 )
-from _scanning import markers_for, present  # noqa: E402
+from _native_print import held_source_admissions  # noqa: E402
+from _scanning import markers_for  # noqa: E402
 import _qualified_public_domain  # noqa: E402
 from _browser_products import MANIFEST_RELATIVE as BROWSER_PRODUCTS_MANIFEST_RELATIVE  # noqa: E402
 from _markdown_render import (  # noqa: E402
@@ -251,7 +255,8 @@ ORDINARY_LANGUAGE_ABSENCE_LOCATION_RE = re.compile(
     r"^\$\.language_absences\[[0-9]+\]$"
 )
 _PROTECTED_IDENTITY_PATTERNS: dict[str, re.Pattern[str] | None] = {}
-_PROTECTED_IDENTITY_MARKERS: dict[str, tuple[int, tuple[str, ...], tuple[str, ...]]] = {}
+_PROTECTED_IDENTITY_MARKERS: dict[str, tuple[int, tuple[str, ...], frozenset[str] | None]] = {}
+_IDENTITY_TOKEN = re.compile(r"[a-z0-9._-]+")
 # Short enough that every identity has one, long enough to be rare in prose.
 MARKER_LENGTH = 8
 _POSTCONCILIAR_QUARANTINE_HASHES: dict[
@@ -260,7 +265,7 @@ _POSTCONCILIAR_QUARANTINE_HASHES: dict[
 # One command's held map of the copied browser/data inputs; see
 # `held_repository_inputs`. Empty outside a command, so a caller that is not
 # one --- a test, another tool --- always computes the map afresh.
-_HELD_WEB_DATA_FILES: list[dict[str, dict[str, Path]]] = []
+_HELD_WEB_DATA_FILES: list[dict[str, dict[str, Path] | Future]] = []
 # These are command-local inventories of captured source identities and routes.
 # No PDF bytes or installed-file timestamps participate in source publication.
 _HELD_SOURCE_INVENTORIES: list[dict[tuple[str, str], object]] = []
@@ -332,6 +337,13 @@ PAGE_MAP = {
     "release/public-alpha/404.md": "404.html",
 }
 FIXED_ARTIFACT_INPUT_PATHS = {
+    ".github/scripts/pages-native-reference.py",
+    ".github/scripts/verify-native-print.py",
+    ".github/workflows/pages.yml",
+    ".github/web-figure-digests.json",
+    "scripts/_native_print_reference.py",
+    "scripts/_publication_source_reference.py",
+    "scripts/_web_figure_build.py",
     "release/public-alpha/layout.html",
     "release/public-alpha/assets/site.css",
     "release/public-alpha/assets/social-card.png",
@@ -1010,7 +1022,7 @@ def publication_source_records() -> dict[tuple[str, str], tuple[dict, dict]]:
         from _document_schema import discover, validate
         result = {}
         assembly = document_assembly()
-        for record in discover(ROOT):
+        for record in discover(ROOT, assembly=assembly):
             report = validate(ROOT, record, phase="source", run_gates=False,
                               assembly=assembly)
             if report.get("errors"):
@@ -1028,6 +1040,51 @@ def publication_source_records() -> dict[tuple[str, str], tuple[dict, dict]]:
                 result[key] = (record, output)
         return result
     return dict(held_source_inventory("publication-records", derive))
+
+
+def _hold_pages_publication_sources(shards: int) -> None:
+    """Verify and install this operation's independent current-run publication source expectations."""
+    if not _HELD_SOURCE_INVENTORIES or _native_reference_loader() is None:
+        raise ReleaseError("publication source reference requires a protected Pages operation")
+    from _native_print import admitted_documents
+    from _native_print_reference import publication_parts
+    from _publication_source_reference import verify_partitions
+    revision = os.environ["GITHUB_SHA"]
+    run_id, attempt = os.environ["GITHUB_RUN_ID"], os.environ["GITHUB_RUN_ATTEMPT"]
+    _require_reference_checkout(revision)
+    parts = publication_parts(Path(os.environ["TRIPTYCH_NATIVE_REFERENCE_DIR"]), revision=revision,
+                              run_id=run_id, run_attempt=attempt,
+                              expected_sha256=os.environ["TRIPTYCH_NATIVE_REFERENCE_SHA256"])
+    records, identities = verify_partitions(ROOT, admitted_documents(ROOT), revision, run_id, attempt, shards, parts)
+    if any(not SAFE_ID_RE.fullmatch(leaf) for _, leaf in records):
+        raise ReleaseError("invalid publication source output identity")
+    _require_reference_checkout(revision)
+    held = _HELD_SOURCE_INVENTORIES[-1]
+    root = str(ROOT.resolve())
+    entries = {(root, "publication-records"): records, (root, "publication-reference-owners"): frozenset(identities)}
+    entries.update({(root, "publication-identity:" + owner): identity for owner, identity in identities.items()})
+    if held.keys() & entries.keys():
+        raise ReleaseError("publication source facts already present before authenticated loading")
+    held.update(entries)
+
+
+def prefetch_publication_dependencies(keys: Iterable[tuple[str, str]]) -> None:
+    """Prepare the dependency traces needed by this set of source identities."""
+    if not _HELD_SOURCE_INVENTORIES:
+        return
+    keys = sorted(keys)
+    if not keys:
+        return
+    records = publication_source_records()
+    # Companions share their owner's source directory. Missing keys and failed
+    # traces are reported by the same per-publication lookup as before.
+    reference_owners = _HELD_SOURCE_INVENTORIES[-1].get((str(ROOT.resolve()), "publication-reference-owners"))
+    if reference_owners is not None:
+        keys = [key for key in keys if key not in records or records[key][0]["id"] not in reference_owners]
+        if not keys:
+            return
+    owners = dict.fromkeys(ROOT / records[key][0]["source_dir"] for key in keys if key in records)
+    document_assembly().prefetch_dependencies(owners)
 
 
 def publication_source_identity(provider: str, leaf: str) -> dict:
@@ -1338,18 +1395,49 @@ def _pictorial_object_details(record: dict, definition: str, references: dict) -
     }
 
 
-def pictorial_gallery_selection() -> tuple[dict[str, set[str]], set[str]]:
+def _pictorial_gallery_selection(root: Path) -> tuple[dict[str, set[str]], set[str]]:
     """Use the native editions' positive artwork selection and its source closure."""
     from _native_print_artwork import DICTIONARY, DICTIONARY_LEAVES, dictionary_artwork
 
     editions, inputs = {}, set()
     for leaf in DICTIONARY_LEAVES:
         try:
-            editions[leaf], sources = dictionary_artwork(ROOT, "gpt", DICTIONARY + "/" + leaf)
+            editions[leaf], sources = dictionary_artwork(root, "gpt", DICTIONARY + "/" + leaf)
         except (OSError, ValueError) as exc:
             raise ReleaseError(f"cannot select dictionary artwork for {leaf}: {exc}") from exc
         inputs.update(sources)
     return editions, inputs
+
+
+@contextmanager
+def _held_pictorial_selection(root: Path):
+    def snapshot():
+        editions, sources = _pictorial_gallery_selection(root)
+        paths = sources.union(*editions.values())
+        # The selector reads both the records choosing each image and the image
+        # itself. Bind both even when a content edit leaves membership unchanged.
+        try:
+            hashes = {name: sha256(root / name) for name in paths}
+        except OSError as exc:
+            raise ReleaseError(f"cannot verify canonical pictorial selection: {exc}") from exc
+        return editions, sources, hashes
+
+    editions, sources, hashes = snapshot()
+    yield editions, sources
+    # Fresh discovery also sees added/removed records and checks canonical
+    # symlink, selection and artwork rules again before accepting the operation.
+    if snapshot() != (editions, sources, hashes):
+        raise ReleaseError("canonical pictorial selection changed during operation")
+
+
+def pictorial_gallery_selection() -> tuple[dict[str, set[str]], set[str]]:
+    stack = _HELD_SOURCE_INVENTORIES[-1].get("exit-stack") if _HELD_SOURCE_INVENTORIES else None
+    if stack is None:
+        return _pictorial_gallery_selection(ROOT)
+    editions, sources = held_source_inventory(
+        "pictorial-selection", lambda: stack.enter_context(_held_pictorial_selection(ROOT.resolve()))
+    )
+    return {leaf: set(paths) for leaf, paths in editions.items()}, set(sources)
 
 
 def pictorial_gallery_data(edition: str | None = None) -> list[dict]:
@@ -1802,15 +1890,15 @@ def protected_source_identity_pattern() -> re.Pattern[str] | None:
         (
             min(len(identity) for identity in protected),
             markers_for(protected),
-            tuple(sorted(protected)),
+            frozenset(protected) if all(_IDENTITY_TOKEN.fullmatch(identity) for identity in protected) else None,
         )
         if protected
-        else (0, (), ())
+        else (0, (), frozenset())
     )
     return pattern
 
 
-def protected_source_identity_markers() -> tuple[int, tuple[str, ...], tuple[str, ...]]:
+def protected_source_identity_markers() -> tuple[int, tuple[str, ...], frozenset[str] | None]:
     """A sound, cheap pre-filter for the pattern above: (minimum, markers).
 
     Searching the pattern is the most expensive thing `prepare` does --- 132 KB
@@ -1836,7 +1924,7 @@ def protected_source_identity_markers() -> tuple[int, tuple[str, ...], tuple[str
     cache_key = str(ROOT.resolve())
     if cache_key not in _PROTECTED_IDENTITY_MARKERS:
         protected_source_identity_pattern()
-    return _PROTECTED_IDENTITY_MARKERS.get(cache_key, (0, (), ()))
+    return _PROTECTED_IDENTITY_MARKERS.get(cache_key, (0, (), frozenset()))
 
 
 def _quarantine_canonical(value: object) -> str:
@@ -1911,7 +1999,7 @@ def _quarantine_receipt_signature(roots: tuple[Path, ...]) -> tuple:
                  for root in roots for path in sorted(root.glob("*admission.json")))
 
 
-def postconciliar_quarantined_text_hashes() -> frozenset[str]:
+def _quarantine_fingerprints() -> tuple[tuple, frozenset[str]]:
     """Conserve baseline, active and admitted old hashes without retaining bodies.
 
     This is an independent negative scanner. Historical fingerprints and source
@@ -1924,7 +2012,7 @@ def postconciliar_quarantined_text_hashes() -> frozenset[str]:
         if cache_key in _POSTCONCILIAR_QUARANTINE_HASHES:
             roots, signature, hashes = _POSTCONCILIAR_QUARANTINE_HASHES[cache_key]
             if signature == _quarantine_receipt_signature(roots):
-                return hashes
+                return (cache_key, signature), hashes
         document = tomllib.loads(inventory.read_text(encoding="utf-8"))
     except (OSError, UnicodeError, tomllib.TOMLDecodeError) as exc:
         raise ReleaseError(f"cannot read postconciliar quarantine ledger {label}: {exc}") from exc
@@ -2030,7 +2118,30 @@ def postconciliar_quarantined_text_hashes() -> frozenset[str]:
         raise ReleaseError(f"cannot read postconciliar quarantine admission receipts: {exc}") from exc
     hashes = frozenset(values)
     _POSTCONCILIAR_QUARANTINE_HASHES[cache_key] = ordered_roots, signature, hashes
-    return hashes
+    return (cache_key, signature), hashes
+
+
+def postconciliar_quarantined_text_hashes() -> frozenset[str]:
+    return _quarantine_fingerprints()[1]
+
+
+def _quarantine_matcher(negative: frozenset[str]):
+    """Compare both the decoded wording and its normalized spelling."""
+    def match(value):
+        exact = hashlib.sha256(value.encode("utf-8")).hexdigest()
+        if exact in negative:
+            return exact
+        normalized = unicodedata.normalize("NFC", " ".join(value.split()))
+        if normalized != value:
+            digest = hashlib.sha256(normalized.encode("utf-8")).hexdigest()
+            if digest in negative:
+                return digest
+        return None
+
+    # Envelopes repeat the same words, identifiers and labels throughout the
+    # corpus. Bound both the count and the length retained by this one scan.
+    short = lru_cache(maxsize=8192)(match)
+    return lambda value: short(value) if len(value) <= 1024 else match(value)
 
 
 def _address(trail: tuple) -> str:
@@ -2044,6 +2155,65 @@ def _address(trail: tuple) -> str:
     )
 
 
+class _ConclusionSources:
+    """The independently validated authorities used by one public data scan."""
+
+    def __init__(self):
+        self.rows = None
+        self.owner_model = None
+        self.calendars = {}
+
+    def authority_rows(self):
+        import _oration_endings
+        if self.rows is None:
+            _, self.rows = _oration_endings.authority(ROOT)
+        return self.rows
+
+    def calendar(self, calendar):
+        if self.owner_model is None:
+            from importlib.machinery import SourceFileLoader
+            from importlib.util import module_from_spec, spec_from_loader
+            loader = SourceFileLoader("_public_alpha_conclusion_owner", str(ROOT / "tools" / "mass-propers"))
+            self.owner_model = module_from_spec(spec_from_loader(loader.name, loader))
+            sys.modules[loader.name] = self.owner_model
+            loader.exec_module(self.owner_model)
+        if calendar not in self.calendars:
+            document = self.owner_model.load_calendar(ROOT / "src/sources/calendars", calendar)
+            self.calendars[calendar] = self.owner_model._calendars.mass_index(document)
+        return self.calendars[calendar]
+
+    def source_form(self, calendar, borrowed):
+        """Resolve the donor's exact display label with the owning source model."""
+        donor = self.calendar(calendar).get(borrowed.get("mass"))
+        if donor is None:
+            raise ValueError("conclusion borrowed source mass is absent")
+        label = borrowed.get("form")
+        if label is None:
+            label = ""
+        if not isinstance(label, str):
+            raise ValueError("conclusion borrowed source form label is invalid")
+        _, trouble = self.owner_model._calendars._form_propers(donor, label)
+        if trouble:
+            raise ValueError(f"conclusion borrowed source form: {trouble}")
+        if label and len([form for form in donor.get("forms") or []
+                          if isinstance(form, dict) and form.get("name") == label]) != 1:
+            raise ValueError("conclusion borrowed source form is ambiguous")
+        return self.owner_model.form_id_for_label(donor, label)
+
+    def check_current(self):
+        # Reopen both authorities from their owning readers after the last
+        # payload. A later scan starts empty, as does standalone validation.
+        fresh = _ConclusionSources()
+        try:
+            if self.rows is not None and self.rows != fresh.authority_rows():
+                raise ValueError("finite conclusion authority changed")
+            for name, masses in self.calendars.items():
+                if masses != fresh.calendar(name):
+                    raise ValueError(f"{name} conclusion donor sources changed")
+        except (ValueError, OSError) as exc:
+            raise ReleaseError(f"conclusion inputs changed during the public data scan: {exc}") from exc
+
+
 def validate_liturgical_public_data(
     path: Path, *, logical_relative: str | None = None,
     proper_reader_binding: str | None = None,
@@ -2053,6 +2223,17 @@ def validate_liturgical_public_data(
     Generators own the positive inclusion rules. This release gate independently
     refuses protected or quarantined content even in a hash-valid product.
     """
+    return _validate_liturgical_public_data(
+        path, logical_relative=logical_relative, proper_reader_binding=proper_reader_binding,
+        quarantine_match=None, conclusions=_ConclusionSources(),
+    )
+
+
+def _validate_liturgical_public_data(
+    path: Path, *, logical_relative: str | None,
+    proper_reader_binding: str | None = None, quarantine_match: Callable[[str], str | None] | None,
+    conclusions: _ConclusionSources,
+) -> str | None:
     if logical_relative is None:
         try:
             relative = path.relative_to(ROOT / WEB_DATA_ROOT_RELATIVE)
@@ -2086,7 +2267,8 @@ def validate_liturgical_public_data(
         if len(parts) != 4:
             raise ReleaseError(f"{label}: public Proper search must be one calendar file")
         validate_proper_search_payload(payload, label, path.stem)
-    quarantined_text_hashes = postconciliar_quarantined_text_hashes()
+    if quarantine_match is None:
+        quarantine_match = _quarantine_matcher(postconciliar_quarantined_text_hashes())
 
     def visit_quarantined(value: object, trail: tuple = ()) -> None:
         # The breadcrumb is carried as a tuple and rendered only if something
@@ -2104,19 +2286,7 @@ def validate_liturgical_public_data(
             return
         if not isinstance(value, str):
             return
-        candidates = {
-            value,
-            unicodedata.normalize("NFC", " ".join(value.split())),
-        }
-        matched_hash = next(
-            (
-                digest
-                for candidate in candidates
-                if (digest := hashlib.sha256(candidate.encode("utf-8")).hexdigest())
-                in quarantined_text_hashes
-            ),
-            None,
-        )
+        matched_hash = quarantine_match(value)
         if matched_hash is not None:
             raise ReleaseError(
                 f"{label} {_address(trail)}: quarantined English body sha256 "
@@ -2125,44 +2295,10 @@ def validate_liturgical_public_data(
 
     name_seen: set[tuple] = set()
     execution_seen: set[tuple] = set()
-    conclusion_authority = None
     actor_sources = None
     actor_seen: set[tuple] = set()
-    conclusion_owner_model = None
-    conclusion_source_documents = {}
-
-    def conclusion_source_form(calendar: str, borrowed: dict) -> str:
-        """Resolve the donor's exact display label with the owning source model."""
-        nonlocal conclusion_owner_model
-        if conclusion_owner_model is None:
-            from importlib.machinery import SourceFileLoader
-            from importlib.util import module_from_spec, spec_from_loader
-            loader = SourceFileLoader("_public_alpha_conclusion_owner", str(ROOT / "tools" / "mass-propers"))
-            specification = spec_from_loader(loader.name, loader)
-            conclusion_owner_model = module_from_spec(specification)
-            sys.modules[loader.name] = conclusion_owner_model
-            loader.exec_module(conclusion_owner_model)
-        if calendar not in conclusion_source_documents:
-            document = conclusion_owner_model.load_calendar(ROOT / "src/sources/calendars", calendar)
-            conclusion_source_documents[calendar] = conclusion_owner_model._calendars.mass_index(document)
-        donor = conclusion_source_documents[calendar].get(borrowed.get("mass"))
-        if donor is None:
-            raise ValueError("conclusion borrowed source mass is absent")
-        label = borrowed.get("form")
-        if label is None:
-            label = ""
-        if not isinstance(label, str):
-            raise ValueError("conclusion borrowed source form label is invalid")
-        _, trouble = conclusion_owner_model._calendars._form_propers(donor, label)
-        if trouble:
-            raise ValueError(f"conclusion borrowed source form: {trouble}")
-        if label and len([form for form in donor.get("forms") or []
-                          if isinstance(form, dict) and form.get("name") == label]) != 1:
-            raise ValueError("conclusion borrowed source form is ambiguous")
-        return conclusion_owner_model.form_id_for_label(donor, label)
-
     def visit_execution(value: object, trail: tuple = (), mass_key: str | None = None) -> None:
-        nonlocal conclusion_authority, actor_sources
+        nonlocal actor_sources
         if isinstance(value, list):
             for index, item in enumerate(value): visit_execution(item, trail + (index,), mass_key)
         elif isinstance(value, dict):
@@ -2235,9 +2371,8 @@ def validate_liturgical_public_data(
                         import _missal_coverage
                         if not isinstance(item, list) or len(item) != 1:
                             raise ValueError("one finite conclusion descriptor required")
-                        if conclusion_authority is None:
-                            _, conclusion_authority = _oration_endings.authority(ROOT)
-                        source = _oration_endings.validate_public(item[0], ROOT, authority_rows=conclusion_authority)
+                        source = _oration_endings.validate_public(
+                            item[0], ROOT, authority_rows=conclusions.authority_rows())
                         target = source["target"]
                         if source.get("schema") == "triptych-oration-conclusion-source/v2":
                             calendar = source["calendar"]
@@ -2245,7 +2380,7 @@ def validate_liturgical_public_data(
                                 raise ValueError("conclusion execution outside its source calendar propers")
                             borrowed = value.get("taken_from") or {}
                             owner = borrowed.get("mass") or mass_key
-                            form = conclusion_source_form(source["calendar"], borrowed) if borrowed else value.get("form_id")
+                            form = conclusions.source_form(source["calendar"], borrowed) if borrowed else value.get("form_id")
                             proper = borrowed.get("proper") or value.get("name")
                             if [owner, form, proper] != target[:3]:
                                 raise ValueError("conclusion descriptor source owner differs")
@@ -2275,7 +2410,7 @@ def validate_liturgical_public_data(
                                 raise ValueError("conclusion execution outside Roman1962 propers")
                             borrowed = value.get("taken_from") or {}
                             owner = borrowed.get("mass") or mass_key
-                            form = conclusion_source_form(source["calendar"], borrowed) if borrowed else value.get("form_id")
+                            form = conclusions.source_form(source["calendar"], borrowed) if borrowed else value.get("form_id")
                             proper = borrowed.get("proper") or value.get("name")
                             if [owner, form, proper] != target[:3]:
                                 raise ValueError("conclusion descriptor source owner differs")
@@ -2374,25 +2509,9 @@ def validate_liturgical_public_data(
     protected_minimum, protected_markers, protected_ids = (
         protected_source_identity_markers()
     )
-    # One reduced scan of the whole file decides whether any protected identity
-    # is in it at all; `_scanning.present` says why that is exact. Almost no
-    # file carries one, and for those the per-string regex below --- 132 KB of
-    # alternation, asked of every string --- can be skipped entirely. Where a
-    # file does carry one, nothing is skipped and the regex still names the
-    # exact identity and location, which is what the error has to say.
-    #
-    # Scanned over the DECODED payload, never over the file's raw text. The
-    # walk below sees decoded string values, so `"artifact\u002eprobe"` reaches
-    # it as `artifact.probe` while the raw bytes hold no such substring; a
-    # pre-filter reading the raw text would answer "no identity here" and skip
-    # the whole file, which is a rights gate passing what it could not see.
-    # `ensure_ascii=False` keeps the decoded characters, and no character an
-    # identity is made of is one JSON escapes, so an identity in any string
-    # appears literally here.
-    file_carries_identity = bool(
-        present(json.dumps(payload, ensure_ascii=False), protected_ids, protected_markers)
-    )
-
+    # The regex uses the same characters for both boundaries. If every
+    # protected ID consists of them, a match must occupy one whole token.
+    # Unusual IDs retain the original escaped regex and boundary semantics.
     def visit(value: object, location: str = "$") -> None:
         if isinstance(value, list):
             for index, item in enumerate(value):
@@ -2403,15 +2522,22 @@ def validate_liturgical_public_data(
             # shortest identity, or holding no identity's leading characters.
             # See protected_source_identity_markers.
             searchable = (
-                file_carries_identity
-                and protected_identity is not None
+                protected_identity is not None
                 and len(value) >= protected_minimum
                 and any(marker in value for marker in protected_markers)
             )
-            match = protected_identity.search(value) if searchable else None
-            if match is not None:
+            if searchable:
+                if protected_ids is None:
+                    match = protected_identity.search(value)
+                    identity = match.group() if match else None
+                else:
+                    identity = next((token for token in _IDENTITY_TOKEN.findall(value)
+                                     if token in protected_ids), None)
+            else:
+                identity = None
+            if identity is not None:
                 raise ReleaseError(
-                    f"{label} {location}: protected source identity {match.group(0)!r} "
+                    f"{label} {location}: protected source identity {identity!r} "
                     "belongs only in the source-study record"
                 )
             if RESTRICTED_AUTHORITY_REFERENCE_RE.search(value):
@@ -3084,7 +3210,7 @@ def browser_product_source_paths(products, manifest: dict) -> set[str]:
 
 
 @contextmanager
-def held_repository_inputs():
+def held_repository_inputs(*, prefetch_web=False):
     """Hold verified products and inventories for exactly one operation."""
     context = nullcontext()
     product_error = ()
@@ -3092,15 +3218,35 @@ def held_repository_inputs():
         from _browser_products import ProductError, verified_products
         product_error = ProductError
         context = verified_products(ROOT)
+    reference_revision = None
+    if _native_reference_loader() is not None:
+        reference_revision = os.environ["GITHUB_SHA"]
+        _require_reference_checkout(reference_revision)
     try:
         with context:
-            _HELD_WEB_DATA_FILES.append({})
+            web = {}
+            _HELD_WEB_DATA_FILES.append(web)
             _HELD_SOURCE_INVENTORIES.append({})
             try:
-                yield
+                with ExitStack() as stack:
+                    _HELD_SOURCE_INVENTORIES[-1]["exit-stack"] = stack
+                    scan = None
+                    if (prefetch_web and browser_products_declared()
+                            and (getattr(os, "process_cpu_count", os.cpu_count)() or 1) > 1):
+                        # The checkout and the private verified products are already held.
+                        # The data scan is independent of release/print work and every
+                        # consumer waits on this same result, including its exceptions.
+                        pool = stack.enter_context(ThreadPoolExecutor(max_workers=1))
+                        scan = pool.submit(copy_context().run, _scan_web_data_files)
+                        web[str(ROOT.resolve())] = scan
+                    yield
+                    if scan is not None:
+                        scan.result()
             finally:
                 _HELD_SOURCE_INVENTORIES.pop()
                 _HELD_WEB_DATA_FILES.pop()
+        if reference_revision is not None:
+            _require_reference_checkout(reference_revision)
     except ValueError as exc:
         # ProductError inherits ValueError; avoid changing other validation
         # exceptions raised by a caller inside this operation.
@@ -3125,7 +3271,8 @@ def web_data_files() -> dict[str, Path]:
     if key not in held:
         held[key] = _scan_web_data_files()
     # A copy, so no caller can edit the map the rest of the command will read.
-    return dict(held[key])
+    result = held[key]
+    return dict(result.result() if isinstance(result, Future) else result)
 
 
 def browser_font_files() -> dict[str, Path]:
@@ -3178,6 +3325,11 @@ def _scan_web_data_files() -> dict[str, Path]:
     data_root = browser_data_root()
     inputs = (sorted(browser_delivery_files(products).items()) if products is not None else
               [(path.relative_to(data_root).as_posix(), path) for path in sorted(data_root.rglob("*"))])
+    # Every payload in this scan uses the same negative fingerprints. Check the
+    # ledger and every receipt again after the last payload, including membership.
+    quarantine_signature, quarantined_text_hashes = _quarantine_fingerprints()
+    conclusions = _ConclusionSources()
+    quarantine_match = _quarantine_matcher(quarantined_text_hashes)
     reader_metadata, validated_sources = [], {}
     for relative, path in inputs:
         if path.is_dir() and not path.is_symlink():
@@ -3192,12 +3344,19 @@ def _scan_web_data_files() -> dict[str, Path]:
         if PurePosixPath(relative).parts[:3] == ("structure", "propers", "reader"):
             reader_metadata.append((relative, path))
         else:
-            validated_sources[relative] = validate_liturgical_public_data(path, logical_relative=relative)
+            validated_sources[relative] = _validate_liturgical_public_data(
+                path, logical_relative=relative, quarantine_match=quarantine_match, conclusions=conclusions,
+            )
         files[(SITE_DATA_ROOT / relative).as_posix()] = path
     reader_bindings = validate_propers_read_payload_sources(data_root, validated_sources=validated_sources)
     for relative, path in reader_metadata:
-        validate_liturgical_public_data(path, logical_relative=relative,
-                                       proper_reader_binding=reader_bindings.get(relative))
+        _validate_liturgical_public_data(
+            path, logical_relative=relative, proper_reader_binding=reader_bindings.get(relative),
+            quarantine_match=quarantine_match, conclusions=conclusions,
+        )
+    conclusions.check_current()
+    if _quarantine_fingerprints()[0] != quarantine_signature:
+        raise ReleaseError("postconciliar quarantine inputs changed during the public data scan")
 
     offered = offered_bible_ids()
     for bible_id in offered:
@@ -3318,6 +3477,7 @@ def site_source_paths(manifest: dict | None = None) -> set[str]:
                    for path in web_data_files().values() if path not in product_files)
     if products is not None:
         browser.update(browser_product_source_paths(products, manifest))
+    prefetch_publication_dependencies(included)
     publication_inputs = set()
     for provider, leaf in included:
         identity = publication_source_identity(provider, leaf)
@@ -3396,14 +3556,25 @@ def require_locked_markdown_dependency() -> None:
         raise ReleaseError(str(exc)) from exc
 
 
-def load_manifest() -> dict:
+def _manifest_text() -> str:
     try:
-        manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError) as exc:
+        return MANIFEST_PATH.read_text(encoding="utf-8")
+    except OSError as exc:
+        raise ReleaseError(f"Cannot read {MANIFEST_PATH.relative_to(ROOT)}: {exc}") from exc
+
+
+def _parse_manifest(text: str) -> dict:
+    try:
+        manifest = json.loads(text)
+    except json.JSONDecodeError as exc:
         raise ReleaseError(f"Cannot read {MANIFEST_PATH.relative_to(ROOT)}: {exc}") from exc
     if manifest.get("schema_version") != 2:
         raise ReleaseError("release/public-alpha.json must use schema_version 2")
     return manifest
+
+
+def load_manifest() -> dict:
+    return _parse_manifest(_manifest_text())
 
 
 def declared_providers(manifest: dict) -> tuple[str, list[str]]:
@@ -4145,6 +4316,7 @@ def candidate_inventory_data(
     """Return current hashes without granting or recording release authority."""
     primary, providers = declared_providers(manifest)
     errors: list[str] = []
+    prefetch_publication_dependencies(key for key, row in publications.items() if row["status"] != "hold")
     source_revisions = []
     for key in sorted(publications):
         provider, leaf = key
@@ -4276,6 +4448,7 @@ def artifact_manifest_data(
 ) -> dict:
     primary, _ = declared_providers(manifest)
     readers = publication_reader_routes(included)
+    prefetch_publication_dependencies(included)
     publication_entries = []
     for key, publication in sorted(included.items()):
         provider, leaf = key
@@ -5251,6 +5424,43 @@ def reject_internal_reader_labels(source_relative: str, rendered_html: str) -> N
                 )
 
 
+def prefetch_reader_markdown() -> None:
+    """Convert checked reader Markdown while the Pages writer awaits native source."""
+    from _native_print import admitted_documents
+    rows = web_edition_products()
+    if rows is None or not _HELD_SOURCE_INVENTORIES:
+        return
+    admitted = admitted_documents(ROOT)
+    included = {key for key in rows if "publication:" + "/".join(key) in admitted}
+    prepared = {}
+    for key in sorted(included):
+        markdown = web_edition_record(*key)["markdown"]
+        # Relative Markdown links require current page/print routes. Leave
+        # those editions on the ordinary renderer once the routes are ready.
+        targets = (match.group(2).lstrip() for match in MARKDOWN_LINK_RE.finditer(markdown))
+        if any(not (target.startswith(("#", "//")) or EXTERNAL_RE.match(target)) for target in targets):
+            continue
+        source = "web/" + "/".join(key) + ".md"
+        rewritten = rewrite_links(source, publication_reader_path(*key), markdown, included)
+        try:
+            prepared[source] = (rewritten, render_markdown(rewritten, ROOT))
+        except MarkdownRenderError as exc:
+            raise ReleaseError(str(exc)) from exc
+    _HELD_SOURCE_INVENTORIES[-1][(str(ROOT.resolve()), "prepared-reader-markdown")] = prepared
+
+
+def _page_markdown_html(source_relative: str, markdown_text: str) -> str:
+    # Only the pinned Markdown conversion is reusable. Current route links,
+    # figure expansion, table semantics and the native reader shell run normally.
+    if source_relative.startswith("web/") and _HELD_SOURCE_INVENTORIES:
+        prepared = _HELD_SOURCE_INVENTORIES[-1].get((str(ROOT.resolve()), "prepared-reader-markdown"))
+        item = prepared.pop(source_relative, None) if prepared else None
+        if item is not None and item[0] == markdown_text:
+            require_locked_markdown_dependency()
+            return item[1]
+    return render_markdown(page_body_markdown(source_relative, markdown_text), ROOT)
+
+
 def render_page(
     source_relative: str,
     markdown_text: str,
@@ -5261,8 +5471,8 @@ def render_page(
     body_extra: str = "",
 ) -> str:
     try:
-        content = add_table_header_scopes(drop_empty_table_heads(render_markdown(
-            page_body_markdown(source_relative, markdown_text), ROOT,
+        content = add_table_header_scopes(drop_empty_table_heads(_page_markdown_html(
+            source_relative, markdown_text,
         )))
     except MarkdownRenderError as exc:
         raise ReleaseError(str(exc)) from exc
@@ -5632,6 +5842,39 @@ def native_tex_declared() -> bool:
             or (ROOT / "src/common/native-tex-runtime.json").exists())
 
 
+def _require_reference_checkout(revision):
+    from _native_print_service import ServiceError, assert_source
+    try:
+        assert_source(ROOT, revision, complete_checkout=True)
+    except ServiceError as exc:
+        raise ReleaseError(f"native print reference needs the clean source checkout: {exc}") from exc
+
+
+def _native_reference_loader():
+    """Only a separately authenticated workflow result can supply native source transports."""
+    directory = os.environ.get("TRIPTYCH_NATIVE_REFERENCE_DIR")
+    digest = os.environ.get("TRIPTYCH_NATIVE_REFERENCE_SHA256")
+    if directory is None and digest is None:
+        return None
+    if not directory or not re.fullmatch(r"[a-f0-9]{64}", digest or ""):
+        raise ReleaseError("native print reference requires a directory and an authenticated SHA-256")
+    run_id = os.environ.get("GITHUB_RUN_ID", "")
+    attempt = os.environ.get("GITHUB_RUN_ATTEMPT", "")
+    push_sha = os.environ.get("GITHUB_SHA", "")
+    if (os.environ.get("GITHUB_ACTIONS") != "true" or not re.fullmatch(r"[1-9][0-9]*", run_id)
+            or not re.fullmatch(r"[1-9][0-9]*", attempt)
+            or not re.fullmatch(r"[a-f0-9]{40}", push_sha)):
+        raise ReleaseError("native print reference needs the current GitHub Actions run, attempt, and revision")
+
+    def load(*, root, documents, revision):
+        if revision != push_sha:
+            raise ReleaseError("native print reference revision differs from the current checkout")
+        from _native_print_reference import load_reference_catalog
+        return load_reference_catalog(Path(directory), root=root, documents=documents, revision=revision,
+                                      run_id=run_id, run_attempt=attempt, expected_sha256=digest)
+    return load
+
+
 def native_tex_catalog() -> dict:
     empty = {"selections": {}, "assets": {}, "source_paths": []}
     if not native_tex_declared():
@@ -5641,7 +5884,10 @@ def native_tex_catalog() -> dict:
             return native_tex_catalog()
     def derive():
         from _native_tex_publication import catalog
-        return catalog(ROOT, assembly=document_assembly())
+        reference = _native_reference_loader()
+        if reference is None:
+            return catalog(ROOT, assembly=document_assembly())
+        return catalog(ROOT, assembly=document_assembly(), source_loader=reference)
     return held_source_inventory("native-tex-catalog", derive)
 
 
@@ -5793,6 +6039,18 @@ def publication_reader_contexts() -> dict:
     return held_source_inventory("publication-reader-contexts", derive)
 
 
+def _reader_providers():
+    """Reuse the routing projection only when the current release text is identical."""
+    if not _HELD_SOURCE_INVENTORIES:
+        return declared_providers(load_manifest())[1]
+    previous = held_source_inventory("reader-provider-declaration", dict)
+    current = _manifest_text()
+    if current != previous.get("text"):
+        providers = declared_providers(_parse_manifest(current))[1]
+        previous.update(text=current, providers=tuple(providers))
+    return previous["providers"]
+
+
 def publication_reader_shell(content: str, relative: str, output_id: str = "", *,
                              action: str = "") -> tuple[str, str, str]:
     """Add screen navigation outside the exact canonical content/print parts.
@@ -5805,8 +6063,7 @@ def publication_reader_shell(content: str, relative: str, output_id: str = "", *
     parts = PurePosixPath(relative).parts
     if len(parts) < 3 or parts[0] not in {"web", "print"}:
         return standalone, "", ""
-    _, providers = declared_providers(load_manifest())
-    if parts[1] not in providers:
+    if parts[1] not in _reader_providers():
         return standalone, "", ""
     provider, separator, leaf = output_id.removeprefix("publication:").partition("/") if output_id else (parts[1], "/", "/".join(parts[2:]).removesuffix(".html"))
     context = publication_reader_contexts().get((provider, leaf)) if separator else None
@@ -6241,10 +6498,10 @@ def parsed_html(path: Path) -> LinkParser:
     return parser
 
 
-def verify_links(output: Path) -> list[str]:
+def verify_links(output: Path, parse: Callable[[Path], LinkParser] = parsed_html) -> list[str]:
     errors: list[str] = []
     parsers = {
-        path.resolve(): (path.relative_to(output), parsed_html(path))
+        path.resolve(): (path.relative_to(output), parse(path))
         for path in output.rglob("*.html")
     }
     output_resolved = output.resolve()
@@ -6280,6 +6537,7 @@ def verify_catalog_reachability(
     manifest: dict,
     included: dict[tuple[str, str], dict],
     output: Path,
+    parse: Callable[[Path], LinkParser] = parsed_html,
 ) -> list[str]:
     """Require each admitted edition's reader or native print action in its catalog."""
     errors: list[str] = []
@@ -6307,7 +6565,7 @@ def verify_catalog_reachability(
         local_paths = catalog_local_paths.get(catalog_output)
         if local_paths is None:
             local_paths = set()
-            for href in parsed_html(catalog_path).links:
+            for href in parse(catalog_path).links:
                 parts = urlsplit(href)
                 if not parts.scheme and not parts.netloc:
                     local_paths.add(unquote(parts.path))
@@ -6546,7 +6804,17 @@ def _scan_artifact_topology(
             finally:
                 os.close(child_fd)
 
-    scan(root_fd, PurePosixPath())
+    # A held directory descriptor may expose an older enumeration after
+    # children have been written (btrfs). Open "." on the same inode for a
+    # fresh scan, just as each child directory is opened above.
+    try:
+        scan_fd = os.open(".", DIRECTORY_OPEN_FLAGS, dir_fd=root_fd)
+    except OSError as exc:
+        raise ReleaseError(f"cannot safely open artifact root for enumeration: {exc}") from exc
+    try:
+        scan(scan_fd, PurePosixPath())
+    finally:
+        os.close(scan_fd)
     return entries
 
 
@@ -6581,65 +6849,21 @@ def _artifact_topology_errors(
     return errors
 
 
-def _open_artifact_parent(
-    root_fd: int,
-    relative: PurePosixPath,
-    topology: dict[str, os.stat_result],
-) -> int:
-    """Open every parent of an inventoried file from the held artifact root."""
-    directory_fd = os.dup(root_fd)
-    parent = PurePosixPath()
-    try:
-        for component in relative.parts[:-1]:
-            parent /= component
-            label = parent.as_posix()
-            expected = topology.get(label)
-            if expected is None or not stat.S_ISDIR(expected.st_mode):
-                raise ReleaseError(f"artifact path changed during verification: {label}")
-            try:
-                entry = os.stat(
-                    component, dir_fd=directory_fd, follow_symlinks=False
-                )
-                child_fd = os.open(
-                    component, DIRECTORY_OPEN_FLAGS, dir_fd=directory_fd
-                )
-            except OSError as exc:
-                raise ReleaseError(
-                    f"artifact path changed during verification: {label}"
-                ) from exc
-            if (
-                not stat.S_ISDIR(entry.st_mode)
-                or _artifact_entry_identity(entry)
-                != _artifact_entry_identity(expected)
-                or not _same_inode(entry, os.fstat(child_fd))
-            ):
-                os.close(child_fd)
-                raise ReleaseError(f"artifact path changed during verification: {label}")
-            os.close(directory_fd)
-            directory_fd = child_fd
-        return directory_fd
-    except BaseException:
-        os.close(directory_fd)
-        raise
-
-
 def _read_artifact_regular_file(
-    root_fd: int,
+    parent_fd: int,
+    name: str,
     relative: str,
     expected: os.stat_result,
-    topology: dict[str, os.stat_result],
 ) -> bytes:
-    """Capture one inventoried file through a no-follow descriptor chain."""
+    """Capture one inventoried file from its held, verified parent."""
     if not getattr(os, "O_NOFOLLOW", 0):
         raise ReleaseError("safe no-follow artifact file opens are unavailable")
-    path = PurePosixPath(relative)
-    parent_fd = _open_artifact_parent(root_fd, path, topology)
     descriptor: int | None = None
     try:
         try:
-            entry = os.stat(path.name, dir_fd=parent_fd, follow_symlinks=False)
+            entry = os.stat(name, dir_fd=parent_fd, follow_symlinks=False)
             descriptor = os.open(
-                path.name,
+                name,
                 os.O_RDONLY
                 | getattr(os, "O_CLOEXEC", 0)
                 | getattr(os, "O_NOFOLLOW", 0)
@@ -6669,7 +6893,59 @@ def _read_artifact_regular_file(
     finally:
         if descriptor is not None:
             os.close(descriptor)
-        os.close(parent_fd)
+
+
+@contextmanager
+def _held_artifact_directory(
+    parent_fd: int, name: str, relative: str, expected: os.stat_result
+):
+    identity = _artifact_entry_identity(expected)
+    message = f"artifact path changed during verification: {relative}"
+
+    def check_entry() -> None:
+        try:
+            entry = os.stat(name, dir_fd=parent_fd, follow_symlinks=False)
+        except OSError as exc:
+            raise ReleaseError(message) from exc
+        if _artifact_entry_identity(entry) != identity:
+            raise ReleaseError(message)
+
+    check_entry()
+    try:
+        child_fd = os.open(name, DIRECTORY_OPEN_FLAGS, dir_fd=parent_fd)
+    except OSError as exc:
+        raise ReleaseError(message) from exc
+    try:
+        if _artifact_entry_identity(os.fstat(child_fd)) != identity:
+            raise ReleaseError(message)
+        yield child_fd
+        check_entry()
+    finally:
+        os.close(child_fd)
+
+
+def _copy_artifact_entries(
+    root_fd: int, snapshot: Path, topology: dict[str, os.stat_result]
+) -> None:
+    """Hold inventoried parents across sibling reads and recheck each on return."""
+    children = defaultdict(list)
+    for relative, entry in topology.items():
+        parent, _, name = relative.rpartition("/")
+        children[parent].append((name, relative, entry))
+
+    def copy(parent_fd: int, directory: Path, parent: str) -> None:
+        for name, relative, expected in children.get(parent, ()):
+            destination = directory / name
+            if stat.S_ISREG(expected.st_mode):
+                destination.write_bytes(
+                    _read_artifact_regular_file(parent_fd, name, relative, expected)
+                )
+            elif stat.S_ISDIR(expected.st_mode):
+                with _held_artifact_directory(parent_fd, name, relative, expected) as child_fd:
+                    destination.mkdir()
+                    copy(child_fd, destination, relative)
+
+    copy(root_fd, snapshot, "")
 
 
 @contextmanager
@@ -6690,19 +6966,7 @@ def _capture_artifact_snapshot(
                 temporary_fd, temporary_path, "artifact", create=False
             )
             snapshot = _descriptor_path(snapshot_fd)
-            for relative, entry in sorted(
-                topology.items(),
-                key=lambda item: (len(PurePosixPath(item[0]).parts), item[0]),
-            ):
-                destination = snapshot.joinpath(*PurePosixPath(relative).parts)
-                if stat.S_ISDIR(entry.st_mode):
-                    destination.mkdir()
-                elif stat.S_ISREG(entry.st_mode):
-                    destination.write_bytes(
-                        _read_artifact_regular_file(
-                            root_fd, relative, entry, topology
-                        )
-                    )
+            _copy_artifact_entries(root_fd, snapshot, topology)
             yield snapshot
         finally:
             if snapshot_fd is not None:
@@ -6747,6 +7011,37 @@ def _verify_output_contents(
             _verify_snapshot_contents(manifest, publications, snapshot, preview)
         finally:
             _require_artifact_topology_matches(output_fd, topology)
+
+
+def _verification_source_page_renderer(included_ids, preview, authorization, *, prepare=False):
+    """Use only canonical HTML prepared inside this verifier's held source operation."""
+    def render(source, route):
+        return render_source_page(source, route, included_ids, preview, authorization)
+
+    retained = held_source_inventory("verified-source-page-expectations", dict)
+    if not retained and not prepare:
+        return render
+    # Refreshed policy objects compare by value. Include the entire authorization,
+    # including its approved source hashes, not only the fields rendered today.
+    binding = (frozenset(included_ids), preview, hashlib.sha256(json.dumps(
+        authorization, sort_keys=True, ensure_ascii=False,
+    ).encode("utf-8")).digest())
+    if prepare:
+        pages = {**PAGE_MAP, **included_document_pages(included_ids)}
+        retained[binding] = {(source, route): render(source, route) for source, route in pages.items()}
+    expected = retained.get(binding, {})
+    def lookup(source, route):
+        key = (source, route)
+        return expected[key] if key in expected else render(source, route)
+    return lookup
+
+
+def prepare_verification_source_pages(manifest, publications, preview):
+    """Pre-render from canonical inputs without inspecting the deployment tree."""
+    included = included_publications(publications, preview)
+    _verification_source_page_renderer(
+        set(included), preview, artifact_authorization(manifest, included), prepare=True,
+    )
 
 
 def _verify_snapshot_contents(
@@ -6831,17 +7126,12 @@ def _verify_snapshot_contents(
         errors.append("artifact manifest does not exactly match the release policy")
     included_ids = set(included)
     rendered_pages = {**PAGE_MAP, **included_document_pages(included_ids)}
+    expected_source_page = _verification_source_page_renderer(included_ids, preview, expected_authorization)
     for source_relative, output_relative in rendered_pages.items():
         html_path = output / output_relative
         if html_path.is_file() and html_path.read_text(
             encoding="utf-8", errors="replace"
-        ) != render_source_page(
-            source_relative,
-            output_relative,
-            included_ids,
-            preview,
-            expected_authorization,
-        ):
+        ) != expected_source_page(source_relative, output_relative):
             errors.append(f"{output_relative}: rendered page does not match its approved source")
 
     for figure, source_path in included_web_figures(included_ids).items():
@@ -6953,6 +7243,9 @@ def _verify_snapshot_contents(
         relative for relative, asset in native_tex_catalog()["assets"].items()
         if asset.get("kind") == "source-text"
     }
+    # Privacy, fragment and catalog checks read the same private artifact
+    # snapshot. Discard its parsed links and anchors with this verification.
+    parse_html = cache(parsed_html)
     for path in output.rglob("*"):
         relative = path.relative_to(output).as_posix()
         if (not path.is_file() or path.suffix not in TEXT_SUFFIXES | {".svg"}
@@ -6967,7 +7260,7 @@ def _verify_snapshot_contents(
         # The links a page carries are a property of the page, so it is parsed
         # once here rather than once per excluded publication.
         links = (
-            [unquote(href) for href in parsed_html(path).links]
+            [unquote(href) for href in parse_html(path).links]
             if path.suffix == ".html"
             else ()
         )
@@ -7044,8 +7337,8 @@ def _verify_snapshot_contents(
                 errors.append(f"{html_path.relative_to(output)}: public indexing is enabled")
 
     errors.extend(verify_link_previews(output, preview, expected_authorization))
-    errors.extend(verify_links(output))
-    errors.extend(verify_catalog_reachability(manifest, included, output))
+    errors.extend(verify_links(output, parse_html))
+    errors.extend(verify_catalog_reachability(manifest, included, output, parse_html))
     errors.extend(verify_web_data(output, pdf_aliases))
     checksum_path = output / "SHA256SUMS"
     if not checksum_path.is_file():
@@ -7683,6 +7976,12 @@ def main() -> int:
         choices=("github-pages",),
         help="with verify, reject conditions the named deployment target cannot enforce",
     )
+    parser.add_argument(
+        "--prepared-products",
+        action="store_true",
+        help="with build, require and verify existing browser products without generating them",
+    )
+    parser.add_argument("--figure-runner", help="with build, prepare the web figures using host or docker:<image>")
     parser.add_argument("--provider", help="with check --document, select one proper's provider")
     parser.add_argument("--document", help="with check --provider, select this canonical proper's three source outputs")
     with_examples(parser, tuple(e for verb in EXAMPLES for e in EXAMPLES[verb]))
@@ -7695,11 +7994,15 @@ def main() -> int:
             raise ReleaseError("--deployment-target is valid only for public artifact verification")
         if args.preview and args.command in {"check", "prepare"}:
             raise ReleaseError(f"--preview is not meaningful with {args.command}")
-        if args.command == "build":
+        if args.prepared_products and args.command != "build":
+            raise ReleaseError("--prepared-products is valid only for build")
+        if args.figure_runner is not None and args.command != "build":
+            raise ReleaseError("--figure-runner is valid only for build")
+        if args.command == "build" and not args.prepared_products:
             prepare_browser_products()
         # One command, one scan of the copied browser/data inputs, released
         # when this command ends. See `held_repository_inputs`.
-        with held_repository_inputs():
+        with held_repository_inputs(prefetch_web=args.command in {"build", "verify"}):
             manifest = load_manifest()
             installed_scope = None
             if args.provider or args.document:
@@ -7723,6 +8026,19 @@ def main() -> int:
                     print("publication scope: " + ", ".join(leaf for _, leaf in sorted(installed_scope)))
                     print("This source-policy check is not a deployment verification.")
             elif args.command == "build":
+                if args.figure_runner is not None:
+                    from _web_edition_figures import FigureError
+                    from _web_figure_build import prepare
+                    products = held_browser_products()
+                    if products is None:
+                        raise ReleaseError("web figures require verified web-edition products")
+                    candidates = os.environ.get("TRIPTYCH_WEB_FIGURE_CANDIDATES")
+                    try:
+                        report = prepare(ROOT, products, web_figures_root(), runner=args.figure_runner,
+                                         candidates=Path(candidates) if candidates is not None else None)
+                    except FigureError as error:
+                        raise ReleaseError(f"web-edition figures: {error}") from error
+                    print(json.dumps(report, sort_keys=True))
                 output = build_site(manifest, publications, args.preview)
                 verify_command = "verify --preview" if args.preview else "verify"
                 print(

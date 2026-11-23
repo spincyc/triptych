@@ -5,6 +5,7 @@ import gzip
 import hashlib
 import json
 from pathlib import Path
+from types import SimpleNamespace
 import tempfile
 import sys
 from urllib.parse import urljoin
@@ -86,6 +87,24 @@ class NativeTeXPublicationTest(unittest.TestCase):
         pin = {"url": route, "sha256": digest(payload), "bytes": len(payload)}
         self.runtime["engines"].setdefault(engine, {})[role] = pin
         return pin
+
+    def test_full_and_reference_source_paths_use_identical_runtime_and_output_checks(self):
+        from _native_tex_publication import catalog
+        source = mock.Mock(side_effect=lambda **kwargs: copy.deepcopy(self.source_catalog))
+        with (mock.patch("_native_print.admission_inputs", return_value=set()),
+              mock.patch("_native_print.admitted_documents", return_value=self.documents),
+              mock.patch("_native_print.source_revision", return_value=self.revision),
+              mock.patch("_native_tex_assets.public_manifest", return_value=self.runtime),
+              mock.patch("_native_tex_assets.payload_paths", return_value=self.paths),
+              mock.patch("_native_print_bundles.prepare_catalog",
+                         return_value=copy.deepcopy(self.source_catalog)) as prepare):
+            expected = catalog(self.root)
+            self.assertEqual(catalog(self.root, source_loader=source), expected)
+            prepare.assert_called_once()
+            source.assert_called_once_with(root=self.root, documents=self.documents, revision=self.revision)
+            self.runtime_file.write_bytes(b"changed")
+            with self.assertRaisesRegex(NativeTeXPublicationError, "pinned bytes"):
+                catalog(self.root, source_loader=source)
 
     def test_large_engine_transports_preserve_original_pins_and_bytes(self):
         payloads = {"wasm": b"\0asm" + b"original engine" * 22000,
@@ -448,6 +467,32 @@ class PublicAlphaNativeTeXTest(unittest.TestCase):
         patch = mock.patch.dict("sys.modules", {"_native_tex_publication": module})
         patch.start()
         self.addCleanup(patch.stop)
+
+    def test_reference_requires_an_external_digest_for_this_run_and_checkout(self):
+        import os
+        revision = "a" * 40
+        directory = self.root / ".scratch/ref"
+        env = {"TRIPTYCH_NATIVE_REFERENCE_DIR": str(directory),
+               "TRIPTYCH_NATIVE_REFERENCE_SHA256": "a" * 64,
+               "GITHUB_ACTIONS": "true", "GITHUB_RUN_ID": "27", "GITHUB_RUN_ATTEMPT": "2",
+               "GITHUB_SHA": revision}
+        with mock.patch.dict(os.environ, {}, clear=True):
+            self.assertIsNone(self.tool._native_reference_loader())
+        for key in env:
+            with self.subTest(missing=key), mock.patch.dict(
+                    os.environ, {k: v for k, v in env.items() if k != key}, clear=True):
+                with self.assertRaises(self.tool.ReleaseError):
+                    self.tool._native_reference_loader()
+        read = mock.Mock()
+        with mock.patch.dict(os.environ, env, clear=True), mock.patch.dict(
+                sys.modules, {"_native_print_reference": SimpleNamespace(load_reference_catalog=read)}):
+            load = self.tool._native_reference_loader()
+            with self.assertRaisesRegex(self.tool.ReleaseError, "revision differs"):
+                load(root=self.root, documents={}, revision="b" * 40)
+            read.assert_not_called()
+            self.assertIs(load(root=self.root, documents={}, revision=revision), read.return_value)
+            read.assert_called_once_with(directory, root=self.root, documents={}, revision=revision,
+                                         run_id="27", run_attempt="2", expected_sha256="a" * 64)
 
     def test_source_first_site_build_and_independent_verification_include_exact_native_payloads(self):
         publications, output = self.base.build_verified()

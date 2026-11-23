@@ -1649,6 +1649,36 @@ class PublicAlphaTest(unittest.TestCase):
                 self.tool.require_locked_markdown_dependency()
         self.assertIn("does not match the bound dependency lock", str(failure.exception))
 
+    def test_writer_reuses_only_its_exact_reader_markdown_and_expands_figures_at_the_route(self):
+        figure = "0" * 64
+        raw = f'# Test\n\n[ref](#test)\n\n<img src="web-figures/{figure}.svg">\n'
+        keys = [("gpt", name) for name in ("exact", "changed", "linked", "held", "bad-pin")]
+        records = {key: {"markdown": raw if key[1] != "linked" else "[reader](../other.md)"} for key in keys}
+        declared = {"publication:gpt/" + name: {} for name in ("exact", "changed", "linked", "bad-pin")}
+        authorization = self.manifest["authorizations"]["test-authorization"]
+
+        def render(name, markdown):
+            return self.tool.render_page(f"web/gpt/{name}.md", markdown, f"web/gpt/{name}.html", False, authorization)
+
+        expected = render("exact", raw)
+        changed = render("changed", raw + "Different.\n")
+        linked = render("linked", "[reader](reader.html)")
+        with (self.tool.held_repository_inputs(), mock.patch("_native_print.admitted_documents", return_value=declared),
+              mock.patch.object(self.tool, "web_edition_products", return_value=dict.fromkeys(keys)),
+              mock.patch.object(self.tool, "web_edition_record", side_effect=lambda *k: records[k]),
+              mock.patch.object(self.tool, "render_markdown", wraps=self.tool.render_markdown) as convert):
+            self.tool.prefetch_reader_markdown()
+            self.assertEqual(convert.call_count, 3)
+            self.assertEqual(render("exact", raw), expected)
+            self.assertIn(f'../../web-figures/{figure}.svg', expected)
+            self.assertEqual(convert.call_count, 3)
+            self.assertEqual(render("changed", raw + "Different.\n"), changed)
+            self.assertEqual(render("linked", "[reader](reader.html)"), linked)
+            self.assertEqual(convert.call_count, 5)
+            self.write("requirements-public-alpha.txt", b"Markdown==0.0.0\n")
+            with self.assertRaisesRegex(self.tool.ReleaseError, "dependency lock"):
+                render("bad-pin", raw)
+
     def test_long_form_contents_marker_renders_linked_unique_anchors(self) -> None:
         headings = "\n\n".join(
             f"## Part {number}\n\n### Detail {number}\n\nText {number}."
@@ -1859,16 +1889,10 @@ class PublicAlphaTest(unittest.TestCase):
         )
         makefile = (REPOSITORY_ROOT / "Makefile").read_text(encoding="utf-8")
         self.assertIn("public-site: check-deployment-sources", makefile)
-        self.assertIn(
-            "python tools/tpt public-alpha verify --deployment-target github-pages",
-            workflow,
-        )
+        verify = "run: python .github/scripts/pages-native-reference.py --verify-site"
+        self.assertEqual(workflow.count(verify), 1)
+        self.assertLess(workflow.index(verify), workflow.index("actions/upload-pages-artifact"))
         self.assertIn("pages-site-members: public-site-artifact deployment-source-gates", makefile)
-        self.assertLess(workflow.index("make pages-site"), workflow.index("--deployment-target github-pages"))
-        self.assertLess(
-            workflow.index("--deployment-target github-pages"),
-            workflow.index("actions/upload-pages-artifact"),
-        )
 
     def test_root_landings_use_the_exact_section_hierarchy(self) -> None:
         expected = [
@@ -2114,6 +2138,44 @@ class PublicAlphaTest(unittest.TestCase):
         output = self.tool.build_site(self.manifest, publications, preview=False)
         self.tool.verify_output(self.manifest, publications, output, preview=False)
         return publications, output
+
+    def test_prepared_html_is_independent_of_the_artifact_and_still_checked(self) -> None:
+        publications, output = self.build_verified_artifact()
+        with self.tool.held_repository_inputs(), mock.patch.object(
+            self.tool, "render_source_page", wraps=self.tool.render_source_page
+        ) as render:
+            self.tool.prepare_verification_source_pages(self.manifest, publications, False)
+            prepared = render.call_count
+            self.assertGreater(prepared, 0)
+            self.tool.verify_output(self.manifest, publications, output, False)
+            self.assertEqual(render.call_count, prepared)
+            index = output / "index.html"
+            index.write_text(index.read_text() + "changed")
+            self.tool.write_checksums(output)
+            with self.assertRaisesRegex(self.tool.ReleaseError, "rendered page does not match"):
+                self.tool.verify_output(self.manifest, publications, output, False)
+            self.assertEqual(render.call_count, prepared)
+
+    def test_prepared_html_is_scoped_to_policy_admissions_routes_and_operation(self) -> None:
+        scope = {("gpt", "work")}
+        with mock.patch.object(self.tool, "render_source_page", return_value="fresh") as render:
+            with self.tool.held_repository_inputs():
+                self.tool._verification_source_page_renderer(scope, False, {"x": 1}, prepare=True)
+                render.reset_mock()
+                def get(ids=scope, preview=False, auth=None, route="index.html"):
+                    render_page = self.tool._verification_source_page_renderer(
+                        ids, preview, {"x": 1} if auth is None else auth
+                    )
+                    return render_page("README.md", route)
+                self.assertEqual(get(), "fresh")
+                render.assert_not_called()
+                for args in ((set(), False, None, "index.html"), (scope, True, None, "index.html"),
+                             (scope, False, {"x": 2}, "index.html"), (scope, False, None, "moved.html")):
+                    self.assertEqual(get(*args), "fresh")
+                self.assertEqual(render.call_count, 4)
+            with self.tool.held_repository_inputs():
+                self.assertEqual(get(), "fresh")
+            self.assertEqual(render.call_count, 5)
 
     def test_verifier_passes_when_every_site_source_matches_its_approved_hash(
         self,
@@ -2620,6 +2682,25 @@ class PublicAlphaTest(unittest.TestCase):
                     str(failure.exception),
                 )
 
+    def test_protected_ids_match_the_decoded_value_and_exact_token_boundaries(self):
+        relative = "src/web/data/structure/propers/identities.json"
+        manifest = "src/sources/works/test/id/editions/test/artifacts/data/artifact.toml"
+        for identity in ("artifact.fixture.secret", "artifact.Fixture+secret"):
+            self.write(manifest, (f'id = "{identity}"\nedition_id = "edition.id"\n'
+                                  'rights_status = "licensed"\n').encode())
+            self.tool._PROTECTED_IDENTITY_PATTERNS.clear()
+            self.tool._PROTECTED_IDENTITY_MARKERS.clear()
+            for text, blocked in ((f"({identity})", True), (identity + ".longer", False),
+                                  ("x" + identity, False), (" " + identity + "/", True)):
+                with self.subTest(text=text):
+                    raw = json.dumps({"notes": text}).replace("artifact.", r"artifact\u002e")
+                    self.write(relative, raw.encode())
+                    if blocked:
+                        with self.assertRaisesRegex(self.tool.ReleaseError, "protected source identity"):
+                            self.tool.validate_liturgical_public_data(self.root / relative)
+                    else:
+                        self.tool.validate_liturgical_public_data(self.root / relative)
+
     def test_liturgy_quarantine_rejects_metadata_free_exact_text_value(self) -> None:
         for relative in (
             "src/web/data/structure/propers/test.json",
@@ -2874,6 +2955,30 @@ class PublicAlphaTest(unittest.TestCase):
         verify_output.assert_not_called()
         self.assertTrue((output / "SHA256SUMS").is_file())
 
+    def test_held_pictorial_selection_rechecks_source_bytes_and_membership(self) -> None:
+        self.write("art/image.png", b"one")
+        self.write("records/current.toml", b"current")
+        def discover(root):
+            records = {p.relative_to(root).as_posix() for p in (root / "records").glob("*.toml")}
+            return {"small": {"art/image.png"}}, records
+
+        with mock.patch.object(self.tool, "_pictorial_gallery_selection", side_effect=discover) as select:
+            for relative in ("art/image.png", "records/current.toml", "records/added.toml"):
+                with self.subTest(relative=relative), self.assertRaisesRegex(
+                    self.tool.ReleaseError, "pictorial selection changed"
+                ), self.tool.held_repository_inputs():
+                    self.tool.pictorial_gallery_selection()
+                    self.write(relative, b"changed")
+            self.assertEqual(select.call_count, 6)
+            select.reset_mock()
+            with self.tool.held_repository_inputs():
+                first, sources = self.tool.pictorial_gallery_selection()
+                first["small"].clear()
+                sources.clear()
+                self.assertEqual(self.tool.pictorial_gallery_selection(), discover(self.root))
+                self.assertEqual(select.call_count, 1)
+            self.assertEqual(select.call_count, 2)
+
     def test_build_refuses_symlinked_output_root_without_deleting_external_target(
         self,
     ) -> None:
@@ -2995,17 +3100,17 @@ class PublicAlphaTest(unittest.TestCase):
             external_identity = external.stat()
 
             def swap_at_read_boundary(
-                root_fd: int,
+                parent_fd: int,
+                name: str,
                 relative: str,
                 expected,
-                topology,
             ) -> bytes:
                 nonlocal swapped
                 if relative == "PUBLICATION-MANIFEST.json" and not swapped:
                     artifact.rename(held)
                     artifact.symlink_to(external)
                     swapped = True
-                return original_read(root_fd, relative, expected, topology)
+                return original_read(parent_fd, name, relative, expected)
 
             def guarded_open(path, flags: int, *args, **kwargs):
                 dir_fd = kwargs.get("dir_fd")
@@ -3063,6 +3168,53 @@ class PublicAlphaTest(unittest.TestCase):
                     artifact.unlink()
                 if held.exists():
                     held.rename(artifact)
+
+    def test_snapshot_holds_each_directory_once_and_captures_empty_directories(self) -> None:
+        source = self.root / "artifact"
+        files = {
+            "a/b/one.json": b"one", "a/b/two.json": b"two", "a/three.json": b"three"
+        }
+        for name, data in files.items():
+            self.write("artifact/" + name, data)
+        (source / "empty").mkdir()
+        descriptor = os.open(source, self.tool.DIRECTORY_OPEN_FLAGS)
+        self.addCleanup(os.close, descriptor)
+        topology = self.tool._scan_artifact_topology(descriptor)
+        with mock.patch.object(os, "open", wraps=os.open) as opens:
+            with self.tool._capture_artifact_snapshot(descriptor, topology) as snapshot:
+                paths = {p.relative_to(snapshot).as_posix() for p in snapshot.rglob("*")}
+                self.assertEqual(paths, set(topology))
+                self.assertEqual({k: (snapshot / k).read_bytes() for k in files}, files)
+                names = [call.args[0] for call in opens.call_args_list]
+                for name in ("a", "b", "empty"):
+                    self.assertEqual(names.count(name), 1)
+
+    def test_snapshot_rejects_replaced_held_parent_before_accepting_siblings(self) -> None:
+        source = self.root / "artifact"
+        self.write("artifact/nested/a.json", b"a")
+        self.write("artifact/nested/b.json", b"b")
+        alternate = self.root / "alternate"
+        self.write("alternate/b.json", b"external")
+        descriptor = os.open(source, self.tool.DIRECTORY_OPEN_FLAGS)
+        self.addCleanup(os.close, descriptor)
+        topology = self.tool._scan_artifact_topology(descriptor)
+        read = self.tool._read_artifact_regular_file
+        captured = {}
+
+        def replace_after_read(parent_fd, name, relative, expected):
+            data = read(parent_fd, name, relative, expected)
+            captured[relative] = data
+            if name == "a.json":
+                (source / "nested").rename(self.root / "moved")
+                (source / "nested").symlink_to(alternate, target_is_directory=True)
+            return data
+
+        with mock.patch.object(
+            self.tool, "_read_artifact_regular_file", side_effect=replace_after_read
+        ), self.assertRaisesRegex(self.tool.ReleaseError, "artifact path changed during verification: nested"):
+            with self.tool._capture_artifact_snapshot(descriptor, topology):
+                self.fail("captured a directory replaced during verification")
+        self.assertEqual(captured, {"nested/a.json": b"a", "nested/b.json": b"b"})
 
     def test_cleanup_swap_cannot_redirect_build_deletion_outside_output_root(
         self,

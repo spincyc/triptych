@@ -284,20 +284,20 @@ class BrowserCacheBootstrapTests(unittest.TestCase):
             with self.subTest(url=url), self.assertRaises(bootstrap.BootstrapError):
                 handler.redirect_request(request, None, 302, "redirect", {}, url)
 
-    def test_workflow_bootstraps_explicitly_and_saves_before_independent_verification(self):
+    def test_workflow_bootstraps_explicitly_and_saves_after_independent_verification(self):
         workflow = yaml.safe_load((ROOT / ".github/workflows/pages.yml").read_text())
         job = workflow["jobs"]["build"]
         self.assertEqual(job["timeout-minutes"], 180)
         steps = job["steps"]
         names = [step["name"] for step in steps]
         positions = [names.index(name) for name in ("Restore browser product candidates", "Bootstrap optional browser product candidates",
-                     "Validate sources and build public artifact", "Retain verified current browser products", "Save verified browser products",
-                     "Verify artifact and GitHub Pages compatibility", "Configure Pages", "Upload verified artifact")]
+                     "Validate sources, build and verify public artifact", "Save verified browser products",
+                     "Configure Pages", "Upload verified artifact")]
         self.assertEqual(positions, sorted(positions))
         bootstrap_step = steps[names.index("Bootstrap optional browser product candidates")]
         self.assertEqual(bootstrap_step["run"], "python scripts/_browser_cache_bootstrap.py --fetch")
         self.assertEqual(bootstrap_step["if"], "steps.browser-cache.outputs.cache-hit != 'true'")
-        self.assertNotIn("if", steps[names.index("Verify artifact and GitHub Pages compatibility")])
+        self.assertNotIn("if", steps[names.index("Validate sources, build and verify public artifact")])
 
 
 if __name__ == "__main__":

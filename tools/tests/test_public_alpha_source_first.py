@@ -38,6 +38,22 @@ class PublicAlphaSourceFirstTest(unittest.TestCase):
         self.write_reader("work")
         shutil.rmtree(self.root / "pdf")
 
+    def test_publication_inventory_batches_dependency_traces_on_the_verifying_assembly(self):
+        key = ("gpt", "work")
+        expected = self.tool.publication_source_identity(*key)
+        with self.tool.held_repository_inputs():
+            assembly = self.tool.document_assembly()
+            with mock.patch.object(assembly, "prefetch_dependencies", wraps=assembly.prefetch_dependencies) as batch:
+                self.tool.site_source_paths(self.manifest)
+                owners = list(batch.call_args_list[0].args[0])
+                self.assertIn(self.root / "src/gpt/work", owners)
+                self.assertEqual(len(owners), len(set(owners)))
+                self.assertEqual(expected, self.tool.publication_source_identity(*key))
+                self.tool.prefetch_publication_dependencies([key, key, ("gpt", "absent")])
+                self.assertEqual(list(batch.call_args.args[0]), [self.root / "src/gpt/work"])
+                with self.assertRaisesRegex(self.tool.ReleaseError, "no canonical source"):
+                    self.tool.publication_source_identity("gpt", "absent")
+
     def write_reader(self, leaf: str) -> None:
         self.write(
             f"src/gpt/{leaf}/web-edition.toml",

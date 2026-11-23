@@ -741,9 +741,7 @@ def _generate(root, *, full=False, validate_readers=True):
                 if record is None:
                     raise CorpusIndexError(f'source record absent from prior index: {path}')
             else:
-                data = changed.get(path)
-                if data is None:
-                    data, _ = _safe_read(root, path)
+                # Parse the exact bytes that produced this row's hash above.
                 try:
                     value = tomllib.loads(data.decode('utf-8'))
                 except (ValueError, UnicodeError) as error:
@@ -783,9 +781,11 @@ def _generate(root, *, full=False, validate_readers=True):
                     'root_bytes': len(output['index.json'])}
 
 
-def _refresh_unlocked(root, *, full=False, check=False):
+def _refresh_unlocked(root, *, full=False, check=False, expected_identity=None):
     root = Path(root).absolute()
     output, report = _generate(root, full=full or check)
+    if expected_identity is not None and _sha(output['index.json']) != expected_identity:
+        raise CorpusIndexError('canonical corpus changed during reader verification; check again')
     destination = root / INDEX
     existing = {path.relative_to(destination).as_posix() for path in destination.rglob('*') if path.is_file()}
     if check:
@@ -819,12 +819,12 @@ def _maintenance_lock(root):
         os.close(descriptor)
 
 
-def refresh(root, *, full=False, check=False, readers=False):
+def refresh(root, *, full=False, check=False, readers=False, jobs=1):
     root = Path(root).absolute()
     with _maintenance_lock(root):
         if readers:
             from _reader_index import maintain
-            return maintain(root, full=full, check=check)
+            return maintain(root, full=full, check=check, jobs=jobs)
         return _refresh_unlocked(root, full=full, check=check)
 
 
@@ -835,9 +835,16 @@ def main(argv=None):
     parser.add_argument('--full', action='store_true', help='independently hash and parse every input')
     parser.add_argument('--json', action='store_true')
     parser.add_argument('--readers', action='store_true', help='derive/replay every thin reader index before the canonical index')
+    parser.add_argument('--jobs', type=int, metavar='N',
+                        help='concurrent independent reader checks (default: up to three)')
     args = parser.parse_args(argv)
+    if args.jobs is not None and (args.command != 'check' or not args.readers or args.jobs < 1):
+        parser.error('--jobs requires check --readers and a positive integer')
+    parallel_check = args.command == 'check' and args.readers
+    available = getattr(os, 'process_cpu_count', os.cpu_count)() or 1
+    jobs = args.jobs or (min(3, available) if parallel_check else 1)
     try:
-        report = refresh(args.root, full=args.full, check=args.command == 'check', readers=args.readers)
+        report = refresh(args.root, full=args.full, check=args.command == 'check', readers=args.readers, jobs=jobs)
     except (CorpusIndexError, OSError, ValueError) as error:
         if args.json:
             print(_json({'v': 1, 'status': 'error', 'code': 'invalid-index', 'error': str(error)}).decode(), end='', file=sys.stderr)

@@ -2345,7 +2345,9 @@ def severed_runs(sources: str, markdown: str, span: int = 6) -> list[str]:
     """
     if not sources.strip():
         return []
-    runs = source_word_runs(sources)
+    # WORD_RE tokens contain no whitespace. Spaces preserve whole-word matches,
+    # and a newline separates source runs no output window may straddle.
+    runs = "\n".join(f" {' '.join(run)} " for run in source_word_runs(sources))
     blocks = prose_blocks(markdown)
     severed = []
     for index, block in enumerate(blocks[1:], start=1):
@@ -2356,12 +2358,7 @@ def severed_runs(sources: str, markdown: str, span: int = 6) -> list[str]:
         tail = [w.casefold() for w in WORD_RE.findall(block)][:span]
         if len(head) < span or len(tail) < span:
             continue
-        joined = head + tail
-        if any(
-            run[start : start + len(joined)] == joined
-            for run in runs
-            for start in range(len(run) - len(joined) + 1)
-        ):
+        if " ".join(("", *head, *tail, "")) in runs:
             severed.append(f"{previous[-40:]!r} then {block[:40]!r}")
     return severed
 
@@ -3175,12 +3172,12 @@ def audit_output(
     return failures
 
 
-def edition_revision(provider: str, entry: Path) -> str:
+def edition_revision(provider: str, entry: Path, *, assembly=None) -> str:
     """The edition's derived "Last revised" value; scripts/_edition_revision.py owns the rule."""
     from _edition_revision import RevisionError, revision_for_entrypoint
     try:
         return revision_for_entrypoint(SRC.parent, provider, entry,
-                                       repository=_SHARED.get("repository")).display
+                                       repository=_SHARED.get("repository"), assembly=assembly).display
     except (RevisionError, ValueError) as exc:
         raise ConversionError(f"cannot derive the revision stamp: {exc}") from exc
 
@@ -3323,7 +3320,7 @@ def convert_markdown(provider: str, leaf: str, *, selected: dict | None = None,
         body += "\n\\TriptychRightsNotice\n"
     # The stamp is derived, not tracked: print it where the metadata record
     # is read, as the PDF does, or else just before the rights colophon.
-    stamp = f"\\AIDocumentRevisionTimestamp{{{edition_revision(provider, main)}}}\n"
+    stamp = f"\\AIDocumentRevisionTimestamp{{{edition_revision(provider, main, assembly=assembly)}}}\n"
     at = body.find(r"\AIGenerationProvenance")
     at = at if at >= 0 else body.find(r"\TriptychRightsNotice")
     body = body[:at] + stamp + body[at:]
@@ -3909,6 +3906,7 @@ def share_parent_state() -> None:
         state = _edition_revision.Repository(ROOT)
         state.tracked()
         state.changed()
+        state.prepare_history()
         _SHARED["repository"] = state
 
     for step in (
@@ -4092,7 +4090,7 @@ def check_main(argv: list[str]) -> int:
     return 0
 
 
-def build_products(out: Path, *, jobs: int | None = None) -> dict:
+def build_products(out: Path, *, jobs: int | None = None, cached: dict[str, bytes] | None = None) -> dict:
     """Write every reader output as one JSON product below ``out``.
 
     Each output converts in its own process forked from a parent that has
@@ -4107,20 +4105,33 @@ def build_products(out: Path, *, jobs: int | None = None) -> dict:
     destination = out / PRODUCT_PREFIX
     if destination.exists():
         raise ConversionError(f"product destination already exists: {destination}")
-    records = convert_rows(rows, jobs=jobs)
+    # Only browser-products build passes editions, after checking their exact
+    # bytes against the current descriptor. The CLI and cold proofs pass none.
+    cached = cached or {}
+    paths = [f"{PRODUCT_PREFIX}/{row['provider']}/{row['document']}.json" for row in rows]
+    missing = [row for row, path in zip(rows, paths) if path not in cached]
+    converted = iter(convert_rows(missing, jobs=jobs)) if missing else iter(())
     index = []
-    for record in records:
-        relative = f"{PRODUCT_PREFIX}/{record['provider']}/{record['output']}.json"
+    for relative in paths:
+        if relative in cached:
+            body = cached[relative]
+            record = json.loads(body)
+        else:
+            record = next(converted)
+            body = canonical_json(record)
         path = out / relative
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_bytes(canonical_json(record))
+        path.write_bytes(body)
         index.append({key: record[key] for key in (
             "id", "provider", "output", "canonical", "edition", "eligibility",
             "blocking_constructs", "markdown_sha256")}
             | {"path": relative, "figures": [figure["id"] for figure in record["figures"]]})
     (destination / "index.json").write_bytes(canonical_json(
         {"schema": INDEX_SCHEMA, "toolchain": toolchain, "editions": index}))
-    return {"editions": len(index)}
+    summary = {"editions": len(index)}
+    if cached:
+        summary.update(reused=len(index) - len(missing), converted=len(missing))
+    return summary
 
 
 def product_json(identity: str) -> int:
@@ -4177,24 +4188,6 @@ def product_row_json(identity: str, *, indexed: bool = False) -> int:
     return 0
 
 
-def figure_records_from_products() -> list[dict]:
-    """Every figure record of the verified web-edition products."""
-    from _browser_products import ProductError, verified_products
-    try:
-        with verified_products(ROOT, product_ids=["web-editions"]) as products:
-            index = json.loads(products.files[f"{PRODUCT_PREFIX}/index.json"].read_bytes())
-            if index.get("schema") != INDEX_SCHEMA:
-                raise ConversionError("unsupported web-edition product index")
-            records = []
-            for row in index["editions"]:
-                if row["figures"]:
-                    record = json.loads(products.files[row["path"]].read_bytes())
-                    records.extend(record["figures"])
-            return records
-    except (ProductError, KeyError) as error:
-        raise ConversionError(f"web-edition products are not available: {error}") from error
-
-
 def figures_main(argv: list[str]) -> int:
     parser = argparse.ArgumentParser(
         prog="web-edition figures",
@@ -4203,23 +4196,21 @@ def figures_main(argv: list[str]) -> int:
                         help="figure directory the site build reads (default build/web-figures)")
     parser.add_argument("--runner", default="host",
                         help="host, or docker:<image> to compile in the pinned TeX image")
+    parser.add_argument("--candidates", type=Path, default=os.environ.get("TRIPTYCH_WEB_FIGURE_CANDIDATES"),
+                        help="untrusted SVG cache for a digest-pinned Pages runner")
     parser.add_argument("--force", action="store_true",
                         help="recompile even when the directory already holds every current figure")
     arguments = parser.parse_args(argv)
+    from _browser_products import ProductError, verified_products
+    from _web_figure_build import prepare
     try:
-        records = figure_records_from_products()
-        wanted = sorted({record["id"] for record in records})
-        if not arguments.force and not web_figures.check(arguments.out, wanted):
-            print(json.dumps({"figures": len(wanted), "out": str(arguments.out),
-                              "status": "current"}, sort_keys=True))
-            return 0
-        manifest = web_figures.compile_figures(records, arguments.out, root=ROOT,
-                                               runner=arguments.runner)
-    except (ConversionError, web_figures.FigureError) as error:
+        with verified_products(ROOT, product_ids=["web-editions"]) as products:
+            report = prepare(ROOT, products, arguments.out, runner=arguments.runner,
+                             candidates=arguments.candidates, force=arguments.force)
+    except (ProductError, web_figures.FigureError) as error:
         print(f"web-edition figures: {error}", file=sys.stderr)
         return 1
-    print(json.dumps({"figures": len(manifest["figures"]), "out": str(arguments.out),
-                      "toolchain": manifest["toolchain"]}, sort_keys=True))
+    print(json.dumps(report, sort_keys=True))
     return 0
 
 

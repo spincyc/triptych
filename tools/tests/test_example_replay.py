@@ -359,13 +359,13 @@ class MachineryTests(unittest.TestCase):
 # closure instead, and only the recipes inside it are searched.
 MAKE_CONTINUATION = re.compile(r"\\\n[ \t]*")
 MAKE_RULE = re.compile(
-    r"^([a-z][a-z0-9-]*)[ \t]*:(?!=)([^\n]*)\n((?:\t[^\n]*\n|\n(?=\t))*)",
+    r"^([_a-z][_a-z0-9-]*)[ \t]*:(?!=)([^\n]*)\n((?:\t[^\n]*\n|\n(?=\t))*)",
     re.MULTILINE,
 )
 MAKE_ASSIGNMENT = re.compile(
     r"^([A-Za-z_][A-Za-z0-9_]*)[ \t]*:?=[ \t]*([^\n]*)$", re.MULTILINE
 )
-MAKE_WORD = re.compile(r"[a-z][a-z0-9-]*")
+MAKE_WORD = re.compile(r"[_a-z][_a-z0-9-]*")
 
 
 def make_rules(text: str) -> tuple[dict[str, tuple[str, str]], dict[str, str]]:

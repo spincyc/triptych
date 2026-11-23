@@ -7,6 +7,7 @@ whole operation, so changing a cache pathname cannot change bytes being served.
 from __future__ import annotations
 
 import argparse
+from concurrent.futures import ThreadPoolExecutor
 from contextlib import contextmanager
 from contextvars import ContextVar
 from dataclasses import dataclass
@@ -145,9 +146,8 @@ def _regular_bytecode(name):
     # Call only after lstat has proved a regular file. Cache directories and
     # other members remain governed inputs; a .pyc name never excuses a link
     # or special filesystem object.
-    path = PurePosixPath(name)
-    return (name.startswith(("scripts/", "tools/")) and "__pycache__" in path.parts
-            and path.suffix in {".pyc", ".pyo"})
+    return (name.startswith(("scripts/", "tools/")) and "/__pycache__/" in name
+            and PurePosixPath(name).suffix in {".pyc", ".pyo"})
 
 
 def _paths(root: Path, trees, files, excludes=()) -> set[str]:
@@ -157,7 +157,11 @@ def _paths(root: Path, trees, files, excludes=()) -> set[str]:
     def walk(directory: int, prefix: str):
         before = os.fstat(directory)
         for entry in sorted(os.scandir(directory), key=lambda value: value.name):
-            name = _relative(prefix + entry.name)
+            # scandir supplies a single directory entry; its only possible
+            # forbidden character under the product path grammar is backslash.
+            if "\\" in entry.name:
+                raise ProductError(f"unsafe browser product path: {prefix + entry.name!r}")
+            name = prefix + entry.name
             if _excluded_namespace(name) or any(name == path or name.startswith(path + "/") for path in excludes):
                 continue
             original = entry.stat(follow_symlinks=False)
@@ -285,7 +289,61 @@ def _aggregate(families: dict) -> dict:
     return value
 
 
-def _identity_batch(root: Path, recipes=None) -> dict:
+def _visit_files(root: Path, names, visit_file) -> None:
+    """Visit validated relative paths while holding every ancestor open once."""
+    tree = {}
+    for name in sorted(names):
+        node = tree
+        *directories, leaf = name.split("/")
+        for directory in directories:
+            node = node.setdefault(directory, {})
+            if node is None:
+                raise ProductError(f"input path descends through another declared file: {name}")
+        node[leaf] = None
+
+    def visit(descriptor, children, prefix):
+        for leaf, descendants in children.items():
+            name = prefix + leaf
+            if descendants is not None:
+                original = os.stat(leaf, dir_fd=descriptor, follow_symlinks=False)
+                child = os.open(leaf, os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW, dir_fd=descriptor)
+                try:
+                    if not safe_files._same_inode(original, os.fstat(child)):
+                        raise ProductError(f"canonical directory changed: {name}")
+                    visit(child, descendants, name + "/")
+                    safe_files._require_entry(descriptor, leaf, child)
+                finally:
+                    os.close(child)
+                continue
+            visit_file(descriptor, leaf, name)
+
+    try:
+        with safe_files._open_directory(Path("/"), root.as_posix().lstrip("/")) as descriptor:
+            visit(descriptor, tree, "")
+    except (OSError, safe_files.SafeFileError) as error:
+        raise ProductError(f"cannot read product input: {error}") from error
+
+
+def _input_hashes(root: Path, names: set[str]) -> dict:
+    values = {}
+    def hash_file(descriptor, leaf, name):
+        if name == "release/public-alpha.json":
+            body = _json(_policy(safe_files._read_file_at(descriptor, leaf, name)))
+            digest, size = _sha(body), len(body)
+        elif name.startswith("release/rights/"):
+            try:
+                body = _rights(safe_files._read_file_at(descriptor, leaf, name))
+            except UnicodeError as error:
+                raise ProductError(f"rights record is not UTF-8: {name}") from error
+            digest, size = _sha(body), len(body)
+        else:
+            digest, size = safe_files._file_hash_at(descriptor, leaf, name)
+        values[name] = {"path": name, "sha256": digest, "bytes": size}
+    _visit_files(root, names, hash_file)
+    return values
+
+
+def _identity_batch(root: Path, recipes=None, *, capture_files=None) -> dict:
     """One fresh content-hash pass for overlapping family closures per phase."""
     root = _safe_directory(root)
     recipes = _recipes() if recipes is None else recipes
@@ -302,19 +360,26 @@ def _identity_batch(root: Path, recipes=None) -> dict:
         files = tuple(sorted({name for spec in specs.values() for name in spec[1]}))
         found = _paths(root, trees, files)
         selected, excluded = {}, {}
+        locks = {name for name in found if "/" not in name and
+                 (name.startswith("requirements") or name.endswith((".lock", "-lock.json")))}
+        trees_by_scope, excluded_by_pattern = {}, {}
         for key, (scopes, exact, excludes) in specs.items():
-            prefixes = tuple(scope + "/" for scope in scopes)
-            scoped = {name for name in found
-                      if name in exact or name.startswith(prefixes)
-                      or "/" not in name and (name.startswith("requirements") or name.endswith((".lock", "-lock.json")))}
+            if scopes not in trees_by_scope:
+                prefixes = tuple(scope + "/" for scope in scopes)
+                trees_by_scope[scopes] = locks | {name for name in found if name.startswith(prefixes)}
+            scoped = trees_by_scope[scopes] | found.intersection(exact)
             # A present excluded path is keyed by its name and kind only: what
             # a listing of its parent or a probe of the path itself can see.
+            if excludes not in excluded_by_pattern:
+                excluded_by_pattern[excludes] = {
+                    name: path for name in found if (path := excluded_root(name, excludes)) is not None
+                } if excludes else {}
+            omitted = excluded_by_pattern[excludes]
             marked = {}
-            for name in scoped if excludes else ():
-                path = excluded_root(name, excludes)
-                if path is not None:
-                    marked[path] = "directory" if path != name else marked.get(path, "file")
-            selected[key] = {name for name in scoped if not marked or excluded_root(name, excludes) is None}
+            for name in scoped.intersection(omitted):
+                path = omitted[name]
+                marked[path] = "directory" if path != name else marked.get(path, "file")
+            selected[key] = scoped.difference(omitted)
             excluded[key] = marked
         return selected, excluded
     memberships, markers = discover()
@@ -327,21 +392,8 @@ def _identity_batch(root: Path, recipes=None) -> dict:
     for key in memberships:
         memberships[key].update(name for name, value in external.items() if value["manifest"] in memberships[key] or name in memberships[key])
     categories = {name: _component(name) for name in names}
-    values = {}
-    for name in sorted(names):
-        if name in external:
-            value = {"path": name, "external": external[name]}
-        else:
-            body = _read(root, name)
-            if name == "release/public-alpha.json":
-                body = _json(_policy(body))
-            elif name.startswith("release/rights/"):
-                try:
-                    body = _rights(body)
-                except UnicodeError as error:
-                    raise ProductError(f"rights record is not UTF-8: {name}") from error
-            value = {"path": name, "sha256": _sha(body), "bytes": len(body)}
-        values[name] = value
+    values = _input_hashes(root, names - external.keys())
+    values.update({name: {"path": name, "external": value} for name, value in external.items()})
     after, after_markers = discover()
     for key in after:
         after[key].update(name for name, value in external.items() if value["manifest"] in after[key] or name in after[key])
@@ -349,6 +401,13 @@ def _identity_batch(root: Path, recipes=None) -> dict:
         raise ProductError("canonical input membership changed while hashing")
     for name in sorted({name for marked in markers.values() for name in marked} - categories.keys()):
         categories[name] = _component(name)
+    # Supply optional build-only recovery with already hashed canonical bytes.
+    # External witnesses and normalized release-policy rows have different
+    # identity semantics and cannot stand for a raw input fingerprint.
+    for family, records in (capture_files or {}).items():
+        records.update((name, values[name]) for name in memberships.get(family, ())
+                       if name not in external and name != "release/public-alpha.json"
+                       and not name.startswith("release/rights/"))
     result = {}
     for key, members in memberships.items():
         components = {category: [] for category in ("content", "rights", "generator", "lock")}
@@ -602,8 +661,8 @@ def _compare(actual, expected):
     raise ProductError(f"browser product bytes/membership differ (missing={missing[:4]}, extra={extra[:4]}, changed={changed[:4]}); remove the corrupt exact cache entry and run `browser-products build`, or review inputs and explicitly `browser-products record`")
 
 
-def _current(root, manifest):
-    current = _identity_batch(root)
+def _current(root, manifest, *, capture_files=None):
+    current = _identity_batch(root, capture_files=capture_files)
     stale = sorted(product["id"] for product in manifest["products"] if product["inputs"] != _commitment(current[product["id"]]))
     if stale or manifest["inputs"] != _commitment(current[None]):
         raise ProductError(f"browser product inputs changed ({', '.join(stale) or 'aggregate'}); review source/rights/code changes and run `browser-products record` explicitly")
@@ -778,13 +837,15 @@ def verified_products(root: Path, *, cache_root=None, product_ids=None) -> Itera
         snapshot.mkdir()
         for product in selected:
             target = _cache_data(root, product, cache_root)
-            for name, identity in product["files"].items():
-                body = _read(target, name)
+            def copy_file(descriptor, leaf, name):
+                body = safe_files._read_file_at(descriptor, leaf, name)
+                identity = product["files"][name]
                 if {"sha256": _sha(body), "bytes": len(body)} != identity:
                     raise ProductError(f"browser product changed before private snapshot: {name}")
                 destination = snapshot / name
                 destination.parent.mkdir(parents=True, exist_ok=True)
                 destination.write_bytes(body)
+            _visit_files(target, product["files"], copy_file)
             _compare(_inventory(target), product["files"])
         if before != _read(root, MANIFEST_RELATIVE):
             raise ProductError("browser product descriptor changed before private snapshot")
@@ -805,12 +866,30 @@ def verified_products(root: Path, *, cache_root=None, product_ids=None) -> Itera
             _HELD.reset(token)
 
 
-def _generate(root, out, product_ids=None):
+def _generate(root, out, product_ids=None, *, cached_editions=None, record_jobs=None):
     from _browser_product_recipes import generate
-    generate(root, out, product_ids=product_ids)
+    generate(root, out, product_ids=product_ids, cached_editions=cached_editions, record_jobs=record_jobs)
 
 
-def _install(root, product, generated, cache_root, *, source_files=None):
+def _copy_product_files(source: Path, files: dict, destination: Path):
+    """Copy declared bytes once from held no-follow source directories."""
+    directories = set()
+
+    def copy_file(descriptor, leaf, name):
+        body = safe_files._read_file_at(descriptor, leaf, name)
+        if {"sha256": _sha(body), "bytes": len(body)} != files[name]:
+            raise ProductError(f"product changed before install: {name}")
+        target = destination / name
+        if target.parent not in directories:
+            target.parent.mkdir(parents=True, exist_ok=True)
+            directories.add(target.parent)
+        with target.open("xb") as output:
+            output.write(body)
+
+    _visit_files(_absolute(source), (_relative(name) for name in files), copy_file)
+
+
+def _install(root, product, cache_root, sources, *, recheck_sources=False):
     parent = _safe_directory(cache_directory(root, cache_root), create=True)
     with safe_files._open_directory(Path("/"), parent.as_posix().lstrip("/")) as cache_fd:
         marker_fd = os.open(".browser-products-cache-v1", os.O_WRONLY | os.O_CREAT | os.O_NOFOLLOW | os.O_NONBLOCK, 0o644, dir_fd=cache_fd)
@@ -828,19 +907,18 @@ def _install(root, product, generated, cache_root, *, source_files=None):
     # filesystem. Refuse a cross-device promotion instead of partial copying.
     with tempfile.TemporaryDirectory(prefix="install-", dir=_scratch(root)) as temporary:
         staged = Path(temporary) / "entry"
-        staged.mkdir()
-        for name, expected in product["files"].items():
-            body = _read(generated, name)
-            if {"sha256": _sha(body), "bytes": len(body)} != expected:
-                raise ProductError(f"generated product changed before install: {name}")
-            target = staged / "data" / name
-            target.parent.mkdir(parents=True, exist_ok=True)
-            target.write_bytes(body)
-        _compare(_inventory(staged / "data"), product["files"])
-        if source_files is not None:
-            # A matching hint only selected this source. Recheck its entire
-            # membership after copying, before any current key is promoted.
-            _compare(_inventory(generated), source_files)
+        out = staged / "data"
+        out.mkdir(parents=True)
+        sources = tuple(sources)
+        for source, files in sources:
+            _copy_product_files(source, files, out)
+        _compare(_inventory(out), product["files"])
+        if recheck_sources:
+            # Cached inputs must still match in full before publishing the
+            # current key, including membership outside the selected paths.
+            for source, files in sources:
+                entry_data = _cache_entry_data(parent, source.parent.name)
+                _compare(_inventory(entry_data), files)
         try:
             with safe_files._open_directory(Path("/"), parent.as_posix().lstrip("/")) as cache_fd:
                 with safe_files._open_directory(Path("/"), staged.parent.as_posix().lstrip("/")) as staging_fd:
@@ -888,24 +966,14 @@ def assert_working_output(root: Path, target: Path) -> Path:
 
 def _assemble(root, manifest, cache_root):
     combined = {"key": products_identity(manifest), "files": _expected(manifest)}
-    entry = cache_directory(root, cache_root) / combined["key"]
+    parent = cache_directory(root, cache_root)
+    entry = parent / combined["key"]
     if entry.exists() or entry.is_symlink():
         _compare(_inventory(_cache_data(root, combined, cache_root)), combined["files"])
-        _remember_candidate(root, cache_directory(root, cache_root), combined)
+        _remember_candidate(root, parent, combined)
         return
-    with tempfile.TemporaryDirectory(prefix="aggregate-", dir=_scratch(root)) as temporary:
-        out = Path(temporary) / "data"
-        out.mkdir()
-        for product in manifest["products"]:
-            target = _cache_data(root, product, cache_root)
-            for name, identity in product["files"].items():
-                body = _read(target, name)
-                if {"sha256": _sha(body), "bytes": len(body)} != identity:
-                    raise ProductError(f"family changed while assembling aggregate: {name}")
-                destination = out / name
-                destination.parent.mkdir(parents=True, exist_ok=True)
-                destination.write_bytes(body)
-        _install(root, combined, out, cache_root)
+    sources = ((_cache_data(root, product, cache_root), product["files"]) for product in manifest["products"])
+    _install(root, combined, cache_root, sources, recheck_sources=True)
 
 
 def _reuse_candidate(root, product, entries, cache_root):
@@ -919,9 +987,119 @@ def _reuse_candidate(root, product, entries, cache_root):
         actual = validate_candidate_entry(cache_directory(root, cache_root), key, hint)
         _compare(actual, product["files"])
         data = _cache_entry_data(cache_directory(root, cache_root), key)
-        _install(root, product, data, cache_root, source_files=product["files"])
+        _install(root, product, cache_root, [(data, product["files"])], recheck_sources=True)
         return True
     return False
+
+
+def _candidate_family_data(cache_root, key, prefix):
+    """Select a single-family directory; matching payloads still require full verification."""
+    path = _absolute(cache_root) / key / "data"
+    try:
+        for part in prefix:
+            with safe_files._open_directory(Path("/"), path.as_posix().lstrip("/")) as directory:
+                if set(os.listdir(directory)) != {part}:
+                    return None
+            path = path / part
+    except FileNotFoundError:
+        return None
+    except (OSError, safe_files.SafeFileError) as error:
+        raise ProductError(f"unsafe browser candidate directory: {key}") from error
+    return _cache_entry_data(cache_root, key)
+
+
+def _refresh_history_fingerprints(body: bytes, name: str, inputs: dict) -> bytes | None:
+    """Propose bytes for a current proof. Candidate paths never select file reads."""
+    try:
+        payload = _decode(body)
+        if not isinstance(payload, dict):
+            return None
+        groups = [payload.get("inputs")]
+        if name.endswith("/catalogue.json"):
+            stages = payload.get("stage_history")
+            if not isinstance(stages, dict):
+                return None
+            groups.append(stages.get("inputs"))
+        else:
+            groups.append(payload.get("tool_inputs"))
+        for rows in groups:
+            if not isinstance(rows, list):
+                return None
+            for row in rows:
+                if not isinstance(row, dict) or not isinstance(row.get("path"), str):
+                    return None
+                record = inputs.get(row["path"])
+                if record is not None and set(row) == {"path", "sha256", "byte_size"}:
+                    row.update(sha256=record["sha256"], byte_size=record["bytes"])
+        # The history producer uses two-space JSON. Formatting changes are
+        # ordinary misses, since the current proof checks the complete bytes.
+        return (json.dumps(payload, ensure_ascii=False, sort_keys=True, indent=2) + "\n").encode()
+    except (ProductError, RecursionError, UnicodeError):
+        return None
+
+
+def _recover_history_candidate(root, product, entries, cache_root, inputs):
+    """Try complete previous families before running the canonical cold replay."""
+    cache = cache_directory(root, cache_root)
+    wanted = product["files"]
+    for key, hint in sorted(entries.items()):
+        if hint["count"] != len(wanted):
+            continue
+        data = _candidate_family_data(cache, key, ("structure", "act-history"))
+        if data is None:
+            continue
+        previous = validate_candidate_entry(cache, key, hint)
+        if previous.keys() != wanted.keys():
+            continue
+        changed = [name for name in wanted if previous[name] != wanted[name]]
+        if any(not re.fullmatch(r"structure/act-history/(?:catalogue|comparisons/[a-z0-9-]+)\.json", name)
+               or previous[name]["bytes"] > 2 * wanted[name]["bytes"] for name in changed):
+            continue
+        with tempfile.TemporaryDirectory(prefix="history-", dir=_scratch(root)) as temporary:
+            snapshot = Path(temporary)
+            for name in changed:
+                before = _read(data, name)
+                if {"sha256": _sha(before), "bytes": len(before)} != previous[name]:
+                    raise ProductError(f"candidate history changed while reading: {name}")
+                after = _refresh_history_fingerprints(before, name, inputs)
+                if after is None or {"sha256": _sha(after), "bytes": len(after)} != wanted[name]:
+                    break
+                target = snapshot / name
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_bytes(after)
+            else:
+                exact = {name: value for name, value in wanted.items() if previous[name] == value}
+                _copy_product_files(data, exact, snapshot)
+                _compare(_inventory(_cache_entry_data(cache, key)), previous)
+                _install(root, product, cache_root, [(snapshot, wanted)])
+                return True
+    return False
+
+
+def _reusable_web_editions(product: dict, cache_root: Path, entries: dict) -> dict[str, bytes]:
+    """Read only editions whose exact bytes have a current cold-build proof."""
+    wanted = dict(product["files"])
+    del wanted["web-editions/index.json"]  # Always rebuild membership in admission order.
+    cached = {}
+    for key in sorted(entries):
+        # A family owns only web-editions/. The aggregate and other families
+        # are unrelated, as are hints whose entry has already been evicted.
+        data = _candidate_family_data(cache_root, key, ("web-editions",))
+        if data is None:
+            continue
+        inventory = validate_candidate_entry(cache_root, key, entries[key])
+        for name in wanted.keys() - cached.keys():
+            expected = wanted[name]
+            if inventory.get(name) != expected:
+                continue
+            body = _read(data, name)
+            if len(body) != expected["bytes"] or _sha(body) != expected["sha256"]:
+                raise ProductError(f"candidate edition changed while copying: {name}")
+            cached[name] = body
+        _compare(_inventory(data), inventory)
+        if len(cached) == len(wanted):
+            break
+    return cached
 
 
 def last_build_stats() -> dict:
@@ -929,13 +1107,33 @@ def last_build_stats() -> dict:
     return {key: list(value) for key, value in _BUILD_STATS.get().items()}
 
 
-def build(root: Path, *, cache_root=None) -> dict:
+def build(root: Path, *, cache_root=None, prune=False) -> dict:
     root = _safe_directory(root)
+    manifest = _build(root, cache_root)
+    if prune:
+        _prune_verified(root, manifest, cache_root)
+    return manifest
+
+
+def _build(root: Path, cache_root) -> dict:
     stats = {"reused_families": [], "generated_families": []}
     _BUILD_STATS.set(stats)
     before = _read(root, MANIFEST_RELATIVE)
     manifest = _validate_manifest(_decode(before))
-    _current(root, manifest)
+    # An intact store needs only the complete read-only check. It hashes the
+    # current inputs before and after checking every family and the aggregate.
+    parent = cache_directory(root, cache_root)
+    aggregate = {"key": products_identity(manifest), "files": _expected(manifest)}
+    if all(os.path.lexists(parent / entry["key"]) for entry in (*manifest["products"], aggregate)):
+        checked = check(root, cache_root=cache_root)
+        if checked != manifest or before != _read(root, MANIFEST_RELATIVE):
+            raise ProductError("browser product descriptor changed during build")
+        _remember_candidate(root, parent, aggregate)
+        return checked
+    history_inputs = {}
+    needs_history = any(p["id"] == "act-history" and not os.path.lexists(parent / p["key"])
+                        for p in manifest["products"])
+    _current(root, manifest, capture_files={"act-history": history_inputs} if needs_history else None)
     missing = []
     for product in manifest["products"]:
         entry = cache_directory(root, cache_root) / product["key"]
@@ -946,23 +1144,33 @@ def build(root: Path, *, cache_root=None) -> dict:
     entries = load_candidate_index(cache_directory(root, cache_root))["entries"]
     cold = []
     for product in missing:
-        if _reuse_candidate(root, product, entries, cache_root):
+        reused = _reuse_candidate(root, product, entries, cache_root)
+        if not reused and product["id"] == "act-history":
+            reused = _recover_history_candidate(root, product, entries, cache_root, history_inputs)
+        if reused:
             stats["reused_families"].append(product["id"])
         else:
             cold.append(product)
+    del history_inputs
     missing = cold
     if missing:
         with tempfile.TemporaryDirectory(prefix="cold-", dir=_scratch(root)) as temporary:
             out = Path(temporary) / "data"
-            _generate(root, out, [product["id"] for product in missing])
-            stats["generated_families"] = [product["id"] for product in missing]
+            ids = [product["id"] for product in missing]
+            web = next((product for product in missing if product["id"] == "web-editions"), None)
+            cached = _reusable_web_editions(web, cache_directory(root, cache_root), entries) if web and entries else {}
+            if cached:
+                _generate(root, out, ids, cached_editions=cached)
+            else:
+                _generate(root, out, ids)
+            stats["generated_families"] = ids
             expected = {name: value for product in missing for name, value in product["files"].items()}
             _compare(_inventory(out), expected)
             _current(root, manifest)
             if before != _read(root, MANIFEST_RELATIVE):
                 raise ProductError("browser product descriptor changed during cold build")
             for product in missing:
-                _install(root, product, out, cache_root)
+                _install(root, product, cache_root, [(out, product["files"])])
     if stats["reused_families"] and not missing:
         _current(root, manifest)
     if before != _read(root, MANIFEST_RELATIVE):
@@ -988,6 +1196,33 @@ def _family_products(files, recipes, inputs):
     if assigned != set(files):
         raise ProductError(f"producer emitted outputs without an owning recipe: {sorted(set(files) - assigned)[:4]}")
     return products
+
+
+def _record_passes(root, first, second, ids):
+    """Generate and inventory each proof separately before adopting either."""
+    # Before Python 3.13 a child cannot inherit a CPU-count limit. Keep the
+    # original serial passes there. Also respect the real affinity when the
+    # caller's PYTHON_CPU_COUNT is larger than the available machine.
+    process_count = getattr(os, "process_cpu_count", None)
+    available = (process_count() or 1) if process_count else None
+    if available is not None and hasattr(os, "sched_getaffinity"):
+        available = min(available, len(os.sched_getaffinity(0)))
+
+    def generate(out, jobs):
+        _generate(root, out, ids, record_jobs=jobs)
+        return _inventory(out)
+
+    if available is None or available < 4:
+        outputs = generate(first, available)
+        replay = generate(second, available)
+    else:
+        with ThreadPoolExecutor(max_workers=2) as pool:
+            first_run = pool.submit(generate, first, (available + 1) // 2)
+            second_run = pool.submit(generate, second, available // 2)
+            outputs = first_run.result()
+            replay = second_run.result()
+    _compare(replay, outputs)
+    return outputs
 
 
 def record(root: Path, *, cache_root=None) -> dict:
@@ -1021,10 +1256,7 @@ def record(root: Path, *, cache_root=None) -> dict:
         if changed:
             first, second = Path(temporary) / "first", Path(temporary) / "second"
             ids = [recipe["id"] for recipe in changed]
-            _generate(root, first, ids)
-            outputs = _inventory(first)
-            _generate(root, second, ids)
-            _compare(_inventory(second), outputs)
+            outputs = _record_passes(root, first, second, ids)
             products = _family_products(outputs, changed, family_inputs)
         else:
             products = []
@@ -1036,7 +1268,7 @@ def record(root: Path, *, cache_root=None) -> dict:
                     "proof": PROOF, "editorial_approval": False}
         _validate_manifest(manifest)
         for product in products:
-            _install(root, product, first, cache_root)
+            _install(root, product, cache_root, [(first, product["files"])])
         for product in manifest["products"]:
             _remember_candidate(root, cache_directory(root, cache_root), product)
         _assemble(root, manifest, cache_root)
@@ -1056,6 +1288,12 @@ def prune(root: Path, *, cache_root=None) -> dict:
     """Remove obsolete disposable keys only after proving the current cache."""
     root = _safe_directory(root)
     manifest = check(root, cache_root=cache_root)
+    _prune_verified(root, manifest, cache_root)
+    return manifest
+
+
+def _prune_verified(root: Path, manifest: dict, cache_root) -> None:
+    """Caller holds the store's exclusive lock across verification and pruning."""
     parent = _safe_directory(cache_directory(root, cache_root))
     keep = {products_identity(manifest), *(product["key"] for product in manifest["products"])}
     try:
@@ -1081,7 +1319,6 @@ def prune(root: Path, *, cache_root=None) -> dict:
                                             "entries": {product["key"]: candidate_hint(product["files"]) for product in products}})
     except (OSError, safe_files.SafeFileError) as error:
         raise ProductError(f"cannot safely prune browser cache: {error}") from error
-    return manifest
 
 
 @contextmanager
@@ -1172,6 +1409,8 @@ def main(argv=None, *, examples=None):
         child.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
         child.add_argument("--cache-root", type=Path)
         child.add_argument("--json", action="store_true")
+        if verb == "build":
+            child.add_argument("--prune", action="store_true", help="remove obsolete cache keys after this build verifies the current store")
         if verb == "audit":
             child.add_argument("--family", action="append", dest="families", metavar="ID",
                                help="Audit only this family (repeatable); default every family.")
@@ -1182,6 +1421,8 @@ def main(argv=None, *, examples=None):
         if args.verb == "key":
             manifest = load_manifest(args.root)
             _current(args.root, manifest)
+        elif args.verb == "build":
+            manifest = build(args.root, cache_root=args.cache_root, prune=args.prune)
         else:
             manifest = globals()[args.verb](args.root, cache_root=args.cache_root)
         result = {"status": "ok", "products_identity": products_identity(manifest), "family_keys": {product["id"]: product["key"] for product in manifest["products"]}, "products": len(manifest["products"]), "files": len(_expected(manifest)), "bytes": sum(value["bytes"] for value in _expected(manifest).values())}

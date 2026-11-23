@@ -130,6 +130,12 @@ still contain only `data/`; the candidate index is disposable metadata, never
 an input identity or a validation receipt. `record` retains its independent
 cold-build proof and does not use candidate reuse to establish new bytes.
 
+When a previous web-reader family differs by only some editions, `build`
+can also stage individual reader files from that family. Each retained file
+must match the current descriptor's size and SHA-256. The converter generates
+the other editions and a fresh index, and the build verifies the entire
+family against the current descriptor before sealing it.
+
 Pages explicitly bootstraps optional cache candidates from the immutable public
 archive pinned by `.github/browser-products-bootstrap.json`. The bounded
 bootstrap checks transport bytes and safe archive membership; ordinary build

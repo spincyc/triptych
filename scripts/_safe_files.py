@@ -78,24 +78,28 @@ def read_file(root: Path, relative: str) -> bytes:
     """Read a regular file through symlink-free directory descriptors."""
     try:
         with _open_parent(root, relative) as (parent, name):
-            before = os.stat(name, dir_fd=parent, follow_symlinks=False)
-            descriptor = os.open(name, os.O_RDONLY | os.O_NOFOLLOW | os.O_NONBLOCK, dir_fd=parent)
-            try:
-                opened = os.fstat(descriptor)
-                if not stat.S_ISREG(opened.st_mode) or not _same_inode(before, opened):
-                    raise SafeFileError(f"input must be an unchanged regular file: {relative}")
-                blocks = []
-                while block := os.read(descriptor, 1024 * 1024):
-                    blocks.append(block)
-                after = os.fstat(descriptor)
-                _require_entry(parent, name, descriptor)
-                if _file_stamp(opened) != _file_stamp(after):
-                    raise SafeFileError(f"input changed while reading: {relative}")
-                return b"".join(blocks)
-            finally:
-                os.close(descriptor)
+            return _read_file_at(parent, name, relative)
     except OSError as error:
         raise SafeFileError(f"missing or unsafe input: {relative}: {error.strerror}") from error
+
+
+def _read_file_at(parent: int, name: str, relative: str) -> bytes:
+    before = os.stat(name, dir_fd=parent, follow_symlinks=False)
+    descriptor = os.open(name, os.O_RDONLY | os.O_NOFOLLOW | os.O_NONBLOCK, dir_fd=parent)
+    try:
+        opened = os.fstat(descriptor)
+        if not stat.S_ISREG(opened.st_mode) or not _same_inode(before, opened):
+            raise SafeFileError(f"input must be an unchanged regular file: {relative}")
+        blocks = []
+        while block := os.read(descriptor, 1024 * 1024):
+            blocks.append(block)
+        after = os.fstat(descriptor)
+        _require_entry(parent, name, descriptor)
+        if _file_stamp(opened) != _file_stamp(after):
+            raise SafeFileError(f"input changed while reading: {relative}")
+        return b"".join(blocks)
+    finally:
+        os.close(descriptor)
 
 
 def atomic_write(root: Path, relative: str, body: bytes, *, scratch: Path) -> None:

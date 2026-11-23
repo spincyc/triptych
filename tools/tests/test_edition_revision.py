@@ -77,6 +77,38 @@ class Fixture(unittest.TestCase):
 
 
 class ClosureAndHistoryTests(Fixture):
+    def test_reduced_history_preserves_each_parent_comparison_and_literal_paths(self):
+        body = "src/claude/doc/sections/body.tex"
+        twin = "src/claude/doc/sections/twin[1].tex"
+        odd = "src/claude/doc/sections/line\nbreak.tex"
+        former_directory = "src/claude/doc/old"
+        self.write(twin, "first\n")
+        self.write(odd, "first\n")
+        child = former_directory + "/child.tex"
+        self.write(child, "inside a directory\n")
+        self.commit("add literal paths")
+        self.git("switch", "-q", "-c", "side")
+        self.write(twin, "second\n")
+        self.write(odd, "second\n")
+        self.commit("change twins\n\nEdition-Revision: none")
+        self.git("switch", "-q", "main")
+        self.write(body, "main line\n")
+        (self.root / child).unlink()
+        (self.root / former_directory).rmdir()
+        self.write(former_directory, "now a file\n")
+        self.commit("replace directory")
+        self.git("merge", "-q", "--no-ff", "side", "-m", "merge both lines")
+        self.git("commit", "-q", "--allow-empty", "-m", "empty tip")
+        repository = revision.Repository(self.root)
+        repository.prepare_history()
+        self.assertEqual(1, len(repository._history_paths.reduce([odd, twin])))
+        for ref in ("HEAD", "HEAD^", "HEAD^^1", "HEAD^^2"):
+            for paths in ([odd, twin], [body, odd], [former_directory], [child],
+                          [former_directory, odd, body, "missing"], ["missing"]):
+                with self.subTest(ref=ref, paths=paths):
+                    self.assertEqual(repository.history(paths, ref),
+                                     revision.history_of(self.root, paths, ref))
+
     def test_new_proper_revision_does_not_require_unauthored_companions(self) -> None:
         document = "liturgy/roman-rite/1962/propers/temporal/67-example"
         leaf = "src/claude/" + document

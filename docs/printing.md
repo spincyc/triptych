@@ -125,18 +125,34 @@ Existing authored typography, artwork, content selection and source notices
 remain part of the recipe.
 
 Every admitted edition is also compiled before the site deploys. The Pages
-`print-compile` job (locally `make check-native-print-compile`) prepares the
-exact source bundle the site serves for each admitted edition and typesets it
-in the pinned TeX Live toolchain with the engine the bundle names and the
-browser's pass policy. It fails when an edition does not compile, produces no
-PDF or does not settle within the bundle's maximum passes; when the admitted and
-prepared sets differ; or when any edition opens a file that is neither in its
-bundle nor in the browser runtime's `texFiles` (only `texmf.cnf`, `ls-R` and
-the engine's format are exempt). XeTeX sees only the runtime's font faces.
-The deploy job waits for it. The native engines are not the WebAssembly ones,
-so a pass proves the bundle and runtime closure, not byte identity with a
-browser-made PDF. Its PDFs are discarded; per-edition receipts and a summary
-are kept as a workflow artifact.
+`print-compile` matrix divides the sorted admission list into eight disjoint
+partitions. Each runner prepares its bundles from the checkout and typesets
+them in the pinned TeX Live toolchain with the engine the bundle names and
+the browser's pass policy.
+It also exports its source partition for the Pages writer and verifier. Each
+independently checks the Actions archive digests, source revision, admitted
+editions and checkout inputs, then reassembles the full catalog with its
+shared text and source packs. Each print worker uses the same document assembly
+to validate its assigned publication owners and derive the admitted content,
+evidence, render and edition identities. The partition covers every source
+declaration, including held and Markdown-only owners. The writer and verifier
+each reconcile the authenticated partitions with their own checkout's source
+census and admissions and recheck the physical inputs and projected web
+declarations. Generated source hashes come from the worker's actual assembly.
+Locally, `make check-native-print-compile` prepares and compiles the entire
+set. The gate requires a PDF and settled references within each edition's
+pass limit, exact admission membership, and closure over the bundle and the
+browser runtime's `texFiles`. Only `texmf.cnf`, `ls-R` and the engine format
+are exempt. XeTeX sees only the runtime's font faces.
+Before deployment, a read-only verification job checks all eight sets of
+successful receipts against the exact site that passed artifact verification.
+It matches every edition ID, mounted file and invocation identity, and source
+revision. Shared text can be packaged differently in a partition. The site
+check verifies raw assets and the contents of its gzip source packs.
+The native engine checks establish source and runtime closure. The browser
+produces its own PDF with WebAssembly. Each runner discards its temporary
+PDFs and retains the per-edition receipts and shard summary as a workflow
+artifact.
 
 Source and evidence review, print-template review, and inspection of one
 rendering are separate facts. A successful build is not a new visual review

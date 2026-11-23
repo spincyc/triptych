@@ -187,11 +187,12 @@ def _references(body: bytes, name: str) -> tuple:
         _PARSED[digest] = ((), (), frozenset())
         return _PARSED[digest]
     imports, dynamic, literals = [], [], set()
-    statements = {id(node.value) for node in ast.walk(tree)
+    nodes = list(ast.walk(tree))
+    statements = {id(node.value) for node in nodes
                   if isinstance(node, ast.Expr) and isinstance(node.value, ast.Constant)}
     # Local functions whose parameters reach a path: name -> positions/names.
     path_functions: dict[str, set] = {}
-    for node in ast.walk(tree):
+    for node in nodes:
         if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
             parameters = [argument.arg for argument in (*node.args.posonlyargs, *node.args.args)]
             used = {operand.id for inner in ast.walk(node) for operand in _path_operands(inner)
@@ -200,7 +201,7 @@ def _references(body: bytes, name: str) -> tuple:
             reached |= {parameter for parameter in parameters if parameter in used}
             if reached:
                 path_functions.setdefault(node.name, set()).update(reached)
-    for node in ast.walk(tree):
+    for node in nodes:
         if isinstance(node, ast.Import):
             imports.extend((0, alias.name, ()) for alias in node.names)
         elif isinstance(node, ast.ImportFrom):

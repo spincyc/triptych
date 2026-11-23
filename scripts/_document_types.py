@@ -337,7 +337,8 @@ def leaf_identity(root: Path, leaf: Path) -> tuple[str, str]:
     return provider, Path(*rest).as_posix()
 
 
-def declaration(root: Path, leaf: Path, types: dict[str, DocumentType] | None = None) -> Declaration | None:
+def declaration(root: Path, leaf: Path, types: dict[str, DocumentType] | None = None, *,
+                assembly=None) -> Declaration | None:
     """The leaf's ``[document]`` opt-in, validated against its type, or None."""
     manifest = leaf / PUBLICATION
     if not manifest.is_file():
@@ -349,7 +350,8 @@ def declaration(root: Path, leaf: Path, types: dict[str, DocumentType] | None = 
     where = f"{manifest.relative_to(root).as_posix()} [{DECLARATION}]"
     if not isinstance(raw, dict):
         raise DocumentTypeError(f"{where} must be a table")
-    types = discover_types(root) if types is None else types
+    if types is None:
+        types = assembly.document_types() if assembly is not None else discover_types(root)
     identifier = raw.get("type")
     if identifier not in types:
         raise DocumentTypeError(f"{where}: type {identifier!r} is not a directory under {TYPES_DIR}")
@@ -754,12 +756,28 @@ class Assembly:
     def __init__(self, root: Path = ROOT, *, projections: dict | None = None):
         self.root = Path(root).resolve()
         self.projections = projections
+        # Syntax validation can be shared for identical evidence documents.
+        # Source identities still hash every leaf's actual inputs.
+        self.validated_evidence_toml: set[bytes] = set()
+        self._types: dict[str, DocumentType] | None = None
+        self._declarations: dict[Path, Declaration | None] = {}
         self._files: dict[Path, dict[Path, str]] = {}
         self._owners: dict[Path, Path | None] = {}
         self._dependencies: dict[Path, set[Path]] = {}
         self._content_dependencies: dict[Path, frozenset[Path]] = {}
         self._traces: dict[tuple[Path, str], object] = {}
         self._prepared: set[str] = set()
+
+    def document_types(self) -> dict[str, DocumentType]:
+        if self._types is None:
+            self._types = discover_types(self.root)
+        return self._types
+
+    def declaration(self, leaf: Path) -> Declaration | None:
+        leaf = Path(leaf).resolve()
+        if leaf not in self._declarations:
+            self._declarations[leaf] = declaration(self.root, leaf, assembly=self)
+        return self._declarations[leaf]
 
     def owner(self, path: Path) -> Path | None:
         path = Path(path).absolute()
@@ -782,7 +800,7 @@ class Assembly:
         """Absolute virtual paths, with structural/authorship defects refused."""
         leaf = Path(leaf).resolve()
         if leaf not in self._files:
-            decl = declaration(self.root, leaf)
+            decl = self.declaration(leaf)
             if decl is None:
                 self._files[leaf] = {}
             else:
@@ -831,7 +849,7 @@ class Assembly:
         leaf = Path(leaf).resolve()
         if leaf in self._dependencies:
             return self._dependencies[leaf]
-        decl = declaration(self.root, leaf)
+        decl = self.declaration(leaf)
         if decl is None:
             return set()
         paths = {leaf / PUBLICATION, *decl.type.path.rglob("*.tex"),
@@ -873,7 +891,7 @@ class Assembly:
             if leaf in self._dependencies:
                 continue
             try:
-                decl = declaration(self.root, leaf)
+                decl = self.declaration(leaf)
                 names = sorted({slot.partition("/")[0] for edition in decl.editions
                                 for slot in render_edition(decl, edition, projections)[1]}) \
                     if decl is not None else []
@@ -895,6 +913,22 @@ class Assembly:
             return
         available = getattr(os, "process_cpu_count", os.cpu_count)() or 1
         workers = max(1, min(jobs if jobs is not None else available, 8, len(work)))
+        # A projection can run each leaf from a fresh fork of the same audited
+        # prefix. Unsupported platforms and failed batch probes take the
+        # single-leaf path, preserving each leaf's own result or refusal.
+        if hasattr(os, "fork"):
+            for name in sorted({key[1] for key, _trace, _context in work}):
+                batch = getattr(projections[name], "dependency_traces", None)
+                group = [item for item in work if item[0][1] == name]
+                if batch is None or len(group) < 2:
+                    continue
+                try:
+                    results = dict(zip((key for key, _, _ in group),
+                                       batch([ctx for _, _, ctx in group], workers), strict=True))
+                except Exception:
+                    continue
+                self._traces.update(results)
+            work = [item for item in work if item[0] not in self._traces]
         with ThreadPoolExecutor(max_workers=workers) as pool:
             for (key, _trace, _context), result in zip(work, pool.map(run, work)):
                 self._traces[key] = result
@@ -909,7 +943,7 @@ class Assembly:
         leaf = self.owner(path)
         if leaf is None or Path(path).absolute() not in self.files(leaf):
             return set()
-        decl = declaration(self.root, leaf)
+        decl = self.declaration(leaf)
         if decl is None or Path(path).name in {
                 decl.type.editions[name].entrypoint for name in decl.editions}:
             return set()

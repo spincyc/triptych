@@ -1026,7 +1026,7 @@ def _strict_loader():
     """
     yaml = _yaml()
 
-    class StrictMappingLoader(yaml.SafeLoader):
+    class StrictMappingLoader(getattr(yaml, "CSafeLoader", yaml.SafeLoader)):
         """SafeLoader in every construction; it only refuses to stay quiet."""
 
         def __init__(self, stream):

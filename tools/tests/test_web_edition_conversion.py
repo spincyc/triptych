@@ -364,6 +364,15 @@ class WebEditionConversionTests(unittest.TestCase):
             any("lowercase" in failure for failure in failures), failures
         )
 
+    def test_severed_run_matches_complete_casefolded_words_inside_one_source_run(self) -> None:
+        markdown = "Saint STRASSE\n\nAgnus Dei"
+        expected = ["'Saint STRASSE' then 'Agnus Dei'"]
+        self.assertEqual(DRIVER.severed_runs("before Saint Straße Agnus Dei after", markdown, span=2), expected)
+        for source in ("Allsaint Straße Agnus Dei", "Saint Straße Agnus Deinde",
+                       "Saint Straße {Agnus Dei}", "Saint Straße\n\nAgnus Dei"):
+            with self.subTest(source=source):
+                self.assertEqual(DRIVER.severed_runs(source, markdown, span=2), [])
+
     def test_pdf_title_metadata_does_not_join_display_title_fields(self) -> None:
         sources = (
             r"\hypersetup{pdftitle={Our Lord Jesus Christ the King: "

@@ -10,6 +10,7 @@ import pathlib
 import sys
 import tempfile
 import unittest
+from unittest.mock import Mock
 
 REPO = pathlib.Path(__file__).resolve().parents[2]
 TOOL_PATH = REPO / "tools" / "release-bindings"
@@ -301,10 +302,11 @@ class ReleaseBindingsTests(unittest.TestCase):
         page = self.root / "web/gpt/articles/example.md"
         page.parent.mkdir(parents=True)
         page.write_bytes(b"web edition v1")
-        self.recognize({"web/gpt/articles/example.md"})
+        self.tool.recognized_site_sources = Mock(return_value={"web/gpt/articles/example.md"})
 
         changes = self.tool.refresh(self.tool.load_manifest(), adopt=True)
 
+        self.tool.recognized_site_sources.assert_called_once_with()
         self.assertIn("adopted site web/gpt/articles/example.md", changes)
         self.assertIn("retired site README.md", changes)
         recorded = self.read_manifest()["authorizations"]["auth-1"]["site_sources"]

@@ -2867,7 +2867,7 @@ def record_path(leaf: Path) -> Path:
 # `_chronology._bible_source_locus_problem` reads to admit the source, and
 # `bible.<edition>` the edition's index, whose presence admits it.
 
-_READS_PROBE = """\
+_READS_HOOK = """\
 import json, os, sys
 opened, compiled = [], []
 def _hook(event, args):
@@ -2878,6 +2878,9 @@ def _hook(event, args):
 sys.addaudithook(_hook)
 sys.path.insert(0, sys.argv[1])
 import _proper_chronology
+"""
+
+_READS_PROBE = _READS_HOOK + """\
 try:
     traced = _proper_chronology._traced(
         sys.argv[2], sys.argv[3], sys.argv[4], opened, compiled)
@@ -2889,6 +2892,92 @@ except _proper_chronology.ChronologyWiringError as error:
     raise SystemExit(1) from None
 print(json.dumps(traced))
 """
+
+
+_BATCH_READS_PROBE = _READS_HOOK + """\
+requests = json.load(sys.stdin)
+results = _proper_chronology._fork_traces(
+    sys.argv[2], requests, int(sys.argv[3]), opened, compiled)
+print(json.dumps(results))
+"""
+
+
+def _fork_traces(root_text, requests, jobs, opened, compiled):
+    """Fork independent leaf calculations immediately after their common reads."""
+    import multiprocessing
+    import tempfile
+
+    root = Path(root_text)
+    # This is the unconditional first read in dossier(), with its exact cache
+    # key. Only these actual audited opens/compiles are inherited by every
+    # leaf. A worker runs one document and exits, including on refusal.
+    _chronology.load(None if root == ROOT else root / "src/sources/chronology")
+    prefix_opens, prefix_compiles = tuple(opened), tuple(compiled)
+    context = multiprocessing.get_context("fork")
+
+    def run(document, provider, output):
+        opened[:] = prefix_opens
+        compiled[:] = prefix_compiles
+        try:
+            trace = _traced(root_text, document, provider, opened, compiled)
+        except ChronologyWiringError as error:
+            kind = type(error)
+            trace = f"{kind.__module__}.{kind.__qualname__}: {error}"
+        output.write_text(json.dumps(trace), encoding="utf-8")
+
+    results = []
+    with tempfile.TemporaryDirectory() as temporary:
+        for start in range(0, len(requests), jobs):
+            paths = [Path(temporary) / str(i)
+                     for i in range(start, min(start + jobs, len(requests)))]
+            workers = []
+            try:
+                for (document, provider), path in zip(requests[start:], paths):
+                    worker = context.Process(target=run, args=(document, provider, path))
+                    worker.start()
+                    workers.append(worker)
+                for worker in workers:
+                    worker.join(200)
+                    if worker.exitcode != 0:
+                        raise ChronologyWiringError("a chronology trace worker failed")
+            finally:
+                for worker in workers:
+                    if worker.is_alive():
+                        worker.terminate()
+                    worker.join()
+                    worker.close()
+            results.extend(json.loads(path.read_text(encoding="utf-8")) for path in paths)
+    return results
+
+
+def _probe_environment(no_bytecode):
+    return {
+        **os.environ,
+        "TRIPTYCH_YAML_CACHE": "0",
+        # An empty bytecode tree: every module is compiled from source.
+        "PYTHONPYCACHEPREFIX": no_bytecode,
+        "PYTHONDONTWRITEBYTECODE": "1",
+    }
+
+
+def batch_computation_reads(requests, root: Path, jobs: int):
+    """One result or source refusal per (document, provider), in request order."""
+    import tempfile
+
+    with tempfile.TemporaryDirectory() as no_bytecode:
+        completed = subprocess.run(
+            [sys.executable, "-c", _BATCH_READS_PROBE, str(Path(__file__).resolve().parent),
+             str(Path(root).resolve()), str(jobs)],
+            cwd=root, env=_probe_environment(no_bytecode), input=json.dumps(requests),
+            capture_output=True, text=True, check=True,
+            timeout=200 * (1 + (len(requests) + jobs - 1) // jobs),
+        )
+    results = json.loads(completed.stdout)
+    return [
+        ChronologyWiringError(f"{document}: the chronology computation could not be traced: {value}")
+        if isinstance(value, str) else value
+        for (document, _provider), value in zip(requests, results, strict=True)
+    ]
 
 
 def computation_reads(
@@ -2910,13 +2999,7 @@ def computation_reads(
             [sys.executable, "-c", _READS_PROBE, str(Path(__file__).resolve().parent),
              str(Path(root).resolve()), document, provider],
             cwd=root,
-            env={
-                **os.environ,
-                "TRIPTYCH_YAML_CACHE": "0",
-                # An empty bytecode tree: every module is compiled from source.
-                "PYTHONPYCACHEPREFIX": no_bytecode,
-                "PYTHONDONTWRITEBYTECODE": "1",
-            },
+            env=_probe_environment(no_bytecode),
             capture_output=True,
             text=True,
             timeout=200,
@@ -2964,15 +3047,21 @@ def _traced(
         if isinstance(getattr(module, "__file__", None), str)
     )
     interpreter = {
-        Path(entry).resolve()
+        os.fspath(Path(entry).resolve())
         for entry in (sys.prefix, sys.base_prefix, sys.exec_prefix,
                       *site.getsitepackages(), site.getusersitepackages())
     }
+    interpreter_prefixes = tuple(os.path.join(entry, "") for entry in interpreter)
+
+    def interpreter_path(path: Path) -> bool:
+        name = os.fspath(path)
+        return name in interpreter or name.startswith(interpreter_prefixes)
+
     reads: set[str] = set()
-    for name in opened:
+    for name in dict.fromkeys(opened):
         path = resolved(name)
         if (not path.is_file() or path in code or "__pycache__" in path.parts
-                or any(path.is_relative_to(entry) for entry in interpreter)):
+                or interpreter_path(path)):
             continue
         if path.is_relative_to(root):
             relative = path.relative_to(root)
@@ -2994,7 +3083,7 @@ def _traced(
         if path.is_relative_to(root) and path.is_file()
         # A virtualenv may live under the checkout's .scratch directory;
         # its installed packages are interpreter inputs, just as for reads.
-        and not any(path.is_relative_to(entry) for entry in interpreter)
+        and not interpreter_path(path)
     }
     sources, source_files = set(), set()
     cited_sources = {source for claim in claims

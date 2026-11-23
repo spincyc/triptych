@@ -11,6 +11,9 @@ It never builds a PDF, fetches a source, or treats an archive as current text.
 """
 from __future__ import annotations
 
+from contextlib import contextmanager
+from contextvars import ContextVar
+from dataclasses import dataclass
 import html
 import json
 import os
@@ -125,8 +128,49 @@ def _admitted_recipes(root: Path, inputs: set | None = None) -> list[dict]:
     return result
 
 
+@dataclass(frozen=True)
+class _AdmissionCensus:
+    root: Path
+    documents: dict[str, dict]
+    inputs: tuple[str, ...]
+    owners: frozenset[str]
+
+
+_CENSUS = ContextVar("native_print_admission_census", default=None)
+
+
+def _current_census(root: Path) -> _AdmissionCensus | None:
+    census = _CENSUS.get()
+    return census if census is not None and census.root == Path(root).resolve() else None
+
+
+@contextmanager
+def held_source_admissions(root: Path):
+    """Hold one canonical census inside a separately guarded Pages checkout."""
+    from _document_schema import publication_owners
+    root = Path(root).resolve()
+    inputs = set()
+    documents = _admitted_documents(root, inputs)
+    census = _AdmissionCensus(root, documents, tuple(sorted(inputs)), frozenset(publication_owners(root)))
+    token = _CENSUS.set(census)
+    try:
+        yield
+    finally:
+        _CENSUS.reset(token)
+
+
+def publication_source_owners(root: Path) -> set[str]:
+    """All source owners, including held and Markdown-only publications."""
+    from _document_schema import publication_owners
+    census = _current_census(root)
+    return set(census.owners) if census is not None else publication_owners(root)
+
+
 def admission_inputs(root: Path) -> list[str]:
     """The declarations and release dispositions that decide publication admission."""
+    census = _current_census(root)
+    if census is not None:
+        return list(census.inputs)
     inputs = set()
     _admitted_recipes(Path(root).resolve(), inputs)
     return sorted(inputs)
@@ -134,6 +178,14 @@ def admission_inputs(root: Path) -> list[str]:
 
 def admitted_documents(root: Path) -> dict[str, dict]:
     """Return the public output universe, never the unrestricted native list."""
+    census = _current_census(root)
+    if census is not None:
+        # Every field is a source scalar. Each caller owns its returned rows.
+        return {key: dict(row) for key, row in census.documents.items()}
+    return _admitted_documents(root)
+
+
+def _admitted_documents(root: Path, inputs: set | None = None) -> dict[str, dict]:
     from _print_document import _plan_records
     root = Path(root).resolve()
     result = {}
@@ -144,7 +196,7 @@ def admitted_documents(root: Path) -> dict[str, dict]:
         result[identity] = dict(id=identity, output_id=identity, document=document,
                                 edition=edition, title=title or identity, **extra)
 
-    for row in _admitted_recipes(root):
+    for row in _admitted_recipes(root, inputs):
         identity = row["id"]
         if row["family"] == "publication":
             document = "publication:" + row["provider"] + "/" + row["canonical"]

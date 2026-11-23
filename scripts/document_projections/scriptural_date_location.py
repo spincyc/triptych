@@ -100,12 +100,31 @@ def dependency_trace(context) -> dict[str, list[str]]:
         return wiring.computation_reads(context.document, root=context.root,
                                         provider=context.provider)
     except wiring.ChronologyWiringError as exc:
-        if ("missing appointment dependency:" not in str(exc)
-                or not str(exc).endswith("research/chronology-inputs.toml")):
+        result = _trace_result(exc)
+        if isinstance(result, Exception):
             raise
-        # The absent-input page is intentional. Adding the appointment input
-        # changes assembly bytes and therefore the render identity.
+        return result
+
+
+def _trace_result(value):
+    # The absent-input page is intentional. Adding the appointment input
+    # changes assembly bytes and therefore the render identity.
+    if (isinstance(value, wiring.ChronologyWiringError)
+            and "missing appointment dependency:" in str(value)
+            and str(value).endswith("research/chronology-inputs.toml")):
         return {"reads": [], "modules": [], "source_files": [], "sources": []}
+    return value
+
+
+def dependency_traces(contexts, jobs):
+    """Read the common corpus once in this batch's fresh audited interpreter."""
+    root = contexts[0].root
+    before = _input_state(root)
+    requests = [(context.document, context.provider) for context in contexts]
+    traces = wiring.batch_computation_reads(requests, root, jobs)
+    if _input_state(root) != before:
+        raise wiring.ChronologyWiringError("chronology inputs changed during the dependency traces")
+    return [_trace_result(trace) for trace in traces]
 
 
 def dependencies(context, trace: dict[str, list[str]] | None = None) -> set[Path]:

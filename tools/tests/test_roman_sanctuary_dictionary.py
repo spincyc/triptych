@@ -4,6 +4,7 @@ import importlib.util
 import tempfile
 import textwrap
 import unittest
+from unittest.mock import patch
 from copy import deepcopy
 from pathlib import Path
 from types import SimpleNamespace
@@ -67,6 +68,30 @@ class DictionaryGeneratorTests(unittest.TestCase):
         self.assertNotIn(artifact.record_id, notes)
         edition.data["title"] = "Corrected source title"
         self.assertNotEqual(notes, "\n".join(GENERATOR.source_notes_tex(records, {}, ROOT, library)))
+
+    def test_current_dictionary_notes_resolve_from_selected_manifests_without_a_full_library(self):
+        records = [GENERATOR.load(path) for path in RECORDS.rglob("*.toml")]
+        alpha = GENERATOR.canonical_alpha_assets(GENERATOR.load(ARTWORK_MANIFEST))
+        selected = {r["id"]: r for e in GENERATOR.load(SELECTIONS)["editions"] for r in records
+                    if GENERATOR.alpha_selected(r, e, alpha) and r["id"] not in GENERATOR.PUBLIC_RENDER_HOLD_IDS}
+        owner = GENERATOR._source_library_module(ROOT)
+        with patch.object(owner, "load_library", side_effect=AssertionError("unexpected whole-library census")):
+            editions, bindings, inputs = GENERATOR.source_note_metadata(ROOT, list(selected.values()))
+        self.assertEqual(set(bindings), {s["binding"] for r in selected.values() for s in r["sources"]})
+        self.assertEqual(set(bindings.values()), set(editions))
+        read_ids = {GENERATOR.load(path)["id"] for path in inputs if path.suffix == ".toml"}
+        self.assertEqual(read_ids, bindings.keys() | editions.keys())
+
+    def test_legacy_source_binding_keeps_the_owning_library_lookup(self):
+        edition = SimpleNamespace(record_id="legacy-book", record_type="edition", path=ROOT / "edition.toml",
+                                  data={"title": "Legacy source", "publication": "Exact imprint."})
+        records = [{"id": "obj-fixture", "sources": [{"binding": edition.record_id}]}]
+        owner = GENERATOR._source_library_module(ROOT)
+        with patch.object(owner, "load_library", return_value=SimpleNamespace(records={"legacy-book": edition})) as full:
+            editions, bindings, _ = GENERATOR.source_note_metadata(ROOT, records)
+        full.assert_called_once_with(ROOT, check_binding_fingerprints=False)
+        self.assertEqual(bindings, {"legacy-book": "legacy-book"})
+        self.assertEqual(editions["legacy-book"], edition.data)
 
     def test_source_notes_refuse_unknown_or_unidentified_sources(self):
         records = [{"id": "obj-test", "sources": [{"binding": "missing"}]}]

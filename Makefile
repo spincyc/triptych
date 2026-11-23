@@ -259,7 +259,8 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	check-document-schemas check-document-content check-artifact-delivery \
 	check-snapshot-delivery check-papal-inputs \
 	prepare-browser-data check-browser-products check-corpus-index deployment-source-gates \
-	pages-site pages-site-members public-site-artifact \
+	pages-site pages-site-members pages-source-checks pages-protected-writer public-site-artifact pages-native-reference \
+	deployment-calendar-days deployment-calendar-masses deployment-calendar-rubrics deployment-propers \
 	check-source-evidence print-document \
 	check-source-inventory check-source-inventory-tool \
 	check-source-family-migration check-source-family-migration-tool \
@@ -437,15 +438,32 @@ check-act-history: | prepare-browser-data
 # The committed descriptor binds exact canonical inputs and output membership.
 # Warm builds verify cached bytes; misses derive only missing families offline.
 prepare-browser-data:
-	@$(PYTHON) $(BROWSER_PRODUCTS_TOOL) build
+	@$(PYTHON) $(BROWSER_PRODUCTS_TOOL) build $(if $(filter 1,$(TRIPTYCH_BROWSER_PRUNE)),--prune)
 
 # A strictly read-only diagnostic; publication preparation already performs this
 # verification, so it does not run a duplicate full cache check here.
 check-browser-products:
 	@$(PYTHON) $(BROWSER_PRODUCTS_TOOL) check
 
+# GNU Make normalizes --jobs=N to -jN in the active jobserver's MAKEFLAGS.
+# A serial invocation has one slot. Bare -j permits unlimited concurrent gates.
+override _TRIPTYCH_SOURCE_SLOTS = $(if $(filter -j,$(MAKEFLAGS)),0,$(or $(patsubst -j%,%,$(filter -j%,$(MAKEFLAGS))),1))
 check-corpus-index:
-	@$(PYTHON) tools/tpt corpus-index check --readers
+	@set -eu; set --; \
+	if [ -n "$${_TRIPTYCH_CORPUS_CAPACITY:-}" ]; then \
+		capacity=$$_TRIPTYCH_CORPUS_CAPACITY; slots=$(_TRIPTYCH_SOURCE_SLOTS); \
+		case "$$capacity" in \
+			default) capacity=$$(PYTHON_CPU_COUNT=default $(PYTHON) -c 'import os; print(len(os.sched_getaffinity(0)) if hasattr(os, "sched_getaffinity") else os.cpu_count() or 1)');; \
+			*[!0-9]*|0) echo "PYTHON_CPU_COUNT must be a positive integer or default" >&2; exit 1;; \
+		esac; \
+		workers=1; \
+		if [ "$$slots" -gt 0 ] && [ "$$capacity" -ge "$$slots" ]; then \
+			workers=$$(expr "$$capacity" / "$$slots"); \
+			[ "$$workers" -le 3 ] || workers=3; \
+		fi; \
+		export PYTHON_CPU_COUNT="$$workers"; set -- --jobs "$$workers"; \
+	fi; \
+	$(PYTHON) tools/tpt corpus-index check --readers "$$@"
 
 # Default validation checks logical identities, rights, bindings and the exact
 # external-delivery metadata without hydrating optional evidence bytes.
@@ -493,10 +511,26 @@ check-publication-inventories: check-source-graph
 
 # The two-build product descriptor covers the complete input, policy and output
 # closure. Publication verifies it once before consumers.
-DEPLOYMENT_SOURCE_MEMBERS := check-curriculum-source-rights check-document-schemas \
+DEPLOYMENT_SOURCE_MEMBERS := check-document-catalogue check-curriculum-source-rights check-corpus-index \
+	check-proper-chronology-current check-source-graph check-document-schemas \
+	deployment-calendar-masses check-generated-documents-current \
 	check-artifact-delivery check-snapshot-delivery check-papal-inputs \
-	check-document-catalogue check-source-graph check-proper-chronology-current \
-	check-generated-documents-current check-corpus-index
+	deployment-calendar-days deployment-propers deployment-calendar-rubrics check-mass-ordinary
+
+# The print partitions and corpus runner own the canonical checks; the site
+# writer runs its rights prerequisite. Every other deployment gate belongs to
+# the independently scheduled source runner, including future gate additions.
+PAGES_CANONICAL_SOURCE_GATES := check-corpus-index check-proper-chronology-current check-source-graph
+PAGES_REMOTE_SOURCE_GATES := $(filter-out $(PAGES_CANONICAL_SOURCE_GATES) check-curriculum-source-rights,$(DEPLOYMENT_SOURCE_MEMBERS))
+pages-source-checks: $(PAGES_REMOTE_SOURCE_GATES)
+ifneq ($(filter pages-source-checks,$(MAKECMDGOALS)),)
+$(PAGES_REMOTE_SOURCE_GATES): private export PYTHON_CPU_COUNT := 1
+endif
+
+# The Actions coordinator waits for this target before independent artifact
+# read-back. A local pages-site invocation still runs its own source checks.
+pages-protected-writer: public-site-artifact
+	@$(PYTHON) .github/scripts/pages-native-reference.py --deployment-gates
 
 # Bootstrap bounded concurrency when the caller supplied no jobserver. Keep
 # ordinary liturgical derivation and rights checks in the source publication
@@ -511,32 +545,58 @@ check-deployment-sources: deployment-source-gates
 pages-site: pages-site-members
 endif
 
-# What the Pages build job runs: the whole deployment source gate beside the
-# site build instead of before it. The build is one process and the gates fill
-# the runner's other cores; the site is listed first so that it takes the first
-# job slot the verified products free. A failing gate still fails this target,
-# and with it the workflow step, before `public-alpha verify` runs or anything
-# is uploaded: the site may be assembled, but it never leaves the runner.
-# `make public-site` keeps the stricter local order, gates before assembly.
+# A local pages-site invocation assembles the site beside the source gates;
+# public-site retains its stricter local order, gates before assembly.
+ifeq ($(and $(strip $(PAGES_NATIVE_REFERENCE_DIR)),$(filter pages-site pages-site-members,$(MAKECMDGOALS))),)
 pages-site-members: public-site-artifact deployment-source-gates
-
-# For Pages every gate also waits for the verified products, which only some of
-# them read: a cold product build then has the runner's cores to itself, and the
-# gates overlap the site build instead. Other goals keep the members' own order.
-ifneq ($(filter pages-site pages-site-members,$(MAKECMDGOALS)),)
-$(DEPLOYMENT_SOURCE_MEMBERS): | prepare-browser-data
+else
+# Chronology and source graph gate their two print references. The dedicated
+# corpus-index job gates completion after all local prerequisites finish.
+PAGES_LOCAL_SOURCE_GATES := $(filter-out $(PAGES_CANONICAL_SOURCE_GATES),$(DEPLOYMENT_SOURCE_MEMBERS))
+pages-site-members: public-site-artifact $(PAGES_LOCAL_SOURCE_GATES)
+	@$(PYTHON) .github/scripts/pages-native-reference.py --corpus-gate
+$(PAGES_LOCAL_SOURCE_GATES): private export PYTHON_CPU_COUNT := 1
 endif
 
+ifneq ($(strip $(PAGES_WRITER_REFERENCE_FD)),)
 public-site-artifact: check-curriculum-source-rights | prepare-browser-data
-	@$(WEB_FIGURES)
-	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) build
+	@$(PYTHON) .github/scripts/pages-native-reference.py --build-site '$(WEB_FIGURES_RUNNER)'
+else
+public-site-artifact: check-curriculum-source-rights | prepare-browser-data $(if $(strip $(PAGES_NATIVE_REFERENCE_DIR)),pages-native-reference)
+	@set -eu; \
+	if [ -n "$${PAGES_NATIVE_REFERENCE_DIR:-}" ]; then \
+		TRIPTYCH_NATIVE_REFERENCE_SHA256=$$(cat -- "$$PAGES_NATIVE_REFERENCE_DIR.sha256"); \
+		case "$$TRIPTYCH_NATIVE_REFERENCE_SHA256" in *[!0-9a-f]*) echo 'Invalid native reference digest' >&2; exit 1;; esac; \
+		[ "$${#TRIPTYCH_NATIVE_REFERENCE_SHA256}" -eq 64 ] || { echo 'Invalid native reference digest' >&2; exit 1; }; \
+		export TRIPTYCH_NATIVE_REFERENCE_SHA256 TRIPTYCH_NATIVE_REFERENCE_DIR="$$PAGES_NATIVE_REFERENCE_DIR"; \
+	fi; \
+	$(PYTHON) $(PUBLIC_ALPHA_TOOL) build --prepared-products --figure-runner '$(WEB_FIGURES_RUNNER)'
+endif
 
-deployment-source-gates: $(DEPLOYMENT_SOURCE_MEMBERS) | prepare-browser-data
-	@$(PYTHON) tools/tpt calendar-days check
+pages-native-reference:
+	@$(PYTHON) .github/scripts/pages-native-reference.py
+
+deployment-source-gates: $(DEPLOYMENT_SOURCE_MEMBERS)
+
+# Keep one CPU per concurrent gate, and let the corpus reader use up to three
+# of its share of the caller's capacity. A direct corpus check uses its defaults.
+deployment-source-gates: export _TRIPTYCH_CORPUS_CAPACITY := $(or $(PYTHON_CPU_COUNT),default)
+deployment-source-gates: export PYTHON_CPU_COUNT := 1
+
+# These publication checks must fail when a dependency is unavailable. Ordinary
+# make check has its own optional PyYAML recipes. The mass tables checker
+# reads canonical sources; the other four compare prepared browser products.
+deployment-calendar-masses:
 	@$(PYTHON) tools/tpt check-calendar-masses
+
+deployment-calendar-days: | prepare-browser-data
+	@$(PYTHON) tools/tpt calendar-days check
+
+deployment-propers: | prepare-browser-data
 	@$(PYTHON) tools/tpt mass-propers structure --check
+
+deployment-calendar-rubrics: | prepare-browser-data
 	@$(PYTHON) tools/tpt calendar-rubrics check
-	@$(PYTHON) tools/tpt mass-ordinary check
 
 # Research replay is explicit and may require already hydrated evidence. It
 # never downloads it automatically. The publication gate above remains useful
@@ -732,7 +792,7 @@ help:
 		'make prepare-public-alpha  Print current candidate hashes; grants no approval' \
 		'make public-preview  Build a private no-index preview with review candidates' \
 		'make public-site  Build the fail-closed, history-free public artifact' \
-		'make pages-site  Run the deployment source gates beside the public artifact build, as Pages does' \
+		'make pages-site  Run the deployment source gates beside the public artifact build' \
 		'make print-document DOCUMENT=<qualified-id> [PRINT_EDITION=main] [PRINT_OUT=.scratch/print-document]  Build one optional PDF and receipt' \
 		'make verify-public-preview  Recheck the existing private preview artifact' \
 		'make verify-public-site  Recheck the existing public artifact' \
@@ -775,9 +835,9 @@ check-web-editions:
 check-proper-components:
 	@$(PYTHON) $(PROPER_COMPONENT_CHECKER) --provider $(PROVIDER)
 
-# Source titles and identities are checked independently of the descriptor's
-# exact catalogue projection. PDF metadata belongs to the optional print lane.
-check-document-catalogue: | prepare-browser-data
+# The checker derives the catalogue from source and replays the browser model
+# over that result. It can start while the other gates prepare browser data.
+check-document-catalogue:
 	@$(PYTHON) $(DOCUMENT_LIBRARY_TOOL) check
 
 # Two claims again, and the first is the one that governs. `check` proves that
@@ -821,16 +881,12 @@ check-public-alpha: check-curriculum-source-rights | prepare-browser-data
 prepare-public-alpha: check-curriculum-source-rights | prepare-browser-data
 	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) prepare
 
-# check-deployment-sources has verified the products, in a sub-make when the
-# caller gave no jobserver, so the site compiles its figures in its own recipe:
-# web-figures would verify the products a second time.
+# Compile figures from the same verified reader products that the site consumes.
 public-preview: check-deployment-sources
-	@$(WEB_FIGURES)
-	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) build --preview
+	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) build --preview --prepared-products --figure-runner '$(WEB_FIGURES_RUNNER)'
 
 public-site: check-deployment-sources
-	@$(WEB_FIGURES)
-	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) build
+	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) build --prepared-products --figure-runner '$(WEB_FIGURES_RUNNER)'
 
 verify-public-preview: check-curriculum-source-rights | prepare-browser-data
 	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) verify --preview

@@ -8,6 +8,7 @@ from pathlib import Path
 import shutil
 import sys
 import tempfile
+import threading
 import subprocess
 import unittest
 from unittest.mock import patch
@@ -41,7 +42,7 @@ class BrowserProductsTests(unittest.TestCase):
         self.manifest = products.record(self.root, cache_root=self.cache)
         self.generated.clear()
 
-    def generate(self, root, out, product_ids=None):
+    def generate(self, root, out, product_ids=None, *, record_jobs=None):
         self.generated.append(tuple(product_ids or ("a", "b")))
         self.assertFalse((root / "src/web/data").exists())
         for family in product_ids or ("a", "b"):
@@ -63,6 +64,73 @@ class BrowserProductsTests(unittest.TestCase):
         products.record(self.root, cache_root=self.cache)
         self.assertEqual(self.generated, [("a", "b"), ("a", "b")])
         self.assertIs(self.manifest["editorial_approval"], False)
+
+    def test_record_splits_one_cpu_budget_between_independent_passes(self):
+        both = threading.Barrier(2, timeout=5)
+        calls = {}
+        def generate(root, out, ids, *, record_jobs):
+            calls[out.name] = (out, record_jobs)
+            both.wait()
+            self.generate(root, out, ids)
+
+        with patch.object(products.os, "process_cpu_count", create=True, return_value=8), \
+             patch.object(products.os, "sched_getaffinity", create=True, return_value=set(range(5))), \
+             patch.object(products, "_generate", side_effect=generate):
+            shutil.rmtree(self.cache)
+            result = products.record(self.root, cache_root=self.cache)
+        self.assertEqual(result, self.manifest)
+        self.assertEqual(calls["first"][1], 3)
+        self.assertEqual(calls["second"][1], 2)
+        self.assertNotEqual(calls["first"][0], calls["second"][0])
+        self.assertEqual(self.generated, [("a", "b"), ("a", "b")])
+
+    def test_limited_record_runs_passes_in_order_and_preserves_descriptor_on_failure(self):
+        descriptor = (self.root / products.MANIFEST_RELATIVE).read_bytes()
+        calls = []
+        def generate(root, out, ids, *, record_jobs):
+            calls.append((out.name, record_jobs, threading.get_ident()))
+            if out.name == "second":
+                raise products.ProductError("second pass refused")
+            self.generate(root, out, ids)
+
+        with patch.object(products.os, "process_cpu_count", create=True, return_value=2), \
+             patch.object(products.os, "sched_getaffinity", create=True, return_value=set(range(8))), \
+             patch.object(products, "_generate", side_effect=generate), patch.object(products, "_install") as install:
+            shutil.rmtree(self.cache)
+            with self.assertRaisesRegex(products.ProductError, "second pass refused"):
+                products.record(self.root, cache_root=self.cache)
+        self.assertEqual(calls, [(name, 2, threading.get_ident()) for name in ("first", "second")])
+        self.assertEqual(descriptor, (self.root / products.MANIFEST_RELATIVE).read_bytes())
+        install.assert_not_called()
+
+    def test_older_interpreter_preserves_the_original_serial_recipe_schedule(self):
+        calls = []
+        def generate(root, out, ids, *, record_jobs):
+            calls.append((out.name, record_jobs, threading.get_ident()))
+            self.generate(root, out, ids)
+
+        with patch.object(products.os, "process_cpu_count", create=True, new=None), \
+             patch.object(products, "_generate", side_effect=generate):
+            shutil.rmtree(self.cache)
+            self.assertEqual(products.record(self.root, cache_root=self.cache), self.manifest)
+        self.assertEqual(calls, [(name, None, threading.get_ident()) for name in ("first", "second")])
+
+    def test_concurrent_record_reports_the_first_pass_failure_and_joins_both(self):
+        second_failed = threading.Event()
+        def fail(root, out, ids, *, record_jobs):
+            if out.name == "second":
+                second_failed.set()
+            else:
+                self.assertTrue(second_failed.wait(timeout=5))
+            raise products.ProductError(out.name + " failed")
+
+        with patch.object(products.os, "process_cpu_count", create=True, return_value=4), \
+             patch.object(products.os, "sched_getaffinity", create=True, return_value=set(range(4))), \
+             patch.object(products, "_generate", side_effect=fail), patch.object(products, "_install") as install:
+            shutil.rmtree(self.cache)
+            with self.assertRaisesRegex(products.ProductError, "first failed"):
+                products.record(self.root, cache_root=self.cache)
+        install.assert_not_called()
 
     def test_check_hit_never_generates(self):
         products.check(self.root, cache_root=self.cache)
@@ -274,9 +342,9 @@ class BrowserProductsTests(unittest.TestCase):
     def test_two_build_disagreement_never_writes_descriptor(self):
         before = (self.root / products.MANIFEST_RELATIVE).read_bytes()
         shutil.rmtree(self.cache)
-        def nondeterministic(root, out, ids):
+        def nondeterministic(root, out, ids, *, record_jobs):
             self.generate(root, out, ids)
-            (out / "structure/a/index.json").write_text(str(len(self.generated)))
+            (out / "structure/a/index.json").write_text(json.dumps(out.name))
         with patch.object(products, "_generate", side_effect=nondeterministic):
             with self.assertRaises(products.ProductError):
                 products.record(self.root, cache_root=self.cache)
@@ -315,6 +383,57 @@ class BrowserProductsTests(unittest.TestCase):
                 products.assert_working_output(self.root, aggregate / "new")
         self.assertEqual(products.assert_working_output(self.root, self.root / ".scratch/work"), self.root / ".scratch/work")
 
+    def test_missing_aggregate_copies_each_declared_file_once(self):
+        key = products.products_identity(self.manifest)
+        shutil.rmtree(self.cache / key)
+        names = {tuple(Path(name).parts): name for product in self.manifest["products"] for name in product["files"]}
+        written = []
+        open_path = Path.open
+
+        def record_write(path, mode="r", *args, **kwargs):
+            if mode in {"wb", "xb"}:
+                for parts, name in names.items():
+                    if path.parts[-len(parts):] == parts:
+                        written.append(name)
+            return open_path(path, mode, *args, **kwargs)
+
+        with patch.object(Path, "open", record_write):
+            products._assemble(self.root, self.manifest, self.cache)
+        self.assertCountEqual(written, names.values())
+        products.check(self.root, cache_root=self.cache)
+
+    def test_aggregate_refuses_family_membership_drift_before_promotion(self):
+        key = products.products_identity(self.manifest)
+        shutil.rmtree(self.cache / key)
+        family = self.cache / self.manifest["products"][0]["key"] / "data"
+        visit = products._visit_files
+
+        def perturb(source, names, copy_file):
+            visit(source, names, copy_file)
+            if source == family:
+                (source / "raced.json").write_text("{}")
+
+        with patch.object(products, "_visit_files", side_effect=perturb):
+            with self.assertRaisesRegex(products.ProductError, "differ"):
+                products._assemble(self.root, self.manifest, self.cache)
+        self.assertFalse((self.cache / key).exists())
+
+    def test_corrupt_staged_aggregate_is_not_published_and_a_retry_succeeds(self):
+        key = products.products_identity(self.manifest)
+        shutil.rmtree(self.cache / key)
+        copy_verified = products._copy_product_files
+
+        def corrupt(source, files, out):
+            copy_verified(source, files, out)
+            (out / next(iter(files))).write_text("corrupt staged bytes")
+
+        with patch.object(products, "_copy_product_files", side_effect=corrupt):
+            with self.assertRaisesRegex(products.ProductError, "differ"):
+                products._assemble(self.root, self.manifest, self.cache)
+        self.assertFalse((self.cache / key).exists())
+        products._assemble(self.root, self.manifest, self.cache)
+        products.check(self.root, cache_root=self.cache)
+
     def test_corrupt_stable_aggregate_rejected(self):
         aggregate = products.committed_data_root(self.root, cache_root=self.cache)
         (aggregate / "structure/a/index.json").write_text("bad")
@@ -322,12 +441,12 @@ class BrowserProductsTests(unittest.TestCase):
             products.check(self.root, cache_root=self.cache)
 
     def test_hash_each_shared_input_once_per_phase(self):
-        real = products._read
+        real = products.safe_files._file_hash_at
         paths = []
-        def reading(root, name):
+        def hashing(directory, leaf, name):
             paths.append(name)
-            return real(root, name)
-        with patch.object(products, "_read", side_effect=reading):
+            return real(directory, leaf, name)
+        with patch.object(products.safe_files, "_file_hash_at", side_effect=hashing):
             products._identity_batch(self.root)
         self.assertEqual(paths.count("scripts/generator.py"), 1)
         self.assertEqual(paths.count("requirements-tools.txt"), 1)
@@ -349,6 +468,19 @@ class BrowserProductsTests(unittest.TestCase):
         products.prune(self.root, cache_root=self.cache)
         self.assertFalse(obsolete.exists())
         products.check(self.root, cache_root=self.cache)
+
+    def test_build_can_prune_under_the_same_verified_cache_lock(self):
+        obsolete = self.cache / ("a" * 64)
+        obsolete.mkdir()
+        with patch.object(products, "check", wraps=products.check) as validate:
+            products.build(self.root, cache_root=self.cache, prune=True)
+        self.assertEqual(validate.call_count, 1)
+        self.assertFalse(obsolete.exists())
+        obsolete.mkdir()
+        self.payload().write_text("corrupt")
+        with self.assertRaises(products.ProductError):
+            products.build(self.root, cache_root=self.cache, prune=True)
+        self.assertTrue(obsolete.is_dir())
 
     def test_prune_refuses_unknown_or_unsafe_entries(self):
         for name, link in (("unknown", False), ("a" * 64, True)):
@@ -409,9 +541,10 @@ class BrowserProductsTests(unittest.TestCase):
     def test_descriptor_change_during_record_is_not_overwritten(self):
         changed = self.root / products.MANIFEST_RELATIVE
         original_generate = self.generate
-        def editing(root, out, ids):
+        def editing(root, out, ids, *, record_jobs):
             original_generate(root, out, ids)
-            changed.write_text("concurrent descriptor edit")
+            if out.name == "first":
+                changed.write_text("concurrent descriptor edit")
         shutil.rmtree(self.cache)
         with patch.object(products, "_generate", side_effect=editing):
             with self.assertRaisesRegex(products.ProductError, "descriptor changed"):
@@ -708,6 +841,9 @@ class BrowserIdentityLoopTests(unittest.TestCase):
                    self.recipe("b", ["scope-neighbor", "exact"], ["scope"], [])]
         with patch.object(products, "_paths", return_value=found), \
              patch.object(products, "_read", side_effect=lambda root, name: name.encode()), \
+             patch.object(products, "_input_hashes", side_effect=lambda root, names: {
+                 name: {"path": name, "sha256": products._sha(name.encode()), "bytes": len(name)}
+                 for name in names}), \
              patch.object(products.safe_files, "_external_identities", return_value={}):
             actual = products._identity_batch(self.root, recipes)
             self.assertEqual(actual, _c7_identity_reference(self.root, recipes))
@@ -749,16 +885,16 @@ class BrowserIdentityLoopTests(unittest.TestCase):
         self.assertNotEqual(replaced["content"], removed["content"])
 
     def test_both_discoveries_remain_fresh_and_reject_membership_mutation(self):
-        reading = products._read
+        hashing = products.safe_files._file_hash_at
         paths = products._paths
-        def mutate(root, name):
-            body = reading(root, name)
+        def mutate(directory, leaf, name):
+            identity = hashing(directory, leaf, name)
             if name == "src/a/live.txt":
                 (self.root / "src/a/new.txt").write_text("new member")
-            return body
+            return identity
         with patch.object(products.safe_files, "_external_identities", return_value={}), \
              patch.object(products, "_paths", wraps=paths) as discoveries, \
-             patch.object(products, "_read", side_effect=mutate):
+             patch.object(products.safe_files, "_file_hash_at", side_effect=mutate):
             with self.assertRaisesRegex(products.ProductError, "membership changed"):
                 products._identity_batch(self.root, self.recipes)
         self.assertEqual(discoveries.call_count, 2)
@@ -924,13 +1060,12 @@ class BrowserCandidateReuseTests(unittest.TestCase):
     def test_candidate_membership_race_cannot_promote_a_current_key(self):
         current = self.new_input_epoch()
         before = self.index_path.read_bytes()
-        reading = products._read
-        def mutate(root, name):
-            body = reading(root, name)
+        visit = products._visit_files
+        def mutate(root, names, copy_file):
+            visit(root, names, copy_file)
             if root == self.old_data:
                 (self.old_data / "raced.json").write_text("{}")
-            return body
-        with patch.object(products, "_read", side_effect=mutate):
+        with patch.object(products, "_visit_files", side_effect=mutate):
             with self.assertRaisesRegex(products.ProductError, "differ"):
                 products.build(self.root, cache_root=self.cache)
         self.assertFalse((self.cache / current["key"]).exists())
@@ -939,13 +1074,12 @@ class BrowserCandidateReuseTests(unittest.TestCase):
 
     def test_candidate_reuse_still_brackets_current_inputs_and_descriptor(self):
         self.new_input_epoch()
-        reading = products._read
-        def mutate(root, name):
-            body = reading(root, name)
+        visit = products._visit_files
+        def mutate(root, names, copy_file):
+            visit(root, names, copy_file)
             if root == self.old_data:
                 (self.root / "src/a/input.txt").write_text("concurrent source edit")
-            return body
-        with patch.object(products, "_read", side_effect=mutate):
+        with patch.object(products, "_visit_files", side_effect=mutate):
             with self.assertRaisesRegex(products.ProductError, "inputs changed"):
                 products.build(self.root, cache_root=self.cache)
 
@@ -967,6 +1101,85 @@ class BrowserCandidateReuseTests(unittest.TestCase):
         with patch.object(products, "_reuse_candidate", side_effect=AssertionError("record reused candidate bytes")):
             products.record(self.root, cache_root=self.cache)
         self.assertEqual(self.generated, [("a", "b"), ("a", "b")])
+
+    def history_epochs(self, *, update_body=False):
+        from _eucharistic_history import fingerprint, json_bytes
+        self.recipes[0].update(id="act-history", output_prefixes=["structure/act-history"])
+        calls = []
+
+        def generate(root, out, ids, *, record_jobs=None):
+            calls.append(tuple(ids))
+            target = out / "structure/act-history"
+            (target / "comparisons").mkdir(parents=True)
+            content = root / "src/a/input.txt"
+            inputs = [fingerprint(root, content)]
+            tools = [fingerprint(root, root / "scripts/_helper.py")]
+            (target / "catalogue.json").write_bytes(json_bytes({"inputs": inputs, "stage_history": {"inputs": inputs}}))
+            (target / "comparisons/test.json").write_bytes(json_bytes({
+                "inputs": inputs, "tool_inputs": tools, "passage": content.read_text() if update_body else "fixed",
+            }))
+            (target / "index.json").write_bytes(b"{}\n")
+
+        self.enterContext(patch.object(products, "_generate", side_effect=generate))
+        with patch.object(products, "_recover_history_candidate", side_effect=AssertionError("record used a candidate")):
+            old = products.record(self.root, cache_root=self.cache)
+            (self.root / "src/a/input.txt").write_text("new authority\n")
+            (self.root / "scripts/_helper.py").write_text("# new producer\n")
+            self.manifest = products.record(self.root, cache_root=self.cache)
+        self.assertEqual(calls, [("act-history",)] * 4)
+        shutil.rmtree(self.cache / self.family("act-history")["key"])
+        shutil.rmtree(self.cache / products.products_identity(self.manifest))
+        return next(p for p in old["products"] if p["id"] == "act-history"), calls
+
+    def test_history_reuses_current_proven_bytes_after_refreshing_source_and_producer_fingerprints(self):
+        old, calls = self.history_epochs()
+        # A valid, unrelated prior version is tried before the matching family.
+        wrong = "0" * 64
+        data = self.cache / wrong / "data"
+        shutil.copytree(self.cache / old["key"] / "data", data)
+        (data / "structure/act-history/comparisons/test.json").write_bytes(b'{"inputs":42}')
+        index = products.load_candidate_index(self.cache)
+        index["entries"][wrong] = products.candidate_hint(products._inventory(data))
+        self.write_index(index)
+        products.build(self.root, cache_root=self.cache)
+        self.assertEqual(calls, [("act-history",)] * 4)
+        self.assertIn("act-history", products.last_build_stats()["reused_families"])
+        products.check(self.root, cache_root=self.cache)
+
+    def test_history_changed_passage_runs_the_canonical_producer(self):
+        _, calls = self.history_epochs(update_body=True)
+        products.build(self.root, cache_root=self.cache)
+        self.assertEqual(calls, [("act-history",)] * 5)
+        self.assertEqual(["act-history"], products.last_build_stats()["generated_families"])
+
+    def test_history_candidate_corruption_is_fatal(self):
+        old, calls = self.history_epochs()
+        (self.cache / old["key"] / "data/structure/act-history/index.json").write_text("corrupt")
+        with self.assertRaisesRegex(products.ProductError, "inventory hint"):
+            products.build(self.root, cache_root=self.cache)
+        self.assertEqual(calls, [("act-history",)] * 4)
+
+    def test_web_editions_build_reuses_one_record_but_record_always_runs_cold(self):
+        self.recipes[0].update(id="web-editions", output_prefixes=["web-editions"], delivery="site-build")
+        calls = []
+        fixed = "web-editions/gpt/fixed.json"
+        def generate(root, out, ids, *, cached_editions=None, record_jobs=None):
+            calls.append(cached_editions)
+            self.assertEqual(ids, ["web-editions"])
+            (out / "web-editions/gpt").mkdir(parents=True)
+            (out / fixed).write_bytes((cached_editions or {}).get(fixed, b'{"fixed":true}'))
+            (out / "web-editions/gpt/new.json").write_text(json.dumps((root / "src/a/input.txt").read_text()))
+            (out / "web-editions/index.json").write_text("{}")
+        with patch.object(products, "_generate", side_effect=generate):
+            products.record(self.root, cache_root=self.cache)
+            (self.root / "src/a/input.txt").write_text("edited")
+            self.manifest = products.record(self.root, cache_root=self.cache)
+            self.assertEqual(calls, [None] * 4)
+            shutil.rmtree(self.cache / self.family("web-editions")["key"])
+            shutil.rmtree(self.cache / products.products_identity(self.manifest))
+            products.build(self.root, cache_root=self.cache)
+            self.assertEqual(calls[4:], [{fixed: b'{"fixed":true}'}])
+            products.check(self.root, cache_root=self.cache)
 
     def test_prune_keeps_only_current_hints_and_still_rejects_arbitrary_files(self):
         self.new_input_epoch()

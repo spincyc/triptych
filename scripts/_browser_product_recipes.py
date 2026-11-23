@@ -226,9 +226,11 @@ def _files(out: Path) -> set[str]:
     return found
 
 
-def _run(root: Path, out: Path, recipe: dict, environment: dict) -> None:
+def _run(root: Path, out: Path, recipe: dict, environment: dict, *, cached_editions=None, reader_jobs=None) -> None:
     arguments = [value.replace("{root}", str(root)).replace("{out}", str(out)) for value in recipe["argv"]]
     arguments[0] = str(root / arguments[0])
+    if reader_jobs is not None:
+        arguments.extend(["--jobs", str(reader_jobs)])
     if "--out" not in arguments:
         arguments.extend(["--out", str(out)])
     program = _COLD_INPUT_GUARD + (
@@ -239,6 +241,20 @@ def _run(root: Path, out: Path, recipe: dict, environment: dict) -> None:
         "runpy.run_path(tool_arguments[0], run_name='__main__')\n"
     )
     command = [sys.executable, "-B", "-c", program, str(root), *arguments]
+    stdin = None
+    if cached_editions:
+        # The manager authenticated these bytes under the cache lock. Give
+        # them only to this build's web producer; a cold producer never opens
+        # a cache or inherits any of the manager's Python state.
+        program = _COLD_INPUT_GUARD + """
+import json, runpy
+from pathlib import Path
+owner = runpy.run_path(sys.argv[2])
+cached = {path: text.encode("utf-8") for path, text in json.load(sys.stdin).items()}
+print(json.dumps(owner["build_products"](Path(sys.argv[3]), cached=cached)))
+"""
+        command = [sys.executable, "-B", "-c", program, str(root), arguments[0], str(out)]
+        stdin = json.dumps({name: body.decode("utf-8") for name, body in cached_editions.items()}, ensure_ascii=False)
     if recipe["id"] in ADAPTERS:
         # The owning replay supplies fresh isolated source parsers without
         # consulting the former installed projection.
@@ -253,14 +269,16 @@ def _run(root: Path, out: Path, recipe: dict, environment: dict) -> None:
         command = [sys.executable, "-B", "-c", program, str(root), str(out)]
     finished = subprocess.run(
         command, cwd=root,
-        env=environment, text=True, capture_output=True, check=False,
+        env=environment, input=stdin, text=True, encoding="utf-8", capture_output=True, check=False,
     )
     if finished.returncode:
         detail = (finished.stderr or finished.stdout).strip()
         raise RecipeError(f"{recipe['id']} producer exited {finished.returncode}: {detail[-3000:]}")
+    if cached_editions:
+        print(f"web-editions: {finished.stdout.strip()}", file=sys.stderr, flush=True)
 
 
-def generate(root: Path, out: Path, product_ids=None, *, environment=None) -> dict:
+def generate(root: Path, out: Path, product_ids=None, *, environment=None, cached_editions=None, record_jobs=None) -> dict:
     """Derive selected families offline; omitted families never enter staging.
 
     Cross-layer checks consume product dependencies only after generation.
@@ -268,8 +286,11 @@ def generate(root: Path, out: Path, product_ids=None, *, environment=None) -> di
     Source parsers may share newly populated process caches, but inherited
     stat-keyed disk caches and stale Python bytecode cannot seed a cold build.
     `environment` adds variables for an observer such as the input audit; it
-    cannot re-enable a cache or bytecode this function disables.
+    cannot re-enable a cache or bytecode this function disables. A recording
+    pass shares its assigned CPU budget between families and reader conversions.
     """
+    if record_jobs is not None and (record_jobs < 1 or cached_editions):
+        raise RecipeError("a recording pass requires a positive job budget and cold editions")
     _validate_recipes(list(RECIPES))
     root, out = Path(root).resolve(), Path(out).absolute()
     if out.is_symlink() or out == root / "src/web/data":
@@ -304,9 +325,24 @@ def generate(root: Path, out: Path, product_ids=None, *, environment=None) -> di
         # run one after another they left all but one core idle. Collection
         # stays in recipe order, so which failure is reported, and everything
         # moved into `out`, does not depend on scheduling.
-        with ThreadPoolExecutor(max_workers=len(selected)) as pool:
-            runs = {recipe["id"]: pool.submit(_run, root, Path(state) / recipe["id"], recipe, environment)
-                    for recipe in selected}
+        order = selected
+        workers = len(selected)
+        if record_jobs is not None:
+            # Start the long reader pool alongside its siblings. Limit the
+            # number of memory-heavy family writers in each independent pass.
+            order = sorted(selected, key=lambda recipe: recipe["id"] != "web-editions")
+            workers = min(3, record_jobs, len(selected))
+            # Reader forks get their explicit slots below. Nested projection
+            # pools inside any one child must not claim those slots again.
+            environment["PYTHON_CPU_COUNT"] = "1"
+        with ThreadPoolExecutor(max_workers=workers) as pool:
+            runs = {}
+            for recipe in order:
+                name = recipe["id"]
+                options = {"cached_editions": cached_editions} if name == "web-editions" and cached_editions else {}
+                if record_jobs is not None and name == "web-editions":
+                    options["reader_jobs"] = record_jobs - workers + 1
+                runs[name] = pool.submit(_run, root, Path(state) / name, recipe, environment, **options)
         for recipe in selected:
             runs[recipe["id"]].result()
             family_out = Path(state) / recipe["id"]

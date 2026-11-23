@@ -11,6 +11,7 @@ restating what it opens.
 from __future__ import annotations
 
 import json
+import os
 import shutil
 import subprocess
 import sys
@@ -65,6 +66,18 @@ class ComputationReadsTests(unittest.TestCase):
         _proper_chronology.dossier(NINETEENTH, provider="gpt")
         cls.nineteenth = _proper_chronology.computation_reads(NINETEENTH, ROOT, "gpt")
         cls.twenty_fifth = _proper_chronology.computation_reads(TWENTY_FIFTH, ROOT, "claude")
+
+    @unittest.skipUnless(hasattr(os, "fork"), "batch probes use an independent fork per leaf")
+    def test_batch_reproduces_both_cold_traces_and_a_missing_appointment(self):
+        missing = "liturgy/roman-rite/postconciliar/absent"
+        with self.assertRaises(_proper_chronology.ChronologyWiringError) as cold:
+            _proper_chronology.computation_reads(missing, ROOT, "gpt")
+        results = _proper_chronology.batch_computation_reads(
+            [(NINETEENTH, "gpt"), (missing, "gpt"), (TWENTY_FIFTH, "claude")], ROOT, jobs=2)
+        self.assertEqual(results[0], self.nineteenth)
+        self.assertIsInstance(results[1], type(cold.exception))
+        self.assertEqual(str(results[1]), str(cold.exception))
+        self.assertEqual(results[2], self.twenty_fifth)
 
     def test_the_calendar_corpus_and_verse_files_are_reported(self):
         reads = set(self.nineteenth["reads"])

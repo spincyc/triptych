@@ -6,6 +6,7 @@ an engine skip where it is absent; the parsing and set checks never do.
 """
 from __future__ import annotations
 
+import gzip
 import hashlib
 import json
 from pathlib import Path
@@ -147,7 +148,119 @@ class PureChecks(Workspace):
         self.assertTrue((self.out / "keep.txt").is_file())
 
 
-@unittest.skipUnless(have("pdflatex", "pdfinfo"), "host pdfTeX and poppler are required")
+class ShardChecks(Workspace):
+    def setUp(self):
+        super().setUp()
+        self.site = self.work / "site"
+        self.shards = self.work / "parts"
+        self.receipts = []
+        self.identities = [IDENTITY + str(i) for i in range(3)]
+        for number in (1, 2):
+            folder = self.shards / str(number)
+            (folder / "receipts").mkdir(parents=True)
+            members = gate.partition(self.identities, number, 2)
+            (folder / "summary.json").write_text(json.dumps({
+                "schema": gate.SUMMARY_SCHEMA, "scope": "shard", "shard": [number, 2], "editions": len(members),
+                "status": "pass", "failed": [], "source_revision": REVISION}))
+            for identity in members:
+                files = {"src/test/main.tex": GOOD * 4, "src/test/part.tex": SHARED_PART * 10}
+                route, source = served(identity, files)
+                inline = json.loads(source[route["route"]])
+                # The shard can mount inline text that the complete site puts
+                # behind shared URLs and gzip packs.
+                assets = {}
+                bundle = bundles._externalize(inline, assets, shared_text={r["sha256"] for r in inline["files"]})
+                self.assertIn("sourcePacks", bundle)
+                assets[f"native-tex/sources/{bundle['content_sha256']}.json"] = bundles.canonical(bundle)
+                for name, data in assets.items():
+                    dest = self.site / name
+                    dest.parent.mkdir(parents=True, exist_ok=True)
+                    dest.write_bytes(data)
+                receipt = folder / "receipts" / (gate.directory_name(identity) + ".json")
+                receipt.write_text(json.dumps({"schema": gate.RECEIPT_SCHEMA, "id": identity, "pages": 1,
+                                               "passes": 2, "pdf_sha256": "a" * 64, "status": "pass", "problems": [],
+                                               "source_revision": REVISION, "render_sha256": inline["render_sha256"]}))
+                self.receipts.append(receipt)
+        self.key = gate.site_key(self.site, REVISION)
+
+    def test_exhaustive_partition_matches_the_verified_site_independent_of_transport(self):
+        self.assertEqual(gate.join(self.shards, 2, REVISION, self.key), 3)
+        for spec in ("0/1", "2/1", "2", "1/0"):
+            with self.subTest(spec=spec), self.assertRaises(gate.CompileError):
+                gate.parse_shard(spec)
+        with self.assertRaisesRegex(gate.CompileError, "empty"):
+            gate.partition(self.identities, 4, 4)
+
+    def test_a_missing_extra_or_failed_receipt_cannot_join(self):
+        receipt = self.receipts[0]
+        original = receipt.read_text()
+        for change in ({"status": "fail"}, {"render_sha256": "0" * 64}, {"source_revision": "f" * 40},
+                       {"pages": 0}):
+            with self.subTest(change=change), self.assertRaises(gate.CompileError):
+                receipt.write_text(json.dumps({**json.loads(original), **change}))
+                gate.join(self.shards, 2, REVISION, self.key)
+        receipt.write_text(original)
+        (receipt.parent / "copy.json").write_text(original)
+        with self.assertRaisesRegex(gate.CompileError, "duplicate"):
+            gate.join(self.shards, 2, REVISION, self.key)
+        (receipt.parent / "copy.json").unlink()
+        receipt.unlink()
+        with self.assertRaisesRegex(gate.CompileError, "incomplete"):
+            gate.join(self.shards, 2, REVISION, self.key)
+        shutil.rmtree(self.shards / "2")
+        with self.assertRaisesRegex(gate.CompileError, "missing or extra"):
+            gate.join(self.shards, 2, REVISION, self.key)
+
+    def test_swapped_receipts_do_not_count_as_their_assigned_shards(self):
+        first = next((self.shards / "1/receipts").iterdir())
+        second = next((self.shards / "2/receipts").iterdir())
+        first.rename(second.parent / first.name)
+        second.rename(first.parent / second.name)
+        with self.assertRaisesRegex(gate.CompileError, "wrong shard"):
+            gate.join(self.shards, 2, REVISION, self.key)
+
+    def test_gzip_members_are_verified_even_when_the_enclosing_transport_hashes_match(self):
+        old_path = next((self.site / "native-tex/source-packs").iterdir())
+        modified = gzip.compress(b"x" * len(gzip.decompress(old_path.read_bytes())), mtime=0)
+        sha = gate._sha(modified)
+        old_path.with_name(sha + ".bin").write_bytes(modified)
+        for route in list((self.site / "native-tex/sources").iterdir()):
+            bundle = json.loads(route.read_bytes())
+            for pack in bundle["sourcePacks"]:
+                if pack["sha256"] == old_path.stem:
+                    pack.update(href="../source-packs/" + sha + ".bin", sha256=sha, bytes=len(modified))
+            del bundle["content_sha256"]
+            bundle["content_sha256"] = gate._sha(bundles.canonical(bundle))
+            route.unlink()
+            route.with_name(bundle["content_sha256"] + ".json").write_bytes(bundles.canonical(bundle))
+        with self.assertRaisesRegex(ValueError, "member differs"):
+            gate.site_key(self.site, REVISION)
+
+    def test_site_recomputes_mount_identity_and_rejects_altered_gzip_or_url_bytes(self):
+        pack = next((self.site / "native-tex/source-packs").iterdir())
+        original = pack.read_bytes()
+        pack.write_bytes(original[:-1])
+        with self.assertRaisesRegex(ValueError, "source pack differs"):
+            gate.site_key(self.site, REVISION)
+        pack.write_bytes(original)
+        asset = next((self.site / "native-tex/assets").iterdir())
+        original = asset.read_bytes()
+        asset.write_bytes(original.upper())
+        with self.assertRaisesRegex(gate.CompileError, "source asset differs"):
+            gate.site_key(self.site, REVISION)
+        asset.write_bytes(original)
+        route = next((self.site / "native-tex/sources").iterdir())
+        bundle = json.loads(route.read_bytes())
+        bundle["render_sha256"] = "f" * 64
+        del bundle["content_sha256"]
+        bundle["content_sha256"] = gate._sha(bundles.canonical(bundle))
+        route.unlink()
+        route.with_name(bundle["content_sha256"] + ".json").write_bytes(bundles.canonical(bundle))
+        with self.assertRaisesRegex(ValueError, "render identity mismatch"):
+            gate.site_key(self.site, REVISION)
+
+
+@unittest.skipUnless(have("pdflatex", "kpsewhich", "pdfinfo"), "host pdfTeX and poppler are required")
 class PdfTeXGate(Workspace):
     def test_synthetic_bundle_compiles_from_its_bundle_and_runtime_alone(self):
         self.prepare()
@@ -175,6 +288,16 @@ class PdfTeXGate(Workspace):
         self.assertEqual(summary["status"], "fail")
         self.assertTrue(any(problem.startswith("opened a file outside the bundle and the runtime: ")
                             and problem.endswith("/size10.clo") for problem in receipt["problems"]), receipt)
+
+    def test_external_font_alias_map_still_fails_closure(self):
+        # Explicitly open it even on hosts that do not consult an alias map automatically.
+        alias = self.work / "texfonts.map"
+        alias.write_text("% host font aliases\n", encoding="utf-8")
+        source = (r'\openin0="' + str(alias) + r'"\relax\closein0').encode()
+        self.prepare(GOOD.replace(b"\\begin{document}", source + b"\n\\begin{document}"))
+        summary, (receipt,) = self.compile()
+        self.assertEqual(summary["status"], "fail")
+        self.assertIn(f"opened a file outside the bundle and the runtime: {alias}", receipt["problems"])
 
     def test_work_tree_file_outside_the_bundle_is_a_closure_violation(self):
         index = self.prepare(b"\\documentclass{article}\n" + LMODERN + b"\\begin{document}\n\\input{stray}\n\\end{document}\n")

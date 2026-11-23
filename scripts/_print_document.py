@@ -415,7 +415,7 @@ def check(recipe: dict, *, root: Path = ROOT) -> dict:
     return recipe
 
 
-def check_many(recipes: list[dict], *, root: Path = ROOT) -> list[dict]:
+def check_many(recipes: list[dict], *, root: Path = ROOT, jobs: int | None = None) -> list[dict]:
     """Check one held selection without repeating Make discovery per edition.
 
     Metadata and non-publication checks remain the owning single-document gates.
@@ -437,7 +437,8 @@ def check_many(recipes: list[dict], *, root: Path = ROOT) -> list[dict]:
     # side; the first failure in selection order is the one raised.
     from concurrent.futures import ThreadPoolExecutor
     available = getattr(os, "process_cpu_count", os.cpu_count)() or 1
-    with ThreadPoolExecutor(max_workers=max(1, min(available, 8))) as pool:
+    workers = max(1, min(available, jobs if jobs is not None else available, 8))
+    with ThreadPoolExecutor(max_workers=workers) as pool:
         for error in pool.map(metadata_gate, publications):
             if error is not None:
                 raise error

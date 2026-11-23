@@ -317,7 +317,7 @@ class NativeBookTests(unittest.TestCase):
         with self.assertRaisesRegex(texts.AdapterError, "Artifact hash mismatch"):
             self.load()
 
-    def test_segment_book_passes_the_real_source_library_gate(self):
+    def write_segment_book_source_library(self):
         segmented_native_fixture(self)
         (self.root / "src/gpt").mkdir(parents=True)
         used = {row["id"] for row in self.load()["sources"]}
@@ -358,6 +358,29 @@ class NativeBookTests(unittest.TestCase):
             manifest = self.root / relative
             manifest.parent.mkdir(parents=True, exist_ok=True)
             manifest.write_text("\n".join(key + " = " + json.dumps(value) for key, value in data.items()) + "\n")
+    def test_replay_rechecks_real_native_publication_rights(self):
+        self.write_segment_book_source_library()
+        native = "native-book:fixture-book"
+        expected = texts.load_adapter(native, self.root)
+        owner = texts._library_module()
+        with patch.object(owner, "LIBRARY_CACHE_FLOOR", 1), patch.dict(os.environ, {
+                "TRIPTYCH_LIBRARY_CACHE": "1", "TRIPTYCH_LIBRARY_CACHE_DIR": str(self.root / "private-cache")}):
+            with self.assertRaisesRegex(texts.AdapterError, "Source manifest changed"):
+                with texts.replay_library(self.root):
+                    self.assertEqual(texts.load_adapter(native, self.root), expected)
+                    source = next(row for row in expected["sources"] if row["id"] == "artifact.fixture-book.scan")
+                    manifest = self.root / source["manifest_path"]
+                    before = manifest.stat()
+                    original = manifest.read_bytes()
+                    changed = original.replace(b'"public-domain"', b'"restricted"   ')
+                    self.assertNotEqual(original, changed)
+                    self.assertEqual(len(original), len(changed))
+                    manifest.write_bytes(changed)
+                    os.utime(manifest, ns=(before.st_atime_ns, before.st_mtime_ns))
+                    texts.load_adapter(native, self.root)
+
+    def test_segment_book_passes_the_real_source_library_gate(self):
+        self.write_segment_book_source_library()
         result = texts.load_adapter("native-book:fixture-book", self.root)
         self.assertTrue(result["verification"]["source_library_valid"])
         self.assertEqual("Exact native fixture.", result["units"][0]["text"])

@@ -40,6 +40,9 @@ duplicates and were deleted with that check.
    on every conversion; one failure fails the family, every failing output is
    named, and nothing partial is adopted. The product is content-keyed like
    every family, so a warm deploy reuses its verified bytes without converting.
+   When a family changes, the build can reuse individual reader files whose
+   bytes match the current committed descriptor. It converts the remaining
+   editions, regenerates the index and checks the complete output inventory.
 
    Each output converts in a process of its own. Until 2026-11-13 that was a
    fresh interpreter, which parsed the whole source library (about 115,000
@@ -62,10 +65,12 @@ duplicates and were deleted with that check.
    by a signal fails the family like any other failing output.
 2. **figures** — a TikZ picture becomes an image named by its source identity
    (`scripts/_web_edition_figures.py`). `make web-figures` (`tools/web-edition
-   figures`) compiles each figure twice, standalone with its leaf's own
-   preamble, to SVG, and refuses one whose two compilations differ. Pages runs
-   it inside the pinned `TEXLIVE_IMAGE` with no network; the SVG bytes depend
-   on that toolchain, so they are rebuilt with the site rather than committed.
+   figures`) compiles each new figure twice, standalone with its leaf's own
+   preamble, to SVG, and refuses one whose two compilations differ. Pages can
+   reuse an SVG when its size and digest match the checkout's figure record
+   for the current inputs and pinned compiler image. A missing or unrecognized
+   figure takes the two-pass compilation path inside `TEXLIVE_IMAGE` with
+   networking disabled.
 3. **install** — the site renders the verified product and the compiled
    figures; `tools/public-alpha` refuses a reader whose product or figure set
    is missing, stale or altered.

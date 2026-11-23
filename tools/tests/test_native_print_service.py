@@ -428,10 +428,22 @@ class SourceGuardTests(unittest.TestCase):
                 return subprocess.run(["git", "-C", str(root), *arguments], check=True,
                                       capture_output=True, text=True).stdout.strip()
             git("init", "-q")
-            git("add", "src/input.tex")
+            (root / ".gitignore").write_text("/.scratch/\n/build/\n*.ignored\n")
+            git("add", ".gitignore", "src/input.tex")
             git("-c", "user.name=Fixture", "-c", "user.email=fixture@example.invalid", "commit", "-qm", "Fixture")
             revision = git("rev-parse", "HEAD")
             native.assert_source(root, revision)
+            for name in ("build", ".scratch"):
+                generated = root / name
+                generated.mkdir()
+                (generated / "payload").write_bytes(b"generated")
+            native.assert_source(root, revision, complete_checkout=True)
+            ignored = root / "src/extra.ignored"
+            ignored.write_text("An added file an input glob can select.\n")
+            native.assert_source(root, revision)
+            with self.assertRaisesRegex(native.ServiceError, "ignored files"):
+                native.assert_source(root, revision, complete_checkout=True)
+            ignored.unlink()
             with self.assertRaises(native.ServiceError):
                 native.assert_source(root, "f" * 40)
             (root / "src/extra.tex").write_text("Untracked source input.\n")
