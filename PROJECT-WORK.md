@@ -7,6 +7,24 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-11-23.
 
+## Pages build and print verification, 23 November 2026
+
+<!-- promised-deliverable: pages-performance-main-2026-11-23 -->
+
+The performance branch reached its November 21 hosted checkpoint at
+`ecded96282`. A run that restored an earlier browser cache took
+[21 minutes 17 seconds](https://github.com/spincyc/triptych/actions/runs/44915002823).
+Repeating with an exact cache hit took
+[8 minutes 15 seconds](https://github.com/spincyc/triptych/actions/runs/44916817776).
+Both verified 664 editions. Each ran on the feature branch, where deployment
+is disabled. The November 23 Advent publication on the previous main workflow
+[compiled 667 editions and deployed](https://github.com/spincyc/triptych/actions/runs/45168945411).
+
+The reconciliation at `0f337b8dce` includes the five later commits through
+`1f99f6148c`. They cover the shared source graph, recovery of verified
+act-history products after a source fingerprint changes, and an option to
+replay an earlier browser cache in a feature-branch timing run.
+
 ## GPT First Sunday of Advent, 29 November 2026
 
 <!-- promised-deliverable: gpt-1962-01-advent-2026-11-29 -->

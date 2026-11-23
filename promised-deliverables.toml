@@ -1,6 +1,30 @@
 schema_version = 1
 
 [[deliverables]]
+id = "pages-performance-main-2026-11-23"
+owner = "PROJECT-WORK.md"
+promise = "Reconcile the complete Pages performance branch through its five local follow-up commits with production, preserve the published editions and verify the production deployment."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "performance-history"
+  criterion = "The hosted performance branch and its five follow-up commits are in main's integration history together with the current publications."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", ".github/workflows/pages.yml", "scripts/_act_history_replay.py"]
+
+  [[deliverables.requirements]]
+  id = "current-publications"
+  criterion = "Fresh production proofs, release binding and discovery checks, and the site verification pass with the current catalogue and reader contents."
+  status = "open"
+  evidence = ["release/browser-products.json", "release/public-alpha.json", "src/index/corpus/index.json"]
+
+  [[deliverables.requirements]]
+  id = "production-deployment"
+  criterion = "Main builds, independently verifies all admitted print editions, and successfully deploys the reconciled site. The live Advent readers match the reviewed texts."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", ".github/workflows/pages.yml", "library/traditional-latin-mass.md"]
+
+[[deliverables]]
 id = "gpt-1962-01-advent-2026-11-29"
 owner = "PROJECT-WORK.md"
 promise = "Publish the GPT 1962 First Sunday of Advent study, concise study and homily for 29 November 2026. Survey recent prose, try the resulting editorial guidance on the three editions, review them cold and adopt the guidance that improves them."
