@@ -173,12 +173,9 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
     main = calendar.split("### Resumed Sundays after the Epiphany\n", 1)[0]
     last_row = re.findall(r"^\| \d{2} \|.*$", main, re.MULTILINE)[-1]
     self.assertTrue(last_row.startswith("| 68 | "))
-    # The § note follows the † note; the Advent handbook's ◇ note, if present,
-    # comes last (test_1962_advent_handbook_cue_above_the_table).
-    block, dagger, note, *rest = main.split(last_row + "\n", 1)[1].strip().split("\n\n")
+    block, dagger, note = main.split(last_row + "\n", 1)[1].strip().split("\n\n")
     self.assertTrue(dagger.startswith("† "))
     self.assertTrue(note.startswith("§ "))
-    self.assertTrue(all(paragraph.startswith("◇ ") for paragraph in rest), rest)
     self.assertEqual(landing.count("§"), 2)
     self.assertEqual(landing.count("\n§ "), 1)
     self.assertNotIn("](../pdf/", block)
@@ -214,12 +211,7 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
       self.assertIn(f"](../web/{provider}/{leaf}.html)", faith)
 
   def test_1962_advent_handbook_cue_above_the_table(self):
-    """The Advent handbook cue (roman-1962-seasonal-handbooks.md, Collection
-    identity; roman-1962-propers.md, Reader list presentation, 2026-11-18):
-    one italic line directly above the Proper of Time table links the
-    handbook's reader with a same-catalog publication reference, and a ◇ note
-    after the † and § notes says what it covers. The handbook's own row stands
-    in the page's Seasonal Handbooks section, which owns it."""
+    """The Sunday cue references each edition; the seasonal table owns it."""
     landing = (ROOT / "library/traditional-latin-mass.md").read_text()
     leaf = "liturgy/roman-rite/1962/seasons/advent"
 
@@ -228,27 +220,19 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
     before_table, table_and_after = main.split("\n| ID | Sunday |", 1)
     cue = before_table.rstrip("\n").rsplit("\n", 1)[-1]
     self.assertTrue(cue.startswith("*Advent handbook*"))
-    self.assertIn("◇", cue)
     for provider, label, prefix in (("gpt", "ChatGPT", ""), ("claude", "Claude", "claude:")):
       self.assertIn(f"[{label}](../web/{provider}/{leaf}.html)", cue)
       marker = f"<!-- triptych-publication-reference: {prefix}{leaf} -->"
       self.assertIn(marker, cue)
       self.assertEqual(landing.count(marker), 1)
     self.assertTrue(table_and_after.split("\n", 3)[2].startswith("| 01 | **First Sunday of Advent**"))
-    self.assertEqual(landing.count("◇"), 2)
-
-    notes = table_and_after.strip().split("\n\n")
-    self.assertTrue(notes[-1].startswith("◇ "), notes[-1])
-    self.assertIn("[Seasonal handbooks](#seasonal-handbooks)", notes[-1])
-    self.assertLess(main.index("\n† "), main.index("\n§ "))
-    self.assertLess(main.index("\n§ "), main.index("\n◇ "))
-
     # The row that owns the handbook: Seasonal Handbooks, after the core works
     # and before the Sunday table, with no two-digit ID cell.
     self.assertIn('<a id="seasonal-primers"></a>', landing)
     handbooks = landing.split("## Seasonal Handbooks", 1)[1].split("\n## ", 1)[0]
     self.assertLess(landing.index("## Core and Reference Works"), landing.index("## Seasonal Handbooks"))
     self.assertLess(landing.index("## Seasonal Handbooks"), landing.index("## Sunday Propers Calendar"))
+    self.assertNotRegex(handbooks, r"\b20\d\d\b")
     rows = [line for line in handbooks.splitlines() if line.startswith("| **")]
     self.assertEqual([row.split("**")[1] for row in rows], [
       "Advent", "Christmas", "Epiphany", "Time after Epiphany", "Septuagesima",
@@ -272,6 +256,19 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
     for provider in ("gpt", "claude"):
       self.assertEqual(publications[(provider, leaf)]["catalog"], "library/traditional-latin-mass.md")
       self.assertEqual(occurrences[(provider, leaf)], ["library/traditional-latin-mass.md"])
+
+  def test_postconciliar_seasonal_handbooks(self):
+    landing = (ROOT / "library/novus-ordo-liturgy.md").read_text()
+    section = landing.split("## Seasonal Handbooks", 1)[1].split("\n## ", 1)[0]
+    rows = [line for line in section.splitlines() if line.startswith("| **")]
+    self.assertEqual([row.split("**")[1] for row in rows], [
+      "Advent", "Christmas Time", "Ordinary Time", "Lent", "Sacred Paschal Triduum", "Easter Time",
+    ])
+    self.assertIn("after Pentecost", rows[2])
+    self.assertNotRegex(re.sub(r"\]\([^)]+\)", "]", section), r"\b20\d\d\b")
+    leaf = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent"
+    self.assertIn(f"](../web/gpt/{leaf}.html)", rows[0])
+    self.assertIn("[Seasonal handbooks](#seasonal-handbooks)", landing.split("## Core", 1)[0])
 
   def test_postconciliar_registry_and_reader_calendar_arithmetic(self):
     registry = (

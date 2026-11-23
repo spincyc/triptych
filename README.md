@@ -4,10 +4,7 @@
 
 ## Library
 
-Choose a section, open a reader, and read. New here? Start with
-[About](ABOUT.md). To see the whole corpus at once — every document, with its
-authors, its extent, and when it was last revised — open
-[Every Document](texts/).
+[About Triptych](ABOUT.md) · [Every Document](texts/)
 
 | Section | Focus |
 | --- | --- |

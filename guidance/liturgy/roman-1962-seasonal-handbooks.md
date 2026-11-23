@@ -20,9 +20,10 @@ The [editorial standard](../editorial.md), [repository guidance](../repository.m
 
 List the seasons in liturgical order under “Seasonal Handbooks” in
 `library/traditional-latin-mass.md`. Each row identifies the season,
-its opening day, and the available provider editions. Advent also has an
+its recurring liturgical opening, and the available provider editions.
+Use the opening named in the rubrics across years. Advent also has an
 italic cue above the Sunday Propers Calendar, with a
-`triptych-publication-reference` for each edition and a ◇ note after † and §.
+`triptych-publication-reference` for each edition.
 The [Proper of Time profile](roman-1962-propers.md#reader-list-presentation)
 owns that presentation. Keep the published reader paths stable.
 

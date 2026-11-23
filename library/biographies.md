@@ -2,8 +2,7 @@
 
 [Return to History](history.md)
 
-Lives are grouped by their place in the Church's history. Each distinguishes
-contemporary evidence from later tradition.
+These lives distinguish contemporary evidence from later tradition.
 
 ## Apostles
 

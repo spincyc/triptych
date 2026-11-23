@@ -5,9 +5,7 @@
 
 [Return to the library](../README.md)
 
-**[Papal Encyclicals](../encyclicals/)** — every catalogued encyclical in one
-sortable table, with a short AI-written summary of each and the Latin and
-English texts printed by 1930 where this project holds them.
+[Papal Encyclicals](../encyclicals/) includes AI summaries and historical Latin and English editions.
 
 ## The Creature Before God
 
@@ -28,11 +26,7 @@ English texts printed by 1930 where this project holds them.
 
 ## The Four Last Things
 
-For annual preparation for death, especially as the liturgical year closes:
-two independent series of Catholic meditations on death, judgment, hell, and
-heaven. Both draw on Scripture, the Fathers, the saints, and the Church's
-prayer to deepen repentance, sacramental life, charity, and hope. Each essay
-can be read on its own.
+Each meditation can be read on its own, including in preparation for death at the close of the liturgical year.
 
 | Subject | ChatGPT | Claude | Focus |
 | --- | --- | --- | --- |

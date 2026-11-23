@@ -10,8 +10,6 @@
 
 ## Read by subject
 
-The web edition can be read continuously or entered at a major section:
-
 - [Ancient contexts](../web/gpt/history/catholic-exorcism/01-history-and-current-practice.html#before-the-christian-rite-ancient-contexts)
 - [Biblical witness](../web/gpt/history/catholic-exorcism/01-history-and-current-practice.html#the-biblical-witness)
 - [Patristic reception](../web/gpt/history/catholic-exorcism/01-history-and-current-practice.html#patristic-reception-apology-initiation-and-office)

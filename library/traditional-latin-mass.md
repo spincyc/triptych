@@ -2,9 +2,9 @@
 
 [Return to Liturgy](liturgy.md)
 
-Studies of the books and calendar in force in 1962. These are widely called the *Traditional Latin Mass* or the *Extraordinary Form*; this library names them by their own titles and dates.
+The 1962 Missal and Breviary are the books studied here. The Mass is also known as the *Traditional Latin Mass* or the *Extraordinary Form*.
 
-On this page: [Core and reference works](#core-and-reference-works) ·
+[Core and reference works](#core-and-reference-works) ·
 [Seasonal handbooks](#seasonal-handbooks) ·
 [Altar server guides](#altar-server-guides) ·
 [Sunday propers calendar](#sunday-propers-calendar) ·
@@ -22,36 +22,24 @@ On this page: [Core and reference works](#core-and-reference-works) ·
 
 ## Seasonal Handbooks
 
-Follow the history of each season and the way the 1962 Missal and Breviary
-teach it. Read with the Fathers, popes, saints and spiritual writers, then
-use the readings and prayers for the week and day. Each Sunday's Mass has
-its own study in the [Sunday propers calendar](#sunday-propers-calendar).
-
-The calendar runs from Advent 2026 to the eve of Advent 2027. Dates name the
-feast, Sunday or day shown in the [2026–27 Ordo](https://propria.org/ordo-2027/).
-Most seasons open at First Vespers, the evening prayer on the preceding day.
-Lent begins at Matins on Ash Wednesday. Easter and the Pentecost octave
-each begin at the Mass of the vigil. [General Rubrics, nos. 71–77](https://archive.org/download/sim_acta-apostolicae-sedis_1960-08-15_52_10/sim_acta-apostolicae-sedis_1960-08-15_52_10.pdf#page=19)
-
-| Season and day in 2026–27 | ChatGPT | Claude | Focus |
+| Season and opening | ChatGPT | Claude | Focus |
 | --- | --- | --- | --- |
-| **Advent**<br>First Sunday of Advent, Nov 29 | [Advent: Keeping Watch for Christ](../web/gpt/liturgy/roman-rite/1962/seasons/advent.html) | [Advent: A Primer for the Season of the Lord's Coming](../web/claude/liturgy/roman-rite/1962/seasons/advent.html) | Advent at Mass and in the Hours, the Fathers on the coming of Christ, and a course of readings and prayers through Christmas Eve. |
-| **Christmas**<br>Christmas Day, Dec 25 | Planned | Planned | The three Masses of the Nativity and the saints whose feasts fall within its octave. |
-| **Epiphany**<br>Epiphany, Jan 6 | Planned | Planned | The Magi at Bethlehem, the baptism in the Jordan and the wedding at Cana. |
-| **Time after Epiphany**<br>Jan 14 | Planned | Planned | The Sundays after Epiphany and the signs by which the disciples come to know Christ. |
-| **Septuagesima**<br>Septuagesima Sunday, Jan 24 | Planned | Planned | The farewell to the Alleluia and the three Sundays of preparation for Lent. |
-| **Lent**<br>Ash Wednesday, Feb 10 | Planned | Planned | Ashes, the fast, the Sunday Gospels and the Church’s preparation of catechumens for baptism. |
-| **Passiontide**<br>Passion Sunday, Mar 14 | Planned | Planned | Holy Week opens on Palm Sunday (Mar 21). The Sacred Triduum follows from Holy Thursday through Holy Saturday (Mar 25–27). |
-| **Easter**<br>Easter Sunday, Mar 28 | Planned | Planned | Baptism at the Easter Vigil, the octave of the Resurrection and the appearances of the risen Christ. |
-| **Ascensiontide**<br>Ascension Thursday, May 6 | Planned | Planned | Christ’s return to the Father and the disciples’ prayer as they await the Holy Spirit. |
-| **Octave of Pentecost**<br>Pentecost Sunday, May 16 | Planned | Planned | The descent of the Holy Spirit and the Ember Days kept during the octave. |
-| **Time after Pentecost**<br>Trinity Sunday, May 23 | Planned | Planned | The long course of Sunday Gospels, the Epiphany Sundays resumed near its end, and the last Sunday before Advent returns on Nov 28. |
+| **Advent**<br>First Vespers of the First Sunday of Advent | [Advent: Keeping Watch for Christ](../web/gpt/liturgy/roman-rite/1962/seasons/advent.html) | [Advent: A Primer for the Season of the Lord's Coming](../web/claude/liturgy/roman-rite/1962/seasons/advent.html) | Mass, the Hours and daily prayer through Christmas Eve. |
+| **Christmas**<br>First Vespers of the Nativity | Planned | Planned | The three Christmas Masses and the saints of the octave. |
+| **Epiphany**<br>First Vespers of Epiphany | Planned | Planned | The Magi, Christ’s baptism and the wedding at Cana. |
+| **Time after Epiphany**<br>January 14 | Planned | Planned | The Sunday Gospels before Septuagesima. |
+| **Septuagesima**<br>First Vespers of Septuagesima Sunday | Planned | Planned | Three Sundays of preparation for Lent. |
+| **Lent**<br>Matins of Ash Wednesday | Planned | Planned | The fast and preparation for baptism. |
+| **Passiontide**<br>First Vespers of Passion Sunday | Planned | Planned | The Passion, Holy Week and the Sacred Triduum. |
+| **Easter**<br>Mass of the Easter Vigil | Planned | Planned | Baptism, the octave and the appearances of the risen Christ. |
+| **Ascensiontide**<br>First Vespers of the Ascension | Planned | Planned | Christ’s return to the Father and the wait for Pentecost. |
+| **Octave of Pentecost**<br>Mass of the Vigil of Pentecost | Planned | Planned | The gift of the Holy Spirit and the Ember Days. |
+| **Time after Pentecost**<br>First Vespers of Trinity Sunday | Planned | Planned | The Sunday Gospels and the Sundays resumed from after Epiphany. |
+
+[General Rubrics, nos. 71–77](https://archive.org/download/sim_acta-apostolicae-sedis_1960-08-15_52_10/sim_acta-apostolicae-sedis_1960-08-15_52_10.pdf#page=19)
 
 <a id="altar-server-guides"></a>
 ## Altar Server Guides
-
-Print-first training guides for young servers, their trainers, and repeated
-practice.
 
 | Form | ChatGPT | Claude | Best for |
 | --- | --- | --- | --- |
@@ -61,8 +49,6 @@ practice.
 
 <a id="sanctuary-pictorial-dictionaries"></a>
 ## Sanctuary Pictorial Dictionaries
-
-Monochrome-pencil visual references organized for six audiences.
 
 [Browse pictures and definitions](sanctuary-picture-dictionary.html)
 
@@ -77,17 +63,9 @@ Monochrome-pencil visual references organized for six audiences.
 
 ## Sunday Propers Calendar
 
-The stable 1962 temporal series in liturgical-year order, beginning with the
-First Sunday of Advent; the resumed Sundays after the Epiphany follow in their
-own section. Each approved installed guide is linked; unavailable editions are
-shown as `Planned`.
-
-The Fifth Sunday after Epiphany and its resumed observance share their
-orations, Epistle and Gospel. In resumed use, the five chants come from the
-Twenty-third Sunday after Pentecost
-([1962 Missal, RGMR 298](https://www.clerus.org/bibliaclerusonline/fr/irt.htm)).
-Row 16 also links the existing resumed study and its companions for their
-shared readings; a dedicated guide to the winter formulary remains planned.
+Row 16 links the resumed Fifth Sunday after Epiphany for its shared orations,
+Epistle and Gospel. Its chants come from the Twenty-third Sunday after
+Pentecost. The winter guide is planned. [1962 Missal, RGMR 298](https://www.clerus.org/bibliaclerusonline/fr/irt.htm)
 
 <!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/39-trinity-sunday -->
 <!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/41-second-after-pentecost -->
@@ -134,7 +112,7 @@ shared readings; a dedicated guide to the winter formulary remains planned.
 <!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost -->
 <!-- triptych-publication-id: claude:liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost -->
 
-*Advent handbook* · [ChatGPT](../web/gpt/liturgy/roman-rite/1962/seasons/advent.html) · [Claude](../web/claude/liturgy/roman-rite/1962/seasons/advent.html) ◇ <!-- triptych-publication-reference: liturgy/roman-rite/1962/seasons/advent --> <!-- triptych-publication-reference: claude:liturgy/roman-rite/1962/seasons/advent -->
+*Advent handbook* · [ChatGPT](../web/gpt/liturgy/roman-rite/1962/seasons/advent.html) · [Claude](../web/claude/liturgy/roman-rite/1962/seasons/advent.html) <!-- triptych-publication-reference: liturgy/roman-rite/1962/seasons/advent --> <!-- triptych-publication-reference: claude:liturgy/roman-rite/1962/seasons/advent -->
 
 | ID | Sunday | ChatGPT | Claude |
 | ---: | --- | --- | --- |
@@ -210,18 +188,11 @@ Claude: [Death](../web/claude/articles/faith/four-last-things-01-death.html) · 
 
 † These Sundays move with the date of Easter each year. How many Sundays after the Epiphany are kept before Septuagesima, and how many of the omitted ones are resumed after Pentecost before the Last Sunday after Pentecost, depend on the date of Easter.
 
-§ The Church keeps the last things before her as her year ends and begins
-again: she prays for all the faithful departed as November begins, hears on
-the Last Sunday after Pentecost the Lord's prophecy of the end of the world
-(Matthew 24:15–35), and on the First Sunday of Advent his coming in power and
-majesty (Luke 21:25–33). An old custom of preaching gave the four Sundays of
-Advent to the four last things; these essays serve the year's last Sundays
-and Advent alike.
-
-◇ For the four weeks together, the Advent handbooks follow the Sunday and
-Ember liturgies to Christmas Eve. The GPT edition pairs Scripture and
-spiritual reading with prayers for each week and day.
-[Seasonal handbooks](#seasonal-handbooks).
+§ The Church prays for the dead as November begins. The last Sunday after
+Pentecost looks to the end of the world (Matthew 24:15–35), and Advent opens
+with Christ’s return
+(Luke 21:25–33). Preachers traditionally took the four last things as themes
+for the Sundays of Advent.
 
 ### Resumed Sundays after the Epiphany
 

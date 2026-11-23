@@ -2,27 +2,12 @@
 
 [Return to Curriculums](curriculums.md)
 
-This self-paced, self-contained curriculum treats the 1962 Roman Missal as a
-destination within a broad Latin education. It begins with ordinary composed
-Latin, builds sustained vocabulary and grammatical recall, and progressively
-reads the Vulgate, the Missal, Cicero, Augustine, Christian prose and poetry,
-theological and canonical Latin, and other excellent Latin. Pronunciation is
-outside the present edition.
-
-The common trunk contains 22 substantial packets. Each packet integrates
-teaching, memory sheets, connected reading, composition, four contrasting
-practice variants, answers and models, and a qualitative statement of what a
-reader should reasonably be able to do before continuing. Poetry appears in
-the trunk and then becomes an optional eight-packet advanced branch. A separate
-memory workbook permits repeated Latin-to-English, English-to-Latin,
-morphological, construction, reconstruction, and composition retrieval.
-
-The ChatGPT edition has 37 PDFs totaling 2,067 pages: three companions, 22
-core packets, eight advanced-poetry packets, and four cumulative reviews.
-
 ## ChatGPT edition
 
-Choose a packet below.
+The 22 core packets progress from composed Latin to the Missal, the Vulgate,
+classical authors and Christian prose and poetry. Each includes readings,
+composition, four practice sets, model answers and a progress check.
+Pronunciation is outside this course. Begin with the course guide.
 
 ## Course companions
 
@@ -76,9 +61,7 @@ Choose a packet below.
 
 ## Advanced poetry branch
 
-The trunk introduces poetic order, written recurrence, parallelism, and the
-textual foundations of scansion. Sustained poetry study branches after M22 and
-does not interrupt the common trunk.
+The eight optional poetry packets follow M22.
 
 | Packet | PDF | Focus |
 | --- | --- | --- |
@@ -93,8 +76,7 @@ does not interrupt the common trunk.
 
 ## Cumulative self-reviews
 
-These are qualitative, repeatable opportunities for fresh work. Each includes
-its own forms, Latin needed for the work, and complete answers or models.
+Each review includes the Latin texts and model answers.
 
 | ID and publication | PDF | Contents |
 | --- | --- | --- |
