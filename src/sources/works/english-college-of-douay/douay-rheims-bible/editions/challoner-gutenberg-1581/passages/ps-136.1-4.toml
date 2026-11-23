@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.ps-136.1-4"
+edition_id = "edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581"
+artifact_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-21-psalms-578f023d"
+artifact_sha256 = "578f023dfe1c830252f23df84bcdbaae79857a652e41b7546c461c4a22f601fc"
+locus = "Ps.136.1-4"
+states = ["cataloged", "acquired", "inspected", "verified"]
+physical_line_ranges = [[2351, 2354]]
+text = "Upon the rivers of Babylon, there we sat and wept: when we remembered Sion: On the willows in the midst thereof we hung up our instruments. For there they that led us into captivity required of us the words of songs. And they that carried us away, said: Sing ye to us a hymn of the songs of Sion. How shall we sing the song of the Lord in a strange land?"
+transcription_segments = [
+  { line = 2351, text = "Upon the rivers of Babylon, there we sat and wept: when we remembered Sion:" },
+  { line = 2352, text = "On the willows in the midst thereof we hung up our instruments." },
+  { line = 2353, text = "For there they that led us into captivity required of us the words of songs. And they that carried us away, said: Sing ye to us a hymn of the songs of Sion." },
+  { line = 2354, text = "How shall we sing the song of the Lord in a strange land?" },
+]
+context = "The captives sit weeping by the rivers of Babylon and hang up their instruments. Their captors demand the songs of Sion. The singers ask how the Lord’s song can be sung in a foreign land. The registered psalm numbering table maps this psalm to Psalm 137 in Hebrew numbering."
+verified_on = "2026-11-23"
+notes = "Each verse and both bounds were checked against the complete Project Gutenberg eBook 1581 transcription from which the registered book TSV was derived. This checks extraction and the address within this edition."

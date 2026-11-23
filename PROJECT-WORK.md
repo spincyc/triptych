@@ -15350,8 +15350,8 @@ registered book, checked against the numbered paragraphs in the complete
 [Gutenberg transcription](src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/gutenberg-text-7d10da78/artifact.toml).
 The references in Lacuna use modern Catholic book names and NABRE numbering.
 For the cloud over the tent, [Exodus 40:33–38](https://bible.usccb.org/bible/exodus/40)
-corresponds to Douay 40:31–36. The rejected stone appears in Psalm 118 in
-Hebrew numbering and 117 in this edition. The names 1 Samuel, 2 Samuel and
+corresponds to Douay 40:31–36. The captives sing of Babylon in Psalm 137 in Hebrew numbering and 136 in
+this edition. The names 1 Samuel, 2 Samuel and
 1 Kings correspond to Douay 1, 2 and 3 Kings respectively. The ruler from
 [Bethlehem](https://bible.usccb.org/bible/micah/5) and the
 [child on David's throne](https://bible.usccb.org/bible/isaiah/9) begin a verse
@@ -15377,3 +15377,26 @@ belongs to Augustine's reading. The Council's account of the lasting value
 of Israel's Scriptures and their Christian reception in
 [*Dei Verbum*, §§14–16](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html)
 provides the interpretive context for the concordance.
+
+In the revised sequence the exiles hang their instruments by Babylon’s rivers
+on day 21. Balaam sees a star and sceptre rise from Israel on day 26.
+These scenes replace the rejected stone and Zechariah’s king riding a donkey.
+The original passage records remain available for their own texts.
+[Psalm 136:1–4](src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/ps-136.1-4.toml) · [Numbers 24:15–17](src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/num-24.15-17.toml)
+
+The Greek Orthodox Archdiocese of America’s Vesperal Liturgy for December
+24, 2026 opens its eight Old Testament readings with creation, Balaam’s
+oracle and Micah’s Bethlehem. The fourth reading names Jesse, and the last
+two announce the child on David’s throne and Emmanuel. The lessons overlap
+the puzzle at particular verses. For example, both read Balaam’s star in
+Numbers 24:17. The festal sticheron before the entrance gives the star to
+heaven, the cave to the earth and the manger to the wilderness. The Virgin
+Mother is humanity’s offering to Christ. [The eight readings](src/sources/works/greek-orthodox-archdiocese-of-america/nativity-vesperal-liturgy/editions/2026-11-23-digital-chant-stand/passages/readings-1-8.toml) · [The fourth sticheron](src/sources/works/greek-orthodox-archdiocese-of-america/nativity-vesperal-liturgy/editions/2026-11-23-digital-chant-stand/passages/vespers-sticheron-4.toml)
+
+The Byzantine and Christian Museum in Athens dates its Nativity icon
+ΒΧΜ 13109 to the first half of the fifteenth century and suggests a Cretan
+origin. The mother’s red mattress runs diagonally beside the child in the
+cave. The mounted Magi, shepherds and angels occupy different parts
+of the image around them. The catalogue places Joseph at lower left and
+the bath at lower right. Those positions belong to this particular icon.
+[The museum’s description](src/sources/works/byzantine-and-christian-museum/nativity-bxm-13109/editions/2026-11-23-english-catalogue/passages/composition.toml)

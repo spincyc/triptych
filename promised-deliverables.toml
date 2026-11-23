@@ -6263,7 +6263,7 @@ state = "complete"
 [[deliverables]]
 id = "advent-puzzle-source-concordance-2026-11-23"
 owner = "src/sources/works"
-promise = "Pin the twenty-eight Old Testament scenes of the Advent puzzle to identified verses and document the domestic church, the household crèche and the Lateran dedication in primary witnesses."
+promise = "Pin the twenty-eight Old Testament scenes of the Advent puzzle to identified verses and document the domestic church, the household crèche, the Lateran dedication and the Byzantine reception of the Nativity in identified witnesses."
 state = "complete"
 
   [[deliverables.requirements]]
@@ -6291,12 +6291,12 @@ state = "complete"
     "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/2kings-6.9-16.toml",
     "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/2kings-7.1-16.toml",
     "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/3kings-8.22-30.toml",
-    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/ps-117.19-23.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/ps-136.1-4.toml",
     "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/is-11.1-10.toml",
     "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/is-35.1-10.toml",
     "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/is-40.9-11.toml",
     "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/mich-5.2-5.toml",
-    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/zach-9.9-10.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/num-24.15-17.toml",
     "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/is-9.2-7.toml",
     "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/is-7.10-16.toml",
   ]
@@ -6326,4 +6326,14 @@ state = "complete"
     "src/sources/works/papal-documents/2019-12-01-papal-francesco-papa-francesco-lettera-ap-20191201-admirabile-signum-351aa693/editions/2026-10-26-vatican-en/passages/10.toml",
     "src/sources/works/papal-documents/2019-12-01-papal-francesco-papa-francesco-lettera-ap-20191201-admirabile-signum-351aa693/editions/2026-10-26-vatican-it/passages/1.toml",
     "src/sources/works/papal-documents/2019-12-01-papal-francesco-papa-francesco-lettera-ap-20191201-admirabile-signum-351aa693/editions/2026-10-26-vatican-it/passages/10.toml",
+  ]
+
+  [[deliverables.requirements]]
+  id = "byzantine-nativity"
+  criterion = "Identify the Nativity service, the appointed Old Testament lessons and a hymn that joins creation to the Incarnation. Locate the figures in a specific Byzantine Nativity composition and identify the basis for their placement."
+  status = "pass"
+  evidence = [
+    "src/sources/works/greek-orthodox-archdiocese-of-america/nativity-vesperal-liturgy/editions/2026-11-23-digital-chant-stand/passages/vespers-sticheron-4.toml",
+    "src/sources/works/greek-orthodox-archdiocese-of-america/nativity-vesperal-liturgy/editions/2026-11-23-digital-chant-stand/passages/readings-1-8.toml",
+    "src/sources/works/byzantine-and-christian-museum/nativity-bxm-13109/editions/2026-11-23-english-catalogue/passages/composition.toml",
   ]
