@@ -16,7 +16,7 @@ preserves the established first four pages for the concise companion when
 printed, while its remaining argument and the expansive study follow their
 distinct roles. Read
 `guidance/liturgy/propers-three-documents.md` for the owning standard. The
-`proper-study` workflow is at version 19. Its current path publishes source
+`proper-study` workflow is at version 20. Its current path publishes source
 and reader editions; optional print rendering is separate. The version
 paragraphs below retain the contracts of earlier runs.
 
@@ -47,7 +47,7 @@ complete adopted expansion; mixed or partial shapes fail closed. Other
 postconciliar families require an explicit registry resolver rather than a
 grammar-only pass.
 
-### Current source and reader path: version 19
+### Current source and reader path: version 20
 
 The sequence is context, research, reusable source registration, cold research
 review, expansive study and cold review, concise study and cold review, homily
@@ -70,6 +70,12 @@ new worker with no authoring conversation history, exactly the compiled packet
 and its result destination. Never prefill a PASS from preparatory work or use
 an author as the cold reviewer of that work. Follow each packet's repair route;
 the linear diagram shows the passing path, not permission to bypass a loop.
+
+Version 20 directs authors and cold reviewers to the revision guidance tried
+on the First Sunday of Advent. The shared packet also directs research to the
+appointments of the particular 1962 Mass across the liturgical year. The
+[Advent production record](reviews/gpt-1962-01-advent-2026-11-29/CYCLES.md)
+documents the trial under version 19.
 
 Version 19 separates the research projection from aggregate publication
 products. Source registration generates and checks the strict ordinary working
@@ -156,7 +162,9 @@ scholarly review or a clearance of inherited chronology/currentness findings.
 Two driver practices hold for every source-and-reader run. Run every stage,
 gate and worker with `PYTHONDONTWRITEBYTECODE=1`, the workspace
 `TRIPTYCH_BROWSER_DATA_ROOT`, and Python with the pinned Markdown first on
-`PATH`. The web probes refuse an unpinned Markdown, and a bytecode cache
+`PATH`. Install the pinned Python dependencies outside the checkout before
+seeding. A package installed in a checkout-local scratch directory can enter
+the chronology computation seal and the list of inputs for native print. The web probes refuse an unpinned Markdown, and a bytecode cache
 written under `src/` counts as a browser-product input. No stage builds a PDF,
 but the Pages `print-compile` job typesets every admitted edition, the new
 leaf's three included, and deploy waits on it. Before pushing, compile them

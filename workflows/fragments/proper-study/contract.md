@@ -13,8 +13,10 @@ argument. Read the applicable 1962 or postconciliar profile for identity, text
 control, rights, source research, and branches. Universal editorial and
 repository guidance continues to govern. Read `guidance/editorial.md`, "Say
 what the texts say, plainly", before writing or reviewing any reader-facing
-sentence. The canonical leaf is `DOCUMENT_ROOT`
-in this packet.
+sentence. Before submitting or reviewing a study, concise study or homily,
+apply the corresponding reading test in the three-document profile under
+“Revise the three texts for their readers.” The canonical leaf is
+`DOCUMENT_ROOT` in this packet.
 
 Produce one expansive source-first study, one concise study, and one standalone
 homily from one canonical research owner. The three entrypoints are `main.tex`,
@@ -108,9 +110,8 @@ the approved proclaimed English. Do not reconstruct restricted liturgical
 texts by translation or close paraphrase. Claims of design must distinguish
 theological synthesis from historical compositional intent. Apply the
 semi-continuous readings and shared-prayers premise only to a postconciliar
-Ordinary Time target. A 1962 target instead uses only its own Time-after-
-Pentecost appointments and their independently documented transmission; never
-project the postconciliar calendar or Lectionary structure into it.
+Ordinary Time target. For a 1962 target, establish the appointments of the particular Mass
+under the 1962 Missal and calendar. Document their transmission independently.
 
 Use this run's exact header for generation provenance and record actual model
 contributions. Revision timestamps are derived from Git for each edition under
