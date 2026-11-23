@@ -15322,3 +15322,47 @@ record the resulting corrections. The web edition and the 23-page print proof
 were checked, including the four reading tables and all seven antiphons.
 The [seasonal primer table](library/traditional-latin-mass.md#seasonal-primers)
 dates ten further planned subjects through the return of Advent in 2027.
+
+## Advent puzzle source concordance, 2026-11-23
+
+<!-- promised-deliverable: advent-puzzle-source-concordance-2026-11-23 -->
+
+The Advent puzzle in Lacuna follows twenty-eight Old Testament scenes to
+Christ and assembles them into a façade inspired by the Lateran basilica.
+Triptych supplies reusable, edition-specific passage records for those scenes
+and a direct witness to the Christian reading of the Lateran dedication.
+The puzzle owns the riddles and their proposed connections.
+
+All four groups of seven have [passage records in the Challoner revision](src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/).
+They identify 194 verses. Each address resolves to physical lines of a
+registered book, checked against the numbered paragraphs in the complete
+[Gutenberg transcription](src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/gutenberg-text-7d10da78/artifact.toml).
+The references in Lacuna use modern Catholic book names and NABRE numbering.
+For the cloud over the tent, [Exodus 40:33–38](https://bible.usccb.org/bible/exodus/40)
+corresponds to Douay 40:31–36. The rejected stone appears in Psalm 118 in
+Hebrew numbering and 117 in this edition. The names 1 Samuel, 2 Samuel and
+1 Kings correspond to Douay 1, 2 and 3 Kings respectively. The ruler from
+[Bethlehem](https://bible.usccb.org/bible/micah/5) and the
+[child on David's throne](https://bible.usccb.org/bible/isaiah/9) begin a verse
+earlier in the NABRE than in the corresponding Douay passages.
+
+[Benedict XVI's Lateran Angelus](src/sources/works/benedict-xvi/angelus-2008-11-09/work.toml)
+interprets the building through 1 Corinthians 3, 1 Peter 2 and Ephesians 2.
+The complete Italian and English Holy See documents were obtained and their
+three opening paragraphs compared. Each expression has a separate hash and
+a bounded passage record. The U.S. readings for the dedication pair the flow of water from Ezekiel's temple with Paul's account of the
+community as God's building and John's identification of the raised temple
+with Christ's body. [Lectionary 671](https://bible.usccb.org/bible/readings/110926.cfm)
+The puzzle borrows this imagery for a devotional Advent
+sequence of its own.
+
+For a case in which Christian reception supplies the connection, see
+[Augustine on Psalm 143, §1 (Psalm 144 in NPNF)](https://ccel.org/ccel/schaff/npnf108/npnf108.ii.CXLIV.html).
+He reads David's victory over Goliath in light of Christ's victory over the
+devil. The passage occupies lines 66173–66183 of the
+[registered NPNF text](src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-09-05-english-npnf8-ccel-web-2026-09-05/artifacts/ccel-npnf108-text-d6841950/source.txt#L66173).
+In Hebrews 2:14–15 Christ defeats the power of death. The link to the duel
+belongs to Augustine's reading. The Council's account of the lasting value
+of Israel's Scriptures and their Christian reception in
+[*Dei Verbum*, §§14–16](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html)
+provides the interpretive context for the concordance.

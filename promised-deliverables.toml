@@ -6259,3 +6259,58 @@ state = "complete"
   criterion = "The revised GPT study traces the development of Advent, reads its Mass and Office with Fathers, popes, saints and other writers, and provides an evergreen course of weekly and daily readings paired with received prayers, reviewed in its reader form."
   status = "pass"
   evidence = ["src/gpt/liturgy/roman-rite/1962/seasons/advent/research/source-audit.md", "src/gpt/liturgy/roman-rite/1962/seasons/advent/research/cold-review.md", "src/gpt/liturgy/roman-rite/1962/seasons/advent/sections/90-daily-readings.tex"]
+
+[[deliverables]]
+id = "advent-puzzle-source-concordance-2026-11-23"
+owner = "src/sources/works"
+promise = "Pin the twenty-eight Old Testament scenes of the Advent puzzle to identified verses and document the Lateran dedication's biblical imagery in a primary witness."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "biblical-scenes"
+  criterion = "Each of the twenty-eight scenes has an edition-specific, line-ranged address in the Challoner Douay-Rheims with its source context."
+  status = "pass"
+  evidence = [
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/gen-3.22-24.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/gen-8.6-12.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/gen-14.17-20.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/gen-15.1-6.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/gen-18.1-15.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/gen-28.10-19.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/gen-49.8-10.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/ex-3.1-6.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/ex-12.21-27.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/ex-14.21-22.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/ex-16.13-18.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/ex-17.1-7.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/num-21.4-9.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/ex-40.31-36.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/ruth-2.14-18.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/1kings-16.6-13.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/1kings-17.38-50.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/2kings-6.9-16.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/2kings-7.1-16.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/3kings-8.22-30.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/ps-117.19-23.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/is-11.1-10.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/is-35.1-10.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/is-40.9-11.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/mich-5.2-5.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/zach-9.9-10.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/is-9.2-7.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/is-7.10-16.toml",
+  ]
+
+  [[deliverables.requirements]]
+  id = "lateran-witness"
+  criterion = "Identify the Lateran dedication address, its Holy See web editions, exact delivery and the bounded passage relating the church building to Christ and his people."
+  status = "pass"
+  evidence = [
+    "src/sources/works/benedict-xvi/angelus-2008-11-09/editions/2026-11-23-vatican-english-web/artifacts/official-html-3d581884/artifact.toml",
+    "src/sources/works/benedict-xvi/angelus-2008-11-09/editions/2026-11-23-vatican-english-web/edition.toml",
+    "src/sources/works/benedict-xvi/angelus-2008-11-09/editions/2026-11-23-vatican-english-web/passages/meditation-1-3.toml",
+    "src/sources/works/benedict-xvi/angelus-2008-11-09/editions/2026-11-23-vatican-italian-web/artifacts/official-html-2c593f0c/artifact.toml",
+    "src/sources/works/benedict-xvi/angelus-2008-11-09/editions/2026-11-23-vatican-italian-web/edition.toml",
+    "src/sources/works/benedict-xvi/angelus-2008-11-09/editions/2026-11-23-vatican-italian-web/passages/meditation-1-3.toml",
+    "src/sources/works/benedict-xvi/angelus-2008-11-09/work.toml",
+  ]

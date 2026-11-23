@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.mich-5.2-5"
+edition_id = "edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581"
+artifact_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-38-micheas-e8a1b3ce"
+artifact_sha256 = "e8a1b3ceca7957dec4fa25361b3104a1aec4be0b699c8c57e61b67912afb19b7"
+locus = "Mich.5.2-5"
+states = ["cataloged", "acquired", "inspected", "verified"]
+physical_line_ranges = [[57, 60]]
+text = "And thou Bethlehem Ephrata, art a little one among the thousands of Juda, out of thee shall he come forth unto me that is to be the ruler in Israel: and his going forth is from the beginning, from the days of eternity. Therefore will he give them up even till the time wherein she that travaileth shall bring forth: and the remnant of his brethren shall be converted to the children of Israel. And he shall stand, and feed in the strength of the Lord, in the height of the name of the Lord, his God: and they shall be converted, for now shall he be magnified even to the ends of the earth. And this man shall be our peace, when the Assyrian shall come into our land, and when he shall set his foot in our houses: and we shall raise against him seven shepherds, and eight principal men."
+transcription_segments = [
+  { line = 57, text = "And thou Bethlehem Ephrata, art a little one among the thousands of Juda, out of thee shall he come forth unto me that is to be the ruler in Israel: and his going forth is from the beginning, from the days of eternity." },
+  { line = 58, text = "Therefore will he give them up even till the time wherein she that travaileth shall bring forth: and the remnant of his brethren shall be converted to the children of Israel." },
+  { line = 59, text = "And he shall stand, and feed in the strength of the Lord, in the height of the name of the Lord, his God: and they shall be converted, for now shall he be magnified even to the ends of the earth." },
+  { line = 60, text = "And this man shall be our peace, when the Assyrian shall come into our land, and when he shall set his foot in our houses: and we shall raise against him seven shepherds, and eight principal men." },
+]
+context = "Bethlehem Ephrata, birth, the return of kindred and a ruler feeding his people precede the threat from Assyria. The same unit begins at Micah 5:1 and ends at 5:4 in the NABRE."
+verified_on = "2026-11-23"
+notes = "Each verse and both bounds were checked against the complete Project Gutenberg eBook 1581 transcription from which the registered book TSV was derived. This checks extraction and the address within this edition."
