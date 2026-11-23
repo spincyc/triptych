@@ -1,0 +1,303 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "SYN-001",
+      "location": "sections/concise/04-themes.tex:12 and sections/concise/10-commentary.tex:64",
+      "problem": "The concise account twice puts an illustration into the mouth of its source. Paul is said to describe a man getting out of bed and dressing for his day's work. Romans 13:11\u201314a exhorts the hearers themselves to wake, put on the armour of light and put on Christ. Chrysostom develops the everyday scene of neighbours waking and dressing. At the close, 'Chrysostom says people can recognize the company a man keeps by seeing how he acts toward another' blends his analogy about inseparable friends and his invitation to make Christ visible in one's deeds with the study's example of gentleness to an adversary. Compare Homily 24 on Romans at 13:12 and 13:14 with the expansive study, sections/30-the-judge.tex:21 and 23.",
+      "repair_target": "synthesis",
+      "required_result": "Keep the three voices audible. For example, 'Paul tells the Romans to wake from sleep and put on the armour of light. Before the lesson ends he tells them to put on Christ.' At the close, 'Chrysostom compares putting on Christ to the way people speak of friends who are always together. He asks what others can see of Christ in our deeds.' A former adversary's surprise at being treated gently can then stand as the study's own example.",
+      "severity": "blocking"
+    },
+    {
+      "id": "SYN-002",
+      "location": "sections/concise/10-commentary.tex:12, 28, 36, 46, 48 and 50",
+      "problem": "Across the developed commentary, sentences repeatedly announce that a point is specific, costly, different or still to come when the adjacent sentences already show it. Examples include 'What is asked of him today is quite specific' before Paul's debt of love (12), the second reminder of what the storm 'gives some sense of' between the homecoming and Gregory's actual appeal (28), 'means something very different' before the dispersal of clouds (36), 'differs enough to change what a Christian might look for' after the two possibilities have already been posed (46), 'They need something else' (48), and 'The distinction matters to his example' (50). These interjections repeatedly slow the passage where the reader is meant to follow the Fathers' reasoning.",
+      "repair_target": "synthesis",
+      "required_result": "Let the named act or textual detail make the transition. For example, at line 12 go directly to 'Just before the lesson begins, Paul speaks of the love we owe our neighbor.' At lines 48\u201350, join the field to the actual promise: 'The ploughed field still needs rain. In the English translation of Augustine\u2019s sermon the Lord gives sweetness. A man who once enjoyed taking another\u2019s goods now takes pleasure in giving his own away.' At 28, 36 and 46 retain the storm, the clearing sky and the two distinct senses of fruit, removing the general comments that precede or repeat them. Preserve the differences in the witnesses' wording.",
+      "severity": "blocking"
+    }
+  ],
+  "iteration": 0,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-inventory",
+          "kind": "front-matter",
+          "path": "sections/concise/01-inventory.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-overview",
+          "kind": "front-matter",
+          "path": "sections/concise/02-overview.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-chronology",
+          "kind": "front-matter",
+          "path": "generated/scriptural-date-location-page.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml",
+            "research/chronology.toml",
+            "research/chronology-annotations.tex",
+            "research/chronology-table.tex"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-themes",
+          "kind": "front-matter",
+          "path": "sections/concise/04-themes.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-commentary",
+          "kind": "integrated-commentary",
+          "path": "sections/concise/10-commentary.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [],
+          "key": "concise-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/concise/90-apparatus.tex",
+          "references": []
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "preface",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Gregory the Great",
+            "John Chrysostom",
+            "Augustine of Hippo",
+            "Bede"
+          ],
+          "carrying_authors": [
+            "Gregory the Great",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "the-judge"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "the-judge",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "authors": [
+            "Thomas Aquinas",
+            "Robert Bellarmine",
+            "Augustine of Hippo",
+            "Ambrose of Milan",
+            "Prosper Gu\u00e9ranger"
+          ],
+          "carrying_authors": [
+            "Thomas Aquinas",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "the-promised-son"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "the-promised-son",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+    "files": {
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/generated/scriptural-date-location-page.tex": "3f86da982f378890791b4eb9efefb80e22e3cc244eaf6cf1a22eda233b4b98a5",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/chronology-annotations.tex": "e9dabcb7bd4f1415d26bb65e182a6b2f5184c1e0b1e124f2b4f3217510700d4f",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/chronology-table.tex": "fb450dfe4a03a78ae3977a9b48a700082a03ca4a316627c628706e3b4947438e",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/chronology.toml": "09d8847eac3195d3721d99163c17d8a52afbe4abbf19358d3c348c62dbb7b9c6",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/interpretations.md": "6f63ab2c44f52795b6590eb92740be9878620634850b9390ce478fccf4d2951b",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/scope.md": "ff81ded23498d687b712e5c046f238b3cc45123df032c298da44f0c72907c75e",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/source-bindings.toml": "290ed6c660679766eea58ef4100a280d8b37b13f2a65991af62c15b770cbef74",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/concise/01-inventory.tex": "661ebb9e5410e27750cc28b575b7cd964a8f935b9b0c3f1bf19d3ea48be187ca",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/concise/02-overview.tex": "159645815614bc8f0de3b14408562ce914227dae419f2b2ef3671c33d712643c",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/concise/04-themes.tex": "97697759ee15ea8fb81eb7c7fa4a73de54f26a9c03fe91aa7feae865a581a87a",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/concise/10-commentary.tex": "37df76f833a811c080fe4e469fdbaf863b3aa6cb5c835d67ba9900c27f97d122",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/concise/90-apparatus.tex": "3b6473648507d6d111cf2bb7e35a5baa4f8f9915415b2f742bf717ec296a7119",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/synthesis.tex": "38c4e3c06fd9768d4ea62dc8fbcd21751d77fe26019b3d089613554ea24718dc"
+    },
+    "generation_provenance": {
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "19",
+            "73706a2ab569c88974452c4aec8fe2b7540a23ad1192efa39d574ddfbd334645",
+            "2eec8ccb8f69387e",
+            "2bab048acfa5b0b4474e72cc03a91df9b6597747",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gpt",
+    "review": "synthesis",
+    "schema": 1
+  },
+  "stage": "synthesis-review",
+  "summary": "The concise study explains how a disciple can learn to desire the coming Judge and how the Church can await the Son already received in Communion, and comparison with the expansive study, the 1962 Missal, Romans and the cited expositions identified two synthesis repairs in attribution and prose. The ten-page working proof has eleven appointments and four senses on page 1, the date sheet alone on page 2 (Luke 21:25\u201333 locates Jesus\u2019 teaching in Jerusalem, with its event date unresolved and composition alternatives separately stated), substantive themes on pages 3\u20134 and developed commentary from page 5."
+}

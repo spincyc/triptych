@@ -1,0 +1,294 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "SYN-AUG-085-ATTR",
+      "location": "sections/concise/04-themes.tex:14, the Alleluia paragraph",
+      "problem": "The paragraph credits Augustine with posing a question about what the singers have asked to receive and then answering it. In English Psalm LXXXV \u00a76 he asks what light brings joy, identifies Christ as the light, and directly explains the psalm\u2019s \u2018salvation\u2019 as Christ. The concise study gives the right interpretation but assigns its framing question to him.",
+      "required_result": "State the explanation directly in one sentence, for example, \u2018Augustine understands the salvation they ask to receive as Christ himself.\u2019 The following sentence can then draw the study\u2019s connection to the Son\u2019s human face.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 3,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-inventory",
+          "kind": "front-matter",
+          "path": "sections/concise/01-inventory.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-overview",
+          "kind": "front-matter",
+          "path": "sections/concise/02-overview.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-chronology",
+          "kind": "front-matter",
+          "path": "generated/scriptural-date-location-page.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml",
+            "research/chronology.toml",
+            "research/chronology-annotations.tex",
+            "research/chronology-table.tex"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-themes",
+          "kind": "front-matter",
+          "path": "sections/concise/04-themes.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-commentary",
+          "kind": "integrated-commentary",
+          "path": "sections/concise/10-commentary.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [],
+          "key": "concise-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/concise/90-apparatus.tex",
+          "references": []
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "preface",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Gregory the Great",
+            "John Chrysostom",
+            "Augustine of Hippo",
+            "Bede"
+          ],
+          "carrying_authors": [
+            "Gregory the Great",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "the-judge"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "the-judge",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "authors": [
+            "Thomas Aquinas",
+            "Robert Bellarmine",
+            "Augustine of Hippo",
+            "Ambrose of Milan",
+            "Prosper Gu\u00e9ranger"
+          ],
+          "carrying_authors": [
+            "Thomas Aquinas",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "the-promised-son"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "the-promised-son",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+    "files": {
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/generated/scriptural-date-location-page.tex": "3f86da982f378890791b4eb9efefb80e22e3cc244eaf6cf1a22eda233b4b98a5",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/chronology-annotations.tex": "e9dabcb7bd4f1415d26bb65e182a6b2f5184c1e0b1e124f2b4f3217510700d4f",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/chronology-table.tex": "fb450dfe4a03a78ae3977a9b48a700082a03ca4a316627c628706e3b4947438e",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/chronology.toml": "09d8847eac3195d3721d99163c17d8a52afbe4abbf19358d3c348c62dbb7b9c6",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/interpretations.md": "6f63ab2c44f52795b6590eb92740be9878620634850b9390ce478fccf4d2951b",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/scope.md": "e60196766402304d2e68fcf4ac70bd0c6593d0d76fb0aa821e46c5bb93012f05",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/source-bindings.toml": "290ed6c660679766eea58ef4100a280d8b37b13f2a65991af62c15b770cbef74",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/concise/01-inventory.tex": "08e5a5751a157ec76109046f17ee2274fba79f0d3832f8b623e09d77ad4c18a1",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/concise/02-overview.tex": "159645815614bc8f0de3b14408562ce914227dae419f2b2ef3671c33d712643c",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/concise/04-themes.tex": "23ec41c424fb06b5316d54c616809f4840d7aabb2c2815d88d40b23f6141f298",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/concise/10-commentary.tex": "cd1d1e93a29b685f8c10a3dfd24bfad67b64e6569818e60d848379000350075d",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/concise/90-apparatus.tex": "3b6473648507d6d111cf2bb7e35a5baa4f8f9915415b2f742bf717ec296a7119",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/synthesis.tex": "38c4e3c06fd9768d4ea62dc8fbcd21751d77fe26019b3d089613554ea24718dc"
+    },
+    "generation_provenance": {
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "19",
+            "73706a2ab569c88974452c4aec8fe2b7540a23ad1192efa39d574ddfbd334645",
+            "2eec8ccb8f69387e",
+            "2bab048acfa5b0b4474e72cc03a91df9b6597747",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gpt",
+    "review": "synthesis",
+    "schema": 1
+  },
+  "stage": "synthesis-review",
+  "summary": "PASS for The Lord Whom We Await, the concise study of the 1962 First Sunday of Advent. Read on its own, it explains how love of the coming Judge can change conduct now and how the faithful can await at Christmas the Son they have received. The expansive study preserves both arguments. Chrysostom on Romans 13 and Aquinas [86224] support the distinction between elapsed time, readiness in charity and the Church\u2019s Advent use. Gregory I.1, Ambrose X.39\u201345 and Bede at Luke 21:32 support the different readings of the cloud, trees and generation. Augustine on Psalm 85 \u00a7\u00a710\u201312 and Bellarmine on Psalm 84, exposition 12, distinguish the field cultivated in confession from the Virgin\u2019s uncultivated fruit. The 1962 Missal nos. 1 and 7 repeat the same Latin antiphon. Lasance and Walsh pp. 103 and 105 put \u2018O Lord\u2019 after \u2018To Thee\u2019 only at the Introit and identify the gifts\u2019 author in the Secret on p. 105. Shepherd\u2019s Gradual in Gu\u00e9ranger p. 134 supplies the final vocative, and p. 137 places the Marian and Eucharistic explanation before the Communion. The ten-page proof and its settled page markers agree. Page 1 has all eleven appointments and four sense rows. On page 2 the Luke 21:25\u201333 row locates Jesus teaching in Jerusalem, leaves the event date unresolved and distinguishes the Gospel\u2019s disputed composition dates below. Pages 3\u20134 develop the sequence from entrance to Postcommunion, and comparison begins on page 5. This was a source and pagination review. One advisory concerns wording of attribution."
+}

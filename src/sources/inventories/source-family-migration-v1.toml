@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-11-23"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:59d35ed1ecb38c89029a913996430df946cd7a9cf42de6967f66e53fc573110f"
+inventory_snapshot = "sha256:50c751df037f83d7263af9ca5e68622a85c0b8905b1e7f81699a28eddf99ab9a"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:244013734da8a55c76421135a4962ccff69ffbe0e4b2715087417af68545a4e8"
 canonical_catalog_snapshot = "sha256:86236d3ec5596b92869fc66d05fa319f7bccfe46f2683cc7a7c420532f1a2b18"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:36584ec59898ee86a387741e2dd0e5a7c0fad067ade1767b49f492c416224b63"
+snapshot = "sha256:3f12b13af622f1b40679996c7cee72493e35796a4ceca9c8b1080b6bc1e8ac81"
 families = []
 
 [[review_units]]
@@ -403,7 +403,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"
-surface_snapshot = "sha256:4ca98014f526b7ed5d839ef68a45c0913bc64850d9ca6d9821a98f5619d9fe81"
+surface_snapshot = "sha256:423276824cefa5113bae04021ac878098bfd011c83459fc8d811e9a786c46c60"
 review_state = "pending"
 
 [[review_units]]

@@ -1,0 +1,359 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "STU-LUKE-ADDRESS",
+      "location": "sections/30-the-judge.tex:5",
+      "problem": "The expression \u201cchange of addressee\u201d blurs the distinction that the next sentences explain. In the Missal Jesus addresses his disciples throughout. He first describes how other people will react, then tells the disciples to lift their heads.",
+      "required_result": "Say directly that Jesus turns from describing the nations\u2019 fear to promising the disciples their redemption.",
+      "severity": "advisory"
+    },
+    {
+      "id": "STU-SCOPE-RECORDS",
+      "location": "sections/90-apparatus.tex:5\u20139",
+      "problem": "The appendix identifies the historical editions and their limits, but readers looking for the line-by-line collation or the account of the reception search get no pointer to those two records.",
+      "required_result": "Identify propers/verified.md as the collation and research/scope.md as the record of the exegetical sources and search limits.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 3,
+  "observations": [
+    {
+      "location": "propers/verified.md:17 and sections/10-appointed-text.tex:21, 23",
+      "note": "The extra comma after the Introit\u2019s \u201cO Lord\u201d is visible on comparison with Lasance, p. 103, and remains the existing research advisory RES-LASANCE-INTROIT-P103. The study faithfully prints the reading in its current research record."
+    }
+  ],
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "opening",
+          "kind": "front-matter",
+          "path": "sections/00-opening.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "appointed-text",
+          "kind": "appointed-text",
+          "path": "sections/10-appointed-text.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml",
+            "propers/verified.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "commentary",
+          "kind": "proper-treatment",
+          "path": "sections/20-commentary.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "the-judge",
+          "kind": "interpretive-lane",
+          "path": "sections/30-the-judge.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "the-promised-son",
+          "kind": "interpretive-lane",
+          "path": "sections/40-the-promised-son.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "comparison",
+          "kind": "front-matter",
+          "path": "sections/50-comparison.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "historical-appendix",
+          "kind": "front-matter",
+          "path": "generated/scriptural-date-location.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml",
+            "research/chronology.toml",
+            "research/chronology-annotations.tex",
+            "research/chronology-table.tex"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [],
+          "key": "study-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/90-apparatus.tex",
+          "references": []
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "preface",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Gregory the Great",
+            "John Chrysostom",
+            "Augustine of Hippo",
+            "Bede"
+          ],
+          "carrying_authors": [
+            "Gregory the Great",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "the-judge"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "the-judge",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "authors": [
+            "Thomas Aquinas",
+            "Robert Bellarmine",
+            "Augustine of Hippo",
+            "Ambrose of Milan",
+            "Prosper Gu\u00e9ranger"
+          ],
+          "carrying_authors": [
+            "Thomas Aquinas",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "the-promised-son"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "the-promised-son",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+    "files": {
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/generated/scriptural-date-location.tex": "b534d32ad5906b7deeb78605881b958831286227f4c35a98052d00899a039678",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/main.tex": "ebf4b63e02a0b6fcaa974d817eea47b0292fdd00134c1fe7bb2f669a5c67fb9d",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/propers/verified.md": "e1bd8eca995763009d1c5649beca90849e67163968748bf33902e64e22de6a0b",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/chronology-annotations.tex": "e9dabcb7bd4f1415d26bb65e182a6b2f5184c1e0b1e124f2b4f3217510700d4f",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/chronology-table.tex": "fb450dfe4a03a78ae3977a9b48a700082a03ca4a316627c628706e3b4947438e",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/chronology.toml": "09d8847eac3195d3721d99163c17d8a52afbe4abbf19358d3c348c62dbb7b9c6",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/interpretations.md": "6f63ab2c44f52795b6590eb92740be9878620634850b9390ce478fccf4d2951b",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/scope.md": "e60196766402304d2e68fcf4ac70bd0c6593d0d76fb0aa821e46c5bb93012f05",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/source-bindings.toml": "290ed6c660679766eea58ef4100a280d8b37b13f2a65991af62c15b770cbef74",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/00-opening.tex": "fbb04d0762763833e19fa26f72d16421aef1d8940ffd79624b568ef53eb55eb4",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/10-appointed-text.tex": "7a93e6d8caf67c2a275546769a82f9bc532e7852bb80eb777f1285caad203400",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/20-commentary.tex": "dd88e5da225a53505f419cf4cbdb492945139f9d5c6442a6b220aea7eef6f7ce",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/30-the-judge.tex": "1676b93157090013e5b7348553619268bfaa2d4629447476ef2f4fbb0d6aff56",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/40-the-promised-son.tex": "344fa78e80d36d3dfb1c4053811053a73093fc3061892ce38439d6ca631ba61d",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/50-comparison.tex": "6ff789877fb38dbaf96b7e3bd2a010b20e9c3e855c27f0a521883268424498a3",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/90-apparatus.tex": "fc955f1e1253d81f36e7a892b6a624e906040f6f01017463f105ecea53ab9cce"
+    },
+    "generation_provenance": {
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "19",
+            "73706a2ab569c88974452c4aec8fe2b7540a23ad1192efa39d574ddfbd334645",
+            "2eec8ccb8f69387e",
+            "2bab048acfa5b0b4474e72cc03a91df9b6597747",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gpt",
+    "review": "study",
+    "schema": 1
+  },
+  "stage": "study-review",
+  "summary": "The expansive study of the 1962 First Sunday of Advent passes source review across all eleven appointments and both interpretations, each with its own four senses, and the revised Gospel and Offertory match the wording and punctuation of Lasance and Walsh, printed pp. 104\u2013105. On the difficulty in Romans 13:11, Chrysostom\u2019s Homily 24 supports the runner\u2019s increased effort as the prize draws near, while Aquinas, Super Romanos 13, lect. 3 [86224], explicitly distinguishes Paul\u2019s appeal for readiness from the Church\u2019s Advent use of the verse to voice those who awaited Christ\u2019s birth (print layout outside this review)."
+}

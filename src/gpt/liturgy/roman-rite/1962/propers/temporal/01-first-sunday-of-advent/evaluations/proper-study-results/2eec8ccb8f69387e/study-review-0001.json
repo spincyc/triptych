@@ -1,0 +1,346 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "STU-006",
+      "location": "sections/40-the-promised-son.tex, line 17, \u2018a woman of our own people\u2019",
+      "problem": "\u2018Our own people\u2019 can mean the congregation's ethnic community. Bellarmine identifies Mary with \u2018our land\u2019 and explains her virginal motherhood. His paragraph makes no claim that the congregation shares an ancestry with her. The surrounding discussion of Israel and other peoples makes the pronoun briefly ambiguous.",
+      "required_result": "Name the shared humanity directly, for example \u2018Christ takes our human flesh from Mary.\u2019 Keep Bellarmine's account of the Spirit overshadowing her and her bearing the Son.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 1,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "opening",
+          "kind": "front-matter",
+          "path": "sections/00-opening.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "appointed-text",
+          "kind": "appointed-text",
+          "path": "sections/10-appointed-text.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml",
+            "propers/verified.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "commentary",
+          "kind": "proper-treatment",
+          "path": "sections/20-commentary.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "the-judge",
+          "kind": "interpretive-lane",
+          "path": "sections/30-the-judge.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "the-promised-son",
+          "kind": "interpretive-lane",
+          "path": "sections/40-the-promised-son.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "comparison",
+          "kind": "front-matter",
+          "path": "sections/50-comparison.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "historical-appendix",
+          "kind": "front-matter",
+          "path": "generated/scriptural-date-location.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml",
+            "research/chronology.toml",
+            "research/chronology-annotations.tex",
+            "research/chronology-table.tex"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [],
+          "key": "study-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/90-apparatus.tex",
+          "references": []
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "preface",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Gregory the Great",
+            "John Chrysostom",
+            "Augustine of Hippo",
+            "Bede"
+          ],
+          "carrying_authors": [
+            "Gregory the Great",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "the-judge"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "the-judge",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "authors": [
+            "Thomas Aquinas",
+            "Robert Bellarmine",
+            "Augustine of Hippo",
+            "Ambrose of Milan",
+            "Prosper Gu\u00e9ranger"
+          ],
+          "carrying_authors": [
+            "Thomas Aquinas",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "the-promised-son"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "the-promised-son",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+    "files": {
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/generated/scriptural-date-location.tex": "b534d32ad5906b7deeb78605881b958831286227f4c35a98052d00899a039678",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/main.tex": "ebf4b63e02a0b6fcaa974d817eea47b0292fdd00134c1fe7bb2f669a5c67fb9d",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/propers/verified.md": "c600c11d0ee746d82a4a77de6e00a30b30853f662eb121952d6e133adc91a967",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/chronology-annotations.tex": "e9dabcb7bd4f1415d26bb65e182a6b2f5184c1e0b1e124f2b4f3217510700d4f",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/chronology-table.tex": "fb450dfe4a03a78ae3977a9b48a700082a03ca4a316627c628706e3b4947438e",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/chronology.toml": "09d8847eac3195d3721d99163c17d8a52afbe4abbf19358d3c348c62dbb7b9c6",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/interpretations.md": "6f63ab2c44f52795b6590eb92740be9878620634850b9390ce478fccf4d2951b",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/scope.md": "ff81ded23498d687b712e5c046f238b3cc45123df032c298da44f0c72907c75e",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/source-bindings.toml": "290ed6c660679766eea58ef4100a280d8b37b13f2a65991af62c15b770cbef74",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/00-opening.tex": "564306bc7aff8e4ee2d878f5f57cc66a9c9b1fe658a780a9eba4825d328c1655",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/10-appointed-text.tex": "b96b2a859ebb03d2f3ebd386fbce11703a83f94468609b983753cdb573103023",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/20-commentary.tex": "f932f27c74cc725e7be2c6c86292284039a86de82dde18201827de896b75e2e6",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/30-the-judge.tex": "1676b93157090013e5b7348553619268bfaa2d4629447476ef2f4fbb0d6aff56",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/40-the-promised-son.tex": "344fa78e80d36d3dfb1c4053811053a73093fc3061892ce38439d6ca631ba61d",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/50-comparison.tex": "6ff789877fb38dbaf96b7e3bd2a010b20e9c3e855c27f0a521883268424498a3",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/90-apparatus.tex": "28f875318e792d17e62758f9b3f1e1af1221ced0e9f316be8a45eed70297c3f8"
+    },
+    "generation_provenance": {
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "19",
+            "73706a2ab569c88974452c4aec8fe2b7540a23ad1192efa39d574ddfbd334645",
+            "2eec8ccb8f69387e",
+            "2bab048acfa5b0b4474e72cc03a91df9b6597747",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gpt",
+    "review": "study",
+    "schema": 1
+  },
+  "stage": "study-review",
+  "summary": "The revised expansive study of the 1962 First Sunday of Advent passes source review. Its two interpretations develop all eleven appointments and four senses each: Gregory I.1.3 and Chrysostom, Homily 24, explain how people awaiting judgment can hear a promise of salvation; Aquinas, Super Romanos 13, lectio 3 [86224], distinguishes Paul's meaning from the Church's Advent use, and Bellarmine on Psalm 84, exposition 12, explains the Virgin's fruit through a field bearing flowers without human cultivation. I compared the revisions with their earlier wording, the 1962 Missal pp. [1]\u20132 and 293, Lasance pp. 103\u2013106, and the cited expositions. Augustine on Psalm LXXXV \u00a7\u00a710\u201312 distinguishes Christ's birth, confession and the thief's new pleasure in giving; the study now shows why his word \u2018sweetness\u2019 yields that last inference and how it relates to the chant's \u2018goodness\u2019. The Introit tenses, the Secret's address to the Father, the Postcommunion's petition and purpose, and Gu\u00e9ranger's account of the chant after Communion on p. 137 all hold at their loci. The generation-metadata check passes. This judgment covers the canonical study source; physical pagination and the rendered editions were outside this review."
+}

@@ -280,3 +280,18 @@ in the browser at both widths. The revised reader's SHA-256 is
 `85dc4b5eac1700b1ca797c50db83e7f3caca68275ee84639d895d5d17377a2e1`.
 The two advisories on Latin italics and the shared chronology paraphrase
 remain recorded with that passing result.
+
+### Acceptance and archive
+
+Proper-study version 19 reached **ACCEPTED** with five current cold reviews.
+The terminal checks found zero stale release bindings and verified the
+catalog, the three readers and the global source and authorization records
+for 306 publications. The [archive verification](ARCHIVE-VERIFICATION.json)
+covers 70 packets, 70 results and three operator interventions. The 148
+archived files reproduced byte for byte at a second destination.
+
+For future productions, version 20 names the tested prose section directly
+in the shared packet. It also directs research to the particular 1962 Mass.
+The older packet had specified Time after Pentecost even for Advent. In an
+isolated checkout 80 workflow tests passed, and a new Advent seed passed
+scope and compiled both instructions into its context packet.

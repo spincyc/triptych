@@ -1,0 +1,15 @@
+{
+  "artifact_path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/propers/verified.md",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "RES-LASANCE-P105",
+      "note": "Printed p. 105, right column, ends the sentence at \u201cworld\u201d and reads \u201cFor the powers of heaven shall be moved\u201d; the Offertory sets a semicolon after \u201cmy trust\u201d and a colon after \u201cashamed\u201d. The study author must carry both corrected transcriptions into sections/10-appointed-text.tex, historical Lasance Gospel and Offertory paragraphs (lines 107 and 123).",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 3,
+  "notes": "The registered 75,268,976-byte PDF .scratch/research/lasance.pdf matches SHA-256 6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70. The acquisition entry and HTTP headers are in .scratch/research/receipts.json and .scratch/research/lasance.headers. Independently rendered PDF leaves 105 and 106 are in .scratch/repair-lasance/leaf-105.png and leaf-106.png. Full receipt handoff: .scratch/research1/receipts.json and .scratch/registration1/verified-receipts.json. All 22 registered delivery/transcription byte counts and hashes were checked. Research-phase source-disposition verification and both chronology checks passed. The v5 source-mode research seal in .scratch/repair-lasance/seal.json differs from the prior deployment seal only in propers/verified.md and research/scope.md. No new source was introduced.",
+  "stage": "research",
+  "summary": "Collated the Lasance English Gospel and Offertory against printed pp. 104\u2013105 and corrected the historical transcriptions in propers/verified.md. The collation is documented in research/scope.md."
+}

@@ -1,0 +1,205 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "HOM-001",
+      "location": "sections/homily/10-body.tex lines 7 and 11, the traveler and the runner",
+      "problem": "Both named illustrations change the conduct the Father asks his hearers to consider. Gregory I.1.3 describes someone exhausted by the labor of the road who still wants the journey to continue. Calling him \u201cweary of being away from home\u201d already gives him the homesickness the listener is supposed to distinguish from exhaustion. Chrysostom\u2019s runners make a greater effort near the prize. The Romans whose first zeal has cooled need their example. The homily attributes to Chrysostom the picture of a runner slowing down and a spectator calling encouragement to him. That loses the reason Chrysostom invokes a race. The study preserves both distinctions in sections/30-the-judge.tex lines 9 and 19.",
+      "repair_target": "homily",
+      "required_result": "Let a listener hear both comparisons in their original direction. For Gregory, for example, \u201cGregory asks his people to picture a traveler worn out by the road who still wants the journey to go on. He asks them whether they want to see the Lord at its end.\u201d For Chrysostom, \u201cChrysostom says runners make a greater effort when they can see the prize. Paul reminds Christians whose first eagerness has cooled how near their salvation is.\u201d If the imagined spectator stays, give that illustration in the preacher\u2019s own voice.",
+      "severity": "blocking"
+    },
+    {
+      "id": "HOM-002",
+      "location": "sections/homily/90-apparatus.tex line 3, \u201cJesus addresses his disciples while the signs of trouble are beginning\u201d",
+      "problem": "The note puts the onset of the signs in the scene of Jesus\u2019 address. In Luke 21:25\u201328 Jesus foretells the signs and tells his disciples ahead of time how to respond when they begin. The spoken body itself relies on the interval in lines 1 and 3, where the disciples can learn now what they will need to remember then.",
+      "repair_target": "homily",
+      "required_result": "Correct the account of the timing in the source note. For example, \u201cJesus tells the disciples in advance whose coming they can expect when the signs begin.\u201d",
+      "severity": "blocking"
+    },
+    {
+      "id": "HOM-003",
+      "location": "sections/homily/10-body.tex line 19, after the description of fruit appearing on the branches",
+      "problem": "The preacher explains how fruit announces summer and then moves directly to the disciples\u2019 never having seen the day Jesus promises. On a single hearing the listener has to supply the second half of Jesus\u2019 comparison, precisely where the homily offers reassurance about that day.",
+      "required_result": "Give the listener Jesus\u2019 own second half in one short sentence. In Luke 21:31 he says that when the disciples see these things happening, they will know God\u2019s kingdom is near. That identifies the promise whose truth the next sentence asks the assembly to trust.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "homily-body",
+          "kind": "homily",
+          "path": "sections/homily/10-body.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [],
+          "key": "homily-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/homily/90-apparatus.tex",
+          "references": []
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "preface",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Gregory the Great",
+            "John Chrysostom",
+            "Augustine of Hippo",
+            "Bede"
+          ],
+          "carrying_authors": [
+            "Gregory the Great",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "the-judge"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "the-judge",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "authors": [
+            "Thomas Aquinas",
+            "Robert Bellarmine",
+            "Augustine of Hippo",
+            "Ambrose of Milan",
+            "Prosper Gu\u00e9ranger"
+          ],
+          "carrying_authors": [
+            "Thomas Aquinas",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "the-promised-son"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "the-promised-son",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+    "files": {
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec",
+      "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/homily.tex": "de149a3efaf45e5b6d73308c4d2dfc932fec5b502e7f8a43b2f8359e5b61e558",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/interpretations.md": "6f63ab2c44f52795b6590eb92740be9878620634850b9390ce478fccf4d2951b",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/scope.md": "ff81ded23498d687b712e5c046f238b3cc45123df032c298da44f0c72907c75e",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/source-bindings.toml": "290ed6c660679766eea58ef4100a280d8b37b13f2a65991af62c15b770cbef74",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/homily/10-body.tex": "03ffa10d45ac833be43d82816ab0bef1d6faca1e6b9322c687865f3124d0166c",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/homily/90-apparatus.tex": "8c6535145179be337b339c2b721ae245b763f6402dad24666fac1653373ae077"
+    },
+    "generation_provenance": {
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "19",
+            "73706a2ab569c88974452c4aec8fe2b7540a23ad1192efa39d574ddfbd334645",
+            "2eec8ccb8f69387e",
+            "2bab048acfa5b0b4474e72cc03a91df9b6597747",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gpt",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "In \u201cWhen You Look Up,\u201d Luke\u2019s promise of redemption and the Collect\u2019s plea for rescue give someone who has injured a neighbor a reason to welcome the Judge who knows what happened. I checked the spoken body and source note against the 1962 Missal, pp. [1]\u20132, Challoner\u2019s readings and psalms, Gregory I.1.1\u20135, Chrysostom on Romans 13:11, Augustine on Psalm LXXXV \u00a7\u00a710 and 12, and the study\u2019s first interpretation. TeXcount confirms 1,170 spoken words, an estimated 10.2\u201311.1 minutes at 105\u2013115 words per minute. This was a silent review. Two patristic illustrations and the source note\u2019s account of when Jesus speaks need correction."
+}

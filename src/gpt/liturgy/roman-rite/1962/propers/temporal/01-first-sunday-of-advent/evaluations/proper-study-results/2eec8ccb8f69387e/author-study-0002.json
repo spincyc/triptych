@@ -1,0 +1,14 @@
+{
+  "artifact_path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/main.tex",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "WEB-001",
+      "note": "Three rendered section-title links resolve to the unique date-and-location heading. The PDF prints the full title on pages 2, 10 and 21 and each link goes to the heading on page 19.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 2,
+  "stage": "author-study",
+  "summary": "Replaced the three numeric appendix references with the linked section title and verified the wording and destination in the rendered HTML and 22-page author proof. The shared web converter still drops italics after the first paragraph in the two Latin quotation blocks (WEB-002)."
+}

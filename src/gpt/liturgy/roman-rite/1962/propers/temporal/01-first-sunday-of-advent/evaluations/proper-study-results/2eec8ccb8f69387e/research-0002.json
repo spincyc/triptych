@@ -1,0 +1,15 @@
+{
+  "artifact_path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/scope.md",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "STALE-RESEARCH-REVIEW",
+      "note": "Recomputed the deployment seal. The 1,752 evidence files, 12 cited chronology sources, all 16 retained chronology computation inputs and all eight source-admission computation inputs match the prior review. Verified the historical and external PyYAML 6.0.3 files byte for byte. The following research-review stage must seal the portable inputs independently.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 2,
+  "notes": "Production environment: .scratch/driver/env-native. The current seal is .scratch/portable-research/current-seal.json, and the scoped comparison is .scratch/portable-research/comparison.json. The receipt handoff remains .scratch/research1/receipts.json and .scratch/registration1/verified-receipts.json, with the 15 original deliveries, five tracked transcriptions and two supplementary deliveries rehashed at all 22 paths. Raw bytes and HTTP headers remain in .scratch/context/, .scratch/research/ and .scratch/registration/ and the source record directories named in those receipts. Rechecked the research-phase source-disposition gate, chronology record and orientation-v3 annotations in the deployment environment. Nine uncapped searches and the exact Advent I formulary search were rerun in .scratch/portable-research/. The work lists are the same; holdings now include the intervening source registrations. The 40 formulary loci still yield zero listed or structural matches. The approved content required no tracked edits. The independent review is pending.",
+  "stage": "research",
+  "summary": "Regenerated the research seal in the deployment environment and verified that the sole change was the location of 18 byte-identical PyYAML files. The research records, registered evidence, source dispositions and derived chronology passed verification and are ready for fresh independent review."
+}

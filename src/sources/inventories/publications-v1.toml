@@ -4,8 +4,8 @@ provider = "gpt"
 audited_on = "2026-11-23"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 158
-source_surface_file_count = 3924
-snapshot = "sha256:59d35ed1ecb38c89029a913996430df946cd7a9cf42de6967f66e53fc573110f"
+source_surface_file_count = 3995
+snapshot = "sha256:50c751df037f83d7263af9ca5e68622a85c0b8905b1e7f81699a28eddf99ab9a"
 
 [[owners]]
 id = "owner.articles.faith.four-last-things"
@@ -9851,6 +9851,432 @@ owners = ["liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass"]
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/blocking-findings-v1.toml"
 sha256 = "396765e618593ca723babbaceaf919e52fa60e58d1852f25ab3304d5ab68f0cb"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/artifact-gates-0000.txt"
+sha256 = "4b69d51150279d0fa9c3f911df7bc165ee675c628d56f4acea09bd718e344d3c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/artifact-gates-0001.txt"
+sha256 = "a205cc9c9ac2ef3b96b37167161b43a3e152390e3b6e7d0f7f81f62421484ee5"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/artifact-gates-0002.txt"
+sha256 = "9429821fcf88a4184c0382d0c24e4a33ff08e1a1c9d639295f4651f6b61a96a7"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/author-study-0000.txt"
+sha256 = "132a972cda30289ec5172beb8754e82e80844a27917f0bbec00379da8588a351"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/author-study-0001.txt"
+sha256 = "37ae047fe4e91191f831d80d59d60f6c1708ffaa682fe4bb8972bcfdf964e95b"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/author-study-0002.txt"
+sha256 = "9ebaac72d817b1ff52ff98ac75a9eb93e48e0235ce29a7d63b8d8c7088f3225c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/author-study-0003.txt"
+sha256 = "c384eef593a7cc608dfcd3d212ba49f8c2b064b35ef5a41016bfa33e3b043771"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/build-artifacts-0000.txt"
+sha256 = "796539c0ea51a14ac756344c311b658773508983bffed4045a1d20f2a6d54dc2"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/build-artifacts-0001.txt"
+sha256 = "c2c518756d7e2e9d17e1d470bda8ae756b06c0139abbb87ac24f691ae5191a89"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/build-artifacts-0002.txt"
+sha256 = "901b06052e2fd6dc9ad459dcf9f234526b42df7f99f5f5cfe1d49d14be85effb"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/derive-homily-0000.txt"
+sha256 = "6b9bbc4d1edc0e6075ce05f7390e630c5003770c1afb81a2cbad44fbd24c1484"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/derive-homily-0001.txt"
+sha256 = "1e6406d66ef10914e30cb7d1a139462544151d53635aaaca764aaf7a14d2d24b"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/derive-homily-0002.txt"
+sha256 = "8312fa37e4875094456f60c6a1dd27de0efa80c13e369a49a1725746e99480eb"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/derive-homily-0003.txt"
+sha256 = "2439925a9a6069b73b212749a67be948ca51fde234de31cf8a5c0d97990012ee"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/derive-synthesis-0000.txt"
+sha256 = "d6884b9d05697e5356994f8475405c0a348f5139e06cc1422d53b4e15775cb6e"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/derive-synthesis-0001.txt"
+sha256 = "5325bdca4df5c3dda1d26fa105eb513f6ffc28ed560c53d57cef19d75862c084"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/derive-synthesis-0002.txt"
+sha256 = "da06b9eb716d447720d7b5f82fb60f6da15ca1995c5cd845d33b34c819971c5a"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/derive-synthesis-0003.txt"
+sha256 = "7c4473d21e739c726359b84aa5e64131f76a8356580b6555885395caad547f20"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/generate-web-0000.txt"
+sha256 = "6840e1fb59fdebf9d4480c5f109b06bf90396870efd2527da1d0943bd0029d63"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/generate-web-0001.txt"
+sha256 = "d684c06680b6ba0f73e8d2fd14ab8a343d0610a3c1b424bd14272a4cd19af5b3"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/generate-web-0002.txt"
+sha256 = "817f396d50b821e79520ffc03656d9f944f2900e44bcdcab8cf8177d8d8cefaa"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/homily-preflight-0000.txt"
+sha256 = "a27f0719d9fb5eb00679fe21ec1e0d60d7f49ff59f41e16d8deccd8d6550ba07"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/homily-preflight-0001.txt"
+sha256 = "125c70316859d021d16a37c11b359d5d5916e5f5e0b04fd8f5df3dec71735939"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/homily-preflight-0002.txt"
+sha256 = "d7390d69f8b26ab94ddeb8f426ed7647fe5a28a99ecb7c203e8115207849a08c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/homily-preflight-0003.txt"
+sha256 = "6c3fde0721344a20c2e0a93405e1a8c33aa3ca63eae7e7b342cd4eb290b18a60"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/homily-review-0000.txt"
+sha256 = "939d8fa172a0ed7b875fd1905fdfbeca9428193e80e4e954469e47a20394bc91"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/homily-review-0001.txt"
+sha256 = "549b76e329b3a56d4485adb081a7e6c2ba1e53c8a593bb04e0373681367cfb78"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/homily-review-0002.txt"
+sha256 = "178d424b5af5ca97f6ede713936cd4c47dc313c6c26fb9960fe021ab5b51b0e2"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/homily-review-0003.txt"
+sha256 = "c68fea750829ab697a3b069d5bd28bbc1a665cc766529cb0c7080fb6beedd1a7"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/install-publication-0000.txt"
+sha256 = "2ab61804347a79303fa70cc90bdc504a2dda38a736a0c144e123d7556462a5bf"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/install-publication-0001.txt"
+sha256 = "edcc88eaec9dc66d38a4e0c571feceb94687249f5438dac739273cd6b82f4bbd"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/publication-gates-0000.txt"
+sha256 = "087e340404ccd7e930281217c4802e2b43c3d3cefa292d9dec631a7d5597fa6b"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/publication-gates-0001.txt"
+sha256 = "f08be143f2f279208da2eebcf019a715937c518f5980cd70c1707783aca4f494"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/research-0000.txt"
+sha256 = "23fbcbfe3e1fc9beba63b7ed6c6a9c155ba0579ce3a5694819c3d3c2d0182faa"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/research-0001.txt"
+sha256 = "d215e6030fd6acdc878037b2651458fc7627776889893eabfbc84211a1dcf75b"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/research-0002.txt"
+sha256 = "d41a6153dad275815f098bcde7a453da9912aab0781a37adff770b2690df7790"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/research-0003.txt"
+sha256 = "c932be1c91cd1ca61acb59bd86ee2521f37b9f030101ddbd55d4b472bbf8a8f6"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/research-preflight-0000.txt"
+sha256 = "95a243b584a6be457870d3229e3e17e00c1b26660816ee18cf89d7362ebac7ec"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/research-preflight-0001.txt"
+sha256 = "0b003cf68c813e972a76a0c16f1697bb97d6b688d0eaf7a50751cc69c7f6507f"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/research-preflight-0002.txt"
+sha256 = "1ea86db2f35409d6095cdab0e30d2dad3907cd8cf16c433859b13e5e009abc08"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/research-preflight-0003.txt"
+sha256 = "74bcf4d7f40a5ef6d85b3bb5cd24cb22beb1731b5ef237d883821d4ad6f303a3"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/research-review-0000.txt"
+sha256 = "59dfa0203f0923d250a3bd75ed751e4a42995b70d69d63aed6cc8426e4bfda19"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/research-review-0001.txt"
+sha256 = "4be63cc7afc25046941f7ec318405552a2768420006771da15f6f1c09cb92718"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/research-review-0002.txt"
+sha256 = "c0b7b73feb4bd6a2272d8dfb3256d21d6aee1cff2f0e939bd57f7aeb7289554c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/research-review-0003.txt"
+sha256 = "f15b055cfc2347b6ccbb7ae730ed6dcd9258aaa31ae54a41c7c2dab1e485cacb"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/resolve-context-0000.txt"
+sha256 = "2b7024cfcdf8c09778a9560039f3914b3ac64858a4e243ccb1e4fc19b79dd0f2"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/scope-gate-0000.txt"
+sha256 = "5215edc7c95870565be53c24b4741acd915889183bc36c1786500b71d95e3448"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/source-registration-0000.txt"
+sha256 = "ec621c22d2f969fec770a42adc5357d79b279ad6445295e63d1011bb18b99acb"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/source-registration-0001.txt"
+sha256 = "54b7e9f011a1becdbc57b28af1c4dadc41585cebb29374faa9d5e1054a3b696b"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/source-registration-0002.txt"
+sha256 = "aaf0506bc9031f64ddb648fa35c7643c75ccc3ac81e90f66a745c3be5753d6aa"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/source-registration-0003.txt"
+sha256 = "f83f094fb4a43df4a44a7c822ad50ea983765d5fc2b1e6c6d16daeaa772c02ed"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/study-preflight-0000.txt"
+sha256 = "068a4c25ac44643c931d8912ea453d28fe452ae04cbecb59fa7ea4e8f7fd7b7b"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/study-preflight-0001.txt"
+sha256 = "7b930e38d76151a3dc6547d2b58d55c981e1f15287448b35e662926f95fd3a57"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/study-preflight-0002.txt"
+sha256 = "a79dbf4365f7004b522c1fe61ecc74a4b0477ec2e17c70111581b364e5270295"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/study-preflight-0003.txt"
+sha256 = "80ce1ad33661ba22fa99bca9d3393598436318be752b4f53bc7e90e0e123aefe"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/study-review-0000.txt"
+sha256 = "008a418c39eb6341a62ded96655ce7d4fae34cc5aa9d1f19dd4bc2254f2711ee"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/study-review-0001.txt"
+sha256 = "3927d49a434331007e0c55195372718f5662366a6a97cb28b9198114ed84ac65"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/study-review-0002.txt"
+sha256 = "b172c815be65420f85568d008b3c910130814f18b589e1cea660ac5f58cc8522"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/study-review-0003.txt"
+sha256 = "41fb7303737356267fbb4d0a17816ebe4cb04bcf1bf19b44cf9b65460116cd80"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/synthesis-preflight-0000.txt"
+sha256 = "549461c6a6736e9efc91674b2bf59bd5d30e0baaf3fc85c4ac12379d3ccbae01"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/synthesis-preflight-0001.txt"
+sha256 = "2a823c6870b41f7bfd784d36940224e32e7215c6e35954c2bd1f62eba4e44859"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/synthesis-preflight-0002.txt"
+sha256 = "3e787f15a3eb2746fe3f4e3a8908168e33e9373a6ee133cacfa280c42c111f34"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/synthesis-preflight-0003.txt"
+sha256 = "60c9fd9bed8918dab1beb4b9197b73c31b723fdf27a30c1da91974c92841abc0"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/synthesis-review-0000.txt"
+sha256 = "7f97b5d8b6af44d882a3c7561b7e139dc8aeefdfe0f9dc8c2797a5d631d1c672"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/synthesis-review-0001.txt"
+sha256 = "08fff70b92a0592fcf223e4e07299bc352bc6b2fb1859ab672f5b5e76f79bbc4"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/synthesis-review-0002.txt"
+sha256 = "52ede239459026f13bc89c5f1583d52d149d1b61467bc1eadc73bc5d28a8ed62"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/synthesis-review-0003.txt"
+sha256 = "8a753b7187b27ec44ec5ce84ccdf80df9345d7572ddad68ea270c20d9ec3e239"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/web-review-0000.txt"
+sha256 = "7ca20b7ae63136ac84a6ff5799cdc223e84b205119306ed40baa050a099db806"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/web-review-0001.txt"
+sha256 = "35b87f1ecfe2e02be14671fa827f86010bc7d10f45c63dd29a7fffb5eef9e34f"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/packets/web-review-0002.txt"
+sha256 = "3d3f4c5d8c673eedf66b59f67f29f55081d8022dc56856a724a863c115bc43e9"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/2eec8ccb8f69387e/record.md"
+sha256 = "31fd9ac89f1d68ce24c3c8743583c8fe37e2f2ca746444fa3ee41ffcf28fdc9e"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"]
 

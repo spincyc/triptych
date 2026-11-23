@@ -1,0 +1,25 @@
+{
+  "artifact_path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/scope.md",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "RES-001",
+      "note": "Checked the printed footnote, Sunday pages and ordinary table. Preserved all three Sunday cues, supplied the full Collect and Secret English formulas and Amens, and identified the Postcommunion expansion and the single Secret/Preface exchange.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-002",
+      "note": "Compared the Clementine biblical connective, tempus and closing clause with the target and Pustet images. Recorded both English nouns and both commentators\u2019 biblical wording. Verified the historical English lesson bodies are byte-for-byte unchanged.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-003",
+      "note": "Read \u00a74 in both Augustine deliveries and included its v. 5, plus \u00a7\u00a710\u201311 on v. 12. Located Gu\u00e9ranger\u2019s Psalm 24 commentary at the Introit and Offertory and the Communion comment above its chant. Separated Shepherd\u2019s printed Gradual wording from the deferred commentary.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "notes": "Changed propers/verified.md, research/context.md, scope.md, interpretations.md, review-dependencies.toml, source-bindings.toml and source-dispositions.toml. The complete receipt handoff is .scratch/research1/receipts.json, which preserves the original retrieval metadata, points to the 15 complete byte-identical deliveries, and adds the revision loci and five tracked textual witnesses. The full receipts and HTTP headers remain in .scratch/research/, with Vatican and Ordo deliveries in .scratch/context/ and the prior two supplementary registration checks in .scratch/registration/. New Gu\u00e9ranger page views are .scratch/research1/shepherd-151.png and shepherd-152.png; the Lasance Prayer Conclusions table is .scratch/review-research/lasance-extra-0818.png. Both new binding IDs resolve to existing registered sources. The complete source-disposition check (45 bindings, 54 dispositions), source-library validate, chronology record and annotations --check, and git diff --check passed. The previous 51 disposition outcomes stand, including the recorded historical-translation, redistribution and constituent-voice limits. No shared catalog change was needed for these repairs.",
+  "stage": "research",
+  "summary": "Repaired the English prayer conclusions and the Romans boundary, and reconciled Augustine\u2019s and Gu\u00e9ranger\u2019s checked loci with their typed source records. The comparison now distinguishes Augustine\u2019s two readings of Psalm 84:12 from his and Bellarmine\u2019s readings of the Communion verse, 84:13."
+}
