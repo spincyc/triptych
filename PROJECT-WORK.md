@@ -15328,10 +15328,21 @@ dates ten further planned subjects through the return of Advent in 2027.
 <!-- promised-deliverable: advent-puzzle-source-concordance-2026-11-23 -->
 
 The Advent puzzle in Lacuna follows twenty-eight Old Testament scenes to
-Christ and assembles them into a façade inspired by the Lateran basilica.
-Triptych supplies reusable, edition-specific passage records for those scenes
-and a direct witness to the Christian reading of the Lateran dedication.
-The puzzle owns the riddles and their proposed connections.
+Christ. The family builds a Christmas scene at home. A second look reveals
+a façade inspired by the Lateran basilica. The puzzle owns the riddles
+and their proposed connections.
+
+In *Lumen gentium* §11, the Council calls the family a domestic church and
+identifies parents as the first to preach the faith to their children through
+speech and example. The discussion grows out of its account of baptism and
+Christian marriage. The Latin comparison appears on p. 16.
+[Latin Acta, pp. 15–16](src/sources/works/second-vatican-council/lumen-gentium/editions/latin-aas-57-1965/passages/11.toml) · [Holy See English, §§10–11](src/sources/works/second-vatican-council/lumen-gentium/editions/english-vatican-web-2026-07-23/passages/10-11.toml)
+
+Francis opens *Admirabile signum* by recalling how children learn to set up
+the crèche from parents and grandparents. He closes by inviting them to pass
+that experience on. The arrangement may change each year. What gives it
+meaning is the love of God who became a child.
+[English §1](src/sources/works/papal-documents/2019-12-01-papal-francesco-papa-francesco-lettera-ap-20191201-admirabile-signum-351aa693/editions/2026-10-26-vatican-en/passages/1.toml) · [English §10](src/sources/works/papal-documents/2019-12-01-papal-francesco-papa-francesco-lettera-ap-20191201-admirabile-signum-351aa693/editions/2026-10-26-vatican-en/passages/10.toml) · [Italian §1](src/sources/works/papal-documents/2019-12-01-papal-francesco-papa-francesco-lettera-ap-20191201-admirabile-signum-351aa693/editions/2026-10-26-vatican-it/passages/1.toml) · [Italian §10](src/sources/works/papal-documents/2019-12-01-papal-francesco-papa-francesco-lettera-ap-20191201-admirabile-signum-351aa693/editions/2026-10-26-vatican-it/passages/10.toml)
 
 All four groups of seven have [passage records in the Challoner revision](src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/).
 They identify 194 verses. Each address resolves to physical lines of a

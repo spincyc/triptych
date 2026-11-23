@@ -6263,7 +6263,7 @@ state = "complete"
 [[deliverables]]
 id = "advent-puzzle-source-concordance-2026-11-23"
 owner = "src/sources/works"
-promise = "Pin the twenty-eight Old Testament scenes of the Advent puzzle to identified verses and document the Lateran dedication's biblical imagery in a primary witness."
+promise = "Pin the twenty-eight Old Testament scenes of the Advent puzzle to identified verses and document the domestic church, the household crèche and the Lateran dedication in primary witnesses."
 state = "complete"
 
   [[deliverables.requirements]]
@@ -6313,4 +6313,17 @@ state = "complete"
     "src/sources/works/benedict-xvi/angelus-2008-11-09/editions/2026-11-23-vatican-italian-web/edition.toml",
     "src/sources/works/benedict-xvi/angelus-2008-11-09/editions/2026-11-23-vatican-italian-web/passages/meditation-1-3.toml",
     "src/sources/works/benedict-xvi/angelus-2008-11-09/work.toml",
+  ]
+
+  [[deliverables.requirements]]
+  id = "domestic-church"
+  criterion = "Locate the council’s account of parents as first teachers of the faith and Francis’s account of making a crèche and passing on faith in the family, with distinct edition and paragraph references."
+  status = "pass"
+  evidence = [
+    "src/sources/works/second-vatican-council/lumen-gentium/editions/latin-aas-57-1965/passages/11.toml",
+    "src/sources/works/second-vatican-council/lumen-gentium/editions/english-vatican-web-2026-07-23/passages/10-11.toml",
+    "src/sources/works/papal-documents/2019-12-01-papal-francesco-papa-francesco-lettera-ap-20191201-admirabile-signum-351aa693/editions/2026-10-26-vatican-en/passages/1.toml",
+    "src/sources/works/papal-documents/2019-12-01-papal-francesco-papa-francesco-lettera-ap-20191201-admirabile-signum-351aa693/editions/2026-10-26-vatican-en/passages/10.toml",
+    "src/sources/works/papal-documents/2019-12-01-papal-francesco-papa-francesco-lettera-ap-20191201-admirabile-signum-351aa693/editions/2026-10-26-vatican-it/passages/1.toml",
+    "src/sources/works/papal-documents/2019-12-01-papal-francesco-papa-francesco-lettera-ap-20191201-admirabile-signum-351aa693/editions/2026-10-26-vatican-it/passages/10.toml",
   ]
