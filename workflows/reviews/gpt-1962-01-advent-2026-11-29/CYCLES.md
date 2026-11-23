@@ -41,8 +41,8 @@ would discard part of Chrysostom's argument.
 
 The `proper-study` version 19 run is `2eec8ccb8f69387e`, seeded at
 `2bab048acfa5b0b4474e72cc03a91df9b6597747`. The scope gate verified the
-authorization for this provider, date and identity. The provisional revision
-guidance is being tried under the profile named in each worker's packet.
+authorization for this provider, date and identity. The authors tried the provisional revision
+guidance in the profile named in each worker's packet.
 
 ### Dates on the chronology page
 
@@ -126,3 +126,50 @@ up and dressing. The study's application to an adversary belongs to the
 author. A second finding identified six places where an announcement breaks
 the reasoning, among them “The distinction matters to his example” just
 before Augustine's account of the thief who comes to enjoy giving.
+
+The revised concise study has 3,915 words of exposition. The next cold
+reader checked Paul's commands and Chrysostom's illustrations against
+Romans 13 and Homily 24. The remarks on Augustine now move from the
+field's need for rain to a man who comes to enjoy giving. Both findings
+cleared. One advisory concerns “just before the lesson begins.” The
+reference is to the verses immediately preceding the lesson in Paul's
+letter. The reader confirmed the opening sequence on the revised proof.
+
+### Homily
+
+The first spoken draft contained 1,170 words. In revising the opening the
+author distinguished the sea that confounds the nations from what people
+fear will happen to the world. The Gospel assigns their faintness to that
+expectation. The preaching moves from Christ's promise of redemption to
+the Collect's request for rescue from dangers brought on by our sins.
+
+The first cold reader returned the homily for changing two illustrations in
+the telling. Gregory describes a traveler who is tired of the road but wants
+the journey to continue. Chrysostom describes runners who redouble their
+effort near the prize. The source note also needed to distinguish the day
+Christ speaks from the future signs he describes. The reviewer also heard a
+missing step in the final paragraph. Christ says what the signs will mean,
+as surely as the fruit on the trees announces summer.
+
+The next cold reader checked both retellings against Gregory and
+Chrysostom. The homily now gives Jesus' own explanation of the trees in
+Luke 21:31. In the parish application a hearer who told a one-sided story
+goes back to the friend who heard it. Paul names contention and envy among
+the deeds to put off, and the Collect asks the coming Judge to rescue
+people who know their own responsibility. The reader accepted the 1,162-word
+homily. Its estimated delivery is 10.1–11.1 minutes at 105–115 words a minute.
+
+### What entered the workflow
+
+Each author used the provisional profile. An independent reader returned
+each first draft for revision and a new reader accepted each repaired text.
+The trial retained a distinction between needless commentary on the writing
+and words a reader actually needs. The expansive study keeps Augustine's
+different wording. The concise commentary identifies who supplied the scene
+of people dressing before dawn. The homily lets the runners act as Chrysostom
+describes them. Retelling the illustration had reversed his reasoning.
+
+The [three-document profile](../../../guidance/liturgy/propers-three-documents.md#revise-the-three-texts-for-their-readers)
+now asks writers and cold readers to make these checks before completion.
+The examples here preserve what happened in the trial. Future studies can
+use the guidance without adding a before-and-after exercise to every audit.

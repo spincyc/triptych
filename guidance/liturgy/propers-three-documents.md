@@ -614,6 +614,46 @@ readings with unrelated ones; merely naming the proper or adding a verse does
 not make a generic sequence specific. Ordinary applications remain welcome
 when the text earns them.
 
+## Revise the three texts for their readers
+
+Before submitting a draft, read the words on either side of a sentence
+such as “the warning makes attachment concrete.” In the GPT concise study for
+22 November 2026, Jesus tells a man in the field to flee without going
+home for his coat. Jeremiah tells the exiles to build houses where they
+are. In the Secret the people ask God to free them from earthly desires.
+If you bring the two commands to that prayer, explain in your own voice
+how obedience can require leaving in one place and staying in the other.
+
+In the expansive study, read a paragraph about a Father straight through.
+Can a reader tell what puzzled him, which words he noticed, and how he
+reached his conclusion? Keep a term such as *propitiation* when the
+argument needs it, and explain what it means there. In the concise study,
+cover the names of the interpretations and read their answers at the verse
+where they differ. If the difference disappears, restore the words or
+reasoning that made it intelligible. Say who supplied an illustration.
+Paul tells the Romans to wake and put on the armour of light. Chrysostom
+describes neighbors stirring and dressing before dawn.
+
+Read the homily through as a parishioner who hears it once. Compare its
+invitation with those in recent homilies in the series. A recurring prayer
+may warrant a recurring application. Find the particular words that earn
+it here. After a scene or a difficult choice, try stopping one sentence
+earlier. Keep a short line when it supplies a reason. “Lightning needs no
+herald, because it shows itself everywhere at once” explains why Christ's
+disciples can disregard a false prophet's directions.
+
+The cold reviewer reads independently, identifies the sentence where the
+reasoning becomes clear or goes missing, and returns recurring problems
+for revision. On repair, check the wording, attribution and qualifications
+against the source. When retelling an illustration, check what the
+characters do and why the preacher chose them. Chrysostom's runners make
+a greater effort as the prize draws near. Their example gives him a
+reason to urge on Christians whose first eagerness has cooled.
+
+See the [plain-prose standard](../editorial.md#say-what-the-texts-say-plainly),
+the [guidance on teaching from the sources](../editorial.md#write-to-the-reader-with-gravity-and-wonder)
+and the [survey and Advent trial](../../workflows/reviews/gpt-1962-01-advent-2026-11-29/CYCLES.md).
+
 ## Composition and review
 
 The maintainer restored the established house typography on 21 September 2026:

@@ -12,8 +12,9 @@ Last reconciled: 2026-11-22.
 <!-- promised-deliverable: gpt-1962-01-advent-2026-11-29 -->
 
 The 1962 Missal appoints Romans 13:11–14a and Luke 21:25–33. The three
-editions are in production. The review of recent studies and homilies,
-the prose trial and the publication checks are recorded in the
+editions passed independent text reviews after revision. The tested prose
+guidance is in the three-document profile. The survey, trial and
+publication checks are recorded in the
 [production record](workflows/reviews/gpt-1962-01-advent-2026-11-29/CYCLES.md).
 
 ## Seasonal handbooks and GPT Advent, 2026-11-21

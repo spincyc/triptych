@@ -15,7 +15,8 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "editorial-trial"
   criterion = "The Advent editions receive the trial revision pass and independent assessment. The production record identifies actual results and the propers workflow contains the tested guidance."
-  status = "open"
+  status = "pass"
+  evidence = ["guidance/liturgy/propers-three-documents.md", "workflows/reviews/gpt-1962-01-advent-2026-11-29/CYCLES.md", "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/production-review.md"]
 
   [[deliverables.requirements]]
   id = "accepted-propers"
