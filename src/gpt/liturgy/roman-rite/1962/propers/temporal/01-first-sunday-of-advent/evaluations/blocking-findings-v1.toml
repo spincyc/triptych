@@ -49,12 +49,12 @@ provider = "gpt"
 run_id = "2eec8ccb8f69387e"
 workflow = "proper-study"
 workflow_version = 19
-stage = "homily-review"
-iteration = 1
-disposition = "PASS"
-standing = 0
+stage = "web-review"
+iteration = 0
+disposition = "CHANGES_REQUIRED"
+standing = 1
 accepted_count = 0
-advisory_count = 3
+advisory_count = 4
 observation_count = 0
 
 [[stages]]
@@ -105,6 +105,27 @@ accepted_count = 0
 advisory_count = 1
 observation_count = 0
 
+[[stages]]
+stage = "web-review"
+iteration = 0
+disposition = "CHANGES_REQUIRED"
+run_id = "2eec8ccb8f69387e"
+workflow = "proper-study"
+workflow_version = 19
+standing = 1
+accepted_count = 0
+advisory_count = 1
+observation_count = 0
+
+[[findings]]
+stage = "web-review"
+id = "WEB-001"
+severity = "blocking"
+location = "sections/00-opening.tex:25, sections/20-commentary.tex:29 (note 9) and sections/90-apparatus.tex:9. The canonical Markdown shows the three references at lines 39, 572 and 526, respectively."
+problem = "Each passage gives “Appendix 7” as the locator for Scriptural Date and Location. Following the link reaches that section, but neither its heading nor the contents assigns it an appendix number. Two references give only the spurious number. The same three numeric references in the canonical TeX point to an unnumbered heading, and the compiled PDF prints an empty locator each time."
+required_result = "Refer to the section by its printed title, Scriptural Date and Location, in each of the three places. Preserve a working section link in the reader and verify that the visible wording is complete in both the reader and the typeset study."
+repair_target = "study"
+
 [[advisories]]
 stage = "research-review"
 id = "RES-005"
@@ -128,3 +149,11 @@ severity = "advisory"
 location = "sections/concise/10-commentary.tex:12"
 problem = "The paragraph moves from what the congregation sings to 'Just before the lesson begins, Paul speaks of the love we owe our neighbor.' A reader following the order of Mass could understand this as something else heard in church. Romans 13:8–10 precedes the appointed passage in the letter."
 required_result = "Locate the debt of love in the letter explicitly, for example, 'In the verses of his letter just before this Sunday's lesson, Paul speaks of the love we owe our neighbor.'"
+
+[[advisories]]
+stage = "web-review"
+id = "WEB-002"
+severity = "advisory"
+location = "Canonical Markdown lines 49–51 (Introit) and 207–213 (Preface dialogue), corresponding to the multi-paragraph latinproper blocks in sections/10-appointed-text.tex."
+problem = "The shared Latin quotation style covers the whole block in the source. Chromium displays only the first paragraph in italics. The repeated Introit antiphon and the final three Latin exchanges of the Preface dialogue switch to the upright treatment used for the English. The words and quotation boundaries survive."
+required_result = "Carry the Latin quotation’s italic style through every paragraph in each multi-paragraph block. Verify the repeated antiphon and the final three exchanges in the rendered reader."
