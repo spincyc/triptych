@@ -50,11 +50,11 @@ run_id = "2eec8ccb8f69387e"
 workflow = "proper-study"
 workflow_version = 19
 stage = "research-review"
-iteration = 2
-disposition = "CHANGES_REQUIRED"
-standing = 1
+iteration = 3
+disposition = "PASS"
+standing = 0
 accepted_count = 0
-advisory_count = 6
+advisory_count = 8
 observation_count = 0
 
 [[stages]]
@@ -71,14 +71,14 @@ observation_count = 0
 
 [[stages]]
 stage = "research-review"
-iteration = 2
-disposition = "CHANGES_REQUIRED"
+iteration = 3
+disposition = "PASS"
 run_id = "2eec8ccb8f69387e"
 workflow = "proper-study"
 workflow_version = 19
-standing = 1
+standing = 0
 accepted_count = 0
-advisory_count = 0
+advisory_count = 2
 observation_count = 0
 
 [[stages]]
@@ -117,15 +117,6 @@ accepted_count = 0
 advisory_count = 2
 observation_count = 0
 
-[[findings]]
-stage = "research-review"
-id = "RES-LASANCE-P105"
-severity = "blocking"
-location = "propers/verified.md:67 and 77, reproduced in sections/10-appointed-text.tex:107 and 123; Lasance and Walsh, The New Roman Missal (Benziger, revised 1945), printed p. 105, PDF leaf 106, right column, Gospel and Offertory."
-problem = "The text identified as Lasance’s historical English gives Luke 21:26 as “the whole world: For the powers of the heavens shall be moved”. The page image reads “the whole world. For the powers of heaven shall be moved”. The transcription adds an article, changes the number of the noun, and changes the sentence break. On the same page the Offertory prints a semicolon after “my trust” and a colon after “ashamed”; the historical comparison changes both marks. The study reproduces these differences under Lasance’s name."
-required_result = "Collate the English Gospel and Offertory against the right column of printed p. 105 and correct the Lasance comparison in the research record. Restore the singular “heaven” without a preceding article, the stop after “world”, and the Offertory punctuation. Carry those corrections into the study’s corresponding Lasance quotations when its owner resumes."
-repair_target = "research"
-
 [[advisories]]
 stage = "homily-review"
 id = "HOM-GRADUAL-ORAL-CUE"
@@ -133,6 +124,22 @@ severity = "advisory"
 location = "sections/homily/10-body.tex:15, the two sentences introducing the omitted petition"
 problem = "On first hearing, “In the psalm we sang after the Epistle there is a line” sounds as though the assembly actually sang the plea for the unjust to be put to shame. The next sentence clears this up, after the listener has had to revise that impression."
 required_result = "Identify the change on first mention, for example, “After the Epistle we sang only part of the psalm. We passed over the line asking that those who act unjustly be put to shame.” The next sentence can then give the words the assembly did sing."
+
+[[advisories]]
+stage = "research-review"
+id = "RES-005"
+severity = "advisory"
+location = "research/scope.md:36, research/source-bindings.toml:254 and 262, research/source-dispositions.toml:482 and 493"
+problem = "The local descriptions call the two historical encyclopedia articles “Synoptics” and “Epistles.” The bound article on Luke is The New Testament, under “Origin” (line 33), and the one dating Romans to A.D. 58 is Epistle to the Ephesians, under “Date and place of composition; occasion” (line 69). Both dates are supported."
+required_result = "Use the printed article titles and section names in the local descriptions so readers can retrieve both dates directly."
+
+[[advisories]]
+stage = "research-review"
+id = "RES-LASANCE-INTROIT-P103"
+severity = "advisory"
+location = "propers/verified.md:17, Lasance, printed p. 103, PDF 104R, Introit opening"
+problem = "The historical English Introit adds a comma after “O Lord.” The enlarged page image shows “To Thee, O Lord have I lifted up my soul”. The phrasing and sense are intact."
+required_result = "Transcribe the opening punctuation as printed in the Lasance comparison. The Douay–Rheims study rendering has its own punctuation."
 
 [[advisories]]
 stage = "study-review"

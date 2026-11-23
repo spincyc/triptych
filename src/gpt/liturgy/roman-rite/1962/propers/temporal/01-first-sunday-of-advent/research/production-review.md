@@ -111,3 +111,18 @@ The three GPT release records apply the standing
 `perpetual-public-repository-2026` authorization. Row 01 of the traditional
 Latin Mass catalog links the full study guide, synthesis and homily in that
 order. One primary-provider catalog marker identifies the canonical family.
+
+## Expansive study, author-study iteration 3
+
+The Gospel and Offertory in the Lasance and Walsh hand missal, printed p. 105,
+were compared with the reviewed transcription and the study. In Luke 21:26 a
+period follows “whole world” and the next sentence has “powers of heaven.”
+The Offertory has a semicolon after “my trust” and a colon after “ashamed.”
+Both complete hand-missal paragraphs now match the transcription in the TeX
+and in the HTML rendered from the canonical web probe. These quotations come
+from the 1945 English outside the later inserts. The appointed texts fall
+outside the substantive count of 6,990 words in the five expository sections.
+
+The source manifest, generated entrypoints, research-mode component checks,
+content preflight, and run provenance all passed. The web probe converted with
+Pandoc 3.11 and Python Markdown 3.10.3.
