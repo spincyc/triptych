@@ -5,7 +5,16 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-11-21.
+Last reconciled: 2026-11-22.
+
+## GPT First Sunday of Advent, 29 November 2026
+
+<!-- promised-deliverable: gpt-1962-01-advent-2026-11-29 -->
+
+The 1962 Missal appoints Romans 13:11–14a and Luke 21:25–33. The three
+editions are in production. The review of recent studies and homilies,
+the prose trial and the publication checks are recorded in the
+[production record](workflows/reviews/gpt-1962-01-advent-2026-11-29/CYCLES.md).
 
 ## Seasonal handbooks and GPT Advent, 2026-11-21
 

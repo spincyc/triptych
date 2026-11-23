@@ -1,6 +1,33 @@
 schema_version = 1
 
 [[deliverables]]
+id = "gpt-1962-01-advent-2026-11-29"
+owner = "PROJECT-WORK.md"
+promise = "Publish the GPT 1962 First Sunday of Advent study, concise study and homily for 29 November 2026. Survey recent prose, try the resulting editorial guidance on the three editions, review them cold and adopt the guidance that improves them."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "recent-prose"
+  criterion = "The survey cites identifiable passages from recent propers, including wording that a revision should preserve."
+  status = "pass"
+  evidence = ["workflows/reviews/gpt-1962-01-advent-2026-11-29/CYCLES.md"]
+
+  [[deliverables.requirements]]
+  id = "editorial-trial"
+  criterion = "The Advent editions receive the trial revision pass and independent assessment. The production record identifies actual results and the propers workflow contains the tested guidance."
+  status = "open"
+
+  [[deliverables.requirements]]
+  id = "accepted-propers"
+  criterion = "The dated 1962 proper-study run reaches ACCEPTED for the study, concise study and homily, with independent reviews, checked sources, all three reader outputs and successful native print compilation."
+  status = "open"
+
+  [[deliverables.requirements]]
+  id = "publication"
+  criterion = "The validated work reaches main and the three reader links resolve on the deployed site."
+  status = "open"
+
+[[deliverables]]
 id = "gpt-1962-68-production-2026-11-16"
 owner = "PROJECT-WORK.md"
 promise = "Complete the GPT 1962 three-document propers workflow for Sunday, 22 November 2026, reconcile the validated publication with main and push to main."
