@@ -18,3 +18,16 @@ body = [
   { component = "comparison" },
 ]
 apparatus = [{ component = "study-apparatus" }]
+
+[document.synthesis]
+pdftitle = "First Sunday of Advent: The Lord Whom We Await"
+pdfsubject = "A concise study of the First Sunday of Advent in the 1962 Roman Missal, 29 November 2026"
+subtitle = "The Lord Whom We Await"
+source-line = "1962 Roman Missal · Concise study"
+occasion-line = "29 November 2026 · First-class Sunday"
+opening = [{ component = "concise-inventory" }, { component = "concise-overview" }]
+body = [
+  { component = "concise-themes" },
+  { component = "concise-commentary" },
+  { component = "concise-apparatus" },
+]

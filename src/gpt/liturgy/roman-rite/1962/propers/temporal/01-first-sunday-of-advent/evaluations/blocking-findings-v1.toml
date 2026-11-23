@@ -49,12 +49,12 @@ provider = "gpt"
 run_id = "2eec8ccb8f69387e"
 workflow = "proper-study"
 workflow_version = 19
-stage = "study-review"
+stage = "synthesis-review"
 iteration = 0
 disposition = "CHANGES_REQUIRED"
-standing = 5
+standing = 2
 accepted_count = 0
-advisory_count = 1
+advisory_count = 2
 observation_count = 0
 
 [[stages]]
@@ -71,60 +71,45 @@ observation_count = 0
 
 [[stages]]
 stage = "study-review"
+iteration = 1
+disposition = "PASS"
+run_id = "2eec8ccb8f69387e"
+workflow = "proper-study"
+workflow_version = 19
+standing = 0
+accepted_count = 0
+advisory_count = 1
+observation_count = 0
+
+[[stages]]
+stage = "synthesis-review"
 iteration = 0
 disposition = "CHANGES_REQUIRED"
 run_id = "2eec8ccb8f69387e"
 workflow = "proper-study"
 workflow_version = 19
-standing = 5
+standing = 2
 accepted_count = 0
 advisory_count = 0
 observation_count = 0
 
 [[findings]]
-stage = "study-review"
-id = "STU-001"
+stage = "synthesis-review"
+id = "SYN-001"
 severity = "blocking"
-location = "sections/40-the-promised-son.tex, line 33, from the Secret to the Preface"
-problem = "After the Collect's address to the Son, “their approaching him” makes the Son appear to be the Secret's addressee too. The next singular “he” in “What he needs if he is to approach with a pure heart” can still refer to the Son. The actual prayer distinguishes the people who need cleansing, the holy gifts through which they seek it, and the Father addressed through his Son. The Sunday English printed at sections/10-appointed-text.tex, lines 130–139, expressly says “before Thee who art their author.”"
-required_result = "Name the worshippers who need cleansing and the Father to whom the priest prays through Christ. If the paragraph then considers their receiving the Son in Communion, introduce that separately in the study's own voice. Retain the Preface's confession of the Son's and Spirit's equal majesty."
-repair_target = "study"
+location = "sections/concise/04-themes.tex:12 and sections/concise/10-commentary.tex:64"
+problem = "The concise account twice puts an illustration into the mouth of its source. Paul is said to describe a man getting out of bed and dressing for his day's work. Romans 13:11–14a exhorts the hearers themselves to wake, put on the armour of light and put on Christ. Chrysostom develops the everyday scene of neighbours waking and dressing. At the close, 'Chrysostom says people can recognize the company a man keeps by seeing how he acts toward another' blends his analogy about inseparable friends and his invitation to make Christ visible in one's deeds with the study's example of gentleness to an adversary. Compare Homily 24 on Romans at 13:12 and 13:14 with the expansive study, sections/30-the-judge.tex:21 and 23."
+required_result = "Keep the three voices audible. For example, 'Paul tells the Romans to wake from sleep and put on the armour of light. Before the lesson ends he tells them to put on Christ.' At the close, 'Chrysostom compares putting on Christ to the way people speak of friends who are always together. He asks what others can see of Christ in our deeds.' A former adversary's surprise at being treated gently can then stand as the study's own example."
+repair_target = "synthesis"
 
 [[findings]]
-stage = "study-review"
-id = "STU-002"
+stage = "synthesis-review"
+id = "SYN-002"
 severity = "blocking"
-location = "sections/30-the-judge.tex, lines 27–29, on taste and delight at Communion"
-problem = "The exposition proceeds directly from the chant's “goodness” to Augustine explaining what the hearer can “taste”. This obscures the actual word that prompts his inference. In the cited NPNF Psalm LXXXV §12 he reads “the Lord shall give sweetness” and immediately explains it as delight in doing justice. The Missal's no. 9 has benignitatem, rendered “goodness” by both appointed English witnesses. Hunger for a changed delight is a controlling claim of this interpretation."
-required_result = "At the first full explanation of the Communion verse, give the two actual wordings and trace Augustine's inference from his own phrase to the former thief's delight in giving. Then show how that explanation illuminates the goodness the congregation sings of. The historical English and the Mass text already supply the evidence."
-repair_target = "study"
-
-[[findings]]
-stage = "study-review"
-id = "STU-003"
-severity = "blocking"
-location = "sections/30-the-judge.tex, line 11; sections/40-the-promised-son.tex, line 9; sections/20-commentary.tex, line 49"
-problem = "Three statements assign different grammatical actions to appointed texts. The Introit has the singer tell God “I have lifted” (levavi), yet the first interpretation calls this a “demand to lift up her soul”. The second illustrates what the singer “has already done” by his trust, although confido is present. At the Postcommunion “ask what reverence they may show” reads like a request for instruction. The Latin and the historical English ask to receive mercy so that the people may prepare with fitting reverence. These distinctions affect the study's comparison of the speakers and of what they await."
-required_result = "Keep the Introit's declaration distinct from Jesus' imperative in Luke. The singer has lifted his soul and now says that he trusts God. At the Postcommunion state the petition for mercy and the purpose of preparing for the feast with due reverence. Retain the separate contrast between the psalm's perfect and the prayer's petition."
-repair_target = "study"
-
-[[findings]]
-stage = "study-review"
-id = "STU-004"
-severity = "blocking"
-location = "sections/40-the-promised-son.tex, lines 17, 33 and 35"
-problem = "In the second interpretation, several paragraphs argue against positions no cited author or preceding sentence proposes. Human beings are imagined giving the world a savior by themselves; a worshipper's increased charity is denied the power to bring Christ to the altar; and celebrating Christmas is set against a second birth or a communicant forgetting whom he has received. These foils recur precisely where the reader needs the positive link among Spirit, mother, communicant and feast."
-required_result = "Remove the unsupported alternatives while keeping the genuine exegetical distinctions. For example, at line 17, “Bellarmine hears two acts in the verse. The Spirit overshadows Mary, and Mary bears the Son.” At line 35, “Guéranger hears the choir sing of Mary's child in the future tense just after the faithful have received him. They await the feast of the birth of the same Lord who has given himself to them.” At line 33, state what Thomas says can grow in the worshipper and how that prepares the person to receive Christ."
-repair_target = "study"
-
-[[findings]]
-stage = "study-review"
-id = "STU-005"
-severity = "blocking"
-location = "generation-metadata.tex, line 2, the expansive study author's contribution"
-problem = "The required qualifier argument is a sentence. Running tools/check-generation-metadata --provider gpt --document liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent exits 1 on that argument. The production record identifies the same source error in the attempted export. This is a defect in the author's tracked contribution declaration and can be verified without producing a PDF."
-required_result = "Preserve the actual author model, requested effort and known limits in the qualifier syntax the validator accepts, using key=value for exposed qualifiers and an explicit unexposed field naming any covered unavailable components. Re-run the selected document's source metadata check and record its actual outcome."
-repair_target = "study"
+location = "sections/concise/10-commentary.tex:12, 28, 36, 46, 48 and 50"
+problem = "Across the developed commentary, sentences repeatedly announce that a point is specific, costly, different or still to come when the adjacent sentences already show it. Examples include 'What is asked of him today is quite specific' before Paul's debt of love (12), the second reminder of what the storm 'gives some sense of' between the homecoming and Gregory's actual appeal (28), 'means something very different' before the dispersal of clouds (36), 'differs enough to change what a Christian might look for' after the two possibilities have already been posed (46), 'They need something else' (48), and 'The distinction matters to his example' (50). These interjections repeatedly slow the passage where the reader is meant to follow the Fathers' reasoning."
+required_result = "Let the named act or textual detail make the transition. For example, at line 12 go directly to 'Just before the lesson begins, Paul speaks of the love we owe our neighbor.' At lines 48–50, join the field to the actual promise: 'The ploughed field still needs rain. In the English translation of Augustine’s sermon the Lord gives sweetness. A man who once enjoyed taking another’s goods now takes pleasure in giving his own away.' At 28, 36 and 46 retain the storm, the clearing sky and the two distinct senses of fruit, removing the general comments that precede or repeat them. Preserve the differences in the witnesses' wording."
+repair_target = "synthesis"
 
 [[advisories]]
 stage = "research-review"
@@ -133,3 +118,11 @@ severity = "advisory"
 location = "research/scope.md:36, research/source-bindings.toml:254 and 262, and research/source-dispositions.toml:482 and 493"
 problem = "The local research calls two Catholic Encyclopedia articles ‘Synoptics’ and ‘Epistles’. The bound witnesses give different titles. Alfred Durand’s The New Testament, under Origin, explicitly dates Luke to about A.D. 70 at line 33 of the extracted article. Paulin Ladeuze’s Epistle to the Ephesians, under Date and place of composition, places Romans in A.D. 58 at line 69. The artifact identities and the dates in the generated table are correct."
 required_result = "Use the actual article titles and sections in the local source descriptions and any bibliography prepared from them. Cite Durand, The New Testament, ‘Origin’, for Luke, and Ladeuze, Epistle to the Ephesians, ‘Date and place of composition’, for Romans."
+
+[[advisories]]
+stage = "study-review"
+id = "STU-006"
+severity = "advisory"
+location = "sections/40-the-promised-son.tex, line 17, ‘a woman of our own people’"
+problem = "‘Our own people’ can mean the congregation's ethnic community. Bellarmine identifies Mary with ‘our land’ and explains her virginal motherhood. His paragraph makes no claim that the congregation shares an ancestry with her. The surrounding discussion of Israel and other peoples makes the pronoun briefly ambiguous."
+required_result = "Name the shared humanity directly, for example ‘Christ takes our human flesh from Mary.’ Keep Bellarmine's account of the Spirit overshadowing her and her bearing the Son."

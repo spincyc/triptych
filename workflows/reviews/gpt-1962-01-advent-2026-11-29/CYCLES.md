@@ -8,14 +8,14 @@ permanent temporal identity is `01-first-sunday-of-advent`.
 The comparison used the GPT editions for 8, 15 and 22 November on main at
 `2bab048acf`. It covered all three spoken homilies and selections from each
 study, including introductions, developed interpretations and concise
-commentary. In each concise commentary an introductory clause described
-the work of interpretation just before the writer supplied the evidence.
+commentary. Each concise commentary includes a clause about the work of interpretation.
+The evidence or conclusion beside it allows the reader to follow the argument.
 
 | Sunday | In the concise commentary | Detail available to the writer |
 | --- | --- | --- |
 | 8 November, resumed Fifth after Epiphany | “It gives precision to the second interpretation” | Aquinas distinguishes persevering in prayer from obtaining the particular gift one asks for. |
 | 15 November, resumed Sixth after Epiphany | “The Epistle permits a connection between them” | The people of Thessalonica received the Gospel and other believers learned from their example. |
-| 22 November, Last after Pentecost | “the warning makes attachment concrete” | Christ tells the man in the field to leave his coat behind. The Secret asks God to turn the people's hearts toward him. |
+| 22 November, Last after Pentecost | “the warning makes attachment concrete” | Christ tells the man in the field to leave his coat behind. In the Secret the people ask to be freed from earthly desires. |
 
 Each example comes from the respective leaf's
 `sections/concise/10-commentary.tex`. The homilies each invite the hearer to
@@ -55,3 +55,74 @@ original corpus showed only the approximate year 70. Rendering it again
 with the short description of the other proposal also displayed its limit
 at the end of Paul's Roman imprisonment. The regenerated coverage table
 is current. All 17 checks for adopted chronology pages passed.
+
+### Texts and sources
+
+The occurrence check compared the Vatican 1962 Missal with the dated
+FSSP and ICRSP Ordos. The eleven appointments include the Trinity Preface.
+The class-I Sunday excludes the ordinary commemoration of St Saturninus.
+
+Research checked the Latin and English texts, the biblical chapters and the
+commentators at the passages they discuss. Source registration replayed
+fifteen deliveries and reconciled 43 bindings in 51 disposition rows.
+Fifteen excerpts entered the Catena. Cyril's surviving text in the volume
+inspected passes over Luke 21:25–33, so it cannot supply direct commentary
+on that passage. The two English editions consulted for Chrysostom on Romans
+have different translator credits. Bellarmine's printed page settled the
+digital transcription's variation between “would” and “could.” The strict
+source projection and the research preflight passed.
+
+The first cold research review returned the evidence for repair. Lasance
+directs the reader from his abbreviated collects to the full English
+conclusions on printed p. 819. The Mass also omits a word found in the
+biblical opening of Romans 13:11. The reviewer called for a precise
+account of that omission and of the actual passages checked in Augustine
+and Guéranger. The reviewer confirmed both proposed interpretations
+against Gregory and Aquinas.
+
+The second independent research review accepted the restored conclusions,
+the comparison of the biblical and liturgical texts, and the corrected
+commentary references. It checked 1,752 sealed file hashes. Its bibliography
+advisory concerns the short descriptions of two encyclopedia articles
+in the research ledger. Their titles are Alfred Durand's *The New
+Testament* and Paulin Ladeuze's *Epistle to the Ephesians*. The reviewer
+verified the dates cited from them.
+
+### Expansive study
+
+The first draft contained 7,190 words of exposition, apart from the
+appointed texts, map, chronology and apparatus. The author replaced
+“with remarkable precision” in the Communion commentary with Guéranger's
+actual observation. The priest and people have already received Communion
+when the choir sings of what the earth will give.
+
+The first cold reader asked for the exact word that prompts Augustine's
+discussion of taste, and for the priest's address to the Father in the
+Secret to be distinguished from the address to the Son in the Collect.
+The review also returned several paragraphs that argued against positions
+neither the passages nor their commentators had proposed. A metadata
+syntax error found by a local print check was reproduced independently.
+
+The revised study gives Augustine's “sweetness” alongside the chant's
+“goodness,” names the people praying and the Father they address in the
+Secret, and explains the argument without the unsupported contrasts.
+Its substantive word count is 6,991. The next cold reader cleared all
+five findings, including the qualifier syntax. The study's two
+interpretations and their separate accounts of the four senses passed.
+
+### Concise study
+
+The first proof occupied nine pages. The author went back to the Introit.
+Bellarmine asks what will become of a man whose enemies can laugh at his
+trust in God. Augustine asks how their praise could persuade him to persist
+in doing wrong. Adding their reasons and following the Gradual's return
+to the psalm brought the proof to ten pages. The expansive study occupied
+22 pages.
+
+The cold reader verified the four opening pages and both interpretations.
+The reader returned two findings. Paul tells the Romans to wake and put on
+the armour of light. Chrysostom supplies the sight of the neighbours getting
+up and dressing. The study's application to an adversary belongs to the
+author. A second finding identified six places where an announcement breaks
+the reasoning, among them “The distinction matters to his example” just
+before Augustine's account of the thief who comes to enjoy giving.
