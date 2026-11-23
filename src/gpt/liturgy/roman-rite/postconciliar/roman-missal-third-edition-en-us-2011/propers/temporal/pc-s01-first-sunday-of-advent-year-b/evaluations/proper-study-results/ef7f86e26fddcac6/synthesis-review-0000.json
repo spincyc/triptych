@@ -1,0 +1,301 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "SYN-001",
+      "location": "sections/synthesis-05-commentary.tex:38, Augustine\u2019s illustrations at the Communion verse",
+      "problem": "\u2018That same neighbor\u2019 makes the recipient of the former thief\u2019s gift his original victim. Augustine, Exposition on Psalm 84 \u00a712, contrasts enjoying taking what another possesses with enjoying giving what another lacks. He leaves the two people\u2019s identities open. Identifying them makes the act sound like restitution and obscures why the change of pleasure matters. \u2018Leave the sowing to God for rain\u2019 also blurs the division of work in the other illustration. Augustine tells his hearers that he has sown the word and asks God to send the rain that will make it grow. Sections/30-turned-to-god.tex:27\u201329 preserves both distinctions.",
+      "repair_target": "synthesis",
+      "required_result": "Keep the hearer, preacher and God in their respective roles. For example, \u2018Augustine has sown the word in his hearers and asks God to send the rain it needs.\u2019 Describe the changed desire without identifying the beneficiary, for example, \u2018He once enjoyed taking something he lacked. Now he enjoys giving someone in need something he can spare.\u2019",
+      "severity": "blocking"
+    },
+    {
+      "id": "SYN-002",
+      "location": "sections/synthesis-90-apparatus.tex:5, \u2018There is no proper Offertory antiphon.\u2019",
+      "problem": "The absence established by the accepted study concerns the Sunday\u2019s U.S. Missal proper, p. 139. The categorical sentence extends that conclusion to the other approved chant books discussed in the same paragraph. The postconciliar Graduale Romanum (Solesmes, 1974), p. 17, actually prints the Advent offertory at Ps 24:1\u20133, marked OF. II. GIRM 74 provides for the offertory chant under the selection norms of no. 48. The accepted study qualifies the statement in its preparation-chant row. [Graduale Romanum, p. 17, facsimile](https://gregobase.selapa.net/sources/4/16.png)",
+      "repair_target": "synthesis",
+      "required_result": "Restore the source boundary in the concise apparatus. \u2018The U.S. Missal prints no Offertory antiphon for this Sunday\u2019 conveys the established finding. The study can retain its chosen Missal-antiphon route and its uncertainty about the local chant.",
+      "severity": "blocking"
+    },
+    {
+      "id": "SYN-003",
+      "location": "sections/synthesis-90-apparatus.tex:5, condition introducing Lectionary nos. 173\u2013174",
+      "problem": "\u2018If a common Advent psalm is sung\u2019 can suggest that using the seasonal response requires changing the psalm as well. GIRM 61 gives singing the psalm as the condition. No. 173 supplies a response and no. 174 gives two psalms with their own responses. The opening map already distinguishes these options.",
+      "required_result": "Use \u2018When the psalm is sung\u2019 and distinguish replacing the response alone from choosing either complete common psalm.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "postconciliar",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "preface",
+            "communion",
+            "after-communion",
+            "advent-blessing"
+          ],
+          "key": "concise-inventory",
+          "kind": "front-matter",
+          "path": "sections/synthesis-01-inventory.tex",
+          "references": []
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "preface",
+            "communion",
+            "after-communion",
+            "advent-blessing"
+          ],
+          "key": "concise-overview",
+          "kind": "front-matter",
+          "path": "sections/synthesis-02-overview.tex",
+          "references": []
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "preface",
+            "communion",
+            "after-communion",
+            "advent-blessing"
+          ],
+          "key": "concise-chronology",
+          "kind": "front-matter",
+          "path": "generated/scriptural-date-location-page.tex",
+          "references": [
+            "research/chronology-annotations.tex",
+            "research/chronology-table.tex"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "preface",
+            "communion",
+            "after-communion",
+            "advent-blessing"
+          ],
+          "key": "concise-themes",
+          "kind": "front-matter",
+          "path": "sections/synthesis-04-themes.tex",
+          "references": []
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "preface",
+            "communion",
+            "after-communion",
+            "advent-blessing"
+          ],
+          "key": "concise-commentary",
+          "kind": "integrated-commentary",
+          "path": "sections/synthesis-05-commentary.tex",
+          "references": [
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [],
+          "key": "concise-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/synthesis-90-apparatus.tex",
+          "references": []
+        }
+      ],
+      "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+      "element_keys": [
+        "entrance",
+        "collect",
+        "first-reading",
+        "psalm",
+        "second-reading",
+        "acclamation",
+        "gospel",
+        "offerings",
+        "preface",
+        "communion",
+        "after-communion",
+        "advent-blessing"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Jerome",
+            "Augustine of Hippo",
+            "Thomas Aquinas"
+          ],
+          "carrying_authors": [
+            "Jerome",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "turned-to-god"
+          ],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "preface",
+            "communion",
+            "after-communion",
+            "advent-blessing"
+          ],
+          "key": "turned-to-god",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ],
+          "title": "The people who ask God to turn them"
+        },
+        {
+          "authors": [
+            "Bede",
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Cyril of Jerusalem",
+            "Robert Bellarmine",
+            "Augustine of Hippo"
+          ],
+          "carrying_authors": [
+            "Bede",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "household-work"
+          ],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "preface",
+            "communion",
+            "after-communion",
+            "advent-blessing"
+          ],
+          "key": "household-work",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ],
+          "title": "The work the master leaves in the house"
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+    "files": {
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/generated/scriptural-date-location-page.tex": "8ea9acfaf6006c4a023b0dac1156df6d765951174fb6554d4c05a1cbb2f734f3",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/chronology-annotations.tex": "3c88c430a6bb1f786e43346c3a978352a6b38b1a49a6d1391fa1517b36253c46",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/chronology-table.tex": "efcc0350c13a4048393a318cacc3a21f045e567a687eebfef25be3d996d4e100",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/interpretations.md": "8bb5c851ce82ccf7856bffc04cc60007d055c5508e94760483d98aa02de9452f",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/synthesis-01-inventory.tex": "201c5ae30cc69e58dfd1190a3ebbc6764bb927dbc754d52c47499924edc95deb",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/synthesis-02-overview.tex": "1c49a5a77f5d22a86c3ed84bfac3afadaa3a194d07560726047ff7354818e373",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/synthesis-04-themes.tex": "a2a99efd09f3aa7640d67bc10caf48af6318a9db5052df00462d0d40412a8846",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/synthesis-05-commentary.tex": "bb9c32c1e2ec1a8068292474ff05c4ca6542e382fa985ea9e7b94c0537ef8057",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/synthesis-90-apparatus.tex": "fa31ec02b855ac946436cffd5724ed36ae3744ba9aed9a174d89fe1b7c621437",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/synthesis.tex": "24eee250955bd59d82f759cf1d36771b8466d042172dee37099b25cfcc21103f"
+    },
+    "generation_provenance": {
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "20",
+            "9829722276b1a1f662a2c7a4f5e7e2562394d5ef83911bb94d8b729393f1feec",
+            "ef7f86e26fddcac6",
+            "04f3faaf3f3bc0d761f3d37f19f6bbdba2a83125",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gpt",
+    "review": "synthesis",
+    "schema": 1
+  },
+  "stage": "synthesis-review",
+  "summary": "I could recover both interpretations from the Year B concise study before comparing it with the expansive study. One asks how God gives a sinner the will to pray and do justice, the other what work the ascended Christ entrusts to a gifted household. The inventory, four overview rows and developed comparisons are present. In the rendered chronology, the Mark 13:33\u201337 row pairs Jesus\u2019 charge on Mount Olivet opposite the Temple with c. A.D. 29, explicitly derived and disputed as to the Passion date. The next two rows give separate composition estimates. No print export was requested. Comparison with Jerome on Isaiah, Augustine and Bellarmine on the Psalms, Chrysostom and Thomas on Paul, Bede on Mark and the U.S. liturgical books disclosed two qualifications the concise study needs to restore."
+}

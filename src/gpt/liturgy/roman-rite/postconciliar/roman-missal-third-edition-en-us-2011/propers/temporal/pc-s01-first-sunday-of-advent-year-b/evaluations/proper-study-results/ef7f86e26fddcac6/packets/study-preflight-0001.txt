@@ -1,0 +1,15 @@
+WORKFLOW: proper-study v20
+WORKFLOW_DIGEST: 9829722276b1a1f662a2c7a4f5e7e2562394d5ef83911bb94d8b729393f1feec
+RUN_ID: ef7f86e26fddcac6
+COMMIT: 04f3faaf3f3bc0d761f3d37f19f6bbdba2a83125
+STAGE: study-preflight
+ITERATION: 1
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-11-29","proper":"liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b","provider":"gpt","research_handoff":"none"}
+DOCUMENT_ROOT: src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: [{"id":"STU-ISA-001","location":"sections/30-turned-to-god.tex:19\u201321, the turn from Isaiah to Psalm 80","problem":"The study connects Isaiah\u2019s confession with the plea to see God\u2019s face through Augustine. There is also a particularly close precedent in the cited passage of Jerome. At the end of his commentary on the hidden face (In Isaiam XVII, p. 158, immediately before the clay), Jerome himself invokes Psalm 79:4. The reader misses an instance of one biblical prayer already being read beside the other.","required_result":"Consider identifying Jerome\u2019s own appeal to Psalm 79:4 beside the study\u2019s application of Augustine. Preserve the distinction between Jerome citing a psalm while explaining Isaiah and the editor interpreting the two appointments together at this Mass.","severity":"advisory"}]
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

@@ -1,0 +1,40 @@
+{
+  "artifact_path": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/scope.md",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "RES-001",
+      "note": "Collated the U.S. seasonal response and two sung psalms against GIRM 61, the Latin page image, diocesan directions and the U.S. musical witnesses. Added verse-specific Augustine and Bellarmine reception for the optional branch.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-002",
+      "note": "Compared the U.S. wish at Isaiah 64:4 with the indicative and extra salvation clause at Challoner 64:5, checked Jerome p. 155, and followed both witnesses through the last clay-and-potter line.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-003",
+      "note": "Recorded the separate CCD Lectionary and ICEL Psalm refrain credits, years and written-permission requirement from the dated USCCB page.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-004",
+      "note": "Regenerated the record, annotations and table with the Psalm refrain identified, the closing charge on Olivet dated under Maas's qualified chronology, and the Pauline writing site and recipients distinguished. The geographic evidence for each is now source-bound.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-005",
+      "note": "Verified Book of Blessings 1509, 1514 and 1517\u20131520, including both alternative prayers, the first candle, household use and the within-Mass position. Recorded the wreath as a separate permitted branch in the instance and context.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-006",
+      "note": "Corrected the checked scope and disposition of Chrysostom, Homily I \u00a7\u00a73\u20134, to 1 Corinthians 1:2\u20133. Section 3 crosses the opening boundary of the appointment. Its revised English remains deferred.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "notes": "Four new exact deliveries, their URLs, sizes, SHA-256, formats, rights limits and native loci are indexed in .scratch/pc-s01-b/research1/receipts.json. The Louisville delivery is a numbered web extraction of the diocesan PDF; direct PDF retrieval returned 403. The other three are complete HTML deliveries. Register those four restricted identities without their bytes. The first pass's deliveries remain at .scratch/pc-s01-b/research/receipts.json and the Bellarmine Duffy scan at .scratch/pc-s01-b/register/bellarmine.pdf. Reconcile the widened Augustine and Bellarmine loci and the two new Bellarmine seasonal candidates; check their bounded passages and canonical verse edges before admission. The source record updates include the Chrysostom binding and digest-pinned disposition. The accepted U.S. order has been checked through a diocesan and an edition-identified ritual transcription; physical U.S. copies of the full Lectionary and Book of Blessings were not acquired. Existing Missal printing and Latin witness limits continue. Calendar and date alternatives are preserved. The new leaf's source-owned appointment names the Ephesus-to-Corinth relation in the generated composition row; its exact Bible chapters are in review-dependencies.toml and the Prat binding gives the third-mission passage. The v5 research-input seal (.scratch/pc-s01-b/research1/seal-final.json) contains the 1 Corinthians chapters, Mark 13, Prat, both Maas passages and chronology source data. Record/annotation currency, corpus validation and coverage, source dispositions, diff whitespace, receipt hashes and the complete adopted-consumer freshness checks passed.",
+  "stage": "research",
+  "summary": "Repaired the six research findings across the appointment, branch, rights, interpretation, reception and chronology records. The studies retain the ordinary Sunday route with Psalm 80 and unknown parish selections."
+}

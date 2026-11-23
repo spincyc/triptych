@@ -1,0 +1,15 @@
+WORKFLOW: proper-study v20
+WORKFLOW_DIGEST: 9829722276b1a1f662a2c7a4f5e7e2562394d5ef83911bb94d8b729393f1feec
+RUN_ID: ef7f86e26fddcac6
+COMMIT: 04f3faaf3f3bc0d761f3d37f19f6bbdba2a83125
+STAGE: synthesis-preflight
+ITERATION: 2
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-11-29","proper":"liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b","provider":"gpt","research_handoff":"none"}
+DOCUMENT_ROOT: src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: [{"id":"WEB-PSALM-HEADINGS-001","location":"sections/90-apparatus.tex:23 and 37, rendered Markdown lines 372, 376 and 390","problem":"Under the level-three heading \u201cWhen an Advent common psalm is sung,\u201d Psalm 25 and Psalm 85 both render at level five. The reader contents lists headings through level four, so neither named option appears there, although both passages remain legible in the article.","required_result":"Place the two psalm headings immediately below their common parent at the next heading level, so a reader using the article outline can navigate directly to either alternative.","severity":"advisory"}]
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

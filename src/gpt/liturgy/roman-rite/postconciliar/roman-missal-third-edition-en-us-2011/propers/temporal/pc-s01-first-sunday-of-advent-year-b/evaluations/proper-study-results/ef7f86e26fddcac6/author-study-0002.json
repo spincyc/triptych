@@ -1,0 +1,14 @@
+{
+  "artifact_path": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/main.tex",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "WEB-JEROME-LINK-001",
+      "note": "Chromium followed the rendered link with normal certificate validation and received HTTP 200, application/pdf. The 643,374-byte PDF matches the registered SHA-256, 97785e2b71a8bdc60e866af2309a205b119bce40cc16a237692a2cdda41ab7e9.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 2,
+  "stage": "author-study",
+  "summary": "Updated Reference 7 to an HTTPS archive capture of Jerome\u2019s part IV with a direct link to p. 149. The regenerated reader opens the registered PDF in Chromium, exposes both Advent common psalms under their parent heading, and identifies Jerome\u2019s first-person invitation on p. 158."
+}

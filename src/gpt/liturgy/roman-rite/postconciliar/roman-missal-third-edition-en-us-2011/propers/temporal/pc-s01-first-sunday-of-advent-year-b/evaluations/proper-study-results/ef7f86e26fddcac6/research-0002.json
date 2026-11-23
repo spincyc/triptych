@@ -1,0 +1,15 @@
+{
+  "artifact_path": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/scope.md",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "RES-007",
+      "note": "The fragment edges now assign \u00a73 to Vulgate Psalm 24:3 alone and \u00a74 to 24:4 alone. Their bases identify the two lemmata in each NPNF paragraph and the corresponding Challoner verse. Uncapped searches for verses 2, 3, 4 and the Entrance span 1\u20133 verify the boundaries.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 2,
+  "notes": "Changed src/sources/commentary/fragment-loci.yaml and this leaf\u2019s research/scope.md and research/source-dispositions.toml. The two registered public-domain witnesses, their complete retained payload paths, checked loci, sizes and hashes appear in .scratch/pc-s01-b/research2/witnesses.json. This comparison required no new retrieval. Earlier receipt inventories are .scratch/pc-s01-b/research/receipts.json, .scratch/pc-s01-b/research1/receipts.json and .scratch/pc-s01-b/register2/receipts-verified.json. The exact NPNF and Challoner artifact hashes matched their source records. Four uncapped lookups are in .scratch/pc-s01-b/research2/discover-*.json. The regenerated Catena projection in .scratch/pc-s01-b/research2/browser-data/structure/catena/21-ps/024.json has the two single-verse extents. Source dispositions validate, the strict Source Reader projection is current, and the v5 research seal in .scratch/pc-s01-b/research2/seal.json pins the corrected edge file to 9c1f386c7317637a88ebd748d51c9b9cec07be5ebda98c5bc173cff05bd94a90. The local parish\u2019s choice of sung psalm remains unknown.",
+  "stage": "research",
+  "summary": "Corrected Augustine\u2019s two canonical verse links after comparing the complete NPNF \u00a7\u00a73\u20134 with Challoner Psalm 24:2\u20134. The Entrance lookup now ends with \u00a73, and the petition that opens the seasonal psalm\u2019s first strophe appears in \u00a74."
+}

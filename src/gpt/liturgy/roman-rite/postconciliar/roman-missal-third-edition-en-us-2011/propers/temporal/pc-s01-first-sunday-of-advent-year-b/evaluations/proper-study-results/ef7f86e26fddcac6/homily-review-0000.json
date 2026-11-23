@@ -1,0 +1,193 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "HOM-001",
+      "location": "sections/homily-10-spoken.tex, line 7, opening sentence",
+      "problem": "The phrase \u201cthe one hour he was to have watched\u201d can sound as if Peter knew in advance how long Jesus expected him to stay awake. In Mark 14:34 Jesus asks the three to keep watch, and only on returning in verse 37 does he mention an hour.",
+      "required_result": "Keep the hour in Jesus\u2019 question on his return. For example, \u201cJesus calls him Simon and asks if he couldn\u2019t stay awake for one hour.\u201d",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "postconciliar",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "preface",
+            "communion",
+            "after-communion",
+            "advent-blessing"
+          ],
+          "key": "spoken",
+          "kind": "homily",
+          "path": "sections/homily-10-spoken.tex",
+          "references": [
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [],
+          "key": "homily-notes",
+          "kind": "terminal-apparatus",
+          "path": "sections/homily-90-notes.tex",
+          "references": []
+        }
+      ],
+      "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+      "element_keys": [
+        "entrance",
+        "collect",
+        "first-reading",
+        "psalm",
+        "second-reading",
+        "acclamation",
+        "gospel",
+        "offerings",
+        "preface",
+        "communion",
+        "after-communion",
+        "advent-blessing"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Jerome",
+            "Augustine of Hippo",
+            "Thomas Aquinas"
+          ],
+          "carrying_authors": [
+            "Jerome",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "turned-to-god"
+          ],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "preface",
+            "communion",
+            "after-communion",
+            "advent-blessing"
+          ],
+          "key": "turned-to-god",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ],
+          "title": "The people who ask God to turn them"
+        },
+        {
+          "authors": [
+            "Bede",
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Cyril of Jerusalem",
+            "Robert Bellarmine",
+            "Augustine of Hippo"
+          ],
+          "carrying_authors": [
+            "Bede",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "household-work"
+          ],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "preface",
+            "communion",
+            "after-communion",
+            "advent-blessing"
+          ],
+          "key": "household-work",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ],
+          "title": "The work the master leaves in the house"
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+    "files": {
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec",
+      "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/homily.tex": "776c148dc7d5b69db4e9c02bd9966e39bf3f2842534a359e8fe611a113a226ec",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/interpretations.md": "8bb5c851ce82ccf7856bffc04cc60007d055c5508e94760483d98aa02de9452f",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/homily-10-spoken.tex": "ed6e990c708ca8e22fdef4d54f68826c0f5e158522f8c584fe9c9d657db556c0",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/homily-90-notes.tex": "d44226cda8c3ec755889847a8c29cd1acc3a9e792b08777090c60e913152a593"
+    },
+    "generation_provenance": {
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "20",
+            "9829722276b1a1f662a2c7a4f5e7e2562394d5ef83911bb94d8b729393f1feec",
+            "ef7f86e26fddcac6",
+            "04f3faaf3f3bc0d761f3d37f19f6bbdba2a83125",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gpt",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "The hour Jesus asked of Peter passes for an adult parish assembly because the hearer of the warning in Mark 13:3\u20134, 33\u201337 becomes the friend found asleep in 14:29\u201340, giving a particular reason to keep the promised visit. The sentence \u201cFirst they ask God to give them life\u201d connects Psalm 80:19 with the Collect\u2019s request for the will to act, in accord with Isaiah 64:7, Jerome\u2019s Commentary on Isaiah XVII, pp. 158\u2013159, Augustine\u2019s Exposition on Psalm 79 \u00a7\u00a73, 11 and the reviewed study. The 1,121-word body runs about 10 minutes 40 seconds at the stated 105 words per minute, an estimate from the written text."
+}

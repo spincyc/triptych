@@ -4,8 +4,8 @@ provider = "gpt"
 audited_on = "2026-11-23"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 160
-source_surface_file_count = 4053
-snapshot = "sha256:eb7cef85518fa7e1fa5f3e84ddb698b3a564e46a4eedb05d365bdcb8a09f40de"
+source_surface_file_count = 4104
+snapshot = "sha256:b2031dff0405f3402d39a8ba7d1c1c69ccaab3280b8f5c2f3601c09ac730c4d4"
 
 [[owners]]
 id = "owner.articles.faith.four-last-things"
@@ -20226,6 +20226,312 @@ owners = ["owner.liturgy.roman-rite.postconciliar.roman-missal-third-edition-en-
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/blocking-findings-v1.toml"
 sha256 = "f164e7e2d7e04c2621280c9468831757a1a99a30b69882457c4ffe69ffad99ca"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/artifact-gates-0000.txt"
+sha256 = "85adf7758bf2cca0355a21b31a18a065d9cc96c3113e0ea395b9c15b7186ba20"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/artifact-gates-0001.txt"
+sha256 = "47e6679480cd335af491d3f62ed67337b76f14466b5dc0c1d1d05da90f408344"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/author-study-0000.txt"
+sha256 = "7afe0d65358100bd9dc58976d688fd3034517942228d307580e4e6fc74c312de"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/author-study-0001.txt"
+sha256 = "8f48a0ff9d39eef2248c4a256b79dbc770a42136eda1e8279a87f59b19c3b28b"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/author-study-0002.txt"
+sha256 = "ec41864f0947a63dc620333a99ca10c5dae98123f4f8a3e974e74018b8774b35"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/build-artifacts-0000.txt"
+sha256 = "82187f72f6e3b1549cd907e5e789fef984406f47c140146468f6a2b88288cac4"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/build-artifacts-0001.txt"
+sha256 = "0d3dc3ce4b0fe831d54d8597f22db58392e884c052cbb193a5a4df78c898f149"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/derive-homily-0000.txt"
+sha256 = "229d6eb148f0cd50617fe7bca975b8b95741de3436755c16a28e7e41eb359bc5"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/derive-homily-0001.txt"
+sha256 = "b4c74bbac719cd058a76ae4de9daafb6713e21919f27756b94f4f20e750985aa"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/derive-synthesis-0000.txt"
+sha256 = "5509ffed7b184b8e310069c1b7f511f9f559aa76b388081472c715a0491cc794"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/derive-synthesis-0001.txt"
+sha256 = "9e0031f5b51539a940f21a938aed1838ae92fcfc0b7003012941b98486f5722a"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/derive-synthesis-0002.txt"
+sha256 = "e58f092610a4a8c453d842c415067ccf7fab5d2055cc1c7555350fdab2f6b2a1"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/generate-web-0000.txt"
+sha256 = "059761180e7f0c30c450e0f1acd986a9aaf823fad2ec6797869080231134f58e"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/generate-web-0001.txt"
+sha256 = "410c8a35c48138ac682e909d6de6620605b750b41652498f2978f40ff3ca238e"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/homily-preflight-0000.txt"
+sha256 = "24726a98008bec15fd81551c73c25b1b8b1ca132c3a15665c6f43b0335da4c09"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/homily-preflight-0001.txt"
+sha256 = "13ee693a046c62d9d2bdd576bb1db5e23d381d7e93e238d4c8f005115e23af92"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/homily-review-0000.txt"
+sha256 = "521ff284dafa0620fb0e28c9fe786bcd2210dbcc120f1b3b032c80d1b0158ff8"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/homily-review-0001.txt"
+sha256 = "6779011873bdff86714f2b56b73c2ec9f9f39649cb272de85ed52cc50f1e761a"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/install-publication-0000.txt"
+sha256 = "947265ef6e0bcc386d78e35d6d9de26b4e07d535e2e061b233cb450a51e578c2"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/publication-gates-0000.txt"
+sha256 = "d15d325da2dbd502c4bf953096fd6f823f0fa6e19395d1ac9c04b3f2f8d5936f"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/research-0000.txt"
+sha256 = "cde50c42a579aba29ee4fa3aca40599d96378c38f9d5f16aa5047570f02f2874"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/research-0001.txt"
+sha256 = "b647ded99746203058a4ac263bf25d26f7f4d643da45ee549019aa1cdcc15f47"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/research-0002.txt"
+sha256 = "c5bc5e4a7d3522126b7c81642b96885ed98c890dcb2b0687da2fd548245d677e"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/research-preflight-0000.txt"
+sha256 = "951b9a7383e1233ef995396cddc9b24a2f5daffde7692bd86e4aaf436dbfc244"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/research-preflight-0001.txt"
+sha256 = "0bac1b1be2acfd295cc965a78e9fec83dfcf5047dbeb2fe71250b237008673a6"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/research-preflight-0002.txt"
+sha256 = "9ac7446908bf50f9a2b76abff510a44619bd67816e2370b348bbfbd20d9cd223"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/research-preflight-0003.txt"
+sha256 = "16600a41a3e49be80c997ce9c75a807b2bddab5e54143e65cd9095f80a1b9dc9"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/research-review-0000.txt"
+sha256 = "bdb68066641727901aedbdcb6050e97ee7c9aa652ec083a5237494fc4b9bd147"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/research-review-0001.txt"
+sha256 = "a5023dcb0b8d69596669ab7bf1d2eb73315f97fb3c0e27c9cc3b3a2ba839fa8e"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/research-review-0002.txt"
+sha256 = "5771271af04926c0936e22350fff3d8dc3c5f7bdf9e9af309fee1ee55a346b1f"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/resolve-context-0000.txt"
+sha256 = "043550493005099aa7839b0b061d942f7f84c7454623389da09f6901de4ae404"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/scope-gate-0000.txt"
+sha256 = "924c34971e7d7232f1163a30bf0ec199d8a267e5c1c23b1a298e3997a5be6552"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/source-registration-0000.txt"
+sha256 = "562111dd49de65e6c5be608ebeb5601697e8d3958c8fd50d76208019f88d6470"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/source-registration-0001.txt"
+sha256 = "662af0417c5d5ecc5920e59898db43619909b9f8f72394ce03fdbc2e7b4eb56b"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/source-registration-0002.txt"
+sha256 = "fc6f63f7f90ab2ef0ac6aabfde58d33e36d9b69bf2543ee3932e60a3c93794a2"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/source-registration-0003.txt"
+sha256 = "3a666f267f3e0a3e1599070cdf81db1982ab718771ecaebbe866894555565eb4"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/study-preflight-0000.txt"
+sha256 = "0558334c17fb0ca698d5db30efcae39675e7a18c28d104a63a90ec71993885e7"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/study-preflight-0001.txt"
+sha256 = "521f9da51f5a9e1419b6ff91e62fdcd66e629d374273fa440cb117331d2d00ad"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/study-preflight-0002.txt"
+sha256 = "53d5e156f465a1f829d06f42c4454bf5a633f0b607be7755d3489bb8e299b5d3"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/study-review-0000.txt"
+sha256 = "aaac4c72ad11d7df53104c982f9824b744fe44c67332fac859d918e0212b6e7d"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/study-review-0001.txt"
+sha256 = "403ec525768fd588421e6f8e49def5cf5232f206b1b8a82a86120713d3f28c9d"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/study-review-0002.txt"
+sha256 = "9e8821ed3e3aced22e2f9d8cefca1f702977d67825837ddb5229b8c3e55c21bc"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/synthesis-preflight-0000.txt"
+sha256 = "720044edec3d3d506507df6e38e49af329eddadd64717cebfb903b004e604097"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/synthesis-preflight-0001.txt"
+sha256 = "1b319433f1da683219cc2afae920da6a039c81f748b03bae6ea04cf20c673bca"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/synthesis-preflight-0002.txt"
+sha256 = "5d6ef7a0bf08d778316328608a9632a9afdb215bd99a54282883155cd60a9b4c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/synthesis-review-0000.txt"
+sha256 = "ee33c252de7174755428bdc80f0ccb3d0e107b0433aaec73590dfb99d4caa9e0"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/synthesis-review-0001.txt"
+sha256 = "4a2e6f2777ca9f67313d63b89c89836f960c42ded2b675828e3d05c5bb9af5fc"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/synthesis-review-0002.txt"
+sha256 = "649c1fb838fcafc3bdfb295ec46c2fad302d21509881c6c58d9c8f34aa4fc47e"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/web-review-0000.txt"
+sha256 = "1000cd93dc2dd702b33b932660436f91fc9149035cb3fe7354e504d06f25f975"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/packets/web-review-0001.txt"
+sha256 = "d493c4b16a02f6dd1d0366797761cdd7bd77225619ff774b23d2b571991575bd"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/ef7f86e26fddcac6/record.md"
+sha256 = "2ea8bb92708848b44272f85fe0d83e292f98f810c40ab4fe9687db1dbbed699c"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"]
 

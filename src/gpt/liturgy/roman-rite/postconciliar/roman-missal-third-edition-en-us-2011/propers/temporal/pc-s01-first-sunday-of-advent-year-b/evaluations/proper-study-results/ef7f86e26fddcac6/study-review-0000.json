@@ -1,0 +1,402 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "STU-VINE-001",
+      "location": "sections/40-household-work.tex:31, on Augustine and Bellarmine at Psalm 79",
+      "problem": "The contrast gives Augustine the continuity of the original vine and Bellarmine a better Church in its place. Bellarmine himself holds both ideas together. In explanation 14 he says the old vineyard survived its reform, identifies the apostles and Peter\u2019s converts as Israelites, and cites the Gentiles grafted onto Israel\u2019s olive tree. In explanation 15 he calls Christ the chief husbandman and speaks of a better Church. Augustine \u00a79 likewise invokes Abraham\u2019s seed, the graft and Christ. Omitting Bellarmine\u2019s first step makes their answers seem further apart on Israel\u2019s continuity than their texts warrant.",
+      "repair_target": "study",
+      "required_result": "Give Bellarmine\u2019s reasoning across explanations 14\u201315. Compare the distinct emphases that survive the shared account of grafting and fulfillment in Christ. Keep both Christian interpretations distinct from the psalmists\u2019 appeal for their own vine.",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-COR-001",
+      "location": "sections/40-household-work.tex:15\u201319 and 42, on Chrysostom and Thomas in 1 Corinthians 1",
+      "problem": "At line 17 the claim that Chrysostom proposes two possibilities, followed by the reassurance about inventing a compliment, leaves out his express qualification at the cited locus. In Homily II \u00a74 he also allows collective language about the greater part. In \u00a75 he explains why Paul opens gently, whom the apparent praise actually belongs to, and how it prepares the weaker hearers for correction. At line 19 Thomas\u2019s account of charity becomes a speaker\u2019s decision to make a talent useful. In \u00a786234 on v. 5 he cites Augustine on the person who loves the Church\u2019s unity and relinquishes envy. At v. 7 he separately explains the distribution of gifts among different people. The study\u2019s classroom example shows a benefit of service but misses how even the person without the ability already shares in another\u2019s good.",
+      "repair_target": "study",
+      "required_result": "Keep the temporal and personal answers as examples from Chrysostom, acknowledge his collective usage, and teach why thanksgiving to God can secure a hearing for correction. Give Thomas\u2019s distinction between distribution and participation through charity, with the reference spanning vv. 5\u20137. Identify the speaker and learner as an application, and carry the distinction into the moral distillation.",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-TEXT-001",
+      "location": "sections/10-treatment.tex:13\u201319 and sections/30-turned-to-god.tex:7",
+      "problem": "The account of the texts as heard at Mass says the speakers imagine mountains melting. The dated U.S. Isaiah has the mountains quake, while melting belongs to Challoner 64:1, 3. The same treatment leaves open who broke down the vineyard enclosure, although the full psalm directly asks God why he did it (Challoner Ps 79:13). That question matters for an interpretation of apparent divine responsibility. The statement that Paul names only one group of addressees similarly overstates Jerome\u2019s point. First Corinthians 1:2 expressly mentions those who invoke the Lord everywhere as it addresses Corinth.",
+      "repair_target": "study",
+      "required_result": "Distinguish the two mountain images where the text is first explained. State whom the psalmist questions about the breach, separating this contextual verse from Sunday\u2019s strophes. Present Jerome\u2019s comparison through the mixture of people within the Corinthian church, leaving the wider greeting intact.",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-ILL-001",
+      "location": "sections/30-turned-to-god.tex:9 and sections/50-comparison.tex:3",
+      "problem": "Jerome\u2019s physician conceals a frightening instrument before treatment (In Isaiam XVII, p. 151). The study adds a patient reflecting afterward on what the concealment meant and narrates this inside Jerome\u2019s illustration. In the comparison, Augustine\u2019s converted thief learns to provide for the neighbor he formerly robbed. Enarratio 84 \u00a712 contrasts taking another person\u2019s property with giving to somebody who lacks what the former thief now has. It does not identify the recipient as the former victim. The identification shifts the closing comparison toward restitution after the first interpretation explained a further change in desire.",
+      "repair_target": "study",
+      "required_result": "Keep Jerome\u2019s doctor, patient, concealed instrument and reason for concealment, with any imagined later reflection identified as the study\u2019s or removed. Describe Augustine\u2019s two actions without making the giver\u2019s former victim the recipient. The comparison can then distinguish the changed desire to give from Bellarmine\u2019s identification of the fruit with Christ.",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-REG-001",
+      "location": "sections/10-treatment.tex:27, sections/30-turned-to-god.tex:11, 15, 21, 29, sections/40-household-work.tex:11, 19, and sections/50-comparison.tex:3",
+      "problem": "The exposition repeatedly instructs the reader to notice, consider, look at or think of the next point. These stage directions introduce some of the study\u2019s best evidence but make the reader repeatedly wait for the sentence that actually states it. The device recurs through both interpretations and even opens the closing comparison.",
+      "repair_target": "study",
+      "required_result": "Let the speaker, textual detail or example begin its own sentence. For treatment line 27, use \u2018Paul thanks God for the Corinthians\u2019 speech and knowledge.\u2019 For the first interpretation line 21, use \u2018The people ask for life before they promise to call on God.\u2019 At the thief, name what Augustine says gave him pleasure. Apply the same edit at the other listed lines while keeping the evidence and credit for each illustration.",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-ISA-001",
+      "location": "sections/30-turned-to-god.tex:19\u201321, the turn from Isaiah to Psalm 80",
+      "problem": "The study connects Isaiah\u2019s confession with the plea to see God\u2019s face through Augustine. There is also a particularly close precedent in the cited passage of Jerome. At the end of his commentary on the hidden face (In Isaiam XVII, p. 158, immediately before the clay), Jerome himself invokes Psalm 79:4. The reader misses an instance of one biblical prayer already being read beside the other.",
+      "required_result": "Consider identifying Jerome\u2019s own appeal to Psalm 79:4 beside the study\u2019s application of Augustine. Preserve the distinction between Jerome citing a psalm while explaining Isaiah and the editor interpreting the two appointments together at this Mass.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "postconciliar",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "preface",
+            "communion",
+            "after-communion",
+            "advent-blessing"
+          ],
+          "key": "opening",
+          "kind": "front-matter",
+          "path": "sections/00-opening.tex",
+          "references": []
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "preface",
+            "communion",
+            "after-communion",
+            "advent-blessing"
+          ],
+          "key": "study-map",
+          "kind": "front-matter",
+          "path": "sections/01-map.tex",
+          "references": []
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "preface",
+            "communion",
+            "after-communion",
+            "advent-blessing"
+          ],
+          "key": "treatment",
+          "kind": "proper-treatment",
+          "path": "sections/10-treatment.tex",
+          "references": [
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "preface",
+            "communion",
+            "after-communion",
+            "advent-blessing"
+          ],
+          "key": "texts",
+          "kind": "appointed-text",
+          "path": "sections/20-texts.tex",
+          "references": [
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "preface",
+            "communion",
+            "after-communion",
+            "advent-blessing"
+          ],
+          "key": "turned-to-god",
+          "kind": "interpretive-lane",
+          "path": "sections/30-turned-to-god.tex",
+          "references": [
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "preface",
+            "communion",
+            "after-communion",
+            "advent-blessing"
+          ],
+          "key": "household-work",
+          "kind": "interpretive-lane",
+          "path": "sections/40-household-work.tex",
+          "references": [
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "preface",
+            "communion",
+            "after-communion",
+            "advent-blessing"
+          ],
+          "key": "comparison",
+          "kind": "front-matter",
+          "path": "sections/50-comparison.tex",
+          "references": []
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "preface",
+            "communion",
+            "after-communion",
+            "advent-blessing"
+          ],
+          "key": "chronology",
+          "kind": "terminal-apparatus",
+          "path": "generated/scriptural-date-location.tex",
+          "references": [
+            "research/chronology-annotations.tex",
+            "research/chronology-table.tex"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [],
+          "key": "apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/90-apparatus.tex",
+          "references": [
+            "research/scope.md"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+      "element_keys": [
+        "entrance",
+        "collect",
+        "first-reading",
+        "psalm",
+        "second-reading",
+        "acclamation",
+        "gospel",
+        "offerings",
+        "preface",
+        "communion",
+        "after-communion",
+        "advent-blessing"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Jerome",
+            "Augustine of Hippo",
+            "Thomas Aquinas"
+          ],
+          "carrying_authors": [
+            "Jerome",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "turned-to-god"
+          ],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "preface",
+            "communion",
+            "after-communion",
+            "advent-blessing"
+          ],
+          "key": "turned-to-god",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ],
+          "title": "The people who ask God to turn them"
+        },
+        {
+          "authors": [
+            "Bede",
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Cyril of Jerusalem",
+            "Robert Bellarmine",
+            "Augustine of Hippo"
+          ],
+          "carrying_authors": [
+            "Bede",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "household-work"
+          ],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "preface",
+            "communion",
+            "after-communion",
+            "advent-blessing"
+          ],
+          "key": "household-work",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ],
+          "title": "The work the master leaves in the house"
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+    "files": {
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/generated/scriptural-date-location.tex": "941c13b3a1ab5d2a82ec7cba4725cf693cce6a70608ed020da63034b78f5e872",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/main.tex": "e4eba452ed3fa1e60167837c74b40f2477f3636879928eab69fc1ca83a56aeca",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/chronology-annotations.tex": "3c88c430a6bb1f786e43346c3a978352a6b38b1a49a6d1391fa1517b36253c46",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/chronology-table.tex": "efcc0350c13a4048393a318cacc3a21f045e567a687eebfef25be3d996d4e100",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/interpretations.md": "8bb5c851ce82ccf7856bffc04cc60007d055c5508e94760483d98aa02de9452f",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/scope.md": "c26c456d658d5980dd146932cacbff55438a07aa8bdde3ac19443b737915e723",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/source-bindings.toml": "b336e950a10ee2dae45db2d59614c1e0d91fcedac9cb522d00bcc0c0ce296a3b",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/00-opening.tex": "cdf52510c02faf005cf8b276416bde3c0c177d83e7f595799de39971634c66e9",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/01-map.tex": "dd6496892500539c44508d5632fbbc7dd56f2605a93a05693410bf61e0d9906c",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/10-treatment.tex": "960a1134f374b2b139481c8c274f29a7cd6b02251dca4998f78937a0ad9e16ed",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/20-texts.tex": "007652a41fc28506f91b84ac1469608fa3bae1bf01de16ac7a4f46ad86015b63",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/30-turned-to-god.tex": "d5b2059f250df89f43c903f57550094b8b8fd4cebb7eba8822147a4cb82bce57",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/40-household-work.tex": "83de38564d6c39209d40b017e3a9c73558667d3a55962e052c43fe86622c262b",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/50-comparison.tex": "a208cbb42a8415c480f67e79f2ae1db6983d73a0aa1968e01681046ee8fb03b4",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/90-apparatus.tex": "182c4d3039acfbd407f468e27873333fac728b9e4bdb348408c982a4117c3bf8"
+    },
+    "generation_provenance": {
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "20",
+            "9829722276b1a1f662a2c7a4f5e7e2562394d5ef83911bb94d8b729393f1feec",
+            "ef7f86e26fddcac6",
+            "04f3faaf3f3bc0d761f3d37f19f6bbdba2a83125",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gpt",
+    "review": "study",
+    "schema": 1
+  },
+  "stage": "study-review",
+  "summary": "I reviewed the complete rights-limited U.S. Advent I, Year B study against the authorized identity, the Missal and Lectionary evidence, Challoner and the cited commentaries. Jerome\u2019s mixed congregation and Augustinian dependence on grace, and Bede\u2019s move from the pastor to each heart at Mark 13:37 (lines 404\u2013405), become intelligible in the prose, but the comparisons, several source details and a recurring editorial device require revision before acceptance of the source edition."
+}

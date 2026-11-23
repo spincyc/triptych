@@ -1,0 +1,15 @@
+WORKFLOW: proper-study v20
+WORKFLOW_DIGEST: 9829722276b1a1f662a2c7a4f5e7e2562394d5ef83911bb94d8b729393f1feec
+RUN_ID: ef7f86e26fddcac6
+COMMIT: 04f3faaf3f3bc0d761f3d37f19f6bbdba2a83125
+STAGE: synthesis-preflight
+ITERATION: 1
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-11-29","proper":"liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b","provider":"gpt","research_handoff":"none"}
+DOCUMENT_ROOT: src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: [{"id":"SYN-003","location":"sections/synthesis-90-apparatus.tex:5, condition introducing Lectionary nos. 173\u2013174","problem":"\u2018If a common Advent psalm is sung\u2019 can suggest that using the seasonal response requires changing the psalm as well. GIRM 61 gives singing the psalm as the condition. No. 173 supplies a response and no. 174 gives two psalms with their own responses. The opening map already distinguishes these options.","required_result":"Use \u2018When the psalm is sung\u2019 and distinguish replacing the response alone from choosing either complete common psalm.","severity":"advisory"}]
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)
