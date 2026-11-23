@@ -31,3 +31,12 @@ body = [
   { component = "concise-commentary" },
   { component = "concise-apparatus" },
 ]
+
+[document.homily]
+pdftitle = "First Sunday of Advent: When You Look Up"
+pdfsubject = "A homily for an adult parish assembly at the 1962 Mass on 29 November 2026"
+subtitle = "When You Look Up"
+source-line = "1962 Roman Missal · Homily"
+occasion-line = "29 November 2026 · Adult parish assembly"
+homily = [{ component = "homily-body" }]
+apparatus = [{ component = "homily-apparatus" }]

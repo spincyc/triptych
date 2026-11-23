@@ -50,11 +50,11 @@ run_id = "2eec8ccb8f69387e"
 workflow = "proper-study"
 workflow_version = 19
 stage = "synthesis-review"
-iteration = 0
-disposition = "CHANGES_REQUIRED"
-standing = 2
+iteration = 1
+disposition = "PASS"
+standing = 0
 accepted_count = 0
-advisory_count = 2
+advisory_count = 3
 observation_count = 0
 
 [[stages]]
@@ -83,33 +83,15 @@ observation_count = 0
 
 [[stages]]
 stage = "synthesis-review"
-iteration = 0
-disposition = "CHANGES_REQUIRED"
+iteration = 1
+disposition = "PASS"
 run_id = "2eec8ccb8f69387e"
 workflow = "proper-study"
 workflow_version = 19
-standing = 2
+standing = 0
 accepted_count = 0
-advisory_count = 0
+advisory_count = 1
 observation_count = 0
-
-[[findings]]
-stage = "synthesis-review"
-id = "SYN-001"
-severity = "blocking"
-location = "sections/concise/04-themes.tex:12 and sections/concise/10-commentary.tex:64"
-problem = "The concise account twice puts an illustration into the mouth of its source. Paul is said to describe a man getting out of bed and dressing for his day's work. Romans 13:11–14a exhorts the hearers themselves to wake, put on the armour of light and put on Christ. Chrysostom develops the everyday scene of neighbours waking and dressing. At the close, 'Chrysostom says people can recognize the company a man keeps by seeing how he acts toward another' blends his analogy about inseparable friends and his invitation to make Christ visible in one's deeds with the study's example of gentleness to an adversary. Compare Homily 24 on Romans at 13:12 and 13:14 with the expansive study, sections/30-the-judge.tex:21 and 23."
-required_result = "Keep the three voices audible. For example, 'Paul tells the Romans to wake from sleep and put on the armour of light. Before the lesson ends he tells them to put on Christ.' At the close, 'Chrysostom compares putting on Christ to the way people speak of friends who are always together. He asks what others can see of Christ in our deeds.' A former adversary's surprise at being treated gently can then stand as the study's own example."
-repair_target = "synthesis"
-
-[[findings]]
-stage = "synthesis-review"
-id = "SYN-002"
-severity = "blocking"
-location = "sections/concise/10-commentary.tex:12, 28, 36, 46, 48 and 50"
-problem = "Across the developed commentary, sentences repeatedly announce that a point is specific, costly, different or still to come when the adjacent sentences already show it. Examples include 'What is asked of him today is quite specific' before Paul's debt of love (12), the second reminder of what the storm 'gives some sense of' between the homecoming and Gregory's actual appeal (28), 'means something very different' before the dispersal of clouds (36), 'differs enough to change what a Christian might look for' after the two possibilities have already been posed (46), 'They need something else' (48), and 'The distinction matters to his example' (50). These interjections repeatedly slow the passage where the reader is meant to follow the Fathers' reasoning."
-required_result = "Let the named act or textual detail make the transition. For example, at line 12 go directly to 'Just before the lesson begins, Paul speaks of the love we owe our neighbor.' At lines 48–50, join the field to the actual promise: 'The ploughed field still needs rain. In the English translation of Augustine’s sermon the Lord gives sweetness. A man who once enjoyed taking another’s goods now takes pleasure in giving his own away.' At 28, 36 and 46 retain the storm, the clearing sky and the two distinct senses of fruit, removing the general comments that precede or repeat them. Preserve the differences in the witnesses' wording."
-repair_target = "synthesis"
 
 [[advisories]]
 stage = "research-review"
@@ -126,3 +108,11 @@ severity = "advisory"
 location = "sections/40-the-promised-son.tex, line 17, ‘a woman of our own people’"
 problem = "‘Our own people’ can mean the congregation's ethnic community. Bellarmine identifies Mary with ‘our land’ and explains her virginal motherhood. His paragraph makes no claim that the congregation shares an ancestry with her. The surrounding discussion of Israel and other peoples makes the pronoun briefly ambiguous."
 required_result = "Name the shared humanity directly, for example ‘Christ takes our human flesh from Mary.’ Keep Bellarmine's account of the Spirit overshadowing her and her bearing the Son."
+
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-003"
+severity = "advisory"
+location = "sections/concise/10-commentary.tex:12"
+problem = "The paragraph moves from what the congregation sings to 'Just before the lesson begins, Paul speaks of the love we owe our neighbor.' A reader following the order of Mass could understand this as something else heard in church. Romans 13:8–10 precedes the appointed passage in the letter."
+required_result = "Locate the debt of love in the letter explicitly, for example, 'In the verses of his letter just before this Sunday's lesson, Paul speaks of the love we owe our neighbor.'"
