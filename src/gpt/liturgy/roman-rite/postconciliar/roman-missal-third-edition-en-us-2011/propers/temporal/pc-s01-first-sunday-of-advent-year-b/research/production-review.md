@@ -32,15 +32,15 @@ The homily component and content checks passed, including use of all four Refere
 
 ## Validation of the three source editions
 
-The content-schema check with the owning validators reported one publication, three outputs and zero errors. The generated entrypoints and chronology were current. The study places the date-and-location appendix before its terminal apparatus. The concise study places the date-and-location table between its overview and themes. The homily places the spoken text before the source and delivery notes. All three import the shared generation record. The accepted research (iteration 2), study (1), concise study (1) and homily (0) result hashes matched the workflow record, and their recorded review inputs matched the current inputs.
+The content-schema check with the owning validators reported one publication, three outputs and zero errors. The generated entrypoints and chronology were current. The study places the date-and-location appendix before its terminal apparatus. The concise study places the date-and-location table between its overview and themes. The homily places the spoken text before the source and delivery notes. All three import the shared generation record. The accepted research, study and concise study reviews (iteration 2 for each) and the homily review (iteration 1) matched their recorded SHA-256 hashes. Each review’s recorded inputs matched the current inputs.
 
 | Source identity | SHA-256 |
 | --- | --- |
-| Content | `60a28b5d620d2e587f9534e29ac07c4359a7b0cbb64335f9502d31b5c548d03e` |
+| Content | `31bad495aa0044bfe9d512023f23a4b8d260c249c8a48182ff05eacfda519ac2` |
 | Evidence metadata | `9d6c226bf7173af3b830b348a8b4d67b511690392ad3e6b1d3ff8c87dcf685c6` |
-| Render inputs | `60fbfe77389de0d3d08233a8bd59bfdf84c2564a1fd1b8ebfc55da1a04c50a2c` |
-| Expansive study | `0991c4ce41da0abd6332c74b186f2b30eb3e8e522c540170055ffcfae7fd2650` |
-| Concise study | `aec3227e3e8893c4e40570a2594a6aae94427012d9dec9f8f5fb7880c663e04a` |
-| Homily | `e491cca1be6c9018fca79afe66d4a732b107e60d452195e58f5b3623df071c91` |
+| Render inputs | `a575a7f97f9fddc978f5d4ebeba212b84f4a608f4494d228fd0c7a47d9c9cf34` |
+| Expansive study | `a85748715868070adf215c89c1890f12f82fc8adfa305836f507434e9254dc36` |
+| Concise study | `d28b5a340c8e3e0916c2cc164cb25a7fd9dbc1d383aac76305ed087ffadd7b2b` |
+| Homily | `fafcef47665819541560d8a462504fade23d25a672e1268d4233322194ef048d` |
 
 These identities apply at source validation. The evidence check covered audit and binding metadata and the controlling source records. This stage covered source editions only.
