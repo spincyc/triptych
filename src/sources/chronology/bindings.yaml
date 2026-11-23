@@ -188,6 +188,18 @@ bindings:
       - bible:clementine-vulgate:Ps.140.1
   - relation: traditional-attribution
     event: israel.monarchy.david-traditional-era
+    scope: [{book: Ps, chapter: 24}]
+    note: >-
+      The received title in Douay-Rheims Ps.24.1 names David; the
+      Clementine title reads Psalmus David. Neither title identifies an
+      occasion for this prayer. The regnal era identifies the attributed
+      figure and leaves the occasion and date of composition open.
+    sources:
+      - bible:douay-rheims:Ps.24.1
+      - bible:clementine-vulgate:Ps.24.1
+
+  - relation: traditional-attribution
+    event: israel.monarchy.david-traditional-era
     scope: [{book: Ps, chapter: 32}]
     note: >-
       Inspected 2026-10-01: the tracked Douay-Rheims opens

@@ -25,6 +25,21 @@ subject_labels:
   critical.gospel-of-matthew: Greek Matthew
   critical.gospel-of-mark: Mark
 contexts:
+  - scope: {book: Luke, chapter: 21, first: 25, last: 33}
+    label: Jesus teaches in Jerusalem about the coming of the Son of Man
+    sources:
+      - bible:douay-rheims:Luke.21.5
+      - bible:douay-rheims:Luke.21.25
+      - bible:douay-rheims:Luke.21.27
+      - bible:douay-rheims:Luke.21.29
+      - bible:douay-rheims:Luke.21.33
+      - bible:douay-rheims:Luke.21.37
+    basis: >-
+      Luke introduces the discourse with a remark about the temple and closes
+      the chapter by distinguishing Jesus' teaching there during the day from
+      his nights on Olivet. The lesson gives his prediction and the comparison
+      with the trees. The passage locates his teaching in Jerusalem without
+      naming the precise place where he spoke these verses or dating the coming.
   - scope: {book: Matt, chapter: 24, first: 3, last: 35}
     label: Jesus foretells Jerusalem's ruin and His coming; Mount Olivet by narrative continuity
     sources:
