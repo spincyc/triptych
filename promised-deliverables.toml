@@ -22,11 +22,13 @@ state = "in_progress"
   id = "accepted-propers"
   criterion = "The dated 1962 proper-study run reaches ACCEPTED for the study, concise study and homily, with independent reviews, checked sources, all three reader outputs and successful native print compilation."
   status = "open"
+  evidence = ["workflows/reviews/gpt-1962-01-advent-2026-11-29/CYCLES.md", "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/production-review.md"]
 
   [[deliverables.requirements]]
   id = "publication"
   criterion = "The validated work reaches main and the three reader links resolve on the deployed site."
   status = "open"
+  evidence = ["library/traditional-latin-mass.md", "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/web-edition.toml"]
 
 [[deliverables]]
 id = "gpt-1962-68-production-2026-11-16"

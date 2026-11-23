@@ -213,3 +213,23 @@ about italics and identified a shared chronology date label quoted as
 the NABRE introduction's own words. The label paraphrases its dating
 qualification. The date bound and the uncertainty about individual psalms
 agree with the introduction.
+
+### Dependency check at installation
+
+The initial research record counted eighteen files from the pinned PyYAML
+6.0.3 package among the files used to compute the chronology. The package
+had been installed in the checkout's scratch directory. Installing the
+same wheel outside the checkout reproduced all eighteen file digests.
+Comparing the resulting research records showed 1,752 identical file
+hashes, twelve identical cited chronology sources and the same sixteen
+repository-owned chronology computation inputs. Only the temporary package
+paths dropped out. In the web record, the article bytes and the content
+and evidence hashes also agreed. The render and output identities changed
+with the input list. The native workflow records this comparison at the
+installation stage.
+
+The first native typesetting on the host also opened an optional TeX Live
+font-name map outside the declared print runtime. With that host-only map
+directory unavailable in an isolated filesystem, all three original
+publication bundles compiled in two passes and passed the file-access
+check. The study, concise study and homily occupied 22, 10 and 3 pages.
