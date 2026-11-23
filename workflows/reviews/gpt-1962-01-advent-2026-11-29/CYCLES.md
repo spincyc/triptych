@@ -183,3 +183,13 @@ references to an unnumbered appendix read “Appendix 7” in the reader and
 gave an empty number in the typeset study. The review sent the defect back
 to the study. A separate advisory identified the loss of italic type after
 paragraph breaks in the Latin Introit and Preface dialogue.
+
+The repair gives each reference the linked section title, *Scriptural Date
+and Location*. In the 22-page proof the links on pages 2, 10 and 21 reach
+the heading on page 19. The next cold reader accepted the full study after
+checking its 19 sealed files and typesetting a new proof. The reader's two
+advisories concern the phrasing of Jesus' turn from description to
+exhortation and whether to name the detailed research files in the
+appendix. The Missal introduces the entire discourse as addressed to the
+disciples. The audit and the collation are under `research/scope.md` and
+`propers/verified.md` in the source edition.

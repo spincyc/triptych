@@ -49,12 +49,12 @@ provider = "gpt"
 run_id = "2eec8ccb8f69387e"
 workflow = "proper-study"
 workflow_version = 19
-stage = "web-review"
-iteration = 0
-disposition = "CHANGES_REQUIRED"
+stage = "study-review"
+iteration = 2
+disposition = "PASS"
 standing = 1
 accepted_count = 0
-advisory_count = 4
+advisory_count = 5
 observation_count = 0
 
 [[stages]]
@@ -83,14 +83,14 @@ observation_count = 0
 
 [[stages]]
 stage = "study-review"
-iteration = 1
+iteration = 2
 disposition = "PASS"
 run_id = "2eec8ccb8f69387e"
 workflow = "proper-study"
 workflow_version = 19
 standing = 0
 accepted_count = 0
-advisory_count = 1
+advisory_count = 2
 observation_count = 0
 
 [[stages]]
@@ -136,11 +136,19 @@ required_result = "Use the actual article titles and sections in the local sourc
 
 [[advisories]]
 stage = "study-review"
-id = "STU-006"
+id = "STU-LUKE-ADDRESS"
 severity = "advisory"
-location = "sections/40-the-promised-son.tex, line 17, ‘a woman of our own people’"
-problem = "‘Our own people’ can mean the congregation's ethnic community. Bellarmine identifies Mary with ‘our land’ and explains her virginal motherhood. His paragraph makes no claim that the congregation shares an ancestry with her. The surrounding discussion of Israel and other peoples makes the pronoun briefly ambiguous."
-required_result = "Name the shared humanity directly, for example ‘Christ takes our human flesh from Mary.’ Keep Bellarmine's account of the Spirit overshadowing her and her bearing the Son."
+location = "sections/30-the-judge.tex:5, immediately after the reference to raising their heads"
+problem = "The phrase 'change of addressee' and the closing question can give the impression that Jesus first addresses the frightened nations. The Missal introduces the entire speech as addressed to his disciples. The paragraph itself correctly distinguishes speaking of the nations from speaking to the disciples."
+required_result = "State the change from description to exhortation directly. For example, 'Jesus has been telling his disciples what others will fear. Now he tells the disciples what they themselves may hope for.'"
+
+[[advisories]]
+stage = "study-review"
+id = "STU-SCOPE-RECORDS"
+severity = "advisory"
+location = "sections/90-apparatus.tex:5–9, Appendix: Scope and Qualifications"
+problem = "Readers get precise edition references and a description of the commentary's scope, but the appendix omits the pointers to the detailed text collation and research record called for in the 1962 profile's Terminal Apparatus section."
+required_result = "Add a short pointer in the appendix identifying propers/verified.md for the element-by-element collation and research/scope.md for the reception search and its limits."
 
 [[advisories]]
 stage = "synthesis-review"
