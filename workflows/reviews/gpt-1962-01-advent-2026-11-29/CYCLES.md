@@ -233,3 +233,20 @@ font-name map outside the declared print runtime. With that host-only map
 directory unavailable in an isolated filesystem, all three original
 publication bundles compiled in two passes and passed the file-access
 check. The study, concise study and homily occupied 22, 10 and 3 pages.
+
+The installation check compared two independent builds of thirteen browser
+products and verified their 30,019 files. The catalog row links the study,
+concise study and homily. Release validation added 58 newly used tracked
+paths and updated six hashes. It checked the other 25,552 bindings against
+the old record. In the publishing environment the first terminal gate
+requested fresh research and web reviews, as their computation records had
+included the temporary dependency.
+
+In the publishing environment the research author checked the eighteen
+package hashes and the full research record. Source registration verified
+45 bindings, 54 dispositions, fifteen admitted passages and 22 receipts.
+The new cold reader independently rendered printed page 105 of the revised
+1945 Lasance missal. Its English Gospel reads “the powers of heaven,” and
+its Offertory has a semicolon after “my trust” and a colon after “ashamed.”
+The reading and its punctuation were returned to the research owner for
+comparison against the right-hand column.

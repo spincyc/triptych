@@ -49,12 +49,12 @@ provider = "gpt"
 run_id = "2eec8ccb8f69387e"
 workflow = "proper-study"
 workflow_version = 19
-stage = "web-review"
-iteration = 1
-disposition = "PASS"
-standing = 0
+stage = "research-review"
+iteration = 2
+disposition = "CHANGES_REQUIRED"
+standing = 1
 accepted_count = 0
-advisory_count = 7
+advisory_count = 6
 observation_count = 0
 
 [[stages]]
@@ -71,14 +71,14 @@ observation_count = 0
 
 [[stages]]
 stage = "research-review"
-iteration = 1
-disposition = "PASS"
+iteration = 2
+disposition = "CHANGES_REQUIRED"
 run_id = "2eec8ccb8f69387e"
 workflow = "proper-study"
 workflow_version = 19
-standing = 0
+standing = 1
 accepted_count = 0
-advisory_count = 1
+advisory_count = 0
 observation_count = 0
 
 [[stages]]
@@ -117,6 +117,15 @@ accepted_count = 0
 advisory_count = 2
 observation_count = 0
 
+[[findings]]
+stage = "research-review"
+id = "RES-LASANCE-P105"
+severity = "blocking"
+location = "propers/verified.md:67 and 77, reproduced in sections/10-appointed-text.tex:107 and 123; Lasance and Walsh, The New Roman Missal (Benziger, revised 1945), printed p. 105, PDF leaf 106, right column, Gospel and Offertory."
+problem = "The text identified as Lasance’s historical English gives Luke 21:26 as “the whole world: For the powers of the heavens shall be moved”. The page image reads “the whole world. For the powers of heaven shall be moved”. The transcription adds an article, changes the number of the noun, and changes the sentence break. On the same page the Offertory prints a semicolon after “my trust” and a colon after “ashamed”; the historical comparison changes both marks. The study reproduces these differences under Lasance’s name."
+required_result = "Collate the English Gospel and Offertory against the right column of printed p. 105 and correct the Lasance comparison in the research record. Restore the singular “heaven” without a preceding article, the stop after “world”, and the Offertory punctuation. Carry those corrections into the study’s corresponding Lasance quotations when its owner resumes."
+repair_target = "research"
+
 [[advisories]]
 stage = "homily-review"
 id = "HOM-GRADUAL-ORAL-CUE"
@@ -124,14 +133,6 @@ severity = "advisory"
 location = "sections/homily/10-body.tex:15, the two sentences introducing the omitted petition"
 problem = "On first hearing, “In the psalm we sang after the Epistle there is a line” sounds as though the assembly actually sang the plea for the unjust to be put to shame. The next sentence clears this up, after the listener has had to revise that impression."
 required_result = "Identify the change on first mention, for example, “After the Epistle we sang only part of the psalm. We passed over the line asking that those who act unjustly be put to shame.” The next sentence can then give the words the assembly did sing."
-
-[[advisories]]
-stage = "research-review"
-id = "RES-005"
-severity = "advisory"
-location = "research/scope.md:36, research/source-bindings.toml:254 and 262, and research/source-dispositions.toml:482 and 493"
-problem = "The local research calls two Catholic Encyclopedia articles ‘Synoptics’ and ‘Epistles’. The bound witnesses give different titles. Alfred Durand’s The New Testament, under Origin, explicitly dates Luke to about A.D. 70 at line 33 of the extracted article. Paulin Ladeuze’s Epistle to the Ephesians, under Date and place of composition, places Romans in A.D. 58 at line 69. The artifact identities and the dates in the generated table are correct."
-required_result = "Use the actual article titles and sections in the local source descriptions and any bibliography prepared from them. Cite Durand, The New Testament, ‘Origin’, for Luke, and Ladeuze, Epistle to the Ephesians, ‘Date and place of composition’, for Romans."
 
 [[advisories]]
 stage = "study-review"
