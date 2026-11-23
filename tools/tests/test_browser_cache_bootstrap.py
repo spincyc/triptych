@@ -296,7 +296,11 @@ class BrowserCacheBootstrapTests(unittest.TestCase):
         self.assertEqual(positions, sorted(positions))
         bootstrap_step = steps[names.index("Bootstrap optional browser product candidates")]
         self.assertEqual(bootstrap_step["run"], "python scripts/_browser_cache_bootstrap.py --fetch")
-        self.assertEqual(bootstrap_step["if"], "steps.browser-cache.outputs.cache-hit != 'true'")
+        cache_miss = "steps.browser-cache.outputs.cache-hit != 'true'"
+        self.assertEqual(workflow["env"]["BROWSER_CACHE_BASELINE"],
+                         "${{ github.ref != 'refs/heads/main' && inputs.browser_cache_baseline || '' }}")
+        self.assertEqual(bootstrap_step["if"], f"{cache_miss} || env.BROWSER_CACHE_BASELINE != ''")
+        self.assertEqual(steps[names.index("Save verified browser products")]["if"], cache_miss)
         self.assertNotIn("if", steps[names.index("Validate sources, build and verify public artifact")])
 
 
