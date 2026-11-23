@@ -49,7 +49,7 @@ provider = "gpt"
 run_id = "2eec8ccb8f69387e"
 workflow = "proper-study"
 workflow_version = 19
-stage = "study-review"
+stage = "synthesis-review"
 iteration = 2
 disposition = "PASS"
 standing = 1
@@ -95,7 +95,7 @@ observation_count = 0
 
 [[stages]]
 stage = "synthesis-review"
-iteration = 1
+iteration = 2
 disposition = "PASS"
 run_id = "2eec8ccb8f69387e"
 workflow = "proper-study"
@@ -152,11 +152,11 @@ required_result = "Add a short pointer in the appendix identifying propers/verif
 
 [[advisories]]
 stage = "synthesis-review"
-id = "SYN-003"
+id = "SYN-NAV-001"
 severity = "advisory"
-location = "sections/concise/10-commentary.tex:12"
-problem = "The paragraph moves from what the congregation sings to 'Just before the lesson begins, Paul speaks of the love we owe our neighbor.' A reader following the order of Mass could understand this as something else heard in church. Romans 13:8–10 precedes the appointed passage in the letter."
-required_result = "Locate the debt of love in the letter explicitly, for example, 'In the verses of his letter just before this Sunday's lesson, Paul speaks of the love we owe our neighbor.'"
+location = "sections/concise/10-commentary.tex:56–64, subsection heading on proof page 8"
+problem = "The heading ‘After the people have received’ takes a reader looking for Communion first to the Offertory, the Secret and the Preface. Those two paragraphs develop the approach to Communion and belong here, but the heading describes only the second half of the subsection."
+required_result = "A heading such as ‘From the Offertory to the Postcommunion’ would identify the full span of the discussion."
 
 [[advisories]]
 stage = "web-review"
