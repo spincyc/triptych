@@ -4,24 +4,24 @@ schema_version = 1
 id = "pages-performance-main-2026-11-23"
 owner = "PROJECT-WORK.md"
 promise = "Reconcile the complete Pages performance branch through its five local follow-up commits with production, preserve the published editions and verify the production deployment."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "performance-history"
   criterion = "The hosted performance branch and its five follow-up commits are in main's integration history together with the current publications."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md", ".github/workflows/pages.yml", "scripts/_act_history_replay.py"]
 
   [[deliverables.requirements]]
   id = "current-publications"
   criterion = "Fresh production proofs, release binding and discovery checks, and the site verification pass with the current catalogue and reader contents."
-  status = "open"
+  status = "pass"
   evidence = ["release/browser-products.json", "release/public-alpha.json", "src/index/corpus/index.json"]
 
   [[deliverables.requirements]]
   id = "production-deployment"
   criterion = "Main builds, independently verifies all admitted print editions, and successfully deploys the reconciled site. The live Advent readers match the reviewed texts."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md", ".github/workflows/pages.yml", "library/traditional-latin-mass.md"]
 
 [[deliverables]]

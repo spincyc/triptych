@@ -25,6 +25,22 @@ The reconciliation at `0f337b8dce` includes the five later commits through
 act-history products after a source fingerprint changes, and an option to
 replay an earlier browser cache in a feature-branch timing run.
 
+The [first production run with the reconciled workflow](https://github.com/spincyc/triptych/actions/runs/45205570735)
+built, verified and deployed this same Advent catalog in 10 minutes 14 seconds.
+The workflow restored the previous production browser cache. The earlier
+deployment took 72 minutes 31 seconds. Eight print jobs and an
+independent verification job accounted for 667 editions and 15,724 pages.
+All 667 editions retained the same render inputs, page counts and compile passes.
+The 317 pdfTeX outputs matched byte for byte, including all three Advent
+editions. The 350 XeTeX PDF files had different byte hashes. For the
+one-page English edition of *Quod iam diu*, changing only the source commit
+timestamp reproduced both hosted PDF hashes. Its rendered page and extracted
+text matched exactly. The three live Advent readers matched the reviewed texts.
+
+The browser checks covered 13 families and 30,019 files. All 289 reader bodies
+and their index matched the previous release. Only 31 liturgical comparison
+files changed, in the recorded hashes and sizes of two build programs.
+
 ## GPT First Sunday of Advent, 29 November 2026
 
 <!-- promised-deliverable: gpt-1962-01-advent-2026-11-29 -->
