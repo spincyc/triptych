@@ -49,12 +49,12 @@ provider = "gpt"
 run_id = "2eec8ccb8f69387e"
 workflow = "proper-study"
 workflow_version = 19
-stage = "homily-review"
-iteration = 2
+stage = "web-review"
+iteration = 1
 disposition = "PASS"
-standing = 1
+standing = 0
 accepted_count = 0
-advisory_count = 6
+advisory_count = 7
 observation_count = 0
 
 [[stages]]
@@ -107,24 +107,15 @@ observation_count = 0
 
 [[stages]]
 stage = "web-review"
-iteration = 0
-disposition = "CHANGES_REQUIRED"
+iteration = 1
+disposition = "PASS"
 run_id = "2eec8ccb8f69387e"
 workflow = "proper-study"
 workflow_version = 19
-standing = 1
+standing = 0
 accepted_count = 0
-advisory_count = 1
+advisory_count = 2
 observation_count = 0
-
-[[findings]]
-stage = "web-review"
-id = "WEB-001"
-severity = "blocking"
-location = "sections/00-opening.tex:25, sections/20-commentary.tex:29 (note 9) and sections/90-apparatus.tex:9. The canonical Markdown shows the three references at lines 39, 572 and 526, respectively."
-problem = "Each passage gives “Appendix 7” as the locator for Scriptural Date and Location. Following the link reaches that section, but neither its heading nor the contents assigns it an appendix number. Two references give only the spurious number. The same three numeric references in the canonical TeX point to an unnumbered heading, and the compiled PDF prints an empty locator each time."
-required_result = "Refer to the section by its printed title, Scriptural Date and Location, in each of the three places. Preserve a working section link in the reader and verify that the visible wording is complete in both the reader and the typeset study."
-repair_target = "study"
 
 [[advisories]]
 stage = "homily-review"
@@ -173,3 +164,11 @@ severity = "advisory"
 location = "Canonical Markdown lines 49–51 (Introit) and 207–213 (Preface dialogue), corresponding to the multi-paragraph latinproper blocks in sections/10-appointed-text.tex."
 problem = "The shared Latin quotation style covers the whole block in the source. Chromium displays only the first paragraph in italics. The repeated Introit antiphon and the final three Latin exchanges of the Preface dialogue switch to the upright treatment used for the English. The words and quotation boundaries survive."
 required_result = "Carry the Latin quotation’s italic style through every paragraph in each multi-paragraph block. Verify the repeated antiphon and the final three exchanges in the rendered reader."
+
+[[advisories]]
+stage = "web-review"
+id = "WEB-003"
+severity = "advisory"
+location = "Canonical Markdown lines 470 and 478, Evidence for each date, Introit composition. The shared date label belongs to src/sources/chronology/composition.yaml, critical.psalms.latest-composition-boundary, lines 3114–3116."
+problem = "The chronology evidence introduces “the source’s own words” and puts the corpus label in quotation marks. The NABRE Psalms introduction expresses both claims but uses different words, including “there is no sure way of dating any Psalm.” The chronological boundary and its qualification are accurate. The canonical TeX and web conversion agree, and the shared evidence label predates this round."
+required_result = "In the shared chronology record and its projection, use verified source wording where a passage is quoted, or distinguish the corpus paraphrase from a direct quotation. Preserve both the approximate upper bound and the uncertainty about individual psalms. Recheck the regenerated evidence note against the NABRE introduction."
