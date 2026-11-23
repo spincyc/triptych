@@ -49,12 +49,24 @@ provider = "gpt"
 run_id = "2eec8ccb8f69387e"
 workflow = "proper-study"
 workflow_version = 19
-stage = "synthesis-review"
-iteration = 1
-disposition = "PASS"
-standing = 0
+stage = "homily-review"
+iteration = 0
+disposition = "CHANGES_REQUIRED"
+standing = 2
 accepted_count = 0
-advisory_count = 3
+advisory_count = 4
+observation_count = 0
+
+[[stages]]
+stage = "homily-review"
+iteration = 0
+disposition = "CHANGES_REQUIRED"
+run_id = "2eec8ccb8f69387e"
+workflow = "proper-study"
+workflow_version = 19
+standing = 2
+accepted_count = 0
+advisory_count = 1
 observation_count = 0
 
 [[stages]]
@@ -92,6 +104,32 @@ standing = 0
 accepted_count = 0
 advisory_count = 1
 observation_count = 0
+
+[[findings]]
+stage = "homily-review"
+id = "HOM-001"
+severity = "blocking"
+location = "sections/homily/10-body.tex lines 7 and 11, the traveler and the runner"
+problem = "Both named illustrations change the conduct the Father asks his hearers to consider. Gregory I.1.3 describes someone exhausted by the labor of the road who still wants the journey to continue. Calling him “weary of being away from home” already gives him the homesickness the listener is supposed to distinguish from exhaustion. Chrysostom’s runners make a greater effort near the prize. The Romans whose first zeal has cooled need their example. The homily attributes to Chrysostom the picture of a runner slowing down and a spectator calling encouragement to him. That loses the reason Chrysostom invokes a race. The study preserves both distinctions in sections/30-the-judge.tex lines 9 and 19."
+required_result = "Let a listener hear both comparisons in their original direction. For Gregory, for example, “Gregory asks his people to picture a traveler worn out by the road who still wants the journey to go on. He asks them whether they want to see the Lord at its end.” For Chrysostom, “Chrysostom says runners make a greater effort when they can see the prize. Paul reminds Christians whose first eagerness has cooled how near their salvation is.” If the imagined spectator stays, give that illustration in the preacher’s own voice."
+repair_target = "homily"
+
+[[findings]]
+stage = "homily-review"
+id = "HOM-002"
+severity = "blocking"
+location = "sections/homily/90-apparatus.tex line 3, “Jesus addresses his disciples while the signs of trouble are beginning”"
+problem = "The note puts the onset of the signs in the scene of Jesus’ address. In Luke 21:25–28 Jesus foretells the signs and tells his disciples ahead of time how to respond when they begin. The spoken body itself relies on the interval in lines 1 and 3, where the disciples can learn now what they will need to remember then."
+required_result = "Correct the account of the timing in the source note. For example, “Jesus tells the disciples in advance whose coming they can expect when the signs begin.”"
+repair_target = "homily"
+
+[[advisories]]
+stage = "homily-review"
+id = "HOM-003"
+severity = "advisory"
+location = "sections/homily/10-body.tex line 19, after the description of fruit appearing on the branches"
+problem = "The preacher explains how fruit announces summer and then moves directly to the disciples’ never having seen the day Jesus promises. On a single hearing the listener has to supply the second half of Jesus’ comparison, precisely where the homily offers reassurance about that day."
+required_result = "Give the listener Jesus’ own second half in one short sentence. In Luke 21:31 he says that when the disciples see these things happening, they will know God’s kingdom is near. That identifies the promise whose truth the next sentence asks the assembly to trust."
 
 [[advisories]]
 stage = "research-review"
