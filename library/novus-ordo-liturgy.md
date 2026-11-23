@@ -2,9 +2,10 @@
 
 [Return to Liturgy](liturgy.md)
 
-Edition-specific studies of the postconciliar Roman Rite, distinct from the 1962 books. Each entry identifies its books, language, territory, cycle, and date where applicable. These books are widely called the *Novus Ordo*; this library names them by their own titles and dates.
+The Mass commonly called the *Novus Ordo*, studied in the 2008 Latin Roman Missal, its 2011 U.S. English edition, and the U.S. Lectionary for Mass.
 
-On this page: [Core and reference works](#core-and-reference-works) ·
+[Core and reference works](#core-and-reference-works) ·
+[Seasonal handbooks](#seasonal-handbooks) ·
 [Sunday propers calendar](#sunday-propers-calendar)
 
 ## Core and Reference Works
@@ -14,11 +15,20 @@ On this page: [Core and reference works](#core-and-reference-works) ·
 | **The Order of Mass: A Mystagogy of the Postconciliar Roman Rite** | [PDF](../pdf/gpt/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass.pdf) · [Read](../web/gpt/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass.html) | [PDF](../pdf/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass.pdf) · [Read](../web/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass.html) | Complete Order from the 2008 Latin third typical edition and the 2011 U.S. English edition. |
 | **The Postconciliar Roman Liturgical Calendar** | [PDF](../pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar.pdf) · [Read](../web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar.html) | [PDF](../pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar.pdf) · [Read](../web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar.html) | Recurring universal and U.S. calendar for the third typical edition; current through 17 July 2026. |
 
-## Sunday Propers Calendar
+## Seasonal Handbooks
 
-The stable Proper-of-Time series, with independent ChatGPT and Claude studies
-for each Lectionary cycle. Provider columns link available editions or say
-`Planned`; cycles with the same availability share a row.
+| Season and opening | ChatGPT | Claude | Focus |
+| --- | --- | --- | --- |
+| **Advent**<br>Evening Prayer I of the First Sunday of Advent | [Advent: Come, Lord Jesus](../web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent.html) | Planned | Christ’s return and the approach of the Nativity. |
+| **Christmas Time**<br>Evening Prayer I of the Nativity | Planned | Planned | The Nativity, Epiphany and Baptism of the Lord. |
+| **Ordinary Time**<br>After the Baptism of the Lord and again on the Monday after Pentecost | Planned | Planned | The Sunday Gospels before Lent and after Easter Time. |
+| **Lent**<br>Ash Wednesday | Planned | Planned | Conversion, baptism and preparation for Easter. |
+| **Sacred Paschal Triduum**<br>Evening Mass of the Lord’s Supper | Planned | Planned | Holy Thursday through Evening Prayer on Easter Sunday. |
+| **Easter Time**<br>Easter Sunday of the Resurrection | Planned | Planned | The fifty days from the Resurrection through Pentecost. |
+
+[The liturgical year in the United States](https://www.usccb.org/prayer-worship/liturgical-year)
+
+## Sunday Propers Calendar
 
 <!-- triptych-publication-id: liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc -->
 <!-- triptych-publication-id: claude:liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a -->

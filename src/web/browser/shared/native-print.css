@@ -49,7 +49,7 @@
   background: var(--surface, #f8f5ef);
   box-shadow: 0 .4rem 1.2rem rgba(63, 52, 42, .16);
   color: var(--ink, #302d29);
-  font: .8125rem/1.4 var(--font-ui, system-ui, sans-serif);
+  font: .8125rem/1.4 var(--font-ui, sans-serif);
   overflow: visible;
 }
 .native-print-popover__head { display: flex; align-items: center; gap: .5rem; }
@@ -75,7 +75,7 @@
   border-radius: .2rem;
   background: transparent;
   color: var(--muted, #6a635a);
-  font: 1.15rem/1 system-ui, sans-serif;
+  font: 1.15rem/1 var(--font-ui, sans-serif);
   cursor: pointer;
 }
 .native-print-popover__close:hover { color: var(--ink, #302d29); background: var(--line, #d2c8ba); }

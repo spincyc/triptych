@@ -95,23 +95,11 @@
   --section-row: #efece6;
   --section-line: #cdc6b8;
 
-  /* Running scripture is set in its own face, not the page's. A grotesque was
-     asked for and a grotesque is what this is: Helvetica and Arial first, with
-     Liberation and Nimbus covering Linux, so the same shapes land wherever the
-     page opens. `--sans` above is deliberately NOT reused — it leads with
-     `system-ui`, which is whatever the operating system dresses its menus in,
-     and scripture should not change face with the platform. */
+  /* Biblical text keeps the same grotesque beside commentary on every instrument. */
   --scripture: "Helvetica Neue", Helvetica, Arial, "Liberation Sans",
     "Nimbus Sans", "Segoe UI", Roboto, sans-serif;
-
-  /* Commentary keeps the serif, which is now a distinction and not an
-     accident: on the catena page the scripture and the fathers commenting on
-     it are set in different faces, so a reader can tell them apart before
-     reading a word. */
-  --serif-text: Charter, "Bitstream Charter", "Source Serif 4",
-    "Source Serif Pro", Literata, Cambria, Georgia, serif;
-  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
-    Arial, sans-serif;
+  --font-response: "Noto Sans Symbols 2", "Segoe UI Symbol", "Apple Symbols",
+    "DejaVu Sans", var(--serif);
   --measure: 65ch;
 }
 
@@ -250,6 +238,7 @@ body:not(:has(> .site-header)) .skip-link:focus { left: 0; }
 
 .page-mark {
   margin-right: 0.4rem;
+  font-family: var(--font-mark, var(--serif));
   color: var(--section-accent);
   font-weight: 400;
 }
@@ -937,25 +926,18 @@ body:not(:has(> .site-header)) .skip-link:focus { left: 0; }
 }
 
 .history-page .held-text,
-.history-page .standing-text {
+.history-page .standing-text,
+.sources-page .passage-text {
   font-family: "Triptych Punctus Elevatus", var(--serif);
 }
 
 .history-page .native-text-normalization > p,
-.sources-page .passage-text,
 .sources-page .passage-context {
   font-family: "Triptych Punctus Elevatus", var(--sans);
 }
 
-/* Standalone pre keeps the browser's monospace role; the published wrapper
-   keeps the site's explicit stack. Only the source mark uses the added face. */
 .history-page .comparison-diff pre,
 .history-page .catalogue-original pre {
-  font-family: "Triptych Punctus Elevatus", monospace;
-}
-
-.page-browser.history-page .comparison-diff pre,
-.page-browser.history-page .catalogue-original pre {
   font-family: "Triptych Punctus Elevatus", var(--mono);
 }
 
@@ -1012,7 +994,7 @@ body:not(:has(> .site-header)) .skip-link:focus { left: 0; }
     display: block;
     margin: 0 0 1rem;
     overflow-wrap: anywhere;
-    font: 9pt sans-serif;
+    font: 9pt var(--sans);
   }
   .browser-print-enabled .reading,
   .browser-print-enabled .browser-print-content { max-width: none; display: block; }

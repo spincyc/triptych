@@ -260,6 +260,9 @@ existing surface and ink colours (and, since 2026-11-17, `--control-compact`
 for a top bar's controls; see [Page actions](#page-actions)).
 `publication-reader.css` and `native-print.css` read them instead of restating values, so a change there
 applies to catalogues, readers, print pages and the print controls together.
+Day and Propers use the same reading, interface and identifier faces.
+`browser-core.css` owns the specialized roles for biblical passages, liturgical
+response signs, and the single-character historical-source fallback.
 A page's own branding is only its `section-<colour>` class: the `--section-*`
 accent, ink, wash, pale, row and line colours and the two section marks. No
 page forks a stylesheet for its identity. Since 2026-11-16 an instrument's

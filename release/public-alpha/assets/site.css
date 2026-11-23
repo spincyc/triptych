@@ -29,6 +29,7 @@
   --font-ui: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
     Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Consolas, monospace;
+  --font-mark: Georgia, "Times New Roman", serif;
   --hairline: rgba(48, 45, 41, 0.13);
   --hairline-strong: rgba(48, 45, 41, 0.32);
   --focus-ring: #1f5d8b;
@@ -47,6 +48,9 @@
 * { box-sizing: border-box; }
 
 html { scroll-behavior: smooth; }
+
+:where(h1, h2, h3, h4, h5, h6) { font-family: var(--font-text); }
+:where(button, input, select, textarea) { font-family: var(--font-ui); }
 
 body {
   margin: 0;
@@ -264,6 +268,7 @@ nav a { color: var(--ink); text-decoration: none; }
   margin: -0.08em 0 0.15em 0.5em;
   color: var(--section-accent);
   content: var(--section-symbol-primary);
+  font-family: var(--font-mark);
   font-size: 0.72em;
   font-style: normal;
   font-weight: 400;
@@ -656,10 +661,9 @@ html:has(.page-catalog, .page-home) { scroll-behavior: auto; }
   color: var(--ink);
   font-family: var(--font-text);
   font-size: 1.02rem;
-  font-weight: 600;
   line-height: 1.35;
 }
-.catalogue-table tbody td > strong { font-weight: inherit; }
+.catalogue-table tbody td > strong { font-weight: 600; }
 /* Descriptive last columns (Focus, Role, Best for …) are secondary text. */
 .catalogue-table-notes tbody td:last-child { color: var(--muted); font-size: 0.9rem; }
 /* Stable series identifiers. */
@@ -719,7 +723,7 @@ html:has(.page-catalog, .page-home) { scroll-behavior: auto; }
   line-height: 1.5rem;
   text-align: center;
   vertical-align: middle;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-mark);
   font-weight: 400;
   opacity: 0.8;
 }
@@ -953,6 +957,7 @@ a.footnote-backref { text-decoration: none; }
     top: 0.34em;
     color: var(--section-accent);
     content: var(--section-symbol-secondary);
+    font-family: var(--font-mark);
     font-size: 0.72em;
     font-style: normal;
     font-weight: 400;

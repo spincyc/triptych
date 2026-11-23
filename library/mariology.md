@@ -2,8 +2,6 @@
 
 [Return to the library](../README.md)
 
-Dogmas, prayer, apparitions, and the historical reception of Marian devotion.
-
 ## Doctrine
 
 | Publication | ChatGPT | Claude | Focus |

@@ -2,9 +2,6 @@
 
 [Return to the library](../README.md)
 
-Read lives and source-first accounts of Catholic texts, communities,
-institutions, and practices.
-
 | Collection | Contents |
 | --- | --- |
 | **[Biographies](biographies.md)** | Historical and hagiographic lives of apostles, Fathers, Doctors, and early Christian writers. |
