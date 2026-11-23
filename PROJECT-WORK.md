@@ -18,6 +18,13 @@ guidance is in the three-document profile. The survey, trial and
 publication checks are recorded in the
 [production record](workflows/reviews/gpt-1962-01-advent-2026-11-29/CYCLES.md).
 
+The [Pages build, print compilation and deployment](https://github.com/spincyc/triptych/actions/runs/45168945411) passed
+for [`87adc055c7`](https://github.com/spincyc/triptych/commit/87adc055c767355ab452a8b6b2a6e3b19b70b659).
+GitHub compiled 667 print editions. The three Advent PDFs matched the
+reviewed local proofs byte for byte. The [published 1962 catalog](https://mystago.gy/library/traditional-latin-mass.html) links all three editions.
+Each reader returned HTTP 200, and its text matched the verified local
+artifact. Publication is complete.
+
 ## Seasonal handbooks and GPT Advent, 2026-11-21
 
 <!-- promised-deliverable: seasonal-handbooks-gpt-advent-2026-11-21 -->

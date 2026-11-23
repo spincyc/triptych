@@ -4,7 +4,7 @@ schema_version = 1
 id = "gpt-1962-01-advent-2026-11-29"
 owner = "PROJECT-WORK.md"
 promise = "Publish the GPT 1962 First Sunday of Advent study, concise study and homily for 29 November 2026. Survey recent prose, try the resulting editorial guidance on the three editions, review them cold and adopt the guidance that improves them."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "recent-prose"
@@ -27,8 +27,8 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "publication"
   criterion = "The validated work reaches main and the three reader links resolve on the deployed site."
-  status = "open"
-  evidence = ["library/traditional-latin-mass.md", "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/web-edition.toml"]
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "library/traditional-latin-mass.md", "src/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/web-edition.toml"]
 
 [[deliverables]]
 id = "gpt-1962-68-production-2026-11-16"
