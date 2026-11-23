@@ -25,6 +25,20 @@ subject_labels:
   critical.gospel-of-matthew: Greek Matthew
   critical.gospel-of-mark: Mark
 contexts:
+  - scope: {book: Mark, chapter: 13, first: 33, last: 37}
+    label: On Mount Olivet Jesus tells the disciples to keep watch
+    sources:
+      - bible:douay-rheims:Mark.13.3
+      - bible:douay-rheims:Mark.13.4
+      - bible:douay-rheims:Mark.13.33
+      - bible:douay-rheims:Mark.13.34
+      - bible:douay-rheims:Mark.13.37
+    basis: >-
+      Mark places Peter, James, John and Andrew on Mount Olivet opposite
+      the temple when they question Jesus. His uninterrupted answer ends
+      with the householder's absence and the command to all to watch.
+      This locates Jesus' teaching by narrative continuity. It supplies
+      no date for the homecoming in his comparison.
   - scope: {book: Luke, chapter: 21, first: 25, last: 33}
     label: Jesus teaches in Jerusalem about the coming of the Son of Man
     sources:

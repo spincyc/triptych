@@ -3262,6 +3262,32 @@ units:
           to: {year: 1, era: bc}
           label: "may have been edited into final form during the last two centuries B.C."
 
+  - id: critical.third-isaiah-oracles
+    title: Oracles in Isaiah 56–66
+    scope: {book: Is, chapter: 56, through: 66}
+    dates:
+      - profile: catholic-critical-v1
+        disposition: preferred
+        basis_class: catholic-critical
+        basis: >-
+          The USCCB NABRE introduction attributes the oracles in chapters
+          56–66 to writers who continued Isaiah's work in the postexilic
+          period. This dates the collection's oracles at the precision of
+          that account, independently of the eighth-century prophet's ministry.
+        sources:
+          - passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-21.isaiah-introduction
+        note: >-
+          The introduction gives no narrower year for the lament in chapters
+          63–64 and does not date its first recitation or the final editing
+          of the entire book.
+        date:
+          precision: boundary
+          boundary:
+            direction: after
+            anchor: israel.exile.seventy-years
+            statement: after the Babylonian exile
+          label: postexilic period
+
   - id: critical.book-of-jonah
     title: The Book of Jonah
     scope: {book: Jon}

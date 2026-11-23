@@ -1,0 +1,592 @@
+schema = 1
+contract = "proper-study-source-dispositions-v1"
+document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"
+numbering = "vulgate"
+
+[[sources]]
+id = "usccb-pdf-d7997b57"
+binding_index = 1
+binding_sha256 = "0297e6e0714888d61e69e73fab255f3499ff9c3661ac787810ba06e8eabe8ee8"
+source_id = "artifact.united-states-conference-of-catholic-bishops.liturgical-calendar-dioceses-united-states.2027.usccb-pdf-d7997b57"
+source_fingerprint = "sha256:5968dc15a47039738f00ffdf0b412a94d165d0de22650fbe8bbf4327f4490fdc"
+locus = "2027 calendar, printed pp. 5, 11; physical pp. 7, 13"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "Calendar observation and no. 2 date, violet, B/I. Inspected dated page image and calendar introduction."
+
+[[sources]]
+id = "third-party-pdf-1cf11339"
+binding_index = 2
+binding_sha256 = "3e4466c53e5590ad184cb4036aa98a1f8621b0ea6a47b45ad87f8f80685f7ff5"
+source_id = "artifact.catholic-church.missale-romanum.2011-english-us-unidentified-digital-printing.third-party-pdf-1cf11339"
+source_fingerprint = "sha256:1fce17d66bc7279e1958104188ea6616e3d626645800f998f910611d4c70343e"
+locus = "First Sunday of Advent, p. 139; Advent Preface I, p. 534; solemn blessing, p. 674; GIRM 48, 51, 53–54, 61–63, 68, 74, 87, 365"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "U.S. altar-text witness from a third-party host; checked appointment bodies, concluding rubric and branches. The 2011 longer Collect conclusion was superseded in 2021."
+
+[[sources]]
+id = "secondary-digital-pdf-0b458944"
+binding_index = 3
+binding_sha256 = "61a53c573519824a1439920ff7d571d25d2044ef6c8ef6dc54a01ca4f5f7aead"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+source_fingerprint = "sha256:1cb25c1744f5977f70958c52c1b0cd3ee4aa100bdf216e36ae0da42b092fbce4"
+locus = "Dominica I Adventus, physical pp. 82–83; Praefatio I de Adventu, p. 311; Benedictiones sollemnes I.1; Orationes super populum, introductory rubric"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "Latin 2002 digital typesetting, not the 2008 exemplar. Compared the two different concluding invitations."
+
+[[sources]]
+id = "publisher-sample-pdf-ab44fd0a"
+binding_index = 4
+binding_sha256 = "b950520980835ec597355e555dfb3f692c16f2ec63b85702898d22a116ebbc41"
+source_id = "artifact.catholic-church.missale-romanum.2011-english-us-catholic-book-publishing.publisher-sample-pdf-ab44fd0a"
+source_fingerprint = "sha256:920b1fd8e63ab18c116b9db718af6a7bf6d7030a47328c5058f55873c4c9f697"
+locus = "publisher sample, index entry for Advent I; physical p. 13, printed p. 526"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "U.S. publisher witness of solemn blessings and Advent I.1; index only for the Sunday proper."
+
+[[sources]]
+id = "antiphonary-pdf"
+binding_index = 5
+binding_sha256 = "a32b9eadcffa79667ce56b9be0c87a1ee5f7ef3a8a9edda4e8f02fd63521b023"
+source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
+source_fingerprint = "sha256:3a0fc506c0d80243812d8c3fb34c5702b522cfe41a7cd70d4ab88948f44a4df5"
+locus = "First Sunday of Advent, physical p. 11 (printed 3)"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "ICEL Antiphonary independent check on both antiphons."
+
+[[sources]]
+id = "internet-archive-vatican-ocr-pdf-e071e825"
+binding_index = 6
+binding_sha256 = "ee9c65551ee4c3be8674bca0a4b595f39d540f40245140db49575a5ccba4c0fb"
+source_id = "artifact.holy-see.acta-apostolicae-sedis.volume-4-1912.internet-archive-vatican-ocr-pdf-e071e825"
+source_fingerprint = "sha256:46757a7e52dba390f8e3054e0da5c2896688d183110222ffb1102f4dcf687721"
+locus = "AAS 4 (1912), pp. 463–465, especially responsum VI"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "Complete 1912 volume, original scan hash matched; inspected only the Latin response pages."
+
+[[sources]]
+id = "internet-archive-scan-pdf-ed4bc14e"
+binding_index = 7
+binding_sha256 = "02b9fa769912eae0e895de5a139005abb7d4b6cb4b0b7ac577aee1498590e3f9"
+source_id = "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e"
+source_fingerprint = "sha256:2296f2ff27bc0f11a41b7dcd2fdc09291f317bb57991d7e0dad0c08f7e7d206e"
+locus = "Praenotanda 93, printed XL; no. 2 (B), printed 5 (physical 59), with acclamation cross-reference to no. 1"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "Image collation of no. 2; official Latin order gives subverse cues and seasonal method."
+
+[[sources]]
+id = "official-pdf-74c8d174"
+binding_index = 8
+binding_sha256 = "1b86ac068d8615db26786fd1e5e7a654fef7db2f603fc8dace09363061aed797"
+source_id = "artifact.holy-see.notitiae.volume-44-numbers-503-504-2008.official-pdf-74c8d174"
+source_fingerprint = "sha256:7aef8dc5b395801039529b65229dbc9b4cbe2dbf48ebf23452814b18af135031"
+locus = "printed pp. 367–387, especially 369, 371–372"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "Complete 2008 journal issue; reprint status and bounded variation list, checking Advent and the Order of Mass."
+
+[[sources]]
+id = "official-pdf-e06d7b65"
+binding_index = 9
+binding_sha256 = "19d697e5759559813d73c18eaa4b1e27d8f34dfde96b11e044605459a2ad6915"
+source_id = "artifact.united-states-conference-of-catholic-bishops.divine-worship-newsletter-2021-02.2021-february-official-pdf.official-pdf-e06d7b65"
+source_fingerprint = "sha256:3692c09222387d1a03874abc1e9e3bb201e127b40bfceff460156905615cfe27"
+locus = "February 2021, pp. 7–8 (digital pp. 3–4)"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "Official USCCB report and decree on the 2021 Collect conclusion."
+
+[[sources]]
+id = "jerome-isaiah-xvii"
+binding_index = 10
+binding_sha256 = "b310b598cf19406069cd53b8f4c9477477bc573581db5d9a39083c8393cb6e31"
+source_id = "artifact.jerome.commentarii-in-isaiam.dco-latin-web-2026-09-17.pars-4-pdf-97785e2b"
+source_fingerprint = "sha256:a943d8777bf61077d7e2b851a3576714ff4f570e06c3f47dd4539a89b4c123ef"
+locus = "Book XVII, comments at Is 63:16–19 and 64:1–8, PDF/printed pp. 148–159"
+relationship = "direct-exegesis"
+disposition = "deferred"
+reason = "The DCO setting does not identify a historical editorial basis for the PDF wording. Collate these divisions against a named public-domain Latin printing."
+missing_criteria = ["identified-redistributable-latin-text", "collation-against-named-printing"]
+scripture_extents = [{ token = "Is", first_chapter = 63, first_verse = 16, last_chapter = 63, last_verse = 19 }, { token = "Is", first_chapter = 64, first_verse = 1, last_chapter = 64, last_verse = 8 }]
+
+[[sources]]
+id = "aquinas-corinthians-1-lectio-1"
+binding_index = 11
+binding_sha256 = "b2b35c9ed0b4c55c5dd4d14919374dd332dbcf24c2be3a768246334cc0da7b23"
+source_id = "artifact.thomas-aquinas.super-i-ad-corinthios.latin-corpusthomisticum-web-2026-07-26.c1c-html-8be5b71c"
+source_fingerprint = "sha256:b19414609ff57fc7c9dd943ed4bc54893a47bc6fe1fb131964a23ce1e0c6a47a"
+locus = "Super I ad Corinthios, cap. 1, lectio 1, §86234 on verses 3–9"
+relationship = "direct-exegesis"
+disposition = "deferred"
+reason = "The inspected Corpus Thomisticum delivery is a modern revised digital text. Establish the wording against a redistributable Latin edition."
+missing_criteria = ["redistributable-latin-lectio-collation"]
+scripture_extents = [{ token = "1Cor", first_chapter = 1, first_verse = 3, last_chapter = 1, last_verse = 9 }]
+
+[[sources]]
+id = "verse-text-27-isaias-7c9a1228"
+binding_index = 12
+binding_sha256 = "b8f9579a3aeb8d54dfdf48f5a5306010414a4ac2db876e610009612859f7b4fb"
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-27-isaias-7c9a1228"
+source_fingerprint = "sha256:41639d5457be3a0a6446fe59d3c59c7561aacfef7bc43089f650a7353452bbf8"
+locus = "Is.63.1-19; Is.64.1-12"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "Challoner native text; cf. the U.S.-to-native verse crosswalk."
+
+[[sources]]
+id = "verse-text-21-psalms-578f023d"
+binding_index = 13
+binding_sha256 = "a97a2b88c7b59d4a9ba27226cb49554ebe21df452b80725e5ebafb00a2c6ad8f"
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-21-psalms-578f023d"
+source_fingerprint = "sha256:04b581584ed78f861cef34251b2da71ddc94429cd7228ea8cc6585a2aa4a5a41"
+locus = "Ps.24.1-22; Ps.79.1-20; Ps.84.1-14"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "Read the entire three native Psalms including their titles."
+
+[[sources]]
+id = "verse-text-53-1-corinthians-ffc4f260"
+binding_index = 14
+binding_sha256 = "3386ad1eae866343ef9f4bd617b112c7b8c3d093c19eae25bd497c3733e269d9"
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-53-1-corinthians-ffc4f260"
+source_fingerprint = "sha256:86aa4aafa5cb1a66218d81b3f7735715d33eac0a1b62c9c471499728c0838a11"
+locus = "1Cor.1.1-31; 1Cor.16.8"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "Full introductory chapter and Ephesus address cue."
+
+[[sources]]
+id = "verse-text-48-mark-69b4cb75"
+binding_index = 15
+binding_sha256 = "1fee16872966860b3185ee7765cb8bc34eb5eacbbb22846d13bc42da8b4d5e83"
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-48-mark-69b4cb75"
+source_fingerprint = "sha256:2b4848908df9163a705b6532d1b80e55d35bc75bf2826f2ba03cb69b9f7ff025"
+locus = "Mark.13.1-37; Mark.14.29-42"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "Full Olivet discourse and garden scene."
+
+[[sources]]
+id = "bede-mark-13"
+binding_index = 16
+binding_sha256 = "daafe3f3f4b8247c2a2e191ccfc2d0feb776ab4f5c0bc747de3dbc824f455b56"
+source_id = "artifact.bede.in-marci-evangelium-expositio.2026-10-13-latin-wikisource-migne.latin-text-b8197766"
+source_fingerprint = "sha256:838ec2d9bdd3872f40f104399e97325542dc20fc47dd3b1b4d576e018c618fc2"
+locus = "In Marci evangelium expositio, comments beginning Videte, vigilate, et orate through Quod autem vobis dico, at physical lines 403–405"
+relationship = "direct-exegesis"
+disposition = "deferred"
+reason = "The Latin is retained, but the registered work’s locus vocabulary admits only Mark 10. A proper passage requires widening that vocabulary with review of existing consumers and checking the complete unit against the corresponding PL 92 printing."
+missing_criteria = ["mark-13-native-locus-in-work-grammar", "pl-92-collation-at-mark-13"]
+scripture_extents = [{ token = "Mark", first_chapter = 13, first_verse = 33, last_chapter = 13, last_verse = 37 }]
+
+[[sources]]
+id = "bellarmine-entrance"
+binding_index = 17
+binding_sha256 = "635a5642696854cbefe0117d16db89457db3c9448800759014a359c41ad85c5a"
+source_id = "artifact.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.historical-text-357551e1"
+source_fingerprint = "sha256:85b019a495120f1320c91743bdd127eef0ccb54126e0247bcb0298f9fb7c3344"
+locus = "Psalm 24, explanations 1–3"
+relationship = "direct-exegesis"
+disposition = "admitted"
+reason = "Checked against the bound witness. The verified passage records and their canonical edges give the text and its natural extent."
+passage_ids = ["passage.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.psalm-24-verses-1-3"]
+
+[[sources]]
+id = "bellarmine-shepherd"
+binding_index = 17
+binding_sha256 = "635a5642696854cbefe0117d16db89457db3c9448800759014a359c41ad85c5a"
+source_id = "artifact.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.historical-text-357551e1"
+source_fingerprint = "sha256:85b019a495120f1320c91743bdd127eef0ccb54126e0247bcb0298f9fb7c3344"
+locus = "Psalm 79, explanations 1–3"
+relationship = "direct-exegesis"
+disposition = "admitted"
+reason = "Checked against the bound witness. The verified passage records and their canonical edges give the text and its natural extent."
+passage_ids = ["passage.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.psalm-79-verses-2-4"]
+
+[[sources]]
+id = "bellarmine-vine"
+binding_index = 17
+binding_sha256 = "635a5642696854cbefe0117d16db89457db3c9448800759014a359c41ad85c5a"
+source_id = "artifact.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.historical-text-357551e1"
+source_fingerprint = "sha256:85b019a495120f1320c91743bdd127eef0ccb54126e0247bcb0298f9fb7c3344"
+locus = "Psalm 79, explanations 14–18"
+relationship = "direct-exegesis"
+disposition = "admitted"
+reason = "Checked against the bound witness. The verified passage records and their canonical edges give the text and its natural extent."
+passage_ids = ["passage.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.psalm-79-verses-15-19"]
+
+[[sources]]
+id = "bellarmine-salvation"
+binding_index = 17
+binding_sha256 = "635a5642696854cbefe0117d16db89457db3c9448800759014a359c41ad85c5a"
+source_id = "artifact.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.historical-text-357551e1"
+source_fingerprint = "sha256:85b019a495120f1320c91743bdd127eef0ccb54126e0247bcb0298f9fb7c3344"
+locus = "Psalm 84, explanation 7"
+relationship = "direct-exegesis"
+disposition = "admitted"
+reason = "Checked against the bound witness. The verified passage records and their canonical edges give the text and its natural extent."
+passage_ids = ["passage.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.psalm-84-verse-8"]
+
+[[sources]]
+id = "bellarmine-mercy-truth"
+binding_index = 17
+binding_sha256 = "635a5642696854cbefe0117d16db89457db3c9448800759014a359c41ad85c5a"
+source_id = "artifact.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.historical-text-357551e1"
+source_fingerprint = "sha256:85b019a495120f1320c91743bdd127eef0ccb54126e0247bcb0298f9fb7c3344"
+locus = "Psalm 84, explanations 10–11"
+relationship = "direct-exegesis"
+disposition = "admitted"
+reason = "Checked against the bound witness. The verified passage records and their canonical edges give the text and its natural extent."
+passage_ids = ["passage.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.psalm-84-verses-11-12"]
+
+[[sources]]
+id = "bellarmine-land-fruit"
+binding_index = 17
+binding_sha256 = "635a5642696854cbefe0117d16db89457db3c9448800759014a359c41ad85c5a"
+source_id = "artifact.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.historical-text-357551e1"
+source_fingerprint = "sha256:85b019a495120f1320c91743bdd127eef0ccb54126e0247bcb0298f9fb7c3344"
+locus = "Psalm 84, explanation 12"
+relationship = "direct-exegesis"
+disposition = "admitted"
+reason = "Checked against the bound witness. The verified passage records and their canonical edges give the text and its natural extent."
+passage_ids = ["passage.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.psalm-84-verse-13"]
+
+[[sources]]
+id = "newadvent-12533a-cb9d9a25-article-text"
+binding_index = 18
+binding_sha256 = "dd485fc101a1924b8e0f6bcee21e3f729977855e40f8437fd10ef9ac93c30c39"
+source_id = "artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12533a-cb9d9a25-article-text"
+source_fingerprint = "sha256:fb390d86dc25dc07c596f9fc077086505507490f09a054b5a5c25ff17ab4c7f7"
+locus = "title classes, Psalms of Asaph and Korah"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "Read the bounded chronological discussion in the retained historical article text; the date belongs to its named subject."
+
+[[sources]]
+id = "newadvent-14530a-0a19aa2c-article-text"
+binding_index = 19
+binding_sha256 = "dc9d00f6e0257cf0bad45ca875e3146e2e43f60cc41cd009330f9f883794b6ad"
+source_id = "artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c-article-text"
+source_fingerprint = "sha256:0a5a9e3b92db7d3a9953343ff8b1a04ec7baa2a01adbf31eadc28dc4e8f410d4"
+locus = "New Testament dating synopsis"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "Read the bounded chronological discussion in the retained historical article text; the date belongs to its named subject."
+
+[[sources]]
+id = "newadvent-11567b-bff0dda8-article-text"
+binding_index = 20
+binding_sha256 = "b8a2475fa0bdee8d3799c2d15ce67c49c1908fb6ff069b45bc75d00023a1000e"
+source_id = "artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8-article-text"
+source_fingerprint = "sha256:83263e9b6b864dbc2776538285f276ac7740d8e39098d077148ce421ca998f4f"
+locus = "Paul’s chronology and Corinthian letters"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "Read the bounded chronological discussion in the retained historical article text; the date belongs to its named subject."
+
+[[sources]]
+id = "newadvent-04364a-2b6b401d-article-text"
+binding_index = 21
+binding_sha256 = "1064bb7bc24eaab133a2921269f77ade127c891c73afa78c625a8f7af7ad739c"
+source_id = "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04364a-2b6b401d-article-text"
+source_fingerprint = "sha256:2c5a67a9de90b5b450ea940a7cb51ea9be20294327949032898093fe32b1f20c"
+locus = "Epistles to the Corinthians, first letter composition"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "Read the bounded chronological discussion in the retained historical article text; the date belongs to its named subject."
+
+[[sources]]
+id = "newadvent-09674b-f5a5a8a9-article-text"
+binding_index = 22
+binding_sha256 = "150f0dd59b229440bfd409d9b5841d2d4795a680b291ed5f914a4e2e750e7654"
+source_id = "artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09674b-f5a5a8a9-article-text"
+source_fingerprint = "sha256:5946f7fd5d40591fa1d547bcb4dcb0573b720fb85502fb974a2f628c7129aabb"
+locus = "Gospel of Mark, place and date"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "Read the bounded chronological discussion in the retained historical article text; the date belongs to its named subject."
+
+[[sources]]
+id = "newadvent-04642b-f1c0bed3-article-text"
+binding_index = 23
+binding_sha256 = "3ff2b716061360d1d4c195e898b11a32b4432dc82cfe713cbc4a811ba4e73451"
+source_id = "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3-article-text"
+source_fingerprint = "sha256:f6d97140146a6cb3adcbb583db08c82f18a5f42f59b85e884f8feabb8380640d"
+locus = "David, usual chronology and alternatives"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "Read the bounded chronological discussion in the retained historical article text; the date belongs to its named subject."
+
+[[sources]]
+id = "newadvent-08179b-d4ee13fd-article-text"
+binding_index = 24
+binding_sha256 = "7f5f82d95ad558bb6b65aefc62e6ded58004c38baf6db1ab6857f42a9f7c4a2e"
+source_id = "artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08179b-d4ee13fd-article-text"
+source_fingerprint = "sha256:f4d698ee3bc68e9257a7106cb2a663c8b5a4d2c78d05e3b3ad9cc535e938c5c8"
+locus = "Isaias, ministry under the kings of Juda"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "Read the bounded chronological discussion in the retained historical article text; the date belongs to its named subject."
+
+[[sources]]
+id = "newadvent-08377a-f81e2c23-article-text"
+binding_index = 25
+binding_sha256 = "a5939599602bab7611e0d8d684840e3f5c33f2d3a44b0dcc6f4cb9d6eff12e33"
+source_id = "artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08377a-f81e2c23-article-text"
+source_fingerprint = "sha256:fe5c1682bc9df4a6ffe2e0a61f7ac28267f049a6ffef975b9a78bc795774f656"
+locus = "Jesus Christ, Ninth Journey, its heading, calibration and Holy Week discourse"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "Read the bounded chronological discussion in the retained historical article text; the date belongs to its named subject."
+
+[[sources]]
+id = "lectionary-2-27c3cb63"
+binding_index = 26
+binding_sha256 = "424503ebb28d889e5c78867b24cf581e57251df7657e8bc58ac700bddca0b8e0"
+source_id = "artifact.united-states-conference-of-catholic-bishops.daily-readings.2026-11-23-page-for-2026-11-29.lectionary-2-27c3cb63"
+source_fingerprint = "sha256:c63be5bb5a96bd9ff8e51f709014b64b9f0856d28432a474dbf1dfad1764d584"
+locus = "Lectionary 2, all five Scripture units including response"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "Complete dated U.S. page; protected proclamation, not study English."
+
+[[sources]]
+id = "usccb-advent-collect"
+binding_index = 27
+binding_sha256 = "718da20d860704c3636e30902e125ef6614235ea071f818af2582377448bb8d9"
+source_id = "artifact.united-states-conference-of-catholic-bishops.commentary-on-the-proper-prayers-of-advent.2026-11-23-english-usccb-web.advent-prayers-12d482ed"
+source_fingerprint = "sha256:5daf0eac2e78426c5ce833498b19fb5f1de0e487c4f24db3f660e4da1c409639"
+locus = "First Sunday of Advent, Collect and its accompanying commentary"
+relationship = "liturgical-commentary"
+disposition = "deferred"
+reason = "The object of this exposition is the oration. It supplies no bounded, verified exegesis of a particular biblical passage, and no grant covers the modern institutional commentary."
+missing_criteria = ["scripture-extent", "redistribution-basis-for-usccb-commentary"]
+scripture_extents = []
+
+[[sources]]
+id = "usccb-advent-offerings"
+binding_index = 27
+binding_sha256 = "718da20d860704c3636e30902e125ef6614235ea071f818af2582377448bb8d9"
+source_id = "artifact.united-states-conference-of-catholic-bishops.commentary-on-the-proper-prayers-of-advent.2026-11-23-english-usccb-web.advent-prayers-12d482ed"
+source_fingerprint = "sha256:5daf0eac2e78426c5ce833498b19fb5f1de0e487c4f24db3f660e4da1c409639"
+locus = "First Sunday of Advent, Prayer over the Offerings and its accompanying commentary"
+relationship = "liturgical-commentary"
+disposition = "deferred"
+reason = "The object of this exposition is the oration. It supplies no bounded, verified exegesis of a particular biblical passage, and no grant covers the modern institutional commentary."
+missing_criteria = ["scripture-extent", "redistribution-basis-for-usccb-commentary"]
+scripture_extents = []
+
+[[sources]]
+id = "usccb-advent-postcommunion"
+binding_index = 27
+binding_sha256 = "718da20d860704c3636e30902e125ef6614235ea071f818af2582377448bb8d9"
+source_id = "artifact.united-states-conference-of-catholic-bishops.commentary-on-the-proper-prayers-of-advent.2026-11-23-english-usccb-web.advent-prayers-12d482ed"
+source_fingerprint = "sha256:5daf0eac2e78426c5ce833498b19fb5f1de0e487c4f24db3f660e4da1c409639"
+locus = "First Sunday of Advent, Prayer after Communion and its accompanying commentary"
+relationship = "liturgical-commentary"
+disposition = "deferred"
+reason = "The object of this exposition is the oration. It supplies no bounded, verified exegesis of a particular biblical passage, and no grant covers the modern institutional commentary."
+missing_criteria = ["scripture-extent", "redistribution-basis-for-usccb-commentary"]
+scripture_extents = []
+
+[[sources]]
+id = "chapter-ii-2026-11-23-ae24d51b"
+binding_index = 28
+binding_sha256 = "6f0e59f461c5a1d1848990e20530e9ba922289bc8f51f9e4ed9408228ef0dcc7"
+source_id = "artifact.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.chapter-ii-2026-11-23-ae24d51b"
+source_fingerprint = "sha256:a0e628df6ab1c34d18f775b2cfed5f423da0b79b4d1e203dbb9d13324083baff"
+locus = "48; 51; 53; 54; 61; 62; 63; 68; 74; 87"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "Current U.S. Roman Missal General Instruction, chapter II. Chapter VII inspected in U.S. altar book, not in the initial challenge page."
+
+[[sources]]
+id = "aquinas-isaiah-63-64"
+binding_index = 29
+binding_sha256 = "f1691acecbd49e92c1d3c65fd4222259dfc49020f0d13b37bd2214a8fe418bfa"
+source_id = "artifact.thomas-aquinas.expositio-super-isaiam-ad-litteram.2026-11-23-corpus-thomisticum.chapters-50-66-5300798b"
+source_fingerprint = "sha256:22ba450dad5ea54b90bfd0503a3ab4661fc400d960caa9a3b87d84eef6935289"
+locus = "Expositio super Isaiam ad litteram, capp. 63–64, §§85023–85024"
+relationship = "direct-exegesis"
+disposition = "deferred"
+reason = "The website identifies a Latin text adapted to the 1969 Leonine edition and revised by Busa and Alarcón. The two numbered full chapters require a lawful controller for publication."
+missing_criteria = ["redistributable-checked-latin-transcription"]
+scripture_extents = [{ token = "Is", first_chapter = 63, first_verse = 1, last_chapter = 63, last_verse = 19 }, { token = "Is", first_chapter = 64, first_verse = 1, last_chapter = 64, last_verse = 12 }]
+
+[[sources]]
+id = "augustine-revised-psalm-24"
+binding_index = 30
+binding_sha256 = "326f7319e1111dddaccc06b589478398a3bbfc1d16157ea6b6f2d244b94b0455"
+source_id = "artifact.augustine.enarrationes-in-psalmos.2026-11-23-new-advent.psalm-25-8c204a06"
+source_fingerprint = "sha256:bb2df63e004452ed8c357e7272c62023d696961a66864f0e1305b4f5ab0f0bfe"
+locus = "Enarratio 24.1–4, revised English Psalm 25"
+relationship = "direct-exegesis"
+disposition = "deferred"
+reason = "No redistribution basis was found for Kevin Knight’s revision. The historical NPNF expression and its different wording require their own controller."
+missing_criteria = ["redistribution-basis-for-new-advent-revision"]
+scripture_extents = [{ token = "Ps", first_chapter = 24, first_verse = 1, last_chapter = 24, last_verse = 4 }]
+
+[[sources]]
+id = "augustine-revised-psalm-79"
+binding_index = 31
+binding_sha256 = "16c78fb90ab743593614331ccb71e7b9696092cffd2efaaa707f5ac42763e2f7"
+source_id = "artifact.augustine.enarrationes-in-psalmos.2026-11-23-new-advent.psalm-80-0a81dbf7"
+source_fingerprint = "sha256:adf1fddde624a5c9ac95b3206c8146b1feae6092c5f8600ed9fed782d7cece25"
+locus = "Enarratio 79.1–5, 9–11, revised English Psalm 80"
+relationship = "direct-exegesis"
+disposition = "deferred"
+reason = "No redistribution basis was found for Kevin Knight’s revision. The historical NPNF expression and its different wording require their own controller."
+missing_criteria = ["redistribution-basis-for-new-advent-revision"]
+scripture_extents = [{ token = "Ps", first_chapter = 79, first_verse = 1, last_chapter = 79, last_verse = 9 }, { token = "Ps", first_chapter = 79, first_verse = 15, last_chapter = 79, last_verse = 20 }]
+
+[[sources]]
+id = "augustine-revised-psalm-84-acclamation"
+binding_index = 32
+binding_sha256 = "38228d914ca787f17cf10fa095172c1bd40d1d0f8dc53289fcd188f8b6243f2a"
+source_id = "artifact.augustine.enarrationes-in-psalmos.2026-11-23-new-advent.psalm-85-cd5bf125"
+source_fingerprint = "sha256:06a38be75055dafef6347904cf2d05fafa1f8b6f898e861bb86b1f06260cae94"
+locus = "Enarratio 84, §§2–4 and 6, revised English Psalm 85"
+relationship = "direct-exegesis"
+disposition = "deferred"
+reason = "No redistribution basis was found for Kevin Knight’s revision. The historical NPNF expression and its different wording require their own controller."
+missing_criteria = ["redistribution-basis-for-new-advent-revision"]
+scripture_extents = [{ token = "Ps", first_chapter = 84, first_verse = 2, last_chapter = 84, last_verse = 5 }, { token = "Ps", first_chapter = 84, first_verse = 7, last_chapter = 84, last_verse = 8 }]
+
+[[sources]]
+id = "augustine-revised-psalm-84-communion"
+binding_index = 32
+binding_sha256 = "38228d914ca787f17cf10fa095172c1bd40d1d0f8dc53289fcd188f8b6243f2a"
+source_id = "artifact.augustine.enarrationes-in-psalmos.2026-11-23-new-advent.psalm-85-cd5bf125"
+source_fingerprint = "sha256:06a38be75055dafef6347904cf2d05fafa1f8b6f898e861bb86b1f06260cae94"
+locus = "Enarratio 84, §§9–13, revised English Psalm 85"
+relationship = "direct-exegesis"
+disposition = "deferred"
+reason = "No redistribution basis was found for Kevin Knight’s revision. The historical NPNF expression and its different wording require their own controller."
+missing_criteria = ["redistribution-basis-for-new-advent-revision"]
+scripture_extents = [{ token = "Ps", first_chapter = 84, first_verse = 11, last_chapter = 84, last_verse = 14 }]
+
+[[sources]]
+id = "chrysostom-revised-homily-1"
+binding_index = 33
+binding_sha256 = "efca8953ae4914bbfb8342f7c7e024c5e8147e90b98ebc8e2420f6687e15e697"
+source_id = "artifact.john-chrysostom.homilies-on-first-corinthians.2026-11-23-new-advent.homily-1-c49cfa84"
+source_fingerprint = "sha256:ef66fb6a7d94c6893a734059e6db25ec795020ccec1d8a293e729218b66785ce"
+locus = "Homily 1 on First Corinthians, §§3–4, on 1:3"
+relationship = "direct-exegesis"
+disposition = "deferred"
+reason = "No redistribution basis was found for Kevin Knight’s revision. The historical NPNF expression and its different wording require their own controller."
+missing_criteria = ["redistribution-basis-for-new-advent-revision"]
+scripture_extents = [{ token = "1Cor", first_chapter = 1, first_verse = 3, last_chapter = 1, last_verse = 3 }]
+
+[[sources]]
+id = "chrysostom-revised-homily-2"
+binding_index = 34
+binding_sha256 = "6289bbe329be2dea0d57e50b912c7b716eedacccd810d1a09b39e1f4fea620be"
+source_id = "artifact.john-chrysostom.homilies-on-first-corinthians.2026-11-23-new-advent.homily-2-a121a3f9"
+source_fingerprint = "sha256:c122dd8982d5e259a92008657377d5c56eb96b00713b474c86e9d4d9f16aa5bf"
+locus = "Homily 2 on First Corinthians, §§1–9, on 1:4–9"
+relationship = "direct-exegesis"
+disposition = "deferred"
+reason = "No redistribution basis was found for Kevin Knight’s revision. The historical NPNF expression and its different wording require their own controller."
+missing_criteria = ["redistribution-basis-for-new-advent-revision"]
+scripture_extents = [{ token = "1Cor", first_chapter = 1, first_verse = 4, last_chapter = 1, last_verse = 9 }]
+
+[[sources]]
+id = "augustine-epistula-199"
+binding_index = 35
+binding_sha256 = "55be8a18fd2eedc09ab488d302ad72e93f3575b5ed213fbbbdeeb6873e8aaf71"
+source_id = "artifact.augustine.epistula-199.2026-11-23-augustinus-it.letter-199-5b570f96"
+source_fingerprint = "sha256:a3e9ab711c47ed0a74b45b4a6d4d97f780b839abbdd2540b746b26d1efef3b43"
+locus = "Epistula 199 to Hesychius, I.2–3, especially I.3"
+relationship = "direct-exegesis"
+disposition = "deferred"
+reason = "The Latin quotation and address are identifiable, but the inspected HTML does not establish which historical edition controls its punctuation and wording or permit its wholesale reuse. Compare a named Latin edition before extracting this paragraph."
+missing_criteria = ["edition-and-wording-collation", "redistribution-basis-for-exact-text"]
+scripture_extents = [{ token = "Mark", first_chapter = 13, first_verse = 35, last_chapter = 13, last_verse = 37 }]
+
+[[sources]]
+id = "cyril-lecture-15"
+binding_index = 36
+binding_sha256 = "5b7b6d9f733e368f7f76fb39f813c9e37e0fd43144a59d7a50ffc6d336ceff37"
+source_id = "artifact.cyril-of-jerusalem.catechetical-lectures.2026-11-23-new-advent.lecture-15-81306e6e"
+source_fingerprint = "sha256:5c9cd54f76b21f6a0705cd1949d38166090b04545440afd81ad699ed936fe217"
+locus = "Catechetical Lecture XV.1–3, on the Creed and Daniel 7:9–14"
+relationship = "analogue"
+disposition = "deferred"
+reason = "No redistribution basis was found for Kevin Knight’s revision. The historical NPNF expression and its different wording require their own controller."
+missing_criteria = ["redistribution-basis-for-new-advent-revision"]
+scripture_extents = [{ token = "Dan", first_chapter = 7, first_verse = 9, last_chapter = 7, last_verse = 14 }]
+
+[[sources]]
+id = "mark-introduction-web-extract-54245e61"
+binding_index = 37
+binding_sha256 = "61d86958dd040ea780b1b596417b12f899fe13d9dcd450ad59a50c2079592167"
+source_id = "artifact.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.2026-11-23-usccb-web.mark-introduction-web-extract-54245e61"
+source_fingerprint = "sha256:99d6014d7432b158304d37b7d1008fea5a75cc191702f2a0f976ee73258e7b6b"
+locus = "Introduction, final authorship and date paragraphs, especially lines 72–75"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "Protected NABRE introduction; web research extraction with source numbering, not a raw HTTP edition or an authenticated print copy."
+
+[[sources]]
+id = "isaiah-introduction-web-extract-cf6f9a0e"
+binding_index = 38
+binding_sha256 = "52891f19692f6d4b4626997491090436ada707a1f054216c7e5ac38c4b000c65"
+source_id = "artifact.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.2026-11-23-usccb-web.isaiah-introduction-web-extract-cf6f9a0e"
+source_fingerprint = "sha256:e23da9620f14ad428780b22c160f1a5a2d0796c7a08e113ad82143e4576d7b90"
+locus = "Introduction, composition of 56–66, lines 159–162"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "Protected NABRE introduction; web research extraction with source numbering, not a raw HTTP edition or an authenticated print copy."
+
+[[sources]]
+id = "psalms-introduction-web-extract-75b777e4"
+binding_index = 39
+binding_sha256 = "da91fd591bb3418189259bee6a51a83ffd821d65d8c7770c105dec10f37cceb1"
+source_id = "artifact.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.2026-11-23-usccb-web.psalms-introduction-web-extract-75b777e4"
+source_fingerprint = "sha256:fcb94ecd9e25ba477503d3d51512c79f9de8377300a8d6e3321daefff4527f02"
+locus = "Introduction, superscriptions and Maccabean boundary, line 310"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "Protected NABRE introduction; web research extraction with source numbering, not a raw HTTP edition or an authenticated print copy."
+
+[[sources]]
+id = "bellarmine-osullivan-facsimile"
+binding_index = 40
+binding_sha256 = "dec07950df411df7a673594e352ea26b455c397556023453b1192f80b2197b1b"
+source_id = "artifact.robert-bellarmine.commentary-on-the-book-of-psalms.osullivan-duffy-1866.commons-ia-facsimile-78b290d4"
+source_fingerprint = "sha256:6221c39e003611f5ca8e53a39ee29224a806934ad8bbe85d5bf3d122911a1ac6"
+locus = "Psalm 24, PDF pp. 68–69; Psalm 79, PDF pp. 253–256; Psalm 84, PDF pp. 267–269"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The scanned printing independently controls the location and wording of the English paragraphs registered from the digital text. The corresponding excerpts belong to the separately identified digital expression."
+
+[[sources]]
+id = "augustine-npnf-psalm-24"
+binding_index = 41
+binding_sha256 = "6ea700e2cd72a26701bd6019f44553a68250c0ca73452e803c73c3af78aa9b1f"
+source_id = "segment.augustine.enarrationes-in-psalmos.1888-english-npnf-anonymous-first-thirty.psalm-25"
+source_fingerprint = "sha256:ebe8bdbf416e0a448fb704aca2e82b347eddf5d3b419e9032a9af1780d28a529"
+locus = "Exposition 24 §§1–4, CCEL NPNF, physical lines 6850–6875"
+relationship = "direct-exegesis"
+disposition = "admitted"
+reason = "Checked against the bound witness. The verified passage records and their canonical edges give the text and its natural extent."
+passage_ids = ["passage.augustine.enarrationes-in-psalmos.1888-english-npnf-anonymous-first-thirty.24.1-2", "passage.augustine.enarrationes-in-psalmos.1888-english-npnf-anonymous-first-thirty.24.3", "passage.augustine.enarrationes-in-psalmos.1888-english-npnf-anonymous-first-thirty.24.4"]
+
+[[sources]]
+id = "chrysostom-npnf-homily-2"
+binding_index = 42
+binding_sha256 = "963562c33750db4eac5f0de4d2090fce67aa47784a86d797b1f1102c1f374ccb"
+source_id = "segment.john-chrysostom.homilies-on-first-corinthians.ccel-web-2026-09-28.homily-2"
+source_fingerprint = "sha256:1dd95173d47e8f9a664fd63a5b1e39ac0f9bd07bf4270605721861ba7916ca29"
+locus = "Homily II §§1–3, including the lemmata for verses 4–6"
+relationship = "direct-exegesis"
+disposition = "admitted"
+reason = "Checked against the bound witness. The verified passage records and their canonical edges give the text and its natural extent."
+passage_ids = ["passage.john-chrysostom.homilies-on-first-corinthians.ccel-web-2026-09-28.2.1cor-1.4-sec-1", "passage.john-chrysostom.homilies-on-first-corinthians.ccel-web-2026-09-28.2.1cor-1.4-sec-2", "passage.john-chrysostom.homilies-on-first-corinthians.ccel-web-2026-09-28.2.1cor-1.4-6"]

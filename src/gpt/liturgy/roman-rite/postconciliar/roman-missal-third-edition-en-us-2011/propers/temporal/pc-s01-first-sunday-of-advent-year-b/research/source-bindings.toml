@@ -1,0 +1,337 @@
+schema = 2
+record_type = "bindings"
+document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"
+
+[[bindings]]
+source_id = "artifact.united-states-conference-of-catholic-bishops.liturgical-calendar-dioceses-united-states.2027.usccb-pdf-d7997b57"
+loci = ["2027 calendar, printed pp. 5, 11; physical pp. 7, 13"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Calendar observation and no. 2 date, violet, B/I. Inspected dated page image and calendar introduction."
+source_fingerprint = "sha256:5968dc15a47039738f00ffdf0b412a94d165d0de22650fbe8bbf4327f4490fdc"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.2011-english-us-unidentified-digital-printing.third-party-pdf-1cf11339"
+loci = ["First Sunday of Advent, p. 139; Advent Preface I, p. 534; solemn blessing, p. 674", "GIRM 48, 51, 53–54, 61–63, 68, 74, 87, 365"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "U.S. altar-text witness from a third-party host; checked appointment bodies, concluding rubric and branches. The 2011 longer Collect conclusion was superseded in 2021."
+source_fingerprint = "sha256:1fce17d66bc7279e1958104188ea6616e3d626645800f998f910611d4c70343e"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+loci = ["Dominica I Adventus, physical pp. 82–83; Praefatio I de Adventu, p. 311; Benedictiones sollemnes I.1; Orationes super populum, introductory rubric"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Latin 2002 digital typesetting, not the 2008 exemplar. Compared the two different concluding invitations."
+source_fingerprint = "sha256:1cb25c1744f5977f70958c52c1b0cd3ee4aa100bdf216e36ae0da42b092fbce4"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.2011-english-us-catholic-book-publishing.publisher-sample-pdf-ab44fd0a"
+loci = ["publisher sample, index entry for Advent I; physical p. 13, printed p. 526"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "U.S. publisher witness of solemn blessings and Advent I.1; index only for the Sunday proper."
+source_fingerprint = "sha256:920b1fd8e63ab18c116b9db718af6a7bf6d7030a47328c5058f55873c4c9f697"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
+loci = ["First Sunday of Advent, physical p. 11 (printed 3)"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "ICEL Antiphonary independent check on both antiphons."
+source_fingerprint = "sha256:3a0fc506c0d80243812d8c3fb34c5702b522cfe41a7cd70d4ab88948f44a4df5"
+
+[[bindings]]
+source_id = "artifact.holy-see.acta-apostolicae-sedis.volume-4-1912.internet-archive-vatican-ocr-pdf-e071e825"
+loci = ["AAS 4 (1912), pp. 463–465, especially responsum VI"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Complete 1912 volume, original scan hash matched; inspected only the Latin response pages."
+source_fingerprint = "sha256:46757a7e52dba390f8e3054e0da5c2896688d183110222ffb1102f4dcf687721"
+
+[[bindings]]
+source_id = "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e"
+loci = ["Praenotanda 93, printed XL; no. 2 (B), printed 5 (physical 59), with acclamation cross-reference to no. 1"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Image collation of no. 2; official Latin order gives subverse cues and seasonal method."
+source_fingerprint = "sha256:2296f2ff27bc0f11a41b7dcd2fdc09291f317bb57991d7e0dad0c08f7e7d206e"
+
+[[bindings]]
+source_id = "artifact.holy-see.notitiae.volume-44-numbers-503-504-2008.official-pdf-74c8d174"
+loci = ["printed pp. 367–387, especially 369, 371–372"]
+role = "currentness-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Complete 2008 journal issue; reprint status and bounded variation list, checking Advent and the Order of Mass."
+source_fingerprint = "sha256:7aef8dc5b395801039529b65229dbc9b4cbe2dbf48ebf23452814b18af135031"
+
+[[bindings]]
+source_id = "artifact.united-states-conference-of-catholic-bishops.divine-worship-newsletter-2021-02.2021-february-official-pdf.official-pdf-e06d7b65"
+loci = ["February 2021, pp. 7–8 (digital pp. 3–4)"]
+role = "currentness-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Official USCCB report and decree on the 2021 Collect conclusion."
+source_fingerprint = "sha256:3692c09222387d1a03874abc1e9e3bb201e127b40bfceff460156905615cfe27"
+
+[[bindings]]
+source_id = "artifact.jerome.commentarii-in-isaiam.dco-latin-web-2026-09-17.pars-4-pdf-97785e2b"
+loci = ["Book XVII, comments at Is 63:16–19 and 64:1–8, PDF/printed pp. 148–159"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Direct Latin on the prayer of a morally mixed people; paragraph headed vv. 18,19 expounds 63:17. Modern PDF text layout; artifact hash matches despite unverified host TLS chain."
+source_fingerprint = "sha256:a943d8777bf61077d7e2b851a3576714ff4f570e06c3f47dd4539a89b4c123ef"
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.super-i-ad-corinthios.latin-corpusthomisticum-web-2026-07-26.c1c-html-8be5b71c"
+loci = ["1.l1"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Read Aquinas on how different people possess grace for the whole church and the argument from God’s call to the necessary help."
+source_fingerprint = "sha256:b19414609ff57fc7c9dd943ed4bc54893a47bc6fe1fb131964a23ce1e0c6a47a"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-27-isaias-7c9a1228"
+loci = ["Is.63.1-19", "Is.64.1-12"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Challoner native text; cf. the U.S.-to-native verse crosswalk."
+source_fingerprint = "sha256:41639d5457be3a0a6446fe59d3c59c7561aacfef7bc43089f650a7353452bbf8"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-21-psalms-578f023d"
+loci = ["Ps.24.1-22", "Ps.79.1-20", "Ps.84.1-14"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Read the entire three native Psalms including their titles."
+source_fingerprint = "sha256:04b581584ed78f861cef34251b2da71ddc94429cd7228ea8cc6585a2aa4a5a41"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-53-1-corinthians-ffc4f260"
+loci = ["1Cor.1.1-31", "1Cor.16.8"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Full introductory chapter and Ephesus address cue."
+source_fingerprint = "sha256:86aa4aafa5cb1a66218d81b3f7735715d33eac0a1b62c9c471499728c0838a11"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-48-mark-69b4cb75"
+loci = ["Mark.13.1-37", "Mark.14.29-42"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Full Olivet discourse and garden scene."
+source_fingerprint = "sha256:2b4848908df9163a705b6532d1b80e55d35bc75bf2826f2ba03cb69b9f7ff025"
+
+[[bindings]]
+source_id = "artifact.bede.in-marci-evangelium-expositio.2026-10-13-latin-wikisource-migne.latin-text-b8197766"
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Direct Latin, Mark 13:33–37, physical artifact lines 403–405: ascension, household, graced work, doorkeeper and the command to all."
+source_fingerprint = "sha256:838ec2d9bdd3872f40f104399e97325542dc20fc47dd3b1b4d576e018c618fc2"
+
+[[bindings]]
+source_id = "artifact.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.historical-text-357551e1"
+loci = ["Psalm 24, explanations 1–3", "Psalm 79, explanations 1–3, 14–18", "Psalm 84, explanations 7, 10–12"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Robert Bellarmine, John O’Sullivan English; among the inspected paragraphs: prayer of trust, restoring the vineyard, requested salvation, virginal fruit."
+source_fingerprint = "sha256:85b019a495120f1320c91743bdd127eef0ccb54126e0247bcb0298f9fb7c3344"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12533a-cb9d9a25-article-text"
+loci = ["title classes, Psalms of Asaph and Korah"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Read the bounded chronological discussion in the retained historical article text; the date belongs to its named subject."
+source_fingerprint = "sha256:fb390d86dc25dc07c596f9fc077086505507490f09a054b5a5c25ff17ab4c7f7"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c-article-text"
+loci = ["New Testament dating synopsis"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Read the bounded chronological discussion in the retained historical article text; the date belongs to its named subject."
+source_fingerprint = "sha256:0a5a9e3b92db7d3a9953343ff8b1a04ec7baa2a01adbf31eadc28dc4e8f410d4"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8-article-text"
+loci = ["Paul’s chronology and Corinthian letters"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Read the bounded chronological discussion in the retained historical article text; the date belongs to its named subject."
+source_fingerprint = "sha256:83263e9b6b864dbc2776538285f276ac7740d8e39098d077148ce421ca998f4f"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04364a-2b6b401d-article-text"
+loci = ["Epistles to the Corinthians, first letter composition"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Read the bounded chronological discussion in the retained historical article text; the date belongs to its named subject."
+source_fingerprint = "sha256:2c5a67a9de90b5b450ea940a7cb51ea9be20294327949032898093fe32b1f20c"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09674b-f5a5a8a9-article-text"
+loci = ["Gospel of Mark, place and date"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Read the bounded chronological discussion in the retained historical article text; the date belongs to its named subject."
+source_fingerprint = "sha256:5946f7fd5d40591fa1d547bcb4dcb0573b720fb85502fb974a2f628c7129aabb"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3-article-text"
+loci = ["David, usual chronology and alternatives"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Read the bounded chronological discussion in the retained historical article text; the date belongs to its named subject."
+source_fingerprint = "sha256:f6d97140146a6cb3adcbb583db08c82f18a5f42f59b85e884f8feabb8380640d"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08179b-d4ee13fd-article-text"
+loci = ["Isaias, ministry under the kings of Juda"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Read the bounded chronological discussion in the retained historical article text; the date belongs to its named subject."
+source_fingerprint = "sha256:f4d698ee3bc68e9257a7106cb2a663c8b5a4d2c78d05e3b3ad9cc535e938c5c8"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08377a-f81e2c23-article-text"
+loci = ["Jesus Christ, Ninth Journey, its heading, calibration and Holy Week discourse"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Read the bounded chronological discussion in the retained historical article text; the date belongs to its named subject."
+source_fingerprint = "sha256:fe5c1682bc9df4a6ffe2e0a61f7ac28267f049a6ffef975b9a78bc795774f656"
+
+[[bindings]]
+source_id = "artifact.united-states-conference-of-catholic-bishops.daily-readings.2026-11-23-page-for-2026-11-29.lectionary-2-27c3cb63"
+loci = ["Lectionary 2, all five Scripture units including response"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Complete dated U.S. page; protected proclamation, not study English."
+source_fingerprint = "sha256:c63be5bb5a96bd9ff8e51f709014b64b9f0856d28432a474dbf1dfad1764d584"
+
+[[bindings]]
+source_id = "artifact.united-states-conference-of-catholic-bishops.commentary-on-the-proper-prayers-of-advent.2026-11-23-english-usccb-web.advent-prayers-12d482ed"
+loci = ["First Sunday of Advent: Collect, Prayer over the Offerings, Prayer after Communion, including the accompanying commentary"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Complete U.S. commentary webpage; protected ICEL and modern commentary. The other Sundays were not studied. Distinguish commentary on the prayers from an exposition of the appointed Scripture."
+source_fingerprint = "sha256:5daf0eac2e78426c5ce833498b19fb5f1de0e487c4f24db3f660e4da1c409639"
+
+[[bindings]]
+source_id = "artifact.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.chapter-ii-2026-11-23-ae24d51b"
+loci = ["48", "51", "53", "54", "61", "62", "63", "68", "74", "87"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Current U.S. Roman Missal General Instruction, chapter II. Chapter VII inspected in U.S. altar book, not in the initial challenge page."
+source_fingerprint = "sha256:a0e628df6ab1c34d18f775b2cfed5f423da0b79b4d1e203dbb9d13324083baff"
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.expositio-super-isaiam-ad-litteram.2026-11-23-corpus-thomisticum.chapters-50-66-5300798b"
+loci = ["Expositio super Isaiam ad litteram, capp. 63–64, §§85023–85024"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Direct Latin. Chapters 50–66. Permission for the whole modern HTML was not established."
+source_fingerprint = "sha256:22ba450dad5ea54b90bfd0503a3ab4661fc400d960caa9a3b87d84eef6935289"
+
+[[bindings]]
+source_id = "artifact.augustine.enarrationes-in-psalmos.2026-11-23-new-advent.psalm-25-8c204a06"
+loci = ["24.1-4"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Direct exposition of the entrance source. Modern host revises historical NPNF copy; whole HTML has modern matter."
+source_fingerprint = "sha256:bb2df63e004452ed8c357e7272c62023d696961a66864f0e1305b4f5ab0f0bfe"
+
+[[bindings]]
+source_id = "artifact.augustine.enarrationes-in-psalmos.2026-11-23-new-advent.psalm-80-0a81dbf7"
+loci = ["79.1-5,9-11"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Direct: Joseph, unveiled face, conversion, vineyard and revived people; homepage numbering and internal verse links differ."
+source_fingerprint = "sha256:adf1fddde624a5c9ac95b3206c8146b1feae6092c5f8600ed9fed782d7cece25"
+
+[[bindings]]
+source_id = "artifact.augustine.enarrationes-in-psalmos.2026-11-23-new-advent.psalm-85-cd5bf125"
+loci = ["84.2-4,6,9-13"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Direct on both sung verses. Keep the two readings of truth springing from earth distinct from the moral explanation of the next verse."
+source_fingerprint = "sha256:06a38be75055dafef6347904cf2d05fafa1f8b6f898e861bb86b1f06260cae94"
+
+[[bindings]]
+source_id = "artifact.john-chrysostom.homilies-on-first-corinthians.2026-11-23-new-advent.homily-1-c49cfa84"
+loci = ["Homily 1 on First Corinthians, §§3–4, on 1:3"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Direct on grace, peace and humility. Read the end of the greeting. Historical English with modern host editing."
+source_fingerprint = "sha256:ef66fb6a7d94c6893a734059e6db25ec795020ccec1d8a293e729218b66785ce"
+
+[[bindings]]
+source_id = "artifact.john-chrysostom.homilies-on-first-corinthians.2026-11-23-new-advent.homily-2-a121a3f9"
+loci = ["Homily 2 on First Corinthians, §§1–9, on 1:4–9"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Direct on thanksgiving, rival explanations of gifts and reprimand, the force of revelation and future strengthening."
+source_fingerprint = "sha256:c122dd8982d5e259a92008657377d5c56eb96b00713b474c86e9d4d9f16aa5bf"
+
+[[bindings]]
+source_id = "artifact.augustine.epistula-199.2026-11-23-augustinus-it.letter-199-5b570f96"
+loci = ["Epistula 199 to Hesychius, I.2–3, especially I.3"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Direct Latin exposition of Mk 13:35–37; distinguishes an individual death from the corporate last day and ignorance from negligence."
+source_fingerprint = "sha256:a3e9ab711c47ed0a74b45b4a6d4d97f780b839abbdd2540b746b26d1efef3b43"
+
+[[bindings]]
+source_id = "artifact.cyril-of-jerusalem.catechetical-lectures.2026-11-23-new-advent.lecture-15-81306e6e"
+role = "analogue"
+states = ["cataloged", "acquired", "inspected"]
+context = "Catechesis on the two advents, contextual illumination of the Preface and optional blessing. This is not an exposition of the U.S. formulary or the Mark pericope. Native address: Catechetical Lecture XV.1–3, on the Creed and Daniel 7:9–14."
+source_fingerprint = "sha256:5c9cd54f76b21f6a0705cd1949d38166090b04545440afd81ad699ed936fe217"
+
+[[bindings]]
+source_id = "artifact.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.2026-11-23-usccb-web.mark-introduction-web-extract-54245e61"
+loci = ["Introduction, final authorship and date paragraphs, especially lines 72–75"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Protected NABRE introduction; web research extraction with source numbering, not a raw HTTP edition or an authenticated print copy."
+source_fingerprint = "sha256:99d6014d7432b158304d37b7d1008fea5a75cc191702f2a0f976ee73258e7b6b"
+
+[[bindings]]
+source_id = "artifact.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.2026-11-23-usccb-web.isaiah-introduction-web-extract-cf6f9a0e"
+loci = ["Introduction, composition of 56–66, lines 159–162"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Protected NABRE introduction; web research extraction with source numbering, not a raw HTTP edition or an authenticated print copy."
+source_fingerprint = "sha256:e23da9620f14ad428780b22c160f1a5a2d0796c7a08e113ad82143e4576d7b90"
+
+[[bindings]]
+source_id = "artifact.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.2026-11-23-usccb-web.psalms-introduction-web-extract-75b777e4"
+loci = ["Introduction, superscriptions and Maccabean boundary, line 310"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Protected NABRE introduction; web research extraction with source numbering, not a raw HTTP edition or an authenticated print copy."
+source_fingerprint = "sha256:fcb94ecd9e25ba477503d3d51512c79f9de8377300a8d6e3321daefff4527f02"
+
+[[bindings]]
+source_id = "artifact.robert-bellarmine.commentary-on-the-book-of-psalms.osullivan-duffy-1866.commons-ia-facsimile-78b290d4"
+loci = ["Psalm 24, PDF pp. 68–69", "Psalm 79, PDF pp. 253–256", "Psalm 84, PDF pp. 267–269"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Reacquired the complete registered 1866 PDF and checked its hash. Compared the English expositions as an independent print locator and wording control on the retained eCatholic derivative."
+source_fingerprint = "sha256:6221c39e003611f5ca8e53a39ee29224a806934ad8bbe85d5bf3d122911a1ac6"
+
+[[bindings]]
+source_id = "segment.augustine.enarrationes-in-psalmos.1888-english-npnf-anonymous-first-thirty.psalm-25"
+loci = ["24.1-4"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Read the bounded CCEL lines 6850–6875 with the subsequent section marker. Independently checked the three registered, unrevised anonymous NPNF English passages alongside the modern New Advent version."
+source_fingerprint = "sha256:ebe8bdbf416e0a448fb704aca2e82b347eddf5d3b419e9032a9af1780d28a529"
+
+[[bindings]]
+source_id = "segment.john-chrysostom.homilies-on-first-corinthians.ccel-web-2026-09-28.homily-2"
+loci = ["2"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Historical NPNF I.12 English, distinct from the wording of the New Advent revision. Checked the first three paragraphs of Homily II in their context, including both thanksgiving and the transition to verse 7, using the exact registered volume and segment."
+source_fingerprint = "sha256:1dd95173d47e8f9a664fd63a5b1e39ac0f9bd07bf4270605721861ba7916ca29"
