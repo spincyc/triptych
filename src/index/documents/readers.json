@@ -1,5 +1,5 @@
 {
- "generation_commit": "2c7e60587b4d3872f58a3dd50f3d606b4c5b1339",
+ "generation_commit": "1f8f721d28ca93964c084e73e04682c3f6cd255f",
  "readers": {
   "claude/articles/canon-law/clerical-celibacy-chastity-and-continence": {
    "canonical": "articles/canon-law/clerical-celibacy-chastity-and-continence",
@@ -12971,6 +12971,53 @@
    "release_status": "alpha",
    "source_format": "latex",
    "title": "The Postconciliar Roman Liturgical Calendar"
+  },
+  "gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent": {
+   "canonical": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "contents": true,
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent",
+    "eligibility": "eligible",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-23",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/generation-metadata.tex",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/main.tex"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent",
+    "src/common"
+   ],
+   "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent",
+   "edition": "main",
+   "entrypoint": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/main.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent",
+   "kind": "seasonal-handbook-postconciliar",
+   "provider": "gpt",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "Advent: Come, Lord Jesus"
   },
   "gpt/theology/angelology": {
    "canonical": "theology/angelology",

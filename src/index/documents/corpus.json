@@ -1,12 +1,12 @@
 {
  "advisory": "Derived from each document's current sources and publication manifest. Titles are evaluated out of the source preamble; a document whose sources state no title is carried with the reason in place of one and is never given an invented name. Production provenance is what each document records about itself, field by field, omitting any field its record says was not recoverable; comparing it against the workflows declared below is a finding aid and never an authority, and nothing in this repository gates on it. Print availability names an on-demand source recipe, not an installed download or a reviewed rendering. Page counts are unknown until a particular rendering is inspected; counts from an earlier rendering do not describe the current print styles.",
  "counted": {
-  "documents": 225,
-  "issues": 303,
+  "documents": 226,
+  "issues": 304,
   "pages": 0,
-  "pages_unmeasured": 225,
+  "pages_unmeasured": 226,
   "titles_unrecorded": 0,
-  "works": 160
+  "works": 161
  },
  "models": [
   {
@@ -31,11 +31,11 @@
   },
   {
    "documents": 31,
-   "id": "claude-opus-5[1m]"
+   "id": "GPT-6"
   },
   {
-   "documents": 30,
-   "id": "GPT-6"
+   "documents": 31,
+   "id": "claude-opus-5[1m]"
   },
   {
    "documents": 27,
@@ -65,7 +65,7 @@
    "label": "Claude"
   },
   {
-   "documents": 157,
+   "documents": 158,
    "id": "gpt",
    "label": "GPT"
   }
@@ -94,7 +94,7 @@
   },
   {
    "id": "liturgy",
-   "works": 67
+   "works": 68
   },
   {
    "id": "theology",
@@ -16659,6 +16659,48 @@
     }
    ],
    "leaf": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar",
+   "section": "liturgy"
+  },
+  {
+   "catalog": "library/novus-ordo-liturgy.md",
+   "catalog_page": "library/novus-ordo-liturgy.html",
+   "editions": [
+    {
+     "authorization": "perpetual-public-repository-2026",
+     "available": {
+      "print": true,
+      "reader": true
+     },
+     "contributions": [
+      {
+       "model": "GPT-6",
+       "qualifiers": "client=Codex; unexposed: exact model variant, reasoning configuration, client version, server revision",
+       "runtime": "OpenAI Codex API client and harness subagents, unexposed: client version and server revision. Researched the two Roman calendars and their liturgical books, wrote the historical and devotional chapters, and checked the U.S. reading course and the assembled handbook."
+      }
+     ],
+     "derivation": "authored",
+     "eligibility": "eligible",
+     "id": "gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent",
+     "models": [
+      "GPT-6"
+     ],
+     "pages": null,
+     "print_mode": "browser",
+     "provider": "gpt",
+     "reviewed": "2026-11-23",
+     "revised": "2026-11-23T12:30:04Z",
+     "status": "alpha",
+     "subject": "A handbook of Advent for the Roman Missal, the United States Lectionary for Mass, and the Liturgy of the Hours.",
+     "targets": {
+      "print": "print/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent.html",
+      "reader": "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent.html"
+     },
+     "title": "Advent: Come, Lord Jesus",
+     "title_source": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/main.tex",
+     "web": "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent.html"
+    }
+   ],
+   "leaf": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent",
    "section": "liturgy"
   },
   {
