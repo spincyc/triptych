@@ -18,14 +18,7 @@
 <header class="page-header">
   <h1><span class="page-mark" aria-hidden="true">☧</span>The Source Library</h1>
   <p class="lede">
-    Every work, edition, artifact and passage the project has identified — the
-    Greek, the Latin and the English of a thing kept apart, because they are
-    three editions and not one text. Search it, open a work, and step through it
-    passage by passage. Where a passage may be read here it is set in full;
-    where it may not, it is still listed, and the reason is given in place of
-    the words. The corpus rows are generated from the source records by
-    <code>tools/source-reader</code>; this page does not discover sources from
-    the filesystem.
+    Search by work or edition to read a passage. Records for unavailable texts explain why.
   </p>
   <p class="tally" id="tally"></p>
 </header>
@@ -100,26 +93,15 @@
 
 <footer class="page-footer">
   <p>
-    A <strong>work</strong> is the intellectual thing — a treatise, a homily, a
-    decree. An <strong>edition</strong> is one materially identified form of it
-    whose wording or authority can differ from another's, so a Greek original,
-    Migne's Latin and a public-domain English translation are three editions and
-    never one work with three texts. An <strong>artifact</strong> is the exact
-    bytes that were acquired, with their hash and their rights. A
-    <strong>segment</strong> identifies a bounded part of a container artifact.
-    A <strong>passage</strong> is an addressable place in an edition and names one
-    controlling artifact; where it also names a segment, that segment narrows
-    the artifact rather than replacing it. Nothing here flattens those five
-    into one.
+    A <strong>work</strong> can have several <strong>editions</strong>, including
+    translations. An <strong>artifact</strong> is a particular file with recorded
+    rights and a checksum. Each <strong>passage</strong> identifies its edition
+    and controlling artifact. A <strong>segment</strong> locates it more precisely
+    within a larger file.
   </p>
   <p>
-    <strong>Rights are read from the records, never from the disk.</strong> A
-    passage is set here only where the artifact controlling it records an
-    affirmative distribution basis and is stored in the repository. A passage
-    that fails that test — because it is under copyright, its rights have never
-    been settled, or the permitted bytes are not stored here — is listed with
-    the reason rather than quietly dropped. A record you cannot read here is
-    still a record you can find, cite and follow to its source.
+    A passage can be read here when its source file is held and its recorded rights
+    permit distribution. Other records give the reason and remain available to cite.
   </p>
   <!-- The caution the corpus carries about itself, written here from the file
        rather than repeated in this page. The generator states it once and every

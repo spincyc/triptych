@@ -100,6 +100,7 @@
   background: none;
   color: inherit;
   font: inherit;
+  font-family: var(--serif);
   font-weight: 700;
   text-align: left;
   cursor: pointer;
@@ -144,7 +145,8 @@
   border: 1px solid var(--section-line);
   border-radius: 0.8rem;
   font-size: 0.72rem;
-  white-space: nowrap;
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 
 .pill-model {
@@ -211,11 +213,9 @@
   display: none;
 }
 
-/* Set in the page's own face, not the serif the shared panel title takes: this
-   is the head of a catalogue card, and it sits among sans-set apparatus. */
 .record-title {
   margin: 0;
-  font-family: var(--sans);
+  font-family: var(--serif);
   font-size: 1.15rem;
   padding-right: 5rem;
 }

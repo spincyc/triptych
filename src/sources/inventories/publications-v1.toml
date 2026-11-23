@@ -3,9 +3,9 @@ record_type = "publication-source-inventory"
 provider = "gpt"
 audited_on = "2026-11-23"
 discovery_rule = "src/gpt/**/main.tex"
-publication_count = 159
-source_surface_file_count = 4010
-snapshot = "sha256:37640258cbef5cd321754ac58c504eff28e8c5b30d6b980ef300ceffd61e27b3"
+publication_count = 160
+source_surface_file_count = 4029
+snapshot = "sha256:8a23210c14c395d81ed2beb8427df591a7a8fbb5bba21c45ac00c0f4d9774827"
 
 [[owners]]
 id = "owner.articles.faith.four-last-things"
@@ -1912,6 +1912,17 @@ inventory_state = "sources-categorized"
 source_categories = ["canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"
+relationship = "local"
+
+[[documents]]
+id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent"
+main = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "sources-categorized"
+source_categories = ["canon-law", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "prayer-devotional", "repository-internal", "scripture"]
+[[documents.record_owners]]
+id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent"
 relationship = "local"
 
 [[documents]]
@@ -23685,6 +23696,120 @@ path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-u
 sha256 = "689bcab35657618f2153b67382a8f075ff2b0b5f35170ad32dbc3620e09b84f6"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/format.tex"
+sha256 = "6f8c4849385338635efaece0dd9ffb7113a8576faba5fb8b84157b1c539ecad7"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/main.tex"
+sha256 = "2bb367c6b2741af2b7a3377cc7bfcf76e20d4e9d3dfaa081b1276c822af4c3db"
+kind = "publication-main"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/publication.toml"
+sha256 = "ddbb52e3db73a201645f1ad65b443966aec28bd74727f9a831460070303163be"
+kind = "publication-contract"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/research/cold-review.md"
+sha256 = "e8ded09f11b32b49eda095df8bc2f0802484fbe8e55cf65682ce84b2ba1970d7"
+kind = "research-record"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/research/lectionary-audit.md"
+sha256 = "9b42c852336b360bc64d817ae900beb7f88c72bbf97aa85da7751b808149116d"
+kind = "research-record"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/research/scope.md"
+sha256 = "215762815842f32f12f405db2aab311fb48f79c007b39bf7c030f1485ec44522"
+kind = "research-scope"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/research/source-audit.md"
+sha256 = "2bb8fdb4392edf567174a50c3559a49a24f66f741a7fedb22faa33152fda011a"
+kind = "legacy-source-audit"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/research/source-bindings.toml"
+sha256 = "5e5ea1f51ab8985636dd9746e7db72d063d865ce116e35280c46c742ee6d6e10"
+kind = "source-binding"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/research/tradition-audit.md"
+sha256 = "9668a4dcf33f63ec174d0cf4745d045567be4fcb02b853029a46a7f038872b4b"
+kind = "research-record"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/sections/05-to-the-reader.tex"
+sha256 = "ae451e914f74fc420092d7d050a7ae1e550097f599479c9868cbca365d503b37"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/sections/10-history.tex"
+sha256 = "b9c689c7b42b5c05c1ddbe491f2f7c3909e14b64b7dfb320ad2681511dba5c75"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/sections/20-witnesses.tex"
+sha256 = "7a7dfafa7339cea326352c0aad078a1ce687ce171c2d02575104ff2038472517"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/sections/30-mass-and-hours.tex"
+sha256 = "7dae03866a43bbd01195d3d882ed13518e2d0fcbb4eb129e78f2d1b6ee1230a8"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/sections/40-sunday-readings.tex"
+sha256 = "8806575711318c05734c33997c5a7bc7de7497f2de92647eb47e847408334216"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/sections/50-daily-readings.tex"
+sha256 = "d5fc89194c545beee8c8a6be160a9c8145629e4fb5806aa79e52cc2620c3bd80"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/sections/60-christmas.tex"
+sha256 = "286633b734c3d6951f99d45f89b4146068b0737053b04339bf89e3306c0a18d3"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/sections/90-edition.tex"
+sha256 = "2e7b54a22df5332d61c44e2330e634644b44fc61c3aa316749624a72600f1d24"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/sections/99-references.tex"
+sha256 = "15df64c2e66cf546833d891f6aa3bfb0a05b77d5782d5469c9d87789fbdfccf5"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/web-edition.toml"
+sha256 = "30d6e31e8b56ebfe64ce7fbea2b5f62e41eb98f6a90f0dbaef3f93ca8bdd6c43"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent"]
 
 [[files]]
 path = "src/gpt/theology/angelology/appendices/01-orders.tex"

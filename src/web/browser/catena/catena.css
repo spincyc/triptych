@@ -50,7 +50,7 @@
   gap: 0.5rem 0.75rem;
   margin: 0.5rem 0 0;
   padding: 0;
-  font-family: var(--serif-text);
+  font-family: var(--serif);
   font-size: 1.3rem;
   font-weight: 600;
   line-height: 1.25;
@@ -138,7 +138,7 @@
    reader tells the text from what is said about it before reading a word. */
 .catena-page .passage {
   color: var(--ink);
-  font-family: var(--serif-text);
+  font-family: var(--serif);
   font-size: 1.06rem;
   line-height: 1.68;
 }
@@ -277,7 +277,7 @@
 }
 
 .fragment-work {
-  font-family: var(--serif-text);
+  font-family: var(--serif);
   font-style: italic;
   font-size: 0.95rem;
   color: var(--ink-soft);
@@ -332,7 +332,7 @@
 .fragment-text {
   max-width: 66ch;
   margin: 0;
-  font-family: var(--serif-text);
+  font-family: var(--serif);
   font-size: 1rem;
   line-height: 1.58;
   color: var(--ink);

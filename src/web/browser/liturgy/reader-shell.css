@@ -171,7 +171,7 @@ html {
 .details-section + .details-section { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--section-pale); }
 .details-section h3 { margin: 0 0 0.45rem; color: var(--section-ink); font: 700 0.72rem/1.3 var(--sans); letter-spacing: 0.07em; text-transform: uppercase; }
 .details-section ul { margin: 0; padding-left: 1.2rem; color: var(--ink-soft); font: 0.86rem/1.5 var(--serif); }
-.source-identifier { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 0.8em; overflow-wrap: anywhere; }
+.source-identifier { font-family: var(--mono); font-size: 0.8em; overflow-wrap: anywhere; }
 
 @media (min-width: 72rem) {
   .reader-surface.contents-surface, .reader-surface.details-surface {

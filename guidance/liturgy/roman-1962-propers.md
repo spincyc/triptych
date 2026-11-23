@@ -119,9 +119,8 @@ difference; [calendar computation](calendar-computation.md#1962-sunday-computati
 owns the arithmetic, and each resumed Mass's own record owns its texts.
 
 The Advent handbook opens this calendar. Immediately above the Proper of
-Time table, place the italic cue `*Advent handbook*`, a marked link to each
-available edition, and ◇. After the § note, the ◇ note directs the reader
-to Seasonal Handbooks for the whole season. Keep each edition's catalog row
+Time table, place the italic cue `*Advent handbook*` with a marked link to
+each available edition. Keep each edition's catalog row
 in [Seasonal Handbooks](roman-1962-seasonal-handbooks.md#collection-identity)
 and its Sunday Masses here. This cue belongs to the catalog alone.
 

@@ -20,8 +20,6 @@ Local histories distinguish the building, juridic parish, and worshipping commun
 
 ## Traditional Priestly Institutes
 
-Histories of traditional priestly institutes.
-
 | Publication | ChatGPT | Claude | Coverage |
 | --- | --- | --- | --- |
 | TPI-01 · **The Society of Saint Pius X: Foundation, Conflict, and Two Episcopal Ruptures** | [PDF](../pdf/gpt/history/traditional-priestly-institutes/01-sspx.pdf) | [PDF](../pdf/claude/history/traditional-priestly-institutes/01-sspx.pdf) · [Read](../web/claude/history/traditional-priestly-institutes/01-sspx.html) | Foundation, conflicts of 1975–1976, ruptures of 1988 and 2026, Roman dialogue, faculties, and pending recourse through 16 July 2026. |

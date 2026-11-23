@@ -7,6 +7,19 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-11-23.
 
+## Postconciliar Advent and the seasonal catalogs, 2026-11-23
+
+<!-- promised-deliverable: postconciliar-advent-and-seasonal-catalogs -->
+
+The [comparison of the Roman books](src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/research/scope.md)
+finds distinct liturgical handbooks necessary. The earlier decision to show
+one civil year's dates in the 1962 seasonal table is superseded. Both
+catalogs use recurring season boundaries. The two editions give a reader
+the readings and prayers of the particular Mass and Office. The postconciliar
+volume was checked against seven annual U.S. calendars and read independently
+in its web edition. Its native print export is 19 pages. The catalog and
+typography checks covered 34 public routes at three viewport widths.
+
 ## Pages build and print verification, 23 November 2026
 
 <!-- promised-deliverable: pages-performance-main-2026-11-23 -->
