@@ -173,3 +173,13 @@ The [three-document profile](../../../guidance/liturgy/propers-three-documents.m
 now asks writers and cold readers to make these checks before completion.
 The examples here preserve what happened in the trial. Future studies can
 use the guidance without adding a before-and-after exercise to every audit.
+
+### Web reader
+
+The first web reviewer compared the converted article with the TeX and
+sources, then opened it in Chromium at 390 and 1280 pixels. Both arguments,
+both tables and the 37 footnotes and return links survived conversion. Three
+references to an unnumbered appendix read “Appendix 7” in the reader and
+gave an empty number in the typeset study. The review sent the defect back
+to the study. A separate advisory identified the loss of italic type after
+paragraph breaks in the Latin Introit and Preface dialogue.
