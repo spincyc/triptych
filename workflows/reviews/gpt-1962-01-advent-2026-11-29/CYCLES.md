@@ -193,3 +193,12 @@ exhortation and whether to name the detailed research files in the
 appendix. The Missal introduces the entire discourse as addressed to the
 disciples. The audit and the collation are under `research/scope.md` and
 `propers/verified.md` in the source edition.
+
+The renewed concise pass carried the corrected traveler and runners into
+the comparison and distinguished Augustine's account of the Alleluia from
+the study's application. Its 3,906 words still fill ten pages. The cold
+reader verified both arguments and the opening pages. The final spoken
+pass identifies Gregory's survivors and the psalm after the Epistle for
+listeners hearing them named once. Its cold reader accepted the 1,172-word
+homily after checking the readings, prayers and commentary. At 105–115
+words per minute the estimated delivery is 10.2–11.2 minutes.

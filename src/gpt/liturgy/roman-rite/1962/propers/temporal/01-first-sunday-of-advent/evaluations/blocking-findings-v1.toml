@@ -49,24 +49,24 @@ provider = "gpt"
 run_id = "2eec8ccb8f69387e"
 workflow = "proper-study"
 workflow_version = 19
-stage = "synthesis-review"
+stage = "homily-review"
 iteration = 2
 disposition = "PASS"
 standing = 1
 accepted_count = 0
-advisory_count = 5
+advisory_count = 6
 observation_count = 0
 
 [[stages]]
 stage = "homily-review"
-iteration = 1
+iteration = 2
 disposition = "PASS"
 run_id = "2eec8ccb8f69387e"
 workflow = "proper-study"
 workflow_version = 19
 standing = 0
 accepted_count = 0
-advisory_count = 0
+advisory_count = 1
 observation_count = 0
 
 [[stages]]
@@ -125,6 +125,14 @@ location = "sections/00-opening.tex:25, sections/20-commentary.tex:29 (note 9) a
 problem = "Each passage gives “Appendix 7” as the locator for Scriptural Date and Location. Following the link reaches that section, but neither its heading nor the contents assigns it an appendix number. Two references give only the spurious number. The same three numeric references in the canonical TeX point to an unnumbered heading, and the compiled PDF prints an empty locator each time."
 required_result = "Refer to the section by its printed title, Scriptural Date and Location, in each of the three places. Preserve a working section link in the reader and verify that the visible wording is complete in both the reader and the typeset study."
 repair_target = "study"
+
+[[advisories]]
+stage = "homily-review"
+id = "HOM-GRADUAL-ORAL-CUE"
+severity = "advisory"
+location = "sections/homily/10-body.tex:15, the two sentences introducing the omitted petition"
+problem = "On first hearing, “In the psalm we sang after the Epistle there is a line” sounds as though the assembly actually sang the plea for the unjust to be put to shame. The next sentence clears this up, after the listener has had to revise that impression."
+required_result = "Identify the change on first mention, for example, “After the Epistle we sang only part of the psalm. We passed over the line asking that those who act unjustly be put to shame.” The next sentence can then give the words the assembly did sing."
 
 [[advisories]]
 stage = "research-review"
