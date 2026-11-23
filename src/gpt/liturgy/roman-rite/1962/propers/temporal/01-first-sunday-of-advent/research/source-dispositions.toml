@@ -1,0 +1,605 @@
+schema = 1
+contract = "proper-study-source-dispositions-v1"
+document = "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"
+numbering = "vulgate"
+
+[[sources]]
+id = "vatican-1962-advent"
+binding_index = 1
+binding_sha256 = "b67b95f1d0928e00d024b1da742d6d54ff95f43e6707d35eb617a791c30e1292"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+source_fingerprint = "sha256:489586789f24da05ee18ba23686f134dd71e18c7a91bd4b22190fa922d10dd76"
+locus = "Tempus Adventus pp. [1]–3, nos. 1–10, PDF 82–84; p. 293/no.1082, PDF374; RG 109,111(a) PDF16; Saturninus at PDF509"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The source establishes the appointed liturgical or biblical wording and its bounds."
+
+[[sources]]
+id = "pustet-1862-advent"
+binding_index = 2
+binding_sha256 = "f08c571ece49ddd0ec0de0b33e3a56fbaf3453a9e9cf1b7099a7b394e0d4ab91"
+source_id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3"
+source_fingerprint = "sha256:53cf8c027d0647a872a62d51ef6884807380f4b5050ae98f65506b3578ce4fd8"
+locus = "Printed 1–3, PDF 87–89; pp.251–252, PDF337–338"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The source establishes the appointed liturgical or biblical wording and its bounds."
+
+[[sources]]
+id = "lasance-1945-advent"
+binding_index = 3
+binding_sha256 = "ec93cb95d02ddf285a4adfc174c298e9d122f32d04ec2943360b9e63b845faf7"
+source_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+source_fingerprint = "sha256:376ca4e5db5bd3291c6c11b085c73dafdd1a09a8a7af523652257183cc25d645"
+locus = "Printed pp.103–106 and 772–774; PDF104–107,770,772–773"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The source establishes the appointed liturgical or biblical wording and its bounds."
+
+[[sources]]
+id = "aas-1912-responses"
+binding_index = 4
+binding_sha256 = "73cd488794e887880cd4242543f2381ba5cc824fa945442bfc87a92e5927ada3"
+source_id = "artifact.holy-see.acta-apostolicae-sedis.volume-4-1912.internet-archive-vatican-ocr-pdf-e071e825"
+source_fingerprint = "sha256:46757a7e52dba390f8e3054e0da5c2896688d183110222ffb1102f4dcf687721"
+locus = "AAS 4 (1912), 464, responsa VI–VII"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "This use establishes historical chronology or attribution. It supplies no verse commentary for the chain."
+
+[[sources]]
+id = "ambrose-fig-tree"
+binding_index = 5
+binding_sha256 = "5d304cee428c457711c18142af01cbe4f4809a8b8992e0dc0f0c2e46d908647e"
+source_id = "artifact.ambrose.expositio-evangelii-secundum-lucam.latin-migne-corpus-corporum-web-2026-07-25.wikisource-liber-x-2868e872"
+source_fingerprint = "sha256:fffe23583795acf9fcd2b8c2b600681c78c7c72d5b2833501eedb4edc5248b8a"
+locus = "Expositio in Lucam X.44–45, wikitext lines 45–47"
+relationship = "direct-exegesis"
+disposition = "admitted"
+reason = "The complete selected lemma units were checked against the exact controller. Their canonical extent and translation or original-language voice are recorded with the fragments."
+passage_ids = ["passage.ambrose.expositio-evangelii-secundum-lucam.latin-migne-corpus-corporum-web-2026-07-25.luke-21-29"]
+
+[[sources]]
+id = "ambrose-clouds"
+binding_index = 5
+binding_sha256 = "5d304cee428c457711c18142af01cbe4f4809a8b8992e0dc0f0c2e46d908647e"
+source_id = "artifact.ambrose.expositio-evangelii-secundum-lucam.latin-migne-corpus-corporum-web-2026-07-25.wikisource-liber-x-2868e872"
+source_fingerprint = "sha256:fffe23583795acf9fcd2b8c2b600681c78c7c72d5b2833501eedb4edc5248b8a"
+locus = "X.39–43, raw lines 42–44"
+relationship = "direct-exegesis"
+disposition = "deferred"
+reason = "The raw Latin has meveantur and printed folio digits within the sentences. The cloud paragraph needs a print collation before a portable text can be supplied. The succeeding fig reading has a separately checked record."
+scripture_extents = [{ token = "Luke", first_chapter = 21, first_verse = 26, last_chapter = 21, last_verse = 27 }]
+missing_criteria = ["collate-cloud-paragraph-against-identified-printing"]
+
+[[sources]]
+id = "bede-luke-redemption-generation"
+binding_index = 6
+binding_sha256 = "9bbc4996722db8c348bf253df2eba0a85c4d34853f306e2c6af43a41eb071084"
+source_id = "artifact.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.wikisource-in-lucam-116db0ca"
+source_fingerprint = "sha256:a8214a57556d9412ed34e019cedb24cfaeaa8a7160276453c7b23875c0214805"
+locus = "In Lucam VI, PL 92, 589–591, Lk 21:28–33"
+relationship = "direct-exegesis"
+disposition = "admitted"
+reason = "The complete selected lemma units were checked against the exact controller. Their canonical extent and translation or original-language voice are recorded with the fragments."
+passage_ids = ["passage.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.luke-21-28", "passage.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.luke-21-29", "passage.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.luke-21-32", "passage.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.luke-21-33"]
+
+[[sources]]
+id = "cyril-luke-sermon-transition"
+binding_index = 7
+binding_sha256 = "5706e6dca480b39ceb8a415f90fdafabab826d80a79409974a162b35400f83f6"
+source_id = "artifact.cyril-of-alexandria.commentary-on-luke.english-payne-smith-pearse-web-2026-09-05.cyril-on-luke-13-sermons-135-145-9939da72"
+source_fingerprint = "sha256:6f29963409a110759436e50e8ea28d6f47f95be2e0e594f96d9b9be244ff9210"
+locus = "Payne Smith, Sermons CXXXIX and CXL, headings and intervening junction"
+relationship = "direct-exegesis"
+disposition = "rejected"
+reason = "These adjoining sermonic lections skip Luke 21:25–33. Their headings document the negative check; no exposition of the appointed fig-tree saying occurs at this transition."
+scripture_extents = [{ token = "Luke", first_chapter = 21, first_verse = 5, last_chapter = 21, last_verse = 13 }, { token = "Luke", first_chapter = 21, first_verse = 37, last_chapter = 21, last_verse = 38 }, { token = "Luke", first_chapter = 22, first_verse = 1, last_chapter = 22, last_verse = 6 }]
+missing_criteria = ["appointed-exposition-absent-at-checked-locus"]
+
+[[sources]]
+id = "pustet-ocr-advent"
+binding_index = 8
+binding_sha256 = "67f98fb02596461e0e19a6d44e94686b96417d5c1be7af886575aaf1f22804a1"
+source_id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+source_fingerprint = "sha256:efd4426beabe5385be4e5df4542255c488fe460dee069ab999231255702d5b0f"
+locus = "Physical lines 13185–13515 and 40815–40884"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The source establishes the appointed liturgical or biblical wording and its bounds."
+
+[[sources]]
+id = "pustet-advent-orations"
+binding_index = 9
+binding_sha256 = "279cb631441066f6dc78b9b1fc7a2f1a27b69544f50ba90b7abe5528277e8744"
+source_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.advent-1-orations"
+source_fingerprint = "sha256:dd07a8e6f22b56983b3ba7cd2a65a52bb0b07b57fe2479787923f71d2f4a1489"
+locus = "Collect at printed p. 1; text-layer lines 13230-13240 (heading 'Oremus. Oratio.' at 13230, body 13231-13240); Secret at printed p. 3; text-layer lines 13400-13406 (heading 'Secreta.' at 13400, body 13402-13406); Postcommunion at printed p. 3; text-layer lines 13446-13453 (heading 'Postcommunio.' at 13446, body 13448-13453)"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The source establishes the appointed liturgical or biblical wording and its bounds."
+
+[[sources]]
+id = "mame-advent-epistle"
+binding_index = 10
+binding_sha256 = "8af557c89eeec8fdfa88ae63f9579f76562fed5d28a5a83218d74acf4a390fc8"
+source_id = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.primary-advent-1-epistle-checked-2026-10-20"
+source_fingerprint = "sha256:68f3657d1aedc7ea98a8f2c3b84663d15dbc51713977ff456b6a58e64fdc1e87"
+locus = "Mame 1922 source locus: {\"artifact_page\": 116, \"column\": \"left\", \"dated_appointment_context\": \"Previous Mame AP115 printed1 visibly opens Dominica I Adventus; AP116 running title repeats Dominica I Adventus. The Epistle is directly printed under this dated Mass.\", \"following_node\": \"Graduale. Ps. 24, 3 et 4.\", \"heading\": \"Léctio Epístolæ beáti Pauli Apóstoli ad Romános\", \"printed_page\": \"2\", \"printed_reference\": \"Rom. 13, 11-14\"}. Retained historical derivative physical lines [145, 150]."
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The source establishes the appointed liturgical or biblical wording and its bounds."
+
+[[sources]]
+id = "lasance-collect-publication"
+binding_index = 11
+binding_sha256 = "b5a47cedd4fd80334a4366cbce17cc9daa3d79d97d06ef40f46f2b77ecaa738c"
+source_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.publish-advent-1--main--collect--all--1"
+source_fingerprint = "sha256:d1992438db68e71cef52684ab5aff515f177835234827d118af26e791f63d35b"
+locus = "advent-1/collect"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The source establishes the appointed liturgical or biblical wording and its bounds."
+
+[[sources]]
+id = "lasance-collect-collation"
+binding_index = 12
+binding_sha256 = "42900868966eba499093f81b1df1f0d00e7a83daa94b49a30fee52a4d2c39afe"
+source_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.verify-advent-1--main--collect--all--1"
+source_fingerprint = "sha256:26dccfa67678f88483a84114136a9fe2635826811eabbe6735ee3c6ab554c7d9"
+locus = "advent-1/collect"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The source establishes the appointed liturgical or biblical wording and its bounds."
+
+[[sources]]
+id = "lasance-secret-publication"
+binding_index = 13
+binding_sha256 = "dc7da125039a039fc25c96638d90f1c33b26c08cb257e3146c80a5b01c8f48f4"
+source_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.publish-advent-1--main--secret--all--1"
+source_fingerprint = "sha256:1c8845eacfc79b98288b353489788f1141b843dbe10a9ed8439f3915f8e5fe41"
+locus = "advent-1/secret"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The source establishes the appointed liturgical or biblical wording and its bounds."
+
+[[sources]]
+id = "lasance-secret-collation"
+binding_index = 14
+binding_sha256 = "afd83200971f55186085d7500e8d2879c171eed75ce6036018bf493bd72d479e"
+source_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.verify-advent-1--main--secret--all--1"
+source_fingerprint = "sha256:713cc8011a5b9e917dc526587cf80f8085388ac65b43e851922d066e43033733"
+locus = "advent-1/secret"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The source establishes the appointed liturgical or biblical wording and its bounds."
+
+[[sources]]
+id = "lasance-postcommunion-publication"
+binding_index = 15
+binding_sha256 = "b25974916064fa446db0b62e6d1bf7a0d8495773f769e1dc526259e80764279a"
+source_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.publish-advent-1--main--postcommunion--all--1"
+source_fingerprint = "sha256:68994856684d6094f44e2ec35b73ac13099f4a8429a2701a94fab14120e46571"
+locus = "advent-1/postcommunion"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The source establishes the appointed liturgical or biblical wording and its bounds."
+
+[[sources]]
+id = "lasance-postcommunion-collation"
+binding_index = 16
+binding_sha256 = "036b9e3fdbe4397da36646ba430c9f1d036e65706c240b5eeea029288801055c"
+source_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.verify-advent-1--main--postcommunion--all--1"
+source_fingerprint = "sha256:e71875e54f71a96ce800eee264e536217c06e019f4f6e6aa0a14afaa122585d5"
+locus = "advent-1/postcommunion"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The source establishes the appointed liturgical or biblical wording and its bounds."
+
+[[sources]]
+id = "lasance-trinity-preface"
+binding_index = 17
+binding_sha256 = "75371c6991eff7252f654ef609d3a7dd77bbfdc7394b0dabedad80941d710626"
+source_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-complete-a-trinitate"
+source_fingerprint = "sha256:77a1ad4d1f2bc3794150553e6484910871cbf310165093197ebefc89daff1192"
+locus = "Complete historical English Preface trinitate, printed pp.773–774; bounded source-image proof"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The source establishes the appointed liturgical or biblical wording and its bounds."
+
+[[sources]]
+id = "douay-psalter"
+binding_index = 18
+binding_sha256 = "81d6787897ea32b3b216134de59a00975504590cf8df7c59e22d197421d1f223"
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-21-psalms-578f023d"
+source_fingerprint = "sha256:04b581584ed78f861cef34251b2da71ddc94429cd7228ea8cc6585a2aa4a5a41"
+locus = "Ps.24.1-22; Ps.47.1-15; Ps.79.1-20; Ps.84.1-14"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The chapter text controls scriptural context and wording; it is Scripture."
+
+[[sources]]
+id = "douay-romans"
+binding_index = 19
+binding_sha256 = "6251f894d9be2c969bdbec6182e4f2bc70be2f8f0824ba0e883b6fc0a4fb515f"
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-52-romans-4d45c497"
+source_fingerprint = "sha256:1b6036a02c7bcc743d143f4f4e17bb6927cb1f4d8dfff9115aeb3250cf287c64"
+locus = "Rom.13.1-14"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The chapter text controls scriptural context and wording; it is Scripture."
+
+[[sources]]
+id = "douay-luke"
+binding_index = 20
+binding_sha256 = "676daeec289dcb334e88f1e388dd61b2effc517df91ba529449b8216be6b527c"
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-49-luke-d8269c33"
+source_fingerprint = "sha256:b6acab91674d3bbe04726da30c835175a133104d3db53fcf3f8e45b1d5b4ba6e"
+locus = "Luke.21.1-38"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The chapter text controls scriptural context and wording; it is Scripture."
+
+[[sources]]
+id = "clementine-psalter"
+binding_index = 21
+binding_sha256 = "2db9d450684b56b01f8a99c0b2c2261134dfe6ba020074a48e52d94079aed207"
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-21-psalms-d20e21f8"
+source_fingerprint = "sha256:1481d71b5253d2bf9644408f82c40a7cd90fce2191d6586d9fa24b0f62d49130"
+locus = "Ps.24.1-4; Ps.47.10; Ps.79.3; Ps.84.1-2; Ps.84.8; Ps.84.13"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The chapter text controls scriptural context and wording; it is Scripture."
+
+[[sources]]
+id = "augustine-first-psalm-appointments"
+binding_index = 22
+binding_sha256 = "29ea84bf4c1c4dfed3c7dae2d425a44f0e70a5d6f6fe13d8a353c511cbb32b7d"
+source_id = "artifact.augustine.enarrationes-in-psalmos.english-npnf8-ccel-web-2026-09-05.ccel-npnf108-text-d6841950"
+source_fingerprint = "sha256:0a8fd6a45c963c52d5c8d09497820cfb88e5bf59d3a86a8a573856782e822f37"
+locus = "Enarrationes on Vulgate Psalm 24 §§1–5, NPNF English XXV"
+relationship = "direct-exegesis"
+disposition = "admitted"
+reason = "The complete selected lemma units were checked against the exact controller. Their canonical extent and translation or original-language voice are recorded with the fragments."
+passage_ids = ["passage.augustine.enarrationes-in-psalmos.1888-english-npnf-anonymous-first-thirty.24.1-2", "passage.augustine.enarrationes-in-psalmos.1888-english-npnf-anonymous-first-thirty.24.3", "passage.augustine.enarrationes-in-psalmos.1888-english-npnf-anonymous-first-thirty.24.4", "passage.augustine.enarrationes-in-psalmos.1888-english-npnf-anonymous-first-thirty.24.5"]
+
+[[sources]]
+id = "augustine-ccel-psalm-47"
+binding_index = 22
+binding_sha256 = "29ea84bf4c1c4dfed3c7dae2d425a44f0e70a5d6f6fe13d8a353c511cbb32b7d"
+source_id = "artifact.augustine.enarrationes-in-psalmos.english-npnf8-ccel-web-2026-09-05.ccel-npnf108-text-d6841950"
+source_fingerprint = "sha256:0a8fd6a45c963c52d5c8d09497820cfb88e5bf59d3a86a8a573856782e822f37"
+locus = "Enarrationes on Vulgate Psalm 47, sections 8–9; historical NPNF I.8"
+relationship = "analogue"
+disposition = "deferred"
+reason = "The full CCEL delivery is held. Its Oxford front matter, lines 326–343, assigns different parts to an anonymous translator, Tweed, Scratton and Wilkins; some boundaries extend into adjoining volumes. The anonymous first thirty have been separately resolved. The specific Oxford volume and translator for this later psalm need collation."
+scripture_extents = [{ token = "Ps", first_chapter = 47, first_verse = 10, last_chapter = 47, last_verse = 11 }]
+missing_criteria = ["establish-section-specific-historical-translator"]
+
+[[sources]]
+id = "augustine-ccel-psalm-79"
+binding_index = 22
+binding_sha256 = "29ea84bf4c1c4dfed3c7dae2d425a44f0e70a5d6f6fe13d8a353c511cbb32b7d"
+source_id = "artifact.augustine.enarrationes-in-psalmos.english-npnf8-ccel-web-2026-09-05.ccel-npnf108-text-d6841950"
+source_fingerprint = "sha256:0a8fd6a45c963c52d5c8d09497820cfb88e5bf59d3a86a8a573856782e822f37"
+locus = "Enarrationes on Vulgate Psalm 79, sections 2–3; historical NPNF I.8"
+relationship = "analogue"
+disposition = "deferred"
+reason = "The full CCEL delivery is held. Its Oxford front matter, lines 326–343, assigns different parts to an anonymous translator, Tweed, Scratton and Wilkins; some boundaries extend into adjoining volumes. The anonymous first thirty have been separately resolved. The specific Oxford volume and translator for this later psalm need collation."
+scripture_extents = [{ token = "Ps", first_chapter = 79, first_verse = 2, last_chapter = 79, last_verse = 4 }]
+missing_criteria = ["establish-section-specific-historical-translator"]
+
+[[sources]]
+id = "augustine-ccel-psalm-84"
+binding_index = 22
+binding_sha256 = "29ea84bf4c1c4dfed3c7dae2d425a44f0e70a5d6f6fe13d8a353c511cbb32b7d"
+source_id = "artifact.augustine.enarrationes-in-psalmos.english-npnf8-ccel-web-2026-09-05.ccel-npnf108-text-d6841950"
+source_fingerprint = "sha256:0a8fd6a45c963c52d5c8d09497820cfb88e5bf59d3a86a8a573856782e822f37"
+locus = "Enarrationes on Vulgate Psalm 84, sections 2–3, 6, 12–13; historical NPNF I.8"
+relationship = "direct-exegesis"
+disposition = "deferred"
+reason = "The full CCEL delivery is held. Its Oxford front matter, lines 326–343, assigns different parts to an anonymous translator, Tweed, Scratton and Wilkins; some boundaries extend into adjoining volumes. The anonymous first thirty have been separately resolved. The specific Oxford volume and translator for this later psalm need collation."
+scripture_extents = [{ token = "Ps", first_chapter = 84, first_verse = 2, last_chapter = 84, last_verse = 5 }, { token = "Ps", first_chapter = 84, first_verse = 7, last_chapter = 84, last_verse = 8 }, { token = "Ps", first_chapter = 84, first_verse = 13, last_chapter = 84, last_verse = 14 }]
+missing_criteria = ["establish-section-specific-historical-translator"]
+
+[[sources]]
+id = "chrysostom-awake-and-put-on-christ"
+binding_index = 23
+binding_sha256 = "c5ed70265610b395d460d03225543ddcbd378c776b6d65a3ab93caa221f44ebe"
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-11.ccel-web-2026-09-17.ccel-text-8bdb50c6"
+source_fingerprint = "sha256:7d98baa780dd6a78202b5e9f7bd92f641eae103c1a9e2deb89f324578bc47cab"
+locus = "Romans Homily XXIV, the sequence of lemmata Rom 13:11–14a"
+relationship = "direct-exegesis"
+disposition = "admitted"
+reason = "The complete selected lemma units were checked against the exact controller. Their canonical extent and translation or original-language voice are recorded with the fragments."
+passage_ids = ["passage.john-chrysostom.homilies-on-romans.ccel-web-2026-09-17.24.rom-13.11", "passage.john-chrysostom.homilies-on-romans.ccel-web-2026-09-17.24.rom-13.12", "passage.john-chrysostom.homilies-on-romans.ccel-web-2026-09-17.24.rom-13.13", "passage.john-chrysostom.homilies-on-romans.ccel-web-2026-09-17.24.rom-13.14"]
+
+[[sources]]
+id = "gregory-signs-of-the-end"
+binding_index = 24
+binding_sha256 = "4e3738db36673e53deb4105168f4a35a28638b0920d112a5095cd6d07fd2f1e3"
+source_id = "artifact.gregory-the-great.homiliae-in-evangelia.wikisource-web-2026-09-17.complete-extracted-text-dc25dd69"
+source_fingerprint = "sha256:dd03fd6ff09944af5ba01e741418ae3278e9bc68a08acb4d0cd4538129984eea"
+locus = "Homiliae in Evangelia I, Homilia I §§1–5"
+relationship = "direct-exegesis"
+disposition = "admitted"
+reason = "The complete selected lemma units were checked against the exact controller. Their canonical extent and translation or original-language voice are recorded with the fragments."
+passage_ids = ["passage.gregory-the-great.homiliae-in-evangelia.wikisource-web-2026-09-17.1.1-5-luke-21"]
+
+[[sources]]
+id = "augustine-divine-missions"
+binding_index = 25
+binding_sha256 = "b80661f026fcaef66c540625cf6aa5ebdfb2a28d33ec684517c504ef8b28ede0"
+source_id = "artifact.augustine.de-trinitate.1887-haddan-english-web-2026-09-29.complete-page-text-07b2f4f0"
+source_fingerprint = "sha256:fdaf226e939cedaac6a306b7a55acd6578946135ecf5251e8e0028176e237aaf"
+locus = "De Trinitate III, preface §3; Haddan text, line 13"
+relationship = "doctrinal-illumination"
+disposition = "deferred"
+reason = "The chapter recapitulates a discussion of visible appearances and sending before the incarnation. Its immediate subject is a doctrinal question about divine missions, and the paragraph refers to several scriptural narratives without identifying a single continuous pericope for this argument."
+scripture_extents = []
+missing_criteria = ["scripture-extent"]
+
+[[sources]]
+id = "bellarmine-earths-fruit-web"
+binding_index = 26
+binding_sha256 = "36b400bffc10b4d0c1da5dc20cae84225b669dcdf015b077725700795f7cb1a8"
+source_id = "artifact.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.historical-text-357551e1"
+source_fingerprint = "sha256:85b019a495120f1320c91743bdd127eef0ccb54126e0247bcb0298f9fb7c3344"
+locus = "Explanatio in Psalmos, Ps 84, English exposition 12, Vulgate v.13"
+relationship = "direct-exegesis"
+disposition = "admitted"
+reason = "The complete selected lemma units were checked against the exact controller. Their canonical extent and translation or original-language voice are recorded with the fragments."
+passage_ids = ["passage.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.psalm-84-verse-13"]
+
+[[sources]]
+id = "bellarmine-psalm-24-remaining"
+binding_index = 26
+binding_sha256 = "36b400bffc10b4d0c1da5dc20cae84225b669dcdf015b077725700795f7cb1a8"
+source_id = "artifact.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.historical-text-357551e1"
+source_fingerprint = "sha256:85b019a495120f1320c91743bdd127eef0ccb54126e0247bcb0298f9fb7c3344"
+locus = "Explanatio in Psalmos, Vulgate Psalm 24, vv.1–4"
+relationship = "direct-exegesis"
+disposition = "deferred"
+reason = "The historical web transcription and its print show a significant modal-verb difference at Ps 84; the derivative explicitly assigns quotation control to the scan. Compare this additional locus word by word against its printed columns before admitting it as a historical quotation."
+scripture_extents = [{ token = "Ps", first_chapter = 24, first_verse = 1, last_chapter = 24, last_verse = 4 }]
+missing_criteria = ["collate-full-paragraph-with-duffy-1866-page"]
+
+[[sources]]
+id = "bellarmine-psalm-47-remaining"
+binding_index = 26
+binding_sha256 = "36b400bffc10b4d0c1da5dc20cae84225b669dcdf015b077725700795f7cb1a8"
+source_id = "artifact.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.historical-text-357551e1"
+source_fingerprint = "sha256:85b019a495120f1320c91743bdd127eef0ccb54126e0247bcb0298f9fb7c3344"
+locus = "Explanatio in Psalmos, Vulgate Psalm 47, English explanatory §9, received mercy"
+relationship = "analogue"
+disposition = "deferred"
+reason = "The historical web transcription and its print show a significant modal-verb difference at Ps 84; the derivative explicitly assigns quotation control to the scan. Compare this additional locus word by word against its printed columns before admitting it as a historical quotation."
+scripture_extents = [{ token = "Ps", first_chapter = 47, first_verse = 10, last_chapter = 47, last_verse = 10 }]
+missing_criteria = ["collate-full-paragraph-with-duffy-1866-page"]
+
+[[sources]]
+id = "bellarmine-psalm-79-remaining"
+binding_index = 26
+binding_sha256 = "36b400bffc10b4d0c1da5dc20cae84225b669dcdf015b077725700795f7cb1a8"
+source_id = "artifact.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.historical-text-357551e1"
+source_fingerprint = "sha256:85b019a495120f1320c91743bdd127eef0ccb54126e0247bcb0298f9fb7c3344"
+locus = "Explanatio in Psalmos, Vulgate Psalm 79, opening explanations §§1–3"
+relationship = "analogue"
+disposition = "deferred"
+reason = "The historical web transcription and its print show a significant modal-verb difference at Ps 84; the derivative explicitly assigns quotation control to the scan. Compare this additional locus word by word against its printed columns before admitting it as a historical quotation."
+scripture_extents = [{ token = "Ps", first_chapter = 79, first_verse = 2, last_chapter = 79, last_verse = 4 }]
+missing_criteria = ["collate-full-paragraph-with-duffy-1866-page"]
+
+[[sources]]
+id = "bellarmine-psalm-84-remaining"
+binding_index = 26
+binding_sha256 = "36b400bffc10b4d0c1da5dc20cae84225b669dcdf015b077725700795f7cb1a8"
+source_id = "artifact.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.historical-text-357551e1"
+source_fingerprint = "sha256:85b019a495120f1320c91743bdd127eef0ccb54126e0247bcb0298f9fb7c3344"
+locus = "Explanatio in Psalmos, Vulgate Psalm 84, English explanatory §7, mercy and salvation"
+relationship = "direct-exegesis"
+disposition = "deferred"
+reason = "The historical web transcription and its print show a significant modal-verb difference at Ps 84; the derivative explicitly assigns quotation control to the scan. Compare this additional locus word by word against its printed columns before admitting it as a historical quotation."
+scripture_extents = [{ token = "Ps", first_chapter = 84, first_verse = 8, last_chapter = 84, last_verse = 8 }]
+missing_criteria = ["collate-full-paragraph-with-duffy-1866-page"]
+
+[[sources]]
+id = "gueranger-shepherd-page-137"
+binding_index = 27
+binding_sha256 = "1dd44f20b301412a80a28665d8636d5400ab6b0f1bf4550be2770e0270db290d"
+source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1870-volume-1.ia-pdf-b1dac6bc"
+source_fingerprint = "sha256:da20f977d1d327a787b47a811a4913a4bdaa07e3a70a45a178d74eadf2add4bc"
+locus = "Advent, First Sunday, printed pp.134,137–138; the Communion exposition follows its own lemma"
+relationship = "liturgical-commentary"
+disposition = "deferred"
+reason = "The commentary applies Scripture at Mass. The series work record names Guéranger and continuators with French and English as work languages; the present volume is his French composed text in Shepherd’s English translation. Before presenting the excerpt the Catena needs a truthful constituent voice and author for this volume. The OCR also contains two-column overlaps."
+scripture_extents = [{ token = "Ps", first_chapter = 84, first_verse = 13, last_chapter = 84, last_verse = 13 }]
+missing_criteria = ["resolve-volume-author-and-shepherd-translation-voice"]
+
+[[sources]]
+id = "gueranger-ocr-first-sunday"
+binding_index = 28
+binding_sha256 = "e3bdc33e1eec648e006a5e1863aba7560c0eb3ca9dcbeedbeedd721273b070cf"
+source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1870-volume-1.ia-djvu-text-45b59caa"
+source_fingerprint = "sha256:1d8034d8c49335cfa0b95c6473da3bab76378c97bf83cf22648ab1410635864c"
+locus = "Advent, First Sunday, pp.127,130–137; Epistle, Gospel and Communion expositions"
+relationship = "liturgical-commentary"
+disposition = "deferred"
+reason = "The commentary applies Scripture at Mass. The series work record names Guéranger and continuators with French and English as work languages; the present volume is his French composed text in Shepherd’s English translation. Before presenting the excerpt the Catena needs a truthful constituent voice and author for this volume. The OCR also contains two-column overlaps."
+scripture_extents = [{ token = "Rom", first_chapter = 13, first_verse = 11, last_chapter = 13, last_verse = 14 }, { token = "Luke", first_chapter = 21, first_verse = 25, last_chapter = 21, last_verse = 33 }, { token = "Ps", first_chapter = 84, first_verse = 13, last_chapter = 84, last_verse = 13 }]
+missing_criteria = ["resolve-volume-author-and-shepherd-translation-voice", "collate-ocr-to-complete-print-paragraph"]
+
+[[sources]]
+id = "encyclopedia-david"
+binding_index = 29
+binding_sha256 = "cd0b36df053ce1e75c0693db7f6e0776424a0727911b7e6fea80aacfe6987d1a"
+source_id = "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3-article-text"
+source_fingerprint = "sha256:f6d97140146a6cb3adcbb583db08c82f18a5f42f59b85e884f8feabb8380640d"
+locus = "Corbett, David, King, opening chronology"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "This use establishes historical chronology or attribution. It supplies no verse commentary for the chain."
+
+[[sources]]
+id = "encyclopedia-paul"
+binding_index = 30
+binding_sha256 = "8437b3dac36e39b146917d9c7f14e9cbea57b09ef1e18fadfe909bf50b376514"
+source_id = "artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8-article-text"
+source_fingerprint = "sha256:83263e9b6b864dbc2776538285f276ac7740d8e39098d077148ce421ca998f4f"
+locus = "Paul, chronology of apostolate and composition of Romans"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "This use establishes historical chronology or attribution. It supplies no verse commentary for the chain."
+
+[[sources]]
+id = "encyclopedia-psalms"
+binding_index = 31
+binding_sha256 = "b0eaf258975bbfbc86fa5901fc3a3527a65190a5af2872d4d7a8fcb0cc65e98b"
+source_id = "artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12533a-cb9d9a25-article-text"
+source_fingerprint = "sha256:fb390d86dc25dc07c596f9fc077086505507490f09a054b5a5c25ff17ab4c7f7"
+locus = "Psalms, Korahite authorship/period"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "This use establishes historical chronology or attribution. It supplies no verse commentary for the chain."
+
+[[sources]]
+id = "encyclopedia-synoptics"
+binding_index = 32
+binding_sha256 = "0e9a3be0a3dabf728262d273c33a00b0b96db207dcc6caf972e2e65d9cd84f37"
+source_id = "artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c-article-text"
+source_fingerprint = "sha256:0a5a9e3b92db7d3a9953343ff8b1a04ec7baa2a01adbf31eadc28dc4e8f410d4"
+locus = "Synoptics, dating the Third Gospel"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "This use establishes historical chronology or attribution. It supplies no verse commentary for the chain."
+
+[[sources]]
+id = "encyclopedia-epistles"
+binding_index = 33
+binding_sha256 = "0b0ec9c746e3a47226606deaf84a61239e04c5a7ca160b28d8a043596e6b86f5"
+source_id = "artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05485a-66d722ae-article-text"
+source_fingerprint = "sha256:1f1fff0c74949e159b7c41798a891333e64322a070bdbc6ded225800858f1456"
+locus = "Epistles, dating Romans"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "This use establishes historical chronology or attribution. It supplies no verse commentary for the chain."
+
+[[sources]]
+id = "biblical-commission-responses"
+binding_index = 34
+binding_sha256 = "7493bdaca6b624aa3231d20df4e89a6fcc94ccf5e77566c502cd7d782c240025"
+source_id = "passage.pontifical-biblical-commission.de-auctore-tempore-et-veritate-evangeliorum-marci-et-lucae.latin-aas-4-1912.responsa-i-ix"
+source_fingerprint = "sha256:bfd0d8ccb0b19b093c81145ef7a767e5ceca93476dff495d146e0d8c0672631f"
+locus = "responsa-i-ix"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "This use establishes historical chronology or attribution. It supplies no verse commentary for the chain."
+
+[[sources]]
+id = "fssp-november-ordo"
+binding_index = 35
+binding_sha256 = "af1471b4e41cefeef4759356bf707ecec2e0b71931c1a0773d18ce0901d0a801"
+source_id = "artifact.fssp-france.ordo-du-mois.2026-11-22-web.ordo-2404c50f"
+source_fingerprint = "sha256:49f53c4ba80e2c8846cd999f70e4d97f21fe26e7b9b0d2a1bd032e30c93989c6"
+locus = "November 2026; Dimanche 29 novembre between 28 and 30 November"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "This institutional French calendar establishes the dated observance within its jurisdiction."
+
+[[sources]]
+id = "icrsp-november-ordo"
+binding_index = 36
+binding_sha256 = "98716bab346f3783ed31cde5b1fcb35d23132664870ee8c08633ca3a38acaf67"
+source_id = "artifact.icrsp-france.ordo.2026-11-22-web.ordo-973580cb"
+source_fingerprint = "sha256:952915df8799fa6c04f8c9b0ccfd3fdcd3b3b940486d55497459800dbb32cf78"
+locus = "j2026-11-29, heading and Mass indicators"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "This institutional French calendar establishes the dated observance within its jurisdiction."
+
+[[sources]]
+id = "augustine-new-advent-psalm-25"
+binding_index = 37
+binding_sha256 = "2ef83913bcb277e0d2fd00d06d3ae46b1e8b5f9ace2ed72f5f51980770c54b93"
+source_id = "artifact.augustine.enarrationes-in-psalmos.2026-11-22-new-advent.psalm-25-fcfd163a"
+source_fingerprint = "sha256:30c673b29eccfead7bced254dff7e998d8a17642cd21b05bc0d91d7920d4ec7e"
+locus = "Exposition on Psalm 25, §§1–5; Vg Ps24:1–5"
+relationship = "direct-exegesis"
+disposition = "deferred"
+reason = "The exact response is Kevin Knight’s modern English revision. Its independent redistribution terms have not been established. The separately credited NPNF printing remains available without conflating the two expressions."
+scripture_extents = [{ token = "Ps", first_chapter = 24, first_verse = 1, last_chapter = 24, last_verse = 5 }]
+missing_criteria = ["redistribution-basis-for-new-advent-revision"]
+
+[[sources]]
+id = "augustine-new-advent-psalm-85"
+binding_index = 38
+binding_sha256 = "3610f3cd7d2a98c16c739b5d2d8f70f2bb689136bcf2e0af84fb40acce65455e"
+source_id = "artifact.augustine.enarrationes-in-psalmos.2026-11-22-new-advent.psalm-85-46d857d1"
+source_fingerprint = "sha256:adc6733339b0a9ba745a01c14e83689cc8fb05d31d43d7abefe82660d68db0d8"
+locus = "Exposition on Psalm 85, §§2–3,6,12–13; Vg Ps84:2–3,8,13–14"
+relationship = "direct-exegesis"
+disposition = "deferred"
+reason = "The exact response is Kevin Knight’s modern English revision. Its independent redistribution terms have not been established. The separately credited NPNF printing remains available without conflating the two expressions."
+scripture_extents = [{ token = "Ps", first_chapter = 84, first_verse = 2, last_chapter = 84, last_verse = 5 }, { token = "Ps", first_chapter = 84, first_verse = 7, last_chapter = 84, last_verse = 8 }, { token = "Ps", first_chapter = 84, first_verse = 13, last_chapter = 84, last_verse = 14 }]
+missing_criteria = ["redistribution-basis-for-new-advent-revision"]
+
+[[sources]]
+id = "chrysostom-new-advent-romans-24"
+binding_index = 39
+binding_sha256 = "88fe98c18289c2c00c1fea1feffc8f2eb4981b312c5a784029e42bb687b1ce36"
+source_id = "artifact.john-chrysostom.homilies-on-romans.2026-11-22-new-advent.homily-24-cbfe8a5a"
+source_fingerprint = "sha256:0ee7d93ab2d3ede94c5199501e4301314152b38e06dd4fd571b2705664e80ae9"
+locus = "Homily 24, on Rom 13:11–14"
+relationship = "direct-exegesis"
+disposition = "deferred"
+reason = "The exact response is Kevin Knight’s modern English revision. Its independent redistribution terms have not been established. The separately credited NPNF printing remains available without conflating the two expressions."
+scripture_extents = [{ token = "Rom", first_chapter = 13, first_verse = 11, last_chapter = 13, last_verse = 14 }]
+missing_criteria = ["redistribution-basis-for-new-advent-revision"]
+
+[[sources]]
+id = "thomas-romans-13-lectio-3"
+binding_index = 40
+binding_sha256 = "4db6eedae61d2f590d5bda9a7341cd28d66c73803b613414c23c048904865097"
+source_id = "artifact.thomas-aquinas.super-romanos.2026-11-22-corpus-thomisticum.chapters-12-16-1c3db878"
+source_fingerprint = "sha256:45760102c36687e07084712fb8d9f29daf6e5f10f078af15c4bc4f123374a57d"
+locus = "Super Romanos XIII, lectio 3 [86224], 1953 Turin Latin revised by Busa/Alarcón"
+relationship = "direct-exegesis"
+disposition = "deferred"
+reason = "The modern edited web transcription has no identified redistribution basis here. The held nineteenth-century Dessain volume II begins with 2 Corinthians. Collate a redistributable original-language printing of this specific lectio."
+scripture_extents = [{ token = "Rom", first_chapter = 13, first_verse = 11, last_chapter = 13, last_verse = 14 }]
+missing_criteria = ["lawful-redistributable-latin-controller"]
+
+[[sources]]
+id = "usccb-psalter-chronology"
+binding_index = 41
+binding_sha256 = "5cc945a95b17a6e2449861706117ee05fc3dc89d11c0d516cf3fff9cdbe56b76"
+source_id = "artifact.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.2026-11-22-usccb-web.psalms-introduction-f2cca8d5"
+source_fingerprint = "sha256:0804d4570ce6b020a425465bab5efa0b4916acaee4c5e7a5fd6586a4afdf8831"
+locus = "Introduction, account of dates and superscriptions"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "This use establishes historical chronology or attribution. It supplies no verse commentary for the chain."
+
+[[sources]]
+id = "bellarmine-psalm-84-printed"
+binding_index = 42
+binding_sha256 = "c5bde377191c060dd0d2dcce45174001a3384eafd1ad94281150d4352d859c43"
+source_id = "artifact.robert-bellarmine.commentary-on-the-book-of-psalms.osullivan-duffy-1866.commons-ia-facsimile-78b290d4"
+source_fingerprint = "sha256:6221c39e003611f5ca8e53a39ee29224a806934ad8bbe85d5bf3d122911a1ac6"
+locus = "Ps 84, exposition 12, printed p.259, PDF 269 left column"
+relationship = "direct-exegesis"
+disposition = "deferred"
+reason = "The page image establishes the exact 1866 reading, including would rather than the web transcription’s could. The pinned print edition identifies O’Sullivan in its title and notes but lacks a typed translators field for the Catena voice check. Updating this shared edition requires consumer fingerprint review."
+scripture_extents = [{ token = "Ps", first_chapter = 84, first_verse = 13, last_chapter = 84, last_verse = 13 }]
+missing_criteria = ["typed-translator-on-pinned-print-edition"]
+
+[[sources]]
+id = "augustinus-expositions-dates"
+binding_index = 43
+binding_sha256 = "624511255be31bded7f267620bbe2e44daf7680f6f2e9f54189f01a0066076b0"
+source_id = "artifact.augustinus-it.enarrationes-chronology.2026-10-23-web-state.whole-html-a2938c5d"
+source_fingerprint = "sha256:5c0f18d8472e66612ff885b073884ed87a9fcae9ff0eb187b18ffb60427bdaa2"
+locus = "Tavola cronologica, row 11–32, Zarb column; rows 79 and 84"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "This use establishes historical chronology or attribution. It supplies no verse commentary for the chain."

@@ -88,14 +88,20 @@ T appointment 83R, thanksgiving p. 293/no. 1082, 374. P pp. 251–252, 337–338
 
 **Dialogue — Latin / L historical English**
 
-V. Per omnia saecula saeculorum. R. Amen.  
-V. Dominus vobiscum. R. Et cum spiritu tuo.  
-V. Sursum corda. R. Habemus ad Dominum.  
+V. Per omnia saecula saeculorum. R. Amen.
+
+V. Dominus vobiscum. R. Et cum spiritu tuo.
+
+V. Sursum corda. R. Habemus ad Dominum.
+
 V. Gratias agamus Domino Deo nostro. R. Dignum et iustum est.
 
-P. World without end. R. Amen.  
-P. The Lord be with you. R. And with thy spirit.  
-P. Lift up your hearts. R. We have them lifted up unto the Lord.  
+P. World without end. R. Amen.
+
+P. The Lord be with you. R. And with thy spirit.
+
+P. Lift up your hearts. R. We have them lifted up unto the Lord.
+
 P. Let us give thanks to the Lord our God. R. It is meet and just.
 
 **Latin**

@@ -1,8 +1,8 @@
 classification_schema = 1
 record_type = "publication-source-classification-review"
-audited_on = "2026-11-20"
-publication_snapshot = "sha256:57b4bff05921085674ef83d4faa1635c37f7f1079b464e9c345fd55da3a2272e"
-classification_snapshot = "sha256:69201dbf6789497bd5b8b868add2ae1d2bb99a3c72363536c0a401fe3978f871"
+audited_on = "2026-11-22"
+publication_snapshot = "sha256:f7d67e8e1a239d703a6b98f702aab2138b304401eea2dd71e3c3b44ade63a0d5"
+classification_snapshot = "sha256:244013734da8a55c76421135a4962ccff69ffbe0e4b2715087417af68545a4e8"
 
 [[classifications]]
 document = "articles/canon-law/clerical-celibacy-chastity-and-continence"
@@ -315,6 +315,10 @@ source_categories = ["canon-law", "finding-aid", "historical-primary", "liturgic
 [[classifications]]
 document = "liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass"
 source_categories = ["canon-law", "classical", "finding-aid", "historical-primary", "liturgical", "magisterial", "patristic", "repository-internal", "scholastic", "scripture", "secondary"]
+
+[[classifications]]
+document = "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "repository-internal", "scholastic", "scripture", "secondary"]
 
 [[classifications]]
 document = "liturgy/roman-rite/1962/propers/temporal/39-trinity-sunday"

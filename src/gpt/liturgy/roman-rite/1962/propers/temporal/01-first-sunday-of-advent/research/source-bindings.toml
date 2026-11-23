@@ -39,7 +39,7 @@ source_id = "artifact.ambrose.expositio-evangelii-secundum-lucam.latin-migne-cor
 loci = ["10.39", "10.40", "10.41", "10.42", "10.43", "10.44", "10.45"]
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
-context = "Checked extent: Expositio in Lucam X.39–45; wikitext lines 42–46; Luke 21:26–30. Read the cloud/prophets, light cloud/Incarnation, and alternative figures of tree, faith and leaves. The lemma is not identical to the 1962 liturgical text."
+context = "Checked extent: Expositio in Lucam X.39–45; wikitext lines 42–47; Luke 21:26–30. Read the cloud/prophets, light cloud/Incarnation, and alternative figures of tree, faith and leaves. The lemma is not identical to the 1962 liturgical text."
 source_fingerprint = "sha256:fffe23583795acf9fcd2b8c2b600681c78c7c72d5b2833501eedb4edc5248b8a"
 
 [[bindings]]
@@ -272,3 +272,75 @@ role = "context"
 states = ["cataloged", "acquired", "inspected"]
 context = "Latin responses read on the reacquired AAS PDF; relative bound, no absolute year in this witness. Checked extent: AAS IV, p.464, responsa VI and VII."
 source_fingerprint = "sha256:bfd0d8ccb0b19b093c81145ef7a767e5ceca93476dff495d146e0d8c0672631f"
+
+[[bindings]]
+source_id = "artifact.fssp-france.ordo-du-mois.2026-11-22-web.ordo-2404c50f"
+loci = ["November 2026; Dimanche 29 novembre between 28 and 30 November"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "November 2026; Dimanche 29 novembre between 28 and 30 November. French province 2026 ordo confirms Advent I, first class and violet."
+source_fingerprint = "sha256:49f53c4ba80e2c8846cd999f70e4d97f21fe26e7b9b0d2a1bd032e30c93989c6"
+
+[[bindings]]
+source_id = "artifact.icrsp-france.ordo.2026-11-22-web.ordo-973580cb"
+loci = ["j2026-11-29, heading and Mass indicators"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "j2026-11-29, heading and Mass indicators. French institute ordo confirms Creed, omission of Gloria, Trinity Preface, and institutional papal prayer."
+source_fingerprint = "sha256:952915df8799fa6c04f8c9b0ccfd3fdcd3b3b940486d55497459800dbb32cf78"
+
+[[bindings]]
+source_id = "artifact.augustine.enarrationes-in-psalmos.2026-11-22-new-advent.psalm-25-fcfd163a"
+loci = ["24.1-5"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Exposition on Psalm 25, §§1–5; Vg Ps24:1–5. Direct on the church as speaker, self-reliance and shame, and paths. The source block names an anonymous translator; Kevin Knight revised the wording."
+source_fingerprint = "sha256:30c673b29eccfead7bced254dff7e998d8a17642cd21b05bc0d91d7920d4ec7e"
+
+[[bindings]]
+source_id = "artifact.augustine.enarrationes-in-psalmos.2026-11-22-new-advent.psalm-85-46d857d1"
+loci = ["84.2-3,6,12-13"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Exposition on Psalm 85, §§2–3,6,12–13; Vg Ps84:2–3,8,13–14. Direct on captivity, salvation as Christ and fruit as works made sweet by God. The source block names J. E. Tweed; Kevin Knight revised the wording."
+source_fingerprint = "sha256:adc6733339b0a9ba745a01c14e83689cc8fb05d31d43d7abefe82660d68db0d8"
+
+[[bindings]]
+source_id = "artifact.john-chrysostom.homilies-on-romans.2026-11-22-new-advent.homily-24-cbfe8a5a"
+loci = ["24"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Homily 24, on Rom 13:11–14. Direct on the approaching day, wakefulness and putting on Christ. The New Advent source block credits Walker, Sheppard and Browne. The digital revision and its credit do not control quotations from the original NPNF printing."
+source_fingerprint = "sha256:0ee7d93ab2d3ede94c5199501e4301314152b38e06dd4fd571b2705664e80ae9"
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.super-romanos.2026-11-22-corpus-thomisticum.chapters-12-16-1c3db878"
+loci = ["13.l3"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Super Epistolam B. Pauli ad Romanos lectura, cap. 13 lect. 3 [86224], on Rom 13:11–14. Direct; distinguishes temporal from dispositional nearness, apostolic intention, Advent liturgical use and moral application. No redistribution permission was established for the Busa/Alarcón transcription. The registered Dessain volume II begins at 2 Corinthians and cannot control this locus."
+source_fingerprint = "sha256:45760102c36687e07084712fb8d9f29daf6e5f10f078af15c4bc4f123374a57d"
+
+[[bindings]]
+source_id = "artifact.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.2026-11-22-usccb-web.psalms-introduction-f2cca8d5"
+loci = ["Introduction, account of dates and superscriptions"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Introduction, account of dates and superscriptions. Read current text on uncertain individual dates and the pre-Maccabean boundary. This is chronology scholarship, not an appointment or liturgical source."
+source_fingerprint = "sha256:0804d4570ce6b020a425465bab5efa0b4916acaee4c5e7a5fd6586a4afdf8831"
+
+[[bindings]]
+source_id = "artifact.robert-bellarmine.commentary-on-the-book-of-psalms.osullivan-duffy-1866.commons-ia-facsimile-78b290d4"
+loci = ["Ps 84, exposition 12, printed p.259 (PDF 269), left column; neighbouring lemmata"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "The exact registered scan was reacquired and its full SHA-256 and extent verified. The page was rendered and the entire passage and both boundaries checked against the eCatholic text. O’Sullivan prints “shewing that truth would spring” where the later transcription reads “showing that truth could spring.” The scan controls the historical wording."
+source_fingerprint = "sha256:6221c39e003611f5ca8e53a39ee29224a806934ad8bbe85d5bf3d122911a1ac6"
+
+[[bindings]]
+source_id = "artifact.augustinus-it.enarrationes-chronology.2026-10-23-web-state.whole-html-a2938c5d"
+loci = ["Tavola cronologica, row 11–32, Zarb column; rows 79 and 84"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Reacquired hash-identical chronology table. Its Zarb column assigns 392 to Expositions 11–32, Lent 412 to 79 and after 410 to 84. The other two columns are blank for each of these rows. These are reported proposals."
+source_fingerprint = "sha256:5c0f18d8472e66612ff885b073884ed87a9fcae9ff0eb187b18ffb60427bdaa2"
