@@ -21,6 +21,16 @@ from _proper_latin import (LatinKey, STRUCTURE_SURFACES, publication_records,
 
 MASS = 'commemoratione-omnium-fidelium-defunctorum'
 NAMES = {'Collect', 'Tract', 'Sequence', 'Offertory', 'Secret', 'Postcommunion'}
+ESDRAS_CHANTS = {
+    (MASS, 'Introit'): ('ce029ed78ae092de0876d3328094516253684da821e2f40b602a5381df357692',
+                       'a5c409548d8dc6140bc7179bd460b72b9def4233b4fdc543b8ff050ec043c30a'),
+    (MASS, 'Gradual'): ('0a0f79f5129fc8d101946bdaefce9223f049d309d8b7379da4b535aa79d35a5e',
+                       'ca7fbde66bfc23f45e68e55700e65d0d9ee7dcdabe504bd650a21f3fb8541aae'),
+    (MASS, 'Communion'): ('30a26ce57dfc43932b85068803c00fd5cebf735430b69d8ac657ed4011da7363',
+                         'ab5df3fbefa4c051d799c2ab11f41f6efd51459d9231e91849c03e6423cdb6b7'),
+    ('pentecost-tuesday', 'Introit'): ('eca762245d411b734dfd75f45e2b2043f60af2c4d2f2e1ca5b2ed18d2d9d1115',
+                                     '100ec6a0b6f053c5f3884a2ddb71859deea21f3049f5e829f1f2389a13ebdd87'),
+}
 CALENDARS = ROOT / 'src/sources/calendars'
 EXPECTED = {('first', 'Collect'): ('5e512755467527b255130a5e18e96e261eb8f535404a4c6aeef4456086f4d050', 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.all-souls-first-collect'), ('first', 'Tract'): ('9ae43a7ab151f037c2b390cb78b97a44d332a3446d77f9280e51cc63e432ff52', 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.all-souls-first-tract'), ('first', 'Sequence'): ('87f039a9c40447c9af9952efb4e3f1a5a3c2510b8e3d4b4516b6c2376f6008ef', 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.all-souls-first-sequence'), ('first', 'Offertory'): ('4be2836129c872cd10d52eea31131b2117ef8354ef5f9dd610e65017698be93e', 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.all-souls-first-offertory'), ('first', 'Secret'): ('1f931cc3bc7fe512b1cd91f1a94a3f7a91d55f510ba81df2742b40b8211f4c31', 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.all-souls-first-secret'), ('first', 'Postcommunion'): ('96e3dee4fec348be97089331b74a275daafce5eda19fd40a3073c49ca463a652', 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.all-souls-first-postcommunion'), ('second', 'Collect'): ('30e48e208401dc42d128140be8a04c58f12f20d89d9a5c9bcfb90bddfb53f054', 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.all-souls-second-collect'), ('second', 'Tract'): ('9ae43a7ab151f037c2b390cb78b97a44d332a3446d77f9280e51cc63e432ff52', 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.all-souls-second-tract'), ('second', 'Offertory'): ('4be2836129c872cd10d52eea31131b2117ef8354ef5f9dd610e65017698be93e', 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.all-souls-second-offertory'), ('second', 'Secret'): ('cd9140c844f1e30155d93be9993ac51e43630ac6a321fce42e5e33daa10e00a1', 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.all-souls-second-secret'), ('second', 'Postcommunion'): ('ba2b69434a3457a9642232323225ec0964e364632e5e138728912d7bf6efc600', 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.all-souls-second-postcommunion'), ('third', 'Collect'): ('86a4fd1f06fb14467594949b6255fab3dba90108de16013c464ebef4c4f3d16b', 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.all-souls-third-collect'), ('third', 'Tract'): ('9ae43a7ab151f037c2b390cb78b97a44d332a3446d77f9280e51cc63e432ff52', 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.all-souls-third-tract'), ('third', 'Offertory'): ('4be2836129c872cd10d52eea31131b2117ef8354ef5f9dd610e65017698be93e', 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.all-souls-third-offertory'), ('third', 'Secret'): ('b351e3fb080a86848e3596736761a340d2032b791034f8c2870b97f1a4b31c0e', 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.all-souls-third-secret'), ('third', 'Postcommunion'): ('abad7626ab3256d18b99f84e123d0c83632915aa45ccf74fb3f02fb7d57ec8cb', 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.all-souls-third-postcommunion')}
 UNCHANGED_HASH = '9cc0c574f099c34eb7e10ee201bb06a587d827ea2c99ac10edb0b56459fe26ee'
@@ -67,11 +77,17 @@ def accepted_requiem_english():
 
 
 def unmodified(mass):
+    def original_citation(proper):
+        if (MASS, proper['name']) in ESDRAS_CHANTS:
+            return {**{k: v for k, v in proper.items() if k != 'text'}, 'source': 'scripture'}
+        return proper
+
     return {
         'header': {k: v for k, v in mass.items() if k not in ('notes', 'forms')},
         'forms': [
             {'header': {k: v for k, v in f.items() if k != 'propers'},
-             'propers': [p for p in f['propers'] if p.get('takes_from') or p['name'] not in NAMES]}
+             'propers': [original_citation(p) for p in f['propers']
+                         if p.get('takes_from') or p['name'] not in NAMES]}
             for f in mass['forms']
         ],
     }
@@ -211,9 +227,34 @@ class AllSoulsBodyTests(unittest.TestCase):
         self.assertNotIn('V.', sequence)
         self.assertNotIn('R.', sequence)
 
+    def test_esdras_chants_preserve_all_ten_appointments_and_their_bible_citations(self):
+        inventory = ROOT / 'src/sources/inventories/roman-1962-proper-translations-v1.toml'
+        english = {(r['mass'], r['form_id'], r['proper']): r for r in
+                   tomllib.loads(inventory.read_text())['entries'] if (r['mass'], r['proper']) in ESDRAS_CHANTS}
+        self.assertEqual(len(english), 10)
+        for _, _, mass in _calendars.departures_of(self.document):
+            for form in mass.get('forms') or [mass]:
+                for proper in form.get('propers', []):
+                    identity = mass['key'], proper['name']
+                    if identity not in ESDRAS_CHANTS:
+                        continue
+                    with self.subTest(mass=identity[0], form=form.get('id'), proper=identity[1]):
+                        latin_hash, english_hash = ESDRAS_CHANTS[identity]
+                        self.assertEqual(proper['source'], 'mixed')
+                        self.assertEqual(proper['verses'][0]['book'], '4 Esdras')
+                        self.assertEqual(text_sha256(proper['text']), latin_hash)
+                        key = LatinKey(identity[0], form['name'] if form is not mass else '', identity[1], occurrence=1)
+                        self.assertEqual(self.records[key]['publication_status'], 'permitted')
+                        row = english[identity[0], form.get('id', 'main'), identity[1]]
+                        self.assertEqual(row['source_latin_sha256'], latin_hash)
+                        self.assertEqual(row['source_latin_passage_id'], self.records[key]['source_id'])
+                        translation, = row['translations']
+                        self.assertEqual(translation['rights'], 'project-created')
+                        self.assertEqual(text_sha256(translation['text']), english_hash)
+
     def test_existing_english_positive_and_absence_owners_remain_exact(self):
         ledger = tomllib.loads((ROOT / 'src/sources/inventories/roman-1962-proper-translations-v1.toml').read_text())
-        owners = {kind: [r for r in ledger.get(kind, []) if r['mass'] == MASS]
+        owners = {kind: [r for r in ledger.get(kind, []) if r['mass'] == MASS and (MASS, r['proper']) not in ESDRAS_CHANTS]
                   for kind in ('entries', 'untranslated')}
         self.assertEqual((len(owners['entries']), len(owners.get('untranslated', []))), (16, 0))
         corrected = accepted_requiem_english()

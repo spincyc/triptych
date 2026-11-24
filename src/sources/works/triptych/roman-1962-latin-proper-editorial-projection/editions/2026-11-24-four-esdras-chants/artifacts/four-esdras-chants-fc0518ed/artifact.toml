@@ -1,0 +1,19 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-24-four-esdras-chants.four-esdras-chants-fc0518ed"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-24-four-esdras-chants"
+artifact_type = "editorial-projection"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "All underlying words are independently public domain in the United States in the 1922 Mame Missal. The study translations are original Triptych work. Project editorial contributions are released under CC BY 4.0."
+rights_jurisdiction = "United States"
+sha256 = "fc0518ed6cf462c4e1782999794d343fc1272f0b72d98a8735e757682e9eb122"
+byte_size = 1951
+retrieved = "2026-11-24"
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-24-four-esdras-chants/artifacts/four-esdras-chants-fc0518ed/chants.tsv"
+encoding = "utf-8"
+indexable = true
+projected_from = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"]
+provenance = "Transcribed from the historical 1922 Mame printed page images and independently checked against the corresponding 1962 prayers at every one of the ten appointments. English independently translated from these historical chants."
+transformation = "Normalize accents, ligatures and spacing. Retain Psalm verse labels and sung response signs. Expand only the expressly directed Requiem Introit reprise. Retain the abbreviated Pentecost Gloria Patri cue."
