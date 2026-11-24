@@ -123,6 +123,7 @@ FRAGMENT_FIELDS = {
 # composition date. Numeric overrides are refused when they restate the work.
 OPTIONAL_FRAGMENT_FIELDS = {
     "constituent_of", "text_date", "text_date_basis", "composition_date_unestablished",
+    "english_versions",
 }
 
 # Rule 15. One text the library holds under two or more disputed attributions
@@ -1017,6 +1018,49 @@ def _extent(value: Any) -> Extent | None:
         return None
 
 
+def _english_version_errors(sources, fragments, *, passage_ids=None) -> list[str]:
+    """Cross-references identify separately admitted editions of one textual unit."""
+    by_id = {row["passage_id"]: row for row in fragments
+             if isinstance(row, dict) and isinstance(row.get("passage_id"), str)}
+
+    def language(identifier):
+        passage = sources.passages.get(identifier) or {}
+        edition = sources.editions.get(passage.get("edition_id")) or {}
+        return fold_language(edition.get("language"))
+
+    errors = []
+    for identifier, row in by_id.items():
+        if "english_versions" not in row or (passage_ids is not None and identifier not in passage_ids):
+            continue
+        versions = row["english_versions"]
+        if not isinstance(versions, list) or not versions:
+            errors.append(f"{identifier}: english_versions needs a nonempty list")
+            continue
+        if language(identifier) in (None, "en"):
+            errors.append(f"{identifier}: only a known non-English passage can link an English version")
+        extent = _extent(row.get("extent"))
+        seen = set()
+        for link in versions:
+            if (not isinstance(link, dict) or set(link) != {"passage_id", "basis", "coverage"}
+                    or not all(isinstance(value, str) and value.strip() for value in link.values())
+                    or link["coverage"] not in ("whole", "excerpt")):
+                errors.append(f"{identifier}: English version needs an id, a textual basis and whole/excerpt coverage")
+                continue
+            target_id = link["passage_id"]
+            target = by_id.get(target_id)
+            if target_id in seen or not target or target.get("work_id") != row.get("work_id") or language(target_id) != "en":
+                errors.append(f"{identifier}: {target_id} must be a distinct admitted English version of the same work")
+                continue
+            seen.add(target_id)
+            other = _extent(target.get("extent"))
+            if (not extent or not other or other.token != extent.token
+                    or other.first_chapter > extent.first_chapter or other.last_chapter < extent.last_chapter
+                    or (other.first_chapter, other.first_verse) > (extent.last_chapter, extent.last_verse)
+                    or (other.last_chapter, other.last_verse) < (extent.first_chapter, extent.first_verse)):
+                errors.append(f"{identifier}: {target_id} must overlap the locus and be readable in every source chapter")
+    return errors
+
+
 def validate(root: Path = ROOT) -> list[str]:
     """Every reason the edge cannot be rendered, in a deterministic order."""
     errors: list[str] = _catena_scope.validate(root)
@@ -1128,6 +1172,7 @@ def validate(root: Path = ROOT) -> list[str]:
 
     errors.extend(_blocked_errors(sources, data, where, seen))
     errors.extend(_parallel_errors(sources, data, where))
+    errors.extend(_english_version_errors(sources, fragments))
     errors.extend(_catena_snippets.reviewed(root, sources, data)[1])
     errors.extend(_solved_case_errors(data, where, seen))
     errors.extend(
@@ -1541,8 +1586,9 @@ def fragments_for_book(
     scope = scope or _catena_scope.Scope(root, works=sources.works)
     snippets, snippet_errors = _catena_snippets.reviewed(
         root, sources, data, passage_ids=passage_ids)
-    if snippet_errors:
-        raise CatenaError("\n".join(snippet_errors))
+    version_errors = _english_version_errors(sources, data.get("fragments") or [], passage_ids=passage_ids)
+    if snippet_errors or version_errors:
+        raise CatenaError("\n".join(snippet_errors + version_errors))
     rows: list[dict[str, Any]] = []
     for fragment in data.get("fragments") or ():
         if passage_ids is not None and fragment.get("passage_id") not in passage_ids:
@@ -1557,6 +1603,8 @@ def fragments_for_book(
         work = sources.works.get(work_id) or {}
         edition_id = str(passage.get("edition_id") or "")
         edition = sources.editions.get(edition_id) or {}
+        if not passage.get("text") or not edition:
+            raise CatenaError(f"{fragment['passage_id']}: commentary requires a held passage text and edition")
         artifact = controlling_artifact(sources, passage) or {}
         import _reviewed_permissions
         permission_problems = _reviewed_permissions.problems(root, artifact, passage)
@@ -1584,6 +1632,7 @@ def fragments_for_book(
                 "edition_published": str(edition.get("publication") or ""),
                 "translators": list(edition.get("translators") or ()),
                 "locator": str(passage.get("locus") or ""),
+                **({"english_versions": fragment["english_versions"]} if "english_versions" in fragment else {}),
                 "rights": str(artifact.get("rights_status") or ""),
                 **_rights_notice(artifact),
                 # Shown truthfully or not at all. `inspected` means someone read
@@ -2277,6 +2326,7 @@ def _structure_files(
         refusals = refusals_for_book(root, token)
 
         present: list[int] = []
+        commentary_chapters = []
         for chapter in chapters:
             here = [metadata[one] for one in standing.get(chapter, ())]
             leads_here = leads.get(str(chapter)) or []
@@ -2289,6 +2339,11 @@ def _structure_files(
             if not (here or leads_here or blocked_here or refused_here):
                 continue
             present.append(chapter)
+            if here:
+                commentary_chapters.append({
+                    "chapter": chapter, "fragments": len(here),
+                    "english": sum(fold_language(row["language"]) == "en" for row in here),
+                })
             path = directory / folder / _canon.chapter_name(chapter, width)
             shared, slim = _fold_shared(here)
             files[path] = _serialise(
@@ -2332,6 +2387,7 @@ def _structure_files(
                 # a chapter with nothing held, nothing led to and nothing
                 # refused, and the page says so without a fetch.
                 "present": present,
+                "commentary_chapters": commentary_chapters,
                 "languages": sorted(
                     {str(row["language"]) for row in rows if row.get("language")}
                 ),

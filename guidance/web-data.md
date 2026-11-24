@@ -409,6 +409,13 @@ not been fetched is not in the document, so the browser's own find-in-page
 cannot reach it. That is why each fragment's length is printed beside its name —
 a reader chooses what to open knowing how long it is.
 
+Each Catena book entry in `held` includes `commentary_chapters` in canonical
+order. Only chapters with admitted excerpts appear. Each row gives the chapter
+number, its fragment count and the count in English. A cross-chapter passage
+counts once in each chapter where it can be read. The separate `present` list
+continues to address every chapter spine, including those with research only.
+Both readers can locate a readable chapter without fetching its text.
+
 A Catena text payload may additionally carry `snippets`, reviewed internal
 Scripture links governed by [Catena](catena.md#verse-specific-excerpts-within-a-held-passage--2026-11-08).
 Each row carries `id`, `start`, `end`, `extent`, `locator` and `basis`; offsets

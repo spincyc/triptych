@@ -351,6 +351,21 @@ publicly reachable, pursue proportionate public primary, official, library,
 catalog, and critical-edition alternatives and record the unresolved access
 and evidence boundary rather than inventing a check.
 
+**Acquire a published English translation whenever possible.** When acquiring or
+linking a non-English source for readers, also look for English under the work’s
+alternate titles, in collected volumes and in the holdings already registered.
+When a public, redistributable translation can be identified, retrieve the
+fullest available English witness in the same acquisition and register its
+edition, translator, extent, provenance and rights. Preserve the original
+witness. For a linked passage, check the corresponding section in the English
+edition, including any omissions or differences in division, before linking it.
+
+When English is available only in part, acquire the permitted part and name its
+limits. If no English can be acquired for the requested passage, record the
+editions or catalogues checked, the date and the specific obstacle in the owning
+research or translation-absence record. A catalogue listing or another English
+excerpt from the same work does not establish English coverage of this passage.
+
 **Retrieve whole documents.** When a document is retrieved at all, retrieve the
 entire document. Never pull a fragment where the whole is pullable: not the one
 chapter a question needs, not the first page of a paginated view, not the prefix

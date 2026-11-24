@@ -414,6 +414,15 @@ what lets a father's Greek be publishable while a modern English rendering of hi
 is not. The source library already models this, because an edition carries the
 language and the artifact carries the rights.
 
+For each non-English admission, apply the [English acquisition rule](sources.md#source-first-acquisition-and-storage).
+The original fragment may carry `english_versions` when both witnesses have
+been checked against the same unit of the work. Each entry names an admitted
+English `passage_id`, states whether it translates the `whole` linked unit or
+an `excerpt`, and gives the textual `basis` for the correspondence. Shared
+Scripture coordinates alone cannot establish that relationship. Each English
+reading retains its own complete record, translator, rights and natural bounds.
+The link is available from each chapter in which the linked source stands.
+
 ### The axis the reader chooses along is not the language code
 
 Settled 2026-08-01, on the maintainer's direction that the commentary control
@@ -528,11 +537,18 @@ precede chapter translation research in both readers. A keyboard-accessible
 “Read commentary” action beside the range controls moves focus directly to
 the results, including on narrow screens, without changing the address.
 
-Measured gzip-9 payloads with this feature are 13,632 bytes for `catena.js`
+At the 2026-11-07 passage-focus checkpoint, gzip-9 payloads were 13,632 bytes for `catena.js`
 (9,050 without comments) and 8,185 for `catena.css` (2,910 rules only). The
-regression ceilings are 14,000/9,300 and 8,500/3,000 bytes respectively. The
+regression ceilings were 14,000/9,300 and 8,500/3,000 bytes respectively. The
 increase supports passage selection, validation and author controls; it adds no
 shard family or additional payload request.
+
+The November 24 catalogue and parallel-reading controls let readers choose an
+excerpt-bearing chapter before downloading its spine and open a checked English
+counterpart beside the non-English passage. The controller’s gzip-9 budget is
+15,000 bytes (10,300 with comments stripped), and the stylesheet’s is 8,800
+bytes (3,350 with comments stripped). The chapter catalogue uses the existing
+index request. English wording is fetched only when the reader opens it.
 
 ### Verse-specific excerpts within a held passage — 2026-11-08
 

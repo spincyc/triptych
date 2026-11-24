@@ -207,6 +207,37 @@ class CatenaFixture(unittest.TestCase):
         return _catena.validate(self.root)
 
 
+class EnglishVersionTests(unittest.TestCase):
+    def setUp(self):
+        self.sources = _catena.Sources({}, {"latin": {"language": "la"}, "english": {"language": "en"}},
+                                      {}, {}, {"source": {"edition_id": "latin"}, "target": {"edition_id": "english"}})
+        extent = dict(token="Gen", first_chapter=1, first_verse=2, last_chapter=1, last_verse=5)
+        self.source = {"passage_id": "source", "work_id": "one", "extent": extent,
+                       "english_versions": [{"passage_id": "target", "coverage": "excerpt", "basis": "Section II."}]}
+        self.target = {"passage_id": "target", "work_id": "one", "extent": extent.copy()}
+
+    def errors(self):
+        return _catena._english_version_errors(self.sources, [self.source, self.target])
+
+    def test_checked_excerpt(self):
+        self.assertEqual(self.errors(), [])
+
+    def test_mismatched_work_language_and_extent(self):
+        for changes in [{"work_id": "two"}, {"passage_id": "missing"},
+                        {"extent": {**self.target["extent"], "first_verse": 6, "last_verse": 7}}]:
+            with self.subTest(changes=changes):
+                self.assertTrue(_catena._english_version_errors(self.sources, [self.source, {**self.target, **changes}]))
+        self.sources.editions["english"]["language"] = "la"
+        self.assertTrue(self.errors())
+
+    def test_incomplete_or_repeated_attestation(self):
+        link, = self.source["english_versions"]
+        for versions in [[], [link, link], [{**link, "basis": ""}], [{**link, "coverage": "unknown"}]]:
+            with self.subTest(versions=versions):
+                self.source["english_versions"] = versions
+                self.assertTrue(self.errors())
+
+
 class ExtentTests(CatenaFixture):
     def test_a_well_formed_edge_validates(self) -> None:
         self.assertEqual(self.errors(), [])
@@ -1410,12 +1441,20 @@ class StructureTests(CatenaFixture):
         _catena.structure(self.root, out)
         return out / "structure" / "catena"
 
+    def test_catalogue_refuses_an_edge_whose_text_record_is_missing(self):
+        next(self.root.glob("src/sources/works/**/passages/11.7.toml")).unlink()
+        with self.assertRaisesRegex(_catena.CatenaError, "held passage text and edition"):
+            self.emit()
+
     def test_the_chapter_spine_carries_no_prose(self) -> None:
         directory = self.emit()
         spine = json.loads(
             (directory / "01-gen" / "1.json").read_text(encoding="utf-8")
         )
         self.assertEqual(len(spine["fragments"]), 1)
+        index = json.loads((directory / "index.json").read_text())
+        book = next(row for row in index["held"] if row["token"] == "Gen")
+        self.assertEqual(book["commentary_chapters"], [{"chapter": 1, "fragments": 1, "english": 1}])
         fragment = spine["fragments"][0]
         for absent in ("text", "basis", "date_basis"):
             self.assertNotIn(absent, fragment)
