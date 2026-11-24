@@ -1277,7 +1277,7 @@
       const body = renderElement(element, file, { language: lang, held: raw || null,
         selected: selected, suppressHeading: true, suppressIncipit: lang !== 'la' });
       side.appendChild(body);
-      if (raw && witness && !raw.reading_note) side.appendChild(T.el('p', 'composed-note',
+      if (raw && witness && !raw.reading_note) side.appendChild(T.el('p', 'composed-note ordinary-reading-source',
         'Source: ' + (witness.label || raw.source_id)));
       pair.appendChild(side);
     }

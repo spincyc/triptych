@@ -187,6 +187,21 @@ body:has(.reader-instrument) > .site-footer,
   font: 0.8rem/1.6 var(--instrument-sans);
 }
 .reader-instrument[data-reader-mode="missal"] .reader-identity .reader-context { display: none; }
+.reader-instrument .reader-inline-sources { display: none; }
+@media screen {
+  .reader-instrument[data-reader-mode="missal"] .reader-inline-sources {
+    display: flex; align-items: center; gap: 0.45rem; margin-block: 0.4rem;
+    font: 0.85rem/1.4 var(--instrument-sans); cursor: pointer;
+  }
+  /* Each held language side already names its relationship and availability.
+     The bibliography can be expanded for the whole reading in one action. */
+  .reader-instrument[data-reader-mode="missal"]:has(.reader-inline-sources input:not(:checked))
+    .text-side[data-text-availability="held"] :is(.ordinary-reading-note,.ordinary-reading-source,.latin-source-credit,.translation-credit) { display: none; }
+  .reader-instrument[data-reader-mode="missal"] .reader-document .text-side-label {
+    margin: 0 0 0.15rem; font: 550 0.72rem/1.4 var(--instrument-sans); color: var(--instrument-faint);
+  }
+  .reader-instrument[data-reader-mode="missal"] .reader-document .text-pair { row-gap: 0.5rem; }
+}
 
 .reader-instrument .coverage-notice {
   max-width: 52ch;
