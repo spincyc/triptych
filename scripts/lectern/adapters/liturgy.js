@@ -274,6 +274,12 @@ module.exports = function liturgy(realm) {
   }
 
   /* The very selected Ordinary witness, set by the same owner as the page. */
+  function januaryBlocks(prayer, selected, state) {
+    return realm.dom.read(T.renderJanuaryPrayer(prayer, selected, {
+      languages: {orations: state.orations}, textDisplay: state.textDisplay
+    }));
+  }
+
   function renderedOrdinary(element, selected, ordinary, state, context) {
     if (!element) return [];
     realm.script('liturgy/ordinary-seating.js');
@@ -339,7 +345,9 @@ module.exports = function liturgy(realm) {
         selected: event.selected ? { kind: event.selected.kind, availability: event.selected.availability || null,
           cycle: event.selected.cycle || null,
           cycles: (event.selected.alternatives || []).map((one) => one.cycle).filter(Boolean) } : null };
-      if (event.kind === 'proper') {
+      if (event.kind === 'january-prayer') {
+        out.push(Object.assign(base, {blocks: januaryBlocks(event.prayer, event.januarySource, state)}));
+      } else if (event.kind === 'proper') {
         out.push(Object.assign(base, renderedProper(event, mass, owner, bible, fragments, state)));
       } else if (event.kind === 'proper-choice') {
         const presented = properChoice(event, probe);
@@ -348,7 +356,7 @@ module.exports = function liturgy(realm) {
           selection: event.selection || null, title: presented.title, note: presented.note,
           options: (event.options || []).map((option, index) => Object.assign({}, presented.options[index], {
             members: (option.events || []).map((member) =>
-              Object.assign({ id: member.id }, renderedProper(member, mass, owner, bible, fragments, state))),
+              Object.assign({ id: member.id, slot: member.editionSlotLabel || null }, renderedProper(member, mass, owner, bible, fragments, state))),
           })),
         }));
       } else if (event.kind === 'ordinary-section') {
@@ -361,6 +369,7 @@ module.exports = function liturgy(realm) {
         const selected = event.selected || {};
         out.push(Object.assign(base, {
           blocks: renderedOrdinary(element, selected, ordinary, state, { calendar: calendar, formulary: mass && mass.key }),
+          ...(element && element.missal_witness_links ? {sourceLinks: element.missal_witness_links} : {}),
           element: element ? { key: element.key, kind: element.kind, name: element.name || null,
             speaker: element.speaker || null, latin_incipit: element.latin_incipit || null,
             locus: element.locus || null, variant: element.variant || null,
@@ -401,6 +410,34 @@ module.exports = function liturgy(realm) {
     };
   }
 
+  function januaryPrayerReading(calendar, key, weekday, phase, options) {
+    const mass = structure(calendar, key).masses.find((one) => one.key === key);
+    const selected = mass && M.januaryPrayerSelection(mass.january_prayer_sources, weekday, phase);
+    if (!selected) throw new Error('The January weekday and Epiphany phase are not available for this formulary');
+    return {weekday: selected.weekday, label: selected.label, phase: selected.phase, rule_locus: selected.rule_locus,
+      rule_url: selected.rule_url, latin_url: selected.latin_url, english_url: selected.english_url,
+      latin_source_id: selected.latin_source_id, english_source_id: selected.english_source_id,
+      english_locus: selected.english_locus, english_prayer_url: selected.english_prayer_url,
+      english_prayer_locus: selected.english_prayer_locus, english_prayer_source_id: selected.english_prayer_source_id,
+      english_prayer_rights_status: selected.english_prayer_rights_status, english_prayer_roles: selected.english_prayer_roles,
+      prayers: selected.prayers.map((prayer) => ({
+        role: prayer.role, blocks: januaryBlocks(prayer, selected, normal(options))
+      }))};
+  }
+
+  function memorialPrayerForms(calendar, memorialId, role, groupId) {
+    const memorial = structure(calendar, memorialId).masses.find((mass) => mass.key === memorialId);
+    const source = memorial && memorial.memorial_prayer_sources;
+    const group = source && source.roles.includes(role) && source.groups.find((one) => one.id === groupId);
+    if (!group) throw new Error('The memorial does not authorize this prayer source');
+    const common = structure(calendar, group.mass).masses.find((mass) => mass.key === group.mass);
+    return group.form_ids.map((id) => {
+      const form = common && common.forms && common.forms.find((one) => one.id === id);
+      if (!form) throw new Error('The memorial prayer source names an unlisted Common form');
+      return {id, name: form.name};
+    });
+  }
+
   function massContext(calendar, key) {
     const owner = structure(calendar, key);
     const mass = (owner.masses || []).find((one) => one.key === key) || null;
@@ -411,6 +448,9 @@ module.exports = function liturgy(realm) {
       context: {
         key: mass.key, name: mass.name, kind: mass.kind || null, season: mass.season || null,
         rank: mass.rank || null, registry: mass.registry || null,
+        memorialPrayerSources: mass.memorial_prayer_sources || null,
+        januaryWeekdays: mass.january_prayer_sources && mass.january_prayer_sources.weekdays
+          .map((one) => ({weekday: one.weekday, label: one.label})) || null,
         forms: (mass.forms || []).map((one) => ({ id: one.id, name: one.name, ordinal: one.ordinal })),
         textStatus: mass.text_status || null,
         uncompiled: T.massIsUncompiled ? Boolean(T.massIsUncompiled(mass)) : false,
@@ -582,6 +622,9 @@ module.exports = function liturgy(realm) {
       explicitAbsences: adapted.explicitAbsences || [],
       unresolvedChoices: (adapted.unresolvedChoices || []).map((one) => ({ id: one.id, reason: one.reason,
         options: (one.options || []).map((option) => ({ id: option.id, identity: option.identity || null })) })),
+      januarySelection: adapted.januaryPrayers && {weekday: adapted.januaryPrayers.weekday,
+        label: adapted.januaryPrayers.label, phase: adapted.januaryPrayers.phase,
+        ruleLocus: adapted.januaryPrayers.rule_locus, ruleUrl: adapted.januaryPrayers.rule_url} || null,
       ordinaryUnresolved: adapted.ordinaryUnresolved || [],
     });
   }
@@ -735,6 +778,21 @@ module.exports = function liturgy(realm) {
         row.navigation = navigationFor(Object.assign({}, adapted, {events: []}));
         rows.push(row);
         continue;
+      }
+      if (context && context.memorialPrayerSources) {
+        if (branch.season) context.memorialPrayerSources = Object.assign({}, context.memorialPrayerSources, {
+          groups: context.memorialPrayerSources.groups.filter((group) => !group.season ||
+            (group.season === 'outside-easter' ? branch.season !== 'easter' : group.season === branch.season))
+        });
+        const source = M.memorialFeriaPrayerSources({mass, branch, structure: owner, rubrics});
+        const feria = source && owner.masses.find((one) => one.key === source.mass);
+        if (feria) {
+          row.memorialFeria = {mass: feria.key, name: feria.name, locus: source.locus, owners: source.options,
+            roles: (feria.propers || []).map((proper) => proper.name)
+              .filter((name) => context.memorialPrayerSources.roles.includes(name))};
+          const prayers = M.januaryWeekdayPrayers({mass: feria, derived, branch});
+          if (prayers) row.memorialFeria.january = {weekday: prayers.weekday, phase: prayers.phase};
+        }
       }
       row.orationChoices = M.weekdayOrationChoices({derived, rubrics, structure: owner,
         territory: branch.option, mass: asked.selectedReadableFormulary && asked.selectedReadableFormulary.id || null});
@@ -1136,5 +1194,5 @@ module.exports = function liturgy(realm) {
   }
 
   return { opening, month, day, propers, compare, comparePropers, studyDay, studyPropers,
-    readerUrl, openReaderLink, catalogue, search };
+    readerUrl, openReaderLink, catalogue, search, memorialPrayerForms, januaryPrayerReading };
 };

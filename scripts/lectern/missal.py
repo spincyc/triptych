@@ -187,6 +187,9 @@ def events(ink: Ink, view: dict, *, rubrics: bool = True, accent: str = "$primar
             ordinary_element(ink, event, ordinary, rubrics=rubrics, accent=accent)
             continue
         ink.line()
+        if kind == "january-prayer":
+            blocks(ink, event.get("blocks") or [], accent=accent, missal_mode=missal_mode)
+            continue
         if kind == "proper":
             note = seat_note(event)
             if event.get("placeholder"):
@@ -262,11 +265,47 @@ def witness_label(link: dict) -> str:
     return f"{language} · {link['edition_label']} · {extent}"
 
 
+def source_rights(status: str | None) -> str:
+    if status == "restricted":
+        return "Restricted rights · consult at the publisher."
+    return "Source rights · " + status if status else ""
+
+
+def memorial_sources(view: dict) -> dict:
+    if view.get("primaryDayChoice"):
+        return {}
+    return (view.get("mass") or {}).get("memorialPrayerSources") or {}
+
+
 def source_witness(ink: Ink, view: dict, *, detail: bool = False) -> None:
     links = list(witness_readings(view))
+    january = view.get("januarySelection")
+    if january and detail:
+        ink.line("January weekday prayers", "bold").line(january["label"] + " · " + january["phase"].replace("-", " "))
+        ink.line(january["ruleLocus"]).line(january["ruleUrl"]).line()
+    elif view.get("entrance") == "propers" and (view.get("mass") or {}).get("januaryWeekdays"):
+        ink.line("Choose the weekday and Epiphany phase in Reading settings (,).", "$text-muted")
+    memorial = memorial_sources(view)
+    if memorial:
+        if detail:
+            ink.line("Memorial prayer sources", "bold").line(" · ".join(memorial["roles"]))
+            ink.line("Choose each source independently in Reading settings. The memorial keeps its own Collect.")
+            if memorial.get("current_feria"):
+                feria = view.get("memorialFeria") or {}
+                ink.line("Current feria" + (f" · {feria['name']}" if feria else ""))
+            for group in memorial["groups"]:
+                ink.line(group["label"]).line(" · ".join(group["form_ids"]), "$text-muted")
+                if group.get("qualification"):
+                    ink.line(group["qualification"], "italic $text-muted")
+            ink.line(memorial["locus"]).line(memorial["source_id"], "$text-muted").line(memorial["url"])
+            ink.line(memorial["rule_source_id"], "$text-muted").line()
+        else:
+            ink.line("Offerings and Postcommunion sources · , Reading settings", "$text-muted")
     if detail:
         for name, link in links:
             ink.line(name, "bold").line(witness_label(link)).line(link["locus"])
+            if link.get("rights_status"):
+                ink.line(source_rights(link["rights_status"]), "$text-muted")
             ink.line(link["source_id"], "$text-muted").line(link["url"]).line()
     elif links and not any(event.get("kind") in ("proper", "proper-choice") for event in view.get("events") or []):
         ink.line("Source texts · , Reading settings", "$text-muted")
@@ -277,7 +316,12 @@ def ordinary_conditions(ink: Ink, view: dict, *, compact: bool = False) -> None:
     if compact:
         status = []
         coverage = view.get("coverage") or []
-        if any(row.get("state") == "unavailable" for row in coverage):
+        frame = next((row for row in coverage if row.get("scope", "").startswith("ordinary-frame:")), {})
+        if frame.get("state") == "unavailable":
+            status.append("Specialized Ordinary unavailable")
+        elif frame.get("state") == "absent":
+            status.append("No Mass Ordinary for this rite")
+        elif any(row.get("state") == "unavailable" for row in coverage):
             status.append("Some text unavailable")
         elif any(row.get("state") == "unsupported" or row.get("completeness") == "partial" for row in coverage):
             status.append("Partial coverage")

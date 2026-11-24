@@ -60,6 +60,7 @@ class Propers(MissalSurface):
         Binding("L", "ordinary_language", "Ordinary language", show=False),
         Binding("K", "companion", "Latin Bible", show=False),
         Binding("i", "contents", "contents"),
+        Binding("ctrl+o", "prayer_source", "English missal prayer source", show=False),
         Binding("u", "share", "share", show=False),
         Binding("g", "open_url", "open URL", show=False),
         Binding("d", "study", "study"),
@@ -101,6 +102,7 @@ class Propers(MissalSurface):
         self.text_display = "selected"
         self.companion = ""
         self.navigation = ReadingNavigation()
+        self.pending_source_role = None
         self.pending_study = False
         self.url_legacy: dict = {}
         self.comparison: dict | None = None
@@ -176,6 +178,7 @@ class Propers(MissalSurface):
         selection = {name: options[name] for name in ("cycle", "witness", "properChoices", "variants", "alternative", "sourceLocal1970")
                      if name in options}
         self.navigation.pending = options.get("location")
+        self.pending_source_role = options.get("prayerRole")
         self.pending_study = bool(options.get("study"))
         self.comparison = options.get("comparison")
         if not self.calendars:
@@ -490,6 +493,16 @@ class Propers(MissalSurface):
                 self.navigation.mark(event["id"], label, ink)
                 missal.events(ink, {**view, "events": [event]}, rubrics=self.rubrics, accent="$propers-color")
         text.update(ink.content())
+        if self.pending_source_role:
+            locations = [event["id"] for event in view.get("events", [])
+                         if event.get("slot") == self.pending_source_role or
+                         any(member.get("slot") == self.pending_source_role
+                             for option in event.get("options", []) for member in option.get("members", []))]
+            if len(locations) == 1:
+                self.navigation.pending = locations[0]
+            else:
+                self.app.notify(f"An exact location for {self.pending_source_role} is unavailable in this form.")
+            self.pending_source_role = None
         self.navigation.finish(self, box, text)
         self.app.refresh_where()
         if self.pending_study:

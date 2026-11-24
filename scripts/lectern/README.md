@@ -97,6 +97,7 @@ Missing text and unresolved source conditions remain explicit.
 | `w` | Choose an oration witness available within this Mass, including partial witnesses |
 | `s` | Choose an offered Mass, form, cycle, Ordinary option, or source reading path |
 | `i` | Open Contents at the actual semantic units; choose a destination without returning to the beginning |
+| `Ctrl+O` | Open the English missal source for the prayer at the current reading position |
 | `d` | Open Study: calendar, coverage, placement, sources and full translation notes |
 | `v`, `V` | Toggle Compare, or choose its peers |
 | `u` | Copy and display the canonical website URL for this reading and semantic location |
@@ -133,9 +134,24 @@ has a source link, Reading settings opens its witnesses by language, edition
 and scope, with the exact locus and full URL. A weekday’s selected prayer
 source is available alongside the dated Mass. Ordinary sources follow the
 elements actually present, including the selected Eucharistic Prayer. Press
-`o` to open the source
-in a browser or `c` to copy its URL. The speaker marks include ℣ for a
+`o` to open the source in the default browser or `c` to copy its URL.
+With lynx, w3m, links or ELinks installed, `t` opens the source in that
+terminal browser and returns to the same reading on exit. The speaker marks include ℣ for a
 versicle, ℟ for a response, P for priest and S for server.
+
+For a memorial with its own Collect, Reading settings lists the Prayer over
+the Offerings and Prayer after Communion separately. Choose a source and
+a named Common form to open that exact prayer in Propers. On Day, Current
+feria identifies the dated weekday when the calendar supplies one. An
+Ordinary Time feria with a choice of prayer formularies opens its eligible
+owners. Returning to Day restores the memorial reading.
+
+January weekdays use the civil weekday and the local Epiphany date. The
+dated reader seats the Collect, Prayer over the Offerings and Prayer after
+Communion in the Mass. A standalone January formulary offers its weekday
+and phase under Reading settings. Its source view opens the Latin missal
+with `o`, the English missal prayers with `e`, the English antiphons with
+`a`, and the governing rubric with `r`.
 
 Below 90 columns, Day and selected Propers readings start with the text;
 an unselected Propers entrance starts with Browse. `f` swaps the two surfaces,

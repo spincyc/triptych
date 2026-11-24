@@ -1,8 +1,13 @@
 """Small overlays: a question with one answer, and a page of text to read."""
 from __future__ import annotations
 
+import os
+import shutil
+import subprocess
+from pathlib import Path
+
 from rich.console import RenderableType
-from textual.app import ComposeResult
+from textual.app import ComposeResult, SuspendNotSupported
 from textual.binding import Binding
 from textual.containers import Vertical, VerticalScroll
 from textual.screen import ModalScreen
@@ -96,19 +101,49 @@ class Reading(ModalScreen[str | None]):
         self.query_one(VerticalScroll).focus()
 
 
+def terminal_browser() -> str | None:
+    for name in ("lynx", "w3m", "links", "elinks"):
+        installed = shutil.which(name)
+        if installed:
+            return installed
+        local = Path.home() / ".local" / "bin" / name
+        if local.is_file() and os.access(local, os.X_OK):
+            return str(local)
+    return None
+
+
+def browse_in_terminal(app, url: str) -> None:
+    browser = terminal_browser()
+    if browser:
+        try:
+            with app.suspend():
+                subprocess.run([browser, url], check=False)
+        except (OSError, SuspendNotSupported) as error:
+            app.notify(str(error), severity="warning")
+
+
 class MissalSource(Reading):
     """An identified external missal witness, usable by URL or keyboard."""
 
-    BINDINGS = [Binding("o", "open_witness", "open source"), Binding("c", "copy_url", "copy URL")]
+    BINDINGS = [Binding("o", "open_witness", "open source"), Binding("c", "copy_url", "copy URL"),
+                Binding("t", "terminal_witness", "terminal browser")]
 
     def __init__(self, title: str, link: dict) -> None:
-        from .missal import witness_label
+        from .missal import source_rights, witness_label
         from .widgets import Ink
 
         self.url = link["url"]
         ink = Ink().line(title, "bold").line(witness_label(link)).line(link["locus"])
+        if link.get("rights_status"):
+            ink.line(source_rights(link["rights_status"]), "$text-muted")
+        if link.get("prayer_roles"):
+            ink.line(" · ".join(link["prayer_roles"]))
         ink.line(link["source_id"], "$text-muted").line().line(self.url)
-        super().__init__("Missal source", ink.content(), "o open · c copy URL · esc close", walks=False)
+        hint = "o open · c copy URL" + (" · t terminal browser" if terminal_browser() else "")
+        super().__init__("Missal source", ink.content(), hint + " · esc close", walks=False)
+
+    def action_terminal_witness(self) -> None:
+        browse_in_terminal(self.app, self.url)
 
     def action_open_witness(self) -> None:
         self.app.open_url(self.url)
@@ -116,6 +151,57 @@ class MissalSource(Reading):
     def action_copy_url(self) -> None:
         self.app.copy_to_clipboard(self.url)
         self.app.notify("Source URL copied")
+
+
+class JanuaryReading(Reading):
+    """A source-qualified January selection, including both external witnesses."""
+
+    BINDINGS = [Binding("o", "open_source('latin_url')", "Latin missal"),
+                Binding("a", "open_source('english_url')", "English antiphons"),
+                Binding("e", "open_source('english_prayer_url')", "English missal"),
+                Binding("t", "terminal_english", "English missal in terminal"),
+                Binding("r", "open_source('rule_url')", "rubric")]
+
+    def __init__(self, reading: dict, role: str | None = None) -> None:
+        from .missal import blocks, source_rights
+        from .widgets import Ink
+
+        if role and role not in (reading.get("english_prayer_roles") or []):
+            reading = {**reading, "english_prayer_url": None}
+        self.reading = reading
+        phase = {"before-epiphany": "before Epiphany", "after-epiphany": "after Epiphany"}[reading["phase"]]
+        ink = Ink()
+        for prayer in reading["prayers"]:
+            if role is None or prayer["role"] == role:
+                blocks(ink, prayer["blocks"])
+                ink.line()
+        for field, label in (("latin_url", "Latin missal prayers"), ("english_prayer_url", "U.S. English missal prayers"),
+                             ("english_url", "English antiphons only"),
+                             ("rule_url", reading["rule_locus"])):
+            if reading.get(field):
+                ink.line(label, "bold")
+                source_id = reading.get({"latin_url": "latin_source_id", "english_url": "english_source_id",
+                                         "english_prayer_url": "english_prayer_source_id"}.get(field))
+                if source_id:
+                    ink.line(source_id, "$text-muted")
+                locus = {"english_url": "english_locus", "english_prayer_url": "english_prayer_locus"}.get(field)
+                if reading.get(locus):
+                    ink.line(reading[locus])
+                if field == "english_prayer_url" and reading.get("english_prayer_rights_status"):
+                    ink.line(source_rights(reading["english_prayer_rights_status"]), "$text-muted")
+                ink.line(reading[field]).line()
+        hint = "o Latin missal · a English antiphons · r rubric"
+        if reading.get("english_prayer_url"):
+            hint += " · e English missal" + (" · t terminal browser" if terminal_browser() else "")
+        super().__init__(reading["label"] + " " + phase, ink.content(), hint + " · esc close", walks=False)
+
+    def action_terminal_english(self) -> None:
+        if self.reading.get("english_prayer_url"):
+            browse_in_terminal(self.app, self.reading["english_prayer_url"])
+
+    def action_open_source(self, field: str) -> None:
+        if self.reading.get(field):
+            self.app.open_url(self.reading[field])
 
 
 class Pick(ModalScreen[str | None]):

@@ -53,6 +53,10 @@ class LiturgyParityTests(unittest.TestCase):
                                    {"ordinary": True, "cycle": "A", "variants": {"eucharistic-prayer": variant}})
             links = selected["ordinaryWitnessLinks"]
             self.assertEqual(pdf in {r["url"] for r in links}, variant == "ep-ii")
+            linked_elements = [e["id"] for e in selected["events"]
+                               if any(r["url"] == pdf for r in e.get("sourceLinks", []))]
+            self.assertEqual(linked_elements, ["ordinary-element/prex-eucharistica/prex-eucharistica-ii"]
+                             if variant == "ep-ii" else [])
             card = next(r for r in links if set(r.get("languages", [])) == {"en", "la"})
             self.assertIn("Latin", witness_label(card))
             self.assertIn("English", witness_label(card))
@@ -61,6 +65,109 @@ class LiturgyParityTests(unittest.TestCase):
         self.assertEqual(friday["rows"][0]["ordinaryWitnessLinks"], [])
         read = bridge.call("liturgy", "propers", "postconciliar", "advent-1", {})
         self.assertEqual(read["ordinaryWitnessLinks"], [])
+
+    def test_ep_iv_is_readable_for_the_principal_ordinary_sunday_only(self) -> None:
+        options = {"ordinary": True, "variants": {"eucharistic-prayer": "ep-iv"}}
+        pdf = "https://www.liturgyoffice.org.uk/Missal/Text/EP4-A4.pdf#page=1"
+        for request in (options, {**options, "mass": "ot-9"}):
+            rows = bridge.call("liturgy", "day", "postconciliar", "2027-05-30", request)["rows"]
+            self.assertEqual(
+                [row["mass"]["key"] for row in rows], ["ot-9", "corpus-christi"])
+            for row in rows:
+                appointed = row["mass"]["key"] == "ot-9"
+                self.assertEqual(pdf in {r["url"] for r in row["ordinaryWitnessLinks"]}, appointed)
+                self.assertEqual(any(e["id"].endswith("/prex-eucharistica-iv") for e in row["events"]), appointed)
+        displaced = bridge.call("liturgy", "day", "postconciliar", "2028-08-06",
+                                {**options, "mass": "ot-18"})["rows"][0]
+        self.assertEqual(displaced["resolved"]["standing"], "displaced")
+        self.assertEqual(displaced["mass"]["key"], "ot-18")
+        self.assertNotIn(pdf, {r["url"] for r in displaced["ordinaryWitnessLinks"]})
+        for date in ("2026-11-29", "2027-01-12", "2028-08-06"):
+            row = bridge.call("liturgy", "day", "postconciliar", date, options)["rows"][0]
+            self.assertNotIn(pdf, {r["url"] for r in row["ordinaryWitnessLinks"]})
+            self.assertIn("prex-eucharistica/prex-eucharistica-iv", [r["element"] for r in row["ordinaryUnresolved"]])
+        standalone = bridge.call("liturgy", "propers", "postconciliar", "ot-9", options)
+        self.assertNotIn(pdf, {r["url"] for r in standalone["ordinaryWitnessLinks"]})
+
+    def test_1962_requiem_and_passiontide_use_their_appointed_ordinary(self) -> None:
+        def reading(day, **choices):
+            view = bridge.call("liturgy", "day", "roman-1962", day, {
+                "ordinary": True, "orations": "en", "textDisplay": "latin-and-selected", **choices})
+            row = view["rows"][0]
+            self.assertFalse(row.get("failed"))
+            return row, {event["id"].removeprefix("ordinary-element/"): event
+                         for event in row["events"] if event["kind"] == "ordinary-element"}
+
+        for form in ("first", "second", "third"):
+            row, held = reading("2027-11-02", mass="commemoratione-omnium-fidelium-defunctorum", form=form)
+            self.assertIn("praeparatio/introibo-ad-altare-dei", held)
+            self.assertIn("praeparatio/adjutorium-nostrum", held)
+            self.assertIn("conclusio/placeat-tibi-sancta-trinitas", held)
+            self.assertIn("conclusio/requiescant-in-pace", held)
+            for key in ("praeparatio/judica-me-deus", "praeparatio/introibo-ad-altare-dei-repetitio",
+                        "oblatio/gloria-patri", "oblatio/dominus-sit-in-corde-meo", "oblatio/per-evangelica-dicta",
+                        "communio/agnus-dei", "communio/domine-jesu-christe-qui-dixisti",
+                        "conclusio/dominus-vobiscum-ite-missa-est", "conclusio/benedicat-vos-omnipotens-deus"):
+                self.assertNotIn(key, held)
+            agnus = words(held["communio/agnus-dei-defunctorum"]["blocks"])
+            self.assertIn("give unto them rest forevermore", agnus)
+            self.assertIn("dona eis réquiem sempitérnam", agnus)
+            greeting = held["conclusio/dominus-vobiscum-defunctorum"]["text"]
+            self.assertEqual(greeting["text"], "The Lord be with you.\nR. And with thy spirit.")
+            self.assertIn("conclusio/initium-sancti-evangelii", [u["element"] for u in row["ordinaryUnresolved"]])
+
+        _, passion = reading("2027-03-14")
+        _, saint = reading("2027-03-19", mass="s-ioseph-sponsi-beatae-mariae-virginis")
+        for key in ("praeparatio/judica-me-deus", "praeparatio/introibo-ad-altare-dei-repetitio", "oblatio/gloria-patri"):
+            self.assertNotIn(key, passion)
+            self.assertIn(key, saint)
+        for normal in (passion, saint):
+            self.assertIn("conclusio/benedicat-vos-omnipotens-deus", normal)
+            self.assertIn("communio/agnus-dei", normal)
+            self.assertNotIn("communio/rubrica-agnus-dei-in-missis-defunctorum", normal)
+            self.assertNotIn("conclusio/requiescant-in-pace", normal)
+
+        for form in ("night", "dawn", "day"):
+            _, held = reading("2026-12-25", mass="nativitate-domini-octave", form=form)
+            self.assertEqual("conclusio/initium-sancti-evangelii" in held, form != "day")
+
+    def test_memorial_prayer_sources_respect_the_dated_season_and_feria(self) -> None:
+        for date, mass, group in (("2027-07-16", "our-lady-mount-carmel", "mary-ordinary"),
+                                  ("2027-02-11", "our-lady-lourdes", "mary-lent-local")):
+            row = bridge.call("liturgy", "day", "postconciliar", date, {"mass": mass})["rows"][0]
+            sources = row["mass"]["memorialPrayerSources"]
+            self.assertEqual([one["id"] for one in sources["groups"]], [group])
+            if group == "mary-lent-local":
+                self.assertTrue(sources["groups"][0]["qualification"])
+            independent = bridge.call("liturgy", "propers", "postconciliar", mass, {})["mass"]["memorialPrayerSources"]
+            self.assertEqual(len(independent["groups"]), 5)
+        sunday = bridge.call("liturgy", "day", "postconciliar", "2029-07-15",
+                             {"mass": "saint-bonaventure-bishop-doctor-church"})["rows"][0]
+        self.assertFalse(sunday.get("memorialFeria"))
+
+    def test_january_prayers_follow_each_local_epiphany_in_the_reader_frame(self) -> None:
+        date = "2027-01-05"
+        names = ["Collect", "Prayer over the Offerings", "Prayer after Communion"]
+        anchors = ["ritus-initiales/collecta", "praeparatio-donorum/super-oblata", "ritus-communionis/post-communionem"]
+        for ordinary in (False, True):
+            day = bridge.call("liturgy", "day", "postconciliar", date,
+                              {"orations": "en", "textDisplay": "latin-and-selected", "ordinary": ordinary})
+            self.assertEqual([r["januarySelection"]["phase"] for r in day["rows"]],
+                             ["before-epiphany", "after-epiphany"])
+            for row in day["rows"]:
+                events = row["events"]
+                prayers = [event for event in events if event["kind"] == "january-prayer"]
+                self.assertEqual([event["slot"] for event in prayers], names)
+                for event, anchor in zip(prayers, anchors):
+                    self.assertIn("/2/" + row["januarySelection"]["phase"] + "/", event["id"])
+                    self.assertIn("Latin Missal", words(event["blocks"]))
+                    if ordinary:
+                        self.assertEqual(events[events.index(event) - 1]["id"], "ordinary-element/" + anchor)
+            early, late = (next(e for e in r["events"] if e["kind"] == "january-prayer") for r in day["rows"])
+            self.assertNotEqual(words(early["blocks"]), words(late["blocks"]))
+        memorial = bridge.call("liturgy", "day", "postconciliar", "2027-01-07",
+                               {"mass": "saint-raymond-penyafort-priest"})
+        self.assertTrue(all(r["memorialFeria"]["january"]["weekday"] == 4 for r in memorial["rows"]))
 
     def test_the_ordinary_language_default_matches_both_page_owners(self) -> None:
         default = bridge.call("liturgy", "opening")["defaultOrdinaryLanguage"]
@@ -286,6 +393,121 @@ class SurfaceParityTests(unittest.IsolatedAsyncioTestCase):
                 await pilot.press("enter")
             self.assertIn(row["orationWitnessLinks"][0]["url"], app.screen.body.plain)
             self.assertIn("Prayers from Thirty-third", app.screen.body.plain)
+            await pilot.press("escape", "i")
+            target = next(e["id"] for e in row["events"] if e.get("slot") == "Collect")
+            index = next(i for i, (key, _) in enumerate(app.screen.options) if key.endswith(target))
+            app.screen.query_one(OptionList).highlighted = index
+            await pilot.press("enter", "ctrl+o")
+            self.assertIsInstance(app.screen, MissalSource)
+            self.assertEqual(app.screen.url, "https://rmhealey.com/docs/RMU/#Y33")
+
+    async def test_memorial_prayer_source_controls_open_independent_common_and_ferial_roles(self) -> None:
+        from lectern.app import TriptychApp
+        from lectern.dialogs import Pick
+        from lectern.snapshot import _settle
+        from lectern.surfaces.day import Day
+        from lectern.surfaces.propers import Propers
+
+        key = "saint-bonaventure-bishop-doctor-church"
+        app = TriptychApp(start="day", intent={"calendar": "postconciliar", "date": "2027-07-15", "ordinary": True})
+        async with app.run_test(size=(80, 30)) as pilot:
+            await _settle(app, pilot)
+            day = app.query_one(Day)
+            row = day.source_rows()[0]
+            self.assertEqual(row["mass"]["key"], key)
+            collect = next(event["id"] for event in row["events"] if event.get("slot") == "Collect")
+
+            async def pick(identifier) -> None:
+                self.assertIsInstance(app.screen, Pick)
+                index = next(i for i, (value, _) in enumerate(app.screen.options) if value == identifier)
+                await pilot.press("home", *(["down"] * index), "enter")
+                await _settle(app, pilot)
+
+            for role, group, form, owner in (
+                    ("Prayer over the Offerings", "church-doctors", "doctors-2", "commune-doctorum-ecclesiae"),
+                    ("Prayer after Communion", "pastors-bishop", "pastor-bishop-1", "commune-pastorum"),
+                    ("Prayer after Communion", "current-feria", "ot-33", "ot-33")):
+                await pilot.press("comma")
+                await pick("memorial/" + role)
+                await pick(group)
+                if group == "current-feria":
+                    self.assertEqual(len(app.screen.options), 32)
+                await pick(form)
+                propers = app.query_one(Propers)
+                self.assertEqual(propers.view["key"], owner)
+                selected = next(event["id"] for event in propers.view["events"] if event.get("slot") == role)
+                self.assertEqual(propers.navigation.focused[0], selected)
+                app.action_surface("day")
+                await _settle(app, pilot)
+                self.assertEqual(day.source_rows()[0]["mass"]["key"], key)
+                self.assertIn(collect, [event["id"] for event in day.source_rows()[0]["events"]])
+
+    async def test_memorial_only_translation_witness_does_not_follow_its_common_prayer(self) -> None:
+        from contextlib import nullcontext
+        from unittest.mock import patch
+        from lectern.app import TriptychApp
+        from lectern.dialogs import MissalSource, Pick
+        from lectern.snapshot import _settle
+        from lectern.surfaces.propers import Propers
+
+        role = "Prayer over the Offerings"
+        app = TriptychApp(start="propers", intent={"calendar": "postconciliar", "orations": "en",
+                              "mass": "saint-hilary-bishop-doctor-church", "witness": "project-created"})
+        async with app.run_test(size=(80, 30)) as pilot:
+            await _settle(app, pilot)
+            propers = app.query_one(Propers)
+            self.assertEqual(propers.view["state"]["witness"], "project-created")
+            await pilot.press("comma")
+            for choice in ("memorial/" + role, "church-doctors", "doctors-2"):
+                self.assertIsInstance(app.screen, Pick)
+                index = next(i for i, (value, _) in enumerate(app.screen.options) if value == choice)
+                await pilot.press("home", *(["down"] * index), "enter")
+                await _settle(app, pilot)
+            self.assertEqual(propers.view["key"], "commune-doctorum-ecclesiae")
+            self.assertIsNone(propers.view["state"].get("witness"))
+            target = next(e["id"] for e in propers.view["events"] if e.get("slot") == role)
+            self.assertEqual(propers.navigation.focused[0], target)
+            await pilot.press("ctrl+o")
+            self.assertIsInstance(app.screen, MissalSource)
+            self.assertEqual(app.screen.url, "https://rmhealey.com/docs/RMU/#CDC2")
+            self.assertIn(role, app.screen.body.plain)
+            self.assertIn("Australian Liturgy (2021)", app.screen.body.plain)
+            self.assertIn("Restricted rights", app.screen.body.plain)
+            with patch.object(app, "open_url") as opened, patch.object(app, "suspend", return_value=nullcontext()), \
+                    patch("lectern.dialogs.terminal_browser", return_value="/usr/bin/lynx"), \
+                    patch("lectern.dialogs.subprocess.run") as ran:
+                await pilot.press("o", "t")
+                opened.assert_called_once_with(app.screen.url)
+                ran.assert_called_once_with(["/usr/bin/lynx", app.screen.url], check=False)
+
+    async def test_standalone_january_prayers_require_weekday_and_epiphany_phase(self) -> None:
+        from unittest.mock import patch
+        from lectern.app import TriptychApp
+        from lectern.dialogs import JanuaryReading, Pick
+        from lectern.snapshot import _settle
+
+        app = TriptychApp(start="propers", intent={"calendar": "postconciliar", "mass": "christmas-january-4",
+                                                   "orations": "en", "textDisplay": "latin-and-selected"})
+        async with app.run_test(size=(80, 30)) as pilot:
+            await _settle(app, pilot)
+            await pilot.press("comma")
+            for choice in ("january_prayers", 2, "after-epiphany"):
+                self.assertIsInstance(app.screen, Pick)
+                index = next(i for i, (value, _) in enumerate(app.screen.options) if value == choice)
+                await pilot.press("home", *(["down"] * index), "enter")
+                await _settle(app, pilot)
+            self.assertIsInstance(app.screen, JanuaryReading)
+            self.assertEqual(app.screen.title_text, "Tuesday after Epiphany")
+            self.assertIn("English antiphons only", app.screen.body.plain)
+            self.assertIn("Prayer after Communion", app.screen.body.plain)
+            source = app.screen.reading
+            with patch.object(app, "open_url") as opened:
+                self.assertIn("U.S. English missal prayers", app.screen.body.plain)
+                self.assertIn("Restricted rights", app.screen.body.plain)
+                self.assertNotEqual(source["english_prayer_url"], source["english_url"])
+                await pilot.press("o", "a", "e", "r")
+                self.assertEqual([args.args[0] for args in opened.call_args_list],
+                                 [source["latin_url"], source["english_url"], source["english_prayer_url"], source["rule_url"]])
 
     async def test_missal_reading_keys_settings_and_pane_focus(self) -> None:
         from lectern.app import TriptychApp
@@ -340,6 +562,18 @@ class SurfaceParityTests(unittest.IsolatedAsyncioTestCase):
                 cue = "P" if source == "Priest" else source
                 self.assertEqual(ink.parts[0], (cue + "  ", "bold $rubric"))
                 self.assertEqual(ink.content().plain, cue + "  Held words.\n")
+
+    def test_specialized_ordinary_frame_status_remains_visible_in_the_reading(self) -> None:
+        from lectern.missal import ordinary_conditions
+        from lectern.widgets import Ink
+
+        for date, text in [("2027-03-25", "Specialized Ordinary unavailable"),
+                           ("2027-03-26", "No Mass Ordinary for this rite"),
+                           ("2027-03-27", "Specialized Ordinary unavailable")]:
+            view = bridge.call("liturgy", "day", "roman-1962", date, {"ordinary": True})
+            ink = Ink()
+            ordinary_conditions(ink, view["rows"][0], compact=True)
+            self.assertIn(text, ink.content().plain)
 
     async def test_day_ordinary_picker_applies_a_choice_without_a_formulary_row(self) -> None:
         from lectern.app import TriptychApp

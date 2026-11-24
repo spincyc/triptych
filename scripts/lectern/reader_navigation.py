@@ -6,9 +6,13 @@ from functools import lru_cache
 from importlib.machinery import SourceFileLoader
 from importlib.util import module_from_spec, spec_from_loader
 
-from .dialogs import MissalSource, Pick, Reading
-from .missal import witness_label, witness_readings
-from .repo import ROOT
+from textual import work
+from textual.widgets import Static
+
+from . import bridge
+from .dialogs import JanuaryReading, MissalSource, Pick, Reading
+from .missal import memorial_sources, witness_label, witness_readings
+from .repo import ROOT, Refused
 from .surface import Surface, shown
 from .widgets import Ink
 
@@ -69,6 +73,9 @@ class MissalSurface(Surface):
                 title = f"{row['option']} · {name}" if row.get("option") else name
                 choices.append((title, link))
 
+        self.show_source_choices("Source texts", choices)
+
+    def show_source_choices(self, heading: str, choices: list[tuple[str, dict]]) -> None:
         def display(index) -> None:
             if index is not None:
                 title, link = choices[index]
@@ -79,7 +86,160 @@ class MissalSurface(Surface):
         elif choices:
             options = [(index, f"{name} · {witness_label(link)} · {link['locus']}")
                        for index, (name, link) in enumerate(choices)]
-            self.app.push_screen(Pick("Source texts", options), display)
+            self.app.push_screen(Pick(heading, options), display)
+
+    def action_prayer_source(self) -> None:
+        rows = self.source_rows()
+        current = None
+        if not getattr(self, "comparing", False) and self.navigation.entries:
+            panel = self.reading_panel()
+            current = self.navigation.current(panel, panel.query_one(Static))
+        choices = []
+        for row in rows:
+            prefix = row.get("prefix") or ""
+            if current and prefix and not current.startswith(prefix):
+                continue
+            event = next((e for e in row.get("events") or [] if prefix + e["id"] == current), {})
+            if event.get("kind") == "january-prayer" and row.get("januarySelection"):
+                selected = row["januarySelection"]
+                self.show_january_prayers(row["mass"]["key"], selected["weekday"], selected["phase"], event["slot"])
+                return
+            if event.get("kind") == "ordinary-element":
+                choices.extend(((event.get("element") or {}).get("name") or "Ordinary", link)
+                               for link in event.get("sourceLinks") or [] if link["language"] == "en")
+                continue
+            mass = row.get("mass") or {}
+            owner = row.get("orationSelection") or {}
+            sources = [(mass, row.get("missalWitnessLinks") or [])]
+            if owner:
+                sources.append(({"key": owner["owner"], "name": owner["label"]}, row.get("orationWitnessLinks") or []))
+            roles = {event.get("slot")}
+            roles.update(member.get("slot") for option in event.get("options") or [] for member in option.get("members") or [])
+            proper = event.get("kind") in ("proper", "proper-choice")
+            for source, links in sources:
+                if proper and event["id"].split("/")[2] != source.get("key"):
+                    continue
+                for link in links:
+                    if link["language"] != "en":
+                        continue
+                    for role in link.get("prayer_roles") or []:
+                        if not proper or role in roles:
+                            title = " · ".join(filter(None, (row.get("option"), source.get("name"), role)))
+                            choices.append((title, link))
+        if choices:
+            self.show_source_choices("English missal prayers", choices)
+        else:
+            self.app.notify("No English missal source is identified for this passage.")
+
+    def january_rows(self):
+        return [row for row in self.source_rows() if not row.get("primaryDayChoice") and
+                (row.get("januarySelection") or self.surface_id() == "propers" and
+                 (row.get("mass") or {}).get("januaryWeekdays"))]
+
+    def action_january_prayers(self) -> None:
+        rows = self.january_rows()
+
+        def select(row) -> None:
+            mass = row["mass"]
+            selected = row.get("januarySelection")
+            if selected:
+                self.show_january_prayers(mass["key"], selected["weekday"], selected["phase"])
+                return
+
+            def weekday_chosen(weekday) -> None:
+                if weekday is None:
+                    return
+                phases = [("before-epiphany", "Before Epiphany"), ("after-epiphany", "After Epiphany")]
+                self.app.push_screen(Pick("January Collect", phases),
+                                     lambda phase: self.show_january_prayers(mass["key"], weekday, phase) if phase else None)
+
+            self.app.push_screen(Pick("January weekday", [(day["weekday"], day["label"]) for day in mass["januaryWeekdays"]],
+                                      "The civil date and local Epiphany determine the appointed prayers."), weekday_chosen)
+        if len(rows) == 1:
+            select(rows[0])
+        elif rows:
+            self.app.push_screen(Pick("January prayer source", [(i, row["option"] or row["title"]) for i, row in enumerate(rows)]),
+                                 lambda i: select(rows[i]) if i is not None else None)
+
+    @work(thread=True, exclusive=True, group="january-prayers")
+    def show_january_prayers(self, mass: str, weekday: int, phase: str, role: str | None = None) -> None:
+        try:
+            source = bridge.call("liturgy", "januaryPrayerReading", self.calendar, mass, weekday, phase,
+                                 {"orations": self.orations, "textDisplay": self.text_display})
+        except Refused as error:
+            self.deliver(self.app.notify, str(error), severity="warning")
+            return
+        self.deliver(self.app.push_screen, JanuaryReading(source, role))
+
+    def memorial_prayer(self, role: str) -> None:
+        rows = [row for row in self.source_rows() if role in memorial_sources(row).get("roles", [])]
+
+        def choose_source(row) -> None:
+            sources = memorial_sources(row)
+            groups = sources["groups"]
+            options = [(group["id"], group["label"] + (" · see qualification" if group.get("qualification") else ""))
+                       for group in groups]
+            if sources.get("current_feria"):
+                options.append(("current-feria", "Current feria"))
+
+            def source_chosen(identifier) -> None:
+                if identifier is None:
+                    return
+                if identifier == "current-feria":
+                    feria = row.get("memorialFeria") or {}
+                    if feria.get("january"):
+                        selection = feria["january"]
+                        self.show_january_prayers(feria["mass"], selection["weekday"], selection["phase"], role)
+                    elif role in feria.get("roles", []):
+                        self.open_prayer_source(feria["mass"], role)
+                    elif feria.get("owners"):
+                        options = [(owner["id"], owner["label"]) for owner in feria["owners"]]
+                        self.app.push_screen(Pick(role, options, feria["name"]),
+                                             lambda owner: self.open_prayer_source(owner, role) if owner else None)
+                    else:
+                        ink = Ink().line(role, "bold")
+                        if feria:
+                            ink.line(feria["name"]).line(
+                                "This feria does not print this prayer. A separate, eligible prayer formulary must be identified.")
+                        else:
+                            ink.line("The current feria is an available source. This reading supplies no dated ferial formulary.")
+                        ink.line().line(sources["locus"]).line(sources["source_id"]).line(sources["url"])
+                        self.app.push_screen(Reading("Current feria", ink.content(), walks=False))
+                    return
+                group = next(one for one in groups if one["id"] == identifier)
+
+                self.open_memorial_group(row["mass"]["key"], role, group)
+
+            self.app.push_screen(Pick(role, options, "Open a source in Propers. The memorial keeps its own Collect."), source_chosen)
+
+        if len(rows) == 1:
+            choose_source(rows[0])
+        elif rows:
+            self.app.push_screen(Pick(role, [(i, row["title"]) for i, row in enumerate(rows)]),
+                                 lambda i: choose_source(rows[i]) if i is not None else None)
+
+    def open_prayer_source(self, mass: str, role: str, form: str | None = None) -> None:
+        self.app.action_surface("propers", calendar=self.calendar, mass=mass, form=form,
+                                prayerRole=role, ordinary=False, replace=True, bible=self.bible,
+                                orations=self.orations, textDisplay=self.text_display, companion=self.companion)
+
+    @work(thread=True, exclusive=True, group="memorial-source")
+    def open_memorial_group(self, memorial: str, role: str, group: dict) -> None:
+        try:
+            forms = bridge.call("liturgy", "memorialPrayerForms", self.calendar, memorial, role, group["id"])
+        except Refused as error:
+            self.deliver(self.app.notify, str(error), severity="warning")
+            return
+
+        def open_form(form) -> None:
+            if form is not None:
+                self.open_prayer_source(group["mass"], role, form)
+
+        if len(forms) == 1 and not group.get("qualification"):
+            self.deliver(open_form, forms[0]["id"])
+        else:
+            options = [(form["id"], form["name"]) for form in forms]
+            self.deliver(self.app.push_screen, Pick(group["label"], options, group.get("qualification") or role), open_form)
 
     def action_settings(self) -> None:
         edition = next((one["short"] for one in self.calendars if one["id"] == self.calendar), self.calendar)
@@ -94,11 +254,17 @@ class MissalSurface(Surface):
         if self.ordinary:
             options.extend([("ordinary_language", "Ordinary language   " + names.get(self.ordinary_language, self.ordinary_language)),
                             ("rubrics", "Ordinary rubrics   " + ("shown" if self.rubrics else "hidden"))])
+        if self.january_rows():
+            options.append(("january_prayers", "January weekday prayers"))
+        roles = dict.fromkeys(role for row in self.source_rows() for role in memorial_sources(row).get("roles", []))
+        options.extend(("memorial/" + role, role + "   Sources") for role in roles)
         sections[len(options)] = "Scripture"
         options.extend([("bible", f"Bible   {bible}"), ("companion", "Latin companion   " + (self.companion or "none"))])
 
         if any(link for row in self.source_rows() for _, link in witness_readings(row)):
             sections[len(options)] = "Sources"
+            if any(link.get("prayer_roles") for row in self.source_rows() for _, link in witness_readings(row)):
+                options.append(("prayer_source", "English missal prayers   Ctrl+O"))
             options.append(("missal_source", "Read source texts"))
 
         def picked(action) -> None:
@@ -114,6 +280,8 @@ class MissalSurface(Surface):
                         self.bible = value
                         self.reload_reading()
                 self.app.push_screen(Pick("Missal" if action == "calendar" else "Bible", choices), apply)
+            elif action and action.startswith("memorial/"):
+                self.memorial_prayer(action.removeprefix("memorial/"))
             elif action:
                 getattr(self, "action_" + action)()
 
