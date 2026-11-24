@@ -246,6 +246,17 @@ Triptych’s CC BY 4.0 grant. John’s retained short Google reproduction statem
 and digitizer markings follow the existing Google usage-guidelines inventory;
 they are not attributed to Aquinas. No full-volume physical collation is claimed.
 
+The Catena’s English excerpts of Ambrose, Augustine, Bede and Gregory identify
+the Oxford *Catena Aurea* edition when Aquinas transmits the passage. The Psalm
+expositions use the Oxford translation as condensed by A. Cleveland Coxe in
+*NPNF*, First Series, volume VIII (1888). Excerpts from Gregory and Peter
+Chrysologus also use the Roman Breviary translation by John, Marquess of Bute.
+The source library retains the Internet Archive optical text layer of Bute’s
+Summer volume (William Blackwood and Sons, 1879) and a separate transcription
+checked against page 781. The Winter volume (1908) is described below. These
+historical English texts are public domain in the United States and fall outside
+Triptych’s CC BY 4.0 grant. Constituent passages point to the holding volume.
+
 ### Advent primer witnesses (18 November 2026)
 
 For the Advent primer, the source library retains the complete Internet

@@ -39,8 +39,9 @@
 #   in-copyright          one exists and may not be republished here
 #   partial-public-domain some public-domain text exists, but not the whole work
 #   not-surveyed          nobody has looked; this is data, not an estimate
+#   no-verified-translation  a bounded search found no eligible English counterpart
 schema: triptych-commentary-translation-absences/v1
-updated: 2026-11-18
+updated: 2026-11-24
 
 question: >-
   for each work the catena holds, is there a public-domain English translation
@@ -75,64 +76,20 @@ bound: >-
   Fathers, Giles's Bede and Dods's Augustine, read volume by volume.
 
 absences:
-- work_id: work.bede.in-lucae-evangelium-expositio
-  language: en
-  finding: not-surveyed
-  checked_on: '2026-11-07'
-  reason: The held editions and checked Latin excerpts were reviewed for Catena admission. No English
-    edition is registered for this work; English translation availability and redistribution rights have
-    not been surveyed. This is a catalog boundary, not a finding that no English translation exists.
-  overturned_by: An edition-identified English translation survey and a registered lawful English witness
-    with checked passage text.
-- work_id: work.gregory-the-great.homiliae-in-evangelia
-  language: en
-  finding: not-surveyed
-  checked_on: '2026-11-07'
-  reason: The held editions and checked Latin excerpts were reviewed for Catena admission. No English
-    edition is registered for this work; English translation availability and redistribution rights have
-    not been surveyed. This is a catalog boundary, not a finding that no English translation exists.
-  overturned_by: An edition-identified English translation survey and a registered lawful English witness
-    with checked passage text.
 - work_id: work.thomas-aquinas.super-evangelium-ioannis-lectura
   language: en
-  finding: not-surveyed
-  checked_on: '2026-11-07'
-  reason: The held editions and checked Latin excerpts were reviewed for Catena admission. No English
-    edition is registered for this work; English translation availability and redistribution rights have
-    not been surveyed. This is a catalog boundary, not a finding that no English translation exists.
-  overturned_by: An edition-identified English translation survey and a registered lawful English witness
-    with checked passage text.
-- work_id: work.ambrose.expositio-evangelii-secundum-lucam
-  language: en
-  finding: not-surveyed
-  checked_on: '2026-11-18'
-  reason: The CSEL 32/4 Latin edition and its checked excerpts II.19 and II.26 were reviewed for Catena
-    admission. No English edition of the Expositio is registered. The CSEL edition record notes that no
-    English translation was retrieved in the sweep that registered it and that the modern English of
-    Ide M. Ni Riain is under copyright and was not sought; no survey of earlier or public-domain English
-    was made. The Catena Aurea's Oxford English renders some of Ambrose's sentences inside Aquinas's
-    compilation, which is a different work and not an English edition of the Expositio. This is a catalog
-    boundary, not a finding that no public-domain English translation exists.
-  overturned_by: An edition-identified English translation survey and a registered lawful English witness
-    with checked passage text.
-- 'work_id': 'work.augustine.quaestiones-euangeliorum'
-  'language': 'en'
-  'finding': 'not-surveyed'
-  'checked_on': '2026-11-05'
-  'reason': 'English translation availability and redistribution rights have not been surveyed for this
-    work. The fragment admitted on 2026-11-05 (question I.10) is Augustine''s own Latin, and no English
-    edition of the work is registered in this library.'
-  'overturned_by': 'A completed edition-identified translation and rights survey, with any English holding
-    registered and its publication basis reviewed.'
-
-- 'work_id': 'work.bede.in-marci-evangelium-expositio'
-  'language': 'en'
-  'finding': 'not-surveyed'
-  'checked_on': '2026-10-23'
-  'reason': 'English translation availability and redistribution rights have not yet been surveyed for
-    this work. The checked fragment offered in this batch is the Latin commentary.'
-  'overturned_by': 'A completed edition-identified translation and rights survey, with the canonical English
-    holdings and their publication basis reviewed.'
+  finding: in-copyright
+  checked_on: '2026-11-24'
+  reason: CUA Press identifies Fabian Larcher and James Weisheipl’s version as the first English translation.
+    Its 2010 Books 13–21 includes John 20. The publisher and Aquinas Institute identify copyrighted editions.
+    Neither cited source grants redistribution of the two held John 20 excerpts.
+  aliases_searched:
+  - Thomas Aquinas Commentary on the Gospel of John Books 13–21 Larcher Weisheipl
+  - Super Evangelium Ioannis lectura English Aquinas Institute
+  evidence: https://www.cuapress.org/9780813217345/commentary-on-the-gospel-of-john-books-13-21/ and the Aquinas
+    Institute edition’s copyright and translation credits at https://www.aquinasinstitute.org/_files/ugd/9cabc9_e94985ff472a46d78cdbbeabdc4dddcb.pdf.
+    Public access to the preview does not establish permission to reproduce John 20.
+  overturned_by: A verified English counterpart with an applicable public licence or permission for these passages.
 
 - work_id: work.ambrose.hexameron
   language: en
@@ -176,7 +133,10 @@ absences:
   reason: >-
     The only English translation of the commentary is C. T. R. Hayward's, Saint
     Jerome's Hebrew Questions on Genesis, Oxford Early Christian Studies
-    (Clarendon Press, 1995), which is in copyright.
+    (Clarendon Press, 1995), which is in copyright. A further search under “Jerome's Hebrew
+    Questions on Genesis” found a public digital rendering expressly labelled as translated
+    using ChatGPT (Historical Christian Faith, https://historicalchristian.faith/). It was not
+    admitted as a historical English witness.
   partial: >-
     Jerome's own PREFACE to the book is public domain: it stands among the
     Prefaces in the Nicene and Post-Nicene Fathers second series volume 6
@@ -288,15 +248,12 @@ absences:
 
 - work_id: work.angelomus-of-luxeuil.commentarius-in-genesim
   language: en
-  finding: none-published
-  checked_on: 2026-08-01
+  finding: no-verified-translation
+  checked_on: 2026-11-24
   reason: >-
-    No English translation of any date was located. Open Library returns a
-    single record under the name — Silvia Cantelli's Angelomo e la scuola
-    esegetica di Luxeuil (1990), an Italian study — and the Internet Archive
-    returns only sixteenth-century Latin printings of his Enarrationes in libros
-    Regum (1530, 1565) and the Migne volumes. This work appears never to have
-    been put into English.
+    No verified human English of the held PL 115 excerpts was located. Wroot Press publishes
+    selections of Genesis 1 in English and explicitly identifies Claude as the drafter and Wilson
+    Pruitt as the approver. The project has not admitted those machine renderings as a historical English witness.
   nineteenth_century: None.
   aliases_searched:
   - Angelomus
@@ -309,17 +266,22 @@ absences:
   overturned_by: >-
     A dissertation translation deposited with ProQuest and catalogued in neither
     Open Library nor the Internet Archive, which is the bound on this negative.
+  follow_up_evidence: >-
+    The 2026-11-24 search for “Angelomus of Luxeuil commentary on Genesis English translation”
+    located https://bereshit.wrootpress.com/witnesses/angelom-gen-1-1/ and its companion
+    excerpts on Genesis 1:1–2. The publisher distinguishes their production and CC BY terms.
+    A search of these pages and the earlier catalogues does not settle the rest of the work.
 
 - work_id: work.remigius-of-auxerre.commentarius-in-genesim
   language: en
-  finding: none-published
-  checked_on: 2026-08-01
+  finding: no-verified-translation
+  checked_on: 2026-11-24
   reason: >-
-    No English translation of any date was located. The one relevant modern item
-    is Burton Van Name Edwards's The Two Commentaries on Genesis Attributed to
-    Remigius of Auxerre (UMI, 1990), a critical study whose title flags that the
-    Patrologia Latina 131 attribution is itself disputed. Everything else under
-    the name is Latin, French or reference literature.
+    The held PL 131 commentary is printed under Remigius’s name. Burton Van Name Edwards’s
+    critical edition identifies this text as Haimo of Auxerre’s and distinguishes the authentic
+    Remigius commentary first printed in 1999. Joy A. Schroeder’s English selections from
+    Remigius on Genesis 1–3 do not establish an English counterpart to the PL 131 fragments.
+    No checked, redistributable English of these fragments was located.
   nineteenth_century: None.
   aliases_searched:
   - Remigius Antissiodorensis
@@ -331,11 +293,93 @@ absences:
   overturned_by: >-
     The same dissertation route as Angelomus, and additionally any edition
     published under the disputed attribution rather than under Remigius's name.
+  follow_up_evidence: >-
+    The search for “Remigius of Auxerre commentary on Genesis English translation” reached
+    https://www.brepols.net/products/IS-9782503043616-1 (the critical edition and PL identification)
+    and https://www.eerdmans.com/9780802868459/the-book-of-genesis/ (Joy A. Schroeder, The
+    Book of Genesis, 2015). The catalogue search distinguishes two texts formerly listed under
+    the same name. It does not establish the absence of English translations of Haimo elsewhere.
+
+- work_id: work.augustine.epistolae-ad-galatas-expositio
+  language: en
+  finding: not-surveyed
+  checked_on: '2026-11-08'
+  reason: >-
+    An English translation is identified: Eric Plumer, Augustine's Commentary on
+    Galatians: Introduction, Text, Translation, and Notes (Oxford University
+    Press, 2003; ISBN 9780199244393). The publisher's catalogue confirms the
+    English translation at https://academic.oup.com/book/3945 . No English
+    payload was acquired. The chapter6 publisher page (pp.124–236,
+    DOI10.1093/0199244391.003.0006) says this session has no access. The
+    publisher's legal notice permits personal noncommercial copies but expressly
+    forbids display or distribution on another website or electronic network:
+    https://academic.oup.com/pages/legal-notice . No edition-specific open
+    redistribution grant was found. This is a blocker for the inspected route,
+    not a claim that no English translation or other permission can exist.
+  aliases_searched:
+  - Augustine Galatians Plumer 2003 commentary
+  evidence: >-
+    Publisher's edition identity, chapter access and legal notice checked on
+    2026-11-08. The exact modern translation exists; the inspected publisher
+    route does not authorize corpus or website redistribution. A complete
+    survey of other English expressions remains outstanding.
+  overturned_by: An acquired, edition-identified English expression with an
+    affirmative redistribution basis.
+
+# Public-domain English that EXISTS beside what is already held. Recorded
+# because a route found and not taken is worth more written down than
+# rediscovered, and because a second translation of a work already held in
+# English is a real offer to a reader and not a duplicate: Healey's Jacobean
+# City of God and Dods's Victorian one are two different books.
+also_found:
+
+- work_id: work.bede.in-lucae-evangelium-expositio
+  language: en
+  finding: acquired-partial-public-domain
+  checked_on: '2026-11-24'
+  acquisition: 'The Oxford Catena on Luke (Ryder, 1843, part I) preserves named excerpts from Bede on Luke 2:7.
+    The English of Bede’s independent commentary by Calvin B. Kendall and Faith Wallis, Liverpool University
+    Press, is a separate modern edition. Its publisher listing supplies no open redistribution grant: https://utpdistribution.com/9781837645046/bede-commentary-on-the-gospel-of-luke/.
+    No claim of full coverage accompanies the acquired Oxford selections.'
+
+- work_id: work.gregory-the-great.homiliae-in-evangelia
+  language: en
+  finding: acquired-partial-public-domain
+  checked_on: '2026-11-24'
+  acquisition: The Marquess of Bute’s 1908 Roman Breviary, Winter, pp. 216–217 and 276, explicitly identifies Homilies
+    I and VIII. The source library holds English extracts from both; the Oxford Catena on Luke gives additional,
+    sometimes shorter excerpts of the same homilies. David Hurst’s Forty Gospel Homilies is a separate modern
+    translation. The selections do not supply all forty homilies or all the held Latin paragraphs.
+
+- work_id: work.ambrose.expositio-evangelii-secundum-lucam
+  language: en
+  finding: acquired-partial-public-domain
+  checked_on: '2026-11-24'
+  acquisition: The Marquess of Bute’s 1908 Roman Breviary, Winter, pp. 252–253, prints Ambrose II.19. The 1843
+    Oxford Catena on Luke also carries named selections that match material in II.26, II.41 and II.42. Bute’s
+    complete passage and the compiler’s partial quotations have separate edition and passage records. Neither
+    is a complete English edition of the Exposition.
+
+- work_id: work.augustine.quaestiones-euangeliorum
+  language: en
+  finding: acquired-partial-public-domain
+  checked_on: '2026-11-24'
+  acquisition: The Oxford Catena on Matthew names Augustine’s Questions on the Gospels in I.10–12 and I.37–39.
+    Mark Pattison’s historical English reaches the quoted clauses through Aquinas’s arrangement. No corresponding
+    extract of I.42 was identified among its treatments of the eagles at Matthew 24:28.
+
+- work_id: work.bede.in-marci-evangelium-expositio
+  language: en
+  finding: acquired-partial-public-domain
+  checked_on: '2026-11-24'
+  acquisition: The 1842 Oxford Catena on Mark, translated by John Dalgairns, preserves two attributed stretches
+    of Bede’s exposition of Mark 10:42–45. It interleaves Theophylact and leaves parts of Bede untranslated.
+    Those parts are outside the English selections.
 
 - work_id: work.peter-chrysologus.sermones
   language: en
-  finding: partial-public-domain
-  checked_on: 2026-09-23
+  finding: acquired-partial-public-domain
+  checked_on: 2026-11-24
   reason: >-
     The only complete English of Sermon 50 located is William B. Palardy's,
     "Sermon 50: On the Paralytic", pages 193-197 of St. Peter Chrysologus:
@@ -353,7 +397,7 @@ absences:
     Oxford Catena Aurea on St. Matthew (1841), pages 332-335, prints five short
     excerpts under Chrysologus's name, cut and reworded by the compiler.
     Neither carries the sermon's answer to the Pharisees, that forgiving sins
-    shows Christ to be God. Both are recorded here and not landed.
+    shows Christ to be God. The 2026-09-23 survey recorded both candidates. The acquisition below supersedes its holding status.
   nineteenth_century: >-
     Two partial renderings and no whole one, both read on the Internet Archive
     on 2026-09-23. (1) Bute, The Roman Breviary (Edinburgh: Blackwood, 1879),
@@ -456,39 +500,10 @@ absences:
     1950, "© on translation"), for which no renewal was found either. If it
     prints the Eighteenth Sunday's lessons, it is a second English of the same
     quarter of the sermon that Bute gives, and not more of it.
-
-- work_id: work.augustine.epistolae-ad-galatas-expositio
-  language: en
-  finding: not-surveyed
-  checked_on: '2026-11-08'
-  reason: >-
-    An English translation is identified: Eric Plumer, Augustine's Commentary on
-    Galatians: Introduction, Text, Translation, and Notes (Oxford University
-    Press, 2003; ISBN 9780199244393). The publisher's catalogue confirms the
-    English translation at https://academic.oup.com/book/3945 . No English
-    payload was acquired. The chapter6 publisher page (pp.124–236,
-    DOI10.1093/0199244391.003.0006) says this session has no access. The
-    publisher's legal notice permits personal noncommercial copies but expressly
-    forbids display or distribution on another website or electronic network:
-    https://academic.oup.com/pages/legal-notice . No edition-specific open
-    redistribution grant was found. This is a blocker for the inspected route,
-    not a claim that no English translation or other permission can exist.
-  aliases_searched:
-  - Augustine Galatians Plumer 2003 commentary
-  evidence: >-
-    Publisher's edition identity, chapter access and legal notice checked on
-    2026-11-08. The exact modern translation exists; the inspected publisher
-    route does not authorize corpus or website redistribution. A complete
-    survey of other English expressions remains outstanding.
-  overturned_by: An acquired, edition-identified English expression with an
-    affirmative redistribution basis.
-
-# Public-domain English that EXISTS beside what is already held. Recorded
-# because a route found and not taken is worth more written down than
-# rediscovered, and because a second translation of a work already held in
-# English is a real offer to a reader and not a duplicate: Healey's Jacobean
-# City of God and Dods's Victorian one are two different books.
-also_found:
+  acquisition: >-
+    Bute’s 1879 Summer volume was retrieved whole, and the three lessons in vol. II, p. 781
+    were checked against its page image and the held PL 52 Latin. The bounded English excerpt
+    is registered at Matthew 9:1. It ends before the paralytic is brought.
 
 - work_id: work.severian-of-gabala.in-cosmogoniam-homiliae
   language: en

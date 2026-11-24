@@ -1,0 +1,19 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.gregory-advent-lessons-checked-214fd913"
+edition_id = "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The identified English book was published by William Blackwood and Sons in 1908. Its 1908 printed contents have no remaining United States copyright term in 2026: a 95-year maximum term ended before 2026, and any URAA restoration supplies only the remainder of the otherwise applicable United States term. Faithful mechanical scans and project transcription of those public-domain English words add no human authorship. The stated basis is publication date and mechanical reproduction, not Internet Archive availability or a host label. This covers the historical human translation, not approved modern English or any modern editorial addition."
+rights_jurisdiction = "United States"
+provenance = "Retrieved the complete 1,044-page Internet Archive facsimile and verified the SHA-256 against the registered scan. Read printed pp. 216–217 (PDF pp. 300–301) as images; the attribution to Gregory precedes the seventh lesson. The third nocturn ends immediately after the ninth lesson."
+retrieved = "2026-11-24"
+sha256 = "214fd913db0e0f1bc1cfe5b066fda11925252eafa9d1b0b8688ebbf6faee7315"
+byte_size = 1464
+path = "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/artifacts/gregory-advent-lessons-checked-214fd913/text.txt"
+derived_from = "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-pdf"
+transformation = "Selected the body of each of the three homiletic lessons in reading order. Reused the checked English of lesson VII, and collated it and lessons VIII–IX with the page images. Joined line wrapping, closed spaces before punctuation, corrected optical character errors and preserved the printed small-capital opening words as capitals. The responsories, rubrics, headings and Gospel introduction are outside the excerpts."
+indexable = true
+encoding = "utf-8"

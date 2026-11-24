@@ -421,6 +421,8 @@ English `passage_id`, states whether it translates the `whole` linked unit or
 an `excerpt`, and gives the textual `basis` for the correspondence. Shared
 Scripture coordinates alone cannot establish that relationship. Each English
 reading retains its own complete record, translator, rights and natural bounds.
+Run `python3 scripts/_catena.py linkage --json` to see each admitted passage’s
+English coverage. An unlinked passage has no checked counterpart in the Catena.
 The link is available from each chapter in which the linked source stands.
 
 ### The axis the reader chooses along is not the language code
@@ -545,10 +547,11 @@ shard family or additional payload request.
 
 The November 24 catalogue and parallel-reading controls let readers choose an
 excerpt-bearing chapter before downloading its spine and open a checked English
-counterpart beside the non-English passage. The controller’s gzip-9 budget is
-15,000 bytes (10,300 with comments stripped), and the stylesheet’s is 8,800
-bytes (3,350 with comments stripped). The chapter catalogue uses the existing
-index request. English wording is fetched only when the reader opens it.
+counterpart beside the non-English passage. The controller measures 14,760
+bytes with gzip-9 (10,201 without comments), and the stylesheet 8,586 (3,289
+without comments). The respective ceilings are 15,000/10,300 and 8,800/3,350.
+The chapter catalogue uses the existing index request. English wording is
+fetched only when the reader opens it.
 
 ### Verse-specific excerpts within a held passage — 2026-11-08
 

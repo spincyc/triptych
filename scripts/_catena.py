@@ -82,13 +82,11 @@ INDEX_RELATIVE = Path("src/sources/commentary/passage-commentary-index.yaml")
 ABSENCES_RELATIVE = Path("src/sources/commentary/translation-absences.yaml")
 ABSENCES_SCHEMA = "triptych-commentary-translation-absences/v1"
 
-# The findings a row may carry, closed so that a fourth answer has to be argued
-# for rather than typed. They say different things and the page prints them
-# differently: `none-published` is a fact about the world, `in-copyright` is a
-# fact about the law, `partial-public-domain` is an offer this project has not
-# taken, and `not-surveyed` is an admission.
+# A bounded search can locate an English lead without establishing a usable
+# counterpart. Keep that distinct from a claim about publication or rights.
 ABSENCE_FINDINGS = {
     "none-published",
+    "no-verified-translation",
     "in-copyright",
     "partial-public-domain",
     "not-surveyed",
@@ -1018,7 +1016,7 @@ def _extent(value: Any) -> Extent | None:
         return None
 
 
-def _english_version_errors(sources, fragments, *, passage_ids=None) -> list[str]:
+def _english_version_problems(sources, fragments, *, passage_ids=None):
     """Cross-references identify separately admitted editions of one textual unit."""
     by_id = {row["passage_id"]: row for row in fragments
              if isinstance(row, dict) and isinstance(row.get("passage_id"), str)}
@@ -1028,28 +1026,27 @@ def _english_version_errors(sources, fragments, *, passage_ids=None) -> list[str
         edition = sources.editions.get(passage.get("edition_id")) or {}
         return fold_language(edition.get("language"))
 
-    errors = []
     for identifier, row in by_id.items():
         if "english_versions" not in row or (passage_ids is not None and identifier not in passage_ids):
             continue
         versions = row["english_versions"]
         if not isinstance(versions, list) or not versions:
-            errors.append(f"{identifier}: english_versions needs a nonempty list")
+            yield identifier, (f"{identifier}: english_versions needs a nonempty list")
             continue
         if language(identifier) in (None, "en"):
-            errors.append(f"{identifier}: only a known non-English passage can link an English version")
+            yield identifier, (f"{identifier}: only a known non-English passage can link an English version")
         extent = _extent(row.get("extent"))
         seen = set()
         for link in versions:
             if (not isinstance(link, dict) or set(link) != {"passage_id", "basis", "coverage"}
                     or not all(isinstance(value, str) and value.strip() for value in link.values())
                     or link["coverage"] not in ("whole", "excerpt")):
-                errors.append(f"{identifier}: English version needs an id, a textual basis and whole/excerpt coverage")
+                yield identifier, (f"{identifier}: English version needs an id, a textual basis and whole/excerpt coverage")
                 continue
             target_id = link["passage_id"]
             target = by_id.get(target_id)
             if target_id in seen or not target or target.get("work_id") != row.get("work_id") or language(target_id) != "en":
-                errors.append(f"{identifier}: {target_id} must be a distinct admitted English version of the same work")
+                yield identifier, (f"{identifier}: {target_id} must be a distinct admitted English version of the same work")
                 continue
             seen.add(target_id)
             other = _extent(target.get("extent"))
@@ -1057,8 +1054,15 @@ def _english_version_errors(sources, fragments, *, passage_ids=None) -> list[str
                     or other.first_chapter > extent.first_chapter or other.last_chapter < extent.last_chapter
                     or (other.first_chapter, other.first_verse) > (extent.last_chapter, extent.last_verse)
                     or (other.last_chapter, other.last_verse) < (extent.first_chapter, extent.first_verse)):
-                errors.append(f"{identifier}: {target_id} must overlap the locus and be readable in every source chapter")
-    return errors
+                yield identifier, (f"{identifier}: {target_id} must overlap the locus and be readable in every source chapter")
+            elif link["coverage"] == "whole" and (
+                    (other.first_chapter, other.first_verse) > (extent.first_chapter, extent.first_verse)
+                    or (other.last_chapter, other.last_verse) < (extent.last_chapter, extent.last_verse)):
+                yield identifier, (f"{identifier}: a whole English version must cover the full source locus")
+
+
+def _english_version_errors(sources, fragments, *, passage_ids=None) -> list[str]:
+    return [message for _, message in _english_version_problems(sources, fragments, passage_ids=passage_ids)]
 
 
 def validate(root: Path = ROOT) -> list[str]:
@@ -2745,6 +2749,10 @@ def main(argv: list[str] | None = None) -> int:
                 counts = report["counted"]
                 print(f"catena linkage: {counts['fragments']} source-linked fragments; "
                       f"{counts['snippets']} reviewed snippets in {counts['parents_with_snippets']} parents")
+                coverage = counts["english_coverage"]
+                print(f"English: {coverage.get('english-text', 0)} passages in English; "
+                      f"non-English passages with a whole counterpart: {coverage.get('whole', 0)}, "
+                      f"excerpt only: {coverage.get('excerpt', 0)}, no checked link: {coverage.get('unlinked', 0)}")
                 print(f"{counts['large_parents_without_snippets']} of {counts['large_parents']} parents "
                       f"with at least {args.minimum_words} words have no narrower reviewed snippets:")
                 for identifier in report["large_parents_without_snippets"]:

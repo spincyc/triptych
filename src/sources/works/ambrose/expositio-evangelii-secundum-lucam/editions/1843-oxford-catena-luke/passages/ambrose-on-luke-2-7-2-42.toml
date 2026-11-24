@@ -1,0 +1,17 @@
+schema = 2
+record_type = "passage"
+id = "passage.ambrose.expositio-evangelii-secundum-lucam.1843-oxford-catena-luke.ambrose-on-luke-2-7-2-42"
+edition_id = "edition.ambrose.expositio-evangelii-secundum-lucam.1843-oxford-catena-luke"
+segment_id = "segment.ambrose.expositio-evangelii-secundum-lucam.1843-oxford-catena-luke.ambrose-on-luke-2-7-2-42"
+artifact_sha256 = "46e80520bb9ca9bf14b7f55db80b0d9493a18c9787c2adf77fa3ae4a08f53d30"
+locus = "2.42"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "English through Thomas Aquinas’s Catena Aurea. The English renders the weakness and power, poverty and riches, and the appeal to acknowledge redemption in II.42. It leaves out the opening about divinity and the later swaddling clothes and ox."
+physical_line_ranges = [[1, 3]]
+text = "On thy account then am I weak, in thee am I strong. On thy account am I poor, in thee am I rich. Consider not what thou seest, but acknowledge that thou art redeemed."
+transcription_segments = [
+  { line = 1, text = "On thy account then am I weak, in thee am I strong." },
+  { line = 2, text = "On thy account am I poor, in thee am I rich." },
+  { line = 3, text = "Consider not what thou seest, but acknowledge that thou art redeemed." },
+]
+verified_on = "2026-11-24"

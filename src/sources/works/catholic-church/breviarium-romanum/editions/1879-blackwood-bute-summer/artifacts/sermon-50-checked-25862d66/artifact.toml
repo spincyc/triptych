@@ -1,0 +1,19 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.catholic-church.breviarium-romanum.1879-blackwood-bute-summer.sermon-50-checked-25862d66"
+edition_id = "edition.catholic-church.breviarium-romanum.1879-blackwood-bute-summer"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The Blackwood English printing appeared in Britain in 1879; its United States copyright term has expired. The photographic reproduction and faithful transcription preserve the historical wording. This finding concerns the identified Bute volume."
+rights_jurisdiction = "United States"
+provenance = "Read the printed page image from the hashed complete scan. The Seventh through Ninth Lessons run across the columns; the Gospel incipit before them and the following antiphon are outside the commentary."
+retrieved = "2026-11-24"
+sha256 = "25862d66cc04d09b99298036d16f1abf3883d0d36dcf2ef4124a0e88fe74088c"
+byte_size = 2049
+path = "src/sources/works/catholic-church/breviarium-romanum/editions/1879-blackwood-bute-summer/artifacts/sermon-50-checked-25862d66/text.txt"
+derived_from = "artifact.catholic-church.breviarium-romanum.1879-blackwood-bute-summer.ia-scan-726e3d93"
+transformation = "Collated the PDF text layer with printed p. 781 (PDF p. 411), correcting OCR, joining printed line breaks, and normalizing spacing, quotation marks and initial small capitals. Each line is the body of one lesson in reading order. The headings, preliminary Gospel incipit, and antiphons are omitted."
+indexable = true
+encoding = "utf-8"

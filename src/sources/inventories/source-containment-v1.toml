@@ -65979,3 +65979,87 @@ title = "Poésies"
 work_id = "work.therese-of-lisieux.poesies"
 locator = "Selected Poems, printed pp. 321–328, OCR lines 14832–15157."
 basis = "The contents on p. viii name five poems, beginning with My Song of To-day and ending with Why I Love Thee, Mary. The editor’s note on p. 328 credits Susan L. Emery’s English translation published by the Carmel of Boston. These pages contain a selection."
+
+[[containers]]
+id = "work.catholic-church.breviarium-romanum"
+manifest_sha256 = "4c7d7fb7936515dcb73559128c988001fedf3d1b326d0d289c5203bb999654e9"
+status = "partial"
+basis = "Attributions and printed page numbers checked in Bute’s Summer (1879) and Winter (1908) volumes. The registered constituent segments distinguish these English readings from the liturgical book which contains them."
+unresolved = "Other constituent readings have not been systematically identified or matched to independent source editions."
+
+[[containers.constituents]]
+author = "Ambrose of Milan"
+title = "Expositio Evangelii secundum Lucam"
+work_id = "work.ambrose.expositio-evangelii-secundum-lucam"
+locator = "Winter pp. 252–253; Ember Friday, first lesson"
+basis = "The heading identifies Ambrose on Luke; the complete English selection corresponds to II.19."
+
+[[containers.constituents]]
+author = "Gregory the Great"
+title = "Homiliae in Evangelia"
+work_id = "work.gregory-the-great.homiliae-in-evangelia"
+locator = "Winter pp. 216–217, 276; First Sunday of Advent, lessons VII–IX, and Christmas, lesson VII"
+basis = "The headings identify Gregory’s Gospel homilies I and VIII."
+
+[[containers.constituents]]
+author = "Peter Chrysologus"
+title = "Sermones"
+work_id = "work.peter-chrysologus.sermones"
+locator = "Summer vol. II, p. 781; Eighteenth Sunday after Pentecost, lessons VII–IX"
+basis = "The heading attributes these lessons to Chrysologus and names Sermon 50. The printed abridgment treats Matthew 9:1."
+
+[[containers]]
+id = "work.thomas-aquinas.catena-aurea-in-matthaeum"
+manifest_sha256 = "33e34c9a4b28a66e5e5342f54e7cc834e82963875904911399365dbded46c873"
+status = "partial"
+basis = "In the 1842 Oxford English the repeated author rubrics and work/question citations identify quoted constituents."
+unresolved = "Other constituent readings have not been systematically identified or matched to independent source editions."
+
+[[containers.constituents]]
+author = "Augustine of Hippo"
+title = "Quaestiones evangeliorum"
+work_id = "work.augustine.quaestiones-euangeliorum"
+locator = "Matthew 13:25–33 and 24:20–32, selected quotations only"
+basis = "The named Questions I.10–12 and I.37–39 were compared with the held Latin. Discontiguous extracts retain individual passage records."
+
+[[containers]]
+id = "work.thomas-aquinas.catena-aurea-in-marcum"
+manifest_sha256 = "a0f9269884bf883d5bc39caaf5a47457fb252828f566d8b0849e1e5804418716"
+status = "partial"
+basis = "Two Bede attributions in the Oxford English selection on Mark 10:41–45 were matched to the Latin exposition."
+unresolved = "Other constituent readings have not been systematically identified or matched to independent source editions."
+
+[[containers.constituents]]
+author = "Bede the Venerable"
+title = "In Marci evangelium expositio"
+work_id = "work.bede.in-marci-evangelium-expositio"
+locator = "Mark 10:43–45, selected quotations"
+basis = "Bede’s explanation of greatness through humility and the ransom for many appears across source lines 1962–63 and 1965, separated by Theophylact."
+
+[[containers]]
+id = "work.thomas-aquinas.catena-aurea-in-lucam"
+manifest_sha256 = "55ba3072ff7b09ebb960db2200f34c4053bd4ca8cd364a94d76ddf3ce88908d7"
+status = "partial"
+basis = "Named passages were checked in the retained Oxford English compilation. Each registered constituent states the extent matched to its independent Latin source."
+unresolved = "Other constituent readings have not been systematically identified or matched to independent source editions."
+
+[[containers.constituents]]
+author = "Ambrose of Milan"
+title = "Expositio Evangelii secundum Lucam"
+work_id = "work.ambrose.expositio-evangelii-secundum-lucam"
+locator = "Luke 1:46–47 and 2:7, selected quotations"
+basis = "The checked Oxford readings preserve excerpts of Ambrose II.26, II.41 and II.42."
+
+[[containers.constituents]]
+author = "Bede the Venerable"
+title = "In Lucae evangelium expositio"
+work_id = "work.bede.in-lucae-evangelium-expositio"
+locator = "Luke 2:7, selected quotations"
+basis = "The excerpts on swaddling, the manger and the inn preserve successive portions of Bede’s Latin exegesis."
+
+[[containers.constituents]]
+author = "Gregory the Great"
+title = "Homiliae in Evangelia"
+work_id = "work.gregory-the-great.homiliae-in-evangelia"
+locator = "Luke 2:7 and 21:28, selected quotations"
+basis = "The source labels identify Gregory, and the checked words correspond to parts of Gospel homilies VIII.1 and I.3."

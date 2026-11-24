@@ -230,6 +230,12 @@ class EnglishVersionTests(unittest.TestCase):
         self.sources.editions["english"]["language"] = "la"
         self.assertTrue(self.errors())
 
+    def test_partial_locus_cannot_be_advertised_as_a_whole_english_version(self):
+        self.target["extent"]["last_verse"] = 2
+        self.assertEqual(self.errors(), [])
+        self.source["english_versions"][0]["coverage"] = "whole"
+        self.assertIn("must cover the full source locus", " ".join(self.errors()))
+
     def test_incomplete_or_repeated_attestation(self):
         link, = self.source["english_versions"]
         for versions in [[], [link, link], [{**link, "basis": ""}], [{**link, "coverage": "unknown"}]]:
@@ -1440,6 +1446,13 @@ class StructureTests(CatenaFixture):
         out = self.root / "out"
         _catena.structure(self.root, out)
         return out / "structure" / "catena"
+
+    def test_linkage_audit_does_not_count_an_unresolved_english_target(self):
+        import _catena_snippets
+        self.write_edges(english_versions=[{"passage_id": "missing", "coverage": "whole", "basis": "I.7"}])
+        report = _catena_snippets.audit(self.root)
+        self.assertTrue(report["errors"])
+        self.assertEqual(report["counted"]["english_coverage"], {"invalid-link": 1})
 
     def test_catalogue_refuses_an_edge_whose_text_record_is_missing(self):
         next(self.root.glob("src/sources/works/**/passages/11.7.toml")).unlink()

@@ -163,6 +163,10 @@ def audit(root, *, minimum_words=1000):
     sources = _catena.load_sources(root)
     edges = _catena.load_edges(root)
     snippets, errors = reviewed(root, sources, edges)
+    invalid_versions = set()
+    for identifier, message in _catena._english_version_problems(sources, edges.get("fragments", [])):
+        errors.append(message)
+        invalid_versions.add(identifier)
     scope = _catena_scope.Scope(root, works=sources.works)
     rows = []
     for edge in edges.get("fragments", []):
@@ -173,7 +177,17 @@ def audit(root, *, minimum_words=1000):
         artifact = _catena.controlling_artifact(sources, passage) or {}
         edition = sources.editions.get(passage.get("edition_id"), {})
         text = passage.get("text", "")
+        versions = edge.get("english_versions", [])
+        coverage = "unlinked"
+        if identifier in invalid_versions:
+            coverage = "invalid-link"
+        elif _catena.fold_language(edition.get("language")) == "en":
+            coverage = "english-text"
+        elif isinstance(versions, list) and versions:
+            coverage = "whole" if any(isinstance(v, dict) and v.get("coverage") == "whole"
+                                      for v in versions) else "excerpt"
         rows.append({"passage_id": identifier, "work_id": edge["work_id"],
+                     "english_coverage": coverage,
                      "language": edition.get("language", ""), "extent": edge["extent"],
                      "words": len(text.split()), "snippet_count": len(snippets.get(identifier, [])),
                      "source_record": source_record(passage, artifact)})
@@ -183,6 +197,7 @@ def audit(root, *, minimum_words=1000):
     return {"schema": "triptych-catena-linkage-audit/v1", "numbering": "vulgate",
             "minimum_words": minimum_words,
             "counted": {"fragments": len(rows), "snippets": sum(row["snippet_count"] for row in rows),
+                        "english_coverage": dict(sorted(Counter(row["english_coverage"] for row in rows).items())),
                         "parents_with_snippets": sum(bool(row["snippet_count"]) for row in rows),
                         "large_parents": len(long_rows),
                         "large_parents_without_snippets": len(pending),

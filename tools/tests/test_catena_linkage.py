@@ -129,6 +129,12 @@ class HeldCorpusTests(unittest.TestCase):
         self.assertEqual(report["errors"], [])
         self.assertGreaterEqual(report["counted"]["fragments"], 1560)
         self.assertEqual(len(report["fragments"]), report["counted"]["fragments"])
+        self.assertEqual(sum(report["counted"]["english_coverage"].values()), len(report["fragments"]))
+        for row in report["fragments"]:
+            english = _catena.fold_language(row["language"]) == "en"
+            self.assertEqual(row["english_coverage"] == "english-text", english)
+        self.assertGreater(report["counted"]["english_coverage"]["whole"], 0)
+        self.assertGreater(report["counted"]["english_coverage"]["excerpt"], 0)
         self.assertTrue(report["large_parents_without_snippets"])
 
     def test_philippians_and_gregory_have_real_explanations_not_incidental_citations(self):

@@ -1,0 +1,19 @@
+schema = 2
+record_type = "passage"
+id = "passage.augustine.enarrationes-in-psalmos.1888-oxford-coxe.psalm-84-3"
+edition_id = "edition.augustine.enarrationes-in-psalmos.1888-oxford-coxe"
+segment_id = "segment.augustine.enarrationes-in-psalmos.1888-oxford-coxe.psalm-lxxxv"
+artifact_sha256 = "d6841950333024906294e6e829f7512d08b3adf62ae6cee3615d18a7ad0020e9"
+locus = "85.2"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Latin Psalm 84 §3 corresponds to English Psalm LXXXV §2 in Coxe’s edition. Both begin with prophecy speaking of the future in the past tense and end with the favour shown to the land. The English ellipsis omits the Latin’s example of the foretold Passion; the following captivity lemma belongs to §4. Bracketed footnote calls belong to the English edition."
+physical_line_ranges = [[41528, 41532]]
+text = "2. The Prophet singeth to Him of the future, and useth words as it were of past time: he speaks of things future as if already done, because with God that which is future has already taken place....\"Lord, Thou hast been favourable unto Thy land\" (ver. 1); as if He had already done so."
+transcription_segments = [
+  { line = 41528, text = "2. The Prophet singeth to Him of the future, and useth words as it were" },
+  { line = 41529, text = "of past time: he speaks of things future as if already done, because" },
+  { line = 41530, text = "with God that which is future has already taken place....\"Lord, Thou" },
+  { line = 41531, text = "hast been favourable unto Thy land\" (ver. 1); as if He had already done" },
+  { line = 41532, text = "so." },
+]
+verified_on = "2026-11-24"
