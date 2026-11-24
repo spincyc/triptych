@@ -84,6 +84,7 @@ module.exports = function catena(realm) {
     const held = new Map(M.records(index.held).map((one) => [one.token, one]));
     return {
       numbering: index.numbering,
+      holdings: M.commentaryHoldings(index, canon.books),
       books: canon.books.map((book) => {
         const record = held.get(book.token) || {};
         return {
@@ -94,6 +95,7 @@ module.exports = function catena(realm) {
       }),
       bibles: editions.bibles.map((one) => ({
         id: one.id, label: one.label, language: one.language, numbering: one.numbering,
+        languageName: M.sayLanguage(one.language), numberingLabel: one.numbering ? T.numberingLabel(one) : '',
       })),
       voices: voices.keys,
     };
@@ -216,7 +218,7 @@ module.exports = function catena(realm) {
           ? { summary: M.absenceSummary(rows, M.sayLanguage(asked.language)), rows }
           : { unread: M.absencesUnread(index(state)), rows: [] };
       }
-      const fragments = M.commentaryGroups(shown).flatMap((group) => group.fragments).map((row) => ({
+      const describe = (row) => ({
         id: row.id, author: row.author, work: row.work, date: row.date,
         ...M.compositionDateMetadata(row),
         language: row.language, voice: row.voice, text_words: row.text_words,
@@ -228,6 +230,12 @@ module.exports = function catena(realm) {
         spans: M.spansChapters(row.extent),
         chip: M.languageChip(row),
         reviewNote: row.review && row.review !== 'verified' ? row.review + ', not collated' : '', // catena.js:369
+      });
+      const fragments = M.commentaryGroups(shown).flatMap((group) => group.fragments).map((row) => ({
+        ...describe(row),
+        englishVersions: M.englishVersions(row, all).map(({ fragment, coverage, basis }) => ({
+          fragment: describe(fragment), coverage, basis,
+        })),
       }));
       chain = { heading, notes, total: all.length, shown: shown.length, absences, fragments,
         authors: selection.authors, availability: selection.availability, contextNote: selection.contextNote };

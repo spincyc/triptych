@@ -138,6 +138,20 @@ differences do not create another liturgical model or substitute source text.
 
 ## Catena commentary
 
+Press `i` to find a chapter with held commentary. Type a book name, canonical
+token or reference, or Tab to **Chapters with English excerpts** and press
+Space. Each result gives the chapter’s excerpt count and how many are in
+English. Enter opens a single match or focuses the results for selection.
+Opening a result shows the whole chapter in all commentary voices and keeps
+your author exclusions. `g` accepts any canonical reference.
+In a narrow terminal under 27 rows, the Scripture and commentary panes use
+the available height. Press `f` to bring back the chapter strip and research
+leads. A manual pane choice survives resizing.
+
+`B` chooses a named Scripture edition with its language and numbering.
+`V` chooses a commentary voice available at this chapter. Lowercase `b` and
+`v` cycle through the same choices. Commentary ranges use Vulgate numbering.
+
 Where a held fragment declares reviewed passage excerpts, opening it shows the
 excerpts matching the selected canonical chapter or verse range. The shared
 browser model validates and slices the unchanged source text; each excerpt
@@ -146,6 +160,13 @@ source passage and press it again to return to the excerpts. `s` still opens the
 same passage in the Source Library; `n` and `p` walk the commentary chain.
 Without an applicable excerpt the reader shows the complete natural fragment.
 Required acknowledgements stay visible in both views.
+
+When a source passage has a reviewed link to an English version, press `e`
+to open it. If several editions are linked, select one by its edition and
+locator. The English reading identifies whether it covers the whole source
+passage or an excerpt and gives the recorded reason for the link. It opens
+with its own translator, licence, extent and source-library action. Esc
+returns to the source-language reading.
 
 ## Source Library
 

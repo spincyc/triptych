@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import re
+from collections.abc import Callable
 
 from textual import on, work
 from textual.binding import Binding
@@ -10,6 +11,7 @@ from textual.widgets import OptionList, Static
 from textual.widgets.option_list import Option
 
 from .. import bridge, refs
+from ..catena_find import CommentaryFinder
 from ..dialogs import Ask, Pick, Reading
 from ..repo import Refused
 from ..strip import Cell, ChapterStrip
@@ -38,15 +40,22 @@ class FragmentList(OptionList):
 class FragmentReading(Reading):
     """Matching excerpts with an explicit route to their complete passage."""
 
-    BINDINGS = [Binding("c", "dismiss('context')", "full context")]
+    BINDINGS = [Binding("c", "dismiss('context')", "full context"),
+                Binding("e", "dismiss('english')", "English version")]
 
-    def __init__(self, *args, excerpts: bool = False, **kwargs) -> None:
+    def __init__(self, *args, excerpts: bool, english: bool, previous: bool, following: bool, **kwargs) -> None:
         super().__init__(*args, **kwargs)
         self.excerpts = excerpts
+        self.english = english
+        self.previous = previous
+        self.following = following
 
     def check_action(self, action: str, parameters: tuple) -> bool | None:
-        if action == "dismiss" and parameters == ("context",):
-            return self.excerpts
+        if action == "dismiss" and parameters:
+            actions = {"context": self.excerpts, "english": self.english,
+                       "next": self.following, "previous": self.previous}
+            if parameters[0] in actions:
+                return actions[parameters[0]]
         return super().check_action(action, parameters)
 
 
@@ -55,15 +64,17 @@ class Catena(Surface):
     label = "Catena"
     FIRST = "#catena-chain-list"
     HELP = (
+        ("i", "find chapters with commentary by book or reference, including chapters with English"),
         ("← / →", "previous / next chapter"),
         ("[ / ]", "previous / next book"),
         ("g", "go to a reference, e.g. 'John 1:1-5' or '1 Cor 13' (Vulgate)"),
         ("r", "focus commentary on a verse or range; empty restores the whole chapter"),
         ("x", "exclude or restore an author; exclusions persist across chapters"),
-        ("b", "next scripture edition"),
-        ("v", "next commentary voice (everything held, own language, a translation)"),
+        ("b / B", "next Scripture edition / choose a named edition, language and numbering"),
+        ("v / V", "next commentary voice / choose everything held, the author’s own language or a translation"),
         ("enter", "open or close an author's fragments; on a fragment, read it (n / p walk the chain)"),
         ("c", "in a commentary reading with matched excerpts, switch to full context and back"),
+        ("e", "open a linked English edition from a commentary reading (Esc returns)"),
         ("a", "open or close every author's fragments"),
         ("click", "a bar in the strip opens that chapter"),
         ("f", "focus: scripture and chain alone; again to restore chapter and acquisition panes"),
@@ -73,9 +84,12 @@ class Catena(Surface):
         Binding("right,l", "chapter(1)", "next chapter", show=False),
         Binding("left_square_bracket", "book(-1)", "previous book", show=False),
         Binding("right_square_bracket", "book(1)", "next book", show=False),
+        Binding("i", "find_commentary", "find commentary"),
         Binding("g", "goto", "go to"),
         Binding("b", "bible", "edition"),
         Binding("v", "voice", "voice"),
+        Binding("B", "choose_bible", "choose Scripture edition", show=False),
+        Binding("V", "choose_voice", "choose commentary voice", show=False),
         Binding("r", "verses", "verses"),
         Binding("x", "authors", "authors"),
         Binding("a", "expand_all", "open all authors", show=False),
@@ -107,6 +121,7 @@ class Catena(Surface):
     .catena.compact.cramped #catena-instruction { display: none; }
     .catena.compact.cramped #catena-chain { min-height: 6; }
     .catena.compact.cramped #catena-right { min-height: 11; }
+    .catena.compact.cramped.focus #catena-right { min-height: 6; }
     .catena #catena-leads { border: dashed $catena-color 45%; }
     .catena #catena-leads:focus, .catena #catena-leads:focus-within { border: dashed $catena-color; }
     """
@@ -114,6 +129,7 @@ class Catena(Surface):
     def __init__(self, **options) -> None:
         super().__init__(**options)
         self.books: list[dict] = []
+        self.holdings: list[dict] = []
         self.bibles: list[dict] = []
         self.token = "Gen"
         self.chapter = 1
@@ -127,12 +143,19 @@ class Catena(Surface):
         # chapter arrives with every group closed.
         self.opened_groups: set[int] = set()
         self.chain_for: tuple | None = None
+        self.panes_chosen = False
 
     # --- building --------------------------------------------------------
 
     def on_resize(self, event) -> None:
         super().on_resize(event)
         self.set_class(event.size.height < 27, "cramped")
+        if not self.panes_chosen:
+            self.set_class(self.has_class("compact") and self.has_class("cramped"), "focus")
+
+    def action_focus_reading(self) -> None:
+        self.panes_chosen = True
+        super().action_focus_reading()
 
     def build(self) -> None:
         self.mount(
@@ -167,6 +190,7 @@ class Catena(Surface):
 
     def opened_with(self, opening: dict) -> None:
         self.books = opening["books"]
+        self.holdings = opening["holdings"]
         self.bibles = opening["bibles"]
         listing = self.query_one("#catena-book-list", OptionList)
         listing.clear_options()
@@ -258,6 +282,18 @@ class Catena(Surface):
 
         self.app.push_screen(Ask("go to", "Vulgate reference, e.g. Gen 1:3-8, John 3, 1 Cor 13", ""), answered)
 
+    def action_find_commentary(self) -> None:
+        if not self.books:
+            return
+
+        def answered(reference: tuple[str, int] | None) -> None:
+            if reference:
+                self.voice = ""
+                self.go(*reference)
+                self.query_one("#catena-chain-list", OptionList).focus()
+
+        self.app.push_screen(CommentaryFinder(self.holdings), answered)
+
     def action_verses(self) -> None:
         def answered(value: str | None) -> None:
             if value is not None:
@@ -302,6 +338,37 @@ class Catena(Surface):
         position = values.index(self.voice) if self.voice in values else 0
         self.voice = values[(position + 1) % len(values)]
         self.load()
+
+    def action_choose_bible(self) -> None:
+        if not self.bibles:
+            return
+        choices = []
+        for bible in self.bibles:
+            facts = [bible["label"], bible["languageName"], bible["numberingLabel"]]
+            if bible["id"] == self.bible:
+                facts.append("selected")
+            choices.append((bible["id"], Ink()(" · ".join(filter(None, facts))).content()))
+
+        def answered(value: str | None) -> None:
+            if value is not None and value != self.bible:
+                self.bible = value
+                self.load()
+
+        self.app.push_screen(Pick("Scripture edition", choices,
+                                  "Scripture follows the edition’s numbering. Commentary uses Vulgate references."), answered)
+
+    def action_choose_voice(self) -> None:
+        if not self.current or self.current.get("problems"):
+            return
+        choices = [(row["value"], row["label"] + (" · selected" if row["value"] == self.voice else ""))
+                   for row in self.current["voices"]]
+
+        def answered(value: str | None) -> None:
+            if value is not None and value != self.voice:
+                self.voice = value
+                self.load()
+
+        self.app.push_screen(Pick("Commentary voice", choices, "Choose which commentary editions to read here."), answered)
 
     @on(OptionList.OptionSelected, "#catena-book-list")
     def picked_book(self, event: OptionList.OptionSelected) -> None:
@@ -499,6 +566,10 @@ class Catena(Surface):
                 heading(f"  {first['date']}", "bold")
             count = f"{len(run)} fragment" + ("" if len(run) == 1 else "s")
             heading(f"  · {count} · {words:,} words", "$text-muted")
+            english = sum(1 for position in run if fragments[position].get("language") == "en"
+                          and not fragments[position].get("text_refused"))
+            if english:
+                heading(f" · {english} in English", "$text-muted")
             listing.add_option(Option(heading.content(), id=f"grp-{number}"))
             if not opened:
                 continue
@@ -513,6 +584,9 @@ class Catena(Surface):
                 row.line()("      ")
                 # The language and the length are always whole; the locator takes what room is left.
                 tail = f"{fragment['chip']} · {fragment['text_words']:,} words"
+                versions = fragment.get("englishVersions", [])
+                if versions:
+                    tail += " · " + self.english_offer(versions)
                 room = (listing.size.width - 2 if listing.size.width else 60) - 6 - len(tail) - 3
                 locator = fragment["locator"]
                 if locator and locator != fragment["work"] and room >= 6:
@@ -589,19 +663,25 @@ class Catena(Surface):
         if not 0 <= position < len(fragments):
             return
         # The chapter on screen, not one still loading behind it.
-        self.fetch_body(position, fragments[position], self.current["book"]["token"],
-                        self.current["chapter"], self.current["voice"], self.current.get("verses", ""))
+        self.fetch_body(position, fragments[position], self.current)
 
     @work(thread=True, exclusive=True, group="catena-body")
-    def fetch_body(self, position: int, fragment: dict, token: str, chapter: int, voice: str,
-                   verses: str = "") -> None:
+    def fetch_body(self, position: int, fragment: dict, view: dict, *,
+                   version: dict | None = None, back: Callable[[], None] | None = None) -> None:
         try:
-            body = bridge.call(ADAPTER, "body", token, chapter, voice, fragment["id"], verses)
+            body = bridge.call(ADAPTER, "body", view["book"]["token"], view["chapter"], view["voice"],
+                               fragment["id"], view.get("verses", ""))
         except Refused as refusal:
             body = {"missing": True, "said": str(refusal)}
-        self.deliver(self.open_reading, position, fragment, body)
 
-    def open_reading(self, position: int, fragment: dict, body: dict, *, full_context: bool = False) -> None:
+        def display() -> None:
+            if self.current is view and self.app.current() is self and self.app.screen is self.screen:
+                self.open_reading(position, fragment, body, version=version, back=back)
+
+        self.deliver(display)
+
+    def open_reading(self, position: int, fragment: dict, body: dict, *, full_context: bool = False,
+                     version: dict | None = None, back: Callable[[], None] | None = None) -> None:
         snippets = body.get("snippets", []) if not body.get("missing") else []
         text = Ink()(fragment["author"], "bold $catena-color")
         if fragment["date"]:
@@ -616,6 +696,18 @@ class Catena(Surface):
         length = f"{fragment['text_words']:,} words"
         text.line(f"  ·  {fragment['chip']}  ·  " + ("full passage: " if snippets else "") + length,
                   "$text-muted").line()
+        versions = fragment.get("englishVersions", [])
+        if version:
+            text.line(self.version_label(version), "bold $catena-color")
+            text.line(version["basis"]).line()
+        elif versions:
+            text.line(self.english_offer(versions) + " · press e to read", "bold $catena-color").line()
+        if fragment["edition"]:
+            text("Edition — ", "bold").line(fragment["edition"])
+        if fragment["translators"]:
+            text("Translated by ", "bold").line(", ".join(fragment["translators"]))
+        if fragment["edition"] or fragment["translators"]:
+            text.line()
         if body.get("acknowledgement_broken"):
             text.line("The recorded acknowledgement is malformed and not shown.", "bold $warning").line()
         elif body.get("acknowledgement"):
@@ -641,9 +733,7 @@ class Catena(Surface):
         date_basis = fragment.get("composition_date_basis") or body.get("date_basis")
         if date_basis:
             text.line()("Date — ", "bold").line(date_basis)
-        facts = [fragment["locator"], fragment["edition"], fragment["edition_published"]]
-        if fragment["translators"]:
-            facts.append("tr. " + ", ".join(fragment["translators"]))
+        facts = [fragment["locator"], fragment["edition_published"]]
         facts += [fragment["rights"], fragment["attribution"], fragment["rights_basis"]]
         if fragment["reviewNote"]:
             facts.append(fragment["reviewNote"])
@@ -658,13 +748,71 @@ class Catena(Surface):
             elif step == "source":
                 self.app.action_surface("sources", passage=fragment["id"])
             elif step == "context":
-                self.open_reading(position, fragment, body, full_context=not full_context)
+                self.open_reading(position, fragment, body, full_context=not full_context, version=version, back=back)
+            elif step == "english":
+                def restore() -> None:
+                    self.open_reading(position, fragment, body, full_context=full_context)
+
+                self.choose_english(position, versions, restore)
+            elif back:
+                back()
+            elif self.chain_for is not None:
+                groups = self.groups(self.current["chain"]["fragments"])
+                for number, run in enumerate(groups):
+                    if position in run:
+                        self.opened_groups.add(number)
+                        self.draw_chain(keep=f"frag-{position}")
+                        break
 
         title = f"{fragment['author']} · {fragment['work']} {fragment['locator']}"
-        context_hint = (" · c excerpts" if full_context else " · c full context") if snippets else ""
+        count = len(self.current["chain"]["fragments"])
+        hints = ["Esc return" if version else f"{position + 1} of {count} · Esc close"]
+        if versions:
+            hints.append("e English")
+        if snippets:
+            hints.append("c excerpts" if full_context else "c full context")
+        if not version and position + 1 < count:
+            hints.append("n next")
+        if not version and position:
+            hints.append("p previous")
+        hints.append("s source library")
         self.app.push_screen(
-            FragmentReading(title, text.content(), f"{position + 1} of {len(self.current['chain']['fragments'])}"
-                            " · esc close · n next · p previous" + context_hint + " · s source library",
-                            source=True, excerpts=bool(snippets)),
+            FragmentReading(title, text.content(), " · ".join(hints),
+                            source=True, excerpts=bool(snippets), english=bool(versions),
+                            previous=not version and position > 0, following=not version and position + 1 < count),
             walked,
         )
+
+    @staticmethod
+    def english_offer(versions: list[dict]) -> str:
+        if any(version["coverage"] == "whole" for version in versions):
+            return "English version available"
+        return "English excerpt available"
+
+    @staticmethod
+    def version_label(version: dict) -> str:
+        return "English version · whole passage" if version["coverage"] == "whole" else "English version · excerpt"
+
+    def choose_english(self, position: int, versions: list[dict], restore: Callable[[], None]) -> None:
+        def open_version(version: dict) -> None:
+            self.fetch_body(position, version["fragment"], self.current, version=version, back=restore)
+
+        if len(versions) == 1:
+            open_version(versions[0])
+            return
+
+        def answered(value: str | None) -> None:
+            if value is None:
+                restore()
+            else:
+                open_version(versions[int(value)])
+
+        choices = []
+        for index, version in enumerate(versions):
+            target = version["fragment"]
+            label = Ink()(target["edition"], "bold").line(" · " + target["locator"])
+            label(self.version_label(version))
+            if target["translators"]:
+                label(" · " + ", ".join(target["translators"]))
+            choices.append((str(index), label.content()))
+        self.app.push_screen(Pick("English versions", choices), answered)
