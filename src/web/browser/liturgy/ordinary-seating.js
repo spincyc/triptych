@@ -331,6 +331,7 @@
     return {
       '1962-requiem': requiem,
       '1962-ordinary-outside-requiem': !requiem,
+      '1962-usual-agnus-and-peace-prayer': !requiem && !(usage.threefold_miserere_nobis || []).includes(mass),
       '1962-prayers-at-foot': preparation,
       '1962-psalm-42': requiem || passion ? false : preparation,
       '1962-lavabo-doxology': !requiem && !passion,

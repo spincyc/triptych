@@ -256,12 +256,15 @@ class InstalledOrdinary(unittest.TestCase):
                          _qualified_public_domain.notice("english_study"))
         self.assertTrue(english["text"].startswith("THE PREFACE OF THE NATIVITY OF THE LORD"))
 
-    def test_lay_apparatus_is_not_applicable_and_the_misplaced_note_stays_open(self):
+    def test_lay_apparatus_and_requiem_rubric_keep_their_respective_sources(self):
         absences = {row["key"]: row for row in self.roman["absences"]}
         self.assertEqual(absences["lay-apparatus-no-missal-counterpart"]["kind"], "not-applicable")
         self.assertEqual(absences["lay-apparatus-no-missal-counterpart"]["count"], 13)
-        self.assertEqual(self.element(self.roman, "communio/rubrica-oratio-omittenda")["absent"]["latin"],
-                         "witness-own-english")
+        element = self.element(self.roman, "communio/rubrica-oratio-omittenda")
+        self.assertIsNone(element["absent"]["latin"])
+        self.assertIn("præcedens Oratio", self.side(element, "la")["text"])
+        self.assertIn("following", self.side(element, "en")["text"])
+        self.assertIn("preceding prayer", self.side(element, "la")["reading_note"])
 
     def test_postconciliar_paschal_dismissal_is_carried_without_the_2008_option(self):
         element = self.element(self.modern, "ritus-conclusionis/dimissio-appointed")

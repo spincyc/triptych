@@ -9700,9 +9700,10 @@ sections:
         preface: {option: missa-chrismatis, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact PDF p. 234; printed p. 153; expected-target row roman-1962-hw-chrism-mass-preface"}
         communicantes: {option: common, locus: "Missale Romanum 1962, registered CMAA facsimile, De Missa chrismatis rubric 12, artifact PDF p. 234, printed p. 153: 'Communicantes, et quae sequuntur usque ad Consecrationem, dicuntur ut in Canone Missae, nihil addendo vel immutando'; read on the page image 2026-11-14"}
         hanc_igitur: {option: common, locus: "Missale Romanum 1962, registered CMAA facsimile, De Missa chrismatis rubric 12, artifact PDF p. 234, printed p. 153: the Communicantes 'et quae sequuntur usque ad Consecrationem' (which include the Hanc igitur) are said as in the Canon, nothing added or changed; read on the page image 2026-11-14"}
-      notes: Only the scripture-bearing propers are recorded; the day's orations and other
-        composed chants are appointed but not yet transcribed. The blessing of the oils and
-        the chrism, which this Mass carries, is not recorded here.
+      notes: >-
+        The bishop blesses the oils and consecrates the chrism according to the
+        Pontificale Romanum. Those pontifical rites are referred to in the Missal
+        and are not transcribed here (De Missa chrismatis, rubrics 1 and 13).
       propers:
       - name: Introit
         incipit: Facies unctionis oleum sanctum
@@ -9764,6 +9765,16 @@ sections:
         "text": "Huius sacrificii potentia, Domine, quaesumus, et vetustatem nostram clementer abstergat, et novitatem nobis augeat et salutem. Per Dominum nostrum.\n"
         "incipit": "Huius sacrificii potentia"
         "notes": "1962 artifact234/printed153, unit897; entire Latin petition independently read in Wilson1894Gelasian printed69. Actual sourcePer. and targetconclusionlength remain separate; target pointing and linewrap normalization explicitly recorded in owning source projection. Original English is project-created unapproved study translation."
+      - name: Agnus Dei (Chrism Mass)
+        takes_from:
+          mass: mass-of-the-lords-supper
+          proper: Agnus Dei
+          citation: Missale Romanum 1962, De Missa chrismatis, rubric 14, printed p. 153, PDF p. 234.
+          note: All three invocations end in miserere nobis, as at no. 920 in the Evening Mass.
+        notes: >-
+          The kiss of peace and the prayer Domine Jesu Christe, qui dixisti are omitted.
+          Communion is not distributed at this Mass. After the blessing, the Last Gospel is
+          omitted and Sext and None are said in choir (rubrics 14 and 17).
       - name: Communion
         incipit: Praedicabant Apostoli
         source: scripture
@@ -10003,6 +10014,48 @@ sections:
           sacrificium nostrum reddat acceptum, qui discipulis suis in sui
           commemorationem hoc fieri hodierna traditione monstravit, Jesus Christus,
           Filius tuus, Dominus noster: Qui tecum vivit et regnat in unitate.
+      - name: Communicantes
+        source: composed
+        notes: >-
+          Missale Romanum 1962, Feria V in Cena Domini, printed p. 158, PDF p. 239, no.
+          916. The celebrant joins his hands before the concluding words.
+        text: |
+          Communicantes, et diem sacratissimum celebrantes, quo Dominus noster Jesus Christus pro nobis est traditus: sed et memoriam venerantes, in primis gloriosae semper Virginis Mariae, Genetricis ejusdem Dei et Domini nostri Jesu Christi: sed et beati Joseph, ejusdem Virginis Sponsi, et beatorum Apostolorum ac Martyrum tuorum, Petri et Pauli, Andreae, Jacobi, Joannis, Thomae, Jacobi, Philippi, Bartholomaei, Matthaei, Simonis et Thaddaei: Lini, Cleti, Clementis, Xysti, Cornelii, Cypriani, Laurentii, Chrysogoni, Joannis et Pauli, Cosmae et Damiani: et omnium Sanctorum tuorum; quorum meritis precibusque concedas, ut in omnibus protectionis tuae muniamur auxilio. Per eundem Christum Dominum nostrum. Amen.
+      - name: Hanc igitur
+        source: composed
+        notes: >-
+          Missale Romanum 1962, Feria V in Cena Domini, printed p. 158, PDF p. 239, no.
+          917. The celebrant extends his hands over the offerings, then joins them before
+          the concluding words.
+        text: |
+          Hanc igitur oblationem servitutis nostrae, sed et cunctae familiae tuae, quam tibi offerimus ob diem, in qua Dominus noster Jesus Christus tradidit discipulis suis Corporis et Sanguinis sui mysteria celebranda: quaesumus, Domine, ut placatus accipias: diesque nostros in tua pace disponas, atque ab aeterna damnatione nos eripi, et in electorum tuorum jubeas grege numerari. Per eundem Christum Dominum nostrum. Amen.
+      - name: Quam oblationem
+        source: composed
+        notes: >-
+          Missale Romanum 1962, Feria V in Cena Domini, printed p. 158, PDF p. 239, no.
+          918. The celebrant makes three signs of the cross over the offerings, one over
+          the host and one over the chalice, and joins his hands.
+        text: |
+          Quam oblationem tu, Deus, in omnibus, quaesumus, benedictam, adscriptam, ratam, rationabilem, acceptabilemque facere digneris: ut nobis Corpus, et Sanguis fiat dilectissimi Filii tui Domini nostri Jesu Christi.
+      - name: Qui pridie
+        source: composed
+        notes: >-
+          Missale Romanum 1962, Feria V in Cena Domini, printed p. 159, PDF p. 240, no.
+          919. The celebrant takes the host, raises his eyes to heaven, bows his head,
+          signs the host and pronounces the words of consecration while holding the host.
+          The remainder follows the Canon.
+        text: |
+          Qui pridie, quam pro nostra omniumque salute pateretur, hoc est, hodie, accepit panem in sanctas ac venerabiles manus suas, et elevatis oculis in caelum ad te Deum, Patrem suum omnipotentem, tibi gratias agens, benedixit, fregit, deditque discipulis suis, dicens: Accipite, et manducate ex hoc omnes. Hoc est enim Corpus meum.
+      - name: Agnus Dei
+        source: composed
+        notes: >-
+          Missale Romanum 1962, Feria V in Cena Domini, printed p. 159, PDF p. 240, no.
+          920. Each invocation ends in miserere nobis. The kiss of peace and the prayer
+          Domine Jesu Christe, qui dixisti are omitted.
+        text: |
+          Agnus Dei, qui tollis peccata mundi: miserere nobis.
+          Agnus Dei, qui tollis peccata mundi: miserere nobis.
+          Agnus Dei, qui tollis peccata mundi: miserere nobis.
       - name: Communion
         incipit: Dominus Jesus, postquam coenavit
         source: scripture

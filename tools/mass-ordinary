@@ -535,6 +535,7 @@ CONDITION_PREDICATES = (
     "principal-sunday-in-ordinary-time",
     "1962-requiem",
     "1962-ordinary-outside-requiem",
+    "1962-usual-agnus-and-peace-prayer",
     "1962-psalm-42",
     "1962-prayers-at-foot",
     "1962-lavabo-doxology",
@@ -1406,10 +1407,10 @@ def hymn_rule_table(source: dict, sources: Path, name: str) -> dict:
                            "primary": primary}}
     usage = source.get("ordinary_usage")
     if usage is not None:
-        fields = {"locus", "passion_temporal", "conditional_preparation", "omitted_preparation", "last_gospel_omitted"}
+        fields = {"locus", "passion_temporal", "conditional_preparation", "omitted_preparation", "threefold_miserere_nobis", "last_gospel_omitted"}
         if not isinstance(usage, dict) or set(usage) != fields or not usage["locus"]:
             raise SourceError(f"{name}: invalid 1962 Ordinary usage declaration")
-        for group in ("passion_temporal", "conditional_preparation", "omitted_preparation"):
+        for group in ("passion_temporal", "conditional_preparation", "omitted_preparation", "threefold_miserere_nobis"):
             keys = usage[group]
             if not isinstance(keys, list) or not keys or len(set(keys)) != len(keys) or not set(keys) <= masses.keys():
                 raise SourceError(f"{name}: unknown or repeated Mass in Ordinary usage {group}")

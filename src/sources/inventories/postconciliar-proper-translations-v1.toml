@@ -24716,18 +24716,6 @@ mass = "commune-beatae-mariae-virginis"
 form_id = "mary-advent-1"
 proper = "Collect"
 cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "The 2002 Latin Missal supplies this prayer in the named Common formulary. No exact English body for this option has been acquired for the local corpus."
-
-[[untranslated]]
-mass = "commune-beatae-mariae-virginis"
-form_id = "mary-advent-1"
-proper = "Collect"
-cycle = "all"
 occurrence = 2
 lang = "en"
 extent = "body"
@@ -24938,18 +24926,6 @@ extent = "body"
 availability = "unavailable"
 reason = { kind = "rights-withheld", source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf", surfaces = ["corpus-data", "public-git", "command-line", "download"] }
 note = "The English Antiphonary prints this option for the named Common form. Redistribution of the modern liturgical wording in public Git and offline outputs remains unestablished."
-
-[[untranslated]]
-mass = "commune-martyrum"
-form_id = "martyrs-several-outside-easter-1"
-proper = "Collect"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "The 2002 Latin Missal supplies this prayer in the named Common formulary. No exact English body for this option has been acquired for the local corpus."
 
 [[untranslated]]
 mass = "commune-martyrum"
@@ -29250,3 +29226,43 @@ extent = "body"
 availability = "unavailable"
 reason = { kind = "no-exemplar" }
 note = "The two Latin digital witnesses establish this 2002 prayer appointment. No independently verified English body for this option has been acquired for the local corpus."
+
+[[entries]]
+mass = "commune-beatae-mariae-virginis"
+form_id = "mary-advent-1"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+relation = "variant"
+ancient_reading = "Deus, qui de beatae Mariae Virginis utero Verbum tuum, Angelo nuntiante, carnem suscipere voluisti: praesta supplicibus tuis; ut, qui vere eam Genetricem Dei credimus, ejus apud te intercessionibus adjuvemur."
+ancient_witness = "editorial-projection artifact physical lines 156-159; antecedent printed p. 75 (nearest printed-folio marker in the text layer; the layer places these markers mid-page, so the folio is +/-1); text-layer lines 13256-13267; elsewhere in the book"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.commons-2-orations-8f0f1a33"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.missa-de-s-maria-in-sabbato-1-collect"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-mary-advent-1-collect-historical-variant"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-lent-holyweek-conclusion-per-dominum-cue-p55"
+divergence = "The historical petition reads Genetricem Dei. Move the existing word Dei before Genetricem, as both 2002 digital witnesses do. No petition word is added or omitted. Normalize j to i, use historical punctuation and the independently witnessed shorter Per Dominum ending; no response or extended conclusion. Original English from the historical petition with this bounded variation."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "O God, at the angel’s announcement you willed that your Word should take flesh from the womb of the Blessed Virgin Mary. Grant to us who implore you that, believing her truly to be the Mother of God, we may be helped by her intercessions before you. Through the Lord."
+
+[[entries]]
+mass = "commune-martyrum"
+form_id = "martyrs-several-outside-easter-1"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+relation = "variant"
+ancient_reading = "Praesta, Domine, precibus nostris cum exsultatione proventum: ut sanctorum Martyrum Euphemiae, Luciae et Geminiani, quorum diem passionis annua devotione recolimus, etiam fidei constantiam subsequamur."
+ancient_witness = "projection physical lines 50-53; Pustet PDF 627 / printed 541, right lower, complete petition; no printed conclusion before Tertia Oratio rubric. PDF 628 / printed 542 left middle explicitly refers orations supra positae under the saints' heading."
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase4-mayoct-alexander-twentytwo-orations-20261022"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase4-comm-ss-euphemiae-virginis-luciae-geminiani-collect"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-martyrs-several-outside-easter-1-collect-historical-variant"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-lent-holyweek-conclusion-per-dominum-cue-p55"
+divergence = "The historical proper names Euphemiae, Luciae et Geminiani are replaced by the paired N. et N. placeholders attested in the independent 1862 Common passage passage.catholic-church.missale-romanum.pustet-ratisbon-1862.several-martyrs-two-name-placeholders-20261124. All other petition words retain their order. Normalize j to i, use historical punctuation and the independently witnessed shorter Per Dominum ending; no response or extended conclusion. Original English from the historical petition with this bounded variation."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Grant a joyful outcome to our prayers, O Lord, so that, as we devoutly recall each year the day of the suffering of your holy martyrs N. and N., we may also follow their steadfastness in faith. Through the Lord."

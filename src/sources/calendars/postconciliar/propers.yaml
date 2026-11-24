@@ -77161,20 +77161,17 @@ sections:
             basis: The 2002 Missal distinguishes 2 Entrance Antiphon options for Advent (digital PDF artifact p. 546).
         - name: Collect
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glt-427df2b2
-          notes: 'Advent, Collect, option 1; Missale Romanum (2002), digital PDF artifact p. 546. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glt.htm#zv.
-            Correspondence with the 2008 reprint remains unverified.'
+          notes: Historical Latin with an independently written study translation. The historical petition reads Genetricem
+            Dei. Move the existing word Dei before Genetricem, as both 2002 digital witnesses do. No petition word is added
+            or omitted. The printed Per Dominum cue is separately witnessed. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glt.htm#zv,
+            Advent, first Collect; independent 2002 digital PDF, artifact p. 546. Whole-2008 correspondence remains unverified.
           ordinary_disposition:
             kind: alternative
             group: collect
             option: first
             basis: The 2002 Missal distinguishes 2 Collect options for Advent (digital PDF artifact p. 546).
+          text: 'Deus, qui de beatae Mariae Virginis utero Verbum tuum, Angelo nuntiante, carnem suscipere voluisti: praesta
+            supplicibus tuis; ut, qui vere eam Dei Genetricem credimus, eius apud te intercessionibus adiuvemur. Per Dominum.'
         - name: Collect
           source: composed
           text_status:
@@ -77466,16 +77463,14 @@ sections:
               1 (digital PDF artifact p. 549).
         - name: Collect
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glt-427df2b2
-          notes: 'Several martyrs outside Easter Time, formulary 1, Collect, option 1; Missale Romanum (2002), digital PDF
-            artifact p. 549. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glt.htm#z0. Correspondence with
-            the 2008 reprint remains unverified.'
+          notes: Historical Latin with an independently written study translation. The historical proper names Euphemiae,
+            Luciae et Geminiani are replaced by the paired N. et N. placeholders attested in the independent 1862 Common
+            passage passage.catholic-church.missale-romanum.pustet-ratisbon-1862.several-martyrs-two-name-placeholders-20261124.
+            All other petition words retain their order. The printed Per Dominum cue is separately witnessed. Biblia Clerus,
+            https://www.clerus.org/bibliaclerusonline/en/glt.htm#z0, Several martyrs outside Easter Time, formulary 1, first
+            Collect; independent 2002 digital PDF, artifact p. 549. Whole-2008 correspondence remains unverified.
+          text: 'Praesta, Domine, precibus nostris cum exsultatione proventum: ut sanctorum Martyrum N. et N., quorum diem
+            passionis annua devotione recolimus, etiam fidei constantiam subsequamur. Per Dominum.'
         - name: Prayer over the Offerings
           source: composed
           text_status:

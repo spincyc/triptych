@@ -1,0 +1,226 @@
+# The dated Lectionary carrier and the weekday Missal form are distinct sources. The actual day of the week and the Epiphany observed in the selected calendar determine the prayers.
+schema = 1
+carriers = ["christmas-january-2", "christmas-january-3", "christmas-january-4", "christmas-january-5", "christmas-january-6-transferred-epiphany", "christmas-january-7", "christmas-january-7-transferred-epiphany", "christmas-january-8", "christmas-january-9", "christmas-january-10", "christmas-january-11", "christmas-january-12"]
+rule_source_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.january-weekday-form-and-epiphany-collects-20261124"
+rule_url = "https://www.clerus.org/bibliaclerusonline/en/glb.htm#fo"
+rule_locus = "Missale Romanum (2002), Christmas weekdays from January 2 until the Saturday before the Baptism of the Lord, digital PDF artifact p. 114. Use the appointed civil weekday form and its Collect before or after the locally celebrated Epiphany."
+
+[[weekdays]]
+weekday = 1
+label = "Monday"
+latin_source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glb-146b4963"
+latin_url = "https://www.clerus.org/bibliaclerusonline/en/glb.htm#fp"
+english_source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
+english_url = "https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf#page=24"
+english_locus = "ICEL English Antiphonary (2010), Weekdays of Christmas Time, Monday; Entrance and Communion antiphons only, artifact p. 24, printed p. 16."
+
+[[weekdays.prayers]]
+role = "Collect"
+phase = "before-epiphany"
+latin_locus = "2002 digital Missal, artifact p. 114; Monday, Collect before Epiphany."
+body_status = "held-unpublished"
+
+[[weekdays.prayers]]
+role = "Collect"
+phase = "after-epiphany"
+latin_locus = "2002 digital Missal, artifact p. 115; Monday, Collect after Epiphany."
+body_status = "held-unpublished"
+
+[[weekdays.prayers]]
+role = "Prayer over the Offerings"
+phase = "either"
+latin_locus = "2002 digital Missal, artifact p. 115; Monday, Prayer over the Offerings."
+body_status = "held-unpublished"
+
+[[weekdays.prayers]]
+role = "Prayer after Communion"
+phase = "either"
+latin_locus = "2002 digital Missal, artifact p. 115; Monday, Prayer after Communion."
+body_status = "held-unpublished"
+
+[[weekdays]]
+weekday = 2
+label = "Tuesday"
+latin_source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glb-146b4963"
+latin_url = "https://www.clerus.org/bibliaclerusonline/en/glb.htm#fq"
+english_source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
+english_url = "https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf#page=24"
+english_locus = "ICEL English Antiphonary (2010), Weekdays of Christmas Time, Tuesday; Entrance and Communion antiphons only, artifact p. 24, printed p. 16."
+
+[[weekdays.prayers]]
+role = "Collect"
+phase = "before-epiphany"
+latin_locus = "2002 digital Missal, artifact p. 115; Tuesday, Collect before Epiphany."
+body_status = "held-unpublished"
+
+[[weekdays.prayers]]
+role = "Collect"
+phase = "after-epiphany"
+latin_locus = "2002 digital Missal, artifact p. 115; Tuesday, Collect after Epiphany."
+body_status = "published"
+
+[[weekdays.prayers.bodies]]
+language = "la"
+text = "Deus, cuius Unigenitus in substantia nostrae carnis apparuit: praesta, quaesumus; ut per eum, quem similem nobis foris agnovimus, intus reformari mereamur. Qui tecum."
+source_id = "passage.triptych.january-christmas-weekday-prayers.2026-11-24.tuesday-after-epiphany-collect-la"
+artifact_id = "artifact.triptych.january-christmas-weekday-prayers.2026-11-24.tuesday-after-epiphany-70f5a43d"
+artifact_sha256 = "70f5a43d371dc1032ea6e556c823aff49c58d1f544b0f3e23ccccf93ebb72646"
+relation = "historical-latin-projection"
+text_sha256 = "5a452aa171d1fef1b7d249126794ca84c462d33c5642b757f408c41c118eb2b9"
+credit = "Historical Latin from the Pustet Ratisbon Missal (1862), using its independently verified editorial transcription."
+notice = "Historical study text compared with the 2002 digital Missal. The conclusion is a printed cue. Whole-2008 correspondence is unverified."
+
+[[weekdays.prayers.bodies]]
+language = "en"
+text = "O God, whose only-begotten Son appeared in the substance of our flesh, grant, we pray, that through him whom we outwardly recognized as like ourselves we may be worthy to be fashioned anew within. Who with you …"
+source_id = "passage.triptych.january-christmas-weekday-prayers.2026-11-24.tuesday-after-epiphany-collect-en"
+artifact_id = "artifact.triptych.january-christmas-weekday-prayers.2026-11-24.tuesday-after-epiphany-70f5a43d"
+artifact_sha256 = "70f5a43d371dc1032ea6e556c823aff49c58d1f544b0f3e23ccccf93ebb72646"
+relation = "original-study-translation"
+text_sha256 = "81c17efafb2d04618e19fe8fe55f1de8528f1e941f2484771ce0fa12f1bb2ab0"
+credit = "Original English study translation by Triptych contributors, from the historical Latin."
+notice = "Historical study text compared with the 2002 digital Missal. The conclusion is a printed cue. Whole-2008 correspondence is unverified."
+
+[[weekdays.prayers]]
+role = "Prayer over the Offerings"
+phase = "either"
+latin_locus = "2002 digital Missal, artifact p. 116; Tuesday, Prayer over the Offerings."
+body_status = "held-unpublished"
+
+[[weekdays.prayers]]
+role = "Prayer after Communion"
+phase = "either"
+latin_locus = "2002 digital Missal, artifact p. 116; Tuesday, Prayer after Communion."
+body_status = "held-unpublished"
+
+[[weekdays]]
+weekday = 3
+label = "Wednesday"
+latin_source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glb-146b4963"
+latin_url = "https://www.clerus.org/bibliaclerusonline/en/glb.htm#fr"
+english_source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
+english_url = "https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf#page=25"
+english_locus = "ICEL English Antiphonary (2010), Weekdays of Christmas Time, Wednesday; Entrance and Communion antiphons only, artifact p. 25, printed p. 17."
+
+[[weekdays.prayers]]
+role = "Collect"
+phase = "before-epiphany"
+latin_locus = "2002 digital Missal, artifact p. 116; Wednesday, Collect before Epiphany."
+body_status = "held-unpublished"
+
+[[weekdays.prayers]]
+role = "Collect"
+phase = "after-epiphany"
+latin_locus = "2002 digital Missal, artifact p. 116; Wednesday, Collect after Epiphany."
+body_status = "held-unpublished"
+
+[[weekdays.prayers]]
+role = "Prayer over the Offerings"
+phase = "either"
+latin_locus = "2002 digital Missal, artifact p. 116; Wednesday, Prayer over the Offerings."
+body_status = "held-unpublished"
+
+[[weekdays.prayers]]
+role = "Prayer after Communion"
+phase = "either"
+latin_locus = "2002 digital Missal, artifact p. 117; Wednesday, Prayer after Communion."
+body_status = "held-unpublished"
+
+[[weekdays]]
+weekday = 4
+label = "Thursday"
+latin_source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glb-146b4963"
+latin_url = "https://www.clerus.org/bibliaclerusonline/en/glb.htm#fs"
+english_source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
+english_url = "https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf#page=25"
+english_locus = "ICEL English Antiphonary (2010), Weekdays of Christmas Time, Thursday; Entrance and Communion antiphons only, artifact p. 25, printed p. 17."
+
+[[weekdays.prayers]]
+role = "Collect"
+phase = "before-epiphany"
+latin_locus = "2002 digital Missal, artifact p. 117; Thursday, Collect before Epiphany."
+body_status = "held-unpublished"
+
+[[weekdays.prayers]]
+role = "Collect"
+phase = "after-epiphany"
+latin_locus = "2002 digital Missal, artifact p. 117; Thursday, Collect after Epiphany."
+body_status = "held-unpublished"
+
+[[weekdays.prayers]]
+role = "Prayer over the Offerings"
+phase = "either"
+latin_locus = "2002 digital Missal, artifact p. 117; Thursday, Prayer over the Offerings."
+body_status = "held-unpublished"
+
+[[weekdays.prayers]]
+role = "Prayer after Communion"
+phase = "either"
+latin_locus = "2002 digital Missal, artifact p. 118; Thursday, Prayer after Communion."
+body_status = "held-unpublished"
+
+[[weekdays]]
+weekday = 5
+label = "Friday"
+latin_source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glb-146b4963"
+latin_url = "https://www.clerus.org/bibliaclerusonline/en/glb.htm#ft"
+english_source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
+english_url = "https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf#page=25"
+english_locus = "ICEL English Antiphonary (2010), Weekdays of Christmas Time, Friday; Entrance and Communion antiphons only, artifact p. 25, printed p. 17."
+
+[[weekdays.prayers]]
+role = "Collect"
+phase = "before-epiphany"
+latin_locus = "2002 digital Missal, artifact p. 118; Friday, Collect before Epiphany."
+body_status = "held-unpublished"
+
+[[weekdays.prayers]]
+role = "Collect"
+phase = "after-epiphany"
+latin_locus = "2002 digital Missal, artifact p. 118; Friday, Collect after Epiphany."
+body_status = "held-unpublished"
+
+[[weekdays.prayers]]
+role = "Prayer over the Offerings"
+phase = "either"
+latin_locus = "2002 digital Missal, artifact p. 118; Friday, Prayer over the Offerings."
+body_status = "held-unpublished"
+
+[[weekdays.prayers]]
+role = "Prayer after Communion"
+phase = "either"
+latin_locus = "2002 digital Missal, artifact p. 119; Friday, Prayer after Communion."
+body_status = "held-unpublished"
+
+[[weekdays]]
+weekday = 6
+label = "Saturday"
+latin_source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glb-146b4963"
+latin_url = "https://www.clerus.org/bibliaclerusonline/en/glb.htm#fu"
+english_source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
+english_url = "https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf#page=25"
+english_locus = "ICEL English Antiphonary (2010), Weekdays of Christmas Time, Saturday; Entrance and Communion antiphons only, artifact p. 25, printed p. 17."
+
+[[weekdays.prayers]]
+role = "Collect"
+phase = "before-epiphany"
+latin_locus = "2002 digital Missal, artifact p. 119; Saturday, Collect before Epiphany."
+body_status = "held-unpublished"
+
+[[weekdays.prayers]]
+role = "Collect"
+phase = "after-epiphany"
+latin_locus = "2002 digital Missal, artifact p. 119; Saturday, Collect after Epiphany."
+body_status = "held-unpublished"
+
+[[weekdays.prayers]]
+role = "Prayer over the Offerings"
+phase = "either"
+latin_locus = "2002 digital Missal, artifact p. 119; Saturday, Prayer over the Offerings."
+body_status = "held-unpublished"
+
+[[weekdays.prayers]]
+role = "Prayer after Communion"
+phase = "either"
+latin_locus = "2002 digital Missal, artifact p. 120; Saturday, Prayer after Communion."
+body_status = "held-unpublished"

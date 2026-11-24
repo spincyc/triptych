@@ -5235,11 +5235,11 @@ conditions = [{ kind = "include-when-any", predicates = ["1962-ordinary-outside-
 
 [[sections.element_conditions]]
 element = "agnus-dei"
-conditions = [{ kind = "include-when-any", predicates = ["1962-ordinary-outside-requiem"], basis = "Missale Romanum 1962, Ritus servandus XIII.1 and RGMR 507–508. This element is omitted or replaced in Masses of the Dead." }]
+conditions = [{ kind = "include-when-any", predicates = ["1962-usual-agnus-and-peace-prayer"], basis = "Missale Romanum 1962, Ritus servandus XIII.1 and RGMR 507–508. De Missa chrismatis, rubric 14, printed p. 153 (PDF p. 234), and the Evening Mass in Cena Domini, rubric 28, printed p. 159 (PDF p. 240). These Masses have the threefold miserere nobis and omit the first prayer for peace." }]
 
 [[sections.element_conditions]]
 element = "domine-jesu-christe-qui-dixisti"
-conditions = [{ kind = "include-when-any", predicates = ["1962-ordinary-outside-requiem"], basis = "Missale Romanum 1962, Ritus servandus XIII.1 and RGMR 507–508. This element is omitted or replaced in Masses of the Dead." }]
+conditions = [{ kind = "include-when-any", predicates = ["1962-usual-agnus-and-peace-prayer"], basis = "Missale Romanum 1962, Ritus servandus XIII.1 and RGMR 507–508. De Missa chrismatis, rubric 14, printed p. 153 (PDF p. 234), and the Evening Mass in Cena Domini, rubric 28, printed p. 159 (PDF p. 240). These Masses have the threefold miserere nobis and omit the first prayer for peace." }]
 
 [[sections.element_conditions]]
 element = "rubrica-agnus-dei-in-missis-defunctorum"
@@ -5568,23 +5568,23 @@ conditions = [{ kind = "include-when-any", predicates = ["1962-ordinary-outside-
 
 [[sections.element_conditions]]
 element = "initium-sancti-evangelii"
-conditions = [{ kind = "include-when-any", predicates = ["1962-last-gospel-of-john"], basis = "Missale Romanum 1962, RGMR 509–510 and Ritus servandus XIII.1. St John is omitted in the third Mass of Christmas and is never the Last Gospel on Palm Sunday. In a Requiem its use depends on whether absolution over the bier follows." }]
+conditions = [{ kind = "include-when-any", predicates = ["1962-last-gospel-of-john"], basis = "Missale Romanum 1962, RGMR 509–510 and Ritus servandus XIII.1. De Missa chrismatis, rubric 17, printed p. 153 (PDF p. 234). St John is omitted at the Chrism Mass and in the third Mass of Christmas and is never the Last Gospel on Palm Sunday. In a Requiem its use depends on whether absolution over the bier follows." }]
 
 [[sections.element_conditions]]
 element = "in-principio-erat-verbum"
-conditions = [{ kind = "include-when-any", predicates = ["1962-last-gospel-of-john"], basis = "Missale Romanum 1962, RGMR 509–510 and Ritus servandus XIII.1. St John is omitted in the third Mass of Christmas and is never the Last Gospel on Palm Sunday. In a Requiem its use depends on whether absolution over the bier follows." }]
+conditions = [{ kind = "include-when-any", predicates = ["1962-last-gospel-of-john"], basis = "Missale Romanum 1962, RGMR 509–510 and Ritus servandus XIII.1. De Missa chrismatis, rubric 17, printed p. 153 (PDF p. 234). St John is omitted at the Chrism Mass and in the third Mass of Christmas and is never the Last Gospel on Palm Sunday. In a Requiem its use depends on whether absolution over the bier follows." }]
 
 [[sections.element_conditions]]
 element = "fuit-homo-missus-a-deo"
-conditions = [{ kind = "include-when-any", predicates = ["1962-last-gospel-of-john"], basis = "Missale Romanum 1962, RGMR 509–510 and Ritus servandus XIII.1. St John is omitted in the third Mass of Christmas and is never the Last Gospel on Palm Sunday. In a Requiem its use depends on whether absolution over the bier follows." }]
+conditions = [{ kind = "include-when-any", predicates = ["1962-last-gospel-of-john"], basis = "Missale Romanum 1962, RGMR 509–510 and Ritus servandus XIII.1. De Missa chrismatis, rubric 17, printed p. 153 (PDF p. 234). St John is omitted at the Chrism Mass and in the third Mass of Christmas and is never the Last Gospel on Palm Sunday. In a Requiem its use depends on whether absolution over the bier follows." }]
 
 [[sections.element_conditions]]
 element = "in-mundo-erat"
-conditions = [{ kind = "include-when-any", predicates = ["1962-last-gospel-of-john"], basis = "Missale Romanum 1962, RGMR 509–510 and Ritus servandus XIII.1. St John is omitted in the third Mass of Christmas and is never the Last Gospel on Palm Sunday. In a Requiem its use depends on whether absolution over the bier follows." }]
+conditions = [{ kind = "include-when-any", predicates = ["1962-last-gospel-of-john"], basis = "Missale Romanum 1962, RGMR 509–510 and Ritus servandus XIII.1. De Missa chrismatis, rubric 17, printed p. 153 (PDF p. 234). St John is omitted at the Chrism Mass and in the third Mass of Christmas and is never the Last Gospel on Palm Sunday. In a Requiem its use depends on whether absolution over the bier follows." }]
 
 [[sections.element_conditions]]
 element = "deo-gratias"
-conditions = [{ kind = "include-when-any", predicates = ["1962-last-gospel-of-john"], basis = "Missale Romanum 1962, RGMR 509–510 and Ritus servandus XIII.1. St John is omitted in the third Mass of Christmas and is never the Last Gospel on Palm Sunday. In a Requiem its use depends on whether absolution over the bier follows." }]
+conditions = [{ kind = "include-when-any", predicates = ["1962-last-gospel-of-john"], basis = "Missale Romanum 1962, RGMR 509–510 and Ritus servandus XIII.1. De Missa chrismatis, rubric 17, printed p. 153 (PDF p. 234). St John is omitted at the Chrism Mass and in the third Mass of Christmas and is never the Last Gospel on Palm Sunday. In a Requiem its use depends on whether absolution over the bier follows." }]
 
 
 [[sections.inserted]]
@@ -5750,6 +5750,12 @@ before = "oblatio/per-omnia-saecula"
 propers = ["Secret"]
 qualified = true
 locus = "Ritus servandus VII, 7, which places `orationem, vel orationes secretas` after the minister's Suscipiat response and before the Preface's Per omnia saecula saeculorum, and locates the first and the last Secret at the one place"
+
+[[slots]]
+key = "agnus-dei-chrismatis"
+after = "communio/rubrica-agnus-dei"
+propers = ["Agnus Dei (Chrism Mass)"]
+locus = "Missale Romanum 1962, De Missa chrismatis, rubric 14, printed p. 153 (PDF p. 234). At the ordinary Agnus Dei, all three invocations receive miserere nobis."
 
 [[slots]]
 key = "communio"
@@ -6562,4 +6568,5 @@ locus = "Missale Romanum 1962, RGMR 424–425, 507–510; Ritus servandus VII.6,
 passion_temporal = ["passion-sunday", "passion-monday", "passion-tuesday", "passion-wednesday", "passion-thursday", "passion-friday", "passion-saturday", "palm-sunday", "holy-monday", "holy-tuesday", "holy-wednesday", "chrism-mass", "mass-of-the-lords-supper"]
 conditional_preparation = ["purificatione-beatae-mariae-virginis", "ash-wednesday", "palm-sunday", "rogation-mass"]
 omitted_preparation = ["easter-vigil"]
-last_gospel_omitted = [{mass = "nativitate-domini-octave", form = "day"}, {mass = "palm-sunday", form = "main"}, {mass = "easter-vigil", form = "main"}]
+threefold_miserere_nobis = ["chrism-mass", "mass-of-the-lords-supper"]
+last_gospel_omitted = [{mass = "chrism-mass", form = "main"}, {mass = "nativitate-domini-octave", form = "day"}, {mass = "palm-sunday", form = "main"}, {mass = "easter-vigil", form = "main"}]

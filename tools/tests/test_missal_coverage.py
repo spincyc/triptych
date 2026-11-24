@@ -1248,10 +1248,26 @@ state = "unenumerated"
                 self.assertEqual(len(held), 1)
                 if citation:
                     self.assertEqual([row["ref"] for row in held[0]["citations"]], [citation])
+        # The Maundy evening Proper gives the Canon texts and its own triple
+        # Agnus in order while the distinct Mandatum/procession frame is withheld.
+        supper = masses["mass-of-the-lords-supper"]
+        names = [proper["name"] for proper in supper["propers"]]
+        canon = ["Communicantes", "Hanc igitur", "Quam oblationem", "Qui pridie", "Agnus Dei"]
+        self.assertEqual(names[names.index("Secret") + 1:names.index("Communion")], canon)
+        for name in canon:
+            target = "roman-1962-hw-cena-mass-" + name.lower().replace(" ", "-")
+            self.assertEqual(states[target], "represented")
+        self.assertEqual(states["roman-1962-hw-chrism-mass-agnus-dei"], "represented")
+        evening_agnus = next(p for p in supper["propers"] if p["name"] == "Agnus Dei")
+        morning_agnus = next(p for p in masses["chrism-mass"]["propers"]
+                             if p["name"] == "Agnus Dei (Chrism Mass)")
+        for proper in (evening_agnus, morning_agnus):
+            self.assertEqual(proper["text"].count("miserere nobis"), 3)
+            self.assertNotIn("dona nobis pacem", proper["text"].lower())
         published = document["coverage"]["expected_inventory"]
         self.assertEqual(published["target_states"],
-                         {"represented": 4265,
-                          "not-represented": 34, "unresolved": 3693})
+                         {"represented": 4271,
+                          "not-represented": 34, "unresolved": 3687})
         self.assertEqual({row["id"] for row in published["not_represented"]} & joins.keys(), set())
         off_date = {row["id"]: row["off_date_appointment"]
                     for row in published["not_represented"]}
@@ -1301,8 +1317,8 @@ state = "unenumerated"
                 self.assertLess(order.index(role), order.index(after))
         published = document["coverage"]["expected_inventory"]
         self.assertEqual(published["target_states"],
-                         {"represented": 4265,
-                          "not-represented": 34, "unresolved": 3693})
+                         {"represented": 4271,
+                          "not-represented": 34, "unresolved": 3687})
         gaps = {row["id"] for row in published["not_represented"]}
         self.assertTrue(all(f"roman-1962:sanctoral-form:{locus}" not in gaps
                             for locus, *_ in rows))
