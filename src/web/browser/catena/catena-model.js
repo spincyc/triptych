@@ -851,6 +851,64 @@
     return groups;
   }
 
+  // A reviewed link names a separate admitted passage. Neither similar titles
+  // nor overlapping Scripture extents establish a translation relationship.
+  const NO_ENGLISH_LINKS = Object.freeze([]);
+  function englishVersionLinks(value) {
+    if (!Array.isArray(value)) return NO_ENGLISH_LINKS;
+    const links = new Map();
+    for (const entry of records(ownMembers(value, {}))) {
+      const passage_id = ident(ownData(entry, 'passage_id'));
+      const coverage = ownData(entry, 'coverage');
+      const basis = sound(ownData(entry, 'basis'));
+      if (passage_id && basis && (coverage === 'whole' || coverage === 'excerpt')) {
+        links.set(passage_id, links.has(passage_id) ? null : Object.freeze({ passage_id, coverage, basis }));
+      }
+    }
+    return Object.freeze([...links.values()].filter(Boolean));
+  }
+
+  function englishVersions(fragment, chapterFragments) {
+    const owner = rowOwners.get(fragment);
+    if (!owner || !fragment.work_id || !fragment.language || fragment.language === 'en' ||
+        !fragment.english_versions.length) return [];
+    const rows = list(chapterFragments).filter((row) => rowOwners.get(row) === owner);
+    const versions = [];
+    for (const link of fragment.english_versions) {
+      const matches = rows.filter((row) => row.id === link.passage_id);
+      if (matches.length !== 1) continue;
+      const target = matches[0];
+      if (target.work_id === fragment.work_id && target.language === 'en' &&
+          target.text_path && !target.text_refused) {
+        versions.push({ fragment: target, coverage: link.coverage, basis: link.basis });
+      }
+    }
+    return versions;
+  }
+
+  function englishVersionLabels(versions, bookName) {
+    const rows = records(versions);
+    const names = rows.map((version) => {
+      const target = bag(version.fragment);
+      return [version.coverage === 'whole' ? 'Whole passage in English' : 'English excerpt',
+        formatExtent(target.extent, bookName), rows.length > 1 ? sound(target.locator) : '']
+        .filter(Boolean).join(' · ');
+    });
+    return names.map((name, index) => {
+      const others = rows.filter((row, n) => n !== index && names[n] === name);
+      if (!others.length) return name;
+      const basis = sound(rows[index].basis);
+      const sentences = typeof Intl.Segmenter === 'function'
+        ? Array.from(new Intl.Segmenter('en', { granularity: 'sentence' }).segment(basis),
+          (part) => part.segment.trim()) : [basis];
+      const distinct = sentences.find((s) => s && others.every((row) => !sound(row.basis).includes(s)));
+      const label = distinct || basis;
+      const sameBasis = others.some((row) => sound(row.basis) === basis);
+      return [name, label, sameBasis ? ident(bag(rows[index].fragment).id) : '']
+        .filter(Boolean).join(' · ');
+    });
+  }
+
   /**
    * One fragment as this page may use it, or null.
    *
@@ -1029,10 +1087,12 @@
       // the two facts it is entitled to assert. '' when text resolves.
       text_note: refused ? (supplied ? TEXT_REFUSED : TEXT_UNESTABLISHED) : '',
       author: author,
+      work_id: ident(said('work_id')),
       work: work,
       date: composition.composition_date_status ? null : say(rawDate),
       ...composition,
       language: tongue(said('language')),
+      english_versions: englishVersionLinks(ownData(own, 'english_versions')),
       // The two the corpus derives, and there is no third; anything else
       // establishes no voice and answers no selection.
       voice: voice === ORIGINAL || voice === TRANSLATION ? voice : '',
@@ -2032,6 +2092,33 @@
     return canonBooks(canon).find((book) => book.token === wanted) || null;
   }
 
+  // 'present' also lists research-only chapters. Only explicit excerpt counts
+  // in this supplementary index can offer a chapter in the commentary finder.
+  function commentaryHoldings(index, books) {
+    const held = records(ownMembers(ownData(bag(index), 'held'), {}));
+    const result = [];
+    for (const book of records(books)) {
+      const matching = held.filter((one) => ownData(one, 'token') === book.token);
+      if (matching.length !== 1) continue;
+      const record = matching[0];
+      const present = new Set(ownMembers(ownData(record, 'present'), {}));
+      const listed = new Map();
+      for (const row of records(ownMembers(ownData(record, 'commentary_chapters'), {}))) {
+        const chapter = whole(ownData(row, 'chapter'));
+        const fragments = whole(ownData(row, 'fragments'));
+        const english = ownData(row, 'english');
+        if (chapter && chapter <= book.chapters && present.has(chapter) && fragments &&
+            Number.isSafeInteger(english) && english >= 0 && english <= fragments) {
+          listed.set(chapter, listed.has(chapter) ? null : { chapter, fragments, english });
+        }
+      }
+      const chapters = [...listed.values()].filter(Boolean);
+      if (chapters.length) result.push({ token: book.token, name: book.name,
+        chapters: chapters.sort((a, b) => a.chapter - b.chapter) });
+    }
+    return result;
+  }
+
   /**
    * Where one chapter's spine stands: its path, `''` where nothing is held on
    * that chapter, or `null` where the record cannot say either.
@@ -2448,13 +2535,13 @@
    * Why a work standing here is not held in the asked-for language
    *
    * THE FINDING IS THE FACT, and the page had been throwing it away. The
-   * generator writes one of four, closed at `scripts/_catena.py` so that a
-   * fifth answer has to be argued for rather than typed, and they say
-   * different things:
+   * generator's closed vocabulary lives in `scripts/_catena.py`. Each
+   * answer has a distinct evidentiary scope:
    *
    *   none-published         no translation exists, of any date — about the world
    *   in-copyright           one exists and may not be republished — about the law
    *   partial-public-domain  some public-domain text, not the whole — an offer
+   *   no-verified-translation  the recorded search verified no counterpart for inclusion
    *   not-surveyed           nobody has looked — an admission, and NOT a negative
    *
    * The page used to read none of them. It classified a row by whether a
@@ -2466,12 +2553,12 @@
    * unknown finding must be: it is carried, and it claims nothing.
    * --------------------------------------------------------------------- */
 
-  // What each finding lets the page SAY. No new taxonomy: these are the
-  // generator's own four, and the empty answer is the absence of one.
+  // What each generator finding lets the page say.
   const FINDINGS = {
     'none-published': 'closed',
     'in-copyright': 'closed',
     'partial-public-domain': 'untaken',
+    'no-verified-translation': 'unverified',
     'not-surveyed': 'unsurveyed'
   };
 
@@ -2692,8 +2779,9 @@
       parts.push(rest(untaken) +
         ' only a partly public domain ' + languageName + ', not yet taken');
     }
-    // The two classes that assert NO negative, and may no longer be spoken as
-    // one with the two that do.
+    const unverified = absenceCount(rows, 'unverified');
+    if (unverified) parts.push(rest(unverified) + ' been surveyed for ' + languageName +
+      ' without a translation verified for inclusion');
     const unsurveyed = absenceCount(rows, 'unsurveyed');
     if (unsurveyed) parts.push(rest(unsurveyed) + ' not been surveyed for ' + languageName);
     const unread = absenceCount(rows, '');
@@ -3230,6 +3318,9 @@
   }
 
   return {
+    commentaryHoldings: commentaryHoldings,
+    englishVersions: englishVersions,
+    englishVersionLabels: englishVersionLabels,
     parseVerses: parseVerses,
     touchesPassage: touchesPassage,
     passageSelection: passageSelection,

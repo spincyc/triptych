@@ -78,8 +78,7 @@
   color: var(--section-ink);
 }
 
-/* Passage focus stays beside the reading entrance, including when the larger
-   chapter/edition chooser is folded on a small screen. */
+/* Canonical verse focus belongs with the chapter and edition controls. */
 .passage-focus {
   display: flex;
   flex-wrap: wrap;
@@ -113,6 +112,43 @@
   font-size: 0.88rem;
 }
 .english-availability { font-size: 0.85rem; }
+
+.commentary-navigation {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0 1.25rem;
+}
+.commentary-navigation .link-button { min-height: 2.75rem; margin: 0; }
+.catena-page #commentary-finder { flex: 1 1 12rem; margin: 0; }
+.catena-page #commentary-finder[open] { flex-basis: 100%; }
+.catena-page #commentary-finder > summary { border: 0; }
+.catena-page #controls { margin-bottom: 0; }
+#finder-count, .finder-note {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: var(--ink-soft);
+}
+#finder-count { margin-inline-start: 0.6em; }
+.finder-note { flex-basis: 100%; margin: 0; }
+.finder-english {
+  display: flex;
+  align-items: center;
+  min-height: var(--control-min, 2.75rem);
+  gap: 0.5rem;
+}
+.finder-english input { accent-color: var(--section-accent); }
+.paired-english {
+  margin-block: 0.6rem 1rem;
+  padding: 0.75rem;
+  border-inline-start: 2px solid var(--section-accent);
+  background: var(--panel);
+}
+.version-available, .version-title { color: var(--section-ink); }
+.version-available { font: 600 0.8rem var(--sans); }
+.paired-english .version-title { min-height: 2.75rem; margin: 0; }
+.version-title::after { content: " +"; }
+.version-title[aria-expanded="true"]::after { content: " −"; }
 
 /* ---------------------------------------------------------------------------
  * The chapter
@@ -778,6 +814,8 @@
 .catena-page .reading:focus-visible { outline: 3px solid var(--focus); }
 
 @media (min-width: 64.0625rem) {
+  .page-shell.page-browser.catena-page { max-width: 78rem; }
+  .catena-page #controls .field-narrow { flex: 0 1 6rem; }
   .catena-page .reading {
     display: grid;
     grid-template-columns: minmax(20rem, 26rem) minmax(0, 44rem);
@@ -834,6 +872,8 @@
  * ------------------------------------------------------------------------ */
 
 @media print {
+  .catena-page .commentary-navigation, .catena-page .paired-english,
+  .catena-page .version-available { display: none !important; }
   .catena-page .passage-focus { display: none; }
   .catena-page .skip-link,
   .catena-page .banner,

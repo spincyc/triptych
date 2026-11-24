@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import re
+from collections import Counter
 from collections.abc import Callable
 
 from textual import on, work
@@ -787,7 +788,9 @@ class Catena(Surface):
     def english_offer(versions: list[dict]) -> str:
         if any(version["coverage"] == "whole" for version in versions):
             return "English version available"
-        return "English excerpt available"
+        if len(versions) == 1:
+            return f"English excerpt · {versions[0]['fragment']['extent']}"
+        return f"{len(versions)} English excerpts available"
 
     @staticmethod
     def version_label(version: dict) -> str:
@@ -807,12 +810,18 @@ class Catena(Surface):
             else:
                 open_version(versions[int(value)])
 
+        locators = [(v["fragment"]["edition"], v["fragment"]["locator"], v["fragment"]["extent"])
+                    for v in versions]
+        counts = Counter(locators)
         choices = []
         for index, version in enumerate(versions):
             target = version["fragment"]
-            label = Ink()(target["edition"], "bold").line(" · " + target["locator"])
+            label = Ink()(target["extent"], "bold").line(" · " + target["edition"])
+            label(target["locator"]).line()
             label(self.version_label(version))
             if target["translators"]:
                 label(" · " + ", ".join(target["translators"]))
+            if counts[locators[index]] > 1:
+                label.line()(version["basis"], "$text-muted")
             choices.append((str(index), label.content()))
         self.app.push_screen(Pick("English versions", choices), answered)

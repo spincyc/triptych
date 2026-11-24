@@ -59,7 +59,7 @@
   // before the model sees it. `M.paragraphPath` says why it must be.
   const ABSENT = { absent: true };
   const seen = (file) => (file === ABSENT ? undefined : file);
-  const printLoaders = new WeakMap();
+  const textLoaders = new WeakMap();
   let printableChapter = false;
   const printing = T.bindPrint({
     root: reading,
@@ -74,7 +74,7 @@
       // Fetch only this voice and visible author set.
       const selected = Array.from(reading.querySelectorAll('.fragment-body'))
         .filter((details) => !details.closest('[hidden]'));
-      const results = await Promise.all(selected.map((details) => printLoaders.get(details)()));
+      const results = await Promise.all(selected.map((details) => textLoaders.get(details)()));
       return results.every(Boolean);
     }
   });
@@ -242,14 +242,43 @@
     return block;
   }
 
-  function renderFragment(fragment, bookName, chapter, verses) {
+  function renderFragment(fragment, bookName, chapter, verses, versions) {
     const item = T.el('li', 'fragment');
     item.setAttribute('data-state', 'held');
+    const details = fragmentDetails(fragment, bookName, chapter, verses);
+    item.appendChild(details);
+    if (versions.length) {
+      const head = details.firstChild;
+      head.appendChild(T.el('span', 'version-available', 'English available'));
+      const versionsBox = T.el('div', 'paired-english');
+      details.insertBefore(versionsBox, head.nextSibling);
+      const labels = M.englishVersionLabels(versions, bookName);
+      for (const [n, version] of versions.entries()) {
+        const option = T.el('div');
+        const button = T.el('button', 'link-button version-title', labels[n]);
+        button.type = 'button';
+        button.setAttribute('aria-expanded', 'false');
+        option.appendChild(button);
+        versionsBox.appendChild(option);
+        let edition;
+        button.addEventListener('click', () => {
+          const open = button.getAttribute('aria-expanded') === 'false';
+          if (!edition) {
+            edition = fragmentDetails(version.fragment, bookName, chapter, verses, version);
+            option.appendChild(edition);
+          }
+          edition.hidden = !open;
+          button.setAttribute('aria-expanded', String(open));
+          if (open) textLoaders.get(edition)();
+        });
+      }
+    }
+    return item;
+  }
 
-    // `details`, not a scripted toggle: keyboard-reachable as served.
-    const details = T.el('details', 'fragment-body');
-
-    const head = T.el('summary', 'fragment-head');
+  function fragmentDetails(fragment, bookName, chapter, verses, version) {
+    const details = version ? T.el('div', 'english-edition') : T.el('details', 'fragment-body');
+    const head = T.el(version ? 'div' : 'summary', 'fragment-head');
     // M.chapterFragments projects the typed fields rendered here.
     head.appendChild(T.el('span', 'fragment-author', fragment.author));
     head.appendChild(T.el('span', 'fragment-work', fragment.work));
@@ -273,6 +302,7 @@
     }
     head.appendChild(extent);
     details.appendChild(head);
+    if (version) details.appendChild(T.el('p', 'fragment-basis', version.basis));
 
     // Prose arrives on first open; a failure reports against this fragment.
     const text = T.el('p', 'fragment-text', 'Loading…');
@@ -380,8 +410,8 @@
       );
       return pending;
     }
-    printLoaders.set(details, ensureText);
-    details.addEventListener('toggle', () => { if (details.open) ensureText(); });
+    textLoaders.set(details, ensureText);
+    if (!version) details.addEventListener('toggle', () => { if (details.open) ensureText(); });
 
     // Provenance, whether or not the text loads: every fact the spine carries.
     const source = T.el('p', 'fragment-source');
@@ -414,8 +444,7 @@
       source.appendChild(whole);
     }
     details.appendChild(source);
-    item.appendChild(details);
-    return item;
+    return details;
   }
 
   // Why the works standing here miss the asked-for language, and what may
@@ -480,6 +509,7 @@
     }
 
     const groups = M.commentaryGroups(held);
+    const chapterRows = M.chapterFragments(file);
 
     const chain = T.el('ul', 'chain');
     let undated = null, undatedChain = null;
@@ -509,7 +539,8 @@
 
       const inner = T.el('ul', 'author-fragments');
       for (const fragment of group.fragments) {
-        inner.appendChild(renderFragment(fragment, book.name, Number(chapterSelect.value), selectedVerses));
+        inner.appendChild(renderFragment(fragment, book.name, Number(chapterSelect.value), selectedVerses,
+          M.englishVersions(fragment, chapterRows)));
       }
       node.appendChild(inner);
       item.appendChild(node);
@@ -698,7 +729,7 @@
 
   /* ----------------------------------------------------------- assembly */
 
-  async function render() {
+  async function render(destination) {
     readCommentary.disabled = true;
     printableChapter = false;
     printing.invalidate();
@@ -791,6 +822,7 @@
           return !checked.versesUnread && checked.lines.length > 0;
         });
       refocus();
+      if (destination === 'commentary') focusCommentary();
 
       // The tally states the corpus, never the filter, and the announcement
       // is the same clauses in the same order — one derivation, so the two
@@ -878,6 +910,63 @@
     if (!chapterSelect.value) chapterSelect.value = '1';
   }
 
+  function focusCommentary() {
+    const column = reading.querySelector('.chain-column');
+    if (column) { column.focus(); column.scrollIntoView({ block: 'start' }); }
+  }
+
+  function bindFinder() {
+    const holdings = M.commentaryHoldings(index, canon.books);
+    if (!holdings.length) return;
+    const finder = document.getElementById('commentary-finder');
+    const books = document.getElementById('finder-book');
+    const chapters = document.getElementById('finder-chapter');
+    const english = document.getElementById('finder-english');
+    const submit = document.getElementById('finder-open');
+
+    function fillResults(preferred) {
+      const book = holdings.find((one) => one.token === books.value);
+      const rows = book ? book.chapters.filter((row) => !english.checked || row.english) : [];
+      T.fillSelect(chapters, rows.map((row) => ({ value: String(row.chapter),
+        label: row.chapter + ' — ' + row.fragments + (row.fragments === 1 ? ' excerpt' : ' excerpts') +
+          ' · ' + row.english + ' in English' })));
+      if (rows.some((row) => String(row.chapter) === preferred)) chapters.value = preferred;
+      submit.disabled = chapters.disabled = !rows.length;
+    }
+
+    function fillBooks(preferred, chapter) {
+      const found = holdings.filter((book) => !english.checked || book.chapters.some((row) => row.english));
+      const count = found.reduce((n, book) =>
+        n + book.chapters.filter((row) => !english.checked || row.english).length, 0);
+      document.getElementById('finder-count').textContent = count + (count === 1 ? ' chapter' : ' chapters') +
+        (english.checked ? ' with English' : '');
+      T.fillSelect(books, found.length ? found.map((book) => ({ value: book.token, label: book.name })) :
+        [{ value: '', label: 'No chapters with English excerpts' }]);
+      if (found.some((book) => book.token === preferred)) books.value = preferred;
+      books.disabled = !found.length;
+      fillResults(books.value === preferred ? chapter : '');
+    }
+
+    english.addEventListener('change', () => fillBooks(books.value, chapters.value));
+    books.addEventListener('change', () => fillResults(''));
+    finder.addEventListener('toggle', () => {
+      if (finder.open) fillBooks(bookSelect.value, chapterSelect.value);
+    });
+    document.getElementById('finder-form').addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (!chapters.value) return;
+      bookSelect.value = books.value;
+      fillChapters(books.value, chapters.value);
+      voiceSelect.value = '';
+      resetVerses();
+      finder.open = false;
+      reading.focus();
+      render('commentary');
+    });
+    fillBooks('', '');
+    finder.hidden = false;
+  }
+
   function updateSteps() {
     const book = canonEntry(bookSelect.value);
     const chapter = Number(chapterSelect.value);
@@ -954,6 +1043,7 @@
 
   // Never a permanent "Loading…" over a failed bootstrap.
   function labelSelects(label) {
+    document.getElementById('commentary-finder').hidden = true;
     readCommentary.disabled = true;
     verseInput.disabled = verseApply.disabled = verseClear.disabled = true;
     for (const select of [bookSelect, chapterSelect, bibleSelect, voiceSelect]) {
@@ -1028,6 +1118,7 @@
     T.fillBibleSelect(bibleSelect, bibles);
     bookSelect.disabled = chapterSelect.disabled = bibleSelect.disabled = false;
     verseInput.disabled = verseApply.disabled = verseClear.disabled = false;
+    bindFinder();
 
     document.getElementById('passage-focus').addEventListener('submit', async (event) => {
       event.preventDefault();
@@ -1052,10 +1143,7 @@
       render();
     });
     verseClear.addEventListener('click', () => { resetVerses(); render(); });
-    readCommentary.addEventListener('click', () => {
-      const column = reading.querySelector('.chain-column');
-      if (column) { column.focus(); column.scrollIntoView({ block: 'start' }); }
-    });
+    readCommentary.addEventListener('click', focusCommentary);
 
     bookSelect.addEventListener('change', () => {
       fillChapters(bookSelect.value, 1);

@@ -85,13 +85,11 @@ BROWSER = ROOT / "src/web/browser"
 CATENA = BROWSER / "catena"
 NODE = shutil.which("node")
 
-# gzip -9, whole file, mtime pinned to zero. The 2026-11-07 passage-focus
-# capability adds bounded canonical verse selection, visible English holdings
-# and matching terminal author filters. Its measured expansion and ceilings
-# are recorded in guidance/catena.md; this is not a relaxation for E1 styling.
-CSS_BUDGET_GZ = 8_500
+# gzip -9, whole file, mtime pinned to zero. The chapter finder and linked
+# English editions extend passage focus. Measurements are in guidance/catena.md.
+CSS_BUDGET_GZ = 8_800
 
-JS_BUDGET_GZ = 14_000
+JS_BUDGET_GZ = 15_000
 
 # The same files with comments stripped: what the composition itself costs.
 # Base at main 9b9ff74a7: css 1,813 / js 6,450. The growth is the accepted
@@ -99,9 +97,9 @@ JS_BUDGET_GZ = 14_000
 # canonical verse bounds, integrity errors, rights facts, chronology grouping,
 # filter recovery, route-owned history with arrival replaceState, print and
 # forced-colors blocks).
-CSS_RULES_BUDGET_GZ = 3_000
+CSS_RULES_BUDGET_GZ = 3_350
 
-JS_CODE_BUDGET_GZ = 9_300
+JS_CODE_BUDGET_GZ = 10_300
 
 # The review's protected distinctions. The composition deliberately specifies
 # no treatment for the `.absence-*` selectors (they render in the page's
@@ -491,6 +489,11 @@ def request_journal(entries):
             for seq, entry in enumerate(entries)]
 
 GEN1 = "#book=Gen&chapter=1&bible=douay-rheims"
+GEN1_TRANSLATION_RESEARCH = (
+    "4 works standing here have no English this project may publish; "
+    "1 has only a partly public domain English, not yet taken; "
+    "2 have been surveyed for English without a translation verified for inclusion"
+)
 
 GEN2 = "#book=Gen&chapter=2&bible=douay-rheims"
 
@@ -2574,9 +2577,18 @@ function buildPage(document) {
   add(header, 'p', 'tally', 'tally');
   add(body, 'div', 'banner', 'banner');
 
+  const finder = add(body, 'details', 'commentary-finder', 'controls-filter');
+  finder.hidden = true;
+  add(finder, 'span', 'finder-count');
+  const finderForm = add(finder, 'form', 'finder-form');
+  add(finderForm, 'select', 'finder-book');
+  add(finderForm, 'select', 'finder-chapter');
+  add(finderForm, 'input', 'finder-english');
+  add(finderForm, 'button', 'finder-open');
+
   const disclosure = add(body, 'details', 'controls-filter', 'controls-filter');
   disclosure.open = true;
-  add(disclosure, 'summary').textContent = 'Change chapter and commentary voice';
+  add(disclosure, 'summary').textContent = 'Chapter, verses and translations';
   const controls = add(disclosure, 'form', 'controls', 'controls');
   // The bible and voice fields wear `print-identity`, as the page's do.
   const printed = { 'bible-select': 1, 'language-select': 1 };
@@ -2592,11 +2604,11 @@ function buildPage(document) {
   add(steps, 'button', 'prev-button').disabled = true;
   add(steps, 'button', 'next-button').disabled = true;
 
-  const focus = add(body, 'form', 'passage-focus', 'passage-focus');
+  const focus = add(disclosure, 'form', 'passage-focus', 'passage-focus');
   add(focus, 'input', 'verse-input').value = '';
   add(focus, 'button', 'verse-apply');
   add(focus, 'button', 'verse-clear');
-  add(focus, 'button', 'read-commentary');
+  add(body, 'button', 'read-commentary');
   add(focus, 'p', 'verse-error').hidden = true;
 
   const reading = add(body, 'main', 'reading', 'reading');
@@ -3716,12 +3728,11 @@ class AbsenceCountTest(ReplayTest):
     the bar the record actually sets.
     """
 
-    def test_the_heading_counts_the_two_findings_apart(self):
+    def test_the_heading_counts_closed_partial_and_surveyed_findings_apart(self):
         page = self.page("voice-held")
         self.assertEqual(
             page["absenceSummary"],
-            "6 works standing here have no English this project may publish; "
-            "1 has only a partly public domain English, not yet taken")
+            GEN1_TRANSLATION_RESEARCH)
 
     def test_every_absence_still_carries_its_reason_and_partials_their_offer(self):
         page = self.page("voice-held")
@@ -5370,7 +5381,7 @@ class StaticDocumentTruthTest(unittest.TestCase):
 
     def test_the_controls_disclosure_is_static_open_and_wraps_the_form(self):
         self.assertIn('<details id="controls-filter" class="controls-filter" open>', self.page)
-        self.assertIn("<summary>Change chapter and commentary voice</summary>", self.page)
+        self.assertIn("<summary>Chapter, verses and translations</summary>", self.page)
         opening = self.page.index('<details id="controls-filter"')
         form = self.page.index('<form id="controls"')
         closing = self.page.index("</details>", opening)
@@ -5806,6 +5817,148 @@ class TypedStateTest(ReplayTest):
                      "fragment-acknowledgement", "chain-column"):
             with self.subTest(**{"class": name}):
                 self.assertIn(name, seen)
+
+
+@unittest.skipUnless(NODE, "Node is required")
+class CommentaryDiscoveryTest(unittest.TestCase):
+    def probe(self, script):
+        subprocess.run([NODE, "-e", "const assert=require('node:assert/strict'); "
+                        "const M=require(process.argv[1]);\n" + script,
+                        str(CATENA / "catena-model.js")], check=True)
+
+    def test_only_positive_chapter_evidence_in_canon_order_is_offered(self):
+        self.probe("""
+            const books = [{token:'Gen', name:'Genesis', chapters:50},
+                           {token:'Ps', name:'Psalms', chapters:150}];
+            const chapter = (n, f, e) => ({chapter:n, fragments:f, english:e});
+            const gen = {token:'Gen', present:[1,2,3,4], commentary_chapters:[
+                chapter(3,3,0), chapter(1,5,2), chapter(2,0,0), chapter(4,1,2),
+                chapter(5,3,1), chapter(6,'3',2)]};
+            const ps = {token:'Ps', present:[1,2]};
+            assert.deepEqual(M.commentaryHoldings({held:[ps,gen]}, books),
+               [{token:'Gen', name:'Genesis', chapters:[chapter(1,5,2),chapter(3,3,0)]}]);
+            assert.deepEqual(M.commentaryHoldings({held:[ps]}, books), []);
+            assert.deepEqual(M.commentaryHoldings({held:[gen,gen]}, books), []);
+            gen.commentary_chapters.push(chapter(1,1,0));
+            assert.deepEqual(M.commentaryHoldings({held:[gen]}, books)[0].chapters,[chapter(3,3,0)]);
+        """)
+
+    def test_only_an_identified_english_passage_of_the_same_admitted_work_resolves(self):
+        self.probe("""
+            const link = (passage_id, coverage='excerpt', basis='Reviewed evidence') =>
+                ({passage_id, coverage, basis});
+            const record = (id, language, work_id='work.one') => ({id, language, work_id});
+            const source = {...record('source','la'), english_versions:[
+                link('target'), link('unrelated'), link('duplicate'), link('french'), link('missing'),
+                link('bad','typo'),link('unfounded','whole',''),link('../unsafe'),
+                link('ambiguous','excerpt'),link('ambiguous','whole')]};
+            const file = {fragments:[source,record('target','en'),record('unrelated','en','work.other'),
+                 record('french','fr'),record('duplicate','en'),record('duplicate','en'),record('ambiguous','en')],
+                 text_prefix:'structure/catena/text/',sources:{},leads:[],blocked:[],refusals:{}};
+            const rows = M.chapterFragments(file);
+            assert.deepEqual(M.englishVersions(rows[0],rows),
+                [{fragment:rows[1],coverage:'excerpt',basis:'Reviewed evidence'}]);
+            assert.deepEqual(M.englishVersions(rows[0], M.chapterFragments({...file})), []);
+            assert.deepEqual(M.englishVersions({}, rows), []);
+        """)
+
+    def test_bounded_translation_search_stays_distinct_from_a_rights_bar_or_unsearched_work(self):
+        self.probe("""
+            const file = {fragments:[{id:'fixture', source:'1'}], sources:{
+                '1':{work_id:'work.one', work:'A work', author:'An author', language:'la'}},
+                leads:[], blocked:[], refusals:{}};
+            const entry = {language:'en', finding:'no-verified-translation',
+                reason:'The consulted editions did not establish a publishable counterpart.'};
+            const rows = M.absenceRows({absences:{'work.one':[entry]}}, file, 'en');
+            assert.equal(rows.length, 1);
+            assert.equal(rows[0].reason, entry.reason);
+            assert.equal(rows[0].offer, '');
+            assert.equal(M.absenceSummary(rows,'English'), 'one work standing here has been ' +
+                'surveyed for English without a translation verified for inclusion');
+        """)
+
+    @unittest.skipUnless(shutil.which("chromium"), "Chromium is required")
+    def test_keyboard_discovery_and_paired_english_keep_source_and_history(self):
+        from _cdp_drive import act, drive, wait
+
+        data = browser_data_root(ROOT)
+        index = json.loads((data / "structure/catena/index.json").read_text())
+        genesis = next(book for book in index["held"] if book["token"] == "Gen")
+        index["held"] = [{**genesis, "commentary_chapters": [
+            {"chapter": 1, "fragments": 4, "english": 3},
+            {"chapter": 2, "fragments": 1, "english": 0}]}]
+        extent = {"token": "Gen", "first_chapter": 1, "first_verse": 1,
+                  "last_chapter": 1, "last_verse": 2}
+        def row(identifier, language, voice):
+            return {"id": identifier, "author": "Fixture author", "work": "Fixture work",
+                    "work_id": "work.fixture", "date": 400, "extent": extent,
+                    "voice": voice, "language": language, "edition": language + " edition"}
+        original = row("fixture.original", "la", "original")
+        english = row("fixture.english", "en", "translation")
+        english["extent"] = {**extent, "last_verse": 1}
+        english["locator"] = "First section"
+        second = {**english, "id": "fixture.second", "locator": "Second section",
+                  "extent": {**extent, "first_verse": 2}}
+        third = {**english, "id": "fixture.third"}
+        original["english_versions"] = [{"passage_id": english["id"], "coverage": "excerpt",
+                                         "basis": "Same edition. Only the opening is aligned."},
+                                        {"passage_id": second["id"], "coverage": "excerpt",
+                                         "basis": "Only the ending is aligned."},
+                                        {"passage_id": third["id"], "coverage": "excerpt",
+                                         "basis": "Same edition. The following sentence is aligned."}]
+        english.update(translators=["Fixture translator"], rights="Fixture English rights")
+        spine = {"fragments": [original, english, second, third], "sources": {}, "leads": [], "blocked": [],
+                 "refusals": {}, "text_prefix": "structure/catena/text/"}
+        prefix = "src/web/data/structure/catena/"
+        english_path = prefix + "text/fixture.english.json"
+        responses = {prefix+"index.json": index, prefix+"01-gen/001.json": spine,
+                     prefix+"text/fixture.original.json": {"text":"Original fixture words"},
+                     english_path: {"text":"English fixture words", "acknowledgement":"Credit the English edition"}}
+        route = "/src/web/browser/catena/index.html?data=/src/web/data"
+        previous = "#book=Gen&chapter=2&bible=douay-rheims&voice=original&verses=1"
+        key = {"do":"key", "key":"Enter", "code":"Enter", "virtualKeyCode":13, "text":"\r"}
+        facts = drive({"responses": {p: json.dumps(v) for p,v in responses.items()}, "acts": [
+            {"do":"navigate", "url":route + previous},
+            wait("document.querySelector('#reading[aria-busy=false]') && !document.querySelector('#commentary-finder').hidden"),
+            act("document.querySelector('#commentary-finder summary').focus()"), key,
+            wait("document.querySelector('#finder-chapter').options.length===2"),
+            act("document.querySelector('#finder-english').click()"),
+            act("[...document.querySelector('#finder-chapter').options].map(o=>[o.value,o.label])", "eligible"),
+            act("document.querySelector('#finder-open').focus()"), key,
+            wait("document.activeElement.matches('.chain-column') && location.hash.includes('chapter=1')"),
+            act("location.hash", "opened"),
+            act("history.back()"), wait("document.querySelector('#reference').textContent==='Genesis 2:1'"),
+            act("location.hash", "back"),
+            {"do":"navigate","url":route + "#book=Gen&chapter=1&bible=douay-rheims&voice=original"},
+            wait("document.querySelector('#reading[aria-busy=false] .paired-english')"),
+            act("document.querySelector('.author-body').open=true;document.querySelector('.fragment-body').open=true"),
+            act("[...document.querySelectorAll('.paired-english button')].map(b=>b.textContent)", "links"),
+            act("performance.getEntriesByType('resource').filter(e=>e.name.includes('text/fixture.english')).length", "before"),
+            act("document.querySelector('.paired-english button').focus()"), key,
+            wait("document.querySelector('.paired-english .fragment-text').textContent==='English fixture words'"),
+            act("""({voice:document.querySelector('#language-select').value,
+                label:document.querySelector('.paired-english .version-title').textContent,
+                basis:document.querySelector('.paired-english .fragment-basis').textContent,
+                source:document.querySelector('.paired-english .fragment-source').textContent,
+                credit:document.querySelector('.paired-english .fragment-acknowledgement').textContent,
+                language:document.querySelector('.paired-english .fragment-text').lang})""","pair"),
+        ]})
+        self.assertEqual(facts["eligible"], [["1", "1 — 4 excerpts · 3 in English"]])
+        self.assertEqual(facts["opened"], "#book=Gen&chapter=1&bible=douay-rheims")
+        self.assertEqual(facts["back"], previous)
+        self.assertEqual(facts["before"], 0)
+        pair = facts["pair"]
+        self.assertEqual(pair["voice"], "original")
+        self.assertEqual(pair["language"], "en")
+        self.assertEqual(facts["links"], [
+            "English excerpt · Genesis 1:1 · First section · Only the opening is aligned.",
+            "English excerpt · Genesis 1:2 · Second section",
+            "English excerpt · Genesis 1:1 · First section · The following sentence is aligned."])
+        self.assertEqual(pair["label"], facts["links"][0])
+        self.assertEqual(pair["basis"], "Same edition. Only the opening is aligned.")
+        self.assertIn("Fixture translator", pair["source"])
+        self.assertIn("Fixture English rights", pair["source"])
+        self.assertIn("Credit the English edition", pair["credit"])
 
 
 class PayloadTest(ReplayTest):
@@ -7230,8 +7383,7 @@ class AbsenceRowFlatteningTest(ReplayTest):
                         "the reasons must still be visible without interaction")
         self.assertEqual(
             page["absenceSummary"],
-            "6 works standing here have no English this project may publish; "
-            "1 has only a partly public domain English, not yet taken")
+            GEN1_TRANSLATION_RESEARCH)
         self.assertEqual(len(page["absenceReasons"]), 7)
         self.assertEqual(len(page["absencePartials"]), 1)
         self.assertIn("absence", page["dataStates"])
@@ -7377,10 +7529,7 @@ class RootLanguageIdentityTest(ReplayTest):
         self.assertEqual(page["filterLabels"],
                          ["Basil of Caesarea", "Gregory of Nyssa",
                           "Severian of Gabala", "Augustine of Hippo"])
-        self.assertEqual(page["absenceSummary"],
-                         "6 works standing here have no English this project may "
-                         "publish; 1 has only a partly public domain English, "
-                         "not yet taken")
+        self.assertEqual(page["absenceSummary"], GEN1_TRANSLATION_RESEARCH)
         self.assertEqual(page["referenceBookText"], "Old Testament")
 
     def test_both_pages_terminate(self):
