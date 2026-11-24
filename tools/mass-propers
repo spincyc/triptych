@@ -3726,19 +3726,25 @@ def missal_witness_links(root: Path, calendar: str, document: dict) -> dict:
     if not path.is_file():
         return {}
     inventory = _calendars.read_toml(path)
+    if not isinstance(inventory.get("entries", []), list) or not isinstance(inventory.get("facsimiles", []), list):
+        raise ValueError(f"{path.name}: expected lists of witness entries and facsimiles")
     entries = list(inventory.get("entries", []))
     records, problems = _source_library_records(root)
     if problems:
         raise ValueError("; ".join(problems))
     for facsimile in inventory.get("facsimiles", []):
         artifact = records.get(facsimile["source_id"]) or {}
-        if artifact.get("record_type") != "artifact" or artifact.get("sha256") != facsimile["sha256"]:
+        if (artifact.get("record_type") != "artifact" or not facsimile.get("sha256") or
+                artifact.get("sha256") != facsimile["sha256"] or type(facsimile.get("page_count")) is not int or
+                facsimile["page_count"] < 1 or not isinstance(facsimile.get("pages"), list)):
             raise ValueError(f"{path.name}: facsimile pages require the registered PDF fingerprint")
         for page in facsimile["pages"]:
             number = page["page"]
             if type(number) is not int or not 1 <= number <= facsimile["page_count"]:
                 raise ValueError(f"{path.name}: page outside the checked facsimile")
             entry = {key: facsimile[key] for key in ("source_id", "edition_label", "language")}
+            if page.get("rite_opening") is True:
+                entry["rite_opening"] = True
             entries.append(entry | {"mass": page["mass"], "form_id": page.get("form_id", "main"),
                                     "url": f"{artifact['source_url']}#page={number}",
                                     "locus": f"{page['locus']} (PDF p. {number})"})
@@ -3767,6 +3773,8 @@ def missal_witness_links(root: Path, calendar: str, document: dict) -> dict:
             raise ValueError(f"{path.name}: invalid edition label for {key}")
         seen.add(identity)
         link = {field: entry[field] for field in ("source_id", "url", "locus")}
+        if entry.get("rite_opening") is True:
+            link["rite_opening"] = True
         link.update(edition_label=label, scope=scope, language=language)
         links.setdefault(key, []).append(link)
     return links

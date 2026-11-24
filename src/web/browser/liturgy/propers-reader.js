@@ -908,14 +908,7 @@
           return row && row.basis && ['none', 'unavailable'].indexOf(row.applicability) >= 0;
         });
         if (!basis) throw new Error('Missal mode has no Ordinary events or source-defined frame boundary');
-        const note = T.el('section', 'missal-frame-limitation candidate-limitation');
-        note.appendChild(T.el('h2', null, basis.applicability === 'none'
-          ? 'This source rite has no ordinary Mass frame'
-          : 'The Ordinary frame is unavailable for this source rite'));
-        note.appendChild(T.el('p', null,
-          'The appointed Propers remain below in source order. No Ordinary seats were invented.'));
-        note.appendChild(T.el('p', 'composed-note missal-frame-basis', 'Source basis: ' + basis.basis));
-        fragment.appendChild(note);
+        fragment.appendChild(T.riteReadingNote(mass, result.resolved.form, basis));
       }
     (result.events || []).forEach(function (event, eventOrdinal) {
       if (event.kind === 'proper-choice') {

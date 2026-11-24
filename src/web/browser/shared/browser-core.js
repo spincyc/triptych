@@ -1730,6 +1730,24 @@ window.Triptych = (function () {
     }
   }
 
+  function riteReadingNote(mass, form, disposition) {
+    const section = el('section', 'missal-frame-limitation candidate-limitation');
+    section.appendChild(el('h2', null, disposition.applicability === 'none'
+      ? 'Liturgy of the day' : 'Propers of this Mass'));
+    const opening = missalWitnessLinks(mass, form).find(link => link.rite_opening);
+    if (opening) {
+      const anchor = el('a', 'missal-rite-source', 'Read the complete rite in the ' + opening.edition_label);
+      anchor.href = opening.url;
+      section.appendChild(anchor);
+    }
+    const basis = el('details', 'composed-note missal-frame-basis');
+    basis.appendChild(el('summary', null, disposition.applicability === 'none'
+      ? 'About this ceremony' : 'Why only the Propers appear here'));
+    basis.appendChild(el('p', null, disposition.basis));
+    section.appendChild(basis);
+    return section;
+  }
+
   /**
    * A `mixed` unit's citation expansion stands beside the Missal's own text
    * and is not a reconstruction of it; only a Scripture-only unit is. The two
@@ -3752,6 +3770,7 @@ window.Triptych = (function () {
     coverageNoticeText: coverageNoticeText,
     missalWitnessLinks: missalWitnessLinks,
     displayMissalWitnessLinks: displayMissalWitnessLinks,
+    riteReadingNote: riteReadingNote,
     recensionContext: recensionContext,
     absenceReasons: ABSENCE_REASONS,
     orationFor: orationFor,

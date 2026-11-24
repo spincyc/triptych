@@ -2144,17 +2144,7 @@
     })) {
       throw new Error('a non-full Ordinary frame contains an unsupported semantic event');
     }
-    const limitation = T.el('section', 'missal-frame-limitation candidate-limitation');
-    const heading = coverage.reason.applicability === 'none'
-      ? 'This source rite has no ordinary Mass frame'
-      : 'The Ordinary frame is unavailable for this source rite';
-    limitation.appendChild(T.el('h2', null, heading));
-    limitation.appendChild(T.el('p', null,
-      'The appointed Propers remain below in source order. The reader has not invented ' +
-      'Ordinary seats or substituted the standard frame.'));
-    limitation.appendChild(T.el('p', 'composed-note missal-frame-basis',
-      'Source basis: ' + coverage.reason.basis));
-    fragment.appendChild(limitation);
+    fragment.appendChild(T.riteReadingNote(mass, result.resolved.form, coverage.reason));
 
     const properIds = [];
     (result.events || []).forEach(function (event, eventOrdinal) {
