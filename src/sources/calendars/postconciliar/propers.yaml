@@ -19226,6 +19226,18 @@ sections:
           - kind: witness-gap
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008
         notes: "Source appointment antiphonary:chrism-mass|main|E|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 46 / printed page 38, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. Dated 2026-11-14 (gap campaign p2-lent-holyweek): the Missal's adapted antiphon is its own body beside the retained Scripture citation; no public-domain witness prints it word for word, so its Latin stays an explicit witness gap. Project study English of the adapted body is recorded in the translation overlay."
+      - name: Collect
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-gld-3e0e3f14
+        notes: 2002 Missal, Feria V Hebdomadae Sanctae / Ad Missam chrismatis; Collect, option 1 (digital PDF artifact p. 178);
+          https://www.clerus.org/bibliaclerusonline/en/gld.htm#hg. The two digital witnesses agree on this appointment. Correspondence
+          with the whole 2008 reprint remains unverified.
       - name: First Reading
         source: scripture
         verses:
@@ -19274,6 +19286,13 @@ sections:
           - begin: {chapter: 4, verse: 16}
             end: {chapter: 4, verse: 21}
           ref: Luke 4:16-21
+      - name: Prayer over the Offerings
+        source: composed
+        text: Huius sacrificii potentia, Domine, quaesumus, et vetustatem nostram clementer abstergat, et novitatem nobis augeat
+          et salutem. Per Christum.
+        notes: Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/gle.htm#bym,
+          Prayer over the Offerings; registered secondary 2002 PDF, artifact p. 179. Comparison establishes the 2002 digital
+          reading; correspondence with the 2008 printing is unverified.
       - name: Communion Antiphon
         source: scripture
         psalm_numbering: vulgate
@@ -19291,6 +19310,19 @@ sections:
           artifact page 46 / printed page 38, in the 2026-10-20/21 image audit. The printed citation cue is retained as
           structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
           English body, exact target-2008 Latin body, or publication permission is supplied.
+      - name: Prayer after Communion
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-gle-a40fdb9b
+        notes: 2002 Missal, Feria V Hebdomadae Sanctae / Ad Missam chrismatis; Prayer after Communion, option 1 (digital PDF
+          artifact p. 180); https://www.clerus.org/bibliaclerusonline/en/gle.htm#byn. The two digital witnesses agree on this
+          appointment. Correspondence with the whole 2008 reprint remains unverified. The Mass begins in the preceding digital
+          section at https://www.clerus.org/bibliaclerusonline/en/gld.htm#hg.
     - key: holy-monday
       name: Monday of Holy Week
       registry: 'pc-T-holy-monday'
@@ -57816,6 +57848,18 @@ sections:
         only payload taken from that restricted witness; no Lectionary text is reproduced. See
         src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
+      - name: Collect
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glo-00419ad3
+        notes: 2002 Missal, Saint Sebastian, Martyr / S. Sebastiani, martyris; Collect, option 1 (digital PDF artifact p. 418);
+          https://www.clerus.org/bibliaclerusonline/en/glo.htm#nu. The two digital witnesses agree on this appointment. Correspondence
+          with the whole 2008 reprint remains unverified.
       - name: First Reading
         source: scripture
         verses:
@@ -61029,6 +61073,18 @@ sections:
         them is on disk that this project may publish. See
         src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
+      - name: Collect
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glp-cd664951
+        notes: 2002 Missal, Saint Martin I, Pope and Martyr / S. Martini I, papæ et martyris; Collect, option 1 (digital PDF
+          artifact p. 437); https://www.clerus.org/bibliaclerusonline/en/glp.htm#p0. The two digital witnesses agree on this
+          appointment. Correspondence with the whole 2008 reprint remains unverified.
       - name: First Reading
         source: scripture
         verses:
@@ -61250,13 +61306,25 @@ sections:
         - mass: commune-pastorum
           selection: For a Bishop
       text_status:
-        state: unavailable
+        state: partial
         scope: missal-formulary
         reasons:
-        - kind: no-exemplar
-      notes: The registered Antiphonary establishes only the Entrance- and Communion-antiphon Common
-        direction and resolves no text. No exact target-formulary exemplar is carried;
-        nothing is invented.
+        - kind: witness-gap
+          source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008
+      notes: The 2002 Missal supplies the proper Collect. The Antiphonary identifies its Common direction separately. Whole-form 2008 correspondence remains unverified.
+      propers:
+      - name: Collect
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glp-cd664951
+        notes: 2002 Missal, Saint Adalbert, Bishop and Martyr / S. Adalberti, episcopi et martyris; Collect, option 1 (digital
+          PDF artifact p. 438); https://www.clerus.org/bibliaclerusonline/en/glp.htm#p5. The two digital witnesses agree on
+          this appointment. Correspondence with the whole 2008 reprint remains unverified.
     - key: saint-fidelis-sigmaringen-priest-martyr
       common_from:
         scope: missal-antiphons
@@ -63766,6 +63834,19 @@ sections:
           ref: Psalms 115:15
         psalm_numbering: vulgate
         notes: 'Structural appointment and citation Ps 115: 15 directly checked in registered ICEL2010 Antiphonary, artifact page 114, printed page 106; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded.'
+      - name: Prayer after Communion
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glq-4eeac750
+        notes: 2002 Missal, Saints Charles Lwanga and Companions, Martyrs / Ss. Caroli Lwanga et sociorum, martyrum; Prayer
+          after Communion, option 1 (digital PDF artifact p. 452); https://www.clerus.org/bibliaclerusonline/en/glq.htm#cg1.
+          The two digital witnesses agree on this appointment. Correspondence with the whole 2008 reprint remains unverified.
+          The Mass begins in the preceding digital section at https://www.clerus.org/bibliaclerusonline/en/glp.htm#rq.
     - key: saint-boniface-bishop-martyr
       common_from:
         scope: missal-antiphons
@@ -69365,6 +69446,19 @@ sections:
           - begin: {chapter: 22, verse: 24}
             end: {chapter: 22, verse: 30}
           ref: Luke 22:24-30
+      - name: Prayer over the Offerings
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glr-2df3c15b
+        notes: 2002 Missal, Saint Gregory the Great, Pope and Doctor of the Church / S. Gregorii Magni, papæ et Ecclesiæ; Prayer
+          over the Offerings, option 1 (digital PDF artifact p. 489); https://www.clerus.org/bibliaclerusonline/en/glr.htm#vi.
+          The two digital witnesses agree on this appointment. Correspondence with the whole 2008 reprint remains unverified.
+          The independent PDF spells the heading Super oblate; the Clerus text has Super oblata.
       - name: Communion Antiphon
         source: scripture
         verses:
@@ -70102,6 +70196,30 @@ sections:
         source: composed
         text: "Sanguis sanctorum martyrum pro Christo effusus est in terris; ideo adepti sunt praemia sempiterna."
         notes: "Structural appointment and uncited presence directly checked in registered ICEL2010 Antiphonary, artifact page 134, printed page 126; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded. Dated 2026-11-14 Latin admission (gap campaign p5-sanctoral-marian), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Migne PL 78 (Paris: Garnier, 1895 printing) unit at printed p. col. 824. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
+      - name: Collect
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glr-2df3c15b
+        notes: 2002 Missal, Saints Andrew Kim Tae-gon, Priest, Paul Chong Ha-sang, and Companions, Martyrs / Ss. Andreæ Kim
+          Tae-gôn, presbyteri; Collect, option 1 (digital PDF artifact p. 496); https://www.clerus.org/bibliaclerusonline/en/glr.htm#v2.
+          The two digital witnesses agree on this appointment. Correspondence with the whole 2008 reprint remains unverified.
+      - name: Prayer over the Offerings
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glr-2df3c15b
+        notes: 2002 Missal, Saints Andrew Kim Tae-gon, Priest, Paul Chong Ha-sang, and Companions, Martyrs / Ss. Andreæ Kim
+          Tae-gôn, presbyteri; Prayer over the Offerings, option 1 (digital PDF artifact p. 496); https://www.clerus.org/bibliaclerusonline/en/glr.htm#v2.
+          The two digital witnesses agree on this appointment. Correspondence with the whole 2008 reprint remains unverified.
       - name: Communion Antiphon
         source: scripture
         verses:
@@ -70110,6 +70228,18 @@ sections:
           - begin: {chapter: 10, verse: 32}
             end: {chapter: 10, verse: 32}
           ref: Matthew 10:32
+      - name: Prayer after Communion
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glr-2df3c15b
+        notes: 2002 Missal, Saints Andrew Kim Tae-gon, Priest, Paul Chong Ha-sang, and Companions, Martyrs / Ss. Andreæ Kim
+          Tae-gôn, presbyteri; Prayer after Communion, option 1 (digital PDF artifact p. 497); https://www.clerus.org/bibliaclerusonline/en/glr.htm#v2.
+          The two digital witnesses agree on this appointment. Correspondence with the whole 2008 reprint remains unverified.
       notes: 'SOURCED 2026-08-21. This Mass has PROPER antiphons, read in the ICEL Antiphonary, ANTIPHONARY
         EXCERPTED FROM THE ROMAN MISSAL, English translation according to the third typical edition, 2010,
         published free by the Liturgy Office of the Bishops'' Conference of England and Wales at https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf
@@ -70720,6 +70850,19 @@ sections:
           ref: Psalms 137:1
         psalm_numbering: vulgate
         notes: 'Structural appointment and citation Ps 137: 1 directly checked in registered ICEL2010 Antiphonary, artifact page 135, printed page 127; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded.'
+      - name: Prayer after Communion
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-gls-9f3b0bff
+        notes: 2002 Missal, Saints Michael, Gabriel, and Raphael, Archangels / SS. MICHAELIS, GABRIELIS ET RAPHAELIS; Prayer
+          after Communion, option 1 (digital PDF artifact p. 501); https://www.clerus.org/bibliaclerusonline/en/gls.htm#cje.
+          The two digital witnesses agree on this appointment. Correspondence with the whole 2008 reprint remains unverified.
+          The Mass begins in the preceding digital section at https://www.clerus.org/bibliaclerusonline/en/glr.htm#wi.
     - key: saint-jerome-priest-doctor-church
       text_status:
         state: partial

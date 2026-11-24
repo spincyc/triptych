@@ -1075,3 +1075,51 @@ common_group_ids = ["virgin-one", "works-of-mercy"]
 source_id = "artifact.catholic-church.roman-calendar-teresa-of-calcutta-additions-2025.2025-official-latin-annex.official-html-5a59d9c5"
 url = "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2025/02/11/0125/00250.html#memoria"
 locus = "Missal annex to the decree of 24 December 2024, published in 2025, 5 September; Virgins for one virgin or Holy Men and Women for those who practiced works of mercy. This Missal text prints an own Collect and the named Common direction for the other prayers."
+
+[[common_groups]]
+id = "martyrs-several-missionaries"
+label = "Several missionary martyrs"
+mass = "commune-martyrum"
+form_ids = ["martyrs-missionary-several-1"]
+
+[[memorials]]
+mass = "presentation-blessed-virgin-mary"
+common_group_ids = ["mary-ordinary", "mary-advent", "mary-christmas", "mary-easter", "mary-lent-local"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-gls-9f3b0bff"
+url = "https://www.clerus.org/bibliaclerusonline/en/gls.htm#yg"
+locus = "The Presentation of the Blessed Virgin Mary / In Præsentatione beatæ Mariæ Virginis; the 2002 Missal supplies the proper Collect and directs to Common of the Blessed Virgin Mary, p. 897. Independent digital Missal, artifact p. 523. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-adalbert-bishop-martyr"
+common_group_ids = ["martyr-one-easter", "pastors-bishop"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glp-cd664951"
+url = "https://www.clerus.org/bibliaclerusonline/en/glp.htm#p5"
+locus = "Saint Adalbert, Bishop and Martyr / S. Adalberti, episcopi et martyris; the 2002 Missal supplies the proper Collect and directs to Martyrs for one martyr in Easter Time, p. 921, or Pastors for a bishop, p. 929. Independent digital Missal, artifact p. 438. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-martin-i-pope-martyr"
+common_group_ids = ["martyr-one-easter", "pastors-pope"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glp-cd664951"
+url = "https://www.clerus.org/bibliaclerusonline/en/glp.htm#p0"
+locus = "Saint Martin I, Pope and Martyr / S. Martini I, papæ et martyris; the 2002 Missal supplies the proper Collect and directs to Martyrs for one martyr in Easter Time, p. 921, or Pastors for a pope, p. 927. Independent digital Missal, artifact p. 437. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-sebastian-martyr"
+common_group_ids = ["martyr-one-outside-easter"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glo-00419ad3"
+url = "https://www.clerus.org/bibliaclerusonline/en/glo.htm#nu"
+locus = "Saint Sebastian, Martyr / S. Sebastiani, martyris; the 2002 Missal supplies the proper Collect and directs to Martyrs for one martyr, p. 915. Independent digital Missal, artifact p. 418. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-sylvester-i-pope"
+common_group_ids = ["pastors-pope"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glt-427df2b2"
+url = "https://www.clerus.org/bibliaclerusonline/en/glt.htm#zq"
+locus = "Saint Sylvester I, Pope / S. Silvestri I, papæ; the 2002 Missal supplies the proper Collect and directs to Pastors for a pope, p. 927. Independent digital Missal, artifact p. 535. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saints-john-brebeuf-isaac-jogues-priests"
+common_group_ids = ["martyrs-several-missionaries"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-gls-9f3b0bff"
+url = "https://www.clerus.org/bibliaclerusonline/en/gls.htm#xe"
+locus = "Saints John de Brébeuf and Isaac Jogues, Priests, and Companions, Martyrs / Ss. Ioannis de Brébeuf et Isaac Jogues; the 2002 Missal supplies the proper Collect and directs to Martyrs for missionary martyrs, p. 922. Independent digital Missal, artifact p. 510. This memorial prints no proper prayer over the offerings or after Communion."
