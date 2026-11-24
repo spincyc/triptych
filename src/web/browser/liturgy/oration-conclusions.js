@@ -1240,8 +1240,8 @@
     if (value && typeof value === 'object') return '{' + Object.keys(value).sort().map(key => JSON.stringify(key) + ':' + canonical(value[key])).join(',') + '}';
     return JSON.stringify(value);
   }
-  function sha(text) {
-    const bytes = unescape(encodeURIComponent(text)), words = [], constants = [], initial = [];
+  const constants = [], initial = [];
+  {
     let prime = 2;
     while (constants.length < 64) {
       let isPrime = true;
@@ -1252,6 +1252,14 @@
       }
       prime++;
     }
+  }
+  // Calendar navigation reuses complete, immutable prayer texts. Cache only
+  // their digests; source descriptors and publication decisions are still checked.
+  const recentDigests = new Map();
+  function sha(text) {
+    const cacheable = typeof text === 'string' && text.length <= 16384;
+    if (cacheable && recentDigests.has(text)) return recentDigests.get(text);
+    const bytes = unescape(encodeURIComponent(text)), words = [];
     for (let index = 0; index < bytes.length; index++) words[index >> 2] = (words[index >> 2] || 0) | bytes.charCodeAt(index) << (24 - index % 4 * 8);
     words[bytes.length >> 2] = (words[bytes.length >> 2] || 0) | 128 << (24 - bytes.length % 4 * 8);
     words[(((bytes.length + 8) >> 6) + 1) * 16 - 1] = bytes.length * 8;
@@ -1272,7 +1280,12 @@
       }
       hash = hash.map((value, index) => (value + work[index]) | 0);
     }
-    return hash.map(value => (value >>> 0).toString(16).padStart(8, '0')).join('');
+    const digest = hash.map(value => (value >>> 0).toString(16).padStart(8, '0')).join('');
+    if (cacheable) {
+      if (recentDigests.size >= 128) recentDigests.delete(recentDigests.keys().next().value);
+      recentDigests.set(text, digest);
+    }
+    return digest;
   }
   function requireValue(condition, reason) { if (!condition) throw new Error(reason); }
   function isV2(source) { return source && source.schema === 'triptych-oration-conclusion-source/v2'; }
