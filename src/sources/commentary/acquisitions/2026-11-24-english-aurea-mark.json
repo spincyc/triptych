@@ -1,0 +1,16 @@
+{
+  "schema": "triptych-commentary-acquisition/v1",
+  "audited_on": "2026-11-24",
+  "scope": "All sixteen chapter bodies of Thomas Aquinas’s Catena Aurea on Mark in John Dalgairns’s Oxford English, edited by John Henry Newman. Four previously admitted sections are retained and 101 additional complete sections are admitted.",
+  "edition_id": "edition.thomas-aquinas.catena-aurea-in-marcum.1842-english-oxford-ccel",
+  "source_url": "https://ccel.org/ccel/a/aquinas/catena2.xml",
+  "raw_sha256": "69c8f2d198186de50e444c6a618dd3de24d3b89e8af879042b06c5a46c89168f",
+  "text_sha256": "790ed587e6cd6ec86df02f97ee8494fb2ddb31923361b972d423aaa318139bbf",
+  "inspection": [
+    "Fetched the identified CCEL XML and matched its complete hash. Replayed scripts/_catena_aurea.py against those bytes and compared the entire normalized body and the extractor’s paragraph and block metadata with the retained artifacts.",
+    "Checked the chapter sequence, quoted lemma labels and wording, block limits and opening and closing commentary paragraphs. Compared the Gospel lemmas against the held King James and Douay-Rheims chapter texts to place the complete sections in Clementine numbering. Source records carry native locators; fragment edges carry canonical extents.",
+    "The XML scripture class includes commentary at lines 2016 and 2867 and a separate Amen at line 3147. Those paragraphs stay in their respective units with their original wording and credits. Native verses 3:19, 6:6 and 15:20 are divided between adjacent commentary sections. Native 3:19b opens Vulgate 3:20. The two parts of 6:6 and of 15:20 retain their shared verse number.",
+    "Native 4:40 and 4:41 share Clementine 4:40. Native 9:1 opens with the promise that some standing here will see the kingdom, at Clementine 8:39; native 9:2–50 runs from the Transfiguration to salt and peace, at Clementine 9:1–49. The first section of native chapter 9 is one reading that crosses the canonical chapter boundary."
+  ],
+  "limits": "This collation establishes the English electronic witness and its complete section boundaries. Inherited transcription defects and disputed internal attributions are preserved. No comparison to a printed facsimile, Latin critical text or individual patristic originals is claimed. This edition’s coverage is distinct from the catalogue’s coverage of other commentators."
+}

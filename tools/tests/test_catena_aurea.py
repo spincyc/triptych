@@ -1,6 +1,10 @@
 """Boundary tests for the offline Catena Aurea extraction recipe."""
 
 import importlib.util
+import json
+import tomllib
+
+import yaml
 from pathlib import Path
 import unittest
 
@@ -25,6 +29,31 @@ class CatenaAureaTests(unittest.TestCase):
         self.assertEqual(index["blocks"][0]["line_end"], 4)
         self.assertEqual(index["blocks"][1]["unparsed_lemma_lines"], [5])
         self.assertEqual(index["blocks"][1]["native_verse_labels"], [])
+
+    def test_mark_sections_replay_the_complete_english_witness(self):
+        root = Path(__file__).resolve().parents[2] / "src/sources"
+        edition = root / "works/thomas-aquinas/catena-aurea-in-marcum/editions/1842-english-oxford-ccel"
+        text = (edition / "artifacts/text-790ed587/source.txt").read_text().splitlines()
+        index = json.loads((edition / "artifacts/candidates-756967a9/candidates.json").read_bytes())
+        edges = yaml.load((root / "commentary/fragment-loci.yaml").read_bytes(),
+                          Loader=getattr(yaml, "CSafeLoader", yaml.SafeLoader))
+        extents = {row["passage_id"]: row["extent"] for row in edges["fragments"]}
+        ranges = []
+        for path in sorted((edition / "passages").glob("*.toml")):
+            passage = tomllib.loads(path.read_text())
+            with self.subTest(passage=path.stem):
+                (first, last), = passage["physical_line_ranges"]
+                lines = text[first - 1:last]
+                self.assertEqual(passage["text"], " ".join(lines))
+                self.assertEqual(passage["transcription_segments"],
+                                 [{"line": i, "text": line} for i, line in enumerate(lines, start=first)])
+                self.assertIn(passage["id"], extents)
+                ranges.append((first, last))
+        self.assertEqual(sorted(ranges), [(b["line_start"], b["line_end"]) for b in index["blocks"]])
+        # Native chapter 9 opens one verse before the Vulgate chapter break.
+        passage_id = "passage.thomas-aquinas.catena-aurea-in-marcum.1842-english-oxford-ccel.09-01-08"
+        self.assertEqual(extents[passage_id], dict(token="Mark", first_chapter=8, first_verse=39,
+                                                   last_chapter=9, last_verse=7))
 
     def test_missing_chapter_refuses(self):
         with self.assertRaisesRegex(ValueError, "chapter sequence"):
