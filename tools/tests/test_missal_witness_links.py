@@ -1,0 +1,62 @@
+"""Consultation links must resolve to the registered artifact and an actual Mass form."""
+from __future__ import annotations
+
+import copy
+from importlib.machinery import SourceFileLoader
+from importlib.util import module_from_spec, spec_from_loader
+from pathlib import Path
+import unittest
+from unittest.mock import patch
+
+ROOT = Path(__file__).resolve().parents[2]
+loader = SourceFileLoader("missal_witness_link_producer", str(ROOT / "tools/mass-propers"))
+spec = spec_from_loader(loader.name, loader)
+producer = module_from_spec(spec)
+loader.exec_module(producer)
+
+
+class MissalWitnessLinks(unittest.TestCase):
+    root = ROOT / "src/sources/calendars"
+    document = {"sections": {"temporal": {"kind": "temporal", "masses": [
+        {"key": "nativity", "forms": [{"id": "night"}, {"id": "dawn"}]}
+    ]}}}
+    artifact = {"record_type": "artifact", "sha256": "a" * 64,
+                "source_url": "https://example.org/missal.pdf"}
+    facsimile = {"edition_label": "Latin missal", "language": "la", "source_id": "artifact.test",
+                 "sha256": "a" * 64, "page_count": 10,
+                 "pages": [{"mass": "nativity", "form_id": "dawn", "locus": "Collect", "page": 4}]}
+
+    def project(self, inventory):
+        with patch.object(producer._calendars, "read_toml", return_value=inventory), \
+                patch.object(producer, "_source_library_records", return_value=({"artifact.test": self.artifact}, [])):
+            return producer.missal_witness_links(self.root, "roman-1962", self.document)
+
+    def test_dawn_page_does_not_qualify_the_night_form(self):
+        rows = self.project({"facsimiles": [self.facsimile]})
+        self.assertEqual(set(rows), {("nativity", "dawn")})
+        link, = rows["nativity", "dawn"]
+        self.assertEqual(link["url"], self.artifact["source_url"] + "#page=4")
+        self.assertEqual(link["scope"], "form")
+        self.assertEqual(link["locus"], "Collect (PDF p. 4)")
+
+    def test_invalid_source_page_fingerprint_and_identity_fail(self):
+        for field, value in [("sha256", "b" * 64), ("page", 0), ("page", 11), ("form_id", "day")]:
+            broken = copy.deepcopy(self.facsimile)
+            target = broken if field == "sha256" else broken["pages"][0]
+            target[field] = value
+            with self.subTest(field=field, value=value), self.assertRaises(ValueError):
+                self.project({"facsimiles": [broken]})
+
+    def test_links_name_the_registered_document_and_preserve_distinct_languages(self):
+        original = {"source_id": "artifact.test", "locus": "Mass antiphons", "mass": "nativity",
+                    "form_id": "dawn", "language": "en", "url": self.artifact["source_url"] + "#page=4"}
+        rows = self.project({"entries": [original], "facsimiles": [self.facsimile]})
+        self.assertEqual([row["language"] for row in rows["nativity", "dawn"]], ["en", "la"])
+        with self.assertRaises(ValueError):
+            self.project({"entries": [dict(original, url="https://example.org/other.pdf#page=4")]})
+        with self.assertRaises(ValueError):
+            self.project({"entries": [original, original]})
+
+
+if __name__ == "__main__":
+    unittest.main()

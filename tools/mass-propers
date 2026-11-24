@@ -3725,12 +3725,25 @@ def missal_witness_links(root: Path, calendar: str, document: dict) -> dict:
     path = inventory_root(root) / f"{calendar}-missal-witness-links-v1.toml"
     if not path.is_file():
         return {}
-    entries = _calendars.read_toml(path).get("entries")
-    if not isinstance(entries, list) or not entries:
-        raise ValueError(f"{path.name}: expected at least one witness link")
+    inventory = _calendars.read_toml(path)
+    entries = list(inventory.get("entries", []))
     records, problems = _source_library_records(root)
     if problems:
         raise ValueError("; ".join(problems))
+    for facsimile in inventory.get("facsimiles", []):
+        artifact = records.get(facsimile["source_id"]) or {}
+        if artifact.get("record_type") != "artifact" or artifact.get("sha256") != facsimile["sha256"]:
+            raise ValueError(f"{path.name}: facsimile pages require the registered PDF fingerprint")
+        for page in facsimile["pages"]:
+            number = page["page"]
+            if type(number) is not int or not 1 <= number <= facsimile["page_count"]:
+                raise ValueError(f"{path.name}: page outside the checked facsimile")
+            entry = {key: facsimile[key] for key in ("source_id", "edition_label", "language")}
+            entries.append(entry | {"mass": page["mass"], "form_id": page.get("form_id", "main"),
+                                    "url": f"{artifact['source_url']}#page={number}",
+                                    "locus": f"{page['locus']} (PDF p. {number})"})
+    if not entries:
+        raise ValueError(f"{path.name}: expected at least one witness link")
     forms = {mass["key"]: {form["id"] for form in mass.get("forms") or []} or {"main"}
              for _, mass in masses_of(document)}
     links = {}

@@ -340,7 +340,7 @@ class OrdinaryAppointments(unittest.TestCase):
             turns = next(row for row in by_key[key]["translations"] if row["lang"] == "la")["turns"]
             self.assertEqual([turn["action"] for turn in turns], [None, True, None], key)
         # The held 1925 Pentecost head is distinct from the common form;
-        # the continuation still lacks a checked English 1962 clause.
+        # the continuation has a separately identified English study rendering.
         head = by_key["canon/communicantes-pentecoste"]
         self.assertIsNone(head["absent"]["english"])
         english_head = [row for row in head["translations"] if row["lang"] == "en"]
@@ -349,8 +349,10 @@ class OrdinaryAppointments(unittest.TestCase):
                          "edition.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925")
         self.assertTrue(english_head[0]["text"].startswith(
             "Communicating, and keeping the most holy day of Pentecost,"))
-        self.assertEqual(by_key["canon/communicantes-continuatio"]["absent"]["english"],
-                         "communicantes-continuation-english-lacks-1962-clause")
+        continuation = by_key["canon/communicantes-continuatio"]
+        self.assertIsNone(continuation["absent"]["english"])
+        self.assertEqual([row["source_id"] for row in continuation["translations"] if row["lang"] == "en"],
+                         ["edition.triptych.english-completion-20261029-ordinary-joseph.study-english-20261029"])
 
     def test_1962_holy_spirit_preface_is_whole_with_its_conditional_words(self) -> None:
         """C3, 2026-10-19: the opening up to the junction, then the clause."""
@@ -450,10 +452,12 @@ class OrdinaryAppointments(unittest.TestCase):
                         carriers.add((element["key"], row["lang"]))
                     if "the_joseph_clause" in (row.get("note") or ""):
                         citers.add((element["key"], row["lang"]))
-        self.assertEqual(carriers, {("canon/communicantes-continuatio", "la")})
+        self.assertEqual(carriers, {(key, lang) for key in
+                         ("canon/communicantes-continuatio", "praefatio/praefatio-sancto-ioseph")
+                         for lang in ("la", "en")})
         self.assertEqual(citers, {("canon/communicantes-continuatio", "la")})
-        # Across the source library the basis is cited only by its record, the
-        # projection that uses it and the inventory that joins that projection.
+        # The later English studies explicitly qualify their own treatment of
+        # the name. Keep all references to this narrow legal basis accounted for.
         cited = sorted(
             str(path.relative_to(ROOT)) for path in (ROOT / "src/sources").rglob("*")
             if path.is_file() and path.suffix in {".toml", ".tsv", ".yaml"}
@@ -462,6 +466,11 @@ class OrdinaryAppointments(unittest.TestCase):
         self.assertEqual(cited, [
             "src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml",
             "src/sources/inventories/roman-1962-ordo-missae-v1.toml",
+            "src/sources/works/triptych/english-completion-20261029-ordinary-joseph/editions/"
+            "2026-10-29-study-english/artifacts/continuation-study-en-b83d0df3/artifact.toml",
+            "src/sources/works/triptych/postconciliar-common-communicantes-study-english-20261030/editions/"
+            "2026-10-30-study-english/artifacts/common-full-names-conclusion-omitted-study-en/artifact.toml",
+            "src/sources/works/triptych/postconciliar-common-communicantes-study-english-20261030/work.toml",
             "src/sources/works/triptych/roman-1962-ordinary-editorial-projection/editions/"
             "2026-10-19-editorial-projection/artifacts/canon-proper-forms-651e3482/"
             "artifact.toml",
