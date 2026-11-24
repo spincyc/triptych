@@ -51,7 +51,7 @@ class PentecostSeptemberEmberTests(unittest.TestCase):
         actual = {}
         for masskey in ("pentecost-ember-saturday", "september-ember-saturday"):
             mass = masses[masskey]
-            self.assertEqual("unavailable", mass["ordinary_frame"]["applicability"])
+            self.assertEqual("full", mass.get("ordinary_frame", {"applicability": "full"})["applicability"])
             for form in mass["forms"]:
                 self.assertEqual(ORDERS[masskey + "/" + form["id"]], [p["name"] for p in form["propers"]])
                 seen = {}
@@ -131,6 +131,28 @@ class PentecostSeptemberEmberTests(unittest.TestCase):
                         self.propers.validate_translation_publication_binding(
                             broken, ROOT / "src/sources/calendars",
                             ROOT / "src/sources/inventories/roman-1962-proper-translations-v1.toml", self.witnesses)
+
+    def test_sequence_ending_follows_the_selected_1962_form(self):
+        document = _calendars.load_document(ROOT / "src/sources/calendars", "roman-1962")
+        masses = _calendars.mass_index(document)
+        donor = next(p for p in masses["pentecost"]["propers"] if p["name"] == "Sequence")
+        entries, problems = _calendars.resolve_propers(document, masses["pentecost-ember-saturday"])
+        self.assertEqual([], problems)
+        endings = {}
+        for form, proper, reference in entries:
+            if proper["name"] != "Sequence":
+                continue
+            appointed = self.propers.apply_appointed_latin_ending(proper, reference)
+            self.assertEqual([], self.propers.text_structure_problems(appointed["text"], appointed["text_structure"]))
+            endings[form] = appointed["text"].rstrip()
+            if reference.get("latin_ending"):
+                self.assertIn("1392", reference["citation"])
+                withheld = {**proper, "text": None}
+                self.assertIs(withheld, self.propers.apply_appointed_latin_ending(withheld, reference))
+        self.assertTrue(donor["text"].rstrip().endswith(" Amen. Alleluia."))
+        self.assertEqual(donor["text"].rstrip(), endings["Shorter form"])
+        self.assertEqual(donor["text"].rstrip().removesuffix(" Alleluia."),
+                         endings["Longer form (forma missae longior)"])
 
     def test_both_veni_chants_keep_the_genuflection_as_a_rubric(self):
         document = _calendars.load_document(ROOT / "src/sources/calendars", "roman-1962")

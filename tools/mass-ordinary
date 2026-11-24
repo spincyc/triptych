@@ -1340,6 +1340,130 @@ PROPER_RITE_FIELDS = {"id", "edition", "semantic_role", "own_conclusion", "locus
 PROPER_RITE_APPOINTMENT_FIELDS = {"mass", "form_id", "proper", "occurrence", "locus"}
 
 
+def hymn_rule_table(source: dict, sources: Path, name: str) -> dict:
+    """Classify the selected principal Mass independently of Sunday or octave overrides."""
+    if "hymn_rules" not in source:
+        return {}
+    if source["calendar"] != "roman-1962":
+        raise SourceError(f"{name}: hymn rules require their own edition")
+    selectors = {
+        "office_both": ("office", True, True),
+        "office_gloria_only": ("office", True, False),
+        "office_creed_only": ("office", False, True),
+        "office_neither": ("office", False, False),
+        "ferial_only": ("feria", None, None),
+        "ritual_gloria_only": ("ritual", True, False),
+        "rogation_votive": ("votive", False, False),
+        "requiem": ("requiem", False, False),
+        "no_mass": ("undetermined", None, None),
+    }
+    rules = source["hymn_rules"]
+    spans = ("ferial_gloria_spans", "creed_octave_spans")
+    if not isinstance(rules, dict) or set(rules) != {*selectors, *spans, "locus"} or not rules["locus"]:
+        raise SourceError(f"{name}: hymn rules lack the complete Office, ritual and calendar controls")
+    for group in spans:
+        for span in rules[group]:
+            if not isinstance(span, dict) or not (
+                set(span) == {"from", "to"} and all(isinstance(v, str) and re.fullmatch(r"(?:0[1-9]|1[0-2])-(?:0[1-9]|[12][0-9]|3[01])", v) for v in span.values())
+                or set(span) == {"anchor", "from", "to"} and span["anchor"] in {"easter", "pentecost"}
+                and type(span["from"]) is int and type(span["to"]) is int and span["from"] <= span["to"]
+            ):
+                raise SourceError(f"{name}: unsupported hymn rule span {span!r}")
+    document = _calendars.load_document(sources / "calendars", source["calendar"], effective=False)
+    masses = _calendars.mass_index(document)
+    pairs = {}
+    for group, state in selectors.items():
+        for key in rules[group]:
+            if key in pairs or key not in masses:
+                raise SourceError(f"{name}: duplicate or unknown hymn rule for {key!r}")
+            pairs[key] = state
+    for section_name, section in document["sections"].items():
+        for mass in section["masses"]:
+            key, rank = mass["key"], mass.get("rank")
+            if key in pairs:
+                continue
+            if section_name in {"marian", "christological", "sanctoral"} and rank in {"I", "II", "III"}:
+                # RGBR 237c: the principal Office of a feast has the Te Deum.
+                # RGMR 475b/c: a first-class feast, or a second-class feast of
+                # the Lord or Mary, has the Creed. Apostolic exceptions are named above.
+                pairs[key] = ("office", True, rank == "I" or rank == "II" and section_name != "sanctoral")
+            elif section_name == "seasonal":
+                raise SourceError(f"{name}: temporal Mass {key} lacks a sourced hymn decision")
+            else:
+                # A Common or a commemorated saint does not supply an independent
+                # Office. The use/grade/color of a votive celebration is separate.
+                pairs[key] = ("undetermined", None, None)
+    primary = {key: {"use": use, "gloria": gloria, "creed": creed}
+               for key, (use, gloria, creed) in sorted(pairs.items())}
+    return {"hymn_rules": {"locus": rules["locus"], **{group: rules[group] for group in spans},
+                           "primary": primary}}
+
+
+def lesson_cues(source: dict, library: dict, name: str) -> dict:
+    """Read the invitations from the cited facing Latin/English transcription."""
+    if "lesson_frames" not in source and "lesson_frame_cues" not in source:
+        return {}
+    control = source.get("lesson_frame_cues")
+    fields = {"artifact_id", "locus", "editorial_note_la", "editorial_note_en"}
+    if (not source.get("lesson_frames") or not isinstance(control, dict) or set(control) != fields
+            or not all(isinstance(value, str) and value.strip() for value in control.values())):
+        raise SourceError(f"{name}: lesson frames require a sourced bilingual cue table")
+    record = library.get(control["artifact_id"], {})
+    if record.get("rights_status") != "public-domain" or record.get("artifact_type") != "normalized-text":
+        raise SourceError(f"{name}: lesson frame cues require a publishable historical text")
+    rows = payload_rows(record)
+    if ([row.get("element") for row in rows] != ["oremus", "kneel", "rise"]
+            or any(set(row) != {"element", "latin", "english"} or not all(row.values()) for row in rows)):
+        raise SourceError(f"{name}: the historical witness must supply all three ordered bilingual cues")
+    return {
+        "lesson_frame_cues": {row["element"]: {"la": row["latin"], "en": row["english"]}
+                              for row in rows},
+        "lesson_frame_note": {"la": control["editorial_note_la"], "en": control["editorial_note_en"]},
+        "lesson_frame_cue_locus": control["locus"],
+    }
+
+
+def lesson_frame_table(source: dict, sources: Path, name: str) -> list[dict]:
+    """Bind the Kyrie-to-Gospel order to the complete sequence in the named form."""
+    if "lesson_frames" not in source:
+        return []
+    frames = source["lesson_frames"]
+    if source["calendar"] != "roman-1962" or not isinstance(frames, list) or not frames:
+        raise SourceError(f"{name}: lesson_frames requires 1962 source declarations")
+    document = _calendars.load_document(sources / "calendars", "roman-1962", effective=False)
+    masses = _calendars.mass_index(document)
+    fields = {"mass", "form_id", "locus", "preliminary", "collect", "reading", "chants",
+              "gloria", "preparation"}
+    seen = set()
+    for frame in frames:
+        if not isinstance(frame, dict) or set(frame) != fields:
+            raise SourceError(f"{name}: lesson frame requires its exact source fields")
+        if not all(isinstance(frame[k], str) and frame[k].strip()
+                   for k in ("mass", "form_id", "locus", "collect", "reading")):
+            raise SourceError(f"{name}: lesson frame lacks a source coordinate or locus")
+        address = frame["mass"], frame["form_id"]
+        if address in seen or address[0] not in masses:
+            raise SourceError(f"{name}: duplicate or unknown lesson frame {address}")
+        seen.add(address)
+        if (type(frame["gloria"]) is not bool
+                or frame["preparation"] not in ("kneel-rise", "oremus")
+                or not all(isinstance(frame[k], list) and frame[k]
+                           and all(isinstance(slot, str) and slot.strip() for slot in frame[k])
+                           for k in ("preliminary", "chants"))):
+            raise SourceError(f"{name}: malformed lesson frame {address}")
+        mass = masses[address[0]]
+        holder = mass if address[1] == "main" and not mass.get("forms") else next(
+            (form for form in mass.get("forms", []) if form["id"] == address[1]), {})
+        names = [proper["name"] for proper in holder.get("propers", [])]
+        expected = ["Introit", *frame["preliminary"], frame["collect"], frame["reading"],
+                    *frame["chants"], "Gospel"]
+        if (frame["preliminary"][0] != "Collect" or frame["collect"] != "Oratio"
+                or names[:len(expected)] != expected
+                or effective_ordinary_frame(mass, holder, str(address))["applicability"] != "full"):
+            raise SourceError(f"{name}: lesson frame disagrees with the complete Proper order of {address}")
+    return frames
+
+
 def proper_rite_table(source: dict, sources: Path, name: str) -> list[dict]:
     """Join finite source-declared rites to exact authored prayer appointments.
 
@@ -3447,6 +3571,48 @@ def from_inventory(
 # --------------------------------------------------------------- assembly
 
 
+def attach_ordinary_witness_links(
+    source: dict, sections: list[dict], library: dict[str, dict], name: str
+) -> None:
+    """Attach a verified consultation page to its actual Ordinary elements."""
+    entries = source.get("ordinary_witness_links", [])
+    if not isinstance(entries, list):
+        raise SourceError(f"{name}: ordinary_witness_links must be an array")
+    elements = {element["key"]: element for section in sections for element in section["elements"]}
+    joined = set()
+    for entry in entries:
+        if not isinstance(entry, dict) or set(entry) != {
+            "source_id", "page", "locus", "edition_label", "languages", "elements"
+        }:
+            raise SourceError(f"{name}: invalid Ordinary witness link fields")
+        source_id = entry["source_id"]
+        artifact = library.get(source_id) if isinstance(source_id, str) else None
+        if not artifact or artifact.get("media_type") != "application/pdf":
+            raise SourceError(f"{name}: Ordinary witness link requires a registered PDF")
+        url = artifact.get("source_url", "")
+        page = entry["page"]
+        if (not url.startswith("https://") or "#" in url or type(page) is not int
+                or not 1 <= page <= artifact.get("page_count", 0)):
+            raise SourceError(f"{name}: invalid Ordinary witness URL or page for {source_id}")
+        languages = entry["languages"]
+        if languages not in (["en"], ["la", "en"]):
+            raise SourceError(f"{name}: invalid Ordinary witness languages for {source_id}")
+        if any(not isinstance(entry[field], str) or not entry[field].strip()
+               for field in ("locus", "edition_label")):
+            raise SourceError(f"{name}: Ordinary witness links require an edition and locus")
+        keys = entry["elements"]
+        if not isinstance(keys, list) or not keys:
+            raise SourceError(f"{name}: Ordinary witness links must identify their elements")
+        href = f"{url}#page={page}"
+        link = {field: entry[field] for field in ("source_id", "edition_label", "locus", "languages")}
+        link.update(url=href, scope="ordinary", language="en")
+        for key in keys:
+            if not isinstance(key, str) or key not in elements or (key, href) in joined:
+                raise SourceError(f"{name}: unknown or duplicate Ordinary witness element {key!r}")
+            joined.add((key, href))
+            elements[key].setdefault("missal_witness_links", []).append(link)
+
+
 def calendar_structure(sources: Path, path: Path, library: dict[str, dict]) -> dict:
     name = path.name
     source = read_toml(path)
@@ -3481,6 +3647,7 @@ def calendar_structure(sources: Path, path: Path, library: dict[str, dict]) -> d
     variants, options = variant_table(source, name)
     appointments = appointment_table(source, name)
     proper_rites = proper_rite_table(source, sources, name)
+    lesson_frames = lesson_frame_table(source, sources, name)
 
     sections = []
     exclusions = []
@@ -3528,6 +3695,7 @@ def calendar_structure(sources: Path, path: Path, library: dict[str, dict]) -> d
             exclusions.append(exclusion)
         sections.append({"key": key, "name": section.get("name") or key, "elements": elements})
 
+    attach_ordinary_witness_links(source, sections, library, name)
     slots = slot_table(source, sections, name, proper_rites)
     proper_rite_coverage(proper_rites, slots, sections, name)
     appointment_coverage(appointments, sections, name)
@@ -3729,6 +3897,9 @@ def calendar_structure(sources: Path, path: Path, library: dict[str, dict]) -> d
         "appointments": [appointments[key] for key in sorted(appointments)],
         "slots": slots,
         **({"proper_rites": proper_rites} if proper_rites else {}),
+        **({"lesson_frames": lesson_frames} if lesson_frames else {}),
+        **lesson_cues(source, library, name),
+        **hymn_rule_table(source, sources, name),
         "translations": manifest,
         "sections": sections,
         "coverage": _missal_coverage.summarize(coverage_units, "ordinary"),

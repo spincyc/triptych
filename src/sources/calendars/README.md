@@ -659,6 +659,13 @@ referring proper's own name. `mass` names a key in **the same file** — a
 reference never crosses calendars, because the two books print different prayers
 under the same names. `citation` records the edition's own printed pointer, which
 is the evidence that the reference is the book's and not the reader's.
+The 1962 Pentecost Ember Saturday longer form takes the Pentecost Sequence
+with `latin_ending: omit-final-alleluia`. The cited local rubric appoints the
+full hymn through *Amen*. The producer selects that extent after checking
+publication of the source body and preserves the stanza openings. The English
+witnesses retain their own printed endings. The shorter form uses the complete
+Pentecost Latin ending.
+
 The narrow same-mass exception is a proper in one form naming a directly printed
 proper in a **different** sibling form. A mass-level self-reference, a same-form
 proper reference, and a sibling target that is itself only a reference remain
@@ -764,7 +771,9 @@ suppresses the borrowed Common's Collect. `missal-formulary` accounts for the
 whole Missal formulary when target wording is unavailable; it does not include
 Lectionary options. It is required on a text-free Common destination and on a
 text-free dated `common_from` mass. With `state: unavailable` it otherwise stands
-alone. A non-Common Mass may instead use `state: partial` beside exactly one of
+alone. A partially witnessed Common carries named forms and retains its
+whole-formulary limitation. Its recovered prayers confer no dated Common
+selection. A dated or seasonal Mass may use `state: partial` beside exactly one of
 real `propers` or `forms`; `common_from` may accompany the flat `propers` case
 because its narrow antiphon direction resolves no text, while `takes_from` may
 not. The independent status, not the Antiphonary pointer, accounts for every
@@ -823,6 +832,14 @@ Both explicit states require a nonempty source-grounded `basis`; consumers fail
 closed and suppress the generic Ordinary. Do not mark a Mass `none` merely
 because blessings, processions, extra lessons, or another exceptional Proper
 structure surround or enter it.
+
+The 1962 Ordinary inventory also declares the preliminary lessons of the Ember
+Wednesdays, both forms of each Ember Saturday, and Wednesday of the fourth
+week of Lent. Each `[[lesson_frames]]` entry identifies a Mass and form,
+the consecutive Proper occurrences following the Kyrie, the prayer following
+the greeting, and the final reading and chants. The printed locus establishes
+the posture cues and whether the Gloria intervenes. The pre-1955 calendar
+has its own `withheld_frames` entries at these coordinates.
 
 ## A formulary may appoint the Ordinary's variables
 

@@ -1138,6 +1138,68 @@ class OrdinaryTool(unittest.TestCase):
         cls.tool_module = importlib.util.module_from_spec(spec)
         loader.exec_module(cls.tool_module)
 
+    def test_hymns_depend_on_the_principal_1962_office_or_special_rite(self):
+        tool = self.tool_module
+        sources = ROOT / "src/sources"
+        path = sources / "inventories/roman-1962-ordo-missae-v1.toml"
+        source = tomllib.loads(path.read_text())
+        rules = tool.hymn_rule_table(source, sources, path.name)["hymn_rules"]
+        rows = rules["primary"]
+        for key, expected in {
+            "advent-1": ("office", False, True),
+            "lent-4-wednesday": ("office", False, False),
+            "pentecost-ember-wednesday": ("office", True, True),
+            "s-barnabae-apostoli": ("office", True, True),
+            "conversione-s-pauli-apostoli": ("office", True, False),
+            "s-annae-matris-beatae-mariae-virginis": ("office", True, False),
+            "vigil-of-pentecost": ("ritual", True, False),
+            "rogation-mass": ("votive", False, False),
+            "commemoratione-omnium-fidelium-defunctorum": ("requiem", False, False),
+            "missa-de-s-maria-in-sabbato-3": ("office", True, False),
+            "mass-of-the-first-sunday-after-epiphany": ("feria", None, None),
+            "comm-s-donati-episcopi-martyris": ("undetermined", None, None),
+        }.items():
+            with self.subTest(key=key):
+                self.assertEqual(tuple(rows[key][field] for field in ("use", "gloria", "creed")), expected)
+        self.assertIn({"from": "12-25", "to": "01-13"}, rules["ferial_gloria_spans"])
+        self.assertIn({"anchor": "pentecost", "from": 0, "to": 6}, rules["creed_octave_spans"])
+        self.assertEqual(tool.hymn_rule_table({"calendar": "roman-pre-1955"}, sources, "fixture"), {})
+
+    def test_preliminary_lessons_bind_the_entire_form_in_order(self):
+        tool = self.tool_module
+        sources = ROOT / "src/sources"
+        path = sources / "inventories/roman-1962-ordo-missae-v1.toml"
+        inventory = tomllib.loads(path.read_text())
+        frames = tool.lesson_frame_table(inventory, sources, path.name)
+        artifact = next(sources.glob("works/*/*/editions/*/artifacts/ember-preliminary-lesson-cues-*/artifact.toml"))
+        witness = {**tomllib.loads(artifact.read_text()), "_source_root": sources}
+        cues = tool.lesson_cues(inventory, {witness["id"]: witness}, path.name)
+        self.assertEqual(cues["lesson_frame_cues"], {
+            "oremus": {"la": "Oremus.", "en": "Let us pray."},
+            "kneel": {"la": "Flectamus genua.", "en": "Let us kneel."},
+            "rise": {"la": "Levate.", "en": "Arise."},
+        })
+        self.assertIn("in silence", cues["lesson_frame_note"]["en"])
+        self.assertEqual(len(frames), 13)
+        self.assertEqual(len({row["mass"] for row in frames}), 9)
+        inherited = tool._calendars.mass_index(
+            tool._calendars.load_document(sources / "calendars", "roman-pre-1955"))
+        for row in frames:
+            with self.subTest(mass=row["mass"], form=row["form_id"]):
+                count = 5 if row["form_id"] == "longer" else 1
+                self.assertEqual(row["preliminary"].count("Oratio"), count - 1)
+                self.assertEqual(len(row["preliminary"]), 3 * count)
+                self.assertEqual(row["gloria"], row["mass"].startswith("pentecost-"))
+                self.assertEqual(row["preparation"], "oremus" if row["gloria"] else "kneel-rise")
+                mass = inherited[row["mass"]]
+                form = next((f for f in mass.get("forms", []) if f["id"] == row["form_id"]), None)
+                self.assertEqual(tool.effective_ordinary_frame(mass, form, row["mass"])["applicability"],
+                                 "unavailable")
+        first = frames[0]
+        with self.assertRaisesRegex(tool.SourceError, "complete Proper order"):
+            tool.lesson_frame_table({**inventory, "lesson_frames": [
+                {**first, "preliminary": first["preliminary"][:-1]}]}, sources, path.name)
+
     def test_reading_note_is_literal_optional_language_local_provenance(self) -> None:
         tool = self.tool_module
         qualification = "  Historical source only.\nThe source ending remains.  "

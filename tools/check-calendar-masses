@@ -481,6 +481,8 @@ def check_reference(
     target = reference.get("mass")
     if not isinstance(target, str) or not target:
         problems.append(f"{where}: {TAKES_FROM} needs the key of the mass it takes from")
+    if not on_proper and "latin_ending" in reference:
+        problems.append(f"{where}: a Latin ending belongs on a single Proper reference")
     if not on_proper and "proper" in reference:
         problems.append(
             f"{where}: {TAKES_FROM} on a mass takes the whole formulary; name a "
@@ -2193,16 +2195,11 @@ def check_entry(
             )
     if has_text_status:
         status = entry[TEXT_STATUS]
-        allowed_states = (
-            UNAVAILABLE_TEXT_STATUS_STATES
-            if section_kind == COMMON_KIND
-            else TEXT_STATUS_STATES
-        )
         check_text_status(
             where,
             status,
             problems,
-            allowed_states=allowed_states,
+            allowed_states=TEXT_STATUS_STATES,
         )
         state = status.get("state") if isinstance(status, dict) else None
         scope = status.get("scope") if isinstance(status, dict) else None
@@ -2217,10 +2214,13 @@ def check_entry(
                     f"{where}: partial {TEXT_STATUS} is only for scope "
                     "'missal-formulary'"
                 )
-            if section_kind == COMMON_KIND or has_season == has_date:
+            if section_kind == COMMON_KIND and not has_forms:
                 problems.append(
-                    f"{where}: partial {TEXT_STATUS} belongs only to a non-Common "
-                    "dated or seasonal mass"
+                    f"{where}: partial Common requires separately identified forms"
+                )
+            elif section_kind != COMMON_KIND and has_season == has_date:
+                problems.append(
+                    f"{where}: partial {TEXT_STATUS} requires a dated or seasonal mass"
                 )
             if has_propers == has_forms:
                 problems.append(
@@ -2588,18 +2588,21 @@ def common_reference_problems(
             status = target_mass.get(TEXT_STATUS)
             if not (
                 isinstance(status, dict)
-                and status.get("state") == "unavailable"
+                and status.get("state") in {"partial", "unavailable"}
                 and status.get("scope") == "missal-formulary"
             ):
                 problems.append(
                     f"mass {origin}: {COMMON_FROM}.options[{index}] targets "
-                    f"{target_key!r}, which is not explicitly unavailable with "
+                    f"{target_key!r}, which lacks a partial or unavailable status with "
                     f"{TEXT_STATUS}.scope 'missal-formulary'"
                 )
             carried = [
                 field
                 for field in ("propers", "forms", TAKES_FROM, COMMON_FROM)
-                if field in target_mass
+                if field in target_mass and not (
+                    field == "forms" and isinstance(status, dict)
+                    and status.get("state") == "partial"
+                )
             ]
             if carried:
                 problems.append(

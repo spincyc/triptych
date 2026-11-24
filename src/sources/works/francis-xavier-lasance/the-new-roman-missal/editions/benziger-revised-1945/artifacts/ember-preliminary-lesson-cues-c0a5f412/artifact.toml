@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ember-preliminary-lesson-cues-c0a5f412"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+storage = "tracked"
+rights_jurisdiction = "United States"
+retrieved = "2026-11-24"
+encoding = "utf-8"
+indexable = true
+sha256 = "c0a5f412c014766f2a905fc8540172063fa4b190cf3c3041c512e93aad18245b"
+byte_size = 107
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/ember-preliminary-lesson-cues-c0a5f412/cues.tsv"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+rights_status = "public-domain"
+rights_basis = "Original English in the registered 1945 Lasance/Walsh revision, printed p. 113. The United States nonrenewal evidence is recorded in src/sources/inventories/lasance-new-roman-missal-rights-v1.toml. The Latin words are independently printed in the public-domain 1922 Tours Mame edition, p. 8."
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+source_url = "https://archive.org/download/fr-lasance-missal-1937/fr-lasance-missal-1937.pdf"
+provenance = "The facing cue lines on Lasance p. 113 (PDF 114) were inspected against the page image. The 1922 Mame p. 8 (PDF 122) bears independent witness to the Latin. The controlling 1962 rubric on p. 5 (PDF 86) determines the placement of the cues."
+transformation = "Separate the three invocations in their printed order and omit typographic stress accents. The old response glyph is omitted because the controlling 1962 rubric appoints the speakers separately."

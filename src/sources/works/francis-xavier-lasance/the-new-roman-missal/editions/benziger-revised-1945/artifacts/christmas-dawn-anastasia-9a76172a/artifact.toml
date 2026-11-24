@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.christmas-dawn-anastasia-9a76172a"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+storage = "tracked"
+rights_jurisdiction = "United States"
+retrieved = "2026-11-24"
+encoding = "utf-8"
+indexable = true
+sha256 = "9a76172a5ce8f52cfa9882e49d61157a27a3195e3e6020b0f09c4fef3603f24e"
+byte_size = 763
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/christmas-dawn-anastasia-9a76172a/english.tsv"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+rights_status = "public-domain"
+rights_basis = "Original English of the registered Lasance/Walsh 1945 revision on printed pp. 141 and 143. These pages fall within the United States nonrenewal holding in src/sources/inventories/lasance-new-roman-missal-rights-v1.toml."
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+source_url = "https://archive.org/download/fr-lasance-missal-1937/fr-lasance-missal-1937.pdf"
+provenance = "Transcribed from the English columns of the registered facsimile, PDF pp. 142 and 144, opposite the Anastasia orations."
+transformation = "Join layout wraps and hyphenation. Preserve initial small capitals and the witness’s abbreviated conclusions. The short raised dash after salvation in the Secret is present in both consulted impressions and retained."

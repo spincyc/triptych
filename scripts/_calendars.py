@@ -96,7 +96,7 @@ INDEX_OWNED = ("edition", "edition_short")
 # evidence that the reference is the book's and not the reader's.
 TAKES_FROM = "takes_from"
 COMMON_SETS = "common_sets"
-REFERENCE_FIELDS = ("mass", "form", "proper", "citation", "note", COMMON_SETS, "appointment_overrides")
+REFERENCE_FIELDS = ("mass", "form", "proper", "citation", "note", "latin_ending", COMMON_SETS, "appointment_overrides")
 # A proper that takes its text from elsewhere holds no text of its own. Naming
 # the slot twice is the restatement this key exists to remove, so the incipit
 # comes from the resolved proper and may not be retyped beside the reference.
@@ -2467,7 +2467,17 @@ def resolve_propers(
         )
         problems.extend(trouble)
         if taken is not None:
-            resolved.append((label, taken, terminal or _provenance(inner, proper)))
+            source = terminal or _provenance(inner, proper)
+            if "latin_ending" in inner:
+                if (inner["latin_ending"] != "omit-final-alleluia"
+                        or not str(inner.get("citation") or "").strip()
+                        or taken.get("name") != "Sequence"
+                        or not str(taken.get("text") or "").rstrip().endswith(" Amen. Alleluia.")):
+                    problems.append(f"mass {key}: a Latin Sequence ending requires the cited Amen. Alleluia. source")
+                    continue
+                if document.get("calendar") == "roman-1962":
+                    source = {**source, "latin_ending": inner["latin_ending"], "citation": inner["citation"]}
+            resolved.append((label, taken, source))
     problems.extend(ordinary_disposition_group_problems(key, resolved))
     problems.extend(_appointment_contract_problems(document, key, resolved))
     problems.extend(_proper_source_path_problems(document, mass, resolved))

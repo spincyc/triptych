@@ -117,7 +117,7 @@ not_decided_here = [
   "Which Preface, Communicantes or Hanc igitur a given formulary takes. The formulary's own printed direction is the mass index's `ordinary_appointments`; this file declares only what the frame shows for each appointed option, the dated spans and defaults the book's own Canon headings state (`[[appointments]]`), and a typed stand-in where nothing establishes the appointment.",
   "General ceremonial execution beyond the separately declared source findings. Historical rubrics retain their own edition's authority. The inserted ferial prayer-over-the-people cues have explicit 1962 placement and actor findings at Ritus XI.2-3; their older wording witnesses do not supply those rules.",
   "Whether any element's Latin is the wording the 1962 typical edition prints, except where an element's own provenance declares a collation. The Latin here is this 1861 book's own, transcribed from its facing column; the departures that are known are named on the elements that carry them and in the advisory above. Element-level collations (2026-10-19, `element_provenance` below) cover the Holy Spirit Preface, the head of the common Communicantes and, under C2 gap G19, the Latin of every other element the 1962 Pentecost Missal mode exercises: 85 of those agree word for word and are exact-target; twelve are recorded as variants or abbreviated bodies with their differences named, and stay antecedents. The additional bounded comparisons of 2026-10-20 cover the common Hanc igitur and all eleven held Latin Preface bodies; the findings retain each word variant, abbreviated source extent and unresolved internal form. Only the complete Common Preface and common Hanc receive new word-exact findings here. The source-only Gloria heading and unplaced pre-Postcommunion greeting remain uncollated; no new source occurrence, complete-Ordinary or full-Preface assembly claim follows.",
-  "Where a proper stands that the Ordo Missae does not place. A slot is declared only where the 1962 book states the position in terms; the repeated-reading structure and chants of an Ember Saturday after the first, and the whole of Good Friday and the paschal Vigil are left unplaced, and a page that reads this file must show them in the missal's own order rather than guess at a seat for them.",
+  "Where a proper stands that the Ordo Missae does not place. A slot is declared only where the 1962 book states the position in terms; the nine temporal formularies with preliminary lessons are placed by their separate lesson_frames declarations below. The distinct rites of Good Friday and the paschal Vigil remain unplaced, and a page that reads this file must show them in the missal's own order rather than guess at a seat for them.",
 ]
 
 # ---------------------------------------------------------------- witnesses
@@ -5963,3 +5963,340 @@ key = "oratio-super-populum"
 before = "conclusio/dominus-vobiscum-ite-missa-est"
 rite = "oratio-super-populum"
 locus = "passage.catholic-church.missale-romanum.vatican-typica-1962.oratio-super-populum-placement-actors-20261112; RGMR 506; Ritus servandus XI.2-3"
+
+# Preliminary Lessons intervene immediately after the Kyrie, before the greeting
+# that introduces the final Collect. Each sequence names this form's Proper
+# occurrences in printed order, including each distinct Oratio. The Pentecost
+# forms call for the Gloria and omit Flectamus genua. The other forms give
+# the kneeling and rising cues at each preliminary oration. In every form the
+# final Oratio has the usual Dominus vobiscum and Oremus.
+
+[lesson_frame_cues]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ember-preliminary-lesson-cues-c0a5f412"
+locus = "Lasance/Walsh, Christmas cycle, Ember Wednesday of Advent, printed p. 113 (physical PDF p. 114), three opening cues. Mame 1922, p. 8 (physical PDF p. 122). Missale Romanum 1962, printed p. 5 (physical PDF p. 86), after n. 31."
+editorial_note_la = "Omnes cum celebrante genuflectunt et aliquamdiu tacite orant. Ad «Levate» omnes surgunt."
+editorial_note_en = "All kneel with the celebrant and pray in silence for a time. At “Arise” all stand."
+
+[[lesson_frames]]
+mass = "advent-ember-wednesday"
+form_id = "main"
+locus = "Missale Romanum, Vatican 1962 typical edition, Proprium de tempore, printed pp. 5–7, facsimile PDF pp. 86–88."
+preliminary = ["Collect", "First Lesson", "First Gradual"]
+collect = "Oratio"
+reading = "Second Lesson"
+chants = ["Second Gradual"]
+gloria = false
+preparation = "kneel-rise"
+
+[[lesson_frames]]
+mass = "advent-ember-saturday"
+form_id = "longer"
+locus = "Missale Romanum, Vatican 1962 typical edition, Proprium de tempore, printed pp. 8–12, facsimile PDF pp. 89–93."
+preliminary = ["Collect", "First Lesson", "First Gradual", "Oratio", "Second Lesson", "Second Gradual", "Oratio", "Third Lesson", "Third Gradual", "Oratio", "Fourth Lesson", "Fourth Gradual", "Oratio", "Fifth Lesson", "Hymn (Benedictus es)"]
+collect = "Oratio"
+reading = "Epistle"
+chants = ["Tract"]
+gloria = false
+preparation = "kneel-rise"
+
+[[lesson_frames]]
+mass = "advent-ember-saturday"
+form_id = "shorter"
+locus = "Missale Romanum, Vatican 1962 typical edition, Proprium de tempore, printed pp. 12–13, facsimile PDF pp. 93–94."
+preliminary = ["Collect", "Lesson", "Gradual"]
+collect = "Oratio"
+reading = "Epistle"
+chants = ["Tract"]
+gloria = false
+preparation = "kneel-rise"
+
+[[lesson_frames]]
+mass = "lent-1-ember-wednesday"
+form_id = "main"
+locus = "Missale Romanum, Vatican 1962 typical edition, Proprium de tempore, printed pp. 68–70, facsimile PDF pp. 149–151."
+preliminary = ["Collect", "First Lesson", "First Gradual"]
+collect = "Oratio"
+reading = "Second Lesson"
+chants = ["Tract"]
+gloria = false
+preparation = "kneel-rise"
+
+[[lesson_frames]]
+mass = "lent-1-ember-saturday"
+form_id = "longer"
+locus = "Missale Romanum, Vatican 1962 typical edition, Proprium de tempore, printed pp. 73–77, facsimile PDF pp. 154–158."
+preliminary = ["Collect", "First Lesson", "First Gradual", "Oratio", "Second Lesson", "Second Gradual", "Oratio", "Third Lesson", "Third Gradual", "Oratio", "Fourth Lesson", "Fourth Gradual", "Oratio", "Fifth Lesson", "Hymn (Benedictus es)"]
+collect = "Oratio"
+reading = "Epistle"
+chants = ["Tract"]
+gloria = false
+preparation = "kneel-rise"
+
+[[lesson_frames]]
+mass = "lent-1-ember-saturday"
+form_id = "shorter"
+locus = "Missale Romanum, Vatican 1962 typical edition, Proprium de tempore, printed pp. 77–79, facsimile PDF pp. 158–160."
+preliminary = ["Collect", "Lesson", "Gradual"]
+collect = "Oratio"
+reading = "Epistle"
+chants = ["Tract"]
+gloria = false
+preparation = "kneel-rise"
+
+[[lesson_frames]]
+mass = "lent-4-wednesday"
+form_id = "main"
+locus = "Missale Romanum, Vatican 1962 typical edition, Proprium de tempore, printed pp. 109–112, facsimile PDF pp. 190–193."
+preliminary = ["Collect", "First Lesson", "First Gradual"]
+collect = "Oratio"
+reading = "Second Lesson"
+chants = ["Second Gradual", "Tract"]
+gloria = false
+preparation = "kneel-rise"
+
+[[lesson_frames]]
+mass = "pentecost-ember-wednesday"
+form_id = "main"
+locus = "Missale Romanum, Vatican 1962 typical edition, Proprium de tempore, printed pp. 361–364, facsimile PDF pp. 442–445."
+preliminary = ["Collect", "First Lesson", "First Alleluia"]
+collect = "Oratio"
+reading = "Second Lesson"
+chants = ["Second Alleluia", "Sequence"]
+gloria = true
+preparation = "oremus"
+
+[[lesson_frames]]
+mass = "pentecost-ember-saturday"
+form_id = "longer"
+locus = "Missale Romanum, Vatican 1962 typical edition, Proprium de tempore, printed pp. 366–370, facsimile PDF pp. 447–451."
+preliminary = ["Collect", "First Lesson", "First Alleluia", "Oratio", "Second Lesson", "Second Alleluia", "Oratio", "Third Lesson", "Third Alleluia", "Oratio", "Fourth Lesson", "Fourth Alleluia", "Oratio", "Fifth Lesson", "Fifth Alleluia"]
+collect = "Oratio"
+reading = "Epistle"
+chants = ["Tract", "Sequence"]
+gloria = true
+preparation = "oremus"
+
+[[lesson_frames]]
+mass = "pentecost-ember-saturday"
+form_id = "shorter"
+locus = "Missale Romanum, Vatican 1962 typical edition, Proprium de tempore, printed pp. 370–372, facsimile PDF pp. 451–453."
+preliminary = ["Collect", "Lesson", "Alleluia"]
+collect = "Oratio"
+reading = "Epistle"
+chants = ["Second Alleluia", "Sequence"]
+gloria = true
+preparation = "oremus"
+
+[[lesson_frames]]
+mass = "september-ember-wednesday"
+form_id = "main"
+locus = "Missale Romanum, Vatican 1962 typical edition, Proprium de tempore, printed pp. 400–402, facsimile PDF pp. 481–483."
+preliminary = ["Collect", "First Lesson", "First Gradual"]
+collect = "Oratio"
+reading = "Second Lesson"
+chants = ["Second Gradual"]
+gloria = false
+preparation = "kneel-rise"
+
+[[lesson_frames]]
+mass = "september-ember-saturday"
+form_id = "longer"
+locus = "Missale Romanum, Vatican 1962 typical edition, Proprium de tempore, printed pp. 403–408, facsimile PDF pp. 484–489."
+preliminary = ["Collect", "First Lesson", "First Gradual", "Oratio", "Second Lesson", "Second Gradual", "Oratio", "Third Lesson", "Third Gradual", "Oratio", "Fourth Lesson", "Fourth Gradual", "Oratio", "Fifth Lesson", "Hymn (Benedictus es)"]
+collect = "Oratio"
+reading = "Epistle"
+chants = ["Tract"]
+gloria = false
+preparation = "kneel-rise"
+
+[[lesson_frames]]
+mass = "september-ember-saturday"
+form_id = "shorter"
+locus = "Missale Romanum, Vatican 1962 typical edition, Proprium de tempore, printed pp. 408–410, facsimile PDF pp. 489–491."
+preliminary = ["Collect", "Lesson", "Gradual"]
+collect = "Oratio"
+reading = "Epistle"
+chants = ["Tract"]
+gloria = false
+preparation = "kneel-rise"
+
+# Office-based decisions presume the principal celebration corresponding to its
+# own Office. The shared reader supplies dated Sunday, octave and actual feria
+# facts. A Common, additional commemoration, or an optional votive use cannot
+# establish the principal Office or the votive class or vestment color.
+[hymn_rules]
+locus = "Missale Romanum 1962, Rubricae generales Missalis romani 302–303, 341, 346, 431–432, 475–476; Rubricae generales 63–68, 72, 76; Rubricae generales Breviarii romani 237–238, AAS 52 (1960), pp. 606–608, 637. The 1962 Chrism and Supper Masses, Easter Vigil and Pentecost Vigil have their own directions. The Rogation Mass omits the Gloria (p. 348) and follows the II-class votive Creed rules. November 9 prints the Creed (p. 713), November 18 omits it (p. 721)."
+ferial_gloria_spans = [{from = "12-25", to = "01-13"}, {anchor = "easter", from = 0, to = 55}]
+creed_octave_spans = [{from = "12-25", to = "01-01"}, {anchor = "easter", from = 0, to = 6}, {anchor = "pentecost", from = 0, to = 6}]
+ritual_gloria_only = [
+  "chrism-mass",
+  "easter-vigil",
+  "mass-of-the-lords-supper",
+  "vigil-of-pentecost",
+]
+rogation_votive = [
+  "rogation-mass",
+]
+requiem = [
+  "commemoratione-omnium-fidelium-defunctorum",
+]
+no_mass = [
+  "good-friday",
+]
+office_gloria_only = [
+  "missa-de-s-maria-in-sabbato-1",
+  "missa-de-s-maria-in-sabbato-2",
+  "missa-de-s-maria-in-sabbato-3",
+  "missa-de-s-maria-in-sabbato-4",
+  "missa-de-s-maria-in-sabbato-5",
+  "vigil-of-the-ascension",
+]
+office_neither = [
+  "advent-ember-friday",
+  "advent-ember-saturday",
+  "advent-ember-wednesday",
+  "ash-wednesday",
+  "friday-after-ash-wednesday",
+  "holy-monday",
+  "holy-tuesday",
+  "holy-wednesday",
+  "lent-1-ember-friday",
+  "lent-1-ember-saturday",
+  "lent-1-ember-wednesday",
+  "lent-1-monday",
+  "lent-1-thursday",
+  "lent-1-tuesday",
+  "lent-2-friday",
+  "lent-2-monday",
+  "lent-2-saturday",
+  "lent-2-thursday",
+  "lent-2-tuesday",
+  "lent-2-wednesday",
+  "lent-3-friday",
+  "lent-3-monday",
+  "lent-3-saturday",
+  "lent-3-thursday",
+  "lent-3-tuesday",
+  "lent-3-wednesday",
+  "lent-4-friday",
+  "lent-4-monday",
+  "lent-4-saturday",
+  "lent-4-thursday",
+  "lent-4-tuesday",
+  "lent-4-wednesday",
+  "passion-friday",
+  "passion-monday",
+  "passion-saturday",
+  "passion-thursday",
+  "passion-tuesday",
+  "passion-wednesday",
+  "saturday-after-ash-wednesday",
+  "september-ember-friday",
+  "september-ember-saturday",
+  "september-ember-wednesday",
+  "thursday-after-ash-wednesday",
+  "vigil-assumption",
+  "vigil-nativity-lord",
+  "vigil-nativity-saint-john-baptist",
+  "vigil-saints-peter-paul",
+]
+office_both = [
+  "ascension",
+  "cathedrae-s-petri-apostoli",
+  "christ-the-king",
+  "corpus-christi",
+  "dedicatione-archibasilicae-mi-salvatoris",
+  "easter-2",
+  "easter-3",
+  "easter-4",
+  "easter-5",
+  "easter-friday",
+  "easter-monday",
+  "easter-saturday",
+  "easter-sunday",
+  "easter-thursday",
+  "easter-tuesday",
+  "easter-wednesday",
+  "epiphany-2",
+  "epiphany-3",
+  "epiphany-4",
+  "epiphany-5",
+  "epiphany-6",
+  "fifth-day-within-octave",
+  "fourth-day-within-octave-ss-innocentium",
+  "holy-family",
+  "last-sunday-after-pentecost",
+  "litania-maior",
+  "low-sunday",
+  "most-holy-name-of-jesus",
+  "pentecost",
+  "pentecost-10",
+  "pentecost-11",
+  "pentecost-12",
+  "pentecost-13",
+  "pentecost-14",
+  "pentecost-15",
+  "pentecost-16",
+  "pentecost-17",
+  "pentecost-18",
+  "pentecost-19",
+  "pentecost-2",
+  "pentecost-20",
+  "pentecost-21",
+  "pentecost-22",
+  "pentecost-23",
+  "pentecost-3",
+  "pentecost-4",
+  "pentecost-5",
+  "pentecost-6",
+  "pentecost-7",
+  "pentecost-8",
+  "pentecost-9",
+  "pentecost-ember-friday",
+  "pentecost-ember-saturday",
+  "pentecost-ember-wednesday",
+  "pentecost-monday",
+  "pentecost-thursday",
+  "pentecost-tuesday",
+  "resumed-epiphany-3",
+  "resumed-epiphany-4",
+  "resumed-epiphany-5",
+  "resumed-epiphany-6",
+  "s-andreae-apostoli",
+  "s-barnabae-apostoli",
+  "s-bartholomaei-apostoli",
+  "s-iacobi-apostoli",
+  "s-lucae-evangelistae",
+  "s-matthaei-apostoli-evangelistae",
+  "s-matthiae-apostoli",
+  "s-thomae-apostoli",
+  "sacred-heart",
+  "second-day-within-octave-s-stephani",
+  "seventh-day-within-octave",
+  "sixth-day-within-octave",
+  "ss-philippi-iacobi-apostolorum",
+  "ss-simonis-iudae-apostolorum",
+  "sunday-after-ascension",
+  "sunday-within-octave-of-nativity",
+  "third-day-within-octave-s-ioannis",
+  "trinity",
+]
+ferial_only = [
+  "mass-of-the-first-sunday-after-epiphany",
+  "mass-of-the-first-sunday-after-pentecost",
+]
+office_creed_only = [
+  "advent-1",
+  "advent-2",
+  "advent-3",
+  "advent-4",
+  "lent-1",
+  "lent-2",
+  "lent-3",
+  "lent-4",
+  "palm-sunday",
+  "passion-sunday",
+  "quinquagesima",
+  "septuagesima",
+  "sexagesima",
+]

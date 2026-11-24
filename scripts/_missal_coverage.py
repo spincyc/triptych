@@ -619,7 +619,15 @@ def expectations(path: Path, calendar: str, masses: list[dict]) -> dict:
                             "calendar_proper_name and a positive integer"
                         )
                     if any(value is not None for value in (proper_name, appointment, option)):
-                        if row["kind"] != "text-slot" or bool(proper_name) == bool(appointment):
+                        # An attached commemoration can belong to one Mass of a
+                        # feast. Its own Collect identifies it within that form.
+                        commemoration_collect = (
+                            row["kind"] == "commemoration" and row.get("form_id")
+                            and isinstance(proper_name, str) and proper_name.startswith("Collect (")
+                            and proper_name.endswith(")") and not parent
+                        )
+                        if (row["kind"] != "text-slot" and not commemoration_collect
+                                or bool(proper_name) == bool(appointment)):
                             raise ValueError("expected Missal text-slot requires one calendar unit join")
                         if proper_name is not None and (not isinstance(proper_name, str) or not proper_name):
                             raise ValueError("invalid expected Missal calendar_proper_name")

@@ -846,13 +846,25 @@ attested_appointments:
 # (2026-11-13). scripts/_calendars.py owns the mechanism (WITHHELD_FRAMES).
 withheld_frames:
   basis: >-
-    The roman-1962 Ordinary seats this inherited prayer over the people through
-    its finite proper rite (RGMR 506; Ritus servandus XI.2-3), a 1962 rubrical
-    seat that inheritance of the formulary's words does not carry. This
-    recension's own Ordinary inventory leaves the oration super populum of the
-    Lenten ferias unplaced, so the generic frame is withheld and the Proper rows
-    keep the Missal's order.
+    The 1962 edition independently places the Lenten prayer over the people
+    (RGMR 506; Ritus servandus XI.2-3) and the preliminary lessons and prayers
+    of the Ember forms and Wednesday of Lent IV. This recension's Ordinary
+    lacks the corresponding appointments. The reader preserves the inherited
+    Proper order until their placement is established for this recension.
   forms:
+  - {mass: advent-ember-wednesday, form_id: main, proper: First Lesson, occurrence: 1}
+  - {mass: advent-ember-saturday, form_id: longer, proper: First Lesson, occurrence: 1}
+  - {mass: advent-ember-saturday, form_id: shorter, proper: Lesson, occurrence: 1}
+  - {mass: lent-1-ember-wednesday, form_id: main, proper: First Lesson, occurrence: 1}
+  - {mass: lent-1-ember-saturday, form_id: longer, proper: First Lesson, occurrence: 1}
+  - {mass: lent-1-ember-saturday, form_id: shorter, proper: Lesson, occurrence: 1}
+  - {mass: lent-4-wednesday, form_id: main, proper: First Lesson, occurrence: 1}
+  - {mass: pentecost-ember-wednesday, form_id: main, proper: First Lesson, occurrence: 1}
+  - {mass: pentecost-ember-saturday, form_id: longer, proper: First Lesson, occurrence: 1}
+  - {mass: pentecost-ember-saturday, form_id: shorter, proper: Lesson, occurrence: 1}
+  - {mass: september-ember-wednesday, form_id: main, proper: First Lesson, occurrence: 1}
+  - {mass: september-ember-saturday, form_id: longer, proper: First Lesson, occurrence: 1}
+  - {mass: september-ember-saturday, form_id: shorter, proper: Lesson, occurrence: 1}
   - {mass: ash-wednesday, form_id: main, proper: Oratio super populum, occurrence: 1}
   - {mass: thursday-after-ash-wednesday, form_id: main, proper: Oratio super populum, occurrence: 1}
   - {mass: friday-after-ash-wednesday, form_id: main, proper: Oratio super populum, occurrence: 1}

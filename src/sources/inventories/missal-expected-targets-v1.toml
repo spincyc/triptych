@@ -4584,7 +4584,9 @@ label = "S. Anastasiae Martyris"
 source_record = "src/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar/sections/60-sanctorale-jul-dec.tex"
 source_locus = "Fixed calendar 12-25; attached commemoration 1; second Mass only"
 identity_state = "established"
-calendar_mass_key = "1962-12-25-comm"
+calendar_mass_key = "nativitate-domini-octave"
+form_id = "dawn"
+calendar_proper_name = "Collect (St Anastasia)"
 
 [[targets]]
 id = "roman-1962:celebration:1962-12-26"
@@ -32916,6 +32918,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "1962 Proprium de tempore, artifact PDF p. 100, printed p. 19, marginal unit 120"
 identity_state = "established"
 parent_id = "roman-1962.temporal.nativity-dawn"
+calendar_proper_name = "Collect (St Anastasia)"
 
 [[targets]]
 id = "roman-1962.temporal.nativity-dawn:reading:1"
@@ -32992,6 +32995,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "1962 Proprium de tempore, artifact PDF p. 101, printed p. 20, marginal unit 127"
 identity_state = "established"
 parent_id = "roman-1962.temporal.nativity-dawn"
+calendar_proper_name = "Secret (St Anastasia)"
 
 [[targets]]
 id = "roman-1962.temporal.nativity-dawn:communion:1"
@@ -33024,6 +33028,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "1962 Proprium de tempore, artifact PDF p. 101, printed p. 20, marginal unit 130"
 identity_state = "established"
 parent_id = "roman-1962.temporal.nativity-dawn"
+calendar_proper_name = "Postcommunion (St Anastasia)"
 
 [[targets]]
 id = "roman-1962.temporal.nativity-day"
@@ -48803,6 +48808,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "Missale Romanum 1962, physical PDF p. 450, printed p. 369; numbered text 1392; sequence; owning form heading physical PDF p. 447, printed p. 366"
 identity_state = "established"
 parent_id = "roman-1962.temporal.pentecost-ember-sat-long"
+calendar_proper_name = "Sequence"
 
 [[targets]]
 id = "roman-1962.temporal.pentecost-ember-sat-long:gospel:1"
@@ -48984,6 +48990,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "Missale Romanum 1962, physical PDF p. 452, printed p. 371; numbered text 1405; sequence; owning form heading physical PDF p. 451, printed p. 370"
 identity_state = "established"
 parent_id = "roman-1962.temporal.pentecost-ember-sat-short"
+calendar_proper_name = "Sequence"
 
 [[targets]]
 id = "roman-1962.temporal.pentecost-ember-sat-short:gospel:1"
@@ -65518,6 +65525,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "artifact p. 568 / printed p. 487, raw page-local line 10"
 identity_state = "established"
 parent_id = "roman-1962:sanctoral-form:p567-l71"
+calendar_proper_name = "Epistle"
 
 [[targets]]
 id = "roman-1962:sanctoral-form:p567-l71:slot:p568-l33:gradual"
@@ -65978,6 +65986,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "artifact p. 574 / printed p. 493, raw page-local line 37"
 identity_state = "established"
 parent_id = "roman-1962:sanctoral-form:p574-l14"
+calendar_proper_name = "Lesson"
 
 [[targets]]
 id = "roman-1962:sanctoral-form:p574-l14:slot:p574-l69:gradual"
@@ -69778,6 +69787,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "artifact p. 619 / printed p. 538, raw page-local line 24"
 identity_state = "established"
 parent_id = "roman-1962:sanctoral-form:p619-l2"
+calendar_proper_name = "Epistle"
 
 [[targets]]
 id = "roman-1962:sanctoral-form:p619-l2:slot:p619-l54:alleluia"
@@ -76567,6 +76577,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "artifact p. 698 / printed p. 617, raw page-local line 27"
 identity_state = "established"
 parent_id = "roman-1962:sanctoral-form:p698-l11"
+calendar_proper_name = "Epistle"
 
 [[targets]]
 id = "roman-1962:sanctoral-form:p698-l11:slot:p698-l55:gradual"
@@ -77587,6 +77598,17 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "artifact p. 710 / printed p. 629, raw page-local line 31"
 identity_state = "established"
 parent_id = "roman-1962:sanctoral-form:p709-l56"
+
+[[targets]]
+id = "roman-1962:sanctoral-form:p709-l56:slot:p710-l37:gospel"
+slice_id = "roman-1962-sanctoral-printed-slots"
+kind = "text-slot"
+label = "S. IOACHIM PATRIS BEATAE MARIAE VIRGINIS Confessoris — gospel"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml"
+source_locus = "artifact p. 710 / printed p. 629, raw page-local line 37, no. 3395; Initium sancti Evangelii secundum Matthaeum, Mt. 1, 1-16"
+identity_state = "established"
+parent_id = "roman-1962:sanctoral-form:p709-l56"
+calendar_proper_name = "Gospel"
 
 [[targets]]
 id = "roman-1962:sanctoral-form:p709-l56:slot:p710-l79:offertory-antiphon"

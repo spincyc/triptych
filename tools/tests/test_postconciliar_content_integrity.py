@@ -201,8 +201,8 @@ class PostconciliarContentIntegrityTest(unittest.TestCase):
         }
         self.assertEqual(len(weekday_keys), 323)
 
-    def test_seven_commons_are_typed_unavailable_formularies_not_pseudo_text(self):
-        """The acquired sevenfold heading is known; its formularies are not."""
+    def test_seven_commons_distinguish_partial_forms_from_unavailable_formularies(self):
+        """A recovered prayer belongs only to its named source form."""
         commons = [
             mass
             for section_name, body, mass in self.rows
@@ -222,8 +222,15 @@ class PostconciliarContentIntegrityTest(unittest.TestCase):
         for mass in commons:
             key = str(mass.get("key") or "")
             self.assertTrue(key, mass)
-            self.assertEqual(mass.get("text_status"), expected_status, key)
-            self.assertEqual(list(direct_propers(mass)), [], key)
+            if key in {"commune-beatae-mariae-virginis", "commune-martyrum", "commune-sanctorum"}:
+                self.assertEqual(mass["text_status"]["state"], "partial", key)
+                self.assertEqual(mass["text_status"]["scope"], "missal-formulary", key)
+                for form in mass["forms"]:
+                    self.assertIn("2002", form["name"])
+                    self.assertTrue(any(proper.get("text") for proper in form["propers"]), key)
+            else:
+                self.assertEqual(mass.get("text_status"), expected_status, key)
+                self.assertEqual(list(direct_propers(mass)), [], key)
             self.assertNotIn("common_from", mass, key)
 
     def test_every_common_heading_points_to_a_typed_common(self):
@@ -243,29 +250,22 @@ class PostconciliarContentIntegrityTest(unittest.TestCase):
             references.append((mass, pointer))
 
         self.assertTrue(references, "the calendar records no Antiphonary Common headings")
-        self.assertEqual(
-            {str(mass.get("key") or "") for mass, _ in references},
+        self.assertLessEqual(
             COMMON_HEADING_MASSES,
+            {str(mass.get("key") or "") for mass, _ in references},
         )
         for mass, pointer in references:
             key = str(mass.get("key") or "")
-            self.assertEqual(list(direct_propers(mass)), [], key)
-            self.assertEqual(
-                mass.get("text_status"),
-                {
-                    "state": "unavailable",
-                    "scope": "missal-formulary",
-                    "reasons": [
-                        {
-                            "kind": "no-exemplar",
-                        }
-                    ],
-                },
-                key,
-            )
+            status = mass.get("text_status", {})
+            self.assertEqual(status.get("scope"), "missal-formulary", key)
+            self.assertIn(status.get("state"), {"partial", "unavailable"}, key)
+            self.assertEqual(bool(list(direct_propers(mass))), status["state"] == "partial", key)
             self.assertIsInstance(pointer, dict, key)
             self.assertEqual(pointer.get("scope"), "missal-antiphons", key)
-            self.assertEqual(pointer.get("source_id"), COMMON_POINTER_SOURCE, key)
+            if key == "our-lady-loreto":
+                self.assertIn("inscription-beatae-mariae-virginis-de-loreto-2019", pointer["source_id"])
+            else:
+                self.assertEqual(pointer.get("source_id"), COMMON_POINTER_SOURCE, key)
             self.assertTrue(str(pointer.get("locus") or "").strip(), key)
 
             options = pointer.get("options")

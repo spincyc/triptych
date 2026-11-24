@@ -10868,8 +10868,8 @@ occurrence = 1
 lang = "en"
 extent = "body"
 availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "The newly represented Collect is attested in a complete held official Latin annex, but no exact English exemplar is acquired and qualified by this source admission. Latin acquisition and its withheld body do not establish an English rights-withheld state. No English text, witness identity, publication permission, or historical-English correspondence is inferred. Latin appointment evidence: passage.catholic-church.roman-calendar-three-doctors-additions-2021.2021-official-latin-annex.missal-and-lectionary-appointments."
+reason = { kind = "rights-withheld", source_id = "artifact.catholic-church.roman-calendar-three-doctors-additions-2021.2024-confirmed-us-english.usccb-html-80262fed", surfaces = ["corpus-data", "public-git", "command-line", "download"] }
+note = "The linked USCCB publication supplies the official English Collect. No permission has been established to redistribute its wording in public Git and offline outputs."
 
 [[untranslated]]
 mass = "saint-john-henry-newman-priest-doctor"
@@ -10880,8 +10880,8 @@ occurrence = 1
 lang = "en"
 extent = "body"
 availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "The newly represented Collect is attested in a complete held official Latin annex, but no exact English exemplar is acquired and qualified by this source admission. Latin acquisition and its withheld body do not establish an English rights-withheld state. No English text, witness identity, publication permission, or historical-English correspondence is inferred. Latin appointment evidence: passage.catholic-church.roman-calendar-newman-additions-2025.2025-official-latin-annex.missal-and-lectionary-appointments. The USCCB memorial page is a known English acquisition lead; its available wording is not an acquired hash-bound English artifact in this admission."
+reason = { kind = "rights-withheld", source_id = "artifact.catholic-church.roman-calendar-newman-additions-2025.2026-confirmed-us-english.usccb-html-7617c2c8", surfaces = ["corpus-data", "public-git", "command-line", "download"] }
+note = "The linked USCCB publication supplies the official English Collect. No permission has been established to redistribute its wording in public Git and offline outputs."
 
 [[entries]]
 mass = "ot-11"
@@ -11275,8 +11275,8 @@ occurrence = 1
 lang = "en"
 extent = "body"
 availability = "unavailable"
-reason = {"kind" = "no-exemplar"}
-note = "The official 2019 bulletin supplies the Latin own Collect, complete as printed with its abbreviated conclusion cue. It supplies no English prayer witness. No acquired qualified English witness or independently prepared study translation is established here, so English remains no-exemplar. The prior historical Holy House refusal dictionaries and fingerprints remain verbatim in the superseded receipt. No complete spoken Latin ending is reconstructed."
+reason = { kind = "rights-withheld", source_id = "artifact.holy-see.inscription-beatae-mariae-virginis-de-loreto-2019.2023-confirmed-us-english.usccb-html-660417e3", surfaces = ["corpus-data", "public-git", "command-line", "download"] }
+note = "The linked USCCB publication supplies the official English Collect. No permission has been established to redistribute its wording in public Git and offline outputs."
 
 [[untranslated]]
 mass = "most-holy-name-jesus"
@@ -15394,3 +15394,1439 @@ rights = "project-created"
 text = "Go before us always and everywhere, O Lord, we beseech you, with heavenly light, that the mystery in which you have willed us to share we may both discern with a clear gaze and receive with a worthy love. Through Christ our Lord."
 
 # Gap campaign 2026-11-14, batch held-v5; see workflows/reviews/gap-campaign-2026-11-14/postconciliar/held-v5-admission.json.
+
+[[entries]]
+mass = "presentation-lord"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Omnipotens sempiterne Deus, majestatem tuam supplices exoramus: ut, sicut unigenitus Filius tuus hodierna die cum nostrae carnis substantia in templo est praesentatus; ita nos facias purificatis tibi mentibus praesentari."
+ancient_witness = "editorial-projection artifact physical lines 1-4; antecedent 1922 Tours Mame, printed p. 526; artifact PDF p. 640; text-layer lines 25-34 of that page"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-marian-orations-94a91c93"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.purificatione-beatae-mariae-virginis-collect"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-presentation-lord-c"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-lent-holyweek-conclusion-per-dominum-cue-p55"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Dominum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-lent-holyweek-conclusion-per-dominum-cue-p55); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Almighty, everlasting God, we humbly beseech your majesty that, just as your only-begotten Son was presented in the temple on this day in the substance of our flesh, so you may cause us to be presented to you with purified minds. Through the Lord."
+
+[[entries]]
+mass = "chair-saint-peter-apostle"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Praesta, quaesumus, omnipotens Deus: ut nullis nos permittas perturbationibus concuti; quos in apostolicae confessionis petra solidasti."
+ancient_witness = "projection physical lines[15, 16]; Pustet Ratisbon 1862 printed p. 472; whole PDF pages [558]; left column lower; own Oratio under In Vigilia Ss. Apostol. Petri et Pauli"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-absent-nodes"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-absent-nodes.reader-completion-20261026-absent-nodes-projection-967cb7ab"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-absent-nodes.reader-completion-20261026-absent-nodes-vigil-saints-peter-paul--main--collect--all--1"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-chair-saint-peter-apostle-c"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-lent-holyweek-conclusion-per-dominum-cue-p55"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Dominum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-lent-holyweek-conclusion-per-dominum-cue-p55); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Grant, we pray, almighty God, that you may let no disturbances shake us, whom you have set firmly on the rock of the apostolic confession. Through the Lord."
+
+[[entries]]
+mass = "annunciation-lord"
+form_id = "main"
+proper = "Prayer after Communion"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "In mentibus nostris, quaesumus, Domine, verae fidei sacramenta confirma: ut, qui conceptum de Virgine Deum verum et hominem confitemur; per ejus salutiferae resurrectionis potentiam, ad aeternam mereamur pervenire laetitiam."
+ancient_witness = "Corrected projection physical lines [[19, 23]]; Pustet1862 printed[51]-[52], original PDF pages[721, 722]; complete page-image petition"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23.common-five-damage-repairs-20261023"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23.common-damage-missa-de-s-maria-in-sabbato-1-secret"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-annunciation-lord-p"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Strengthen in our minds, we pray, O Lord, the mysteries of the true faith, so that we who confess that he who was conceived of the Virgin is true God and true man may, through the power of his saving resurrection, merit to come to eternal joy. Through Christ."
+
+[[entries]]
+mass = "saint-justin-martyr"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Deus, qui per stultitiam Crucis eminentem Jesu Christi scientiam beatum Justinum Martyrem mirabiliter docuisti: ejus nobis intercessione concede; ut, errorum circumventione depulsa, fidei firmitatem consequamur."
+ancient_witness = "editorial-projection artifact physical lines 343-346; antecedent Tours: Mame 1922 (editio quarta iuxta typicam Vaticanam), printed p. 567; artifact PDF p. 681 (text layer, column-correct -raw extraction)"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-1-orations-09719423"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-iustini-martyris-collect"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-saint-justin-martyr-c"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-lent-holyweek-conclusion-per-dominum-cue-p55"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Dominum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-lent-holyweek-conclusion-per-dominum-cue-p55); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "God, who through the foolishness of the Cross wondrously taught blessed Justin the Martyr the surpassing knowledge of Jesus Christ, grant us through his intercession that, once the snares of error have been driven away, we may attain steadfastness in faith. Through the Lord."
+
+[[entries]]
+mass = "saints-cosmas-damian-martyrs"
+form_id = "main"
+proper = "Prayer over the Offerings"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "In tuorum, Domine, pretiosa morte justorum sacrificium illud offerimus, de quo martyrium sumpsit omne principium."
+ancient_witness = "editorial-projection artifact physical lines 232-233; antecedent 1862 text-layer lines 24156-24161; 1922 Mame printed p. 124, artifact PDF p. 238"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-seasonal-1-orations-33ba218a"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.lent-3-thursday-secret"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-saints-cosmas-damian-martyrs-o"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "At the precious death of your just ones, O Lord, we offer that sacrifice from which every martyrdom took its beginning. Through Christ."
+
+[[entries]]
+mass = "saints-michael-gabriel-raphael-archangels"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Deus, qui, miro ordine, Angelorum ministeria hominumque dispensas: concede propitius; ut, a quibus tibi ministrantibus in caelo semper assistitur, ab his in terra vita nostra muniatur."
+ancient_witness = "editorial-projection artifact physical lines 65-67; antecedent Mame Tours 1922, Missae votivae section (starred pagination), artifact PDF p. 940"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-4-orations-219ac7b1"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.dedicatione-s-michaelis-archangeli-collect"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-saints-michael-gabriel-raphael-archangels-c"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-lent-holyweek-conclusion-per-dominum-cue-p55"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Dominum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-lent-holyweek-conclusion-per-dominum-cue-p55); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "God, who in wondrous order apportion the ministries of angels and of men, graciously grant that our life on earth may be guarded by those who minister to you and always stand before you in heaven. Through the Lord."
+
+[[entries]]
+mass = "holy-guardian-angels"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Deus, qui ineffabili providentia sanctos Angelos tuos ad nostram custodiam mittere dignaris: largire supplicibus tuis; et eorum semper protectione defendi, et aeterna societate gaudere."
+ancient_witness = "editorial-projection artifact physical lines 77-80; antecedent Mame Tours 1922, printed p. 727; artifact PDF p. 841"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-4-orations-219ac7b1"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.ss-angelorum-custodum-collect"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-holy-guardian-angels-c"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-lent-holyweek-conclusion-per-dominum-cue-p55"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Dominum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-lent-holyweek-conclusion-per-dominum-cue-p55); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "God, who in your ineffable providence deign to send your holy angels to guard us, grant to those who humbly entreat you both to be defended always by their protection and to rejoice in their eternal companionship. Through the Lord."
+
+[[entries]]
+mass = "all-saints"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Omnipotens sempiterne Deus, qui nos omnium Sanctorum tuorum merita sub una tribuisti celebritate venerari: quaesumus; ut desideratam nobis tuae propitiationis abundantiam, multiplicatis intercessoribus, largiaris."
+ancient_witness = "Editorial projection physical lines 5-8; Mame 1922 artifact p. 862 / printed p. 748, left"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.all-saints-four-propers-adfda498"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.all-saints-collect"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-all-saints-c"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-lent-holyweek-conclusion-per-dominum-cue-p55"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Dominum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-lent-holyweek-conclusion-per-dominum-cue-p55); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Almighty, everlasting God, who have granted us to honor the merits of all your saints in a single celebration, we pray that, through these many intercessors, you may bestow on us the abundance of your mercy for which we long. Through the Lord."
+
+[[entries]]
+mass = "saint-andrew-apostle"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Majestatem tuam, Domine, suppliciter exoramus: ut, sicut Ecclesiae tuae beatus Andreas Apostolus exstitit praedicator et rector; ita apud te sit pro nobis perpetuus intercessor."
+ancient_witness = "editorial-projection artifact physical lines 301-304; antecedent Mame Tours 1922, printed p. 483; artifact PDF p. 597"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-4-orations-219ac7b1"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-andreae-apostoli-collect"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-saint-andrew-apostle-c"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-lent-holyweek-conclusion-per-dominum-cue-p55"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Dominum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-lent-holyweek-conclusion-per-dominum-cue-p55); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "We humbly beseech your majesty, O Lord, that just as blessed Andrew the Apostle was a preacher and ruler of your Church, so he may be our perpetual intercessor before you. Through the Lord."
+
+[[entries]]
+mass = "immaculate-conception-blessed-virgin-mary"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Deus, qui per immaculatam Virginis Conceptionem dignum Filio tuo habitaculum praeparasti: quaesumus; ut, qui ex morte eiusdem Filii tui praevisa eam ab omni labe praeservasti, nos quoque mundos eius intercessione ad te pervenire concedas."
+ancient_witness = "Projection physical lines1-4; Tours Mame 1922 PDF 607/printed 493 (feast-opening numeral suppressed), Collect crossing left foot to right top; PDF 609/printed 495, Secret, Communion and Postcommunion in left column."
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.immaculate-conception-four-propers-5f582ed9"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.immaculate-conception-collect"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-immaculate-conception-blessed-virgin-mary-c"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-lent-holyweek-conclusion-per-dominum-cue-p55"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Dominum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-lent-holyweek-conclusion-per-dominum-cue-p55); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "God, who through the immaculate conception of the Virgin prepared a worthy dwelling for your Son, we pray that, as you preserved her from every stain in view of the foreseen death of that same Son of yours, you may grant us also, through her intercession, to come pure before you. Through the Lord."
+
+[[entries]]
+mass = "immaculate-conception-blessed-virgin-mary"
+form_id = "main"
+proper = "Prayer after Communion"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Sacramenta quae sumpsimus, Domine Deus noster: illius in nobis culpae vulnera reparent; a qua immaculatam beatae Mariae Conceptionem singulariter praeservasti."
+ancient_witness = "Projection physical lines13-15; Tours Mame 1922 PDF 607/printed 493 (feast-opening numeral suppressed), Collect crossing left foot to right top; PDF 609/printed 495, Secret, Communion and Postcommunion in left column."
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.immaculate-conception-four-propers-5f582ed9"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.immaculate-conception-postcommunion"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-immaculate-conception-blessed-virgin-mary-p"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "May the sacraments we have received, O Lord our God, heal in us the wounds of that fault from which you uniquely preserved the immaculate conception of blessed Mary. Through Christ."
+
+[[entries]]
+mass = "commune-beatae-mariae-virginis"
+form_id = "ordinary-time-1"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Concede nos famulos tuos, quaesumus, Domine Deus, perpetua mentis et corporis sanitate gaudere: et, gloriosa beatae Mariae semper Virginis intercessione, a praesenti liberari tristitia, et aeterna perfrui laetitia."
+ancient_witness = "editorial-projection artifact physical lines 141-144; antecedent printed p. [52] (nearest printed-folio marker in the text layer; the layer places these markers mid-page, so the folio is +/-1); text-layer lines 85685-85692; Missae votivae de sancta Maria"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.commons-2-orations-8f0f1a33"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.commune-festorum-bmv-collect"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-beatae-mariae-virginis-ordinary-time-1-c"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-lent-holyweek-conclusion-per-dominum-cue-p55"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Dominum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-lent-holyweek-conclusion-per-dominum-cue-p55); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Grant us your servants, we pray, O Lord God, to enjoy lasting health of mind and body and, through the glorious intercession of blessed Mary ever Virgin, to be freed from present sorrow and to enjoy eternal gladness. Through the Lord."
+
+[[entries]]
+mass = "commune-martyrum"
+form_id = "several-outside-easter-2"
+proper = "Prayer over the Offerings"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Fiat tibi, quaesumus, Domine, hostia sacranda placabilis, pretiosi celebritate martyrii: quae et peccata nostra purificet, et tuorum tibi vota conciliet famulorum."
+ancient_witness = "editorial-projection artifact physical lines 177-179; antecedent Pustet Ratisbon 1862, printed p. 455 (nearest preceding printed-folio marker at text-layer line 64089); text-layer lines 64181-64187"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-2-orations-b44831ee"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.comm-ss-primi-feliciani-martyrum-secret"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-martyrum-several-outside-easter-2-o"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "May the offering to be consecrated be pleasing to you, we pray, O Lord, in the celebration of this precious martyrdom, and may it both cleanse our sins and gain your favor for the prayers of your servants. Through Christ."
+
+[[entries]]
+mass = "commune-martyrum"
+form_id = "several-outside-easter-3"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Fraterna nos, Domine, Martyrum tuorum corona laetificet: quae et fidei nostrae praebeat incrementa virtutum; et multiplici nos suffragio consoletur."
+ancient_witness = "editorial-projection artifact physical lines 169-171; antecedent Pustet Ratisbon 1862, nearest preceding printed-folio marker 505 at text-layer line 69931; text-layer lines 69989-70005"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-3-orations-b43e63f0"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.comm-ss-machabaeorum-martyrum-collect"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-martyrum-several-outside-easter-3-c"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-lent-holyweek-conclusion-per-dominum-cue-p55"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Dominum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-lent-holyweek-conclusion-per-dominum-cue-p55); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "May the fraternal crown of your martyrs gladden us, O Lord, and may it both bring our faith an increase in virtues and console us with their manifold intercession. Through the Lord."
+
+[[entries]]
+mass = "commune-martyrum"
+form_id = "several-easter-1"
+proper = "Prayer over the Offerings"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "In tuorum, Domine, pretiosa morte justorum sacrificium illud offerimus, de quo martyrium sumpsit omne principium."
+ancient_witness = "editorial-projection artifact physical lines 232-233; antecedent 1862 text-layer lines 24156-24161; 1922 Mame printed p. 124, artifact PDF p. 238"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-seasonal-1-orations-33ba218a"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.lent-3-thursday-secret"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-martyrum-several-easter-1-o"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "At the precious death of your just ones, O Lord, we offer that sacrifice from which every martyrdom took its beginning. Through Christ."
+
+[[entries]]
+mass = "commune-sanctorum"
+form_id = "several-saints-2"
+proper = "Prayer over the Offerings"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Praesta nobis, quaesumus, omnipotens Deus: ut nostrae humilitatis oblatio, et pro tuorum tibi grata sit honore Sanctorum, et nos corpore pariter et mente purificet."
+ancient_witness = "editorial-projection artifact physical lines 6-9; antecedent printed p. [23] (nearest printed-folio marker in the text layer; the layer places these markers mid-page, so the folio is +/-1); text-layer lines 82312-82324; Commune Sanctorum"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.commons-2-orations-8f0f1a33"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.commune-confessoris-non-pontificis-2-secret"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-sanctorum-several-saints-2-o"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Grant us, we pray, almighty God, that our humble offering may both be pleasing to you in honor of your saints and purify us in body and mind alike. Through Christ."
+
+[[entries]]
+mass = "commune-sanctorum"
+form_id = "several-saints-2"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Deus, qui nos conspicis ex nostra infirmitate deficere: ad amorem tuum nos misericorditer per Sanctorum tuorum exempla restaura."
+ancient_witness = "editorial-projection artifact physical lines 30-31; antecedent printed p. 559; text-layer lines 76532-76537"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.sanctoral-w-3-orations-98936698"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-callisti-i-papae-martyris-collect"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-sanctorum-several-saints-2-c"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-lent-holyweek-conclusion-per-dominum-cue-p55"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Dominum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-lent-holyweek-conclusion-per-dominum-cue-p55); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "God, who see us failing because of our weakness, mercifully restore us to love of you through the examples of your saints. Through the Lord."
+
+[[entries]]
+mass = "commune-sanctorum"
+form_id = "several-saints-3"
+proper = "Prayer after Communion"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Sacramentorum tuorum, Domine, communio sumpta nos salvet: et in tuae veritatis luce confirmet."
+ancient_witness = "editorial-projection artifact physical lines 51-52; antecedent 1862 sanctoral, 13 August, Ss. Hippolyti et Cassiani Postcommunio; text-layer lines 71442-71446; approx. printed p. 517"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.sanctoral-w-2-orations-f26ac956"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.comm-ss-hippolyti-cassiani-martyrum-postcommunion"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-sanctorum-several-saints-3-p"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "May the communion of your sacraments that we have received, O Lord, save us and strengthen us in the light of your truth. Through Christ."
+
+[[entries]]
+mass = "advent-2-thursday"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Excita, Domine, corda nostra ad praeparandas Unigeniti tui vias: ut, per ejus adventum, purificatis tibi mentibus servire mereamur."
+ancient_witness = "editorial-projection artifact physical lines 15-17; antecedent printed p. 4; text-layer lines 13535-13542 (heading 'Oratio.' at 13535, body 13537-13542)"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.advent-orations-f0d916fd"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.advent-2-collect"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-advent-2-thursday-c"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-lent-holyweek-conclusion-per-dominum-cue-p55"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Dominum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-lent-holyweek-conclusion-per-dominum-cue-p55); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Stir up our hearts, O Lord, to prepare the ways of your only-begotten Son, that through his coming we may merit to serve you with purified minds. Through the Lord."
+
+[[entries]]
+mass = "lent-1-tuesday"
+form_id = "main"
+proper = "Prayer after Communion"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "His nobis, Domine, mysteriis conferatur, quo, terrena desideria mitigantes, discamus amare caelestia."
+ancient_witness = "editorial-projection artifact physical lines 48-49; antecedent printed p. 285; text-layer lines 44214-44218, heading 'Secreta.' at 44212"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.paschaltide-orations-1c865518"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.easter-3-secret"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-lent-1-tuesday-p"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "By these mysteries, O Lord, may it be granted to us to temper our earthly desires and learn to love heavenly things. Through Christ."
+
+[[entries]]
+mass = "lent-1-thursday"
+form_id = "main"
+proper = "Prayer after Communion"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Quaesumus, Domine Deus noster: ut sacrosancta mysteria, quae pro reparationis nostrae munimine contulisti: et praesens nobis remedium esse facias, et futurum."
+ancient_witness = "editorial-projection artifact physical lines 29-31; antecedent printed pp. 281-282; text-layer lines 43811-43823, heading 'Postcommunio.' at 43809. The page break to printed p. 282 falls inside the range at 43814-43817 ('Digitized by' plus the running head '282 Dominica'), between 'sacrosancta my-' and 'steria'."
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.paschaltide-orations-1c865518"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.low-sunday-postcommunion"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-lent-1-thursday-p"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "We pray, O Lord our God, that you may cause the sacred mysteries you have bestowed to safeguard our restoration to be a remedy for us both now and in the future. Through Christ."
+
+[[entries]]
+mass = "lent-2-tuesday"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Custodi, Domine, quaesumus, Ecclesiam tuam propitiatione perpetua: et quia sine te labitur humana mortalitas; tuis semper auxiliis et abstrahatur a noxiis, et ad salutaria dirigatur."
+ancient_witness = "physical lines 1-3; antecedent Pustet 1862 printed pp. 337-338, text-layer lines 50165-50176"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.post-pentecosten-14-orations-8ad972fc"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.post-pentecosten-14-collect"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-lent-2-tuesday-c"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-lent-holyweek-conclusion-per-dominum-cue-p55"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Dominum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-lent-holyweek-conclusion-per-dominum-cue-p55); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Guard your Church, O Lord, we pray, with perpetual favor. Since mortal humanity falls without you, may your help always draw it away from harmful things and direct it toward what brings salvation. Through the Lord."
+
+[[entries]]
+mass = "lent-2-thursday"
+form_id = "main"
+proper = "Prayer after Communion"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Haec in nobis sacrificia, Deus, et actione permaneant, et operatione firmentur."
+ancient_witness = "editorial-projection artifact physical lines 178-179; antecedent 1862 text-layer lines 22856-22860; 1922 Mame printed p. 110, artifact PDF p. 224"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-seasonal-1-orations-33ba218a"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.lent-2-friday-secret"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-lent-2-thursday-p"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "O God, may these sacrifices endure in us in deed and be confirmed in their working. Through Christ."
+
+[[entries]]
+mass = "lent-2-saturday"
+form_id = "main"
+proper = "Prayer over the Offerings"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Per haec veniat, quaesumus, Domine, sacramenta nostrae redemptionis effectus: qui nos et ab humanis retrahat semper excessibus, et ad salutaria dona perducat."
+ancient_witness = "editorial-projection artifact physical lines 210-212; antecedent 1862 text-layer lines 23793-23799; 1922 Mame printed p. 120, artifact PDF p. 234"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-seasonal-1-orations-33ba218a"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.lent-3-tuesday-secret"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-lent-2-saturday-o"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Through these sacraments, we pray, O Lord, may the effect of our redemption come, to draw us always away from human transgressions and lead us to the gifts of salvation. Through Christ."
+
+[[entries]]
+mass = "lent-3-monday"
+form_id = "main"
+proper = "Prayer over the Offerings"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Munus, quod tibi, Domine, nostrae servitutis offerimus, tu salutare nobis perfice sacramentum."
+ancient_witness = "editorial-projection artifact physical lines 199-201; antecedent 1862 text-layer lines 23616-23620; 1922 Mame printed p. 118, artifact PDF p. 232"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-seasonal-1-orations-33ba218a"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.lent-3-monday-secret"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-lent-3-monday-o"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Make the gift of our service which we offer to you, O Lord, a saving sacrament for us. Through Christ."
+
+[[entries]]
+mass = "lent-3-monday"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Ecclesiam tuam, Domine, miseratio continuata mundet et muniat: et quia sine te non potest salva consistere; tuo semper munere gubernetur."
+ancient_witness = "editorial-projection artifact physical lines 52-53; antecedent printed pp. 338-339; text-layer lines 50341-50358"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-2-orations-9321d81c"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.pentecost-15-collect"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-lent-3-monday-c"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-lent-holyweek-conclusion-per-dominum-cue-p55"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Dominum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-lent-holyweek-conclusion-per-dominum-cue-p55); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "May your unceasing compassion, O Lord, cleanse and defend your Church. Since she cannot stand safe without you, may she always be governed by your gift. Through the Lord."
+
+[[entries]]
+mass = "lent-3-monday"
+form_id = "main"
+proper = "Prayer after Communion"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Tui nobis, quaesumus, Domine, communio sacramenti, et purificationem conferat, et tribuat unitatem."
+ancient_witness = "editorial-projection artifact physical lines 91-92; antecedent printed p. 331; text-layer lines 49433-49437"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-1-orations-3866bc7e"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.pentecost-9-postcommunion"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-lent-3-monday-p"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "May communion in your sacrament, O Lord, we pray, both confer purification on us and bestow unity. Through Christ."
+
+[[entries]]
+mass = "lent-3-tuesday"
+form_id = "main"
+proper = "Prayer after Communion"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Vivificet nos, quaesumus, Domine, hujus participatio sancta mysterii: et pariter nobis expiationem tribuat, et munimen."
+ancient_witness = "editorial-projection artifact physical lines 38-39; antecedent printed p. 335; text-layer lines 49963-49969"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-2-orations-9321d81c"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.pentecost-12-postcommunion"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-lent-3-tuesday-p"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "May holy participation in this mystery give us life, O Lord, we pray, and grant us both expiation and protection. Through Christ."
+
+[[entries]]
+mass = "lent-3-wednesday"
+form_id = "main"
+proper = "Prayer after Communion"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Sanctificet nos, Domine, qua pasti sumus, mensa caelestis: et, a cunctis erroribus expiatos, supernis promissionibus reddat acceptos."
+ancient_witness = "editorial-projection artifact physical lines 225-226; antecedent 1862 text-layer lines 24006-24014; 1922 Mame printed p. 123, artifact PDF p. 237"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-seasonal-1-orations-33ba218a"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.lent-3-wednesday-postcommunion"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-lent-3-wednesday-p"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "May the heavenly table at which we have been fed sanctify us, O Lord, and, having cleansed us of every error, make us acceptable for the promises from above. Through Christ."
+
+[[entries]]
+mass = "lent-3-wednesday"
+form_id = "main"
+proper = "Prayer over the Offerings"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Suscipe, quaesumus, Domine, preces populi tui cum oblationibus hostiarum: et, tua mysteria celebrantes, ab omnibus nos defende periculis."
+ancient_witness = "editorial-projection artifact physical lines 221-223; antecedent 1862 text-layer lines 23989-23994; 1922 Mame printed p. 122, artifact PDF p. 236"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-seasonal-1-orations-33ba218a"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.lent-3-wednesday-secret"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-lent-3-wednesday-o"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Receive, we pray, O Lord, the prayers of your people with their sacrificial offerings, and defend us from every danger as we celebrate your mysteries. Through Christ."
+
+[[entries]]
+mass = "lent-3-saturday"
+form_id = "main"
+proper = "Prayer after Communion"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Da nobis, quaesumus, misericors Deus: ut sancta tua, quibus incessanter explemur, sinceris tractemus obsequiis, et fideli semper mente sumamus."
+ancient_witness = "editorial-projection artifact physical lines 41-43; antecedent printed fol. 103; text-layer lines 25042-25049"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.lent-orations-87e207e0"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.lent-4-postcommunion"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-lent-3-saturday-p"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Grant us, we pray, merciful God, to handle with sincere devotion your holy gifts, with which we are unceasingly filled, and always to receive them with faithful minds. Through Christ."
+
+[[entries]]
+mass = "lent-4-monday"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Deus, qui ineffabilibus mundum renovas sacramentis: praesta, quaesumus; ut Ecclesia tua et aeternis proficiat institutis, et temporalibus non destituatur auxiliis."
+ancient_witness = "editorial-projection artifact physical lines 303-305; antecedent 1862 text-layer lines 26027-26032; 1922 Mame printed p. 144, artifact PDF p. 258"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-seasonal-1-orations-33ba218a"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.lent-4-friday-collect"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-lent-4-monday-c"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-lent-holyweek-conclusion-per-dominum-cue-p55"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Dominum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-lent-holyweek-conclusion-per-dominum-cue-p55); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "God, who renew the world by ineffable sacraments, grant, we pray, that your Church may both advance through your eternal ordinances and never lack aid in temporal things. Through the Lord."
+
+[[entries]]
+mass = "lent-4-tuesday"
+form_id = "main"
+proper = "Prayer after Communion"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Purifica, quaesumus, Domine, mentes nostras benignus, et renova caelestibus sacramentis: ut consequenter et corporum praesens pariter et futurum capiamus auxilium."
+ancient_witness = "editorial-projection artifact physical lines 70-72; antecedent printed p. 341; text-layer lines 50629-50636"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-2-orations-9321d81c"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.pentecost-16-postcommunion"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-lent-4-tuesday-p"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Graciously cleanse our minds, we pray, O Lord, and renew them with heavenly sacraments, so that we may in consequence receive help for our bodies as well, both now and in the future. Through Christ."
+
+[[entries]]
+mass = "lent-4-wednesday"
+form_id = "main"
+proper = "Prayer over the Offerings"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Huius sacrificii potentia, Domine, quaesumus, et vetustatem nostram clementer abstergat, et novitatem nobis augeat et salutem."
+ancient_witness = "latin.txt physical line1; Wilson1894 printed69, parentPDF162"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.chrism-two-orations-9b3148f9"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.chrism-secret"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-lent-4-wednesday-o"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "May the power of this sacrifice, O Lord, we pray, mercifully wipe away our old condition and increase in us both new life and salvation. Through Christ."
+
+[[entries]]
+mass = "lent-4-wednesday"
+form_id = "main"
+proper = "Prayer after Communion"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Caelestia dona capientibus, quaesumus, Domine: non ad judicium provenire patiaris, quae fidelibus tuis ad remedium providisti."
+ancient_witness = "editorial-projection artifact physical lines 299-301; antecedent 1862 text-layer lines 25986-25993; 1922 Mame printed p. 144, artifact PDF p. 258"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-seasonal-1-orations-33ba218a"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.lent-4-thursday-postcommunion"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-lent-4-wednesday-p"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "For those who receive these heavenly gifts, we pray, O Lord, do not let what you have provided as a remedy for your faithful turn to their judgment. Through Christ."
+
+[[entries]]
+mass = "lent-4-thursday"
+form_id = "main"
+proper = "Prayer over the Offerings"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Concede, quaesumus, omnipotens Deus: ut hujus sacrificii munus oblatum fragilitatem nostram ab omni malo purget semper et muniat."
+ancient_witness = "editorial-projection artifact physical lines 40-42; antecedent printed fol. 42; text-layer lines 17956-17962"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.epiphanytide-orations-25a0ede9"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.epiphany-4-secret"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-lent-4-thursday-o"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Grant, we pray, almighty God, that the gift offered in this sacrifice may always cleanse our frailty from every evil and defend it. Through Christ."
+
+[[entries]]
+mass = "lent-4-friday"
+form_id = "main"
+proper = "Prayer over the Offerings"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Haec sacrificia nos, omnipotens Deus, potenti virtute mundatos, ad suum faciant puriores venire principium."
+ancient_witness = "editorial-projection artifact physical lines 196-197; antecedent printed p. None; text-layer lines 29811-29818"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-seasonal-2-orations-7f669120"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.holy-monday-secret"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-lent-4-friday-o"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Almighty God, may these sacrifices cleanse us by their mighty power and cause us to come purer to their source. Through Christ."
+
+[[entries]]
+mass = "lent-5-tuesday"
+form_id = "main"
+proper = "Prayer over the Offerings"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Hostias tibi, Domine, placationis offerimus: ut et delicta nostra miseratus absolvas, et nutantia corda tu dirigas."
+ancient_witness = "editorial-projection artifact physical lines 52-53; antecedent printed fol. 43; text-layer lines 18147-18151"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.epiphanytide-orations-25a0ede9"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.epiphany-5-secret"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-lent-5-tuesday-o"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "We offer you, O Lord, sacrifices of appeasement, that in your mercy you may forgive our offenses and guide our wavering hearts. Through Christ."
+
+[[entries]]
+mass = "lent-5-wednesday"
+form_id = "main"
+proper = "Prayer over the Offerings"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Tibi, Domine, sacrificia dicata reddantur: quae sic ad honorem nominis tui deferenda tribuisti, ut eadem remedia fieri nostra praestares."
+ancient_witness = "editorial-projection artifact physical lines 5-7; antecedent printed p. 332; text-layer lines 49581-49588"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-2-orations-9321d81c"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.pentecost-10-secret"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-lent-5-wednesday-o"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "May sacrifices dedicated to you be rendered to you, O Lord. You have granted that they be offered to the honor of your name in such a way that you make them remedies for us. Through Christ."
+
+[[entries]]
+mass = "lent-5-friday"
+form_id = "main"
+proper = "Prayer over the Offerings"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Praesta nobis, misericors Deus: ut digne tuis servire semper altaribus mereamur; et eorum perpetua participatione salvari."
+ancient_witness = "editorial-projection artifact physical lines 176-177; antecedent printed p. 126; text-layer lines 27784-27792"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-seasonal-2-orations-7f669120"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.passion-friday-secret"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-lent-5-friday-o"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Grant us, merciful God, to merit always to serve worthily at your altars and to be saved by continually partaking of them. Through Christ."
+
+[[entries]]
+mass = "easter-2-monday"
+form_id = "main"
+proper = "Prayer over the Offerings"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Suscipe munera, Domine, quaesumus, exsultantis Ecclesiae: et, cui causam tanti gaudii praestitisti, perpetuae fructum concede laetitiae."
+ancient_witness = "editorial-projection artifact physical lines 25-27; exact antecedent Mame 1922 printed p. 373 col. 1 (artifact page 487), artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.gap-campaign-20261114-easter-pentecost-latin TSV line 3"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.paschaltide-orations-1c865518"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.low-sunday-secret"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-easter-2-monday-o"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Receive, O Lord, we pray, the gifts of your exultant Church, and grant the fruit of lasting gladness to her to whom you have given cause for such great joy. Through Christ."
+
+[[entries]]
+mass = "easter-2-tuesday"
+form_id = "main"
+proper = "Prayer over the Offerings"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Concede, quaesumus, Domine, semper nos per haec mysteria paschalia gratulari: ut continua nostrae reparationis operatio perpetuae nobis fiat causa laetitiae."
+ancient_witness = "editorial-projection artifact physical lines 285-288; antecedent printed p. 280; text-layer lines 43623-43632"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-seasonal-2-orations-7f669120"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.easter-saturday-secret"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-easter-2-tuesday-o"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Grant, we pray, O Lord, that we may always rejoice through these paschal mysteries, so that the continual work of our restoration may become for us the cause of lasting gladness. Through Christ."
+
+[[entries]]
+mass = "easter-2-tuesday"
+form_id = "main"
+proper = "Prayer after Communion"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Exaudi, Domine, preces nostras: ut redemptionis nostrae sacrosancta commercia, et vitae nobis conferant praesentis auxilium, et gaudia sempiterna concilient."
+ancient_witness = "editorial-projection artifact physical lines 265-267; antecedent printed p. 277; text-layer lines 43282-43291"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-seasonal-2-orations-7f669120"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.easter-thursday-postcommunion"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-easter-2-tuesday-p"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Hear our prayers, O Lord, that the sacred exchanges of our redemption may both give us help in this present life and win for us everlasting joys. Through Christ."
+
+[[entries]]
+mass = "easter-2-saturday"
+form_id = "main"
+proper = "Prayer over the Offerings"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Propitius, Domine, quaesumus, haec dona sanctifica: et, hostiae spiritalis oblatione suscepta, nosmetipsos tibi perfice munus aeternum."
+ancient_witness = "editorial-projection artifact physical lines 52-54; antecedent printed p. 302; text-layer lines 46149-46158"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-seasonal-2-orations-7f669120"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.pentecost-monday-secret"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-easter-2-saturday-o"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Graciously sanctify these gifts, O Lord, we pray, and, accepting the offering of the spiritual victim, make us ourselves an everlasting gift to you. Through Christ."
+
+[[entries]]
+mass = "easter-3-tuesday"
+form_id = "main"
+proper = "Prayer over the Offerings"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Suscipe munera, Domine, quaesumus, exsultantis Ecclesiae: et, cui causam tanti gaudii praestitisti, perpetuae fructum concede laetitiae."
+ancient_witness = "editorial-projection artifact physical lines 25-27; exact antecedent Mame 1922 printed p. 373 col. 1 (artifact page 487), artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.gap-campaign-20261114-easter-pentecost-latin TSV line 3"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.paschaltide-orations-1c865518"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.low-sunday-secret"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-easter-3-tuesday-o"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Receive, O Lord, we pray, the gifts of your exultant Church, and grant the fruit of lasting gladness to her to whom you have given cause for such great joy. Through Christ."
+
+[[entries]]
+mass = "easter-3-wednesday"
+form_id = "main"
+proper = "Prayer over the Offerings"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Concede, quaesumus, Domine, semper nos per haec mysteria paschalia gratulari: ut continua nostrae reparationis operatio perpetuae nobis fiat causa laetitiae."
+ancient_witness = "editorial-projection artifact physical lines 285-288; antecedent printed p. 280; text-layer lines 43623-43632"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-seasonal-2-orations-7f669120"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.easter-saturday-secret"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-easter-3-wednesday-o"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Grant, we pray, O Lord, that we may always rejoice through these paschal mysteries, so that the continual work of our restoration may become for us the cause of lasting gladness. Through Christ."
+
+[[entries]]
+mass = "easter-3-wednesday"
+form_id = "main"
+proper = "Prayer after Communion"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Exaudi, Domine, preces nostras: ut redemptionis nostrae sacrosancta commercia, et vitae nobis conferant praesentis auxilium, et gaudia sempiterna concilient."
+ancient_witness = "editorial-projection artifact physical lines 265-267; antecedent printed p. 277; text-layer lines 43282-43291"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-seasonal-2-orations-7f669120"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.easter-thursday-postcommunion"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-easter-3-wednesday-p"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Hear our prayers, O Lord, that the sacred exchanges of our redemption may both give us help in this present life and win for us everlasting joys. Through Christ."
+
+[[entries]]
+mass = "easter-3-friday"
+form_id = "main"
+proper = "Prayer over the Offerings"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Propitius, Domine, quaesumus, haec dona sanctifica: et, hostiae spiritalis oblatione suscepta, nosmetipsos tibi perfice munus aeternum."
+ancient_witness = "editorial-projection artifact physical lines 52-54; antecedent printed p. 302; text-layer lines 46149-46158"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-seasonal-2-orations-7f669120"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.pentecost-monday-secret"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-easter-3-friday-o"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Graciously sanctify these gifts, O Lord, we pray, and, accepting the offering of the spiritual victim, make us ourselves an everlasting gift to you. Through Christ."
+
+[[entries]]
+mass = "easter-4-monday"
+form_id = "main"
+proper = "Prayer over the Offerings"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Suscipe munera, Domine, quaesumus, exsultantis Ecclesiae: et, cui causam tanti gaudii praestitisti, perpetuae fructum concede laetitiae."
+ancient_witness = "editorial-projection artifact physical lines 25-27; exact antecedent Mame 1922 printed p. 373 col. 1 (artifact page 487), artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.gap-campaign-20261114-easter-pentecost-latin TSV line 3"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.paschaltide-orations-1c865518"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.low-sunday-secret"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-easter-4-monday-o"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Receive, O Lord, we pray, the gifts of your exultant Church, and grant the fruit of lasting gladness to her to whom you have given cause for such great joy. Through Christ."
+
+[[entries]]
+mass = "easter-4-tuesday"
+form_id = "main"
+proper = "Prayer over the Offerings"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Concede, quaesumus, Domine, semper nos per haec mysteria paschalia gratulari: ut continua nostrae reparationis operatio perpetuae nobis fiat causa laetitiae."
+ancient_witness = "editorial-projection artifact physical lines 285-288; antecedent printed p. 280; text-layer lines 43623-43632"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-seasonal-2-orations-7f669120"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.easter-saturday-secret"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-easter-4-tuesday-o"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Grant, we pray, O Lord, that we may always rejoice through these paschal mysteries, so that the continual work of our restoration may become for us the cause of lasting gladness. Through Christ."
+
+[[entries]]
+mass = "easter-4-tuesday"
+form_id = "main"
+proper = "Prayer after Communion"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Exaudi, Domine, preces nostras: ut redemptionis nostrae sacrosancta commercia, et vitae nobis conferant praesentis auxilium, et gaudia sempiterna concilient."
+ancient_witness = "editorial-projection artifact physical lines 265-267; antecedent printed p. 277; text-layer lines 43282-43291"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-seasonal-2-orations-7f669120"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.easter-thursday-postcommunion"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-easter-4-tuesday-p"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Hear our prayers, O Lord, that the sacred exchanges of our redemption may both give us help in this present life and win for us everlasting joys. Through Christ."
+
+[[entries]]
+mass = "easter-4-saturday"
+form_id = "main"
+proper = "Prayer over the Offerings"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Propitius, Domine, quaesumus, haec dona sanctifica: et, hostiae spiritalis oblatione suscepta, nosmetipsos tibi perfice munus aeternum."
+ancient_witness = "editorial-projection artifact physical lines 52-54; antecedent printed p. 302; text-layer lines 46149-46158"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-seasonal-2-orations-7f669120"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.pentecost-monday-secret"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-easter-4-saturday-o"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Graciously sanctify these gifts, O Lord, we pray, and, accepting the offering of the spiritual victim, make us ourselves an everlasting gift to you. Through Christ."
+
+[[entries]]
+mass = "easter-5-tuesday"
+form_id = "main"
+proper = "Prayer over the Offerings"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Suscipe munera, Domine, quaesumus, exsultantis Ecclesiae: et, cui causam tanti gaudii praestitisti, perpetuae fructum concede laetitiae."
+ancient_witness = "editorial-projection artifact physical lines 25-27; exact antecedent Mame 1922 printed p. 373 col. 1 (artifact page 487), artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.gap-campaign-20261114-easter-pentecost-latin TSV line 3"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.paschaltide-orations-1c865518"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.low-sunday-secret"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-easter-5-tuesday-o"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Receive, O Lord, we pray, the gifts of your exultant Church, and grant the fruit of lasting gladness to her to whom you have given cause for such great joy. Through Christ."
+
+[[entries]]
+mass = "easter-5-wednesday"
+form_id = "main"
+proper = "Prayer over the Offerings"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Concede, quaesumus, Domine, semper nos per haec mysteria paschalia gratulari: ut continua nostrae reparationis operatio perpetuae nobis fiat causa laetitiae."
+ancient_witness = "editorial-projection artifact physical lines 285-288; antecedent printed p. 280; text-layer lines 43623-43632"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-seasonal-2-orations-7f669120"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.easter-saturday-secret"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-easter-5-wednesday-o"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Grant, we pray, O Lord, that we may always rejoice through these paschal mysteries, so that the continual work of our restoration may become for us the cause of lasting gladness. Through Christ."
+
+[[entries]]
+mass = "easter-5-wednesday"
+form_id = "main"
+proper = "Prayer after Communion"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Exaudi, Domine, preces nostras: ut redemptionis nostrae sacrosancta commercia, et vitae nobis conferant praesentis auxilium, et gaudia sempiterna concilient."
+ancient_witness = "editorial-projection artifact physical lines 265-267; antecedent printed p. 277; text-layer lines 43282-43291"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-seasonal-2-orations-7f669120"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.easter-thursday-postcommunion"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-easter-5-wednesday-p"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Hear our prayers, O Lord, that the sacred exchanges of our redemption may both give us help in this present life and win for us everlasting joys. Through Christ."
+
+[[entries]]
+mass = "easter-5-friday"
+form_id = "main"
+proper = "Prayer over the Offerings"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Propitius, Domine, quaesumus, haec dona sanctifica: et, hostiae spiritalis oblatione suscepta, nosmetipsos tibi perfice munus aeternum."
+ancient_witness = "editorial-projection artifact physical lines 52-54; antecedent printed p. 302; text-layer lines 46149-46158"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-seasonal-2-orations-7f669120"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.pentecost-monday-secret"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-easter-5-friday-o"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Graciously sanctify these gifts, O Lord, we pray, and, accepting the offering of the spiritual victim, make us ourselves an everlasting gift to you. Through Christ."
+
+[[entries]]
+mass = "easter-6-monday"
+form_id = "main"
+proper = "Prayer over the Offerings"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Suscipe munera, Domine, quaesumus, exsultantis Ecclesiae: et, cui causam tanti gaudii praestitisti, perpetuae fructum concede laetitiae."
+ancient_witness = "editorial-projection artifact physical lines 25-27; exact antecedent Mame 1922 printed p. 373 col. 1 (artifact page 487), artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.gap-campaign-20261114-easter-pentecost-latin TSV line 3"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.paschaltide-orations-1c865518"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.low-sunday-secret"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-easter-6-monday-o"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Receive, O Lord, we pray, the gifts of your exultant Church, and grant the fruit of lasting gladness to her to whom you have given cause for such great joy. Through Christ."
+
+[[entries]]
+mass = "easter-6-tuesday"
+form_id = "main"
+proper = "Prayer over the Offerings"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Concede, quaesumus, Domine, semper nos per haec mysteria paschalia gratulari: ut continua nostrae reparationis operatio perpetuae nobis fiat causa laetitiae."
+ancient_witness = "editorial-projection artifact physical lines 285-288; antecedent printed p. 280; text-layer lines 43623-43632"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-seasonal-2-orations-7f669120"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.easter-saturday-secret"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-easter-6-tuesday-o"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Grant, we pray, O Lord, that we may always rejoice through these paschal mysteries, so that the continual work of our restoration may become for us the cause of lasting gladness. Through Christ."
+
+[[entries]]
+mass = "easter-6-tuesday"
+form_id = "main"
+proper = "Prayer after Communion"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Exaudi, Domine, preces nostras: ut redemptionis nostrae sacrosancta commercia, et vitae nobis conferant praesentis auxilium, et gaudia sempiterna concilient."
+ancient_witness = "editorial-projection artifact physical lines 265-267; antecedent printed p. 277; text-layer lines 43282-43291"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-seasonal-2-orations-7f669120"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.easter-thursday-postcommunion"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-easter-6-tuesday-p"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Hear our prayers, O Lord, that the sacred exchanges of our redemption may both give us help in this present life and win for us everlasting joys. Through Christ."
+
+[[entries]]
+mass = "easter-6-saturday"
+form_id = "main"
+proper = "Prayer over the Offerings"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Propitius, Domine, quaesumus, haec dona sanctifica: et, hostiae spiritalis oblatione suscepta, nosmetipsos tibi perfice munus aeternum."
+ancient_witness = "editorial-projection artifact physical lines 52-54; antecedent printed p. 302; text-layer lines 46149-46158"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-seasonal-2-orations-7f669120"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.pentecost-monday-secret"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-easter-6-saturday-o"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Graciously sanctify these gifts, O Lord, we pray, and, accepting the offering of the spiritual victim, make us ourselves an everlasting gift to you. Through Christ."
+
+[[entries]]
+mass = "easter-7-monday"
+form_id = "main"
+proper = "Prayer over the Offerings"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Sacrificia nos, Domine, immaculata purificent: et mentibus nostris supernae gratiae dent vigorem."
+ancient_witness = "editorial-projection artifact physical lines 84-85; antecedent printed p. 294; text-layer lines 45298-45301, heading 'Secreta.' at 45297"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.paschaltide-orations-1c865518"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.sunday-after-ascension-secret"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-easter-7-monday-o"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "May the spotless sacrifices purify us, O Lord, and give our minds the vigor of heavenly grace. Through Christ."
+
+[[entries]]
+mass = "easter-7-tuesday"
+form_id = "main"
+proper = "Prayer over the Offerings"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Suscipe, Domine, fidelium preces cum oblationibus hostiarum: ut per haec piae devotionis officia ad caelestem gloriam transeamus."
+ancient_witness = "editorial-projection artifact physical lines 74-76; antecedent printed p. 288; text-layer lines 44545-44550, heading 'Secreta.' at 44543"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.paschaltide-orations-1c865518"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.easter-5-secret"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-easter-7-tuesday-o"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Receive, O Lord, the prayers of the faithful with their sacrificial offerings, so that through these acts of loving devotion we may pass to heavenly glory. Through Christ."
+
+[[entries]]
+mass = "easter-7-thursday"
+form_id = "main"
+proper = "Prayer over the Offerings"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Propitius, Domine, quaesumus, haec dona sanctifica: et, hostiae spiritalis oblatione suscepta, nosmetipsos tibi perfice munus aeternum."
+ancient_witness = "editorial-projection artifact physical lines 52-54; antecedent printed p. 302; text-layer lines 46149-46158"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-seasonal-2-orations-7f669120"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.pentecost-monday-secret"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-easter-7-thursday-o"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Graciously sanctify these gifts, O Lord, we pray, and, accepting the offering of the spiritual victim, make us ourselves an everlasting gift to you. Through Christ."
+
+[[entries]]
+mass = "easter-7-saturday"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Praesta, quaesumus, omnipotens Deus: ut, qui paschalia festa peregimus, haec, te largiente, moribus et vita teneamus."
+ancient_witness = "editorial-projection artifact physical lines 21-23; antecedent printed p. 280 (Dominica in Albis, In Octava Paschae); text-layer lines 43673-43677, heading 'Oratio.' at 43671"
+witness_edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+witness_artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.paschaltide-orations-1c865518"
+ancient_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.low-sunday-collect"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-easter-7-saturday-c"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-lent-holyweek-conclusion-per-dominum-cue-p55"
+divergence = "Join line breaks, normalize j to i, and retain historical punctuation. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Dominum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-lent-holyweek-conclusion-per-dominum-cue-p55); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Grant, we pray, almighty God, that we who have celebrated the paschal feasts may, by your gift, hold fast to them in conduct and in life. Through the Lord."
+
+[[entries]]
+mass = "christmas-december-30"
+form_id = "main"
+proper = "Prayer after Communion"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Deus, qui nos sacramenti tui participatione contingis, virtutis eius effectus in nostris cordibus operare, ut suscipiendo muneri tuo per ipsum munus aptemur."
+ancient_witness = "Feltoe, Sacramentarium Leonianum (1896), printed p. 162, V Item alia, lines 18–20, PDF p. 186."
+witness_edition_id = "edition.catholic-church.sacramentarium-veronense.feltoe-1896"
+witness_artifact_id = "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13"
+ancient_passage_id = "passage.catholic-church.sacramentarium-veronense.feltoe-1896.reader-20261124-christmas-december-30-p"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-christmas-december-30-p"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize capitalization and punctuation, and expand Ds to Deus where present. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "O God, who touch us through participation in your sacrament, bring about in our hearts the effects of its power, so that the gift itself may make us fit to receive your gift. Through Christ."
+
+[[entries]]
+mass = "thursday-after-ash-wednesday"
+form_id = "main"
+proper = "Prayer over the Offerings"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Hostias, quaesumus, Domine, propitius intende, quas sacris altaribus exhibemus, ut nobis indulgentiam largiendo tuo nomini dent honorem."
+ancient_witness = "Wilson, The Gregorian Sacramentary under Charles the Great (1915), printed p. 173, XXXI Dominica XIII post Pentecosten, Super oblata, PDF p. 231."
+witness_edition_id = "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915"
+witness_artifact_id = "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7"
+ancient_passage_id = "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.reader-20261124-thursday-after-ash-wednesday-o"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-thursday-after-ash-wednesday-o"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize capitalization and punctuation, and expand Ds to Deus where present. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Look graciously, O Lord, we pray, upon the offerings that we present at your sacred altars, so that, by obtaining pardon for us, they may give honor to your name. Through Christ."
+
+[[entries]]
+mass = "lent-5-friday"
+form_id = "main"
+proper = "Prayer after Communion"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Sumpti sacrificii, Domine, perpetua nos tuitio non relinquat, et noxia semper a nobis cuncta depellat."
+ancient_witness = "Wilson, The Gregorian Sacramentary under Charles the Great (1915), printed p. 45, Feria VI ad sanctum Stephanum, Ad complendum, PDF p. 103."
+witness_edition_id = "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915"
+witness_artifact_id = "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7"
+ancient_passage_id = "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.reader-20261124-lent-5-friday-p"
+comparison_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.reader-20261124-lent-5-friday-p"
+conclusion_witness_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+divergence = "Join line breaks, normalize capitalization and punctuation, and expand Ds to Deus where present. The complete petition is word-identical. Replace the historical conclusion with the separately witnessed printed cue Per Christum. (passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112); no expansion. Original study rendering of the entire historical petition and the abbreviated conclusion; no approved English text used."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "May the unfailing protection of the sacrifice we have received never forsake us, O Lord, and may it always drive from us all harmful things. Through Christ."
+
+[[untranslated]]
+mass = "saint-teresa-calcutta-virgin"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+lang = "en"
+extent = "body"
+availability = "unavailable"
+reason = { kind = "rights-withheld", source_id = "artifact.catholic-church.roman-calendar-teresa-of-calcutta-additions-2025.2025-confirmed-us-english.usccb-html-175f5d04", surfaces = ["corpus-data", "public-git", "command-line", "download"] }
+note = "The linked USCCB publication supplies the official English Collect. No permission has been established to redistribute its wording in public Git and offline outputs."
+
+[[untranslated]]
+mass = "saint-paul-vi-pope"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+lang = "en"
+extent = "body"
+availability = "unavailable"
+reason = { kind = "rights-withheld", source_id = "artifact.catholic-church.roman-calendar-paul-vi-additions-2019.2023-confirmed-us-english.usccb-html-e77226f4", surfaces = ["corpus-data", "public-git", "command-line", "download"] }
+note = "The linked USCCB publication supplies the official English Collect. No permission has been established to redistribute its wording in public Git and offline outputs."
+
+[[untranslated]]
+mass = "saint-john-avila-priest-doctor-church"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+lang = "en"
+extent = "body"
+availability = "unavailable"
+reason = { kind = "rights-withheld", source_id = "artifact.diocese-of-erie.office-for-divine-worship-newsletter-2024-12.2024-december-diocesan-issue.diocesan-pdf-877ec4d2", surfaces = ["corpus-data", "public-git", "command-line", "download"] }
+note = "The Diocese of Erie published the confirmed U.S. Collect on page 49 of its December 2024 liturgy newsletter. No permission has been established to redistribute this English wording in public Git and offline outputs."
+
+[[untranslated]]
+mass = "saint-john-paul-ii-pope"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+lang = "en"
+extent = "body"
+availability = "unavailable"
+reason = { kind = "rights-withheld", source_id = "artifact.united-states-conference-of-catholic-bishops.divine-worship-newsletter-2019-11.2019-november-official-pdf.usccb-pdf-a6b1fa97", surfaces = ["corpus-data", "public-git", "command-line", "download"] }
+note = "The linked USCCB publication supplies the official English Collect. No permission has been established to redistribute its wording in public Git and offline outputs."
+
+[[untranslated]]
+mass = "saint-faustina-kowalska-virgin"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+lang = "en"
+extent = "body"
+availability = "unavailable"
+reason = { kind = "rights-withheld", source_id = "artifact.catholic-church.roman-calendar-faustina-kowalska-additions-2020.2023-confirmed-us-english.usccb-html-bc138dc9", surfaces = ["corpus-data", "public-git", "command-line", "download"] }
+note = "The linked USCCB publication supplies the official English Collect. No permission has been established to redistribute its wording in public Git and offline outputs."
+
+[[untranslated]]
+mass = "saint-gregory-narek-abbot-doctor-church"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+lang = "en"
+extent = "body"
+availability = "unavailable"
+reason = { kind = "rights-withheld", source_id = "artifact.catholic-church.roman-calendar-three-doctors-additions-2021.2024-confirmed-us-english.usccb-html-109c2c85", surfaces = ["corpus-data", "public-git", "command-line", "download"] }
+note = "The linked USCCB publication supplies the official English Collect. No permission has been established to redistribute its wording in public Git and offline outputs."
+
+[[untranslated]]
+mass = "saint-john-xxiii-pope"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+lang = "en"
+extent = "body"
+availability = "unavailable"
+reason = { kind = "rights-withheld", source_id = "artifact.united-states-conference-of-catholic-bishops.divine-worship-newsletter-2019-11.2019-november-official-pdf.usccb-pdf-a6b1fa97", surfaces = ["corpus-data", "public-git", "command-line", "download"] }
+note = "The linked USCCB publication supplies the official English Collect. No permission has been established to redistribute its wording in public Git and offline outputs."
+
+[[untranslated]]
+mass = "commune-martyrum"
+form_id = "several-outside-easter-3"
+proper = "Collect"
+cycle = "all"
+occurrence = 2
+lang = "en"
+extent = "body"
+availability = "unavailable"
+reason = { kind = "no-exemplar" }
+note = "The 2002 Latin witness distinguishes this second Collect with Vel. No exact English exemplar for this alternative has been acquired for the local corpus."

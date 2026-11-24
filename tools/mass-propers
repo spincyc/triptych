@@ -3297,6 +3297,32 @@ def source_slot_identity(
     return owner_key, form_id, owner_name, occurrence
 
 
+def apply_appointed_latin_ending(proper: dict, reference: dict | None) -> dict:
+    """Apply the printed local ending only after the source body clears publication."""
+    if not reference or "latin_ending" not in reference or not proper.get("text"):
+        return proper
+    original = proper["text"]
+    if reference["latin_ending"] != "omit-final-alleluia" or not original.rstrip().endswith(" Amen. Alleluia."):
+        raise ValueError("the appointed ending requires a Sequence ending in Amen. Alleluia.")
+    text = original.rstrip().removesuffix(" Alleluia.") + original[len(original.rstrip()):]
+    digest = hashlib.sha256(text.encode()).hexdigest()
+    result = {**proper, "text": text}
+    if latin := proper.get("latin"):
+        result["latin"] = {**latin, "source_text_sha256": latin["text_sha256"], "text_sha256": digest}
+    if structure := proper.get(TEXT_STRUCTURE):
+        problems = text_structure_problems(original, structure)
+        if problems:
+            raise ValueError("; ".join(problems))
+        # The final Alleluia can occupy a stanza of its own. All surviving
+        # stanzas retain their offsets into the published source text.
+        extent = len(text.rstrip())
+        local_structure = {**structure, "text_sha256": digest}
+        if "stanzas" in structure:
+            local_structure["stanzas"] = [stanza for stanza in structure["stanzas"] if stanza["offset"] < extent]
+        result[TEXT_STRUCTURE] = local_structure
+    return result
+
+
 def sanitize_source_proper(
     document: dict,
     key: tuple[str, str, str],
@@ -3694,6 +3720,45 @@ def oration_relations(root: Path, calendar: str) -> dict[str, dict]:
     return relations
 
 
+def missal_witness_links(root: Path, calendar: str, document: dict) -> dict:
+    """Locate an independent edition without admitting its words for redistribution."""
+    path = inventory_root(root) / f"{calendar}-missal-witness-links-v1.toml"
+    if not path.is_file():
+        return {}
+    entries = _calendars.read_toml(path).get("entries")
+    if not isinstance(entries, list) or not entries:
+        raise ValueError(f"{path.name}: expected at least one witness link")
+    records, problems = _source_library_records(root)
+    if problems:
+        raise ValueError("; ".join(problems))
+    forms = {mass["key"]: {form["id"] for form in mass.get("forms") or []} or {"main"}
+             for _, mass in masses_of(document)}
+    links = {}
+    seen = set()
+    for entry in entries:
+        key = entry["mass"], entry["form_id"]
+        scope = entry.get("scope", "form")
+        language = entry.get("language", "la")
+        identity = (*key, language, scope, entry["url"])
+        source = records.get(entry["source_id"]) or {}
+        url, separator, fragment = entry["url"].partition("#")
+        section = scope == "section" and key[1] == "main" and key[0] in forms
+        if (language not in {"la", "en"} or identity in seen or (not section and (scope != "form" or key[1] not in forms.get(key[0], set()))) or
+                source.get("record_type") != "artifact" or
+                url != source.get("source_url") or not url.startswith("https://") or
+                not separator or not re.fullmatch(r"[A-Za-z0-9_.:-]+|page=[1-9][0-9]*", fragment) or
+                not isinstance(entry.get("locus"), str) or not entry["locus"].strip()):
+            raise ValueError(f"{path.name}: invalid or duplicate witness link for {key}")
+        label = entry.get("edition_label", "Missale Romanum (2002)")
+        if not isinstance(label, str) or not label.strip():
+            raise ValueError(f"{path.name}: invalid edition label for {key}")
+        seen.add(identity)
+        link = {field: entry[field] for field in ("source_id", "url", "locus")}
+        link.update(edition_label=label, scope=scope, language=language)
+        links.setdefault(key, []).append(link)
+    return links
+
+
 def calendar_structure(root: Path, calendar: str, tokens: dict[str, str], *,
                        mass_keys: set[str] | None = None,
                        translation_order: list[dict] | None = None) -> dict:
@@ -3729,6 +3794,10 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str], *,
         lambda: _oration_endings.load_sources(root, calendar, owner),
     )
     actor_sources = _source_local_actor_sequences.load_sources(root, calendar, owner)
+    witness_links = session_derived(
+        ("missal-witness-links", str(root), calendar),
+        lambda: missal_witness_links(root, calendar, document),
+    )
     joined_orations = oration_relations(root, calendar)
     overlay, untranslated, stale, witnesses = (
         translation_overlay(calendar, root) if source_keys is None
@@ -3794,6 +3863,7 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str], *,
                 document, key, identity, carried, latin_records,
                 STRUCTURE_SURFACES,
             )
+            carried = apply_appointed_latin_ending(carried, taken_from)
 
             # Each citation is read under its own numbering, by the one rule
             # `numbered_proper_entries` states: a cycle's, else its proper's,
@@ -4082,6 +4152,10 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str], *,
         source_forms = [
             form for form in (mass.get("forms") or []) if isinstance(form, dict)
         ]
+        main_links = [link for link in witness_links.get((mass["key"], "main"), [])
+                      if not source_forms or link["scope"] == "section"]
+        if main_links:
+            built["missal_witness_links"] = main_links
         if source_forms:
             built["forms"] = []
             for ordinal, form in enumerate(source_forms, 1):
@@ -4105,6 +4179,10 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str], *,
                     )
                 if "celebrated" in form:
                     built_form["celebrated"] = public_form_celebrated(form["celebrated"])
+                form_links = [link for link in witness_links.get((mass["key"], form["id"]), [])
+                              if link["scope"] == "form"]
+                if form_links:
+                    built_form["missal_witness_links"] = form_links
                 built["forms"].append(built_form)
         # How the recension reached this mass, where the calendar is one.
         # `_calendars._stamp` puts this on every entry of a recension precisely
@@ -5711,6 +5789,7 @@ def run_show_one(arguments: argparse.Namespace) -> dict:
         carried = sanitize_source_proper(
             document, key, identity, carried, latin_records, CLI_SURFACES,
         )
+        carried = apply_appointed_latin_ending(carried, taken_from)
         # Distinguishes a proper nobody has looked at from one deliberately
         # left without English, which is the distinction the `untranslated`
         # ledger exists to record; the structure pass writes the same key.

@@ -2085,7 +2085,7 @@ class ValidateProper(unittest.TestCase):
         mass = self.partial_entry()
         del mass["season"]
         self.assertTrue(
-            any("belongs only to a non-Common dated or seasonal mass" in problem
+            any("requires a dated or seasonal mass" in problem
                 for problem in self.check(mass))
         )
 
@@ -2567,7 +2567,7 @@ class ValidateCommonDirection(unittest.TestCase):
         problems = checker.common_reference_problems(
             [("sanctoral", saint), (checker.COMMON_KIND, common)]
         )
-        self.assertTrue(any("not explicitly unavailable" in p for p in problems))
+        self.assertTrue(any("lacks a partial or unavailable status" in p for p in problems))
         common["text_status"] = text_status("missal-formulary")
         common["propers"] = [composed("Collect", "Deus")]
         problems = checker.common_reference_problems(

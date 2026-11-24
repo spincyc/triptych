@@ -2570,6 +2570,10 @@ sections:
               verse: 152
           ref: Psalm 118:151-152
         notes: "Source appointment antiphonary:advent-2-thursday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 14 / printed page 6, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. This is the Advent weekday formulary before 17 December; the 17-24 December appointments belong to separate date formularies. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Dated 2026-11-14 Latin admission (gap campaign p1-advent-christmas), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Mame 1922 unit at printed p. 10. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
+      - name: Collect
+        source: composed
+        text: "Excita, Domine, corda nostra ad praeparandas Unigeniti tui vias: ut, per eius adventum, purificatis tibi mentibus servire mereamur. Per Dominum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/gla.htm#en, Collect; registered secondary 2002 PDF, artifact p. 90. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       - name: First Reading
         source: scripture
         verses:
@@ -6590,6 +6594,10 @@ sections:
           is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording,
           full approved English body, exact target-2008 Latin body, or publication permission is supplied. The source
           prints this weekday pair separately from the Holy Family fallback; no fallback reuse is supplied.
+      - name: Prayer after Communion
+        source: composed
+        text: "Deus, qui nos sacramenti tui participatione contingis, virtutis eius effectus in nostris cordibus operare, ut suscipiendo muneri tuo per ipsum munus aptemur. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/gla.htm#fh, Prayer after Communion; registered secondary 2002 PDF, artifact p. 109. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: The Lectionary citations were read at 200
         dpi in the page images of the Ordo lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
         at artifact page 171, printed page 117, n. 203, the day headed there as 30 December, the sixth day within the
@@ -9254,6 +9262,10 @@ sections:
           - begin: {chapter: 9, verse: 22}
             end: {chapter: 9, verse: 25}
           ref: Luke 9:22-25
+      - name: Prayer over the Offerings
+        source: composed
+        text: "Hostias, quaesumus, Domine, propitius intende, quas sacris altaribus exhibemus, ut nobis indulgentiam largiendo tuo nomini dent honorem. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glb.htm#f0, Prayer over the Offerings; registered secondary 2002 PDF, artifact p. 126. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       - name: Communion Antiphon
         source: scripture
         psalm_numbering: vulgate
@@ -9277,8 +9289,8 @@ sections:
         127), marginal n. 220. The heading verified on that image identifies the day as the Thursday after Ash Wednesday,
         in the Lenten ferial run of the Proprium de Tempore, Pars II; the book''s printed wording is not reproduced. Only
         the Lectionary citations are carried: no reading, pericope title, psalm response, verse-before-the- Gospel text,
-        rubric or printed heading is reproduced, because the Ordo may be used and not redistributed. The day''s orations
-        and antiphons are NOT carried at all: their text is in the Missale Romanum 2002, which is in copyright and not
+        rubric or printed heading is reproduced, because the Ordo may be used and not redistributed. At the initial Lectionary collation, the day''s orations
+        and antiphons were not carried: their text is in the Missale Romanum 2002, which is in copyright and not
         held here, and postconciliar/rubrics.yaml deliberately chooses no basis for a weekday''s orations. Responsorial
         psalms are printed in Vulgate numbering and are converted here by scripts/_psalms from the tracked verse concordance,
         because this file declares psalm_numbering hebrew. Lent repeats annually, so no cycle key is carried. On 2026-10-21
@@ -9637,13 +9649,17 @@ sections:
               verse: 2
           ref: Psalm 4:2
         notes: "Source appointment antiphonary:lent-1-tuesday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 29 / printed page 21, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Dated 2026-11-14 Latin admission (gap campaign p2-lent-holyweek), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Mame 1922 unit at printed p. 86. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
+      - name: Prayer after Communion
+        source: composed
+        text: "His nobis, Domine, mysteriis conferatur, quo, terrena desideria mitigantes, discamus amare caelestia. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glb.htm#f4, Prayer after Communion; registered secondary 2002 PDF, artifact p. 131. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 184 (printed page
         130), marginal n. 225. The heading verified on that image identifies the day as Tuesday of the First Week of Lent,
         in the Lenten ferial run of the Proprium de Tempore, Pars II; the book''s printed wording is not reproduced. Only
         the Lectionary citations are carried: no reading, pericope title, psalm response, verse-before-the- Gospel text,
-        rubric or printed heading is reproduced, because the Ordo may be used and not redistributed. The day''s orations
-        and antiphons are NOT carried at all: their text is in the Missale Romanum 2002, which is in copyright and not
+        rubric or printed heading is reproduced, because the Ordo may be used and not redistributed. At the initial Lectionary collation, the day''s orations
+        and antiphons were not carried: their text is in the Missale Romanum 2002, which is in copyright and not
         held here, and postconciliar/rubrics.yaml deliberately chooses no basis for a weekday''s orations. Responsorial
         psalms are printed in Vulgate numbering and are converted here by scripts/_psalms from the tracked verse concordance,
         because this file declares psalm_numbering hebrew. Lent repeats annually, so no cycle key is carried. On 2026-10-21
@@ -9839,6 +9855,10 @@ sections:
           artifact page 30 / printed page 22, in the 2026-10-20/21 image audit. The printed citation cue is retained as
           structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
           English body, exact target-2008 Latin body, or publication permission is supplied.
+      - name: Prayer after Communion
+        source: composed
+        text: "Quaesumus, Domine Deus noster: ut sacrosancta mysteria, quae pro reparationis nostrae munimine contulisti: et praesens nobis remedium esse facias, et futurum. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#ga, Prayer after Communion; registered secondary 2002 PDF, artifact p. 133. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 185 (printed page
         131), marginal n. 227. The heading verified on that image identifies the day as Thursday of the First Week of
@@ -10147,6 +10167,10 @@ sections:
           structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
           English body, exact target-2008 Latin body, or publication permission is supplied. The printed Cf. is a comparison
           cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon.
+      - name: Collect
+        source: composed
+        text: "Custodi, Domine, quaesumus, Ecclesiam tuam propitiatione perpetua: et quia sine te labitur humana mortalitas; tuis semper auxiliis et abstrahatur a noxiis, et ad salutaria dirigatur. Per Dominum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#gf, Collect; registered secondary 2002 PDF, artifact p. 137. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       - name: First Reading
         source: scripture
         verses:
@@ -10386,6 +10410,10 @@ sections:
           artifact page 32 / printed page 24, in the 2026-10-20/21 image audit. The printed citation cue is retained as
           structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
           English body, exact target-2008 Latin body, or publication permission is supplied.
+      - name: Prayer after Communion
+        source: composed
+        text: "Haec in nobis sacrificia, Deus, et actione permaneant, et operatione firmentur. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#gh, Prayer after Communion; registered secondary 2002 PDF, artifact p. 139. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 187 (printed page
         133), marginal n. 233. The heading verified on that image identifies the day as Thursday of the Second Week of
@@ -10566,6 +10594,10 @@ sections:
           - begin: {chapter: 15, verse: 11}
             end: {chapter: 15, verse: 32}
           ref: Luke 15:1-3, 11-32
+      - name: Prayer over the Offerings
+        source: composed
+        text: "Per haec veniat, quaesumus, Domine, sacramenta nostrae redemptionis effectus: qui nos et ab humanis retrahat semper excessibus, et ad salutaria dona perducat. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#gj, Prayer over the Offerings; registered secondary 2002 PDF, artifact p. 141. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       - name: Communion Antiphon
         source: mixed
         verses:
@@ -10726,6 +10758,10 @@ sections:
           artifact page 33 / printed page 25, in the 2026-10-20/21 image audit. The printed citation cue is retained as
           structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
           English body, exact target-2008 Latin body, or publication permission is supplied.
+      - name: Collect
+        source: composed
+        text: "Ecclesiam tuam, Domine, miseratio continuata mundet et muniat: et quia sine te non potest salva consistere; tuo semper munere gubernetur. Per Dominum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#gl, Collect; registered secondary 2002 PDF, artifact p. 143. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       - name: First Reading
         source: scripture
         verses:
@@ -10931,6 +10967,10 @@ sections:
             attested actual-use fact. Appointment facts verified 2026-10-22; passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.ferial-optional-reading-courses-236-243-250-252.
             No whole-Missal, oration, antiphon, Sunday Second Reading, shorter Gospel, target-2008 wording or publication
             permission is inferred.'
+      - name: Prayer over the Offerings
+        source: composed
+        text: "Munus, quod tibi, Domine, nostrae servitutis offerimus, tu salutare nobis perfice sacramentum. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#gl, Prayer over the Offerings; registered secondary 2002 PDF, artifact p. 144. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       - name: Communion Antiphon
         source: scripture
         psalm_numbering: vulgate
@@ -10954,13 +10994,17 @@ sections:
           artifact page 33 / printed page 25, in the 2026-10-20/21 image audit. The printed citation cue is retained as
           structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
           English body, exact target-2008 Latin body, or publication permission is supplied.
+      - name: Prayer after Communion
+        source: composed
+        text: "Tui nobis, quaesumus, Domine, communio sacramenti, et purificationem conferat, et tribuat unitatem. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#gl, Prayer after Communion; registered secondary 2002 PDF, artifact p. 144. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 188 (printed page
         134), marginal n. 237. The heading verified on that image identifies the day as Monday of the Third Week of Lent,
         in the Lenten ferial run of the Proprium de Tempore, Pars II; the book''s printed wording is not reproduced. Only
         the Lectionary citations are carried: no reading, pericope title, psalm response, verse-before-the- Gospel text,
-        rubric or printed heading is reproduced, because the Ordo may be used and not redistributed. The day''s orations
-        and antiphons are NOT carried at all: their text is in the Missale Romanum 2002, which is in copyright and not
+        rubric or printed heading is reproduced, because the Ordo may be used and not redistributed. At the initial Lectionary collation, the day''s orations
+        and antiphons were not carried: their text is in the Missale Romanum 2002, which is in copyright and not
         held here, and postconciliar/rubrics.yaml deliberately chooses no basis for a weekday''s orations. Responsorial
         psalms are printed in Vulgate numbering and are converted here by scripts/_psalms from the tracked verse concordance,
         because this file declares psalm_numbering hebrew. Lent repeats annually, so no cycle key is carried. On 2026-10-21
@@ -11315,13 +11359,17 @@ sections:
           structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
           English body, exact target-2008 Latin body, or publication permission is supplied. The printed Cf. is a comparison
           cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon.
+      - name: Prayer after Communion
+        source: composed
+        text: "Vivificet nos, quaesumus, Domine, huius participatio sancta mysterii: et pariter nobis expiationem tribuat, et munimen. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#gm, Prayer after Communion; registered secondary 2002 PDF, artifact p. 145. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 188 (printed page
         134), marginal n. 238. The heading verified on that image identifies the day as Tuesday of the Third Week of Lent,
         in the Lenten ferial run of the Proprium de Tempore, Pars II; the book''s printed wording is not reproduced. Only
         the Lectionary citations are carried: no reading, pericope title, psalm response, verse-before-the- Gospel text,
-        rubric or printed heading is reproduced, because the Ordo may be used and not redistributed. The day''s orations
-        and antiphons are NOT carried at all: their text is in the Missale Romanum 2002, which is in copyright and not
+        rubric or printed heading is reproduced, because the Ordo may be used and not redistributed. At the initial Lectionary collation, the day''s orations
+        and antiphons were not carried: their text is in the Missale Romanum 2002, which is in copyright and not
         held here, and postconciliar/rubrics.yaml deliberately chooses no basis for a weekday''s orations. Responsorial
         psalms are printed in Vulgate numbering and are converted here by scripts/_psalms from the tracked verse concordance,
         because this file declares psalm_numbering hebrew. Lent repeats annually, so no cycle key is carried. On 2026-10-01
@@ -11638,6 +11686,10 @@ sections:
             attested actual-use fact. Appointment facts verified 2026-10-22; passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.ferial-optional-reading-courses-236-243-250-252.
             No whole-Missal, oration, antiphon, Sunday Second Reading, shorter Gospel, target-2008 wording or publication
             permission is inferred.'
+      - name: Prayer over the Offerings
+        source: composed
+        text: "Suscipe, quaesumus, Domine, preces populi tui cum oblationibus hostiarum: et, tua mysteria celebrantes, ab omnibus nos defende periculis. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#gn, Prayer over the Offerings; registered secondary 2002 PDF, artifact p. 145. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       - name: Communion Antiphon
         source: mixed
         text: "Notas mihi fecisti vias vitae, adimplebis me laetitia cum vultu tuo, Domine."
@@ -11653,6 +11705,10 @@ sections:
               verse: 11
           ref: Psalm 15:11
         notes: "Source appointment antiphonary:lent-3-wednesday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 34 / printed page 26, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Dated 2026-11-14 Latin admission (gap campaign p2-lent-holyweek), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Mame 1922 unit at printed p. 122. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
+      - name: Prayer after Communion
+        source: composed
+        text: "Sanctificet nos, Domine, qua pasti sumus, mensa caelestis: et, a cunctis erroribus expiatos, supernis promissionibus reddat acceptos. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#gn, Prayer after Communion; registered secondary 2002 PDF, artifact p. 146. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 189 (printed page
         135), marginal n. 239. The heading verified on that image identifies the day as Wednesday of the Third Week of
@@ -12599,6 +12655,10 @@ sections:
           artifact page 34 / printed page 26, in the 2026-10-20/21 image audit. The printed citation cue is retained as
           structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
           English body, exact target-2008 Latin body, or publication permission is supplied.
+      - name: Prayer after Communion
+        source: composed
+        text: "Da nobis, quaesumus, misericors Deus: ut sancta tua, quibus incessanter explemur, sinceris tractemus obsequiis, et fideli semper mente sumamus. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#gq, Prayer after Communion; registered secondary 2002 PDF, artifact p. 148. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 189 (printed page
         135), marginal n. 242. The heading verified on that image identifies the day as Saturday of the Third Week of
@@ -12738,6 +12798,10 @@ sections:
           structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
           English body, exact target-2008 Latin body, or publication permission is supplied. The printed Cf. is a comparison
           cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon.
+      - name: Collect
+        source: composed
+        text: "Deus, qui ineffabilibus mundum renovas sacramentis: praesta, quaesumus; ut Ecclesia tua et aeternis proficiat institutis, et temporalibus non destituatur auxiliis. Per Dominum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#gs, Collect; registered secondary 2002 PDF, artifact p. 151. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       - name: First Reading
         source: scripture
         verses:
@@ -12950,8 +13014,8 @@ sections:
         136), marginal n. 244. The heading verified on that image identifies the day as Monday of the Fourth Week of Lent,
         in the Lenten ferial run of the Proprium de Tempore, Pars II; the book''s printed wording is not reproduced. Only
         the Lectionary citations are carried: no reading, pericope title, psalm response, verse-before-the- Gospel text,
-        rubric or printed heading is reproduced, because the Ordo may be used and not redistributed. The day''s orations
-        and antiphons are NOT carried at all: their text is in the Missale Romanum 2002, which is in copyright and not
+        rubric or printed heading is reproduced, because the Ordo may be used and not redistributed. At the initial Lectionary collation, the day''s orations
+        and antiphons were not carried: their text is in the Missale Romanum 2002, which is in copyright and not
         held here, and postconciliar/rubrics.yaml deliberately chooses no basis for a weekday''s orations. Responsorial
         psalms are printed in Vulgate numbering and are converted here by scripts/_psalms from the tracked verse concordance,
         because this file declares psalm_numbering hebrew. Lent repeats annually, so no cycle key is carried. On 2026-10-21
@@ -13288,6 +13352,10 @@ sections:
           structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
           English body, exact target-2008 Latin body, or publication permission is supplied. The printed Cf. is a comparison
           cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon.
+      - name: Prayer after Communion
+        source: composed
+        text: "Purifica, quaesumus, Domine, mentes nostras benignus, et renova caelestibus sacramentis: ut consequenter et corporum praesens pariter et futurum capiamus auxilium. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#gt, Prayer after Communion; registered secondary 2002 PDF, artifact p. 152. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 190 (printed page
         136), marginal n. 245. The heading verified on that image identifies the day as Tuesday of the Fourth Week of
@@ -13614,6 +13682,10 @@ sections:
             attested actual-use fact. Appointment facts verified 2026-10-22; passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.ferial-optional-reading-courses-236-243-250-252.
             No whole-Missal, oration, antiphon, Sunday Second Reading, shorter Gospel, target-2008 wording or publication
             permission is inferred.'
+      - name: Prayer over the Offerings
+        source: composed
+        text: "Huius sacrificii potentia, Domine, quaesumus, et vetustatem nostram clementer abstergat, et novitatem nobis augeat et salutem. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#gu, Prayer over the Offerings; registered secondary 2002 PDF, artifact p. 153. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       - name: Communion Antiphon
         source: scripture
         verses:
@@ -13630,6 +13702,10 @@ sections:
           artifact page 36 / printed page 28, in the 2026-10-20/21 image audit. The printed citation cue is retained as
           structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
           English body, exact target-2008 Latin body, or publication permission is supplied.
+      - name: Prayer after Communion
+        source: composed
+        text: "Caelestia dona capientibus, quaesumus, Domine: non ad iudicium provenire patiaris, quae fidelibus tuis ad remedium providisti. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#gu, Prayer after Communion; registered secondary 2002 PDF, artifact p. 153. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 191 (printed page
         137), marginal n. 246. The heading verified on that image identifies the day as Wednesday of the Fourth Week of
@@ -13955,6 +14031,10 @@ sections:
             attested actual-use fact. Appointment facts verified 2026-10-22; passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.ferial-optional-reading-courses-236-243-250-252.
             No whole-Missal, oration, antiphon, Sunday Second Reading, shorter Gospel, target-2008 wording or publication
             permission is inferred.'
+      - name: Prayer over the Offerings
+        source: composed
+        text: "Concede, quaesumus, omnipotens Deus: ut huius sacrificii munus oblatum fragilitatem nostram ab omni malo purget semper et muniat. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#gv, Prayer over the Offerings; registered secondary 2002 PDF, artifact p. 154. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       - name: Communion Antiphon
         source: scripture
         verses:
@@ -14304,6 +14384,10 @@ sections:
             attested actual-use fact. Appointment facts verified 2026-10-22; passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.ferial-optional-reading-courses-236-243-250-252.
             No whole-Missal, oration, antiphon, Sunday Second Reading, shorter Gospel, target-2008 wording or publication
             permission is inferred.'
+      - name: Prayer over the Offerings
+        source: composed
+        text: "Haec sacrificia nos, omnipotens Deus, potenti virtute mundatos, ad suum faciant puriores venire principium. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#gw, Prayer over the Offerings; registered secondary 2002 PDF, artifact p. 155. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       - name: Communion Antiphon
         source: mixed
         verses:
@@ -14328,8 +14412,8 @@ sections:
         137), marginal n. 248. The heading verified on that image identifies the day as Friday of the Fourth Week of Lent,
         in the Lenten ferial run of the Proprium de Tempore, Pars II; the book''s printed wording is not reproduced. Only
         the Lectionary citations are carried: no reading, pericope title, psalm response, verse-before-the- Gospel text,
-        rubric or printed heading is reproduced, because the Ordo may be used and not redistributed. The day''s orations
-        and antiphons are NOT carried at all: their text is in the Missale Romanum 2002, which is in copyright and not
+        rubric or printed heading is reproduced, because the Ordo may be used and not redistributed. At the initial Lectionary collation, the day''s orations
+        and antiphons were not carried: their text is in the Missale Romanum 2002, which is in copyright and not
         held here, and postconciliar/rubrics.yaml deliberately chooses no basis for a weekday''s orations. Responsorial
         psalms are printed in Vulgate numbering and are converted here by scripts/_psalms from the tracked verse concordance,
         because this file declares psalm_numbering hebrew. Lent repeats annually, so no cycle key is carried. On 2026-10-21
@@ -15665,6 +15749,10 @@ sections:
             attested actual-use fact. Appointment facts verified 2026-10-22; passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.ferial-optional-reading-courses-236-243-250-252.
             No whole-Missal, oration, antiphon, Sunday Second Reading, shorter Gospel, target-2008 wording or publication
             permission is inferred.'
+      - name: Prayer over the Offerings
+        source: composed
+        text: "Hostias tibi, Domine, placationis offerimus: ut et delicta nostra miseratus absolvas, et nutantia corda tu dirigas. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/gld.htm#g0, Prayer over the Offerings; registered secondary 2002 PDF, artifact p. 159. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       - name: Communion Antiphon
         source: scripture
         verses:
@@ -15686,8 +15774,8 @@ sections:
         138), marginal n. 252. The heading verified on that image identifies the day as Tuesday of the Fifth Week of Lent,
         in the Lenten ferial run of the Proprium de Tempore, Pars II; the book''s printed wording is not reproduced. Only
         the Lectionary citations are carried: no reading, pericope title, psalm response, verse-before-the- Gospel text,
-        rubric or printed heading is reproduced, because the Ordo may be used and not redistributed. The day''s orations
-        and antiphons are NOT carried at all: their text is in the Missale Romanum 2002, which is in copyright and not
+        rubric or printed heading is reproduced, because the Ordo may be used and not redistributed. At the initial Lectionary collation, the day''s orations
+        and antiphons were not carried: their text is in the Missale Romanum 2002, which is in copyright and not
         held here, and postconciliar/rubrics.yaml deliberately chooses no basis for a weekday''s orations. Responsorial
         psalms are printed in Vulgate numbering and are converted here by scripts/_psalms from the tracked verse concordance,
         because this file declares psalm_numbering hebrew. Lent repeats annually, so no cycle key is carried. The Verse
@@ -16025,6 +16113,10 @@ sections:
             attested actual-use fact. Appointment facts verified 2026-10-22; passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.ferial-optional-reading-courses-236-243-250-252.
             No whole-Missal, oration, antiphon, Sunday Second Reading, shorter Gospel, target-2008 wording or publication
             permission is inferred.'
+      - name: Prayer over the Offerings
+        source: composed
+        text: "Tibi, Domine, sacrificia dicata reddantur: quae sic ad honorem nominis tui deferenda tribuisti, ut eadem remedia fieri nostra praestares. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/gld.htm#g1, Prayer over the Offerings; registered secondary 2002 PDF, artifact p. 160. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       - name: Communion Antiphon
         source: scripture
         verses:
@@ -16734,6 +16826,10 @@ sections:
             attested actual-use fact. Appointment facts verified 2026-10-22; passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.ferial-optional-reading-courses-236-243-250-252.
             No whole-Missal, oration, antiphon, Sunday Second Reading, shorter Gospel, target-2008 wording or publication
             permission is inferred.'
+      - name: Prayer over the Offerings
+        source: composed
+        text: "Praesta nobis, misericors Deus: ut digne tuis servire semper altaribus mereamur; et eorum perpetua participatione salvari. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/gld.htm#g3, Prayer over the Offerings; registered secondary 2002 PDF, artifact p. 162. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       - name: Communion Antiphon
         source: scripture
         verses:
@@ -16750,13 +16846,17 @@ sections:
           artifact page 38 / printed page 30, in the 2026-10-20/21 image audit. The printed citation cue is retained as
           structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
           English body, exact target-2008 Latin body, or publication permission is supplied.
+      - name: Prayer after Communion
+        source: composed
+        text: "Sumpti sacrificii, Domine, perpetua nos tuitio non relinquat, et noxia semper a nobis cuncta depellat. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/gld.htm#g3, Prayer after Communion; registered secondary 2002 PDF, artifact p. 163. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 193 (printed page
         139), marginal n. 255. The heading verified on that image identifies the day as Friday of the Fifth Week of Lent,
         in the Lenten ferial run of the Proprium de Tempore, Pars II; the book''s printed wording is not reproduced. Only
         the Lectionary citations are carried: no reading, pericope title, psalm response, verse-before-the- Gospel text,
-        rubric or printed heading is reproduced, because the Ordo may be used and not redistributed. The day''s orations
-        and antiphons are NOT carried at all: their text is in the Missale Romanum 2002, which is in copyright and not
+        rubric or printed heading is reproduced, because the Ordo may be used and not redistributed. At the initial Lectionary collation, the day''s orations
+        and antiphons were not carried: their text is in the Missale Romanum 2002, which is in copyright and not
         held here, and postconciliar/rubrics.yaml deliberately chooses no basis for a weekday''s orations. Responsorial
         psalms are printed in Vulgate numbering and are converted here by scripts/_psalms from the tracked verse concordance,
         because this file declares psalm_numbering hebrew. Lent repeats annually, so no cycle key is carried. On 2026-10-21
@@ -23042,6 +23142,10 @@ sections:
           - begin: {chapter: 3, verse: 1}
             end: {chapter: 3, verse: 8}
           ref: John 3:1-8
+      - name: Prayer over the Offerings
+        source: composed
+        text: "Suscipe munera, Domine, quaesumus, exsultantis Ecclesiae: et, cui causam tanti gaudii praestitisti, perpetuae fructum concede laetitiae. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glg.htm#h1, Prayer over the Offerings; registered secondary 2002 PDF, artifact p. 232. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       - name: Communion Antiphon
         source: mixed
         verses:
@@ -23144,6 +23248,10 @@ sections:
           - begin: {chapter: 3, verse: 7, part: b}
             end: {chapter: 3, verse: 15}
           ref: John 3:7b-15
+      - name: Prayer over the Offerings
+        source: composed
+        text: "Concede, quaesumus, Domine, semper nos per haec mysteria paschalia gratulari: ut continua nostrae reparationis operatio perpetuae nobis fiat causa laetitiae. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glg.htm#h2, Prayer over the Offerings; registered secondary 2002 PDF, artifact p. 233. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       - name: Communion Antiphon
         source: mixed
         verses:
@@ -23169,6 +23277,10 @@ sections:
           - kind: witness-gap
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008
         notes: "Source appointment antiphonary:easter-2-tuesday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 60 / printed page 52, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. This is the weekday Mass appointed under the source weekday heading. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Dated 2026-11-14 (gap campaign p3-easter-pentecost): the Missal's adapted antiphon is its own body beside the retained Scripture citation; no public-domain witness prints it word for word, so its Latin stays an explicit witness gap. Project study English of the adapted body is recorded in the translation overlay."
+      - name: Prayer after Communion
+        source: composed
+        text: "Exaudi, Domine, preces nostras: ut redemptionis nostrae sacrosancta commercia, et vitae nobis conferant praesentis auxilium, et gaudia sempiterna concilient. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glg.htm#h2, Prayer after Communion; registered secondary 2002 PDF, artifact p. 233. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: The Lectionary citations were read at 200
         dpi in the page images of the Ordo lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
         at artifact page 201, printed page 147, n. 268, the day headed there as Tuesday, numbered there as feria 3, under
@@ -23549,6 +23661,10 @@ sections:
           - begin: {chapter: 6, verse: 16}
             end: {chapter: 6, verse: 21}
           ref: John 6:16-21
+      - name: Prayer over the Offerings
+        source: composed
+        text: "Propitius, Domine, quaesumus, haec dona sanctifica: et, hostiae spiritalis oblatione suscepta, nosmetipsos tibi perfice munus aeternum. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glg.htm#ia, Prayer over the Offerings; registered secondary 2002 PDF, artifact p. 236. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       - name: Communion Antiphon
         source: mixed
         verses:
@@ -23742,6 +23858,10 @@ sections:
           - begin: {chapter: 6, verse: 30}
             end: {chapter: 6, verse: 35}
           ref: John 6:30-35
+      - name: Prayer over the Offerings
+        source: composed
+        text: "Suscipe munera, Domine, quaesumus, exsultantis Ecclesiae: et, cui causam tanti gaudii praestitisti, perpetuae fructum concede laetitiae. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glg.htm#id, Prayer over the Offerings; registered secondary 2002 PDF, artifact p. 238. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       - name: Communion Antiphon
         source: mixed
         verses:
@@ -23848,6 +23968,10 @@ sections:
           - begin: {chapter: 6, verse: 35}
             end: {chapter: 6, verse: 40}
           ref: John 6:35-40
+      - name: Prayer over the Offerings
+        source: composed
+        text: "Concede, quaesumus, Domine, semper nos per haec mysteria paschalia gratulari: ut continua nostrae reparationis operatio perpetuae nobis fiat causa laetitiae. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glg.htm#ie, Prayer over the Offerings; registered secondary 2002 PDF, artifact p. 239. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       - name: Communion Antiphon
         source: composed
         text_status:
@@ -23861,6 +23985,10 @@ sections:
           is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording,
           full approved English body, exact target-2008 Latin body, or publication permission is supplied. This is the
           weekday Mass appointed under the source weekday heading.
+      - name: Prayer after Communion
+        source: composed
+        text: "Exaudi, Domine, preces nostras: ut redemptionis nostrae sacrosancta commercia, et vitae nobis conferant praesentis auxilium, et gaudia sempiterna concilient. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glg.htm#ie, Prayer after Communion; registered secondary 2002 PDF, artifact p. 239. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: The Lectionary citations were read at 200
         dpi in the page images of the Ordo lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
         at artifact page 203, printed page 149, n. 275, the day headed there as Wednesday, numbered there as feria 4,
@@ -24035,6 +24163,10 @@ sections:
           - begin: {chapter: 6, verse: 52}
             end: {chapter: 6, verse: 59}
           ref: John 6:52-59
+      - name: Prayer over the Offerings
+        source: composed
+        text: "Propitius, Domine, quaesumus, haec dona sanctifica: et, hostiae spiritalis oblatione suscepta, nosmetipsos tibi perfice munus aeternum. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glg.htm#ig, Prayer over the Offerings; registered secondary 2002 PDF, artifact p. 240. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       - name: Communion Antiphon
         source: composed
         text_status:
@@ -24300,6 +24432,10 @@ sections:
                   chapter: 10
                   verse: 18
               ref: John 10:11-18
+      - name: Prayer over the Offerings
+        source: composed
+        text: "Suscipe munera, Domine, quaesumus, exsultantis Ecclesiae: et, cui causam tanti gaudii praestitisti, perpetuae fructum concede laetitiae. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glg.htm#ij, Prayer over the Offerings; registered secondary 2002 PDF, artifact p. 242. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       - name: Communion Antiphon
         source: mixed
         verses:
@@ -24402,6 +24538,10 @@ sections:
           - begin: {chapter: 10, verse: 22}
             end: {chapter: 10, verse: 30}
           ref: John 10:22-30
+      - name: Prayer over the Offerings
+        source: composed
+        text: "Concede, quaesumus, Domine, semper nos per haec mysteria paschalia gratulari: ut continua nostrae reparationis operatio perpetuae nobis fiat causa laetitiae. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glg.htm#ik, Prayer over the Offerings; registered secondary 2002 PDF, artifact p. 243. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       - name: Communion Antiphon
         source: mixed
         verses:
@@ -24427,6 +24567,10 @@ sections:
           - kind: witness-gap
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008
         notes: "Source appointment antiphonary:easter-4-tuesday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 64 / printed page 56, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. This is the weekday Mass appointed under the source weekday heading. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Dated 2026-11-14 (gap campaign p3-easter-pentecost): the Missal's adapted antiphon is its own body beside the retained Scripture citation; no public-domain witness prints it word for word, so its Latin stays an explicit witness gap. Project study English of the adapted body is recorded in the translation overlay."
+      - name: Prayer after Communion
+        source: composed
+        text: "Exaudi, Domine, preces nostras: ut redemptionis nostrae sacrosancta commercia, et vitae nobis conferant praesentis auxilium, et gaudia sempiterna concilient. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glg.htm#ik, Prayer after Communion; registered secondary 2002 PDF, artifact p. 243. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: The Lectionary citations were read at 200
         dpi in the page images of the Ordo lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
         at artifact page 205, printed page 151, n. 280, the day headed there as Tuesday, numbered there as feria 3, under
@@ -24827,6 +24971,10 @@ sections:
           - begin: {chapter: 14, verse: 7}
             end: {chapter: 14, verse: 14}
           ref: John 14:7-14
+      - name: Prayer over the Offerings
+        source: composed
+        text: "Propitius, Domine, quaesumus, haec dona sanctifica: et, hostiae spiritalis oblatione suscepta, nosmetipsos tibi perfice munus aeternum. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glh.htm#io, Prayer over the Offerings; registered secondary 2002 PDF, artifact p. 246. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       - name: Communion Antiphon
         source: mixed
         verses:
@@ -25011,6 +25159,10 @@ sections:
           - begin: {chapter: 14, verse: 27}
             end: {chapter: 14, verse: 31, part: a}
           ref: John 14:27-31a
+      - name: Prayer over the Offerings
+        source: composed
+        text: "Suscipe munera, Domine, quaesumus, exsultantis Ecclesiae: et, cui causam tanti gaudii praestitisti, perpetuae fructum concede laetitiae. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glh.htm#ir, Prayer over the Offerings; registered secondary 2002 PDF, artifact p. 248. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       - name: Communion Antiphon
         source: mixed
         verses:
@@ -25112,6 +25264,10 @@ sections:
           - begin: {chapter: 15, verse: 1}
             end: {chapter: 15, verse: 8}
           ref: John 15:1-8
+      - name: Prayer over the Offerings
+        source: composed
+        text: "Concede, quaesumus, Domine, semper nos per haec mysteria paschalia gratulari: ut continua nostrae reparationis operatio perpetuae nobis fiat causa laetitiae. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glh.htm#is, Prayer over the Offerings; registered secondary 2002 PDF, artifact p. 249. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       - name: Communion Antiphon
         source: composed
         text_status:
@@ -25125,6 +25281,10 @@ sections:
           is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording,
           full approved English body, exact target-2008 Latin body, or publication permission is supplied. This is the
           weekday Mass appointed under the source weekday heading.
+      - name: Prayer after Communion
+        source: composed
+        text: "Exaudi, Domine, preces nostras: ut redemptionis nostrae sacrosancta commercia, et vitae nobis conferant praesentis auxilium, et gaudia sempiterna concilient. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glh.htm#is, Prayer after Communion; registered secondary 2002 PDF, artifact p. 249. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: The Lectionary citations were read at 200
         dpi in the page images of the Ordo lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
         at artifact page 207, printed page 153, n. 287, the day headed there as Wednesday, numbered there as feria 4,
@@ -25283,6 +25443,10 @@ sections:
           - begin: {chapter: 15, verse: 12}
             end: {chapter: 15, verse: 17}
           ref: John 15:12-17
+      - name: Prayer over the Offerings
+        source: composed
+        text: "Propitius, Domine, quaesumus, haec dona sanctifica: et, hostiae spiritalis oblatione suscepta, nosmetipsos tibi perfice munus aeternum. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glh.htm#iu, Prayer over the Offerings; registered secondary 2002 PDF, artifact p. 250. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       - name: Communion Antiphon
         source: composed
         text_status:
@@ -25454,6 +25618,10 @@ sections:
           - begin: {chapter: 15, verse: 26}
             end: {chapter: 16, verse: 4, part: a}
           ref: John 15:26-16:4a
+      - name: Prayer over the Offerings
+        source: composed
+        text: "Suscipe munera, Domine, quaesumus, exsultantis Ecclesiae: et, cui causam tanti gaudii praestitisti, perpetuae fructum concede laetitiae. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glh.htm#iw, Prayer over the Offerings; registered secondary 2002 PDF, artifact p. 253. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       - name: Communion Antiphon
         source: mixed
         verses:
@@ -25550,6 +25718,10 @@ sections:
           - begin: {chapter: 16, verse: 5}
             end: {chapter: 16, verse: 11}
           ref: John 16:5-11
+      - name: Prayer over the Offerings
+        source: composed
+        text: "Concede, quaesumus, Domine, semper nos per haec mysteria paschalia gratulari: ut continua nostrae reparationis operatio perpetuae nobis fiat causa laetitiae. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glh.htm#ix, Prayer over the Offerings; registered secondary 2002 PDF, artifact p. 253. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       - name: Communion Antiphon
         source: mixed
         verses:
@@ -25575,6 +25747,10 @@ sections:
           - kind: witness-gap
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008
         notes: "Source appointment antiphonary:easter-6-tuesday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 68 / printed page 60, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. This is the weekday Mass appointed under the source weekday heading. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Dated 2026-11-14 (gap campaign p3-easter-pentecost): the Missal's adapted antiphon is its own body beside the retained Scripture citation; no public-domain witness prints it word for word, so its Latin stays an explicit witness gap. Project study English of the adapted body is recorded in the translation overlay."
+      - name: Prayer after Communion
+        source: composed
+        text: "Exaudi, Domine, preces nostras: ut redemptionis nostrae sacrosancta commercia, et vitae nobis conferant praesentis auxilium, et gaudia sempiterna concilient. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glh.htm#ix, Prayer after Communion; registered secondary 2002 PDF, artifact p. 254. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: The Lectionary citations were read at 200
         dpi in the page images of the Ordo lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
         at artifact page 209, printed page 155, n. 292, the day headed there as Tuesday, numbered there as feria 3, under
@@ -25851,6 +26027,10 @@ sections:
           - begin: {chapter: 16, verse: 23, part: b}
             end: {chapter: 16, verse: 28}
           ref: John 16:23b-28
+      - name: Prayer over the Offerings
+        source: composed
+        text: "Propitius, Domine, quaesumus, haec dona sanctifica: et, hostiae spiritalis oblatione suscepta, nosmetipsos tibi perfice munus aeternum. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glh.htm#i2, Prayer over the Offerings; registered secondary 2002 PDF, artifact p. 259. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       - name: Communion Antiphon
         source: mixed
         verses:
@@ -25943,6 +26123,10 @@ sections:
           - begin: {chapter: 16, verse: 29}
             end: {chapter: 16, verse: 33}
           ref: John 16:29-33
+      - name: Prayer over the Offerings
+        source: composed
+        text: "Sacrificia nos, Domine, immaculata purificent: et mentibus nostris supernae gratiae dent vigorem. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glh.htm#i4, Prayer over the Offerings; registered secondary 2002 PDF, artifact p. 261. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       - name: Communion Antiphon
         source: mixed
         verses:
@@ -26037,6 +26221,10 @@ sections:
           - begin: {chapter: 17, verse: 1}
             end: {chapter: 17, verse: 11, part: a}
           ref: John 17:1-11a
+      - name: Prayer over the Offerings
+        source: composed
+        text: "Suscipe, Domine, fidelium preces cum oblationibus hostiarum: ut per haec piae devotionis officia ad caelestem gloriam transeamus. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glh.htm#i5, Prayer over the Offerings; registered secondary 2002 PDF, artifact p. 261. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       - name: Communion Antiphon
         source: mixed
         verses:
@@ -26222,6 +26410,10 @@ sections:
           - begin: {chapter: 17, verse: 20}
             end: {chapter: 17, verse: 26}
           ref: John 17:20-26
+      - name: Prayer over the Offerings
+        source: composed
+        text: "Propitius, Domine, quaesumus, haec dona sanctifica: et, hostiae spiritalis oblatione suscepta, nosmetipsos tibi perfice munus aeternum. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glh.htm#jb, Prayer over the Offerings; registered secondary 2002 PDF, artifact p. 263. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       - name: Communion Antiphon
         source: mixed
         verses:
@@ -26349,6 +26541,10 @@ sections:
       registry: 'pc-T-easter-7-saturday'
       season: easter
       propers:
+      - name: Collect
+        source: composed
+        text: "Praesta, quaesumus, omnipotens Deus: ut, qui paschalia festa peregimus, haec, te largiente, moribus et vita teneamus. Per Dominum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glh.htm#jd, Collect; registered secondary 2002 PDF, artifact p. 264. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       - name: First Reading
         source: scripture
         verses:
@@ -53075,8 +53271,7 @@ sections:
         verse concordance, because this file declares psalm_numbering hebrew. The preceding description records the Lectionary inspection. The Entrance and Communion Antiphon
         appointments and citations were subsequently checked in the registered 2010 ICEL Antiphonary,
         artifact page 149, printed page 141, and are now carried below. Exact target 2008 Latin antiphon
-        wording remains unestablished, the held English remains restricted, and the three oration bodies
-        are not supplied here. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
+        wording remains unestablished, the held English remains restricted, and further orations remain unverified for the 2008 edition. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: Entrance Antiphon
         source: scripture
@@ -53091,6 +53286,10 @@ sections:
               verse: 10
           ref: Isaiah 61:10
         notes: 'Structural appointment and citation Is 61: 10 directly checked in registered ICEL2010 Antiphonary, artifact page 149, printed page 141; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded.'
+      - name: Collect
+        source: composed
+        text: "Deus, qui per immaculatam Virginis Conceptionem dignum Filio tuo habitaculum praeparasti: quaesumus; ut, qui ex morte eiusdem Filii tui praevisa eam ab omni labe praeservasti, nos quoque mundos eius intercessione ad te pervenire concedas. Per Dominum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glt.htm#y1, Collect; registered secondary 2002 PDF, artifact p. 529. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       - name: First Reading
         source: scripture
         verses:
@@ -53148,6 +53347,10 @@ sections:
           - kind: witness-gap
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008
         notes: Structural appointment and uncited presence directly checked in registered ICEL2010 Antiphonary, artifact page 149, printed page 141; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded.
+      - name: Prayer after Communion
+        source: composed
+        text: "Sacramenta quae sumpsimus, Domine Deus noster: illius in nobis culpae vulnera reparent; a qua immaculatam beatae Mariae Conceptionem singulariter praeservasti. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glt.htm#y1, Prayer after Communion; registered secondary 2002 PDF, artifact p. 530. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
     - key: our-lady-loreto
       name: Our Lady of Loreto
       registry: pc-12-10
@@ -53353,8 +53556,7 @@ sections:
         The preceding description records the Lectionary inspection. The Entrance and Communion Antiphon
         appointments and citations were subsequently checked in the registered 2010 ICEL Antiphonary,
         artifact page 102, printed page 94, and are now carried below. Exact target 2008 Latin antiphon
-        wording remains unestablished, the held English remains restricted, and the three oration bodies
-        are not supplied here. See
+        wording remains unestablished, the held English remains restricted, and further orations remain unverified for the 2008 edition. See
         src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: Entrance Antiphon
@@ -53371,6 +53573,10 @@ sections:
           ref: Psalms 47:10-11
         psalm_numbering: vulgate
         notes: 'Structural appointment and citation Cf. Ps 47: 10-11 directly checked in registered ICEL2010 Antiphonary, artifact page 102, printed page 94; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded.'
+      - name: Collect
+        source: composed
+        text: "Omnipotens sempiterne Deus, maiestatem tuam supplices exoramus: ut, sicut unigenitus Filius tuus hodierna die cum nostrae carnis substantia in templo est praesentatus; ita nos facias purificatis tibi mentibus praesentari. Per Dominum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glo.htm#og, Collect; registered secondary 2002 PDF, artifact p. 425. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       - name: First Reading
         source: scripture
         verses:
@@ -53466,8 +53672,7 @@ sections:
         carried here under this file''s existing Verse Before the Gospel name. The preceding description records the Lectionary inspection. The Entrance and Communion Antiphon
         appointments and citations were subsequently checked in the registered 2010 ICEL Antiphonary,
         artifact page 106, printed page 98, and are now carried below. Exact target 2008 Latin antiphon
-        wording remains unestablished, the held English remains restricted, and the three oration bodies
-        are not supplied here. See
+        wording remains unestablished, the held English remains restricted, and further orations remain unverified for the 2008 edition. See
         src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: Entrance Antiphon
@@ -53552,6 +53757,10 @@ sections:
               verse: 14
           ref: Isaiah 7:14
         notes: 'Structural appointment and citation Is 7: 14 directly checked in registered ICEL2010 Antiphonary, artifact page 106, printed page 98; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded.'
+      - name: Prayer after Communion
+        source: composed
+        text: "In mentibus nostris, quaesumus, Domine, verae fidei sacramenta confirma: ut, qui conceptum de Virgine Deum verum et hominem confitemur; per eius salutiferae resurrectionis potentiam, ad aeternam mereamur pervenire laetitiam. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glp.htm#po, Prayer after Communion; registered secondary 2002 PDF, artifact p. 436. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
     - key: transfiguration-lord
       name: The Transfiguration of the Lord
       registry: pc-08-06
@@ -55911,8 +56120,7 @@ sections:
         that the votive Mass of Saint Peter takes these same readings. The preceding description records the Lectionary inspection. The Entrance and Communion Antiphon
         appointments and citations were subsequently checked in the registered 2010 ICEL Antiphonary,
         artifact page 104, printed page 96, and are now carried below. Exact target 2008 Latin antiphon
-        wording remains unestablished, the held English remains restricted, and the three oration bodies
-        are not supplied here. See
+        wording remains unestablished, the held English remains restricted, and further orations remain unverified for the 2008 edition. See
         src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: Entrance Antiphon
@@ -55928,6 +56136,10 @@ sections:
               verse: 32
           ref: Luke 22:32
         notes: 'Structural appointment and citation Lk 22: 32 directly checked in registered ICEL2010 Antiphonary, artifact page 104, printed page 96; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded.'
+      - name: Collect
+        source: composed
+        text: "Praesta, quaesumus, omnipotens Deus: ut nullis nos permittas perturbationibus concuti; quos in apostolicae confessionis petra solidasti. Per Dominum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glp.htm#o0, Collect; registered secondary 2002 PDF, artifact p. 429. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       - name: First Reading
         source: scripture
         verses:
@@ -56083,6 +56295,16 @@ sections:
       rank: Optional memorial
       kind: sanctoral
       propers:
+      - name: Collect
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.roman-calendar-three-doctors-additions-2021.2021-official-latin-annex.official-pdf-7b776f5c
+        notes: "The official Latin Missal source prints this proper Collect. 27 February, Gregory of Narek / In Missale Romanum, p. 1. The linked text can be read in its source."
       - name: First Reading
         source: scripture
         verses:
@@ -58140,6 +58362,16 @@ sections:
       rank: Optional memorial
       kind: sanctoral
       propers:
+      - name: Collect
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.roman-calendar-three-doctors-additions-2021.2021-official-latin-annex.official-pdf-7b776f5c
+        notes: "The official Latin Missal source prints this proper Collect. 10 May, John of Avila / In Missale Romanum, p. 4. The linked text can be read in its source."
       - name: First Reading
         source: scripture
         verses:
@@ -59201,6 +59433,16 @@ sections:
       rank: Optional memorial
       kind: sanctoral
       propers:
+      - name: Collect
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.roman-calendar-paul-vi-additions-2019.2019-official-latin-annex.official-pdf-e1996a53
+        notes: "The official Latin Missal source prints this proper Collect. 29 May, Paul VI / In Missale Romanum, p. 1. The linked text can be read in its source."
       - name: First Reading
         source: scripture
         verses:
@@ -59275,8 +59517,7 @@ sections:
         psalm_numbering hebrew. The preceding description records the Lectionary inspection. The Entrance and Communion Antiphon
         appointments and citations were subsequently checked in the registered 2010 ICEL Antiphonary,
         artifact page 114, printed page 106, and are now carried below. Exact target 2008 Latin antiphon
-        wording remains unestablished, the held English remains restricted, and the three oration bodies
-        are not supplied here. See
+        wording remains unestablished, the held English remains restricted, and further orations remain unverified for the 2008 edition. See
         src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: Entrance Antiphon
@@ -59299,6 +59540,10 @@ sections:
           ref: Psalms 118:85, 46
         psalm_numbering: vulgate
         notes: 'Structural appointment and citation Cf. Ps 118: 85, 46 directly checked in registered ICEL2010 Antiphonary, artifact page 114, printed page 106; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded.'
+      - name: Collect
+        source: composed
+        text: "Deus, qui per stultitiam Crucis eminentem Iesu Christi scientiam beatum Iustinum Martyrem mirabiliter docuisti: eius nobis intercessione concede; ut, errorum circumventione depulsa, fidei firmitatem consequamur. Per Dominum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glp.htm#rm, Collect; registered secondary 2002 PDF, artifact p. 451. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       - name: First Reading
         source: scripture
         verses:
@@ -64201,6 +64446,16 @@ sections:
       rank: Optional memorial
       kind: sanctoral
       propers:
+      - name: Collect
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.roman-calendar-teresa-of-calcutta-additions-2025.2025-official-latin-annex.official-html-5a59d9c5
+        notes: "The official Latin Missal source prints this proper Collect. 5 September, Teresa of Calcutta / In Missale Romanum, Common directions and Collect. The linked text can be read in its source."
       - name: First Reading
         source: scripture
         verses:
@@ -65030,6 +65285,10 @@ sections:
           - begin: {chapter: 10, verse: 28}
             end: {chapter: 10, verse: 33}
           ref: Matthew 10:28-33
+      - name: Prayer over the Offerings
+        source: composed
+        text: "In tuorum, Domine, pretiosa morte iustorum sacrificium illud offerimus, de quo martyrium sumpsit omne principium. Per Christum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glr.htm#wb, Prayer over the Offerings; registered secondary 2002 PDF, artifact p. 498. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
     - key: saint-vincent-paul-priest
       text_status:
         state: partial
@@ -65246,8 +65505,7 @@ sections:
         file declares psalm_numbering hebrew. The preceding description records the Lectionary inspection. The Entrance and Communion Antiphon
         appointments and citations were subsequently checked in the registered 2010 ICEL Antiphonary,
         artifact page 135, printed page 127, and are now carried below. Exact target 2008 Latin antiphon
-        wording remains unestablished, the held English remains restricted, and the three oration bodies
-        are not supplied here. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
+        wording remains unestablished, the held English remains restricted, and further orations remain unverified for the 2008 edition. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: Entrance Antiphon
         source: scripture
@@ -65263,6 +65521,10 @@ sections:
           ref: Psalms 102:20
         psalm_numbering: vulgate
         notes: 'Structural appointment and citation Cf. Ps 102: 20 directly checked in registered ICEL2010 Antiphonary, artifact page 135, printed page 127; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded.'
+      - name: Collect
+        source: composed
+        text: "Deus, qui, miro ordine, Angelorum ministeria hominumque dispensas: concede propitius; ut, a quibus tibi ministrantibus in caelo semper assistitur, ab his in terra vita nostra muniatur. Per Dominum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glr.htm#wi, Collect; registered secondary 2002 PDF, artifact p. 500. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       - name: First Reading
         ordinary_disposition:
           kind: alternative
@@ -65534,8 +65796,7 @@ sections:
         tracked verse concordance, because this file declares psalm_numbering hebrew. The preceding description records the Lectionary inspection. The Entrance and Communion Antiphon
         appointments and citations were subsequently checked in the registered 2010 ICEL Antiphonary,
         artifact page 137, printed page 129, and are now carried below. Exact target 2008 Latin antiphon
-        wording remains unestablished, the held English remains restricted, and the three oration bodies
-        are not supplied here. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
+        wording remains unestablished, the held English remains restricted, and further orations remain unverified for the 2008 edition. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: Entrance Antiphon
         source: scripture
@@ -65550,6 +65811,10 @@ sections:
               verse: 58
           ref: Daniel 3:58
         notes: 'Structural appointment and citation Cf. Dn 3: 58 directly checked in registered ICEL2010 Antiphonary, artifact page 137, printed page 129; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded.'
+      - name: Collect
+        source: composed
+        text: "Deus, qui ineffabili providentia sanctos Angelos tuos ad nostram custodiam mittere dignaris: largire supplicibus tuis; et eorum semper protectione defendi, et aeterna societate gaudere. Per Dominum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/gls.htm#wo, Collect; registered secondary 2002 PDF, artifact p. 503. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       - name: First Reading
         source: scripture
         verses:
@@ -65706,6 +65971,16 @@ sections:
       rank: Optional memorial
       kind: sanctoral
       propers:
+      - name: Collect
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.roman-calendar-faustina-kowalska-additions-2020.2020-official-latin-annex.official-html-99752930
+        notes: "The official Latin Missal source prints this proper Collect. 5 October, Faustina Kowalska / In Missale Romanum, Common directions and Collect. The linked text can be read in its source."
       - name: First Reading
         source: scripture
         verses:
@@ -66076,6 +66351,16 @@ sections:
       rank: Optional memorial
       kind: sanctoral
       propers:
+      - name: Collect
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.roman-calendar-john-xxiii-additions-2014.2014-official-latin-annex.official-html-0f4c38e4
+        notes: "The official Latin Missal source prints this proper Collect. 11 October, Saint John XXIII, Pope / Common of Pastors and Collect. The linked text can be read in its source."
       - name: First Reading
         source: scripture
         verses:
@@ -66847,6 +67132,16 @@ sections:
       rank: Optional memorial
       kind: sanctoral
       propers:
+      - name: Collect
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.roman-calendar-john-paul-ii-additions-2011.2011-official-latin-annex.official-html-55c01b1f
+        notes: "The official Latin Missal source prints this proper Collect. 22 October, John Paul II / Common of Pastors and Collect. The 29 May 2014 decree retains the texts approved in 2011. The linked text can be read in its source."
       - name: First Reading
         source: scripture
         verses:
@@ -67124,14 +67419,17 @@ sections:
         verse concordance, because this file declares psalm_numbering hebrew. The preceding description records the Lectionary inspection. The Entrance and Communion Antiphon
         appointments and citations were subsequently checked in the registered 2010 ICEL Antiphonary,
         artifact page 142, printed page 134, and are now carried below. Exact target 2008 Latin antiphon
-        wording remains unestablished, the held English remains restricted, and the three oration bodies
-        are not supplied here. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
+        wording remains unestablished, the held English remains restricted, and further orations remain unverified for the 2008 edition. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: Entrance Antiphon
         source: composed
         notes: "Historical 1922 Latin and fresh project study English. Secondary digitally typeset 2002 AP 512 has the same lexical antiphon with accents, case, pointing and solemnitate/sollemnitate orthographic variation. Printed 2002 fidelity and authenticated 2008 correspondence remain unresolved. Not approved contemporary English and not for recitation. Source appointment: ICEL 2010 AP 142 / printed 134; no text from that English carrier is copied. Following historical Psalm 32:1 and doxology are excluded."
         incipit: "Gaudeamus omnes in Domino"
         text: "Gaudeamus omnes in Domino, diem festum celebrantes sub honore Sanctorum omnium: de quorum solemnitate gaudent Angeli, et collaudant Filium Dei."
+      - name: Collect
+        source: composed
+        text: "Omnipotens sempiterne Deus, qui nos omnium Sanctorum tuorum merita sub una tribuisti celebritate venerari: quaesumus; ut desideratam nobis tuae propitiationis abundantiam, multiplicatis intercessoribus, largiaris. Per Dominum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/gls.htm#xn, Collect; registered secondary 2002 PDF, artifact p. 512. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       - name: First Reading
         source: scripture
         verses:
@@ -68543,8 +68841,7 @@ sections:
         verse concordance, because this file declares psalm_numbering hebrew. The preceding description records the Lectionary inspection. The Entrance and Communion Antiphon
         appointments and citations were subsequently checked in the registered 2010 ICEL Antiphonary,
         artifact page 147, printed page 139, and are now carried below. Exact target 2008 Latin antiphon
-        wording remains unestablished, the held English remains restricted, and the three oration bodies
-        are not supplied here. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
+        wording remains unestablished, the held English remains restricted, and further orations remain unverified for the 2008 edition. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: Entrance Antiphon
         source: scripture
@@ -68559,6 +68856,10 @@ sections:
               verse: 19
           ref: Matthew 4:18-19
         notes: 'Structural appointment and citation Cf. Mt 4: 18-19 directly checked in registered ICEL2010 Antiphonary, artifact page 147, printed page 139; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded.'
+      - name: Collect
+        source: composed
+        text: "Maiestatem tuam, Domine, suppliciter exoramus: ut, sicut Ecclesiae tuae beatus Andreas Apostolus exstitit praedicator et rector; ita apud te sit pro nobis perpetuus intercessor. Per Dominum."
+        notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glt.htm#yr, Collect; registered secondary 2002 PDF, artifact p. 526. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
       - name: First Reading
         source: scripture
         verses:
@@ -69806,14 +70107,16 @@ sections:
         These are bounded English antiphon facts, without antiphon wording, orations, complete Latin2008 formulary
         identity, or publication-right promotion. This catalogue still carries no Common forms/slots or automatic
         dated/Common selection; its whole-form unavailability does not mean no English antiphon exemplar is held.
+        The Latin 2002 comparison is available at https://www.clerus.org/bibliaclerusonline/en/glt.htm#zr.
     - key: commune-beatae-mariae-virginis
       name: Commune Beatae Mariae Virginis
       registry: pc-C-beatae-mariae-virginis
       text_status:
-        state: unavailable
+        state: partial
         scope: missal-formulary
         reasons:
-        - kind: no-exemplar
+        - kind: witness-gap
+          source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008
       notes: >-
         The Common is catalogued from the De Communi heading of the Ordo lectionum Missae 1981, whose Communia reading
         options are distinct from a Missal formulary. The held registered 2010 English ICEL Antiphonary, artifact
@@ -69821,30 +70124,78 @@ sections:
         form contexts and twenty-four Entrance/Communion options, with source conditions for Ordinary Time, Advent,
         Christmas Time and Easter Time. All antiphon role headings are visibly printed, including both roles in
         Ordinary Time form 8. These facts establish neither oration bodies, complete Latin2008 form identity/wording,
-        nor a publication grant. This catalogue still carries no Common forms/slots or automatic dated/Common
-        selection; its whole-form unavailability does not mean no English antiphon exemplar is held.
+        nor a publication grant.
+        The selected prayers belong to the named 2002 digital formularies. The complete 2008 formulary and its correspondence remain unverified. The 1981 Lectionary and 2010 Antiphonary supply independent, role-specific choices. No dated celebration selects one of these numbered forms by default.
+        Latin 2002 comparison: https://www.clerus.org/bibliaclerusonline/en/glt.htm#zt
+      forms:
+      - id: ordinary-time-1
+        name: "Ordinary Time, formulary 1 (2002 witness)"
+        propers:
+        - name: Collect
+          source: composed
+          text: "Concede nos famulos tuos, quaesumus, Domine Deus, perpetua mentis et corporis sanitate gaudere: et, gloriosa beatae Mariae semper Virginis intercessione, a praesenti liberari tristitia, et aeterna perfrui laetitia. Per Dominum."
+          notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glt.htm#zu, Ordinary Time, formulary 1 (2002 witness), Collect; registered secondary 2002 PDF, artifact p. 540. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
     - key: commune-martyrum
       name: Commune Martyrum
       registry: pc-C-martyrum
       text_status:
-        state: unavailable
+        state: partial
         scope: missal-formulary
         reasons:
-        - kind: no-exemplar
+        - kind: witness-gap
+          source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008
       notes: >-
-        The Common of Martyrs is named from the De Communi heading of the Ordo
-        lectionum Missae 1981. The held 2010 English ICEL Antiphonary, artifact
-        pages 160-166 (printed 152-158), establishes source-local antiphon
-        subdivisions outside and during Easter Time, for several or one martyr,
-        missionary martyrs, a virgin martyr, and a holy woman martyr: 14 local
-        groups and 50 printed options, 25 each for Entrance and Communion. These
-        English antiphons are not a complete target Missal formulary exemplar
-        and are not carried in this identity entry. The Ordo's Common directions
-        and the Antiphonary's category headings do not appoint an exact per-role
-        selection automatically. Exact target-2008 form and body correspondence,
-        Latin wording, and the rest of the formulary remain unestablished here;
-        source citations do not establish an exact approved English body from
+        The Common of Martyrs is named from the De Communi heading of the Ordo lectionum Missae 1981. The held 2010
+        English ICEL Antiphonary, artifact pages 160-166 (printed 152-158), establishes source-local antiphon
+        subdivisions outside and during Easter Time, for several or one martyr, missionary martyrs, a virgin martyr,
+        and a holy woman martyr: 14 local groups and 50 printed options, 25 each for Entrance and Communion. These
+        English antiphons are not a complete target Missal formulary exemplar and are not carried in this identity
+        entry. The Ordo's Common directions and the Antiphonary's category headings do not appoint an exact per-role
+        selection automatically. Exact target-2008 form and body correspondence, Latin wording, and the rest of the
+        formulary remain unestablished here; source citations do not establish an exact approved English body from
         Bible carriers. Absent, not omitted.
+        The selected prayers belong to the named 2002 digital formularies. The complete 2008 formulary and its correspondence remain unverified. The 1981 Lectionary and 2010 Antiphonary supply independent, role-specific choices. No dated celebration selects one of these numbered forms by default.
+        Latin 2002 comparison: https://www.clerus.org/bibliaclerusonline/en/glt.htm#zy
+      forms:
+      - id: several-outside-easter-2
+        name: "Several martyrs outside Easter Time, formulary 2 (2002 witness)"
+        propers:
+        - name: Prayer over the Offerings
+          source: composed
+          text: "Fiat tibi, quaesumus, Domine, hostia sacranda placabilis, pretiosi celebritate martyrii: quae et peccata nostra purificet, et tuorum tibi vota conciliet famulorum. Per Christum."
+          notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glt.htm#z0, Several martyrs outside Easter Time, formulary 2 (2002 witness), Prayer over the Offerings; registered secondary 2002 PDF, artifact p. 550. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
+      - id: several-outside-easter-3
+        name: "Several martyrs outside Easter Time, formulary 3 (2002 witness)"
+        propers:
+        - name: Collect
+          ordinary_disposition:
+            kind: alternative
+            group: collect
+            option: first
+            basis: The 2002 Missal prints two Collects for this form, separated by Vel (Biblia Clerus, Common of Martyrs I.A.3; PDF artifact p. 551).
+          source: composed
+          text: "Fraterna nos, Domine, Martyrum tuorum corona laetificet: quae et fidei nostrae praebeat incrementa virtutum; et multiplici nos suffragio consoletur. Per Dominum."
+          notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glt.htm#z0, Several martyrs outside Easter Time, formulary 3 (2002 witness), Collect; registered secondary 2002 PDF, artifact p. 551. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
+        - name: Collect
+          ordinary_disposition:
+            kind: alternative
+            group: collect
+            option: second
+            basis: The 2002 Missal prints two Collects for this form, separated by Vel (Biblia Clerus, Common of Martyrs I.A.3; PDF artifact p. 551).
+          source: composed
+          text_status:
+            state: unavailable
+            scope: proper-body
+            reasons:
+            - kind: witness-gap
+              source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008
+      - id: several-easter-1
+        name: "Several martyrs in Easter Time, formulary 1 (2002 witness)"
+        propers:
+        - name: Prayer over the Offerings
+          source: composed
+          text: "In tuorum, Domine, pretiosa morte iustorum sacrificium illud offerimus, de quo martyrium sumpsit omne principium. Per Christum."
+          notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glt.htm#z3, Several martyrs in Easter Time, formulary 1 (2002 witness), Prayer over the Offerings; registered secondary 2002 PDF, artifact p. 557. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
     - key: commune-pastorum
       name: Commune Pastorum
       registry: pc-C-pastorum
@@ -69867,6 +70218,7 @@ sections:
         witness. Its wording is not carried here; no dated Common choice, Latin body,
         target-2008 identity or publication right is established. The whole-formulary
         unavailable status remains applicable.
+        The Latin 2002 comparison is available at https://www.clerus.org/bibliaclerusonline/en/glu.htm#a0e.
     - key: commune-doctorum-ecclesiae
       name: Commune Doctorum Ecclesiae
       registry: pc-C-doctorum-ecclesiae
@@ -69889,6 +70241,7 @@ sections:
         establish complete Latin 2008 formularies, their exact bodies or
         whole-form correspondence. No complete Latin 2008 formulary or payload
         basis is established here.
+        The Latin 2002 comparison is available at https://www.clerus.org/bibliaclerusonline/en/glu.htm#a0o.
     - key: commune-virginum
       name: Commune Virginum
       registry: pc-C-virginum
@@ -69911,28 +70264,43 @@ sections:
         English antiphon evidence does not establish complete Latin 2008
         formularies, their exact bodies or whole-form correspondence. No
         complete Latin 2008 formulary or payload basis is established here.
+        The Latin 2002 comparison is available at https://www.clerus.org/bibliaclerusonline/en/glu.htm#a0p.
     - key: commune-sanctorum
       name: Commune Sanctorum et Sanctarum
       registry: pc-C-sanctorum
       text_status:
-        state: unavailable
+        state: partial
         scope: missal-formulary
         reasons:
-        - kind: no-exemplar
+        - kind: witness-gap
+          source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008
       notes: >-
-        The Common of Holy Men and Women. The Ordo lectionum Missae 1981
-        supplies the De Communi heading and interchangeable lectionary
-        options, not a Missal formulary. The held ICEL 2010 English
-        Antiphonary, artifact
-        e6b82741acc77fb5e0d7c887813f6f2652b4ec088abc8526f5c77320e9762aca,
-        artifact pages 176-182 (printed 168-174), establishes fifteen
-        Entrance/Communion sections, with twenty-three Entrance and
-        twenty-four Communion provisions. Their per-role option counts match
-        the prior 2002 secondary digital Common inventory. Printed
-        restrictions for public office and a woman religious remain attached
-        to their individual options; the Holy Women section explicitly refers
-        a martyr to printed page 158. Easter Time additions remain
-        conditional. This positive English antiphon evidence does not
-        establish complete Latin 2008 formularies, their exact bodies or
-        whole-form correspondence. No complete Latin 2008 formulary or payload
-        basis is established here.
+        The Common of Holy Men and Women. The Ordo lectionum Missae 1981 supplies the De Communi heading and
+        interchangeable lectionary options, not a Missal formulary. The held ICEL 2010 English Antiphonary, artifact
+        e6b82741acc77fb5e0d7c887813f6f2652b4ec088abc8526f5c77320e9762aca, artifact pages 176-182 (printed 168-174),
+        establishes fifteen Entrance/Communion sections, with twenty-three Entrance and twenty-four Communion
+        provisions. Their per-role option counts match the prior 2002 secondary digital Common inventory. Printed
+        restrictions for public office and a woman religious remain attached to their individual options; the Holy
+        Women section explicitly refers a martyr to printed page 158. Easter Time additions remain conditional. No
+        complete Latin 2008 formulary or payload basis is established here.
+        The selected prayers belong to the named 2002 digital formularies. The complete 2008 formulary and its correspondence remain unverified. The 1981 Lectionary and 2010 Antiphonary supply independent, role-specific choices. No dated celebration selects one of these numbered forms by default.
+        Latin 2002 comparison: https://www.clerus.org/bibliaclerusonline/en/glu.htm#a0s
+      forms:
+      - id: several-saints-2
+        name: "Several saints, formulary 2 (2002 witness)"
+        propers:
+        - name: Collect
+          source: composed
+          text: "Deus, qui nos conspicis ex nostra infirmitate deficere: ad amorem tuum nos misericorditer per Sanctorum tuorum exempla restaura. Per Dominum."
+          notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glu.htm#a0u, Several saints, formulary 2 (2002 witness), Collect; registered secondary 2002 PDF, artifact p. 581. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
+        - name: Prayer over the Offerings
+          source: composed
+          text: "Praesta nobis, quaesumus, omnipotens Deus: ut nostrae humilitatis oblatio, et pro tuorum tibi grata sit honore Sanctorum, et nos corpore pariter et mente purificet. Per Christum."
+          notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glu.htm#a0u, Several saints, formulary 2 (2002 witness), Prayer over the Offerings; registered secondary 2002 PDF, artifact p. 581. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
+      - id: several-saints-3
+        name: "Several saints, formulary 3 (2002 witness)"
+        propers:
+        - name: Prayer after Communion
+          source: composed
+          text: "Sacramentorum tuorum, Domine, communio sumpta nos salvet: et in tuae veritatis luce confirmet. Per Christum."
+          notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glu.htm#a0u, Several saints, formulary 3 (2002 witness), Prayer after Communion; registered secondary 2002 PDF, artifact p. 582. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."

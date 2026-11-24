@@ -56,6 +56,43 @@ class WeekdayOrationTests(unittest.TestCase):
           assert.equal(m.selectWeekdayOrations({...i,derived:selected.derived,owner:'ot-3'}).selection.owner,'ot-3');
         """)
 
+    def test_thin_day_lists_all_validated_sources_and_fetches_only_the_selected_body(self):
+        self.model(r"""
+          const payload=require(process.argv[1].replace('assembly-model.js','reader-proper-payload.js'));
+          globalThis.LiturgyReaderProperPayload=payload;
+          const day=require(process.argv[1].replace('assembly-model.js','day-read-payload.js'));
+          const calendar='postconciliar', derived=m.derive({...i,date:'2026-01-12'});
+          const full=m.weekdayOrationChoices({...i,derived}), generation='1'.repeat(64);
+          const file='structure/propers/reader/'+calendar+'.json';
+          const masses=i.structure.masses.map(row=>{
+            const descriptor={...row,payload:'structure/propers/mass/'+calendar+'/'+row.key+'.json'};
+            delete descriptor.propers;return descriptor;
+          });
+          const index={missals:[{id:calendar,reader_index:true,reader_file:file}]};
+          const structure={schema:'triptych-propers-structure/v1',generation,calendar,reader_index:true,masses};
+          const requests=[];
+          const load=where=>{
+            if(where===file)return structure;
+            const key=where.split('/').at(-1).replace(/\.json$/,'');
+            requests.push(key);
+            return {schema:payload.MASS_SCHEMA,generation,calendar,mass:i.structure.masses.find(row=>row.key===key)};
+          };
+          (async()=>{
+            const request={index,load,missal:calendar,mode:'read',derived};
+            const open=await day.loadStructure({...request,parsed:{recognized:{},present:[]}});
+            assert.deepEqual(m.weekdayOrationChoices({...i,derived,structure:open}),full);
+            assert.ok(full.options.every(row=>!requests.includes(row.id)));
+            assert.throws(()=>m.selectWeekdayOrations({...i,derived,structure:open,owner:'ot-2'}));
+            const chosen=await day.loadStructure({...request,parsed:{
+              recognized:{'oration-mass':'ot-2'},present:['oration-mass']}});
+            assert.deepEqual(requests.filter(key=>full.options.some(row=>row.id===key)),['ot-2']);
+            assert.equal(m.selectWeekdayOrations({...i,derived,structure:chosen,owner:'ot-2'}).selection.owner,'ot-2');
+            assert.deepEqual(m.weekdayOrationChoices({...i,derived,structure:chosen}),full);
+            chosen.masses.find(row=>row.key==='ot-2').propers=[];
+            assert.throws(()=>m.selectWeekdayOrations({...i,derived,structure:chosen,owner:'ot-2'}));
+          })().catch(error=>{console.error(error);process.exitCode=1;});
+        """)
+
     def test_permission_never_applies_to_feast_sunday_other_season_or_bad_owner(self):
         self.model("""
           for(const date of ['2026-01-11','2026-02-02','2026-02-19','2026-04-06']) {

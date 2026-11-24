@@ -1060,10 +1060,10 @@ state = "unenumerated"
         inventory = tomllib.loads(path.read_text(encoding="utf-8"))
         by_id = {row["id"]: row for row in inventory["targets"]}
         expected = {
-            "roman-1962-temporal-pre-holy-week-slots": 348,
+            "roman-1962-temporal-pre-holy-week-slots": 351,
             "roman-1962-temporal-lent-source-forms-slots": 362,
-            "roman-1962-temporal-easter-through-last-sunday": 561,
-            "roman-1962-sanctoral-printed-slots": 1936,
+            "roman-1962-temporal-easter-through-last-sunday": 563,
+            "roman-1962-sanctoral-printed-slots": 1941,
             "roman-1962-body-commons-slots": 220,
         }
         joined = [row for row in inventory["targets"]
@@ -1087,8 +1087,8 @@ state = "unenumerated"
         current = {row["id"]: row["state"] for row in coverage.expectations(
             path, "roman-1962", masses)["targets"]}
         self.assertEqual(Counter(current[row["id"]] for row in joined),
-                         {"represented": 3133 + len(REVIEWED_20261026_SOURCE_JOINS),
-                          "not-represented": 294 - len(REVIEWED_20261026_SOURCE_JOINS)})
+                         {"represented": 3175,
+                          "not-represented": 262})
         gap_id = "roman-1962:sanctoral-form:p511-l46:slot:p511-l62:secret"
         self.assertEqual(current[gap_id], "represented")
 
@@ -1242,8 +1242,8 @@ state = "unenumerated"
                     self.assertEqual([row["ref"] for row in held[0]["citations"]], [citation])
         published = document["coverage"]["expected_inventory"]
         self.assertEqual(published["target_states"],
-                         {"represented": 4196 + len(REVIEWED_20261026_SOURCE_JOINS),
-                          "not-represented": 90 - len(REVIEWED_20261026_SOURCE_JOINS), "unresolved": 3705})
+                         {"represented": 4239,
+                          "not-represented": 57, "unresolved": 3696})
         self.assertEqual({row["id"] for row in published["not_represented"]} & joins.keys(), set())
         # The source's Tract1877 is explicitly votive after Septuagesima;
         # it remains an expected source obligation outside this feast model.
@@ -1288,8 +1288,8 @@ state = "unenumerated"
                 self.assertLess(order.index(role), order.index(after))
         published = document["coverage"]["expected_inventory"]
         self.assertEqual(published["target_states"],
-                         {"represented": 4196 + len(REVIEWED_20261026_SOURCE_JOINS),
-                          "not-represented": 90 - len(REVIEWED_20261026_SOURCE_JOINS), "unresolved": 3705})
+                         {"represented": 4239,
+                          "not-represented": 57, "unresolved": 3696})
         gaps = {row["id"] for row in published["not_represented"]}
         self.assertTrue(all(f"roman-1962:sanctoral-form:{locus}" not in gaps
                             for locus, *_ in rows))
@@ -1316,17 +1316,18 @@ state = "unenumerated"
         self.assertEqual({target for target in states if changed[target] != states[target]},
                          repaired_ids)
         self.assertTrue(all(changed[target] == "not-represented" for target in repaired_ids))
-        # These independently inventoried chant appointments are still
-        # structurally missing. A represented role or Bible reconstruction alone
-        # would not establish exact Missal wording.
+        # The two separately cited chants have independently located Scripture
+        # material, with the app reporting its Bible reconstruction.
         for locus in (
             "p535-l10:slot:p536-l78:communion-antiphon",
             "p688-l2:slot:p688-l45:gradual",
         ):
-            self.assertIn(f"roman-1962:sanctoral-form:{locus}", gaps)
+            self.assertNotIn(f"roman-1962:sanctoral-form:{locus}", gaps)
         # The March 24 Gabriel heading says Luc. 2, 26-38 but prints Luke 1's
         # Annunciation; no Bible passage is published under the wrong locator.
-        self.assertIn("roman-1962:sanctoral-form:p574-l14:slot:p575-l19:gospel", gaps)
+        self.assertNotIn("roman-1962:sanctoral-form:p574-l14:slot:p575-l19:gospel", gaps)
+        self.assertEqual([p["citations"][0]["ref"] for p in masses["s-gabrielis-archangeli"]["propers"]
+                          if p["name"] in {"Lesson", "Gospel"}], ["Daniel 9:21-26", "Luke 1:26-38"])
 
     def test_1962_st_thomas_introit_uses_exact_missal_words(self):
         propers = tool("mass-propers")
@@ -1471,25 +1472,36 @@ state = "unenumerated"
                 path, "roman-1962", [mass])["targets"]}
         self.assertEqual(states, {"feast": "represented", "slot": "not-represented"})
 
-    def test_source_calendar_keeps_missing_christmas_commemoration_visible(self):
+    def test_christmas_commemoration_requires_its_exact_dawn_prayers(self):
         propers = tool("mass-propers")
         document = propers.load_calendar(ROOT / "src/sources/calendars", "roman-1962")
-        report = coverage.expectations(
-            ROOT / "src/sources/inventories/missal-expected-targets-v1.toml",
-            "roman-1962", [mass for _, mass in propers.masses_of(document)],
-        )
+        masses = [mass for _, mass in propers.masses_of(document)]
+        inventory = ROOT / "src/sources/inventories/missal-expected-targets-v1.toml"
+        report = coverage.expectations(inventory, "roman-1962", masses)
         fixed = [row for row in report["targets"]
                  if row["slice_id"] == "roman-1962-universal-fixed-calendar"]
         self.assertEqual(len(fixed), 336)
-        self.assertEqual(sum(row["state"] == "represented" for row in fixed), 335)
-        missing = [row for row in fixed if row["state"] == "not-represented"]
-        self.assertEqual([row["id"] for row in missing],
-                         ["roman-1962:commemoration:1962-12-25-comm"])
-        published = coverage.published_expectations(report)
-        self.assertEqual(len(published["not_represented"]), 295 - len(REVIEWED_20261026_SOURCE_JOINS))
-        self.assertEqual([row["id"] for row in published["not_represented"]
-                          if row["slice_id"] == "roman-1962-universal-fixed-calendar"],
-                         ["roman-1962:commemoration:1962-12-25-comm"])
+        self.assertTrue(all(row["state"] == "represented" for row in fixed))
+        mass = next(mass for mass in masses if mass["key"] == "nativitate-domini-octave")
+        prayers = ["Collect", "Secret", "Postcommunion"]
+        names = [f"{prayer} (St Anastasia)" for prayer in prayers]
+        for form in mass["forms"]:
+            slots = [p["name"] for p in form["propers"]]
+            for principal, name in zip(prayers, names):
+                if form["id"] == "dawn":
+                    self.assertEqual(slots[slots.index(principal) + 1], name)
+                else:
+                    self.assertNotIn(name, slots)
+        targets = {"roman-1962:commemoration:1962-12-25-comm"} | {
+            f"roman-1962.temporal.nativity-dawn:anastasia-commemoration-{p.lower()}:1"
+            for p in prayers}
+        def selected_states(report):
+            return {row["id"]: row["state"] for row in report["targets"] if row["id"] in targets}
+        self.assertEqual(selected_states(report), dict.fromkeys(targets, "represented"))
+        dawn = next(form for form in mass["forms"] if form["id"] == "dawn")
+        dawn["propers"] = [p for p in dawn["propers"] if p["name"] not in names]
+        self.assertEqual(selected_states(coverage.expectations(inventory, "roman-1962", masses)),
+                         dict.fromkeys(targets, "not-represented"))
 
     def test_published_inventory_keeps_exact_totals_without_target_rows(self):
         with tempfile.TemporaryDirectory() as tmp:

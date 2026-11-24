@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-24-anastasia.christmas-dawn-anastasia-2a7a1a40"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-24-anastasia"
+storage = "tracked"
+rights_jurisdiction = "United States"
+retrieved = "2026-11-24"
+encoding = "utf-8"
+indexable = true
+sha256 = "2a7a1a405dac18bed3584671e1c77c2a588f50609a93868200c95841b74a6a50"
+byte_size = 540
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-24-anastasia/artifacts/christmas-dawn-anastasia-2a7a1a40/latin.txt"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+rights_status = "project-created"
+rights_basis = "The 1922 printing is public domain in the United States. Triptych offers its editorial work under CC BY 4.0."
+projected_from = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+provenance = "1922 Tours Mame, printed pp. 22–23 (PDF pp. 136–137), petitions and Per Dominum cues; printed p. 254 (PDF p. 368), full Father-directed conclusion. The 1962 target controls the printed stopping point."
+transformation = "Join line wraps, expand ligatures, remove stress accents, use consonantal j, reproduce the target pointing and printed extent of each conventional conclusion."
