@@ -6263,7 +6263,7 @@ state = "complete"
 [[deliverables]]
 id = "advent-puzzle-source-concordance-2026-11-23"
 owner = "src/sources/works"
-promise = "Pin the twenty-eight Old Testament scenes of the Advent puzzle to identified verses and document the domestic church, the household crèche, the Lateran dedication and the Byzantine reception of the Nativity in identified witnesses."
+promise = "Pin the twenty-eight Old Testament scenes of the Advent puzzle to identified verses and document the domestic church, the household crèche, the Lateran dedication and the Byzantine reception of the Nativity in identified witnesses. Locate Eastern Christian works that show how an individual narrative panel can be read."
 state = "complete"
 
   [[deliverables.requirements]]
@@ -6336,4 +6336,19 @@ state = "complete"
     "src/sources/works/greek-orthodox-archdiocese-of-america/nativity-vesperal-liturgy/editions/2026-11-23-digital-chant-stand/passages/vespers-sticheron-4.toml",
     "src/sources/works/greek-orthodox-archdiocese-of-america/nativity-vesperal-liturgy/editions/2026-11-23-digital-chant-stand/passages/readings-1-8.toml",
     "src/sources/works/byzantine-and-christian-museum/nativity-bxm-13109/editions/2026-11-23-english-catalogue/passages/composition.toml",
+  ]
+
+  [[deliverables.requirements]]
+  id = "independent-narrative-panels"
+  criterion = "Locate a named Old Testament narrative and the handling of gesture, scale, frame and inscription in individually legible Eastern Christian pictures. Identify the objects, their distinct uses and the bounds of comparison."
+  status = "pass"
+  evidence = [
+    "src/sources/works/metropolitan-museum-of-art/david-plates-activities-for-learning/editions/2001-a-closer-look/passages/david-anointed.toml",
+    "src/sources/works/icon-museum-and-study-center/hospitality-of-abraham-l2025-01-2/editions/2026-11-24-collection-record/passages/catalogue.toml",
+    "src/sources/works/icon-museum-and-study-center/hospitality-of-abraham-l2025-01-2/editions/2026-11-24-collection-record/passages/table-and-visitors.toml",
+    "src/sources/works/walters-art-museum/diptych-icon-with-feasts-61-174/editions/2026-11-24-object-record/passages/opening-for-prayer.toml",
+    "src/sources/works/walters-art-museum/diptych-icon-with-feasts-61-174/editions/2026-11-24-object-record/passages/three-by-three.toml",
+    "src/sources/works/metropolitan-museum-of-art/icon-with-christ-pantepotes-468607/editions/2026-11-24-collection-record/passages/dimensions.toml",
+    "src/sources/works/metropolitan-museum-of-art/icon-with-christ-pantepotes-468607/editions/2026-11-24-collection-record/passages/central-plaque.toml",
+    "src/sources/works/george-bartlett/christ-pantepoptes-inscriptions/editions/2026-04-22-courtauld-abstract/passages/naming-inscriptions.toml",
   ]

@@ -15400,3 +15400,26 @@ cave. The mounted Magi, shepherds and angels occupy different parts
 of the image around them. The catalogue places Joseph at lower left and
 the bath at lower right. Those positions belong to this particular icon.
 [The museum’s description](src/sources/works/byzantine-and-christian-museum/nativity-bxm-13109/editions/2026-11-23-english-catalogue/passages/composition.toml)
+
+### Individual narrative panels, 2026-11-24
+
+The Advent sequence now calls for an independent sacred picture for each
+reading. The new source requirement asks how an Eastern Christian artist
+distinguishes an episode, its participants and the action at a small scale.
+The earlier Nativity records remain evidence for that composition.
+
+On the [silver David plate](src/sources/works/metropolitan-museum-of-art/david-plates-activities-for-learning/editions/2001-a-closer-look/passages/david-anointed.toml),
+the gap between the adults and the boy gives the oil horn room. A strip below
+their feet recalls Samuel’s sacrifice and David’s flock. In the Greek
+[Hospitality of Abraham](src/sources/works/icon-museum-and-study-center/hospitality-of-abraham-l2025-01-2/editions/2026-11-24-collection-record/passages/table-and-visitors.toml)
+the table sets the distance between the three visitors. Two smaller hosts
+lean in behind it. The museum reads the winged visitors in light of the Trinity.
+Genesis 18:1–15 describes three men and Sarah listening at the tent.
+
+The [Walters diptych](src/sources/works/walters-art-museum/diptych-icon-with-feasts-61-174/editions/2026-11-24-object-record/passages/opening-for-prayer.toml)
+opened for personal prayer. Its eighteen scenes occupy separate little
+arches. The historical descriptions leave the family free to choose questions,
+prayers and time for a contemporary use. On the [Met’s set of carved steatites](src/sources/works/metropolitan-museum-of-art/icon-with-christ-pantepotes-468607/editions/2026-11-24-collection-record/passages/central-plaque.toml),
+twelve narrative compartments surround the enthroned Christ. [George Bartlett](src/sources/works/george-bartlett/christ-pantepoptes-inscriptions/editions/2026-04-22-courtauld-abstract/passages/naming-inscriptions.toml)
+identifies Christ’s names in the carving. A museum’s present title for an
+episode and an artist’s inscription naming a person answer different questions.
