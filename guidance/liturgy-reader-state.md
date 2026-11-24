@@ -140,6 +140,11 @@ answer or a separately supplied deterministic source result; it has no first
 array, manifest, DOM, or incidental-source-order path. Multiple translation
 witnesses likewise remain unresolved unless the request identifies a witness.
 
+When the calendar cannot rank its candidates, `calendar-reading` carries
+`unresolved-reading-choice` with the resolver’s reason and readable
+formularies. Selecting a text keeps the appointment unsettled and the winner
+empty. Only the reader can select a candidate in this state.
+
 Cycle-bearing material on the calendar-independent Propers entrance follows
 the same rule. An explicitly requested held cycle selects only that cycle; an
 invalid explicit cycle fails closed; and a single held cycle is deterministic.

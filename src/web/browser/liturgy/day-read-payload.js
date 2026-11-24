@@ -47,7 +47,8 @@
     const reader = root.LiturgyReaderProperPayload;
     if (row && row.reader_index && reader) return reader.loadIndexed({
       load: input.load, calendar: input.missal, indexRow: row,
-      roots: reader.dayRoots(input.derived, input.parsed && input.parsed.recognized.mass)
+      roots: reader.dayRoots(input.derived, input.parsed && input.parsed.recognized.mass,
+        input.parsed && input.parsed.recognized['oration-mass'])
     });
     if (!key || !row || !row.read_payload || !reader) return input.load(monolith);
     try {

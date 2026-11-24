@@ -286,7 +286,8 @@
       orationsSelect.value = state.languages.orations;
       const readable = (runtime.branch && runtime.branch.readable) || [];
       // Do not let a native select preselect a coequal formulary.
-      if (readable.length > 1 && runtime.outcome !== 'unresolved' && runtime.mode !== 'compare') {
+      if (readable.length > 1 && runtime.result && runtime.result.resolved &&
+          runtime.mode !== 'compare') {
         T.fillSelect(formularySelect, readable.map(function (row) {
           return { value: row.key, label: (row.label || row.key) + ' — ' + row.state };
         }));

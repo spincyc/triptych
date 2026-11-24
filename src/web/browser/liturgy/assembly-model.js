@@ -2173,10 +2173,17 @@
     const options = (structure.masses || []).filter(function (mass) {
       const classified = (rubrics.keys || {})[mass.key];
       const basis = classified && basisOf(rubrics, classified.basis);
-      return owner.test(mass.key) && basis && basis.id === rule.owner_basis && mass.season === rule.season &&
-        !(mass.forms || []).length && scope.slots.every(function (slot) {
-          return (mass.propers || []).filter(function (proper) { return proper.name === slot; }).length === 1;
-        });
+      if (!owner.test(mass.key) || !basis || basis.id !== rule.owner_basis ||
+          mass.season !== rule.season || (mass.forms || []).length) return false;
+      // calendar-rubrics checks the exact slot count for every held key matching
+      // the owner rule before publishing it. A verified thin index can therefore
+      // list those owners before reading their bodies. The chosen body is checked
+      // below on selection, as it is for a complete structure.
+      if (!Array.isArray(mass.propers)) return structure.reader_index === true &&
+        mass.payload === 'structure/propers/mass/' + structure.calendar + '/' + mass.key + '.json';
+      return scope.slots.every(function (slot) {
+        return mass.propers.filter(function (proper) { return proper.name === slot; }).length === 1;
+      });
     }).map(function (mass) { return {id: mass.key, label: mass.name}; });
     return {id: rule.id, mass: target.key, slots: scope.slots.slice(), locus: scope.locus,
       evidence: scope.evidence, options: options, unavailable: rule.unavailable,
@@ -2186,7 +2193,9 @@
   function selectWeekdayOrations(input) {
     const choices = weekdayOrationChoices(input);
     const owner = choices && choices.options.find(function (row) { return row.id === input.owner; });
-    if (!owner) throw new Error('the requested weekday oration source is not available for this selection');
+    if (!owner || !input.structure.masses.some(function (mass) {
+      return mass.key === owner.id && Array.isArray(mass.propers);
+    })) throw new Error('the requested weekday oration source is not available for this selection');
     if (!input.year) throw new Error('selectWeekdayOrations needs the original calendar year');
     const selection = {id: choices.id, mass: choices.mass, owner: owner.id, label: owner.label,
       slots: choices.slots, locus: choices.locus, evidence: choices.evidence,

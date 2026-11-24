@@ -257,7 +257,7 @@ try {
     ['postconciliar EP II', '#date=2026-11-29&missal=postconciliar&mass=advent-1&eucharistic-prayer=ep-ii'],
     ['postconciliar EP I', '#date=2026-11-29&missal=postconciliar&mass=advent-1&eucharistic-prayer=ep-i'],
     ['Ash Wednesday', '#date=2026-02-18&missal=roman-1962&mass=ash-wednesday'],
-    ['unframed Ember Saturday', '#date=2026-12-19&missal=roman-1962&mass=advent-ember-saturday&form=longer'],
+    ['longer Ember Saturday', '#date=2026-12-19&missal=roman-1962&mass=advent-ember-saturday&form=longer'],
     ['postconciliar Proper alternatives', '#date=2026-05-24&missal=postconciliar&mass=pentecost&form=day'],
     ['all territorial branches', '#date=2026-01-04&missal=postconciliar&eucharistic-prayer=ep-ii']
   ];

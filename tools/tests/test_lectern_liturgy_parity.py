@@ -24,6 +24,44 @@ def words(blocks: list[dict]) -> str:
 
 @unittest.skipUnless(shutil.which("node"), "the browser models require node")
 class LiturgyParityTests(unittest.TestCase):
+    def test_global_epiphany_choice_preserves_other_territory_and_share(self) -> None:
+        selection = {"mass": "epiphany", "form": "vigil", "ordinary": True}
+        rows = bridge.call("liturgy", "day", "postconciliar", "2027-01-03", selection)["rows"]
+        self.assertEqual(len(rows), 2)
+        self.assertTrue(all(not row.get("failed") and row.get("events") for row in rows))
+        self.assertEqual(sum(row["mass"]["key"] == "epiphany" for row in rows), 1)
+        route = bridge.call("liturgy", "readerUrl", "day", "postconciliar", "2027-01-03", selection)
+        self.assertIn("form=vigil", route)
+        self.assertEqual(bridge.call("liturgy", "openReaderLink", "https://mystago.gy/" + route, "day")["intent"]["mass"], "epiphany")
+        studied = bridge.call("liturgy", "studyDay", "postconciliar", "2027-01-03", selection)
+        self.assertEqual(len(studied), len(rows))
+
+    def test_territorial_headings_keep_the_explicit_displaced_reading_and_its_standing(self) -> None:
+        view = bridge.call("liturgy", "day", "postconciliar", "2027-01-03", {"mass": "most-holy-name-jesus"})
+        self.assertTrue(view["multiple"])
+        for row in view["rows"]:
+            self.assertEqual(row["heading"]["title"], row["mass"]["name"])
+            self.assertEqual(row["resolved"]["standing"], "displaced")
+            self.assertNotEqual(row["title"], row["branch"]["winner"]["name"])
+
+    def test_ordinary_sources_follow_rendered_elements_and_selected_eucharistic_prayer(self) -> None:
+        from lectern.missal import witness_label
+
+        pdf = "https://www.liturgyoffice.org.uk/Missal/Text/EP2-A4.pdf#page=1"
+        for variant in ("ep-ii", "ep-iii"):
+            selected = bridge.call("liturgy", "propers", "postconciliar", "advent-1",
+                                   {"ordinary": True, "cycle": "A", "variants": {"eucharistic-prayer": variant}})
+            links = selected["ordinaryWitnessLinks"]
+            self.assertEqual(pdf in {r["url"] for r in links}, variant == "ep-ii")
+            card = next(r for r in links if set(r.get("languages", [])) == {"en", "la"})
+            self.assertIn("Latin", witness_label(card))
+            self.assertIn("English", witness_label(card))
+            self.assertTrue(all(r["scope"] == "ordinary" for r in links))
+        friday = bridge.call("liturgy", "day", "postconciliar", "2027-03-26", {"ordinary": True})
+        self.assertEqual(friday["rows"][0]["ordinaryWitnessLinks"], [])
+        read = bridge.call("liturgy", "propers", "postconciliar", "advent-1", {})
+        self.assertEqual(read["ordinaryWitnessLinks"], [])
+
     def test_the_ordinary_language_default_matches_both_page_owners(self) -> None:
         default = bridge.call("liturgy", "opening")["defaultOrdinaryLanguage"]
         for name in ("day-reader.js", "propers-reader.js"):
@@ -187,6 +225,244 @@ class LiturgyParityTests(unittest.TestCase):
 
 @unittest.skipUnless(importlib.util.find_spec("textual") and shutil.which("node"), "Textual and node are required")
 class SurfaceParityTests(unittest.IsolatedAsyncioTestCase):
+    async def test_exact_missal_witness_can_be_opened_and_copied_from_settings(self) -> None:
+        from unittest.mock import patch
+        from lectern.app import TriptychApp
+        from lectern.dialogs import MissalSource
+        from lectern.snapshot import _settle
+        from lectern.surfaces.day import Day
+        from lectern.surfaces.propers import Propers
+
+        for surface, target in [(Day, {"date": "2026-11-29"}), (Propers, {"mass": "commune-doctorum-ecclesiae"})]:
+            app = TriptychApp(start=surface.label.lower(), intent={"calendar": "postconciliar", **target})
+            async with app.run_test(size=(60, 16)) as pilot:
+                await _settle(app, pilot)
+                reader = app.query_one(surface)
+                link = reader.source_rows()[0]["missalWitnessLinks"][0]
+                self.assertTrue(link["url"].startswith("https://"))
+                await pilot.press("comma", "end", "enter")
+                if not isinstance(app.screen, MissalSource):
+                    await pilot.press("home", "enter")
+                self.assertIsInstance(app.screen, MissalSource)
+                self.assertIn(link["url"], app.screen.body.plain)
+                self.assertIn(link["locus"], app.screen.body.plain)
+                self.assertIn(link["source_id"], app.screen.body.plain)
+                self.assertIn(link["edition_label"], app.screen.body.plain)
+                with patch.object(app, "open_url") as opened, patch.object(app, "copy_to_clipboard") as copied:
+                    await pilot.press("o", "c")
+                    opened.assert_called_once_with(link["url"])
+                    copied.assert_called_once_with(link["url"])
+                await pilot.press("escape")
+                await _settle(app, pilot)
+                await pilot.press("d")
+                await _settle(app, pilot)
+                self.assertIn(link["url"], app.screen.body.plain)
+
+    async def test_last_weekday_prayer_owner_is_visible_and_opens_its_source(self) -> None:
+        from lectern.app import TriptychApp
+        from lectern.dialogs import MissalSource
+        from lectern.snapshot import _settle, _text
+        from lectern.surfaces.day import Day
+        from textual.widgets import OptionList
+
+        app = TriptychApp(start="day", intent={"calendar": "postconciliar", "date": "2027-01-12"})
+        async with app.run_test(size=(60, 16)) as pilot:
+            await _settle(app, pilot)
+            day = app.query_one(Day)
+            await pilot.press("s", "end")
+            listing = app.screen.query_one(OptionList)
+            self.assertGreater(listing.scroll_y, 0)
+            self.assertIn("Thirty-third", _text(app, styles=False))
+            await pilot.press("enter")
+            await _settle(app, pilot)
+            row = day.source_rows()[0]
+            self.assertEqual(row["orationSelection"]["owner"], "ot-33")
+            self.assertTrue(row["orationWitnessLinks"])
+            await pilot.press("comma", "end", "enter")
+            if not isinstance(app.screen, MissalSource):
+                index = next(i for i, (_, label) in enumerate(app.screen.options)
+                             if "Prayers from Thirty-third" in label)
+                app.screen.query_one(OptionList).highlighted = index
+                await pilot.press("enter")
+            self.assertIn(row["orationWitnessLinks"][0]["url"], app.screen.body.plain)
+            self.assertIn("Prayers from Thirty-third", app.screen.body.plain)
+
+    async def test_missal_reading_keys_settings_and_pane_focus(self) -> None:
+        from lectern.app import TriptychApp
+        from lectern.dialogs import Pick
+        from lectern.snapshot import _settle, _text
+        from lectern.surfaces.day import Day
+        from lectern.surfaces.propers import Propers
+
+        for surface, target in [(Day, {"date": "2026-11-29"}), (Propers, {"mass": "advent-1", "cycle": "A"})]:
+            for size in [(60, 16), (140, 40)]:
+                with self.subTest(surface=surface.label, size=size):
+                    app = TriptychApp(start=surface.label.lower(), intent={
+                        "calendar": "postconciliar", "ordinary": True, **target})
+                    async with app.run_test(size=size) as pilot:
+                        await _settle(app, pilot)
+                        reader = app.query_one(surface)
+                        pane = reader.reading_panel()
+                        self.assertIs(app.focused, pane)
+                        page = pane.scrollable_content_region.height - 1
+                        for key, offset in [("down", 1), ("pagedown", page + 1), ("pageup", 1), ("up", 0)]:
+                            await pilot.press(key)
+                            self.assertEqual(pane.scroll_y, offset, key)
+                        await pilot.press("comma", "end")
+                        self.assertIsInstance(app.screen, Pick)
+                        self.assertIn("Latin companion", _text(app, styles=False))
+                        await pilot.press("escape", "f")
+                        await _settle(app, pilot)
+                        self.assertIs(app.focused, reader.query_one(reader.BROWSE))
+                        if size == (60, 16):
+                            for width, height in [(140, 40), size]:
+                                await pilot.resize_terminal(width, height)
+                                await _settle(app, pilot)
+                                self.assertIs(app.focused, reader.query_one(reader.BROWSE))
+                        await pilot.press("f")
+                        await _settle(app, pilot)
+                        self.assertIs(app.focused, pane)
+
+    def test_declared_versicle_response_and_priest_cues_share_spacing_and_ink(self) -> None:
+        from lectern.missal import blocks
+        from lectern.widgets import Ink
+
+        runs = [("℣.", ["vr-glyph"]), ("℟", ["cue-mark"]), ("P", ["cue-mark"]),
+                ("Priest", ["speaker-tag", "is-priest"])]
+        fallback = blocks(Ink(), [{"runs": [
+            {"text": "Composed text — not scripture · Latin", "classes": ["composed-label"]},
+            {"text": "Orémus."}]}], missal_mode=True)
+        self.assertEqual(fallback.content().plain, "Latin\nOrémus.\n")
+        for source, classes in runs:
+            with self.subTest(source=source):
+                ink = blocks(Ink(), [{"runs": [{"text": source, "classes": classes},
+                                               {"text": "  Held words."}]}])
+                cue = "P" if source == "Priest" else source
+                self.assertEqual(ink.parts[0], (cue + "  ", "bold $rubric"))
+                self.assertEqual(ink.content().plain, cue + "  Held words.\n")
+
+    async def test_day_ordinary_picker_applies_a_choice_without_a_formulary_row(self) -> None:
+        from lectern.app import TriptychApp
+        from lectern.dialogs import Pick
+        from lectern.snapshot import _settle
+        from lectern.surfaces.day import Day
+        from textual.widgets import OptionList
+
+        app = TriptychApp(start="day", intent={"calendar": "postconciliar", "date": "2026-11-29",
+                                               "ordinary": True})
+        async with app.run_test(size=(80, 30)) as pilot:
+            await _settle(app, pilot)
+            day = app.query_one(Day)
+            await pilot.press("s")
+            await _settle(app, pilot)
+            self.assertIsInstance(app.screen, Pick)
+            target = ("eucharistic-prayer", "ep-ii")
+            picker = app.screen.query_one(OptionList)
+            picker.highlighted = next(index for index, (value, _) in enumerate(app.screen.options)
+                                      if value[2:4] == ("ordinary-variant", target))
+            await pilot.press("enter")
+            await _settle(app, pilot)
+            view = day.views["postconciliar"]
+            self.assertEqual(view["ordinary"]["selection"][target[0]], target[1])
+            ids = [item["id"] for item in view["rows"][0]["events"]]
+            self.assertIn("ordinary-element/prex-eucharistica/prex-eucharistica-ii", ids)
+            self.assertNotIn("ordinary-element/prex-eucharistica/te-igitur", ids)
+
+    async def test_day_witness_choices_belong_to_a_resolved_form_and_branch(self) -> None:
+        from lectern.app import TriptychApp
+        from lectern.dialogs import Pick
+        from lectern.snapshot import _settle
+        from lectern.surfaces.day import Day
+        from textual.widgets import OptionList
+
+        app = TriptychApp(start="day", intent={"calendar": "postconciliar", "date": "2027-05-09",
+                                               "orations": "en"})
+        async with app.run_test(size=(80, 30)) as pilot:
+            await _settle(app, pilot)
+            day = app.query_one(Day)
+            rows = day.views["postconciliar"]["rows"]
+            resolved = next(row for row in rows if not row.get("primaryDayChoice"))
+            unresolved = next(row for row in rows if row.get("primaryDayChoice"))
+            self.assertEqual(unresolved["mass"]["witnesses"], [])
+            await pilot.press("w")
+            await _settle(app, pilot)
+            self.assertIsInstance(app.screen, Pick)
+            options = [(value, label) for value, label in app.screen.options if value[1]]
+            self.assertTrue(options)
+            for (territory, _), label in options:
+                self.assertEqual(territory, resolved["option"])
+                self.assertIn(resolved["heading"]["label"], label)
+            app.screen.query_one(OptionList).highlighted = 1
+            await pilot.press("enter")
+            await _settle(app, pilot)
+            selection = day.selection()
+            self.assertEqual((selection["territory"], selection["witness"]), options[0][0])
+            (selected,) = day.views["postconciliar"]["rows"]
+            self.assertEqual(selected["option"], resolved["option"])
+            self.assertNotIn("failed", selected)
+
+    async def test_commemorated_st_isidore_can_be_read_while_a_conditional_observance_stays_open(self) -> None:
+        from lectern.app import TriptychApp
+        from lectern.snapshot import _settle
+        from lectern.surfaces.day import Day
+        from textual.widgets import OptionList
+
+        key = "s-isidori-episcopi-confessoris-ecclesiae-doctoris"
+        for iso in ("2031-04-04", "2036-04-04"):
+            with self.subTest(date=iso):
+                app = TriptychApp(start="day", intent={"calendar": "roman-1962", "date": iso, "ordinary": True})
+                async with app.run_test(size=(80, 30)) as pilot:
+                    await _settle(app, pilot)
+                    day = app.query_one(Day)
+                    self.assertEqual(day.source_rows()[0]["primaryDayChoice"], "seven-sorrows-where-devotions-are-held")
+                    await pilot.press("s")
+                    index = next(i for i, (v, label) in enumerate(app.screen.options)
+                                 if v[3] == key and "commemorated" in label)
+                    app.screen.query_one(OptionList).highlighted = index
+                    await pilot.press("enter")
+                    await _settle(app, pilot)
+                    row = day.source_rows()[0]
+                    self.assertEqual(row["mass"]["key"], key)
+                    self.assertEqual(row["resolved"]["standing"], "commemorated")
+                    self.assertEqual(row["title"], row["mass"]["name"])
+                    self.assertTrue(row["events"])
+
+    async def test_unsettled_occurrence_can_be_read_without_appointing_a_mass(self) -> None:
+        from lectern.app import TriptychApp
+        from lectern.dialogs import Pick
+        from lectern.snapshot import _settle
+        from lectern.surfaces.day import Day
+        from textual.widgets import OptionList
+
+        calendar, date = "postconciliar", "2033-06-24"
+        app = TriptychApp(start="day", intent={"calendar": calendar, "date": date})
+        async with app.run_test(size=(80, 30)) as pilot:
+            await _settle(app, pilot)
+            day = app.query_one(Day)
+            view = day.views[calendar]
+            self.assertEqual(view["title"], "Choose a formulary to read")
+            self.assertFalse(view["day"]["branches"][0]["settled"])
+            self.assertIsNone(view["day"]["branches"][0]["winner"])
+            self.assertEqual(view["rows"][0]["events"], [])
+            await pilot.press("s")
+            await _settle(app, pilot)
+            self.assertIsInstance(app.screen, Pick)
+            options = [(index, value) for index, (value, _) in enumerate(app.screen.options)
+                       if value[2] == "calendar-reading"]
+            self.assertEqual({value[3] for _, value in options},
+                             {"ot-12-friday", "most-sacred-heart-jesus", "nativity-saint-john-baptist"})
+            app.screen.query_one(OptionList).highlighted = next(
+                index for index, value in options if value[3] == "most-sacred-heart-jesus")
+            await pilot.press("enter")
+            await _settle(app, pilot)
+            (row,) = day.views[calendar]["rows"]
+            self.assertEqual(Day.resolved_key(row), "most-sacred-heart-jesus")
+            self.assertEqual(row["resolved"]["standing"], "unresolved")
+            self.assertFalse(row["branch"]["settled"])
+            self.assertIsNone(row["branch"]["winner"])
+            self.assertTrue(row["events"])
+            self.assertIn(row["branch"]["unsettled"][0]["why"], day.query_one("#day-text-a").content.plain)
+
     async def test_day_can_reselect_source_mass_and_forms_with_cli_event_parity(self) -> None:
         from lectern.app import TriptychApp
         from lectern.dialogs import Pick

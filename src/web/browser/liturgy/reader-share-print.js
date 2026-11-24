@@ -134,8 +134,11 @@
     let ties = [];
     let keptSides = [];
     let keptUnits = [];
+    let closedCoverage = null;
     const reading = function () { return doc.getElementById('reader-document'); };
     function clear() {
+      if (closedCoverage) closedCoverage.open = false;
+      closedCoverage = null;
       const current = reading();
       ties.forEach(function (tie) {
         // A reader rerender may have detached the old frame while print was open.
@@ -181,6 +184,11 @@
       clear();
       const shell = current.closest('.reader-instrument');
       if (!shell) return;
+      const coverage = shell.querySelector('.reader-coverage');
+      if (coverage && !coverage.open) {
+        closedCoverage = coverage;
+        coverage.open = true;
+      }
       // A short paired text and its own source qualifications travel as one
       // print unit. Long stanzas and readings remain free to paginate.
       current.querySelectorAll('.text-pair > .text-side').forEach(function (side) {
@@ -219,11 +227,11 @@
           let tail = note && note.previousElementSibling;
           // Credits are typed metadata of this same rendered Proper. They may
           // be empty for Latin, but still stand between its body and its note.
-          while (tail && tail.classList.contains('translation-credits')) {
+          while (tail && tail.matches('.translation-credits,.conclusion-source-quotation,.conclusion-execution-qualification,.conclusion-editorial-note')) {
             tail = tail.previousElementSibling;
           }
           if (!note || !note.classList.contains('study-event') ||
-              !tail || !tail.matches('.citation,.composed')) return;
+              !tail || !tail.matches('.citation,.composed,.conclusion-execution')) return;
           const tailHeight = tail.getBoundingClientRect().height;
           let attachmentHeight = 0;
           for (let node = tail; node; node = node.nextElementSibling) {
@@ -337,7 +345,9 @@
     context.textContent = 'Latin alongside translated prayers · Scripture uses the selected Bible edition.';
     context.hidden = true;
     const reading = doc.getElementById('reader-document');
-    if (reading) reading.before(context);
+    const coverage = shell.querySelector('.reader-coverage');
+    if (coverage) coverage.appendChild(context);
+    else if (reading) reading.before(context);
     function syncPresentation() {
       const state = currentState();
       paired.disabled = !state;

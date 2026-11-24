@@ -96,6 +96,28 @@ class Reading(ModalScreen[str | None]):
         self.query_one(VerticalScroll).focus()
 
 
+class MissalSource(Reading):
+    """An identified external missal witness, usable by URL or keyboard."""
+
+    BINDINGS = [Binding("o", "open_witness", "open source"), Binding("c", "copy_url", "copy URL")]
+
+    def __init__(self, title: str, link: dict) -> None:
+        from .missal import witness_label
+        from .widgets import Ink
+
+        self.url = link["url"]
+        ink = Ink().line(title, "bold").line(witness_label(link)).line(link["locus"])
+        ink.line(link["source_id"], "$text-muted").line().line(self.url)
+        super().__init__("Missal source", ink.content(), "o open · c copy URL · esc close", walks=False)
+
+    def action_open_witness(self) -> None:
+        self.app.open_url(self.url)
+
+    def action_copy_url(self) -> None:
+        self.app.copy_to_clipboard(self.url)
+        self.app.notify("Source URL copied")
+
+
 class Pick(ModalScreen[str | None]):
     """One choice among named options; nothing is preselected for the reader."""
 
@@ -106,15 +128,18 @@ class Pick(ModalScreen[str | None]):
         border: round $primary 65%; background: $surface; padding: 1 2;
     }
     Pick Static { color: $text-muted; padding: 0 0 1 0; }
-    Pick OptionList { border: none; background: transparent; padding: 0; height: auto; max-height: 30; }
+    Pick OptionList { border: none; background: transparent; padding: 0; height: 1fr; }
+    Pick.reading-settings > Vertical { height: 17; max-height: 95%; padding: 0 1; }
     Pick OptionList:focus { border: none; }
     """
     BINDINGS = [Binding("escape", "decline", "cancel")]
 
-    def __init__(self, title: str, options: list[tuple[str, object]], hint: str = "") -> None:
-        super().__init__()
+    def __init__(self, title: str, options: list[tuple[object, object]], hint: str = "",
+                 *, sections: dict[int, str] | None = None) -> None:
+        super().__init__(classes="reading-settings" if sections else None)
         self.title_text = title
         self.options = options
+        self.sections = sections or {}
         self.hint = hint
 
     def compose(self) -> ComposeResult:
@@ -122,11 +147,20 @@ class Pick(ModalScreen[str | None]):
         from textual.widgets.option_list import Option
 
         with Vertical() as box:
+            # Give the option list the remaining viewport, including when a
+            # narrow terminal wraps the hint or a choice onto multiple lines.
+            if not self.sections:
+                box.styles.height = min(34, max(8, len(self.options) + (7 if self.hint else 4)))
             box.border_title = titled(None, self.title_text)
             box.border_subtitle = "↑↓ choose · enter apply · esc cancel"
             if self.hint:
                 yield Static(self.hint)
-            yield OptionList(*[Option(label, id=str(index)) for index, (_, label) in enumerate(self.options)])
+            items = []
+            for index, (_, label) in enumerate(self.options):
+                if index in self.sections:
+                    items.append(Option(titled(None, self.sections[index]), disabled=True))
+                items.append(Option(label, id=str(index)))
+            yield OptionList(*items)
 
     def on_mount(self) -> None:
         from textual.widgets import OptionList

@@ -145,6 +145,9 @@ DAYS = [
     {"id": "pentecostMonday1962", "calendar": "roman-1962", "date": "2026-05-25"},
     {"id": "pentecostTuesday1962", "calendar": "roman-1962", "date": "2026-05-26"},
     {"id": "easterWednesday1962", "calendar": "roman-1962", "date": "2026-04-08"},
+    {"id": "borrowedChristmasFeria", "calendar": "roman-1962", "date": "2027-01-05"},
+    {"id": "borrowedEasterFeria", "calendar": "roman-1962", "date": "2027-05-14"},
+    {"id": "lentenSunday", "calendar": "roman-1962", "date": "2027-03-07"},
 ]
 
 
@@ -227,6 +230,22 @@ class OrdinaryAppointments(unittest.TestCase):
                 ordinary.index("canon/quam-oblationem"), key,
             )
             self.assertEqual(day["unresolved"], [], key)
+
+    def test_gloria_and_creed_follow_the_celebrated_office_and_octaves(self) -> None:
+        for day, gloria, creed in (
+            ("adventFeria1962", False, False), ("lentFeria1962", False, False),
+            ("lentenSunday", False, True), ("saturdayOurLady1962", True, False),
+            ("borrowedChristmasFeria", True, False), ("borrowedEasterFeria", True, False),
+            ("easterWednesday1962", True, True), ("pentecostVigil1962", True, False),
+            ("pentecostMonday1962", True, True), ("petrusPaulus1962", True, True),
+            ("annunciation1962", True, True), ("pentecostX1962", True, True),
+        ):
+            with self.subTest(day=day):
+                ordinary = self.report[day]["ordinary"]
+                for item, present in (("praeparatio/gloria-in-excelsis-heading", gloria),
+                                      ("praeparatio/gloria-in-excelsis", gloria),
+                                      ("oblatio/credo-heading", creed), ("oblatio/credo-in-unum-deum", creed)):
+                    self.assertEqual(item in ordinary, present, item)
 
     def test_ordinary_green_sunday_keeps_the_common_canon_forms(self) -> None:
         ordinary = self.report["pentecostX1962"]["ordinary"]

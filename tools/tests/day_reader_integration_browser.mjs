@@ -2069,7 +2069,8 @@ async function runAssertions(cdp, base) {
           row.scope === 'ordinary-frame:roman-1962') || null,
         frameLimitation: document.querySelector('.missal-frame-limitation')?.textContent
           .replace(/\\s+/g, ' ').trim() || '',
-        visibleNames: [...document.querySelectorAll('#reader-document .proper-name')]
+        prayerCues: [...document.querySelectorAll('.lesson-preparation')].map(node => node.textContent),
+        visibleNames: [...document.querySelectorAll('#reader-document [data-semantic-event-id^="proper/"] .proper-name')]
           .map(row => [...row.childNodes].find(node => node.nodeType === Node.TEXT_NODE)
             ?.textContent.trim() || '')
       };
@@ -2080,17 +2081,21 @@ async function runAssertions(cdp, base) {
     assert.equal(ember.mode, 'missal');
     assert.equal(ember.formulary, 'advent-ember-saturday');
     assert.equal(ember.form, 'longer');
-    assert.deepEqual(ember.eventIds, emberIds);
-    assert.deepEqual(ember.domIds, emberIds);
-    assert.ok(ember.seats.every(row => row === null));
-    assert.equal(ember.ordinaryEvents, 0);
-    assert.match(ember.frameLimitation, /Ordinary frame is unavailable/i);
-    assert.match(ember.frameLimitation, /source order.*not invented/is);
-    assert.equal(ember.frame.state, 'unavailable');
-    assert.equal(ember.frame.scope, 'ordinary-frame:roman-1962');
-    assert.deepEqual(ember.frame.reasons.map(row => [row.kind, row.applicability]),
-      [['text-not-held', 'unavailable']]);
-    assert.ok(ember.frame.reasons[0].basis.trim().length > 0);
+    assert.deepEqual(ember.eventIds.filter(id => id.startsWith('proper/')), emberIds);
+    assert.deepEqual(ember.domIds, ember.eventIds);
+    assert.ok(ember.ordinaryEvents > 0);
+    assert.equal(ember.frame, null);
+    assert.equal(ember.frameLimitation, '');
+    assert.ok(ember.seats.every(row => row && row.placement === 'seated'));
+    const kyrie = ember.eventIds.indexOf('ordinary-element/praeparatio/kyrie-eleison-repetitio');
+    const greeting = ember.eventIds.indexOf('ordinary-element/praeparatio/dominus-vobiscum-post-gloriam');
+    assert.ok(kyrie >= 0 && kyrie < ember.eventIds.indexOf(emberIds[1]));
+    assert.ok(ember.eventIds.indexOf(emberIds[15]) < greeting &&
+      greeting < ember.eventIds.indexOf(emberIds[16]));
+    assert.ok(!ember.eventIds.some(id => id.includes('/gloria-in-excelsis')));
+    assert.equal(ember.prayerCues.length, 6);
+    assert.ok(ember.prayerCues.slice(0, 5).every(text => text.includes('Flectamus genua.')));
+    assert.deepEqual(ember.prayerCues.slice(-1), ['Oremus.']);
     assert.deepEqual(ember.visibleNames.slice(2, 20), [
       'First Lesson', 'First Gradual', 'Oratio', 'Second Lesson', 'Second Gradual',
       'Oratio', 'Third Lesson', 'Third Gradual', 'Oratio', 'Fourth Lesson', 'Fourth Gradual',

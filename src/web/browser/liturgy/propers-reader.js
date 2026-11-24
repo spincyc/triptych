@@ -264,6 +264,11 @@
   function setModePresentation(mode) {
     const label = mode === 'missal' ? 'Missal' : (mode === 'compare' ? 'Compare' :
       (mode === 'study' ? 'Study' : 'Read'));
+    const coverageDetails = coverageNotice.closest('.reader-coverage');
+    if (coverageDetails && coverageDetails.dataset.mode !== mode) {
+      coverageDetails.open = mode !== 'missal';
+      coverageDetails.dataset.mode = mode;
+    }
     shellRoot.dataset.readerMode = mode;
     Study?.syncMode(mode);
     const context = shellRoot.querySelector('.reader-context');
@@ -1330,6 +1335,7 @@
         : (recension && recension.notice || 'No formulary selected')]
     ]));
     detailsBody.appendChild(selection);
+
     detailsBody.appendChild(detailsLinkSection('Related reader', [
       { label: 'Open the Day reader', href: 'day.html' }
     ]));
@@ -1345,6 +1351,10 @@
   }
 
   function refreshDetailsAfterOutcome() {
+    const resolved = runtime.result && runtime.result.resolved;
+    const links = T.missalWitnessLinks(runtime.mass, resolved && resolved.form)
+      .concat(T.ordinaryWitnessLinks(runtime.ordinary, runtime.result && runtime.result.events));
+    T.displayMissalWitnessLinks(shellRoot, links);
     runtime.detailsLoaded = false;
     detailsBody.replaceChildren(T.el('p', 'surface-note',
       'Details load when this surface is opened.'));

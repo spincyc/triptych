@@ -99,11 +99,16 @@
       const masthead = shell.querySelector('.reader-masthead');
       const identityEdge = masthead && getComputedStyle(masthead).position === 'sticky'
         ? masthead.getBoundingClientRect().bottom : 0;
-      const active = currentLocus();
       const identityVisible = identity && identity.getBoundingClientRect().bottom > identityEdge + 8;
+      if (identityVisible || !loci.length) {
+        output.hidden = true;
+        output.classList.remove('has-unit');
+        return;
+      }
+      const active = currentLocus();
       const headingVisible = isReadingHeadingVisible(locusHeading(active));
       const majorHeadingVisible = headingVisible && active && active.element.matches('.ordinary-division');
-      if (!active || identityVisible || majorHeadingVisible) {
+      if (majorHeadingVisible) {
         output.hidden = true;
         output.classList.remove('has-unit');
         return;

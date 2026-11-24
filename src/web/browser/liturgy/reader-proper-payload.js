@@ -65,8 +65,8 @@
     return Array.from(found);
   }
 
-  function dayRoots(derived, explicit) {
-    return [explicit, (derived && derived.options || []).map(function (branch) {
+  function dayRoots(derived, explicit, orationOwner) {
+    return [explicit, orationOwner, (derived && derived.options || []).map(function (branch) {
       return { winner: branch.winner, orations: branch.orations,
         // Displaced celebrations remain in the index for explanation. Their
         // bodies become necessary only when a request explicitly names them.

@@ -560,9 +560,7 @@
     }
     const orationOwner = parsed.present.indexOf('oration-mass') >= 0;
     const dedication = requestedMode !== 'compare' ? runtime.dedicationAttestation : null;
-    // Weekday-oration and dedication selections read owner Masses that a
-    // day-scoped reader index does not hold, so they read the complete structure.
-    if (orationOwner || dedication) structure = await load('structure/propers/' + missal + '.json');
+    if (dedication) structure = await load('structure/propers/' + missal + '.json');
     if (orationOwner) {
       derived = Model.selectWeekdayOrations({
         derived: derived, rubrics: rows[0], year: rows[1], structure: structure,
@@ -774,7 +772,23 @@
       (open.length ? ' Still to be chosen: ' + open.join('; ') + '. No option is selected silently.' : '');
   }
 
+  function updateWitnessLinks() {
+    const links = [];
+    for (const row of runtime.branches) {
+      const result = row.result;
+      if (!result || !result.resolved) continue;
+      links.push(...T.missalWitnessLinks(resultMass(result), result.resolved.form));
+      links.push(...T.ordinaryWitnessLinks(runtime.ordinary, result.events));
+      if (result.orationSelection) {
+        const owner = (runtime.structure.masses || []).find(mass => mass.key === result.orationSelection.owner);
+        links.push(...T.missalWitnessLinks(owner, 'main'));
+      }
+    }
+    T.displayMissalWitnessLinks(shellRoot, links);
+  }
+
   function refreshDetailsAfterOutcome() {
+    updateWitnessLinks();
     runtime.detailsLoaded = false;
     detailsBody.replaceChildren(T.el('p', 'surface-note',
       'Details load when this surface is opened.'));
@@ -845,6 +859,11 @@
     window.dayReaderDebug.mode = mode;
     window.dayReaderDebug.outcome = runtime.outcome;
     window.dayReaderDebug.outcomeClass = held.outcomeClass || runtime.outcome;
+    const coverageDetails = coverageNotice.closest('.reader-coverage');
+    if (coverageDetails && coverageDetails.dataset.mode !== mode) {
+      coverageDetails.open = mode !== 'missal';
+      coverageDetails.dataset.mode = mode;
+    }
     shellRoot.dataset.readerMode = mode || 'read';
     contextLine.textContent = 'Day · ' + modeLabel(mode);
     if (instrumentMode) instrumentMode.textContent = modeLabel(mode);
@@ -1206,21 +1225,6 @@
     return multiple ? 'territory/' + branch.option + '/' : '';
   }
 
-  function resultStateForBranch(state, branch, multiple) {
-    if (!multiple) return state;
-    const request = Object.assign({}, state, {
-      calendar: Object.assign({}, state.calendar, { territory: { id: branch.option } })
-    });
-    if (branch.orationSelection) {
-      request.orationMass = branch.orationSelection.owner;
-      if (branch.orationSelection.territory) request.orationTerritory = branch.orationSelection.territory;
-    } else {
-      delete request.orationMass;
-      delete request.orationTerritory;
-    }
-    return request;
-  }
-
   function failedBranchDocument(branch, prefix, error) {
     const fragment = document.createDocumentFragment();
     const section = T.el('section', 'candidate-failure');
@@ -1243,9 +1247,15 @@
   }
 
   function primaryDayChoice(result, branch) {
+    const selected = result.request && result.request.selectedReadableFormulary;
     return (result.unresolvedChoices || []).find(function (one) {
-      return one.id === 'calendar-formulary' || /^proper-form:/.test(one.id) ||
-        !!sourceDayChoice(branch, one.id);
+      if (/^proper-form:/.test(one.id) || one.id === 'calendar-reading' || one.id === 'calendar-formulary') return true;
+      const choice = sourceDayChoice(branch, one.id);
+      if (!choice) return false;
+      // An independent local observance remains open while another listed
+      // formulary is being read (St Isidore on Passion Friday, for example).
+      return !(selected && result.resolved && result.resolved.formulary === selected.id) ||
+        choice.among.some(function (option) { return (option.key || option.id) === selected.id; });
     }) || null;
   }
 
@@ -1276,7 +1286,8 @@
     if (!wanted) return [];
     const errors = [];
     (derived.options || []).forEach(function (branch) {
-      const branchState = resultStateForBranch(state, branch, derived.options.length > 1);
+      const branchState = Adapters.dayBranchRequest(state, branch, derived.options);
+      if (!branchState.languages.translationWitness) return;
       const languages = Object.assign({}, branchState.languages);
       delete languages.translationWitness;
       const witnessless = Object.assign({}, branchState, { languages: languages });
@@ -1308,7 +1319,7 @@
     let adapted = false;
     (derived.options || []).forEach(function (branch) {
       try {
-        const branchState = resultStateForBranch(state, branch, multiple);
+        const branchState = Adapters.dayBranchRequest(state, branch, derived.options);
         const result = Adapters.adaptDay({
           rubrics: rubrics || runtime.rubrics,
           request: branchState,
@@ -1385,7 +1396,9 @@
       throw new Error('source choice options do not match the readable identities');
     }
 
-    const titleText = properForm ? 'Choose a Mass form' : 'Choose a formulary';
+    const readingChoice = choice.kind === 'unresolved-reading-choice';
+    const titleText = readingChoice ? 'Choose a formulary to read' :
+      properForm ? 'Choose a Mass form' : 'Choose a formulary';
     const section = T.el('section', 'candidate-choice ' +
       (properForm ? 'proper-form-choice' : 'calendar-formulary-choice'));
     section.dataset.unresolvedChoice = choice.id;
@@ -1406,8 +1419,8 @@
     form.dataset.choice = choice.id;
     const fieldset = T.el('fieldset');
     fieldset.appendChild(T.el('legend', null,
-      properForm ? 'Source-authored forms of this Mass' :
-        'Authorized formularies for this date'));
+      readingChoice ? 'Readable formularies while calendar precedence is unsettled' :
+        properForm ? 'Source-authored forms of this Mass' : 'Authorized formularies for this date'));
     const options = T.el('div', 'candidate-choice-options');
     choice.options.forEach(function (option) {
       const row = readable.get(option.id);
@@ -1450,6 +1463,25 @@
       }
     });
     section.appendChild(form);
+    const otherReadings = sourceChoice && (branch.readable || []).filter(function (row) {
+      return !readable.has(row.key);
+    });
+    if (otherReadings && otherReadings.length) {
+      const additional = T.el('details', 'candidate-other-readings');
+      additional.appendChild(T.el('summary', null, 'Other formularies to read'));
+      otherReadings.forEach(function (row) {
+        const button = T.el('button', 'candidate-choice-apply', (row.name || row.key) + ' · ' + row.state);
+        button.type = 'button';
+        button.addEventListener('click', function () {
+          readerShell.close({ restoreFocus: false, restoreScroll: false });
+          navigate({mass: row.key, form: null, location: null}, ['form', 'location'], {
+            location: {kind: 'top', id: null}, focus: {kind: 'day-choice-result'}
+          });
+        });
+        additional.appendChild(button);
+      });
+      section.appendChild(additional);
+    }
     return { node: section, choice: choice, title: titleText, id: heading.id };
   }
 
@@ -1497,7 +1529,8 @@
       outcomeClass: 'unresolved',
       metadata: [
         missal && (missal.edition || missal.label),
-        documentChoice.choice.options.length + ' authorized options',
+        documentChoice.choice.options.length + (documentChoice.choice.kind === 'unresolved-reading-choice'
+          ? ' readable formularies' : ' authorized options'),
         'No default selected'
       ].filter(Boolean).join(' · ')
     });
@@ -1731,7 +1764,6 @@
 
   function resultHeading(row, structure) {
     const branch = row && row.branch || {};
-    if (branch.winner && branch.winner.name) return branch.winner.name;
     const resolved = row && row.result && row.result.resolved;
     const readable = branch.readable || [];
     const unsettled = branch.unsettled || [];
@@ -1745,6 +1777,13 @@
         unsettled[0].scope === 'oration-owner' && course && course.name) {
       return 'Readings for ' + course.name;
     }
+    const selected = row && row.result && row.result.request && row.result.request.selectedReadableFormulary;
+    if (selected && resolved && selected.id === resolved.formulary &&
+        resolved.standing !== 'said' && course && course.name &&
+        readable.some(one => one.key === selected.id && one.state === resolved.standing)) {
+      return course.name;
+    }
+    if (branch.winner && branch.winner.name) return branch.winner.name;
     return 'No day is settled here';
   }
 
@@ -1765,6 +1804,13 @@
         branch.className = 'territorial-branch';
         branch.dataset.territorialBranch = row.branch.option;
         const heading = branchHeading(row.branch, ordinal);
+        if (row.result && row.result.resolved) {
+          heading.node.querySelector('h2').textContent = resultHeading(row, assembled.structure);
+          const resolved = row.result.resolved;
+          if (row.result.request.selectedReadableFormulary && resolved.standing && resolved.standing !== 'said') {
+            heading.node.appendChild(T.el('p', 'entry-meta', T.titleCase(resolved.standing)));
+          }
+        }
         branch.setAttribute('aria-labelledby', heading.titleId);
         branch.appendChild(heading.node);
         branch.appendChild(row.fragment);
@@ -1791,6 +1837,10 @@
       ? 'Held territorial branches'
       : resultHeading(rows[0], assembled.structure);
     dateLine.textContent = longDate(assembled.derived.date, assembled.derived.weekday);
+    const selected = !multiple && state.selectedReadableFormulary && rows[0].result && rows[0].result.resolved;
+    if (selected && selected.standing && selected.standing !== 'said') {
+      dateLine.textContent += ' · ' + T.titleCase(selected.standing);
+    }
     const metadata = [
       missal && (missal.edition || missal.label),
       multiple ? rows.length + ' source-defined territorial results' : (rows[0].branch.option || 'Universal'),
@@ -1817,9 +1867,7 @@
     const notices = rows.flatMap(function (row) {
       const unsettled = row.result && row.result.resolved &&
         row.result.resolved.standing === 'unresolved' ? (row.branch.unsettled || []) : [];
-      return [row.notice].concat(unsettled.filter(function (one) {
-        return one.scope === 'oration-owner';
-      }).map(function (one) { return [one.what, one.why].filter(Boolean).join(': '); }));
+      return [row.notice].concat(unsettled.map(function (one) { return [one.what, one.why].filter(Boolean).join(': '); }));
     }).filter(Boolean);
     const uncompiled = rows.map(function (row) { return row.uncompiled; }).filter(Boolean);
     // Said once for the structure every branch reads, and printed with the notices.
@@ -1879,24 +1927,31 @@
     return held;
   }
 
-  function renderTranslationWitnessChoice(event, witnessState, prefix, result, locationEvent) {
-    function hasBody(row) {
-      return row.selected && (row.selected.kind === 'composed' ||
-        T.selectedCoverageUnits({ events: [row] }, runtime.structure).some(function (unit) {
-          const language = result.request && result.request.languages && result.request.languages.orations || 'la';
+  // Each adapted branch has one Mass-wide chooser, including within a Proper choice.
+  const witnessPlacements = new WeakMap();
+
+  function witnessPlacement(result, structure, state) {
+    if (witnessPlacements.has(result)) return witnessPlacements.get(result);
+    const witnesses = resolvableTranslationWitnessState(result, structure, state);
+    const first = semanticProperEvents(result).find(function (event) {
+      if (!event.selected || (!witnesses.requiresChoice &&
+          event.selected.availability !== 'choice-required')) return false;
+      return event.selected.kind === 'composed' ||
+        T.selectedCoverageUnits({ events: [event] }, structure).some(function (unit) {
           return unit.component !== 'scripture' &&
-            (!unit.body_languages || unit.body_languages.includes(language));
-        }));
-    }
-    if (!hasBody(event)) return null;
-    const selectedWitness = result.request && result.request.languages && result.request.languages.translationWitness;
-    if (selectedWitness) return null;
-    const first = witnessState.requiresChoice
-      ? semanticProperEvents(result).find(hasBody)
-      : semanticProperEvents(result).find(function (row) {
-        return hasBody(row) && row.selected.availability === 'choice-required';
-      });
-    if (first !== event) return null;
+            (!unit.body_languages || unit.body_languages.includes(state.languages.orations));
+        });
+    });
+    const placement = { event: first, witnesses: witnesses };
+    witnessPlacements.set(result, placement);
+    return placement;
+  }
+
+  function renderTranslationWitnessChoice(event, structure, state, prefix, result, locationEvent) {
+    if (state.languages.translationWitness || state.languages.orations === T.SOURCE_LANGUAGE) return null;
+    const placement = witnessPlacement(result, structure, state);
+    if (placement.event !== event) return null;
+    const witnessState = placement.witnesses;
     if (!witnessState.choices.length) {
       const explanation = T.el('p', 'composed-note translation-witness-limitation',
         'No public translation witness is available for this selection.');
@@ -1945,11 +2000,12 @@
       translationWitness: state.languages.translationWitness || null,
       heading: heading,
       cycle: event.selected && event.selected.cycle || null,
+      lessonPreparation: event.seat && event.seat.lessonPreparation,
       orationGroups: event.orationGroups || null, executionSource: event.executionSource || null, nameExecution: event.nameExecution || null,
       conclusionExecution: event.conclusionExecution || null, sourceLocalActorOffer: event.sourceLocalActorOffer || null, orationContext: event.orationContext || null, eventId: event.id, structure: structure
     });
     const choice = renderTranslationWitnessChoice(
-      event, resolvableTranslationWitnessState(result, structure, state), prefix, result,
+      event, structure, state, prefix, result,
       locationEvent || event
     );
     if (choice) section.appendChild(choice);
@@ -2620,7 +2676,7 @@
       try {
         for (let branchIndex = 0; branchIndex < assembled.derived.options.length; branchIndex += 1) {
           const branch = assembled.derived.options[branchIndex];
-          const branchState = resultStateForBranch(normalized.state, branch, multiple);
+          const branchState = Adapters.dayBranchRequest(normalized.state, branch, assembled.derived.options);
           const prefix = locationPrefix(branch, multiple);
           try {
             const result = Adapters.adaptDay({

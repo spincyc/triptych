@@ -298,8 +298,7 @@ class DayReaderIntegrationTests(unittest.TestCase):
     def test_read_shows_held_branches_and_compare_requires_explicit_territory(self) -> None:
         source = text(DAY_JS)
         for token in (
-            "function resultStateForBranch(state, branch, multiple)",
-            "calendar: Object.assign({}, state.calendar, { territory: { id: branch.option } })",
+            "Adapters.dayBranchRequest(normalized.state, branch, assembled.derived.options)",
             "for (let branchIndex = 0; branchIndex < assembled.derived.options.length; branchIndex += 1)",
             "branch.dataset.territorialBranch = row.branch.option",
             "runtime.branches = rendered.map(function (row)",
@@ -366,7 +365,7 @@ class DayReaderIntegrationTests(unittest.TestCase):
     def test_authorized_day_and_proper_form_choices_have_one_accessible_control(self) -> None:
         source = text(DAY_JS)
         for token in (
-            "one.id === 'calendar-formulary' || /^proper-form:/.test(one.id)",
+            "one.id === 'calendar-formulary' || one.id === 'calendar-reading' || /^proper-form:/.test(one.id)",
             "section.dataset.unresolvedChoice = choice.id",
             "section.tabIndex = -1",
             "const fieldset = T.el('fieldset')",
@@ -383,7 +382,7 @@ class DayReaderIntegrationTests(unittest.TestCase):
         ):
             self.assertIn(token, source)
         self.assertIn(
-            "if (readable.length > 1 && runtime.outcome !== 'unresolved' && runtime.mode !== 'compare')",
+            "if (readable.length > 1 && runtime.result && runtime.result.resolved &&",
             text(DATE_CONTROLS_JS),
         )
         self.assertIn("'No default selected'", source)

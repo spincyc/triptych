@@ -177,6 +177,17 @@ body:has(.reader-instrument) > .site-footer,
   text-align: left;
 }
 
+.reader-instrument .reader-coverage:not(:has(.entry-meta:not(:empty):not([hidden]), .coverage-notice:not([hidden]), .reader-witness-links a, .reader-text-display-context:not([hidden]))) { display: none; }
+.reader-instrument .reader-witness-links a { display: block; margin-block: 0.35rem; font: 0.85rem/1.5 var(--instrument-sans); }
+.reader-instrument .reader-coverage > summary {
+  width: fit-content;
+  margin-top: 0.45rem;
+  color: var(--instrument-accent);
+  cursor: pointer;
+  font: 0.8rem/1.6 var(--instrument-sans);
+}
+.reader-instrument[data-reader-mode="missal"] .reader-identity .reader-context { display: none; }
+
 .reader-instrument .coverage-notice {
   max-width: 52ch;
   margin: 0.75rem 0 0;
@@ -401,7 +412,7 @@ body:has(.reader-instrument) > .site-footer,
   display: inline-block;
   min-width: 0;
   margin: 0 0.5rem 0 0;
-  color: var(--instrument-soft);
+  color: var(--instrument-accent);
   font: 650 0.61rem/1.2 var(--instrument-sans);
   letter-spacing: 0.025em;
   text-align: left;
@@ -412,13 +423,13 @@ body:has(.reader-instrument) > .site-footer,
   inset-inline-end: calc(100% + 0.75rem);
   width: 3rem;
   margin: 0.32rem 0 0;
-  color: var(--instrument-ink);
+  color: var(--instrument-accent);
   font-family: var(--instrument-sans);
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.03em;
   line-height: 1.2;
-  text-align: left;
+  text-align: end;
   text-transform: none;
 }
 .reader-instrument .reader-document .speaker-tag.is-opening-cue .cue-mark {
@@ -431,6 +442,7 @@ body:has(.reader-instrument) > .site-footer,
 .reader-instrument .reader-document .speaker-tag.is-opening-cue:has(.cue-mark[data-dialogue-mark]) {
   font-size: inherit;
 }
+.reader-instrument .reader-document .vr-mark { color: var(--instrument-accent); }
 .reader-instrument .reader-document .vr-glyph,
 .reader-instrument .reader-document .speaker-tag.is-opening-cue .cue-mark[data-dialogue-mark] {
   font-family: var(--font-response);
@@ -968,6 +980,9 @@ body:has(.reader-instrument) > .site-footer,
   .reader-instrument .reader-surface { display: none !important; }
   .reader-instrument { min-height: 0; padding: 0; background: #fff; }
   .reader-instrument .reader-identity { width: auto; padding: 0 0 0.2in; text-align: left; }
+  .reader-instrument .reader-identity .reader-context,
+  .reader-instrument[data-reader-mode="missal"] .reader-identity .reader-context { display: block; letter-spacing: normal; }
+  .reader-instrument .reader-coverage > summary { display: none; }
   .reader-instrument .reader-identity .celebration-title { margin: 0; font-size: 22pt; }
   .reader-instrument .reader-document { width: auto; padding: 0; background: #fff; }
   /* A complete Proper can exceed the page once its witness account is included.

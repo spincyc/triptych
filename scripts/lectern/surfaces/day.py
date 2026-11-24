@@ -13,10 +13,9 @@ from .. import bridge, missal
 from ..dialogs import Ask, Pick, Reading
 from ..month import Month
 from ..repo import Refused
-from ..reader_navigation import ReadingNavigation, share
-from ..surface import Surface
+from ..reader_navigation import MissalSurface, ReadingNavigation, share
 from ..theme import SEASON_TONES
-from ..widgets import Ink, Panel, ScrollPanel, literal
+from ..widgets import Ink, MissalPanel, Panel, ScrollPanel, literal
 
 ADAPTER = "liturgy"
 
@@ -75,11 +74,16 @@ def rank_words(winner: dict | None) -> str:
     return (winner.get("nature") or "").replace("-", " ")
 
 
-class Day(Surface):
+class Day(MissalSurface):
+    READING = "#day-reading-a"
+    BROWSE = "#day-missal-list"
     key = "1"
     label = "Day"
     FIRST = "#day-reading-a"
     HELP = (
+        ("℣ · ℟ · P · S", "versicle · response · priest · server"),
+        (",", "reading settings: celebration, prayers and Scripture"),
+        ("↑ / ↓ · PgUp / PgDn", "scroll the reading by a line or a page"),
         ("← / →", "previous / next day"),
         ("[ / ]", "previous / next week"),
         ("{ / }", "previous / next month"),
@@ -104,6 +108,7 @@ class Day(Surface):
         ("f", "show or hide navigation panes; narrow screens start with the reading"),
     )
     BINDINGS = [
+        Binding("comma", "settings", "settings"),
         Binding("left,h", "step(-1)", "previous day", show=False),
         Binding("right,l", "step(1)", "next day", show=False),
         Binding("left_square_bracket", "step(-7)", "previous week", show=False),
@@ -208,7 +213,7 @@ class Day(Surface):
                     id="day-left",
                 ),
                 Horizontal(
-                    ScrollPanel(Static("", id="day-text-a"), title="mass", id="day-reading-a"),
+                    MissalPanel(Static("", id="day-text-a"), title="mass", id="day-reading-a"),
                     ScrollPanel(Vertical(id="day-compare-body"), title="compare", id="day-compare"),
                 ),
             )
@@ -260,6 +265,8 @@ class Day(Surface):
                                ("companion", "companion"), ("rubrics", "rubrics"), ("comparing", "comparing")):
             if key in options:
                 setattr(self, attribute, options[key])
+        if options.get("ordinary"):
+            self.add_class("focus")
         if "urlLegacy" in options:
             self.url_legacy = options["urlLegacy"]
         self.set_class(self.comparing, "comparing")
@@ -358,6 +365,7 @@ class Day(Surface):
         if self.ordinary and not self.comparing:
             self.map_mode_location("read")
         self.ordinary = not self.ordinary
+        self.show_reading_pane()
         self.load()
 
     def map_mode_location(self, mode: str) -> None:
@@ -475,11 +483,25 @@ class Day(Surface):
             self.deliver(self.app.notify, str(refusal), severity="warning")
             return
         ink = Ink()
+        view = self.views.get(self.calendar) or {}
+        for branch in view.get("rows") or []:
+            missal.source_witness(ink, branch, detail=True)
+            missal.ordinary_conditions(ink, branch)
+            if branch.get("notice"):
+                ink.line(branch["notice"], "italic $text-muted")
+        if (view.get("ordinary") or {}).get("advisory"):
+            ink.line(view["ordinary"]["advisory"], "italic $text-muted")
         for row in rows:
             if row.get("option"):
                 ink.line(row["option"], "bold $day-color")
             missal.blocks(ink, row.get("blocks") or [], accent="$day-color")
         self.deliver(self.app.push_screen, Reading("Study this day", ink.content(), walks=False))
+
+    def source_rows(self) -> list[dict]:
+        return (self.views.get(self.calendar) or {}).get("rows") or []
+
+    def reload_reading(self) -> None:
+        self.load()
 
     def action_bible(self) -> None:
         ids = [one["id"] for one in self.bibles]
@@ -560,8 +582,13 @@ class Day(Surface):
             # reachable without adding other Masses or forms.
             resolved = self.resolved_key(row)
             readable = (row.get("branch") or {}).get("readable") or []
-            if resolved and len(readable) > 1:
+            primary = row.get("primaryDayChoice")
+            primary_options = {option["id"] for choice in row.get("unresolvedChoices") or []
+                               if choice["id"] == primary for option in choice["options"]}
+            if len(readable) > 1 and (resolved or primary):
                 for option in readable:
+                    if not resolved and option["key"] in primary_options:
+                        continue
                     mark = " (selected)" if option["key"] == resolved else ""
                     found.append(((calendar, row.get("option"), "calendar-formulary", option["key"], row),
                                   f"{prefix}{option.get('label') or option['key']} — {option['state']}{mark}"))
@@ -649,7 +676,9 @@ class Day(Surface):
             if option and (self.views.get(calendar) or {}).get("multiple"):
                 selection.clear()
                 selection["territory"] = option
-            if kind == "calendar-formulary" or (kind == row.get("primaryDayChoice") and not kind.startswith("proper-form:")):
+            if kind == "ordinary-variant":
+                selection.setdefault("variants", {})[choice[0]] = choice[1]
+            elif kind == "calendar-formulary" or (kind == row.get("primaryDayChoice") and not kind.startswith("proper-form:")):
                 territory = selection.get("territory")
                 selection.clear()
                 if territory:
@@ -689,8 +718,6 @@ class Day(Surface):
                 selection.setdefault("properChoices", {})[choice[0]] = choice[1]
             elif kind.startswith("translation-witness"):
                 selection["witness"] = choice
-            elif kind == "ordinary-variant":
-                selection.setdefault("variants", {})[choice[0]] = choice[1]
             elif kind == "source-local-1970":
                 if choice:
                     selection["sourceLocal1970"] = True
@@ -714,20 +741,27 @@ class Day(Surface):
         return formulary.get("id") if isinstance(formulary, dict) else formulary
 
     def action_witness(self) -> None:
-        rows = (self.views.get(self.calendar) or {}).get("rows") or []
-        witnesses = next((row["mass"].get("witnesses") for row in rows if row.get("mass")), None) or []
-        if not witnesses:
+        view = self.views.get(self.calendar) or {}
+        offers = [((None, ""), "no single witness chosen; coequal witnesses remain open")]
+        for row in view.get("rows") or []:
+            territory = row.get("option") if view.get("multiple") else None
+            prefix = (row.get("heading") or {}).get("label") if territory else None
+            for witness in (row.get("mass") or {}).get("witnesses") or []:
+                label = witness["label"]
+                offers.append(((territory, witness["id"]), f"{prefix} · {label}" if prefix else label))
+        if len(offers) == 1:
             self.app.notify("No oration witness in this language is recorded for this missal.")
             return
-        offers = [("", "no single witness chosen; coequal witnesses remain open")]
-        offers += [(one["id"], one["label"]) for one in witnesses]
 
         def picked(value) -> None:
             if value is None:
                 return
+            territory, witness = value
             selection = self.selection()
-            if value:
-                selection["witness"] = value
+            if territory:
+                selection["territory"] = territory
+            if witness:
+                selection["witness"] = witness
             else:
                 selection.pop("witness", None)
             self.load()
@@ -1047,7 +1081,7 @@ class Day(Surface):
         chosen = [f"{name} {state[name]}" for name in ("mass", "form", "witness") if state.get(name)]
         box.border_subtitle = " · ".join([mode, f"{language} orations", view["bible"]["label"], *chosen])
 
-        # The page's header: the long date, then its metadata line (day-reader.js:1683-1696).
+        configured = bool(state.get("ordinary") and any(row.get("events") for row in rows))
         ink.line(view.get("longDate") or view["date"], "bold")
         branch = (f"{len(rows)} source-defined territorial results" if view.get("multiple")
                   else (rows[0].get("option") if rows and rows[0].get("option") else "Universal"))
@@ -1059,8 +1093,9 @@ class Day(Surface):
             meta.append("Latin paired with selected language")
         if state.get("companion"):
             meta.append(f"Latin Bible: {state['companion']}")
-        ink(" · ".join(meta), "$text-muted")
-        ink(f"  ·  {season_name(view['day'].get('season'))}", tone(view["day"].get("season"))).line()
+        if not configured:
+            ink(" · ".join(meta), "$text-muted")
+            ink(f"  ·  {season_name(view['day'].get('season'))}", tone(view["day"].get("season"))).line()
         if view.get("multiple"):
             ink.line("All held territorial branches are shown; no locality is inferred.", "italic $text-muted")
             territorial = (self.opening.get("territorial") or {}).get(calendar)
@@ -1068,12 +1103,20 @@ class Day(Surface):
                 ink.line(territorial, "italic $text-muted")
         # The page's notices (day-reader.js:1711-1716): coverage, then any oration owner left open.
         for row in rows:
-            if row.get("notice"):
+            if row.get("notice") and not configured:
                 ink.line(row["notice"], "italic $text-muted")
+            elif configured:
+                if (row.get("mass") or {}).get("recension"):
+                    ink.line(row["mass"]["recension"], "italic $warning")
+                if row.get("dedicationSelection"):
+                    ink.line("Celebration location: " + row["dedicationSelection"]["label"], "$text-muted")
+                if row.get("orationSelection"):
+                    ink.line("Prayers from " + row["orationSelection"]["label"], "$text-muted")
             for unsettled in row.get("unsettled") or []:
                 ink.line(unsettled, "italic $warning")
         for row in rows:
-            ink.line()
+            if not configured or view.get("multiple"):
+                ink.line()
             heading = row.get("heading")
             if heading:
                 ink.line(heading["label"], "bold $day-color")
@@ -1082,19 +1125,17 @@ class Day(Surface):
                 ink.line(row["failed"], "italic $warning")
                 continue
             resolved = row.get("resolved") or {}
-            if row.get("mass") and not row.get("heading"):
+            if row.get("mass") and not row.get("heading") and (not configured or row["mass"]["name"] != view["title"]):
                 ink("Formulary: ", "$text-muted").line(row["mass"]["name"], "bold")
             if resolved.get("standing") and resolved["standing"] != "said":
                 ink.line(f"Standing: {resolved['standing']}", "bold $warning")
-            context = {**row, "day": {"branches": [row.get("branch") or {}]}, "ordinary": view.get("ordinary")}
+            context = {**row, "day": {"branches": [row.get("branch") or {}]}, "ordinary": view.get("ordinary"), "state": state}
+            missal.source_witness(ink, row)
             missal.choices(ink, context)
             for path in row.get("sourcePaths") or []:
                 if not path.get("beforeEventId"):
                     missal.blocks(ink, path["blocks"], accent="$day-color")
-            for unresolved in row.get("ordinaryUnresolved") or []:
-                said = unresolved if isinstance(unresolved, str) else (
-                    unresolved.get("reason") or unresolved.get("id") or str(unresolved))
-                ink.line(f"Ordinary unresolved: {said}", "italic $warning")
+            missal.ordinary_conditions(ink, row, compact=configured)
             for event in context.get("events") or []:
                 if not self.rubrics and (event.get("element") or {}).get("kind") == "rubric":
                     continue
@@ -1107,7 +1148,7 @@ class Day(Surface):
                 self.navigation.mark(prefix + event["id"], branch_label + label, ink)
                 missal.events(ink, {**context, "events": [event]}, rubrics=self.rubrics, accent="$day-color")
         # The Ordinary's own advisory, at the foot (day.js:1609-1612).
-        if state.get("ordinary") and (view.get("ordinary") or {}).get("advisory"):
+        if not configured and state.get("ordinary") and (view.get("ordinary") or {}).get("advisory"):
             ink.line().line(view["ordinary"]["advisory"], "italic $text-muted")
         text.update(ink.content())
         self.navigation.finish(self, box, text)

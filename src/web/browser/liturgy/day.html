@@ -38,8 +38,12 @@
     <p class="reader-context">Day · Read</p>
     <h1 id="celebration-title" class="celebration-title">Loading the Mass…</h1>
     <p id="celebration-date" class="entry-title"></p>
+    <details class="reader-coverage" open>
+      <summary>Edition, texts and sources</summary>
     <p id="celebration-meta" class="entry-meta"></p>
-    <p id="coverage-notice" class="coverage-notice" role="note" hidden></p>
+      <div class="reader-witness-links"></div>
+      <p id="coverage-notice" class="coverage-notice" role="note" hidden></p>
+    </details>
   </header>
 
   <main id="reader-document" class="reader-document" tabindex="-1" aria-busy="true">
@@ -93,14 +97,6 @@
           <label for="reader-missal">Missal</label>
           <select id="reader-missal" name="missal"></select>
         </div>
-        <div class="surface-field">
-          <label for="reader-bible">Scripture</label>
-          <select id="reader-bible" name="bible"></select>
-        </div>
-        <div class="surface-field">
-          <label for="reader-orations">Orations</label>
-          <select id="reader-orations" name="orations"></select>
-        </div>
         <div class="surface-field is-wide" id="reader-formulary-field" hidden>
           <label for="reader-formulary">Readable formulary</label>
           <select id="reader-formulary" name="mass"></select>
@@ -108,6 +104,14 @@
         <div class="surface-field is-wide" id="reader-mass-form-field" hidden>
           <label for="reader-mass-form">Mass form</label>
           <select id="reader-mass-form" name="form"></select>
+        </div>
+        <div class="surface-field">
+          <label for="reader-bible">Scripture</label>
+          <select id="reader-bible" name="bible"></select>
+        </div>
+        <div class="surface-field">
+          <label for="reader-orations">Orations</label>
+          <select id="reader-orations" name="orations"></select>
         </div>
         <div class="surface-field" id="reader-ordinary-lang-field" hidden>
           <label for="reader-ordinary-lang">Ordinary language</label>

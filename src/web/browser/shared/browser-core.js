@@ -1527,15 +1527,27 @@ window.Triptych = (function () {
     return units;
   }
 
-  function selectedOrdinaryCoverageUnits(result, ordinary) {
-    const selected = new Set((result && result.events || []).filter(function (event) {
+  function selectedOrdinaryElements(ordinary, events) {
+    const selected = new Set((events || []).filter(function (event) {
       return event.kind === 'ordinary-element';
     }).map(function (event) { return event.id.slice('ordinary-element/'.length); }));
     return (ordinary && ordinary.sections || []).flatMap(function (section) {
-      return (section.elements || []).filter(function (element) {
-        return selected.has(element.key) && element.coverage;
-      }).map(function (element) { return element.coverage; });
+      return (section.elements || []).filter(function (element) { return selected.has(element.key); });
     });
+  }
+
+  function selectedOrdinaryCoverageUnits(result, ordinary) {
+    return selectedOrdinaryElements(ordinary, result && result.events)
+      .filter(function (element) { return element.coverage; })
+      .map(function (element) { return element.coverage; });
+  }
+
+  function ordinaryWitnessLinks(ordinary, events) {
+    const links = new Map();
+    selectedOrdinaryElements(ordinary, events).forEach(function (element) {
+      (element.missal_witness_links || []).forEach(function (link) { links.set(link.url, link); });
+    });
+    return Array.from(links.values());
   }
 
   /** Only report identities and dispositions are aggregated; text rows are never counted. */
@@ -1691,6 +1703,31 @@ window.Triptych = (function () {
     if (counts.reconstructions) parts.push(counts.reconstructions + ' Bible reconstructions.');
     if (counts.beside) parts.push(counts.beside + ' cited Bible passages beside Missal texts.');
     return parts.join(' ');
+  }
+
+  /** A source link belongs to the exact selected form, even on a calendar with several rites that day. */
+  function missalWitnessLinks(mass, formId) {
+    if (!mass) return [];
+    const forms = mass.forms || [];
+    const sections = mass.missal_witness_links || [];
+    if (!forms.length) return sections;
+    const form = forms.find(function (row) { return row.id === formId; });
+    return (form && form.missal_witness_links || []).concat(sections);
+  }
+
+  function displayMissalWitnessLinks(shell, links) {
+    const host = shell.querySelector('.reader-witness-links');
+    if (!host) return;
+    host.replaceChildren();
+    const seen = new Set();
+    for (const link of links) {
+      if (!link || seen.has(link.url)) continue;
+      seen.add(link.url);
+      const languages = (link.languages || [link.language]).map(languageName).join(' and ');
+      const anchor = el('a', null, languages + ' · ' + link.edition_label + ' · ' + link.locus);
+      anchor.href = link.url;
+      host.appendChild(anchor);
+    }
   }
 
   /**
@@ -3360,6 +3397,27 @@ window.Triptych = (function () {
       heading.appendChild(reference);
     }
     section.appendChild(heading);
+    const cue = held.lessonPreparation;
+    if (cue) {
+      const langs = held.textDisplay === 'latin-and-selected' && held.orations !== 'la'
+        ? ['la', held.orations] : [held.orations || 'la'];
+      const group = el('div', 'lesson-preparation');
+      group.title = cue.cueLocus;
+      for (const lang of langs) {
+        if (!cue.opening[lang]) continue;
+        const line = el('p', 'composed lesson-cue');
+        line.lang = lang;
+        line.appendChild(document.createTextNode(cue.opening[lang]));
+        if (cue.kneel) {
+          line.appendChild(document.createTextNode(' ' + cue.kneel[lang] + ' '));
+          line.appendChild(el('i', 'inline-rubric', cue.silence[lang]));
+          line.appendChild(document.createTextNode(' ' + cue.rise[lang]));
+        }
+        group.appendChild(line);
+      }
+      section.appendChild(group);
+    }
+
 
     // The incipit is the passage's own opening words, so printing it above the
     // passage says the same thing twice. It earns its place only when the words
@@ -3686,11 +3744,14 @@ window.Triptych = (function () {
     coverageUnitsOf: coverageUnitsOf,
     selectedCoverageUnits: selectedCoverageUnits,
     selectedOrdinaryCoverageUnits: selectedOrdinaryCoverageUnits,
+    ordinaryWitnessLinks: ordinaryWitnessLinks,
     summarizeCoverage: summarizeCoverage,
     coverageWitnesses: coverageWitnesses,
     executionWitnesses: executionWitnesses,
     coverageSummaryText: coverageSummaryText,
     coverageNoticeText: coverageNoticeText,
+    missalWitnessLinks: missalWitnessLinks,
+    displayMissalWitnessLinks: displayMissalWitnessLinks,
     recensionContext: recensionContext,
     absenceReasons: ABSENCE_REASONS,
     orationFor: orationFor,

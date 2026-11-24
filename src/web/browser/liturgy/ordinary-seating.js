@@ -172,7 +172,8 @@
       facts['appointment-context'] = {
         appointments: context.appointments || null,
         date: typeof context.date === 'string' ? context.date : null,
-        anchors: context.anchors || null
+        anchors: context.anchors || null,
+        office: context.office || null
       };
     }
     if (context) Object.assign(facts, seasonalOrationFacts(context));
@@ -291,6 +292,48 @@
     return span.from <= span.to
       ? monthDay >= span.from && monthDay <= span.to
       : monthDay >= span.from || monthDay <= span.to;
+  }
+
+  const HYMN_ELEMENTS = {
+    'praeparatio/gloria-in-excelsis-heading': 'gloria',
+    'praeparatio/gloria-in-excelsis': 'gloria',
+    'oblatio/credo-heading': 'creed',
+    'oblatio/credo-in-unum-deum': 'creed'
+  };
+
+  function spanMembership(spans, context) {
+    const states = spans.map(function (span) { return spanCovers(span, context); });
+    if (states.includes(true)) return true;
+    return states.includes(null) ? null : false;
+  }
+
+  function hymnAppointments(file, predicates) {
+    const rules = file.hymn_rules;
+    if (!rules) return null;
+    const rite = predicates && predicates['proper-rite-context'];
+    const row = rite && rules.primary[rite.mass];
+    if (row && (row.use === 'ritual' || row.use === 'requiem')) return row;
+    const unknown = {gloria: null, creed: null};
+    const context = predicates && predicates['appointment-context'];
+    const office = context && context.office;
+    if (row && row.use === 'votive') {
+      const creed = office && context.date ? office.weekday === 'sunday' ||
+        spanMembership(rules.creed_octave_spans, context) : null;
+      return {gloria: row.gloria, creed};
+    }
+    if (!row || !context || !context.date || !office || office.settled !== true || office.standing !== 'said') return unknown;
+    const winner = office.winner;
+    if (!winner || (winner.key !== rite.mass && !(winner.formulary && winner.formulary.key === rite.mass))) return unknown;
+    // A feria borrowing a feast's text keeps its own Office. Its donor may
+    // be a first-class feast even when today has neither Gloria nor Creed.
+    const ferial = winner.nature === 'feria' || row.use === 'feria';
+    if (!ferial && row.use !== 'office') return unknown;
+    const octave = spanMembership(rules.creed_octave_spans, context);
+    return {
+      gloria: ferial ? spanMembership(rules.ferial_gloria_spans, context) : row.gloria,
+      creed: office.weekday === 'sunday' || octave === true || (!ferial && row.creed === true)
+        ? true : octave === null ? null : ferial ? false : row.creed
+    };
   }
 
   /**
@@ -495,6 +538,13 @@
     if (!alternativeShows(element, file, selected)) {
       return { show: false, unresolved: null };
     }
+    const hymn = HYMN_ELEMENTS[element.key];
+    if (hymn && appointed.__hymns) {
+      const state = appointed.__hymns[hymn];
+      if (state !== true) return {show: false, unresolved: state === false ? null : {
+        kind: 'include-when-any', predicates: ['1962-office-' + hymn], locus: file.hymn_rules.locus
+      }};
+    }
     return conditionsResolve(element, selected, predicates, appointed);
   }
 
@@ -510,6 +560,10 @@
       }
     }
     Object.defineProperty(held, '__standIns', { value: standIns, enumerable: false });
+    const hymns = hymnAppointments(file, predicates);
+    const lesson = lessonFrameFor(file, predicates && predicates['proper-rite-context']);
+    Object.defineProperty(held, '__hymns', {value: lesson && hymns
+      ? Object.assign({}, hymns, {gloria: lesson.gloria}) : hymns, enumerable: false});
     Object.defineProperty(held, '__properRites', {value: properRitesFor(file, predicates && predicates['proper-rite-context']), enumerable: false});
     return held;
   }
@@ -523,10 +577,13 @@
   function resolveElements(file, wanted, predicates) {
     const selected = selectionMap(file, wanted);
     const appointed = appointedIn(file, predicates);
+    const lesson = lessonFrameFor(file, predicates && predicates['proper-rite-context']);
     const shown = [];
     const unresolved = [];
     for (const section of file.sections || []) {
       for (const element of section.elements || []) {
+        if (lesson && !lesson.gloria && (element.key === 'praeparatio/gloria-in-excelsis-heading' ||
+            element.key === 'praeparatio/gloria-in-excelsis')) continue;
         const resolution = elementResolution(
           element, file, selected, predicates, appointed);
         if (resolution.show) {
@@ -549,12 +606,65 @@
     return resolveElements(file, wanted, predicates).shown;
   }
 
+  function lessonFrameFor(file, context) {
+    if (!context || !file.lesson_frames) return null;
+    const rows = file.lesson_frames.filter(function (frame) {
+      return frame.mass === context.mass && frame.form_id === context.formId;
+    });
+    if (!rows.length) return null;
+    const frame = rows[0];
+    if (rows.length !== 1 || file.calendar !== 'roman-1962' || context.calendar !== file.calendar ||
+        !Array.isArray(frame.preliminary) || !frame.preliminary.length || !Array.isArray(frame.chants) ||
+        !['kneel-rise', 'oremus'].includes(frame.preparation) || typeof frame.gloria !== 'boolean' ||
+        !frame.locus) throw new Error('Ordinary lesson frame lacks an exact source declaration');
+    return frame;
+  }
+
   function seats(file, shown, context) {
     const rites = properRitesFor(file, context);
     const byProper = new WeakMap();
     const where = new Map();
     shown.forEach((row, index) => where.set(row.element.key, index));
-    const slots = file.slots || [];
+    const lesson = lessonFrameFor(file, context);
+    const slots = (file.slots || []).slice();
+    const preparation = new WeakMap();
+    if (lesson) {
+      const rows = context.properRows.map((row, index) => properRow(row, index).proper);
+      const first = rows.findIndex(row => row.name === 'Introit') + 1;
+      const gospel = rows.findIndex(row => row.name === 'Gospel');
+      const ordered = lesson.preliminary.concat([lesson.collect, lesson.reading], lesson.chants);
+      if (!first || gospel - first !== ordered.length ||
+          !ordered.every((name, i) => rows[first + i].name === name)) {
+        throw new Error('Proper order disagrees with the source lesson frame');
+      }
+      const collectSlot = slots.findIndex(slot => slot.key === 'collecta');
+      const kyrie = 'praeparatio/kyrie-eleison-repetitio';
+      if (collectSlot < 0 || !where.has(kyrie)) throw new Error('Ordinary lesson frame lost its Kyrie or Collect');
+      slots.splice(collectSlot, 0, {key: 'preliminary-lessons', anchor: kyrie, where: 'after', locus: lesson.locus});
+      const target = key => {
+        const i = slots.findIndex(slot => slot.key === key);
+        if (i < 0) throw new Error('Ordinary lesson frame is missing its ' + key + ' seat');
+        return i;
+      };
+      ordered.forEach(function (name, index) {
+        const row = rows[first + index];
+        const n = lesson.preliminary.length;
+        const key = index < n ? 'preliminary-lessons' : index === n ? 'collecta'
+          : index === n + 1 ? 'epistola' : 'graduale';
+        byProper.set(row, target(key));
+        if (index === n || index < n && (name === 'Collect' || name === 'Oratio')) {
+          const kneeling = index < n && lesson.preparation === 'kneel-rise';
+          const cues = file.lesson_frame_cues;
+          if (!cues || !file.lesson_frame_cue_locus || !cues.oremus ||
+              kneeling && (!cues.kneel || !cues.rise || !file.lesson_frame_note)) {
+            throw new Error('Ordinary lesson frame lacks its sourced bilingual prayer cues');
+          }
+          preparation.set(row, {opening: cues.oremus, kneel: kneeling ? cues.kneel : null,
+            silence: kneeling ? file.lesson_frame_note : null, rise: kneeling ? cues.rise : null,
+            locus: lesson.locus, cueLocus: file.lesson_frame_cue_locus});
+        }
+      });
+    }
     const at = [];
     const byName = new Map();
     // The names a slot claims through a qualifier, and only for a slot whose
@@ -585,7 +695,7 @@
         if (slot.qualified) qualified.set(name, ordinal);
       }
     });
-    return { slots: slots, at: at, byName: byName, qualified: qualified, byProper: byProper };
+    return { slots: slots, at: at, byName: byName, qualified: qualified, byProper: byProper, preparation: preparation };
   }
 
   const QUALIFIER = /^(.+?) \(.+\)$/;
@@ -1538,6 +1648,8 @@
       riding = buckets.get(index) || [];
       buckets.set(index, riding);
       unit.seat = seating.slots[ordinal];
+      const cue = unit.proper && seating.preparation && seating.preparation.get(unit.proper);
+      if (cue) unit.seat = Object.assign({}, unit.seat, {lessonPreparation: cue});
       riding.push(unit);
     }
     return {

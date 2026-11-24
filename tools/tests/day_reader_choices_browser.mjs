@@ -161,6 +161,12 @@ function staticServer() {
       if (relative === 'src/web/browser/liturgy/assembly-model.js') {
         body = Buffer.from(withAuthorizedCalendarChoices(body.toString('utf8')));
       }
+      // The synthetic Advent forms below belong to this complete test structure.
+      if (relative === 'src/web/data/structure/propers/index.json') {
+        const index = JSON.parse(body);
+        delete index.missals.find(row => row.id === 'postconciliar').reader_index;
+        body = Buffer.from(JSON.stringify(index));
+      }
       if (relative === 'src/web/data/structure/propers/postconciliar.json') {
         body = Buffer.from(withAuthoredForms(body.toString('utf8')));
       }
@@ -360,6 +366,51 @@ async function testCalendarChoices(cdp, base) {
     `dayReaderReady && dayReaderDebug.renders > ${beforeBack} && ` +
       `dayReaderDebug.outcome === 'unresolved'`, 'calendar choice history restoration');
   assert.equal((await snapshot(cdp)).eventCount, 0);
+
+  await navigate(cdp, base, state({ date: '2027-01-03', mass: 'epiphany', form: 'vigil' }));
+  const territorial = await evaluate(cdp, `({
+    sides: dayReaderDebug.semantic.map(row => [row.territory, row.document?.resolved?.formulary,
+      row.document?.resolved?.form || 'main']),
+    failures: document.querySelectorAll('.candidate-failure').length
+  })`);
+  assert.deepEqual(territorial.sides, [
+    ['epiphany-january-6', 'second-sunday-after-nativity', 'main'],
+    ['epiphany-transferred-to-sunday', 'epiphany', 'vigil']
+  ]);
+  assert.equal(territorial.failures, 0);
+  await navigate(cdp, base, state({ date: '2027-01-03', mass: 'most-holy-name-jesus' }));
+  const displaced = await evaluate(cdp, `[...document.querySelectorAll('.territorial-branch-heading')]
+    .map(node => [node.querySelector('h2').textContent, node.querySelector('.entry-meta')?.textContent])`);
+  assert.deepEqual(displaced, [
+    ['The Most Holy Name of Jesus', 'Displaced'], ['The Most Holy Name of Jesus', 'Displaced']
+  ]);
+
+
+  await navigate(cdp, base, state({ date: '2028-04-07', missal: 'roman-1962' }));
+  const passionFriday = await snapshot(cdp);
+  assert.equal(passionFriday.choice, 'seven-sorrows-where-devotions-are-held');
+  assert.equal(passionFriday.eventCount, 0);
+  assert.equal(passionFriday.fallbackUnits, 0);
+
+  await navigate(cdp, base, state({ date: '2033-06-24' }));
+  const unranked = await snapshot(cdp);
+  assert.equal(unranked.choice, 'calendar-reading');
+  assert.equal(unranked.eventCount, 0);
+  assert.deepEqual(unranked.contents, ['Choose a formulary to read']);
+  assert.deepEqual(new Set(unranked.options), new Set([
+    'most-sacred-heart-jesus', 'nativity-saint-john-baptist', 'ot-12-friday'
+  ]));
+  await click(cdp, '[data-choice-option="most-sacred-heart-jesus"]');
+  await click(cdp, '.candidate-choice-apply');
+  await waitFor(cdp, `dayReaderReady && dayReaderDebug.semantic?.resolved?.formulary === 'most-sacred-heart-jesus'`,
+    'reading a candidate whose precedence is unsettled');
+  const candidate = await snapshot(cdp);
+  assert.equal(candidate.resolved.standing, 'unresolved');
+  assert.equal(candidate.formularyControlHidden, false);
+  assert.ok(candidate.eventCount > 0);
+  const appointment = await evaluate(cdp, 'dayReaderDebug.semantic.calendarResult');
+  assert.equal(appointment.settled, false);
+  assert.equal(appointment.winner, null);
 }
 
 async function testProperForms(cdp, base) {
@@ -512,6 +563,8 @@ async function testRealFormReselection(cdp, base) {
 }
 
 async function testColdRead(cdp, base) {
+  await cdp.send('Page.navigate', { url: 'about:blank' });
+  await waitFor(cdp, "location.href === 'about:blank'", 'fresh document for cold load');
   await navigate(cdp, base, state({ date: '2026-08-02', mass: 'ot-18' }));
   const defaults = await snapshot(cdp);
   assert.equal(defaults.outcome, 'unresolved');
@@ -594,7 +647,7 @@ async function testConditionedOrdinaryGroups(cdp, base) {
   const held = await snapshot(cdp);
   assert.equal(held.outcome, 'unresolved', JSON.stringify(held.error));
   assert.deepEqual(held.ordinaryOptionGroups,
-    ['salutatio-form', 'penitential-act', 'creed', 'eucharistic-prayer']);
+    ['salutatio-form', 'penitential-act', 'creed', 'eucharistic-prayer', 'private-preparation']);
   assert.ok(held.ordinaryChecked.includes('eucharistic-prayer:ep-iv'));
   assert.deepEqual(held.ordinaryUnresolved, [
     'ritus-initiales/gloria-in-excelsis',

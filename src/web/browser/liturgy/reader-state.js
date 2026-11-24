@@ -498,8 +498,9 @@
   function validateUnresolvedChoice(value, path) {
     const errors = [];
     const at = path || 'unresolvedChoice';
-    if (!object(value) || value.kind !== 'unresolved-authorized-choice') {
-      return [issue('choice-kind', at, 'choice must be an unresolved authorized choice')];
+    if (!object(value) || value.kind !== (value.id === 'calendar-reading'
+      ? 'unresolved-reading-choice' : 'unresolved-authorized-choice')) {
+      return [issue('choice-kind', at, 'choice kind must match its purpose')];
     }
     if (!nonempty(value.id)) errors.push(issue('choice-id', at + '.id', 'choice needs an id'));
     if (!nonempty(value.reason)) {
@@ -543,7 +544,7 @@
 
   function unresolvedChoice(id, reason, options, hooks) {
     const value = {
-      kind: 'unresolved-authorized-choice',
+      kind: id === 'calendar-reading' ? 'unresolved-reading-choice' : 'unresolved-authorized-choice',
       id: id,
       reason: reason,
       options: (options || []).map(function (one) {
@@ -567,6 +568,9 @@
     const requestedWasSupplied = arguments.length >= 2 && requestedId !== undefined && requestedId !== null;
     const deterministicWasSupplied = arguments.length >= 3 &&
       deterministicId !== undefined && deterministicId !== null;
+    if (value.kind === 'unresolved-reading-choice' && deterministicWasSupplied) {
+      return { ok: false, errors: [issue('choice-reading-only', 'choice', 'an unsettled calendar requires an explicit reading selection')] };
+    }
     const wanted = requestedWasSupplied ? requestedId : (deterministicWasSupplied ? deterministicId : null);
     if (!requestedWasSupplied && !deterministicWasSupplied) {
       return { ok: true, unresolved: value, selected: null };

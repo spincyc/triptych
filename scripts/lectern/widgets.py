@@ -86,6 +86,22 @@ class ScrollPanel(VerticalScroll):
         self.border_title = titled(key, title)
 
 
+class MissalPanel(ScrollPanel):
+    """Turn a page with a line of overlap; repeated keys never queue animations."""
+
+    def action_scroll_down(self) -> None:
+        self.scroll_relative(y=1, animate=False, immediate=True)
+
+    def action_scroll_up(self) -> None:
+        self.scroll_relative(y=-1, animate=False, immediate=True)
+
+    def action_page_down(self) -> None:
+        self.scroll_relative(y=max(1, self.scrollable_content_region.height - 1), animate=False, immediate=True)
+
+    def action_page_up(self) -> None:
+        self.scroll_relative(y=-max(1, self.scrollable_content_region.height - 1), animate=False, immediate=True)
+
+
 def meter(ink: "Ink", held: int, total: int, width: int) -> "Ink":
     """A btop meter in theme-aware cells; the count is always written beside it."""
     filled = round(min(1.0, held / total) * width) if total else 0
@@ -138,7 +154,8 @@ class Ink:
     def __bool__(self) -> bool:
         return bool(self.parts)
 
-    def content(self):
+    def content(self, end: int | None = None):
         from textual.content import Content
 
-        return Content.assemble(*self.parts)
+        parts = self.parts if end is None else self.parts[:end]
+        return Content.assemble(*parts)

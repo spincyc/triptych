@@ -9,20 +9,26 @@ from textual.widgets.option_list import Option
 
 from .. import bridge, missal
 from ..dialogs import Ask, Pick, Reading
-from ..reader_navigation import ReadingNavigation, share
+from ..reader_navigation import MissalSurface, ReadingNavigation, share
 from ..repo import Refused
-from ..surface import Surface
-from ..widgets import Ink, Panel, ScrollPanel
+from ..widgets import Ink, MissalPanel, Panel, ScrollPanel
 
 ADAPTER = "liturgy"
 SEARCHED = "titles, keys, kinds, seasons, fixed dates, incipits, citations and witnesses"
 
 
-class Propers(Surface):
+class Propers(MissalSurface):
+    READING = "#propers-reading"
+    BROWSE = "#propers-list"
     key = "2"
     label = "Propers"
-    FIRST = "#propers-list"
+    @property
+    def FIRST(self):
+        return self.READING if self.reading and not self.has_class("navigation") else self.BROWSE
     HELP = (
+        ("℣ · ℟ · P · S", "versicle · response · priest · server"),
+        (",", "reading settings: celebration, prayers and Scripture"),
+        ("↑ / ↓ · PgUp / PgDn", "scroll the reading by a line or a page"),
         ("/", "search this missal's formularies"),
         ("escape", "leave the search box"),
         ("enter", "read the highlighted formulary"),
@@ -45,6 +51,7 @@ class Propers(Surface):
         ("f", "show or hide navigation panes; narrow screens start with the reading"),
     )
     BINDINGS = [
+        Binding("comma", "settings", "settings"),
         Binding("slash", "search", "search"),
         Binding("c", "calendar", "missal"),
         Binding("o", "orations", "language"),
@@ -117,7 +124,7 @@ class Propers(Surface):
                     Panel(OptionList(id="propers-list"), title="formularies", id="propers-list-box"),
                     id="propers-left",
                 ),
-                ScrollPanel(Static("", id="propers-text"), title="propers", id="propers-reading"),
+                MissalPanel(Static("", id="propers-text"), title="propers", id="propers-reading"),
             )
         )
         self.start()
@@ -148,6 +155,7 @@ class Propers(Surface):
         self.list_calendar()
         if self._intent.get("mass"):
             self.reading = (self.calendar, self._intent["mass"], self._intent.get("form"))
+            self.show_reading_pane()
             self.selection().update(self._intent.get("selection") or {})
             self.fetch()
 
@@ -163,6 +171,8 @@ class Propers(Surface):
                                ("companion", "companion"), ("urlLegacy", "url_legacy")):
             if key in options:
                 setattr(self, attribute, options[key])
+        if options.get("ordinary"):
+            self.add_class("focus")
         selection = {name: options[name] for name in ("cycle", "witness", "properChoices", "variants", "alternative", "sourceLocal1970")
                      if name in options}
         self.navigation.pending = options.get("location")
@@ -182,6 +192,7 @@ class Propers(Surface):
             return
         if mass:
             self.reading = (self.calendar, mass, form)
+            self.show_reading_pane()
             if options.get("replace"):
                 self.choices[self.reading] = {}
             self.selection().update(selection)
@@ -345,6 +356,7 @@ class Propers(Surface):
 
     def read(self, calendar: str, key: str, form: str | None) -> None:
         self.reading = (calendar, key, form)
+        self.show_reading_pane()
         self.comparison = None
         self.fetch()
 
@@ -426,24 +438,31 @@ class Propers(Surface):
         if state.get("companion"):
             extra.append(f"Latin Bible: {state['companion']}")
         box.border_subtitle = " · ".join([mode, f"{language} orations", view["bible"]["label"], *extra])
-        ink(mass.get("name") or view["key"], "bold $propers-color")
-        if mass.get("kind"):
-            ink(f"  ·  {mass['kind']}", "$text-muted")
-        if mass.get("season"):
-            ink(f"  ·  {mass['season'].replace('-', ' ')}", "$text-muted")
-        ink.line()
-        ink.line(view["key"], "$text-muted")
-        # page: propers-reader.js:634
-        ink.line("Propers are read independently of a civil date", "italic $text-muted")
+        configured = bool(state.get("ordinary") and view.get("events") and not view.get("comparison"))
+        if not configured:
+            ink(mass.get("name") or view["key"], "bold $propers-color")
+            if mass.get("kind"):
+                ink(f"  ·  {mass['kind']}", "$text-muted")
+            if mass.get("season"):
+                ink(f"  ·  {mass['season'].replace('-', ' ')}", "$text-muted")
+            ink.line()
+            ink.line(view["key"], "$text-muted")
+            # page: propers-reader.js:634
+            ink.line("Propers are read independently of a civil date", "italic $text-muted")
+        elif mass.get("recension"):
+            ink.line(mass["recension"], "italic $warning")
+        missal.source_witness(ink, view)
+        missal.ordinary_conditions(ink, view, compact=configured)
         for absence in view.get("explicitAbsences") or []:
             reason = absence.get("reason") or ""
             if " " in reason:
                 ink.line(reason, "italic $text-muted")
-        ink.line()
+        if not configured:
+            ink.line()
         missal.choices(ink, view)
-        if view.get("notice"):
+        if view.get("notice") and not configured:
             ink.line(view["notice"], "italic $warning")
-        if state.get("ordinary") and (view.get("ordinary") or {}).get("advisory"):
+        if not configured and state.get("ordinary") and (view.get("ordinary") or {}).get("advisory"):
             ink.line(view["ordinary"]["advisory"], "italic $text-muted")
         self.navigation.begin((view["calendar"], view["key"], state.get("form")), box, text)
         compared = view.get("comparison")
@@ -472,7 +491,6 @@ class Propers(Surface):
                 missal.events(ink, {**view, "events": [event]}, rubrics=self.rubrics, accent="$propers-color")
         text.update(ink.content())
         self.navigation.finish(self, box, text)
-        self.show_reading_pane()
         self.app.refresh_where()
         if self.pending_study:
             self.pending_study = False
@@ -571,8 +589,16 @@ class Propers(Surface):
         except Refused as refusal:
             self.deliver(self.app.notify, str(refusal), severity="warning")
             return
+        ink = Ink()
+        view = self.view or {}
+        missal.source_witness(ink, view, detail=True)
+        missal.ordinary_conditions(ink, view)
+        if view.get("notice"):
+            ink.line(view["notice"], "italic $text-muted")
+        if (view.get("ordinary") or {}).get("advisory"):
+            ink.line(view["ordinary"]["advisory"], "italic $text-muted")
         self.deliver(self.app.push_screen, Reading("Study this formulary",
-                     missal.blocks(Ink(), blocks, accent="$propers-color").content(), walks=False))
+                     missal.blocks(ink, blocks, accent="$propers-color").content(), walks=False))
 
     def action_compare(self) -> None:
         if self.comparison:
@@ -625,6 +651,12 @@ class Propers(Surface):
         self.app.push_screen(Pick("compare this formulary", [(one["dimension"], one["label"]) for one in offers],
                                   "Semantic slots are paired by the page's comparison model."), dimension_chosen)
 
+    def source_rows(self) -> list[dict]:
+        return [self.view] if self.view else []
+
+    def reload_reading(self) -> None:
+        self.again()
+
     def action_bible(self) -> None:
         ids = [one["id"] for one in self.bibles]
         if ids:
@@ -637,7 +669,9 @@ class Propers(Surface):
                                               self.query_one("#propers-text", Static))
             self.navigation.pending = (((self.view or {}).get("navigation") or {}).get("nearest") or {}).get(current)
         self.ordinary = not self.ordinary
-        self.again()
+        if self.reading:
+            self.show_reading_pane()
+            self.again()
 
     def action_rubrics(self) -> None:
         self.rubrics = not self.rubrics

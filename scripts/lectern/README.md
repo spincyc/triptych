@@ -88,6 +88,8 @@ Missing text and unresolved source conditions remain explicit.
 | Key | Reading action |
 | --- | --- |
 | `c`, `o`, `b` | Next missal, oration language, or Bible edition |
+| `,` | Open reading settings grouped by celebration, prayers and Scripture |
+| `↑`, `↓`, `PgUp`, `PgDn` | Scroll the focused reading by one line or one page, with a line of overlap |
 | `m`, `r` | Toggle Missal mode; show or hide Ordinary rubrics |
 | `L` | Choose the Ordinary language independently, in Missal mode |
 | `B` | Pair Latin prayers with the selected language, or return to that language alone |
@@ -102,7 +104,7 @@ Missing text and unresolved source conditions remain explicit.
 | `f` | Show or hide navigation; on compact screens, swap navigation and reading |
 | `?` | Show the current surface's full help and calendar-mark legend |
 
-Day also provides previous/next day with the arrow keys, previous/next week
+Day also provides previous/next day with the left/right arrow keys, previous/next week
 with `[` and `]`, previous/next month with `{` and `}`, and Today with `t`.
 Its `p` opens the current formulary in Propers while preserving its material
 reading choices. Propers provides `/` search and `[`/`]` movement within the
@@ -123,6 +125,17 @@ replaces prior semantic choices with the explicit URL state. A bare Propers
 route opens Browse. Invalid locations and custom browser data roots are
 refused: this reader consumes the published checkout data. Sharing also
 reports when a narrowed territorial Read view has no equivalent browser URL.
+
+Selecting Missal mode focuses the reading and folds its navigation. Source
+credits and qualifications accompany their texts. Study holds detailed
+coverage and unresolved Ordinary conditions. When the selected Mass or form
+has a source link, Reading settings opens its witnesses by language, edition
+and scope, with the exact locus and full URL. A weekday’s selected prayer
+source is available alongside the dated Mass. Ordinary sources follow the
+elements actually present, including the selected Eucharistic Prayer. Press
+`o` to open the source
+in a browser or `c` to copy its URL. The speaker marks include ℣ for a
+versicle, ℟ for a response, P for priest and S for server.
 
 Below 90 columns, Day and selected Propers readings start with the text;
 an unselected Propers entrance starts with Browse. `f` swaps the two surfaces,

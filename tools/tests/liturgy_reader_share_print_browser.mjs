@@ -20,7 +20,7 @@ const execFileAsync = promisify(execFile);
 
 // Physical PDF regressions follow source-owned reader text.
 const SHORT_ORDINARY_PRINT = [
-  ['psalmus-xlii-heading', null, 'Psalm xlii.'],
+  ['psalmus-xlii-heading', 'Ps. 42, 1-5', 'Psalm xlii.'],
   ['judica-me-deus', 'dum affligit me inimicus?', 'whilst the enemy afflicteth me?'],
   ['emitte-lucem-tuam', 'ad Deum qui lætificat juventutem meam.', 'to God Who giveth joy to my youth.'],
   ['confitebor-tibi-in-cithara', 'salutare vultus mei, et Deus meus.', 'the salvation of my countenance and my God.'],
@@ -605,7 +605,7 @@ try {
                   sourceId:side.dataset.textSourceId||null,
                   label:side.querySelector(':scope > .text-side-label')?.textContent||'',
                   tail:(spoken?.textContent||'').trim().split(/\\s+/).slice(-12).join(' '),
-                  credit:side.querySelector(':scope > .composed-note')?.textContent||''};
+                  credit:side.querySelector(':scope > .composed-note,.ordinary-reading-source')?.textContent||''};
               })};
           })};
       })()`);
@@ -673,7 +673,7 @@ try {
     '&peer-alternative=proper-choice%2Fpostconciliar%2Fpresentation-lord%2Fmain%2Fgospel%2Fshorter' +
     '&location=compare%2Fproper%2Fgospel', activeCase);
   assert.equal(alternativePrint.before.state.comparison.dimension, 'reading-alternative');
-  assert.deepEqual(alternativePrint.before.ids, ['entrance-antiphon','reading-1','responsorial-psalm','reading-2',
+  assert.deepEqual(alternativePrint.before.ids, ['entrance-antiphon','collect','reading-1','responsorial-psalm','reading-2',
     'gospel-acclamation','gospel','communion-antiphon'].map(id => 'compare/proper/' + id));
   const alternativeProof = assertAlternativePdf(alternativePrint.pages, alternativePrint.bbox);
   assertions.push({ name: activeCase, status: 'pass', pdf:alternativeProof });

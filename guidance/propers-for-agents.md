@@ -160,7 +160,8 @@ more typed `witness-gap`, `rights-withheld`, or `no-exemplar` reasons; it carrie
 no `propers` or `forms`. This applies to dated and seasonal masses as well as
 text-free Commons. A non-Common Mass with some genuine target wording may use
 `state: partial` beside exactly one of `propers` or `forms`; the typed status
-accounts for the rest without inventing content.
+accounts for the rest without inventing content. A partly recovered Common
+uses named forms under the same partial status and records its source edition.
 
 ## Invariants
 

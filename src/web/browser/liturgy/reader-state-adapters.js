@@ -1012,7 +1012,8 @@
     }
     return {
       id: seat.key, anchor: seat.anchor, where: seat.where,
-      locus: seat.locus, placement: 'seated'
+      locus: seat.locus, placement: 'seated',
+      ...(seat.lessonPreparation ? {lessonPreparation: seat.lessonPreparation} : {})
     };
   }
 
@@ -2043,6 +2044,36 @@
     return territory && territory.id || null;
   }
 
+  function dayBranchRequest(state, branch, branches) {
+    if (branches.length < 2) return state;
+    const request = Object.assign({}, state, {
+      calendar: Object.assign({}, state.calendar, { territory: { id: branch.option } })
+    });
+    // A Mass chosen inside one territorial result belongs only to branches
+    // where that Mass is readable. A wholly foreign selection still fails.
+    const selected = state.selectedReadableFormulary && state.selectedReadableFormulary.id;
+    function holds(formularyBranch) {
+      return (formularyBranch.readable || []).some(function (one) { return one.key === selected; });
+    }
+    if (selected && !holds(branch) && branches.some(holds)) {
+      delete request.selectedReadableFormulary;
+      delete request.form;
+      delete request.properChoices;
+      if (request.languages && request.languages.translationWitness) {
+        request.languages = Object.assign({}, request.languages);
+        delete request.languages.translationWitness;
+      }
+    }
+    if (branch.orationSelection) {
+      request.orationMass = branch.orationSelection.owner;
+      if (branch.orationSelection.territory) request.orationTerritory = branch.orationSelection.territory;
+    } else {
+      delete request.orationMass;
+      delete request.orationTerritory;
+    }
+    return request;
+  }
+
   function readableFor(branch, request) {
     const rows = branch.readable || [];
     if (request.selectedReadableFormulary) {
@@ -2108,6 +2139,20 @@
           identity: { id: one.key || one.id }
         }; }),
         choice.locus ? [{ kind: 'locus', id: choice.locus }] : []
+      ));
+    }
+    const candidates = branch.readable || [];
+    if (!out.length && !(request && request.selectedReadableFormulary) && !branch.choice &&
+        !(branch.massChoices || []).length && branch.settled === false && branch.winner === null &&
+        candidates.length > 1 && candidates.every(function (row) { return row.state === 'unresolved'; })) {
+      const reasons = (branch.unsettled || []).map(function (row) {
+        return [row.what, row.why].filter(Boolean).join(' — ');
+      }).filter(Boolean);
+      if (reasons.length) out.push(Contract.unresolvedChoice(
+        'calendar-reading', reasons.join(' '),
+        candidates.map(function (row) {
+          return { id: row.key, identity: { id: row.key } };
+        }), []
       ));
     }
     return out;
@@ -2312,7 +2357,7 @@
     }
     const choices = branchChoices(branch, request);
     const readable = readableFor(branch, request);
-    if (!readable && choices.length) {
+    if (choices.length && (!readable || !request.selectedReadableFormulary)) {
       return unresolvedDayResult(
         request, derived.calendar, derived.date, branch, choices
       );
@@ -2360,6 +2405,7 @@
         settled: branch.settled, weekday: derived.weekday,
         season: derived.season, nature: branch.winner && branch.winner.nature,
         date: derived.date,
+        office: {settled: branch.settled, winner: branch.winner, standing: readable.state, weekday: derived.weekday},
         anchors: derived.liturgicalYear && derived.liturgicalYear.anchors || null,
         appointments: formularyAppointments(mass, formSelection.form, branch.winner)
       }), {date: derived.date, season: derived.season, formId: formSelection.id || 'main', conditionFacts: input.conditionFacts, usageContext: {
@@ -3341,7 +3387,7 @@
     }
     const choices = branchChoices(branch, request);
     const readable = readableFor(branch, request);
-    if (!readable && choices.length) {
+    if (choices.length && (!readable || !request.selectedReadableFormulary)) {
       return unresolvedDayResult(request, day.calendar, payload.date, branch, choices);
     }
     if (!readable) throw new Error('CLI branch has no deterministic or explicitly selected formulary');
@@ -3528,6 +3574,7 @@
           season: input.derived.season,
           nature: branch.winner && branch.winner.nature,
           date: input.derived.date,
+          office: {settled: branch.settled, winner: branch.winner, standing: readable.state, weekday: input.derived.weekday},
           anchors: input.derived.liturgicalYear &&
             input.derived.liturgicalYear.anchors || null,
           appointments: formularyAppointments(
@@ -3835,6 +3882,7 @@
     browseState: browseState,
     selectOrdinaryTranslation: ordinaryTranslation,
     validationContext: validationContext,
+    dayBranchRequest: dayBranchRequest,
     adaptDay: adaptDay,
     adaptPropers: adaptPropers,
     adaptCli: adaptCli
