@@ -553,6 +553,13 @@ without comments). The respective ceilings are 15,000/10,300 and 8,800/3,350.
 The chapter catalogue uses the existing index request. English wording is
 fetched only when the reader opens it.
 
+The 2026-11-24 independent review checked the English Mark sections against
+the CCEL paragraph sequence and all 677 canonical verse addresses. It also
+confirmed the three Advent lessons on pp. 216–217 of Bute’s Winter volume,
+and distinguished the three Oxford excerpts of Bede at Luke 2:7 in both
+readers. Those excerpts share a printed locator; their checked textual bases
+identify the swaddling clothes, the manger and the inn.
+
 ### Verse-specific excerpts within a held passage — 2026-11-08
 
 A long admitted fragment can carry reviewed internal Scripture links in
