@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-24-sanctoral-chants.donatus-alleluia-af27221e"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-24-sanctoral-chants"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "The 1774 Venetian printing is public domain in the United States by its publication date. The historical words alone supply the chant verse. Triptych releases its editorial transcription under CC BY 4.0."
+rights_jurisdiction = "United States"
+retrieved = "2026-11-24"
+sha256 = "af27221e29c005ad4afe5f39499287f140b5b68988a735b295d84d0e3ce2e0bd"
+byte_size = 93
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-24-sanctoral-chants/artifacts/donatus-alleluia-af27221e/latin.txt"
+encoding = "utf-8"
+indexable = true
+projected_from = ["artifact.gregory-the-great.opera-omnia.venice-1774-volume-12.ia-pdf-29deeeea", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+provenance = "Opera omnia, Venice 1774, volume XII, printed p. 140, PDF p. 170, right column, Allel. ℣. c (P, M). Missale Romanum 1962, St Donatus, 7 August, printed p. 617, PDF p. 698, no. 3299."
+transformation = "The historical verse is complete. Normalize long s, punctuation and the versicle sign. Expand the ordinary Alleluia refrain around it as printed at its dated appointment."

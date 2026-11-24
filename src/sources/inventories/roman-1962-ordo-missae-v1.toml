@@ -179,6 +179,7 @@ label = "The New Roman Missal in Latin and English, by F. X. Lasance and F. A. W
 rights = "public-domain"
 caution = "A publisher's hand missal, not an approved liturgical translation and never an altar book; nothing here may be used for recitation. Supplies checked historical English for the opening, selected Oblatio, Canon, Communion and conclusion prayers, the proper Hanc igitur of Easter and Pentecost, and the historical Preface bodies explicitly joined here. Historical renderings are not exact 1962 witnesses; the Hanc igitur alone was read against 1962 Latin clause by clause and prints no rubric for the joining of the hands."
 artifacts = [
+  "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.requiem-agnus-dei-a7d3db20",
   "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.hanc-igitur-easter-pentecost-checked-english",
   "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.proper-communicantes-heads-en-20261026-57552729",
   "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1",
@@ -191,6 +192,14 @@ artifacts = [
   "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-complete-b-en",
 ]
 
+
+[[witnesses]]
+id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+lang = "la"
+label = "Lasance/Walsh, The New Roman Missal in Latin and English, 1945 revision, Latin column"
+rights = "public-domain"
+caution = "Historical lay-missal Latin for the three invocations of the Requiem Agnus Dei, printed p. 788."
+artifacts = ["artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.requiem-agnus-dei-a7d3db20"]
 
 [[witnesses]]
 id = "edition.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929"
@@ -1550,6 +1559,107 @@ relation = "own"
 counterpart = "rubric-at-place"
 reading_note = "Latin: the 1962 Missal's own rubric at this place (1960-1962 wording), published on a qualified basis. The English beside it is the 1861 lay missal's paraphrase, not a translation of this Latin."
 
+[[sections.element_provenance]]
+element = "rubrica-benedictio-incensi-et-introitus"
+lang = "en"
+relation = "antecedent"
+collation = "uncollated"
+reading_note = "At a Requiem the altar is not incensed at the Introit. The Introit and Kyrie remain. Ritus servandus XIII.2."
+note = "Historical Cummiskey lay-missal English. The 1962 Ritus servandus governs the execution of this rubric."
+
+[[sections.element_conditions]]
+element = "rubrica-sacerdos-ad-pedes-altaris"
+conditions = [{ kind = "include-when-any", predicates = ["1962-prayers-at-foot"], basis = "Missale Romanum 1962, RGMR 424. Whether the prayers at the foot are said depends on whether the Mass follows its specified blessing or procession." }]
+
+[[sections.element_conditions]]
+element = "in-nomine-patris"
+conditions = [{ kind = "include-when-any", predicates = ["1962-prayers-at-foot"], basis = "Missale Romanum 1962, RGMR 424. Whether the prayers at the foot are said depends on whether the Mass follows its specified blessing or procession." }]
+
+[[sections.element_conditions]]
+element = "introibo-ad-altare-dei"
+conditions = [{ kind = "include-when-any", predicates = ["1962-prayers-at-foot"], basis = "Missale Romanum 1962, RGMR 424. Whether the prayers at the foot are said depends on whether the Mass follows its specified blessing or procession." }]
+
+[[sections.element_conditions]]
+element = "adjutorium-nostrum"
+conditions = [{ kind = "include-when-any", predicates = ["1962-prayers-at-foot"], basis = "Missale Romanum 1962, RGMR 424. Whether the prayers at the foot are said depends on whether the Mass follows its specified blessing or procession." }]
+
+[[sections.element_conditions]]
+element = "confiteor-sacerdotis"
+conditions = [{ kind = "include-when-any", predicates = ["1962-prayers-at-foot"], basis = "Missale Romanum 1962, RGMR 424. Whether the prayers at the foot are said depends on whether the Mass follows its specified blessing or procession." }]
+
+[[sections.element_conditions]]
+element = "misereatur-tui"
+conditions = [{ kind = "include-when-any", predicates = ["1962-prayers-at-foot"], basis = "Missale Romanum 1962, RGMR 424. Whether the prayers at the foot are said depends on whether the Mass follows its specified blessing or procession." }]
+
+[[sections.element_conditions]]
+element = "confiteor-ministrorum"
+conditions = [{ kind = "include-when-any", predicates = ["1962-prayers-at-foot"], basis = "Missale Romanum 1962, RGMR 424. Whether the prayers at the foot are said depends on whether the Mass follows its specified blessing or procession." }]
+
+[[sections.element_conditions]]
+element = "misereatur-vestri"
+conditions = [{ kind = "include-when-any", predicates = ["1962-prayers-at-foot"], basis = "Missale Romanum 1962, RGMR 424. Whether the prayers at the foot are said depends on whether the Mass follows its specified blessing or procession." }]
+
+[[sections.element_conditions]]
+element = "indulgentiam"
+conditions = [{ kind = "include-when-any", predicates = ["1962-prayers-at-foot"], basis = "Missale Romanum 1962, RGMR 424. Whether the prayers at the foot are said depends on whether the Mass follows its specified blessing or procession." }]
+
+[[sections.element_conditions]]
+element = "deus-tu-conversus"
+conditions = [{ kind = "include-when-any", predicates = ["1962-prayers-at-foot"], basis = "Missale Romanum 1962, RGMR 424. Whether the prayers at the foot are said depends on whether the Mass follows its specified blessing or procession." }]
+
+[[sections.element_conditions]]
+element = "ostende-nobis"
+conditions = [{ kind = "include-when-any", predicates = ["1962-prayers-at-foot"], basis = "Missale Romanum 1962, RGMR 424. Whether the prayers at the foot are said depends on whether the Mass follows its specified blessing or procession." }]
+
+[[sections.element_conditions]]
+element = "domine-exaudi"
+conditions = [{ kind = "include-when-any", predicates = ["1962-prayers-at-foot"], basis = "Missale Romanum 1962, RGMR 424. Whether the prayers at the foot are said depends on whether the Mass follows its specified blessing or procession." }]
+
+[[sections.element_conditions]]
+element = "dominus-vobiscum"
+conditions = [{ kind = "include-when-any", predicates = ["1962-prayers-at-foot"], basis = "Missale Romanum 1962, RGMR 424. Whether the prayers at the foot are said depends on whether the Mass follows its specified blessing or procession." }]
+
+[[sections.element_conditions]]
+element = "rubrica-ascensus-ad-altare"
+conditions = [{ kind = "include-when-any", predicates = ["1962-prayers-at-foot"], basis = "Missale Romanum 1962, RGMR 424. Whether the prayers at the foot are said depends on whether the Mass follows its specified blessing or procession." }]
+
+[[sections.element_conditions]]
+element = "aufer-a-nobis"
+conditions = [{ kind = "include-when-any", predicates = ["1962-prayers-at-foot"], basis = "Missale Romanum 1962, RGMR 424. Whether the prayers at the foot are said depends on whether the Mass follows its specified blessing or procession." }]
+
+[[sections.element_conditions]]
+element = "rubrica-inclinatus-ante-altare"
+conditions = [{ kind = "include-when-any", predicates = ["1962-prayers-at-foot"], basis = "Missale Romanum 1962, RGMR 424. Whether the prayers at the foot are said depends on whether the Mass follows its specified blessing or procession." }]
+
+[[sections.element_conditions]]
+element = "oramus-te-domine"
+conditions = [{ kind = "include-when-any", predicates = ["1962-prayers-at-foot"], basis = "Missale Romanum 1962, RGMR 424. Whether the prayers at the foot are said depends on whether the Mass follows its specified blessing or procession." }]
+
+[[sections.element_conditions]]
+element = "psalmus-xlii-heading"
+conditions = [{ kind = "include-when-any", predicates = ["1962-psalm-42"], basis = "Missale Romanum 1962, RGMR 424–425 and Ordo Missae nn. 1013–1016. The initial antiphon is retained when only Psalm 42, its doxology and its repetition are omitted." }]
+
+[[sections.element_conditions]]
+element = "judica-me-deus"
+conditions = [{ kind = "include-when-any", predicates = ["1962-psalm-42"], basis = "Missale Romanum 1962, RGMR 424–425 and Ordo Missae nn. 1013–1016. The initial antiphon is retained when only Psalm 42, its doxology and its repetition are omitted." }]
+
+[[sections.element_conditions]]
+element = "emitte-lucem-tuam"
+conditions = [{ kind = "include-when-any", predicates = ["1962-psalm-42"], basis = "Missale Romanum 1962, RGMR 424–425 and Ordo Missae nn. 1013–1016. The initial antiphon is retained when only Psalm 42, its doxology and its repetition are omitted." }]
+
+[[sections.element_conditions]]
+element = "confitebor-tibi-in-cithara"
+conditions = [{ kind = "include-when-any", predicates = ["1962-psalm-42"], basis = "Missale Romanum 1962, RGMR 424–425 and Ordo Missae nn. 1013–1016. The initial antiphon is retained when only Psalm 42, its doxology and its repetition are omitted." }]
+
+[[sections.element_conditions]]
+element = "gloria-patri"
+conditions = [{ kind = "include-when-any", predicates = ["1962-psalm-42"], basis = "Missale Romanum 1962, RGMR 424–425 and Ordo Missae nn. 1013–1016. The initial antiphon is retained when only Psalm 42, its doxology and its repetition are omitted." }]
+
+[[sections.element_conditions]]
+element = "introibo-ad-altare-dei-repetitio"
+conditions = [{ kind = "include-when-any", predicates = ["1962-psalm-42"], basis = "Missale Romanum 1962, RGMR 424–425 and Ordo Missae nn. 1013–1016. The initial antiphon is retained when only Psalm 42, its doxology and its repetition are omitted." }]
+
+
 [[sections]]
 key = "oblatio"
 name = "The Lessons and the Offertory"
@@ -2721,6 +2831,23 @@ relation = "antecedent"
 collation = "uncollated"
 reading_note = "Historical 1861 direction, not the 1962 discipline: the 1962 Missal gives Per evangelica dicta to the priest alone as he kisses the book, and prints no direction for the assistants here."
 note = "ANTECEDENT, NOT THE TARGET EDITION. This English is the anonymous translation printed by the 1861 Cummiskey lay hand missal, not an approved translation of the 1962 typical edition. UNCOLLATED: no element-by-element collation against the target edition is asserted. Read against the 1962 Ordo Missae page images on 2026-11-14: the direction states practice the 1962 book does not prescribe, so it carries a caution at the element and no Latin."
+
+[[sections.element_conditions]]
+element = "dominus-sit-in-corde-meo"
+conditions = [{ kind = "include-when-any", predicates = ["1962-ordinary-outside-requiem"], basis = "Missale Romanum 1962, Ritus servandus XIII.1 and RGMR 507–508. This element is omitted or replaced in Masses of the Dead." }]
+
+[[sections.element_conditions]]
+element = "rubrica-cum-sacerdote"
+conditions = [{ kind = "include-when-any", predicates = ["1962-ordinary-outside-requiem"], basis = "Missale Romanum 1962, Ritus servandus XIII.1 and RGMR 507–508. This element is omitted or replaced in Masses of the Dead." }]
+
+[[sections.element_conditions]]
+element = "per-evangelica-dicta"
+conditions = [{ kind = "include-when-any", predicates = ["1962-ordinary-outside-requiem"], basis = "Missale Romanum 1962, Ritus servandus XIII.1 and RGMR 507–508. This element is omitted or replaced in Masses of the Dead." }]
+
+[[sections.element_conditions]]
+element = "gloria-patri"
+conditions = [{ kind = "include-when-any", predicates = ["1962-lavabo-doxology"], basis = "Missale Romanum 1962, Ritus servandus VII.6 and XIII.1. The Lavabo doxology is omitted in Masses of the Dead and the Masses de Tempore from Passion Sunday through Holy Thursday inclusive." }]
+
 
 [[sections]]
 key = "praefatio"
@@ -5079,6 +5206,65 @@ counterpart = "rubric-at-place"
 reading_note = "Latin: the Missal's own rubric at this place (1922 Mame, word for word as in the 1962 typical edition). The English beside it is the 1861 lay missal's paraphrase, not a translation of this Latin."
 note = "THE MISSAL'S RUBRIC AT THIS PLACE, NOT THE SOURCE OF THE ENGLISH. The complete rubric the Missal prints here, from the 1922 Tours Mame, printed p. 351, original PDF p. 465, compared word for word on page images on 2026-11-14 (200 dpi, doubtful letters at 400 dpi) with the 1962 typical edition, printed p. 321, artifact PDF p. 402, rubric before n. 1130: the words agree under the declared capitalization, j/i, ligature, accent and pointing transformations. The English beside it is the 1861 Cummiskey lay missal's own paraphrase of the direction at this place, not a translation of this Latin, and this Latin is not its source. The 1861 book prints no Latin here; that absence remains its own."
 
+[[sections.element_provenance]]
+element = "rubrica-oratio-omittenda"
+lang = "en"
+relation = "antecedent"
+collation = "uncollated"
+reading_note = "The omitted prayer is Dómine Iesu Christe, qui dixísti Apóstolis tuis. The next prayer shown here, Dómine Iesu Christe, Fili Dei vivi, is said. Ritus servandus XIII.1."
+note = "Historical Cummiskey lay-missal English. The 1962 Ritus servandus governs the execution of this rubric."
+
+[[sections.element_conditions]]
+element = "rubrica-agnus-dei"
+conditions = [{ kind = "include-when-any", predicates = ["1962-ordinary-outside-requiem"], basis = "Missale Romanum 1962, Ritus servandus XIII.1 and RGMR 507–508. This element is omitted or replaced in Masses of the Dead." }]
+
+[[sections.element_conditions]]
+element = "agnus-dei"
+conditions = [{ kind = "include-when-any", predicates = ["1962-ordinary-outside-requiem"], basis = "Missale Romanum 1962, Ritus servandus XIII.1 and RGMR 507–508. This element is omitted or replaced in Masses of the Dead." }]
+
+[[sections.element_conditions]]
+element = "domine-jesu-christe-qui-dixisti"
+conditions = [{ kind = "include-when-any", predicates = ["1962-ordinary-outside-requiem"], basis = "Missale Romanum 1962, Ritus servandus XIII.1 and RGMR 507–508. This element is omitted or replaced in Masses of the Dead." }]
+
+[[sections.element_conditions]]
+element = "rubrica-agnus-dei-in-missis-defunctorum"
+conditions = [{ kind = "include-when-any", predicates = ["1962-requiem"], basis = "Missale Romanum 1962, Ritus servandus XIII.1 and RGMR 507(c)–508. This element follows the printed order for Masses of the Dead." }]
+
+
+[[sections.element_conditions]]
+element = "rubrica-oratio-omittenda"
+conditions = [{ kind = "include-when-any", predicates = ["1962-requiem"], basis = "Missale Romanum 1962, Ritus servandus XIII.1 and RGMR 507(c)–508. This element follows the printed order for Masses of the Dead." }]
+
+
+[[sections.inserted]]
+key = "agnus-dei-defunctorum"
+after = "rubrica-agnus-dei-in-missis-defunctorum"
+kind = "prayer"
+name = "Agnus Dei in Missis defunctorum"
+latin_incipit = "Agnus Dei, qui tollis peccáta mundi"
+conditions = [{ kind = "include-when-any", predicates = ["1962-requiem"], basis = "Missale Romanum 1962, Ordo Missae n. 1120 and Ritus servandus XIII.1. The Requiem petitions replace the ordinary three endings." }]
+latin_turns = [{ key = "priest", seq = [1, 2, 3], speaker = "priest" }]
+english_turns = [{ key = "priest", seq = [1, 2, 3], speaker = "priest" }]
+note = "Three invocations printed for Masses of the Dead in the registered bilingual Lasance/Walsh source, p. 788."
+
+[sections.inserted.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.requiem-agnus-dei-a7d3db20"
+element = "agnus-dei-defunctorum"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "Historical English witness to the three Requiem invocations. Lasance/Walsh p. 788 (PDF p. 787), In Masses for the dead only."
+
+[sections.inserted.latin]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.requiem-agnus-dei-a7d3db20"
+element = "agnus-dei-defunctorum"
+column = "latin"
+relation = "antecedent"
+collation = "uncollated"
+note = "Historical Latin witness to the three Requiem invocations. Lasance/Walsh p. 788 (PDF p. 787), In Masses for the dead only."
+
 [[sections]]
 key = "conclusio"
 name = "The Ablutions and the Last Gospel"
@@ -5344,6 +5530,57 @@ note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey
 # The slots are declared in the order the rite runs, and the generator refuses
 # a file whose slots run backwards against the elements they anchor to. So the
 # order below is not decoration: it is checked against the artifacts.
+
+[[sections.element_conditions]]
+element = "rubrica-in-missis-defunctorum"
+conditions = [{ kind = "include-when-any", predicates = ["1962-requiem"], basis = "Missale Romanum 1962, Ritus servandus XIII.1 and RGMR 507(c)–508. This element follows the printed order for Masses of the Dead." }]
+
+[[sections.element_conditions]]
+element = "requiescant-in-pace"
+conditions = [{ kind = "include-when-any", predicates = ["1962-requiem"], basis = "Missale Romanum 1962, Ritus servandus XIII.1 and RGMR 507(c)–508. This element follows the printed order for Masses of the Dead." }]
+
+[[sections.element_conditions]]
+element = "dominus-vobiscum-ite-missa-est"
+conditions = [{ kind = "include-when-any", predicates = ["1962-ordinary-outside-requiem"], basis = "Missale Romanum 1962, Ritus servandus XIII.1 and RGMR 507–508. This element is omitted or replaced in Masses of the Dead." }]
+
+[[sections.element_conditions]]
+element = "rubrica-benedictio"
+conditions = [{ kind = "include-when-any", predicates = ["1962-ordinary-outside-requiem"], basis = "Missale Romanum 1962, Ritus servandus XIII.1 and RGMR 507–508. This element is omitted or replaced in Masses of the Dead." }]
+
+[[sections.element_conditions]]
+element = "benedicat-vos-omnipotens-deus"
+conditions = [{ kind = "include-when-any", predicates = ["1962-ordinary-outside-requiem"], basis = "Missale Romanum 1962, Ritus servandus XIII.1 and RGMR 507–508. This element is omitted or replaced in Masses of the Dead." }]
+
+[[sections.element_conditions]]
+element = "initium-sancti-evangelii"
+conditions = [{ kind = "include-when-any", predicates = ["1962-last-gospel-of-john"], basis = "Missale Romanum 1962, RGMR 509–510 and Ritus servandus XIII.1. St John is omitted in the third Mass of Christmas and is never the Last Gospel on Palm Sunday. In a Requiem its use depends on whether absolution over the bier follows." }]
+
+[[sections.element_conditions]]
+element = "in-principio-erat-verbum"
+conditions = [{ kind = "include-when-any", predicates = ["1962-last-gospel-of-john"], basis = "Missale Romanum 1962, RGMR 509–510 and Ritus servandus XIII.1. St John is omitted in the third Mass of Christmas and is never the Last Gospel on Palm Sunday. In a Requiem its use depends on whether absolution over the bier follows." }]
+
+[[sections.element_conditions]]
+element = "fuit-homo-missus-a-deo"
+conditions = [{ kind = "include-when-any", predicates = ["1962-last-gospel-of-john"], basis = "Missale Romanum 1962, RGMR 509–510 and Ritus servandus XIII.1. St John is omitted in the third Mass of Christmas and is never the Last Gospel on Palm Sunday. In a Requiem its use depends on whether absolution over the bier follows." }]
+
+[[sections.element_conditions]]
+element = "in-mundo-erat"
+conditions = [{ kind = "include-when-any", predicates = ["1962-last-gospel-of-john"], basis = "Missale Romanum 1962, RGMR 509–510 and Ritus servandus XIII.1. St John is omitted in the third Mass of Christmas and is never the Last Gospel on Palm Sunday. In a Requiem its use depends on whether absolution over the bier follows." }]
+
+[[sections.element_conditions]]
+element = "deo-gratias"
+conditions = [{ kind = "include-when-any", predicates = ["1962-last-gospel-of-john"], basis = "Missale Romanum 1962, RGMR 509–510 and Ritus servandus XIII.1. St John is omitted in the third Mass of Christmas and is never the Last Gospel on Palm Sunday. In a Requiem its use depends on whether absolution over the bier follows." }]
+
+
+[[sections.inserted]]
+key = "dominus-vobiscum-defunctorum"
+before = "rubrica-in-missis-defunctorum"
+text_of = "dominus-vobiscum-ite-missa-est"
+through = { en = "R. And with thy spirit.", la = "R. Et cum spiritu tuo." }
+kind = "prayer"
+name = "Dominus vobiscum"
+conditions = [{ kind = "include-when-any", predicates = ["1962-requiem"], basis = "Missale Romanum 1962, Ritus XI.1 and XIII.1, RGMR 507(c). The final greeting precedes the Requiem dismissal." }]
+note = "Only the two source turns of the greeting recur here. The Requiem dismissal and its Amen follow in their own element."
 
 [[sections.inserted]]
 key = "oratio-super-populum-cues"
@@ -6300,3 +6537,14 @@ office_creed_only = [
   "septuagesima",
   "sexagesima",
 ]
+
+
+[ordinary_usage]
+# Exact Mass identities in the 1962 Proprium de Tempore. A saint on the
+# same date keeps its own rite. Holy Week specialized frames govern their
+# own execution and may supersede this generic Ordinary.
+locus = "Missale Romanum 1962, RGMR 424–425, 507–510; Ritus servandus VII.6, XI.1, XIII.1; Ordo Missae nn. 1013–1016, 1120, 1133–1139."
+passion_temporal = ["passion-sunday", "passion-monday", "passion-tuesday", "passion-wednesday", "passion-thursday", "passion-friday", "passion-saturday", "palm-sunday", "holy-monday", "holy-tuesday", "holy-wednesday", "chrism-mass", "mass-of-the-lords-supper"]
+conditional_preparation = ["purificatione-beatae-mariae-virginis", "ash-wednesday", "palm-sunday", "rogation-mass"]
+omitted_preparation = ["easter-vigil"]
+last_gospel_omitted = [{mass = "nativitate-domini-octave", form = "day"}, {mass = "palm-sunday", form = "main"}, {mass = "easter-vigil", form = "main"}]

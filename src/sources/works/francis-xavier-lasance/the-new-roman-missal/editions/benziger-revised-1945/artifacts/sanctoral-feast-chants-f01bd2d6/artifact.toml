@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.sanctoral-feast-chants-f01bd2d6"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+storage = "tracked"
+rights_jurisdiction = "United States"
+retrieved = "2026-11-24"
+encoding = "utf-8"
+indexable = true
+sha256 = "f01bd2d603bb1edbfede60a1a615e4b80f73a7bbd593814d3717fd82ba91c6dc"
+byte_size = 307
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/sanctoral-feast-chants-f01bd2d6/english.tsv"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+rights_status = "public-domain"
+rights_basis = "The registered Lasance/Walsh historical edition is covered by the United States nonrenewal finding in src/sources/inventories/lasance-new-roman-missal-rights-v1.toml. Only the original historical hand-missal columns supply publication text."
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+source_url = "https://archive.org/download/fr-lasance-missal-1937/fr-lasance-missal-1937.pdf"
+provenance = "English columns of the registered Lasance/Walsh facsimile, read against the parallel Latin and corresponding 1962 feast. Each passage identifies its checked physical lines and page images."
+transformation = "Join line wraps and typographic hyphenation. Normalize the printed versicle sign and apostrophes. Keep the historical wording and abbreviated doxology."

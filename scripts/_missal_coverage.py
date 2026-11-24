@@ -584,6 +584,21 @@ def expectations(path: Path, calendar: str, masses: list[dict]) -> dict:
                         )
                     proper_name = row.get("calendar_proper_name")
                     proper_occurrence = row.get("calendar_proper_occurrence")
+                    if "off_date_appointment" in row:
+                        usage = row["off_date_appointment"]
+                        periods = {
+                            "Alleluia": "before-septuagesima-or-after-pentecost",
+                            "Tract": "after-septuagesima",
+                            "Gradual": "outside-eastertide",
+                        }
+                        fields = {"use", "when", "feast_date", "rubric_locus"}
+                        if (row["kind"] != "text-slot" or not row.get("parent_id")
+                                or proper_name not in periods or not isinstance(usage, dict)
+                                or set(usage) != fields
+                                or any(not isinstance(usage[k], str) or not usage[k].strip() for k in fields)
+                                or usage["use"] not in {"votive", "seasonal-variant"}
+                                or usage["when"] != periods[proper_name]):
+                            raise ValueError("invalid source evidence for off_date_appointment")
                     appointment = row.get("calendar_ordinary_appointment")
                     option = row.get("calendar_ordinary_option")
                     parent = inventory_targets.get(row.get("parent_id"))
@@ -745,6 +760,8 @@ def expectations(path: Path, calendar: str, masses: list[dict]) -> dict:
         classified = {"id": key, "slice_id": target["slice_id"],
                       "kind": target["kind"], "state": state,
                       "mass": mass["key"] if mass else None}
+        if "off_date_appointment" in target:
+            classified["off_date_appointment"] = target["off_date_appointment"]
         # Keep the independently named form even when no held calendar unit
         # corresponds to this slot. A missing Mass must not erase its target.
         if target["kind"] == "text-slot" and parent.get("kind") == "form":
@@ -889,7 +906,7 @@ def published_expectations(report: dict) -> dict:
     ]
     projected["target_states"] = {state: states[state] for state in TARGET_STATES}
     projected["not_represented"] = [
-        {"id": row["id"], "slice_id": row["slice_id"], "kind": row["kind"]}
+        {key: row[key] for key in ("id", "slice_id", "kind", "off_date_appointment") if key in row}
         for row in targets if row["state"] == "not-represented"
     ]
     return projected

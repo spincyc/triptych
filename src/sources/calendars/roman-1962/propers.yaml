@@ -27138,6 +27138,11 @@ sections:
           mass: commune-festorum-bmv
           citation: Missale Romanum 1962, printed p. 588 (PDF p. 669), no. 3058.
           note: The feast prints the same complete chant as this donor.
+      - name: Alleluia
+        source: composed
+        notes: "Missale Romanum 1962, comm-beatae-mariae-virginis-monte-carmelo, printed p. 588, PDF p. 669, no. 3059, Alleluia. Lasance/Walsh, comm-beatae-mariae-virginis-monte-carmelo, Alleluia, printed p. 1107, PDF p. 1100."
+        text: |
+          Alleluia, alleluia. ℣. Per te, Dei Genetrix, nobis est vita perdita data: quae de caelo suscepisti prolem, et mundo genuisti Salvatorem. Alleluia.
       - name: Gospel
         source: scripture
         verses:
@@ -27173,6 +27178,11 @@ sections:
           Sanctifica, Domine, quaesumus, oblata libamina: et, beatae Dei Genetricis
           Mariae saluberrima intercessione, nobis salutaria fore concede. Per eundem
           Dominum.
+      - name: Communion
+        source: composed
+        notes: "Missale Romanum 1962, comm-beatae-mariae-virginis-monte-carmelo, printed p. 588, PDF p. 669, no. 3065, Communion. Lasance/Walsh, comm-beatae-mariae-virginis-monte-carmelo, Communion, printed p. 1108, PDF p. 1101."
+        text: |
+          Regina mundi dignissima, Maria, Virgo perpetua, intercede pro nostra pace et salute, quae genuisti Christum Dominum Salvatorem omnium.
       - name: Postcommunion
         source: composed
         notes: >-
@@ -28331,6 +28341,11 @@ sections:
           - begin: {chapter: 11, verse: 1}
             end: {chapter: 11, verse: 2}
           ref: Isaiah 11:1-2
+      - name: Alleluia
+        source: composed
+        notes: "Missale Romanum 1962, maternitatis-beatae-mariae-virginis, printed p. 686, PDF p. 767, no. 3850, Alleluia. Lasance/Walsh, maternitatis-beatae-mariae-virginis, Alleluia, printed p. 1234, PDF p. 1235."
+        text: |
+          Alleluia, alleluia. ℣. Virgo Dei Genetrix, quem totus non capit orbis, in tua se clausit viscera factus homo. Alleluia.
       - name: Gospel
         source: scripture
         verses:
@@ -31878,6 +31893,26 @@ sections:
               chapter: 2
               verse: 9
           ref: Galatians 2:8, 9
+      - name: Alleluia
+        source: composed
+        notes: "Missale Romanum 1962, conversione-s-pauli-apostoli, printed p. 455, PDF p. 536, no. 2017, Alleluia. Lasance/Walsh, conversione-s-pauli-apostoli, Alleluia, printed p. 887 through printed p. 888, PDF p. 886 through 887."
+        text: |
+          Alleluia, alleluia. ℣. Magnus sanctus Paulus, vas electionis, vere digne est glorificandus, qui et meruit thronum duodecimum possidere. Alleluia.
+        ordinary_disposition:
+          kind: conditional
+          group: conversion-paul-alleluia
+          basis: "Missale Romanum 1962, conversione-s-pauli-apostoli, printed p. 455, PDF p. 536, no. 2017, Alleluia. The printed Tract replaces Alleluia after Septuagesima."
+          when: {fact: roman-1962-common-chant-regime, in: [regular]}
+      - name: Tract
+        source: composed
+        notes: "Missale Romanum 1962, conversione-s-pauli-apostoli, printed p. 455, PDF p. 536, no. 2018, Tract. Lasance/Walsh, conversione-s-pauli-apostoli, Tract, printed p. 888, PDF p. 887."
+        text: |
+          Tu es vas electionis, sancte Paule Apostole: vere digne es glorificandus. ℣. Praedicator veritatis, et doctor gentium in fide et veritate. ℣. Per te omnes gentes cognoverunt gratiam Dei. ℣. Intercede pro nobis ad Deum, qui te elegit.
+        ordinary_disposition:
+          kind: conditional
+          group: conversion-paul-tract
+          basis: "Missale Romanum 1962, conversione-s-pauli-apostoli, printed p. 455, PDF p. 536, no. 2018, Tract. The printed Tract replaces Alleluia after Septuagesima."
+          when: {fact: roman-1962-common-chant-regime, in: [tract]}
       - name: Gospel
         source: scripture
         verses:
@@ -32537,7 +32572,24 @@ sections:
               chapter: 44
               verse: 5
           ref: Psalms 44:5
+      - name: Alleluia
+        source: scripture
+        notes: "Missale Romanum 1962, printed p. 460 (PDF p. 541), no. 2058. The references are printed for this chant; the Bible text supplies its cited verses."
+        verses:
+        - book: Psalms
+          ranges: [{begin: {chapter: 44, verse: 15}, end: {chapter: 44, verse: 16}}]
+          ref: Psalms 44:15-16
+        ordinary_disposition:
+          kind: conditional
+          group: feast-alleluia
+          basis: "Missale Romanum 1962, printed p. 460 (PDF p. 541), no. 2058. The dated chant follows the appointed season."
+          when: {fact: roman-1962-common-chant-regime, in: [regular]}
       - name: Tract
+        ordinary_disposition:
+          kind: conditional
+          group: agnes-post-septuagesima-tract
+          basis: "1962 printed p. 460, no. 2059. The Tract replaces the Alleluia after Septuagesima."
+          when: {fact: roman-1962-common-chant-regime, in: [tract]}
         source: scripture
         verses:
         - book: Psalms
@@ -32960,6 +33012,11 @@ sections:
           meritis, benignus assume: et ad perpetuum nobis tribue provenire subsidium.
           Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat
           in unitate.
+      - name: Communion
+        source: composed
+        notes: "Missale Romanum 1962, s-ignatii-episcopi-martyris, printed p. 463, PDF p. 544, no. 2093, Communion. Lasance/Walsh, s-ignatii-episcopi-martyris, Communion, printed p. 899, PDF p. 898."
+        text: |
+          Frumentum Christi sum: dentibus bestiarum molar, ut panis mundus inveniar.
       - name: Postcommunion
         source: composed
         notes: Target printed p. 464, no. 2094; artifact PDF p. 545. Current body retained byte-exactly. Complete named Ignatius petition visually checked in Pustet Ratisbon 1862, printed p. 399, PDF p. 485. Its actual short Per Dominum cue is distinct from the complete conclusion and separately marked R. Amen printed contiguously in the same book, printed p. 2, PDF p. 88. The 1962 unit explicitly includes that separate response before the February 2 title. Current proof is the 2026-10-26 source-chain successor; no English is added.
@@ -37627,6 +37684,21 @@ sections:
               chapter: 2
               verse: 8
           ref: 2 Timothy 2:8
+      - name: Alleluia
+        source: scripture
+        notes: "Missale Romanum 1962, printed p. 509 (PDF p. 590), no. 2431. The references are printed for this chant; the Bible text supplies its cited verses."
+        verses:
+        - book: Psalms
+          ranges: [{begin: {chapter: 88, verse: 6}, end: {chapter: 88, verse: 6}}]
+          ref: Psalms 88:6
+        - book: Psalms
+          ranges: [{begin: {chapter: 20, verse: 4}, end: {chapter: 20, verse: 4}}]
+          ref: Psalms 20:4
+        ordinary_disposition:
+          kind: conditional
+          group: feast-alleluia
+          basis: "Missale Romanum 1962, printed p. 509 (PDF p. 590), no. 2431. The dated chant follows the appointed season."
+          when: {fact: roman-1962-common-chant-regime, in: [paschal]}
       - name: Gospel
         source: scripture
         verses:
@@ -42653,6 +42725,13 @@ sections:
               chapter: 78
               verse: 2
           ref: Psalms 78:10, 2
+      - name: Alleluia
+        source: scripture
+        notes: "Missale Romanum 1962, printed p. 551 (PDF p. 632), no. 2770. The references are printed for this chant; the Bible text supplies its cited verses."
+        verses:
+        - book: Sirach
+          ranges: [{begin: {chapter: 44, verse: 14}, end: {chapter: 44, verse: 14}}]
+          ref: Sirach 44:14
       - name: Gospel
         source: scripture
         verses:
@@ -43163,6 +43242,11 @@ sections:
               chapter: 3
               verse: 3
           ref: Wisdom 3:1-2, 3
+      - name: Alleluia
+        source: composed
+        notes: "Missale Romanum 1962, comm-ss-marci-marcelliani-martyrum, printed p. 556, PDF p. 637, no. 2812, Alleluia. Lasance/Walsh, comm-ss-marci-marcelliani-martyrum, Alleluia, printed p. 1053, PDF p. 1046."
+        text: |
+          Alleluia, alleluia. ℣. Haec est vera fraternitas, quae numquam potuit violari certamine: qui, effuso sanguine, secuti sunt Dominum. Alleluia.
       - name: Gospel
         source: scripture
         verses:
@@ -43344,6 +43428,10 @@ sections:
               chapter: 15
               verse: 11
           ref: Exodus 15:11
+      - name: Alleluia
+        takes_from:
+          mass: ss-ioannis-pauli-martyrum
+          citation: "Missale Romanum 1962, printed p. 558 (PDF p. 639), no. 2828. This feast appoints the identical complete chant."
       - name: Gospel
         source: scripture
         verses:
@@ -45931,6 +46019,13 @@ sections:
               chapter: 91
               verse: 14
           ref: Psalms 91:13, 14
+      - name: Alleluia
+        source: scripture
+        notes: "Missale Romanum 1962, printed p. 589 (PDF p. 670), no. 3071. The references are printed for this chant; the Bible text supplies its cited verses."
+        verses:
+        - book: James
+          ranges: [{begin: {chapter: 1, verse: 12}, end: {chapter: 1, verse: 12}}]
+          ref: James 1:12
       - name: Gospel
         source: scripture
         verses:
@@ -46290,6 +46385,13 @@ sections:
               chapter: 36
               verse: 31
           ref: Psalms 36:30-31
+      - name: Alleluia
+        source: scripture
+        notes: "Missale Romanum 1962, printed p. 592 (PDF p. 673), no. 3097. The references are printed for this chant; the Bible text supplies its cited verses."
+        verses:
+        - book: Psalms
+          ranges: [{begin: {chapter: 111, verse: 1}, end: {chapter: 111, verse: 1}}]
+          ref: Psalms 111:1
       - name: Gospel
         source: scripture
         verses:
@@ -46633,6 +46735,13 @@ sections:
               chapter: 44
               verse: 8
           ref: Psalms 44:8
+      - name: Alleluia
+        source: scripture
+        notes: "Missale Romanum 1962, printed p. 596 (PDF p. 677), no. 3127. The references are printed for this chant; the Bible text supplies its cited verses."
+        verses:
+        - book: Psalms
+          ranges: [{begin: {chapter: 44, verse: 5}, end: {chapter: 44, verse: 5}}]
+          ref: Psalms 44:5
       - name: Gospel
         source: scripture
         verses:
@@ -47198,6 +47307,15 @@ sections:
       rank: II
       kind: sanctoral
       propers:
+      - name: Introit
+        source: mixed
+        verses:
+        - book: Psalms
+          ranges: [{begin: {chapter: 44, verse: 2}, end: {chapter: 44, verse: 2}}]
+          ref: Psalms 44:2
+        notes: "Missale Romanum 1962, s-annae-matris-beatae-mariae-virginis, printed p. 602, PDF p. 683, no. 3174, Introit. Lasance/Walsh, s-annae-matris-beatae-mariae-virginis, Introit, printed p. 1126, PDF p. 1119."
+        text: |
+          Gaudeamus omnes in Domino, diem festum celebrantes sub honore beatae Annae: de cujus solemnitate gaudent Angeli, et collaudant Filium Dei. Ps. 44, 2. Eructavit cor meum verbum bonum: dico ego opera mea Regi. ℣. Gloria Patri.
       - name: "Collect"
         source: composed
         notes: >-
@@ -48122,6 +48240,10 @@ sections:
               chapter: 132
               verse: 2
           ref: Psalms 132:1-2
+      - name: Alleluia
+        takes_from:
+          mass: ss-ioannis-pauli-martyrum
+          citation: "Missale Romanum 1962, printed p. 610 (PDF p. 691), no. 3238. This feast appoints the identical complete chant."
       - name: Gospel
         source: scripture
         verses:
@@ -48799,6 +48921,11 @@ sections:
               chapter: 36
               verse: 31
           ref: Psalms 36:30-31
+      - name: Alleluia
+        source: composed
+        notes: "Missale Romanum 1962, St Donatus, 7 August, printed p. 617, PDF p. 698, no. 3299. Opera omnia, Venice 1774, volume XII, printed p. 140, PDF p. 170, right column, Allel. \u2123. c (P, M)."
+        text: |
+          Alleluia, alleluia. ℣. Justus non conturbabitur, quia Dominus firmat manum ejus. Alleluia.
       - name: Gospel
         source: scripture
         verses:
@@ -49492,6 +49619,15 @@ sections:
               chapter: 33
               verse: 19
           ref: Psalms 33:18-19
+      - name: Alleluia
+        takes_from:
+          mass: commune-plurimorum-martyrum-3
+          citation: "Missale Romanum 1962, printed p. 623 (PDF p. 704), no. 3353. This feast appoints the identical complete chant."
+        ordinary_disposition:
+          kind: conditional
+          group: feast-alleluia
+          basis: "Missale Romanum 1962, printed p. 623 (PDF p. 704), no. 3353. The dated chant follows the appointed season."
+          when: {fact: roman-1962-common-chant-regime, in: [regular]}
       - name: Gospel
         source: scripture
         verses:
@@ -49726,7 +49862,22 @@ sections:
           - begin: {chapter: 111, verse: 2}
             end: {chapter: 111, verse: 2}
           ref: Psalms 111:9, 2
+      - name: Alleluia
+        source: composed
+        notes: "Missale Romanum 1962, s-ioachim-patris-beatae-mariae-virginis, printed p. 629, PDF p. 710, no. 3392, Alleluia. Lasance/Walsh, s-ioachim-patris-beatae-mariae-virginis, Alleluia, printed p. 1162 through printed p. 1163, PDF p. 1155 through 1156."
+        text: |
+          Alleluia, alleluia. ℣. O Joachim, sanctae conjux Annae, pater almae Virginis, hic famulis ferto salutis opem. Alleluia.
+        ordinary_disposition:
+          kind: conditional
+          group: joachim-alleluia
+          basis: "Missale Romanum 1962, s-ioachim-patris-beatae-mariae-virginis, printed p. 629, PDF p. 710, no. 3392, Alleluia. The August feast prints this Alleluia. The following post-Septuagesima Tract is confined to votive Masses."
+          when: {fact: roman-1962-common-chant-regime, in: [regular]}
       - name: Tract
+        ordinary_disposition:
+          kind: conditional
+          group: joachim-votive-tract
+          basis: "1962 printed p. 629, no. 3393 marks this Tract In Missis votivis post Septuagesimam. It never belongs to the dated August 16 feast."
+          when: {fact: roman-1962-common-chant-regime, in: [tract]}
         source: scripture
         verses:
         - book: Psalms
@@ -51560,6 +51711,10 @@ sections:
               chapter: 132
               verse: 2
           ref: Psalms 132:1-2
+      - name: Alleluia
+        takes_from:
+          mass: ss-ioannis-pauli-martyrum
+          citation: "Missale Romanum 1962, printed p. 646 (PDF p. 727), no. 3539. This feast appoints the identical complete chant."
       - name: Gospel
         source: scripture
         notes: Printed p. 646, no. 3540, headed Sequentia sancti Evangelii secundum Lucam.
@@ -52327,6 +52482,11 @@ sections:
               chapter: 36
               verse: 31
           ref: Psalms 36:30-31
+      - name: Alleluia
+        source: composed
+        notes: "Missale Romanum 1962, comm-impressionis-sacrorum-stigmatum-s-francisci, printed p. 660, PDF p. 741, no. 3649, Alleluia. Lasance/Walsh, comm-impressionis-sacrorum-stigmatum-s-francisci, Alleluia, printed p. 1201, PDF p. 1196."
+        text: |
+          Alleluia, alleluia. ℣. Franciscus pauper et humilis caelum dives ingreditur, hymnis caelestibus honoratur. Alleluia.
       - name: Gospel
         source: scripture
         verses:
@@ -53162,6 +53322,10 @@ sections:
               chapter: 33
               verse: 19
           ref: Psalms 33:18-19
+      - name: Alleluia
+        takes_from:
+          mass: ss-ioannis-pauli-martyrum
+          citation: "Missale Romanum 1962, printed p. 669 (PDF p. 750), no. 3717. This feast appoints the identical complete chant."
       - name: Gospel
         source: scripture
         verses:

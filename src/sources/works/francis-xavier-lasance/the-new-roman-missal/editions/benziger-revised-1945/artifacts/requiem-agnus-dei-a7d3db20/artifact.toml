@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.requiem-agnus-dei-a7d3db20"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+storage = "tracked"
+rights_jurisdiction = "United States"
+retrieved = "2026-11-24"
+encoding = "utf-8"
+indexable = true
+sha256 = "a7d3db204722eeb7222d8b8279cec3855c097a0df02093d0d8e526a16a2a7f50"
+byte_size = 563
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/requiem-agnus-dei-a7d3db20/text.tsv"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+rights_status = "public-domain"
+rights_basis = "Latin and original historical English as printed in the registered Lasance/Walsh 1945 revision. US publication and nonrenewal evidence is recorded in src/sources/inventories/lasance-new-roman-missal-rights-v1.toml."
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+source_url = "https://archive.org/download/fr-lasance-missal-1937/fr-lasance-missal-1937.pdf"
+provenance = "Facing English and Latin under “In Masses for the dead only”, printed p. 788, facsimile PDF p. 787. The three supplications were read directly from the registered scan. The target 1962 Ordo Missae n. 1120 and Ritus servandus XIII.1 govern applicability."
+transformation = "Join typographic line wraps and the English word forevermore across its line break. Retain the source punctuation and Latin stress accents."
