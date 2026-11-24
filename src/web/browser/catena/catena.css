@@ -557,6 +557,9 @@
  * ------------------------------------------------------------------------ */
 
 @media (max-width: 40rem) {
+  .catena-page .page-action--print { max-width: 100%; white-space: normal; }
+  .catena-page .fragment-date { white-space: normal; }
+  .paired-english .version-title { text-align: start; }
   .lead-list { columns: 1; }
 }
 
@@ -691,7 +694,7 @@
 /* The chevron, drawn rather than typed, so it rotates with the state
    instead of swapping one character for another. */
 .chapter-head::after,
-.fragment-head::after,
+summary.fragment-head::after,
 .author-head::after {
   content: '';
   position: absolute;

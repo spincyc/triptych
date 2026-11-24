@@ -548,7 +548,7 @@ shard family or additional payload request.
 The November 24 catalogue and parallel-reading controls let readers choose an
 excerpt-bearing chapter before downloading its spine and open a checked English
 counterpart beside the non-English passage. The controller measures 14,760
-bytes with gzip-9 (10,201 without comments), and the stylesheet 8,586 (3,289
+bytes with gzip-9 (10,201 without comments), and the stylesheet 8,628 (3,327
 without comments). The respective ceilings are 15,000/10,300 and 8,800/3,350.
 The chapter catalogue uses the existing index request. English wording is
 fetched only when the reader opens it.
