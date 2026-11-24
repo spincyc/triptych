@@ -593,7 +593,8 @@ def expectations(path: Path, calendar: str, masses: list[dict]) -> dict:
                         }
                         fields = {"use", "when", "feast_date", "rubric_locus"}
                         if (row["kind"] != "text-slot" or not row.get("parent_id")
-                                or proper_name not in periods or not isinstance(usage, dict)
+                                or not isinstance(proper_name, str) or proper_name not in periods
+                                or not isinstance(usage, dict)
                                 or set(usage) != fields
                                 or any(not isinstance(usage[k], str) or not usage[k].strip() for k in fields)
                                 or usage["use"] not in {"votive", "seasonal-variant"}

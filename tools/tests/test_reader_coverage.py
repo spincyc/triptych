@@ -60,6 +60,21 @@ if (input.op === 'adapt' || input.op === 'choices') {
   }
 }
 if (input.op === 'ordinary') out = T.summarizeCoverage(T.selectedOrdinaryCoverageUnits(input.result, input.ordinary));
+if (input.op === 'ordinary-links') {
+  const mass = input.structure.masses.find(row => row.key === input.key);
+  const request = {
+    schema: C.STATE_SCHEMA, entrance: 'propers', civilDate: null,
+    edition: {id: input.structure.calendar}, formulary: {id: mass.key, type: mass.kind},
+    bible: {id: 'douay-rheims', numbering: 'vulgate'}, languages: {ordinary: 'en', orations: 'en'},
+    requestedMode: 'missal', options: {ordinary: true, legitimate: {'eucharistic-prayer': input.option}},
+    coverage: [], unresolvedChoices: [], sourceHooks: []
+  };
+  const result = A.adaptPropers({request, structure: input.structure, ordinary: input.ordinary});
+  out = {
+    ordinary: T.ordinaryWitnessLinks(input.ordinary, result.events).map(link => link.url),
+    proper: T.missalWitnessLinks(mass, result.resolved.form).map(link => link.url)
+  };
+}
 process.stdout.write(JSON.stringify(out));
 """
 
@@ -279,6 +294,23 @@ class ReaderCoverageTests(unittest.TestCase):
         actual = node(op="ordinary", ordinary={"sections": [{"elements": rows}]},
                       result={"events": [{"kind": "ordinary-element", "id": "ordinary-element/0"}]})
         self.assertEqual(actual, coverage.summarize([rows[0]["coverage"]], "selection"))
+
+    def test_selected_ordinary_witnesses_respect_the_mass_frame_and_preserve_proper_links(self):
+        root = Path(os.environ["TRIPTYCH_COVERAGE_DATA"]) if os.environ.get("TRIPTYCH_COVERAGE_DATA") else browser_data_root(ROOT)
+        ordinary = json.loads((root / "structure/ordinary/postconciliar.json").read_text())
+        structure = json.loads((root / "structure/propers/postconciliar.json").read_text())
+        structure["masses"] = [m for m in structure["masses"] if m["key"] in {"advent-1", "good-friday"}]
+        for choice, expected in (("ep-ii", "EP2-A4.pdf"), ("ep-iii", "EP3-A4.pdf")):
+            actual = node(op="ordinary-links", structure=structure, ordinary=ordinary,
+                          key="advent-1", option=choice)
+            self.assertEqual([url.split("/")[-1] for url in actual["ordinary"] if "/EP" in url],
+                             [expected + "#page=1"])
+            self.assertTrue(any("Compare-3-Peoples.pdf" in url for url in actual["ordinary"]))
+            self.assertTrue(any("gk5.htm#ec" in url for url in actual["proper"]))
+        friday = node(op="ordinary-links", structure=structure, ordinary=ordinary,
+                      key="good-friday", option="ep-ii")
+        self.assertEqual(friday["ordinary"], [])
+        self.assertTrue(any("gle.htm#hk" in url for url in friday["proper"]))
 
     def test_both_entrances_offer_union_of_disjoint_partial_witnesses(self):
         data = structure([proper("one", "one", [translation()]),

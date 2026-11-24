@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.requiem-peace-omission-50b82c2e"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The complete historical Latin rubric was printed in 1922, outside the United States copyright term."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/missaleromanum0000unse/missaleromanum0000unse.pdf"
+provenance = "Tours Mame 1922, printed p. 350, PDF p. 464, right column. The 1962 typical edition gives the same words, with different capitalization, on printed p. 319, PDF p. 400, before no. 1123."
+retrieved = "2026-11-24"
+sha256 = "50b82c2e83905c9a0ab78fc69e86ff2926e439c2f4e67ce244128e6ab436cdc8"
+byte_size = 247
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/requiem-peace-omission-50b82c2e/text.tsv"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+transformation = "Join a line-end division. Retain historical capitalization, ligature and punctuation."

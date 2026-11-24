@@ -1,0 +1,1077 @@
+# A 2002 memorial may print its own Collect while permitting two independently chosen sources for each remaining oration. The Mass entry, Common form, prayer occurrence and language keep separate source identities. Seasons and local eligibility belong to the selected celebration. Comparison with the whole 2008 reprint remains unverified.
+schema = 1
+rule_source_id = "passage.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002.363"
+roles = ["Prayer over the Offerings", "Prayer after Communion"]
+current_feria = true
+
+[[common_groups]]
+id = "mary-ordinary"
+label = "Blessed Virgin Mary in Ordinary Time"
+mass = "commune-beatae-mariae-virginis"
+form_ids = ["ordinary-time-1", "mary-ordinary-2", "mary-ordinary-3", "mary-ordinary-4", "mary-ordinary-5", "mary-ordinary-6", "mary-ordinary-7", "mary-ordinary-8"]
+season = "ordinary-time"
+
+[[common_groups]]
+id = "mary-advent"
+label = "Blessed Virgin Mary in Advent"
+mass = "commune-beatae-mariae-virginis"
+form_ids = ["mary-advent-1"]
+season = "advent"
+
+[[common_groups]]
+id = "mary-christmas"
+label = "Blessed Virgin Mary in Christmas Time"
+mass = "commune-beatae-mariae-virginis"
+form_ids = ["mary-nativity-1"]
+season = "christmas"
+
+[[common_groups]]
+id = "mary-easter"
+label = "Blessed Virgin Mary in Easter Time"
+mass = "commune-beatae-mariae-virginis"
+form_ids = ["mary-easter-1"]
+season = "easter"
+
+[[common_groups]]
+id = "mary-lent-local"
+label = "Blessed Virgin Mary in Lent"
+mass = "commune-beatae-mariae-virginis"
+form_ids = ["ordinary-time-1", "mary-ordinary-2", "mary-ordinary-3", "mary-ordinary-4", "mary-ordinary-5", "mary-ordinary-6", "mary-ordinary-7", "mary-ordinary-8"]
+season = "lent"
+qualification = "The 2002 rubric before these forms permits Lenten use when a Marian celebration is duly inscribed in the proper calendar. Local inscription and eligibility must be established."
+
+[[common_groups]]
+id = "martyrs-several-outside-easter"
+label = "Several martyrs outside Easter Time"
+mass = "commune-martyrum"
+form_ids = ["martyrs-several-outside-easter-1", "several-outside-easter-2", "several-outside-easter-3", "martyrs-several-outside-easter-4", "martyrs-several-outside-easter-5"]
+season = "outside-easter"
+
+[[common_groups]]
+id = "martyr-one-outside-easter"
+label = "One martyr outside Easter Time"
+mass = "commune-martyrum"
+form_ids = ["martyr-one-outside-easter-1", "martyr-one-outside-easter-2"]
+season = "outside-easter"
+
+[[common_groups]]
+id = "martyrs-several-easter"
+label = "Several martyrs in Easter Time"
+mass = "commune-martyrum"
+form_ids = ["several-easter-1", "martyrs-several-easter-2"]
+season = "easter"
+
+[[common_groups]]
+id = "martyr-one-easter"
+label = "One martyr in Easter Time"
+mass = "commune-martyrum"
+form_ids = ["martyr-one-easter-1"]
+season = "easter"
+
+[[common_groups]]
+id = "virgin-martyr"
+label = "A virgin martyr"
+mass = "commune-martyrum"
+form_ids = ["martyr-virgin-1"]
+
+[[common_groups]]
+id = "pastors-bishop"
+label = "A bishop"
+mass = "commune-pastorum"
+form_ids = ["pastor-bishop-1", "pastor-bishop-2"]
+
+[[common_groups]]
+id = "pastor-one"
+label = "One pastor"
+mass = "commune-pastorum"
+form_ids = ["pastor-one-1", "pastor-one-2"]
+
+[[common_groups]]
+id = "pastors-missionaries"
+label = "Missionaries"
+mass = "commune-pastorum"
+form_ids = ["missionaries-1", "missionaries-2", "missionaries-3"]
+
+[[common_groups]]
+id = "church-doctors"
+label = "Doctors of the Church"
+mass = "commune-doctorum-ecclesiae"
+form_ids = ["doctors-1", "doctors-2"]
+
+[[common_groups]]
+id = "virgin-one"
+label = "One virgin"
+mass = "commune-virginum"
+form_ids = ["virgin-one-1", "virgin-one-2", "virgin-one-3"]
+
+[[common_groups]]
+id = "saint-one"
+label = "One saint"
+mass = "commune-sanctorum"
+form_ids = ["saint-one-1", "saint-one-2"]
+
+[[common_groups]]
+id = "abbot"
+label = "An abbot"
+mass = "commune-sanctorum"
+form_ids = ["abbot-1"]
+
+[[common_groups]]
+id = "monk"
+label = "A monk"
+mass = "commune-sanctorum"
+form_ids = ["monk-1"]
+
+[[common_groups]]
+id = "nun"
+label = "A nun"
+mass = "commune-sanctorum"
+form_ids = ["nun-1"]
+
+[[common_groups]]
+id = "religious"
+label = "Religious"
+mass = "commune-sanctorum"
+form_ids = ["religious-1", "religious-2"]
+
+[[common_groups]]
+id = "works-of-mercy"
+label = "Those who practiced works of mercy"
+mass = "commune-sanctorum"
+form_ids = ["mercy-1"]
+
+[[common_groups]]
+id = "educators"
+label = "Educators"
+mass = "commune-sanctorum"
+form_ids = ["educators-1"]
+
+[[common_groups]]
+id = "holy-women"
+label = "Holy women"
+mass = "commune-sanctorum"
+form_ids = ["holy-women-1", "holy-women-2"]
+
+[[common_groups]]
+id = "pastors-pope"
+label = "A pope"
+mass = "commune-pastorum"
+form_ids = ["pastor-pope-bishop-1", "pastor-pope-bishop-2"]
+qualification = "Use options for a pope where the form distinguishes a pope from a bishop."
+
+[[common_groups]]
+id = "pastors-unspecified-one"
+label = "Common of Pastors for one priest"
+mass = "commune-pastorum"
+form_ids = ["pastor-one-1", "pastor-one-2"]
+qualification = "The memorial refers to the Common of Pastors without naming a subsection. These forms explicitly accommodate one pastor. Another specialized form requires an independently applicable heading."
+
+[[common_groups]]
+id = "pastors-unspecified-several"
+label = "Common of Pastors for several pastors"
+mass = "commune-pastorum"
+form_ids = ["pastors-several-1"]
+qualification = "The memorial refers to the Common of Pastors without naming a subsection. This form explicitly accommodates several pastors."
+
+[[common_groups]]
+id = "virgins-unspecified-one"
+label = "Common of Virgins for one virgin"
+mass = "commune-virginum"
+form_ids = ["virgin-one-1", "virgin-one-2", "virgin-one-3"]
+qualification = "The memorial refers to the Common of Virgins without naming a subsection. The celebration names one virgin."
+
+[[memorials]]
+mass = "dedication-basilica-saint-mary-major"
+common_group_ids = ["mary-ordinary", "mary-advent", "mary-christmas", "mary-easter", "mary-lent-local"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glq-4eeac750"
+url = "https://www.clerus.org/bibliaclerusonline/en/glq.htm#t0"
+locus = "The Dedication of the Basilica of Saint Mary Major / In Dedicatione basilicæ S. Mariæ; the proper Collect and Common direction at digital 2002 PDF artifact p. 474. The printed page references to the permitted Common are 897. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "first-martyrs-holy-roman-church"
+common_group_ids = ["martyrs-several-outside-easter"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glq-4eeac750"
+url = "https://www.clerus.org/bibliaclerusonline/en/glq.htm#sl"
+locus = "The First Martyrs of the Holy Roman Church / Ss. Protomartyrum sanctæ Romanæ Ecclesiæ; the proper Collect and Common direction at digital 2002 PDF artifact p. 462. The printed page references to the permitted Common are 909. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "our-lady-fatima"
+common_group_ids = ["mary-ordinary", "mary-advent", "mary-christmas", "mary-easter", "mary-lent-local"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glp-cd664951"
+url = "https://www.clerus.org/bibliaclerusonline/en/glp.htm#qv"
+locus = "Our Lady of Fatima / Beatæ Mariæ Virginis de Fatima; the proper Collect and Common direction at digital 2002 PDF artifact p. 445. The printed page references to the permitted Common are 897. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "our-lady-lourdes"
+common_group_ids = ["mary-ordinary", "mary-advent", "mary-christmas", "mary-easter", "mary-lent-local"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glo-00419ad3"
+url = "https://www.clerus.org/bibliaclerusonline/en/glo.htm#os"
+locus = "Our Lady of Lourdes / Beatæ Mariæ Virginis de Lourdes; the proper Collect and Common direction at digital 2002 PDF artifact p. 428. The printed page references to the permitted Common are 897. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "our-lady-mount-carmel"
+common_group_ids = ["mary-ordinary", "mary-advent", "mary-christmas", "mary-easter", "mary-lent-local"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glq-4eeac750"
+url = "https://www.clerus.org/bibliaclerusonline/en/glq.htm#s3"
+locus = "Beatae Mariae Virginis de Monte Carmelo; the proper Collect and Common direction at digital 2002 PDF artifact p. 466. The printed page references to the permitted Common are 897. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-agatha-virgin-martyr"
+common_group_ids = ["virgin-martyr", "virgin-one"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glo-00419ad3"
+url = "https://www.clerus.org/bibliaclerusonline/en/glo.htm#ol"
+locus = "Saint Agatha, Virgin and Martyr / S. Agathæ, virginis et martyris; the proper Collect and Common direction at digital 2002 PDF artifact p. 426. The printed page references to the permitted Common are 924, 947. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-agnes-virgin-martyr"
+common_group_ids = ["virgin-martyr", "virgin-one"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glo-00419ad3"
+url = "https://www.clerus.org/bibliaclerusonline/en/glo.htm#nw"
+locus = "Saint Agnes, Virgin and Martyr / S. Agnetis, virginis et martyris; the proper Collect and Common direction at digital 2002 PDF artifact p. 419. The printed page references to the permitted Common are 924, 947. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-albert-great-bishop-doctor-church"
+common_group_ids = ["pastors-bishop", "church-doctors"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-gls-9f3b0bff"
+url = "https://www.clerus.org/bibliaclerusonline/en/gls.htm#x3"
+locus = "Saint Albert the Great, Bishop and Doctor of the Church / S. Alberti Magni, episcopi et Ecclesiæ; the proper Collect and Common direction at digital 2002 PDF artifact p. 521. The printed page references to the permitted Common are 929, 943. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-angela-merici-virgin"
+common_group_ids = ["virgin-one", "educators"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glo-00419ad3"
+url = "https://www.clerus.org/bibliaclerusonline/en/glo.htm#oa"
+locus = "Saint Angela Merici, Virgin / S. Angelæ Merici, virginis; the proper Collect and Common direction at digital 2002 PDF artifact p. 421. The printed page references to the permitted Common are 947, 965. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-anselm-bishop-doctor-church"
+common_group_ids = ["pastors-bishop", "church-doctors"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glp-cd664951"
+url = "https://www.clerus.org/bibliaclerusonline/en/glp.htm#p2"
+locus = "Saint Anselm, Bishop and Doctor of the Church / S. Anselmi, episcopi et Ecclesiæ doctoris; the proper Collect and Common direction at digital 2002 PDF artifact p. 438. The printed page references to the permitted Common are 929, 943. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-ansgar-bishop"
+common_group_ids = ["pastors-missionaries", "pastors-bishop"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glo-00419ad3"
+url = "https://www.clerus.org/bibliaclerusonline/en/glo.htm#oj"
+locus = "Saint Ansgar, Bishop / S. Ansgarii, episcopi; the proper Collect and Common direction at digital 2002 PDF artifact p. 426. The printed page references to the permitted Common are 938, 929. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-anthony-mary-claret-bishop"
+common_group_ids = ["pastors-missionaries", "pastors-bishop"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-gls-9f3b0bff"
+url = "https://www.clerus.org/bibliaclerusonline/en/gls.htm#xj"
+locus = "Saint Anthony Mary Claret, Bishop / S. Antonii Mariæ Claret, episcopi; the proper Collect and Common direction at digital 2002 PDF artifact p. 511. The printed page references to the permitted Common are 938, 929. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-anthony-padua-priest-doctor-church"
+common_group_ids = ["pastors-unspecified-one", "church-doctors", "religious"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glq-4eeac750"
+url = "https://www.clerus.org/bibliaclerusonline/en/glq.htm#r0"
+locus = "Saint Anthony of Padua, Priest and Doctor of the Church / S. Antonii de Padova, presbyteri et; the proper Collect and Common direction at digital 2002 PDF artifact p. 454. The printed page references to the permitted Common are 927, 943, 961. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-anthony-zaccaria-priest"
+common_group_ids = ["pastors-unspecified-one", "educators", "religious"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glq-4eeac750"
+url = "https://www.clerus.org/bibliaclerusonline/en/glq.htm#sr"
+locus = "Saint Anthony Zaccaria, Priest / S. Antonii Mariæ Zaccaria, presbyteri; the proper Collect and Common direction at digital 2002 PDF artifact p. 464. The printed page references to the permitted Common are 927, 965, 961. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-apollinaris-bishop-martyr"
+common_group_ids = ["martyr-one-outside-easter", "pastors-bishop"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glq-4eeac750"
+url = "https://www.clerus.org/bibliaclerusonline/en/glq.htm#s5"
+locus = "Saint Apollinaris, Bishop and Martyr / S. Apollinaris, episcopi et martyris; the proper Collect and Common direction at digital 2002 PDF artifact p. 467. The printed page references to the permitted Common are 915, 929. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-augustine-canterbury-bishop"
+common_group_ids = ["pastors-missionaries", "pastors-bishop"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glp-cd664951"
+url = "https://www.clerus.org/bibliaclerusonline/en/glp.htm#rg"
+locus = "Saint Augustine of Canterbury, Bishop / S. Augustini Cantuariensis, episcopi; the proper Collect and Common direction at digital 2002 PDF artifact p. 449. The printed page references to the permitted Common are 938, 929. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-bede-venerable-priest-doctor-church"
+common_group_ids = ["church-doctors", "monk"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glp-cd664951"
+url = "https://www.clerus.org/bibliaclerusonline/en/glp.htm#rb"
+locus = "Saint Bede the Venerable, Priest and Doctor of the Church / S. Bedæ Venerabilis, presbyteri et; the proper Collect and Common direction at digital 2002 PDF artifact p. 447. The printed page references to the permitted Common are 943, 959. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-bernardine-siena-priest"
+common_group_ids = ["pastors-missionaries", "religious"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glp-cd664951"
+url = "https://www.clerus.org/bibliaclerusonline/en/glp.htm#q1"
+locus = "Saint Bernardine of Siena, Priest / S. Bernardini Senensis, presbyteri; the proper Collect and Common direction at digital 2002 PDF artifact p. 446. The printed page references to the permitted Common are 938, 961. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-blaise-bishop-martyr"
+common_group_ids = ["martyr-one-outside-easter", "pastors-bishop"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glo-00419ad3"
+url = "https://www.clerus.org/bibliaclerusonline/en/glo.htm#oi"
+locus = "Saint Blaise, Bishop and Martyr / S. Blasii, episcopi et martyris; the proper Collect and Common direction at digital 2002 PDF artifact p. 426. The printed page references to the permitted Common are 915, 929. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-bonaventure-bishop-doctor-church"
+common_group_ids = ["pastors-bishop", "church-doctors"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glq-4eeac750"
+url = "https://www.clerus.org/bibliaclerusonline/en/glq.htm#s3"
+locus = "Saint Bonaventure, Bishop and Doctor of the Church / S. Bonaventuræ, episcopi et Ecclesiæ; the proper Collect and Common direction at digital 2002 PDF artifact p. 466. The printed page references to the permitted Common are 929, 943. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-boniface-bishop-martyr"
+common_group_ids = ["martyr-one-outside-easter", "martyr-one-easter", "pastors-missionaries"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glq-4eeac750"
+url = "https://www.clerus.org/bibliaclerusonline/en/glq.htm#rs"
+locus = "Saint Boniface, Bishop and Martyr / S. Bonifatii, episcopi et martyris; the proper Collect and Common direction at digital 2002 PDF artifact p. 452. The printed page references to the permitted Common are 915, 921, 938. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-bridget-religious"
+common_group_ids = ["holy-women", "religious"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glq-4eeac750"
+url = "https://www.clerus.org/bibliaclerusonline/en/glq.htm#tf"
+locus = "Saint Bridget, Religious / S. Birgittæ, religiosæ; the proper Collect and Common direction at digital 2002 PDF artifact p. 468. The printed page references to the permitted Common are 966, 961. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-bruno-priest"
+common_group_ids = ["monk", "pastor-one"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-gls-9f3b0bff"
+url = "https://www.clerus.org/bibliaclerusonline/en/gls.htm#ws"
+locus = "Saint Bruno, Priest / S. Brunonis, presbyteri; the proper Collect and Common direction at digital 2002 PDF artifact p. 505. The printed page references to the permitted Common are 959, 933. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-cajetan-priest"
+common_group_ids = ["pastor-one", "religious"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glq-4eeac750"
+url = "https://www.clerus.org/bibliaclerusonline/en/glq.htm#t5"
+locus = "Saint Cajetan, Priest / S. Caietani, presbyteri; the proper Collect and Common direction at digital 2002 PDF artifact p. 476. The printed page references to the permitted Common are 933, 961. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-callistus-i-pope-martyr"
+common_group_ids = ["martyr-one-outside-easter", "pastors-pope"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-gls-9f3b0bff"
+url = "https://www.clerus.org/bibliaclerusonline/en/gls.htm#wz"
+locus = "Saint Callistus I, Pope and Martyr / S. Callisti I, papæ et martyris; the proper Collect and Common direction at digital 2002 PDF artifact p. 506. The printed page references to the permitted Common are 915, 927. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-camillus-lellis-priest"
+common_group_ids = ["works-of-mercy"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glq-4eeac750"
+url = "https://www.clerus.org/bibliaclerusonline/en/glq.htm#s1"
+locus = "Saint Camillus de Lellis, Priest / S. Camilli de Lellis, presbyteri; the proper Collect and Common direction at digital 2002 PDF artifact p. 466. The printed page references to the permitted Common are 963. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-casimir"
+common_group_ids = ["saint-one"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glp-cd664951"
+url = "https://www.clerus.org/bibliaclerusonline/en/glp.htm#o4"
+locus = "Saint Casimir / S. Casimiri; the proper Collect and Common direction at digital 2002 PDF artifact p. 431. The printed page references to the permitted Common are 956. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-catherine-alexandria-virgin-martyr"
+common_group_ids = ["virgin-martyr", "virgin-one"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glt-427df2b2"
+url = "https://www.clerus.org/bibliaclerusonline/en/glt.htm#yp"
+locus = "Saint Catherine of Alexandria, Virgin and Martyr / S. Catharinæ Alexandrinæ, virginis et; the proper Collect and Common direction at digital 2002 PDF artifact p. 525. The printed page references to the permitted Common are 924, 947. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-cecilia-virgin-martyr"
+common_group_ids = ["virgin-martyr", "virgin-one"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-gls-9f3b0bff"
+url = "https://www.clerus.org/bibliaclerusonline/en/gls.htm#yi"
+locus = "Saint Cecilia, Virgin and Martyr / S. Cæciliæ, virginis et martyris; the proper Collect and Common direction at digital 2002 PDF artifact p. 524. The printed page references to the permitted Common are 924, 947. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-clare-virgin"
+common_group_ids = ["virgins-unspecified-one", "nun"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glr-2df3c15b"
+url = "https://www.clerus.org/bibliaclerusonline/en/glr.htm#uh"
+locus = "Saint Clare, Virgin / S. Claræ, virginis; the proper Collect and Common direction at digital 2002 PDF artifact p. 478. The printed page references to the permitted Common are 946, 960. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-clement-i-pope-martyr"
+common_group_ids = ["martyr-one-outside-easter", "pastors-pope"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-gls-9f3b0bff"
+url = "https://www.clerus.org/bibliaclerusonline/en/gls.htm#yk"
+locus = "Saint Clement I, Pope and Martyr / S. Clementis I, papæ et martyris; the proper Collect and Common direction at digital 2002 PDF artifact p. 524. The printed page references to the permitted Common are 915, 927. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-columban-abbot"
+common_group_ids = ["pastors-missionaries", "abbot"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glt-427df2b2"
+url = "https://www.clerus.org/bibliaclerusonline/en/glt.htm#yl"
+locus = "Saint Columban, Abbot / S. Columbani, abbatis; the proper Collect and Common direction at digital 2002 PDF artifact p. 524. The printed page references to the permitted Common are 938, 958. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-cyril-alexandria-bishop-doctor-church"
+common_group_ids = ["pastors-bishop", "church-doctors"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glq-4eeac750"
+url = "https://www.clerus.org/bibliaclerusonline/en/glq.htm#sf"
+locus = "Saint Cyril of Alexandria, Bishop and Doctor of the Church / S. Cyrilli Alexandrini, episcopi et; the proper Collect and Common direction at digital 2002 PDF artifact p. 459. The printed page references to the permitted Common are 929, 943. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-cyril-jerusalem-bishop-doctor-church"
+common_group_ids = ["pastors-bishop", "church-doctors"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glp-cd664951"
+url = "https://www.clerus.org/bibliaclerusonline/en/glp.htm#pi"
+locus = "Saint Cyril of Jerusalem, Bishop and Doctor of the Church / S. Cyrilli Hierosolymitani, episcopi et; the proper Collect and Common direction at digital 2002 PDF artifact p. 432. The printed page references to the permitted Common are 929, 943. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-damasus-i-pope"
+common_group_ids = ["pastors-pope"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glt-427df2b2"
+url = "https://www.clerus.org/bibliaclerusonline/en/glt.htm#y4"
+locus = "Saint Damasus I, Pope / S. Damasi I, papæ; the proper Collect and Common direction at digital 2002 PDF artifact p. 530. The printed page references to the permitted Common are 927. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-elizabeth-hungary-religious"
+common_group_ids = ["works-of-mercy"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-gls-9f3b0bff"
+url = "https://www.clerus.org/bibliaclerusonline/en/gls.htm#yc"
+locus = "Saint Elizabeth of Hungary, Religious / S. Elisabeth Hungariæ; the proper Collect and Common direction at digital 2002 PDF artifact p. 522. The printed page references to the permitted Common are 963. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-elizabeth-portugal"
+common_group_ids = ["works-of-mercy"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glq-4eeac750"
+url = "https://www.clerus.org/bibliaclerusonline/en/glq.htm#sp"
+locus = "Saint Elizabeth of Portugal / S. Elisabeth Lusitaniæ; the proper Collect and Common direction at digital 2002 PDF artifact p. 463. The printed page references to the permitted Common are 963. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-ephrem-deacon-doctor-church"
+common_group_ids = ["church-doctors"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glq-4eeac750"
+url = "https://www.clerus.org/bibliaclerusonline/en/glq.htm#rw"
+locus = "Saint Ephrem, Deacon and Doctor of the Church / S. Ephræm, diaconi et Ecclesiæ doctoris; the proper Collect and Common direction at digital 2002 PDF artifact p. 453. The printed page references to the permitted Common are 943. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-eusebius-vercelli-bishop"
+common_group_ids = ["pastors-bishop"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glq-4eeac750"
+url = "https://www.clerus.org/bibliaclerusonline/en/glq.htm#tv"
+locus = "Saint Eusebius of Vercelli, Bishop / S. Eusebii Vercellensis, episcopi; the proper Collect and Common direction at digital 2002 PDF artifact p. 473. The printed page references to the permitted Common are 929. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-fabian-pope-martyr"
+common_group_ids = ["martyr-one-outside-easter", "pastors-pope"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glo-00419ad3"
+url = "https://www.clerus.org/bibliaclerusonline/en/glo.htm#nt"
+locus = "Saint Fabian, Pope and Martyr / S. Fabiani, papæ et martyris; the proper Collect and Common direction at digital 2002 PDF artifact p. 418. The printed page references to the permitted Common are 915, 927. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-fidelis-sigmaringen-priest-martyr"
+common_group_ids = ["martyr-one-easter", "pastor-one"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glp-cd664951"
+url = "https://www.clerus.org/bibliaclerusonline/en/glp.htm#qb"
+locus = "Saint Fidelis of Sigmaringen, Priest and Martyr / S. Fidelis de Sigmaringen, presbyteri et; the proper Collect and Common direction at digital 2002 PDF artifact p. 438. The printed page references to the permitted Common are 921, 933. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-frances-rome-religious"
+common_group_ids = ["holy-women", "religious"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glp-cd664951"
+url = "https://www.clerus.org/bibliaclerusonline/en/glp.htm#pe"
+locus = "Saint Frances of Rome, Religious / S. Franciscæ Romanæ, religiosæ; the proper Collect and Common direction at digital 2002 PDF artifact p. 432. The printed page references to the permitted Common are 966, 961. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-francis-paola-hermit"
+common_group_ids = ["religious"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glp-cd664951"
+url = "https://www.clerus.org/bibliaclerusonline/en/glp.htm#pq"
+locus = "Saint Francis of Paola, Hermit / S. Francisci de Paola, eremitæ; the proper Collect and Common direction at digital 2002 PDF artifact p. 436. The printed page references to the permitted Common are 961. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-george-martyr"
+common_group_ids = ["martyr-one-easter"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glp-cd664951"
+url = "https://www.clerus.org/bibliaclerusonline/en/glp.htm#p4"
+locus = "Saint George, Martyr / S. Georgii, martyris; the proper Collect and Common direction at digital 2002 PDF artifact p. 438. The printed page references to the permitted Common are 921. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-gertrude-virgin"
+common_group_ids = ["virgins-unspecified-one", "nun"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-gls-9f3b0bff"
+url = "https://www.clerus.org/bibliaclerusonline/en/gls.htm#ya"
+locus = "Saint Gertrude, Virgin / S. Gertrudis, virginis; the proper Collect and Common direction at digital 2002 PDF artifact p. 522. The printed page references to the permitted Common are 946, 960. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-gregory-vii-pope"
+common_group_ids = ["pastors-pope"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glp-cd664951"
+url = "https://www.clerus.org/bibliaclerusonline/en/glp.htm#rc"
+locus = "Saint Gregory VII, Pope / S. Gregorii VII, papæ; the proper Collect and Common direction at digital 2002 PDF artifact p. 447. The printed page references to the permitted Common are 927. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-hedwig-religious"
+common_group_ids = ["religious", "holy-women"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-gls-9f3b0bff"
+url = "https://www.clerus.org/bibliaclerusonline/en/gls.htm#w3"
+locus = "Saint Hedwig, Religious / S. Hedvigis, religiosæ; the proper Collect and Common direction at digital 2002 PDF artifact p. 507. The printed page references to the permitted Common are 961, 966. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-henry"
+common_group_ids = ["saint-one"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glq-4eeac750"
+url = "https://www.clerus.org/bibliaclerusonline/en/glq.htm#sz"
+locus = "Saint Henry / S. Henrici; the proper Collect and Common direction at digital 2002 PDF artifact p. 466. The printed page references to the permitted Common are 956. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-hilary-bishop-doctor-church"
+common_group_ids = ["pastors-bishop", "church-doctors"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glo-00419ad3"
+url = "https://www.clerus.org/bibliaclerusonline/en/glo.htm#np"
+locus = "Saint Hilary, Bishop and Doctor of the Church / S. Hilarii, episcopi et Ecclesiæ doctoris; the proper Collect and Common direction at digital 2002 PDF artifact p. 417. The printed page references to the permitted Common are 929, 943. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-isidore-bishop-doctor-church"
+common_group_ids = ["pastors-bishop", "church-doctors"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glp-cd664951"
+url = "https://www.clerus.org/bibliaclerusonline/en/glp.htm#ps"
+locus = "Saint Isidore, Bishop and Doctor of the Church / S. Isidori, episcopi et Ecclesiæ doctoris; the proper Collect and Common direction at digital 2002 PDF artifact p. 436. The printed page references to the permitted Common are 929, 943. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-jane-frances-chantal-religious"
+common_group_ids = ["religious"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glr-2df3c15b"
+url = "https://www.clerus.org/bibliaclerusonline/en/glr.htm#uj"
+locus = "Saint Jane Frances de Chantal, Religious / S. Ioannæ Franciscæ de Chantal, religiosæ; the proper Collect and Common direction at digital 2002 PDF artifact p. 478. The printed page references to the permitted Common are 961. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-januarius-bishop-martyr"
+common_group_ids = ["martyr-one-outside-easter", "pastors-bishop"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glr-2df3c15b"
+url = "https://www.clerus.org/bibliaclerusonline/en/glr.htm#v0"
+locus = "Saint Januarius, Bishop and Martyr / S. Ianuarii, episcopi et martyris; the proper Collect and Common direction at digital 2002 PDF artifact p. 496. The printed page references to the permitted Common are 915, 929. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-jerome-emiliani"
+common_group_ids = ["educators"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glo-00419ad3"
+url = "https://www.clerus.org/bibliaclerusonline/en/glo.htm#on"
+locus = "S. Hieronymi Emiliani; the proper Collect and Common direction at digital 2002 PDF artifact p. 427. The printed page references to the permitted Common are 965. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-john-baptist-la-salle-priest"
+common_group_ids = ["pastor-one", "educators"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glp-cd664951"
+url = "https://www.clerus.org/bibliaclerusonline/en/glp.htm#pw"
+locus = "Saint John Baptist de la Salle, Priest / S. Ioannis Baptistæ de la Salle; the proper Collect and Common direction at digital 2002 PDF artifact p. 437. The printed page references to the permitted Common are 933, 965. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-john-bosco-priest"
+common_group_ids = ["pastor-one", "educators"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glo-00419ad3"
+url = "https://www.clerus.org/bibliaclerusonline/en/glo.htm#oe"
+locus = "Saint John Bosco, Priest / S. Ioannis Bosco, presbyteri; the proper Collect and Common direction at digital 2002 PDF artifact p. 422. The printed page references to the permitted Common are 933, 965. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-john-capistrano-priest"
+common_group_ids = ["pastors-missionaries", "religious"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-gls-9f3b0bff"
+url = "https://www.clerus.org/bibliaclerusonline/en/gls.htm#xh"
+locus = "Saint John of Capistrano, Priest / S. Ioannis de Capestrano, presbyteri; the proper Collect and Common direction at digital 2002 PDF artifact p. 511. The printed page references to the permitted Common are 938, 961. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-john-damascene-priest-doctor-church"
+common_group_ids = ["pastor-one", "church-doctors"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glt-427df2b2"
+url = "https://www.clerus.org/bibliaclerusonline/en/glt.htm#yv"
+locus = "Saint John Damascene, Priest and Doctor of the Church / S. Ioannis Damasceni, presbyteri et; the proper Collect and Common direction at digital 2002 PDF artifact p. 527. The printed page references to the permitted Common are 933, 943. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-john-eudes-priest"
+common_group_ids = ["pastor-one", "religious"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glr-2df3c15b"
+url = "https://www.clerus.org/bibliaclerusonline/en/glr.htm#ut"
+locus = "Saint John Eudes, Priest / S. Ioannis Eudes, presbyteri; the proper Collect and Common direction at digital 2002 PDF artifact p. 482. The printed page references to the permitted Common are 933, 961. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-john-god-religious"
+common_group_ids = ["religious", "works-of-mercy"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glp-cd664951"
+url = "https://www.clerus.org/bibliaclerusonline/en/glp.htm#pc"
+locus = "Saint John of God, Religious / S. Ioannis a Deo, religiosi; the proper Collect and Common direction at digital 2002 PDF artifact p. 432. The printed page references to the permitted Common are 961, 963. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-john-i-pope-martyr"
+common_group_ids = ["martyr-one-outside-easter", "martyr-one-easter", "pastors-pope"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glp-cd664951"
+url = "https://www.clerus.org/bibliaclerusonline/en/glp.htm#qz"
+locus = "Saint John I, Pope and Martyr / S. Ioannis I, papæ et martyris; the proper Collect and Common direction at digital 2002 PDF artifact p. 446. The printed page references to the permitted Common are 915, 921, 927. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-john-kanty-priest"
+common_group_ids = ["pastors-unspecified-one", "works-of-mercy"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glt-427df2b2"
+url = "https://www.clerus.org/bibliaclerusonline/en/glt.htm#zg"
+locus = "Saint John of Kanty, Priest / S. Ioannis de Kety, presbyteri; the proper Collect and Common direction at digital 2002 PDF artifact p. 532. The printed page references to the permitted Common are 927, 963. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-john-leonardi-priest"
+common_group_ids = ["pastors-missionaries", "works-of-mercy"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-gls-9f3b0bff"
+url = "https://www.clerus.org/bibliaclerusonline/en/gls.htm#ww"
+locus = "S. Ioannis Leonardi; the proper Collect and Common direction at digital 2002 PDF artifact p. 506. The printed page references to the permitted Common are 938, 963. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-john-vianney-priest"
+common_group_ids = ["pastor-one"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glq-4eeac750"
+url = "https://www.clerus.org/bibliaclerusonline/en/glq.htm#ty"
+locus = "Saint John Vianney, Priest / S. Ioannis Mariæ Vianney, presbyteri; the proper Collect and Common direction at digital 2002 PDF artifact p. 473. The printed page references to the permitted Common are 933. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-joseph-calasanz-priest"
+common_group_ids = ["educators", "pastor-one"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glr-2df3c15b"
+url = "https://www.clerus.org/bibliaclerusonline/en/glr.htm#va"
+locus = "Saint Joseph Calasanz, Priest / S. Iosephi de Calasanz, presbyteri; the proper Collect and Common direction at digital 2002 PDF artifact p. 486. The printed page references to the permitted Common are 965, 933. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-josephine-bakhita-virgin"
+common_group_ids = ["virgin-one"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glo-00419ad3"
+url = "https://www.clerus.org/bibliaclerusonline/en/glo.htm#oo"
+locus = "S. Iosephinæ Bakhita; the proper Collect and Common direction at digital 2002 PDF artifact p. 427. The printed page references to the permitted Common are 947. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-lawrence-brindisi-priest-doctor-church"
+common_group_ids = ["pastors-unspecified-one", "church-doctors", "religious"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glq-4eeac750"
+url = "https://www.clerus.org/bibliaclerusonline/en/glq.htm#tb"
+locus = "Saint Lawrence of Brindisi, Priest and Doctor of the Church / S. Laurentii de Brindisi, presbyteri et; the proper Collect and Common direction at digital 2002 PDF artifact p. 467. The printed page references to the permitted Common are 927, 943, 961. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-louis"
+common_group_ids = ["saint-one"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glr-2df3c15b"
+url = "https://www.clerus.org/bibliaclerusonline/en/glr.htm#u5"
+locus = "Saint Louis / S. Ludovici; the proper Collect and Common direction at digital 2002 PDF artifact p. 486. The printed page references to the permitted Common are 956. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-louis-grignion-montfort-priest"
+common_group_ids = ["pastor-one"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glp-cd664951"
+url = "https://www.clerus.org/bibliaclerusonline/en/glp.htm#qg"
+locus = "Saint Louis Grignion de Montfort, Priest / S. Ludovici Mariæ Grignion de Montfort; the proper Collect and Common direction at digital 2002 PDF artifact p. 440. The printed page references to the permitted Common are 933. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-lucy-virgin-martyr"
+common_group_ids = ["virgin-martyr", "virgin-one"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glt-427df2b2"
+url = "https://www.clerus.org/bibliaclerusonline/en/glt.htm#za"
+locus = "Saint Lucy, Virgin and Martyr / S. Luciæ, virginis et martyris; the proper Collect and Common direction at digital 2002 PDF artifact p. 531. The printed page references to the permitted Common are 924, 947. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-margaret-mary-alacoque-virgin"
+common_group_ids = ["virgin-one"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-gls-9f3b0bff"
+url = "https://www.clerus.org/bibliaclerusonline/en/gls.htm#w4"
+locus = "Saint Margaret Mary Alacoque, Virgin / S. Margaritæ Mariæ Alacoque, virginis; the proper Collect and Common direction at digital 2002 PDF artifact p. 508. The printed page references to the permitted Common are 947. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-margaret-scotland"
+common_group_ids = ["works-of-mercy"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-gls-9f3b0bff"
+url = "https://www.clerus.org/bibliaclerusonline/en/gls.htm#x5"
+locus = "Saint Margaret of Scotland / S. Margaritæ Scotiæ; the proper Collect and Common direction at digital 2002 PDF artifact p. 522. The printed page references to the permitted Common are 963. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-maria-goretti-virgin-martyr"
+common_group_ids = ["virgin-martyr", "virgin-one"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glq-4eeac750"
+url = "https://www.clerus.org/bibliaclerusonline/en/glq.htm#st"
+locus = "Saint Maria Goretti, Virgin and Martyr / S. Mariæ Goretti, virginis et martyris; the proper Collect and Common direction at digital 2002 PDF artifact p. 464. The printed page references to the permitted Common are 924, 947. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-martin-porres-religious"
+common_group_ids = ["religious"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-gls-9f3b0bff"
+url = "https://www.clerus.org/bibliaclerusonline/en/gls.htm#xr"
+locus = "Saint Martin de Porres, Religious / S. Martini de Porres, religiosi; the proper Collect and Common direction at digital 2002 PDF artifact p. 516. The printed page references to the permitted Common are 961. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-mary-magdalene-pazzi-virgin"
+common_group_ids = ["virgin-one"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glp-cd664951"
+url = "https://www.clerus.org/bibliaclerusonline/en/glp.htm#rc"
+locus = "S. Mariae Magdalenae de' Pazzi; the proper Collect and Common direction at digital 2002 PDF artifact p. 448. The printed page references to the permitted Common are 947. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-monica"
+common_group_ids = ["holy-women"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glr-2df3c15b"
+url = "https://www.clerus.org/bibliaclerusonline/en/glr.htm#vc"
+locus = "Saint Monica / S. Monicæ; the proper Collect and Common direction at digital 2002 PDF artifact p. 487. The printed page references to the permitted Common are 966. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-nicholas-bishop"
+common_group_ids = ["pastors-bishop"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glt-427df2b2"
+url = "https://www.clerus.org/bibliaclerusonline/en/glt.htm#yx"
+locus = "Saint Nicholas, Bishop / S. Nicolai, episcopi; the proper Collect and Common direction at digital 2002 PDF artifact p. 528. The printed page references to the permitted Common are 929. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-norbert-bishop"
+common_group_ids = ["pastors-bishop", "religious"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glq-4eeac750"
+url = "https://www.clerus.org/bibliaclerusonline/en/glq.htm#ru"
+locus = "Saint Norbert, Bishop / S. Norberti, episcopi; the proper Collect and Common direction at digital 2002 PDF artifact p. 453. The printed page references to the permitted Common are 929, 961. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-pancras-martyr"
+common_group_ids = ["martyr-one-outside-easter", "martyr-one-easter"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glp-cd664951"
+url = "https://www.clerus.org/bibliaclerusonline/en/glp.htm#qt"
+locus = "Saint Pancras, Martyr / S. Pancratii, martyris; the proper Collect and Common direction at digital 2002 PDF artifact p. 445. The printed page references to the permitted Common are 915, 921. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-patrick-bishop"
+common_group_ids = ["pastors-missionaries", "pastors-bishop"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glp-cd664951"
+url = "https://www.clerus.org/bibliaclerusonline/en/glp.htm#pg"
+locus = "Saint Patrick, Bishop / S. Patricii, episcopi; the proper Collect and Common direction at digital 2002 PDF artifact p. 432. The printed page references to the permitted Common are 938, 929. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-paulinus-nola-bishop"
+common_group_ids = ["pastors-bishop"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glq-4eeac750"
+url = "https://www.clerus.org/bibliaclerusonline/en/glq.htm#sa"
+locus = "Saint Paulinus of Nola, Bishop / S. Paulini Nolani, episcopi; the proper Collect and Common direction at digital 2002 PDF artifact p. 456. The printed page references to the permitted Common are 929. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-peter-canisius-priest-doctor-church"
+common_group_ids = ["pastors-unspecified-one", "church-doctors"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glt-427df2b2"
+url = "https://www.clerus.org/bibliaclerusonline/en/glt.htm#ze"
+locus = "Saint Peter Canisius, Priest and Doctor of the Church / S. Petri Canisii, presbyteri et Ecclesiæ; the proper Collect and Common direction at digital 2002 PDF artifact p. 532. The printed page references to the permitted Common are 927, 943. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-peter-chanel-priest-martyr"
+common_group_ids = ["martyr-one-easter", "pastors-missionaries"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glp-cd664951"
+url = "https://www.clerus.org/bibliaclerusonline/en/glp.htm#qf"
+locus = "Saint Peter Chanel, Priest and Martyr / S. Petri Chanel, presbyteri et martyris; the proper Collect and Common direction at digital 2002 PDF artifact p. 439. The printed page references to the permitted Common are 921, 938. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-peter-chrysologus-bishop-doctor-church"
+common_group_ids = ["pastors-bishop", "church-doctors"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glq-4eeac750"
+url = "https://www.clerus.org/bibliaclerusonline/en/glq.htm#tp"
+locus = "Saint Peter Chrysologus, Bishop and Doctor of the Church / S. Petri Chrysologi, episcopi et Ecclesiæ; the proper Collect and Common direction at digital 2002 PDF artifact p. 471. The printed page references to the permitted Common are 929, 943. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-peter-claver-priest"
+common_group_ids = ["pastor-one", "works-of-mercy"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glr-2df3c15b"
+url = "https://www.clerus.org/bibliaclerusonline/en/glr.htm#vm"
+locus = "Saint Peter Claver, Priest / S. Petri Claver, presbyteri; the proper Collect and Common direction at digital 2002 PDF artifact p. 491. The printed page references to the permitted Common are 933, 963. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-peter-damian-bishop-doctor-church"
+common_group_ids = ["church-doctors", "pastors-bishop"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glp-cd664951"
+url = "https://www.clerus.org/bibliaclerusonline/en/glp.htm#oy"
+locus = "Saint Peter Damian, Bishop and Doctor of the Church / S. Petri Damiani, episcopi et Ecclesiæ; the proper Collect and Common direction at digital 2002 PDF artifact p. 429. The printed page references to the permitted Common are 943, 929. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-peter-julian-eymard-priest"
+common_group_ids = ["religious", "pastor-one"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glq-4eeac750"
+url = "https://www.clerus.org/bibliaclerusonline/en/glq.htm#tw"
+locus = "Saint Peter Julian Eymard, Priest / S. Petri Iuliani Eymard, presbyteri; the proper Collect and Common direction at digital 2002 PDF artifact p. 473. The printed page references to the permitted Common are 961, 933. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-pius-v-pope"
+common_group_ids = ["pastors-pope"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glp-cd664951"
+url = "https://www.clerus.org/bibliaclerusonline/en/glp.htm#qk"
+locus = "Saint Pius V, Pope / S. Pii V, papæ; the proper Collect and Common direction at digital 2002 PDF artifact p. 441. The printed page references to the permitted Common are 927. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-polycarp-bishop-martyr"
+common_group_ids = ["martyr-one-outside-easter", "pastors-bishop"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glp-cd664951"
+url = "https://www.clerus.org/bibliaclerusonline/en/glp.htm#o2"
+locus = "Saint Polycarp, Bishop and Martyr / S. Polycarpi, episcopi et martyris; the proper Collect and Common direction at digital 2002 PDF artifact p. 430. The printed page references to the permitted Common are 915, 929. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-raymond-penyafort-priest"
+common_group_ids = ["pastor-one"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glo-00419ad3"
+url = "https://www.clerus.org/bibliaclerusonline/en/glo.htm#nn"
+locus = "Saint Raymond of Penyafort, Priest / S. Raimundi de Penyafort, presbyteri; the proper Collect and Common direction at digital 2002 PDF artifact p. 417. The printed page references to the permitted Common are 933. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-rita-cascia-religious"
+common_group_ids = ["religious"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glp-cd664951"
+url = "https://www.clerus.org/bibliaclerusonline/en/glp.htm#q5"
+locus = "Saint Rita of Cascia, Religious / S. Ritæ de Cascia, religiosæ; the proper Collect and Common direction at digital 2002 PDF artifact p. 447. The printed page references to the permitted Common are 961. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-robert-bellarmine-bishop-doctor-church"
+common_group_ids = ["pastors-bishop", "church-doctors"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glr-2df3c15b"
+url = "https://www.clerus.org/bibliaclerusonline/en/glr.htm#vy"
+locus = "Saint Robert Bellarmine, Bishop and Doctor of the Church / S. Roberti Bellarmino, episcopi et; the proper Collect and Common direction at digital 2002 PDF artifact p. 496. The printed page references to the permitted Common are 929, 943. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-romuald-abbot"
+common_group_ids = ["abbot"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glq-4eeac750"
+url = "https://www.clerus.org/bibliaclerusonline/en/glq.htm#r2"
+locus = "Saint Romuald, Abbot / S. Romualdi, abbatis; the proper Collect and Common direction at digital 2002 PDF artifact p. 455. The printed page references to the permitted Common are 958. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-rose-lima-virgin"
+common_group_ids = ["virgin-one"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glr-2df3c15b"
+url = "https://www.clerus.org/bibliaclerusonline/en/glr.htm#u1"
+locus = "Saint Rose of Lima, Virgin / S. Rosæ de Lima, virginis; the proper Collect and Common direction at digital 2002 PDF artifact p. 485. The printed page references to the permitted Common are 947. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-scholastica-virgin"
+common_group_ids = ["virgin-one", "nun"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glo-00419ad3"
+url = "https://www.clerus.org/bibliaclerusonline/en/glo.htm#oq"
+locus = "Saint Scholastica, Virgin / S. Scholasticæ, virginis; the proper Collect and Common direction at digital 2002 PDF artifact p. 427. The printed page references to the permitted Common are 947, 960. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-sharbel-makhluf-priest"
+common_group_ids = ["pastor-one", "monk"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glq-4eeac750"
+url = "https://www.clerus.org/bibliaclerusonline/en/glq.htm#th"
+locus = "Saint Sharbel Makhluf, Priest / S. Sarbelii Makhlûf, presbyteri; the proper Collect and Common direction at digital 2002 PDF artifact p. 468. The printed page references to the permitted Common are 933, 959. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-stanislaus-bishop-martyr"
+common_group_ids = ["martyr-one-easter", "pastors-bishop"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glp-cd664951"
+url = "https://www.clerus.org/bibliaclerusonline/en/glp.htm#py"
+locus = "Saint Stanislaus, Bishop and Martyr / S. Stanislai, episcopi et martyris; the proper Collect and Common direction at digital 2002 PDF artifact p. 437. The printed page references to the permitted Common are 921, 929. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-stephen-hungary"
+common_group_ids = ["saint-one"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glr-2df3c15b"
+url = "https://www.clerus.org/bibliaclerusonline/en/glr.htm#ur"
+locus = "Saint Stephen of Hungary / S. Stephani Hungariæ; the proper Collect and Common direction at digital 2002 PDF artifact p. 482. The printed page references to the permitted Common are 956. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-teresa-benedicta-cross-virgin-martyr"
+common_group_ids = ["virgin-martyr", "virgin-one"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glr-2df3c15b"
+url = "https://www.clerus.org/bibliaclerusonline/en/glr.htm#ud"
+locus = "Saint Teresa Benedicta of the Cross, Virgin and Martyr / S. Teresiæ Benedictæ a Cruce, virginis et; the proper Collect and Common direction at digital 2002 PDF artifact p. 477. The printed page references to the permitted Common are 924, 947. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-thomas-aquinas-priest-doctor-church"
+common_group_ids = ["church-doctors", "pastor-one"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glo-00419ad3"
+url = "https://www.clerus.org/bibliaclerusonline/en/glo.htm#oc"
+locus = "Saint Thomas Aquinas, Priest and Doctor of the Church / S. Thomæ de Aquino, presbyteri et; the proper Collect and Common direction at digital 2002 PDF artifact p. 421. The printed page references to the permitted Common are 943, 933. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-thomas-becket-bishop-martyr"
+common_group_ids = ["martyr-one-outside-easter", "pastors-bishop"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glt-427df2b2"
+url = "https://www.clerus.org/bibliaclerusonline/en/glt.htm#zo"
+locus = "Saint Thomas Becket, Bishop and Martyr / S. Thomæ Becket, episcopi et martyris; the proper Collect and Common direction at digital 2002 PDF artifact p. 535. The printed page references to the permitted Common are 915, 929. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-turibius-mogrovejo-bishop"
+common_group_ids = ["pastors-bishop"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glp-cd664951"
+url = "https://www.clerus.org/bibliaclerusonline/en/glp.htm#pm"
+locus = "Saint Turibius of Mogrovejo, Bishop / S. Turibii de Mogrovejo, episcopi; the proper Collect and Common direction at digital 2002 PDF artifact p. 434. The printed page references to the permitted Common are 929. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-vincent-deacon-martyr"
+common_group_ids = ["martyr-one-outside-easter"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glo-00419ad3"
+url = "https://www.clerus.org/bibliaclerusonline/en/glo.htm#ny"
+locus = "Saint Vincent, Deacon and Martyr / S. Vincentii, diaconi et martyris; the proper Collect and Common direction at digital 2002 PDF artifact p. 419. The printed page references to the permitted Common are 915. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-vincent-ferrer-priest"
+common_group_ids = ["pastors-missionaries"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glp-cd664951"
+url = "https://www.clerus.org/bibliaclerusonline/en/glp.htm#pu"
+locus = "Saint Vincent Ferrer, Priest / S. Vincentii Ferrer, presbyteri; the proper Collect and Common direction at digital 2002 PDF artifact p. 437. The printed page references to the permitted Common are 938. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saint-wenceslaus-martyr"
+common_group_ids = ["martyr-one-outside-easter"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glr-2df3c15b"
+url = "https://www.clerus.org/bibliaclerusonline/en/glr.htm#wf"
+locus = "Saint Wenceslaus, Martyr / S. Venceslai, martyris; the proper Collect and Common direction at digital 2002 PDF artifact p. 499. The printed page references to the permitted Common are 915. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saints-augustine-zhao-rong-priest-companions"
+common_group_ids = ["martyrs-several-outside-easter"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glq-4eeac750"
+url = "https://www.clerus.org/bibliaclerusonline/en/glq.htm#sv"
+locus = "Saints Augustine Zhao Rong, Priest, and Companions, Martyrs / Ss. Augustini Zhao Rong, presbyteri, et; the proper Collect and Common direction at digital 2002 PDF artifact p. 464. The printed page references to the permitted Common are 909. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saints-christopher-magallanes-priest-companions-martyrs"
+common_group_ids = ["martyrs-several-outside-easter", "martyrs-several-easter"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glp-cd664951"
+url = "https://www.clerus.org/bibliaclerusonline/en/glp.htm#q3"
+locus = "Saints Christopher Magallanes, Priest, and Companions, Martyrs / Ss. Christophori Magallanes, presbyteri; the proper Collect and Common direction at digital 2002 PDF artifact p. 447. The printed page references to the permitted Common are 909, 918. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saints-denis-bishop-companions-martyrs"
+common_group_ids = ["martyrs-several-outside-easter"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-gls-9f3b0bff"
+url = "https://www.clerus.org/bibliaclerusonline/en/gls.htm#ww"
+locus = "Saints Denis, Bishop, and Companions, Martyrs / Ss. Dionysii, episcopi, et sociorum; the proper Collect and Common direction at digital 2002 PDF artifact p. 506. The printed page references to the permitted Common are 909. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saints-john-fisher-bishop-thomas-more"
+common_group_ids = ["martyrs-several-outside-easter"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glq-4eeac750"
+url = "https://www.clerus.org/bibliaclerusonline/en/glq.htm#sb"
+locus = "Saints John Fisher, Bishop, and Thomas More, Martyrs / Ss. Ioannis Fisher, episcopi, et Thomæ; the proper Collect and Common direction at digital 2002 PDF artifact p. 456. The printed page references to the permitted Common are 909. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saints-lawrence-ruiz-companions-martyrs"
+common_group_ids = ["martyrs-several-outside-easter"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glr-2df3c15b"
+url = "https://www.clerus.org/bibliaclerusonline/en/glr.htm#wg"
+locus = "Saints Lawrence Ruiz and Companions, Martyrs / Ss. Laurentii Ruiz et sociorum, martyrum; the proper Collect and Common direction at digital 2002 PDF artifact p. 499. The printed page references to the permitted Common are 909. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saints-marcellinus-peter-martyrs"
+common_group_ids = ["martyrs-several-outside-easter", "martyrs-several-easter"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glp-cd664951"
+url = "https://www.clerus.org/bibliaclerusonline/en/glp.htm#ro"
+locus = "Saints Marcellinus and Peter, Martyrs / Ss. Marcellini et Petri, martyrum; the proper Collect and Common direction at digital 2002 PDF artifact p. 451. The printed page references to the permitted Common are 909, 918. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saints-nereus-achilleus-martyrs"
+common_group_ids = ["martyrs-several-outside-easter", "martyrs-several-easter"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glp-cd664951"
+url = "https://www.clerus.org/bibliaclerusonline/en/glp.htm#qs"
+locus = "Saints Nereus and Achilleus, Martyrs / Ss. Nerei et Achillei, martyrum; the proper Collect and Common direction at digital 2002 PDF artifact p. 445. The printed page references to the permitted Common are 909, 918. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saints-paul-miki-companions-martyrs"
+common_group_ids = ["martyrs-several-outside-easter"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glo-00419ad3"
+url = "https://www.clerus.org/bibliaclerusonline/en/glo.htm#on"
+locus = "Saints Paul Miki and Companions, Martyrs / Ss. Pauli Miki et sociorum, martyrum; the proper Collect and Common direction at digital 2002 PDF artifact p. 427. The printed page references to the permitted Common are 909. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saints-pontian-pope-hippolytus-priest-martyrs"
+common_group_ids = ["martyrs-several-outside-easter", "pastors-unspecified-several"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glr-2df3c15b"
+url = "https://www.clerus.org/bibliaclerusonline/en/glr.htm#ul"
+locus = "Saints Pontian, Pope, and Hippolytus, Priest, Martyrs / Ss. Pontiani, papæ, et Hippolyti; the proper Collect and Common direction at digital 2002 PDF artifact p. 478. The printed page references to the permitted Common are 909, 927. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "saints-sixtus-ii-pope-companions-martyrs"
+common_group_ids = ["martyrs-several-outside-easter"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glq-4eeac750"
+url = "https://www.clerus.org/bibliaclerusonline/en/glq.htm#t4"
+locus = "Saints Sixtus II, Pope, and Companions, Martyrs / Ss. Xysti II, papæ, et sociorum, martyrum; the proper Collect and Common direction at digital 2002 PDF artifact p. 475. The printed page references to the permitted Common are 909. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "seven-holy-founders-servite-order"
+common_group_ids = ["religious"]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glp-cd664951"
+url = "https://www.clerus.org/bibliaclerusonline/en/glp.htm#ow"
+locus = "The Seven Holy Founders of the Servite Order / Ss. septem Fundatorum Ordinis Servorum B.; the proper Collect and Common direction at digital 2002 PDF artifact p. 429. The printed page references to the permitted Common are 961. This memorial prints no proper prayer over the offerings or after Communion."
+
+[[memorials]]
+mass = "our-lady-guadalupe"
+common_group_ids = ["mary-ordinary", "mary-advent", "mary-christmas", "mary-easter", "mary-lent-local"]
+source_id = "artifact.holy-see.notitiae.volume-44-numbers-503-504-2008.official-pdf-74c8d174"
+url = "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/2000/notitiae-44-%282008%29/Notitiae-503-504-2008.pdf#page=69"
+locus = "2008 Supplementum, artifact p. 69, printed p. 387; Common of the Blessed Virgin Mary, p. 897. This Missal text prints an own Collect and the named Common direction for the other prayers."
+
+[[memorials]]
+mass = "our-lady-loreto"
+common_group_ids = ["mary-ordinary", "mary-advent", "mary-christmas", "mary-easter", "mary-lent-local"]
+source_id = "artifact.holy-see.inscription-beatae-mariae-virginis-de-loreto-2019.vatican-bulletin-2019-10-31.official-html-c047a47c"
+url = "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2019/10/31/191031e.html#corpo_bollettino"
+locus = "2019 annex, In Missale Romanum, 10 December; Common of the Blessed Virgin Mary. This Missal text prints an own Collect and the named Common direction for the other prayers."
+
+[[memorials]]
+mass = "saint-faustina-kowalska-virgin"
+common_group_ids = ["virgin-one", "religious"]
+source_id = "artifact.catholic-church.roman-calendar-faustina-kowalska-additions-2020.2020-official-latin-annex.official-html-99752930"
+url = "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20200518_decreto-celebrazione-santafaustina-adnexus_la.html#corpo"
+locus = "2020 Missal annex, 5 October; Common of Virgins for one virgin or Common of Holy Women for religious. This Missal text prints an own Collect and the named Common direction for the other prayers."
+
+[[memorials]]
+mass = "saint-gregory-narek-abbot-doctor-church"
+common_group_ids = ["church-doctors", "abbot"]
+source_id = "artifact.catholic-church.roman-calendar-three-doctors-additions-2021.2021-official-latin-annex.official-pdf-7b776f5c"
+url = "https://www.vatican.va/roman_curia/congregations/ccdds/documents/adnexus-decreto-dottori.pdf#page=1"
+locus = "2021 annex, artifact p. 1, 27 February; Doctors of the Church p. 943 or Holy Men for an abbot p. 958. This Missal text prints an own Collect and the named Common direction for the other prayers."
+
+[[memorials]]
+mass = "saint-hildegard-bingen-virgin-doctor-church"
+common_group_ids = ["virgin-one", "nun"]
+source_id = "artifact.catholic-church.roman-calendar-three-doctors-additions-2021.2021-official-latin-annex.official-pdf-7b776f5c"
+url = "https://www.vatican.va/roman_curia/congregations/ccdds/documents/adnexus-decreto-dottori.pdf#page=7"
+locus = "2021 annex, artifact p. 7, 17 September; Virgins for one virgin p. 947 or Holy Women for a nun p. 960. This Missal text prints an own Collect and the named Common direction for the other prayers."
+
+[[memorials]]
+mass = "saint-john-avila-priest-doctor-church"
+common_group_ids = ["pastor-one", "church-doctors"]
+source_id = "artifact.catholic-church.roman-calendar-three-doctors-additions-2021.2021-official-latin-annex.official-pdf-7b776f5c"
+url = "https://www.vatican.va/roman_curia/congregations/ccdds/documents/adnexus-decreto-dottori.pdf#page=4"
+locus = "2021 annex, artifact p. 4, 10 May; Pastors for one pastor p. 933 or Doctors of the Church p. 943. This Missal text prints an own Collect and the named Common direction for the other prayers."
+
+[[memorials]]
+mass = "saint-john-henry-newman-priest-doctor"
+common_group_ids = ["pastor-one", "church-doctors"]
+source_id = "artifact.catholic-church.roman-calendar-newman-additions-2025.2025-official-latin-annex.official-html-a07ad864"
+url = "https://www.vatican.va/content/romancuria/it/dicasteri/dicastero-culto-divino-e-disciplina-sacramenti/documenti/20251109-annesso-decreto-iscrizione-newman-la.html#main-container"
+locus = "2025 Missal annex, 9 October; Pastors for one pastor p. 933 or Doctors of the Church p. 943. This Missal text prints an own Collect and the named Common direction for the other prayers."
+
+[[memorials]]
+mass = "saint-john-paul-ii-pope"
+common_group_ids = ["pastors-pope"]
+source_id = "artifact.catholic-church.roman-calendar-john-paul-ii-additions-2011.2011-official-latin-annex.official-html-55c01b1f"
+url = "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20110402_colletta_lt.html#top"
+locus = "2011 Missal annex for John Paul II; Common of Pastors for a pope; celebration extended to the General Roman Calendar in 2014. This Missal text prints an own Collect and the named Common direction for the other prayers."
+
+[[memorials]]
+mass = "saint-john-xxiii-pope"
+common_group_ids = ["pastors-pope"]
+source_id = "artifact.catholic-church.roman-calendar-john-xxiii-additions-2014.2014-official-latin-annex.official-html-0f4c38e4"
+url = "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20140912_testi-liturgici-gxxiii_lt.html#top"
+locus = "2014 Missal formulary for John XXIII; Common of Pastors for a pope. This Missal text prints an own Collect and the named Common direction for the other prayers."
+
+[[memorials]]
+mass = "saint-juan-diego-cuauhtlatoatzin"
+common_group_ids = ["saint-one"]
+source_id = "artifact.holy-see.notitiae.volume-44-numbers-503-504-2008.official-pdf-74c8d174"
+url = "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/2000/notitiae-44-%282008%29/Notitiae-503-504-2008.pdf#page=68"
+locus = "2008 Supplementum, artifact pp. 68–69, printed pp. 386–387; Common of Holy Men and Women for one saint p. 956. This Missal text prints an own Collect and the named Common direction for the other prayers."
+
+[[memorials]]
+mass = "saint-paul-vi-pope"
+common_group_ids = ["pastors-pope"]
+source_id = "artifact.catholic-church.roman-calendar-paul-vi-additions-2019.2019-official-latin-annex.official-pdf-e1996a53"
+url = "https://www.cultodivino.va/content/dam/cultodivino/documenti/Adnexus-decreto-diei-25-ianuarii-2019.pdf#page=1"
+locus = "2019 Missal annex, artifact p. 1, 29 May; Common of Pastors for a pope. This Missal text prints an own Collect and the named Common direction for the other prayers."
+
+[[memorials]]
+mass = "saint-pius-pietrelcina-priest"
+common_group_ids = ["pastor-one", "religious"]
+source_id = "artifact.holy-see.notitiae.volume-44-numbers-503-504-2008.official-pdf-74c8d174"
+url = "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/2000/notitiae-44-%282008%29/Notitiae-503-504-2008.pdf#page=68"
+locus = "2008 Supplementum, artifact p. 68, printed p. 386; Pastors for one pastor p. 933 or Holy Men and Women for religious p. 961. This Missal text prints an own Collect and the named Common direction for the other prayers."
+
+[[memorials]]
+mass = "saint-teresa-calcutta-virgin"
+common_group_ids = ["virgin-one", "works-of-mercy"]
+source_id = "artifact.catholic-church.roman-calendar-teresa-of-calcutta-additions-2025.2025-official-latin-annex.official-html-5a59d9c5"
+url = "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2025/02/11/0125/00250.html#memoria"
+locus = "Missal annex to the decree of 24 December 2024, published in 2025, 5 September; Virgins for one virgin or Holy Men and Women for those who practiced works of mercy. This Missal text prints an own Collect and the named Common direction for the other prayers."

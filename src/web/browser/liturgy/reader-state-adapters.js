@@ -2405,7 +2405,7 @@
         settled: branch.settled, weekday: derived.weekday,
         season: derived.season, nature: branch.winner && branch.winner.nature,
         date: derived.date,
-        office: {settled: branch.settled, winner: branch.winner, standing: readable.state, weekday: derived.weekday},
+        office: {settled: branch.settled, winner: branch.winner, formulary: readable.key, standing: readable.state, weekday: derived.weekday},
         anchors: derived.liturgicalYear && derived.liturgicalYear.anchors || null,
         appointments: formularyAppointments(mass, formSelection.form, branch.winner)
       }), {date: derived.date, season: derived.season, formId: formSelection.id || 'main', conditionFacts: input.conditionFacts, usageContext: {
@@ -3574,7 +3574,7 @@
           season: input.derived.season,
           nature: branch.winner && branch.winner.nature,
           date: input.derived.date,
-          office: {settled: branch.settled, winner: branch.winner, standing: readable.state, weekday: input.derived.weekday},
+          office: {settled: branch.settled, winner: branch.winner, formulary: readable.key, standing: readable.state, weekday: input.derived.weekday},
           anchors: input.derived.liturgicalYear &&
             input.derived.liturgicalYear.anchors || null,
           appointments: formularyAppointments(

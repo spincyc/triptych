@@ -1063,7 +1063,7 @@ state = "unenumerated"
             "roman-1962-temporal-pre-holy-week-slots": 351,
             "roman-1962-temporal-lent-source-forms-slots": 362,
             "roman-1962-temporal-easter-through-last-sunday": 563,
-            "roman-1962-sanctoral-printed-slots": 1941,
+            "roman-1962-sanctoral-printed-slots": 1944,
             "roman-1962-body-commons-slots": 220,
         }
         joined = [row for row in inventory["targets"]
@@ -1087,8 +1087,8 @@ state = "unenumerated"
         current = {row["id"]: row["state"] for row in coverage.expectations(
             path, "roman-1962", masses)["targets"]}
         self.assertEqual(Counter(current[row["id"]] for row in joined),
-                         {"represented": 3175,
-                          "not-represented": 262})
+                         {"represented": 3201,
+                          "not-represented": 239})
         gap_id = "roman-1962:sanctoral-form:p511-l46:slot:p511-l62:secret"
         self.assertEqual(current[gap_id], "represented")
 
@@ -1204,6 +1204,14 @@ state = "unenumerated"
             ROOT / "src/sources/calendars", "roman-1962", propers.book_tokens())
         masses = {mass["key"]: mass for mass in document["masses"]}
         joins = {
+            "roman-1962:sanctoral-form:p698-l11:slot:p698-l60:alleluia":
+                ("comm-s-donati-episcopi-martyris", "Alleluia", None),
+            "roman-1962:sanctoral-form:p668-l33:slot:p669-l13:alleluia":
+                ("comm-beatae-mariae-virginis-monte-carmelo", "Alleluia", None),
+            "roman-1962:sanctoral-form:p709-l56:slot:p710-l15:alleluia":
+                ("s-ioachim-patris-beatae-mariae-virginis", "Alleluia", None),
+            "roman-1962:sanctoral-form:p766-l41:slot:p767-l6:alleluia":
+                ("maternitatis-beatae-mariae-virginis", "Alleluia", None),
             "roman-1962:sanctoral-form:p518-l3:slot:p518-l21:collect":
                 ("conceptione-immaculata-beatae-mariae-virginis", "Collect", None),
             "roman-1962:sanctoral-form:p511-l74:slot:p512-l44:alleluia":
@@ -1242,13 +1250,18 @@ state = "unenumerated"
                     self.assertEqual([row["ref"] for row in held[0]["citations"]], [citation])
         published = document["coverage"]["expected_inventory"]
         self.assertEqual(published["target_states"],
-                         {"represented": 4239,
-                          "not-represented": 57, "unresolved": 3696})
+                         {"represented": 4265,
+                          "not-represented": 34, "unresolved": 3693})
         self.assertEqual({row["id"] for row in published["not_represented"]} & joins.keys(), set())
-        # The source's Tract1877 is explicitly votive after Septuagesima;
-        # it remains an expected source obligation outside this feast model.
-        self.assertIn("roman-1962:sanctoral-form:p518-l3:slot:p519-l29:tract",
-                      {row["id"] for row in published["not_represented"]})
+        off_date = {row["id"]: row["off_date_appointment"]
+                    for row in published["not_represented"]}
+        self.assertEqual(Counter(use["when"] for use in off_date.values()), {
+            "after-septuagesima": 30, "outside-eastertide": 3,
+            "before-septuagesima-or-after-pentecost": 1,
+        })
+        immaculate = off_date["roman-1962:sanctoral-form:p518-l3:slot:p519-l29:tract"]
+        self.assertEqual((immaculate["use"], immaculate["feast_date"]), ("votive", "12-08"))
+        self.assertIn("PDF p. 519", immaculate["rubric_locus"])
 
     def test_1962_source_checked_scripture_roles_join_in_ritual_order(self):
         propers = tool("mass-propers")
@@ -1288,8 +1301,8 @@ state = "unenumerated"
                 self.assertLess(order.index(role), order.index(after))
         published = document["coverage"]["expected_inventory"]
         self.assertEqual(published["target_states"],
-                         {"represented": 4239,
-                          "not-represented": 57, "unresolved": 3696})
+                         {"represented": 4265,
+                          "not-represented": 34, "unresolved": 3693})
         gaps = {row["id"] for row in published["not_represented"]}
         self.assertTrue(all(f"roman-1962:sanctoral-form:{locus}" not in gaps
                             for locus, *_ in rows))

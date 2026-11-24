@@ -216,7 +216,7 @@ lang = "la"
 label = "Missale Romanum, editio quarta juxta typicam (Tours: Alfred Mame, 1922), Gospel-adjacent prayers, proper Canon, historical Joseph and Dead Prefaces, final blessing Latin, and the Missal's own headings and rubrics of the Ordo Missae and Canon"
 rights = "public-domain"
 caution = "Checked Gospel-adjacent prayer bodies and Accendat from a 1922 altar missal, retained in that printing's own spelling and pointing. This is an antecedent witness, not the 1962 typical edition, and the reader is never a book to celebrate from. Its Ordo Missae and Canon headings and rubrics are the Missal's own words at the places this frame names, each word-exact with the 1962 typical edition; where the 1861 English beside one is the lay book's paraphrase, the element says that the Latin is not its source. The Munda cor meum priest cue is limited to the source's express reuse at Mass without deacon and subdeacon; its fully printed solemn-Mass occurrence belongs to the deacon. Cummiskey's English source and actor assignments remain separate. The complete historical Joseph body retains unselected alternatives under March 19 applicability only; the final blessing retains its own priest formula and unassigned response cue."
-artifacts = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.oratio-super-populum-cues-latin-20261112", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordo-gospel-preparation-la-checked-03c65abd", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-proper-canon-la-20261026-34961eae", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-joseph-historical-latin-20261112", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-final-blessing-latin-20261112", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-dead-preface-latin-20261112", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-eight-exact-latin-20261112", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114"]
+artifacts = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.oratio-super-populum-cues-latin-20261112", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordo-gospel-preparation-la-checked-03c65abd", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-proper-canon-la-20261026-34961eae", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-joseph-historical-latin-20261112", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-final-blessing-latin-20261112", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-dead-preface-latin-20261112", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-eight-exact-latin-20261112", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.requiem-peace-omission-50b82c2e"]
 
 [[witnesses]]
 id = "edition.triptych.english-completion-20261029-ordinary-joseph.study-english-20261029"
@@ -2803,7 +2803,7 @@ element = "oblatio-rubrica-vinum-et-aqua"
 column = "latin"
 relation = "own"
 counterpart = "rubric-at-place"
-reading_note = "Latin: the 1962 Missal's own rubric at this place (1960-1962 wording), published on a qualified basis. The English beside it is the 1861 lay missal's paraphrase, not a translation of this Latin."
+reading_note = "The water is not blessed at a Requiem. The prayer Deus, qui humanae is retained (Ritus servandus XIII.1). Latin: the 1962 Missal's own rubric at this place (1960-1962 wording), published on a qualified basis. The English beside it is the 1861 lay missal's paraphrase, not a translation of this Latin."
 
 [[sections.additional_texts]]
 element = "rubrica-incensatio-oblatorum"
@@ -5205,6 +5205,21 @@ target_wording = "word-exact"
 counterpart = "rubric-at-place"
 reading_note = "Latin: the Missal's own rubric at this place (1922 Mame, word for word as in the 1962 typical edition). The English beside it is the 1861 lay missal's paraphrase, not a translation of this Latin."
 note = "THE MISSAL'S RUBRIC AT THIS PLACE, NOT THE SOURCE OF THE ENGLISH. The complete rubric the Missal prints here, from the 1922 Tours Mame, printed p. 351, original PDF p. 465, compared word for word on page images on 2026-11-14 (200 dpi, doubtful letters at 400 dpi) with the 1962 typical edition, printed p. 321, artifact PDF p. 402, rubric before n. 1130: the words agree under the declared capitalization, j/i, ligature, accent and pointing transformations. The English beside it is the 1861 Cummiskey lay missal's own paraphrase of the direction at this place, not a translation of this Latin, and this Latin is not its source. The 1861 book prints no Latin here; that absence remains its own."
+
+[[sections.additional_texts]]
+element = "rubrica-oratio-omittenda"
+[sections.additional_texts.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.requiem-peace-omission-50b82c2e"
+element = "communio-rubrica-oratio-omittenda"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-communio; 1962 printed p. 319, PDF p. 400, immediately before no. 1123. passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.requiem-peace-omission; Tours Mame 1922, printed p. 350, PDF p. 464. Both page images print the same complete rubric; Mame capitalizes Defunctorum and Oratio."
+target_wording = "word-exact"
+counterpart = "rubric-at-place"
+reading_note = "The Missal says that in Masses for the Dead the peace is not given and the preceding prayer is not said. This is Dómine Iesu Christe, qui dixísti Apóstolis tuis."
+note = "The 1861 English directions refer to the layout of that hand missal. The independently attested Latin gives the direction at this place in the Missal."
 
 [[sections.element_provenance]]
 element = "rubrica-oratio-omittenda"

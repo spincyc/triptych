@@ -16,6 +16,7 @@ import json
 import re
 import shutil
 import subprocess
+from collections import Counter
 import sys
 import tomllib
 import unittest
@@ -201,37 +202,41 @@ class PostconciliarContentIntegrityTest(unittest.TestCase):
         }
         self.assertEqual(len(weekday_keys), 323)
 
-    def test_seven_commons_distinguish_partial_forms_from_unavailable_formularies(self):
-        """A recovered prayer belongs only to its named source form."""
-        commons = [
-            mass
-            for section_name, body, mass in self.rows
-            if section_name == "common" or body.get("kind") == "common"
-        ]
-        self.assertEqual(len(commons), 7)
-
-        expected_status = {
-            "state": "unavailable",
-            "scope": "missal-formulary",
-            "reasons": [
-                {
-                    "kind": "no-exemplar",
-                }
-            ],
+    def test_seven_commons_preserve_every_2002_form_and_its_choices(self):
+        expected_forms = {
+            "commune-dedicationis-ecclesiae": 2,
+            "commune-beatae-mariae-virginis": 11,
+            "commune-martyrum": 14,
+            "commune-pastorum": 12,
+            "commune-doctorum-ecclesiae": 2,
+            "commune-virginum": 4,
+            "commune-sanctorum": 15,
         }
-        for mass in commons:
-            key = str(mass.get("key") or "")
-            self.assertTrue(key, mass)
-            if key in {"commune-beatae-mariae-virginis", "commune-martyrum", "commune-sanctorum"}:
-                self.assertEqual(mass["text_status"]["state"], "partial", key)
-                self.assertEqual(mass["text_status"]["scope"], "missal-formulary", key)
-                for form in mass["forms"]:
-                    self.assertIn("2002", form["name"])
-                    self.assertTrue(any(proper.get("text") for proper in form["propers"]), key)
-            else:
-                self.assertEqual(mass.get("text_status"), expected_status, key)
-                self.assertEqual(list(direct_propers(mass)), [], key)
+        counts = Counter()
+        observed = {}
+        for section, _, mass in self.rows:
+            if section != "common":
+                continue
+            key = mass["key"]
+            self.assertEqual(mass["text_status"]["state"], "partial", key)
+            self.assertEqual(mass["text_status"]["scope"], "missal-formulary", key)
             self.assertNotIn("common_from", mass, key)
+            observed[key] = len(mass["forms"])
+            for form in mass["forms"]:
+                self.assertIn("2002", form["name"])
+                alternatives = Counter(proper["name"] for proper in form["propers"])
+                self.assertEqual(len(alternatives), 5, (key, form["id"]))
+                counts.update(alternatives)
+                for proper in form["propers"]:
+                    if alternatives[proper["name"]] > 1:
+                        self.assertEqual(proper["ordinary_disposition"]["kind"], "alternative")
+                    if not proper.get("text"):
+                        self.assertEqual(proper["text_status"]["body_status"], "held-unpublished")
+        self.assertEqual(observed, expected_forms)
+        self.assertEqual(counts, {
+            "Entrance Antiphon": 94, "Collect": 78, "Prayer over the Offerings": 63,
+            "Communion Antiphon": 93, "Prayer after Communion": 62,
+        })
 
     def test_every_common_heading_points_to_a_typed_common(self):
         """A Missal heading is a source-backed choice, not a dangling string."""

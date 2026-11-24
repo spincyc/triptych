@@ -532,6 +532,13 @@ CONDITION_PREDICATES = (
     "sunday-or-solemnity",
     "particular-celebration-of-more-solemn-character",
     "mass-has-no-proper-preface",
+    "principal-sunday-in-ordinary-time",
+    "1962-requiem",
+    "1962-ordinary-outside-requiem",
+    "1962-psalm-42",
+    "1962-prayers-at-foot",
+    "1962-lavabo-doxology",
+    "1962-last-gospel-of-john",
     "second-reading-appointed",
     # Exact Gospel headings are selected only from the appointed reading's
     # resolved canonical book; unknown or conflicting citations stay unknown.
@@ -1395,8 +1402,25 @@ def hymn_rule_table(source: dict, sources: Path, name: str) -> dict:
                 pairs[key] = ("undetermined", None, None)
     primary = {key: {"use": use, "gloria": gloria, "creed": creed}
                for key, (use, gloria, creed) in sorted(pairs.items())}
-    return {"hymn_rules": {"locus": rules["locus"], **{group: rules[group] for group in spans},
+    result = {"hymn_rules": {"locus": rules["locus"], **{group: rules[group] for group in spans},
                            "primary": primary}}
+    usage = source.get("ordinary_usage")
+    if usage is not None:
+        fields = {"locus", "passion_temporal", "conditional_preparation", "omitted_preparation", "last_gospel_omitted"}
+        if not isinstance(usage, dict) or set(usage) != fields or not usage["locus"]:
+            raise SourceError(f"{name}: invalid 1962 Ordinary usage declaration")
+        for group in ("passion_temporal", "conditional_preparation", "omitted_preparation"):
+            keys = usage[group]
+            if not isinstance(keys, list) or not keys or len(set(keys)) != len(keys) or not set(keys) <= masses.keys():
+                raise SourceError(f"{name}: unknown or repeated Mass in Ordinary usage {group}")
+        for pair in usage["last_gospel_omitted"]:
+            if not isinstance(pair, dict) or set(pair) != {"mass", "form"} or pair["mass"] not in masses:
+                raise SourceError(f"{name}: unknown Mass in last Gospel declaration")
+            forms = {form["id"] for form in masses[pair["mass"]].get("forms", [])} or {"main"}
+            if pair["form"] not in forms:
+                raise SourceError(f"{name}: invalid last Gospel form {pair}")
+        result["ordinary_usage"] = usage
+    return result
 
 
 def lesson_cues(source: dict, library: dict, name: str) -> dict:
@@ -2123,8 +2147,6 @@ def cut_through(translations: list[dict], markers: dict[str, str], where: str,
         )
     out = []
     for row in translations:
-        if row.get("turns"):
-            raise SourceError(f"{name}: {where} cannot cut a row partitioned into turns")
         marker = markers[row["lang"]]
         text = row["text"]
         if text.count(marker) != 1:
@@ -2138,7 +2160,17 @@ def cut_through(translations: list[dict], markers: dict[str, str], where: str,
                 f"{name}: {where} junction for {row['lang']} cuts nothing; the "
                 "marker ends the row"
             )
-        out.append(dict(row) | {"text": text[:end].rstrip(), "through": marker})
+        prefix = text[:end].rstrip()
+        cut = dict(row) | {"text": prefix, "through": marker}
+        if row.get("turns"):
+            turns = row["turns"]
+            # Retain complete authored speaker turns at the declared boundary.
+            boundary = next((i for i in range(1, len(turns))
+                             if "\n".join(turn["text"] for turn in turns[:i]) == prefix), None)
+            if boundary is None:
+                raise SourceError(f"{name}: {where} junction cuts inside a speaker turn")
+            cut["turns"] = turns[:boundary]
+        out.append(cut)
     return out
 
 
@@ -2329,7 +2361,9 @@ def artifact_inserted(
         own_text = [lang for lang, side in SIDE_BLOCKS.items() if entry.get(side)]
         appointed = any(one["kind"] in ("appointed", "unappointed") for one in conditions)
         proper_rite_cue = any(one["kind"] == "include-when-proper-rite" for one in conditions)
-        if not appointed and not (proper_rite_cue and own_text):
+        requiem = any(one["kind"] == "include-when-any" and one["predicates"] == ["1962-requiem"]
+                      for one in conditions)
+        if not (appointed or proper_rite_cue and own_text or requiem and (own_text or text_of)):
             raise SourceError(
                 f"{name}: inserted {key} carries no appointment condition; a text-free "
                 "stand-in must be tied to an appointment, and a proper-rite cue "

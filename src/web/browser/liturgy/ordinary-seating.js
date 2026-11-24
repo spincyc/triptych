@@ -192,6 +192,14 @@
     ];
     const exactNature = exactNatures.includes(context.nature);
 
+    // IGMR 365 d identifies the Sunday Mass separately from the availability
+    // of a proper Preface. A displaced Sunday or a feast on a civil Sunday
+    // cannot supply this fact for the selected reading.
+    const office = context.office;
+    if (office && office.winner && office.formulary && sunday !== null && season && exactNature) {
+      facts['principal-sunday-in-ordinary-time'] = sunday && season === 'ordinary-time' &&
+        context.nature === 'sunday' && office.standing === 'said' && office.winner.key === office.formulary;
+    }
     if (sunday !== null) {
       if (!sunday) {
         facts['sunday-outside-advent-and-lent'] = false;
@@ -305,6 +313,29 @@
     const states = spans.map(function (span) { return spanCovers(span, context); });
     if (states.includes(true)) return true;
     return states.includes(null) ? null : false;
+  }
+
+  function ordinaryUsageFacts(file, predicates) {
+    const usage = file.ordinary_usage;
+    const selected = predicates && predicates['proper-rite-context'];
+    if (!usage || !selected || !file.hymn_rules) return {};
+    const mass = selected.mass;
+    const office = file.hymn_rules.primary[mass];
+    if (!office) return {};
+    const requiem = office.use === 'requiem';
+    const passion = usage.passion_temporal.includes(mass);
+    const conditionallyPrepared = usage.conditional_preparation.includes(mass);
+    const preparation = conditionallyPrepared ? null : !usage.omitted_preparation.includes(mass);
+    const omitsJohn = usage.last_gospel_omitted.some((pair) =>
+      pair.mass === mass && pair.form === selected.formId);
+    return {
+      '1962-requiem': requiem,
+      '1962-ordinary-outside-requiem': !requiem,
+      '1962-prayers-at-foot': preparation,
+      '1962-psalm-42': requiem || passion ? false : preparation,
+      '1962-lavabo-doxology': !requiem && !passion,
+      '1962-last-gospel-of-john': omitsJohn ? false : requiem ? null : true
+    };
   }
 
   function hymnAppointments(file, predicates) {
@@ -494,8 +525,9 @@
         if (states[condition.rite] === false) return {show: false, unresolved: null};
         if (states[condition.rite] !== true) unresolved = unresolved || condition;
       } else if (condition.kind === 'include-when-any') {
-        const states = (condition.predicates || []).map(
-          (key) => predicateState(predicates, key));
+        const states = (condition.predicates || []).map((key) =>
+          appointed && appointed.__usage && Object.hasOwn(appointed.__usage, key)
+            ? predicateState(appointed.__usage, key) : predicateState(predicates, key));
         if (states.some((state) => state === true)) continue;
         if (states.length && states.every((state) => state === false)) {
           return { show: false, unresolved: null };
@@ -559,6 +591,7 @@
         }
       }
     }
+    Object.defineProperty(held, '__usage', {value: ordinaryUsageFacts(file, predicates), enumerable: false});
     Object.defineProperty(held, '__standIns', { value: standIns, enumerable: false });
     const hymns = hymnAppointments(file, predicates);
     const lesson = lessonFrameFor(file, predicates && predicates['proper-rite-context']);

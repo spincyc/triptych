@@ -2148,13 +2148,29 @@ class ParityTests(unittest.TestCase):
                       unresolved["ritus-initiales/gloria-in-excelsis"]["predicates"])
         self.assertEqual(
             unresolved["prex-eucharistica/prex-eucharistica-iv"]["predicates"],
-            ["mass-has-no-proper-preface"],
+            ["mass-has-no-proper-preface", "principal-sunday-in-ordinary-time"],
         )
         event_ids = {event["id"] for event in result["events"]}
         self.assertNotIn(
             "ordinary-element/prex-eucharistica/prex-eucharistica-iv",
             event_ids,
         )
+
+    def test_ordinary_sunday_admits_ep_iv_only_for_the_appointed_sunday(self) -> None:
+        request = copy.deepcopy(fixture_named("day-postconciliar-2026-11-29")["requested"])
+        request["requestedMode"] = "study"
+        request["options"]["ordinary"] = True
+        request["options"]["legitimate"]["eucharistic-prayer"] = "ep-iv"
+        key = "prex-eucharistica/prex-eucharistica-iv"
+        for day, mass, admitted in (("2027-01-17", "ot-2", True),
+                                    ("2028-08-06", "transfiguration-lord", False),
+                                    ("2028-08-06", "ot-18", False)):
+            with self.subTest(day=day, mass=mass):
+                request["civilDate"] = day
+                request["selectedReadableFormulary"] = {"id": mass}
+                result = node_call({"op": "ordinary-coverage", "request": request})
+                self.assertEqual("ordinary-element/" + key in {e["id"] for e in result["events"]}, admitted)
+                self.assertEqual(key in {r["element"] for r in result["ordinaryUnresolved"]}, not admitted)
 
     def test_day_and_cli_reject_cross_recension_structure_and_ordinary(self) -> None:
         result = node_call({"op": "cross-recension"})
