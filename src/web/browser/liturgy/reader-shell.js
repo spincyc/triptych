@@ -45,6 +45,8 @@
     let preservedLocation = null;
     let currentLocation = null;
     let sections = [];
+    const contentsButtons = new Map();
+    let currentButton = null;
     let loci = [];
     let updateQueued = false;
     let visualRevealTimer = null;
@@ -195,15 +197,12 @@
     function markCurrent() {
       const active = currentSection();
       currentLocation = active ? active.id : null;
-      const contents = shell.querySelector('[data-reader-contents]');
-      if (!contents) return;
-      contents.querySelectorAll('[data-reader-location]').forEach(function (button) {
-        if (button.dataset.readerLocation === currentLocation) {
-          button.setAttribute('aria-current', 'location');
-        } else {
-          button.removeAttribute('aria-current');
-        }
-      });
+      const next = contentsButtons.get(currentLocation) || null;
+      if (next !== currentButton) {
+        if (currentButton) currentButton.removeAttribute('aria-current');
+        if (next) next.setAttribute('aria-current', 'location');
+        currentButton = next;
+      }
       updateLocus();
     }
 
@@ -322,7 +321,9 @@
       });
       const contents = shell.querySelector('[data-reader-contents]');
       if (!contents) return;
-      contents.replaceChildren();
+      const list = document.createDocumentFragment();
+      contentsButtons.clear();
+      currentButton = null;
       let currentGroup = null;
       sections.forEach(function (item, index) {
         const group = item.group || 'Proper of the Mass';
@@ -331,7 +332,7 @@
           const division = document.createElement('p');
           division.className = 'contents-division';
           division.textContent = group;
-          contents.appendChild(division);
+          list.appendChild(division);
         }
         const button = document.createElement('button');
         button.type = 'button';
@@ -348,8 +349,10 @@
           // The controller owns the URL: a jump is a semantic location it may record.
           if (typeof held.onContentsJump === 'function') held.onContentsJump(item.id);
         });
-        contents.appendChild(button);
+        list.appendChild(button);
+        contentsButtons.set(item.id, button);
       });
+      contents.replaceChildren(list);
       markCurrent();
     }
 

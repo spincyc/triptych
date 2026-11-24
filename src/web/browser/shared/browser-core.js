@@ -195,6 +195,18 @@ window.Triptych = (function () {
     bootstrapping = false;
   }
 
+  function loadReaderJSON(cache, path, counters) {
+    if (!cache.has(path)) {
+      counters[path] = (counters[path] || 0) + 1;
+      const pending = loadJSON(path);
+      cache.set(path, pending);
+      pending.catch(function () {
+        if (cache.get(path) === pending) cache.delete(path);
+      });
+    }
+    return cache.get(path);
+  }
+
   async function loadJSON(path) {
     if (inlineMode) return fromInline(path);
 
@@ -1715,6 +1727,51 @@ window.Triptych = (function () {
     return (form && form.missal_witness_links || []).concat(sections);
   }
 
+  function publishedPrayerLink(witness) {
+    const inPublisher = witness.url.startsWith('https://rmhealey.com/docs/RMU/#');
+    const link = el('a', 'published-prayer-link', inPublisher ? 'Read in the U.S. English Missal' : 'Read the published English prayer');
+    link.href = witness.url;
+    link.title = [witness.edition_label, witness.locus].filter(Boolean).join(' · ');
+    // Keep a normal link for other editions, modified clicks and readers without dialogs.
+    if (!inPublisher) return link;
+    link.addEventListener('click', function (event) {
+      if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      const dialog = el('dialog', 'missal-publisher-dialog');
+      if (typeof dialog.showModal !== 'function') return;
+      event.preventDefault();
+      dialog.setAttribute('aria-label', 'U.S. English Roman Missal');
+      const header = el('header');
+      const publisher = el('a', null, 'Open publisher’s page');
+      publisher.href = witness.url;
+      publisher.target = '_blank';
+      publisher.rel = 'noopener noreferrer';
+      const close = el('button', null, 'Close');
+      close.type = 'button';
+      close.autofocus = true;
+      close.addEventListener('click', () => dialog.close());
+      header.append(el('strong', null, 'U.S. English Roman Missal'), publisher, close);
+      const frame = el('iframe');
+      frame.title = witness.locus;
+      frame.setAttribute('sandbox', '');
+      frame.referrerPolicy = 'no-referrer';
+      frame.src = witness.url;
+      dialog.append(header, frame);
+      document.body.appendChild(dialog);
+      dialog.addEventListener('close', function () {
+        dialog.remove();
+        if (link.isConnected) link.focus({preventScroll: true});
+      }, {once: true});
+      dialog.showModal();
+    });
+    return link;
+  }
+
+  function prayerWitness(mass, form, role) {
+    const sources = missalWitnessLinks(mass, form).filter(link =>
+      link.language === 'en' && (link.prayer_roles || []).includes(role));
+    return sources.find(link => link.url.startsWith('https://rmhealey.com/docs/RMU/#')) || sources[0];
+  }
+
   function displayMissalWitnessLinks(shell, links) {
     const host = shell.querySelector('.reader-witness-links');
     if (!host) return;
@@ -1728,6 +1785,43 @@ window.Triptych = (function () {
       anchor.href = link.url;
       host.appendChild(anchor);
     }
+  }
+
+  function renderJanuaryPrayer(prayer, source, state, heading) {
+    const section = el('section', 'proper january-prayer');
+    section.dataset.januaryPrayer = prayer.role;
+    section.appendChild(el(heading || 'h3', 'proper-name', prayer.role));
+    const paired = state.textDisplay === 'latin-and-selected' && state.languages.orations !== 'la';
+    const languages = paired ? ['la', state.languages.orations] : [state.languages.orations];
+    const container = paired ? el('div', 'text-pair') : section;
+    for (const language of languages) {
+      const body = (prayer.bodies || []).find(one => one.language === language);
+      const side = textSide(language, {sourceId: body && body.source_id,
+        relationship: body && body.relation, availability: body ? 'held' : 'unavailable'});
+      if (body) {
+        const text = el('p', 'composed', body.text);
+        text.lang = language;
+        side.appendChild(text);
+        side.appendChild(el('p', 'composed-note unit-witness-context', body.credit));
+        side.appendChild(el('p', 'composed-note unit-witness-context', body.notice));
+      } else {
+        const note = el('p', 'composed-note unit-absence', language === 'la'
+          ? 'Read the Latin wording in the linked Missal.' : languageName(language) + ' wording is unavailable here.');
+        note.setAttribute('data-unit-absence', language + ':unavailable');
+        side.appendChild(note);
+      }
+      container.appendChild(side);
+    }
+    if (paired) section.appendChild(container);
+    const link = el('a', 'january-missal-source', source.label + ' ' +
+      (source.phase === 'before-epiphany' ? 'before' : 'after') + ' Epiphany · Latin Missal (2002)');
+    link.href = source.latin_url;
+    link.title = prayer.latin_locus;
+    section.appendChild(link);
+    if (languages.includes('en') && (source.english_prayer_roles || []).includes(prayer.role)) {
+      section.appendChild(publishedPrayerLink({url: source.english_prayer_url, locus: source.english_prayer_locus}));
+    }
+    return section;
   }
 
   function riteReadingNote(mass, form, disposition) {
@@ -3478,6 +3572,16 @@ window.Triptych = (function () {
       );
     }
 
+    if (held.orations === 'en' && held.structure && held.eventId &&
+        ['Collect', 'Prayer over the Offerings', 'Prayer after Communion'].includes(proper.name)) {
+      const [kind, edition, owner] = held.eventId.split('/');
+      if (kind === 'proper' && edition === 'postconciliar') {
+        const mass = held.structure.masses.find(row => row.key === owner);
+        const witness = prayerWitness(mass, proper.form_id || 'main', proper.name);
+        if (witness) section.appendChild(publishedPrayerLink(witness));
+      }
+    }
+
     const citations = proper.citations || [];
     // One quiet claim before the passages it qualifies, never a note per verse.
     const claim = citations.some(function (citation) {
@@ -3718,6 +3822,7 @@ window.Triptych = (function () {
     // fetching
     NotFound: NotFound,
     loadJSON: loadJSON,
+    loadReaderJSON: loadReaderJSON,
     exists: exists,
     loadChapter: loadChapter,
     cachedChapterCount: cachedChapterCount,
@@ -3769,6 +3874,9 @@ window.Triptych = (function () {
     coverageSummaryText: coverageSummaryText,
     coverageNoticeText: coverageNoticeText,
     missalWitnessLinks: missalWitnessLinks,
+    prayerWitness: prayerWitness,
+    publishedPrayerLink: publishedPrayerLink,
+    renderJanuaryPrayer: renderJanuaryPrayer,
     displayMissalWitnessLinks: displayMissalWitnessLinks,
     riteReadingNote: riteReadingNote,
     recensionContext: recensionContext,

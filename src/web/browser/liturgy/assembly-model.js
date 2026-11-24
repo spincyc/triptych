@@ -2104,10 +2104,12 @@
     // read for the branch split even though they are no longer candidates.
     const options = optionsToDerive(year, inscribed.concat(borrowed));
     const branches = options.length ? options.map(branchOf) : [branchOf(null)];
+    const epiphanyDates = januaryEpiphanyDates(year, isoDate);
 
     return {
       date: isoDate,
       weekday: weekdayOf(isoDate),
+      ...(epiphanyDates ? {epiphanyDates: epiphanyDates} : {}),
       calendar: rubrics.calendar,
       edition: rubrics.edition,
       advisory: rubrics.advisory,
@@ -2138,6 +2140,122 @@
     return deriveWithSelection(input, null);
   }
 
+  function januaryEpiphanyDates(year, date) {
+    const territories = year.territorial && year.territorial.epiphany;
+    if (year.calendar !== 'postconciliar' || date.slice(5, 7) !== '01' || !territories) return null;
+    const dates = {};
+    for (const territory of territories.options) {
+      const placements = Object.keys(year.days || {}).filter(function (key) {
+        return key.slice(0, 7) === date.slice(0, 7) && year.days[key].some(function (row) {
+          return row.key === 'epiphany' && (!row.territorial || row.territorial === territory);
+        });
+      });
+      if (placements.length !== 1) return null;
+      dates[territory] = placements[0];
+    }
+    return Object.keys(dates).length ? dates : null;
+  }
+
+  function januaryWeekdayPrayers(input) {
+    const {mass, derived, branch} = input;
+    const source = mass && mass.january_prayer_sources;
+    if (!source || !derived || derived.calendar !== 'postconciliar' || !derived.epiphanyDates || !branch) return null;
+    const dates = branch.option ? [derived.epiphanyDates[branch.option]] : Object.values(derived.epiphanyDates);
+    if (!dates.length || dates.some(date => !date || date === derived.date)) return null;
+    const phases = new Set(dates.map(date => derived.date < date ? 'before-epiphany' : 'after-epiphany'));
+    if (phases.size !== 1) return null;
+    const phase = phases.values().next().value;
+    const weekday = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'].indexOf(derived.weekday);
+    return januaryPrayerSelection(source, weekday, phase);
+  }
+
+  function januaryPrayerSelection(source, weekday, phase) {
+    if (!source || !['before-epiphany', 'after-epiphany'].includes(phase)) return null;
+    const row = source.weekdays.find(one => one.weekday === weekday);
+    if (!row) return null;
+    const english = row.english_prayer_sources && row.english_prayer_sources[phase];
+    return Object.assign({}, row, english ? {english_prayer_url: english.url, english_prayer_locus: english.locus,
+      english_prayer_roles: english.prayer_roles, english_prayer_source_id: english.source_id,
+      english_prayer_rights_status: english.rights_status} : {}, {
+      phase: phase, rule_locus: source.rule_locus, rule_url: source.rule_url,
+      prayers: row.prayers.filter(prayer => prayer.phase === phase || prayer.phase === 'either')});
+  }
+
+  function seatJanuaryPrayers(events, selection) {
+    if (!selection) return events;
+    const seats = {'Collect': 'ritus-initiales/collecta', 'Prayer over the Offerings': 'praeparatio-donorum/super-oblata',
+      'Prayer after Communion': 'ritus-communionis/post-communionem'};
+    const source = Object.assign({}, selection);
+    delete source.prayers;
+    const additions = selection.prayers.map(function (prayer) {
+      const slot = seats[prayer.role].split('/').pop();
+      return {id: ['january-prayer', 'postconciliar', selection.weekday, selection.phase, slot].join('/'),
+        kind: 'january-prayer', editionSlotLabel: prayer.role, prayer: prayer, januarySource: source};
+    });
+    if (events.some(event => event.kind === 'ordinary-element')) {
+      const anchors = new Map(additions.map(event => ['ordinary-element/' + seats[event.editionSlotLabel], event]));
+      const rows = events.flatMap(event => anchors.has(event.id) ? [event, anchors.get(event.id)] : [event]);
+      if (rows.length !== events.length + additions.length) throw new Error('January prayers have no matching Ordinary seat');
+      return rows;
+    }
+    const rows = events.slice();
+    const firstReading = rows.findIndex(event => event.editionSlotLabel === 'First Reading');
+    if (firstReading < 0) throw new Error('January prayer source has no corresponding weekday lectionary');
+    rows.splice(firstReading, 0, additions[0]);
+    const communion = rows.findIndex(event => event.editionSlotLabel === 'Communion Antiphon');
+    rows.splice(communion < 0 ? rows.length : communion, 0, additions[1]);
+    rows.push(additions[2]);
+    return rows;
+  }
+
+  function weekdayOrationScope(rubrics) {
+    const rules = (rubrics.implied || []).filter(function (row) {
+      return row.appointed_mass && row.appointed_mass.oration_scope &&
+        row.appointed_mass.oration_scope.selection;
+    });
+    if (!rules.length) return null;
+    if (rules.length !== 1) throw new Error('ambiguous weekday oration selection rules');
+    return rules[0].appointed_mass.oration_scope;
+  }
+
+  function weekdayOrationOwners(scope, rubrics, structure) {
+    const rule = scope.selection;
+    const owner = new RegExp(rule.owner_key_matches);
+    return (structure.masses || []).filter(function (mass) {
+      const classified = (rubrics.keys || {})[mass.key];
+      const basis = classified && basisOf(rubrics, classified.basis);
+      if (!owner.test(mass.key) || !basis || basis.id !== rule.owner_basis ||
+          mass.season !== rule.season || (mass.forms || []).length) return false;
+      // calendar-rubrics checks the exact slot count for every held key matching
+      // the owner rule before publishing it. A verified thin index can therefore
+      // list those owners before reading their bodies. The chosen body is checked
+      // below on selection, as it is for a complete structure.
+      if (!Array.isArray(mass.propers)) return structure.reader_index === true &&
+        mass.payload === 'structure/propers/mass/' + structure.calendar + '/' + mass.key + '.json';
+      return scope.slots.every(function (slot) {
+        return mass.propers.filter(function (proper) { return proper.name === slot; }).length === 1;
+      });
+    }).map(function (mass) { return {id: mass.key, label: mass.name}; });
+  }
+
+  function memorialFeriaPrayerSources(input) {
+    const {mass, branch, rubrics, structure} = input;
+    if (!branch || !mass || !mass.memorial_prayer_sources || !mass.memorial_prayer_sources.current_feria ||
+        !rubrics || !structure || structure.calendar !== 'postconciliar' || rubrics.calendar !== structure.calendar) return null;
+    const weekdays = (branch.candidates || []).filter(function (candidate) {
+      return candidate.certain && candidate.nature === 'weekday' &&
+        (branch.readable || []).some(function (row) { return row.key === candidate.key; });
+    });
+    if (weekdays.length !== 1) return null;
+    const feria = structure.masses.find(function (one) { return one.key === weekdays[0].key && one.kind === 'seasonal'; });
+    if (!feria) return null;
+    const scope = weekdayOrationScope(rubrics);
+    const applicable = scope && branch.season === scope.selection.season &&
+      new RegExp(scope.selection.weekday_key_matches).test(feria.key);
+    return {mass: feria.key, options: applicable ? weekdayOrationOwners(scope, rubrics, structure) : [],
+      locus: applicable ? scope.locus : null};
+  }
+
   // Permissions remain source-owned. The reader supplies an explicit choice;
   // neither calendar proximity nor the order of held formularies selects one.
   function weekdayOrationChoices(input) {
@@ -2146,13 +2264,8 @@
     const structure = input.structure;
     if (!derived || !rubrics || !structure || derived.calendar !== rubrics.calendar ||
         structure.calendar !== rubrics.calendar) return null;
-    const rules = (rubrics.implied || []).filter(function (row) {
-      return row.appointed_mass && row.appointed_mass.oration_scope &&
-        row.appointed_mass.oration_scope.selection;
-    });
-    if (!rules.length) return null;
-    if (rules.length !== 1) throw new Error('ambiguous weekday oration selection rules');
-    const scope = rules[0].appointed_mass.oration_scope;
+    const scope = weekdayOrationScope(rubrics);
+    if (!scope) return null;
     const rule = scope.selection;
     const branches = derived.options || [];
     const territory = input.territory || null;
@@ -2169,22 +2282,7 @@
     if (!target || !weekday.test(target.key)) return null;
     if ((branch.unsettled || []).some(function (row) { return row.scope !== rule.resolves_scope; }) ||
         (branch.conditions || []).length || (branch.absent || []).some(function (row) { return row.blocks_result; })) return null;
-    const owner = new RegExp(rule.owner_key_matches);
-    const options = (structure.masses || []).filter(function (mass) {
-      const classified = (rubrics.keys || {})[mass.key];
-      const basis = classified && basisOf(rubrics, classified.basis);
-      if (!owner.test(mass.key) || !basis || basis.id !== rule.owner_basis ||
-          mass.season !== rule.season || (mass.forms || []).length) return false;
-      // calendar-rubrics checks the exact slot count for every held key matching
-      // the owner rule before publishing it. A verified thin index can therefore
-      // list those owners before reading their bodies. The chosen body is checked
-      // below on selection, as it is for a complete structure.
-      if (!Array.isArray(mass.propers)) return structure.reader_index === true &&
-        mass.payload === 'structure/propers/mass/' + structure.calendar + '/' + mass.key + '.json';
-      return scope.slots.every(function (slot) {
-        return mass.propers.filter(function (proper) { return proper.name === slot; }).length === 1;
-      });
-    }).map(function (mass) { return {id: mass.key, label: mass.name}; });
+    const options = weekdayOrationOwners(scope, rubrics, structure);
     return {id: rule.id, mass: target.key, slots: scope.slots.slice(), locus: scope.locus,
       evidence: scope.evidence, options: options, unavailable: rule.unavailable,
       complete: rule.complete, territory: branch.option, resolves_scope: rule.resolves_scope};
@@ -2341,6 +2439,9 @@
   return {
     derive: derive,
     weekdayOrationChoices: weekdayOrationChoices,
+    memorialFeriaPrayerSources: memorialFeriaPrayerSources,
+    januaryWeekdayPrayers: januaryWeekdayPrayers, januaryPrayerSelection: januaryPrayerSelection,
+    seatJanuaryPrayers: seatJanuaryPrayers,
     selectWeekdayOrations: selectWeekdayOrations,
     dedicationAnniversaryChoices: dedicationAnniversaryChoices,
     selectDedicationAnniversary: selectDedicationAnniversary,

@@ -982,6 +982,15 @@ body:has(.reader-instrument) > .site-footer,
   }
 }
 
+.reader-instrument .memorial-prayer-source {
+  margin-block: .8em 1.35em;
+  max-width: 70ch;
+}
+.reader-instrument .memorial-prayer-source > summary { cursor: pointer; color: var(--instrument-accent); }
+.reader-instrument .memorial-prayer-source label,
+.reader-instrument .memorial-prayer-preview > a { display: block; margin-block: .55em; }
+.reader-instrument .memorial-prayer-source select { max-width: 100%; }
+
 @media print {
   html:has(.reader-instrument),
   body:has(.reader-instrument),
@@ -1029,4 +1038,39 @@ body:has(.reader-instrument) > .site-footer,
   .reader-instrument .reader-document .ordinary-frame > .annotated { max-width: none; margin-left: 0; }
   .reader-instrument .ordinary-choice,
   .reader-instrument .cycle-choice-controls { display: none; }
+}
+
+.published-prayer-link {
+  display: inline-block;
+  margin: .35rem .75rem .35rem 0;
+  font: .875rem/1.5 var(--instrument-sans);
+  color: var(--instrument-accent);
+  text-underline-offset: .18em;
+}
+.january-missal-source + .published-prayer-link { margin-inline-start: .75rem; }
+.missal-publisher-dialog {
+  box-sizing: border-box;
+  width: min(60rem, 96vw);
+  height: 88vh;
+  height: 88dvh;
+  padding: 0;
+  border: 1px solid var(--instrument-control-line);
+  background: var(--instrument-panel);
+  color: var(--instrument-ink);
+}
+.missal-publisher-dialog[open] { display: flex; flex-direction: column; }
+.missal-publisher-dialog::backdrop { background: rgb(0 0 0 / 55%); }
+.missal-publisher-dialog header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .5rem 1rem;
+  padding: .6rem 1rem;
+  font: .95rem/1.4 var(--instrument-sans);
+}
+.missal-publisher-dialog header strong { margin-inline-end: auto; }
+.missal-publisher-dialog button { min-height: 2.75rem; }
+.missal-publisher-dialog iframe { width: 100%; flex: 1; border: 0; }
+@media print {
+  .missal-publisher-dialog[open], .published-prayer-link { display: none; }
 }

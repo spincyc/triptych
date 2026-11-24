@@ -1402,6 +1402,12 @@
       note.setAttribute('data-text-absence', language.lang + ':' + selected.reason);
       section.appendChild(note);
     }
+    // Offer the complete selected prayer once at its opening. Its individual
+    // paragraphs share this source, as do the remaining elements in Browse.
+    if (language && language.lang === 'en' && /^prex-eucharistica\/(te-igitur|prex-eucharistica-(ii|iii|iv))$/.test(element.key)) {
+      const publisher = (element.missal_witness_links || []).find(link => link.url.startsWith('https://rmhealey.com/docs/RMU/#'));
+      if (publisher) section.appendChild(T.publishedPrayerLink(publisher));
+    }
     const anywhere = translations.length > 0;
     for (const one of languagesOf(file)) {
       if (options || (guarded && one.lang === language.lang)) continue;

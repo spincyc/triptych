@@ -121,11 +121,7 @@
   };
 
   function load(path) {
-    if (!cache.has(path)) {
-      window.propersReaderDebug.loads[path] = (window.propersReaderDebug.loads[path] || 0) + 1;
-      cache.set(path, T.loadJSON(path));
-    }
-    return cache.get(path);
+    return T.loadReaderJSON(cache, path, window.propersReaderDebug.loads);
   }
 
   function structurePath(id) {
@@ -945,6 +941,10 @@
       });
     });
     }
+    const januaryChooser = window.TriptychSourceChoiceControls.januaryPrayerChooser({T: T, mass: mass, state: state});
+    if (januaryChooser) fragment.prepend(januaryChooser);
+    window.TriptychSourceChoiceControls.attachMemorialPrayers({T: T, root: fragment, mass: mass,
+      structure: runtime.structure, state: state, bible: bible, fragments: held, load: load, bibles: runtime.bibles});
     Shell.attachSourcePathChoices({ T: T, root: fragment, result: result,
       state: state, navigate: navigate,
       adapt: function (request) {

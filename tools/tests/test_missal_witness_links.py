@@ -58,5 +58,62 @@ class MissalWitnessLinks(unittest.TestCase):
             self.project({"entries": [original, original]})
 
 
+    def test_published_prayer_links_require_the_exact_language_role_and_form(self):
+        row = {"source_id": "artifact.test", "locus": "Dawn Mass, Collect", "mass": "nativity",
+               "form_id": "dawn", "language": "en", "url": self.artifact["source_url"] + "#Dawn",
+               "prayer_roles": ["Collect"]}
+        projected = self.project({"entries": [row]})["nativity", "dawn"][0]
+        self.assertEqual(projected["prayer_roles"], ["Collect"])
+        for edit in [{"language": "la"}, {"prayer_roles": ["Entrance Antiphon"]},
+                     {"prayer_roles": ["Collect", "Collect"]}, {"scope": "section", "form_id": "main"}]:
+            with self.subTest(edit=edit), self.assertRaises(ValueError):
+                self.project({"entries": [row | edit]})
+
+
+class MemorialPrayers(unittest.TestCase):
+    roles = ["Prayer over the Offerings", "Prayer after Communion"]
+
+    def sources(self):
+        return {"schema": 1, "current_feria": True, "rule_source_id": "girm363",
+                "roles": self.roles, "common_groups": [
+                    {"id": "bishop", "mass": "pastors", "form_ids": ["first"], "label": "For a bishop"}],
+                "memorials": [{"mass": "saint", "common_group_ids": ["bishop"],
+                               "source_id": "missal", "url": "https://example.org/missal#one",
+                               "locus": "Collect and referral, p. 1"}]}
+
+    def project(self, inventory, extra_own=()):
+        records = {"girm363": {"record_type": "passage"},
+                   "missal": {"record_type": "artifact", "source_url": "https://example.org/missal"}}
+        document = {"sections": {
+            "saints": {"kind": "sanctoral", "masses": [{"key": "saint",
+                "propers": [{"name": role} for role in ("Collect", *extra_own)]}]},
+            "commons": {"kind": "common", "masses": [{"key": "pastors", "forms": [
+                {"id": "first", "propers": [{"name": role} for role in self.roles]}]}]}}}
+        with patch.object(producer._calendars, "read_toml", return_value=inventory), \
+                patch.object(producer, "_source_library_records", return_value=(records, [])):
+            return producer.memorial_prayer_sources(MissalWitnessLinks.root, "postconciliar", document)
+
+    def test_independent_sources_keep_the_memorial_collect(self):
+        inventory = self.sources()
+        row = self.project(inventory)["saint"]
+        self.assertEqual(row["roles"], self.roles)
+        self.assertTrue(row["current_feria"])
+        self.assertEqual(row["groups"], inventory["common_groups"])
+        with self.assertRaises(ValueError):
+            self.project(inventory, extra_own=[self.roles[1]])
+
+    def test_referral_requires_the_registered_edition_and_the_actual_form(self):
+        for field in ("url", "form_ids", "rule_source_id"):
+            inventory = self.sources()
+            if field == "url":
+                inventory["memorials"][0][field] = "https://example.org/other#one"
+            elif field == "form_ids":
+                inventory["common_groups"][0][field] = ["second"]
+            else:
+                inventory[field] = "missing"
+            with self.subTest(field=field), self.assertRaises(ValueError):
+                self.project(inventory)
+
+
 if __name__ == "__main__":
     unittest.main()

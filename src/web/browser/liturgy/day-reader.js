@@ -145,11 +145,7 @@
   };
 
   function load(path) {
-    if (!cache.has(path)) {
-      window.dayReaderDebug.loads[path] = (window.dayReaderDebug.loads[path] || 0) + 1;
-      cache.set(path, T.loadJSON(path));
-    }
-    return cache.get(path);
+    return T.loadReaderJSON(cache, path, window.dayReaderDebug.loads);
   }
 
   function todayISO() {
@@ -779,6 +775,11 @@
       if (!result || !result.resolved) continue;
       links.push(...T.missalWitnessLinks(resultMass(result), result.resolved.form));
       links.push(...T.ordinaryWitnessLinks(runtime.ordinary, result.events));
+      if (result.januaryPrayers) {
+        const source = result.januaryPrayers;
+        links.push({language: 'la', edition_label: 'Missale Romanum (2002)', url: source.latin_url, locus: source.label},
+          {language: 'en', edition_label: 'ICEL English Antiphonary (2010)', url: source.english_url, locus: source.english_locus});
+      }
       if (result.orationSelection) {
         const owner = (runtime.structure.masses || []).find(mass => mass.key === result.orationSelection.owner);
         links.push(...T.missalWitnessLinks(owner, 'main'));
@@ -1686,6 +1687,11 @@
       }
     } else {
       (result.events || []).forEach(function (event, eventOrdinal) {
+        if (event.kind === 'january-prayer') {
+          documentFragment.appendChild(januaryPrayerNode(event, state, eventOrdinal, prefix, contents, branchLocus, 'h2'));
+          return;
+        }
+
         if (event.kind === 'proper-choice') {
           const choice = renderProperChoiceEvent(
             event, mass, structure, bible, fragments, state,
@@ -1723,6 +1729,9 @@
       });
     }
 
+    window.TriptychSourceChoiceControls.attachMemorialPrayers({T: T, root: documentFragment,
+      mass: mass, structure: structure, state: state, branch: branch, rubrics: runtime.rubrics, derived: runtime.derived, season: branch.season,
+      bible: bible, fragments: fragments, load: load, bibles: runtime.bibles});
     Shell.attachSourcePathChoices({ T: T, root: documentFragment, result: result,
       state: state, prefix: prefix, navigate: navigate,
       adapt: function (request) {
@@ -2012,6 +2021,13 @@
     return section;
   }
 
+  function januaryPrayerNode(event, state, ordinal, prefix, contents, division, heading) {
+    const node = exposeReaderLocus(semanticNode(T.renderJanuaryPrayer(event.prayer, event.januarySource,
+      state, heading), event, ordinal, prefix), division || 'Proper of the Mass', event.editionSlotLabel);
+    contents.push({id: (prefix || '') + event.id, label: event.editionSlotLabel, element: node, group: 'Appointed propers'});
+    return node;
+  }
+
   function typedUnplacedSeat(event) {
     const seat = event && event.seat;
     return event && event.kind === 'proper' && seat &&
@@ -2288,6 +2304,7 @@
       return branchLocus ? branchLocus + ' · ' + name : name;
     }
     const frameEvents = (result.events || []).map(function (event) {
+      if (event.kind === 'january-prayer') return Object.assign({}, event, {kind: 'proper', januaryEvent: event});
       return event.kind === 'proper-choice'
         ? Object.assign({}, event, { kind: 'proper', properChoiceEvent: event }) : event;
     });
@@ -2353,6 +2370,8 @@
       },
       proper: function (event) {
         const ordinal = ordinals.get(event.id);
+        if (event.januaryEvent) return januaryPrayerNode(event.januaryEvent, state, ordinal, prefix, contents,
+          namedDivision(currentDivision || 'Proper of the Mass'), 'h3');
         if (event.properChoiceEvent) {
           const choiceEvent = event.properChoiceEvent;
           const node = exposeReaderLocus(
@@ -2876,7 +2895,7 @@
       prefix = territorial[0];
       eventId = eventId.slice(prefix.length);
     }
-    if (/^(?:proper|proper-choice)\//.test(eventId)) return location;
+    if (/^(?:proper|proper-choice|january-prayer)\//.test(eventId)) return location;
     let rows = events || [];
     if (prefix) {
       const held = runtime.branches.find(function (row) { return row.prefix === prefix; });

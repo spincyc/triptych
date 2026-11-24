@@ -58,6 +58,9 @@
         if (['target', 'terminal_common'].includes(field) && known.has(one[0])) found.add(one[0]);
         one.forEach(function (child) { visit(child, field); });
       } else if (object(one)) {
+        // Memorial Commons are consulted individually when the reader chooses a
+        // prayer. Loading every permitted Common would fetch unrelated forms.
+        if (field === 'memorial_prayer_sources') return;
         Object.entries(one).forEach(function (entry) { visit(entry[1], entry[0]); });
       }
     }
@@ -78,6 +81,7 @@
     const result = Object.assign({}, mass);
     delete result.propers;
     delete result.payload;
+    delete result.january_prayer_sources;
     if (Array.isArray(result.forms)) result.forms = result.forms.map(function (form) {
       const descriptor = Object.assign({}, form);
       delete descriptor.propers;

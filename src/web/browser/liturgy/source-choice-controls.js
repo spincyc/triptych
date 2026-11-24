@@ -201,6 +201,247 @@
     });
   }
 
+  function sourcePrayerWitness(input, rows) {
+    const id = input.state.languages.translationWitness;
+    if (!id || !rows.length) return null;
+    const report = input.T.summarizeCoverage(rows.flatMap(row => input.T.coverageUnitsOf(row.proper)));
+    return input.T.coverageWitnesses(report, input.state.languages.orations).some(row =>
+      row.id === id || (row.aliases || []).includes(id)) ? id : null;
+  }
+
+  function prayerSourceHref(input, mass, formId, index, witness) {
+    const url = new URL('index.html', root.location.href);
+    url.search = root.location.search;
+    const state = input.state;
+    const params = new URLSearchParams({missal: input.structure.calendar, type: mass.kind,
+      mass: mass.key, bible: state.bible.id, orations: state.languages.orations, mode: 'read'});
+    if (formId !== 'main') params.set('form', formId);
+    if (state.textDisplay) params.set('text-display', state.textDisplay);
+    if (state.scriptureCompanion) params.set('scripture-companion', state.scriptureCompanion.id);
+    if (witness) params.set('translation-witness', witness);
+    if (index >= 0) {
+      const disposition = mass.propers[index].ordinary_disposition;
+      const location = disposition && disposition.kind === 'alternative'
+        ? ['proper-choice', input.structure.calendar, mass.key, formId, disposition.group].join('/')
+        : ['proper', input.structure.calendar, mass.key, String(index + 1).padStart(3, '0')].join('/');
+      params.set('location', location);
+    }
+    url.hash = params.toString();
+    return url.href;
+  }
+
+  function memorialPrayerControl(input, role, sources, feria) {
+    const T = input.T;
+    const control = T.el('details', 'memorial-prayer-source');
+    control.dataset.memorialPrayer = role;
+    const summary = T.el('summary', null, role + ' · Choose a source');
+    control.appendChild(summary);
+    const picker = T.el('select');
+    const label = T.el('label', null, 'Prayer source ');
+    label.appendChild(picker);
+    control.appendChild(label);
+    const content = T.el('div', 'memorial-prayer-preview');
+    content.setAttribute('aria-live', 'polite');
+    control.appendChild(content);
+    const source = T.el('a', 'composed-note', 'Memorial in the 2002 Missal');
+    source.href = sources.url;
+    control.appendChild(source);
+
+    const options = new Map();
+    function appendOption(parent, text, value) {
+      const option = T.el('option', null, text);
+      option.value = value;
+      parent.appendChild(option);
+    }
+    function addSource(parent, mass, form, qualification, groupId) {
+      const value = [groupId, mass.key, form.id].join('/');
+      if (options.has(value)) return;
+      options.set(value, {mass: mass.key, form: form.id, label: form.name, qualification: qualification});
+      appendOption(parent, form.name, value);
+    }
+    function initialize() {
+      if (!control.open || picker.options.length) return;
+      appendOption(picker, 'Choose a source', '');
+      for (const group of sources.groups) {
+        if (group.season && input.season && (group.season === 'outside-easter'
+          ? input.season === 'easter' : group.season !== input.season)) continue;
+        const mass = input.structure.masses.find(function (one) { return one.key === group.mass; });
+        const optgroup = T.el('optgroup');
+        optgroup.label = group.label;
+        for (const formId of group.form_ids) {
+          const form = mass.forms.find(function (one) { return one.id === formId; });
+          addSource(optgroup, mass, form, group.qualification, group.id);
+        }
+        if (optgroup.childElementCount) picker.appendChild(optgroup);
+      }
+      if (feria) {
+        const weekday = input.structure.masses.find(function (one) { return one.key === feria.mass; });
+        if (feria.options.length) {
+          const weekdays = T.el('optgroup');
+          weekdays.label = weekday.name + ' · permitted prayer sources';
+          feria.options.forEach(function (owner) {
+            addSource(weekdays, {key: owner.id}, {id: 'main', name: owner.label},
+              weekday.name + ' · ' + feria.locus, 'feria');
+          });
+          picker.appendChild(weekdays);
+        } else addSource(picker, weekday, {id: 'main', name: weekday.name}, null, 'feria');
+      }
+      if (!feria && sources.current_feria) {
+        const note = T.el('p', 'composed-note', 'For a memorial celebrated on a weekday, GIRM 363 also permits that weekday’s prayer.');
+        control.insertBefore(note, source);
+      }
+    }
+    control.addEventListener('toggle', initialize);
+    picker.addEventListener('change', async function () {
+      const key = picker.value;
+      const choice = options.get(key);
+      content.replaceChildren();
+      summary.textContent = role + (choice ? ' · ' + choice.label : ' · Choose a source');
+      if (!choice) return;
+      try {
+        await root.LiturgyReaderProperPayload.hydrate({
+          structure: input.structure, roots: [choice.mass], load: input.load
+        });
+        if (picker.value !== key) return;
+        const mass = input.structure.masses.find(function (one) { return one.key === choice.mass; });
+        const rows = mass.propers.map(function (proper, index) { return {proper: proper, index: index}; })
+          .filter(function (row) { return row.proper.form_id === choice.form && row.proper.name === role; });
+        const january = feria && feria.mass === mass.key && root.MassAssembly.januaryWeekdayPrayers({
+          mass: mass, derived: input.derived, branch: input.branch});
+        if (january) {
+          const prayer = january.prayers.find(one => one.role === role);
+          if (prayer) {
+            content.appendChild(T.renderJanuaryPrayer(prayer, january, input.state, 'h4'));
+            return;
+          }
+        }
+        if (choice.qualification) content.appendChild(T.el('p', 'composed-note', choice.qualification));
+        if (!rows.length) content.appendChild(T.el('p', 'composed-note',
+          'This weekday has no fixed prayer here. Consult its appointed prayer choices.'));
+        const link = T.el('a', null, rows.length ? 'Open this prayer in the formulary' : 'Open the weekday formulary');
+        const witness = sourcePrayerWitness(input, rows);
+        link.href = prayerSourceHref(input, mass, choice.form, rows.length ? rows[0].index : -1, witness);
+        content.appendChild(link);
+        const english = T.prayerWitness(mass, choice.form, role);
+        if (english && input.state.languages.orations === 'en') content.appendChild(T.publishedPrayerLink(english));
+        for (const witness of T.missalWitnessLinks(mass, choice.form)) {
+          if (witness.language !== 'la' || witness.scope !== 'form') continue;
+          const anchor = T.el('a', null, witness.edition_label + ' · ' + witness.locus);
+          anchor.href = witness.url;
+          content.appendChild(anchor);
+        }
+        if (!rows.length) return;
+        const preview = T.el('div');
+        let revision = 0;
+        async function show(row) {
+          const serial = ++revision;
+          preview.replaceChildren();
+          if (!row) return;
+          const citations = T.citationsOf({propers: [row.proper]});
+          let fragments = input.fragments;
+          if (citations.length) {
+            try { fragments = await T.fetchFragments(input.bible, citations, input.state, input.bibles); }
+            catch (_error) {
+              if (serial === revision) preview.textContent = 'The selected Scripture text could not be loaded.';
+              return;
+            }
+          }
+          if (serial !== revision || picker.value !== key) return;
+          preview.replaceChildren(T.renderProper(row.proper, input.bible, fragments, {
+            numbering: input.structure.numbering, orations: input.state.languages.orations,
+            textDisplay: input.state.textDisplay, translationWitness: witness,
+            structure: input.structure, heading: 'h4'
+          }));
+        }
+        if (rows.length === 1) await show(rows[0]);
+        else {
+          const variants = T.el('select');
+          const field = T.el('label', null, 'Prayer variant ');
+          field.appendChild(variants);
+          appendOption(variants, 'Choose a variant', '');
+          rows.forEach(function (row, ordinal) {
+            appendOption(variants, 'Option ' + (ordinal + 1), String(ordinal));
+          });
+          variants.addEventListener('change', function () {
+            show(variants.value ? rows[Number(variants.value)] : null);
+          });
+          content.appendChild(field);
+        }
+        content.appendChild(preview);
+      } catch (_error) {
+        if (picker.value === key) content.replaceChildren(T.el('p', 'composed-note',
+          'This prayer source could not be loaded. The memorial source is available below.'));
+      }
+    });
+    return control;
+  }
+
+  function januaryPrayerChooser(input) {
+    const source = input.mass.january_prayer_sources;
+    if (!source) return null;
+    const T = input.T;
+    const chooser = T.el('details', 'memorial-prayer-source january-prayer-chooser');
+    chooser.appendChild(T.el('summary', null, 'Prayers for the weekday of Christmas Time'));
+    function select(label, entries) {
+      const field = T.el('label', null, label + ' ');
+      const picker = T.el('select');
+      for (const [value, text] of entries) {
+        const opt = T.el('option', null, text);
+        opt.value = value;
+        picker.appendChild(opt);
+      }
+      field.appendChild(picker);
+      chooser.appendChild(field);
+      return picker;
+    }
+    const weekday = select('Weekday', [['','Choose a weekday']].concat(source.weekdays.map(row => [row.weekday, row.label])));
+    const phase = select('Local observance', [['','Choose an observance'],
+      ['before-epiphany','Before Epiphany'], ['after-epiphany','After Epiphany']]);
+    const preview = T.el('div', 'january-prayer-preview');
+    preview.setAttribute('aria-live', 'polite');
+    chooser.appendChild(preview);
+    chooser.addEventListener('change', async function () {
+      preview.replaceChildren();
+      if (!weekday.value || !phase.value) return;
+      try {
+        if (!root.MassAssembly) await import('./assembly-model.js');
+        const selection = root.MassAssembly.januaryPrayerSelection(source, Number(weekday.value), phase.value);
+        if (!selection) return;
+        preview.replaceChildren(...selection.prayers.map(prayer => T.renderJanuaryPrayer(prayer, selection, input.state, 'h3')));
+        const antiphons = T.el('a', null, selection.label + ' · English Entrance and Communion antiphons');
+        antiphons.href = selection.english_url;
+        preview.appendChild(antiphons);
+      } catch (_error) {
+        preview.textContent = 'The weekday prayers could not be loaded.';
+      }
+    });
+    const link = T.el('a', 'composed-note', 'Weekday rubric in the 2002 Missal');
+    link.href = source.rule_url;
+    chooser.appendChild(link);
+    return chooser;
+  }
+
+  function attachMemorialPrayers(input) {
+    const sources = input.mass.memorial_prayer_sources;
+    if (!sources) return;
+    const feria = input.branch && root.MassAssembly.memorialFeriaPrayerSources(input);
+    const slots = {'Prayer over the Offerings': 'praeparatio-donorum/super-oblata',
+      'Prayer after Communion': 'ritus-communionis/post-communionem'};
+    sources.roles.forEach(function (role) {
+      const control = memorialPrayerControl(input, role, sources, feria);
+      const seat = input.root.querySelector('[data-semantic-event-id="ordinary-element/' + slots[role] + '"]');
+      if (seat) seat.after(control);
+      else {
+        const communion = role === 'Prayer over the Offerings' &&
+          Array.from(input.root.querySelectorAll('[data-reader-locus-unit]')).find(function (one) {
+            return one.dataset.readerLocusUnit === 'Communion Antiphon';
+          });
+        if (communion) communion.before(control);
+        else input.root.appendChild(control);
+      }
+    });
+  }
+
   /** Date-surface presentation over the Day controller's validated result. */
   function createDayDateControls(input) {
     const T = input.T;
@@ -359,6 +600,7 @@
   }
 
   return Object.freeze({ renderProperChoice: renderProperChoice,
-    attachSourcePathChoices: attachSourcePathChoices,
+    attachSourcePathChoices: attachSourcePathChoices, attachMemorialPrayers: attachMemorialPrayers,
+    januaryPrayerChooser: januaryPrayerChooser,
     properChoiceRemovals: properChoiceRemovals, createDayDateControls: createDayDateControls });
 }));

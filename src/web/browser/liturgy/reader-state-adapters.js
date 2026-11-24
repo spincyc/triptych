@@ -2426,6 +2426,8 @@
     events = withConclusionExecution(events, branch, readable, mass, adaptedRequest, input.structure);
     events = withProperRiteExecution(events, adaptedRequest, input.structure);
     assertExplicitWitnesses(events, adaptedRequest, input.structure);
+    const januaryPrayers = Model && Model.januaryWeekdayPrayers({mass: mass, derived: derived, branch: branch});
+    if (januaryPrayers) events = Model.seatJanuaryPrayers(events, januaryPrayers);
     const resolved = {
       edition: request.edition.id, formulary: mass.key, standing: readable.state
     };
@@ -2447,6 +2449,7 @@
       resolved: resolved,
       ...(orationSelection ? {orationSelection: orationSelection} : {}),
       ...(dedicationSelection ? {dedicationSelection: dedicationSelection} : {}),
+      ...(januaryPrayers ? {januaryPrayers: januaryPrayers} : {}),
       events: events,
       ...(nameExecutionCoverage(events).occurrences ? {nameExecutionCoverage: nameExecutionCoverage(events)} : {}),
       ...(executionSourceCoverage(events).petitions ? {executionSourceCoverage: executionSourceCoverage(events)} : {}),
@@ -3694,6 +3697,8 @@
     events = withConclusionExecution(events, branch, readable, generatedMass, adaptedRequest, input.structure);
     events = withProperRiteExecution(events, adaptedRequest, input.structure);
     assertExplicitWitnesses(events, adaptedRequest, input.structure);
+    const januaryPrayers = Model && Model.januaryWeekdayPrayers({mass: generatedMass, derived: input.derived, branch: branch});
+    if (januaryPrayers) events = Model.seatJanuaryPrayers(events, januaryPrayers);
     const resolved = {
       edition: request.edition.id, formulary: mass.key, standing: mass.standing
     };
@@ -3711,6 +3716,7 @@
       resolved: resolved,
       ...(orationSelection ? {orationSelection: orationSelection} : {}),
       ...(dedicationSelection ? {dedicationSelection: dedicationSelection} : {}),
+      ...(januaryPrayers ? {januaryPrayers: januaryPrayers} : {}),
       events: events,
       ...(nameExecutionCoverage(events).occurrences ? {nameExecutionCoverage: nameExecutionCoverage(events)} : {}),
       ...(executionSourceCoverage(events).petitions ? {executionSourceCoverage: executionSourceCoverage(events)} : {}),

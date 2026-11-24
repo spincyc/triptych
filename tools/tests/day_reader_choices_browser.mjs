@@ -890,6 +890,35 @@ async function testStudyModeContract(cdp, base) {
     row.path === 'peer-missal'));
 }
 
+async function testMemorialPrayerSources(cdp, base) {
+  await navigate(cdp, base, state({date: '2027-07-15', mode: 'missal', orations: 'en'}));
+  const controls = '[data-memorial-prayer]';
+  assert.deepEqual(await evaluate(cdp, `[...document.querySelectorAll('${controls}')].map(e =>
+    [e.dataset.memorialPrayer, e.open, e.previousElementSibling?.dataset.semanticEventId])`),
+    [['Prayer over the Offerings', false, 'ordinary-element/praeparatio-donorum/super-oblata'],
+      ['Prayer after Communion', false, 'ordinary-element/ritus-communionis/post-communionem']]);
+  await evaluate(cdp, `document.querySelectorAll('${controls}').forEach(control => { control.open = true; }); true`);
+  await waitFor(cdp, `[...document.querySelectorAll('${controls} > label select')].every(s => s.options.length > 10)`,
+    'independent memorial Common and current weekday forms');
+  const selectSource = async (role, suffix) => {
+    const selector = '[data-memorial-prayer="' + role + '"]';
+    await evaluate(cdp, `(() => {
+      const select = document.querySelector('${selector} > label select');
+      select.value = [...select.options].find(o => o.value.endsWith('${suffix}')).value;
+      select.dispatchEvent(new Event('change', {bubbles: true})); return true;
+    })()`);
+    await waitFor(cdp, `document.querySelector('${selector} .memorial-prayer-preview a')?.href.includes('location=')`,
+      role + ' source page');
+    return evaluate(cdp, `new URL(document.querySelector('${selector} .memorial-prayer-preview a').href).hash`);
+  };
+  const offering = await selectSource('Prayer over the Offerings', '/commune-doctorum-ecclesiae/doctors-2');
+  const after = await selectSource('Prayer after Communion', '/ot-33/main');
+  assert.equal(new URLSearchParams(offering.slice(1)).get('form'), 'doctors-2');
+  assert.equal(new URLSearchParams(after.slice(1)).get('mass'), 'ot-33');
+  assert.equal(await evaluate(cdp, `dayReaderDebug.semantic.resolved.formulary`), 'saint-bonaventure-bishop-doctor-church');
+  assert.ok(await evaluate(cdp, `document.querySelector('[data-semantic-event-id="proper/postconciliar/saint-bonaventure-bishop-doctor-church/001"]') !== null`));
+}
+
 async function main() {
   const server = staticServer();
   const port = await listen(server);
@@ -919,6 +948,7 @@ async function main() {
       cdp.send('Accessibility.enable')
     ]);
     await testCalendarChoices(cdp, base);
+    await testMemorialPrayerSources(cdp, base);
     await testProperForms(cdp, base);
     await testColdRead(cdp, base);
     await testMultipleOrdinaryGroups(cdp, base);
@@ -930,7 +960,7 @@ async function main() {
       status: 'pass',
       assertions: [
         'calendar-formulary-choices', 'proper-form-choices', 'cold-read-validation',
-        'multiple-ordinary-groups', 'conditioned-ordinary-groups', 'translation-witness-choices',
+        'memorial-prayer-sources', 'multiple-ordinary-groups', 'conditioned-ordinary-groups', 'translation-witness-choices',
         'semantic-location-contract', 'study-mode-contract'
       ].map((name) => ({ name, status: 'pass' }))
     }) + '\n');

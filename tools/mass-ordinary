@@ -3616,19 +3616,25 @@ def attach_ordinary_witness_links(
     elements = {element["key"]: element for section in sections for element in section["elements"]}
     joined = set()
     for entry in entries:
-        if not isinstance(entry, dict) or set(entry) != {
-            "source_id", "page", "locus", "edition_label", "languages", "elements"
-        }:
+        shared = {"source_id", "locus", "edition_label", "languages", "elements"}
+        if not isinstance(entry, dict) or set(entry) not in (shared | {"page"}, shared | {"fragment"}):
             raise SourceError(f"{name}: invalid Ordinary witness link fields")
         source_id = entry["source_id"]
         artifact = library.get(source_id) if isinstance(source_id, str) else None
-        if not artifact or artifact.get("media_type") != "application/pdf":
-            raise SourceError(f"{name}: Ordinary witness link requires a registered PDF")
-        url = artifact.get("source_url", "")
-        page = entry["page"]
-        if (not url.startswith("https://") or "#" in url or type(page) is not int
-                or not 1 <= page <= artifact.get("page_count", 0)):
-            raise SourceError(f"{name}: invalid Ordinary witness URL or page for {source_id}")
+        url = artifact.get("source_url", "") if artifact else ""
+        if not url.startswith("https://") or "#" in url:
+            raise SourceError(f"{name}: Ordinary witness link requires a registered HTTPS source")
+        if "page" in entry:
+            page = entry["page"]
+            if (artifact.get("media_type") != "application/pdf" or type(page) is not int
+                    or not 1 <= page <= artifact.get("page_count", 0)):
+                raise SourceError(f"{name}: invalid Ordinary witness PDF page for {source_id}")
+            fragment = f"page={page}"
+        else:
+            fragment = entry["fragment"]
+            if (artifact.get("media_type") != "text/html" or not isinstance(fragment, str)
+                    or not re.fullmatch(r"[A-Za-z0-9_.:-]+", fragment)):
+                raise SourceError(f"{name}: invalid Ordinary witness HTML fragment for {source_id}")
         languages = entry["languages"]
         if languages not in (["en"], ["la", "en"]):
             raise SourceError(f"{name}: invalid Ordinary witness languages for {source_id}")
@@ -3638,9 +3644,9 @@ def attach_ordinary_witness_links(
         keys = entry["elements"]
         if not isinstance(keys, list) or not keys:
             raise SourceError(f"{name}: Ordinary witness links must identify their elements")
-        href = f"{url}#page={page}"
+        href = f"{url}#{fragment}"
         link = {field: entry[field] for field in ("source_id", "edition_label", "locus", "languages")}
-        link.update(url=href, scope="ordinary", language="en")
+        link.update(url=href, scope="ordinary", language="en", rights_status=artifact["rights_status"])
         for key in keys:
             if not isinstance(key, str) or key not in elements or (key, href) in joined:
                 raise SourceError(f"{name}: unknown or duplicate Ordinary witness element {key!r}")

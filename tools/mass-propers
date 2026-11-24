@@ -3729,6 +3729,9 @@ def missal_witness_links(root: Path, calendar: str, document: dict) -> dict:
     if not isinstance(inventory.get("entries", []), list) or not isinstance(inventory.get("facsimiles", []), list):
         raise ValueError(f"{path.name}: expected lists of witness entries and facsimiles")
     entries = list(inventory.get("entries", []))
+    supplement = inventory_root(root) / f"{calendar}-emissal-proper-links-v1.toml"
+    if supplement.is_file():
+        entries.extend(_calendars.read_toml(supplement).get("entries", []))
     records, problems = _source_library_records(root)
     if problems:
         raise ValueError("; ".join(problems))
@@ -3773,11 +3776,146 @@ def missal_witness_links(root: Path, calendar: str, document: dict) -> dict:
             raise ValueError(f"{path.name}: invalid edition label for {key}")
         seen.add(identity)
         link = {field: entry[field] for field in ("source_id", "url", "locus")}
+        if "prayer_roles" in entry:
+            roles = entry["prayer_roles"]
+            if (not isinstance(roles, list) or any(role not in ("Collect", "Prayer over the Offerings",
+                    "Prayer after Communion") for role in roles) or len(set(roles)) != len(roles) or
+                    roles and (scope != "form" or language != "en")):
+                raise ValueError(f"{path.name}: invalid published prayer roles for {key}")
+            if roles:
+                link["prayer_roles"] = roles
         if entry.get("rite_opening") is True:
             link["rite_opening"] = True
-        link.update(edition_label=label, scope=scope, language=language)
+        link.update(edition_label=label, scope=scope, language=language, rights_status=source.get("rights_status"))
         links.setdefault(key, []).append(link)
     return links
+
+
+def memorial_prayer_sources(root: Path, calendar: str, document: dict) -> dict:
+    """Bind each independently chosen memorial prayer to the cited Common forms."""
+    path = inventory_root(root) / f"{calendar}-memorial-prayer-sources-v1.toml"
+    if not path.is_file():
+        return {}
+    inventory = _calendars.read_toml(path)
+    roles = ["Prayer over the Offerings", "Prayer after Communion"]
+    records, problems = _source_library_records(root)
+    rule = inventory.get("rule_source_id")
+    if problems:
+        raise ValueError("; ".join(problems))
+    if (calendar != "postconciliar" or inventory.get("schema") != 1 or
+            inventory.get("roles") != roles or inventory.get("current_feria") is not True or
+            (records.get(rule) or {}).get("record_type") != "passage"):
+        raise ValueError(f"{path.name}: memorial prayers require the registered source rule and both roles")
+    masses = {mass["key"]: (kind, mass) for kind, mass in masses_of(document)}
+    groups = {}
+    for group in inventory["common_groups"]:
+        key = group["id"]
+        kind, common = masses.get(group["mass"], (None, {}))
+        forms = {form["id"]: {proper["name"] for proper in form.get("propers", [])}
+                 for form in common.get("forms", [])}
+        ids = group["form_ids"]
+        if (key in groups or kind != "common" or not group.get("label") or not ids or
+                len(ids) != len(set(ids)) or any(not set(roles) <= forms.get(form_id, set()) for form_id in ids) or
+                group.get("season") not in {None, "easter", "outside-easter", "advent", "christmas", "lent", "ordinary-time"}):
+            raise ValueError(f"{path.name}: invalid Common prayer group {key}")
+        groups[key] = group
+    result = {}
+    for entry in inventory["memorials"]:
+        key = entry["mass"]
+        _, mass = masses.get(key, (None, {}))
+        own = {proper["name"] for proper in mass.get("propers", [])}
+        ids = entry["common_group_ids"]
+        source = records.get(entry["source_id"]) or {}
+        url, _, anchor = entry["url"].partition("#")
+        if (key in result or "Collect" not in own or own.intersection(roles) or
+                not ids or len(ids) != len(set(ids)) or not set(ids) <= groups.keys() or
+                source.get("record_type") != "artifact" or url != source.get("source_url") or
+                not url.startswith("https://") or not re.fullmatch(r"[A-Za-z0-9_.:-]+|page=[1-9][0-9]*", anchor) or
+                not entry["locus"].strip()):
+            raise ValueError(f"{path.name}: invalid memorial or source direction for {key}")
+        result[key] = {field: entry[field] for field in ("url", "source_id", "locus")}
+        result[key].update(roles=roles, current_feria=True, rule_source_id=rule,
+                           groups=[groups[group_id] for group_id in ids])
+    return result
+
+
+def january_prayer_sources(root: Path, calendar: str, document: dict) -> dict:
+    """Verify the weekday Missal appointments independently of their dated Lectionary carriers."""
+    path = inventory_root(root) / f"{calendar}-january-weekday-prayers-v1.toml"
+    if not path.is_file():
+        return {}
+    source = copy.deepcopy(_calendars.read_toml(path))
+    records, problems = _source_library_records(root)
+    if problems:
+        raise ValueError("; ".join(problems))
+    def checked_url(artifact_id, url):
+        base, _, fragment = url.partition("#")
+        artifact = records.get(artifact_id, {})
+        return (artifact.get("record_type") == "artifact" and base.startswith("https://") and
+                base == artifact.get("source_url") and re.fullmatch(r"[A-Za-z0-9_.:-]+|page=[1-9][0-9]*", fragment))
+    rule = records.get(source["rule_source_id"], {})
+    carriers = source["carriers"]
+    held = {mass["key"] for kind, mass in masses_of(document) if kind == "seasonal"}
+    if (calendar != "postconciliar" or source["schema"] != 1 or not carriers or
+            len(set(carriers)) != len(carriers) or not set(carriers) <= held or
+            rule.get("record_type") != "passage" or "verified" not in rule.get("states", []) or
+            not source["rule_locus"].strip() or not any(checked_url(row["latin_source_id"], source["rule_url"])
+                                                       for row in source["weekdays"])):
+        raise ValueError(f"{path.name}: invalid January carrier or source rubric")
+    pairs = [("Collect", "before-epiphany"), ("Collect", "after-epiphany"),
+             ("Prayer over the Offerings", "either"), ("Prayer after Communion", "either")]
+    if [row["weekday"] for row in source["weekdays"]] != list(range(1, 7)):
+        raise ValueError(f"{path.name}: January requires all six weekdays in source order")
+    repo = root.resolve().parents[2]
+    for day in source["weekdays"]:
+        if (not day["label"].strip() or not day["english_locus"].strip() or
+                any(not checked_url(day[lang + "_source_id"], day[lang + "_url"]) for lang in ("latin", "english")) or
+                [(p["role"], p["phase"]) for p in day["prayers"]] != pairs):
+            raise ValueError(f"{path.name}: invalid weekday source or four prayer appointments")
+        for prayer in day["prayers"]:
+            bodies = prayer.get("bodies", [])
+            if (prayer["body_status"] != ("published" if bodies else "held-unpublished") or
+                    not prayer["latin_locus"].strip() or len({b["language"] for b in bodies}) != len(bodies)):
+                raise ValueError(f"{path.name}: invalid January prayer availability")
+            for body in bodies:
+                artifact = records.get(body["artifact_id"], {})
+                passage = records.get(body["source_id"], {})
+                digest = body["artifact_sha256"]
+                relative = Path(str(artifact.get("path", "")))
+                relations = {"la": "historical-latin-projection", "en": "original-study-translation"}
+                if (body["language"] not in relations or body["relation"] != relations[body["language"]] or
+                        artifact.get("record_type") != "artifact" or artifact.get("sha256") != digest or
+                        artifact.get("storage") != "tracked" or artifact.get("indexable") is not True or
+                        artifact.get("rights_status") not in {"project-created", "public-domain"} or
+                        artifact.get("rights_jurisdiction") != "United States" or
+                        passage.get("record_type") != "passage" or "verified" not in passage.get("states", []) or
+                        passage.get("artifact_id") != body["artifact_id"] or passage.get("artifact_sha256") != digest or
+                        relative.is_absolute() or ".." in relative.parts or relative.parts[:3] != ("src", "sources", "works") or
+                        hashlib.sha256(body["text"].encode()).hexdigest() != body["text_sha256"] or
+                        not body["credit"].strip() or not body["notice"].strip()):
+                    raise ValueError(f"{path.name}: unverified January prayer text")
+                payload = (repo / relative).read_bytes()
+                rows = csv.DictReader(payload.decode("utf-8").splitlines(), delimiter="\t")
+                if (hashlib.sha256(payload).hexdigest() != digest or
+                        [r["text"] for r in rows if r["language"] == body["language"]] != [body["text"]]):
+                    raise ValueError(f"{path.name}: January text differs from its registered payload")
+    supplement = inventory_root(root) / f"{calendar}-emissal-proper-links-v1.toml"
+    if supplement.is_file():
+        phases = {"before-epiphany", "after-epiphany"}
+        days = {day["weekday"]: day for day in source["weekdays"]}
+        for link in _calendars.read_toml(supplement).get("january_weekdays", []):
+            day = days.get(link["weekday"])
+            phase = link["phase"]
+            roles = link["prayer_roles"]
+            if (not day or phase not in phases or phase in day.get("english_prayer_sources", {}) or
+                    not roles or not set(roles) <= {pair[0] for pair in pairs} or len(set(roles)) != len(roles) or
+                    not link["locus"].strip() or not checked_url(link["source_id"], link["url"])):
+                raise ValueError(f"{supplement.name}: invalid English January prayer source")
+            day.setdefault("english_prayer_sources", {})[phase] = {
+                key: link[key] for key in ("source_id", "url", "locus", "prayer_roles")} | {
+                    "rights_status": records[link["source_id"]]["rights_status"]}
+    public = {key: source[key] for key in ("rule_source_id", "rule_url", "rule_locus", "weekdays")}
+    return dict.fromkeys(carriers, public)
 
 
 def calendar_structure(root: Path, calendar: str, tokens: dict[str, str], *,
@@ -3818,6 +3956,14 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str], *,
     witness_links = session_derived(
         ("missal-witness-links", str(root), calendar),
         lambda: missal_witness_links(root, calendar, document),
+    )
+    memorial_sources = session_derived(
+        ("memorial-prayer-sources", str(root), calendar),
+        lambda: memorial_prayer_sources(root, calendar, document),
+    )
+    january_sources = session_derived(
+        ("january-prayer-sources", str(root), calendar),
+        lambda: january_prayer_sources(root, calendar, document),
     )
     joined_orations = oration_relations(root, calendar)
     overlay, untranslated, stale, witnesses = (
@@ -4156,6 +4302,10 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str], *,
             ),
             "propers": propers,
         }
+        if mass["key"] in january_sources:
+            built["january_prayer_sources"] = january_sources[mass["key"]]
+        if mass["key"] in memorial_sources:
+            built["memorial_prayer_sources"] = memorial_sources[mass["key"]]
         if mass.get("key") in joined_orations:
             built["oration_relation"] = joined_orations[mass["key"]]
         # Absence means the normal full Mass frame.  Keep that default implicit:
@@ -4372,7 +4522,7 @@ def reader_structure(structure: dict) -> dict:
     result = dict(structure, reader_index=True, source_sha256=source_sha256)
     result["masses"] = []
     for mass in structure["masses"]:
-        row = {key: value for key, value in mass.items() if key not in {"propers", "forms"}}
+        row = {key: value for key, value in mass.items() if key not in {"propers", "forms", "january_prayer_sources"}}
         if "forms" in mass:
             row["forms"] = [{key: value for key, value in form.items() if key != "propers"}
                             for form in mass["forms"]]
