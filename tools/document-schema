@@ -167,7 +167,9 @@ def main(argv=None) -> int:
         if args.command == "types":
             result = {"v": 1, "status": "ok", "types": schema.registry(root)["types"]}
         else:
-            records = schema.discover(root)
+            from _document_types import Assembly
+            assembly = Assembly(root)
+            records = schema.discover(root, assembly=assembly)
             if args.provider:
                 records = [r for r in records if r["provider"] == args.provider]
             if args.document:
@@ -180,7 +182,7 @@ def main(argv=None) -> int:
                 raise schema.SchemaError("select exactly one provider-qualified publication")
             if args.command == "check":
                 reports = [schema.validate(root, r, phase=args.phase, run_gates=args.run_gates,
-                                           require_manifest=not args.allow_adapters) for r in records]
+                                           require_manifest=not args.allow_adapters, assembly=assembly) for r in records]
                 by_id = {r["id"]: r for r in records}
                 ownership = {}
                 global_errors = []

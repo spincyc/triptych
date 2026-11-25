@@ -281,74 +281,87 @@ def _protect_report_inputs(value, protected):
             _protect_report_inputs(item, protected)
 
 
+def _validate_review_batch(rows, data, out, *, seen, report_hashes, row_index=None):
+    _require(data.get("schema") == REVIEW_SCHEMA and isinstance(data.get("documents"), list), "incorrect visual-review manifest schema")
+    top_receipt = data.get("frozen_receipt_sha256")
+    _require(_digest(top_receipt), "visual review requires a frozen receipt SHA-256")
+    unmatched = 0
+    for review in data["documents"]:
+        key = _identity(review)
+        _require(_digest(review.get("pdf_sha256")), "visual review requires an exact PDF SHA-256")
+        if row_index is not None:
+            matches = row_index.get((key, review["pdf_sha256"]), ())
+        else:
+            matches = [row for row in rows if row["status"] == "compiled" and (row["id"], row["language"]) == key
+                       and row["pdf_sha256"] == review["pdf_sha256"]]
+        if not matches:
+            unmatched += 1
+            continue
+        _require(len(matches) == 1, "visual review PDF identity is ambiguous")
+        row = matches[0]
+        _require((key, review["pdf_sha256"]) not in seen, "duplicate or conflicting visual review")
+        seen.add((key, review["pdf_sha256"]))
+        _require(type(review.get("pages")) is int and review["pages"] == row["pages"], "visual review page count disagrees")
+        status = review.get("status")
+        _require(status in {"PASS", "CHANGES_REQUIRED", "PENDING"}, "unknown visual-review status")
+        reviewed_receipt = review.get("receipt_sha256", top_receipt)
+        _require(_digest(reviewed_receipt), "visual review requires its original receipt SHA-256")
+        same_receipt = reviewed_receipt == row["receipt_sha256"]
+        _require(same_receipt or status == "PASS", "receipt portability requires complete PASS review evidence")
+        evidence = {"status": {"PASS": "pass", "CHANGES_REQUIRED": "changes-required", "PENDING": "pending"}[status],
+                    "review_receipt_sha256": reviewed_receipt, "current_receipt_sha256": row["receipt_sha256"],
+                    "receipt_binding": "exact-receipt" if same_receipt else "exact-pdf-bytes"}
+        if status != "PENDING" or review.get("report"):
+            report = _report(review.get("report"))
+            _require(_digest(review.get("report_sha256")), "visual report requires a SHA-256")
+            if report not in report_hashes:
+                report_hashes[report] = _sha(report)
+            _require(report_hashes[report] == review["report_sha256"], "visual report SHA-256 mismatch")
+            evidence.update(report=_link(report, out), report_sha256=review["report_sha256"])
+        if status == "PASS":
+            inspected = _page_set(review.get("individually_inspected_pages"), row["pages"])
+            reused = _page_set(review.get("reused_pages"), row["pages"])
+            _require(not inspected & reused and inspected | reused == set(range(1, row["pages"] + 1)), "PASS visual review must cover every page exactly once")
+            proofs = review.get("reuse_proofs", [])
+            _require(isinstance(proofs, list), "reuse_proofs requires an array")
+            proved, retained_proofs = [], []
+            for proof in proofs:
+                _require(isinstance(proof, dict) and type(proof.get("page")) is int and proof["page"] in reused, "reuse proof names an unclaimed page")
+                _require(_digest(proof.get("current_raster_sha256")) and proof["current_raster_sha256"] == proof.get("prior_raster_sha256"), "reused page requires equal exact raster hashes")
+                _require(_digest(proof.get("prior_pdf_sha256")), "reused page requires its prior PDF hash")
+                prior_report = _report(proof.get("prior_report"))
+                _require(_digest(proof.get("prior_report_sha256")), "reused page requires its prior report SHA-256")
+                if prior_report not in report_hashes:
+                    report_hashes[prior_report] = _sha(prior_report)
+                _require(report_hashes[prior_report] == proof["prior_report_sha256"], "prior visual report SHA-256 mismatch")
+                proved.append(proof["page"])
+                retained_proofs.append({key: proof[key] for key in (
+                    "page", "current_raster_sha256", "prior_raster_sha256", "prior_report", "prior_report_sha256",
+                    "prior_pdf_sha256", "renderer_fingerprint", "current_renderer_fingerprint",
+                    "prior_renderer_fingerprint", "equality_method") if key in proof})
+            _require(len(set(proved)) == len(proved) and set(proved) == reused, "every reused page requires one exact proof")
+            evidence.update(individually_inspected_pages=sorted(inspected), reused_pages=sorted(reused),
+                            reuse_proofs=retained_proofs)
+        if status == "CHANGES_REQUIRED":
+            row["files"].pop("pdf", None)
+        row["page_review"] = evidence
+    return unmatched
+
+
 def _reviews(rows, paths, out, protected_paths=None):
     inputs, seen, unmatched, report_hashes = [], set(), 0, {}
+    row_index = {}
+    for row in rows:
+        if row["status"] == "compiled":
+            row_index.setdefault(((row["id"], row["language"]), row["pdf_sha256"]), []).append(row)
     for path in paths:
         path = Path(path).resolve()
         data, digest = _json(path)
         if protected_paths is not None:
             protected_paths.add(path)
             _protect_report_inputs(data, protected_paths)
-        _require(data.get("schema") == REVIEW_SCHEMA and isinstance(data.get("documents"), list), "incorrect visual-review manifest schema")
-        top_receipt = data.get("frozen_receipt_sha256")
-        _require(_digest(top_receipt), "visual review requires a frozen receipt SHA-256")
+        unmatched += _validate_review_batch(rows, data, out, seen=seen, report_hashes=report_hashes, row_index=row_index)
         inputs.append({"path": _link(path, out), "sha256": digest})
-        for review in data["documents"]:
-            key = _identity(review)
-            _require(_digest(review.get("pdf_sha256")), "visual review requires an exact PDF SHA-256")
-            matches = [row for row in rows if row["status"] == "compiled" and (row["id"], row["language"]) == key
-                       and row["pdf_sha256"] == review["pdf_sha256"]]
-            if not matches:
-                unmatched += 1
-                continue
-            _require(len(matches) == 1, "visual review PDF identity is ambiguous")
-            row = matches[0]
-            _require((key, review["pdf_sha256"]) not in seen, "duplicate or conflicting visual review")
-            seen.add((key, review["pdf_sha256"]))
-            _require(type(review.get("pages")) is int and review["pages"] == row["pages"], "visual review page count disagrees")
-            status = review.get("status")
-            _require(status in {"PASS", "CHANGES_REQUIRED", "PENDING"}, "unknown visual-review status")
-            reviewed_receipt = review.get("receipt_sha256", top_receipt)
-            _require(_digest(reviewed_receipt), "visual review requires its original receipt SHA-256")
-            same_receipt = reviewed_receipt == row["receipt_sha256"]
-            _require(same_receipt or status == "PASS", "receipt portability requires complete PASS review evidence")
-            evidence = {"status": {"PASS": "pass", "CHANGES_REQUIRED": "changes-required", "PENDING": "pending"}[status],
-                        "review_receipt_sha256": reviewed_receipt, "current_receipt_sha256": row["receipt_sha256"],
-                        "receipt_binding": "exact-receipt" if same_receipt else "exact-pdf-bytes"}
-            if status != "PENDING" or review.get("report"):
-                report = _report(review.get("report"))
-                _require(_digest(review.get("report_sha256")), "visual report requires a SHA-256")
-                if report not in report_hashes:
-                    report_hashes[report] = _sha(report)
-                _require(report_hashes[report] == review["report_sha256"], "visual report SHA-256 mismatch")
-                evidence.update(report=_link(report, out), report_sha256=review["report_sha256"])
-            if status == "PASS":
-                inspected = _page_set(review.get("individually_inspected_pages"), row["pages"])
-                reused = _page_set(review.get("reused_pages"), row["pages"])
-                _require(not inspected & reused and inspected | reused == set(range(1, row["pages"] + 1)), "PASS visual review must cover every page exactly once")
-                proofs = review.get("reuse_proofs", [])
-                _require(isinstance(proofs, list), "reuse_proofs requires an array")
-                proved, retained_proofs = [], []
-                for proof in proofs:
-                    _require(isinstance(proof, dict) and type(proof.get("page")) is int and proof["page"] in reused, "reuse proof names an unclaimed page")
-                    _require(_digest(proof.get("current_raster_sha256")) and proof["current_raster_sha256"] == proof.get("prior_raster_sha256"), "reused page requires equal exact raster hashes")
-                    _require(_digest(proof.get("prior_pdf_sha256")), "reused page requires its prior PDF hash")
-                    prior_report = _report(proof.get("prior_report"))
-                    _require(_digest(proof.get("prior_report_sha256")), "reused page requires its prior report SHA-256")
-                    if prior_report not in report_hashes:
-                        report_hashes[prior_report] = _sha(prior_report)
-                    _require(report_hashes[prior_report] == proof["prior_report_sha256"], "prior visual report SHA-256 mismatch")
-                    proved.append(proof["page"])
-                    retained_proofs.append({key: proof[key] for key in (
-                        "page", "current_raster_sha256", "prior_raster_sha256", "prior_report", "prior_report_sha256",
-                        "prior_pdf_sha256", "renderer_fingerprint", "current_renderer_fingerprint",
-                        "prior_renderer_fingerprint", "equality_method") if key in proof})
-                _require(len(set(proved)) == len(proved) and set(proved) == reused, "every reused page requires one exact proof")
-                evidence.update(individually_inspected_pages=sorted(inspected), reused_pages=sorted(reused),
-                                reuse_proofs=retained_proofs)
-            if status == "CHANGES_REQUIRED":
-                row["files"].pop("pdf", None)
-            row["page_review"] = evidence
     return inputs, unmatched
 
 

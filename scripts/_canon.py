@@ -59,6 +59,7 @@ from __future__ import annotations
 
 import csv
 import json
+import os
 import re
 from pathlib import Path
 from typing import Any
@@ -83,12 +84,50 @@ class CanonError(RuntimeError):
 
 def book_index(root: Path = ROOT) -> list[dict[str, str]]:
     """The canonical edition's book index, read from its one tracked artifact."""
-    found = sorted(
-        (root / "src/sources/works").glob(
-            "*/*/editions/*/artifacts/book-index-*/book-index.tsv"
-        )
-    )
-    wanted = [path for path in found if "vulgata-clementina" in path.as_posix()]
+    works = root / "src/sources/works"
+    wanted: list[Path] = []
+    if works.is_dir():
+        # Match *vulgata-clementina* before descending into editions/artifacts so
+        # ~64,000 unrelated source artifact directories are never scanned.
+        with os.scandir(works) as authors:
+            for author in authors:
+                if not author.is_dir(follow_symlinks=True):
+                    continue
+                author_hit = "vulgata-clementina" in author.name
+                with os.scandir(author.path) as work_entries:
+                    for work in work_entries:
+                        if not work.is_dir(follow_symlinks=True):
+                            continue
+                        work_hit = author_hit or ("vulgata-clementina" in work.name)
+                        if not work_hit:
+                            continue
+                        editions_dir = os.path.join(work.path, "editions")
+                        try:
+                            edition_entries = os.scandir(editions_dir)
+                        except OSError:
+                            continue
+                        with edition_entries:
+                            for edition in edition_entries:
+                                if not edition.is_dir(follow_symlinks=True):
+                                    continue
+                                artifacts_dir = os.path.join(edition.path, "artifacts")
+                                try:
+                                    artifact_entries = os.scandir(artifacts_dir)
+                                except OSError:
+                                    continue
+                                with artifact_entries:
+                                    for artifact in artifact_entries:
+                                        if artifact.name.startswith("book-index-") and artifact.is_dir(follow_symlinks=True):
+                                            candidate = os.path.join(artifact.path, "book-index.tsv")
+                                            if os.path.isfile(candidate):
+                                                wanted.append(Path(candidate))
+        if not wanted:
+            found = sorted(
+                works.glob("*/*/editions/*/artifacts/book-index-*/book-index.tsv")
+            )
+            wanted = [path for path in found if "vulgata-clementina" in path.as_posix()]
+        else:
+            wanted.sort()
     if len(wanted) != 1:
         raise CanonError(
             f"expected one Clementine book index under {root}, found {len(wanted)}"

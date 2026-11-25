@@ -1054,6 +1054,31 @@ def _source_index(root: Path, *, refresh: bool = False) -> dict[str, Path]:
     return _SOURCE_INDEX[root]
 
 
+_SOURCE_ID_PART = re.compile(r"[a-z0-9][a-z0-9-]*\Z")
+
+
+def _canonical_source_path(root: Path, source_id: str) -> Path | None:
+    """Resolve a canonical source-library manifest path without a full tree scan."""
+    parts = source_id.split(".")
+    if len(parts) < 2 or not all(_SOURCE_ID_PART.fullmatch(part) for part in parts):
+        return None
+    kind = parts[0]
+    sources = root / "src/sources"
+    if kind == "corpus" and len(parts) >= 2:
+        candidate = sources / "corpora" / ("-".join(parts[1:]) + ".toml")
+    elif kind == "work" and len(parts) == 3:
+        candidate = sources / "works" / parts[1] / parts[2] / "work.toml"
+    elif kind == "edition" and len(parts) == 4:
+        candidate = sources / "works" / parts[1] / parts[2] / "editions" / parts[3] / "edition.toml"
+    elif kind == "artifact" and len(parts) >= 5:
+        candidate = sources / "works" / parts[1] / parts[2] / "editions" / parts[3] / "artifacts" / parts[-1] / "artifact.toml"
+    elif kind in {"segment", "passage"} and len(parts) >= 5:
+        candidate = sources / "works" / parts[1] / parts[2] / "editions" / parts[3] / (kind + "s") / ("-".join(parts[4:]) + ".toml")
+    else:
+        return None
+    return candidate if candidate.is_file() else None
+
+
 def _evidence_ancestry(root: Path, evidence: set[Path], *, source_ids=(),
                        validated_toml: set[bytes] | None = None) -> set[Path]:
     """Follow declared owners and source-library ancestry, without payload IO."""
@@ -1095,7 +1120,7 @@ def _evidence_ancestry(root: Path, evidence: set[Path], *, source_ids=(),
     if not source_ids:
         return result
     module = _source_module()
-    index = _source_index(root)
+    index = _SOURCE_INDEX.get(root)
     visited = set()
     active = set()
 
@@ -1105,13 +1130,29 @@ def _evidence_ancestry(root: Path, evidence: set[Path], *, source_ids=(),
             raise SchemaError(f"source metadata dependency cycle: {source_id}")
         if source_id in visited:
             return
-        if source_id not in index:
-            index = _source_index(root, refresh=True)
-        if source_id not in index:
-            raise SchemaError(f"bound source has no canonical metadata record: {source_id}")
-        path = index[source_id]
+        path = None
+        data = None
+        if index is not None and source_id in index:
+            path = index[source_id]
+        else:
+            candidate = _canonical_source_path(root, source_id)
+            if candidate is not None:
+                _within(root, candidate)
+                parsed = tomllib.loads(candidate.read_text(encoding="utf-8"))
+                if parsed.get("id") == source_id:
+                    path = candidate
+                    data = parsed
+        if path is None:
+            if index is None:
+                index = _source_index(root)
+            if source_id not in index:
+                index = _source_index(root, refresh=True)
+            if source_id not in index:
+                raise SchemaError(f"bound source has no canonical metadata record: {source_id}")
+            path = index[source_id]
         _within(root, path)
-        data = tomllib.loads(path.read_text(encoding="utf-8"))
+        if data is None:
+            data = tomllib.loads(path.read_text(encoding="utf-8"))
         if data.get("id") != source_id:
             raise SchemaError(f"bound source metadata identity changed: {source_id}")
         active.add(source_id)

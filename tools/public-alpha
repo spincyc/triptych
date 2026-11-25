@@ -1397,14 +1397,15 @@ def _pictorial_object_details(record: dict, definition: str, references: dict) -
 
 def _pictorial_gallery_selection(root: Path) -> tuple[dict[str, set[str]], set[str]]:
     """Use the native editions' positive artwork selection and its source closure."""
-    from _native_print_artwork import DICTIONARY, DICTIONARY_LEAVES, dictionary_artwork
+    from _native_print_artwork import DICTIONARY_LEAVES, dictionary_artworks
 
+    try:
+        selected = dictionary_artworks(root, "gpt", DICTIONARY_LEAVES)
+    except (OSError, ValueError) as exc:
+        raise ReleaseError(f"cannot select dictionary artwork: {exc}") from exc
     editions, inputs = {}, set()
-    for leaf in DICTIONARY_LEAVES:
-        try:
-            editions[leaf], sources = dictionary_artwork(root, "gpt", DICTIONARY + "/" + leaf)
-        except (OSError, ValueError) as exc:
-            raise ReleaseError(f"cannot select dictionary artwork for {leaf}: {exc}") from exc
+    for leaf, (artworks, sources) in selected.items():
+        editions[leaf] = artworks
         inputs.update(sources)
     return editions, inputs
 
@@ -1440,7 +1441,7 @@ def pictorial_gallery_selection() -> tuple[dict[str, set[str]], set[str]]:
     return {leaf: set(paths) for leaf, paths in editions.items()}, set(sources)
 
 
-def pictorial_gallery_data(edition: str | None = None) -> list[dict]:
+def pictorial_gallery_data(edition: str | None = None, *, _editions: dict[str, set[str]] | None = None) -> list[dict]:
     """Describe exactly the artwork typeset by one edition, or the family union.
 
     An old artwork's review receipt does not make it a current illustration.
@@ -1448,7 +1449,7 @@ def pictorial_gallery_data(edition: str | None = None) -> list[dict]:
     fixed historical illustrations; the manifest supplies their descriptions
     and exact image identities, not a second publication-selection policy.
     """
-    editions, _ = pictorial_gallery_selection()
+    editions = _editions if _editions is not None else pictorial_gallery_selection()[0]
     if edition is not None and edition not in editions:
         raise ReleaseError(f"unknown pictorial dictionary edition: {edition}")
     selected = editions[edition] if edition is not None else set().union(*editions.values())
@@ -1576,9 +1577,9 @@ def pictorial_gallery_source_paths() -> set[str]:
         return set()
     paths = {PICTORIAL_MANIFEST_RELATIVE.as_posix(),
              "release/public-alpha/" + PICTORIAL_SCRIPT_ASSET} | pictorial_object_source_paths()
-    _, selection_inputs = pictorial_gallery_selection()
+    editions, selection_inputs = pictorial_gallery_selection()
     paths.update(selection_inputs)
-    for card in pictorial_gallery_data():
+    for card in pictorial_gallery_data(_editions=editions):
         paths.add(card["source_relative"])
         paths.update(source for definition in card["definitions"]
                      for citation in definition["citations"] for source in citation["inputs"])
@@ -1822,6 +1823,40 @@ def is_unserved_browser_page(relative: str) -> bool:
     )
 
 
+def _trie_regex(strings: set[str]) -> str:
+    """Compile a prefix-factored alternation matching the exact same literal set."""
+    root_node: dict[str, dict] = {}
+    for value in strings:
+        node = root_node
+        for char in value:
+            node = node.setdefault(char, {})
+        node[""] = {}
+
+    def render(node: dict[str, dict]) -> str:
+        # Collapse linear prefix chains before branching so regex depth stays small.
+        prefix = []
+        while len(node) == 1 and "" not in node:
+            char, child = next(iter(node.items()))
+            prefix.append(re.escape(char))
+            node = child
+        has_end = "" in node
+        children = sorted((k, v) for k, v in node.items() if k != "")
+        if not children:
+            return "".join(prefix)
+        branches = [re.escape(k) + render(v) for k, v in children]
+        if len(branches) == 1:
+            tail = branches[0]
+            if has_end:
+                tail = f"(?:{tail})?"
+        else:
+            tail = "(?:" + "|".join(branches) + ")"
+            if has_end:
+                tail += "?"
+        return "".join(prefix) + tail
+
+    return render(root_node)
+
+
 def protected_source_identity_pattern() -> re.Pattern[str] | None:
     """Compile identities ineligible for every public-alpha liturgy surface.
 
@@ -1840,22 +1875,67 @@ def protected_source_identity_pattern() -> re.Pattern[str] | None:
         return _PROTECTED_IDENTITY_PATTERNS[cache_key]
     works = ROOT / "src/sources/works"
     records: list[dict] = []
-    for path in sorted(works.glob("**/artifact.toml")) if works.is_dir() else []:
-        try:
-            record = tomllib.loads(path.read_text(encoding="utf-8"))
-        except (OSError, UnicodeError, tomllib.TOMLDecodeError) as exc:
-            label = path.relative_to(ROOT).as_posix()
-            raise ReleaseError(f"cannot read source artifact manifest {label}: {exc}") from exc
-        if not isinstance(record, dict):
-            label = path.relative_to(ROOT).as_posix()
-            raise ReleaseError(f"source artifact manifest {label} is not a table")
-        for field in ("id", "edition_id", "rights_status"):
-            if not isinstance(record.get(field), str) or not record[field]:
+    if works.is_dir():
+        def scan_subtree(start_dir: str) -> list[dict]:
+            found: list[dict] = []
+            stack = [start_dir]
+            while stack:
+                current = stack.pop()
+                with os.scandir(current) as listing:
+                    for entry in listing:
+                        if entry.is_dir(follow_symlinks=False):
+                            stack.append(entry.path)
+                        elif entry.name == "artifact.toml":
+                            path = Path(entry.path)
+                            try:
+                                record = tomllib.loads(path.read_text(encoding="utf-8"))
+                            except (OSError, UnicodeError, tomllib.TOMLDecodeError) as exc:
+                                label = path.relative_to(ROOT).as_posix()
+                                raise ReleaseError(f"cannot read source artifact manifest {label}: {exc}") from exc
+                            if not isinstance(record, dict):
+                                label = path.relative_to(ROOT).as_posix()
+                                raise ReleaseError(f"source artifact manifest {label} is not a table")
+                            for field in ("id", "edition_id", "rights_status"):
+                                if not isinstance(record.get(field), str) or not record[field]:
+                                    label = path.relative_to(ROOT).as_posix()
+                                    raise ReleaseError(
+                                        f"source artifact manifest {label} has no nonempty {field}"
+                                    )
+                            found.append(record)
+            return found
+
+        top_dirs: list[str] = []
+        top_files: list[Path] = []
+        with os.scandir(works) as listing:
+            for entry in listing:
+                if entry.is_dir(follow_symlinks=False):
+                    top_dirs.append(entry.path)
+                elif entry.name == "artifact.toml":
+                    top_files.append(Path(entry.path))
+        top_dirs.sort()
+        for path in sorted(top_files):
+            try:
+                record = tomllib.loads(path.read_text(encoding="utf-8"))
+            except (OSError, UnicodeError, tomllib.TOMLDecodeError) as exc:
                 label = path.relative_to(ROOT).as_posix()
-                raise ReleaseError(
-                    f"source artifact manifest {label} has no nonempty {field}"
-                )
-        records.append(record)
+                raise ReleaseError(f"cannot read source artifact manifest {label}: {exc}") from exc
+            if not isinstance(record, dict):
+                label = path.relative_to(ROOT).as_posix()
+                raise ReleaseError(f"source artifact manifest {label} is not a table")
+            for field in ("id", "edition_id", "rights_status"):
+                if not isinstance(record.get(field), str) or not record[field]:
+                    label = path.relative_to(ROOT).as_posix()
+                    raise ReleaseError(f"source artifact manifest {label} has no nonempty {field}")
+            records.append(record)
+        workers = min(8, getattr(os, "process_cpu_count", os.cpu_count)() or 4)
+        if workers > 1 and len(top_dirs) >= 8:
+            from concurrent.futures import ThreadPoolExecutor
+            with ThreadPoolExecutor(max_workers=workers) as pool:
+                for batch in pool.map(scan_subtree, top_dirs):
+                    records.extend(batch)
+        else:
+            for directory in top_dirs:
+                records.extend(scan_subtree(directory))
 
     protected = {
         record["id"]
@@ -1875,13 +1955,7 @@ def protected_source_identity_pattern() -> re.Pattern[str] | None:
         )
     )
     pattern = (
-        re.compile(
-            r"(?<![a-z0-9._-])(?:"
-            + "|".join(
-                re.escape(identity) for identity in sorted(protected, key=len, reverse=True)
-            )
-            + r")(?![a-z0-9._-])"
-        )
+        re.compile(r"(?<![a-z0-9._-])(?:" + _trie_regex(protected) + r")(?![a-z0-9._-])")
         if protected
         else None
     )

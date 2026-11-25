@@ -103,9 +103,11 @@ ARCH_OS_RELEASE ?= /etc/os-release
 SOURCE_ROOT := src/$(PROVIDER)
 BUILD_ROOT := build/$(PROVIDER)
 WEB_BUILD_ROOT := build/web/$(PROVIDER)
-# src/common holds shared sources and document-type templates, never a provider:
-# a template named main.tex is not a publication entrypoint.
-ALL_MAIN_SOURCES := $(shell find src -mindepth 2 -path 'src/common/*' -prune -o -type f -name main.tex -print 2>/dev/null | sort)
+# src/common holds shared sources and document-type templates, never a provider;
+# src/sources, src/index, and src/web hold library/index/browser trees rather
+# than provider publication leaves. Pruning them avoids walking ~64,000 source
+# artifact directories on every Make invocation.
+ALL_MAIN_SOURCES := $(shell find src \( -path 'src/common' -o -path 'src/sources' -o -path 'src/index' -o -path 'src/web' \) -prune -o ! -path 'src/main.tex' -type f -name main.tex -print 2>/dev/null | sort)
 PROVIDERS := $(sort $(foreach path,$(ALL_MAIN_SOURCES),$(word 2,$(subst /, ,$(path)))))
 
 MAIN_SOURCES := $(shell find $(SOURCE_ROOT) -type f -name main.tex 2>/dev/null | sort)

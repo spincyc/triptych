@@ -617,41 +617,113 @@ def _path_contains_symlink(path: Path, root: Path) -> bool:
 
 def _record_manifest_paths(library: Library) -> list[Path]:
     """Return authoritative source manifests, excluding audit inventories."""
+    from concurrent.futures import ThreadPoolExecutor
 
-    patterns = (
-        "works/*/*/work.toml",
-        "works/*/*/editions/*/edition.toml",
-        "works/*/*/editions/*/artifacts/*/artifact.toml",
-        "works/*/*/editions/*/segments/*.toml",
-        "works/*/*/editions/*/passages/*.toml",
-        "corpora/*.toml",
-    )
-    candidates = {
-        path
-        for pattern in patterns
-        for path in library.source_root.glob(pattern)
-    }
+    source_root = library.source_root
+    canonical_items: list[tuple[Path, bool, bool]] = []  # (path, is_symlink, is_file)
+    stray_tomls: list[Path] = []
+
+    def is_canonical_works_parts(parts: tuple[str, ...]) -> bool:
+        n = len(parts)
+        if n == 3:
+            return parts[2] == "work.toml"
+        if n == 5:
+            return parts[2] == "editions" and parts[4] == "edition.toml"
+        if n == 6:
+            return parts[2] == "editions" and parts[4] in ("segments", "passages") and parts[5].endswith(".toml")
+        if n == 7:
+            return parts[2] == "editions" and parts[4] == "artifacts" and parts[6] == "artifact.toml"
+        return False
+
+    def in_artifact_root(parts: tuple[str, ...]) -> bool:
+        return len(parts) >= 7 and parts[2] == "editions" and parts[4] == "artifacts"
+
+    def scan_subtree(start_path: str, start_parts: tuple[str, ...], start_sym: bool) -> tuple[list[tuple[Path, bool, bool]], list[Path]]:
+        local_canon: list[tuple[Path, bool, bool]] = []
+        local_stray: list[Path] = []
+        # Follow symlinked dirs only at canonical prefix depths (matching glob),
+        # never recursively via rglob (which does not descend symlinked dirs).
+        stack: list[tuple[str, tuple[str, ...], bool, set[tuple[int, int]]]] = [(start_path, start_parts, start_sym, set())]
+        while stack:
+            current, parts, has_sym, visited = stack.pop()
+            try:
+                listing = os.scandir(current)
+            except OSError:
+                continue
+            with listing:
+                for entry in listing:
+                    name = entry.name
+                    child_parts = parts + (name,)
+                    entry_sym = has_sym or entry.is_symlink()
+                    if name.endswith(".toml") and is_canonical_works_parts(child_parts):
+                        local_canon.append((Path(entry.path), entry_sym, entry.is_file(follow_symlinks=True)))
+                        if entry.is_dir(follow_symlinks=False):
+                            stack.append((entry.path, child_parts, entry_sym, visited))
+                        continue
+                    if entry.is_dir(follow_symlinks=False):
+                        stack.append((entry.path, child_parts, entry_sym, visited))
+                    elif entry.is_symlink() and entry.is_dir(follow_symlinks=True):
+                        # Only canonical glob patterns can traverse symlinked directories
+                        # (up to depth 6: works/<author>/<work>/editions/<ed>/artifacts/<art>).
+                        if len(child_parts) <= 6:
+                            try:
+                                st = entry.stat(follow_symlinks=True)
+                                key = (st.st_dev, st.st_ino)
+                            except OSError:
+                                key = None
+                            if key is not None and key not in visited:
+                                stack.append((entry.path, child_parts, True, visited | {key}))
+                    elif name.endswith(".toml") and not has_sym and not in_artifact_root(child_parts):
+                        local_stray.append(Path(entry.path))
+        return local_canon, local_stray
+
+    works_root = source_root / "works"
+    if works_root.is_dir():
+        works_sym = works_root.is_symlink()
+        top_tasks: list[tuple[str, tuple[str, ...], bool]] = []
+        with os.scandir(works_root) as listing:
+            for entry in listing:
+                name = entry.name
+                entry_sym = works_sym or entry.is_symlink()
+                if entry.is_dir(follow_symlinks=True):
+                    top_tasks.append((entry.path, (name,), entry_sym))
+                elif name.endswith(".toml") and not works_sym:
+                    stray_tomls.append(Path(entry.path))
+        workers = min(8, getattr(os, "process_cpu_count", os.cpu_count)() or 4)
+        if workers > 1 and len(top_tasks) >= 8:
+            with ThreadPoolExecutor(max_workers=workers) as pool:
+                for local_canon, local_stray in pool.map(lambda t: scan_subtree(*t), top_tasks):
+                    canonical_items.extend(local_canon)
+                    stray_tomls.extend(local_stray)
+        else:
+            for task in top_tasks:
+                local_canon, local_stray = scan_subtree(*task)
+                canonical_items.extend(local_canon)
+                stray_tomls.extend(local_stray)
+
+    corpora_root = source_root / "corpora"
+    if corpora_root.is_dir():
+        corpora_sym = corpora_root.is_symlink()
+        with os.scandir(corpora_root) as listing:
+            for entry in listing:
+                if entry.name.endswith(".toml"):
+                    canonical_items.append((
+                        Path(entry.path),
+                        corpora_sym or entry.is_symlink(),
+                        entry.is_file(follow_symlinks=True),
+                    ))
+
+    canonical_items.sort(key=lambda item: item[0])
     paths: set[Path] = set()
-    for path in sorted(candidates):
-        if _path_contains_symlink(path, library.source_root):
+    for path, has_sym, is_file in canonical_items:
+        if has_sym or _path_contains_symlink(path, source_root):
             library.error(path, "source manifest path must not contain symbolic links")
-        elif not path.is_file():
+        elif not is_file:
             library.error(path, "source manifest must be a regular file")
         else:
             paths.add(path)
-    works_root = library.source_root / "works"
-    if works_root.is_dir():
-        artifact_roots = tuple(
-            library.source_root.glob(
-                "works/*/*/editions/*/artifacts/*"
-            )
-        )
-        for path in works_root.rglob("*.toml"):
-            if path in candidates:
-                continue
-            if any(path.is_relative_to(root) for root in artifact_roots):
-                continue
-            library.error(path, "TOML record is not at a canonical manifest path")
+    for path in sorted(stray_tomls):
+        library.error(path, "TOML record is not at a canonical manifest path")
     return sorted(paths)
 
 
@@ -703,10 +775,32 @@ def _load_source_records(library: Library) -> None:
             f"{library.relative(library.source_root)}: source root path must not contain symbolic links"
         )
         return
-    for path in _record_manifest_paths(library):
-        data = _read_toml(library, path)
-        if data is None:
-            continue
+    manifest_paths = _record_manifest_paths(library)
+    workers = min(8, getattr(os, "process_cpu_count", os.cpu_count)() or 4)
+    if workers > 1 and len(manifest_paths) >= 64:
+        from concurrent.futures import ThreadPoolExecutor
+
+        def parse_one(path: Path) -> tuple[dict[str, Any] | None, str | None]:
+            try:
+                return tomllib.loads(path.read_text(encoding="utf-8")), None
+            except (OSError, UnicodeError, tomllib.TOMLDecodeError, RecursionError) as error:
+                return None, f"cannot parse TOML: {error}"
+
+        with ThreadPoolExecutor(max_workers=workers) as pool:
+            parsed = list(pool.map(parse_one, manifest_paths))
+    else:
+        parsed = None
+
+    for index, path in enumerate(manifest_paths):
+        if parsed is not None:
+            data, err = parsed[index]
+            if err is not None:
+                library.error(path, err)
+                continue
+        else:
+            data = _read_toml(library, path)
+            if data is None:
+                continue
         common = _validate_common_record(library, path, data)
         if common is None:
             continue

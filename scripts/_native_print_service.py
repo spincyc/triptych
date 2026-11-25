@@ -86,21 +86,38 @@ def _git(root: Path, *arguments: str) -> str:
     return result.stdout.strip()
 
 
+_CANONICAL_SOURCE_PREFIXES = ("src", "release", "scripts", "tools", "library", "workflows", "guidance", ".github")
+
+
 def assert_source(root: Path, revision: str, *, complete_checkout: bool = False) -> None:
     """Refuse drift and uncommitted source changes, including added source inputs."""
     if _git(root, "rev-parse", "HEAD") != revision:
         raise ServiceError("The compiler source revision changed; restart the service.", 409)
     # The hosted compiler has a bounded set of source directories. A Pages
     # reference additionally depends on discovery over the canonical checkout.
-    roots = () if complete_checkout else ("src", "release", "scripts", "tools", "Makefile")
+    if complete_checkout:
+        # One pass reports tracked edits, untracked files and ignored files
+        # together instead of walking ~67,000 directories twice.
+        status = _git(root, "status", "--porcelain=v1", "-z", "--no-renames",
+                      "--untracked-files=normal", "--ignored=matching")
+        ignored_canonical = False
+        for entry in status.split("\0"):
+            if len(entry) < 4:
+                continue
+            code, path = entry[:2], entry[3:]
+            if code != "!!":
+                raise ServiceError("The compiler source snapshot has uncommitted changes.", 503)
+            clean = path.rstrip("/")
+            if any(clean == prefix or clean.startswith(prefix + "/") for prefix in _CANONICAL_SOURCE_PREFIXES):
+                ignored_canonical = True
+        if ignored_canonical:
+            raise ServiceError("The native reference checkout has ignored files in a canonical source directory.", 503)
+        return
+    roots = ("src", "release", "scripts", "tools", "Makefile")
     if (_git(root, "status", "--porcelain=v1", "--untracked-files=no")
             or _git(root, "ls-files", "--others", "--directory", "--no-empty-directory",
                     "--exclude-standard", "--", *roots)):
         raise ServiceError("The compiler source snapshot has uncommitted changes.", 503)
-    if complete_checkout and _git(root, "ls-files", "--others", "--ignored", "--exclude-standard",
-                                  "--directory", "--no-empty-directory", "--", "src", "release",
-                                  "scripts", "tools", "library", "workflows", "guidance", ".github"):
-        raise ServiceError("The native reference checkout has ignored files in a canonical source directory.", 503)
 
 
 def admitted_selections(root: Path) -> dict:

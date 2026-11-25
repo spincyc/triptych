@@ -79,7 +79,8 @@ def _read(path):
     if path.suffix == ".json":
         return json.loads(path.read_text(encoding="utf-8"))
     import yaml
-    return yaml.safe_load(path.read_text(encoding="utf-8"))
+    loader = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
+    return yaml.load(path.read_text(encoding="utf-8"), Loader=loader)
 
 
 def _source_projection(root, logical, data, products):

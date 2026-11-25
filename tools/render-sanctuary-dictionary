@@ -13,6 +13,7 @@ import hashlib
 import importlib.machinery
 import importlib.util
 import json
+import os
 import re
 import sys
 import tomllib
@@ -684,10 +685,43 @@ def _source_note_lookup(root: Path):
     @functools.cache
     def artifact_directories():
         # Some historic IDs use an edition alias or a different author/work
-        # slug. Only matching artifact names need a metadata read.
+        # slug. Only matching artifact names need a metadata read. Walk only
+        # the canonical */*/editions/*/artifacts/* hierarchy so passages/ and
+        # segments/ subtrees (~50k directories) are never entered.
         by_name = {}
-        for path in works.glob("*/*/editions/*/artifacts/*/artifact.toml"):
-            by_name.setdefault(path.parent.name, []).append(path)
+        if not works.is_dir():
+            return by_name
+        with os.scandir(works) as authors:
+            for author in authors:
+                if not author.is_dir(follow_symlinks=False):
+                    continue
+                with os.scandir(author.path) as work_entries:
+                    for work in work_entries:
+                        if not work.is_dir(follow_symlinks=False):
+                            continue
+                        editions_dir = os.path.join(work.path, "editions")
+                        try:
+                            edition_entries = os.scandir(editions_dir)
+                        except OSError:
+                            continue
+                        with edition_entries:
+                            for edition in edition_entries:
+                                if not edition.is_dir(follow_symlinks=False):
+                                    continue
+                                artifacts_dir = os.path.join(edition.path, "artifacts")
+                                try:
+                                    artifact_entries = os.scandir(artifacts_dir)
+                                except OSError:
+                                    continue
+                                with artifact_entries:
+                                    for artifact in artifact_entries:
+                                        if not artifact.is_dir(follow_symlinks=False):
+                                            continue
+                                        manifest = os.path.join(artifact.path, "artifact.toml")
+                                        if os.path.isfile(manifest):
+                                            by_name.setdefault(artifact.name, []).append(Path(manifest))
+        for paths in by_name.values():
+            paths.sort()
         return by_name
 
     @functools.cache
@@ -784,9 +818,9 @@ def source_note_metadata(root: Path, records: list[dict], library=None, *, looku
     return editions, bindings, inputs
 
 
-def source_note_inputs(root: Path, records: list[dict]) -> set[Path]:
+def source_note_inputs(root: Path, records: list[dict], *, lookup=None) -> set[Path]:
     """Metadata affecting notes; object TOML bindings remain the caller's inputs."""
-    return source_note_metadata(root, records)[2]
+    return source_note_metadata(root, records, lookup=lookup)[2]
 
 
 def edition_source_note_inputs(root: Path, owner: Path, selection_id: str) -> set[Path]:

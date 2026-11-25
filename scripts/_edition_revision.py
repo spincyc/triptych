@@ -78,6 +78,7 @@ import dataclasses
 import datetime as dt
 import functools
 import hashlib
+import heapq
 import importlib.machinery
 import importlib.util
 import itertools
@@ -185,23 +186,44 @@ def _git(root: Path, *arguments: str) -> str:
 
 
 class _HistoryPaths:
-    """Shorten path lists without changing any parent comparison made by git log.
+    """Shorten path lists and answer simplified history walks from one graph read.
 
     One bit names one commit/parent tree comparison (including roots against
-    the empty tree). If two path lists change on exactly the same edges, Git
-    makes exactly the same merge simplification and returns the same commits
-    in the same order. Git still performs the history walk and reads trailers.
+    the empty tree). Together with each commit's parents, author/committer
+    timestamps and trailers, this reproduces Git's default history
+    simplification (`git log -- <paths>`) in memory without spawning a new
+    `git log` walk for every edition in a batch.
     """
 
     def __init__(self, root: Path):
+        self.root = root
         self.tip = _git(root, "rev-parse", "HEAD").strip()
-        graph = _git_bytes(root, "rev-list", "--parents", self.tip)
+        log = _git(root, "log",
+                   f"--format=%x1e%H %at %ct %P%x1f%(trailers:key={TRAILER},valueonly,separator=%x1d)",
+                   self.tip)
         edges = []
-        for line in graph.splitlines():
-            commit, *parents = line.split()
-            edges.extend(commit + b" " + parent for parent in parents)
-            if not parents:
-                edges.append(commit)
+        self.commits: dict[str, tuple[int, int, tuple[str, ...], tuple[tuple[str | None, int], ...]]] = {}
+        for record in log.split("\x1e"):
+            if not record.strip():
+                continue
+            head, _, trailers_raw = record.partition("\x1f")
+            parts = head.split()
+            commit = parts[0]
+            author_time = int(parts[1])
+            committer_time = int(parts[2])
+            parents = parts[3:]
+            trailers = tuple(v.strip() for v in trailers_raw.strip().split("\x1d") if v.strip())
+            commit_edges = []
+            if parents:
+                for parent in parents:
+                    bit = 1 << len(edges)
+                    edges.append((commit + " " + parent).encode("ascii"))
+                    commit_edges.append((parent, bit))
+            else:
+                bit = 1 << len(edges)
+                edges.append(commit.encode("ascii"))
+                commit_edges.append((None, bit))
+            self.commits[commit] = (author_time, committer_time, trailers, tuple(commit_edges))
         # Specify each merge parent separately. -t also records directory
         # changes when a path used to be a directory. NULs delimit all paths.
         rows = _git_bytes(root, "diff-tree", "--stdin", "--root", "--no-renames",
@@ -232,6 +254,56 @@ class _HistoryPaths:
                 covered |= mask
                 kept.append(representatives[mask])
         return kept
+
+    def history(self, paths, revision: str = "HEAD") -> list[tuple[int, str, bool]] | None:
+        start = self.tip if revision == "HEAD" else revision
+        if start not in self.commits:
+            start = _git(self.root, "rev-parse", "--verify", start + "^{commit}").strip()
+            if start not in self.commits:
+                return None
+        mask = 0
+        for path in paths:
+            mask |= self.changes.get(path, 0)
+        if not mask:
+            return []
+        seen = {start}
+        seq = 0
+        heap = [(-self.commits[start][1], seq, start)]
+        result = []
+        while heap:
+            _, _, commit = heapq.heappop(heap)
+            author_time, _ct, trailers, commit_edges = self.commits[commit]
+            if len(commit_edges) == 1:
+                parent, bit = commit_edges[0]
+                if mask & bit:
+                    if any(value != TRAILER_NONE for value in trailers):
+                        raise RevisionError(
+                            f"commit {commit[:12]} carries {TRAILER}: {', '.join(trailers)}; "
+                            f"{TRAILER_NONE!r} is the only value it may take")
+                    result.append((author_time, commit, bool(trailers)))
+                if parent is not None and parent not in seen:
+                    seen.add(parent)
+                    seq += 1
+                    heapq.heappush(heap, (-self.commits[parent][1], seq, parent))
+            else:
+                treesame = next((parent for parent, bit in commit_edges if not (mask & bit)), None)
+                if treesame is not None:
+                    if treesame not in seen:
+                        seen.add(treesame)
+                        seq += 1
+                        heapq.heappush(heap, (-self.commits[treesame][1], seq, treesame))
+                else:
+                    if any(value != TRAILER_NONE for value in trailers):
+                        raise RevisionError(
+                            f"commit {commit[:12]} carries {TRAILER}: {', '.join(trailers)}; "
+                            f"{TRAILER_NONE!r} is the only value it may take")
+                    result.append((author_time, commit, bool(trailers)))
+                    for parent, _bit in commit_edges:
+                        if parent is not None and parent not in seen:
+                            seen.add(parent)
+                            seq += 1
+                            heapq.heappush(heap, (-self.commits[parent][1], seq, parent))
+        return result
 
 
 class Repository:
@@ -272,6 +344,9 @@ class Repository:
             if self._large_walks >= 2:
                 self.prepare_history()
         if self._history_paths is not None:
+            answered = self._history_paths.history(paths, revision)
+            if answered is not None:
+                return answered
             if revision == "HEAD":
                 revision = self._history_paths.tip
             paths = self._history_paths.reduce(paths)
@@ -295,9 +370,14 @@ class Repository:
         return self._tracked
 
     def changed(self) -> set[str]:
-        """Content and generator paths differing from HEAD, including untracked files."""
+        """Tracked content and generator paths differing from HEAD.
+
+        Untracked closure files are already detected by `path not in tracked`
+        in `revision_of`, avoiding an untracked scan across ~64,000 source
+        directories when `core.untrackedCache` is disabled.
+        """
         if self._changed is None:
-            output = _git(self.root, "status", "--porcelain=v1", "-z", "--untracked-files=all",
+            output = _git(self.root, "status", "--porcelain=v1", "-z", "--untracked-files=no",
                           "--no-renames", "--", "src", "scripts", "tools")
             self._changed = {entry[3:] for entry in output.split("\0") if len(entry) > 3}
         return self._changed
@@ -655,7 +735,8 @@ def prefetch_revisions(root: Path, editions, *, repository: Repository, assembly
         except Exception as error:  # held, and raised where this edition is asked for
             closures[(provider, document)] = error
 
-    if any(not isinstance(row, Exception) and len(row[1].paths) >= 64 for row in closures.values()):
+    valid_count = sum(1 for row in closures.values() if not isinstance(row, Exception))
+    if valid_count >= 8 or any(not isinstance(row, Exception) and len(row[1].paths) >= 64 for row in closures.values()):
         repository.prepare_history()
 
     def finish(key):

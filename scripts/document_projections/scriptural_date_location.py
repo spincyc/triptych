@@ -70,9 +70,9 @@ def _input_state(root: Path) -> tuple:
     same stat fields, at a fifth of the cost of building and sorting ~67,000
     Path objects.
     """
-    found = []
-    for tree, suffixes in _WATCHED:
-        pending = [os.path.join(root, "src", "sources", tree)]
+    def scan(start: str, suffixes: tuple[str, ...]) -> list[tuple]:
+        local: list[tuple] = []
+        pending = [start]
         while pending:
             try:
                 listing = os.scandir(pending.pop())
@@ -83,9 +83,36 @@ def _input_state(root: Path) -> tuple:
                     if entry.is_dir(follow_symlinks=False):
                         pending.append(entry.path)
                     elif os.path.splitext(entry.name)[1] in suffixes and entry.is_file():
-                        stat = entry.stat()
-                        found.append((entry.path, stat.st_dev, stat.st_ino, stat.st_size,
-                                      stat.st_mtime_ns, stat.st_ctime_ns))
+                        st = entry.stat()
+                        local.append((entry.path, st.st_dev, st.st_ino, st.st_size,
+                                      st.st_mtime_ns, st.st_ctime_ns))
+        return local
+
+    found: list[tuple] = []
+    workers = min(8, getattr(os, "process_cpu_count", os.cpu_count)() or 4)
+    for tree, suffixes in _WATCHED:
+        base = os.path.join(root, "src", "sources", tree)
+        try:
+            listing = os.scandir(base)
+        except OSError:
+            continue
+        subdirs: list[str] = []
+        with listing:
+            for entry in listing:
+                if entry.is_dir(follow_symlinks=False):
+                    subdirs.append(entry.path)
+                elif os.path.splitext(entry.name)[1] in suffixes and entry.is_file():
+                    st = entry.stat()
+                    found.append((entry.path, st.st_dev, st.st_ino, st.st_size,
+                                  st.st_mtime_ns, st.st_ctime_ns))
+        if workers > 1 and len(subdirs) >= 8:
+            from concurrent.futures import ThreadPoolExecutor
+            with ThreadPoolExecutor(max_workers=workers) as pool:
+                for batch in pool.map(lambda d: scan(d, suffixes), subdirs):
+                    found.extend(batch)
+        else:
+            for d in subdirs:
+                found.extend(scan(d, suffixes))
     found.sort()
     return tuple(found)
 
