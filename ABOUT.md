@@ -8,8 +8,8 @@ Tradition, the Magisterium, the Church's liturgical books, canon law, or
 competent advice. Polished prose is not proof: follow the citations and check
 important claims against the authorities themselves.
 
-Publications retain separate GPT and Claude editions where available. Each
-catalog row links the available editions, so the two can be read against each
+Publications retain separate GPT, Claude, and Gemini editions where available. Each
+catalog row links the available editions, so they can be read against each
 other. Read online or generate a typeset PDF of a selected edition in your browser
 using [Printing](docs/printing.md).
 

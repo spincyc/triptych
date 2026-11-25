@@ -7,6 +7,25 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-11-26.
 
+## Gemini six-lane showcase publications and third-provider integration, 2026-11-25
+
+<!-- promised-deliverable: gemini-six-showcase-publications-2026-11-25 -->
+
+Enable `gemini` as the third first-class provider alongside `gpt` and `claude`
+across Triptych's schemas, tooling, print recipes, web readers, and release
+policies, and add the governing profile `guidance/liturgy/postconciliar-pictorial-dictionaries.md`.
+Execute six isolated parallel authoring lanes under `src/gemini/`—each with its
+own internal subagents, strict source-first discipline, and authentic Catholic
+voice free of AI jargon or secular-apologetic conditioning—followed by
+independent cold reviews and any warranted guidance improvements:
+
+1. `theology/mariology/ark-of-the-covenant` (monograph + bespoke monochrome graphite plates and cartography);
+2. `liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/` (comprehensive volume + use-based derived editions with bespoke monochrome graphite plates);
+3. `theology/angelology` (systematic Aquinas + *Celestial Hierarchy* + patristic/pre-Christian treatise with complete article census);
+4. `liturgy/roman-rite/1962/seasons/advent` (1962 Advent Seasonal Handbook meeting the gravity-and-wonder standard);
+5. Discursive benchmarks: `articles/faith/four-last-things-03-hell`, `articles/scripture/abraham-and-the-daylight-stars`, and `articles/scripture/the-linen-cloths-at-the-empty-tomb`;
+6. `articles/faith/reading-metaphysics` (*Reading Metaphysics*, vertical slice accepted by independent pencil test followed by the complete 50–80 page nine-lesson book).
+
 ## Claude 1962 First Sunday of Advent, 2026-11-29
 
 <!-- promised-deliverable: claude-1962-01-advent-2026-11-29 -->

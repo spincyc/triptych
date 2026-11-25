@@ -82,7 +82,9 @@ GENERIC_MODEL_RE = re.compile(
     r"|^gpt[- ]?5$"
     r"|^claude$"
     r"|^claude[- ]?[0-9]+(?:\.[0-9]+)?$"
-    r"|^claude[- ](?:opus|sonnet|haiku|fable|mythos)$",
+    r"|^claude[- ](?:opus|sonnet|haiku|fable|mythos)$"
+    r"|^gemini$"
+    r"|^gemini[- ]?[0-9]+(?:\.[0-9]+)?$",
     re.IGNORECASE,
 )
 QUALIFIER_RE = re.compile(r"^[A-Za-z][A-Za-z0-9_-]*=[^;\s]+$")
@@ -92,6 +94,7 @@ REQUIRED_MODEL_QUALIFIERS = {
     # records that decision explicitly and behaves identically to omission.
     "claude-fable-5": set(),
     "claude-opus-5[1m]": set(),
+    "gemini-4-neon": {"effort"},
 }
 REQUIRED_RUNTIME_PATTERNS = {
     "gpt-5.6-sol": (
@@ -108,6 +111,10 @@ REQUIRED_RUNTIME_PATTERNS = {
     "claude-opus-5[1m]": (
         re.compile(r"\bAnthropic Claude Code\b"),
         re.compile(r"\bClaude Code CLI [0-9]+\.[0-9]+\.[0-9]+\b"),
+        re.compile(r"\bunexposed: server revision\b"),
+    ),
+    "gemini-4-neon": (
+        re.compile(r"\bGoogle Antigravity\b"),
         re.compile(r"\bunexposed: server revision\b"),
     ),
 }

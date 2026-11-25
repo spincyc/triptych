@@ -9,7 +9,7 @@
   // One portable, lower-case file name per admitted edition, chosen at build time.
   const downloadName = (value) => typeof value === 'string' && /^[a-z0-9][a-z0-9-]{0,190}\.pdf$/.test(value);
   const identity = (value) => typeof value === 'string' &&
-    /^(?:publication:(?:gpt|claude)\/|bible:|reading-plan:|papal:)[a-z0-9][a-z0-9./-]*$/.test(value) &&
+    /^(?:publication:(?:gpt|claude|gemini)\/|bible:|reading-plan:|papal:)[a-z0-9][a-z0-9./-]*$/.test(value) &&
     !value.includes('..') && !value.includes('//') && !value.endsWith('/');
 
   function endpoint(value) {

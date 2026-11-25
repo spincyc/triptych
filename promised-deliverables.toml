@@ -1,6 +1,53 @@
 schema_version = 1
 
 [[deliverables]]
+id = "gemini-six-showcase-publications-2026-11-25"
+owner = "PROJECT-WORK.md"
+promise = "Enable gemini as Triptych's third first-class provider, author six showcase publication lanes under src/gemini/ in parallel isolated subagents (Ark of the Covenant, Postconciliar Illustrated Sanctuary Dictionary, Angelology, 1962 Advent Seasonal Handbook, Discursive Benchmarks, and Reading Metaphysics), cold-review every lane independently, apply warranted guidance improvements, commit coherently, and publish verified changes."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "gemini-provider-infrastructure"
+  criterion = "The gemini provider is supported across schemas, document types, metadata checks, staleness, catalog/web readers, print recipes, and public-alpha policy, and the postconciliar pictorial dictionary profile is registered."
+  status = "pass"
+  evidence = ["scripts/_document_schema.py", "tools/public-alpha", "tools/check-generation-metadata", "src/common/document-schemas/registry.toml", "guidance/liturgy/postconciliar-pictorial-dictionaries.md", "tests/tools/research-staleness.test"]
+
+  [[deliverables.requirements]]
+  id = "lane-1-ark-of-the-covenant"
+  criterion = "src/gemini/theology/mariology/ark-of-the-covenant passes schema, metadata, TeX build, visual plate audit, and independent cold review."
+  status = "open"
+
+  [[deliverables.requirements]]
+  id = "lane-2-postconciliar-dictionary"
+  criterion = "src/gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/ passes schema, metadata, TeX build, visual plate audit, and independent cold review."
+  status = "open"
+
+  [[deliverables.requirements]]
+  id = "lane-3-angelology"
+  criterion = "src/gemini/theology/angelology passes schema, metadata, complete ST I qq. 50-64 and 106-114 census parity, TeX build, and independent cold review."
+  status = "open"
+
+  [[deliverables.requirements]]
+  id = "lane-4-advent-handbook"
+  criterion = "src/gemini/liturgy/roman-rite/1962/seasons/advent passes schema, metadata, TeX build, and independent blind reader and accuracy cold reviews."
+  status = "open"
+
+  [[deliverables.requirements]]
+  id = "lane-5-discursive-benchmarks"
+  criterion = "src/gemini/articles/faith/four-last-things-03-hell, articles/scripture/abraham-and-the-daylight-stars, and articles/scripture/the-linen-cloths-at-the-empty-tomb pass schema, metadata, TeX builds, and independent cold review."
+  status = "open"
+
+  [[deliverables.requirements]]
+  id = "lane-6-reading-metaphysics"
+  criterion = "src/gemini/articles/faith/reading-metaphysics passes vertical-slice cold transfer test, 50-80 page nine-lesson TeX build, schema, metadata, and independent cold acceptance review."
+  status = "open"
+
+  [[deliverables.requirements]]
+  id = "cold-review-and-integration"
+  criterion = "Every lane completes independent cold review with findings dispositioned, warranted guidance improvements are recorded, and repository deployment gates pass."
+  status = "open"
+
+[[deliverables]]
 id = "claude-1962-01-advent-2026-11-29"
 owner = "PROJECT-WORK.md"
 promise = "Complete the Claude 1962 First Sunday of Advent (01) proper-study workflow for Sunday 29 November 2026: produce the expansive study, concise study and homily with independent cold reviews and their web readers, publish to main and verify the deployment."

@@ -650,7 +650,7 @@ RECORD_TYPE = "proper-components"
 ENTRYPOINT_FIELDS = {"research": "entrypoint", "synthesis": "synthesis_entrypoint",
                      "homily": "homily_entrypoint"}
 CALENDARS = {"1962": "roman-1962", "postconciliar": "postconciliar"}
-PROVIDERS = ("claude", "gpt")
+PROVIDERS = ("claude", "gemini", "gpt")
 
 
 def leaf_document(leaf: Path) -> str | None:

@@ -746,7 +746,7 @@ check-curriculum-structure: \
 
 help:
 	@printf '%s\n' \
-		'Every build, review, list, and metadata target honors PROVIDER=<p> (default gpt; claude is the peer branch)' \
+		'Every build, review, list, and metadata target honors PROVIDER=<p> (default gpt; claude and gemini are peer branches)' \
 		'make          Validate sources and build the public website without PDFs' \
 		'make pdf      Explicitly build every document with at most $(PDF_JOBS) parallel jobs, or the current Make jobserver' \
 		'make review-pdfs  Build with at most $(PDF_JOBS) jobs, then raster PDFs changed since the last review-pdfs' \
@@ -1319,7 +1319,7 @@ endef
 $(foreach document,$(CANONICAL_DOCUMENTS),$(eval $(call REGISTER_DOCUMENT_SOURCES,$(document))))
 
 # Each provider's Four Last Things series imports its own shared format.
-ifneq ($(filter $(PROVIDER),gpt claude),)
+ifneq ($(filter $(PROVIDER),gpt claude gemini),)
 FOUR_LAST_THINGS_DOCUMENTS := $(addprefix articles/faith/four-last-things-,01-death 02-judgment 03-hell 04-heaven)
 $(addprefix $(BUILD_ROOT)/,$(addsuffix .pdf,$(FOUR_LAST_THINGS_DOCUMENTS))): \
 	$(SOURCE_ROOT)/articles/faith/four-last-things-shared/format.tex

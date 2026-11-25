@@ -163,7 +163,7 @@ FILE_KINDS = {
 }
 EVIDENCE_WORDS = {"acquired", "searched", "inspected", "verified"}
 
-PROVIDERS = {"gpt", "claude"}
+PROVIDERS = {"gpt", "claude", "gemini"}
 DEFAULT_PROVIDER = "gpt"
 
 CURRICULUM_OWNER = "owner.curriculums.ecclesiastical-latin"

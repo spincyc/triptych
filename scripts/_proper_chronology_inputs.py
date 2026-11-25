@@ -204,8 +204,8 @@ def load(document: str, root: Path, provider: str, loci_of) -> Appointments:
     neither supply missing appointed wording nor claim subverse precision.
     """
     target = registered_target(document, root)
-    if provider not in {"gpt", "claude"}:
-        raise ValueError("postconciliar chronology provider must be gpt or claude")
+    if provider not in {"gpt", "claude", "gemini"}:
+        raise ValueError("postconciliar chronology provider must be gpt, claude, or gemini")
     leaf_id = f"src/{provider}/{document}"
     leaf = root / leaf_id
     source = _file(root, f"{leaf_id}/{INPUT}")

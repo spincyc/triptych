@@ -234,6 +234,14 @@ gates = ["dictionary-artwork"]
 requirements = ["Existing typed object/claim/variant/source/artwork records and curated audience/plate selections stay canonical.", "Stable object identities, sourced morphology/status/handlers and scale/rights; image-dominant plates, no universal card layout."]
 
 [[types]]
+kind = "pictorial-dictionary-postconciliar"
+patterns = ["liturgy/roman-rite/postconciliar/*/reference/roman-sanctuary-dictionary/*"]
+profile = "guidance/liturgy/postconciliar-pictorial-dictionaries.md"
+catalog = "library/novus-ordo-liturgy.md"
+required_roles = ["scope", "guide-map", "edition-manifest", "artwork-manifest", "plate-manifest", "source-audit"]
+requirements = ["Declared edition-locale, territory, jurisdiction, and as-of date; controlled dispositions and direct 1962 counterpart relations.", "Label-free monochrome graphite plates bound to canonical object records; image-dominant pages and use-based derived editions."]
+
+[[types]]
 kind = "sacraments-summary"
 patterns = ["theology/sacraments-at-a-glance"]
 profile = "guidance/theology/sacramental-reference.md"

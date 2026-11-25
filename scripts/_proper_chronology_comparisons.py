@@ -46,8 +46,8 @@ def load(
     path = leaf / INPUT
     if not path.exists():
         return (), ()
-    if provider not in {"gpt", "claude"}:
-        raise ValueError("profile comparisons require the gpt or claude provider")
+    if provider not in {"gpt", "claude", "gemini"}:
+        raise ValueError("profile comparisons require the gpt, claude, or gemini provider")
     if not path.is_file() or path.is_symlink():
         raise ValueError(f"{INPUT}: must be a regular file")
 

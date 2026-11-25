@@ -144,7 +144,7 @@ def _common(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--mass", help="a Mass key for the propers surface")
     parser.add_argument("--ref", help="a book and chapter for catena or scripture, e.g. 'Gen 1'")
     parser.add_argument("--leaf", help="a work's path for the texts surface, e.g. biographies/origen")
-    parser.add_argument("--provider", choices=("claude", "gpt"), help="with --leaf: one treatment of the work")
+    parser.add_argument("--provider", choices=("claude", "gemini", "gpt"), help="with --leaf: one treatment of the work")
     parser.add_argument("--passage", help="a passage id for the sources surface, as Catena Omnia cites it")
     parser.add_argument("--edition", help="an edition id for the sources surface")
     parser.add_argument("--canon", help="a citation for the law surface, e.g. '1983 c. 1008'")

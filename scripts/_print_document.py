@@ -25,7 +25,7 @@ from _tooling import examples_live_on_the_verbs, print_json, with_examples
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA = "triptych-print-document/v1"
 FAMILIES = ("publication", "bible", "reading-plan", "papal")
-PROVIDERS = ("claude", "gpt")
+PROVIDERS = ("claude", "gemini", "gpt")
 SAFE_ID = re.compile(r"[a-z0-9][a-z0-9./-]*\Z")
 
 

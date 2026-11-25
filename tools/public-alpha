@@ -376,7 +376,7 @@ FIXED_ARTIFACT_INPUT_PATHS = {
 }
 # SITE_ORIGIN and SITE_NAME are imported from scripts/_site_identity.py so
 # print-map and site-build tools share one source of truth without cross-loading.
-PROVIDER_LABELS = {"gpt": "ChatGPT", "claude": "Claude"}
+PROVIDER_LABELS = {"gpt": "ChatGPT", "claude": "Claude", "gemini": "Gemini"}
 SOCIAL_CARD_RELATIVE = "assets/social-card.png"
 SITE_ICON_RELATIVE = "assets/icon.png"
 # Used only by a page that carries no prose of its own — a browser page whose
@@ -384,7 +384,7 @@ SITE_ICON_RELATIVE = "assets/icon.png"
 # A page with an opening paragraph never reaches this.
 SITE_DESCRIPTION = (
     "Source-first AI studies of Catholic faith, worship, and law, "
-    "issued in parallel GPT and Claude editions with their citations."
+    "issued in parallel GPT, Claude, and Gemini editions with their citations."
 )
 LICENSE_SOURCE_PATHS = {
     path.relative_to(ROOT).as_posix()
@@ -1215,7 +1215,7 @@ def archived_prints() -> dict[str, dict]:
             if not isinstance(identity, str):
                 raise ReleaseError("invalid archived publication identity")
             provider, separator, leaf = identity.partition("/")
-            if provider not in {"gpt", "claude"} or not separator or not SAFE_ID_RE.fullmatch(leaf) or ".." in PurePosixPath(leaf).parts or PurePosixPath(leaf).as_posix() != leaf:
+            if provider not in {"gpt", "claude", "gemini"} or not separator or not SAFE_ID_RE.fullmatch(leaf) or ".." in PurePosixPath(leaf).parts or PurePosixPath(leaf).as_posix() != leaf:
                 raise ReleaseError(f"invalid archived publication identity: {identity!r}")
             filename = PurePosixPath(public_pdf_path(provider, leaf)).name
             expected_url = f"https://github.com/spincyc/triptych-artifacts/releases/download/prints-{snapshot[:7]}/{filename}"
