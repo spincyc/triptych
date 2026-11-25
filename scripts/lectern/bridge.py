@@ -153,8 +153,10 @@ class Bridge:
         """Answer selected-data requests until the browser model returns."""
         stream = process.stdout
         assert stream
-        reader = self._readers[process]
-        batch = reader.batch_verification() if hasattr(reader, "batch_verification") else nullcontext()
+        reader = self._readers.get(process)
+        batch = (reader.batch_verification()
+                 if reader is not None and hasattr(reader, "batch_verification")
+                 else nullcontext())
         with batch, selectors.DefaultSelector() as watch:
             watch.register(stream, selectors.EVENT_READ)
             while True:

@@ -4102,13 +4102,18 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str], *,
             for _, mass in masses_of(document)
             for entry, _ in numbered_entries(mass, source)
         ]
-        return {
+        built = {
             target: Divergences(
                 calendar, document, entries, canon, target,
                 numberings=tuple(system for system in SYSTEMS if system != RESOLVED_IN),
             )
             for target in SYSTEMS
         }
+        # Divergences uses canon only during __init__ validation; clear the
+        # module reference so session_derived can clone the pure lookup tables.
+        for item in built.values():
+            item.canon = None
+        return built
 
     divergences = session_derived(
         ("mass-propers/divergences", str(root), calendar),
