@@ -618,6 +618,9 @@ class OrdinaryStructure(unittest.TestCase):
                                     turn["dialogue_role"] is None and
                                     turn["printed_marker"] is None and
                                     turn["action"] is None for turn in turns))
+        # The source-specific Agnus Dei of a Requiem has its three petitions
+        # and its own ending in both of the admitted language witnesses.
+        expected.update(("roman-1962", "communio/agnus-dei-defunctorum", lang) for lang in ("en", "la"))
         self.assertEqual(reached, expected)
         # Postconciliar: speakers priest/all; roles only where the 2002
         # Praefationes print versicle and response marks, none for the Pax.
@@ -1897,7 +1900,7 @@ process.stdin.on('end', () => {
             # 2026-11-14: the 1962 Missal's own rubrics and Preface headings
             # (qualified basis) give 52 more elements Latin; 13 of the 16 left
             # are the lay missal's apparatus, which no Missal prints.
-            [("en", 200, 3), ("la", 187, 16)],
+            [("en", 201, 3), ("la", 188, 16)],
         )
         self.assertEqual(
             [one["key"] for one in roman["exclusions"]],
@@ -3422,13 +3425,13 @@ process.stdout.write(JSON.stringify({
         # 2026-11-14: the 1962 Missal's own rubrics and Preface headings
         # (qualified basis) give 52 more elements Latin.
         self.assertEqual(
-            [one["held"] for one in report["languages"]["roman-1962"]], [200, 187])
+            [one["held"] for one in report["languages"]["roman-1962"]], [201, 188])
         self.assertEqual([one["elements"] for one in
                           report["languages"]["postconciliar"]], [72, 72])
         # Chrism supplies one newly held side in each language. The two scoped
         # Joseph English offers occupy one counted element, not two elements.
         elements = report["languages"]["roman-1962"][1]["elements"]
-        self.assertEqual(elements - 187, 16)
+        self.assertEqual(elements - 188, 16)
 
         pater = report["kyrie_in_each"]
         self.assertIn("Our Father, who art in heaven", pater["en"])
@@ -3493,18 +3496,18 @@ process.stdout.write(JSON.stringify({
         """
         report = self.run_harness()
         preamble = report["preamble_1962"]
-        self.assertIn("The 1861 witness prints this block only in English — 0 of 203 elements", preamble)
-        self.assertIn("This older oration is outside the 1962 Ordinary — 0 of 203 elements", preamble)
-        self.assertIn("The 1861 lay witness supplies its own English heading or rubric — 0 of 203 elements",
+        self.assertIn("The 1861 witness prints this block only in English — 0 of 204 elements", preamble)
+        self.assertIn("This older oration is outside the 1962 Ordinary — 0 of 204 elements", preamble)
+        self.assertIn("The 1861 lay witness supplies its own English heading or rubric — 0 of 204 elements",
                       preamble)
         self.assertIn("The 1861 lay missal's own apparatus; the Missal prints no Latin here — "
-                      "13 of 203 elements", preamble)
-        self.assertIn("This day’s Ordinary appointment is not established — 6 of 203 elements", preamble)
-        self.assertIn("The appointed proper Canon form is not held here — 0 of 203 elements", preamble)
-        self.assertIn("Held English differs from this proper Communicantes — 0 of 203 elements", preamble)
+                      "13 of 204 elements", preamble)
+        self.assertIn("This day’s Ordinary appointment is not established — 6 of 204 elements", preamble)
+        self.assertIn("The appointed proper Canon form is not held here — 0 of 204 elements", preamble)
+        self.assertIn("Held English differs from this proper Communicantes — 0 of 204 elements", preamble)
         self.assertIn(
-            "The historical English lacks the 1962 Saint Joseph clause — 0 of 203 elements", preamble)
-        self.assertIn("An exact source for this Preface is not joined in this language — 0 of 203 elements", preamble)
+            "The historical English lacks the 1962 Saint Joseph clause — 0 of 204 elements", preamble)
+        self.assertIn("An exact source for this Preface is not joined in this language — 0 of 204 elements", preamble)
         self.assertNotIn("of 200 elements", preamble)
         self.assertNotIn("undefined", preamble)
         self.assertNotIn("The 1861 witness prints this block only in English", report["accendat_in_each"]["la"])
