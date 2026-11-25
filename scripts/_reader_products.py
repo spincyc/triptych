@@ -65,8 +65,9 @@ def _reading(index, *, reuse=False):
     # maintenance derives discovery from scratch.
     derivations = session_derivations(index._reader_derivations) if reuse else nullcontext()
     try:
+        disk_dir = getattr(index, "_reader_parse_cache_dir", None)
         with (index.verified_reads(), reading_records(indexed_records(index)),
-              verified_parse_cache(index._reader_parse_cache), derivations):
+              verified_parse_cache(index._reader_parse_cache, disk_dir=disk_dir), derivations):
             yield
     finally:
         if previous is None:

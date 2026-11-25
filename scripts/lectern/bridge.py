@@ -3,11 +3,13 @@ from __future__ import annotations
 
 import atexit
 import itertools
+from contextlib import nullcontext
 from contextvars import Context
 import json
 import os
 import selectors
 import shutil
+import struct
 import subprocess
 import sys
 import threading
@@ -151,7 +153,9 @@ class Bridge:
         """Answer selected-data requests until the browser model returns."""
         stream = process.stdout
         assert stream
-        with selectors.DefaultSelector() as watch:
+        reader = self._readers[process]
+        batch = reader.batch_verification() if hasattr(reader, "batch_verification") else nullcontext()
+        with batch, selectors.DefaultSelector() as watch:
             watch.register(stream, selectors.EVENT_READ)
             while True:
                 if not watch.select(timeout=PATIENCE):
@@ -166,17 +170,22 @@ class Bridge:
                 if not isinstance(message, dict) or message.get("reader_data") is not True:
                     return line
                 try:
-                    reader = self._readers[process]
                     context, _ = self._products[process]
                     body = context.run(reader.read, message.get("path"))
-                    response = {"ok": True, "text": None if body is None else body.decode("utf-8")}
+                    if body is None:
+                        status, payload = 0, b""
+                    else:
+                        status, payload = 1, body
                 except Exception as error:
-                    response = {"ok": False, "error": str(error)}
-                payload = (json.dumps(response, ensure_ascii=False) + "\n").encode("utf-8")
+                    status, payload = 2, str(error).encode("utf-8")
+                header = struct.pack(">BI", status, len(payload))
                 descriptor = self._data_pipes[process]
-                while payload:
-                    count = os.write(descriptor, payload)
-                    payload = payload[count:]
+                for chunk in (header, payload):
+                    view = memoryview(chunk)
+                    sent = 0
+                    total = len(view)
+                    while sent < total:
+                        sent += os.write(descriptor, view[sent:])
 
     def read_product(self, relative: str) -> bytes | None:
         """Read a selected publication through the same owned source snapshot."""

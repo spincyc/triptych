@@ -45,10 +45,11 @@ def _git(root, *arguments):
 
 
 def _history_head(root):
-    if _git(root, "rev-parse", "--is-shallow-repository") != "false":
+    lines = _git(root, "rev-parse", "--is-shallow-repository", "--verify", "HEAD").splitlines()
+    if len(lines) != 2 or lines[0] != "false":
         raise ValueError("publication history is shallow; restore complete history and "
                          "refresh publication metadata")
-    return _git(root, "rev-parse", "--verify", "HEAD")
+    return lines[1]
 
 
 def _clean_history_head(root):

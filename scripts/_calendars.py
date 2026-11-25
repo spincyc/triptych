@@ -28,6 +28,7 @@ import copy
 import hashlib
 import json
 import os
+import pickle
 import re
 import tomllib
 from _tooling import prune_cache
@@ -907,19 +908,25 @@ _YAML_CACHE_FLOOR = 256 * 1024
 # Generous on purpose: an entry is a parsed copy of a file that already exists.
 _YAML_CACHE_KEEP = 128
 _VERIFIED_PARSE_CACHE = ContextVar("calendar_verified_parse_cache", default=None)
+_VERIFIED_PARSE_DISK_DIR = ContextVar("calendar_verified_parse_disk_dir", default=None)
 
 
 @contextmanager
-def verified_parse_cache(cache):
+def verified_parse_cache(cache, *, disk_dir: Path | None = None):
     """Reuse parsing of exact bytes within an indexed reader's lifetime.
 
     The caller owns verification of every canonical read. No timestamp or old
     parsed value may avoid that read, and callers receive independent objects.
+    When `disk_dir` is supplied, parsed JSON payloads for large verified inputs
+    may also be persisted under that disposable cache directory strictly keyed
+    by the verified SHA-256 digest of the canonical bytes.
     """
     token = _VERIFIED_PARSE_CACHE.set(cache)
+    disk_token = _VERIFIED_PARSE_DISK_DIR.set(Path(disk_dir) if disk_dir is not None else None)
     try:
         yield
     finally:
+        _VERIFIED_PARSE_DISK_DIR.reset(disk_token)
         _VERIFIED_PARSE_CACHE.reset(token)
 
 
@@ -1036,13 +1043,58 @@ def parse_toml(body: bytes):
 
 
 def _verified_parse(verified, body: bytes, kind: str, parse):
-    key = (kind, hashlib.sha256(body).digest())
-    if key not in verified:
+    digest = hashlib.sha256(body).digest()
+    key = (kind, digest)
+    held = verified.get(key)
+    if held is None:
+        disk_dir = _VERIFIED_PARSE_DISK_DIR.get()
+        entry = None
+        if disk_dir is not None and len(body) >= _YAML_CACHE_FLOOR:
+            hex_digest = digest.hex()
+            entry = disk_dir / hex_digest[:2] / f"{_YAML_CACHE_VERSION}-{kind}-{hex_digest}.json"
+            try:
+                encoded = entry.read_text(encoding="utf-8")
+                parsed = json.loads(encoded)
+                if len(verified) >= _YAML_CACHE_KEEP:
+                    verified.pop(next(iter(verified)))
+                verified[key] = ("json", encoded)
+                return parsed
+            except (OSError, ValueError):
+                pass
         parsed = parse(body.decode("utf-8"))
+        try:
+            encoded = json.dumps(parsed)
+            roundtrip = json.loads(encoded)
+            if roundtrip == parsed:
+                held = ("json", encoded)
+                if entry is not None:
+                    try:
+                        entry.parent.mkdir(parents=True, exist_ok=True)
+                        aside = entry.with_suffix(f".{os.getpid()}.tmp")
+                        aside.write_text(encoded, encoding="utf-8")
+                        os.replace(aside, entry)
+                        prune_cache(disk_dir, keep=_YAML_CACHE_KEEP, pattern="**/*.json")
+                    except OSError:
+                        pass
+                if len(verified) >= _YAML_CACHE_KEEP:
+                    verified.pop(next(iter(verified)))
+                verified[key] = held
+                return roundtrip
+        except (TypeError, ValueError, RecursionError):
+            pass
+        try:
+            held = ("pickle", pickle.dumps(parsed, protocol=pickle.HIGHEST_PROTOCOL))
+        except (pickle.PicklingError, TypeError, AttributeError):
+            held = ("obj", parsed)
         if len(verified) >= _YAML_CACHE_KEEP:
             verified.pop(next(iter(verified)))
-        verified[key] = parsed
-    return copy.deepcopy(verified[key])
+        verified[key] = held
+    mode, payload = held
+    if mode == "json":
+        return json.loads(payload)
+    if mode == "pickle":
+        return pickle.loads(payload)
+    return copy.deepcopy(payload)
 
 
 def _cached_parse(path: Path, kind: str, parse):

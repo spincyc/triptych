@@ -25,7 +25,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from _browser_products import ProductError, assert_working_output, committed_data_root, working_data_root  # noqa: E402
 
 import _calendars  # noqa: E402
-from _corpus_index import session_derived  # noqa: E402
+from _session_derivations import session_derived  # noqa: E402
 import _missal_coverage  # noqa: E402
 import _oration_execution  # noqa: E402
 import _name_execution  # noqa: E402
@@ -4019,6 +4019,20 @@ def votive_chant_sources(root: Path, calendar: str, document: dict, witness_link
     return results
 
 
+_CITATIONS_TOOL = None
+
+
+def _citations_tool():
+    global _CITATIONS_TOOL
+    if _CITATIONS_TOOL is None:
+        loader = SourceFileLoader("_structure_citations", str(ROOT / "tools" / "citations"))
+        spec = spec_from_loader(loader.name, loader)
+        canon = module_from_spec(spec)
+        loader.exec_module(canon)
+        _CITATIONS_TOOL = canon
+    return _CITATIONS_TOOL
+
+
 def calendar_structure(root: Path, calendar: str, tokens: dict[str, str], *,
                        mass_keys: set[str] | None = None,
                        translation_order: list[dict] | None = None) -> dict:
@@ -4080,22 +4094,26 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str], *,
     source = document.get("psalm_numbering")
     if source not in SYSTEMS:
         raise ValueError(f"{calendar} declares unknown psalm numbering {source!r}")
-    loader = SourceFileLoader("_structure_citations", str(ROOT / "tools" / "citations"))
-    spec = spec_from_loader(loader.name, loader)
-    canon = module_from_spec(spec)
-    loader.exec_module(canon)
-    entries = [
-        entry
-        for _, mass in masses_of(document)
-        for entry, _ in numbered_entries(mass, source)
-    ]
-    divergences = {
-        target: Divergences(
-            calendar, document, entries, canon, target,
-            numberings=tuple(system for system in SYSTEMS if system != RESOLVED_IN),
-        )
-        for target in SYSTEMS
-    }
+    canon = _citations_tool()
+
+    def build_divergences():
+        entries = [
+            entry
+            for _, mass in masses_of(document)
+            for entry, _ in numbered_entries(mass, source)
+        ]
+        return {
+            target: Divergences(
+                calendar, document, entries, canon, target,
+                numberings=tuple(system for system in SYSTEMS if system != RESOLVED_IN),
+            )
+            for target in SYSTEMS
+        }
+
+    divergences = session_derived(
+        ("mass-propers/divergences", str(root), calendar),
+        build_divergences,
+    )
     listings = list_presentation(document)
     masses = []
     for kind, mass in (selected if selected is not None else masses_of(document)):

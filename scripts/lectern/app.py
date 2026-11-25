@@ -309,7 +309,7 @@ class TriptychApp(App[None]):
         # Opening a surface may spawn another load when its first worker delivers.
         # A single wait_for_complete() captures only the workers already present.
         while quiet < 3:
-            await asyncio.sleep(0.05)
+            await asyncio.sleep(0.01)
             busy = any(worker is not coordinator and not worker.is_finished for worker in self.workers)
             quiet = 0 if busy or bridge.BRIDGE_PROCESS.waiting else quiet + 1
         reader = self.query_one("#reader")
