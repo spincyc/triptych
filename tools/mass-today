@@ -1213,7 +1213,7 @@ def join_dedication_context(mass: dict, owner: dict, selection: dict, derived: d
     mass._ordinary_source_rows = ordinary_rows
 
 
-def project_dated_conclusions(payload: dict, ranked: dict, arguments: argparse.Namespace) -> None:
+def project_dated_conclusions(payload: dict, ranked: dict, arguments: argparse.Namespace, bible: dict | None) -> None:
     """Consume the reader's verified atomic execution; never edit a source body."""
     if not arguments.expanded:
         return
@@ -1238,14 +1238,14 @@ def project_dated_conclusions(payload: dict, ranked: dict, arguments: argparse.N
         request = {
             "schema": "triptych-liturgy-reader-state/v1", "entrance": "day", "civilDate": payload["date"],
             "edition": {"id": day["calendar"]}, "calendar": {"id": day["calendar"]},
-            "bible": {"id": payload["scripture"]["id"], "numbering": (indexed_bible(payload["scripture"]["id"]) or {}).get("numbering")},
+            "bible": {"id": payload["scripture"]["id"], "numbering": (bible or {}).get("numbering")},
             "languages": {"orations": language, "ordinary": language},
             "requestedMode": "missal" if framed else "read",
             "options": {"ordinary": framed, "legitimate": ordinary_selection_map(ordinary or {}, arguments.ordinary_variant)},
             "coverage": [], "unresolvedChoices": [], "sourceHooks": [],
         }
-        if arguments.mass:
-            request["selectedReadableFormulary"] = {"id": arguments.mass}
+        if arguments.mass or arguments.form:
+            request["selectedReadableFormulary"] = {"id": arguments.mass or mass["key"]}
         if arguments.form:
             request["form"] = arguments.form
         if arguments.territory:
@@ -1297,7 +1297,7 @@ let raw='';process.stdin.on('data',c=>raw+=c);process.stdin.on('end',()=>{
             mass["derived_execution"] = projection
 
 
-def project_source_local_1970(payload: dict, ranked: dict, arguments: argparse.Namespace) -> None:
+def project_source_local_1970(payload: dict, ranked: dict, arguments: argparse.Namespace, bible: dict | None) -> None:
     """Select one already verified historical offer from the shared CLI adapter."""
     if not getattr(arguments, "source_local_1970", False):
         return
@@ -1313,13 +1313,13 @@ def project_source_local_1970(payload: dict, ranked: dict, arguments: argparse.N
     request = {
         "schema": "triptych-liturgy-reader-state/v1", "entrance": "day", "civilDate": payload["date"],
         "edition": {"id": "postconciliar"}, "calendar": {"id": "postconciliar"},
-        "bible": {"id": payload["scripture"]["id"], "numbering": (indexed_bible(payload["scripture"]["id"]) or {}).get("numbering")},
+        "bible": {"id": payload["scripture"]["id"], "numbering": (bible or {}).get("numbering")},
         "languages": {"orations": language}, "requestedMode": "read",
         "options": {"ordinary": False, "legitimate": {}},
         "coverage": [], "unresolvedChoices": [], "sourceHooks": [],
     }
-    if arguments.mass:
-        request["selectedReadableFormulary"] = {"id": arguments.mass}
+    if arguments.mass or arguments.form:
+        request["selectedReadableFormulary"] = {"id": arguments.mass or mass["key"]}
     if arguments.form:
         request["form"] = arguments.form
     if arguments.territory:
@@ -2015,8 +2015,8 @@ def run_show(arguments: argparse.Namespace) -> dict:
             else None
         ),
     }
-    project_dated_conclusions(payload, ranked, arguments)
-    project_source_local_1970(payload, ranked, arguments)
+    project_dated_conclusions(payload, ranked, arguments, bible)
+    project_source_local_1970(payload, ranked, arguments, bible)
     return payload
 
 
@@ -2207,7 +2207,8 @@ def mass_events(
         "  const formIds = [...new Set(appointments.rows.map(row => row.proper.form_id || 'main'))];\n"
         "  const riteContext = sourceContext.calendar && sourceContext.mass ? {\n"
         "    calendar:sourceContext.calendar, mass:sourceContext.mass,\n"
-        "    formId:sourceContext.formId || (formIds.length === 1 ? formIds[0] : null), properRows:appointments.rows\n"
+        "    formId:sourceContext.formId || (formIds.length === 1 ? formIds[0] : null), properRows:appointments.rows,\n"
+        "    properSelections:appointments.selections\n"
         "  } : null;\n"
         "  predicates['proper-rite-context'] = riteContext;\n"
         "  const resolved = input.ordinary ? model.resolveElements(\n"
@@ -2380,8 +2381,16 @@ def ordinary_predicate_context_for(day: dict, mass: dict, date: str) -> dict:
         (one for one in day.get("branches") or [] if one.get("selected")),
         None,
     )
+    branch = getattr(mass, "_source_branch", branch)
+    readable = getattr(mass, "_source_readable", None)
     winner = branch.get("winner") if isinstance(branch, dict) else None
+    office = None
+    if isinstance(branch, dict) and isinstance(readable, dict):
+        office = {"settled": branch.get("settled"), "winner": winner,
+                  "formulary": readable.get("key"), "standing": readable.get("state"),
+                  "weekday": day.get("weekday")}
     return {
+        "office": office,
         "settled": branch.get("settled") if isinstance(branch, dict) else False,
         "weekday": day.get("weekday"),
         "season": day.get("season"),
