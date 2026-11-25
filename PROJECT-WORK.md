@@ -5,7 +5,21 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-11-23.
+Last reconciled: 2026-11-25.
+
+## Claude 1962 First Sunday of Advent, 2026-11-29
+
+<!-- promised-deliverable: claude-1962-01-advent-2026-11-29 -->
+
+**In progress: authorized; seeding.** On 2026-11-25 the maintainer asked for
+the Claude 1962 proper-study documents for the upcoming Sunday. Sunday,
+29 November 2026 is the First Sunday of Advent (I class), permanent identity
+`01`, `liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent`.
+The computed calendar also lists St Saturninus; the dated context settles
+whether he is commemorated. The production plan records the one-provider
+authorization. This is an independent Claude production: the published GPT
+leaf for the same identity is not an input. Publication to `main` has not
+been authorized.
 
 ## Postconciliar Advent and the seasonal catalogs, 2026-11-23
 

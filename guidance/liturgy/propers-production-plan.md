@@ -246,6 +246,15 @@ of the proper-study workflow.
 
 - Authorized 2026-11-23: provider `gpt`, identity `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b`.
 
+The maintainer's 25 November 2026 request opens the Claude 1962 First Sunday
+of Advent, identity `01`, for Sunday, 29 November 2026, under the current
+three-document contract. It is an independent Claude production, not a
+companion to or a derivative of the published GPT leaf for the same identity
+or of any other leaf. It opens that one identity for that one provider and
+nothing else. Publication to main is not part of this decision.
+
+- Authorized 2026-11-25: provider `claude`, identity `liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent`.
+
 ### Reference-only publication scope
 
 An additional authorization here replaces full appointed-text reproduction

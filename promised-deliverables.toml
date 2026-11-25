@@ -1,6 +1,33 @@
 schema_version = 1
 
 [[deliverables]]
+id = "claude-1962-01-advent-2026-11-29"
+owner = "PROJECT-WORK.md"
+promise = "Complete the Claude 1962 First Sunday of Advent (01) proper-study workflow for Sunday 29 November 2026: produce the expansive study, concise study and homily with independent cold reviews and their web readers, committed on the workspace branch."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "claude-01-authorized"
+  criterion = "The production plan records the maintainer's one-provider authorization for the exact Claude 01 identity."
+  status = "pass"
+  evidence = ["guidance/liturgy/propers-production-plan.md"]
+  check = "contains"
+  path = "guidance/liturgy/propers-production-plan.md"
+  needle = "- Authorized 2026-11-25: provider `claude`, identity `liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent`."
+
+  [[deliverables.requirements]]
+  id = "claude-01-native-acceptance"
+  criterion = "A real proper-study version-20 run for provider claude, identity liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent, date 2026-11-29, audience adult parish assembly, reaches ACCEPTED with every required fresh cold review, and its results are archived in the leaf with a cycles record."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "claude-01-reviewed-publications"
+  criterion = "The expansive study, concise study and homily sources pass their gates and reviews; the web reader conversion is reviewed and current; the catalog, inventories and release records are current and the publication gates pass."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "pages-performance-main-2026-11-23"
 owner = "PROJECT-WORK.md"
 promise = "Reconcile the complete Pages performance branch through its five local follow-up commits with production, preserve the published editions and verify the production deployment."
