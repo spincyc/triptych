@@ -3436,8 +3436,8 @@ process.stdout.write(JSON.stringify({
     def test_partial_language_coverage_keeps_source_qualification_and_gaps(self) -> None:
         """Partial language coverage stays visible and never becomes fallback.
 
-        The accepted72-element checkpoint holds40 English and35 Latin sides;
-        all remaining sides keep their typed source limits. Its older Our Father preserves its
+        The 72-element Ordinary holds 40 English and 36 Latin-side readings.
+        The remaining sides keep their typed source limits. Its older Our Father preserves its
         source-only extent. Neither frame silently falls back to another side.
         """
         report = self.run_harness()
@@ -3448,7 +3448,7 @@ process.stdout.write(JSON.stringify({
         # historical Latin and English (one more held side in each language).
         # 2026-11-14: the paschal dismissal, Lava me, Fraction and Perceptio.
         self.assertEqual(
-            [one["held"] for one in report["languages"]["postconciliar"]], [40, 35])
+            [one["held"] for one in report["languages"]["postconciliar"]], [40, 36])
         # 2026-11-12 Roman Ordinary admissions: the source-appointed prayer
         # over the people adds one cue element held in both languages, and
         # four complete historical Prefaces plus the final blessing gain
