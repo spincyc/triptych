@@ -208,10 +208,14 @@ class LiturgyParityTests(unittest.TestCase):
                 self.assertNotIn(omitted, order)
             self.assertTrue(any(link.get("rite_opening") and link["url"].endswith("#page=263")
                                 for link in result["missalWitnessLinks"]))
-            self.assertEqual([(e["slot"], e["sourceConsultations"][0]["url"].rsplit("=", 1)[-1]) for e in events
-                              if e.get("sourceConsultations")],
-                             [("Preface of the Easter Vigil", "315"), ("Communicantes of the Easter Vigil", "294"),
-                              ("Easter dismissal", "296")])
+            links_by_role = {event["slot"]: {link["language"]: link["url"] for link in event["sourceConsultations"]}
+                             for event in events if event.get("sourceConsultations")}
+            for role, latin, english in (("Preface of the Easter Vigil", 315, 2),
+                                         ("Communicantes of the Easter Vigil", 294, 2),
+                                         ("Easter dismissal", 296, 3)):
+                self.assertTrue(links_by_role[role]["la"].endswith(f"#page={latin}"))
+                self.assertEqual(links_by_role[role]["en"],
+                                 f"https://extraordinaryform.org/masses/EasterVigilM20.pdf#page={english}")
 
     def test_1962_requiem_and_passiontide_use_their_appointed_ordinary(self) -> None:
         def reading(day, **choices):
@@ -517,10 +521,46 @@ class SurfaceParityTests(unittest.IsolatedAsyncioTestCase):
             self.assertIn("1861", app.screen.body.plain)
             await pilot.press("escape")
 
+    async def test_omitting_a_lenten_prayer_releases_a_witness_used_only_there(self) -> None:
+        from textual.widgets import OptionList
+        from lectern.app import TriptychApp
+        from lectern.snapshot import _settle
+        from lectern.surfaces.day import Day
+        from lectern.surfaces.propers import Propers
+
+        for mass, date in (("lent-1-saturday", "2027-02-20"), ("lent-2-friday", "2027-02-26")):
+            group = f"proper-choice/postconciliar/{mass}/main/prayer-over-the-people"
+            for entrance, surface in (("propers", Propers), ("day", Day)):
+                settings = {"calendar": "postconciliar", "mass": mass, "ordinary": True, "orations": "en",
+                            "witness": "project-created", "properChoices": {group: "pray"}}
+                if entrance == "day":
+                    settings["date"] = date
+                app = TriptychApp(start=entrance, intent=settings)
+                async with app.run_test(size=(80, 30)) as pilot:
+                    await _settle(app, pilot)
+                    reader = app.query_one(surface)
+                    self.assertEqual(reader.selection()["witness"], "project-created")
+                    await pilot.press("s")
+                    await _settle(app, pilot)
+                    def is_omit(value):
+                        if entrance == "day":
+                            return value[2:4] == ("proper-choice", (group, "omit"))
+                        return value == ("proper-choice", group, "omit")
+                    index = next(i for i, (key, _) in enumerate(app.screen.options) if is_omit(key))
+                    app.screen.query_one(OptionList).highlighted = index
+                    await pilot.press("enter")
+                    await _settle(app, pilot)
+                    self.assertNotIn("witness", reader.selection())
+                    view = reader.view if entrance == "propers" else reader.views["postconciliar"]["rows"][0]
+                    event = next(one for one in view["events"] if one["id"] == group)
+                    self.assertEqual(event["selection"]["option"], "omit")
+                    omitted = next(option for option in event["options"] if option["id"] == "omit")
+                    self.assertEqual(omitted["members"], [])
+
     async def test_vigil_facsimile_opens_at_the_rite_and_the_current_prayer(self) -> None:
         from unittest.mock import patch
         from lectern.app import TriptychApp
-        from lectern.dialogs import MissalSource, Pick
+        from lectern.dialogs import MissalSource, Pick, Pick
         from lectern.snapshot import _settle
         from lectern.surfaces.day import Day
         from textual.widgets import OptionList
@@ -542,13 +582,21 @@ class SurfaceParityTests(unittest.IsolatedAsyncioTestCase):
             app.screen.query_one(OptionList).highlighted = index
             await pilot.press("enter")
             await _settle(app, pilot)
-            await pilot.press("ctrl+o")
-            await _settle(app, pilot)
-            self.assertIsInstance(app.screen, MissalSource)
-            self.assertTrue(app.screen.url.endswith("#page=315"))
-            with patch.object(app, "open_url") as opened:
-                await pilot.press("o")
-                opened.assert_called_once_with(app.screen.url)
+            for label, page in (("Latin", "#page=315"), ("English", "#page=2")):
+                await pilot.press("ctrl+o")
+                await _settle(app, pilot)
+                self.assertIsInstance(app.screen, Pick)
+                index = next(i for i, (_, title) in enumerate(app.screen.options) if label in title)
+                app.screen.query_one(OptionList).highlighted = index
+                await pilot.press("enter")
+                await _settle(app, pilot)
+                self.assertIsInstance(app.screen, MissalSource)
+                self.assertTrue(app.screen.url.endswith(page))
+                with patch.object(app, "open_url") as opened:
+                    await pilot.press("o")
+                    opened.assert_called_once_with(app.screen.url)
+                await pilot.press("escape")
+                await _settle(app, pilot)
 
     async def test_exact_missal_witness_can_be_opened_and_copied_from_settings(self) -> None:
         from unittest.mock import patch
@@ -788,13 +836,17 @@ class SurfaceParityTests(unittest.IsolatedAsyncioTestCase):
         from lectern.missal import ordinary_conditions
         from lectern.widgets import Ink
 
-        for date, text in [("2027-03-25", "Specialized Ordinary unavailable"),
-                           ("2027-03-26", "No Mass Ordinary for this rite"),
-                           ("2027-03-27", "Specialized Ordinary unavailable")]:
-            view = bridge.call("liturgy", "day", "roman-1962", date, {"ordinary": True})
+        for date in ("2027-03-25", "2027-03-26", "2027-03-27"):
+            row = bridge.call("liturgy", "day", "roman-1962", date, {"ordinary": True})["rows"][0]
             ink = Ink()
-            ordinary_conditions(ink, view["rows"][0], compact=True)
-            self.assertIn(text, ink.content().plain)
+            ordinary_conditions(ink, row, compact=True)
+            has_frame = any(event["kind"] == "ordinary-element" for event in row["events"])
+            self.assertEqual(has_frame, date != "2027-03-26")
+            if has_frame:
+                self.assertNotIn("Specialized Ordinary unavailable", ink.content().plain)
+                self.assertTrue(any(link.get("rite_opening") for link in row["missalWitnessLinks"]))
+            else:
+                self.assertIn("No Mass Ordinary for this rite", ink.content().plain)
 
     async def test_day_ordinary_picker_applies_a_choice_without_a_formulary_row(self) -> None:
         from lectern.app import TriptychApp

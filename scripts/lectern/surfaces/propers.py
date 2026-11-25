@@ -771,7 +771,7 @@ class Propers(MissalSurface):
             elif kind == "cycle":
                 selection["cycle"] = value[1]
             elif kind == "proper-choice":
-                selection.setdefault("properChoices", {})[value[1]] = value[2]
+                missal.select_proper_option(selection, view, value[1], value[2])
             elif kind.startswith("translation-witness"):
                 selection["witness"] = value[1]
             elif kind == "ordinary-variant":

@@ -23,6 +23,7 @@ module.exports = function liturgy(realm) {
   const C = liturgyModel('reader-state.js');
   const Seating = liturgyModel('ordinary-seating.js');
   const PropersCompare = liturgyModel('propers-compare.js');
+  const ChoiceControls = liturgyModel('source-choice-controls.js');
   const Study = liturgyModel('reader-study-view.js');
   const Payload = liturgyModel('reader-proper-payload.js');
 
@@ -297,6 +298,14 @@ module.exports = function liturgy(realm) {
 
   /* A proper choice as source-choice-controls.js presents it: its title, its
    * note, and each option by name, marked where adapting it fails. */
+  function choiceProbe(state, adapt) {
+    return (id, option) => {
+      const request = ChoiceControls.adaptProperChoiceRequest(state, id, option, adapt);
+      return {properChoices: request.properChoices,
+        dropWitness: Boolean(state.languages.translationWitness && !request.languages.translationWitness)};
+    };
+  }
+
   function properChoice(event, probe) {
     const selected = event.selection && event.selection.option || null;
     return {
@@ -305,9 +314,9 @@ module.exports = function liturgy(realm) {
         ? 'The selected source option is shown first. Other source options remain collapsed and are not cumulative.'
         : 'The source appoints one of these alternatives here. None is selected; the option groups below are not cumulative.',
       options: (event.options || []).map((option) => {
-        let unavailable = false;
-        try { if (probe) probe(event.id, option.id); } catch (error) { unavailable = true; }
-        return { id: option.id, label: T.titleCase(String(option.id).replace(/[-_]+/g, ' ')), unavailable };
+        const row = {id: option.id, label: T.titleCase(String(option.id).replace(/[-_]+/g, ' '))};
+        try { return Object.assign(row, {unavailable: false}, probe(event.id, option.id)); }
+        catch (_error) { return Object.assign(row, {unavailable: true}); }
       }),
     };
   }
@@ -808,10 +817,7 @@ module.exports = function liturgy(realm) {
       row.sourcePaths = sourcePathsFor(adapted, (next) => A.adaptDay({
         request: next, derived, structure: owner, ordinary, rubrics,
       }));
-      // properChoiceRequest, source-choice-controls.js: the same request with one choice made.
-      const probe = (id, option) => A.adaptDay({ request: Object.assign({}, asked, {
-        properChoices: Object.assign({}, asked.properChoices || {}, { [id]: option }) }),
-      derived, structure: owner, ordinary, rubrics });
+      const probe = choiceProbe(asked, request => A.adaptDay({request, derived, structure: owner, ordinary, rubrics}));
       row.events = await events(adapted, calendar, mass, bible, branchState, ordinary, probe);
       row.ordinaryWitnessLinks = T.ordinaryWitnessLinks(ordinary, adapted.events);
       rows.push(row);
@@ -882,9 +888,7 @@ module.exports = function liturgy(realm) {
     context.witnesses = witnessesFor(adapted, owner, state);
     result.cycles = PropersCompare.heldCycles(owner, asked);
     result.comparisonOffers = comparisonOffers(owner, asked, adapted);
-    const probe = (id, option) => A.adaptPropers({ request: Object.assign({}, asked, {
-      properChoices: Object.assign({}, asked.properChoices || {}, { [id]: option }) }),
-    structure: owner, ordinary });
+    const probe = choiceProbe(asked, request => A.adaptPropers({request, structure: owner, ordinary}));
     result.events = await events(adapted, calendar, mass, bible, state, ordinary, probe);
     result.ordinaryWitnessLinks = T.ordinaryWitnessLinks(ordinary, adapted.events);
     return result;

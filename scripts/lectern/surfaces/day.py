@@ -716,7 +716,7 @@ class Day(MissalSurface):
                     "Confirm the actual location of this celebration. This applies only to this date, Mass, form and branch; a shared link does not carry the confirmation."), confirmed)
                 return
             elif kind == "proper-choice":
-                selection.setdefault("properChoices", {})[choice[0]] = choice[1]
+                missal.select_proper_option(selection, row, choice[0], choice[1])
             elif kind.startswith("translation-witness"):
                 selection["witness"] = choice
             elif kind == "source-local-1970":

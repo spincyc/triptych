@@ -362,6 +362,15 @@ def ordinary_conditions(ink: Ink, view: dict, *, compact: bool = False) -> None:
             ink.line(condition["basis"], "italic $text-muted")
 
 
+def select_proper_option(selection: dict, row: dict, group: str, candidate: str) -> None:
+    event = next(event for event in row["events"] if event["id"] == group)
+    option = next(option for option in event["options"] if option["id"] == candidate)
+    selection["properChoices"] = option["properChoices"].copy()
+    selection.pop("alternative", None)
+    if option["dropWitness"]:
+        selection.pop("witness", None)
+
+
 def choices(ink: Ink, view: dict) -> Ink:
     """What the reader state left open, said as open."""
     open_choices = view.get("unresolvedChoices") or []
