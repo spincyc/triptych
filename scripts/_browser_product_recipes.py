@@ -52,9 +52,28 @@ _REVIEW_RECORDS = [
     "src/sources/inventories/publications-v1.toml",
     "src/sources/inventories/source-family-migration-v1.toml",
 ]
-# Run archives under a leaf's evaluations/ stay in every key that holds a
-# provider tree: the whole-library load (preflight and binding discovery)
-# walks them, and would load a research/source-bindings.toml placed there.
+# Provider run archives under a leaf's evaluations/: the source library stops
+# at evaluations/ during preflight, binding discovery, and cache fingerprinting,
+# and no producer opens or lists files beneath them.
+_EVALUATION_ARCHIVES = [
+    "src/gpt/**/evaluations",
+    "src/claude/**/evaluations",
+]
+# Browser UI trees never opened by `documents` (which reads only
+# `src/web/browser/texts/catalogue-model.js`). `web-editions` reads nothing
+# under `src/web` at all.
+_DOCUMENTS_UNUSED_WEB = [
+    "src/web/browser/catena",
+    "src/web/browser/encyclicals",
+    "src/web/browser/fixture",
+    "src/web/browser/history",
+    "src/web/browser/law",
+    "src/web/browser/liturgy",
+    "src/web/browser/prototypes",
+    "src/web/browser/scripture",
+    "src/web/browser/shared",
+    "src/web/browser/sources",
+]
 # Reviewed authority records the proper text pipeline reads by fixed path.
 _LATIN_AUTHORITIES = [
     "workflows/reviews/missal-reader-resume-2026-11-12/roman-six/finite-latin-authority-v4.json",
@@ -118,10 +137,17 @@ _READER_INDEX = "src/index"
 
 def _recipe(identifier, prefix, argv, trees, files=(), *, excludes=(), delivery):
     holds_index = any(_READER_INDEX.startswith(tree + "/") for tree in trees)
+    holds_gpt = any(tree == "src/gpt" or "src/gpt".startswith(tree + "/") for tree in trees)
+    holds_claude = any(tree == "src/claude" or "src/claude".startswith(tree + "/") for tree in trees)
+    eval_excludes = [
+        *(["src/gpt/**/evaluations"] if holds_gpt else []),
+        *(["src/claude/**/evaluations"] if holds_claude else []),
+    ]
     return {
         "id": identifier, "version": 1, "output_prefixes": [prefix],
         "argv": argv, "input_trees": list(trees), "input_files": list(files),
-        "exclude_paths": [*excludes, *([_READER_INDEX] if holds_index else [])], "delivery": delivery,
+        "exclude_paths": [*excludes, *eval_excludes, *([_READER_INDEX] if holds_index else [])],
+        "delivery": delivery,
     }
 
 
@@ -142,7 +168,8 @@ RECIPES = (
     # its postconciliar projection also reads the fixed registry authority.
     _recipe("documents", "structure/documents", ["tools/document-library", "structure"],
             ["src", "web", "workflows/fragments", "workflows/pipelines", "workflows/schema", "release/publications"],
-            ["guidance/liturgy/postconciliar-propers-registry.md"], excludes=_REVIEW_RECORDS, delivery="browser-data"),
+            ["guidance/liturgy/postconciliar-propers-registry.md"],
+            excludes=[*_REVIEW_RECORDS, *_DOCUMENTS_UNUSED_WEB], delivery="browser-data"),
     _recipe("ordinary", "structure/ordinary", ["tools/mass-ordinary", "structure", "--root", "{root}/src/sources"], _SOURCE,
             excludes=_REVIEW_RECORDS, delivery="browser-data"),
     _recipe("paragraphs", "structure/paragraphs", ["scripts/_catena.py", "--root", "{root}", "paragraphs"], _SOURCE,
@@ -160,7 +187,8 @@ RECIPES = (
     # Release records decide each reader's publication status, so they are
     # inputs too (the cold audit found the read).
     _recipe("web-editions", "web-editions", ["tools/web-edition", "products"], ["src", "release/publications"],
-            ["guidance/liturgy/postconciliar-propers-registry.md"], excludes=_REVIEW_RECORDS,
+            ["guidance/liturgy/postconciliar-propers-registry.md"],
+            excludes=[*_REVIEW_RECORDS, "src/web"],
             delivery="site-build"),
 )
 
@@ -314,6 +342,7 @@ def generate(root: Path, out: Path, product_ids=None, *, environment=None, cache
             "PYTHONPYCACHEPREFIX": str(Path(state) / ("python-" + secrets.token_hex(12))),
             "TRIPTYCH_CORPUS_CACHE": "0", "TRIPTYCH_YAML_CACHE": "0",
             "TRIPTYCH_CONTAINMENT_CACHE": "0",
+            "TRIPTYCH_LIBRARY_CACHE": "0",
             "TRIPTYCH_LIBRARY_CACHE_DIR": str(Path(state) / "library"),
             "TRIPTYCH_SOURCE_LIBRARY_CACHE": "0", "LC_ALL": "C.UTF-8", "TZ": "UTC",
         }
@@ -328,9 +357,16 @@ def generate(root: Path, out: Path, product_ids=None, *, environment=None, cache
         order = selected
         workers = len(selected)
         if record_jobs is not None:
-            # Start the long reader pool alongside its siblings. Limit the
-            # number of memory-heavy family writers in each independent pass.
-            order = sorted(selected, key=lambda recipe: recipe["id"] != "web-editions")
+            # Start the longest producers first (LPT) so web-editions, act-history,
+            # propers, and documents overlap immediately instead of forming a tail.
+            priority = {
+                name: index
+                for index, name in enumerate((
+                    "web-editions", "act-history", "propers", "documents",
+                    "sources", "catena", "encyclicals", "readings", "paragraphs", "law",
+                ))
+            }
+            order = sorted(selected, key=lambda recipe: priority.get(recipe["id"], len(priority)))
             workers = min(3, record_jobs, len(selected))
             # Reader forks get their explicit slots below. Nested projection
             # pools inside any one child must not claim those slots again.

@@ -13,6 +13,7 @@ import importlib
 import importlib.machinery
 import importlib.util
 import json
+import os
 import re
 import subprocess
 import sys
@@ -798,11 +799,43 @@ def load_manifest(root: Path, path: Path, *, output_entrypoint: str | None = Non
     return _normalise(root, data, path, output_entrypoint=output_entrypoint, assembly=assembly)
 
 
+def _provider_named_files(base: Path, names: tuple[str, ...]) -> dict[str, list[Path]]:
+    """Find named files beneath one provider root without descending into evaluations/."""
+    found: dict[str, list[Path]] = {name: [] for name in names}
+    if not base.is_dir():
+        return found
+    wanted = set(names)
+    stack = [str(base)]
+    while stack:
+        current = stack.pop()
+        try:
+            listing = os.scandir(current)
+        except OSError:
+            continue
+        with listing:
+            for entry in listing:
+                name = entry.name
+                if name == "evaluations":
+                    continue
+                if entry.is_dir(follow_symlinks=False):
+                    stack.append(entry.path)
+                elif name in wanted and entry.is_file(follow_symlinks=True):
+                    found[name].append(Path(entry.path))
+    for paths in found.values():
+        paths.sort()
+    return found
+
+
 def publication_owners(root: Path) -> set[str]:
     """Every owner discovery must validate, including orphan manifests."""
     source = root / "src"
-    return {path.parent.relative_to(source).as_posix() for provider in PROVIDERS
-            for name in ("main.tex", MANIFEST) for path in (source / provider).rglob(name)}
+    found: set[str] = set()
+    for provider in PROVIDERS:
+        by_name = _provider_named_files(source / provider, ("main.tex", MANIFEST))
+        for paths in by_name.values():
+            for path in paths:
+                found.add(path.parent.relative_to(source).as_posix())
+    return found
 
 
 def discover(root: Path = ROOT, *, assembly=None, owners=None) -> list[dict]:
@@ -812,8 +845,12 @@ def discover(root: Path = ROOT, *, assembly=None, owners=None) -> list[dict]:
     root = Path(root).resolve()
     assembly = Assembly(root) if assembly is None else assembly
     records = []
+    discovered_by_provider = {
+        provider: _provider_named_files(root / "src" / provider, ("main.tex", MANIFEST))
+        for provider in PROVIDERS
+    }
     for provider in PROVIDERS:
-        for main in sorted((root / "src" / provider).rglob("main.tex")):
+        for main in discovered_by_provider[provider]["main.tex"]:
             if owners is not None and main.parent.relative_to(root / "src").as_posix() not in owners:
                 continue
             manifest = main.parent / MANIFEST
@@ -831,7 +868,7 @@ def discover(root: Path = ROOT, *, assembly=None, owners=None) -> list[dict]:
     # Orphan manifests are findings, never an excuse to change the source census.
     known = {r["manifest_path"] for r in records}
     for provider in PROVIDERS:
-        for manifest in sorted((root / "src" / provider).rglob(MANIFEST)):
+        for manifest in discovered_by_provider[provider][MANIFEST]:
             if owners is not None and manifest.parent.relative_to(root / "src").as_posix() not in owners:
                 continue
             relative = manifest.relative_to(root).as_posix()
@@ -1041,20 +1078,281 @@ def _source_module():
     return _SOURCE_MODULE
 
 
+_FAST_ID_RE = re.compile(rb'^\s*id\s*=\s*"([^"\\\r\n]+)"\s*(?:#[^\r\n]*)?$', re.M)
+
+
+def _extract_toml_id(path_str: str) -> str | None:
+    try:
+        with open(path_str, "rb") as handle:
+            head = handle.read(1024)
+        match = _FAST_ID_RE.search(head)
+        if match is not None:
+            return match.group(1).decode("utf-8")
+        with open(path_str, "rb") as handle:
+            data = tomllib.loads(handle.read().decode("utf-8"))
+        identifier = data.get("id")
+        return identifier if isinstance(identifier, str) else None
+    except (OSError, UnicodeError, tomllib.TOMLDecodeError):
+        return None
+
+
+def _scan_source_index(root: Path) -> dict[str, Path]:
+    """Scan canonical source-library manifests to map ``id -> Path`` quickly."""
+    sources = root / "src/sources"
+    if not sources.is_dir():
+        return {}
+
+    def scan_author(author_path: str) -> list[tuple[str, str]]:
+        found: list[tuple[str, str]] = []
+        try:
+            works_it = os.scandir(author_path)
+        except OSError:
+            return found
+        with works_it:
+            for work in works_it:
+                if not work.is_dir(follow_symlinks=False):
+                    continue
+                work_toml = os.path.join(work.path, "work.toml")
+                if os.path.isfile(work_toml) and not os.path.islink(work_toml):
+                    ident = _extract_toml_id(work_toml)
+                    if ident is not None:
+                        found.append((work_toml, ident))
+                editions_dir = os.path.join(work.path, "editions")
+                try:
+                    ed_it = os.scandir(editions_dir)
+                except OSError:
+                    continue
+                with ed_it:
+                    for ed in ed_it:
+                        if not ed.is_dir(follow_symlinks=False):
+                            continue
+                        ed_toml = os.path.join(ed.path, "edition.toml")
+                        if os.path.isfile(ed_toml) and not os.path.islink(ed_toml):
+                            ident = _extract_toml_id(ed_toml)
+                            if ident is not None:
+                                found.append((ed_toml, ident))
+                        arts_dir = os.path.join(ed.path, "artifacts")
+                        try:
+                            art_it = os.scandir(arts_dir)
+                        except OSError:
+                            art_it = None
+                        if art_it is not None:
+                            with art_it:
+                                for art in art_it:
+                                    if not art.is_dir(follow_symlinks=False):
+                                        continue
+                                    art_toml = os.path.join(art.path, "artifact.toml")
+                                    if os.path.isfile(art_toml) and not os.path.islink(art_toml):
+                                        ident = _extract_toml_id(art_toml)
+                                        if ident is not None:
+                                            found.append((art_toml, ident))
+                        for sub in ("segments", "passages"):
+                            sub_dir = os.path.join(ed.path, sub)
+                            try:
+                                sub_it = os.scandir(sub_dir)
+                            except OSError:
+                                continue
+                            with sub_it:
+                                for item in sub_it:
+                                    if item.name.endswith(".toml") and item.is_file(follow_symlinks=False):
+                                        ident = _extract_toml_id(item.path)
+                                        if ident is not None:
+                                            found.append((item.path, ident))
+        return found
+
+    pairs: list[tuple[str, str]] = []
+    corpora_dir = sources / "corpora"
+    if corpora_dir.is_dir() and not corpora_dir.is_symlink():
+        with os.scandir(corpora_dir) as listing:
+            for entry in listing:
+                if entry.name.endswith(".toml") and entry.is_file(follow_symlinks=False):
+                    ident = _extract_toml_id(entry.path)
+                    if ident is not None:
+                        pairs.append((entry.path, ident))
+    works_dir = sources / "works"
+    if works_dir.is_dir() and not works_dir.is_symlink():
+        authors = [e.path for e in os.scandir(works_dir) if e.is_dir(follow_symlinks=False)]
+        counter = getattr(os, "process_cpu_count", None) or os.cpu_count
+        workers = min(8, (counter() if callable(counter) else None) or 4)
+        if workers > 1 and len(authors) >= 8:
+            from concurrent.futures import ThreadPoolExecutor
+            with ThreadPoolExecutor(max_workers=workers) as pool:
+                for batch in pool.map(scan_author, authors):
+                    pairs.extend(batch)
+        else:
+            for author in authors:
+                pairs.extend(scan_author(author))
+    pairs.sort(key=lambda row: row[0])
+    index: dict[str, Path] = {}
+    for path_str, ident in pairs:
+        if ident in index:
+            raise SchemaError("source metadata has duplicate identities")
+        index[ident] = Path(path_str)
+    return index
+
+
+class _LazySourceIndex(dict):
+    """Source-id -> manifest-path index resolved directly before any full walk.
+
+    Direct resolution checks canonical and work-scoped manifest paths first and
+    verifies the manifest's declared `id` before caching. A genuine miss (or
+    whole-index iteration) falls back to `_scan_source_index(root)` once.
+    """
+
+    def __init__(self, root: Path):
+        super().__init__()
+        self._root = root
+        self._complete = False
+
+    def _materialize(self) -> None:
+        if not self._complete:
+            super().update(_scan_source_index(self._root))
+            self._complete = True
+
+    def _resolve(self, key: str) -> Path | None:
+        if super().__contains__(key):
+            return super().__getitem__(key)
+        if self._complete:
+            return None
+        candidate = _canonical_source_path(self._root, key)
+        if candidate is not None and _extract_toml_id(str(candidate)) == key:
+            super().__setitem__(key, candidate)
+            return candidate
+        self._materialize()
+        return super().get(key)
+
+    def __contains__(self, key: object) -> bool:
+        if not isinstance(key, str):
+            return False
+        if super().__contains__(key):
+            return True
+        return self._resolve(key) is not None
+
+    def __getitem__(self, key: str) -> Path:
+        found = self._resolve(key)
+        if found is None:
+            raise KeyError(key)
+        return found
+
+    def get(self, key: str, default=None):
+        if not isinstance(key, str):
+            return default
+        found = self._resolve(key)
+        return default if found is None else found
+
+    def __len__(self) -> int:
+        self._materialize()
+        return super().__len__()
+
+    def __iter__(self):
+        self._materialize()
+        return super().__iter__()
+
+    def keys(self):
+        self._materialize()
+        return super().keys()
+
+    def values(self):
+        self._materialize()
+        return super().values()
+
+    def items(self):
+        self._materialize()
+        return super().items()
+
+
+def _warm_source_index(root: Path) -> dict[str, Path]:
+    """Install a lazy source-id resolver for forked batch conversions."""
+    if root not in _SOURCE_INDEX:
+        _SOURCE_INDEX[root] = _LazySourceIndex(root)
+    return _SOURCE_INDEX[root]
+
+
 def _source_index(root: Path, *, refresh: bool = False) -> dict[str, Path]:
     if root not in _SOURCE_INDEX or refresh:
-        module = _source_module()
-        library = module.Library(root, root / "src/sources", [])
-        # This reads source manifests only. load_library's retained-text checks,
-        # artifact resolution, disk caches and hydration are deliberately unused.
-        module._load_source_records(library)
-        if any("duplicate id" in error for error in library.errors):
-            raise SchemaError("source metadata has duplicate identities")
-        _SOURCE_INDEX[root] = {key: value.path for key, value in library.records.items()}
+        _SOURCE_INDEX[root] = _scan_source_index(root)
     return _SOURCE_INDEX[root]
 
 
 _SOURCE_ID_PART = re.compile(r"[a-z0-9][a-z0-9-]*\Z")
+
+
+def _match_toml_id(path_str: str, source_id: str) -> Path | None:
+    if os.path.isfile(path_str) and _extract_toml_id(path_str) == source_id:
+        return Path(path_str)
+    return None
+
+
+def _search_edition_dirs(editions_dir: str, kind: str, tail_parts: list[str], source_id: str) -> Path | None:
+    """Resolve an edition, artifact, segment, or passage within one work's editions/."""
+    try:
+        ed_entries = [e.path for e in os.scandir(editions_dir) if e.is_dir(follow_symlinks=False)]
+    except OSError:
+        return None
+    if kind == "edition":
+        for ed_path in ed_entries:
+            hit = _match_toml_id(os.path.join(ed_path, "edition.toml"), source_id)
+            if hit is not None:
+                return hit
+        return None
+    if kind == "artifact":
+        slugs = [tail_parts[-1]]
+        joined_dash = "-".join(tail_parts)
+        if joined_dash != slugs[0]:
+            slugs.append(joined_dash)
+        for ed_path in ed_entries:
+            art_root = os.path.join(ed_path, "artifacts")
+            for slug in slugs:
+                hit = _match_toml_id(os.path.join(art_root, slug, "artifact.toml"), source_id)
+                if hit is not None:
+                    return hit
+        # Fall back to checking every artifact directory under this one work (typically 1-20).
+        for ed_path in ed_entries:
+            art_root = os.path.join(ed_path, "artifacts")
+            try:
+                art_entries = list(os.scandir(art_root))
+            except OSError:
+                continue
+            for art in art_entries:
+                if art.is_dir(follow_symlinks=False):
+                    hit = _match_toml_id(os.path.join(art.path, "artifact.toml"), source_id)
+                    if hit is not None:
+                        return hit
+        return None
+    if kind in {"segment", "passage"}:
+        sub_name = kind + "s"
+        file_names = []
+        for sep in ("-", ".", "--"):
+            fname = sep.join(tail_parts) + ".toml"
+            if fname not in file_names:
+                file_names.append(fname)
+        if tail_parts:
+            last_fname = tail_parts[-1] + ".toml"
+            if last_fname not in file_names:
+                file_names.append(last_fname)
+            joined = "-".join(tail_parts)
+            if joined.startswith(("publish-", "verify-")):
+                doubled = joined.replace("-", "--", 1) + ".toml"
+                if doubled not in file_names:
+                    file_names.append(doubled)
+        for ed_path in ed_entries:
+            sub_dir = os.path.join(ed_path, sub_name)
+            for fname in file_names:
+                hit = _match_toml_id(os.path.join(sub_dir, fname), source_id)
+                if hit is not None:
+                    return hit
+        # Small segment/passage directories (e.g., renamed segment slugs): scan only this work.
+        for ed_path in ed_entries:
+            sub_dir = os.path.join(ed_path, sub_name)
+            try:
+                entries = [e.path for e in os.scandir(sub_dir) if e.name.endswith(".toml") and e.is_file(follow_symlinks=False)]
+            except OSError:
+                continue
+            if len(entries) <= 64:
+                for entry_path in entries:
+                    if _extract_toml_id(entry_path) == source_id:
+                        return Path(entry_path)
+    return None
 
 
 def _canonical_source_path(root: Path, source_id: str) -> Path | None:
@@ -1064,19 +1362,109 @@ def _canonical_source_path(root: Path, source_id: str) -> Path | None:
         return None
     kind = parts[0]
     sources = root / "src/sources"
-    if kind == "corpus" and len(parts) >= 2:
-        candidate = sources / "corpora" / ("-".join(parts[1:]) + ".toml")
-    elif kind == "work" and len(parts) == 3:
-        candidate = sources / "works" / parts[1] / parts[2] / "work.toml"
-    elif kind == "edition" and len(parts) == 4:
-        candidate = sources / "works" / parts[1] / parts[2] / "editions" / parts[3] / "edition.toml"
-    elif kind == "artifact" and len(parts) >= 5:
-        candidate = sources / "works" / parts[1] / parts[2] / "editions" / parts[3] / "artifacts" / parts[-1] / "artifact.toml"
-    elif kind in {"segment", "passage"} and len(parts) >= 5:
-        candidate = sources / "works" / parts[1] / parts[2] / "editions" / parts[3] / (kind + "s") / ("-".join(parts[4:]) + ".toml")
-    else:
+    if kind == "corpus":
+        for candidate_name in ("-".join(parts[1:]) + ".toml", parts[-1] + ".toml"):
+            candidate = sources / "corpora" / candidate_name
+            if candidate.is_file():
+                return candidate
+        corpora_dir = sources / "corpora"
+        if corpora_dir.is_dir():
+            try:
+                for entry in os.scandir(corpora_dir):
+                    if entry.name.endswith(".toml") and entry.is_file(follow_symlinks=False):
+                        if _extract_toml_id(entry.path) == source_id:
+                            return Path(entry.path)
+            except OSError:
+                pass
         return None
-    return candidate if candidate.is_file() else None
+    works = sources / "works"
+    if kind == "work":
+        if len(parts) == 3:
+            candidate = works / parts[1] / parts[2] / "work.toml"
+            if candidate.is_file():
+                return candidate
+        elif len(parts) == 2:
+            candidate = works / "anonymous" / parts[1] / "work.toml"
+            if candidate.is_file():
+                return candidate
+        if parts[1] == "papal" and len(parts) >= 4:
+            papal_dir = works / "papal-documents"
+            if papal_dir.is_dir():
+                needle = parts[3]
+                try:
+                    for entry in os.scandir(papal_dir):
+                        if needle in entry.name and entry.is_dir(follow_symlinks=False):
+                            hit = _match_toml_id(os.path.join(entry.path, "work.toml"), source_id)
+                            if hit is not None:
+                                return hit
+                except OSError:
+                    pass
+        return None
+    if len(parts) < 4:
+        return None
+    # Exact fast-path check first (single stat for canonical unprefixed directories).
+    if kind == "edition" and len(parts) == 4:
+        candidate = works / parts[1] / parts[2] / "editions" / parts[3] / "edition.toml"
+        if candidate.is_file():
+            return candidate
+    elif kind == "artifact" and len(parts) >= 5:
+        candidate = works / parts[1] / parts[2] / "editions" / parts[3] / "artifacts" / parts[-1] / "artifact.toml"
+        if candidate.is_file():
+            return candidate
+    elif kind in {"segment", "passage"} and len(parts) >= 5:
+        for sep in ("-", "."):
+            candidate = works / parts[1] / parts[2] / "editions" / parts[3] / (kind + "s") / (sep.join(parts[4:]) + ".toml")
+            if candidate.is_file():
+                return candidate
+    # Work-scoped fallback for date-prefixed edition dirs, papal works, and renamed slugs.
+    tail_parts = parts[4:] if len(parts) >= 5 else []
+    if parts[1] == "papal" and len(parts) >= 5:
+        papal_dir = works / "papal-documents"
+        if papal_dir.is_dir():
+            needle = parts[3]
+            papal_tail = parts[5:] if len(parts) >= 6 else []
+            try:
+                for entry in os.scandir(papal_dir):
+                    if needle in entry.name and entry.is_dir(follow_symlinks=False):
+                        hit = _search_edition_dirs(os.path.join(entry.path, "editions"), kind, papal_tail, source_id)
+                        if hit is not None:
+                            return hit
+            except OSError:
+                pass
+        return None
+    work_editions = os.path.join(works, parts[1], parts[2], "editions")
+    if os.path.isdir(work_editions):
+        hit = _search_edition_dirs(work_editions, kind, tail_parts, source_id)
+        if hit is not None:
+            return hit
+    # Anonymous works omit "anonymous" from their id (e.g. passage.book-of-jubilees.<ed>.<slug>).
+    anon_editions = os.path.join(works, "anonymous", parts[1], "editions")
+    if os.path.isdir(anon_editions):
+        hit = _search_edition_dirs(anon_editions, kind, parts[3:], source_id)
+        if hit is not None:
+            return hit
+    # AAS volumes stored under holy-see/acta-apostolicae-sedis (e.g. passage.acta-papal-archives.aas.050.<ed>.<slug>).
+    if parts[1] == "acta-papal-archives" and parts[2] == "aas" and len(parts) >= 6:
+        aas_editions = os.path.join(works, "holy-see", "acta-apostolicae-sedis", "editions")
+        if os.path.isdir(aas_editions):
+            hit = _search_edition_dirs(aas_editions, kind, parts[5:], source_id)
+            if hit is not None:
+                return hit
+    # Author-scoped fallback when the work directory slug differs from the id segment.
+    author_dir = os.path.join(works, parts[1])
+    if os.path.isdir(author_dir):
+        try:
+            work_dirs = [e.path for e in os.scandir(author_dir) if e.is_dir(follow_symlinks=False) and e.name != parts[2]]
+        except OSError:
+            work_dirs = []
+        if len(work_dirs) <= 40:
+            for wdir in work_dirs:
+                ed_dir = os.path.join(wdir, "editions")
+                if os.path.isdir(ed_dir):
+                    hit = _search_edition_dirs(ed_dir, kind, tail_parts, source_id)
+                    if hit is not None:
+                        return hit
+    return None
 
 
 def _evidence_ancestry(root: Path, evidence: set[Path], *, source_ids=(),

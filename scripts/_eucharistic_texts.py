@@ -706,13 +706,16 @@ def _load_library(root: Path):
     module = _library_module()
     graph = _REPLAY_GRAPH.get()
     entry = None
-    if graph is not None and graph.root == root:
+    in_replay = graph is not None and graph.root == root
+    if in_replay:
         if graph.library is not None:
             return graph.library
         # The owner rediscovers source and publication membership before and
         # after the replay. Only hold a result it actually sealed for this key.
         entry = module._library_cache_entry(root, False)
-    library = module.load_library(root, check_binding_fingerprints=False)
+        library = module.load_library(root, check_binding_fingerprints=False, _cache_entry=entry)
+    else:
+        library = module.load_library(root, check_binding_fingerprints=False)
     if library.errors:
         raise AdapterError("Source library prevents text export: " + "; ".join(library.errors))
     if entry is not None and entry.is_file():
@@ -721,12 +724,53 @@ def _load_library(root: Path):
     return library
 
 
+class _LazyLibraryRecords(dict):
+    """On-demand projection of `library.records` to plain dicts without copying 60k records."""
+
+    def __init__(self, library_records: dict):
+        super().__init__()
+        self._library_records = library_records
+
+    def _project(self, key: str) -> dict | None:
+        if super().__contains__(key):
+            return super().__getitem__(key)
+        record = self._library_records.get(key)
+        if record is None:
+            return None
+        value = {**record.data, "record_type": record.record_type, "id": key}
+        super().__setitem__(key, value)
+        return value
+
+    def __contains__(self, key: object) -> bool:
+        return isinstance(key, str) and (super().__contains__(key) or key in self._library_records)
+
+    def __getitem__(self, key: str) -> dict:
+        value = self._project(key)
+        if value is None:
+            raise KeyError(key)
+        return value
+
+    def get(self, key: str, default=None):
+        if not isinstance(key, str):
+            return default
+        value = self._project(key)
+        return default if value is None else value
+
+    def __len__(self) -> int:
+        return len(self._library_records)
+
+    def __iter__(self):
+        return iter(self._library_records)
+
+    def keys(self):
+        return self._library_records.keys()
+
+
 class _Sources:
     def __init__(self, root: Path, library):
         self.root = root
         self.library = library
-        self.records = {key: {**record.data, "record_type": record.record_type, "id": key}
-                        for key, record in library.records.items()}
+        self.records = _LazyLibraryRecords(library.records)
         self.used: set[str] = set()
         self.inputs: dict[str, dict] = {}
 

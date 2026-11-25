@@ -252,9 +252,23 @@ def delivery_entries(root: Path | str) -> list[dict[str, Any]]:
     return load_index(root)["artifacts"]
 
 
+_ENTRIES_BY_PATH_CACHE: list[tuple[list[dict[str, Any]], dict[str, dict[str, Any]]]] = []
+
+
+def _entries_by_path(entries: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
+    for cached_entries, by_path in _ENTRIES_BY_PATH_CACHE:
+        if cached_entries is entries and len(by_path) == len(entries):
+            return by_path
+    by_path = {entry["path"]: entry for entry in entries}
+    _ENTRIES_BY_PATH_CACHE.append((entries, by_path))
+    if len(_ENTRIES_BY_PATH_CACHE) > 8:
+        _ENTRIES_BY_PATH_CACHE.pop(0)
+    return by_path
+
+
 def known_external(root: Path | str, repo_relative_path: str | Path) -> dict[str, Any] | None:
     path = _relative(str(repo_relative_path))
-    return next((entry for entry in delivery_entries(root) if entry["path"] == path), None)
+    return _entries_by_path(delivery_entries(root)).get(path)
 
 
 def cache_path(root: Path | str, entry: dict[str, Any]) -> Path:

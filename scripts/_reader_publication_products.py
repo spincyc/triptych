@@ -224,7 +224,7 @@ def resolve(relative: str, root: Path, index) -> bytes | None:
             or row["provider"] + "/" + row["document"] != identity):
         raise ValueError(f"no indexed publication reader: {identity}")
     done = _run_worker(
-        [sys.executable, "-B", str(Path(root) / "tools/web-edition"),
+        [sys.executable, "-B", str(Path(root) / "scripts/_reader_publication_products.py"),
          "--indexed-product-row-json", identity],
         input=json.dumps(row, ensure_ascii=False, allow_nan=False),
         cwd=root, index=index)
@@ -247,3 +247,29 @@ def resolve(relative: str, root: Path, index) -> bytes | None:
             != record.get("markdown_sha256")):
         raise ValueError("publication reader returned an invalid product")
     return _json(record)
+
+
+def _indexed_product_row_json(identity: str) -> int:
+    root = Path(__file__).resolve().parents[1]
+    if str(root / "scripts") not in sys.path:
+        sys.path.insert(0, str(root / "scripts"))
+    from _corpus_index import CorpusIndex
+    web_edition = _tool(root, "web-edition")
+    try:
+        row = json.load(sys.stdin)
+        index = CorpusIndex(root)
+        with index.verified_reads() as dependencies:
+            web_edition.pinned_pandoc()
+            record = web_edition.selected_product_record(identity, row)
+        payload = {"record": record, "dependencies": dependencies}
+    except (web_edition.ConversionError, OSError, ValueError) as error:
+        print(f"web-edition: {error}", file=sys.stderr)
+        return 1
+    sys.stdout.write(json.dumps(payload, ensure_ascii=False, sort_keys=True))
+    return 0
+
+
+if __name__ == "__main__":
+    if sys.argv[1:2] == ["--indexed-product-row-json"] and len(sys.argv) == 3:
+        raise SystemExit(_indexed_product_row_json(sys.argv[2]))
+    raise SystemExit(2)

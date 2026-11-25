@@ -615,8 +615,244 @@ def _path_contains_symlink(path: Path, root: Path) -> bool:
     return False
 
 
-def _record_manifest_paths(library: Library) -> list[Path]:
+@dataclasses.dataclass
+class _SourceTreeScan:
+    """Single-pass filesystem inventory of src/sources reused across validation stages."""
+
+    all_symlinks: list[Path]
+    canonical_manifests: list[Path]
+    symlink_manifests: list[Path]
+    nonfile_manifests: list[Path]
+    stray_tomls: list[Path]
+    symlink_artifact_dirs: list[Path]
+    artifact_dir_symlinks: list[Path]
+    artifact_payload_files: list[Path]
+    tree_candidates: list[tuple[Path, tuple[str, ...]]]
+
+
+def _scan_source_tree(library: Library) -> tuple[bool, _SourceTreeScan | None]:
+    """Walk src/sources once to feed preflight, manifest discovery, artifact and tree checks."""
+    from concurrent.futures import ThreadPoolExecutor
+
+    source_root = library.source_root
+    if _path_contains_symlink(source_root, library.root):
+        library.errors.append(
+            f"{library.relative(source_root)}: source-library root path must not contain symbolic links"
+        )
+        return False, None
+    if not source_root.is_dir():
+        library.errors.append(f"{library.relative(source_root)}: source-library root is not a directory")
+        return False, None
+
+    source_root_str = str(source_root)
+    prefix_len = len(source_root_str) + 1
+
+    def record_file(
+        entry_path: str,
+        name: str,
+        parts: tuple[str, ...],
+        canonical_manifests: list[Path],
+        stray_tomls: list[Path],
+        artifact_payload_files: list[Path],
+        tree_candidates: list[tuple[Path, tuple[str, ...]]],
+    ) -> None:
+        if _is_canonical_manifest_parts(parts):
+            canonical_manifests.append(Path(entry_path))
+            return
+        top = parts[0]
+        in_artifact = len(parts) >= 8 and top == "works" and parts[3] == "editions" and parts[5] == "artifacts"
+        if in_artifact:
+            artifact_payload_files.append(Path(entry_path))
+        dot = name.rfind(".")
+        suffix = name[dot:] if dot > 0 else ""
+        if top == "works" and suffix == ".toml":
+            if not in_artifact:
+                stray_tomls.append(Path(entry_path))
+            return
+        if len(parts) == 1 and name in ("README.md", "artifact-delivery.json"):
+            return
+        if top == "schema" and suffix in (".json", ".md", ".toml"):
+            return
+        if top == "inventories" and suffix in (".md", ".toml"):
+            return
+        if top in ("bibles", "calendars", "chronology", "commentary", "reading-plans") and (
+            suffix in (".json", ".md", ".yaml")
+            or (top in ("bibles", "chronology") and suffix == ".tsv")
+        ):
+            return
+        tree_candidates.append((Path(entry_path), parts))
+
+    def record_symlink(
+        item: os.DirEntry[str],
+        parts: tuple[str, ...],
+        all_symlinks: list[Path],
+        symlink_manifests: list[Path],
+        symlink_artifact_dirs: list[Path],
+        artifact_dir_symlinks: list[Path],
+    ) -> bool:
+        path = Path(item.path)
+        all_symlinks.append(path)
+        if _is_canonical_manifest_parts(parts):
+            symlink_manifests.append(path)
+        if parts[0] == "works" and len(parts) >= 7 and parts[3] == "editions" and parts[5] == "artifacts":
+            if len(parts) == 7:
+                symlink_artifact_dirs.append(path)
+            else:
+                artifact_dir_symlinks.append(path)
+        return item.is_dir(follow_symlinks=True)
+
+    def scan_dir(start_dir: str):
+        all_symlinks: list[Path] = []
+        has_sym_dir = False
+        canonical_manifests: list[Path] = []
+        symlink_manifests: list[Path] = []
+        nonfile_manifests: list[Path] = []
+        stray_tomls: list[Path] = []
+        symlink_artifact_dirs: list[Path] = []
+        artifact_dir_symlinks: list[Path] = []
+        artifact_payload_files: list[Path] = []
+        tree_candidates: list[tuple[Path, tuple[str, ...]]] = []
+        stack = [start_dir]
+        while stack:
+            current = stack.pop()
+            try:
+                listing = os.scandir(current)
+            except OSError:
+                continue
+            with listing:
+                for item in listing:
+                    rel_str = item.path[prefix_len:]
+                    parts = tuple(rel_str.split(os.sep))
+                    if item.is_symlink():
+                        if record_symlink(
+                            item, parts, all_symlinks, symlink_manifests,
+                            symlink_artifact_dirs, artifact_dir_symlinks,
+                        ):
+                            has_sym_dir = True
+                        continue
+                    if item.is_dir(follow_symlinks=False):
+                        if item.name.endswith(".toml") and _is_canonical_manifest_parts(parts):
+                            nonfile_manifests.append(Path(item.path))
+                        stack.append(item.path)
+                        continue
+                    if not item.is_file(follow_symlinks=False):
+                        if item.name.endswith(".toml") and _is_canonical_manifest_parts(parts):
+                            nonfile_manifests.append(Path(item.path))
+                        continue
+                    record_file(
+                        item.path, item.name, parts, canonical_manifests,
+                        stray_tomls, artifact_payload_files, tree_candidates,
+                    )
+        return (
+            all_symlinks, has_sym_dir, canonical_manifests, symlink_manifests,
+            nonfile_manifests, stray_tomls, symlink_artifact_dirs,
+            artifact_dir_symlinks, artifact_payload_files, tree_candidates,
+        )
+
+    all_symlinks: list[Path] = []
+    has_sym_dir = False
+    canonical_manifests: list[Path] = []
+    symlink_manifests: list[Path] = []
+    nonfile_manifests: list[Path] = []
+    stray_tomls: list[Path] = []
+    symlink_artifact_dirs: list[Path] = []
+    artifact_dir_symlinks: list[Path] = []
+    artifact_payload_files: list[Path] = []
+    tree_candidates: list[tuple[Path, tuple[str, ...]]] = []
+    sub_tasks: list[str] = []
+
+    with os.scandir(source_root_str) as top_listing:
+        for item in top_listing:
+            parts = (item.name,)
+            if item.is_symlink():
+                if record_symlink(
+                    item, parts, all_symlinks, symlink_manifests,
+                    symlink_artifact_dirs, artifact_dir_symlinks,
+                ):
+                    has_sym_dir = True
+                continue
+            if item.is_dir(follow_symlinks=False):
+                if item.name == "works":
+                    with os.scandir(item.path) as works_listing:
+                        for w in works_listing:
+                            w_parts = ("works", w.name)
+                            if w.is_symlink():
+                                if record_symlink(
+                                    w, w_parts, all_symlinks, symlink_manifests,
+                                    symlink_artifact_dirs, artifact_dir_symlinks,
+                                ):
+                                    has_sym_dir = True
+                            elif w.is_dir(follow_symlinks=False):
+                                sub_tasks.append(w.path)
+                            elif w.is_file(follow_symlinks=False):
+                                record_file(
+                                    w.path, w.name, w_parts, canonical_manifests,
+                                    stray_tomls, artifact_payload_files, tree_candidates,
+                                )
+                else:
+                    sub_tasks.append(item.path)
+            elif item.is_file(follow_symlinks=False):
+                record_file(
+                    item.path, item.name, parts, canonical_manifests,
+                    stray_tomls, artifact_payload_files, tree_candidates,
+                )
+
+    counter = getattr(os, "process_cpu_count", None) or os.cpu_count
+    workers = min(8, (counter() if callable(counter) else None) or 4)
+    if workers > 1 and len(sub_tasks) >= 8:
+        with ThreadPoolExecutor(max_workers=workers) as pool:
+            for batch in pool.map(scan_dir, sub_tasks):
+                all_symlinks.extend(batch[0])
+                has_sym_dir = has_sym_dir or batch[1]
+                canonical_manifests.extend(batch[2])
+                symlink_manifests.extend(batch[3])
+                nonfile_manifests.extend(batch[4])
+                stray_tomls.extend(batch[5])
+                symlink_artifact_dirs.extend(batch[6])
+                artifact_dir_symlinks.extend(batch[7])
+                artifact_payload_files.extend(batch[8])
+                tree_candidates.extend(batch[9])
+    else:
+        for task in sub_tasks:
+            batch = scan_dir(task)
+            all_symlinks.extend(batch[0])
+            has_sym_dir = has_sym_dir or batch[1]
+            canonical_manifests.extend(batch[2])
+            symlink_manifests.extend(batch[3])
+            nonfile_manifests.extend(batch[4])
+            stray_tomls.extend(batch[5])
+            symlink_artifact_dirs.extend(batch[6])
+            artifact_dir_symlinks.extend(batch[7])
+            artifact_payload_files.extend(batch[8])
+            tree_candidates.extend(batch[9])
+
+    for sym in sorted(all_symlinks):
+        library.error(sym, "source-library tree must not contain symbolic links")
+
+    scan = _SourceTreeScan(
+        all_symlinks=sorted(all_symlinks),
+        canonical_manifests=sorted(canonical_manifests),
+        symlink_manifests=sorted(symlink_manifests),
+        nonfile_manifests=sorted(nonfile_manifests),
+        stray_tomls=sorted(stray_tomls),
+        symlink_artifact_dirs=sorted(symlink_artifact_dirs),
+        artifact_dir_symlinks=sorted(artifact_dir_symlinks),
+        artifact_payload_files=sorted(artifact_payload_files),
+        tree_candidates=sorted(tree_candidates, key=lambda item: item[0]),
+    )
+    return (not has_sym_dir), scan
+
+
+def _record_manifest_paths(library: Library, *, scan: _SourceTreeScan | None = None) -> list[Path]:
     """Return authoritative source manifests, excluding audit inventories."""
+    if scan is not None:
+        for path in scan.symlink_manifests:
+            library.error(path, "source manifest path must not contain symbolic links")
+        for path in scan.nonfile_manifests:
+            library.error(path, "source manifest must be a regular file")
+        for path in scan.stray_tomls:
+            library.error(path, "TOML record is not at a canonical manifest path")
+        return list(scan.canonical_manifests)
     from concurrent.futures import ThreadPoolExecutor
 
     source_root = library.source_root
@@ -689,7 +925,8 @@ def _record_manifest_paths(library: Library) -> list[Path]:
                     top_tasks.append((entry.path, (name,), entry_sym))
                 elif name.endswith(".toml") and not works_sym:
                     stray_tomls.append(Path(entry.path))
-        workers = min(8, getattr(os, "process_cpu_count", os.cpu_count)() or 4)
+        counter = getattr(os, "process_cpu_count", None) or os.cpu_count
+        workers = min(8, (counter() if callable(counter) else None) or 4)
         if workers > 1 and len(top_tasks) >= 8:
             with ThreadPoolExecutor(max_workers=workers) as pool:
                 for local_canon, local_stray in pool.map(lambda t: scan_subtree(*t), top_tasks):
@@ -766,7 +1003,61 @@ def _validate_record_path(library: Library, record: Record) -> None:
         )
 
 
-def _load_source_records(library: Library) -> None:
+def _parse_toml_batch_forked(
+    manifest_paths: list[Path], workers: int
+) -> list[tuple[dict[str, Any] | None, str | None]] | None:
+    """Parse many TOML manifests across forked workers to bypass Python GIL contention."""
+    import pickle
+    import tempfile
+    import threading
+
+    if not hasattr(os, "fork") or threading.active_count() != 1:
+        return None
+    workers = min(workers, 6, len(manifest_paths))
+    chunk = (len(manifest_paths) + workers - 1) // workers
+    path_strs = [str(p) for p in manifest_paths]
+    with tempfile.TemporaryDirectory(prefix="source-library-toml-") as tmp:
+        pids: list[int] = []
+        out_files: list[str] = []
+        for idx in range(workers):
+            sub = path_strs[idx * chunk : (idx + 1) * chunk]
+            if not sub:
+                continue
+            out_file = os.path.join(tmp, f"{idx}.pkl")
+            out_files.append(out_file)
+            pid = os.fork()
+            if pid == 0:
+                code = 0
+                try:
+                    batch_out: list[tuple[dict[str, Any] | None, str | None]] = []
+                    for p in sub:
+                        try:
+                            with open(p, "rb") as handle:
+                                batch_out.append((tomllib.loads(handle.read().decode("utf-8")), None))
+                        except (OSError, UnicodeError, tomllib.TOMLDecodeError, RecursionError) as error:
+                            batch_out.append((None, f"cannot parse TOML: {error}"))
+                    with open(out_file, "wb") as handle:
+                        pickle.dump(batch_out, handle, protocol=pickle.HIGHEST_PROTOCOL)
+                except BaseException:  # noqa: BLE001
+                    code = 1
+                finally:
+                    os._exit(code)
+            pids.append(pid)
+        failed = False
+        for pid in pids:
+            _, status = os.waitpid(pid, 0)
+            if os.waitstatus_to_exitcode(status) != 0:
+                failed = True
+        if failed:
+            return None
+        parsed: list[tuple[dict[str, Any] | None, str | None]] = []
+        for out_file in out_files:
+            with open(out_file, "rb") as handle:
+                parsed.extend(pickle.load(handle))
+        return parsed
+
+
+def _load_source_records(library: Library, *, scan: _SourceTreeScan | None = None) -> None:
     if not library.source_root.exists():
         library.errors.append(f"{library.relative(library.source_root)}: source root does not exist")
         return
@@ -775,21 +1066,12 @@ def _load_source_records(library: Library) -> None:
             f"{library.relative(library.source_root)}: source root path must not contain symbolic links"
         )
         return
-    manifest_paths = _record_manifest_paths(library)
-    workers = min(8, getattr(os, "process_cpu_count", os.cpu_count)() or 4)
-    if workers > 1 and len(manifest_paths) >= 64:
-        from concurrent.futures import ThreadPoolExecutor
-
-        def parse_one(path: Path) -> tuple[dict[str, Any] | None, str | None]:
-            try:
-                return tomllib.loads(path.read_text(encoding="utf-8")), None
-            except (OSError, UnicodeError, tomllib.TOMLDecodeError, RecursionError) as error:
-                return None, f"cannot parse TOML: {error}"
-
-        with ThreadPoolExecutor(max_workers=workers) as pool:
-            parsed = list(pool.map(parse_one, manifest_paths))
-    else:
-        parsed = None
+    manifest_paths = _record_manifest_paths(library, scan=scan)
+    counter = getattr(os, "process_cpu_count", None) or os.cpu_count
+    workers = min(8, (counter() if callable(counter) else None) or 4)
+    parsed = None
+    if workers > 1 and len(manifest_paths) >= 512:
+        parsed = _parse_toml_batch_forked(manifest_paths, workers)
 
     for index, path in enumerate(manifest_paths):
         if parsed is not None:
@@ -948,10 +1230,44 @@ def _load_bindings(library: Library) -> None:
         _load_bindings_under_root(library, publication_root, pattern)
 
 
+def _discover_bindings_under_root(publication_root: Path) -> list[Path]:
+    """Find all research/source-bindings.toml under a provider root, stopping at evaluations/."""
+    found: list[Path] = []
+    stack = [str(publication_root)]
+    while stack:
+        current = stack.pop()
+        try:
+            with os.scandir(current) as listing:
+                entries = list(listing)
+        except OSError:
+            continue
+        for entry in entries:
+            name = entry.name
+            if name == "evaluations":
+                continue
+            if name == "research":
+                if entry.is_dir(follow_symlinks=True):
+                    candidate = Path(entry.path) / "source-bindings.toml"
+                    if candidate.is_symlink() or candidate.exists():
+                        found.append(candidate)
+                    if not entry.is_symlink():
+                        stack.append(entry.path)
+            elif entry.is_dir(follow_symlinks=False):
+                stack.append(entry.path)
+            elif entry.is_symlink() and entry.is_dir(follow_symlinks=True):
+                # Preserve symlink error reporting on any binding manifest below
+                # a symlinked publication subtree without following loops.
+                candidate = Path(entry.path) / "research" / "source-bindings.toml"
+                if candidate.is_symlink() or candidate.exists():
+                    found.append(candidate)
+    found.sort()
+    return found
+
+
 def _load_bindings_under_root(
     library: Library, publication_root: Path, pattern: str
 ) -> None:
-    for path in sorted(publication_root.glob(pattern)):
+    for path in _discover_bindings_under_root(publication_root):
         if _path_contains_symlink(path, publication_root):
             library.error(path, "binding manifest path must not contain symbolic links")
             continue
@@ -1425,7 +1741,9 @@ def _validate_relationships(library: Library) -> None:
                 )
 
 
-def _safe_source_path(library: Library, manifest: Path, value: str) -> Path | None:
+def _safe_source_path(
+    library: Library, manifest: Path, value: str, *, source_resolved: Path | None = None
+) -> Path | None:
     if any(ord(character) < 32 for character in value):
         library.error(manifest, "artifact path must not contain control characters")
         return None
@@ -1446,7 +1764,8 @@ def _safe_source_path(library: Library, manifest: Path, value: str) -> Path | No
     except (OSError, ValueError) as error:
         library.error(manifest, f"invalid artifact path: {error}")
         return None
-    source_resolved = library.source_root.resolve()
+    if source_resolved is None:
+        source_resolved = library.source_root.resolve()
     try:
         resolved.relative_to(source_resolved)
     except ValueError:
@@ -1690,16 +2009,18 @@ def artifact_path(
     return resolved
 
 
-def _validate_artifacts(library: Library) -> None:
+def _validate_artifacts(library: Library, *, scan: _SourceTreeScan | None = None) -> None:
+    import _reviewed_permissions
+
     declared_paths: dict[Path, Record] = {}
     declared_hashes: dict[str, Record] = {}
+    source_resolved = library.source_root.resolve()
     for record in sorted(library.records.values(), key=lambda item: item.record_id):
         if record.record_type != "artifact":
             continue
         data = record.data
         storage = data.get("storage")
         rights = data.get("rights_status")
-        import _reviewed_permissions
         if (data.get("id") == _reviewed_permissions.ARTIFACT_ID or
                 data.get("license") == _reviewed_permissions.LICENSE):
             for problem in _reviewed_permissions.problems(library.root, data):
@@ -1756,7 +2077,7 @@ def _validate_artifacts(library: Library) -> None:
             if not _is_iso_date(data.get("retrieved")):
                 library.error(record.path, "tracked artifact requires retrieved ISO date")
             if _is_string(path_value):
-                resolved = _safe_source_path(library, record.path, path_value)
+                resolved = _safe_source_path(library, record.path, path_value, source_resolved=source_resolved)
                 if resolved is not None:
                     prior_path = declared_paths.get(resolved)
                     if prior_path is not None:
@@ -1804,15 +2125,56 @@ def _validate_artifacts(library: Library) -> None:
         if ("sha256" in data or "byte_size" in data) and not _is_iso_date(data.get("retrieved")):
             library.error(record.path, "hashed artifact requires retrieved ISO date")
 
-    for artifact_directory in sorted(
-        library.source_root.glob("works/*/*/editions/*/artifacts/*")
-    ):
+    if scan is not None:
+        for artifact_directory in scan.symlink_artifact_dirs:
+            library.error(artifact_directory, "artifact directory must not be a symbolic link")
+        for entry in scan.artifact_dir_symlinks:
+            library.error(entry, "artifact directory must not contain symbolic links")
+        for entry in scan.artifact_payload_files:
+            if entry.resolve() not in declared_paths:
+                library.error(entry, "artifact payload is not declared by its local artifact manifest")
+        return
+
+    works_root = library.source_root / "works"
+    artifact_directories: list[Path] = []
+    if works_root.is_dir():
+        for author in sorted(os.scandir(works_root), key=lambda e: e.name):
+            if not author.is_dir(follow_symlinks=False):
+                continue
+            for work in sorted(os.scandir(author.path), key=lambda e: e.name):
+                if not work.is_dir(follow_symlinks=False):
+                    continue
+                editions_dir = os.path.join(work.path, "editions")
+                if not os.path.isdir(editions_dir) or os.path.islink(editions_dir):
+                    continue
+                for edition in sorted(os.scandir(editions_dir), key=lambda e: e.name):
+                    if not edition.is_dir(follow_symlinks=False):
+                        continue
+                    artifacts_dir = os.path.join(edition.path, "artifacts")
+                    if not os.path.isdir(artifacts_dir) or os.path.islink(artifacts_dir):
+                        continue
+                    for art in sorted(os.scandir(artifacts_dir), key=lambda e: e.name):
+                        artifact_directories.append(Path(art.path))
+    for artifact_directory in artifact_directories:
         if artifact_directory.is_symlink():
             library.error(artifact_directory, "artifact directory must not be a symbolic link")
             continue
         if not artifact_directory.is_dir():
             continue
-        for entry in sorted(artifact_directory.rglob("*")):
+        entries: list[Path] = []
+        stack = [str(artifact_directory)]
+        while stack:
+            current = stack.pop()
+            try:
+                with os.scandir(current) as listing:
+                    for item in listing:
+                        item_path = Path(item.path)
+                        entries.append(item_path)
+                        if item.is_dir(follow_symlinks=False):
+                            stack.append(item.path)
+            except OSError:
+                continue
+        for entry in sorted(entries):
             if entry.is_symlink():
                 library.error(entry, "artifact directory must not contain symbolic links")
                 continue
@@ -1925,10 +2287,16 @@ def _decoded_physical_lines(path: Path, mtime_ns: int, size: int) -> tuple[str, 
     read before the write. The tuple is returned rather than a list because it
     is shared with every later caller and must not be edited by one of them.
     """
-    with path.open("rb") as source:
-        return tuple(
-            line.decode("utf-8").rstrip("\r\n") for line in _iter_physical_lines(source)
-        )
+    raw = path.read_bytes()
+    if not raw:
+        return ()
+    text = raw.decode("utf-8")
+    lines = text.split("\n")
+    if lines[-1] == "":
+        lines.pop()
+    if "\r" in text:
+        return tuple(line.rstrip("\r") for line in lines)
+    return tuple(lines)
 
 
 def _physical_line_ranges(record: Record) -> list[tuple[int, int]]:
@@ -2024,6 +2392,8 @@ def _ranges_are_contained(
 
 def _validate_passage_locators(library: Library) -> None:
     """Validate ranged segments, passages, and checked transcription segments."""
+    source_resolved = library.source_root.resolve()
+    resolved_payloads: dict[str, Path | None] = {}
 
     for record in sorted(library.records.values(), key=lambda item: item.record_id):
         if record.record_type not in {"segment", "passage"}:
@@ -2126,8 +2496,15 @@ def _validate_passage_locators(library: Library) -> None:
         path_value = artifact.data.get("path")
         if not _is_string(path_value):
             continue
-        payload_path = _safe_source_path(library, artifact.path, path_value)
-        if payload_path is None or not payload_path.is_file():
+        if artifact.record_id in resolved_payloads:
+            payload_path = resolved_payloads[artifact.record_id]
+        else:
+            candidate_path = _safe_source_path(
+                library, artifact.path, path_value, source_resolved=source_resolved
+            )
+            payload_path = candidate_path if candidate_path is not None and candidate_path.is_file() else None
+            resolved_payloads[artifact.record_id] = payload_path
+        if payload_path is None:
             continue
         try:
             payload_stat = payload_path.stat()
@@ -2398,35 +2775,146 @@ def _owned_papal_inventory(library: Library, entry: Path, relative: Path) -> boo
     return True
 
 
-def _validate_source_tree(library: Library) -> None:
-    """Reject files that evade a manifest, schema, or inventory owner."""
+def _is_canonical_manifest_parts(parts: tuple[str, ...]) -> bool:
+    n = len(parts)
+    if n == 2:
+        return parts[0] == "corpora" and parts[1].endswith(".toml")
+    if parts[0] != "works":
+        return False
+    if n == 4:
+        return parts[3] == "work.toml"
+    if n == 6:
+        return parts[3] == "editions" and parts[5] == "edition.toml"
+    if n == 7:
+        return parts[3] == "editions" and parts[5] in ("segments", "passages") and parts[6].endswith(".toml")
+    if n == 8:
+        return parts[3] == "editions" and parts[5] == "artifacts" and parts[7] == "artifact.toml"
+    return False
 
-    manifest_patterns = (
-        "works/*/*/work.toml",
-        "works/*/*/editions/*/edition.toml",
-        "works/*/*/editions/*/artifacts/*/artifact.toml",
-        "works/*/*/editions/*/segments/*.toml",
-        "works/*/*/editions/*/passages/*.toml",
-        "corpora/*.toml",
-    )
-    manifest_paths = {
-        path
-        for pattern in manifest_patterns
-        for path in library.source_root.glob(pattern)
-    }
-    for entry in sorted(library.source_root.rglob("*")):
-        if entry.is_symlink():
+
+def _validate_source_tree(library: Library, *, scan: _SourceTreeScan | None = None) -> None:
+    """Reject files that evade a manifest, schema, or inventory owner."""
+    if scan is not None:
+        for entry in scan.all_symlinks:
             library.error(entry, "source-library tree must not contain symbolic links")
-            continue
-        if not entry.is_file():
-            continue
-        relative = entry.relative_to(library.source_root)
-        if relative in {Path("README.md"), Path("artifact-delivery.json")} or entry in manifest_paths:
-            continue
-        if relative.parts[0] == "schema" and entry.suffix in {".json", ".md", ".toml"}:
-            continue
-        if relative.parts[0] == "inventories" and entry.suffix in {".md", ".toml"}:
-            continue
+        for entry, parts in scan.tree_candidates:
+            relative = Path(*parts)
+            if relative == Path("inventories/noncommercial-permissions-v1.json"):
+                import _reviewed_permissions
+                controller = library.records.get(_reviewed_permissions.ARTIFACT_ID)
+                for problem in _reviewed_permissions.problems(
+                        library.root, controller.data if controller else {"rights_status": "permission"}):
+                    library.error(entry, problem)
+                continue
+            if _owned_history_inventory(library, entry, relative):
+                continue
+            if _owned_papal_inventory(library, entry, relative):
+                continue
+            if entry.resolve() in library.payload_paths:
+                continue
+            library.error(entry, "file is outside the source-library schema and has no artifact owner")
+        return
+
+    from concurrent.futures import ThreadPoolExecutor
+
+    source_root = library.source_root
+    source_root_str = str(source_root)
+    prefix_len = len(source_root_str) + 1
+
+    # Single parallel scandir pass replaces 6 separate glob() walks + 1 rglob("*").
+    def scan_dir(start_dir: str) -> tuple[list[Path], list[tuple[Path, tuple[str, ...], str]]]:
+        symlinks: list[Path] = []
+        candidates: list[tuple[Path, tuple[str, ...], str]] = []
+        stack = [start_dir]
+        while stack:
+            current = stack.pop()
+            try:
+                listing = os.scandir(current)
+            except OSError:
+                continue
+            with listing:
+                for item in listing:
+                    if item.is_symlink():
+                        symlinks.append(Path(item.path))
+                        continue
+                    if item.is_dir(follow_symlinks=False):
+                        stack.append(item.path)
+                        continue
+                    if not item.is_file(follow_symlinks=False):
+                        continue
+                    rel_str = item.path[prefix_len:]
+                    parts = tuple(rel_str.split(os.sep))
+                    if _is_canonical_manifest_parts(parts):
+                        continue
+                    top = parts[0]
+                    name = item.name
+                    dot = name.rfind(".")
+                    suffix = name[dot:] if dot > 0 else ""
+                    if len(parts) == 1 and name in ("README.md", "artifact-delivery.json"):
+                        continue
+                    if top == "schema" and suffix in (".json", ".md", ".toml"):
+                        continue
+                    if top == "inventories" and suffix in (".md", ".toml"):
+                        continue
+                    if top in ("bibles", "calendars", "chronology", "commentary", "reading-plans") and (
+                        suffix in (".json", ".md", ".yaml")
+                        or (top in ("bibles", "chronology") and suffix == ".tsv")
+                    ):
+                        continue
+                    if top == "works" and suffix == ".toml":
+                        continue
+                    candidates.append((Path(item.path), parts, suffix))
+        return symlinks, candidates
+
+    symlinks: list[Path] = []
+    candidates: list[tuple[Path, tuple[str, ...], str]] = []
+    sub_tasks: list[str] = []
+    with os.scandir(source_root_str) as top_listing:
+        for item in top_listing:
+            if item.is_symlink():
+                symlinks.append(Path(item.path))
+                continue
+            if item.is_dir(follow_symlinks=False):
+                if item.name == "works":
+                    with os.scandir(item.path) as works_listing:
+                        for w in works_listing:
+                            if w.is_symlink():
+                                symlinks.append(Path(w.path))
+                            elif w.is_dir(follow_symlinks=False):
+                                sub_tasks.append(w.path)
+                            elif w.is_file(follow_symlinks=False):
+                                name = w.name
+                                dot = name.rfind(".")
+                                suffix = name[dot:] if dot > 0 else ""
+                                if suffix != ".toml":
+                                    candidates.append((Path(w.path), ("works", name), suffix))
+                else:
+                    sub_tasks.append(item.path)
+            elif item.is_file(follow_symlinks=False):
+                if item.name not in ("README.md", "artifact-delivery.json"):
+                    dot = item.name.rfind(".")
+                    suffix = item.name[dot:] if dot > 0 else ""
+                    candidates.append((Path(item.path), (item.name,), suffix))
+
+    counter = getattr(os, "process_cpu_count", None) or os.cpu_count
+    workers = min(8, (counter() if callable(counter) else None) or 4)
+    if workers > 1 and len(sub_tasks) >= 8:
+        with ThreadPoolExecutor(max_workers=workers) as pool:
+            for local_sym, local_cand in pool.map(scan_dir, sub_tasks):
+                symlinks.extend(local_sym)
+                candidates.extend(local_cand)
+    else:
+        for task in sub_tasks:
+            local_sym, local_cand = scan_dir(task)
+            symlinks.extend(local_sym)
+            candidates.extend(local_cand)
+
+    for entry in sorted(symlinks):
+        library.error(entry, "source-library tree must not contain symbolic links")
+
+    candidates.sort(key=lambda item: item[0])
+    for entry, parts, _suffix in candidates:
+        relative = Path(*parts)
         if relative == Path("inventories/noncommercial-permissions-v1.json"):
             import _reviewed_permissions
             controller = library.records.get(_reviewed_permissions.ARTIFACT_ID)
@@ -2438,43 +2926,7 @@ def _validate_source_tree(library: Library) -> None:
             continue
         if _owned_papal_inventory(library, entry, relative):
             continue
-        # Bible, calendar and commentary records are tracked sources with their
-        # own validators (index-bible, check-calendar-masses, citations); the
-        # bibliographic schema owns neither their contents nor their formats.
-        # The chapter fragments index-bible derives are .json and are checked
-        # for staleness and for orphans by the tool that writes them.
-        # The suffixes are here to keep an opaque unowned file — a pdf, an
-        # archive — from sitting in a tree this schema does not read, not to
-        # choose these trees' formats; the sentence above says as much.
-        # `src/sources/bibles/<edition>/projection.tsv` is the third thing
-        # index-bible writes into this tree and gates: `projection` refuses on a
-        # stale row, a missing file or an orphan exactly as `check` does for
-        # the index and the fragments, and the tabular form is the shape of the
-        # alias tables it is derived from. Admitted under `bibles` and
-        # `chronology`, the two of these trees whose own validator writes a
-        # table; the next tree that needs it can say so here.
-        #
-        # `chronology` is the Scripture chronology corpus. Its authored records
-        # are .yaml and its one derived table, `coverage.tsv`, is gated for
-        # staleness by its own tool exactly as `projection.tsv` is here. It adds
-        # no field to any record this schema owns and moves no
-        # `source_fingerprint`: it names source ids and is read beside the
-        # library, never inside it. guidance/scripture-chronology.md owns it.
-        if relative.parts[0] in {
-            "bibles",
-            "calendars",
-            "chronology",
-            "commentary",
-            "reading-plans",
-        } and (
-            entry.suffix in {".json", ".md", ".yaml"}
-            or (relative.parts[0] in {"bibles", "chronology"} and entry.suffix == ".tsv")
-        ):
-            continue
         if entry.resolve() in library.payload_paths:
-            continue
-        if relative.parts[0] == "works" and entry.suffix == ".toml":
-            # Canonical discovery or the local artifact scan already diagnoses it.
             continue
         library.error(entry, "file is outside the source-library schema and has no artifact owner")
 
@@ -2775,7 +3227,13 @@ def _validate_search_receipts(library: Library) -> None:
             )
 
 
-def _preflight_tree(library: Library, root: Path, label: str) -> bool:
+def _preflight_tree(
+    library: Library,
+    root: Path,
+    label: str,
+    *,
+    prune_names: frozenset[str] = frozenset(),
+) -> bool:
     """Prove a tree is local and symlink-free before recursive discovery."""
 
     if _path_contains_symlink(root, library.root):
@@ -2787,21 +3245,23 @@ def _preflight_tree(library: Library, root: Path, label: str) -> bool:
         library.errors.append(f"{library.relative(root)}: {label} root is not a directory")
         return False
     safe = True
-    for current, directories, filenames in os.walk(root, followlinks=False):
-        current_path = Path(current)
-        retained_directories = []
-        for name in directories:
-            path = current_path / name
-            if path.is_symlink():
-                library.error(path, f"{label} tree must not contain symbolic links")
-                safe = False
-            else:
-                retained_directories.append(name)
-        directories[:] = retained_directories
-        for name in filenames:
-            path = current_path / name
-            if path.is_symlink():
-                library.error(path, f"{label} tree must not contain symbolic links")
+    stack = [str(root)]
+    while stack:
+        current = stack.pop()
+        try:
+            with os.scandir(current) as listing:
+                entries = list(listing)
+        except OSError:
+            continue
+        for entry in entries:
+            if entry.is_symlink():
+                library.error(Path(entry.path), f"{label} tree must not contain symbolic links")
+                if entry.is_dir(follow_symlinks=True):
+                    safe = False
+                continue
+            if entry.is_dir(follow_symlinks=False):
+                if entry.name not in prune_names:
+                    stack.append(entry.path)
     return safe
 
 
@@ -2817,12 +3277,15 @@ def _library_cache_entry(root: Path, check_binding_fingerprints: bool) -> Path |
     """Where this tree's loaded library is kept, or None where it is not cached."""
     if os.environ.get("TRIPTYCH_LIBRARY_CACHE") == "0":
         return None
-    roots = [root / "src/sources", root / "src/gpt", root / "src/claude"]
-    if not (root / "src/sources").is_dir():
+    source_root = root / "src/sources"
+    if not source_root.is_dir():
         return None
-    fingerprint, counted = tree_fingerprint([r for r in roots if r.is_dir()])
-    if counted < LIBRARY_CACHE_FLOOR:
+    pub_roots = [r for r in (root / "src/gpt", root / "src/claude") if r.is_dir()]
+    src_fp, src_count = tree_fingerprint([source_root])
+    pub_fp, pub_count = tree_fingerprint(pub_roots, prune_names=frozenset({"evaluations"})) if pub_roots else ("", 0)
+    if src_count + pub_count < LIBRARY_CACHE_FLOOR:
         return None
+    fingerprint = hashlib.sha256(f"{src_fp}\0{pub_fp}".encode("ascii")).hexdigest()
     # The flag changes which validations run, so it changes the errors and must
     # be part of the identity rather than an unrecorded assumption.
     suffix = "fp" if check_binding_fingerprints else "nofp"
@@ -2897,12 +3360,16 @@ def _library_from_json(held: dict[str, Any]) -> Library:
     )
 
 
+_UNSET_CACHE_ENTRY = object()
+
+
 def load_library(
     root: Path = ROOT,
     *,
     check_binding_fingerprints: bool = True,
     check_external_bytes: bool = False,
     fetch: bool = False,
+    _cache_entry: object = _UNSET_CACHE_ENTRY,
 ) -> Library:
     """Load and validate the source graph rooted at *root*.
 
@@ -2939,7 +3406,15 @@ def load_library(
     root = root.resolve()
     # Hydration lives outside the source tree's stat cache. An evidence audit
     # always reads the current exact bytes and cannot reuse metadata results.
-    entry = None if check_external_bytes else _library_cache_entry(root, check_binding_fingerprints)
+    entry = (
+        None
+        if check_external_bytes
+        else (
+            _library_cache_entry(root, check_binding_fingerprints)
+            if _cache_entry is _UNSET_CACHE_ENTRY
+            else _cache_entry
+        )
+    )
     if entry is not None:
         try:
             return _library_from_json(
@@ -2953,25 +3428,30 @@ def load_library(
         source_root=root / "src/sources",
         publication_roots=[root / "src/gpt", root / "src/claude"],
     )
-    sources_safe = _preflight_tree(library, library.source_root, "source-library")
+    sources_safe, source_scan = _scan_source_tree(library)
     publications_safe = all(
         [
-            _preflight_tree(library, publication_root, "publication")
+            _preflight_tree(
+                library,
+                publication_root,
+                "publication",
+                prune_names=frozenset({"evaluations"}),
+            )
             for publication_root in _existing_publication_roots(library)
         ]
     )
     if not sources_safe or not publications_safe:
         library.errors.sort()
         return library
-    _load_source_records(library)
+    _load_source_records(library, scan=source_scan)
     _load_bindings(library)
     _validate_relationships(library)
     _validate_external_deliveries(library)
-    _validate_artifacts(library)
+    _validate_artifacts(library, scan=source_scan)
     _validate_support_artifact_references(library)
     _validate_passage_locators(library)
     _validate_search_receipts(library)
-    _validate_source_tree(library)
+    _validate_source_tree(library, scan=source_scan)
     _validate_loci(library)
     _validate_work_dates(library)
     _validate_artifact_licenses(library)
@@ -3171,39 +3651,56 @@ def search_rows(library: Library, source_id: str, query: str, *, case_sensitive:
         if path is None or not path.is_file():
             raise SourceLibraryQueryError(f"indexable artifact is unavailable: {artifact_id}")
         try:
-            digest = hashlib.sha256()
-            byte_size = 0
-            artifact_rows: list[dict[str, Any]] = []
-            with path.open("rb") as source:
-                for line_number, raw_line in enumerate(
-                    _iter_physical_lines(source), start=1
-                ):
-                    digest.update(raw_line)
-                    byte_size += len(raw_line)
-                    line = raw_line.decode("utf-8").rstrip("\r\n")
-                    if ranged_source_ranges and not any(
-                        start <= line_number <= end
-                        for start, end in ranged_source_ranges
-                    ):
-                        continue
-                    haystack = line if case_sensitive else line.casefold()
-                    if needle in haystack:
-                        artifact_rows.append(
-                            {
-                                "artifact_id": artifact_id,
-                                "line": line_number,
-                                "text": line,
-                                "path": library.relative(path),
-                            }
-                        )
+            raw = path.read_bytes()
+            text = raw.decode("utf-8")
             if (
-                digest.hexdigest() != data.get("sha256")
-                or byte_size != data.get("byte_size")
+                hashlib.sha256(raw).hexdigest() != data.get("sha256")
+                or len(raw) != data.get("byte_size")
             ):
                 raise SourceLibraryQueryError(
                     f"indexable artifact changed from its manifest: {artifact_id}"
                 )
-            rows.extend(artifact_rows)
+            if not raw:
+                continue
+            if not ranged_source_ranges:
+                haystack_all = text if case_sensitive else text.casefold()
+                if needle not in haystack_all:
+                    continue
+            lines = text.split("\n")
+            if lines[-1] == "":
+                lines.pop()
+            has_cr = "\r" in text
+            rel_path = library.relative(path)
+            if ranged_source_ranges:
+                line_count = len(lines)
+                for start, end in ranged_source_ranges:
+                    upper = end if end < line_count else line_count
+                    for line_number in range(start, upper + 1):
+                        raw_line = lines[line_number - 1]
+                        line = raw_line.rstrip("\r") if has_cr else raw_line
+                        haystack = line if case_sensitive else line.casefold()
+                        if needle in haystack:
+                            rows.append(
+                                {
+                                    "artifact_id": artifact_id,
+                                    "line": line_number,
+                                    "text": line,
+                                    "path": rel_path,
+                                }
+                            )
+            else:
+                for line_number, raw_line in enumerate(lines, start=1):
+                    line = raw_line.rstrip("\r") if has_cr else raw_line
+                    haystack = line if case_sensitive else line.casefold()
+                    if needle in haystack:
+                        rows.append(
+                            {
+                                "artifact_id": artifact_id,
+                                "line": line_number,
+                                "text": line,
+                                "path": rel_path,
+                            }
+                        )
         except SourceLibraryQueryError:
             raise
         except (OSError, UnicodeError) as error:

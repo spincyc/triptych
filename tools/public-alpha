@@ -48,6 +48,7 @@ from _proper_components import (
     audit_v2, companion_owner, load_manifest as load_component_manifest, outputs as proper_outputs, relative_id,
 )
 
+from _site_identity import SITE_NAME, SITE_ORIGIN  # noqa: E402
 from _tooling import (  # noqa: E402
     Example,
     examples_live_on_the_verbs,
@@ -373,19 +374,8 @@ FIXED_ARTIFACT_INPUT_PATHS = {
     "tools/typeset-bible",
     "requirements-tools.txt",
 }
-# The one origin the published site is reached at. Keep this as an origin
-# serialization (no trailing slash); public_site_url adds the path separator.
-# In-artifact navigation stays relative so the same Pages artifact remains
-# portable under a project-path preview. A link preview, by contrast, needs an
-# absolute URL: the Open Graph protocol's URL type admits only http:// and
-# https:// forms (https://ogp.me/), and Apple's own worked example in TN3156
-# uses one, so nothing there may be left for a fetcher to resolve relatively.
-SITE_ORIGIN = "https://mystago.gy"
-# Apple's TN3156 is explicit that the site name belongs in og:site_name and not
-# in og:title, so the preview reads as a page rather than as the site repeated.
-# `document_title` already appends this for the browser tab; the social title is
-# the bare page title, and neither is written twice.
-SITE_NAME = "Triptych"
+# SITE_ORIGIN and SITE_NAME are imported from scripts/_site_identity.py so
+# print-map and site-build tools share one source of truth without cross-loading.
 PROVIDER_LABELS = {"gpt": "ChatGPT", "claude": "Claude"}
 SOCIAL_CARD_RELATIVE = "assets/social-card.png"
 SITE_ICON_RELATIVE = "assets/icon.png"

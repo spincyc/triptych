@@ -762,7 +762,7 @@ def run_verb_cli(
         )
 
 
-def tree_fingerprint(roots) -> tuple[str, int]:
+def tree_fingerprint(roots, *, prune_names: frozenset[str] = frozenset()) -> tuple[str, int]:
     """Identify these directory trees by every file's path, mtime and size.
 
     The disk caches under `build/` are keyed by this, so it runs in every tool
@@ -785,18 +785,51 @@ def tree_fingerprint(roots) -> tuple[str, int]:
     """
     digest = hashlib.sha256()
     counted = 0
+    counter = getattr(os, "process_cpu_count", None) or os.cpu_count
+    workers = min(8, (counter() if callable(counter) else None) or 4)
 
-    def descend(directory: str) -> None:
+    def collect(directory: str) -> tuple[list[bytes], int]:
+        chunks: list[bytes] = []
+        local_count = 0
+        stack = [directory]
+        while stack:
+            current = stack.pop()
+            try:
+                with os.scandir(current) as listing:
+                    entries = sorted(listing, key=lambda entry: entry.name)
+            except OSError:
+                continue
+            directories = []
+            for entry in entries:
+                try:
+                    if entry.is_dir(follow_symlinks=False):
+                        if entry.name not in prune_names:
+                            directories.append(entry.path)
+                        continue
+                    stat = entry.stat(follow_symlinks=False)
+                except OSError:
+                    continue
+                chunks.append(
+                    f"{entry.path}\0{stat.st_mtime_ns}\0{stat.st_size}\0".encode("utf-8")
+                )
+                local_count += 1
+            for path in reversed(directories):
+                stack.append(path)
+        return chunks, local_count
+
+    def descend(directory: str, allow_parallel: bool) -> None:
         nonlocal counted
         try:
-            entries = sorted(os.scandir(directory), key=lambda entry: entry.name)
+            with os.scandir(directory) as listing:
+                entries = sorted(listing, key=lambda entry: entry.name)
         except OSError:
             return
         directories = []
         for entry in entries:
             try:
                 if entry.is_dir(follow_symlinks=False):
-                    directories.append(entry.path)
+                    if entry.name not in prune_names:
+                        directories.append(entry.path)
                     continue
                 stat = entry.stat(follow_symlinks=False)
             except OSError:
@@ -805,12 +838,20 @@ def tree_fingerprint(roots) -> tuple[str, int]:
                 f"{entry.path}\0{stat.st_mtime_ns}\0{stat.st_size}\0".encode("utf-8")
             )
             counted += 1
-        for path in directories:
-            descend(path)
+        if allow_parallel and workers > 1 and len(directories) >= 16:
+            from concurrent.futures import ThreadPoolExecutor
+            with ThreadPoolExecutor(max_workers=workers) as pool:
+                for chunks, local_count in pool.map(collect, directories):
+                    for chunk in chunks:
+                        digest.update(chunk)
+                    counted += local_count
+        else:
+            for path in directories:
+                descend(path, allow_parallel)
 
     for root in roots:
         digest.update(f"\0root:{root}\0".encode("utf-8"))
-        descend(str(root))
+        descend(str(root), True)
     return digest.hexdigest(), counted
 
 

@@ -41,6 +41,7 @@ performed — every `work_id` in the harvested index is still null.
 from __future__ import annotations
 
 import argparse
+from concurrent.futures import ThreadPoolExecutor
 from contextvars import ContextVar
 import copy
 import csv
@@ -48,6 +49,8 @@ import functools
 import importlib.machinery
 import importlib.util
 import json
+import os
+import pickle
 import re
 import subprocess
 import sys
@@ -335,20 +338,40 @@ def _command_yaml(function):
 def _load_yaml(path: Path) -> Any:
     if not path.is_file():
         raise CatenaError(f"{path}: not found")
+    yaml_mod = _yaml()
+    loader = getattr(yaml_mod, "CSafeLoader", yaml_mod.SafeLoader)
     cache = _COMMAND_YAML.get()
     if cache is None:
         with path.open(encoding="utf-8") as handle:
-            return _yaml().safe_load(handle)
+            return yaml_mod.load(handle, Loader=loader)
     # Read actual bytes on every access: unchanged mtimes, equal sizes and a
     # reused path are never evidence that a source is unchanged.
     body = path.read_bytes()
     key = path.resolve()
     previous = cache.get(key)
     if previous is not None and previous[0] == body:
-        return copy.deepcopy(previous[1])
-    parsed = _yaml().safe_load(body.decode("utf-8"))
-    cache[key] = (body, parsed)
-    return copy.deepcopy(parsed)
+        mode, held = previous[1], previous[2]
+        if mode == "json":
+            return json.loads(held)
+        if mode == "pickle":
+            return pickle.loads(held)
+        return copy.deepcopy(held)
+    parsed = yaml_mod.load(body.decode("utf-8"), Loader=loader)
+    try:
+        encoded = json.dumps(parsed)
+        roundtrip = json.loads(encoded)
+        if roundtrip == parsed:
+            cache[key] = (body, "json", encoded)
+            return roundtrip
+    except (TypeError, ValueError, RecursionError):
+        pass
+    try:
+        packed = pickle.dumps(parsed, protocol=pickle.HIGHEST_PROTOCOL)
+        cache[key] = (body, "pickle", packed)
+        return pickle.loads(packed)
+    except (pickle.PicklingError, TypeError, AttributeError):
+        cache[key] = (body, "obj", parsed)
+        return copy.deepcopy(parsed)
 
 
 # ---------------------------------------------------------------------------
@@ -358,7 +381,15 @@ def _load_yaml(path: Path) -> Any:
 
 def _book_index(root: Path) -> list[dict[str, str]]:
     """The canonical edition's book index. Owned by `scripts/_canon.py`."""
-    return _canon.book_index(root)
+    cache = _COMMAND_YAML.get()
+    if cache is None:
+        return _canon.book_index(root)
+    key = ("_book_index", root.resolve())
+    cached = cache.get(key)
+    if cached is None:
+        cached = _canon.book_index(root)
+        cache[key] = cached
+    return cached
 
 
 def canon(root: Path = ROOT) -> list[dict[str, Any]]:
@@ -755,14 +786,226 @@ def _sources_cache(root: Path) -> "Sources":
     return _SOURCES_CACHE[root]
 
 
+_DIRECT_PART_RE = re.compile(r"[a-z0-9][a-z0-9-]*\Z")
+
+
+def _parse_toml_file(path_str: str) -> dict[str, Any] | None:
+    try:
+        with open(path_str, "rb") as handle:
+            data = tomllib.loads(handle.read().decode("utf-8"))
+        return data if isinstance(data, dict) else None
+    except (OSError, UnicodeDecodeError, tomllib.TOMLDecodeError):
+        return None
+
+
+class _LazyCatenaRecords(dict):
+    """On-demand segment/passage mapping: direct lookup first, full walk only on miss."""
+
+    def __init__(self, works_root: Path, kind: str, edition_dirs: dict[str, str]):
+        super().__init__()
+        self._works_root = works_root
+        self._kind = kind
+        self._sub_name = kind + "s"
+        self._edition_dirs = edition_dirs
+        self._complete = False
+
+    def _direct_load(self, key: str) -> dict[str, Any] | None:
+        parts = key.split(".")
+        if len(parts) < 5 or parts[0] != self._kind or not all(_DIRECT_PART_RE.fullmatch(p) for p in parts):
+            return None
+        tail = parts[4:]
+        file_names = ["-".join(tail) + ".toml"]
+        dotted = ".".join(tail) + ".toml"
+        if dotted != file_names[0]:
+            file_names.append(dotted)
+        # 1. Exact edition directory from loaded edition manifests.
+        ed_key = "edition." + ".".join(parts[1:4])
+        ed_dir = self._edition_dirs.get(ed_key)
+        candidate_ed_dirs: list[str] = []
+        if ed_dir is not None:
+            candidate_ed_dirs.append(ed_dir)
+        # 2. Direct path and sibling edition directories under the named work.
+        direct_ed = os.path.join(self._works_root, parts[1], parts[2], "editions", parts[3])
+        if direct_ed not in candidate_ed_dirs and os.path.isdir(direct_ed):
+            candidate_ed_dirs.append(direct_ed)
+        work_eds = os.path.join(self._works_root, parts[1], parts[2], "editions")
+        if os.path.isdir(work_eds):
+            try:
+                for entry in os.scandir(work_eds):
+                    if entry.is_dir(follow_symlinks=True) and entry.path not in candidate_ed_dirs:
+                        candidate_ed_dirs.append(entry.path)
+            except OSError:
+                pass
+        for cand_ed in candidate_ed_dirs:
+            sub_dir = os.path.join(cand_ed, self._sub_name)
+            for fname in file_names:
+                path_str = os.path.join(sub_dir, fname)
+                if os.path.isfile(path_str):
+                    data = _parse_toml_file(path_str)
+                    if data is not None and data.get("id") == key:
+                        return data
+        return None
+
+    def _materialize(self) -> None:
+        if self._complete:
+            return
+        self._complete = True
+        if not self._works_root.is_dir():
+            return
+        sub_name = self._sub_name
+        paths: list[str] = []
+        for ed_dir in sorted(set(self._edition_dirs.values())):
+            sub_dir = os.path.join(ed_dir, sub_name)
+            if not os.path.isdir(sub_dir):
+                continue
+            try:
+                for entry in os.scandir(sub_dir):
+                    if entry.name.endswith(".toml") and entry.is_file(follow_symlinks=True):
+                        paths.append(entry.path)
+            except OSError:
+                continue
+        # Also catch any segments/passages under editions lacking an edition.toml.
+        if not paths:
+            for path in sorted(self._works_root.glob(f"*/*/editions/*/{sub_name}/*.toml")):
+                paths.append(str(path))
+        paths.sort()
+        for path_str in paths:
+            data = _parse_toml_file(path_str)
+            if data is not None:
+                ident = data.get("id")
+                if isinstance(ident, str) and not super().__contains__(ident):
+                    super().__setitem__(ident, data)
+
+    def _resolve(self, key: str) -> dict[str, Any] | None:
+        if super().__contains__(key):
+            return super().__getitem__(key)
+        if self._complete:
+            return None
+        direct = self._direct_load(key)
+        if direct is not None:
+            super().__setitem__(key, direct)
+            return direct
+        self._materialize()
+        return super().get(key)
+
+    def __contains__(self, key: object) -> bool:
+        if not isinstance(key, str):
+            return False
+        if super().__contains__(key):
+            return True
+        return self._resolve(key) is not None
+
+    def __getitem__(self, key: str) -> dict[str, Any]:
+        value = self._resolve(key)
+        if value is None:
+            raise KeyError(key)
+        return value
+
+    def get(self, key: str, default=None):
+        if not isinstance(key, str):
+            return default
+        value = self._resolve(key)
+        return default if value is None else value
+
+    def __len__(self) -> int:
+        self._materialize()
+        return super().__len__()
+
+    def __iter__(self):
+        self._materialize()
+        return super().__iter__()
+
+    def keys(self):
+        self._materialize()
+        return super().keys()
+
+    def values(self):
+        self._materialize()
+        return super().values()
+
+    def items(self):
+        self._materialize()
+        return super().items()
+
+
 def load_sources(root: Path = ROOT) -> Sources:
-    return Sources(
-        works=_records(root, "works/*/*/work.toml"),
-        editions=_records(root, "works/*/*/editions/*/edition.toml"),
-        artifacts=_records(root, "works/*/*/editions/*/artifacts/*/artifact.toml"),
-        segments=_records(root, "works/*/*/editions/*/segments/*.toml"),
-        passages=_records(root, "works/*/*/editions/*/passages/*.toml"),
-    )
+    """Load work/edition/artifact manifests eagerly and resolve passages/segments lazily."""
+    works_root = root / "src/sources/works"
+    works: dict[str, dict[str, Any]] = {}
+    editions: dict[str, dict[str, Any]] = {}
+    artifacts: dict[str, dict[str, Any]] = {}
+    edition_dirs: dict[str, str] = {}
+    if not works_root.is_dir():
+        return Sources(works, editions, artifacts, {}, {})
+
+    def scan_author(author_dir: str) -> list[tuple[str, str, str]]:
+        # Returns (kind, path_str, parent_dir) for works, editions, and artifacts only.
+        found: list[tuple[str, str, str]] = []
+        try:
+            work_entries = list(os.scandir(author_dir))
+        except OSError:
+            return found
+        for work in work_entries:
+            if not work.is_dir(follow_symlinks=True):
+                continue
+            work_toml = os.path.join(work.path, "work.toml")
+            if os.path.isfile(work_toml):
+                found.append(("w", work_toml, work.path))
+            editions_dir = os.path.join(work.path, "editions")
+            if not os.path.isdir(editions_dir):
+                continue
+            try:
+                ed_entries = list(os.scandir(editions_dir))
+            except OSError:
+                continue
+            for ed in ed_entries:
+                if not ed.is_dir(follow_symlinks=True):
+                    continue
+                ed_toml = os.path.join(ed.path, "edition.toml")
+                if os.path.isfile(ed_toml):
+                    found.append(("e", ed_toml, ed.path))
+                art_root = os.path.join(ed.path, "artifacts")
+                if os.path.isdir(art_root):
+                    try:
+                        for art in os.scandir(art_root):
+                            if art.is_dir(follow_symlinks=True):
+                                art_toml = os.path.join(art.path, "artifact.toml")
+                                if os.path.isfile(art_toml):
+                                    found.append(("a", art_toml, art.path))
+                    except OSError:
+                        pass
+        return found
+
+    author_dirs = [
+        entry.path
+        for entry in sorted(os.scandir(works_root), key=lambda e: e.name)
+        if entry.is_dir(follow_symlinks=True)
+    ]
+    counter = getattr(os, "process_cpu_count", None) or os.cpu_count
+    workers = min(8, (counter() if callable(counter) else None) or 4)
+    discovered: list[tuple[str, str, str]] = []
+    if workers > 1 and len(author_dirs) >= 8:
+        with ThreadPoolExecutor(max_workers=workers) as pool:
+            for chunk in pool.map(scan_author, author_dirs):
+                discovered.extend(chunk)
+    else:
+        for author_dir in author_dirs:
+            discovered.extend(scan_author(author_dir))
+    discovered.sort(key=lambda item: item[1])
+
+    tables = {"w": works, "e": editions, "a": artifacts}
+    for kind, path_str, parent_dir in discovered:
+        data = _parse_toml_file(path_str)
+        if data is None:
+            continue
+        identifier = data.get("id")
+        if isinstance(identifier, str):
+            tables[kind][identifier] = data
+            if kind == "e":
+                edition_dirs[identifier] = parent_dir
+    segments = _LazyCatenaRecords(works_root, "segment", edition_dirs)
+    passages = _LazyCatenaRecords(works_root, "passage", edition_dirs)
+    return Sources(works=works, editions=editions, artifacts=artifacts, segments=segments, passages=passages)
 
 
 # ---------------------------------------------------------------------------
@@ -1573,6 +1816,7 @@ def _solved_case_errors(data: dict[str, Any], where: str, known: set[str]) -> li
 
 def fragments_for_book(
     root: Path, token: str, *, scope=None, sources=None, edges=None, passage_ids=None,
+    snippets=None, validated_versions: bool = False,
 ) -> list[dict[str, Any]]:
     """Every held fragment on a book, at its own extent, in chronological order.
 
@@ -1588,9 +1832,13 @@ def fragments_for_book(
     data = load_edges(root) if edges is None else edges
     sources = _sources_cache(root) if sources is None else sources
     scope = scope or _catena_scope.Scope(root, works=sources.works)
-    snippets, snippet_errors = _catena_snippets.reviewed(
-        root, sources, data, passage_ids=passage_ids)
-    version_errors = _english_version_errors(sources, data.get("fragments") or [], passage_ids=passage_ids)
+    if snippets is None:
+        snippets, snippet_errors = _catena_snippets.reviewed(
+            root, sources, data, passage_ids=passage_ids)
+    else:
+        snippet_errors = []
+    version_errors = ([] if validated_versions else
+                      _english_version_errors(sources, data.get("fragments") or [], passage_ids=passage_ids))
     if snippet_errors or version_errors:
         raise CatenaError("\n".join(snippet_errors + version_errors))
     rows: list[dict[str, Any]] = []
@@ -1744,11 +1992,32 @@ def leads_for_book(root: Path, token: str, name: str, *, scope=None, discovery=N
     return leads
 
 
+def _load_yaml_header(path: Path) -> Any:
+    """Parse top-level Bible index metadata without parsing megabytes of passages."""
+    if not path.is_file():
+        raise CatenaError(f"{path}: not found")
+    try:
+        size = path.stat().st_size
+    except OSError:
+        return _load_yaml(path)
+    if size <= 16384:
+        return _load_yaml(path)
+    lines: list[bytes] = []
+    with path.open("rb") as handle:
+        for raw in handle:
+            if raw.startswith(b"passages:"):
+                break
+            lines.append(raw)
+    yaml_mod = _yaml()
+    loader = getattr(yaml_mod, "CSafeLoader", yaml_mod.SafeLoader)
+    return yaml_mod.load(b"".join(lines).decode("utf-8"), Loader=loader) or {}
+
+
 def offered_editions(root: Path) -> list[dict[str, str]]:
     """The publishable editions and the numbering each declares."""
     editions = []
     for path in sorted((root / BIBLES_RELATIVE).glob("*/index.yaml")):
-        index = _load_yaml(path)
+        index = _load_yaml_header(path)
         if not index.get("publishable"):
             continue
         editions.append(
@@ -1912,7 +2181,7 @@ def scripture_for_book(
     return {"schema": "triptych-catena-scripture/v1", "token": token, "chapters": chapters}
 
 
-def refusals_for_book(root: Path, token: str) -> dict[str, list[dict[str, Any]]]:
+def refusals_for_book(root: Path, token: str, *, offered: list[dict[str, str]] | None = None) -> dict[str, list[dict[str, Any]]]:
     """Where the projection declines to place a canonical locus in an edition.
 
     Rule 4: where the projection refuses, the page refuses. It must not fall
@@ -1928,7 +2197,7 @@ def refusals_for_book(root: Path, token: str) -> dict[str, list[dict[str, Any]]]
     boundary moves because no source this project can reach models it.
     """
     refusals: dict[str, list[dict[str, Any]]] = {}
-    for edition in offered_editions(root):
+    for edition in (offered_editions(root) if offered is None else offered):
         rows: list[dict[str, Any]] = []
         if token == "Ps":
             for row in _projection.displaced_psalms():
@@ -2124,6 +2393,72 @@ process.stdout.write(JSON.stringify(answer));
 """
 
 
+MEMBERSHIP_BATCH_HARNESS = """
+const fs = require('fs');
+const path = process.argv[1];
+const source = fs.readFileSync(path, 'utf8');
+const module_ = { exports: {} };
+new Function('module', 'exports', source)(module_, module_.exports);
+const requests = JSON.parse(fs.readFileSync(process.argv[2], 'utf8'));
+const answers = requests.map(function (input) {
+  const answer = {};
+  for (const chapter of input.chapters) {
+    answer[chapter] = module_.exports.fragmentsOnChapter(input.items, chapter).map(
+      function (item) { return item.id; }
+    );
+  }
+  return answer;
+});
+process.stdout.write(JSON.stringify(answers));
+"""
+
+
+def _chapters_touched_batch(
+    root: Path, requests: list[tuple[list[dict[str, Any]], list[int]]]
+) -> list[dict[int, list[str]]]:
+    """Run `catena-model.js` once across all non-empty chapter membership requests."""
+    if not requests:
+        return []
+    model = root / MODEL_RELATIVE
+    if not model.is_file():
+        raise CatenaError(f"{MODEL_RELATIVE.as_posix()}: not found")
+    results: list[dict[int, list[str]] | None] = [None] * len(requests)
+    non_empty_indices: list[int] = []
+    payload_rows: list[dict[str, Any]] = []
+    for index, (items, chapters) in enumerate(requests):
+        if not items:
+            results[index] = {chapter: [] for chapter in chapters}
+        else:
+            non_empty_indices.append(index)
+            payload_rows.append({"items": items, "chapters": list(chapters)})
+    if payload_rows:
+        with tempfile.NamedTemporaryFile(
+            "w", suffix=".json", encoding="utf-8", delete=False
+        ) as handle:
+            json.dump(payload_rows, handle, ensure_ascii=False)
+            payload = Path(handle.name)
+        try:
+            finished = subprocess.run(
+                ["node", "-e", MEMBERSHIP_BATCH_HARNESS, str(model), str(payload)],
+                capture_output=True,
+                text=True,
+                check=False,
+            )
+        except FileNotFoundError as error:
+            raise CatenaError(
+                "node is required to emit the catena structure: the chapter view is "
+                "derived by src/web/browser/catena/catena-model.js and is not "
+                "reimplemented here"
+            ) from error
+        finally:
+            payload.unlink(missing_ok=True)
+        if finished.returncode != 0:
+            raise CatenaError(f"the chapter derivation failed: {finished.stderr.strip()}")
+        for index, raw in zip(non_empty_indices, json.loads(finished.stdout)):
+            results[index] = {int(key): list(value) for key, value in raw.items()}
+    return [result for result in results if result is not None]
+
+
 def chapters_touched(
     root: Path, items: list[dict[str, Any]], chapters: Iterable[int]
 ) -> dict[int, list[str]]:
@@ -2272,8 +2607,18 @@ def _structure_files(
     # `translation:grc` to offer. Counting the pairs is the only way to know
     # that; inferring support from the language alone invents a holding.
     voices: set[str] = set()
-    scope = _catena_scope.Scope(root, works=_sources_cache(root).works)
+    sources = _sources_cache(root)
+    edges = load_edges(root)
+    discovery = _commentary_index(root)
+    offered = offered_editions(root)
+    snippets, snippet_errors = _catena_snippets.reviewed(root, sources, edges)
+    version_errors = _english_version_errors(sources, edges.get("fragments") or [])
+    if snippet_errors or version_errors:
+        raise CatenaError("\n".join(snippet_errors + version_errors))
+    scope = _catena_scope.Scope(root, works=sources.works)
     scripture_editions = _scripture_editions(root)
+    active_books: list[tuple[dict[str, Any], str, str, list[int], list[dict[str, Any]], dict[str, Any], list[dict[str, Any]], dict[str, dict[str, Any]]]] = []
+    batch_requests: list[tuple[list[dict[str, Any]], list[int]]] = []
     for book in books:
         token = book["token"]
         folder = folders[token]
@@ -2281,9 +2626,12 @@ def _structure_files(
         scripture_path = directory / "scripture" / f"{folder}.json"
         files[scripture_path] = _serialise(scripture_for_book(root, book, scripture_editions))
         written.append(scripture_path)
-        rows = fragments_for_book(root, token, scope=scope)
-        leads = leads_for_book(root, token, book["name"], scope=scope)
-        held_back = blocked_for_book(root, token, scope=scope)
+        rows = fragments_for_book(
+            root, token, scope=scope, sources=sources, edges=edges,
+            snippets=snippets, validated_versions=True,
+        )
+        leads = leads_for_book(root, token, book["name"], scope=scope, discovery=discovery)
+        held_back = blocked_for_book(root, token, scope=scope, edges=edges)
         if not rows and not leads and not held_back:
             continue
 
@@ -2314,20 +2662,18 @@ def _structure_files(
             fragment["text_words"] = len(str(carried["text"]).split())
             metadata[identifier] = fragment
 
-        standing = chapters_touched(
-            root,
-            [{"id": row["id"], "extent": row["extent"]} for row in rows],
+        active_books.append((book, token, folder, chapters, rows, leads, held_back, metadata))
+        batch_requests.append(([{"id": row["id"], "extent": row["extent"]} for row in rows], chapters))
+        batch_requests.append((
+            [{"id": str(number), "extent": entry["extent"]} for number, entry in enumerate(held_back)],
             chapters,
-        )
-        blocked_standing = chapters_touched(
-            root,
-            [
-                {"id": str(number), "extent": entry["extent"]}
-                for number, entry in enumerate(held_back)
-            ],
-            chapters,
-        )
-        refusals = refusals_for_book(root, token)
+        ))
+
+    batch_answers = _chapters_touched_batch(root, batch_requests)
+    for book_idx, (book, token, folder, chapters, rows, leads, held_back, metadata) in enumerate(active_books):
+        standing = batch_answers[book_idx * 2]
+        blocked_standing = batch_answers[book_idx * 2 + 1]
+        refusals = refusals_for_book(root, token, offered=offered)
 
         present: list[int] = []
         commentary_chapters = []
@@ -2426,7 +2772,7 @@ def _structure_files(
             # The page reads it when a reader asks for a translation and is
             # shown less than the chapter holds. Absence with its reason, in the
             # only place a reader can act on it.
-            "absences": absent_by_work(root),
+            "absences": absent_by_work(root, sources=sources, edges=edges),
             # How a chapter number becomes a filename. Derived from the longest
             # book of the canon and written down here so the page pads the way
             # the emit padded, rather than knowing the width by heart.
@@ -2475,21 +2821,9 @@ PARAGRAPHS_DIRECTORY = "paragraphs"
 
 
 def _index_bible(root: Path) -> Any:
-    """`tools/index-bible` as a module, for its edition table and its `Bible`.
-
-    Loaded rather than reimplemented. `Bible.carrier` is what puts a projected
-    break into an edition's own numbering, and an edition can print real text at
-    numbers a citation does not mean — so a paragraph placed by arithmetic
-    instead of by that resolver would open in the wrong words with nothing to
-    report.
-    """
-    loader = importlib.machinery.SourceFileLoader(
-        "index_bible", str(root / "tools" / "index-bible")
-    )
-    spec = importlib.util.spec_from_loader(loader.name, loader)
-    module = importlib.util.module_from_spec(spec)
-    loader.exec_module(module)
-    return module
+    """The source-owned Bible edition registry and resolver (`_bible_reader`)."""
+    import _bible_reader
+    return _bible_reader
 
 
 def _paragraph_files(

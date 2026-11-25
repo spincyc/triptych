@@ -140,10 +140,34 @@ inputs, and build retains the existing recorder validation of that graph.
                                "Generated output is not a new visual-review or publication approval."]}
 
 
+def _provider_main_tex(base: Path) -> list[Path]:
+    found: list[Path] = []
+    if not base.is_dir():
+        return found
+    stack = [str(base)]
+    while stack:
+        current = stack.pop()
+        try:
+            listing = os.scandir(current)
+        except OSError:
+            continue
+        with listing:
+            for entry in listing:
+                name = entry.name
+                if name == "evaluations":
+                    continue
+                if entry.is_dir(follow_symlinks=False):
+                    stack.append(entry.path)
+                elif name == "main.tex" and entry.is_file(follow_symlinks=True):
+                    found.append(Path(entry.path))
+    found.sort()
+    return found
+
+
 def _publication_records(root: Path, provider: str | None) -> list[dict]:
     records = []
     for owner in (provider,) if provider else PROVIDERS:
-        for entry in sorted((root / "src" / owner).glob("**/main.tex")):
+        for entry in _provider_main_tex(root / "src" / owner):
             leaf = entry.parent.relative_to(root / "src" / owner).as_posix()
             records.append(publication_recipe(owner, leaf, root=root))
             manifest = entry.parent / "proper-components.toml"

@@ -763,6 +763,8 @@ class Assembly:
         self._declarations: dict[Path, Declaration | None] = {}
         self._files: dict[Path, dict[Path, str]] = {}
         self._owners: dict[Path, Path | None] = {}
+        self._dir_owners: dict[Path, Path | None] = {}
+        self._src_root: Path = self.root / "src"
         self._dependencies: dict[Path, set[Path]] = {}
         self._content_dependencies: dict[Path, frozenset[Path]] = {}
         self._traces: dict[tuple[Path, str], object] = {}
@@ -780,20 +782,38 @@ class Assembly:
         return self._declarations[leaf]
 
     def owner(self, path: Path) -> Path | None:
-        path = Path(path).absolute()
-        if path in self._owners:
-            return self._owners[path]
-        try:
-            relative = path.relative_to(self.root / "src")
-        except ValueError:
+        if not isinstance(path, Path):
+            path = Path(path)
+        if not path.is_absolute():
+            path = path.absolute()
+        parent = path.parent
+        sentinel = object()
+        cached = self._dir_owners.get(parent, sentinel)
+        if cached is not sentinel:
+            return cached
+        src_root = self._src_root
+        if not parent.is_relative_to(src_root):
             return None
-        if not relative.parts or relative.parts[0] not in PROVIDERS:
+        relative = parent.relative_to(src_root)
+        if len(relative.parts) < 2 or relative.parts[0] not in PROVIDERS:
+            self._dir_owners[parent] = None
             return None
-        boundary = self.root / "src" / relative.parts[0]
-        leaf = next((parent for parent in path.parents
-                     if parent != boundary and boundary in parent.parents
-                     and (parent / PUBLICATION).is_file()), None)
-        self._owners[path] = leaf
+        boundary = src_root / relative.parts[0]
+        visited: list[Path] = []
+        current = parent
+        leaf: Path | None = None
+        while current != boundary:
+            hit = self._dir_owners.get(current, sentinel)
+            if hit is not sentinel:
+                leaf = hit
+                break
+            visited.append(current)
+            if (current / PUBLICATION).is_file():
+                leaf = current
+                break
+            current = current.parent
+        for directory in visited:
+            self._dir_owners[directory] = leaf
         return leaf
 
     def files(self, leaf: Path) -> dict[Path, str]:

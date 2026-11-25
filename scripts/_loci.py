@@ -385,11 +385,8 @@ class EditionReader(NamedTuple):
 @functools.lru_cache(maxsize=1)
 def _bible_register():
     """The source-owned Bible registry and resolver, shared by the projections."""
-    loader = SourceFileLoader("_index_bible_register", str(ROOT / "tools" / "index-bible"))
-    spec = spec_from_loader(loader.name, loader)
-    register = module_from_spec(spec)
-    loader.exec_module(register)
-    return register
+    import _bible_reader
+    return _bible_reader
 
 
 @functools.lru_cache(maxsize=None)

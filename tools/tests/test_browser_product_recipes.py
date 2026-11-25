@@ -77,8 +77,15 @@ class RecipeTests(unittest.TestCase):
                 holds = any(inventories == tree or inventories.startswith(tree + "/") for tree in recipe["input_trees"])
                 # Reader lookup metadata is keyed by name alone wherever a tree holds it.
                 index = any(recipes._READER_INDEX.startswith(tree + "/") for tree in recipe["input_trees"])
+                holds_gpt = any(tree == "src/gpt" or "src/gpt".startswith(tree + "/") for tree in recipe["input_trees"])
+                holds_claude = any(tree == "src/claude" or "src/claude".startswith(tree + "/") for tree in recipe["input_trees"])
+                extra_web = (["src/web"] if identifier == "web-editions"
+                             else list(recipes._DOCUMENTS_UNUSED_WEB) if identifier == "documents" else [])
+                evals = ([*(["src/gpt/**/evaluations"] if holds_gpt else []),
+                          *(["src/claude/**/evaluations"] if holds_claude else [])])
                 self.assertEqual(recipe["exclude_paths"],
-                                 (recipes._REVIEW_RECORDS if holds else []) + (["src/index"] if index else []))
+                                 (recipes._REVIEW_RECORDS if holds else []) + extra_web + evals
+                                 + (["src/index"] if index else []))
         self.assertEqual({identifier for identifier, recipe in actual.items() if "src/index" in recipe["exclude_paths"]},
                          {"documents", "web-editions"})
 
@@ -312,7 +319,7 @@ class CatenaCommandCacheTests(unittest.TestCase):
             path = Path(temporary) / "source.yaml"
             path.write_text("value: first\n")
             original = path.stat()
-            parser = self.catena._yaml().safe_load
+            parser = self.catena._yaml().load
             @self.catena._command_yaml
             def derive():
                 first = self.catena._load_yaml(path)
@@ -321,7 +328,7 @@ class CatenaCommandCacheTests(unittest.TestCase):
                 os.utime(path, ns=(original.st_atime_ns, original.st_mtime_ns))
                 changed = self.catena._load_yaml(path)
                 return first, repeated, changed
-            with patch.object(self.catena._yaml(), "safe_load", wraps=parser) as parse:
+            with patch.object(self.catena._yaml(), "load", wraps=parser) as parse:
                 first, repeated, changed = derive()
             self.assertIsNot(first, repeated)
             self.assertEqual(first, {"value": "first"})

@@ -26,9 +26,26 @@ OUTPUTS = {
 KINDS = ("proper-1962", "proper-postconciliar")
 
 _INPUT_STATE: dict[Path, tuple] = {}
+_FROZEN_ROOTS: set[Path] = set()
 
 
-def prepare(root: Path) -> None:
+def freeze_input_state(root: Path) -> None:
+    """Trust an already-prepared input state inside a short-lived batch child.
+
+    Only takes effect when the parent has already prepared ``root``; the parent
+    must verify the live input state after the batch finishes.
+    """
+    if root in _INPUT_STATE:
+        _FROZEN_ROOTS.add(root)
+
+
+def verify_input_state(root: Path, *, workers: int | None = None) -> bool:
+    """Return True when ``root`` still has the exact prepared input state."""
+    expected = _INPUT_STATE.get(root)
+    return expected is None or _input_state(root, workers=workers) == expected
+
+
+def prepare(root: Path, *, workers: int | None = None) -> None:
     """Invalidate the readers' process caches when canonical inputs change.
 
     These modules predate operation-scoped document assembly. Their caches
@@ -37,12 +54,14 @@ def prepare(root: Path) -> None:
     No data hash is replaced by these stats: output and provenance seals still
     hash the actual bytes. This only decides whether parsed objects may be reused.
     """
+    if root in _FROZEN_ROOTS and root in _INPUT_STATE:
+        return
     import _chronology
     import _deuterocanon
     import _psalms
     import _psalter
 
-    state = _input_state(root)
+    state = _input_state(root, workers=workers)
     if _INPUT_STATE.get(root) == state:
         return
     for module in (_chronology, wiring, page, _deuterocanon, _psalms, _psalter):
@@ -61,7 +80,7 @@ _WATCHED = (
 )
 
 
-def _input_state(root: Path) -> tuple:
+def _input_state(root: Path, *, workers: int | None = None) -> tuple:
     """The file identity of every watched input, in path order.
 
     Every operation (each new `Assembly`) asks this, so it is a scandir walk
@@ -89,7 +108,11 @@ def _input_state(root: Path) -> tuple:
         return local
 
     found: list[tuple] = []
-    workers = min(8, getattr(os, "process_cpu_count", os.cpu_count)() or 4)
+    if workers is None:
+        counter = getattr(os, "process_cpu_count", None) or os.cpu_count
+        workers = min(8, (counter() if callable(counter) else None) or 4)
+    else:
+        workers = min(8, max(1, workers))
     for tree, suffixes in _WATCHED:
         base = os.path.join(root, "src", "sources", tree)
         try:
@@ -212,10 +235,28 @@ NOT_AUTHORED = ("generated", "research", "evaluations", "evaluation")
 
 def authored_conflicts(context, generated: frozenset[str]) -> list[str]:
     """Authored TeX in the leaf that still is, or imports, a date page."""
+    tex_files: list[Path] = []
+    leaf_str = str(context.leaf)
+    if os.path.isdir(leaf_str):
+        stack: list[tuple[str, bool]] = [(leaf_str, True)]
+        while stack:
+            current, is_root = stack.pop()
+            try:
+                listing = os.scandir(current)
+            except OSError:
+                continue
+            with listing:
+                for entry in listing:
+                    if is_root and entry.name in NOT_AUTHORED:
+                        continue
+                    if entry.is_dir(follow_symlinks=False):
+                        stack.append((entry.path, False))
+                    elif entry.name.endswith(".tex") and entry.is_file(follow_symlinks=True):
+                        tex_files.append(Path(entry.path))
     found = []
-    for path in sorted(context.leaf.rglob("*.tex")):
+    for path in sorted(tex_files):
         relative = path.relative_to(context.leaf)
-        if relative.parts[0] in NOT_AUTHORED or relative.as_posix() in generated:
+        if relative.as_posix() in generated:
             continue
         text = "\n".join(line.split("%", 1)[0] if not line.lstrip().startswith("%") else ""
                          for line in path.read_text(encoding="utf-8").splitlines())

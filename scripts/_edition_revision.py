@@ -242,6 +242,43 @@ class _HistoryPaths:
                 for raw in names.removeprefix(b"\n").removesuffix(b"\0").split(b"\0"):
                     path = os.fsdecode(raw)
                     self.changes[path] = self.changes.get(path, 0) | bit
+        # Pre-compute first-parent changed files for commits carrying the skip
+        # trailer (~140 commits) in one batched diff-tree call so forked
+        # children never spawn git subprocesses in Repository.pre_image().
+        self.pre_images: dict[str, tuple[str | None, frozenset[str]]] = {}
+        skipped_edges: list[tuple[str, str]] = []
+        for commit, (_at, _ct, trailers, commit_edges) in self.commits.items():
+            if not trailers:
+                continue
+            first_parent = commit_edges[0][0]
+            if first_parent is None:
+                self.pre_images[commit] = (None, frozenset())
+            else:
+                skipped_edges.append((commit, first_parent))
+        if skipped_edges:
+            pairs = b"\n".join(f"{c} {p}".encode("ascii") for c, p in skipped_edges) + b"\n"
+            pre_rows = _git_bytes(
+                root, "diff-tree", "--stdin", "--no-renames", "--always",
+                "--format=%x00%H", "--name-only", "-r", "-z",
+                "--", "src", "scripts", "tools",
+                input_bytes=pairs,
+            )
+            pre_records = pre_rows.removeprefix(b"\0").split(b"\0\0")
+            if len(pre_records) == len(skipped_edges):
+                for (commit, first_parent), record in zip(skipped_edges, pre_records):
+                    head_sha, _, names = record.partition(b"\0")
+                    if head_sha != commit.encode("ascii"):
+                        self.pre_images.clear()
+                        break
+                    changed = (
+                        frozenset(
+                            os.fsdecode(raw)
+                            for raw in names.removeprefix(b"\n").removesuffix(b"\0").split(b"\0")
+                            if raw
+                        )
+                        if names else frozenset()
+                    )
+                    self.pre_images[commit] = (first_parent, changed)
 
     def reduce(self, paths):
         # Cover the union with real paths from this exact query. Common corpus
@@ -352,8 +389,12 @@ class Repository:
             paths = self._history_paths.reduce(paths)
         return history_of(self.root, paths, revision) if paths else []
 
-    def pre_image(self, commit: str) -> tuple[str | None, set[str]]:
+    def pre_image(self, commit: str) -> tuple[str | None, set[str] | frozenset[str]]:
         """A commit's first parent and the paths it changed, read without blobs."""
+        if self._history_paths is not None:
+            cached = self._history_paths.pre_images.get(commit)
+            if cached is not None:
+                return cached
         if commit not in self._pre_images:
             parents = _git(self.root, "rev-list", "--parents", "-n", "1", commit).split()[1:]
             changed = set()
