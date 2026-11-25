@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba"
+edition_id = "edition.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Faithful bounded reading transcription of original-language liturgical text from Paris 1481 (Missale Parisiense): complete strict Canon Missae constituent, whose United States copyright term has expired by publication date (22 September 1481 Paris publication (Dupré and Huym colophon)). Derived directly from tracked public-domain facsimile artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.ia-complete-pdf-619ed4e7 without modern translation or editorial reconstruction. Third-party historical text is excluded from Triptych's CC BY 4.0 license."
+provenance = "Pixel-verified primary-source transcription prepared by AI source transcriber (Lane T3, direct PNG inspection of Paris 1481 PDF pp. 180-182) and independently collated against rendered facsimile page images by independent-collator-v3-alex-west on 2026-11-25. Not a glyph-diplomatic edition or human specialist critical apparatus; complete bounded constituent only."
+retrieved = "2026-11-25"
+sha256 = "e36b38babd97110a64910d3878dc2791fa0b2795477de5793d5e8700973b7c27"
+byte_size = 5824
+path = "src/sources/works/diocese-of-paris/missale-parisiense/editions/1481-paris-dupre-huym/artifacts/canon-missae-checked-latin-e36b38ba/text.txt"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.ia-complete-pdf-619ed4e7"
+transformation = "Direct reading from 200-dpi rendered PNG images (and tight column zooms) of Paris 1481 PDF pp. 180-182. UTF-8 NFC, LF line endings. Standard 15th-century Gothic Latin abbreviations expanded silently to reading forms (nasal macrons, -q3 -> -que, -b3 -> -bus, -9 -> -us, Tironian ⁊ -> et, ꝝ -> -rum, dñs/dñi/dñm -> dominus/domini/dominum, nr̃m/nr̃os -> nostrum/nostros, oĩbus/oĩpotẽtem -> omnibus/omnipotentem, sãctas/sctĩ -> sanctas/sancti, eĩ -> enim, ĩpm -> ipsum, p̃claram/p̃stas -> preclaram/prestas, q̃d -> quod, s3 -> sed, p̃/ꝓ -> pro, grã -> gratia, cõcedas -> concedas, ɔspectu -> conspectu). Long s normalized to s; illuminated display initials merged with word bodies (restoring faded red/pink initials visible as coloured washes); line wraps and line-end hyphens joined. Medieval Latin orthography preserved verbatim (e for ae/oe: hec, que, celum, eterni, preclare, uenie; u/v as printed (Gothic word-initial v / medial u): viuo, vero, vultu, venie, eleuatis, serui; circumastantium, Imprimis, Symonis, Mathei, Thadei, Sixti, Crisogoni, propicio, imaculatam, tereritis, Et quequot, loco refrigerii, Ignacio). Action rubrics occupy separate lines within the Canon unit they govern; red/blue crosses serialized as ✠ (25 crosses total). Chant pitches excluded."
+notes = "Complete strict Eucharistic Canon of the 22 September 1481 Paris-use missal printed by Jean Dupré and Didier Huym (BSG OEXV 228 RES, PDF pp. 180-182, including printed fol. lxxx at PDF p. 181): from the opening rubric Junctis manibus se inclinet ante altare. and illuminated Te igitur on PDF p. 180 col. 1 through notated Per omnia secula seculorum. Amen. on PDF p. 182 col. 2 immediately before Oremus. Preceptis salutaribus / Pater noster. Includes all printed action rubrics and 25 illuminated crosses (✠) under declared selective Latin reading normalization."

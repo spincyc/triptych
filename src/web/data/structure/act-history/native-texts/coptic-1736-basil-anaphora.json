@@ -1,0 +1,415 @@
+{
+  "adapter_id": "native-book:coptic-1736-basil-anaphora",
+  "binding_sha256": "1a9a06c1e2ef20ce66e0a17ef949cd4983920908e60a9f9314b563efb67b0aff",
+  "catalogue_witness_ids": [
+    "eastern:alex-coptic-1736"
+  ],
+  "counts": {
+    "languages": {
+      "cop": 8
+    },
+    "units": 8,
+    "whitespace_tokens": 1311
+  },
+  "id": "coptic-1736-basil-anaphora",
+  "schema": "triptych-eucharistic-native-text/v1",
+  "scope": {
+    "complete_declared_extent": true,
+    "description": "Complete Bohairic Coptic column of the St. Basil Anaphora core in Raphael Tuki's 1736 Rome Missale Copto-Arabicum (ULB Bonn digital copy, Part II printed pp. 96-116 / PDF pp. 389-409): from the Anaphora heading ⲦⲀⲚⲀⲪⲞⲢⲀ ⲛ̀ⲧⲉ ⲡⲓⲁ̀ⲅⲓⲟⲥ ⲂⲀⲤⲒⲖⲒⲞⲤ ⲙ̀ Ⲫⲓⲱⲧ and Opening Dialogue on II.96 (PDF p. 389), through Preface, printed Pre-Sanctus hymns, Sanctus, Post-Sanctus, Institution Narrative of Bread and Cup (including Ⲁϥϫⲉⲙϯⲡⲓ 'He tasted' at II.110 / PDF p. 403), Anamnesis, and Epiclesis (including Tuki's printed Ⲡⲭ̅ⲥ̅ at II.114 / PDF p. 407) through the concluding communion-fruits petition Ⲁⲣⲓⲧⲉⲛ ⲛⲉⲙⲡ̀ϣⲁ ⲧⲏⲣⲉⲛ ... ⲓⲥϫⲉⲛ ⲡⲉⲛⲉϩ. on II.116 (PDF p. 409) immediately before the Great Intercessions (Ⲁⲣⲓⲫⲙⲉⲩⲓ̀ Ⲡϭ̅ⲥ̅...). Excludes the parallel Arabic translation column, Arabic-only rubrics, running heads, page numerals, catchwords, and later blue/purple manuscript reader annotations.",
+    "extent_kind": "constituent",
+    "known_extent_pages": 21,
+    "known_extent_units": 8,
+    "omitted_book_divisions": [
+      "All Part I incense offices, Ordo Communis, Arabic Creed (separately certified in tuki-1736-arabic-creed), and pre-Anaphora prayers (PDF pp. 1-388)",
+      "Great Intercessions (beginning Ⲁⲣⲓⲫⲙⲉⲩⲓ̀ Ⲡϭ̅ⲥ̅ on II.116 / PDF p. 409), Fraction, Pater, Confession, Gregory and Cyril Anaphoras, errata leaves (pp. 667-671) and colophon (p. 672) (PDF pp. 410-676)",
+      "Right-hand Arabic translation column and Arabic-only action rubrics spanning PDF pp. 389-409",
+      "Later handwritten blue/purple ink reader annotations (especially visible on PDF pp. 389-391, 398-408), running heads (ⲦⲀⲚⲀⲪⲞⲢⲀ / ⲚⲦⲈ ⲠⲒⲀⲄⲒⲞⲤ ⲂⲀⲤⲒⲖⲒⲞⲤ), Coptic folio numerals (ϥⲋ-ⲣⲓⲋ), signatures (Ccc-Eee2), decorative borders and page-foot catchwords"
+    ],
+    "status": "complete-native-constituent",
+    "whole_book_complete": false
+  },
+  "sources": [
+    {
+      "edition_id": "edition.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki",
+      "id": "artifact.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-checked-coptic-d4a0d5a2",
+      "record_type": "artifact",
+      "rights_basis": "Faithful bounded reading transcription of original-language liturgical text from Tuki 1736 (Missale Copto-Arabicum): Bohairic Coptic St. Basil Anaphora core constituent, whose United States copyright term has expired by publication date (1736 Rome publication (colophon 3 Baunah / 13 June 1736)). Derived directly from tracked public-domain facsimile artifact.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.bonn-pdf-add039d0 without modern translation or editorial reconstruction. Third-party historical text is excluded from Triptych's CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "transformation": "Direct reading from 200-dpi rendered PNG images of Tuki 1736 PDF pp. 389-409 (Part II pp. 96-116). UTF-8 NFC, LTR, LF line endings. All Coptic-column letters—including Greek liturgical acclamations set in Tuki's single Bohairic Coptic typeface—are encoded strictly in Unicode Coptic (U+2C80-U+2CFF) and the seven Demotic-derived Coptic letters in Greek-and-Coptic (U+03E2-U+03EF: Ϣ/ϣ, Ϥ/ϥ, Ϧ/ϧ, Ϩ/ϩ, Ϫ/ϫ, Ϭ/ϭ, Ϯ/ϯ), with zero non-Coptic Greek-block letters (U+0370-U+03E1). Bohairic jinkim/syllabic grave marks are encoded as combining grave accent (U+0300); nomina sacra/abbreviation bars (Ⲡϭ̅ⲥ̅, Ⲓⲏ̅ⲥ̅, Ⲡⲭ̅ⲥ̅, Ⲡⲛ̅ⲁ̅, ⲉⲑ̅ⲩ̅, Ⲕⲉ̅, Ⲑ̅ⲥ̅, ⲁ̀ⲗ̅) as combining overline (U+0305); printed red 8-pointed cross-rosettes marking signs of the cross as ✠ (U+2720). Tuki's line-end double-slash word-wrap hyphens ('//') are joined across lines; page-foot catchwords, running heads, Coptic page numerals and Arabic column/rubrics are excluded. Printed punctuation normalized as ':' (colon), '·' (U+00B7, Tuki's raised s-shaped/single stop), and '.' (full stop). Tuki's printed readings are preserved verbatim without silent emendation (including ⲫⲓⲙ and ⲉ̀ⲧⲟ̀ϩⲓⲉ̀ⲣⲁⲧⲟⲩ p. 391, ⲡⲉⲛⲉⲩⲙⲁⲧⲓ p. 392, ⲛ̀ⲑⲉⲕ, ⲉⲑⲛⲉⲥⲟⲥ, ϯⲑⲉⲟ̀ⲧⲩⲕⲟⲥ, ⲡⲓⲁ̀ⲙⲟϩⲓ, and ⲙ̀ⲙⲁⲓⲣⲡⲙⲓ p. 394, ⲩⲫⲱⲣϣ, ⲁⲩⲧⲩⲛ, and ⲧⲩⲛ p. 395, ⲟⲩⲙⲟⲛⲉ̀ⲃⲟⲗ p. 397, letterpress ⲉ̀ⲃⲟⲗϧⲛ p. 402 excluding later purple superscript ⲉ, Ⲁϥϫⲉⲙϯⲡⲓ p. 403, Ⲡⲭ̅ⲥ̅ in Epiclesis p. 407, and Ⲡⲣⲩⲥⲭⲱⲙⲉⲛ p. 407)."
+    },
+    {
+      "edition_id": "edition.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki",
+      "id": "artifact.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.bonn-pdf-add039d0",
+      "record_type": "artifact",
+      "rights_basis": "The original 1736 printing is public domain in the United States by its publication date. ULB Bonn identifies this digitization with the Public Domain Mark 1.0 at https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/253288 (whole landing page retrieved 2026-10-17; SHA-256 41d19e4e0bb96e24faa8b0d51c458bf2ca1d576a3121006a72f4cca2b94c0484). Exact mechanical images preserve all source marks and reader annotations; no new editorial layer is claimed. This source material is excluded from Triptych’s CC BY 4.0 grant.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "source_url": "https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/253288",
+      "transformation": "Read the 676 exact JPEG resources from the parent ZIP in sequence.json order and embed each complete byte stream unchanged in a PDF DCTDecode image object. One image fills each PDF page; page dimensions in points equal pixel dimensions. No cropping, reordering, resampling, color conversion, OCR or text alteration. The exact images and manifest remain in the parent ZIP. This is a lossless facsimile derivative, not a Bonn-issued PDF."
+    },
+    {
+      "date": "1736",
+      "id": "edition.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki",
+      "language": "cop-ar",
+      "publication": "Rome: Typis Sacrae Congregationis de Propaganda Fide",
+      "record_type": "edition",
+      "title": "Missale copto arabicum"
+    },
+    {
+      "artifact_id": "artifact.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-checked-coptic-d4a0d5a2",
+      "edition_id": "edition.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki",
+      "id": "passage.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-coptic-anamnesis",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-checked-coptic-d4a0d5a2",
+      "edition_id": "edition.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki",
+      "id": "passage.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-coptic-epiclesis",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-checked-coptic-d4a0d5a2",
+      "edition_id": "edition.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki",
+      "id": "passage.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-coptic-institution-narrative",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-checked-coptic-d4a0d5a2",
+      "edition_id": "edition.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki",
+      "id": "passage.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-coptic-opening-dialogue",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-checked-coptic-d4a0d5a2",
+      "edition_id": "edition.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki",
+      "id": "passage.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-coptic-post-sanctus",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-checked-coptic-d4a0d5a2",
+      "edition_id": "edition.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki",
+      "id": "passage.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-coptic-pre-sanctus-hymns",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-checked-coptic-d4a0d5a2",
+      "edition_id": "edition.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki",
+      "id": "passage.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-coptic-preface",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-checked-coptic-d4a0d5a2",
+      "edition_id": "edition.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki",
+      "id": "passage.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-coptic-sanctus",
+      "record_type": "passage"
+    }
+  ],
+  "stage_ids": [
+    "alexandrian-stages-coptic1736"
+  ],
+  "title": "Tuki 1736 (Missale Copto-Arabicum): Bohairic Coptic St. Basil Anaphora core constituent",
+  "units": [
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "dialogue-with-cues",
+      "language": "cop",
+      "native_path": [
+        "anaphoras",
+        "st-basil",
+        "opening-dialogue"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-checked-coptic-d4a0d5a2",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-checked-coptic-d4a0d5a2",
+      "source_id": "passage.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-coptic-opening-dialogue",
+      "source_locator": "Constituent unit 1/8 (anaphoras/st-basil/opening-dialogue), normalized physical lines 1–18.",
+      "source_order": 1,
+      "text": "ⲦⲀⲚⲀⲪⲞⲢⲀ ⲛ̀ⲧⲉ ⲡⲓⲁ̀ⲅⲓⲟⲥ ⲂⲀⲤⲒⲖⲒⲞⲤ ⲙ̀ Ⲫⲓⲱⲧ.\nⲞ ⲇⲓⲁ̀ⲕⲱⲛ.\nⲠⲣⲟⲥⲫⲉⲣⲉⲓⲛ : ⲡⲣⲟⲥⲫⲉⲣⲉⲓⲛ : ⲡⲣⲟⲥⲫⲉⲣⲉⲓⲛ ⲕⲁⲧⲁ ⲧⲣⲟⲡⲟⲛ · ⲥⲧⲁⲑⲏⲧⲉ : ⲕⲁⲧⲁ̀ ⲧⲣⲟⲙⲟⲩ.\nⲈⲓⲥ ⲁⲛⲁⲧⲟⲗⲁⲥ ⲃⲗⲉⲯⲁⲧⲉ.\nⲠⲣⲟⲥⲭⲱⲙⲉⲛ : ⲉⲗⲉⲟⲥ ⲉⲓⲣⲏⲛⲏⲥ : ⲑⲩⲥⲓⲁ ⲁⲓⲛⲉⲥⲉⲱⲥ.\nⲞ ⲗⲁⲟⲥ.\nⲈⲗⲉⲟⲥ ⲉⲓⲣⲏⲛⲏⲥ ⲑⲩⲥⲓⲁ̀ ⲁⲓⲛⲉⲥⲉⲱⲥ.\nⲞ Ⲕⲩⲣⲓⲟⲥ ⲙⲉⲧⲁ ✠ ⲡⲁⲛⲧⲱⲛ ⲩⲙⲱⲛ.\nⲞ ⲗⲁⲟⲥ.\nⲔⲁⲓ ⲙⲉⲧⲁ̀ ⲧⲟⲩ ⲡⲛⲉⲩⲙⲁⲧⲟⲥ ⲥⲟⲩ.\nⲀⲛⲱ ✠ ⲩ̀ⲙⲱⲛ ⲧⲁⲥ ⲕⲁⲣⲇⲓⲁⲥ.\nⲞ ⲗⲁⲟⲥ.\nⲈⲭⲟⲙⲉⲛ ⲡⲣⲟⲥ ⲧⲟⲛ Ⲕⲩⲣⲓⲟⲛ.\nⲈⲩⲭⲁⲣⲓⲥⲧⲏⲥⲱⲙⲉⲛ ✠ ⲧⲱ Ⲕⲩⲣⲓⲱ.\nⲞ ⲗⲁⲟⲥ.\nⲀⲝⲓⲟⲛ ⲕⲁⲓ ⲇⲓⲕⲁⲓⲟⲛ.\nⲞ ⲓ̀ⲉⲣⲉⲩⲥ.\nⲀⲝⲓⲟⲛ ⲕⲁⲓ ⲇⲓⲕⲁⲓⲟⲛ · ⲁⲝⲓⲟⲛ ⲕⲁⲓ ⲇⲓⲕⲁⲓⲟⲛ : ⲁⲝⲓⲟⲛ ⲕⲁⲓ ⲇⲓⲕⲁⲓⲟⲛ · ⲁⲗⲏⲑⲟⲥ ⲅⲁⲣ ϧⲉⲛ ⲟⲩⲙⲉⲑⲙⲏⲓ · ⲁ̀ⲝⲓⲟⲛ ⲕⲁⲓ ⲇⲓⲕⲁⲓⲟⲛ.",
+      "text_edition_id": "edition.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki",
+      "text_sha256": "e4356a3479aa9e6061e106083bced617b06ab0802045e6153bf77f9cb382b626",
+      "unit_id": "unit.tuki-1736.coptic.basil.opening-dialogue",
+      "witness_id": "tuki-1736-bonn-pdf",
+      "witness_pages": [
+        [
+          389,
+          390
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-cues",
+      "language": "cop",
+      "native_path": [
+        "anaphoras",
+        "st-basil",
+        "preface"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-checked-coptic-d4a0d5a2",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-checked-coptic-d4a0d5a2",
+      "source_id": "passage.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-coptic-preface",
+      "source_locator": "Constituent unit 2/8 (anaphoras/st-basil/preface), normalized physical lines 19–36.",
+      "source_order": 2,
+      "text": "Ⲟ ⲓ̀ⲉⲣⲉⲩⲥ.\nⲪⲏ ⲉⲧϣⲟⲡ ⲫⲛⲏⲃ Ⲡϭ̅ⲥ̅ Ⲫϯ ⲛ̀ⲧⲉ ϯⲙⲉⲑⲙⲏⲓ.\nⲪⲏ ⲉⲧϣⲟⲡ ϧⲁϫⲱⲟⲩ ⲛ̀ⲛⲓⲉⲛⲉϩ · ⲟⲩⲟϩ ⲉⲧⲟⲓ ⲛ̀ⲟⲩⲣⲟ ϣⲁⲉ̀ⲛⲉϩ.\nⲪⲏ ⲉⲧϣⲟⲡ ϧⲉⲛ ⲛⲏ ⲉⲧϭⲟⲥⲓ · ⲟⲩⲟϩ ⲉⲧϫⲟⲩϣⲧ ⲉ̀ϫⲉⲛ ⲛⲏ ⲉⲧⲑⲉⲃⲓⲏⲟⲩⲧ.\nⲪⲏ ⲉ̀ⲧⲁϥⲑⲁⲙⲓⲟ̀ ⲛ̀ⲧⲫⲉ ⲛⲉⲙ ⲡ̀ⲕⲁϩⲓ · ⲛⲉⲙ ⲫⲓⲙ · ⲛⲉⲙ ⲛⲏ ⲉⲧⲉⲛϧⲏⲧⲟⲩ ⲧⲏⲣⲟⲩ.\nⲪⲓⲱⲧ ⲙ̀ⲡⲉⲛϭ̅ⲥ̅ : ⲟⲩⲟϩ ⲡⲉⲛⲛⲟⲩϯ : ⲟⲩⲟϩ ⲡⲉⲛⲥⲱⲧⲏⲣ Ⲓⲏ̅ⲥ̅ Ⲡⲭ̅ⲥ̅.\nⲪⲁⲓ ⲉⲧⲁⲕⲑⲁⲙⲓⲟ̀ ⲉ̀ⲡⲧⲏⲣϥ ⲉ̀ⲃⲟⲗ ϩⲓⲧⲟⲧϥ : ⲛⲏ ⲉ̀ⲧⲟⲩⲛⲁⲩ ⲉ̀ⲣⲱⲟⲩ : ⲛⲉⲙ ⲛⲏ ⲉ̀ⲧⲉⲛⲥⲉⲛⲁⲩ ⲉ̀ⲣⲱⲟⲩ ⲁⲛ.\nⲪⲏ ⲉⲧϩⲉⲙⲥⲓ ϩⲓϫⲉⲛ ⲡⲓⲑⲣⲟⲛⲟⲥ ⲛ̀ⲧⲉ ⲡⲉϥⲱ̀ⲟⲩ.\nⲪⲏ ⲉ̀ⲧⲟⲩⲟⲩⲱϣⲧ ⲙ̀ⲙⲟϥ ϩⲓⲧⲉⲛ ϫⲟⲙ ⲛⲓⲃⲉⲛ ⲉⲑⲟⲩⲁⲃ.\nⲞ ⲇⲓⲁ̀ⲕⲱⲛ.\nⲞⲓ ⲕⲁⲑⲏⲙⲉⲛⲟⲓ ⲁ̀ⲛⲁⲥⲧⲏⲧⲉ.\nⲞ ⲓ̀ⲉⲣⲉⲩⲥ.\nⲪⲏ ⲉ̀ⲧⲟ̀ϩⲓⲉ̀ⲣⲁⲧⲟⲩ ⲛⲁϩⲣⲁϥ · ⲛ̀ϫⲉ ⲛⲓⲁ̀ⲅⲅⲉⲗⲟⲥ · ⲛⲉⲙ ⲛⲓⲁ̀ⲣⲭⲏⲁⲅⲅⲉⲗⲟⲥ · ⲛⲓⲁⲣⲭⲏ · ⲛⲓⲉ̀ⲝⲟⲩⲥⲓⲁ̀ · ⲛⲓⲑⲣⲟⲛⲟⲥ · ⲛⲓⲙⲉⲧϭ̅ⲥ̅ · ⲛⲓϫⲟⲙ.\nⲞ ⲇⲓⲁ̀ⲕⲱⲛ.\nⲈⲓⲥ ⲁⲛⲁⲧⲟⲗⲁⲥ ⲃⲗⲉⲯⲁⲧⲉ.\nⲞ ⲓ̀ⲉⲣⲉⲩⲥ.\nⲚ̀ⲑⲟⲕ ⲅⲁⲣ ⲡⲉ ⲉⲧⲟⲩⲟ̀ϩⲓⲉ̀ⲣⲁⲧⲟⲩ ⲙ̀ⲡⲉⲕⲕⲱϯ · ⲛ̀ϫⲉ ⲛⲓⲭⲉⲣⲟⲩⲃⲓⲙ ⲉⲑⲙⲉϩ ⲙ̀ⲃⲁⲗ · ⲛⲉⲙ ⲛⲓⲥⲉⲣⲁⲫⲓⲙ ⲛⲁ ⲡⲓⲥⲟⲟⲩ ⲛ̀ⲧⲉⲛϩ.\nⲈⲩⲉⲣϩⲩⲙⲛⲟⲥ ϧⲉⲛ ⲟⲩⲙⲟⲩⲛⲉ̀ⲃⲟⲗ ⲛ̀ⲁ̀ⲧⲭⲁⲣⲱⲟⲩ ⲉⲩϫⲱⲙ̀ⲙⲟⲥ.",
+      "text_edition_id": "edition.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki",
+      "text_sha256": "acbcdcf431efee1cfb83130d22e3d2524525a1219b8a7761a0437a1dcd7340bc",
+      "unit_id": "unit.tuki-1736.coptic.basil.preface",
+      "witness_id": "tuki-1736-bonn-pdf",
+      "witness_pages": [
+        [
+          390,
+          392
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "hymns-with-cues",
+      "language": "cop",
+      "native_path": [
+        "anaphoras",
+        "st-basil",
+        "pre-sanctus-hymns"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-checked-coptic-d4a0d5a2",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-checked-coptic-d4a0d5a2",
+      "source_id": "passage.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-coptic-pre-sanctus-hymns",
+      "source_locator": "Constituent unit 3/8 (anaphoras/st-basil/pre-sanctus-hymns), normalized physical lines 37–56.",
+      "source_order": 3,
+      "text": "Ⲇⲉⲩⲧⲉ ⲉⲓⲥ ⲧⲏⲛ ⲧⲣⲁⲡⲉⲍⲁⲛ : ⲧⲟⲛ Ⲑⲉⲟⲛ · ⲉⲩⲗⲟⲅⲟⲩⲙⲉⲛ · ⲁⲅⲅⲉⲗⲟⲓ · ⲕⲁⲓ ⲁ̀ⲣⲭⲁ̀ⲅⲅⲉⲗⲟⲓ : ⲃⲟⲱⲛⲧⲉⲥ : ⲕⲁⲓ ⲗⲉⲅⲟⲛⲧⲉⲥ.\nⲀⲅⲓⲟⲥ : ⲁ̀ⲅⲓⲟⲥ : ⲁ̀ⲅⲓⲟⲥ ⲥⲩ ⲕⲩⲣⲓⲉ̀ ⲁⲗⲗⲏⲗⲟⲩⲓⲁ̀.\nⲆⲟⲝⲁ ⲡⲁⲧⲣⲓ · ⲕⲁⲓ ⲩ̀ⲓⲱ ⲕⲁⲓ ⲁ̀ⲅⲓⲱ̀ ⲡⲉⲛⲉⲩⲙⲁⲧⲓ.\nⲘⲉⲧⲁ̀ ⲧⲱⲛ ⲭⲉⲣⲟⲩⲃⲓⲙ : ⲧⲟⲛ ⲩ̀ⲙⲛⲟⲛ ⲁⲛⲁⲡⲉⲙ̀ⲡⲟⲙⲉⲛ.\nⲀⲅⲓⲟⲥ : ⲁ̀ⲅⲓⲟⲥ : ⲁ̀ⲅⲓⲟⲥ ⲥⲩ̀ ⲕⲩⲣⲓⲉ̀ ⲁⲗⲗⲏⲗⲟⲩⲓⲁ̀.\nⲔⲁⲓ ⲛⲩⲛ · ⲕⲁⲓ ⲁ̀ⲉⲓ · ⲕⲁⲓ ⲉ̀ⲓⲥ ⲧⲟⲩⲥ ⲁⲓⲱ̀ⲛⲁⲥ ⲧⲱⲛ ⲁⲓⲱ̀ⲛⲱⲛ ⲁ̀ⲙⲏⲛ.\nⲆⲟⲝⲁ ⲥⲟⲓ ⲱ̀ ⲡⲁⲧⲉ̀ⲣ · ⲇⲟⲝⲁ ⲥⲟⲓ̀ ⲱ̀ ⲙⲟⲛⲟⲅⲉⲛⲉⲥ : ⲥⲩⲛ ⲁ̀ⲅⲓⲱ ⲡⲛⲉⲩⲙⲁⲧⲓ · ⲉⲓ̀ⲥ Ⲑⲉⲟⲥ ⲉⲓⲥ Ⲕⲩⲣⲓⲉ.\nⲀⲅⲓⲟⲥ : ⲁ̀ⲅⲓⲟⲥ : ⲁ̀ⲅⲓⲟⲥ : ⲥⲩ Ⲕⲉ̅ : ⲁⲗⲗⲏⲗⲟⲩⲓⲁ̀.\nⲆⲟⲝⲁ ⲡⲁⲧⲣⲓ.\nⲘⲁⲣⲉⲛϩⲱⲥ ⲛⲉⲙ ⲛⲓⲁ̀ⲅⲅⲉⲗⲟⲥ ⲛⲉⲙ ⲛⲓⲧⲁⲅⲙⲁ̀ ⲛ̀ⲉⲡⲟⲩⲣⲁⲛⲓⲟⲛ · ⲉ̀ⲧⲉ ⲫⲁⲓ ⲡⲉ Ⲫⲓⲱⲧ ⲛⲉⲙ ⲡ̀ϣⲏⲣⲓ ⲛⲉⲙ ⲡⲓⲡⲛ̅ⲁ̅ ⲉ̀ⲑ̅ⲩ̅.\nⲬⲟⲩⲁⲃ ⲛ̀ⲑⲟⲕ ⲡⲉ ⲡⲉⲛⲛⲟⲩϯ · ⲭⲟⲩⲁⲃ ⲛ̀ⲑⲟⲕ ⲡⲉ ⲡⲉⲛⲥⲱⲧⲏⲣ : ⲭⲟⲩⲁⲃ ⲛ̀ⲑⲟⲕ ⲡⲓⲣⲉϥⲑⲁⲙⲓⲟ̀ · ⲭⲟⲩⲁⲃ ⲛ̀ⲑⲟⲕ ⲡⲓⲣⲉϥⲧⲁⲛϧⲟ : ⲭⲟⲩⲁⲃ ⲛ̀ⲑⲟⲕ ⲫⲁ ϯⲙⲉⲧϣⲉⲙϣⲓ · ⲭⲟⲩⲁⲃ ⲛ̀ⲑⲟⲕ ⲡⲓⲛⲓϣϯ · ⲭⲟⲩⲁⲃ ⲛ̀ⲑⲟⲕ ⲫⲏ ⲉⲧⲥⲙⲁⲣⲱⲟⲩⲧ · ⲭⲟⲩⲁⲃ ⲛ̀ⲑⲟⲕ ⲡⲉ ⲡⲉⲧⲥⲁϫⲓ : ⲭⲟⲩⲁⲃ ⲛ̀ⲑⲟⲕ ⲡⲉ ⲧⲉⲛϩⲉⲗⲡⲓⲥ · ⲭⲟⲩⲁⲃ ⲛ̀ⲑⲉⲕ ⲡ̀ϣⲏⲣⲓ ⲙ̀Ⲫϯ · ⲭⲟⲩⲁⲃ ⲛ̀ⲑⲟⲕ ⲡⲉ Ⲓⲏ̅ⲥ̅ Ⲡⲭ̅ⲥ̅ · ⲛⲉⲙ ⲧⲉⲕⲙⲁⲩ ⲙ̀ⲡⲁⲣⲑⲉⲛⲟⲥ Ⲙⲁⲣⲓⲁ̀ ϯϭⲣⲟⲙⲡⲓ ⲉⲑⲛⲉⲥⲟⲥ · Ⲙⲁⲣⲓⲁ̀ ϯⲑⲉⲟ̀ⲧⲩⲕⲟⲥ : Ⲙⲁⲣⲓⲁ̀ ⲑⲙⲁⲩ ⲛ̀Ⲓⲏ̅ⲥ̅ Ⲡⲭ̅ⲥ̅.\nⲪⲱⲕ ⲡⲉ ⲡⲓⲱ̀ⲟⲩ ⲛⲉⲙ ⲡⲓⲁ̀ⲙⲟϩⲓ · ⲡⲓⲧⲁⲓⲟ̀ ⲛⲉⲙ ⲡⲓⲉⲣϣⲓϣⲓ · ϣⲁ ⲉ̀ⲛⲉϩ ⲛ̀ⲧⲉ ⲛⲓⲉ̀ⲛⲉϩ.\nϨⲱⲥ ⲁ̀ⲅⲁⲑⲟⲥ ⲟⲩⲟϩ ⲙ̀ⲙⲁⲓⲣⲡⲙⲓ : ⲛⲁⲓ ⲛⲁⲛ ⲕⲁⲧⲁ ⲡⲉⲕⲛⲓϣϯ ⲛ̀ⲛⲁⲓ ⲁ̀ⲗ̅ : ⲁⲗⲗⲏⲗⲟⲩⲓⲁ̀ : ⲁ̀ⲗⲗⲏⲗⲟⲩⲓⲁ̀.\nⲆⲟⲝⲁ ⲥⲟⲓ ⲟ̀ Ⲑ̅ⲥ̅ ⲏ̀ⲙⲱⲛ : ⲁ̀ⲅⲓⲟⲥ : ⲁ̀ⲅⲓⲟⲥ : ⲁ̀ⲅⲓⲟⲥ : Ⲡϭ̅ⲥ̅ ⲥⲁⲃⲁⲱⲑ Ⲕⲉ̅.\nⲔⲁⲓ ⲛⲩⲛ ⲕⲁⲓ ⲁ̀ⲉⲓ ⲕⲁⲓ ⲉⲓⲥ ⲧⲟⲩⲥ ⲁⲓⲱ̀ⲛⲁⲥ ⲧⲱⲛ ⲁⲓⲱ̀ⲛⲱⲛ ⲁ̀ⲙⲏⲛ.\nⲦⲫⲉ ⲣⲁϣⲓ · ⲡ̀ⲕⲁϩⲓ ⲑⲉⲗⲏⲗ · ⲁⲛⲓⲭⲉⲣⲟⲩⲃⲓⲙ ⲩⲫⲱⲣϣ ⲛ̀ⲛⲟⲩⲧⲉⲛϩ · ⲉⲩⲱϣⲉⲃⲟⲗ ϣⲁ ϣⲟⲙⲧ ⲛ̀ⲥⲟⲡ · ⲕⲁⲧⲁ ⲡⲧⲩⲡⲟⲥ ⲛ̀ϯⲧⲣⲓⲁⲥ.\nⲀⲅⲓⲟⲥ : ⲁ̀ⲅⲓⲟⲥ : ⲁ̀ⲅⲓⲟⲥ Ⲕⲉ̅ · ⲕⲁⲓ ⲛⲩⲛ.\nⲞ ⲗⲁⲟⲥ.\nⲦⲁ̀ ⲭⲉⲣⲟⲩⲃⲓⲙ : ⲡ̀ⲣⲟⲥⲕⲩⲛⲟⲛ ⲁⲩⲧⲩⲛ · ⲧⲁ̀ ⲥⲉⲣⲁⲫⲓⲙ · ⲇⲟⲝⲁⲍⲟⲛ ⲉⲕⲉⲓⲛⲟⲛ : ⲕⲉⲕⲣⲁⲅⲟⲛⲧⲁ : ⲕⲁⲓ ⲗⲉⲅⲟⲛⲧⲁ ⲧⲩⲛ ⲧⲣⲓⲥⲁⲅⲓⲟⲛ ⲅ̅.\nⲚⲓⲭⲉⲣⲟⲩⲃⲓⲙ : ⲥⲉⲟⲩⲱϣⲧ ⲙ̀ⲙⲟϥ · ⲛⲓⲥⲉⲣⲁⲫⲓⲙ ⲥⲉϯⲱ̀ⲟⲩ ⲛⲁϥ · ⲉⲩⲱϣⲉ̀ⲃⲟⲗ ⲉⲩϫⲱⲙ̀ⲙⲟⲥ · ϫⲉ ⲁ̀ⲅⲓⲟⲥ · ⲁ̀ⲅⲓⲟⲥ · ⲁ̀ⲅⲓⲟⲥ.",
+      "text_edition_id": "edition.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki",
+      "text_sha256": "0f48aed172c17f0da733f9c4dd0e1227ddfe20302131ea5ad891c4c54dd8f922",
+      "unit_id": "unit.tuki-1736.coptic.basil.pre-sanctus-hymns",
+      "witness_id": "tuki-1736-bonn-pdf",
+      "witness_pages": [
+        [
+          392,
+          395
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "hymn",
+      "language": "cop",
+      "native_path": [
+        "anaphoras",
+        "st-basil",
+        "sanctus"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-checked-coptic-d4a0d5a2",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-checked-coptic-d4a0d5a2",
+      "source_id": "passage.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-coptic-sanctus",
+      "source_locator": "Constituent unit 4/8 (anaphoras/st-basil/sanctus), normalized physical lines 57–57.",
+      "source_order": 4,
+      "text": "Ⲛⲓⲭⲉⲣⲟⲩⲃⲓⲙ ⲛⲉⲙ ⲛⲓⲥⲉⲣⲁⲫⲓⲙ : ⲉⲩⲱϣⲉ̀ⲃⲟⲗ ⲉⲩϫⲱⲙ̀ⲙⲟⲥ · ϫⲉ ⲁ̀ⲅⲓⲟⲥ · ⲁ̀ⲅⲓⲟⲥ : ⲁ̀ⲅⲓⲟⲥ Ⲕⲩⲣⲓⲟⲥ ⲥⲁⲃⲁⲱⲑ ⲡⲗⲏⲣⲏⲥ ⲟ̀ ⲟⲩⲣⲁⲛⲟⲥ : ⲕⲁⲓ ⲏ̀ ⲅⲏ ⲧⲏⲥ ⲁ̀ⲅⲓⲁⲥ ⲥⲟⲩ ⲇⲟⲝⲏⲥ.",
+      "text_edition_id": "edition.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki",
+      "text_sha256": "328cee4a6cc150897974e9625c95bd44d7f0f75449f75e723c5696618cd7d04a",
+      "unit_id": "unit.tuki-1736.coptic.basil.sanctus",
+      "witness_id": "tuki-1736-bonn-pdf",
+      "witness_pages": [
+        [
+          396,
+          396
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-cues",
+      "language": "cop",
+      "native_path": [
+        "anaphoras",
+        "st-basil",
+        "post-sanctus"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-checked-coptic-d4a0d5a2",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-checked-coptic-d4a0d5a2",
+      "source_id": "passage.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-coptic-post-sanctus",
+      "source_locator": "Constituent unit 5/8 (anaphoras/st-basil/post-sanctus), normalized physical lines 58–79.",
+      "source_order": 5,
+      "text": "Ⲟ ⲓ̀ⲉⲣⲉⲩⲥ.\nⲬⲟⲩⲁⲃ ⲭⲟⲩⲁⲃ ⲭⲟⲩⲁⲃ ϧⲉⲛ ⲟⲩⲙⲉⲑⲙⲏⲓ Ⲡϭ̅ⲥ̅ ⲡⲉⲛⲛⲟⲩϯ : ⲫⲏ ⲉ̀ⲧⲁϥⲉⲣⲡⲗⲁⲍⲓⲛ ⲙ̀ⲙⲟⲛ ⲟⲩⲟϩ ⲁϥⲑⲁⲙⲓⲟⲛ : ⲟⲩⲟϩ ⲁϥⲭⲁⲛ ϧⲉⲛ ⲡⲓⲡⲁⲣⲁⲇⲓⲥⲟⲥ ⲛ̀ⲧⲉ ⲡⲟⲩⲛⲟϥ.\nϦⲉⲛ ⲡ̀ϫⲓⲛⲑⲣⲉⲛⲉⲣⲡⲁⲣⲁⲃⲉⲛⲓⲛ ⲇⲉ ⲛ̀ⲧⲉⲕⲉⲛⲧⲟⲗⲏ · ϩⲓⲧⲉⲛ ϯⲁ̀ⲡⲁⲧⲏ ⲛ̀ⲧⲉ ⲡⲓϩⲟϥ.\nⲀⲛϩⲉⲓ ⲉ̀ⲃⲟⲗϧⲉⲛ ⲡⲓⲱⲛϧ ⲛ̀ⲉⲛⲉϩ : ⲟⲩⲟϩ ⲁⲩⲉⲣⲉⲝⲟⲣⲓⲍⲓⲛ ⲙ̀ⲙⲟⲛ ⲉ̀ⲃⲟⲗϧⲉⲛ ⲡⲓⲡⲁⲣⲁⲇⲓⲥⲟⲥ ⲛ̀ⲧⲉ ⲡⲟⲩⲛⲟϥ.\nⲘⲡⲉⲕⲭⲁⲛ ⲛ̀ⲥⲱⲕ ⲟⲛ ϣⲁⲉ̀ⲃⲟⲗ · ⲁⲗⲗⲁ ⲁⲕϫⲉⲙⲡⲉⲛϣⲓⲛⲓ ϧⲉⲛ ⲟⲩⲙⲟⲛⲉ̀ⲃⲟⲗ ϩⲓⲧⲉⲛ ⲛⲉⲕⲡⲣⲟⲫⲏⲧⲏⲥ ⲉ̀ⲑⲟⲩⲁⲃ.\nⲞⲩⲟϩ ϧⲉⲛ ⲧϧⲁⲉ̀ ⲛ̀ⲧⲉ ⲛⲓⲉ̀ϩⲟⲟⲩ : ⲁⲕⲟⲩⲱⲛϩ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ ⲁ̀ⲛⲟⲛ ϧⲁⲛⲏ ⲉⲧϩⲉⲙⲥⲓ ϧⲉⲛ ⲡⲭⲁⲕⲓ ⲛⲉⲙ ⲧϧⲏⲓⲃⲓ ⲙ̀ⲫⲙⲟⲩ.\nϨⲓⲧⲉⲛ ⲡⲉⲕⲙⲟⲛⲟⲅⲉⲛⲏⲥ ⲛ̀ϣⲏⲣⲓ : ⲡⲉⲛϭ̅ⲥ̅ ⲟⲩⲟϩ ⲡⲉⲛⲛⲟⲩϯ · ⲟⲩⲟϩ ⲡⲉⲛⲥⲱⲧⲏⲣ Ⲓⲏ̅ⲥ̅ Ⲡⲭ̅ⲥ̅.\nⲪⲁⲓ ⲉ̀ⲧⲉ ⲉ̀ⲃⲟⲗϧⲉⲛ ⲡⲓⲡⲛ̅ⲁ̅ ⲉ̀ⲑⲟⲩⲁⲃ · ⲛⲉⲙ ⲉ̀ⲃⲟⲗϧⲉⲛ ϯⲡⲁⲣⲑⲉⲛⲟⲥ ⲉ̀ⲑⲟⲩⲁⲃ. Ⲙⲁⲣⲓⲁⲙ.\nⲞ ⲗⲁⲟⲥ · ⲁ̀ⲙⲏⲛ.\nⲀϥϭⲓⲥⲁⲣⲝ ⲟⲩⲟϩ ⲁϥⲉⲣⲣⲱⲙⲓ : ⲁϥⲧⲥⲁⲃⲟⲛ ⲉ̀ϩⲁⲛⲙⲱⲓⲧ ⲛ̀ⲧⲉ ⲡⲓⲟⲩϫⲁⲓ ·\nⲈⲁϥⲉⲣⲭⲁⲣⲓⲍⲉⲥⲑⲉ ⲛⲁⲛ ⲙ̀ⲡⲓⲙⲓⲥⲓ ⲛ̀ⲉ̀ⲃⲟⲗⲙ̀ⲡϣⲱⲓ ϩⲓⲧⲉⲛ ⲟⲩⲙⲱⲟⲩ ⲛⲉⲙ ⲟⲩⲡⲛ̅ⲁ̅.\nⲀϥⲁⲓⲧⲉ̀ⲛ ⲛⲁϥ ⲛ̀ⲟⲩⲗⲁⲟⲥ ⲉϥⲑⲟⲩⲏⲧ · ⲁϥⲑⲣⲉⲛϣⲱⲡⲓ ⲛ̀ⲟⲩⲁⲃ · ϩⲓⲧⲉⲛ ⲡⲉⲕⲡⲛ̅ⲁ̅ ⲉ̀ⲑ̅ⲩ̅.\nⲪⲁⲓ ⲉ̀ⲧⲁϥⲙⲉⲛⲣⲉ ⲛⲏ ⲉ̀ⲧⲉⲛⲟⲩϥ ⲉⲧϧⲉⲛ ⲡⲓⲕⲟⲥⲙⲟⲥ · ⲁϥⲧⲏⲓϥ ⲙ̀ⲙⲓⲛⲙ̀ⲙⲟϥ ⲛ̀ⲥⲱϯ ϧⲁⲣⲟⲛ · ⲙ̀ⲫⲙⲟⲩ ⲉ̀ⲧⲟⲓ ⲛ̀ⲟⲩⲣⲟ ⲉ̀ϩⲣⲏⲓ ⲉ̀ϫⲱⲛ.\nⲪⲁⲓ ⲉ̀ⲛⲁⲩⲁ̀ⲙⲟⲛⲓ ⲙ̀ⲙⲟⲛ ⲉ̀ⲃⲟⲗ ϩⲓⲧⲟⲧϥ ⲉⲛⲧⲟⲓⲉ̀ⲃⲟⲗ ϩⲓⲧⲉⲛ ⲛⲟⲃⲓ.\nⲀϥϣⲉⲛⲁϥ ⲉ̀ⲡⲉⲥⲏⲧ ⲉ̀ⲁⲙⲉⲛϯ ⲉ̀ⲃⲟⲗϩⲓⲧⲉⲛ ⲡⲓⲥⲧⲁⲩⲣⲟⲥ.\nⲞ ⲗⲁⲟⲥ : ⲁ̀ⲙⲏⲛ ϯⲛⲁϩϯ.\nⲀϥⲧⲱⲛϥ ⲉ̀ⲃⲟⲗϧⲉⲛ ⲛⲏ ⲉⲑⲙⲱⲟⲩⲧ : ϧⲉⲛ ⲡⲓⲉ̀ϩⲟⲟⲩ ⲙ̀ⲙⲁϩϣⲟⲙⲧ.\nⲀϥϣⲉⲛⲁϥ ⲉ̀ⲡ̀ϣⲱⲓ ⲉ̀ⲛⲓⲫⲏⲟⲩⲓ̀ · ⲁϥϩⲉⲙⲥⲓ ⲥⲁⲧⲉⲕⲟⲩⲓ̀ⲛⲁⲙ Ⲫⲓⲱⲧ.\nⲈⲁϥⲑⲱϣ ⲛ̀ⲟⲩⲉ̀ϩⲟⲟⲩ ⲛ̀ϯϣⲉⲃⲓⲱ̀ : ⲫⲁⲓ ⲉ̀ⲧⲉϥⲛⲁⲟⲩⲱⲛϩⲉ̀ⲃⲟⲗ ⲛ̀ϧⲏⲧϥ · ⲉ̀ϯϩⲁⲡ ⲉ̀ϯⲟⲓⲕⲟⲩⲙⲉⲛⲏ ϧⲉⲛ ⲟⲩⲇⲓⲕⲉⲟ̀ⲥⲩⲛⲏ.\nⲞⲩⲟϩ ϥⲛⲁϯ ⲙ̀ⲡⲓⲟⲩⲁⲓ ⲕⲁⲧⲁ ⲛⲉϥϩⲃⲏⲟⲩⲓ̀.\nⲞ ⲗⲁⲟⲥ ⲗⲉⲅⲉⲓ.\nⲔⲁⲧⲁ ⲧⲟ̀ ⲉ̀ⲗⲉⲟⲥ ⲥⲟⲩ Ⲕⲉ̅ ⲕⲁⲓ ⲙⲏ ⲕⲁⲧⲁ ⲧⲁⲥ ⲁⲙⲁⲣⲧⲓⲁⲥ ⲏ̀ⲙⲱⲛ.",
+      "text_edition_id": "edition.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki",
+      "text_sha256": "dfa4198e3fd54828c751c12b0a63a0dcc6c9abc941f582a152d6afc98ea00393",
+      "unit_id": "unit.tuki-1736.coptic.basil.post-sanctus",
+      "witness_id": "tuki-1736-bonn-pdf",
+      "witness_pages": [
+        [
+          396,
+          399
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "institution-narrative-with-cues",
+      "language": "cop",
+      "native_path": [
+        "anaphoras",
+        "st-basil",
+        "institution-narrative"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-checked-coptic-d4a0d5a2",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-checked-coptic-d4a0d5a2",
+      "source_id": "passage.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-coptic-institution-narrative",
+      "source_locator": "Constituent unit 6/8 (anaphoras/st-basil/institution-narrative), normalized physical lines 80–114.",
+      "source_order": 6,
+      "text": "Ⲟ ⲓ̀ⲉⲣⲉⲩⲥ.\nⲀϥⲭⲱ ⲇⲉ ⲛⲁⲛ ⲉ̀ϧⲣⲏⲓ ⲙ̀ⲡⲁⲓⲛⲓϣϯ ⲙ̀ⲙⲩⲥⲧⲏⲣⲓⲟⲛ ⲛ̀ⲧⲉ ϯⲙⲉⲧⲉⲩⲥⲉⲃⲏⲥ.\nⲈϥⲑⲏϣ ⲅⲁⲣ ⲉ̀ⲧⲏⲓϥ ⲙ̀ⲫⲙⲟⲩ ϧⲁⲡⲱⲛϧ ⲙ̀ⲡⲓⲕⲟⲥⲙⲟⲥ.\nⲞ ⲗⲁⲟⲥ ⲗⲉⲅⲉⲓ.\nⲠⲓⲥⲧⲉⲩⲟ̀ⲙⲉⲛ ⲧⲉⲛⲛⲁϩϯ ϫⲉ ⲫⲁⲓ ⲡⲉ ϧⲉⲛ ⲟⲩⲙⲉⲑⲙⲏⲓ : ⲁ̀ⲙⲏⲛ.\nⲠⲓⲥⲧⲉⲩⲟ̀ⲙⲉ̀ⲛ ⲕⲁⲓ ⲟⲙⲟⲗⲟⲅⲟⲩⲙⲉⲛ · ⲕⲁⲓ ⲇⲟⲝⲁⲍⲟⲙⲉⲛ.\nⲀϥϭⲓ ⲛ̀ⲟⲩⲱⲓⲕ ⲉ̀ϫⲉⲛ ⲛⲉϥϫⲓϫ ⲉ̀ⲑⲟⲩⲁⲃ : ⲛ̀ⲁⲧⲁϭⲛⲓ · ⲟⲩⲟϩ ⲛ̀ⲁⲧⲑⲱⲗⲉⲃ · ⲟⲩⲟϩ ⲙ̀ⲙⲁⲕⲁⲣⲓⲟⲛ ⲟⲩⲟϩ ⲛ̀ⲣⲉϥⲧⲁⲛϧⲟ\nϮⲛⲁϩϯ ϫⲉ ⲫⲁⲓ ⲡⲉ ϧⲉⲛ ⲟⲩⲙⲉⲑⲙⲏⲓ ⲁ̀ⲙⲏⲛ.\nⲀϥϫⲟⲩϣⲧ ⲉ̀ⲡ̀ϣⲱⲓ ⲉ̀ⲧⲫⲉ ϩⲁⲣⲟⲕ · ⲫⲏ ⲉ̀ⲧⲉ ⲫⲱϥ ⲛ̀ⲓⲱⲧ Ⲫϯ · ⲟⲩⲟϩ ⲫⲛⲏⲃ ⲛ̀ⲧⲉ ⲟⲩⲟⲛ ⲛⲓⲃⲉⲛ.\nⲈⲧⲁϥϣⲉⲡϩⲙⲟⲧ ✠\nⲞ ⲗⲁⲟⲥ · Ⲁⲙⲏⲛ.\nⲀϥⲥⲙⲟⲩ ⲉ̀ⲣⲟϥ ✠\nⲞ ⲗⲁⲟⲥ · Ⲁⲙⲏⲛ.\nⲀϥⲉ̀ⲣⲁ̀ⲅⲓⲁ̀ⲍⲓⲛ ⲙ̀ⲙⲟϥ ✠\nⲞ ⲗⲁⲟⲥ · Ⲁⲙⲏⲛ.\nⲀⲙⲏⲛ : ⲁ̀ⲙⲏⲛ : ⲁ̀ⲙⲏⲛ : ⲡⲓⲥⲧⲉⲩⲟ̀ⲙⲉⲛ · ⲕⲁⲓ̀ ⲟⲙⲟⲗⲟⲅⲟⲩⲙⲉⲛ · ⲕⲁⲓ̀ ⲇⲟⲝⲁⲍⲟⲙⲉⲛ.\nⲀϥⲫⲁϣϥ ⲁϥⲧⲏⲓϥ ⲛ̀ⲛⲏ ⲉ̀ⲧⲉⲛⲟⲩϥ ⲛ̀ⲁ̀ⲅⲓⲟⲥ ⲙ̀ⲙⲁⲑⲏⲧⲏⲥ : ⲟⲩⲟϩ ⲛ̀ⲁ̀ⲡⲟⲥⲧⲟⲗⲟⲥ ⲉ̀ⲑⲟⲩⲁⲃ ⲉϥϫⲱⲙ̀ⲙⲟⲥ.\nϪⲉ ϭⲓⲟⲩⲱⲙ ⲉ̀ⲃⲟⲗⲛ̀ϧⲏⲧϥ ⲧⲏⲣⲟⲩ.\nⲪⲀⲒ ⲄⲀⲢ ⲠⲈ ⲠⲀⲤⲰⲘⲀ ·\nⲈⲧⲟⲩⲛⲁⲫⲁϣϥ · ⲉ̀ϫⲉⲛ ⲑⲏⲛⲟⲩ · ⲛⲉⲙ ϩⲁⲛⲕⲉⲙⲏϣ ⲛ̀ⲥⲉⲧⲏⲓϥ ⲉ̀ⲡⲭⲱⲉ̀ⲃⲟⲗ ⲛ̀ⲧⲉ ⲛⲓⲛⲟⲃⲓ · ⲫⲁⲓ ⲁ̀ⲣⲓⲧϥ ⲉ̀ⲡⲁⲉⲣⲫⲙⲉⲩⲓ̀.\nⲞ ⲗⲁⲟⲥ :\nⲠⲓⲥⲧⲉⲩⲟⲙⲉⲛ ⲫⲁⲓ ⲡⲉ ϧⲉⲛ ⲟⲩⲙⲉⲑⲙⲏⲓ ⲁ̀ⲙⲏⲛ.\nⲠⲁⲓⲣⲏϯ ⲟⲛ ⲡⲓⲕⲉⲁ̀ⲫⲟⲧ ⲙⲉⲛⲉⲛⲥⲁ ⲡⲓⲇⲓⲡⲛⲟⲛ · ⲁϥⲑⲟⲧϥ ⲉ̀ⲃⲟⲗϧⲛ ⲟⲩⲏⲣⲡ ⲛⲉⲙ ⲟⲩⲙⲱⲟⲩ ·\nⲈⲧⲁϥϣⲉⲡϩⲙⲟⲧ ✠\nⲞ ⲗⲁⲟⲥ · Ⲁⲙⲏⲛ.\nⲀϥⲥⲙⲟⲩ ⲉ̀ⲣⲟϥ ✠\nⲞ ⲗⲁⲟⲥ · Ⲁⲙⲏⲛ.\nⲀϥⲉⲣⲁ̀ⲅⲓⲁ̀ⲍⲓⲛ ⲙ̀ⲙⲟϥ ✠\nⲞ ⲗⲁⲟⲥ · Ⲁⲙⲏⲛ.\nⲀⲙⲏⲛ · ⲁ̀ⲙⲏⲛ · ⲁ̀ⲙⲏⲛ · ⲕⲁⲓ ⲡⲁⲗⲓⲛ ⲡⲓⲥⲧⲉⲩⲟ̀ⲙⲉⲛ · ⲕⲁⲓ ⲟⲙⲟⲗⲟⲅⲟⲩⲙⲉⲛ · ⲕⲁⲓ ⲇⲟⲝⲁⲍⲟⲙⲉⲛ.\nⲀϥϫⲉⲙϯⲡⲓ ⲁϥⲧⲏⲓϥ ⲟⲛ ⲛ̀ⲛⲏ ⲉ̀ⲧⲉⲛⲟⲩϥ ⲛ̀ⲁ̀ⲅⲓⲟⲥ ⲙ̀ⲙⲁⲑⲏⲧⲏⲥ · ⲟⲩⲟϩ ⲛ̀ⲁ̀ⲡⲟⲥⲧⲟⲗⲟⲥ ⲉ̀ⲑⲟⲩⲁⲃ ⲉϥϫⲱⲙ̀ⲙⲟⲥ.\nϪⲉ ϭⲓⲥⲱ ⲉ̀ⲃⲟⲗⲛ̀ϧⲏⲧϥ ⲧⲏⲣⲟⲩ.\nⲪⲀⲒ ⲄⲀⲢ ⲠⲈ ⲠⲀⲤⲚⲞϤ ⲚⲦⲈ ϮⲆⲒⲀⲐⲎⲔⲎ ⲘⲂⲈⲢⲒ ⲈⲦⲞⲨⲚⲀⲪⲞⲚϤ ⲈⲂⲞⲖ ⲈϪⲈⲚ ⲐⲎⲚⲞⲨ : ⲚⲈⲘ ϨⲀⲚⲔⲈⲘⲎϢ ⲚⲤⲈⲦⲎⲒϤ Ⲉ ⲠⲬⲰⲈⲂⲞⲖ ⲚⲦⲈ ⲚⲒⲚⲞⲂⲒ · ⲫⲁⲓ ⲁ̀ⲣⲓⲧϥ ⲉ̀ⲡⲁⲉⲣⲫⲙⲉⲩⲓ̀.\nⲞ ⲗⲁⲟⲥ.\nⲀⲙⲏⲛ ⲧⲉⲛⲛⲁϩϯ ϫⲉ ⲫⲁⲓ ⲡⲉ ϧⲉⲛ ⲟⲩⲙⲉⲑⲙⲏⲓ ⲁ̀ⲙⲏⲛ.",
+      "text_edition_id": "edition.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki",
+      "text_sha256": "0e9c374887a6d7095cc06afc09b41ebe92975d5a432ab3d4908160fd81e23a96",
+      "unit_id": "unit.tuki-1736.coptic.basil.institution-narrative",
+      "witness_id": "tuki-1736-bonn-pdf",
+      "witness_pages": [
+        [
+          399,
+          404
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-cues",
+      "language": "cop",
+      "native_path": [
+        "anaphoras",
+        "st-basil",
+        "anamnesis"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-checked-coptic-d4a0d5a2",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-checked-coptic-d4a0d5a2",
+      "source_id": "passage.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-coptic-anamnesis",
+      "source_locator": "Constituent unit 7/8 (anaphoras/st-basil/anamnesis), normalized physical lines 115–129.",
+      "source_order": 7,
+      "text": "Ⲥⲟⲡ ⲅⲁⲣ ⲛⲓⲃⲉⲛ ⲉ̀ⲧⲉⲧⲉⲛⲛⲁⲟⲩⲱⲙ ⲉ̀ⲃⲟⲗϧⲉⲛ ⲡⲁⲓⲱⲓⲕ ⲫⲁⲓ.\nⲞⲩⲟϩ ⲛ̀ⲧⲉⲧⲉⲛⲥⲱ ⲉ̀ⲃⲟⲗϧⲉⲛ ⲡⲁⲓⲁ̀ⲫⲟⲧ ⲫⲁⲓ.\nⲈⲣⲉⲧⲉⲛϩⲓⲱⲓϣ ⲙ̀ⲡⲁⲙⲟⲩ · ⲉ̀ⲣⲉⲧⲉⲛⲉⲣⲟ̀ⲙⲟⲗⲟⲅⲓⲛ ⲛ̀ⲧⲁⲁ̀ⲛⲁⲥⲧⲁⲥⲓⲥ · ⲉ̀ⲣⲉⲧⲉⲛⲓⲣⲓ ⲙ̀ⲡⲁⲙⲉⲩⲓ̀ ϣⲁϯⲓ̀.\nⲞ ⲗⲁⲟⲥ ⲗⲉⲅⲉⲓ.\nⲀⲙⲏⲛ ⲁ̀ⲙⲏⲛ ⲁ̀ⲙⲏⲛ ⲧⲟⲛ ⲑⲁⲛⲁⲧⲟⲛ ⲥⲟⲩ Ⲕⲩⲣⲓⲉ ⲕⲁⲧⲁⲅⲅⲉⲗⲗⲟⲙⲉⲛ ⲕⲁⲓ ⲧⲏⲛ ⲁ̀ⲅⲓⲁ̀ⲛ ⲥⲟⲩ ⲁ̀ⲛⲁⲥⲧⲁⲥⲓⲛ · ⲕⲁⲓ ⲁ̀ⲛⲁⲗⲏⲯⲓⲛ · ⲟⲙⲟⲗⲟⲅⲟⲩⲙⲉⲛ.\nⲤⲉ ⲁⲓⲛⲟⲩⲙⲉⲛ ⲥⲉ ⲉⲩⲗⲟⲅⲟⲩⲙⲉⲛ · ⲥⲟⲓ ⲉⲩⲭⲁⲣⲓⲥⲧⲟⲩⲙⲉⲛ : Ⲕⲉ̅ : ⲕⲁⲓ ⲇⲉⲟⲙⲉⲑⲁ ⲥⲟⲩ ⲟ̀ Ⲑⲉⲟⲥ ⲏ̀ⲙⲱⲛ.\nⲞ ⲓ̀ⲉⲣⲉⲩⲥ ⲉ̀ⲡⲓⲕⲗⲏⲥⲓⲥ ⲙⲩⲥⲧⲓⲕⲱ̀ⲥ.\nⲈⲛⲓⲣⲓ ⲟⲩⲛϩⲱⲛ ⲙ̀ⲫⲙⲉⲩⲓ̀ ⲛ̀ⲛⲉϥϧⲓⲥⲓ ⲉ̀ⲑⲟⲩⲁⲃ.\nⲚⲉⲙ ⲡⲉϥϫⲓⲛⲧⲱⲛϥ ⲉ̀ⲃⲟⲗϧⲉⲛ ⲛⲏ ⲉⲑⲙⲱⲟⲩⲧ.\nⲚⲉⲙ ⲡⲉϥϫⲓⲛϣⲉ ⲉ̀ⲡϣⲱⲓ ⲉ̀ⲛⲓⲫⲏⲟⲩⲓ̀ : ⲛⲉⲙ ⲡⲉϥϫⲓⲛϩⲉⲙⲥⲓ ⲥⲁⲧⲉⲕⲟⲩⲓ̀ⲛⲁⲙ Ⲫⲓⲱⲧ.\nⲚⲉⲙ ⲧⲉϥⲙⲁϩⲥⲛⲁⲩϯ ⲙ̀ⲡⲁⲣⲟⲩⲥⲓⲁ̀ ⲉⲑⲛⲏⲟⲩ ⲉ̀ⲃⲟⲗϧⲉⲛ ⲛⲓⲫⲏⲟⲩⲓ̀ ⲉ̀ⲧⲟⲓ ⲛ̀ϩⲟϯ ⲟⲩⲟϩ ⲉⲑⲙⲉϩ ⲛ̀ⲱ̀ⲟⲩ.\nⲦⲉⲛⲉⲣⲡⲣⲟⲥⲫⲉⲣⲓⲛ ⲛⲁⲕ ⲛ̀ⲛⲏ ⲉ̀ⲧⲉⲛⲟⲩⲕ ⲛ̀ⲇⲱⲣⲟⲛ ⲉ̀ⲃⲟⲗϧⲉⲛ ⲛⲏ ⲉ̀ⲧⲉⲛⲟⲩⲕ · ⲕⲁⲧⲁ ϩⲱⲃ ⲛⲓⲃⲉⲛ · ⲛⲉⲙ ⲉⲑⲃⲉ ϩⲱⲃ ⲛⲓⲃⲉⲛ · ⲛⲉⲙ ϧⲉⲛ ϩⲱⲃ ⲛⲓⲃⲉⲛ.\nⲞ ⲇⲓⲁ̀ⲕⲱⲛ.\nⲞⲩⲱϣⲧ ⲙ̀Ⲫϯ ϧⲉⲛ ⲟⲩϩⲟϯ ⲛⲉⲙ ⲟⲩⲥⲑⲉⲣⲧⲉⲣ.\nⲦⲉⲛϩⲱⲥ ⲉ̀ⲣⲟⲕ · ⲧⲉⲛⲥⲙⲟⲩ ⲉ̀ⲣⲟⲕ · ⲧⲉⲛϣⲉⲙϣⲓ ⲙ̀ⲙⲟⲕ · ⲧⲉⲛⲟⲩⲱϣⲧ ⲙ̀ⲙⲟⲕ.",
+      "text_edition_id": "edition.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki",
+      "text_sha256": "786dabaabc50022538f96e7320493d0b5ea9b08a233ecdbdcf36164cc25e42a3",
+      "unit_id": "unit.tuki-1736.coptic.basil.anamnesis",
+      "witness_id": "tuki-1736-bonn-pdf",
+      "witness_pages": [
+        [
+          404,
+          406
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-cues",
+      "language": "cop",
+      "native_path": [
+        "anaphoras",
+        "st-basil",
+        "epiclesis"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-checked-coptic-d4a0d5a2",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-checked-coptic-d4a0d5a2",
+      "source_id": "passage.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-coptic-epiclesis",
+      "source_locator": "Constituent unit 8/8 (anaphoras/st-basil/epiclesis), normalized physical lines 130–149.",
+      "source_order": 8,
+      "text": "Ⲟⲩⲟϩ ⲧⲉⲛϯϩⲟ ⲉ̀ⲣⲟⲕ Ⲡⲭ̅ⲥ̅ ⲡⲉⲛⲛⲟⲩϯ · ⲁ̀ⲛⲟⲛ ϧⲁⲛⲓⲣⲉϥⲉⲣⲛⲟⲃⲓ ⲟⲩⲟϩ ⲛ̀ⲁⲧⲉⲙⲡϣⲁ ⲛ̀ⲉ̀ⲃⲓⲁⲓⲕ ⲛ̀ⲧⲁⲕ.\nⲦⲉⲛⲟⲩⲱϣⲧ ⲙ̀ⲙⲟⲕ ⲉ̀ⲃⲟⲗ ϩⲓⲧⲉⲛ ⲡ̀ϯⲙⲁϯ ⲛ̀ⲧⲉ ⲧⲉⲕⲙⲉⲧⲁ̀ⲅⲁⲑⲟⲥ.\nⲈⲑⲣⲉ ⲡⲉⲕⲡⲛ̅ⲁ̅ ⲉ̀ⲑⲟⲩⲁⲃ : ⲓ̀ ⲉ̀ϧⲣⲏⲓ ⲉ̀ϫⲱⲛ : ⲛⲉⲙ ⲉ̀ϫⲉⲛ ⲛⲁⲓ ⲇⲱⲣⲟⲛ ⲛⲁⲓ ⲉⲧⲭⲏ ⲉ̀ϧⲣⲏⲓ : ⲟⲩⲟϩ ⲛ̀ⲧⲉϥⲧⲟⲩⲃⲱⲟⲩ · ⲟⲩⲟϩ ⲛ̀ⲧⲉϥⲟⲩⲟⲛϩⲟⲩ ⲉ̀ⲃⲟⲗ · ⲉⲩⲟⲩⲁⲃ ⲛ̀ⲧⲉ ⲛⲏ ⲉ̀ⲑⲟⲩⲁⲃ ⲛ̀ⲧⲁⲕ.\nⲞ ⲇⲓⲁ̀ⲕⲱⲛ.\nⲠⲣⲩⲥⲭⲱⲙⲉⲛ ⲁ̀ⲙⲏⲛ.\nⲞ ⲓ̀ⲉⲣⲉⲩⲥ ⲱϣⲉ̀ⲃⲟⲗ ⲙ̀ⲡⲁⲓⲙⲁ.\nⲞⲩⲟϩ ⲡⲁⲓ ⲱⲓⲕ ⲙⲉⲛ ⲛ̀ⲧⲉϥⲁⲓϥ ⲛ̀ⲥⲱⲙⲁ ⲉϥⲟⲩⲁⲃ ⲛ̀ⲧⲁϥ ✠\nⲞ ⲗⲁⲟⲥ ϯⲛⲁϩϯ.\nⲠⲉⲛϭ̅ⲥ̅ ⲟⲩⲟϩ ⲡⲉⲛⲛⲟⲩϯ : ⲟⲩⲟϩ ⲡⲉⲛⲥⲱⲧⲏⲣ Ⲓⲏ̅ⲥ̅ Ⲡⲭ̅ⲥ̅ ✠\nⲈⲩϯ ⲙ̀ⲙⲟϥ ⲉ̀ⲡ̀ⲭⲱⲉ̀ⲃⲟⲗ ⲛ̀ⲧⲉ ⲛⲓⲛⲟⲃⲓ ⲛⲉⲙ ⲟⲩⲱⲛϧ ⲛ̀ⲉⲛⲉϩ ⲛ̀ⲛⲏ ⲉⲑⲛⲁϭⲓ ⲉ̀ⲃⲟⲗⲛ̀ϧⲏⲧϥ ✠\nⲞ ⲗⲁⲟⲥ · Ⲁⲙⲏⲛ.\nⲞⲩⲟϩ ⲡⲁⲓ ⲁ̀ⲫⲟⲧ ⲇⲉ ⲟ̀ⲛ ⲛ̀ⲥⲛⲟϥ ⲉⲧⲧⲁⲓⲏⲟⲩⲧ ⲛ̀ⲧⲉ ϯⲇⲓⲁ̀ⲑⲏⲕⲏ ⲙ̀ⲃⲉⲣⲓ ⲛ̀ⲧⲁϥ ✠\nⲞ ⲗⲁⲟⲥ ϯⲛⲁϩϯ.\nⲠⲉⲛϭ̅ⲥ̅ ⲟⲩⲟϩ ⲡⲉⲛⲛⲟⲩϯ : ⲟⲩⲟϩ ⲡⲉⲛⲥⲱⲧⲏⲣ Ⲓⲏ̅ⲥ̅ Ⲡⲭ̅ⲥ̅ ✠\nⲈⲩϯ ⲙ̀ⲙⲟϥ ⲉ̀ⲡ̀ⲭⲱⲉ̀ⲃⲟⲗ ⲛ̀ⲧⲉ ⲛⲓⲛⲟⲃⲓ · ⲛⲉⲙ ⲟⲩⲱⲛϧ ⲛ̀ⲉⲛⲉϩ ⲛ̀ⲛⲏ ⲉⲑⲛⲁϭⲓ ⲉ̀ⲃⲟⲗⲛ̀ϧⲏⲧϥ ✠\nⲞ ⲗⲁⲟⲥ · Ⲁⲙⲏⲛ Ⲕⲉ̅ Ⲕⲉ̅ Ⲕⲩⲣⲓⲉ ⲉ̀ⲗⲉⲏⲥⲟⲛ.\nⲀⲣⲓⲧⲉⲛ ⲛⲉⲙⲡ̀ϣⲁ ⲧⲏⲣⲉⲛ ⲡⲉⲛⲛⲏⲃ ⲉ̀ϭⲓ ⲉ̀ⲃⲟⲗϧⲉⲛ ⲛⲏ ⲉ̀ⲑ̅ⲩ̅ ⲛ̀ⲧⲁⲕ.\nⲈ ⲟⲩⲧⲟⲩⲃⲟ ⲛ̀ⲧⲉ ⲛⲉⲛⲯⲩⲭⲏ · ⲛⲉⲙ ⲡⲉⲛⲥⲱⲙⲁ · ⲛⲉⲙ ⲡⲉⲛⲡⲛ̅ⲁ̅.\nϨⲓⲛⲁ ⲛ̀ⲧⲉⲛϣⲱⲡⲓ ⲛ̀ⲟⲩⲥⲱⲙⲁ ⲛ̀ⲟⲩⲱⲧ · ⲛⲉⲙ ⲟⲩⲡⲛ̅ⲁ̅ ⲛ̀ⲟⲩⲱⲧ.\nⲚ̀ⲧⲉⲛϫⲓⲙⲓ ⲛ̀ⲟⲩⲙⲉⲣⲟⲥ · ⲛⲉⲙ ⲟⲩⲕⲗⲏⲣⲟⲥ · ⲛⲉⲙ ⲛⲏ ⲉ̀ⲑⲟⲩⲁⲃ ⲧⲏⲣⲟⲩ ⲉ̀ⲧⲁⲩⲣⲁⲛⲁⲕ ⲓⲥϫⲉⲛ ⲡⲉⲛⲉϩ.",
+      "text_edition_id": "edition.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki",
+      "text_sha256": "a53f90283430810941ac89ad98754361de6736ce8cadead844fa5d9303501938",
+      "unit_id": "unit.tuki-1736.coptic.basil.epiclesis",
+      "witness_id": "tuki-1736-bonn-pdf",
+      "witness_pages": [
+        [
+          407,
+          409
+        ]
+      ]
+    }
+  ],
+  "witnesses": [
+    {
+      "artifact_id": "artifact.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.bonn-pdf-add039d0",
+      "edition_id": "edition.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki",
+      "id": "tuki-1736-bonn-pdf",
+      "scope_pages": [
+        [
+          389,
+          409
+        ]
+      ]
+    }
+  ]
+}

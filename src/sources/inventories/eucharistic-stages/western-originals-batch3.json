@@ -312,14 +312,15 @@
       "components": [
         "ordinary",
         "propers",
-        "rubrics"
+        "rubrics",
+        "anaphoras"
       ],
       "witness_ids": [
         "western:iberian-tarazona-1500"
       ],
       "witness_label": "Missale mixtum secundum usum ecclesie et diocesis Tirasonensis (Pamplona,Brocar,1500), Bizkaia INC-35",
       "summary": "The original incipit identifies a mixed missal for Tarazona church and diocese. Its colophon names Pamplona, printer Arnaldus Guillermus de Broquario and completion on 13 February 1500, and attributes commissioning to Bishop Guillermus Raymundus de Moncada with the dean and chapter. The book’s local commissioning statement does not supply a separate promulgation or observed implementation.",
-      "text_coverage": "not-transcribed",
+      "text_coverage": "partial",
       "evidence": [
         {
           "source_id": "western-originals-batch3:tarazona-source",
@@ -333,7 +334,8 @@
         }
       ],
       "limitations": "Only the six named images were directly inspected. No complete Ordinary or Canon, native transcription, exact predecessor state, distinct recension or substantive revision is established. The 1529 printing/copy cluster remains separate and uncollated.",
-      "reception": "The incipit and instruction declare Tarazona use and the colophon names local commissioning; these do not prove receipt or compliance by all diocesan churches."
+      "reception": "The incipit and instruction declare Tarazona use and the colophon names local commissioning; these do not prove receipt or compliance by all diocesan churches.",
+      "text_binding": "native-book:tarazona-1500-canon-missae"
     },
     {
       "id": "western-originals-batch3:huesca-1488",

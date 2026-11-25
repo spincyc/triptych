@@ -2,7 +2,7 @@
 
 [Return to Liturgy](liturgy.md)
 
-Edition-specific studies of the postconciliar Roman Rite, distinct from the 1962 books. Each entry identifies its books, language, territory, cycle, and date where applicable. These books are widely called the *Novus Ordo*; this library names them by their own titles and dates.
+Edition-specific studies of the postconciliar Roman Rite, distinct from the 1962 books. Each entry identifies its books, language, territory, cycle, and date where applicable. These books are widely called the *Novus Ordo*; this library names them by their own titles and dates. Follow the postconciliar editions and their relationship to earlier Roman books in **[Eucharistic Books Through History (Postconciliar Roman Missal)](../history/?view=timeline#tradition=roman-stages-postconciliar&stage=roman-stages-2008)**.
 
 On this page: [Core and reference works](#core-and-reference-works) ·
 [Sunday propers calendar](#sunday-propers-calendar)

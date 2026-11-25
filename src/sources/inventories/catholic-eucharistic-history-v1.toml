@@ -2650,3 +2650,348 @@ unit_ids = ["unit.cistercian-1606.post-canon.oremus-post-canon", "unit.cistercia
 text_set = "cistercian-1657-pater-noster"
 record_id = "western:cistercian-1657"
 unit_ids = ["unit.cistercian-1657.pater-noster.pater-first-introduction", "unit.cistercian-1657.pater-noster.pater-first-prayer-response", "unit.cistercian-1657.pater-noster.pater-first-amen"]
+
+[[text_sets]]
+id = "armenian-1642-badarak-anaphora"
+adapter = "native-book:armenian-1642-badarak-anaphora"
+
+[[text_versions]]
+id = "armenian-1642-badarak-anaphora"
+text_set = "armenian-1642-badarak-anaphora"
+parents = []
+
+[[text_sets]]
+id = "armenian-1823-badarak-anaphora"
+adapter = "native-book:armenian-1823-badarak-anaphora"
+
+[[text_versions]]
+id = "armenian-1823-badarak-anaphora"
+text_set = "armenian-1823-badarak-anaphora"
+parents = []
+
+[[text_sets]]
+id = "byzantine-1754-chrysostom-anaphora"
+adapter = "native-book:byzantine-1754-chrysostom-anaphora"
+
+[[text_versions]]
+id = "byzantine-1754-chrysostom-anaphora"
+text_set = "byzantine-1754-chrysostom-anaphora"
+parents = []
+
+[[text_sets]]
+id = "byzantine-1873-chrysostom-anaphora"
+adapter = "native-book:byzantine-1873-chrysostom-anaphora"
+
+[[text_versions]]
+id = "byzantine-1873-chrysostom-anaphora"
+text_set = "byzantine-1873-chrysostom-anaphora"
+parents = []
+
+[[comparisons]]
+id = "byzantine-1754-1873-chrysostom-anaphora"
+kind = "same-prayer-witness-comparison"
+membership_status = "established"
+basis = "Complete strict Greek Anaphora of St. John Chrysostom in the Rome 1754 and Rome 1873 Propaganda Fide Euchologia, aligned unit-for-unit across all 10 semantic native paths (opening dialogue through concluding blessing). Both witnesses are independently pixel-collated from tracked Google Books facsimiles. The diff exposes concrete textual and rubrical differences including the 1873 addition of choir responses (e.g. Sanctus, Amen, Ἄξιόν ἐστὶν), explicit Third-Hour troparion expansion inside the Epiclesis, and wording/accent variants in the intercessions and Roman-communion footnote."
+apparatus_caveat = "Bounded strict Anaphora constituent only (1754 printed pp. 49–55 / PDF 65–71; 1873 printed pp. 61–68 / PDF 68–75). Pre-Anaphora and post-Anaphora divisions are excluded. Both native text versions remain parentless in Git because the inspected 1873 title and front matter do not explicitly declare 1754 as exemplar. No whole-book completeness, borrowing direction, or textual ancestry is inferred."
+source_refs = ["passage.holy-see.euchologion.1754-rome-propaganda.chrysostom-anaphora-01-opening-dialogue", "passage.holy-see.euchologion.1754-rome-propaganda.chrysostom-anaphora-02-preface-thanksgiving", "passage.holy-see.euchologion.1754-rome-propaganda.chrysostom-anaphora-03-sanctus-and-asterisk", "passage.holy-see.euchologion.1754-rome-propaganda.chrysostom-anaphora-04-post-sanctus-institution", "passage.holy-see.euchologion.1754-rome-propaganda.chrysostom-anaphora-05-anamnesis-oblation", "passage.holy-see.euchologion.1754-rome-propaganda.chrysostom-anaphora-06-epiclesis", "passage.holy-see.euchologion.1754-rome-propaganda.chrysostom-anaphora-07-commemoration-of-saints", "passage.holy-see.euchologion.1754-rome-propaganda.chrysostom-anaphora-08-intercessions-dead-and-church", "passage.holy-see.euchologion.1754-rome-propaganda.chrysostom-anaphora-09-intercessions-hierarch-and-living", "passage.holy-see.euchologion.1754-rome-propaganda.chrysostom-anaphora-10-concluding-doxology-and-blessing", "passage.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-01-opening-dialogue", "passage.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-02-preface-thanksgiving", "passage.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-03-sanctus-and-asterisk", "passage.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-04-post-sanctus-institution", "passage.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-05-anamnesis-oblation", "passage.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-06-epiclesis", "passage.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-07-commemoration-of-saints", "passage.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-08-intercessions-dead-and-church", "passage.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-09-intercessions-hierarch-and-living", "passage.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-10-concluding-doxology-and-blessing"]
+[comparisons.left]
+text_set = "byzantine-1754-chrysostom-anaphora"
+record_id = "eastern:byz-greek-1754"
+unit_ids = ["unit.byz-1754.chrysostom.01-opening-dialogue", "unit.byz-1754.chrysostom.02-preface-thanksgiving", "unit.byz-1754.chrysostom.03-sanctus-and-asterisk", "unit.byz-1754.chrysostom.04-post-sanctus-institution", "unit.byz-1754.chrysostom.05-anamnesis-oblation", "unit.byz-1754.chrysostom.06-epiclesis", "unit.byz-1754.chrysostom.07-commemoration-of-saints", "unit.byz-1754.chrysostom.08-intercessions-dead-and-church", "unit.byz-1754.chrysostom.09-intercessions-hierarch-and-living", "unit.byz-1754.chrysostom.10-concluding-doxology-and-blessing"]
+[comparisons.right]
+text_set = "byzantine-1873-chrysostom-anaphora"
+record_id = "eastern:byz-greek-1873"
+unit_ids = ["unit.byz-1873.chrysostom.01-opening-dialogue", "unit.byz-1873.chrysostom.02-preface-thanksgiving", "unit.byz-1873.chrysostom.03-sanctus-and-asterisk", "unit.byz-1873.chrysostom.04-post-sanctus-institution", "unit.byz-1873.chrysostom.05-anamnesis-oblation", "unit.byz-1873.chrysostom.06-epiclesis", "unit.byz-1873.chrysostom.07-commemoration-of-saints", "unit.byz-1873.chrysostom.08-intercessions-dead-and-church", "unit.byz-1873.chrysostom.09-intercessions-hierarch-and-living", "unit.byz-1873.chrysostom.10-concluding-doxology-and-blessing"]
+
+[[comparisons]]
+id = "armenian-1642-1823-badarak-anaphora"
+kind = "same-prayer-witness-comparison"
+membership_status = "established"
+basis = "Core Classical Armenian (Grabar) Badarak Anaphora in the Rome 1642 Propaganda Fide bilingual Ordo and the Venice 1823 San Lazzaro Mekhitarist Lyturgia Armena, aligned unit-for-unit across all 6 semantic native paths (opening dialogue through Epiclesis). Independently pixel-collated from tracked facsimiles, directly exposing the shift from the 1642 optative Epiclesis (արասցես) to the 1823 triple past-tense Epiclesis (արարեր, explicitly following Rome 1677), the restoration of traditional Preface phrasing, and the chalice narrative inclusion of էարբ."
+apparatus_caveat = "Core Anaphora constituent only (1642 printed pp. 70–80 / PDF 82–92 with scan leaf transposition; 1823 printed pp. 46–53 / PDF 50–57 excluding Crucifixion plate on PDF 52). Both versions remain parentless in Git: the 1823 title explicitly declares Rome 1677—not 1642—as its exemplar. No whole-book completeness or direct 1642→1823 descent is claimed."
+source_refs = ["passage.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-01-opening-dialogue", "passage.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-02-preface-thanksgiving", "passage.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-03-sanctus", "passage.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-04-post-sanctus-institution", "passage.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-05-anamnesis-oblation", "passage.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-06-epiclesis", "passage.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-01-opening-dialogue", "passage.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-02-preface-thanksgiving", "passage.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-03-sanctus", "passage.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-04-post-sanctus-institution", "passage.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-05-anamnesis-oblation", "passage.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-06-epiclesis"]
+[comparisons.left]
+text_set = "armenian-1642-badarak-anaphora"
+record_id = "eastern:arm-1642-ordo"
+unit_ids = ["unit.arm-1642.badarak.01-opening-dialogue", "unit.arm-1642.badarak.02-preface-thanksgiving", "unit.arm-1642.badarak.03-sanctus", "unit.arm-1642.badarak.04-post-sanctus-institution", "unit.arm-1642.badarak.05-anamnesis-oblation", "unit.arm-1642.badarak.06-epiclesis"]
+[comparisons.right]
+text_set = "armenian-1823-badarak-anaphora"
+record_id = "eastern:arm-1823"
+unit_ids = ["unit.arm-1823.badarak.01-opening-dialogue", "unit.arm-1823.badarak.02-preface-thanksgiving", "unit.arm-1823.badarak.03-sanctus", "unit.arm-1823.badarak.04-post-sanctus-institution", "unit.arm-1823.badarak.05-anamnesis-oblation", "unit.arm-1823.badarak.06-epiclesis"]
+
+[[text_sets]]
+id = "coptic-1736-basil-anaphora"
+adapter = "native-book:coptic-1736-basil-anaphora"
+
+[[text_versions]]
+id = "coptic-1736-basil-anaphora"
+text_set = "coptic-1736-basil-anaphora"
+parents = []
+
+[[text_sets]]
+id = "geez-1914-apostles-anaphora"
+adapter = "native-book:geez-1914-apostles-anaphora"
+
+[[text_versions]]
+id = "geez-1914-apostles-anaphora"
+text_set = "geez-1914-apostles-anaphora"
+parents = []
+
+[[text_sets]]
+id = "gregorian-wilson-1915-canon-missae"
+adapter = "native-book:gregorian-wilson-1915-canon-missae"
+
+[[text_versions]]
+id = "gregorian-wilson-1915-canon-missae"
+text_set = "gregorian-wilson-1915-canon-missae"
+parents = []
+
+[[text_sets]]
+id = "paris-1481-canon-missae"
+adapter = "native-book:paris-1481-canon-missae"
+
+[[text_versions]]
+id = "paris-1481-canon-missae"
+text_set = "paris-1481-canon-missae"
+parents = []
+
+[[text_sets]]
+id = "stowe-warner-1915-canon-missae"
+adapter = "native-book:stowe-warner-1915-canon-missae"
+
+[[text_versions]]
+id = "stowe-warner-1915-canon-missae"
+text_set = "stowe-warner-1915-canon-missae"
+parents = []
+
+[[text_sets]]
+id = "tarazona-1500-canon-missae"
+adapter = "native-book:tarazona-1500-canon-missae"
+
+[[text_versions]]
+id = "tarazona-1500-canon-missae"
+text_set = "tarazona-1500-canon-missae"
+parents = []
+
+[[comparisons]]
+id = "gregorian-hadrianum-to-roman-1570-canon-missae"
+kind = "same-prayer-witness-comparison"
+membership_status = "established"
+basis = "Complete Latin Canon Missae in the Gregorian Hadrianum (Vatican Reg. lat. 337, Wilson 1915, 14 aligned units) compared with the Rome 1570 Tridentine Roman Missal strict Canon (16 units). Exposes concrete historical differences including absence of Memento defunctorum in R's main text, shorter Te igitur and Memento vivorum clauses, absence of 'enim' in the Words of Institution, and archaic 'domini dei nostri' / 'nos tui serui' readings."
+apparatus_caveat = "Complete strict Canon Missae constituents aligned via shared canonical native_path slugs. Both versions remain parentless in Git: shared Canon structure across centuries does not establish direct copy-to-copy typesetting descent. Whole-book completeness and diplomatic glyph/rubric-color fidelity are not claimed."
+source_refs = ["passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-te-igitur", "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-memento-vivorum", "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-communicantes", "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-hanc-igitur", "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-quam-oblationem", "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-qui-pridie", "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-simili-modo", "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-unde-et-memores", "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-supra-quae", "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-supplices", "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-nobis-quoque", "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-per-quem", "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-per-ipsum", "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-concluding-response", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-opening-rubric", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-te-igitur", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-memento-vivorum", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-communicantes", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-hanc-igitur", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-quam-oblationem", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-qui-pridie", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-simili-modo", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-unde-et-memores", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-supra-quae", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-supplices", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-memento-defunctorum", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-nobis-quoque", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-per-quem", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-per-ipsum", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-concluding-response"]
+[comparisons.left]
+text_set = "gregorian-wilson-1915-canon-missae"
+record_id = "western:gregorian-hadrianum-cambrai164"
+unit_ids = ["unit.gregorian-wilson-1915.canon.te-igitur", "unit.gregorian-wilson-1915.canon.memento-vivorum", "unit.gregorian-wilson-1915.canon.communicantes", "unit.gregorian-wilson-1915.canon.hanc-igitur", "unit.gregorian-wilson-1915.canon.quam-oblationem", "unit.gregorian-wilson-1915.canon.qui-pridie", "unit.gregorian-wilson-1915.canon.simili-modo", "unit.gregorian-wilson-1915.canon.unde-et-memores", "unit.gregorian-wilson-1915.canon.supra-quae", "unit.gregorian-wilson-1915.canon.supplices", "unit.gregorian-wilson-1915.canon.nobis-quoque", "unit.gregorian-wilson-1915.canon.per-quem", "unit.gregorian-wilson-1915.canon.per-ipsum", "unit.gregorian-wilson-1915.canon.concluding-response"]
+[comparisons.right]
+text_set = "roman-1570-canon-missae"
+record_id = "western:roman-1570-rome-faletti-varisco"
+unit_ids = ["unit.rome-1570.canon.opening-rubric", "unit.rome-1570.canon.te-igitur", "unit.rome-1570.canon.memento-vivorum", "unit.rome-1570.canon.communicantes", "unit.rome-1570.canon.hanc-igitur", "unit.rome-1570.canon.quam-oblationem", "unit.rome-1570.canon.qui-pridie", "unit.rome-1570.canon.simili-modo", "unit.rome-1570.canon.unde-et-memores", "unit.rome-1570.canon.supra-quae", "unit.rome-1570.canon.supplices", "unit.rome-1570.canon.memento-defunctorum", "unit.rome-1570.canon.nobis-quoque", "unit.rome-1570.canon.per-quem", "unit.rome-1570.canon.per-ipsum", "unit.rome-1570.canon.concluding-response"]
+
+[[comparisons]]
+id = "stowe-missal-to-roman-1570-canon-missae"
+kind = "same-prayer-witness-comparison"
+membership_status = "established"
+basis = "Complete Latin Canon Missae in the Insular Stowe Missal (RIA MS D. II. 3, Warner 1915, 16 aligned units) compared with the Rome 1570 strict Canon (16 units). Directly displays Stowe's 'Canón dominicus papę gilasi' heading, Insular litanic Memento vivorum petitions, seven seasonal Infra actionem inserts, 'calix sancti sanguinis mei', Stowe Diptychs of the Dead, and St. Patrick in Nobis quoque."
+apparatus_caveat = "Complete strict Canon Missae constituents aligned via shared canonical native_path slugs. Both versions remain parentless in Git: shared Canon structure across centuries does not establish direct copy-to-copy typesetting descent. Whole-book completeness and diplomatic glyph/rubric-color fidelity are not claimed."
+source_refs = ["passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-opening-rubric", "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-te-igitur", "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-memento-vivorum", "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-communicantes", "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-hanc-igitur", "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-quam-oblationem", "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-qui-pridie", "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-simili-modo", "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-unde-et-memores", "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-supra-quae", "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-supplices", "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-memento-defunctorum", "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-nobis-quoque", "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-per-quem", "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-per-ipsum", "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-concluding-response", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-opening-rubric", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-te-igitur", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-memento-vivorum", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-communicantes", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-hanc-igitur", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-quam-oblationem", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-qui-pridie", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-simili-modo", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-unde-et-memores", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-supra-quae", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-supplices", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-memento-defunctorum", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-nobis-quoque", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-per-quem", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-per-ipsum", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-concluding-response"]
+[comparisons.left]
+text_set = "stowe-warner-1915-canon-missae"
+record_id = "western:stowe-ria-dii3"
+unit_ids = ["unit.stowe-warner-1915.canon.opening-rubric", "unit.stowe-warner-1915.canon.te-igitur", "unit.stowe-warner-1915.canon.memento-vivorum", "unit.stowe-warner-1915.canon.communicantes", "unit.stowe-warner-1915.canon.hanc-igitur", "unit.stowe-warner-1915.canon.quam-oblationem", "unit.stowe-warner-1915.canon.qui-pridie", "unit.stowe-warner-1915.canon.simili-modo", "unit.stowe-warner-1915.canon.unde-et-memores", "unit.stowe-warner-1915.canon.supra-quae", "unit.stowe-warner-1915.canon.supplices", "unit.stowe-warner-1915.canon.memento-defunctorum", "unit.stowe-warner-1915.canon.nobis-quoque", "unit.stowe-warner-1915.canon.per-quem", "unit.stowe-warner-1915.canon.per-ipsum", "unit.stowe-warner-1915.canon.concluding-response"]
+[comparisons.right]
+text_set = "roman-1570-canon-missae"
+record_id = "western:roman-1570-rome-faletti-varisco"
+unit_ids = ["unit.rome-1570.canon.opening-rubric", "unit.rome-1570.canon.te-igitur", "unit.rome-1570.canon.memento-vivorum", "unit.rome-1570.canon.communicantes", "unit.rome-1570.canon.hanc-igitur", "unit.rome-1570.canon.quam-oblationem", "unit.rome-1570.canon.qui-pridie", "unit.rome-1570.canon.simili-modo", "unit.rome-1570.canon.unde-et-memores", "unit.rome-1570.canon.supra-quae", "unit.rome-1570.canon.supplices", "unit.rome-1570.canon.memento-defunctorum", "unit.rome-1570.canon.nobis-quoque", "unit.rome-1570.canon.per-quem", "unit.rome-1570.canon.per-ipsum", "unit.rome-1570.canon.concluding-response"]
+
+[[comparisons]]
+id = "paris-1481-to-roman-1570-canon-missae"
+kind = "same-prayer-witness-comparison"
+membership_status = "established"
+basis = "Complete Latin Canon Missae in the 1481 Missale Parisiense (16 aligned units) compared with the Rome 1570 strict Canon (16 units). Exposes Gallican/Parisian local features including 'et rege nostro' in Te igitur, 'atque omnium fidelium christianorum' in Memento, cruciform-arms rubric before Unde et memores, archaic 'nos tui serui ... domini dei nostri', and 'Per ipsum dominum nostrum amen'."
+apparatus_caveat = "Complete strict Canon Missae constituents aligned via shared canonical native_path slugs. Both versions remain parentless in Git: shared Canon structure across centuries does not establish direct copy-to-copy typesetting descent. Whole-book completeness and diplomatic glyph/rubric-color fidelity are not claimed."
+source_refs = ["passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-opening-rubric", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-te-igitur", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-memento-vivorum", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-communicantes", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-hanc-igitur", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-quam-oblationem", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-qui-pridie", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-simili-modo", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-unde-et-memores", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-supra-quae", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-supplices", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-memento-defunctorum", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-nobis-quoque", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-per-quem", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-per-ipsum", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-concluding-response", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-opening-rubric", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-te-igitur", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-memento-vivorum", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-communicantes", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-hanc-igitur", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-quam-oblationem", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-qui-pridie", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-simili-modo", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-unde-et-memores", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-supra-quae", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-supplices", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-memento-defunctorum", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-nobis-quoque", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-per-quem", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-per-ipsum", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-concluding-response"]
+[comparisons.left]
+text_set = "paris-1481-canon-missae"
+record_id = "western:paris-1481-dupre-huym"
+unit_ids = ["unit.paris-1481.canon.opening-rubric", "unit.paris-1481.canon.te-igitur", "unit.paris-1481.canon.memento-vivorum", "unit.paris-1481.canon.communicantes", "unit.paris-1481.canon.hanc-igitur", "unit.paris-1481.canon.quam-oblationem", "unit.paris-1481.canon.qui-pridie", "unit.paris-1481.canon.simili-modo", "unit.paris-1481.canon.unde-et-memores", "unit.paris-1481.canon.supra-quae", "unit.paris-1481.canon.supplices", "unit.paris-1481.canon.memento-defunctorum", "unit.paris-1481.canon.nobis-quoque", "unit.paris-1481.canon.per-quem", "unit.paris-1481.canon.per-ipsum", "unit.paris-1481.canon.concluding-response"]
+[comparisons.right]
+text_set = "roman-1570-canon-missae"
+record_id = "western:roman-1570-rome-faletti-varisco"
+unit_ids = ["unit.rome-1570.canon.opening-rubric", "unit.rome-1570.canon.te-igitur", "unit.rome-1570.canon.memento-vivorum", "unit.rome-1570.canon.communicantes", "unit.rome-1570.canon.hanc-igitur", "unit.rome-1570.canon.quam-oblationem", "unit.rome-1570.canon.qui-pridie", "unit.rome-1570.canon.simili-modo", "unit.rome-1570.canon.unde-et-memores", "unit.rome-1570.canon.supra-quae", "unit.rome-1570.canon.supplices", "unit.rome-1570.canon.memento-defunctorum", "unit.rome-1570.canon.nobis-quoque", "unit.rome-1570.canon.per-quem", "unit.rome-1570.canon.per-ipsum", "unit.rome-1570.canon.concluding-response"]
+
+[[comparisons]]
+id = "tarazona-1500-to-roman-1570-canon-missae"
+kind = "same-prayer-witness-comparison"
+membership_status = "established"
+basis = "Complete Latin Canon Missae in the 1500 Missale Tirasonense (Pamplona: Brocar, 15 aligned units) compared with the Rome 1570 strict Canon (16 units). Directly displays Iberian local features including 'et rege nostro. N.' in Te igitur, 'omnipotens' in Quam oblationem, archaic 'nos tui serui ... domini dei nostri', triple cross in Supplices, and the closing 'Hic non dicitur: Amen:' rubric after Nobis quoque."
+apparatus_caveat = "Complete strict Canon Missae constituents aligned via shared canonical native_path slugs. Both versions remain parentless in Git: shared Canon structure across centuries does not establish direct copy-to-copy typesetting descent. Whole-book completeness and diplomatic glyph/rubric-color fidelity are not claimed."
+source_refs = ["passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-te-igitur", "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-memento-vivorum", "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-communicantes", "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-hanc-igitur", "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-quam-oblationem", "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-qui-pridie", "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-simili-modo", "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-unde-et-memores", "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-supra-quae", "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-supplices", "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-memento-defunctorum", "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-nobis-quoque", "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-per-quem", "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-per-ipsum", "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-concluding-response", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-opening-rubric", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-te-igitur", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-memento-vivorum", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-communicantes", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-hanc-igitur", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-quam-oblationem", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-qui-pridie", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-simili-modo", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-unde-et-memores", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-supra-quae", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-supplices", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-memento-defunctorum", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-nobis-quoque", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-per-quem", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-per-ipsum", "passage.catholic-church.missale-romanum.rome-faletti-varisco-1570.canon-concluding-response"]
+[comparisons.left]
+text_set = "tarazona-1500-canon-missae"
+record_id = "western:iberian-tarazona-1500"
+unit_ids = ["unit.tarazona-1500.canon.te-igitur", "unit.tarazona-1500.canon.memento-vivorum", "unit.tarazona-1500.canon.communicantes", "unit.tarazona-1500.canon.hanc-igitur", "unit.tarazona-1500.canon.quam-oblationem", "unit.tarazona-1500.canon.qui-pridie", "unit.tarazona-1500.canon.simili-modo", "unit.tarazona-1500.canon.unde-et-memores", "unit.tarazona-1500.canon.supra-quae", "unit.tarazona-1500.canon.supplices", "unit.tarazona-1500.canon.memento-defunctorum", "unit.tarazona-1500.canon.nobis-quoque", "unit.tarazona-1500.canon.per-quem", "unit.tarazona-1500.canon.per-ipsum", "unit.tarazona-1500.canon.concluding-response"]
+[comparisons.right]
+text_set = "roman-1570-canon-missae"
+record_id = "western:roman-1570-rome-faletti-varisco"
+unit_ids = ["unit.rome-1570.canon.opening-rubric", "unit.rome-1570.canon.te-igitur", "unit.rome-1570.canon.memento-vivorum", "unit.rome-1570.canon.communicantes", "unit.rome-1570.canon.hanc-igitur", "unit.rome-1570.canon.quam-oblationem", "unit.rome-1570.canon.qui-pridie", "unit.rome-1570.canon.simili-modo", "unit.rome-1570.canon.unde-et-memores", "unit.rome-1570.canon.supra-quae", "unit.rome-1570.canon.supplices", "unit.rome-1570.canon.memento-defunctorum", "unit.rome-1570.canon.nobis-quoque", "unit.rome-1570.canon.per-quem", "unit.rome-1570.canon.per-ipsum", "unit.rome-1570.canon.concluding-response"]
+
+[[comparisons]]
+id = "paris-1481-to-tarazona-1500-canon-missae"
+kind = "same-prayer-witness-comparison"
+membership_status = "established"
+basis = "Complete strict Latin Canon Missae in the 1481 Missale Parisiense (16 units) compared directly with the 1500 Missale Tirasonense (15 units), illustrating concrete late-medieval Gallican vs Iberian local rubrical and textual divergences ahead of the 1570 Tridentine standardization."
+apparatus_caveat = "Complete strict Canon Missae constituents only; both versions remain parentless in Git with no claimed descent between Paris and Tarazona."
+source_refs = ["passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-opening-rubric", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-te-igitur", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-memento-vivorum", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-communicantes", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-hanc-igitur", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-quam-oblationem", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-qui-pridie", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-simili-modo", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-unde-et-memores", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-supra-quae", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-supplices", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-memento-defunctorum", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-nobis-quoque", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-per-quem", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-per-ipsum", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-concluding-response", "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-te-igitur", "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-memento-vivorum", "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-communicantes", "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-hanc-igitur", "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-quam-oblationem", "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-qui-pridie", "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-simili-modo", "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-unde-et-memores", "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-supra-quae", "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-supplices", "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-memento-defunctorum", "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-nobis-quoque", "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-per-quem", "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-per-ipsum", "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-concluding-response"]
+[comparisons.left]
+text_set = "paris-1481-canon-missae"
+record_id = "western:paris-1481-dupre-huym"
+unit_ids = ["unit.paris-1481.canon.opening-rubric", "unit.paris-1481.canon.te-igitur", "unit.paris-1481.canon.memento-vivorum", "unit.paris-1481.canon.communicantes", "unit.paris-1481.canon.hanc-igitur", "unit.paris-1481.canon.quam-oblationem", "unit.paris-1481.canon.qui-pridie", "unit.paris-1481.canon.simili-modo", "unit.paris-1481.canon.unde-et-memores", "unit.paris-1481.canon.supra-quae", "unit.paris-1481.canon.supplices", "unit.paris-1481.canon.memento-defunctorum", "unit.paris-1481.canon.nobis-quoque", "unit.paris-1481.canon.per-quem", "unit.paris-1481.canon.per-ipsum", "unit.paris-1481.canon.concluding-response"]
+[comparisons.right]
+text_set = "tarazona-1500-canon-missae"
+record_id = "western:iberian-tarazona-1500"
+unit_ids = ["unit.tarazona-1500.canon.te-igitur", "unit.tarazona-1500.canon.memento-vivorum", "unit.tarazona-1500.canon.communicantes", "unit.tarazona-1500.canon.hanc-igitur", "unit.tarazona-1500.canon.quam-oblationem", "unit.tarazona-1500.canon.qui-pridie", "unit.tarazona-1500.canon.simili-modo", "unit.tarazona-1500.canon.unde-et-memores", "unit.tarazona-1500.canon.supra-quae", "unit.tarazona-1500.canon.supplices", "unit.tarazona-1500.canon.memento-defunctorum", "unit.tarazona-1500.canon.nobis-quoque", "unit.tarazona-1500.canon.per-quem", "unit.tarazona-1500.canon.per-ipsum", "unit.tarazona-1500.canon.concluding-response"]
+
+[[text_sets]]
+id = "chaldean-1767-addai-mari"
+adapter = "native-book:chaldean-1767-addai-mari"
+
+[[text_versions]]
+id = "chaldean-1767-addai-mari"
+text_set = "chaldean-1767-addai-mari"
+parents = []
+
+[[text_sets]]
+id = "chaldean-1901-addai-mari"
+adapter = "native-book:chaldean-1901-addai-mari"
+
+[[text_versions]]
+id = "chaldean-1901-addai-mari"
+text_set = "chaldean-1901-addai-mari"
+parents = []
+
+[[text_sets]]
+id = "maronite-1594-anaphora"
+adapter = "native-book:maronite-1594-anaphora"
+
+[[text_versions]]
+id = "maronite-1594-anaphora"
+text_set = "maronite-1594-anaphora"
+parents = []
+
+[[text_sets]]
+id = "maronite-1908-anaphora"
+adapter = "native-book:maronite-1908-anaphora"
+
+[[text_versions]]
+id = "maronite-1908-anaphora"
+text_set = "maronite-1908-anaphora"
+parents = []
+
+[[text_sets]]
+id = "syriac-1843-anaphora"
+adapter = "native-book:syriac-1843-anaphora"
+
+[[text_versions]]
+id = "syriac-1843-anaphora"
+text_set = "syriac-1843-anaphora"
+parents = []
+
+[[text_sets]]
+id = "syriac-1922-anaphora"
+adapter = "native-book:syriac-1922-anaphora"
+
+[[text_versions]]
+id = "syriac-1922-anaphora"
+text_set = "syriac-1922-anaphora"
+parents = []
+
+[[text_sets]]
+id = "syro-malabar-1906-addai-mari"
+adapter = "native-book:syro-malabar-1906-addai-mari"
+
+[[text_versions]]
+id = "syro-malabar-1906-addai-mari"
+text_set = "syro-malabar-1906-addai-mari"
+parents = []
+
+[[comparisons]]
+id = "chaldean-1767-to-1901-addai-mari"
+kind = "same-prayer-witness-comparison"
+membership_status = "established"
+basis = "Complete core Classical Syriac (syr) Anaphora of Addai and Mari in the Rome 1767 Propaganda Fide Missale Chaldaicum (8 units) compared with the Mosul 1901 Dominican Press Chaldean Missal (8 units). Directly exposes the structural relocation of the Institution Narrative from the Fraction (1767) to immediately after the Sanctus (1901) with a Theodore-derived Christological prologue, the 1901 removal of the 1767 Marian clause in Gehanta 3, the presence of 'in his life-giving Gospel' (ܒܣܒܪܬܗ ܡܚܝܢܝܬܐ) in 1901 vs its omission in 1767, and exact wording changes across Preface, Sanctus, Anamnesis, and Epiclesis."
+apparatus_caveat = "Bounded 8-unit consonantal Classical Syriac core Anaphora constituent only (vowel points, seyame, rubrics, private Kushapa prayers, and non-anaphoral divisions excluded). Both versions remain parentless in Git with no claimed copy-to-copy descent; Mosul 1901's unit list preserves its actual printed source order (Institution Narrative at position 4) while Git native_path slugs align each prayer directly."
+source_refs = ["passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-01-opening-dialogue", "passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-02-preface-gehanta-1", "passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-03-sanctus", "passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-04-post-sanctus-gehanta-2", "passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-05-intercession-gehanta-3", "passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-06-anamnesis-oblation", "passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-07-epiclesis-and-qanona", "passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-08-institution-narrative", "passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-01-opening-dialogue", "passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-02-preface-gehanta-1", "passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-03-sanctus", "passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-08-institution-narrative", "passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-04-post-sanctus-gehanta-2", "passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-05-intercession-gehanta-3", "passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-06-anamnesis-oblation", "passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-07-epiclesis-and-qanona"]
+[comparisons.left]
+text_set = "chaldean-1767-addai-mari"
+record_id = "eastern:chald-1767"
+unit_ids = ["chaldean-1767-addai-mari.01-opening-dialogue", "chaldean-1767-addai-mari.02-preface-gehanta-1", "chaldean-1767-addai-mari.03-sanctus", "chaldean-1767-addai-mari.04-post-sanctus-gehanta-2", "chaldean-1767-addai-mari.05-intercession-gehanta-3", "chaldean-1767-addai-mari.06-anamnesis-oblation", "chaldean-1767-addai-mari.07-epiclesis-and-qanona", "chaldean-1767-addai-mari.08-institution-narrative"]
+[comparisons.right]
+text_set = "chaldean-1901-addai-mari"
+record_id = "eastern:chald-1901"
+unit_ids = ["chaldean-1901-addai-mari.01-opening-dialogue", "chaldean-1901-addai-mari.02-preface-gehanta-1", "chaldean-1901-addai-mari.03-sanctus", "chaldean-1901-addai-mari.08-institution-narrative", "chaldean-1901-addai-mari.04-post-sanctus-gehanta-2", "chaldean-1901-addai-mari.05-intercession-gehanta-3", "chaldean-1901-addai-mari.06-anamnesis-oblation", "chaldean-1901-addai-mari.07-epiclesis-and-qanona"]
+
+[[comparisons]]
+id = "chaldean-1767-to-syro-malabar-1906-addai-mari"
+kind = "same-prayer-witness-comparison"
+membership_status = "established"
+basis = "Complete core Classical Syriac (syr) Anaphora of Addai and Mari in the Rome 1767 Propaganda Fide Missale Chaldaicum (8 units) compared with the Puttenpalli 1906 Syro-Malabar Ordo Chaldaicus (8 units). Both share the Fraction placement of the Romanized 'mysterium fidei' Institution Narrative and the Marian insertion in Gehanta 3, while directly exposing Malabar 1906's inclusion of 'in his life-giving Gospel', additional Latinized Canon phrases in the Institution Narrative, and abbreviated Sanctus/Qanona forms."
+apparatus_caveat = "Bounded 8-unit consonantal Classical Syriac core Anaphora constituent only (excluding vowel points, rubrics, private Kushapa prayers, and all other book divisions). Both versions remain parentless in Git; shared Latinized features do not establish a direct copy-to-copy printing exemplar."
+source_refs = ["passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-01-opening-dialogue", "passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-02-preface-gehanta-1", "passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-03-sanctus", "passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-04-post-sanctus-gehanta-2", "passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-05-intercession-gehanta-3", "passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-06-anamnesis-oblation", "passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-07-epiclesis-and-qanona", "passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-08-institution-narrative", "passage.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.addai-mari-01-opening-dialogue", "passage.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.addai-mari-02-preface-gehanta-1", "passage.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.addai-mari-03-sanctus", "passage.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.addai-mari-04-post-sanctus-gehanta-2", "passage.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.addai-mari-05-intercession-gehanta-3", "passage.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.addai-mari-06-anamnesis-oblation", "passage.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.addai-mari-07-epiclesis-and-qanona", "passage.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.addai-mari-08-institution-narrative"]
+[comparisons.left]
+text_set = "chaldean-1767-addai-mari"
+record_id = "eastern:chald-1767"
+unit_ids = ["chaldean-1767-addai-mari.01-opening-dialogue", "chaldean-1767-addai-mari.02-preface-gehanta-1", "chaldean-1767-addai-mari.03-sanctus", "chaldean-1767-addai-mari.04-post-sanctus-gehanta-2", "chaldean-1767-addai-mari.05-intercession-gehanta-3", "chaldean-1767-addai-mari.06-anamnesis-oblation", "chaldean-1767-addai-mari.07-epiclesis-and-qanona", "chaldean-1767-addai-mari.08-institution-narrative"]
+[comparisons.right]
+text_set = "syro-malabar-1906-addai-mari"
+record_id = "eastern:malabar-1906"
+unit_ids = ["syro-malabar-1906-addai-mari.01-opening-dialogue", "syro-malabar-1906-addai-mari.02-preface-gehanta-1", "syro-malabar-1906-addai-mari.03-sanctus", "syro-malabar-1906-addai-mari.04-post-sanctus-gehanta-2", "syro-malabar-1906-addai-mari.05-intercession-gehanta-3", "syro-malabar-1906-addai-mari.06-anamnesis-oblation", "syro-malabar-1906-addai-mari.07-epiclesis-and-qanona", "syro-malabar-1906-addai-mari.08-institution-narrative"]
+
+[[comparisons]]
+id = "chaldean-1901-to-syro-malabar-1906-addai-mari"
+kind = "same-prayer-witness-comparison"
+membership_status = "established"
+basis = "Complete core Classical Syriac (syr) Anaphora of Addai and Mari in the Mosul 1901 Dominican Press Chaldean Missal (8 units) compared with the Puttenpalli 1906 Syro-Malabar Ordo Chaldaicus (8 units). Contrasts the contemporary early-20th-century Chaldean vs Syro-Malabar printed recensions: Institution placement after Sanctus (1901) vs at the Fraction (1906), Marian insertion absent (1901) vs retained (1906), full vs abbreviated Sanctus, and concrete wording variants across all eight aligned prayers."
+apparatus_caveat = "Bounded 8-unit consonantal Classical Syriac core Anaphora constituent only (excluding vowel points, rubrics, and non-anaphoral divisions). Both versions remain parentless in Git with no claimed descent between Mosul 1901 and Puttenpalli 1906."
+source_refs = ["passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-01-opening-dialogue", "passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-02-preface-gehanta-1", "passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-03-sanctus", "passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-08-institution-narrative", "passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-04-post-sanctus-gehanta-2", "passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-05-intercession-gehanta-3", "passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-06-anamnesis-oblation", "passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-07-epiclesis-and-qanona", "passage.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.addai-mari-01-opening-dialogue", "passage.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.addai-mari-02-preface-gehanta-1", "passage.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.addai-mari-03-sanctus", "passage.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.addai-mari-04-post-sanctus-gehanta-2", "passage.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.addai-mari-05-intercession-gehanta-3", "passage.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.addai-mari-06-anamnesis-oblation", "passage.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.addai-mari-07-epiclesis-and-qanona", "passage.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.addai-mari-08-institution-narrative"]
+[comparisons.left]
+text_set = "chaldean-1901-addai-mari"
+record_id = "eastern:chald-1901"
+unit_ids = ["chaldean-1901-addai-mari.01-opening-dialogue", "chaldean-1901-addai-mari.02-preface-gehanta-1", "chaldean-1901-addai-mari.03-sanctus", "chaldean-1901-addai-mari.08-institution-narrative", "chaldean-1901-addai-mari.04-post-sanctus-gehanta-2", "chaldean-1901-addai-mari.05-intercession-gehanta-3", "chaldean-1901-addai-mari.06-anamnesis-oblation", "chaldean-1901-addai-mari.07-epiclesis-and-qanona"]
+[comparisons.right]
+text_set = "syro-malabar-1906-addai-mari"
+record_id = "eastern:malabar-1906"
+unit_ids = ["syro-malabar-1906-addai-mari.01-opening-dialogue", "syro-malabar-1906-addai-mari.02-preface-gehanta-1", "syro-malabar-1906-addai-mari.03-sanctus", "syro-malabar-1906-addai-mari.04-post-sanctus-gehanta-2", "syro-malabar-1906-addai-mari.05-intercession-gehanta-3", "syro-malabar-1906-addai-mari.06-anamnesis-oblation", "syro-malabar-1906-addai-mari.07-epiclesis-and-qanona", "syro-malabar-1906-addai-mari.08-institution-narrative"]
+
+[[comparisons]]
+id = "maronite-1594-to-1908-twelve-apostles"
+kind = "same-prayer-witness-comparison"
+membership_status = "established"
+basis = "Five aligned core Classical Syriac (syr) units of the Maronite Anaphora of the Twelve Apostles in the Rome 1594 Medici press printing compared with the Beirut 1908 Maronite Press printing (second printing of Dibs 1888). Directly verifies 314-year consonant-for-consonant continuity of the Romanized Epiclesis consecration/salvation petition and the Romanized 'mysterium fidei' Institution Narrative, alongside concrete differences including 1908's expansion of abbreviated 1594 Dialogue and Epiclesis calls, addition of 'and sanctified' (ܘܩܕܫ) in Bread and Chalice, and spelling shift ܐܪܙܐ → ܪܐܙܐ."
+apparatus_caveat = "Bounded 5-unit consonantal Classical Syriac constituent only (excluding vowel points, rubrics, parallel Garshuni columns, Preface/Post-Sanctus, Anamnesis, and all other book divisions). Both versions remain parentless in Git; 314-year textual continuity does not prove an unmediated 1594→1908 copy chain."
+source_refs = ["passage.maronite-church.qurbono.1594-rome-medici.anaphora-01-opening-dialogue", "passage.maronite-church.qurbono.1594-rome-medici.anaphora-02-institution-bread", "passage.maronite-church.qurbono.1594-rome-medici.anaphora-03-institution-chalice", "passage.maronite-church.qurbono.1594-rome-medici.anaphora-04-epiclesis-call", "passage.maronite-church.qurbono.1594-rome-medici.anaphora-05-epiclesis-consecration", "passage.maronite-church.qurbono.1908-beirut-maronite-press-second-printing.anaphora-01-opening-dialogue", "passage.maronite-church.qurbono.1908-beirut-maronite-press-second-printing.anaphora-02-institution-bread", "passage.maronite-church.qurbono.1908-beirut-maronite-press-second-printing.anaphora-03-institution-chalice", "passage.maronite-church.qurbono.1908-beirut-maronite-press-second-printing.anaphora-04-epiclesis-call", "passage.maronite-church.qurbono.1908-beirut-maronite-press-second-printing.anaphora-05-epiclesis-consecration"]
+[comparisons.left]
+text_set = "maronite-1594-anaphora"
+record_id = "eastern:mar-1592-94"
+unit_ids = ["maronite-1594-anaphora.01-opening-dialogue", "maronite-1594-anaphora.02-institution-bread", "maronite-1594-anaphora.03-institution-chalice", "maronite-1594-anaphora.04-epiclesis-call", "maronite-1594-anaphora.05-epiclesis-consecration"]
+[comparisons.right]
+text_set = "maronite-1908-anaphora"
+record_id = "eastern:mar-dibs-1908"
+unit_ids = ["maronite-1908-anaphora.01-opening-dialogue", "maronite-1908-anaphora.02-institution-bread", "maronite-1908-anaphora.03-institution-chalice", "maronite-1908-anaphora.04-epiclesis-call", "maronite-1908-anaphora.05-epiclesis-consecration"]
+
+[[comparisons]]
+id = "syriac-1843-to-1922-st-james"
+kind = "same-prayer-witness-comparison"
+membership_status = "established"
+basis = "Six aligned core Classical Syriac (syr) units of the Anaphora of St. James (Preface through Epiclesis) in the Rome 1843 Propaganda Fide Missale Syriacum compared with Patriarch Rahmani's Sharfeh 1922 Missale Syriacum. Directly exposes the before-and-after textual reality of Rahmani's 1922 reform across Post-Sanctus, Institution Narrative, Anamnesis, and Epiclesis—including extensive phrasing, analytic-to-synthetic suffix, and consecration/epiclesis adjustments despite the 1922 preface's conservative framing."
+apparatus_caveat = "Bounded 6-unit consonantal Classical Syriac constituent only (excluding vowel points, rubrics, parallel Garshuni columns, Opening Dialogue omitted due to 1843 1-bit scan red-ink dropout, and all other book divisions). Both versions remain parentless in Git; no whole-book completeness or unmediated 1843→1922 typesetting chain is claimed."
+source_refs = ["passage.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-01-preface", "passage.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-02-sanctus", "passage.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-03-post-sanctus", "passage.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-04-institution-narrative", "passage.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-05-anamnesis", "passage.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-06-epiclesis", "passage.syriac-catholic-church.missale-syriacum.1922-sharfeh-patriarchal.anaphora-01-preface", "passage.syriac-catholic-church.missale-syriacum.1922-sharfeh-patriarchal.anaphora-02-sanctus", "passage.syriac-catholic-church.missale-syriacum.1922-sharfeh-patriarchal.anaphora-03-post-sanctus", "passage.syriac-catholic-church.missale-syriacum.1922-sharfeh-patriarchal.anaphora-04-institution-narrative", "passage.syriac-catholic-church.missale-syriacum.1922-sharfeh-patriarchal.anaphora-05-anamnesis", "passage.syriac-catholic-church.missale-syriacum.1922-sharfeh-patriarchal.anaphora-06-epiclesis"]
+[comparisons.left]
+text_set = "syriac-1843-anaphora"
+record_id = "eastern:syr-rome-1843"
+unit_ids = ["syriac-1843-anaphora.01-preface", "syriac-1843-anaphora.02-sanctus", "syriac-1843-anaphora.03-post-sanctus", "syriac-1843-anaphora.04-institution-narrative", "syriac-1843-anaphora.05-anamnesis", "syriac-1843-anaphora.06-epiclesis"]
+[comparisons.right]
+text_set = "syriac-1922-anaphora"
+record_id = "eastern:syr-1922"
+unit_ids = ["syriac-1922-anaphora.01-preface", "syriac-1922-anaphora.02-sanctus", "syriac-1922-anaphora.03-post-sanctus", "syriac-1922-anaphora.04-institution-narrative", "syriac-1922-anaphora.05-anamnesis", "syriac-1922-anaphora.06-epiclesis"]

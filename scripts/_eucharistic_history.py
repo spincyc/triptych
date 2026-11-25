@@ -22,6 +22,284 @@ SCHEMA = "triptych-eucharistic-history/v1"
 CORPUS_SCHEMA = "triptych-eucharistic-corpus/v1"
 COMPARISON_SCHEMA = "triptych-eucharistic-witness-comparison/v1"
 NATIVE_TEXT_SCHEMA = "triptych-eucharistic-native-text/v1"
+EDITION_XREF_SCHEMA = "triptych-eucharistic-edition-cross-references/v1"
+TAXONOMY_PATH = "src/sources/inventories/eucharistic-tradition-taxonomy-v1.toml"
+
+RITE_FAMILIES = (
+    {"id": "roman-curial", "label": "Roman & Curial", "color": "#2c7a51", "ink": "#1d5739", "wash": "#eef6f1"},
+    {"id": "western-local-uses", "label": "Western Local Uses", "color": "#2f5d8a", "ink": "#1f4263", "wash": "#eef4fa"},
+    {"id": "western-religious-orders", "label": "Religious Orders", "color": "#6d4c87", "ink": "#4d3363", "wash": "#f5f0fa"},
+    {"id": "western-non-roman", "label": "Western Non-Roman Rites", "color": "#8f3b2e", "ink": "#69271d", "wash": "#fbf1ef"},
+    {"id": "byzantine", "label": "Byzantine", "color": "#9b2c40", "ink": "#701c2b", "wash": "#fcf0f2"},
+    {"id": "alexandrian", "label": "Alexandrian", "color": "#8a5c00", "ink": "#634100", "wash": "#fbf6e8"},
+    {"id": "armenian", "label": "Armenian", "color": "#8c4a1c", "ink": "#633311", "wash": "#faf2eb"},
+    {"id": "east-syriac", "label": "East Syriac", "color": "#166a78", "ink": "#0e4d57", "wash": "#edf7f8"},
+    {"id": "west-syriac", "label": "West Syriac", "color": "#4f6324", "ink": "#374617", "wash": "#f3f7ec"},
+    {"id": "modern-missionary", "label": "Missionary & Personal Uses", "color": "#484d57", "ink": "#2f333a", "wash": "#f2f3f5"},
+)
+
+GEOGRAPHIC_REGIONS = (
+    {"id": "rome-italy", "label": "Rome & Italy"},
+    {"id": "france-low-countries", "label": "France & Low Countries"},
+    {"id": "british-isles", "label": "Britain & Ireland"},
+    {"id": "iberian-peninsula", "label": "Iberia"},
+    {"id": "central-northern-europe", "label": "Central & Northern Europe"},
+    {"id": "eastern-europe-balkans", "label": "Eastern Europe & Balkans"},
+    {"id": "levant-near-east", "label": "Levant & Near East"},
+    {"id": "mesopotamia-caucasus", "label": "Mesopotamia, Persia & Caucasus"},
+    {"id": "egypt-horn-of-africa", "label": "Egypt & Horn of Africa"},
+    {"id": "south-east-asia", "label": "South & East Asia"},
+    {"id": "americas-global", "label": "Americas, Africa & Global"},
+)
+
+
+def _classify_tradition(tradition: dict) -> dict:
+    """Deterministic fallback classification by rite family and geographic region."""
+    tid = str(tradition.get("id", "")).lower()
+    label = str(tradition.get("label", "")).lower()
+    family = str(tradition.get("family", "")).lower()
+    hay = f"{tid} {label} {family}"
+
+    # Rite family
+    if any(k in hay for k in ("byzantine", "melkite", "ukrainian", "ruthenian", "romanian", "greek-catholic", "greek catholic", "italo-albanian", "italo-byzantine", "slovak", "hungarian", "bulgarian", "belarusian", "russian", "albanian", "macedonian", "croatia", "križevci", "krizevci", "slavonic-byzantine", "georgian")):
+        rite = "byzantine"
+    elif any(k in hay for k in ("coptic", "ethiopian", "eritrean", "alexandrian", "ge'ez", "geez")):
+        rite = "alexandrian"
+    elif "armenian" in hay or "badarak" in hay:
+        rite = "armenian"
+    elif any(k in hay for k in ("chaldean", "syro-malabar", "east-syriac", "east syriac", "malabar")):
+        rite = "east-syriac"
+    elif any(k in hay for k in ("maronite", "syriac", "syro-malankara", "malankara", "west-syriac", "west syriac", "antiochene")):
+        rite = "west-syriac"
+    elif any(k in hay for k in ("dominican", "carthusian", "carmelite", "cistercian", "premonstratensian", "franciscan", "benedictine", "monastic", "vallombrosan", "camaldolese", "olivetan", "trinitarian", "servite", "augustinian", "praemonstratens", "hospitaler", "hospitaller", "teutonic", "cluniac", "gilbertine", "brigittine", "pauline", "hieronymite", "jeronymite", "mercedarian", "calced", "discalced")):
+        rite = "western-religious-orders"
+    elif any(k in hay for k in ("ambrosian", "mozarabic", "hispanic", "braga", "gallican", "celtic", "stowe", "bobbio", "beneventan", "aquileia", "ravennate", "african-latin")):
+        rite = "western-non-roman"
+    elif any(k in hay for k in ("ordinariate", "anglican", "zaire", "congo", "glagolitic", "slavonic", "chinese", "mission", "mexico", "latin-america", "americas", "philippines", "goa", "japan", "india-latin", "africa")):
+        rite = "modern-missionary"
+    elif any(k in hay for k in ("roman-stages", "roman /", "roman rite", "curial", "gregorian", "gelasian", "leonine", "verona", "trent", "pian", "postconciliar", "tridentine", "papal")):
+        rite = "roman-curial"
+    else:
+        rite = "western-local-uses"
+
+    # Geographic region
+    if any(k in hay for k in ("syro-malabar", "syro-malankara", "malabar", "malankara", "goa", "india", "japan", "china", "chinese", "philippines", "manila", "macau", "asia", "vietnam", "korea")):
+        region = "south-east-asia"
+    elif any(k in hay for k in ("coptic", "egypt", "ethiopian", "eritrean", "asmara", "alexandr", "axum", "african-latin")):
+        region = "egypt-horn-of-africa"
+    elif any(k in hay for k in ("maronite", "melkite", "syriac", "sharfeh", "beirut", "antioch", "jerusalem", "damascus", "shuwayr", "harissa", "levant", "holy-land", "cyprus")):
+        region = "levant-near-east"
+    elif any(k in hay for k in ("chaldean", "mosul", "baghdad", "mesopotamia", "persia", "armenian", "etjmiadzin", "echmiadzin", "georgian", "caucasus")):
+        region = "mesopotamia-caucasus"
+    elif any(k in hay for k in ("ukrainian", "ruthenian", "romanian", "blaj", "slovak", "hungarian", "bulgarian", "belarusian", "russian", "albanian", "macedonian", "croatia", "križevci", "krizevci", "glagolitic", "slavonic", "poland", "polish", "krakow", "gniezno", "bohemia", "prague", "olomouc", "esztergom", "zagreb", "dalmatia", "lithuania")):
+        region = "eastern-europe-balkans"
+    elif any(k in hay for k in ("sarum", "york", "hereford", "bangor", "lincoln", "aberdeen", "scotland", "english", "england", "ireland", "irish", "stowe", "celtic", "anglican", "ordinariate", "westminster", "canterbury", "durham")):
+        region = "british-isles"
+    elif any(k in hay for k in ("mozarabic", "toledo", "braga", "tarazona", "seville", "sevilla", "zaragoza", "valencia", "barcelona", "tarragona", "santiago", "burgos", "salamanca", "palencia", "pamplona", "huesca", "lerida", "lleida", "cordoba", "granada", "lisbon", "coimbra", "evora", "porto", "spain", "spanish", "portug", "iberian", "catalan", "mallorca")):
+        region = "iberian-peninsula"
+    elif any(k in hay for k in ("paris", "lyon", "lugdun", "rouen", "reims", "rheims", "sens", "chartres", "amiens", "bourges", "bordeaux", "toulouse", "narbonne", "aix", "avignon", "besancon", "besançon", "metz", "toul", "verdun", "cambrai", "liege", "liège", "utrecht", "tournai", "ghent", "mechelen", "antwerp", "france", "french", "neo-gallican", "gallican", "cluny", "citeaux", "cîteaux", "cistercian", "carthusian", "premonstratens", "norman", "bayeux", "coutances", "evreux", "lisieux", "sees", "orleans", "poitiers", "tours", "angers", "nantes", "rennes", "le-mans", "troyes", "auxerre", "langres", "autun", "chalon", "vienne", "grenoble", "belley", "lausanne")):
+        region = "france-low-countries"
+    elif any(k in hay for k in ("mainz", "cologne", "köln", "trier", "speyer", "worms", "wurzburg", "würzburg", "bamberg", "augsburg", "freising", "regensburg", "passau", "salzburg", "brixen", "constance", "konstanz", "basel", "strasbourg", "magdeburg", "halberstadt", "hildesheim", "bremen", "hamburg", "lubeck", "lübeck", "munster", "münster", "osnabruck", "paderborn", "minden", "meissen", "naumburg", "merseburg", "brandenburg", "havelberg", "cammin", "breslau", "wroclaw", "vienna", "wien", "gurk", "seckau", "lavant", "nidaros", "uppsala", "lund", "roskilde", "abo", "turku", "skara", "linkoping", "strangnas", "vasteras", "odense", "schleswig", "german", "austria", "swiss", "nordic", "scandinav")):
+        region = "central-northern-europe"
+    elif any(k in hay for k in ("mexico", "americas", "peru", "lima", "brazil", "canada", "quebec", "united-states", "zaire", "congo", "africa", "australia", "global", "mission")):
+        region = "americas-global"
+    elif any(k in hay for k in ("roman", "ambrosian", "milan", "aquileia", "venice", "benevent", "sicily", "palermo", "naples", "florence", "bologna", "ravenna", "genoa", "turin", "verona", "padua", "italo", "cassino", "casinense", "italy", "italian", "gregorian", "gelasian", "leonine", "curia", "papal", "dominican", "franciscan", "carmelite", "benedictine", "monastic")):
+        region = "rome-italy"
+    else:
+        region = "france-low-countries"
+    return {"rite_family": rite, "region": region}
+
+
+def tradition_taxonomy(root: Path, stage_history: dict, inputs: dict) -> dict:
+    """Build rite-family and geographic taxonomy for all timeline traditions."""
+    overrides: dict[str, dict] = {}
+    owner = inside(root, TAXONOMY_PATH)
+    if owner.is_file():
+        stamp = fingerprint(root, owner)
+        inputs[stamp["path"]] = stamp
+        try:
+            loaded = tomllib.loads(owner.read_text(encoding="utf-8"))
+            if isinstance(loaded.get("traditions"), dict):
+                overrides = loaded["traditions"]
+        except (OSError, ValueError) as error:
+            raise HistoryError(f"cannot parse {TAXONOMY_PATH}: {error}") from error
+    valid_rites = {row["id"] for row in RITE_FAMILIES}
+    valid_regions = {row["id"] for row in GEOGRAPHIC_REGIONS}
+    classified: dict[str, dict] = {}
+    for tradition in stage_history.get("traditions", []):
+        tid = tradition["id"]
+        fallback = _classify_tradition(tradition)
+        declared = overrides.get(tid) if isinstance(overrides.get(tid), dict) else {}
+        rite = declared.get("rite_family") if declared.get("rite_family") in valid_rites else fallback["rite_family"]
+        region = declared.get("region") if declared.get("region") in valid_regions else fallback["region"]
+        entry = {"rite_family": rite, "region": region}
+        if isinstance(declared.get("subregion"), str) and declared["subregion"].strip():
+            entry["subregion"] = declared["subregion"].strip()
+        classified[tid] = entry
+    return {
+        "rite_families": list(RITE_FAMILIES),
+        "regions": list(GEOGRAPHIC_REGIONS),
+        "traditions": classified,
+    }
+
+
+def build_cross_references(entries: list[dict], comparisons: list[dict],
+                           stage_history: dict) -> dict:
+    """Derive lightweight bidirectional links between catalogue, timeline, and sibling instruments."""
+    by_record_entry = {row["id"]: row for row in entries}
+    tradition_labels = {row["id"]: row["label"] for row in stage_history.get("traditions", [])}
+    by_record_id: dict[str, dict] = {}
+    by_stage_id: dict[str, dict] = {}
+
+    def ensure_record(record_id: str) -> dict:
+        return by_record_id.setdefault(record_id, {"stages": [], "comparisons": []})
+
+    for comp in comparisons:
+        title = comp.get("title") or comp.get("label") or comp["id"]
+        for side in ("left", "right"):
+            rec_id = (comp.get(side) or {}).get("record_id")
+            if rec_id and rec_id in by_record_entry:
+                bucket = ensure_record(rec_id)["comparisons"]
+                if not any(row["id"] == comp["id"] for row in bucket):
+                    bucket.append({"id": comp["id"], "title": title})
+
+    for stage in stage_history.get("stages", []):
+        sid = stage["id"]
+        tid = stage["tradition_id"]
+        stage_summary = {
+            "id": sid,
+            "tradition_id": tid,
+            "tradition_label": tradition_labels.get(tid, tid),
+            "label": stage["label"],
+            "date_label": stage["date_label"],
+            "text_coverage": stage["text_coverage"],
+        }
+        editions = []
+        seen_editions = set()
+        for wid in stage.get("witness_ids", []):
+            if wid in by_record_entry:
+                ensure_record(wid)["stages"].append(stage_summary)
+                ed_id = by_record_entry[wid]["source_record"].get("source_library_edition_id")
+                if isinstance(ed_id, str) and ed_id and ed_id not in seen_editions:
+                    seen_editions.add(ed_id)
+                    editions.append({
+                        "edition_id": ed_id,
+                        "record_id": wid,
+                        "title": by_record_entry[wid]["title"],
+                        "url": "../sources/#edition=" + quote(ed_id, safe=""),
+                    })
+        related_routes = []
+        stage_blob = f"{sid} {stage.get('label', '')} {stage.get('summary', '')}".lower()
+        if sid == "roman-stages-1962-june" or ("1962" in sid and tid.startswith("roman")):
+            related_routes.append({"kind": "liturgy", "label": "Read the 1962 Missal in Today’s Missal", "href": "../liturgy/day.html#missal=roman-1962"})
+            related_routes.append({"kind": "liturgy", "label": "Browse 1962 Roman Missal propers", "href": "../liturgy/#missal=roman-1962"})
+        elif sid in ("roman-stages-1969-1970", "roman-stages-1975", "roman-stages-2002", "roman-stages-2008") or (tid == "roman-stages-postconciliar"):
+            related_routes.append({"kind": "liturgy", "label": "Read the postconciliar Missal in Today’s Missal", "href": "../liturgy/day.html#missal=postconciliar"})
+            related_routes.append({"kind": "liturgy", "label": "Browse postconciliar Roman Missal propers", "href": "../liturgy/#missal=postconciliar"})
+        if any(tok in stage_blob for tok in ("code of canon law", "cic ", "cceo", "canon law", "summorum pontificum", "traditionis custodes", "quo primum")):
+            related_routes.append({"kind": "law", "label": "Explore related canonical discipline in The Code, Canon by Canon", "href": "../law/"})
+        if editions or related_routes:
+            by_stage_id[sid] = {"source_library_editions": editions, "related_routes": related_routes}
+
+    return {"by_record_id": by_record_id, "by_stage_id": by_stage_id}
+
+
+def edition_cross_references(catalogue_payload: dict, root: Path) -> dict:
+    """Build Source-Library-facing back-links from canonical edition IDs into the Missal Timeline."""
+    stage_history = catalogue_payload.get("stage_history") or {}
+    tradition_labels = {row["id"]: row["label"] for row in stage_history.get("traditions", [])}
+    stages_by_witness: dict[str, list[dict]] = {}
+    stages_by_id = {}
+    for stage in stage_history.get("stages", []):
+        summary = {
+            "id": stage["id"],
+            "tradition_id": stage["tradition_id"],
+            "tradition_label": tradition_labels.get(stage["tradition_id"], stage["tradition_id"]),
+            "label": stage["label"],
+            "date_label": stage["date_label"],
+            "text_coverage": stage["text_coverage"],
+        }
+        stages_by_id[stage["id"]] = summary
+        for wid in stage.get("witness_ids", []):
+            stages_by_witness.setdefault(wid, []).append(summary)
+
+    comparisons_by_record: dict[str, list[dict]] = {}
+    for comp in catalogue_payload.get("comparisons", []):
+        title = comp.get("title") or comp.get("label") or comp["id"]
+        for side in ("left", "right"):
+            rec_id = (comp.get(side) or {}).get("record_id")
+            if rec_id:
+                comparisons_by_record.setdefault(rec_id, []).append({"id": comp["id"], "title": title})
+
+    editions: dict[str, dict] = {}
+
+    def bucket(edition_id: str) -> dict:
+        return editions.setdefault(edition_id, {
+            "catalogue_records": [], "stages": [], "native_texts": [], "comparisons": [],
+        })
+
+    for entry in catalogue_payload.get("entries", []):
+        ed_id = (entry.get("source_record") or {}).get("source_library_edition_id")
+        if not isinstance(ed_id, str) or not ed_id:
+            continue
+        row = bucket(ed_id)
+        if not any(r["id"] == entry["id"] for r in row["catalogue_records"]):
+            row["catalogue_records"].append({
+                "id": entry["id"],
+                "title": entry["title"],
+                "date_label": entry["date_label"],
+                "group": (entry.get("presentation_group") or {}).get("label") or entry["family"],
+            })
+        for stage in stages_by_witness.get(entry["id"], []):
+            if not any(s["id"] == stage["id"] for s in row["stages"]):
+                row["stages"].append(stage)
+        for comp in comparisons_by_record.get(entry["id"], []):
+            if not any(c["id"] == comp["id"] for c in row["comparisons"]):
+                row["comparisons"].append(comp)
+
+    from _eucharistic_texts import NATIVE_BOOK_DIRECTORY
+    for native in catalogue_payload.get("native_texts", []):
+        binding_path = inside(root, f"{NATIVE_BOOK_DIRECTORY}/{native['id']}.json")
+        if not binding_path.is_file():
+            continue
+        binding = json.loads(binding_path.read_text(encoding="utf-8"))
+        ed_ids = {w["edition_id"] for w in binding.get("witnesses", []) if isinstance(w.get("edition_id"), str)}
+        for ed_id in sorted(ed_ids):
+            row = bucket(ed_id)
+            if not any(n["id"] == native["id"] for n in row["native_texts"]):
+                row["native_texts"].append({
+                    "id": native["id"],
+                    "title": binding.get("title") or native["id"],
+                    "stage_ids": list(binding.get("stage_ids", [])),
+                })
+            for sid in binding.get("stage_ids", []):
+                if sid in stages_by_id and not any(s["id"] == sid for s in row["stages"]):
+                    row["stages"].append(stages_by_id[sid])
+            for wid in binding.get("catalogue_witness_ids", []):
+                for comp in comparisons_by_record.get(wid, []):
+                    if not any(c["id"] == comp["id"] for c in row["comparisons"]):
+                        row["comparisons"].append(comp)
+
+    for row in editions.values():
+        row["catalogue_records"].sort(key=lambda r: r["id"])
+        row["stages"].sort(key=lambda s: s["id"])
+        row["native_texts"].sort(key=lambda n: n["id"])
+        row["comparisons"].sort(key=lambda c: c["id"])
+
+    return {
+        "schema": EDITION_XREF_SCHEMA,
+        "count": len(editions),
+        "editions": dict(sorted(editions.items())),
+    }
+
+
+def write_edition_cross_references(catalogue_payload: dict, out: Path, root: Path) -> dict:
+    if out.is_symlink():
+        raise HistoryError("refusing a symlink edition cross-reference output")
+    payload = edition_cross_references(catalogue_payload, root)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_bytes(json_bytes(payload))
+    return {"schema": EDITION_XREF_SCHEMA, "count": payload["count"], "written": str(out)}
 COMPARISON_KINDS = {"same-prayer-witness-comparison": "same-prayer-witnesses",
                     "parallel-liturgical-unit-comparison": "parallel-function-not-same-composition"}
 RELATIONSHIP_SCHEMA = "eucharistic-history-relationships"
@@ -57,10 +335,23 @@ def inside(root: Path, value: str | Path) -> Path:
 
 def fingerprint(root: Path, path: Path) -> dict:
     try:
-        payload = path.read_bytes()
+        resolved = path.resolve()
+        st = resolved.stat()
+        from _eucharistic_texts import _SESSION_STATE
+        cache_key = (resolved, st.st_mtime_ns, st.st_size)
+        if _SESSION_STATE is not None and cache_key in _SESSION_STATE["digests"]:
+            sha = _SESSION_STATE["digests"][cache_key]
+        else:
+            h = hashlib.sha256()
+            with resolved.open("rb") as fh:
+                for chunk in iter(lambda: fh.read(1 << 20), b""):
+                    h.update(chunk)
+            sha = h.hexdigest()
+            if _SESSION_STATE is not None:
+                _SESSION_STATE["digests"][cache_key] = sha
     except OSError as error:
         raise HistoryError(f"cannot read {path.relative_to(root)}: {error.strerror}") from error
-    return {"path": path.relative_to(root).as_posix(), "sha256": digest(payload), "byte_size": len(payload)}
+    return {"path": path.relative_to(root).as_posix(), "sha256": sha, "byte_size": st.st_size}
 
 
 def read_toml(root: Path, path: Path, inputs: dict) -> dict:
@@ -493,6 +784,8 @@ def catalogue(source: Path, root: Path, *, act_loader) -> dict:
         native_texts[identifier] = {"id": identifier, "adapter_id": stage["text_binding"],
                                     "projection_path": projection_path, "binding_sha256": binding_hash}
     entries.sort(key=lambda row: row["id"])
+    taxonomy = tradition_taxonomy(root, stage_history, inputs)
+    cross_refs = build_cross_references(entries, comparisons, stage_history)
     return {"schema": SCHEMA, "scope_ref": data["scope_ref"], "entries": entries,
             "counts": {"entries": len(entries), "substantive_established": sum(e["substantive_status"] == "substantive-established" for e in entries),
                        "witnesses": sum(e["record_kind"] in ("printed-witness", "manuscript-witness") for e in entries),
@@ -503,6 +796,8 @@ def catalogue(source: Path, root: Path, *, act_loader) -> dict:
             "native_texts": [native_texts[key] for key in sorted(native_texts)],
             "comparisons": comparisons, "relationships": relations, "relationship_entities": entities, "presentation_groups": groups,
             "stage_history": stage_history,
+            "tradition_taxonomy": taxonomy,
+            "cross_references": cross_refs,
             "holdings": holdings, "inputs": sorted(inputs.values(), key=lambda row: row["path"]),
             "limitations": ["Research records are candidates, not accepted normative stations or text ancestry.",
                             "Recorded printings and acts are not a census of proven substantive liturgical versions.",
@@ -782,13 +1077,43 @@ def _text_versions(data: dict, accepted: list, root: Path) -> list:
                     raise HistoryError("version parentage source changed during validation")
                 inputs[stamp["path"]] = stamp
         files["inputs.json"] = json_bytes(sorted(inputs.values(), key=lambda row: row["path"]))
+    version_text_paths = {
+        key: {name for name in files if name.startswith("text/")}
+        for key, (_, _, files, _) in versions.items()
+    }
+    for key, (row, payload, files, receipts) in versions.items():
+        diff_lines = []
+        parent_ids = [parent["version_id"] for parent in row["parents"]]
+        for parent_id in parent_ids:
+            shared = len(version_text_paths[key] & version_text_paths.get(parent_id, set()))
+            diff_lines.append(
+                f"- Verified parent (`{parent_id}`, {shared} shared semantic path(s)): "
+                f"`git diff --word-diff=color version/{parent_id} version/{key} -- text/`"
+            )
+        siblings = sorted(
+            other for other, other_paths in version_text_paths.items()
+            if other != key and other not in parent_ids and (version_text_paths[key] & other_paths)
+        )
+        for other in siblings:
+            shared = len(version_text_paths[key] & version_text_paths[other])
+            diff_lines.append(
+                f"- Aligned witness (`{other}`, {shared} shared semantic path(s); comparison only, not parentage): "
+                f"`git diff --word-diff=color version/{other} version/{key} -- text/`"
+            )
+        diff_block = (
+            "\n## Visual Git Diffing\n\n"
+            "Text files use clause-per-line serialization (`act-history-ventilate/v1`) at semantic liturgical paths.\n"
+            + ("\n".join(diff_lines) + "\n" if diff_lines else
+               "- No other `version/` branch in this corpus currently shares a semantic path under `text/`.\n")
+        )
         files["README.md"] = (f"# {payload.get('title', key)}\n\n"
             "This is a complete snapshot within its explicitly reviewed native extent.\n"
             "See coverage.json for whole-book versus constituent coverage and exclusions.\n"
             "Git parents exist only where the exact binding has an evidence authorization receipt.\n"
             "Every snapshot materializes its own verified literal text; no parent text is inherited.\n"
             "The Git timestamp is synthetic 2000-01-01, never the historical event date.\n"
-            "Historical date bounds and their event role remain in reconstruction.json.\n").encode()
+            "Historical date bounds and their event role remain in reconstruction.json.\n"
+            + diff_block).encode()
     try:
         verify_progression(stages, transitions)
     except StageError as error:
@@ -808,6 +1133,13 @@ def _text_versions(data: dict, accepted: list, root: Path) -> list:
 
 def corpus(source: Path, root: Path, out: Path, *, ventilator, adapter_loader=None, supported_adapters=None) -> dict:
     root = root.resolve()
+    from _eucharistic_texts import session_cache
+    with session_cache(root):
+        return _corpus_impl(source, root, out, ventilator=ventilator,
+                            adapter_loader=adapter_loader, supported_adapters=supported_adapters)
+
+
+def _corpus_impl(source: Path, root: Path, out: Path, *, ventilator, adapter_loader=None, supported_adapters=None) -> dict:
     if adapter_loader is None:
         from _eucharistic_texts import load_adapter, adapter_ids
         adapter_loader, supported_adapters = load_adapter, adapter_ids(root)
@@ -886,9 +1218,28 @@ def corpus(source: Path, root: Path, out: Path, *, ventilator, adapter_loader=No
                     for row, _, _ in accepted}
         version_branches = {row["id"]: git(stage, "rev-parse", "refs/heads/version/" + row["id"]).decode().strip()
                             for row, _, _, _ in versions}
+        diff_pairs = []
+        v_paths = [(row["id"], {p for p in files if p.startswith("text/")}, {p["version_id"] for p in row["parents"]})
+                   for row, _, files, _ in versions]
+        for idx, (left_id, left_set, left_parents) in enumerate(v_paths):
+            for right_id, right_set, right_parents in v_paths[idx + 1:]:
+                shared = sorted(left_set & right_set)
+                if not shared:
+                    continue
+                is_parent = left_id in right_parents or right_id in left_parents
+                a, b = (right_id, left_id) if right_id in left_parents else (left_id, right_id)
+                diff_pairs.append({
+                    "left": f"version/{a}",
+                    "right": f"version/{b}",
+                    "shared_paths": len(shared),
+                    "verified_parent_edge": is_parent,
+                    "command": f"git diff --word-diff=color version/{a} version/{b} -- text/",
+                })
         marker = {"schema": CORPUS_SCHEMA, "owner": "tools/act-history corpus", "branches": branches}
         if versions:
             marker["version_branches"] = version_branches
+        if diff_pairs:
+            marker["diff_pairs"] = diff_pairs
         (stage / MARKER).write_bytes(json_bytes(marker))
         _owned_output(out)
         if out.exists():
@@ -910,7 +1261,8 @@ def corpus(source: Path, root: Path, out: Path, *, ventilator, adapter_loader=No
                                "scope": payload["scope"], "ref": "refs/heads/reconstruction/" + row["id"]}
                               for row, payload, _ in accepted],
                 "historical_ancestry_claimed": any(receipts for _, _, _, receipts in versions),
-                **({"version_commits": len(versions), "version_branches": version_branches} if versions else {})}
+                **({"version_commits": len(versions), "version_branches": version_branches} if versions else {}),
+                **({"diff_pairs": diff_pairs} if diff_pairs else {})}
     finally:
         if stage.exists():
             shutil.rmtree(stage)
@@ -961,7 +1313,8 @@ def _comparison_record_binding(record: dict | None, members: list[dict]) -> dict
 
 
 def compare(source: Path, root: Path, identifier: str, *, ventilator,
-            adapter_loader=None, supported_adapters=None, act_loader=None) -> dict:
+            adapter_loader=None, supported_adapters=None, act_loader=None,
+            catalogue_context: dict | None = None) -> dict:
     """Compare explicit witness membership without creating textual ancestry."""
     root = root.resolve()
     data, inputs = route(source, root)
@@ -1000,9 +1353,12 @@ def compare(source: Path, root: Path, identifier: str, *, ventilator,
         if not isinstance(declaration.get(side), dict):
             raise HistoryError(f"comparison {side} must name a configured text_set")
     if data.get("relationship_sets") or any("record_id" in declaration.get(side, {}) for side in ("left", "right")):
-        if data.get("act_slices") and act_loader is None:
-            raise HistoryError("linked comparison requires the owning act loader to validate catalogue records")
-        context = catalogue(source, root, act_loader=act_loader)
+        if catalogue_context is not None:
+            context = catalogue_context
+        else:
+            if data.get("act_slices") and act_loader is None:
+                raise HistoryError("linked comparison requires the owning act loader to validate catalogue records")
+            context = catalogue(source, root, act_loader=act_loader)
         records = {row["id"]: row for row in context["entries"]}
         related = [row for row in context["relationships"] if identifier in row["comparison_ids"]]
         collect(context["inputs"], inputs, "path")

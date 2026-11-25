@@ -1,0 +1,156 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-extent",
+  "book_id": "armenian-1823-badarak-anaphora",
+  "title": "Venice 1823 San Lazzaro Lyturgia Armena: core Armenian Badarak Anaphora constituent — complete constituent extent and page account",
+  "status": "complete",
+  "unresolved": [],
+  "omitted": [],
+  "expected_unit_ids": [
+    "unit.arm-1823.badarak.01-opening-dialogue",
+    "unit.arm-1823.badarak.02-preface-thanksgiving",
+    "unit.arm-1823.badarak.03-sanctus",
+    "unit.arm-1823.badarak.04-post-sanctus-institution",
+    "unit.arm-1823.badarak.05-anamnesis-oblation",
+    "unit.arm-1823.badarak.06-epiclesis"
+  ],
+  "scope": "Core Classical Armenian (Grabar) Anaphora of the Armenian Divine Liturgy (Badarak) from the priest's opening Trinitarian blessing rubric and greeting (Քահանայն դարձցի և խաչակնքեսցէ ✠ ՚ի վերայ ժողովրդեանն, և ասասցէ։ Շնորհք, սէր, և աստուածային սրբարար զօրութիւն...) at printed p. 46 (PDF p. 50) through the Preface, Sanctus incipit (p. 47 / PDF p. 51; excluding the intervening full-page Crucifixion engraving at unnumbered p. [48] / PDF p. 52 as non-text), Post-Sanctus and Institution Narrative (pp. [49]–50 / PDF pp. 53–54), Anamnesis and Oblation (pp. 51–52 / PDF pp. 55–56), and the complete Epiclesis (triple past-tense արարեր blessings, combined փոխարկելով blessing, rubric, and concluding ekphonesis Որպէս զի եղիցի սա... ՚ի թողութիւն մեղաց։) at printed p. 53 (PDF p. 57), immediately before the post-epiclesis general intercessions (Սովաւ շնորհեա՛ զսէր...). Uses the exact same 6 canonical native_path slugs as armenian-1642-badarak-anaphora for 1-to-1 collation.",
+  "pages": [
+    {
+      "witness_id": "arm-1823-google",
+      "ranges": [
+        [
+          1,
+          49
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "Front covers/flyleaves (PDF pp. 1–4), title page (printed PA1 / PDF p. 5), and pre-Anaphora service texts through printed p. 45 (PDF p. 49)."
+    },
+    {
+      "witness_id": "arm-1823-google",
+      "ranges": [
+        [
+          50,
+          50
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.arm-1823.badarak.01-opening-dialogue"
+      ],
+      "description": "Printed p. 46: lower half from priest's Trinitarian blessing rubric (Քահանայն դարձցի...) through Դպիրքն։ Արժան և իրաւ։; upper-half Peace/Kiss of Peace/Proclamation dialogue is excluded."
+    },
+    {
+      "witness_id": "arm-1823-google",
+      "ranges": [
+        [
+          51,
+          51
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.arm-1823.badarak.02-preface-thanksgiving",
+        "unit.arm-1823.badarak.03-sanctus"
+      ],
+      "description": "Printed p. 47: complete Preface/Thanksgiving, Sanctus ekphonesis, and Sanctus incipit."
+    },
+    {
+      "witness_id": "arm-1823-google",
+      "ranges": [
+        [
+          52,
+          52
+        ]
+      ],
+      "role": "non-text",
+      "unit_ids": [],
+      "description": "Unnumbered printed p. [48]: full-page copperplate Crucifixion engraving with a two-line devotional verse caption (Ո՜հ թէ որքան էր սաստկագին կսկիծ կուսին...) inserted between Sanctus and Post-Sanctus; non-liturgical pictorial plate."
+    },
+    {
+      "witness_id": "arm-1823-google",
+      "ranges": [
+        [
+          53,
+          53
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.arm-1823.badarak.04-post-sanctus-institution"
+      ],
+      "description": "Unnumbered printed p. [49] (signature 4): Post-Sanctus prayer and opening line of Bread Institution Narrative."
+    },
+    {
+      "witness_id": "arm-1823-google",
+      "ranges": [
+        [
+          54,
+          54
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.arm-1823.badarak.04-post-sanctus-institution"
+      ],
+      "description": "Printed p. 50: Bread and Chalice Institution Narratives and Post-Institution prayer (Եւ զսոյն...)."
+    },
+    {
+      "witness_id": "arm-1823-google",
+      "ranges": [
+        [
+          55,
+          55
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.arm-1823.badarak.05-anamnesis-oblation"
+      ],
+      "description": "Printed p. 51: Anamnesis, Oblation, Յամենայնի incipit, and opening of Զքեզ արդարև."
+    },
+    {
+      "witness_id": "arm-1823-google",
+      "ranges": [
+        [
+          56,
+          56
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.arm-1823.badarak.05-anamnesis-oblation",
+        "unit.arm-1823.badarak.06-epiclesis"
+      ],
+      "description": "Printed p. 52: completion of Զքեզ արդարև, Peace and pre-Epiclesis dialogue, and Epiclesis through opening line of combined bread-and-wine blessing."
+    },
+    {
+      "witness_id": "arm-1823-google",
+      "ranges": [
+        [
+          57,
+          57
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.arm-1823.badarak.06-epiclesis"
+      ],
+      "description": "Printed p. 53: upper portion completing the combined Epiclesis blessing, repetition rubric, and concluding ekphonesis (Որպէս զի եղիցի սա... ՚ի թողութիւն մեղաց։); post-Epiclesis intercessions beginning Եւ ապա տարածեալ զձեռս... Սովաւ շնորհեա՛... are excluded."
+    },
+    {
+      "witness_id": "arm-1823-google",
+      "ranges": [
+        [
+          58,
+          88
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "Post-Epiclesis intercessions, Diptychs (including p. 55 papal/hierarch rubric), Lord's Prayer, Communion, Gospel bodies (pp. 69–70), Dismissal (p. 71), Alleluia appendix (pp. 72–80, ending PDF p. 84), and endpapers (PDF pp. 85–88)."
+    }
+  ]
+}

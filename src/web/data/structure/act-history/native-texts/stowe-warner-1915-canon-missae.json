@@ -1,0 +1,766 @@
+{
+  "adapter_id": "native-book:stowe-warner-1915-canon-missae",
+  "binding_sha256": "d05f6575e6e7e630c4ad6593d9ce01ebe3b83d03d5a1767948acd54285937f54",
+  "catalogue_witness_ids": [
+    "western:stowe-ria-dii3"
+  ],
+  "counts": {
+    "languages": {
+      "la": 16
+    },
+    "units": 16,
+    "whitespace_tokens": 1172
+  },
+  "id": "stowe-warner-1915-canon-missae",
+  "schema": "triptych-eucharistic-native-text/v1",
+  "scope": {
+    "complete_declared_extent": true,
+    "description": "Complete strict Eucharistic Canon of RIA MS D. II. 3 as mediated by G. F. Warner's 1915 printed text (Vol. II, printed pp. 10-16, PDF pp. 96-102): from the Canon heading Canón dominicus papę gilasi and Té igitur on printed p. 10 (fo. 24) through per omnia saecula saeculorum : on printed p. 16 (fo. 34), immediately before the Old Irish fraction rubric and Pater nóster on printed p. 17. Includes the seven seasonal Infra actionem Communicantes insertions (pp. 11-12), Moelcaich's bracketed anamnesis addition in Simili modo (p. 13), and the Stowe Diptychs of the Dead (ff. 32-33, pp. 15-16) continuing Memento etiam (fo. 29v, p. 14). Excludes the two misbound leaves ff. 30-31v (Litany of Irish Saints and Oratio Ambrosi on pp. 14-15, which Warner notes belong after fo. 12 before the Mass) and excludes all apparatus footnotes, running heads, and marginal folio markers.",
+    "extent_kind": "constituent",
+    "known_extent_pages": 7,
+    "known_extent_units": 16,
+    "omitted_book_divisions": [
+      "Preface, Old Irish Dignum rubrics, Per quem and Sanctus on printed p. 10 (PDF p. 96) above Canón dominicus papę gilasi",
+      "Misbound inserted leaves [fo. 30]-[fo. 31v] (Litany of Irish Saints sancte stefane... and Oratio ambrosi / Ante conspectum... on printed pp. 14-15, PDF pp. 100-101), which Warner p. 14 n. 2 and p. 15 n. 6 identify as belonging after fo. 12",
+      "Old Irish fraction/commixture rubrics, Pater nóster, Libera nos, communion chants and all subsequent material from printed p. 17 (PDF p. 103) onward",
+      "Critical apparatus footnotes, superscript footnote numbers, running heads (THE STOWE MISSAL.), page numbers, and marginal folio tags ([fo. 24] to [fo. 34])"
+    ],
+    "status": "complete-native-constituent",
+    "whole_book_complete": false
+  },
+  "sources": [
+    {
+      "edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+      "record_type": "artifact",
+      "rights_basis": "Faithful bounded reading transcription of original-language liturgical text from Stowe Missal (Warner 1915 Vol. 2): complete strict Canon Missae constituent, whose United States copyright term has expired by publication date (1915 critical edition (mediating Stowe core copied ca. 792, catalogue bounds 780-820, with undated Moelcaich revisions)). Derived directly from tracked public-domain facsimile artifact.catholic-church.stowe-missal.warner-1915-vol-2.ia-scan-27c6070e without modern translation or editorial reconstruction. Third-party historical text is excluded from Triptych's CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "transformation": "Direct reading from rendered PNG images of Warner 1915 Vol. II PDF pp. 96-102 (printed pp. 10-16). UTF-8 NFC, LF line endings. Follows existing checked Stowe passage conventions: roman/italic typography flattened; æ ligatures expanded to ae; e-caudata ę (U+0119) preserved in papę and pręstas; printed acute and grave accents (á, é, í, ó, ú, ì), macron N̄ (U+004E+U+0304), spacing tilde (uenia~), editorial brackets ([ist], [li], [s]) and Moelcaich revision angle brackets (< ... >) preserved; printed crosses retained as '+'. Compound end-punctuation marks (:~, ∴, ·~, ..~, curved colon) uniformly normalized to ':'; raised single dot (·) to '.'; double dot (··) to '..'. Diptych columns on ff. 32-33 read column-by-column in printed order, joining column-wrapped split names flagged in Warner p. 15 n. 7 (melchisedech, machabeorum, infantum, barthalomae, sacerdotum). Native Hiberno-Latin orthography preserved verbatim (clementisime, suplices, aceptu, aeclesia, unare, ortodoxís, intigritate, redetu, incolimitate, pecatorum, prespeterís, arcisire, anriae, pilippi, thathei, ancleti, domiani, Quessumus, idulorum, dignareque, patiretur, diciens, agiens, rimisionem, abrache, obtilit, maistatis, replemur, praespiter, misserationvm, alaxandro, cicilia, anastassia, corum, estimatis). Superscript apparatus numbers, marginal folio tags, footnotes, running heads and misbound ff. 30-31v excluded."
+    },
+    {
+      "edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.ia-scan-27c6070e",
+      "record_type": "artifact",
+      "rights_basis": "The identified historical printing was published before 1931 and is public domain in the United States by expiration of its publication term. Cornell University Library, Copyright Term and the Public Domain, updated 1 January 2026, https://guides.library.cornell.edu/copyright/publicdomain, checked 16 October 2026, gives that rule for foreign publications. Faithful mechanical reproduction and automated OCR add no new human-authored text. This record covers this historical witness and stated mechanical artifact, not a modern critical edition or translation. The retained source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "source_url": "https://archive.org/download/publications32henruoft/publications32henruoft.pdf"
+    },
+    {
+      "date": "1915",
+      "id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "language": "la",
+      "publication": "London: Henry Bradshaw Society, vol. XXXII; Harrison and Sons, 1915.",
+      "record_type": "edition",
+      "title": "The Stowe Missal, MS. D. II. 3 in the Library of the Royal Irish Academy, Dublin. Vol. II: Printed Text"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+      "edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-communicantes",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+      "edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-concluding-response",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+      "edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-hanc-igitur",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+      "edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-memento-defunctorum",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+      "edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-memento-vivorum",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+      "edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-nobis-quoque",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+      "edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-opening-rubric",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+      "edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-per-ipsum",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+      "edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-per-quem",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+      "edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-quam-oblationem",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+      "edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-qui-pridie",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+      "edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-simili-modo",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+      "edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-supplices",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+      "edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-supra-quae",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+      "edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-te-igitur",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+      "edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-unde-et-memores",
+      "record_type": "passage"
+    }
+  ],
+  "stage_ids": [
+    "early-western-round2-stowe"
+  ],
+  "title": "Stowe Missal (Warner 1915 Vol. 2): complete strict Canon Missae constituent",
+  "units": [
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "heading",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "opening-rubric"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+      "source_id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-opening-rubric",
+      "source_locator": "Constituent unit 1/16 (anaphoras/canon-missae/opening-rubric), normalized physical lines 1–1.",
+      "source_order": 1,
+      "text": "Canón dominicus papę gilasi",
+      "text_edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "text_sha256": "fe4c65092f4d727f6dbe9783ee66873a6e0b5326822422017b5ab2acd8adaee3",
+      "unit_id": "unit.stowe-warner-1915.canon.opening-rubric",
+      "witness_id": "stowe-warner-1915-vol-2-pdf",
+      "witness_pages": [
+        [
+          96,
+          96
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "te-igitur"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+      "source_id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-te-igitur",
+      "source_locator": "Constituent unit 2/16 (anaphoras/canon-missae/te-igitur), normalized physical lines 2–2.",
+      "source_order": 2,
+      "text": "Té igitur clementisime pater per iesum christum filium tuum dominum nostrum suplices té rogamus et petimus uti aceptu habeas et benedicás haec dona haec munera haec sancta sacrificia inlibata inprimís quae tibi offerimus pro tua sancta aeclesia catholica quam pacificare custodire et unare et regere digneris toto orbe terrarum una cum beatissimo famulo tuo .n. papa nóstro episcopo sedis apostolicae et omnibus ortodoxís atque apostolice fidei cultoribus et abbate nostro .n. episcopo ..",
+      "text_edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "text_sha256": "37efb94f701bb504e3104fe9b2b45b328baac3b23a2b734d3debd655eb2e3d81",
+      "unit_id": "unit.stowe-warner-1915.canon.te-igitur",
+      "witness_id": "stowe-warner-1915-vol-2-pdf",
+      "witness_pages": [
+        [
+          96,
+          96
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "memento-vivorum"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+      "source_id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-memento-vivorum",
+      "source_locator": "Constituent unit 3/16 (anaphoras/canon-missae/memento-vivorum), normalized physical lines 3–4.",
+      "source_order": 3,
+      "text": "Híc recitantur nomina uiuorum\nMemento etiam domine famulorum tuorum .n. famularumque tuarum et omnium circum adstantium quorum tibi fides cognita est et nota deuotio qui tibi offerunt hoc sacrificium laudis pro se suisque omnibus pro redemptione animarum suarum . Pro stratu seniorum suorum et ministrorum omnium puritate pro intigritate uirginum et continentia uiduarum pro aeris temperie et fructum fecunditate terrarum pro pacis redetu et fine discriminum pro incolimitate regum et pace populorum ac reditu captiuorum pro uotís adstantium pro memoria martirum pro remisione pecatorum nóstrorum et actuum emendatione eorum ac requie defunctorum et prosperitate iteneris nostri pro domino papa episcopo et omnibus episcopís et prespeterís et omni aeclesiastico ordine pro imperio romano et omnibus regibus christianís pro fratribus et sororibus nostrís pro fratribus in uia directís pro fratribus quos de caliginosís mundi huius tenebrís dominus arcisire dignatus est uti eos in aeterna summae lucis quietae pietás diuina suscipiat pro fratribus qui uarís dolorum generibus adfliguntur uti eos diuina pietás curare dignetur pro spé salutis et incolimitatis suae tibi reddunt uota sua eterno deo uiuo et uero",
+      "text_edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "text_sha256": "14c56d6127776b67d197b6f61eb94e6147522c0a02293b50f36ab29c230fe3e6",
+      "unit_id": "unit.stowe-warner-1915.canon.memento-vivorum",
+      "witness_id": "stowe-warner-1915-vol-2-pdf",
+      "witness_pages": [
+        [
+          97,
+          97
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "communicantes"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+      "source_id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-communicantes",
+      "source_locator": "Constituent unit 4/16 (anaphoras/canon-missae/communicantes), normalized physical lines 5–21.",
+      "source_order": 4,
+      "text": "communicantes :\nIn natale domini\nEt diem sacratisimam celebrantes in quo incontaminata uirginitás huic mundo edidit saluatorem :\nKalendis\nEt diem sacratisimam celebrantes circumcisionis domini nóstri iesu christi :\nstellae\nEt diem sacratisimam celebrantes natalis calicis domini nostri iesu christi ..\npasca\nEt noctem uel diem sacratisimam ressurrectionis domini nóstri iesu christi :\nIn clausula pasca\nEt diem sacratisimam celebrantes clausulae pascae domini nóstri iesu christi ..\nAscensio\nEt diem sacratisimam celebrantes ascensionis domini nóstri iesu christi ad caelum :\npentacostén\nEt diem sacratisimam celebrantes quinquagensimae domini nostri iesu christi in qua spiritus sanctus super apostolos discendit\nEt memoriam uenerantes in primís gloriosae semper uirginis mariae genetricis dei et domini nostri iesu christi\nSed et beatorum apostolorum ac martirum tuorum Petri et pauli anriae iacobi iohannis thomae iacobi pilippi bartholomái mathei simonis et thathei lini ancleti clementis xisti corníli cipriani laurenti crisogini iohannis et pauli cosme et domiani et omnium sanctorum tuorum quorum meritís precibusque concedas ut in omnibus protectionis tuae muniamur auxilio . per :",
+      "text_edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "text_sha256": "af88c163d6200dbcf1a5e54488becb1f3bbc382ca43c6325a28a449acb7771af",
+      "unit_id": "unit.stowe-warner-1915.canon.communicantes",
+      "witness_id": "stowe-warner-1915-vol-2-pdf",
+      "witness_pages": [
+        [
+          97,
+          97
+        ],
+        [
+          98,
+          98
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "hanc-igitur"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+      "source_id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-hanc-igitur",
+      "source_locator": "Constituent unit 5/16 (anaphoras/canon-missae/hanc-igitur), normalized physical lines 22–23.",
+      "source_order": 5,
+      "text": "Hanc igitur oblationem seruitutis nostrae sed et cunctae familiae tuae quam tibi offerimus in honorem domini nostri iesu christi et in commemorationem beatorum martirum tuorum in hac aeclesiae quam famulus tuus ad honorem nominis gloriae tuae aedificauit : Quessumus domine ut placatus suscipias Eumque adque omnem populum ab idulorum cultura eripias et ad té deum uerum patrem omnipotentem conuertas :\nDies quoque nostros in tua pace disponas atque ab aeterna damnatione nos eripias et in electorum tuorum iubeas grege numerari : per dominum nostrum :",
+      "text_edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "text_sha256": "42b5491097b23b44b17e465d77387c7543b13c7dfec75075d9807435637c1fb6",
+      "unit_id": "unit.stowe-warner-1915.canon.hanc-igitur",
+      "witness_id": "stowe-warner-1915-vol-2-pdf",
+      "witness_pages": [
+        [
+          98,
+          98
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "quam-oblationem"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+      "source_id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-quam-oblationem",
+      "source_locator": "Constituent unit 6/16 (anaphoras/canon-missae/quam-oblationem), normalized physical lines 24–24.",
+      "source_order": 6,
+      "text": "Quam oblationem té deus in omnibus quesumus benedictam + ascriptam ratam rationabilem acceptabilemque facere dignareque nobís corpus et sanguis fiat dilectissimi fili tui domini nostri iesu christi",
+      "text_edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "text_sha256": "bbc0c822c7e03d3d4c44b011b1123fb553b9b66e44141f8ffbffad5d9f599b4c",
+      "unit_id": "unit.stowe-warner-1915.canon.quam-oblationem",
+      "witness_id": "stowe-warner-1915-vol-2-pdf",
+      "witness_pages": [
+        [
+          98,
+          98
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "institution-narrative",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "qui-pridie"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+      "source_id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-qui-pridie",
+      "source_locator": "Constituent unit 7/16 (anaphoras/canon-missae/qui-pridie), normalized physical lines 25–25.",
+      "source_order": 7,
+      "text": "qui pridie quam patiretur Accipit panem in sanctas ac uenerabiles manus suas Eleuatis oculis suís ad caelum et ad té deum patrem suum omnipotentem tibi gratias egit Benedixit fregit Dedit discipulís suís diciens accipite et manducate ex hoc omnes hoc est enim corpus meum",
+      "text_edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "text_sha256": "ec92338f28d33520afbb7724b286a055bbf4d51c0fdaef3bcae62bb6bcda00ed",
+      "unit_id": "unit.stowe-warner-1915.canon.qui-pridie",
+      "witness_id": "stowe-warner-1915-vol-2-pdf",
+      "witness_pages": [
+        [
+          98,
+          98
+        ],
+        [
+          99,
+          99
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "institution-narrative",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "simili-modo"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+      "source_id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-simili-modo",
+      "source_locator": "Constituent unit 8/16 (anaphoras/canon-missae/simili-modo), normalized physical lines 26–26.",
+      "source_order": 8,
+      "text": "Simili modo posteaquam cenatum Accipit et hunc preclarum calicem in sanctas ac uenerabiles manus suas Item tibi gratias agiens benedixit dedit discipulís suís dicens Accipite et bibite ex hoc omnes hic est enim calix sancti sanguinis mei noui et aeterni testamenti misterium fidei qui pro uobís et pro multis effundetur in rimisionem peccatorum . haec quotienscumque feceretis in mei <memoriam faciatis passionem meam predicabitis resurrectionem meam adnuntiabitis aduentum meum sperabitis donec iterum ueniam ad uós de caelís : >",
+      "text_edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "text_sha256": "699d4da969e8618d783625aa7b7d065ab9682c2faabd6ad4ebd237238170a079",
+      "unit_id": "unit.stowe-warner-1915.canon.simili-modo",
+      "witness_id": "stowe-warner-1915-vol-2-pdf",
+      "witness_pages": [
+        [
+          99,
+          99
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "unde-et-memores"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+      "source_id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-unde-et-memores",
+      "source_locator": "Constituent unit 9/16 (anaphoras/canon-missae/unde-et-memores), normalized physical lines 27–27.",
+      "source_order": 9,
+      "text": "Unde et memores sumus domine nos tui serui sed et plebs tua sancta chr[ist]i filii tui domini nostri tam beatae passionis necnon et ab inferis resurrectionis sed et in caelos gloriosae ascensionis offerimus preclare maiestati tuae de tuís donís ac datís Hostiam puram Hostiam sanctam hostiam inmaculatam Panem sanctum uitae aeternae et calicem salutis perpetuae",
+      "text_edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "text_sha256": "894c01c2af560597758d0f540bdf488c8fe5e3bfa9bac7444dc8cf73e18f06ea",
+      "unit_id": "unit.stowe-warner-1915.canon.unde-et-memores",
+      "witness_id": "stowe-warner-1915-vol-2-pdf",
+      "witness_pages": [
+        [
+          99,
+          99
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "supra-quae"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+      "source_id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-supra-quae",
+      "source_locator": "Constituent unit 10/16 (anaphoras/canon-missae/supra-quae), normalized physical lines 28–28.",
+      "source_order": 10,
+      "text": "supra que propitio ac sereno uultu aspicire dignare et acceptu habere sicuti accepto habere dignatus és munera pueri tui iusti abel et sacrificium patriarche nostri abrache et quod tibi obtilit summus sacerdos tuus melchisedech sanctum sacrificium inmaculatam hostiam",
+      "text_edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "text_sha256": "bdb000e22b9d386ae9727c186a7737faeda09a3f0dd4d78a1dcc3031a70d6436",
+      "unit_id": "unit.stowe-warner-1915.canon.supra-quae",
+      "witness_id": "stowe-warner-1915-vol-2-pdf",
+      "witness_pages": [
+        [
+          99,
+          99
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "supplices"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+      "source_id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-supplices",
+      "source_locator": "Constituent unit 11/16 (anaphoras/canon-missae/supplices), normalized physical lines 29–29.",
+      "source_order": 11,
+      "text": "suplices té rogamus et petimus Omnipotens deus Iube perferri per manus sancti angeli tui in sublimi altari tuo in conspectu diuinae maistatis tuae Ut quotquot ex hoc altari sanctificationis sacrosanctum filii tui Corpus et sanguinem sumserimus omni benedictione et gratia replemur :",
+      "text_edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "text_sha256": "9c8bf36f81ed71322e8268f2444599f2fff04d9788c13b7fc2caa0837890f886",
+      "unit_id": "unit.stowe-warner-1915.canon.supplices",
+      "witness_id": "stowe-warner-1915-vol-2-pdf",
+      "witness_pages": [
+        [
+          99,
+          99
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-diptychs",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "memento-defunctorum"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+      "source_id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-memento-defunctorum",
+      "source_locator": "Constituent unit 12/16 (anaphoras/canon-missae/memento-defunctorum), normalized physical lines 30–32.",
+      "source_order": 12,
+      "text": "Memento etiam domine et eorum nomina qui nos praecesserunt cum signo fidei et dormiunt in somno pacis Cum omnibus . in toto mundo . offerentibus . sacrificium . spiritale . deo patri . et filio et spiritui . sancto sanctis . ac uenerabi[li]bus . sacerdotibus . offert . senior . noster . N̄ . praespiter . pro sé . et pro suís . et pro totius . aeclesiae . cetu . catholice . et pro commemorando . anathletico . gradu . uenerabilium . patriarcharum . profetarum . apostolorum . et martirum . et omniumque . sanctorum . ut pro nobís dominum . deum nostrum . exorare . dignentur :\nAblis zeth enóc noe melchisedech abrache isac iacob ioseph iob mosi essu samuelis dauid heliae helessiae essaiae heremiae ezechelis danielis . hestre osse iohel amos abdiae ionae michiae nauum ambucuc sophoniae agiae sachariae malachiae tobiae ananiae azariae misahelis . machabeorum Item infantum iohannis babtiste et uirginis mariae Petri pauli andriae iacobi iohannis pilipi barthalomae tomae mathei iacobi simonis tathei madiani madiani marci lucae stefani cornili cipriani et ceterorum martirum pauli antoni et ceterorum patrum heremi sciti Item episcoporum martini grigori maximi felicis Patrici Patrici secundini auxili isernini cerbáni erci catheri ibori ailbi conlai maic nissae moinenn senani finbarri . 'ni colmani cuáni aedach laurenti melléti iusti aedo dagani tigernich muchti ciannani buiti eogeni declani carthunì Maile ruen Item et sacerdotum Uinniaui ciarani oengusso endi gilde brendini brendini cainnichi Columbe Columbe colmani comgelli coemgeni\nEt omnium pausantium qui nós in dominica pace precesserunt ab adam usque in hodiernum diem quorum deus nomina nominauit et nouit Ipsis et omnibus in chr[ist]o quiescentibus locum refrigerii lucis et pacis ut indulgeas deprecamur",
+      "text_edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "text_sha256": "4b8fa121de737faa1f3f2af2ea4d0db09dba2692ab4c53a2c0fc2300dd953266",
+      "unit_id": "unit.stowe-warner-1915.canon.memento-defunctorum",
+      "witness_id": "stowe-warner-1915-vol-2-pdf",
+      "witness_pages": [
+        [
+          100,
+          100
+        ],
+        [
+          101,
+          101
+        ],
+        [
+          102,
+          102
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "nobis-quoque"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+      "source_id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-nobis-quoque",
+      "source_locator": "Constituent unit 13/16 (anaphoras/canon-missae/nobis-quoque), normalized physical lines 33–33.",
+      "source_order": 13,
+      "text": "Nobís quoque peccatoribus famulís tuís de multitudine misserationvm tuarum sperantibus partem aliquam et societatem donare dignare cum tuís sanctis apostolís et martiribus cum petro paulo patricio cum iohanne stefano mathia barnaba ignatio alaxandro marcellino petro perpetua agna cicilia felicitate anastassia agatha lucia et cum omnibus sanctis tuís intra corum nós consortia non estimatis meritis sed uenia~ quessumus largitor admitte : per :",
+      "text_edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "text_sha256": "fdd5c4508477db002287ecc46a6852e0659b2aaec4fb520a1df76a8b1504fa1b",
+      "unit_id": "unit.stowe-warner-1915.canon.nobis-quoque",
+      "witness_id": "stowe-warner-1915-vol-2-pdf",
+      "witness_pages": [
+        [
+          102,
+          102
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "per-quem"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+      "source_id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-per-quem",
+      "source_locator": "Constituent unit 14/16 (anaphoras/canon-missae/per-quem), normalized physical lines 34–34.",
+      "source_order": 14,
+      "text": "Per quem haec omnia domine semper bona creas + sanctificas + uiuificas + benedicis + et pręstas nobís",
+      "text_edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "text_sha256": "fb23f67f138b312b5ef7efa244cec03c1d81d341310d198e2b785262339e44e7",
+      "unit_id": "unit.stowe-warner-1915.canon.per-quem",
+      "witness_id": "stowe-warner-1915-vol-2-pdf",
+      "witness_pages": [
+        [
+          102,
+          102
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "doxology",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "per-ipsum"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+      "source_id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-per-ipsum",
+      "source_locator": "Constituent unit 15/16 (anaphoras/canon-missae/per-ipsum), normalized physical lines 35–35.",
+      "source_order": 15,
+      "text": "per ipsum et cum ipso et in ipso est tibi deo patri omnipotenti in unitate spiritu[s] sancti Omnis honor et gloria",
+      "text_edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "text_sha256": "aa02ae967c1fc8c00a2cd984d59752f5bb1363ff59fcce2b723b37ee57bc8587",
+      "unit_id": "unit.stowe-warner-1915.canon.per-ipsum",
+      "witness_id": "stowe-warner-1915-vol-2-pdf",
+      "witness_pages": [
+        [
+          102,
+          102
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "dialogue",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "concluding-response"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030",
+      "source_id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-concluding-response",
+      "source_locator": "Constituent unit 16/16 (anaphoras/canon-missae/concluding-response), normalized physical lines 36–36.",
+      "source_order": 16,
+      "text": "per omnia saecula saeculorum :",
+      "text_edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "text_sha256": "f913b0fa3784e23167f194b29c196da84c1466b51f38cd49845a96cce4fc0ee4",
+      "unit_id": "unit.stowe-warner-1915.canon.concluding-response",
+      "witness_id": "stowe-warner-1915-vol-2-pdf",
+      "witness_pages": [
+        [
+          102,
+          102
+        ]
+      ]
+    }
+  ],
+  "witnesses": [
+    {
+      "artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.ia-scan-27c6070e",
+      "edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "id": "stowe-warner-1915-vol-2-pdf",
+      "scope_pages": [
+        [
+          96,
+          102
+        ]
+      ]
+    }
+  ]
+}

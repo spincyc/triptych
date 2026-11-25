@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-collation",
+  "book_id": "maronite-1594-anaphora",
+  "title": "Missale Chaldaicum iuxta ritum Ecclesiae nationis Maronitarum (Rome Medici, 1594) — Anaphora of the Twelve Apostles Core — independent pixel-collation review",
+  "status": "verified",
+  "independent": true,
+  "complete_extent_verified": true,
+  "reviewer": "independent-collator-v2-syriac",
+  "checked_on": "2026-11-25",
+  "binding_sha256": "571ca202c8bc3989062f3809facb10acaea21c07ea13f62077032b4a5394f419",
+  "extent_sha256": "4c5e1ee8445ddb8559aaa87d26aaa554abc39d496a9e0034766de92577991948",
+  "witness_sha256": {
+    "maronite-1594-rome-medici-ia-pdf": "dbab3b5b32f51018a1b6bcaf2674e1ffe4958ac151ed12fe746c44b1184d83b1"
+  },
+  "unit_sha256": {
+    "maronite-1594-anaphora.01-opening-dialogue": "3bcde386d02ee82c608482a9175674f5827391f75c2e986202ceda2b766b465c",
+    "maronite-1594-anaphora.02-institution-bread": "56f9b269f417fff64ff32d8728b0666864ad05dfdca5615cf555c0cf012b3517",
+    "maronite-1594-anaphora.03-institution-chalice": "635cde76a9b75a2e0c59c90ea5d0db1f40dd101e494e78f8d513c61b62873067",
+    "maronite-1594-anaphora.04-epiclesis-call": "0f8367841f61f7dd41e73b6d59f72ed534219b326b74d2a1c5bbd5284a49bcd8",
+    "maronite-1594-anaphora.05-epiclesis-consecration": "7c11417135875f9a032f9276b8b4541289a2e8f66ed02928a1bda59212bbed05"
+  },
+  "scope": "Bounded constituent of five core units of the Anaphora of the Twelve Apostles (Opening Dialogue, Institution of Bread, Institution of Chalice, Epiclesis Call/Kyrie, and Epiclesis Consecration/Salvation Petition) in Classical Syriac (syr), directly aligned with Beirut 1908; intervening Preface, Post-Sanctus, Anamnesis, secret Epiclesis preamble, and post-epiclesis fruits prayer are excluded due to dense archaic Medici cursive ligatures and structural divergence in 1908's inline Ordo Communis.",
+  "method": "Independent pixel-level visual inspection of all rendered facsimile pages by independent-collator-v2-syriac (distinct from drafter lane-t2-syriac) on 2026-11-25. Applied 2 pixel-verified correction(s) relative to initial draft; verified every unit boundary, page account (1..300), and SHA-256 hash.",
+  "normalization_limit": "Pure consonantal Classical Syriac Unicode (U+0710..U+072C, UTF-8 NFC) with single ASCII spaces between words and single LF (\\n) line endings, one canonical liturgical unit per line.; All West Syriac vowel points, seyame (U+0308), qushshaya/rukkakha, punctuation marks, liturgical crosses (including inline red crosses splitting ܘܒܪܟ in 1594), kashidas, catchwords, running heads, border ornaments, and page numbers are omitted for scan-safe cross-edition diffing.; Rubrics (red Syriac or red Garshuni stage directions), speaker labels (priest/deacon/people), editorial 'etc.' cues (ܘܫܪ), intervening rubricated Trinitarian cross-blessings, and parallel Garshuni/Arabic columns are excluded.; Printed historical orthography (such as ܐܪܙܐ in 1594 vs ܪܐܙܐ in 1908, and ܒܐܝܕܝܐ in both Chalice preambles), abbreviations (such as abbreviated Dialogue incipits in 1594), omissions, and additions are preserved verbatim without harmonizing or supplying words from memory.",
+  "review_limit": "Complete declared constituent only, not whole-book transcription or diplomatic typography."
+}

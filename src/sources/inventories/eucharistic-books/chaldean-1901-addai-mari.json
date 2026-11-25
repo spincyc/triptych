@@ -1,0 +1,257 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-native-book",
+  "id": "chaldean-1901-addai-mari",
+  "title": "Missale Chaldaeorum (Mosul Dominican, 1901) — Anaphora of Addai and Mari Core",
+  "scope": "Bounded constituent of the exact same eight aligned core units of the Anaphora of Addai and Mari in Classical Syriac (syr), preserving 1901's distinctive placement of the Institution Narrative inside the Post-Sanctus (PDF 72-71) prior to Gehanta 2, while using identical canonical native_path slugs for direct 3-way diffing against Chaldean 1767 and Syro-Malabar 1906.",
+  "transcribed_by": "lane-t2-syriac",
+  "stage_ids": [
+    "chaldean-east-syriac:mosul1901"
+  ],
+  "catalogue_witness_ids": [
+    "eastern:chald-1901"
+  ],
+  "components": [
+    "anaphoras"
+  ],
+  "languages": [
+    "syr"
+  ],
+  "extent_kind": "constituent",
+  "excluded_book_divisions": [
+    "Title leaves, 22 Oct 1901 Latin imprimatur (PDF 101-103), and pre-anaphoral Ordo Missae (PDF 76-107)",
+    "Intervening private Kushapa prayers (PDF 74, 73, 70, 69, 68)",
+    "Post-epiclesis fraction, communion, additional anaphoras, and back matter (PDF 1-65)"
+  ],
+  "date": {
+    "kind": "publication",
+    "label": "1901",
+    "start_year": 1901,
+    "end_year": 1901,
+    "evidence": [
+      {
+        "source_id": "passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-intercession",
+        "locus": "Latin title at PDF 103 (Mausili: Typis Fratrum Praedicatorum, 1901), Syriac title at PDF 101, Latin imprimatur at PDF 102 dated 22 October 1901."
+      }
+    ]
+  },
+  "extent_path": "src/sources/inventories/eucharistic-books/support/chaldean-1901-addai-mari-extent.json",
+  "collation_path": "src/sources/inventories/eucharistic-books/support/chaldean-1901-addai-mari-review.json",
+  "witnesses": [
+    {
+      "id": "chaldean-1901-mosul-bonn-pdf",
+      "edition_id": "edition.chaldean-catholic-church.missale.1901-mosul-dominican",
+      "artifact_id": "artifact.chaldean-catholic-church.missale.1901-mosul-dominican.bonn-scan-pdf-dbc2a822",
+      "scope_pages": [
+        [
+          66,
+          68
+        ],
+        [
+          70,
+          75
+        ]
+      ],
+      "completeness_evidence": [
+        {
+          "source_id": "passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-facsimile",
+          "locus": "PDF pages 66–68, 70–75 of 107; complete bounded constituent scope."
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "chaldean-1901-addai-mari.01-opening-dialogue",
+      "native_path": [
+        "anaphoras",
+        "addai-and-mari",
+        "01-opening-dialogue"
+      ],
+      "source_order": 1,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "dialogue",
+      "witness_id": "chaldean-1901-mosul-bonn-pdf",
+      "witness_pages": [
+        [
+          74,
+          74
+        ],
+        [
+          75,
+          75
+        ]
+      ],
+      "passage_id": "passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-01-opening-dialogue",
+      "text_sha256": "3660b59c09250f5a6792e1887cca42a5b889959bd09ad51dd1c16a9434cf69f0"
+    },
+    {
+      "unit_id": "chaldean-1901-addai-mari.02-preface-gehanta-1",
+      "native_path": [
+        "anaphoras",
+        "addai-and-mari",
+        "02-preface-gehanta-1"
+      ],
+      "source_order": 2,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "chaldean-1901-mosul-bonn-pdf",
+      "witness_pages": [
+        [
+          74,
+          74
+        ]
+      ],
+      "passage_id": "passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-02-preface-gehanta-1",
+      "text_sha256": "60c55105276cd9aa8026c90083899d20afa84dda8d56762e465af885271d2a5b"
+    },
+    {
+      "unit_id": "chaldean-1901-addai-mari.03-sanctus",
+      "native_path": [
+        "anaphoras",
+        "addai-and-mari",
+        "03-sanctus"
+      ],
+      "source_order": 3,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "acclamation",
+      "witness_id": "chaldean-1901-mosul-bonn-pdf",
+      "witness_pages": [
+        [
+          73,
+          73
+        ],
+        [
+          74,
+          74
+        ]
+      ],
+      "passage_id": "passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-03-sanctus",
+      "text_sha256": "09f92bce1ccbd9c5702230d5241e155943945d2d5b70f34b39eee86a98b5dcfb"
+    },
+    {
+      "unit_id": "chaldean-1901-addai-mari.08-institution-narrative",
+      "native_path": [
+        "anaphoras",
+        "addai-and-mari",
+        "08-institution-narrative"
+      ],
+      "source_order": 4,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "institution-narrative",
+      "witness_id": "chaldean-1901-mosul-bonn-pdf",
+      "witness_pages": [
+        [
+          71,
+          71
+        ],
+        [
+          72,
+          72
+        ]
+      ],
+      "passage_id": "passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-08-institution-narrative",
+      "text_sha256": "d01ef9446869889513cc4c7ef821a1f4e8b19ec6295606d58992d51eecac85ac"
+    },
+    {
+      "unit_id": "chaldean-1901-addai-mari.04-post-sanctus-gehanta-2",
+      "native_path": [
+        "anaphoras",
+        "addai-and-mari",
+        "04-post-sanctus-gehanta-2"
+      ],
+      "source_order": 5,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "chaldean-1901-mosul-bonn-pdf",
+      "witness_pages": [
+        [
+          70,
+          70
+        ],
+        [
+          71,
+          71
+        ]
+      ],
+      "passage_id": "passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-04-post-sanctus-gehanta-2",
+      "text_sha256": "f38bb84a645e585ad5e9cb1e7485e9a48e689483891256850adc58f07ebfe721"
+    },
+    {
+      "unit_id": "chaldean-1901-addai-mari.05-intercession-gehanta-3",
+      "native_path": [
+        "anaphoras",
+        "addai-and-mari",
+        "05-intercession-gehanta-3"
+      ],
+      "source_order": 6,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "chaldean-1901-mosul-bonn-pdf",
+      "witness_pages": [
+        [
+          67,
+          67
+        ],
+        [
+          68,
+          68
+        ]
+      ],
+      "passage_id": "passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-05-intercession-gehanta-3",
+      "text_sha256": "7176211f952bdc4c667013a7ac9059dbe33e97e20f6eda1fd88c359c804e6e96"
+    },
+    {
+      "unit_id": "chaldean-1901-addai-mari.06-anamnesis-oblation",
+      "native_path": [
+        "anaphoras",
+        "addai-and-mari",
+        "06-anamnesis-oblation"
+      ],
+      "source_order": 7,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "chaldean-1901-mosul-bonn-pdf",
+      "witness_pages": [
+        [
+          67,
+          67
+        ]
+      ],
+      "passage_id": "passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-06-anamnesis-oblation",
+      "text_sha256": "24ca7b8816cf62efeec85df3b83be4ff7d0f4f0e519bb0d4eef6339d8d38468e"
+    },
+    {
+      "unit_id": "chaldean-1901-addai-mari.07-epiclesis-and-qanona",
+      "native_path": [
+        "anaphoras",
+        "addai-and-mari",
+        "07-epiclesis-and-qanona"
+      ],
+      "source_order": 8,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "chaldean-1901-mosul-bonn-pdf",
+      "witness_pages": [
+        [
+          66,
+          66
+        ],
+        [
+          67,
+          67
+        ]
+      ],
+      "passage_id": "passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-07-epiclesis-and-qanona",
+      "text_sha256": "9616ee1c448acac99cd9842cd533236defef6054548318813fcdae23d5c0e53d"
+    }
+  ]
+}

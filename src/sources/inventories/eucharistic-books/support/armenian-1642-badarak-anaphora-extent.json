@@ -1,0 +1,202 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-extent",
+  "book_id": "armenian-1642-badarak-anaphora",
+  "title": "Rome 1642 Ordo Divinae Missae Armenorum: core Armenian Badarak Anaphora constituent — complete constituent extent and page account",
+  "status": "complete",
+  "unresolved": [],
+  "omitted": [],
+  "expected_unit_ids": [
+    "unit.arm-1642.badarak.01-opening-dialogue",
+    "unit.arm-1642.badarak.02-preface-thanksgiving",
+    "unit.arm-1642.badarak.03-sanctus",
+    "unit.arm-1642.badarak.04-post-sanctus-institution",
+    "unit.arm-1642.badarak.05-anamnesis-oblation",
+    "unit.arm-1642.badarak.06-epiclesis"
+  ],
+  "scope": "Core Classical Armenian (Grabar) Anaphora of the Armenian Divine Liturgy (Badarak) from the priest's opening Trinitarian blessing rubric and greeting (Քահանայն աւրհնէ զժողովուրդն... Շնորհք սէր և սրբարար աստուածային զօրութիւն...) at printed p. 70 (PDF p. 82) through the Sanctus, Post-Sanctus, Institution Narrative (including Հայր երկնաւոր), Anamnesis and Oblation, and the complete Epiclesis concluding with Որպէս զի եղիցի... և ի թողութիւն մեղաց։ Դպիրքն. Ամէն։ at printed p. 80 (PDF p. 88), immediately before the post-epiclesis general intercessions (Սովաւ շնորհեա՛ զսէր...). Preserves the exact provider PDF page ordering where printed pp. 77–80 (PDF pp. 85–88) precede printed pp. 73–76 (PDF pp. 89–92), while ordering transcribed units in true liturgical/printed sequence (pp. 70–80). Excludes the parallel Latin column on the same pages, all pre-Anaphora and post-Epiclesis sections, and page furniture.",
+  "pages": [
+    {
+      "witness_id": "arm-1642-google",
+      "ranges": [
+        [
+          1,
+          81
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "Front matter (title at PDF p. 5, 1636 review certificate at PDF p. 7, Molino certificate at PDF p. 8, imprimaturs at PDF p. 9), pre-Anaphora bilingual Armenian–Latin liturgy, Crucifixion engraving (PDF p. 78), and Kiss of Peace through printed p. 69."
+    },
+    {
+      "witness_id": "arm-1642-google",
+      "ranges": [
+        [
+          82,
+          82
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.arm-1642.badarak.01-opening-dialogue"
+      ],
+      "description": "Printed p. 70 (PA70): right Armenian column from priest's Trinitarian blessing rubric (Քահանայն աւրհնէ...) through Եւ գոհացարուք զտեառնէ; upper Armenian lines (end of Kiss of Peace dialogue) and left Latin column are excluded."
+    },
+    {
+      "witness_id": "arm-1642-google",
+      "ranges": [
+        [
+          83,
+          83
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.arm-1642.badarak.01-opening-dialogue",
+        "unit.arm-1642.badarak.02-preface-thanksgiving"
+      ],
+      "description": "Printed p. 71 (PA71): left Armenian column completing opening dialogue and complete Preface/Thanksgiving; right Latin column is excluded."
+    },
+    {
+      "witness_id": "arm-1642-google",
+      "ranges": [
+        [
+          84,
+          84
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.arm-1642.badarak.03-sanctus",
+        "unit.arm-1642.badarak.04-post-sanctus-institution"
+      ],
+      "description": "Printed p. 72 (PA72): right Armenian column containing Sanctus ekphonesis, full Sanctus/Benedictus, and start of Post-Sanctus; left Latin column is excluded."
+    },
+    {
+      "witness_id": "arm-1642-google",
+      "ranges": [
+        [
+          85,
+          85
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.arm-1642.badarak.05-anamnesis-oblation"
+      ],
+      "description": "Printed p. 77 (PA77, transposed ahead of PA73–PA76 in provider order): left Armenian column containing Anamnesis continuation, Oblation, choir hymn Յամենայնի, and opening of Զքեզ արդարև; right Latin column is excluded."
+    },
+    {
+      "witness_id": "arm-1642-google",
+      "ranges": [
+        [
+          86,
+          86
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.arm-1642.badarak.05-anamnesis-oblation"
+      ],
+      "description": "Printed p. 78 (PA78, transposed): right Armenian column completing Զքեզ արդարև and Peace blessing; left Latin column is excluded."
+    },
+    {
+      "witness_id": "arm-1642-google",
+      "ranges": [
+        [
+          87,
+          87
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.arm-1642.badarak.05-anamnesis-oblation",
+        "unit.arm-1642.badarak.06-epiclesis"
+      ],
+      "description": "Printed p. 79 (PA79, transposed): left Armenian column containing pre-Epiclesis dialogue and Epiclesis (optative արասցես for bread and start of wine clause); right Latin column is excluded."
+    },
+    {
+      "witness_id": "arm-1642-google",
+      "ranges": [
+        [
+          88,
+          88
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.arm-1642.badarak.06-epiclesis"
+      ],
+      "description": "Printed p. 80 (PA80, transposed): upper right Armenian column completing Epiclesis wine clause, Որպէս զի եղիցի..., and Դպիրքն. Ամէն։; lower Armenian post-epiclesis intercessions (Սովաւ շնորհեա՛...) and left Latin column are excluded."
+    },
+    {
+      "witness_id": "arm-1642-google",
+      "ranges": [
+        [
+          89,
+          89
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.arm-1642.badarak.04-post-sanctus-institution"
+      ],
+      "description": "Printed p. 73 (PA73, following transposed PA77–PA80 in provider order): left Armenian column continuing Post-Sanctus; right Latin column is excluded."
+    },
+    {
+      "witness_id": "arm-1642-google",
+      "ranges": [
+        [
+          90,
+          90
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.arm-1642.badarak.04-post-sanctus-institution"
+      ],
+      "description": "Printed p. 74 (PA74): right Armenian column completing Post-Sanctus and Bread Institution Narrative; left Latin column is excluded."
+    },
+    {
+      "witness_id": "arm-1642-google",
+      "ranges": [
+        [
+          91,
+          91
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.arm-1642.badarak.04-post-sanctus-institution"
+      ],
+      "description": "Printed p. 75 (PA75): left Armenian column containing Chalice Institution Narrative, Հայր երկնաւոր, and opening of Post-Institution (Եւ զսոյն); right Latin column is excluded."
+    },
+    {
+      "witness_id": "arm-1642-google",
+      "ranges": [
+        [
+          92,
+          92
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.arm-1642.badarak.04-post-sanctus-institution",
+        "unit.arm-1642.badarak.05-anamnesis-oblation"
+      ],
+      "description": "Printed p. 76 (PA76): right Armenian column completing Post-Institution and opening Anamnesis through Զերեքաւրեա ըզ; left Latin column is excluded."
+    },
+    {
+      "witness_id": "arm-1642-google",
+      "ranges": [
+        [
+          93,
+          148
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "Continuation of post-Epiclesis intercessions, Lord's Prayer, Communion, Dismissal, and closing prayers from printed p. 81 (PDF p. 93) through printed p. 132 (PDF p. 144) and endpapers (PDF pp. 145–148)."
+    }
+  ]
+}

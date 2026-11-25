@@ -1,0 +1,331 @@
+{
+  "adapter_id": "native-book:armenian-1823-badarak-anaphora",
+  "binding_sha256": "aa71880df286ea0e30f9b2ef1c35f94bb0e23bb342c47a2450453647b65e5746",
+  "catalogue_witness_ids": [
+    "eastern:arm-1823"
+  ],
+  "counts": {
+    "languages": {
+      "hy": 6
+    },
+    "units": 6,
+    "whitespace_tokens": 721
+  },
+  "id": "armenian-1823-badarak-anaphora",
+  "schema": "triptych-eucharistic-native-text/v1",
+  "scope": {
+    "complete_declared_extent": true,
+    "description": "Core Classical Armenian (Grabar) Anaphora of the Armenian Divine Liturgy (Badarak) from the priest's opening Trinitarian blessing rubric and greeting (Քահանայն դարձցի և խաչակնքեսցէ ✠ ՚ի վերայ ժողովրդեանն, և ասասցէ։ Շնորհք, սէր, և աստուածային սրբարար զօրութիւն...) at printed p. 46 (PDF p. 50) through the Preface, Sanctus incipit (p. 47 / PDF p. 51; excluding the intervening full-page Crucifixion engraving at unnumbered p. [48] / PDF p. 52 as non-text), Post-Sanctus and Institution Narrative (pp. [49]–50 / PDF pp. 53–54), Anamnesis and Oblation (pp. 51–52 / PDF pp. 55–56), and the complete Epiclesis (triple past-tense արարեր blessings, combined փոխարկելով blessing, rubric, and concluding ekphonesis Որպէս զի եղիցի սա... ՚ի թողութիւն մեղաց։) at printed p. 53 (PDF p. 57), immediately before the post-epiclesis general intercessions (Սովաւ շնորհեա՛ զսէր...). Uses the exact same 6 canonical native_path slugs as armenian-1642-badarak-anaphora for 1-to-1 collation.",
+    "extent_kind": "constituent",
+    "known_extent_pages": 8,
+    "known_extent_units": 6,
+    "omitted_book_divisions": [
+      "Title page (PDF p. 5) and all pre-Anaphora service texts (Vesting, Preparation, Enarxis, Readings, Armenian-form Creed with Nicene anathema at pp. 40–41, Offertory, and Kiss of Peace through printed p. 46 upper half)",
+      "Full-page Crucifixion engraving and its two-line devotional verse caption on unnumbered printed p. [48] (PDF p. 52), accounted for as non-text",
+      "Post-Epiclesis general intercessions (Սովաւ շնորհեա՛...), Diptychs (including papal/hierarch rubric at p. 55), Lord's Prayer, Communion, Gospel bodies (pp. 69–70), Dismissal (p. 71), and Alleluia appendix (pp. 72–80)",
+      "Printed page numbers (46–53), signature mark (4 on p. [49]), woodcut headpiece on p. [49], library stamps, and Google Books digitizer stamps"
+    ],
+    "status": "complete-native-constituent",
+    "whole_book_complete": false
+  },
+  "sources": [
+    {
+      "edition_id": "edition.armenian-church.lyturgia-armena.1823-venice-san-lazzaro",
+      "id": "artifact.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-checked-armenian-bc45ff54",
+      "record_type": "artifact",
+      "rights_basis": "Faithful bounded reading transcription of original-language liturgical text from Venice 1823 San Lazzaro Lyturgia Armena: core Armenian Badarak Anaphora constituent, whose United States copyright term has expired by publication date (1823 Venice San Lazzaro publication). Derived directly from tracked public-domain facsimile artifact.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.google-pdf-81812bd4 without modern translation or editorial reconstruction. Third-party historical text is excluded from Triptych's CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "transformation": "Unicode NFC Classical Armenian (Grabar, language tag hy per repository convention) read directly from 240–450 DPI PNG renders of the tracked 1823 facsimile PDF.; Standard Armenian scribal/typographic պատիւ (overline/titlo) abbreviations are expanded to full Classical Armenian words strictly matching 1823's own unabbreviated orthography (using օ in օրհնեալ/օրհնեմք/զօրութիւն): ա̄ծ/ա̄ծային/ա̄ծապէս/ա̄ծութեդ/Ա̄յ/յա̄ծածին/զա̄ծդ → աստուած/աստուածային/աստուածապէս/աստուածութեանդ/Աստուծոյ/յաստուածածին/զաստուածդ, տ̄ր/տ̄ն/տ̄նդ → տէր/տեառն/տեառնդ, ս̄բ/Ս̄Բ monogram → սուրբ/Սուրբ, յ̄սի ք̄սի → յիսուսի քրիստոսի, զօրութի̄/քաւութի̄/թողութի̄/խաղաղութի̄/յանդատապարտութի̄ → զօրութիւն/քաւութիւն/թողութիւն/խաղաղութիւն/յանդատապարտութիւն, բնութբ̄/սրբասացութբ̄/տուչութբ̄/միաւորութբ̄ → բնութեամբ/սրբասացութեամբ/տուչութեամբ/միաւորութեամբ, տընտեսութե̄/փրկութե̄ → տընտեսութեան/փրկութեան, յազգակցութէ̄ → յազգակցութենէ, Սրկգ̄ն → Սարկաւագն, Ժղվրդ̄ն → Ժողովուրդն.; Unabbreviated liturgical incipit truncations (without պատիւ overline, such as երկիրպագես։ on p. 52, ՚Ի վեր ընծայեցուցէք։, Եւ գոհացարուք։, Սուրբ սուրբ սուրբ տէր զօրութեանց, լի են երկինք և երկիր։, Յամենայնի օրհնեալ ես։) are preserved strictly as printed without supplying unprinted words.; Printed crosses are preserved at exact source positions as ✠ (10 occurrences across pp. 46, 50, and 52: 1 in opening rubric, 2 in Օրհ✠նեաց, 1 in Խաղաղութիւն ✠ ամենեցուն, and 7 in Epiclesis օրհ✠նեալ clauses). Preposed classical apostrophe ՚ի is preserved as printed.; Words broken across line breaks are joined; page numbers, signature marks, woodcut ornament, the p. [48] Crucifixion engraving (classified as non-text), and italic/upright/bold font distinctions are excluded from the plain-text stream.; Independent V1 collation at 450 DPI unified lowercase հ readings in Venetian Mekhitarist bolorgir (հօր, հոգւոյն, հայր, հոգւովդ — visually distinct from uppercase Հ as in Համբերելով on p. 80) and restored printed shesh accent in գոհացարո՛ւք։ (p. 46)."
+    },
+    {
+      "edition_id": "edition.armenian-church.lyturgia-armena.1823-venice-san-lazzaro",
+      "id": "artifact.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.google-pdf-81812bd4",
+      "record_type": "artifact",
+      "rights_basis": "United States: the 1642,1677 and 1823 printings are public domain by their publication dates; their historical text and typography are not offered under Triptych's CC BY 4.0. These are mechanical facsimile page images, with no modern edition or authored annotation added. U.S. Copyright Office Compendium §313.4(A), Chapter 300 pp 26–27 (https://www.copyright.gov/comp3/chap300/ch300-copyrightable-authorship.pdf, checked 2026-10-16), treats scanning a literary work as a mere copy without new copyright. Google Books Terms of Service §2 (https://books.google.com/intl/en/googlebooks/tos.html, checked 2026-10-16) preserves uses permitted under the U.S. Copyright Act. All Google stamps and source marks remain unchanged; any Google notice is treated under src/sources/inventories/google-usage-guidelines-rights-v 1.toml and is not historical book text. No claim is made for other jurisdictions or for a Google-granted general redistribution license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "source_url": "https://books.google.com/books?id=r7gzAAAAMAAJ",
+      "transformation": "Read images in sequence.json order from the exact parent ZIP. Embed JPEG bytes unchanged in PDF DCTDecode image streams. For noninterlaced 8-bit grayscale/RGB PNG images, concatenate original IDAT chunks unchanged into PDF FlateDecode image streams with PNG predictor 15; retain image dimensions/color channels and all visible marks. One image fills one PDF page, page dimensions in points equal source pixel dimensions. No cropping, scaling, color conversion, resampling, OCR, reordering or textual alteration. PNG wrappers and all exact original files remain in the parent ZIP; PDF is a pixel-lossless derivative, not an exact provider PDF."
+    },
+    {
+      "date": "1823",
+      "id": "edition.armenian-church.lyturgia-armena.1823-venice-san-lazzaro",
+      "language": "hy",
+      "publication": "Venice: San Lazzaro",
+      "record_type": "edition",
+      "title": "Խորհրդատետր սրբոյ Պատարագին ըստ արարողութեան Հայաստանեայց եկեղեցւոյ համեմատ օրինակին տպելոյ ի Հռովմ 1677"
+    },
+    {
+      "artifact_id": "artifact.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-checked-armenian-bc45ff54",
+      "edition_id": "edition.armenian-church.lyturgia-armena.1823-venice-san-lazzaro",
+      "id": "passage.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-01-opening-dialogue",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-checked-armenian-bc45ff54",
+      "edition_id": "edition.armenian-church.lyturgia-armena.1823-venice-san-lazzaro",
+      "id": "passage.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-02-preface-thanksgiving",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-checked-armenian-bc45ff54",
+      "edition_id": "edition.armenian-church.lyturgia-armena.1823-venice-san-lazzaro",
+      "id": "passage.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-03-sanctus",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-checked-armenian-bc45ff54",
+      "edition_id": "edition.armenian-church.lyturgia-armena.1823-venice-san-lazzaro",
+      "id": "passage.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-04-post-sanctus-institution",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-checked-armenian-bc45ff54",
+      "edition_id": "edition.armenian-church.lyturgia-armena.1823-venice-san-lazzaro",
+      "id": "passage.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-05-anamnesis-oblation",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-checked-armenian-bc45ff54",
+      "edition_id": "edition.armenian-church.lyturgia-armena.1823-venice-san-lazzaro",
+      "id": "passage.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-06-epiclesis",
+      "record_type": "passage"
+    }
+  ],
+  "stage_ids": [
+    "armenian-eucharistic-stages:venice1823-state"
+  ],
+  "title": "Venice 1823 San Lazzaro Lyturgia Armena: core Armenian Badarak Anaphora constituent",
+  "units": [
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "dialogue-with-rubrics",
+      "language": "hy",
+      "native_path": [
+        "anaphoras",
+        "badarak",
+        "01-opening-dialogue"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-checked-armenian-bc45ff54",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-checked-armenian-bc45ff54",
+      "source_id": "passage.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-01-opening-dialogue",
+      "source_locator": "Armenian Badarak Anaphora opening blessing and dialogue; printed p. 46; PDF p. 50.",
+      "source_order": 1,
+      "text": "Քահանայն դարձցի և խաչակնքեսցէ ✠ ՚ի վերայ ժողովրդեանն, և ասասցէ։\nՇնորհք, սէր, և աստուածային սրբարար զօրութիւն հօր և որդւոյ և հոգւոյն սրբոյ եղիցի ընդ ձեզ՝ ընդ ամենեսեան։\nԺողովուրդն։ Եւ ընդ հոգւոյդ։\nՍարկաւագն։ ՚Ի վեր ընծայեցուցէք։\nԴպիրքն։ Ունիմք առ քեզ տէր։\nՍարկաւագն։ Եւ գոհացարո՛ւք։\nԴպիրքն։ Արժան և իրաւ։",
+      "text_edition_id": "edition.armenian-church.lyturgia-armena.1823-venice-san-lazzaro",
+      "text_sha256": "05503c1269e6edc58bfcb5152e9e60bec9f0feb4f3dfacaeea6bd48f5813e42f",
+      "unit_id": "unit.arm-1823.badarak.01-opening-dialogue",
+      "witness_id": "arm-1823-google",
+      "witness_pages": [
+        [
+          50,
+          50
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics",
+      "language": "hy",
+      "native_path": [
+        "anaphoras",
+        "badarak",
+        "02-preface-thanksgiving"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-checked-armenian-bc45ff54",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-checked-armenian-bc45ff54",
+      "source_id": "passage.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-02-preface-thanksgiving",
+      "source_locator": "Armenian Badarak Anaphora Preface/Thanksgiving; printed p. 47; PDF p. 51.",
+      "source_order": 2,
+      "text": "Քահանայն ձեռնամած աղօթեսցէ ՚ի ծածուկ։\nԱրժան է ստուգապէս և իրաւ ամենայորդոր փութով միշտ երկիրպագանելով փառաւորել զքեզ հայր ամենակալ։ Որ քոյին անզննելի և արարչակից բանիւդ զանիծիցն բարձեր զկրճիմն։ Որ ժողովուրդ ինքեան առեալ զեկեղեցի սեպհականեաց զհաւատացեալս ՚ի քեզ։ Եւ զննելի բնութեամբ ըստ ՚ի կուսէն տընտեսութեան հաճեցաւ բնակիլ ՚ի մեզ։ Եւ նորագործ աստուածապէս ճարտարապետեալ զերկիրս երկին արար։ Վասնզի որում ոչն հանդուրժէին առաջի կալ՝ զուարթնոցն ջոկք՝ զարհուրեալք ՚ի փայլակնացայտ, և յանմատոյց լուսոյ աստուածութեանդ, եղեալ այդպիսիդ մարդ յաղագս մերոյ փրկութեան, շնորհեաց մեզ ընդ երկնայինսն պարել զհոգեղէն պարս։",
+      "text_edition_id": "edition.armenian-church.lyturgia-armena.1823-venice-san-lazzaro",
+      "text_sha256": "93c4bd4bffc62a9fd2e813c41bf9309a16a00a7f5a27bae1e1adce042476faff",
+      "unit_id": "unit.arm-1823.badarak.02-preface-thanksgiving",
+      "witness_id": "arm-1823-google",
+      "witness_pages": [
+        [
+          51,
+          51
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "sanctus-with-rubrics",
+      "language": "hy",
+      "native_path": [
+        "anaphoras",
+        "badarak",
+        "03-sanctus"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-checked-armenian-bc45ff54",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-checked-armenian-bc45ff54",
+      "source_id": "passage.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-03-sanctus",
+      "source_locator": "Armenian Badarak Anaphora Sanctus ekphonesis and Sanctus incipit; printed p. 47; PDF p. 51.",
+      "source_order": 3,
+      "text": "՚Ի ձայն։\nԵւ ընդ սերոբէսն, և ընդ քերոբէսն միաձայն սրբասացութեամբ յօրինել նուագս, և համարձակապէս գոչելով աղաղակել ընդ նոսին, և ասել։\nՍուրբ սուրբ սուրբ տէր զօրութեանց, լի են երկինք և երկիր։",
+      "text_edition_id": "edition.armenian-church.lyturgia-armena.1823-venice-san-lazzaro",
+      "text_sha256": "7200b0b68ead1d9b889ea85879c463ba836fbe8f879703dad9a45bf09d8a3865",
+      "unit_id": "unit.arm-1823.badarak.03-sanctus",
+      "witness_id": "arm-1823-google",
+      "witness_pages": [
+        [
+          51,
+          51
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "institution-narrative-with-rubrics",
+      "language": "hy",
+      "native_path": [
+        "anaphoras",
+        "badarak",
+        "04-post-sanctus-institution"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-checked-armenian-bc45ff54",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-checked-armenian-bc45ff54",
+      "source_id": "passage.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-04-post-sanctus-institution",
+      "source_locator": "Armenian Badarak Anaphora Post-Sanctus, Bread and Chalice Institution Narrative, and Post-Institution; printed pp. [49]–50; PDF pp. 53–54.",
+      "source_order": 4,
+      "text": "Քահանայն բազկատարած աղօթեսցէ ՚ի ծածուկ, մինչ նոքա երգեսցեն։\nՍուրբ սուրբ սուրբ ես ճշմարտապէս և ամենասուրբ, և ո՛վ ոք պանծասցի բովանդակել բանիւ զքո ՚ի մեզ զանբաւ բարեգորովութեանդ զեղմունս։ Որ և անդէն իսկ ՚ի նախնումն զանկեալն ընդ մեղօք՝ զանազան եղանակօք խնամեալ սփոփեցեր՝ մարգարէիւք՝ օրինացն տուչութեամբ՝ քահանայութեամբ՝ և ստուերակերպ երնջոցն մատուցմամբ։ Իսկ ՚ի վախճան աւուրցս այսոցիկ զբովանդակ իսկ զպարտեաց մերոց խզեալ զդատակնիք, ետուր մեզ զորդիդ քո միածին՝ պարտապան և պարտս, զենումն և օծեալ, գառն և երկնաւոր հաց, քահանայապետ և պատարագ։ Վասնզի ինքդ է բաշխօղ. և նոյն ինքդ բաշխի ՚ի միջի մերում միշտ անծախապէս։ Վասնզի եղեալ հաւաստեաւ և առանց ցնորից մարդ, և անշփոթ միաւորութեամբ մարմնացեալ յաստուածածին և ՚ի սուրբ կուսէն մարիամայ։ Ճանապարհորդեաց ընդ ամենայն կիրս մարդկային կենցաղոյս առանց մեղաց. և յաշխարհակեցոյց և յառիթն փրկութեան մերոյ եկեալ կամաւ ՚ի խաչն։\nԱռեալ զհացն ՚ի սուրբ՝ յաստուածային՝ յանարատ և ՚ի պատուական ձեռս իւր. Օրհ✠նեաց, գոհացաւ, եբեկ՝ ետ իւրոց ընտրեալ՝ սուրբ՝ և բազմեալ աշակերտացն՝ ասելով։\nԱռէք կերէք.\nայս է մարմին իմ.\nՈր վասն ձեր և բազմաց բաշխի ՚ի քաւութիւն և ՚ի թողութիւն մեղաց։\nՆոյնպէս և զբաժակն առեալ. Օրհ✠նեաց, գոհացաւ, էարբ՝ ետ իւրոց ընտրեալ՝ սուրբ՝ և բազմեալ աշակերտացն՝ ասելով։\nԱրբէք ՚ի սմանէ ամենեքեան.\nայս է արիւն իմ, նորոյ ուխտի, որ յաղագս ձեր, և բազմաց հեղանի ՚ի քաւութիւն և ՚ի թողութիւն մեղաց։\nԵւ զսոյն միշտ իւր յիշատակ առնել պատուիրան աւանդեաց մեզ բարերար որդիդ քո միածին։ Եւ իջեալ ՚ի ստորին վայրս մահու՝ մարմնովն՝ զոր ՚ի մերմէս ընկալաւ յազգակցութենէ։ Եւ զնիգս դժոխոցն աղարտեալ հզօրեղապէս, զքեզ միայն ծանոյց մեզ ճշմարիտ աստուած, զաստուածդ կենդանեաց և մեռելոց։",
+      "text_edition_id": "edition.armenian-church.lyturgia-armena.1823-venice-san-lazzaro",
+      "text_sha256": "3e1bfbe30572c79e6aa78992bef32a81144d7af26cfb556c1be62a393a6bce8d",
+      "unit_id": "unit.arm-1823.badarak.04-post-sanctus-institution",
+      "witness_id": "arm-1823-google",
+      "witness_pages": [
+        [
+          53,
+          54
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics",
+      "language": "hy",
+      "native_path": [
+        "anaphoras",
+        "badarak",
+        "05-anamnesis-oblation"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-checked-armenian-bc45ff54",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-checked-armenian-bc45ff54",
+      "source_id": "passage.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-05-anamnesis-oblation",
+      "source_locator": "Armenian Badarak Anaphora Anamnesis, Oblation, Յամենայնի incipit, Զքեզ արդարև, Peace, and pre-Epiclesis dialogue; printed pp. 51–52; PDF pp. 55–56.",
+      "source_order": 5,
+      "text": "Եւ առեալ զընծայս ՚ի ձեռս ասասցէ ՚ի ցած։\nԵւ արդ՝ մեք տէր ըստ այսմ հրամանատրութեան՝ յառաջբերեալ զայս խորհուրդ փրկական մարմնոյ և արեան միածնի քոյ։ Յիշեմք զդորա՝ որ վասն մեր զփրկագործ չարչարանսն, զկենդանատու խաչելութիւնն, զերեքօրեայ զթաղումն, զերանելի յարութիւնն, զաստուածապէս համբարձումն, զնստիլն ընդ աջմէ քո հայր, զահաւոր և զփառաւորեալ զմիւսանգամ գալուստն խոստովանիմք և օրհնեմք։\nԵւ դիցէ զընծայսն ՚ի վերայ սեղանոյն, և ասասցէ ՚ի ձայն։\nԵւ զքոյս ՚ի քոյոցս քեզ մատուցանեմք, ըստ ամենայնի, և յաղագս ամենեցուն։\nԴպիրքն։ Յամենայնի օրհնեալ ես։\nՄինչ նոքա երգիցեն՝ քահանայն բազկատարած աղօթեսցէ ՚ի ծածուկ։\nԶքեզ արդարև տէր աստուած մեր գովեմք, և ըզքէն գոհանամք հանապազ։ Որ զանց արարեր զմերով անարժանութեամբս, այսպիսի ահաւոր և անպատում խորհրդոյ կարգեցեր սպասաւորս։ Ո՛չ յաղագս մերոյ ինչ բարեգործութեան՝ յորոց յոյժ թափուր եմք, և միշտ ունայն գտանիմք հանապազ։ Այլ ՚ի քո բազմազեղ ներողութիւնդ ցանկ ապաւինեալ՝ համարձակիմք մերձենալ ՚ի սպասաւորութիւն մարմնոյ և արեան միածնի քո տեառնդ մերոյ և փրկչիդ յիսուսի քրիստոսի։ Որում վայելէ փառք իշխանութիւն և պատիւ, այժմ և միշտ և յաւիտեանս յաւիտենից. Ամէն։\nԽաղաղութիւն ✠ ամենեցուն։\nՍարկաւագն։ Աստուծոյ երկիրպագես։\nԺողովուրդն։ Առաջի քոյ տէր։",
+      "text_edition_id": "edition.armenian-church.lyturgia-armena.1823-venice-san-lazzaro",
+      "text_sha256": "5f80c8d47ac0b331d979d9bd4ed229f5ccc4601aff51999e5be33b4c3a4f9ca4",
+      "unit_id": "unit.arm-1823.badarak.05-anamnesis-oblation",
+      "witness_id": "arm-1823-google",
+      "witness_pages": [
+        [
+          55,
+          56
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "epiclesis-with-rubrics",
+      "language": "hy",
+      "native_path": [
+        "anaphoras",
+        "badarak",
+        "06-epiclesis"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-checked-armenian-bc45ff54",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-checked-armenian-bc45ff54",
+      "source_id": "passage.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-06-epiclesis",
+      "source_locator": "Armenian Badarak Anaphora Epiclesis (triple aorist արարեր blessings, combined փոխարկելով blessing, and ekphonesis); printed pp. 52–53; PDF pp. 56–57.",
+      "source_order": 6,
+      "text": "Քահանայն խոնարհեսցի, և ասասցէ։\nԵրկիրպագանեմք և աղաչեմք, և խնդրեմք ՚ի քէն բարերար աստուած՝ առաքեա՛ ՚ի մեզ, և յառաջի եդեալ յընծայս յայս զմշտնջենաւորակից քո, և զէակից սուրբ հոգիդ։\nԵւ կանգնեալ խաչակնքեսցէ զընծայսն՝ ասելով ՚ի ցած։\nՈրով զհաց օրհ✠նեալ մարմին ճշմարտապէս արարեր տեառն մերոյ և փրկչին յիսուսի քրիստոսի։\nՈրով զհաց օրհ✠նեալ մարմին ճշմարտապէս արարեր տեառն մերոյ և փրկչին յիսուսի քրիստոսի։\nՈրով զհաց օրհ✠նեալ մարմին ճշմարտապէս արարեր տեառն մերոյ և փրկչին յիսուսի քրիստոսի։\nԵւ զբաժակ օրհ✠նեալ արիւն ստուգապէս արարեր տեառն մերոյ և փրկչին յիսուսի քրիստոսի։\nԵւ զբաժակ օրհ✠նեալ արիւն ստուգապէս արարեր տեառն մերոյ և փրկչին յիսուսի քրիստոսի։\nԵւ զբաժակ օրհ✠նեալ արիւն ստուգապէս արարեր տեառն մերոյ և փրկչին յիսուսի քրիստոսի։\nՈրով զհաց և զգինի օրհ✠նեալ մարմին և արիւն ճշմարտապէս արարեր տեառն մերոյ և փրկչին յիսուսի քրիստոսի՝ փոխարկելով հոգւովդ քով սրբով։\nԵրիցս անգամ կրկնեսցէ զաղօթս. և սարկաւագն ՚ի ցած, Ամէն։\nԵւ քահանայն ասասցէ ՚ի ձայն։\nՈրպէս զի եղիցի սա ամենեցուն մեզ մերձեցելոցս յանդատապարտութիւն ՚ի քաւութիւն, և ՚ի թողութիւն մեղաց։",
+      "text_edition_id": "edition.armenian-church.lyturgia-armena.1823-venice-san-lazzaro",
+      "text_sha256": "38d674c1cc5d5f1967216b6be0151d2be7cdc9fc99cd99c0a3cbae8d02a04664",
+      "unit_id": "unit.arm-1823.badarak.06-epiclesis",
+      "witness_id": "arm-1823-google",
+      "witness_pages": [
+        [
+          56,
+          57
+        ]
+      ]
+    }
+  ],
+  "witnesses": [
+    {
+      "artifact_id": "artifact.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.google-pdf-81812bd4",
+      "edition_id": "edition.armenian-church.lyturgia-armena.1823-venice-san-lazzaro",
+      "id": "arm-1823-google",
+      "scope_pages": [
+        [
+          50,
+          57
+        ]
+      ]
+    }
+  ]
+}

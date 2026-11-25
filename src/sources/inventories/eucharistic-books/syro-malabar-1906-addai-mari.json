@@ -1,0 +1,250 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-native-book",
+  "id": "syro-malabar-1906-addai-mari",
+  "title": "Ordo Chaldaicus Malabaricae (Puttenpalli, 1906) — Anaphora of Addai and Mari Core",
+  "scope": "Bounded constituent of the exact same eight aligned core units of the Anaphora of Addai and Mari in Classical Syriac (syr), preserving Puttenpalli 1906's Fraction-placed Romanized Institution Narrative (PDF 230-229) and enabling a direct 3-way East Syriac diff against Chaldean 1767 and Chaldean 1901.",
+  "transcribed_by": "lane-t2-syriac",
+  "stage_ids": [
+    "stages-malabar-puttenpalli-1906"
+  ],
+  "catalogue_witness_ids": [
+    "eastern:malabar-1906"
+  ],
+  "components": [
+    "anaphoras"
+  ],
+  "languages": [
+    "syr"
+  ],
+  "extent_kind": "constituent",
+  "excluded_book_divisions": [
+    "Companion split PDF pages-0258-0515-37dfbc58 (258 pp.: lectionary, front matter, Latin/Syriac title pages at whole-PDF 508-511)",
+    "Pre-anaphoral Liturgy of the Word, Creed, Offertory, and Kushapa prayers in Part 1 (PDF 238-257)",
+    "Intervening private Kushapa prayers (PDF 236, 235), blank verso (PDF 233), Crucifixion engraving plate (PDF 232), pre-fraction prayers (PDF 231), and the 5-line Elevation adoration verse between Bread and Chalice (PDF 230)",
+    "Post-institution fraction, communion, appended Masses, and 1905 approval / 1906 English imprint (PDF 1-228)"
+  ],
+  "date": {
+    "kind": "publication",
+    "label": "1906",
+    "start_year": 1906,
+    "end_year": 1906,
+    "evidence": [
+      {
+        "source_id": "passage.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.added-masses-approval-and-opening",
+        "locus": "English imprint and 15 October 1905 approval by Bishop Aloysius Pareparambil at Part 1 PDF 6; Latin/Syriac titles at Part 2 whole-PDF 510-511 (Puttenpalli: Mar Thoma Shliha Press, 1906)."
+      }
+    ]
+  },
+  "extent_path": "src/sources/inventories/eucharistic-books/support/syro-malabar-1906-addai-mari-extent.json",
+  "collation_path": "src/sources/inventories/eucharistic-books/support/syro-malabar-1906-addai-mari-review.json",
+  "witnesses": [
+    {
+      "id": "syro-malabar-1906-puttenpalli-part1-pdf",
+      "edition_id": "edition.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha",
+      "artifact_id": "artifact.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.pages-0001-0257-51510073",
+      "scope_pages": [
+        [
+          229,
+          230
+        ],
+        [
+          234,
+          237
+        ]
+      ],
+      "completeness_evidence": [
+        {
+          "source_id": "passage.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.addai-mari-facsimile",
+          "locus": "PDF pages 229–230, 234–237 of 257; complete bounded constituent scope."
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "syro-malabar-1906-addai-mari.01-opening-dialogue",
+      "native_path": [
+        "anaphoras",
+        "addai-and-mari",
+        "01-opening-dialogue"
+      ],
+      "source_order": 1,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "dialogue",
+      "witness_id": "syro-malabar-1906-puttenpalli-part1-pdf",
+      "witness_pages": [
+        [
+          237,
+          237
+        ]
+      ],
+      "passage_id": "passage.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.addai-mari-01-opening-dialogue",
+      "text_sha256": "dcf3837461c1215554e5ed7fa6669b0fba533447908077bfa449acb9c2c99498"
+    },
+    {
+      "unit_id": "syro-malabar-1906-addai-mari.02-preface-gehanta-1",
+      "native_path": [
+        "anaphoras",
+        "addai-and-mari",
+        "02-preface-gehanta-1"
+      ],
+      "source_order": 2,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "syro-malabar-1906-puttenpalli-part1-pdf",
+      "witness_pages": [
+        [
+          236,
+          236
+        ],
+        [
+          237,
+          237
+        ]
+      ],
+      "passage_id": "passage.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.addai-mari-02-preface-gehanta-1",
+      "text_sha256": "6a8dbcbcf8c82d0011684f83664f8b9e41d0005304a27ef8b2b67fa0bda7affc"
+    },
+    {
+      "unit_id": "syro-malabar-1906-addai-mari.03-sanctus",
+      "native_path": [
+        "anaphoras",
+        "addai-and-mari",
+        "03-sanctus"
+      ],
+      "source_order": 3,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "acclamation",
+      "witness_id": "syro-malabar-1906-puttenpalli-part1-pdf",
+      "witness_pages": [
+        [
+          236,
+          236
+        ]
+      ],
+      "passage_id": "passage.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.addai-mari-03-sanctus",
+      "text_sha256": "8484fb7b28874a3c373a8404fb0d23c2a88e3a515a87a8145a627b6782e8aff0"
+    },
+    {
+      "unit_id": "syro-malabar-1906-addai-mari.04-post-sanctus-gehanta-2",
+      "native_path": [
+        "anaphoras",
+        "addai-and-mari",
+        "04-post-sanctus-gehanta-2"
+      ],
+      "source_order": 4,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "syro-malabar-1906-puttenpalli-part1-pdf",
+      "witness_pages": [
+        [
+          235,
+          235
+        ],
+        [
+          236,
+          236
+        ]
+      ],
+      "passage_id": "passage.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.addai-mari-04-post-sanctus-gehanta-2",
+      "text_sha256": "92091ea7ac2ba6e3539418dfc313083bb587c4f9aa7cd88015c47ae0ef38ef6f"
+    },
+    {
+      "unit_id": "syro-malabar-1906-addai-mari.05-intercession-gehanta-3",
+      "native_path": [
+        "anaphoras",
+        "addai-and-mari",
+        "05-intercession-gehanta-3"
+      ],
+      "source_order": 5,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "syro-malabar-1906-puttenpalli-part1-pdf",
+      "witness_pages": [
+        [
+          234,
+          234
+        ],
+        [
+          235,
+          235
+        ]
+      ],
+      "passage_id": "passage.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.addai-mari-05-intercession-gehanta-3",
+      "text_sha256": "72fdd11060b24aca91a555a118a7d5cc1a6f7caa136e7cc8117366fdf4509e7b"
+    },
+    {
+      "unit_id": "syro-malabar-1906-addai-mari.06-anamnesis-oblation",
+      "native_path": [
+        "anaphoras",
+        "addai-and-mari",
+        "06-anamnesis-oblation"
+      ],
+      "source_order": 6,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "syro-malabar-1906-puttenpalli-part1-pdf",
+      "witness_pages": [
+        [
+          234,
+          234
+        ]
+      ],
+      "passage_id": "passage.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.addai-mari-06-anamnesis-oblation",
+      "text_sha256": "92e13cdd1a30ef29d6a2c8e1e8f88b944ef2ee6d5b084a7dea3079c9278a6638"
+    },
+    {
+      "unit_id": "syro-malabar-1906-addai-mari.07-epiclesis-and-qanona",
+      "native_path": [
+        "anaphoras",
+        "addai-and-mari",
+        "07-epiclesis-and-qanona"
+      ],
+      "source_order": 7,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "syro-malabar-1906-puttenpalli-part1-pdf",
+      "witness_pages": [
+        [
+          234,
+          234
+        ]
+      ],
+      "passage_id": "passage.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.addai-mari-07-epiclesis-and-qanona",
+      "text_sha256": "a26e7072c479bcd14553197da00baf73235099e61e48b0eceda3d55968d68ab2"
+    },
+    {
+      "unit_id": "syro-malabar-1906-addai-mari.08-institution-narrative",
+      "native_path": [
+        "anaphoras",
+        "addai-and-mari",
+        "08-institution-narrative"
+      ],
+      "source_order": 8,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "institution-narrative",
+      "witness_id": "syro-malabar-1906-puttenpalli-part1-pdf",
+      "witness_pages": [
+        [
+          229,
+          229
+        ],
+        [
+          230,
+          230
+        ]
+      ],
+      "passage_id": "passage.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.addai-mari-08-institution-narrative",
+      "text_sha256": "b2f07f2a3c02a2d68a773eee7a92aa915dc65b79109e1e46aeb42bb41fc31077"
+    }
+  ]
+}

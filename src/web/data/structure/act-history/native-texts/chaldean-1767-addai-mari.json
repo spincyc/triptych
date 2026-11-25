@@ -1,0 +1,427 @@
+{
+  "adapter_id": "native-book:chaldean-1767-addai-mari",
+  "binding_sha256": "b8cf86d54d331829dd1d4a014ff8ac7e99b2ff01a3f423876849c2c3368e0dcd",
+  "catalogue_witness_ids": [
+    "eastern:chald-1767"
+  ],
+  "counts": {
+    "languages": {
+      "syr": 8
+    },
+    "units": 8,
+    "whitespace_tokens": 457
+  },
+  "id": "chaldean-1767-addai-mari",
+  "schema": "triptych-eucharistic-native-text/v1",
+  "scope": {
+    "complete_declared_extent": true,
+    "description": "Bounded constituent of the eight core prayers of the Anaphora of Addai and Mari (Opening Dialogue, Preface Gehanta 1, Sanctus, Post-Sanctus Gehanta 2, Intercession Gehanta 3, Anamnesis/Oblation, Epiclesis, and Fraction-placed Institution Narrative) in Classical Syriac (syr), excluding private Kushapa prayers, rubrics, and intervening fraction prayers.",
+    "extent_kind": "constituent",
+    "known_extent_pages": 8,
+    "known_extent_units": 8,
+    "omitted_book_divisions": [
+      "Latin and Syriac title leaves and prefatory matter (PDF 630-634)",
+      "Liturgy of the Word, Creed, Offertory, and pre-anaphoral Kushapa prayers (PDF 338-629)",
+      "Intervening private Kushapa prayers and diaconal litanies inside the Anaphora (PDF 334, 336)",
+      "Pre-fraction signing prayers (PDF 331) and Communion/Dismissal, additional anaphoras, and propers (PDF 1-328)"
+    ],
+    "status": "complete-native-constituent",
+    "whole_book_complete": false
+  },
+  "sources": [
+    {
+      "edition_id": "edition.chaldean-catholic-church.missale.1767-rome-propaganda",
+      "id": "artifact.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-checked-syriac-ab5d3286",
+      "record_type": "artifact",
+      "rights_basis": "Faithful bounded reading transcription of original-language liturgical text from Missale Chaldaicum (Rome Propaganda, 1767) — Anaphora of Addai and Mari Core, whose United States copyright term has expired by publication date (1767). Derived directly from tracked public-domain facsimile artifact.chaldean-catholic-church.missale.1767-rome-propaganda.google-scan-pdf-4d048b31 without modern translation or editorial reconstruction. Third-party historical text is excluded from Triptych's CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "transformation": "Pure consonantal Classical Syriac Unicode (U+0710..U+072C, UTF-8 NFC) with single ASCII spaces between words and single LF (\\n) line endings, one canonical liturgical unit per line.; All East Syriac and West Syriac vowel points, seyame (U+0308), qushshaya/rukkakha, linea occultans/marhetana, punctuation dots, liturgical crosses, quotation marks, kashidas, catchwords, running heads, signature marks, and page numbers are omitted for scan-safe cross-edition diffing.; Rubrics (red or black stage directions), section headers (e.g. Qanona, Gehanta), speaker labels (priest/deacon/people), abbreviated posture cues (e.g. gehanta bow marker), intervening private Kushapa prayers, diaconal calls outside the main dialogue, and parallel Garshuni/Arabic columns are excluded.; Printed historical orthography, abbreviations (such as abbreviated Sanctus incipits), omissions, and additions are preserved verbatim without harmonizing or supplying words from memory."
+    },
+    {
+      "edition_id": "edition.chaldean-catholic-church.missale.1767-rome-propaganda",
+      "id": "artifact.chaldean-catholic-church.missale.1767-rome-propaganda.google-scan-pdf-4d048b31",
+      "record_type": "artifact",
+      "rights_basis": "Historical 1767 printing is public domain in the United States by expired publication term. The page images are mechanical facsimiles of that historical book, not a modern translation or critical edition. This is the recorded U.S. public-domain and mechanical-reproduction basis, not an assertion of a general Google redistribution licence. The provider's marks and notices are preserved in the unaltered delivery and are not offered under Triptych's CC BY 4.0 licence; the historical wording is likewise excluded from that licence.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "source_url": "https://archive.org/download/bub_gb_PSttGL9Rf08C_2/bub_gb_PSttGL9Rf08C.pdf"
+    },
+    {
+      "authority": "The Latin title at PDF page 630 states that the book was published ex decreto of the Sacred Congregation de Propaganda Fide. The title establishes the issuing authority, not the geographical breadth of actual use.",
+      "date": "1767",
+      "id": "edition.chaldean-catholic-church.missale.1767-rome-propaganda",
+      "language": "syr",
+      "publication": "Rome: Typis Sacrae Congregationis de Propaganda Fide, 1767.",
+      "record_type": "edition",
+      "title": "Missale Chaldaicum ex decreto Sacrae Congregationis de Propaganda Fide editum"
+    },
+    {
+      "artifact_id": "artifact.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-checked-syriac-ab5d3286",
+      "edition_id": "edition.chaldean-catholic-church.missale.1767-rome-propaganda",
+      "id": "passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-01-opening-dialogue",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-checked-syriac-ab5d3286",
+      "edition_id": "edition.chaldean-catholic-church.missale.1767-rome-propaganda",
+      "id": "passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-02-preface-gehanta-1",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-checked-syriac-ab5d3286",
+      "edition_id": "edition.chaldean-catholic-church.missale.1767-rome-propaganda",
+      "id": "passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-03-sanctus",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-checked-syriac-ab5d3286",
+      "edition_id": "edition.chaldean-catholic-church.missale.1767-rome-propaganda",
+      "id": "passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-04-post-sanctus-gehanta-2",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-checked-syriac-ab5d3286",
+      "edition_id": "edition.chaldean-catholic-church.missale.1767-rome-propaganda",
+      "id": "passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-05-intercession-gehanta-3",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-checked-syriac-ab5d3286",
+      "edition_id": "edition.chaldean-catholic-church.missale.1767-rome-propaganda",
+      "id": "passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-06-anamnesis-oblation",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-checked-syriac-ab5d3286",
+      "edition_id": "edition.chaldean-catholic-church.missale.1767-rome-propaganda",
+      "id": "passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-07-epiclesis-and-qanona",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-checked-syriac-ab5d3286",
+      "edition_id": "edition.chaldean-catholic-church.missale.1767-rome-propaganda",
+      "id": "passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-08-institution-narrative",
+      "record_type": "passage"
+    }
+  ],
+  "stage_ids": [
+    "chaldean-east-syriac:rome1767"
+  ],
+  "title": "Missale Chaldaicum (Rome Propaganda, 1767) — Anaphora of Addai and Mari Core",
+  "units": [
+    {
+      "component": "anaphoras",
+      "direction": "rtl",
+      "kind": "dialogue",
+      "language": "syr",
+      "native_path": [
+        "anaphoras",
+        "addai-and-mari",
+        "01-opening-dialogue"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-checked-syriac-ab5d3286",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-checked-syriac-ab5d3286",
+      "source_id": "passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-01-opening-dialogue",
+      "source_locator": "Constituent unit 1/8 (anaphoras/addai-and-mari/01-opening-dialogue), normalized physical lines 1–1.",
+      "source_order": 1,
+      "text": "ܛܝܒܘܬܗ ܕܡܪܢ ܝܫܘܥ ܡܫܝܚܐ ܘܚܘܒܗ ܕܐܠܗܐ ܐܒܐ ܘܫܘܬܦܘܬܐ ܕܪܘܚܐ ܕܩܘܕܫܐ ܬܗܘܐ ܥܡ ܟܠܢ ܗܫܐ ܘܒܟܠܙܒܢ ܘܠܥܠܡ ܥܠܡܝܢ ܐܡܝܢ ܠܥܠ ܢܗܘܘܢ ܡܕܥܝܟܘܢ ܠܘܬܟ ܐܠܗܐ ܕܐܒܪܗܡ ܘܕܐܝܣܚܩ ܘܕܝܣܪܐܝܠ ܡܠܟܐ ܡܫܒܚܐ ܩܘܪܒܢܐ ܠܐܠܗܐ ܡܪܟܠ ܡܬܩܪܒ ܝܐܐ ܘܙܕܩ",
+      "text_edition_id": "edition.chaldean-catholic-church.missale.1767-rome-propaganda",
+      "text_sha256": "3660b59c09250f5a6792e1887cca42a5b889959bd09ad51dd1c16a9434cf69f0",
+      "unit_id": "chaldean-1767-addai-mari.01-opening-dialogue",
+      "witness_id": "chaldean-1767-rome-google-pdf",
+      "witness_pages": [
+        [
+          337,
+          337
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "rtl",
+      "kind": "prayer",
+      "language": "syr",
+      "native_path": [
+        "anaphoras",
+        "addai-and-mari",
+        "02-preface-gehanta-1"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-checked-syriac-ab5d3286",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-checked-syriac-ab5d3286",
+      "source_id": "passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-02-preface-gehanta-1",
+      "source_locator": "Constituent unit 2/8 (anaphoras/addai-and-mari/02-preface-gehanta-1), normalized physical lines 2–2.",
+      "source_order": 2,
+      "text": "ܫܘܐ ܠܫܘܒܚܐ ܡܢ ܟܠ ܦܘܡܝܢ ܘܠܬܘܕܝܬܐ ܡܢ ܟܠ ܠܫܢܝܢ ܘܠܣܓܕܬܐ ܘܠܪܘܡܪܡܐ ܡܢ ܟܠ ܒܪܝܢ ܫܡܐ ܣܓܝܕܐ ܘܡܫܒܚܐ ܕܬܠܝܬܝܘܬܟ ܡܫܒܚܬܐ ܐܒܐ ܘܒܪܐ ܘܪܘܚܐ ܕܩܘܕܫܐ ܕܒܪܐ ܥܠܡܐ ܒܛܝܒܘܬܗ ܘܥܡܘܪܘܗܝ ܒܡܪܚܡܢܘܬܗ ܘܦܪܩ ܒܢܝܢܫܐ ܒܚܢܢܗ ܘܥܒܕ ܛܝܒܘܬܐ ܪܒܬܐ ܠܘܬ ܡܝܘܬܐ ܠܪܒܘܬܟ ܡܪܝ ܣܓܕܝܢ ܐܠܦ ܐܠܦܝܢ ܕܥܠܝܐ ܘܪܒܘ ܪܒܘܢ ܕܡܠܐܟܐ ܩܕܝܫܐ ܘܡܫܪܝܬܐ ܕܪܘܚܢܐ ܡܫܡܫܢܐ ܕܢܘܪܐ ܘܕܪܘܚܐ ܠܫܡܟ ܡܫܒܚܝܢ ܘܥܡ ܟܪܘܒܐ ܩܕܝܫܐ ܘܣܪܦܐ ܪܘܚܢܐ ܣܓܕܬܐ ܠܡܪܘܬܟ ܡܩܪܒܝܢ ܟܕ ܩܥܝܢ ܘܡܫܒܚܝܢ ܕܠܐ ܫܠܘܐ ܘܩܥܝܢ ܚܕ ܠܚܕ ܘܐܡܪܝܢ",
+      "text_edition_id": "edition.chaldean-catholic-church.missale.1767-rome-propaganda",
+      "text_sha256": "7ecf12ef5bc340fd3587273c0a4ef677c4465ca0fe0f0f00cecdac3ee089396c",
+      "unit_id": "chaldean-1767-addai-mari.02-preface-gehanta-1",
+      "witness_id": "chaldean-1767-rome-google-pdf",
+      "witness_pages": [
+        [
+          336,
+          336
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "rtl",
+      "kind": "acclamation",
+      "language": "syr",
+      "native_path": [
+        "anaphoras",
+        "addai-and-mari",
+        "03-sanctus"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-checked-syriac-ab5d3286",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-checked-syriac-ab5d3286",
+      "source_id": "passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-03-sanctus",
+      "source_locator": "Constituent unit 3/8 (anaphoras/addai-and-mari/03-sanctus), normalized physical lines 3–3.",
+      "source_order": 3,
+      "text": "ܩܕܝܫ ܩܕܝܫ ܩܕܝܫ",
+      "text_edition_id": "edition.chaldean-catholic-church.missale.1767-rome-propaganda",
+      "text_sha256": "0acda64a236264f61a39fc2a01b54b4852fe77ae0ac277031a3d14e1d0becea9",
+      "unit_id": "chaldean-1767-addai-mari.03-sanctus",
+      "witness_id": "chaldean-1767-rome-google-pdf",
+      "witness_pages": [
+        [
+          336,
+          336
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "rtl",
+      "kind": "prayer",
+      "language": "syr",
+      "native_path": [
+        "anaphoras",
+        "addai-and-mari",
+        "04-post-sanctus-gehanta-2"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-checked-syriac-ab5d3286",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-checked-syriac-ab5d3286",
+      "source_id": "passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-04-post-sanctus-gehanta-2",
+      "source_locator": "Constituent unit 4/8 (anaphoras/addai-and-mari/04-post-sanctus-gehanta-2), normalized physical lines 4–4.",
+      "source_order": 4,
+      "text": "ܘܥܡ ܗܠܝܢ ܚܝܠܘܬܐ ܫܡܝܢܐ ܡܘܕܝܢܢ ܠܟ ܡܪܝ ܐܦ ܚܢܢ ܥܒܕܝܟ ܟܪܝܗܐ ܘܡܚܝܠܐ ܘܕܘܝܐ ܕܥܒܕܬ ܥܡܢ ܛܝܒܘܬܐ ܪܒܬܐ ܕܠܐ ܡܬܦܪܥܐ ܕܠܒܫܬ ܐܢܫܘܬܢ ܕܬܚܝܢ ܒܐܠܗܘܬܟ ܘܐܪܝܡܬ ܫܦܠܢ ܘܐܩܝܡܬ ܡܦܘܠܬܢ ܘܢܚܡܬ ܡܝܘܬܢ ܘܙܕܩܬ ܠܚܛܝܘܬܢ ܘܐܢܗܪܬ ܠܡܕܥܢ ܘܚܝܒܬ ܡܪܝ ܘܐܠܗܢ ܠܒܥܠܕܒܒܝܢ ܘܢܨܚܬ ܠܒܨܝܪܘܬܗ ܕܟܝܢܢ ܡܚܝܠܐ ܒܪܚܡܐ ܫܦܝܥܐ ܕܛܝܒܘܬܟ ܘܥܠ ܐܦܝ ܟܠܗܘܢ ܥܘܕܪܢܝܟ ܘܛܝܒܘܬܟ ܕܠܘܬܢ ܢܣܩ ܠܟ ܬܫܒܘܚܬܐ ܘܐܝܩܪܐ ܘܬܘܕܝܬܐ ܘܣܓܕܬܐ ܗܫܐ ܘܒܟܠܙܒܢ ܘܠܥܠܡ ܥܠܡܝܢ ܐܡܝܢ",
+      "text_edition_id": "edition.chaldean-catholic-church.missale.1767-rome-propaganda",
+      "text_sha256": "755ae9ec33709ced2f7710ec868bdc7a1609260c2784152e229317194cd3a300",
+      "unit_id": "chaldean-1767-addai-mari.04-post-sanctus-gehanta-2",
+      "witness_id": "chaldean-1767-rome-google-pdf",
+      "witness_pages": [
+        [
+          334,
+          334
+        ],
+        [
+          335,
+          335
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "rtl",
+      "kind": "prayer",
+      "language": "syr",
+      "native_path": [
+        "anaphoras",
+        "addai-and-mari",
+        "05-intercession-gehanta-3"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-checked-syriac-ab5d3286",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-checked-syriac-ab5d3286",
+      "source_id": "passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-05-intercession-gehanta-3",
+      "source_locator": "Constituent unit 5/8 (anaphoras/addai-and-mari/05-intercession-gehanta-3), normalized physical lines 5–5.",
+      "source_order": 5,
+      "text": "ܐܢܬ ܡܪܝ ܒܪܚܡܝܟ ܣܓܝܐܐ ܕܠܐ ܡܬܡܠܠܝܢ ܥܒܕ ܕܘܟܪܢܐ ܛܒܐ ܘܡܩܒܠܐ ܠܒܬܘܠܬܐ ܡܪܝܡ ܝܠܕܬ ܐܠܗܐ ܘܠܟܠܗܘܢ ܐܒܗܐ ܟܐܢܐ ܘܙܕܝܩܐ ܕܫܦܪܘ ܩܕܡܝܟ ܒܥܘܗܕܢܐ ܕܦܓܪܗ ܘܕܡܗ ܕܡܫܝܚܟ ܕܡܩܪܒܝܢܢ ܠܟ ܥܠ ܡܕܒܚܟ ܕܟܝܐ ܘܩܕܝܫܐ ܐܝܟܢܐ ܕܐܢܬ ܐܠܦܬܢ ܘܥܒܕ ܥܡܢ ܫܝܢܟ ܘܫܠܡܟ ܟܠܗܘܢ ܝܘܡܬܗ ܕܥܠܡܐ ܐܝܢ ܡܪܝ ܘܐܠܗܢ ܥܒܕ ܥܡܢ ܫܝܢܟ ܘܫܠܡܟ ܟܠܗܘܢ ܝܘܡܬܗ ܕܥܠܡܐ ܕܢܕܥܘܢܟ ܟܠܗܘܢ ܥܡܘܪܝܗ ܕܐܪܥܐ ܕܐܢܬ ܐܢܬ ܐܠܗܐ ܐܒܐ ܕܫܪܪܐ ܒܠܚܘܕܝܟ ܘܐܢܬ ܫܕܪܬ ܠܡܪܢ ܝܫܘܥ ܡܫܝܚܐ ܒܪܟ ܚܒܝܒܟ ܘܗܘ ܡܪܢ ܘܐܠܗܢ ܐܬܐ ܘܐܠܦ ܠܢ ܟܠܗ ܕܟܝܘܬܐ ܘܩܕܝܫܘܬܐ ܕܢܒܝܐ ܘܕܫܠܝܚܐ ܘܕܣܗܕܐ ܘܕܡܘܕܝܢܐ ܘܕܐܦܣܩܘܦܐ ܘܕܡܠܦܢܐ ܘܕܟܗܢܐ ܘܕܡܫܡܫܢܐ ܘܕܟܠܗܘܢ ܒܢܝܗ ܕܥܕܬܐ ܩܕܝܫܬܐ ܩܬܘܠܝܩܝ ܐܝܠܝܢ ܕܐܬܚܬܡܘ ܒܪܘܫܡܐ ܚܝܐ ܕܡܥܡܘܕܝܬܐ ܩܕܝܫܬܐ",
+      "text_edition_id": "edition.chaldean-catholic-church.missale.1767-rome-propaganda",
+      "text_sha256": "74bd6a09c05af0a4f2e5d7d1d0d171239d490311906df393750a4987cff7e346",
+      "unit_id": "chaldean-1767-addai-mari.05-intercession-gehanta-3",
+      "witness_id": "chaldean-1767-rome-google-pdf",
+      "witness_pages": [
+        [
+          333,
+          333
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "rtl",
+      "kind": "prayer",
+      "language": "syr",
+      "native_path": [
+        "anaphoras",
+        "addai-and-mari",
+        "06-anamnesis-oblation"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-checked-syriac-ab5d3286",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-checked-syriac-ab5d3286",
+      "source_id": "passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-06-anamnesis-oblation",
+      "source_locator": "Constituent unit 6/8 (anaphoras/addai-and-mari/06-anamnesis-oblation), normalized physical lines 6–6.",
+      "source_order": 6,
+      "text": "ܘܐܦ ܚܢܢ ܡܪܝ ܥܒܕܝܟ ܟܪܝܗܐ ܘܡܚܝܠܐ ܘܕܘܝܐ ܕܟܢܝܫܝܢܢ ܒܫܡܟ ܘܩܝܡܝܢܢ ܩܕܡܝܟ ܒܥܕܢܐ ܗܢܐ ܘܩܒܠܢ ܒܝܘܒܠܐ ܛܘܦܣܐ ܕܡܢܟ ܟܕ ܚܕܝܢܢ ܘܡܫܒܚܝܢܢ ܘܡܪܡܪܡܝܢܢ ܘܡܥܗܕܝܢܢ ܘܥܒܕܝܢܢ ܠܗ ܠܐܪܙܐ ܗܢܐ ܪܒܐ ܘܕܚܝܠܐ ܘܩܕܝܫܐ ܘܐܠܗܝܐ ܕܚܫܗ ܘܕܡܘܬܗ ܘܕܩܒܘܪܬܗ ܘܕܩܝܡܬܗ ܕܡܪܢ ܘܦܪܘܩܢ ܝܫܘܥ ܡܫܝܚܐ",
+      "text_edition_id": "edition.chaldean-catholic-church.missale.1767-rome-propaganda",
+      "text_sha256": "0d7e2e54568031cdc6df4757b99382f328ec25e92eede9d016d38a896b80b8f9",
+      "unit_id": "chaldean-1767-addai-mari.06-anamnesis-oblation",
+      "witness_id": "chaldean-1767-rome-google-pdf",
+      "witness_pages": [
+        [
+          333,
+          333
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "rtl",
+      "kind": "prayer",
+      "language": "syr",
+      "native_path": [
+        "anaphoras",
+        "addai-and-mari",
+        "07-epiclesis-and-qanona"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-checked-syriac-ab5d3286",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-checked-syriac-ab5d3286",
+      "source_id": "passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-07-epiclesis-and-qanona",
+      "source_locator": "Constituent unit 7/8 (anaphoras/addai-and-mari/07-epiclesis-and-qanona), normalized physical lines 7–7.",
+      "source_order": 7,
+      "text": "ܘܢܐܬܐ ܡܪܝ ܪܘܚܟ ܩܕܝܫܐ ܘܢܬܬܢܝܚ ܥܠ ܩܘܪܒܢܐ ܗܢܐ ܕܥܒܕܝܟ ܘܢܒܪܟܝܘܗܝ ܘܢܩܕܫܝܘܗܝ ܘܢܗܘܐ ܠܢ ܡܪܝ ܠܚܘܣܝܐ ܕܚܘܒܐ ܘܠܫܘܒܩܢܐ ܕܚܛܗܐ ܘܠܣܒܪܐ ܪܒܐ ܕܩܝܡܬܐ ܕܡܢ ܒܝܬ ܡܝܬܐ ܘܠܚܝܐ ܚܕܬܐ ܒܡܠܟܘܬܐ ܕܫܡܝܐ ܥܡ ܟܠ ܕܫܦܪܘ ܩܕܡܝܟ ܘܥܠ ܐܦܝ ܟܠܗ ܡܕܒܪܢܘܬܟ ܬܡܝܗܬܐ ܕܠܘܬܢ ܢܘܕܐ ܠܟ ܘܢܫܒܚܟ ܕܠܐ ܫܠܘܐ ܒܥܕܬܟ ܦܪܝܩܬܐ ܒܕܡܗ ܝܩܝܪܐ ܕܡܫܝܚܟ ܒܦܘܡܐ ܦܬܝܚܐ ܘܒܐܦܐ ܓܠܝܬܐ ܟܕ ܡܣܩܝܢܢ ܬܫܒܘܚܬܐ ܘܐܝܩܪܐ ܘܬܘܕܝܬܐ ܘܣܓܕܬܐ ܠܫܡܟ ܚܝܐ ܘܩܕܝܫܐ ܘܡܚܝܢܐ ܗܫܐ ܘܒܟܠܙܒܢ ܘܠܥܠܡ ܥܠܡܝܢ",
+      "text_edition_id": "edition.chaldean-catholic-church.missale.1767-rome-propaganda",
+      "text_sha256": "7c3c9b829ee718afbfd1e71a1f04d7c742a18844fe15a1cde51fde3a4ba907f6",
+      "unit_id": "chaldean-1767-addai-mari.07-epiclesis-and-qanona",
+      "witness_id": "chaldean-1767-rome-google-pdf",
+      "witness_pages": [
+        [
+          332,
+          332
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "rtl",
+      "kind": "institution-narrative",
+      "language": "syr",
+      "native_path": [
+        "anaphoras",
+        "addai-and-mari",
+        "08-institution-narrative"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-checked-syriac-ab5d3286",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-checked-syriac-ab5d3286",
+      "source_id": "passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-08-institution-narrative",
+      "source_locator": "Constituent unit 8/8 (anaphoras/addai-and-mari/08-institution-narrative), normalized physical lines 8–8.",
+      "source_order": 8,
+      "text": "ܫܘܒܚܐ ܠܟ ܐܠܗܐ ܐܒܐ ܕܫܕܪܬ ܒܪܟ ܚܒܝܒܐ ܠܦܘܪܩܢܢ ܘܗܘ ܒܝܘܡܐ ܗܘ ܕܩܕܡ ܚܫܐ ܕܝܠܗ ܢܣܒ ܠܠܚܡܐ ܒܐܝܕܘܗܝ ܩܕܝܫܬܐ ܘܐܪܝܡ ܥܝܢܘܗܝ ܠܘܬܟ ܐܠܗܐ ܐܒܘܗܝ ܐܚܝܕ ܟܠ ܘܐܘܕܝ ܠܟ ܘܒܪܟ ܘܩܨܐ ܘܝܗܒ ܠܬܠܡܝܕܘܗܝ ܟܕ ܐܡܪ ܣܒܘ ܐܟܘܠܘ ܡܢܗ ܟܠܟܘܢ ܗܢܘ ܓܝܪ ܐܝܬܘܗܝ ܦܓܪܐ ܕܝܠܝ ܒܗ ܕܝܢ ܒܙܢܐ ܡܢ ܒܬܪ ܕܐܚܫܡܘ ܢܣܒ ܒܐܝܕܝܐ ܕܝܠܗ ܩܕܝܫܬܐ ܟܣܐ ܗܢܐ ܕܚܡܪܐ ܘܐܘܕܝ ܠܟ ܘܒܪܟ ܘܝܗܒ ܠܬܠܡܝܕܘܗܝ ܟܕ ܐܡܪ ܣܒܘ ܐܫܬܘ ܡܢܗ ܟܠܟܘܢ ܗܢܘ ܓܝܪ ܐܝܬܘܗܝ ܟܣܐ ܕܕܡܝ ܕܕܝܬܝܩܝ ܚܕܬܐ ܕܠܥܠܡ ܐܪܙܐ ܗܘ ܕܗܝܡܢܘܬܐ ܕܚܠܦܝܟܘܢ ܘܚܠܦ ܣܓܝܐܐ ܡܬܐܫܕ ܠܫܘܒܩܢܐ ܕܚܛܗܐ ܟܠ ܐܡܬܝ ܕܬܥܒܕܘܢ ܗܠܝܢ ܠܕܘܟܪܢܝ ܗܘ ܡܥܗܕܝܬܘܢ",
+      "text_edition_id": "edition.chaldean-catholic-church.missale.1767-rome-propaganda",
+      "text_sha256": "16f78af63de42298b57b6a0d979b291279ab350d97167fcf33e68ef0108dfd0c",
+      "unit_id": "chaldean-1767-addai-mari.08-institution-narrative",
+      "witness_id": "chaldean-1767-rome-google-pdf",
+      "witness_pages": [
+        [
+          329,
+          329
+        ],
+        [
+          330,
+          330
+        ]
+      ]
+    }
+  ],
+  "witnesses": [
+    {
+      "artifact_id": "artifact.chaldean-catholic-church.missale.1767-rome-propaganda.google-scan-pdf-4d048b31",
+      "edition_id": "edition.chaldean-catholic-church.missale.1767-rome-propaganda",
+      "id": "chaldean-1767-rome-google-pdf",
+      "scope_pages": [
+        [
+          329,
+          330
+        ],
+        [
+          332,
+          337
+        ]
+      ]
+    }
+  ]
+}

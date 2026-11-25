@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-collation",
+  "book_id": "paris-1481-canon-missae",
+  "title": "Paris 1481 (Missale Parisiense): complete strict Canon Missae constituent — independent pixel-collation review",
+  "status": "verified",
+  "independent": true,
+  "complete_extent_verified": true,
+  "reviewer": "independent-collator-v3-alex-west",
+  "checked_on": "2026-11-25",
+  "binding_sha256": "da4e82f09d6dc6591ab433a7af4e9a1b4bf58c85b55ba9304bca0a40c5c18558",
+  "extent_sha256": "b96cd23645dfdabc37884f827efded387ceb0c2a5ab1f957cb76fc7ff5ae7fc7",
+  "witness_sha256": {
+    "paris-1481-dupre-huym-pdf": "619ed4e7e2659fc54a5068f3cb39030c07f4c94e027c79081cb750d39b9cf547"
+  },
+  "unit_sha256": {
+    "unit.paris-1481.canon.opening-rubric": "223832e5f98658f9c056909b986afb15ef3af183ba5a2941a8b9117af2600dde",
+    "unit.paris-1481.canon.te-igitur": "eea4d7e066cac7c0614dd577b722c92eb976138672492cc376a86fa2b74471dc",
+    "unit.paris-1481.canon.memento-vivorum": "c41c4e15d14755c1b1bca778b8e2c03dc9aa9efd1da830b859196458232e742b",
+    "unit.paris-1481.canon.communicantes": "f2bcd4f0ad0de4960d7b163541917a851de09cee464dc268a3d21cf76939ca28",
+    "unit.paris-1481.canon.hanc-igitur": "fd2db4d7fa455cfd0365f0773f76d38dc87a6ffff7e0e234454f9a184e852bb2",
+    "unit.paris-1481.canon.quam-oblationem": "2da7b6301fc0938417b64ecac4a7e9c5ee4eb422f00bb04c36b277fb602e14c6",
+    "unit.paris-1481.canon.qui-pridie": "65cb9a61791c93e65969799b7e583426fc2870ca321f5105c57b25d3d81f012e",
+    "unit.paris-1481.canon.simili-modo": "b6d0a7f4dbac1956d0da71602ae7bee484abe4ebbbeac593d378dbd456f56318",
+    "unit.paris-1481.canon.unde-et-memores": "f25dde5331c6ff4a8f1aaf7d3381d5250c9f3dac280f2e643a4a6ca3ebfac6b6",
+    "unit.paris-1481.canon.supra-quae": "0858f2e90f9792db51b7c83c472b274d8bd5e8f099a0c4418aabe79e0a99de47",
+    "unit.paris-1481.canon.supplices": "4f78f5db18d3e4b584c7199c6af98afaa75bd37d354133d457e38aad4a818ee2",
+    "unit.paris-1481.canon.memento-defunctorum": "8bc99eaffd6f95b2b9701d164d561228bc4598dc714bd343a15fad4c3a897aae",
+    "unit.paris-1481.canon.nobis-quoque": "f3caa1cf10a92778d2788af812a5bcb68842f3abaa5e58286915752234ac2d00",
+    "unit.paris-1481.canon.per-quem": "9bbc44ec632af5961a53f4c0a06f02e0c0ccc51c67d3ab5e575f0a1a58373f4b",
+    "unit.paris-1481.canon.per-ipsum": "185c14d278ecb1508e8491cb298003b9f13dfe6a5c7983451cdaf5e1eb62b8c8",
+    "unit.paris-1481.canon.concluding-response": "87f5c096a9eee737830e89c16c65a2233b79f2c3aa28655b1896e626dbd71dfb"
+  },
+  "scope": "Complete strict Eucharistic Canon of the 22 September 1481 Paris-use missal printed by Jean Dupré and Didier Huym (BSG OEXV 228 RES, PDF pp. 180-182, including printed fol. lxxx at PDF p. 181): from the opening rubric Junctis manibus se inclinet ante altare. and illuminated Te igitur on PDF p. 180 col. 1 through notated Per omnia secula seculorum. Amen. on PDF p. 182 col. 2 immediately before Oremus. Preceptis salutaribus / Pater noster. Includes all printed action rubrics and 25 illuminated crosses (✠) under declared selective Latin reading normalization.",
+  "method": "Independent pixel-level visual inspection of all rendered facsimile pages by independent-collator-v3-alex-west (distinct from drafter AI source transcriber (Lane T3, direct PNG inspection of Paris 1481 PDF pp. 180-182)) on 2026-11-25. Applied 28 pixel-verified correction(s) relative to initial draft; verified every unit boundary, page account (1..506), and SHA-256 hash.",
+  "normalization_limit": "Direct reading from 200-dpi rendered PNG images (and tight column zooms) of Paris 1481 PDF pp. 180-182. UTF-8 NFC, LF line endings. Standard 15th-century Gothic Latin abbreviations expanded silently to reading forms (nasal macrons, -q3 -> -que, -b3 -> -bus, -9 -> -us, Tironian ⁊ -> et, ꝝ -> -rum, dñs/dñi/dñm -> dominus/domini/dominum, nr̃m/nr̃os -> nostrum/nostros, oĩbus/oĩpotẽtem -> omnibus/omnipotentem, sãctas/sctĩ -> sanctas/sancti, eĩ -> enim, ĩpm -> ipsum, p̃claram/p̃stas -> preclaram/prestas, q̃d -> quod, s3 -> sed, p̃/ꝓ -> pro, grã -> gratia, cõcedas -> concedas, ɔspectu -> conspectu). Long s normalized to s; illuminated display initials merged with word bodies (restoring faded red/pink initials visible as coloured washes); line wraps and line-end hyphens joined. Medieval Latin orthography preserved verbatim (e for ae/oe: hec, que, celum, eterni, preclare, uenie; u/v as printed (Gothic word-initial v / medial u): viuo, vero, vultu, venie, eleuatis, serui; circumastantium, Imprimis, Symonis, Mathei, Thadei, Sixti, Crisogoni, propicio, imaculatam, tereritis, Et quequot, loco refrigerii, Ignacio). Action rubrics occupy separate lines within the Canon unit they govern; red/blue crosses serialized as ✠ (25 crosses total). Chant pitches excluded.",
+  "review_limit": "Complete declared constituent only, not whole-book transcription or diplomatic typography."
+}

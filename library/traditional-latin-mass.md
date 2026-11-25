@@ -2,7 +2,7 @@
 
 [Return to Liturgy](liturgy.md)
 
-Studies of the books and calendar in force in 1962. These are widely called the *Traditional Latin Mass* or the *Extraordinary Form*; this library names them by their own titles and dates.
+Studies of the books and calendar in force in 1962. These are widely called the *Traditional Latin Mass* or the *Extraordinary Form*; this library names them by their own titles and dates. Follow this edition’s historical descent and textual comparisons in **[Eucharistic Books Through History (1962 Missale Romanum)](../history/?view=timeline#tradition=roman-stages-pian&stage=roman-stages-1962-june)**.
 
 On this page: [Core and reference works](#core-and-reference-works) ·
 [Altar server guides](#altar-server-guides) ·

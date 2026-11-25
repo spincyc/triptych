@@ -1,0 +1,343 @@
+{
+  "adapter_id": "native-book:geez-1914-apostles-anaphora",
+  "binding_sha256": "aae6b26f3696b7d8ff466d217a6dd3ec962aa1646abe91b1dbe26b0c8bf42933",
+  "catalogue_witness_ids": [
+    "eastern:alex-geez-1913"
+  ],
+  "counts": {
+    "languages": {
+      "gez": 6
+    },
+    "units": 6,
+    "whitespace_tokens": 652
+  },
+  "id": "geez-1914-apostles-anaphora",
+  "schema": "triptych-eucharistic-native-text/v1",
+  "scope": {
+    "complete_declared_extent": true,
+    "description": "Bounded Ge'ez Anaphora of the Holy Apostles core constituent of the Asmara Catholic missal (imprint year ፲፱፻፯ = 1914/15; Roman approbation 25 Feb 1913; Asmara imprimatur 12 Apr 1913; ULB Bonn Goussen 1665, PDF pp. 40, 44-45): title and opening Eucharistic dialogue plus opening Preface (ነአኵተከ) on PDF p. 40; Christological preface continuation, Sanctus, Post-Sanctus, Institution Narrative (bread and cup), Anamnesis, Epiclesis (preserving the distinctive Asmara 1914/15 formula በተመጥዎተ፡ ዝንቱ፡ ኅብስት፡ ወጽዋዕ...), unity prayer and concluding doxology/peace on PDF pp. 44-45 (printed pp. ፳፱-፴ / 29-30), terminating at the decorative bar immediately before the Prayer of Fraction (ጸሎተ፡ ፈትቶ) and Our Father on PDF p. 46. Excludes the intervening Alexandrian intercessions and Prayer of Blessing (PDF p. 40 col. 2 lower half through p. 41), blank verso p. 42, and full-page Crucifixion illustration p. 43.",
+    "extent_kind": "constituent",
+    "known_extent_pages": 3,
+    "known_extent_units": 6,
+    "omitted_book_divisions": [
+      "Title page, frontispiece, Ge'ez permission, Latin approbation/imprimatur and Ordo Communis (PDF pp. 1-39)",
+      "Intervening Alexandrian intercessions (በዝየ፡ ይዝክር፡ ሙታነ) and Prayer of Blessing (ጸሎተ፡ ቡራኬ) on PDF p. 40 col. 2 lower half and p. 41",
+      "Blank verso PDF p. 42 and full-page Crucifixion illustration PDF p. 43",
+      "Prayer of Fraction (ጸሎተ፡ ፈትቶ), Our Father (አቡነ፡ ዘበሰማያት), Order of Communion, and Anaphoras 2-14 (PDF pp. 46-181)",
+      "Decorative red rules, headpieces, woodcut of Apostles on p. 40, printed Ge'ez page numerals (፳፱, ፴), catchword mark, and ink colour"
+    ],
+    "status": "complete-native-constituent",
+    "whole_book_complete": false
+  },
+  "sources": [
+    {
+      "edition_id": "edition.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara",
+      "id": "artifact.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-checked-geez-a91530df",
+      "record_type": "artifact",
+      "rights_basis": "Faithful bounded reading transcription of original-language liturgical text from Asmara 1914/15 (Missale Aethiopicum): Anaphora of the Apostles core constituent, whose United States copyright term has expired by publication date (Ethiopian year 1907 (1914/15) Asmara imprint; approbation 25 Feb 1913, imprimatur 12 Apr 1913). Derived directly from tracked public-domain facsimile artifact.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.bonn-scan-pdf-b126e66a without modern translation or editorial reconstruction. Third-party historical text is excluded from Triptych's CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "transformation": "Direct reading from 220-dpi rendered PNG images (and column zooms) of Asmara 1914/15 PDF pp. 40, 44-45. UTF-8 NFC, LTR Ethiopic script (U+1200-U+137F), LF line endings. Preserves native Ge'ez fidel vowel orders, labiovelars (ኰ, ቍ, ኵ, ቍዓ, etc.), and Ethiopic numerals (፪, ፫, ፭, ፮). Standardizes Ethiopic punctuation as printed: wordspace '፡' (U+1361), full stop '።' (U+1362), comma '፣' (U+1363), preface/question stop '፧' (U+1367). Retains printed speaker cues (ይ፡ ካ። = priest, ይ፡ ሕ። = people, ይ፡ ዲ። = deacon, ካ፡ ን። = assistant priest), inline red gesture cues such as (አማሪ) ('pointing') and bracketed [ወእምድኅረ፡ ንስቲት], quotation marks around the consecration words (”...”), and printed crosses as '✠'. Line wraps within speakers/rubrics joined cleanly; each speaker turn or rubric block occupies one physical line. Excludes page numerals (፳፱, ፴), ornament and colour."
+    },
+    {
+      "edition_id": "edition.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara",
+      "id": "artifact.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.bonn-scan-pdf-b126e66a",
+      "record_type": "artifact",
+      "rights_basis": "The anonymous official Ge’ez book carries the Ethiopian imprint year 1907, corresponding to 1914/15, and earlier 1913 approval and imprimatur dates. It is public domain in the United States by publication date. Bonn ULB marks this exact title (https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/3222909) Public Domain Mark 1.0. Retain the unchanged 181-page provider PDF with Bonn attribution; do not treat the 1913 approval as a separate printing or assert identity with Keren 1890.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "source_url": "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/3222909"
+    },
+    {
+      "date": "1914/15",
+      "id": "edition.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara",
+      "language": "gez",
+      "publication": "Asmara: Catholic press, Ethiopian year 1907 (1914/15 Gregorian)",
+      "record_type": "edition",
+      "title": "Missale Aethiopicum, Asmara, Ethiopian year 1907 (1914/15)"
+    },
+    {
+      "artifact_id": "artifact.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-checked-geez-a91530df",
+      "edition_id": "edition.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara",
+      "id": "passage.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-anamnesis",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-checked-geez-a91530df",
+      "edition_id": "edition.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara",
+      "id": "passage.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-epiclesis-and-doxology",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-checked-geez-a91530df",
+      "edition_id": "edition.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara",
+      "id": "passage.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-institution-narrative",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-checked-geez-a91530df",
+      "edition_id": "edition.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara",
+      "id": "passage.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-opening-dialogue",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-checked-geez-a91530df",
+      "edition_id": "edition.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara",
+      "id": "passage.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-post-sanctus",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-checked-geez-a91530df",
+      "edition_id": "edition.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara",
+      "id": "passage.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-preface-and-sanctus",
+      "record_type": "passage"
+    }
+  ],
+  "stage_ids": [
+    "alexandrian-stages-geez1913"
+  ],
+  "title": "Asmara 1914/15 (Missale Aethiopicum): Anaphora of the Apostles core constituent",
+  "units": [
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "dialogue-with-rubrics",
+      "language": "gez",
+      "native_path": [
+        "anaphoras",
+        "apostles",
+        "opening-dialogue"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-checked-geez-a91530df",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-checked-geez-a91530df",
+      "source_id": "passage.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-opening-dialogue",
+      "source_locator": "Constituent unit 1/6 (anaphoras/apostles/opening-dialogue), normalized physical lines 1–11.",
+      "source_order": 1,
+      "text": "አኰቴተ፡ ቍርባን፡ ዘአበዊነ፡ ሐዋርያት፡ ቅዱሳን፡\nበረከቶሙ፡ ወሀብተ፡ ረድኤቶሙ፡ የሀሉ፡ ምስሌነ፡ ለዓለመ፡ ዓለም። አሜን።\nይ፡ ካ። እግዚአብሔር፡ ምስለ፡ ኵልክሙ።\nቡራኬ፡ ✠ ላዕለ፡ ሕዝብ።\nይ፡ ሕ። ምስለ፡ መንፈስከ።\nይ፡ ካ። አእኵትዎ፡ ለአምላክነ።\nቡራኬ፡ ✠ ላዕለ፡ ሕዝብ።\nይ፡ ሕ። ርቱዕ፡ ይደሉ።\nይ፡ ካ። አልዕሉ፡ አልባቢክሙ።\nቡራኬ፡ ✠ ላዕለ፡ ነፍሱ።\nይ፡ ሕ። ብነ፡ ኀበ፡ እግዚአብሔር፡ አምላክነ።",
+      "text_edition_id": "edition.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara",
+      "text_sha256": "83c62c9cea9c631d48f414d46a756e6eec93e4c214b4c31689bbbea54f141fcd",
+      "unit_id": "unit.geez-1914.apostles.opening-dialogue",
+      "witness_id": "geez-asmara-1914-bonn-pdf",
+      "witness_pages": [
+        [
+          40,
+          40
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics",
+      "language": "gez",
+      "native_path": [
+        "anaphoras",
+        "apostles",
+        "preface-and-sanctus"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-checked-geez-a91530df",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-checked-geez-a91530df",
+      "source_id": "passage.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-preface-and-sanctus",
+      "source_locator": "Constituent unit 2/6 (anaphoras/apostles/preface-and-sanctus), normalized physical lines 12–24.",
+      "source_order": 2,
+      "text": "ይ፡ ካ። ነአኵተከ፡ እግዚኦ፡ በፍቁር፡ ወልድከ፡ እግዚእነ፡ ኢየሱስ፡ ዘበደኃሪ፡ መዋዕል፡ ፈኖከ፡ ለነ፡ ወልደከ፡ መድኅነ፡ ወቤዘወነ፡ መልአከ፡ ምክርከ። ዝቃል፡ አንተ፡ እምኔከ፡ ውእቱ፡ ወቦቱ፡ ኵሉ፡ ገበርከ፡ በፈቃድከ።\nወሶበ፡ ዲ፡ ን፡ ፈጸመ፣ ካህን፡ ይዕትቦሙ፡ ፫ ጊዜ፡ ለሕዝብ፣ ወይሚጥ፡ ገጾ፡ መንገለ፡ ምሥዋዕ፡ ወይብል፡ በልዑል፡ ዜማ።\nለእሉኒ፡ ወለኵሎሙ፡ አዕርፍ፡ ነፍሶሙ፡ ወተሣሀሎሙ፣ ዘፈኖከ፡ እምሰማይ፡ ወልደከ፡ ውስተ፡ ማኅፀነ፡ ድንግል፣ ተፀውረ፡ በከርሥ፣ ሥጋ፡ ኮነ፣ ወልደቱ፡ ተአውቀ፡ እመንፈስ፡ ቅዱስ።\nይ፡ ዲ። እለ፡ ትነብሩ፡ ተንሥኡ።\nይ፡ ካ። ለከ፡ ለዘይቀውሙ፡ ቅድሜከ፡ አልፍ፡ አእላፋት፡ ወትእልፊተ፡ አእላፋት፡ ቅዱሳን፡ መላእክት፡ ወሊቃነ፡ መላእክት፡ ወክቡራን፡ እንስሳከ፡ እለ፡ ፮ ክነፊሆሙ፡ ሱራፌል፡ ወኪሩቤል።\nይ፡ ዲ። [ወእምድኅረ፡ ንስቲት]። ውስተ፡ ጽባሕ፡ ነጽሩ።\nበ፪ክነፊሆሙ፡ ይከድኑ፡ ገጾሙ፣ በ፪ክነፊሆሙ፡ ይከድኑ፡ እገሪሆሙ፡ ወበ፪ክንፍ፡ ይሰሩ፡ እምጽንፍ፡ እስከ፡ አጽናፈ፡ ዓለም።\nይ፡ ዲ። ንኔጽር።\nይ፡ ካ። ወዘልፈ፡ እንከ፡ ኵሎሙ፡ ከመ፡ ኪያከ፡ ይቀድሱ፡ ወይወድሱ፡ ምስለ፡ ኵሎሙ፡ ይቄድሱከ፡ ወይዌድሱከ። ዓዲ፡ ተወከፍ፡ ዘዚአነሂ፡ ቅዳሴ፡ እለ፡ ዘንብለከ፧\nቅዱስ፡ ቅዱስ፡ ቅዱስ፡ እግዚአብሔር፡ ጸባዖት፡ ፍጹም፡ ምሉዕ፡ ሰማያተ፡ ወምድረ፡ ቅድሳተ፡ ስብሐቲከ።\nይ፡ ዲ። አውሥኡ።\nይ፡ ሕ። ቅዱስ፡ ቅዱስ፡ ቅዱስ፡ እግዚአብሔር፡ ጸባዖት፡ ፍጹም፡ ምሉዕ፡ ሰማያተ፡ ወምድረ፡ ቅድሳተ፡ ስብሐቲከ።\nካህን፡ በዝየ፡ ይዕትብ፡ ቅድመ፡ ላዕለ፡ ርእሱ፡ ወዳግመ፡ ላዕለ፡ ልኡካን፡ ወይብል።",
+      "text_edition_id": "edition.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara",
+      "text_sha256": "98d1ebc9bc384a841db51a4fec1a7d11bb6595d773305ff44c65b8e5472a09f0",
+      "unit_id": "unit.geez-1914.apostles.preface-and-sanctus",
+      "witness_id": "geez-asmara-1914-bonn-pdf",
+      "witness_pages": [
+        [
+          40,
+          40
+        ],
+        [
+          44,
+          44
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics",
+      "language": "gez",
+      "native_path": [
+        "anaphoras",
+        "apostles",
+        "post-sanctus"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-checked-geez-a91530df",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-checked-geez-a91530df",
+      "source_id": "passage.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-post-sanctus",
+      "source_locator": "Constituent unit 3/6 (anaphoras/apostles/post-sanctus), normalized physical lines 25–29.",
+      "source_order": 3,
+      "text": "አማን፡ መልዓ፡ ሰማያተ፡ ወምድረ፡ ቅድሳተ፡ ስብሐቲከ፡ በእግዚእነ፡ ወአምላክነ፡ ወመድኃኒነ፡ ኢየሱስ፡ ክርስቶስ። ቅዱስ፡ ወልድከ፡ መጽአ፡ ወእምድንግል፡ ተወልደ፡ ከመ፡ ፈቃደከ፡ ይፈጽም፡ ወሕዝበ፡ ለከ፡ ይግበር፡ ቅዱሰ።\nካ፡ ን። ይውግር፡ ዕጣነ።\nይ፡ ሕ። ተዘከረነ፡ እግዚኦ፡ በውስተ፡ መንግሥትከ፣ ተዘከረነ፡ እግዚኦ፡ ኦሊቅነ፣ ተዘከረነ፡ እግዚኦ፡ በውስተ፡ መንግሥትከ፧ በከመ፡ ተዘከርከ፡ ለፈያታዊ፡ ዘየማን፡ እንዘ፡ ሀሎከ፡ ዲበ፡ ዕፀ፡ መስቀል፡ ቅዱስ።\nወእምዝ፡ ያቀርብ፡ ሎቱ፡ ካ፡ ን። ማዕጠንተ። ወይዕጥን፡ እዴሁ፡ ወይብል።\nሰፍሐ፡ እደዊሁ፡ ለሕማም፡ ሐሚሞ፡ ከመ፡ ሕሙማነ፡ ያድኅን፡ እለ፡ ተወከሉ፡ በላዕሌሁ። ዘተውህበ፡ በፈቃዱ፡ ለሕማም፡ ከመ፡ ሞተ፡ ይሥዐር፡ ወማዕሠረ፡ ሰይጣን፡ ይብትክ፡ ወይኪድ፡ ሲኦለ፡ ቅዱሳነ፡ ይምራሕ፡ ሥርዓተ፡ ይትክል፡ ወትንሣኤሁ፡ ያውቅ።",
+      "text_edition_id": "edition.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara",
+      "text_sha256": "ba3492c5684f5e56ab1500757259b87a8cca85c6da7a68c747f8373e0ecb3e55",
+      "unit_id": "unit.geez-1914.apostles.post-sanctus",
+      "witness_id": "geez-asmara-1914-bonn-pdf",
+      "witness_pages": [
+        [
+          44,
+          44
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "institution-narrative-with-rubrics",
+      "language": "gez",
+      "native_path": [
+        "anaphoras",
+        "apostles",
+        "institution-narrative"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-checked-geez-a91530df",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-checked-geez-a91530df",
+      "source_id": "passage.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-institution-narrative",
+      "source_locator": "Constituent unit 4/6 (anaphoras/apostles/institution-narrative), normalized physical lines 30–50.",
+      "source_order": 4,
+      "text": "ይ፡ ካ። በይእቲ፡ ሌሊት፡ እንተ፡ ባቲ፡ አመ፡ ይገብእዎ።\nይ፡ ዲ። አንሥኡ፡ እደዊክሙ፡ ቀሳውስት።\nወበዝየ፡ ካህን፡ ያንሥእ፡ ኅብስተ፡ እንዘ፡ ይብል።\nነሥአ፡ ኅብስተ፡ በእደዊሁ፡ ቅዱሳት፡ ወብፁዓት፡ እለ፡ እንበለ፡ ነውር።\nይ፡ ሕ። ነአምን፡ ከመ፡ ዝንቱ፡ ውእቱ፡ በአማን፡ ነአምን።\nይ፡ ካ። አንቃዕደወ፡ ሰማየ፡ ኀቤከ፡ ኀበ፡ አቡሁ፡ አእኰተ፡ ባረከ፡\nይባርክ፡ ላዕለ፡ ኅብስት፡ ፫ ጊዜ።\nወፈተተ፡ ወወሀቦሙ፡ ለእሊአሁ፡ አርዳኢሁ።\nወእምዝ፡ ይንቅዖ፡ ለኅብስት፡ እም ፭ ጽንፍ፡ ንስቲተ፡ እንዘ፡ ኢይፌልዮ።\nወይቤሎሙ፡ ንሥኡ፡ ብልዑ፡\n”ዝ፡ (አማሪ)፡ ውእቱ፡ ሥጋየ”፡\nለዘበእንቲአክሙ፡ ይትፌተት፡ ለኅድገተ፡ ኃጢአት።\nይ፡ ሕ። አሜን፡ አሜን፡ አሜን፣ ነአምን፡ ወንትአመን፡ ንሴብሐከ፡ እግዚእነ፡ ወአምላክነ፣ ከመ፡ ዝንቱ፡ ውእቱ፡ በአማን፡ ሥጋከ፡ ነአምን።\nይ፡ ካ። ወከማሁ፡ ጽዋዓኒ፡ አእኰቶ፡ ባረከ፡ ወቀደሰ፣\nይባርክ፡ ላዕለ፡ ጽዋዕ፡ ፫ ጊዜ።\nወመጠዎሙ፡ ለእሊአሁ፡ አርዳኢሁ፡ ወይቤሎሙ፡ ንሥኡ፡ ስትዩ፡\n”ዝ፡ (አማሪ)፡ ውእቱ፡ ደምየ”፡\nለዘበእንቲአክሙ፡ ይትከዐው፡ ለቤዛ፡ ብዙኃን።\nይነክንክ፡ ለጽዋዕ፡ በትእምርተ፡ መስቀል።\nይ፡ ሕ። አሜን፡ አሜን፡ አሜን፣ ነአምን፡ ወንትአመን፡ ንሴብሐከ፡ እግዚእነ፡ ወአምላክነ፣ ከመ፡ ዝንቱ፡ ውእቱ፡ በአማን፡ ደምከ፡ ነአምን።\nይ፡ ካ። ወሶበ፡ ትገብርዎ፡ ለዝ፡ ተዝካረ፡ ዚአየ፡ ግበሩ።",
+      "text_edition_id": "edition.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara",
+      "text_sha256": "f068674aa9070f581b1c43b36649d09f10ba997790bec35b483b48094be3bfeb",
+      "unit_id": "unit.geez-1914.apostles.institution-narrative",
+      "witness_id": "geez-asmara-1914-bonn-pdf",
+      "witness_pages": [
+        [
+          44,
+          44
+        ],
+        [
+          45,
+          45
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics",
+      "language": "gez",
+      "native_path": [
+        "anaphoras",
+        "apostles",
+        "anamnesis"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-checked-geez-a91530df",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-checked-geez-a91530df",
+      "source_id": "passage.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-anamnesis",
+      "source_locator": "Constituent unit 5/6 (anaphoras/apostles/anamnesis), normalized physical lines 51–52.",
+      "source_order": 5,
+      "text": "ይ፡ ሕ። ንዜኑ፡ ሞተከ፡ እግዚኦ፡ ወትንሣኤከ፡ ቅድስተ። ነአምን፡ ዕርገተከ፡ ወዳግመ፡ ምጽአተከ። ንሴብሐከ፡ ወንትአመነከ፣ ንስእለከ፡ ወናስተብቍዓከ፡ ኦእግዚእነ፡ ወአምላክነ።\nይ፡ ካ። ይእዜኒ፡ እግዚኦ፡ እንዘ፡ ንዜከር፡ ሞቶ፡ ወትንሣኤሁ፡ ለወልድከ፡ ንትአመነከ፡ ወናቄርብ፡ ለከ፡ ዝንተ፡ (አማሪ)፡ ኅብስተ፡ ቅዱሰ፡ ወዘንተ፡ ጽዋዐ፡ ክቡረ፡ እንዘ፡ ነአኵተከ፣ ወቦቱ፡ ረሰይከ፡ ለነ፡ ለተድላ፡ ንቁም፡ ቅድሜከ፡ ወለከ፡ ንትከሀን።",
+      "text_edition_id": "edition.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara",
+      "text_sha256": "77406bca5669b1e91ecc9d034049858ebc97abc9e891b59114779e2a5308c4a9",
+      "unit_id": "unit.geez-1914.apostles.anamnesis",
+      "witness_id": "geez-asmara-1914-bonn-pdf",
+      "witness_pages": [
+        [
+          45,
+          45
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics",
+      "language": "gez",
+      "native_path": [
+        "anaphoras",
+        "apostles",
+        "epiclesis-and-doxology"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-checked-geez-a91530df",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-checked-geez-a91530df",
+      "source_id": "passage.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-epiclesis-and-doxology",
+      "source_locator": "Constituent unit 6/6 (anaphoras/apostles/epiclesis-and-doxology), normalized physical lines 53–70.",
+      "source_order": 6,
+      "text": "ንስእለከ፡ እግዚኦ፡ ወናስተብቍዓከ፣ ከመ፡ ትፈኑ፡ ለነ፡ ቅዱሰ፡ መንፈሰ፡ ወኃይለ፣ በተመጥዎተ፡ ዝንቱ፡ ኅብስት፡ ወጽዋዕ፣ ወትረስዮ፡ ይኩን፡ ለሕይወትነ፡ ሥጋሁ፡ ወደሞ፣\nይባርክ፡ ላዕለ፡ ኅብስት፡ ፫ ጊዜ፡ ወላዕለ፡ ጽዋዕ።\nለእግዚእነ፡ ወአምላክነ፡ ወመድኃኒነ፡ ኢየሱስ፡ ክርስቶስ፡ ለዓለመ፡ ዓለም።\nይ፡ ሕ። አሜን፡ እግዚኦ፡ መሐረነ፣ እግዚኦ፡ መሐከነ፣ እግዚኦ፡ ተሣሀለነ።\nይ፡ ዲ። በኵሉ፡ ልብ፡ ናስተብቍዖ፡ ለእግዚአብሔር፡ አምላክነ፡ ኅብረተ፡ መንፈስ፡ ቅዱስ፡ ሠናየ፡ ከመ፡ ይጸግወነ።\nይ፡ ሕ። በከመ፡ ሀሎ፡ ህልወ፡ ወይሄሉ፡ ለትውልደ፡ ትውልድ፡ ለዓለመ፡ ዓለም።\nይ፡ ካ። ደሚረከ፡ ተሀቦሙ፡ ለኵሎሙ፡ ለእለ፡ ይነሥኡ፡ ሥጋሁ፡ ወደሞ፡ ይኩኖሙ፡ ለቅድሳት፡ ወለምልዓተ፡ መንፈስ፡ ቅዱስ፡ ወለአጽንዖ፡ ሃይማኖት፡ ዘበአማን፡ ከመ፡ ኪያከ፡ ይቀድሱ፡ ወይወድሱ፡ ወለወልድከ፡ ፍቁርከ፡ ኢየሱስ፡ ክርስቶስ፡ ምስለ፡ ቅዱስ፡ መንፈስከ፡ ለዓለመ፡ ዓለም።\nይ፡ ሕ። አሜን።\nይ፡ ካ። ህበነ፡ ንኅበር፡ በዘዚአከ፡ መንፈስ፡ ቅዱስ፣ ወፈውሰነ፡ በዝንቱ፡ ጰርስፎራ፣ ከመ፡ ብከ፡ ንሕየው፡ ዘለኵሉ፡ ዓለም፡ ወለዓለመ፡ ዓለም።\nይ፡ ሕ። ከማሁ።\nይ፡ ካ። ቡሩክ፡ ስሙ፡ ለእግዚአብሔር፡ ወቡሩክ፡ ዘይመጽእ፡ በስመ፡ እግዚአብሔር፣ ወይትባረክ፡ ስመ፡ ስብሐቲሁ፣ ለይኩን፡ ለይኩን፣ ቡሩክ፡ ለይኩን።\nይ፡ ሕ። ከማሁ።\nይ፡ ካ። ፈኑ፡ ጸጋ፡ መንፈስ፡ ቅዱስ፡ ላዕሌነ።\nይ፡ ሕ። ከማሁ።\nይ፡ ዲ። ተንሥኡ፡ ለጸሎት።\nይ፡ ሕ። እግዚኦ፡ ተሣሀለነ።\nይ፡ ካ። ሰላም፡ ለኵልክሙ።\nይ፡ ሕ። ምስለ፡ መንፈስከ።",
+      "text_edition_id": "edition.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara",
+      "text_sha256": "5141930e86951ce43820514aaf222f82ea73be108ee4f21301af3ccf836ffd94",
+      "unit_id": "unit.geez-1914.apostles.epiclesis-and-doxology",
+      "witness_id": "geez-asmara-1914-bonn-pdf",
+      "witness_pages": [
+        [
+          45,
+          45
+        ]
+      ]
+    }
+  ],
+  "witnesses": [
+    {
+      "artifact_id": "artifact.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.bonn-scan-pdf-b126e66a",
+      "edition_id": "edition.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara",
+      "id": "geez-asmara-1914-bonn-pdf",
+      "scope_pages": [
+        [
+          40,
+          40
+        ],
+        [
+          44,
+          45
+        ]
+      ]
+    }
+  ]
+}

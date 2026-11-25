@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-extent",
+  "book_id": "maronite-1594-anaphora",
+  "title": "Missale Chaldaicum iuxta ritum Ecclesiae nationis Maronitarum (Rome Medici, 1594) — Anaphora of the Twelve Apostles Core — complete constituent extent and page account",
+  "status": "complete",
+  "unresolved": [],
+  "omitted": [],
+  "expected_unit_ids": [
+    "maronite-1594-anaphora.01-opening-dialogue",
+    "maronite-1594-anaphora.02-institution-bread",
+    "maronite-1594-anaphora.03-institution-chalice",
+    "maronite-1594-anaphora.04-epiclesis-call",
+    "maronite-1594-anaphora.05-epiclesis-consecration"
+  ],
+  "scope": "Bounded constituent of five core units of the Anaphora of the Twelve Apostles (Opening Dialogue, Institution of Bread, Institution of Chalice, Epiclesis Call/Kyrie, and Epiclesis Consecration/Salvation Petition) in Classical Syriac (syr), directly aligned with Beirut 1908; intervening Preface, Post-Sanctus, Anamnesis, secret Epiclesis preamble, and post-epiclesis fruits prayer are excluded due to dense archaic Medici cursive ligatures and structural divergence in 1908's inline Ordo Communis.",
+  "pages": [
+    {
+      "witness_id": "maronite-1594-rome-medici-ia-pdf",
+      "ranges": [
+        [
+          1,
+          126
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "Latin/Syriac front matter (PDF 5-9), Ordo Communis, and preceding anaphoras (beginning with Sixtus)."
+    },
+    {
+      "witness_id": "maronite-1594-rome-medici-ia-pdf",
+      "ranges": [
+        [
+          127,
+          127
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "maronite-1594-anaphora.01-opening-dialogue"
+      ],
+      "description": "Abbreviated Opening Dialogue of the Anaphora of the Twelve Apostles (printed p. 39 / ܠܛ; Preface and Post-Sanctus below excluded)."
+    },
+    {
+      "witness_id": "maronite-1594-rome-medici-ia-pdf",
+      "ranges": [
+        [
+          128,
+          128
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "maronite-1594-anaphora.02-institution-bread"
+      ],
+      "description": "Institution of Bread beneath Last Supper woodcut (printed p. 40 / ܡ)."
+    },
+    {
+      "witness_id": "maronite-1594-rome-medici-ia-pdf",
+      "ranges": [
+        [
+          129,
+          129
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "maronite-1594-anaphora.03-institution-chalice"
+      ],
+      "description": "Institution of Chalice and People's Amen (printed p. 41 / ܡܐ; Anamnesis below excluded)."
+    },
+    {
+      "witness_id": "maronite-1594-rome-medici-ia-pdf",
+      "ranges": [
+        [
+          130,
+          130
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "maronite-1594-anaphora.04-epiclesis-call",
+        "maronite-1594-anaphora.05-epiclesis-consecration"
+      ],
+      "description": "Epiclesis aloud invocation/Kyrie and Roman-revised Consecration/Salvation petitions (printed p. 42 / ܡܒ; secret preamble and closing fruits paragraph excluded)."
+    },
+    {
+      "witness_id": "maronite-1594-rome-medici-ia-pdf",
+      "ranges": [
+        [
+          131,
+          300
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "Post-epiclesis diptychs, fraction, remaining anaphoras (including Sharar), Latin colophon and approbation (PDF 296), and back matter."
+    }
+  ]
+}

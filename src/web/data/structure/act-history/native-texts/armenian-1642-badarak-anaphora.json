@@ -1,0 +1,340 @@
+{
+  "adapter_id": "native-book:armenian-1642-badarak-anaphora",
+  "binding_sha256": "a41129c01ebd89ab9fa032faf8935dce20ef502c071891c8e047b9f39262abef",
+  "catalogue_witness_ids": [
+    "eastern:arm-1642-ordo"
+  ],
+  "counts": {
+    "languages": {
+      "hy": 6
+    },
+    "units": 6,
+    "whitespace_tokens": 759
+  },
+  "id": "armenian-1642-badarak-anaphora",
+  "schema": "triptych-eucharistic-native-text/v1",
+  "scope": {
+    "complete_declared_extent": true,
+    "description": "Core Classical Armenian (Grabar) Anaphora of the Armenian Divine Liturgy (Badarak) from the priest's opening Trinitarian blessing rubric and greeting (Քահանայն աւրհնէ զժողովուրդն... Շնորհք սէր և սրբարար աստուածային զօրութիւն...) at printed p. 70 (PDF p. 82) through the Sanctus, Post-Sanctus, Institution Narrative (including Հայր երկնաւոր), Anamnesis and Oblation, and the complete Epiclesis concluding with Որպէս զի եղիցի... և ի թողութիւն մեղաց։ Դպիրքն. Ամէն։ at printed p. 80 (PDF p. 88), immediately before the post-epiclesis general intercessions (Սովաւ շնորհեա՛ զսէր...). Preserves the exact provider PDF page ordering where printed pp. 77–80 (PDF pp. 85–88) precede printed pp. 73–76 (PDF pp. 89–92), while ordering transcribed units in true liturgical/printed sequence (pp. 70–80). Excludes the parallel Latin column on the same pages, all pre-Anaphora and post-Epiclesis sections, and page furniture.",
+    "extent_kind": "constituent",
+    "known_extent_pages": 11,
+    "known_extent_units": 6,
+    "omitted_book_divisions": [
+      "Parallel Latin translation column facing the Armenian column on every page in scope (printed pp. 70–80 / PDF pp. 82–92)",
+      "Front matter, including title page (PDF p. 5), Vincentius Riccardus's 6 May 1636 review/emendation certificate (PDF p. 7), Giovanni Molino's comparison certificate (PDF p. 8), and imprimaturs (PDF p. 9)",
+      "Pre-Anaphora liturgy (including Vesting, Prothesis, Enarxis, Readings, Western-form Creed, Great Entrance, Offertory, Crucifixion engraving at PDF p. 78, and Kiss of Peace through printed p. 70 upper column)",
+      "Post-Epiclesis general intercessions (Սովաւ շնորհեա՛...), Diptychs, Lord's Prayer, Fraction, Communion, and Dismissal from printed p. 80 lower column (PDF p. 88) through printed p. 132 (PDF p. 144)",
+      "Printed page numbers, signature marks (K, K 2), catchwords, decorative printer stars, and Google Books digitizer stamps"
+    ],
+    "status": "complete-native-constituent",
+    "whole_book_complete": false
+  },
+  "sources": [
+    {
+      "edition_id": "edition.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda",
+      "id": "artifact.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-checked-armenian-60a300f0",
+      "record_type": "artifact",
+      "rights_basis": "Faithful bounded reading transcription of original-language liturgical text from Rome 1642 Ordo Divinae Missae Armenorum: core Armenian Badarak Anaphora constituent, whose United States copyright term has expired by publication date (1642 Rome publication (following 1636 review certificate)). Derived directly from tracked public-domain facsimile artifact.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.google-pdf-9faf9690 without modern translation or editorial reconstruction. Third-party historical text is excluded from Triptych's CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "transformation": "Unicode NFC Classical Armenian (Grabar, language tag hy per repository convention) read directly from 260–450 DPI PNG renders of the Armenian column of the tracked 1642 facsimile PDF.; Standard Armenian scribal/typographic պատիւ (overline/titlo) abbreviations are expanded to full Classical Armenian words strictly matching 1642's own unabbreviated orthography (using աւ in աւրհնէ/աւրհնեաց/աւրհնեալ/աւրհնեմք where unabbreviated forms use աւ, and օ where printed as օ such as զօրութիւն, հօտի): ա̄ծ → աստուած, ա̄ծային → աստուածային, Ա̄ծոյ → Աստուծոյ, ա̄ծապէս → աստուածապէս, Յա̄ծածնէն → Յաստուածածնէն, տ̄ր/Տ̄ր → տէր/Տէր, տ̄ն/տ̄նէ → տեառն/տեառնէ, ս̄բ/Ս̄բ → սուրբ/Սուրբ, Յ̄սի → Յիսուսի, ք̄սի → քրիստոսի, ա̄հէ/ա̄հնեաց/ա̄հեմք → աւրհնէ/աւրհնեաց/աւրհնեմք, ամ̄/ամենա̄ → ամենայն, վ̄սն/Վ̄սն → վասն/Վասն, զօրութի̄ → զօրութիւն, տուչութբ̄ → տուչութեամբ, հրամանատրութե̄ → հրամանատրութեան, միութե̄մբ → միութեամբ, ասլվ̄ → ասելով, զա̄ղս → զաղօթս, շնորհե̄ց → շնորհեաց, յառ̄ջ → յառաջ, Դպ̄րքն → Դպիրքն.; Printed crosses are preserved at exact source position as ✠ (ձե✠զ on printed p. 70).; Authentic 1642 orthography, epenthetic ը spellings (բանիւըդ, բանըդ, տընտեսութեամբ, բընակիլ, ըզ, ըսփոփեցեր, մըխեսցէ, ըսպասաւորս, խընդրեմք, ՎԱՍԸՆ), uppercase Institution display text, and compositor typos verified at 360–450 DPI are preserved verbatim: զերկինըս (for զերկիրս) and պարսնն (p. 71), ճշմատապէս (for ճշմարտապէս, p. 72), ճանպրհորդեաց (p. 73), ՆՈՐՈՑ (for ՆՈՐՈՅ, p. 75), Տեառըդ (p. 78), and աւրհնեաբ (for աւրհնեալ, p. 79).; Words broken across column lines are joined; facing Latin column, catchwords, signatures (K, K 2), decorative asterisks, and page numbers are excluded.; Independent V1 collation at 450 DPI additionally confirmed abbreviation վխ̄ճան → վախճան (p. 73), uppercase Ա̄ծ → Աստուած (p. 77), page-break dittography of և at pp. 73–74 (collapsed to single և), authentic spellings մէզ (p. 71) and երկրպագեսցուք. (p. 79), and line-break compositor typo գոահանամք (p. 77)."
+    },
+    {
+      "edition_id": "edition.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda",
+      "id": "artifact.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.google-pdf-9faf9690",
+      "record_type": "artifact",
+      "rights_basis": "United States: the 1642,1677 and 1823 printings are public domain by their publication dates; their historical text and typography are not offered under Triptych's CC BY 4.0. These are mechanical facsimile page images, with no modern edition or authored annotation added. U.S. Copyright Office Compendium §313.4(A), Chapter 300 pp 26–27 (https://www.copyright.gov/comp3/chap300/ch300-copyrightable-authorship.pdf, checked 2026-10-16), treats scanning a literary work as a mere copy without new copyright. Google Books Terms of Service §2 (https://books.google.com/intl/en/googlebooks/tos.html, checked 2026-10-16) preserves uses permitted under the U.S. Copyright Act. All Google stamps and source marks remain unchanged; any Google notice is treated under src/sources/inventories/google-usage-guidelines-rights-v 1.toml and is not historical book text. No claim is made for other jurisdictions or for a Google-granted general redistribution license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "source_url": "https://books.google.com/books?id=ct5lAAAAcAAJ",
+      "transformation": "Read images in sequence.json order from the exact parent ZIP. Embed JPEG bytes unchanged in PDF DCTDecode image streams. For noninterlaced 8-bit grayscale/RGB PNG images, concatenate original IDAT chunks unchanged into PDF FlateDecode image streams with PNG predictor 15; retain image dimensions/color channels and all visible marks. One image fills one PDF page, page dimensions in points equal source pixel dimensions. No cropping, scaling, color conversion, resampling, OCR, reordering or textual alteration. PNG wrappers and all exact original files remain in the parent ZIP; PDF is a pixel-lossless derivative, not an exact provider PDF."
+    },
+    {
+      "date": "1642",
+      "id": "edition.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda",
+      "language": "hy-la",
+      "publication": "Rome: Typis et expensis Sacrae Congregationis de Propaganda Fide",
+      "record_type": "edition",
+      "title": "Ordo divinae missae Armenorum"
+    },
+    {
+      "artifact_id": "artifact.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-checked-armenian-60a300f0",
+      "edition_id": "edition.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda",
+      "id": "passage.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-01-opening-dialogue",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-checked-armenian-60a300f0",
+      "edition_id": "edition.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda",
+      "id": "passage.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-02-preface-thanksgiving",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-checked-armenian-60a300f0",
+      "edition_id": "edition.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda",
+      "id": "passage.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-03-sanctus",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-checked-armenian-60a300f0",
+      "edition_id": "edition.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda",
+      "id": "passage.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-04-post-sanctus-institution",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-checked-armenian-60a300f0",
+      "edition_id": "edition.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda",
+      "id": "passage.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-05-anamnesis-oblation",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-checked-armenian-60a300f0",
+      "edition_id": "edition.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda",
+      "id": "passage.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-06-epiclesis",
+      "record_type": "passage"
+    }
+  ],
+  "stage_ids": [
+    "armenian-eucharistic-stages:ordo1642-state"
+  ],
+  "title": "Rome 1642 Ordo Divinae Missae Armenorum: core Armenian Badarak Anaphora constituent",
+  "units": [
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "dialogue-with-rubrics",
+      "language": "hy",
+      "native_path": [
+        "anaphoras",
+        "badarak",
+        "01-opening-dialogue"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-checked-armenian-60a300f0",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-checked-armenian-60a300f0",
+      "source_id": "passage.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-01-opening-dialogue",
+      "source_locator": "Armenian Badarak Anaphora opening blessing and dialogue (Armenian column); printed pp. 70–71; PDF pp. 82–83.",
+      "source_order": 1,
+      "text": "Քահանայն աւրհնէ զժողովուրդն և խաչակնքէ ասելով։\nՇնորհք սէր և սրբարար աստուածային զօրութիւն։ հաւր և որդոյ և հոգոյն սրբոյ. եղիցի ընդ ձե✠զ ընդ ամենեսեանդ։\nԴպիրքն։ Եւ ընդ հոգւոյդ քում։\nԻ վեր ընծայեցուցէք ըզ միտս ձեր։\nԴպիրքն Ունիմք առ քեզ տէր ամենակալ։\nՔահանայն։ Եւ գոհացարուք զտեառնէ բոլորով սրտիւ։\nԴպիրքն. Արժան և իրաւ.",
+      "text_edition_id": "edition.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda",
+      "text_sha256": "39dc4d478b161c99145f0a421fb7d513846601a9f80429c20c45d017c84d50d7",
+      "unit_id": "unit.arm-1642.badarak.01-opening-dialogue",
+      "witness_id": "arm-1642-google",
+      "witness_pages": [
+        [
+          82,
+          83
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics",
+      "language": "hy",
+      "native_path": [
+        "anaphoras",
+        "badarak",
+        "02-preface-thanksgiving"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-checked-armenian-60a300f0",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-checked-armenian-60a300f0",
+      "source_id": "passage.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-02-preface-thanksgiving",
+      "source_locator": "Armenian Badarak Anaphora Preface/Thanksgiving (Armenian column); printed p. 71; PDF p. 83.",
+      "source_order": 2,
+      "text": "Քահանայն։\nԱրժան է ստուգապէս և իրաւ ուղիղ և փրկական. միշտ երկրպագանելով փառաւորել զքեզ հայր ամենակալ։ Որ դու քոյին անզննելի և արարչակից բանիւըդ՝ զանիծիցն բարձեր զկրճիմն. Նոր ժողովուրդ Ինքեան առեալ Զեկեղեցի սեփհականեաց ըզ հաւատացեալս ի քեզ։ Եւ զարմանալի տընտեսութեամբ քով Բանըդ մարդ եղեալ. և ըստ մարդկութեան ի կուսէն ծնեալ հաճեցաւ բընակիլ ընդ մեզ։ Եւ նորագործ աստուածապէս ճարտարապետեալ զերկինըս երկին արար։ Եւ շնորհեաց մէզ ընդ երկնայինն պարել զհողեղէն պարսնն",
+      "text_edition_id": "edition.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda",
+      "text_sha256": "c85b23af8a98a8f11fd2942602498ac96e31fb12bb4c16a0f57b68e44bef85a3",
+      "unit_id": "unit.arm-1642.badarak.02-preface-thanksgiving",
+      "witness_id": "arm-1642-google",
+      "witness_pages": [
+        [
+          83,
+          83
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "sanctus-with-rubrics",
+      "language": "hy",
+      "native_path": [
+        "anaphoras",
+        "badarak",
+        "03-sanctus"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-checked-armenian-60a300f0",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-checked-armenian-60a300f0",
+      "source_id": "passage.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-03-sanctus",
+      "source_locator": "Armenian Badarak Anaphora Sanctus ekphonesis and full Sanctus/Benedictus (Armenian column); printed p. 72; PDF p. 84.",
+      "source_order": 3,
+      "text": "Ձայնիւ։\nԵւ ընդ Սերովբէսն և ընդ Քերովբէսն միաձայն սրբասացութեամբ յաւրինել նուագս. Եւ համարձակապէս գոչելով ընդ նոսին աղաղակել և ասել։\nԴպիրքն։\nՍուրբ սուրբ սուրբ տէր զօրութեանց. լի են երկինք և երկիր փառօք քո. աւրհնութիւն ի բարձունըս աւրհնեալ որ եկիր և գալոց ես անուամբ տեառն ովսաննա՛ ի բարձունս։",
+      "text_edition_id": "edition.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda",
+      "text_sha256": "be1ddf727d12e13e5bbb94461f9111e63dd9585d36e3e5060d5a25dc10eda17f",
+      "unit_id": "unit.arm-1642.badarak.03-sanctus",
+      "witness_id": "arm-1642-google",
+      "witness_pages": [
+        [
+          84,
+          84
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "institution-narrative-with-rubrics",
+      "language": "hy",
+      "native_path": [
+        "anaphoras",
+        "badarak",
+        "04-post-sanctus-institution"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-checked-armenian-60a300f0",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-checked-armenian-60a300f0",
+      "source_id": "passage.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-04-post-sanctus-institution",
+      "source_locator": "Armenian Badarak Anaphora Post-Sanctus, Bread and Chalice Institution Narrative, Հայր երկնաւոր, and Post-Institution (Armenian column); printed pp. 72–76; PDF pp. 84, 89–92.",
+      "source_order": 4,
+      "text": "Քահանայն ծածկաբար ասէ զաղօթս։\nՍուրբ սուրբ սուրբ ես ճշմատապէս և ամենայն սուրբ։ և ով ոք պանծասցի բովանդակել բանիւ զքո ի մեզ զանբաւ բարեգործութեանդ զեղմունըս Որ և անդէն իսկ ի նախնումըն զանկեալըս ընդ մեղաւք զանազան եղանակօք խնամեալ ըսփոփեցեր Մարգարէիւք աւրինացն տուչութեամբ Քահանայութեամբ։ և ստուերակերպ երնջոցըն մատուցմամբ։ Իսկ ի վախճան աւուրցս այսոցիկ զբովանդակ իսկ զպարտեաց մերոց խզեալ ըզ դատակնիք։ Ետուր մեզ զորդիդ քո միածին պարտապան և պարտս. Զենումն և օծեալ գառըն և երկնաւոր հաց։ Քահանայապետ և պատարագ. Վասն զի ինքդ է բաշխող և նոյն ինքդ բաշխի ի միջի մերում միշտ անծախապէս։ վասն զի եղեալ հաւաստեաւ և առանց ցընորից մարդ։ և անշփոթ միութեամբ մարմնացեալ Յաստուածածնէն և ի միշտ կուսէն Մարիամայ։ ճանպրհորդեաց ընդ ամենայն կիրս մարդկային առանց մեղաց։ և յաշխարհակեցոյց և յառիթն փրկութեան եկեալ կամաւ ի չարչարանս խաչի։\nև ի յընթրիսըն վերջին։ առեալ ըզ հացն ի սուրբ և ի պատուական և ի սրբարար ձեռըս և համբարձեալ զաչս ի յերկինս աւրհնեաց գոհացաւ.\nԱստ Քահանայն խաչակնքէ զհացս և ասէ.\nեբեկ և ետ ընտրեալ և բազմեալ աշակերտաց և առաքելոց իւրոց ասելով Առէք և կերայք։\nԱստ քահանայն առնու զընծայս ի ձեռըս և խոնարհեցուցեալ ըզ գըլուխն ահիւ և դողութեամբ ասէ։\nԱՅՍ Է ՄԱՐՄԻՆ ԻՄ ՈՐ ՎԱՍԸՆ ՁԵՐ ԵՒ ՎԱՍՆ ԲԱԶՄԱՑ ԲԱՇԽԻ Ի ԹՈՂՈՒԹԻՒՆ ՄԵՂԱՑ\nԴպիրքն Ամէն.\nՔահանայն առեալ ըզ Սկիհն ի ձեռս ասէ։\nՆմանապէս առեալ ըզ բաժակն գոհացաւ աւրհնեաց ետ իւրոց ընտրեալ աշակերտացն ասելով\nԱրբէք ի սմանէ ամենեքեան։\nԱՅՍ Է ԱՐԻՒՆ ԻՄ ՆՈՐՈՑ ՈՒԽՏԻ ՈՐ ՎԱՍԸՆ ՁԵՐ ԵՒ ՎԱՍԸՆ ԲԱԶՄԱՑ ՀԵՂՈՒ Ի ԹՈՂՈՒԹԻՒՆ ՄԵՂԱՑ.\nԴպիրքն Ամէն։\nՀայր երկնաւոր որ զորդիդ քո ետուր ի մահ վասն մեր պարտապան պարտեաց մերոց. հեղմամբ արեան նորա աղաչեմք զքեզ ողորմեա՛ քո բանաւոր հօտի։\nՔահանայն ի ծածուկ\nԵւ զսոյն միշտ իւր յիշատակ առնել պատուիրան աւանդեաց մեզ բարերար որդիդ քո միածին։ Եւ իջեալ ի ստորին վայրս մահու մարմնովն զոր ի մերմէս ընկալաւ յազգակցութենէ։ Եւ զնիգս դժոխոցըն աղարտեալ հզաւրեղապէս։ Զքեզ միայն ծանոյց մեզ հաւաստեաւ ճշմարիտ աստուած կենդանեաց և մեռելոց.",
+      "text_edition_id": "edition.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda",
+      "text_sha256": "b985ad73488943db54dbcb15f28b6e54dd6b9b34e1300aeb15289ee717bb9321",
+      "unit_id": "unit.arm-1642.badarak.04-post-sanctus-institution",
+      "witness_id": "arm-1642-google",
+      "witness_pages": [
+        [
+          84,
+          84
+        ],
+        [
+          89,
+          92
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics",
+      "language": "hy",
+      "native_path": [
+        "anaphoras",
+        "badarak",
+        "05-anamnesis-oblation"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-checked-armenian-60a300f0",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-checked-armenian-60a300f0",
+      "source_id": "passage.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-05-anamnesis-oblation",
+      "source_locator": "Armenian Badarak Anaphora Anamnesis, Oblation, choir hymn Յամենայնի, Զքեզ արդարև, Peace, and pre-Epiclesis dialogue (Armenian column); printed pp. 76–79; PDF pp. 92, 85–87.",
+      "source_order": 5,
+      "text": "Յետոյ առեալ երկոսին ձեռաւք զսուրբ խորհուրդըն. յառաջ մըխեսցէ և ասէ.\nԵւ արդ մեք Տէր ըստ այսմ հրամանատրութեան յառաջ բերեալ զայս խորհուրդս փրկական մարմնոյ և արեան միածնիդ քո. Յիշեմք ըզ դորա որ վասն մեր ըզ փրկագործ Զչարչարանսն։ Զկենդանատու Խաչելութիւնն։ Զերեքաւրեա ըզ Թաղումն։ Զերանելի Յարութիւնն. Զաստուածապէս Համբարձումն։ ըզ Նստեալն ընդ աջմէ քո հայր։ Զահաւոր և ըզ փառաւորեալ ըզ միւսանգամ գալուստըն խոստովանիմք և աւրհնեմք։\nԵւ համբարձեալ երկոսին ձեռաւքն ըզ սուրբ խորհուրդն։ և մըտաց աչօք տայ։ ի ձեռս հաւր և ասէ ձայնիւ։\nԶքոյս ի քոյոց քեզ մատուցանեմք։ ըստ յամենայնի։ և յաղագըս ամենեցուն.\nԴպիրքն։\nՅամենայնի աւրհնեալ ես տէր աւրհնեմք զքեզ գովեմք զքեզ գոհանամք զքէն։ աղաչեմք ըզ քեզ տէր Աստուած մեր։\nՔահանայն ծածկաբար ասէ։\nԶքեզ արդարև տէր աստուած մեր գովեմք. և զքէն գոահանամք հանապազ. Որ զանց արարեր զմերով անարժանութեամբըս. այսպիսի ահաւոր և անպատում խորհըրդոյս կարգեցեր ըսպասաւորս։ Ոչ յաղագս մերոյ ինչ բարեգործութեանց յորոց յոյժ Թափուր եմք. և միշտ ունայն գտանիմք հանապազ։ Այլ ի քո բազմազեղ ներողութիւնըդ ցանկ ապաւինեալ համարձակիմք մերձենալ ի սպասաւորութիւն մարմնոյ և արեան միածնի քո Տեառըդ մերոյ և փրկչին Յիսուսի քրիստոսի. որում վայելէ փառք իշխանութիւն և պատիւ։ այժմ և միշտ և յաւիտեանս յաւիտենից ամէն։\nՅետոյ Քահանայն ի սեղանոյն դառնա և աւրհնէ ըզ ժողովուրդն խաչակնքելով և ասէ։\nխաղաղութիւն ընդ ձեզ\nՍարկաւագըն. քարոզէ ժողովրդեանն ասելով։\nԱստուծոյ երկրպագեսցուք.\nԴպիրքն։\nԱռաջի քո տէր",
+      "text_edition_id": "edition.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda",
+      "text_sha256": "00d1ac9615e3d1f74f2d4365921dee7348709ab59c773c69a04e66333d558fa0",
+      "unit_id": "unit.arm-1642.badarak.05-anamnesis-oblation",
+      "witness_id": "arm-1642-google",
+      "witness_pages": [
+        [
+          92,
+          92
+        ],
+        [
+          85,
+          87
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "epiclesis-with-rubrics",
+      "language": "hy",
+      "native_path": [
+        "anaphoras",
+        "badarak",
+        "06-epiclesis"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-checked-armenian-60a300f0",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-checked-armenian-60a300f0",
+      "source_id": "passage.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-06-epiclesis",
+      "source_locator": "Armenian Badarak Anaphora Epiclesis (optative արասցես) and concluding ekphonesis/Amen (Armenian column); printed pp. 79–80; PDF pp. 87–88.",
+      "source_order": 6,
+      "text": "Քահանայն խոնարհեալ առ սեղանն ասէ։\nԵրկիր պագանեմք և աղաչեմք և խընդրեմք ի քէն բարերար աստուած. առաքեա՛ ի մեզ և յառաջի եդեալ ընծայս յայս ըզ մշտնջենաւորակից քո և զէակից սուրբ հոգիդ։\nԵւ առեալ զընծայս ի ձեռս և ասէ։\nԱղաչեմք զքեզ տէր զի զհացս այս աւրհնեաբ մարմին ճշմարտապէս արասցես տեառն մերոյ և փրկչին Յիսուսի քրիստոսի\nԴարձեալ զսկիհն առնու և ասէ.\nԱղաչեմք ըզ քեզ տէր Որ և զգինիս աւրհնեալ արիւն ստուգապէս արասցես տեառն մերոյ և փրկչին Յիսուսի քրիստոսի։\nՈրպէս զի եղիցի ամենեցուն մեզ մերձեցելոցըս յանդատապարտութիւն ի քաւութիւն և ի թողութիւն մեղաց։\nԴպիրքն. Ամէն։",
+      "text_edition_id": "edition.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda",
+      "text_sha256": "ac0f4578c18bab2ae84cdc9792016e01a66d23b05e00efdb3e05b25b3385a5d9",
+      "unit_id": "unit.arm-1642.badarak.06-epiclesis",
+      "witness_id": "arm-1642-google",
+      "witness_pages": [
+        [
+          87,
+          88
+        ]
+      ]
+    }
+  ],
+  "witnesses": [
+    {
+      "artifact_id": "artifact.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.google-pdf-9faf9690",
+      "edition_id": "edition.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda",
+      "id": "arm-1642-google",
+      "scope_pages": [
+        [
+          82,
+          92
+        ]
+      ]
+    }
+  ]
+}

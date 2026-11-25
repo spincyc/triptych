@@ -27,6 +27,10 @@ and all three disagreed.
 **[Browse the propers](../liturgy/)** — every Mass of both calendars, with each
 appointed passage rendered in the translation you choose.
 
+**[Eucharistic Books Through History](../history/?view=timeline)** — follow how
+the Roman Missal and other Catholic liturgical books developed across centuries,
+with verified primary-language witnesses and side-by-side comparisons.
+
 ---
 
 ## Part one — the two books

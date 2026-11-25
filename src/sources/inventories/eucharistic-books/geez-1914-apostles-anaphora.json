@@ -1,0 +1,201 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-native-book",
+  "id": "geez-1914-apostles-anaphora",
+  "title": "Asmara 1914/15 (Missale Aethiopicum): Anaphora of the Apostles core constituent",
+  "scope": "Bounded Ge'ez Anaphora of the Holy Apostles core constituent of the Asmara Catholic missal (imprint year ፲፱፻፯ = 1914/15; Roman approbation 25 Feb 1913; Asmara imprimatur 12 Apr 1913; ULB Bonn Goussen 1665, PDF pp. 40, 44-45): title and opening Eucharistic dialogue plus opening Preface (ነአኵተከ) on PDF p. 40; Christological preface continuation, Sanctus, Post-Sanctus, Institution Narrative (bread and cup), Anamnesis, Epiclesis (preserving the distinctive Asmara 1914/15 formula በተመጥዎተ፡ ዝንቱ፡ ኅብስት፡ ወጽዋዕ...), unity prayer and concluding doxology/peace on PDF pp. 44-45 (printed pp. ፳፱-፴ / 29-30), terminating at the decorative bar immediately before the Prayer of Fraction (ጸሎተ፡ ፈትቶ) and Our Father on PDF p. 46. Excludes the intervening Alexandrian intercessions and Prayer of Blessing (PDF p. 40 col. 2 lower half through p. 41), blank verso p. 42, and full-page Crucifixion illustration p. 43.",
+  "transcribed_by": "AI source transcriber (Lane T3, direct PNG inspection of Asmara 1914/15 PDF pp. 40, 44-45)",
+  "stage_ids": [
+    "alexandrian-stages-geez1913"
+  ],
+  "catalogue_witness_ids": [
+    "eastern:alex-geez-1913"
+  ],
+  "components": [
+    "anaphoras"
+  ],
+  "languages": [
+    "gez"
+  ],
+  "extent_kind": "constituent",
+  "excluded_book_divisions": [
+    "Title page, frontispiece, Ge'ez permission, Latin approbation/imprimatur and Ordo Communis (PDF pp. 1-39)",
+    "Intervening Alexandrian intercessions (በዝየ፡ ይዝክር፡ ሙታነ) and Prayer of Blessing (ጸሎተ፡ ቡራኬ) on PDF p. 40 col. 2 lower half and p. 41",
+    "Blank verso PDF p. 42 and full-page Crucifixion illustration PDF p. 43",
+    "Prayer of Fraction (ጸሎተ፡ ፈትቶ), Our Father (አቡነ፡ ዘበሰማያት), Order of Communion, and Anaphoras 2-14 (PDF pp. 46-181)",
+    "Decorative red rules, headpieces, woodcut of Apostles on p. 40, printed Ge'ez page numerals (፳፱, ፴), catchword mark, and ink colour"
+  ],
+  "date": {
+    "kind": "publication",
+    "label": "Ethiopian year 1907 (1914/15) Asmara imprint; approbation 25 Feb 1913, imprimatur 12 Apr 1913",
+    "start_year": 1914,
+    "end_year": 1915,
+    "evidence": [
+      {
+        "source_id": "passage.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.title-and-imprimatur",
+        "locus": "Bonn PDF p. 10 title/imprint ፲፱፻፯; p. 12 Ge'ez permission (1913 reckoning of Rome); p. 13 approbation 25 Feb 1913 and imprimatur 12 Apr 1913"
+      }
+    ]
+  },
+  "extent_path": "src/sources/inventories/eucharistic-books/support/geez-1914-apostles-anaphora-extent.json",
+  "collation_path": "src/sources/inventories/eucharistic-books/support/geez-1914-apostles-anaphora-review.json",
+  "witnesses": [
+    {
+      "id": "geez-asmara-1914-bonn-pdf",
+      "edition_id": "edition.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara",
+      "artifact_id": "artifact.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.bonn-scan-pdf-b126e66a",
+      "scope_pages": [
+        [
+          40,
+          40
+        ],
+        [
+          44,
+          45
+        ]
+      ],
+      "completeness_evidence": [
+        {
+          "source_id": "passage.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-facsimile",
+          "locus": "PDF pages 40, 44–45 of 181; complete bounded constituent scope."
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "unit.geez-1914.apostles.opening-dialogue",
+      "native_path": [
+        "anaphoras",
+        "apostles",
+        "opening-dialogue"
+      ],
+      "source_order": 1,
+      "language": "gez",
+      "component": "anaphoras",
+      "kind": "dialogue-with-rubrics",
+      "witness_id": "geez-asmara-1914-bonn-pdf",
+      "witness_pages": [
+        [
+          40,
+          40
+        ]
+      ],
+      "passage_id": "passage.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-opening-dialogue",
+      "text_sha256": "83c62c9cea9c631d48f414d46a756e6eec93e4c214b4c31689bbbea54f141fcd"
+    },
+    {
+      "unit_id": "unit.geez-1914.apostles.preface-and-sanctus",
+      "native_path": [
+        "anaphoras",
+        "apostles",
+        "preface-and-sanctus"
+      ],
+      "source_order": 2,
+      "language": "gez",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "geez-asmara-1914-bonn-pdf",
+      "witness_pages": [
+        [
+          40,
+          40
+        ],
+        [
+          44,
+          44
+        ]
+      ],
+      "passage_id": "passage.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-preface-and-sanctus",
+      "text_sha256": "98d1ebc9bc384a841db51a4fec1a7d11bb6595d773305ff44c65b8e5472a09f0"
+    },
+    {
+      "unit_id": "unit.geez-1914.apostles.post-sanctus",
+      "native_path": [
+        "anaphoras",
+        "apostles",
+        "post-sanctus"
+      ],
+      "source_order": 3,
+      "language": "gez",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "geez-asmara-1914-bonn-pdf",
+      "witness_pages": [
+        [
+          44,
+          44
+        ]
+      ],
+      "passage_id": "passage.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-post-sanctus",
+      "text_sha256": "ba3492c5684f5e56ab1500757259b87a8cca85c6da7a68c747f8373e0ecb3e55"
+    },
+    {
+      "unit_id": "unit.geez-1914.apostles.institution-narrative",
+      "native_path": [
+        "anaphoras",
+        "apostles",
+        "institution-narrative"
+      ],
+      "source_order": 4,
+      "language": "gez",
+      "component": "anaphoras",
+      "kind": "institution-narrative-with-rubrics",
+      "witness_id": "geez-asmara-1914-bonn-pdf",
+      "witness_pages": [
+        [
+          44,
+          44
+        ],
+        [
+          45,
+          45
+        ]
+      ],
+      "passage_id": "passage.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-institution-narrative",
+      "text_sha256": "f068674aa9070f581b1c43b36649d09f10ba997790bec35b483b48094be3bfeb"
+    },
+    {
+      "unit_id": "unit.geez-1914.apostles.anamnesis",
+      "native_path": [
+        "anaphoras",
+        "apostles",
+        "anamnesis"
+      ],
+      "source_order": 5,
+      "language": "gez",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "geez-asmara-1914-bonn-pdf",
+      "witness_pages": [
+        [
+          45,
+          45
+        ]
+      ],
+      "passage_id": "passage.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-anamnesis",
+      "text_sha256": "77406bca5669b1e91ecc9d034049858ebc97abc9e891b59114779e2a5308c4a9"
+    },
+    {
+      "unit_id": "unit.geez-1914.apostles.epiclesis-and-doxology",
+      "native_path": [
+        "anaphoras",
+        "apostles",
+        "epiclesis-and-doxology"
+      ],
+      "source_order": 6,
+      "language": "gez",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "geez-asmara-1914-bonn-pdf",
+      "witness_pages": [
+        [
+          45,
+          45
+        ]
+      ],
+      "passage_id": "passage.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-epiclesis-and-doxology",
+      "text_sha256": "5141930e86951ce43820514aaf222f82ea73be108ee4f21301af3ccf836ffd94"
+    }
+  ]
+}

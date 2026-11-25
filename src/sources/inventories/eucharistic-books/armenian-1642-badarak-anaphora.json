@@ -1,0 +1,197 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-native-book",
+  "id": "armenian-1642-badarak-anaphora",
+  "title": "Rome 1642 Ordo Divinae Missae Armenorum: core Armenian Badarak Anaphora constituent",
+  "scope": "Core Classical Armenian (Grabar) Anaphora of the Armenian Divine Liturgy (Badarak) from the priest's opening Trinitarian blessing rubric and greeting (Քահանայն աւրհնէ զժողովուրդն... Շնորհք սէր և սրբարար աստուածային զօրութիւն...) at printed p. 70 (PDF p. 82) through the Sanctus, Post-Sanctus, Institution Narrative (including Հայր երկնաւոր), Anamnesis and Oblation, and the complete Epiclesis concluding with Որպէս զի եղիցի... և ի թողութիւն մեղաց։ Դպիրքն. Ամէն։ at printed p. 80 (PDF p. 88), immediately before the post-epiclesis general intercessions (Սովաւ շնորհեա՛ զսէր...). Preserves the exact provider PDF page ordering where printed pp. 77–80 (PDF pp. 85–88) precede printed pp. 73–76 (PDF pp. 89–92), while ordering transcribed units in true liturgical/printed sequence (pp. 70–80). Excludes the parallel Latin column on the same pages, all pre-Anaphora and post-Epiclesis sections, and page furniture.",
+  "transcribed_by": "lane-t1-byz-arm",
+  "stage_ids": [
+    "armenian-eucharistic-stages:ordo1642-state"
+  ],
+  "catalogue_witness_ids": [
+    "eastern:arm-1642-ordo"
+  ],
+  "components": [
+    "anaphoras"
+  ],
+  "languages": [
+    "hy"
+  ],
+  "extent_kind": "constituent",
+  "excluded_book_divisions": [
+    "Parallel Latin translation column facing the Armenian column on every page in scope (printed pp. 70–80 / PDF pp. 82–92)",
+    "Front matter, including title page (PDF p. 5), Vincentius Riccardus's 6 May 1636 review/emendation certificate (PDF p. 7), Giovanni Molino's comparison certificate (PDF p. 8), and imprimaturs (PDF p. 9)",
+    "Pre-Anaphora liturgy (including Vesting, Prothesis, Enarxis, Readings, Western-form Creed, Great Entrance, Offertory, Crucifixion engraving at PDF p. 78, and Kiss of Peace through printed p. 70 upper column)",
+    "Post-Epiclesis general intercessions (Սովաւ շնորհեա՛...), Diptychs, Lord's Prayer, Fraction, Communion, and Dismissal from printed p. 80 lower column (PDF p. 88) through printed p. 132 (PDF p. 144)",
+    "Printed page numbers, signature marks (K, K 2), catchwords, decorative printer stars, and Google Books digitizer stamps"
+  ],
+  "date": {
+    "kind": "publication",
+    "label": "1642 Rome publication (following 1636 review certificate)",
+    "start_year": 1642,
+    "end_year": 1642,
+    "evidence": [
+      {
+        "source_id": "passage.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.title",
+        "locus": "Unnumbered title page, provider PP5, PDF p. 5: ROMAE, Typis, & expensis Sacræ Congregationis Propag. Fidei. 1642. Superiorum Permissu. (Front-matter review certificate by Vincentius Riccardus at PDF p. 7 is dated 6 May 1636; approval and publication dates are distinct.)"
+      }
+    ]
+  },
+  "extent_path": "src/sources/inventories/eucharistic-books/support/armenian-1642-badarak-anaphora-extent.json",
+  "collation_path": "src/sources/inventories/eucharistic-books/support/armenian-1642-badarak-anaphora-review.json",
+  "witnesses": [
+    {
+      "id": "arm-1642-google",
+      "edition_id": "edition.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda",
+      "artifact_id": "artifact.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.google-pdf-9faf9690",
+      "scope_pages": [
+        [
+          82,
+          92
+        ]
+      ],
+      "completeness_evidence": [
+        {
+          "source_id": "passage.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-facsimile",
+          "locus": "PDF pages 82–92 of 148; complete bounded constituent scope."
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "unit.arm-1642.badarak.01-opening-dialogue",
+      "native_path": [
+        "anaphoras",
+        "badarak",
+        "01-opening-dialogue"
+      ],
+      "source_order": 1,
+      "language": "hy",
+      "component": "anaphoras",
+      "kind": "dialogue-with-rubrics",
+      "witness_id": "arm-1642-google",
+      "witness_pages": [
+        [
+          82,
+          83
+        ]
+      ],
+      "passage_id": "passage.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-01-opening-dialogue",
+      "text_sha256": "39dc4d478b161c99145f0a421fb7d513846601a9f80429c20c45d017c84d50d7"
+    },
+    {
+      "unit_id": "unit.arm-1642.badarak.02-preface-thanksgiving",
+      "native_path": [
+        "anaphoras",
+        "badarak",
+        "02-preface-thanksgiving"
+      ],
+      "source_order": 2,
+      "language": "hy",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "arm-1642-google",
+      "witness_pages": [
+        [
+          83,
+          83
+        ]
+      ],
+      "passage_id": "passage.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-02-preface-thanksgiving",
+      "text_sha256": "c85b23af8a98a8f11fd2942602498ac96e31fb12bb4c16a0f57b68e44bef85a3"
+    },
+    {
+      "unit_id": "unit.arm-1642.badarak.03-sanctus",
+      "native_path": [
+        "anaphoras",
+        "badarak",
+        "03-sanctus"
+      ],
+      "source_order": 3,
+      "language": "hy",
+      "component": "anaphoras",
+      "kind": "sanctus-with-rubrics",
+      "witness_id": "arm-1642-google",
+      "witness_pages": [
+        [
+          84,
+          84
+        ]
+      ],
+      "passage_id": "passage.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-03-sanctus",
+      "text_sha256": "be1ddf727d12e13e5bbb94461f9111e63dd9585d36e3e5060d5a25dc10eda17f"
+    },
+    {
+      "unit_id": "unit.arm-1642.badarak.04-post-sanctus-institution",
+      "native_path": [
+        "anaphoras",
+        "badarak",
+        "04-post-sanctus-institution"
+      ],
+      "source_order": 4,
+      "language": "hy",
+      "component": "anaphoras",
+      "kind": "institution-narrative-with-rubrics",
+      "witness_id": "arm-1642-google",
+      "witness_pages": [
+        [
+          84,
+          84
+        ],
+        [
+          89,
+          92
+        ]
+      ],
+      "passage_id": "passage.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-04-post-sanctus-institution",
+      "text_sha256": "b985ad73488943db54dbcb15f28b6e54dd6b9b34e1300aeb15289ee717bb9321"
+    },
+    {
+      "unit_id": "unit.arm-1642.badarak.05-anamnesis-oblation",
+      "native_path": [
+        "anaphoras",
+        "badarak",
+        "05-anamnesis-oblation"
+      ],
+      "source_order": 5,
+      "language": "hy",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "arm-1642-google",
+      "witness_pages": [
+        [
+          92,
+          92
+        ],
+        [
+          85,
+          87
+        ]
+      ],
+      "passage_id": "passage.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-05-anamnesis-oblation",
+      "text_sha256": "00d1ac9615e3d1f74f2d4365921dee7348709ab59c773c69a04e66333d558fa0"
+    },
+    {
+      "unit_id": "unit.arm-1642.badarak.06-epiclesis",
+      "native_path": [
+        "anaphoras",
+        "badarak",
+        "06-epiclesis"
+      ],
+      "source_order": 6,
+      "language": "hy",
+      "component": "anaphoras",
+      "kind": "epiclesis-with-rubrics",
+      "witness_id": "arm-1642-google",
+      "witness_pages": [
+        [
+          87,
+          88
+        ]
+      ],
+      "passage_id": "passage.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-06-epiclesis",
+      "text_sha256": "ac0f4578c18bab2ae84cdc9792016e01a66d23b05e00efdb3e05b25b3385a5d9"
+    }
+  ]
+}

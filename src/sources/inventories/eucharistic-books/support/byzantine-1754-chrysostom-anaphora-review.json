@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-collation",
+  "book_id": "byzantine-1754-chrysostom-anaphora",
+  "title": "Rome 1754 Propaganda Euchologion: complete strict Anaphora of St. John Chrysostom constituent — independent pixel-collation review",
+  "status": "verified",
+  "independent": true,
+  "complete_extent_verified": true,
+  "reviewer": "independent-collator-v1-byz-arm",
+  "checked_on": "2026-11-25",
+  "binding_sha256": "9968bd14677e5d25e0809c1b1d8eb3c84a7f622572823be29d84f703f742aba7",
+  "extent_sha256": "f199978f2cb9db4c4281d1c9056eea4639de366e895317cc0d60fd8d6f93d9b6",
+  "witness_sha256": {
+    "byz-1754-google": "32071a7ac54a13a1ac24a0c6c101b5b523dbd0fe0ef5511649916c260038340d"
+  },
+  "unit_sha256": {
+    "unit.byz-1754.chrysostom.01-opening-dialogue": "2a24b49dc41701b3695a197df8724d8da18d0da73865e087f843adf4f13bb5b7",
+    "unit.byz-1754.chrysostom.02-preface-thanksgiving": "d2dd069c17f798b781b2e755f39aaa2d098e6a898e8ade420f207c398ecac922",
+    "unit.byz-1754.chrysostom.03-sanctus-and-asterisk": "5766cc86479f64ffcf16cdab224b75656a1910cc2fbe36e4ef8349898da33323",
+    "unit.byz-1754.chrysostom.04-post-sanctus-institution": "1704a080f098695e0f738b7549b763636bc8b048188d6ba631360b685b208203",
+    "unit.byz-1754.chrysostom.05-anamnesis-oblation": "da53c6ad6fa22ed1a025e061963095d3f95db16aa8c54bc29d17472947407312",
+    "unit.byz-1754.chrysostom.06-epiclesis": "fbabb9cbed77c2e782fc64eb424df9b49197614eb3e7f491c42f74c0e76f93cf",
+    "unit.byz-1754.chrysostom.07-commemoration-of-saints": "7d9c505c4b11933670f7abf603d3a688c2361ee18c02924f1203145df26dfc2e",
+    "unit.byz-1754.chrysostom.08-intercessions-dead-and-church": "3c4bb585fb124c9251d3570973d91cbbcc2e9545bfae806de7bb3eda04d877b9",
+    "unit.byz-1754.chrysostom.09-intercessions-hierarch-and-living": "df3a188cc0df31ba2606c7caa36ae49556d7c6ebefb535051ea902b383626980",
+    "unit.byz-1754.chrysostom.10-concluding-doxology-and-blessing": "2aac257ea7e9212796ced89badce0f8bd6c5ce2ee981fa09cb1e2f36b7a6c7d8"
+  },
+  "scope": "Complete strict Anaphora of St. John Chrysostom in original polytonic Greek from the Deacon's opening call (Ὁ ΔΙΆΚΟΝΟΣ. Στῶμεν καλῶς...) at printed p. 49 (PDF p. 65) through the concluding doxology (Καὶ δὸς ἡμῖν...) and final blessing (Καὶ ἔσται τὰ ἐλέη...) at printed p. 55 (PDF p. 71), immediately preceding the post-Anaphora litany rubric (Ὁ Διάκονος λαβὼν καιρὸν...). Includes all printed prayer text, ekphoneseis, red headings, action rubrics, choir responses where printed, and the printed Roman-communion footnote on p. 54, under declared reading normalization expanding 18th-century Greek typographic ligatures. Excludes pre-Anaphora liturgy (including Creed), post-Anaphora litanies and communion, Basil and Presanctified liturgies, all other Euchologion offices, and page furniture.",
+  "method": "Independent pixel-level visual inspection of all rendered facsimile pages by independent-collator-v1-byz-arm (distinct from drafter lane-t1-byz-arm) on 2026-11-25. Applied 4 pixel-verified correction(s) relative to initial draft; verified every unit boundary, page account (1..488), and SHA-256 hash.",
+  "normalization_limit": "Unicode NFC polytonic Greek (grc) read directly from 240–400 DPI PNG renders of the tracked 1754 facsimile PDF.; 18th-century typographic ligatures and compendia (ϗ for καί, Ȣ for ου, ϛ for στ, and standard article/preposition/ending compendia such as τὸν, τῶν, κατὰ, μετὰ, παρὰ, ὑπὲρ, περὶ, εἶναι, Διάκονος, etc.) are expanded to standard polytonic Greek spelling while preserving exact printed accents, breathings, and iota subscripts.; Genuine printed abbreviations with period (Ὁ χορ., στίχ.) are preserved verbatim.; Decorative letter-spacing in uppercase red headings (e.g., Ἐ Κ Φ Ω ́ Ν Η Σ Ι Σ .) is collapsed to unspaced words (ἘΚΦΏΝΗΣΙΣ.); uppercase/small-cap second letters immediately following woodcut drop-caps (e.g., ἘΝ, ΜΝήσθητι, ΚΑὶ) are normalized to standard title case (Ἐν, Μνήσθητι, Καὶ).; Printed accents and breathings on all-caps Institution words (ΛΆΒΕΤΕ..., ΠΊΕΤΕ...) and authentic printed quirks verified at 400 DPI (μετὰ τό δειπνῆσαι with acute on τό on p. 51; καθ ἑαυτοὺς without apostrophe and παναγιόν without first acute on p. 52; μετὰ πάντων ἡμῶν on p. 50; ἀνάπαυσον αὐτὸν twice on p. 53) are faithfully preserved.; Words hyphenated across line breaks are joined; running headers, printed page numbers, signature marks (G, G 2), catchwords, and rubric/black ink color distinctions are excluded from the plain-text stream, with headings, rubrics, speaker utterances, and the p. 54 footnote placed on sequential logical physical lines.; Independent V1 collation at 450 DPI additionally preserved verified compositor omissions/punctuation verbatim: Ὑπερ (unaccented, p. 50), στεναγμὸς· (grave before raised dot, p. 53), φως (no circumflex, p. 53), and σε: (vertical colon, p. 54).",
+  "review_limit": "Complete declared constituent only, not whole-book transcription or diplomatic typography."
+}

@@ -1,0 +1,500 @@
+{
+  "adapter_id": "native-book:byzantine-1873-chrysostom-anaphora",
+  "binding_sha256": "9426e0bf1f03a7d48c15a795ec718a8d77e38661facfbd9ce0db51e165a55efc",
+  "catalogue_witness_ids": [
+    "eastern:byz-greek-1873"
+  ],
+  "counts": {
+    "languages": {
+      "grc": 10
+    },
+    "units": 10,
+    "whitespace_tokens": 1379
+  },
+  "id": "byzantine-1873-chrysostom-anaphora",
+  "schema": "triptych-eucharistic-native-text/v1",
+  "scope": {
+    "complete_declared_extent": true,
+    "description": "Complete strict Anaphora of St. John Chrysostom in original polytonic Greek from the Deacon's opening call (Ὁ Διάκονος. Στῶμεν καλῶς...) at printed p. 61 (PDF p. 68) through the concluding doxology (Καὶ δὸς ἡμῖν...), final blessing (Καὶ ἔσται τὰ ἐλέη...) at printed p. 67 (PDF p. 74), and the immediately following choir response (Χορός· Καὶ μετὰ τοῦ πνεύματός σου.) at the top of printed p. 68 (PDF p. 75), directly before the post-Anaphora litany rubric (Ὁ Διάκονος λαβὼν καιρὸν...). Uses the exact same 10 canonical native_path slugs as byzantine-1754-chrysostom-anaphora for 1-to-1 collation. Includes all printed prayers, ekphoneseis, expanded choir hymns/responses (including Ἅγιος, Σὲ ὑμνοῦμεν, and Ἄξιόν ἐστιν), full Third-Hour troparion, rubrics, and the Roman-communion footnote on p. 67.",
+    "extent_kind": "constituent",
+    "known_extent_pages": 8,
+    "known_extent_units": 10,
+    "omitted_book_divisions": [
+      "Half-title, title page, preliminary instructions (Ἰστέον, PDF pp. 6–7), and all front matter",
+      "Pre-Anaphora Chrysostom Liturgy through the Creed cue (Ὁ Λαὸς τὸ Πιστεύω εἰς ἕνα Θεόν... on printed p. 61 / PDF p. 68)",
+      "Post-Anaphora litany (Πάντων τῶν ἁγίων μνημονεύσαντες...), Lord's Prayer, Communion, and Dismissal beginning on printed p. 68 (PDF p. 75)",
+      "Liturgies of St. Basil and the Presanctified, all other offices, and the separately paginated Apostle/Gospel appendix (PT1–PT108)",
+      "Printed page numbers (— 61 — through — 68 —), signature mark (9 on p. 65), rubric/black ink color distinctions, library stamps, and Google Books digitizer stamps"
+    ],
+    "status": "complete-native-constituent",
+    "whole_book_complete": false
+  },
+  "sources": [
+    {
+      "edition_id": "edition.holy-see.euchologion.1873-rome-propaganda",
+      "id": "artifact.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-checked-greek-dce0e887",
+      "record_type": "artifact",
+      "rights_basis": "Faithful bounded reading transcription of original-language liturgical text from Rome 1873 Propaganda Euchologion: complete strict Anaphora of St. John Chrysostom constituent, whose United States copyright term has expired by publication date (1873 Rome publication). Derived directly from tracked public-domain facsimile artifact.holy-see.euchologion.1873-rome-propaganda.google-pdf-50c485b5 without modern translation or editorial reconstruction. Third-party historical text is excluded from Triptych's CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "transformation": "Unicode NFC polytonic Greek (grc) read directly from 240–400 DPI PNG renders of the tracked 1873 facsimile PDF.; 19th-century Polyglott Press Greek typography uses modern non-ligatured sorts; exact printed spelling, accents, breathings, iota subscripts, punctuation (including raised dot ·, ellipses ..., and em-dash —), and genuine printed abbreviations (Στίχ.) are preserved.; Authentic printed compositor errors verified at 400 DPI are preserved verbatim rather than silently emended: ἀνέστησυς (for ἀνέστησας, p. 62 / PDF p. 69), ποῦ ἁγίου Ἰωάννου (for τοῦ, p. 66 / PDF p. 73), προκεκοιμένων (for προκεκοιμημένων, p. 66 / PDF p. 73), and unaccented δοξαζειν (p. 67 / PDF p. 74).; Printed unaccented all-caps Institution words (ΛΑΒΕΤΕ..., ΠΙΕΤΕ...) are preserved in uppercase without added diacritics.; Words hyphenated across line breaks are joined; printed page numbers, signature marks (9 on p. 65), and rubric/black ink color distinctions are excluded from the plain-text stream, with headings, rubrics, speaker utterances, and the p. 67 footnote placed on sequential logical physical lines."
+    },
+    {
+      "edition_id": "edition.holy-see.euchologion.1873-rome-propaganda",
+      "id": "artifact.holy-see.euchologion.1873-rome-propaganda.google-pdf-50c485b5",
+      "record_type": "artifact",
+      "rights_basis": "United States: these historical printings of 1738, 1754 and 1873 are public domain by publication date. The acquired page images are mechanical facsimiles, with no modern critical text or authored annotation added. U.S. Copyright Office Compendium section 313.4(A), Chapter 300 pp. 26–27 (https://www.copyright.gov/comp3/chap300/ch300-copyrightable-authorship.pdf), treats scanning a literary work as mere copying without new authorship. Google Books Terms of Service section 2 (https://books.google.com/intl/en/googlebooks/tos.html) preserves uses permitted by the U.S. Copyright Act. The repository's settled treatment of Google stamps and incidental notices is src/sources/inventories/google-usage-guidelines-rights-v1.toml. All visible source marks remain intact and are not counted as historical book text. Retained bytes are not offered under Triptych's CC BY 4.0. This is a United States basis, not a claim of a general Google redistribution licence or of status in every jurisdiction.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "source_url": "https://books.google.com/books?id=m2TsEVn4SzcC",
+      "transformation": "Read images in parent ZIP sequence.json order. Embed JPEG bytes unchanged using DCTDecode. For noninterlaced 8-bit grayscale/RGB PNGs, concatenate original IDAT chunks unchanged using FlateDecode and PNG predictor 15. Preserve dimensions and color channels; one image fills one PDF page with page dimensions in points equal to image pixels. No crop, resampling, color conversion, OCR, reordering or textual alteration. Exact PNG wrappers remain in the parent ZIP. This is a pixel-lossless project derivative, not the provider whole PDF."
+    },
+    {
+      "date": "1873",
+      "id": "edition.holy-see.euchologion.1873-rome-propaganda",
+      "language": "grc",
+      "publication": "Rome: Congregation de Propaganda Fide",
+      "record_type": "edition",
+      "title": "Εὐχολόγιον τὸ μέγα σὺν Θεῷ ἁγίῳ"
+    },
+    {
+      "artifact_id": "artifact.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-checked-greek-dce0e887",
+      "edition_id": "edition.holy-see.euchologion.1873-rome-propaganda",
+      "id": "passage.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-01-opening-dialogue",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-checked-greek-dce0e887",
+      "edition_id": "edition.holy-see.euchologion.1873-rome-propaganda",
+      "id": "passage.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-02-preface-thanksgiving",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-checked-greek-dce0e887",
+      "edition_id": "edition.holy-see.euchologion.1873-rome-propaganda",
+      "id": "passage.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-03-sanctus-and-asterisk",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-checked-greek-dce0e887",
+      "edition_id": "edition.holy-see.euchologion.1873-rome-propaganda",
+      "id": "passage.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-04-post-sanctus-institution",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-checked-greek-dce0e887",
+      "edition_id": "edition.holy-see.euchologion.1873-rome-propaganda",
+      "id": "passage.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-05-anamnesis-oblation",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-checked-greek-dce0e887",
+      "edition_id": "edition.holy-see.euchologion.1873-rome-propaganda",
+      "id": "passage.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-06-epiclesis",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-checked-greek-dce0e887",
+      "edition_id": "edition.holy-see.euchologion.1873-rome-propaganda",
+      "id": "passage.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-07-commemoration-of-saints",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-checked-greek-dce0e887",
+      "edition_id": "edition.holy-see.euchologion.1873-rome-propaganda",
+      "id": "passage.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-08-intercessions-dead-and-church",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-checked-greek-dce0e887",
+      "edition_id": "edition.holy-see.euchologion.1873-rome-propaganda",
+      "id": "passage.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-09-intercessions-hierarch-and-living",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-checked-greek-dce0e887",
+      "edition_id": "edition.holy-see.euchologion.1873-rome-propaganda",
+      "id": "passage.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-10-concluding-doxology-and-blessing",
+      "record_type": "passage"
+    }
+  ],
+  "stage_ids": [
+    "byzantine-stages:greek1873"
+  ],
+  "title": "Rome 1873 Propaganda Euchologion: complete strict Anaphora of St. John Chrysostom constituent",
+  "units": [
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "dialogue-with-rubrics",
+      "language": "grc",
+      "native_path": [
+        "anaphoras",
+        "chrysostom",
+        "01-opening-dialogue"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-checked-greek-dce0e887",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-checked-greek-dce0e887",
+      "source_id": "passage.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-01-opening-dialogue",
+      "source_locator": "Chrysostom Anaphora opening dialogue with choir responses; printed p. 61; PDF p. 68.",
+      "source_order": 1,
+      "text": "Ὁ Διάκονος.\nΣτῶμεν καλῶς, στῶμεν μετὰ φόβου· πρόσχωμεν τὴν ἁγίαν ἀναφορὰν ἐν εἰρήνῃ προσφέρειν.\nΧορός· Ἔλεον εἰρήνης, θυσίαν αἰνέσεως.\nὉ Διάκονος προσκυνήσας, εἰσέρχεται ἐν τῷ ἁγίῳ βήματι, καὶ λαβὼν ῥιπίδιον, ῥιπίζει τὰ ἅγια εὐλαβῶς.\nὉ δὲ Ἱερεὺς ἐπάρας τὸν ἀέρα ἀπὸ τῶν ἁγίων, ἀποτίθησιν ἐν ἑνὶ τόπῳ· εἶτα λέγει\nἘκφώνως.\nἩ χάρις τοῦ Κυρίου ἡμῶν Ἰησοῦ Χριστοῦ, καὶ ἡ ἀγάπη τοῦ Θεοῦ καὶ Πατρὸς, καὶ ἡ κοινωνία τοῦ ἁγίου Πνεύματος εἴη μετὰ πάντων ὑμῶν.\nΧορός· Καὶ μετὰ τοῦ πνεύματός σου.\nὉ Ἱερεύς· Ἄνω σχῶμεν τὰς καρδίας.\nΧορός· Ἔχομεν πρὸς τὸν Κύριον.\nὉ Ἱερεύς· Εὐχαριστήσωμεν τῷ Κυρίῳ.\nΧορός· Ἄξιον καὶ δίκαιον...",
+      "text_edition_id": "edition.holy-see.euchologion.1873-rome-propaganda",
+      "text_sha256": "dfc6cb459c12bf2d86fe4c18ae10d47e6489ab623a78777632ba9de42cf2739d",
+      "unit_id": "unit.byz-1873.chrysostom.01-opening-dialogue",
+      "witness_id": "byz-1873-google",
+      "witness_pages": [
+        [
+          68,
+          68
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics",
+      "language": "grc",
+      "native_path": [
+        "anaphoras",
+        "chrysostom",
+        "02-preface-thanksgiving"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-checked-greek-dce0e887",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-checked-greek-dce0e887",
+      "source_id": "passage.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-02-preface-thanksgiving",
+      "source_locator": "Chrysostom Anaphora preface/thanksgiving prayer; printed p. 62; PDF p. 69.",
+      "source_order": 2,
+      "text": "Ὁ Ἱερεὺς ἐπεύχεται μυστικῶς.\nἌξιον καὶ δίκαιον σὲ ὑμνεῖν, σὲ εὐλογεῖν, σὲ αἰνεῖν, σοὶ εὐχαριστεῖν, σὲ προσκυνεῖν ἐν παντὶ τόπῳ τῆς δεσποτείας σου· Σὺ γὰρ εἶ ὁ Θεὸς ἀνέκφραστος, ἀπερινόητος, ἀόρατος, ἀκατάληπτος, ἀεὶ ὢν, ὡσαύτως ὢν, σὺ, καὶ ὁ μονογενής σου Υἱὸς, καὶ τὸ Πνεῦμά σου τὸ ἅγιον. Σὺ ἐκ τοῦ μὴ ὄντος εἰς τὸ εἶναι ἡμᾶς παρήγαγες καὶ παραπεσόντας ἀνέστησυς πάλιν· καὶ οὐκ ἀπέστης πάντα ποιῶν, ἕως ἡμᾶς εἰς τὸν οὐρανὸν ἀνήγαγες, καὶ τὴν βασιλείαν σου ἐχαρίσω τὴν μέλλουσαν. Ὑπὲρ τούτων ἁπάντων εὐχαριστοῦμέν σοι, καὶ τῷ μονογενεῖ σου Υἱῷ, καὶ τῷ Πνεύματί σου τῷ ἁγίῳ, ὑπὲρ πάντων, ὧν ἴσμεν, καὶ ὧν οὐκ ἴσμεν, τῶν φανερῶν, καὶ ἀφανῶν εὐεργεσιῶν τῶν εἰς ἡμᾶς γεγενημένων. Εὐχαριστοῦμέν σοι καὶ ὑπὲρ τῆς λειτουργίας ταύτης, ἣν ἐκ τῶν χειρῶν ἡμῶν δέξασθαι κατηξίωσας· καίτοι σοι παρεστήκασι χιλιάδες Ἀρχαγγέλων, καὶ μυριάδες Ἀγγέλων, τὰ Χερουβὶμ, καὶ τὰ Σεραφὶμ, ἑξαπτέρυγα, πολυόμματα, μετάρσια, πτερωτὰ,",
+      "text_edition_id": "edition.holy-see.euchologion.1873-rome-propaganda",
+      "text_sha256": "7005f6880ef4c9c527686ffcc961cf81e84b8337cfb2d3981f337c8d1d237104",
+      "unit_id": "unit.byz-1873.chrysostom.02-preface-thanksgiving",
+      "witness_id": "byz-1873-google",
+      "witness_pages": [
+        [
+          69,
+          69
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "sanctus-with-rubrics",
+      "language": "grc",
+      "native_path": [
+        "anaphoras",
+        "chrysostom",
+        "03-sanctus-and-asterisk"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-checked-greek-dce0e887",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-checked-greek-dce0e887",
+      "source_id": "passage.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-03-sanctus-and-asterisk",
+      "source_locator": "Chrysostom Anaphora Sanctus introduction, choir Sanctus hymn, and asterisk rubric; printed p. 62; PDF p. 69.",
+      "source_order": 3,
+      "text": "Ἐκφώνως.\nτὸν ἐπινίκιον ὕμνον ᾄδοντα, βοῶντα, κεκραγότα, καὶ λέγοντα·\nΧορός· Ἅγιος, ἅγιος, ἅγιος Κύριος Σαβαὼθ· πλήρης ὁ οὐρανὸς, καὶ ἡ γῆ τῆς δόξης σου· ὡσαννὰ ἐν τοῖς ὑψίστοις· Εὐλογημένος ὁ ἐρχόμενος ἐν ὀνόματι Κυρίου· ὡσαννὰ ἐν τοῖς ὑψίστοις.\nἘνταῦθα πάλιν λαβὼν ὁ Διάκονος τὸν ἀστερίσκον ἐκ τοῦ ἁγίου δίσκου, ποιεῖ σταυροῦ τύπον ἐπάνω αὐτοῦ· καὶ ἀσπασάμενος αὐτὸν ἀποτίθησι.",
+      "text_edition_id": "edition.holy-see.euchologion.1873-rome-propaganda",
+      "text_sha256": "832c2f958f0c323a8502b7cd7e8ad1afb85d3da21d56b7609ed743d10cf8dcb8",
+      "unit_id": "unit.byz-1873.chrysostom.03-sanctus-and-asterisk",
+      "witness_id": "byz-1873-google",
+      "witness_pages": [
+        [
+          69,
+          69
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "institution-narrative-with-rubrics",
+      "language": "grc",
+      "native_path": [
+        "anaphoras",
+        "chrysostom",
+        "04-post-sanctus-institution"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-checked-greek-dce0e887",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-checked-greek-dce0e887",
+      "source_id": "passage.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-04-post-sanctus-institution",
+      "source_locator": "Chrysostom Anaphora post-Sanctus and Institution Narrative; printed pp. 62–63; PDF pp. 69–70.",
+      "source_order": 4,
+      "text": "Ὁ δὲ Ἱερεὺς ἐπεύχεται μυστικῶς.\nΜετὰ τούτων, καὶ ἡμεῖς τῶν μακαρίων δυνάμεων, δέσποτα φιλάνθρωπε, βοῶμεν καὶ λέγομεν· Ἅγιος εἶ, καὶ πανάγιος, σὺ, καὶ ὁ μονογενής σου Υἱὸς, καὶ τὸ Πνεῦμά σου τὸ ἅγιον. Ἅγιος εἶ, καὶ πανάγιος, καὶ μεγαλοπρεπὴς ἡ δόξα σου· ὃς τὸν κόσμον σου οὕτως ἠγάπησας, ὥστε τὸν μονογενῆ σου Υἱὸν δοῦναι, ἵνα πᾶς ὁ πιστεύων εἰς αὐτὸν, μὴ ἀπόληται, ἀλλ’ ἔχῃ ζωὴν αἰώνιον· Ὃς ἐλθὼν, καὶ πᾶσαν τὴν ὑπὲρ ἡμῶν οἰκονομίαν πληρώσας, τῇ νυκτὶ, ᾗ παρεδίδοτο, μᾶλλον δὲ ἑαυτὸν παρεδίδου ὑπὲρ τῆς τοῦ κόσμου ζωῆς, λαβὼν ἄρτον ἐν ταῖς ἁγίαις αὐτοῦ, καὶ ἀχράντοις, καὶ ἀμωμήτοις χερσὶν, εὐχαριστήσας, καὶ εὐλογήσας, ἁγιάσας, κλάσας, ἔδωκε τοῖς ἁγίοις αὐτοῦ μαθηταῖς, καὶ ἀποστόλοις εἰπὼν·\nἘκφώνησις.\nΛΑΒΕΤΕ, ΦΑΓΕΤΕ, ΤΟΥΤΟ ΜΟΥ ΕΣΤΙ ΤΟ ΣΩΜΑ, ΤΟ ΥΠΕΡ ΥΜΩΝ ΚΛΩΜΕΝΟΝ ΕΙΣ ΑΦΕΣΙΝ ΑΜΑΡΤΙΩΝ.\nὉ Χορός· Ἀμήν.\nΤούτου δὲ λεγομένου, δεικνύει τῷ Ἱερεῖ ὁ Διάκονος τὸν ἅγιον Δίσκον, κρατῶν καὶ τὸ ὡράριον τοῖς τρισὶ δακτύλοις τῆς δεξιᾶς. Ὁμοίως καὶ ὅταν λέγει ὁ Ἱερεὺς τὸ Πίετε ἐξ αὐτοῦ πάντες... συνδεικνύει καὶ αὐτὸς τὸ ἅγιον Ποτήριον.\nὉ Ἱερεὺς μυστικῶς·\nὉμοίως καὶ τὸ ποτήριον μετὰ τὸ δειπνῆσαι, λέγων·\nἘκφώνησις.\nΠΙΕΤΕ ΕΞ ΑΥΤΟΥ ΠΑΝΤΕΣ, ΤΟΥΤΟ ΕΣΤΙ ΤΟ ΑΙΜΑ ΜΟΥ, ΤΟ ΤΗΣ ΚΑΙΝΗΣ ΔΙΑΘΗΚΗΣ, ΤΟ ΥΠΕΡ ΥΜΩΝ, ΚΑΙ ΠΟΛΛΩΝ ΕΚΧΥΝΟΜΕΝΟΝ ΕΙΣ ΑΦΕΣΙΝ ΑΜΑΡΤΙΩΝ.\nὉ Χορός· Ἀμήν.",
+      "text_edition_id": "edition.holy-see.euchologion.1873-rome-propaganda",
+      "text_sha256": "45a1bf59c0e2044ce8738b4601f5e4e63e659c26d45ec4d0511bd6cd42489f13",
+      "unit_id": "unit.byz-1873.chrysostom.04-post-sanctus-institution",
+      "witness_id": "byz-1873-google",
+      "witness_pages": [
+        [
+          69,
+          70
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics",
+      "language": "grc",
+      "native_path": [
+        "anaphoras",
+        "chrysostom",
+        "05-anamnesis-oblation"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-checked-greek-dce0e887",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-checked-greek-dce0e887",
+      "source_id": "passage.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-05-anamnesis-oblation",
+      "source_locator": "Chrysostom Anaphora Anamnesis, Oblation, and choir hymn (Σὲ ὑμνοῦμεν); printed pp. 63–64; PDF pp. 70–71.",
+      "source_order": 5,
+      "text": "Ὁ Ἱερεὺς ἐπεύχεται μυστικῶς.\nΜεμνημένοι τοίνυν τῆς σωτηρίου ταύτης ἐντολῆς· καὶ πάντων τῶν ὑπὲρ ἡμῶν γεγενημένων· τοῦ σταυροῦ, τοῦ τάφου, τῆς τριημέρου ἀναστάσεως, τῆς εἰς οὐρανοὺς ἀναβάσεως, τῆς ἐκ δεξιῶν καθέδρας, τῆς δευτέρας καὶ ἐνδόξου πάλιν παρουσίας,\nἘκφώνησις.\nτὰ σὰ ἐκ τῶν σῶν σοὶ προσφέρομεν κατὰ πάντα, καὶ διὰ πάντα.\nΧορός· Σὲ ὑμνοῦμεν, σὲ εὐλογοῦμεν, σοὶ εὐχαριστοῦμεν Κύριε, καὶ δεόμεθά σου, ὁ Θεὸς ἡμῶν.",
+      "text_edition_id": "edition.holy-see.euchologion.1873-rome-propaganda",
+      "text_sha256": "9b0759dbd7ea891d3b43f251e7cbd239bef5d579a13f18415c49cb7b6d031f0f",
+      "unit_id": "unit.byz-1873.chrysostom.05-anamnesis-oblation",
+      "witness_id": "byz-1873-google",
+      "witness_pages": [
+        [
+          70,
+          71
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "epiclesis-with-rubrics",
+      "language": "grc",
+      "native_path": [
+        "anaphoras",
+        "chrysostom",
+        "06-epiclesis"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-checked-greek-dce0e887",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-checked-greek-dce0e887",
+      "source_id": "passage.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-06-epiclesis",
+      "source_locator": "Chrysostom Anaphora Epiclesis and full Third-Hour troparion; printed pp. 64–65; PDF pp. 71–72.",
+      "source_order": 6,
+      "text": "Ὁ Ἱερεὺς ἐπεύχεται μυστικῶς.\nἜτι προσφέρομέν σοι τὴν λογικὴν ταύτην, καὶ ἀναίμακτον λατρείαν· καὶ παρακαλοῦμεν, καὶ δεόμεθα, καὶ ἱκετεύομεν· κατάπεμψον τὸ Πνεῦμά σου τὸ ἅγιον ἐφ’ ἡμᾶς, καὶ ἐπὶ τὰ προκείμενα δῶρα ταῦτα,\nΚαὶ ὁ μὲν Διάκονος ἀποτίθησι τὸ ῥιπίδιον, καὶ ἔρχεται ἐγγύτερον τῷ Ἱερεῖ· καὶ προσκυνοῦσιν ἀμφότεροι τρὶς ἔμπροσθεν τῆς ἁγίας τραπέζης, εὐχόμενοι καθ’ ἑαυτοὺς, καὶ λέγοντες· Κύριε, ὁ τὸ πανάγιόν σου Πνεῦμα ἐν τῇ τρίτῃ ὥρᾳ τοῖς ἀποστόλοις σου καταπέμψας, τοῦτο ἀγαθὲ μὴ ἀντανέλῃς ἀφ’ ἡμῶν ἀλλ’ ἐγκαίνισον ἡμῖν τοῖς δεομένοις σου. Στίχ. Καρδίαν καθαρὰν κτίσον ἐν ἐμοὶ ὁ Θεὸς· καὶ πνεῦμα εὐθὲς ἐγκαίνισον ἐν τοῖς ἐγκάτοις μου. Πάλιν τὸ αὐτό. Κύριε, ὁ τὸ πανάγιόν... Στίχ. Μὴ ἀποῤῥίψῃς με ἀπὸ τοῦ προσώπου σου· καὶ τὸ πνεῦμά σου τὸ ἅγιον μὴ ἀντανέλῃς ἀπ’ ἐμοῦ. Καὶ αὖθις τὸ αὐτό. Κύριε, ὁ τὸ πανάγιόν σου... Εἶτα τὴν κεφαλὴν ὑποκλίνας ὁ Διάκονος, καὶ δεικνύων σὺν τῷ ὡραρίῳ τὸν ἅγιον ἄρτον, λέγει μυστικῶς· Εὐλόγησον δέσποτα τὸν ἅγιον ἄρτον. Καὶ ὁ Ἱερεὺς ἀνιστάμενος, σφραγίζει τρὶς τὰ ἅγια δῶρα, λέγων·\nκαὶ ποίησον τὸν μὲν ἄρτον τοῦτον, τίμιον σῶμα τοῦ Χριστοῦ σου,\nὉ Διάκονος· Ἀμήν. Καὶ τὸ Εὐλόγησον δέσποτα τὸ ἅγιον Ποτήριον, καὶ ὁ Ἱερεὺς εὐλογῶν λέγει·\nτὸ δὲ ἐν τῷ Ποτηρίῳ τούτῳ, τίμιον Αἷμα τοῦ Χριστοῦ σου,\nὉ Διάκονος· Ἀμήν. Καὶ αὖθις ὁ Διάκονος δεικνύων μετὰ τοῦ ὡραρίου ἀμφότερα τὰ Ἅγια, λέγει· Εὐλόγησον δέσποτα τὰ ἀμφότερα. Ὁ δὲ Ἱερεὺς εὐλογῶν ἀμφότερα τὰ Ἅγια, λέγει·\nμεταβαλὼν τῷ Πνεύματί σου τῷ ἁγίῳ,\nὉ Διάκονος· Ἀμὴν, ἀμὴν, ἀμήν.\nΚαὶ τὴν κεφαλὴν ὑποκλίνας τῷ Ἱερεῖ, καὶ εἰπὼν τὸ Μνήσθητί μου ἅγιε δέσποτα τοῦ ἁμαρτωλοῦ· ἵσταται ἐν ᾧ πρότερον ἵστατο τόπῳ, καὶ λαβὼν τὸ ῥιπίδιον, ῥιπίζει τὰ Ἅγια, ὡς καὶ τὸ πρότερον.",
+      "text_edition_id": "edition.holy-see.euchologion.1873-rome-propaganda",
+      "text_sha256": "2dbb670cf00d27b10c8364d702337054cc57f00981c0dcc1e101060616844443",
+      "unit_id": "unit.byz-1873.chrysostom.06-epiclesis",
+      "witness_id": "byz-1873-google",
+      "witness_pages": [
+        [
+          71,
+          72
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics-and-hymn",
+      "language": "grc",
+      "native_path": [
+        "anaphoras",
+        "chrysostom",
+        "07-commemoration-of-saints"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-checked-greek-dce0e887",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-checked-greek-dce0e887",
+      "source_id": "passage.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-07-commemoration-of-saints",
+      "source_locator": "Chrysostom Anaphora post-epiclesis fruits, commemoration of the saints, Ἐξαιρέτως, and printed choir hymn Ἄξιόν ἐστὶν / Τὴν τιμιωτέραν; printed pp. 65–66; PDF pp. 72–73.",
+      "source_order": 7,
+      "text": "Ὁ Ἱερεὺς ἐπεύχεται μυστικῶς.\nὥστε γενέσθαι τοῖς μεταλαμβάνουσιν εἰς νῆψιν ψυχῆς, εἰς ἄφεσιν ἁμαρτιῶν, εἰς κοινωνίαν τοῦ ἁγίου Πνεύματος, εἰς βασιλείας οὐρανῶν πλήρωμα, εἰς παῤῥησίαν τὴν πρὸς σὲ, μὴ εἰς κρίμα, ἢ εἰς κατάκριμα. Ἔτι προσφέρομέν σοι τὴν λογικὴν ταύτην λατρείαν ὑπὲρ τῶν ἐν πίστει ἀναπαυομένων Προπατόρων, Πατέρων, Πατριαρχῶν, Προφητῶν, Ἀποστόλων, Κηρύκων, Εὐαγγελιστῶν, Μαρτύρων, Ὁμολογητῶν, Ἐγκρατευτῶν, καὶ παντὸς πνεύματος ἐν πίστει τετελειωμένου·\nὉ δὲ Διάκονος θυμιᾷ τὴν ἁγίαν τράπεζαν γύρωθεν, καὶ μνημονεύει, ὧν βούλεται, ζώντων, καὶ τεθνεώτων. Ὁ Ἱερεύς·\nἘκφώνως.\nἘξαιρέτως τῆς παναγίας, ἀχράντου, ὑπερευλογημένης, ἐνδόξου, δεσποίνης ἡμῶν Θεοτόκου, καὶ ἀειπαρθένου Μαρίας,\nΧορός· Ἄξιόν ἐστὶν ὡς ἀληθῶς, μακαρίζειν σε τὴν Θεοτόκον, τὴν ἀειμακάριστον καὶ παναμώμητον, καὶ μητέρα τοῦ Θεοῦ ἡμῶν. — Τὴν τιμιωτέραν τῶν Χερουβὶμ, καὶ ἐνδοξοτέραν ἀσυγκρίτως τῶν Σεραφὶμ, τὴν ἀδιαφθόρως Θεὸν Λόγον τεκοῦσαν, τὴν ὄντως Θεοτόκον σὲ μεγαλύνομεν.",
+      "text_edition_id": "edition.holy-see.euchologion.1873-rome-propaganda",
+      "text_sha256": "3c9468b2662f25f82ec813ab49f50e80874c927500b964c40de4217bbb8f1ce5",
+      "unit_id": "unit.byz-1873.chrysostom.07-commemoration-of-saints",
+      "witness_id": "byz-1873-google",
+      "witness_pages": [
+        [
+          72,
+          73
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics",
+      "language": "grc",
+      "native_path": [
+        "anaphoras",
+        "chrysostom",
+        "08-intercessions-dead-and-church"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-checked-greek-dce0e887",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-checked-greek-dce0e887",
+      "source_id": "passage.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-08-intercessions-dead-and-church",
+      "source_locator": "Chrysostom Anaphora diptychs of the departed and intercessions for the Church; printed pp. 66–67; PDF pp. 73–74.",
+      "source_order": 8,
+      "text": "Ὁ Διάκονος μνημονεύει τὰ δίπτυχα τῶν κεκοιμημένων.\nὉ δὲ Ἱερεὺς ἐπεύχεται μυστικῶς.\nποῦ ἁγίου Ἰωάννου τοῦ προφήτου προδρόμου, καὶ Βαπτιστοῦ, τῶν ἁγίων ἐνδόξων καὶ πανευφήμων Ἀποστόλων, τοῦ ἁγίου (τοῦ δεῖνος) οὗ καὶ τὴν μνήμην ἐπιτελοῦμεν, καὶ πάντων τῶν ἁγίων σου, ὧν ταῖς ἱκεσίαις ἐπίσκεψαι ἡμᾶς ὁ Θεός. Καὶ μνήσθητι πάντων τῶν προκεκοιμένων ἐπ’ ἐλπίδι ἀναστάσεως ζωῆς αἰωνίου.\nἘνταῦθα ὁ Ἱερεὺς μνημονεύει, ὧν θέλει, ζώντων, καὶ τεθνεώτων. Ὑπὲρ ζώντων λέγει·\nὙπὲρ σωτηρίας, ἐπισκέψεως, ἀφέσεως τῶν ἁμαρτιῶν τοῦ δούλου τοῦ Θεοῦ (τοῦ δεῖνος)·\nὙπὲρ τεθνεώτων λέγει·\nὙπὲρ ἀναπαύσεως, καὶ ἀφέσεως τῆς ψυχῆς τοῦ δούλου σου (τοῦ δεῖνος) ἐν τόπῳ φωτεινῷ, ἔνθα ἀπέδρα λύπη, καὶ στεναγμός. Ἀνάπαυσον αὐτὴν ὁ Θεὸς ἡμῶν, καὶ ἀνάπαυσον αὐτὴν, ὅπου ἐπισκοπεῖ τὸ φῶς τοῦ προσώπου σου.\nἜτι παρακαλοῦμέν σε· μνήσθητι Κύριε πάσης Ἐπισκοπῆς ὀρθοδόξου, τῶν ὀρθοτομούντων τὸν λόγον τῆς σῆς ἀληθείας, παντὸς τοῦ Πρεσβυτερίου, τῆς ἐν Κυρίῳ διακονίας, καὶ παντὸς ἱερατικοῦ τάγματος. Ἔτι προσφέρομέν σοι λογικὴν ταύτην λατρείαν ὑπὲρ τῆς οἰκουμένης· Ὑπὲρ τῆς ἁγίας καθολικῆς, καὶ ἀποστολικῆς Ἐκκλησίας· Ὑπὲρ τῶν ἐν ἁγνείᾳ καὶ σεμνῇ πολιτείᾳ διαγόντων· Ὑπὲρ τῶν πιστοτάτων, καὶ φιλοχρίστων ἡμῶν βασιλέων, παντὸς τοῦ παλατίου, καὶ τοῦ στρατοπέδου αὐτῶν. Δὸς αὐτοῖς Κύριε εἰρηνικὸν τὸ βασίλειον, ἵνα καὶ ἡμεῖς ἐν τῇ γαλήνῃ αὐτῶν ἤρεμον, καὶ ἡσύχιον βίον διάγωμεν πάσῃ ἐν εὐσεβείᾳ, καὶ σεμνότητι.",
+      "text_edition_id": "edition.holy-see.euchologion.1873-rome-propaganda",
+      "text_sha256": "3854db5de361455a5cad9acdd08fe1ab9868aaaa550407566a04ea664cc71b9b",
+      "unit_id": "unit.byz-1873.chrysostom.08-intercessions-dead-and-church",
+      "witness_id": "byz-1873-google",
+      "witness_pages": [
+        [
+          73,
+          74
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics-and-footnote",
+      "language": "grc",
+      "native_path": [
+        "anaphoras",
+        "chrysostom",
+        "09-intercessions-hierarch-and-living"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-checked-greek-dce0e887",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-checked-greek-dce0e887",
+      "source_id": "passage.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-09-intercessions-hierarch-and-living",
+      "source_locator": "Chrysostom Anaphora hierarch commemoration (Ἐν πρώτοις), choir response, Roman-communion footnote, and intercessions for the living; printed p. 67; PDF p. 74.",
+      "source_order": 9,
+      "text": "Ἐκφώνως.\nἘν πρώτοις μνήσθητι Κύριε τοῦ Ἀρχιεπισκόπου ἡμῶν (τοῦ δεῖνος)· ὃν χάρισαι ταῖς ἁγίαις σου ἐκκλησίαις, ἐν εἰρήνῃ σῷον, ἔντιμον, ὑγιᾶ, μακροημερεύοντα, ὀρθοτομοῦντα τὸν λόγον τῆς σῆς ἀληθείας·\nΧορός· Καὶ πάντων καὶ πασῶν.\nΚαὶ ὁ Διάκονος πρὸς τῇ θύρᾳ στὰς, λέγει· (Τοῦ δεῖνος) τοῦ Πατριάρχου, Μητροπολίτου, ἢ Ἐπισκόπου, ὅς τις ἂν ᾖ (*), ἡμῶν· ὃν χάρισαι... καὶ τὰ λοιπὰ, ὡς ἄνω.\nὉ Διάκονος μνημονεύει τὰ δίπτυχα τῶν ζώντων.\nὉ δὲ Ἱερεὺς ἐπεύχεται μυστικῶς.\nΜνήσθητι Κύριε τῆς πόλεως, ἐν ᾗ παροικοῦμεν, καὶ πάσης πόλεως καὶ χώρας, καὶ τῶν ἐν πίστει οἰκούντων ἐν αὐταῖς· Μνήσθητι Κύριε πλεόντων, ὁδοιπορούντων, νοσούντων, καμνόντων, αἰχμαλώτων, καὶ τῆς σωτηρίας αὐτῶν· Μνήσθητι Κύριε τῶν καρποφορούντων, καὶ καλλιεργούντων ἐν ταῖς ἁγίαις σου ἐκκλησίαις, καὶ μεμνημένων τῶν πενήτων· καὶ ἐπὶ πάντας ἡμᾶς τὰ ἐλέη σου ἐξαπόστειλον·\n(*) Ἐὰν ἐν κοινωνίᾳ τῆς Ἐκκλησίας τῆς παλαιᾶς Ῥώμης. Σημείωσαι τὸ εἰρημένον ἐν τῇ ἀρχῇ.",
+      "text_edition_id": "edition.holy-see.euchologion.1873-rome-propaganda",
+      "text_sha256": "7dc9045b477dcca9bc8e52f044f1170e7eb1ad2dce86d7d348594145d6481cd4",
+      "unit_id": "unit.byz-1873.chrysostom.09-intercessions-hierarch-and-living",
+      "witness_id": "byz-1873-google",
+      "witness_pages": [
+        [
+          74,
+          74
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "doxology-and-blessing",
+      "language": "grc",
+      "native_path": [
+        "anaphoras",
+        "chrysostom",
+        "10-concluding-doxology-and-blessing"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-checked-greek-dce0e887",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-checked-greek-dce0e887",
+      "source_id": "passage.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-10-concluding-doxology-and-blessing",
+      "source_locator": "Chrysostom Anaphora concluding doxology (Καὶ δὸς ἡμῖν), blessing (Καὶ ἔσται τὰ ἐλέη), and choir response; printed pp. 67–68; PDF pp. 74–75.",
+      "source_order": 10,
+      "text": "Ἐκφώνως.\nΚαὶ δὸς ἡμῖν ἐν ἑνὶ στόματι, καὶ μιᾷ καρδίᾳ δοξαζειν, καὶ ἀνυμνεῖν τὸ πάντιμον καὶ μεγαλοπρεπὲς ὄνομά σου, τοῦ Πατρὸς, καὶ τοῦ Υἱοῦ, καὶ τοῦ ἁγίου Πνεύματος, νῦν, καὶ ἀεὶ, καὶ εἰς τοὺς αἰῶνας τῶν αἰώνων.\nΧορός· Ἀμήν.\nἘκφώνησις.\nΚαὶ ἔσται τὰ ἐλέη τοῦ μεγάλου Θεοῦ, καὶ Σωτῆρος ἡμῶν Ἰησοῦ Χριστοῦ μετὰ πάντων ἡμῶν.\nΧορός· Καὶ μετὰ τοῦ πνεύματός σου.",
+      "text_edition_id": "edition.holy-see.euchologion.1873-rome-propaganda",
+      "text_sha256": "945dbc9b03122d801919739c569a16fa6c239feea502b9e73af293cf944aeef9",
+      "unit_id": "unit.byz-1873.chrysostom.10-concluding-doxology-and-blessing",
+      "witness_id": "byz-1873-google",
+      "witness_pages": [
+        [
+          74,
+          75
+        ]
+      ]
+    }
+  ],
+  "witnesses": [
+    {
+      "artifact_id": "artifact.holy-see.euchologion.1873-rome-propaganda.google-pdf-50c485b5",
+      "edition_id": "edition.holy-see.euchologion.1873-rome-propaganda",
+      "id": "byz-1873-google",
+      "scope_pages": [
+        [
+          68,
+          75
+        ]
+      ]
+    }
+  ]
+}

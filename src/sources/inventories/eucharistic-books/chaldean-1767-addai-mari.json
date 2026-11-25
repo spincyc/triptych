@@ -1,0 +1,242 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-native-book",
+  "id": "chaldean-1767-addai-mari",
+  "title": "Missale Chaldaicum (Rome Propaganda, 1767) — Anaphora of Addai and Mari Core",
+  "scope": "Bounded constituent of the eight core prayers of the Anaphora of Addai and Mari (Opening Dialogue, Preface Gehanta 1, Sanctus, Post-Sanctus Gehanta 2, Intercession Gehanta 3, Anamnesis/Oblation, Epiclesis, and Fraction-placed Institution Narrative) in Classical Syriac (syr), excluding private Kushapa prayers, rubrics, and intervening fraction prayers.",
+  "transcribed_by": "lane-t2-syriac",
+  "stage_ids": [
+    "chaldean-east-syriac:rome1767"
+  ],
+  "catalogue_witness_ids": [
+    "eastern:chald-1767"
+  ],
+  "components": [
+    "anaphoras"
+  ],
+  "languages": [
+    "syr"
+  ],
+  "extent_kind": "constituent",
+  "excluded_book_divisions": [
+    "Latin and Syriac title leaves and prefatory matter (PDF 630-634)",
+    "Liturgy of the Word, Creed, Offertory, and pre-anaphoral Kushapa prayers (PDF 338-629)",
+    "Intervening private Kushapa prayers and diaconal litanies inside the Anaphora (PDF 334, 336)",
+    "Pre-fraction signing prayers (PDF 331) and Communion/Dismissal, additional anaphoras, and propers (PDF 1-328)"
+  ],
+  "date": {
+    "kind": "publication",
+    "label": "1767",
+    "start_year": 1767,
+    "end_year": 1767,
+    "evidence": [
+      {
+        "source_id": "passage.chaldean-catholic-church.missale.1767-rome-propaganda.title",
+        "locus": "Latin title at PDF 630 and Syriac title at PDF 631: Rome, Typis Sacrae Congregationis de Propaganda Fide, 1767."
+      }
+    ]
+  },
+  "extent_path": "src/sources/inventories/eucharistic-books/support/chaldean-1767-addai-mari-extent.json",
+  "collation_path": "src/sources/inventories/eucharistic-books/support/chaldean-1767-addai-mari-review.json",
+  "witnesses": [
+    {
+      "id": "chaldean-1767-rome-google-pdf",
+      "edition_id": "edition.chaldean-catholic-church.missale.1767-rome-propaganda",
+      "artifact_id": "artifact.chaldean-catholic-church.missale.1767-rome-propaganda.google-scan-pdf-4d048b31",
+      "scope_pages": [
+        [
+          329,
+          330
+        ],
+        [
+          332,
+          337
+        ]
+      ],
+      "completeness_evidence": [
+        {
+          "source_id": "passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-facsimile",
+          "locus": "PDF pages 329–330, 332–337 of 634; complete bounded constituent scope."
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "chaldean-1767-addai-mari.01-opening-dialogue",
+      "native_path": [
+        "anaphoras",
+        "addai-and-mari",
+        "01-opening-dialogue"
+      ],
+      "source_order": 1,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "dialogue",
+      "witness_id": "chaldean-1767-rome-google-pdf",
+      "witness_pages": [
+        [
+          337,
+          337
+        ]
+      ],
+      "passage_id": "passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-01-opening-dialogue",
+      "text_sha256": "3660b59c09250f5a6792e1887cca42a5b889959bd09ad51dd1c16a9434cf69f0"
+    },
+    {
+      "unit_id": "chaldean-1767-addai-mari.02-preface-gehanta-1",
+      "native_path": [
+        "anaphoras",
+        "addai-and-mari",
+        "02-preface-gehanta-1"
+      ],
+      "source_order": 2,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "chaldean-1767-rome-google-pdf",
+      "witness_pages": [
+        [
+          336,
+          336
+        ]
+      ],
+      "passage_id": "passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-02-preface-gehanta-1",
+      "text_sha256": "7ecf12ef5bc340fd3587273c0a4ef677c4465ca0fe0f0f00cecdac3ee089396c"
+    },
+    {
+      "unit_id": "chaldean-1767-addai-mari.03-sanctus",
+      "native_path": [
+        "anaphoras",
+        "addai-and-mari",
+        "03-sanctus"
+      ],
+      "source_order": 3,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "acclamation",
+      "witness_id": "chaldean-1767-rome-google-pdf",
+      "witness_pages": [
+        [
+          336,
+          336
+        ]
+      ],
+      "passage_id": "passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-03-sanctus",
+      "text_sha256": "0acda64a236264f61a39fc2a01b54b4852fe77ae0ac277031a3d14e1d0becea9"
+    },
+    {
+      "unit_id": "chaldean-1767-addai-mari.04-post-sanctus-gehanta-2",
+      "native_path": [
+        "anaphoras",
+        "addai-and-mari",
+        "04-post-sanctus-gehanta-2"
+      ],
+      "source_order": 4,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "chaldean-1767-rome-google-pdf",
+      "witness_pages": [
+        [
+          334,
+          334
+        ],
+        [
+          335,
+          335
+        ]
+      ],
+      "passage_id": "passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-04-post-sanctus-gehanta-2",
+      "text_sha256": "755ae9ec33709ced2f7710ec868bdc7a1609260c2784152e229317194cd3a300"
+    },
+    {
+      "unit_id": "chaldean-1767-addai-mari.05-intercession-gehanta-3",
+      "native_path": [
+        "anaphoras",
+        "addai-and-mari",
+        "05-intercession-gehanta-3"
+      ],
+      "source_order": 5,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "chaldean-1767-rome-google-pdf",
+      "witness_pages": [
+        [
+          333,
+          333
+        ]
+      ],
+      "passage_id": "passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-05-intercession-gehanta-3",
+      "text_sha256": "74bd6a09c05af0a4f2e5d7d1d0d171239d490311906df393750a4987cff7e346"
+    },
+    {
+      "unit_id": "chaldean-1767-addai-mari.06-anamnesis-oblation",
+      "native_path": [
+        "anaphoras",
+        "addai-and-mari",
+        "06-anamnesis-oblation"
+      ],
+      "source_order": 6,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "chaldean-1767-rome-google-pdf",
+      "witness_pages": [
+        [
+          333,
+          333
+        ]
+      ],
+      "passage_id": "passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-06-anamnesis-oblation",
+      "text_sha256": "0d7e2e54568031cdc6df4757b99382f328ec25e92eede9d016d38a896b80b8f9"
+    },
+    {
+      "unit_id": "chaldean-1767-addai-mari.07-epiclesis-and-qanona",
+      "native_path": [
+        "anaphoras",
+        "addai-and-mari",
+        "07-epiclesis-and-qanona"
+      ],
+      "source_order": 7,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "chaldean-1767-rome-google-pdf",
+      "witness_pages": [
+        [
+          332,
+          332
+        ]
+      ],
+      "passage_id": "passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-07-epiclesis-and-qanona",
+      "text_sha256": "7c3c9b829ee718afbfd1e71a1f04d7c742a18844fe15a1cde51fde3a4ba907f6"
+    },
+    {
+      "unit_id": "chaldean-1767-addai-mari.08-institution-narrative",
+      "native_path": [
+        "anaphoras",
+        "addai-and-mari",
+        "08-institution-narrative"
+      ],
+      "source_order": 8,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "institution-narrative",
+      "witness_id": "chaldean-1767-rome-google-pdf",
+      "witness_pages": [
+        [
+          329,
+          329
+        ],
+        [
+          330,
+          330
+        ]
+      ],
+      "passage_id": "passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-08-institution-narrative",
+      "text_sha256": "16f78af63de42298b57b6a0d979b291279ab350d97167fcf33e68ef0108dfd0c"
+    }
+  ]
+}

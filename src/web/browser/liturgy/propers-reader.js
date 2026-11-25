@@ -1294,9 +1294,29 @@
     rows.forEach(function (row) {
       if (row[1] === null || row[1] === undefined || row[1] === '') return;
       list.appendChild(T.el('dt', null, row[0]));
-      list.appendChild(T.el('dd', null, String(row[1])));
+      const dd = T.el('dd', null);
+      if (row[1] && typeof row[1] === 'object' && row[1].nodeType) dd.appendChild(row[1]);
+      else dd.textContent = String(row[1]);
+      list.appendChild(dd);
     });
     return list;
+  }
+
+  function actStationLink(actId) {
+    if (!actId) return null;
+    const stationLink = T.el('a', null, actId);
+    stationLink.href = '../history/?view=map&slice=roman-holy-week#station=' + encodeURIComponent(actId);
+    return stationLink;
+  }
+
+  function editionTimelineHref(editionId) {
+    if (editionId === 'roman-1962') {
+      return '../history/?view=timeline#tradition=roman-stages-pian&stage=roman-stages-1962-june';
+    }
+    if (editionId === 'postconciliar') {
+      return '../history/?view=timeline#tradition=roman-stages-postconciliar&stage=roman-stages-2008';
+    }
+    return '../history/?view=timeline';
   }
 
   function detailsLinkSection(heading, links) {
@@ -1384,7 +1404,7 @@
       ['Departure', recension && recension.departure &&
         (rightsLabel(recension.departure) +
           (recension.departureBasis ? ' — ' + recension.departureBasis : ''))],
-      ['Departure act-history station', recension && recension.departureAct],
+      ['Departure act-history station', recension && actStationLink(recension.departureAct)],
       ['Additional departures', additionalDepartures],
       ['Coverage', runtime.result
         ? coverageSummary(runtime.result, runtime.mass, runtime.structure)
@@ -1396,7 +1416,7 @@
     ]));
     detailsBody.appendChild(detailsLinkSection('Elsewhere in Triptych', [
       { label: 'The Story of Salvation', href: '../scripture/' },
-      { label: 'How the Missal Changed', href: '../history/' },
+      { label: 'How the Missal Changed (this edition on the timeline)', href: editionTimelineHref(state.edition.id) },
       { label: 'Every Document', href: '../texts/' },
       { label: 'The Source Library', href: '../sources/' },
       { label: 'The Code, Canon by Canon', href: '../law/' }

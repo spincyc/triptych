@@ -36,6 +36,15 @@
   const M = window.ReaderModel;
 
   const SPINE = 'structure/sources/index.json';
+  const HISTORY_XREFS = 'structure/act-history/edition-cross-references.json';
+  let historyXrefsPromise = null;
+
+  function loadHistoryXrefs() {
+    if (!historyXrefsPromise) {
+      historyXrefsPromise = T.loadJSON(HISTORY_XREFS).catch(function () { return null; });
+    }
+    return historyXrefsPromise;
+  }
 
   const elements = {
     tally: document.getElementById('tally'),
@@ -331,6 +340,9 @@
       head.appendChild(T.el('p', 'reader-publication', edition.publication));
     }
     elements.reader.appendChild(head);
+    const historySlot = T.el('div', 'source-history-slot');
+    elements.reader.appendChild(historySlot);
+    renderHistoryLinks(edition.id, historySlot);
 
     if (!passages.length) {
       elements.reader.appendChild(
@@ -348,6 +360,48 @@
     elements.reader.appendChild(body);
     renderPassage();
     renderApparatus();
+  }
+
+  function renderHistoryLinks(editionId, host) {
+    if (!editionId || !host) return;
+    loadHistoryXrefs().then(function (index) {
+      if (!open || !open.edition || open.edition.id !== editionId) return;
+      const entry = index && index.editions && index.editions[editionId];
+      if (!entry) return;
+      const hasAny = (entry.stages && entry.stages.length) ||
+        (entry.catalogue_records && entry.catalogue_records.length) ||
+        (entry.native_texts && entry.native_texts.length);
+      if (!hasAny) return;
+      T.clear(host);
+      const box = T.el('section', 'source-history-links');
+      box.setAttribute('aria-label', 'In the Missal Timeline');
+      box.appendChild(T.el('h3', 'source-history-title', 'In the Missal Timeline'));
+      const list = T.el('ul', 'source-history-list');
+      (entry.stages || []).forEach(function (st) {
+        const item = T.el('li', null);
+        const stageLink = T.el('a', null, st.tradition_label + ' — ' + st.label + ' (' + st.date_label + ')');
+        stageLink.href = '../history/?view=timeline#tradition=' + encodeURIComponent(st.tradition_id) +
+          '&stage=' + encodeURIComponent(st.id);
+        item.appendChild(stageLink);
+        list.appendChild(item);
+      });
+      (entry.catalogue_records || []).forEach(function (rec) {
+        const item = T.el('li', null);
+        const recordLink = T.el('a', null, 'Source catalogue record: ' + rec.title + ' (' + rec.date_label + ')');
+        recordLink.href = '../history/?view=catalogue#record=' + encodeURIComponent(rec.id);
+        item.appendChild(recordLink);
+        list.appendChild(item);
+      });
+      (entry.comparisons || []).forEach(function (comp) {
+        const item = T.el('li', null);
+        const comparisonLink = T.el('a', null, 'Witness comparison: ' + comp.title);
+        comparisonLink.href = '../history/?view=catalogue';
+        item.appendChild(comparisonLink);
+        list.appendChild(item);
+      });
+      box.appendChild(list);
+      host.appendChild(box);
+    });
   }
 
   function renderNavigation(passages) {

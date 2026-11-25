@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-collation",
+  "book_id": "syriac-1843-anaphora",
+  "title": "Missale Syriacum (Rome Propaganda, 1843) — Anaphora of St. James Core — independent pixel-collation review",
+  "status": "verified",
+  "independent": true,
+  "complete_extent_verified": true,
+  "reviewer": "independent-collator-v2-syriac",
+  "checked_on": "2026-11-25",
+  "binding_sha256": "cb2cfa40da3bb6dd465d5f3e006a0f127d27fb9605e82f18d3f6b02987d7c6ea",
+  "extent_sha256": "c28724689e3d0485e05844e139c3829cbc2ea83179ce7c8676c6a6b1a54890be",
+  "witness_sha256": {
+    "syriac-1843-rome-google-pdf": "4bc875a28f40dc1868619121a7a4e413f58b7093610d66ad35df79f4f6896132"
+  },
+  "unit_sha256": {
+    "syriac-1843-anaphora.01-preface": "75e5e23f56a089974ceca1582aa905ee43f438f78c5b218a4624de9cbcac5ba6",
+    "syriac-1843-anaphora.02-sanctus": "8484fb7b28874a3c373a8404fb0d23c2a88e3a515a87a8145a627b6782e8aff0",
+    "syriac-1843-anaphora.03-post-sanctus": "cae663ca7f24065b437130221ca25b4bb567ebde0ff5318d26cc49dcfc9ff641",
+    "syriac-1843-anaphora.04-institution-narrative": "b64a5d80487ee26c4eb3a345b149f7540189076157ebc3c46d780099dff06097",
+    "syriac-1843-anaphora.05-anamnesis": "5fd300f24dbea48f71bf6d57be2fb53c75172230b2936c4daef4307ea00a7f7a",
+    "syriac-1843-anaphora.06-epiclesis": "c10ee8a2cf4123e7a71e131217efc4a1f02ee421ca6a046fca431fc6ae61dbd6"
+  },
+  "scope": "Bounded constituent of the six core prayers of the Anaphora of St. James (Preface, Sanctus, Post-Sanctus, Institution Narrative, Anamnesis, and Epiclesis) in Classical Syriac (syr), reading the right-hand Syriac column on bilingual Syriac/Garshuni pages (PDF 135, 136, 139, 140 L1) and full-width Syriac on monolingual pages (PDF 136 bottom, 138, 140), excluding the scan-degraded red-ink opening Dialogue line on PDF 135, the Crucifixion engraving plate at PDF 137, Garshuni columns, rubrics, and post-epiclesis diptychs.",
+  "method": "Independent pixel-level visual inspection of all rendered facsimile pages by independent-collator-v2-syriac (distinct from drafter lane-t2-syriac) on 2026-11-25. Applied 4 pixel-verified correction(s) relative to initial draft; verified every unit boundary, page account (1..279), and SHA-256 hash.",
+  "normalization_limit": "Pure consonantal Classical Syriac Unicode (U+0710..U+072C, UTF-8 NFC) with single ASCII spaces between words and single LF (\\n) line endings, one canonical liturgical unit per line.; All West Syriac vowel points, seyame (U+0308), qushshaya/rukkakha, punctuation marks, liturgical crosses, kashidas, catchwords, running heads, signature marks, and page numbers are omitted for scan-safe cross-edition diffing.; Rubrics (red or black stage directions), speaker labels (priest/deacon/people, including abbreviated ܟܗ̄), editorial 'etc.' cues (ܘܫܪ / ܗܟܢܐ), silent/intervening rubrical cues, non-text plates, blank leaves, and parallel Garshuni/Arabic columns are excluded.; Printed historical orthography, abbreviations (such as ܩܕ for ܩܕܝܫܐ, ܩܘܪܝ for ܩܘܪܝܐܠܝܣܘܢ, and abbreviated Sanctus/Anamnesis incipits), omissions, and additions are preserved verbatim without harmonizing or supplying words from memory.",
+  "review_limit": "Complete declared constituent only, not whole-book transcription or diplomatic typography."
+}

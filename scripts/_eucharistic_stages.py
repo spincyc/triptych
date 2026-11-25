@@ -301,9 +301,16 @@ def load(root: Path, *, catalogue_ids: set[str], comparisons: dict[str, dict], f
                     or payload["scope"].get("extent_kind") != "constituent"
                     or payload["scope"]["whole_book_complete"] is not False):
                 raise StageError(f"{context}: text_bindings require complete declared constituents and partial stage coverage")
-            if (row["text_coverage"] != ("complete" if payload["scope"]["whole_book_complete"] else "partial") or status != "documented"
+            whole_book = payload["scope"]["whole_book_complete"] is True
+            witness_match = (
+                set(row["witness_ids"]) == set(binding["catalogue_witness_ids"])
+                if whole_book
+                else (bool(binding["catalogue_witness_ids"])
+                      and set(binding["catalogue_witness_ids"]) <= set(row["witness_ids"]))
+            )
+            if (row["text_coverage"] != ("complete" if whole_book else "partial") or status != "documented"
                     or context not in binding["stage_ids"]
-                    or set(row["witness_ids"]) != set(binding["catalogue_witness_ids"])
+                    or not witness_match
                     or not set(binding["components"]) <= set(row["components"])
                     or (row["text_coverage"] == "complete" and set(row["components"]) != set(binding["components"]))):
                 raise StageError(f"{context}: full-text binding stage/witness/component scope mismatch")

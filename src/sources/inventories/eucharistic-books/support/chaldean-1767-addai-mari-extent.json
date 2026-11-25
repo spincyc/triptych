@@ -1,0 +1,144 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-extent",
+  "book_id": "chaldean-1767-addai-mari",
+  "title": "Missale Chaldaicum (Rome Propaganda, 1767) — Anaphora of Addai and Mari Core — complete constituent extent and page account",
+  "status": "complete",
+  "unresolved": [],
+  "omitted": [],
+  "expected_unit_ids": [
+    "chaldean-1767-addai-mari.01-opening-dialogue",
+    "chaldean-1767-addai-mari.02-preface-gehanta-1",
+    "chaldean-1767-addai-mari.03-sanctus",
+    "chaldean-1767-addai-mari.04-post-sanctus-gehanta-2",
+    "chaldean-1767-addai-mari.05-intercession-gehanta-3",
+    "chaldean-1767-addai-mari.06-anamnesis-oblation",
+    "chaldean-1767-addai-mari.07-epiclesis-and-qanona",
+    "chaldean-1767-addai-mari.08-institution-narrative"
+  ],
+  "scope": "Bounded constituent of the eight core prayers of the Anaphora of Addai and Mari (Opening Dialogue, Preface Gehanta 1, Sanctus, Post-Sanctus Gehanta 2, Intercession Gehanta 3, Anamnesis/Oblation, Epiclesis, and Fraction-placed Institution Narrative) in Classical Syriac (syr), excluding private Kushapa prayers, rubrics, and intervening fraction prayers.",
+  "pages": [
+    {
+      "witness_id": "chaldean-1767-rome-google-pdf",
+      "ranges": [
+        [
+          1,
+          328
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "Remainder of Missale Chaldaicum (post-fraction communion, Theodore and Nestorius/other anaphoras, propers, and back matter; reversed RTL scan order)."
+    },
+    {
+      "witness_id": "chaldean-1767-rome-google-pdf",
+      "ranges": [
+        [
+          329,
+          330
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "chaldean-1767-addai-mari.08-institution-narrative"
+      ],
+      "description": "Institution Narrative placed at the Fraction (printed pp. 288-289)."
+    },
+    {
+      "witness_id": "chaldean-1767-rome-google-pdf",
+      "ranges": [
+        [
+          331,
+          331
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "Intervening pre-fraction prayers and signing rubrics (printed p. 287)."
+    },
+    {
+      "witness_id": "chaldean-1767-rome-google-pdf",
+      "ranges": [
+        [
+          332,
+          332
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "chaldean-1767-addai-mari.07-epiclesis-and-qanona"
+      ],
+      "description": "Epiclesis and Qanona (printed p. 286, misnumbered 285/ܪܦܗ)."
+    },
+    {
+      "witness_id": "chaldean-1767-rome-google-pdf",
+      "ranges": [
+        [
+          333,
+          333
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "chaldean-1767-addai-mari.05-intercession-gehanta-3",
+        "chaldean-1767-addai-mari.06-anamnesis-oblation"
+      ],
+      "description": "Intercession Gehanta 3 and Anamnesis/Oblation (printed p. 285/ܪܦܗ)."
+    },
+    {
+      "witness_id": "chaldean-1767-rome-google-pdf",
+      "ranges": [
+        [
+          334,
+          335
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "chaldean-1767-addai-mari.04-post-sanctus-gehanta-2"
+      ],
+      "description": "Post-Sanctus Gehanta 2, Qanona, and Amen (printed pp. 283-284/ܪܦܓ-ܪܦܕ; page 334 also carries Kushapa and diaconal litany excluded from constituent)."
+    },
+    {
+      "witness_id": "chaldean-1767-rome-google-pdf",
+      "ranges": [
+        [
+          336,
+          336
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "chaldean-1767-addai-mari.02-preface-gehanta-1",
+        "chaldean-1767-addai-mari.03-sanctus"
+      ],
+      "description": "Preface Gehanta 1, Qanona, and abbreviated Sanctus incipit (printed p. 282/ܪܦܒ)."
+    },
+    {
+      "witness_id": "chaldean-1767-rome-google-pdf",
+      "ranges": [
+        [
+          337,
+          337
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "chaldean-1767-addai-mari.01-opening-dialogue"
+      ],
+      "description": "Opening Dialogue (printed p. 281/ܪܦܐ)."
+    },
+    {
+      "witness_id": "chaldean-1767-rome-google-pdf",
+      "ranges": [
+        [
+          338,
+          634
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "Pre-anaphoral liturgy of the word, propers, and Latin/Syriac front matter (title leaves at PDF 630-631)."
+    }
+  ]
+}

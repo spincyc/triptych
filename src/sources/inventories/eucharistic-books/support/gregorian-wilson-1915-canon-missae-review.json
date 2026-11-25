@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-collation",
+  "book_id": "gregorian-wilson-1915-canon-missae",
+  "title": "Gregorian Hadrianum (Wilson 1915): complete strict Canon Missae constituent — independent pixel-collation review",
+  "status": "verified",
+  "independent": true,
+  "complete_extent_verified": true,
+  "reviewer": "independent-collator-v3-alex-west",
+  "checked_on": "2026-11-25",
+  "binding_sha256": "6f439f82d1e44dcefc0f1174d205832c80f0ee79abaf69f5635d8fe410e91611",
+  "extent_sha256": "5e3271308e960c52638e3d741242c51e08ba17d8c70565c5084da3e6fa33cfd9",
+  "witness_sha256": {
+    "gregorian-wilson-1915-pdf": "96fd93c73f8c9df47b6911981155b8b02cf2f2183ca6e87baad15128682d8681"
+  },
+  "unit_sha256": {
+    "unit.gregorian-wilson-1915.canon.te-igitur": "9a2540c865e2572f65a05d4d1c0122e577ea9dce996685863330e4ec3422cced",
+    "unit.gregorian-wilson-1915.canon.memento-vivorum": "4fc270656e69b4c24537399483253c6d0311f1b56d734744753fc701dd3ccf87",
+    "unit.gregorian-wilson-1915.canon.communicantes": "e122be2b66cf62df1183a23f58ef508866481cd2ebf3763b2f1861fadb9e739c",
+    "unit.gregorian-wilson-1915.canon.hanc-igitur": "a97ac13445d4aee1e819755a397fae50df6079d05d17094627b257e8136fe4c0",
+    "unit.gregorian-wilson-1915.canon.quam-oblationem": "3135b6668f71a435450369356b8f21487f945618f982bf7fd7e0186852421e10",
+    "unit.gregorian-wilson-1915.canon.qui-pridie": "bc1f71b267984361dd208a9a7f3b917eaadaad187bb3d1065e440734f66c7c27",
+    "unit.gregorian-wilson-1915.canon.simili-modo": "f6c697cd49fad0bb3fa454d8551815e5a95d5b22339d493c7f7945ff8522ca9a",
+    "unit.gregorian-wilson-1915.canon.unde-et-memores": "9407028dda3046df7f68fc03af4ce7f59030f9185eddbe7ad4305728eeea4ba6",
+    "unit.gregorian-wilson-1915.canon.supra-quae": "0e7b3523758ebd1b7e68177965d034cf6e353431a2a1664795d2f75095bb0d44",
+    "unit.gregorian-wilson-1915.canon.supplices": "74b2048851648a0d20aa24b8178b9b4ca27229ef12005bf92831c4f62aa08e7b",
+    "unit.gregorian-wilson-1915.canon.nobis-quoque": "21ba4f282bb1bfd6853bd3e74e0e4f04c3f266b2561b63dccc69f401a913fd27",
+    "unit.gregorian-wilson-1915.canon.per-quem": "cc34da09c27c30bbf29cc14d5d04cb1ac10979576fe3e53de94424380417a77b",
+    "unit.gregorian-wilson-1915.canon.per-ipsum": "81e7a99cd7023530a2b639e1af6621bedab31b8a36be8ae5c85bab49e539c62f",
+    "unit.gregorian-wilson-1915.canon.concluding-response": "bbd932c8277763f2b06ee1354d0f4397a6da601fba7b09b9f7e406f5bf912601"
+  },
+  "scope": "Complete strict Eucharistic Canon in H. A. Wilson's 1915 critical edition main text (base MS R = Vatican Reg. lat. 337, collated with C = Cambrai 164 and O = Vat. Ott. 313): printed pp. 2-4, PDF pp. 60-62, from Te igitur immediately after Sanctus through per omnia saecula saeculorum . amen. immediately before Oremus / Pater noster. Note that Wilson's main text of R omits Memento defunctorum (recorded only in apparatus note 14 for O and a 12th-century marginal addition in R); apparatus footnotes are excluded.",
+  "method": "Independent pixel-level visual inspection of all rendered facsimile pages by independent-collator-v3-alex-west (distinct from drafter AI source transcriber (Lane T3, direct PNG inspection of Wilson 1915 PDF pp. 60-62)) on 2026-11-25. Applied 0 pixel-verified correction(s) relative to initial draft; verified every unit boundary, page account (1..432), and SHA-256 hash.",
+  "normalization_limit": "Direct reading from rendered PNG images of Wilson 1915 PDF pp. 60-62 (printed pp. 2-4). UTF-8 NFC, LF line endings. Two-letter display cap TE normalized to Te; italics (illo) flattened to plain text. Line wraps and line-end hyphens joined within each prayer paragraph; Wilson's paragraph break inside Communicantes (after uenerantes.) preserved as two lines. Native Latin orthography preserved verbatim (u/v, inlibata, Inprimis, incolomitatis, genetricis, thomę, taddei, xysti, celum, posteaquam, inmaculatam, patriarche, diuine, agne, cecilia, pręstas, e-caudata ę = U+0119). Printed baseline points serialized as standard '.' without leading space. Superscript apparatus numbers, marginal folio tags, inline folio slashes (/), apparatus footnotes, running heads, page numbers, signatures and non-printed pencil marks excluded. Main text omits Memento defunctorum (in apparatus note 14 only).",
+  "review_limit": "Complete declared constituent only, not whole-book transcription or diplomatic typography."
+}

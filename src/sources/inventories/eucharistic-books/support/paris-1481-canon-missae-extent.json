@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-extent",
+  "book_id": "paris-1481-canon-missae",
+  "title": "Paris 1481 (Missale Parisiense): complete strict Canon Missae constituent — complete constituent extent and page account",
+  "status": "complete",
+  "unresolved": [],
+  "omitted": [],
+  "expected_unit_ids": [
+    "unit.paris-1481.canon.opening-rubric",
+    "unit.paris-1481.canon.te-igitur",
+    "unit.paris-1481.canon.memento-vivorum",
+    "unit.paris-1481.canon.communicantes",
+    "unit.paris-1481.canon.hanc-igitur",
+    "unit.paris-1481.canon.quam-oblationem",
+    "unit.paris-1481.canon.qui-pridie",
+    "unit.paris-1481.canon.simili-modo",
+    "unit.paris-1481.canon.unde-et-memores",
+    "unit.paris-1481.canon.supra-quae",
+    "unit.paris-1481.canon.supplices",
+    "unit.paris-1481.canon.memento-defunctorum",
+    "unit.paris-1481.canon.nobis-quoque",
+    "unit.paris-1481.canon.per-quem",
+    "unit.paris-1481.canon.per-ipsum",
+    "unit.paris-1481.canon.concluding-response"
+  ],
+  "scope": "Complete strict Eucharistic Canon of the 22 September 1481 Paris-use missal printed by Jean Dupré and Didier Huym (BSG OEXV 228 RES, PDF pp. 180-182, including printed fol. lxxx at PDF p. 181): from the opening rubric Junctis manibus se inclinet ante altare. and illuminated Te igitur on PDF p. 180 col. 1 through notated Per omnia secula seculorum. Amen. on PDF p. 182 col. 2 immediately before Oremus. Preceptis salutaribus / Pater noster. Includes all printed action rubrics and 25 illuminated crosses (✠) under declared selective Latin reading normalization.",
+  "pages": [
+    {
+      "witness_id": "paris-1481-dupre-huym-pdf",
+      "ranges": [
+        [
+          1,
+          179
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "Calendar, Temporale through Holy Week, Ordinary and Prefaces before PDF p. 180."
+    },
+    {
+      "witness_id": "paris-1481-dupre-huym-pdf",
+      "ranges": [
+        [
+          180,
+          180
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.paris-1481.canon.opening-rubric",
+        "unit.paris-1481.canon.te-igitur",
+        "unit.paris-1481.canon.memento-vivorum",
+        "unit.paris-1481.canon.communicantes",
+        "unit.paris-1481.canon.hanc-igitur"
+      ],
+      "description": "PDF p. 180: notated Preface ending and Sanctus excluded; strict Canon Junctis manibus / Te igitur through rubric introducing Hanc igitur."
+    },
+    {
+      "witness_id": "paris-1481-dupre-huym-pdf",
+      "ranges": [
+        [
+          181,
+          181
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.paris-1481.canon.hanc-igitur",
+        "unit.paris-1481.canon.quam-oblationem",
+        "unit.paris-1481.canon.qui-pridie",
+        "unit.paris-1481.canon.simili-modo",
+        "unit.paris-1481.canon.unde-et-memores",
+        "unit.paris-1481.canon.supra-quae",
+        "unit.paris-1481.canon.supplices"
+      ],
+      "description": "PDF p. 181 (fol. lxxx): Hanc igitur through et gratia repleamur of Supplices."
+    },
+    {
+      "witness_id": "paris-1481-dupre-huym-pdf",
+      "ranges": [
+        [
+          182,
+          182
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.paris-1481.canon.supplices",
+        "unit.paris-1481.canon.memento-defunctorum",
+        "unit.paris-1481.canon.nobis-quoque",
+        "unit.paris-1481.canon.per-quem",
+        "unit.paris-1481.canon.per-ipsum",
+        "unit.paris-1481.canon.concluding-response"
+      ],
+      "description": "PDF p. 182: Per eundem closing Supplices through notated Per omnia secula seculorum. Amen.; Oremus / Pater noster excluded."
+    },
+    {
+      "witness_id": "paris-1481-dupre-huym-pdf",
+      "ranges": [
+        [
+          183,
+          506
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "Post-Canon Ordinary, Easter Temporale, Sanctorale, Commons, votive Masses and colophon (p. 494)."
+    }
+  ]
+}

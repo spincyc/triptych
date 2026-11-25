@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-collation",
+  "book_id": "armenian-1642-badarak-anaphora",
+  "title": "Rome 1642 Ordo Divinae Missae Armenorum: core Armenian Badarak Anaphora constituent — independent pixel-collation review",
+  "status": "verified",
+  "independent": true,
+  "complete_extent_verified": true,
+  "reviewer": "independent-collator-v1-byz-arm",
+  "checked_on": "2026-11-25",
+  "binding_sha256": "a41129c01ebd89ab9fa032faf8935dce20ef502c071891c8e047b9f39262abef",
+  "extent_sha256": "e016631c1e6e298752391a9f15d2759d7183fc8ee5aac466ae2b6e725cb44f1d",
+  "witness_sha256": {
+    "arm-1642-google": "9faf9690874ce2797d0cf1e7344711dbf2e76da33082488e0685e881e2d5a8bc"
+  },
+  "unit_sha256": {
+    "unit.arm-1642.badarak.01-opening-dialogue": "39dc4d478b161c99145f0a421fb7d513846601a9f80429c20c45d017c84d50d7",
+    "unit.arm-1642.badarak.02-preface-thanksgiving": "c85b23af8a98a8f11fd2942602498ac96e31fb12bb4c16a0f57b68e44bef85a3",
+    "unit.arm-1642.badarak.03-sanctus": "be1ddf727d12e13e5bbb94461f9111e63dd9585d36e3e5060d5a25dc10eda17f",
+    "unit.arm-1642.badarak.04-post-sanctus-institution": "b985ad73488943db54dbcb15f28b6e54dd6b9b34e1300aeb15289ee717bb9321",
+    "unit.arm-1642.badarak.05-anamnesis-oblation": "00d1ac9615e3d1f74f2d4365921dee7348709ab59c773c69a04e66333d558fa0",
+    "unit.arm-1642.badarak.06-epiclesis": "ac0f4578c18bab2ae84cdc9792016e01a66d23b05e00efdb3e05b25b3385a5d9"
+  },
+  "scope": "Core Classical Armenian (Grabar) Anaphora of the Armenian Divine Liturgy (Badarak) from the priest's opening Trinitarian blessing rubric and greeting (Քահանայն աւրհնէ զժողովուրդն... Շնորհք սէր և սրբարար աստուածային զօրութիւն...) at printed p. 70 (PDF p. 82) through the Sanctus, Post-Sanctus, Institution Narrative (including Հայր երկնաւոր), Anamnesis and Oblation, and the complete Epiclesis concluding with Որպէս զի եղիցի... և ի թողութիւն մեղաց։ Դպիրքն. Ամէն։ at printed p. 80 (PDF p. 88), immediately before the post-epiclesis general intercessions (Սովաւ շնորհեա՛ զսէր...). Preserves the exact provider PDF page ordering where printed pp. 77–80 (PDF pp. 85–88) precede printed pp. 73–76 (PDF pp. 89–92), while ordering transcribed units in true liturgical/printed sequence (pp. 70–80). Excludes the parallel Latin column on the same pages, all pre-Anaphora and post-Epiclesis sections, and page furniture.",
+  "method": "Independent pixel-level visual inspection of all rendered facsimile pages by independent-collator-v1-byz-arm (distinct from drafter lane-t1-byz-arm) on 2026-11-25. Applied 17 pixel-verified correction(s) relative to initial draft; verified every unit boundary, page account (1..148), and SHA-256 hash.",
+  "normalization_limit": "Unicode NFC Classical Armenian (Grabar, language tag hy per repository convention) read directly from 260–450 DPI PNG renders of the Armenian column of the tracked 1642 facsimile PDF.; Standard Armenian scribal/typographic պատիւ (overline/titlo) abbreviations are expanded to full Classical Armenian words strictly matching 1642's own unabbreviated orthography (using աւ in աւրհնէ/աւրհնեաց/աւրհնեալ/աւրհնեմք where unabbreviated forms use աւ, and օ where printed as օ such as զօրութիւն, հօտի): ա̄ծ → աստուած, ա̄ծային → աստուածային, Ա̄ծոյ → Աստուծոյ, ա̄ծապէս → աստուածապէս, Յա̄ծածնէն → Յաստուածածնէն, տ̄ր/Տ̄ր → տէր/Տէր, տ̄ն/տ̄նէ → տեառն/տեառնէ, ս̄բ/Ս̄բ → սուրբ/Սուրբ, Յ̄սի → Յիսուսի, ք̄սի → քրիստոսի, ա̄հէ/ա̄հնեաց/ա̄հեմք → աւրհնէ/աւրհնեաց/աւրհնեմք, ամ̄/ամենա̄ → ամենայն, վ̄սն/Վ̄սն → վասն/Վասն, զօրութի̄ → զօրութիւն, տուչութբ̄ → տուչութեամբ, հրամանատրութե̄ → հրամանատրութեան, միութե̄մբ → միութեամբ, ասլվ̄ → ասելով, զա̄ղս → զաղօթս, շնորհե̄ց → շնորհեաց, յառ̄ջ → յառաջ, Դպ̄րքն → Դպիրքն.; Printed crosses are preserved at exact source position as ✠ (ձե✠զ on printed p. 70).; Authentic 1642 orthography, epenthetic ը spellings (բանիւըդ, բանըդ, տընտեսութեամբ, բընակիլ, ըզ, ըսփոփեցեր, մըխեսցէ, ըսպասաւորս, խընդրեմք, ՎԱՍԸՆ), uppercase Institution display text, and compositor typos verified at 360–450 DPI are preserved verbatim: զերկինըս (for զերկիրս) and պարսնն (p. 71), ճշմատապէս (for ճշմարտապէս, p. 72), ճանպրհորդեաց (p. 73), ՆՈՐՈՑ (for ՆՈՐՈՅ, p. 75), Տեառըդ (p. 78), and աւրհնեաբ (for աւրհնեալ, p. 79).; Words broken across column lines are joined; facing Latin column, catchwords, signatures (K, K 2), decorative asterisks, and page numbers are excluded.; Independent V1 collation at 450 DPI additionally confirmed abbreviation վխ̄ճան → վախճան (p. 73), uppercase Ա̄ծ → Աստուած (p. 77), page-break dittography of և at pp. 73–74 (collapsed to single և), authentic spellings մէզ (p. 71) and երկրպագեսցուք. (p. 79), and line-break compositor typo գոահանամք (p. 77).",
+  "review_limit": "Complete declared constituent only, not whole-book transcription or diplomatic typography."
+}

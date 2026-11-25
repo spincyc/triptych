@@ -42,42 +42,75 @@
     state; a bracket gives the uncertainty in that date, <strong>not how long
     the book was in use</strong>. Only explicitly recorded transitions connect
     states. Contemporary books can coexist without descending from each other.</p>
-  <form id="timeline-filter" class="timeline-filter" role="search" aria-label="Choose historical timeline">
-    <label for="timeline-tradition">Tradition or recension
-      <select id="timeline-tradition" disabled></select>
-    </label>
-    <label for="timeline-start">From year <input id="timeline-start" type="number" step="1" disabled></label>
-    <label for="timeline-end">Through year <input id="timeline-end" type="number" step="1" disabled></label>
-    <button id="timeline-apply" type="submit" disabled>Show these years</button>
-    <label class="timeline-leads"><input id="timeline-leads" type="checkbox" disabled> Include provisional leads</label>
-  </form>
-  <div class="timeline-tools" role="group" aria-label="Timeline window">
-    <button id="timeline-all-years" type="button" disabled>All recorded years</button>
-    <button id="timeline-local-years" type="button" disabled>This tradition’s full history</button>
-    <button id="timeline-earlier" type="button" disabled>Earlier years</button>
-    <button id="timeline-later" type="button" disabled>Later years</button>
-    <button id="timeline-zoom-in" type="button" disabled>Zoom in</button>
-    <button id="timeline-zoom-out" type="button" disabled>Zoom out</button>
-    <label for="timeline-presentation">Read as
-      <select id="timeline-presentation"><option value="chart">Year-axis map</option><option value="list">Chronological reading list</option></select>
-    </label>
+  <div class="timeline-controls-shell">
+    <div id="timeline-rite-pills" class="timeline-rite-pills" role="group" aria-label="Filter by rite family" hidden></div>
+    <div id="timeline-discover" class="timeline-discover" hidden>
+      <label for="timeline-region">Region
+        <select id="timeline-region"><option value="">All geographic regions</option></select>
+      </label>
+      <label for="timeline-search">Find tradition
+        <input id="timeline-search" type="search" maxlength="120" placeholder="Rite, city, or order…">
+      </label>
+      <label class="timeline-text-toggle">
+        <input id="timeline-has-text" type="checkbox"> Original text or diff available
+      </label>
+    </div>
+    <form id="timeline-filter" class="timeline-filter" role="search" aria-label="Choose historical timeline">
+      <label for="timeline-tradition">Tradition or recension
+        <select id="timeline-tradition" disabled></select>
+      </label>
+      <label for="timeline-start">From year <input id="timeline-start" type="number" step="1" disabled></label>
+      <label for="timeline-end">Through year <input id="timeline-end" type="number" step="1" disabled></label>
+      <button id="timeline-apply" type="submit" disabled>Show these years</button>
+      <label class="timeline-leads"><input id="timeline-leads" type="checkbox" disabled> Include provisional leads</label>
+    </form>
+    <div class="timeline-tools" role="group" aria-label="Timeline window">
+      <button id="timeline-all-years" type="button" disabled>All recorded years</button>
+      <button id="timeline-local-years" type="button" disabled>This tradition’s full history</button>
+      <button id="timeline-earlier" type="button" disabled>Earlier years</button>
+      <button id="timeline-later" type="button" disabled>Later years</button>
+      <button id="timeline-zoom-in" type="button" disabled>Zoom in</button>
+      <button id="timeline-zoom-out" type="button" disabled>Zoom out</button>
+      <label for="timeline-presentation">Read as
+        <select id="timeline-presentation"><option value="chart">Year-axis map</option><option value="list">Chronological reading list</option></select>
+      </label>
+    </div>
+    <div id="timeline-eras" class="timeline-eras" role="group" aria-label="Jump to historical era" hidden></div>
   </div>
   <p id="timeline-status" role="status" aria-live="polite"></p>
-  <p class="panel-note">Wide charts scroll within the map. Use the year controls to focus a period, or choose the chronological reading list.</p>
+  <p class="panel-note">Wide charts scroll within the map. Use the rite filters, era jumps, or year controls to focus a period, or switch to the chronological reading list.</p>
   <div class="timeline-key" aria-label="Timeline legend">
-    <p><strong>● Documented state · ◇ Provisional lead · ├──┤ Date uncertainty.</strong>
-      A small hollow endpoint labels a continuation outside this view.
-      Brackets and date labels describe attestation, publication, approval,
-      effective date, or reconstruction as explicitly stated.</p>
-    <p>Transition evidence: <strong>solid</strong> = primary description or text
-      collation; <strong>dashed</strong> = scholarly description;
-      <strong>dotted</strong> = bibliographic succession or provisional lead.
-      Arrowheads point to the receiving state. Bends keep links clear of labels;
-      they do not add intermediate stages. Each transition states its kind and
-      evidence level. A successor printing
-      alone does not establish a substantive revision.</p>
-    <p>Historical evidence and transcription coverage are independent.
-      “Documented” does not mean the full text is available here.</p>
+    <ul class="timeline-key-grid">
+      <li class="timeline-key-item">
+        <svg viewBox="0 0 20 16" width="20" height="16" aria-hidden="true"><circle cx="10" cy="8" r="5.5" fill="currentColor"/></svg>
+        <span><strong>Documented state</strong> (colored by rite family)</span>
+      </li>
+      <li class="timeline-key-item">
+        <svg viewBox="0 0 20 16" width="20" height="16" aria-hidden="true"><path d="M 10 2 L 16 8 L 10 14 L 4 8 Z" fill="#fffdf8" stroke="currentColor" stroke-width="2"/></svg>
+        <span><strong>Provisional lead</strong> (separate from documented states)</span>
+      </li>
+      <li class="timeline-key-item">
+        <svg viewBox="0 0 38 16" width="38" height="16" aria-hidden="true"><path d="M 4 3 V 13 M 4 8 H 34 M 34 3 V 13" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="4 3"/></svg>
+        <span><strong>Date uncertainty</strong> (attestation/publication window, not lifespan)</span>
+      </li>
+      <li class="timeline-key-item">
+        <svg viewBox="0 0 38 16" width="38" height="16" aria-hidden="true"><path d="M 2 8 H 30" fill="none" stroke="#4f4a44" stroke-width="2.5"/><path d="M 26 4 L 35 8 L 26 12 Z" fill="#4f4a44"/></svg>
+        <span><strong>Solid</strong>: primary description or text collation</span>
+      </li>
+      <li class="timeline-key-item">
+        <svg viewBox="0 0 38 16" width="38" height="16" aria-hidden="true"><path d="M 2 8 H 30" fill="none" stroke="#4f4a44" stroke-width="2" stroke-dasharray="6 4"/><path d="M 26 4 L 35 8 L 26 12 Z" fill="#4f4a44"/></svg>
+        <span><strong>Dashed</strong>: scholarly description</span>
+      </li>
+      <li class="timeline-key-item">
+        <svg viewBox="0 0 38 16" width="38" height="16" aria-hidden="true"><path d="M 2 8 H 30" fill="none" stroke="#4f4a44" stroke-width="2" stroke-dasharray="2 4"/><path d="M 26 4 L 35 8 L 26 12 Z" fill="#4f4a44"/></svg>
+        <span><strong>Dotted</strong>: bibliographic succession or lead</span>
+      </li>
+      <li class="timeline-key-item">
+        <span class="timeline-key-badge" aria-hidden="true">TEXT</span>
+        <span><strong>Original-language text</strong> verified and readable here</span>
+      </li>
+    </ul>
+    <p class="timeline-key-note">Hollow endpoints mark continuations outside this year window. Bends keep arrows clear of labels and add no intermediate stage. Historical evidence and transcription coverage remain independent.</p>
   </div>
   <div class="timeline-reading">
     <div class="timeline-main">

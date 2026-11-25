@@ -7,6 +7,7 @@ never implies historical deletion. No adapter infers ancestry or earlier text.
 from __future__ import annotations
 
 from collections import Counter
+from contextlib import contextmanager
 from datetime import date
 import csv
 import hashlib
@@ -636,8 +637,46 @@ def _tool_inputs() -> list[dict]:
     return result
 
 
+_IN_PROCESS_LIBRARY: dict[tuple[Path, str], object] = {}
+_SESSION_STATE: dict[str, object] | None = None
+
+
+@contextmanager
+def session_cache(root: Path):
+    """Bound read-only cache for one multi-adapter projection/corpus invocation.
+
+    Loads and validates the source library once, verifies each unique file
+    hash once (keyed by path, mtime_ns, and byte size), and reuses immutable
+    adapter snapshots within the single command. Always cleared on exit.
+    """
+    global _SESSION_STATE
+    if _SESSION_STATE is not None:
+        yield
+        return
+    resolved = Path(root).resolve()
+    _SESSION_STATE = {"root": resolved, "library": None, "adapters": {}, "digests": {}}
+    try:
+        yield
+    finally:
+        _SESSION_STATE = None
+
+
+def _in_process_library_key(mod, resolved: Path) -> tuple[Path, str] | None:
+    """Pure in-memory tree-fingerprint key (writes no disk files)."""
+    if not (resolved / "src/sources").is_dir():
+        return None
+    roots = [r for r in (resolved / "src/sources", resolved / "src/gpt", resolved / "src/claude") if r.is_dir()]
+    fingerprint, counted = mod.tree_fingerprint(roots)
+    if counted < mod.LIBRARY_CACHE_FLOOR:
+        return None
+    return (resolved, fingerprint)
+
+
 def _load_library(root: Path):
     # Executable code comes only from this checkout, never from a data root.
+    resolved = Path(root).resolve()
+    if _SESSION_STATE is not None and _SESSION_STATE["root"] == resolved and _SESSION_STATE["library"] is not None:
+        return _SESSION_STATE["library"]
     name = "_eucharistic_texts_source_library"
     if name not in sys.modules:
         loader = importlib.machinery.SourceFileLoader(name, str(ROOT / "tools/source-library"))
@@ -645,9 +684,19 @@ def _load_library(root: Path):
         module = importlib.util.module_from_spec(spec)
         sys.modules[name] = module
         loader.exec_module(module)
-    library = sys.modules[name].load_library(root, check_binding_fingerprints=False)
+    mod = sys.modules[name]
+    key = _in_process_library_key(mod, resolved)
+    if key is not None and key in _IN_PROCESS_LIBRARY:
+        library = _IN_PROCESS_LIBRARY[key]
+    else:
+        library = mod.load_library(resolved, check_binding_fingerprints=False)
+        if key is not None and not library.errors:
+            _IN_PROCESS_LIBRARY.clear()
+            _IN_PROCESS_LIBRARY[key] = library
     if library.errors:
         raise AdapterError("Source library prevents text export: " + "; ".join(library.errors))
+    if _SESSION_STATE is not None and _SESSION_STATE["root"] == resolved:
+        _SESSION_STATE["library"] = library
     return library
 
 
@@ -669,6 +718,28 @@ class _Sources:
         self.inputs[rel] = {"path": rel, "sha256": _sha(payload), "byte_size": len(payload)}
         return payload
 
+    def pin_verify_only(self, path: Path) -> str:
+        """Hash a tracked payload for provenance/integrity without keeping large bytes in RAM."""
+        path = path.resolve()
+        if not path.is_relative_to(self.root):
+            raise AdapterError("Source input is outside its repository root")
+        rel = path.relative_to(self.root).as_posix()
+        st = path.stat()
+        cache_key = (path, st.st_mtime_ns, st.st_size)
+        digest_hex = None
+        if _SESSION_STATE is not None:
+            digest_hex = _SESSION_STATE["digests"].get(cache_key)
+        if digest_hex is None:
+            h = hashlib.sha256()
+            with path.open("rb") as fh:
+                for chunk in iter(lambda: fh.read(1 << 20), b""):
+                    h.update(chunk)
+            digest_hex = h.hexdigest()
+            if _SESSION_STATE is not None:
+                _SESSION_STATE["digests"][cache_key] = digest_hex
+        self.inputs[rel] = {"path": rel, "sha256": digest_hex, "byte_size": st.st_size}
+        return digest_hex
+
     def use(self, source_id: str) -> dict:
         if source_id not in self.records:
             raise AdapterError(f"Unregistered source: {source_id}")
@@ -686,7 +757,9 @@ class _Sources:
         for support in data.get("support_artifacts", []):
             self.use(support["artifact_id"])
         if data.get("storage") == "tracked" and data.get("path"):
-            self.payload(data)
+            actual_sha = self.pin_verify_only(self.root / data["path"])
+            if actual_sha != data.get("sha256"):
+                raise AdapterError(f"Artifact hash mismatch: {data['id']}")
         return data
 
     def payload(self, artifact: dict) -> bytes:
@@ -1069,7 +1142,14 @@ def _native_segment(sources: _Sources, segment_id: str, edition_id: str) -> tupl
 
 
 def _native_facsimile(sources: _Sources, artifact: dict) -> bool:
-    direct_types = {"scan", "scan-pdf", "facsimile", "facsimile-image"}
+    direct_types = {
+        "scan",
+        "scan-pdf",
+        "scan-pdf-page-range",
+        "facsimile",
+        "facsimile-pdf",
+        "facsimile-image",
+    }
     if artifact.get("artifact_type") in direct_types:
         return True
     # A PDF assembled from exact page images remains a facsimile. Preserve its
@@ -1396,6 +1476,8 @@ def load_adapter(adapter_id: str, root: Path = ROOT) -> dict:
     if adapter_id not in adapter_ids(root):
         raise AdapterError(f"Unknown Eucharistic text adapter: {adapter_id}")
     root = Path(root).resolve()
+    if _SESSION_STATE is not None and _SESSION_STATE["root"] == root and adapter_id in _SESSION_STATE["adapters"]:
+        return _SESSION_STATE["adapters"][adapter_id]
     sources = _Sources(root, _load_library(root))
     try:
         loaders = {"roman-1962-propers": _proper_units, "cummiskey-1861-latin-ordinary": _ordinary_units,
@@ -1407,12 +1489,15 @@ def load_adapter(adapter_id: str, root: Path = ROOT) -> dict:
         unit_ids = [unit["unit_id"] for unit in result["units"]]
         if len(set(unit_ids)) != len(unit_ids):
             raise AdapterError("Export repeats a stable unit identity")
-        return {"schema": SCHEMA, "adapter_id": adapter_id, **result,
-                "sources": sources.metadata(), "inputs": sorted(sources.inputs.values(), key=lambda row: row["path"]),
-                "tool_inputs": _tool_inputs(), "tool_input_base": "executing-tool-checkout",
-                "historical_comparisons": [],
-                "history_semantics": "Evidence snapshot, not an act's additions/deletions. No inferred ancestry or backprojection; uncollected wording is unknown.",
-                "verification": {"source_library_valid": True, "source_binding_fingerprints_checked": False,
-                                 "new_page_collation_performed": False}}
+        snapshot = {"schema": SCHEMA, "adapter_id": adapter_id, **result,
+                    "sources": sources.metadata(), "inputs": sorted(sources.inputs.values(), key=lambda row: row["path"]),
+                    "tool_inputs": _tool_inputs(), "tool_input_base": "executing-tool-checkout",
+                    "historical_comparisons": [],
+                    "history_semantics": "Evidence snapshot, not an act's additions/deletions. No inferred ancestry or backprojection; uncollected wording is unknown.",
+                    "verification": {"source_library_valid": True, "source_binding_fingerprints_checked": False,
+                                     "new_page_collation_performed": False}}
+        if _SESSION_STATE is not None and _SESSION_STATE["root"] == root:
+            _SESSION_STATE["adapters"][adapter_id] = snapshot
+        return snapshot
     except (OSError, KeyError, TypeError, UnicodeError) as error:
         raise AdapterError(f"Cannot export {adapter_id}: {error}") from error

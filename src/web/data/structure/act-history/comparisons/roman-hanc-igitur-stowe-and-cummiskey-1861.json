@@ -8,19 +8,49 @@
   "identity_claim": "same-prayer-witnesses",
   "inputs": [
     {
-      "byte_size": 188631,
+      "byte_size": 242944,
       "path": "src/sources/inventories/catholic-eucharistic-history-v1.toml",
-      "sha256": "8362843cc22d7b7cc4044ec79471f874a4248ac543c128b9b00909a844c4b449"
+      "sha256": "0fe4018a12bec5eba9563352106cd41a9ad5cb8c19f9024d819bf083f36a94bf"
     },
     {
-      "byte_size": 1418911,
+      "byte_size": 1429750,
       "path": "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml",
-      "sha256": "c2346062d4a920f45d0d732aa1b921ee3e1544451025da14fcf1998f065a51b5"
+      "sha256": "7f589acd41154614706a5a6e83d1f3e73c36fe749ac8dec6a7c8f5aabacc4783"
     },
     {
-      "byte_size": 91788,
+      "byte_size": 161405,
       "path": "src/sources/inventories/eucharistic-book-relationships-v1.toml",
-      "sha256": "db23ab5f7273edfad029e062c3cb77d582a3f68c90d441ce911304d0ea79cba0"
+      "sha256": "26420342f730269ac6653648986ed63ed1503b02ad16d5ea2a2e68f2e0a349c9"
+    },
+    {
+      "byte_size": 7904,
+      "path": "src/sources/inventories/eucharistic-books/armenian-1642-badarak-anaphora.json",
+      "sha256": "a41129c01ebd89ab9fa032faf8935dce20ef502c071891c8e047b9f39262abef"
+    },
+    {
+      "byte_size": 7647,
+      "path": "src/sources/inventories/eucharistic-books/armenian-1823-badarak-anaphora.json",
+      "sha256": "aa71880df286ea0e30f9b2ef1c35f94bb0e23bb342c47a2450453647b65e5746"
+    },
+    {
+      "byte_size": 9790,
+      "path": "src/sources/inventories/eucharistic-books/byzantine-1754-chrysostom-anaphora.json",
+      "sha256": "9968bd14677e5d25e0809c1b1d8eb3c84a7f622572823be29d84f703f742aba7"
+    },
+    {
+      "byte_size": 9929,
+      "path": "src/sources/inventories/eucharistic-books/byzantine-1873-chrysostom-anaphora.json",
+      "sha256": "9426e0bf1f03a7d48c15a795ec718a8d77e38661facfbd9ce0db51e165a55efc"
+    },
+    {
+      "byte_size": 7755,
+      "path": "src/sources/inventories/eucharistic-books/chaldean-1767-addai-mari.json",
+      "sha256": "b8cf86d54d331829dd1d4a014ff8ac7e99b2ff01a3f423876849c2c3368e0dcd"
+    },
+    {
+      "byte_size": 7861,
+      "path": "src/sources/inventories/eucharistic-books/chaldean-1901-addai-mari.json",
+      "sha256": "cae4cb72cd1095d23b77b9d38e4810a1a3876f2681e4e68eeae49ca8d0bf83d1"
     },
     {
       "byte_size": 95620,
@@ -53,6 +83,31 @@
       "sha256": "22bf58d344f284e32c2ee540d6d7a3135f3412f259a7cbc1c22883fe1b9e6013"
     },
     {
+      "byte_size": 8707,
+      "path": "src/sources/inventories/eucharistic-books/coptic-1736-basil-anaphora.json",
+      "sha256": "1a9a06c1e2ef20ce66e0a17ef949cd4983920908e60a9f9314b563efb67b0aff"
+    },
+    {
+      "byte_size": 7761,
+      "path": "src/sources/inventories/eucharistic-books/geez-1914-apostles-anaphora.json",
+      "sha256": "aae6b26f3696b7d8ff466d217a6dd3ec962aa1646abe91b1dbe26b0c8bf42933"
+    },
+    {
+      "byte_size": 11906,
+      "path": "src/sources/inventories/eucharistic-books/gregorian-wilson-1915-canon-missae.json",
+      "sha256": "6f439f82d1e44dcefc0f1174d205832c80f0ee79abaf69f5635d8fe410e91611"
+    },
+    {
+      "byte_size": 5988,
+      "path": "src/sources/inventories/eucharistic-books/maronite-1594-anaphora.json",
+      "sha256": "571ca202c8bc3989062f3809facb10acaea21c07ea13f62077032b4a5394f419"
+    },
+    {
+      "byte_size": 6485,
+      "path": "src/sources/inventories/eucharistic-books/maronite-1908-anaphora.json",
+      "sha256": "28d23ee3262d8be0faae7a4dc3b29e291378c5bc917432299485d8a104d732f3"
+    },
+    {
       "byte_size": 7325,
       "path": "src/sources/inventories/eucharistic-books/mozarabic-1500-benedictio-panis.json",
       "sha256": "e39bae86bdaf1dbd344a8f774b63b5d2e3f7c112a5ded703c453e97d09a21737"
@@ -68,9 +123,79 @@
       "sha256": "ad3d60bd19824466e8b337eb27b0da3a13c15916da82a000992386abde462f59"
     },
     {
+      "byte_size": 12952,
+      "path": "src/sources/inventories/eucharistic-books/paris-1481-canon-missae.json",
+      "sha256": "da4e82f09d6dc6591ab433a7af4e9a1b4bf58c85b55ba9304bca0a40c5c18558"
+    },
+    {
       "byte_size": 16331,
       "path": "src/sources/inventories/eucharistic-books/roman-1570-canon-missae.json",
       "sha256": "8cbb45f8fee8fad2522e928ac5598bfc184c7117747e3502f653f2cf0c5ba1dd"
+    },
+    {
+      "byte_size": 13458,
+      "path": "src/sources/inventories/eucharistic-books/stowe-warner-1915-canon-missae.json",
+      "sha256": "d05f6575e6e7e630c4ad6593d9ce01ebe3b83d03d5a1767948acd54285937f54"
+    },
+    {
+      "byte_size": 7657,
+      "path": "src/sources/inventories/eucharistic-books/support/armenian-1642-badarak-anaphora-extent.json",
+      "sha256": "e016631c1e6e298752391a9f15d2759d7183fc8ee5aac466ae2b6e725cb44f1d"
+    },
+    {
+      "byte_size": 5600,
+      "path": "src/sources/inventories/eucharistic-books/support/armenian-1642-badarak-anaphora-review.json",
+      "sha256": "0d8ac2b31891c90a951e21c54d7bd864e505e5e42ce413934865c58ea2883255"
+    },
+    {
+      "byte_size": 6040,
+      "path": "src/sources/inventories/eucharistic-books/support/armenian-1823-badarak-anaphora-extent.json",
+      "sha256": "f09b891a8de4e116d6fb757ce84c9dfbe81cd8276f0e5d73ecb42529ddbc5b0e"
+    },
+    {
+      "byte_size": 5733,
+      "path": "src/sources/inventories/eucharistic-books/support/armenian-1823-badarak-anaphora-review.json",
+      "sha256": "b9e232d68baed4d55e5c8c38d4865d706c8b3dbb882fde096c792ec1935cf728"
+    },
+    {
+      "byte_size": 6006,
+      "path": "src/sources/inventories/eucharistic-books/support/byzantine-1754-chrysostom-anaphora-extent.json",
+      "sha256": "f199978f2cb9db4c4281d1c9056eea4639de366e895317cc0d60fd8d6f93d9b6"
+    },
+    {
+      "byte_size": 5288,
+      "path": "src/sources/inventories/eucharistic-books/support/byzantine-1754-chrysostom-anaphora-review.json",
+      "sha256": "0cabcd3238807af1cb88ca864a1ee491aeba6c149516273fafa3298fb7f4830a"
+    },
+    {
+      "byte_size": 6703,
+      "path": "src/sources/inventories/eucharistic-books/support/byzantine-1873-chrysostom-anaphora-extent.json",
+      "sha256": "c31f566bb78fd0f58b94aeb4f1cc033d0987c8600d47e2648d2834fe7b259b23"
+    },
+    {
+      "byte_size": 4618,
+      "path": "src/sources/inventories/eucharistic-books/support/byzantine-1873-chrysostom-anaphora-review.json",
+      "sha256": "0380ca74d266a3e3ebe00af9533da6e24a4dec1fdcb188153d9e7a814de122a0"
+    },
+    {
+      "byte_size": 4391,
+      "path": "src/sources/inventories/eucharistic-books/support/chaldean-1767-addai-mari-extent.json",
+      "sha256": "1f2f86f3262a174dac9e60859e2a4c49dc3ff67c0cdf24f9eb2d107a88ef4c75"
+    },
+    {
+      "byte_size": 3492,
+      "path": "src/sources/inventories/eucharistic-books/support/chaldean-1767-addai-mari-review.json",
+      "sha256": "5e787fa5dac52742f15f1f3801b1b7a26aca0dac5d302c850b27e66c643bb8dc"
+    },
+    {
+      "byte_size": 5635,
+      "path": "src/sources/inventories/eucharistic-books/support/chaldean-1901-addai-mari-extent.json",
+      "sha256": "38ea76d7ba81f21e5de80c52e928c73314711987a995432a09e9e5f61dddb8a6"
+    },
+    {
+      "byte_size": 3507,
+      "path": "src/sources/inventories/eucharistic-books/support/chaldean-1901-addai-mari-review.json",
+      "sha256": "587397bdc9f73b4d29da7fcc1f02f45923376170b80f3157c73322c799cb54d7"
     },
     {
       "byte_size": 32541,
@@ -133,6 +258,56 @@
       "sha256": "b0c1df5a3d6319d32ea48ca8d9ed32d7332579eded33e80ac7ebcd49ea17d29a"
     },
     {
+      "byte_size": 7343,
+      "path": "src/sources/inventories/eucharistic-books/support/coptic-1736-basil-anaphora-extent.json",
+      "sha256": "ceebb58e9edb217f9118dffcb2419ebd56b82b684f43e0df8d893825993ac081"
+    },
+    {
+      "byte_size": 4968,
+      "path": "src/sources/inventories/eucharistic-books/support/coptic-1736-basil-anaphora-review.json",
+      "sha256": "5dcb1502c3c57b0d796f728540fe86ace43a714aa75e812e2e8a14ae3da40919"
+    },
+    {
+      "byte_size": 4710,
+      "path": "src/sources/inventories/eucharistic-books/support/geez-1914-apostles-anaphora-extent.json",
+      "sha256": "3fbd4e889732334fba445b1c08d62e43df21965fbdea17edc32db00e5a2214a2"
+    },
+    {
+      "byte_size": 3923,
+      "path": "src/sources/inventories/eucharistic-books/support/geez-1914-apostles-anaphora-review.json",
+      "sha256": "af3e2cc4b823878b1c6f90e4bf9c3585807652cd0c97eee97f2075ffdf49e98b"
+    },
+    {
+      "byte_size": 4212,
+      "path": "src/sources/inventories/eucharistic-books/support/gregorian-wilson-1915-canon-missae-extent.json",
+      "sha256": "5e3271308e960c52638e3d741242c51e08ba17d8c70565c5084da3e6fa33cfd9"
+    },
+    {
+      "byte_size": 4385,
+      "path": "src/sources/inventories/eucharistic-books/support/gregorian-wilson-1915-canon-missae-review.json",
+      "sha256": "9add962e184ebeafdd216138d49ecb05a17e6a189b18a7775151db4f77d20d0f"
+    },
+    {
+      "byte_size": 3466,
+      "path": "src/sources/inventories/eucharistic-books/support/maronite-1594-anaphora-extent.json",
+      "sha256": "4c5e1ee8445ddb8559aaa87d26aaa554abc39d496a9e0034766de92577991948"
+    },
+    {
+      "byte_size": 3330,
+      "path": "src/sources/inventories/eucharistic-books/support/maronite-1594-anaphora-review.json",
+      "sha256": "a66d13a4e04dae2d85d120f82688fda6a4e7ea83206e49e9f460897ec7a2826e"
+    },
+    {
+      "byte_size": 4048,
+      "path": "src/sources/inventories/eucharistic-books/support/maronite-1908-anaphora-extent.json",
+      "sha256": "9e8fb3e13c425a4dee060f4f3cb27ed9adaa6b3b39d07dba4b13f5b2c431eacf"
+    },
+    {
+      "byte_size": 3227,
+      "path": "src/sources/inventories/eucharistic-books/support/maronite-1908-anaphora-review.json",
+      "sha256": "51bf960ad17d3ab40f82e51cf972faa0fa3fd32dc8c99c99ab8364ee7bf90cc0"
+    },
+    {
       "byte_size": 1579,
       "path": "src/sources/inventories/eucharistic-books/support/mozarabic-1500-benedictio-panis-extent.json",
       "sha256": "afaeefa2fa521bf2d66dbc1a47519b71dfe4a5cc3af42830b33ad8d9913e58cf"
@@ -163,6 +338,16 @@
       "sha256": "8c85bd0a75c7c6ce5111c49467b118c8c853fab6b90a5370383c88c3fed2c1d0"
     },
     {
+      "byte_size": 4032,
+      "path": "src/sources/inventories/eucharistic-books/support/paris-1481-canon-missae-extent.json",
+      "sha256": "b96cd23645dfdabc37884f827efded387ceb0c2a5ab1f957cb76fc7ff5ae7fc7"
+    },
+    {
+      "byte_size": 4900,
+      "path": "src/sources/inventories/eucharistic-books/support/paris-1481-canon-missae-review.json",
+      "sha256": "04b365e326c4443dce95fa93ca071f8fb97400c0758bd307b587675c33826831"
+    },
+    {
       "byte_size": 12078,
       "path": "src/sources/inventories/eucharistic-books/support/roman-1570-canon-missae-extent.json",
       "sha256": "f1d97c3993c2d3545c6f1ce1f1c226886bcee876da71b633569715218f6303d8"
@@ -171,6 +356,56 @@
       "byte_size": 3869,
       "path": "src/sources/inventories/eucharistic-books/support/roman-1570-canon-missae-review.json",
       "sha256": "e862a73aee907aa4d9dcf89de254f34682d7b7ff3aaedd11a89e73a5af281316"
+    },
+    {
+      "byte_size": 6235,
+      "path": "src/sources/inventories/eucharistic-books/support/stowe-warner-1915-canon-missae-extent.json",
+      "sha256": "262b93e39096fb31422aef2c983d12dc2f0a9a3c07ee6d027a9593c0c557ed75"
+    },
+    {
+      "byte_size": 5460,
+      "path": "src/sources/inventories/eucharistic-books/support/stowe-warner-1915-canon-missae-review.json",
+      "sha256": "21b148bb332cfd1d8decb43fb11b9984479634e4b4c22439d0152c112acd9751"
+    },
+    {
+      "byte_size": 4165,
+      "path": "src/sources/inventories/eucharistic-books/support/syriac-1843-anaphora-extent.json",
+      "sha256": "c28724689e3d0485e05844e139c3829cbc2ea83179ce7c8676c6a6b1a54890be"
+    },
+    {
+      "byte_size": 3316,
+      "path": "src/sources/inventories/eucharistic-books/support/syriac-1843-anaphora-review.json",
+      "sha256": "f687c9d9dfccaf906a8d2414edc68310bb9851bbba5d81a9c791b4b495702aa5"
+    },
+    {
+      "byte_size": 4649,
+      "path": "src/sources/inventories/eucharistic-books/support/syriac-1922-anaphora-extent.json",
+      "sha256": "986dd986b3ebe0f4628790547f11b7f9d383018316c8f7ede7c41ccaeb89fbc2"
+    },
+    {
+      "byte_size": 3365,
+      "path": "src/sources/inventories/eucharistic-books/support/syriac-1922-anaphora-review.json",
+      "sha256": "e101d0032e37a712f9c6cef033ab07f8663e562477a6fc1cdf7be56d61cf4a9b"
+    },
+    {
+      "byte_size": 5063,
+      "path": "src/sources/inventories/eucharistic-books/support/syro-malabar-1906-addai-mari-extent.json",
+      "sha256": "805ad99bb3b7abb983ccb7daa50647abb90d9c9daadf8bb5599d9061ef3ae9f6"
+    },
+    {
+      "byte_size": 3652,
+      "path": "src/sources/inventories/eucharistic-books/support/syro-malabar-1906-addai-mari-review.json",
+      "sha256": "9ed5ec8449d199c07210cedf037e4815e8acb2eff72ca4bd31d1e1ae71c290f5"
+    },
+    {
+      "byte_size": 4802,
+      "path": "src/sources/inventories/eucharistic-books/support/tarazona-1500-canon-missae-extent.json",
+      "sha256": "6387f34380e7751f1f18c9a67f55ed557712c1d6d8941021f2778db1c3eebfbd"
+    },
+    {
+      "byte_size": 4783,
+      "path": "src/sources/inventories/eucharistic-books/support/tarazona-1500-canon-missae-review.json",
+      "sha256": "aa8093cb8e898bc646365ebbebe18d0787e410bdd089b215becc8aedd807aa3d"
     },
     {
       "byte_size": 2472,
@@ -183,14 +418,34 @@
       "sha256": "6df851eef57eeb59017b4860b7364bf2710ab3b65404e2b06161740e0446b96c"
     },
     {
+      "byte_size": 6681,
+      "path": "src/sources/inventories/eucharistic-books/syriac-1843-anaphora.json",
+      "sha256": "cb2cfa40da3bb6dd465d5f3e006a0f127d27fb9605e82f18d3f6b02987d7c6ea"
+    },
+    {
+      "byte_size": 6879,
+      "path": "src/sources/inventories/eucharistic-books/syriac-1922-anaphora.json",
+      "sha256": "4281b7761f7f8787579feae4423382f7ed6569c28a055e001162a46bae747d91"
+    },
+    {
+      "byte_size": 8550,
+      "path": "src/sources/inventories/eucharistic-books/syro-malabar-1906-addai-mari.json",
+      "sha256": "0faed7d47fc64e791dca5a2d361334f1f2d6fd38787f75d31833b7604c99e5c1"
+    },
+    {
+      "byte_size": 12488,
+      "path": "src/sources/inventories/eucharistic-books/tarazona-1500-canon-missae.json",
+      "sha256": "3e8e681728cee39beb213c6e8a9f7fdc25e36a146899010010a82ee549afa8f8"
+    },
+    {
       "byte_size": 3251,
       "path": "src/sources/inventories/eucharistic-books/tuki-1736-arabic-creed.json",
       "sha256": "1cabeaf38fae7ebf85c4b42f372347795c0012a397c784955d3cb936bedbc9ec"
     },
     {
-      "byte_size": 54962,
+      "byte_size": 55128,
       "path": "src/sources/inventories/eucharistic-stages/alexandrian.json",
-      "sha256": "f47a20513aef0ca65452902da493c5239894e7e7ef9f46df74a4dd76ec334f9a"
+      "sha256": "97441fe26b88257d809707150af832daed5cb52005484783b424c3b82451b3ea"
     },
     {
       "byte_size": 38225,
@@ -198,9 +453,9 @@
       "sha256": "beb74ea19c8deab1eaa6534328adce296525d10b9370bf5adee8c2c3cf933bd7"
     },
     {
-      "byte_size": 43099,
+      "byte_size": 43219,
       "path": "src/sources/inventories/eucharistic-stages/armenian.json",
-      "sha256": "1834b5a154119038cf42b0a899dd5bc562cb5153b3432958445b14ebdc622153"
+      "sha256": "920c99a1a5bea0bcacff9d82b641b44027e5e39c199bb276a917e98835a1602e"
     },
     {
       "byte_size": 7280,
@@ -208,9 +463,9 @@
       "sha256": "acfe5cbc563a73e9a65862e5f07eae729b058ac8109be6e2406c8b0e91c6a2d2"
     },
     {
-      "byte_size": 73252,
+      "byte_size": 73438,
       "path": "src/sources/inventories/eucharistic-stages/byzantine.json",
-      "sha256": "fcf1afcc469c3cacb1b8daaa0e4cdfb3df2e3fd7a9b426adc2dfdb8492e21544"
+      "sha256": "c44da38aa62b6d462840c6c3ef0761e582455723a0d73c0a9b30e9330c33e869"
     },
     {
       "byte_size": 39919,
@@ -223,9 +478,9 @@
       "sha256": "0dd08cd209a64e2f0f9b4eddc6c982b86322d1f7a3e03d097eff0fd09f119746"
     },
     {
-      "byte_size": 45165,
+      "byte_size": 45273,
       "path": "src/sources/inventories/eucharistic-stages/chaldean.json",
-      "sha256": "c117f0343b5fb8e91ab8dbb070ae907f71318f30b822628a2751400c7926efb0"
+      "sha256": "7011a4ab240d0bc153d58d0b3b17801a1c68ea55acfdd7b080916b4e605c39c0"
     },
     {
       "byte_size": 34205,
@@ -233,9 +488,14 @@
       "sha256": "57e7b326112c8796ff98e84d977ece8a382f5afd662e3d3a953059a09ae941a1"
     },
     {
-      "byte_size": 31327,
+      "byte_size": 32761,
       "path": "src/sources/inventories/eucharistic-stages/early-western-round2.json",
-      "sha256": "9e6df55da5942db905df222d9f690e0d0695789df9f6a8df2df8a6dfca86f8e1"
+      "sha256": "df85fad9b9d2c21ee147b319fabd3eb7776f3a293ef8390bc066b5d550e39d6a"
+    },
+    {
+      "byte_size": 214499,
+      "path": "src/sources/inventories/eucharistic-stages/eastern-expansion-2026-11.json",
+      "sha256": "1bf8fb2082f3fa045b38d2b50cc4a640a797ce7fb46da6c1d47bef4bc13edbe2"
     },
     {
       "byte_size": 19457,
@@ -248,14 +508,19 @@
       "sha256": "6bda1d2551caa7405e7e3db7d47c5cad484bcaa62734013c310d1b02bc3c282d"
     },
     {
-      "byte_size": 41742,
+      "byte_size": 41816,
       "path": "src/sources/inventories/eucharistic-stages/french-local-round2.json",
-      "sha256": "01433657b83458c95d77cb31f2cc08e0c581f46aec2ca948bd253583819ad3a7"
+      "sha256": "0f8c50c727cf7ccefe34c596e22f97421306a736646667a69970ea011a973396"
     },
     {
       "byte_size": 23314,
       "path": "src/sources/inventories/eucharistic-stages/german-regional.json",
       "sha256": "514155850a7227b28296c52710c7c460e175e6ea0ce73cfcf05ae5487fc2b085"
+    },
+    {
+      "byte_size": 110516,
+      "path": "src/sources/inventories/eucharistic-stages/global-mission-regional-2026-11.json",
+      "sha256": "20cc207bf0825d29f7fb02b548e792e378b8a297cc2398861e2d751c436f49cf"
     },
     {
       "byte_size": 22214,
@@ -278,14 +543,14 @@
       "sha256": "25774a79a5e66dc22aaa4af1b7b3166b0a7aa21b014fc81a1f01b8b5c958b4c5"
     },
     {
-      "byte_size": 42250,
+      "byte_size": 42329,
       "path": "src/sources/inventories/eucharistic-stages/malabar.json",
-      "sha256": "18dc67367728a9af0cdf919b0eb34b2304da8b44b39b98fcde26756f3e8a18c2"
+      "sha256": "d42d887fb6c6038172acee4ccf9eae9261a805ed318332e6214bd49af34aab30"
     },
     {
-      "byte_size": 44469,
+      "byte_size": 44573,
       "path": "src/sources/inventories/eucharistic-stages/maronite.json",
-      "sha256": "78bcaa7f4b123694e121dcabaa523cde7431477821fde2e619fda81eaeb42965"
+      "sha256": "dfb8c51647511ed816b4fafc8ce6836988fb3da63022f27bfa4ad7dac6e6b3c3"
     },
     {
       "byte_size": 9223,
@@ -358,14 +623,24 @@
       "sha256": "680df02025d8b9d66165a0c0bd878b5c3a6758e9ac21c203e59d676cbe7563b8"
     },
     {
-      "byte_size": 36965,
+      "byte_size": 37065,
       "path": "src/sources/inventories/eucharistic-stages/west-syriac.json",
-      "sha256": "5af5b77cfacbce6570a8abf8b7d3060070301fe8be43afcd3409bd6d9fb71587"
+      "sha256": "25996fd28d40bee62e3a3e3e30ae9ad8f2ac05fae2283be778ef087e8549b0e7"
     },
     {
-      "byte_size": 36699,
+      "byte_size": 36776,
       "path": "src/sources/inventories/eucharistic-stages/western-originals-batch3.json",
-      "sha256": "ba1336179ab6c61b25e7d5154ce775ec53e73a49274ae549dd96c75e694dfde4"
+      "sha256": "6bb9e03066409e825056e1c73d4c6cf64e6824d2ac66759e18c9a88278339480"
+    },
+    {
+      "byte_size": 219438,
+      "path": "src/sources/inventories/eucharistic-stages/western-uses-orders-2026-11.json",
+      "sha256": "b5789f7a542030f15517a8a90164c4ac1df3a9bb5315c6ad2a5e993ee9bb9dba"
+    },
+    {
+      "byte_size": 25738,
+      "path": "src/sources/inventories/eucharistic-tradition-taxonomy-v1.toml",
+      "sha256": "a247a78eac76e6d4736959bbd40a25e30e9133a083ac3e23123070d456695aa8"
     },
     {
       "byte_size": 190275,
@@ -383,14 +658,79 @@
       "sha256": "a441e1d2de4577177e7f0c8243dabb69d1f3051bdc11b3258512d6ec2ac67684"
     },
     {
-      "byte_size": 2737321,
+      "byte_size": 2787068,
       "path": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
-      "sha256": "1d3cebf3198ed070cfc012fba80fe1e0d3796bac426b234efb7230a7e343e924"
+      "sha256": "a56c620a64059b6edd38bffa5ad99269931081204d1767369b9607c16f632f71"
+    },
+    {
+      "byte_size": 665,
+      "path": "src/sources/works/anonymous/karlsruhe-aug253-palimpsest-elmss-1567/editions/medieval-undertext/edition.toml",
+      "sha256": "c4323d96912f275cf0cbe3828fc2fc76de81095a58ccfd404a8797d6015c3853"
+    },
+    {
+      "byte_size": 660,
+      "path": "src/sources/works/anonymous/karlsruhe-aug253-palimpsest-elmss-1568/editions/medieval-undertext/edition.toml",
+      "sha256": "b120b75aa403edbc008943e64d2cd6b23a16fa03ba32fc02b0cd94192ca0dbfa"
+    },
+    {
+      "byte_size": 664,
+      "path": "src/sources/works/anonymous/karlsruhe-aug253-palimpsest-elmss-1569/editions/medieval-undertext/edition.toml",
+      "sha256": "4c84710071ef5eb56f0dee38dd902e63454b7b7f1c1b2189aa0a9b0db1ec9ef1"
+    },
+    {
+      "byte_size": 671,
+      "path": "src/sources/works/anonymous/karlsruhe-aug253-palimpsest-elmss-1570/editions/medieval-undertext/edition.toml",
+      "sha256": "f8b080643571406566d41534f7219fc7cf88f7253a916bd6150032a06f3e25c6"
+    },
+    {
+      "byte_size": 713,
+      "path": "src/sources/works/anonymous/montecassino-271-sacramentary-undertext/editions/circa-700-manuscript/edition.toml",
+      "sha256": "096814e01a7560cf5453ab6d6bc38d2ee208f7e9ccc8862d3e73a53f0368f4a2"
+    },
+    {
+      "byte_size": 978,
+      "path": "src/sources/works/anonymous/sacramentarium-gellonense/editions/manuscript-bnf-latin-12048/edition.toml",
+      "sha256": "3b933847f7b96c84ccd690ba69b32c20b5af38a6e5a0a3494a6e357d773ef712"
+    },
+    {
+      "byte_size": 704,
+      "path": "src/sources/works/anonymous/stockholm-wroclaw-gelasian-sacramentary-fragments/editions/eighth-century-manuscript-witness/edition.toml",
+      "sha256": "db8bcf1827467838806cdb79f3535bc9fb89e228dfae033850032bf2a3f37fdc"
+    },
+    {
+      "byte_size": 710,
+      "path": "src/sources/works/anonymous/stuttgart-100a-sacramentary-undertext/editions/seventh-century-manuscript/edition.toml",
+      "sha256": "6a7fed0bd873bfd693bc7b2624e29edb9193bdc9b901681f7495fbd62d08a144"
+    },
+    {
+      "byte_size": 1658,
+      "path": "src/sources/works/archdiocese-of-besancon/missale-bisuntinense/editions/1485-salins-des-pres-bigot-bodram/edition.toml",
+      "sha256": "21066d8def7ad688b3a2b4b322ba0a135b38b6a5ca4e8a3427e7bdd6cac09f9b"
     },
     {
       "byte_size": 973,
       "path": "src/sources/works/archdiocese-of-braga/missale-bracarense/editions/1538-lisbon-galharde/edition.toml",
       "sha256": "bfb1b8c9827636efcd722d3f587fabc2a75f34354683f93555e383a0ade2fbab"
+    },
+    {
+      "byte_size": 1379,
+      "path": "src/sources/works/archdiocese-of-bremen/missale-bremense/editions/1511-strasbourg-beck/edition.toml",
+      "sha256": "52a8393054626f7a1be4062e66f3170d365cbb9a3ab79e81389098ab3be8a6fe"
+    },
+    {
+      "byte_size": 1006,
+      "path": "src/sources/works/archdiocese-of-milan/missale-ambrosianum/editions/milan-itl-2024/edition.toml",
+      "sha256": "8d89fb59081e982bb52de3e63b2f7ef0cf13fb3c414395efad14f2b31cf2212c"
+    },
+    {
+      "byte_size": 3293,
+      "path": "src/sources/works/archdiocese-of-milan/missale-ambrosianum/editions/milan-pachel-1499/edition.toml",
+      "sha256": "869498d3153c28799bc450cb2999350cb7aa0f9d9290c51d42094edb710c338a"
+    },
+    {
+      "byte_size": 5198,
+      "path": "src/sources/works/archdiocese-of-milan/missale-ambrosianum/editions/milan-sirturi-1640/edition.toml",
+      "sha256": "5cb805764603776cfd8d8e4dc13b9641a238656fa975bb78f9892e9223376529"
     },
     {
       "byte_size": 2595,
@@ -678,9 +1018,84 @@
       "sha256": "6b6d17a622e7c3a22719a0a0dbae8f5aae13ff16b7ae947ff78372ffe4613019"
     },
     {
+      "byte_size": 5532,
+      "path": "src/sources/works/armenian-church/lyturgia-armena/editions/1823-venice-san-lazzaro/artifacts/badarak-anaphora-checked-armenian-bc45ff54/artifact.toml",
+      "sha256": "3be9cb2ab18fd2769fa01a5d50a2080e8ada564f2086bbfa794bacafd5936851"
+    },
+    {
+      "byte_size": 8960,
+      "path": "src/sources/works/armenian-church/lyturgia-armena/editions/1823-venice-san-lazzaro/artifacts/badarak-anaphora-checked-armenian-bc45ff54/text.txt",
+      "sha256": "bc45ff54458a75619a78c3fae7dea122c7d60902929012140bd34c900ca67648"
+    },
+    {
+      "byte_size": 6292983,
+      "path": "src/sources/works/armenian-church/lyturgia-armena/editions/1823-venice-san-lazzaro/artifacts/google-images-8b6985f3/1823-google-images.zip",
+      "sha256": "8b6985f304dda5a513c9f497749f8362cebeac1203105a285bee07b2483ab1ed"
+    },
+    {
+      "byte_size": 3242,
+      "path": "src/sources/works/armenian-church/lyturgia-armena/editions/1823-venice-san-lazzaro/artifacts/google-images-8b6985f3/artifact.toml",
+      "sha256": "91274b0c66b7175e8d51a07ace568e9d24e449ca3d3ef312c1453236f267327e"
+    },
+    {
+      "byte_size": 6288302,
+      "path": "src/sources/works/armenian-church/lyturgia-armena/editions/1823-venice-san-lazzaro/artifacts/google-pdf-81812bd4/1823-google-pages.pdf",
+      "sha256": "81812bd4c2895111788582de47144fabb2500f9f923b22bb441274cbee7a8bb6"
+    },
+    {
+      "byte_size": 3798,
+      "path": "src/sources/works/armenian-church/lyturgia-armena/editions/1823-venice-san-lazzaro/artifacts/google-pdf-81812bd4/artifact.toml",
+      "sha256": "742ce55d772b94b15f1b637d44a39c1b572ca8a8ef59cb28a2e11ad997e45dd7"
+    },
+    {
       "byte_size": 768,
       "path": "src/sources/works/armenian-church/lyturgia-armena/editions/1823-venice-san-lazzaro/edition.toml",
       "sha256": "dbd662af5424cb8754a9e03683eb44cfa8db2ccff0d9c89d6c71b09d05773763"
+    },
+    {
+      "byte_size": 3512,
+      "path": "src/sources/works/armenian-church/lyturgia-armena/editions/1823-venice-san-lazzaro/passages/badarak-anaphora-01-opening-dialogue.toml",
+      "sha256": "92235a698697c1ae2b6dad9d05290f029f57d33259106c3a26cc3b0ffedec10d"
+    },
+    {
+      "byte_size": 3511,
+      "path": "src/sources/works/armenian-church/lyturgia-armena/editions/1823-venice-san-lazzaro/passages/badarak-anaphora-02-preface-thanksgiving.toml",
+      "sha256": "c393bf593e9260b20ec29605a79089fe2104dc0f4ac678a30eaf92d424f8f3ee"
+    },
+    {
+      "byte_size": 3505,
+      "path": "src/sources/works/armenian-church/lyturgia-armena/editions/1823-venice-san-lazzaro/passages/badarak-anaphora-03-sanctus.toml",
+      "sha256": "f101b7908ca118fa1a2c46840a6f68cb548d862155b07b489b6bc254da931bea"
+    },
+    {
+      "byte_size": 3590,
+      "path": "src/sources/works/armenian-church/lyturgia-armena/editions/1823-venice-san-lazzaro/passages/badarak-anaphora-04-post-sanctus-institution.toml",
+      "sha256": "b3b76d4c1cda4bc921830ab66e9b04d4b12826547c6f7cbc9a8c645f9775b1e3"
+    },
+    {
+      "byte_size": 3606,
+      "path": "src/sources/works/armenian-church/lyturgia-armena/editions/1823-venice-san-lazzaro/passages/badarak-anaphora-05-anamnesis-oblation.toml",
+      "sha256": "b79229f541ae5264ec91092c4c70409d1131eaa185d7252718dad8b92b04af9c"
+    },
+    {
+      "byte_size": 3587,
+      "path": "src/sources/works/armenian-church/lyturgia-armena/editions/1823-venice-san-lazzaro/passages/badarak-anaphora-06-epiclesis.toml",
+      "sha256": "eb1fbd456331dee7d1613f663992483d0a14a6dff2b7e9a7d1223cc7a1854ff7"
+    },
+    {
+      "byte_size": 1930,
+      "path": "src/sources/works/armenian-church/lyturgia-armena/editions/1823-venice-san-lazzaro/passages/badarak-anaphora-facsimile.toml",
+      "sha256": "0204e6cb6e456d2fee3bede1ebe139533dde659460437e0a87bcf2ee0df0e6aa"
+    },
+    {
+      "byte_size": 1112,
+      "path": "src/sources/works/armenian-church/lyturgia-armena/editions/1823-venice-san-lazzaro/passages/title.toml",
+      "sha256": "29fe453f7b52d8f044c6f3e7c4a0aea4704131fbae75dc1e2b5f35a0a93f9d59"
+    },
+    {
+      "byte_size": 646,
+      "path": "src/sources/works/armenian-church/lyturgia-armena/work.toml",
+      "sha256": "33b4582d5203c586a13ed191767cdbf4d950c22c6dd9df9e01442fc41ce3902e"
     },
     {
       "byte_size": 668,
@@ -688,9 +1103,84 @@
       "sha256": "7c0c0474ec31409afc1fff115c3383843ce90a32d512a97c2a7fa5c28e4c21e1"
     },
     {
+      "byte_size": 5474,
+      "path": "src/sources/works/armenian-church/ordo-divinae-missae-armenorum/editions/1642-rome-propaganda/artifacts/badarak-anaphora-checked-armenian-60a300f0/artifact.toml",
+      "sha256": "c6d6573f19cf74b2e54728550ecc959b46dd519d4023909cfa76cc83c81628fb"
+    },
+    {
+      "byte_size": 8884,
+      "path": "src/sources/works/armenian-church/ordo-divinae-missae-armenorum/editions/1642-rome-propaganda/artifacts/badarak-anaphora-checked-armenian-60a300f0/text.txt",
+      "sha256": "60a300f0ea17c0b79a8b20ce39c048014bf92e5253c1a6192ffbc2b7db07cd59"
+    },
+    {
+      "byte_size": 13687924,
+      "path": "src/sources/works/armenian-church/ordo-divinae-missae-armenorum/editions/1642-rome-propaganda/artifacts/google-images-e1392a80/1642-google-images.zip",
+      "sha256": "e1392a803de2944f0561f1bfde146e8c037a6099685a2715b2a89edd5bd68eb2"
+    },
+    {
+      "byte_size": 3326,
+      "path": "src/sources/works/armenian-church/ordo-divinae-missae-armenorum/editions/1642-rome-propaganda/artifacts/google-images-e1392a80/artifact.toml",
+      "sha256": "22c47d0f247c85c02b76744b1d98ecbfd2e1ef5162bdd8dfd68a2c127ef0acbb"
+    },
+    {
+      "byte_size": 13691171,
+      "path": "src/sources/works/armenian-church/ordo-divinae-missae-armenorum/editions/1642-rome-propaganda/artifacts/google-pdf-9faf9690/1642-google-pages.pdf",
+      "sha256": "9faf9690874ce2797d0cf1e7344711dbf2e76da33082488e0685e881e2d5a8bc"
+    },
+    {
+      "byte_size": 3894,
+      "path": "src/sources/works/armenian-church/ordo-divinae-missae-armenorum/editions/1642-rome-propaganda/artifacts/google-pdf-9faf9690/artifact.toml",
+      "sha256": "c9ab294ccca5950d7996e27eb155f72408604db0d63df6bfec718fae96de8ae2"
+    },
+    {
       "byte_size": 664,
       "path": "src/sources/works/armenian-church/ordo-divinae-missae-armenorum/editions/1642-rome-propaganda/edition.toml",
       "sha256": "f1bc0617cef8203011298b36c3acdd4882e2705c2fbb5315f837d2daf975e64c"
+    },
+    {
+      "byte_size": 3522,
+      "path": "src/sources/works/armenian-church/ordo-divinae-missae-armenorum/editions/1642-rome-propaganda/passages/badarak-anaphora-01-opening-dialogue.toml",
+      "sha256": "1d2b833075cd079f47f2093c66510fd4220372313b8b928b474a560941fd4dc4"
+    },
+    {
+      "byte_size": 3509,
+      "path": "src/sources/works/armenian-church/ordo-divinae-missae-armenorum/editions/1642-rome-propaganda/passages/badarak-anaphora-02-preface-thanksgiving.toml",
+      "sha256": "f20524e6480786ce67411a1979f5dca4b1357ffb451dcc8e25f3136c4cb77d26"
+    },
+    {
+      "byte_size": 3511,
+      "path": "src/sources/works/armenian-church/ordo-divinae-missae-armenorum/editions/1642-rome-propaganda/passages/badarak-anaphora-03-sanctus.toml",
+      "sha256": "4c0373d01346eb79527a7d18682e1edc8cbe50fca53a97967ee6bb76d9600766"
+    },
+    {
+      "byte_size": 3617,
+      "path": "src/sources/works/armenian-church/ordo-divinae-missae-armenorum/editions/1642-rome-propaganda/passages/badarak-anaphora-04-post-sanctus-institution.toml",
+      "sha256": "c28abda8919351cee3ce3fb47007383919eadc99f26f4150840d2838f89647cc"
+    },
+    {
+      "byte_size": 3611,
+      "path": "src/sources/works/armenian-church/ordo-divinae-missae-armenorum/editions/1642-rome-propaganda/passages/badarak-anaphora-05-anamnesis-oblation.toml",
+      "sha256": "441a5dbcda342f0ef94e0ef72a6f1e7b7823835bc0cf43002f9f92009488fa26"
+    },
+    {
+      "byte_size": 3547,
+      "path": "src/sources/works/armenian-church/ordo-divinae-missae-armenorum/editions/1642-rome-propaganda/passages/badarak-anaphora-06-epiclesis.toml",
+      "sha256": "4aa53663d3cf0caf648140640e2e55b37b0651b14ab38d9142808cdfac9793d1"
+    },
+    {
+      "byte_size": 1882,
+      "path": "src/sources/works/armenian-church/ordo-divinae-missae-armenorum/editions/1642-rome-propaganda/passages/badarak-anaphora-facsimile.toml",
+      "sha256": "efc65eb04a1f17b887e8eab0cc3773f49ea33143c8c604096b7554306f964616"
+    },
+    {
+      "byte_size": 1151,
+      "path": "src/sources/works/armenian-church/ordo-divinae-missae-armenorum/editions/1642-rome-propaganda/passages/title.toml",
+      "sha256": "2ea471bd92ad9bc9ed8146de19f2a8923dcf194a04159f1da523cb54a842c95e"
+    },
+    {
+      "byte_size": 610,
+      "path": "src/sources/works/armenian-church/ordo-divinae-missae-armenorum/work.toml",
+      "sha256": "b7870b5c8c591a668a10d98f9acabe037fb13ab4b568400e19e11f160c613b85"
     },
     {
       "byte_size": 597,
@@ -903,9 +1393,134 @@
       "sha256": "7bb097f4c19699a224a5bf589d039b7b39a3aad66d9db0e3d70845f353df5670"
     },
     {
+      "byte_size": 3497,
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/canon-memento-checked-latin-784ee4c8/artifact.toml",
+      "sha256": "c015e540178acafec162b7ece65bd8a12fbb552863f0b5bd3033b4fba81b7396"
+    },
+    {
+      "byte_size": 302,
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/canon-memento-checked-latin-784ee4c8/text.txt",
+      "sha256": "784ee4c890ecfc846d774736dab9d80b0a80b0dded874df046eb7762a41f5d9f"
+    },
+    {
+      "byte_size": 3238,
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/canon-missae-checked-latin-76cd232c/artifact.toml",
+      "sha256": "71449e1604efe8a8ebab1a2d79ec2074a0da4401d6c9a37d086ae479e03c2705"
+    },
+    {
+      "byte_size": 3981,
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/canon-missae-checked-latin-76cd232c/text.txt",
+      "sha256": "76cd232cf08057cea6df20baa9fa746ea04e157570fafc177f583322529bfd7f"
+    },
+    {
+      "byte_size": 5511,
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/ia-pdf-96fd93c7/artifact.toml",
+      "sha256": "13f26a56084ef752aed19acc46d4ac74dce893174409b24a85646c9805bb2cd6"
+    },
+    {
+      "byte_size": 28655931,
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/ia-pdf-96fd93c7/source.pdf",
+      "sha256": "96fd93c73f8c9df47b6911981155b8b02cf2f2183ca6e87baad15128682d8681"
+    },
+    {
+      "byte_size": 2582,
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/pdf-text-layout-6ca97fd7/artifact.toml",
+      "sha256": "4e8b9130e03978b916d6ecc861e7b8843db827d29b7572bff729f145b64a20c5"
+    },
+    {
+      "byte_size": 1063448,
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/pdf-text-layout-6ca97fd7/source.txt",
+      "sha256": "6ca97fd74dee383bec70078151eaa0dc918a2b310389577d30690f4e503fdb53"
+    },
+    {
       "byte_size": 740,
       "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/edition.toml",
       "sha256": "13a47b3f68978894a35e8836fa4f4fc119c09e3ba3c45bddf69158a7694f5578"
+    },
+    {
+      "byte_size": 1621,
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/passages/canon-memento-domine.toml",
+      "sha256": "4ee45a55bb5774631106d88750aef5828e2596ce242991e57f35af7446734f56"
+    },
+    {
+      "byte_size": 1726,
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/passages/canon-missae-communicantes.toml",
+      "sha256": "d978577cdbd8318874b032d4dd6e97a951c038193dcc722a3c226a4561b20ff9"
+    },
+    {
+      "byte_size": 1750,
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/passages/canon-missae-concluding-response.toml",
+      "sha256": "3ff7a2971f185378d2c64377f6ba38bb734c201641537550050450d4403596c1"
+    },
+    {
+      "byte_size": 1333,
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/passages/canon-missae-facsimile.toml",
+      "sha256": "1dce2170f95edcfe6bfb088276ac21be948bfbf98d886fd465e1a298766d4bd3"
+    },
+    {
+      "byte_size": 1720,
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/passages/canon-missae-hanc-igitur.toml",
+      "sha256": "e5d64184f77b40602250d17f70a2e7a631d32660ec240a1e92def463a1467fcd"
+    },
+    {
+      "byte_size": 1732,
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/passages/canon-missae-memento-vivorum.toml",
+      "sha256": "a12dc0258a1474e1b1d0a595c7e57ab4a81d980c0fb04a8e3fe1a62f0f625a64"
+    },
+    {
+      "byte_size": 1729,
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/passages/canon-missae-nobis-quoque.toml",
+      "sha256": "98010cdbd1a30d3d79a7046fdd75ddb8e3f4d93a3eb22d8668f9fa2718d9994a"
+    },
+    {
+      "byte_size": 1720,
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/passages/canon-missae-per-ipsum.toml",
+      "sha256": "b3aaa421fc211c012ce6bdf10ed3fe6517e384d1e11c27abee7960f1496c87af"
+    },
+    {
+      "byte_size": 1717,
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/passages/canon-missae-per-quem.toml",
+      "sha256": "bdee80bb0075e1d9c3f4eb9f3de11ebbb0fc596d05a6f5852933468a05d8c7f0"
+    },
+    {
+      "byte_size": 1732,
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/passages/canon-missae-quam-oblationem.toml",
+      "sha256": "75ee3765e4cc7d0475f5485288d6a54b0a8546c11e50822d5edadc17ef7358bc"
+    },
+    {
+      "byte_size": 1717,
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/passages/canon-missae-qui-pridie.toml",
+      "sha256": "c248da24b96cc0e3726d7cb757da6e6850ebfd6f279c1274a99d5a9c844c9f16"
+    },
+    {
+      "byte_size": 1720,
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/passages/canon-missae-simili-modo.toml",
+      "sha256": "fc9ce5a63dad29ce6825eaefb190f0d3af3a8ebec51dd4a41333cdd8d1eeb931"
+    },
+    {
+      "byte_size": 1720,
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/passages/canon-missae-supplices.toml",
+      "sha256": "93ac53c5c0f21e74c8e8f45a87508cae0d95a133ca0bf88c332b85cf4dd2191a"
+    },
+    {
+      "byte_size": 1721,
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/passages/canon-missae-supra-quae.toml",
+      "sha256": "f488a75897149c03df68518baa8cc6c6f0c0f06961ee96261d7070c1fcae7455"
+    },
+    {
+      "byte_size": 1714,
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/passages/canon-missae-te-igitur.toml",
+      "sha256": "5947a50579d5d91db63d4db56f261f572cf3c87c58ceb59becaaf9ddfad78101"
+    },
+    {
+      "byte_size": 1732,
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/passages/canon-missae-unde-et-memores.toml",
+      "sha256": "4c73eab026a1f833590ec09073675788dfc4f688a9b6f86ad01373df9d7b9b95"
+    },
+    {
+      "byte_size": 667,
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/work.toml",
+      "sha256": "a801fe981738068dc5f02764d856715549c8ee63e28b6635973242b765eb79e3"
     },
     {
       "byte_size": 5704,
@@ -916,6 +1531,16 @@
       "byte_size": 554,
       "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/canon-hanc-igitur-checked-latin-7465da67/text.txt",
       "sha256": "7465da67befc59c3576681e5001d1bb33a03b3f72f80a2d513c3b165a5b9dd67"
+    },
+    {
+      "byte_size": 4084,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/canon-missae-checked-latin-8d993030/artifact.toml",
+      "sha256": "b1bd35d90de468bdfe2fad1811ce45695a9c7e51b9509515e62860ba844cd012"
+    },
+    {
+      "byte_size": 7920,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/canon-missae-checked-latin-8d993030/text.txt",
+      "sha256": "8d99303080053570c3b0447cfa33df54756d1d615ada35c4d1fefca1d90d910b"
     },
     {
       "byte_size": 3914,
@@ -968,6 +1593,91 @@
       "sha256": "cac0d3d95fc9c244179bbfbd0c56fc2a1b96861a48ca09e4560d72a68bab432b"
     },
     {
+      "byte_size": 2193,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/passages/canon-missae-communicantes.toml",
+      "sha256": "18e04c8c54971272b7520b47070e2291c3ec77e0ad67d0c97b21741ffe7c2ded"
+    },
+    {
+      "byte_size": 2215,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/passages/canon-missae-concluding-response.toml",
+      "sha256": "3f778f1de44124aeb07114ad9604a047faec28a05f6c68ec7cbc9f8baa16d375"
+    },
+    {
+      "byte_size": 1645,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/passages/canon-missae-facsimile.toml",
+      "sha256": "8f5ce96f0ec7bdb7c872e63b154aac4487e802ed84ffab89e21109272213e8fe"
+    },
+    {
+      "byte_size": 2189,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/passages/canon-missae-hanc-igitur.toml",
+      "sha256": "51f090d80658ae514679e32b2a69fab3699cc64ee762b71ff70c324d98cbe1d4"
+    },
+    {
+      "byte_size": 2215,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/passages/canon-missae-memento-defunctorum.toml",
+      "sha256": "1fff5ad1a3f60cabbed7e178f8d3ac89352d1d509181681acfff2d680538804f"
+    },
+    {
+      "byte_size": 2197,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/passages/canon-missae-memento-vivorum.toml",
+      "sha256": "86195ff51d88847037b23eed28e752a9558fe7fa4ff3835f42ced4640bb73c81"
+    },
+    {
+      "byte_size": 2194,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/passages/canon-missae-nobis-quoque.toml",
+      "sha256": "e2db07b63cee96e13620f593acf0f72a127d3c14fc37d8330d354685d5235110"
+    },
+    {
+      "byte_size": 2194,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/passages/canon-missae-opening-rubric.toml",
+      "sha256": "9c06bd642f6ace44fcec46766b7e02054966b9e66a1c74a32ffb2df685f236e8"
+    },
+    {
+      "byte_size": 2185,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/passages/canon-missae-per-ipsum.toml",
+      "sha256": "40ae0af48fd522fef4351beea9428028c2e91481e215917936323ce9c0a0bf46"
+    },
+    {
+      "byte_size": 2182,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/passages/canon-missae-per-quem.toml",
+      "sha256": "c5ad7b98e75078f590066c5dfcb55d19bc9f1386714cb415790db7b237d9c865"
+    },
+    {
+      "byte_size": 2201,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/passages/canon-missae-quam-oblationem.toml",
+      "sha256": "36d37127de2b83ce26383977c839a94bbfa858985dde3c616516d159ba42965a"
+    },
+    {
+      "byte_size": 2186,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/passages/canon-missae-qui-pridie.toml",
+      "sha256": "40ada95e0efee7bb66911416696dbac8ff9cccfa666ef250e3d45e00193c7a17"
+    },
+    {
+      "byte_size": 2189,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/passages/canon-missae-simili-modo.toml",
+      "sha256": "d5449db820da1992e29b62bc24f0c87eb198744076b90df0dec46771f905adfe"
+    },
+    {
+      "byte_size": 2185,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/passages/canon-missae-supplices.toml",
+      "sha256": "18dece79e17a982ffde0fe43e6817a88640c5c821543310a743092f291ff476b"
+    },
+    {
+      "byte_size": 2188,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/passages/canon-missae-supra-quae.toml",
+      "sha256": "bd8c3d814a3b977196b81c39c68cdf29a0b8d236849a4003ed2a29df636ec80e"
+    },
+    {
+      "byte_size": 2179,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/passages/canon-missae-te-igitur.toml",
+      "sha256": "aaa105c5e3fcca8d07168c20cf01393da5010fee30e8b4e76981c02edcfbd2da"
+    },
+    {
+      "byte_size": 2201,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/passages/canon-missae-unde-et-memores.toml",
+      "sha256": "952fbcfa84a1e639dbb604ab9cb1437a72e9a5518c5977abbcc47cf887093e08"
+    },
+    {
       "byte_size": 1458,
       "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/passages/canon-quam-oblationem.toml",
       "sha256": "96ffefbc1220d34fdbeeb11ed5879e03a6a42a9f92808c958cb5ed42d2e0c61f"
@@ -983,14 +1693,159 @@
       "sha256": "51ae2664ee5b8806a428a670b7aede9778b9bf194b15d2dec9764b2f63e3d11c"
     },
     {
+      "byte_size": 2961,
+      "path": "src/sources/works/chaldean-catholic-church/missale/editions/1767-rome-propaganda/artifacts/addai-mari-checked-syriac-ab5d3286/artifact.toml",
+      "sha256": "bec962a71de69f5261c26a69d3a0b92bf8313a4b1b73a128d38d1e4a0de64d1c"
+    },
+    {
+      "byte_size": 4829,
+      "path": "src/sources/works/chaldean-catholic-church/missale/editions/1767-rome-propaganda/artifacts/addai-mari-checked-syriac-ab5d3286/text.txt",
+      "sha256": "ab5d3286f7b6c2bd2fee90f0804606d2905cfed39fc0cae96313871c97986268"
+    },
+    {
+      "byte_size": 2119,
+      "path": "src/sources/works/chaldean-catholic-church/missale/editions/1767-rome-propaganda/artifacts/google-scan-pdf-4d048b31/artifact.toml",
+      "sha256": "441e5dd5ef885c3b0ee13f34e451a63a5bd025696b6ba18ef452352ec64bee54"
+    },
+    {
+      "byte_size": 37928725,
+      "path": "src/sources/works/chaldean-catholic-church/missale/editions/1767-rome-propaganda/artifacts/google-scan-pdf-4d048b31/scan.pdf",
+      "sha256": "4d048b311c7f585e3824061d2d00727ad2e6e236f86ae6a876e4c36036348b5e"
+    },
+    {
       "byte_size": 986,
       "path": "src/sources/works/chaldean-catholic-church/missale/editions/1767-rome-propaganda/edition.toml",
       "sha256": "5a78df6dd3413a32bfabfad1da4a343b39d11bab0681d3bc0bf3f5d7c12f1039"
     },
     {
+      "byte_size": 1775,
+      "path": "src/sources/works/chaldean-catholic-church/missale/editions/1767-rome-propaganda/passages/addai-mari-01-opening-dialogue.toml",
+      "sha256": "82522c2c15519cb2704036370321f8035f915fda919a3625744b88d0adfc4613"
+    },
+    {
+      "byte_size": 1778,
+      "path": "src/sources/works/chaldean-catholic-church/missale/editions/1767-rome-propaganda/passages/addai-mari-02-preface-gehanta-1.toml",
+      "sha256": "86759b359bffe22526a191e8e6f5dfc73395ef64038c40c1d3ac5334eb71582b"
+    },
+    {
+      "byte_size": 1748,
+      "path": "src/sources/works/chaldean-catholic-church/missale/editions/1767-rome-propaganda/passages/addai-mari-03-sanctus.toml",
+      "sha256": "3c171e576b7700bf6a645c20f5817191aaa8e54f16a89d3d303eebe36960b504"
+    },
+    {
+      "byte_size": 1793,
+      "path": "src/sources/works/chaldean-catholic-church/missale/editions/1767-rome-propaganda/passages/addai-mari-04-post-sanctus-gehanta-2.toml",
+      "sha256": "18e35142546d85b54132f6a149a6b8129bee8cbac2f6eaf33ae5e9dfdcbc2037"
+    },
+    {
+      "byte_size": 1793,
+      "path": "src/sources/works/chaldean-catholic-church/missale/editions/1767-rome-propaganda/passages/addai-mari-05-intercession-gehanta-3.toml",
+      "sha256": "24d953a189aaabb8adf162637f3178f217c5a7c63a20217297a5f9aba47c8597"
+    },
+    {
+      "byte_size": 1781,
+      "path": "src/sources/works/chaldean-catholic-church/missale/editions/1767-rome-propaganda/passages/addai-mari-06-anamnesis-oblation.toml",
+      "sha256": "44fe48ba64c560ec81ce67e95de0414f16e59609bfeb8e59f3c9e1fc6bd3b0d1"
+    },
+    {
+      "byte_size": 1787,
+      "path": "src/sources/works/chaldean-catholic-church/missale/editions/1767-rome-propaganda/passages/addai-mari-07-epiclesis-and-qanona.toml",
+      "sha256": "2fb53dde1567308fc2ef63bfaa70d64bcbe306c759e8c856426a27d4f21e8782"
+    },
+    {
+      "byte_size": 1790,
+      "path": "src/sources/works/chaldean-catholic-church/missale/editions/1767-rome-propaganda/passages/addai-mari-08-institution-narrative.toml",
+      "sha256": "009eba78fb12ad8aa736ce82f44d4cc876bd3e57c01e54d210b99f927badbc59"
+    },
+    {
+      "byte_size": 1171,
+      "path": "src/sources/works/chaldean-catholic-church/missale/editions/1767-rome-propaganda/passages/addai-mari-facsimile.toml",
+      "sha256": "5bd2cea443135be607ea62cfea1f7c65a67eef930b42cb0ba0c5c3e973c20a11"
+    },
+    {
+      "byte_size": 900,
+      "path": "src/sources/works/chaldean-catholic-church/missale/editions/1767-rome-propaganda/passages/title.toml",
+      "sha256": "bfc53d12856e56eb012fee0a3c190392d4874db3d18f7327a1d46bd0cbb3723e"
+    },
+    {
+      "byte_size": 2973,
+      "path": "src/sources/works/chaldean-catholic-church/missale/editions/1901-mosul-dominican/artifacts/addai-mari-checked-syriac-441ec525/artifact.toml",
+      "sha256": "19c8f9f68b36a55df4b90551285f0de10b14eb61ca1e260497ab189af8f3e96e"
+    },
+    {
+      "byte_size": 5767,
+      "path": "src/sources/works/chaldean-catholic-church/missale/editions/1901-mosul-dominican/artifacts/addai-mari-checked-syriac-441ec525/text.txt",
+      "sha256": "441ec5252608627e64aa3fa0d777f6608a419c1ea9370c278bdb5e053d580ad7"
+    },
+    {
+      "byte_size": 2486,
+      "path": "src/sources/works/chaldean-catholic-church/missale/editions/1901-mosul-dominican/artifacts/bonn-scan-pdf-dbc2a822/artifact.toml",
+      "sha256": "1ec549fc2c554c880bf01e382357218cd43c645a36988dd23be10f48c83f037e"
+    },
+    {
+      "byte_size": 25095094,
+      "path": "src/sources/works/chaldean-catholic-church/missale/editions/1901-mosul-dominican/artifacts/bonn-scan-pdf-dbc2a822/scan.pdf",
+      "sha256": "dbc2a822e960ec581479e864968f6a4441dcf7ccf78fddd3fa28e89ef6a8abca"
+    },
+    {
       "byte_size": 1068,
       "path": "src/sources/works/chaldean-catholic-church/missale/editions/1901-mosul-dominican/edition.toml",
       "sha256": "df14696ed3848e77279a6040b5cc48f3d5af5122a9198aca5bf89c6ab37e1bf7"
+    },
+    {
+      "byte_size": 1776,
+      "path": "src/sources/works/chaldean-catholic-church/missale/editions/1901-mosul-dominican/passages/addai-mari-01-opening-dialogue.toml",
+      "sha256": "20517ae469a9b937703b2f3cdf0650655bb35f84b428554ffcd887b0ab23e5de"
+    },
+    {
+      "byte_size": 1779,
+      "path": "src/sources/works/chaldean-catholic-church/missale/editions/1901-mosul-dominican/passages/addai-mari-02-preface-gehanta-1.toml",
+      "sha256": "812a776ca7dd507d429696e18169914f4998545cf963ef5dcb511446ae2e82a3"
+    },
+    {
+      "byte_size": 1749,
+      "path": "src/sources/works/chaldean-catholic-church/missale/editions/1901-mosul-dominican/passages/addai-mari-03-sanctus.toml",
+      "sha256": "03b59386fa6231296a82b70f811d34b448475737d3655c7225a99bae671d2b82"
+    },
+    {
+      "byte_size": 1794,
+      "path": "src/sources/works/chaldean-catholic-church/missale/editions/1901-mosul-dominican/passages/addai-mari-04-post-sanctus-gehanta-2.toml",
+      "sha256": "9156a13e644b7b5a68adadf44b7722a0f813fc75a4b388170a9c6a15723c74ae"
+    },
+    {
+      "byte_size": 1794,
+      "path": "src/sources/works/chaldean-catholic-church/missale/editions/1901-mosul-dominican/passages/addai-mari-05-intercession-gehanta-3.toml",
+      "sha256": "620efca08313deb39cc77a22e02e8dd5d38e37c252f78c8731fc175d0743bf39"
+    },
+    {
+      "byte_size": 1782,
+      "path": "src/sources/works/chaldean-catholic-church/missale/editions/1901-mosul-dominican/passages/addai-mari-06-anamnesis-oblation.toml",
+      "sha256": "82886660ac23ef91950e3de999ed6d98eb301173fdf4d7cf7068774ee54be06b"
+    },
+    {
+      "byte_size": 1788,
+      "path": "src/sources/works/chaldean-catholic-church/missale/editions/1901-mosul-dominican/passages/addai-mari-07-epiclesis-and-qanona.toml",
+      "sha256": "1c93dd1301c48141a072b01f3b01ada9e4750fb238525972b1f2b2f8d2007d59"
+    },
+    {
+      "byte_size": 1791,
+      "path": "src/sources/works/chaldean-catholic-church/missale/editions/1901-mosul-dominican/passages/addai-mari-08-institution-narrative.toml",
+      "sha256": "b850a7b9ccbf9bfa10bfbcfb6bf32e2116147c907e1900b7cd864289b5965469"
+    },
+    {
+      "byte_size": 1176,
+      "path": "src/sources/works/chaldean-catholic-church/missale/editions/1901-mosul-dominican/passages/addai-mari-facsimile.toml",
+      "sha256": "b0f8b1781da74c9eba1b7901d74445a89c91ca88ecae1e4a175781d0861c489f"
+    },
+    {
+      "byte_size": 1171,
+      "path": "src/sources/works/chaldean-catholic-church/missale/editions/1901-mosul-dominican/passages/addai-mari-intercession.toml",
+      "sha256": "ee57171b050daab98ad194925f3edc285aa41ddfd05717d76671aa818fa1db32"
+    },
+    {
+      "byte_size": 703,
+      "path": "src/sources/works/chaldean-catholic-church/missale/work.toml",
+      "sha256": "b7387ce63943719edad82dbc2eda22817cf0ed07b9f8ede251b34e75608a9ce9"
     },
     {
       "byte_size": 1127,
@@ -2693,6 +3548,16 @@
       "sha256": "dd71e496ae9840d23d16a149ce5a95541049b5d8a8c6a2c7931bbb3039085daa"
     },
     {
+      "byte_size": 4569,
+      "path": "src/sources/works/coptic-catholic-church/missale-copto-arabicum/editions/1736-rome-tuki/artifacts/basil-anaphora-checked-coptic-d4a0d5a2/artifact.toml",
+      "sha256": "bd3c0244b99528ec15d3aa3a703a111ec01595090fd08579e788f4afdd18f576"
+    },
+    {
+      "byte_size": 19589,
+      "path": "src/sources/works/coptic-catholic-church/missale-copto-arabicum/editions/1736-rome-tuki/artifacts/basil-anaphora-checked-coptic-d4a0d5a2/text.txt",
+      "sha256": "d4a0d5a2f49f8d7aded47a0d7ebe00ae0d3b0b5487eb8e2b7fc6d619cea7d5c4"
+    },
+    {
       "byte_size": 81657379,
       "path": "src/sources/works/coptic-catholic-church/missale-copto-arabicum/editions/1736-rome-tuki/artifacts/bonn-images-a09b6368/1736-bonn-images.zip",
       "sha256": "a09b63688e35e0b4a372063ea1f26bdf5f990686c17358483820383f42461eed"
@@ -2726,6 +3591,51 @@
       "byte_size": 1280,
       "path": "src/sources/works/coptic-catholic-church/missale-copto-arabicum/editions/1736-rome-tuki/edition.toml",
       "sha256": "05ef09bb03bc76e3f818cf46c191599ba61f85e88f3470eb8bab7b0a836b6607"
+    },
+    {
+      "byte_size": 2544,
+      "path": "src/sources/works/coptic-catholic-church/missale-copto-arabicum/editions/1736-rome-tuki/passages/basil-anaphora-coptic-anamnesis.toml",
+      "sha256": "4fb50349250378d5c7292937a76da204825e20b3bb68e823ab225b54685364b7"
+    },
+    {
+      "byte_size": 2544,
+      "path": "src/sources/works/coptic-catholic-church/missale-copto-arabicum/editions/1736-rome-tuki/passages/basil-anaphora-coptic-epiclesis.toml",
+      "sha256": "de7fe9a16920b7ee92a0393a404b2ed09de51157d1e1af6deb61cba98f29727b"
+    },
+    {
+      "byte_size": 2578,
+      "path": "src/sources/works/coptic-catholic-church/missale-copto-arabicum/editions/1736-rome-tuki/passages/basil-anaphora-coptic-institution-narrative.toml",
+      "sha256": "0f46dd3ffb000759e8db705cbedcd10c43e64b43e5ea02ce73b56a7b876a4d9e"
+    },
+    {
+      "byte_size": 2559,
+      "path": "src/sources/works/coptic-catholic-church/missale-copto-arabicum/editions/1736-rome-tuki/passages/basil-anaphora-coptic-opening-dialogue.toml",
+      "sha256": "a7c173d3e6661ea658fc0962d87d57e8cc6fb08d35ace47664c6c9de3b85f8a5"
+    },
+    {
+      "byte_size": 2549,
+      "path": "src/sources/works/coptic-catholic-church/missale-copto-arabicum/editions/1736-rome-tuki/passages/basil-anaphora-coptic-post-sanctus.toml",
+      "sha256": "79e4e9dce2e17e6eb31666355d369044f7d409a6cc7378afc4766a283c746192"
+    },
+    {
+      "byte_size": 2564,
+      "path": "src/sources/works/coptic-catholic-church/missale-copto-arabicum/editions/1736-rome-tuki/passages/basil-anaphora-coptic-pre-sanctus-hymns.toml",
+      "sha256": "2aac0f87b2ca5c431a27e5e0c011965d22bd70759e3cc1b9a039bd089f4989c3"
+    },
+    {
+      "byte_size": 2534,
+      "path": "src/sources/works/coptic-catholic-church/missale-copto-arabicum/editions/1736-rome-tuki/passages/basil-anaphora-coptic-preface.toml",
+      "sha256": "2d3cf76aee0f53ae13a6926075a152addfedcd629b509a63d2cc31da08e3e839"
+    },
+    {
+      "byte_size": 2534,
+      "path": "src/sources/works/coptic-catholic-church/missale-copto-arabicum/editions/1736-rome-tuki/passages/basil-anaphora-coptic-sanctus.toml",
+      "sha256": "4d85d1f471195ed31f1de7ea851754de8457b366b4a4e9469dd3f45a64e8a566"
+    },
+    {
+      "byte_size": 1856,
+      "path": "src/sources/works/coptic-catholic-church/missale-copto-arabicum/editions/1736-rome-tuki/passages/basil-anaphora-facsimile.toml",
+      "sha256": "74f807f63530ee9bc2c4e22136fca89f0ea65e77a4363bc8f6710a633985c36c"
     },
     {
       "byte_size": 2452,
@@ -2763,9 +3673,249 @@
       "sha256": "5b4a6d0e7998d9413ac5577ec19e663e28bbaa4130c69eb6e7d8d5ded683bb0c"
     },
     {
+      "byte_size": 1284,
+      "path": "src/sources/works/diocese-of-liege/missale-leodiense/editions/1499-paris-higman-bsb00075725/edition.toml",
+      "sha256": "638fb303220878b8514eb9abaed56ef314347111865c52378fc8a3e61557314d"
+    },
+    {
+      "byte_size": 3658,
+      "path": "src/sources/works/diocese-of-paris/missale-parisiense/editions/1481-paris-dupre-huym/artifacts/canon-missae-checked-latin-e36b38ba/artifact.toml",
+      "sha256": "f3421160338b3e9fe314d1f9b355587f99197c2a797ee749cc3b53b1f1a045f9"
+    },
+    {
+      "byte_size": 5824,
+      "path": "src/sources/works/diocese-of-paris/missale-parisiense/editions/1481-paris-dupre-huym/artifacts/canon-missae-checked-latin-e36b38ba/text.txt",
+      "sha256": "e36b38babd97110a64910d3878dc2791fa0b2795477de5793d5e8700973b7c27"
+    },
+    {
+      "byte_size": 2277,
+      "path": "src/sources/works/diocese-of-paris/missale-parisiense/editions/1481-paris-dupre-huym/artifacts/ia-complete-pdf-619ed4e7/artifact.toml",
+      "sha256": "a5b616210f7d6fec19684493ea63b4323625c495fa515a7b87761a22235d2194"
+    },
+    {
+      "byte_size": 27320157,
+      "path": "src/sources/works/diocese-of-paris/missale-parisiense/editions/1481-paris-dupre-huym/artifacts/ia-complete-pdf-619ed4e7/source.pdf",
+      "sha256": "619ed4e7e2659fc54a5068f3cb39030c07f4c94e027c79081cb750d39b9cf547"
+    },
+    {
       "byte_size": 904,
       "path": "src/sources/works/diocese-of-paris/missale-parisiense/editions/1481-paris-dupre-huym/edition.toml",
       "sha256": "6e23298b0e9cea527e2a04b3ebb61def76b1c01fd87feb9ad6a4c8aa9c1f44b9"
+    },
+    {
+      "byte_size": 2106,
+      "path": "src/sources/works/diocese-of-paris/missale-parisiense/editions/1481-paris-dupre-huym/passages/canon-missae-communicantes.toml",
+      "sha256": "4100193de1b419bbf2b23db5db6882d9b5abb152af085143ba0f612158517403"
+    },
+    {
+      "byte_size": 2126,
+      "path": "src/sources/works/diocese-of-paris/missale-parisiense/editions/1481-paris-dupre-huym/passages/canon-missae-concluding-response.toml",
+      "sha256": "60fbba9f16ca2ce5297ceab21d93e56ceef4f85c5f9def92429ccb8eabc7c78b"
+    },
+    {
+      "byte_size": 1377,
+      "path": "src/sources/works/diocese-of-paris/missale-parisiense/editions/1481-paris-dupre-huym/passages/canon-missae-facsimile.toml",
+      "sha256": "e891e8e3c0e6e4a64fd232f76f87d295b6e1c565ebb4ec2e96fbc8d06e6bd4d6"
+    },
+    {
+      "byte_size": 2100,
+      "path": "src/sources/works/diocese-of-paris/missale-parisiense/editions/1481-paris-dupre-huym/passages/canon-missae-hanc-igitur.toml",
+      "sha256": "b09f6014cca52a9a6c33ca165eee360b564f9e1e34c3fcab337adfce36d14168"
+    },
+    {
+      "byte_size": 2126,
+      "path": "src/sources/works/diocese-of-paris/missale-parisiense/editions/1481-paris-dupre-huym/passages/canon-missae-memento-defunctorum.toml",
+      "sha256": "77d7ab37f82e407495c8300a5e336a00292481366d1552149449d8da955b1414"
+    },
+    {
+      "byte_size": 2108,
+      "path": "src/sources/works/diocese-of-paris/missale-parisiense/editions/1481-paris-dupre-huym/passages/canon-missae-memento-vivorum.toml",
+      "sha256": "c4776a8bf3de2efa2802cff9b0b9a64695530e7b568be9e9ec97cc490b562f23"
+    },
+    {
+      "byte_size": 2105,
+      "path": "src/sources/works/diocese-of-paris/missale-parisiense/editions/1481-paris-dupre-huym/passages/canon-missae-nobis-quoque.toml",
+      "sha256": "bdd89566a2d4909a81024c6f0559bdcc1478cd1f4b9334093d11903ef945c5cc"
+    },
+    {
+      "byte_size": 2105,
+      "path": "src/sources/works/diocese-of-paris/missale-parisiense/editions/1481-paris-dupre-huym/passages/canon-missae-opening-rubric.toml",
+      "sha256": "2ea0309fa4ade582f5c746e2752ee14375dd50a69028cf1a3b72dc4f06a70b80"
+    },
+    {
+      "byte_size": 2096,
+      "path": "src/sources/works/diocese-of-paris/missale-parisiense/editions/1481-paris-dupre-huym/passages/canon-missae-per-ipsum.toml",
+      "sha256": "b513a1fbe6f7138f3e98ca685265fd76009740e2c5e5e2c9300162b5a9ce345a"
+    },
+    {
+      "byte_size": 2093,
+      "path": "src/sources/works/diocese-of-paris/missale-parisiense/editions/1481-paris-dupre-huym/passages/canon-missae-per-quem.toml",
+      "sha256": "01a7161319bc9e0469354693cb831d554772d7d92e1c90554ed0d3f38f48fb1b"
+    },
+    {
+      "byte_size": 2112,
+      "path": "src/sources/works/diocese-of-paris/missale-parisiense/editions/1481-paris-dupre-huym/passages/canon-missae-quam-oblationem.toml",
+      "sha256": "e6031f16c5659e80f1bae4624eefac13ba31994815587079ce4d405155731be6"
+    },
+    {
+      "byte_size": 2097,
+      "path": "src/sources/works/diocese-of-paris/missale-parisiense/editions/1481-paris-dupre-huym/passages/canon-missae-qui-pridie.toml",
+      "sha256": "1b129b60455d6af1fdae1fc87c8cecbde0216dc86353e547fb69b78bae4c9cce"
+    },
+    {
+      "byte_size": 2100,
+      "path": "src/sources/works/diocese-of-paris/missale-parisiense/editions/1481-paris-dupre-huym/passages/canon-missae-simili-modo.toml",
+      "sha256": "c7b32c36aa207df5cd4ae45b534f4bdec37caa3da04168a22e8941a594141767"
+    },
+    {
+      "byte_size": 2096,
+      "path": "src/sources/works/diocese-of-paris/missale-parisiense/editions/1481-paris-dupre-huym/passages/canon-missae-supplices.toml",
+      "sha256": "b80a13bf93f1cb418b576abc1d904d5b28ed3ea974cf1228121193eabfa56fa4"
+    },
+    {
+      "byte_size": 2099,
+      "path": "src/sources/works/diocese-of-paris/missale-parisiense/editions/1481-paris-dupre-huym/passages/canon-missae-supra-quae.toml",
+      "sha256": "3c50bc26a28606a1f6e8dcbd65d4a215565d7ffb5735c68cb82c343fec100393"
+    },
+    {
+      "byte_size": 2090,
+      "path": "src/sources/works/diocese-of-paris/missale-parisiense/editions/1481-paris-dupre-huym/passages/canon-missae-te-igitur.toml",
+      "sha256": "cf34952e70dc269676ced53587c3b32023f4d5cb7d12c5873d02d39e4ef20597"
+    },
+    {
+      "byte_size": 2112,
+      "path": "src/sources/works/diocese-of-paris/missale-parisiense/editions/1481-paris-dupre-huym/passages/canon-missae-unde-et-memores.toml",
+      "sha256": "c3e7d2c6fbbe6943137bae1b44e6b84cb9567f66c0e96a4ea11e0a1d0a58336f"
+    },
+    {
+      "byte_size": 1000,
+      "path": "src/sources/works/diocese-of-paris/missale-parisiense/editions/1481-paris-dupre-huym/passages/colophon.toml",
+      "sha256": "493a695b2eef41d2b90b6a82d024f15ea181fba8167ca9940a92dd734d877a4c"
+    },
+    {
+      "byte_size": 643,
+      "path": "src/sources/works/diocese-of-paris/missale-parisiense/work.toml",
+      "sha256": "1a82e4b9683e626c1642271eb027d6a18d264e1ed53ef44bc4e4fba385dd8d01"
+    },
+    {
+      "byte_size": 2273,
+      "path": "src/sources/works/diocese-of-tarazona/missale-tirasonense/editions/1500-pamplona-brocar/artifacts/bizkaia-pdf-c6e5dbd8/artifact.toml",
+      "sha256": "3720f365699b55131b53a21b19bec85bb9a166b73a967057067e4e9eb5969d4f"
+    },
+    {
+      "byte_size": 57922507,
+      "path": "src/sources/works/diocese-of-tarazona/missale-tirasonense/editions/1500-pamplona-brocar/artifacts/bizkaia-pdf-c6e5dbd8/source.pdf",
+      "sha256": "c6e5dbd8c1b77231ec4f97c77752c3c863bdffe3edc8d4f8b81a1afd279a3cc7"
+    },
+    {
+      "byte_size": 3606,
+      "path": "src/sources/works/diocese-of-tarazona/missale-tirasonense/editions/1500-pamplona-brocar/artifacts/canon-missae-checked-latin-2a3214ad/artifact.toml",
+      "sha256": "b4665e5e52e28b46963b44fb898e236199695e0116c636037ecfb37c9b8b7406"
+    },
+    {
+      "byte_size": 4958,
+      "path": "src/sources/works/diocese-of-tarazona/missale-tirasonense/editions/1500-pamplona-brocar/artifacts/canon-missae-checked-latin-2a3214ad/text.txt",
+      "sha256": "2a3214add1ade6afb9b061e8d1da5c251edf057a0e4a5f9a8d89acf073c7b664"
+    },
+    {
+      "byte_size": 1432,
+      "path": "src/sources/works/diocese-of-tarazona/missale-tirasonense/editions/1500-pamplona-brocar/edition.toml",
+      "sha256": "97d3b6dc58ba1e345347f429757787ddbab85c5b30d1c92af9958ca371ef6712"
+    },
+    {
+      "byte_size": 2103,
+      "path": "src/sources/works/diocese-of-tarazona/missale-tirasonense/editions/1500-pamplona-brocar/passages/canon-missae-communicantes.toml",
+      "sha256": "f48f5f6b0063aa9571b548386f27c8818a89c60df522d6ab8a28dde2201bf239"
+    },
+    {
+      "byte_size": 2127,
+      "path": "src/sources/works/diocese-of-tarazona/missale-tirasonense/editions/1500-pamplona-brocar/passages/canon-missae-concluding-response.toml",
+      "sha256": "e32041fcebdd49424b13423791b10a61321eb89f1969b00d715869f773b0bace"
+    },
+    {
+      "byte_size": 1335,
+      "path": "src/sources/works/diocese-of-tarazona/missale-tirasonense/editions/1500-pamplona-brocar/passages/canon-missae-facsimile.toml",
+      "sha256": "b306247480652baedee7e3a9c308ad817ddea897ed12b371760b1e70a0debbe2"
+    },
+    {
+      "byte_size": 2097,
+      "path": "src/sources/works/diocese-of-tarazona/missale-tirasonense/editions/1500-pamplona-brocar/passages/canon-missae-hanc-igitur.toml",
+      "sha256": "b0555315081633d1759fa159b55a92b0c6419a39915f611f6597f7131c85ec87"
+    },
+    {
+      "byte_size": 2127,
+      "path": "src/sources/works/diocese-of-tarazona/missale-tirasonense/editions/1500-pamplona-brocar/passages/canon-missae-memento-defunctorum.toml",
+      "sha256": "75f53766739f298f971027224731549a1403b4254c669d60d4602ab8179908b5"
+    },
+    {
+      "byte_size": 2109,
+      "path": "src/sources/works/diocese-of-tarazona/missale-tirasonense/editions/1500-pamplona-brocar/passages/canon-missae-memento-vivorum.toml",
+      "sha256": "b1815cb23ec90c0dc1782ed71209201e3c77b80fb98e010c9e7b7eb069e7745b"
+    },
+    {
+      "byte_size": 2106,
+      "path": "src/sources/works/diocese-of-tarazona/missale-tirasonense/editions/1500-pamplona-brocar/passages/canon-missae-nobis-quoque.toml",
+      "sha256": "55e04a5c5b92ae1531ce5ba0ac88dea68f59c36b375154a9909e7eab0b454334"
+    },
+    {
+      "byte_size": 2097,
+      "path": "src/sources/works/diocese-of-tarazona/missale-tirasonense/editions/1500-pamplona-brocar/passages/canon-missae-per-ipsum.toml",
+      "sha256": "c45a2cf54376908200cd651c461371cff3deb77acc91d041dfba709d7d734408"
+    },
+    {
+      "byte_size": 2094,
+      "path": "src/sources/works/diocese-of-tarazona/missale-tirasonense/editions/1500-pamplona-brocar/passages/canon-missae-per-quem.toml",
+      "sha256": "191cd045ad1989fd59b087626279ebeaa31545f98823b3e53c9ad75c8e2094eb"
+    },
+    {
+      "byte_size": 2109,
+      "path": "src/sources/works/diocese-of-tarazona/missale-tirasonense/editions/1500-pamplona-brocar/passages/canon-missae-quam-oblationem.toml",
+      "sha256": "adc9c6ae9beb30f18e3bdfb73e276423086687c65ec620bb9d146de16d2d970b"
+    },
+    {
+      "byte_size": 2098,
+      "path": "src/sources/works/diocese-of-tarazona/missale-tirasonense/editions/1500-pamplona-brocar/passages/canon-missae-qui-pridie.toml",
+      "sha256": "89cf69556fa3634befb1688925239a46a76421dfda08d456aa8180ed7a687e4e"
+    },
+    {
+      "byte_size": 2101,
+      "path": "src/sources/works/diocese-of-tarazona/missale-tirasonense/editions/1500-pamplona-brocar/passages/canon-missae-simili-modo.toml",
+      "sha256": "bbe76ac606dbf7beb6ad21336e914feb8545415f076d665e835f09a08ccd0403"
+    },
+    {
+      "byte_size": 2097,
+      "path": "src/sources/works/diocese-of-tarazona/missale-tirasonense/editions/1500-pamplona-brocar/passages/canon-missae-supplices.toml",
+      "sha256": "071945980bd34c909c0d0e02c5541f1a363f8495e94edd0154a4b37a2ac00a62"
+    },
+    {
+      "byte_size": 2098,
+      "path": "src/sources/works/diocese-of-tarazona/missale-tirasonense/editions/1500-pamplona-brocar/passages/canon-missae-supra-quae.toml",
+      "sha256": "5920d6450248c85e33f961c13504ce14d44805d986dfc367795653abe3e1bcc7"
+    },
+    {
+      "byte_size": 2091,
+      "path": "src/sources/works/diocese-of-tarazona/missale-tirasonense/editions/1500-pamplona-brocar/passages/canon-missae-te-igitur.toml",
+      "sha256": "07641700da52047a2d46d4804ca9860c10f2ca9c5451a3528e016c5067f3b803"
+    },
+    {
+      "byte_size": 2113,
+      "path": "src/sources/works/diocese-of-tarazona/missale-tirasonense/editions/1500-pamplona-brocar/passages/canon-missae-unde-et-memores.toml",
+      "sha256": "1392e542a06961318d3605ea7985113ce6c30fb97aa621dcf5cdf5f8b60a8b0d"
+    },
+    {
+      "byte_size": 1253,
+      "path": "src/sources/works/diocese-of-tarazona/missale-tirasonense/editions/1500-pamplona-brocar/passages/colophon.toml",
+      "sha256": "bf16b69359b3dfefd520f40c778077029597275f25d2c292f084140457eff84f"
+    },
+    {
+      "byte_size": 758,
+      "path": "src/sources/works/diocese-of-tarazona/missale-tirasonense/work.toml",
+      "sha256": "78a686298d14468b1ced49e503e8be2a8f2ebe9c6685039c9c0142dae5021725"
+    },
+    {
+      "byte_size": 1855,
+      "path": "src/sources/works/diocese-of-toul/missale-tullense/editions/1750-toul/edition.toml",
+      "sha256": "6fdb3ace24e5209f84eb1ee696bffec206aad620384b22430659cc8f87f9b058"
     },
     {
       "byte_size": 1014,
@@ -2776,6 +3926,76 @@
       "byte_size": 1197,
       "path": "src/sources/works/eparchy-of-lungro/divina-liturgia-san-giovanni-crisostomo-fedeli/editions/1999-lungro-mit/edition.toml",
       "sha256": "31ecd425bf9243f138a46d8b2da39fc2745e3ff4632cbaaecb63c64eb4fc293f"
+    },
+    {
+      "byte_size": 3876,
+      "path": "src/sources/works/ethiopian-catholic-church/missale-aethiopicum-asmara/editions/1914-1915-asmara-ethiopian-1907/artifacts/apostles-anaphora-checked-geez-a91530df/artifact.toml",
+      "sha256": "1f3e3c20448d2f5ce3f815cd664a69fc42d64072ed7da52b83340bf1a3abbdd0"
+    },
+    {
+      "byte_size": 9408,
+      "path": "src/sources/works/ethiopian-catholic-church/missale-aethiopicum-asmara/editions/1914-1915-asmara-ethiopian-1907/artifacts/apostles-anaphora-checked-geez-a91530df/text.txt",
+      "sha256": "a91530df6781a0429e037aa59f68067a65277fd956096057c01e96b3f0b5b834"
+    },
+    {
+      "byte_size": 1854,
+      "path": "src/sources/works/ethiopian-catholic-church/missale-aethiopicum-asmara/editions/1914-1915-asmara-ethiopian-1907/artifacts/bonn-scan-pdf-b126e66a/artifact.toml",
+      "sha256": "fb181be718069fa7bd0c99caff3d998d1c104c04cc64103152e1e903b351a74f"
+    },
+    {
+      "byte_size": 46325166,
+      "path": "src/sources/works/ethiopian-catholic-church/missale-aethiopicum-asmara/editions/1914-1915-asmara-ethiopian-1907/artifacts/bonn-scan-pdf-b126e66a/source.pdf",
+      "sha256": "b126e66ae9150799dac65757a503d7d9ebad0ac0368110a1c07847d315dd7c01"
+    },
+    {
+      "byte_size": 632,
+      "path": "src/sources/works/ethiopian-catholic-church/missale-aethiopicum-asmara/editions/1914-1915-asmara-ethiopian-1907/edition.toml",
+      "sha256": "7c7cc056534c79186e4e52882d33cbfae876c6d9209681fa4e99fe91b1a9a645"
+    },
+    {
+      "byte_size": 1818,
+      "path": "src/sources/works/ethiopian-catholic-church/missale-aethiopicum-asmara/editions/1914-1915-asmara-ethiopian-1907/passages/apostles-anaphora-anamnesis.toml",
+      "sha256": "a4ba2e1bdeff7e45f37b999c52b0bddf750ea72690ace9648f2308b3969717ae"
+    },
+    {
+      "byte_size": 1857,
+      "path": "src/sources/works/ethiopian-catholic-church/missale-aethiopicum-asmara/editions/1914-1915-asmara-ethiopian-1907/passages/apostles-anaphora-epiclesis-and-doxology.toml",
+      "sha256": "b009e0832cf61e20feac2076c2e53efebbfe311f82fcaae1dfa65fd861401b02"
+    },
+    {
+      "byte_size": 1849,
+      "path": "src/sources/works/ethiopian-catholic-church/missale-aethiopicum-asmara/editions/1914-1915-asmara-ethiopian-1907/passages/apostles-anaphora-facsimile.toml",
+      "sha256": "a1d70c9668eb0fab6053ebfd1019fac5645658645f0f171717b5d0fd66f8b4c1"
+    },
+    {
+      "byte_size": 1854,
+      "path": "src/sources/works/ethiopian-catholic-church/missale-aethiopicum-asmara/editions/1914-1915-asmara-ethiopian-1907/passages/apostles-anaphora-institution-narrative.toml",
+      "sha256": "8ad6b861ed73711e203337a1b31c0ffe1892e069722c7e673d36f319b8211353"
+    },
+    {
+      "byte_size": 1837,
+      "path": "src/sources/works/ethiopian-catholic-church/missale-aethiopicum-asmara/editions/1914-1915-asmara-ethiopian-1907/passages/apostles-anaphora-opening-dialogue.toml",
+      "sha256": "06eb878b2e814695043acfc11869ea5523560b0fa1f04bba0b5a42b364a55e7b"
+    },
+    {
+      "byte_size": 1827,
+      "path": "src/sources/works/ethiopian-catholic-church/missale-aethiopicum-asmara/editions/1914-1915-asmara-ethiopian-1907/passages/apostles-anaphora-post-sanctus.toml",
+      "sha256": "6171a4557158f52c4f44055530607ee0ce9a975b0891f258d04a0ea5f759c307"
+    },
+    {
+      "byte_size": 1848,
+      "path": "src/sources/works/ethiopian-catholic-church/missale-aethiopicum-asmara/editions/1914-1915-asmara-ethiopian-1907/passages/apostles-anaphora-preface-and-sanctus.toml",
+      "sha256": "dc89fe30637ca81b414981d466373172d0f1272f5c0df73a940e244751a264b7"
+    },
+    {
+      "byte_size": 1153,
+      "path": "src/sources/works/ethiopian-catholic-church/missale-aethiopicum-asmara/editions/1914-1915-asmara-ethiopian-1907/passages/title-and-imprimatur.toml",
+      "sha256": "c0deab3fe42bd4d8d6e9bf591e8ee767198740c091174f22f1aceb17070f4ffb"
+    },
+    {
+      "byte_size": 470,
+      "path": "src/sources/works/ethiopian-catholic-church/missale-aethiopicum-asmara/work.toml",
+      "sha256": "fb8f125f4d6690bbfd99ceb0cfa155ae555e80248f2cf8b05735fe6a360fa315"
     },
     {
       "byte_size": 3763,
@@ -2953,9 +4173,129 @@
       "sha256": "743ce8b2cc43517d02d74345767f0788c14e00cd06eb59d5ae328f7561c2eec5"
     },
     {
+      "byte_size": 4435,
+      "path": "src/sources/works/holy-see/euchologion/editions/1754-rome-propaganda/artifacts/chrysostom-anaphora-checked-greek-d37c9185/artifact.toml",
+      "sha256": "fbab21110f995c72eccd0f00d39713722cc710b588ef8f45ebea3dd61e746a11"
+    },
+    {
+      "byte_size": 14966,
+      "path": "src/sources/works/holy-see/euchologion/editions/1754-rome-propaganda/artifacts/chrysostom-anaphora-checked-greek-d37c9185/text.txt",
+      "sha256": "d37c9185522e75a9f53255a7fc665fc76e43f9d307eb441898898b77af0e4c9c"
+    },
+    {
+      "byte_size": 54764090,
+      "path": "src/sources/works/holy-see/euchologion/editions/1754-rome-propaganda/artifacts/google-images-a273defa/1754-google-images.zip",
+      "sha256": "a273defab09a890b67d83185c33ce443abf417ca7b3446c4e31e70854533c998"
+    },
+    {
+      "byte_size": 2956,
+      "path": "src/sources/works/holy-see/euchologion/editions/1754-rome-propaganda/artifacts/google-images-a273defa/artifact.toml",
+      "sha256": "a77a7af6f36606f0b406004a4d7a3ffd2447a922a62c993c70c75fef30ddb9e0"
+    },
+    {
+      "byte_size": 54654891,
+      "path": "src/sources/works/holy-see/euchologion/editions/1754-rome-propaganda/artifacts/google-pdf-32071a7a/1754-google-pages.pdf",
+      "sha256": "32071a7ac54a13a1ac24a0c6c101b5b523dbd0fe0ef5511649916c260038340d"
+    },
+    {
+      "byte_size": 3454,
+      "path": "src/sources/works/holy-see/euchologion/editions/1754-rome-propaganda/artifacts/google-pdf-32071a7a/artifact.toml",
+      "sha256": "b01c7627c6e5f2433ae474b7d8882347fc58413a9db27f27351cff36f922d923"
+    },
+    {
       "byte_size": 734,
       "path": "src/sources/works/holy-see/euchologion/editions/1754-rome-propaganda/edition.toml",
       "sha256": "cfdab971b3745ef9cbb4d75e1a16e5c4cff441c3006030aaac10a05a4001050f"
+    },
+    {
+      "byte_size": 2718,
+      "path": "src/sources/works/holy-see/euchologion/editions/1754-rome-propaganda/passages/chrysostom-anaphora-01-opening-dialogue.toml",
+      "sha256": "968527309cdbc000d9b31d4faf948f9b4dbe0c3d5d563fcd9607a2796d236dae"
+    },
+    {
+      "byte_size": 2725,
+      "path": "src/sources/works/holy-see/euchologion/editions/1754-rome-propaganda/passages/chrysostom-anaphora-02-preface-thanksgiving.toml",
+      "sha256": "88b06439bd1e3a888735b613e2739930690bee43f86b0229157c01a05eb8d68f"
+    },
+    {
+      "byte_size": 2751,
+      "path": "src/sources/works/holy-see/euchologion/editions/1754-rome-propaganda/passages/chrysostom-anaphora-03-sanctus-and-asterisk.toml",
+      "sha256": "cf990ed81ab54c0a7a1d55e0a6dbcf2f560bf1716790be5a4a9196a14d06f18c"
+    },
+    {
+      "byte_size": 2746,
+      "path": "src/sources/works/holy-see/euchologion/editions/1754-rome-propaganda/passages/chrysostom-anaphora-04-post-sanctus-institution.toml",
+      "sha256": "7426982ba5eda7d94341271ef36bcfa54b0910703ae977a6b253b9128e05417d"
+    },
+    {
+      "byte_size": 2730,
+      "path": "src/sources/works/holy-see/euchologion/editions/1754-rome-propaganda/passages/chrysostom-anaphora-05-anamnesis-oblation.toml",
+      "sha256": "981e741aba4e49fcf740961405b376668fcdc8db31986d059c503cb7fcb4825e"
+    },
+    {
+      "byte_size": 2731,
+      "path": "src/sources/works/holy-see/euchologion/editions/1754-rome-propaganda/passages/chrysostom-anaphora-06-epiclesis.toml",
+      "sha256": "42190992ffe60f839c63c3ac8e8c1b3447772580e545c4bb3bc36e87fb4b8bbe"
+    },
+    {
+      "byte_size": 2801,
+      "path": "src/sources/works/holy-see/euchologion/editions/1754-rome-propaganda/passages/chrysostom-anaphora-07-commemoration-of-saints.toml",
+      "sha256": "68a67bc12d1c3f7792b1b3dda08490564c3fc212c625c8ae13af192f9d720936"
+    },
+    {
+      "byte_size": 2787,
+      "path": "src/sources/works/holy-see/euchologion/editions/1754-rome-propaganda/passages/chrysostom-anaphora-08-intercessions-dead-and-church.toml",
+      "sha256": "601a4edf7ae9a7b7e7b0beadf7fd429ffc9737887082fea84df504b4505c5f2e"
+    },
+    {
+      "byte_size": 2831,
+      "path": "src/sources/works/holy-see/euchologion/editions/1754-rome-propaganda/passages/chrysostom-anaphora-09-intercessions-hierarch-and-living.toml",
+      "sha256": "3af8e81de147cf07fce264f51af661954e0454fa2c8e2d4ce1167727cc5d6dcd"
+    },
+    {
+      "byte_size": 2824,
+      "path": "src/sources/works/holy-see/euchologion/editions/1754-rome-propaganda/passages/chrysostom-anaphora-10-concluding-doxology-and-blessing.toml",
+      "sha256": "91c1326fed776f3521add032ee2c99d83f34612bb77d5ccc6733efa14c011204"
+    },
+    {
+      "byte_size": 1630,
+      "path": "src/sources/works/holy-see/euchologion/editions/1754-rome-propaganda/passages/chrysostom-anaphora-facsimile.toml",
+      "sha256": "41ef286372a1da29a6d7d3bbfeb4628cd2c8cc9f2338d648d178c770f7b2db6c"
+    },
+    {
+      "byte_size": 1054,
+      "path": "src/sources/works/holy-see/euchologion/editions/1754-rome-propaganda/passages/title.toml",
+      "sha256": "b0e306c3535baa97561ebb6cc98112f0fec01095e34a64ae401975b9866cb6a2"
+    },
+    {
+      "byte_size": 3765,
+      "path": "src/sources/works/holy-see/euchologion/editions/1873-rome-propaganda/artifacts/chrysostom-anaphora-checked-greek-dce0e887/artifact.toml",
+      "sha256": "f4da472d05f791b6098a1e68cedf352143f6418b8cadee70aad3415d958b36b8"
+    },
+    {
+      "byte_size": 17092,
+      "path": "src/sources/works/holy-see/euchologion/editions/1873-rome-propaganda/artifacts/chrysostom-anaphora-checked-greek-dce0e887/text.txt",
+      "sha256": "dce0e887f3074d2b1f0bcd80956ac26da014dc42130de633c19bbb5717976932"
+    },
+    {
+      "byte_size": 33358379,
+      "path": "src/sources/works/holy-see/euchologion/editions/1873-rome-propaganda/artifacts/google-images-fd97e9cc/1873-google-images.zip",
+      "sha256": "fd97e9cc5023d6ec02598dcf818a0713e1c9528b74f82ed7978d9dced1302f4f"
+    },
+    {
+      "byte_size": 3155,
+      "path": "src/sources/works/holy-see/euchologion/editions/1873-rome-propaganda/artifacts/google-images-fd97e9cc/artifact.toml",
+      "sha256": "644855e0d8a03977f6ea4023530eae7ded35d31b10d1859e24e7d46ed5c5b394"
+    },
+    {
+      "byte_size": 33184757,
+      "path": "src/sources/works/holy-see/euchologion/editions/1873-rome-propaganda/artifacts/google-pdf-50c485b5/1873-google-pages.pdf",
+      "sha256": "50c485b5fd723a0bdc894dcfb8e587cab666bd8724f51b0c0ae3f57cd33b2323"
+    },
+    {
+      "byte_size": 3653,
+      "path": "src/sources/works/holy-see/euchologion/editions/1873-rome-propaganda/artifacts/google-pdf-50c485b5/artifact.toml",
+      "sha256": "928df030496a5d31646bf672bfe0fa1685d3743b8cf2e971358aa3bde02bce9c"
     },
     {
       "byte_size": 736,
@@ -2963,14 +4303,199 @@
       "sha256": "543085045bec343e67074c6fa7552ddbe9eadd96614323fec12ed90dba1e2be6"
     },
     {
+      "byte_size": 1990,
+      "path": "src/sources/works/holy-see/euchologion/editions/1873-rome-propaganda/passages/chrysostom-anaphora-01-opening-dialogue.toml",
+      "sha256": "1e0ebd95dfadd3d287f4f1db828ee2f0a08119e4964c3a1b1e9e4bf93e7000b5"
+    },
+    {
+      "byte_size": 1989,
+      "path": "src/sources/works/holy-see/euchologion/editions/1873-rome-propaganda/passages/chrysostom-anaphora-02-preface-thanksgiving.toml",
+      "sha256": "2fc279d9e76f31ecba2e6def3239b8441c5b6263664523a7c326bfa2006945a6"
+    },
+    {
+      "byte_size": 2023,
+      "path": "src/sources/works/holy-see/euchologion/editions/1873-rome-propaganda/passages/chrysostom-anaphora-03-sanctus-and-asterisk.toml",
+      "sha256": "1cf2d7e2f84a4e7d117c0b81449afd8352e219a6961ce6d8e78859ad0060f8cc"
+    },
+    {
+      "byte_size": 2020,
+      "path": "src/sources/works/holy-see/euchologion/editions/1873-rome-propaganda/passages/chrysostom-anaphora-04-post-sanctus-institution.toml",
+      "sha256": "55c04b5aa852e315a8847073877ed1b7adf12f63278dbd97077b0f30aa6151d3"
+    },
+    {
+      "byte_size": 2032,
+      "path": "src/sources/works/holy-see/euchologion/editions/1873-rome-propaganda/passages/chrysostom-anaphora-05-anamnesis-oblation.toml",
+      "sha256": "e1b59b092dd4c558c68d837cc5aeb4e3ae520615a0812dc94ae1ba3bec733f79"
+    },
+    {
+      "byte_size": 1991,
+      "path": "src/sources/works/holy-see/euchologion/editions/1873-rome-propaganda/passages/chrysostom-anaphora-06-epiclesis.toml",
+      "sha256": "fc39fd959f13ad852c9c314d7d29cb931a6f09e10fa5be0df82a77d3713c3e3b"
+    },
+    {
+      "byte_size": 2131,
+      "path": "src/sources/works/holy-see/euchologion/editions/1873-rome-propaganda/passages/chrysostom-anaphora-07-commemoration-of-saints.toml",
+      "sha256": "31846b418dc1394e82dfabf7a4dbaa124fdd739926a5bbdb6ecd1407610d58fd"
+    },
+    {
+      "byte_size": 2049,
+      "path": "src/sources/works/holy-see/euchologion/editions/1873-rome-propaganda/passages/chrysostom-anaphora-08-intercessions-dead-and-church.toml",
+      "sha256": "145290551ff76869ad2366eb2e308010dadefd2d36248e9b247bae0ee09028c7"
+    },
+    {
+      "byte_size": 2109,
+      "path": "src/sources/works/holy-see/euchologion/editions/1873-rome-propaganda/passages/chrysostom-anaphora-09-intercessions-hierarch-and-living.toml",
+      "sha256": "6a8ccdee6d5bf97962af7e3c95652fcdd2d8157aa4b7facccb16b076a2422e5f"
+    },
+    {
+      "byte_size": 2115,
+      "path": "src/sources/works/holy-see/euchologion/editions/1873-rome-propaganda/passages/chrysostom-anaphora-10-concluding-doxology-and-blessing.toml",
+      "sha256": "28ddc96aebb5857d7e6dbde459c6de4dbda294df3694076ec8cc6cced9fff428"
+    },
+    {
+      "byte_size": 1698,
+      "path": "src/sources/works/holy-see/euchologion/editions/1873-rome-propaganda/passages/chrysostom-anaphora-facsimile.toml",
+      "sha256": "e78917078cc85972f5a65fda18d6ca275c272809f3f96be1e763fbbad36b94d0"
+    },
+    {
+      "byte_size": 1127,
+      "path": "src/sources/works/holy-see/euchologion/editions/1873-rome-propaganda/passages/title.toml",
+      "sha256": "9474c3adeef016670a250ed1a2c9afe6bac5767a75dbaa94ba210d703d994175"
+    },
+    {
+      "byte_size": 604,
+      "path": "src/sources/works/holy-see/euchologion/work.toml",
+      "sha256": "36b2ad667d107e5ca8dafe85124ad6f0ea38511a7fce23d2aacbdde68f128e1f"
+    },
+    {
+      "byte_size": 3118,
+      "path": "src/sources/works/maronite-church/qurbono/editions/1594-rome-medici/artifacts/anaphora-checked-syriac-2f49114b/artifact.toml",
+      "sha256": "c68b7d46a338268f8b4d3d1cf0a6eea14960df902f91a97d8c78e9277915a510"
+    },
+    {
+      "byte_size": 1032,
+      "path": "src/sources/works/maronite-church/qurbono/editions/1594-rome-medici/artifacts/anaphora-checked-syriac-2f49114b/text.txt",
+      "sha256": "2f49114b5db2a190d91a6d6681a5a1d641528540efc2826870bfc0d288a6eaf5"
+    },
+    {
+      "byte_size": 2800,
+      "path": "src/sources/works/maronite-church/qurbono/editions/1594-rome-medici/artifacts/ia-scan-pdf-dbab3b5b/artifact.toml",
+      "sha256": "4d91693f106ad29c40db4047dd90c89663124ccf2b43a06423f2d7e03906c915"
+    },
+    {
+      "byte_size": 16323194,
+      "path": "src/sources/works/maronite-church/qurbono/editions/1594-rome-medici/artifacts/ia-scan-pdf-dbab3b5b/scan.pdf",
+      "sha256": "dbab3b5b32f51018a1b6bcaf2674e1ffe4958ac151ed12fe746c44b1184d83b1"
+    },
+    {
       "byte_size": 1611,
       "path": "src/sources/works/maronite-church/qurbono/editions/1594-rome-medici/edition.toml",
       "sha256": "21adbd8ff8e41b0a2dc98e399119c3f224899d22c5f03d7a9361afc24f020c43"
     },
     {
+      "byte_size": 1805,
+      "path": "src/sources/works/maronite-church/qurbono/editions/1594-rome-medici/passages/anaphora-01-opening-dialogue.toml",
+      "sha256": "fe002f31ba87584ba8897054de4c9a2445fc4e1669dc4ad0a180e0a8f5697f6b"
+    },
+    {
+      "byte_size": 1808,
+      "path": "src/sources/works/maronite-church/qurbono/editions/1594-rome-medici/passages/anaphora-02-institution-bread.toml",
+      "sha256": "528784ef6b0a8ea064b85b1995b51bc9f440681635753b4dc04259d048e03ac4"
+    },
+    {
+      "byte_size": 1814,
+      "path": "src/sources/works/maronite-church/qurbono/editions/1594-rome-medici/passages/anaphora-03-institution-chalice.toml",
+      "sha256": "9cb9fcb71d252a623bd33e62c12de81489c56b201c7db647af635874b867adef"
+    },
+    {
+      "byte_size": 1799,
+      "path": "src/sources/works/maronite-church/qurbono/editions/1594-rome-medici/passages/anaphora-04-epiclesis-call.toml",
+      "sha256": "cfdc344930d1848a30c44293bfc770134d256f24059985646c84ad66d04794ca"
+    },
+    {
+      "byte_size": 1823,
+      "path": "src/sources/works/maronite-church/qurbono/editions/1594-rome-medici/passages/anaphora-05-epiclesis-consecration.toml",
+      "sha256": "cf1f16e985e9994b7e649018d15026b2cd961a9a3f78a824434fa51fff7de074"
+    },
+    {
+      "byte_size": 1246,
+      "path": "src/sources/works/maronite-church/qurbono/editions/1594-rome-medici/passages/anaphora-facsimile.toml",
+      "sha256": "ba314295c54e564adf5dd36d34db77e558f91c976cb690d0b1217bc1c0468e84"
+    },
+    {
+      "byte_size": 1287,
+      "path": "src/sources/works/maronite-church/qurbono/editions/1594-rome-medici/passages/titles-and-colophon.toml",
+      "sha256": "e7dce8786a8ec6effc60bcef44057758636e63d2a14314064f32dd918942bc78"
+    },
+    {
+      "byte_size": 3161,
+      "path": "src/sources/works/maronite-church/qurbono/editions/1908-beirut-maronite-press-second-printing/artifacts/anaphora-checked-syriac-f15af92a/artifact.toml",
+      "sha256": "6c12798522ac4708ac189bad58b26721bdd1228deeb6ce83d4eb11223683990a"
+    },
+    {
+      "byte_size": 1510,
+      "path": "src/sources/works/maronite-church/qurbono/editions/1908-beirut-maronite-press-second-printing/artifacts/anaphora-checked-syriac-f15af92a/text.txt",
+      "sha256": "f15af92a82ddfde1b4192524a37f1f3263561fc1ad102f894bc0e8d8cacb426b"
+    },
+    {
+      "byte_size": 2918,
+      "path": "src/sources/works/maronite-church/qurbono/editions/1908-beirut-maronite-press-second-printing/artifacts/bonn-scan-pdf-8dc5d7fd/artifact.toml",
+      "sha256": "47ecba056912ceb5fe8cff4afe4720225cfc7128b05a1dc14ce03dc1c4f68860"
+    },
+    {
+      "byte_size": 3072,
+      "path": "src/sources/works/maronite-church/qurbono/editions/1908-beirut-maronite-press-second-printing/artifacts/pages-0224-0447-5b0fbb00/artifact.toml",
+      "sha256": "a43d97e0608728b415ee3e12bf49ec539cf9fc75b5093bdc7f387d3099c9efbd"
+    },
+    {
+      "byte_size": 67659959,
+      "path": "src/sources/works/maronite-church/qurbono/editions/1908-beirut-maronite-press-second-printing/artifacts/pages-0224-0447-5b0fbb00/pages-0224-0447.pdf",
+      "sha256": "5b0fbb003b4e8deb29c7f2a785a51494a7afd83135e25537f942595ec26f1594"
+    },
+    {
       "byte_size": 1335,
       "path": "src/sources/works/maronite-church/qurbono/editions/1908-beirut-maronite-press-second-printing/edition.toml",
       "sha256": "1511381b49d641d59ee3443e07a6c89d3e4bed5f20145e1f9b42b4b6299fa271"
+    },
+    {
+      "byte_size": 1882,
+      "path": "src/sources/works/maronite-church/qurbono/editions/1908-beirut-maronite-press-second-printing/passages/anaphora-01-opening-dialogue.toml",
+      "sha256": "65a8503a4aa0df84fa1b3a7baaa7048253d3cb56e08cfc24afaa736733fa8680"
+    },
+    {
+      "byte_size": 1885,
+      "path": "src/sources/works/maronite-church/qurbono/editions/1908-beirut-maronite-press-second-printing/passages/anaphora-02-institution-bread.toml",
+      "sha256": "7fbadc061c8e6decc93dfdb1d1c8999f41a70de04309e37995b831a5c8092c8a"
+    },
+    {
+      "byte_size": 1891,
+      "path": "src/sources/works/maronite-church/qurbono/editions/1908-beirut-maronite-press-second-printing/passages/anaphora-03-institution-chalice.toml",
+      "sha256": "3c64e508fdf9dc4f22a6123c652ddd9e26940e5dacdc23c9607d969e6fda204c"
+    },
+    {
+      "byte_size": 1876,
+      "path": "src/sources/works/maronite-church/qurbono/editions/1908-beirut-maronite-press-second-printing/passages/anaphora-04-epiclesis-call.toml",
+      "sha256": "1f8339c21ee0cc7274a5a7e366edb9e5e0e8b9fcf20fb23f4fee82e960f9cf15"
+    },
+    {
+      "byte_size": 1900,
+      "path": "src/sources/works/maronite-church/qurbono/editions/1908-beirut-maronite-press-second-printing/passages/anaphora-05-epiclesis-consecration.toml",
+      "sha256": "2bc7c152d61f00c24d23157afb6b83faf748648446c1716d3c39d53d9b51c3d8"
+    },
+    {
+      "byte_size": 1240,
+      "path": "src/sources/works/maronite-church/qurbono/editions/1908-beirut-maronite-press-second-printing/passages/anaphora-facsimile.toml",
+      "sha256": "78929ba12e8ee24224bdc320f3fb1cdb5f1520cd95fa5ccb9a1cbfdc5a4fe5f0"
+    },
+    {
+      "byte_size": 1127,
+      "path": "src/sources/works/maronite-church/qurbono/editions/1908-beirut-maronite-press-second-printing/passages/title-and-imprimatur.toml",
+      "sha256": "84989ff9205f54e44c78d173b54c1861f20f867b2dc8b847502e181353e3fee3"
+    },
+    {
+      "byte_size": 636,
+      "path": "src/sources/works/maronite-church/qurbono/work.toml",
+      "sha256": "94cddee0070acddae7d6a6ab34f1c708437b4b469799ece46cce91763822b326"
     },
     {
       "byte_size": 553,
@@ -2983,9 +4508,99 @@
       "sha256": "e87c4ae6c93d4aa9117a84a040cdb6afbd0b8c18c1510e2572e518ee96c00c7b"
     },
     {
+      "byte_size": 562,
+      "path": "src/sources/works/syriac-catholic-church/calendar-juxta-ritum-antiochenum/editions/1887-mosul-dominican/edition.toml",
+      "sha256": "2ba853e20610d1a7bc13ea0b55df5af4c75616d7eb93a4ac58b7f3fcb2df9028"
+    },
+    {
+      "byte_size": 669,
+      "path": "src/sources/works/syriac-catholic-church/kitab-khidmat-al-quddas-1905/editions/1905-sharfeh-patriarchal/edition.toml",
+      "sha256": "ca4ea5a6b69f9e0fa10fae0854e04f7997b9e14f0f25b9915c603eccaf6f8916"
+    },
+    {
+      "byte_size": 3132,
+      "path": "src/sources/works/syriac-catholic-church/missale-syriacum/editions/1843-rome-propaganda/artifacts/anaphora-checked-syriac-ef615570/artifact.toml",
+      "sha256": "0f80a89c7bd75ade4b20f0373e30dd1d9d5a400f047bb4d227fbc1901b7c467a"
+    },
+    {
+      "byte_size": 5902,
+      "path": "src/sources/works/syriac-catholic-church/missale-syriacum/editions/1843-rome-propaganda/artifacts/anaphora-checked-syriac-ef615570/text.txt",
+      "sha256": "ef615570101fb0981f841b23ca947291c8427a2316c4031438580d15d245e2d7"
+    },
+    {
+      "byte_size": 2178,
+      "path": "src/sources/works/syriac-catholic-church/missale-syriacum/editions/1843-rome-propaganda/artifacts/google-scan-pdf-4bc875a2/artifact.toml",
+      "sha256": "71a24ea29fea07fb4ff32fa1ac4eb2b04114e52124d24e411ae89456cace9745"
+    },
+    {
+      "byte_size": 18003493,
+      "path": "src/sources/works/syriac-catholic-church/missale-syriacum/editions/1843-rome-propaganda/artifacts/google-scan-pdf-4bc875a2/scan.pdf",
+      "sha256": "4bc875a28f40dc1868619121a7a4e413f58b7093610d66ad35df79f4f6896132"
+    },
+    {
       "byte_size": 1175,
       "path": "src/sources/works/syriac-catholic-church/missale-syriacum/editions/1843-rome-propaganda/edition.toml",
       "sha256": "3e34ecb12a538232818c303ae51412abd0fbc5328f32c1e1fe3c648f50f9d230"
+    },
+    {
+      "byte_size": 1724,
+      "path": "src/sources/works/syriac-catholic-church/missale-syriacum/editions/1843-rome-propaganda/passages/anaphora-01-preface.toml",
+      "sha256": "755a22a84ac9f387cd916dc703e55c27e5fdbdee2f24de136e1b0ad3854b8cb9"
+    },
+    {
+      "byte_size": 1724,
+      "path": "src/sources/works/syriac-catholic-church/missale-syriacum/editions/1843-rome-propaganda/passages/anaphora-02-sanctus.toml",
+      "sha256": "653fab5fb632e4df5a76f131b987376c2b30ca6af12d3231ff5d576af7ed7349"
+    },
+    {
+      "byte_size": 1739,
+      "path": "src/sources/works/syriac-catholic-church/missale-syriacum/editions/1843-rome-propaganda/passages/anaphora-03-post-sanctus.toml",
+      "sha256": "2c32f3320e0ac773a7bbfdba3257fdad7b47fb5c5ff2f1a20ef74ff560c42c00"
+    },
+    {
+      "byte_size": 1766,
+      "path": "src/sources/works/syriac-catholic-church/missale-syriacum/editions/1843-rome-propaganda/passages/anaphora-04-institution-narrative.toml",
+      "sha256": "908a0c41224da3d9b78e60ebc53cb7ce56d7f6233a48f7454631f849f56756ca"
+    },
+    {
+      "byte_size": 1730,
+      "path": "src/sources/works/syriac-catholic-church/missale-syriacum/editions/1843-rome-propaganda/passages/anaphora-05-anamnesis.toml",
+      "sha256": "9dadc3983eb2b9fb2f58a4833cdfe0b79981936db0cb946b35c31e87c4ffc68d"
+    },
+    {
+      "byte_size": 1730,
+      "path": "src/sources/works/syriac-catholic-church/missale-syriacum/editions/1843-rome-propaganda/passages/anaphora-06-epiclesis.toml",
+      "sha256": "8885670224e129080531468ad459bba3791bc3d9548477fc73cb2ef940771e49"
+    },
+    {
+      "byte_size": 1359,
+      "path": "src/sources/works/syriac-catholic-church/missale-syriacum/editions/1843-rome-propaganda/passages/anaphora-facsimile.toml",
+      "sha256": "519ee1b797afa9606c1a061b08872b08338088dd0d1ffb7344a1fca021aee005"
+    },
+    {
+      "byte_size": 1244,
+      "path": "src/sources/works/syriac-catholic-church/missale-syriacum/editions/1843-rome-propaganda/passages/title-and-patriarchal-attestation.toml",
+      "sha256": "e2de680a28b55538be011d9c59d86523bfc89e373e3dcf7e9b9c4f8e42cb378e"
+    },
+    {
+      "byte_size": 3195,
+      "path": "src/sources/works/syriac-catholic-church/missale-syriacum/editions/1922-sharfeh-patriarchal/artifacts/anaphora-checked-syriac-6a57e733/artifact.toml",
+      "sha256": "b9ad5c914fbb6089e545faef5925733ed04f97e98ed8026b1fd82e480839d338"
+    },
+    {
+      "byte_size": 5636,
+      "path": "src/sources/works/syriac-catholic-church/missale-syriacum/editions/1922-sharfeh-patriarchal/artifacts/anaphora-checked-syriac-6a57e733/text.txt",
+      "sha256": "6a57e733f46fcc3e1ad4791a0cc283e908a4d5e82d909a4f36d12266728258cd"
+    },
+    {
+      "byte_size": 2544,
+      "path": "src/sources/works/syriac-catholic-church/missale-syriacum/editions/1922-sharfeh-patriarchal/artifacts/bonn-scan-pdf-40a6d45f/artifact.toml",
+      "sha256": "c78c47b5a5e863c920ef70b8eddf1dbae0e371cb15f6214e37d158e446daf2bd"
+    },
+    {
+      "byte_size": 69819552,
+      "path": "src/sources/works/syriac-catholic-church/missale-syriacum/editions/1922-sharfeh-patriarchal/artifacts/bonn-scan-pdf-40a6d45f/scan.pdf",
+      "sha256": "40a6d45f8ec98e5875a406e45f6fa48e925664aff96d5a2425fb03adbe6c7b14"
     },
     {
       "byte_size": 1621,
@@ -2993,14 +4608,149 @@
       "sha256": "bc98402b233b385667f7cfbda550361fefc2dba1bce65f8b6d88ff167a14f4a7"
     },
     {
+      "byte_size": 1785,
+      "path": "src/sources/works/syriac-catholic-church/missale-syriacum/editions/1922-sharfeh-patriarchal/passages/anaphora-01-preface.toml",
+      "sha256": "1a46d015dd71ffe9ae20cc301bb710ea5e816289656d67c4535f4af91b53b463"
+    },
+    {
+      "byte_size": 1785,
+      "path": "src/sources/works/syriac-catholic-church/missale-syriacum/editions/1922-sharfeh-patriarchal/passages/anaphora-02-sanctus.toml",
+      "sha256": "83ae3a066ae7c79598de2044d3f5a2a2504bcb430863223153f5d1fd3d6d13f5"
+    },
+    {
+      "byte_size": 1800,
+      "path": "src/sources/works/syriac-catholic-church/missale-syriacum/editions/1922-sharfeh-patriarchal/passages/anaphora-03-post-sanctus.toml",
+      "sha256": "8d0fb0341e6cf47168e77d082fc411992fff6d234f6b2cb750a2f227363c9463"
+    },
+    {
+      "byte_size": 1827,
+      "path": "src/sources/works/syriac-catholic-church/missale-syriacum/editions/1922-sharfeh-patriarchal/passages/anaphora-04-institution-narrative.toml",
+      "sha256": "a03a4386ac5fdc0ab422fae02928ca0fbed4c5252a55c194080218cb55539220"
+    },
+    {
+      "byte_size": 1791,
+      "path": "src/sources/works/syriac-catholic-church/missale-syriacum/editions/1922-sharfeh-patriarchal/passages/anaphora-05-anamnesis.toml",
+      "sha256": "cbaeaeee25c78c801a1be5088f53ba563a4b83a39905fe730dd018c4f94ccd62"
+    },
+    {
+      "byte_size": 1791,
+      "path": "src/sources/works/syriac-catholic-church/missale-syriacum/editions/1922-sharfeh-patriarchal/passages/anaphora-06-epiclesis.toml",
+      "sha256": "8f6faf848c89ecc852f23a6503419ce936c1c401ab44362ed74b2ed27880bd0e"
+    },
+    {
+      "byte_size": 1367,
+      "path": "src/sources/works/syriac-catholic-church/missale-syriacum/editions/1922-sharfeh-patriarchal/passages/anaphora-facsimile.toml",
+      "sha256": "3ca82f79ddd33d3ada69c84161eaf26bf885d297aecc442efbab994e2da363d2"
+    },
+    {
+      "byte_size": 1242,
+      "path": "src/sources/works/syriac-catholic-church/missale-syriacum/editions/1922-sharfeh-patriarchal/passages/title-and-patriarchal-prescription.toml",
+      "sha256": "228f9977477401c467e22f6ce7e511925eacc6a235f1197c753e332c14a10abe"
+    },
+    {
+      "byte_size": 874,
+      "path": "src/sources/works/syriac-catholic-church/missale-syriacum/work.toml",
+      "sha256": "5c3e9b06f9ff7df072d99b424d7d17127b8bb92b8be7afc8ffb9fd648e1a1b11"
+    },
+    {
       "byte_size": 1991,
       "path": "src/sources/works/syriac-catholic-church/missale/editions/1881-mosul-dominican-nouvelle-edition/edition.toml",
       "sha256": "820fdda0b3c77ddecd50fded3452a8e4af49471b7c0854ab17c8ae2b1dbea72c"
     },
     {
+      "byte_size": 528,
+      "path": "src/sources/works/syriac-catholic-church/mosul-diocesan-calendar-1877/editions/1877-mosul-dominican/edition.toml",
+      "sha256": "1007faef5ddf55edb8499f4e56eeb83c3c18bff9c93190b64c489ca1e7afeacd"
+    },
+    {
+      "byte_size": 534,
+      "path": "src/sources/works/syriac-catholic-church/qudikus-qurbono-pericopes/editions/1901-sharfeh-patriarchal/edition.toml",
+      "sha256": "0eff5fb217841641cf42f4e1731804e68cca42fe1348b16bb3df3d053439f96f"
+    },
+    {
+      "byte_size": 3199,
+      "path": "src/sources/works/syro-malabar-catholic-church/ordo-chaldaicus/editions/1906-puttenpalli-mar-thoma-shliha/artifacts/addai-mari-checked-syriac-bc5f80c3/artifact.toml",
+      "sha256": "8caa0f20e5eb41095aa38264eab4324f2fc7043cf2142784c504e0fb37fcd003"
+    },
+    {
+      "byte_size": 4684,
+      "path": "src/sources/works/syro-malabar-catholic-church/ordo-chaldaicus/editions/1906-puttenpalli-mar-thoma-shliha/artifacts/addai-mari-checked-syriac-bc5f80c3/text.txt",
+      "sha256": "bc5f80c3368df904c823c41ec4759eddff8f5c45cd9b8b0b45f07dd95511318f"
+    },
+    {
+      "byte_size": 2966,
+      "path": "src/sources/works/syro-malabar-catholic-church/ordo-chaldaicus/editions/1906-puttenpalli-mar-thoma-shliha/artifacts/bonn-scan-pdf-4c93c36d/artifact.toml",
+      "sha256": "af331d8f3169998b8c9b2391f7fa6d90fa08054a2274f7f7f698eed3b2ad842e"
+    },
+    {
+      "byte_size": 3116,
+      "path": "src/sources/works/syro-malabar-catholic-church/ordo-chaldaicus/editions/1906-puttenpalli-mar-thoma-shliha/artifacts/pages-0001-0257-51510073/artifact.toml",
+      "sha256": "08503dd79edb6fe78465344af02b3f1ed87e001528bc048720574faa0b261d0b"
+    },
+    {
+      "byte_size": 74790102,
+      "path": "src/sources/works/syro-malabar-catholic-church/ordo-chaldaicus/editions/1906-puttenpalli-mar-thoma-shliha/artifacts/pages-0001-0257-51510073/pages-0001-0257.pdf",
+      "sha256": "51510073251bd819cc9a662e88c04ffd33f396d4a6427aad9acab66ae9e5157b"
+    },
+    {
       "byte_size": 1661,
       "path": "src/sources/works/syro-malabar-catholic-church/ordo-chaldaicus/editions/1906-puttenpalli-mar-thoma-shliha/edition.toml",
       "sha256": "01bd4aecdf1596a6060f1922d0fd635ba6bbcf977fbb2d5355b1e044b893ef1a"
+    },
+    {
+      "byte_size": 2015,
+      "path": "src/sources/works/syro-malabar-catholic-church/ordo-chaldaicus/editions/1906-puttenpalli-mar-thoma-shliha/passages/addai-mari-01-opening-dialogue.toml",
+      "sha256": "1e51f907dbc84b352e6b57a45f75977585907ee5d33e6fecee2bfacea47126a8"
+    },
+    {
+      "byte_size": 2018,
+      "path": "src/sources/works/syro-malabar-catholic-church/ordo-chaldaicus/editions/1906-puttenpalli-mar-thoma-shliha/passages/addai-mari-02-preface-gehanta-1.toml",
+      "sha256": "57025c4329c61453a848679dce343fa53d3e93b0ad36f8839a36ae25abd0500a"
+    },
+    {
+      "byte_size": 1988,
+      "path": "src/sources/works/syro-malabar-catholic-church/ordo-chaldaicus/editions/1906-puttenpalli-mar-thoma-shliha/passages/addai-mari-03-sanctus.toml",
+      "sha256": "36070c7272705b92ed6a7e06252c5eac11d2a0f230e323315729dbf6c019553a"
+    },
+    {
+      "byte_size": 2033,
+      "path": "src/sources/works/syro-malabar-catholic-church/ordo-chaldaicus/editions/1906-puttenpalli-mar-thoma-shliha/passages/addai-mari-04-post-sanctus-gehanta-2.toml",
+      "sha256": "926526d3f20e768d3eba782de741c0c88e6ffdb9cf0ddd16ff6564299a53f856"
+    },
+    {
+      "byte_size": 2033,
+      "path": "src/sources/works/syro-malabar-catholic-church/ordo-chaldaicus/editions/1906-puttenpalli-mar-thoma-shliha/passages/addai-mari-05-intercession-gehanta-3.toml",
+      "sha256": "483f9c88aae267b704f14b2b137274d6a47155f86a7f87db5eb31380ff21af81"
+    },
+    {
+      "byte_size": 2021,
+      "path": "src/sources/works/syro-malabar-catholic-church/ordo-chaldaicus/editions/1906-puttenpalli-mar-thoma-shliha/passages/addai-mari-06-anamnesis-oblation.toml",
+      "sha256": "3565674e1434986fd226d855a7a7196bc4c3f5663b876764a5744399ca1c6a27"
+    },
+    {
+      "byte_size": 2027,
+      "path": "src/sources/works/syro-malabar-catholic-church/ordo-chaldaicus/editions/1906-puttenpalli-mar-thoma-shliha/passages/addai-mari-07-epiclesis-and-qanona.toml",
+      "sha256": "dfc4ec3beef6122bfab13b39ab0b447732b674f8ecab73853c2b3b0077c0136d"
+    },
+    {
+      "byte_size": 2030,
+      "path": "src/sources/works/syro-malabar-catholic-church/ordo-chaldaicus/editions/1906-puttenpalli-mar-thoma-shliha/passages/addai-mari-08-institution-narrative.toml",
+      "sha256": "293e2b74754d37ce0dd6b94c455612b4f0b96cb58f3fe8abbbcbb9436c1ff81b"
+    },
+    {
+      "byte_size": 1194,
+      "path": "src/sources/works/syro-malabar-catholic-church/ordo-chaldaicus/editions/1906-puttenpalli-mar-thoma-shliha/passages/addai-mari-facsimile.toml",
+      "sha256": "db60c9afa4150ea2d0a216396af84ddced3d50ca941c7f1e863432b269f0c9f2"
+    },
+    {
+      "byte_size": 1870,
+      "path": "src/sources/works/syro-malabar-catholic-church/ordo-chaldaicus/editions/1906-puttenpalli-mar-thoma-shliha/passages/added-masses-approval-and-opening.toml",
+      "sha256": "e1a274a02c5a69aacecd1e8a2d4c3bb2f702df4df151bf9d179df871f79f3545"
+    },
+    {
+      "byte_size": 854,
+      "path": "src/sources/works/syro-malabar-catholic-church/ordo-chaldaicus/work.toml",
+      "sha256": "660cfdd6f974da8fcde9d0fe94b18f15d9a567f52820d8ef115a78008b6a9bfc"
     },
     {
       "byte_size": 1379,
@@ -3738,19 +5488,19 @@
       "sha256": "9961359f38a3e390b5de4103a5222149e40b906362bba4b5620590f5ee1fed8e"
     },
     {
-      "byte_size": 68549,
+      "byte_size": 91240,
       "path": "scripts/_eucharistic_history.py",
-      "sha256": "0b0d74a48979ed4034b4caf91f459c339615f8a2c2d7fec85983a0614b55954a"
+      "sha256": "dea8781ff310c0a7fe030dcaf2e4001e2d58cff3a205a67e50be763b286781eb"
     },
     {
-      "byte_size": 24489,
+      "byte_size": 24794,
       "path": "scripts/_eucharistic_stages.py",
-      "sha256": "2d7d31f31b319c0d9320f3b686fff4fab9b1dde4129592b475290fb2b741eab7"
+      "sha256": "5cf2a0649216c5e5ea9fc0e674678e0a4da0b0dfc4ae41738404444f481514e9"
     },
     {
-      "byte_size": 115114,
+      "byte_size": 118667,
       "path": "scripts/_eucharistic_texts.py",
-      "sha256": "eb8c24e995b228f8fdda3c84a512ec90b1812eadef672678772870beb863ecc9"
+      "sha256": "7e7334b80ddec2347ace6ac081f1cec54f17f5920714b916b5f5542186a9a307"
     },
     {
       "byte_size": 48920,
@@ -3763,9 +5513,9 @@
       "sha256": "d6097913cc5cb8990eebe324b660303f61fb50344fa4140fbd2915906111bc71"
     },
     {
-      "byte_size": 255818,
+      "byte_size": 256160,
       "path": "tools/act-history",
-      "sha256": "346f5ffed7028f26d060b31e1dd9a82e3c64b9310bdabf84981e75d1f0594d96"
+      "sha256": "1fe3f597b501329243e08f3816eb010e48f1940baed84cd079b6ed2a233c4e37"
     },
     {
       "byte_size": 124276,

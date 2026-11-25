@@ -1,0 +1,442 @@
+{
+  "adapter_id": "native-book:chaldean-1901-addai-mari",
+  "binding_sha256": "cae4cb72cd1095d23b77b9d38e4810a1a3876f2681e4e68eeae49ca8d0bf83d1",
+  "catalogue_witness_ids": [
+    "eastern:chald-1901"
+  ],
+  "counts": {
+    "languages": {
+      "syr": 8
+    },
+    "units": 8,
+    "whitespace_tokens": 545
+  },
+  "id": "chaldean-1901-addai-mari",
+  "schema": "triptych-eucharistic-native-text/v1",
+  "scope": {
+    "complete_declared_extent": true,
+    "description": "Bounded constituent of the exact same eight aligned core units of the Anaphora of Addai and Mari in Classical Syriac (syr), preserving 1901's distinctive placement of the Institution Narrative inside the Post-Sanctus (PDF 72-71) prior to Gehanta 2, while using identical canonical native_path slugs for direct 3-way diffing against Chaldean 1767 and Syro-Malabar 1906.",
+    "extent_kind": "constituent",
+    "known_extent_pages": 9,
+    "known_extent_units": 8,
+    "omitted_book_divisions": [
+      "Title leaves, 22 Oct 1901 Latin imprimatur (PDF 101-103), and pre-anaphoral Ordo Missae (PDF 76-107)",
+      "Intervening private Kushapa prayers (PDF 74, 73, 70, 69, 68)",
+      "Post-epiclesis fraction, communion, additional anaphoras, and back matter (PDF 1-65)"
+    ],
+    "status": "complete-native-constituent",
+    "whole_book_complete": false
+  },
+  "sources": [
+    {
+      "edition_id": "edition.chaldean-catholic-church.missale.1901-mosul-dominican",
+      "id": "artifact.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-checked-syriac-441ec525",
+      "record_type": "artifact",
+      "rights_basis": "Faithful bounded reading transcription of original-language liturgical text from Missale Chaldaeorum (Mosul Dominican, 1901) — Anaphora of Addai and Mari Core, whose United States copyright term has expired by publication date (1901). Derived directly from tracked public-domain facsimile artifact.chaldean-catholic-church.missale.1901-mosul-dominican.bonn-scan-pdf-dbc2a822 without modern translation or editorial reconstruction. Third-party historical text is excluded from Triptych's CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "transformation": "Pure consonantal Classical Syriac Unicode (U+0710..U+072C, UTF-8 NFC) with single ASCII spaces between words and single LF (\\n) line endings, one canonical liturgical unit per line.; All East Syriac and West Syriac vowel points, seyame (U+0308), qushshaya/rukkakha, linea occultans/marhetana, punctuation dots, liturgical crosses, quotation marks, kashidas, catchwords, running heads, signature marks, and page numbers are omitted for scan-safe cross-edition diffing.; Rubrics (red or black stage directions), section headers (e.g. Qanona, Gehanta), speaker labels (priest/deacon/people), abbreviated posture cues (e.g. gehanta bow marker), intervening private Kushapa prayers, diaconal calls outside the main dialogue, and parallel Garshuni/Arabic columns are excluded.; Printed historical orthography, abbreviations (such as abbreviated Sanctus incipits), omissions, and additions are preserved verbatim without harmonizing or supplying words from memory."
+    },
+    {
+      "edition_id": "edition.chaldean-catholic-church.missale.1901-mosul-dominican",
+      "id": "artifact.chaldean-catholic-church.missale.1901-mosul-dominican.bonn-scan-pdf-dbc2a822",
+      "record_type": "artifact",
+      "rights_basis": "Historical 1901 printing, public domain in the United States by expired publication term. ULB Bonn identifies this exact digitized item as Public Domain Mark 1.0 at https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/3058397 (Lizenz-/Rechtehinweis, checked 2026-10-16), linking https://creativecommons.org/publicdomain/mark/1.0/deed.de. The mark identifies a public-domain assessment, not a new copyright licence. The retained scan is the library’s mechanical page reproduction, including its identification cover; no modern scholarly edition or translation has been substituted. These source bytes are not offered under Triptych’s CC BY 4.0 licence.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "source_url": "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/3058397"
+    },
+    {
+      "authority": "Latin imprimatur at PDF page 102: Fr. Henricus Altmayer S.O.P., Archiepiscopus Babylonensis, Delegatus Apostolicus, 22 October 1901. This is an identified imprimatur, not proof of a new typical edition or a substantive revision.",
+      "date": "1901",
+      "id": "edition.chaldean-catholic-church.missale.1901-mosul-dominican",
+      "language": "syr",
+      "publication": "Mausili: Typis Fratrum Praedicatorum, 1901.",
+      "record_type": "edition",
+      "title": "Missale juxta ritum Ecclesiae Syrorum Orientalium, id est Chaldaeorum"
+    },
+    {
+      "artifact_id": "artifact.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-checked-syriac-441ec525",
+      "edition_id": "edition.chaldean-catholic-church.missale.1901-mosul-dominican",
+      "id": "passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-01-opening-dialogue",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-checked-syriac-441ec525",
+      "edition_id": "edition.chaldean-catholic-church.missale.1901-mosul-dominican",
+      "id": "passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-02-preface-gehanta-1",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-checked-syriac-441ec525",
+      "edition_id": "edition.chaldean-catholic-church.missale.1901-mosul-dominican",
+      "id": "passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-03-sanctus",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-checked-syriac-441ec525",
+      "edition_id": "edition.chaldean-catholic-church.missale.1901-mosul-dominican",
+      "id": "passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-04-post-sanctus-gehanta-2",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-checked-syriac-441ec525",
+      "edition_id": "edition.chaldean-catholic-church.missale.1901-mosul-dominican",
+      "id": "passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-05-intercession-gehanta-3",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-checked-syriac-441ec525",
+      "edition_id": "edition.chaldean-catholic-church.missale.1901-mosul-dominican",
+      "id": "passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-06-anamnesis-oblation",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-checked-syriac-441ec525",
+      "edition_id": "edition.chaldean-catholic-church.missale.1901-mosul-dominican",
+      "id": "passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-07-epiclesis-and-qanona",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-checked-syriac-441ec525",
+      "edition_id": "edition.chaldean-catholic-church.missale.1901-mosul-dominican",
+      "id": "passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-08-institution-narrative",
+      "record_type": "passage"
+    }
+  ],
+  "stage_ids": [
+    "chaldean-east-syriac:mosul1901"
+  ],
+  "title": "Missale Chaldaeorum (Mosul Dominican, 1901) — Anaphora of Addai and Mari Core",
+  "units": [
+    {
+      "component": "anaphoras",
+      "direction": "rtl",
+      "kind": "dialogue",
+      "language": "syr",
+      "native_path": [
+        "anaphoras",
+        "addai-and-mari",
+        "01-opening-dialogue"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-checked-syriac-441ec525",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-checked-syriac-441ec525",
+      "source_id": "passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-01-opening-dialogue",
+      "source_locator": "Constituent unit 1/8 (anaphoras/addai-and-mari/01-opening-dialogue), normalized physical lines 1–1.",
+      "source_order": 1,
+      "text": "ܛܝܒܘܬܗ ܕܡܪܢ ܝܫܘܥ ܡܫܝܚܐ ܘܚܘܒܗ ܕܐܠܗܐ ܐܒܐ ܘܫܘܬܦܘܬܐ ܕܪܘܚܐ ܕܩܘܕܫܐ ܬܗܘܐ ܥܡ ܟܠܢ ܗܫܐ ܘܒܟܠܙܒܢ ܘܠܥܠܡ ܥܠܡܝܢ ܐܡܝܢ ܠܥܠ ܢܗܘܘܢ ܡܕܥܝܟܘܢ ܠܘܬܟ ܐܠܗܐ ܕܐܒܪܗܡ ܘܕܐܝܣܚܩ ܘܕܝܣܪܐܝܠ ܡܠܟܐ ܡܫܒܚܐ ܩܘܪܒܢܐ ܠܐܠܗܐ ܡܪܟܠ ܡܬܩܪܒ ܝܐܐ ܘܙܕܩ",
+      "text_edition_id": "edition.chaldean-catholic-church.missale.1901-mosul-dominican",
+      "text_sha256": "3660b59c09250f5a6792e1887cca42a5b889959bd09ad51dd1c16a9434cf69f0",
+      "unit_id": "chaldean-1901-addai-mari.01-opening-dialogue",
+      "witness_id": "chaldean-1901-mosul-bonn-pdf",
+      "witness_pages": [
+        [
+          74,
+          74
+        ],
+        [
+          75,
+          75
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "rtl",
+      "kind": "prayer",
+      "language": "syr",
+      "native_path": [
+        "anaphoras",
+        "addai-and-mari",
+        "02-preface-gehanta-1"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-checked-syriac-441ec525",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-checked-syriac-441ec525",
+      "source_id": "passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-02-preface-gehanta-1",
+      "source_locator": "Constituent unit 2/8 (anaphoras/addai-and-mari/02-preface-gehanta-1), normalized physical lines 2–2.",
+      "source_order": 2,
+      "text": "ܫܘܐ ܠܫܘܒܚܐ ܡܢ ܟܠ ܦܘܡܝܢ ܘܠܬܘܕܝܬܐ ܡܢ ܟܠ ܠܫܢܝܢ ܘܠܣܓܕܬܐ ܘܠܪܘܡܪܡܐ ܡܢ ܟܠ ܒܪܝܢ ܫܡܐ ܣܓܝܕܐ ܘܡܫܒܚܐ ܕܬܠܝܬܝܘܬܟ ܡܫܒܚܬܐ ܐܒܐ ܘܒܪܐ ܘܪܘܚܐ ܕܩܘܕܫܐ ܕܒܪܐ ܥܠܡܐ ܒܛܝܒܘܬܗ ܘܥܡܘܪܘܗܝ ܒܡܪܚܡܢܘܬܗ ܘܦܪܩ ܒܢܝܢܫܐ ܒܚܢܢܗ ܘܥܒܕ ܛܝܒܘܬܐ ܪܒܬܐ ܠܘܬ ܡܝܘܬܐ ܠܪܒܘܬܟ ܡܪܝ ܒܪܟܝܢ ܘܣܓܕܝܢ ܐܠܦ ܐܠܦܝܢ ܕܥܠܝܐ ܘܪܒܘ ܪܒܘܢ ܕܡܠܐܟܐ ܩܕܝܫܐ ܘܡܫܪܝܬܐ ܕܪܘܚܢܐ ܡܫܡܫܢܐ ܕܢܘܪܐ ܘܕܪܘܚܐ ܠܫܡܟ ܡܫܒܚܝܢ ܘܥܡ ܟܪܘܒܐ ܩܕܝܫܐ ܘܣܪܦܐ ܪܘܚܢܐ ܣܓܕܬܐ ܠܡܪܘܬܟ ܡܩܪܒܝܢ ܟܕ ܩܥܝܢ ܘܡܫܒܚܝܢ ܕܠܐ ܫܠܘܐ ܘܩܥܝܢ ܚܕ ܠܚܕ ܘܐܡܪܝܢ",
+      "text_edition_id": "edition.chaldean-catholic-church.missale.1901-mosul-dominican",
+      "text_sha256": "60c55105276cd9aa8026c90083899d20afa84dda8d56762e465af885271d2a5b",
+      "unit_id": "chaldean-1901-addai-mari.02-preface-gehanta-1",
+      "witness_id": "chaldean-1901-mosul-bonn-pdf",
+      "witness_pages": [
+        [
+          74,
+          74
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "rtl",
+      "kind": "acclamation",
+      "language": "syr",
+      "native_path": [
+        "anaphoras",
+        "addai-and-mari",
+        "03-sanctus"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-checked-syriac-441ec525",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-checked-syriac-441ec525",
+      "source_id": "passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-03-sanctus",
+      "source_locator": "Constituent unit 3/8 (anaphoras/addai-and-mari/03-sanctus), normalized physical lines 3–3.",
+      "source_order": 3,
+      "text": "ܩܕܝܫ ܩܕܝܫ ܩܕܝܫ ܡܪܝܐ ܐܠܗܐ ܚܝܠܬܢܐ ܕܡܠܝܢ ܫܡܝܐ ܘܐܪܥܐ ܡܢ ܬܫܒܚܬܗ ܐܘܫܥܢܐ ܒܡܪܘܡܐ ܐܘܫܥܢܐ ܠܒܪܗ ܕܕܘܝܕ ܒܪܝܟ ܕܐܬܐ ܘܐܬܐ ܒܫܡܗ ܕܡܪܝܐ ܐܘܫܥܢܐ ܒܡܪܘܡܐ",
+      "text_edition_id": "edition.chaldean-catholic-church.missale.1901-mosul-dominican",
+      "text_sha256": "09f92bce1ccbd9c5702230d5241e155943945d2d5b70f34b39eee86a98b5dcfb",
+      "unit_id": "chaldean-1901-addai-mari.03-sanctus",
+      "witness_id": "chaldean-1901-mosul-bonn-pdf",
+      "witness_pages": [
+        [
+          73,
+          73
+        ],
+        [
+          74,
+          74
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "rtl",
+      "kind": "institution-narrative",
+      "language": "syr",
+      "native_path": [
+        "anaphoras",
+        "addai-and-mari",
+        "08-institution-narrative"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-checked-syriac-441ec525",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-checked-syriac-441ec525",
+      "source_id": "passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-08-institution-narrative",
+      "source_locator": "Constituent unit 4/8 (anaphoras/addai-and-mari/08-institution-narrative), normalized physical lines 4–4.",
+      "source_order": 4,
+      "text": "ܘܥܡ ܗܠܝܢ ܚܝܠܘܬܐ ܫܡܝܢܐ ܡܘܕܝܢܢ ܠܟ ܡܪܝ ܘܡܒܪܟܝܢܢ ܠܐܠܗܐ ܡܠܬܐ ܝܠܕܐ ܟܣܝܐ ܕܡܢ ܥܘܒܟ ܗܘ ܕܟܕ ܐܝܬܘܗܝ ܒܕܡܘܬܟ ܘܨܡܚܐ ܕܡܢܟ ܘܨܠܡܐ ܕܐܝܬܘܬܟ ܠܐ ܗܘܐ ܚܛܘܦܝܐ ܚܫܒܗ ܠܗܕܐ ܕܢܗܘܐ ܦܚܡܟ ܐܠܐ ܢܦܫܗ ܣܪܩ ܘܕܡܘܬܐ ܕܥܒܕܐ ܢܣܒ ܘܗܘܐ ܒܪܢܫܐ ܡܫܠܡܢܐ ܒܢܦܫܐ ܡܠܝܠܬܐ ܘܝܕܘܥܬܢܝܬܐ ܘܠܐ ܡܝܘܬܬܐ ܘܒܦܓܪܐ ܡܝܘܬܐ ܐܢܫܝܐ ܘܗܘܐ ܡܢ ܐܢܬܬܐ ܘܗܘܐ ܬܚܝܬ ܢܡܘܣܐ ܕܠܐܝܠܝܢ ܕܬܚܝܬ ܢܡܘܣܐ ܐܢܘܢ ܢܙܒܢ ܘܫܒܩ ܠܢ ܕܘܟܪܢܐ ܕܦܘܪܩܢܢ ܐܪܙܐ ܗܢܐ ܕܡܩܪܒܝܢܢ ܩܕܡܝܟ ܟܕ ܓܝܪ ܡܛܐ ܙܒܢܐ ܗܘ ܕܒܗ ܥܬܝܕ ܗܘܐ ܕܢܚܫ ܘܕܢܬܩܪܒ ܠܡܘܬܐ ܒܗܘ ܠܠܝܐ ܕܡܫܬܠܡ ܗܘܐ ܢܣܒ ܠܚܡܐ ܒܐܝܕܘܗܝ ܩܕܝܫܬܐ ܘܐܪܝܡ ܥܝܢܘܗܝ ܠܫܡܝܐ ܠܘܬܟ ܐܠܗܐ ܐܒܘܗܝ ܐܚܝܕ ܟܠ ܘܐܘܕܝ ܠܟ ܘܒܪܟ ܘܩܨܐ ܘܝܗܒ ܠܬܠܡܝܕܘܗܝ ܟܕ ܐܡܪ ܣܒܘ ܐܟܘܠܘ ܡܢܗ ܟܠܟܘܢ ܗܢܐ ܗܘ ܦܓܪܝ ܕܥܠ ܐܦܝܟܘܢ ܡܬܩܨܐ ܠܫܘܒܩܢܐ ܕܚܛܗܐ ܐܡܝܢ ܗܟܢܐ ܡܢ ܒܬܪ ܕܐܚܫܡܘ ܢܣܒ ܒܐܝܕܘܗܝ ܩܕܝܫܬܐ ܟܣܐ ܕܟܝܐ ܘܐܘܕܝ ܠܟ ܘܒܪܟ ܘܝܗܒ ܠܬܠܡܝܕܘܗܝ ܟܕ ܐܡܪ ܣܒܘ ܐܫܬܘ ܡܢܗ ܟܠܟܘܢ ܗܢܐ ܗܘ ܕܡܝ ܕܕܝܬܩܝ ܚܕܬܐ ܕܠܥܠܡ ܐܪܙܐ ܕܗܝܡܢܘܬܐ ܕܚܠܦܝܟܘܢ ܘܚܠܦ ܣܓܝܐܐ ܡܬܐܫܕ ܠܫܘܒܩܢܐ ܕܚܛܗܐ ܐܡܝܢ ܟܠ ܐܡܬܝ ܕܬܥܒܕܘܢ ܗܠܝܢ ܠܕܘܟܪܢܝ ܗܘ ܡܥܗܕܝܬܘܢ ܐܡܝܢ",
+      "text_edition_id": "edition.chaldean-catholic-church.missale.1901-mosul-dominican",
+      "text_sha256": "d01ef9446869889513cc4c7ef821a1f4e8b19ec6295606d58992d51eecac85ac",
+      "unit_id": "chaldean-1901-addai-mari.08-institution-narrative",
+      "witness_id": "chaldean-1901-mosul-bonn-pdf",
+      "witness_pages": [
+        [
+          71,
+          71
+        ],
+        [
+          72,
+          72
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "rtl",
+      "kind": "prayer",
+      "language": "syr",
+      "native_path": [
+        "anaphoras",
+        "addai-and-mari",
+        "04-post-sanctus-gehanta-2"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-checked-syriac-441ec525",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-checked-syriac-441ec525",
+      "source_id": "passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-04-post-sanctus-gehanta-2",
+      "source_locator": "Constituent unit 5/8 (anaphoras/addai-and-mari/04-post-sanctus-gehanta-2), normalized physical lines 5–5.",
+      "source_order": 5,
+      "text": "ܘܐܝܟܢܐ ܕܐܬܦܩܕܢ ܐܬܟܢܫܢ ܐܦ ܚܢܢ ܥܒܕܝܟ ܟܪܝܗܐ ܘܡܚܝܠܐ ܘܕܘܝܐ ܕܥܒܕܬ ܥܡܢ ܛܝܒܘܬܐ ܪܒܬܐ ܕܠܐ ܡܬܦܪܥܐ ܕܠܒܫܬ ܐܢܫܘܬܢ ܕܬܚܝܢ ܒܐܠܗܘܬܟ ܘܐܪܝܡܬ ܫܦܠܢ ܘܐܩܝܡܬ ܡܦܘܠܬܢ ܘܢܚܡܬ ܡܝܘܬܢ ܘܫܒܩܬ ܚܘܒܝܢ ܘܙܕܩܬ ܠܚܛܝܘܬܢ ܘܐܢܗܪܬ ܠܡܕܥܢ ܘܚܝܒܬ ܡܪܝ ܘܐܠܗܢ ܠܒܥܠܕܒܒܝܢ ܘܢܨܚܬ ܠܒܨܝܪܘܬܗ ܕܟܝܢܢ ܡܚܝܠܐ ܒܪܚܡܐ ܫܦܝܥܐ ܕܛܝܒܘܬܟ ܘܥܠ ܐܦܝ ܟܠܗܘܢ ܥܘܕܪܢܝܟ ܘܛܝܒܘܬܟ ܕܠܘܬܢ ܢܣܩ ܠܟ ܬܫܒܘܚܬܐ ܘܐܝܩܪܐ ܘܬܘܕܝܬܐ ܘܣܓܕܬܐ ܗܫܐ ܘܒܟܠܙܒܢ ܘܠܥܠܡ ܥܠܡܝܢ ܐܡܝܢ",
+      "text_edition_id": "edition.chaldean-catholic-church.missale.1901-mosul-dominican",
+      "text_sha256": "f38bb84a645e585ad5e9cb1e7485e9a48e689483891256850adc58f07ebfe721",
+      "unit_id": "chaldean-1901-addai-mari.04-post-sanctus-gehanta-2",
+      "witness_id": "chaldean-1901-mosul-bonn-pdf",
+      "witness_pages": [
+        [
+          70,
+          70
+        ],
+        [
+          71,
+          71
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "rtl",
+      "kind": "prayer",
+      "language": "syr",
+      "native_path": [
+        "anaphoras",
+        "addai-and-mari",
+        "05-intercession-gehanta-3"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-checked-syriac-441ec525",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-checked-syriac-441ec525",
+      "source_id": "passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-05-intercession-gehanta-3",
+      "source_locator": "Constituent unit 6/8 (anaphoras/addai-and-mari/05-intercession-gehanta-3), normalized physical lines 6–6.",
+      "source_order": 6,
+      "text": "ܐܢܬ ܡܪܝ ܒܪܚܡܝܟ ܣܓܝܐܐ ܕܠܐ ܡܬܡܠܠܝܢ ܐܫܘܐ ܠܢ ܕܢܥܒܕ ܕܘܟܪܢܐ ܛܒܐ ܘܡܩܒܠܐ ܠܟܠܗܘܢ ܐܒܗܐ ܟܐܢܐ ܘܙܕܝܩܐ ܕܫܦܪܘ ܩܕܡܝܟ ܒܥܘܗܕܢܐ ܕܦܓܪܗ ܘܕܡܗ ܕܡܫܝܚܟ ܕܡܩܪܒܝܢܢ ܠܟ ܥܠ ܡܕܒܚܟ ܕܟܝܐ ܘܩܕܝܫܐ ܐܝܟܢܐ ܕܐܢܬ ܐܠܦܬܢ ܘܥܒܕ ܥܡܢ ܫܝܢܟ ܘܫܠܡܟ ܟܠܗܘܢ ܝܘܡܬܗ ܕܥܠܡܐ ܐܝܢ ܡܪܝ ܘܐܠܗܢ ܥܒܕ ܥܡܢ ܫܝܢܟ ܘܫܠܡܟ ܟܠܗܘܢ ܝܘܡܬܗ ܕܥܠܡܐ ܕܢܕܥܘܢܟ ܟܠܗܘܢ ܥܡܘܪܝܗ ܕܐܪܥܐ ܕܐܢܬ ܐܢܬ ܐܠܗܐ ܕܫܪܪܐ ܒܠܚܘܕܝܟ ܘܐܢܬ ܫܕܪܬ ܠܡܪܢ ܝܫܘܥ ܡܫܝܚܐ ܒܪܟ ܘܚܒܝܒܟ ܘܗܘ ܡܪܢ ܘܐܠܗܢ ܐܬܐ ܘܐܠܦ ܠܢ ܒܣܒܪܬܗ ܡܚܝܢܝܬܐ ܟܠܗ ܕܟܝܘܬܐ ܘܩܕܝܫܘܬܐ ܕܢܒܝܐ ܘܕܫܠܝܚܐ ܘܕܣܗܕܐ ܘܕܡܘܕܝܢܐ ܘܕܐܦܣܩܘܦܐ ܘܕܡܠܦܢܐ ܘܕܟܗܢܐ ܘܕܡܫܡܫܢܐ ܘܕܟܠܗܘܢ ܒܢܝܗ ܕܥܕܬܐ ܩܕܝܫܬܐ ܩܬܘܠܝܩܝ ܐܝܠܝܢ ܕܐܬܚܬܡܘ ܒܪܘܫܡܐ ܚܝܐ ܕܡܥܡܘܕܝܬܐ ܩܕܝܫܬܐ",
+      "text_edition_id": "edition.chaldean-catholic-church.missale.1901-mosul-dominican",
+      "text_sha256": "7176211f952bdc4c667013a7ac9059dbe33e97e20f6eda1fd88c359c804e6e96",
+      "unit_id": "chaldean-1901-addai-mari.05-intercession-gehanta-3",
+      "witness_id": "chaldean-1901-mosul-bonn-pdf",
+      "witness_pages": [
+        [
+          67,
+          67
+        ],
+        [
+          68,
+          68
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "rtl",
+      "kind": "prayer",
+      "language": "syr",
+      "native_path": [
+        "anaphoras",
+        "addai-and-mari",
+        "06-anamnesis-oblation"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-checked-syriac-441ec525",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-checked-syriac-441ec525",
+      "source_id": "passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-06-anamnesis-oblation",
+      "source_locator": "Constituent unit 7/8 (anaphoras/addai-and-mari/06-anamnesis-oblation), normalized physical lines 7–7.",
+      "source_order": 7,
+      "text": "ܘܐܦ ܚܢܢ ܡܪܝ ܥܒܕܝܟ ܟܪܝܗܐ ܘܡܚܝܠܐ ܘܕܘܝܐ ܕܟܢܝܫܝܢܢ ܒܫܡܟ ܘܩܝܡܝܢܢ ܩܕܡܝܟ ܒܥܕܢܐ ܗܢܐ ܘܩܒܠܢ ܒܝܘܒܠܐ ܛܘܦܣܐ ܕܡܢܟ ܟܕ ܚܕܝܢܢ ܘܡܫܒܚܝܢܢ ܘܡܪܡܪܡܝܢܢ ܘܡܥܗܕܝܢܢ ܘܥܒܕܝܢܢ ܠܗ ܠܐܪܙܐ ܗܢܐ ܪܒܐ ܘܕܚܝܠܐ ܘܩܕܝܫܐ ܘܡܚܝܢܐ ܘܐܠܗܝܐ ܕܚܫܗ ܘܕܡܘܬܗ ܘܕܩܒܘܪܬܗ ܘܕܩܝܡܬܗ ܕܡܪܢ ܘܦܪܘܩܢ ܝܫܘܥ ܡܫܝܚܐ",
+      "text_edition_id": "edition.chaldean-catholic-church.missale.1901-mosul-dominican",
+      "text_sha256": "24ca7b8816cf62efeec85df3b83be4ff7d0f4f0e519bb0d4eef6339d8d38468e",
+      "unit_id": "chaldean-1901-addai-mari.06-anamnesis-oblation",
+      "witness_id": "chaldean-1901-mosul-bonn-pdf",
+      "witness_pages": [
+        [
+          67,
+          67
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "rtl",
+      "kind": "prayer",
+      "language": "syr",
+      "native_path": [
+        "anaphoras",
+        "addai-and-mari",
+        "07-epiclesis-and-qanona"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-checked-syriac-441ec525",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-checked-syriac-441ec525",
+      "source_id": "passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-07-epiclesis-and-qanona",
+      "source_locator": "Constituent unit 8/8 (anaphoras/addai-and-mari/07-epiclesis-and-qanona), normalized physical lines 8–8.",
+      "source_order": 8,
+      "text": "ܘܢܐܬܐ ܡܪܝ ܪܘܚܟ ܩܕܝܫܐ ܘܢܬܬܢܝܚ ܥܠ ܩܘܪܒܢܐ ܗܢܐ ܕܥܒܕܝܟ ܘܢܒܪܟܝܘܗܝ ܘܢܩܕܫܝܘܗܝ ܘܢܗܘܐ ܠܢ ܡܪܝ ܠܚܘܣܝܐ ܕܚܘܒܐ ܘܠܫܘܒܩܢܐ ܕܚܛܗܐ ܘܠܣܒܪܐ ܪܒܐ ܕܩܝܡܬܐ ܕܡܢ ܒܝܬ ܡܝܬܐ ܘܠܚܝܐ ܚܕܬܐ ܒܡܠܟܘܬܐ ܕܫܡܝܐ ܥܡ ܟܠ ܕܫܦܪܘ ܩܕܡܝܟ ܘܥܠ ܐܦܝ ܟܠܗ ܡܕܒܪܢܘܬܟ ܗܕܐ ܪܒܬܐ ܘܬܡܝܗܬܐ ܕܠܘܬܢ ܢܘܕܐ ܠܟ ܘܢܫܒܚܟ ܕܠܐ ܫܠܘܐ ܒܥܕܬܟ ܦܪܝܩܬܐ ܒܕܡܗ ܝܩܝܪܐ ܕܡܫܝܚܟ ܒܦܘܡܐ ܦܬܝܚܐ ܘܒܐܦܐ ܓܠܝܬܐ ܟܕ ܡܣܩܝܢܢ ܬܫܒܘܚܬܐ ܘܐܝܩܪܐ ܘܬܘܕܝܬܐ ܘܣܓܕܬܐ ܠܫܡܟ ܚܝܐ ܘܩܕܝܫܐ ܘܡܚܝܢܐ ܗܫܐ ܘܒܟܠܙܒܢ ܘܠܥܠܡ ܥܠܡܝܢ ܐܡܝܢ",
+      "text_edition_id": "edition.chaldean-catholic-church.missale.1901-mosul-dominican",
+      "text_sha256": "9616ee1c448acac99cd9842cd533236defef6054548318813fcdae23d5c0e53d",
+      "unit_id": "chaldean-1901-addai-mari.07-epiclesis-and-qanona",
+      "witness_id": "chaldean-1901-mosul-bonn-pdf",
+      "witness_pages": [
+        [
+          66,
+          66
+        ],
+        [
+          67,
+          67
+        ]
+      ]
+    }
+  ],
+  "witnesses": [
+    {
+      "artifact_id": "artifact.chaldean-catholic-church.missale.1901-mosul-dominican.bonn-scan-pdf-dbc2a822",
+      "edition_id": "edition.chaldean-catholic-church.missale.1901-mosul-dominican",
+      "id": "chaldean-1901-mosul-bonn-pdf",
+      "scope_pages": [
+        [
+          66,
+          68
+        ],
+        [
+          70,
+          75
+        ]
+      ]
+    }
+  ]
+}

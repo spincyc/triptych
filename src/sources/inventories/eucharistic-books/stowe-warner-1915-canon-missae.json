@@ -1,0 +1,414 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-native-book",
+  "id": "stowe-warner-1915-canon-missae",
+  "title": "Stowe Missal (Warner 1915 Vol. 2): complete strict Canon Missae constituent",
+  "scope": "Complete strict Eucharistic Canon of RIA MS D. II. 3 as mediated by G. F. Warner's 1915 printed text (Vol. II, printed pp. 10-16, PDF pp. 96-102): from the Canon heading Canón dominicus papę gilasi and Té igitur on printed p. 10 (fo. 24) through per omnia saecula saeculorum : on printed p. 16 (fo. 34), immediately before the Old Irish fraction rubric and Pater nóster on printed p. 17. Includes the seven seasonal Infra actionem Communicantes insertions (pp. 11-12), Moelcaich's bracketed anamnesis addition in Simili modo (p. 13), and the Stowe Diptychs of the Dead (ff. 32-33, pp. 15-16) continuing Memento etiam (fo. 29v, p. 14). Excludes the two misbound leaves ff. 30-31v (Litany of Irish Saints and Oratio Ambrosi on pp. 14-15, which Warner notes belong after fo. 12 before the Mass) and excludes all apparatus footnotes, running heads, and marginal folio markers.",
+  "transcribed_by": "AI source transcriber (Lane T3, direct PNG inspection of Warner 1915 Vol. 2 PDF pp. 96-102)",
+  "stage_ids": [
+    "early-western-round2-stowe"
+  ],
+  "catalogue_witness_ids": [
+    "western:stowe-ria-dii3"
+  ],
+  "components": [
+    "anaphoras"
+  ],
+  "languages": [
+    "la"
+  ],
+  "extent_kind": "constituent",
+  "excluded_book_divisions": [
+    "Preface, Old Irish Dignum rubrics, Per quem and Sanctus on printed p. 10 (PDF p. 96) above Canón dominicus papę gilasi",
+    "Misbound inserted leaves [fo. 30]-[fo. 31v] (Litany of Irish Saints sancte stefane... and Oratio ambrosi / Ante conspectum... on printed pp. 14-15, PDF pp. 100-101), which Warner p. 14 n. 2 and p. 15 n. 6 identify as belonging after fo. 12",
+    "Old Irish fraction/commixture rubrics, Pater nóster, Libera nos, communion chants and all subsequent material from printed p. 17 (PDF p. 103) onward",
+    "Critical apparatus footnotes, superscript footnote numbers, running heads (THE STOWE MISSAL.), page numbers, and marginal folio tags ([fo. 24] to [fo. 34])"
+  ],
+  "date": {
+    "kind": "publication",
+    "label": "1915 critical edition (mediating Stowe core copied ca. 792, catalogue bounds 780-820, with undated Moelcaich revisions)",
+    "start_year": 1915,
+    "end_year": 1915,
+    "evidence": [
+      {
+        "source_id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-hanc-igitur",
+        "locus": "G. F. Warner (ed.), The Stowe Missal, Vol. II: Printed Text (HBS 32, London 1915), printed pp. 10-16 / PDF pp. 96-102"
+      }
+    ]
+  },
+  "extent_path": "src/sources/inventories/eucharistic-books/support/stowe-warner-1915-canon-missae-extent.json",
+  "collation_path": "src/sources/inventories/eucharistic-books/support/stowe-warner-1915-canon-missae-review.json",
+  "witnesses": [
+    {
+      "id": "stowe-warner-1915-vol-2-pdf",
+      "edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.ia-scan-27c6070e",
+      "scope_pages": [
+        [
+          96,
+          102
+        ]
+      ],
+      "completeness_evidence": [
+        {
+          "source_id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-facsimile",
+          "locus": "PDF pages 96–102 of 146; complete bounded constituent scope."
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "unit.stowe-warner-1915.canon.opening-rubric",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "opening-rubric"
+      ],
+      "source_order": 1,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "heading",
+      "witness_id": "stowe-warner-1915-vol-2-pdf",
+      "witness_pages": [
+        [
+          96,
+          96
+        ]
+      ],
+      "passage_id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-opening-rubric",
+      "text_sha256": "fe4c65092f4d727f6dbe9783ee66873a6e0b5326822422017b5ab2acd8adaee3"
+    },
+    {
+      "unit_id": "unit.stowe-warner-1915.canon.te-igitur",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "te-igitur"
+      ],
+      "source_order": 2,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "stowe-warner-1915-vol-2-pdf",
+      "witness_pages": [
+        [
+          96,
+          96
+        ]
+      ],
+      "passage_id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-te-igitur",
+      "text_sha256": "37efb94f701bb504e3104fe9b2b45b328baac3b23a2b734d3debd655eb2e3d81"
+    },
+    {
+      "unit_id": "unit.stowe-warner-1915.canon.memento-vivorum",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "memento-vivorum"
+      ],
+      "source_order": 3,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "stowe-warner-1915-vol-2-pdf",
+      "witness_pages": [
+        [
+          97,
+          97
+        ]
+      ],
+      "passage_id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-memento-vivorum",
+      "text_sha256": "14c56d6127776b67d197b6f61eb94e6147522c0a02293b50f36ab29c230fe3e6"
+    },
+    {
+      "unit_id": "unit.stowe-warner-1915.canon.communicantes",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "communicantes"
+      ],
+      "source_order": 4,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "stowe-warner-1915-vol-2-pdf",
+      "witness_pages": [
+        [
+          97,
+          97
+        ],
+        [
+          98,
+          98
+        ]
+      ],
+      "passage_id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-communicantes",
+      "text_sha256": "af88c163d6200dbcf1a5e54488becb1f3bbc382ca43c6325a28a449acb7771af"
+    },
+    {
+      "unit_id": "unit.stowe-warner-1915.canon.hanc-igitur",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "hanc-igitur"
+      ],
+      "source_order": 5,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "stowe-warner-1915-vol-2-pdf",
+      "witness_pages": [
+        [
+          98,
+          98
+        ]
+      ],
+      "passage_id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-hanc-igitur",
+      "text_sha256": "42b5491097b23b44b17e465d77387c7543b13c7dfec75075d9807435637c1fb6"
+    },
+    {
+      "unit_id": "unit.stowe-warner-1915.canon.quam-oblationem",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "quam-oblationem"
+      ],
+      "source_order": 6,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "stowe-warner-1915-vol-2-pdf",
+      "witness_pages": [
+        [
+          98,
+          98
+        ]
+      ],
+      "passage_id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-quam-oblationem",
+      "text_sha256": "bbc0c822c7e03d3d4c44b011b1123fb553b9b66e44141f8ffbffad5d9f599b4c"
+    },
+    {
+      "unit_id": "unit.stowe-warner-1915.canon.qui-pridie",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "qui-pridie"
+      ],
+      "source_order": 7,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "institution-narrative",
+      "witness_id": "stowe-warner-1915-vol-2-pdf",
+      "witness_pages": [
+        [
+          98,
+          98
+        ],
+        [
+          99,
+          99
+        ]
+      ],
+      "passage_id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-qui-pridie",
+      "text_sha256": "ec92338f28d33520afbb7724b286a055bbf4d51c0fdaef3bcae62bb6bcda00ed"
+    },
+    {
+      "unit_id": "unit.stowe-warner-1915.canon.simili-modo",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "simili-modo"
+      ],
+      "source_order": 8,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "institution-narrative",
+      "witness_id": "stowe-warner-1915-vol-2-pdf",
+      "witness_pages": [
+        [
+          99,
+          99
+        ]
+      ],
+      "passage_id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-simili-modo",
+      "text_sha256": "699d4da969e8618d783625aa7b7d065ab9682c2faabd6ad4ebd237238170a079"
+    },
+    {
+      "unit_id": "unit.stowe-warner-1915.canon.unde-et-memores",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "unde-et-memores"
+      ],
+      "source_order": 9,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "stowe-warner-1915-vol-2-pdf",
+      "witness_pages": [
+        [
+          99,
+          99
+        ]
+      ],
+      "passage_id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-unde-et-memores",
+      "text_sha256": "894c01c2af560597758d0f540bdf488c8fe5e3bfa9bac7444dc8cf73e18f06ea"
+    },
+    {
+      "unit_id": "unit.stowe-warner-1915.canon.supra-quae",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "supra-quae"
+      ],
+      "source_order": 10,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "stowe-warner-1915-vol-2-pdf",
+      "witness_pages": [
+        [
+          99,
+          99
+        ]
+      ],
+      "passage_id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-supra-quae",
+      "text_sha256": "bdb000e22b9d386ae9727c186a7737faeda09a3f0dd4d78a1dcc3031a70d6436"
+    },
+    {
+      "unit_id": "unit.stowe-warner-1915.canon.supplices",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "supplices"
+      ],
+      "source_order": 11,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "stowe-warner-1915-vol-2-pdf",
+      "witness_pages": [
+        [
+          99,
+          99
+        ]
+      ],
+      "passage_id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-supplices",
+      "text_sha256": "9c8bf36f81ed71322e8268f2444599f2fff04d9788c13b7fc2caa0837890f886"
+    },
+    {
+      "unit_id": "unit.stowe-warner-1915.canon.memento-defunctorum",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "memento-defunctorum"
+      ],
+      "source_order": 12,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer-with-diptychs",
+      "witness_id": "stowe-warner-1915-vol-2-pdf",
+      "witness_pages": [
+        [
+          100,
+          100
+        ],
+        [
+          101,
+          101
+        ],
+        [
+          102,
+          102
+        ]
+      ],
+      "passage_id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-memento-defunctorum",
+      "text_sha256": "4b8fa121de737faa1f3f2af2ea4d0db09dba2692ab4c53a2c0fc2300dd953266"
+    },
+    {
+      "unit_id": "unit.stowe-warner-1915.canon.nobis-quoque",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "nobis-quoque"
+      ],
+      "source_order": 13,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "stowe-warner-1915-vol-2-pdf",
+      "witness_pages": [
+        [
+          102,
+          102
+        ]
+      ],
+      "passage_id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-nobis-quoque",
+      "text_sha256": "fdd5c4508477db002287ecc46a6852e0659b2aaec4fb520a1df76a8b1504fa1b"
+    },
+    {
+      "unit_id": "unit.stowe-warner-1915.canon.per-quem",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "per-quem"
+      ],
+      "source_order": 14,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "stowe-warner-1915-vol-2-pdf",
+      "witness_pages": [
+        [
+          102,
+          102
+        ]
+      ],
+      "passage_id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-per-quem",
+      "text_sha256": "fb23f67f138b312b5ef7efa244cec03c1d81d341310d198e2b785262339e44e7"
+    },
+    {
+      "unit_id": "unit.stowe-warner-1915.canon.per-ipsum",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "per-ipsum"
+      ],
+      "source_order": 15,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "doxology",
+      "witness_id": "stowe-warner-1915-vol-2-pdf",
+      "witness_pages": [
+        [
+          102,
+          102
+        ]
+      ],
+      "passage_id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-per-ipsum",
+      "text_sha256": "aa02ae967c1fc8c00a2cd984d59752f5bb1363ff59fcce2b723b37ee57bc8587"
+    },
+    {
+      "unit_id": "unit.stowe-warner-1915.canon.concluding-response",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "concluding-response"
+      ],
+      "source_order": 16,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "dialogue",
+      "witness_id": "stowe-warner-1915-vol-2-pdf",
+      "witness_pages": [
+        [
+          102,
+          102
+        ]
+      ],
+      "passage_id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-concluding-response",
+      "text_sha256": "f913b0fa3784e23167f194b29c196da84c1466b51f38cd49845a96cce4fc0ee4"
+    }
+  ]
+}

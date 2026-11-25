@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.maronite-church.qurbono.1594-rome-medici.anaphora-checked-syriac-2f49114b"
+edition_id = "edition.maronite-church.qurbono.1594-rome-medici"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Faithful bounded reading transcription of original-language liturgical text from Missale Chaldaicum iuxta ritum Ecclesiae nationis Maronitarum (Rome Medici, 1594) — Anaphora of the Twelve Apostles Core, whose United States copyright term has expired by publication date (1594 (Syriac title 1592)). Derived directly from tracked public-domain facsimile artifact.maronite-church.qurbono.1594-rome-medici.ia-scan-pdf-dbab3b5b without modern translation or editorial reconstruction. Third-party historical text is excluded from Triptych's CC BY 4.0 license."
+provenance = "Pixel-verified primary-source transcription prepared by lane-t2-syriac and independently collated against rendered facsimile page images by independent-collator-v2-syriac on 2026-11-25. Not a glyph-diplomatic edition or human specialist critical apparatus; complete bounded constituent only."
+retrieved = "2026-11-25"
+sha256 = "2f49114b5db2a190d91a6d6681a5a1d641528540efc2826870bfc0d288a6eaf5"
+byte_size = 1032
+path = "src/sources/works/maronite-church/qurbono/editions/1594-rome-medici/artifacts/anaphora-checked-syriac-2f49114b/text.txt"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.maronite-church.qurbono.1594-rome-medici.ia-scan-pdf-dbab3b5b"
+transformation = "Pure consonantal Classical Syriac Unicode (U+0710..U+072C, UTF-8 NFC) with single ASCII spaces between words and single LF (\\n) line endings, one canonical liturgical unit per line.; All West Syriac vowel points, seyame (U+0308), qushshaya/rukkakha, punctuation marks, liturgical crosses (including inline red crosses splitting ܘܒܪܟ in 1594), kashidas, catchwords, running heads, border ornaments, and page numbers are omitted for scan-safe cross-edition diffing.; Rubrics (red Syriac or red Garshuni stage directions), speaker labels (priest/deacon/people), editorial 'etc.' cues (ܘܫܪ), intervening rubricated Trinitarian cross-blessings, and parallel Garshuni/Arabic columns are excluded.; Printed historical orthography (such as ܐܪܙܐ in 1594 vs ܪܐܙܐ in 1908, and ܒܐܝܕܝܐ in both Chalice preambles), abbreviations (such as abbreviated Dialogue incipits in 1594), omissions, and additions are preserved verbatim without harmonizing or supplying words from memory."
+notes = "Bounded constituent of five core units of the Anaphora of the Twelve Apostles (Opening Dialogue, Institution of Bread, Institution of Chalice, Epiclesis Call/Kyrie, and Epiclesis Consecration/Salvation Petition) in Classical Syriac (syr), directly aligned with Beirut 1908; intervening Preface, Post-Sanctus, Anamnesis, secret Epiclesis preamble, and post-epiclesis fruits prayer are excluded due to dense archaic Medici cursive ligatures and structural divergence in 1908's inline Ordo Communis."

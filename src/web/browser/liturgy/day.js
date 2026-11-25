@@ -903,9 +903,16 @@
    * a 1962 transcription with nothing between them.
    */
   function departureRow(lead, row) {
-    return T.el('p', 'row-meta',
-      lead + ': ' + row.kind + (row.act ? ' · Act-history station: ' + row.act : '') +
-      (row.basis ? ' — ' + row.basis : ''));
+    const p = T.el('p', 'row-meta');
+    p.appendChild(document.createTextNode(lead + ': ' + row.kind));
+    if (row.act) {
+      p.appendChild(document.createTextNode(' · Act-history station: '));
+      const stationLink = T.el('a', null, row.act);
+      stationLink.href = '../history/?view=map&slice=roman-holy-week#station=' + encodeURIComponent(row.act);
+      p.appendChild(stationLink);
+    }
+    if (row.basis) p.appendChild(document.createTextNode(' — ' + row.basis));
+    return p;
   }
 
   function recensionRows(head, mass, structure) {

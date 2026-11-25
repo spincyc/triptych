@@ -2035,6 +2035,30 @@
     } else target.appendChild(T.el('p', 'panel-note',
       'No accepted act-history station is linked to this record.'));
     appendRecordRelations(row, target);
+    const xref = catalogueData && catalogueData.cross_references && catalogueData.cross_references.by_record_id &&
+      catalogueData.cross_references.by_record_id[row.id];
+    if (xref && ((xref.stages && xref.stages.length) || (xref.comparisons && xref.comparisons.length))) {
+      const box = T.el('section', 'history-xref-box');
+      box.appendChild(T.el('h4', null, 'Elsewhere in this Missal Timeline'));
+      const list = T.el('ul', 'history-xref-list');
+      (xref.stages || []).forEach(function (st) {
+        const item = T.el('li', null);
+        const link = T.el('a', null, st.tradition_label + ' — ' + st.label + ' (' + st.date_label + ')');
+        link.href = historyURL('timeline', null, '#' + new URLSearchParams([['tradition', st.tradition_id], ['stage', st.id]]).toString());
+        item.appendChild(link);
+        if (st.text_coverage && st.text_coverage !== 'not-transcribed') {
+          item.appendChild(T.el('span', 'stage-badge stage-badge-text', ' ' + st.text_coverage));
+        }
+        list.appendChild(item);
+      });
+      (xref.comparisons || []).forEach(function (comp) {
+        const item = T.el('li', null);
+        item.appendChild(T.el('span', null, 'Witness comparison: ' + comp.title + ' (available in bounded comparisons above)'));
+        list.appendChild(item);
+      });
+      box.appendChild(list);
+      target.appendChild(box);
+    }
     target.appendChild(T.el('h4', null, 'Sources and access'));
     const sources = T.el('ul', 'catalogue-sources');
     row.sources.forEach(function (source) {
@@ -2340,6 +2364,8 @@
     host.appendChild(T.el('p', 'comparison-basis', payload.basis));
     host.appendChild(T.el('p', 'detail-weak comparison-caveat', payload.apparatus_caveat));
     const pair = T.el('div', 'comparison-pair');
+    const rtlLangs = ['ar', 'he', 'syr', 'arc'];
+    const allLangs = [];
     ['left', 'right'].forEach(function (name) {
       const side = payload[name];
       const column = T.el('section', 'comparison-witness');
@@ -2351,7 +2377,11 @@
         '. Represented witness date: ' + catalogueText(side.witness_date) + '.'));
       const text = T.el('p', 'held-text comparison-text', side.joined_source_text);
       const languages = Array.from(new Set(side.members.map(function (member) { return member.language; })));
-      if (languages.length === 1) text.lang = languages[0];
+      languages.forEach(function (lang) { if (allLangs.indexOf(lang) === -1) allLangs.push(lang); });
+      if (languages.length === 1) {
+        text.lang = languages[0];
+        if (rtlLangs.indexOf(languages[0].split('-')[0]) !== -1) text.setAttribute('dir', 'rtl');
+      }
       column.appendChild(text);
       column.appendChild(T.el('p', 'panel-note', side.members.length === 1
         ? 'One source unit; exact stored wording.'
@@ -2375,8 +2405,9 @@
       pair.appendChild(column);
     });
     host.appendChild(pair);
+    host.appendChild(renderVisualDiff(payload, allLangs));
     const diff = T.el('details', 'catalogue-original comparison-diff');
-    diff.appendChild(T.el('summary', null, 'Show the generated unified text diff'));
+    diff.appendChild(T.el('summary', null, 'Show raw unified text diff'));
     diff.appendChild(T.el('p', 'panel-note',
       'Minus marks the left witness; plus marks the right. Lines follow the generator’s mechanical clause breaks. ' +
       'These marks compare wording, spelling, and punctuation; they do not establish historical additions or deletions.'));
@@ -2395,6 +2426,147 @@
     });
     sources.appendChild(T.el('pre', null, JSON.stringify(payload.sources, null, 2)));
     host.appendChild(sources);
+  }
+
+  function myersWordDiff(a, b) {
+    // Exact O((N+M)D) Myers shortest edit script over whitespace-separated words.
+    // Bounded to prevent slow paths on massive payloads; preserves every exact token.
+    const n = a.length, m = b.length, max = Math.min(n + m, 2400);
+    if (!n && !m) return [];
+    const offset = max;
+    let v = new Int32Array(2 * max + 1);
+    const trace = [];
+    let foundD = -1;
+    for (let d = 0; d <= max; d += 1) {
+      trace.push(v.slice());
+      for (let k = -d; k <= d; k += 2) {
+        let x;
+        if (k === -d || (k !== d && v[offset + k - 1] < v[offset + k + 1])) {
+          x = v[offset + k + 1];
+        } else {
+          x = v[offset + k - 1] + 1;
+        }
+        let y = x - k;
+        while (x < n && y < m && a[x] === b[y]) { x += 1; y += 1; }
+        v[offset + k] = x;
+        if (x >= n && y >= m) { foundD = d; break; }
+      }
+      if (foundD !== -1) break;
+    }
+    if (foundD === -1) return null;
+    const ops = [];
+    let x = n, y = m;
+    for (let d = foundD; d > 0; d -= 1) {
+      const prev = trace[d];
+      const k = x - y;
+      const prevK = (k === -d || (k !== d && prev[offset + k - 1] < prev[offset + k + 1])) ? k + 1 : k - 1;
+      const prevX = prev[offset + prevK];
+      const prevY = prevX - prevK;
+      while (x > prevX && y > prevY) { ops.push({op: '=', tok: a[x - 1]}); x -= 1; y -= 1; }
+      if (x === prevX) ops.push({op: '+', tok: b[y - 1]});
+      else ops.push({op: '-', tok: a[x - 1]});
+      x = prevX; y = prevY;
+    }
+    while (x > 0 && y > 0) { ops.push({op: '=', tok: a[x - 1]}); x -= 1; y -= 1; }
+    while (x > 0) { ops.push({op: '-', tok: a[x - 1]}); x -= 1; }
+    while (y > 0) { ops.push({op: '+', tok: b[y - 1]}); y -= 1; }
+    ops.reverse();
+    // Coalesce adjacent runs of the same op
+    const runs = [];
+    ops.forEach(function (step) {
+      const last = runs[runs.length - 1];
+      if (last && last.op === step.op) last.tokens.push(step.tok);
+      else runs.push({op: step.op, tokens: [step.tok]});
+    });
+    return runs;
+  }
+
+  function renderVisualDiff(payload, languages) {
+    const studio = T.el('section', 'diff-studio');
+    const head = T.el('div', 'diff-studio-head');
+    head.appendChild(T.el('p', 'diff-studio-title', 'Visual word-by-word witness diff'));
+    const rawLines = (payload.unified_diff || '').split('\n');
+    const bodyLines = rawLines.filter(function (line, index) {
+      if (index === rawLines.length - 1 && line === '') return false;
+      return !line.startsWith('--- ') && !line.startsWith('+++ ');
+    });
+    const leftText = (payload.left && (payload.left.serialized_text || payload.left.joined_source_text)) || '';
+    const rightText = (payload.right && (payload.right.serialized_text || payload.right.joined_source_text)) || '';
+    const leftWords = leftText.trim() ? leftText.trim().split(/\s+/) : [];
+    const rightWords = rightText.trim() ? rightText.trim().split(/\s+/) : [];
+    const runs = (bodyLines.length && leftWords.length && rightWords.length) ? myersWordDiff(leftWords, rightWords) : null;
+    const stats = T.el('p', 'diff-studio-stats');
+    const rtl = languages && languages.length === 1 && ['ar', 'he', 'syr', 'arc'].indexOf(languages[0].split('-')[0]) !== -1;
+
+    if (!bodyLines.length) {
+      stats.appendChild(T.el('span', null, 'Identical serialized clauses'));
+      head.appendChild(stats);
+      studio.appendChild(head);
+      const list = T.el('ol', 'diff-lines');
+      const item = T.el('li', 'diff-line diff-line-ctx');
+      item.appendChild(T.el('span', 'diff-line-sign', '='));
+      item.appendChild(T.el('span', null, 'The serialized witness texts are identical across all compared clauses.'));
+      list.appendChild(item);
+      studio.appendChild(list);
+    } else if (runs) {
+      let delWords = 0, addWords = 0, sameWords = 0;
+      runs.forEach(function (r) {
+        if (r.op === '-') delWords += r.tokens.length;
+        else if (r.op === '+') addWords += r.tokens.length;
+        else sameWords += r.tokens.length;
+      });
+      stats.appendChild(T.el('span', null, sameWords + ' shared'));
+      stats.appendChild(T.el('span', 'diff-stat-del', '−' + delWords + ' left'));
+      stats.appendChild(T.el('span', 'diff-stat-add', '+' + addWords + ' right'));
+      head.appendChild(stats);
+      studio.appendChild(head);
+      const flow = T.el('div', 'diff-word-flow');
+      if (languages && languages.length === 1) flow.setAttribute('lang', languages[0]);
+      if (rtl) flow.setAttribute('dir', 'rtl');
+      runs.forEach(function (r, idx) {
+        const text = r.tokens.join(' ');
+        if (idx > 0) flow.appendChild(T.el('span', null, ' '));
+        if (r.op === '-') flow.appendChild(T.el('del', 'diff-word-del', text));
+        else if (r.op === '+') flow.appendChild(T.el('ins', 'diff-word-add', text));
+        else flow.appendChild(T.el('span', 'diff-word-eq', text));
+      });
+      studio.appendChild(flow);
+    } else {
+      let removed = 0, added = 0;
+      bodyLines.forEach(function (line) {
+        if (line.startsWith('-')) removed += 1;
+        else if (line.startsWith('+')) added += 1;
+      });
+      stats.appendChild(T.el('span', 'diff-stat-del', '−' + removed + ' left'));
+      stats.appendChild(T.el('span', 'diff-stat-add', '+' + added + ' right'));
+      head.appendChild(stats);
+      studio.appendChild(head);
+      const list = T.el('ol', 'diff-lines');
+      if (languages && languages.length === 1) list.setAttribute('lang', languages[0]);
+      if (rtl) list.setAttribute('dir', 'rtl');
+      bodyLines.forEach(function (line) {
+        const kind = line.startsWith('@@') ? 'hunk' : line.startsWith('-') ? 'del' : line.startsWith('+') ? 'add' : 'ctx';
+        const sign = kind === 'hunk' ? '§' : kind === 'del' ? '−' : kind === 'add' ? '+' : ' ';
+        const item = T.el('li', 'diff-line diff-line-' + kind);
+        item.appendChild(T.el('span', 'diff-line-sign', sign));
+        item.appendChild(T.el('span', null, kind === 'hunk' ? line : (line.slice(1) || line)));
+        list.appendChild(item);
+      });
+      studio.appendChild(list);
+    }
+    if (payload.left && payload.right && payload.left.text_set && payload.right.text_set) {
+      const bothNative = typeof payload.left.adapter === 'string' && payload.left.adapter.startsWith('native-book:') &&
+        typeof payload.right.adapter === 'string' && payload.right.adapter.startsWith('native-book:');
+      const prefix = bothNative ? 'version/' : 'reconstruction/';
+      const pathScope = bothNative ? 'text/native/' : 'text/';
+      const cmdBox = T.el('p', 'diff-git-cmd');
+      cmdBox.appendChild(T.el('span', null, 'Reproduce in the generated Git corpus: '));
+      cmdBox.appendChild(T.el('code', null,
+        'git diff --word-diff=color ' + prefix + payload.left.text_set +
+        ' ' + prefix + payload.right.text_set + ' -- ' + pathScope));
+      studio.appendChild(cmdBox);
+    }
+    return studio;
   }
 
   function nativeTextBindings(stage) {
@@ -2429,7 +2601,10 @@
         !/^[0-9a-f]{64}$/.test(binding.text_binding_sha256) || payload.binding_sha256!==binding.text_binding_sha256 ||
         (binding!==stage && payload.title!==binding.title) ||
         typeof payload.title!=='string' || !unique(payload.stage_ids) || !payload.stage_ids.includes(stage.id) ||
-        !unique(payload.catalogue_witness_ids) || JSON.stringify(payload.catalogue_witness_ids.slice().sort())!==JSON.stringify(stage.witness_ids.slice().sort()) ||
+        !unique(payload.catalogue_witness_ids) || !payload.catalogue_witness_ids.length ||
+        (payload.scope && payload.scope.whole_book_complete
+          ? JSON.stringify(payload.catalogue_witness_ids.slice().sort())!==JSON.stringify(stage.witness_ids.slice().sort())
+          : !payload.catalogue_witness_ids.every(function (wid) { return stage.witness_ids.includes(wid); })) ||
         !payload.scope || payload.scope.complete_declared_extent!==true ||
         !['constituent','whole-book'].includes(payload.scope.extent_kind) ||
         payload.scope.whole_book_complete!==(payload.scope.extent_kind==='whole-book') ||
@@ -2480,9 +2655,9 @@
     if (witness && witness.edition_id===unit.text_edition_id && facsimile && facsimile.record_type==='artifact' &&
         facsimile.edition_id===unit.text_edition_id && catalogueURL(facsimile.source_url))
       return catalogueLink(facsimile.source_url,label);
-    const link=T.el('a',null,label+' — Source Library passage');
-    link.href='../sources/#edition='+encodeURIComponent(unit.text_edition_id)+'&passage='+encodeURIComponent(unit.source_id);
-    return link;
+    const nativeLink=T.el('a',null,label+' — Source Library passage');
+    nativeLink.href='../sources/#edition='+encodeURIComponent(unit.text_edition_id)+'&passage='+encodeURIComponent(unit.source_id);
+    return nativeLink;
   }
 
   function renderNativeText(host,payload,stage,binding) {
@@ -2756,8 +2931,191 @@
       const bySource=new Map(history.sources.map(function (s) { return [s.id,s]; }));
       const words=function (value) { return String(value || '').replace(/-/g,' '); };
       const keys=M.stageLayout(history);
-      const allOption=T.el('option',null,'All traditions on a shared year axis'); allOption.value='all'; traditionControl.appendChild(allOption);
-      history.traditions.forEach(function (t) { const o=T.el('option',null,t.label); o.value=t.id; traditionControl.appendChild(o); });
+      const taxonomy = data.tradition_taxonomy && typeof data.tradition_taxonomy === 'object' ? data.tradition_taxonomy : null;
+      const riteMap = new Map(((taxonomy && taxonomy.rite_families) || []).map(function (r) { return [r.id, r]; }));
+      const regionMap = new Map(((taxonomy && taxonomy.regions) || []).map(function (r) { return [r.id, r]; }));
+      const taxByTradition = (taxonomy && taxonomy.traditions) || {};
+      const defaultRite = {id:'default',label:'Tradition',color:'#2c7a51',ink:'#1d5739',wash:'#eef6f1'};
+      const riteOf = function (tid) {
+        const info = taxByTradition[tid];
+        return (info && riteMap.get(info.rite_family)) || defaultRite;
+      };
+      const regionOf = function (tid) {
+        const info = taxByTradition[tid];
+        return (info && info.region) || '';
+      };
+      const stageHasText = function (stage) {
+        return Boolean(stage.text_binding || (stage.text_bindings && stage.text_bindings.length) || stage.text_coverage !== 'not-transcribed');
+      };
+      const stageHasComparison = function (stageId) {
+        return history.transitions.some(function (t) {
+          return (t.to_stage === stageId || t.from_stage === stageId) && (t.comparison_ids || []).length > 0;
+        });
+      };
+      const traditionHasTextOrDiff = function (tid) {
+        return history.stages.some(function (s) { return s.tradition_id === tid && (stageHasText(s) || stageHasComparison(s.id)); });
+      };
+
+      // Client-side discovery facets (Rite Family, Region, Search, Text-only)
+      // narrow the Tradition selector and multi-lane 'all' view without altering
+      // the canonical URL hash contract.
+      const browse = {rite: '', region: '', search: '', hasText: false};
+      const pillsHost = document.getElementById('timeline-rite-pills');
+      const discoverHost = document.getElementById('timeline-discover');
+      const regionControl = document.getElementById('timeline-region');
+      const searchControl = document.getElementById('timeline-search');
+      const hasTextControl = document.getElementById('timeline-has-text');
+      const erasHost = document.getElementById('timeline-eras');
+      const ERAS = [
+        {label:'All eras',start:null,end:null},
+        {label:'Patristic (300–900)',start:300,end:900},
+        {label:'Medieval (900–1470)',start:900,end:1470},
+        {label:'Print & Trent (1470–1650)',start:1470,end:1650},
+        {label:'Baroque & Missions (1650–1900)',start:1650,end:1900},
+        {label:'Modern & Reform (1900–2026)',start:1900,end:2026}
+      ];
+
+      function matchingTraditions() {
+        const q = browse.search.trim().toLocaleLowerCase();
+        return history.traditions.filter(function (t) {
+          if (browse.rite && ((taxByTradition[t.id] || {}).rite_family !== browse.rite)) return false;
+          if (browse.region && regionOf(t.id) !== browse.region) return false;
+          if (browse.hasText && !traditionHasTextOrDiff(t.id)) return false;
+          if (q) {
+            const hay = [t.label, t.id, t.scope, t.family, riteOf(t.id).label].join(' ').toLocaleLowerCase();
+            if (hay.indexOf(q) === -1) return false;
+          }
+          return true;
+        });
+      }
+
+      function populateTraditionSelect(activeValue) {
+        T.clear(traditionControl);
+        const filtered = matchingTraditions();
+        const isFiltered = Boolean(browse.rite || browse.region || browse.search || browse.hasText);
+        const allOption = T.el('option', null, isFiltered
+          ? 'All matching traditions (' + filtered.length + ') on a shared year axis'
+          : 'All traditions on a shared year axis');
+        allOption.value = 'all';
+        traditionControl.appendChild(allOption);
+        if (taxonomy && (taxonomy.rite_families || []).length) {
+          const grouped = new Map();
+          filtered.forEach(function (t) {
+            const r = riteOf(t.id);
+            if (!grouped.has(r.id)) grouped.set(r.id, {rite: r, items: []});
+            grouped.get(r.id).items.push(t);
+          });
+          taxonomy.rite_families.forEach(function (r) {
+            const bucket = grouped.get(r.id);
+            if (!bucket || !bucket.items.length) return;
+            const groupEl = T.el('optgroup', null);
+            groupEl.setAttribute('label', r.label + ' (' + bucket.items.length + ')');
+            bucket.items.forEach(function (t) {
+              const mark = traditionHasTextOrDiff(t.id) ? ' [text]' : '';
+              const o = T.el('option', null, t.label + mark);
+              o.value = t.id;
+              groupEl.appendChild(o);
+            });
+            traditionControl.appendChild(groupEl);
+          });
+        } else {
+          filtered.forEach(function (t) {
+            const o = T.el('option', null, t.label);
+            o.value = t.id;
+            traditionControl.appendChild(o);
+          });
+        }
+        if (activeValue && activeValue !== 'all' && !filtered.some(function (t) { return t.id === activeValue; })) {
+          const held = history.traditions.find(function (t) { return t.id === activeValue; });
+          if (held) {
+            const extra = T.el('option', null, held.label + ' (current selection)');
+            extra.value = held.id;
+            traditionControl.appendChild(extra);
+          }
+        }
+        if (activeValue) traditionControl.value = activeValue;
+      }
+
+      if (taxonomy && pillsHost && history.traditions.length > 2) {
+        const riteCounts = new Map();
+        history.traditions.forEach(function (t) {
+          const rid = (taxByTradition[t.id] || {}).rite_family;
+          if (rid) riteCounts.set(rid, (riteCounts.get(rid) || 0) + 1);
+        });
+        const pillButtons = [];
+        const makePill = function (id, label, count, color, wash) {
+          const btn = T.el('button', 'timeline-rite-pill');
+          btn.type = 'button';
+          btn.setAttribute('aria-pressed', id === '' ? 'true' : 'false');
+          if (color && btn.style) btn.style.setProperty('--pill-color', color);
+          if (wash && btn.style) btn.style.setProperty('--pill-wash', wash);
+          btn.appendChild(T.el('span', null, label));
+          btn.appendChild(T.el('span', 'timeline-rite-pill-count', String(count)));
+          btn.addEventListener('click', function () {
+            browse.rite = browse.rite === id ? '' : id;
+            pillButtons.forEach(function (entry) {
+              entry.button.setAttribute('aria-pressed', entry.id === browse.rite ? 'true' : 'false');
+            });
+            const nextTradition = browse.rite ? 'all' : (history.default_tradition_id || 'all');
+            populateTraditionSelect(nextTradition);
+            update({...current, tradition: nextTradition, start: null, end: null, stage: null, transition: null});
+          });
+          pillButtons.push({id: id, button: btn});
+          pillsHost.appendChild(btn);
+        };
+        makePill('', 'All rites', history.traditions.length, '#2c7a51', '#eef6f1');
+        (taxonomy.rite_families || []).forEach(function (r) {
+          const count = riteCounts.get(r.id) || 0;
+          if (count > 0) makePill(r.id, r.label, count, r.color, r.wash);
+        });
+        pillsHost.hidden = false;
+      }
+      if (taxonomy && discoverHost && regionControl && searchControl && hasTextControl && history.traditions.length > 2) {
+        const regionCounts = new Map();
+        history.traditions.forEach(function (t) {
+          const rid = regionOf(t.id);
+          if (rid) regionCounts.set(rid, (regionCounts.get(rid) || 0) + 1);
+        });
+        (taxonomy.regions || []).forEach(function (reg) {
+          const c = regionCounts.get(reg.id) || 0;
+          if (!c) return;
+          const opt = T.el('option', null, reg.label + ' (' + c + ')');
+          opt.value = reg.id;
+          regionControl.appendChild(opt);
+        });
+        discoverHost.hidden = false;
+        const applyDiscover = function () {
+          browse.region = regionControl.value || '';
+          browse.search = searchControl.value || '';
+          browse.hasText = Boolean(hasTextControl.checked);
+          const filtered = matchingTraditions();
+          const nextTradition = (browse.rite || browse.region || browse.search || browse.hasText)
+            ? (filtered.length === 1 ? filtered[0].id : 'all')
+            : current.tradition;
+          populateTraditionSelect(nextTradition);
+          update({...current, tradition: nextTradition, start: null, end: null, stage: null, transition: null});
+        };
+        regionControl.addEventListener('change', applyDiscover);
+        hasTextControl.addEventListener('change', applyDiscover);
+        searchControl.addEventListener('input', applyDiscover);
+      }
+      if (erasHost && keys.start !== null && keys.end !== null && (keys.end - keys.start) > 150) {
+        erasHost.appendChild(T.el('span', 'timeline-eras-label', 'Jump to era:'));
+        ERAS.forEach(function (era) {
+          const btn = T.el('button', 'timeline-era-btn', era.label);
+          btn.type = 'button';
+          btn.addEventListener('click', function () {
+            if (era.start === null) {
+              update({...current, ...dateBounds(current.tradition, true)});
+            } else {
+              update({...current, start: era.start, end: era.end});
+            }
+          });
+          erasHost.appendChild(btn);
+        });
+        erasHost.hidden = false;
+      }
+      populateTraditionSelect(null);
       ['timeline-tradition','timeline-start','timeline-end','timeline-leads','timeline-apply','timeline-all-years','timeline-local-years','timeline-earlier','timeline-later','timeline-zoom-in','timeline-zoom-out']
         .forEach(function (id) { document.getElementById(id).disabled=false; });
       const defaultPresentation=window.matchMedia && window.matchMedia('(max-width: 800px)').matches ? 'list' : 'chart';
@@ -2862,6 +3220,22 @@
         if (!stage) { detail.appendChild(T.el('p',null,'This stage is not in the current record: '+current.stage)); return; }
         detail.setAttribute('aria-label','Selected state: '+stage.label+'; '+stage.date_label);
         detail.appendChild(T.el('h3',null,keys.stageKeys[stage.id]+' · '+stage.label));
+        const stageRite = riteOf(stage.tradition_id);
+        const badges = T.el('div', 'timeline-detail-badges');
+        if (taxonomy && taxByTradition[stage.tradition_id]) {
+          const riteBadge = T.el('span', 'stage-badge stage-badge-rite', stageRite.label);
+          if (riteBadge.style) {
+            riteBadge.style.setProperty('--badge-color', stageRite.color);
+            riteBadge.style.setProperty('--badge-ink', stageRite.ink);
+            riteBadge.style.setProperty('--badge-wash', stageRite.wash);
+          }
+          badges.appendChild(riteBadge);
+          const reg = regionMap.get(regionOf(stage.tradition_id));
+          if (reg) badges.appendChild(T.el('span', 'stage-badge stage-badge-rite', reg.label));
+        }
+        if (stageHasText(stage)) badges.appendChild(T.el('span', 'stage-badge stage-badge-text', 'Original text: ' + words(stage.text_coverage)));
+        if (stageHasComparison(stage.id)) badges.appendChild(T.el('span', 'stage-badge stage-badge-diff', 'Witness diff linked'));
+        if (badges.childNodes.length) detail.appendChild(badges);
         detail.appendChild(T.el('p',null,stage.date_label+' · '+stage.date_kind+' · '+stage.status));
         detail.appendChild(T.el('p','panel-note',stage.start_year===null ? 'No year is positioned for this state.'
           : 'Date bounds: '+stage.start_year+'–'+stage.end_year+'. These date this attestation; they are not a period of validity.'));
@@ -2884,6 +3258,29 @@
         detail.appendChild(T.el('p',null,'Community reception: '+stage.reception));
         detail.appendChild(T.el('p','detail-weak',stage.limitations));
         citation(stage.evidence,detail);
+        const stageXref = data.cross_references && data.cross_references.by_stage_id && data.cross_references.by_stage_id[stage.id];
+        if (stageXref && ((stageXref.source_library_editions && stageXref.source_library_editions.length) ||
+            (stageXref.related_routes && stageXref.related_routes.length))) {
+          const xBox = T.el('section', 'history-xref-box');
+          xBox.appendChild(T.el('h4', null, 'Elsewhere in Triptych'));
+          const xList = T.el('ul', 'history-xref-list');
+          (stageXref.source_library_editions || []).forEach(function (ed) {
+            const item = T.el('li', null);
+            const a = T.el('a', null, 'Open in the Source Library: ' + ed.title);
+            a.href = ed.url;
+            item.appendChild(a);
+            xList.appendChild(item);
+          });
+          (stageXref.related_routes || []).forEach(function (route) {
+            const item = T.el('li', null);
+            const a = T.el('a', null, route.label);
+            a.href = route.href;
+            item.appendChild(a);
+            xList.appendChild(item);
+          });
+          xBox.appendChild(xList);
+          detail.appendChild(xBox);
+        }
         const witnessLinks=T.el('ul','stage-witness-links');
         stage.witness_ids.forEach(function (id) {
           const row=data.entries.find(function (entry) { return entry.id===id; });
@@ -2911,10 +3308,18 @@
       function readingCard(stage,context) {
         context=context || 'timeline-list';
         const article=T.el('article','timeline-list-card'); article.setAttribute('data-stage',stage.id);
+        const cardRite = riteOf(stage.tradition_id);
+        if (article.style) article.style.setProperty('--card-accent', cardRite.color);
         const selection=stageButton(stage,keys.stageKeys[stage.id]+' · '+stage.label);
         selection.id=context+'-stage-'+stage.id;
         if (current.stage===stage.id) selection.setAttribute('aria-current','true');
         article.appendChild(selection);
+        if (stageHasText(stage) || stageHasComparison(stage.id)) {
+          const rowBadges = T.el('div', 'timeline-detail-badges');
+          if (stageHasText(stage)) rowBadges.appendChild(T.el('span', 'stage-badge stage-badge-text', 'Original text'));
+          if (stageHasComparison(stage.id)) rowBadges.appendChild(T.el('span', 'stage-badge stage-badge-diff', 'Diff'));
+          article.appendChild(rowBadges);
+        }
         article.appendChild(T.el('p','stage-date',stage.date_label+' · '+stage.date_kind));
         article.appendChild(T.el('p','panel-note',stage.status+' · Parts: '+stage.components.map(words).join(', ')+' · Text: '+words(stage.text_coverage)));
         article.appendChild(T.el('p',null,stage.scope));
@@ -2966,14 +3371,21 @@
           status.setAttribute('tabindex','-1'); status.focus(); return;
         }
         const options={start:current.start,end:current.end,includeProvisional:current.leads,width:1600,compact:true,inlineSummary:true};
+        const isBrowseFiltered = Boolean(browse.rite || browse.region || browse.search || browse.hasText);
         if (current.tradition!=='all') options.tradition=current.tradition;
+        else if (isBrowseFiltered) options.traditions=matchingTraditions().map(function (t) { return t.id; });
         model=M.stageLayout(history,options);
         ['timeline-start','timeline-end','timeline-apply','timeline-all-years','timeline-local-years','timeline-earlier','timeline-later','timeline-zoom-in','timeline-zoom-out'].forEach(function (id) {
           document.getElementById(id).disabled=model.start===null;
         });
+        populateTraditionSelect(current.tradition);
         traditionControl.value=current.tradition; startControl.value=current.start===null ? '' : String(current.start); endControl.value=current.end===null ? '' : String(current.end); leadControl.checked=current.leads;
         T.clear(chart); T.clear(list);
-        const inScope=function (s) { return current.tradition==='all' || s.tradition_id===current.tradition; };
+        const activeLaneIds = new Set(model.lanes.map(function (l) { return l.id; }));
+        const inScope=function (s) {
+          if (current.tradition==='all') return !isBrowseFiltered || activeLaneIds.has(s.tradition_id);
+          return s.tradition_id===current.tradition;
+        };
         const scopedIds=new Set(history.stages.filter(inScope).map(function (s) { return s.id; }));
         const documented=history.transitions.filter(function (t) { return t.status==='documented' && scopedIds.has(t.to_stage); });
         const substantive=documented.filter(function (t) { return t.kind!=='witness-succession'; }).length;
@@ -2981,19 +3393,53 @@
           (documented.length-substantive)+' witness successions · '+model.counts.provisional+' provisional leads in the selected history.';
         status.textContent=(current.start===null ? 'No dated states; see unpositioned records below. ' : 'Showing '+current.start+'–'+current.end+': ')+model.counts.visible+' dated states; '+model.counts.outsideWindow+' dated states outside this window. '+
           'Date brackets are uncertainty bounds, not lifespans.';
-        if (!model.lanes.length) status.textContent='This tradition is not in the current stage record: '+current.tradition;
+        if (!model.lanes.length) {
+          status.textContent = (current.tradition === 'all' && isBrowseFiltered)
+            ? 'No traditions match the active rite, region, search, or text filters.'
+            : 'This tradition is not in the current stage record: '+current.tradition;
+        }
         const drawing=svg('svg',{viewBox:'0 0 '+model.width+' '+model.height,width:model.width,height:model.height,'class':'stage-timeline',role:'group','aria-label':'Book states on a proportional year axis'});
         const defs=svg('defs',{}),marker=svg('marker',{id:'stage-arrow',viewBox:'0 0 12 12',refX:21,refY:6,markerWidth:12,markerHeight:12,markerUnits:'userSpaceOnUse',orient:'auto'});
-        marker.appendChild(svg('path',{d:'M 0 0 L 12 6 L 0 12 z',fill:'#666'})); defs.appendChild(marker); drawing.appendChild(defs);
+        marker.appendChild(svg('path',{d:'M 0 0 L 12 6 L 0 12 z',fill:'#4f4a44'})); defs.appendChild(marker); drawing.appendChild(defs);
+        if (model.start !== null && model.end !== null && model.end > model.start) {
+          const bands = [
+            {name:'Patristic',s:200,e:900,fill:'#f4f2ec'},
+            {name:'Medieval',s:900,e:1470,fill:'#f9f6ef'},
+            {name:'Print & Trent',s:1470,e:1650,fill:'#f2f6f3'},
+            {name:'Baroque & Missions',s:1650,e:1900,fill:'#f7f5f0'},
+            {name:'Modern',s:1900,e:2100,fill:'#f0f4f7'}
+          ];
+          const xAt = function (yr) { return model.axis.x0 + (yr - model.start) / (model.end - model.start) * (model.axis.x1 - model.axis.x0); };
+          bands.forEach(function (band) {
+            const bs = Math.max(model.start, band.s);
+            const be = Math.min(model.end, band.e);
+            if (be <= bs) return;
+            const bx = xAt(bs);
+            const bw = xAt(be) - bx;
+            drawing.appendChild(svg('rect',{x:bx,y:56,width:bw,height:Math.max(0,model.height-66),fill:band.fill}));
+            if (bw >= 110) {
+              const bl = svg('text',{x:bx+8,y:74,'font-size':11,'font-weight':700,fill:'#777067'});
+              bl.textContent = band.name.toUpperCase();
+              drawing.appendChild(bl);
+            }
+          });
+        }
         model.axis.ticks.forEach(function (tick) {
-          drawing.appendChild(svg('path',{d:'M '+tick.x+' 60 V '+model.height,stroke:'#ddd','stroke-width':1}));
-          const label=svg('text',{x:tick.x,y:40,'text-anchor':'middle','font-size':18}); label.textContent=String(tick.year); drawing.appendChild(label);
+          drawing.appendChild(svg('path',{d:'M '+tick.x+' 56 V '+model.height,stroke:'#ddd6ca','stroke-width':1}));
+          const label=svg('text',{x:tick.x,y:40,'text-anchor':'middle','font-size':17,'font-weight':600,fill:'#453f38'}); label.textContent=String(tick.year); drawing.appendChild(label);
         });
-        const axisTitle=svg('text',{x:24,y:40,'font-size':18}); axisTitle.textContent='Year · same scale in every lane'; drawing.appendChild(axisTitle);
-        model.lanes.forEach(function (lane) {
-          drawing.appendChild(svg('path',{d:'M 15 '+lane.top+' H '+(model.width-15),stroke:'#aaa','stroke-width':1}));
-          lane.labelLines.forEach(function (line,i) { const label=svg('text',{x:18,y:lane.top+28+i*22,'font-size':18,'font-weight':600}); label.textContent=line; drawing.appendChild(label); });
-          const count=svg('text',{x:18,y:lane.top+40+lane.labelLines.length*22,'font-size':14}); count.textContent=lane.visibleCount+' dated states in this window'; drawing.appendChild(count);
+        const axisTitle=svg('text',{x:24,y:40,'font-size':16,'font-weight':700,fill:'#453f38'}); axisTitle.textContent='Year · same scale in every lane'; drawing.appendChild(axisTitle);
+        model.lanes.forEach(function (lane, laneIdx) {
+          const lRite = riteOf(lane.id);
+          if (laneIdx % 2 === 1) {
+            drawing.appendChild(svg('rect',{x:15,y:lane.top,width:model.width-30,height:lane.height,fill:'rgba(48,45,41,0.024)'}));
+          }
+          drawing.appendChild(svg('path',{d:'M 15 '+lane.top+' H '+(model.width-15),stroke:'#cfc7ba','stroke-width':1}));
+          drawing.appendChild(svg('rect',{x:15,y:lane.top+4,width:5,height:Math.max(24,lane.height-8),rx:2,fill:lRite.color}));
+          lane.labelLines.forEach(function (line,i) { const label=svg('text',{x:28,y:lane.top+28+i*22,'font-size':17,'font-weight':600,fill:lRite.ink}); label.textContent=line; drawing.appendChild(label); });
+          const count=svg('text',{x:28,y:lane.top+40+lane.labelLines.length*22,'font-size':13,fill:'#55504a'});
+          count.textContent=lane.visibleCount+' dated states in this window'+(taxonomy && taxByTradition[lane.id] ? ' · '+lRite.label : '');
+          drawing.appendChild(count);
           const section=T.el('section','timeline-list-lane'); section.appendChild(T.el('h3',null,lane.label));
           section.appendChild(T.el('p','panel-note',lane.tradition.scope));
           if (lane.tradition.coverage_note) section.appendChild(T.el('p','panel-note',lane.tradition.coverage_note));
@@ -3005,46 +3451,56 @@
             'aria-label':edge.key+' '+words(edge.transition.kind)+': '+edge.transition.summary+'; '+edge.style.label};
           const link=svg('a',linkAttrs);
           link.addEventListener('click',function (event) { event.preventDefault(); select('transition',edge.id); });
-          link.appendChild(svg('path',{d:edge.path,fill:'none',stroke:'#666','stroke-width':edge.style.width,'stroke-dasharray':edge.style.dash,'marker-end':'url(#stage-arrow)','data-transition':edge.id}));
+          link.appendChild(svg('path',{d:edge.path,fill:'none',stroke:'#4f4a44','stroke-width':edge.style.width,'stroke-dasharray':edge.style.dash,'marker-end':'url(#stage-arrow)','data-transition':edge.id}));
           const title=svg('title',{}); title.textContent=edge.key+' · '+edge.transition.summary+' · '+edge.style.label; link.appendChild(title);
           const keyLink=svg('a',linkAttrs);
           keyLink.id='timeline-chart-transition-'+edge.id;
           if (current.transition===edge.id) keyLink.setAttribute('aria-current','true');
           keyLink.addEventListener('click',function (event) { event.preventDefault(); select('transition',edge.id); });
-          keyLink.appendChild(svg('rect',{x:edge.keyLabel.x-34,y:edge.keyLabel.y-13,width:38,height:17,fill:'#fffdf8'}));
-          const key=svg('text',{x:edge.keyLabel.x,y:edge.keyLabel.y,'text-anchor':'end','font-size':12,fill:'#444','data-transition-key':edge.id}); key.textContent=edge.key; keyLink.appendChild(key);
+          keyLink.appendChild(svg('rect',{x:edge.keyLabel.x-34,y:edge.keyLabel.y-13,width:38,height:17,rx:3,fill:'#fffdf8',stroke:'#d7d0c4','stroke-width':1}));
+          const key=svg('text',{x:edge.keyLabel.x-2,y:edge.keyLabel.y,'text-anchor':'end','font-size':11,'font-weight':700,fill:'#302d29','data-transition-key':edge.id}); key.textContent=edge.key; keyLink.appendChild(key);
           transitionKeys.appendChild(keyLink);
           [['from',edge.fromOutside,edge.fromPoint,edge.fromStage,edge.fromKey],['to',edge.toOutside,edge.toPoint,edge.toStage,edge.toKey]].forEach(function (end) {
             if (!end[1]) return;
             const point=end[2],stage=end[3],left=point.x+230>model.width;
             const year=stage.start_year===null ? 'undated' : stage.start_year===stage.end_year ? String(stage.start_year) : stage.start_year+'–'+stage.end_year;
-            link.appendChild(svg('circle',{cx:point.x,cy:point.y,r:4,fill:'#fffdf8',stroke:'#666','data-continuation':stage.id}));
-            const label=svg('text',{x:point.x+(left ? -8 : 8),y:point.y-10,'font-size':12,'text-anchor':left ? 'end' : 'start'});
+            link.appendChild(svg('circle',{cx:point.x,cy:point.y,r:4,fill:'#fffdf8',stroke:'#4f4a44','stroke-width':1.5,'data-continuation':stage.id}));
+            const label=svg('text',{x:point.x+(left ? -8 : 8),y:point.y-10,'font-size':12,'text-anchor':left ? 'end' : 'start',fill:'#453f38'});
             label.textContent=(end[0]==='from' ? 'From ' : 'To ')+end[4]+' · '+year+' · outside this view'; link.appendChild(label);
           });
           drawing.appendChild(link);
         });
         drawing.appendChild(transitionKeys);
-        model.lanes.forEach(function (lane) { lane.nodes.forEach(function (node) {
+        model.lanes.forEach(function (lane) {
+          const lRite = riteOf(lane.id);
+          lane.nodes.forEach(function (node) {
           const stage=node.stage,link=svg('a',{href:'#'+new URLSearchParams(timelinePairs({...current,stage:stage.id,transition:null}).filter(function (p) { return p[1]; })),
             'data-stage':stage.id,'aria-label':stage.label+'; '+stage.date_label+'; '+stage.status+'; text '+stage.text_coverage});
           link.id='timeline-chart-stage-'+stage.id;
           if (current.stage===stage.id) link.setAttribute('aria-current','true');
           link.addEventListener('click',function (event) { event.preventDefault(); select('stage',stage.id); });
-          link.appendChild(svg('rect',{x:node.labelX-7,y:node.labelY-17,width:node.cardWidth+14,height:node.cardHeight,rx:4,fill:'#fffdf8',stroke:'#ded8cb'}));
+          const hasText = stageHasText(stage);
+          link.appendChild(svg('rect',{x:node.labelX-7,y:node.labelY-17,width:node.cardWidth+14,height:node.cardHeight,rx:5,fill:'#fffefb',stroke:hasText ? lRite.color : '#d7d0c4','stroke-width':hasText ? 1.5 : 1,'class':'stage-card-box'}));
+          link.appendChild(svg('rect',{x:node.labelX-7,y:node.labelY-17,width:4,height:node.cardHeight,rx:2,fill:lRite.color}));
           if (stage.start_year!==stage.end_year) link.appendChild(svg('path',{
             d:(node.clippedStart ? 'M '+(node.xStart+4)+' '+(node.y-5)+' l -4 5 4 5' : 'M '+node.xStart+' '+(node.y-6)+' V '+(node.y+6))+
               ' M '+node.xStart+' '+node.y+' H '+node.xEnd+
               (node.clippedEnd ? ' M '+(node.xEnd-4)+' '+(node.y-5)+' l 4 5 -4 5' : ' M '+node.xEnd+' '+(node.y-6)+' V '+(node.y+6)),
-            fill:'none',stroke:'#7a5230','stroke-width':2,'stroke-dasharray':'4 3','data-date-range':'date-uncertainty','data-date-clipped':(node.clippedStart ? 'start ' : '')+(node.clippedEnd ? 'end' : '')}));
+            fill:'none',stroke:lRite.color,'stroke-width':2,'stroke-dasharray':'4 3','data-date-range':'date-uncertainty','data-date-clipped':(node.clippedStart ? 'start ' : '')+(node.clippedEnd ? 'end' : '')}));
           link.appendChild(svg(stage.status==='provisional' ? 'path' : 'circle',stage.status==='provisional'
-            ? {d:'M '+node.x+' '+(node.y-7)+' l 7 7 -7 7 -7 -7 z',fill:'#fff',stroke:'#7a5230','stroke-width':2}
-            : {cx:node.x,cy:node.y,r:6,fill:'#7a5230'}));
+            ? {d:'M '+node.x+' '+(node.y-7)+' l 7 7 -7 7 -7 -7 z',fill:'#fff',stroke:lRite.color,'stroke-width':2}
+            : {cx:node.x,cy:node.y,r:6,fill:lRite.color,stroke:'#fffdf8','stroke-width':1.5}));
           const keyLeft=node.x+48>model.width;
-          const key=svg('text',{x:node.x+(keyLeft ? -14 : 14),y:node.y-10,'text-anchor':keyLeft ? 'end' : 'start','font-size':12}); key.textContent=node.key; link.appendChild(key);
+          const key=svg('text',{x:node.x+(keyLeft ? -14 : 14),y:node.y-10,'text-anchor':keyLeft ? 'end' : 'start','font-size':12,'font-weight':600,fill:lRite.ink}); key.textContent=node.key; link.appendChild(key);
+          if (hasText) {
+            const bx = keyLeft ? node.x - 94 : node.x + 56;
+            link.appendChild(svg('rect',{x:bx,y:node.y-21,width:38,height:15,rx:3,fill:'#e3f3ea',stroke:'#96c7ac','stroke-width':1}));
+            const pill=svg('text',{x:bx+19,y:node.y-10,'text-anchor':'middle','font-size':9,'font-weight':700,fill:'#165434'});
+            pill.textContent='TEXT'; link.appendChild(pill);
+          }
           let y=node.labelY;
           [node.labelLines,node.dateLines,node.scopeLines,node.coverageLines,node.changeLines].forEach(function (lines,group) {
-            lines.forEach(function (line) { const text=svg('text',{x:node.labelX,y:y,'font-size':group===0 ? 16 : 14,'font-weight':group===0 ? 600 : 400}); text.textContent=line; link.appendChild(text); y+=node.leading; });
+            lines.forEach(function (line) { const text=svg('text',{x:node.labelX+2,y:y,'font-size':group===0 ? 15.5 : 13.5,'font-weight':group===0 ? 600 : 400,fill:group===0 ? '#1d1b17' : '#4a453f'}); text.textContent=line; link.appendChild(text); y+=node.leading; });
           });
           drawing.appendChild(link);
         }); });

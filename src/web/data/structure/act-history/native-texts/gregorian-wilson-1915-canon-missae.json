@@ -1,0 +1,674 @@
+{
+  "adapter_id": "native-book:gregorian-wilson-1915-canon-missae",
+  "binding_sha256": "6f439f82d1e44dcefc0f1174d205832c80f0ee79abaf69f5635d8fe410e91611",
+  "catalogue_witness_ids": [
+    "western:gregorian-hadrianum-cambrai164"
+  ],
+  "counts": {
+    "languages": {
+      "la": 14
+    },
+    "units": 14,
+    "whitespace_tokens": 574
+  },
+  "id": "gregorian-wilson-1915-canon-missae",
+  "schema": "triptych-eucharistic-native-text/v1",
+  "scope": {
+    "complete_declared_extent": true,
+    "description": "Complete strict Eucharistic Canon in H. A. Wilson's 1915 critical edition main text (base MS R = Vatican Reg. lat. 337, collated with C = Cambrai 164 and O = Vat. Ott. 313): printed pp. 2-4, PDF pp. 60-62, from Te igitur immediately after Sanctus through per omnia saecula saeculorum . amen. immediately before Oremus / Pater noster. Note that Wilson's main text of R omits Memento defunctorum (recorded only in apparatus note 14 for O and a 12th-century marginal addition in R); apparatus footnotes are excluded.",
+    "extent_kind": "constituent",
+    "known_extent_pages": 3,
+    "known_extent_units": 14,
+    "omitted_book_divisions": [
+      "Title rubric, Ordo preface dialogue, Vere dignum and Sanctus on printed pp. 1-2 (PDF pp. 59-60)",
+      "Oremus, Praeceptis salutaribus, Pater noster, Libera nos and all subsequent formularies from printed p. 4 (PDF p. 62) onward",
+      "Critical apparatus footnotes (including footnote 14 recording Memento etiam in O and margin of R), superscript reference numbers, running heads, page numbers, signatures and marginal folio tags ([fo. 4] to [fo. 6v]) with inline folio slashes",
+      "Reader pencil slashes on printed p. 3 (after hoc est and facietis)"
+    ],
+    "status": "complete-native-constituent",
+    "whole_book_complete": false
+  },
+  "sources": [
+    {
+      "edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+      "id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c",
+      "record_type": "artifact",
+      "rights_basis": "Faithful bounded reading transcription of original-language liturgical text from Gregorian Hadrianum (Wilson 1915): complete strict Canon Missae constituent, whose United States copyright term has expired by publication date (1915 critical edition (mediating ninth-century Hadrianum witnesses R, C, O)). Derived directly from tracked public-domain facsimile artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7 without modern translation or editorial reconstruction. Third-party historical text is excluded from Triptych's CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "transformation": "Direct reading from rendered PNG images of Wilson 1915 PDF pp. 60-62 (printed pp. 2-4). UTF-8 NFC, LF line endings. Two-letter display cap TE normalized to Te; italics (illo) flattened to plain text. Line wraps and line-end hyphens joined within each prayer paragraph; Wilson's paragraph break inside Communicantes (after uenerantes.) preserved as two lines. Native Latin orthography preserved verbatim (u/v, inlibata, Inprimis, incolomitatis, genetricis, thomę, taddei, xysti, celum, posteaquam, inmaculatam, patriarche, diuine, agne, cecilia, pręstas, e-caudata ę = U+0119). Printed baseline points serialized as standard '.' without leading space. Superscript apparatus numbers, marginal folio tags, inline folio slashes (/), apparatus footnotes, running heads, page numbers, signatures and non-printed pencil marks excluded. Main text omits Memento defunctorum (in apparatus note 14 only)."
+    },
+    {
+      "edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+      "id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7",
+      "record_type": "artifact",
+      "rights_basis": "The represented Henry Bradshaw Society volume was published in London in 1915 and is public domain in the United States by publication date. This exact file is a mechanical scan with an automated text layer; the digitisation credit is factual and does not add a newly authored edition. The entire 28,655,931-byte file is retained as a reasonably sized reusable facsimile.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "source_url": "https://archive.org/download/gregoriansacrame00cath/gregoriansacrame00cath.pdf"
+    },
+    {
+      "date": "1915",
+      "id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+      "language": "la",
+      "publication": "London: Henry Bradshaw Society, vol. XLIX, 1915. Edited by Henry Austin Wilson from Cambrai 164 with two further ninth-century manuscripts.",
+      "record_type": "edition",
+      "title": "The Gregorian Sacramentary under Charles the Great, edited from three MSS. of the ninth century by H. A. Wilson"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c",
+      "edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+      "id": "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-communicantes",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c",
+      "edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+      "id": "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-concluding-response",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c",
+      "edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+      "id": "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-hanc-igitur",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c",
+      "edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+      "id": "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-memento-vivorum",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c",
+      "edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+      "id": "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-nobis-quoque",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c",
+      "edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+      "id": "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-per-ipsum",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c",
+      "edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+      "id": "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-per-quem",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c",
+      "edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+      "id": "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-quam-oblationem",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c",
+      "edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+      "id": "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-qui-pridie",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c",
+      "edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+      "id": "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-simili-modo",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c",
+      "edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+      "id": "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-supplices",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c",
+      "edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+      "id": "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-supra-quae",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c",
+      "edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+      "id": "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-te-igitur",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c",
+      "edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+      "id": "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-unde-et-memores",
+      "record_type": "passage"
+    }
+  ],
+  "stage_ids": [
+    "early-western-round2-cambrai"
+  ],
+  "title": "Gregorian Hadrianum (Wilson 1915): complete strict Canon Missae constituent",
+  "units": [
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "te-igitur"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c",
+      "source_id": "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-te-igitur",
+      "source_locator": "Constituent unit 1/14 (anaphoras/canon-missae/te-igitur), normalized physical lines 1–1.",
+      "source_order": 1,
+      "text": "Te igitur clementissime pater per iesum christum filium tuum dominum nostrum. supplices rogamus et petimus uti accepta habeas et benedicas haec dona haec munera haec sancta sacrificia inlibata. Inprimis quae tibi offerimus pro ecclesia tua sancta catholica quam pacificare custodire adunare et regere digneris toto orbe terrarum una cum beatissimo famulo tuo papa nostro illo.",
+      "text_edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+      "text_sha256": "9a2540c865e2572f65a05d4d1c0122e577ea9dce996685863330e4ec3422cced",
+      "unit_id": "unit.gregorian-wilson-1915.canon.te-igitur",
+      "witness_id": "gregorian-wilson-1915-pdf",
+      "witness_pages": [
+        [
+          60,
+          60
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "memento-vivorum"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c",
+      "source_id": "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-memento-vivorum",
+      "source_locator": "Constituent unit 2/14 (anaphoras/canon-missae/memento-vivorum), normalized physical lines 2–2.",
+      "source_order": 2,
+      "text": "Memento domine famulorum famularumque tuarum. et omnium circum adstantium quorum tibi fides cognita est et nota deuotio qui tibi offerunt hoc sacrificium laudis pro se suisque omnibus pro redemptione animarum suarum pro spe salutis et incolomitatis suae tibi reddunt uota sua aeterno deo uiuo et uero.",
+      "text_edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+      "text_sha256": "4fc270656e69b4c24537399483253c6d0311f1b56d734744753fc701dd3ccf87",
+      "unit_id": "unit.gregorian-wilson-1915.canon.memento-vivorum",
+      "witness_id": "gregorian-wilson-1915-pdf",
+      "witness_pages": [
+        [
+          60,
+          60
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "communicantes"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c",
+      "source_id": "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-communicantes",
+      "source_locator": "Constituent unit 3/14 (anaphoras/canon-missae/communicantes), normalized physical lines 3–4.",
+      "source_order": 3,
+      "text": "Communicantes et memoriam uenerantes.\nInprimis gloriosae semper uirginis mariae genetricis dei et domini nostri iesu christi. sed et beatorum apostolorum ac martyrum tuorum. petri. pauli. andreae. iacobi. iohannis. thomę. iacobi. philippi. bartholomaei. matthei. simonis et taddei lini cleti clementis. xysti cornelii cypriani laurentii chrysogoni iohannis et pauli cosmae et damiani. et omnium sanctorum tuorum. quorum meritis precibusque concedas ut in omnibus protectionis tuae muniamur auxilio. per christum dominum nostrum.",
+      "text_edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+      "text_sha256": "e122be2b66cf62df1183a23f58ef508866481cd2ebf3763b2f1861fadb9e739c",
+      "unit_id": "unit.gregorian-wilson-1915.canon.communicantes",
+      "witness_id": "gregorian-wilson-1915-pdf",
+      "witness_pages": [
+        [
+          60,
+          60
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "hanc-igitur"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c",
+      "source_id": "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-hanc-igitur",
+      "source_locator": "Constituent unit 4/14 (anaphoras/canon-missae/hanc-igitur), normalized physical lines 5–5.",
+      "source_order": 4,
+      "text": "Hanc igitur oblationem seruitutis nostrae sed et cunctae familiae tuae quaesumus domine ut placatus accipias. diesque nostros in tua pace disponas. atque ab aeterna damnatione nos eripi. et in electorum tuorum iubeas grege numerari. per christum dominum nostrum.",
+      "text_edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+      "text_sha256": "a97ac13445d4aee1e819755a397fae50df6079d05d17094627b257e8136fe4c0",
+      "unit_id": "unit.gregorian-wilson-1915.canon.hanc-igitur",
+      "witness_id": "gregorian-wilson-1915-pdf",
+      "witness_pages": [
+        [
+          60,
+          60
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "quam-oblationem"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c",
+      "source_id": "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-quam-oblationem",
+      "source_locator": "Constituent unit 5/14 (anaphoras/canon-missae/quam-oblationem), normalized physical lines 6–6.",
+      "source_order": 5,
+      "text": "Quam oblationem tu deus in omnibus. quaesumus benedictam adscriptam ratam rationabilem acceptabilemque facere digneris Ut nobis corpus et sanguis fiat dilectissimi filii tui domini dei nostri iesu christi.",
+      "text_edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+      "text_sha256": "3135b6668f71a435450369356b8f21487f945618f982bf7fd7e0186852421e10",
+      "unit_id": "unit.gregorian-wilson-1915.canon.quam-oblationem",
+      "witness_id": "gregorian-wilson-1915-pdf",
+      "witness_pages": [
+        [
+          60,
+          60
+        ],
+        [
+          61,
+          61
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "institution-narrative",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "qui-pridie"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c",
+      "source_id": "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-qui-pridie",
+      "source_locator": "Constituent unit 6/14 (anaphoras/canon-missae/qui-pridie), normalized physical lines 7–7.",
+      "source_order": 6,
+      "text": "Qui pridie quam pateretur accepit panem in sanctas ac uenerabiles manus suas eleuatis oculis in celum ad te deum patrem suum omnipotentem tibi gratias agens benedixit fregit dedit discipulis suis dicens accipite et manducate ex hoc omnes hoc est corpus meum",
+      "text_edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+      "text_sha256": "bc1f71b267984361dd208a9a7f3b917eaadaad187bb3d1065e440734f66c7c27",
+      "unit_id": "unit.gregorian-wilson-1915.canon.qui-pridie",
+      "witness_id": "gregorian-wilson-1915-pdf",
+      "witness_pages": [
+        [
+          61,
+          61
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "institution-narrative",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "simili-modo"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c",
+      "source_id": "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-simili-modo",
+      "source_locator": "Constituent unit 7/14 (anaphoras/canon-missae/simili-modo), normalized physical lines 8–8.",
+      "source_order": 7,
+      "text": "simili modo posteaquam cenatum est accipiens et hunc praeclarum calicem in sanctas ac uenerabiles manus suas Item tibi gratias agens benedixit dedit discipulis suis. dicens accipite et bibite ex eo omnes hic est enim calix sanguinis mei noui et aeterni testamenti mysterium fidei qui pro uobis et pro multis effundetur in remissionem peccatorum. Haec quotiescumque feceritis in mei memoriam facietis",
+      "text_edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+      "text_sha256": "f6c697cd49fad0bb3fa454d8551815e5a95d5b22339d493c7f7945ff8522ca9a",
+      "unit_id": "unit.gregorian-wilson-1915.canon.simili-modo",
+      "witness_id": "gregorian-wilson-1915-pdf",
+      "witness_pages": [
+        [
+          61,
+          61
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "unde-et-memores"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c",
+      "source_id": "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-unde-et-memores",
+      "source_locator": "Constituent unit 8/14 (anaphoras/canon-missae/unde-et-memores), normalized physical lines 9–9.",
+      "source_order": 8,
+      "text": "Unde et memores sumus domine nos tui serui. sed et plebs tua sancta christi filii tui domini dei nostri tam beatae passionis necnon et ab inferis resurrectionis sed et in caelos gloriosae ascensionis offerimus praeclare maiestati tuae de tuis donis ac datis hostiam puram hostiam sanctam hostiam inmaculatam panem sanctum uitae aeternae et calicem salutis perpetuae",
+      "text_edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+      "text_sha256": "9407028dda3046df7f68fc03af4ce7f59030f9185eddbe7ad4305728eeea4ba6",
+      "unit_id": "unit.gregorian-wilson-1915.canon.unde-et-memores",
+      "witness_id": "gregorian-wilson-1915-pdf",
+      "witness_pages": [
+        [
+          61,
+          61
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "supra-quae"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c",
+      "source_id": "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-supra-quae",
+      "source_locator": "Constituent unit 9/14 (anaphoras/canon-missae/supra-quae), normalized physical lines 10–10.",
+      "source_order": 9,
+      "text": "supra quae propitio ac sereno uultu respicere digneris. et accepta habere sicuti accepta habere dignatus es munera pueri tui iusti abel. et sacrificium patriarche nostri abrahae et quod tibi obtulit summus sacerdos tuus melchisedech. sanctum sacrificium inmaculatam hostiam.",
+      "text_edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+      "text_sha256": "0e7b3523758ebd1b7e68177965d034cf6e353431a2a1664795d2f75095bb0d44",
+      "unit_id": "unit.gregorian-wilson-1915.canon.supra-quae",
+      "witness_id": "gregorian-wilson-1915-pdf",
+      "witness_pages": [
+        [
+          61,
+          61
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "supplices"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c",
+      "source_id": "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-supplices",
+      "source_locator": "Constituent unit 10/14 (anaphoras/canon-missae/supplices), normalized physical lines 11–11.",
+      "source_order": 10,
+      "text": "Supplices te rogamus omnipotens deus iube haec perferri per manus angeli tui in sublime altare tuum in conspectu diuine maiestatis tuae ut quotquot ex hac altaris participatione sacrosanctum filii tui corpus et sanguinem sumpserimus omni benedictione caelesti et gratia repleamur per christum dominum nostrum",
+      "text_edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+      "text_sha256": "74b2048851648a0d20aa24b8178b9b4ca27229ef12005bf92831c4f62aa08e7b",
+      "unit_id": "unit.gregorian-wilson-1915.canon.supplices",
+      "witness_id": "gregorian-wilson-1915-pdf",
+      "witness_pages": [
+        [
+          61,
+          61
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "nobis-quoque"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c",
+      "source_id": "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-nobis-quoque",
+      "source_locator": "Constituent unit 11/14 (anaphoras/canon-missae/nobis-quoque), normalized physical lines 12–12.",
+      "source_order": 11,
+      "text": "Nobis quoque peccatoribus famulis tuis de multitudine miserationum tuarum sperantibus partem aliquam et societatem donare digneris cum tuis sanctis apostolis et martyribus cum iohanne stephano matthia barnaba ignatio alexandro marcellino petro felicitate perpetua agatha lucia agne cecilia anastasia. et cum omnibus sanctis tuis. Intra quorum nos consortium non aestimator meriti sed ueniae quaesumus largitor admitte. per christum dominum nostrum.",
+      "text_edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+      "text_sha256": "21ba4f282bb1bfd6853bd3e74e0e4f04c3f266b2561b63dccc69f401a913fd27",
+      "unit_id": "unit.gregorian-wilson-1915.canon.nobis-quoque",
+      "witness_id": "gregorian-wilson-1915-pdf",
+      "witness_pages": [
+        [
+          61,
+          61
+        ],
+        [
+          62,
+          62
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "per-quem"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c",
+      "source_id": "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-per-quem",
+      "source_locator": "Constituent unit 12/14 (anaphoras/canon-missae/per-quem), normalized physical lines 13–13.",
+      "source_order": 12,
+      "text": "per quem haec omnia domine semper bona creas sanctificas uiuificas benedicis et pręstas nobis.",
+      "text_edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+      "text_sha256": "cc34da09c27c30bbf29cc14d5d04cb1ac10979576fe3e53de94424380417a77b",
+      "unit_id": "unit.gregorian-wilson-1915.canon.per-quem",
+      "witness_id": "gregorian-wilson-1915-pdf",
+      "witness_pages": [
+        [
+          62,
+          62
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "doxology",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "per-ipsum"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c",
+      "source_id": "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-per-ipsum",
+      "source_locator": "Constituent unit 13/14 (anaphoras/canon-missae/per-ipsum), normalized physical lines 14–14.",
+      "source_order": 13,
+      "text": "per ipsum et cum ipso et in ipso est tibi deo patri omnipotenti in unitate spiritus sancti omnis honor et gloria.",
+      "text_edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+      "text_sha256": "81e7a99cd7023530a2b639e1af6621bedab31b8a36be8ae5c85bab49e539c62f",
+      "unit_id": "unit.gregorian-wilson-1915.canon.per-ipsum",
+      "witness_id": "gregorian-wilson-1915-pdf",
+      "witness_pages": [
+        [
+          62,
+          62
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "dialogue",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "concluding-response"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c",
+      "source_id": "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-concluding-response",
+      "source_locator": "Constituent unit 14/14 (anaphoras/canon-missae/concluding-response), normalized physical lines 15–15.",
+      "source_order": 14,
+      "text": "per omnia saecula saeculorum. amen.",
+      "text_edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+      "text_sha256": "bbd932c8277763f2b06ee1354d0f4397a6da601fba7b09b9f7e406f5bf912601",
+      "unit_id": "unit.gregorian-wilson-1915.canon.concluding-response",
+      "witness_id": "gregorian-wilson-1915-pdf",
+      "witness_pages": [
+        [
+          62,
+          62
+        ]
+      ]
+    }
+  ],
+  "witnesses": [
+    {
+      "artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7",
+      "edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+      "id": "gregorian-wilson-1915-pdf",
+      "scope_pages": [
+        [
+          60,
+          62
+        ]
+      ]
+    }
+  ]
+}

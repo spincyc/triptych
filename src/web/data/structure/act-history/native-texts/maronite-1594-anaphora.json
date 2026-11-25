@@ -1,0 +1,288 @@
+{
+  "adapter_id": "native-book:maronite-1594-anaphora",
+  "binding_sha256": "571ca202c8bc3989062f3809facb10acaea21c07ea13f62077032b4a5394f419",
+  "catalogue_witness_ids": [
+    "eastern:mar-1592-94"
+  ],
+  "counts": {
+    "languages": {
+      "syr": 5
+    },
+    "units": 5,
+    "whitespace_tokens": 106
+  },
+  "id": "maronite-1594-anaphora",
+  "schema": "triptych-eucharistic-native-text/v1",
+  "scope": {
+    "complete_declared_extent": true,
+    "description": "Bounded constituent of five core units of the Anaphora of the Twelve Apostles (Opening Dialogue, Institution of Bread, Institution of Chalice, Epiclesis Call/Kyrie, and Epiclesis Consecration/Salvation Petition) in Classical Syriac (syr), directly aligned with Beirut 1908; intervening Preface, Post-Sanctus, Anamnesis, secret Epiclesis preamble, and post-epiclesis fruits prayer are excluded due to dense archaic Medici cursive ligatures and structural divergence in 1908's inline Ordo Communis.",
+    "extent_kind": "constituent",
+    "known_extent_pages": 4,
+    "known_extent_units": 5,
+    "omitted_book_divisions": [
+      "Latin title (PDF 5), dedication (PDF 7-8), native Syriac title with 1592 imprint (PDF 9), Ordo Communis, and preceding anaphoras (PDF 1-126)",
+      "Intervening Preface, Sanctus, and Post-Sanctus on PDF 127, Last Supper woodcut above Bread on PDF 128, Anamnesis on PDF 129-130 top, secret Epiclesis preamble on PDF 130 mid, and post-epiclesis fruits paragraph on PDF 130 bottom",
+      "Post-epiclesis diptychs, fraction, remaining anaphoras (including Sharar), Latin colophon and examiner approbation (PDF 296), and back matter (PDF 131-300)"
+    ],
+    "status": "complete-native-constituent",
+    "whole_book_complete": false
+  },
+  "sources": [
+    {
+      "edition_id": "edition.maronite-church.qurbono.1594-rome-medici",
+      "id": "artifact.maronite-church.qurbono.1594-rome-medici.anaphora-checked-syriac-2f49114b",
+      "record_type": "artifact",
+      "rights_basis": "Faithful bounded reading transcription of original-language liturgical text from Missale Chaldaicum iuxta ritum Ecclesiae nationis Maronitarum (Rome Medici, 1594) — Anaphora of the Twelve Apostles Core, whose United States copyright term has expired by publication date (1594 (Syriac title 1592)). Derived directly from tracked public-domain facsimile artifact.maronite-church.qurbono.1594-rome-medici.ia-scan-pdf-dbab3b5b without modern translation or editorial reconstruction. Third-party historical text is excluded from Triptych's CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "transformation": "Pure consonantal Classical Syriac Unicode (U+0710..U+072C, UTF-8 NFC) with single ASCII spaces between words and single LF (\\n) line endings, one canonical liturgical unit per line.; All West Syriac vowel points, seyame (U+0308), qushshaya/rukkakha, punctuation marks, liturgical crosses (including inline red crosses splitting ܘܒܪܟ in 1594), kashidas, catchwords, running heads, border ornaments, and page numbers are omitted for scan-safe cross-edition diffing.; Rubrics (red Syriac or red Garshuni stage directions), speaker labels (priest/deacon/people), editorial 'etc.' cues (ܘܫܪ), intervening rubricated Trinitarian cross-blessings, and parallel Garshuni/Arabic columns are excluded.; Printed historical orthography (such as ܐܪܙܐ in 1594 vs ܪܐܙܐ in 1908, and ܒܐܝܕܝܐ in both Chalice preambles), abbreviations (such as abbreviated Dialogue incipits in 1594), omissions, and additions are preserved verbatim without harmonizing or supplying words from memory."
+    },
+    {
+      "edition_id": "edition.maronite-church.qurbono.1594-rome-medici",
+      "id": "artifact.maronite-church.qurbono.1594-rome-medici.ia-scan-pdf-dbab3b5b",
+      "record_type": "artifact",
+      "rights_basis": "Historical 1594 printing, public domain in the United States by expired publication term. Internet Archive item bub_gb_5Eqy8WGF9aQC identifies the delivery with Public Domain Mark 1.0 (item and metadata checked 2026-10-16), https://creativecommons.org/publicdomain/mark/1.0/. This provider assessment is recorded separately from the historical printing's publication-term basis. The exact mechanical scan is retained without alteration; any provider marks remain in the bytes. The repository's treatment of incidental Google matter is recorded in src/sources/inventories/google-usage-guidelines-rights-v1.toml. No modern critical edition or scholarly commentary is imported. These source bytes are not offered under Triptych's CC BY 4.0 licence.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "source_url": "https://archive.org/download/bub_gb_5Eqy8WGF9aQC/bub_gb_5Eqy8WGF9aQC.pdf"
+    },
+    {
+      "authority": "Latin title at PDF page 5 says Permissu superiorum. The Latin colophon at PDF page 296 names Clement VIII, Cardinal protector Gabriele Paleotti and Maronite Patriarch Sergio Rizio; the following approbation names Thomas de Terracina, O.P. These printed permission and attribution statements are not a reconstructed promulgation history.",
+      "date": "1594",
+      "id": "edition.maronite-church.qurbono.1594-rome-medici",
+      "language": "syr",
+      "publication": "Romae: in Typographia Medicea, 1594; the native title leaf retains a Latin imprint dated 1592.",
+      "record_type": "edition",
+      "title": "Missale Chaldaicum iuxta ritum Ecclesiae nationis Maronitarum"
+    },
+    {
+      "artifact_id": "artifact.maronite-church.qurbono.1594-rome-medici.anaphora-checked-syriac-2f49114b",
+      "edition_id": "edition.maronite-church.qurbono.1594-rome-medici",
+      "id": "passage.maronite-church.qurbono.1594-rome-medici.anaphora-01-opening-dialogue",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.maronite-church.qurbono.1594-rome-medici.anaphora-checked-syriac-2f49114b",
+      "edition_id": "edition.maronite-church.qurbono.1594-rome-medici",
+      "id": "passage.maronite-church.qurbono.1594-rome-medici.anaphora-02-institution-bread",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.maronite-church.qurbono.1594-rome-medici.anaphora-checked-syriac-2f49114b",
+      "edition_id": "edition.maronite-church.qurbono.1594-rome-medici",
+      "id": "passage.maronite-church.qurbono.1594-rome-medici.anaphora-03-institution-chalice",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.maronite-church.qurbono.1594-rome-medici.anaphora-checked-syriac-2f49114b",
+      "edition_id": "edition.maronite-church.qurbono.1594-rome-medici",
+      "id": "passage.maronite-church.qurbono.1594-rome-medici.anaphora-04-epiclesis-call",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.maronite-church.qurbono.1594-rome-medici.anaphora-checked-syriac-2f49114b",
+      "edition_id": "edition.maronite-church.qurbono.1594-rome-medici",
+      "id": "passage.maronite-church.qurbono.1594-rome-medici.anaphora-05-epiclesis-consecration",
+      "record_type": "passage"
+    }
+  ],
+  "stage_ids": [
+    "maronite-rome1592-1594"
+  ],
+  "title": "Missale Chaldaicum iuxta ritum Ecclesiae nationis Maronitarum (Rome Medici, 1594) — Anaphora of the Twelve Apostles Core",
+  "units": [
+    {
+      "component": "anaphoras",
+      "direction": "rtl",
+      "kind": "dialogue",
+      "language": "syr",
+      "native_path": [
+        "anaphoras",
+        "twelve-apostles",
+        "01-opening-dialogue"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.maronite-church.qurbono.1594-rome-medici.anaphora-checked-syriac-2f49114b",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.maronite-church.qurbono.1594-rome-medici.anaphora-checked-syriac-2f49114b",
+      "source_id": "passage.maronite-church.qurbono.1594-rome-medici.anaphora-01-opening-dialogue",
+      "source_locator": "Constituent unit 1/5 (anaphoras/twelve-apostles/01-opening-dialogue), normalized physical lines 1–1.",
+      "source_order": 1,
+      "text": "ܚܘܒܐ ܐܡܝܢ ܠܥܠ ܐܝܬܝܗܘܢ ܢܘܕܐ ܫܘܐ",
+      "text_edition_id": "edition.maronite-church.qurbono.1594-rome-medici",
+      "text_sha256": "3bcde386d02ee82c608482a9175674f5827391f75c2e986202ceda2b766b465c",
+      "unit_id": "maronite-1594-anaphora.01-opening-dialogue",
+      "witness_id": "maronite-1594-rome-medici-ia-pdf",
+      "witness_pages": [
+        [
+          127,
+          127
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "rtl",
+      "kind": "institution-narrative",
+      "language": "syr",
+      "native_path": [
+        "anaphoras",
+        "twelve-apostles",
+        "02-institution-bread"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.maronite-church.qurbono.1594-rome-medici.anaphora-checked-syriac-2f49114b",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.maronite-church.qurbono.1594-rome-medici.anaphora-checked-syriac-2f49114b",
+      "source_id": "passage.maronite-church.qurbono.1594-rome-medici.anaphora-02-institution-bread",
+      "source_locator": "Constituent unit 2/5 (anaphoras/twelve-apostles/02-institution-bread), normalized physical lines 2–2.",
+      "source_order": 2,
+      "text": "ܒܝܘܡܐ ܗܘ ܕܩܕܡ ܚܫܐ ܕܝܠܗ ܢܣܒ ܠܠܚܡܐ ܒܐܝܕܘܗܝ ܩܕܝܫܬܐ ܘܐܪܝܡ ܥܝܢܘܗܝ ܠܘܬܟ ܐܠܗܐ ܐܒܘܗܝ ܐܚܝܕ ܟܠ ܘܐܘܕܝ ܠܟ ܘܒܪܟ ܘܩܨܐ ܘܝܗܒ ܠܬܠܡܝܕܘܗܝ ܟܕ ܐܡܪ ܣܒܘ ܐܟܘܠܘ ܡܢܗ ܟܠܟܘܢ ܗܢܐ ܕܝܢ ܐܝܬܘܗܝ ܦܓܪܐ ܕܝܠܝ",
+      "text_edition_id": "edition.maronite-church.qurbono.1594-rome-medici",
+      "text_sha256": "56f9b269f417fff64ff32d8728b0666864ad05dfdca5615cf555c0cf012b3517",
+      "unit_id": "maronite-1594-anaphora.02-institution-bread",
+      "witness_id": "maronite-1594-rome-medici-ia-pdf",
+      "witness_pages": [
+        [
+          128,
+          128
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "rtl",
+      "kind": "institution-narrative",
+      "language": "syr",
+      "native_path": [
+        "anaphoras",
+        "twelve-apostles",
+        "03-institution-chalice"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.maronite-church.qurbono.1594-rome-medici.anaphora-checked-syriac-2f49114b",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.maronite-church.qurbono.1594-rome-medici.anaphora-checked-syriac-2f49114b",
+      "source_id": "passage.maronite-church.qurbono.1594-rome-medici.anaphora-03-institution-chalice",
+      "source_locator": "Constituent unit 3/5 (anaphoras/twelve-apostles/03-institution-chalice), normalized physical lines 3–3.",
+      "source_order": 3,
+      "text": "ܒܗ ܕܝܢ ܒܙܢܐ ܡܢ ܒܬܪ ܕܐܚܫܡܘ ܢܣܒ ܒܐܝܕܝܐ ܕܝܠܗ ܩܕܝܫܬܐ ܟܣܐ ܗܢܐ ܕܚܡܪܐ ܘܐܘܕܝ ܠܟ ܘܒܪܟ ܘܝܗܒ ܠܬܠܡܝܕܘܗܝ ܟܕ ܐܡܪ ܣܒܘ ܐܫܬܘ ܡܢܗ ܟܠܟܘܢ ܗܢܐ ܕܝܢ ܐܝܬܘܗܝ ܟܣܐ ܕܕܡܝ ܕܕܝܬܝܩܝ ܚܕܬܐ ܕܠܥܠܡ ܐܪܙܐ ܗܘ ܕܗܝܡܢܘܬܐ ܕܚܠܦܝܟܘܢ ܘܚܠܦ ܣܓܝܐܐ ܡܬܐܫܕ ܠܫܘܒܩܢܐ ܕܚܛܗܐ ܐܡܝܢ",
+      "text_edition_id": "edition.maronite-church.qurbono.1594-rome-medici",
+      "text_sha256": "635cde76a9b75a2e0c59c90ea5d0db1f40dd101e494e78f8d513c61b62873067",
+      "unit_id": "maronite-1594-anaphora.03-institution-chalice",
+      "witness_id": "maronite-1594-rome-medici-ia-pdf",
+      "witness_pages": [
+        [
+          129,
+          129
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "rtl",
+      "kind": "dialogue",
+      "language": "syr",
+      "native_path": [
+        "anaphoras",
+        "twelve-apostles",
+        "04-epiclesis-call"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.maronite-church.qurbono.1594-rome-medici.anaphora-checked-syriac-2f49114b",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.maronite-church.qurbono.1594-rome-medici.anaphora-checked-syriac-2f49114b",
+      "source_id": "passage.maronite-church.qurbono.1594-rome-medici.anaphora-04-epiclesis-call",
+      "source_locator": "Constituent unit 4/5 (anaphoras/twelve-apostles/04-epiclesis-call), normalized physical lines 4–4.",
+      "source_order": 4,
+      "text": "ܥܢܝܢܝ ܡܪܝܐ ܩܘܪܝܐܠܝܣܘܢ",
+      "text_edition_id": "edition.maronite-church.qurbono.1594-rome-medici",
+      "text_sha256": "0f8367841f61f7dd41e73b6d59f72ed534219b326b74d2a1c5bbd5284a49bcd8",
+      "unit_id": "maronite-1594-anaphora.04-epiclesis-call",
+      "witness_id": "maronite-1594-rome-medici-ia-pdf",
+      "witness_pages": [
+        [
+          130,
+          130
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "rtl",
+      "kind": "prayer",
+      "language": "syr",
+      "native_path": [
+        "anaphoras",
+        "twelve-apostles",
+        "05-epiclesis-consecration"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.maronite-church.qurbono.1594-rome-medici.anaphora-checked-syriac-2f49114b",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.maronite-church.qurbono.1594-rome-medici.anaphora-checked-syriac-2f49114b",
+      "source_id": "passage.maronite-church.qurbono.1594-rome-medici.anaphora-05-epiclesis-consecration",
+      "source_locator": "Constituent unit 5/5 (anaphoras/twelve-apostles/05-epiclesis-consecration), normalized physical lines 5–5.",
+      "source_order": 5,
+      "text": "ܘܠܪܐܙܐ ܗܢܐ ܦܓܪܐ ܕܡܫܝܚܐ ܐܠܗܐ ܕܝܠܢ ܢܥܒܕ ܕܢܗܘܐ ܠܦܘܪܩܢܐ ܕܝܠܢ ܐܡܝܢ ܘܠܟܣܐ ܗܢܐ ܕܡܐ ܕܡܫܝܚܐ ܐܠܗܐ ܕܝܠܢ ܢܥܒܕ ܕܢܗܘܐ ܠܦܘܪܩܢܐ ܕܝܠܢ ܐܡܝܢ",
+      "text_edition_id": "edition.maronite-church.qurbono.1594-rome-medici",
+      "text_sha256": "7c11417135875f9a032f9276b8b4541289a2e8f66ed02928a1bda59212bbed05",
+      "unit_id": "maronite-1594-anaphora.05-epiclesis-consecration",
+      "witness_id": "maronite-1594-rome-medici-ia-pdf",
+      "witness_pages": [
+        [
+          130,
+          130
+        ]
+      ]
+    }
+  ],
+  "witnesses": [
+    {
+      "artifact_id": "artifact.maronite-church.qurbono.1594-rome-medici.ia-scan-pdf-dbab3b5b",
+      "edition_id": "edition.maronite-church.qurbono.1594-rome-medici",
+      "id": "maronite-1594-rome-medici-ia-pdf",
+      "scope_pages": [
+        [
+          127,
+          130
+        ]
+      ]
+    }
+  ]
+}

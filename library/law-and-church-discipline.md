@@ -2,7 +2,7 @@
 
 [Return to the library](../README.md)
 
-Studies of canon law and Church discipline.
+Studies of canon law and Church discipline. For the liturgical books and promulgations across Latin and Eastern Catholic Churches *sui iuris*, see **[Eucharistic Books Through History](../history/?view=timeline)** and **[The Code, Canon by Canon](../law/)**.
 
 | Publication | ChatGPT | Claude | Focus |
 | --- | --- | --- | --- |

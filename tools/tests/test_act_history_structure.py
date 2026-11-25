@@ -36,8 +36,9 @@ def comparison_paths() -> set[str]:
 
 def expected_file_count() -> int:
     # The three recovered slices retain 505 fragments; coverage adds one
-    # catalogue, one file per comparison and one per bound native constituent.
-    return 506 + len(comparison_paths()) + len(native_text_paths())
+    # catalogue, one Source Library edition cross-reference index, one file per
+    # comparison and one per bound native constituent.
+    return 507 + len(comparison_paths()) + len(native_text_paths())
 
 
 def native_text_paths() -> set[str]:
@@ -94,6 +95,11 @@ class ActHistoryStructureTests(unittest.TestCase):
         self.assertEqual(checked.returncode, 0, checked.stdout + checked.stderr)
         self.assertIn(f"current: {expected_file_count()} files for 3 slices", checked.stdout)
         self.assertTrue((TRACKED / "catalogue.json").is_file())
+        self.assertTrue((TRACKED / "edition-cross-references.json").is_file())
+        edition_xrefs = json.loads((TRACKED / "edition-cross-references.json").read_text())
+        self.assertEqual(edition_xrefs["schema"], "triptych-eucharistic-edition-cross-references/v1")
+        self.assertEqual(edition_xrefs["count"], len(edition_xrefs["editions"]))
+        self.assertGreater(edition_xrefs["count"], 0)
         catalogue = json.loads((TRACKED / "catalogue.json").read_text())
         self.assertEqual(comparison_paths(), {path.relative_to(TRACKED).as_posix()
                                              for path in (TRACKED / "comparisons").rglob("*") if path.is_file()})

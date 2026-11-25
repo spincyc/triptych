@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-extent",
+  "book_id": "stowe-warner-1915-canon-missae",
+  "title": "Stowe Missal (Warner 1915 Vol. 2): complete strict Canon Missae constituent — complete constituent extent and page account",
+  "status": "complete",
+  "unresolved": [],
+  "omitted": [],
+  "expected_unit_ids": [
+    "unit.stowe-warner-1915.canon.opening-rubric",
+    "unit.stowe-warner-1915.canon.te-igitur",
+    "unit.stowe-warner-1915.canon.memento-vivorum",
+    "unit.stowe-warner-1915.canon.communicantes",
+    "unit.stowe-warner-1915.canon.hanc-igitur",
+    "unit.stowe-warner-1915.canon.quam-oblationem",
+    "unit.stowe-warner-1915.canon.qui-pridie",
+    "unit.stowe-warner-1915.canon.simili-modo",
+    "unit.stowe-warner-1915.canon.unde-et-memores",
+    "unit.stowe-warner-1915.canon.supra-quae",
+    "unit.stowe-warner-1915.canon.supplices",
+    "unit.stowe-warner-1915.canon.memento-defunctorum",
+    "unit.stowe-warner-1915.canon.nobis-quoque",
+    "unit.stowe-warner-1915.canon.per-quem",
+    "unit.stowe-warner-1915.canon.per-ipsum",
+    "unit.stowe-warner-1915.canon.concluding-response"
+  ],
+  "scope": "Complete strict Eucharistic Canon of RIA MS D. II. 3 as mediated by G. F. Warner's 1915 printed text (Vol. II, printed pp. 10-16, PDF pp. 96-102): from the Canon heading Canón dominicus papę gilasi and Té igitur on printed p. 10 (fo. 24) through per omnia saecula saeculorum : on printed p. 16 (fo. 34), immediately before the Old Irish fraction rubric and Pater nóster on printed p. 17. Includes the seven seasonal Infra actionem Communicantes insertions (pp. 11-12), Moelcaich's bracketed anamnesis addition in Simili modo (p. 13), and the Stowe Diptychs of the Dead (ff. 32-33, pp. 15-16) continuing Memento etiam (fo. 29v, p. 14). Excludes the two misbound leaves ff. 30-31v (Litany of Irish Saints and Oratio Ambrosi on pp. 14-15, which Warner notes belong after fo. 12 before the Mass) and excludes all apparatus footnotes, running heads, and marginal folio markers.",
+  "pages": [
+    {
+      "witness_id": "stowe-warner-1915-vol-2-pdf",
+      "ranges": [
+        [
+          1,
+          95
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "Introduction, St. John Gospel extracts, and Mass Ordinary before Canón dominicus (printed pp. 1-9)."
+    },
+    {
+      "witness_id": "stowe-warner-1915-vol-2-pdf",
+      "ranges": [
+        [
+          96,
+          96
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.stowe-warner-1915.canon.opening-rubric",
+        "unit.stowe-warner-1915.canon.te-igitur"
+      ],
+      "description": "Printed p. 10 (PDF p. 96): Preface/Sanctus above excluded; Canón dominicus papę gilasi and Té igitur."
+    },
+    {
+      "witness_id": "stowe-warner-1915-vol-2-pdf",
+      "ranges": [
+        [
+          97,
+          97
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.stowe-warner-1915.canon.memento-vivorum",
+        "unit.stowe-warner-1915.canon.communicantes"
+      ],
+      "description": "Printed p. 11 (PDF p. 97): Híc recitantur nomina uiuorum, Memento etiam with Insular litany, communicantes opening and first four seasonal insertions."
+    },
+    {
+      "witness_id": "stowe-warner-1915-vol-2-pdf",
+      "ranges": [
+        [
+          98,
+          98
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.stowe-warner-1915.canon.communicantes",
+        "unit.stowe-warner-1915.canon.hanc-igitur",
+        "unit.stowe-warner-1915.canon.quam-oblationem",
+        "unit.stowe-warner-1915.canon.qui-pridie"
+      ],
+      "description": "Printed p. 12 (PDF p. 98): remaining seasonal insertions, main Communicantes, Hanc igitur, Quam oblationem, and start of Qui pridie."
+    },
+    {
+      "witness_id": "stowe-warner-1915-vol-2-pdf",
+      "ranges": [
+        [
+          99,
+          99
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.stowe-warner-1915.canon.qui-pridie",
+        "unit.stowe-warner-1915.canon.simili-modo",
+        "unit.stowe-warner-1915.canon.unde-et-memores",
+        "unit.stowe-warner-1915.canon.supra-quae",
+        "unit.stowe-warner-1915.canon.supplices"
+      ],
+      "description": "Printed p. 13 (PDF p. 99): completion of Qui pridie, Simili modo (with Moelcaich addition), Unde et memores, Supra que, and Supplices."
+    },
+    {
+      "witness_id": "stowe-warner-1915-vol-2-pdf",
+      "ranges": [
+        [
+          100,
+          100
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.stowe-warner-1915.canon.memento-defunctorum"
+      ],
+      "description": "Printed p. 14 (PDF p. 100): Memento etiam (fo. 29v) in scope; misbound inserted leaves ff. 30-31v (Litany and Oratio Ambrosi) excluded per Warner n. 2."
+    },
+    {
+      "witness_id": "stowe-warner-1915-vol-2-pdf",
+      "ranges": [
+        [
+          101,
+          101
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.stowe-warner-1915.canon.memento-defunctorum"
+      ],
+      "description": "Printed p. 15 (PDF p. 101): end of misbound Oratio Ambrosi at top excluded; Diptychs of the Dead (fo. 32-32v) continuing Memento etiam in scope."
+    },
+    {
+      "witness_id": "stowe-warner-1915-vol-2-pdf",
+      "ranges": [
+        [
+          102,
+          102
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.stowe-warner-1915.canon.memento-defunctorum",
+        "unit.stowe-warner-1915.canon.nobis-quoque",
+        "unit.stowe-warner-1915.canon.per-quem",
+        "unit.stowe-warner-1915.canon.per-ipsum",
+        "unit.stowe-warner-1915.canon.concluding-response"
+      ],
+      "description": "Printed p. 16 (PDF p. 102): completion of Diptychs and Ipsis et omnibus (fo. 33), Nobis quoque, Per quem, Per ipsum, and per omnia saecula saeculorum :."
+    },
+    {
+      "witness_id": "stowe-warner-1915-vol-2-pdf",
+      "ranges": [
+        [
+          103,
+          146
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "Fraction, Pater nóster, Communion, Baptism, Sick Visitation, Irish Mass tract and index (printed pp. 17-59)."
+    }
+  ]
+}

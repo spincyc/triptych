@@ -330,7 +330,10 @@
       ],
       "limitations": "Creed wording and the placement of sampled Cyril intercessions are directly image-checked. Their exact differences from Tuki’s unidentified manuscript exemplar remain uncollated. Chalcedon and omitted commemorations remain Brightman’s scholarly description; no specific removed name or pope addition is inferred. The native binding certifies the complete Arabic Creed only (139 normalized words on three pages), excluding parallel Coptic, rubrics and every other book division; it is not a complete Ordinary or missal.",
       "reception": "Brightman expressly identifies Tuki and derivatives as the Coptic Catholic modified rite; no parish adoption date established.",
-      "text_binding": "native-book:tuki-1736-arabic-creed"
+      "text_bindings": [
+        "native-book:tuki-1736-arabic-creed",
+        "native-book:coptic-1736-basil-anaphora"
+      ]
     },
     {
       "id": "alexandrian-stages-coptic1898",
@@ -548,10 +551,12 @@
         "anaphoras",
         "rubrics"
       ],
-      "witness_ids": [],
+      "witness_ids": [
+        "eastern:alex-geez-1913"
+      ],
       "witness_label": "Asmara 1913 printing; no original copy acquired",
       "summary": "Asmara reprinting follows the unavailable 1890 stock; fourteen anaphoras remain.",
-      "text_coverage": "not-transcribed",
+      "text_coverage": "partial",
       "evidence": [
         {
           "source_id": "alexandrian-stages-keren2009",
@@ -565,7 +570,8 @@
         }
       ],
       "limitations": "Original title, index, approval and prayer pages remain unavailable. The retrospective table is source-described evidence, not direct collation.",
-      "reception": "Catholic mission printing in present-day Eritrea; no claim of uniform reception or present ecclesial boundaries."
+      "reception": "Catholic mission printing in present-day Eritrea; no claim of uniform reception or present ecclesial boundaries.",
+      "text_binding": "native-book:geez-1914-apostles-anaphora"
     },
     {
       "id": "alexandrian-stages-coptic1971",

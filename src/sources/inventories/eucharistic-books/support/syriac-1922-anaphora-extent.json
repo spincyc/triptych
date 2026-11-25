@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-extent",
+  "book_id": "syriac-1922-anaphora",
+  "title": "Missale iuxta ritum Ecclesiae Apostolicae Antiochenae Syrorum (Sharfeh Patriarchal, 1922) — Anaphora of St. James Core — complete constituent extent and page account",
+  "status": "complete",
+  "unresolved": [],
+  "omitted": [],
+  "expected_unit_ids": [
+    "syriac-1922-anaphora.01-preface",
+    "syriac-1922-anaphora.02-sanctus",
+    "syriac-1922-anaphora.03-post-sanctus",
+    "syriac-1922-anaphora.04-institution-narrative",
+    "syriac-1922-anaphora.05-anamnesis",
+    "syriac-1922-anaphora.06-epiclesis"
+  ],
+  "scope": "Bounded constituent of the exact same six aligned core units of the Anaphora of St. James (Preface, Sanctus, Post-Sanctus, Institution Narrative, Anamnesis, and Epiclesis) in Classical Syriac (syr), enabling a direct 1843 vs 1922 Syriac Catholic visual diff; reads right-hand Syriac column on bilingual pages (PDF 246, 245) and full-width Syriac on monolingual pages (PDF 245 bottom, 244 L1, 241, 240, 239), excluding Dialogue, parallel Garshuni, red rubrics, blank page PDF 243, and Crucifixion engraving plate PDF 242.",
+  "pages": [
+    {
+      "witness_id": "syriac-1922-sharfeh-bonn-pdf",
+      "ranges": [
+        [
+          1,
+          238
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "Latin front matter/decree/dissertation (PDF 1-20), native contents (PDF 22-23), post-epiclesis diptychs, remaining six anaphoras, and propers."
+    },
+    {
+      "witness_id": "syriac-1922-sharfeh-bonn-pdf",
+      "ranges": [
+        [
+          239,
+          239
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "syriac-1922-anaphora.06-epiclesis"
+      ],
+      "description": "Conclusion of Epiclesis (printed p. 71 / ܥܐ)."
+    },
+    {
+      "witness_id": "syriac-1922-sharfeh-bonn-pdf",
+      "ranges": [
+        [
+          240,
+          240
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "syriac-1922-anaphora.05-anamnesis",
+        "syriac-1922-anaphora.06-epiclesis"
+      ],
+      "description": "Full-width Anamnesis and opening of Epiclesis (printed p. 70 / ܥ)."
+    },
+    {
+      "witness_id": "syriac-1922-sharfeh-bonn-pdf",
+      "ranges": [
+        [
+          241,
+          241
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "syriac-1922-anaphora.04-institution-narrative"
+      ],
+      "description": "Full-width Institution Narrative of Bread and Chalice (printed p. 69 / ܣܛ)."
+    },
+    {
+      "witness_id": "syriac-1922-sharfeh-bonn-pdf",
+      "ranges": [
+        [
+          242,
+          242
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "Full-page Crucifixion engraving plate preceding Institution Narrative."
+    },
+    {
+      "witness_id": "syriac-1922-sharfeh-bonn-pdf",
+      "ranges": [
+        [
+          243,
+          243
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "Blank verso of Crucifixion engraving plate."
+    },
+    {
+      "witness_id": "syriac-1922-sharfeh-bonn-pdf",
+      "ranges": [
+        [
+          244,
+          244
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "syriac-1922-anaphora.03-post-sanctus"
+      ],
+      "description": "Final line of Post-Sanctus (printed p. 68 / ܣܚ; pre-institution rubrics below excluded)."
+    },
+    {
+      "witness_id": "syriac-1922-sharfeh-bonn-pdf",
+      "ranges": [
+        [
+          245,
+          245
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "syriac-1922-anaphora.01-preface",
+        "syriac-1922-anaphora.02-sanctus",
+        "syriac-1922-anaphora.03-post-sanctus"
+      ],
+      "description": "Conclusion of Preface (right Syriac col.), four-word Sanctus incipit, and body of Post-Sanctus (printed p. 67 / ܣܙ)."
+    },
+    {
+      "witness_id": "syriac-1922-sharfeh-bonn-pdf",
+      "ranges": [
+        [
+          246,
+          246
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "syriac-1922-anaphora.01-preface"
+      ],
+      "description": "Opening of Preface (full-width top and right-hand Syriac column; printed p. 66 / ܣܘ; Dialogue above excluded to match 1843 bounds)."
+    },
+    {
+      "witness_id": "syriac-1922-sharfeh-bonn-pdf",
+      "ranges": [
+        [
+          247,
+          343
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "Pre-anaphoral Ordo Communis, Presanctified, and Syriac title (PDF 339)."
+    }
+  ]
+}

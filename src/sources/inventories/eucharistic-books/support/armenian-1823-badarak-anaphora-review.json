@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-collation",
+  "book_id": "armenian-1823-badarak-anaphora",
+  "title": "Venice 1823 San Lazzaro Lyturgia Armena: core Armenian Badarak Anaphora constituent — independent pixel-collation review",
+  "status": "verified",
+  "independent": true,
+  "complete_extent_verified": true,
+  "reviewer": "independent-collator-v1-byz-arm",
+  "checked_on": "2026-11-25",
+  "binding_sha256": "aa71880df286ea0e30f9b2ef1c35f94bb0e23bb342c47a2450453647b65e5746",
+  "extent_sha256": "f09b891a8de4e116d6fb757ce84c9dfbe81cd8276f0e5d73ecb42529ddbc5b0e",
+  "witness_sha256": {
+    "arm-1823-google": "81812bd4c2895111788582de47144fabb2500f9f923b22bb441274cbee7a8bb6"
+  },
+  "unit_sha256": {
+    "unit.arm-1823.badarak.01-opening-dialogue": "05503c1269e6edc58bfcb5152e9e60bec9f0feb4f3dfacaeea6bd48f5813e42f",
+    "unit.arm-1823.badarak.02-preface-thanksgiving": "93c4bd4bffc62a9fd2e813c41bf9309a16a00a7f5a27bae1e1adce042476faff",
+    "unit.arm-1823.badarak.03-sanctus": "7200b0b68ead1d9b889ea85879c463ba836fbe8f879703dad9a45bf09d8a3865",
+    "unit.arm-1823.badarak.04-post-sanctus-institution": "3e1bfbe30572c79e6aa78992bef32a81144d7af26cfb556c1be62a393a6bce8d",
+    "unit.arm-1823.badarak.05-anamnesis-oblation": "5f80c8d47ac0b331d979d9bd4ed229f5ccc4601aff51999e5be33b4c3a4f9ca4",
+    "unit.arm-1823.badarak.06-epiclesis": "38d674c1cc5d5f1967216b6be0151d2be7cdc9fc99cd99c0a3cbae8d02a04664"
+  },
+  "scope": "Core Classical Armenian (Grabar) Anaphora of the Armenian Divine Liturgy (Badarak) from the priest's opening Trinitarian blessing rubric and greeting (Քահանայն դարձցի և խաչակնքեսցէ ✠ ՚ի վերայ ժողովրդեանն, և ասասցէ։ Շնորհք, սէր, և աստուածային սրբարար զօրութիւն...) at printed p. 46 (PDF p. 50) through the Preface, Sanctus incipit (p. 47 / PDF p. 51; excluding the intervening full-page Crucifixion engraving at unnumbered p. [48] / PDF p. 52 as non-text), Post-Sanctus and Institution Narrative (pp. [49]–50 / PDF pp. 53–54), Anamnesis and Oblation (pp. 51–52 / PDF pp. 55–56), and the complete Epiclesis (triple past-tense արարեր blessings, combined փոխարկելով blessing, rubric, and concluding ekphonesis Որպէս զի եղիցի սա... ՚ի թողութիւն մեղաց։) at printed p. 53 (PDF p. 57), immediately before the post-epiclesis general intercessions (Սովաւ շնորհեա՛ զսէր...). Uses the exact same 6 canonical native_path slugs as armenian-1642-badarak-anaphora for 1-to-1 collation.",
+  "method": "Independent pixel-level visual inspection of all rendered facsimile pages by independent-collator-v1-byz-arm (distinct from drafter lane-t1-byz-arm) on 2026-11-25. Applied 5 pixel-verified correction(s) relative to initial draft; verified every unit boundary, page account (1..88), and SHA-256 hash.",
+  "normalization_limit": "Unicode NFC Classical Armenian (Grabar, language tag hy per repository convention) read directly from 240–450 DPI PNG renders of the tracked 1823 facsimile PDF.; Standard Armenian scribal/typographic պատիւ (overline/titlo) abbreviations are expanded to full Classical Armenian words strictly matching 1823's own unabbreviated orthography (using օ in օրհնեալ/օրհնեմք/զօրութիւն): ա̄ծ/ա̄ծային/ա̄ծապէս/ա̄ծութեդ/Ա̄յ/յա̄ծածին/զա̄ծդ → աստուած/աստուածային/աստուածապէս/աստուածութեանդ/Աստուծոյ/յաստուածածին/զաստուածդ, տ̄ր/տ̄ն/տ̄նդ → տէր/տեառն/տեառնդ, ս̄բ/Ս̄Բ monogram → սուրբ/Սուրբ, յ̄սի ք̄սի → յիսուսի քրիստոսի, զօրութի̄/քաւութի̄/թողութի̄/խաղաղութի̄/յանդատապարտութի̄ → զօրութիւն/քաւութիւն/թողութիւն/խաղաղութիւն/յանդատապարտութիւն, բնութբ̄/սրբասացութբ̄/տուչութբ̄/միաւորութբ̄ → բնութեամբ/սրբասացութեամբ/տուչութեամբ/միաւորութեամբ, տընտեսութե̄/փրկութե̄ → տընտեսութեան/փրկութեան, յազգակցութէ̄ → յազգակցութենէ, Սրկգ̄ն → Սարկաւագն, Ժղվրդ̄ն → Ժողովուրդն.; Unabbreviated liturgical incipit truncations (without պատիւ overline, such as երկիրպագես։ on p. 52, ՚Ի վեր ընծայեցուցէք։, Եւ գոհացարուք։, Սուրբ սուրբ սուրբ տէր զօրութեանց, լի են երկինք և երկիր։, Յամենայնի օրհնեալ ես։) are preserved strictly as printed without supplying unprinted words.; Printed crosses are preserved at exact source positions as ✠ (10 occurrences across pp. 46, 50, and 52: 1 in opening rubric, 2 in Օրհ✠նեաց, 1 in Խաղաղութիւն ✠ ամենեցուն, and 7 in Epiclesis օրհ✠նեալ clauses). Preposed classical apostrophe ՚ի is preserved as printed.; Words broken across line breaks are joined; page numbers, signature marks, woodcut ornament, the p. [48] Crucifixion engraving (classified as non-text), and italic/upright/bold font distinctions are excluded from the plain-text stream.; Independent V1 collation at 450 DPI unified lowercase հ readings in Venetian Mekhitarist bolorgir (հօր, հոգւոյն, հայր, հոգւովդ — visually distinct from uppercase Հ as in Համբերելով on p. 80) and restored printed shesh accent in գոհացարո՛ւք։ (p. 46).",
+  "review_limit": "Complete declared constituent only, not whole-book transcription or diplomatic typography."
+}

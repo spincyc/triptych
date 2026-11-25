@@ -3691,7 +3691,13 @@ id = "belarusian"
 name = "Belarusian Greek Catholic Church"
 family = "Byzantine"
 census_source_ids = ["census-sico-2007", "census-parenti-2022", "census-vatican-news-2025", "census-holy-see-2010", "census-sico-2016-july", "census-sico-2016-november"]
-candidate_ids = ["byz-vilnius-suprasl1692-95", "byzantine-slavic-vilnius1617-mamonych", "byzantine-slavic-suprasl1727-1732", "byzantine-slavic-suprasl1758"]
+candidate_ids = [
+  "byz-vilnius-suprasl1692-95",
+  "byzantine-slavic-vilnius1617-mamonych",
+  "byzantine-slavic-suprasl1727-1732",
+  "byzantine-slavic-suprasl1758",
+  "byz-belarusian-nadson-liturgikon-2005",
+]
 ancestry_candidate_ids = ["byz-barberini336", "byz-striatyn1604", "byzantine-slavic-vat-slav14", "byzantine-slavic-borgia-illyr-13-14"]
 deferred_or_origin_review_candidate_ids = ["byzantine-slavic-vilnius1691-trinity", "byzantine-slavic-suprasl1716-pontifical", "byzantine-slavic-suprasl1763", "byzantine-slavic-suprasl-undated-chrysostom", "byzantine-slavic-vilnius1773", "byzantine-slavic-pochaiv1788"]
 coverage_status = "historical-or-local-candidate; chronology-incomplete"
@@ -3776,7 +3782,7 @@ id = "macedonian"
 name = "Macedonian Greek Catholic Church"
 family = "Byzantine"
 census_source_ids = ["census-sico-2007", "census-parenti-2022", "census-vatican-news-2025", "census-holy-see-2010", "census-sico-2016-july", "census-sico-2016-november"]
-candidate_ids = []
+candidate_ids = ["byz-macedonian-recognitio-2009"]
 ancestry_candidate_ids = ["byz-barberini336"]
 deferred_or_origin_review_candidate_ids = []
 coverage_status = "official-translation-approval-attested; exact-book-and-operative-use-unresolved"
@@ -5536,6 +5542,8 @@ evidence_loci = ["PDF pp. 4–5", "PDF p. 1, final paragraph"]
 
 [[records]]
 id = "alex-geez-1913"
+source_library_work_id = "work.ethiopian-catholic-church.missale-aethiopicum-asmara"
+source_library_edition_id = "edition.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara"
 family = "Alexandrian/Ge'ez"
 church_scope = "Catholic mission printing in present-day Eritrea; no claim of uniform reception or present ecclesial boundaries."
 book_label = "ሥርዓተ፡ ቅዳሴ፡ ዘቤተ፡ ክርስቲያን፡ ካቶሊካዊት፡ እንተ፡ በኢትዮጵያ። (Asmara, Catholic press, Ethiopian year 1907); Latin approbation names it Missale Aethiopicum"
@@ -14592,6 +14600,8 @@ book_role = "minister's book (reported)"
 
 [[records]]
 id = "syriac-malankara-syr-sharfeh-1905"
+source_library_work_id = "work.syriac-catholic-church.kitab-khidmat-al-quddas-1905"
+source_library_edition_id = "edition.syriac-catholic-church.kitab-khidmat-al-quddas-1905.1905-sharfeh-patriarchal"
 family = "West Syriac/Syriac"
 church_scope = "Syriac Catholic Church; patriarchal prescription in the preface"
 book_label = "Kitāb khidmat al-quddās ḥasab ṭaqs al-kanīsa al-suryāniyya al-anṭākiyya (Šumlājā de-qurābā), Sharfeh: Syriac patriarchal press"
@@ -14679,6 +14689,8 @@ book_role = "server's booklet (reported)"
 
 [[records]]
 id = "syriac-malankara-syr-mosul-1877-calendar"
+source_library_work_id = "work.syriac-catholic-church.mosul-diocesan-calendar-1877"
+source_library_edition_id = "edition.syriac-catholic-church.mosul-diocesan-calendar-1877.1877-mosul-dominican"
 family = "West Syriac/Syriac"
 church_scope = "Syriac Catholic archdiocese of Mosul"
 book_label = "Calendarium ad usum dioeceseos Mausiliensis Syrorum (approved by Cyril Behnam Benni), Mosul: Dominican press"
@@ -14709,6 +14721,8 @@ acquisition_artifact_path = ".scratch/full-research-20261019/syriac_malankara/re
 
 [[records]]
 id = "syriac-malankara-syr-mosul-1887-calendar"
+source_library_work_id = "work.syriac-catholic-church.calendar-juxta-ritum-antiochenum"
+source_library_edition_id = "edition.syriac-catholic-church.calendar-juxta-ritum-antiochenum.1887-mosul-dominican"
 family = "West Syriac/Syriac"
 church_scope = "Syriac Catholic Church (catalogue attribution to Clemens Joseph David)"
 book_label = "Calendarium juxta ritum Ecclesiae Antiochenae Syrorum, Mosul: Dominican press"
@@ -14739,6 +14753,8 @@ acquisition_artifact_path = ".scratch/full-research-20261019/syriac_malankara/re
 
 [[records]]
 id = "syriac-malankara-syr-sharfeh-1901-pericopes"
+source_library_work_id = "work.syriac-catholic-church.qudikus-qurbono-pericopes"
+source_library_edition_id = "edition.syriac-catholic-church.qudikus-qurbono-pericopes.1901-sharfeh-patriarchal"
 family = "West Syriac/Syriac"
 church_scope = "Syriac Catholic Church"
 book_label = "Qūdīqūs of the readings of the Qurbono, Apostle and Gospel (Arabic table of Mass pericopes), Sharfeh: patriarchal press"
@@ -19583,3 +19599,134 @@ acquisition_byte_count = 1346111
 acquisition_pdf_pages = 143
 rights_note = "Metadata only: exact modern whole-PDF redistribution remains unresolved. The provider affirmatively permits consultation/download, while its modern multilingual presentation, notes/drawings and icon art have no established complete-object Git/PDF/display distribution basis."
 ancestry_status = "not-established"
+
+# Added 2026-11-25 (eastern-expansion-2026-11)
+
+[[sources]]
+id = "melkite-src-nassif2022-efr"
+title = "Charbel Nassif, Le grand euchologe melkite de Jérusalem (1865) : circonstances d'impression et spécificités liturgiques, in « In partibus fidelium ». Missions du Levant et connaissance de l'Orient chrétien (XIXe–XXIe siècles) (Publications de l'École française de Rome, 2022)"
+url = "https://books.openedition.org/efr/46083"
+checked_on = "2026-11-25"
+evidence_type = "scholarly-chapter-openedition-lead"
+inspection_status = "not-inspected"
+inspection = "OpenEdition Books canonical URL and bibliographic metadata verified via web discovery; full chapter text not directly fetched or page-collated in this sandboxed lane."
+locus = "OpenEdition Books record efr/46083 (chapter on the 1865 Jerusalem Great Arabic Euchologion and Latin Patriarch Giuseppe Valerga's role)"
+limitation = "Discovery lead only until the full OpenEdition chapter is directly acquired and read; supplements the already-inspected Charon 1908 description of the 1865 Jerusalem Euchologion."
+full_contents_examined = false
+text_acquisition = "not-acquired"
+hash_state = "not-computed"
+
+[[sources]]
+id = "melkite-src-feodorov2023-oapen"
+title = "Ioana Feodorov, Arabic Printing for the Christians in Ottoman Lands: The East-European Connection (Berlin: De Gruyter, 2023; open-access monograph via OAPEN)"
+url = "https://library.oapen.org/handle/20.500.12657/76898"
+checked_on = "2026-11-25"
+evidence_type = "scholarly-monograph-open-access-lead"
+inspection_status = "not-inspected"
+inspection = "OAPEN repository handle and De Gruyter DOI 10.1515/9783110786996 verified via web discovery; full open-access PDF not directly downloaded in this sandboxed lane."
+locus = "OAPEN handle 20.500.12657/76898 (chapters on Wallachian/Snagov 1701 Arabic printing, Aleppo, and Abdallah Zakher's Shuwayr/Choueir press founded 1733–1734)"
+limitation = "Open-access scholarly monograph lead; full PDF remains to be acquired locally for page-level citation of Shuwayr imprints and 1701–1745 Arabic printing."
+full_contents_examined = false
+text_acquisition = "not-acquired"
+hash_state = "not-computed"
+
+[[sources]]
+id = "belarusian-src-casasloviec-nadson"
+title = "Часасловец (Časasloviec): bibliographic list of Fr. Alexander Nadson's Belarusian Greek Catholic liturgical editions (London: Božym Šlacham, 1999–2005)"
+url = "https://casasloviec.co.uk/index.php?newsid=17"
+checked_on = "2026-11-25"
+evidence_type = "community-bibliographic-catalogue-lead"
+inspection_status = "not-inspected"
+inspection = "Canonical URL and bibliographic metadata for Fr. Alexander Nadson's Belarusian liturgical editions (including the 1999 priest's Chrysostom Liturgy, 2002 prayer book Госпаду памолімся, and 2005 London Літургікон) verified via web discovery; original books and full page HTML not directly acquired."
+locus = "Časasloviec newsid=17 bibliography (editions of Božym Šlacham, London, including Літургікон, 2005)"
+limitation = "Community bibliographic lead only; no title leaf, ecclesiastical approbation, Greek/Slavonic exemplar identification, or dated parish-use record inspected."
+full_contents_examined = false
+text_acquisition = "not-acquired"
+hash_state = "not-computed"
+
+[[sources]]
+id = "georgian-src-tamarati1910-nplg"
+title = "Michel Tamarati, L'Église géorgienne des origines jusqu'à nos jours (Rome: Imprimerie de la Société Typographico-Editrice Romaine, 1910), National Library of Georgia (Iverieli) digital repository"
+url = "https://dspace.nplg.gov.ge/handle/1234/321677"
+checked_on = "2026-11-25"
+evidence_type = "digitized-historical-monograph-lead"
+inspection_status = "not-inspected"
+inspection = "National Library of Georgia (Iverieli) DSpace handle verified via web discovery; full 1910 PDF not directly downloaded or page-inspected in this sandboxed lane."
+locus = "Iverieli handle 1234/321677 (sections documenting the Georgian Catholic monastery of Our Lady of Lourdes in Feriköy, Constantinople, founded 1861 by Fr. Petre Kharischirashvili, and its Georgian printing press established in 1870)"
+limitation = "Historical monograph lead only; does not yet supply inspected title leaves or collations of individual Byzantine-rite Georgian Catholic service books printed in Constantinople or Montauban."
+full_contents_examined = false
+text_acquisition = "not-acquired"
+hash_state = "not-computed"
+
+[[sources]]
+id = "albanian-src-murzaku2009-google"
+title = "Ines Angeli Murzaku, Returning Home to Rome: The Basilian Monks of Grottaferrata in Albania (Grottaferrata: Monastero Esarchico, 2009), Google Books catalogue record"
+url = "https://books.google.com/books/about/Returning_Home_to_Rome.html?id=y2EPFRL-XJQC"
+checked_on = "2026-11-25"
+evidence_type = "scholarly-monograph-catalogue-lead"
+inspection_status = "not-inspected"
+inspection = "Public Google Books catalogue record confirmed (also noted in albanian-elbasan-next-phase-2026-10-20.json); full monograph and archival appendices not acquired."
+locus = "Google Books record id=y2EPFRL-XJQC (study of the Basilian/Italo-Albanian missions in southern Albania, including Pietro Scarpelli's 1928–1929 Elbasan mission and liturgical-language tensions)"
+limitation = "Catalogue record lead only; does not itself supply an inspected Catholic Elbasan celebrant book, approbation, or received exemplar."
+full_contents_examined = false
+text_acquisition = "not-acquired"
+hash_state = "not-computed"
+
+[[records]]
+id = "byz-macedonian-recognitio-2009"
+family = "Byzantine"
+church_scope = "Macedonian Greek Catholic Church (then Apostolic Exarchate in Macedonia; from 2018 Eparchy of the Assumption of the Blessed Virgin Mary in Strumica–Skopje)"
+book_label = "Macedonian Divine Liturgies of John Chrysostom and Basil the Great (9 December 2009 Holy See recognitio / approval)"
+date = "2009-12-09 (recognitio / approval recorded in SICO 2009 and official Congregation register)"
+chronology_start = 2009
+chronology_end = 2009
+chronology_kind = "approval"
+chronology_certainty = "exact-date-verified-in-inspected-holy-see-sources"
+language = "Macedonian (translation approved; Greek or Church Slavonic exemplar unidentified)"
+kind = "normative-translation-approval-act"
+evidence = "official-dicastery-periodical-and-register-inspected"
+acquisition_status = "approval-notices-acquired-and-inspected; printed-service-book-not-acquired"
+transcription_status = "not-transcribed"
+text_acquisition = "not-acquired"
+full_contents_examined = false
+source_ids = ["sico-macedonian-recognitio-2009", "oriental-liturgical-approval-register"]
+note = "Directly verified in SICO 2009 printed p. 291 (recognitio, 2009-12-09) and the official Oriental Congregation register line 41 (approval, 2009-12-09). Distinct from the unauthenticated Литургикон (2009) discovery lead; exact printed book, source exemplar, and dated local use remain unresolved."
+source_urls = ["https://www.vatican.va/roman_curia/congregations/orientchurch/sico/SICO_PDF/SICO%202009.pdf", "https://press.vatican.va/roman_curia/congregations/orientchurch/documents/rc_con_corient_doc_20070601_liturgical-texts_it.html"]
+
+[[records]]
+id = "byz-belarusian-nadson-liturgikon-2005"
+family = "Byzantine"
+church_scope = "Belarusian Greek Catholic Church (diaspora London mission and post-Soviet Belarus; ecclesiastical approval and exact local reception unverified)"
+book_label = "Літургікон (London: Božym Šlacham, 2005; Fr. Alexander Nadson translation)"
+date = "2005 (reported publication; preceded by 1999 London priest's Chrysostom Liturgy and 2002 prayer book, with a 2004 Minsk Sluzhebnik also reported)"
+chronology_start = 2005
+chronology_end = 2005
+chronology_kind = "publication"
+chronology_certainty = "year-reported-in-community-bibliography-not-inspected"
+language = "Belarusian (modern vernacular translation reported from Greek and Church Slavonic)"
+kind = "deferred-vernacular-translation-lead"
+evidence = "community-bibliographic-lead-not-inspected"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+text_acquisition = "not-acquired"
+full_contents_examined = false
+source_ids = ["belarusian-src-casasloviec-nadson"]
+note = "Modern Belarusian Greek Catholic Liturgikon lead (Fr. Alexander Nadson, London: Božym Šlacham, 2005); original book, ecclesiastical approval, source exemplar, and dated local use remain uninspected."
+source_urls = ["https://casasloviec.co.uk/index.php?newsid=17"]
+
+[[records]]
+id = "byz-georgian-constantinople-press-context"
+family = "Byzantine"
+church_scope = "Georgian Byzantine-rite Catholic historical community (non-sui iuris; Constantinople Feriköy monastery of Our Lady of Lourdes, founded 1861, press from 1870)"
+book_label = "Georgian Catholic Constantinople (Feriköy) monastery press Byzantine liturgical repertoire (unresolved lead)"
+date = "from 1870 (press founded 1870 at Constantinople monastery founded 1861; exact individual Byzantine Eucharistic imprints uncatalogued here)"
+language = "Georgian (Classical/Ecclesiastical Georgian reported; exact bilingual/rite mix per imprint unverified)"
+kind = "historical-community-repertoire-lead"
+evidence = "digitized-historical-monograph-lead-not-inspected"
+acquisition_status = "not-acquired"
+transcription_status = "not-transcribed"
+text_acquisition = "not-acquired"
+full_contents_examined = false
+source_ids = ["georgian-src-tamarati1910-nplg"]
+note = "Non-sui iuris Georgian Byzantine-rite Catholic historical context (Constantinople Feriköy monastery 1861, press from 1870, per Tamarati 1910 lead); undated repertoire lead pending exact Byzantine service-book title/imprint identification."
+source_urls = ["https://dspace.nplg.gov.ge/handle/1234/321677"]

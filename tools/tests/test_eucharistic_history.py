@@ -872,6 +872,12 @@ parents=[{version_id="earlier", evidence_path="src/sources/inventories/eucharist
         self.assertFalse(metadata["historical_act_claimed"])
         self.assertEqual("explicit-evidence-authorized", metadata["text_ancestry"])
         self.assertIn(history.fingerprint(ROOT, ROOT / "scripts/_eucharistic_stages.py"), metadata["tool_inputs"])
+        readme = history.git(repo, "show", later + ":README.md").decode()
+        self.assertIn("## Visual Git Diffing", readme)
+        self.assertIn("git diff --word-diff=color version/earlier version/later -- text/", readme)
+        self.assertTrue(result.get("diff_pairs"))
+        self.assertEqual(result["diff_pairs"][0]["verified_parent_edge"], True)
+        self.assertEqual(result["diff_pairs"][0]["shared_paths"], 2)
 
     def test_missing_or_stale_parent_authorization_preserves_prior_artifact(self):
         before = self.emit()["version_branches"]

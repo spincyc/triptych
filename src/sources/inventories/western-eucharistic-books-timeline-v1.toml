@@ -2309,6 +2309,8 @@ remaining_work = "Obtain exact book or supplement and approval/front matter; dis
 
 [[candidates]]
 id = "ambrosian-2024"
+source_library_work_id = "work.archdiocese-of-milan.missale-ambrosianum"
+source_library_edition_id = "edition.archdiocese-of-milan.missale-ambrosianum.milan-itl-2024"
 family = "ambrosian"
 title = "Second reformed Ambrosian recension: Italian publication and effective use in 2024"
 date = "2024"
@@ -2617,7 +2619,7 @@ scope_disposition = "in-scope-original-book-or-historical-witness"
 chronology_layout = "unpositioned-pending-date-evidence-or-dispute-resolution"
 source_library_work_id = "work.catholic-church.sacramentarium-gregorianum-hadrianum"
 source_library_edition_id = "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915"
-source_library_artifact_ids = ["artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7", "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.pdf-text-layout-6ca97fd7"]
+source_library_artifact_ids = ["artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7", "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.pdf-text-layout-6ca97fd7", "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c"]
 source_library_evidence_relation = "Critical edition based on Cambrai164 and two further ninth-century manuscripts; not a1915 normative source state."
 acquisition_status = "registered-historical-edition-artifacts-retained"
 acquisition_extent = "Existing complete432-page scan plus new full extraction,with introduction,Latin,apparatus,supplements and indexes."
@@ -2715,6 +2717,8 @@ inspection_status = "bounded-identity-inspection-reported-by-acquisition-lane;ha
 
 [[candidates]]
 id = "gellone-bnf12048"
+source_library_work_id = "work.anonymous.sacramentarium-gellonense"
+source_library_edition_id = "edition.anonymous.sacramentarium-gellonense.manuscript-bnf-latin-12048"
 family = "roman-frankish-sacramentary-context"
 title = "Gellone Sacramentary, BnF Latin12048"
 kind = "manuscript-sacramentary-with-additions"
@@ -2749,7 +2753,7 @@ chronology_kind = "manuscript-copying"
 chronology_certainty = "catalogue-numeric-century-range"
 source_library_work_id = "work.catholic-church.stowe-missal"
 source_library_edition_id = "edition.catholic-church.stowe-missal.warner-1915-vol-2"
-source_library_artifact_ids = ["artifact.catholic-church.stowe-missal.warner-1915-vol-2.ia-scan-27c6070e", "artifact.catholic-church.stowe-missal.warner-1915-vol-2.ia-raw-ocr-3d11ad59"]
+source_library_artifact_ids = ["artifact.catholic-church.stowe-missal.warner-1915-vol-2.ia-scan-27c6070e", "artifact.catholic-church.stowe-missal.warner-1915-vol-2.ia-raw-ocr-3d11ad59", "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-checked-latin-8d993030"]
 source_library_evidence_relation = "Edited publication of the Stowe manuscript; not a1915 liturgical reform."
 acquisition_status = "registered-historical-edition-artifacts-retained"
 acquisition_extent = "Complete146-page downloadable printed-text volume,with Latin/Old Irish material and English editorial apparatus; host OCR retained separately."
@@ -6274,6 +6278,8 @@ chronology_certainty = "edition-identified-catalogue-date"
 
 [[candidates]]
 id = "german-swiss-bremen-usuarium-106"
+source_library_work_id = "work.archdiocese-of-bremen.missale-bremense"
+source_library_edition_id = "edition.archdiocese-of-bremen.missale-bremense.1511-strasbourg-beck"
 family = "historic-bremen-use"
 title = "Ordo missalis Bremensis (1511), BL b.52.h.4"
 kind = "printed-missal"
@@ -6342,7 +6348,87 @@ id = "roman-ancient"
 title = "Ancient Roman, Gallican and Roman-Frankish sacramentary traditions"
 status = "selected-witnesses-documented"
 sources = ["verona-beweb", "gelasian-wilson-1894-ocr", "gellone-biblissima", "paduense-usuarium", "tridentinum-usuarium", "early-westwell2024-ch1", "early-westwell2024-ch3"]
-candidate_ids = ["veronense-cod85", "old-gelasian-reg-lat-316", "later-gelasian-rheinau-stgall", "gellone-bnf12048", "gregorian-hadrianum-cambrai164", "gregorian-paduense-d47", "gregorian-tridentinum-1590", "gregorian-wilson-1915-critical-edition", "gelasian-wilson-1894-critical-edition", "gelasian-stgall348", "gelasian-rheinau30", "gelasian-stgall350", "gregorian-reg-lat337", "gregorian-ottob-lat313", "gregorian-chelles-morgan-g57", "latin-early-elmss-264", "latin-early-elmss-270", "latin-early-elmss-273", "latin-early-elmss-288", "latin-early-elmss-340", "latin-early-elmss-346", "latin-early-elmss-429", "latin-early-elmss-487", "latin-early-elmss-558", "latin-early-elmss-903", "latin-early-elmss-1236", "latin-early-elmss-1512", "latin-early-elmss-1516", "latin-early-elmss-1547", "latin-early-elmss-1554", "latin-early-elmss-1567", "latin-early-elmss-1639", "latin-early-elmss-1827", "latin-early-elmss-1874", "latin-early-elmss-1917", "latin-early-elmss-1956", "latin-early-elmss-2071", "latin-early-elmss-2106", "latin-early-elmss-2134", "latin-early-elmss-2190", "latin-early-elmss-2191", "latin-early-elmss-58", "latin-early-elmss-888", "latin-early-elmss-1400", "latin-early-elmss-1462", "latin-early-veronense-addition", "latin-early-clm6333-704", "latin-early-clm6333-706", "latin-early-clm6333-708", "latin-early-clm6333-707", "latin-early-ordo-i", "latin-early-ordo-ii", "latin-early-ordo-iii", "latin-early-ordo-iv", "latin-early-ordo-v", "latin-early-ordo-vi", "latin-early-ordo-vii", "latin-early-ordo-viii", "latin-early-ordo-ix", "latin-early-ordo-x", "latin-early-ordo-xiv", "latin-early-ordo-xv", "latin-early-ordo-xvi", "latin-early-elmss-760", "latin-early-elmss-1845", "latin-early-elmss-1862", "latin-early-einsiedeln110-ordines", "latin-early-angouleme-bnf816", "latin-early-marmoutier-autun19bis", "latin-early-tours-sacramentaries", "latin-early-alcuin-missal-reconstruction", "latin-early-drogo-sacramentary", "latin-early-kromeriz-gregorian", "latin-early-modena-oii7", "latin-early-elmss-715-cold", "latin-early-gellone-additions-cold", "latin-early-tours-nal1589-cold", "latin-early-echternach-bnf9433-cold"]
+candidate_ids = [
+  "veronense-cod85",
+  "old-gelasian-reg-lat-316",
+  "later-gelasian-rheinau-stgall",
+  "gellone-bnf12048",
+  "gregorian-hadrianum-cambrai164",
+  "gregorian-paduense-d47",
+  "gregorian-tridentinum-1590",
+  "gregorian-wilson-1915-critical-edition",
+  "gelasian-wilson-1894-critical-edition",
+  "gelasian-stgall348",
+  "gelasian-rheinau30",
+  "gelasian-stgall350",
+  "gregorian-reg-lat337",
+  "gregorian-ottob-lat313",
+  "gregorian-chelles-morgan-g57",
+  "latin-early-elmss-264",
+  "latin-early-elmss-270",
+  "latin-early-elmss-273",
+  "latin-early-elmss-288",
+  "latin-early-elmss-340",
+  "latin-early-elmss-346",
+  "latin-early-elmss-429",
+  "latin-early-elmss-487",
+  "latin-early-elmss-558",
+  "latin-early-elmss-903",
+  "latin-early-elmss-1236",
+  "latin-early-elmss-1512",
+  "latin-early-elmss-1516",
+  "latin-early-elmss-1547",
+  "latin-early-elmss-1554",
+  "latin-early-elmss-1567",
+  "latin-early-elmss-1639",
+  "latin-early-elmss-1827",
+  "latin-early-elmss-1874",
+  "latin-early-elmss-1917",
+  "latin-early-elmss-1956",
+  "latin-early-elmss-2071",
+  "latin-early-elmss-2106",
+  "latin-early-elmss-2134",
+  "latin-early-elmss-2190",
+  "latin-early-elmss-2191",
+  "latin-early-elmss-58",
+  "latin-early-elmss-888",
+  "latin-early-elmss-1400",
+  "latin-early-elmss-1462",
+  "latin-early-veronense-addition",
+  "latin-early-clm6333-704",
+  "latin-early-clm6333-706",
+  "latin-early-clm6333-708",
+  "latin-early-clm6333-707",
+  "latin-early-ordo-i",
+  "latin-early-ordo-ii",
+  "latin-early-ordo-iii",
+  "latin-early-ordo-iv",
+  "latin-early-ordo-v",
+  "latin-early-ordo-vi",
+  "latin-early-ordo-vii",
+  "latin-early-ordo-viii",
+  "latin-early-ordo-ix",
+  "latin-early-ordo-x",
+  "latin-early-ordo-xiv",
+  "latin-early-ordo-xv",
+  "latin-early-ordo-xvi",
+  "latin-early-elmss-760",
+  "latin-early-elmss-1845",
+  "latin-early-elmss-1862",
+  "latin-early-einsiedeln110-ordines",
+  "latin-early-angouleme-bnf816",
+  "latin-early-marmoutier-autun19bis",
+  "latin-early-tours-sacramentaries",
+  "latin-early-alcuin-missal-reconstruction",
+  "latin-early-drogo-sacramentary",
+  "latin-early-kromeriz-gregorian",
+  "latin-early-modena-oii7",
+  "latin-early-elmss-715-cold",
+  "latin-early-gellone-additions-cold",
+  "latin-early-tours-nal1589-cold",
+  "latin-early-echternach-bnf9433-cold",
+  "north-africa-carthage-patristic-context-393-419",
+]
 remaining_work = "Selected supplemented Gregorian and later Gelasian witnesses now identified; Gellone-type material in Chelles and Hucusque reordering documented. Supplement authorship/stages remain disputed; no single-author or universal replacement model. Broader manuscript census, early Roman libelli and exact exemplars remain open."
 scope = "western-original-source-trajectory"
 
@@ -6360,7 +6446,59 @@ id = "roman-curial"
 title = "Roman-curial and Franciscan medieval stages"
 status = "selected-witnesses-and-scoped-textual-relationships-documented"
 sources = ["haymo-victoria", "franciscan-usuarium", "legg-tracts-1904", "burchard-badw-repertory", "ocarroll-1979-pericopes", "lippe-1474-critical-text"]
-candidate_ids = ["haymo-curial-ordinal", "franciscan-curial-bnf8887", "franciscan-1482-1483", "roman-1474", "burchard-ordo-1496", "roman-1501-liechtenstein-burchard", "burchard-ordo-1502", "roman-1541-liechtenstein-burchard", "roman-1571-varisco-ritus", "roman-1493-preparatio", "roman-lyon-1507-indutus", "ciconiolanus-directorium-1539", "roman-1563-giunta-opus-aureum", "roman-1570-rome-faletti-varisco", "latin-early-haymo-indutus", "latin-early-innocent-prototype", "latin-early-honorius-prototype", "latin-early-regula-prototype", "latin-early-napoli-vig38", "latin-early-napoli-vig38-additions", "latin-early-corsini376", "latin-early-assisi607", "latin-early-casanatense250", "latin-early-mazarine426", "latin-early-vatican-sp-e9", "latin-early-ross199", "latin-early-avignon100", "latin-early-ottob356", "latin-early-lateran65", "latin-early-solothurn540-main", "latin-early-solothurn540-clare", "latin-early-solothurn540-additions", "latin-early-fribourg9-main", "latin-early-fribourg9-additions", "latin-early-aarau1483-main", "latin-early-aarau1483-additions", "latin-early-scotus1482", "latin-early-burchard1498", "latin-early-burchard1527", "latin-early-franciscan-calendar-statutes", "latin-early-nicholasiii", "latin-early-ofm-2428", "latin-early-ofm-2631", "latin-early-ofm-4025", "latin-early-ofm-4552", "latin-early-ofm-5841", "latin-early-ofm-5842", "latin-early-ofm-5843", "latin-early-assisi607-haymo-corrections", "latin-early-assisi607-additions"]
+candidate_ids = [
+  "haymo-curial-ordinal",
+  "franciscan-curial-bnf8887",
+  "franciscan-1482-1483",
+  "roman-1474",
+  "burchard-ordo-1496",
+  "roman-1501-liechtenstein-burchard",
+  "burchard-ordo-1502",
+  "roman-1541-liechtenstein-burchard",
+  "roman-1571-varisco-ritus",
+  "roman-1493-preparatio",
+  "roman-lyon-1507-indutus",
+  "ciconiolanus-directorium-1539",
+  "roman-1563-giunta-opus-aureum",
+  "roman-1570-rome-faletti-varisco",
+  "latin-early-haymo-indutus",
+  "latin-early-innocent-prototype",
+  "latin-early-honorius-prototype",
+  "latin-early-regula-prototype",
+  "latin-early-napoli-vig38",
+  "latin-early-napoli-vig38-additions",
+  "latin-early-corsini376",
+  "latin-early-assisi607",
+  "latin-early-casanatense250",
+  "latin-early-mazarine426",
+  "latin-early-vatican-sp-e9",
+  "latin-early-ross199",
+  "latin-early-avignon100",
+  "latin-early-ottob356",
+  "latin-early-lateran65",
+  "latin-early-solothurn540-main",
+  "latin-early-solothurn540-clare",
+  "latin-early-solothurn540-additions",
+  "latin-early-fribourg9-main",
+  "latin-early-fribourg9-additions",
+  "latin-early-aarau1483-main",
+  "latin-early-aarau1483-additions",
+  "latin-early-scotus1482",
+  "latin-early-burchard1498",
+  "latin-early-burchard1527",
+  "latin-early-franciscan-calendar-statutes",
+  "latin-early-nicholasiii",
+  "latin-early-ofm-2428",
+  "latin-early-ofm-2631",
+  "latin-early-ofm-4025",
+  "latin-early-ofm-4552",
+  "latin-early-ofm-5841",
+  "latin-early-ofm-5842",
+  "latin-early-ofm-5843",
+  "latin-early-assisi607-haymo-corrections",
+  "latin-early-assisi607-additions",
+  "mexico-espinosa-1561",
+]
 remaining_work = "Scoped ceremonial reception and shared readings now documented. Remaining: original 1496/1498 collation, medieval-curial missal manuscript succession, direct 1474-to 1570 full-book comparison and geographical implementation; no uninterrupted stemma established."
 scope = "western-original-source-trajectory"
 existing_inventory = "src/sources/inventories/missal-acquisition-audit-v1.toml"
@@ -6371,7 +6509,131 @@ id = "roman-modern"
 title = "Roman general missal reforms and supplements"
 status = "existing-inventories-plus-additions"
 sources = ["notitiae-book-bibliography-1985", "western-roman-ordo-1965-primary", "western-roman-holy-week-1965-primary", "western-roman-variationes-1967-primary", "western-roman-preces-1968-primary", "roman-transitional-1968-november-declaration", "western-roman-concelebration-1965-aas-act", "western-roman-concelebration-1965-cccb-colophon"]
-candidate_ids = ["roman-1884", "roman-1900", "roman-ordo-1965", "roman-holy-week-1965", "roman-concelebration-1965", "roman-variationes-1967", "roman-preces-1968", "roman-modern-001", "roman-modern-002", "roman-modern-003", "roman-modern-004", "roman-modern-005", "roman-modern-006", "roman-modern-007", "roman-modern-010", "roman-modern-011", "roman-modern-012", "roman-modern-013", "roman-modern-014", "roman-modern-015", "roman-modern-016", "roman-modern-017", "roman-modern-018", "roman-modern-019", "roman-modern-020", "roman-modern-021", "roman-modern-022", "roman-modern-023", "roman-modern-024", "roman-modern-025", "roman-modern-026", "roman-modern-027", "roman-modern-028", "roman-modern-033", "roman-modern-035", "roman-modern-036", "roman-modern-037", "roman-modern-038", "roman-modern-039", "roman-modern-040", "roman-modern-041", "roman-modern-042", "roman-modern-043", "roman-modern-044", "roman-modern-045", "roman-modern-046", "roman-modern-047", "roman-modern-048", "roman-modern-049", "roman-modern-050", "roman-modern-051", "roman-modern-052", "roman-modern-053", "roman-modern-054", "roman-modern-055", "roman-modern-056", "roman-modern-057", "roman-modern-058", "roman-modern-059", "roman-modern-060", "roman-modern-061", "roman-modern-062", "roman-modern-063", "roman-modern-064", "roman-modern-065", "roman-modern-066", "roman-modern-067", "roman-modern-068", "roman-modern-069", "roman-modern-070", "roman-modern-071", "roman-modern-extra-001", "roman-modern-extra-002", "roman-modern-extra-003", "roman-modern-extra-004", "roman-modern-extra-005", "roman-modern-extra-006", "roman-modern-extra-007", "roman-modern-extra-008", "roman-modern-extra-009", "roman-modern-extra-010", "roman-modern-extra-011", "roman-modern-extra-012", "roman-modern-extra-013", "roman-modern-extra-014", "roman-modern-extra-015", "roman-modern-extra-016", "roman-modern-extra-017", "roman-modern-extra-018", "roman-modern-extra-019", "roman-modern-extra-020", "roman-modern-extra-021", "roman-modern-extra-022", "roman-modern-extra-023", "roman-modern-extra-024", "roman-modern-extra-025", "roman-modern-extra-026", "roman-modern-extra-027", "roman-modern-extra-028", "roman-modern-extra-029", "roman-modern-extra-030", "roman-modern-extra-031", "roman-modern-extra-032", "roman-modern-extra-033", "roman-modern-extra-036", "roman-modern-extra-038", "roman-modern-extra-039", "roman-modern-extra-040", "roman-modern-extra-041", "roman-modern-extra-042", "roman-modern-extra-043", "roman-modern-extra-044", "roman-modern-extra-045", "roman-modern-extra-046", "roman-modern-1635-vatican-witness-lead", "roman-preces-1968-november-declaration"]
+candidate_ids = [
+  "roman-1884",
+  "roman-1900",
+  "roman-ordo-1965",
+  "roman-holy-week-1965",
+  "roman-concelebration-1965",
+  "roman-variationes-1967",
+  "roman-preces-1968",
+  "roman-modern-001",
+  "roman-modern-002",
+  "roman-modern-003",
+  "roman-modern-004",
+  "roman-modern-005",
+  "roman-modern-006",
+  "roman-modern-007",
+  "roman-modern-010",
+  "roman-modern-011",
+  "roman-modern-012",
+  "roman-modern-013",
+  "roman-modern-014",
+  "roman-modern-015",
+  "roman-modern-016",
+  "roman-modern-017",
+  "roman-modern-018",
+  "roman-modern-019",
+  "roman-modern-020",
+  "roman-modern-021",
+  "roman-modern-022",
+  "roman-modern-023",
+  "roman-modern-024",
+  "roman-modern-025",
+  "roman-modern-026",
+  "roman-modern-027",
+  "roman-modern-028",
+  "roman-modern-033",
+  "roman-modern-035",
+  "roman-modern-036",
+  "roman-modern-037",
+  "roman-modern-038",
+  "roman-modern-039",
+  "roman-modern-040",
+  "roman-modern-041",
+  "roman-modern-042",
+  "roman-modern-043",
+  "roman-modern-044",
+  "roman-modern-045",
+  "roman-modern-046",
+  "roman-modern-047",
+  "roman-modern-048",
+  "roman-modern-049",
+  "roman-modern-050",
+  "roman-modern-051",
+  "roman-modern-052",
+  "roman-modern-053",
+  "roman-modern-054",
+  "roman-modern-055",
+  "roman-modern-056",
+  "roman-modern-057",
+  "roman-modern-058",
+  "roman-modern-059",
+  "roman-modern-060",
+  "roman-modern-061",
+  "roman-modern-062",
+  "roman-modern-063",
+  "roman-modern-064",
+  "roman-modern-065",
+  "roman-modern-066",
+  "roman-modern-067",
+  "roman-modern-068",
+  "roman-modern-069",
+  "roman-modern-070",
+  "roman-modern-071",
+  "roman-modern-extra-001",
+  "roman-modern-extra-002",
+  "roman-modern-extra-003",
+  "roman-modern-extra-004",
+  "roman-modern-extra-005",
+  "roman-modern-extra-006",
+  "roman-modern-extra-007",
+  "roman-modern-extra-008",
+  "roman-modern-extra-009",
+  "roman-modern-extra-010",
+  "roman-modern-extra-011",
+  "roman-modern-extra-012",
+  "roman-modern-extra-013",
+  "roman-modern-extra-014",
+  "roman-modern-extra-015",
+  "roman-modern-extra-016",
+  "roman-modern-extra-017",
+  "roman-modern-extra-018",
+  "roman-modern-extra-019",
+  "roman-modern-extra-020",
+  "roman-modern-extra-021",
+  "roman-modern-extra-022",
+  "roman-modern-extra-023",
+  "roman-modern-extra-024",
+  "roman-modern-extra-025",
+  "roman-modern-extra-026",
+  "roman-modern-extra-027",
+  "roman-modern-extra-028",
+  "roman-modern-extra-029",
+  "roman-modern-extra-030",
+  "roman-modern-extra-031",
+  "roman-modern-extra-032",
+  "roman-modern-extra-033",
+  "roman-modern-extra-036",
+  "roman-modern-extra-038",
+  "roman-modern-extra-039",
+  "roman-modern-extra-040",
+  "roman-modern-extra-041",
+  "roman-modern-extra-042",
+  "roman-modern-extra-043",
+  "roman-modern-extra-044",
+  "roman-modern-extra-045",
+  "roman-modern-extra-046",
+  "roman-modern-1635-vatican-witness-lead",
+  "roman-preces-1968-november-declaration",
+  "mexico-provincial-councils-1555-1565",
+  "lima-third-council-1583",
+  "new-spain-guadalupe-proper-1754",
+  "quebec-rituel-1703-gallican-context",
+  "quebec-provincial-council-1851-roman-transition",
+  "japan-nagasaki-manuale-1605-control",
+  "goa-diamper-1599-qurbana-acts",
+]
 remaining_work = "Review the bounded Roman modern research receipt for 117 book, component, witness and lead dispositions; its 107 new in-scope candidate IDs join the seven baseline IDs here. The Communion-outside-Mass adjacent ritual roman-modern-extra-035 remains outside this coverage row. Complete the packet-listed original acquisitions, rights review and before/after collation before treating any candidate as a substantive revision or adding a station. The exact 1884 typical-edition claim, 1900 original impression, 1975 altar book, 1965 Latin Order, 1965 concelebration, 1968 Preces and 2020 Supplementum still have the receipt-specific limitations. Request reproductions of the surviving preliminaries and any colophon for UB Alma MMS 991002308499706708, whose probable Rome imprint is dated [1634?] and whose title page and Q1 are missing; seek an independently dated complete Rome copy. Obtain Rusca L-77 original images and resolve Asachiana pagination before comparing any 1635 text with 1634. The 1635 lead is a witness, not a new recension or station."
 scope = "western-original-source-trajectory"
 existing_inventories = ["src/sources/inventories/latin-missal-acts-v1.toml", "src/sources/inventories/roman-holy-week-acts-v1.toml", "src/sources/inventories/missal-acquisition-audit-v1.toml"]
@@ -6381,7 +6643,42 @@ id = "modern-source-adaptations"
 title = "Modern original-source Roman adaptations"
 status = "selected-official-publications-documented"
 sources = ["ordinariate-dwm", "zaire-official-retrospect", "zaire-primary-1988", "dwm-usccb-2015", "dwm-publisher-current", "roman-adaptations-src-bdw1999", "roman-adaptations-src-brazil2006", "roman-adaptations-src-broome-booklet", "roman-adaptations-src-broome2024", "roman-adaptations-src-chiapas2024", "roman-adaptations-src-cold-cccb-original-orations", "roman-adaptations-src-cold-dbk-easy2024", "roman-adaptations-src-cold-italian-original-collects", "roman-adaptations-src-cold-vonarx1977", "roman-adaptations-src-dbkah77", "roman-adaptations-src-dutchv", "roman-adaptations-src-dutchvi", "roman-adaptations-src-india1969", "roman-adaptations-src-india2005", "roman-adaptations-src-ordinariate2024", "roman-adaptations-src-philippines1980", "roman-adaptations-src-swiss1974"]
-candidate_ids = ["roman-zaire-1988", "divine-worship-2015", "book-divine-worship-predecessor", "divine-worship-updated-sanctoral", "roman-adaptations-bdw1987", "roman-adaptations-bdw1999", "roman-adaptations-ordinariate2013", "roman-adaptations-chiapas2024", "roman-adaptations-broome1973", "roman-adaptations-broome2024", "roman-adaptations-india1969", "roman-adaptations-india1971", "roman-adaptations-india-anaphora-early", "roman-adaptations-india-anaphora-late", "roman-adaptations-philippines1971", "roman-adaptations-philippines1976", "roman-adaptations-brazil1974", "roman-adaptations-brazil1991", "roman-adaptations-swiss1974", "roman-adaptations-swiss1974-italian", "roman-adaptations-german-deaf1970", "roman-adaptations-dutchv1979", "roman-adaptations-dutchvi", "roman-adaptations-dutchv2019", "roman-adaptations-swiss1971", "roman-adaptations-english-original-collects", "roman-adaptations-italian-collects1983", "roman-adaptations-italian-collects2020", "roman-adaptations-german-easy2024", "roman-adaptations-bdw1984-provision"]
+candidate_ids = [
+  "roman-zaire-1988",
+  "divine-worship-2015",
+  "book-divine-worship-predecessor",
+  "divine-worship-updated-sanctoral",
+  "roman-adaptations-bdw1987",
+  "roman-adaptations-bdw1999",
+  "roman-adaptations-ordinariate2013",
+  "roman-adaptations-chiapas2024",
+  "roman-adaptations-broome1973",
+  "roman-adaptations-broome2024",
+  "roman-adaptations-india1969",
+  "roman-adaptations-india1971",
+  "roman-adaptations-india-anaphora-early",
+  "roman-adaptations-india-anaphora-late",
+  "roman-adaptations-philippines1971",
+  "roman-adaptations-philippines1976",
+  "roman-adaptations-brazil1974",
+  "roman-adaptations-brazil1991",
+  "roman-adaptations-swiss1974",
+  "roman-adaptations-swiss1974-italian",
+  "roman-adaptations-german-deaf1970",
+  "roman-adaptations-dutchv1979",
+  "roman-adaptations-dutchvi",
+  "roman-adaptations-dutchv2019",
+  "roman-adaptations-swiss1971",
+  "roman-adaptations-english-original-collects",
+  "roman-adaptations-italian-collects1983",
+  "roman-adaptations-italian-collects2020",
+  "roman-adaptations-german-easy2024",
+  "roman-adaptations-bdw1984-provision",
+  "china-paul-v-faculty-1615",
+  "china-buglio-missale-sinice-1670",
+  "china-holy-office-indult-1949",
+  "amazon-synod-proposal-2019-2025",
+]
 remaining_work = "The reviewed Roman adaptations receipt adds 26 bounded regional book, component, translation and lead candidates. Compare original books and acts for Zaire, Divine Worship, India, Brazil, Switzerland and other named uses before asserting textual succession or local adoption. The 1991 Brazilian entry is a Portuguese common-formula translation witness, not a dated original-anaphora revision. Four leads in the receipt lack a secure finite chronology coordinate. Harley 5512 remains a cross-lane contact witness without an established Catholic reception and is not routed here."
 scope = "western-original-source-trajectory"
 research_review = "src/sources/inventories/eucharistic-research-reviews/roman-adaptations-2026-10-20.json"
@@ -6538,7 +6835,17 @@ id = "carthusian"
 title = "Carthusian trajectory"
 status = "selected-witnesses-and-scoped-textual-relationships-documented"
 sources = ["carthusian-usuarium", "palecki-carthusian-2015", "monastic-src-carthusian-2021"]
-candidate_ids = ["carthusian-medieval", "carthusian-1603-1627", "carthusian-1981", "carthusian-ordinarium-1582", "carthusian-missale-1603", "carthusian-1627", "monastic-carthusian-2021"]
+candidate_ids = [
+  "carthusian-medieval",
+  "carthusian-1603-1627",
+  "carthusian-1981",
+  "carthusian-ordinarium-1582",
+  "carthusian-missale-1603",
+  "carthusian-1627",
+  "monastic-carthusian-2021",
+  "carthusian-1517-lyon",
+  "carthusian-1883-montreuil",
+]
 remaining_work = "The 2021 titled missal PDF has Praenotanda-described changes, but its Roman recognition date, effective date and relation to 1981 remain uncollated; the 2018 calendar approval is separate. Recover the 1679 original through an institutional viewer after Gallica PDF 403, complete the intervening Cartusiana bibliography lines and compare early editions against reprints."
 scope = "western-original-source-trajectory"
 existing_inventory = "src/sources/inventories/missal-acquisition-audit-v1.toml"
@@ -6558,7 +6865,33 @@ id = "dominican"
 title = "Dominican trajectory"
 status = "selected-witnesses-and-scoped-textual-relationships-documented"
 sources = ["dominican-usuarium", "ocarroll-1979-pericopes", "french-census-7100-usuarium"]
-candidate_ids = ["dominican-correctorium-1256", "dominican-early-prints", "dominican-1933-1939-1965", "dominican-master-exemplar-add23935", "mendicant-op-pre-humbert", "mendicant-op-medieval-components", "mendicant-op-armenian1728", "mendicant-op-1933", "mendicant-op-1939", "mendicant-op-holyweek1959", "mendicant-op-1965", "mendicant-op-holyweek1965", "mendicant-op-1977-78", "mendicant-op-directorium1979", "mendicant-op-1985", "mendicant-op-additamenta2006", "mendicant-op-calendar2019", "mendicant-op-1969-control", "mendicant-op-1977-calendar", "mendicant-op-1983-preface", "mendicant-op-1983-annual", "mendicant-op-1983-angelico", "mendicant-op-claverie2019", "dominican-usuarium-7100-1687"]
+candidate_ids = [
+  "dominican-correctorium-1256",
+  "dominican-early-prints",
+  "dominican-1933-1939-1965",
+  "dominican-master-exemplar-add23935",
+  "mendicant-op-pre-humbert",
+  "mendicant-op-medieval-components",
+  "mendicant-op-armenian1728",
+  "mendicant-op-1933",
+  "mendicant-op-1939",
+  "mendicant-op-holyweek1959",
+  "mendicant-op-1965",
+  "mendicant-op-holyweek1965",
+  "mendicant-op-1977-78",
+  "mendicant-op-directorium1979",
+  "mendicant-op-1985",
+  "mendicant-op-additamenta2006",
+  "mendicant-op-calendar2019",
+  "mendicant-op-1969-control",
+  "mendicant-op-1977-calendar",
+  "mendicant-op-1983-preface",
+  "mendicant-op-1983-annual",
+  "mendicant-op-1983-angelico",
+  "mendicant-op-claverie2019",
+  "dominican-usuarium-7100-1687",
+  "dominican-1482-scotus",
+]
 remaining_work = "Documented 1256 reform context and shared Temporal pericopes. Still need component-level prototype revisions, 1267 instrument, pre-Humbert witnesses and substantive boundaries of printed series. Added medieval, printed and modern book/component candidates include the cited 1969 control, 1977 and 1983 decisions and 1985 proper/lectionary. Inspect original instruments and local reception, collate exact component changes, and do not infer a complete predecessor chain."
 scope = "western-original-source-trajectory"
 existing_inventory = "src/sources/inventories/missal-acquisition-audit-v1.toml"
@@ -6569,7 +6902,13 @@ id = "premonstratensian"
 title = "Premonstratensian trajectory"
 status = "source-backed-states-and-scoped-changes-documented"
 sources = ["premonstratensian-usuarium", "canonical-premon-1936-book"]
-candidate_ids = ["premonstratensian-medieval", "premon-1622", "premon-1663", "premon-1936"]
+candidate_ids = [
+  "premonstratensian-medieval",
+  "premon-1622",
+  "premon-1663",
+  "premon-1936",
+  "premon-1890-westmalle",
+]
 remaining_work = "The 1936 title and preface establish a printed witness and describe added Masses and changes in text and chant; compare it with the unresolved 1900/1902 predecessor books, inspect chapter acts and house reception, and collate the original 1622/1663 missals and 1739 ordinal. Catalogue and dated print records do not establish an exhaustive revision genealogy or complete text."
 scope = "western-original-source-trajectory"
 existing_inventory = "src/sources/inventories/missal-acquisition-audit-v1.toml"
@@ -8023,8 +8362,8 @@ chronology_kind = "publication"
 chronology_certainty = "original-colophon"
 source_locus = "Folio lxix recto–verso (PDF 155–156); closing colophon (PDF 494)."
 source_library_edition_id = "edition.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym"
-source_library_artifact_ids = ["artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.ia-complete-pdf-619ed4e7", "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.pdf-page-155-90464214", "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.pdf-page-156-055bb17b", "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.pdf-page-494-31e3bef3"]
-source_library_passage_ids = ["passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.maundy-thursday", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.colophon"]
+source_library_artifact_ids = ["artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.ia-complete-pdf-619ed4e7", "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.pdf-page-155-90464214", "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.pdf-page-156-055bb17b", "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.pdf-page-494-31e3bef3", "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba"]
+source_library_passage_ids = ["passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.maundy-thursday", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.colophon", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-opening-rubric", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-te-igitur", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-memento-vivorum", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-communicantes", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-hanc-igitur", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-quam-oblationem", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-qui-pridie", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-simili-modo", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-unde-et-memores", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-supra-quae", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-supplices", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-memento-defunctorum", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-nobis-quoque", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-per-quem", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-per-ipsum", "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-concluding-response"]
 
 [[sources]]
 id = "cistercian-1487-bsb-primary"
@@ -9740,6 +10079,8 @@ chronology_certainty = "catalogue-numeric-century-range"
 
 [[candidates]]
 id = "latin-early-elmss-1567"
+source_library_work_id = "work.anonymous.karlsruhe-aug253-palimpsest-elmss-1567"
+source_library_edition_id = "edition.anonymous.karlsruhe-aug253-palimpsest-elmss-1567.medieval-undertext"
 family = "roman-frankish-sacramentary-context"
 title = "Karlsruhe, Badische Landesbibliothek, Aug. 253 (foll. 10, 17) [palimpsest old] — Sacramentarium Gelasianum (fragm.)."
 kind = "manuscript-witness"
@@ -9763,6 +10104,8 @@ chronology_certainty = "catalogue-numeric-century-range"
 
 [[candidates]]
 id = "latin-early-elmss-1570"
+source_library_work_id = "work.anonymous.karlsruhe-aug253-palimpsest-elmss-1570"
+source_library_edition_id = "edition.anonymous.karlsruhe-aug253-palimpsest-elmss-1570.medieval-undertext"
 family = "gallican-sacramentary-context"
 title = "Karlsruhe, Badische Landesbibliothek, Aug. 253 (foll. 13, 14, 18–25, 96) [palimpsest old] — Sacramentarium Gallicanum."
 kind = "manuscript-witness"
@@ -10101,6 +10444,8 @@ chronology_certainty = "catalogue-numeric-century-range"
 
 [[candidates]]
 id = "latin-early-elmss-1569"
+source_library_work_id = "work.anonymous.karlsruhe-aug253-palimpsest-elmss-1569"
+source_library_edition_id = "edition.anonymous.karlsruhe-aug253-palimpsest-elmss-1569.medieval-undertext"
 family = "gallican-sacramentary-context"
 title = "Karlsruhe, Badische Landesbibliothek, Aug. 253 (foll. 12, 15, 26, 28, 31, 33, 34, 41–44, 47-51, 56–66, 68, 71, 73–81, 90, 92, 95, 97, 139, 144) [palimpsest old] — Missale Gallicanum (fragm.): the Mone Masses."
 kind = "manuscript-witness"
@@ -10124,6 +10469,8 @@ chronology_certainty = "catalogue-numeric-century-range"
 
 [[candidates]]
 id = "latin-early-elmss-1568"
+source_library_work_id = "work.anonymous.karlsruhe-aug253-palimpsest-elmss-1568"
+source_library_edition_id = "edition.anonymous.karlsruhe-aug253-palimpsest-elmss-1568.medieval-undertext"
 family = "gallican-sacramentary-context"
 title = "Karlsruhe, Badische Landesbibliothek, Aug. 253 (foll. 11, 16) [palimpsest old] — Oratio pro Regibus Francorum."
 kind = "manuscript-component"
@@ -18724,6 +19071,8 @@ inspection = "Notitiae 23 (1987) printed p.1288 lists two 1986 Piemme Festivo ti
 
 [[candidates]]
 id = "ambrosian-1499-print"
+source_library_work_id = "work.archdiocese-of-milan.missale-ambrosianum"
+source_library_edition_id = "edition.archdiocese-of-milan.missale-ambrosianum.milan-pachel-1499"
 family = "ambrosian"
 title = "Ambrosian 1499 Print"
 date = "1499"
@@ -18742,6 +19091,8 @@ chronology_certainty = "source-qualified"
 
 [[candidates]]
 id = "ambrosian-1640-print"
+source_library_work_id = "work.archdiocese-of-milan.missale-ambrosianum"
+source_library_edition_id = "edition.archdiocese-of-milan.missale-ambrosianum.milan-sirturi-1640"
 family = "ambrosian"
 title = "Ambrosian 1640 Print"
 date = "1640"
@@ -29618,6 +29969,8 @@ inspection = "Complete downloaded book card inspected: Montecassino 271 olim 348
 
 [[candidates]]
 id = "italian-ravenna-stockholm-wroclaw"
+source_library_work_id = "work.anonymous.stockholm-wroclaw-gelasian-sacramentary-fragments"
+source_library_edition_id = "edition.anonymous.stockholm-wroclaw-gelasian-sacramentary-fragments.eighth-century-manuscript-witness"
 family = "ravenna-attributed-fragment"
 title = "Stockholm A135a and Wroclaw Akc.1955/3: one Gelasian sacramentary's fragments"
 date = "First half of eighth century; A135a catalogue narrows to 700-725; shared-codex catalogue gives 701-750"
@@ -29639,6 +29992,8 @@ collation_status = "not-fully-collated"
 
 [[candidates]]
 id = "italian-ravenna-stuttgart-100a"
+source_library_work_id = "work.anonymous.stuttgart-100a-sacramentary-undertext"
+source_library_edition_id = "edition.anonymous.stuttgart-100a-sacramentary-undertext.seventh-century-manuscript"
 family = "ravenna-attributed-fragment"
 title = "Stuttgart Cod.fragm.100A: sacramentary lower text beneath penitential canons"
 date = "Seventh-century lower-text copying; ELMSS 601-700; Suski approximately 650"
@@ -29660,6 +30015,8 @@ collation_status = "not-fully-collated"
 
 [[candidates]]
 id = "italian-ravenna-montecassino-271-lower2"
+source_library_work_id = "work.anonymous.montecassino-271-sacramentary-undertext"
+source_library_edition_id = "edition.anonymous.montecassino-271-sacramentary-undertext.circa-700-manuscript"
 family = "ravenna-attributed-fragment"
 title = "Montecassino 271 [palimpsest old 2]: early Gregorian sacramentary and reading fragments"
 date = "VII–VIII lower-text copying, ELMSS 680-720; Usuarium's narrower 675-700 remains a catalogue disagreement"
@@ -37292,6 +37649,8 @@ chronology_certainty = "catalogue-attribution"
 
 [[candidates]]
 id = "french-toul-usuarium-7097"
+source_library_work_id = "work.diocese-of-toul.missale-tullense"
+source_library_edition_id = "edition.diocese-of-toul.missale-tullense.1750-toul"
 family = "historic-toul-use"
 title = "Missale ad usum cathedralis ecclesiae et dioecesis Tullensis"
 date = "1750"
@@ -38369,6 +38728,8 @@ status = "inspected"
 
 [[candidates]]
 id = "iberian-tarazona-1500"
+source_library_work_id = "work.diocese-of-tarazona.missale-tirasonense"
+source_library_edition_id = "edition.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar"
 family = "historic-tarazona-use"
 title = "Missale Tirasonense"
 date = "13 February 1500"
@@ -38753,7 +39114,7 @@ title = "Tarragona local Mass-book catalogue witnesses"
 status = "bounded-assigned-amiet-catalogue-witness-census"
 scope = "western-original-source-trajectory"
 sources = ["iberian-usuarium-1783", "iberian-usuarium-9036"]
-candidate_ids = ["iberian-tarragona-1550"]
+candidate_ids = ["iberian-tarragona-1550", "iberian-tarragona-1499-rosenbach"]
 remaining_work = "Only assigned records from the fixed2026-10-20 Amiet table are covered. Duplicate/copy relationships remain qualified per candidate; broader manuscripts, printings, original text, authority, reception and substantive revisions remain open. Not complete historical coverage."
 
 [[coverage]]
@@ -38780,7 +39141,7 @@ title = "València local Mass-book catalogue witnesses"
 status = "bounded-assigned-amiet-catalogue-witness-census"
 scope = "western-original-source-trajectory"
 sources = ["iberian-usuarium-7625", "iberian-usuarium-6999", "iberian-usuarium-7626"]
-candidate_ids = ["iberian-valencia-1509", "iberian-valencia-1528"]
+candidate_ids = ["iberian-valencia-1509", "iberian-valencia-1528", "iberian-valencia-1492-hamman"]
 remaining_work = "Only assigned records from the fixed2026-10-20 Amiet table are covered. Duplicate/copy relationships remain qualified per candidate; broader manuscripts, printings, original text, authority, reception and substantive revisions remain open. Not complete historical coverage."
 
 [[coverage]]
@@ -38789,7 +39150,14 @@ title = "Zaragoza local Mass-book catalogue witnesses"
 status = "bounded-assigned-amiet-catalogue-witness-census"
 scope = "western-original-source-trajectory"
 sources = ["iberian-usuarium-6995", "iberian-usuarium-6996", "iberian-usuarium-6997", "iberian-usuarium-6998"]
-candidate_ids = ["iberian-zaragoza-1522", "iberian-zaragoza-1531", "iberian-zaragoza-1540", "iberian-zaragoza-1598"]
+candidate_ids = [
+  "iberian-zaragoza-1522",
+  "iberian-zaragoza-1531",
+  "iberian-zaragoza-1540",
+  "iberian-zaragoza-1598",
+  "iberian-zaragoza-1485-hurus",
+  "iberian-zaragoza-1498-hurus",
+]
 remaining_work = "Only assigned records from the fixed2026-10-20 Amiet table are covered. Duplicate/copy relationships remain qualified per candidate; broader manuscripts, printings, original text, authority, reception and substantive revisions remain open. Not complete historical coverage."
 
 [[coverage]]
@@ -38914,7 +39282,7 @@ id = "central-amiet-additional-german-uses"
 title = "Halberstadt, Lübeck and Merseburg: selected Amiet missal witnesses"
 status = "selected-catalogue-witnesses-documented"
 sources = ["central-amiet-usuarium-5818", "central-amiet-usuarium-7238", "central-amiet-usuarium-7271"]
-candidate_ids = ["central-halberstadt-usuarium-5818", "central-lubeck-usuarium-7238", "central-merseburg-usuarium-7271"]
+candidate_ids = ["central-halberstadt-usuarium-5818", "central-lubeck-usuarium-7238", "central-merseburg-usuarium-7271", "central-lubeck-1486-brandis"]
 remaining_work = "Single catalogue witnesses only. Inspect holding catalogues, exact titles, colophons, contents, rights and complete extents; resolve the Lübeck USTC references. No continuous local-use chronology, normative revision, original-book completeness or modern survival is established."
 scope = "western-original-source-trajectory"
 
@@ -40175,6 +40543,8 @@ inspection = "Complete individual catalogue HTML inspected 2026-10-20: Missale i
 
 [[candidates]]
 id = "amiet-nonfrance-liege-1499-7214"
+source_library_work_id = "work.diocese-of-liege.missale-leodiense"
+source_library_edition_id = "edition.diocese-of-liege.missale-leodiense.1499-paris-higman-bsb00075725"
 family = "historic-liege-use"
 title = "Missale insignis ecclesie Leodiensis"
 kind = "original-printed-witness"
@@ -40777,6 +41147,8 @@ rights_note = "Provider expressly restricts public image redistribution and alte
 
 [[candidates]]
 id = "french-besancon-1485-salins-inc98"
+source_library_work_id = "work.archdiocese-of-besancon.missale-bisuntinense"
+source_library_edition_id = "edition.archdiocese-of-besancon.missale-bisuntinense.1485-salins-des-pres-bigot-bodram"
 family = "historic-besancon-use"
 title = "Missale Bisuntinense, Salins 1485, Besançon INC.98"
 date = "1485"
@@ -41218,3 +41590,659 @@ transcription_status = "no-new-complete-liturgical-transcription"
 collation_status = "bounded-identity-and-structure-only"
 inspection_limit = "See exact passage and public research-review limits; no whole-book or reception claim."
 path = "src/sources/works/bayerische-staatsbibliothek/liege-missal-digital-services/editions/2026-10-21-response-states/artifacts/facts-bsb-whole-pdf-failed-response-e38c3880/facts.json"
+
+# Added 2026-11-25 (global-mission-regional-2026-11 + western-uses-orders-2026-11)
+
+[[sources]]
+id = "global-geo-src-mexico1561-jcb"
+title = "Missale Romanum Ordinarium (Mexico City: Antonio de Espinosa, September 1561), John Carter Brown Library digitized copy"
+url = "https://archive.org/details/missaleromanumor00cath"
+type = "digitized-original-missal-catalogue"
+inspection = "Verified Internet Archive item record (missaleromanumor00cath) for the John Carter Brown Library copy of Espinosa's September 1561 Mexico City folio missal; colophon leaf 330v transcription ('Missale secundum romane curie ritum... Antonij de Espinosa... Mexicana impressum... 1561 Mense Septembri') and comparative census of three surviving copies (JCB imperfect, Huntington RB 32667, NYPL) checked via web search on 2026-11-25. Full body text and chant leaves not independently collated."
+
+[[sources]]
+id = "global-geo-src-mexico-councils1769"
+title = "Concilios provinciales primero, y segundo, celebrados en la muy noble, y muy leal ciudad de México (1555, 1565), ed. Francisco Antonio Lorenzana (Mexico: Hogal, 1769)"
+url = "https://archive.org/details/conciliosprovinc00cath"
+type = "digitized-conciliar-collection"
+inspection = "Verified Internet Archive item record (conciliosprovinc00cath, Getty Research Institute copy) for Lorenzana's 1769 printed edition of the First (1555) and Second (1565) Mexican Provincial Councils on 2026-11-25. Specific liturgical canons not transcribed here."
+
+[[sources]]
+id = "global-geo-src-lima1591-jcb"
+title = "Concilium Limense. Celebratum anno 1583. sub Gregorio XIII... auctoritate Sixti Quinti Pont. Max. approbatum (Madrid, 1591)"
+url = "https://archive.org/details/conciliumlimense00cath"
+type = "digitized-conciliar-edition"
+inspection = "Verified Internet Archive item record (conciliumlimense00cath, John Carter Brown Library copy) for the 1591 Madrid printing of the Third Provincial Council of Lima (1582-1583) convened by Archbishop Toribio de Mogrovejo on 2026-11-25. Full conciliar decrees not page-collated."
+
+[[sources]]
+id = "global-geo-src-guadalupe1754-bullarium"
+title = "Sancti Domini Nostri Benedicti Papae XIV Bullarium (containing Non est equidem, 25 May 1754)"
+url = "https://archive.org/details/bub_gb_ryAGJn4PcM8C"
+type = "digitized-papal-bullarium"
+inspection = "Verified Internet Archive digitized Bullarium volume (bub_gb_ryAGJn4PcM8C) and historical confirmation of Pope Benedict XIV's 25 May 1754 bull Non est equidem establishing Our Lady of Guadalupe as Patroness of New Spain with approved proper Mass and Office on 2026-11-25. Individual printed Latin proper prayer texts not yet collated."
+
+[[sources]]
+id = "global-geo-src-quebec1703-rituel"
+title = "Jean-Baptiste de La Croix de Chevrières de Saint-Vallier, Rituel du diocèse de Québec (Paris: Simon Langlois, 1703)"
+url = "https://archive.org/details/ritueldudiocese00sain"
+type = "digitized-diocesan-ritual"
+inspection = "Verified Internet Archive item record (ritueldudiocese00sain) for Bishop Saint-Vallier's 1703 Rituel du diocèse de Québec printed in Paris on 2026-11-25. Distinct from a Missale; documents French colonial/Gallican pastoral-liturgical context in New France."
+
+[[sources]]
+id = "global-geo-src-quebec1853-compendium"
+title = "Compendium ritualis romani ad usum dioecesium provinciae quebecensis, jussu Concilii provincialis quebecensis I editum (Quebec, 1853)"
+url = "https://archive.org/details/compendiumritual00cath_0"
+type = "digitized-provincial-ritual"
+inspection = "Verified Internet Archive item record (compendiumritual00cath_0) for the 1853 Compendium Ritualis Romani issued by mandate of the First Provincial Council of Quebec (1851), documenting mid-19th-century Roman liturgical standardization in Quebec on 2026-11-25."
+
+[[sources]]
+id = "global-geo-src-china-notitiae2011"
+title = "Notitiae 47/48 (2011), Nos. 541-542: Chinese liturgical translation faculties (1615, 1670, 1680, 1949)"
+url = "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/2010/notitiae-47-%282011%29/Notitiae-541-542-2011.pdf"
+type = "official-periodical-historical-study"
+inspection = "Previously inspected in regional-mission-permissions-2026-10-20.json and re-verified 2026-11-25: printed pp. 552-554 document Holy Office decree 26 March 1615, Paul V brief Romanae Sedis Antistes 27 June 1615, Buglio 1670 printing, and 1680 unsuccessful renewal; pp. 561-562 and n. 56 document the 12 April 1949 Holy Office indult."
+
+[[sources]]
+id = "global-geo-src-buglio1670-princeton"
+title = "Ludovico Buglio SJ, Misa jingdian = Missale Romanum auctoritate Pauli V. Pont. M. Sinice redditum (Beijing: Collegium Societatis Iesu, 1670), Princeton Scheide 46.1"
+url = "https://dpul.princeton.edu/catalog/9949430753506421"
+type = "digitized-library-holding"
+inspection = "Verified Princeton Digital PUL (9949430753506421) and Princeton Library catalog record for Scheide 46.1 on 2026-11-25: Latin title page 'Missale Romanvm auctoritate Pauli V. Pont. M. Sinicè redditum a P. Ludovico Buglio Soc. Iesu Panormitano. Pekim: In Collegio eiusd. Soc. An. M.DC.LXX.', Chinese xylographic printing in Western codex binding. Full Chinese body not collated."
+
+[[sources]]
+id = "global-geo-src-buglio1670-usuarium"
+title = "USUARIUM Book 8263: Ludovico Buglio, Missale Romanum Sinice redditum (Beijing, 1670)"
+url = "https://usuarium.elte.hu/book/8263/view"
+type = "university-research-catalogue"
+inspection = "Cross-checked with regional-mission-permissions-2026-10-20.json (title and contents entries pp. 4, 23-25 showing Order of Mass, prefaces, and Canon). Catalogue record only; does not establish Roman confirmation or altar celebration of the 1670 print."
+
+[[sources]]
+id = "global-geo-src-china1939-plane-compertum"
+title = "Sacred Congregation de Propaganda Fide, Instruction Plane compertum est (8 December 1939), AAS 32 (1940), pp. 24-25"
+url = "https://www.vatican.va/archive/aas/documents/AAS-32-1940-ocr.pdf"
+type = "official-act-control"
+inspection = "Verified in regional-mission-permissions-2026-10-20.json (non_admissions: china-rites-1939): governs civil honors to Confucius and ancestors and prior oath, NOT approval of a Chinese Mass order."
+
+[[sources]]
+id = "global-geo-src-nagasaki1605-arsi"
+title = "Luís de Cerqueira SJ, Manuale ad sacramenta ecclesiae ministranda (Nagasaki: In Collegio Japonico Societatis Iesu, 1605), ARSI Jap. Sin. I 207"
+url = "https://archive.org/details/JapSin-I-207"
+type = "digitized-mission-manual-control"
+inspection = "Verified Internet Archive digitization (JapSin-I-207, from Archivum Romanum Societatis Iesu) on 2026-11-25: title 'Manuale ad sacramenta ecclesiae ministranda D. Ludouici Cerqueira Japonensis Episcopi opera ad vsum sui cleri ordinatum', Nagasaki 1605, rubricated movable type with plainchant notation. Explicitly a sacramental Manuale (Ritual), NOT a complete Roman Missal."
+
+[[sources]]
+id = "global-geo-src-diamper1606-bnp"
+title = "Synodo diocesano da igreja e bispado de Angamale dos antigos christãos de Sam Thome das Serras do Malavar (Coimbra: Diogo Gomez Loureyro, 1606)"
+url = "http://purl.pt/17493"
+type = "national-library-digitized-acts"
+inspection = "Verified Biblioteca Nacional de Portugal persistent URL (purl.pt/17493) for the 1606 Coimbra first printed edition of the 1599 Synod of Diamper acts compiled under Archbishop Aleixo de Menezes of Goa on 2026-11-25. Full Portuguese decrees and appended Missa de que usam os antigos christãos not independently collated line-by-line here."
+
+[[sources]]
+id = "global-geo-src-diamper1694-geddes"
+title = "Michael Geddes, The History of the Church of Malabar... together with the Synod of Diamper (London, 1694)"
+url = "https://archive.org/details/historyofchurcho00gedd"
+type = "early-modern-translation-acts"
+inspection = "Verified Internet Archive digitization (historyofchurcho00gedd) on 2026-11-25: English translation of the 1599 Synod of Diamper decrees including Action V on the Mass/Qurbana emendations. Polemical 17th-century Protestant framing excluded; used strictly as secondary witness alongside purl.pt/17493."
+
+[[sources]]
+id = "global-geo-src-carthage-canons-newadvent"
+title = "Code of Canons of the African Church (Council of Carthage A.D. 419, incorporating Hippo 393 / Carthage 397), NPNF II-14"
+url = "https://www.newadvent.org/fathers/3816.htm"
+type = "patristic-conciliar-translation"
+inspection = "Verified exact New Advent URL (fathers/3816.htm) and Hippo 393 canon 21 / Carthage 397 canon 23 Latin text ('Ut nemo in precibus vel Patrem pro Filio, vel Filium pro Patre nominet; et cum altari assistitur, semper ad Patrem dirigatur oratio...') and libelli vetting clause on 2026-11-25. Patristic/conciliar witness only; no complete North African missal survives."
+
+[[sources]]
+id = "global-geo-src-cyprian-ep62-newadvent"
+title = "St. Cyprian of Carthage, Epistle 62 (ed. Hartel Ep. 63, c. 253) to Caecilius on the Eucharistic Cup"
+url = "https://www.newadvent.org/fathers/050662.htm"
+type = "patristic-letter-translation"
+inspection = "Verified exact New Advent URL (fathers/050662.htm) on 2026-11-25: attests mid-3rd-century Carthaginian Eucharistic practice of mixing wine and water in the chalice. Fragmentary patristic testimony, not a liturgical book."
+
+[[sources]]
+id = "global-geo-src-augustine-ep55-newadvent"
+title = "St. Augustine of Hippo, Letter 55 to Januarius (c. 400)"
+url = "https://www.newadvent.org/fathers/1102055.htm"
+type = "patristic-letter-translation"
+inspection = "Verified exact New Advent URL (fathers/1102055.htm) on 2026-11-25: attests late-4th/early-5th-century North African liturgical calendar, paschal observance, and regional ceremonial customs. Patristic testimony, not a surviving sacramentary or missal."
+
+[[sources]]
+id = "global-geo-src-zaire2020-francis"
+title = "Pope Francis, Video Message for the presentation of 'Pope Francis and the Roman Missal for the Dioceses of Zaire' (1 December 2020)"
+url = "https://www.vatican.va/content/francesco/en/messages/pont-messages/2020/documents/papa-francesco_20201201_videomessaggio-messale-zaire.html"
+type = "holy-see-papal-message"
+inspection = "Verified exact Vatican URL on 2026-11-25: confirms Pope Francis's 1 December 2019 St. Peter's Basilica Mass using the Roman Missal for the Dioceses of Zaire and affirms it as the first inculturated Latin-Church rite approved after Vatican II. Papal reception testimony, not a revision of the 1988 decree."
+
+[[sources]]
+id = "global-geo-src-amazon2019-synod"
+title = "Synod of Bishops for the Pan-Amazon Region, Final Document (26 October 2019), n. 119"
+url = "https://www.vatican.va/roman_curia/synod/documents/rc_synod_doc_20191026_sinodo-amazzonia_en.html"
+type = "official-synodal-proposal-control"
+inspection = "Verified exact Vatican URL (also cited in regional-mission-permissions-2026-10-20.json non_admissions: amazonian-2019): n. 119 proposes a competent commission to study an Amazonian rite. Subsequent CEAMA study activity (2022-2025) remains a consultative proposal; no Roman recognitio or approved liturgical book exists."
+
+[[sources]]
+id = "r3-usuarium-694-zaragoza1485"
+url = "https://usuarium.elte.hu/book/694/view"
+type = "institutional-research-catalogue"
+title = "USUARIUM 694: Missale Caesaraugustanum (Zaragoza, Paulus Hurus, 27 October 1485)"
+checked_on = "2026-11-25"
+inspection_status = "not-inspected"
+inspection = "Web-verified Usuarium book ID 694 corresponding to the 27 October 1485 Zaragoza missal printed by Paulus Hurus (ISTC im00653130, Weale-Bohatta 218, Biblioteca de Catalunya Inc. 45-Fol.); full Usuarium HTML response and original scan not yet locally acquired."
+limitations = "Bibliographic discovery lead; direct sheet-reuse relationship to Huesca 1488 is independently verified by the repository's inspected Lambert 1910 article (iberian-huesca-lambert-1910-original-followup)."
+
+[[sources]]
+id = "r3-usuarium-63-zaragoza1498"
+url = "https://usuarium.elte.hu/book/63/view"
+type = "institutional-research-catalogue"
+title = "USUARIUM 63: Missale Caesaraugustanum (Zaragoza, Paulus Hurus, 23 November 1498)"
+checked_on = "2026-11-25"
+inspection_status = "not-inspected"
+inspection = "Web-verified Usuarium book ID 63 corresponding to the 23 November 1498 Zaragoza missal printed by Paulus Hurus (BNE Madrid INC/0323); full HTML response and original scan not yet locally acquired."
+limitations = "Bibliographic discovery lead only; no original imprint, collation against 1485/1522, or reception verified."
+
+[[sources]]
+id = "r3-istc-im00688430-valencia1492"
+url = "https://data.cerl.org/istc/im00688430"
+type = "institutional-research-catalogue"
+title = "ISTC im00688430: Missale Valentinum (Venice, Johannes Hamman for Andrea de Cavacis, 1 June 1492)"
+checked_on = "2026-11-25"
+inspection_status = "not-inspected"
+inspection = "Web-verified ISTC record im00688430 (Weale-Bohatta 1616) for the 1492 Venetian incunable Missale Valentinum; full ISTC JSON/HTML and original print images not yet locally acquired."
+limitations = "Bibliographic discovery lead only; textual contents, reported vernacular Valencian Forma Sponsalium, and collation against 1509/1528 require direct copy inspection."
+
+[[sources]]
+id = "r3-istc-im00726000-tarragona1499"
+url = "https://data.cerl.org/istc/im00726000"
+type = "institutional-research-catalogue"
+title = "ISTC im00726000: Missale Tarraconense (Tarragona, Johannes Rosenbach, 26 June 1499)"
+checked_on = "2026-11-25"
+inspection_status = "not-inspected"
+inspection = "Web-verified ISTC record im00726000 for the 26 June 1499 Tarragona incunable missal printed by Johannes Rosenbach (Biblioteca Pública de Tarragona I/132); full ISTC record and original print images not yet locally acquired."
+limitations = "Bibliographic discovery lead only; no original collation against the 1550 Lyon Septgranges printing performed."
+
+[[sources]]
+id = "r3-usuarium-41-lubeck1486"
+url = "https://usuarium.elte.hu/book/41/view"
+type = "institutional-research-catalogue"
+title = "USUARIUM 41: Missale Lubicense (Lübeck, Matthäus Brandis, 29 September 1486)"
+checked_on = "2026-11-25"
+inspection_status = "not-inspected"
+inspection = "Web-verified Usuarium book ID 41 corresponding to the 29 September 1486 Lübeck missal printed by Matthäus Brandis under Bishop Albert II Krummendiek (ISTC im00659300, Weale-Bohatta 542); full Usuarium HTML and original scan not yet locally acquired."
+limitations = "Bibliographic discovery lead only; no direct inspection of imprint, calendar, or relation to c. 1505 Usuarium 7238."
+
+[[sources]]
+id = "r3-istc-im00636000-dominican1482"
+url = "https://data.cerl.org/istc/im00636000"
+type = "institutional-research-catalogue"
+title = "ISTC im00636000: Missale Dominicanum (Venice, Octavianus Scotus, 24 December 1482)"
+checked_on = "2026-11-25"
+inspection_status = "not-inspected"
+inspection = "Web-verified ISTC record im00636000 (GW M24176) for the 24 December 1482 Venice printing of the Dominican missal by Octavianus Scotus; full ISTC/GW page and original scan not yet locally acquired."
+limitations = "Bibliographic discovery lead only; priority and textual comparison against Nicolaus de Frankfordia's 1484 Venice printing remain uncollated."
+
+[[sources]]
+id = "r3-gw-m24176-dominican1482"
+url = "https://www.gesamtkatalogderwiegendrucke.de/docs/M24176.htm"
+type = "institutional-research-catalogue"
+title = "GW M24176: Missale Dominicanum (Venice, Octavianus Scotus, 24 December 1482)"
+checked_on = "2026-11-25"
+inspection_status = "not-inspected"
+inspection = "Web-verified Gesamtkatalog der Wiegendrucke reference M24176 for the 1482 Venice Scotus Dominican missal; full GW HTML page not yet locally acquired."
+limitations = "Bibliographic discovery lead only; original copy collation required."
+
+[[sources]]
+id = "r3-king1955-archive"
+url = "https://archive.org/details/liturgiesofrelig00king"
+type = "scholarship"
+title = "Archdale A. King, Liturgies of the Religious Orders (London: Longmans, Green, 1955), Internet Archive copy"
+checked_on = "2026-11-25"
+inspection_status = "not-inspected"
+inspection = "Web-verified Internet Archive public route for Archdale A. King's 1955 comparative study of Carthusian, Cistercian, Premonstratensian, Carmelite, and Dominican rites (complementing the repository's already-inspected Premonstratensian pages pp. 176-177 and 217-218 in canonical-orders:king1955-canonical). Carthusian 1517/1883 and Premonstratensian 1890/1900 edition lists not yet individually page-image verified locally."
+limitations = "Secondary scholarly synthesis; specific Carthusian and late-19th-century Premonstratensian edition details require direct title-page and colophon verification."
+
+[[candidates]]
+id = "mexico-espinosa-1561"
+family = "roman-curial"
+title = "Missale Romanum Ordinarium (Mexico City: Antonio de Espinosa, September 1561)"
+date = "September 1561"
+kind = "printed-witness"
+status = "checked-catalogue-and-colophon"
+qualification = "First Missal printed in the Americas; pre-Tridentine Roman-curial witness commissioned for Franciscan and Augustinian use in New Spain, nine years before Pius V's 1570 Missale Romanum. Survives in three known institutional copies (Huntington RB 32667, John Carter Brown Library / Archive.org, NYPL). Body text and chant notation await direct collation against pre-1570 European curial printings."
+date_role = "colophon publication month and year (September 1561)"
+version_status = "source-witness-or-component; substantive whole-book revision unestablished"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+sources = ["global-geo-src-mexico1561-jcb"]
+source_locus = "global-geo-src-mexico1561-jcb: JCB copy colophon leaf 330v ('Missale secundum romane curie ritum... Antonij de Espinosa in praeclara ciuitate Mexicana impressum anno... 1561 Mense Septembri')."
+chronology_start = 1561
+chronology_end = 1561
+chronology_kind = "publication"
+chronology_certainty = "colophon-dated September 1561"
+source_language = "Latin"
+
+[[candidates]]
+id = "mexico-provincial-councils-1555-1565"
+family = "roman"
+title = "First and Second Mexican Provincial Councils (1555, 1565): Colonial New Spain Liturgical Legislation"
+date = "1555 and 1565 (printed 1769)"
+kind = "conciliar-legislation-context"
+status = "checked-bibliographic-edition"
+qualification = "Provincial conciliar legislation governing liturgical discipline in New Spain prior to Tridentine missal reception; legislative context, not a complete Missal printing."
+date_role = "conciliar session dates (1555, 1565); Lorenzana printing 1769"
+version_status = "legislative-context-not-missal-recension"
+scope_disposition = "in-scope-regional-context-witness"
+sources = ["global-geo-src-mexico-councils1769"]
+source_locus = "global-geo-src-mexico-councils1769: Lorenzana 1769 printed edition of the 1555 and 1565 Mexican councils."
+chronology_start = 1555
+chronology_end = 1565
+chronology_kind = "conciliar-legislation"
+chronology_certainty = "dated conciliar sessions in 1769 printed collection"
+source_language = "Spanish / Latin"
+
+[[candidates]]
+id = "lima-third-council-1583"
+family = "roman"
+title = "Third Provincial Council of Lima (1582-1583): Concilium Limense (Madrid, 1591)"
+date = "1582-1583 (printed 1591)"
+kind = "conciliar-legislation-context"
+status = "checked-catalogue-edition"
+qualification = "Foundational Tridentine liturgical and pastoral legislation for the Viceroyalty of Peru and colonial South America under Archbishop Toribio de Mogrovejo, approved by Sixtus V and printed at Madrid in 1591. Establishes Tridentine Roman reception context and vernacular catechetical work (Quechua/Aymara), NOT an independent Peruvian missal recension."
+date_role = "1591 Madrid printing of 1582-1583 council acts"
+version_status = "legislative-context-not-missal-recension"
+scope_disposition = "in-scope-regional-context-witness"
+sources = ["global-geo-src-lima1591-jcb"]
+source_locus = "global-geo-src-lima1591-jcb: JCB digitized copy of Concilium Limense (Madrid, 1591)."
+chronology_start = 1582
+chronology_end = 1591
+chronology_kind = "conciliar-legislation-and-publication"
+chronology_certainty = "dated council (1582-1583) and Madrid printing (1591)"
+source_language = "Latin"
+
+[[candidates]]
+id = "new-spain-guadalupe-proper-1754"
+family = "roman"
+title = "Papal Bull Non est equidem (25 May 1754): Patronage of New Spain and Proper Mass/Office of Our Lady of Guadalupe"
+date = "25 May 1754"
+kind = "proper-mass-approval"
+status = "checked-bullarium-record"
+qualification = "Pope Benedict XIV confirmed Our Lady of Guadalupe as Patroness of New Spain and approved proper Mass and Office texts for 12 December. Under canonical proper-adjunct rules, this approves regional Roman Missal proper formularies, not a separate whole liturgical rite."
+date_role = "papal bull date (25 May 1754)"
+version_status = "regional-proper-adjunct; not a separate whole missal"
+scope_disposition = "in-scope-regional-proper-component"
+sources = ["global-geo-src-guadalupe1754-bullarium"]
+source_locus = "global-geo-src-guadalupe1754-bullarium: Benedict XIV Bullarium entry for Non est equidem, 25 May 1754."
+chronology_start = 1754
+chronology_end = 1754
+chronology_kind = "approval"
+chronology_certainty = "dated papal bull 25 May 1754"
+source_language = "Latin"
+
+[[candidates]]
+id = "quebec-rituel-1703-gallican-context"
+family = "roman"
+title = "Rituel du diocèse de Québec (Paris, 1703) — New France French/Gallican Liturgical Context"
+date = "1703"
+kind = "diocesan-ritual-context"
+status = "checked-catalogue-digitization"
+qualification = "Issued by Bishop Saint-Vallier and printed in Paris in 1703. Explicitly a Rituel (sacramental ritual), NOT a complete altar Missal; retained as primary colonial Quebec context alongside French Parisian/Gallican missal usage in New France."
+date_role = "1703 Paris printing"
+version_status = "non-missal-ritual-context"
+scope_disposition = "in-scope-regional-context-witness"
+sources = ["global-geo-src-quebec1703-rituel"]
+source_locus = "global-geo-src-quebec1703-rituel: Archive.org digitization of 1703 Paris edition."
+chronology_start = 1703
+chronology_end = 1703
+chronology_kind = "publication"
+chronology_certainty = "printed imprint 1703"
+source_language = "Latin / French"
+
+[[candidates]]
+id = "quebec-provincial-council-1851-roman-transition"
+family = "roman"
+title = "First Provincial Council of Quebec (1851) and Compendium Ritualis Romani (1853): Alignment to Roman Liturgical Books"
+date = "1851-1853"
+kind = "provincial-reception-witness"
+status = "checked-catalogue-digitization"
+qualification = "Marks the mid-19th-century Quebec ecclesiastical transition from French/Gallican liturgical books and chant customs toward uniform Roman liturgical books under Pius IX. Exact parish-level Missale Parisiense to Missale Romanum replacement copies remain to inspect."
+date_role = "1851 provincial council and 1853 mandated Compendium printing"
+version_status = "regional-roman-reception-witness"
+scope_disposition = "in-scope-regional-context-witness"
+sources = ["global-geo-src-quebec1853-compendium"]
+source_locus = "global-geo-src-quebec1853-compendium: title and imprint of Compendium ritualis romani ad usum dioecesium provinciae quebecensis (1853)."
+chronology_start = 1851
+chronology_end = 1853
+chronology_kind = "publication"
+chronology_certainty = "dated 1851 council and 1853 publication"
+source_language = "Latin"
+
+[[candidates]]
+id = "china-paul-v-faculty-1615"
+family = "roman"
+title = "Holy Office Decree (26 March 1615) and Paul V Brief Romanae Sedis Antistes (27 June 1615): Classical Chinese Liturgy Faculty"
+date = "27 June 1615"
+kind = "mission-language-faculty"
+status = "checked-official-periodical-history"
+qualification = "Extraordinary papal faculty authorizing Classical Chinese liturgical translation for Jesuit-trained Chinese clergy. Original Vatican archival leaves remain uninspected; reported via Notitiae 2011 official-journal history."
+date_role = "Holy Office decree 26 March 1615; papal brief 27 June 1615"
+version_status = "language-faculty-not-new-latin-recension"
+scope_disposition = "in-scope-mission-permission"
+sources = ["global-geo-src-china-notitiae2011"]
+source_locus = "global-geo-src-china-notitiae2011: Notitiae 47/48 (2011), printed pp. 552-554."
+chronology_start = 1615
+chronology_end = 1615
+chronology_kind = "approval"
+chronology_certainty = "reported in official periodical history"
+source_language = "Latin / Classical Chinese"
+
+[[candidates]]
+id = "china-buglio-missale-sinice-1670"
+family = "roman"
+title = "Ludovico Buglio SJ, Missale Romanum Sinice redditum (Misa jingdian 彌撒經典, Beijing, 1670)"
+date = "1670"
+kind = "mission-translation-witness"
+status = "checked-library-and-usuarium-catalogue"
+qualification = "Printed Classical Chinese translation of the Roman Missal (Order of Mass, prefaces, Canon, propers) invoking Paul V's 1615 authority on its Latin title page (Princeton Scheide 46.1 / Usuarium 8263). Renewed approval sought in 1680 was unsuccessful; actual authorized altar celebration is not established. Translation does not constitute an independent Latin recension."
+date_role = "1670 Beijing Jesuit College printing"
+version_status = "mission-translation-witness-use-unproved"
+scope_disposition = "in-scope-mission-book-witness"
+sources = ["global-geo-src-buglio1670-princeton", "global-geo-src-buglio1670-usuarium", "global-geo-src-china-notitiae2011"]
+source_locus = "global-geo-src-buglio1670-princeton: Scheide 46.1 Latin title leaf; global-geo-src-buglio1670-usuarium: pp. 4, 23-25; Notitiae 2011 pp. 552-554."
+chronology_start = 1670
+chronology_end = 1670
+chronology_kind = "publication"
+chronology_certainty = "imprint-dated 1670"
+source_language = "Classical Chinese / Latin"
+
+[[candidates]]
+id = "china-holy-office-indult-1949"
+family = "roman"
+title = "Holy Office Indult for Literary Chinese Roman Mass Translation outside the Latin Canon (12 April 1949)"
+date = "12 April 1949"
+kind = "mission-language-indult"
+status = "checked-official-periodical-history"
+qualification = "Reported 1949 Holy Office indult permitting literary Chinese Roman Mass translation while retaining the Canon in Latin. Strictly separated from the 1939 Propaganda Fide instruction Plane compertum (civil honors only) and from 1954/1956 lay devotional aids; original indult and operative altar book remain uninspected."
+date_role = "12 April 1949 reported indult"
+version_status = "language-indult-uncollated"
+scope_disposition = "in-scope-mission-permission"
+sources = ["global-geo-src-china-notitiae2011", "global-geo-src-china1939-plane-compertum"]
+source_locus = "global-geo-src-china-notitiae2011: Notitiae 47/48 (2011), printed pp. 561-562 and n. 56."
+chronology_start = 1949
+chronology_end = 1949
+chronology_kind = "approval"
+chronology_certainty = "reported in official periodical history; original act uninspected"
+source_language = "Literary Chinese / Latin"
+
+[[candidates]]
+id = "japan-nagasaki-manuale-1605-control"
+family = "roman"
+title = "Luís de Cerqueira SJ, Manuale ad Sacramenta Ecclesiae Ministranda (Nagasaki, 1605) — Non-Missal Control"
+date = "1605"
+kind = "non-missal-mission-control"
+status = "checked-catalogue-digitization"
+qualification = "Flagship rubricated liturgical book printed by the Jesuit Mission Press in Nagasaki (ARSI Jap. Sin. I 207) with Western plainchant notation. Explicitly a sacramental Manuale (Ritual for Baptism, Penance, Marriage, Extreme Unction, etc.), NOT a complete Roman Missal; no complete Japanese-press Missale Romanum is established, as missionaries relied on imported European Roman Missals."
+date_role = "1605 Nagasaki printing"
+version_status = "non-missal-control-witness"
+scope_disposition = "control-record-not-complete-missal"
+sources = ["global-geo-src-nagasaki1605-arsi"]
+source_locus = "global-geo-src-nagasaki1605-arsi: ARSI Jap. Sin. I 207 title and Nagasaki 1605 imprint."
+chronology_start = 1605
+chronology_end = 1605
+chronology_kind = "publication"
+chronology_certainty = "imprint-dated 1605"
+source_language = "Latin / Japanese"
+
+[[candidates]]
+id = "goa-diamper-1599-qurbana-acts"
+family = "roman"
+title = "Synod of Diamper (1599) / Coimbra Acts (1606): Goa Padroado Latinizing Intervention in the Malabar Qurbana"
+date = "1599 (printed 1606)"
+kind = "cross-rite-latinization-acts"
+status = "checked-national-library-catalogue"
+qualification = "Convened by Archbishop Aleixo de Menezes of Goa under Portuguese Padroado jurisdiction; decreed Romanizing alterations to the East Syriac Qurbana of the St. Thomas Christians without replacing the Syriac rite outright with the Latin Roman Missal. Legislative intersection strictly distinguished from the later 1774-1775 Rome Syriac printings (eastern:malabar-1774) and paired with eastern:malabar-gouvea-1606."
+date_role = "June 1599 synod; 1606 Coimbra printing"
+version_status = "cross-rite-legislative-intervention"
+scope_disposition = "in-scope-cross-rite-intersection"
+sources = ["global-geo-src-diamper1606-bnp", "global-geo-src-diamper1694-geddes"]
+source_locus = "global-geo-src-diamper1606-bnp: BNP purl.pt/17493 (Coimbra 1606); Geddes 1694 Action V."
+chronology_start = 1599
+chronology_end = 1606
+chronology_kind = "synodal-acts-and-publication"
+chronology_certainty = "dated 1599 synod and 1606 Coimbra printing"
+source_language = "Portuguese / Latin"
+
+[[candidates]]
+id = "north-africa-carthage-patristic-context-393-419"
+family = "western-sacramentary-context"
+title = "Ancient North African Liturgical Attestations (Carthage & Hippo: Cyprian c. 253, Hippo 393 / Carthage 397 Canon 23, Augustine c. 400)"
+date = "253-419"
+kind = "patristic-conciliar-attestation-control"
+status = "checked-patristic-conciliar-editions"
+qualification = "Strictly fragmentary patristic and conciliar attestation of ancient Latin North African Eucharistic worship (Cyprian Ep. 62/63 on mixed chalice; Hippo 393 canon 21 / Carthage 397 canon 23 on directing altar prayers to the Father and vetting borrowed libelli with instructiores fratres; Augustine Ep. 55 on liturgical year). NOT a surviving complete missal, sacramentary, or continuous manuscript lineage."
+date_role = "patristic and conciliar attestation span (253-419)"
+version_status = "patristic-fragmentary-context-not-surviving-missal"
+scope_disposition = "control-record-no-surviving-missal"
+sources = ["global-geo-src-carthage-canons-newadvent", "global-geo-src-cyprian-ep62-newadvent", "global-geo-src-augustine-ep55-newadvent"]
+source_locus = "Hippo 393 / Carthage 397 canon 23 (fathers/3816.htm); Cyprian Ep. 62 (fathers/050662.htm); Augustine Ep. 55 (fathers/1102055.htm)."
+chronology_start = 253
+chronology_end = 419
+chronology_kind = "attestation"
+chronology_certainty = "dated patristic letters and African conciliar canons"
+source_language = "Latin"
+
+[[candidates]]
+id = "amazon-synod-proposal-2019-2025"
+family = "roman"
+title = "Proposed Amazonian Rite Study Initiative (2019 Synod Final Document n. 119; CEAMA Study Phase 2022-2025) — Unapproved Control"
+date = "2019-2025"
+kind = "unapproved-study-proposal-control"
+status = "checked-official-synod-document"
+qualification = "Explicit negative/non-admission control: the 2019 Amazon Synod Final Document (n. 119) proposed studying an Amazonian rite, and CEAMA conducted consultative work (2022-2025), but NO Roman recognitio, approved Order of Mass, or promulgated liturgical book exists."
+date_role = "26 October 2019 synodal proposal; 2022-2025 study phase"
+version_status = "unapproved-proposal-not-authorized-rite"
+scope_disposition = "non-admission-proposal-control"
+sources = ["global-geo-src-amazon2019-synod"]
+source_locus = "global-geo-src-amazon2019-synod: Synod for the Amazon Final Document (26 October 2019), n. 119."
+chronology_start = 2019
+chronology_end = 2025
+chronology_kind = "proposal"
+chronology_certainty = "2019 official proposal; unapproved as of 2026-11"
+source_language = "Spanish / Portuguese"
+
+[[candidates]]
+id = "iberian-zaragoza-1485-hurus"
+family = "historic-zaragoza-use"
+title = "Ordo missalis secundum consuetudinem sancte ecclesiae Caesaraugustanae (Zaragoza: Paulus Hurus, 1485)"
+date = "1485-10-27"
+date_role = "incunable colophon publication date reported by ISTC/Usuarium and Lambert 1910"
+kind = "historic-local-use-incunable-witness"
+status = "researched-witness-proposal"
+route = "https://usuarium.elte.hu/book/694/view"
+sources = ["r3-usuarium-694-zaragoza1485", "iberian-huesca-lambert-1910-original-followup"]
+catalogue_id = "Usuarium 694; ISTC im00653130; Weale-Bohatta 218"
+qualification = "Earliest printed Zaragoza diocesan missal (Paulus Hurus, 27 October 1485, Biblioteca de Catalunya Inc. 45-Fol.), widely noted as the first Iberian printed book with musical notation. Inspected Lambert 1910 (pp. 42-44) documents that Hurus reused sheets from this Zaragoza 1485 printing for the 1488 Huesca missal by replacing calendar, episcopal letter, and colophon. Full Zaragoza 1485 scan and collation against 1498/1522 remain open."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "incunable-witness-candidate-not-yet-collated"
+acquisition_status = "secondary-sheet-reuse-inspected; original-1485-book-not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+holding = "Biblioteca de Catalunya, Inc. 45-Fol."
+chronology_start = 1485
+chronology_end = 1485
+chronology_kind = "publication-witness-date"
+chronology_certainty = "scholarly-and-catalogue-reported; original-imprint-uninspected"
+
+[[candidates]]
+id = "iberian-zaragoza-1498-hurus"
+family = "historic-zaragoza-use"
+title = "Missale secundum morem Caesaraugustanae ecclesiae (Zaragoza: Paulus Hurus, 1498)"
+date = "1498-11-23"
+date_role = "incunable colophon publication date reported by Usuarium"
+kind = "historic-local-use-incunable-witness"
+status = "researched-witness-proposal"
+route = "https://usuarium.elte.hu/book/63/view"
+sources = ["r3-usuarium-63-zaragoza1498"]
+catalogue_id = "Usuarium 63; BNE Madrid INC/0323"
+qualification = "Second Zaragoza incunable missal printed by Paulus Hurus (23 November 1498). Bibliographic lead only; substantive differences from 1485 and 1522 printings remain uncollated."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "catalogue-lead-only; substantive-difference-not-established"
+acquisition_status = "bibliographic-lead-only; original-book-not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+holding = "BNE Madrid, INC/0323"
+chronology_start = 1498
+chronology_end = 1498
+chronology_kind = "publication-witness-date"
+chronology_certainty = "catalogue-reported-lead; original-imprint-uninspected"
+
+[[candidates]]
+id = "iberian-valencia-1492-hamman"
+family = "historic-valencia-use"
+title = "Missale Valentinum (Venice: Johannes Hamman for Andrea de Cavacis, 1492)"
+date = "1492-06-01"
+date_role = "incunable colophon publication date reported by ISTC"
+kind = "historic-local-use-incunable-witness"
+status = "researched-witness-proposal"
+route = "https://data.cerl.org/istc/im00688430"
+sources = ["r3-istc-im00688430-valencia1492"]
+catalogue_id = "ISTC im00688430; Weale-Bohatta 1616"
+qualification = "Earliest recorded printed Missale Valentinum (Venice: Johannes Hamman, 1 June 1492), predating the existing 1509 and 1528 inventory candidates. Bibliographic lead only; contents (including reported vernacular Valencian Forma Sponsalium) and relation to 1509 Giunta printing require direct inspection."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "catalogue-lead-only; substantive-difference-not-established"
+acquisition_status = "bibliographic-lead-only; original-book-not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+chronology_start = 1492
+chronology_end = 1492
+chronology_kind = "publication-witness-date"
+chronology_certainty = "catalogue-reported-lead; original-imprint-uninspected"
+
+[[candidates]]
+id = "iberian-tarragona-1499-rosenbach"
+family = "historic-tarragona-use"
+title = "Missale secundum consuetudinem ecclesiae Tarraconensis (Tarragona: Johannes Rosenbach, 1499)"
+date = "1499-06-26"
+date_role = "incunable colophon publication date reported by ISTC"
+kind = "historic-local-use-incunable-witness"
+status = "researched-witness-proposal"
+route = "https://data.cerl.org/istc/im00726000"
+sources = ["r3-istc-im00726000-tarragona1499"]
+catalogue_id = "ISTC im00726000"
+qualification = "Earliest recorded printed Tarragona metropolitan missal (Tarragona: Johannes Rosenbach, 26 June 1499, Biblioteca Pública de Tarragona I/132), predating the existing 1550 Lyon Septgranges candidate by half a century. Bibliographic lead only; uncollated against 1550."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "catalogue-lead-only; substantive-difference-not-established"
+acquisition_status = "bibliographic-lead-only; original-book-not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+holding = "Biblioteca Pública de Tarragona, I/132"
+chronology_start = 1499
+chronology_end = 1499
+chronology_kind = "publication-witness-date"
+chronology_certainty = "catalogue-reported-lead; original-imprint-uninspected"
+
+[[candidates]]
+id = "central-lubeck-1486-brandis"
+family = "historic-lubeck-use"
+title = "Missale Lubicense (Lübeck: Matthäus Brandis, 1486)"
+date = "1486-09-29"
+date_role = "incunable colophon publication date reported by ISTC/Usuarium"
+kind = "catalogued-printed-missal-witness"
+status = "researched-witness-proposal"
+route = "https://usuarium.elte.hu/book/41/view"
+sources = ["r3-usuarium-41-lubeck1486"]
+catalogue_id = "Usuarium 41; ISTC im00659300; Weale-Bohatta 542"
+qualification = "First printed Lübeck diocesan missal (Matthäus Brandis, 29 September 1486, commissioned under Bishop Albert II Krummendiek), predating the existing c. 1505 Usuarium 7238 candidate. Bibliographic lead only; original copy and substantive relationship to c. 1505 remain uninspected."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "catalogue-lead-only; substantive-difference-not-established"
+acquisition_status = "bibliographic-lead-only; original-book-not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+chronology_start = 1486
+chronology_end = 1486
+chronology_kind = "publication-witness-date"
+chronology_certainty = "catalogue-reported-lead; original-imprint-uninspected"
+
+[[candidates]]
+id = "dominican-1482-scotus"
+family = "dominican"
+title = "Missale secundum ordinem Fratrum Praedicatorum (Venice: Octavianus Scotus, 1482)"
+date = "1482-12-24"
+date_role = "incunable colophon publication date reported by ISTC/GW"
+kind = "religious-order-incunable-witness"
+status = "researched-witness-proposal"
+route = "https://data.cerl.org/istc/im00636000"
+sources = ["r3-istc-im00636000-dominican1482", "r3-gw-m24176-dominican1482"]
+catalogue_id = "ISTC im00636000; GW M24176"
+qualification = "Earliest dated printed Dominican missal (Venice: Octavianus Scotus, 24 December 1482), predating the 1484 Nicolaus de Frankfordia Venetian printing recorded in latin-missal-acts-v1.toml. Bibliographic lead only; textual collation against Humbert's exemplar and 1484/1550 printings remains open."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "catalogue-lead-only; substantive-difference-not-established"
+acquisition_status = "bibliographic-lead-only; original-book-not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+chronology_start = 1482
+chronology_end = 1482
+chronology_kind = "publication-witness-date"
+chronology_certainty = "catalogue-reported-lead; original-imprint-uninspected"
+
+[[candidates]]
+id = "carthusian-1517-lyon"
+family = "carthusian"
+title = "Missale secundum ordinem Carthusiensium (Lyon: Simon Bevilacqua, 1517)"
+date = "1517"
+date_role = "publication year reported in bibliographic and scholarly literature"
+kind = "religious-order-printed-witness"
+status = "researched-witness-proposal"
+route = "https://archive.org/details/liturgiesofrelig00king"
+sources = ["r3-king1955-archive"]
+catalogue_id = "Weale-Bohatta Carthusian 1517 (Lyon: Simon Bevilacqua)"
+qualification = "Early 16th-century folio Carthusian missal printed at Lyon by Simon Bevilacqua (1517), bridging the 1496 Speyer incunable and the post-Tridentine 1582 Ordinarium / 1603 Missal. Bibliographic lead only; direct title-page and textual inspection remain open."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "catalogue-lead-only; substantive-difference-not-established"
+acquisition_status = "bibliographic-lead-only; original-book-not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+chronology_start = 1517
+chronology_end = 1517
+chronology_kind = "publication-witness-date"
+chronology_certainty = "scholarly-and-catalogue-reported; original-imprint-uninspected"
+
+[[candidates]]
+id = "carthusian-1883-montreuil"
+family = "carthusian"
+title = "Missale sacri ordinis Cartusiensis (Montreuil-sur-Mer: Typis Cartusiae S. Mariae de Pratis, 1883)"
+date = "1883"
+date_role = "publication year reported in bibliographic and scholarly literature"
+kind = "religious-order-printed-witness"
+status = "researched-witness-proposal"
+route = "https://archive.org/details/liturgiesofrelig00king"
+sources = ["r3-king1955-archive"]
+catalogue_id = "Martin 1913 / King 1955: Cartusia S. Mariae de Pratis, 1883"
+qualification = "Late-19th-century apostolically approved Carthusian missal printed at Notre-Dame-des-Prés (Montreuil-sur-Mer) under Prior General Dom Anselme-Marie Bruniaux. Bibliographic lead only; original copy and delta from 1679/1713 and to 1981 remain uncollated."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "catalogue-lead-only; substantive-difference-not-established"
+acquisition_status = "bibliographic-lead-only; original-book-not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+chronology_start = 1883
+chronology_end = 1883
+chronology_kind = "publication-witness-date"
+chronology_certainty = "scholarly-and-catalogue-reported; original-imprint-uninspected"
+
+[[candidates]]
+id = "premon-1890-westmalle"
+family = "premonstratensian"
+title = "Missale canonicorum Praemonstratensis ordinis (Westmalle: Typographia Abbatiae Westmallensis, 1890)"
+date = "1890"
+date_role = "publication year (following 1889 General Chapter mandate) reported in bibliographic and scholarly literature"
+kind = "religious-order-printed-witness"
+status = "researched-witness-proposal"
+route = "https://archive.org/details/liturgiesofrelig00king"
+sources = ["r3-king1955-archive"]
+catalogue_id = "Premonstratensian General Chapter 1889 / Westmalle 1890 (with 1900 successor noted)"
+qualification = "Late-19th-century Premonstratensian missal authorized by the 1889 General Chapter under Abbot General Sigismund Stary and printed by the Cistercian monks of Westmalle Abbey (1890; followed by a 1900 printing). Bibliographic lead only; direct inspection and comparison with 1900 and 1936 remain open."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "catalogue-lead-only; substantive-difference-not-established"
+acquisition_status = "bibliographic-lead-only; original-book-not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+chronology_start = 1890
+chronology_end = 1890
+chronology_kind = "publication-witness-date"
+chronology_certainty = "scholarly-and-catalogue-reported; original-imprint-uninspected"

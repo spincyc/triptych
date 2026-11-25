@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-extent",
+  "book_id": "chaldean-1901-addai-mari",
+  "title": "Missale Chaldaeorum (Mosul Dominican, 1901) — Anaphora of Addai and Mari Core — complete constituent extent and page account",
+  "status": "complete",
+  "unresolved": [],
+  "omitted": [],
+  "expected_unit_ids": [
+    "chaldean-1901-addai-mari.01-opening-dialogue",
+    "chaldean-1901-addai-mari.02-preface-gehanta-1",
+    "chaldean-1901-addai-mari.03-sanctus",
+    "chaldean-1901-addai-mari.08-institution-narrative",
+    "chaldean-1901-addai-mari.04-post-sanctus-gehanta-2",
+    "chaldean-1901-addai-mari.05-intercession-gehanta-3",
+    "chaldean-1901-addai-mari.06-anamnesis-oblation",
+    "chaldean-1901-addai-mari.07-epiclesis-and-qanona"
+  ],
+  "scope": "Bounded constituent of the exact same eight aligned core units of the Anaphora of Addai and Mari in Classical Syriac (syr), preserving 1901's distinctive placement of the Institution Narrative inside the Post-Sanctus (PDF 72-71) prior to Gehanta 2, while using identical canonical native_path slugs for direct 3-way diffing against Chaldean 1767 and Syro-Malabar 1906.",
+  "pages": [
+    {
+      "witness_id": "chaldean-1901-mosul-bonn-pdf",
+      "ranges": [
+        [
+          1,
+          65
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "Post-epiclesis fraction, communion, dismissal, additional anaphoras (Theodore and Nestorius), and endpapers (reversed RTL scan order)."
+    },
+    {
+      "witness_id": "chaldean-1901-mosul-bonn-pdf",
+      "ranges": [
+        [
+          66,
+          66
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "chaldean-1901-addai-mari.07-epiclesis-and-qanona"
+      ],
+      "description": "Continuation of Epiclesis and Qanona (printed p. 36/ܠܘ)."
+    },
+    {
+      "witness_id": "chaldean-1901-mosul-bonn-pdf",
+      "ranges": [
+        [
+          67,
+          67
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "chaldean-1901-addai-mari.05-intercession-gehanta-3",
+        "chaldean-1901-addai-mari.06-anamnesis-oblation",
+        "chaldean-1901-addai-mari.07-epiclesis-and-qanona"
+      ],
+      "description": "Intercession Gehanta 3 continuation, Anamnesis/Oblation, and opening of Epiclesis (printed p. 35/ܠܗ)."
+    },
+    {
+      "witness_id": "chaldean-1901-mosul-bonn-pdf",
+      "ranges": [
+        [
+          68,
+          68
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "chaldean-1901-addai-mari.05-intercession-gehanta-3"
+      ],
+      "description": "Opening of Intercession Gehanta 3 after Kushapa (printed p. 34/ܠܕ)."
+    },
+    {
+      "witness_id": "chaldean-1901-mosul-bonn-pdf",
+      "ranges": [
+        [
+          69,
+          69
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "Intervening private Kushapa prayer before Gehanta 3 (printed p. 33/ܠܓ)."
+    },
+    {
+      "witness_id": "chaldean-1901-mosul-bonn-pdf",
+      "ranges": [
+        [
+          70,
+          70
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "chaldean-1901-addai-mari.04-post-sanctus-gehanta-2"
+      ],
+      "description": "Post-Sanctus Qanona and Amen (printed p. 32/ܠܒ; lower half contains excluded diaconal litany and Kushapa)."
+    },
+    {
+      "witness_id": "chaldean-1901-mosul-bonn-pdf",
+      "ranges": [
+        [
+          71,
+          71
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "chaldean-1901-addai-mari.08-institution-narrative",
+        "chaldean-1901-addai-mari.04-post-sanctus-gehanta-2"
+      ],
+      "description": "Chalice Institution words and Post-Sanctus Gehanta 2 (printed p. 31/ܠܐ)."
+    },
+    {
+      "witness_id": "chaldean-1901-mosul-bonn-pdf",
+      "ranges": [
+        [
+          72,
+          72
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "chaldean-1901-addai-mari.08-institution-narrative"
+      ],
+      "description": "Christological preface and Bread Institution words inserted before Post-Sanctus (printed p. 30/ܠ)."
+    },
+    {
+      "witness_id": "chaldean-1901-mosul-bonn-pdf",
+      "ranges": [
+        [
+          73,
+          73
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "chaldean-1901-addai-mari.03-sanctus"
+      ],
+      "description": "Continuation of full Sanctus/Benedictus (printed p. 28/ܟܚ; lower portion carries post-Sanctus Kushapa, excluded)."
+    },
+    {
+      "witness_id": "chaldean-1901-mosul-bonn-pdf",
+      "ranges": [
+        [
+          74,
+          74
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "chaldean-1901-addai-mari.01-opening-dialogue",
+        "chaldean-1901-addai-mari.02-preface-gehanta-1",
+        "chaldean-1901-addai-mari.03-sanctus"
+      ],
+      "description": "End of Opening Dialogue, Preface Gehanta 1, Qanona, and start of Sanctus (printed p. 27/ܟܙ)."
+    },
+    {
+      "witness_id": "chaldean-1901-mosul-bonn-pdf",
+      "ranges": [
+        [
+          75,
+          75
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "chaldean-1901-addai-mari.01-opening-dialogue"
+      ],
+      "description": "Opening Dialogue (printed p. 26/ܟܘ)."
+    },
+    {
+      "witness_id": "chaldean-1901-mosul-bonn-pdf",
+      "ranges": [
+        [
+          76,
+          107
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "Pre-anaphoral Ordo Missae, Latin/Syriac title pages (PDF 101, 103), imprimatur (PDF 102), and covers."
+    }
+  ]
+}

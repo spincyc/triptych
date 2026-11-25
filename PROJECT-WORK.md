@@ -5,7 +5,7 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-10-21.
+Last reconciled: 2026-11-25.
 
 ## Missal chronology acceptance review, 2026-10-17
 
@@ -73,6 +73,40 @@ presentation naming, validation repairs and fresh interactive/print acceptance,
 with independent source and literal-text review before integration. All work
 remains on `feature/missal-timeline`; the all-rite completion criteria remain
 open, and neither a new hosted corpus nor deployment is part of this phase.
+
+**Cold review, multi-rite research expansion, all-six-tradition native constituents & UI/cross-reference upgrade, 25 November 2026: local branch checkpoint verified (not pushed).**
+The [cold review report](workflows/reviews/missal-cold-review-2026-11-25/REPORT.md)
+documents the cold review of base `fe1cf06ac9`, multi-lane expansion, independent
+pixel-level collation of seventeen new public-domain native-book constituents,
+engine performance optimization, Visual Diff Studio, and cross-site linking.
+The catalogue now holds 1,987 entries in 233 groups (449 Eastern, 1,479 Western,
+59 legacy) and 112 typed cross-tradition relationships; the reconciled stage
+corpus spans 39 dossiers, 188 traditions (classified in
+`eucharistic-tradition-taxonomy-v1.toml` across 10 rite families and 11
+geographic regions), 418 stages, 154 transitions, and 249 declared research gaps.
+Stage text coverage is 388 not transcribed, 30 partial, and 0 complete whole books.
+
+Seventeen independently pixel-collated, bounded public-domain constituents were
+installed across all six Catholic liturgical traditions and seven languages
+(`grc`, `hy`, `cop`, `gez`, `la`, `syr`, plus existing `la`/`ar`), raising
+native-book constituents from 11 to 28 (388 canonical units, 17,621 words) and
+source-hashed witness comparisons from 31 to 43: Byzantine 1754 & 1873 Chrysostom
+Anaphora (`grc`), Armenian 1642 & 1823 Badarak Anaphora (`hy`), Coptic 1736 St.
+Basil (`cop`), Ge'ez 1914/15 Apostles (`gez`), Gregorian Hadrianum Wilson 1915 /
+Stowe Warner 1915 / Paris 1481 / Tarazona 1500 *Canon Missae* (`la`), East Syriac
+Chaldean 1767 & 1901 and Syro-Malabar 1906 Addai & Mari (`syr`), Maronite 1594 &
+1908 Twelve Apostles (`syr`), and Syriac Catholic 1843 & 1922 St. James (`syr`).
+Two fresh `act-history corpus` exports proved byte-identical commit OIDs across
+all 71 refs (28 `version/` + 43 `reconstruction/`), passing `git fsck --strict`
+on 6,951 objects with 21 auto-discovered `diff_pairs`. Scoped in-process
+`session_cache` cut `act-history structure --check` from >9 minutes to ~39 seconds.
+`source-library validate` (3,603 artifacts, 5,868 passages), `missal-coverage-reconciliation`
+(0 findings), `source-reader structure`/`check` (4,734 files), `act-history structure`/
+`--check` (578 files, including `edition-cross-references.json` linking 80 canonical
+Source Library editions), live headless Chromium inspection, and the automated test
+suite pass. Whole-book transcription, post-1930 copyrighted editions, 249 archival
+gaps, and copy-to-copy Git parentage remain explicitly open; the full project
+remains **in progress** on local `feature/missal-timeline` (unpushed).
 
 **Third parallel batch, 20–21 October 2026: implementation pushed; review transport verified.**
 The [batch review](workflows/reviews/missal-batch3-2026-10-20/REPORT.md) and

@@ -1,0 +1,335 @@
+{
+  "adapter_id": "native-book:syriac-1843-anaphora",
+  "binding_sha256": "cb2cfa40da3bb6dd465d5f3e006a0f127d27fb9605e82f18d3f6b02987d7c6ea",
+  "catalogue_witness_ids": [
+    "eastern:syr-rome-1843"
+  ],
+  "counts": {
+    "languages": {
+      "syr": 6
+    },
+    "units": 6,
+    "whitespace_tokens": 608
+  },
+  "id": "syriac-1843-anaphora",
+  "schema": "triptych-eucharistic-native-text/v1",
+  "scope": {
+    "complete_declared_extent": true,
+    "description": "Bounded constituent of the six core prayers of the Anaphora of St. James (Preface, Sanctus, Post-Sanctus, Institution Narrative, Anamnesis, and Epiclesis) in Classical Syriac (syr), reading the right-hand Syriac column on bilingual Syriac/Garshuni pages (PDF 135, 136, 139, 140 L1) and full-width Syriac on monolingual pages (PDF 136 bottom, 138, 140), excluding the scan-degraded red-ink opening Dialogue line on PDF 135, the Crucifixion engraving plate at PDF 137, Garshuni columns, rubrics, and post-epiclesis diptychs.",
+    "extent_kind": "constituent",
+    "known_extent_pages": 5,
+    "known_extent_units": 6,
+    "omitted_book_divisions": [
+      "Front matter, Latin and Syriac titles (PDF 1-10), Ordo Communis, Presanctified rite, and pre-anaphoral prayers of St. James including the scan-degraded red-ink Dialogue line on PDF 135 (PDF 11-135 top)",
+      "Parallel left-hand Garshuni/Arabic column on bilingual pages (PDF 135, 136, 139, 140 L1) and printed speaker/posture rubrics",
+      "Full-page Crucifixion engraving plate before the Institution Narrative (PDF 137)",
+      "Post-epiclesis diptychs, fraction, communion, remaining six anaphoras, Patriarch Giarve 1840 attestation and Roman imprimaturs (PDF 140 bottom-279)"
+    ],
+    "status": "complete-native-constituent",
+    "whole_book_complete": false
+  },
+  "sources": [
+    {
+      "edition_id": "edition.syriac-catholic-church.missale-syriacum.1843-rome-propaganda",
+      "id": "artifact.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-checked-syriac-ef615570",
+      "record_type": "artifact",
+      "rights_basis": "Faithful bounded reading transcription of original-language liturgical text from Missale Syriacum (Rome Propaganda, 1843) — Anaphora of St. James Core, whose United States copyright term has expired by publication date (1843). Derived directly from tracked public-domain facsimile artifact.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.google-scan-pdf-4bc875a2 without modern translation or editorial reconstruction. Third-party historical text is excluded from Triptych's CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "transformation": "Pure consonantal Classical Syriac Unicode (U+0710..U+072C, UTF-8 NFC) with single ASCII spaces between words and single LF (\\n) line endings, one canonical liturgical unit per line.; All West Syriac vowel points, seyame (U+0308), qushshaya/rukkakha, punctuation marks, liturgical crosses, kashidas, catchwords, running heads, signature marks, and page numbers are omitted for scan-safe cross-edition diffing.; Rubrics (red or black stage directions), speaker labels (priest/deacon/people, including abbreviated ܟܗ̄), editorial 'etc.' cues (ܘܫܪ / ܗܟܢܐ), silent/intervening rubrical cues, non-text plates, blank leaves, and parallel Garshuni/Arabic columns are excluded.; Printed historical orthography, abbreviations (such as ܩܕ for ܩܕܝܫܐ, ܩܘܪܝ for ܩܘܪܝܐܠܝܣܘܢ, and abbreviated Sanctus/Anamnesis incipits), omissions, and additions are preserved verbatim without harmonizing or supplying words from memory."
+    },
+    {
+      "edition_id": "edition.syriac-catholic-church.missale-syriacum.1843-rome-propaganda",
+      "id": "artifact.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.google-scan-pdf-4bc875a2",
+      "record_type": "artifact",
+      "rights_basis": "Historical 1843 printing is public domain in the United States by expired publication term. The page images are mechanical facsimiles of that historical book, not a modern translation or critical edition. This is the recorded U.S. public-domain and mechanical-reproduction basis, not an assertion of a general Google redistribution licence. The provider's marks and notices are preserved in the unaltered delivery and are not offered under Triptych's CC BY 4.0 licence; the historical wording is likewise excluded from that licence.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "source_url": "https://books.google.com/books?jscmd=download&vid=AoxG4JWD4VkC&output=pdf"
+    },
+    {
+      "authority": "Patriarch Ignazio Pietro Giarve attests at PDF page 272 that this book contains the Syriac Missal and its rubrics as used by Syriac patriarchs, archbishops, bishops and priests in churches and convents; dateline Aleppo, 31 August 1840. The same page prints Roman imprimaturs by Fr. Dominicus Buttaoni and Joseph Canali. Publication is 1843, distinct from this attestation date.",
+      "date": "1843",
+      "id": "edition.syriac-catholic-church.missale-syriacum.1843-rome-propaganda",
+      "language": "syr",
+      "publication": "Rome: Typis Sacrae Congregationis de Propaganda Fide, 1843.",
+      "record_type": "edition",
+      "title": "Missale Syriacum juxta ritum Ecclesiae Antiochenae Syrorum"
+    },
+    {
+      "artifact_id": "artifact.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-checked-syriac-ef615570",
+      "edition_id": "edition.syriac-catholic-church.missale-syriacum.1843-rome-propaganda",
+      "id": "passage.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-01-preface",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-checked-syriac-ef615570",
+      "edition_id": "edition.syriac-catholic-church.missale-syriacum.1843-rome-propaganda",
+      "id": "passage.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-02-sanctus",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-checked-syriac-ef615570",
+      "edition_id": "edition.syriac-catholic-church.missale-syriacum.1843-rome-propaganda",
+      "id": "passage.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-03-post-sanctus",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-checked-syriac-ef615570",
+      "edition_id": "edition.syriac-catholic-church.missale-syriacum.1843-rome-propaganda",
+      "id": "passage.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-04-institution-narrative",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-checked-syriac-ef615570",
+      "edition_id": "edition.syriac-catholic-church.missale-syriacum.1843-rome-propaganda",
+      "id": "passage.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-05-anamnesis",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-checked-syriac-ef615570",
+      "edition_id": "edition.syriac-catholic-church.missale-syriacum.1843-rome-propaganda",
+      "id": "passage.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-06-epiclesis",
+      "record_type": "passage"
+    }
+  ],
+  "stage_ids": [
+    "west-syriac-stages-rome1843"
+  ],
+  "title": "Missale Syriacum (Rome Propaganda, 1843) — Anaphora of St. James Core",
+  "units": [
+    {
+      "component": "anaphoras",
+      "direction": "rtl",
+      "kind": "prayer",
+      "language": "syr",
+      "native_path": [
+        "anaphoras",
+        "st-james",
+        "01-preface"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-checked-syriac-ef615570",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-checked-syriac-ef615570",
+      "source_id": "passage.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-01-preface",
+      "source_locator": "Constituent unit 1/6 (anaphoras/st-james/01-preface), normalized physical lines 1–1.",
+      "source_order": 1,
+      "text": "ܫܪܝܪܐܝܬ ܫܘܐ ܘܙܕܩ ܘܦܐܐ ܘܡܬܬܚܝܒ ܕܠܟ ܢܫܒܚ ܠܟ ܢܒܪܟ ܠܟ ܢܣܓܘܕ ܠܟ ܢܗܕܪ ܘܠܟ ܢܘܕܐ ܥܒܘܕܐ ܕܟܠܗ ܒܪܝܬܐ ܡܬܚܙܝܢܝܬܐ ܕܝܢ ܘܠܐ ܡܬܚܙܝܢܝܬܐ ܠܗܘ ܕܡܫܒܚܝܢ ܫܡܝܐ ܘܫܡܝ ܫܡܝܐ ܘܟܠܗܘܢ ܚܝܠܘܬܐ ܕܝܠܗܘܢ ܫܡܫܐ ܘܣܗܪܐ ܘܟܠܗ ܟܢܫܐ ܕܟܘܟܒܐ ܐܪܥܐ ܘܝܡܡܐ ܘܟܠ ܕܒܗܘܢ ܐܘܪܫܠܡ ܫܡܝܢܝܬܐ ܥܕܬܐ ܕܒܘܟܪܐ ܕܟܬܝܒܝܢ ܒܫܡܝܐ ܡܠܐܟܐ ܪܫܝ ܡܠܐܟܐ ܪܫܢܘܬܐ ܫܘܠܛܢܐ ܡܘܬܒܐ ܡܪܘܬܐ ܚܝܠܘܬܐ ܕܥܠ ܡܢ ܥܠܡܐ ܟܪܣܘܬܐ ܫܡܝܢܝܐ ܟܪܘܒܐ ܣܓܝܐܝ ܥܝܢܐ ܘܣܪܦܐ ܫܬܝܬܝܝ ܓܦܐ ܗܢܘܢ ܕܒܬܪܝܢ ܡܢ ܓܦܐ ܡܚܦܝܢ ܠܦܪܨܘܦܐ ܕܝܠܗܘܢ ܒܬܪܝܢ ܕܝܢ ܠܪܓܠܐ ܒܬܪܝܢ ܕܝܢ ܦܪܚܝܢ ܐܚܪܢܐ ܠܘܬ ܐܚܪܢܐ ܟܕ ܒܦܘܡܐ ܕܠܐ ܫܠܝܢ ܘܒܡܠܠܘܬ ܐܠܗܘܬܐ ܕܠܐ ܫܬܩܐ ܬܫܒܚܬ ܕܙܟܘܬܐ ܕܪܒܘܬ ܦܐܝܘܬܐ ܕܫܘܒܚܐ ܒܩܠܐ ܪܡܐ ܡܙܡܪܝܢ ܘܡܪܝܡܝܢ ܘܩܥܝܢ ܘܐܡܪܝܢ",
+      "text_edition_id": "edition.syriac-catholic-church.missale-syriacum.1843-rome-propaganda",
+      "text_sha256": "75e5e23f56a089974ceca1582aa905ee43f438f78c5b218a4624de9cbcac5ba6",
+      "unit_id": "syriac-1843-anaphora.01-preface",
+      "witness_id": "syriac-1843-rome-google-pdf",
+      "witness_pages": [
+        [
+          135,
+          136
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "rtl",
+      "kind": "acclamation",
+      "language": "syr",
+      "native_path": [
+        "anaphoras",
+        "st-james",
+        "02-sanctus"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-checked-syriac-ef615570",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-checked-syriac-ef615570",
+      "source_id": "passage.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-02-sanctus",
+      "source_locator": "Constituent unit 2/6 (anaphoras/st-james/02-sanctus), normalized physical lines 2–2.",
+      "source_order": 2,
+      "text": "ܩܕܝܫ",
+      "text_edition_id": "edition.syriac-catholic-church.missale-syriacum.1843-rome-propaganda",
+      "text_sha256": "8484fb7b28874a3c373a8404fb0d23c2a88e3a515a87a8145a627b6782e8aff0",
+      "unit_id": "syriac-1843-anaphora.02-sanctus",
+      "witness_id": "syriac-1843-rome-google-pdf",
+      "witness_pages": [
+        [
+          136,
+          136
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "rtl",
+      "kind": "prayer",
+      "language": "syr",
+      "native_path": [
+        "anaphoras",
+        "st-james",
+        "03-post-sanctus"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-checked-syriac-ef615570",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-checked-syriac-ef615570",
+      "source_id": "passage.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-03-post-sanctus",
+      "source_locator": "Constituent unit 3/6 (anaphoras/st-james/03-post-sanctus), normalized physical lines 3–3.",
+      "source_order": 3,
+      "text": "ܐܝܢ ܕܫܪܪܐ ܩܕܝܫܐ ܐܝܬܝܟ ܡܠܟܐ ܕܥܠܡܐ ܘܝܗܘܒܐ ܕܟܠܗ ܩܕܝܫܘܬܐ ܩܕܝܫܐ ܕܝܢ ܘܝܚܝܕܝܐ ܒܪܐ ܕܝܠܟ ܡܪܝܐ ܐܠܗܐ ܘܦܪܘܩܐ ܕܝܠܢ ܝܫܘܥ ܡܫܝܚܐ ܩܕܝܫܐ ܕܝܢ ܘܪܘܚܐ ܕܝܠܟ ܩܕܝܫܐ ܗܘ ܕܒܨܐ ܟܠ ܘܥܡܝܩܬܐ ܕܝܠܟ ܐܠܗܐ ܘܐܒܐ ܩܕܝܫܐ ܕܝܢ ܐܝܬܝܟ ܐܚܝܕ ܟܠ ܡܪܐ ܟܠ ܕܚܝܠܐ ܛܒܐ ܥܡ ܒܪܐ ܕܝܠܟ ܗܘ ܕܫܘܬܦ ܒܚܫܐ ܘܡܬܪܚܡ ܣܓܝ ܥܠ ܓܒܝܠܬܐ ܕܝܠܟ ܗܘ ܕܓܒܠ ܡܢ ܐܪܥܐ ܠܒܪܢܫܐ ܘܫܟܢ ܠܗ ܒܘܣܡܐ ܕܦܪܕܝܣܐ ܟܕ ܕܝܢ ܥܒܪ ܥܠ ܦܘܩܕܢܐ ܕܝܠܟ ܘܢܦܠ ܠܐ ܐܗܡܝܬ ܘܠܐ ܫܒܩܬܝܗܝ ܐܘ ܛܒܐ ܐܠܐ ܪܕܝܬܝܗܝ ܐܝܟ ܐܒܐ ܣܓܝ ܪܚܡܐ ܩܪܝܬܝܗܝ ܒܝܕ ܢܡܘܣܐ ܘܐܪܬܝܬܝܗܝ ܒܝܕ ܢܒܝܐ ܒܚܪܬܐ ܕܝܢ ܠܗ ܠܝܚܝܕܝܐ ܒܪܐ ܕܝܠܟ ܫܕܪܬ ܠܥܠܡܐ ܐܝܟܢܐ ܕܠܨܠܡܐ ܕܝܠܟ ܢܚܕܬ ܘܗܘ ܕܝܢ ܢܚܬ ܘܐܬܓܫܡ ܡܢ ܪܘܚܐ ܩܕ ܘܡܢ ܩܕܝܫܬܐ ܝܠܕܬ ܐܠܗܐ ܘܒܬܘܠܬܐ ܒܟܠܙܒܢ ܡܪܝܡ ܘܐܬܗܦܟ ܒܝܬ ܥܡ ܒܢܝܢܫܐ ܘܟܠܡܕܡ ܕܒܪ ܠܘܬ ܦܘܪܩܢܐ ܕܓܢܣܐ ܕܝܠܢ",
+      "text_edition_id": "edition.syriac-catholic-church.missale-syriacum.1843-rome-propaganda",
+      "text_sha256": "cae663ca7f24065b437130221ca25b4bb567ebde0ff5318d26cc49dcfc9ff641",
+      "unit_id": "syriac-1843-anaphora.03-post-sanctus",
+      "witness_id": "syriac-1843-rome-google-pdf",
+      "witness_pages": [
+        [
+          136,
+          136
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "rtl",
+      "kind": "institution-narrative",
+      "language": "syr",
+      "native_path": [
+        "anaphoras",
+        "st-james",
+        "04-institution-narrative"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-checked-syriac-ef615570",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-checked-syriac-ef615570",
+      "source_id": "passage.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-04-institution-narrative",
+      "source_locator": "Constituent unit 4/6 (anaphoras/st-james/04-institution-narrative), normalized physical lines 4–4.",
+      "source_order": 4,
+      "text": "ܟܕ ܕܝܢ ܥܬܝܕ ܗܘܐ ܕܢܩܒܠ ܠܡܘܬܐ ܨܒܝܢܝܐ ܕܚܠܦܝܢ ܚܛܝܐ ܗܘ ܕܠܐ ܚܛܗ ܒܠܠܝܐ ܗܘ ܕܒܗ ܡܫܬܠܡ ܗܘܐ ܚܠܦ ܚܝܐ ܘܦܘܪܩܢܐ ܕܥܠܡܐ ܟܕ ܢܣܒ ܠܚܡܐ ܥܠ ܐܝܕܘܗܝ ܩܕܝܫܬܐ ܘܕܠܐ ܡܘܡ ܘܠܐ ܡܛܘܫܬܐ ܚܘܝ ܠܟ ܐܠܗܐ ܐܒܐ ܟܕ ܐܘܕܝ ܒܪܟ ܘܩܕܫ ܘܩܨܐ ܘܝܗܒ ܠܗܘܢ ܠܬܠܡܝܕܐ ܕܝܠܗ ܘܫܠܝܚܐ ܩܕܝܫܐ ܟܕ ܐܡܪ ܣܒܘ ܐܟܘܠܘ ܡܢܗ ܗܢܐ ܕܝܢ ܐܝܬܘܗܝ ܦܓܪܐ ܕܝܠܝ ܗܘ ܕܚܠܦܝܟܘܢ ܘܚܠܦ ܣܓܝܐܐ ܡܬܩܨܐ ܘܡܬܝܗܒ ܠܫܘܒܩܢܐ ܕܚܛܗܐ ܘܠܚܝܐ ܕܠܥܠܡ ܥܠܡܝܢ ܐܡܝܢ ܗܟܘܬ ܘܟܣܐ ܕܝܢ ܡܢ ܒܬܪ ܕܐܚܫܡܘ ܟܕ ܡܙܓ ܡܢ ܚܡܪܐ ܘܡܢ ܡܝܐ ܘܐܘܕܝ ܒܪܟ ܘܩܕܫ ܘܝܗܒ ܠܗܘܢ ܟܕ ܠܗܘܢ ܠܬܠܡܝܕܐ ܕܝܠܗ ܘܫܠܝܚܐ ܩܕܝܫܐ ܟܕ ܐܡܪ ܣܒܘ ܐܫܬܘ ܡܢܗ ܟܠܟܘܢ ܗܢܐ ܕܝܢ ܐܝܬܘܗܝ ܕܡܐ ܕܝܠܝ ܗܘ ܕܕܝܬܝܩܝ ܚܕܬܐ ܗܘ ܕܚܠܦܝܟܘܢ ܘܚܠܦ ܣܓܝܐܐ ܡܬܐܫܕ ܘܡܬܝܗܒ ܠܫܘܒܩܢܐ ܕܚܛܗܐ ܘܠܚܝܐ ܕܠܥܠܡ ܥܠܡܝܢ ܐܡܝܢ",
+      "text_edition_id": "edition.syriac-catholic-church.missale-syriacum.1843-rome-propaganda",
+      "text_sha256": "b64a5d80487ee26c4eb3a345b149f7540189076157ebc3c46d780099dff06097",
+      "unit_id": "syriac-1843-anaphora.04-institution-narrative",
+      "witness_id": "syriac-1843-rome-google-pdf",
+      "witness_pages": [
+        [
+          138,
+          138
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "rtl",
+      "kind": "prayer",
+      "language": "syr",
+      "native_path": [
+        "anaphoras",
+        "st-james",
+        "05-anamnesis"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-checked-syriac-ef615570",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-checked-syriac-ef615570",
+      "source_id": "passage.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-05-anamnesis",
+      "source_locator": "Constituent unit 5/6 (anaphoras/st-james/05-anamnesis), normalized physical lines 5–5.",
+      "source_order": 5,
+      "text": "ܗܕܐ ܥܒܕܘ ܠܕܘܟܪܢܐ ܕܝܠܝ ܟܠ ܐܡܬܝ ܓܝܪ ܕܐܟܠܝܢ ܠܠܚܡܐ ܗܢܐ ܘܡܙܓܐ ܕܒܟܣܐ ܗܢܐ ܫܬܝܢ ܠܡܘܬܐ ܕܝܠܝ ܡܣܒܪܝܢ ܐܢܬܘܢ ܘܠܩܝܡܬܝ ܡܘܕܝܢ ܐܢܬܘܢ ܥܕܡܐ ܕܐܬܐ ܐܢܐ ܠܡܘܬܟ ܟܕ ܡܬܥܗܕܝܢܢ ܘܗܟܝܠ ܡܪܝܐ ܠܡܘܬܐ ܕܝܠܟ ܘܠܩܝܡܬܐ ܕܝܠܟ ܕܠܬܠܬܐ ܝܘܡܝܢ ܕܡܢ ܒܝܬ ܡܝܬܐ ܘܠܣܘܠܩܐ ܕܝܠܟ ܕܠܫܡܝܐ ܘܠܡܘܬܒܐ ܕܝܠܟ ܕܡܢ ܝܡܝܢܗ ܕܐܠܗܐ ܐܒܐ ܬܘܒ ܕܝܢ ܘܠܡܐܬܝܬܐ ܕܝܠܟ ܕܬܪܬܝܢ ܕܚܝܠܬܐ ܘܡܫܒܚܬܐ ܗܝ ܕܒܗ ܥܬܝܕ ܐܢܬ ܠܡܕܢ ܠܬܒܝܠ ܒܟܐܢܘܬܐ ܐܡܬܝ ܕܥܬܝܕ ܐܢܬ ܠܡܦܪܥ ܠܟܠܢܫ ܐܝܟ ܥܒܕܐ ܕܝܠܗ ܡܩܪܒܝܢܢ ܠܟ ܠܗܕܐ ܕܒܚܬܐ ܕܚܝܠܬܐ ܘܕܠܐ ܕܡܐ ܐܝܟܢܐ ܕܠܐ ܐܝܟ ܚܛܗܐ ܕܝܠܢ ܬܥܒܕ ܠܢ ܡܪܝܐ ܐܦܠܐ ܐܝܟ ܠܐ ܢܡܘܣܝܘܬܐ ܕܝܠܢ ܬܦܪܘܥ ܠܢ ܐܠܐ ܐܝܟ ܒܣܝܡܘܬܐ ܘܪܚܡܬ ܐܢܫܘܬܐ ܕܝܠܟ ܪܒܬܐ ܘܠܐ ܡܬܡܠܠܢܝܬܐ ܥܛܝ ܚܛܗܐ ܕܝܠܢ ܘܡܬܟܫܦܢܐ ܕܥܒܕܐ ܕܝܠܟ ܥܡܐ ܕܝܢ ܕܝܠܟ ܘܝܪܬܘܬܐ ܕܝܠܟ ܡܬܟܫܦܐ ܠܟ ܘܒܐܝܕܝܟ ܘܥܡܟ ܠܐܒܘܟ ܟܕ ܐܡܪܐ ܪܚܡܥܠܝܢ ܘܐܦ ܚܢܢ ܡܪܝ ܡܚܝܠܐ ܘܚܛܝܐ ܥܒܕܝܟ ܟܕ ܡܩܒܠܝܢܢ ܠܛܝܒܘܬܟ ܡܘܕܝܢܢ ܠܟ ܥܠ ܐܦܝ ܟܠܗܝܢ ܘܡܛܠ ܟܠܗܝܢ ܠܟ ܡܫܒܚܝܢܢ",
+      "text_edition_id": "edition.syriac-catholic-church.missale-syriacum.1843-rome-propaganda",
+      "text_sha256": "5fd300f24dbea48f71bf6d57be2fb53c75172230b2936c4daef4307ea00a7f7a",
+      "unit_id": "syriac-1843-anaphora.05-anamnesis",
+      "witness_id": "syriac-1843-rome-google-pdf",
+      "witness_pages": [
+        [
+          139,
+          140
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "rtl",
+      "kind": "prayer",
+      "language": "syr",
+      "native_path": [
+        "anaphoras",
+        "st-james",
+        "06-epiclesis"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-checked-syriac-ef615570",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-checked-syriac-ef615570",
+      "source_id": "passage.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-06-epiclesis",
+      "source_locator": "Constituent unit 6/6 (anaphoras/st-james/06-epiclesis), normalized physical lines 6–6.",
+      "source_order": 6,
+      "text": "ܪܚܡܥܠܝܢ ܐܠܗܐ ܐܒܐ ܐܚܝܕ ܟܠ ܘܫܕܪ ܥܠܝܢ ܘܥܠ ܩܘܪܒܢܐ ܗܠܝܢ ܕܣܝܡܝܢ ܪܘܚܐ ܕܝܠܟ ܩܕ ܗܘ ܡܥܒܕ ܚܝܐ ܗܘ ܫܘܐ ܒܡܘܬܒܐ ܠܟ ܐܠܗܐ ܘܐܒܐ ܘܠܒܪܐ ܫܘܐ ܒܡܠܟܘܬܐ ܗܘ ܫܘܐ ܒܐܘܣܝܐ ܘܫܘܐ ܒܡܬܘܡܝܘܬܐ ܗܘ ܕܡܠܠ ܒܢܡܘܣܐ ܘܒܢܒܝܐ ܘܒܕܝܬܝܩܝ ܚܕܬܐ ܕܝܠܟ ܗܘ ܕܢܚܬ ܒܕܡܘܬܐ ܕܝܘܢܐ ܥܠ ܡܪܝܐ ܕܝܠܢ ܝܫܘܥ ܡܫܝܚܐ ܒܝܘܪܕܢܢ ܢܗܪܐ ܗܘ ܕܢܚܬ ܥܠ ܫܠܝܚܐ ܩܕܝܫܐ ܕܝܠܟ ܒܕܡܘܬܐ ܕܠܫܢܐ ܕܢܘܪܐ ܥܢܝܢܝ ܡܪܝܐ ܥܢܝܢܝ ܡܪܝܐ ܩܘܪܝܐܠܝܣܘܢ ܐܝܟܢܐ ܕܟܕ ܢܐܬܐ ܢܥܒܕ ܕܠܚܡܐ ܗܢܐ ܦܓܪܐ ܡܥܒܕ ܚܝܐ ܦܓܪܐ ܦܪܘܩܝܐ ܦܓܪܐ ܫܡܝܢܐ ܦܓܪܐ ܡܦܨܝܢܐ ܕܢܦܫܬܐ ܕܝܠܢ ܘܕܦܓܪܝܢ ܦܓܪܐ ܕܝܠܗ ܕܡܪܝܐ ܐܠܗܐ ܘܦܪܘܩܐ ܕܝܠܢ ܝܫܘܥ ܡܫܝܚܐ ܕܢܗܘܐ ܠܫܘܒܩܢܐ ܕܚܛܗܐ ܘܠܚܝܐ ܕܠܥܠܡ ܥܠܡܝܢ ܕܢܣܒܝܢ ܠܗ ܐܡܝܢ ܘܢܥܒܕ ܕܡܙܓܐ ܕܒܟܣܐ ܗܢܐ ܕܡܐ ܕܕܝܬܝܩܝ ܚܕܬܐ ܕܡܐ ܦܪܘܩܝܐ ܕܡܐ ܡܥܒܕ ܚܝܐ ܕܡܐ ܡܦܨܝܢܐ ܕܢܦܫܬܐ ܕܝܠܢ ܘܕܦܓܪܝܢ ܕܡܐ ܕܝܠܗ ܕܡܪܝܐ ܐܠܗܐ ܘܦܪܘܩܐ ܕܝܠܢ ܝܫܘܥ ܡܫܝܚܐ ܢܗܘܐ ܠܫܘܒܩܢܐ ܕܚܛܗܐ ܘܠܚܝܐ ܕܠܥܠܡ ܥܠܡܝܢ ܕܢܣܒܝܢ ܠܗ ܐܡܝܢ",
+      "text_edition_id": "edition.syriac-catholic-church.missale-syriacum.1843-rome-propaganda",
+      "text_sha256": "c10ee8a2cf4123e7a71e131217efc4a1f02ee421ca6a046fca431fc6ae61dbd6",
+      "unit_id": "syriac-1843-anaphora.06-epiclesis",
+      "witness_id": "syriac-1843-rome-google-pdf",
+      "witness_pages": [
+        [
+          140,
+          140
+        ]
+      ]
+    }
+  ],
+  "witnesses": [
+    {
+      "artifact_id": "artifact.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.google-scan-pdf-4bc875a2",
+      "edition_id": "edition.syriac-catholic-church.missale-syriacum.1843-rome-propaganda",
+      "id": "syriac-1843-rome-google-pdf",
+      "scope_pages": [
+        [
+          135,
+          136
+        ],
+        [
+          138,
+          140
+        ]
+      ]
+    }
+  ]
+}

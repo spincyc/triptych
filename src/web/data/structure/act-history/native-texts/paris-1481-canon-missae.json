@@ -1,0 +1,758 @@
+{
+  "adapter_id": "native-book:paris-1481-canon-missae",
+  "binding_sha256": "da4e82f09d6dc6591ab433a7af4e9a1b4bf58c85b55ba9304bca0a40c5c18558",
+  "catalogue_witness_ids": [
+    "western:paris-1481-dupre-huym"
+  ],
+  "counts": {
+    "languages": {
+      "la": 16
+    },
+    "units": 16,
+    "whitespace_tokens": 838
+  },
+  "id": "paris-1481-canon-missae",
+  "schema": "triptych-eucharistic-native-text/v1",
+  "scope": {
+    "complete_declared_extent": true,
+    "description": "Complete strict Eucharistic Canon of the 22 September 1481 Paris-use missal printed by Jean Dupré and Didier Huym (BSG OEXV 228 RES, PDF pp. 180-182, including printed fol. lxxx at PDF p. 181): from the opening rubric Junctis manibus se inclinet ante altare. and illuminated Te igitur on PDF p. 180 col. 1 through notated Per omnia secula seculorum. Amen. on PDF p. 182 col. 2 immediately before Oremus. Preceptis salutaribus / Pater noster. Includes all printed action rubrics and 25 illuminated crosses (✠) under declared selective Latin reading normalization.",
+    "extent_kind": "constituent",
+    "known_extent_pages": 3,
+    "known_extent_units": 16,
+    "omitted_book_divisions": [
+      "Notated Et ideo cum angelis... Sanctus. Sanctus. Sanctus. ut supra. on PDF p. 180 col. 1 above Junctis manibus",
+      "Oremus, Preceptis salutaribus, Pater noster, Libera nos, Agnus Dei, communion prayers and all material after Amen on PDF p. 182 col. 2",
+      "Calendar, Temporale, Sanctorale, Prefaces, preparation prayers and colophon outside PDF pp. 180-182",
+      "Folio number (lxxx), illuminated border art, ink colour (red/blue), chant staff/neumes and diplomatic Gothic glyph forms"
+    ],
+    "status": "complete-native-constituent",
+    "whole_book_complete": false
+  },
+  "sources": [
+    {
+      "edition_id": "edition.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym",
+      "id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+      "record_type": "artifact",
+      "rights_basis": "Faithful bounded reading transcription of original-language liturgical text from Paris 1481 (Missale Parisiense): complete strict Canon Missae constituent, whose United States copyright term has expired by publication date (22 September 1481 Paris publication (Dupré and Huym colophon)). Derived directly from tracked public-domain facsimile artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.ia-complete-pdf-619ed4e7 without modern translation or editorial reconstruction. Third-party historical text is excluded from Triptych's CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "transformation": "Direct reading from 200-dpi rendered PNG images (and tight column zooms) of Paris 1481 PDF pp. 180-182. UTF-8 NFC, LF line endings. Standard 15th-century Gothic Latin abbreviations expanded silently to reading forms (nasal macrons, -q3 -> -que, -b3 -> -bus, -9 -> -us, Tironian ⁊ -> et, ꝝ -> -rum, dñs/dñi/dñm -> dominus/domini/dominum, nr̃m/nr̃os -> nostrum/nostros, oĩbus/oĩpotẽtem -> omnibus/omnipotentem, sãctas/sctĩ -> sanctas/sancti, eĩ -> enim, ĩpm -> ipsum, p̃claram/p̃stas -> preclaram/prestas, q̃d -> quod, s3 -> sed, p̃/ꝓ -> pro, grã -> gratia, cõcedas -> concedas, ɔspectu -> conspectu). Long s normalized to s; illuminated display initials merged with word bodies (restoring faded red/pink initials visible as coloured washes); line wraps and line-end hyphens joined. Medieval Latin orthography preserved verbatim (e for ae/oe: hec, que, celum, eterni, preclare, uenie; u/v as printed (Gothic word-initial v / medial u): viuo, vero, vultu, venie, eleuatis, serui; circumastantium, Imprimis, Symonis, Mathei, Thadei, Sixti, Crisogoni, propicio, imaculatam, tereritis, Et quequot, loco refrigerii, Ignacio). Action rubrics occupy separate lines within the Canon unit they govern; red/blue crosses serialized as ✠ (25 crosses total). Chant pitches excluded."
+    },
+    {
+      "edition_id": "edition.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym",
+      "id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.ia-complete-pdf-619ed4e7",
+      "record_type": "artifact",
+      "rights_basis": "The 1481 Latin printing is public domain in the United States by expiration of its publication term. The institutional Internet Archive collection of Bibliothèque Sainte-Geneviève identifies OEXV 228 RES as domaine public and applies Public Domain Mark 1.0 (https://creativecommons.org/publicdomain/mark/1.0/). This is a mechanical facsimile with automated OCR, not a modern critical edition or translation. Third-party historical source material is excluded from Triptych’s CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "source_url": "https://archive.org/download/OEXV228/OEXV228_text.pdf"
+    },
+    {
+      "date": "1481-09-22",
+      "id": "edition.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym",
+      "language": "la",
+      "publication": "Paris: Jean Dupré and Didier Huym, completed 22 September 1481; Bibliothèque Sainte-Geneviève, OEXV 228 RES.",
+      "record_type": "edition",
+      "title": "Missale Parisiense, Paris: Jean Dupré and Didier Huym, 22 September 1481"
+    },
+    {
+      "artifact_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+      "edition_id": "edition.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym",
+      "id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-communicantes",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+      "edition_id": "edition.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym",
+      "id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-concluding-response",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+      "edition_id": "edition.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym",
+      "id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-hanc-igitur",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+      "edition_id": "edition.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym",
+      "id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-memento-defunctorum",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+      "edition_id": "edition.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym",
+      "id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-memento-vivorum",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+      "edition_id": "edition.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym",
+      "id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-nobis-quoque",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+      "edition_id": "edition.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym",
+      "id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-opening-rubric",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+      "edition_id": "edition.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym",
+      "id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-per-ipsum",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+      "edition_id": "edition.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym",
+      "id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-per-quem",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+      "edition_id": "edition.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym",
+      "id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-quam-oblationem",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+      "edition_id": "edition.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym",
+      "id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-qui-pridie",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+      "edition_id": "edition.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym",
+      "id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-simili-modo",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+      "edition_id": "edition.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym",
+      "id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-supplices",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+      "edition_id": "edition.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym",
+      "id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-supra-quae",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+      "edition_id": "edition.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym",
+      "id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-te-igitur",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+      "edition_id": "edition.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym",
+      "id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-unde-et-memores",
+      "record_type": "passage"
+    }
+  ],
+  "stage_ids": [
+    "french-local-round2-paris:book"
+  ],
+  "title": "Paris 1481 (Missale Parisiense): complete strict Canon Missae constituent",
+  "units": [
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "opening-rubric"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+      "source_id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-opening-rubric",
+      "source_locator": "Constituent unit 1/16 (anaphoras/canon-missae/opening-rubric), normalized physical lines 1–1.",
+      "source_order": 1,
+      "text": "Junctis manibus se inclinet ante altare.",
+      "text_edition_id": "edition.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym",
+      "text_sha256": "223832e5f98658f9c056909b986afb15ef3af183ba5a2941a8b9117af2600dde",
+      "unit_id": "unit.paris-1481.canon.opening-rubric",
+      "witness_id": "paris-1481-dupre-huym-pdf",
+      "witness_pages": [
+        [
+          180,
+          180
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "te-igitur"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+      "source_id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-te-igitur",
+      "source_locator": "Constituent unit 2/16 (anaphoras/canon-missae/te-igitur), normalized physical lines 2–6.",
+      "source_order": 2,
+      "text": "Te igitur clementissime pater per iesum christum filium tuum dominum nostrum supplices rogamus ac petimus. vti accepta habeas.\n(Osculetur altare in dextera parte)\nEt benedicas. hec ✠ dona. hec ✠ munera. hec ✠ sancta sacrificia illibata.\n(Eleuatis manibus et expansis dicat)\nImprimis que tibi offerimus pro ecclesia tua sancta catholica. quam pacificare. custodire. adunare. et regere digneris toto orbe terrarum. vna cum famulo tuo papa nostro. et antistite nostro. et rege nostro. et omnibus orthodoxis. atque catholice et apostolice fidei cultoribus",
+      "text_edition_id": "edition.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym",
+      "text_sha256": "eea4d7e066cac7c0614dd577b722c92eb976138672492cc376a86fa2b74471dc",
+      "unit_id": "unit.paris-1481.canon.te-igitur",
+      "witness_id": "paris-1481-dupre-huym-pdf",
+      "witness_pages": [
+        [
+          180,
+          180
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "memento-vivorum"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+      "source_id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-memento-vivorum",
+      "source_locator": "Constituent unit 3/16 (anaphoras/canon-missae/memento-vivorum), normalized physical lines 7–9.",
+      "source_order": 3,
+      "text": "Memento domine famulorum famularumque tuarum\nReminiscatur viuorum. eorum maxime pro quibus tenetur orare.\nEt omnium circumastantium. atque omnium fidelium christianorum. quorum tibi fides cognita est. et nota deuotio. pro quibus tibi offerimus. vel qui tibi offerunt hoc sacrificium laudis. pro se suisque omnibus. pro redemptione animarum suarum. pro spe salutis et incolumitatis sue. tibique reddunt vota sua eterno deo viuo et vero.",
+      "text_edition_id": "edition.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym",
+      "text_sha256": "c41c4e15d14755c1b1bca778b8e2c03dc9aa9efd1da830b859196458232e742b",
+      "unit_id": "unit.paris-1481.canon.memento-vivorum",
+      "witness_id": "paris-1481-dupre-huym-pdf",
+      "witness_pages": [
+        [
+          180,
+          180
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "communicantes"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+      "source_id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-communicantes",
+      "source_locator": "Constituent unit 4/16 (anaphoras/canon-missae/communicantes), normalized physical lines 10–11.",
+      "source_order": 4,
+      "text": "(Parum flectat genua)\nCommunicantes et memoriam venerantes. Imprimis gloriose semperque virginis marie genitricis dei. et domini nostri iesu christi. Sed et beatorum apostolorum et martyrum tuorum Petri et Pauli. Andree. Iacobi. Iohannis. Thome. Iacobi. Philippi Bartholomei. Mathei. Symonis. et Thadei. Lini Cleti. Clementis Sixti Cornelii Cypriani. Laurentii. Crisogoni. Iohannis. et Pauli. Cosme et Damiani. Et omnium sanctorum tuorum Quorum meritis precibusque concedas. vt in omnibus protectionis tue muniamur auxilio. Per eundem christum.",
+      "text_edition_id": "edition.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym",
+      "text_sha256": "f2bcd4f0ad0de4960d7b163541917a851de09cee464dc268a3d21cf76939ca28",
+      "unit_id": "unit.paris-1481.canon.communicantes",
+      "witness_id": "paris-1481-dupre-huym-pdf",
+      "witness_pages": [
+        [
+          180,
+          180
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "hanc-igitur"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+      "source_id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-hanc-igitur",
+      "source_locator": "Constituent unit 5/16 (anaphoras/canon-missae/hanc-igitur), normalized physical lines 12–13.",
+      "source_order": 5,
+      "text": "Extendat manus super sacrificium dicens.\nHanc igitur oblationem seruitutis nostre sed et cuncte familie tue quesumus domine vt placatus accipias. Diesque nostros in tua pace disponas atque ab eterna damnatione nos eripi. et in electorum tuorum iubeas grege numerari Per christum dominum nostrum. Amen:",
+      "text_edition_id": "edition.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym",
+      "text_sha256": "fd2db4d7fa455cfd0365f0773f76d38dc87a6ffff7e0e234454f9a184e852bb2",
+      "unit_id": "unit.paris-1481.canon.hanc-igitur",
+      "witness_id": "paris-1481-dupre-huym-pdf",
+      "witness_pages": [
+        [
+          180,
+          180
+        ],
+        [
+          181,
+          181
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "quam-oblationem"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+      "source_id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-quam-oblationem",
+      "source_locator": "Constituent unit 6/16 (anaphoras/canon-missae/quam-oblationem), normalized physical lines 14–16.",
+      "source_order": 6,
+      "text": "Quam oblationem tu deus in omnibus quesumus bene.✠dictam. Ascri✠ptam. Ra✠tam Rationabilem. acceptabilemque facere digneris vt nobis cor✠pus et san✠guis.\nEleuet manus et iungat sursum.\nFiat dilectissimi filii tui domini nostri iesu christi",
+      "text_edition_id": "edition.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym",
+      "text_sha256": "2da7b6301fc0938417b64ecac4a7e9c5ee4eb422f00bb04c36b277fb602e14c6",
+      "unit_id": "unit.paris-1481.canon.quam-oblationem",
+      "witness_id": "paris-1481-dupre-huym-pdf",
+      "witness_pages": [
+        [
+          181,
+          181
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "institution-narrative-with-rubrics",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "qui-pridie"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+      "source_id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-qui-pridie",
+      "source_locator": "Constituent unit 7/16 (anaphoras/canon-missae/qui-pridie), normalized physical lines 17–19.",
+      "source_order": 7,
+      "text": "Tergat manus ad corporalia. et accipiens panem dicat\nQui pridie quam pateretur accepit panem in sanctas ac venerabiles manus suas. et eleuatis oculis in celum ad te deum patrem suum omnipotentem. tibi gratias agens bene✠dixit fregit deditque discipulis suis dicens. Accipite et manducate ex hoc omnes Hoc est enim corpus meum.\nEleuet hostiam et ostendat populo. et post reponat in loco suo. et se inclinet. Deinde discooperiat calicem et accipiat in manibus dicens",
+      "text_edition_id": "edition.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym",
+      "text_sha256": "65cb9a61791c93e65969799b7e583426fc2870ca321f5105c57b25d3d81f012e",
+      "unit_id": "unit.paris-1481.canon.qui-pridie",
+      "witness_id": "paris-1481-dupre-huym-pdf",
+      "witness_pages": [
+        [
+          181,
+          181
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "institution-narrative-with-rubrics",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "simili-modo"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+      "source_id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-simili-modo",
+      "source_locator": "Constituent unit 8/16 (anaphoras/canon-missae/simili-modo), normalized physical lines 20–23.",
+      "source_order": 8,
+      "text": "Simili modo postea quam cenatum est. accipiens et hunc preclarum calicem in sanctas ac venerabiles manus suas. item tibi gratias agens bene✠dixit. deditque discipulis suis dicens. Accipite et bibite ex eo omnes Hic est enim calix sanguinis mei. noui et eterni testamenti. mysterium fidei. qui pro vobis et pro multis effundetur in remissionem peccatorum.\nEleuet calicem ostendendo populo, et dicat.\nHec quotienscumque tereritis in mei memoriam facietis.\nReponat calicem in loco suo, et cooperiat de corporali. et se inclinet. Deinde extendat brachia, quasi faciens de se crucem dicens",
+      "text_edition_id": "edition.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym",
+      "text_sha256": "b6d0a7f4dbac1956d0da71602ae7bee484abe4ebbbeac593d378dbd456f56318",
+      "unit_id": "unit.paris-1481.canon.simili-modo",
+      "witness_id": "paris-1481-dupre-huym-pdf",
+      "witness_pages": [
+        [
+          181,
+          181
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "unde-et-memores"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+      "source_id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-unde-et-memores",
+      "source_locator": "Constituent unit 9/16 (anaphoras/canon-missae/unde-et-memores), normalized physical lines 24–31.",
+      "source_order": 9,
+      "text": "Unde et memores domine nos tui serui. Sed et plebs tua sancta. eiusdem christi filii tui domini dei nostri. tam beate passionis necnon et ab inferis resurrectionis sed et in celos gloriose ascensionis offerimus preclare maiestati tue de tuis donis ac datis.\nRetrahat brachia. et faciat tres cruces super sacrificium totum\nHosti✠am puram Hostiam san✠ctam. Hostiam im✠maculatam\n(supra hostiam panis)\nPanem san✠ctum vite eterne\n(supra calicem)\net calicem salutis perpetue.\nInclinet manus super sacrificium eleuans oculos sursum.",
+      "text_edition_id": "edition.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym",
+      "text_sha256": "f25dde5331c6ff4a8f1aaf7d3381d5250c9f3dac280f2e643a4a6ca3ebfac6b6",
+      "unit_id": "unit.paris-1481.canon.unde-et-memores",
+      "witness_id": "paris-1481-dupre-huym-pdf",
+      "witness_pages": [
+        [
+          181,
+          181
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "supra-quae"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+      "source_id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-supra-quae",
+      "source_locator": "Constituent unit 10/16 (anaphoras/canon-missae/supra-quae), normalized physical lines 32–32.",
+      "source_order": 10,
+      "text": "Supra que propicio. ac sereno vultu respicere digneris. et accepta habere sicuti accepta habere dignatus es munera pueri tui iusti abel. et sacrificium patriarche nostri abrahe. et quod tibi obtulit summus sacerdos tuus melchisedech sanctum sacrificium. imaculatam hostiam",
+      "text_edition_id": "edition.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym",
+      "text_sha256": "0858f2e90f9792db51b7c83c472b274d8bd5e8f099a0c4418aabe79e0a99de47",
+      "unit_id": "unit.paris-1481.canon.supra-quae",
+      "witness_id": "paris-1481-dupre-huym-pdf",
+      "witness_pages": [
+        [
+          181,
+          181
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "supplices"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+      "source_id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-supplices",
+      "source_locator": "Constituent unit 11/16 (anaphoras/canon-missae/supplices), normalized physical lines 33–38.",
+      "source_order": 11,
+      "text": "(Cancellatis manibus se inclinet versus sacrificium) dicens\nSupplices te rogamus omnipotens deus. iube hec perferri per manus sancti angeli tui in sublime altare tuum. in conspectu diuine maiestatis tue Et quequot ex hac altaris participatione\n(Eleuet se et osculetur altare)\nsacrosanctum filii tui cor✠pus. et san✠guinem sumpserimus omni benedictione celesti\n(Hic signet se)\n✠ et gratia repleamur Per eundem christum dominum nostrum. Amen",
+      "text_edition_id": "edition.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym",
+      "text_sha256": "4f78f5db18d3e4b584c7199c6af98afaa75bd37d354133d457e38aad4a818ee2",
+      "unit_id": "unit.paris-1481.canon.supplices",
+      "witness_id": "paris-1481-dupre-huym-pdf",
+      "witness_pages": [
+        [
+          181,
+          181
+        ],
+        [
+          182,
+          182
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "memento-defunctorum"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+      "source_id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-memento-defunctorum",
+      "source_locator": "Constituent unit 12/16 (anaphoras/canon-missae/memento-defunctorum), normalized physical lines 39–41.",
+      "source_order": 12,
+      "text": "Memento etiam domine famulorum famularumque tuarum qui nos precesserunt cum signo fidei. et dormiunt in somno pacis.\nReminiscatur defunctorum, eorum precipue pro quibus tenetur orare. Deinde dicat\nIpsis domine et omnibus in christo quiescentibus. loco refrigerii lucis et pacis vt indulgeas deprecamur Per eundem christum dominum nostrum. amen.",
+      "text_edition_id": "edition.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym",
+      "text_sha256": "8bc99eaffd6f95b2b9701d164d561228bc4598dc714bd343a15fad4c3a897aae",
+      "unit_id": "unit.paris-1481.canon.memento-defunctorum",
+      "witness_id": "paris-1481-dupre-huym-pdf",
+      "witness_pages": [
+        [
+          182,
+          182
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "nobis-quoque"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+      "source_id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-nobis-quoque",
+      "source_locator": "Constituent unit 13/16 (anaphoras/canon-missae/nobis-quoque), normalized physical lines 42–43.",
+      "source_order": 13,
+      "text": "Percutiat pectus semel vel ter dicens.\nNobis quoque peccatoribus famulis tuis de multitudine miserationum tuarum sperantibus partem aliquam. et societatem donare digneris. cum sanctis tuis apostolis et martyribus. Cum Iohanne. Stephano Mathia Barnaba. Ignacio: Alexandro. Marcellino Petro Felicitate Perpetua. Agatha Lucia Agnete Cecilia Anastasia Et cum omnibus sanctis tuis Intra quorum nos consortium non estimator meriti. sed venie quesumus largitor admitte Per ipsum dominum nostrum amen",
+      "text_edition_id": "edition.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym",
+      "text_sha256": "f3caa1cf10a92778d2788af812a5bcb68842f3abaa5e58286915752234ac2d00",
+      "unit_id": "unit.paris-1481.canon.nobis-quoque",
+      "witness_id": "paris-1481-dupre-huym-pdf",
+      "witness_pages": [
+        [
+          182,
+          182
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "per-quem"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+      "source_id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-per-quem",
+      "source_locator": "Constituent unit 14/16 (anaphoras/canon-missae/per-quem), normalized physical lines 44–46.",
+      "source_order": 14,
+      "text": "Per quem hec omnia domine semper bona creas Sancti✠ficas Viui✠ficas Bene✠dicis\nDetegat calicem et accipiat hostiam cum duobus digitis. et de ea faciat tres cruces supra calicem Deinde duas inter calicem et se. dicens\nEt prestas nobis.",
+      "text_edition_id": "edition.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym",
+      "text_sha256": "9bbc44ec632af5961a53f4c0a06f02e0c0ccc51c67d3ab5e575f0a1a58373f4b",
+      "unit_id": "unit.paris-1481.canon.per-quem",
+      "witness_id": "paris-1481-dupre-huym-pdf",
+      "witness_pages": [
+        [
+          182,
+          182
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "doxology-with-rubrics",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "per-ipsum"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+      "source_id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-per-ipsum",
+      "source_locator": "Constituent unit 15/16 (anaphoras/canon-missae/per-ipsum), normalized physical lines 47–48.",
+      "source_order": 15,
+      "text": "Per ✠ ipsum. Et cum ✠ ipso Et in ✠ ipso. est tibi deo patri ✠ omnipotenti in vnitate ✠ spiritus sancti omnis honor et gloria.\nTunc ostendat cum manu dextra. hostiam populo. Qua posita ante pedem calicis, cooperiat calicem de corporali. Et expansis manibus dicat.",
+      "text_edition_id": "edition.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym",
+      "text_sha256": "185c14d278ecb1508e8491cb298003b9f13dfe6a5c7983451cdaf5e1eb62b8c8",
+      "unit_id": "unit.paris-1481.canon.per-ipsum",
+      "witness_id": "paris-1481-dupre-huym-pdf",
+      "witness_pages": [
+        [
+          182,
+          182
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "notated-dialogue",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "concluding-response"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-checked-latin-e36b38ba",
+      "source_id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-concluding-response",
+      "source_locator": "Constituent unit 16/16 (anaphoras/canon-missae/concluding-response), normalized physical lines 49–49.",
+      "source_order": 16,
+      "text": "Per omnia secula seculorum. Amen.",
+      "text_edition_id": "edition.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym",
+      "text_sha256": "87f5c096a9eee737830e89c16c65a2233b79f2c3aa28655b1896e626dbd71dfb",
+      "unit_id": "unit.paris-1481.canon.concluding-response",
+      "witness_id": "paris-1481-dupre-huym-pdf",
+      "witness_pages": [
+        [
+          182,
+          182
+        ]
+      ]
+    }
+  ],
+  "witnesses": [
+    {
+      "artifact_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.ia-complete-pdf-619ed4e7",
+      "edition_id": "edition.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym",
+      "id": "paris-1481-dupre-huym-pdf",
+      "scope_pages": [
+        [
+          180,
+          182
+        ]
+      ]
+    }
+  ]
+}
