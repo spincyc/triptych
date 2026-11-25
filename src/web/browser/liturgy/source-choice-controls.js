@@ -21,6 +21,21 @@
     return request;
   }
 
+  function adaptProperChoiceRequest(state, group, option, adapt) {
+    const request = properChoiceRequest(state, group, option);
+    try {
+      adapt(request);
+    } catch (error) {
+      // A witness can belong solely to the prayer the reader just omitted.
+      if (!request.languages || !request.languages.translationWitness ||
+          error.message !== 'explicit translation witness selected no appointed text') throw error;
+      request.languages = Object.assign({}, request.languages);
+      delete request.languages.translationWitness;
+      adapt(request);
+    }
+    return request;
+  }
+
   function properChoiceRemovals(state, updates, removals) {
     const held = state || {};
     const identity = {
@@ -82,17 +97,17 @@
       radio.checked = selected === option.id;
       const optionName = T.titleCase(String(option.id).replace(/[-_]+/g, ' '));
       function candidate() {
-        const request = properChoiceRequest(input.state, event.id, option.id);
-        input.adapt(request);
-        return request;
+        return adaptProperChoiceRequest(input.state, event.id, option.id, input.adapt);
       }
       try { candidate(); } catch (_error) { radio.disabled = true; }
       radio.addEventListener('change', function () {
         if (!radio.checked || radio.disabled) return;
         let request;
         try { request = candidate(); } catch (_error) { return; }
-        input.navigate({ 'proper-choices': JSON.stringify(request.properChoices) },
-          ['alternative', '_candidate-alternative'], {
+        const removals = ['alternative', '_candidate-alternative'];
+        if (input.state.languages && input.state.languages.translationWitness &&
+            !request.languages.translationWitness) removals.push('translation-witness', '_candidate-translation-witness');
+        input.navigate({ 'proper-choices': JSON.stringify(request.properChoices) }, removals, {
             location: input.location, focus: input.focus
           });
       });
@@ -664,7 +679,7 @@
       reset: resetDateSurface, populate: populateDateSurface });
   }
 
-  return Object.freeze({ renderProperChoice: renderProperChoice,
+  return Object.freeze({ adaptProperChoiceRequest: adaptProperChoiceRequest, renderProperChoice: renderProperChoice,
     attachSourcePathChoices: attachSourcePathChoices, attachMemorialPrayers: attachMemorialPrayers,
     januaryPrayerChooser: januaryPrayerChooser, votiveChantChooser: votiveChantChooser,
     properChoiceRemovals: properChoiceRemovals, createDayDateControls: createDayDateControls });

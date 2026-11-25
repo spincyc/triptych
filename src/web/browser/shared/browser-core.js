@@ -1519,7 +1519,11 @@ window.Triptych = (function () {
     const units = [];
     function visit(event) {
       if (event.kind === 'proper-choice') {
-        (event.options || []).forEach(function (option) { (option.events || []).forEach(visit); });
+        (event.options || []).forEach(function (option) {
+          if (event.selection && event.selection.state === 'selected' &&
+              option.id !== event.selection.option) return;
+          (option.events || []).forEach(visit);
+        });
         return;
       }
       if (event.kind !== 'proper' || !event.selected || event.selected.kind === 'absent') return;

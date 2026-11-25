@@ -415,10 +415,26 @@ test('only the retained Propers visual oracle may omit the production Mass form 
   assert.throws(() => initialize(oracle, null, {}), /Mass form controls/);
 });
 
+test('changing the appointed prayer retires a witness only when its last text is omitted', () => {
+  const {adaptProperChoiceRequest} = require(path.join(uiModuleRoot, 'source-choice-controls.js'));
+  const state = {languages: {orations: 'en', translationWitness: 'project-created'}, properChoices: {another: 'held'}};
+  const omit = (adapt) => adaptProperChoiceRequest(state, 'prayer-over-the-people', 'omit', adapt);
+  const previous = clone(state);
+  const candidate = omit(next => {
+    if (next.languages.translationWitness) throw new Error('explicit translation witness selected no appointed text');
+  });
+  assert.deepEqual(candidate.languages, {orations: 'en'});
+  assert.deepEqual(candidate.properChoices, {another: 'held', 'prayer-over-the-people': 'omit'});
+  assert.deepEqual(state, previous);
+  assert.equal(omit(() => {}).languages.translationWitness, 'project-created');
+  assert.throws(() => omit(() => { throw new Error('inapplicable'); }), /inapplicable/);
+});
+
 test('dedicated CommonJS controls retain browser DOM, legacy migration, and disabled Day negatives', () => {
   const commonJS = require(path.join(uiModuleRoot, 'source-choice-controls.js'));
-  assert.deepEqual(Object.keys(commonJS).sort(), ['attachSourcePathChoices', 'createDayDateControls',
-    'properChoiceRemovals', 'renderProperChoice']);
+  assert.deepEqual(Object.keys(commonJS).sort(), ['adaptProperChoiceRequest', 'attachMemorialPrayers',
+    'attachSourcePathChoices', 'createDayDateControls', 'januaryPrayerChooser',
+    'properChoiceRemovals', 'renderProperChoice', 'votiveChantChooser']);
   function snapshot(node) {
     return {tag: node.tagName, className: node.className, dataset: {...node.dataset},
       attributes: {...node.attributes}, text: node.textContent, id: node.id || null,
