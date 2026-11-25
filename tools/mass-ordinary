@@ -4199,9 +4199,17 @@ def effective_ordinary_frame(mass: dict, form: dict | None, where: str) -> dict:
     return value
 
 
-def appointment_seating_required(propers: object, source_mass: dict | None = None) -> bool:
+def appointment_seating_required(
+    propers: object, source_mass: dict | None = None, *,
+    ordinary: dict | None = None, mass: str | None = None, form_id: str = "main",
+) -> bool:
     """New source appointments belong to the shared JavaScript owner."""
 
+    if ordinary and (ordinary.get("proper_rites") or any(
+        frame["mass"] == mass and frame["form_id"] == form_id
+        for frame in ordinary.get("special_mass_frames", [])
+    )):
+        return True
     if source_mass is not None and 'proper_source_paths' in source_mass:
         return True
     if not isinstance(propers, list):
@@ -4216,7 +4224,7 @@ def appointment_seating_required(propers: object, source_mass: dict | None = Non
         disposition = row.get('ordinary_disposition')
         if isinstance(disposition, dict) and (
             disposition.get('kind') == 'conditional'
-            or any(key in disposition for key in ('anchor', 'when', 'seat'))
+            or any(key in disposition for key in ('anchor', 'when', 'seat', 'omission_option'))
         ):
             return True
     return False
@@ -4309,7 +4317,7 @@ def check_form_seating(
     mass: str | None = None, form_id: str = 'main', facts: dict | None = None,
     source_mass: dict | None = None,
 ) -> None:
-    if ordinary.get("proper_rites") or appointment_seating_required(propers, source_mass):
+    if appointment_seating_required(propers, source_mass, ordinary=ordinary, mass=mass, form_id=form_id):
         form = {
             'mass': mass, 'form_id': form_id, 'where': where, 'full': full, 'propers': propers,
         }
@@ -4518,7 +4526,7 @@ def check_calendar_seating(ordinary: dict, propers_file: dict) -> dict:
             where = f"{calendar}/{key}/{form_id}"
             frame = effective_ordinary_frame(mass, form, where)
             full = frame["applicability"] == "full"
-            if ordinary.get("proper_rites") or appointment_seating_required(propers, mass):
+            if appointment_seating_required(propers, mass, ordinary=ordinary, mass=key, form_id=form_id):
                 appointment_form = {
                     'mass': key, 'form_id': form_id, 'where': where,
                     'full': full, 'propers': propers,

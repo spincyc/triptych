@@ -1141,6 +1141,16 @@ class OrdinaryTool(unittest.TestCase):
         cls.tool_module = importlib.util.module_from_spec(spec)
         loader.exec_module(cls.tool_module)
 
+    def test_special_mass_chants_and_optional_prayers_use_their_appointed_seats(self):
+        ordinary = json.loads((DATA / "postconciliar.json").read_text())
+        for key in ("presentation-lord", "ash-wednesday", "lent-1-saturday"):
+            with self.subTest(mass=key):
+                payload = PROPERS / "mass" / "postconciliar" / f"{key}.json"
+                propers = json.loads(payload.read_text())["mass"]["propers"]
+                self.tool_module.check_form_seating(
+                    ordinary, propers, key, mass=key, full=True,
+                )
+
     def test_hymns_depend_on_the_principal_1962_office_or_special_rite(self):
         tool = self.tool_module
         sources = ROOT / "src/sources"
