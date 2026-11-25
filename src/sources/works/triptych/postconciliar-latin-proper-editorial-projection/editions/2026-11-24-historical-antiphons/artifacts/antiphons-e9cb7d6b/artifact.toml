@@ -1,0 +1,19 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.triptych.postconciliar-latin-proper-editorial-projection.2026-11-24-historical-antiphons.antiphons-e9cb7d6b"
+edition_id = "edition.triptych.postconciliar-latin-proper-editorial-projection.2026-11-24-historical-antiphons"
+artifact_type = "editorial-projection"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "The Latin derives from the independently public-domain Clementine Vulgate and 1922 Tours Missal. The project authors the accompanying English study translations. Project contributions are released under CC BY 4.0."
+rights_jurisdiction = "United States"
+sha256 = "e9cb7d6b9d56e670c1a4024c3fe581ebba64654c158d419394557b47d2a2332d"
+byte_size = 22704
+retrieved = "2026-11-24"
+path = "src/sources/works/triptych/postconciliar-latin-proper-editorial-projection/editions/2026-11-24-historical-antiphons/artifacts/antiphons-e9cb7d6b/antiphons.tsv"
+encoding = "utf-8"
+indexable = true
+projected_from = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-21-psalms-d20e21f8", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-27-isaias-0eb1c68d", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-29-lamentations-11a9ada3", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-44-malachias-8fc54627", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-47-matthew-2d02758d", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-49-luke-28ae5d9a", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-50-john-1542486b", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-51-acts-d47f5064", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-54-2-corinthians-3f55ae7b", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-55-galatians-000c0a2a", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-57-philippians-6a713d52", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-67-1-peter-7398fdf6", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-69-1-john-a1189392", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-73-apocalypse-8f990cb5"]
+provenance = "Each Latin span has a separate registered historical passage, and each appointment an independent 2002 page comparison. English is a new study translation of the historical Latin."
+transformation = "Extract only the contiguous historical words in scope. Normalize whitespace, initial capitalization, final pointing and the printed chant accents. Do not supply a missing word or expand a biblical verse."

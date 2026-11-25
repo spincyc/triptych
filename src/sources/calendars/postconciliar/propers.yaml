@@ -919,7 +919,9 @@ sections:
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Communion Antiphon
         incipit: Dominus dabit benignitatem
-        source: scripture
+        source: mixed
+        text: "Dominus dabit benignitatem, et terra nostra dabit fructum suum."
+        notes: "Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
         verses:
         - book: Psalms
           ranges:
@@ -1845,7 +1847,8 @@ sections:
       season: advent
       propers:
       - name: Entrance Antiphon
-        source: scripture
+        source: mixed
+        text: "Ecce Dominus veniet, et omnes sancti ejus cum eo: et erit in die illa lux magna."
         verses:
         - book: Zechariah
           ranges:
@@ -1862,12 +1865,7 @@ sections:
               chapter: 14
               verse: 7
           ref: Zechariah 14:5, 7
-        notes: Source appointment antiphonary:advent-1-tuesday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary,
-          artifact page 11 / printed page 3, in the 2026-10-20/21 image audit. The printed citation cue is retained as
-          structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
-          English body, exact target-2008 Latin body, or publication permission is supplied. This is the Advent weekday
-          formulary before 17 December; the 17-24 December appointments belong to separate date formularies. The printed
-          Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon.
+        notes: "Source appointment antiphonary:advent-1-tuesday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 11 / printed page 3, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. The 2010 source establishes this appointment and citation. This is the Advent weekday formulary before 17 December; the 17-24 December appointments belong to separate date formularies. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Collect
         source: composed
         text_status:
@@ -2548,7 +2546,8 @@ sections:
       season: advent
       propers:
       - name: Entrance Antiphon
-        source: scripture
+        source: mixed
+        text: "Ecce Dominus veniet, et omnes sancti ejus cum eo: et erit in die illa lux magna."
         verses:
         - book: Zechariah
           ranges:
@@ -2565,12 +2564,7 @@ sections:
               chapter: 14
               verse: 7
           ref: Zechariah 14:5, 7
-        notes: Source appointment antiphonary:advent-2-tuesday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary,
-          artifact page 13 / printed page 5, in the 2026-10-20/21 image audit. The printed citation cue is retained as
-          structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
-          English body, exact target-2008 Latin body, or publication permission is supplied. This is the Advent weekday
-          formulary before 17 December; the 17-24 December appointments belong to separate date formularies. The printed
-          Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon.
+        notes: "Source appointment antiphonary:advent-2-tuesday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 13 / printed page 5, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. The 2010 source establishes this appointment and citation. This is the Advent weekday formulary before 17 December; the 17-24 December appointments belong to separate date formularies. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Collect
         source: composed
         text_status:
@@ -3273,7 +3267,8 @@ sections:
       season: advent
       propers:
       - name: Entrance Antiphon
-        source: scripture
+        source: mixed
+        text: "Ecce Dominus veniet, et omnes sancti ejus cum eo: et erit in die illa lux magna."
         verses:
         - book: Zechariah
           ranges:
@@ -3290,12 +3285,7 @@ sections:
               chapter: 14
               verse: 7
           ref: Zechariah 14:5, 7
-        notes: Source appointment antiphonary:advent-3-tuesday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary,
-          artifact page 15 / printed page 7, in the 2026-10-20/21 image audit. The printed citation cue is retained as
-          structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
-          English body, exact target-2008 Latin body, or publication permission is supplied. This is the Advent weekday
-          formulary before 17 December; the 17-24 December appointments belong to separate date formularies. The printed
-          Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon.
+        notes: "Source appointment antiphonary:advent-3-tuesday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 15 / printed page 7, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. The 2010 source establishes this appointment and citation. This is the Advent weekday formulary before 17 December; the 17-24 December appointments belong to separate date formularies. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Collect
         source: composed
         text_status:
@@ -3894,7 +3884,8 @@ sections:
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-gla-3e228020
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/gla.htm#e0 (Die 18 decembris); Prayer over the Offerings. The separately registered 2002 digital Missal confirms the prayer at artifact page 98. Correspondence with the 2008 reprint remains unverified."
       - name: Communion Antiphon
-        source: scripture
+        source: mixed
+        text: "Vocabunt nomen ejus Emmanuel, quod est interpretatum Nobiscum Deus."
         verses:
         - book: Matthew
           ranges:
@@ -3905,10 +3896,7 @@ sections:
               chapter: 1
               verse: 23
           ref: Matthew 1:23
-        notes: Source appointment antiphonary:advent-december-18|main|C|1 was checked in the held registered ICEL 2010
-          Antiphonary, artifact page 17 / printed page 9, in the 2026-10-20/21 image audit. The printed citation cue is
-          retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording,
-          full approved English body, exact target-2008 Latin body, or publication permission is supplied.
+        notes: "Source appointment antiphonary:advent-december-18|main|C|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 17 / printed page 9, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. The 2010 source establishes this appointment and citation. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Prayer after Communion
         source: composed
         text_status:
@@ -4263,7 +4251,8 @@ sections:
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-gla-3e228020
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/gla.htm#e3 (Die 21 decembris); Prayer over the Offerings. The separately registered 2002 digital Missal confirms the prayer at artifact page 100. Correspondence with the 2008 reprint remains unverified."
       - name: Communion Antiphon
-        source: scripture
+        source: mixed
+        text: "Beata, quæ credidisti, quoniam perficientur ea, quæ dicta sunt tibi a Domino."
         verses:
         - book: Luke
           ranges:
@@ -4274,10 +4263,7 @@ sections:
               chapter: 1
               verse: 45
           ref: Luke 1:45
-        notes: Source appointment antiphonary:advent-december-21|main|C|1 was checked in the held registered ICEL 2010
-          Antiphonary, artifact page 18 / printed page 10, in the 2026-10-20/21 image audit. The printed citation cue
-          is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording,
-          full approved English body, exact target-2008 Latin body, or publication permission is supplied.
+        notes: "Source appointment antiphonary:advent-december-21|main|C|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 18 / printed page 10, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. The 2010 source establishes this appointment and citation. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Prayer after Communion
         source: composed
         text_status:
@@ -4624,7 +4610,8 @@ sections:
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-gla-3e228020
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/gla.htm#fa (Die 24 decembris); Prayer over the Offerings. The separately registered 2002 digital Missal confirms the prayer at artifact page 103. Correspondence with the 2008 reprint remains unverified."
       - name: Communion Antiphon
-        source: scripture
+        source: mixed
+        text: "Benedictus Dominus Deus Israël, quia visitavit, et fecit redemptionem plebis suæ."
         verses:
         - book: Luke
           ranges:
@@ -4635,11 +4622,7 @@ sections:
               chapter: 1
               verse: 68
           ref: Luke 1:68
-        notes: Source appointment antiphonary:advent-december-24|main|C|1 was checked in the held registered ICEL 2010
-          Antiphonary, artifact page 19 / printed page 11, in the 2026-10-20/21 image audit. The printed citation cue
-          is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording,
-          full approved English body, exact target-2008 Latin body, or publication permission is supplied. This is the
-          morning Mass of 24 December; the Nativity Vigil is a separate formulary.
+        notes: "Source appointment antiphonary:advent-december-24|main|C|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 19 / printed page 11, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. The 2010 source establishes this appointment and citation. This is the morning Mass of 24 December; the Nativity Vigil is a separate formulary. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Prayer after Communion
         source: composed
         text_status:
@@ -4799,7 +4782,9 @@ sections:
             option: psalm-2-7
             basis: "The Missal appoints this antiphon as an alternative (Vel) to the entrance antiphon."
           incipit: Dominus dixit ad me
-          source: scripture
+          source: mixed
+          text: "Dominus dixit ad me: Filius meus es tu; ego hodie genui te."
+          notes: "Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
           verses:
           - book: Psalms
             ranges:
@@ -7333,7 +7318,8 @@ sections:
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-gla-3e228020
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/gla.htm#fh (Die 30 decembris); Prayer over the Offerings. The separately registered 2002 digital Missal confirms the prayer at artifact page 109. Correspondence with the 2008 reprint remains unverified."
       - name: Communion Antiphon
-        source: scripture
+        source: mixed
+        text: "De plenitudine ejus nos omnes accepimus, et gratiam pro gratia."
         verses:
         - book: John
           ranges:
@@ -7344,11 +7330,7 @@ sections:
               chapter: 1
               verse: 16
           ref: John 1:16
-        notes: Source appointment antiphonary:christmas-december-30|main|C|1 was checked in the held registered ICEL 2010
-          Antiphonary, artifact page 22 / printed page 14, in the 2026-10-20/21 image audit. The printed citation cue
-          is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording,
-          full approved English body, exact target-2008 Latin body, or publication permission is supplied. The source
-          prints this weekday pair separately from the Holy Family fallback; no fallback reuse is supplied.
+        notes: "Source appointment antiphonary:christmas-december-30|main|C|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 22 / printed page 14, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. The 2010 source establishes this appointment and citation. The source prints this weekday pair separately from the Holy Family fallback; no fallback reuse is supplied. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Prayer after Communion
         source: composed
         text: "Deus, qui nos sacramenti tui participatione contingis, virtutis eius effectus in nostris cordibus operare, ut suscipiendo muneri tuo per ipsum munus aptemur. Per Christum."
@@ -7678,7 +7660,9 @@ sections:
           option: matthew-4-4
           basis: "Appointed as an alternative to the preceding Communion Antiphon."
         incipit: Non in solo pane vivit homo
-        source: scripture
+        source: mixed
+        text: "Non in solo pane vivit homo, sed in omni verbo, quod procedit de ore Dei."
+        notes: "Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
         verses:
         - book: Matthew
           ranges:
@@ -7692,14 +7676,15 @@ sections:
           option: psalm-91-4
           basis: "Appointed as an alternative to the preceding Communion Antiphon."
         incipit: Scapulis suis obumbrabit tibi Dominus
-        source: scripture
+        source: mixed
+        text: "Scapulis suis obumbrabit tibi Dominus, et sub pennis ejus sperabis."
         verses:
         - book: Psalms
           ranges:
           - begin: {chapter: 91, verse: 4}
             end: {chapter: 91, verse: 4}
           ref: Psalm 91:4
-        notes: Appointed as an alternative to the preceding Communion Antiphon.
+        notes: "Appointed as an alternative to the preceding Communion Antiphon. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Prayer after Communion
         incipit: Caelesti pane refecti
         source: composed
@@ -7943,7 +7928,9 @@ sections:
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Communion Antiphon
         incipit: Hic est Filius meus dilectus
-        source: scripture
+        source: mixed
+        text: "Hic est Filius meus dilectus, in quo mihi bene complacui: ipsum audite."
+        notes: "Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
         verses:
         - book: Matthew
           ranges:
@@ -9230,14 +9217,15 @@ sections:
           option: prodigal-son-gospel
           basis: "Used when the Gospel of the man born blind is read. Used when the Gospel of the prodigal son is read. Used when another Gospel is read."
         incipit: Oportet te, fili, gaudere
-        source: scripture
+        source: mixed
+        text: "Oportet te, fili, gaudere, quia frater tuus mortuus fuerat, et revixit: perierat, et inventus est."
         verses:
         - book: Luke
           ranges:
           - begin: {chapter: 15, verse: 32}
             end: {chapter: 15, verse: 32}
           ref: Luke 15:32
-        notes: Used when the Gospel of the prodigal son is read.
+        notes: "Used when the Gospel of the prodigal son is read. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Communion Antiphon
         ordinary_disposition:
           kind: alternative
@@ -11405,7 +11393,8 @@ sections:
       season: lent
       propers:
       - name: Entrance Antiphon
-        source: scripture
+        source: mixed
+        text: "Illumina oculos meos, ne umquam obdormiam in morte; nequando dicat inimicus meus: Prævalui adversus eum."
         psalm_numbering: vulgate
         verses:
         - book: Psalms
@@ -11417,11 +11406,7 @@ sections:
               chapter: 12
               verse: 5
           ref: Psalm 12:4-5
-        notes: Source appointment antiphonary:lent-2-tuesday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary,
-          artifact page 31 / printed page 23, in the 2026-10-20/21 image audit. The printed citation cue is retained as
-          structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
-          English body, exact target-2008 Latin body, or publication permission is supplied. The printed Cf. is a comparison
-          cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon.
+        notes: "Source appointment antiphonary:lent-2-tuesday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 31 / printed page 23, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. The 2010 source establishes this appointment and citation. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Collect
         source: composed
         text: "Custodi, Domine, quaesumus, Ecclesiam tuam propitiatione perpetua: et quia sine te labitur humana mortalitas; tuis semper auxiliis et abstrahatur a noxiis, et ad salutaria dirigatur. Per Dominum."
@@ -11477,7 +11462,8 @@ sections:
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glc-fac73952
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#gf (DOMINICA II IN QUADRAGESIMA / Feria tertia); Prayer over the Offerings. The separately registered 2002 digital Missal confirms the prayer at artifact page 137. Correspondence with the 2008 reprint remains unverified."
       - name: Communion Antiphon
-        source: scripture
+        source: mixed
+        text: "Narrabo omnia mirabilia tua. Lætabor et exsultabo in te; psallam nomini tuo, Altissime."
         psalm_numbering: vulgate
         verses:
         - book: Psalms
@@ -11489,10 +11475,7 @@ sections:
               chapter: 9
               verse: 3
           ref: Psalm 9:2-3
-        notes: Source appointment antiphonary:lent-2-tuesday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary,
-          artifact page 31 / printed page 23, in the 2026-10-20/21 image audit. The printed citation cue is retained as
-          structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
-          English body, exact target-2008 Latin body, or publication permission is supplied.
+        notes: "Source appointment antiphonary:lent-2-tuesday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 31 / printed page 23, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. The 2010 source establishes this appointment and citation. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Prayer after Communion
         source: composed
         text_status:
@@ -11611,7 +11594,8 @@ sections:
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glc-fac73952
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#gg (DOMINICA II IN QUADRAGESIMA / Feria quarta); Prayer over the Offerings. The separately registered 2002 digital Missal confirms the prayer at artifact page 138. Correspondence with the 2008 reprint remains unverified."
       - name: Communion Antiphon
-        source: scripture
+        source: mixed
+        text: "Filius hominis non venit ministrari, sed ministrare, et dare animam suam redemptionem pro multis."
         verses:
         - book: Matthew
           ranges:
@@ -11622,10 +11606,7 @@ sections:
               chapter: 20
               verse: 28
           ref: Matthew 20:28
-        notes: Source appointment antiphonary:lent-2-wednesday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary,
-          artifact page 32 / printed page 24, in the 2026-10-20/21 image audit. The printed citation cue is retained as
-          structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
-          English body, exact target-2008 Latin body, or publication permission is supplied.
+        notes: "Source appointment antiphonary:lent-2-wednesday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 32 / printed page 24, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. The 2010 source establishes this appointment and citation. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Prayer after Communion
         source: composed
         text_status:
@@ -11741,7 +11722,8 @@ sections:
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glc-fac73952
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#gh (DOMINICA II IN QUADRAGESIMA / Feria quinta); Prayer over the Offerings. The separately registered 2002 digital Missal confirms the prayer at artifact page 139. Correspondence with the 2008 reprint remains unverified."
       - name: Communion Antiphon
-        source: scripture
+        source: mixed
+        text: "Beati immaculati in via, qui ambulant in lege Domini."
         psalm_numbering: vulgate
         verses:
         - book: Psalms
@@ -11753,10 +11735,7 @@ sections:
               chapter: 118
               verse: 1
           ref: Psalm 118:1
-        notes: Source appointment antiphonary:lent-2-thursday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary,
-          artifact page 32 / printed page 24, in the 2026-10-20/21 image audit. The printed citation cue is retained as
-          structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
-          English body, exact target-2008 Latin body, or publication permission is supplied.
+        notes: "Source appointment antiphonary:lent-2-thursday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 32 / printed page 24, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. The 2010 source establishes this appointment and citation. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Prayer after Communion
         source: composed
         text: "Haec in nobis sacrificia, Deus, et actione permaneant, et operatione firmentur. Per Christum."
@@ -11934,7 +11913,8 @@ sections:
       season: lent
       propers:
       - name: Entrance Antiphon
-        source: scripture
+        source: mixed
+        text: "Miserator et misericors Dominus: patiens, et multum misericors. Suavis Dominus universis, et miserationes ejus super omnia opera ejus."
         psalm_numbering: vulgate
         verses:
         - book: Psalms
@@ -11946,10 +11926,7 @@ sections:
               chapter: 144
               verse: 9
           ref: Psalm 144:8-9
-        notes: Source appointment antiphonary:lent-2-saturday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary,
-          artifact page 32 / printed page 24, in the 2026-10-20/21 image audit. The printed citation cue is retained as
-          structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
-          English body, exact target-2008 Latin body, or publication permission is supplied.
+        notes: "Source appointment antiphonary:lent-2-saturday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 32 / printed page 24, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. The 2010 source establishes this appointment and citation. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Collect
         source: composed
         text_status:
@@ -12169,7 +12146,8 @@ sections:
               cycle: 'all'
       propers:
       - name: Entrance Antiphon
-        source: scripture
+        source: mixed
+        text: "Concupiscit, et deficit anima mea in atria Domini; cor meum et caro mea exsultaverunt in Deum vivum."
         psalm_numbering: vulgate
         verses:
         - book: Psalms
@@ -12181,10 +12159,7 @@ sections:
               chapter: 83
               verse: 3
           ref: Psalm 83:3
-        notes: Source appointment antiphonary:lent-3-monday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary,
-          artifact page 33 / printed page 25, in the 2026-10-20/21 image audit. The printed citation cue is retained as
-          structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
-          English body, exact target-2008 Latin body, or publication permission is supplied.
+        notes: "Source appointment antiphonary:lent-3-monday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 33 / printed page 25, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. The 2010 source establishes this appointment and citation. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Collect
         source: composed
         text: "Ecclesiam tuam, Domine, miseratio continuata mundet et muniat: et quia sine te non potest salva consistere; tuo semper munere gubernetur. Per Dominum."
@@ -12799,7 +12774,8 @@ sections:
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glc-fac73952
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#gm (DOMINICA III IN QUADRAGESIMA / Feria tertia); Prayer over the Offerings. The separately registered 2002 digital Missal confirms the prayer at artifact page 144. Correspondence with the 2008 reprint remains unverified."
       - name: Communion Antiphon
-        source: scripture
+        source: mixed
+        text: "Domine, quis habitabit in tabernaculo tuo? aut quis requiescet in monte sancto tuo? Qui ingreditur sine macula, et operatur justitiam."
         psalm_numbering: vulgate
         verses:
         - book: Psalms
@@ -12811,11 +12787,7 @@ sections:
               chapter: 14
               verse: 2
           ref: Psalm 14:1-2
-        notes: Source appointment antiphonary:lent-3-tuesday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary,
-          artifact page 34 / printed page 26, in the 2026-10-20/21 image audit. The printed citation cue is retained as
-          structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
-          English body, exact target-2008 Latin body, or publication permission is supplied. The printed Cf. is a comparison
-          cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon.
+        notes: "Source appointment antiphonary:lent-3-tuesday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 34 / printed page 26, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. The 2010 source establishes this appointment and citation. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Prayer after Communion
         source: composed
         text: "Vivificet nos, quaesumus, Domine, huius participatio sancta mysterii: et pariter nobis expiationem tribuat, et munimen. Per Christum."
@@ -12954,7 +12926,8 @@ sections:
               cycle: 'all'
       propers:
       - name: Entrance Antiphon
-        source: scripture
+        source: mixed
+        text: "Gressus meos dirige secundum eloquium tuum, et non dominetur mei omnis injustitia."
         psalm_numbering: vulgate
         verses:
         - book: Psalms
@@ -12966,11 +12939,7 @@ sections:
               chapter: 118
               verse: 133
           ref: Psalm 118:133
-        notes: Source appointment antiphonary:lent-3-wednesday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary,
-          artifact page 34 / printed page 26, in the 2026-10-20/21 image audit. The printed citation cue is retained as
-          structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
-          English body, exact target-2008 Latin body, or publication permission is supplied. The printed Cf. is a comparison
-          cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon.
+        notes: "Source appointment antiphonary:lent-3-wednesday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 34 / printed page 26, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. The 2010 source establishes this appointment and citation. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Collect
         source: composed
         text_status:
@@ -13476,7 +13445,8 @@ sections:
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glc-fac73952
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#go (DOMINICA III IN QUADRAGESIMA / Feria quinta); Prayer over the Offerings. The separately registered 2002 digital Missal confirms the prayer at artifact page 146. Correspondence with the 2008 reprint remains unverified."
       - name: Communion Antiphon
-        source: scripture
+        source: mixed
+        text: "Tu mandasti mandata tua custodiri nimis. Utinam dirigantur viæ meæ ad custodiendas justificationes tuas."
         psalm_numbering: vulgate
         verses:
         - book: Psalms
@@ -13488,10 +13458,7 @@ sections:
               chapter: 118
               verse: 5
           ref: Psalm 118:4-5
-        notes: Source appointment antiphonary:lent-3-thursday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary,
-          artifact page 34 / printed page 26, in the 2026-10-20/21 image audit. The printed citation cue is retained as
-          structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
-          English body, exact target-2008 Latin body, or publication permission is supplied.
+        notes: "Source appointment antiphonary:lent-3-thursday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 34 / printed page 26, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. The 2010 source establishes this appointment and citation. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Prayer after Communion
         source: composed
         text_status:
@@ -14024,7 +13991,8 @@ sections:
               cycle: 'all'
       propers:
       - name: Entrance Antiphon
-        source: scripture
+        source: mixed
+        text: "Benedic, anima mea, Domino, et noli oblivisci omnes retributiones ejus. Qui propitiatur omnibus iniquitatibus tuis."
         psalm_numbering: vulgate
         verses:
         - book: Psalms
@@ -14036,10 +14004,7 @@ sections:
               chapter: 102
               verse: 3
           ref: Psalm 102:2-3
-        notes: Source appointment antiphonary:lent-3-saturday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary,
-          artifact page 34 / printed page 26, in the 2026-10-20/21 image audit. The printed citation cue is retained as
-          structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
-          English body, exact target-2008 Latin body, or publication permission is supplied.
+        notes: "Source appointment antiphonary:lent-3-saturday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 34 / printed page 26, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. The 2010 source establishes this appointment and citation. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Collect
         source: composed
         text_status:
@@ -14998,7 +14963,8 @@ sections:
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glc-fac73952
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#gt (DOMINICA IV IN QUADRAGESIMA / Feria tertia); Prayer over the Offerings. The separately registered 2002 digital Missal confirms the prayer at artifact page 152. Correspondence with the 2008 reprint remains unverified."
       - name: Communion Antiphon
-        source: scripture
+        source: mixed
+        text: "Dominus regit me, et nihil mihi deerit: in loco pascuæ, ibi me collocavit. Super aquam refectionis educavit me."
         psalm_numbering: vulgate
         verses:
         - book: Psalms
@@ -15010,11 +14976,7 @@ sections:
               chapter: 22
               verse: 2
           ref: Psalm 22:1-2
-        notes: Source appointment antiphonary:lent-4-tuesday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary,
-          artifact page 35 / printed page 27, in the 2026-10-20/21 image audit. The printed citation cue is retained as
-          structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
-          English body, exact target-2008 Latin body, or publication permission is supplied. The printed Cf. is a comparison
-          cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon.
+        notes: "Source appointment antiphonary:lent-4-tuesday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 35 / printed page 27, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. The 2010 source establishes this appointment and citation. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Prayer after Communion
         source: composed
         text: "Purifica, quaesumus, Domine, mentes nostras benignus, et renova caelestibus sacramentis: ut consequenter et corporum praesens pariter et futurum capiamus auxilium. Per Christum."
@@ -15155,7 +15117,8 @@ sections:
               cycle: 'all'
       propers:
       - name: Entrance Antiphon
-        source: scripture
+        source: mixed
+        text: "Ego vero orationem meam ad te, Domine; tempus beneplaciti, Deus. In multitudine misericordiæ tuæ, exaudi me in veritate salutis tuæ."
         psalm_numbering: vulgate
         verses:
         - book: Psalms
@@ -15167,10 +15130,7 @@ sections:
               chapter: 68
               verse: 14
           ref: Psalm 68:14
-        notes: Source appointment antiphonary:lent-4-wednesday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary,
-          artifact page 36 / printed page 28, in the 2026-10-20/21 image audit. The printed citation cue is retained as
-          structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
-          English body, exact target-2008 Latin body, or publication permission is supplied.
+        notes: "Source appointment antiphonary:lent-4-wednesday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 36 / printed page 28, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. The 2010 source establishes this appointment and citation. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Collect
         source: composed
         text_status:
@@ -19909,7 +19869,8 @@ sections:
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-gld-3e0e3f14
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/gld.htm#hd (FERIA II HEBDOMADAE SANCTAE); Prayer over the Offerings. The separately registered 2002 digital Missal confirms the prayer at artifact page 175. Correspondence with the 2008 reprint remains unverified."
       - name: Communion Antiphon
-        source: scripture
+        source: mixed
+        text: "Non avertas faciem tuam a me: in quacumque die tribulor, inclina ad me aurem tuam; in quacumque die invocavero te, velociter exaudi me."
         psalm_numbering: vulgate
         verses:
         - book: Psalms
@@ -19921,11 +19882,7 @@ sections:
               chapter: 101
               verse: 3
           ref: Psalm 101:3
-        notes: Source appointment antiphonary:holy-monday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary,
-          artifact page 45 / printed page 37, in the 2026-10-20/21 image audit. The printed citation cue is retained as
-          structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
-          English body, exact target-2008 Latin body, or publication permission is supplied. The printed Cf. is a comparison
-          cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon.
+        notes: "Source appointment antiphonary:holy-monday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 45 / printed page 37, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. The 2010 source establishes this appointment and citation. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Prayer after Communion
         source: composed
         text_status:
@@ -20206,7 +20163,8 @@ sections:
           https://www.clerus.org/bibliaclerusonline/en/gld.htm#hf. The two digital witnesses agree on this appointment. Correspondence
           with the whole 2008 reprint remains unverified.
       - name: Communion Antiphon
-        source: scripture
+        source: mixed
+        text: "Filius hominis non venit ministrari, sed ministrare, et dare animam suam redemptionem pro multis."
         verses:
         - book: Matthew
           ranges:
@@ -20217,10 +20175,7 @@ sections:
               chapter: 20
               verse: 28
           ref: Matthew 20:28
-        notes: Source appointment antiphonary:holy-wednesday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary,
-          artifact page 45 / printed page 37, in the 2026-10-20/21 image audit. The printed citation cue is retained as
-          structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
-          English body, exact target-2008 Latin body, or publication permission is supplied.
+        notes: "Source appointment antiphonary:holy-wednesday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 45 / printed page 37, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. The 2010 source establishes this appointment and citation. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Prayer after Communion
         source: composed
         text: "Largire sensibus nostris, omnipotens Deus: ut, per temporalem Filii tui mortem, quam mysteria veneranda testantur, vitam te nobis dedisse perpetuam confidamus. Per Christum."
@@ -24291,7 +24246,9 @@ sections:
               source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
         - name: Communion Antiphon
           incipit: Repleti sunt omnes Spiritu Sancto
-          source: scripture
+          source: mixed
+          text: "Repleti sunt omnes Spiritu Sancto, loquentes magnalia Dei, alleluja."
+          notes: "Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
           verses:
           - book: Acts
             ranges:
@@ -30505,7 +30462,9 @@ sections:
       propers:
       - name: Entrance Antiphon
         incipit: Salvos nos fac
-        source: scripture
+        source: mixed
+        text: "Salvos nos fac, Domine Deus noster, et congrega nos de nationibus: ut confiteamur nomini sancto tuo, et gloriemur in laude tua."
+        notes: "Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
         verses:
         - book: Psalms
           ranges:
@@ -30719,15 +30678,15 @@ sections:
           basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
             rubric 6 lets one or the other be chosen.'
         incipit: Beati pauperes spiritu
-        source: scripture
+        source: mixed
+        text: "Beati pauperes spiritu: quoniam ipsorum est regnum cælorum. Beati mites: quoniam ipsi possidebunt terram."
         verses:
         - book: Matthew
           ranges:
           - begin: {chapter: 5, verse: 3}
             end: {chapter: 5, verse: 4}
           ref: Matthew 5:3-4
-        notes: Second of the two communion antiphons given; either may be chosen, preferring the
-          one that accords with the Gospel of the Mass.
+        notes: "Second of the two communion antiphons given; either may be chosen, preferring the one that accords with the Gospel of the Mass. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Prayer after Communion
         incipit: Redemptionis nostrae munere vegetati
         source: composed
@@ -30960,15 +30919,15 @@ sections:
           basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
             rubric 6 lets one or the other be chosen.'
         incipit: Beati qui lugent
-        source: scripture
+        source: mixed
+        text: "Beati qui lugent: quoniam ipsi consolabuntur. Beati qui esuriunt et sitiunt justitiam: quoniam ipsi saturabuntur."
         verses:
         - book: Matthew
           ranges:
           - begin: {chapter: 5, verse: 5}
             end: {chapter: 5, verse: 6}
           ref: Matthew 5:5-6
-        notes: Second of the two communion antiphons given; either may be chosen, preferring the
-          one that accords with the Gospel of the Mass.
+        notes: "Second of the two communion antiphons given; either may be chosen, preferring the one that accords with the Gospel of the Mass. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Prayer after Communion
         incipit: Deus, qui nos de uno pane
         source: composed
@@ -31204,7 +31163,9 @@ sections:
             rubric 6 lets one or the other be chosen.'
         psalm_numbering: vulgate
         incipit: Manducaverunt, et saturati sunt nimis
-        source: scripture
+        source: mixed
+        text: "Manducaverunt, et saturati sunt nimis, et desiderium eorum attulit eis Dominus: non sunt fraudati a desiderio suo."
+        notes: "Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
         verses:
         - book: Psalms
           ranges:
@@ -31489,7 +31450,9 @@ sections:
       - name: Entrance Antiphon
         psalm_numbering: vulgate
         incipit: Factus est Dominus protector meus
-        source: scripture
+        source: mixed
+        text: "Factus est Dominus protector meus. Et eduxit me in latitudinem; salvum me fecit, quoniam voluit me."
+        notes: "Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
         verses:
         - book: Psalms
           ranges:
@@ -31664,7 +31627,9 @@ sections:
           basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
             rubric 6 lets one or the other be chosen.'
         incipit: Cantabo Domino, qui bona tribuit mihi
-        source: scripture
+        source: mixed
+        text: "Cantabo Domino qui bona tribuit mihi; et psallam nomini Domini altissimi."
+        notes: "Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
         psalm_numbering: vulgate
         verses:
         - book: Psalms
@@ -32141,7 +32106,9 @@ sections:
           basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
             rubric 6 lets one or the other be chosen.'
         incipit: Dominus firmamentum meum
-        source: scripture
+        source: mixed
+        text: "Dominus firmamentum meum, et refugium meum, et liberator meus. Deus meus adjutor meus."
+        notes: "Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
         psalm_numbering: vulgate
         verses:
         - book: Psalms
@@ -32157,14 +32124,15 @@ sections:
           basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
             rubric 6 lets one or the other be chosen.'
         incipit: Deus caritas est
-        source: scripture
+        source: mixed
+        text: "Deus caritas est: et qui manet in caritate, in Deo manet, et Deus in eo."
         verses:
         - book: 1 John
           ranges:
           - begin: {chapter: 4, verse: 16}
             end: {chapter: 4, verse: 16}
           ref: 1 John 4:16
-        notes: Alternative communion antiphon, printed in the Missal after "Vel".
+        notes: "Alternative communion antiphon, printed in the Missal after \"Vel\". Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Prayer after Communion
         incipit: Tua nos, Domine, medicinalis operatio
         source: composed
@@ -32652,7 +32620,9 @@ sections:
       propers:
       - name: Entrance Antiphon
         incipit: Omnes gentes, plaudite manibus
-        source: scripture
+        source: mixed
+        text: "Omnes gentes, plaudite manibus; jubilate Deo in voce exsultationis."
+        notes: "Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
         psalm_numbering: vulgate
         verses:
         - book: Psalms
@@ -33111,7 +33081,9 @@ sections:
           basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
             rubric 6 lets one or the other be chosen.'
         incipit: Gustate et videte quoniam suavis est Dominus
-        source: scripture
+        source: mixed
+        text: "Gustate et videte quoniam suavis est Dominus; beatus vir qui sperat in eo."
+        notes: "Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
         verses:
         - book: Psalms
           ranges:
@@ -33664,7 +33636,9 @@ sections:
           basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
             rubric 6 lets one or the other be chosen.'
         incipit: Memoriam fecit mirabilium suorum
-        source: scripture
+        source: mixed
+        text: "Memoriam fecit mirabilium suorum, misericors et miserator Dominus. Escam dedit timentibus se."
+        notes: "Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
         verses:
         - book: Psalms
           ranges:
@@ -33913,7 +33887,9 @@ sections:
           basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
             rubric 6 lets one or the other be chosen.'
         incipit: Benedic, anima mea, Domino
-        source: scripture
+        source: mixed
+        text: "Benedic, anima mea, Domino, et noli oblivisci omnes retributiones ejus."
+        notes: "Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
         verses:
         - book: Psalms
           ranges:
@@ -33928,14 +33904,15 @@ sections:
           basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
             rubric 6 lets one or the other be chosen.'
         incipit: Beati misericordes, quoniam ipsi misericordiam consequentur
-        source: scripture
+        source: mixed
+        text: "Beati misericordes: quoniam ipsi misericordiam consequentur. Beati mundo corde: quoniam ipsi Deum videbunt."
         verses:
         - book: Matthew
           ranges:
           - begin: {chapter: 5, verse: 7}
             end: {chapter: 5, verse: 8}
           ref: Matthew 5:7-8
-        notes: Alternative communion antiphon appointed by the Missal.
+        notes: "Alternative communion antiphon appointed by the Missal. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Prayer after Communion
         incipit: Sumpsimus, Domine, divinum sacramentum
         source: composed
@@ -34484,7 +34461,9 @@ sections:
       propers:
       - name: Entrance Antiphon
         incipit: Protector noster, aspice, Deus
-        source: scripture
+        source: mixed
+        text: "Protector noster, aspice, Deus, et respice in faciem christi tui. Quia melior est dies una in atriis tuis super millia."
+        notes: "Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
         psalm_numbering: vulgate
         verses:
         - book: Psalms
@@ -34654,7 +34633,9 @@ sections:
           basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
             rubric 6 lets one or the other be chosen.'
         incipit: Apud Dominum misericordia
-        source: scripture
+        source: mixed
+        text: "Apud Dominum misericordia, et copiosa apud eum redemptio."
+        notes: "Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
         psalm_numbering: vulgate
         verses:
         - book: Psalms
@@ -35125,14 +35106,15 @@ sections:
           basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
             rubric 6 lets one or the other be chosen.'
         incipit: Beati pacifici
-        source: scripture
+        source: mixed
+        text: "Beati pacifici: quoniam filii Dei vocabuntur. Beati qui persecutionem patiuntur propter justitiam: quoniam ipsorum est regnum cælorum."
         verses:
         - book: Matthew
           ranges:
           - begin: {chapter: 5, verse: 9}
             end: {chapter: 5, verse: 10}
           ref: Matthew 5:9-10
-        notes: Second communion antiphon offered by the Missal as an alternative.
+        notes: "Second communion antiphon offered by the Missal as an alternative. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Prayer after Communion
         incipit: Pane mensae caelestis refecti
         source: composed
@@ -35332,7 +35314,9 @@ sections:
           basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
             rubric 6 lets one or the other be chosen.'
         incipit: Quemadmodum desiderat cervus
-        source: scripture
+        source: mixed
+        text: "Quemadmodum desiderat cervus ad fontes aquarum, ita desiderat anima mea ad te, Deus. Sitivit anima mea ad Deum fortem, vivum."
+        notes: "Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
         psalm_numbering: vulgate
         verses:
         - book: Psalms
@@ -36332,7 +36316,9 @@ sections:
           basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
             rubric 6 lets one or the other be chosen.'
         incipit: Bonus est Dominus
-        source: scripture
+        source: mixed
+        text: "Bonus est Dominus sperantibus in eum, animæ quærenti illum."
+        notes: "Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
         verses:
         - book: Lamentations
           ranges:
@@ -37056,7 +37042,9 @@ sections:
           basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
             rubric 6 lets one or the other be chosen.'
         incipit: Laetabimur in salutari tuo
-        source: scripture
+        source: mixed
+        text: "Lætabimur in salutari tuo; et in nomine Dei nostri magnificabimur."
+        notes: "Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
         psalm_numbering: vulgate
         verses:
         - book: Psalms
@@ -37803,7 +37791,9 @@ sections:
             rubric 6 lets one or the other be chosen.'
         psalm_numbering: vulgate
         incipit: Mihi autem adhaerere Deo bonum est
-        source: scripture
+        source: mixed
+        text: "Mihi autem adhærere Deo bonum est; ponere in Domino Deo spem meam."
+        notes: "Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
         verses:
         - book: Psalms
           ranges:
@@ -38001,7 +37991,9 @@ sections:
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Communion Antiphon
         incipit: Quoniam autem estis filii
-        source: scripture
+        source: mixed
+        text: "Quoniam autem estis filii, misit Deus Spiritum Filii sui in corda vestra, clamantem: Abba, Pater."
+        notes: "Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
         verses:
         - book: Galatians
           ranges:
@@ -38506,7 +38498,8 @@ sections:
         boundaries are unchanged.'
       propers:
       - name: Entrance Antiphon
-        source: scripture
+        source: mixed
+        text: "Exsultabit cor meum in salutari tuo. Cantabo Domino qui bona tribuit mihi."
         psalm_numbering: vulgate
         verses:
         - book: Psalms
@@ -38518,10 +38511,7 @@ sections:
               chapter: 12
               verse: 6
           ref: Psalm 12:6
-        notes: Source appointment antiphonary:immaculate-heart-blessed-virgin-mary|main|E|1 was checked in the held registered
-          ICEL 2010 Antiphonary, artifact page 113 / printed page 105, in the 2026-10-20/21 image audit. The printed citation
-          cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording,
-          full approved English body, exact target-2008 Latin body, or publication permission is supplied.
+        notes: "Source appointment antiphonary:immaculate-heart-blessed-virgin-mary|main|E|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 113 / printed page 105, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. The 2010 source establishes this appointment and citation. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Collect
         source: composed
         text_status:
@@ -56128,7 +56118,8 @@ sections:
             group: entrance-antiphon
             option: source-first
             basis: The registered ICEL 2010 Antiphonary, artifact page 127 / printed page 119, prints two alternatives for this one Entrance Antiphon seat, the second after Or. Source order is retained without a default, actual-use selection, new cycle or publication-right claim. Its foreword states 2002/2008 structural coverage; exact target Latin bodies remain unestablished.
-          source: scripture
+          source: mixed
+          text: "Signum magnum apparuit in cælo: mulier amicta sole, et luna sub pedibus ejus, et in capite ejus corona stellarum duodecim."
           verses:
           - book: Revelation
             ranges:
@@ -56139,7 +56130,7 @@ sections:
                 chapter: 12
                 verse: 1
             ref: Revelation 12:1
-          notes: Source appointment icel2010:AP127:assumption-blessed-virgin-mary:day:Entrance Antiphon:1 checked in the held registered ICEL 2010 Antiphonary, artifact page 127 / printed page 119. Only the own antiphon appointment and its printed citation or uncited status are recorded; compiler Graduale psalm suggestions are excluded. No source wording, exact 2008 Latin body or publication permission is supplied.
+          notes: "Source appointment icel2010:AP127:assumption-blessed-virgin-mary:day:Entrance Antiphon:1 checked in the held registered ICEL 2010 Antiphonary, artifact page 127 / printed page 119. Only the own antiphon appointment and its printed citation or uncited status are recorded; compiler Graduale psalm suggestions are excluded. No source wording, exact 2008 Latin body or publication permission is supplied. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
         - name: Entrance Antiphon
           ordinary_disposition:
             kind: alternative
@@ -56217,7 +56208,8 @@ sections:
               source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glr-2df3c15b
           notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glr.htm#cig (The Assumption of the Blessed Virgin Mary / Ad Missam in die); Prayer over the Offerings. The separately registered 2002 digital Missal confirms the prayer at artifact page 481. Correspondence with the 2008 reprint remains unverified."
         - name: Communion Antiphon
-          source: scripture
+          source: mixed
+          text: "Beatam me dicent omnes generationes, quia fecit mihi magna qui potens est."
           verses:
           - book: Luke
             ranges:
@@ -56228,7 +56220,7 @@ sections:
                 chapter: 1
                 verse: 49
             ref: Luke 1:48-49
-          notes: Source appointment icel2010:AP127:assumption-blessed-virgin-mary:day:Communion Antiphon:1 checked in the held registered ICEL 2010 Antiphonary, artifact page 127 / printed page 119. Only the own antiphon appointment and its printed citation or uncited status are recorded; compiler Graduale psalm suggestions are excluded. No source wording, exact 2008 Latin body or publication permission is supplied.
+          notes: "Source appointment icel2010:AP127:assumption-blessed-virgin-mary:day:Communion Antiphon:1 checked in the held registered ICEL 2010 Antiphonary, artifact page 127 / printed page 119. Only the own antiphon appointment and its printed citation or uncited status are recorded; compiler Graduale psalm suggestions are excluded. No source wording, exact 2008 Latin body or publication permission is supplied. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
         - name: Prayer after Communion
           source: composed
           text_status:
@@ -56263,7 +56255,8 @@ sections:
         wording remains unestablished, the held English remains restricted, and the Antiphonary supplies no oration bodies. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: Entrance Antiphon
-        source: scripture
+        source: mixed
+        text: "Astitit regina a dextris tuis in vestitu deaurato, circumdata varietate."
         verses:
         - book: Psalms
           ranges:
@@ -56275,7 +56268,7 @@ sections:
               verse: 10
           ref: Psalms 44:10
         psalm_numbering: vulgate
-        notes: 'Structural appointment and citation Cf. Ps 44: 10 directly checked in registered ICEL2010 Antiphonary, artifact page 128, printed page 120; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded.'
+        notes: "Structural appointment and citation Cf. Ps 44: 10 directly checked in registered ICEL2010 Antiphonary, artifact page 128, printed page 120; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Collect
         source: composed
         text_status:
@@ -56645,7 +56638,8 @@ sections:
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glr-2df3c15b
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glr.htm#vu (Our Lady of Sorrows / Beatæ Mariæ Virginis Perdolentis); Prayer over the Offerings. The separately registered 2002 digital Missal confirms the prayer at artifact page 494–495. Correspondence with the 2008 reprint remains unverified."
       - name: Communion Antiphon
-        source: scripture
+        source: mixed
+        text: "Communicantes Christi passionibus gaudete, ut et in revelatione gloriæ ejus gaudeatis exsultantes."
         verses:
         - book: 1 Peter
           ranges:
@@ -56656,7 +56650,7 @@ sections:
               chapter: 4
               verse: 13
           ref: 1 Peter 4:13
-        notes: 'Structural appointment and citation Cf. 1 Pet 4: 13 directly checked in registered ICEL2010 Antiphonary, artifact page 133, printed page 125; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded.'
+        notes: "Structural appointment and citation Cf. 1 Pet 4: 13 directly checked in registered ICEL2010 Antiphonary, artifact page 133, printed page 125; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Prayer after Communion
         source: composed
         text_status:
@@ -56693,7 +56687,8 @@ sections:
         wording remains unestablished, the held English remains restricted, and the Antiphonary supplies no oration bodies. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: Entrance Antiphon
-        source: scripture
+        source: mixed
+        text: "Ave, Maria, gratia plena: Dominus tecum: benedicta tu in mulieribus, et benedictus fructus ventris tui."
         verses:
         - book: Luke
           ranges:
@@ -56710,7 +56705,7 @@ sections:
               chapter: 1
               verse: 42
           ref: Luke 1:28, 42
-        notes: 'Structural appointment and citation Cf. Lk 1: 28, 42 directly checked in registered ICEL2010 Antiphonary, artifact page 138, printed page 130; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded.'
+        notes: "Structural appointment and citation Cf. Lk 1: 28, 42 directly checked in registered ICEL2010 Antiphonary, artifact page 138, printed page 130; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Collect
         source: composed
         text_status:
@@ -56772,7 +56767,8 @@ sections:
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-gls-9f3b0bff
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/gls.htm#wu (Our Lady of the Rosary / Beatæ Mariæ Virginis a Rosario); Prayer over the Offerings. The separately registered 2002 digital Missal confirms the prayer at artifact page 505. Correspondence with the 2008 reprint remains unverified."
       - name: Communion Antiphon
-        source: scripture
+        source: mixed
+        text: "Ecce concipies in utero, et paries filium, et vocabis nomen ejus Jesum."
         verses:
         - book: Luke
           ranges:
@@ -56783,7 +56779,7 @@ sections:
               chapter: 1
               verse: 31
           ref: Luke 1:31
-        notes: 'Structural appointment and citation Lk 1: 31 directly checked in registered ICEL2010 Antiphonary, artifact page 138, printed page 130; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded.'
+        notes: "Structural appointment and citation Lk 1: 31 directly checked in registered ICEL2010 Antiphonary, artifact page 138, printed page 130; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Prayer after Communion
         source: composed
         text_status:
@@ -57092,7 +57088,8 @@ sections:
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
         notes: "Dated 2026-11-14 identity correction (gap campaign p4-ordinary-christological; DECISIONS 11f): the 2002 prayer of this slot begins Largitatis tuae munera deferentes; the former incipit Benedictio tua named the 1862 prayer."
       - name: Communion Antiphon
-        source: scripture
+        source: mixed
+        text: "Domine, Dominus noster, quam admirabile est nomen tuum in universa terra!"
         verses:
         - book: Psalms
           ranges:
@@ -57104,7 +57101,7 @@ sections:
               verse: 2
           ref: Psalms 8:2
         psalm_numbering: vulgate
-        notes: 'Structural appointment and citation Ps 8: 2 directly checked in registered ICEL2010 Antiphonary, artifact page 97, printed page 89; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded.'
+        notes: "Structural appointment and citation Ps 8: 2 directly checked in registered ICEL2010 Antiphonary, artifact page 97, printed page 89; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Prayer after Communion
         incipit: "Hostia sumpta, Domine"
         source: composed
@@ -57337,7 +57334,8 @@ sections:
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glo-00419ad3
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glo.htm#og (The Presentation of the Lord / IN PRAESENTATIONE DOMINI); Prayer over the Offerings. The separately registered 2002 digital Missal confirms the prayer at artifact page 425. Correspondence with the 2008 reprint remains unverified."
       - name: Communion Antiphon
-        source: scripture
+        source: mixed
+        text: "Viderunt oculi mei salutare tuum, quod parasti ante faciem omnium populorum."
         verses:
         - book: Luke
           ranges:
@@ -57348,7 +57346,7 @@ sections:
               chapter: 2
               verse: 31
           ref: Luke 2:30-31
-        notes: 'Structural appointment and citation Lk 2: 30-31 directly checked in registered ICEL2010 Antiphonary, artifact page 102, printed page 94; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded.'
+        notes: "Structural appointment and citation Lk 2: 30-31 directly checked in registered ICEL2010 Antiphonary, artifact page 102, printed page 94; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Prayer after Communion
         source: composed
         text_status:
@@ -57469,7 +57467,8 @@ sections:
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glp-cd664951
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glp.htm#po (The Annunciation of the Lord / IN ANNUNTIATIONE DOMINI); Prayer over the Offerings. The separately registered 2002 digital Missal confirms the prayer at artifact page 435. Correspondence with the 2008 reprint remains unverified."
       - name: Communion Antiphon
-        source: scripture
+        source: mixed
+        text: "Ecce virgo concipiet, et pariet filium, et vocabitur nomen ejus Emmanuel."
         verses:
         - book: Isaiah
           ranges:
@@ -57480,7 +57479,7 @@ sections:
               chapter: 7
               verse: 14
           ref: Isaiah 7:14
-        notes: 'Structural appointment and citation Is 7: 14 directly checked in registered ICEL2010 Antiphonary, artifact page 106, printed page 98; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded.'
+        notes: "Structural appointment and citation Is 7: 14 directly checked in registered ICEL2010 Antiphonary, artifact page 106, printed page 98; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Prayer after Communion
         source: composed
         text: "In mentibus nostris, quaesumus, Domine, verae fidei sacramenta confirma: ut, qui conceptum de Virgine Deum verum et hominem confitemur; per eius salutiferae resurrectionis potentiam, ad aeternam mereamur pervenire laetitiam. Per Christum."
@@ -58897,7 +58896,8 @@ sections:
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glo-00419ad3
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glo.htm#n2 (The Conversion of Saint Paul the Apostle / IN CONVERSIONE S. PAULI, APOSTOLI); Prayer over the Offerings. The separately registered 2002 digital Missal confirms the prayer at artifact page 420. Correspondence with the 2008 reprint remains unverified."
       - name: Communion Antiphon
-        source: scripture
+        source: mixed
+        text: "In fide vivo Filii Dei, qui dilexit me, et tradidit semetipsum pro me."
         verses:
         - book: Galatians
           ranges:
@@ -58908,7 +58908,7 @@ sections:
               chapter: 2
               verse: 20
           ref: Galatians 2:20
-        notes: 'Structural appointment and citation Cf. Gal 2: 20 directly checked in registered ICEL2010 Antiphonary, artifact page 99, printed page 91; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded.'
+        notes: "Structural appointment and citation Cf. Gal 2: 20 directly checked in registered ICEL2010 Antiphonary, artifact page 99, printed page 91; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Prayer after Communion
         source: composed
         text_status:
@@ -58946,7 +58946,8 @@ sections:
         src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: Entrance Antiphon
-        source: scripture
+        source: mixed
+        text: "Annuntiate inter gentes gloriam ejus; in omnibus populis mirabilia ejus. Quoniam magnus Dominus, et laudabilis nimis."
         verses:
         - book: Psalms
           ranges:
@@ -58958,7 +58959,7 @@ sections:
               verse: 4
           ref: Psalms 95:3-4
         psalm_numbering: vulgate
-        notes: 'Structural appointment and citation Ps 95: 3-4 directly checked in registered ICEL2010 Antiphonary, artifact page 99, printed page 91; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded.'
+        notes: "Structural appointment and citation Ps 95: 3-4 directly checked in registered ICEL2010 Antiphonary, artifact page 99, printed page 91; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Collect
         source: composed
         text_status:
@@ -60631,7 +60632,8 @@ sections:
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glp-cd664951
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glp.htm#pa (Saints Perpetua and Felicity, Martyrs / Ss. Perpetuæ et Felicitatis, martyrum); Prayer over the Offerings. The separately registered 2002 digital Missal confirms the prayer at artifact page 431. Correspondence with the 2008 reprint remains unverified."
       - name: Communion Antiphon
-        source: scripture
+        source: mixed
+        text: "In mortem tradimur propter Jesum: ut et vita Jesu manifestetur in carne nostra mortali."
         verses:
         - book: 2 Corinthians
           ranges:
@@ -60642,7 +60644,7 @@ sections:
               chapter: 4
               verse: 11
           ref: 2 Corinthians 4:11
-        notes: 'Structural appointment and citation 2 Cor 4: 11 directly checked in registered ICEL2010 Antiphonary, artifact page 105, printed page 97; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded.'
+        notes: "Structural appointment and citation 2 Cor 4: 11 directly checked in registered ICEL2010 Antiphonary, artifact page 105, printed page 97; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Prayer after Communion
         source: composed
         text_status:
@@ -65067,7 +65069,8 @@ sections:
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glq-4eeac750
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glq.htm#r4 (Saint Aloysius Gonzaga, Religious / S. Aloisii Gonzaga, religiosi); Prayer over the Offerings. The separately registered 2002 digital Missal confirms the prayer at artifact page 455. Correspondence with the 2008 reprint remains unverified."
       - name: Communion Antiphon
-        source: scripture
+        source: mixed
+        text: "Panem cæli dedit eis. Panem angelorum manducavit homo."
         verses:
         - book: Psalms
           ranges:
@@ -65079,7 +65082,7 @@ sections:
               verse: 25
           ref: Psalms 77:24-25
         psalm_numbering: vulgate
-        notes: 'Structural appointment and citation Ps 77: 24-25 directly checked in registered ICEL2010 Antiphonary, artifact page 116, printed page 108; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded.'
+        notes: "Structural appointment and citation Ps 77: 24-25 directly checked in registered ICEL2010 Antiphonary, artifact page 116, printed page 108; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Prayer after Communion
         source: composed
         text_status:
@@ -65347,7 +65350,8 @@ sections:
               source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glq-4eeac750
           notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glq.htm#sd (The Nativity of Saint John the Baptist / Ad Missam in Vigilia); Prayer over the Offerings. The separately registered 2002 digital Missal confirms the prayer at artifact page 457. Correspondence with the 2008 reprint remains unverified."
         - name: Communion Antiphon
-          source: scripture
+          source: mixed
+          text: "Benedictus Dominus Deus Israël, quia visitavit, et fecit redemptionem plebis suæ."
           verses:
           - book: Luke
             ranges:
@@ -65358,7 +65362,7 @@ sections:
                 chapter: 1
                 verse: 68
             ref: Luke 1:68
-          notes: 'Structural appointment and citation Lk 1: 68 directly checked in registered ICEL2010 Antiphonary, artifact page 116, printed page 108; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded.'
+          notes: "Structural appointment and citation Lk 1: 68 directly checked in registered ICEL2010 Antiphonary, artifact page 116, printed page 108; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
         - name: Prayer after Communion
           source: composed
           text_status:
@@ -65589,7 +65593,8 @@ sections:
         wording remains unestablished, the held English remains restricted, and the Antiphonary supplies no oration bodies. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: Entrance Antiphon
-        source: scripture
+        source: mixed
+        text: "Lex veritatis fuit in ore ejus, et iniquitas non est inventa in labiis ejus: in pace et in æquitate ambulavit mecum, et multos avertit ab iniquitate."
         verses:
         - book: Malachi
           ranges:
@@ -65600,7 +65605,7 @@ sections:
               chapter: 2
               verse: 6
           ref: Malachi 2:6
-        notes: 'Structural appointment and citation Mal 2: 6 directly checked in registered ICEL2010 Antiphonary, artifact page 117, printed page 109; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded.'
+        notes: "Structural appointment and citation Mal 2: 6 directly checked in registered ICEL2010 Antiphonary, artifact page 117, printed page 109; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Collect
         source: composed
         text_status:
@@ -66472,7 +66477,8 @@ sections:
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glq-4eeac750
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glq.htm#sx (Saint Benedict, Abbot / S. Benedicti, abbatis); Prayer over the Offerings. The separately registered 2002 digital Missal confirms the prayer at artifact page 465. Correspondence with the 2008 reprint remains unverified."
       - name: Communion Antiphon
-        source: scripture
+        source: mixed
+        text: "Fidelis servus et prudens, quem constituit dominus super familiam suam: ut det illis in tempore tritici mensuram."
         verses:
         - book: Luke
           ranges:
@@ -66483,7 +66489,7 @@ sections:
               chapter: 12
               verse: 42
           ref: Luke 12:42
-        notes: 'Structural appointment and citation Lk 12: 42 directly checked in registered ICEL2010 Antiphonary, artifact page 120, printed page 112; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded.'
+        notes: "Structural appointment and citation Lk 12: 42 directly checked in registered ICEL2010 Antiphonary, artifact page 120, printed page 112; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Prayer after Communion
         source: composed
         text_status:
@@ -67627,7 +67633,8 @@ sections:
         wording remains unestablished, the held English remains restricted, and the Antiphonary supplies no oration bodies. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: Entrance Antiphon
-        source: scripture
+        source: mixed
+        text: "In nomine Jesu omne genu flectatur cælestium, terrestrium et infernorum, et omnis lingua confiteatur, quia Dominus Jesus Christus in gloria est Dei Patris."
         verses:
         - book: Philippians
           ranges:
@@ -67638,7 +67645,7 @@ sections:
               chapter: 2
               verse: 11
           ref: Philippians 2:10-11
-        notes: 'Structural appointment and citation Cf. Phil 2: 10-11 directly checked in registered ICEL2010 Antiphonary, artifact page 123, printed page 115; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded.'
+        notes: "Structural appointment and citation Cf. Phil 2: 10-11 directly checked in registered ICEL2010 Antiphonary, artifact page 123, printed page 115; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Collect
         source: composed
         text_status:
@@ -68364,7 +68371,8 @@ sections:
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glr-2df3c15b
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glr.htm#ub (Saint Dominic, Priest / S. Dominici, presbyteri); Prayer over the Offerings. The separately registered 2002 digital Missal confirms the prayer at artifact page 476. Correspondence with the 2008 reprint remains unverified."
       - name: Communion Antiphon
-        source: scripture
+        source: mixed
+        text: "Fidelis servus et prudens, quem constituit dominus super familiam suam: ut det illis in tempore tritici mensuram."
         verses:
         - book: Luke
           ranges:
@@ -68375,7 +68383,7 @@ sections:
               chapter: 12
               verse: 42
           ref: Luke 12:42
-        notes: 'Structural appointment and citation Lk 12: 42 directly checked in registered ICEL2010 Antiphonary, artifact page 125, printed page 117; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded.'
+        notes: "Structural appointment and citation Lk 12: 42 directly checked in registered ICEL2010 Antiphonary, artifact page 125, printed page 117; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Prayer after Communion
         source: composed
         text_status:
@@ -70053,7 +70061,8 @@ sections:
           The two digital witnesses agree on this appointment. Correspondence with the whole 2008 reprint remains unverified.
           The independent PDF spells the heading Super oblate; the Clerus text has Super oblata.
       - name: Communion Antiphon
-        source: scripture
+        source: mixed
+        text: "Fidelis servus et prudens, quem constituit dominus super familiam suam: ut det illis in tempore tritici mensuram."
         verses:
         - book: Luke
           ranges:
@@ -70064,7 +70073,7 @@ sections:
               chapter: 12
               verse: 42
           ref: Luke 12:42
-        notes: 'Structural appointment and citation Lk 12: 42 directly checked in registered ICEL2010 Antiphonary, artifact page 131, printed page 123; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded.'
+        notes: "Structural appointment and citation Lk 12: 42 directly checked in registered ICEL2010 Antiphonary, artifact page 131, printed page 123; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Prayer after Communion
         source: composed
         text_status:
@@ -71113,7 +71122,8 @@ sections:
         wording remains unestablished, the held English remains restricted, and the Antiphonary supplies no oration bodies. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: Entrance Antiphon
-        source: scripture
+        source: mixed
+        text: "Spiritus Domini super me: propter quod unxit me, evangelizare pauperibus misit me, sanare contritos corde."
         verses:
         - book: Luke
           ranges:
@@ -71124,7 +71134,7 @@ sections:
               chapter: 4
               verse: 18
           ref: Luke 4:18
-        notes: 'Structural appointment and citation Cf. Lk 4: 18 directly checked in registered ICEL2010 Antiphonary, artifact page 135, printed page 127; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded.'
+        notes: "Structural appointment and citation Cf. Lk 4: 18 directly checked in registered ICEL2010 Antiphonary, artifact page 135, printed page 127; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Collect
         source: composed
         text_status:
@@ -71186,7 +71196,8 @@ sections:
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glr-2df3c15b
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glr.htm#wd (Saint Vincent de Paul, Priest / S. Vincentii de Paul, presbyteri); Prayer over the Offerings. The separately registered 2002 digital Missal confirms the prayer at artifact page 499. Correspondence with the 2008 reprint remains unverified."
       - name: Communion Antiphon
-        source: scripture
+        source: mixed
+        text: "Confiteantur Domino misericordiæ ejus, et mirabilia ejus filiis hominum. Quia satiavit animam inanem, et animam esurientem satiavit bonis."
         verses:
         - book: Psalms
           ranges:
@@ -71198,7 +71209,7 @@ sections:
               verse: 9
           ref: Psalms 106:8-9
         psalm_numbering: vulgate
-        notes: 'Structural appointment and citation Cf. Ps 106: 8-9 directly checked in registered ICEL2010 Antiphonary, artifact page 135, printed page 127; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded.'
+        notes: "Structural appointment and citation Cf. Ps 106: 8-9 directly checked in registered ICEL2010 Antiphonary, artifact page 135, printed page 127; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Prayer after Communion
         source: composed
         text_status:
@@ -71904,7 +71915,8 @@ sections:
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-gls-9f3b0bff
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/gls.htm#wq (Saint Francis of Assisi / S. Francisci Assisiensis); Prayer over the Offerings. The separately registered 2002 digital Missal confirms the prayer at artifact page 504. Correspondence with the 2008 reprint remains unverified."
       - name: Communion Antiphon
-        source: scripture
+        source: mixed
+        text: "Beati pauperes spiritu: quoniam ipsorum est regnum cælorum."
         verses:
         - book: Matthew
           ranges:
@@ -71915,7 +71927,7 @@ sections:
               chapter: 5
               verse: 3
           ref: Matthew 5:3
-        notes: 'Structural appointment and citation Mt 5: 3 directly checked in registered ICEL2010 Antiphonary, artifact page 138, printed page 130; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded.'
+        notes: "Structural appointment and citation Mt 5: 3 directly checked in registered ICEL2010 Antiphonary, artifact page 138, printed page 130; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Prayer after Communion
         source: composed
         text_status:
@@ -72520,7 +72532,8 @@ sections:
         wording remains unestablished, the held English remains restricted, and the Antiphonary supplies no oration bodies. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: Entrance Antiphon
-        source: scripture
+        source: mixed
+        text: "Quemadmodum desiderat cervus ad fontes aquarum, ita desiderat anima mea ad te, Deus. Sitivit anima mea ad Deum fortem, vivum."
         verses:
         - book: Psalms
           ranges:
@@ -72532,7 +72545,7 @@ sections:
               verse: 3
           ref: Psalms 41:2-3
         psalm_numbering: vulgate
-        notes: 'Structural appointment and citation Cf. Ps 41: 2-3 directly checked in registered ICEL2010 Antiphonary, artifact page 139, printed page 131; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded.'
+        notes: "Structural appointment and citation Cf. Ps 41: 2-3 directly checked in registered ICEL2010 Antiphonary, artifact page 139, printed page 131; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Collect
         source: composed
         text_status:
@@ -72594,7 +72607,8 @@ sections:
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-gls-9f3b0bff
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/gls.htm#w1 (Saint Teresa of Jesus, Virgin and Doctor of the Church / S. Teresiæ a Iesu, virginis et Ecclesiæ); Prayer over the Offerings. The separately registered 2002 digital Missal confirms the prayer at artifact page 507. Correspondence with the 2008 reprint remains unverified."
       - name: Communion Antiphon
-        source: scripture
+        source: mixed
+        text: "Misericordias Domini in æternum cantabo; in generationem et generationem annuntiabo veritatem tuam in ore meo."
         verses:
         - book: Psalms
           ranges:
@@ -72606,7 +72620,7 @@ sections:
               verse: 2
           ref: Psalms 88:2
         psalm_numbering: vulgate
-        notes: 'Structural appointment and citation Ps 88: 2 directly checked in registered ICEL2010 Antiphonary, artifact page 139, printed page 131; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded.'
+        notes: "Structural appointment and citation Ps 88: 2 directly checked in registered ICEL2010 Antiphonary, artifact page 139, printed page 131; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Prayer after Communion
         source: composed
         text_status:
@@ -72914,7 +72928,8 @@ sections:
         wording remains unestablished, the held English remains restricted, and the Antiphonary supplies no oration bodies. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: Entrance Antiphon
-        source: scripture
+        source: mixed
+        text: "Quam pulchri super montes pedes annuntiantis et prædicantis pacem; annuntiantis bonum, prædicantis salutem!"
         verses:
         - book: Isaiah
           ranges:
@@ -72925,7 +72940,7 @@ sections:
               chapter: 52
               verse: 7
           ref: Isaiah 52:7
-        notes: 'Structural appointment and citation Is 52: 7 directly checked in registered ICEL2010 Antiphonary, artifact page 140, printed page 132; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded.'
+        notes: "Structural appointment and citation Is 52: 7 directly checked in registered ICEL2010 Antiphonary, artifact page 140, printed page 132; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Collect
         source: composed
         text_status:
@@ -73679,7 +73694,8 @@ sections:
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-gls-9f3b0bff
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/gls.htm#xn (All Saints / OMNIUM SANCTORUM); Prayer over the Offerings. The separately registered 2002 digital Missal confirms the prayer at artifact page 512–513. Correspondence with the 2008 reprint remains unverified."
       - name: Communion Antiphon
-        source: scripture
+        source: mixed
+        text: "Beati mundo corde: quoniam ipsi Deum videbunt. Beati pacifici: quoniam filii Dei vocabuntur. Beati qui persecutionem patiuntur propter justitiam: quoniam ipsorum est regnum cælorum."
         verses:
         - book: Matthew
           ranges:
@@ -73690,7 +73706,7 @@ sections:
               chapter: 5
               verse: 10
           ref: Matthew 5:8-10
-        notes: 'Structural appointment and citation Mt 5: 8-10 directly checked in registered ICEL2010 Antiphonary, artifact page 142, printed page 134; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded.'
+        notes: "Structural appointment and citation Mt 5: 8-10 directly checked in registered ICEL2010 Antiphonary, artifact page 142, printed page 134; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Prayer after Communion
         source: composed
         text_status:
@@ -75366,7 +75382,9 @@ sections:
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glt-427df2b2
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glt.htm#yn (Saints Andrew Dung-Lac, Priest, and Companions, Martyrs / Ss. Andreæ Dung La.c, presbyteri, et); Prayer over the Offerings. The separately registered 2002 digital Missal confirms the prayer at artifact page 525. Correspondence with the 2008 reprint remains unverified."
       - name: Communion Antiphon
-        source: scripture
+        source: mixed
+        text: "Beati qui persecutionem patiuntur propter justitiam: quoniam ipsorum est regnum cælorum."
+        notes: "Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
         verses:
         - book: Matthew
           ranges:
@@ -76209,7 +76227,8 @@ sections:
         wording remains unestablished, the held English remains restricted, and the Antiphonary supplies no oration bodies. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: Entrance Antiphon
-        source: scripture
+        source: mixed
+        text: "Mihi autem absit gloriari, nisi in cruce Domini nostri Jesu Christi: per quem mihi mundus crucifixus est, et ego mundo."
         verses:
         - book: Galatians
           ranges:
@@ -76220,7 +76239,7 @@ sections:
               chapter: 6
               verse: 14
           ref: Galatians 6:14
-        notes: 'Structural appointment and citation Gal 6: 14 directly checked in registered ICEL2010 Antiphonary, artifact page 150, printed page 142; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded.'
+        notes: "Structural appointment and citation Gal 6: 14 directly checked in registered ICEL2010 Antiphonary, artifact page 150, printed page 142; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Collect
         source: composed
         text_status:
@@ -76553,7 +76572,8 @@ sections:
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glt-427df2b2
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glt.htm#zi (Saint Stephen, the First Martyr / S. STEPHANI, PROTOMARTYRIS); Prayer over the Offerings. The separately registered 2002 digital Missal confirms the prayer at artifact page 533. Correspondence with the 2008 reprint remains unverified."
       - name: Communion Antiphon
-        source: scripture
+        source: mixed
+        text: "Lapidabant Stephanum invocantem, et dicentem: Domine Jesu, suscipe spiritum meum."
         verses:
         - book: Acts
           ranges:
@@ -76564,7 +76584,7 @@ sections:
               chapter: 7
               verse: 58
           ref: Acts 7:58
-        notes: 'Structural appointment and citation Acts 7: 58 directly checked in registered ICEL2010 Antiphonary, artifact page 150, printed page 142; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded.'
+        notes: "Structural appointment and citation Acts 7: 58 directly checked in registered ICEL2010 Antiphonary, artifact page 150, printed page 142; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
       - name: Prayer after Communion
         source: composed
         text_status:
@@ -77370,16 +77390,8 @@ sections:
             reprint remains unverified.'
         - name: Communion Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glt-427df2b2
-          notes: 'Ordinary Time, formulary 2, Communion Antiphon, option 1; Missale Romanum (2002), digital PDF artifact
-            p. 541. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glt.htm#zu. ICEL English Antiphonary, artifact
-            p. 156. Correspondence with the 2008 reprint remains unverified.'
+          text: "Fecit mihi magna qui potens est: et sanctum nomen ejus."
+          notes: "Ordinary Time, formulary 2, Communion Antiphon, option 1; Missale Romanum (2002), digital PDF artifact p. 541. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glt.htm#zu. ICEL English Antiphonary, artifact p. 156. Correspondence with the 2008 reprint remains unverified. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
         - name: Prayer after Communion
           source: composed
           text_status:
@@ -77527,16 +77539,8 @@ sections:
         propers:
         - name: Entrance Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glt-427df2b2
-          notes: 'Ordinary Time, formulary 5, Entrance Antiphon, option 1; Missale Romanum (2002), digital PDF artifact p.
-            543. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glt.htm#zu. ICEL English Antiphonary, artifact
-            p. 157. Correspondence with the 2008 reprint remains unverified.'
+          text: "Ave, Maria, gratia plena: Dominus tecum: benedicta tu in mulieribus, et benedictus fructus ventris tui."
+          notes: "Ordinary Time, formulary 5, Entrance Antiphon, option 1; Missale Romanum (2002), digital PDF artifact p. 543. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glt.htm#zu. ICEL English Antiphonary, artifact p. 157. Correspondence with the 2008 reprint remains unverified. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
         - name: Collect
           source: composed
           text_status:
@@ -77590,16 +77594,8 @@ sections:
         propers:
         - name: Entrance Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glt-427df2b2
-          notes: 'Ordinary Time, formulary 6, Entrance Antiphon, option 1; Missale Romanum (2002), digital PDF artifact p.
-            543. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glt.htm#zu. ICEL English Antiphonary, artifact
-            p. 157. Correspondence with the 2008 reprint remains unverified.'
+          text: "Virga Jesse floruit: Virgo Deum et hominem genuit: pacem Deus reddidit, in se reconcilians ima summis."
+          notes: "Ordinary Time, formulary 6, Entrance Antiphon, option 1; Missale Romanum (2002), digital PDF artifact p. 543. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glt.htm#zu. ICEL English Antiphonary, artifact p. 157. Correspondence with the 2008 reprint remains unverified. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
         - name: Collect
           source: composed
           text_status:
@@ -77626,16 +77622,8 @@ sections:
             reprint remains unverified.'
         - name: Communion Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glt-427df2b2
-          notes: 'Ordinary Time, formulary 6, Communion Antiphon, option 1; Missale Romanum (2002), digital PDF artifact
-            p. 544. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glt.htm#zu. ICEL English Antiphonary, artifact
-            p. 157. Correspondence with the 2008 reprint remains unverified.'
+          text: "Diffusa est gratia in labiis tuis: propterea benedixit te Deus in æternum."
+          notes: "Ordinary Time, formulary 6, Communion Antiphon, option 1; Missale Romanum (2002), digital PDF artifact p. 544. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glt.htm#zu. ICEL English Antiphonary, artifact p. 157. Correspondence with the 2008 reprint remains unverified. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
         - name: Prayer after Communion
           source: composed
           text_status:
@@ -77779,16 +77767,8 @@ sections:
         propers:
         - name: Entrance Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glt-427df2b2
-          notes: 'Advent, Entrance Antiphon, option 1; Missale Romanum (2002), digital PDF artifact p. 546. Biblia Clerus:
-            https://www.clerus.org/bibliaclerusonline/en/glt.htm#zv. ICEL English Antiphonary, artifact p. 158. Correspondence
-            with the 2008 reprint remains unverified.'
+          text: "Rorate, cæli, desuper, et nubes pluant justum; aperiatur terra, et germinet Salvatorem."
+          notes: "Advent, Entrance Antiphon, option 1; Missale Romanum (2002), digital PDF artifact p. 546. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glt.htm#zv. ICEL English Antiphonary, artifact p. 158. Correspondence with the 2008 reprint remains unverified. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
           ordinary_disposition:
             kind: alternative
             group: entrance-antiphon
@@ -77854,16 +77834,8 @@ sections:
             unverified.'
         - name: Communion Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glt-427df2b2
-          notes: 'Advent, Communion Antiphon, option 1; Missale Romanum (2002), digital PDF artifact p. 546. Biblia Clerus:
-            https://www.clerus.org/bibliaclerusonline/en/glt.htm#zv. ICEL English Antiphonary, artifact p. 158. Correspondence
-            with the 2008 reprint remains unverified.'
+          text: "Ecce virgo concipiet, et pariet filium, et vocabitur nomen ejus Emmanuel."
+          notes: "Advent, Communion Antiphon, option 1; Missale Romanum (2002), digital PDF artifact p. 546. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glt.htm#zv. ICEL English Antiphonary, artifact p. 158. Correspondence with the 2008 reprint remains unverified. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
         - name: Prayer after Communion
           source: composed
           text_status:
@@ -78262,16 +78234,8 @@ sections:
               2 (digital PDF artifact p. 550).
         - name: Communion Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glt-427df2b2
-          notes: 'Several martyrs outside Easter Time, formulary 2, Communion Antiphon, option 2; Missale Romanum (2002),
-            digital PDF artifact p. 550. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glt.htm#z0. ICEL English
-            Antiphonary, artifact p. 161. Correspondence with the 2008 reprint remains unverified.'
+          text: "Dico autem vobis amicis meis: Ne terreamini ab his qui vos persequuntur."
+          notes: "Several martyrs outside Easter Time, formulary 2, Communion Antiphon, option 2; Missale Romanum (2002), digital PDF artifact p. 550. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glt.htm#z0. ICEL English Antiphonary, artifact p. 161. Correspondence with the 2008 reprint remains unverified. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
           ordinary_disposition:
             kind: alternative
             group: communion-antiphon
@@ -78424,16 +78388,8 @@ sections:
         propers:
         - name: Entrance Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glt-427df2b2
-          notes: 'Several martyrs outside Easter Time, formulary 4, Entrance Antiphon, option 1; Missale Romanum (2002),
-            digital PDF artifact p. 552. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glt.htm#z0. ICEL English
-            Antiphonary, artifact p. 161. Correspondence with the 2008 reprint remains unverified.'
+          text: "Clamaverunt justi, et Dominus exaudivit eos; et ex omnibus tribulationibus eorum liberavit eos."
+          notes: "Several martyrs outside Easter Time, formulary 4, Entrance Antiphon, option 1; Missale Romanum (2002), digital PDF artifact p. 552. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glt.htm#z0. ICEL English Antiphonary, artifact p. 161. Correspondence with the 2008 reprint remains unverified. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
           ordinary_disposition:
             kind: alternative
             group: entrance-antiphon
@@ -78508,16 +78464,8 @@ sections:
             Correspondence with the 2008 reprint remains unverified.'
         - name: Communion Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glt-427df2b2
-          notes: 'Several martyrs outside Easter Time, formulary 4, Communion Antiphon, option 1; Missale Romanum (2002),
-            digital PDF artifact p. 552. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glt.htm#z0. ICEL English
-            Antiphonary, artifact p. 161. Correspondence with the 2008 reprint remains unverified.'
+          text: "In mortem tradimur propter Jesum: ut et vita Jesu manifestetur in carne nostra mortali."
+          notes: "Several martyrs outside Easter Time, formulary 4, Communion Antiphon, option 1; Missale Romanum (2002), digital PDF artifact p. 552. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glt.htm#z0. ICEL English Antiphonary, artifact p. 161. Correspondence with the 2008 reprint remains unverified. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
           ordinary_disposition:
             kind: alternative
             group: communion-antiphon
@@ -79301,16 +79249,8 @@ sections:
               artifact p. 559).
         - name: Communion Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glt-427df2b2
-          notes: 'One martyr in Easter Time, Communion Antiphon, option 2; Missale Romanum (2002), digital PDF artifact p.
-            559. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glt.htm#z4. ICEL English Antiphonary, artifact
-            p. 164. Correspondence with the 2008 reprint remains unverified.'
+          text: "Pretiosa in conspectu Domini mors sanctorum ejus. Alleluja."
+          notes: "One martyr in Easter Time, Communion Antiphon, option 2; Missale Romanum (2002), digital PDF artifact p. 559. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glt.htm#z4. ICEL English Antiphonary, artifact p. 164. Correspondence with the 2008 reprint remains unverified. Historical Latin admission for this antiphon. Complete antiphon collated against the 2002 digital Missal. Correspondence with the 2008 emended reprint is unverified. Study English is independently translated from the historical Latin."
           ordinary_disposition:
             kind: alternative
             group: communion-antiphon
