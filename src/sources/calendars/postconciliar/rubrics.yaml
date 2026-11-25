@@ -602,31 +602,28 @@ implied:
         weekday_key_matches: '^ot-\d+-(monday|tuesday|wednesday|thursday|friday|saturday)$'
         owner_key_matches: '^ot-([1-9]|[12][0-9]|3[0-4])$'
         owner_basis: place-6-sunday
+        weekday_formularies: [ot-1, ot-34]
         season: ordinary-time
         resolves_scope: oration-owner
         complete: false
         unavailable:
-        - {id: ot-1, state: not-represented, label: First Week in Ordinary Time}
-        - {id: ot-34, state: not-represented, label: Thirty-fourth Week in Ordinary Time}
         - {id: various-needs, state: not-represented, label: Prayers for various needs}
         - {id: collect-only, state: not-supported, label: Choosing the Collect separately}
         why: >-
           An explicit reader choice may take the three named orations together
-          from any held Ordinary Time Sunday formulary. This is the permission
-          in IGMR 363, not a mandatory appointment of the preceding Sunday.
-          The eligible keys describe the thirty-four Ordinary Time formularies;
-          only held keys with the stated Sunday basis and all three slots may
-          be offered. The unavailable alternatives keep the supported subset
+          from the thirty-four Ordinary Time formularies. The Missal prints
+          Weeks I and XXXIV for use on their weekdays, beside the other
+          thirty-two formularies headed as Sundays. All three source orations
+          are available for an explicit election under IGMR 363. The unavailable alternatives keep the supported subset
           distinct from the full permission, including the collect-only option.
       slots_why: >-
         Nothing else in this file answers which slots are orations. The
         `orations` block below says how many collects are SAID on a day, never
         which propers are orations, and reading it as the latter would be the
         first wrong turn. These three are also the oration slots the bases
-        themselves actually hold: the thirty-two Ordinary Time Sunday
-        formularies this calendar's index carries, ot-2 to ot-33, each hold
-        Collect, Prayer over the Offerings and Prayer after Communion and no
-        other oration. So the scope names slots the base is known to hold rather
+        themselves actually hold. The thirty-two Sunday formularies and
+        the weekday formularies of Weeks I and XXXIV each supply Collect,
+        Prayer over the Offerings and Prayer after Communion. So the scope names slots the base is known to hold rather
         than slots the Missal is assumed to print.
       not_slots:
       - slot: Prayer over the People

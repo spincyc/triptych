@@ -67,3 +67,29 @@ availability state, protected word, source binding or public body changes here.
 The separately inventoried 2008 extended Pentecost Vigil and C42 withholding
 remain unchanged. Chrism oil blessings/consecration still refer to the Pontifical
 and acquire no downstream body denominator from this renewal-role target.
+
+## November 24 individual weekday collation
+
+The 2021 U.S. Roman eMissal supplies the actual English role at each of the
+37 individually checked weekday formularies in the October inventory. Ash
+Wednesday places the priest's prayer at dismissal. The other 36 headings
+mark their own prayers for optional use, including Thursday after Ash
+Wednesday. Their English form anchors run from L04 through L07, then L12–L17,
+L22–L27, L32–L37, L42–L47, L52–L57 and L62–L64. Each link is joined to its
+named role in the source inventory. [U.S. eMissal, Ash Wednesday](https://rmhealey.com/docs/RMU/#L04)
+· [Thursday after Ash Wednesday](https://rmhealey.com/docs/RMU/#L05)
+· [Wednesday of Holy Week](https://rmhealey.com/docs/RMU/#L64).
+
+The received Latin digital 2002 Missal provides each matching appointment
+on its own verified prayer page. The registered page receipts and direct
+page links identify where a prayer crosses a PDF page. Thursday has the
+additional 2008 variation noted above. This collation establishes the
+structural roles and the U.S. English dismissal or permission. Other exact
+2008 Latin bodies still need a witness for that printing.
+
+For Wednesday and Saturday of Lent I, Friday and Saturday of Lent II, and
+Monday, Tuesday and Saturday of Lent III, the complete 2002 petition coincides
+with independently published historical Latin. These seven have historical
+Latin with the separately attested conclusion cue and an original project
+English study translation. On the remaining weekdays the links provide the
+published reading, with the rights status of each wording recorded separately.

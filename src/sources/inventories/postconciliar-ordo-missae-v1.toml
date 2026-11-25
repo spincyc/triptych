@@ -2884,3 +2884,46 @@ elements = [
   "ritus-conclusionis/dimissio-appointed",
   "ritus-conclusionis/recessus",
 ]
+
+[[special_mass_frames]]
+mass = "ash-wednesday"
+form_id = "main"
+locus = "Missale Romanum 2002, Feria IV Cinerum, PDF pp. 123–125. Blessing and imposition after the homily replace the Penitential Act. The Missal passes from the greeting to the Collect, and from the distribution to the Universal Prayer, without the Creed."
+exclude = ["ritus-initiales/gloria-in-excelsis", "symbolum/symbolum-nicaenum", "symbolum/symbolum-apostolicum"]
+exclude_ranges = [{first = "ritus-initiales/actus-paenitentialis-i", last = "ritus-initiales/kyrie"}]
+
+[[special_mass_frames.seats]]
+id = "chants-at-imposition"
+anchor = "liturgia-verbi/homilia"
+where = "after"
+propers = ["Antiphon at the Distribution of Ashes 1", "Antiphon at the Distribution of Ashes 2", "Antiphon at the Distribution of Ashes 3", "Responsory at the Distribution of Ashes"]
+note = "After the homily the priest invites prayer, keeps a short silence, blesses the ashes using one of two prayers, and sprinkles them. These chants accompany the imposition of ashes. Another suitable chant may be sung. The priest then washes his hands and proceeds to the Universal Prayer."
+
+[[special_mass_frames]]
+mass = "presentation-lord"
+form_id = "main"
+locus = "Missale Romanum 2002, In Praesentatione Domini, nos. 1–11, PDF pp. 422–425. The Procession begins outside the destination church. The Solemn Entrance starts at the door or inside the church. Both use the same order for lighting, greeting, blessing, procession, entrance chant, altar veneration, Gloria and Collect."
+exclude = ["ritus-initiales/introitus"]
+exclude_ranges = [{first = "ritus-initiales/actus-paenitentialis-i", last = "ritus-initiales/kyrie"}]
+include = ["ritus-initiales/gloria-in-excelsis"]
+
+[[special_mass_frames.seats]]
+id = "lighting-the-candles"
+anchor = "ritus-initiales/signum-crucis"
+where = "before"
+propers = ["Antiphon while Candles are Lit", "Another Suitable Chant while Candles are Lit"]
+note = "The people light their candles before the Sign of the Cross and greeting. The Procession starts outside the destination church. For the Solemn Entrance the candles are lit at the door or inside the church."
+
+[[special_mass_frames.seats]]
+id = "procession-with-candles"
+anchor = "ritus-initiales/gloria-in-excelsis"
+where = "before"
+propers = ["Procession Chant 1 with Canticle", "Procession Chant 2", "Another Suitable Chant during the Procession"]
+note = "After the greeting and address the priest uses one of the two blessing prayers and sprinkles the candles. Following the invitation, the people carry their lighted candles in procession, singing one of the two printed chants or another suitable chant."
+
+[[special_mass_frames.seats]]
+id = "entrance-after-procession"
+anchor = "ritus-initiales/gloria-in-excelsis"
+where = "before"
+propers = ["Entrance Antiphon"]
+note = "The Mass entrance chant accompanies entry into the church. At the altar the priest venerates it and may incense it, then goes to the chair for the Gloria and Collect."

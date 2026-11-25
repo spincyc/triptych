@@ -15,7 +15,7 @@ max_results_per_mass: 20
 mass_count: 1097
 covered_mass_count: 1096
 unresolved_passage_count: 353
-chapter_matched_passage_count: 3240
+chapter_matched_passage_count: 3241
 chapter_matched_passages:
 - 1 Chronicles 29:10; 29:11ab; 29:11d-29:12a; 29:12bcd
 - 1 Chronicles 29:10; 29:11abc; 29:11d-29:12a; 29:12bcd
@@ -2710,6 +2710,7 @@ chapter_matched_passages:
 - Psalms 54:23; 54:17-54:19
 - Psalms 54:3-54:4
 - Psalms 54:7-54:8; 54:9-54:10a; 54:10b-54:11a; 54:23
+- Psalms 55:10; 55:11; 55:12-55:13
 - Psalms 55:2
 - Psalms 55:2-55:3; 55:9-55:10ab; 55:10c-55:11; 55:12-55:13
 - Psalms 55:3
@@ -3257,10 +3258,7 @@ chapter_matched_passages:
 - Zephaniah 3:12-3:13
 - Zephaniah 3:14-3:18
 - Zephaniah 3:14-3:18a
-unconvertible_references:
-- mass: postconciliar::ot-24-saturday
-  ref: Psalm 56:10, 11-12, 13-14
-  reason: hebrew Psalm 56:14 is outside the psalm
+unconvertible_references: []
 refused_loci:
 - mass: postconciliar::lent-1-thursday
   ref: Esther 4:17n, 17p-17r, 17aa-17bb, 17gg-17hh
@@ -21766,6 +21764,11 @@ passages:
   mass_count: 1
   masses:
   - postconciliar::ot-7-tuesday
+  has_commentary: true
+- passage: Psalms 55:10; 55:11; 55:12-55:13
+  mass_count: 1
+  masses:
+  - postconciliar::ot-24-saturday
   has_commentary: true
 - passage: Psalms 55:2
   mass_count: 3
@@ -93252,18 +93255,43 @@ masses:
     passages:
     - Luke 8:15
     - Luke 8:4-8:15
+  - work_id: work.augustine.enarrationes-in-psalmos
+    author: Augustine of Hippo
+    title: Enarrationes in Psalmos
+    date: '430'
+    role: doctor
+    confidence: 1.0
+    score: 2.0
+    passages:
+    - Psalms 55:10; 55:11; 55:12-55:13
+    - Psalms 99:2; 99:3; 99:4; 99:5
+  - work_id: null
+    author: Denis the Carthusian
+    title: Enarrationes in universam Bibliam
+    date: '1471'
+    role: saintly
+    confidence: 0.6667
+    score: 1.2381
+    passages:
+    - 1 Corinthians 15:35-15:37; 15:42-15:49
+    - 1 Timothy 6:13-6:16
+    - Luke 8:15
+    - Luke 8:4-8:15
+    - Psalms 55:10; 55:11; 55:12-55:13
+    - Psalms 99:2; 99:3; 99:4; 99:5
   - work_id: null
     author: Nicholas of Lyra
     title: Postilla litteralis super totam Bibliam
     date: '1349'
     role: saintly
     confidence: 1.0
-    score: 1.0889
+    score: 1.2317
     passages:
     - 1 Corinthians 15:35-15:37; 15:42-15:49
     - 1 Timothy 6:13-6:16
     - Luke 8:15
     - Luke 8:4-8:15
+    - Psalms 55:10; 55:11; 55:12-55:13
     - Psalms 99:2; 99:3; 99:4; 99:5
   - work_id: null
     author: Ambrose of Milan
@@ -93275,27 +93303,15 @@ masses:
     passages:
     - Luke 8:15
     - Luke 8:4-8:15
-  - work_id: work.augustine.enarrationes-in-psalmos
-    author: Augustine of Hippo
-    title: Enarrationes in Psalmos
-    date: '430'
-    role: doctor
+  - work_id: null
+    author: Cassiodorus
+    title: Expositio Psalmorum
+    date: '585'
+    role: saintly
     confidence: 1.0
     score: 1.0
     passages:
-    - Psalms 99:2; 99:3; 99:4; 99:5
-  - work_id: null
-    author: Denis the Carthusian
-    title: Enarrationes in universam Bibliam
-    date: '1471'
-    role: saintly
-    confidence: 0.6667
-    score: 0.9048
-    passages:
-    - 1 Corinthians 15:35-15:37; 15:42-15:49
-    - 1 Timothy 6:13-6:16
-    - Luke 8:15
-    - Luke 8:4-8:15
+    - Psalms 55:10; 55:11; 55:12-55:13
     - Psalms 99:2; 99:3; 99:4; 99:5
   - work_id: null
     author: Hugh of Saint-Cher
@@ -93303,12 +93319,13 @@ masses:
     date: '1263'
     role: saintly
     confidence: 0.6667
-    score: 0.75
+    score: 0.95
     passages:
     - 1 Corinthians 15:35-15:37; 15:42-15:49
     - 1 Timothy 6:13-6:16
     - Luke 8:15
     - Luke 8:4-8:15
+    - Psalms 55:10; 55:11; 55:12-55:13
     - Psalms 99:2; 99:3; 99:4; 99:5
   - work_id: null
     author: Bede the Venerable
@@ -93330,15 +93347,6 @@ masses:
     passages:
     - Luke 8:15
     - Luke 8:4-8:15
-  - work_id: null
-    author: Cassiodorus
-    title: Expositio Psalmorum
-    date: '585'
-    role: saintly
-    confidence: 1.0
-    score: 0.5
-    passages:
-    - Psalms 99:2; 99:3; 99:4; 99:5
   - work_id: work.john-chrysostom.homilies-on-first-corinthians
     author: John Chrysostom
     title: Homiliae in epistulam i ad Corinthios
@@ -93398,47 +93406,45 @@ masses:
     - 1 Corinthians 15:35-15:37; 15:42-15:49
     - 1 Timothy 6:13-6:16
   - work_id: null
-    author: Theophylact of Ohrid
-    title: In omnes D. Pauli apostoli epistolas enarrationes
-    date: '1107'
-    role: saint
-    confidence: 0.6667
-    score: 0.2222
-    passages:
-    - 1 Corinthians 15:35-15:37; 15:42-15:49
-    - 1 Timothy 6:13-6:16
-  - work_id: null
-    author: Walafrid Strabo
-    title: Glossa ordinaria
-    date: '849'
-    role: saintly
-    confidence: 0.3333
-    score: 0.2167
-    passages:
-    - Luke 8:15
-    - Luke 8:4-8:15
-    - Psalms 99:2; 99:3; 99:4; 99:5
-  - work_id: null
-    author: Denis the Carthusian
-    title: Enarrationes in omnes libros sacrae Scripturae
-    date: '1471'
-    role: saintly
-    confidence: 0.3333
-    score: 0.2
-    passages:
-    - 1 Corinthians 15:35-15:37; 15:42-15:49
-    - 1 Timothy 6:13-6:16
-  - work_id: null
-    author: Theophylact of Ohrid
-    title: Enarratio in Evangelium Lucae
-    date: '1107'
+    author: Peter Lombard
+    title: Commentarium in Psalmos
+    date: '1160'
     role: saintly
     confidence: 1.0
-    score: 0.2
+    score: 0.2917
     passages:
-    - Luke 8:15
-    - Luke 8:4-8:15
-  passage_count: 5
+    - Psalms 55:10; 55:11; 55:12-55:13
+    - Psalms 99:2; 99:3; 99:4; 99:5
+  - work_id: null
+    author: Jerome
+    title: Commentarioli in Psalmos
+    date: '420'
+    role: doctor
+    confidence: 0.6667
+    score: 0.2667
+    passages:
+    - Psalms 55:10; 55:11; 55:12-55:13
+    - Psalms 99:2; 99:3; 99:4; 99:5
+  - work_id: null
+    author: Robert Bellarmine
+    title: Explanatio in Psalmos
+    date: '1621'
+    role: doctor
+    confidence: 1.0
+    score: 0.254
+    passages:
+    - Psalms 55:10; 55:11; 55:12-55:13
+    - Psalms 99:2; 99:3; 99:4; 99:5
+  - work_id: null
+    author: Hilary of Poitiers
+    title: Tractatus super Psalmos
+    date: '367'
+    role: church-father
+    confidence: 1.0
+    score: 0.25
+    passages:
+    - Psalms 55:10; 55:11; 55:12-55:13
+  passage_count: 6
 - calendar: postconciliar
   mass_key: ot-24-thursday
   mass_name: Thursday of the Twenty-fourth Week in Ordinary Time

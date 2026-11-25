@@ -339,6 +339,7 @@ mass = "ash-wednesday"
 form_id = "main"
 language = "en"
 source_id = "artifact.catholic-church.missale-romanum.australian-liturgy-us-emissal-2021.publisher-html-4ea52314"
+proper_targets = [{role = "Antiphon at the Distribution of Ashes 1", occurrence = 1}, {role = "Antiphon at the Distribution of Ashes 2", occurrence = 1}, {role = "Antiphon at the Distribution of Ashes 3", occurrence = 1}, {role = "Responsory at the Distribution of Ashes", occurrence = 1}, {role = "Prayer over the People", occurrence = 1}]
 url = "https://rmhealey.com/docs/RMU/#L04"
 locus = "Ash Wednesday."
 edition_label = "U.S. English Roman eMissal, Australian Liturgy (2021)"
@@ -1083,6 +1084,7 @@ url = "https://rmhealey.com/docs/RMU/#L06"
 locus = "Friday after Ash Wednesday."
 edition_label = "U.S. English Roman eMissal, Australian Liturgy (2021)"
 prayer_roles = ["Collect", "Prayer over the Offerings", "Prayer after Communion"]
+proper_target = { role = "Prayer over the People", occurrence = 1 }
 
 [[entries]]
 mass = "good-friday"
@@ -1133,6 +1135,7 @@ url = "https://rmhealey.com/docs/RMU/#L62"
 locus = "Monday of Holy Week."
 edition_label = "U.S. English Roman eMissal, Australian Liturgy (2021)"
 prayer_roles = ["Collect", "Prayer over the Offerings", "Prayer after Communion"]
+proper_target = { role = "Prayer over the People", occurrence = 1 }
 
 [[entries]]
 mass = "holy-tuesday"
@@ -1143,6 +1146,7 @@ url = "https://rmhealey.com/docs/RMU/#L63"
 locus = "Tuesday of Holy Week."
 edition_label = "U.S. English Roman eMissal, Australian Liturgy (2021)"
 prayer_roles = ["Collect", "Prayer over the Offerings", "Prayer after Communion"]
+proper_target = { role = "Prayer over the People", occurrence = 1 }
 
 [[entries]]
 mass = "holy-wednesday"
@@ -1153,6 +1157,7 @@ url = "https://rmhealey.com/docs/RMU/#L64"
 locus = "Wednesday of Holy Week."
 edition_label = "U.S. English Roman eMissal, Australian Liturgy (2021)"
 prayer_roles = ["Collect", "Prayer over the Offerings", "Prayer after Communion"]
+proper_target = { role = "Prayer over the People", occurrence = 1 }
 
 [[entries]]
 mass = "immaculate-conception-blessed-virgin-mary"
@@ -1193,6 +1198,7 @@ url = "https://rmhealey.com/docs/RMU/#L16"
 locus = "Friday of the First Week of Lent."
 edition_label = "U.S. English Roman eMissal, Australian Liturgy (2021)"
 prayer_roles = ["Collect", "Prayer over the Offerings", "Prayer after Communion"]
+proper_target = { role = "Prayer over the People", occurrence = 1 }
 
 [[entries]]
 mass = "lent-1-monday"
@@ -1203,6 +1209,7 @@ url = "https://rmhealey.com/docs/RMU/#L12"
 locus = "Monday of the First Week of Lent."
 edition_label = "U.S. English Roman eMissal, Australian Liturgy (2021)"
 prayer_roles = ["Collect", "Prayer over the Offerings", "Prayer after Communion"]
+proper_target = { role = "Prayer over the People", occurrence = 1 }
 
 [[entries]]
 mass = "lent-1-saturday"
@@ -1213,6 +1220,7 @@ url = "https://rmhealey.com/docs/RMU/#L17"
 locus = "Saturday of the First Week of Lent."
 edition_label = "U.S. English Roman eMissal, Australian Liturgy (2021)"
 prayer_roles = ["Collect", "Prayer over the Offerings", "Prayer after Communion"]
+proper_target = { role = "Prayer over the People", occurrence = 1 }
 
 [[entries]]
 mass = "lent-1-thursday"
@@ -1223,6 +1231,7 @@ url = "https://rmhealey.com/docs/RMU/#L15"
 locus = "Thursday of the First Week of Lent."
 edition_label = "U.S. English Roman eMissal, Australian Liturgy (2021)"
 prayer_roles = ["Collect", "Prayer over the Offerings", "Prayer after Communion"]
+proper_target = { role = "Prayer over the People", occurrence = 1 }
 
 [[entries]]
 mass = "lent-1-tuesday"
@@ -1233,6 +1242,7 @@ url = "https://rmhealey.com/docs/RMU/#L13"
 locus = "Tuesday of the First Week of Lent."
 edition_label = "U.S. English Roman eMissal, Australian Liturgy (2021)"
 prayer_roles = ["Collect", "Prayer over the Offerings", "Prayer after Communion"]
+proper_target = { role = "Prayer over the People", occurrence = 1 }
 
 [[entries]]
 mass = "lent-1-wednesday"
@@ -1243,6 +1253,7 @@ url = "https://rmhealey.com/docs/RMU/#L14"
 locus = "Wednesday of the First Week of Lent."
 edition_label = "U.S. English Roman eMissal, Australian Liturgy (2021)"
 prayer_roles = ["Collect", "Prayer over the Offerings", "Prayer after Communion"]
+proper_target = { role = "Prayer over the People", occurrence = 1 }
 
 [[entries]]
 mass = "lent-2"
@@ -1263,6 +1274,7 @@ url = "https://rmhealey.com/docs/RMU/#L26"
 locus = "Friday of the Second Week of Lent."
 edition_label = "U.S. English Roman eMissal, Australian Liturgy (2021)"
 prayer_roles = ["Collect", "Prayer over the Offerings", "Prayer after Communion"]
+proper_target = { role = "Prayer over the People", occurrence = 1 }
 
 [[entries]]
 mass = "lent-2-monday"
@@ -1273,6 +1285,7 @@ url = "https://rmhealey.com/docs/RMU/#L22"
 locus = "Monday of the Second Week of Lent."
 edition_label = "U.S. English Roman eMissal, Australian Liturgy (2021)"
 prayer_roles = ["Collect", "Prayer over the Offerings", "Prayer after Communion"]
+proper_target = { role = "Prayer over the People", occurrence = 1 }
 
 [[entries]]
 mass = "lent-2-saturday"
@@ -1283,6 +1296,7 @@ url = "https://rmhealey.com/docs/RMU/#L27"
 locus = "Saturday of the Second Week of Lent."
 edition_label = "U.S. English Roman eMissal, Australian Liturgy (2021)"
 prayer_roles = ["Collect", "Prayer over the Offerings", "Prayer after Communion"]
+proper_target = { role = "Prayer over the People", occurrence = 1 }
 
 [[entries]]
 mass = "lent-2-thursday"
@@ -1293,6 +1307,7 @@ url = "https://rmhealey.com/docs/RMU/#L25"
 locus = "Thursday of the Second Week of Lent."
 edition_label = "U.S. English Roman eMissal, Australian Liturgy (2021)"
 prayer_roles = ["Collect", "Prayer over the Offerings", "Prayer after Communion"]
+proper_target = { role = "Prayer over the People", occurrence = 1 }
 
 [[entries]]
 mass = "lent-2-tuesday"
@@ -1303,6 +1318,7 @@ url = "https://rmhealey.com/docs/RMU/#L23"
 locus = "Tuesday of the Second Week of Lent."
 edition_label = "U.S. English Roman eMissal, Australian Liturgy (2021)"
 prayer_roles = ["Collect", "Prayer over the Offerings", "Prayer after Communion"]
+proper_target = { role = "Prayer over the People", occurrence = 1 }
 
 [[entries]]
 mass = "lent-2-wednesday"
@@ -1313,6 +1329,7 @@ url = "https://rmhealey.com/docs/RMU/#L24"
 locus = "Wednesday of the Second Week of Lent."
 edition_label = "U.S. English Roman eMissal, Australian Liturgy (2021)"
 prayer_roles = ["Collect", "Prayer over the Offerings", "Prayer after Communion"]
+proper_target = { role = "Prayer over the People", occurrence = 1 }
 
 [[entries]]
 mass = "lent-3"
@@ -1333,6 +1350,7 @@ url = "https://rmhealey.com/docs/RMU/#L36"
 locus = "Friday of the Third Week of Lent."
 edition_label = "U.S. English Roman eMissal, Australian Liturgy (2021)"
 prayer_roles = ["Collect", "Prayer over the Offerings", "Prayer after Communion"]
+proper_target = { role = "Prayer over the People", occurrence = 1 }
 
 [[entries]]
 mass = "lent-3-monday"
@@ -1343,6 +1361,7 @@ url = "https://rmhealey.com/docs/RMU/#L32"
 locus = "Monday of the Third Week of Lent."
 edition_label = "U.S. English Roman eMissal, Australian Liturgy (2021)"
 prayer_roles = ["Collect", "Prayer over the Offerings", "Prayer after Communion"]
+proper_target = { role = "Prayer over the People", occurrence = 1 }
 
 [[entries]]
 mass = "lent-3-saturday"
@@ -1353,6 +1372,7 @@ url = "https://rmhealey.com/docs/RMU/#L37"
 locus = "Saturday of the Third Week of Lent."
 edition_label = "U.S. English Roman eMissal, Australian Liturgy (2021)"
 prayer_roles = ["Collect", "Prayer over the Offerings", "Prayer after Communion"]
+proper_target = { role = "Prayer over the People", occurrence = 1 }
 
 [[entries]]
 mass = "lent-3-thursday"
@@ -1363,6 +1383,7 @@ url = "https://rmhealey.com/docs/RMU/#L35"
 locus = "Thursday of the Third Week of Lent."
 edition_label = "U.S. English Roman eMissal, Australian Liturgy (2021)"
 prayer_roles = ["Collect", "Prayer over the Offerings", "Prayer after Communion"]
+proper_target = { role = "Prayer over the People", occurrence = 1 }
 
 [[entries]]
 mass = "lent-3-tuesday"
@@ -1373,6 +1394,7 @@ url = "https://rmhealey.com/docs/RMU/#L33"
 locus = "Tuesday of the Third Week of Lent."
 edition_label = "U.S. English Roman eMissal, Australian Liturgy (2021)"
 prayer_roles = ["Collect", "Prayer over the Offerings", "Prayer after Communion"]
+proper_target = { role = "Prayer over the People", occurrence = 1 }
 
 [[entries]]
 mass = "lent-3-wednesday"
@@ -1383,6 +1405,7 @@ url = "https://rmhealey.com/docs/RMU/#L34"
 locus = "Wednesday of the Third Week of Lent."
 edition_label = "U.S. English Roman eMissal, Australian Liturgy (2021)"
 prayer_roles = ["Collect", "Prayer over the Offerings", "Prayer after Communion"]
+proper_target = { role = "Prayer over the People", occurrence = 1 }
 
 [[entries]]
 mass = "lent-4"
@@ -1403,6 +1426,7 @@ url = "https://rmhealey.com/docs/RMU/#L46"
 locus = "Friday of the Fourth Week of Lent."
 edition_label = "U.S. English Roman eMissal, Australian Liturgy (2021)"
 prayer_roles = ["Collect", "Prayer over the Offerings", "Prayer after Communion"]
+proper_target = { role = "Prayer over the People", occurrence = 1 }
 
 [[entries]]
 mass = "lent-4-monday"
@@ -1413,6 +1437,7 @@ url = "https://rmhealey.com/docs/RMU/#L42"
 locus = "Monday of the Fourth Week of Lent."
 edition_label = "U.S. English Roman eMissal, Australian Liturgy (2021)"
 prayer_roles = ["Collect", "Prayer over the Offerings", "Prayer after Communion"]
+proper_target = { role = "Prayer over the People", occurrence = 1 }
 
 [[entries]]
 mass = "lent-4-saturday"
@@ -1423,6 +1448,7 @@ url = "https://rmhealey.com/docs/RMU/#L47"
 locus = "Saturday of the Fourth Week of Lent."
 edition_label = "U.S. English Roman eMissal, Australian Liturgy (2021)"
 prayer_roles = ["Collect", "Prayer over the Offerings", "Prayer after Communion"]
+proper_target = { role = "Prayer over the People", occurrence = 1 }
 
 [[entries]]
 mass = "lent-4-thursday"
@@ -1433,6 +1459,7 @@ url = "https://rmhealey.com/docs/RMU/#L45"
 locus = "Thursday of the Fourth Week of Lent."
 edition_label = "U.S. English Roman eMissal, Australian Liturgy (2021)"
 prayer_roles = ["Collect", "Prayer over the Offerings", "Prayer after Communion"]
+proper_target = { role = "Prayer over the People", occurrence = 1 }
 
 [[entries]]
 mass = "lent-4-tuesday"
@@ -1443,6 +1470,7 @@ url = "https://rmhealey.com/docs/RMU/#L43"
 locus = "Tuesday of the Fourth Week of Lent."
 edition_label = "U.S. English Roman eMissal, Australian Liturgy (2021)"
 prayer_roles = ["Collect", "Prayer over the Offerings", "Prayer after Communion"]
+proper_target = { role = "Prayer over the People", occurrence = 1 }
 
 [[entries]]
 mass = "lent-4-wednesday"
@@ -1453,6 +1481,7 @@ url = "https://rmhealey.com/docs/RMU/#L44"
 locus = "Wednesday of the Fourth Week of Lent."
 edition_label = "U.S. English Roman eMissal, Australian Liturgy (2021)"
 prayer_roles = ["Collect", "Prayer over the Offerings", "Prayer after Communion"]
+proper_target = { role = "Prayer over the People", occurrence = 1 }
 
 [[entries]]
 mass = "lent-5"
@@ -1473,6 +1502,7 @@ url = "https://rmhealey.com/docs/RMU/#L56"
 locus = "Friday of the Fifth Week of Lent."
 edition_label = "U.S. English Roman eMissal, Australian Liturgy (2021)"
 prayer_roles = ["Collect", "Prayer over the Offerings", "Prayer after Communion"]
+proper_target = { role = "Prayer over the People", occurrence = 1 }
 
 [[entries]]
 mass = "lent-5-monday"
@@ -1483,6 +1513,7 @@ url = "https://rmhealey.com/docs/RMU/#L52"
 locus = "Monday of the Fifth Week of Lent."
 edition_label = "U.S. English Roman eMissal, Australian Liturgy (2021)"
 prayer_roles = ["Collect", "Prayer over the Offerings", "Prayer after Communion"]
+proper_target = { role = "Prayer over the People", occurrence = 1 }
 
 [[entries]]
 mass = "lent-5-saturday"
@@ -1493,6 +1524,7 @@ url = "https://rmhealey.com/docs/RMU/#L57"
 locus = "Saturday of the Fifth Week of Lent."
 edition_label = "U.S. English Roman eMissal, Australian Liturgy (2021)"
 prayer_roles = ["Collect", "Prayer over the Offerings", "Prayer after Communion"]
+proper_target = { role = "Prayer over the People", occurrence = 1 }
 
 [[entries]]
 mass = "lent-5-thursday"
@@ -1503,6 +1535,7 @@ url = "https://rmhealey.com/docs/RMU/#L55"
 locus = "Thursday of the Fifth Week of Lent."
 edition_label = "U.S. English Roman eMissal, Australian Liturgy (2021)"
 prayer_roles = ["Collect", "Prayer over the Offerings", "Prayer after Communion"]
+proper_target = { role = "Prayer over the People", occurrence = 1 }
 
 [[entries]]
 mass = "lent-5-tuesday"
@@ -1513,6 +1546,7 @@ url = "https://rmhealey.com/docs/RMU/#L53"
 locus = "Tuesday of the Fifth Week of Lent."
 edition_label = "U.S. English Roman eMissal, Australian Liturgy (2021)"
 prayer_roles = ["Collect", "Prayer over the Offerings", "Prayer after Communion"]
+proper_target = { role = "Prayer over the People", occurrence = 1 }
 
 [[entries]]
 mass = "lent-5-wednesday"
@@ -1523,6 +1557,7 @@ url = "https://rmhealey.com/docs/RMU/#L54"
 locus = "Wednesday of the Fifth Week of Lent."
 edition_label = "U.S. English Roman eMissal, Australian Liturgy (2021)"
 prayer_roles = ["Collect", "Prayer over the Offerings", "Prayer after Communion"]
+proper_target = { role = "Prayer over the People", occurrence = 1 }
 
 [[entries]]
 mass = "mary-holy-mother-god"
@@ -4188,6 +4223,7 @@ mass = "presentation-lord"
 form_id = "main"
 language = "en"
 source_id = "artifact.catholic-church.missale-romanum.australian-liturgy-us-emissal-2021.publisher-html-4ea52314"
+proper_targets = [{role = "Antiphon while Candles are Lit", occurrence = 1}, {role = "Procession Chant 1 with Canticle", occurrence = 1}, {role = "Procession Chant 2", occurrence = 1}]
 url = "https://rmhealey.com/docs/RMU/#Feb02"
 locus = "The Presentation of the Lord."
 edition_label = "U.S. English Roman eMissal, Australian Liturgy (2021)"
@@ -6042,6 +6078,7 @@ url = "https://rmhealey.com/docs/RMU/#L07"
 locus = "Saturday after Ash Wednesday."
 edition_label = "U.S. English Roman eMissal, Australian Liturgy (2021)"
 prayer_roles = ["Collect", "Prayer over the Offerings", "Prayer after Communion"]
+proper_target = { role = "Prayer over the People", occurrence = 1 }
 
 [[entries]]
 mass = "second-sunday-after-nativity"
@@ -6068,6 +6105,7 @@ mass = "thursday-after-ash-wednesday"
 form_id = "main"
 language = "en"
 source_id = "artifact.catholic-church.missale-romanum.australian-liturgy-us-emissal-2021.publisher-html-4ea52314"
+proper_targets = [{role = "Prayer over the People", occurrence = 1}]
 url = "https://rmhealey.com/docs/RMU/#L05"
 locus = "Thursday after Ash Wednesday."
 edition_label = "U.S. English Roman eMissal, Australian Liturgy (2021)"
@@ -6218,3 +6256,23 @@ reason = "The May index and Proper of Saints omit Saint Paul VI."
 mass = "saint-teresa-calcutta-virgin"
 form_id = "main"
 reason = "The September index and Proper of Saints omit Saint Teresa of Calcutta."
+
+[[entries]]
+mass = "ot-1"
+form_id = "main"
+language = "en"
+source_id = "artifact.catholic-church.missale-romanum.australian-liturgy-us-emissal-2021.publisher-html-4ea52314"
+url = "https://rmhealey.com/docs/RMU/#Y01"
+locus = "First Week in Ordinary Time, weekday prayer formulary."
+edition_label = "U.S. English Roman eMissal, Australian Liturgy (2021)"
+prayer_roles = ["Collect", "Prayer over the Offerings", "Prayer after Communion"]
+
+[[entries]]
+mass = "ot-34"
+form_id = "main"
+language = "en"
+source_id = "artifact.catholic-church.missale-romanum.australian-liturgy-us-emissal-2021.publisher-html-4ea52314"
+url = "https://rmhealey.com/docs/RMU/#Y34"
+locus = "Thirty-fourth Week in Ordinary Time, weekday prayer formulary."
+edition_label = "U.S. English Roman eMissal, Australian Liturgy (2021)"
+prayer_roles = ["Collect", "Prayer over the Offerings", "Prayer after Communion"]

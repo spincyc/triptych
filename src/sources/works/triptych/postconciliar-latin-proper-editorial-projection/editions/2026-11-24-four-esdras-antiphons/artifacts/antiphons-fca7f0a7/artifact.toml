@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.postconciliar-latin-proper-editorial-projection.2026-11-24-four-esdras-antiphons.antiphons-fca7f0a7"
+edition_id = "edition.triptych.postconciliar-latin-proper-editorial-projection.2026-11-24-four-esdras-antiphons"
+artifact_type = "editorial-projection"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "All Latin wording is independently present in the public-domain Mame 1922 edition. Each shorter 2002 extent is identified in its own passage."
+rights_jurisdiction = "United States"
+retrieved = "2026-11-24"
+sha256 = "fca7f0a7e6f318cc6753ae744f5c503821037afb1188ce7309d51aedfbe2a217"
+byte_size = 305
+path = "src/sources/works/triptych/postconciliar-latin-proper-editorial-projection/editions/2026-11-24-four-esdras-antiphons/artifacts/antiphons-fca7f0a7/latin.tsv"
+encoding = "utf-8"
+indexable = true
+projected_from = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"]
+provenance = "Tours Mame 1922, registered page-image receipts for Pentecost Tuesday and All Souls; checked against the 2002 PDF and Biblia Clerus."
+transformation = "Select the words of each modern antiphon from the historical chant, omit later verses and indicated repetitions; apply target pointing, orthography and case."

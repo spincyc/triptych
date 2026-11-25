@@ -89,3 +89,27 @@ owners; this note introduces no second correspondence table.
 the existing shared citation projection, the part marker, every offered Bible's
 opening and terminal clauses, exclusion of the following oracle, the unchanged
 Haggai control, unlisted-citation refusal, and the preserved Psalm refusal.
+
+## November 24 supplement for OLM 448, Year II
+
+The October refusal above described the evidence then registered. The Vatican
+Nova Vulgata Psalter is now registered as an external witness. In Psalm 56
+(55), vv. 10, 11–12 and 13–14, the first unit includes the enemies' withdrawal,
+invocation and knowledge, the second includes both praise clauses and trust,
+and the last includes vows, deliverance and walking in the light. OLM 448 prints
+the whole of verse 10. The U.S. September 19, 2026 appointment begins at 10c.
+[Ordo lectionum Missae, 1981, printed p. 236, PDF p. 290](../works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/olm-448-ii-responsorial-psalm.toml)
+· [Vatican Psalter, Psalm 56 (55)](https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_vt_psalmorum_lt.html#PSALMUS%2056)
+· [USCCB, Lectionary 448](https://bible.usccb.org/bible/readings/091926.cfm).
+
+| Collated local Bible | Printed carriers for the three OLM groups |
+| --- | --- |
+| Clementine, Douay–Rheims, Douay–Rheims American 1899, Catholic Public Domain Version | Psalm 55:10 / 11 / 12–13 |
+| King James, Revised Version 1895, World English Bible Catholic | Psalm 56:9 / 10–11 / 12–13 |
+
+The seven complete local readings are Bible reconstructions. The closing
+deliverance and light unit survives in every one. The source map belongs to
+this one standard OLM appointment. The generic verse concordance still refuses
+an unsupported request for Hebrew Psalm 56:14. The source and Psalter passage
+receipts and individually collated edition identifiers are attached to the
+canonical Year II Responsorial Psalm in the postconciliar calendar.

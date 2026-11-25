@@ -1023,6 +1023,7 @@ mass = "commemoration-all-faithful-departed-all-souls"
 form_id = "second"
 language = "en"
 source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
+proper_targets = [{ role = "Entrance Antiphon", occurrence = 1 }, { role = "Communion Antiphon", occurrence = 1 }]
 url = "https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf#page=143"
 locus = "Communion Antiphon / second formulary, Entrance and Communion antiphons (artifact p. 143)"
 edition_label = "English Roman Missal antiphons (ICEL, 2010)"
@@ -1031,6 +1032,7 @@ edition_label = "English Roman Missal antiphons (ICEL, 2010)"
 mass = "commemoration-all-faithful-departed-all-souls"
 form_id = "second"
 source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-gls-9f3b0bff"
+proper_target = { role = "Entrance Antiphon", occurrence = 1 }
 url = "https://www.clerus.org/bibliaclerusonline/en/gls.htm#cj0"
 locus = "The Commemoration of All the Faithful Departed (All Souls) / 2 Ant. ad introitum"
 
@@ -1386,6 +1388,7 @@ edition_label = "ICEL English in FDLC Mystagogical Reflections (2012–13)"
 mass = "easter-2"
 form_id = "main"
 source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
+proper_target = { role = "Entrance Antiphon", occurrence = 2 }
 url = "https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf#page=60"
 locus = "Second Sunday of Easter (Divine Mercy Sunday) / Mass antiphons (artifact p. 60, printed p. 52)"
 edition_label = "English Roman Missal antiphons (ICEL, 2010)"
@@ -1395,6 +1398,7 @@ language = "en"
 mass = "easter-2"
 form_id = "main"
 source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glg-b33a3c97"
+proper_target = { role = "Entrance Antiphon", occurrence = 2 }
 url = "https://www.clerus.org/bibliaclerusonline/en/glg.htm#h0"
 locus = "DOMINICA II PASCHAE"
 
@@ -3319,6 +3323,7 @@ mass = "nativity"
 form_id = "night"
 language = "en"
 source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
+proper_target = { role = "Entrance Antiphon (alternative)", occurrence = 1 }
 url = "https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf#page=20"
 locus = "At the Mass during the Night / Entrance and Communion antiphons (artifact p. 20)"
 edition_label = "English Roman Missal antiphons (ICEL, 2010)"
@@ -9743,3 +9748,475 @@ url = "https://stjustin.org/wp-content/uploads/Bulletin-for-04-25-21.pdf#page=3"
 locus = "April 23, Saint Adalbert, parish bulletin p. 3; named Collect with abbreviated conclusion."
 edition_label = "Saint Justin the Martyr Parish, Diocese of Trenton (April 18, 2021)"
 prayer_roles = ["Collect"]
+[[entries]]
+mass = "good-friday"
+form_id = "main"
+source_id = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.good-friday-4"
+url = "https://www.icelweb.org/musicfolder/GoodFriday4.pdf#page=1"
+locus = "FRIDAY OF THE PASSION OF THE LORD / The Solemn Intercessions / IV. For catechumens"
+language = "en"
+edition_label = "Music for the Roman Missal (ICEL, 2010)"
+proper_target = { role = "Solemn Intercession IV: For catechumens", occurrence = 1 }
+
+[[entries]]
+mass = "palm-sunday"
+form_id = "main"
+source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
+url = "https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf#page=44"
+locus = "LENT (incorrect running head) / Third Form: The Simple Entrance / Entrance Antiphon"
+language = "en"
+edition_label = "English Roman Missal antiphons (ICEL, 2010)"
+proper_target = { role = "Entrance Antiphon", occurrence = 1 }
+
+[[entries]]
+mass = "easter-vigil"
+form_id = "main"
+source_id = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.exsultet-long"
+url = "https://www.icelweb.org/musicfolder/ExsultetLong.pdf#page=1"
+locus = "THE EASTER VIGIL / The Easter Proclamation (Exsultet) / Longer form"
+language = "en"
+edition_label = "Music for the Roman Missal (ICEL, 2010)"
+proper_target = { role = "Easter Proclamation (Exsultet)", occurrence = 1 }
+
+[[entries]]
+mass = "good-friday"
+form_id = "main"
+source_id = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.good-friday-3"
+url = "https://www.icelweb.org/musicfolder/GoodFriday3.pdf#page=1"
+locus = "FRIDAY OF THE PASSION OF THE LORD / The Solemn Intercessions / III. For all orders and degrees of the faithful"
+language = "en"
+edition_label = "Music for the Roman Missal (ICEL, 2010)"
+proper_target = { role = "Solemn Intercession III: For all orders and degrees of the faithful", occurrence = 1 }
+
+[[entries]]
+mass = "good-friday"
+form_id = "main"
+source_id = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.good-friday-9"
+url = "https://www.icelweb.org/musicfolder/GoodFriday9.pdf#page=1"
+locus = "FRIDAY OF THE PASSION OF THE LORD / The Solemn Intercessions / IX. For those in public office"
+language = "en"
+edition_label = "Music for the Roman Missal (ICEL, 2010)"
+proper_target = { role = "Solemn Intercession IX: For those in public office", occurrence = 1 }
+
+[[entries]]
+mass = "good-friday"
+form_id = "main"
+source_id = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.good-friday-5"
+url = "https://www.icelweb.org/musicfolder/GoodFriday5.pdf#page=1"
+locus = "FRIDAY OF THE PASSION OF THE LORD / The Solemn Intercessions / V. For the unity of Christians"
+language = "en"
+edition_label = "Music for the Roman Missal (ICEL, 2010)"
+proper_target = { role = "Solemn Intercession V: For the unity of Christians", occurrence = 1 }
+
+[[entries]]
+mass = "good-friday"
+form_id = "main"
+source_id = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.good-friday-6"
+url = "https://www.icelweb.org/musicfolder/GoodFriday6.pdf#page=1"
+locus = "FRIDAY OF THE PASSION OF THE LORD / The Solemn Intercessions / VI. For the Jewish People"
+language = "en"
+edition_label = "Music for the Roman Missal (ICEL, 2010)"
+proper_target = { role = "Solemn Intercession VI: For the Jewish people", occurrence = 1 }
+
+[[entries]]
+mass = "good-friday"
+form_id = "main"
+source_id = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.good-friday-7"
+url = "https://www.icelweb.org/musicfolder/GoodFriday7.pdf#page=1"
+locus = "FRIDAY OF THE PASSION OF THE LORD / The Solemn Intercessions / VII. For those who do not believe in Christ"
+language = "en"
+edition_label = "Music for the Roman Missal (ICEL, 2010)"
+proper_target = { role = "Solemn Intercession VII: For those who do not believe in Christ", occurrence = 1 }
+
+[[entries]]
+mass = "good-friday"
+form_id = "main"
+source_id = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.good-friday-8"
+url = "https://www.icelweb.org/musicfolder/GoodFriday8.pdf#page=1"
+locus = "FRIDAY OF THE PASSION OF THE LORD / The Solemn Intercessions / VIII. For those who do not believe in God"
+language = "en"
+edition_label = "Music for the Roman Missal (ICEL, 2010)"
+proper_target = { role = "Solemn Intercession VIII: For those who do not believe in God", occurrence = 1 }
+
+[[entries]]
+mass = "good-friday"
+form_id = "main"
+source_id = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.good-friday-10"
+url = "https://www.icelweb.org/musicfolder/GoodFriday10.pdf#page=1"
+locus = "FRIDAY OF THE PASSION OF THE LORD / The Solemn Intercessions / X. For those in tribulation"
+language = "en"
+edition_label = "Music for the Roman Missal (ICEL, 2010)"
+proper_target = { role = "Solemn Intercession X: For those in tribulation", occurrence = 1 }
+
+[[entries]]
+mass = "ot-1"
+form_id = "main"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-gli-bdb12305"
+url = "https://www.clerus.org/bibliaclerusonline/en/gli.htm#jf"
+locus = "Hebdomada I per annum, Collecta, Super oblata and Post communionem."
+
+[[entries]]
+mass = "ot-34"
+form_id = "main"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glj-30a67226"
+url = "https://www.clerus.org/bibliaclerusonline/en/glj.htm#kg"
+locus = "Hebdomada XXXIV per annum, Collecta, Super oblata and Post communionem."
+[[entries]]
+mass = "commemoration-all-faithful-departed-all-souls"
+form_id = "second"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-gls-9f3b0bff"
+proper_target = { role = "Communion Antiphon", occurrence = 1 }
+url = "https://www.clerus.org/bibliaclerusonline/en/gls.htm#cj1"
+locus = "The Commemoration of All the Faithful Departed (All Souls) / 2 Ant. ad communionem"
+
+[[entries]]
+mass = "ash-wednesday"
+form_id = "main"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+url = "https://media.musicasacra.com/books/latin_missal2002.pdf#page=125"
+locus = "ASH WEDNESDAY / Oratio super populum, 2002 digital Missal, artifact pp. 125."
+proper_target = { role = "Prayer over the People", occurrence = 1 }
+
+[[entries]]
+mass = "friday-after-ash-wednesday"
+form_id = "main"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+url = "https://media.musicasacra.com/books/latin_missal2002.pdf#page=127"
+locus = "Friday after Ash Wednesday / Oratio super populum, 2002 digital Missal, artifact pp. 127."
+proper_target = { role = "Prayer over the People", occurrence = 1 }
+
+[[entries]]
+mass = "saturday-after-ash-wednesday"
+form_id = "main"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+url = "https://media.musicasacra.com/books/latin_missal2002.pdf#page=128"
+locus = "Saturday after Ash Wednesday / Oratio super populum, 2002 digital Missal, artifact pp. 128."
+proper_target = { role = "Prayer over the People", occurrence = 1 }
+
+[[entries]]
+mass = "lent-1-monday"
+form_id = "main"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+url = "https://media.musicasacra.com/books/latin_missal2002.pdf#page=130"
+locus = "Lent 1 | Monday / Oratio super populum, 2002 digital Missal, artifact pp. 130."
+proper_target = { role = "Prayer over the People", occurrence = 1 }
+
+[[entries]]
+mass = "lent-1-tuesday"
+form_id = "main"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+url = "https://media.musicasacra.com/books/latin_missal2002.pdf#page=131"
+locus = "Lent 1 | Tuesday / Oratio super populum, 2002 digital Missal, artifact pp. 131."
+proper_target = { role = "Prayer over the People", occurrence = 1 }
+
+[[entries]]
+mass = "lent-1-wednesday"
+form_id = "main"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+url = "https://media.musicasacra.com/books/latin_missal2002.pdf#page=132"
+locus = "Lent 1 | Wednesday / Oratio super populum, 2002 digital Missal, artifact pp. 132."
+proper_target = { role = "Prayer over the People", occurrence = 1 }
+
+[[entries]]
+mass = "lent-1-thursday"
+form_id = "main"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+url = "https://media.musicasacra.com/books/latin_missal2002.pdf#page=133"
+locus = "Lent 1 | Thursday / Oratio super populum, 2002 digital Missal, artifact pp. 133."
+proper_target = { role = "Prayer over the People", occurrence = 1 }
+
+[[entries]]
+mass = "lent-1-friday"
+form_id = "main"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+url = "https://media.musicasacra.com/books/latin_missal2002.pdf#page=134"
+locus = "Lent 1 | Friday / Oratio super populum, 2002 digital Missal, artifact pp. 134."
+proper_target = { role = "Prayer over the People", occurrence = 1 }
+
+[[entries]]
+mass = "lent-1-saturday"
+form_id = "main"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+url = "https://media.musicasacra.com/books/latin_missal2002.pdf#page=135"
+locus = "Lent 1 | Saturday / Oratio super populum, 2002 digital Missal, artifact pp. 135."
+proper_target = { role = "Prayer over the People", occurrence = 1 }
+
+[[entries]]
+mass = "lent-2-monday"
+form_id = "main"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+url = "https://media.musicasacra.com/books/latin_missal2002.pdf#page=137"
+locus = "Lent 2 | Monday / Oratio super populum, 2002 digital Missal, artifact pp. 137."
+proper_target = { role = "Prayer over the People", occurrence = 1 }
+
+[[entries]]
+mass = "lent-2-tuesday"
+form_id = "main"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+url = "https://media.musicasacra.com/books/latin_missal2002.pdf#page=138"
+locus = "Lent 2 | Tuesday / Oratio super populum, 2002 digital Missal, artifact pp. 138."
+proper_target = { role = "Prayer over the People", occurrence = 1 }
+
+[[entries]]
+mass = "lent-2-wednesday"
+form_id = "main"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+url = "https://media.musicasacra.com/books/latin_missal2002.pdf#page=139"
+locus = "Lent 2 | Wednesday / Oratio super populum, 2002 digital Missal, artifact pp. 139."
+proper_target = { role = "Prayer over the People", occurrence = 1 }
+
+[[entries]]
+mass = "lent-2-thursday"
+form_id = "main"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+url = "https://media.musicasacra.com/books/latin_missal2002.pdf#page=139"
+locus = "Lent 2 | Thursday / Oratio super populum, 2002 digital Missal, artifact pp. 139–140."
+proper_target = { role = "Prayer over the People", occurrence = 1 }
+
+[[entries]]
+mass = "lent-2-friday"
+form_id = "main"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+url = "https://media.musicasacra.com/books/latin_missal2002.pdf#page=140"
+locus = "Lent 2 | Friday / Oratio super populum, 2002 digital Missal, artifact pp. 140."
+proper_target = { role = "Prayer over the People", occurrence = 1 }
+
+[[entries]]
+mass = "lent-2-saturday"
+form_id = "main"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+url = "https://media.musicasacra.com/books/latin_missal2002.pdf#page=141"
+locus = "Lent 2 | Saturday / Oratio super populum, 2002 digital Missal, artifact pp. 141."
+proper_target = { role = "Prayer over the People", occurrence = 1 }
+
+[[entries]]
+mass = "lent-3-monday"
+form_id = "main"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+url = "https://media.musicasacra.com/books/latin_missal2002.pdf#page=144"
+locus = "Lent 3 | Monday / Oratio super populum, 2002 digital Missal, artifact pp. 144."
+proper_target = { role = "Prayer over the People", occurrence = 1 }
+
+[[entries]]
+mass = "lent-3-tuesday"
+form_id = "main"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+url = "https://media.musicasacra.com/books/latin_missal2002.pdf#page=145"
+locus = "Lent 3 | Tuesday / Oratio super populum, 2002 digital Missal, artifact pp. 145."
+proper_target = { role = "Prayer over the People", occurrence = 1 }
+
+[[entries]]
+mass = "lent-3-wednesday"
+form_id = "main"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+url = "https://media.musicasacra.com/books/latin_missal2002.pdf#page=146"
+locus = "Lent 3 | Wednesday / Oratio super populum, 2002 digital Missal, artifact pp. 146."
+proper_target = { role = "Prayer over the People", occurrence = 1 }
+
+[[entries]]
+mass = "lent-3-thursday"
+form_id = "main"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+url = "https://media.musicasacra.com/books/latin_missal2002.pdf#page=146"
+locus = "Lent 3 | Thursday / Oratio super populum, 2002 digital Missal, artifact pp. 146."
+proper_target = { role = "Prayer over the People", occurrence = 1 }
+
+[[entries]]
+mass = "lent-3-friday"
+form_id = "main"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+url = "https://media.musicasacra.com/books/latin_missal2002.pdf#page=147"
+locus = "Lent 3 | Friday / Oratio super populum, 2002 digital Missal, artifact pp. 147–148."
+proper_target = { role = "Prayer over the People", occurrence = 1 }
+
+[[entries]]
+mass = "lent-3-saturday"
+form_id = "main"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+url = "https://media.musicasacra.com/books/latin_missal2002.pdf#page=148"
+locus = "Lent 3 | Saturday / Oratio super populum, 2002 digital Missal, artifact pp. 148–149."
+proper_target = { role = "Prayer over the People", occurrence = 1 }
+
+[[entries]]
+mass = "lent-4-monday"
+form_id = "main"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+url = "https://media.musicasacra.com/books/latin_missal2002.pdf#page=151"
+locus = "Lent 4 | Monday / Oratio super populum, 2002 digital Missal, artifact pp. 151."
+proper_target = { role = "Prayer over the People", occurrence = 1 }
+
+[[entries]]
+mass = "lent-4-tuesday"
+form_id = "main"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+url = "https://media.musicasacra.com/books/latin_missal2002.pdf#page=152"
+locus = "Lent 4 | Tuesday / Oratio super populum, 2002 digital Missal, artifact pp. 152."
+proper_target = { role = "Prayer over the People", occurrence = 1 }
+
+[[entries]]
+mass = "lent-4-wednesday"
+form_id = "main"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+url = "https://media.musicasacra.com/books/latin_missal2002.pdf#page=153"
+locus = "Lent 4 | Wednesday / Oratio super populum, 2002 digital Missal, artifact pp. 153."
+proper_target = { role = "Prayer over the People", occurrence = 1 }
+
+[[entries]]
+mass = "lent-4-thursday"
+form_id = "main"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+url = "https://media.musicasacra.com/books/latin_missal2002.pdf#page=154"
+locus = "Lent 4 | Thursday / Oratio super populum, 2002 digital Missal, artifact pp. 154."
+proper_target = { role = "Prayer over the People", occurrence = 1 }
+
+[[entries]]
+mass = "lent-4-friday"
+form_id = "main"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+url = "https://media.musicasacra.com/books/latin_missal2002.pdf#page=155"
+locus = "Lent 4 | Friday / Oratio super populum, 2002 digital Missal, artifact pp. 155."
+proper_target = { role = "Prayer over the People", occurrence = 1 }
+
+[[entries]]
+mass = "lent-4-saturday"
+form_id = "main"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+url = "https://media.musicasacra.com/books/latin_missal2002.pdf#page=156"
+locus = "Lent 4 | Saturday / Oratio super populum, 2002 digital Missal, artifact pp. 156."
+proper_target = { role = "Prayer over the People", occurrence = 1 }
+
+[[entries]]
+mass = "lent-5-monday"
+form_id = "main"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+url = "https://media.musicasacra.com/books/latin_missal2002.pdf#page=159"
+locus = "Lent 5 | Monday / Oratio super populum, 2002 digital Missal, artifact pp. 159."
+proper_target = { role = "Prayer over the People", occurrence = 1 }
+
+[[entries]]
+mass = "lent-5-tuesday"
+form_id = "main"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+url = "https://media.musicasacra.com/books/latin_missal2002.pdf#page=160"
+locus = "Lent 5 | Tuesday / Oratio super populum, 2002 digital Missal, artifact pp. 160."
+proper_target = { role = "Prayer over the People", occurrence = 1 }
+
+[[entries]]
+mass = "lent-5-wednesday"
+form_id = "main"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+url = "https://media.musicasacra.com/books/latin_missal2002.pdf#page=161"
+locus = "Lent 5 | Wednesday / Oratio super populum, 2002 digital Missal, artifact pp. 161."
+proper_target = { role = "Prayer over the People", occurrence = 1 }
+
+[[entries]]
+mass = "lent-5-thursday"
+form_id = "main"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+url = "https://media.musicasacra.com/books/latin_missal2002.pdf#page=162"
+locus = "Lent 5 | Thursday / Oratio super populum, 2002 digital Missal, artifact pp. 162."
+proper_target = { role = "Prayer over the People", occurrence = 1 }
+
+[[entries]]
+mass = "lent-5-friday"
+form_id = "main"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+url = "https://media.musicasacra.com/books/latin_missal2002.pdf#page=163"
+locus = "Lent 5 | Friday / Oratio super populum, 2002 digital Missal, artifact pp. 163."
+proper_target = { role = "Prayer over the People", occurrence = 1 }
+
+[[entries]]
+mass = "lent-5-saturday"
+form_id = "main"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+url = "https://media.musicasacra.com/books/latin_missal2002.pdf#page=164"
+locus = "Lent 5 | Saturday / Oratio super populum, 2002 digital Missal, artifact pp. 164."
+proper_target = { role = "Prayer over the People", occurrence = 1 }
+
+[[entries]]
+mass = "holy-monday"
+form_id = "main"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+url = "https://media.musicasacra.com/books/latin_missal2002.pdf#page=175"
+locus = "MONDAY OF HOLY WEEK / Oratio super populum, 2002 digital Missal, artifact pp. 175."
+proper_target = { role = "Prayer over the People", occurrence = 1 }
+
+[[entries]]
+mass = "holy-tuesday"
+form_id = "main"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+url = "https://media.musicasacra.com/books/latin_missal2002.pdf#page=176"
+locus = "TUESDAY OF HOLY WEEK / Oratio super populum, 2002 digital Missal, artifact pp. 176."
+proper_target = { role = "Prayer over the People", occurrence = 1 }
+
+[[entries]]
+mass = "holy-wednesday"
+form_id = "main"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+url = "https://media.musicasacra.com/books/latin_missal2002.pdf#page=177"
+locus = "WEDNESDAY OF HOLY WEEK / Oratio super populum, 2002 digital Missal, artifact pp. 177."
+proper_target = { role = "Prayer over the People", occurrence = 1 }
+
+[[entries]]
+mass = "ash-wednesday"
+form_id = "main"
+language = "la"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glb-146b4963"
+url = "https://www.clerus.org/bibliaclerusonline/en/glb.htm#bsn"
+locus = "First and second antiphons at the distribution of ashes."
+proper_targets = [{role = "Antiphon at the Distribution of Ashes 1", occurrence = 1}, {role = "Antiphon at the Distribution of Ashes 2", occurrence = 1}]
+
+[[entries]]
+mass = "ash-wednesday"
+form_id = "main"
+language = "la"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glb-146b4963"
+url = "https://www.clerus.org/bibliaclerusonline/en/glb.htm#bso"
+locus = "Third antiphon and responsory at the distribution of ashes."
+proper_targets = [{role = "Antiphon at the Distribution of Ashes 3", occurrence = 1}, {role = "Responsory at the Distribution of Ashes", occurrence = 1}]
+
+[[entries]]
+mass = "presentation-lord"
+form_id = "main"
+language = "la"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glo-00419ad3"
+url = "https://www.clerus.org/bibliaclerusonline/en/glo.htm#cfo"
+locus = "No. 7, first processional antiphon with the Canticle of Simeon."
+proper_targets = [{role = "Procession Chant 1 with Canticle", occurrence = 1}]
+
+[[entries]]
+mass = "presentation-lord"
+form_id = "main"
+language = "la"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glo-00419ad3"
+url = "https://www.clerus.org/bibliaclerusonline/en/glo.htm#cfp"
+locus = "No. 7, second processional antiphon."
+proper_targets = [{role = "Procession Chant 2", occurrence = 1}]
+
+[[entries]]
+mass = "thursday-after-ash-wednesday"
+form_id = "main"
+language = "la"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glb-146b4963"
+url = "https://www.clerus.org/bibliaclerusonline/en/glb.htm#bsr"
+locus = "Thursday after Ash Wednesday, Prayer over the People, ad libitum. Missale Romanum 2002, PDF p. 126. The 2008 Variationes, Notitiae 44, printed p. 370 (PDF p. 52), substitutes eum facias for nos facias in the petition."
+proper_targets = [{role = "Prayer over the People", occurrence = 1}]
+
+[[entries]]
+mass = "thursday-after-ash-wednesday"
+form_id = "main"
+language = "la"
+source_id = "artifact.holy-see.notitiae.volume-44-numbers-503-504-2008.official-pdf-74c8d174"
+url = "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/2000/notitiae-44-%282008%29/Notitiae-503-504-2008.pdf#page=52"
+locus = "Thursday after Ash Wednesday, Prayer over the People, ad libitum. Missale Romanum 2002, PDF p. 126. The 2008 Variationes, Notitiae 44, printed p. 370 (PDF p. 52), substitutes eum facias for nos facias in the petition."
+edition_label = "Notitiae 44 (2008), correction to the prayer"
+
+[[entries]]
+mass = "presentation-lord"
+form_id = "main"
+language = "la"
+source_id = "artifact.catholic-church.antiphonale-romanum.vatican-1912.cmaa-facsimile-815f7393"
+url = "https://media.churchmusicassociation.org/pdf/antiphonale-bw.pdf#page=218"
+locus = "Complete historical Latin chant, Advent II, antiphon 5, printed p. 197. The modern Presentation rite identifies this chant at nos. 3 and 10. The 2002 digital witnesses omit its musical notation at no. 3."
+edition_label = "Antiphonale Romanum (1912), historical Latin chant"
+proper_targets = [{role = "Antiphon while Candles are Lit", occurrence = 1}]

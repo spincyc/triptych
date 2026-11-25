@@ -331,34 +331,6 @@ open_collation_items:
   takes_from from a dated mass to a Common is landed until the Missal''s own heading
   for that day has been read, because the Ordo''s heading appoints readings and the
   Missal''s heading appoints prayers, and the two need not agree.'
-# The one psalm locus this file still carries that the tracked concordance
-# cannot bound. The Vulgate-numbered antiphons formerly listed here now declare
-# their numbering on the proper and have self-cleaned from this ledger, and so,
-# on 2026-10-01, did `Psalm 28:11` (christ-the-king) and `Psalm 150:6` (two
-# responsorial slots): the concordance is now read with its witness's alias
-# table, which records the 28:11 and 150:6 that printing carries inside the
-# verse before, so both systems number those verses. One responsorial-psalm
-# endpoint remains.
-#
-# This block is temporary. It exists so that the psalter-bounds gate can stay
-# shut over the rest of the calendar while this locus remains unresolved, and
-# it is not a licence to leave it: `check-calendar-masses` reports every locus
-# below on each run without failing, fails on any psalm-bound breach that is
-# not listed, and fails on any locus listed here that has stopped breaching. An
-# entry therefore cannot outlive the defect that earned it. Settling the
-# responsorial endpoint requires checking the Ordo's numbering. Nothing here
-# anticipates that decision: `divergence` states only what the two systems
-# number, never what a psalm says.
-psalm_numbering_exceptions:
-- psalm: 56
-  divergence: Vulgate 56 is Hebrew 57; Hebrew 56 ends at verse 13. This locus is
-    a RESPONSORIAL PSALM, which this file's own
-    citation_convention says takes the Lectionary's numbering rather than the missal's,
-    so the question here is which numbering the Ordo lectionum Missae prints for the
-    psalter and not which the antiphon reproduced. That was not established when the
-    citation was read and is not decided here
-  loci:
-    "Psalm 56:14": ot-24-saturday/Responsorial Psalm, cycle II
 # Where the citations above do not address the text the tracked editions print.
 # This calendar cites the Nova Vulgata; the Douay-Rheims, the Clementine Vulgate
 # and every other bible in this library follow the Vulgate division, and in
@@ -9987,6 +9959,46 @@ sections:
           - begin: {chapter: 6, verse: 16}
             end: {chapter: 6, verse: 18}
           ref: Matthew 6:1-6, 16-18
+      - name: Antiphon at the Distribution of Ashes 1
+        ordinary_disposition:
+          kind: alternative
+          group: distribution-ash-1
+          option: sing
+          omission_option: omit
+          basis: "Blessing and Distribution of Ashes. After the homily, the priest invites prayer, observes a short silence, blesses the ashes with one of the two prayers, and sprinkles them. The chants accompany the imposition. The Missal permits another suitable chant. Afterward the priest washes his hands and proceeds to the Universal Prayer. These are the printed chants available during the distribution."
+        source: composed
+        text: "Immutemur habitu, in cinere et cilicio, ieiunemus, et ploremus ante Dominum, quia multum misericors est dimittere peccata nostra Deus noster."
+        notes: "Missale Romanum 2002, Ash Wednesday, following the homily, PDF p. 124, https://www.clerus.org/bibliaclerusonline/en/glb.htm#bsn. Complete first distribution antiphon."
+      - name: Antiphon at the Distribution of Ashes 2
+        ordinary_disposition:
+          kind: alternative
+          group: distribution-ash-2
+          option: sing
+          omission_option: omit
+          basis: "Blessing and Distribution of Ashes. After the homily, the priest invites prayer, observes a short silence, blesses the ashes with one of the two prayers, and sprinkles them. The chants accompany the imposition. The Missal permits another suitable chant. Afterward the priest washes his hands and proceeds to the Universal Prayer. These are the printed chants available during the distribution."
+        source: composed
+        text: "Inter vestibulum et altare plorabunt sacerdotes ministri Domini, et dicent: Parce, Domine, parce populo tuo, et ne claudas ora canentium te, Domine."
+        notes: "Missale Romanum 2002, Ash Wednesday, following the homily, PDF p. 124, https://www.clerus.org/bibliaclerusonline/en/glb.htm#bsn. Complete second antiphon. The modern source cites Joel 2:17 and Esther 4:17."
+      - name: Antiphon at the Distribution of Ashes 3
+        ordinary_disposition:
+          kind: alternative
+          group: distribution-ash-3
+          option: sing
+          omission_option: omit
+          basis: "Blessing and Distribution of Ashes. After the homily, the priest invites prayer, observes a short silence, blesses the ashes with one of the two prayers, and sprinkles them. The chants accompany the imposition. The Missal permits another suitable chant. Afterward the priest washes his hands and proceeds to the Universal Prayer. These are the printed chants available during the distribution."
+        source: composed
+        text: "Dele, Domine, iniquitatem meam."
+        notes: "Missale Romanum 2002, Ash Wednesday, following the homily, PDF p. 124, https://www.clerus.org/bibliaclerusonline/en/glb.htm#bso. The 1888 antiphon at Tuesday Lauds has the same four words. The modern refrain may recur after each verse of Psalm 50 (Hebrew 51)."
+      - name: Responsory at the Distribution of Ashes
+        ordinary_disposition:
+          kind: alternative
+          group: distribution-ash-responsory
+          option: sing
+          omission_option: omit
+          basis: "Blessing and Distribution of Ashes. After the homily, the priest invites prayer, observes a short silence, blesses the ashes with one of the two prayers, and sprinkles them. The chants accompany the imposition. The Missal permits another suitable chant. Afterward the priest washes his hands and proceeds to the Universal Prayer. These are the printed chants available during the distribution."
+        source: composed
+        text: "R. Emendemus in melius, quae ignoranter peccavimus, ne subito praeoccupati die mortis quaeramus spatium paenitentiae, et invenire non possimus. * Attende, Domine, et miserere, quia peccavimus tibi.\nV. Adiuva nos, Deus salutaris noster, et propter honorem nominis tui, Domine, libera nos. * Attende, Domine."
+        notes: "Missale Romanum 2002, Ash Wednesday, following the homily, PDF p. 124, https://www.clerus.org/bibliaclerusonline/en/glb.htm#bso. Keep the printed short repeat cue and omit the older doxology. The 2008 correction adds Baruch 3:2 to the reference to Psalm 78:9 (Hebrew 79:9)."
       - name: Prayer over the Offerings
         source: composed
         text_status:
@@ -10022,6 +10034,16 @@ sections:
         notes: Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glb.htm#fz,
           Prayer after Communion; registered secondary 2002 PDF, artifact p. 125. Comparison establishes the 2002 digital reading;
           correspondence with the 2008 printing is unverified.
+      - name: Prayer over the People
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944
+        notes: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L04, expressly assigns this prayer to the priest at dismissal; the 2002 Latin Missal, PDF p. 125, has the corresponding dismissal rubric. The exact wording of the 2008 Latin reprint has not been independently established."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 181 (printed page
         127), marginal n. 219. The heading verified on that image identifies the day as Ash Wednesday, in the Lenten ferial
@@ -10145,6 +10167,22 @@ sections:
           - kind: rights-withheld
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glb-146b4963
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glb.htm#f0 (Feria quinta post Cineres); Prayer after Communion. The separately registered 2002 digital Missal confirms the prayer at artifact page 126. Correspondence with the 2008 reprint remains unverified."
+      - name: Prayer over the People
+        ordinary_disposition:
+          kind: alternative
+          group: prayer-over-the-people
+          option: pray
+          omission_option: omit
+          basis: "Thursday after Ash Wednesday, Prayer over the People, ad libitum. Missale Romanum 2002, PDF p. 126. The 2008 Variationes, Notitiae 44, printed p. 370 (PDF p. 52), substitutes eum facias for nos facias in the petition."
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glb-146b4963
+        notes: "Thursday after Ash Wednesday, Prayer over the People, ad libitum. Missale Romanum 2002, PDF p. 126. The 2008 Variationes, Notitiae 44, printed p. 370 (PDF p. 52), substitutes eum facias for nos facias in the petition."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 181 (printed page
         127), marginal n. 220. The heading verified on that image identifies the day as the Thursday after Ash Wednesday,
@@ -10265,6 +10303,22 @@ sections:
           - kind: rights-withheld
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glb-146b4963
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glb.htm#f1 (Feria sexta post Cineres); Prayer after Communion. The separately registered 2002 digital Missal confirms the prayer at artifact page 127. Correspondence with the 2008 reprint remains unverified."
+      - name: Prayer over the People
+        ordinary_disposition:
+          kind: alternative
+          group: prayer-over-the-people
+          option: pray
+          omission_option: omit
+          basis: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L06, labels this prayer optional. The 2002 Latin Missal, PDF p. 127, prints it for optional use."
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944
+        notes: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L06, labels this prayer optional. The 2002 Latin Missal, PDF p. 127, prints it for optional use. The exact wording of the 2008 Latin reprint has not been independently established."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 181 (printed page
         127), marginal n. 221. The heading verified on that image identifies the day as the Friday after Ash Wednesday,
@@ -10367,6 +10421,22 @@ sections:
         source: composed
         text: "Caelestis vitae munere vegetati, quaesumus, Domine: ut, quod est nobis in praesenti vita mysterium, fiat aeternitatis auxilium. Per Christum."
         notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glb.htm#bst, Prayer after Communion; registered secondary 2002 PDF, artifact p. 128. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
+      - name: Prayer over the People
+        ordinary_disposition:
+          kind: alternative
+          group: prayer-over-the-people
+          option: pray
+          omission_option: omit
+          basis: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L07, labels this prayer optional. The 2002 Latin Missal, PDF p. 128, prints it for optional use."
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944
+        notes: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L07, labels this prayer optional. The 2002 Latin Missal, PDF p. 128, prints it for optional use. The exact wording of the 2008 Latin reprint has not been independently established."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 182 (printed page
         128), marginal n. 222. The heading verified on that image identifies the day as the Saturday after Ash Wednesday,
@@ -10496,6 +10566,22 @@ sections:
           - kind: rights-withheld
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glb-146b4963
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glb.htm#f3 (DOMINICA I IN QUADRAGESIMA / Feria secunda); Prayer after Communion. The separately registered 2002 digital Missal confirms the prayer at artifact page 130. Correspondence with the 2008 reprint remains unverified."
+      - name: Prayer over the People
+        ordinary_disposition:
+          kind: alternative
+          group: prayer-over-the-people
+          option: pray
+          omission_option: omit
+          basis: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L12, labels this prayer optional. The 2002 Latin Missal, PDF p. 130, prints it for optional use."
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944
+        notes: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L12, labels this prayer optional. The 2002 Latin Missal, PDF p. 130, prints it for optional use. The exact wording of the 2008 Latin reprint has not been independently established."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 184 (printed page
         130), marginal n. 224. The heading verified on that image identifies the day as Monday of the First Week of Lent,
@@ -10608,6 +10694,22 @@ sections:
         source: composed
         text: "His nobis, Domine, mysteriis conferatur, quo, terrena desideria mitigantes, discamus amare caelestia. Per Christum."
         notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glb.htm#f4, Prayer after Communion; registered secondary 2002 PDF, artifact p. 131. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
+      - name: Prayer over the People
+        ordinary_disposition:
+          kind: alternative
+          group: prayer-over-the-people
+          option: pray
+          omission_option: omit
+          basis: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L13, labels this prayer optional. The 2002 Latin Missal, PDF p. 131, prints it for optional use."
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944
+        notes: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L13, labels this prayer optional. The 2002 Latin Missal, PDF p. 131, prints it for optional use. The exact wording of the 2008 Latin reprint has not been independently established."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 184 (printed page
         130), marginal n. 225. The heading verified on that image identifies the day as Tuesday of the First Week of Lent,
@@ -10738,6 +10840,16 @@ sections:
           - kind: rights-withheld
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glb-146b4963
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glb.htm#f5 (DOMINICA I IN QUADRAGESIMA / Feria quarta); Prayer after Communion. The separately registered 2002 digital Missal confirms the prayer at artifact page 132. Correspondence with the 2008 reprint remains unverified."
+      - name: Prayer over the People
+        ordinary_disposition:
+          kind: alternative
+          group: prayer-over-the-people
+          option: pray
+          omission_option: omit
+          basis: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L14, labels this prayer optional. The 2002 Latin Missal, PDF p. 132, prints it for optional use."
+        source: composed
+        text: "Tuere, Domine, populum tuum, et ab omnibus peccatis clementer emunda: quia nulla ei nocebit adversitas, si nulla ei dominetur iniquitas. Per Christum."
+        notes: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L14, labels this prayer optional. The 2002 Latin Missal, PDF p. 132, prints it for optional use. The exact wording of the 2008 Latin reprint has not been independently established. The Latin and original study English follow the independently published historical petition and its short conclusion cue."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 184 (printed page
         130), marginal n. 226. The heading verified on that image identifies the day as Wednesday of the First Week of
@@ -10862,6 +10974,22 @@ sections:
         source: composed
         text: "Quaesumus, Domine Deus noster: ut sacrosancta mysteria, quae pro reparationis nostrae munimine contulisti: et praesens nobis remedium esse facias, et futurum. Per Christum."
         notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#ga, Prayer after Communion; registered secondary 2002 PDF, artifact p. 133. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
+      - name: Prayer over the People
+        ordinary_disposition:
+          kind: alternative
+          group: prayer-over-the-people
+          option: pray
+          omission_option: omit
+          basis: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L15, labels this prayer optional. The 2002 Latin Missal, PDF p. 133, prints it for optional use."
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944
+        notes: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L15, labels this prayer optional. The 2002 Latin Missal, PDF p. 133, prints it for optional use. The exact wording of the 2008 Latin reprint has not been independently established."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 185 (printed page
         131), marginal n. 227. The heading verified on that image identifies the day as Thursday of the First Week of
@@ -10978,6 +11106,22 @@ sections:
           - kind: rights-withheld
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glc-fac73952
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#gb (DOMINICA I IN QUADRAGESIMA / Feria sexta); Prayer after Communion. The separately registered 2002 digital Missal confirms the prayer at artifact page 134. Correspondence with the 2008 reprint remains unverified."
+      - name: Prayer over the People
+        ordinary_disposition:
+          kind: alternative
+          group: prayer-over-the-people
+          option: pray
+          omission_option: omit
+          basis: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L16, labels this prayer optional. The 2002 Latin Missal, PDF p. 134, prints it for optional use."
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944
+        notes: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L16, labels this prayer optional. The 2002 Latin Missal, PDF p. 134, prints it for optional use. The exact wording of the 2008 Latin reprint has not been independently established."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 185 (printed page
         131), marginal n. 228. The heading verified on that image identifies the day as Friday of the First Week of Lent,
@@ -11095,6 +11239,16 @@ sections:
           - kind: rights-withheld
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glc-fac73952
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#gc (DOMINICA I IN QUADRAGESIMA / Sabbato); Prayer after Communion. The separately registered 2002 digital Missal confirms the prayer at artifact page 134–135. Correspondence with the 2008 reprint remains unverified."
+      - name: Prayer over the People
+        ordinary_disposition:
+          kind: alternative
+          group: prayer-over-the-people
+          option: pray
+          omission_option: omit
+          basis: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L17, labels this prayer optional. The 2002 Latin Missal, PDF p. 135, prints it for optional use."
+        source: composed
+        text: "Fideles tuos, Deus, benedictio desiderata confirmet: quae eos, et a tua voluntate numquam faciat discrepare, et tuis semper indulgeat beneficiis gratulari. Per Christum."
+        notes: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L17, labels this prayer optional. The 2002 Latin Missal, PDF p. 135, prints it for optional use. The exact wording of the 2008 Latin reprint has not been independently established. The Latin and original study English follow the independently published historical petition and its short conclusion cue."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 185 (printed page
         131), marginal n. 229. The heading verified on that image identifies the day as Saturday of the First Week of
@@ -11217,6 +11371,22 @@ sections:
           - kind: rights-withheld
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glc-fac73952
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#ge (DOMINICA II IN QUADRAGESIMA / Feria secunda); Prayer after Communion. The separately registered 2002 digital Missal confirms the prayer at artifact page 137. Correspondence with the 2008 reprint remains unverified."
+      - name: Prayer over the People
+        ordinary_disposition:
+          kind: alternative
+          group: prayer-over-the-people
+          option: pray
+          omission_option: omit
+          basis: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L22, labels this prayer optional. The 2002 Latin Missal, PDF p. 137, prints it for optional use."
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944
+        notes: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L22, labels this prayer optional. The 2002 Latin Missal, PDF p. 137, prints it for optional use. The exact wording of the 2008 Latin reprint has not been independently established."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 186 (printed page
         132), marginal n. 230. The heading verified on that image identifies the day as Monday of the Second Week of Lent,
@@ -11333,6 +11503,22 @@ sections:
           - kind: rights-withheld
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glc-fac73952
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#gf (DOMINICA II IN QUADRAGESIMA / Feria tertia); Prayer after Communion. The separately registered 2002 digital Missal confirms the prayer at artifact page 138. Correspondence with the 2008 reprint remains unverified."
+      - name: Prayer over the People
+        ordinary_disposition:
+          kind: alternative
+          group: prayer-over-the-people
+          option: pray
+          omission_option: omit
+          basis: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L23, labels this prayer optional. The 2002 Latin Missal, PDF p. 138, prints it for optional use."
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944
+        notes: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L23, labels this prayer optional. The 2002 Latin Missal, PDF p. 138, prints it for optional use. The exact wording of the 2008 Latin reprint has not been independently established."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 186 (printed page
         132), marginal n. 231. The heading verified on that image identifies the day as Tuesday of the Second Week of
@@ -11450,6 +11636,22 @@ sections:
           - kind: rights-withheld
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glc-fac73952
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#gg (DOMINICA II IN QUADRAGESIMA / Feria quarta); Prayer after Communion. The separately registered 2002 digital Missal confirms the prayer at artifact page 138–139. Correspondence with the 2008 reprint remains unverified."
+      - name: Prayer over the People
+        ordinary_disposition:
+          kind: alternative
+          group: prayer-over-the-people
+          option: pray
+          omission_option: omit
+          basis: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L24, labels this prayer optional. The 2002 Latin Missal, PDF p. 139, prints it for optional use."
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944
+        notes: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L24, labels this prayer optional. The 2002 Latin Missal, PDF p. 139, prints it for optional use. The exact wording of the 2008 Latin reprint has not been independently established."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 186 (printed page
         132), marginal n. 232. The heading verified on that image identifies the day as Wednesday of the Second Week of
@@ -11486,15 +11688,9 @@ sections:
           English body, exact target-2008 Latin body, or publication permission is supplied. The printed Cf. is a comparison
           cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon.
       - name: Collect
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          body_status: held-unpublished
-          reasons:
-          - kind: rights-withheld
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glc-fac73952
-        notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#gh (DOMINICA II IN QUADRAGESIMA / Feria quinta); Collect. The separately registered 2002 digital Missal confirms the prayer at artifact page 139. Correspondence with the 2008 reprint remains unverified."
+        source: "composed"
+        text: "Deus, innocentiae restitutor et amator, dirige ad te tuorum corda servorum: ut, Spiritus tui fervore concepto, et in fide inveniantur stabiles, et in opere efficaces. Per Dominum."
+        notes: "Missale Romanum, Mame Tours 1922, printed p. 106, facsimile PDF p. 220; left column, prayer over the people at the close of the preceding Wednesday. The historical petition and conclusion agree. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#gh, lent-2-thursday/main, Collect. Independent 2002 digital Missal PDF pp. 139–140. The 2008 reprint has not been independently collated."
       - name: First Reading
         source: scripture
         verses:
@@ -11565,6 +11761,22 @@ sections:
         source: composed
         text: "Haec in nobis sacrificia, Deus, et actione permaneant, et operatione firmentur. Per Christum."
         notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#gh, Prayer after Communion; registered secondary 2002 PDF, artifact p. 139. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
+      - name: Prayer over the People
+        ordinary_disposition:
+          kind: alternative
+          group: prayer-over-the-people
+          option: pray
+          omission_option: omit
+          basis: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L25, labels this prayer optional. The 2002 Latin Missal, PDF p. 139–140, prints it for optional use."
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944
+        notes: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L25, labels this prayer optional. The 2002 Latin Missal, PDF p. 139–140, prints it for optional use. The exact wording of the 2008 Latin reprint has not been independently established."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 187 (printed page
         133), marginal n. 233. The heading verified on that image identifies the day as Thursday of the Second Week of
@@ -11694,6 +11906,16 @@ sections:
           - kind: rights-withheld
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glc-fac73952
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#gi (DOMINICA II IN QUADRAGESIMA / Feria sexta); Prayer after Communion. The separately registered 2002 digital Missal confirms the prayer at artifact page 140. Correspondence with the 2008 reprint remains unverified."
+      - name: Prayer over the People
+        ordinary_disposition:
+          kind: alternative
+          group: prayer-over-the-people
+          option: pray
+          omission_option: omit
+          basis: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L26, labels this prayer optional. The 2002 Latin Missal, PDF p. 140, prints it for optional use."
+        source: composed
+        text: "Da, quaesumus, Domine, populo tuo salutem mentis et corporis: ut, bonis operibus inhaerendo, tua semper mereatur protectione defendi. Per Christum."
+        notes: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L26, labels this prayer optional. The 2002 Latin Missal, PDF p. 140, prints it for optional use. The exact wording of the 2008 Latin reprint has not been independently established. The Latin and original study English follow the independently published historical petition and its short conclusion cue."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 187 (printed page
         133), marginal n. 234. The heading verified on that image identifies the day as Friday of the Second Week of Lent,
@@ -11809,6 +12031,16 @@ sections:
           - kind: rights-withheld
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glc-fac73952
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#gj (DOMINICA II IN QUADRAGESIMA / Sabbato); Prayer after Communion. The separately registered 2002 digital Missal confirms the prayer at artifact page 141. Correspondence with the 2008 reprint remains unverified."
+      - name: Prayer over the People
+        ordinary_disposition:
+          kind: alternative
+          group: prayer-over-the-people
+          option: pray
+          omission_option: omit
+          basis: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L27, labels this prayer optional. The 2002 Latin Missal, PDF p. 141, prints it for optional use."
+        source: composed
+        text: "Pateant aures misericordiae tuae, Domine, precibus supplicantium: et, ut petentibus desiderata concedas; fac eos, quae tibi sunt placita, postulare. Per Christum."
+        notes: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L27, labels this prayer optional. The 2002 Latin Missal, PDF p. 141, prints it for optional use. The exact wording of the 2008 Latin reprint has not been independently established. The Latin and original study English follow the independently published historical petition and its short conclusion cue."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 187 (printed page
         133), marginal n. 235. The heading verified on that image identifies the day as Saturday of the Second Week of
@@ -12193,6 +12425,16 @@ sections:
         source: composed
         text: "Tui nobis, quaesumus, Domine, communio sacramenti, et purificationem conferat, et tribuat unitatem. Per Christum."
         notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#gl, Prayer after Communion; registered secondary 2002 PDF, artifact p. 144. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
+      - name: Prayer over the People
+        ordinary_disposition:
+          kind: alternative
+          group: prayer-over-the-people
+          option: pray
+          omission_option: omit
+          basis: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L32, labels this prayer optional. The 2002 Latin Missal, PDF p. 144, prints it for optional use."
+        source: composed
+        text: "Tueatur, quaesumus, Domine, dextera tua populum deprecantem: et purificatum dignanter erudiat; ut, consolatione praesenti, ad futura bona proficiat. Per Christum."
+        notes: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L32, labels this prayer optional. The 2002 Latin Missal, PDF p. 144, prints it for optional use. The exact wording of the 2008 Latin reprint has not been independently established. The Latin and original study English follow the independently published historical petition and its short conclusion cue."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 188 (printed page
         134), marginal n. 237. The heading verified on that image identifies the day as Monday of the Third Week of Lent,
@@ -12578,6 +12820,16 @@ sections:
         source: composed
         text: "Vivificet nos, quaesumus, Domine, huius participatio sancta mysterii: et pariter nobis expiationem tribuat, et munimen. Per Christum."
         notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#gm, Prayer after Communion; registered secondary 2002 PDF, artifact p. 145. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
+      - name: Prayer over the People
+        ordinary_disposition:
+          kind: alternative
+          group: prayer-over-the-people
+          option: pray
+          omission_option: omit
+          basis: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L33, labels this prayer optional. The 2002 Latin Missal, PDF p. 145, prints it for optional use."
+        source: composed
+        text: "Populi tui, Deus, institutor et rector, peccata, quibus impugnatur, expelle: ut semper tibi placitus, et tuo munimine sit securus. Per Christum."
+        notes: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L33, labels this prayer optional. The 2002 Latin Missal, PDF p. 145, prints it for optional use. The exact wording of the 2008 Latin reprint has not been independently established. The Latin and original study English follow the independently published historical petition and its short conclusion cue."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 188 (printed page
         134), marginal n. 238. The heading verified on that image identifies the day as Tuesday of the Third Week of Lent,
@@ -12934,6 +13186,22 @@ sections:
         source: composed
         text: "Sanctificet nos, Domine, qua pasti sumus, mensa caelestis: et, a cunctis erroribus expiatos, supernis promissionibus reddat acceptos. Per Christum."
         notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#gn, Prayer after Communion; registered secondary 2002 PDF, artifact p. 146. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
+      - name: Prayer over the People
+        ordinary_disposition:
+          kind: alternative
+          group: prayer-over-the-people
+          option: pray
+          omission_option: omit
+          basis: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L34, labels this prayer optional. The 2002 Latin Missal, PDF p. 146, prints it for optional use."
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944
+        notes: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L34, labels this prayer optional. The 2002 Latin Missal, PDF p. 146, prints it for optional use. The exact wording of the 2008 Latin reprint has not been independently established."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 189 (printed page
         135), marginal n. 239. The heading verified on that image identifies the day as Wednesday of the Third Week of
@@ -13234,6 +13502,22 @@ sections:
           - kind: rights-withheld
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glc-fac73952
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#go (DOMINICA III IN QUADRAGESIMA / Feria quinta); Prayer after Communion. The separately registered 2002 digital Missal confirms the prayer at artifact page 146. Correspondence with the 2008 reprint remains unverified."
+      - name: Prayer over the People
+        ordinary_disposition:
+          kind: alternative
+          group: prayer-over-the-people
+          option: pray
+          omission_option: omit
+          basis: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L35, labels this prayer optional. The 2002 Latin Missal, PDF p. 146, prints it for optional use."
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944
+        notes: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L35, labels this prayer optional. The 2002 Latin Missal, PDF p. 146, prints it for optional use. The exact wording of the 2008 Latin reprint has not been independently established."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 189 (printed page
         135), marginal n. 240. The heading verified on that image identifies the day as Thursday of the Third Week of
@@ -13604,6 +13888,22 @@ sections:
           - kind: rights-withheld
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glc-fac73952
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#gp (DOMINICA III IN QUADRAGESIMA / Feria sexta); Prayer after Communion. The separately registered 2002 digital Missal confirms the prayer at artifact page 147. Correspondence with the 2008 reprint remains unverified."
+      - name: Prayer over the People
+        ordinary_disposition:
+          kind: alternative
+          group: prayer-over-the-people
+          option: pray
+          omission_option: omit
+          basis: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L36, labels this prayer optional. The 2002 Latin Missal, PDF p. 147–148, prints it for optional use."
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944
+        notes: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L36, labels this prayer optional. The 2002 Latin Missal, PDF p. 147–148, prints it for optional use. The exact wording of the 2008 Latin reprint has not been independently established."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 189 (printed page
         135), marginal n. 241. The heading verified on that image identifies the day as Friday of the Third Week of Lent,
@@ -13958,6 +14258,16 @@ sections:
         source: composed
         text: "Da nobis, quaesumus, misericors Deus: ut sancta tua, quibus incessanter explemur, sinceris tractemus obsequiis, et fideli semper mente sumamus. Per Christum."
         notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#gq, Prayer after Communion; registered secondary 2002 PDF, artifact p. 148. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
+      - name: Prayer over the People
+        ordinary_disposition:
+          kind: alternative
+          group: prayer-over-the-people
+          option: pray
+          omission_option: omit
+          basis: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L37, labels this prayer optional. The 2002 Latin Missal, PDF p. 148–149, prints it for optional use."
+        source: composed
+        text: "Praetende, Domine, fidelibus tuis dexteram caelestis auxilii: ut te toto corde perquirant; et, quae digne postulant, consequi mereantur. Per Christum."
+        notes: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L37, labels this prayer optional. The 2002 Latin Missal, PDF p. 148–149, prints it for optional use. The exact wording of the 2008 Latin reprint has not been independently established. The Latin and original study English follow the independently published historical petition and its short conclusion cue."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 189 (printed page
         135), marginal n. 242. The heading verified on that image identifies the day as Saturday of the Third Week of
@@ -14326,6 +14636,22 @@ sections:
           - kind: rights-withheld
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glc-fac73952
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#gs (DOMINICA IV IN QUADRAGESIMA / Feria secunda); Prayer after Communion. The separately registered 2002 digital Missal confirms the prayer at artifact page 151. Correspondence with the 2008 reprint remains unverified."
+      - name: Prayer over the People
+        ordinary_disposition:
+          kind: alternative
+          group: prayer-over-the-people
+          option: pray
+          omission_option: omit
+          basis: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L42, labels this prayer optional. The 2002 Latin Missal, PDF p. 151, prints it for optional use."
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944
+        notes: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L42, labels this prayer optional. The 2002 Latin Missal, PDF p. 151, prints it for optional use. The exact wording of the 2008 Latin reprint has not been independently established."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 190 (printed page
         136), marginal n. 244. The heading verified on that image identifies the day as Monday of the Fourth Week of Lent,
@@ -14693,6 +15019,22 @@ sections:
         source: composed
         text: "Purifica, quaesumus, Domine, mentes nostras benignus, et renova caelestibus sacramentis: ut consequenter et corporum praesens pariter et futurum capiamus auxilium. Per Christum."
         notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#gt, Prayer after Communion; registered secondary 2002 PDF, artifact p. 152. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
+      - name: Prayer over the People
+        ordinary_disposition:
+          kind: alternative
+          group: prayer-over-the-people
+          option: pray
+          omission_option: omit
+          basis: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L43, labels this prayer optional. The 2002 Latin Missal, PDF p. 152, prints it for optional use."
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944
+        notes: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L43, labels this prayer optional. The 2002 Latin Missal, PDF p. 152, prints it for optional use. The exact wording of the 2008 Latin reprint has not been independently established."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 190 (printed page
         136), marginal n. 245. The heading verified on that image identifies the day as Tuesday of the Fourth Week of
@@ -15051,6 +15393,22 @@ sections:
         source: composed
         text: "Caelestia dona capientibus, quaesumus, Domine: non ad iudicium provenire patiaris, quae fidelibus tuis ad remedium providisti. Per Christum."
         notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#gu, Prayer after Communion; registered secondary 2002 PDF, artifact p. 153. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
+      - name: Prayer over the People
+        ordinary_disposition:
+          kind: alternative
+          group: prayer-over-the-people
+          option: pray
+          omission_option: omit
+          basis: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L44, labels this prayer optional. The 2002 Latin Missal, PDF p. 153, prints it for optional use."
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944
+        notes: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L44, labels this prayer optional. The 2002 Latin Missal, PDF p. 153, prints it for optional use. The exact wording of the 2008 Latin reprint has not been independently established."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 191 (printed page
         137), marginal n. 246. The heading verified on that image identifies the day as Wednesday of the Fourth Week of
@@ -15414,6 +15772,22 @@ sections:
           - kind: rights-withheld
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glc-fac73952
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#gv (DOMINICA IV IN QUADRAGESIMA / Feria quinta); Prayer after Communion. The separately registered 2002 digital Missal confirms the prayer at artifact page 154. Correspondence with the 2008 reprint remains unverified."
+      - name: Prayer over the People
+        ordinary_disposition:
+          kind: alternative
+          group: prayer-over-the-people
+          option: pray
+          omission_option: omit
+          basis: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L45, labels this prayer optional. The 2002 Latin Missal, PDF p. 154, prints it for optional use."
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944
+        notes: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L45, labels this prayer optional. The 2002 Latin Missal, PDF p. 154, prints it for optional use. The exact wording of the 2008 Latin reprint has not been independently established."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 191 (printed page
         137), marginal n. 247. The heading verified on that image identifies the day as Thursday of the Fourth Week of
@@ -15786,6 +16160,22 @@ sections:
         notes: Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#gw,
           Prayer after Communion; registered secondary 2002 PDF, artifact p. 155. Comparison establishes the 2002 digital reading;
           correspondence with the 2008 printing is unverified.
+      - name: Prayer over the People
+        ordinary_disposition:
+          kind: alternative
+          group: prayer-over-the-people
+          option: pray
+          omission_option: omit
+          basis: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L46, labels this prayer optional. The 2002 Latin Missal, PDF p. 155, prints it for optional use."
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944
+        notes: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L46, labels this prayer optional. The 2002 Latin Missal, PDF p. 155, prints it for optional use. The exact wording of the 2008 Latin reprint has not been independently established."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 191 (printed page
         137), marginal n. 248. The heading verified on that image identifies the day as Friday of the Fourth Week of Lent,
@@ -16151,6 +16541,22 @@ sections:
         notes: Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glc.htm#gx,
           Prayer after Communion; registered secondary 2002 PDF, artifact p. 156. Comparison establishes the 2002 digital reading;
           correspondence with the 2008 printing is unverified.
+      - name: Prayer over the People
+        ordinary_disposition:
+          kind: alternative
+          group: prayer-over-the-people
+          option: pray
+          omission_option: omit
+          basis: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L47, labels this prayer optional. The 2002 Latin Missal, PDF p. 156, prints it for optional use."
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944
+        notes: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L47, labels this prayer optional. The 2002 Latin Missal, PDF p. 156, prints it for optional use. The exact wording of the 2008 Latin reprint has not been independently established."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 191 (printed page
         137), marginal n. 249. The heading verified on that image identifies the day as Saturday of the Fourth Week of
@@ -16854,6 +17260,22 @@ sections:
         notes: 2002 Missal, DOMINICA V IN QUADRAGESIMA / Feria secunda; Prayer after Communion, option 1 (digital PDF artifact
           p. 159); https://www.clerus.org/bibliaclerusonline/en/gld.htm#gz. The two digital witnesses agree on this appointment.
           Correspondence with the whole 2008 reprint remains unverified.
+      - name: Prayer over the People
+        ordinary_disposition:
+          kind: alternative
+          group: prayer-over-the-people
+          option: pray
+          omission_option: omit
+          basis: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L52, labels this prayer optional. The 2002 Latin Missal, PDF p. 159, prints it for optional use."
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944
+        notes: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L52, labels this prayer optional. The 2002 Latin Missal, PDF p. 159, prints it for optional use. The exact wording of the 2008 Latin reprint has not been independently established."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 192 (printed page
         138), marginal n. 251. The heading verified on that image identifies the day as Monday of the Fifth Week of Lent,
@@ -16991,16 +17413,9 @@ sections:
           structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
           English body, exact target-2008 Latin body, or publication permission is supplied.
       - name: Collect
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          body_status: held-unpublished
-          reasons:
-          - kind: rights-withheld
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-gld-3e0e3f14
-        notes: 2002 Missal, DOMINICA V IN QUADRAGESIMA / Feria tertia; Collect, option 1 (digital PDF artifact p. 159); https://www.clerus.org/bibliaclerusonline/en/gld.htm#g0.
-          The two digital witnesses agree on this appointment. Correspondence with the whole 2008 reprint remains unverified.
+        source: "composed"
+        text: "Da nobis, quaesumus, Domine, perseverantem in tua voluntate famulatum, ut in diebus nostris et merito et numero populus tibi serviens augeatur. Per Dominum."
+        notes: "Missale Romanum, Mame Tours 1922, printed p. 157, facsimile PDF p. 271; left column, prayer over the people at the close of Tuesday of Passion Week. Stop the longer Per Dominum nostrum Iesum Christum at the separately witnessed short cue. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/gld.htm#g0, lent-5-tuesday/main, Collect. Independent 2002 digital Missal PDF pp. 159–160. The 2008 reprint has not been independently collated."
       - name: First Reading
         source: scripture
         verses:
@@ -17221,6 +17636,22 @@ sections:
         notes: 2002 Missal, DOMINICA V IN QUADRAGESIMA / Feria tertia; Prayer after Communion, option 1 (digital PDF artifact
           p. 160); https://www.clerus.org/bibliaclerusonline/en/gld.htm#g0. The two digital witnesses agree on this appointment.
           Correspondence with the whole 2008 reprint remains unverified.
+      - name: Prayer over the People
+        ordinary_disposition:
+          kind: alternative
+          group: prayer-over-the-people
+          option: pray
+          omission_option: omit
+          basis: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L53, labels this prayer optional. The 2002 Latin Missal, PDF p. 160, prints it for optional use."
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944
+        notes: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L53, labels this prayer optional. The 2002 Latin Missal, PDF p. 160, prints it for optional use. The exact wording of the 2008 Latin reprint has not been independently established."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 192 (printed page
         138), marginal n. 252. The heading verified on that image identifies the day as Tuesday of the Fifth Week of Lent,
@@ -17607,6 +18038,22 @@ sections:
         notes: 2002 Missal, DOMINICA V IN QUADRAGESIMA / Feria quarta; Prayer after Communion, option 1 (digital PDF artifact
           p. 160); https://www.clerus.org/bibliaclerusonline/en/gld.htm#g1. The two digital witnesses agree on this appointment.
           Correspondence with the whole 2008 reprint remains unverified.
+      - name: Prayer over the People
+        ordinary_disposition:
+          kind: alternative
+          group: prayer-over-the-people
+          option: pray
+          omission_option: omit
+          basis: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L54, labels this prayer optional. The 2002 Latin Missal, PDF p. 161, prints it for optional use."
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944
+        notes: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L54, labels this prayer optional. The 2002 Latin Missal, PDF p. 161, prints it for optional use. The exact wording of the 2008 Latin reprint has not been independently established."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 193 (printed page
         139), marginal n. 253. The heading verified on that image identifies the day as Wednesday of the Fifth Week of
@@ -17983,6 +18430,22 @@ sections:
           - kind: rights-withheld
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-gld-3e0e3f14
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/gld.htm#g2 (DOMINICA V IN QUADRAGESIMA / Feria quinta); Prayer after Communion. The separately registered 2002 digital Missal confirms the prayer at artifact page 161–162. Correspondence with the 2008 reprint remains unverified."
+      - name: Prayer over the People
+        ordinary_disposition:
+          kind: alternative
+          group: prayer-over-the-people
+          option: pray
+          omission_option: omit
+          basis: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L55, labels this prayer optional. The 2002 Latin Missal, PDF p. 162, prints it for optional use."
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944
+        notes: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L55, labels this prayer optional. The 2002 Latin Missal, PDF p. 162, prints it for optional use. The exact wording of the 2008 Latin reprint has not been independently established."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 193 (printed page
         139), marginal n. 254. The heading verified on that image identifies the day as Thursday of the Fifth Week of
@@ -18380,6 +18843,22 @@ sections:
         source: composed
         text: "Sumpti sacrificii, Domine, perpetua nos tuitio non relinquat, et noxia semper a nobis cuncta depellat. Per Christum."
         notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/gld.htm#g3, Prayer after Communion; registered secondary 2002 PDF, artifact p. 163. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
+      - name: Prayer over the People
+        ordinary_disposition:
+          kind: alternative
+          group: prayer-over-the-people
+          option: pray
+          omission_option: omit
+          basis: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L56, labels this prayer optional. The 2002 Latin Missal, PDF p. 163, prints it for optional use."
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944
+        notes: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L56, labels this prayer optional. The 2002 Latin Missal, PDF p. 163, prints it for optional use. The exact wording of the 2008 Latin reprint has not been independently established."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 193 (printed page
         139), marginal n. 255. The heading verified on that image identifies the day as Friday of the Fifth Week of Lent,
@@ -18769,6 +19248,22 @@ sections:
           - kind: rights-withheld
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-gld-3e0e3f14
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/gld.htm#g4 (DOMINICA V IN QUADRAGESIMA / Sabbato); Prayer after Communion. The separately registered 2002 digital Missal confirms the prayer at artifact page 163–164. Correspondence with the 2008 reprint remains unverified."
+      - name: Prayer over the People
+        ordinary_disposition:
+          kind: alternative
+          group: prayer-over-the-people
+          option: pray
+          omission_option: omit
+          basis: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L57, labels this prayer optional. The 2002 Latin Missal, PDF p. 164, prints it for optional use."
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944
+        notes: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L57, labels this prayer optional. The 2002 Latin Missal, PDF p. 164, prints it for optional use. The exact wording of the 2008 Latin reprint has not been independently established."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 193 (printed page
         139), marginal n. 256. The heading verified on that image identifies the day as Saturday of the Fifth Week of
@@ -19442,6 +19937,22 @@ sections:
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-gld-3e0e3f14
         notes: 2002 Missal, FERIA II HEBDOMADAE SANCTAE; Prayer after Communion, option 1 (digital PDF artifact p. 175); https://www.clerus.org/bibliaclerusonline/en/gld.htm#hd.
           The two digital witnesses agree on this appointment. Correspondence with the whole 2008 reprint remains unverified.
+      - name: Prayer over the People
+        ordinary_disposition:
+          kind: alternative
+          group: prayer-over-the-people
+          option: pray
+          omission_option: omit
+          basis: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L62, labels this prayer optional. The 2002 Latin Missal, PDF p. 175, prints it for optional use."
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944
+        notes: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L62, labels this prayer optional. The 2002 Latin Missal, PDF p. 175, prints it for optional use. The exact wording of the 2008 Latin reprint has not been independently established."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: The Lectionary citations were read at 200
         dpi in a page image of the Ordo lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
         at artifact page 194, printed page 140, n. 257. The Ordo prints its responsorial psalms and psalm acclamations
@@ -19563,6 +20074,22 @@ sections:
           - kind: rights-withheld
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-gld-3e0e3f14
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/gld.htm#he (FERIA III HEBDOMADAE SANCTAE); Prayer after Communion. The separately registered 2002 digital Missal confirms the prayer at artifact page 176. Correspondence with the 2008 reprint remains unverified."
+      - name: Prayer over the People
+        ordinary_disposition:
+          kind: alternative
+          group: prayer-over-the-people
+          option: pray
+          omission_option: omit
+          basis: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L63, labels this prayer optional. The 2002 Latin Missal, PDF p. 176, prints it for optional use."
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944
+        notes: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L63, labels this prayer optional. The 2002 Latin Missal, PDF p. 176, prints it for optional use. The exact wording of the 2008 Latin reprint has not been independently established."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: The Lectionary citations were read at 200
         dpi in a page image of the Ordo lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
         at artifact page 194, printed page 140, n. 258. The Ordo prints its responsorial psalms and psalm acclamations
@@ -19613,15 +20140,9 @@ sections:
         text: "In nomine Iesu omne genu flectatur, caelestium, terrestrium et infernorum: quia Dominus factus est oboediens usque ad mortem, mortem autem crucis: ideo Dominus Iesus Christus in gloria est Dei Patris."
         notes: "Source appointment antiphonary:holy-wednesday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 45 / printed page 37, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Dated 2026-11-14 Latin admission (gap campaign p2-lent-holyweek), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Mame 1922 unit at printed p. 192. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: Collect
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          body_status: held-unpublished
-          reasons:
-          - kind: rights-withheld
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-gld-3e0e3f14
-        notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/gld.htm#hf (FERIA IV HEBDOMADAE SANCTAE); Collect. The separately registered 2002 digital Missal confirms the prayer at artifact page 176–177. Correspondence with the 2008 reprint remains unverified."
+        source: "composed"
+        text: "Deus, qui pro nobis Filium tuum crucis patibulum subire voluisti, ut inimici a nobis expelleres potestatem, concede nobis famulis tuis ut resurrectionis gratiam consequamur. Per Dominum."
+        notes: "Missale Romanum, Mame Tours 1922, printed p. 193, facsimile PDF p. 307; right column, second prayer of Wednesday of Holy Week. The later Missal omits eundem in the conclusion. The earlier Oratio supplies the complete petition. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/gld.htm#hf, holy-wednesday/main, Collect. Independent 2002 digital Missal PDF pp. 176–177. The 2008 reprint has not been independently collated."
       - name: First Reading
         source: scripture
         verses:
@@ -19704,6 +20225,22 @@ sections:
         source: composed
         text: "Largire sensibus nostris, omnipotens Deus: ut, per temporalem Filii tui mortem, quam mysteria veneranda testantur, vitam te nobis dedisse perpetuam confidamus. Per Christum."
         notes: "Historical Latin petition with an original study translation. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/gld.htm#hf, Prayer after Communion; registered secondary 2002 PDF, artifact p. 177. Comparison establishes the 2002 digital reading; correspondence with the 2008 printing is unverified."
+      - name: Prayer over the People
+        ordinary_disposition:
+          kind: alternative
+          group: prayer-over-the-people
+          option: pray
+          omission_option: omit
+          basis: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L64, labels this prayer optional. The 2002 Latin Missal, PDF p. 177, prints it for optional use."
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944
+        notes: "The U.S. English Roman eMissal, https://rmhealey.com/docs/RMU/#L64, labels this prayer optional. The 2002 Latin Missal, PDF p. 177, prints it for optional use. The exact wording of the 2008 Latin reprint has not been independently established."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: The Lectionary citations were read at 200
         dpi in a page image of the Ordo lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
         at artifact page 194, printed page 140, n. 259. The Ordo prints its responsorial psalms and psalm acclamations
@@ -21455,7 +21992,8 @@ sections:
           option: 4-esdras-2-36-37
           basis: "The Missal appoints this as an alternative entrance antiphon."
         incipit: Accipite iucunditatem gloriae vestrae
-        source: scripture
+        source: mixed
+        text: "Accipite iucunditatem gloriae vestrae, gratias agentes Deo, qui vos ad caelestia regna vocavit, alleluia."
         verses:
         - book: 4 Esdras
           ranges:
@@ -28780,15 +29318,9 @@ sections:
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008
         notes: "Source appointment antiphonary:easter-7-tuesday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 71 / printed page 63, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. Dated 2026-11-14 (gap campaign p3-easter-pentecost): the Missal's adapted antiphon is its own body beside the retained Scripture citation; no public-domain witness prints it word for word, so its Latin stays an explicit witness gap. Project study English of the adapted body is recorded in the translation overlay."
       - name: Collect
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          body_status: held-unpublished
-          reasons:
-          - kind: rights-withheld
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glh-525a38db
-        notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glh.htm#i5 (DOMINICA VII PASCHAE / Feria tertia); Collect. The separately registered 2002 digital Missal confirms the prayer at artifact page 261. Correspondence with the 2008 reprint remains unverified."
+        source: "composed"
+        text: "Praesta, quaesumus, omnipotens et misericors Deus, ut Spiritus Sanctus adveniens templum nos gloriae suae dignanter inhabitando perficiat. Per Dominum."
+        notes: "Missale Romanum, Mame Tours 1922, printed p. 405, facsimile PDF p. 519; right column, second prayer of Ember Wednesday in Pentecost Week. The historical ending adds an in unitate eiusdem cue after Per Dominum. The later prayer ends at Per Dominum. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glh.htm#i5, easter-7-tuesday/main, Collect. Independent 2002 digital Missal PDF pp. 261–262. The 2008 reprint has not been independently collated."
       - name: First Reading
         source: scripture
         verses:
@@ -49929,6 +50461,19 @@ sections:
               - begin: {chapter: 56, verse: 13}
                 end: {chapter: 56, verse: 14}
               ref: Psalm 56:10, 11-12, 13-14
+              lectionary_verse_map:
+                id: olm-448-year-ii
+                printed_ref: "Ps 55, 10. 11–12. 13–14"
+                appointment_source: passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.olm-448-ii-responsorial-psalm
+                psalter_source: passage.catholic-church.nova-vulgata.vatican-official-web.psalmus-56-verses-10-14
+                vulgate:
+                  editions: [catholic-public-domain-version, clementine-vulgate, douay-rheims, douay-rheims-american-1899]
+                  chapter: 55
+                  verses: [[10, 10], [11, 11], [12, 13]]
+                hebrew_unnumbered:
+                  editions: [king-james-version, revised-version-1895, world-english-bible-catholic]
+                  chapter: 56
+                  verses: [[9, 9], [10, 11], [12, 13]]
       - name: Gospel Acclamation
         source: scripture
         verses:
@@ -49954,10 +50499,9 @@ sections:
         responsorial psalms in Vulgate numbering; they are converted here by scripts/_psalms from the
         tracked verse concordance, because this file declares psalm_numbering hebrew. The Ordo prints this
         day''s acclamation reference under a Cf. cue, which this citation grammar does not carry. The Year
-        II responsorial reaches Psalm 56:14 in this file''s numbering - Psalm 55:14 as the Ordo prints it
-        - which this repository''s tracked psalm concordance does not bound: it ends Hebrew Psalm 56 at
-        verse 13. The citation is carried as the Ordo prints it and will report against the psalter-bounds
-        gate until that is settled; it is neither clamped nor renumbered here. Nothing of the book''s
+        II responsorial preserves the three groups printed in OLM 448, including its closing verse 14.
+        The per-edition Bible reconstructions follow the registered Nova Vulgata verse divisions and
+        the actual verse carriers in each selected local Bible. Nothing of the book''s
         wording is carried: its pericope titles, psalm responses and acclamation texts stay in the source,
         and the alternative Alleluia response some of these psalms print is a response and not a second
         psalm. The Missal prints no formulary for an Ordinary Time weekday, so no oration and no antiphon
@@ -56644,6 +57188,61 @@ sections:
         wording remains unestablished, the held English remains restricted, and further orations remain unverified for the 2008 edition. See
         src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
+      - name: Antiphon while Candles are Lit
+        ordinary_disposition:
+          kind: alternative
+          group: presentation-candle-lighting
+          option: printed-antiphon
+          basis: "The Presentation of the Lord, blessing of candles and procession, nos. 3–8 and 9–11. The Procession begins outside the destination church. In the Solemn Entrance the candles are blessed at the door or inside and a shorter procession goes to the altar. Both forms use the same lighting and procession chants. No. 3 appoints the printed lighting antiphon or another suitable chant."
+        source: composed
+        text: "Ecce Dominus noster cum virtute veniet, ut illuminet oculos servorum suorum, alleluia."
+        notes: "Missale Romanum 2002, February 2, nos. 3, 7 and 10–11, PDF p. 422, https://www.clerus.org/bibliaclerusonline/en/glo.htm#og. The 2002 digitizations mark the chant at no. 3 and identify its incipit in no. 10. The English Antiphonary p. 101 and U.S. eMissal print the full text including Alleluia. The corresponding Latin is independently present complete in the 1912 Antiphonale, Advent II, antiphon 5."
+      - name: Another Suitable Chant while Candles are Lit
+        ordinary_disposition:
+          kind: alternative
+          group: presentation-candle-lighting
+          option: other-suitable-chant
+          basis: "The Presentation of the Lord, blessing of candles and procession, nos. 3–8 and 9–11. The Procession begins outside the destination church. In the Solemn Entrance the candles are blessed at the door or inside and a shorter procession goes to the altar. Both forms use the same lighting and procession chants. No. 3 appoints the printed lighting antiphon or another suitable chant."
+        source: composed
+        text: "Hic alius cantus aptus eligitur."
+        notes: "Missale Romanum 2002, February 2, nos. 3, 7 and 10–11, PDF p. 422, https://www.clerus.org/bibliaclerusonline/en/glo.htm#og. Nonspoken editorial direction. The Missal leaves the other suitable chant to local selection."
+        text_structure:
+          text_sha256: ae508355bb95c459abb4c0a9906f57abb06c625e5f416da98fa65e374baa68ca
+          checked: The entire line is a nonspoken editorial direction.
+          actions:
+          - {kind: rubric, offset: 0, text: "Hic alius cantus aptus eligitur."}
+      - name: Procession Chant 1 with Canticle
+        ordinary_disposition:
+          kind: alternative
+          group: presentation-procession-chant
+          option: lumen-with-canticle
+          basis: "The Presentation of the Lord, blessing of candles and procession, nos. 3–8 and 9–11. The Procession begins outside the destination church. In the Solemn Entrance the candles are blessed at the door or inside and a shorter procession goes to the altar. Both forms use the same lighting and procession chants. No. 7 appoints the first chant with its canticle, the second chant, or another suitable chant."
+        source: composed
+        text: "Lumen ad revelationem gentium, et gloriam plebis tuae Israel.\nNunc dimittis servum tuum, Domine, secundum verbum tuum in pace.\nLumen ad revelationem gentium, et gloriam plebis tuae Israel.\nQuia viderunt oculi mei salutare tuum.\nLumen ad revelationem gentium, et gloriam plebis tuae Israel.\nQuod parasti ante faciem omnium populorum.\nLumen ad revelationem gentium, et gloriam plebis tuae Israel."
+        notes: "Missale Romanum 2002, February 2, nos. 3, 7 and 10–11, PDF pp. 423–424, https://www.clerus.org/bibliaclerusonline/en/glo.htm#cfo. Luke 2:29–32. Expand the three printed repeat cues from the opening refrain. The modern rite omits the old doxology and its repetitions."
+      - name: Procession Chant 2
+        ordinary_disposition:
+          kind: alternative
+          group: presentation-procession-chant
+          option: adorna
+          basis: "The Presentation of the Lord, blessing of candles and procession, nos. 3–8 and 9–11. The Procession begins outside the destination church. In the Solemn Entrance the candles are blessed at the door or inside and a shorter procession goes to the altar. Both forms use the same lighting and procession chants. No. 7 appoints the first chant with its canticle, the second chant, or another suitable chant."
+        source: composed
+        text: "Adorna thalamum tuum, Sion, et suscipe Regem Christum: amplectere Mariam, quae est caelestis porta: ipsa enim portat Regem gloriae novi luminis: subsistit Virgo, adducens manibus Filium ante luciferum genitum: quem accipiens Simeon in ulnas suas, praedicavit populis, Dominum eum esse vitae et mortis, et Salvatorem mundi."
+        notes: "Missale Romanum 2002, February 2, nos. 3, 7 and 10–11, PDF p. 424, https://www.clerus.org/bibliaclerusonline/en/glo.htm#cfp. Complete second processional chant."
+      - name: Another Suitable Chant during the Procession
+        ordinary_disposition:
+          kind: alternative
+          group: presentation-procession-chant
+          option: other-suitable-chant
+          basis: "The Presentation of the Lord, blessing of candles and procession, nos. 3–8 and 9–11. The Procession begins outside the destination church. In the Solemn Entrance the candles are blessed at the door or inside and a shorter procession goes to the altar. Both forms use the same lighting and procession chants. No. 7 appoints the first chant with its canticle, the second chant, or another suitable chant."
+        source: composed
+        text: "Ad processionem alius cantus aptus eligitur."
+        notes: "Missale Romanum 2002, February 2, nos. 3, 7 and 10–11, PDF p. 423, https://www.clerus.org/bibliaclerusonline/en/glo.htm#cfo. Nonspoken editorial direction. The Missal leaves the other suitable chant to local selection."
+        text_structure:
+          text_sha256: 041ec86ff6f70f0dec6e469b105c309bb2eecf5d3f8db2e1fe40c123885fd08d
+          checked: The entire line is a nonspoken editorial direction.
+          actions:
+          - {kind: rubric, offset: 0, text: "Ad processionem alius cantus aptus eligitur."}
       - name: Entrance Antiphon
         source: scripture
         verses:
@@ -64681,15 +65280,9 @@ sections:
             ref: Luke 1:15, 14
           notes: 'Structural appointment and citation Lk 1: 15, 14 directly checked in registered ICEL2010 Antiphonary, artifact page 116, printed page 108; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded.'
         - name: Collect
-          source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glq-4eeac750
-          notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glq.htm#sd (The Nativity of Saint John the Baptist / Ad Missam in Vigilia); Collect. The separately registered 2002 digital Missal confirms the prayer at artifact page 456. Correspondence with the 2008 reprint remains unverified."
+          source: "composed"
+          text: "Praesta, quaesumus, omnipotens Deus, ut familia tua per viam salutis incedat et, beati Ioannis Praecursoris hortamenta sectando, ad eum quem praedixit secura perveniat, Dominum nostrum Iesum Christum. Qui tecum."
+          notes: "Missale Romanum, Mame Tours 1922, printed p. 627, facsimile PDF p. 741; left column, Collect in the Vigil Mass of the Nativity of Saint John the Baptist. The historical witness adds Filium tuum after Dominum nostrum Iesum Christum. The later Missal omits that apposition and immediately prints the same Qui tecum cue. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glq.htm#sd, nativity-saint-john-baptist/vigil, Collect. Independent 2002 digital Missal PDF pp. 456–457. The 2008 reprint has not been independently collated."
         - name: First Reading
           source: scripture
           verses:
@@ -73173,7 +73766,8 @@ sections:
         name: Second formulary
         propers:
         - name: Entrance Antiphon
-          source: scripture
+          source: mixed
+          text: "Requiem aeternam dona eis, Domine, et lux perpetua luceat eis."
           verses:
           - book: 4 Esdras
             ranges:
@@ -73201,7 +73795,8 @@ sections:
               source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-gls-9f3b0bff
           notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/gls.htm#cj0 (The Commemoration of All the Faithful Departed (All Souls) / 2 Ant. ad introitum); Prayer over the Offerings. The separately registered 2002 digital Missal confirms the prayer at artifact page 515. Correspondence with the 2008 reprint remains unverified."
         - name: Communion Antiphon
-          source: scripture
+          source: mixed
+          text: "Lux aeterna luceat eis, Domine, cum Sanctis tuis in aeternum, quia pius es."
           verses:
           - book: 4 Esdras
             ranges:
@@ -75900,15 +76495,9 @@ sections:
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008
         notes: Structural appointment and uncited presence directly checked in registered ICEL2010 Antiphonary, artifact page 150, printed page 142; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded.
       - name: Collect
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          body_status: held-unpublished
-          reasons:
-          - kind: rights-withheld
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glt-427df2b2
-        notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glt.htm#zi (Saint Stephen, the First Martyr / S. STEPHANI, PROTOMARTYRIS); Collect. The separately registered 2002 digital Missal confirms the prayer at artifact page 532–533. Correspondence with the 2008 reprint remains unverified."
+        source: "composed"
+        text: "Da nobis, quaesumus, Domine, imitari quod colimus, ut discamus et inimicos diligere, quia eius natalicia celebramus qui novit etiam pro persecutoribus exorare. Per Dominum."
+        notes: "Wilson, The Gregorian Sacramentary under Charles the Great (1915), printed p. 13, facsimile PDF p. 71; 26 December, Natale sancti Stephani, opening prayer, main text of H. A. Wilson’s 1915 edition. All words of the petition and conclusion agree. Wilson marks the alternative witness readings in footnote 5. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glt.htm#zi, saint-stephen-first-martyr/main, Collect. Independent 2002 digital Missal PDF pp. 532–533. The 2008 reprint has not been independently collated."
       - name: First Reading
         source: scripture
         verses:
@@ -76375,6 +76964,69 @@ sections:
             end: {chapter: 16, verse: 19}
           ref: Matthew 16:13-19
 
+  weekday-orations:
+    kind: weekday-orations
+    label: Weekday prayer formularies
+    masses:
+    - key: ot-1
+      name: Week I in Ordinary Time
+      season: ordinary-time
+      ordinary_frame:
+        applicability: none
+        basis: >-
+          The Missal prints these three prayers for weekdays in this week. IGMR
+          363 permits their election with the weekday readings. This source
+          formulary has no appointed Sunday or independent readings.
+      propers:
+      - name: Collect
+        source: "composed"
+        text: "Vota, quaesumus, Domine, supplicantis populi caelesti pietate prosequere, ut et quae agenda sunt videant, et ad implenda quae viderint convalescant. Per Dominum."
+        notes: "Missale Romanum, Mame Tours 1922, printed p. 49, facsimile PDF p. 163; Sunday within the octave of Epiphany, Collect, bottom left to top right. The historical petition agrees. The longer historical Per Dominum nostrum Iesum Christum ends at the separately witnessed Per Dominum cue in the modern text. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/gli.htm#jf, ot-1/main, Collect. Independent 2002 digital Missal PDF pp. 268–269. The 2008 reprint has not been independently collated."
+      - name: Prayer over the Offerings
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-gli-bdb12305
+      - name: Prayer after Communion
+        source: "composed"
+        text: "Supplices te rogamus, omnipotens Deus, ut quos tuis reficis sacramentis, tibi etiam placitis moribus dignanter deservire concedas. Per Christum."
+        notes: "Missale Romanum, Mame Tours 1922, printed p. 51, facsimile PDF p. 165; Sunday within the octave of Epiphany, Postcommunion, left column above the commemoration of the octave. The petition agrees. The historical Per Dominum is replaced by the separately witnessed Per Christum printed by the 2002 Missal. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/gli.htm#jf, ot-1/main, Prayer after Communion. Independent 2002 digital Missal PDF pp. 269–270. The 2008 reprint has not been independently collated."
+    - key: ot-34
+      name: Week XXXIV in Ordinary Time
+      season: ordinary-time
+      ordinary_frame:
+        applicability: none
+        basis: >-
+          The Missal prints these three prayers for weekdays in this week. IGMR
+          363 permits their election with the weekday readings. This source
+          formulary has no appointed Sunday or independent readings.
+      propers:
+      - name: Collect
+        source: "composed"
+        text: "Excita, quaesumus, Domine, tuorum fidelium voluntates, ut divini operis fructum propensius exsequentes, pietatis tuae remedia maiora percipiant. Per Dominum."
+        notes: "Missale Romanum, Mame Tours 1922, printed p. 478, facsimile PDF p. 592; Twenty-fourth and last Sunday after Pentecost, Collect in left column above the referral to prayers for the different times. The petition agrees. The historical Per. is expanded to the separately witnessed Per Dominum as printed in the 2002 Missal. Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glj.htm#kg, ot-34/main, Collect. Independent 2002 digital Missal PDF pp. 296–297. The 2008 reprint has not been independently collated."
+      - name: Prayer over the Offerings
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glj-30a67226
+      - name: Prayer after Communion
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glj-30a67226
   common:
     kind: common
     label: Commune Sanctorum

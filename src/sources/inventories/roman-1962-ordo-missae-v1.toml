@@ -2832,6 +2832,36 @@ collation = "uncollated"
 reading_note = "Historical 1861 direction, not the 1962 discipline: the 1962 Missal gives Per evangelica dicta to the priest alone as he kisses the book, and prints no direction for the assistants here."
 note = "ANTECEDENT, NOT THE TARGET EDITION. This English is the anonymous translation printed by the 1861 Cummiskey lay hand missal, not an approved translation of the 1962 typical edition. UNCOLLATED: no element-by-element collation against the target edition is asserted. Read against the 1962 Ordo Missae page images on 2026-11-14: the direction states practice the 1962 book does not prescribe, so it carries a caution at the element and no Latin."
 
+[[sections.inserted]]
+key = "iube-domine-benedicere"
+before = "dominus-sit-in-corde-meo"
+conditions = [{ kind = "include-when-any", predicates = ["1962-ordinary-outside-requiem"], basis = "Missale Romanum 1962, Ordo Missae no. 1028, printed p. 219 (PDF p. 300). The priest reading without sacred ministers asks for the blessing before the Gospel. The following Requiem rubric omits the blessing." }]
+kind = "prayer"
+speaker = "priest"
+name = "The priest asks for the blessing"
+latin_incipit = "Iube, Domine, benedicere"
+note = "The priest asks God for the blessing before proclaiming the Gospel. Ordo Missae no. 1028 and Ritus servandus VI distinguish this priestly prayer from the deacon’s request to the celebrant."
+
+[sections.inserted.latin]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.priest-gospel-blessing-request-3fabf5f0"
+element = "iube-domine-benedicere"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+note = "The three words are independently printed in Mame Tours 1922 and in the registered Lasance facsimile. The historical facing text supplies this private request."
+collation_finding = "All three words agree with the 1962 Missal, p. 219, no. 1028, and the Passion rubrics on pp. 136 and 148, and with the 1922 Tours Mame Missal p. 275 (PDF 389), allowing spelling, stress accents and punctuation. Lasance p. 763, facsimile PDF 761."
+target_wording = "word-exact"
+
+[sections.inserted.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.priest-gospel-blessing-request-3fabf5f0"
+element = "iube-domine-benedicere"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "Historical English of Lasance and Walsh, printed p. 763, facsimile PDF 761."
+
 [[sections.element_conditions]]
 element = "dominus-sit-in-corde-meo"
 conditions = [{ kind = "include-when-any", predicates = ["1962-ordinary-outside-requiem"], basis = "Missale Romanum 1962, Ritus servandus XIII.1 and RGMR 507–508. This element is omitted or replaced in Masses of the Dead." }]
@@ -6399,34 +6429,6 @@ omit = [
   "oblatio/rubrica-evangelium-proprium", "oblatio/rubrica-post-evangelium",
   "oblatio/laus-tibi-christe", "oblatio/rubrica-cum-sacerdote", "oblatio/per-evangelica-dicta",
 ]
-
-[lesson_frames.passion.request]
-key = "iube-domine-benedicere"
-kind = "prayer"
-speaker = "priest"
-name = "The priest asks for the blessing"
-latin_incipit = "Iube, Domine, benedicere"
-note = "Missale Romanum 1962, printed pp. 136 and 148. The priest who reads the Passion asks God for the blessing. If deacons proclaim the Passion, they ask the celebrant instead (no. 8)."
-
-[lesson_frames.passion.request.latin]
-witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
-artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.priest-gospel-blessing-request-3fabf5f0"
-element = "iube-domine-benedicere"
-column = "latin"
-relation = "antecedent"
-collation = "collated"
-note = "The three words are independently printed in Mame Tours 1922 and in the registered Lasance facsimile. The historical facing text supplies this private request."
-collation_finding = "All three words agree with the 1962 Missal, p. 136, no. 8a and p. 148, and with the 1922 Tours Mame Missal p. 275 (PDF 389), allowing spelling, stress accents and punctuation. Lasance p. 763, facsimile PDF 761."
-target_wording = "word-exact"
-
-[lesson_frames.passion.request.english]
-witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
-artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.priest-gospel-blessing-request-3fabf5f0"
-element = "iube-domine-benedicere"
-column = "english"
-relation = "antecedent"
-collation = "uncollated"
-note = "Historical English of Lasance and Walsh, printed p. 763, facsimile PDF 761."
 
 # The 1962 Palm Sunday rite explicitly extends these same ceremonies to
 # Tuesday and Wednesday of Holy Week. Palm rubric 11 appoints the customary
