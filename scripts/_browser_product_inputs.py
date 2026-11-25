@@ -177,65 +177,143 @@ def _references(body: bytes, name: str) -> tuple:
     is therefore not mistaken for code the producer runs.
     """
     digest = hashlib.sha256(body).hexdigest()
-    if digest in _PARSED:
-        return _PARSED[digest]
+    cached = _PARSED.get(digest)
+    if cached is not None:
+        return cached
     try:
         tree = ast.parse(body, filename=name)
     except (SyntaxError, ValueError):
         # Python compiles a module before running any of it, so source that
         # does not parse imports nothing. It stays in the key as a leaf.
-        _PARSED[digest] = ((), (), frozenset())
-        return _PARSED[digest]
+        result = ((), (), frozenset())
+        _PARSED[digest] = result
+        return result
+
     imports, dynamic, literals = [], [], set()
-    nodes = list(ast.walk(tree))
-    statements = {id(node.value) for node in nodes
-                  if isinstance(node, ast.Expr) and isinstance(node.value, ast.Constant)}
-    # Local functions whose parameters reach a path: name -> positions/names.
     path_functions: dict[str, set] = {}
-    for node in nodes:
-        if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
-            parameters = [argument.arg for argument in (*node.args.posonlyargs, *node.args.args)]
-            used = {operand.id for inner in ast.walk(node) for operand in _path_operands(inner)
-                    if isinstance(operand, ast.Name)}
-            reached = {position for position, parameter in enumerate(parameters) if parameter in used}
-            reached |= {parameter for parameter in parameters if parameter in used}
-            if reached:
-                path_functions.setdefault(node.name, set()).update(reached)
-    for node in nodes:
-        if isinstance(node, ast.Import):
-            imports.extend((0, alias.name, ()) for alias in node.names)
-        elif isinstance(node, ast.ImportFrom):
+    calls: list[ast.Call] = []
+    # Single iterative traversal replaces repeated ast.walk() passes and nested
+    # function-body re-walks while preserving exact semantics.
+    iter_child_nodes = ast.iter_child_nodes
+    Import = ast.Import
+    ImportFrom = ast.ImportFrom
+    Call = ast.Call
+    BinOp = ast.BinOp
+    Div = ast.Div
+    Constant = ast.Constant
+    JoinedStr = ast.JoinedStr
+    FormattedValue = ast.FormattedValue
+    Name = ast.Name
+    Expr = ast.Expr
+    FunctionDef = ast.FunctionDef
+    AsyncFunctionDef = ast.AsyncFunctionDef
+
+    def collect_path_operands(node, out_names):
+        if type(node) is BinOp and type(node.op) is Div:
+            stack = [node.left, node.right]
+            while stack:
+                cur = stack.pop()
+                if type(cur) is BinOp and type(cur.op) is Div:
+                    stack.append(cur.left)
+                    stack.append(cur.right)
+                elif type(cur) is Constant:
+                    val = _literal(cur)
+                    if val is not None:
+                        literals.add(val)
+                elif out_names is not None and type(cur) is Name:
+                    out_names.add(cur.id)
+        elif type(node) is Call:
+            called = _called(node)
+            if called == "join":
+                fn = node.func
+                if not (type(fn) is ast.Attribute and type(fn.value) is ast.Attribute
+                        and fn.value.attr == "path"):
+                    return
+            if called in _PATH_CALLS:
+                for arg in node.args:
+                    if type(arg) is Constant:
+                        val = _literal(arg)
+                        if val is not None:
+                            literals.add(val)
+                    elif out_names is not None and type(arg) is Name:
+                        out_names.add(arg.id)
+
+    def walk_node(node, active_name_sets, is_expr_stmt_value=False):
+        t = type(node)
+        if t is Constant:
+            if not is_expr_stmt_value:
+                val = node.value
+                if type(val) is str and "/" in val and 0 < len(val) < 256 and not any(c.isspace() or c == "\0" for c in val):
+                    literals.add(val)
+            return
+        if t is Import:
+            for alias in node.names:
+                imports.append((0, alias.name, ()))
+            return
+        if t is ImportFrom:
             imports.append((node.level, node.module or "", tuple(alias.name for alias in node.names)))
-        elif isinstance(node, ast.Call) and node.args and _called(node) in _IMPORTERS:
-            argument = node.args[0]
-            if isinstance(argument, ast.Constant) and isinstance(argument.value, str):
-                imports.append((0, argument.value, ()))
-            elif isinstance(argument, ast.JoinedStr) and argument.values:
-                head = argument.values[0]
-                if isinstance(head, ast.Constant) and isinstance(head.value, str) and head.value.endswith("."):
-                    dynamic.append(("package", head.value[:-1]))
-                elif (isinstance(head, ast.FormattedValue) and isinstance(head.value, ast.Name)
-                      and head.value.id == "__name__"):
-                    dynamic.append(("self", ""))
+            return
+        if t is Expr and type(node.value) is Constant:
+            # Bare docstring/constant statement: skip its top-level Constant value.
+            return
+        if t is BinOp and type(node.op) is Div:
+            names_out = set() if active_name_sets else None
+            collect_path_operands(node, names_out)
+            if names_out:
+                for target in active_name_sets:
+                    target.update(names_out)
+        elif t is Call:
+            calls.append(node)
+            called = _called(node)
+            if node.args and called in _IMPORTERS:
+                argument = node.args[0]
+                if type(argument) is Constant and type(argument.value) is str:
+                    imports.append((0, argument.value, ()))
+                elif type(argument) is JoinedStr and argument.values:
+                    head = argument.values[0]
+                    if type(head) is Constant and type(head.value) is str and head.value.endswith("."):
+                        dynamic.append(("package", head.value[:-1]))
+                    elif (type(head) is FormattedValue and type(head.value) is Name
+                          and head.value.id == "__name__"):
+                        dynamic.append(("self", ""))
+                    else:
+                        dynamic.append(("unknown", ast.unparse(argument)))
                 else:
                     dynamic.append(("unknown", ast.unparse(argument)))
-            else:
-                dynamic.append(("unknown", ast.unparse(argument)))
-        for operand in _path_operands(node):
-            value = _literal(operand)
-            if value is not None:
-                literals.add(value)
-        if isinstance(node, ast.Call) and _called(node) in path_functions:
-            reached = path_functions[_called(node)]
+            names_out = set() if active_name_sets else None
+            collect_path_operands(node, names_out)
+            if names_out:
+                for target in active_name_sets:
+                    target.update(names_out)
+        if t is FunctionDef or t is AsyncFunctionDef:
+            used: set[str] = set()
+            active_name_sets.append(used)
+            for child in iter_child_nodes(node):
+                walk_node(child, active_name_sets)
+            active_name_sets.pop()
+            if used:
+                parameters = [argument.arg for argument in (*node.args.posonlyargs, *node.args.args)]
+                reached = {position for position, parameter in enumerate(parameters) if parameter in used}
+                reached |= {parameter for parameter in parameters if parameter in used}
+                if reached:
+                    path_functions.setdefault(node.name, set()).update(reached)
+            return
+        for child in iter_child_nodes(node):
+            walk_node(child, active_name_sets)
+
+    walk_node(tree, [])
+    if path_functions:
+        for node in calls:
+            called = _called(node)
+            reached = path_functions.get(called)
+            if reached is None:
+                continue
             for position, argument in enumerate(node.args):
                 if position in reached and _literal(argument) is not None:
                     literals.add(argument.value)
             for keyword in node.keywords:
                 if keyword.arg in reached and _literal(keyword.value) is not None:
                     literals.add(keyword.value.value)
-        value = _literal(node)
-        if value is not None and "/" in value and id(node) not in statements:
-            literals.add(value)
     result = (tuple(imports), tuple(dynamic), frozenset(literals))
     _PARSED[digest] = result
     return result
@@ -315,7 +393,7 @@ def _literal_files(index: _Index, module_dir: str, literal: str) -> set[str]:
 
 
 def code_closure(root: Path, entrypoints, *, index: _Index | None = None, unresolved=None,
-                 literals: bool = True, opaque=frozenset()) -> set[str]:
+                 literals: bool = True, opaque=frozenset(), _cache: dict | None = None) -> set[str]:
     """Every file under scripts/ or tools/ reachable from these entrypoints.
 
     With `literals=False`, or for a module in `opaque`, only imports are
@@ -331,29 +409,43 @@ def code_closure(root: Path, entrypoints, *, index: _Index | None = None, unreso
         if name in closure:
             continue
         closure.add(name)
-        try:
-            body = (root / name).read_bytes()
-        except OSError as error:
-            raise ClosureError(f"cannot read producer code {name}: {error}") from error
-        if not _is_python(name, body):
+        entry = _cache.get(name) if _cache is not None else None
+        if entry is None:
+            try:
+                body = (root / name).read_bytes()
+            except OSError as error:
+                raise ClosureError(f"cannot read producer code {name}: {error}") from error
+            if not _is_python(name, body):
+                entry = False
+            else:
+                module_dir = str(PurePosixPath(name).parent)
+                imports, dynamic, named = _references(body, name)
+                import_edges = set()
+                for level, dotted, names in imports:
+                    import_edges.update(_resolve_import(index, module_dir, level, dotted, names))
+                unresolved_edges = []
+                for kind, value in dynamic:
+                    if kind == "self":
+                        import_edges.update(index.under(module_dir))
+                    elif kind == "package":
+                        for base in (module_dir, "scripts", ""):
+                            directory = _normal(f"{base}/{value.replace('.', '/')}" if base else value.replace(".", "/"))
+                            if directory in index.dirs:
+                                import_edges.update(index.under(directory))
+                    else:
+                        unresolved_edges.append((name, value))
+                literal_edges = set()
+                for literal in named:
+                    literal_edges.update(_literal_files(index, module_dir, literal))
+                entry = (import_edges, literal_edges, tuple(unresolved_edges))
+            if _cache is not None:
+                _cache[name] = entry
+        if entry is False:
             continue
-        module_dir = str(PurePosixPath(name).parent)
-        imports, dynamic, named = _references(body, name)
-        found = set()
-        for level, dotted, names in imports:
-            found.update(_resolve_import(index, module_dir, level, dotted, names))
-        for kind, value in dynamic:
-            if kind == "self":
-                found.update(index.under(module_dir))
-            elif kind == "package":
-                for base in (module_dir, "scripts", ""):
-                    directory = _normal(f"{base}/{value.replace('.', '/')}" if base else value.replace(".", "/"))
-                    if directory in index.dirs:
-                        found.update(index.under(directory))
-            elif unresolved is not None:
-                unresolved.append((name, value))
-        for literal in named if literals and name not in opaque else ():
-            found.update(_literal_files(index, module_dir, literal))
+        import_edges, literal_edges, unresolved_edges = entry
+        if unresolved is not None and unresolved_edges:
+            unresolved.extend(unresolved_edges)
+        found = import_edges | literal_edges if literals and name not in opaque else import_edges
         pending.extend(sorted(found - closure))
     return closure
 
@@ -372,8 +464,9 @@ def entrypoints(recipe: dict) -> list[str]:
 def family_code(root: Path, recipes) -> dict[str, set[str]]:
     """Code closure per family, each including the shared harness closure."""
     index = _Index(Path(root))
-    harness = code_closure(root, HARNESS, index=index, literals=False)
-    return {recipe["id"]: code_closure(root, entrypoints(recipe), index=index, opaque=harness) | harness
+    cache: dict = {}
+    harness = code_closure(root, HARNESS, index=index, literals=False, _cache=cache)
+    return {recipe["id"]: code_closure(root, entrypoints(recipe), index=index, opaque=harness, _cache=cache) | harness
             for recipe in recipes}
 
 

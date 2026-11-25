@@ -435,6 +435,51 @@ def discovery_files(spine):
                     corpus.session_derived('failing', fail)
         self.assertEqual(len(runs), 6)
 
+    def test_dir_stat_cache_detects_untracked_add_delete_subdir_and_gitignore(self):
+        with patch.object(corpus, '_DIR_CACHE_MIN_ENTRIES', 1):
+            # Populate the disposable dir-stat cache via a real _git_state call.
+            first = corpus._git_state(self.root)
+            cache_file = self.root / '.scratch/corpus-index/dir-stat-v1.json'
+            self.assertTrue(cache_file.is_file())
+            # Advance saved_ns past the racy-git window so fresh fixture dirs
+            # exercise the cached directory check deterministically.
+            raw = json.loads(cache_file.read_text(encoding='utf-8'))
+            raw['saved_ns'] = raw['saved_ns'] + 10_000_000_000
+            cache_file.write_text(json.dumps(raw), encoding='utf-8')
+            # Warm hit must equal cold state without calling git ls-files --others.
+            with patch.object(corpus, '_git', wraps=corpus._git) as git_mock:
+                warm = corpus._git_state(self.root)
+            self.assertEqual(warm, first)
+            self.assertFalse(any('--others' in call.args for call in git_mock.call_args_list))
+
+            # Adding an untracked file in a covered directory must be detected.
+            stray = self.root / 'src/sources/stray-untracked.txt'
+            stray.write_text('stray\n', encoding='utf-8')
+            with_stray = corpus._git_state(self.root)
+            self.assertIn('src/sources/stray-untracked.txt', with_stray[1])
+
+            # Removing the stray file must clear it.
+            stray.unlink()
+            cleared = corpus._git_state(self.root)
+            self.assertEqual(cleared, first)
+
+            # Adding a nested subdirectory with a covered file must be detected.
+            nested = self.root / 'src/sources/new-sub/nested.txt'
+            nested.parent.mkdir(parents=True, exist_ok=True)
+            nested.write_text('nested\n', encoding='utf-8')
+            with_nested = corpus._git_state(self.root)
+            self.assertIn('src/sources/new-sub/nested.txt', with_nested[1])
+            nested.unlink()
+            nested.parent.rmdir()
+
+            # Modifying .gitignore invalidates the cache and refreshes ignore rules.
+            self.put('.gitignore', '.scratch/\nsrc/sources/ignored-by-rule.txt\n')
+            ignored_file = self.root / 'src/sources/ignored-by-rule.txt'
+            ignored_file.write_text('ignored\n', encoding='utf-8')
+            after_ignore = corpus._git_state(self.root)
+            self.assertNotIn('src/sources/ignored-by-rule.txt', after_ignore[1])
+            ignored_file.unlink()
+
 
 if __name__ == '__main__':
     unittest.main()
