@@ -114,6 +114,34 @@ class HistoricalAntiphonTests(unittest.TestCase):
                 source_words = " " + " ".join(words(" ".join(row[3] for row in rows))) + " "
                 self.assertIn(" " + " ".join(words(text)) + " ", source_words)
 
+    def test_study_bodies_and_their_sibling_options_keep_the_approved_english_pages(self):
+        expected = {
+            "mary-ordinary-2": (156, 1, 1),
+            "mary-ordinary-5": (157, 1, 1),
+            "mary-ordinary-6": (157, 1, 1),
+            "mary-advent-1": (158, 2, 1),
+            "several-outside-easter-2": (160, 2, 2),
+            "martyrs-several-outside-easter-4": (161, 2, 2),
+            "martyr-one-easter-1": (164, 2, 2),
+        }
+        records = toml(INVENTORIES / "postconciliar-missal-witness-links-v1.toml")["entries"]
+        common_bodies = {key for key in self.english if key[0].startswith("commune-")}
+        observed = set()
+        for form, (page, entrances, communions) in expected.items():
+            mass = "commune-beatae-mariae-virginis" if form.startswith("mary-") else "commune-martyrum"
+            link, = [entry for entry in records if (entry["mass"], entry["form_id"]) == (mass, form)
+                     and entry["source_id"] == "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"]
+            self.assertEqual(link["language"], "en")
+            self.assertEqual(link["url"], f"https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf#page={page}")
+            self.assertEqual(link["proper_targets"],
+                             [{"role": role, "occurrence": i}
+                              for role, count in [("Entrance Antiphon", entrances), ("Communion Antiphon", communions)]
+                              for i in range(1, count + 1)])
+            observed.update((mass, form, t["role"], t["occurrence"]) for t in link["proper_targets"])
+        self.assertEqual(len(observed), 21)
+        self.assertEqual(len(common_bodies), 10)
+        self.assertTrue(common_bodies <= observed)
+
     def test_historical_extent_and_optional_course_are_distinct(self):
         lent = [p for p in self.masses["lent-4"]["propers"] if p["name"] == "Communion Antiphon"]
         self.assertEqual(lent[1]["ordinary_disposition"]["option"], "prodigal-son-gospel")
