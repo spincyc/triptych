@@ -104,7 +104,7 @@ for path in files:
         assert len(elements) == 61, len(elements)
         absence_counts = {one["key"]: one["count"] for one in payload["absences"]}
         assert absence_counts["approved-english-publication-restriction"] == 27, absence_counts
-        assert absence_counts["antecedent-held-not-carried"] == 1, absence_counts
+        assert "antecedent-held-not-carried" not in absence_counts, absence_counts
         assert absence_counts["antecedent-diverges-at-named-words"] == 3, absence_counts
 
         # Independent choices remain independent. A reader selects exactly one
@@ -885,13 +885,6 @@ case "$kinds" in
 	exit 1
 	;;
 esac
-case "$kinds" in
-*"antecedent-held-not-carried=witness-gap"*) ;;
-*)
-	echo "an unsourced ancient text is not typed as a witness gap: $kinds" >&2
-	exit 1
-	;;
-esac
 # Registered official exemplars with no joined payload are witness gaps.
 case "$kinds" in
 *"official-exemplar-not-carried=witness-gap"*) ;;
@@ -1176,9 +1169,9 @@ for key in ("ritus-communionis/libera-nos",
             "ritus-communionis/praeparatio-sacerdotis"):
     assert not side(elements[key], "la"), key
     assert elements[key]["absent"]["latin"] == "antecedent-diverges-at-named-words", key
-assert not side(elements["ritus-initiales/kyrie"], "la")
-assert elements["ritus-initiales/kyrie"]["absent"]["latin"] == \
-    "antecedent-held-not-carried"
+kyrie, = side(elements["ritus-initiales/kyrie"], "la")
+assert kyrie["target_wording"] == "word-exact"
+assert [row["dialogue_role"] for row in kyrie["turns"]] == ["versicle", "response"] * 3
 
 # Prayer I is split only at the twelve bounded children the source establishes.
 # Nine carry antecedent Latin; the three unsafe children remain explicitly

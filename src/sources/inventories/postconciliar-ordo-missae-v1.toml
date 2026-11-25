@@ -241,6 +241,14 @@ caution = "New AI-authored study English from the individually identified public
 artifacts = ["artifact.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030.ancient-frames-study-en"]
 
 [[witnesses]]
+id = "edition.triptych.postconciliar-kyrie-greek-study-arrangement.study-arrangement-20261124"
+lang = "la"
+label = "Greek of the Latin edition · sixfold study arrangement from Cummiskey (1861)"
+rights = "project-created"
+caution = "Greek in Latin characters from printed pp. xviii–xix. The historical words and modern six-turn arrangement have separate sources."
+artifacts = ["artifact.triptych.postconciliar-kyrie-greek-study-arrangement.study-arrangement-20261124.sixfold-greek"]
+
+[[witnesses]]
 id = "edition.triptych.english-completion-20261030-kyrie-sixfold-study-arrangement.study-arrangement-20261030"
 lang = "en"
 label = "Triptych sixfold study arrangement of 1861 Kyrie glosses (not approved English)"
@@ -323,12 +331,6 @@ key = "editio-typica-new-matter"
 label = "New target wording has no publication basis here"
 kind = "rights-withheld"
 what = "The reform's own new matter, and this is the class for which the rights refusal is the true reason. The Latin of the postconciliar Missal is a work of the Holy See, first published in 1969, revised in 1975 and 2002, with the emended reprint of 2008; it is a post-1929 foreign work, protected in the United States, and this project has established no distribution basis for it. For the elements still assigned this reason no public-domain antecedent establishes the wording either, so nothing may be carried from an older book instead. This repository's tracked study of this Order of Mass states, at the loci its endnotes give, that the two Penitential Act forms II and III are new compositions in their present arrangement; that the two Benedictus es prayers over the bread and the chalice are new compositions which replaced the medieval offertory prayers Suscipe sancte Pater and Offerimus tibi Domine; that Prayers II, III and IV are twentieth-century compositions, Prayer II being an adaptation which does not print the ancient anaphora it is built on; and that the acclamation after the consecration is wholly new. Four further examples are recastings of ancient matter, where the older prayer is public domain and is NOT this element's text: Qui pridie adds quod pro vobis tradetur, removes mysterium fidei from the chalice form, and replaces the older concluding command; the mingling formula is a shortened form of a Roman Christmas collect and the older witness carries an opening clause and a full conclusion the Missal deleted, as visually controlled by passage.catholic-church.missale-romanum.pustet-ratisbon-1862.ordo-missae-leaf-303; the invitation to Communion is the older Ecce Agnus Dei joined to the beatitude of Revelation 19:9, which the study places among the substantially changed; and the two-word Communion formula with the communicant's Amen replaces the longer formula the older Order gave the priest alone. What is refused is the Missal's own composed or recast wording. Nothing here refuses the ancient prayers underneath the recastings, which are public domain and are not what these elements print."
-
-[[absences]]
-key = "antecedent-held-not-carried"
-label = "The older witness does not fit this element’s structure"
-kind = "witness-gap"
-what = "One ancient text this project holds but cannot carry onto the element as modelled, and no rightsholder has refused any of it. The 1861 witness sets the Kyrie as three rows of three, the ninefold form, while this Missal prints six acclamations, two to each invocation. Joining all three witness rows would print nine acclamations under an element of six; dropping three to fit would edit the witness. This is an arrangement gap, not permission and not an invitation to reconstruct the target."
 
 [[absences]]
 key = "antecedent-diverges-at-named-words"
@@ -630,12 +632,24 @@ kind = "dialogue"
 name = "Kyrie eleison"
 latin_incipit = "Kyrie, eleison"
 missal_number = "n. 7"
-absent_latin = "antecedent-held-not-carried"
 absent_english = "approved-english-publication-restriction"
-conditions = [{ kind = "omit-when-option", group = "penitential-act", options = ["pa-iii"], basis = "Ordo Missae n. 7 and IGMR 51, as transcribed and sourced in src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/10-introductory-rites.tex:96-103." }]
+conditions = [{ kind = "omit-when-option", group = "penitential-act", options = ["pa-iii"], basis = "Ordo Missae n. 7 and IGMR 51–52, as transcribed and sourced in src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/10-introductory-rites.tex:96-103." }]
 note = "The Missal prints the Kyrie in Greek and in the sixfold form, two acclamations to each invocation, and omits it where the third form of the Penitential Act has been used."
 turns_basis = "Secondary 2002 artifact page 305, n. 7 visibly prints three pairs: V. Kyrie/R. Kyrie; V. Christe/R. Christe; V. Kyrie/R. Kyrie. These printed boundaries support alternating versicle/response roles, without assigning priest or cantor actors. The 1861 source P./R. cues belong to a different ninefold Mass context and are not reused as target role proof."
+latin_turns = [{ key = "call-1", seq = [1], dialogue_role = "versicle" }, { key = "call-2", seq = [2], dialogue_role = "response" }, { key = "call-3", seq = [3], dialogue_role = "versicle" }, { key = "call-4", seq = [4], dialogue_role = "response" }, { key = "call-5", seq = [5], dialogue_role = "versicle" }, { key = "call-6", seq = [6], dialogue_role = "response" }]
 english_turns = [{ key = "call-1", seq = [1], dialogue_role = "versicle" }, { key = "call-2", seq = [2], dialogue_role = "response" }, { key = "call-3", seq = [3], dialogue_role = "versicle" }, { key = "call-4", seq = [4], dialogue_role = "response" }, { key = "call-5", seq = [5], dialogue_role = "versicle" }, { key = "call-6", seq = [6], dialogue_role = "response" }]
+
+[sections.elements.latin]
+witness = "edition.triptych.postconciliar-kyrie-greek-study-arrangement.study-arrangement-20261124"
+artifact = "artifact.triptych.postconciliar-kyrie-greek-study-arrangement.study-arrangement-20261124.sixfold-greek"
+elements = ["kyrie-sixfold"]
+column = "greek"
+relation = "antecedent"
+collation = "collated"
+target_wording = "word-exact"
+collation_finding = "The six Cummiskey-derived invocations agree word for word and in order with the registered 2002 Latin Ordinary n. 7, Biblioteca Clerus glj.htm#b41 (printed p. 509) and secondary digital PDF p. 305. The comparison ignores stress accents and printed commas. Notitiae 44 (2008), printed p. 372, lists the Ordo Missae changes beginning at n. 19 and makes no change to n. 7. IGMR 52 permits extra repetitions in performance. This finding covers the six Greek utterances of n. 7 only."
+reading_note = "Greek in Latin characters. Sixfold study arrangement of the Cummiskey 1861 invocations, printed pp. xviii–xix."
+note = "The 1861 book supplies the words. Ordo Missae n. 7 supplies the six printed versicle and response boundaries. IGMR 52 describes the usual twofold repetition and permits more in performance. The historical speaker letters do not identify modern actors."
 
 [sections.elements.english]
 witness = "edition.triptych.english-completion-20261030-kyrie-sixfold-study-arrangement.study-arrangement-20261030"

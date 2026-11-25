@@ -178,6 +178,7 @@ class OrdinaryStructure(unittest.TestCase):
         # Lava me, the 1946 Lasance printing and three new study Englishes.
         expected_witnesses = {
             (cummiskey, "en"): 24, (cummiskey, "la"): 24,
+            ("edition.triptych.postconciliar-kyrie-greek-study-arrangement.study-arrangement-20261124", "la"): 1,
             ("edition.catholic-church.missale-romanum.pustet-ratisbon-1862", "la"): 2,
             ("edition.anonymous.antiphonarium-wroclaw-r503.1375-1400-manuscript", "la"): 1,
             ("edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946", "en"): 1,
@@ -204,7 +205,6 @@ class OrdinaryStructure(unittest.TestCase):
             "antecedent-diverges-at-named-words": (
                 4, "rights-restricted", "rights-withheld"
             ),
-            "antecedent-held-not-carried": (1, "unavailable", "witness-gap"),
             # 2026-10-19 (C2 G5): the appointed Pentecost Preface and paschal
             # dismissal stand-ins add two English rights absences and two
             # Latin publication-unresolved absences. 2026-11-14: the paschal
@@ -276,9 +276,9 @@ class OrdinaryStructure(unittest.TestCase):
         self.assertEqual((languages["en"]["held"], languages["en"]["elements"]),
                          (40, 72))
         self.assertEqual((languages["la"]["held"], languages["la"]["elements"]),
-                         (35, 72))
+                         (36, 72))
         self.assertEqual(languages["en"]["elements"] - languages["en"]["held"], 32)
-        self.assertEqual(languages["la"]["elements"] - languages["la"]["held"], 37)
+        self.assertEqual(languages["la"]["elements"] - languages["la"]["held"], 36)
         held_elements = [one for one in elements(file) if one["translations"]]
         wholly_absent = [one for one in elements(file) if not one["translations"]]
         self.assertEqual((len(held_elements), len(wholly_absent)), (40, 32))
@@ -304,8 +304,24 @@ class OrdinaryStructure(unittest.TestCase):
         # 2026-11-14: the Fraction and Perceptio study Englishes join the
         # English-only study renderings.
         self.assertEqual(english_keys - latin_keys,
-                         {"kyrie", "communicantes", "domine-iesu-christe-qui-dixisti",
+                         {"communicantes", "domine-iesu-christe-qui-dixisti",
                           "fractio", "perceptio-corporis-et-sanguinis"})
+
+    def test_modern_kyrie_keeps_the_historical_greek_in_six_target_turns(self) -> None:
+        kyrie = next(item for item in elements(self.files["postconciliar"])
+                     if item["key"] == "ritus-initiales/kyrie")
+        sides = {row["lang"]: row for row in kyrie["translations"]}
+        greek = sides["la"]
+        self.assertEqual(greek["target_wording"], "word-exact")
+        self.assertIn("glj.htm#b41", greek["collation_finding"])
+        self.assertIn("Greek in Latin characters", greek["reading_note"])
+        self.assertEqual(greek["text"].splitlines(), ["Kyrie eleison."] * 2
+                         + ["Christe eleison."] * 2 + ["Kyrie eleison."] * 2)
+        for side in (greek, sides["en"]):
+            self.assertEqual([turn["dialogue_role"] for turn in side["turns"]],
+                             ["versicle", "response"] * 3)
+            self.assertTrue(all(turn["speaker"] is None for turn in side["turns"]))
+        self.assertEqual(kyrie["conditions"][0]["options"], ["pa-iii"])
 
     def test_postconciliar_english_remains_literal_historical_source(self) -> None:
         source = tomllib.loads(POST_INVENTORY.read_text())
@@ -501,11 +517,11 @@ class OrdinaryStructure(unittest.TestCase):
             for key in ("ritus-initiales/signum-crucis",
                         "ritus-initiales/greeting-trinitarian", "ritus-initiales/greeting-grace-peace",
                         "ritus-initiales/greeting-lord", "ritus-initiales/greeting-bishop",
-                        "ritus-initiales/greeting-response", "ritus-communionis/offerte-vobis-pacem",
+                        "ritus-initiales/greeting-response", "ritus-initiales/kyrie", "ritus-communionis/offerte-vobis-pacem",
                         "ritus-communionis/ecce-agnus", "ritus-communionis/beati-ad-cenam",
                         "ritus-communionis/domine-non-sum-dignus") for lang in ("en", "la")
         } | {("postconciliar", key, "en") for key in
-             ("ritus-initiales/kyrie", "ritus-communionis/agnus-dei",
+             ("ritus-communionis/agnus-dei",
               "ritus-communionis/domine-iesu-christe-qui-dixisti")} | {
             # 2026-11-14: the paschal dismissal's held Pustet 1862 Latin and
             # 1946 Lasance English each carry the dismissal and its response.
@@ -3331,6 +3347,11 @@ process.stdout.write(JSON.stringify({
         self.assertEqual(report["kyrie"].count("Lord, have mercy upon us."), 4)
         self.assertEqual(report["kyrie"].count("Christ, have mercy upon us."), 2)
         self.assertNotIn("Not shown: its English.", report["kyrie"])
+        turns = report["kyrie_greek"]["rendered_turns"]
+        self.assertEqual([row["dialogue_role"] for row in turns], ["versicle", "response"] * 3)
+        self.assertEqual([[cue["mark"] for cue in row["cues"]] for row in turns],
+                         [["℣"], ["℟"]] * 3)
+        self.assertTrue(all(row["speaker"] is None for row in turns))
         # Newly held study material does not clear the still-withheld memorial
         # acclamation or disclose restricted attribution through the renderer.
         self.assertIn("Not shown: its English.", report["withheld_memorial"])
@@ -4862,6 +4883,7 @@ P.state.ordinaryLang = null;
 
 process.stdout.write(JSON.stringify({
   languages: { postconciliar: pc.languages, 'roman-1962': tlm.languages },
+  kyrie_greek: realTurns(pc, 'ritus-initiales/kyrie', 'la'),
   kyrie_in_each: inEach(pc, 'ritus-communionis/pater-noster'),
   te_igitur_in_each: inEach(tlm, 'canon/te-igitur'),
   accendat_in_each: inEach(tlm, 'oblatio/accendat-in-nobis'),

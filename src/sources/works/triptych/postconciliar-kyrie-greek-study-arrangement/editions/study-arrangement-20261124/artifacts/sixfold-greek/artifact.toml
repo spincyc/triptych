@@ -1,0 +1,19 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.triptych.postconciliar-kyrie-greek-study-arrangement.study-arrangement-20261124.sixfold-greek"
+edition_id = "edition.triptych.postconciliar-kyrie-greek-study-arrangement.study-arrangement-20261124"
+artifact_type = "project-study-arrangement"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "The finite editorial arrangement and metadata are offered under CC BY 4.0. The historical Greek words are public domain in the United States by publication in 1861."
+rights_jurisdiction = "United States"
+projected_from = ["artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-la-turn-divided-complete-2026-10-20"]
+transformation = "Take the final complete invocation of each 1861 set at source rows 2603, 2703 and 2803 on printed pp. xviii–xix. Remove the historical speaker prefix from each, retain the word spelling and full stop, and repeat each resulting utterance twice. The source_seq column identifies each parent row."
+provenance = "Cummiskey, Philadelphia 1861, supplies the Greek in Latin characters. Ordo Missae n. 7, secondary 2002 comparison artifact PDF p. 305, supplies the three printed versicle/response pairs. General Instruction of the Roman Missal 52 describes the usual doubling and allows further repetitions in performance (https://www.usccb.org/prayer-and-worship/the-mass/general-instruction-of-the-roman-missal/girm-chapter-2). The sixfold arrangement does not reproduce the older ninefold execution."
+retrieved = "2026-11-24"
+sha256 = "befc8b405cef6ef77c83d13617de5d79a84f1af083b8fd5bed9ec78041a3c5f2"
+byte_size = 253
+path = "src/sources/works/triptych/postconciliar-kyrie-greek-study-arrangement/editions/study-arrangement-20261124/artifacts/sixfold-greek/text.tsv"
+indexable = true
+encoding = "utf-8"
