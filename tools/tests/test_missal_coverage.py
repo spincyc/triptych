@@ -786,55 +786,6 @@ class RealCorpusCoverageTests(unittest.TestCase):
                         relations.add(witness["relationship"])
         self.assertEqual(relations, {"historical-antecedent"})
 
-    def test_no_public_domain_witness_absence_is_typed_rights_withheld(self):
-        # G3: `rights-withheld` asserts a restriction. The only 1962 rows that
-        # keep it are the Supreme-Pontiff readings on Lasance's excluded insert.
-        import tomllib
-        ledger = tomllib.loads((ROOT / "src/sources/inventories/roman-1962-proper-translations-v1.toml")
-                               .read_text(encoding="utf-8"))
-        withheld = [row for row in ledger.get("untranslated", []) if row["reason"]["kind"] == "rights-withheld"]
-        self.assertEqual({row["mass"] for row in withheld}, {"commune-summorum-pontificum"})
-        historical = tomllib.loads(G.historical_text(
-            "src/sources/inventories/roman-1962-proper-translations-v1.toml"))
-        old_withheld = [row for row in historical.get("untranslated", [])
-                        if row["reason"]["kind"] == "rights-withheld"]
-        self.assertEqual(len(old_withheld), 5)
-        self.assertEqual({row["mass"] for row in old_withheld}, {"commune-summorum-pontificum"})
-        self.assertEqual({row["proper"] for row in withheld}, {
-            "Collect (Altera oratio)", "Secret (Altera secreta)",
-            "Postcommunion (Altera postcommunio)",
-        })
-        old_ids = {self.propers.translation_record_identity(row) for row in old_withheld}
-        current_ids = {self.propers.translation_record_identity(row) for row in withheld}
-        self.assertLess(current_ids, old_ids)
-        for identity in old_ids - current_ids:
-            self.assertTrue(assert_current_english_owner(self, identity))
-        for row in withheld:
-            identity = self.propers.translation_record_identity(row)
-            self.assertEqual(G.digest(G.canonical(row)),
-                             G.fixture()["roman_current_english_absence"][G.canonical(identity)])
-            self.assertNotIn("text", row)
-        historical_retyped = [row for row in historical.get("untranslated", []) if "(C2 gap G3)" in row["note"]]
-        self.assertEqual({row["reason"]["kind"] for row in historical_retyped}, {"no-exemplar"})
-        original_ids = {self.propers.translation_record_identity(row) for row in historical_retyped}
-        retyped = [row for row in ledger.get("untranslated", []) if "(C2 gap G3)" in row["note"]]
-        remaining = {self.propers.translation_record_identity(row) for row in retyped}
-        admitted = {identity for identity in original_ids if assert_current_english_owner(self, identity)}
-        self.assertEqual(remaining, original_ids - admitted)
-        for row in retyped:
-            self.assertEqual(row["reason"]["kind"], "no-exemplar")
-        # Urban was the final G3 gap in the preceding accepted epoch. Its
-        # exact current study binding closes it; it is not silently removed.
-        urban = ("comm-s-urbani-i-papae-martyris", "main", "Collect", "all", 1)
-        self.assertIn(urban, original_ids)
-        self.assertTrue(assert_current_english_owner(self, urban))
-        self.assertEqual(remaining, set())
-        restricted = [unit for mass in self.files["roman-1962"]["masses"]
-                      for unit in coverage.proper_units(mass)
-                      if english(unit)["availability"] == "not-publishable"]
-        self.assertTrue(restricted)
-        self.assertTrue(all("summorum-pontificum" in unit["target_id"] for unit in restricted))
-
     def test_pentecost_19_keeps_all_seven_scripture_bearing_propers(self):
         mass = next(row for row in self.files["roman-1962"]["masses"] if row["key"] == "pentecost-19")
         report = english(mass["coverage"])
@@ -845,6 +796,96 @@ class RealCorpusCoverageTests(unittest.TestCase):
 
 
 class ExpectedInventoryTests(unittest.TestCase):
+    def test_supreme_pontiff_alternatives_have_source_bound_public_study_translations(self):
+        from _product_data import browser_data_root
+
+        mass = "commune-summorum-pontificum"
+        edition = "triptych.roman-1962-latin-proper-editorial-projection.common-pontiff-five-2026-11-12."
+        veronese = "artifact.catholic-church.sacramentarium-veronense.feltoe-1896."
+        gregorian = "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915."
+        mame = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam."
+        witnesses = {
+            "Collect (Altera oratio)": ("pontiff-altera-collect-singular", [
+                veronese + "feltoe-collect-whole-20261112", veronese + "feltoe-protection-whole-20261112",
+                mame + "urban-old-whole-20261112"]),
+            "Secret (Altera secreta)": ("pontiff-altera-secret", [
+                veronese + "common-secret-munera-antecedent-20261112",
+                gregorian + "common-secret-faith-peace-antecedent-20261112"]),
+            "Postcommunion (Altera postcommunio)": ("pontiff-altera-postcommunion-singular", [
+                veronese + "common-postcommunion-multiplica-antecedent-20261112",
+                veronese + "common-postcommunion-pastor-antecedent-20261112"]),
+        }
+        ledger = tomllib.loads(
+            (ROOT / "src/sources/inventories/roman-1962-proper-translations-v1.toml").read_text())
+        absences = ledger.get("untranslated", [])
+        self.assertFalse(any(r["reason"]["kind"] == "rights-withheld" for r in absences))
+        self.assertFalse(any(r["mass"] == mass and r["proper"] in witnesses for r in absences))
+        published = json.loads((browser_data_root(ROOT) / "structure/propers/roman-1962.json").read_text())
+        restricted = [unit["target_id"] for m in published["masses"] for unit in coverage.proper_units(m)
+                      if english(unit)["availability"] == "not-publishable"]
+        self.assertEqual(restricted, [])
+        formulary = next(m for m in published["masses"] if m["key"] == mass)
+        for role, (passage, sources) in witnesses.items():
+            with self.subTest(proper=role):
+                (record,) = [r for r in ledger["entries"] if r["mass"] == mass and r["proper"] == role
+                             and r.get("form_id") == "main" and r["cycle"] == "all" and r["occurrence"] == 1]
+                (row,) = [r for r in formulary["propers"] if r["form_id"] == "main" and r["name"] == role]
+                digest = hashlib.sha256(row["text"].encode()).hexdigest()
+                self.assertEqual(record["source_latin_sha256"], digest)
+                self.assertEqual(record["source_latin_passage_id"], "passage." + edition + passage)
+                self.assertEqual(record["source_latin_publication_source_ids"],
+                                 ["artifact." + edition + passage + "-" + digest[:8], *sources])
+                (source,) = record["translations"]
+                (visible,) = row["translations"]
+                self.assertTrue(source["text"].strip())
+                self.assertEqual((source["lang"], source["rights"]), ("en", "project-created"))
+                self.assertEqual((visible["lang"], visible["rights"], visible["text"]),
+                                 ("en", "project-created", source["text"]))
+                en = english(row["coverage"])
+                self.assertEqual((en["availability"], en["relationship"], en["publication_basis"]),
+                                 ("available", "study-translation", "project-created"))
+
+    def test_october_receipt_supreme_pontiff_withholdings_and_g3_retypings(self):
+        ledger_path = "src/sources/inventories/roman-1962-proper-translations-v1.toml"
+        historical = tomllib.loads(G.historical_text(ledger_path))
+        propers = tool("mass-propers")
+        ledger = tomllib.loads((ROOT / ledger_path).read_text(encoding="utf-8"))
+        withheld = [row for row in ledger.get("untranslated", []) if row["reason"]["kind"] == "rights-withheld"]
+        self.assertEqual({row["mass"] for row in withheld}, {"commune-summorum-pontificum"})
+        old_withheld = [row for row in historical.get("untranslated", [])
+                        if row["reason"]["kind"] == "rights-withheld"]
+        self.assertEqual(len(old_withheld), 5)
+        self.assertEqual({row["mass"] for row in old_withheld}, {"commune-summorum-pontificum"})
+        self.assertEqual({row["proper"] for row in withheld}, {
+            "Collect (Altera oratio)", "Secret (Altera secreta)",
+            "Postcommunion (Altera postcommunio)",
+        })
+        old_ids = {propers.translation_record_identity(row) for row in old_withheld}
+        current_ids = {propers.translation_record_identity(row) for row in withheld}
+        self.assertLess(current_ids, old_ids)
+        for identity in old_ids - current_ids:
+            self.assertTrue(assert_current_english_owner(self, identity))
+        for row in withheld:
+            identity = propers.translation_record_identity(row)
+            self.assertEqual(G.digest(G.canonical(row)),
+                             G.fixture()["roman_current_english_absence"][G.canonical(identity)])
+            self.assertNotIn("text", row)
+        historical_retyped = [row for row in historical.get("untranslated", []) if "(C2 gap G3)" in row["note"]]
+        self.assertEqual({row["reason"]["kind"] for row in historical_retyped}, {"no-exemplar"})
+        original_ids = {propers.translation_record_identity(row) for row in historical_retyped}
+        retyped = [row for row in ledger.get("untranslated", []) if "(C2 gap G3)" in row["note"]]
+        remaining = {propers.translation_record_identity(row) for row in retyped}
+        admitted = {identity for identity in original_ids if assert_current_english_owner(self, identity)}
+        self.assertEqual(remaining, original_ids - admitted)
+        for row in retyped:
+            self.assertEqual(row["reason"]["kind"], "no-exemplar")
+        # Urban was the final G3 gap in the preceding accepted epoch. Its
+        # exact current study binding closes it; it is not silently removed.
+        urban = ("comm-s-urbani-i-papae-martyris", "main", "Collect", "all", 1)
+        self.assertIn(urban, original_ids)
+        self.assertTrue(assert_current_english_owner(self, urban))
+        self.assertEqual(remaining, set())
+
     def test_reviewed_missing_owner_and_role_joins_are_the_exact_source_delta(self):
         propers = tool("mass-propers")
         document = propers.load_calendar(ROOT / "src/sources/calendars", "roman-1962")
