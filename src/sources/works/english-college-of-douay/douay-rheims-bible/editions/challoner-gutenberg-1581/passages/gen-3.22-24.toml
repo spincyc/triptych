@@ -1,0 +1,18 @@
+schema = 1
+record_type = "passage"
+id = "passage.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.gen-3.22-24"
+edition_id = "edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581"
+artifact_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-01-genesis-4f9a0975"
+artifact_sha256 = "4f9a0975dbd43acb8374b9eaca2bb12f499420bac106e3f3b7a56968dba61544"
+locus = "Gen.3.22-24"
+states = ["cataloged", "acquired", "inspected", "verified"]
+physical_line_ranges = [[79, 81]]
+text = "And he said: Behold Adam is become as one of us, knowing good and evil: now therefore lest perhaps he put forth his hand and take also of the tree of life, and eat, and live for ever. And the Lord God sent him out of the paradise of pleasure, to till the earth from which he was taken. And he cast out Adam: and placed before the paradise of pleasure Cherubims, and a flaming sword, turning every way, to keep the way of the tree of life."
+transcription_segments = [
+  { line = 79, text = "And he said: Behold Adam is become as one of us, knowing good and evil: now therefore lest perhaps he put forth his hand and take also of the tree of life, and eat, and live for ever." },
+  { line = 80, text = "And the Lord God sent him out of the paradise of pleasure, to till the earth from which he was taken." },
+  { line = 81, text = "And he cast out Adam: and placed before the paradise of pleasure Cherubims, and a flaming sword, turning every way, to keep the way of the tree of life." },
+]
+context = "The man is sent to till the ground. Cherubim and a turning fiery sword guard the way to the tree of life."
+verified_on = "2026-11-23"
+notes = "Each verse and both bounds were checked against the complete Project Gutenberg eBook 1581 transcription from which the registered book TSV was derived. This checks extraction and the address within this edition."

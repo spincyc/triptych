@@ -1,0 +1,22 @@
+schema = 1
+record_type = "passage"
+id = "passage.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.gen-8.6-12"
+edition_id = "edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581"
+artifact_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-01-genesis-4f9a0975"
+artifact_sha256 = "4f9a0975dbd43acb8374b9eaca2bb12f499420bac106e3f3b7a56968dba61544"
+locus = "Gen.8.6-12"
+states = ["cataloged", "acquired", "inspected", "verified"]
+physical_line_ranges = [[190, 196]]
+text = "And after that forty days were passed, Noe opening the window of the ark, which he had made, sent forth a raven: Which went forth and did not return, till the waters were dried up upon the earth. He sent forth also a dove after him, to see if the waters had now ceased upon the face of the earth. But she not finding where her foot might rest, returned to him into the ark: for the waters were upon the whole earth: and he put forth his hand, and caught her, and brought her into the ark. And having waited yet seven other days, he again sent forth the dove out of the ark. And she came to him in the evening carrying a bough of an olive tree, with green leaves, in her mouth. Noe therefore understood that the waters were ceased upon the earth. And he stayed yet other seven days: and he sent forth the dove, which returned not any more unto him."
+transcription_segments = [
+  { line = 190, text = "And after that forty days were passed, Noe opening the window of the ark, which he had made, sent forth a raven:" },
+  { line = 191, text = "Which went forth and did not return, till the waters were dried up upon the earth." },
+  { line = 192, text = "He sent forth also a dove after him, to see if the waters had now ceased upon the face of the earth." },
+  { line = 193, text = "But she not finding where her foot might rest, returned to him into the ark: for the waters were upon the whole earth: and he put forth his hand, and caught her, and brought her into the ark." },
+  { line = 194, text = "And having waited yet seven other days, he again sent forth the dove out of the ark." },
+  { line = 195, text = "And she came to him in the evening carrying a bough of an olive tree, with green leaves, in her mouth. Noe therefore understood that the waters were ceased upon the earth." },
+  { line = 196, text = "And he stayed yet other seven days: and he sent forth the dove, which returned not any more unto him." },
+]
+context = "Noah sends a raven and then a dove. The dove first returns without a place to rest, later carries an olive branch and finally stays away."
+verified_on = "2026-11-23"
+notes = "Each verse and both bounds were checked against the complete Project Gutenberg eBook 1581 transcription from which the registered book TSV was derived. This checks extraction and the address within this edition."

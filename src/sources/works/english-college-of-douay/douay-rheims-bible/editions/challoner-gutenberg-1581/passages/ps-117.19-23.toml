@@ -1,0 +1,20 @@
+schema = 1
+record_type = "passage"
+id = "passage.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.ps-117.19-23"
+edition_id = "edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581"
+artifact_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-21-psalms-578f023d"
+artifact_sha256 = "578f023dfe1c830252f23df84bcdbaae79857a652e41b7546c461c4a22f601fc"
+locus = "Ps.117.19-23"
+states = ["cataloged", "acquired", "inspected", "verified"]
+physical_line_ranges = [[2014, 2018]]
+text = "Open ye to me the gates of justice: I will go in to them, and give praise to the Lord. This is the gate of the Lord, the just shall enter into it. I will give glory to thee because thou hast heard me: and art become my salvation. The stone which the builders rejected; the same is become the head of the corner. This is the Lord’s doing, and it is wonderful in our eyes."
+transcription_segments = [
+  { line = 2014, text = "Open ye to me the gates of justice: I will go in to them, and give praise to the Lord." },
+  { line = 2015, text = "This is the gate of the Lord, the just shall enter into it." },
+  { line = 2016, text = "I will give glory to thee because thou hast heard me: and art become my salvation." },
+  { line = 2017, text = "The stone which the builders rejected; the same is become the head of the corner." },
+  { line = 2018, text = "This is the Lord’s doing, and it is wonderful in our eyes." },
+]
+context = "The singer asks entry through the gates of justice and gives thanks. The stone rejected by the builders becomes the head of the corner. Modern Hebrew numbering: Psalm 118:19–23."
+verified_on = "2026-11-23"
+notes = "Each verse and both bounds were checked against the complete Project Gutenberg eBook 1581 transcription from which the registered book TSV was derived. This checks extraction and the address within this edition."

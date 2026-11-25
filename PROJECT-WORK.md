@@ -15376,3 +15376,104 @@ record the resulting corrections. The web edition and the 23-page print proof
 were checked, including the four reading tables and all seven antiphons.
 The [seasonal primer table](library/traditional-latin-mass.md#seasonal-primers)
 dates ten further planned subjects through the return of Advent in 2027.
+
+## Advent puzzle source concordance, 2026-11-23
+
+<!-- promised-deliverable: advent-puzzle-source-concordance-2026-11-23 -->
+
+The Advent puzzle in Lacuna follows twenty-eight Old Testament scenes to
+Christ. The family builds a Christmas scene at home. A second look reveals
+a façade inspired by the Lateran basilica. The puzzle owns the riddles
+and their proposed connections.
+
+In *Lumen gentium* §11, the Council calls the family a domestic church and
+identifies parents as the first to preach the faith to their children through
+speech and example. The discussion grows out of its account of baptism and
+Christian marriage. The Latin comparison appears on p. 16.
+[Latin Acta, pp. 15–16](src/sources/works/second-vatican-council/lumen-gentium/editions/latin-aas-57-1965/passages/11.toml) · [Holy See English, §§10–11](src/sources/works/second-vatican-council/lumen-gentium/editions/english-vatican-web-2026-07-23/passages/10-11.toml)
+
+Francis opens *Admirabile signum* by recalling how children learn to set up
+the crèche from parents and grandparents. He closes by inviting them to pass
+that experience on. The arrangement may change each year. What gives it
+meaning is the love of God who became a child.
+[English §1](src/sources/works/papal-documents/2019-12-01-papal-francesco-papa-francesco-lettera-ap-20191201-admirabile-signum-351aa693/editions/2026-10-26-vatican-en/passages/1.toml) · [English §10](src/sources/works/papal-documents/2019-12-01-papal-francesco-papa-francesco-lettera-ap-20191201-admirabile-signum-351aa693/editions/2026-10-26-vatican-en/passages/10.toml) · [Italian §1](src/sources/works/papal-documents/2019-12-01-papal-francesco-papa-francesco-lettera-ap-20191201-admirabile-signum-351aa693/editions/2026-10-26-vatican-it/passages/1.toml) · [Italian §10](src/sources/works/papal-documents/2019-12-01-papal-francesco-papa-francesco-lettera-ap-20191201-admirabile-signum-351aa693/editions/2026-10-26-vatican-it/passages/10.toml)
+
+All four groups of seven have [passage records in the Challoner revision](src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/).
+They identify 194 verses. Each address resolves to physical lines of a
+registered book, checked against the numbered paragraphs in the complete
+[Gutenberg transcription](src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/gutenberg-text-7d10da78/artifact.toml).
+The references in Lacuna use modern Catholic book names and NABRE numbering.
+For the cloud over the tent, [Exodus 40:33–38](https://bible.usccb.org/bible/exodus/40)
+corresponds to Douay 40:31–36. The captives sing of Babylon in Psalm 137 in Hebrew numbering and 136 in
+this edition. The names 1 Samuel, 2 Samuel and
+1 Kings correspond to Douay 1, 2 and 3 Kings respectively. The ruler from
+[Bethlehem](https://bible.usccb.org/bible/micah/5) and the
+[child on David's throne](https://bible.usccb.org/bible/isaiah/9) begin a verse
+earlier in the NABRE than in the corresponding Douay passages.
+
+[Benedict XVI's Lateran Angelus](src/sources/works/benedict-xvi/angelus-2008-11-09/work.toml)
+interprets the building through 1 Corinthians 3, 1 Peter 2 and Ephesians 2.
+The complete Italian and English Holy See documents were obtained and their
+three opening paragraphs compared. Each expression has a separate hash and
+a bounded passage record. The U.S. readings for the dedication pair the flow of water from Ezekiel's temple with Paul's account of the
+community as God's building and John's identification of the raised temple
+with Christ's body. [Lectionary 671](https://bible.usccb.org/bible/readings/110926.cfm)
+The puzzle borrows this imagery for a devotional Advent
+sequence of its own.
+
+For a case in which Christian reception supplies the connection, see
+[Augustine on Psalm 143, §1 (Psalm 144 in NPNF)](https://ccel.org/ccel/schaff/npnf108/npnf108.ii.CXLIV.html).
+He reads David's victory over Goliath in light of Christ's victory over the
+devil. The passage occupies lines 66173–66183 of the
+[registered NPNF text](src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-09-05-english-npnf8-ccel-web-2026-09-05/artifacts/ccel-npnf108-text-d6841950/source.txt#L66173).
+In Hebrews 2:14–15 Christ defeats the power of death. The link to the duel
+belongs to Augustine's reading. The Council's account of the lasting value
+of Israel's Scriptures and their Christian reception in
+[*Dei Verbum*, §§14–16](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html)
+provides the interpretive context for the concordance.
+
+In the revised sequence the exiles hang their instruments by Babylon’s rivers
+on day 21. Balaam sees a star and sceptre rise from Israel on day 26.
+These scenes replace the rejected stone and Zechariah’s king riding a donkey.
+The original passage records remain available for their own texts.
+[Psalm 136:1–4](src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/ps-136.1-4.toml) · [Numbers 24:15–17](src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/num-24.15-17.toml)
+
+The Greek Orthodox Archdiocese of America’s Vesperal Liturgy for December
+24, 2026 opens its eight Old Testament readings with creation, Balaam’s
+oracle and Micah’s Bethlehem. The fourth reading names Jesse, and the last
+two announce the child on David’s throne and Emmanuel. The lessons overlap
+the puzzle at particular verses. For example, both read Balaam’s star in
+Numbers 24:17. The festal sticheron before the entrance gives the star to
+heaven, the cave to the earth and the manger to the wilderness. The Virgin
+Mother is humanity’s offering to Christ. [The eight readings](src/sources/works/greek-orthodox-archdiocese-of-america/nativity-vesperal-liturgy/editions/2026-11-23-digital-chant-stand/passages/readings-1-8.toml) · [The fourth sticheron](src/sources/works/greek-orthodox-archdiocese-of-america/nativity-vesperal-liturgy/editions/2026-11-23-digital-chant-stand/passages/vespers-sticheron-4.toml)
+
+The Byzantine and Christian Museum in Athens dates its Nativity icon
+ΒΧΜ 13109 to the first half of the fifteenth century and suggests a Cretan
+origin. The mother’s red mattress runs diagonally beside the child in the
+cave. The mounted Magi, shepherds and angels occupy different parts
+of the image around them. The catalogue places Joseph at lower left and
+the bath at lower right. Those positions belong to this particular icon.
+[The museum’s description](src/sources/works/byzantine-and-christian-museum/nativity-bxm-13109/editions/2026-11-23-english-catalogue/passages/composition.toml)
+
+### Individual narrative panels, 2026-11-24
+
+The Advent sequence now calls for an independent sacred picture for each
+reading. The new source requirement asks how an Eastern Christian artist
+distinguishes an episode, its participants and the action at a small scale.
+The earlier Nativity records remain evidence for that composition.
+
+On the [silver David plate](src/sources/works/metropolitan-museum-of-art/david-plates-activities-for-learning/editions/2001-a-closer-look/passages/david-anointed.toml),
+the gap between the adults and the boy gives the oil horn room. A strip below
+their feet recalls Samuel’s sacrifice and David’s flock. In the Greek
+[Hospitality of Abraham](src/sources/works/icon-museum-and-study-center/hospitality-of-abraham-l2025-01-2/editions/2026-11-24-collection-record/passages/table-and-visitors.toml)
+the table sets the distance between the three visitors. Two smaller hosts
+lean in behind it. The museum reads the winged visitors in light of the Trinity.
+Genesis 18:1–15 describes three men and Sarah listening at the tent.
+
+The [Walters diptych](src/sources/works/walters-art-museum/diptych-icon-with-feasts-61-174/editions/2026-11-24-object-record/passages/opening-for-prayer.toml)
+opened for personal prayer. Its eighteen scenes occupy separate little
+arches. The historical descriptions leave the family free to choose questions,
+prayers and time for a contemporary use. On the [Met’s set of carved steatites](src/sources/works/metropolitan-museum-of-art/icon-with-christ-pantepotes-468607/editions/2026-11-24-collection-record/passages/central-plaque.toml),
+twelve narrative compartments surround the enthroned Christ. [George Bartlett](src/sources/works/george-bartlett/christ-pantepoptes-inscriptions/editions/2026-04-22-courtauld-abstract/passages/naming-inscriptions.toml)
+identifies Christ’s names in the carving. A museum’s present title for an
+episode and an artist’s inscription naming a person answer different questions.

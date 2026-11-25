@@ -1653,3 +1653,14 @@ distinct from the derived reading, and the response remains separate.
 [`The conclusion admission`](workflows/reviews/missal-reader-completion-2026-11-12/oration-conclusions/root-adoption-v2.json)
 does not license new whole prayers, change historical English or extend
 formula use to an unreviewed witness, appointment or unresolved prayer group.
+
+### Eastern Christian narrative panels (2026-11-24)
+
+The Walters Art Museum publishes its catalogue data under CC0. The retained
+CSV contains the original column names and object 36957 (61.174) in full. The
+Metropolitan Museum of Art releases its Open Access collection data under CC0.
+Its complete record for object 468607 (63.68.1–.13) is retained under that
+dedication. Both museums retain attribution. Object photographs, the Met’s
+2001 education packet, the Icon Museum and Study Center’s catalogue prose and
+the Courtauld’s lecture abstract are consulted through the deliveries identified
+by the source manifests. [Walters open data](https://github.com/WaltersArtMuseum/api-thewalters-org) · [The Met Open Access](https://www.metmuseum.org/hubs/open-access)

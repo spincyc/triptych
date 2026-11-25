@@ -6301,3 +6301,96 @@ state = "complete"
   criterion = "The two seasonal catalogs use recurring boundaries, link existing editions and identify planned volumes. The site shares font roles, and catalog tables retain only useful adjacent copy."
   status = "pass"
   evidence = ["library/traditional-latin-mass.md", "library/novus-ordo-liturgy.md", "release/public-alpha/assets/site.css"]
+
+[[deliverables]]
+id = "advent-puzzle-source-concordance-2026-11-23"
+owner = "src/sources/works"
+promise = "Pin the twenty-eight Old Testament scenes of the Advent puzzle to identified verses and document the domestic church, the household crèche, the Lateran dedication and the Byzantine reception of the Nativity in identified witnesses. Locate Eastern Christian works that show how an individual narrative panel can be read."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "biblical-scenes"
+  criterion = "Each of the twenty-eight scenes has an edition-specific, line-ranged address in the Challoner Douay-Rheims with its source context."
+  status = "pass"
+  evidence = [
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/gen-3.22-24.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/gen-8.6-12.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/gen-14.17-20.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/gen-15.1-6.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/gen-18.1-15.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/gen-28.10-19.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/gen-49.8-10.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/ex-3.1-6.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/ex-12.21-27.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/ex-14.21-22.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/ex-16.13-18.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/ex-17.1-7.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/num-21.4-9.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/ex-40.31-36.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/ruth-2.14-18.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/1kings-16.6-13.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/1kings-17.38-50.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/2kings-6.9-16.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/2kings-7.1-16.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/3kings-8.22-30.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/ps-136.1-4.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/is-11.1-10.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/is-35.1-10.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/is-40.9-11.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/mich-5.2-5.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/num-24.15-17.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/is-9.2-7.toml",
+    "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/passages/is-7.10-16.toml",
+  ]
+
+  [[deliverables.requirements]]
+  id = "lateran-witness"
+  criterion = "Identify the Lateran dedication address, its Holy See web editions, exact delivery and the bounded passage relating the church building to Christ and his people."
+  status = "pass"
+  evidence = [
+    "src/sources/works/benedict-xvi/angelus-2008-11-09/editions/2026-11-23-vatican-english-web/artifacts/official-html-3d581884/artifact.toml",
+    "src/sources/works/benedict-xvi/angelus-2008-11-09/editions/2026-11-23-vatican-english-web/edition.toml",
+    "src/sources/works/benedict-xvi/angelus-2008-11-09/editions/2026-11-23-vatican-english-web/passages/meditation-1-3.toml",
+    "src/sources/works/benedict-xvi/angelus-2008-11-09/editions/2026-11-23-vatican-italian-web/artifacts/official-html-2c593f0c/artifact.toml",
+    "src/sources/works/benedict-xvi/angelus-2008-11-09/editions/2026-11-23-vatican-italian-web/edition.toml",
+    "src/sources/works/benedict-xvi/angelus-2008-11-09/editions/2026-11-23-vatican-italian-web/passages/meditation-1-3.toml",
+    "src/sources/works/benedict-xvi/angelus-2008-11-09/work.toml",
+  ]
+
+  [[deliverables.requirements]]
+  id = "domestic-church"
+  criterion = "Locate the council’s account of parents as first teachers of the faith and Francis’s account of making a crèche and passing on faith in the family, with distinct edition and paragraph references."
+  status = "pass"
+  evidence = [
+    "src/sources/works/second-vatican-council/lumen-gentium/editions/latin-aas-57-1965/passages/11.toml",
+    "src/sources/works/second-vatican-council/lumen-gentium/editions/english-vatican-web-2026-07-23/passages/10-11.toml",
+    "src/sources/works/papal-documents/2019-12-01-papal-francesco-papa-francesco-lettera-ap-20191201-admirabile-signum-351aa693/editions/2026-10-26-vatican-en/passages/1.toml",
+    "src/sources/works/papal-documents/2019-12-01-papal-francesco-papa-francesco-lettera-ap-20191201-admirabile-signum-351aa693/editions/2026-10-26-vatican-en/passages/10.toml",
+    "src/sources/works/papal-documents/2019-12-01-papal-francesco-papa-francesco-lettera-ap-20191201-admirabile-signum-351aa693/editions/2026-10-26-vatican-it/passages/1.toml",
+    "src/sources/works/papal-documents/2019-12-01-papal-francesco-papa-francesco-lettera-ap-20191201-admirabile-signum-351aa693/editions/2026-10-26-vatican-it/passages/10.toml",
+  ]
+
+  [[deliverables.requirements]]
+  id = "byzantine-nativity"
+  criterion = "Identify the Nativity service, the appointed Old Testament lessons and a hymn that joins creation to the Incarnation. Locate the figures in a specific Byzantine Nativity composition and identify the basis for their placement."
+  status = "pass"
+  evidence = [
+    "src/sources/works/greek-orthodox-archdiocese-of-america/nativity-vesperal-liturgy/editions/2026-11-23-digital-chant-stand/passages/vespers-sticheron-4.toml",
+    "src/sources/works/greek-orthodox-archdiocese-of-america/nativity-vesperal-liturgy/editions/2026-11-23-digital-chant-stand/passages/readings-1-8.toml",
+    "src/sources/works/byzantine-and-christian-museum/nativity-bxm-13109/editions/2026-11-23-english-catalogue/passages/composition.toml",
+  ]
+
+  [[deliverables.requirements]]
+  id = "independent-narrative-panels"
+  criterion = "Locate a named Old Testament narrative and the handling of gesture, scale, frame and inscription in individually legible Eastern Christian pictures. Identify the objects, their distinct uses and the bounds of comparison."
+  status = "pass"
+  evidence = [
+    "src/sources/works/metropolitan-museum-of-art/david-plates-activities-for-learning/editions/2001-a-closer-look/passages/david-anointed.toml",
+    "src/sources/works/icon-museum-and-study-center/hospitality-of-abraham-l2025-01-2/editions/2026-11-24-collection-record/passages/catalogue.toml",
+    "src/sources/works/icon-museum-and-study-center/hospitality-of-abraham-l2025-01-2/editions/2026-11-24-collection-record/passages/table-and-visitors.toml",
+    "src/sources/works/walters-art-museum/diptych-icon-with-feasts-61-174/editions/2026-11-24-object-record/passages/opening-for-prayer.toml",
+    "src/sources/works/walters-art-museum/diptych-icon-with-feasts-61-174/editions/2026-11-24-object-record/passages/three-by-three.toml",
+    "src/sources/works/metropolitan-museum-of-art/icon-with-christ-pantepotes-468607/editions/2026-11-24-collection-record/passages/dimensions.toml",
+    "src/sources/works/metropolitan-museum-of-art/icon-with-christ-pantepotes-468607/editions/2026-11-24-collection-record/passages/central-plaque.toml",
+    "src/sources/works/george-bartlett/christ-pantepoptes-inscriptions/editions/2026-04-22-courtauld-abstract/passages/naming-inscriptions.toml",
+  ]

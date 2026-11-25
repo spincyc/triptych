@@ -1,0 +1,17 @@
+schema = 1
+record_type = "passage"
+id = "passage.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.ex-14.21-22"
+edition_id = "edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581"
+artifact_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-02-exodus-56072879"
+artifact_sha256 = "56072879aa592ebb524d53ff6494f64f5d3a537ce21f212e8115fc802f56335c"
+locus = "Ex.14.21-22"
+states = ["cataloged", "acquired", "inspected", "verified"]
+physical_line_ranges = [[379, 380]]
+text = "And when Moses had stretched forth his hand over the sea, the Lord took it away by a strong and burning wind blowing all the night, and turned it into dry ground: and the water was divided. And the children of Israel went in through the midst of the sea dried up; for the water was as a wall on their right hand and on their left."
+transcription_segments = [
+  { line = 379, text = "And when Moses had stretched forth his hand over the sea, the Lord took it away by a strong and burning wind blowing all the night, and turned it into dry ground: and the water was divided." },
+  { line = 380, text = "And the children of Israel went in through the midst of the sea dried up; for the water was as a wall on their right hand and on their left." },
+]
+context = "A strong wind blowing all night opens dry ground. Israel passes through the sea with water on either side."
+verified_on = "2026-11-23"
+notes = "Each verse and both bounds were checked against the complete Project Gutenberg eBook 1581 transcription from which the registered book TSV was derived. This checks extraction and the address within this edition."
