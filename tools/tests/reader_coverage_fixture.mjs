@@ -108,12 +108,21 @@ export function fixtureRequest(structure, mass, extra = {}) {
     coverage: [], unresolvedChoices: [], sourceHooks: [], ...extra };
 }
 
+// First All Souls Mass in the 1962 Missal. Historical sequence editions are
+// alternatives for the same use. The three 4 Esdras chants have study English.
+export const allSoulsEnglishRoles = {
+  'edition.edward-caswall.lyra-catholica.london-1849': ['Sequence'],
+  'edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861': ['Collect', 'Secret', 'Postcommunion'],
+  'edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945': ['Tract', 'Offertory'],
+  'edition.hymns-ancient-and-modern-proprietors.hymns-ancient-and-modern.london-complete-edition-1890': ['Sequence'],
+  'project-created': ['Introit', 'Gradual', 'Communion']
+};
+
 // This path validates data and semantic selection without starting a server or Chromium.
 export function verifyRealWitnesses(structure, root) {
   const { T, A } = readerTools(root);
   const caswall = 'edition.edward-caswall.lyra-catholica.london-1849';
   const alias = 'artifact.edward-caswall.lyra-catholica.london-1849.missal-sequences-en';
-  const cummiskey = 'edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861';
   const lasance = 'edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945';
   const study = 'project-created';
   const sept15 = structure.masses.find(row => row.key === 'septem-dolorum-beatae-mariae-virginis');
@@ -185,20 +194,25 @@ export function verifyRealWitnesses(structure, root) {
   const units = T.selectedCoverageUnits(pending, structure);
   const report = T.summarizeCoverage(units);
   const witnesses = T.coverageWitnesses(report, 'en');
-  assert.equal(witnesses.length, 4);
-  assert.deepEqual(witnesses.map(row => row.available).sort(), [1, 1, 2, 3]);
-  assert.ok(witnesses.every(row => /[123] of 6 uses/.test(row.label)));
-  assert.ok(witnesses.some(row => row.id === 'edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945' && row.available === 2));
-  const rows = mass.forms.find(row => row.id === 'first').propers;
-  for (const [witness, held, absent] of [[caswall, 1, 5], [cummiskey, 3, 3],
-      ['edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945', 2, 4]]) {
+  assert.deepEqual(witnesses.map(row => row.id).sort(), Object.keys(allSoulsEnglishRoles).sort());
+  const bodyRows = mass.forms.find(row => row.id === 'first').propers
+    .filter(row => row.coverage?.component === 'proper-body');
+  assert.equal(bodyRows.length, 9);
+  for (const { id: witness, available, label } of witnesses) {
+    const roles = allSoulsEnglishRoles[witness];
+    assert.equal(available, roles.length);
+    assert.ok(label.includes(roles.length + ' of 9 uses'));
     const request = { ...base, languages: { orations: 'en', translationWitness: witness } };
     const result = A.adaptPropers({ request, structure });
-    assert.equal(result.events.filter(row => row.selected?.reason === 'absent-in-witness').length, absent);
-    const bodyRows = rows.filter(row => row.coverage?.component === 'proper-body');
+    const heldRoles = result.events.filter(row =>
+      row.selected?.kind === 'composed' && row.selected.language === 'en' && !row.selected.missing
+    ).map(row => row.editionSlotLabel);
+    assert.deepEqual(heldRoles, roles);
+    assert.equal(result.events.filter(row => row.selected?.reason === 'absent-in-witness').length,
+      9 - roles.length);
     const bodies = bodyRows.map(row => T.orationFor(row, 'en', witness));
-    assert.equal(bodies.filter(row => !row.missing).length, held);
-    assert.equal(bodies.filter(row => row.missing).length, 6 - held);
+    assert.deepEqual(bodyRows.filter((row, index) => !bodies[index].missing).map(row => row.name), roles);
+    assert.equal(bodies.filter(row => row.missing).length, 9 - roles.length);
     // Restricted absences keep their type rather than becoming witness gaps. The
     // coverage lane retypes these records, so the count follows the data (C2).
     assert.equal(bodies.filter(row => row.reason === 'rights-restricted').length,
@@ -206,7 +220,7 @@ export function verifyRealWitnesses(structure, root) {
         entry.lang === 'en' && entry.state === 'rights-restricted')).length);
     assert.ok(bodies.filter(row => row.missing).every(row => row.text === null && !row.fallback));
     assert.match(T.coverageNoticeText(report, 'en', witness),
-      new RegExp(held + '/6 uses available from the selected witness'));
+      new RegExp(roles.length + '/9 uses available from the selected witness'));
   }
   const english = T.orationLanguagesOf(structure).find(row => row.lang === 'en');
   assert.equal(T.orationLanguageLabel(english),

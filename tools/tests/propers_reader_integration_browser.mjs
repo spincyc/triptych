@@ -10,7 +10,7 @@ import { mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { extname, resolve, sep } from 'node:path';
 import process from 'node:process';
-import { refreshCoverage, readerTools, fixtureRequest, verifyRealWitnesses } from './reader_coverage_fixture.mjs';
+import { refreshCoverage, readerTools, fixtureRequest, verifyRealWitnesses, allSoulsEnglishRoles } from './reader_coverage_fixture.mjs';
 
 const ROOT = resolve(process.env.TRIPTYCH_REVIEW_ROOT || resolve(import.meta.dirname, '../..'));
 const CANDIDATE = '/src/web/browser/liturgy/propers-reader.html';
@@ -2170,10 +2170,12 @@ async function assertions(cdp, base) {
     await click(cdp, '[data-reader-action="browse"]');
     const form = await browseSnapshot(cdp);
     assert.equal(form.witnessHidden, false); assert.notEqual(form.witnessDisplay, 'none');
-    assert.equal(form.witnesses.length, 5);
     assert.equal(form.witnesses[0], '');
+    assert.deepEqual(form.witnesses.slice(1).sort(), Object.keys(allSoulsEnglishRoles).sort());
     assert.ok(form.orationLabels.every(label => /represented texts available/.test(label)));
-    assert.ok(form.witnessLabels.slice(1).every(label => /[123] of 6 uses/.test(label)));
+    for (const [index, id] of form.witnesses.entries()) {
+      if (id) assert.ok(form.witnessLabels[index].includes(allSoulsEnglishRoles[id].length + ' of 9 uses'));
+    }
     const witness = MULTIPLE_TRANSLATION_WITNESS;
     assert.ok(form.witnesses.includes(witness));
     await select(cdp, '#reader-witness', witness);
@@ -2187,11 +2189,11 @@ async function assertions(cdp, base) {
       `[...new URLSearchParams(location.hash.slice(1)).keys()].some(key => key.startsWith('_candidate-'))`), false);
     assert.equal(await evaluate(cdp, `document.querySelectorAll('.composed[lang="en"]').length`), 1);
     assert.equal((await snapshot(cdp)).semantic.events.filter(row =>
-      row.selected?.reason === 'absent-in-witness').length, 5);
+      row.selected?.reason === 'absent-in-witness').length, 8);
     const selectedNotes = await evaluate(cdp,
       `[...document.querySelectorAll('.composed-note')].map(node => node.textContent)`);
     assert.equal(selectedNotes.filter(text =>
-      /No English text is available from the selected witness for this Proper/.test(text)).length, 5);
+      /No English text is available from the selected witness for this Proper/.test(text)).length, 8);
     assert.ok(!selectedNotes.some(text => /No English or Latin body is held here/.test(text)));
     assert.match((await snapshot(cdp)).notice, /from the selected witness/);
   });

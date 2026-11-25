@@ -50,7 +50,7 @@ ASSERTION_COUNTS = {
     "day_reader_compare_browser.mjs": 10,
     "day_reader_read_payload_browser.mjs": 9,
     "day_reader_study_browser.mjs": 25,
-    "day_reader_choices_browser.mjs": 8,
+    "day_reader_choices_browser.mjs": 9,
     "liturgy_reader_preferences_browser.mjs": 11,
     "liturgy_reader_share_print_browser.mjs": 7,
     "reader_text_size_browser.mjs": 5,
