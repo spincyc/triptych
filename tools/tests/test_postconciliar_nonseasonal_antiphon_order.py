@@ -39,13 +39,17 @@ class NonseasonalAntiphonOrderTests(unittest.TestCase):
                 self.assertLess(names.index('Prayer over the Offerings'), names.index('Communion Antiphon'))
                 self.assertLess(names.index('Communion Antiphon'), names.index('Prayer after Communion'))
                 row, = [r for r in rows if r['name'] == 'Communion Antiphon']
-                self.assertEqual(row['source'], 'scripture')
+                if key == 'most-holy-name-jesus':
+                    self.assertEqual(row['source'], 'mixed')
+                    self.assertEqual(row['text'], 'Domine, Dominus noster, quam admirabile est nomen tuum in universa terra!')
+                else:
+                    self.assertEqual(row['source'], 'scripture')
+                    self.assertNotIn('text', row)
                 entry, = row['verses']
                 self.assertEqual(entry['book'], book)
                 self.assertEqual(entry['ranges'], [{'begin': {'chapter': chapter, 'verse': verse},
                                                    'end': {'chapter': chapter, 'verse': verse}}])
                 self.assertIn(f'artifact page {ap}, printed page {pp}', row['notes'])
-                self.assertNotIn('text', row)
                 self.assertNotIn('ordinary_disposition', row)
 
     def test_the_owning_printed_order_checker_accepts_source_order_and_refuses_append_regression(self):
