@@ -458,6 +458,28 @@ class OrdinaryAppointments(unittest.TestCase):
                          ("canon/communicantes-continuatio", "praefatio/praefatio-sancto-ioseph")
                          for lang in ("la", "en")})
         self.assertEqual(citers, {("canon/communicantes-continuatio", "la")})
+        # Maundy Thursday prints its own Communicantes. Its ledger and artifact
+        # trace the Joseph clause to this same approved continuation.
+        maundy_inventory = "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml"
+        maundy_manifest = (
+            "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/"
+            "2026-11-24-maundy-evening/artifacts/maundy-evening-a33042a7/artifact.toml"
+        )
+        maundy = tomllib.loads((ROOT / maundy_manifest).read_text())
+        ledger = tomllib.loads((ROOT / maundy_inventory).read_text())
+        referenced = [row for row in ledger["entries"]
+                      if "the_joseph_clause" in row.get("publication_evidence", "")]
+        self.assertEqual([(row["mass"], row["proper"], row["occurrence"]) for row in referenced],
+                         [("mass-of-the-lords-supper", "Communicantes", 1)])
+        self.assertIn(maundy["id"], referenced[0]["publication_source_ids"])
+        continuation = ("artifact.triptych.roman-1962-ordinary-editorial-projection."
+                        "editorial-projection-2026-10-19.canon-proper-forms-651e3482")
+        self.assertIn(continuation, maundy["projected_from"])
+        self.assertIn(continuation, referenced[0]["publication_source_ids"])
+        with (ROOT / maundy["path"]).open(encoding="utf-8") as handle:
+            latin = {key: words(body) for key, body in csv.reader(handle, delimiter="\t")}
+        self.assertEqual([key for key, body in latin.items() if "ioseph" in body], ["communicantes"])
+        self.assertIn(" ".join(clause_words), " ".join(latin["communicantes"]))
         # The later English studies explicitly qualify their own treatment of
         # the name. Keep all references to this narrow legal basis accounted for.
         cited = sorted(
@@ -468,11 +490,13 @@ class OrdinaryAppointments(unittest.TestCase):
         self.assertEqual(cited, [
             "src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml",
             "src/sources/inventories/roman-1962-ordo-missae-v1.toml",
+            maundy_inventory,
             "src/sources/works/triptych/english-completion-20261029-ordinary-joseph/editions/"
             "2026-10-29-study-english/artifacts/continuation-study-en-b83d0df3/artifact.toml",
             "src/sources/works/triptych/postconciliar-common-communicantes-study-english-20261030/editions/"
             "2026-10-30-study-english/artifacts/common-full-names-conclusion-omitted-study-en/artifact.toml",
             "src/sources/works/triptych/postconciliar-common-communicantes-study-english-20261030/work.toml",
+            maundy_manifest,
             "src/sources/works/triptych/roman-1962-ordinary-editorial-projection/editions/"
             "2026-10-19-editorial-projection/artifacts/canon-proper-forms-651e3482/"
             "artifact.toml",
