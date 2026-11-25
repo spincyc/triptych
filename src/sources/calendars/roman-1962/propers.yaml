@@ -11172,29 +11172,23 @@ sections:
       - name: Preface of the Easter Vigil
         consultation_page: 315
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
         notes: >-
-          Consult the nocturnal formulary in the 1962 facsimile, PDF pp. 294
-          and 315–316, printed pp. 213 and 234–235. The Vigil appoints the night
-          wording. Its daytime variant is a different appointment.
+          Missale Romanum 1962, Missa Vigiliæ paschalis. No. 1048, printed pp. 234–235, PDF
+          pp. 315–316: the unvaried words of the Preface, selecting the Vigil night clause
+          under the direction printed on p. 213 (PDF p. 294). Begin after the already seated
+          dialogue and end immediately before the seated Sanctus.
+        text: |
+          Vere dignum et justum est, æquum et salutare: Te quidem, Domine, omni tempore, sed in hac potissimum nocte gloriosius prædicare, cum Pascha nostrum immolatus est Christus. Ipse enim verus est Agnus, qui abstulit peccata mundi. Qui mortem nostram moriendo destruxit, et vitam resurgendo reparavit. Et ideo cum Angelis et Archangelis, cum Thronis et Dominationibus, cumque omni militia cælestis exercitus, hymnum gloriæ tuæ canimus, sine fine dicentes:
       - name: Communicantes of the Easter Vigil
         consultation_page: 294
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
         notes: >-
-          Consult the nocturnal clause in the 1962 facsimile, PDF p. 294,
-          printed p. 213, rubric 7. The shared Canon continuation follows this
-          variable opening. The proper Hanc igitur follows in its own place.
+          Missale Romanum 1962, Missa Vigiliæ paschalis. Rubric 7, printed p. 213 (PDF p.
+          294), and no. 1095, printed p. 304 (PDF p. 385). Follow the night variant through
+          the dagger following the second Jesu Christi. The next Ordinary element continues
+          with Saint Joseph; the two passages do not overlap.
+        text: |
+          Communicantes, et noctem sacratissimam celebrantes Resurrectionis Domini nostri Jesu Christi secundum carnem: sed et memoriam venerantes, in primis gloriosæ semper Virginis Mariæ, Genetricis ejusdem Dei et Domini nostri Jesu Christi:
       - name: Antiphon and Psalm at Lauds
         incipit: Alleluja, alleluja, alleluja
         source: scripture
@@ -11237,18 +11231,14 @@ sections:
       - name: Easter dismissal
         consultation_page: 296
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
         notes: >-
-          Consult the 1962 facsimile, PDF p. 296, printed p. 215, rubric 10,
-          no. 1012. The greeting precedes the dismissal and its response, each
-          with two Alleluias. The celebrant then says the Placeat and gives the
-          blessing. The Last Gospel is omitted.
-
+          Missale Romanum 1962, Missa Vigiliæ paschalis. Rubric 10, no. 1012, printed p. 215
+          (PDF p. 296). The two sung utterances follow the separately seated greeting. The
+          deacon or the celebrant gives the dismissal, answered by the response. The Placeat
+          and the blessing follow.
+        text: |
+          ℣. Ite, missa est, alleluia, alleluia.
+          ℟. Deo gratias, alleluia, alleluia.
     - key: easter-sunday
       name: Easter Sunday
       registry: '30'

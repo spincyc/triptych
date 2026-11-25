@@ -598,18 +598,16 @@ class RealCorpusCoverageTests(unittest.TestCase):
             source = self.propers.english_coverage(ROOT / "src/sources/calendars", calendar)
             self.assertEqual(english(document["coverage"])["targets"],
                              source["slots"] + source["outside_the_ledger"], calendar)
-            outside = set()
             if calendar == "roman-1962":
-                # These printed Vigil appointments link to the facsimile. Their
-                # wording has no project English body in the translation ledger.
                 vigil = next(m for m in document["masses"] if m["key"] == "easter-vigil")
-                for row in vigil["propers"]:
-                    if row.get("source_consultation") and row.get("coverage"):
-                        unit = row["coverage"]
-                        if unit["component"] == "proper-body" and english(unit)["availability"] == "unresolved":
-                            outside.add(row["name"])
-                self.assertEqual(outside, VIGIL_CONSULTATION_ROLES)
-            self.assertEqual(source["outside_the_ledger"], len(outside), calendar)
+                consulted = {row["name"]: row for row in vigil["propers"] if row.get("source_consultation")}
+                self.assertEqual(set(consulted), VIGIL_CONSULTATION_ROLES)
+                for row in consulted.values():
+                    self.assertEqual(english(row["coverage"])["availability"], "available")
+                    self.assertTrue(row["text"].strip())
+                    self.assertTrue(any(t.get("source_id", "").endswith(".baltimore-kelly-piet-1870")
+                                        and t["rights"] == "public-domain" for t in row["translations"]))
+            self.assertEqual(source["outside_the_ledger"], 0, calendar)
             self.assertEqual(english(document["coverage"])["available_targets"], source["with_english"], calendar)
             coverage.validate_summary(document["coverage"])
 
@@ -914,9 +912,8 @@ class ExpectedInventoryTests(unittest.TestCase):
         propers = tool("mass-propers")
         for calendar in ("roman-1962", "roman-pre-1955"):
             report = propers.english_coverage(ROOT / "src/sources/calendars", calendar)
-            expected_outside = len(VIGIL_CONSULTATION_ROLES) if calendar == "roman-1962" else 0
             self.assertEqual((report["outside_the_ledger"], report["unaccounted"], report["unmatched_records"]),
-                             (expected_outside, 0, 0))
+                             (0, 0, 0))
 
     def test_christmas_english_owners_keep_stable_form_ids(self):
         expected = {(form, name) for form in ("night", "dawn", "day")
@@ -1587,8 +1584,7 @@ state = "unenumerated"
         propers = tool("mass-propers")
         for calendar in ("roman-1962", "roman-pre-1955"):
             report = propers.english_coverage(ROOT / "src/sources/calendars", calendar)
-            self.assertEqual(report["outside_the_ledger"],
-                             len(VIGIL_CONSULTATION_ROLES) if calendar == "roman-1962" else 0)
+            self.assertEqual(report["outside_the_ledger"], 0)
             for axis in ("unaccounted", "unmatched_records", "stale_translation_records"):
                 self.assertEqual(report[axis], 0, (calendar, axis))
 

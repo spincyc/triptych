@@ -210,6 +210,21 @@ class LiturgyParityTests(unittest.TestCase):
                                 for link in result["missalWitnessLinks"]))
             links_by_role = {event["slot"]: {link["language"]: link["url"] for link in event["sourceConsultations"]}
                              for event in events if event.get("sourceConsultations")}
+            vigil_texts = {
+                e["slot"]: words([b for b in e["blocks"] if "composed" in b["classes"]])
+                for e in events if e.get("sourceConsultations")
+            }
+            preface = vigil_texts["Preface of the Easter Vigil"]
+            self.assertIn("in hac potissimum nocte", preface)
+            self.assertIn("incessantly saying", preface)
+            self.assertNotIn("Lift up your hearts", preface)
+            opening = vigil_texts["Communicantes of the Easter Vigil"]
+            self.assertIn("noctem sacratissimam", opening)
+            self.assertIn("most sacred night", opening)
+            self.assertNotIn("Joseph", opening)
+            dismissal = vigil_texts["Easter dismissal"]
+            for phrase in ("Ite, missa est", "Deo gratias", "Go, Mass is ended", "Thanks be to God"):
+                self.assertIn(phrase + ", alleluia, alleluia", dismissal)
             for role, latin, english in (("Preface of the Easter Vigil", 315, 2),
                                          ("Communicantes of the Easter Vigil", 294, 2),
                                          ("Easter dismissal", 296, 3)):

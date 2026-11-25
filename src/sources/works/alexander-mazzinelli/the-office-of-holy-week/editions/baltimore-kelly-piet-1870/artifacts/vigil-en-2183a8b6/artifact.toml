@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.alexander-mazzinelli.the-office-of-holy-week.baltimore-kelly-piet-1870.vigil-en-2183a8b6"
+edition_id = "edition.alexander-mazzinelli.the-office-of-holy-week.baltimore-kelly-piet-1870"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "First published in Baltimore in 1870. The historical Latin and English in this edition are in the public domain in the United States by date of publication."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/OfficeOfHolyWeek1870/OfficeOfHolyWeek1870.pdf"
+retrieved = "2026-11-24"
+sha256 = "2183a8b669f12387f55af1e476cd67c09939d6b2544c1461a05660a33a1a95d0"
+byte_size = 1095
+path = "src/sources/works/alexander-mazzinelli/the-office-of-holy-week/editions/baltimore-kelly-piet-1870/artifacts/vigil-en-2183a8b6/vigil-en.tsv"
+encoding = "utf-8"
+indexable = true
+provenance = "Three bounded columns from the scanned 1870 Holy Saturday Mass. Line breaks from typesetting are joined. Latin typography and pointing are normalized; versicle and response signs identify the dismissal turns. The printed continuation cue at the end of the Communicantes is a cross-reference to the Canon, outside the words transcribed."
+derived_from = "artifact.alexander-mazzinelli.the-office-of-holy-week.baltimore-kelly-piet-1870.holy-week-facsimile-fbebdca8"
+transformation = "Read the 1870 printed right-hand column; join typographic line wraps, omit the Canon continuation cue, and preserve separate dismissal turns in the JSON string."
