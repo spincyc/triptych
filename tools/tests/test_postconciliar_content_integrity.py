@@ -311,9 +311,10 @@ class PostconciliarContentIntegrityTest(unittest.TestCase):
             },
         }
 
-        registries = [
-            str(mass.get("registry") or "") for _, _, mass in self.rows
-        ]
+        source_formularies = {mass["key"] for section, _, mass in self.rows if section == "weekday-orations"}
+        self.assertEqual(source_formularies, {"ot-1", "ot-34"})
+        self.assertTrue(all(not by_key[key].get("registry") for key in source_formularies))
+        registries = [str(mass["registry"]) for _, _, mass in self.rows if mass["key"] not in source_formularies]
         self.assertEqual(len(registries), len(set(registries)))
         for key, wanted in expected.items():
             mass = by_key[key]
@@ -522,7 +523,7 @@ class PostconciliarContentIntegrityTest(unittest.TestCase):
 
     @unittest.skipUnless(shutil.which("node"), "node is required for reader adapters")
     def test_common_referral_readings_do_not_claim_a_complete_missal(self):
-        """A real four-reading excerpt retains its events and declares its gap."""
+        """The memorial keeps its own Collect and four readings when its partial-form status is projected."""
         key = "saint-thomas-aquinas-priest-doctor-church"
         source = next(mass for _, _, mass in self.rows if mass["key"] == key)
         self.assertEqual(source.get("text_status"), COMMON_REFERRAL_FORMULARY_STATUS)
@@ -537,6 +538,8 @@ class PostconciliarContentIntegrityTest(unittest.TestCase):
         # status projected by the same function used by calendar_structure.
         structure["masses"] = [mass for mass in structure["masses"] if mass["key"] == key]
         self.assertEqual(len(structure["masses"]), 1)
+        self.assertEqual([p["name"] for p in structure["masses"][0]["propers"]],
+                         ["Collect", "First Reading", "Responsorial Psalm", "Gospel Acclamation", "Gospel"])
         bridge = r"""
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
@@ -574,17 +577,19 @@ process.stdout.write(JSON.stringify(results));
         self.assertEqual([row["language"] for row in results], ["la", "en"])
         for row in results:
             with self.subTest(language=row["language"]):
-                self.assertEqual(row["events"], 4)
+                self.assertEqual(row["events"], 5)
+                collect_gap = {"kind": "text-not-held", "count": 1, "repositoryTerm": "proper-body",
+                               "claims": [{"proper": "Collect", "cycle": None}]}
                 self.assertEqual(row["before"], {
                     "state": "supported", "scope": "formulary:" + key,
-                    "completeness": "complete", "reasons": [],
+                    "completeness": "partial", "reasons": [collect_gap],
                 })
                 self.assertEqual(row["after"], {
                     "state": "supported", "scope": "formulary:" + key,
                     "completeness": "partial", "reasons": [{
                         "kind": "text-not-held", "sourceKind": "source-declared-partial",
                         "sourceId": None,
-                    }],
+                    }, collect_gap],
                 })
 
     def test_exceptional_rites_state_and_project_nonfull_ordinary_frames(self):
@@ -594,11 +599,13 @@ process.stdout.write(JSON.stringify(results));
             "mass-of-the-lords-supper": "unavailable",
             "good-friday": "none",
             "easter-vigil": "unavailable",
+            "ot-1": "none",
+            "ot-34": "none",
         }
         # 2026-10-19 (C2 G7): IGMR 64 seats the Sequence before the Alleluia,
         # so the Easter, Pentecost Day and Corpus Christi forms take the full
         # frame and no longer withhold it.
-        expected_forms = {}
+        expected_forms = {("pentecost", "extended-vigil"): "unavailable"}
         source = {str(mass.get("key") or ""): mass for _, _, mass in self.rows}
         generated = propers_tool.calendar_structure(
             CALENDARS, "postconciliar", propers_tool.book_tokens()
@@ -819,9 +826,14 @@ process.stdout.write(JSON.stringify(results));
                 "lang": "en",
                 "extent": "body",
                 "availability": "unavailable",
-                "reason": {"kind": "no-exemplar"},
+                "reason": {
+                    "kind": "rights-withheld",
+                    "source_id": "artifact.catholic-church.missale-romanum.australian-liturgy-us-emissal-2021.publisher-html-4ea52314",
+                    "surfaces": ["corpus-data", "public-git", "command-line", "download"],
+                },
             },
         )
+        self.assertIn("https://rmhealey.com/docs/RMU/#Aug28", english_rows[0]["note"])
         for body_field in ("text", "translation", "translations"):
             self.assertNotIn(body_field, english_rows[0])
 
@@ -859,7 +871,7 @@ process.stdout.write(JSON.stringify(results));
                         "extent": "body",
                     },
                     "lang": "en",
-                    "state": "unavailable",
+                    "state": "rights-restricted",
                 }
             ],
         )
@@ -876,11 +888,9 @@ process.stdout.write(JSON.stringify(results));
         )
         self.assertEqual(
             {field: english.get(field) for field in ("status", "held", "available")},
-            {"status": "unavailable", "held": False, "available": False},
+            {"status": "rights-withheld", "held": False, "available": False},
         )
-        self.assertEqual(
-            english.get("reason", {}).get("kind"), "ledgered-untranslated"
-        )
+        self.assertEqual(english.get("reason"), "rights-restricted")
 
         shown = subprocess.run(
             [
@@ -928,7 +938,7 @@ process.stdout.write(JSON.stringify(results));
         self.assertIn("Saint Augustine, Bishop and Doctor of the Church", shown_english)
         self.assertRegex(
             shown_english,
-            r"(?s)Collect\s+No English or Latin body is held here\.",
+            r"(?s)Collect\s+English translation unavailable: rights restricted; Latin text unavailable",
         )
 
     def test_mass_today_preserves_rights_copy_when_latin_is_unavailable(self):
@@ -976,6 +986,8 @@ process.stdout.write(JSON.stringify(results));
         masses_by_key = {
             str(mass.get("key") or ""): mass for _, _, mass in self.rows
         }
+        records, problems = propers_tool._source_library_records(CALENDARS)
+        self.assertEqual(problems, [])
         identities = set()
         for row in self.translations.get("untranslated") or []:
             label = (row.get("mass"), row.get("form_id"), row.get("proper"))
@@ -1023,6 +1035,23 @@ process.stdout.write(JSON.stringify(results));
                     "witness_passage_id",
                 ):
                     self.assertNotIn(false_provenance, row, (label, false_provenance))
+            elif reason["source_id"].startswith("artifact."):
+                source_id = reason["source_id"]
+                self.assertIn(source_id, records, label)
+                self.assertEqual(records[source_id]["record_type"], "artifact", label)
+                self.assertEqual(records[source_id]["rights_status"], "restricted", label)
+                self.assertTrue(row.get("note"), label)
+                self.assertTrue({"corpus-data", "public-git", "command-line", "download"}.issubset(reason["surfaces"]), label)
+                if "witness_artifact_id" in row:
+                    self.assertEqual(row["witness_artifact_id"], source_id, label)
+                if "witness_passage_id" in row:
+                    self.assertEqual(records[row["witness_passage_id"]]["artifact_id"], source_id, label)
+                if "quarantined_text_sha256" in row:
+                    digests = row["quarantined_text_sha256"]
+                    self.assertIsInstance(digests, list, label)
+                    self.assertTrue(digests, label)
+                    for digest in digests:
+                        self.assertRegex(digest, r"\A[0-9a-f]{64}\Z", label)
             else:
                 for required in ("witness", "witness_artifact_id"):
                     self.assertTrue(str(row.get(required) or "").strip(), (label, required))

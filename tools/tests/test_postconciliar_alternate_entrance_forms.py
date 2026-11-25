@@ -59,8 +59,9 @@ class AlternateEntranceFormsTests(unittest.TestCase):
                 holder = self.holder(key, form)
                 rows = holder['propers']
                 self.assertEqual([r['name'] for r in rows[:2]], ['Entrance Antiphon'] * 2)
-                self.assertEqual(rows[-1]['name'], 'Communion Antiphon')
-                for row, reference in zip([*rows[:2], rows[-1]], (first, second, communion)):
+                self.assertEqual([r['name'] for r in rows[-3:]],
+                                 ['Prayer over the Offerings', 'Communion Antiphon', 'Prayer after Communion'])
+                for row, reference in zip([*rows[:2], rows[-2]], (first, second, communion)):
                     self.assertIn(f'artifact page {ap} / printed page {pp}', row['notes'])
                     self.assertNotIn('incipit', row)
                     admitted = isinstance(row.get('text'), str)  # gap campaign 2026-11-14 Latin admission

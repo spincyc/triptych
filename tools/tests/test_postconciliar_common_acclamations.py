@@ -38,7 +38,7 @@ class CommonAcclamationAppointmentsTests(unittest.TestCase):
 
     def assert_source_appointed_acclamation(self, key, rows):
         entry, page, common, common_page = CASES[key]
-        expected = ['First Reading', 'Responsorial Psalm', 'Gospel Acclamation', 'Gospel']
+        expected = ['Collect', 'First Reading', 'Responsorial Psalm', 'Gospel Acclamation', 'Gospel']
         if key in ('saint-lawrence-brindisi-priest-doctor-church',
                    'saint-john-chrysostom-bishop-doctor-church'):
             expected.append('Gospel (shorter form)')
@@ -46,7 +46,7 @@ class CommonAcclamationAppointmentsTests(unittest.TestCase):
             # Later Antiphonary evidence adds the two antiphons, without
             # changing the Ordo's reading course or its shorter Gospel.
             self.assertIn('artifact page 132, printed page 124', self.masses[key]['notes'])
-            expected = ['Entrance Antiphon', *expected, 'Communion Antiphon']
+            expected = ['Entrance Antiphon', *expected, 'Prayer over the Offerings', 'Communion Antiphon', 'Prayer after Communion']
         self.assertEqual([row['name'] for row in rows], expected)
         row, = [row for row in rows if row['name'] == 'Gospel Acclamation']
         self.assertEqual(row['source'], 'composed')
@@ -65,8 +65,10 @@ class CommonAcclamationAppointmentsTests(unittest.TestCase):
         key = 'saint-john-chrysostom-bishop-doctor-church'
         rows = self.masses[key]['propers']
         missing = [row for row in rows if row['name'] != 'Gospel Acclamation']
-        duplicate = [*rows[:4], rows[3], *rows[4:]]
-        reordered = [*rows[:2], rows[3], rows[2], *rows[4:]]
+        seat = next(i for i, row in enumerate(rows) if row['name'] == 'Gospel Acclamation')
+        duplicate = [*rows[:seat], rows[seat], *rows[seat:]]
+        reordered = rows.copy()
+        reordered[seat - 1], reordered[seat] = reordered[seat], reordered[seat - 1]
         lost_shorter = [row for row in rows if row['name'] != 'Gospel (shorter form)']
         for label, altered in [('missing', missing), ('duplicate', duplicate),
                                ('reordered', reordered), ('lost-shorter-Gospel', lost_shorter)]:

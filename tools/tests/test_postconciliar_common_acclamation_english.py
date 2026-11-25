@@ -92,11 +92,23 @@ class CommonAcclamationEnglishTests(unittest.TestCase):
             with self.subTest(mass=key):
                 self.assertEqual(len(records), 0 if key in ADMITTED else 1)
                 row = self.archived_absences[key] if key in ADMITTED else records[0]
-                self.assertEqual({k: row[k] for k in ('form_id', 'cycle', 'occurrence', 'lang', 'extent', 'availability', 'reason')},
-                                 {'form_id': 'main', 'cycle': 'all', 'occurrence': 1, 'lang': 'en', 'extent': 'body', 'availability': 'unavailable', 'reason': {'kind': 'no-exemplar'}})
+                self.assertEqual({k: row[k] for k in ('form_id', 'cycle', 'occurrence', 'lang', 'extent', 'availability')},
+                                 {'form_id': 'main', 'cycle': 'all', 'occurrence': 1, 'lang': 'en', 'extent': 'body', 'availability': 'unavailable'})
                 entry, page, common, common_page = CASES[key]
-                for cue in (f'n. {entry}', f'page {page}', f'n. {common}', f'page {common_page}'):
-                    self.assertIn(cue, row['note'])
+                if key in ADMITTED:
+                    self.assertEqual(row['reason'], {'kind': 'no-exemplar'})
+                    for cue in (f'n. {entry}', f'page {page}', f'n. {common}', f'page {common_page}'):
+                        self.assertIn(cue, row['note'])
+                else:
+                    self.assertEqual(common, '717,6')
+                    self.assertEqual(row['reason'], {
+                        'kind': 'rights-withheld',
+                        'source_id': 'artifact.catholic-church.ordo-lectionum-missae.canada-1993-weekday-a.calgary-diocesan-pdf-8550b1ce',
+                        'surfaces': ['corpus-data', 'public-git', 'command-line', 'download'],
+                    })
+                    self.assertIn('no. 717(6)', row['note'])
+                    self.assertIn('printed p. 774, PDF p. 778', row['note'])
+                    self.assertIn('weekday-a-1993.pdf#page=778', row['note'])
                 for field in ('text', 'translation', 'translations', 'source_id', 'witness_artifact_id', 'quarantined_text_sha256', 'verses'):
                     self.assertNotIn(field, row)
                 entry = self.owner.translation_entry_for(self.overlay, identity[:3], (*identity[:3], 'all', 1))
