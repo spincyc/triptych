@@ -244,7 +244,9 @@ class OrdinaryAppointments(unittest.TestCase):
                 ordinary = self.report[day]["ordinary"]
                 for item, present in (("praeparatio/gloria-in-excelsis-heading", gloria),
                                       ("praeparatio/gloria-in-excelsis", gloria),
-                                      ("oblatio/credo-heading", creed), ("oblatio/credo-in-unum-deum", creed)):
+                                      ("oblatio/credo-heading", creed), ("oblatio/credo-in-unum-deum", creed),
+                                      ("oblatio/et-in-unum-dominum", creed),
+                                      ("oblatio/et-in-spiritum-sanctum", creed)):
                     self.assertEqual(item in ordinary, present, item)
 
     def test_ordinary_green_sunday_keeps_the_common_canon_forms(self) -> None:

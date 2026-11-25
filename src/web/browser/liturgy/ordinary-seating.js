@@ -306,7 +306,9 @@
     'praeparatio/gloria-in-excelsis-heading': 'gloria',
     'praeparatio/gloria-in-excelsis': 'gloria',
     'oblatio/credo-heading': 'creed',
-    'oblatio/credo-in-unum-deum': 'creed'
+    'oblatio/credo-in-unum-deum': 'creed',
+    'oblatio/et-in-unum-dominum': 'creed',
+    'oblatio/et-in-spiritum-sanctum': 'creed'
   };
 
   function spanMembership(spans, context) {
