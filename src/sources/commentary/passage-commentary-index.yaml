@@ -1,5 +1,5 @@
 schema: triptych-commentary-work-index/v1
-updated: '2026-11-07'
+updated: '2026-11-25'
 numbering: vulgate
 numbering_note: 'Keys are addressed in vulgate numbering. Every psalm key is derived by converting
   each calendar''s citations out of the system that calendar declares, so Psalms 24 here is
@@ -2440,7 +2440,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: John Chrysostom
+  - work_id: work.john-chrysostom.homilies-on-first-thessalonians
+    author: John Chrysostom
     title: Homiliae in epistulam i ad Thessalonicenses
     date: '407'
     role: church-father
@@ -2532,7 +2533,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: John Chrysostom
+  - work_id: work.john-chrysostom.homilies-on-first-thessalonians
+    author: John Chrysostom
     title: Homiliae in epistulam i ad Thessalonicenses
     date: '407'
     role: doctor
@@ -2624,7 +2626,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: John Chrysostom
+  - work_id: work.john-chrysostom.homilies-on-first-thessalonians
+    author: John Chrysostom
     title: Homiliae in epistulam i ad Thessalonicenses
     date: '407'
     role: church-father
@@ -2716,7 +2719,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: John Chrysostom
+  - work_id: work.john-chrysostom.homilies-on-first-thessalonians
+    author: John Chrysostom
     title: Homiliae in epistulam i ad Thessalonicenses
     date: '407'
     role: church-father
@@ -2808,7 +2812,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: John Chrysostom
+  - work_id: work.john-chrysostom.homilies-on-first-thessalonians
+    author: John Chrysostom
     title: Homiliae in epistulam i ad Thessalonicenses
     date: '407'
     role: doctor
@@ -6664,7 +6669,7 @@ passages:
     confidence: 1.0
     runs: 3
   - author: Theodoret of Cyrus
-    title: Commentarius in Ieremiam
+    title: Commentarius in Ieremiam, Baruch et Lamentationes
     date: '458'
     role: church-father
     confidence: 1.0
@@ -6714,7 +6719,7 @@ passages:
     confidence: 1.0
     runs: 3
   - author: Theodoret of Cyrus
-    title: Commentarius in Ieremiam
+    title: Commentarius in Ieremiam, Baruch et Lamentationes
     date: '460'
     role: church-father
     confidence: 1.0
@@ -6746,7 +6751,7 @@ passages:
     confidence: 1.0
     runs: 3
   - author: Theodoret of Cyrus
-    title: Commentarius in Ieremiam
+    title: Commentarius in Ieremiam, Baruch et Lamentationes
     date: '457'
     role: church-father
     confidence: 1.0
@@ -6789,7 +6794,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: John Chrysostom
+  - work_id: work.john-chrysostom.homilies-on-colossians
+    author: John Chrysostom
     title: Homiliae in epistulam ad Colossenses
     date: '407'
     role: church-father
@@ -6881,7 +6887,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: John Chrysostom
+  - work_id: work.john-chrysostom.homilies-on-colossians
+    author: John Chrysostom
     title: Homiliae in epistulam ad Colossenses
     date: '407'
     role: doctor
@@ -6967,7 +6974,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: John Chrysostom
+  - work_id: work.john-chrysostom.homilies-on-colossians
+    author: John Chrysostom
     title: Homiliae in epistulam ad Colossenses
     date: '407'
     role: church-father
@@ -10696,7 +10704,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Origen
+  - work_id: work.origen.homiliae-in-ezechielem
+    author: Origen
     title: Homiliae in Ezechielem
     date: '254'
     role: church-father
@@ -11680,13 +11689,15 @@ passages:
     runs: 3
 - passage: Genesis 1
   works:
-  - author: Ambrose of Milan
+  - work_id: work.ambrose.hexameron
+    author: Ambrose of Milan
     title: Hexameron
     date: '397'
     role: doctor
     confidence: 1.0
     runs: 6
-  - author: Augustine of Hippo
+  - work_id: work.augustine.de-genesi-ad-litteram
+    author: Augustine of Hippo
     title: De Genesi ad litteram
     date: '430'
     role: doctor
@@ -11776,19 +11787,22 @@ passages:
     role: doctor
     confidence: 0.5
     runs: 6
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: church-father
     confidence: 0.5
     runs: 6
-  - author: Severian of Gabala
+  - work_id: work.severian-of-gabala.in-cosmogoniam-homiliae
+    author: Severian of Gabala
     title: In cosmogoniam homiliae sex
     date: '408'
     role: ecclesiastical-writer
     confidence: 0.5
     runs: 6
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: ecclesiastical-writer
@@ -11806,7 +11820,8 @@ passages:
     role: doctor
     confidence: 0.3333
     runs: 6
-  - author: Basil of Caesarea
+  - work_id: work.basil-of-caesarea.homiliae-in-hexaemeron
+    author: Basil of Caesarea
     title: Homiliae in Hexaemeron
     date: '379'
     role: doctor
@@ -11836,7 +11851,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 0.3333
     runs: 6
-  - author: Augustine of Hippo
+  - work_id: work.augustine.de-genesi-ad-litteram-imperfectus-liber
+    author: Augustine of Hippo
     title: De Genesi ad litteram imperfectus liber
     date: '430'
     role: doctor
@@ -11860,7 +11876,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 0.1667
     runs: 6
-  - author: Gregory of Nyssa
+  - work_id: work.gregory-of-nyssa.de-hominis-opificio
+    author: Gregory of Nyssa
     title: De hominis opificio
     date: '395'
     role: church-father
@@ -11880,7 +11897,8 @@ passages:
     runs: 6
 - passage: Genesis 10
   works:
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: saintly
@@ -11910,7 +11928,8 @@ passages:
     role: church-father
     confidence: 1.0
     runs: 3
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: church-father
@@ -11952,7 +11971,8 @@ passages:
     role: church-father
     confidence: 1.0
     runs: 3
-  - author: Angelomus of Luxeuil
+  - work_id: work.angelomus-of-luxeuil.commentarius-in-genesim
+    author: Angelomus of Luxeuil
     title: Commentarius in Genesim
     date: '895'
     role: ecclesiastical-writer
@@ -11964,7 +11984,8 @@ passages:
     role: church-father
     confidence: 0.6667
     runs: 3
-  - author: Bede
+  - work_id: work.bede.in-principium-genesis
+    author: Bede
     title: In principium Genesis
     date: '735'
     role: doctor
@@ -12098,13 +12119,15 @@ passages:
     role: church-father
     confidence: 1.0
     runs: 6
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: ecclesiastical-writer
     confidence: 0.8333
     runs: 6
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: church-father
@@ -12158,7 +12181,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 0.5
     runs: 6
-  - author: Bede
+  - work_id: work.bede.in-principium-genesis
+    author: Bede
     title: In principium Genesis
     date: '735'
     role: doctor
@@ -12182,13 +12206,15 @@ passages:
     role: ecclesiastical-writer
     confidence: 0.3333
     runs: 6
-  - author: Angelomus of Luxeuil
+  - work_id: work.angelomus-of-luxeuil.commentarius-in-genesim
+    author: Angelomus of Luxeuil
     title: Commentarius in Genesim
     date: '855'
     role: ecclesiastical-writer
     confidence: 0.1667
     runs: 6
-  - author: Augustine of Hippo
+  - work_id: work.augustine.de-civitate-dei
+    author: Augustine of Hippo
     title: De civitate Dei
     date: '430'
     role: doctor
@@ -12214,7 +12240,8 @@ passages:
     runs: 6
 - passage: Genesis 12
   works:
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: saintly
@@ -12262,7 +12289,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 6
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: doctor
@@ -12414,7 +12442,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: doctor
@@ -12456,7 +12485,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 1.0
     runs: 3
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: ecclesiastical-writer
@@ -12474,7 +12504,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 0.6667
     runs: 3
-  - author: Angelomus of Luxeuil
+  - work_id: work.angelomus-of-luxeuil.commentarius-in-genesim
+    author: Angelomus of Luxeuil
     title: Commentarius in Genesim
     date: '895'
     role: ecclesiastical-writer
@@ -12590,7 +12621,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 0.8333
     runs: 6
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: church-father
@@ -12602,7 +12634,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 0.6667
     runs: 6
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: ecclesiastical-writer
@@ -12736,7 +12769,8 @@ passages:
     role: church-father
     confidence: 1.0
     runs: 6
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: ecclesiastical-writer
@@ -12748,7 +12782,8 @@ passages:
     role: doctor
     confidence: 0.8333
     runs: 6
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: doctor
@@ -12808,13 +12843,15 @@ passages:
     role: ecclesiastical-writer
     confidence: 0.1667
     runs: 6
-  - author: Augustine of Hippo
+  - work_id: work.augustine.de-civitate-dei
+    author: Augustine of Hippo
     title: De civitate Dei
     date: '430'
     role: doctor
     confidence: 0.1667
     runs: 6
-  - author: Bede
+  - work_id: work.bede.in-principium-genesis
+    author: Bede
     title: In principium Genesis
     date: '735'
     role: doctor
@@ -12888,7 +12925,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: doctor
@@ -12930,7 +12968,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 1.0
     runs: 3
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: ecclesiastical-writer
@@ -12960,7 +12999,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 0.6667
     runs: 3
-  - author: Angelomus of Luxeuil
+  - work_id: work.angelomus-of-luxeuil.commentarius-in-genesim
+    author: Angelomus of Luxeuil
     title: Commentarius in Genesim
     date: '895'
     role: ecclesiastical-writer
@@ -12974,7 +13014,8 @@ passages:
     runs: 3
 - passage: Genesis 17
   works:
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: ecclesiastical-writer
@@ -13022,7 +13063,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: doctor
@@ -13094,7 +13136,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 0.3333
     runs: 3
-  - author: Bede
+  - work_id: work.bede.in-principium-genesis
+    author: Bede
     title: In principium Genesis
     date: '735'
     role: church-father
@@ -13126,7 +13169,8 @@ passages:
     runs: 3
 - passage: Genesis 18
   works:
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: ecclesiastical-writer
@@ -13174,7 +13218,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 6
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: doctor
@@ -13234,7 +13279,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 0.6667
     runs: 6
-  - author: Angelomus of Luxeuil
+  - work_id: work.angelomus-of-luxeuil.commentarius-in-genesim
+    author: Angelomus of Luxeuil
     title: Commentarius in Genesim
     date: '895'
     role: ecclesiastical-writer
@@ -13290,7 +13336,8 @@ passages:
     runs: 6
 - passage: Genesis 19
   works:
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: ecclesiastical-writer
@@ -13344,7 +13391,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: doctor
@@ -13442,7 +13490,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 6
-  - author: Augustine of Hippo
+  - work_id: work.augustine.de-genesi-ad-litteram
+    author: Augustine of Hippo
     title: De Genesi ad litteram
     date: '430'
     role: doctor
@@ -13490,7 +13539,8 @@ passages:
     role: church-father
     confidence: 1.0
     runs: 6
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: ecclesiastical-writer
@@ -13532,13 +13582,15 @@ passages:
     role: church-father
     confidence: 0.5
     runs: 6
-  - author: Gregory of Nyssa
+  - work_id: work.gregory-of-nyssa.de-hominis-opificio
+    author: Gregory of Nyssa
     title: De hominis opificio
     date: '395'
     role: church-father
     confidence: 0.5
     runs: 6
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: church-father
@@ -13586,13 +13638,15 @@ passages:
     role: ecclesiastical-writer
     confidence: 0.3333
     runs: 6
-  - author: Ambrose of Milan
+  - work_id: work.ambrose.hexameron
+    author: Ambrose of Milan
     title: Hexameron
     date: '397'
     role: church-father
     confidence: 0.1667
     runs: 6
-  - author: Bede
+  - work_id: work.bede.in-principium-genesis
+    author: Bede
     title: In principium Genesis
     date: '735'
     role: doctor
@@ -13654,7 +13708,8 @@ passages:
     role: church-father
     confidence: 1.0
     runs: 3
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: doctor
@@ -13696,7 +13751,8 @@ passages:
     role: church-father
     confidence: 1.0
     runs: 3
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: ecclesiastical-writer
@@ -13726,7 +13782,8 @@ passages:
     role: church-father
     confidence: 0.3333
     runs: 3
-  - author: Angelomus of Luxeuil
+  - work_id: work.angelomus-of-luxeuil.commentarius-in-genesim
+    author: Angelomus of Luxeuil
     title: Commentarius in Genesim
     date: '895'
     role: ecclesiastical-writer
@@ -13786,7 +13843,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 0.3333
     runs: 3
-  - author: Remigius of Auxerre
+  - work_id: work.remigius-of-auxerre.commentarius-in-genesim
+    author: Remigius of Auxerre
     title: Commentarius in Genesim
     date: '908'
     role: ecclesiastical-writer
@@ -13800,7 +13858,8 @@ passages:
     runs: 3
 - passage: Genesis 21
   works:
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: ecclesiastical-writer
@@ -13860,7 +13919,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: church-father
@@ -13940,7 +14000,8 @@ passages:
     runs: 3
 - passage: Genesis 22
   works:
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: saintly
@@ -13982,7 +14043,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 6
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: church-father
@@ -14080,7 +14142,8 @@ passages:
     runs: 6
 - passage: Genesis 23
   works:
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: saintly
@@ -14116,7 +14179,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 1.0
     runs: 3
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: church-father
@@ -14238,7 +14302,8 @@ passages:
     runs: 3
 - passage: Genesis 24
   works:
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: saintly
@@ -14286,7 +14351,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: doctor
@@ -14334,7 +14400,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 1.0
     runs: 3
-  - author: Angelomus of Luxeuil
+  - work_id: work.angelomus-of-luxeuil.commentarius-in-genesim
+    author: Angelomus of Luxeuil
     title: Commentarius in Genesim
     date: '855'
     role: ecclesiastical-writer
@@ -14384,7 +14451,8 @@ passages:
     runs: 3
 - passage: Genesis 25
   works:
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: ecclesiastical-writer
@@ -14432,7 +14500,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: doctor
@@ -14486,7 +14555,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 1.0
     runs: 3
-  - author: Angelomus of Luxeuil
+  - work_id: work.angelomus-of-luxeuil.commentarius-in-genesim
+    author: Angelomus of Luxeuil
     title: Commentarius in Genesim
     date: '895'
     role: ecclesiastical-writer
@@ -14530,7 +14600,8 @@ passages:
     runs: 3
 - passage: Genesis 26
   works:
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: saintly
@@ -14572,7 +14643,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: church-father
@@ -14650,7 +14722,8 @@ passages:
     role: doctor
     confidence: 0.3333
     runs: 3
-  - author: Angelomus of Luxeuil
+  - work_id: work.angelomus-of-luxeuil.commentarius-in-genesim
+    author: Angelomus of Luxeuil
     title: Commentarius in Genesim
     date: '895'
     role: ecclesiastical-writer
@@ -14730,7 +14803,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 6
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: doctor
@@ -14772,7 +14846,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 1.0
     runs: 6
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: ecclesiastical-writer
@@ -14858,7 +14933,8 @@ passages:
     runs: 6
 - passage: Genesis 28
   works:
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: ecclesiastical-writer
@@ -14906,7 +14982,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: church-father
@@ -15004,7 +15081,8 @@ passages:
     runs: 3
 - passage: Genesis 29
   works:
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: saintly
@@ -15046,7 +15124,8 @@ passages:
     role: church-father
     confidence: 1.0
     runs: 3
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: church-father
@@ -15186,7 +15265,8 @@ passages:
     runs: 3
 - passage: Genesis 3
   works:
-  - author: Augustine of Hippo
+  - work_id: work.augustine.de-genesi-ad-litteram
+    author: Augustine of Hippo
     title: De Genesi ad litteram
     date: '430'
     role: doctor
@@ -15270,7 +15350,8 @@ passages:
     role: doctor
     confidence: 0.6667
     runs: 6
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: doctor
@@ -15282,7 +15363,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 0.6667
     runs: 6
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: ecclesiastical-writer
@@ -15318,13 +15400,15 @@ passages:
     role: ecclesiastical-writer
     confidence: 0.3333
     runs: 6
-  - author: Angelomus of Luxeuil
+  - work_id: work.angelomus-of-luxeuil.commentarius-in-genesim
+    author: Angelomus of Luxeuil
     title: Commentarius in Genesim
     date: '895'
     role: ecclesiastical-writer
     confidence: 0.1667
     runs: 6
-  - author: Bede
+  - work_id: work.bede.in-principium-genesis
+    author: Bede
     title: In principium Genesis
     date: '735'
     role: doctor
@@ -15360,7 +15444,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 0.1667
     runs: 6
-  - author: Severian of Gabala
+  - work_id: work.severian-of-gabala.in-cosmogoniam-homiliae
+    author: Severian of Gabala
     title: In cosmogoniam homiliae sex
     date: '408'
     role: ecclesiastical-writer
@@ -15374,7 +15459,8 @@ passages:
     runs: 6
 - passage: Genesis 30
   works:
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: ecclesiastical-writer
@@ -15416,7 +15502,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: doctor
@@ -15464,7 +15551,8 @@ passages:
     role: doctor
     confidence: 0.6667
     runs: 3
-  - author: Angelomus of Luxeuil
+  - work_id: work.angelomus-of-luxeuil.commentarius-in-genesim
+    author: Angelomus of Luxeuil
     title: Commentarius in Genesim
     date: '895'
     role: ecclesiastical-writer
@@ -15518,7 +15606,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 0.3333
     runs: 3
-  - author: Remigius of Auxerre
+  - work_id: work.remigius-of-auxerre.commentarius-in-genesim
+    author: Remigius of Auxerre
     title: Commentarius in Genesim
     date: '908'
     role: ecclesiastical-writer
@@ -15538,7 +15627,8 @@ passages:
     runs: 3
 - passage: Genesis 31
   works:
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: saintly
@@ -15574,7 +15664,8 @@ passages:
     role: church-father
     confidence: 1.0
     runs: 3
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: church-father
@@ -15714,7 +15805,8 @@ passages:
     runs: 3
 - passage: Genesis 32
   works:
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: saintly
@@ -15768,7 +15860,8 @@ passages:
     role: church-father
     confidence: 1.0
     runs: 3
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: church-father
@@ -15908,7 +16001,8 @@ passages:
     role: church-father
     confidence: 1.0
     runs: 3
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: church-father
@@ -15950,7 +16044,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 1.0
     runs: 3
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: saintly
@@ -15974,7 +16069,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 0.3333
     runs: 3
-  - author: Angelomus of Luxeuil
+  - work_id: work.angelomus-of-luxeuil.commentarius-in-genesim
+    author: Angelomus of Luxeuil
     title: Commentarius in Genesim
     date: '855'
     role: ecclesiastical-writer
@@ -16006,7 +16102,8 @@ passages:
     runs: 3
 - passage: Genesis 34
   works:
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: saintly
@@ -16054,7 +16151,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 1.0
     runs: 3
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: church-father
@@ -16120,7 +16218,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 0.3333
     runs: 3
-  - author: Angelomus of Luxeuil
+  - work_id: work.angelomus-of-luxeuil.commentarius-in-genesim
+    author: Angelomus of Luxeuil
     title: Commentarius in Genesim
     date: '895'
     role: ecclesiastical-writer
@@ -16152,7 +16251,8 @@ passages:
     runs: 3
 - passage: Genesis 35
   works:
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: saintly
@@ -16188,7 +16288,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: church-father
@@ -16322,13 +16423,15 @@ passages:
     runs: 3
 - passage: Genesis 36
   works:
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Angelomus of Luxeuil
+  - work_id: work.angelomus-of-luxeuil.commentarius-in-genesim
+    author: Angelomus of Luxeuil
     title: Commentarius in Genesim
     date: '895'
     role: ecclesiastical-writer
@@ -16370,7 +16473,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 1.0
     runs: 3
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: church-father
@@ -16516,7 +16620,8 @@ passages:
     role: church-father
     confidence: 1.0
     runs: 6
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: church-father
@@ -16558,7 +16663,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 1.0
     runs: 6
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: saintly
@@ -16570,7 +16676,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 0.8333
     runs: 6
-  - author: Angelomus of Luxeuil
+  - work_id: work.angelomus-of-luxeuil.commentarius-in-genesim
+    author: Angelomus of Luxeuil
     title: Commentarius in Genesim
     date: '895'
     role: ecclesiastical-writer
@@ -16656,7 +16763,8 @@ passages:
     runs: 6
 - passage: Genesis 38
   works:
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: saintly
@@ -16698,7 +16806,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: doctor
@@ -16800,7 +16909,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 0.3333
     runs: 3
-  - author: Remigius of Auxerre
+  - work_id: work.remigius-of-auxerre.commentarius-in-genesim
+    author: Remigius of Auxerre
     title: Commentarius in Genesim
     date: '908'
     role: ecclesiastical-writer
@@ -16874,7 +16984,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: church-father
@@ -16916,7 +17027,8 @@ passages:
     role: church-father
     confidence: 1.0
     runs: 3
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: saintly
@@ -16948,7 +17060,8 @@ passages:
     runs: 3
 - passage: Genesis 4
   works:
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: ecclesiastical-writer
@@ -16996,7 +17109,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: doctor
@@ -17038,7 +17152,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 1.0
     runs: 3
-  - author: Angelomus of Luxeuil
+  - work_id: work.angelomus-of-luxeuil.commentarius-in-genesim
+    author: Angelomus of Luxeuil
     title: Commentarius in Genesim
     date: '895'
     role: ecclesiastical-writer
@@ -17068,7 +17183,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 0.6667
     runs: 3
-  - author: Bede
+  - work_id: work.bede.in-principium-genesis
+    author: Bede
     title: In principium Genesis
     date: '735'
     role: doctor
@@ -17100,7 +17216,8 @@ passages:
     runs: 3
 - passage: Genesis 40
   works:
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: saintly
@@ -17202,7 +17319,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 0.6667
     runs: 3
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: church-father
@@ -17214,7 +17332,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 0.6667
     runs: 3
-  - author: Angelomus of Luxeuil
+  - work_id: work.angelomus-of-luxeuil.commentarius-in-genesim
+    author: Angelomus of Luxeuil
     title: Commentarius in Genesim
     date: '855'
     role: ecclesiastical-writer
@@ -17238,7 +17357,8 @@ passages:
     role: saint
     confidence: 0.3333
     runs: 3
-  - author: Remigius of Auxerre
+  - work_id: work.remigius-of-auxerre.commentarius-in-genesim
+    author: Remigius of Auxerre
     title: Commentarius in Genesim
     date: '908'
     role: ecclesiastical-writer
@@ -17300,7 +17420,8 @@ passages:
     role: church-father
     confidence: 1.0
     runs: 3
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: church-father
@@ -17342,7 +17463,8 @@ passages:
     role: church-father
     confidence: 1.0
     runs: 3
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: saintly
@@ -17354,7 +17476,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 0.6667
     runs: 3
-  - author: Angelomus of Luxeuil
+  - work_id: work.angelomus-of-luxeuil.commentarius-in-genesim
+    author: Angelomus of Luxeuil
     title: Commentarius in Genesim
     date: '895'
     role: ecclesiastical-writer
@@ -17404,7 +17527,8 @@ passages:
     runs: 3
 - passage: Genesis 42
   works:
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: saintly
@@ -17494,7 +17618,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 1.0
     runs: 3
-  - author: Angelomus of Luxeuil
+  - work_id: work.angelomus-of-luxeuil.commentarius-in-genesim
+    author: Angelomus of Luxeuil
     title: Commentarius in Genesim
     date: '895'
     role: ecclesiastical-writer
@@ -17512,7 +17637,8 @@ passages:
     role: saint
     confidence: 0.6667
     runs: 3
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: church-father
@@ -17548,7 +17674,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 0.3333
     runs: 3
-  - author: Remigius of Auxerre
+  - work_id: work.remigius-of-auxerre.commentarius-in-genesim
+    author: Remigius of Auxerre
     title: Commentarius in Genesim
     date: '908'
     role: ecclesiastical-writer
@@ -17592,7 +17719,8 @@ passages:
     role: church-father
     confidence: 1.0
     runs: 3
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: church-father
@@ -17646,7 +17774,8 @@ passages:
     role: church-father
     confidence: 1.0
     runs: 3
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: ecclesiastical-writer
@@ -17708,7 +17837,8 @@ passages:
     runs: 3
 - passage: Genesis 44
   works:
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: ecclesiastical-writer
@@ -17768,7 +17898,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: doctor
@@ -17908,7 +18039,8 @@ passages:
     role: church-father
     confidence: 1.0
     runs: 3
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: church-father
@@ -17950,7 +18082,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 1.0
     runs: 3
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: ecclesiastical-writer
@@ -18006,7 +18139,8 @@ passages:
     runs: 3
 - passage: Genesis 46
   works:
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: saintly
@@ -18066,7 +18200,8 @@ passages:
     role: church-father
     confidence: 1.0
     runs: 3
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: church-father
@@ -18146,7 +18281,8 @@ passages:
     runs: 3
 - passage: Genesis 47
   works:
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: saintly
@@ -18248,7 +18384,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 0.6667
     runs: 3
-  - author: Angelomus of Luxeuil
+  - work_id: work.angelomus-of-luxeuil.commentarius-in-genesim
+    author: Angelomus of Luxeuil
     title: Commentarius in Genesim
     date: '895'
     role: ecclesiastical-writer
@@ -18272,7 +18409,8 @@ passages:
     role: saint
     confidence: 0.3333
     runs: 3
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: church-father
@@ -18304,7 +18442,8 @@ passages:
     runs: 3
 - passage: Genesis 48
   works:
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: ecclesiastical-writer
@@ -18352,7 +18491,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: church-father
@@ -18430,7 +18570,8 @@ passages:
     role: church-father
     confidence: 0.3333
     runs: 3
-  - author: Angelomus of Luxeuil
+  - work_id: work.angelomus-of-luxeuil.commentarius-in-genesim
+    author: Angelomus of Luxeuil
     title: Commentarius in Genesim
     date: '895'
     role: ecclesiastical-writer
@@ -18504,7 +18645,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: church-father
@@ -18564,7 +18706,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 0.6667
     runs: 3
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: saintly
@@ -18608,7 +18751,8 @@ passages:
     runs: 3
 - passage: Genesis 5
   works:
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: ecclesiastical-writer
@@ -18656,7 +18800,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: doctor
@@ -18832,7 +18977,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 0.6667
     runs: 3
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: saintly
@@ -18892,7 +19038,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 0.3333
     runs: 3
-  - author: Angelomus of Luxeuil
+  - work_id: work.angelomus-of-luxeuil.commentarius-in-genesim
+    author: Angelomus of Luxeuil
     title: Commentarius in Genesim
     date: '855'
     role: ecclesiastical-writer
@@ -18954,7 +19101,8 @@ passages:
     runs: 3
 - passage: Genesis 6
   works:
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: ecclesiastical-writer
@@ -19014,7 +19162,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: church-father
@@ -19074,7 +19223,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 0.6667
     runs: 3
-  - author: Bede
+  - work_id: work.bede.in-principium-genesis
+    author: Bede
     title: In principium Genesis
     date: '735'
     role: doctor
@@ -19094,7 +19244,8 @@ passages:
     runs: 3
 - passage: Genesis 7
   works:
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: saintly
@@ -19196,7 +19347,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 0.6667
     runs: 3
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: doctor
@@ -19208,7 +19360,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 0.6667
     runs: 3
-  - author: Angelomus of Luxeuil
+  - work_id: work.angelomus-of-luxeuil.commentarius-in-genesim
+    author: Angelomus of Luxeuil
     title: Commentarius in Genesim
     date: '895'
     role: ecclesiastical-writer
@@ -19246,7 +19399,8 @@ passages:
     runs: 3
 - passage: Genesis 8
   works:
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: ecclesiastical-writer
@@ -19300,7 +19454,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: church-father
@@ -19354,13 +19509,15 @@ passages:
     role: ecclesiastical-writer
     confidence: 0.6667
     runs: 3
-  - author: Bede
+  - work_id: work.bede.in-principium-genesis
+    author: Bede
     title: In principium Genesis
     date: '735'
     role: doctor
     confidence: 0.6667
     runs: 3
-  - author: Angelomus of Luxeuil
+  - work_id: work.angelomus-of-luxeuil.commentarius-in-genesim
+    author: Angelomus of Luxeuil
     title: Commentarius in Genesim
     date: '895'
     role: ecclesiastical-writer
@@ -19458,7 +19615,8 @@ passages:
     role: church-father
     confidence: 1.0
     runs: 6
-  - author: Alcuin of York
+  - work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+    author: Alcuin of York
     title: Interrogationes et responsiones in Genesim
     date: '804'
     role: ecclesiastical-writer
@@ -19470,7 +19628,8 @@ passages:
     role: doctor
     confidence: 0.8333
     runs: 6
-  - author: Jerome
+  - work_id: work.jerome.quaestiones-hebraicae-in-genesim
+    author: Jerome
     title: Hebrew Questions on Genesis
     date: '420'
     role: church-father
@@ -19524,13 +19683,15 @@ passages:
     role: ecclesiastical-writer
     confidence: 0.1667
     runs: 6
-  - author: Augustine of Hippo
+  - work_id: work.augustine.de-civitate-dei
+    author: Augustine of Hippo
     title: De civitate Dei
     date: '430'
     role: doctor
     confidence: 0.1667
     runs: 6
-  - author: Bede
+  - work_id: work.bede.in-principium-genesis
+    author: Bede
     title: In principium Genesis
     date: '735'
     role: doctor
@@ -24547,7 +24708,7 @@ passages:
     confidence: 1.0
     runs: 3
   - author: Theodoret of Cyrus
-    title: Commentarius in Ieremiam
+    title: Commentarius in Ieremiam, Baruch et Lamentationes
     date: '458'
     role: church-father
     confidence: 1.0
@@ -24639,7 +24800,7 @@ passages:
     confidence: 1.0
     runs: 3
   - author: Theodoret of Cyrus
-    title: Commentarius in Ieremiam
+    title: Commentarius in Ieremiam, Baruch et Lamentationes
     date: '458'
     role: church-father
     confidence: 1.0
@@ -24761,7 +24922,7 @@ passages:
     confidence: 1.0
     runs: 3
   - author: Theodoret of Cyrus
-    title: Commentarius in Ieremiam
+    title: Commentarius in Ieremiam, Baruch et Lamentationes
     date: '457'
     role: church-father
     confidence: 1.0
@@ -24853,7 +25014,7 @@ passages:
     confidence: 1.0
     runs: 3
   - author: Theodoret of Cyrus
-    title: Commentarius in Ieremiam
+    title: Commentarius in Ieremiam, Baruch et Lamentationes
     date: '466'
     role: ecclesiastical-writer
     confidence: 1.0
@@ -24999,7 +25160,7 @@ passages:
     confidence: 1.0
     runs: 3
   - author: Theodoret of Cyrus
-    title: Commentarius in Ieremiam
+    title: Commentarius in Ieremiam, Baruch et Lamentationes
     date: '460'
     role: church-father
     confidence: 1.0
@@ -25049,7 +25210,7 @@ passages:
     confidence: 1.0
     runs: 3
   - author: Theodoret of Cyrus
-    title: Commentarius in Ieremiam
+    title: Commentarius in Ieremiam, Baruch et Lamentationes
     date: '457'
     role: church-father
     confidence: 1.0
@@ -25111,7 +25272,7 @@ passages:
     confidence: 1.0
     runs: 3
   - author: Theodoret of Cyrus
-    title: Commentarius in Ieremiam
+    title: Commentarius in Ieremiam, Baruch et Lamentationes
     date: '458'
     role: church-father
     confidence: 1.0
@@ -25185,7 +25346,7 @@ passages:
     confidence: 1.0
     runs: 3
   - author: Theodoret of Cyrus
-    title: Commentarius in Ieremiam
+    title: Commentarius in Ieremiam, Baruch et Lamentationes
     date: '460'
     role: church-father
     confidence: 1.0
@@ -25229,7 +25390,7 @@ passages:
     confidence: 1.0
     runs: 3
   - author: Theodoret of Cyrus
-    title: Commentarius in Ieremiam
+    title: Commentarius in Ieremiam, Baruch et Lamentationes
     date: '457'
     role: church-father
     confidence: 1.0
@@ -25285,7 +25446,7 @@ passages:
     confidence: 1.0
     runs: 3
   - author: Theodoret of Cyrus
-    title: Commentarius in Ieremiam
+    title: Commentarius in Ieremiam, Baruch et Lamentationes
     date: '458'
     role: church-father
     confidence: 1.0
@@ -25377,7 +25538,7 @@ passages:
     confidence: 1.0
     runs: 3
   - author: Theodoret of Cyrus
-    title: Commentarius in Ieremiam
+    title: Commentarius in Ieremiam, Baruch et Lamentationes
     date: '466'
     role: ecclesiastical-writer
     confidence: 1.0
@@ -26093,7 +26254,8 @@ passages:
     role: church-father
     confidence: 1.0
     runs: 3
-  - author: John Chrysostom
+  - work_id: work.john-chrysostom.homilies-on-john
+    author: John Chrysostom
     title: Homiliae in Ioannem
     date: '407'
     role: church-father
@@ -26117,7 +26279,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Thomas Aquinas
+  - work_id: work.thomas-aquinas.super-evangelium-ioannis-lectura
+    author: Thomas Aquinas
     title: Super Evangelium S. Ioannis lectura
     date: '1274'
     role: doctor
@@ -26228,7 +26391,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: John Chrysostom
+  - work_id: work.john-chrysostom.homilies-on-john
+    author: John Chrysostom
     title: Homiliae in Ioannem
     date: '407'
     role: doctor
@@ -26258,7 +26422,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Thomas Aquinas
+  - work_id: work.thomas-aquinas.super-evangelium-ioannis-lectura
+    author: Thomas Aquinas
     title: Super Evangelium S. Ioannis lectura
     date: '1274'
     role: doctor
@@ -26288,7 +26453,8 @@ passages:
     role: saintly
     confidence: 0.3333
     runs: 3
-  - author: Gregory the Great
+  - work_id: work.gregory-the-great.homiliae-in-evangelia
+    author: Gregory the Great
     title: Homiliae in Evangelia
     date: '604'
     role: pope
@@ -26321,7 +26487,8 @@ passages:
     role: church-father
     confidence: 1.0
     runs: 3
-  - author: John Chrysostom
+  - work_id: work.john-chrysostom.homilies-on-john
+    author: John Chrysostom
     title: Homiliae in Ioannem
     date: '407'
     role: church-father
@@ -26345,7 +26512,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Thomas Aquinas
+  - work_id: work.thomas-aquinas.super-evangelium-ioannis-lectura
+    author: Thomas Aquinas
     title: Super Evangelium S. Ioannis lectura
     date: '1274'
     role: doctor
@@ -26450,7 +26618,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: John Chrysostom
+  - work_id: work.john-chrysostom.homilies-on-john
+    author: John Chrysostom
     title: Homiliae in Ioannem
     date: '407'
     role: church-father
@@ -26480,7 +26649,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Thomas Aquinas
+  - work_id: work.thomas-aquinas.super-evangelium-ioannis-lectura
+    author: Thomas Aquinas
     title: Super Evangelium S. Ioannis lectura
     date: '1274'
     role: doctor
@@ -26561,7 +26731,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: John Chrysostom
+  - work_id: work.john-chrysostom.homilies-on-john
+    author: John Chrysostom
     title: Homiliae in Ioannem
     date: '407'
     role: doctor
@@ -26597,7 +26768,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Thomas Aquinas
+  - work_id: work.thomas-aquinas.super-evangelium-ioannis-lectura
+    author: Thomas Aquinas
     title: Super Evangelium S. Ioannis lectura
     date: '1274'
     role: doctor
@@ -26654,7 +26826,8 @@ passages:
     role: church-father
     confidence: 1.0
     runs: 3
-  - author: John Chrysostom
+  - work_id: work.john-chrysostom.homilies-on-john
+    author: John Chrysostom
     title: Homiliae in Ioannem
     date: '407'
     role: church-father
@@ -26672,7 +26845,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Thomas Aquinas
+  - work_id: work.thomas-aquinas.super-evangelium-ioannis-lectura
+    author: Thomas Aquinas
     title: Super Evangelium S. Ioannis lectura
     date: '1274'
     role: doctor
@@ -26738,7 +26912,8 @@ passages:
     role: saintly
     confidence: 0.3333
     runs: 3
-  - author: Gregory the Great
+  - work_id: work.gregory-the-great.homiliae-in-evangelia
+    author: Gregory the Great
     title: Homiliae in Evangelia
     date: '604'
     role: pope
@@ -26789,7 +26964,8 @@ passages:
     role: church-father
     confidence: 1.0
     runs: 3
-  - author: John Chrysostom
+  - work_id: work.john-chrysostom.homilies-on-john
+    author: John Chrysostom
     title: Homiliae in Ioannem
     date: '407'
     role: church-father
@@ -26819,7 +26995,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Thomas Aquinas
+  - work_id: work.thomas-aquinas.super-evangelium-ioannis-lectura
+    author: Thomas Aquinas
     title: Super Evangelium S. Ioannis lectura
     date: '1274'
     role: doctor
@@ -26831,7 +27008,8 @@ passages:
     role: saintly
     confidence: 0.6667
     runs: 3
-  - author: Gregory the Great
+  - work_id: work.gregory-the-great.homiliae-in-evangelia
+    author: Gregory the Great
     title: Homiliae in Evangelia
     date: '604'
     role: doctor
@@ -26900,7 +27078,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: John Chrysostom
+  - work_id: work.john-chrysostom.homilies-on-john
+    author: John Chrysostom
     title: Homiliae in Ioannem
     date: '407'
     role: doctor
@@ -26930,7 +27109,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Thomas Aquinas
+  - work_id: work.thomas-aquinas.super-evangelium-ioannis-lectura
+    author: Thomas Aquinas
     title: Super Evangelium S. Ioannis lectura
     date: '1274'
     role: doctor
@@ -26987,7 +27167,8 @@ passages:
     role: church-father
     confidence: 1.0
     runs: 3
-  - author: John Chrysostom
+  - work_id: work.john-chrysostom.homilies-on-john
+    author: John Chrysostom
     title: Homiliae in Ioannem
     date: '407'
     role: church-father
@@ -27005,7 +27186,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Thomas Aquinas
+  - work_id: work.thomas-aquinas.super-evangelium-ioannis-lectura
+    author: Thomas Aquinas
     title: Super Evangelium S. Ioannis lectura
     date: '1274'
     role: doctor
@@ -27116,7 +27298,8 @@ passages:
     role: church-father
     confidence: 1.0
     runs: 3
-  - author: John Chrysostom
+  - work_id: work.john-chrysostom.homilies-on-john
+    author: John Chrysostom
     title: Homiliae in Ioannem
     date: '407'
     role: church-father
@@ -27146,7 +27329,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Thomas Aquinas
+  - work_id: work.thomas-aquinas.super-evangelium-ioannis-lectura
+    author: Thomas Aquinas
     title: Super Evangelium S. Ioannis lectura
     date: '1274'
     role: doctor
@@ -27227,7 +27411,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: John Chrysostom
+  - work_id: work.john-chrysostom.homilies-on-john
+    author: John Chrysostom
     title: Homiliae in Ioannem
     date: '407'
     role: doctor
@@ -27257,7 +27442,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Thomas Aquinas
+  - work_id: work.thomas-aquinas.super-evangelium-ioannis-lectura
+    author: Thomas Aquinas
     title: Super Evangelium S. Ioannis lectura
     date: '1274'
     role: doctor
@@ -27314,7 +27500,8 @@ passages:
     role: church-father
     confidence: 1.0
     runs: 3
-  - author: John Chrysostom
+  - work_id: work.john-chrysostom.homilies-on-john
+    author: John Chrysostom
     title: Homiliae in Ioannem
     date: '407'
     role: church-father
@@ -27338,7 +27525,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Thomas Aquinas
+  - work_id: work.thomas-aquinas.super-evangelium-ioannis-lectura
+    author: Thomas Aquinas
     title: Super Evangelium S. Ioannis lectura
     date: '1274'
     role: doctor
@@ -27449,13 +27637,15 @@ passages:
     role: church-father
     confidence: 1.0
     runs: 3
-  - author: Gregory the Great
+  - work_id: work.gregory-the-great.homiliae-in-evangelia
+    author: Gregory the Great
     title: Homiliae in Evangelia
     date: '604'
     role: pope
     confidence: 1.0
     runs: 3
-  - author: John Chrysostom
+  - work_id: work.john-chrysostom.homilies-on-john
+    author: John Chrysostom
     title: Homiliae in Ioannem
     date: '407'
     role: church-father
@@ -27485,7 +27675,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Thomas Aquinas
+  - work_id: work.thomas-aquinas.super-evangelium-ioannis-lectura
+    author: Thomas Aquinas
     title: Super Evangelium S. Ioannis lectura
     date: '1274'
     role: doctor
@@ -27566,7 +27757,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: John Chrysostom
+  - work_id: work.john-chrysostom.homilies-on-john
+    author: John Chrysostom
     title: Homiliae in Ioannem
     date: '407'
     role: doctor
@@ -27596,7 +27788,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Thomas Aquinas
+  - work_id: work.thomas-aquinas.super-evangelium-ioannis-lectura
+    author: Thomas Aquinas
     title: Super Evangelium S. Ioannis lectura
     date: '1274'
     role: doctor
@@ -27671,7 +27864,8 @@ passages:
     role: church-father
     confidence: 1.0
     runs: 3
-  - author: John Chrysostom
+  - work_id: work.john-chrysostom.homilies-on-john
+    author: John Chrysostom
     title: Homiliae in Ioannem
     date: '407'
     role: church-father
@@ -27701,7 +27895,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Thomas Aquinas
+  - work_id: work.thomas-aquinas.super-evangelium-ioannis-lectura
+    author: Thomas Aquinas
     title: Super Evangelium S. Ioannis lectura
     date: '1274'
     role: doctor
@@ -27776,7 +27971,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: John Chrysostom
+  - work_id: work.john-chrysostom.homilies-on-john
+    author: John Chrysostom
     title: Homiliae in Ioannem
     date: '407'
     role: doctor
@@ -27812,7 +28008,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Thomas Aquinas
+  - work_id: work.thomas-aquinas.super-evangelium-ioannis-lectura
+    author: Thomas Aquinas
     title: Super Evangelium S. Ioannis lectura
     date: '1274'
     role: doctor
@@ -27905,7 +28102,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 1.0
     runs: 3
-  - author: John Chrysostom
+  - work_id: work.john-chrysostom.homilies-on-john
+    author: John Chrysostom
     title: Homiliae in Ioannem
     date: '407'
     role: church-father
@@ -27935,7 +28133,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Thomas Aquinas
+  - work_id: work.thomas-aquinas.super-evangelium-ioannis-lectura
+    author: Thomas Aquinas
     title: Super Evangelium S. Ioannis lectura
     date: '1274'
     role: doctor
@@ -28029,7 +28228,8 @@ passages:
     role: church-father
     confidence: 1.0
     runs: 3
-  - author: John Chrysostom
+  - work_id: work.john-chrysostom.homilies-on-john
+    author: John Chrysostom
     title: Homiliae in Ioannem
     date: '407'
     role: church-father
@@ -28047,7 +28247,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Thomas Aquinas
+  - work_id: work.thomas-aquinas.super-evangelium-ioannis-lectura
+    author: Thomas Aquinas
     title: Super Evangelium S. Ioannis lectura
     date: '1274'
     role: doctor
@@ -28158,7 +28359,8 @@ passages:
     role: church-father
     confidence: 1.0
     runs: 3
-  - author: John Chrysostom
+  - work_id: work.john-chrysostom.homilies-on-john
+    author: John Chrysostom
     title: Homiliae in Ioannem
     date: '407'
     role: church-father
@@ -28188,7 +28390,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Thomas Aquinas
+  - work_id: work.thomas-aquinas.super-evangelium-ioannis-lectura
+    author: Thomas Aquinas
     title: Super Evangelium S. Ioannis lectura
     date: '1274'
     role: doctor
@@ -28263,7 +28466,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: John Chrysostom
+  - work_id: work.john-chrysostom.homilies-on-john
+    author: John Chrysostom
     title: Homiliae in Ioannem
     date: '407'
     role: doctor
@@ -28299,7 +28503,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Thomas Aquinas
+  - work_id: work.thomas-aquinas.super-evangelium-ioannis-lectura
+    author: Thomas Aquinas
     title: Super Evangelium S. Ioannis lectura
     date: '1274'
     role: doctor
@@ -28356,7 +28561,8 @@ passages:
     role: church-father
     confidence: 1.0
     runs: 3
-  - author: John Chrysostom
+  - work_id: work.john-chrysostom.homilies-on-john
+    author: John Chrysostom
     title: Homiliae in Ioannem
     date: '407'
     role: church-father
@@ -28374,7 +28580,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Thomas Aquinas
+  - work_id: work.thomas-aquinas.super-evangelium-ioannis-lectura
+    author: Thomas Aquinas
     title: Super Evangelium S. Ioannis lectura
     date: '1274'
     role: doctor
@@ -28707,7 +28914,7 @@ passages:
     confidence: 0.6667
     runs: 3
   - author: Theodoret of Cyrus
-    title: Commentarius in Ieremiam
+    title: Commentarius in Ieremiam, Baruch et Lamentationes
     date: '458'
     role: church-father
     confidence: 0.6667
@@ -29342,13 +29549,15 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Ambrose of Milan
+  - work_id: work.ambrose.expositio-evangelii-secundum-lucam
+    author: Ambrose of Milan
     title: Expositio Evangelii secundum Lucam
     date: '397'
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Bede the Venerable
+  - work_id: work.bede.in-lucae-evangelium-expositio
+    author: Bede the Venerable
     title: In Lucae evangelium expositio
     date: '735'
     role: doctor
@@ -29420,7 +29629,8 @@ passages:
     role: doctor
     confidence: 0.3333
     runs: 3
-  - author: Augustine of Hippo
+  - work_id: work.augustine.quaestiones-euangeliorum
+    author: Augustine of Hippo
     title: Quaestiones evangeliorum
     date: '430'
     role: doctor
@@ -29452,7 +29662,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Ambrose of Milan
+  - work_id: work.ambrose.expositio-evangelii-secundum-lucam
+    author: Ambrose of Milan
     title: Expositio Evangelii secundum Lucam
     date: '397'
     role: church-father
@@ -29476,7 +29687,8 @@ passages:
     role: church-father
     confidence: 1.0
     runs: 3
-  - author: Gregory the Great
+  - work_id: work.gregory-the-great.homiliae-in-evangelia
+    author: Gregory the Great
     title: Homiliae in Evangelia
     date: '604'
     role: pope
@@ -29506,7 +29718,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Bede the Venerable
+  - work_id: work.bede.in-lucae-evangelium-expositio
+    author: Bede the Venerable
     title: In Lucae evangelium expositio
     date: '735'
     role: doctor
@@ -29530,7 +29743,8 @@ passages:
     role: saintly
     confidence: 0.6667
     runs: 3
-  - author: Augustine of Hippo
+  - work_id: work.augustine.quaestiones-euangeliorum
+    author: Augustine of Hippo
     title: Quaestiones evangeliorum
     date: '430'
     role: doctor
@@ -29562,13 +29776,15 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Ambrose of Milan
+  - work_id: work.ambrose.expositio-evangelii-secundum-lucam
+    author: Ambrose of Milan
     title: Expositio Evangelii secundum Lucam
     date: '397'
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Bede the Venerable
+  - work_id: work.bede.in-lucae-evangelium-expositio
+    author: Bede the Venerable
     title: In Lucae evangelium expositio
     date: '735'
     role: doctor
@@ -29634,7 +29850,8 @@ passages:
     role: doctor
     confidence: 0.3333
     runs: 3
-  - author: Augustine of Hippo
+  - work_id: work.augustine.quaestiones-euangeliorum
+    author: Augustine of Hippo
     title: Quaestiones evangeliorum
     date: '430'
     role: doctor
@@ -29646,7 +29863,8 @@ passages:
     role: saintly
     confidence: 0.3333
     runs: 3
-  - author: Gregory the Great
+  - work_id: work.gregory-the-great.homiliae-in-evangelia
+    author: Gregory the Great
     title: Homiliae in Evangelia
     date: '604'
     role: pope
@@ -29666,13 +29884,15 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Ambrose of Milan
+  - work_id: work.ambrose.expositio-evangelii-secundum-lucam
+    author: Ambrose of Milan
     title: Expositio Evangelii secundum Lucam
     date: '397'
     role: church-father
     confidence: 1.0
     runs: 3
-  - author: Bede the Venerable
+  - work_id: work.bede.in-lucae-evangelium-expositio
+    author: Bede the Venerable
     title: In Lucae evangelium expositio
     date: '735'
     role: doctor
@@ -29714,7 +29934,8 @@ passages:
     role: saintly
     confidence: 0.6667
     runs: 3
-  - author: Gregory the Great
+  - work_id: work.gregory-the-great.homiliae-in-evangelia
+    author: Gregory the Great
     title: Homiliae in Evangelia
     date: '604'
     role: pope
@@ -29764,7 +29985,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Ambrose of Milan
+  - work_id: work.ambrose.expositio-evangelii-secundum-lucam
+    author: Ambrose of Milan
     title: Expositio Evangelii secundum Lucam
     date: '397'
     role: church-father
@@ -29806,7 +30028,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Bede the Venerable
+  - work_id: work.bede.in-lucae-evangelium-expositio
+    author: Bede the Venerable
     title: In Lucae evangelium expositio
     date: '735'
     role: doctor
@@ -29818,7 +30041,8 @@ passages:
     role: saintly
     confidence: 0.6667
     runs: 3
-  - author: Gregory the Great
+  - work_id: work.gregory-the-great.homiliae-in-evangelia
+    author: Gregory the Great
     title: Homiliae in Evangelia
     date: '604'
     role: pope
@@ -29862,13 +30086,15 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Ambrose of Milan
+  - work_id: work.ambrose.expositio-evangelii-secundum-lucam
+    author: Ambrose of Milan
     title: Expositio Evangelii secundum Lucam
     date: '397'
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Bede the Venerable
+  - work_id: work.bede.in-lucae-evangelium-expositio
+    author: Bede the Venerable
     title: In Lucae evangelium expositio
     date: '735'
     role: doctor
@@ -29934,7 +30160,8 @@ passages:
     role: doctor
     confidence: 0.3333
     runs: 3
-  - author: Augustine of Hippo
+  - work_id: work.augustine.quaestiones-euangeliorum
+    author: Augustine of Hippo
     title: Quaestiones evangeliorum
     date: '430'
     role: doctor
@@ -29946,7 +30173,8 @@ passages:
     role: saintly
     confidence: 0.3333
     runs: 3
-  - author: Gregory the Great
+  - work_id: work.gregory-the-great.homiliae-in-evangelia
+    author: Gregory the Great
     title: Homiliae in Evangelia
     date: '604'
     role: pope
@@ -29966,13 +30194,15 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Ambrose of Milan
+  - work_id: work.ambrose.expositio-evangelii-secundum-lucam
+    author: Ambrose of Milan
     title: Expositio Evangelii secundum Lucam
     date: '397'
     role: church-father
     confidence: 1.0
     runs: 3
-  - author: Bede the Venerable
+  - work_id: work.bede.in-lucae-evangelium-expositio
+    author: Bede the Venerable
     title: In Lucae evangelium expositio
     date: '735'
     role: doctor
@@ -30014,7 +30244,8 @@ passages:
     role: saintly
     confidence: 0.6667
     runs: 3
-  - author: Gregory the Great
+  - work_id: work.gregory-the-great.homiliae-in-evangelia
+    author: Gregory the Great
     title: Homiliae in Evangelia
     date: '604'
     role: pope
@@ -30038,7 +30269,8 @@ passages:
     role: saint
     confidence: 0.6667
     runs: 3
-  - author: Augustine of Hippo
+  - work_id: work.augustine.quaestiones-euangeliorum
+    author: Augustine of Hippo
     title: Quaestiones evangeliorum
     date: '430'
     role: doctor
@@ -30070,7 +30302,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Ambrose of Milan
+  - work_id: work.ambrose.expositio-evangelii-secundum-lucam
+    author: Ambrose of Milan
     title: Expositio Evangelii secundum Lucam
     date: '397'
     role: church-father
@@ -30094,7 +30327,8 @@ passages:
     role: church-father
     confidence: 1.0
     runs: 3
-  - author: Gregory the Great
+  - work_id: work.gregory-the-great.homiliae-in-evangelia
+    author: Gregory the Great
     title: Homiliae in Evangelia
     date: '604'
     role: pope
@@ -30118,7 +30352,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Bede the Venerable
+  - work_id: work.bede.in-lucae-evangelium-expositio
+    author: Bede the Venerable
     title: In Lucae evangelium expositio
     date: '735'
     role: doctor
@@ -30142,7 +30377,8 @@ passages:
     role: saintly
     confidence: 0.6667
     runs: 3
-  - author: Augustine of Hippo
+  - work_id: work.augustine.quaestiones-euangeliorum
+    author: Augustine of Hippo
     title: Quaestiones evangeliorum
     date: '430'
     role: doctor
@@ -30174,13 +30410,15 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Ambrose of Milan
+  - work_id: work.ambrose.expositio-evangelii-secundum-lucam
+    author: Ambrose of Milan
     title: Expositio Evangelii secundum Lucam
     date: '397'
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Bede the Venerable
+  - work_id: work.bede.in-lucae-evangelium-expositio
+    author: Bede the Venerable
     title: In Lucae evangelium expositio
     date: '735'
     role: doctor
@@ -30246,7 +30484,8 @@ passages:
     role: doctor
     confidence: 0.3333
     runs: 3
-  - author: Augustine of Hippo
+  - work_id: work.augustine.quaestiones-euangeliorum
+    author: Augustine of Hippo
     title: Quaestiones evangeliorum
     date: '430'
     role: doctor
@@ -30272,13 +30511,15 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Ambrose of Milan
+  - work_id: work.ambrose.expositio-evangelii-secundum-lucam
+    author: Ambrose of Milan
     title: Expositio Evangelii secundum Lucam
     date: '397'
     role: church-father
     confidence: 1.0
     runs: 3
-  - author: Bede the Venerable
+  - work_id: work.bede.in-lucae-evangelium-expositio
+    author: Bede the Venerable
     title: In Lucae evangelium expositio
     date: '735'
     role: doctor
@@ -30320,7 +30561,8 @@ passages:
     role: saintly
     confidence: 0.6667
     runs: 3
-  - author: Gregory the Great
+  - work_id: work.gregory-the-great.homiliae-in-evangelia
+    author: Gregory the Great
     title: Homiliae in Evangelia
     date: '604'
     role: pope
@@ -30370,7 +30612,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Ambrose of Milan
+  - work_id: work.ambrose.expositio-evangelii-secundum-lucam
+    author: Ambrose of Milan
     title: Expositio Evangelii secundum Lucam
     date: '397'
     role: church-father
@@ -30394,7 +30637,8 @@ passages:
     role: church-father
     confidence: 1.0
     runs: 3
-  - author: Gregory the Great
+  - work_id: work.gregory-the-great.homiliae-in-evangelia
+    author: Gregory the Great
     title: Homiliae in Evangelia
     date: '604'
     role: pope
@@ -30424,7 +30668,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Bede the Venerable
+  - work_id: work.bede.in-lucae-evangelium-expositio
+    author: Bede the Venerable
     title: In Lucae evangelium expositio
     date: '735'
     role: doctor
@@ -30448,7 +30693,8 @@ passages:
     role: saintly
     confidence: 0.6667
     runs: 3
-  - author: Augustine of Hippo
+  - work_id: work.augustine.quaestiones-euangeliorum
+    author: Augustine of Hippo
     title: Quaestiones evangeliorum
     date: '430'
     role: doctor
@@ -30480,13 +30726,15 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Ambrose of Milan
+  - work_id: work.ambrose.expositio-evangelii-secundum-lucam
+    author: Ambrose of Milan
     title: Expositio Evangelii secundum Lucam
     date: '397'
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Bede the Venerable
+  - work_id: work.bede.in-lucae-evangelium-expositio
+    author: Bede the Venerable
     title: In Lucae evangelium expositio
     date: '735'
     role: doctor
@@ -30558,7 +30806,8 @@ passages:
     role: doctor
     confidence: 0.3333
     runs: 3
-  - author: Augustine of Hippo
+  - work_id: work.augustine.quaestiones-euangeliorum
+    author: Augustine of Hippo
     title: Quaestiones evangeliorum
     date: '430'
     role: doctor
@@ -30570,7 +30819,8 @@ passages:
     role: saintly
     confidence: 0.3333
     runs: 3
-  - author: Gregory the Great
+  - work_id: work.gregory-the-great.homiliae-in-evangelia
+    author: Gregory the Great
     title: Homiliae in Evangelia
     date: '604'
     role: pope
@@ -30590,13 +30840,15 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Ambrose of Milan
+  - work_id: work.ambrose.expositio-evangelii-secundum-lucam
+    author: Ambrose of Milan
     title: Expositio Evangelii secundum Lucam
     date: '397'
     role: church-father
     confidence: 1.0
     runs: 3
-  - author: Bede the Venerable
+  - work_id: work.bede.in-lucae-evangelium-expositio
+    author: Bede the Venerable
     title: In Lucae evangelium expositio
     date: '735'
     role: doctor
@@ -30676,7 +30928,8 @@ passages:
     runs: 3
 - passage: Luke 21
   works:
-  - author: Ambrose of Milan
+  - work_id: work.ambrose.expositio-evangelii-secundum-lucam
+    author: Ambrose of Milan
     title: Expositio Evangelii secundum Lucam
     date: '397'
     role: church-father
@@ -30700,7 +30953,8 @@ passages:
     role: church-father
     confidence: 1.0
     runs: 6
-  - author: Gregory the Great
+  - work_id: work.gregory-the-great.homiliae-in-evangelia
+    author: Gregory the Great
     title: Homiliae in Evangelia
     date: '604'
     role: pope
@@ -30724,7 +30978,8 @@ passages:
     role: doctor
     confidence: 0.8333
     runs: 6
-  - author: Bede the Venerable
+  - work_id: work.bede.in-lucae-evangelium-expositio
+    author: Bede the Venerable
     title: In Lucae evangelium expositio
     date: '735'
     role: doctor
@@ -30736,7 +30991,8 @@ passages:
     role: saintly
     confidence: 0.6667
     runs: 6
-  - author: Augustine of Hippo
+  - work_id: work.augustine.de-civitate-dei
+    author: Augustine of Hippo
     title: De civitate Dei
     date: '430'
     role: church-father
@@ -30850,7 +31106,8 @@ passages:
     role: church-father
     confidence: 0.1667
     runs: 6
-  - author: Peter Chrysologus
+  - work_id: work.peter-chrysologus.sermones
+    author: Peter Chrysologus
     title: Sermones
     date: '450'
     role: doctor
@@ -30864,13 +31121,15 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Ambrose of Milan
+  - work_id: work.ambrose.expositio-evangelii-secundum-lucam
+    author: Ambrose of Milan
     title: Expositio Evangelii secundum Lucam
     date: '397'
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Bede the Venerable
+  - work_id: work.bede.in-lucae-evangelium-expositio
+    author: Bede the Venerable
     title: In Lucae evangelium expositio
     date: '735'
     role: doctor
@@ -30936,7 +31195,8 @@ passages:
     role: doctor
     confidence: 0.3333
     runs: 3
-  - author: Augustine of Hippo
+  - work_id: work.augustine.quaestiones-euangeliorum
+    author: Augustine of Hippo
     title: Quaestiones evangeliorum
     date: '430'
     role: doctor
@@ -30962,13 +31222,15 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Ambrose of Milan
+  - work_id: work.ambrose.expositio-evangelii-secundum-lucam
+    author: Ambrose of Milan
     title: Expositio Evangelii secundum Lucam
     date: '397'
     role: church-father
     confidence: 1.0
     runs: 3
-  - author: Bede the Venerable
+  - work_id: work.bede.in-lucae-evangelium-expositio
+    author: Bede the Venerable
     title: In Lucae evangelium expositio
     date: '735'
     role: doctor
@@ -31054,7 +31316,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Ambrose of Milan
+  - work_id: work.ambrose.expositio-evangelii-secundum-lucam
+    author: Ambrose of Milan
     title: Expositio Evangelii secundum Lucam
     date: '397'
     role: church-father
@@ -31078,7 +31341,8 @@ passages:
     role: church-father
     confidence: 1.0
     runs: 3
-  - author: Gregory the Great
+  - work_id: work.gregory-the-great.homiliae-in-evangelia
+    author: Gregory the Great
     title: Homiliae in Evangelia
     date: '604'
     role: pope
@@ -31102,7 +31366,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Bede the Venerable
+  - work_id: work.bede.in-lucae-evangelium-expositio
+    author: Bede the Venerable
     title: In Lucae evangelium expositio
     date: '735'
     role: doctor
@@ -31158,13 +31423,15 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Ambrose of Milan
+  - work_id: work.ambrose.expositio-evangelii-secundum-lucam
+    author: Ambrose of Milan
     title: Expositio Evangelii secundum Lucam
     date: '397'
     role: church-father
     confidence: 1.0
     runs: 3
-  - author: Bede the Venerable
+  - work_id: work.bede.in-lucae-evangelium-expositio
+    author: Bede the Venerable
     title: In Lucae evangelium expositio
     date: '735'
     role: doctor
@@ -31212,7 +31479,8 @@ passages:
     role: saintly
     confidence: 0.6667
     runs: 3
-  - author: Gregory the Great
+  - work_id: work.gregory-the-great.homiliae-in-evangelia
+    author: Gregory the Great
     title: Homiliae in Evangelia
     date: '604'
     role: pope
@@ -31262,7 +31530,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Ambrose of Milan
+  - work_id: work.ambrose.expositio-evangelii-secundum-lucam
+    author: Ambrose of Milan
     title: Expositio Evangelii secundum Lucam
     date: '397'
     role: church-father
@@ -31310,7 +31579,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Bede the Venerable
+  - work_id: work.bede.in-lucae-evangelium-expositio
+    author: Bede the Venerable
     title: In Lucae evangelium expositio
     date: '735'
     role: doctor
@@ -31360,13 +31630,15 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Ambrose of Milan
+  - work_id: work.ambrose.expositio-evangelii-secundum-lucam
+    author: Ambrose of Milan
     title: Expositio Evangelii secundum Lucam
     date: '397'
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Bede the Venerable
+  - work_id: work.bede.in-lucae-evangelium-expositio
+    author: Bede the Venerable
     title: In Lucae evangelium expositio
     date: '735'
     role: doctor
@@ -31432,7 +31704,8 @@ passages:
     role: doctor
     confidence: 0.3333
     runs: 3
-  - author: Augustine of Hippo
+  - work_id: work.augustine.quaestiones-euangeliorum
+    author: Augustine of Hippo
     title: Quaestiones evangeliorum
     date: '430'
     role: doctor
@@ -31444,7 +31717,8 @@ passages:
     role: saintly
     confidence: 0.3333
     runs: 3
-  - author: Gregory the Great
+  - work_id: work.gregory-the-great.homiliae-in-evangelia
+    author: Gregory the Great
     title: Homiliae in Evangelia
     date: '604'
     role: pope
@@ -31464,13 +31738,15 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Ambrose of Milan
+  - work_id: work.ambrose.expositio-evangelii-secundum-lucam
+    author: Ambrose of Milan
     title: Expositio Evangelii secundum Lucam
     date: '397'
     role: church-father
     confidence: 1.0
     runs: 3
-  - author: Bede the Venerable
+  - work_id: work.bede.in-lucae-evangelium-expositio
+    author: Bede the Venerable
     title: In Lucae evangelium expositio
     date: '735'
     role: doctor
@@ -31556,7 +31832,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Ambrose of Milan
+  - work_id: work.ambrose.expositio-evangelii-secundum-lucam
+    author: Ambrose of Milan
     title: Expositio Evangelii secundum Lucam
     date: '397'
     role: church-father
@@ -31580,7 +31857,8 @@ passages:
     role: church-father
     confidence: 1.0
     runs: 3
-  - author: Gregory the Great
+  - work_id: work.gregory-the-great.homiliae-in-evangelia
+    author: Gregory the Great
     title: Homiliae in Evangelia
     date: '604'
     role: pope
@@ -31604,7 +31882,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Bede the Venerable
+  - work_id: work.bede.in-lucae-evangelium-expositio
+    author: Bede the Venerable
     title: In Lucae evangelium expositio
     date: '735'
     role: doctor
@@ -31654,13 +31933,15 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Ambrose of Milan
+  - work_id: work.ambrose.expositio-evangelii-secundum-lucam
+    author: Ambrose of Milan
     title: Expositio Evangelii secundum Lucam
     date: '397'
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Bede the Venerable
+  - work_id: work.bede.in-lucae-evangelium-expositio
+    author: Bede the Venerable
     title: In Lucae evangelium expositio
     date: '735'
     role: doctor
@@ -31726,7 +32007,8 @@ passages:
     role: doctor
     confidence: 0.3333
     runs: 3
-  - author: Augustine of Hippo
+  - work_id: work.augustine.quaestiones-euangeliorum
+    author: Augustine of Hippo
     title: Quaestiones evangeliorum
     date: '430'
     role: doctor
@@ -31738,7 +32020,8 @@ passages:
     role: saintly
     confidence: 0.3333
     runs: 3
-  - author: Gregory the Great
+  - work_id: work.gregory-the-great.homiliae-in-evangelia
+    author: Gregory the Great
     title: Homiliae in Evangelia
     date: '604'
     role: pope
@@ -31758,13 +32041,15 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Ambrose of Milan
+  - work_id: work.ambrose.expositio-evangelii-secundum-lucam
+    author: Ambrose of Milan
     title: Expositio Evangelii secundum Lucam
     date: '397'
     role: church-father
     confidence: 1.0
     runs: 3
-  - author: Bede the Venerable
+  - work_id: work.bede.in-lucae-evangelium-expositio
+    author: Bede the Venerable
     title: In Lucae evangelium expositio
     date: '735'
     role: doctor
@@ -32072,7 +32357,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Bede the Venerable
+  - work_id: work.bede.in-marci-evangelium-expositio
+    author: Bede the Venerable
     title: In Marci evangelium expositio
     date: '735'
     role: doctor
@@ -32176,7 +32462,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Bede the Venerable
+  - work_id: work.bede.in-marci-evangelium-expositio
+    author: Bede the Venerable
     title: In Marci evangelium expositio
     date: '735'
     role: doctor
@@ -32226,7 +32513,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Bede the Venerable
+  - work_id: work.bede.in-marci-evangelium-expositio
+    author: Bede the Venerable
     title: In Marci evangelium expositio
     date: '735'
     role: doctor
@@ -32300,7 +32588,8 @@ passages:
     runs: 3
 - passage: Mark 12
   works:
-  - author: Bede the Venerable
+  - work_id: work.bede.in-marci-evangelium-expositio
+    author: Bede the Venerable
     title: In Marci evangelium expositio
     date: '735'
     role: doctor
@@ -32398,7 +32687,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Bede the Venerable
+  - work_id: work.bede.in-marci-evangelium-expositio
+    author: Bede the Venerable
     title: In Marci evangelium expositio
     date: '735'
     role: doctor
@@ -32448,7 +32738,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Bede the Venerable
+  - work_id: work.bede.in-marci-evangelium-expositio
+    author: Bede the Venerable
     title: In Marci evangelium expositio
     date: '735'
     role: doctor
@@ -32522,7 +32813,8 @@ passages:
     runs: 3
 - passage: Mark 15
   works:
-  - author: Bede the Venerable
+  - work_id: work.bede.in-marci-evangelium-expositio
+    author: Bede the Venerable
     title: In Marci evangelium expositio
     date: '735'
     role: doctor
@@ -32602,7 +32894,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Gregory the Great
+  - work_id: work.gregory-the-great.homiliae-in-evangelia
+    author: Gregory the Great
     title: Homiliae in Evangelia
     date: '604'
     role: pope
@@ -32626,7 +32919,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Bede the Venerable
+  - work_id: work.bede.in-marci-evangelium-expositio
+    author: Bede the Venerable
     title: In Marci evangelium expositio
     date: '735'
     role: doctor
@@ -32676,7 +32970,8 @@ passages:
     runs: 3
 - passage: Mark 2
   works:
-  - author: Bede the Venerable
+  - work_id: work.bede.in-marci-evangelium-expositio
+    author: Bede the Venerable
     title: In Marci evangelium expositio
     date: '735'
     role: doctor
@@ -32774,7 +33069,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Bede the Venerable
+  - work_id: work.bede.in-marci-evangelium-expositio
+    author: Bede the Venerable
     title: In Marci evangelium expositio
     date: '735'
     role: doctor
@@ -32824,7 +33120,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Bede the Venerable
+  - work_id: work.bede.in-marci-evangelium-expositio
+    author: Bede the Venerable
     title: In Marci evangelium expositio
     date: '735'
     role: doctor
@@ -32892,7 +33189,8 @@ passages:
     runs: 3
 - passage: Mark 5
   works:
-  - author: Bede the Venerable
+  - work_id: work.bede.in-marci-evangelium-expositio
+    author: Bede the Venerable
     title: In Marci evangelium expositio
     date: '735'
     role: doctor
@@ -32990,7 +33288,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Bede the Venerable
+  - work_id: work.bede.in-marci-evangelium-expositio
+    author: Bede the Venerable
     title: In Marci evangelium expositio
     date: '735'
     role: doctor
@@ -33040,7 +33339,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Bede the Venerable
+  - work_id: work.bede.in-marci-evangelium-expositio
+    author: Bede the Venerable
     title: In Marci evangelium expositio
     date: '735'
     role: doctor
@@ -33108,7 +33408,8 @@ passages:
     runs: 3
 - passage: Mark 8
   works:
-  - author: Bede the Venerable
+  - work_id: work.bede.in-marci-evangelium-expositio
+    author: Bede the Venerable
     title: In Marci evangelium expositio
     date: '735'
     role: doctor
@@ -33206,7 +33507,8 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 3
-  - author: Bede the Venerable
+  - work_id: work.bede.in-marci-evangelium-expositio
+    author: Bede the Venerable
     title: In Marci evangelium expositio
     date: '735'
     role: doctor
@@ -33456,7 +33758,8 @@ passages:
     role: saintly
     confidence: 0.6667
     runs: 3
-  - author: Augustine of Hippo
+  - work_id: work.augustine.quaestiones-euangeliorum
+    author: Augustine of Hippo
     title: Quaestiones evangeliorum
     date: '430'
     role: doctor
@@ -33542,7 +33845,8 @@ passages:
     role: saintly
     confidence: 0.6667
     runs: 3
-  - author: Gregory the Great
+  - work_id: work.gregory-the-great.homiliae-in-evangelia
+    author: Gregory the Great
     title: Homiliae in Evangelia
     date: '604'
     role: pope
@@ -33744,7 +34048,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Gregory the Great
+  - work_id: work.gregory-the-great.homiliae-in-evangelia
+    author: Gregory the Great
     title: Homiliae in Evangelia
     date: '604'
     role: pope
@@ -33834,7 +34139,8 @@ passages:
     role: saintly
     confidence: 0.6667
     runs: 3
-  - author: Augustine of Hippo
+  - work_id: work.augustine.quaestiones-euangeliorum
+    author: Augustine of Hippo
     title: Quaestiones evangeliorum
     date: '430'
     role: doctor
@@ -33962,7 +34268,8 @@ passages:
     role: saintly
     confidence: 0.6667
     runs: 3
-  - author: Augustine of Hippo
+  - work_id: work.augustine.quaestiones-euangeliorum
+    author: Augustine of Hippo
     title: Quaestiones evangeliorum
     date: '430'
     role: doctor
@@ -34316,7 +34623,8 @@ passages:
     role: saintly
     confidence: 0.6667
     runs: 3
-  - author: Augustine of Hippo
+  - work_id: work.augustine.quaestiones-euangeliorum
+    author: Augustine of Hippo
     title: Quaestiones evangeliorum
     date: '430'
     role: doctor
@@ -34536,7 +34844,8 @@ passages:
     role: saintly
     confidence: 0.6667
     runs: 3
-  - author: Augustine of Hippo
+  - work_id: work.augustine.quaestiones-euangeliorum
+    author: Augustine of Hippo
     title: Quaestiones evangeliorum
     date: '430'
     role: doctor
@@ -34652,7 +34961,8 @@ passages:
     role: saintly
     confidence: 0.6667
     runs: 3
-  - author: Augustine of Hippo
+  - work_id: work.augustine.quaestiones-euangeliorum
+    author: Augustine of Hippo
     title: Quaestiones evangeliorum
     date: '430'
     role: doctor
@@ -34664,7 +34974,8 @@ passages:
     role: saintly
     confidence: 0.3333
     runs: 3
-  - author: Gregory the Great
+  - work_id: work.gregory-the-great.homiliae-in-evangelia
+    author: Gregory the Great
     title: Homiliae in Evangelia
     date: '604'
     role: pope
@@ -34800,7 +35111,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Gregory the Great
+  - work_id: work.gregory-the-great.homiliae-in-evangelia
+    author: Gregory the Great
     title: Homiliae in Evangelia
     date: '604'
     role: pope
@@ -34884,7 +35196,8 @@ passages:
     role: saintly
     confidence: 0.6667
     runs: 3
-  - author: Augustine of Hippo
+  - work_id: work.augustine.quaestiones-euangeliorum
+    author: Augustine of Hippo
     title: Quaestiones evangeliorum
     date: '430'
     role: doctor
@@ -35006,7 +35319,8 @@ passages:
     role: saintly
     confidence: 0.6667
     runs: 3
-  - author: Augustine of Hippo
+  - work_id: work.augustine.quaestiones-euangeliorum
+    author: Augustine of Hippo
     title: Quaestiones evangeliorum
     date: '430'
     role: doctor
@@ -35148,7 +35462,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Gregory the Great
+  - work_id: work.gregory-the-great.homiliae-in-evangelia
+    author: Gregory the Great
     title: Homiliae in Evangelia
     date: '604'
     role: pope
@@ -35232,7 +35547,8 @@ passages:
     role: saintly
     confidence: 0.6667
     runs: 3
-  - author: Augustine of Hippo
+  - work_id: work.augustine.quaestiones-euangeliorum
+    author: Augustine of Hippo
     title: Quaestiones evangeliorum
     date: '430'
     role: doctor
@@ -35354,7 +35670,8 @@ passages:
     role: saintly
     confidence: 0.6667
     runs: 3
-  - author: Augustine of Hippo
+  - work_id: work.augustine.quaestiones-euangeliorum
+    author: Augustine of Hippo
     title: Quaestiones evangeliorum
     date: '430'
     role: doctor
@@ -35824,7 +36141,8 @@ passages:
     role: saintly
     confidence: 0.3333
     runs: 3
-  - author: Gregory the Great
+  - work_id: work.gregory-the-great.homiliae-in-evangelia
+    author: Gregory the Great
     title: Homiliae in Evangelia
     date: '604'
     role: doctor
@@ -35934,7 +36252,8 @@ passages:
     role: saintly
     confidence: 0.6667
     runs: 3
-  - author: Augustine of Hippo
+  - work_id: work.augustine.quaestiones-euangeliorum
+    author: Augustine of Hippo
     title: Quaestiones evangeliorum
     date: '430'
     role: doctor
@@ -36300,7 +36619,8 @@ passages:
     role: saintly
     confidence: 0.6667
     runs: 3
-  - author: Augustine of Hippo
+  - work_id: work.augustine.quaestiones-euangeliorum
+    author: Augustine of Hippo
     title: Quaestiones evangeliorum
     date: '430'
     role: doctor
@@ -36428,7 +36748,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 0.5
     runs: 6
-  - author: Peter Chrysologus
+  - work_id: work.peter-chrysologus.sermones
+    author: Peter Chrysologus
     title: Sermones
     date: '450'
     role: doctor
@@ -37933,7 +38254,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -38056,7 +38378,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -38174,7 +38497,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -38315,7 +38639,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -38384,7 +38709,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -38483,7 +38809,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -38612,7 +38939,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -38681,7 +39009,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -38780,7 +39109,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -38927,7 +39257,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -39100,7 +39431,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -39175,7 +39507,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -39292,7 +39625,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -39397,7 +39731,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -39532,7 +39867,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -39607,7 +39943,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -39712,7 +40049,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -39847,7 +40185,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -39922,7 +40261,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -40021,7 +40361,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -40162,7 +40503,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -40249,7 +40591,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -40360,7 +40703,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -40501,7 +40845,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -40588,7 +40933,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -40693,7 +41039,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -40840,7 +41187,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -40927,7 +41275,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -41032,7 +41381,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -41179,7 +41529,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -41266,7 +41617,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -41383,7 +41735,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -41603,7 +41956,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -41690,7 +42044,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -41801,7 +42156,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -41942,7 +42298,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -42023,7 +42380,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -42134,7 +42492,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -42275,7 +42634,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -42368,7 +42728,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -42455,7 +42816,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -42566,7 +42928,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -42719,7 +43082,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -42800,7 +43164,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -42905,7 +43270,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -43046,7 +43412,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -43127,7 +43494,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -43238,7 +43606,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -43349,7 +43718,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -43472,7 +43842,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -43577,7 +43948,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -43652,7 +44024,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -43745,7 +44118,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -43880,7 +44254,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -44059,7 +44434,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -44170,7 +44546,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -44263,7 +44640,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -44386,7 +44764,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -44461,7 +44840,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -44542,7 +44922,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 6
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -44749,7 +45130,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -44824,7 +45206,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -44917,7 +45300,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -45046,7 +45430,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -45121,7 +45506,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -45226,7 +45612,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -45301,7 +45688,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -45400,7 +45788,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -45529,7 +45918,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -45604,7 +45994,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -45703,7 +46094,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -45868,7 +46260,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -45992,7 +46385,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -46073,7 +46467,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -46184,7 +46579,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -46283,7 +46679,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -46412,7 +46809,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -46487,7 +46885,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -46604,7 +47003,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -46745,7 +47145,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -46826,7 +47227,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -46931,7 +47333,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -47072,7 +47475,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -47153,7 +47557,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -47252,7 +47657,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -47375,7 +47781,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -47468,7 +47875,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -47567,7 +47975,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -47720,7 +48129,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -47887,7 +48297,8 @@ passages:
     role: ecclesiastical-writer
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -48024,7 +48435,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -48099,7 +48511,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -48192,7 +48605,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -48345,7 +48759,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -48420,7 +48835,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -48513,7 +48929,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -48636,7 +49053,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -48711,7 +49129,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -48810,7 +49229,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -48933,7 +49353,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -49008,7 +49429,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -49119,7 +49541,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -49206,7 +49629,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -49275,7 +49699,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -49362,7 +49787,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -49479,7 +49905,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -49548,7 +49975,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -49641,7 +50069,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -49758,7 +50187,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -49827,7 +50257,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -49920,7 +50351,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -50031,7 +50463,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -50124,7 +50557,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -50217,7 +50651,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -50334,7 +50769,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -50391,7 +50827,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 6
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -50544,7 +50981,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -50661,7 +51099,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -50730,7 +51169,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -50823,7 +51263,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -50940,7 +51381,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -51021,7 +51463,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -51120,7 +51563,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -51243,7 +51687,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -51312,7 +51757,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -51405,7 +51851,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -51522,7 +51969,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -51591,7 +52039,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -51684,7 +52133,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -51801,7 +52251,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: Robert Bellarmine
+  - work_id: work.robert-bellarmine.commentary-on-the-book-of-psalms
+    author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
@@ -52529,7 +52980,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: John Chrysostom
+  - work_id: work.john-chrysostom.homilies-on-romans
+    author: John Chrysostom
     title: Homiliae in epistulam ad Romanos
     date: '407'
     role: doctor
@@ -52633,7 +53085,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: John Chrysostom
+  - work_id: work.john-chrysostom.homilies-on-romans
+    author: John Chrysostom
     title: Homiliae in epistulam ad Romanos
     date: '407'
     role: church-father
@@ -52737,7 +53190,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: John Chrysostom
+  - work_id: work.john-chrysostom.homilies-on-romans
+    author: John Chrysostom
     title: Homiliae in epistulam ad Romanos
     date: '407'
     role: doctor
@@ -52835,7 +53289,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: John Chrysostom
+  - work_id: work.john-chrysostom.homilies-on-romans
+    author: John Chrysostom
     title: Homiliae in epistulam ad Romanos
     date: '407'
     role: church-father
@@ -52945,7 +53400,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 6
-  - author: John Chrysostom
+  - work_id: work.john-chrysostom.homilies-on-romans
+    author: John Chrysostom
     title: Homiliae in epistulam ad Romanos
     date: '407'
     role: church-father
@@ -53127,7 +53583,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: John Chrysostom
+  - work_id: work.john-chrysostom.homilies-on-romans
+    author: John Chrysostom
     title: Homiliae in epistulam ad Romanos
     date: '407'
     role: doctor
@@ -53225,7 +53682,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: John Chrysostom
+  - work_id: work.john-chrysostom.homilies-on-romans
+    author: John Chrysostom
     title: Homiliae in epistulam ad Romanos
     date: '407'
     role: church-father
@@ -53329,7 +53787,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: John Chrysostom
+  - work_id: work.john-chrysostom.homilies-on-romans
+    author: John Chrysostom
     title: Homiliae in epistulam ad Romanos
     date: '407'
     role: church-father
@@ -53421,7 +53880,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: John Chrysostom
+  - work_id: work.john-chrysostom.homilies-on-romans
+    author: John Chrysostom
     title: Homiliae in epistulam ad Romanos
     date: '407'
     role: church-father
@@ -53525,7 +53985,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: John Chrysostom
+  - work_id: work.john-chrysostom.homilies-on-romans
+    author: John Chrysostom
     title: Homiliae in epistulam ad Romanos
     date: '407'
     role: church-father
@@ -53635,7 +54096,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: John Chrysostom
+  - work_id: work.john-chrysostom.homilies-on-romans
+    author: John Chrysostom
     title: Homiliae in epistulam ad Romanos
     date: '407'
     role: doctor
@@ -53733,7 +54195,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: John Chrysostom
+  - work_id: work.john-chrysostom.homilies-on-romans
+    author: John Chrysostom
     title: Homiliae in epistulam ad Romanos
     date: '407'
     role: church-father
@@ -53837,7 +54300,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: John Chrysostom
+  - work_id: work.john-chrysostom.homilies-on-romans
+    author: John Chrysostom
     title: Homiliae in epistulam ad Romanos
     date: '407'
     role: church-father
@@ -53947,7 +54411,8 @@ passages:
     role: saintly
     confidence: 1.0
     runs: 3
-  - author: John Chrysostom
+  - work_id: work.john-chrysostom.homilies-on-romans
+    author: John Chrysostom
     title: Homiliae in epistulam ad Romanos
     date: '407'
     role: doctor

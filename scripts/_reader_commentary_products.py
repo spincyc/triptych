@@ -276,7 +276,8 @@ def _catena_product(relative, root, index, catalog):
             return None
         _validate_selected(root, sources, edges, {identifier})
         rows = _catena.fragments_for_book(root, edge["extent"]["token"],
-            scope=scope, sources=sources, edges=edges, passage_ids={identifier})
+            scope=scope, sources=sources, edges=edges, passage_ids={identifier},
+            include_text_structure=True)
         if len(rows) != 1:
             raise ValueError(f"{identifier}: indexed fragment did not resolve uniquely")
         return _json(_text(rows[0]))
@@ -294,7 +295,8 @@ def _catena_product(relative, root, index, catalog):
     identifiers = present[str(chapter)]
     _validate_selected(root, sources, edges, set(identifiers))
     rows = _catena.fragments_for_book(root, book["token"], scope=scope,
-        sources=sources, edges=edges, passage_ids=set(identifiers))
+        sources=sources, edges=edges, passage_ids=set(identifiers),
+        include_text_structure=False)
     if {row["id"] for row in rows} != set(identifiers):
         raise ValueError(f"{relative}: commentary membership index is stale")
     here = [_metadata(row) for row in rows]
@@ -355,11 +357,15 @@ def _paragraph_product(relative, root, index, catalog):
     if len(parts) != 3 or not parts[-1].endswith(".json") or not parts[-1][:-5].isdigit():
         return None
     edition, folder, leaf = parts
-    if edition not in catalog["paragraphs"]["editions"]:
+    edition_entry = catalog["paragraphs"]["editions"].get(edition)
+    if edition_entry is None:
         return None
     book = next((row for row in catalog["catena"]["canon"] if row["path"] == folder), None)
     chapter = int(leaf[:-5])
     if book is None or leaf != _canon.chapter_name(chapter, catalog["catena"]["chapter_digits"]):
+        return None
+    edition_chapters = edition_entry.get("chapters")
+    if isinstance(edition_chapters, dict) and chapter not in (edition_chapters.get(book["token"]) or ()):
         return None
     register = _loci._bible_register()
     artifacts = root / "src/sources/works" / register.EDITIONS[edition]["artifacts"]

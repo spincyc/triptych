@@ -113,15 +113,43 @@ class SnippetTests(CatenaFixture):
         self.assertEqual(record["segment_id"], "segment.constituent")
         self.assertEqual(record["physical_line_ranges"], [[20, 30]])
 
+    def test_audit_resolves_segment_backed_edition_id(self):
+        segment_id = "segment.augustine.de-civitate-dei.dods-1871.part"
+        self.write(
+            "src/sources/works/augustine/de-civitate-dei/editions/dods-1871/segments/part.toml",
+            'schema = 2\nrecord_type = "segment"\n'
+            f'id = "{segment_id}"\n'
+            'edition_id = "edition.augustine.de-civitate-dei.dods-1871"\n'
+            'artifact_id = "artifact.augustine.de-civitate-dei.dods-1871.body"\n',
+        )
+        passage_path = self.root / "src/sources/works/augustine/de-civitate-dei/editions/dods-1871/passages/11.7.toml"
+        passage_path.write_text(
+            passage_path.read_text(encoding="utf-8")
+            .replace('edition_id = "edition.augustine.de-civitate-dei.dods-1871"\n', "")
+            .replace(
+                'artifact_id = "artifact.augustine.de-civitate-dei.dods-1871.body"',
+                f'segment_id = "{segment_id}"',
+            ),
+            encoding="utf-8",
+        )
+        report = snippets.audit(self.root)
+        self.assertEqual(report["errors"], [])
+        self.assertEqual(report["fragments"][0]["language"], "en")
+        self.assertEqual(report["fragments"][0]["english_coverage"], "english-text")
+
 
 class HeldCorpusTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.sources = _catena.load_sources(ROOT)
+        cls.edges = _catena.load_edges(ROOT)
+        cls.rows, cls.errors = snippets.reviewed(ROOT, cls.sources, cls.edges)
+
     def test_real_pass_all_admitted_fragments_accounted_and_exact_slices_replay(self):
-        sources, edges = _catena.load_sources(ROOT), _catena.load_edges(ROOT)
-        rows, errors = snippets.reviewed(ROOT, sources, edges)
-        self.assertEqual(errors, [])
-        self.assertGreaterEqual(sum(map(len, rows.values())), 24)
-        for identifier, reviewed in rows.items():
-            text = sources.passages[identifier]["text"]
+        self.assertEqual(self.errors, [])
+        self.assertGreaterEqual(sum(map(len, self.rows.values())), 24)
+        for identifier, reviewed in self.rows.items():
+            text = self.sources.passages[identifier]["text"]
             for source, public in zip(reviewed, snippets.project(text, reviewed)):
                 replay = text.encode("utf-16-le")[public["start"]*2:public["end"]*2].decode("utf-16-le")
                 self.assertEqual(replay, text[source["start"]:source["end"]])
@@ -138,28 +166,24 @@ class HeldCorpusTests(unittest.TestCase):
         self.assertTrue(report["large_parents_without_snippets"])
 
     def test_philippians_and_gregory_have_real_explanations_not_incidental_citations(self):
-        sources, edges = _catena.load_sources(ROOT), _catena.load_edges(ROOT)
-        rows, errors = snippets.reviewed(ROOT, sources, edges)
-        self.assertEqual(errors, [])
+        self.assertEqual(self.errors, [])
         identifier = "passage.john-chrysostom.homilies-on-philippians.ccel-web-2026-09-17.3"
-        row = next(row for row in rows[identifier] if row["id"] == "verse-21")
-        text = sources.passages[identifier]["text"][row["start"]:row["end"]]
+        row = next(row for row in self.rows[identifier] if row["id"] == "verse-21")
+        text = self.sources.passages[identifier]["text"][row["start"]:row["end"]]
         self.assertTrue(text.startswith('Ver. 21. "For to me,"'))
         self.assertIn("For even in dying", text)
         self.assertNotIn("Ver. 22.", text)
         # Galatians is cited in the argument but receives no snippet edge.
         self.assertIn("Gal. ii. 20.", text)
-        self.assertEqual({row["extent"]["token"] for row in rows[identifier]}, {"Phil"})
-        gregory = next(identifier for identifier in rows if identifier.endswith("gregory-de-hominis-opificio"))
-        self.assertLess(max(row["end"]-row["start"] for row in rows[gregory]), 5000)
+        self.assertEqual({row["extent"]["token"] for row in self.rows[identifier]}, {"Phil"})
+        gregory = next(identifier for identifier in self.rows if identifier.endswith("gregory-de-hominis-opificio"))
+        self.assertLess(max(row["end"]-row["start"] for row in self.rows[gregory]), 5000)
 
     def test_colossians_objection_stays_with_its_answer(self):
-        sources, edges = _catena.load_sources(ROOT), _catena.load_edges(ROOT)
-        rows, errors = snippets.reviewed(ROOT, sources, edges)
-        self.assertEqual(errors, [])
+        self.assertEqual(self.errors, [])
         identifier = "passage.john-chrysostom.homilies-on-colossians.ccel-web-2026-09-05.4.col-1.21-23"
-        verse23 = next(row for row in rows[identifier] if row["id"] == "verse-23")
-        text = sources.passages[identifier]["text"][verse23["start"]:verse23["end"]]
+        verse23 = next(row for row in self.rows[identifier] if row["id"] == "verse-23")
+        text = self.sources.passages[identifier]["text"][verse23["start"]:verse23["end"]]
         self.assertTrue(text.startswith("But, since he ascribed"))
         self.assertIn("we need nothing", text)
         self.assertIn("If so be that ye continue", text)

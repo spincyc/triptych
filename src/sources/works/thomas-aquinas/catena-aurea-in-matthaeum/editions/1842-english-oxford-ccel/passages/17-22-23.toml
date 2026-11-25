@@ -1,0 +1,23 @@
+schema = 1
+record_type = "passage"
+id = "passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.17-22-23"
+edition_id = "edition.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel"
+artifact_id = "artifact.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.text-130e334a"
+artifact_sha256 = "130e334a0e087ba2ff7f2afc9f803921b4d1de16ed45d682c1756c0c14e3cd67"
+locus = "Matthew 17:22–23 (Oxford English lemma numbering)"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Aquinas’s compiled chain on Matthew 17:22–23, translated by Mark Pattison. Includes the lemma and all commentary through the end of the section, with the edition’s internal attributions."
+physical_line_ranges = [[4388, 4395]]
+text = "22. And while they abode in Galilee, Jesus said unto them, “The Son of man shall be betrayed into the hands of men. 23. And they shall kill him, and the third day he shall be raised again.” And they were exceeding sorry. Remig.: The Lord often foretold to His disciples the mysteries of His passion, in order that when they come to pass, they might be the lighter to them from having been known beforehand. Origen: This seems to be so like a warning He had given above, that a man might easily say that the Lord now repeated what He had said before; yet is it not so; He had not before said that He must be betrayed, but we hear now not only that He must be betrayed, but that He must be “betrayed into the hands of men.” The Son of Man indeed was “delivered up” by God the Father according to the Apostle, [Rom 8:32] but different powers gave him up into the hands of men. Jerome: Thus does He ever mix the joyful and the grievous; if it grieves them that He is to be put to death, they ought to be gladdened when they hear, “And shall rise again, the third day.” Chrys.: For this is no long time that He speaks of continuing in death, when He says that He shall rise again on the third day. Origen: By this announcement of the Lord the disciples were made very sorrowful, not attending to that He said, “And shall rise again the third day,” nor considering what He must be to whom the space of three days was enough to destroy death. Jerome: That they were thus made exceeding sorrowful, came not of their lack of faith; but out of their love of their Master they could not endure to hear of any hurt or indignity for Him."
+transcription_segments = [
+  { line = 4388, text = "22. And while they abode in Galilee, Jesus said unto them, “The Son of man shall be betrayed into the hands of men." },
+  { line = 4389, text = "23. And they shall kill him, and the third day he shall be raised again.” And they were exceeding sorry." },
+  { line = 4390, text = "Remig.: The Lord often foretold to His disciples the mysteries of His passion, in order that when they come to pass, they might be the lighter to them from having been known beforehand." },
+  { line = 4391, text = "Origen: This seems to be so like a warning He had given above, that a man might easily say that the Lord now repeated what He had said before; yet is it not so; He had not before said that He must be betrayed, but we hear now not only that He must be betrayed, but that He must be “betrayed into the hands of men.” The Son of Man indeed was “delivered up” by God the Father according to the Apostle, [Rom 8:32] but different powers gave him up into the hands of men." },
+  { line = 4392, text = "Jerome: Thus does He ever mix the joyful and the grievous; if it grieves them that He is to be put to death, they ought to be gladdened when they hear, “And shall rise again, the third day.”" },
+  { line = 4393, text = "Chrys.: For this is no long time that He speaks of continuing in death, when He says that He shall rise again on the third day." },
+  { line = 4394, text = "Origen: By this announcement of the Lord the disciples were made very sorrowful, not attending to that He said, “And shall rise again the third day,” nor considering what He must be to whom the space of three days was enough to destroy death." },
+  { line = 4395, text = "Jerome: That they were thus made exceeding sorrowful, came not of their lack of faith; but out of their love of their Master they could not endure to hear of any hurt or indignity for Him." },
+]
+verified_on = "2026-11-25"
+notes = "Checked the complete retained digital block, XML ii.xvii-p126 through ii.xvii-p133, against the retained line-based derivative text-130e334a/source.txt and candidate index candidates-fd372a66/candidates.json. Verification establishes the retained electronic wording, paragraph order, and section boundary; inherited transcription defects and internal attributions are preserved. No facsimile collation is claimed."

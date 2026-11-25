@@ -174,8 +174,8 @@ def audit(root, *, minimum_words=1000):
             continue
         identifier = edge["passage_id"]
         passage = sources.passages.get(identifier, {})
-        artifact = _catena.controlling_artifact(sources, passage) or {}
-        edition = sources.editions.get(passage.get("edition_id"), {})
+        artifact = _catena.controlling_artifact(sources, passage, root=root) or {}
+        edition = sources.editions.get(_catena.passage_edition_id(sources, passage), {})
         text = passage.get("text", "")
         versions = edge.get("english_versions", [])
         coverage = "unlinked"

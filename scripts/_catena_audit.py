@@ -17,6 +17,7 @@ import yaml
 
 import _catena
 import _catena_scope
+import _reviewed_permissions
 
 SCHEMA = "triptych-catena-held-corpus-audit/v1"
 REVIEW_PATH = Path("src/sources/commentary/held-passage-review.yaml")
@@ -172,7 +173,7 @@ def report(root: Path = _catena.ROOT) -> dict[str, Any]:
         owner_id = edition.get("work_id", "")
         work_id = edge["work_id"] if edge else owner_id
         work = kinds["work"].get(work_id) or {}
-        controller = _catena.controlling_artifact(sources, passage) or {}
+        controller = _catena.controlling_artifact(sources, passage, root=root) or {}
         decision = scope.work_decision(work_id)
         state = "indexed" if edge else "blocked" if identifier in blocked else (
             "parallel" if identifier in parallels else "unindexed")
@@ -195,9 +196,14 @@ def report(root: Path = _catena.ROOT) -> dict[str, Any]:
             gates.append("inspection-not-recorded")
         if not controller:
             gates.append("no-resolved-controller")
-        elif not (controller.get("rights_status") in _catena.PUBLISHABLE_RIGHTS or (
-            controller.get("rights_status") == "licensed" and
-            controller.get("license") in _catena.REDISTRIBUTABLE_LICENSES)):
+        elif not (
+            controller.get("rights_status") in _catena.PUBLISHABLE_RIGHTS
+            or _reviewed_permissions.allowed(root, controller, passage)
+            or (
+                controller.get("rights_status") == "licensed"
+                and controller.get("license") in _catena.REDISTRIBUTABLE_LICENSES
+            )
+        ):
             gates.append("publication-rights-not-established")
         if not decision["eligible"]:
             gates.append("commentator-" + decision["status"])

@@ -99,7 +99,7 @@ class HeldCorpusAuditTests(unittest.TestCase):
         with patch.object(audit._catena_scope, "Scope", return_value=scope), \
              patch.object(_catena, "load_edges", return_value=edges), \
              patch.object(_catena, "validate", return_value=[]), \
-             patch.object(_catena, "controlling_artifact", side_effect=lambda s, p: s.artifacts["a"]), \
+             patch.object(_catena, "controlling_artifact", side_effect=lambda s, p, **_: s.artifacts["a"]), \
              patch.object(_catena, "_commentary_index", return_value={}), \
              patch.object(_catena, "canon", return_value=[{"token": "Gen", "name": "Genesis", "last_chapter": 3}]):
             first = audit.report(self.root)
@@ -126,6 +126,50 @@ class HeldCorpusAuditTests(unittest.TestCase):
         self.assertEqual(unmapped["scripture_applicability"], "unestablished")
         self.assertNotIn("extent", unmapped)
         self.assertIn("no-canonical-scripture-edge", unmapped["gates"])
+
+    def test_reviewed_permission_artifact_honored_in_audit_gates(self):
+        self.manifest("w", "work", 'title = "Work"\nresponsible = "Author"\n')
+        self.manifest("e", "edition", 'work_id = "w"\nlanguage = "en"\n')
+        self.manifest(
+            "a", "artifact",
+            'edition_id = "e"\nrights_status = "permission"\n'
+            'license = "LicenseRef-Roger-Pearse-2018-Noncommercial"\nstorage = "tracked"\n',
+        )
+        self.manifest("p", "passage", 'edition_id = "e"\nartifact_id = "a"\ntext = "Source words"\nstates = ["verified"]\n')
+        extent = {"token": "Gen", "first_chapter": 1, "first_verse": 1, "last_chapter": 1, "last_verse": 1}
+        edges = {"fragments": [{"passage_id": "p", "work_id": "w", "extent": extent}]}
+        path = self.root / _catena.BIBLES_RELATIVE / _catena.CANONICAL_BIBLE / "chapters/Gen/1.json"
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps({"verses": {"1": "words"}}))
+        decision = {"status": "eligible", "eligible": True}
+        scope = SimpleNamespace(errors=[], work_decision=lambda _: decision,
+                                author_decision=lambda _: decision, lead_decision=lambda _: decision)
+        with patch.object(audit._catena_scope, "Scope", return_value=scope), \
+             patch.object(_catena, "load_edges", return_value=edges), \
+             patch.object(_catena, "validate", return_value=[]), \
+             patch.object(_catena, "controlling_artifact", side_effect=lambda s, p, **_: s.artifacts["a"]), \
+             patch.object(_catena, "_commentary_index", return_value={}), \
+             patch.object(_catena, "canon", return_value=[{"token": "Gen", "name": "Genesis", "last_chapter": 1}]):
+            with patch.object(audit._reviewed_permissions, "allowed", return_value=True):
+                allowed_report = audit.report(self.root)
+            with patch.object(audit._reviewed_permissions, "allowed", return_value=False):
+                refused_report = audit.report(self.root)
+        self.assertEqual(allowed_report["passages"][0]["gates"], [])
+        self.assertIn("publication-rights-not-established", refused_report["passages"][0]["gates"])
+
+    def test_admitted_origen_ezekiel_homilies_satisfy_reviewed_permission_gate(self):
+        import tomllib
+        import _reviewed_permissions
+
+        edition_dir = ROOT / "src/sources/works/origen/homiliae-in-ezechielem/editions/2014-hooker"
+        artifact = tomllib.loads(
+            (edition_dir / "artifacts/complete-english-homily-pages-46dfd5c2/artifact.toml").read_text()
+        )
+        self.assertEqual(artifact["rights_status"], "permission")
+        for section in ("homily-1-section-6", "homily-1-section-8", "homily-1-section-9"):
+            passage = tomllib.loads((edition_dir / "passages" / f"{section}.toml").read_text())
+            with self.subTest(section=section):
+                self.assertTrue(_reviewed_permissions.allowed(ROOT, artifact, passage))
 
 
 if __name__ == "__main__":
