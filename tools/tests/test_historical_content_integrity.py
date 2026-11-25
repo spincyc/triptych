@@ -56,19 +56,9 @@ POSTCONCILIAR_EXCEPTIONAL_ORDINARY_FRAMES = {
     "easter-vigil": "unavailable",
 }
 ROMAN_1962_EXCEPTIONAL_ORDINARY_FRAMES = {
-    "advent-ember-wednesday": "unavailable",
-    "advent-ember-saturday": "unavailable",
-    "lent-1-ember-wednesday": "unavailable",
-    "lent-1-ember-saturday": "unavailable",
-    "lent-4-wednesday": "unavailable",
-    "holy-wednesday": "unavailable",
-    "mass-of-the-lords-supper": "unavailable",
+    "mass-of-the-lords-supper": "full",
     "good-friday": "none",
-    "easter-vigil": "unavailable",
-    "pentecost-ember-wednesday": "unavailable",
-    "pentecost-ember-saturday": "unavailable",
-    "september-ember-wednesday": "unavailable",
-    "september-ember-saturday": "unavailable",
+    "easter-vigil": "full",
 }
 PLACEHOLDER_PROSE_PREFIX = "This entry is a placeholder"
 PRE_1955_TYPED_GAPS = {
@@ -511,7 +501,12 @@ class Pre1955OrdinaryFrameIntegrityTest(unittest.TestCase):
                 # independently specified exceptional rite and require all
                 # emitted rows, including additions, to match the source above.
                 self.assertLessEqual(expected_applicability.items(), emitted_applicability.items())
-                self.assertNotIn("full", emitted_applicability.values())
+                if calendar == "roman-1962":
+                    held = tomllib.loads((ORDINARY_INVENTORIES / "roman-1962-ordo-missae-v1.toml").read_text())
+                    self.assertEqual({key for key, value in emitted_applicability.items() if value == "full"},
+                                     {frame["mass"] for frame in held["special_mass_frames"]})
+                else:
+                    self.assertNotIn("full", emitted_applicability.values())
 
 
 class HistoricalOrdinaryIntegrityTest(unittest.TestCase):

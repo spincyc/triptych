@@ -392,9 +392,7 @@
     ]);
     if (!loaded[0].ok) throw new Error(loaded[0].message);
     runtime.bibles = loaded[0].bibles;
-    // The rubrics layer says which calendars can be resolved; the Propers
-    // manifest says which missals contribute text of their own and may be
-    // offered. A missal must be in both.
+    // Offer only missals with both calendar rules and their own Propers.
     const offered = {};
     ((loaded[2] && loaded[2].missals) || []).forEach(function (row) { offered[row.id] = row; });
     runtime.missals = ((loaded[1] && loaded[1].calendars) || []).filter(function (row) {
@@ -756,7 +754,7 @@
     const form = (mass.forms || []).find(function (row) { return row.id === resolved.form; });
     const open = (result.unresolvedChoices || []).map(function (choice) {
       const event = result.events.find(function (row) { return row.id === choice.id; });
-      return (event && event.kind === 'proper-choice' ? properChoiceLabel(event) : choice.id) +
+      return (event && event.kind === 'proper-choice' ? T.properChoiceLabel(event) : choice.id) +
         ' (' + choice.options.map(function (option) {
           return T.titleCase(String(option.id).replace(/[-_]+/g, ' '));
         }).join(' or ') + ')';
@@ -1699,11 +1697,11 @@
           );
           exposeReaderLocus(choice,
             branchLocus ? branchLocus + ' · Source alternatives' : 'Source alternatives',
-            properChoiceLabel(event));
+            T.properChoiceLabel(event));
           documentFragment.appendChild(choice);
           contents.push({
             id: prefix + event.id,
-            label: properChoiceLabel(event),
+            label: T.properChoiceLabel(event),
             element: choice,
             group: 'Proper choices'
           });
@@ -1714,7 +1712,7 @@
         if (!proper || T.isPlaceholder(proper)) return;
         const section = renderProperEvent(event, proper, eventOrdinal, structure, bible,
           fragments, state, 'h2', prefix, result);
-        const unplaced = typedUnplacedSeat(event);
+        const unplaced = T.typedUnplacedSeat(event);
         const region = unplaced && event.seat.region === 'before-frame'
           ? 'Before Ordinary frame' : (unplaced ? 'After Ordinary frame' : 'Propers');
         exposeReaderLocus(section, branchLocus ? branchLocus + ' · ' + region : region,
@@ -2009,6 +2007,7 @@
       translationWitness: state.languages.translationWitness || null,
       heading: heading,
       cycle: event.selected && event.selected.cycle || null,
+      frameNote: event.seat && event.seat.frameNote,
       lessonPreparation: event.seat && event.seat.lessonPreparation,
       orationGroups: event.orationGroups || null, executionSource: event.executionSource || null, nameExecution: event.nameExecution || null,
       conclusionExecution: event.conclusionExecution || null, sourceLocalActorOffer: event.sourceLocalActorOffer || null, orationContext: event.orationContext || null, eventId: event.id, structure: structure
@@ -2028,36 +2027,11 @@
     return node;
   }
 
-  function typedUnplacedSeat(event) {
-    const seat = event && event.seat;
-    return event && event.kind === 'proper' && seat &&
-      seat.placement === 'unseated' && /^unplaced\//.test(seat.id || '') &&
-      ['before-frame', 'after-frame'].indexOf(seat.region) >= 0 &&
-      typeof seat.basis === 'string' && Boolean(seat.basis.trim());
-  }
-
-  function decorateUnplacedProper(section, event) {
-    if (!typedUnplacedSeat(event)) return section;
-    const region = event.seat.region;
-    section.classList.add('proper-unplaced', 'proper-unplaced-' + region);
-    section.dataset.unplacedRegion = region;
-    section.dataset.unplacedBasis = event.seat.basis;
-    const position = region === 'before-frame' ? 'before' : 'after';
-    const note = T.el('p', 'composed-note proper-unplaced-note',
-      'Exceptional source placement: the source assigns this Proper ' + position +
-      ' the ordinary Mass frame. It remains here in source order; no Ordinary seat is invented.');
-    note.setAttribute('role', 'note');
-    const heading = section.querySelector(':scope > .proper-name');
-    if (heading) heading.after(note);
-    else section.prepend(note);
-    return section;
-  }
-
   function renderProperEvent(event, proper, index, structure, bible, fragments, state, heading, prefix, result) {
     const section = renderProperMaterial(
       event, proper, structure, bible, fragments, state, heading, prefix, result, event
     );
-    decorateUnplacedProper(section, event);
+    T.decorateUnplacedProper(section, event);
     return semanticNode(section, event, index, prefix);
   }
 
@@ -2083,7 +2057,7 @@
     }
     const memberIds = [];
     event.options.forEach(function (option) {
-      if (!Array.isArray(option.events) || !option.events.length ||
+      if (!Array.isArray(option.events) || (option.events.length === 0) !== (option.omission === true) ||
           option.events.some(function (member) {
             if (!member || member.kind !== 'proper' || typeof member.id !== 'string' || !member.id) {
               return true;
@@ -2104,10 +2078,6 @@
     return selected;
   }
 
-  function properChoiceLabel(event) {
-    return 'Source Proper choice: ' + T.titleCase(String(event.group).replace(/[-_]+/g, ' '));
-  }
-
   function renderProperChoiceEvent(event, mass, structure, bible, fragments, state,
       heading, memberHeading, prefix, result, ordinal, requireSeat) {
     const selected = validateProperChoiceEvent(event, requireSeat);
@@ -2116,7 +2086,7 @@
     return Shell.renderProperChoice({ T: T, event: event, selected: selected,
       wrapper: wrapper, titleId: wrapper.id + '-title', heading: heading,
       optionHeading: 'h' + String(Math.min(Number(memberHeading.slice(1)) - 1, 6)),
-      label: properChoiceLabel(event), state: state, navigate: navigate,
+      label: T.properChoiceLabel(event), state: state, navigate: navigate,
       location: location, focus: { kind: 'proper-choice-result', event: location.id },
       adapt: function (request) {
         return Adapters.adaptDay({ request: request, derived: runtime.derived,
@@ -2171,11 +2141,11 @@
         );
         exposeReaderLocus(choice,
           branchLocus ? branchLocus + ' · Unframed source rite' : 'Unframed source rite',
-          properChoiceLabel(event));
+          T.properChoiceLabel(event));
         fragment.appendChild(choice);
         contents.push({
           id: prefix + event.id,
-          label: properChoiceLabel(event),
+          label: T.properChoiceLabel(event),
           element: choice,
           group: 'Proper choices'
         });
@@ -2188,7 +2158,7 @@
       if (!proper || T.isPlaceholder(proper)) {
         throw new Error('semantic Proper event has no production Proper at ' + event.id);
       }
-      if (event.seat && event.seat.placement === 'unseated' && !typedUnplacedSeat(event)) {
+      if (event.seat && event.seat.placement === 'unseated' && !T.typedUnplacedSeat(event)) {
         throw new Error('a source Proper has an invalid unseated disposition: ' + event.id);
       }
       const node = exposeReaderLocus(
@@ -2204,7 +2174,7 @@
         id: prefix + event.id,
         label: event.editionSlotLabel || proper.name || 'Proper',
         element: node,
-        group: typedUnplacedSeat(event)
+        group: T.typedUnplacedSeat(event)
           ? 'Exceptional source-order propers' : 'Appointed propers'
       });
       properIds.push(event.id);
@@ -2235,7 +2205,7 @@
         if (leftFrame) throw new Error('a seated Proper follows the Ordinary frame');
         return;
       }
-      if (!typedUnplacedSeat(event)) {
+      if (!T.typedUnplacedSeat(event)) {
         throw new Error('appointed Proper has no usable semantic seat: ' +
           (event.editionSlotLabel || event.id));
       }
@@ -2255,6 +2225,8 @@
   function renderMissalDocument(fragment, contents, result, mass, structure, bible, fragments, state, ordinary, prefix, branchLocus) {
     if (!ordinary) throw new Error('the selected edition has no production Ordinary to render');
     assertMissalProperPlacements(result.events || []);
+    const opening = T.riteOpeningLink(mass, result.resolved.form);
+    if (opening) fragment.appendChild(opening);
     window.dayReaderDebug.ordinaryPresentations += 1;
 
     OrdinaryRenderer.configure({
@@ -2265,12 +2237,11 @@
 
     const groups = ordinaryVariantGroups(ordinary);
     const sections = new Map();
-    const elements = new Map();
+    const elements = T.ordinaryElementIndex(ordinary);
     const groupSections = new Map();
     (ordinary.sections || []).forEach(function (section) {
       sections.set(section.key, section);
       (section.elements || []).forEach(function (element) {
-        elements.set(element.key, element);
         groups.forEach(function (group) {
           const owns = (element.alternatives || []).some(function (alternative) {
             return alternative.group === group.group;
@@ -2380,11 +2351,11 @@
               'h3', 'h5', prefix, result, ordinal, true
             ),
             namedDivision(currentDivision || ordinary.title || 'Order of Mass'),
-            properChoiceLabel(choiceEvent)
+            T.properChoiceLabel(choiceEvent)
           );
           contents.push({
             id: prefix + choiceEvent.id,
-            label: properChoiceLabel(choiceEvent),
+            label: T.properChoiceLabel(choiceEvent),
             element: node,
             group: 'Proper choices'
           });
@@ -2396,7 +2367,7 @@
         }
         const anchor = event.seat && event.seat.anchor || '';
         const seatedSection = sections.get(anchor.split('/')[0]);
-        const unplaced = typedUnplacedSeat(event);
+        const unplaced = T.typedUnplacedSeat(event);
         const unplacedDivision = unplaced && event.seat.region === 'before-frame'
           ? 'Before the Ordinary frame' : (unplaced ? 'After the Ordinary frame' : null);
         const node = exposeReaderLocus(

@@ -959,7 +959,13 @@ window.Triptych = (function () {
    */
   function recastLoci(citation, bible, sourceNumbering, picked, options) {
     const written = citationNumbering(citation, sourceNumbering);
-    if (!written || !picked.loci) return null;
+    if (!picked.loci) return null;
+    if (citation.lectionary_reconstruction) {
+      return citation.lectionary_reconstruction.printed_ref +
+        ' (OLM 448, Year II) · Bible reconstruction · ' + formatLoci(picked.loci, options) +
+        ' as this edition prints it';
+    }
+    if (!written) return null;
     const source = lociFor(citation, written);
     if (!source.loci) return null;
     if (formatLoci(source.loci, options) === formatLoci(picked.loci, options)) {
@@ -1727,9 +1733,11 @@ window.Triptych = (function () {
     return (form && form.missal_witness_links || []).concat(sections);
   }
 
-  function publishedPrayerLink(witness) {
+  function publishedPrayerLink(witness, passage) {
     const inPublisher = witness.url.startsWith('https://rmhealey.com/docs/RMU/#');
-    const link = el('a', 'published-prayer-link', inPublisher ? 'Read in the U.S. English Missal' : 'Read the published English prayer');
+    const label = inPublisher ? 'Read in the U.S. English Missal'
+      : passage && witness.edition_label ? witness.edition_label : 'Read the published English prayer';
+    const link = el('a', 'published-prayer-link', label);
     link.href = witness.url;
     link.title = [witness.edition_label, witness.locus].filter(Boolean).join(' · ');
     // Keep a normal link for other editions, modified clicks and readers without dialogs.
@@ -1824,16 +1832,63 @@ window.Triptych = (function () {
     return section;
   }
 
+  function ordinaryElementIndex(ordinary) {
+    const elements = new Map();
+    for (const section of ordinary.sections || []) {
+      for (const element of section.elements || []) elements.set(element.key, element);
+    }
+    for (const frame of ordinary.lesson_frames || []) {
+      const request = frame.passion && frame.passion.request;
+      if (request) elements.set(request.key, request);
+    }
+    return elements;
+  }
+
+  function typedUnplacedSeat(event) {
+    const seat = event && event.seat;
+    return event && event.kind === 'proper' && seat &&
+      seat.placement === 'unseated' && /^unplaced\//.test(seat.id || '') &&
+      ['before-frame', 'after-frame'].indexOf(seat.region) >= 0 &&
+      typeof seat.basis === 'string' && Boolean(seat.basis.trim());
+  }
+
+  function decorateUnplacedProper(section, event) {
+    if (!typedUnplacedSeat(event)) return section;
+    const region = event.seat.region;
+    section.classList.add('proper-unplaced', 'proper-unplaced-' + region);
+    section.dataset.unplacedRegion = region;
+    section.dataset.unplacedBasis = event.seat.basis;
+    const position = region === 'before-frame' ? 'before' : 'after';
+    const note = el('p', 'composed-note proper-unplaced-note',
+      'Exceptional source placement: the source assigns this Proper ' + position +
+      ' the ordinary Mass frame. It remains here in source order; no Ordinary seat is invented.');
+    note.setAttribute('role', 'note');
+    const heading = section.querySelector(':scope > .proper-name');
+    if (heading) heading.after(note);
+    else section.prepend(note);
+    return section;
+  }
+
+  function properChoiceLabel(event) {
+    if (event.group === 'prayer-over-the-people') return 'Prayer over the People';
+    return 'Source Proper choice: ' + titleCase(String(event.group).replace(/[-_]+/g, ' '));
+  }
+
+  function riteOpeningLink(mass, form) {
+    const opening = missalWitnessLinks(mass, form).find(link => link.rite_opening);
+    if (!opening) return null;
+    const link = el('a', 'missal-rite-source', 'Read the complete rite in the ' + opening.edition_label);
+    link.href = opening.url;
+    link.title = opening.locus;
+    return link;
+  }
+
   function riteReadingNote(mass, form, disposition) {
     const section = el('section', 'missal-frame-limitation candidate-limitation');
     section.appendChild(el('h2', null, disposition.applicability === 'none'
       ? 'Liturgy of the day' : 'Propers of this Mass'));
-    const opening = missalWitnessLinks(mass, form).find(link => link.rite_opening);
-    if (opening) {
-      const anchor = el('a', 'missal-rite-source', 'Read the complete rite in the ' + opening.edition_label);
-      anchor.href = opening.url;
-      section.appendChild(anchor);
-    }
+    const opening = riteOpeningLink(mass, form);
+    if (opening) section.appendChild(opening);
     const basis = el('details', 'composed-note missal-frame-basis');
     basis.appendChild(el('summary', null, disposition.applicability === 'none'
       ? 'About this ceremony' : 'Why only the Propers appear here'));
@@ -3509,6 +3564,19 @@ window.Triptych = (function () {
       heading.appendChild(reference);
     }
     section.appendChild(heading);
+    const consultation = proper.source_consultation;
+    const frameNote = consultation ? {text: consultation.note, url: consultation.url} : held.frameNote;
+    if (frameNote) {
+      const note = el('p', 'composed-note');
+      note.appendChild(document.createTextNode(frameNote.text));
+      if (frameNote.url) {
+        note.appendChild(document.createTextNode(' '));
+        const link = el('a', 'missal-rite-source', '1962 facsimile');
+        link.href = frameNote.url;
+        note.appendChild(link);
+      }
+      section.appendChild(note);
+    }
     const cue = held.lessonPreparation;
     if (cue) {
       const langs = held.textDisplay === 'latin-and-selected' && held.orations !== 'la'
@@ -3572,13 +3640,38 @@ window.Triptych = (function () {
       );
     }
 
-    if (held.orations === 'en' && held.structure && held.eventId &&
+    if (held.orations === 'en' && proper.published_english_source) {
+      const source = publishedPrayerLink(proper.published_english_source, true);
+      source.dataset.publishedProper = proper.name;
+      section.appendChild(source);
+    }
+    if (proper.published_latin_source && (held.orations === 'la' || held.textDisplay === 'latin-and-selected')) {
+      const witness = proper.published_latin_source;
+      const link = el('a', 'published-latin-link', 'Read the published Latin text');
+      link.href = witness.url;
+      link.title = [witness.edition_label, witness.locus].filter(Boolean).join(' · ');
+      link.dataset.publishedLatinProper = proper.name;
+      section.appendChild(link);
+    }
+    if (held.structure && held.eventId &&
         ['Collect', 'Prayer over the Offerings', 'Prayer after Communion'].includes(proper.name)) {
       const [kind, edition, owner] = held.eventId.split('/');
       if (kind === 'proper' && edition === 'postconciliar') {
         const mass = held.structure.masses.find(row => row.key === owner);
-        const witness = prayerWitness(mass, proper.form_id || 'main', proper.name);
-        if (witness) section.appendChild(publishedPrayerLink(witness));
+        const form = proper.form_id || 'main';
+        if (!proper.text && (held.orations === 'la' || held.textDisplay === 'latin-and-selected')) {
+          const latin = missalWitnessLinks(mass, form).find(link => link.scope === 'form' && link.language === 'la');
+          if (latin) {
+            const link = el('a', 'published-latin-link', 'Read the Latin formulary');
+            link.href = latin.url;
+            link.title = latin.edition_label + ' · ' + latin.locus;
+            section.appendChild(link);
+          }
+        }
+        if (held.orations === 'en') {
+          const witness = prayerWitness(mass, form, proper.name);
+          if (witness) section.appendChild(publishedPrayerLink(witness));
+        }
       }
     }
 
@@ -3878,6 +3971,11 @@ window.Triptych = (function () {
     publishedPrayerLink: publishedPrayerLink,
     renderJanuaryPrayer: renderJanuaryPrayer,
     displayMissalWitnessLinks: displayMissalWitnessLinks,
+    ordinaryElementIndex: ordinaryElementIndex,
+    typedUnplacedSeat: typedUnplacedSeat,
+    decorateUnplacedProper: decorateUnplacedProper,
+    properChoiceLabel: properChoiceLabel,
+    riteOpeningLink: riteOpeningLink,
     riteReadingNote: riteReadingNote,
     recensionContext: recensionContext,
     absenceReasons: ABSENCE_REASONS,

@@ -90,7 +90,7 @@ from _commentary import (
     moved_citations,
     row_numbering,
 )
-from _psalms import PSALMS, NumberingError, convert_point
+from _psalms import PSALMS, NumberingError, convert_point, lectionary_verse_map, lectionary_edition_ranges
 from _tooling import (
     Example,
     examples_live_on_the_verbs,
@@ -355,6 +355,13 @@ def _canonical_passage(
     """
     if not isinstance(record, dict):
         return record
+    mapped = lectionary_verse_map({**record, "ref": record.get("cited_ref") or record.get("ref")})
+    if mapped:
+        # Commentary's canonical coordinate uses the numbered Vulgate carrier.
+        # Convert that coordinate if its caller requests the other concordance system.
+        record = {**record, "ranges": lectionary_edition_ranges(mapped, "clementine-vulgate")}
+        record.pop("lectionary_verse_map")
+        source = "vulgate"
     if record.get("book") != PSALMS or source == target:
         # Still re-render, so every key uses one spelling regardless of system.
         canonical = dict(record)

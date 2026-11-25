@@ -203,22 +203,29 @@ def events(ink: Ink, view: dict, *, rubrics: bool = True, accent: str = "$primar
             if note:
                 ink.line(note, "italic $warning")
         elif kind == "proper-choice":
-            # As source-choice-controls.js sets it: title, note, basis, then each option.
+            # A Missal follows the elected option. Read keeps the alternative texts for comparison.
             ink.line(event.get("title") or "Source Proper choice", f"bold {accent}")
-            if event.get("note"):
+            if event.get("note") and not missal_mode:
                 ink.line(event["note"], "italic $warning")
-            if event.get("basis"):
+            if event.get("basis") and not missal_mode:
                 ink.line(f"Source basis: {event['basis']}", "italic $text-muted")
             selection = event.get("selection") or {}
             options = list(event.get("options") or [])
             chosen = selection.get("option")
-            options.sort(key=lambda one: one.get("id") != chosen)  # the selected one first, as the page shows it
+            if missal_mode and not chosen:
+                ink.line("Choose a reading with s.", "$text-muted")
+            if missal_mode and chosen:
+                options = [option for option in options if option.get("id") == chosen]
+            else:
+                options.sort(key=lambda one: one.get("id") != chosen)
             for option in options:
                 mark = "▶" if option.get("id") == chosen else "▷"
                 ink(f"{mark} {option.get('label') or option.get('id')}", "bold")
                 if option.get("unavailable"):
                     ink(" — unavailable for this context", "italic $text-muted")
                 ink.line()
+                if missal_mode and not chosen:
+                    continue
                 for member in option.get("members") or []:
                     blocks(ink, member.get("blocks") or [], accent=accent, missal_mode=missal_mode)
         else:
@@ -245,6 +252,18 @@ def option_label(choice: dict, option: dict, view: dict) -> str:
 def choice_label(event: dict, option: dict) -> str:
     """A source proper choice's option, by the page's name for it."""
     return f"{event.get('title') or 'Source Proper choice'}  →  {option.get('label') or option.get('id')}"
+
+
+def event_source_readings(event: dict):
+    for link in event.get("sourceConsultations") or []:
+        yield event["slot"], link
+    selected = (event.get("selection") or {}).get("option")
+    for option in event.get("options") or []:
+        if selected and option["id"] != selected:
+            continue
+        for member in option.get("members") or []:
+            for link in member.get("sourceConsultations") or []:
+                yield f"{option['label']} · {member['slot']}", link
 
 
 def witness_readings(view: dict):
@@ -279,6 +298,10 @@ def memorial_sources(view: dict) -> dict:
 
 def source_witness(ink: Ink, view: dict, *, detail: bool = False) -> None:
     links = list(witness_readings(view))
+    opening = next((link for _, link in links if link.get("rite_opening")), None)
+    if opening and not detail:
+        ink.line("Complete rite in facsimile", "bold").line(opening["locus"])
+        ink.line(opening["url"], "$text-muted").line()
     january = view.get("januarySelection")
     if january and detail:
         ink.line("January weekday prayers", "bold").line(january["label"] + " · " + january["phase"].replace("-", " "))

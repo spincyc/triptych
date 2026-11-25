@@ -80,7 +80,17 @@ function environment() {
       const node = new Element('#text'); node.textContent = text; return node;
     }}, URLSearchParams, URL, console};
   context.window = context;
+  context.location = {search: '', href: 'https://example.test/liturgy/day.html'};
   vm.createContext(context);
+  vm.runInContext(fs.readFileSync(path.join(uiModuleRoot, '../shared/browser-core.js'), 'utf8'), context);
+  const request = {key: 'oblatio/iube-domine-benedicere'};
+  const ordinary = {sections: [], lesson_frames: [{passion: {request}}]};
+  assert.equal(context.Triptych.ordinaryElementIndex(ordinary).get(request.key), request);
+  const seated = new Element('section');
+  assert.equal(context.Triptych.decorateUnplacedProper(seated, {kind: 'proper', seat: {placement: 'seated'}}), seated);
+  Object.assign(T, {properChoiceLabel: context.Triptych.properChoiceLabel, ordinaryElementIndex: context.Triptych.ordinaryElementIndex,
+    typedUnplacedSeat: context.Triptych.typedUnplacedSeat, decorateUnplacedProper: context.Triptych.decorateUnplacedProper});
+  context.Triptych = T;
   vm.runInContext(source('source-choice-controls.js'), context);
   vm.runInContext(source('reader-shell.js'), context);
   vm.runInContext(source('propers-events.js'), context);
@@ -156,7 +166,7 @@ function dayView(state, wanted = 'common-acclamation', prefix = '') {
     runtime: {derived: d, structure, ordinary: null},
     navigate: (...args) => navigation.push(clone(args)),
     renderTranslationWitnessChoice: () => null, resolvableTranslationWitnessState: () => ({})});
-  ['sourceProper', 'semanticNode', 'validateProperChoiceEvent', 'properChoiceLabel',
+  ['sourceProper', 'semanticNode', 'validateProperChoiceEvent',
     'renderProperMaterial', 'renderProperChoiceEvent'].forEach((name) => {
     vm.runInContext(exactFunction(daySource, name), env.context);
   });

@@ -1099,8 +1099,8 @@ class OwnNumberingTests(unittest.TestCase):
         """Built from the tracked calendars and index into a scratch file.
 
         Not read from the tracked corpus: the test must exercise the builder.
-        The weekday course also exposes its recorded unresolved Psalm 56:14;
-        keep that refusal rather than treating it as a Vulgate antiphon.
+        The independently collated OLM 448 Psalm has an edition-bound reading
+        through the final numbered verse of the Lectionary.
         """
         import subprocess
         import tempfile
@@ -1119,11 +1119,7 @@ class OwnNumberingTests(unittest.TestCase):
         self.assertEqual(
             [row for row in corpus.get("unconvertible_references") or []
              if row["mass"].startswith("postconciliar::")],
-            [{
-                "mass": "postconciliar::ot-24-saturday",
-                "ref": "Psalm 56:10, 11-12, 13-14",
-                "reason": "hebrew Psalm 56:14 is outside the psalm",
-            }],
+            [],
         )
         (twenty_fifth,) = [
             row for row in corpus["masses"]

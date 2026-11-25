@@ -1635,6 +1635,9 @@ def load_calendar(root: Path, name: str) -> dict:
     path = root / name / "propers.yaml"
     masses: dict[str, dict] = {}
     for section, body in sorted((document.get("sections") or {}).items()):
+        # These formularies supply elected orations and have no calendar dates.
+        if section == "weekday-orations":
+            continue
         for mass in (body or {}).get("masses") or []:
             if not isinstance(mass, dict) or not mass.get("key"):
                 continue

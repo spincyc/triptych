@@ -2224,7 +2224,9 @@
     return (structure.masses || []).filter(function (mass) {
       const classified = (rubrics.keys || {})[mass.key];
       const basis = classified && basisOf(rubrics, classified.basis);
-      if (!owner.test(mass.key) || !basis || basis.id !== rule.owner_basis ||
+      const supplementary = (rule.weekday_formularies || []).includes(mass.key) &&
+        mass.kind === 'weekday-orations' && !classified;
+      if (!owner.test(mass.key) || (!supplementary && (!basis || basis.id !== rule.owner_basis)) ||
           mass.season !== rule.season || (mass.forms || []).length) return false;
       // calendar-rubrics checks the exact slot count for every held key matching
       // the owner rule before publishing it. A verified thin index can therefore
@@ -2235,7 +2237,8 @@
       return scope.slots.every(function (slot) {
         return mass.propers.filter(function (proper) { return proper.name === slot; }).length === 1;
       });
-    }).map(function (mass) { return {id: mass.key, label: mass.name}; });
+    }).map(function (mass) { return {id: mass.key, label: mass.name}; })
+      .sort(function (left, right) { return left.id.localeCompare(right.id, 'en', {numeric: true}); });
   }
 
   function memorialFeriaPrayerSources(input) {

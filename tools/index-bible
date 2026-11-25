@@ -42,6 +42,7 @@ from _projection import (  # noqa: E402
     psalter_rows,
 )
 from _psalms import (  # noqa: E402
+    lectionary_verse_map, lectionary_edition_ranges, lectionary_index_key,
     PSALMS,
     TITLES_UNNUMBERED,
     NumberingError,
@@ -551,7 +552,7 @@ class Divergences(_SharedDivergences):
 
 
 def citation(
-    entry: dict, source: str, target: str, tool, titles: str = ""
+    entry: dict, source: str, target: str, tool, titles: str = "", edition: str | None = None
 ) -> tuple[str, list, str]:
     """The key `mass-propers` will look up, and the ranges that key covers.
 
@@ -574,6 +575,13 @@ def citation(
     Hebrew-numbered ones as all of Hebrew 147 rather than 147:12 to the end. A
     range that cannot be converted whole is refused with the bound named.
     """
+    mapped = lectionary_verse_map(entry)
+    if mapped:
+        key = lectionary_index_key(mapped)
+        try:
+            return key, lectionary_edition_ranges(mapped, edition or ""), ""
+        except NumberingError as error:
+            return key, [], str(error)
     ref = str(entry["ref"])
     book = str(entry.get("book") or "")
     ranges = [span for span in (entry.get("ranges") or []) if isinstance(span, dict)]
@@ -609,12 +617,12 @@ def citation(
 
 
 def collect(
-    bible: Bible, calendar_root: Path, target: str, titles: str, tool, canon
+    bible: Bible, calendar_root: Path, target: str, titles: str, tool, canon, edition: str | None = None
 ) -> dict:
     """Index every citation every calendar makes, and record what failed."""
     passages: dict[str, str] = {}
     unresolved: list[dict[str, str]] = []
-    seen: set[tuple[str, str]] = set()
+    seen: set[tuple[str, str, str]] = set()
     counts: dict[str, dict[str, int]] = {}
     for calendar in tool.calendars(calendar_root):
         document = tool.load_calendar(calendar_root, calendar)
@@ -636,14 +644,14 @@ def collect(
         for entry, numbering in numbered:
             ref = str(entry["ref"])
             wanted.add(ref)
-            key, ranges, problem = citation(entry, numbering or source, target, tool, titles)
+            key, ranges, problem = citation(entry, numbering or source, target, tool, titles, edition)
             if not problem:
                 ranges, problem = divergences.apply(entry, ranges)
-            if (calendar, ref) in seen:
+            if (calendar, ref, key) in seen:
                 if key in passages:
                     resolved.add(ref)
                 continue
-            seen.add((calendar, ref))
+            seen.add((calendar, ref, key))
             token = bible.token(str(entry.get("book") or ""))
             if token is None:
                 problem = problem or f"no book named {entry.get('book')!r} in this edition"
@@ -928,7 +936,7 @@ def build(name: str, calendar_root: Path, artifacts: Path) -> dict:
         str(EDITIONS[name]["numbering"]),
         str(EDITIONS[name]["psalm_titles"]),
         tool,
-        sibling("citations"),
+        sibling("citations"), name,
     )
     return {
         **built,

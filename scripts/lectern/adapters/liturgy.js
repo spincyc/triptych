@@ -244,6 +244,7 @@ module.exports = function liturgy(realm) {
       translationWitness: state.witness || null,
       heading: 'h3',
       cycle: event.selected && event.selected.cycle || null,
+      frameNote: event.seat && event.seat.frameNote,
       lessonPreparation: event.seat && event.seat.lessonPreparation,
       orationGroups: event.orationGroups || null, executionSource: event.executionSource || null, nameExecution: event.nameExecution || null,
       conclusionExecution: event.conclusionExecution || null, sourceLocalActorOffer: event.sourceLocalActorOffer || null, orationContext: event.orationContext || null, eventId: event.id, structure: owner,
@@ -252,7 +253,9 @@ module.exports = function liturgy(realm) {
     const languages = state.textDisplay === 'latin-and-selected' ? [...new Set(['la', state.orations])] : [state.orations];
     const available = offer && offer.scope === 'source-local-1970' && offer.state === 'available' &&
       languages.every(language => offer.languages[language] && offer.languages[language].state === 'source-derived-complete');
-    return { blocks: realm.dom.read(section), sourceLocalActorChoice: offer ? {
+    const consultations = [proper.source_consultation, proper.published_english_source, proper.published_latin_source]
+      .filter((source, i, all) => source && !all.slice(0, i).some(other => other && other.url === source.url));
+    return { blocks: realm.dom.read(section), ...(consultations.length ? {sourceConsultations: consultations} : {}), sourceLocalActorChoice: offer ? {
       scope: offer.scope, target: offer.target, available: Boolean(available),
       selected: Boolean(state.sourceLocal1970 && state.sourceLocalActorTarget === event.id),
     } : null };
@@ -263,14 +266,6 @@ module.exports = function liturgy(realm) {
     return one ? { id: one.id || null, anchor: one.anchor || null, where: one.where || null,
       locus: one.locus || null, placement: one.placement || null, region: one.region || null,
       basis: one.basis || null } : null;
-  }
-
-  function elementIndex(ordinary) {
-    const found = new Map();
-    for (const section of (ordinary && ordinary.sections) || []) {
-      for (const element of section.elements || []) found.set(element.key, element);
-    }
-    return found;
   }
 
   /* The very selected Ordinary witness, set by the same owner as the page. */
@@ -305,7 +300,7 @@ module.exports = function liturgy(realm) {
   function properChoice(event, probe) {
     const selected = event.selection && event.selection.option || null;
     return {
-      title: 'Source Proper choice: ' + T.titleCase(String(event.group).replace(/[-_]+/g, ' ')),
+      title: T.properChoiceLabel(event),
       note: selected // source-choice-controls.js:54-56
         ? 'The selected source option is shown first. Other source options remain collapsed and are not cumulative.'
         : 'The source appoints one of these alternatives here. None is selected; the option groups below are not cumulative.',
@@ -337,7 +332,7 @@ module.exports = function liturgy(realm) {
     }
     const owner = structure(calendar);
     const fragments = mass ? await T.fetchFragments(bible, T.citationsOf(mass), state, bibles()) : null;
-    const elements = elementIndex(ordinary);
+    const elements = T.ordinaryElementIndex(ordinary || {});
     const sections = new Map(((ordinary && ordinary.sections) || []).map((one) => [one.key, one]));
     const out = [];
     for (const event of result.events || []) {
@@ -840,6 +835,24 @@ module.exports = function liturgy(realm) {
     };
   }
 
+  async function votiveChant(calendar, key, id, options) {
+    const {mass} = massContext(calendar, key);
+    const chant = (mass && mass.off_date_chants || []).find(one => one.id === id);
+    if (!chant) throw new Error('No source-qualified votive chant at this position');
+    if (!chant.common) return {chant, blocks: []};
+    const state = normal(options);
+    const bible = bibleFor(state.bible);
+    const owner = structure(calendar, chant.common.mass);
+    const donor = owner.masses.find(one => one.key === chant.common.mass);
+    const proper = donor && donor.propers[chant.common.index];
+    if (!proper || proper.name !== chant.role) throw new Error('The registered Common chant is unavailable');
+    const fragments = await T.fetchFragments(bible, T.citationsOf({propers: [proper]}), state, bibles());
+    const section = T.renderProper(proper, bible, fragments, {
+      numbering: owner.numbering, orations: state.orations, textDisplay: state.textDisplay, heading: 'h3'
+    });
+    return {chant, blocks: realm.dom.read(section)};
+  }
+
   async function propers(calendar, key, options) {
     const state = normal(options);
     const bible = bibleFor(state.bible);
@@ -857,6 +870,7 @@ module.exports = function liturgy(realm) {
     Object.assign(runtime, { structure: owner, ordinary, mode: state.ordinary ? 'missal' : 'read' });
     const result = {
       entrance: 'propers', calendar, key,
+      votiveChants: mass.off_date_chants || [],
       bible: { id: bible.id, label: bible.label, language: bible.language, numbering: bible.numbering },
       state, mass: context, ordinary: ordinaryContext(ordinary, state),
       // the page's own notice, recension first (propers-reader.js:783-795)
@@ -1194,5 +1208,5 @@ module.exports = function liturgy(realm) {
   }
 
   return { opening, month, day, propers, compare, comparePropers, studyDay, studyPropers,
-    readerUrl, openReaderLink, catalogue, search, memorialPrayerForms, januaryPrayerReading };
+    readerUrl, openReaderLink, catalogue, search, memorialPrayerForms, januaryPrayerReading, votiveChant };
 };

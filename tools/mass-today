@@ -1072,6 +1072,7 @@ def propers_of(
             "placeholders": 0,
         }
     result = {
+        **({"kind": "weekday-orations"} if (mass.get("kind") or payload.get("kind")) == "weekday-orations" else {}),
         # `propers` is the documented compatibility projection.  Alternative
         # forms never concatenate into it: without a selector their ordered
         # payloads remain inspectable only under `forms`.
@@ -1140,7 +1141,7 @@ def join_weekday_orations(mass: dict, owner: dict, selection: dict, calendar: st
     harness = (
         "const adapter = require(process.argv[1]);let raw='';"
         "process.stdin.on('data',c=>raw+=c);process.stdin.on('end',()=>{"
-        "const i=JSON.parse(raw);const structure={calendar:i.calendar,masses:[{key:i.selection.owner,propers:i.owner.propers}]};"
+        "const i=JSON.parse(raw);const structure={calendar:i.calendar,masses:[{key:i.selection.owner,kind:i.owner.kind,propers:i.owner.propers}]};"
         "const rows=adapter.weekdayOrationRows(i.mass,i.rows,structure,i.selection);"
         "structure.masses[0].propers=i.owner._ordinary_source_rows.map(r=>r.proper);"
         "const ordinaryRows=adapter.weekdayOrationRows(i.mass,i.ordinaryRows,structure,i.selection);"

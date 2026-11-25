@@ -34,7 +34,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
 from _calendars import citation_reading_role, partition, read_yaml
-from _psalms import PSALMS, validate_psalm
+from _psalms import PSALMS, validate_psalm, lectionary_verse_map
 from _tooling import (
     Example,
     examples_live_on_the_verbs,
@@ -417,7 +417,12 @@ def check_passage(
     if not isinstance(passage, dict):
         problems.append(f"{where}: passage is not a mapping")
         return
-    unknown_passage = set(passage) - PASSAGE_FIELDS - {"reading_role"}
+    unknown_passage = set(passage) - PASSAGE_FIELDS - {"reading_role", "lectionary_verse_map"}
+    mapped = None
+    try:
+        mapped = lectionary_verse_map(passage)
+    except ValueError as error:
+        problems.append(f"{where}: {error}")
     if "reading_role" in passage:
         # A source-declared citation use; `_calendars` owns its whole contract.
         try:
@@ -443,7 +448,7 @@ def check_passage(
             f"{where}: psalm numbering must be one of {sorted(PSALM_NUMBERING)}, "
             f"got {numbering!r}"
         )
-    elif book == PSALMS and numbering:
+    elif book == PSALMS and numbering and not mapped:
         for entry in ranges:
             if not isinstance(entry, dict):
                 continue
@@ -915,6 +920,10 @@ def check(root: Path) -> dict[str, object]:
                     )
                     continue
                 for passage in passages_value:
+                    if (isinstance(passage, dict) and "lectionary_verse_map" in passage
+                            and (document.get("calendar") != "postconciliar" or label + suffix
+                                 != "ot-24-saturday/Responsorial Psalm/II")):
+                        file_problems.append(f"{label}{suffix}: foreign OLM 448 reconstruction owner")
                     check_passage(f"{label}{suffix}", passage, file_problems, effective,
                                   proper.get("source") if isinstance(proper, dict) else None)
                     passages += 1

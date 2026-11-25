@@ -31,7 +31,7 @@
   const KIND_SEQUENCE = ['seasonal', 'christological', 'marian', 'sanctoral'];
   const KIND_LABELS = {
     seasonal: 'Seasonal', christological: 'Christological',
-    marian: 'Marian', sanctoral: 'Sanctoral'
+    marian: 'Marian', sanctoral: 'Sanctoral', 'weekday-orations': 'Weekday prayer formularies'
   };
   const MONTHS = [
     'January', 'February', 'March', 'April', 'May', 'June',
@@ -891,6 +891,8 @@
       return event.kind === 'ordinary-section' || event.kind === 'ordinary-element';
     });
     if (missalMode && ordinaryEvents) {
+      const opening = T.riteOpeningLink(mass, result.resolved.form);
+      if (opening) fragment.appendChild(opening);
       ProperEvents.renderMissal({
         fragment: fragment, contents: contents, result: result, mass: mass, bible: bible,
         fragments: held, state: state
@@ -941,6 +943,9 @@
       });
     });
     }
+    const votiveChooser = window.TriptychSourceChoiceControls.votiveChantChooser({T: T, mass: mass,
+      state: state, bible: bible, structure: runtime.structure, load: load, bibles: runtime.bibles});
+    if (votiveChooser) fragment.appendChild(votiveChooser);
     const januaryChooser = window.TriptychSourceChoiceControls.januaryPrayerChooser({T: T, mass: mass, state: state});
     if (januaryChooser) fragment.prepend(januaryChooser);
     window.TriptychSourceChoiceControls.attachMemorialPrayers({T: T, root: fragment, mass: mass,

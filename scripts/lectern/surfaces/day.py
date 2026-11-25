@@ -127,7 +127,7 @@ class Day(MissalSurface):
         Binding("L", "ordinary_language", "Ordinary language", show=False),
         Binding("K", "companion", "Latin Bible", show=False),
         Binding("i", "contents", "contents"),
-        Binding("ctrl+o", "prayer_source", "English missal prayer source", show=False),
+        Binding("ctrl+o", "prayer_source", "current prayer source", show=False),
         Binding("u", "share", "share", show=False),
         Binding("d", "study", "study"),
         Binding("w", "witness", "witness", show=False),

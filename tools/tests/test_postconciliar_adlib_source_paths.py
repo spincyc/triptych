@@ -37,6 +37,27 @@ class AdLibitumSourcePathsTests(unittest.TestCase):
         from _calendars import ordinary_disposition_source_problems
         cls.group_problems = staticmethod(ordinary_disposition_source_problems)
 
+    def test_lenten_dismissal_and_the_36_optional_weekday_prayers(self):
+        role = 'Prayer over the People'
+        keys = {day + '-after-ash-wednesday' for day in ('thursday', 'friday', 'saturday')}
+        keys.update('lent-' + str(week) + '-' + day for week in range(1, 6)
+                    for day in ('monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'))
+        keys.update(('holy-monday', 'holy-tuesday', 'holy-wednesday'))
+        self.assertEqual(len(keys), 36)
+        for key in sorted(keys | {'ash-wednesday'}):
+            with self.subTest(mass=key):
+                (row,) = [p for p in self.masses[key]['propers'] if p['name'] == role]
+                if key == 'ash-wednesday':
+                    self.assertNotIn('ordinary_disposition', row)
+                    continue
+                disp = row['ordinary_disposition']
+                self.assertEqual((disp['kind'], disp['group'], disp['option'], disp['omission_option']),
+                                 ('alternative', 'prayer-over-the-people', 'pray', 'omit'))
+                self.assertEqual(self.group_problems(key, '', [row]), [])
+                self.assertTrue(self.group_problems(key, '', [row, row]))
+                self.assertTrue(self.group_problems(key, '', [
+                    {**row, 'ordinary_disposition': {**disp, 'omission_option': 'pray'}}]))
+
     def test_six_holy_family_options_keep_exact_owner_occurrence_sparse_cycle_and_citation(self):
         mass = self.masses['holy-family']
         for role, occurrence, cycle, reference in NEW_OPTIONS:

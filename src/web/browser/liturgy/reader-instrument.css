@@ -581,6 +581,12 @@ body:has(.reader-instrument) > .site-footer,
   color: var(--instrument-soft);
   font: 0.78rem/1.5 var(--instrument-sans);
 }
+.reader-instrument .proper-choice-settings {
+  margin: .3rem 0 .65rem;
+  color: var(--instrument-soft);
+  font: .85rem/1.5 var(--instrument-sans);
+}
+.reader-instrument .proper-choice-settings > summary { width: fit-content; cursor: pointer; }
 .reader-instrument .reader-document .proper-choice-options { display: grid; gap: 1.25rem; }
 .reader-instrument .reader-document .proper-choice-option {
   min-width: 0;
@@ -1040,7 +1046,7 @@ body:has(.reader-instrument) > .site-footer,
   .reader-instrument .cycle-choice-controls { display: none; }
 }
 
-.published-prayer-link {
+.published-prayer-link, .published-latin-link {
   display: inline-block;
   margin: .35rem .75rem .35rem 0;
   font: .875rem/1.5 var(--instrument-sans);
@@ -1072,5 +1078,5 @@ body:has(.reader-instrument) > .site-footer,
 .missal-publisher-dialog button { min-height: 2.75rem; }
 .missal-publisher-dialog iframe { width: 100%; flex: 1; border: 0; }
 @media print {
-  .missal-publisher-dialog[open], .published-prayer-link { display: none; }
+  .missal-publisher-dialog[open], .published-prayer-link, .published-latin-link { display: none; }
 }

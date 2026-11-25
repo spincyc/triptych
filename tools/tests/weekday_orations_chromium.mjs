@@ -194,7 +194,7 @@ try {
   assert.equal(await evaluate(cdp, 'document.querySelector("[name=oration-mass]").value'), '');
   assert.equal(await evaluate(cdp, 'new URLSearchParams(location.hash.slice(1)).has("oration-mass")'), false);
   assert.deepEqual(await evaluate(cdp, 'Array.from(document.querySelector("[name=oration-mass]").options).slice(1).map(row=>row.value)'),
-    Array.from({length:32}, (_,index) => 'ot-' + (index+2)));
+    Array.from({length:34}, (_,index) => 'ot-' + (index+1)));
   checks++;
 
   await evaluate(cdp, `(() => {const select=document.querySelector('[name=oration-mass]');
@@ -224,8 +224,10 @@ try {
   assert.deepEqual((await properEvents()).map(event=>event.id), selected.map(event=>event.id));
   checks++;
 
-  row = await visit(cdp, base, DAY, route({'oration-mass':'ot-2',orations:'la'}));
-  assert.ok((await properEvents()).filter(event=>event.id.includes('/ot-2/')).every(event=>event.selected.missing));
+  row = await visit(cdp, base, DAY, route({'oration-mass':'ot-34',orations:'la'}));
+  const latinBoundary = (await properEvents()).filter(event => event.id.includes('/ot-34/'));
+  assert.equal(latinBoundary.filter(event => event.selected.text).length, 1);
+  assert.equal(latinBoundary.filter(event => event.selected.missing).length, 2);
   assert.ok(await evaluate(cdp, 'document.querySelector("#reader-document").textContent.includes("unavailable")'));
   for (const width of [393,320]) {
     await cdp.send('Emulation.setDeviceMetricsOverride', {width,height:844,deviceScaleFactor:1,mobile:false});
@@ -237,7 +239,7 @@ try {
   await evaluate(cdp, `document.querySelector('#reader-orations').value='en';
     document.querySelector('#date-form').requestSubmit()`);
   await waitFor(cdp, 'dayReaderDebug.ready && dayReaderDebug.state?.languages.orations === "en"', 'language change');
-  assert.equal(await evaluate(cdp, 'dayReaderDebug.state.orationMass'), 'ot-2');
+  assert.equal(await evaluate(cdp, 'dayReaderDebug.state.orationMass'), 'ot-34');
   checks++;
 
   await evaluate(cdp, `document.querySelector('#reader-date').value='2026-01-13';
@@ -280,7 +282,17 @@ try {
   assert.equal(await evaluate(cdp, 'document.querySelectorAll(".weekday-oration-choice").length'), 1);
   checks++;
 
-  for (const patch of [ {'oration-mass':'ot-1'}, {'oration-mass':'ot-2',date:'2026-01-18'},
+  for (const key of ['ot-1', 'ot-34']) {
+    row = await visit(cdp, base, DAY, route({'oration-mass': key}));
+    const chosen = await properEvents();
+    assert.equal(row.state.orationMass, key);
+    assert.deepEqual(chosen.filter(event => event.id.includes('/ot-1-monday/')), original);
+    assert.deepEqual(chosen.filter(event => event.id.includes('/' + key + '/'))
+      .map(event => event.editionSlotLabel), ['Collect', 'Prayer over the Offerings', 'Prayer after Communion']);
+  }
+  checks++;
+
+  for (const patch of [ {'oration-mass':'ot-35'}, {'oration-mass':'ot-2',date:'2026-01-18'},
     {'oration-mass':'ot-2',missal:'roman-1962'}, {'oration-mass':'ot-2',mode:'compare','peer-missal':'roman-1962'} ]) {
     row = await visit(cdp, base, DAY, route(patch));
     assert.notEqual(row.outcome, 'ready', 'inapplicable explicit selection is refused');
@@ -410,7 +422,11 @@ try {
   ]);
   row = await visit(cdp, base, DAY, endingRoute('2026-03-27','en','selected','s-ioannis-damasceni-confessoris-ecclesiae-doctoris'));
   assert.equal(row.outcome,'unresolved');
-  assert.equal(await evaluate(cdp, 'document.querySelectorAll("[data-semantic-event-id], .calendar-formulary-choice input:checked").length'),0);
+  assert.equal(row.semantic.resolved.standing,'commemorated');
+  const commemorated = await properEvents();
+  assert.ok(commemorated.length > 0);
+  assert.ok(commemorated.every(event => event.id.includes('/s-ioannis-damasceni-confessoris-ecclesiae-doctoris/')));
+  assert.equal(await evaluate(cdp, 'document.querySelectorAll(".calendar-formulary-choice input:checked").length'),0);
   checks++;
 
   for (const [language,display] of [['en','selected'],['la','selected'],['en','latin-and-selected']]) {
@@ -447,9 +463,16 @@ try {
     await visit(cdp,base,DAY,endingRoute('2026-01-19',language));
     const post=(await properEvents()).find(event=>event.editionSlotLabel==='Postcommunion');
     const proof=await evaluate(cdp,`(() => {const section=document.querySelector('[data-semantic-event-id="${post.id}"]');
-      return {executed:section.querySelectorAll('.commemorated-oration .conclusion-execution').length,
+      return {roles:Array.from(section.querySelectorAll('.commemorated-oration .conclusion-execution'),
+        node => [node.dataset.conclusionRole,node.querySelectorAll('.conclusion-response').length]),
         held:section.querySelectorAll('.oration-execution-absence').length};})()`);
-    assert.equal(proof.executed,0);assert.ok(proof.held>0);
+    if (language === 'la') {
+      assert.deepEqual(proof.roles,[['petition',0],['conclusion-provider',1]]);
+      assert.equal(proof.held,0);
+    } else {
+      assert.deepEqual(proof.roles,[]);
+      assert.ok(proof.held>0);
+    }
   }
   checks++;
 

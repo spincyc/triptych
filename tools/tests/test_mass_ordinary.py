@@ -1255,6 +1255,59 @@ assert(!S.shownElements(ordinary).some(row => row.element.key === request.key));
             cwd=ROOT, capture_output=True, text=True)
         self.assertEqual(completed.returncode, 0, completed.stdout + completed.stderr)
 
+    def test_ash_wednesday_and_presentation_chants_take_their_own_ritual_seats(self):
+        script = r"""
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const S = require('./src/web/browser/liturgy/ordinary-seating.js');
+const [ordinaryPath, massesPath] = process.argv.slice(1);
+const ordinary = JSON.parse(fs.readFileSync(ordinaryPath));
+function assemble(key, choices) {
+  const mass = JSON.parse(fs.readFileSync(massesPath + '/' + key + '.json')).mass;
+  const context = {calendar: ordinary.calendar, mass: key, formId: 'main', choices};
+  const prepared = S.prepareProperAppointments(mass.propers, context);
+  const rite = {...context, properRows: prepared.rows, properSelections: prepared.selections};
+  const shown = S.shownElements(ordinary, null, {'proper-rite-context': rite,
+    'second-reading-appointed': prepared.rows.some(row => row.proper.name === 'Second Reading')});
+  const seated = S.seatPropers(prepared.rows, S.seats(ordinary, shown, rite), null, prepared.selections);
+  S.assertCompleteSeating(seated);
+  return S.massEvents(shown, seated);
+}
+const ashes = assemble('ash-wednesday', {});
+const distributions = ashes.filter(x => x.group?.startsWith('distribution-'));
+assert.equal(distributions.length, 4);
+assert.deepEqual(distributions.map(x => x.selection.state), Array(4).fill('required'));
+assert(distributions.every(x => x.seat.key === 'chants-at-imposition'));
+assert.match(distributions[0].seat.frameNote.text, /after the homily/i);
+const labels = ashes.map(x => x.element?.key || x.group);
+assert(labels.indexOf('liturgia-verbi/homilia') < labels.indexOf(distributions[0].group));
+assert(labels.indexOf(distributions[3].group) < labels.indexOf('symbolum/oratio-universalis'));
+assert(!labels.includes('symbolum/symbolum-nicaenum'));
+assert(!labels.includes('ritus-initiales/kyrie'));
+for (const lighting of ['printed-antiphon', 'other-suitable-chant']) {
+  for (const procession of ['lumen-with-canticle','adorna','other-suitable-chant']) {
+    const events = assemble('presentation-lord', {
+      'main/presentation-candle-lighting': lighting, 'main/presentation-procession-chant': procession
+    });
+    const order = events.map(x => x.group || x.proper?.name || x.element?.key);
+    const expected = ['presentation-candle-lighting','ritus-initiales/signum-crucis',
+      'presentation-procession-chant','Entrance Antiphon','ritus-initiales/gloria-in-excelsis','Collect'];
+    assert.deepEqual(order.filter(name => expected.includes(name)),expected);
+    assert(!order.includes('ritus-initiales/kyrie'));
+    for (const [group, selected] of [[expected[0], lighting], [expected[2], procession]]) {
+      const event = events.find(x => x.group === group);
+      assert.equal(event.selection.option,selected);
+      assert(event.seat.frameNote.text);
+    }
+  }
+}
+"""
+        result = subprocess.run(
+            ["node", "-e", script, str(DATA / "postconciliar.json"),
+             str(PROPERS / "mass/postconciliar")],
+            cwd=ROOT, capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+
     def test_evening_maundy_branches_preserve_the_printed_canon_and_endings(self):
         script = r"""
 const assert = require('node:assert/strict');
@@ -3034,10 +3087,13 @@ process.stdout.write(JSON.stringify({
         # canon/communicantes-continuatio now follows the common form, which
         # is carried as far as its printed junction. Every other event is
         # unchanged and in the same order.
-        self.assertEqual(len(sequence), 178)
+        # Compared with upstream on 2026-11-24. This Sunday gains the priest’s
+        # Gospel blessing request (Ordo Missae 1028). The two Requiem Agnus
+        # directions and its two dismissal rows do not apply on Pentecost X.
+        self.assertEqual(len(sequence), 175)
         self.assertEqual(
             digest,
-            "6946cf74b2cbf867cb89304e47784ba7fff0bbed3611c81d799e4567b9f2348f",
+            "42b54b709d3a02c6084a5fe7060d0218b752836ba517367dba3e7251c08f48fe",
         )
 
         sequence = report["ot_18_sequence"]
@@ -3189,9 +3245,11 @@ process.stdout.write(JSON.stringify({
             # heading is now the 1962 Missal's own (study English of the
             # qualified Latin), its rubric set beneath the title, with its
             # source note and the qualified notice; all 178 positions hold.
+            # The 175-event source comparison above also adds the historical
+            # incense rubric's Requiem qualification and English attribution.
             "pentecost_10_text": (
-                178,
-                "1ddb51e1538c140b1a22dcbaa939e935adbbdd63d31d1e0b80bc46ca52af85f9",
+                175,
+                "6ee672818c82af0eaf7be4da1945839d670baf7d500b7bc1175187ea70e75d5b",
             ),
             # Re-pinned 2026-10-19 (C4 step 2), diffed against HEAD 1107fdc1a:
             # the sequence is unchanged and only the Preface dialogue and the
@@ -3219,9 +3277,11 @@ process.stdout.write(JSON.stringify({
             # Re-pinned 2026-11-14: rows 33 and 70 (Prayer over the Offerings,
             # Prayer after Communion) carry the Latin the public-domain witness
             # campaign admitted; their English and every other row hold.
+            # The English source consultation for Eucharistic Prayer I is the
+            # only addition to the upstream DOM text at these 74 positions.
             "ot_18_text": (
                 74,
-                "bc1bf18161ffcd00c1cfe0cbdf4011ea7960afe65ca365474f92e6932d69444a",
+                "5789419a897dc41c3c071378a2b195892a375167e500ea6090206fe4bcda3bb4",
             ),
         }
         for key, (count, wanted_digest) in expected.items():
@@ -4450,15 +4510,25 @@ function liturgicalYear(calendar, date) {
     date.slice(0, 4) + '.json');
   return year.liturgical_years.find((one) => one.begins <= date && date <= one.ends);
 }
-function dayPredicates(calendar, mass, form, date) {
+function dayPredicates(calendar, mass, form, date, prepared) {
   const owner = liturgicalYear(calendar, date);
   const appointments = {};
   [mass.ordinary_appointments, form && form.ordinary_appointments].forEach((rows) => {
     Object.keys(rows || {}).forEach((variable) => { appointments[variable] = rows[variable].option; });
   });
-  return global.window.OrdinarySeating.predicateFacts({
-    date: date, anchors: owner && owner.anchors || null, appointments: appointments
+  const derived = require('./src/web/browser/liturgy/assembly-model.js').derive({
+    date, year: read('src/web/data/structure/calendar/' + calendar + '/' + date.slice(0, 4) + '.json'),
+    rubrics: read('src/web/data/structure/rubrics/' + calendar + '.json')
   });
+  const branch = derived.options.find(one => one.readable.some(row => row.key === mass.key));
+  const standing = branch && branch.readable.find(row => row.key === mass.key).state;
+  const facts = global.window.OrdinarySeating.predicateFacts({
+    date, anchors: owner && owner.anchors || null, appointments,
+    office: branch && {settled: branch.settled, winner: branch.winner, standing, weekday: derived.weekday}
+  });
+  facts['proper-rite-context'] = {calendar, mass: mass.key, formId: form ? form.id : 'main',
+    properRows: prepared.rows, properSelections: prepared.selections};
+  return facts;
 }
 /* The production reader prepares source-owned appointments before framing.
    These renderer probes must cross that same shared boundary, with explicit
@@ -4488,7 +4558,7 @@ function pour(file, calendar, key, formId, date, choices) {
   const prepared = prepare(structure, calendar, mass, form, date, choices);
   const frame = date
     ? global.window.OrdinarySeating.resolveElements(
-      file, {}, dayPredicates(calendar, mass, form, date)).shown
+      file, {}, dayPredicates(calendar, mass, form, date, prepared)).shown
     : P.shownElements(file);
   const placed = window.OrdinarySeating.seatPropers(
     prepared.rows, P.seats(file, frame), window.Triptych.isPlaceholder, prepared.selections);

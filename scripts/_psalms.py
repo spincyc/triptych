@@ -795,6 +795,51 @@ def addressed(book: str, converted: dict[str, list]) -> tuple[dict[str, list], d
     return ranges, refused
 
 
+def lectionary_verse_map(entry: dict) -> dict | None:
+    """Read the separately witnessed OLM 448 divisions for its seven collated Bibles."""
+    table = entry.get("lectionary_verse_map")
+    if table is None:
+        return None
+    expected = {
+        "vulgate": (55, [[10, 10], [11, 11], [12, 13]], {
+            "catholic-public-domain-version", "clementine-vulgate", "douay-rheims",
+            "douay-rheims-american-1899"}),
+        "hebrew_unnumbered": (56, [[9, 9], [10, 11], [12, 13]], {
+            "king-james-version", "revised-version-1895", "world-english-bible-catholic"}),
+    }
+    fields = {"id", "printed_ref", "appointment_source", "psalter_source", *expected}
+    raw = [{"begin": {"chapter": 56, "verse": first}, "end": {"chapter": 56, "verse": last}}
+           for first, last in ((10, 10), (11, 12), (13, 14))]
+    if (not isinstance(table, dict) or set(table) != fields or table["id"] != "olm-448-year-ii"
+            or table["printed_ref"] != "Ps 55, 10. 11–12. 13–14"
+            or table["appointment_source"] != "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.olm-448-ii-responsorial-psalm"
+            or table["psalter_source"] != "passage.catholic-church.nova-vulgata.vatican-official-web.psalmus-56-verses-10-14"
+            or entry.get("book") != PSALMS or entry.get("ref") != "Psalm 56:10, 11-12, 13-14"
+            or entry.get("ranges") != raw):
+        raise NumberingError("unverified Lectionary psalm appointment or printed verse extent")
+    for key, (chapter, verses, editions) in expected.items():
+        group = table[key]
+        if (not isinstance(group, dict) or set(group) != {"chapter", "verses", "editions"}
+                or group["chapter"] != chapter or group["verses"] != verses
+                or not isinstance(group["editions"], list) or set(group["editions"]) != editions
+                or len(group["editions"]) != len(editions)):
+            raise NumberingError("unverified Lectionary psalm verse carriers or Bible editions")
+    return table
+
+
+def lectionary_edition_ranges(table: dict, edition: str) -> list[dict]:
+    for key in ("vulgate", "hebrew_unnumbered"):
+        group = table[key]
+        if edition in group["editions"]:
+            return [{"begin": {"chapter": group["chapter"], "verse": first},
+                     "end": {"chapter": group["chapter"], "verse": last}} for first, last in group["verses"]]
+    raise NumberingError(f"no collated OLM 448 Psalm reconstruction for Bible {edition!r}")
+
+
+def lectionary_index_key(table: dict) -> str:
+    return f'{table["printed_ref"]} [OLM 448, II]'
+
+
 def addressing(numbering: str, titles: str) -> str:
     """The structure-loci key an edition in `numbering` with these psalm titles reads."""
     for key, declared in ADDRESSINGS.items():

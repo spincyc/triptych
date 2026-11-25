@@ -97,7 +97,7 @@ Missing text and unresolved source conditions remain explicit.
 | `w` | Choose an oration witness available within this Mass, including partial witnesses |
 | `s` | Choose an offered Mass, form, cycle, Ordinary option, or source reading path |
 | `i` | Open Contents at the actual semantic units; choose a destination without returning to the beginning |
-| `Ctrl+O` | Open the English missal source for the prayer at the current reading position |
+| `Ctrl+O` | Open the source for the current prayer and its appointed form |
 | `d` | Open Study: calendar, coverage, placement, sources and full translation notes |
 | `v`, `V` | Toggle Compare, or choose its peers |
 | `u` | Copy and display the canonical website URL for this reading and semantic location |
@@ -138,6 +138,11 @@ elements actually present, including the selected Eucharistic Prayer. Press
 With lynx, w3m, links or ELinks installed, `t` opens the source in that
 terminal browser and returns to the same reading on exit. The speaker marks include ℣ for a
 versicle, ℟ for a response, P for priest and S for server.
+
+Standalone 1962 Propers settings includes “Seasonal and votive chants” for
+a formulary with a printed off-date provision. Select its season to consult
+the exact page. Where a Common has the appointed chant, the source window
+shows the held bilingual wording or the selected Bible reconstruction.
 
 For a memorial with its own Collect, Reading settings lists the Prayer over
 the Offerings and Prayer after Communion separately. Choose a source and

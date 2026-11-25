@@ -131,6 +131,7 @@
       translationWitness: state.languages.translationWitness || null,
       heading: heading || 'h2', cycle: selectedCycle,
       conclusionExecution: event.conclusionExecution || null, sourceLocalActorOffer: event.sourceLocalActorOffer || null,
+      frameNote: event.seat && event.seat.frameNote,
       lessonPreparation: event.seat && event.seat.lessonPreparation,
       orationGroups: event.orationGroups || null, orationContext: event.orationContext || null, eventId: event.id, structure: runtime.structure
     });
@@ -141,37 +142,12 @@
     return section;
   }
 
-  function typedUnplacedSeat(event) {
-    const seat = event && event.seat;
-    return event && event.kind === 'proper' && seat &&
-      seat.placement === 'unseated' && /^unplaced\//.test(seat.id || '') &&
-      ['before-frame', 'after-frame'].indexOf(seat.region) >= 0 &&
-      typeof seat.basis === 'string' && Boolean(seat.basis.trim());
-  }
-
-  function decorateUnplacedProper(section, event) {
-    if (!typedUnplacedSeat(event)) return section;
-    const region = event.seat.region;
-    section.classList.add('proper-unplaced', 'proper-unplaced-' + region);
-    section.dataset.unplacedRegion = region;
-    section.dataset.unplacedBasis = event.seat.basis;
-    const position = region === 'before-frame' ? 'before' : 'after';
-    const note = T.el('p', 'composed-note proper-unplaced-note',
-      'Exceptional source placement: the source assigns this Proper ' + position +
-      ' the ordinary Mass frame. It remains here in source order; no Ordinary seat is invented.');
-    note.setAttribute('role', 'note');
-    const heading = section.querySelector(':scope > .proper-name');
-    if (heading) heading.after(note);
-    else section.prepend(note);
-    return section;
-  }
-
   function renderEvent(event, proper, bible, fragments, state) {
-    if (event.seat && event.seat.placement === 'unseated' && !typedUnplacedSeat(event)) {
+    if (event.seat && event.seat.placement === 'unseated' && !T.typedUnplacedSeat(event)) {
       throw new Error('a source Proper has an invalid unseated disposition: ' + event.id);
     }
     const section = renderProperMaterial(event, proper, bible, fragments, state, 'h2');
-    decorateUnplacedProper(section, event);
+    T.decorateUnplacedProper(section, event);
     section.dataset.semanticLocation = event.id;
     section.dataset.semanticEventId = event.id;
     section.tabIndex = -1;
@@ -200,7 +176,7 @@
     }
     const memberIds = [];
     event.options.forEach(function (option) {
-      if (!Array.isArray(option.events) || !option.events.length ||
+      if (!Array.isArray(option.events) || (option.events.length === 0) !== (option.omission === true) ||
           option.events.some(function (member) {
             if (!member || member.kind !== 'proper' || typeof member.id !== 'string' || !member.id) {
               return true;
@@ -217,10 +193,6 @@
     return selected;
   }
 
-  function properChoiceLabel(event) {
-    return 'Source Proper choice: ' + T.titleCase(String(event.group).replace(/[-_]+/g, ' '));
-  }
-
   function renderProperChoiceEvent(event, mass, bible, fragments, state) {
     const selected = validateProperChoiceEvent(event);
     const wrapper = T.el('section', 'proper-choice');
@@ -230,7 +202,7 @@
     return window.TriptychReaderShell.renderProperChoice({
       T: T, event: event, selected: selected, wrapper: wrapper,
       titleId: 'proper-choice-title-' + event.id.replace(/[^a-z0-9]+/gi, '-'),
-      heading: 'h2', optionHeading: 'h3', label: properChoiceLabel(event),
+      heading: 'h2', optionHeading: 'h3', label: T.properChoiceLabel(event),
       state: state, navigate: navigate,
       location: { kind: 'event', id: event.id }, focus: 'event',
       adapt: function (request) {
@@ -296,10 +268,9 @@
       variants: state.options.legitimate || {}, why: false
     });
     const sections = new Map();
-    const elements = new Map();
+    const elements = T.ordinaryElementIndex(ordinary);
     (ordinary.sections || []).forEach(function (section) {
       sections.set(section.key, section);
-      (section.elements || []).forEach(function (element) { elements.set(element.key, element); });
     });
     const ordinals = new Map((result.events || []).map(function (event, index) {
       return [event.id, index];
@@ -342,8 +313,8 @@
             source, mass, bible, fragments, state
           ), source, ordinals.get(source.id));
           choice.dataset.readerLocusMajor = division;
-          choice.dataset.readerLocusUnit = properChoiceLabel(source);
-          contents.push({ id: source.id, label: properChoiceLabel(source),
+          choice.dataset.readerLocusUnit = T.properChoiceLabel(source);
+          contents.push({ id: source.id, label: T.properChoiceLabel(source),
             element: choice, group: 'Proper choices' });
           return choice;
         }
@@ -353,12 +324,12 @@
           throw new Error('semantic Proper event has no production Proper at ' + source.id);
         }
         if ((!source.seat || source.seat.placement !== 'seated') &&
-            !typedUnplacedSeat(source)) {
+            !T.typedUnplacedSeat(source)) {
           throw new Error('appointed Proper has no usable semantic Ordinary seat: ' + source.id);
         }
         const node = semanticNode(renderEvent(source, proper, bible, fragments, state),
           source, ordinals.get(source.id));
-        const unplaced = typedUnplacedSeat(source);
+        const unplaced = T.typedUnplacedSeat(source);
         node.dataset.readerLocusMajor = unplaced
           ? 'Exceptional source-order propers' : division;
         node.dataset.readerLocusUnit = source.editionSlotLabel || proper.name || 'Proper';
@@ -404,8 +375,8 @@
       renderFormChoice: renderFormChoice,
       renderEvent: renderEvent,
       renderProperChoiceEvent: renderProperChoiceEvent,
-      typedUnplacedSeat: typedUnplacedSeat,
-      properChoiceLabel: properChoiceLabel,
+      typedUnplacedSeat: T.typedUnplacedSeat,
+      properChoiceLabel: T.properChoiceLabel,
       nearestProperLocation: nearestProperLocation,
       renderMissal: renderMissal
     });

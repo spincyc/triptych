@@ -810,6 +810,12 @@ A proper named `Placeholder` is never an alternate representation of this
 state. It invents a composed slot the Missal does not own and is rejected by
 `check-calendar-masses`; use the mass-level typed absence instead.
 
+A composed prayer with an externally consultable facsimile may carry
+`consultation_page` and a short source note beside its typed body status.
+The Proper producer requires exactly one registered Latin witness link at
+that page for that Mass and form. Both readers carry the page and source
+note to the individual prayer, including a standalone Read view.
+
 ## An exceptional rite may not take the normal Ordinary frame
 
 Omitting `ordinary_frame` means that the normal full Ordinary applies. The
@@ -840,6 +846,14 @@ the consecutive Proper occurrences following the Kyrie, the prayer following
 the greeting, and the final reading and chants. The printed locus establishes
 the posture cues and whether the Gloria intervenes. The pre-1955 calendar
 has its own `withheld_frames` entries at these coordinates.
+
+A fully seated special 1962 Mass can declare `full` with its source basis.
+The corresponding `special_mass_frames` entry in the Ordinary inventory
+binds exact element inclusions, omissions and before/after seats to that
+individual Mass and form. A seat selects each Proper by name and, for a
+repeated name, its one-based occurrence. An opening group may precede
+the first Ordinary section heading. The producer validates the groups
+against the authored formulary and the available Ordinary elements.
 
 ## A formulary may appoint the Ordinary's variables
 
@@ -1050,16 +1064,17 @@ owns the canon. Both run inside `make check` and need PyYAML
 | roman-pre-1955 | seasonal | 6 | 0 | 0 |
 | roman-pre-1955 | marian | 1 | 0 | 0 |
 | roman-pre-1955 | sanctoral | 1 | 0 | 0 |
-| roman-1962 | seasonal | 128 | 1427 | 0 |
-| roman-1962 | christological | 8 | 99 | 0 |
-| roman-1962 | marian | 18 | 163 | 0 |
-| roman-1962 | sanctoral | 307 | 1685 | 0 |
+| roman-1962 | seasonal | 128 | 1440 | 0 |
+| roman-1962 | christological | 8 | 102 | 0 |
+| roman-1962 | marian | 18 | 169 | 0 |
+| roman-1962 | sanctoral | 307 | 1721 | 0 |
 | roman-1962 | common | 30 | 382 | 0 |
-| postconciliar | seasonal | 390 | 2483 | 0 |
-| postconciliar | christological | 7 | 79 | 0 |
-| postconciliar | marian | 14 | 70 | 0 |
-| postconciliar | sanctoral | 201 | 898 | 0 |
-| postconciliar | common | 7 | 0 | 0 |
+| postconciliar | seasonal | 390 | 2860 | 0 |
+| postconciliar | christological | 7 | 96 | 0 |
+| postconciliar | marian | 14 | 99 | 0 |
+| postconciliar | sanctoral | 201 | 1229 | 0 |
+| postconciliar | common | 7 | 390 | 0 |
+| postconciliar | weekday-orations | 2 | 6 | 0 |
 
 | Calendar | Rank | Entries | Celebrations |
 | --- | --- | ---: | ---: |
@@ -1071,7 +1086,7 @@ owns the canon. Both run inside `make check` and need PyYAML
 | roman-1962 | I | 37 | 37 |
 | roman-1962 | II | 46 | 47 |
 | roman-1962 | III | 211 | 211 |
-| postconciliar | (no rank) | 394 | 394 |
+| postconciliar | (no rank) | 396 | 394 |
 | postconciliar | All Souls commemoration | 1 | 1 |
 | postconciliar | Feast | 24 | 24 |
 | postconciliar | Memorial | 69 | 69 |
@@ -1080,20 +1095,20 @@ owns the canon. Both run inside `make check` and need PyYAML
 
 | Measure | roman-pre-1955 | roman-1962 | postconciliar |
 | --- | ---: | ---: | ---: |
-| Masses | 8 | 491 | 619 |
-| Propers | 0 | 3756 | 3530 |
+| Masses | 8 | 491 | 621 |
+| Propers | 0 | 3814 | 4680 |
 | — named `Placeholder` | 0 | 0 | 0 |
-| — inside a `forms` block | 0 | 211 | 222 |
+| — inside a `forms` block | 0 | 214 | 639 |
 | — carrying a `cycles` mapping | 0 | 0 | 306 |
 | — carrying a `weekday_cycles` mapping | 0 | 0 | 410 |
 | Masses holding only placeholders | 0 | 0 | 0 |
 | Masses taking a formulary from another entry | 0 | 166 | 0 |
-| Propers taking their text from another entry | 0 | 101 | 51 |
-| Propers that are not placeholders | 0 | 3756 | 3530 |
-| — of those, scripture-bearing | 0 | 2270 | 3061 |
-| Encoded passages | 0 | 2757 | 4040 |
+| Propers taking their text from another entry | 0 | 109 | 51 |
+| Propers that are not placeholders | 0 | 3814 | 4680 |
+| — of those, scripture-bearing | 0 | 2296 | 3061 |
+| Encoded passages | 0 | 2787 | 4040 |
 | Distinct books cited | 0 | 58 | 73 |
-| Distinct slot names | 0 | 128 | 108 |
+| Distinct slot names | 0 | 143 | 117 |
 
 Counted from `src/sources/calendars/*/propers.yaml` and written here by
 `tools/mass-propers census --write`, which is the only thing that writes the

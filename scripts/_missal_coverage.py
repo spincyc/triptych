@@ -724,6 +724,13 @@ def expectations(path: Path, calendar: str, masses: list[dict]) -> dict:
             form_ids = {form.get("id") for form in forms} if forms else {"main"}
             if form_id and form_id not in form_ids:
                 state = "not-represented"
+            elif usage := target.get("off_date_appointment"):
+                offers = [item for item in mass.get("off_date_chants", []) if item.get("id") == key
+                          and item.get("role") == target["calendar_proper_name"]
+                          and item.get("use") == usage["use"] and item.get("when") == usage["when"]
+                          and item.get("source", {}).get("locus") == usage["rubric_locus"]]
+                if len(offers) != 1:
+                    state = "not-represented"
             elif target.get("calendar_proper_name"):
                 selected_propers = mass.get("propers") or []
                 if form_id and forms:
@@ -763,6 +770,10 @@ def expectations(path: Path, calendar: str, masses: list[dict]) -> dict:
                       "mass": mass["key"] if mass else None}
         if "off_date_appointment" in target:
             classified["off_date_appointment"] = target["off_date_appointment"]
+            if state == "represented":
+                offer = offers[0]
+                classified["standalone_consultation"] = {
+                    "source": offer["source"]["url"], "body": (offer.get("common") or {}).get("reading", "facsimile-only")}
         # Keep the independently named form even when no held calendar unit
         # corresponds to this slot. A missing Mass must not erase its target.
         if target["kind"] == "text-slot" and parent.get("kind") == "form":
@@ -906,6 +917,10 @@ def published_expectations(report: dict) -> dict:
         for row in report.get("slices") or []
     ]
     projected["target_states"] = {state: states[state] for state in TARGET_STATES}
+    if any(row.get("standalone_consultation") for row in targets):
+        projected["standalone_off_date"] = [
+            {key: row[key] for key in ("id", "mass", "off_date_appointment", "standalone_consultation")}
+            for row in targets if row.get("standalone_consultation")]
     projected["not_represented"] = [
         {key: row[key] for key in ("id", "slice_id", "kind", "off_date_appointment") if key in row}
         for row in targets if row["state"] == "not-represented"

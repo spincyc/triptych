@@ -402,6 +402,9 @@ class GeneratorCoverageTests(unittest.TestCase):
                 }}
                 with self.subTest(family=family, rights=rights), \
                      mock.patch.object(propers, "load_calendar", return_value=document), \
+                     mock.patch.object(propers, "missal_witness_links", return_value={}), \
+                     mock.patch.object(propers, "memorial_prayer_sources", return_value={}), \
+                     mock.patch.object(propers, "january_prayer_sources", return_value={}), \
                      mock.patch.object(propers, "translation_overlay", return_value=({}, {}, [], {})), \
                      mock.patch.object(propers, "publication_records", return_value=({}, [])), \
                      mock.patch.object(propers._oration_endings, "load_sources", return_value={}), \
@@ -429,6 +432,9 @@ class GeneratorCoverageTests(unittest.TestCase):
         # A citation is enough to make the scripture cycle a generated owner.
         source["cycles"]["B"]["verses"] = [{"book": "Psalms", "ranges": [], "ref": "Psalm 1"}]
         with mock.patch.object(propers, "load_calendar", return_value=document), \
+             mock.patch.object(propers, "missal_witness_links", return_value={}), \
+             mock.patch.object(propers, "memorial_prayer_sources", return_value={}), \
+             mock.patch.object(propers, "january_prayer_sources", return_value={}), \
              mock.patch.object(propers, "translation_overlay", return_value=({}, {}, [], {})), \
              mock.patch.object(propers, "publication_records", return_value=({}, [])), \
              mock.patch.object(propers._oration_endings, "load_sources", return_value={}), \
@@ -472,6 +478,9 @@ class GeneratorCoverageTests(unittest.TestCase):
         document = {"psalm_numbering": "vulgate",
                     "sections": {"temporal": {"kind": "seasonal", "masses": masses}}}
         with mock.patch.object(propers, "load_calendar", return_value=document), \
+             mock.patch.object(propers, "missal_witness_links", return_value={}), \
+             mock.patch.object(propers, "memorial_prayer_sources", return_value={}), \
+             mock.patch.object(propers, "january_prayer_sources", return_value={}), \
              mock.patch.object(propers, "translation_overlay", return_value=({}, {}, [], {})), \
              mock.patch.object(propers, "publication_records", return_value=({}, [])), \
              mock.patch.object(propers, "sanitize_proper", side_effect=lambda value, *args, **kwargs: value), \
@@ -1249,7 +1258,7 @@ state = "unenumerated"
                 if citation:
                     self.assertEqual([row["ref"] for row in held[0]["citations"]], [citation])
         # The Maundy evening Proper gives the Canon texts and its own triple
-        # Agnus in order while the distinct Mandatum/procession frame is withheld.
+        # Agnus in order before the source-specific concluding rites.
         supper = masses["mass-of-the-lords-supper"]
         names = [proper["name"] for proper in supper["propers"]]
         canon = ["Communicantes", "Hanc igitur", "Quam oblationem", "Qui pridie", "Agnus Dei"]
@@ -1257,6 +1266,7 @@ state = "unenumerated"
         for name in canon:
             target = "roman-1962-hw-cena-mass-" + name.lower().replace(" ", "-")
             self.assertEqual(states[target], "represented")
+        self.assertEqual(states["roman-1962-hw-cena-mass-dismissal"], "represented")
         self.assertEqual(states["roman-1962-hw-chrism-mass-agnus-dei"], "represented")
         evening_agnus = next(p for p in supper["propers"] if p["name"] == "Agnus Dei")
         morning_agnus = next(p for p in masses["chrism-mass"]["propers"]
@@ -1266,11 +1276,13 @@ state = "unenumerated"
             self.assertNotIn("dona nobis pacem", proper["text"].lower())
         published = document["coverage"]["expected_inventory"]
         self.assertEqual(published["target_states"],
-                         {"represented": 4271,
-                          "not-represented": 34, "unresolved": 3687})
+                         {"represented": 4307,
+                          "not-represented": 0, "unresolved": 3685})
         self.assertEqual({row["id"] for row in published["not_represented"]} & joins.keys(), set())
         off_date = {row["id"]: row["off_date_appointment"]
-                    for row in published["not_represented"]}
+                    for row in published["standalone_off_date"]}
+        self.assertEqual(Counter(row["standalone_consultation"]["body"] for row in published["standalone_off_date"]),
+                         {"held-chant": 5, "bible-reconstruction": 9, "facsimile-only": 20})
         self.assertEqual(Counter(use["when"] for use in off_date.values()), {
             "after-septuagesima": 30, "outside-eastertide": 3,
             "before-septuagesima-or-after-pentecost": 1,
@@ -1317,8 +1329,8 @@ state = "unenumerated"
                 self.assertLess(order.index(role), order.index(after))
         published = document["coverage"]["expected_inventory"]
         self.assertEqual(published["target_states"],
-                         {"represented": 4271,
-                          "not-represented": 34, "unresolved": 3687})
+                         {"represented": 4307,
+                          "not-represented": 0, "unresolved": 3685})
         gaps = {row["id"] for row in published["not_represented"]}
         self.assertTrue(all(f"roman-1962:sanctoral-form:{locus}" not in gaps
                             for locus, *_ in rows))

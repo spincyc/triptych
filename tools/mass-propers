@@ -37,7 +37,7 @@ from _psalms import (  # noqa: E402
     PSALMS,
     SYSTEMS,
     ADDRESSINGS,
-    NumberingError,
+    NumberingError, lectionary_verse_map, lectionary_edition_ranges, lectionary_index_key,
     addressed,
     convert_range_whole,
     convert_reference,
@@ -1545,6 +1545,10 @@ def resolve_entry(entry: dict, passages: dict, source: str, target: str) -> dict
     """Look one reference up, converting its psalm chapter when systems differ."""
     ref = str(entry["ref"])
     book = str(entry.get("book") or "")
+    mapped = lectionary_verse_map(entry)
+    if mapped:
+        key = lectionary_index_key(mapped)
+        return {"text": passages.get(key), "note": f'{mapped["printed_ref"]}, OLM 448 II · Bible reconstruction'}
     chapter, verse = locus_of(entry)
     if source == target or book != PSALMS or chapter is None:
         return {"text": passages.get(ref), "note": ""}
@@ -1689,6 +1693,15 @@ def citation_structure(
         structure["numbering"] = source
     if structure["token"] is None:
         structure["unresolved"] = f"no book named {book!r} in this library"
+        return structure
+    mapped = lectionary_verse_map(entry)
+    if mapped:
+        structure["lectionary_reconstruction"] = {
+            "printed_ref": mapped["printed_ref"], "appointment_source": mapped["appointment_source"],
+            "psalter_source": mapped["psalter_source"]}
+        structure["edition_loci"] = {
+            edition: loci_of(lectionary_edition_ranges(mapped, edition))
+            for group in ("vulgate", "hebrew_unnumbered") for edition in mapped[group]["editions"]}
         return structure
     try:
         converted = {target: pieces_in(entry, source, target) for target in SYSTEMS}
@@ -3757,6 +3770,7 @@ def missal_witness_links(root: Path, calendar: str, document: dict) -> dict:
              for _, mass in masses_of(document)}
     links = {}
     seen = set()
+    target_roles = {}
     for entry in entries:
         key = entry["mass"], entry["form_id"]
         scope = entry.get("scope", "form")
@@ -3776,6 +3790,25 @@ def missal_witness_links(root: Path, calendar: str, document: dict) -> dict:
             raise ValueError(f"{path.name}: invalid edition label for {key}")
         seen.add(identity)
         link = {field: entry[field] for field in ("source_id", "url", "locus")}
+        if "proper_target" in entry or "proper_targets" in entry:
+            if "proper_target" in entry and "proper_targets" in entry:
+                raise ValueError(f"{path.name}: Proper witness has two target declarations for {key}")
+            targets = entry.get("proper_targets") if "proper_targets" in entry else [entry["proper_target"]]
+            if scope != "form" or not isinstance(targets, list) or not targets:
+                raise ValueError(f"{path.name}: invalid Proper witness targets for {key}")
+            if key not in target_roles:
+                mass = next(m for _, m in masses_of(document) if m["key"] == key[0])
+                target_roles[key] = {(p.get("name"), source_slot_identity(document, mass, form, p, taken)[3])
+                                     for form, p, taken in appointed_propers(document, mass)
+                                     if form_id_for_label(mass, form) == key[1]}
+            for target in targets:
+                if (not isinstance(target, dict) or set(target) != {"role", "occurrence"} or
+                        not isinstance(target["role"], str) or type(target["occurrence"]) is not int or
+                        (target["role"], target["occurrence"]) not in target_roles[key]):
+                    raise ValueError(f"{path.name}: invalid Proper witness target for {key}")
+            if len({(target["role"], target["occurrence"]) for target in targets}) != len(targets):
+                raise ValueError(f"{path.name}: duplicate Proper witness target for {key}")
+            link["proper_targets"] = targets
         if "prayer_roles" in entry:
             roles = entry["prayer_roles"]
             if (not isinstance(roles, list) or any(role not in ("Collect", "Prayer over the Offerings",
@@ -3789,6 +3822,27 @@ def missal_witness_links(root: Path, calendar: str, document: dict) -> dict:
         link.update(edition_label=label, scope=scope, language=language, rights_status=source.get("rights_status"))
         links.setdefault(key, []).append(link)
     return links
+
+
+def published_proper_source(options: list[dict], name: str, occurrence: int, absence_records: list[dict],
+                            language: str = "en") -> dict | None:
+    """A whole-form index or another Proper's PDF page cannot attest this occurrence."""
+    target = {"role": name, "occurrence": occurrence}
+    printed = [link for link in options if link["language"] == language and target in link.get("proper_targets", [])]
+    if len(printed) > 1:
+        raise ValueError(f"conflicting printed {language} location for {name}, occurrence {occurrence}")
+    if printed:
+        return printed[0]
+    if language != "en":
+        # Only English translation refusals bind a general form link to its
+        # printed body. A Latin link needs a positive occurrence declaration.
+        return None
+    artifacts = {(row.get("reason") or {}).get("source_id") for row in absence_records
+                 if row.get("lang") == "en" and row.get("cycle") == CYCLE_ALL and row.get("extent") == "body"
+                 and (row.get("reason") or {}).get("kind") == "rights-withheld"}
+    matching = [link for link in options if link["language"] == "en" and link["scope"] == "form"
+                and not link.get("proper_targets") and link["source_id"] in artifacts]
+    return matching[0] if len(matching) == 1 else None
 
 
 def memorial_prayer_sources(root: Path, calendar: str, document: dict) -> dict:
@@ -3903,12 +3957,15 @@ def january_prayer_sources(root: Path, calendar: str, document: dict) -> dict:
     if supplement.is_file():
         phases = {"before-epiphany", "after-epiphany"}
         days = {day["weekday"]: day for day in source["weekdays"]}
-        for link in _calendars.read_toml(supplement).get("january_weekdays", []):
+        phase_links = _calendars.read_toml(supplement).get("january_weekdays", [])
+        if {(link["weekday"], link["phase"]) for link in phase_links} != {(w, p) for w in days for p in phases}:
+            raise ValueError(f"{supplement.name}: expected both published Epiphany phases for every weekday")
+        for link in phase_links:
             day = days.get(link["weekday"])
             phase = link["phase"]
             roles = link["prayer_roles"]
             if (not day or phase not in phases or phase in day.get("english_prayer_sources", {}) or
-                    not roles or not set(roles) <= {pair[0] for pair in pairs} or len(set(roles)) != len(roles) or
+                    not isinstance(roles, list) or set(roles) != {pair[0] for pair in pairs} or len(set(roles)) != len(roles) or
                     not link["locus"].strip() or not checked_url(link["source_id"], link["url"])):
                 raise ValueError(f"{supplement.name}: invalid English January prayer source")
             day.setdefault("english_prayer_sources", {})[phase] = {
@@ -3916,6 +3973,50 @@ def january_prayer_sources(root: Path, calendar: str, document: dict) -> dict:
                     "rights_status": records[link["source_id"]]["rights_status"]}
     public = {key: source[key] for key in ("rule_source_id", "rule_url", "rule_locus", "weekdays")}
     return dict.fromkeys(carriers, public)
+
+
+def votive_chant_sources(root: Path, calendar: str, document: dict, witness_links: dict) -> dict:
+    """Expose positively identified off-date chants only for explicit standalone consultation."""
+    path = inventory_root(root) / "missal-expected-targets-v1.toml"
+    if calendar != "roman-1962" or not path.exists() or not witness_links:
+        return {}
+    targets = _calendars.read_toml(path)["targets"]
+    parents = {row["id"]: row for row in targets}
+    masses = {mass["key"]: mass for _, mass in masses_of(document)}
+    results = {}
+    for row in targets:
+        usage = row.get("off_date_appointment")
+        if not usage or not row["id"].startswith(calendar + ":"):
+            continue
+        key = parents[row["parent_id"]]["calendar_mass_key"]
+        role = row["calendar_proper_name"]
+        match = re.fullmatch(r"artifact p\. (\d+) / printed p\. (\d+), raw page-local line \d+", row["source_locus"])
+        record = _calendars.read_toml(root.parent / Path(row["source_record"]).relative_to("src/sources"))
+        links = [link for link in witness_links.get((key, "main"), []) if link["source_id"] == record["id"]]
+        if not match or len(links) != 1 or usage["use"] not in {"votive", "seasonal-variant"} or not usage["rubric_locus"]:
+            raise ValueError(f"{row['id']}: invalid standalone votive chant source")
+        link = dict(links[0], url=f"{record['source_url']}#page={match[1]}", locus=usage["rubric_locus"])
+        season = {"after-septuagesima": "after Septuagesima", "outside-eastertide": "outside Eastertide",
+                  "before-septuagesima-or-after-pentecost": "before Septuagesima or after Pentecost"}[usage["when"]]
+        chant = {"id": row["id"], "role": role, "when": usage["when"], "use": usage["use"],
+                 "label": f"{role} {season}", "source": link}
+        if common := row.get("off_date_common"):
+            donor = masses[common["mass"]]
+            same_role = [(index, proper) for index, (_, proper, _) in enumerate(appointed_propers(document, donor))
+                         if proper.get("name") == role]
+            if len(same_role) != 1 or donor.get("key") == key or type(common["page"]) is not int:
+                raise ValueError(f"{row['id']}: ambiguous Common chant")
+            index, proper = same_role[0]
+            if ((common["reading"] == "bible-reconstruction" and not proper.get("verses"))
+                    or (common["reading"] == "held-chant" and not proper.get("text"))
+                    or common["reading"] not in {"bible-reconstruction", "held-chant"}):
+                raise ValueError(f"{row['id']}: Common chant body conflicts with its evidence")
+            chant["common"] = {"mass": donor["key"], "label": donor["name"], "index": index,
+                               "reading": common["reading"], "page": common["page"],
+                               "qualification": ("Held chant in Latin and historical English" if common["reading"] == "held-chant"
+                                                 else "Bible reconstruction of the Common’s appointed verses")}
+        results.setdefault(key, []).append(chant)
+    return results
 
 
 def calendar_structure(root: Path, calendar: str, tokens: dict[str, str], *,
@@ -3956,6 +4057,10 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str], *,
     witness_links = session_derived(
         ("missal-witness-links", str(root), calendar),
         lambda: missal_witness_links(root, calendar, document),
+    )
+    votive_chants = session_derived(
+        ("votive-chant-sources", str(root), calendar),
+        lambda: votive_chant_sources(root, calendar, document, witness_links),
     )
     memorial_sources = session_derived(
         ("memorial-prayer-sources", str(root), calendar),
@@ -4186,6 +4291,23 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str], *,
                     # can see that the words are the Common's.
                     "taken_from": taken_from or None,
                 }
+            if calendar == "postconciliar" and carried.get("name") not in (
+                    "Collect", "Prayer over the Offerings", "Prayer after Communion"):
+                options = witness_links.get((mass["key"], current_form_id), [])
+                for lang, field in (("en", "published_english_source"), ("la", "published_latin_source")):
+                    consulted = published_proper_source(options, carried.get("name"), identity[3], absence_records, lang)
+                    if not consulted and taken_from:
+                        consulted = published_proper_source(witness_links.get(identity[:2], []), identity[2],
+                                                            identity[3], absence_records, lang)
+                    if consulted:
+                        built_proper[field] = consulted
+            if "consultation_page" in carried:
+                page = carried["consultation_page"]
+                options = witness_links.get((mass["key"], current_form_id), [])
+                matches = [link for link in options if link["url"].endswith(f"#page={page}") and link["language"] == "la"]
+                if type(page) is not int or page < 1 or len(matches) != 1 or not carried.get("notes"):
+                    raise ValueError(f"{mass['key']}: consultation needs one registered facsimile page and a source note")
+                built_proper["source_consultation"] = {**matches[0], "note": carried["notes"]}
             # Stanzas and inline actions travel only beside the exact words
             # they were checked against; a withheld body publishes neither.
             if TEXT_STRUCTURE in carried and built_proper.get("text"):
@@ -4302,6 +4424,8 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str], *,
             ),
             "propers": propers,
         }
+        if mass["key"] in votive_chants:
+            built["off_date_chants"] = votive_chants[mass["key"]]
         if mass["key"] in january_sources:
             built["january_prayer_sources"] = january_sources[mass["key"]]
         if mass["key"] in memorial_sources:
@@ -4522,7 +4646,7 @@ def reader_structure(structure: dict) -> dict:
     result = dict(structure, reader_index=True, source_sha256=source_sha256)
     result["masses"] = []
     for mass in structure["masses"]:
-        row = {key: value for key, value in mass.items() if key not in {"propers", "forms", "january_prayer_sources"}}
+        row = {key: value for key, value in mass.items() if key not in {"propers", "forms", "january_prayer_sources", "off_date_chants"}}
         if "forms" in mass:
             row["forms"] = [{key: value for key, value in form.items() if key != "propers"}
                             for form in mass["forms"]]
@@ -5071,12 +5195,13 @@ def rank_census(document: dict) -> list[dict]:
     avoid.
     """
     counted: dict[str, dict] = {}
-    for _, mass in masses_of(document):
+    for kind, mass in masses_of(document):
         rank = mass.get("rank")
         label = NO_RANK if rank is None or str(rank) == "" else str(rank)
         row = counted.setdefault(label, {"rank": label, "entries": 0, "celebrations": 0})
         row["entries"] += 1
-        row["celebrations"] += celebrations_in(mass)
+        if kind != "weekday-orations":  # These entries supply elected prayers only.
+            row["celebrations"] += celebrations_in(mass)
     return sorted(counted.values(), key=lambda row: (row["rank"] != NO_RANK, row["rank"]))
 
 

@@ -189,6 +189,8 @@ def represented_celebrations(
     ranks = census.get("ranks")
     if not isinstance(ranks, list):
         raise Refused(f"mass-propers.calendars.{calendar}.ranks must be an array")
+    prayer_sources = sum(integer(section["masses"], f"mass-propers.calendars.{calendar}.sections.masses")
+                         for section in census.get("sections", []) if section.get("kind") == "weekday-orations")
     total = 0
     entry_total = 0
     seen_ranks: set[str] = set()
@@ -205,10 +207,11 @@ def represented_celebrations(
         seen_ranks.add(rank)
         entries = integer(row.get("entries"), f"{where}.entries")
         celebrations = integer(row.get("celebrations"), f"{where}.celebrations")
-        if celebrations < entries:
+        celebration_entries = entries - (prayer_sources if rank == "(no rank)" else 0)
+        if celebration_entries < 0 or celebrations < celebration_entries:
             raise Refused(
-                f"{where}.celebrations cannot be less than its entry count: "
-                f"{celebrations} < {entries}"
+                f"{where}.celebrations cannot be less than its celebration entry count: "
+                f"{celebrations} < {celebration_entries}"
             )
         entry_total += entries
         total += celebrations

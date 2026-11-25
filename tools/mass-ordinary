@@ -1484,9 +1484,7 @@ def lesson_frame_table(source: dict, sources: Path, name: str) -> list[dict]:
         passion = frame.get("passion")
         if "passion" in frame or address == ("holy-wednesday", "main"):
             if (address != ("holy-wednesday", "main") or not isinstance(passion, dict)
-                    or set(passion) != {"proper", "locus", "chant_before", "reading_after", "omit", "request", "appointments"}
-                    or not isinstance(passion["request"], dict)
-                    or passion["request"].get("key") != "iube-domine-benedicere"
+                    or set(passion) != {"proper", "locus", "chant_before", "reading_after", "omit", "appointments"}
                     or passion["proper"] != "Passion according to Luke" or not passion["locus"]
                     or passion["chant_before"] != "oblatio/munda-cor-meum"
                     or passion["reading_after"] != "oblatio/dominus-sit-in-corde-meo"
@@ -1531,9 +1529,9 @@ def special_mass_frame_table(source: dict, sources: Path, sections: list[dict], 
     if "special_mass_frames" not in source:
         return []
     declarations = source["special_mass_frames"]
-    if source["calendar"] != "roman-1962" or not isinstance(declarations, list) or not declarations:
-        raise SourceError(f"{name}: special_mass_frames requires 1962 source declarations")
-    masses = _calendars.mass_index(_calendars.load_document(sources / "calendars", "roman-1962", effective=False))
+    if source["calendar"] not in {"roman-1962", "postconciliar"} or not isinstance(declarations, list) or not declarations:
+        raise SourceError(f"{name}: special_mass_frames requires calendar-specific source declarations")
+    masses = _calendars.mass_index(_calendars.load_document(sources / "calendars", source["calendar"], effective=False))
     keys = [e["key"] for section in sections for e in section["elements"]]
     frames = []
     seen = set()
@@ -2465,7 +2463,9 @@ def artifact_inserted(
         proper_rite_cue = any(one["kind"] == "include-when-proper-rite" for one in conditions)
         requiem = any(one["kind"] == "include-when-any" and one["predicates"] == ["1962-requiem"]
                       for one in conditions)
-        if not (appointed or proper_rite_cue and own_text or requiem and (own_text or text_of)):
+        outside_requiem = any(one["kind"] == "include-when-any" and
+                              one["predicates"] == ["1962-ordinary-outside-requiem"] for one in conditions)
+        if not (appointed or (proper_rite_cue or outside_requiem) and own_text or requiem and (own_text or text_of)):
             raise SourceError(
                 f"{name}: inserted {key} carries no appointment condition; a text-free "
                 "stand-in must be tied to an appointment, and a proper-rite cue "
@@ -3790,13 +3790,6 @@ def calendar_structure(sources: Path, path: Path, library: dict[str, dict]) -> d
     appointments = appointment_table(source, name)
     proper_rites = proper_rite_table(source, sources, name)
     lesson_frames = lesson_frame_table(source, sources, name)
-    for frame in lesson_frames:
-        if "passion" in frame:
-            passion = frame["passion"]
-            [passion["request"]] = from_inventory(
-                {"key": "oblatio", "elements": [passion["request"]]}, witnesses,
-                restricted, absences, options, library, name, appointments)
-
     sections = []
     exclusions = []
     seen: set[str] = set()

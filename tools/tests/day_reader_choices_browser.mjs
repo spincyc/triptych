@@ -912,9 +912,12 @@ async function testMemorialPrayerSources(cdp, base) {
     return evaluate(cdp, `new URL(document.querySelector('${selector} .memorial-prayer-preview a').href).hash`);
   };
   const offering = await selectSource('Prayer over the Offerings', '/commune-doctorum-ecclesiae/doctors-2');
-  const after = await selectSource('Prayer after Communion', '/ot-33/main');
+  const after = await selectSource('Prayer after Communion', '/ot-34/main');
   assert.equal(new URLSearchParams(offering.slice(1)).get('form'), 'doctors-2');
-  assert.equal(new URLSearchParams(after.slice(1)).get('mass'), 'ot-33');
+  assert.equal(new URLSearchParams(after.slice(1)).get('mass'), 'ot-34');
+  const sourceLinks = await evaluate(cdp, `[...document.querySelectorAll('[data-memorial-prayer="Prayer after Communion"] .memorial-prayer-preview a')].map(link => link.href)`);
+  assert.ok(sourceLinks.includes('https://rmhealey.com/docs/RMU/#Y34'));
+  assert.ok(sourceLinks.includes('https://www.clerus.org/bibliaclerusonline/en/glj.htm#kg'));
   assert.equal(await evaluate(cdp, `dayReaderDebug.semantic.resolved.formulary`), 'saint-bonaventure-bishop-doctor-church');
   assert.ok(await evaluate(cdp, `document.querySelector('[data-semantic-event-id="proper/postconciliar/saint-bonaventure-bishop-doctor-church/001"]') !== null`));
 }

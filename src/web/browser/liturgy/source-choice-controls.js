@@ -43,6 +43,7 @@
     const T = input.T;
     const event = input.event;
     const selected = input.selected;
+    const missal = input.state && input.state.requestedMode === 'missal';
     const wrapper = input.wrapper;
     wrapper.dataset.properChoice = event.group;
     wrapper.dataset.choiceState = event.selection.state;
@@ -51,11 +52,24 @@
     title.id = input.titleId;
     wrapper.setAttribute('aria-labelledby', title.id);
     wrapper.appendChild(title);
-    wrapper.appendChild(T.el('p', 'proper-choice-note', selected
-      ? 'The selected source option is shown first. Other source options remain collapsed and are not cumulative.'
-      : 'The source appoints one of these alternatives here. None is selected; the option groups below are not cumulative.'));
-    wrapper.appendChild(T.el('p', 'composed-note proper-choice-basis',
-      'Source basis: ' + event.choiceBasis));
+    let settings = wrapper;
+    if (missal && selected) {
+      settings = T.el('details', 'proper-choice-settings');
+      settings.appendChild(T.el('summary', null, 'Change source option'));
+      wrapper.appendChild(settings);
+    }
+    if (!missal) {
+      wrapper.appendChild(T.el('p', 'proper-choice-note', selected
+        ? 'The selected source option is shown first. Other source options remain collapsed and are not cumulative.'
+        : 'The source appoints one of these alternatives here. None is selected; the option groups below are not cumulative.'));
+    }
+    const basis = T.el('p', 'composed-note proper-choice-basis', event.choiceBasis);
+    if (missal && !selected) {
+      const detail = T.el('details', 'proper-choice-settings');
+      detail.appendChild(T.el('summary', null, 'Source of these alternatives'));
+      detail.appendChild(basis);
+      wrapper.appendChild(detail);
+    } else settings.appendChild(basis);
     const controls = T.el('fieldset', 'ordinary-choice proper-choice-controls');
     controls.appendChild(T.el('legend', null, 'Choose a source option'));
     const choices = T.el('div', 'ordinary-choice-options');
@@ -88,14 +102,14 @@
       choices.appendChild(label);
     });
     controls.appendChild(choices);
-    wrapper.appendChild(controls);
+    settings.appendChild(controls);
     const options = T.el('div', 'proper-choice-options');
-    const displayed = selected ? event.options.filter(function (option) { return option.id === selected; })
-      .concat(event.options.filter(function (option) { return option.id !== selected; })) : event.options;
+    const displayed = selected ? event.options.filter(option => option.id === selected)
+      .concat(missal ? [] : event.options.filter(option => option.id !== selected)) : event.options;
     displayed.forEach(function (option) {
       const isSelected = selected === option.id;
       const optionName = T.titleCase(String(option.id).replace(/[-_]+/g, ' '));
-      const optionNode = selected && !isSelected
+      const optionNode = (selected || missal) && !isSelected
         ? root.document.createElement('details') : T.el('section', 'proper-choice-option');
       optionNode.classList.add('proper-choice-option');
       optionNode.dataset.properChoiceOption = option.id;
@@ -105,7 +119,7 @@
       const label = (isSelected ? 'Selected option: ' :
         (selected ? 'Other source option: ' : 'Option: ')) + optionName;
       optionNode.appendChild(T.el(optionNode.tagName === 'DETAILS' ? 'summary' : input.optionHeading,
-        'proper-choice-option-title', label + (optionNode.tagName === 'DETAILS' ? ' (not selected)' : '')));
+        'proper-choice-option-title', label));
       (option.events || []).forEach(function (member) {
         const node = input.renderMember(member);
         node.classList.add('proper-choice-member');
@@ -376,6 +390,57 @@
     return control;
   }
 
+  function votiveChantChooser(input) {
+    const chants = input.mass.off_date_chants;
+    if (!chants || !chants.length) return null;
+    const T = input.T;
+    const control = T.el('details', 'memorial-prayer-source votive-chant-chooser');
+    control.dataset.votiveMass = input.mass.key;
+    control.appendChild(T.el('summary', null, 'Seasonal and votive chants'));
+    const select = T.el('select');
+    const label = T.el('label', null, 'Off-date provision ');
+    label.appendChild(select);
+    control.appendChild(label);
+    select.appendChild(T.el('option', null, 'Choose a chant'));
+    chants.forEach(chant => {
+      const option = T.el('option', null, chant.label);
+      option.value = chant.id;
+      select.appendChild(option);
+    });
+    const preview = T.el('div', 'votive-chant-preview');
+    preview.setAttribute('aria-live', 'polite');
+    control.appendChild(preview);
+    select.addEventListener('change', async () => {
+      const chant = chants.find(one => one.id === select.value);
+      preview.replaceChildren();
+      if (!chant) return;
+      const witness = T.el('a', null, chant.source.edition_label + ' · ' + chant.source.locus);
+      witness.href = chant.source.url;
+      preview.appendChild(witness);
+      const common = chant.common;
+      if (!common) {
+        preview.appendChild(T.el('p', 'composed-note', 'Consult the 1962 facsimile for the chant wording.'));
+        return;
+      }
+      try {
+        await root.LiturgyReaderProperPayload.hydrate({
+          structure: input.structure, load: input.load, roots: [common.mass]});
+        const mass = input.structure.masses.find(one => one.key === common.mass);
+        const proper = mass && mass.propers[common.index];
+        if (!proper || proper.name !== chant.role) throw new Error('Missing Common chant');
+        const fragments = await T.fetchFragments(input.bible, T.citationsOf({propers: [proper]}), input.state, input.bibles);
+        if (select.value !== chant.id) return;
+        preview.appendChild(T.el('p', 'composed-note', common.label + ' · ' + common.qualification));
+        preview.appendChild(T.renderProper(proper, input.bible, fragments, {structure: input.structure,
+          numbering: input.structure.numbering, orations: input.state.languages.orations,
+          textDisplay: input.state.textDisplay, heading: 'h4'}));
+      } catch (_error) {
+        if (select.value === chant.id) preview.appendChild(T.el('p', 'composed-note', 'The Common chant could not be loaded.'));
+      }
+    });
+    return control;
+  }
+
   function januaryPrayerChooser(input) {
     const source = input.mass.january_prayer_sources;
     if (!source) return null;
@@ -601,6 +666,6 @@
 
   return Object.freeze({ renderProperChoice: renderProperChoice,
     attachSourcePathChoices: attachSourcePathChoices, attachMemorialPrayers: attachMemorialPrayers,
-    januaryPrayerChooser: januaryPrayerChooser,
+    januaryPrayerChooser: januaryPrayerChooser, votiveChantChooser: votiveChantChooser,
     properChoiceRemovals: properChoiceRemovals, createDayDateControls: createDayDateControls });
 }));

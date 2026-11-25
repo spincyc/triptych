@@ -42,7 +42,18 @@
     const owner = (structure.masses || []).find(function (row) { return row.key === selection.owner; });
     if (!owner || (owner.forms || []).length) throw new Error('weekday prayer owner has no single source form');
     const order = new Map();
-    (owner.propers || []).forEach(function (proper) {
+    const ownerSequence = (owner.propers || []).slice();
+    if (owner.kind === 'weekday-orations') {
+      // IGMR 46, 55–66, 72 and 89. Weeks I and XXXIV print only the
+      // orations. The ferial Lectionary retains its course between Collect
+      // and the Prayer over the Offerings.
+      if (ownerSequence.length !== 3 || !ownerSequence.every((row, i) => row.name === selection.slots[i])) {
+        throw new Error('weekday prayer formulary lost its printed three-prayer sequence');
+      }
+      ownerSequence.splice(1, 0, ...['First Reading', 'Responsorial Psalm', 'Gospel Acclamation', 'Gospel']
+        .map(function (name) { return {name}; }));
+    }
+    ownerSequence.forEach(function (proper) {
       const slot = Seating.semanticProperId(proper, true);
       if (slot && !order.has(slot)) order.set(slot, order.size);
     });
@@ -1013,6 +1024,7 @@
     return {
       id: seat.key, anchor: seat.anchor, where: seat.where,
       locus: seat.locus, placement: 'seated',
+      ...(seat.frameNote ? {frameNote: seat.frameNote} : {}),
       ...(seat.lessonPreparation ? {lessonPreparation: seat.lessonPreparation} : {})
     };
   }
@@ -1076,7 +1088,8 @@
       const applicable = rows.map(function (row) {
         return properChoiceCycleApplies(row.proper, request);
       });
-      if (!rows.length) throw new Error('alternative Proper option must conserve distinct source events');
+      if (option.omission === true && !rows.length) return {id: option.id, omission: true, events: []};
+      if (option.omission || !rows.length) throw new Error('alternative Proper option must conserve distinct source events');
       if (!applicable.every(Boolean)) return null;
       const events = rows.map(function (row) { return projectMember(row, seat, semantic); });
       if (new Set(events.map(function (one) { return one.id; })).size !== events.length) {
@@ -1289,7 +1302,8 @@
     const sourceRows = properRows;
     properRows = prepared.rows;
     const riteContext = {calendar: request.edition.id, mass: mass.key,
-      formId: dayContext && dayContext.formId || request.form || 'main', properRows: properRows};
+      formId: dayContext && dayContext.formId || request.form || 'main', properRows: properRows,
+      properSelections: prepared.selections};
     const riteSource = ordinary || sourceOrdinary;
     if (riteSource) Seating.properRitesFor(riteSource, riteContext).bindings.forEach(function (binding) {
       riteBindings.set(binding.proper, binding.descriptor);
@@ -2181,7 +2195,7 @@
           return {
             id: option.id,
             identity: { id: event.id + '/' + option.id },
-            sourceHooks: uniqueSourceHooks(option.events || [])
+            sourceHooks: option.omission ? event.sourceHooks : uniqueSourceHooks(option.events || [])
           };
         }),
         event.sourceHooks || []
@@ -3558,7 +3572,7 @@
       return offer ? Object.assign(event, {sourceLocalActorOffer: offer}) : event;
     }
     const riteContext = {calendar: request.edition.id, mass: generatedMass.key,
-      formId: formSelection.id || 'main', properRows: prepared.rows};
+      formId: formSelection.id || 'main', properRows: prepared.rows, properSelections: prepared.selections};
     const riteBindings = new WeakMap();
     const riteSource = input.ordinary || day.ordinary;
     if (riteSource && !riteSource.refused) Seating.properRitesFor(riteSource, riteContext).bindings.forEach(function (binding) {

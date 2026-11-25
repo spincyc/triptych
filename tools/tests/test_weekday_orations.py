@@ -28,7 +28,7 @@ class WeekdayOrationTests(unittest.TestCase):
         days.with_fixed(index, [2026])
         cls.year = days.year_document(index, 2026, years)
         document = rubrics._calendars.load_document(rubrics.DEFAULT_ROOT, "postconciliar", effective=True)
-        cls.structure = {"calendar": "postconciliar", "masses": [mass
+        cls.structure = {"calendar": "postconciliar", "masses": [dict(mass, kind=mass.get("kind") or section["kind"])
             for section in document["sections"].values() for mass in section.get("masses", [])]}
 
     def model(self, script):
@@ -44,15 +44,15 @@ class WeekdayOrationTests(unittest.TestCase):
           const choices=m.weekdayOrationChoices({...i,derived});
           assert.equal(derived.options[0].settled,false);
           assert.equal(choices.mass,'ot-1-monday');assert.equal(choices.complete,false);
-          assert.equal(choices.options.length,32);
-          assert.deepEqual(choices.unavailable.map(r=>r.id),['ot-1','ot-34','various-needs','collect-only']);
+          assert.equal(choices.options.length,34);
+          assert.deepEqual(choices.unavailable.map(r=>r.id),['various-needs','collect-only']);
           const selected=m.selectWeekdayOrations({...i,derived,owner:'ot-2'});
           assert.equal(JSON.stringify(derived),before);
           assert.equal(selected.derived.options[0].settled,true);
           assert.equal(selected.derived.options[0].winner.key,'ot-1-monday');
           assert.equal(selected.derived.options[0].orations.all[0].source_key,'ot-2');
           assert.deepEqual(selected.derived.liturgicalYear.lectionary,derived.liturgicalYear.lectionary);
-          assert.equal(m.weekdayOrationChoices({...i,derived:selected.derived}).options.length,32);
+          assert.equal(m.weekdayOrationChoices({...i,derived:selected.derived}).options.length,34);
           assert.equal(m.selectWeekdayOrations({...i,derived:selected.derived,owner:'ot-3'}).selection.owner,'ot-3');
         """)
 
@@ -101,10 +101,28 @@ class WeekdayOrationTests(unittest.TestCase):
             assert.throws(()=>m.selectWeekdayOrations({...i,derived,owner:'ot-2'}));
           }
           const derived=m.derive({...i,date:'2026-01-12'});
-          for(const owner of ['ot-1','ot-34','lent-1','saint-agnes-virgin-martyr',''])
+          for(const owner of ['ot-0','ot-35','lent-1','saint-agnes-virgin-martyr',''])
             assert.throws(()=>m.selectWeekdayOrations({...i,derived,owner}));
           const bad=JSON.parse(JSON.stringify(derived));bad.options[0].unsettled.push({scope:'another-gap'});
           assert.equal(m.weekdayOrationChoices({...i,derived:bad}),null);
+        """)
+
+    def test_week_i_and_xxxiv_lend_only_their_three_prayers(self):
+        self.model("""
+          const A=require(process.argv[1].replace('assembly-model.js','reader-state-adapters.js'));
+          for (const [date,day,owner] of [['2026-01-12','ot-1-monday','ot-1'],
+                                           ['2026-11-23','ot-34-monday','ot-34']]) {
+            const derived=m.derive({...i,date});
+            const selected=m.selectWeekdayOrations({...i,derived,mass:day,owner});
+            assert.equal(selected.selection.owner,owner);
+            assert.equal(i.rubrics.keys[owner],undefined);
+            assert(!derived.options.some(branch=>branch.candidates.some(candidate=>candidate.key===owner)));
+            const mass=i.structure.masses.find(row=>row.key===day);
+            const source=mass.propers.map((proper,sourceIndex)=>({proper,sourceIndex}));
+            const mixed=A.weekdayOrationRows(mass,source,i.structure,selected.selection);
+            assert.deepEqual(mixed.filter(row=>row.sourceMass===day).map(row=>row.proper),mass.propers);
+            assert.deepEqual(mixed.filter(row=>row.sourceMass===owner).map(row=>row.proper.name),selected.selection.slots);
+          }
         """)
 
     def test_optional_memorial_requires_explicit_weekday(self):

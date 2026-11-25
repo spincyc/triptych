@@ -11,7 +11,7 @@ from textual.widgets import Static
 
 from . import bridge
 from .dialogs import JanuaryReading, MissalSource, Pick, Reading
-from .missal import memorial_sources, witness_label, witness_readings
+from .missal import event_source_readings, memorial_sources, witness_label, witness_readings
 from .repo import ROOT, Refused
 from .surface import Surface, shown
 from .widgets import Ink
@@ -66,6 +66,11 @@ class MissalSurface(Surface):
     def source_rows(self) -> list[dict]:
         raise NotImplementedError
 
+    def action_rite_source(self) -> None:
+        choices = [(name, link) for row in self.source_rows() for name, link in witness_readings(row)
+                   if link.get("rite_opening")]
+        self.show_source_choices("Complete rite in facsimile", choices)
+
     def action_missal_source(self) -> None:
         choices = []
         for row in self.source_rows():
@@ -95,11 +100,18 @@ class MissalSurface(Surface):
             panel = self.reading_panel()
             current = self.navigation.current(panel, panel.query_one(Static))
         choices = []
+        passage = False
         for row in rows:
             prefix = row.get("prefix") or ""
             if current and prefix and not current.startswith(prefix):
                 continue
             event = next((e for e in row.get("events") or [] if prefix + e["id"] == current), {})
+            exact = list(event_source_readings(event))
+            if exact:
+                passage = True
+                choices.extend(exact)
+                if any(link["language"] == "en" for _, link in exact):
+                    continue
             if event.get("kind") == "january-prayer" and row.get("januarySelection"):
                 selected = row["januarySelection"]
                 self.show_january_prayers(row["mass"]["key"], selected["weekday"], selected["phase"], event["slot"])
@@ -114,7 +126,9 @@ class MissalSurface(Surface):
             if owner:
                 sources.append(({"key": owner["owner"], "name": owner["label"]}, row.get("orationWitnessLinks") or []))
             roles = {event.get("slot")}
-            roles.update(member.get("slot") for option in event.get("options") or [] for member in option.get("members") or [])
+            selected = (event.get("selection") or {}).get("option")
+            roles.update(member.get("slot") for option in event.get("options") or []
+                         if not selected or option["id"] == selected for member in option.get("members") or [])
             proper = event.get("kind") in ("proper", "proper-choice")
             for source, links in sources:
                 if proper and event["id"].split("/")[2] != source.get("key"):
@@ -127,7 +141,7 @@ class MissalSurface(Surface):
                             title = " · ".join(filter(None, (row.get("option"), source.get("name"), role)))
                             choices.append((title, link))
         if choices:
-            self.show_source_choices("English missal prayers", choices)
+            self.show_source_choices("Passage source" if passage else "English missal prayers", choices)
         else:
             self.app.notify("No English missal source is identified for this passage.")
 
@@ -241,6 +255,25 @@ class MissalSurface(Surface):
             options = [(form["id"], form["name"]) for form in forms]
             self.deliver(self.app.push_screen, Pick(group["label"], options, group.get("qualification") or role), open_form)
 
+    def action_votive_chants(self) -> None:
+        rows = [(row["key"], chant) for row in self.source_rows() for chant in row.get("votiveChants", [])]
+        self.app.push_screen(Pick("Seasonal and votive chants", [((key, item["id"]), item["label"]) for key, item in rows],
+                                  "Choose the printed off-date provision."), self.open_votive_chant)
+
+    @work(thread=True, exclusive=True, group="votive-chant")
+    def open_votive_chant(self, choice) -> None:
+        if not choice:
+            return
+        try:
+            result = bridge.call("liturgy", "votiveChant", self.calendar, *choice, {
+                "orations": self.orations, "bible": self.bible, "companion": self.companion,
+                "textDisplay": self.text_display})
+            chant = result["chant"]
+            self.app.call_from_thread(self.app.push_screen, MissalSource(
+                chant["label"], chant["source"], result["blocks"], chant.get("common")))
+        except Refused as error:
+            self.app.call_from_thread(self.app.notify, str(error), severity="error")
+
     def action_settings(self) -> None:
         edition = next((one["short"] for one in self.calendars if one["id"] == self.calendar), self.calendar)
         bible = next((one["label"] for one in self.bibles if one["id"] == self.bible), self.bible)
@@ -254,6 +287,8 @@ class MissalSurface(Surface):
         if self.ordinary:
             options.extend([("ordinary_language", "Ordinary language   " + names.get(self.ordinary_language, self.ordinary_language)),
                             ("rubrics", "Ordinary rubrics   " + ("shown" if self.rubrics else "hidden"))])
+        if any(row.get("votiveChants") for row in self.source_rows()):
+            options.append(("votive_chants", "Seasonal and votive chants"))
         if self.january_rows():
             options.append(("january_prayers", "January weekday prayers"))
         roles = dict.fromkeys(role for row in self.source_rows() for role in memorial_sources(row).get("roles", []))
@@ -263,6 +298,8 @@ class MissalSurface(Surface):
 
         if any(link for row in self.source_rows() for _, link in witness_readings(row)):
             sections[len(options)] = "Sources"
+            if any(link.get("rite_opening") for row in self.source_rows() for _, link in witness_readings(row)):
+                options.append(("rite_source", "Complete rite in facsimile"))
             if any(link.get("prayer_roles") for row in self.source_rows() for _, link in witness_readings(row)):
                 options.append(("prayer_source", "English missal prayers   Ctrl+O"))
             options.append(("missal_source", "Read source texts"))

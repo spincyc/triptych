@@ -70,6 +70,37 @@ class MissalWitnessLinks(unittest.TestCase):
                 self.project({"entries": [row | edit]})
 
 
+    def test_a_restricted_proper_uses_only_its_proven_occurrence_or_unambiguous_form(self):
+        source = {"scope": "form", "language": "en", "source_id": "registered-pdf", "url": "https://example.org/lectionary#page=20"}
+        target = {"role": "Verse Before the Gospel", "occurrence": 2}
+        alternative = source | {"proper_targets": [target]}
+        record = {"lang": "en", "cycle": "all", "extent": "body",
+                  "reason": {"kind": "rights-withheld", "source_id": source["source_id"]}}
+        consult = producer.published_proper_source
+        self.assertEqual(consult([alternative], target["role"], 2, []), alternative)
+        self.assertIsNone(consult([alternative], target["role"], 1, [record]))
+        self.assertEqual(consult([source], target["role"], 1, [record]), source)
+        self.assertIsNone(consult([source, source | {"url": "https://example.org/lectionary#page=21"}],
+                                  target["role"], 1, [record]))
+
+    def test_latin_and_english_target_their_exact_occurrence_independently(self):
+        first = {"role": "Entrance Antiphon", "occurrence": 1}
+        second = {"role": "Entrance Antiphon", "occurrence": 2}
+        communion = {"role": "Communion Antiphon", "occurrence": 1}
+        en = {"scope": "form", "language": "en", "source_id": "english", "proper_targets": [second, communion]}
+        la = {"scope": "form", "language": "la", "source_id": "latin", "proper_targets": [second]}
+        general = {"scope": "form", "language": "la", "source_id": "whole-form"}
+        held = [la, en, general]
+        lookup = producer.published_proper_source
+        self.assertEqual(lookup(held, second["role"], 2, [], "la"), la)
+        self.assertEqual(lookup(held, second["role"], 2, [], "en"), en)
+        self.assertEqual(lookup(held, communion["role"], 1, [], "en"), en)
+        self.assertIsNone(lookup(held, communion["role"], 1, [], "la"))
+        self.assertIsNone(lookup(held, first["role"], 1, [], "la"))
+        with self.assertRaisesRegex(ValueError, "conflicting printed la"):
+            lookup([la, dict(la, source_id="other-latin")], second["role"], 2, [], "la")
+
+
 class MemorialPrayers(unittest.TestCase):
     roles = ["Prayer over the Offerings", "Prayer after Communion"]
 

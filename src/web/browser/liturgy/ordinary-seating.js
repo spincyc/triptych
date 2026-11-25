@@ -328,14 +328,18 @@
     const preparation = conditionallyPrepared ? null : !usage.omitted_preparation.includes(mass);
     const omitsJohn = usage.last_gospel_omitted.some((pair) =>
       pair.mass === mass && pair.form === selected.formId);
+    const evening = mass === 'mass-of-the-lords-supper';
+    const dismissal = selected.properSelections && selected.properSelections['main/maundy-dismissal'];
+    const low = dismissal && dismissal.state === 'selected' ? dismissal.option === 'authorized-low-mass' : null;
     return {
       '1962-requiem': requiem,
+      '1962-final-blessing': evening ? low : !requiem,
       '1962-ordinary-outside-requiem': !requiem,
       '1962-usual-agnus-and-peace-prayer': !requiem && !(usage.threefold_miserere_nobis || []).includes(mass),
       '1962-prayers-at-foot': preparation,
       '1962-psalm-42': requiem || passion ? false : preparation,
       '1962-lavabo-doxology': !requiem && !passion,
-      '1962-last-gospel-of-john': omitsJohn ? false : requiem ? null : true
+      '1962-last-gospel-of-john': evening ? low : omitsJohn ? false : requiem ? null : true
     };
   }
 
@@ -568,7 +572,11 @@
   }
 
   function elementResolution(element, file, selected, predicates, appointed) {
-    if (!alternativeShows(element, file, selected)) {
+    const special = appointed.__special;
+    if (special && special.exclude.includes(element.key)) return {show: false, unresolved: null};
+    if (special && special.include.includes(element.key)) return {show: true, unresolved: null};
+    if ((appointed.__passion && !appointed.__passion.substitute && appointed.__passion.omit.includes(element.key)) ||
+        !alternativeShows(element, file, selected)) {
       return { show: false, unresolved: null };
     }
     const hymn = HYMN_ELEMENTS[element.key];
@@ -596,6 +604,8 @@
     Object.defineProperty(held, '__standIns', { value: standIns, enumerable: false });
     const hymns = hymnAppointments(file, predicates);
     const lesson = lessonFrameFor(file, predicates && predicates['proper-rite-context']);
+    Object.defineProperty(held, '__special', {value: specialMassFrame(file, predicates && predicates['proper-rite-context']), enumerable: false});
+    Object.defineProperty(held, '__passion', {value: passionFor(file, predicates && predicates['proper-rite-context']), enumerable: false});
     Object.defineProperty(held, '__hymns', {value: lesson && hymns
       ? Object.assign({}, hymns, {gloria: lesson.gloria}) : hymns, enumerable: false});
     Object.defineProperty(held, '__properRites', {value: properRitesFor(file, predicates && predicates['proper-rite-context']), enumerable: false});
@@ -606,6 +616,12 @@
     return elementResolution(
       element, file, selectionMap(file, wanted), predicates,
       appointedIn(file, predicates)).show;
+  }
+
+  function specialMassFrame(file, context) {
+    if (!context || context.calendar !== file.calendar) return null;
+    return (file.special_mass_frames || []).find(frame => frame.mass === context.mass &&
+      frame.form_id === context.formId) || null;
   }
 
   function resolveElements(file, wanted, predicates) {
@@ -621,6 +637,9 @@
         const resolution = elementResolution(
           element, file, selected, predicates, appointed);
         if (resolution.show) {
+          if (appointed.__passion && appointed.__passion.request && element.key === appointed.__passion.reading_after) {
+            shown.push({section, element: appointed.__passion.request});
+          }
           shown.push({ section: section, element: element });
         } else if (resolution.unresolved) {
           unresolved.push({
@@ -651,7 +670,25 @@
         !Array.isArray(frame.preliminary) || !frame.preliminary.length || !Array.isArray(frame.chants) ||
         !['kneel-rise', 'oremus'].includes(frame.preparation) || typeof frame.gloria !== 'boolean' ||
         !frame.locus) throw new Error('Ordinary lesson frame lacks an exact source declaration');
+    if (frame.passion && (!frame.passion.locus || !Array.isArray(frame.passion.omit) ||
+        !frame.passion.chant_before || !frame.passion.reading_after ||
+        !frame.passion.proper || (frame.passion.request && !frame.passion.request.key))) {
+      throw new Error('Ordinary Passion frame lacks its appointed reading and preparation');
+    }
     return frame;
+  }
+
+  function passionFor(file, context) {
+    if (!context || file.calendar !== 'roman-1962' || context.calendar !== file.calendar) return null;
+    const frame = (file.lesson_frames || []).find(row => row.passion);
+    if (!frame) return null;
+    const rite = frame.passion;
+    if (frame.mass === context.mass && frame.form_id === context.formId) return rite;
+    const row = (rite.appointments || []).find(one => one.mass === context.mass && one.form_id === context.formId);
+    if (!row) return null;
+    const selection = row.group && (context.properSelections || {})[row.form_id + '/' + row.group];
+    return Object.assign({}, rite, {proper: row.proper, locus: row.locus,
+      substitute: Boolean(selection && selection.state === 'selected' && selection.option === row.gospel_option)});
   }
 
   function seats(file, shown, context) {
@@ -662,10 +699,18 @@
     const lesson = lessonFrameFor(file, context);
     const slots = (file.slots || []).slice();
     const preparation = new WeakMap();
+    const passion = passionFor(file, context);
+    if (passion && !passion.substitute) {
+      for (const [key, anchor] of [['graduale', passion.chant_before], ['evangelium', passion.reading_after]]) {
+        const i = slots.findIndex(slot => slot.key === key);
+        if (i < 0 || !where.has(anchor)) throw new Error('Passion reading lost its appointed preparation or seat');
+        slots[i] = Object.assign({}, slots[i], {anchor, locus: passion.locus});
+      }
+    }
     if (lesson) {
       const rows = context.properRows.map((row, index) => properRow(row, index).proper);
       const first = rows.findIndex(row => row.name === 'Introit') + 1;
-      const gospel = rows.findIndex(row => row.name === 'Gospel');
+      const gospel = rows.findIndex(row => row.name === (lesson.passion ? lesson.passion.proper : 'Gospel'));
       const ordered = lesson.preliminary.concat([lesson.collect, lesson.reading], lesson.chants);
       if (!first || gospel - first !== ordered.length ||
           !ordered.every((name, i) => rows[first + i].name === name)) {
@@ -699,6 +744,28 @@
         }
       });
     }
+    const special = specialMassFrame(file, context);
+    const namedSeats = new Map();
+    const frameNotes = new WeakMap();
+    if (special) {
+      const sourceRows = context.properRows.map((row, index) => properRow(row, index).proper);
+      for (const seat of special.seats) {
+        if (!where.has(seat.anchor)) throw new Error('Special Mass frame lost its source anchor ' + seat.anchor);
+        const slot = {key: seat.id, anchor: seat.anchor, where: seat.where, locus: special.locus};
+        if (seat.before_section) slot.beforeSection = true;
+        slots.push(slot);
+        const matches = [];
+        for (const target of seat.propers) {
+          const selected = sourceRows.filter(p => p.name === target.name)[target.occurrence - 1];
+          if (selected) matches.push(selected);
+        }
+        if (seat.note && matches.length) frameNotes.set(matches[0], {text: seat.note, url: seat.source_url || null, locus: special.locus});
+        namedSeats.set(slot, matches);
+      }
+      const position = slot => where.has(slot.anchor)
+        ? where.get(slot.anchor) + (slot.where === 'after' ? 1 : 0) : Infinity;
+      slots.sort((a, b) => position(a) - position(b));
+    }
     const at = [];
     const byName = new Map();
     // The names a slot claims through a qualifier, and only for a slot whose
@@ -714,6 +781,10 @@
       // An unresolvable anchor loses the seat, never the proper.
       if (anchor === undefined) return;
       at[ordinal] = anchor + (slot.where === 'after' ? 1 : 0);
+      if (namedSeats.has(slot)) {
+        for (const proper of namedSeats.get(slot)) byProper.set(proper, ordinal);
+        return;
+      }
       if (slot.rite) {
         if (!Object.prototype.hasOwnProperty.call(rites.states, slot.rite) || (slot.propers || []).length) {
           throw new Error('Proper rite slot must name one held declaration instead of a generic name');
@@ -729,7 +800,7 @@
         if (slot.qualified) qualified.set(name, ordinal);
       }
     });
-    return { slots: slots, at: at, byName: byName, qualified: qualified, byProper: byProper, preparation: preparation };
+    return { slots: slots, at: at, byName: byName, qualified: qualified, byProper: byProper, preparation: preparation, frameNotes };
   }
 
   const QUALIFIER = /^(.+?) \(.+\)$/;
@@ -776,6 +847,7 @@
       if (Object.prototype.hasOwnProperty.call(disposition, 'anchor')) wanted.push('anchor');
       if (Object.prototype.hasOwnProperty.call(disposition, 'when')) wanted.push('when');
       if (Object.prototype.hasOwnProperty.call(disposition, 'seat')) wanted.push('seat');
+      if (Object.prototype.hasOwnProperty.call(disposition, 'omission_option')) wanted.push('omission_option');
       wanted.sort();
     }
     if (!wanted.length || keys.length !== wanted.length ||
@@ -791,6 +863,10 @@
     if (!stableId.test(disposition.group) ||
         (disposition.kind === 'alternative' && !stableId.test(disposition.option))) {
       throw new Error('Proper ordinary_disposition group and option must be kebab-case ids');
+    }
+    if (disposition.omission_option && (!stableId.test(disposition.omission_option) ||
+        disposition.omission_option === disposition.option || disposition.when || disposition.anchor || disposition.seat)) {
+      throw new Error('optional Proper must have a distinct omission option at a single unqualified seat');
     }
     if (disposition.kind === 'unplaced' &&
         ['before-frame', 'after-frame'].indexOf(disposition.region) < 0) {
@@ -1352,7 +1428,23 @@
         throw new Error('Proper option members disagree about source applicability');
       }
       options.set(disposition.option, disposition.when || null);
+      if (disposition.omission_option) options.set(disposition.omission_option, null);
     });
+    // Feria V in Cena Domini nn. 34–36 prints the solemn ending for the
+    // appointed Mass and delegates permission for Low Masses to the Ordinary.
+    const palmGospel = 'main/palm-mass-gospel';
+    if (supplied.calendar === 'roman-1962' && supplied.mass === 'palm-sunday' &&
+        groups.has(palmGospel) && !Object.prototype.hasOwnProperty.call(choices, palmGospel)) {
+      // The book appoints the Passion. Rubric 11 permits a priest who has
+      // already celebrated to choose the substitute at his second or third Low Mass.
+      choices[palmGospel] = 'passion';
+    }
+    const eveningDismissal = 'main/maundy-dismissal';
+    const isMaundyEvening = supplied.calendar === 'roman-1962' &&
+      supplied.mass === 'mass-of-the-lords-supper' && groups.has(eveningDismissal);
+    if (isMaundyEvening && !Object.prototype.hasOwnProperty.call(choices, eveningDismissal)) {
+      choices[eveningDismissal] = 'solemn';
+    }
     const sourcePaths = prepareSourcePaths(rows, supplied, groups, choices);
     Object.keys(choices).forEach((id) => {
       if (sourcePaths.pathIds.has(id)) return;
@@ -1399,6 +1491,14 @@
       if (row.proper.appointment_identity &&
           sourcePaths.owned.has(appointmentCoordinate(row.proper.appointment_identity)) &&
           !sourcePaths.admitted.has(row.sourceIndex)) return false;
+      const dispositionAtEnd = dispositionOf(row.proper);
+      if (isMaundyEvening && choices[eveningDismissal] === 'authorized-low-mass' &&
+          dispositionAtEnd && dispositionAtEnd.kind === 'unplaced' &&
+          dispositionAtEnd.group === 'maundy-procession-after-solemn-mass') {
+        inactive.push({reason: 'low-mass-without-procession', group: dispositionAtEnd.group,
+          sourceIndex: row.sourceIndex, basis: dispositionAtEnd.basis});
+        return false;
+      }
       const condition = byIndex.get(row.sourceIndex);
       if (!condition) return true;
       const disposition = condition.disposition;
@@ -1501,6 +1601,12 @@
         }
         bundle.push({proper: member.proper, sourceIndex: member.sourceIndex});
       });
+      if (disposition.omission_option) {
+        if (members.length !== 1 || byOption.has(disposition.omission_option)) {
+          throw new Error('omission must belong to exactly one independently optional Proper');
+        }
+        byOption.set(disposition.omission_option, []);
+      }
       if (byOption.size < 2) throw new Error('alternative Proper group must carry at least two distinct options');
       if (disposition.anchor) {
         const semanticIds = new Set(members.map((member) => semanticProperId(member.proper, true)));
@@ -1533,7 +1639,8 @@
       units.push({
         kind: 'proper_choice', group: disposition.group, basis: disposition.basis,
         formId, sourceIndex, ordinal, seat: ordinal === null ? null : seating.slots[ordinal],
-        options: Array.from(byOption, (entry) => ({id: entry[0], rows: entry[1]})),
+        options: Array.from(byOption, ([id, rows]) => id === disposition.omission_option
+          ? {id, rows, omission: true} : {id, rows}),
         selection: selection || {state: 'required', option: null}
       });
     }
@@ -1682,6 +1789,10 @@
       riding = buckets.get(index) || [];
       buckets.set(index, riding);
       unit.seat = seating.slots[ordinal];
+      const firstProper = unit.kind === 'proper_choice'
+        ? unit.options[0].rows[0].proper : unit.proper;
+      const frameNote = firstProper && seating.frameNotes && seating.frameNotes.get(firstProper);
+      if (frameNote) unit.seat = Object.assign({}, unit.seat, {frameNote});
       const cue = unit.proper && seating.preparation && seating.preparation.get(unit.proper);
       if (cue) unit.seat = Object.assign({}, unit.seat, {lessonPreparation: cue});
       riding.push(unit);
@@ -1871,11 +1982,15 @@
 
     let current = null;
     for (let index = 0; index < shown.length; index += 1) {
+      const bucket = placed.buckets.get(index) || [];
       if (shown[index].section !== current) {
+        for (const row of bucket) if (row.seat && row.seat.beforeSection) proper(row, 'seated');
         current = shown[index].section;
         events.push({ kind: 'begin_section', section: current });
+        for (const row of bucket) if (!row.seat || !row.seat.beforeSection) proper(row, 'seated');
+      } else {
+        for (const row of bucket) proper(row, 'seated');
       }
-      for (const row of placed.buckets.get(index) || []) proper(row, 'seated');
       events.push({ kind: 'ordinary_element', element: shown[index].element });
     }
     for (const row of placed.buckets.get(shown.length) || []) proper(row, 'seated');

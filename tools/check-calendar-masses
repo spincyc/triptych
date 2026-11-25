@@ -348,7 +348,7 @@ MASS_FIELDS = frozenset(
 # public projection, and README.md its shape.
 TEXT_STRUCTURE = "text_structure"
 PROPER_FIELDS = frozenset(
-    {"name", "source", "verses", "incipit", "text", "notes", "cycles",
+    {"name", "source", "verses", "incipit", "text", "notes", "consultation_page", "cycles",
      "weekday_cycles", "takes_from", "psalm_numbering", "translations",
      "text_status", ORDINARY_DISPOSITION, TEXT_STRUCTURE}
 )
@@ -401,6 +401,7 @@ KINDS = ("christological", "marian", "sanctoral", "seasonal")
 # reached only by `takes_from`, which is why the section could not exist before
 # the reference did.
 COMMON_KIND = "common"
+WEEKDAY_ORATIONS_KIND = "weekday-orations"
 # A witnessed direction into an unresolved Common is not `takes_from`: it must
 # never cause the resolver to present absent target text as appointed wording.
 COMMON_FROM = "common_from"
@@ -1096,6 +1097,11 @@ def check_proper(
             "records why its text is unavailable"
         )
         return
+    if "consultation_page" in proper:
+        page = proper["consultation_page"]
+        if (type(page) is not int or page < 1 or proper.get("source") != "composed"
+                or not isinstance(proper.get("notes"), str) or not proper["notes"].strip()):
+            problems.append(f"{where}: prayer consultation needs a positive facsimile page and a source note")
     unknown = field_names(set(proper) - PROPER_FIELDS)
     if unknown:
         problems.append(
@@ -2088,7 +2094,8 @@ def check_entry(
         problems.append(
             f"{where}: mass carries unknown field(s) {', '.join(unknown)}"
         )
-    for field in ENTRY_REQUIRED:
+    required = ("key", "name") if section_kind == WEEKDAY_ORATIONS_KIND else ENTRY_REQUIRED
+    for field in required:
         if field not in entry:
             problems.append(f"{where}: missing {field}")
     key = entry.get("key")
@@ -2151,7 +2158,15 @@ def check_entry(
     # A seasonal entry is placed by season, and a dated entry is sanctoral.
     has_season = "season" in entry
     has_date = "date" in entry
-    if section_kind == COMMON_KIND:
+    if section_kind == WEEKDAY_ORATIONS_KIND:
+        prayer_names = [proper.get("name") for proper in entry.get("propers", [])
+                        if isinstance(proper, dict)]
+        if (calendar != "postconciliar" or entry.get("season") != "ordinary-time" or
+                any(field in entry for field in ("date", "rank", "forms", TAKES_FROM)) or
+                prayer_names != ["Collect", "Prayer over the Offerings", "Prayer after Communion"] or
+                (entry.get("ordinary_frame") or {}).get("applicability") != "none"):
+            problems.append(f"{where}: weekday prayer formulary must contain only its three ordinary-time orations")
+    elif section_kind == COMMON_KIND:
         # A Common is a formulary, not a day. It is placed by use.
         if has_season or has_date:
             problems.append(
@@ -2745,9 +2760,9 @@ def check_file(path: Path, problems: list[str]) -> dict[str, int]:
                 f"{where} carries unknown field(s) {', '.join(unknown)}"
             )
         kind = section.get("kind")
-        if kind not in (*KINDS, COMMON_KIND):
+        if kind not in (*KINDS, COMMON_KIND, WEEKDAY_ORATIONS_KIND):
             problems.append(
-                f"{where}.kind must be one of {(*KINDS, COMMON_KIND)}, got {kind!r}"
+                f"{where}.kind must be one of {(*KINDS, COMMON_KIND, WEEKDAY_ORATIONS_KIND)}, got {kind!r}"
             )
         elif isinstance(section_name, str) and section_name != kind:
             problems.append(

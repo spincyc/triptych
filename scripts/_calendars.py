@@ -2134,7 +2134,7 @@ def validate_ordinary_disposition(value: object) -> dict:
         )
     fields = (ORDINARY_ALTERNATIVE_FIELDS if kind == "alternative" else
               (frozenset({"kind", "group", "basis", "when"}) if kind == "conditional" else ORDINARY_UNPLACED_FIELDS))
-    allowed = fields | ({"anchor", "when", "seat"} if kind == "alternative" else set())
+    allowed = fields | ({"anchor", "when", "seat", "omission_option"} if kind == "alternative" else set())
     unknown = sorted(str(field) for field in set(value) - allowed)
     missing = sorted(str(field) for field in fields - set(value))
     if unknown:
@@ -2157,6 +2157,11 @@ def validate_ordinary_disposition(value: object) -> dict:
     basis = value.get("basis")
     if not isinstance(basis, str) or not basis.strip():
         raise ValueError(f"{ORDINARY_DISPOSITION}.basis must be a nonempty string")
+    if "omission_option" in value:
+        omission = value["omission_option"]
+        if (not isinstance(omission, str) or not ORDINARY_DISPOSITION_ID.fullmatch(omission)
+                or omission == value["option"] or {"when", "anchor", "seat"}.intersection(value)):
+            raise ValueError("an optional Proper needs a distinct stable omission option and a single unqualified seat")
     if kind == "unplaced" and value.get("region") not in ORDINARY_UNPLACED_REGIONS:
         raise ValueError(
             f"{ORDINARY_DISPOSITION}.region must be one of "
@@ -2225,7 +2230,10 @@ def ordinary_disposition_group_problems(
                 "alternative and unplaced rows"
             )
         options = {str(member["option"]) for member in members}
-        if len(options) < 2:
+        omissions = {member["omission_option"] for member in members if "omission_option" in member}
+        if omissions and (len(members) != 1 or omissions.intersection(options)):
+            problems.append(f"{where}: an omitted Proper option needs exactly one independently optional row")
+        if len(options | omissions) < 2:
             problems.append(
                 f"{where}: alternative {ORDINARY_DISPOSITION} group {group!r} "
                 "must retain at least two distinct options"

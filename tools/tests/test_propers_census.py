@@ -321,8 +321,10 @@ class RankCensusTests(unittest.TestCase):
                 self.assertEqual(
                     sum(row["entries"] for row in counted["ranks"]), counted["masses"]
                 )
+                source_only = sum(row["masses"] for row in counted["sections"]
+                                  if row["kind"] == "weekday-orations")
                 self.assertGreaterEqual(
-                    sum(row["celebrations"] for row in counted["ranks"]), counted["masses"]
+                    sum(row["celebrations"] for row in counted["ranks"]), counted["masses"] - source_only
                 )
 
     def test_the_block_carries_the_rank_table_and_check_therefore_gates_it(self) -> None:

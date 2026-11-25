@@ -82,6 +82,7 @@
     delete result.propers;
     delete result.payload;
     delete result.january_prayer_sources;
+    delete result.off_date_chants;
     if (Array.isArray(result.forms)) result.forms = result.forms.map(function (form) {
       const descriptor = Object.assign({}, form);
       delete descriptor.propers;

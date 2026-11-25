@@ -1894,12 +1894,13 @@
               event.options.forEach(function (option, optionIndex) {
                 const optionAt = at + '.options[' + optionIndex + ']';
                 const optionKeys = object(option) ? Object.keys(option).sort() : [];
-                if (!object(option) || optionKeys.join(',') !== 'events,id' ||
+                const omission = option && option.omission === true;
+                if (!object(option) || optionKeys.join(',') !== (omission ? 'events,id,omission' : 'events,id') ||
                     !stableId.test(option.id || '') || !Array.isArray(option.events) ||
-                    !option.events.length) {
+                    (omission ? option.events.length !== 0 : option.events.length === 0)) {
                   errors.push(issue(
                     'fixture-proper-choice-option', optionAt,
-                    'each Proper choice option needs a kebab-case id and nonempty event bundle'
+                    'each Proper choice option needs a kebab-case id and a source bundle or an explicit omission'
                   ));
                   return;
                 }

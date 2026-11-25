@@ -267,7 +267,7 @@ def calendars(root: Path, only: str | None) -> list[str]:
     return found
 
 
-def load_masses(root: Path, name: str) -> dict[str, dict]:
+def load_masses(root: Path, name: str, weekday_formularies: dict | None = None) -> dict[str, dict]:
     """The calendar's own mass index, which the rubrics classify.
 
     Read through `_calendars.load_document`, which is the same derivation
@@ -295,7 +295,12 @@ def load_masses(root: Path, name: str) -> dict[str, dict]:
         # rank and rubrics of a day that takes one are the day's own. Giving it
         # an assignment basis would put a celebration in the precedence table
         # that the calendar never keeps.
-        if str((body or {}).get("kind") or section) == COMMON_KIND:
+        kind = str((body or {}).get("kind") or section)
+        if kind == "weekday-orations":
+            if weekday_formularies is not None:
+                weekday_formularies.update((row["key"], row) for row in body["masses"])
+            continue
+        if kind == COMMON_KIND:
             continue
         for mass in (body or {}).get("masses") or []:
             if not isinstance(mass, dict) or not mass.get("key"):
@@ -673,7 +678,7 @@ def check_implied_orations(document: dict, propers: dict, assigned: dict, where:
 
 
 def check_weekday_oration_selection(document: dict, masses: dict, assigned: dict,
-                                    where: str) -> list[str]:
+                                    where: str, weekday_formularies: dict | None = None) -> list[str]:
     """Validate the source-owned, incomplete permission without appointing it."""
     problems = []
     scopes = [entry.get("appointed_mass", {}).get("oration_scope", {})
@@ -684,7 +689,7 @@ def check_weekday_oration_selection(document: dict, masses: dict, assigned: dict
     for scope in scopes:
         rule = scope["selection"]
         required = {"id", "weekday_key_matches", "owner_key_matches", "owner_basis",
-                    "season", "resolves_scope", "complete", "unavailable", "why"}
+                    "season", "resolves_scope", "complete", "unavailable", "why", "weekday_formularies"}
         if not isinstance(rule, dict) or set(rule) != required:
             problems.append(f"{where}: weekday oration selection has an unsupported shape")
             continue
@@ -718,6 +723,17 @@ def check_weekday_oration_selection(document: dict, masses: dict, assigned: dict
         if len(patterns) != 2:
             continue
         owners = {key for key in masses if patterns["owner_key_matches"].fullmatch(key)}
+        supplementary = rule["weekday_formularies"]
+        held = weekday_formularies or {}
+        if (not isinstance(supplementary, list) or not supplementary or
+                any(not isinstance(key, str) for key in supplementary) or
+                len(supplementary) != len(set(supplementary)) or set(supplementary) != set(held)):
+            problems.append(f"{where}: supplementary weekday prayer owners differ from the prayer-formulary section")
+        for key, mass in held.items():
+            if (key in masses or not patterns["owner_key_matches"].fullmatch(key) or
+                    mass.get("season") != rule["season"] or mass.get("date") or mass.get("rank") or
+                    [proper.get("name") for proper in mass.get("propers", [])] != slots):
+                problems.append(f"{where}: supplementary weekday prayer owner {key!r} violates its source scope")
         weekdays = {key for key in masses if patterns["weekday_key_matches"].fullmatch(key)}
         if not owners or not weekdays or owners & weekdays:
             problems.append(f"{where}: weekday oration selection needs distinct held owners and weekdays")
@@ -733,7 +749,7 @@ def check_weekday_oration_selection(document: dict, masses: dict, assigned: dict
         for missing in rule["unavailable"]:
             if (not isinstance(missing, dict) or set(missing) != {"id", "state", "label"} or
                     missing.get("state") not in {"not-represented", "not-supported"} or
-                    not missing.get("label") or missing.get("id") in owners):
+                    not missing.get("label") or missing.get("id") in owners | set(held)):
                 problems.append(f"{where}: weekday oration selection has a stale or invalid unavailable option")
     return problems
 
@@ -1730,7 +1746,8 @@ def build(root: Path, only: str | None) -> tuple[list[dict], list[str], dict[str
     for name in calendars(root, only):
         where = f"{name}/{SOURCE_NAME}"
         document = load_source(root, name)
-        masses = load_masses(root, name)
+        weekday_formularies = {}
+        masses = load_masses(root, name, weekday_formularies)
         problems.extend(check_latin_text_status(document, where))
         problems.extend(check_precedence(document, where))
         basis_index, found = check_bases(document, where)
@@ -1743,7 +1760,7 @@ def build(root: Path, only: str | None) -> tuple[list[dict], list[str], dict[str
                for entry in document.get("implied") or []):
             problems.extend(check_implied_orations(
                 document, _calendars.load_document(root, name, effective=True), assigned, where))
-        problems.extend(check_weekday_oration_selection(document, masses, assigned, where))
+        problems.extend(check_weekday_oration_selection(document, masses, assigned, where, weekday_formularies))
         if "dedication_anniversary_context" in document:
             problems.extend(check_dedication_anniversary_context(
                 document, _calendars.load_document(root, name, effective=True), where))

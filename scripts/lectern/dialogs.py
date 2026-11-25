@@ -128,12 +128,18 @@ class MissalSource(Reading):
     BINDINGS = [Binding("o", "open_witness", "open source"), Binding("c", "copy_url", "copy URL"),
                 Binding("t", "terminal_witness", "terminal browser")]
 
-    def __init__(self, title: str, link: dict) -> None:
-        from .missal import source_rights, witness_label
+    def __init__(self, title: str, link: dict, passage: list | None = None, common: dict | None = None) -> None:
+        from .missal import blocks, source_rights, witness_label
         from .widgets import Ink
 
         self.url = link["url"]
         ink = Ink().line(title, "bold").line(witness_label(link)).line(link["locus"])
+        if passage is not None:
+            if common:
+                ink.line(common["label"] + " · " + common["qualification"], "bold")
+                blocks(ink, passage)
+            else:
+                ink.line("Consult the 1962 facsimile for the chant wording.", "italic")
         if link.get("rights_status"):
             ink.line(source_rights(link["rights_status"]), "$text-muted")
         if link.get("prayer_roles"):

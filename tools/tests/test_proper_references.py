@@ -1426,8 +1426,8 @@ class ResolveAppointedPassages(unittest.TestCase):
         responsorial `Psalm 150:1-2, 3-4, 5-6` (Hebrew, two slots) reach a verse
         the concordance's witness prints inside the verse before it; read
         together with that witness's alias table the numbering has both verses,
-        and the citations are served whole. `Psalm 56:10, 11-12, 13-14` is no
-        merge and stays unresolved, naming the bound.
+        and the citations are served whole. OLM 448 has its own printed verse
+        divisions, scoped to the seven collated editions.
         """
         payload = json.loads(
             (browser_data_root(ROOT) / 'structure/propers/postconciliar.json').read_text(
@@ -1464,7 +1464,9 @@ class ResolveAppointedPassages(unittest.TestCase):
                 )
         tense = cited("ot-24-saturday", "Responsorial Psalm", "weekday_cycles", "II")
         self.assertEqual(tense["loci"], {})
-        self.assertIn("would drop verse 14", tense["unresolved"])
+        self.assertIsNone(tense["unresolved"])
+        self.assertEqual(tense["lectionary_reconstruction"]["printed_ref"], "Ps 55, 10. 11–12. 13–14")
+        self.assertEqual(len(tense["edition_loci"]), 7)
 
     def test_served_structure_converts_every_cited_verse(self):
         """Every tracked structure file serves each psalm citation one set of verses.
@@ -1533,6 +1535,11 @@ class ResolveAppointedPassages(unittest.TestCase):
                     continue
                 checked += 1
                 loci = citation["loci"]
+                if citation.get("lectionary_reconstruction"):
+                    self.assertEqual((name, mass), ("postconciliar", "ot-24-saturday"))
+                    self.assertEqual(len(citation["edition_loci"]), 7)
+                    self.assertEqual(loci, {})
+                    continue
                 try:
                     sides = {
                         system: verses(loci[system], system)

@@ -91,17 +91,51 @@ class HaggaiPsalmSeamTests(unittest.TestCase):
         # The canonical source mapping must reach the positive peace assertion above.
         self.assertNotIn('I will give peace', text)
 
-    def test_printed_psalm_endpoint_is_preserved_and_the_unmapped_unit_refuses_whole(self):
+    def test_printed_psalm_endpoint_is_preserved_in_all_seven_collated_editions(self):
         self.assertEqual(self.psalm['ref'], 'Psalm 56:10, 11-12, 13-14')
         self.assertEqual(self.psalm['ranges'][-1]['end']['verse'], 14)
         citation = self.propers.citation_structure(self.psalm, 'hebrew', self.tokens, self.tables)
         self.assertEqual(citation['loci'], {})
-        self.assertIn('would drop verse 14', citation['unresolved'])
-        _, ranges, problem = self.index.citation(self.psalm, 'hebrew', 'vulgate', self.propers)
+        self.assertIsNone(citation['unresolved'])
+        source = 'Ps 55, 10. 11–12. 13–14'
+        self.assertEqual(citation['lectionary_reconstruction']['printed_ref'], source)
+        offered = {name for name, ed in self.index.EDITIONS.items() if ed['publishable']}
+        self.assertEqual(set(citation['edition_loci']), offered)
+        for name in sorted(offered):
+            with self.subTest(edition=name):
+                ed = self.index.EDITIONS[name]
+                bible = self.index.Bible(self.index.SOURCE_ROOT / str(ed['artifacts']))
+                key, ranges, problem = self.index.citation(
+                    self.psalm, 'hebrew', ed['numbering'], self.propers, edition=name)
+                self.assertEqual(problem, '')
+                self.assertEqual(key, f'{source} [OLM 448, II]')
+                chapter = 55 if ed['numbering'] == 'vulgate' else 56
+                first = 10 if chapter == 55 else 9
+                groups = [(10, 10), (11, 11), (12, 13)] if chapter == 55 else [(9, 9), (10, 11), (12, 13)]
+                self.assertEqual(citation['edition_loci'][name], [
+                    {'chapter': chapter, 'first': a, 'last': b} for a, b in groups])
+                text, problem = bible.passage(bible.token('Psalms'), ranges)
+                self.assertEqual(problem, '')
+                self.assertIn(bible.verse('Ps', chapter, first), text)
+                self.assertIn(bible.verse('Ps', chapter, 13), text)
+                self.assertNotIn(bible.verse('Ps', chapter, first - 1), text)
+                looked_up = self.propers.resolve_entry(self.psalm, {key: text}, 'hebrew', ed['numbering'])
+                self.assertEqual(looked_up['text'], text)
+                self.assertIn('Bible reconstruction', looked_up['note'])
+        _, missing, problem = self.index.citation(
+            self.psalm, 'hebrew', 'vulgate', self.propers, edition='unverified-edition')
+        self.assertEqual(missing, [])
+        self.assertIn('no collated OLM', problem)
+
+    def test_generic_verse_fourteen_still_refuses_outside_the_olm_appointment(self):
+        plain = {key: value for key, value in self.psalm.items() if key != 'lectionary_verse_map'}
+        result = self.propers.citation_structure(plain, 'hebrew', self.tokens, self.tables)
+        self.assertIn('would drop verse 14', result['unresolved'])
+        _, ranges, problem = self.index.citation(plain, 'hebrew', 'vulgate', self.propers)
         self.assertEqual(ranges, [])
         self.assertIn('would drop verse 14', problem)
 
-    def test_the_psalm_witnesses_confirm_a_division_gap_without_supplying_a_new_map(self):
+    def test_the_edition_map_does_not_change_the_generic_psalm_concordance(self):
         for name in ('douay-rheims', 'clementine-vulgate'):
             edition = self.index.EDITIONS[name]
             bible = self.index.Bible(self.index.SOURCE_ROOT / str(edition['artifacts']))
