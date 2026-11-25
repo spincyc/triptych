@@ -4308,6 +4308,10 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str], *,
                 if type(page) is not int or page < 1 or len(matches) != 1 or not carried.get("notes"):
                     raise ValueError(f"{mass['key']}: consultation needs one registered facsimile page and a source note")
                 built_proper["source_consultation"] = {**matches[0], "note": carried["notes"]}
+                if calendar == "roman-1962":
+                    english = published_proper_source(options, carried["name"], identity[3], [])
+                    if english:
+                        built_proper["published_english_source"] = english
             # Stanzas and inline actions travel only beside the exact words
             # they were checked against; a withheld body publishes neither.
             if TEXT_STRUCTURE in carried and built_proper.get("text"):
