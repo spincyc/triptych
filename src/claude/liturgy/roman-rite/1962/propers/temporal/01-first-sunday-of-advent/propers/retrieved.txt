@@ -1,0 +1,720 @@
+RETRIEVED -- Dominica prima Adventus (First Sunday of Advent), 1962 Missale Romanum,
+with its public-domain antecedent in the Pustet 1862 Missal and the 1945 Lasance hand
+missal that prints the formulary in English
+Unedited finding aid. NOT publication text. Optical-reading errors are preserved deliberately.
+
+Three machine pulls follow. None controls any published wording. Every Latin form in
+propers/verified.md was read on page images: the 1962 facsimile at 200 dpi whole (PDF
+pp. 82-84) and in 400-dpi crops of each column section of PDF pp. 82-83; the Pustet 1862
+facsimile on 130-dpi page images rendered from the whole registered PDF (PDF pp. 87-89);
+the Lasance pages on 110-dpi page images rendered from the whole registered PDF (PDF
+pp. 104-107). The pulls are kept so that a later reader can see what each text layer gives
+and where it fails. Retrieved and recorded on 2026-11-25 in the research stage (iteration
+0) of proper-study run 77c1ca91ef2d5e93.
+
+Each pull is reproduced byte for byte between its BEGIN and END lines, form feeds included.
+Where an extract does not end in a line feed, one line feed is added before the END line;
+each stated extract SHA-256 is of the bytes as the tool emitted them.
+==============================================================================
+PULL 1 -- the controlling facsimile's own embedded text layer, the formulary
+==============================================================================
+Represented edition : Missale Romanum, editio typica (Typis Polyglottis Vaticanis, 1962)
+Artifact            : artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+Retrieval URL       : https://media.churchmusicassociation.org/pdf/missale62.pdf
+Whole-file SHA-256  : 648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a
+                      82,815,941 bytes; fetched whole on 2026-11-25 (resolve-context stage
+                      of the same run) and re-hashed and matched by this stage before use.
+Method              : poppler pdftotext in -layout mode over artifact PDF pp. 82-84
+                      (printed pp. 1-3). The two-column layout is flattened line by line,
+                      so the columns interleave; drop capitals are detached or lost.
+Boundaries shown    : printed p. 1 opens with the engraved headpiece of the Proper of
+                      Time (its banner text is read as noise), PROPRIUM DE TEMPORE, TEMPUS
+                      ADVENTUS and the heading DOMINICA PRIMA ADVENTUS, I classis, Statio
+                      ad S. Mariam maiorem; nos. 1-3 follow. Printed p. 2 carries nos. 3-10.
+                      Printed p. 3 opens with the end of the ferial rubrics and then the
+                      heading DOMINICA SECUNDA ADVENTUS, its Introit no. 11 and following
+                      numbers, which are not this formulary.
+Known misreadings   : the headpiece's engraved scrolls are garbled; drop capitals detached
+                      or lost (A of Ad te, E of Excita, F of Fratres, I of In illo, H of
+                      Haec, S of Suscipiamus); accents and ligatures as the layer renders them.
+Extract SHA-256     : dbc4a972d81ca0dc5ece08dd77736480f604278e03e7d8106f26ffbe4bbc1405
+                      (9,378 bytes, exactly as the tool emitted them)
+---------------------------------------------------------------- BEGIN PULL 1
+ Ski IN V
+        11L        UNIVERSI Q U l V   ™       ID NON
+                                                                  —i        IOTJI
+
+
+
+
+ io
+                   TE EXSPECTANT<     1 \ \ | PCONFUNDENTUR       :
+                                                                        »
+
+
+
+
+ PROPRIUM DE TEMPORE
+                   TEMPUS ADVENTUS
+        DOMINICA PRIMA ADVENTUS
+                                      I classis
+                           Statio ad S. Mariam maiorem
+
+ Ant. ad Introitum           Ps. 24, 1-3       •[ Non dicitur Gloria in excelsis in Mis-
+                 d te levavi animam        sis de Tempore ab hac dominica usque ad
+                                           vigiliam Nativitatis Domini inclusive.
+                  meam: Deus meus, in
+                  te confido, non eru-     Oremus.                         Oratio
+                  bescam: neque irri-
+                  deant me inimici mei:    E   xcita, quaesumus, Domine, poten- 2
+                                                tiam tuam, et veni: ut ab immi-
+                                           nentibus peccatorum nostrorum pe-
+                  etenim universi, qui
+te exspectant, non confundentur.           riculis, te mereamur protegente eripi,
+Ps. ibid., 4 Vias tuas, Domine, de-        te liberante salvari: Qui vivis et re-
+monstra mihi: et semitas tuas edoce        gnas cum Deo Patre in unitate Spiri-
+me. V. Gloria Patri, et Filio, et Spi-     tus Sancti, Deus: per omnia ssecula
+ritui Sancto. Sicut erat in principio,     saeculorum. R. Amen.
+et nunc, et semper, et in saecula saecu-
+lorum. Amen.                            Lectio Epistolae beati Pauli Apostoli
+   Quo finito, repetitur Ad te levavi     ad Romanos.           Rom. 13, 11-14
+usque ad psalmum.
+    T Hie modus repetendi antiphonam ad
+Introitum servatur per totum annum.
+                                           Fatres: Scientes, quia hora est iam 3
+                                            nos de somno siirgere. Nunc enim
+                                        propior est nostra salus, quam cum
+                                Dominica prima Adventus
+ credidimus. Nox praecessit, dies autem generatio haec, donee omnia fiant. Cas-
+ appropinquavit. Abiciamus ergo opera lum et terra transibunt: verba autem
+ tenebrarum, et induamur arma lucis. mea non transibunt.
+ Sicut indiehonesteambulemus: non in              •f Credo, quod dicitur in qualibet domi-
+ comessationibus, et ebrietatibus, non in nica, etsi eius OfHcium alicui festo locum
+ cubilibus, et impudicitiis, non in con- cedat,        vel Missa votiva II classis celebre-
+                                               tur; non dicitur autem in feriis, quando
+ tentione, et aemulatione: sed induimini adhibetur Missa dominicae praecedentis.
+ Dominum Iesum Christum.
+                                               Ant. ad Offertorium              Ps. 24, 1-37
+4 Graduate                      Ps. 24, 3 et 4     Ad te levavi animam meam: Deus
+     Universi, qui te exspectant, non con- meus, in te confido, non erubescam:
+ fundentur, Domine. V. Vias tuas, Do- neque irrideant me inimici mei: etenim
+ mine, notas fac mihi: et semitas tuas universi, qui te exspectant, non con-
+ edoce me.                                     fundentur.
+     ^ In feriis Adventus, quando per heb-                         Secreta
+ domadam adhibetur Missa de dominica,
+ non dicitur Alleluia, nee versus sequens,
+ sed tantum graduale.                         H       aec sacra nos, Domine, potenti vir- 8
+                                                       tute mundatos, ad suum faciant
+5 Alleluia, alleluia. V. Ps. 84, 8 Osten- puriores venire principium. Per Domi-
+  de nobis, Domine, misericordiam tuam: num nostrum Iesum Christum, Filium
+  et salutare tuum da nobis. Alleluia.         tuum: Qui tecum vivit et regnat in
+                                               unitate Spiritus Sancti, Deus: per om-
+6 . T i Sequentia sancti Evangelii secun- nia saecula saeculorum. R. Amen.
+  r
+    AS* dum Lucam.            Luc. 21, 25-33       T Praefatio de sanctissima Trinitate: quae
+     n illo tempore: Dixit Iesus discipu- dicitur tamquam de Tempore in dominicis
+ I    lis suis: Erunt signa in sole, et luna, Adventus     et in omnibus dominicis II clas-
+                                               sis, extra tempus natalicium et paschale;
+  et stellis, et in terris pressura gentium non vero in feriis, quando adhibetur Missa
+  prae confusione sonitus maris, et fluc- harum dominicarum, sed tune dicitur prae-
+  tuum: arescentibus hominibus prae ti- fatio communis.
+  more et exspectatione, quae superve-
+  nient universo orbi: nam virtutes cse- Ant. ad Communionem                     Ps. 84, 13 9
+  lorum movebiintur. Et tune videbunt              Dominus dabit benignitatem: et ter-
+  Filium hominis venientem in nube cum ra nostra dabit fructum suum.
+  potestate magna, et maiestate. His au-
+                                                Or emus.                    Postcommunio
+  tem fieri incipientibus, respicite, et le-
+                                                    uscipiamus, Domine, misericordiam 10
+  vate capita vestra: quoniam appropin-
+  quat redemptio vestra. Et dixit illis si-   S      tuam in medio templi tui: ut repa-
+                                                rationis  nostrae ventura solemnia con-
+  militiidinem: Videte ficulneam, et om-
+  nes arbores: cum producunt iam ex se gruis honoribus praecedamus. Per Do-
+  fructum, scitis quoniam prope est aestas. minum nostrum.
+                                                   ^ Per totum annum, si dicenda sit infra
+  Ita et vos cum videritis haec fieri, sci- hebdomadam           Missa de feria, adhibetur
+  tote quoniam prope est regnum Dei. Missa dominicae praecedentis, nisi propria
+  Amen dico vobis, quia non praeteribit Missa assignetur; et similiter sumuntur
+                               Dominica secunda Adventus
+  orationes de dominica, quando de feria,     *J De feriis Adventus fit commemoratio
+  quae Missam propriam non habeat, facien- in omnibus Missis, tarn in cantu quam
+  da sit commemoratio iuxta rubricas.      lectis.
+
+       DOMINICA SECUNDA ADVENTUS
+                                         I classis
+                              Statio ad S. Crucem in Ierusalem
+
+  Ant.
+  Ant. adad Introitum              Isai. 30, 30 in gentibus, Domine, et nomini tuo can-
+
+
+
+  P
+11 V ^opulus Sion, ecce Dominus ve- tabo. Et iterum dicit: Laetamini gentes
+             niet ad salvandas gentes: et au- cum plebe eius. Et iterum: Laudate
+             ditam faciet Dominus gloriam omnes gentes Dominum: et magnifica-
+             vocis suae in laetitia cordis ve- te eum omnes populi. Et rursus Isaias
+  stri. Ps. 79, 2 Qui regis Israel, intende: ait: Erit radix Iesse, et qui exsiirget
+  qui deducis, velut ovem, Ioseph.              regere gentes, in eum gentes sperabunt.
+     V. Gloria Patri.                           Deus autem spei repleat vos omni gau-
+                                                dio et pace in credendo: ut abundetis
+                     Oratio
+                                                in spe et virtute Spiritus Sancti.
+  E    xcita, Domine, corda nostra ad prae-
+        parandas Unigeniti tui vias: ut, per Graduale
+  eius adventum, purificatis tibi mentibus         Ex  Sion   species
+                                                                           Ps. 49, 2-3 et 5 14
+                                                                      decoris  eius: Deus
+  servire mereamur: Qui tecum vivit et manifeste veniet.Y Congregate illi sanc-
+  regnat in unitate.                            tos eius, qui ordinaverunt testamentum
+                                                eius super sacrificia.
+  Lectio Epistolae beati Pauli Apostoli madam      T In feriis Adventus, quando per hebdo-
+                                                         adhibetur Missa de dominica, non
+     ad Romanos.              Rom. 15, 4-13 dicitur Alleluia, nee versus sequens, sed
+       ratres: Quaecumque scripta sunt, ad tantum graduale.
+  F     nostram doctrinam scripta sunt: ut         Alleluia, alleluia. V. Ps. 121, 1 Lae- 15
+  per patientiam, et consolationem Scrip- tatus sum in his, quae dicta sunt mihi:
+  turarum, spem habeamus. Deus autem in domum Domini ibimus. Alleluia.
+  patientiae, et solacii, det vobis idipsum
+  sapere in alterutrum secundum Iesum                Sequentia sancti Evangelii secun- 16
+  Christum: ut unanimes, uno ore hono-                dum Matthaeum.         Mt. 11, 2-10
+  rificetis Deum et Patrem Domini nostri
+  Iesu Christi. Propter quod suscipite         I  n illo tempore: Cum audisset Ioan-
+                                                    nes in vinculis opera Christi, mittens
+  invicem, sicut et Christus suscepit vos duos de discipulis suis, ait illi: Tu es,
+  in honorem Dei. Dico enim Christum qui venturus es, an alium exspectamus ?
+  Iesum ministrum fuisse circumcisionis Et respondens Iesus, ait illis: Euntes
+  propter veritatem Dei, ad confirmandas renuntiate Ioanni, quae audistis et vidi-
+  promissiones patrum: gentes autem su- stis. Caeci vident, claudi ambulant, le-
+  per misericordia honorare Deum, sicut prosi mundantur, surdi audiunt, mortui
+  scriptum est: Propterea confitebor tibi resurgunt, pauperes evangelizantur: et
+
+---------------------------------------------------------------- END PULL 1
+==============================================================================
+PULL 2 -- the public-domain antecedent's tracked text layer (Pustet 1862)
+==============================================================================
+Represented edition : Missale Romanum, Ratisbon: F. Pustet, 1862
+Artifact            : artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf
+                      (tracked text layer; SHA-256 f34bc7cf9293ffb353159e94118f4316bb4cc0a60230b315904dc77ba2502162,
+                      recomputed and matched on 2026-11-25)
+Facsimile           : artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3
+                      (SHA-256 363d6fc3f556bf596f3b56d4efcb7be849b7e9904304ba886b7977c39e8f7474,
+                      102,880,787 bytes; fetched whole on 2026-11-25 from its registered
+                      source_url and matched before PDF pp. 87-89 were rendered)
+Method              : the tracked text artifact's physical lines 13183-13452, unchanged.
+Boundaries shown    : from the heading PROPRIUM MISSARUM DE TEMPORE, Dominica I. Adventus,
+                      Statio ad S. Mariam Majorem, Ad Missam, through the Postcommunion
+                      Suscipiamus and its cue Per Dominum. The pre-1960 added orations De S.
+                      Maria, Contra persecutores Ecclesiae and pro Papa are interleaved in
+                      this book and are not part of the 1962 formulary.
+Known misreadings   : the Communion's citation reads 'Ps. 81' on this layer; the page image
+                      (PDF p. 89, printed p. 3) reads Ps. 84. Accents and the ae/oe ligatures
+                      are misread throughout ('bcni^nitdtem', 'solcinnia', 'Dominuni').
+Extract SHA-256     : 5a480ef9d2ca6fa03ac6b37c2df07aedda7b1a65c35e064f3173f4aa81f93ec6
+                      (6,437 bytes, exactly as the tool emitted them)
+---------------------------------------------------------------- BEGIN PULL 2
+
+
+PROPRIUM  MISSARUM 
+
+DB  TEMPORE. 
+
+
+Doniinica  L  Adventus. 
+
+SUtio  ad  S.  Hariam  Majorem. 
+
+4  Ad  MLssam. 
+
+Introitns.  Ps.24. 
+
+|D  te  lev&vi  <1- 
+^  nimam  meam : 
+
+I te  confido,  non 
+erubescam:ne- 
+kJ^^cfeJ^  gue  irrideant 
+'  me  iinnrici  mei:  £t- 
+enim  universi,  qui 
+?  te  expectant,  non 
+confundentur. 
+Psalm.ib.Viastuas. 
+Domine,  demonstra 
+inihi :    et  semitas 
+tuas  edoce  me. 
+Gloria  Patri,  et  Filio,  et 
+Spiritui  sancto.  Sicut  erat  in 
+principio,  et  nunc,  et  semper, 
+etin  sseculasaiculorum.  Amen. 
+Quo  fiuito,  repetitur  Ad  te 
+levavi,  usque  ad  Psalmum. 
+1  Hic  modus  repeteudi  In- 
+troitum  servatur  per  totum 
+aynum. 
+
+1  Non  dicitur  Uloria  in  ex- 
+celsis,  ab  hac  Dominica  usque 
+Missale  Rora. 
+
+
+ad  Nativitatem  Domini,  nisi 
+in  Festis. 
+
+Oremus.  Oratio. 
+inXcita,  quaesumus  Domine, 
+Pj  potentiam  tuam,  et  veni: 
+uTab  imminentibus  peccato- 
+rum  nostrorum  periculis,  te 
+meredmur  proteg6nte  eripi,  te 
+liberrinte  salvdn.  Qui  vivis  et 
+regnas  cum  Deo  Patre  in  uni- 
+t&te  Spfrkus  saneti  Deus,  per 
+omnia  siecula  saeculorum. 
+JL  Amen. 
+
+1  Ab  hac  die  usque  ad  Vi- 
+t^iliam  Nativitatis  Domini  post 
+Orationem  diei  dicitur  Oratio 
+Deus,  qui  de  bealtee  Marise, 
+et  Kcclesiae  tiue,  vel  Deus 
+omnium  tidelium,  ut  infra. 
+
+1  Si  autem  facienda  sit  Com- 
+memoratio  aUcujus  Festi  Sim- 
+pficis  occurrentis,  post  Ora- 
+tionem  diei  dicitur  Oratio  de 
+Sancto,  et  tertia  de  S.  Maria. 
+
+DDe  S.  Maria.  Oratio. 
+Eus,  qui  de  beatee  Mariae 
+Vfrgiois  utero  Verbum 
+tuum,  Angelo  nuntiiinte,  car- 
+nem  suscipere  voluisti:  pne- 
+sta  supplicibus  tuis;  ut,  qui 
+
+
+2  Dominira  I 
+
+vere  eam  Genitricem  Dei  cre- 
+dimus,  ejus  apud  te  interces- 
+si6nibusadjuvemur. 
+
+Contra  pcrsecutorcs  Eccles. 
+Oratiu. 
+
+ECcl6sise  tuae ,  quaesumus 
+D6mine,  preces  plac&tus 
+admitte:  ut,  destructis  adver- 
+sit&tibus  et  erroribus  univer- 
+sis,  secura  tibi  s6rviat  liber- 
+tdte.  Per  Dominum  nostrum 
+Jesum  Christum  Filium  tuum, 
+qui  tecum  vivit  et  regnat  in 
+unitdte  Spiritus  sancti  Deus, 
+per  6mnia  saecula  s#cul6rum. 
+IV  Amen. 
+
+Vel  pro  Papa.  Oratio. 
+T\Eus,  omnium  fidelium  pa- 
+U  stor  et  rector,  f&mulum 
+tuum  N.  quem  pastorem  Ec- 
+clesiaj  tuse  prceesse  voluisti, 
+propitius  respice:  daei,  quae- 
+sumus,  verbo  et  ex6mplo,  qui- 
+bus  praeest,  proficere;  ut  ad 
+vitam,  una  cum  grege  sibi 
+cr6dito,  perv£niat  sempiter- 
+nam.  rer  Dominum. 
+9  Infra  hebdomadas  Advont., 
+(jnando  dicitur  Missa  de  Festo 
+Semidup.,  serunda  Oratio  erit 
+de  Advontu,  tertia  de  S.  Maria, 
+qiue  tenninatur  sic:  Per  eum- 
+dem  Dominum  nostrum,  etc. 
+
+•I  Si  autem  dicatur  Alissa 
+de  Festo  Dup].,  post  Oratio- 
+nem  Festi  dicitur  Oratio  tan- 
+tuin  de  Adventu. 
+
+2j  T)e  Festis  Siniplicibus  in 
+Adv.  occurrentibus  iit  tautum 
+Commemoratio. 
+Lectio  Epistol»  beati  Pauli 
+Ap6stoli  ad  Rom&nos.  c.  13. 
+"|7lRatres.  Scientes,  quia  hora 
+Jj  est  jam  nos  de  somno 
+stirgere.  Nunc  enim  propior 
+est  nostra  salus,  quam  cum 
+credidimus.    Nox  praxessit, 
+
+
+.  Advontns. 
+
+dies  autem  apprppinqu&vit. 
+Abjici&mus  ergo  6pera  tene- 
+braruni,  et  indudmur  arma 
+lucis.  Sicut  in  die  honeste 
+ambulemus:  non  in  comessa- 
+ti6nibus  et  ebriet&tibus,  non 
+in  cubilibus  et  impudicftiis, 
+non  in  contenti6ne  et  aemula- 
+ti6ne :  sed  induimini  D6minum 
+Jesum  Christum. 
+Oradualc.  Ps.  24.  Univ6rsi, 
+qui  te  exp6ctant,  non  con- 
+fund6ntur,  Domine.  y.  Vias 
+tuas,  D6mine,  notas  facmihi: 
+et  s6mitas  tuas  6doce  me. 
+Alleluja,  alleluja. 
+V.  Ps.  84.  Ost&ide  nobis,  D6- 
+mine ,  miseric6rdiam  tuam : 
+et  salutdre  tuum  da  nobis. 
+AJleluja. 
+
+1  In  Fcriis  Adventus.  quando 
+per  hebdomadam  resumitur 
+iMissa  de  Dominica,  non  dici- 
+tur  Alleltija,  nec  \r.  seq.,  sed 
+tantum  Oradualo. 
+ftequ£ntia  sancti  Evang61ii  se- 
+ctindum  Lucam.    c.  21. 
+
+Fillo  t&npore:  Dixit  Jesus 
+discipulis  suis:  Erunt  si- 
+gna  in  sole,  et  luna,  et  stellis, 
+et  in  terris  pressfira  g£ntium 
+prse  confusione  s6nitus  ma- 
+ris  et  fltictuum;  aresc6ntibus 
+hominibus  prae  tim6re  et  ex- 
+pectati6ne,  quse  superv6nient 
+univ6rso  orbi:  nam  virtfites 
+c(rl6rura  movebtintur:  et  tunc 
+videbunt  Filium  h6minis  ve- 
+nientem  in  nube  cum  pote- 
+st&te  magna,  et  majest&te. 
+His  autem  fieri  incipientibus, 
+respfcite,  et  lev&te  c&pita 
+vestra :  quoniam  appropmquat 
+redemptio  vestra.  Et  dixit 
+illis  similitudinem :  Vid£te 
+ficfilneam,  et  omnes  drbores: 
+cum  producunt  jam  ex  se 
+
+Digitized  by  Google 
+
+
+Doniinica  I.  Advcntus. 
+
+
+3 
+
+
+fructum,  scitis,  qu6niam  prope 
+est  aestas.  Ita  et  vos  cum 
+videritis  haec  fieri,  scitote, 
+qu6niam  prope  est  regnum 
+Dei.  Amen  aico  vobis,  quia 
+non  praeteribit  gener&tio  hsec, 
+donec  omnia  fiant.  Ccelum  et 
+terratransibunt:  verba  autem 
+mea  non  transibunt. 
+
+Et  dicitur  Credo. 
+
+Offertorium.  Ps.  24.  Ad  te 
+lev&vi  &nimam  meam:  Deus 
+meus,  inte  confido,  non  eru- 
+bescam:  neque  irrideant  me 
+inimici  mei:  etenim  universi, 
+gui  te  expectant,  non  con- 
+tundentur. 
+
+Secrctn. 
+
+HiEc  sacra  nos,  D6mine, 
+pot6nti  virtute  mundd- 
+tos,  ad  suum  f&ciant  purio- 
+res  venire  prinripium.  Per 
+Dominum. 
+
+Dc  S.  Maria.  Sccrcta, 
+
+IN  mentibus  nostris,  qusesu- 
+mus  Dominc,  verae  fidei 
+sacramenta  confirma:  ut.  qui 
+conceptum  de  Virgine  Deum 
+vemm  et  hominem  confite- 
+mur,  per  ejus  salutiferae  re- 
+surrecti6nis  potentiain ,  ad 
+aeternam  merearaur  pervenire 
+ketitiam. 
+
+Si  dicatur  ultiuio  loco,  tenui- 
+natur  sic:  Per  eumdem  D6- 
+minum. 
+
+Contra  persecutores  Eccles. 
+Secreta. 
+
+PR6tege  nos,  Doinine,  tuis 
+mysteriis  servi6ntes :  ut 
+divinis  rebus  inhaerentes,  et 
+corpore   tibi  famuiemur  et 
+mente.  Per  Dominum. 
+Vel  pro  Papa.  Secrcta. 
+
+OBl&tis,  quaesumus  Domine, 
+plac&re  muneribus,  et  f&- 
+mulum  tuum  N.  quem  pasto- 
+
+
+rem  Ecclesia*  tuae  praeesse 
+voluisti,  assidua  protectione 
+guberna.  Per  Dominuni. 
+
+Communio.  Ps.  81.  Dominus 
+dabit  bcni^nitdtem :  et  terra 
+nostra  dabit  fructum  suum. 
+Postcommunio. 
+
+SUscipi&mus,  Domine,  mise- 
+ricordiam  tuam  in  medio 
+templi  tui:  ut  reparationis 
+nostrae  ventura  solcinnia  con- 
+gruis  honoribus  praeced&mus. 
+---------------------------------------------------------------- END PULL 2
+==============================================================================
+PULL 3 -- the English hand missal's embedded text layer (Lasance 1945)
+==============================================================================
+Represented edition : F. X. Lasance and F. A. Walsh, The New Roman Missal, New York:
+                      Benziger Brothers, revised 1945
+Artifact            : artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0
+Whole-file SHA-256  : 6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70
+                      75,268,976 bytes; fetched whole on 2026-11-25 from its registered
+                      source_url and matched before use.
+Method              : poppler pdftotext in -layout mode over artifact PDF pp. 104-107
+                      (printed pp. 103-106), the facsimile's own embedded text layer.
+Boundaries shown    : Proper of the Season, First Sunday of Advent (Purple), Station at St.
+                      Mary Major, Sunday of the First Class, from the Introit (printed
+                      p. 103) through the Postcommunion and the ferial rubrics (printed
+                      p. 106), after which the Second Sunday of Advent begins on the same
+                      page.
+Known misreadings   : blackletter headings are garbled; Latin accents, ligatures and
+                      small capitals misread; columns interleave.
+Extract SHA-256     : e4c209e8287cf027752a730c6a347bbf01fceabf9cb1e177a64ea264886dae61
+                      (10,144 bytes, exactly as the tool emitted them)
+---------------------------------------------------------------- BEGIN PULL 3
+                   lProperof tbe $eason
+               jfirst ~unbl1!, of ~bbent (Purple)
+                     STATION AT ST. MARy MAJOR
+
+                      Sunda'Y of the First Class
+      An explanation of Masses designated as Stational Masses
+    will be found In the Supplement "The Meaning of the Sacred
+    Liturgy," where also the directions for gaining Indulgences on
+    such days are given.
+      The Beginning of Mass, page 756.
+                        Intro;t. Ps.24, 1.)
+    'zrD TE levavi animam                  THEE, 0 Lord have J[
+    ~ meam: Deus meus, in           00   0
+                                         lifted up my soul: in
+    te confido, non erubescam: Thee, 0 my God, I put my
+    neque irrideant me infmfci trust; let me not be ashamed.
+I
+    mei: etenlm universiqui te Neither let my enemies lau.gh
+    exspectant, non confunden- at me; for none of them that
+~   tur. Ps. 24, 4. Vias tuas, wait on Thee shall be con-
+    Domine, demonstra mihi: et founded. Ps. 24, 4. Show, 0
+    semitas tuas edoce me. '1'. Lord, Thy ways to me, and
+    Gloria Patri, et Fillo, et teach me Thy paths. p. Glory
+    Spiritui Sancto. Sicut erat in be to the Father, and to the
+    principio, et nunc, et semper, Son, and to the Holy Ghost. All
+    et in srecula srecul6rum. It was in the beginning, is now,
+    Amen. Ad te levavi, etc.       and ever shall be, world with-
+                                   out end. Amen. To Thee, 0
+                                   Lord, etc.
+      The Introit is repeated to the Psalm-verse: and so in all
+    Masses throughout the year.
+      Kyrie, page 761. Gloria is omitted in Advent except on Feasts.
+                               Prayer
+    E{ potentiam t u a m, et ' n we pray
+         XCITA qUlllsumus Domine
+                                    ~
+                                      0 Lord, Thy might,
+                                         ESTIR,
+                                         Thee and come;
+    veni: ut ab imm1nentibus That, defended by Thee, we
+    peccat6rum nostr6rum perle- may deserve rescue from ap-
+    ulis, te mereamur protegente proaching dangers brought on
+    eripi, te liberante salvart. by our sins,and being set free
+    Qu! vivis.                   by Thee, obtain our. salvation.
+                                 Who livest.'
+      Second Prayer of our Blessed Lady, page 823; third Prayer
+    for the Church or tor the Pope, pages 825, 826.
+      'The endings of the Prayers, Secrets, and Postcommunlons
+    vary. The directions showing which endlnll to use in the case
+    of a II1ven keyword are on page 819.
+                                  103
+
+                         http://ccwatershed.org
+104             FIRST SUNDAY OF ADVENT
+
+                  Epistle. Rom. 13, 11·14
+  Lesson from the Epistle of       Lectio Epfstolre beati Paull
+blessed Paul the apostle to the ap6stoli ad Romanos.
+Romans.
+'"D RETHREN, knowing the ~RATnEs: Scientes, quia
+~ time, that it is now the ~ hora est jam nos de
+hour for us to rise from sleep; somno slirgere. Nunc enim
+for now our salvation is nearer pr6pior est nostra s a Ius,
+than when we believed. The quam cum credfdimus. No~
+night is past, and the day is at prrecessit, dies autem appro-
+hand; let us therefore cast air pinquavit. Abjici8.mus ergo
+the works of darkness, and put opera tenebrarum, et indua-
+on the armor of light. Let us mur arma lucis. Sicut in die
+walk honestly as in the day; honeste ambulemus: non in
+not in rioting and drunken~ comessati6nibus, et ebrietati-
+ness, not in chambering and bus, non in cubillbus, et im-
+impurities, not in contention pudicItiis, non in contenti6ne,
+and envy; but put ye on the et remulati6ne: sed induimini
+Lord Jesus Christ.               D6minum Jesum Christum.
+  During the week, should the Mass Of the Sunday be resumed,
+the alleluias and verse following are omitted, and only the
+Gradual ts said. This ts to be observed. throughout Advent.
+
+
+                   Gradual. Ps. 24, 3,.4
+  None of them that wait on          Universi, qui te exspectant,
+Thee shall be confounded. '!I. non confundentur D6mine.
+Show, 0 Lord, Thy ways to me, y. Vias tuas Domine notas
+and teach me Thy paths.           fac mihi: et semitas tuas
+                                  edoce me.
+  Alleluia, alleluia. ? Ps. 84, 8. .Allelliia, alleluia. ? Ps. 84,
+Show us, 0 Lord, Thy mercy: 8. Ostende nobis D6mine mis-
+and grant us Thy salvation. erlc6rdiam tuam: et salutare
+AHeluia.                           tuum da nobis. Alleluia.
+  Munda Cor Meum, page 763.
+
+
+                  Gospel. Luke 21, 25·11
+  ffi Contfuuation of the holy    ffi Sequentia sancti Evan.
+GOSpel according to St. Luke. gelii seclindum Lucam.
+ "'z:rT THAT time, Jesus said IN ILLO tempore: Dixit
+~ to His disciples: There            Jesus discfpulis sui s:
+shall be signs in the sun, and Erunt signa in sole, et luna,
+in the moon, and in the stars: et stellis, et in terris pressura
+and Upon the earth distress of gentium prre confusione s6ni-
+nations, by reason of the con~ tus maris, et fluctuum: ares-
+
+
+                     http://ccwatershed.org
+                FIRST SUNDAY OF ADVENT                   105
+centibus hominibus prre ti- fusion of the roaring of the sea
+m6re. et exspectat16ne. qure and of the waves, men wither-
+supervenient universo orbi: ing away for fear and expec'ta-
+nam virtlltes cce16rum move- tion of what shall come upon
+b11ntur: et tunc videbunt the whole world. For the pow-
+Filium h6m1n1s venientem in ers of heaven shall be moved;
+nube cum potestate magna. and then they shall see the Son
+et majestate. His autem fieri of man coming in a cloud with
+Inciplentlbus, respfcite, et great power and majesty. But
+levate capita vestra: qu6- when· these things begin to
+niam appropinquat redemp- come to pass. look up and lift
+tio vestra. Et dixit UUs simiU- up your heads. because your
+tUdinem: Videte ficulneam. redemption is at hand. And He
+et omnes arbores: cum pro- spoke to them a simllitude: See
+ducunt jam ex se fructum. the fig-tree. and all the trees:
+scitis qu6niam prope est res- when they now shoot forth
+tas. Ita et vas cum videritis their fruit. you know that sum-
+hrec fieri. scit6te qu6niam mer is nigh; so you also, when
+prope est regnum Dei. Amen you shall see ~hese things come
+dico vobis, quia non prreteri- to pass. know that the kingdom
+bit generatio hrec. donee 6m- of God is at hand. Amen I say
+nia fiant. Crelum. et terra to you.· this generation shall
+transibunt: verba autem mea not pass away. till all things be
+non transibunt.                 fulfilled. Heaven and earth
+                                shall pass away, but My words
+                                shall not pass away.
+  Creed, page 765.
+
+                     Offertory. Ps. 24, 1·3
+   Ad te levavi animam        To Thee have I lifted up my
+meam: Deus meus in te con- soul: in Thee. 0 my God, I put
+fido, non erubescam: neque my trust; let me not be
+irrideant me inimici mei: ashamed: neither let my ene-
+etenim universi. qui te ex- mies laugh at me: for none of
+spectant. non confundentur. them that wait on Thee shall
+                            be confounded.
+  Offertory Prayers,page 767.
+
+                                Secret
+~ lEe sacra nos D6mine             QLEANSINO  us by the 1r
+~~ potenti virtute munda-           mighty power. may these
+tos, ad suum faciant puri6res Holy Mysteries, 0 Lord. make
+venire principium. Pe).' D6mi- us come more pure before Thee
+num.                           who art their author. Through
+                               our Lord.
+ Second Secret Of our Blessed Lady. page 823' third for the
+Church or for the Pope, pages 825, 826.     '       .
+  Preface for Sundays, page 773.
+
+
+                      http://ccwatershed.org
+106             SECOND SUNDAY OF ADVENT
+
+                 Communion. Ps. 84, 13
+  The Lord will give goodness:   DOmInus dab I t benlgn1-
+and our earth shall yIeld her tatem: et terra nostra dabit
+fruit.                         fructum BUum.
+                         Postcommunion
+£nAY we receive Thy mercy,            SUSCIPIAMUS DOmin.e mIs-
+~ 0 Lord, In the midst of           ericOrdiam t u a m in
+Thy temple, that with due rev- mMlo templl tuI: ut repara-
+erence we may prepare for the t10nls nostrlle ventura solem-
+coming festIval of our redemp- nIa cOngruis hon6ribus. prlll-
+tion. Through our Lord.        cedamus. Per D6minum.
+  Second Postcommunion Of our Blessed Lady, page 823; thirrJ,
+Prayer for the Church or for the Pope, page 826.
+   Concluding Prayers, page 793.
+  The Benedlcamus Domino (Let us praise the Lord) f8 sal4
+instead ·of the Ite, mlssa est (Go, the Mass has been said)
+whenever the Gloria In excelsls is not sairJ,.
+   On Weekdays in Advent the Mass of the preceding Sundal/ t8
+sair'L, omitting the Alleluias and the Verse after the Gradual.
+and also the Credo. The Common Preface is said. However,
+il a Feast is appointed for the day, the Mass Of the day t8
+said and the second Prayer is that of the preceding Bundal/.
+For fhe Ember Days fhere t8 a special Mass.
+
+
+           ~etonb ~unbll!, of Sffilbent (Purple)
+STATION AT THE CHURCH OF THE HOLY CROSS IN JEIll1SALBIlI
+                    Sunday 0/ the Second Class
+  The Beginning of Mass, page 756.
+
+                       Introit. Is. 30, 30
+"T;;\EOPLE of SIon, behold the ~OPULUS Sion, ecce DOmi-
+~ Lord shall come to save             .-1=
+                                  nus venlet ad salvan-
+the nations; and the Lord Shall das gentes: et aUditam faciet
+make the glory of Hts voIce to D6mInus gl6riam vocis SUIll
+be heard in the joy of your in 1Illtitia cordis vestr1. PII. 79,
+heart. Ps. 79, 2. Give ear, 0 2. Qui regis Israel, Intende:
+Thou that rulest Israel: Thou qui deducts, velut ovem, Jo.
+that leadest Joseph like a seph. .,. GlOria Patrl.
+sheep. ,. Glory.
+  Kyne, page 761.    Gloria is omitted.
+
+                               Prayer
+
+S     TIR up our hearts. 0
+                        Lord, c::JXCITA D 6 min e corda
+     to prepare the ways of q       nostra ad prmparandas
+Thine only-begotten Son, that Unlgeniti tui vias: ut per ejus
+
+
+                        http://ccwatershed.org
+
+---------------------------------------------------------------- END PULL 3

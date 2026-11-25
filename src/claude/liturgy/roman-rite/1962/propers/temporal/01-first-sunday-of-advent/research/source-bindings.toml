@@ -1,0 +1,528 @@
+schema = 2
+record_type = "bindings"
+document = "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"
+
+# Publication-local record of how this leaf's research used the reusable source
+# library. It supplements, and does not replace, propers/verified.md (text control,
+# publication basis and English), research/scope.md (reception matrix, witness
+# register, commentators, difficulties, disagreements, negative results and bounds)
+# and research/interpretations.md.
+#
+# States describe what the research stage (iteration 0) of run 77c1ca91ef2d5e93 did
+# with each record on 2026-11-25. 'inspected' means this stage read the bound locus
+# itself in the bytes named; 'verified' is claimed only for page images read to
+# control a form, a publication basis or quoted English (the 1962 facsimile, Pustet
+# 1862, Lasance 1945). Remote and restricted artifacts were fetched whole and matched
+# to their registered SHA-256 before any locus was read; tracked artifacts were
+# re-hashed and matched. Fingerprints were taken from tools/source-library
+# fingerprint on 2026-11-25. The Scripture chronology sources are cited by
+# research/chronology.toml and sealed with it.
+#
+# The source-registration stage (iteration 0) of the same run registered the two
+# texts the research stage read in new fetches (Augustine on Ps 24 in Latin from
+# augustinus.it, and Confessions VIII in Latin from The Latin Library), refetched
+# both and matched their bytes, and bound them below. It also bound the records it
+# read itself to establish attribution, English and admission (Pilkington's English
+# of Confessions VIII, Augustine's Tractate 41 on John in the NPNF English, and the
+# checked Ambrose passage on Lk 21:29-30), and added the Psalm LXXXV English it
+# read beside the Latin of Ps 84. Each binding's disposition is in
+# research/source-dispositions.toml.
+#
+# The research stage (iteration 1) of the same run reread Gregory's first homily
+# in the tracked text (hash recomputed and matched) and restored the extent of
+# bindings 13-14 to sections 1-6: section 6 is printed inline on physical line 19,
+# after section 5, and runs to the homily's closing sentence. It also corrected the
+# contexts of the two Bellarmine bindings on Psalm 24 to name the readings that
+# use them.
+#
+# The source-registration stage (iteration 1) of the same run corrected the shared
+# passage record bound at 14 from locus 1.1-5 to 1.1-6 (its text already held
+# section 6), with the same count in its Catena edge and in the two English
+# excerpts' records, and re-pinned binding 14 to the corrected record.
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+loci = ["DOMINICA PRIMA ADVENTUS, printed pp. 1-2 = artifact PDF pp. 82-83, marginal nos. 1-10; head of printed p. 3 = PDF p. 84"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:489586789f24da05ee18ba23686f134dd71e18c7a91bd4b22190fa922d10dd76"
+context = "The exact remote facsimile controls every Latin form, heading, rank, citation, marginal number, conclusion and rubric of this formulary. The copy fetched whole on 2026-11-25 by the resolve-context stage of this run was re-hashed and matched to the registered SHA-256 and byte length before any page was rendered. PDF pp. 82-84 were read whole at 200 dpi, the six column sections of PDF pp. 82-83 in 400-dpi crops, and the head of PDF p. 84 in a 200-dpi crop (propers/verified.md)."
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-advent-1-orations"
+loci = ["Collect at printed p. 1, no. 2; artifact PDF p. 82, right column; Secret at printed p. 2, no. 8; artifact PDF p. 83, right column; Postcommunion at printed p. 2, no. 10; artifact PDF p. 83, right column"]
+role = "context"
+states = ["cataloged", "inspected"]
+source_fingerprint = "sha256:e61eebeb0768ad1a5cf1779419470f3c351baa2dec6f33ed39f693b038f40f40"
+context = "The 1962 owner record of this formulary's three orations, on which the Latin ledger's rows rest. Its text agrees with this stage's own reading of the page images; the wording in propers/verified.md was read on the images, not taken from this record."
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3"
+loci = ["Dominica I. Adventus, printed pp. 1-3 = PDF pp. 87-89"]
+role = "rights-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:53cf8c027d0647a872a62d51ef6884807380f4b5050ae98f65506b3578ce4fd8"
+context = "The public-domain antecedent on which the publication basis of the Latin rests (propers/verified.md). Fetched whole on 2026-11-25 from the registered source_url (102,880,787 bytes) and matched to the registered SHA-256; PDF pp. 87-89 rendered at 130 dpi and read whole. Every element of the 1962 formulary is printed in the same words, with orthographic, pointing and cue differences only; the Communion's citation reads Ps. 84 on the image."
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+loci = ["physical lines 13183-13452"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:efd4426beabe5385be4e5df4542255c488fe460dee069ab999231255702d5b0f"
+context = "The tracked text layer of the same 1862 book, re-hashed and matched; used to locate the formulary and reproduced unedited as PULL 2 in propers/retrieved.txt. It controls no wording; its 'Ps. 81' at the Communion is a misreading."
+
+[[bindings]]
+source_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+loci = ["First Sunday of Advent, printed pp. 103-106 = PDF pp. 104-107"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:376ca4e5db5bd3291c6c11b085c73dafdd1a09a8a7af523652257183cc25d645"
+context = "Fetched whole on 2026-11-25 from the registered source_url (75,268,976 bytes) and matched. Read on 110-dpi page images, with the Introit, Epistle, Gradual, Alleluia and the three orations again in 200- and 250-dpi crops. The English of the three orations and the Communion line quoted in propers/verified.md is this book's; its chant and lesson English follows the Douay with the adjustments recorded there."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-21-psalms-d20e21f8"
+loci = ["Ps.24.1-5", "Ps.84.2", "Ps.84.8", "Ps.84.13", "Ps.47.10"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:1481d71b5253d2bf9644408f82c40a7cd90fce2191d6586d9fa24b0f62d49130"
+context = "Clementine Vulgate verse text, re-hashed and matched; the comparison of the Missal's wording with the Vulgate in propers/verified.md and research/scope.md 2.3 and 7.3 was made against these verses."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-52-romans-b5092f0e"
+loci = ["Rom.12.1-21", "Rom.13.1-14"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:ea1ee4fa64e6aba7f80af9f1c6ef053bdfaaed70f99b318dbe7d10ed2db4b697"
+context = "Clementine Vulgate verse text, re-hashed and matched; the comparison of the Missal's wording with the Vulgate in propers/verified.md and research/scope.md 2.3 and 7.3 was made against these verses."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-49-luke-28ae5d9a"
+loci = ["Luke.21.5-38"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:c5eb7131bf4e265eeb034ea4bcbceb09f8cddff2c696746f2b4545321b823993"
+context = "Clementine Vulgate verse text, re-hashed and matched; the comparison of the Missal's wording with the Vulgate in propers/verified.md and research/scope.md 2.3 and 7.3 was made against these verses."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-21-psalms-578f023d"
+loci = ["Ps.24.1-5", "Ps.84.8", "Ps.84.13", "Ps.47.10"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:04b581584ed78f861cef34251b2da71ddc94429cd7228ea8cc6585a2aa4a5a41"
+context = "Douay-Rheims (Challoner) verse text, re-hashed and matched; the profile's English for the scriptural elements (propers/verified.md, English and Recommended display). Also read whole for the biblical context of the appointed passage."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-52-romans-4d45c497"
+loci = ["Rom.13.11-14"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:1b6036a02c7bcc743d143f4f4e17bb6927cb1f4d8dfff9115aeb3250cf287c64"
+context = "Douay-Rheims (Challoner) verse text, re-hashed and matched; the profile's English for the scriptural elements (propers/verified.md, English and Recommended display). Also read whole for the biblical context of the appointed passage."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-49-luke-d8269c33"
+loci = ["Luke.21.5-38"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:b6acab91674d3bbe04726da30c835175a133104d3db53fcf3f8e45b1d5b4ba6e"
+context = "Douay-Rheims (Challoner) verse text, re-hashed and matched; the profile's English for the scriptural elements (propers/verified.md, English and Recommended display). Also read whole for the biblical context of the appointed passage."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.psalm-numbering-ee3c7757"
+loci = ["Ps.24.1", "Ps.84.1"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:c3702f219d6641eb66186bd7d3d557375aec2843467d0d54aabe3397ec7e8fb7"
+context = "The repository's Vulgate-Hebrew psalm concordance, re-hashed and matched: zero English verse offset for Ps 24, one for Ps 84."
+
+[[bindings]]
+source_id = "artifact.gregory-the-great.homiliae-in-evangelia.wikisource-web-2026-09-17.complete-extracted-text-dc25dd69"
+loci = ["1.1-6"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:dd03fd6ff09944af5ba01e741418ae3278e9bc68a08acb4d0cd4538129984eea"
+context = "Gregory's first homily on the Gospels, on Lk 21:25-32 (he also treats v. 33), read whole in the tracked extracted text (hash recomputed and matched): inscription and lesson at physical lines 10-14; Homily I sections 1-6 at lines 15-19, with section 6 printed inline on line 19 after section 5 ('6. Sed considerandum nobis est ...' to '... quanto nunc districtionem illius timendo praevenitis'). Line 20 is the extractor's source note. The inscription reads 'Habita ad populum in basilica sancti Petri apostoli, Dominica secunda Adventus Domini' and the lesson text reads 'in nubibus'. Section 1 reports earthquakes heard of from other parts of the world; section 5 names the sudden whirlwind ('subito turbine') that threw down trees, houses and churches three days before; section 6 says the judge moved the wind and the cloud, undermined the ground and shook the foundations of buildings, and never calls it an earthquake (research/scope.md 8.4). Carrying author of reading 1."
+
+[[bindings]]
+source_id = "passage.gregory-the-great.homiliae-in-evangelia.wikisource-web-2026-09-17.1.1-5-luke-21"
+loci = ["1.1-6"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:10ea6f9bd6c4202b893416ad9054f94b6355362d4b93f55783820b29c90c23c3"
+context = "The registered passage of the same homily, read at its lines (physical lines 15-19); its text agrees with the whole artifact bound above and holds Homily I sections 1-6, section 6 inline in its transcription segment for line 19. Its locus read '1.1-5' until source registration (iteration 1) corrected the shared record to '1.1-6' on 2026-11-25, reread its line-19 segment against the artifact, and re-pinned this binding; the record's ID keeps its original form (research/scope.md 13.2)."
+
+[[bindings]]
+source_id = "artifact.cyril-of-alexandria.commentary-on-luke.english-payne-smith-pearse-web-2026-09-05.cyril-on-luke-13-sermons-135-145-9939da72"
+loci = ["Sermon CXXXIX on Lk 21:5-36; opening of Sermon CXL on Lk 21:37-38"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:6f29963409a110759436e50e8ea28d6f47f95be2e0e594f96d9b9be244ff9210"
+context = "Cyril on Luke 21 in Payne Smith's English, tracked HTML (hash recomputed and matched). Sermon 139 distinguishes Jerusalem's capture from the consummation, reads the redemption of v. 28 as the resurrection of the body, and closes with Lk 21:36. Carrying author of reading 1."
+
+[[bindings]]
+source_id = "artifact.ambrose.expositio-evangelii-secundum-lucam.latin-wikisource-web-2026-09-05.book-10-html-083e1630"
+loci = ["10.2", "10.36", "10.37", "10.38", "10.39", "10.40", "10.41", "10.42", "10.43", "10.44", "10.45"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:775b63694d5f5c751be556ca29c8a0fb6fddbfd39995bf111c1ac3c7e5ebf80c"
+context = "Ambrose on Lk 21:25-33, Latin, tracked Wikisource HTML (hash recomputed and matched). The figurative reading of sun, moon, stars, clouds and fig tree. He does not treat vv. 32-33. Carrying author of reading 2."
+
+[[bindings]]
+source_id = "passage.ambrose.expositio-evangelii-secundum-lucam.latin-migne-corpus-corporum-web-2026-07-25.luke-21-29"
+loci = ["10.44"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:4ba3d50dc85dd210cc63282c9aabc070de4b4ae9b9ad05053e656cbc62f404a9"
+context = "Read by source registration: the verified passage of Ambrose on Lk 21:29-30 (X.44-45, Diverso quidem modo ... Tales vestes paradisi exsules habent), in the checked Corpus Corporum transcription whose one line was re-hashed and matched; it agrees with the same sections in the Wikisource page bound above, where they sit under the printing's lemma (Vers. 29, 30.). Its canonical edge already exists."
+
+[[bindings]]
+source_id = "artifact.augustine.epistula-199.2026-11-23-augustinus-it.letter-199-5b570f96"
+loci = ["1-3, 25-27, 34-45, 52-54"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:a3e9ab711c47ed0a74b45b4a6d4d97f780b839abbdd2540b746b26d1efef3b43"
+context = "Augustine to Hesychius on the end of the age, Latin, augustinus.it; a restricted artifact fetched on 2026-11-25 and matched to its registered SHA-256 before reading. Three comings; Luke separates the city from the last coming; the signs read of the Church; the hidden time. Carrying author of reading 2 and the objection to reading 1."
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-10.ccel-web-2026-09-17.ccel-text-adb8f1c9"
+loci = ["Homily LXXVII on Matt. XXIV. 32-35, physical lines 42824-42900"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:0209917237dc0599614ab5b3a70d1563de63045007c4a8d4eb7776dd6ec37992"
+context = "Chrysostom on the synoptic parallel Mt 24:32-35 (NPNF English, tracked, hash recomputed and matched): the fig tree; 'this generation' as the generation of the believers; heaven and earth and his words. A parallel witness for Lk 21:29-33 in reading 2."
+
+[[bindings]]
+source_id = "artifact.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.luke-21-checked-cd9a5956"
+loci = ["Lc.21.28", "Lc.21.29", "Lc.21.30", "Lc.21.31", "Lc.21.32", "Lc.21.33"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:c7c1b0c61a9d4b76d354dd268a65f0da7964dc649eb7183b3e08c4ef6832fabd"
+context = "Bede on Lk 21:28-33, checked Latin text (hash recomputed and matched). On v. 28 he copies Gregory, Hom. 1.3, word for word; those words are cited as Gregory's. On v. 32 'aut omne hominum genus … aut specialiter Judaeorum'; on v. 33 the aerial heaven renewed."
+
+[[bindings]]
+source_id = "artifact.bede.in-lucae-evangelium-expositio.latin-migne-pl92-1862.ia-djvu-text-2681d6ae"
+loci = ["Lc.21.25", "Lc.21.26", "Lc.21.27"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:3135edf75956831e8041fdb00aad271d810c034f0c1d968932aa87f1ddd5d666"
+context = "The PL 92 optical text of Bede, In Lucam VI on Lk 21:25-27, physical lines about 42330-42505 (hash recomputed and matched), too damaged to quote; only its sense is recorded (research/scope.md 4, 12)."
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-7.ccel-web-2026-09-17.ccel-text-266502c9"
+loci = ["Tractate XLI on John 8:31-36, sections 3-4, physical lines 18383-18410"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:10294711891b3ca7163bf578e02d0a027dbd110257bdaf2fb0b89b65ffe858de"
+context = "Read by source registration (hash recomputed and matched) to establish whose words Bede gives on Lk 21:32: Augustine's Tractate 41.3-4 on Jn 8:34 calls Amen, amen the Lord's form of swearing, says neither the Greek nor the Latin translator dared to render it, and says the doubled word rouses the sleeping, which Bede's sentences follow in order. Augustine's Latin of the tractate was not read. Credits the Amen sentences to Augustine, not Bede (research/scope.md 8.5)."
+
+[[bindings]]
+source_id = "passage.john-chrysostom.homilies-on-romans.ccel-web-2026-09-17.24.rom-13.11"
+loci = ["24"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:b179ca25b06c807e501da2bf56f4bfa7c0670f0cf654d4cbff0f991f63248b3b"
+context = "Chrysostom on Rom 13:11, read at the passage's lines in the NPNF English. Carrying author of reading 3."
+
+[[bindings]]
+source_id = "passage.john-chrysostom.homilies-on-romans.ccel-web-2026-09-17.24.rom-13.12"
+loci = ["24"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:2cfcd0c116cd08a29658662adff2ed3b7ce911ad61546ce574d81ebf576f76f9"
+context = "Chrysostom on Rom 13:12, read at the passage's lines in the NPNF English. Carrying author of reading 3."
+
+[[bindings]]
+source_id = "passage.john-chrysostom.homilies-on-romans.ccel-web-2026-09-17.24.rom-13.13"
+loci = ["24"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:289ba87157e57026d2ff96194e5e7b165232a871e0ea7105d51647dbbb68a994"
+context = "Chrysostom on Rom 13:13, read at the passage's lines in the NPNF English. Carrying author of reading 3."
+
+[[bindings]]
+source_id = "passage.john-chrysostom.homilies-on-romans.ccel-web-2026-09-17.24.rom-13.14"
+loci = ["24"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:5a82c7eb670764552c9248193d52126e5e6e1a38a1538b7ca609c4ae3f339d67"
+context = "Chrysostom on Rom 13:14, read at the passage's lines in the NPNF English. Carrying author of reading 3."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.super-romanos.2026-11-22-corpus-thomisticum.chapters-12-16-1c3db878"
+loci = ["13.l3"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:45760102c36687e07084712fb8d9f29daf6e5f10f078af15c4bc4f123374a57d"
+context = "Aquinas on Rom 13:11-14, Latin, corpusthomisticum; a restricted artifact fetched on 2026-11-25 and matched before reading. The three senses of nearness, including 'secundum quod Ecclesia haec verba adventus tempore legit', and the three nights. Carrying author of reading 3."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.super-psalmos.latin-corpusthomisticum-web-2026-07-28.cps21-html-5e8fdbbe"
+loci = ["24.n1", "24.n2", "24.n3", "24.n4"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:d7e2f9d87d27ac76392972b00af3983181d6071724944573eae45a7c370b68dd"
+context = "Aquinas on Ps 24:1-4, Latin; a restricted artifact fetched on 2026-11-25 and matched. Prayer as ascent; those who wait 'cum longanimitate'; the ways as precepts by which the Lord comes to us. His psalter reads 'sustinent' and 'demonstra'."
+
+[[bindings]]
+source_id = "artifact.augustine.enarrationes-in-psalmos.latin-migne-corpus-corporum-wikisource-web-2026-09-05.wikisource-part-9-latin-text"
+loci = ["84.1,9,15"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:4ec924c6b55bfe5458a51ad4efa23e437507b846582d1d62cca86f8d68cc730d"
+context = "Augustine on Ps 84:8 and 84:13, Latin, Enarratio 84 sections 1, 9 and 15 at physical lines 75, 83 and 89 (hash recomputed and matched): the salvation is Christ given as man, to be given as God; his text of v. 13 reads 'suavitatem'. Carrying author of reading 4."
+
+[[bindings]]
+source_id = "artifact.augustine.enarrationes-in-psalmos.english-npnf8-ccel-web-2026-09-05.ccel-npnf108-text-d6841950"
+loci = ["24.1-5,10", "85.6,12"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:0a8fd6a45c963c52d5c8d09497820cfb88e5bf59d3a86a8a573856782e822f37"
+context = "The NPNF English of Augustine on Ps 24 (Psalm XXV in its numbering, from physical line 6850; hash recomputed and matched), read beside the Latin fetched new in the research stage (research/scope.md 13). Source registration also read Coxe's abridged English of Ps 84 (Psalm LXXXV in its numbering) at the sections corresponding to Latin 84.9 and 84.15 and registered them as the English of those sections (Psalm LXXXV §6 from ver. 7 and §12, physical lines 41637-41671 and 41844-41870; the passages carry Coxe's numbering, 85.6 and 85.12)."
+
+[[bindings]]
+source_id = "artifact.augustine.enarrationes-in-psalmos.latin-augustinus-it-web-2026-09-05.augustinus-it-ps024-614fe703"
+loci = ["24.1-5", "24.10", "24.21"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:db190448976b8525d671cb8823fda5963a1da54d97ef021d1035ebd0d5d8979d"
+context = "Augustine's Latin of the Enarratio in Psalmum 24 on augustinus.it (the site's file 026), read whole by the research stage in its fetch of 2026-11-25 and registered by source registration, whose own refetch the same day was byte-identical (9,900 bytes, SHA-256 matched). Remote: no licence, and no edition named for the Latin. Its psalter reads Ad te, Domine, levavi animam meam (section 2), Etenim universi qui te exspectant non confundentur (3) and Vias tuas, Domine, notas fac mihi (4); section 10 gives universae viae Domini as the two comings of the Son of God, unus miserantis, alter iudicantis. Compared with the English bound above (research/scope.md 2.3, 4)."
+
+[[bindings]]
+source_id = "artifact.augustine-of-hippo.confessiones.the-latin-library-web-2026-11-25.book-8-html-be90ce92"
+loci = ["8.5.12", "8.12.28", "8.12.29"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:6904e470cd2001d2dfa558097e954f53e0c35b38ed037bf61f813aab5526ebcb"
+context = "Confessions VIII in Latin from The Latin Library (crediting James J. O'Donnell's edition), read by the research stage in its fetch of 2026-11-25 and registered by source registration, whose own refetch the same day was byte-identical (39,278 bytes, SHA-256 matched). Remote: a modern editor's text with no licence. VIII.12.29 narrates tolle lege and the reading of Rom 13:13-14 (luce securitatis infusa cordi meo); VIII.5.12 the drowsy delay, Modo, ecce modo, with Eph 5:14. Narrative reception of the Epistle, not exegesis; not collated with the CSEL 33 printing."
+
+[[bindings]]
+source_id = "segment.augustine-of-hippo.confessiones.ccel-web-2026-10-13.complete-work"
+loci = ["8.5.12", "8.12.28", "8.12.29"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:f47f415a9d5cf7e75e5cd075b7218c9bcd89ea7dc6e935b655fbb77e86d59a86"
+context = "Read by source registration: Pilkington's English of the same sections in the tracked NPNF I.1 text at physical lines 11115-11140 and 11828-11874 (hash recomputed and matched), the lawful English of the Latin bound above, which the research stage's Gutenberg attempt did not supply. VIII.5.12 'Presently, lo, presently' and 'Awake, thou that sleepest'; VIII.12.29 'put ye on the Lord Jesus Christ' and 'a light, as it were, of security infused into my heart'."
+
+[[bindings]]
+source_id = "passage.nicene-and-post-nicene-fathers.series-1-volume-1.new-york-1886.augustine-confessiones-8.12.29"
+loci = ["Augustine, Confessiones VIII.12.29"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:6143c6ee3a95d37f07ba91a965cd63ef381bb5ba0af9949a6d54f8d0e01d90f1"
+context = "The verified passage of the same English at VIII.12.29, read by source registration in its checked text (hash recomputed and matched). The Catena owner classes it as an incidental citation of Rom 13:13-14 (src/sources/commentary/held-passage-review.yaml)."
+
+[[bindings]]
+source_id = "passage.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.psalm-24-verses-1-3"
+loci = ["Psalm 24, explanations 1–3"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:2efdbe7f29f9997b17219eb13e7f836f68975f8e76468aaa4cb3a03af77d9154"
+context = "Bellarmine, O'Sullivan English, read at the passage's lines: the lifted soul and those who wait. Used for the Gradual and Offertory in reading 1 (those who wait 'were never disappointed') and for the Introit, Gradual and Offertory in reading 4 (to wait on the Lord is to expect him 'in the certain hope of assistance'). Bellarmine carries reading 4 on Psalm 84, not on this psalm."
+
+[[bindings]]
+source_id = "passage.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.psalm-24-verses-4-5"
+loci = ["Psalm 24, explanations 4–5"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:87555f99251a028bc2100fbaa59926d8429fd2738a0e827ff501470370b442c0"
+context = "Bellarmine, O'Sullivan English, read at the passage's lines: the ways as God's law, taught practically. Used for the Gradual in reading 2 (he asks to be taught 'not speculatively, but practically'). Bellarmine carries reading 4 on Psalm 84, not on this psalm."
+
+[[bindings]]
+source_id = "passage.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.psalm-84-verse-8"
+loci = ["Psalm 84, explanations 7"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:0fd361933dd54fbebaeec4a1fefeb0875c15954abb49cd45afab6714bf92f5ab"
+context = "Bellarmine, O'Sullivan English, read at the passage's lines: the request for the Saviour's coming. Carrying author of reading 4 (Ps 84)."
+
+[[bindings]]
+source_id = "passage.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.psalm-84-verse-13"
+loci = ["Psalm 84, explanation 12"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:9839f6d8153620dcd60f3a2a65fe800538b27aad61c6b2fcf100eb2b40f305d8"
+context = "Bellarmine, O'Sullivan English, read at the passage's lines: the Holy Spirit overshadowing a virgin; the untouched land yields her fruit. Carrying author of reading 4 (Ps 84)."
+
+[[bindings]]
+source_id = "artifact.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.historical-text-357551e1"
+loci = ["physical lines 840-853 (Psalm 24 title and explanations 1-5); 2988-3015 (Psalm 84 title and explanations 1-12)"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:85b019a495120f1320c91743bdd127eef0ccb54126e0247bcb0298f9fb7c3344"
+context = "The tracked text behind the four Bellarmine passages (hash recomputed and matched), read for the psalms' titles and surrounding explanations that the chronology inspection cites (research/scope.md 9)."
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-7.ccel-web-2026-10-06.ccel-text-56d84cfa"
+loci = ["Catechetical Lecture XV.3 and XV.22, physical lines 16215-16250 and 16595-16616"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:1f357ee73bda8276cc25eb0133278376e91529929c0187de2d364f9c3b192261"
+context = "Cyril of Jerusalem in the NPNF English (tracked, hash recomputed and matched), on the synoptic signs and Isa 34:4: the heavens raised more beautiful; the darkened sun is not Christ; the sign of the Cross. A parallel witness."
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-7.new-york-1894.cyril-catechesis-15.1-checked-text-d027e7e3"
+loci = ["Catechetical Lecture XV.1"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:65b233b572ea0766a4b0bce4131470c3b86f3b072c393990a9112272cc0d06f2"
+context = "Checked English of Cyril, Cat. 15.1 (two advents), read whole; supporting witness for readings 2 and 4."
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-7.new-york-1894.cyril-catechesis-15.2-checked-text-ad047b6f"
+loci = ["Catechetical Lecture XV.2"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:3f74021c628d1944302f5431ddd5e49bb9a13649fd172202b49b74896a094032"
+context = "Checked English of Cyril, Cat. 15.2 (Malachi's two comings), read whole; supporting witness for readings 2 and 4."
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-7.new-york-1894.cyril-catechesis-15.4-checked-text-714df80a"
+loci = ["Catechetical Lecture XV.4"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:4390cf3c8dfd1c97eb47bcfd85cdfde9f2bce360c051ddb10e26c168d3b3e3c5"
+context = "Checked English of Cyril, Cat. 15.4 (no curiosity about the time, no slumber), read whole; supporting witness for readings 2 and 4."
+
+[[bindings]]
+source_id = "artifact.bernard-of-clairvaux.st-bernards-sermons-for-the-seasons-volume-1.1921-dublin-browne-and-nolan.bernard-in-adventu-3.4-three-comings-checked-text-f6dac49c"
+loci = ["In Adventu 3.4"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:0f26efb15dd99c036cbb69090cf69abd60843a41970fc6fba280fad49f0701bf"
+context = "Checked English of Bernard, In Adventu 3.4 (three comings), read whole. Context only: the standing file has no row for Bernard (research/scope.md 11)."
+
+[[bindings]]
+source_id = "artifact.bernard-of-clairvaux.st-bernards-sermons-for-the-seasons-volume-1.1921-dublin-browne-and-nolan.bernard-in-adventu-4.1-two-advents-checked-text-b33a26f4"
+loci = ["In Adventu 4.1"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:8fc06552a21015bb491eec81a8947c36d77f42588d4d4aee6edc26292b56bf3a"
+context = "Checked English of Bernard, In Adventu 4.1 (the two advents), read whole. Context only: the standing file has no row for Bernard (research/scope.md 11)."
+
+[[bindings]]
+source_id = "artifact.bernard-of-clairvaux.st-bernards-sermons-for-the-seasons-volume-1.1921-dublin-browne-and-nolan.bernard-in-adventu-5.1-checked-text-b444a4d8"
+loci = ["In Adventu 5.1"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:e56ca05a459b676de0b7a0588587bda4b6fac9ef806bf78fa53db614f66aa6fe"
+context = "Checked English of Bernard, In Adventu 5.1 (the middle advent), read whole. Context only: the standing file has no row for Bernard (research/scope.md 11)."
+
+[[bindings]]
+source_id = "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.advent-primer-advent-1-mattins-lesson-4"
+loci = ["Proper of the Season, First Sunday of Advent, Mattins, second nocturn, Fourth Lesson (St Leo the Great, 8th Sermon on the December Fast); printed p. 215"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:78354d557448f4493fc4ed6ef86ea8d06453395c414bee8922e1036f1cf1c933"
+context = "St Leo's lesson on Lk 21:34 as the Breviary prints it, read in the passage record; the Office's use, not the Mass. Leo's sermon itself was not read."
+
+[[bindings]]
+source_id = "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.advent-primer-advent-1-mattins-lesson-7"
+loci = ["Proper of the Season, First Sunday of Advent, Mattins, third nocturn, Seventh Lesson (Luke xxi. 25; St Gregory the Great, 1st Homily on the Gospels); printed p. 216"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:8cdfa44c723720e8ecdd2f9cc393f7e0d5784f0d4262f85379e963f04c7fd84d"
+context = "The Office's use of Gregory's first homily on this Gospel, read in the passage record; Gregory himself is cited from the homily."
+
+[[bindings]]
+source_id = "artifact.rupert-of-deutz.de-divinis-officiis.latin-migne-pl-170.ia-djvu-ocr-2e2ca850"
+loci = ["De divinis officiis III, cap. 2, De prima Dominica adventus Domini, physical lines about 3749-3845"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:7ec56124e31762f147f8aed197516894e92dc2d5ec7de99bcc91a9f11d1a98d3"
+context = "Rupert's first Sunday of Advent, PL 170 optical text (hash recomputed and matched). His Mass shares the Introit, Gradual, Alleluia, Epistle, Offertory and Communion; his Gospel is Mt 21 and his station St Peter's; the orations are unnamed (research/scope.md 6). Cited only for the shared elements; his Communion reading 'terra nostra, id est, uterus Virginis'."
+
+[[bindings]]
+source_id = "artifact.sicard-of-cremona.mitrale.latin-migne-pl-213.ia-djvu-ocr-ea9fd813"
+loci = ["Mitrale V, the first Sunday of Advent, physical lines about 14905-15035"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:f7ef227833c6454f7bea588021ba7c000d14f6dc1220746e710f6f3d8a19f761"
+context = "Sicard's first Sunday of Advent, PL 213 optical text (hash recomputed and matched). Same shared elements and differences as Rupert, whose chapter he largely reproduces; his Gospel is Mt 21 and his station St Peter's."
+
+[[bindings]]
+source_id = "artifact.william-durandus.rationale-divinorum-officiorum.1612-lyon-tomus-secundus.ia-djvu-ocr-b9b266dd"
+loci = ["Rationale VI, the first Sunday of Advent, physical lines about 1100-1175; De tempore adventus, about 560-800"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:5be12620687e1829e19de144d3c79009d8b9dce221c126174799a60e3facbb4a"
+context = "Durandus, Lyon 1612 optical text (hash recomputed and matched). His Mass shares the Introit, Epistle, Gradual, Alleluia, Offertory and Communion, and in some churches the Gospel Erunt signa, which he joins to the Epistle. On the orations he follows Sicard and adds their adaptation to the second coming."
+
+[[bindings]]
+source_id = "artifact.ildefonso-schuster.the-sacramentary.1924-burns-oates-washbourne-volume-1-english.ia-original-volume-1-13aa55ad"
+loci = ["First Sunday of Advent, printed pp. 321-323 = PDF pp. 337-339"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:ebc4de4527c14f714355a5f72f7075cc3e57cb1471b9effa4350c1238a8bbd12"
+context = "Schuster's First Sunday of Advent, read on 100-dpi page images of the registered Internet Archive scan, fetched whole on 2026-11-25 (149,350,698 bytes) and matched. His Mass is the 1962 formulary element for element. His claims about the station of Gregory's homily and an 'earthquake' are not supported by the texts read (research/scope.md 8.4)."
+
+[[bindings]]
+source_id = "artifact.ildefonso-schuster.the-sacramentary.1924-burns-oates-washbourne-volume-1-english.isidore-machine-text-e78f3515"
+loci = ["physical lines about 18040-18230 (printed pp. 320-323)"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:ba1999084cfbd51b025743c26d07fc6b441d12c5bdd506f9d5ce07c875628280"
+context = "The tracked machine text of the same volume (hash recomputed and matched), used to locate the chapter; printed p. 320 was read only here."
+
+[[bindings]]
+source_id = "artifact.ildefonso-schuster.the-sacramentary.1924-burns-oates-washbourne-volume-1-english.isidore-ocr-only-e2378715"
+loci = ["PDF pp. 311-313"]
+role = "context"
+states = ["cataloged", "acquired"]
+source_fingerprint = "sha256:7ccb0f2181496d3bd7b4079909db4b8b5120b5fc5a9f26f753492d2ff117fdab"
+context = "The Isidore OCR-layer PDF, fetched whole on 2026-11-25 and matched; its pages are a rendering of the optical text, not page images, so it controls nothing here."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08377a-f81e2c23-article-text"
+loci = ["physical lines 131-134"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:fe5c1682bc9df4a6ffe2e0a61f7ac28267f049a6ffef975b9a78bc795774f656"
+context = "Maas, 'Jesus Christ', the Ninth Journey and Holy Week paragraph, reread (hash recomputed and matched) for the Gospel's narrated-event row added to the shared chronology corpus (research/scope.md 9.1)."
+
+[[bindings]]
+source_id = "passage.catholic-encyclopedia.volume-8.new-york-1910.maas-ninth-journey-olivet-prophecies"
+loci = ["article 'Chronology of the Life of Jesus Christ,' Ninth journey, heading and Holy Week paragraph: the close of the Tuesday"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:8e7dce5aefd9ac207bef92f2b0f013a7761aa2d4a08eeef27ffad6218f7fcd8b"
+context = "The registered passage that the new chronology event cites; read against the article text above."
+
+[[bindings]]
+source_id = "work.cassiodorus.expositio-psalmorum"
+role = "lead"
+states = ["cataloged"]
+context = "Cassiodorus on Psalms 24 and 84 (Vulgate numbering), the psalms of the Introit, Gradual, Offertory, Alleluia and Communion. Reported held by commentary-work-index discover on 2026-11-25; not read in this stage (research/scope.md 10). An ecclesiastical writer in the standing file; could not carry a reading."
+
+[[bindings]]
+source_id = "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.gregory-on-luke-21-28"
+role = "lead"
+states = ["cataloged"]
+context = "The Catena aurea's Gregory on Lk 21:28, reported by discover; not read. Gregory's homily itself was read directly (Hom. in Ev. 1.3); the rest of the Catena on Lk 21:25-33 is a lead for its other compiled witnesses."
+
+[[bindings]]
+source_id = "work.jerome.commentariorum-in-evangelium-matthaei"
+role = "lead"
+states = ["cataloged"]
+context = "Jerome, In Matthaeum IV on Mt 24:34-35, the parallel of Lk 21:32-33, and the probable origin of Bede's 'generatio' sentence. Held only as PL 26 facsimile pages; not read in this stage, so Bede's sentence is not credited to Jerome (research/scope.md 8.5, 10)."
+
+[[bindings]]
+source_id = "work.augustine.de-civitate-dei"
+role = "lead"
+states = ["cataloged"]
+context = "Augustine, De civitate Dei XX, on the last judgment and its signs; held, not read in this stage. Augustine's reading of Lk 21 here rests on Ep. 199 (research/scope.md 10)."
+
+[[bindings]]
+source_id = "work.cornelius-a-lapide.commentaria-in-quatuor-evangelia"
+role = "lead"
+states = ["cataloged"]
+context = "Cornelius a Lapide on Lk 21:25-33, reported held by discover; not read. Not a Father, saint or Blessed; could support only."
+
+[[bindings]]
+source_id = "work.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas"
+role = "lead"
+states = ["cataloged"]
+context = "Cornelius a Lapide on Rom 13:11-14, reported held by discover; not read. Could support only."

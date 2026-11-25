@@ -1,0 +1,847 @@
+# Reusable-source dispositions for this leaf's research bindings
+# (proper-study-source-dispositions-v1). One or more rows per binding in
+# research/source-bindings.toml, pinned to that binding's digest and to its
+# source's reviewed fingerprint. Written by the source-registration stage
+# (iteration 0) of proper-study run 77c1ca91ef2d5e93 on 2026-11-25, for the 62
+# bindings left after this stage bound the checked Ambrose passage on
+# Lk 21:29-30 (17), Augustine's
+# Tractate 41 on John (22) that Bede copies on Lk 21:32, the two texts research
+# read in new fetches and this stage registered (31 Augustine on Ps 24 from
+# augustinus.it; 32 Confessions VIII from The Latin Library), and Pilkington's
+# English of Confessions VIII (33-34), and added Coxe's English of Ps 84 to the
+# NPNF I.8 binding (30). Every tracked bound artifact was re-hashed against its
+# registered record and matched; every remote or restricted one was matched
+# through the research or resolve-context receipt or this stage's refetch.
+# binding_sha256 values come from scripts/_proper_study.py binding-digests.
+#
+# The research stage (iteration 1) of the same run restored Gregory's homily to
+# its six sections (bindings 13-14: section 6 is printed inline on physical line
+# 19 of the tracked text, after section 5), restated Ambrose's identifications of
+# sun, moon and stars at his own sections (16), corrected the contexts of the two
+# Bellarmine Psalm 24 bindings (35-36), and re-pinned those rows' binding digests.
+#
+# The source-registration stage (iteration 1) of the same run corrected the shared
+# passage record bound at 14 from locus 1.1-5 to 1.1-6, after rereading its
+# line-19 transcription segment against the artifact (hash recomputed and
+# matched), together with the section count in its Catena edge and in the two
+# English excerpts' records; it re-pinned binding 14's digest and fingerprint.
+#
+# This stage admitted five new Augustine fragments, each a verified passage with
+# its canonical edge in src/sources/commentary/fragment-loci.yaml: Enarrationes
+# in Psalmos 84.1 and 84.9 (Ps 84:8) and 84.15 (Ps 84:13) in Latin, and Coxe's
+# English of 84.9 and 84.15, linked to the Latin as excerpt English versions. It
+# added to the edges of Bede on Lk 21:28, 29-31 and 32 the attribution of their
+# words to Gregory (Hom. in Ev. 1.3) and Augustine (In Ioh. tr. 41.3-4).
+#
+# admitted        the verified passage named has a canonical Scripture edge in
+#                 src/sources/commentary/fragment-loci.yaml
+# deferred        read and used here, but not yet an admissible Catena fragment;
+#                 missing_criteria says what is still needed
+# not-commentary  liturgical text, Bible text, translation control, a locating
+#                 aid, narrative reception, a reference article or a chronology
+#                 source; no fragment claim is made
+# lead            catalog-only; not read
+#
+# Scripture extents are the source's own reach in canonical Vulgate numbering,
+# never the appointment that led this study to it: Chrysostom on Matthew and
+# Cyril of Jerusalem are anchored to Matthew 24, Augustine's Tractate to John 8,
+# Leo to Lk 21:34, and the liturgical commentators to the Scripture they cite.
+#
+# Missing criteria used below:
+#   passage-record            no passage record holds the excerpt
+#   natural-excerpt-boundary  the excerpt's natural extent is not fixed
+#   page-image-collation      read on OCR or a transcription, not collated with
+#                             a page image
+#   verified-transcription    read on page images or damaged OCR, but no checked
+#                             transcription exists to carry the wording
+#   retained-page-image       the page read is in a remote scan only; no page
+#                             of it is retained in the library
+#   original-language-text    read in translation; the original was not read
+#                             or is not held
+#   edition-translator-credit the edition record names no translator, so the
+#                             Catena refuses a translation fragment from it
+#   work-record               the work read has no work record of its own, or
+#                             is held only inside a book that is not a declared
+#                             anthology of it
+#   publishable-controller    the only held witness of the wording is
+#                             restricted or of unresolved rights, so it cannot
+#                             control a published fragment (Catena Rule 9)
+#   harvest-alias-group       work-aliases.yaml has no harvest group for the
+#                             work, so a Catena row could not name a work_alias
+#   quoted-text-attribution   the block carries, or may carry, another author's
+#                             words beside the author's own; a fragment must
+#                             bound and credit them
+#   scripture-extent          no single Scripture extent is expounded
+
+schema = 1
+contract = "proper-study-source-dispositions-v1"
+document = "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"
+numbering = "vulgate"
+
+[[sources]]
+id = "missale-1962-advent-1-text-control"
+binding_index = 1
+binding_sha256 = "71bd1149b63824ead1e596d5a531077d26ac40526496ff5f2678d0f122a8382a"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+source_fingerprint = "sha256:489586789f24da05ee18ba23686f134dd71e18c7a91bd4b22190fa922d10dd76"
+locus = "Dominica prima Adventus, printed pp. 1-3 (PDF pp. 82-84), nos. 1-10"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The 1962 typical edition is the liturgical text studied and its text control, not commentary on Scripture. Its rights are unresolved and it stays remote. The resolve-context receipt of the whole file was re-hashed here against its registered SHA-256 and byte length (82,815,941 bytes) and matched."
+
+[[sources]]
+id = "missale-1962-advent-1-orations-record"
+binding_index = 2
+binding_sha256 = "e0c636be731460ee71e98f76ecb2a5a3e93dc55553b7e5982915ef3eaa1be77a"
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-advent-1-orations"
+source_fingerprint = "sha256:e61eebeb0768ad1a5cf1779419470f3c351baa2dec6f33ed39f693b038f40f40"
+locus = "Collect no. 2; Secret no. 8; Postcommunion no. 10"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The registered 1962 orations record, carried by the same remote facsimile (matched above); liturgical text, not commentary."
+
+[[sources]]
+id = "pustet-1862-advent-1-facsimile"
+binding_index = 3
+binding_sha256 = "2662d56359be95ecfecb6b6794c166c4aa5226a615add2203e6c2217fd8b1c63"
+source_id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3"
+source_fingerprint = "sha256:53cf8c027d0647a872a62d51ef6884807380f4b5050ae98f65506b3578ce4fd8"
+locus = "Dominica I. Adventus, Pustet 1862 page images"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The 1862 Ratisbon missal is a comparison witness for the chants' Latin and the publication basis, not commentary. Remote (public domain, 102,880,787 bytes); the research receipt was re-hashed here and matched."
+
+[[sources]]
+id = "pustet-1862-advent-1-text-layer"
+binding_index = 4
+binding_sha256 = "55d3e36dcef0456ff2e9d02b92053f1002a7f26a6583d9c5a004031bb36eec33"
+source_id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+source_fingerprint = "sha256:efd4426beabe5385be4e5df4542255c488fe460dee069ab999231255702d5b0f"
+locus = "the same Mass in the tracked text layer"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The tracked text layer of the same Pustet volume (hash recomputed and matched here), a locating aid for the page images; not commentary."
+
+[[sources]]
+id = "lasance-1945-advent-1-english"
+binding_index = 5
+binding_sha256 = "7d14b7be822f5b9fe7675315f5a9add7d05f161645070335b0e1c5c0364755a2"
+source_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+source_fingerprint = "sha256:376ca4e5db5bd3291c6c11b085c73dafdd1a09a8a7af523652257183cc25d645"
+locus = "First Sunday of Advent, Lasance 1945 page images"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "Lasance's New Roman Missal controls the English of the proper; translation control, not commentary. Remote (unresolved rights, 75,268,976 bytes); the research receipt was re-hashed here and matched."
+
+[[sources]]
+id = "vulgate-clementina-psalms"
+binding_index = 6
+binding_sha256 = "003209b6ae29c5c483d997f697417206b6faae7d9cf1c22ad8c61b5da1869993"
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-21-psalms-d20e21f8"
+source_fingerprint = "sha256:1481d71b5253d2bf9644408f82c40a7cd90fce2191d6586d9fa24b0f62d49130"
+locus = "Psalms 24, 84, 47"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The Clementine Vulgate verse text (hash recomputed and matched here); Bible text against which the chants and lessons were compared, not commentary."
+
+[[sources]]
+id = "vulgate-clementina-romans"
+binding_index = 7
+binding_sha256 = "38def6f4cb1ca791ea57ccdc736175a6793d4d0b1ce94eb734e3d9529d31d234"
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-52-romans-b5092f0e"
+source_fingerprint = "sha256:ea1ee4fa64e6aba7f80af9f1c6ef053bdfaaed70f99b318dbe7d10ed2db4b697"
+locus = "Romans 13:11-14"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The Clementine Vulgate verse text (hash recomputed and matched here); Bible text against which the chants and lessons were compared, not commentary."
+
+[[sources]]
+id = "vulgate-clementina-luke"
+binding_index = 8
+binding_sha256 = "feaeec08e85379c3ad6a2b2f5d17c9b8cbf139231feedd34e6e6e5ddce19d755"
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-49-luke-28ae5d9a"
+source_fingerprint = "sha256:c5eb7131bf4e265eeb034ea4bcbceb09f8cddff2c696746f2b4545321b823993"
+locus = "Luke 21:25-33"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The Clementine Vulgate verse text (hash recomputed and matched here); Bible text against which the chants and lessons were compared, not commentary."
+
+[[sources]]
+id = "douay-challoner-psalms"
+binding_index = 9
+binding_sha256 = "59ef3a0059403b80ce3d92210c03823d457d40325e4000f21f58aaf2c3950d59"
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-21-psalms-578f023d"
+source_fingerprint = "sha256:04b581584ed78f861cef34251b2da71ddc94429cd7228ea8cc6585a2aa4a5a41"
+locus = "Psalms 24, 84, 47"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The Douay-Challoner verse text (hash recomputed and matched here); Bible text and English comparison, not commentary."
+
+[[sources]]
+id = "douay-challoner-romans"
+binding_index = 10
+binding_sha256 = "8a0f7b18ed9b97deb9403085d00840784060760b0f10ca8cd4b0e2246f54af4f"
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-52-romans-4d45c497"
+source_fingerprint = "sha256:1b6036a02c7bcc743d143f4f4e17bb6927cb1f4d8dfff9115aeb3250cf287c64"
+locus = "Romans 13:11-14"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The Douay-Challoner verse text (hash recomputed and matched here); Bible text and English comparison, not commentary."
+
+[[sources]]
+id = "douay-challoner-luke"
+binding_index = 11
+binding_sha256 = "c21f9b663ce60bf1fca46edfd8b088e427f3df710bc5f33edf5e429ca7132be6"
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-49-luke-d8269c33"
+source_fingerprint = "sha256:b6acab91674d3bbe04726da30c835175a133104d3db53fcf3f8e45b1d5b4ba6e"
+locus = "Luke 21:25-33"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The Douay-Challoner verse text (hash recomputed and matched here); Bible text and English comparison, not commentary."
+
+[[sources]]
+id = "douay-psalm-numbering"
+binding_index = 12
+binding_sha256 = "c04801a91c845ad4fa775b023cdcb19d5bf7200b0d30ec64ece9f5ee92f5f30e"
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.psalm-numbering-ee3c7757"
+source_fingerprint = "sha256:c3702f219d6641eb66186bd7d3d557375aec2843467d0d54aabe3397ec7e8fb7"
+locus = "Psalms 24, 47, 84"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "Project-created psalm concordance (hash recomputed and matched here) used to give Hebrew numbers beside Vulgate ones; a locating aid, not commentary."
+
+[[sources]]
+id = "gregory-hom-ev-1-luke-21"
+binding_index = 13
+binding_sha256 = "94353517c47f098ae86de6b141150ab32638b8f624a980bf85431bc6059a3b5c"
+source_id = "artifact.gregory-the-great.homiliae-in-evangelia.wikisource-web-2026-09-17.complete-extracted-text-dc25dd69"
+source_fingerprint = "sha256:dd03fd6ff09944af5ba01e741418ae3278e9bc68a08acb4d0cd4538129984eea"
+locus = "Homiliae in Evangelia 1.1-6, physical lines 15-19 (section 6 inline on line 19)"
+relationship = "direct-exegesis"
+disposition = "admitted"
+reason = "Reread by the research stage, iteration 1 (hash recomputed and matched): Homily I sections 1-5 begin lines 15-19, and section 6 ('6. Sed considerandum nobis est ...', through Hebr 10:31, Ps 49:3, Zeph 1:14-16 and Hag 2:22, to '... timendo praevenitis') is printed inline on line 19 after section 5; line 20 is the extractor's source note. The whole homily, sections 1-6, is the verified passage controlled by this artifact; source registration (iteration 1) corrected that record's locus from 1.1-5 to 1.1-6, and its ID keeps its original form (research/scope.md 13.2). It already carries its canonical edge on Lk 21:25-33."
+passage_ids = ["passage.gregory-the-great.homiliae-in-evangelia.wikisource-web-2026-09-17.1.1-5-luke-21"]
+
+[[sources]]
+id = "gregory-hom-ev-1-passage"
+binding_index = 14
+binding_sha256 = "a5005bd69f6eeb4a55f0b9b742970df53b17d80557094cc6e1e5dc032636aee5"
+source_id = "passage.gregory-the-great.homiliae-in-evangelia.wikisource-web-2026-09-17.1.1-5-luke-21"
+source_fingerprint = "sha256:10ea6f9bd6c4202b893416ad9054f94b6355362d4b93f55783820b29c90c23c3"
+locus = "Homiliae in Evangelia 1.1-6, physical lines 15-19 (section 6 inline on line 19)"
+relationship = "direct-exegesis"
+disposition = "admitted"
+reason = "The verified passage itself, read at its lines against the whole artifact bound at 13; its transcription segment for line 19 holds section 6 entire, so it holds Homily I sections 1-6. Source registration (iteration 1) reread that segment against physical line 19 of the artifact (hash recomputed and matched), corrected the record's locus from 1.1-5 to 1.1-6 and its context and Catena basis from five sections to six, and re-pinned this row; the ID keeps its original form (research/scope.md 13.2). Its canonical edge exists (Lk 21:25-33)."
+passage_ids = ["passage.gregory-the-great.homiliae-in-evangelia.wikisource-web-2026-09-17.1.1-5-luke-21"]
+
+[[sources]]
+id = "cyril-alexandria-luke-sermon-139"
+binding_index = 15
+binding_sha256 = "6025b8e1f556f843b56baaec670a86fd904099611e2005e31ea5acb35220eb0e"
+source_id = "artifact.cyril-of-alexandria.commentary-on-luke.english-payne-smith-pearse-web-2026-09-05.cyril-on-luke-13-sermons-135-145-9939da72"
+source_fingerprint = "sha256:6f29963409a110759436e50e8ea28d6f47f95be2e0e594f96d9b9be244ff9210"
+locus = "Commentary on Luke, sermon 139 on Lk 21:5-36 (Payne Smith)"
+relationship = "direct-exegesis"
+disposition = "deferred"
+reason = "Reread here (hash recomputed and matched here): sermon 139 runs from the lemma Lk 21:5-13 to its Amen before sermon 140 (lines 141-158), and treats the siege of Jerusalem, the signs and the coming in a cloud, and v. 28 as the resurrection. Not admitted: no passage record holds the Lk 21:25-28 part, whose natural boundary inside the sermon is not fixed; the Syriac is not held; Payne Smith's English is credited and public domain."
+missing_criteria = ["passage-record", "natural-excerpt-boundary", "original-language-text"]
+scripture_extents = [{ token = "Luke", first_chapter = 21, first_verse = 5, last_chapter = 21, last_verse = 36 }]
+
+[[sources]]
+id = "ambrose-expos-luc-10-36-43-luke-21-25-27"
+binding_index = 16
+binding_sha256 = "8fb2dd1ac2320d622db800de3868f4cb6a1a4e5fc3e25ea73ff15986d5e95a11"
+source_id = "artifact.ambrose.expositio-evangelii-secundum-lucam.latin-wikisource-web-2026-09-05.book-10-html-083e1630"
+source_fingerprint = "sha256:775b63694d5f5c751be556ca29c8a0fb6fddbfd39995bf111c1ac3c7e5ebf80c"
+locus = "Expositio in Lucam X.36-43 on Lk 21:25-27"
+relationship = "direct-exegesis"
+disposition = "deferred"
+reason = "Reread here (hash recomputed and matched here), and again by the research stage, iteration 1: under the printing's lemmata (Vers. 25.) at X.36 and (Vers. 26, 27.) at X.39, Ambrose reads the darkened sun as Christ, the heavenly sun that 'mea fide vel minuitur, vel augetur', obscured when many fall from religion; the moon as the Church, which cannot borrow his light when the vices of the flesh stand in the way (X.37); and the falling stars as the patriarchs and prophets already shining with the glory of the resurrection, lost to men if the bitterness of persecution grows strong, 'sic enim probantur boni, sic produntur infirmi' (X.38). The powers of heaven are moved by an increase of grace (X.39-40), and the clouds are prophets and saints (X.41-43). His stars are not those who fall in persecution, and his sun is not Augustine's (Ep. 199.39, where the Church is sun, moon and stars). Not admitted: no passage record holds these sections, and the Wikisource transcription was not collated with a page image. Rights are recorded (Wikisource CC BY-SA, tracked)."
+missing_criteria = ["passage-record", "page-image-collation"]
+scripture_extents = [{ token = "Luke", first_chapter = 21, first_verse = 25, last_chapter = 21, last_verse = 27 }]
+
+[[sources]]
+id = "ambrose-expos-luc-10-2-luke-20-44"
+binding_index = 16
+binding_sha256 = "8fb2dd1ac2320d622db800de3868f4cb6a1a4e5fc3e25ea73ff15986d5e95a11"
+source_id = "artifact.ambrose.expositio-evangelii-secundum-lucam.latin-wikisource-web-2026-09-05.book-10-html-083e1630"
+source_fingerprint = "sha256:775b63694d5f5c751be556ca29c8a0fb6fddbfd39995bf111c1ac3c7e5ebf80c"
+locus = "Expositio in Lucam X.2 on Lk 20:44"
+relationship = "analogue"
+disposition = "deferred"
+reason = "Reread here: X.2 stands under the printing's lemma (Vers. 44.) of Lk 20, on Christ as David's son and Lord, with Ps 109:1; research read it for context only. Not admitted: no passage record, not collated with a page image."
+missing_criteria = ["passage-record", "page-image-collation"]
+scripture_extents = [{ token = "Luke", first_chapter = 20, first_verse = 41, last_chapter = 20, last_verse = 44 }]
+
+[[sources]]
+id = "ambrose-expos-luc-10-44-luke-21-29"
+binding_index = 17
+binding_sha256 = "886530f594065758e3708f19814b47bc3e161a56ca45fc01e4683f6437491370"
+source_id = "passage.ambrose.expositio-evangelii-secundum-lucam.latin-migne-corpus-corporum-web-2026-07-25.luke-21-29"
+source_fingerprint = "sha256:4ba3d50dc85dd210cc63282c9aabc070de4b4ae9b9ad05053e656cbc62f404a9"
+locus = "Expositio in Lucam X.44-45 on Lk 21:29-30"
+relationship = "direct-exegesis"
+disposition = "admitted"
+reason = "Reread here in the checked one-line transcription (hash recomputed and matched here); it agrees with X.44-45 in the Wikisource page (16), which sets it under the lemma (Vers. 29, 30.). The verified passage already carries its canonical edge (Lk 21:29-30)."
+passage_ids = ["passage.ambrose.expositio-evangelii-secundum-lucam.latin-migne-corpus-corporum-web-2026-07-25.luke-21-29"]
+
+[[sources]]
+id = "augustine-ep-199-luke-21"
+binding_index = 18
+binding_sha256 = "351ca05aceece5d9d3861bf05cf7c687af1df7866f7d360fda715103b6f4ba33"
+source_id = "artifact.augustine.epistula-199.2026-11-23-augustinus-it.letter-199-5b570f96"
+source_fingerprint = "sha256:a3e9ab711c47ed0a74b45b4a6d4d97f780b839abbdd2540b746b26d1efef3b43"
+locus = "Epistula 199.25-27, 34-45 (Lk 21:10-36 and parallels)"
+relationship = "direct-exegesis"
+disposition = "deferred"
+reason = "Read in the research receipt, re-hashed here against the registered restricted record (88,756 bytes) and matched. Augustine expounds Lk 21: the three comings (25-27), the wars and signs (34-35), Lk 21:26 (36-37), the signs read of the Church (39-40), in nube (41-42) and the fig tree (43-45). Not admitted: the only held witness is restricted with unresolved rights; no passage record; no harvest group names Epistula 199; no English is held (the NPNF I.1 letters do not include it)."
+missing_criteria = ["publishable-controller", "passage-record", "harvest-alias-group"]
+scripture_extents = [{ token = "Luke", first_chapter = 21, first_verse = 10, last_chapter = 21, last_verse = 36 }]
+
+[[sources]]
+id = "augustine-ep-199-hidden-time"
+binding_index = 18
+binding_sha256 = "351ca05aceece5d9d3861bf05cf7c687af1df7866f7d360fda715103b6f4ba33"
+source_id = "artifact.augustine.epistula-199.2026-11-23-augustinus-it.letter-199-5b570f96"
+source_fingerprint = "sha256:a3e9ab711c47ed0a74b45b4a6d4d97f780b839abbdd2540b746b26d1efef3b43"
+locus = "Epistula 199.1-3, 52-54 (the unknown time; Mk 13:33-37, Mt 24:48)"
+relationship = "analogue"
+disposition = "deferred"
+reason = "The same restricted letter: on 2 Thess 2:2 and the watchfulness of Mk 13:33-37, and the servant of Mt 24:48 who says his lord delays. Same gaps as the row above."
+missing_criteria = ["publishable-controller", "passage-record", "harvest-alias-group"]
+scripture_extents = [{ token = "Mark", first_chapter = 13, first_verse = 33, last_chapter = 13, last_verse = 37 }]
+
+[[sources]]
+id = "chrysostom-hom-mt-77-matt-24-32-35"
+binding_index = 19
+binding_sha256 = "ded51f1e81bef109fc3a2adb7b68a99c5506095272b5aec6a1e302c0c37d9e32"
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-10.ccel-web-2026-09-17.ccel-text-adb8f1c9"
+source_fingerprint = "sha256:0209917237dc0599614ab5b3a70d1563de63045007c4a8d4eb7776dd6ec37992"
+locus = "Homiliae in Matthaeum 77.1 on Mt 24:32-35, physical lines 42824-42900 (NPNF I.10, CCEL)"
+relationship = "analogue"
+disposition = "deferred"
+reason = "Reread here (hash recomputed and matched here): Homily LXXVII opens under Matt. XXIV. 32-34 with the fig tree as a sign the interval is short, and the generation of the faithful; it reaches 24:36 at line 42903. The synoptic parallel of Lk 21:29-33, anchored to the Matthew it expounds. Not admitted: the controlling CCEL edition names no translator; no passage record; the Greek (PG 58) is not held; the comment on vv. 32-35 has no fixed boundary inside section 1."
+missing_criteria = ["edition-translator-credit", "passage-record", "original-language-text", "natural-excerpt-boundary"]
+scripture_extents = [{ token = "Matt", first_chapter = 24, first_verse = 32, last_chapter = 24, last_verse = 35 }]
+
+[[sources]]
+id = "bede-in-luc-6-luke-21-28-33"
+binding_index = 20
+binding_sha256 = "016fb9d75a423629a08d2fcedd6b193653e1c4e1128185795fc20993614939cd"
+source_id = "artifact.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.luke-21-checked-cd9a5956"
+source_fingerprint = "sha256:c7c1b0c61a9d4b76d354dd268a65f0da7964dc649eb7183b3e08c4ef6832fabd"
+locus = "In Lucae evangelium expositio VI on Lk 21:28-33, checked lines 1-4"
+relationship = "direct-exegesis"
+disposition = "admitted"
+reason = "Reread here (hash recomputed and matched here) and compared with its sources: lines 1-2 (vv. 28, 29-31) reproduce Gregory, Hom. in Ev. 1.3, in 80 of 86 and 86 of 95 words; line 3 (v. 32) follows Augustine, In Ioh. tr. 41.3-4, on Amen, then gives the generatio sentence commonly assigned to Jerome (not checked); line 4 (v. 33) the aerial heaven renewed. The four verified passages already carry edges; this stage added the attribution to the three edges' bases so that a citation credits Gregory and Augustine for their words and Bede only as transmitter."
+passage_ids = ["passage.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.luke-21-28", "passage.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.luke-21-29", "passage.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.luke-21-32", "passage.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.luke-21-33"]
+
+[[sources]]
+id = "bede-in-luc-6-pl92-luke-21-25-27"
+binding_index = 21
+binding_sha256 = "b8c30ff0e071b5c3a07ecce1abb420ca748024ded085ba19876664f276d78d64"
+source_id = "artifact.bede.in-lucae-evangelium-expositio.latin-migne-pl92-1862.ia-djvu-text-2681d6ae"
+source_fingerprint = "sha256:3135edf75956831e8041fdb00aad271d810c034f0c1d968932aa87f1ddd5d666"
+locus = "In Lucam VI on Lk 21:25-27, PL 92 optical text about lines 42330-42505"
+relationship = "direct-exegesis"
+disposition = "deferred"
+reason = "The tracked PL 92 optical text (hash recomputed and matched here) is too damaged at these columns to transcribe; research recorded only the sense (Joel 2:31; the distress of nations in Antichrist's time). Not admitted: no checked transcription and no passage record; a page image of PL 92 would be needed."
+missing_criteria = ["page-image-collation", "verified-transcription", "passage-record"]
+scripture_extents = [{ token = "Luke", first_chapter = 21, first_verse = 25, last_chapter = 21, last_verse = 27 }]
+
+[[sources]]
+id = "augustine-tract-io-41-john-8-34"
+binding_index = 22
+binding_sha256 = "7b485889c549f930dbfe27b91ef2a7c63592702f82f00f793438acaa535b64cc"
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-7.ccel-web-2026-09-17.ccel-text-266502c9"
+source_fingerprint = "sha256:10294711891b3ca7163bf578e02d0a027dbd110257bdaf2fb0b89b65ffe858de"
+locus = "In Iohannis evangelium tractatus 41.3-4 on Jn 8:34, physical lines 18383-18410 (NPNF I.7, CCEL)"
+relationship = "analogue"
+disposition = "deferred"
+reason = "Read here (hash recomputed and matched here) only to establish whose words Bede gives on Lk 21:32: Augustine calls Amen, amen the Lord's form of swearing, untranslated by Greek or Latin, rousing the sleeping. He expounds Jn 8:34, not Luke; the edge would anchor there. Not admitted: the controlling CCEL edition names no translator; no passage record for 41.3-4; Augustine's Latin not read."
+missing_criteria = ["edition-translator-credit", "passage-record", "original-language-text"]
+scripture_extents = [{ token = "John", first_chapter = 8, first_verse = 34, last_chapter = 8, last_verse = 34 }]
+
+[[sources]]
+id = "chrysostom-hom-rom-24-rom-13-11"
+binding_index = 23
+binding_sha256 = "da458189f3efa4b762f44b0f0448c45e26f902f51aaebf6e7f956a14df4e6136"
+source_id = "passage.john-chrysostom.homilies-on-romans.ccel-web-2026-09-17.24.rom-13.11"
+source_fingerprint = "sha256:b179ca25b06c807e501da2bf56f4bfa7c0670f0cf654d4cbff0f991f63248b3b"
+locus = "Homiliae in epistulam ad Romanos 24 on Rom 13:11"
+relationship = "direct-exegesis"
+disposition = "admitted"
+reason = "The verified passage bound by research, in the tracked NPNF I.11 text (hash recomputed and matched here); its canonical edge on Rom 13:11 exists."
+passage_ids = ["passage.john-chrysostom.homilies-on-romans.ccel-web-2026-09-17.24.rom-13.11"]
+
+[[sources]]
+id = "chrysostom-hom-rom-24-rom-13-12"
+binding_index = 24
+binding_sha256 = "31c7b4b384dfd6b1260c1eb44231e48d86d850f65af62a3b760639ed8c6138fd"
+source_id = "passage.john-chrysostom.homilies-on-romans.ccel-web-2026-09-17.24.rom-13.12"
+source_fingerprint = "sha256:2cfcd0c116cd08a29658662adff2ed3b7ce911ad61546ce574d81ebf576f76f9"
+locus = "Homiliae in epistulam ad Romanos 24 on Rom 13:12"
+relationship = "direct-exegesis"
+disposition = "admitted"
+reason = "The verified passage bound by research, in the tracked NPNF I.11 text (hash recomputed and matched here); its canonical edge on Rom 13:12 exists."
+passage_ids = ["passage.john-chrysostom.homilies-on-romans.ccel-web-2026-09-17.24.rom-13.12"]
+
+[[sources]]
+id = "chrysostom-hom-rom-24-rom-13-13"
+binding_index = 25
+binding_sha256 = "670eed451720c17f0186612d290013ff206f2af8b4a88db271142e68748d07ee"
+source_id = "passage.john-chrysostom.homilies-on-romans.ccel-web-2026-09-17.24.rom-13.13"
+source_fingerprint = "sha256:289ba87157e57026d2ff96194e5e7b165232a871e0ea7105d51647dbbb68a994"
+locus = "Homiliae in epistulam ad Romanos 24 on Rom 13:13"
+relationship = "direct-exegesis"
+disposition = "admitted"
+reason = "The verified passage bound by research, in the tracked NPNF I.11 text (hash recomputed and matched here); its canonical edge on Rom 13:13 exists."
+passage_ids = ["passage.john-chrysostom.homilies-on-romans.ccel-web-2026-09-17.24.rom-13.13"]
+
+[[sources]]
+id = "chrysostom-hom-rom-24-rom-13-14"
+binding_index = 26
+binding_sha256 = "95982d7c9118bf7bc138f0520205c6bc7b0fda2e192ec663b842e160fe9743da"
+source_id = "passage.john-chrysostom.homilies-on-romans.ccel-web-2026-09-17.24.rom-13.14"
+source_fingerprint = "sha256:5a82c7eb670764552c9248193d52126e5e6e1a38a1538b7ca609c4ae3f339d67"
+locus = "Homiliae in epistulam ad Romanos 24 on Rom 13:14"
+relationship = "direct-exegesis"
+disposition = "admitted"
+reason = "The verified passage bound by research, in the tracked NPNF I.11 text (hash recomputed and matched here); its canonical edge on Rom 13:14 exists."
+passage_ids = ["passage.john-chrysostom.homilies-on-romans.ccel-web-2026-09-17.24.rom-13.14"]
+
+[[sources]]
+id = "aquinas-super-rom-13-l3"
+binding_index = 27
+binding_sha256 = "9288029cd0a50353927a76b124bc38b789ed905419bafe37a956fe80c2b24b3b"
+source_id = "artifact.thomas-aquinas.super-romanos.2026-11-22-corpus-thomisticum.chapters-12-16-1c3db878"
+source_fingerprint = "sha256:45760102c36687e07084712fb8d9f29daf6e5f10f078af15c4bc4f123374a57d"
+locus = "Super Romanos 13 l. 3 on Rom 13:11-14"
+relationship = "direct-exegesis"
+disposition = "deferred"
+reason = "Read in the research receipt, re-hashed here against the registered restricted record and matched: lectio 3 expounds Rom 13:11-14 from [86224] to the end of the chapter. Not admitted: the only held witness is restricted with unresolved rights; no passage record; the lectio names Augustine and Ambrose beside Thomas's own words, so a fragment must bound and credit any words of theirs."
+missing_criteria = ["publishable-controller", "passage-record", "quoted-text-attribution"]
+scripture_extents = [{ token = "Rom", first_chapter = 13, first_verse = 11, last_chapter = 13, last_verse = 14 }]
+
+[[sources]]
+id = "aquinas-super-ps-24-nn-1-4"
+binding_index = 28
+binding_sha256 = "0309a19e6b6a0dd66e70a932337fe101858cfb5ebf53d55501bf6c0d30418dbb"
+source_id = "artifact.thomas-aquinas.super-psalmos.latin-corpusthomisticum-web-2026-07-28.cps21-html-5e8fdbbe"
+source_fingerprint = "sha256:d7e2f9d87d27ac76392972b00af3983181d6071724944573eae45a7c370b68dd"
+locus = "Super Psalmos 24 nn. 1-4 on Ps 24:1-5"
+relationship = "direct-exegesis"
+disposition = "deferred"
+reason = "Read in the research receipt, re-hashed here against the registered restricted record and matched: nn. 1-4 ([86993]-[86996]) expound Ps 24:1-5. Not admitted: the only held witness is restricted with unresolved rights, and no passage record holds the excerpt."
+missing_criteria = ["publishable-controller", "passage-record"]
+scripture_extents = [{ token = "Ps", first_chapter = 24, first_verse = 1, last_chapter = 24, last_verse = 5 }]
+
+[[sources]]
+id = "augustine-en-ps-84-latin"
+binding_index = 29
+binding_sha256 = "fa5640bdca9da647b654c250ce50ff7cebb4a8e023d3eb4815efa36ef4404548"
+source_id = "artifact.augustine.enarrationes-in-psalmos.latin-migne-corpus-corporum-wikisource-web-2026-09-05.wikisource-part-9-latin-text"
+source_fingerprint = "sha256:4ec924c6b55bfe5458a51ad4efa23e437507b846582d1d62cca86f8d68cc730d"
+locus = "Enarrationes in Psalmos 84.1, 84.9, 84.15, physical lines 74-75, 83, 89"
+relationship = "direct-exegesis"
+disposition = "admitted"
+reason = "Reread here (hash recomputed and matched here). Registered by this stage as three new verified passages, each copied mechanically from whole raw lines, with canonical edges in fragment-loci.yaml: 84.1 and 84.9 on Ps 84:8 (the Alleluia), 84.15 on Ps 84:13 (the Communion; his text suavitatem). Composition date left unestablished from the reacquired Augustinus.it Tavola cronologica (SHA-256 matched): Zarb gives post. 410 with no upper bound."
+passage_ids = ["passage.augustine.enarrationes-in-psalmos.latin-migne-corpus-corporum-wikisource-web-2026-09-05.84-1", "passage.augustine.enarrationes-in-psalmos.latin-migne-corpus-corporum-wikisource-web-2026-09-05.84-9", "passage.augustine.enarrationes-in-psalmos.latin-migne-corpus-corporum-wikisource-web-2026-09-05.84-15"]
+
+[[sources]]
+id = "augustine-en-ps-24-and-84-english"
+binding_index = 30
+binding_sha256 = "c306defdeee8d53aa0eba0d38f3296415c803753c82788e67d982bfee2448c76"
+source_id = "artifact.augustine.enarrationes-in-psalmos.english-npnf8-ccel-web-2026-09-05.ccel-npnf108-text-d6841950"
+source_fingerprint = "sha256:0a8fd6a45c963c52d5c8d09497820cfb88e5bf59d3a86a8a573856782e822f37"
+locus = "NPNF I.8 Ps XXV 1-5, 10 and Ps LXXXV 6, 12 (Coxe)"
+relationship = "direct-exegesis"
+disposition = "admitted"
+reason = "Reread here (hash recomputed and matched here). Ps 24:1-5 and 24:10 are held as the verified passages 24.1-2, 24.3, 24.4, 24.5 and 24.10, each with its edge. This stage registered Coxe's English of the Latin sections 84.9 and 84.15 as passages psalm-84-9 (from ver. 7 of English §6) and psalm-84-15 (English §12), with edges on Ps 84:8 and 84:13, and linked them as excerpt English versions of the Latin passages."
+passage_ids = ["passage.augustine.enarrationes-in-psalmos.1888-english-npnf-anonymous-first-thirty.24.1-2", "passage.augustine.enarrationes-in-psalmos.1888-english-npnf-anonymous-first-thirty.24.3", "passage.augustine.enarrationes-in-psalmos.1888-english-npnf-anonymous-first-thirty.24.4", "passage.augustine.enarrationes-in-psalmos.1888-english-npnf-anonymous-first-thirty.24.5", "passage.augustine.enarrationes-in-psalmos.1888-english-npnf-anonymous-first-thirty.24.10", "passage.augustine.enarrationes-in-psalmos.1888-oxford-coxe.psalm-84-9", "passage.augustine.enarrationes-in-psalmos.1888-oxford-coxe.psalm-84-15"]
+
+[[sources]]
+id = "augustine-en-ps-24-latin-augustinus-it"
+binding_index = 31
+binding_sha256 = "9529c7488ffbcb8dd562c05d1786c09e1941e6967c039f288b50e465a9647711"
+source_id = "artifact.augustine.enarrationes-in-psalmos.latin-augustinus-it-web-2026-09-05.augustinus-it-ps024-614fe703"
+source_fingerprint = "sha256:db190448976b8525d671cb8823fda5963a1da54d97ef021d1035ebd0d5d8979d"
+locus = "Enarratio in Psalmum 24, sections 1-5, 10, 21 (augustinus.it)"
+relationship = "direct-exegesis"
+disposition = "deferred"
+reason = "Registered by this stage as a new remote artifact; the research fetch and this stage's refetch were byte-identical (9,900 bytes, SHA-256 matched). Sections 2-5 expound Ps 24:1-5 under the site's verse markers, section 10 gives the two comings on v. 10. Not admitted: the page carries no licence and names no edition for its Latin, so it cannot control a published fragment; no passage record. The English of the same sections is admitted through binding 30."
+missing_criteria = ["publishable-controller", "passage-record"]
+scripture_extents = [{ token = "Ps", first_chapter = 24, first_verse = 1, last_chapter = 24, last_verse = 5 }]
+
+[[sources]]
+id = "augustine-conf-8-latin"
+binding_index = 32
+binding_sha256 = "d03344159e6b8a9d059de62d24910fe289135e3da7d648bce311c7b473cf2775"
+source_id = "artifact.augustine-of-hippo.confessiones.the-latin-library-web-2026-11-25.book-8-html-be90ce92"
+source_fingerprint = "sha256:6904e470cd2001d2dfa558097e954f53e0c35b38ed037bf61f813aab5526ebcb"
+locus = "Confessiones 8.5.12, 8.12.28-29 (The Latin Library)"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "Registered by this stage as a new edition and remote artifact; the research fetch and this stage's refetch were byte-identical (39,278 bytes, SHA-256 matched). Narrative reception of Rom 13:13-14 (tolle lege) and an echo of Eph 5:14, not exegesis of the Epistle: the Catena owner already classes the same section as an incidental citation. The page credits a modern editor and carries no licence, so it stays remote."
+
+[[sources]]
+id = "augustine-conf-8-english-segment"
+binding_index = 33
+binding_sha256 = "4d5b9a55724da3ecc4b26a5ed5451e4b2b89be3822b416b93c14f54600b89383"
+source_id = "segment.augustine-of-hippo.confessiones.ccel-web-2026-10-13.complete-work"
+source_fingerprint = "sha256:f47f415a9d5cf7e75e5cd075b7218c9bcd89ea7dc6e935b655fbb77e86d59a86"
+locus = "Confessiones 8.5.12, 8.12.28-29 (Pilkington, NPNF I.1)"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "Read here (hash recomputed and matched here) as the lawful English of the Latin at 32; narrative, not commentary, for the same reason."
+
+[[sources]]
+id = "augustine-conf-8-12-29-passage"
+binding_index = 34
+binding_sha256 = "535877fc09995503d2fee04eb1e69117fa7e3e66e4851ff4267bd3307fe26326"
+source_id = "passage.nicene-and-post-nicene-fathers.series-1-volume-1.new-york-1886.augustine-confessiones-8.12.29"
+source_fingerprint = "sha256:6143c6ee3a95d37f07ba91a965cd63ef381bb5ba0af9949a6d54f8d0e01d90f1"
+locus = "Augustine, Confessiones VIII.12.29"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The verified English passage, read here (hash recomputed and matched here); held-passage-review.yaml classes it as an incidental citation of Rom 13:13-14, and this stage agrees."
+
+[[sources]]
+id = "bellarmine-psalm-24-verses-1-3"
+binding_index = 35
+binding_sha256 = "3db42e338dc6ed263446507697488ffbf03be32f6a37ec74196f15ffbf3922df"
+source_id = "passage.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.psalm-24-verses-1-3"
+source_fingerprint = "sha256:2efdbe7f29f9997b17219eb13e7f836f68975f8e76468aaa4cb3a03af77d9154"
+locus = "Explanatio in Psalmos, explanations 1-3"
+relationship = "direct-exegesis"
+disposition = "admitted"
+reason = "The verified passage bound by research, in the tracked O'Sullivan English (hash recomputed and matched here); its canonical edge on Ps 24:1-3 exists."
+passage_ids = ["passage.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.psalm-24-verses-1-3"]
+
+[[sources]]
+id = "bellarmine-psalm-24-verses-4-5"
+binding_index = 36
+binding_sha256 = "019cf085f9001832e7e8ffa573015bc08cff0856afd0523065a6fba6696a1a8a"
+source_id = "passage.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.psalm-24-verses-4-5"
+source_fingerprint = "sha256:87555f99251a028bc2100fbaa59926d8429fd2738a0e827ff501470370b442c0"
+locus = "Explanatio in Psalmos, explanations 4-5"
+relationship = "direct-exegesis"
+disposition = "admitted"
+reason = "The verified passage bound by research, in the tracked O'Sullivan English (hash recomputed and matched here); its canonical edge on Ps 24:4-5 exists."
+passage_ids = ["passage.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.psalm-24-verses-4-5"]
+
+[[sources]]
+id = "bellarmine-psalm-84-verse-8"
+binding_index = 37
+binding_sha256 = "20aecfd71abe9615ddc92ab1f15b98f956c345ee514c865ac51bd6eef8678bd0"
+source_id = "passage.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.psalm-84-verse-8"
+source_fingerprint = "sha256:0fd361933dd54fbebaeec4a1fefeb0875c15954abb49cd45afab6714bf92f5ab"
+locus = "Explanatio in Psalmos, verse 8"
+relationship = "direct-exegesis"
+disposition = "admitted"
+reason = "The verified passage bound by research, in the tracked O'Sullivan English (hash recomputed and matched here); its canonical edge on Ps 84:8 exists."
+passage_ids = ["passage.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.psalm-84-verse-8"]
+
+[[sources]]
+id = "bellarmine-psalm-84-verse-13"
+binding_index = 38
+binding_sha256 = "2ba2907c21a782b313825fc861d5d1bdfc2b4752874a3b15ca2411cddb390ec7"
+source_id = "passage.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.psalm-84-verse-13"
+source_fingerprint = "sha256:9839f6d8153620dcd60f3a2a65fe800538b27aad61c6b2fcf100eb2b40f305d8"
+locus = "Explanatio in Psalmos, verse 13"
+relationship = "direct-exegesis"
+disposition = "admitted"
+reason = "The verified passage bound by research, in the tracked O'Sullivan English (hash recomputed and matched here); its canonical edge on Ps 84:13 exists."
+passage_ids = ["passage.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.psalm-84-verse-13"]
+
+[[sources]]
+id = "bellarmine-psalms-24-84-artifact"
+binding_index = 39
+binding_sha256 = "843935135a6c4c290f68bf8cea97058c348db147ecb9d99eb7543f12716d8188"
+source_id = "artifact.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.historical-text-357551e1"
+source_fingerprint = "sha256:85b019a495120f1320c91743bdd127eef0ccb54126e0247bcb0298f9fb7c3344"
+locus = "O'Sullivan English, Ps 24 and 84 at physical lines 840-853 and 2988-3015"
+relationship = "direct-exegesis"
+disposition = "admitted"
+reason = "The whole tracked artifact (hash recomputed and matched here) that controls the four passages bound at 35-38; the same four are admitted here."
+passage_ids = ["passage.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.psalm-24-verses-1-3", "passage.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.psalm-24-verses-4-5", "passage.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.psalm-84-verse-8", "passage.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.psalm-84-verse-13"]
+
+[[sources]]
+id = "cyril-jerusalem-cat-15-3-22"
+binding_index = 40
+binding_sha256 = "340fd667e62abe9446a114c93c246d8b28ba734497b31a9110923b7fc7b07d67"
+source_id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-7.ccel-web-2026-10-06.ccel-text-56d84cfa"
+source_fingerprint = "sha256:1f357ee73bda8276cc25eb0133278376e91529929c0187de2d364f9c3b192261"
+locus = "Catecheses 15.3 and 15.22 (NPNF II.7, CCEL)"
+relationship = "analogue"
+disposition = "deferred"
+reason = "Reread here (hash recomputed and matched here): 15.3 quotes Isa 34:4 and Mt 24:29 and 24:35 on the heavens rolled up to be raised more beautiful; 15.22 the sign of the Son of man (Mt 24:30) as the cross. Catechetical exposition of the synoptic parallels, anchored to Matthew. Not admitted: the controlling CCEL edition names no translator; no passage record for 15.3 or 15.22; the Greek is not held."
+missing_criteria = ["edition-translator-credit", "passage-record", "original-language-text"]
+scripture_extents = [{ token = "Matt", first_chapter = 24, first_verse = 29, last_chapter = 24, last_verse = 35 }]
+
+[[sources]]
+id = "cyril-jerusalem-cat-15-1"
+binding_index = 41
+binding_sha256 = "59751489e419f2cc04620cb923d67c9ed716e13b797fa2ec17b7b4204d23c352"
+source_id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-7.new-york-1894.cyril-catechesis-15.1-checked-text-d027e7e3"
+source_fingerprint = "sha256:65b233b572ea0766a4b0bce4131470c3b86f3b072c393990a9112272cc0d06f2"
+locus = "Catecheses 15.1, checked text (NPNF II.7, New York 1894)"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "Reread here (hash recomputed and matched here); the two advents and the warning against curiosity about the time. The Catena owner classes the verified passage as an incidental citation (held-passage-review.yaml), and this stage agrees: context for the two comings, not exegesis."
+
+[[sources]]
+id = "cyril-jerusalem-cat-15-2"
+binding_index = 42
+binding_sha256 = "d139cb0d2e3a9625088d96804d6fba419afc6be0bc31d8a3378efe1c443c86b6"
+source_id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-7.new-york-1894.cyril-catechesis-15.2-checked-text-ad047b6f"
+source_fingerprint = "sha256:3f74021c628d1944302f5431ddd5e49bb9a13649fd172202b49b74896a094032"
+locus = "Catecheses 15.2, checked text (NPNF II.7, New York 1894)"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "Reread here (hash recomputed and matched here); the two advents and the warning against curiosity about the time. The Catena owner classes the verified passage as an incidental citation (held-passage-review.yaml), and this stage agrees: context for the two comings, not exegesis."
+
+[[sources]]
+id = "cyril-jerusalem-cat-15-4"
+binding_index = 43
+binding_sha256 = "9d1949aa6f0b4431c66fc3bad034ecba4bc3f3d0042e286524e69ad22c6e94bd"
+source_id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-7.new-york-1894.cyril-catechesis-15.4-checked-text-714df80a"
+source_fingerprint = "sha256:4390cf3c8dfd1c97eb47bcfd85cdfde9f2bce360c051ddb10e26c168d3b3e3c5"
+locus = "Catecheses 15.4, checked text (NPNF II.7, New York 1894)"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "Reread here (hash recomputed and matched here); the two advents and the warning against curiosity about the time. The Catena owner classes the verified passage as an incidental citation (held-passage-review.yaml), and this stage agrees: context for the two comings, not exegesis."
+
+[[sources]]
+id = "bernard-in-adventu-3-4"
+binding_index = 44
+binding_sha256 = "8b60d3413c47ccb4c4607c23414532a4374d9fd0ca7c5e8c93091f7c6f2ccfb5"
+source_id = "artifact.bernard-of-clairvaux.st-bernards-sermons-for-the-seasons-volume-1.1921-dublin-browne-and-nolan.bernard-in-adventu-3.4-three-comings-checked-text-f6dac49c"
+source_fingerprint = "sha256:0f26efb15dd99c036cbb69090cf69abd60843a41970fc6fba280fad49f0701bf"
+locus = "In Adventu Domini 3.4, checked English (Dublin 1921)"
+relationship = "doctrinal-illumination"
+disposition = "deferred"
+reason = "Reread here (hash recomputed and matched here): the comings of the Lord (to, into and against men; the two advents; the middle advent), doctrine of the season rather than the exposition of a lemma. Not admitted: no single Scripture extent is expounded; work-aliases.yaml has no harvest group for the Advent sermons; the author-standing inventory has no row for Bernard (a shared defect reported in the result)."
+missing_criteria = ["scripture-extent", "harvest-alias-group"]
+scripture_extents = []
+
+[[sources]]
+id = "bernard-in-adventu-4-1"
+binding_index = 45
+binding_sha256 = "20270566e979d2153de0311e8a823959996456561ebea150e2714aa546af0bd5"
+source_id = "artifact.bernard-of-clairvaux.st-bernards-sermons-for-the-seasons-volume-1.1921-dublin-browne-and-nolan.bernard-in-adventu-4.1-two-advents-checked-text-b33a26f4"
+source_fingerprint = "sha256:8fc06552a21015bb491eec81a8947c36d77f42588d4d4aee6edc26292b56bf3a"
+locus = "In Adventu Domini 4.1, checked English (Dublin 1921)"
+relationship = "doctrinal-illumination"
+disposition = "deferred"
+reason = "Reread here (hash recomputed and matched here): the comings of the Lord (to, into and against men; the two advents; the middle advent), doctrine of the season rather than the exposition of a lemma. Not admitted: no single Scripture extent is expounded; work-aliases.yaml has no harvest group for the Advent sermons; the author-standing inventory has no row for Bernard (a shared defect reported in the result)."
+missing_criteria = ["scripture-extent", "harvest-alias-group"]
+scripture_extents = []
+
+[[sources]]
+id = "bernard-in-adventu-5-1"
+binding_index = 46
+binding_sha256 = "7c0b9c776c5a18bfb80e4d8755407e95432726c9544dfe8944248a3a0e467426"
+source_id = "artifact.bernard-of-clairvaux.st-bernards-sermons-for-the-seasons-volume-1.1921-dublin-browne-and-nolan.bernard-in-adventu-5.1-checked-text-b444a4d8"
+source_fingerprint = "sha256:e56ca05a459b676de0b7a0588587bda4b6fac9ef806bf78fa53db614f66aa6fe"
+locus = "In Adventu Domini 5.1, checked English (Dublin 1921)"
+relationship = "doctrinal-illumination"
+disposition = "deferred"
+reason = "Reread here (hash recomputed and matched here): the comings of the Lord (to, into and against men; the two advents; the middle advent), doctrine of the season rather than the exposition of a lemma. Not admitted: no single Scripture extent is expounded; work-aliases.yaml has no harvest group for the Advent sermons; the author-standing inventory has no row for Bernard (a shared defect reported in the result)."
+missing_criteria = ["scripture-extent", "harvest-alias-group"]
+scripture_extents = []
+
+[[sources]]
+id = "leo-december-fast-breviary-lesson-4"
+binding_index = 47
+binding_sha256 = "28a50ebbbfd042918468c3ce54368193860ff3206dbc67f8da8720cabe5d79f9"
+source_id = "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.advent-primer-advent-1-mattins-lesson-4"
+source_fingerprint = "sha256:78354d557448f4493fc4ed6ef86ea8d06453395c414bee8922e1036f1cf1c933"
+locus = "Breviary, First Sunday of Advent, Matins lesson 4 (Leo, Sermon 8 on the December fast)"
+relationship = "analogue"
+disposition = "deferred"
+reason = "Reread here (hash recomputed and matched here): Leo applies Lk 21:34 (hearts overcharged) to the near but hidden day. The Catena owner's verdict is needs-admission: no work record for Leo's Sermones, and the Breviary is not a declared anthology; the Bute edition names no translator."
+missing_criteria = ["work-record", "harvest-alias-group", "edition-translator-credit"]
+scripture_extents = [{ token = "Luke", first_chapter = 21, first_verse = 34, last_chapter = 21, last_verse = 34 }]
+
+[[sources]]
+id = "gregory-breviary-lesson-7"
+binding_index = 48
+binding_sha256 = "e8904d14d4dc9faac053681721a5bec4ecb8975f32cba49a920c6223dd1cfffa"
+source_id = "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.advent-primer-advent-1-mattins-lesson-7"
+source_fingerprint = "sha256:8cdfa44c723720e8ecdd2f9cc393f7e0d5784f0d4262f85379e963f04c7fd84d"
+locus = "Breviary, First Sunday of Advent, Matins lessons 7-9 (Gregory, Hom. 1.1)"
+relationship = "direct-exegesis"
+disposition = "deferred"
+reason = "The checked lesson text (hash recomputed and matched here). Its Gregory English is already admitted through Gregory's own work as passage.gregory-the-great.homiliae-in-evangelia.1908-bute-winter.advent-opening (edge on Lk 21:25), the route the Catena owner's needs-admission verdict asks for; admitting the Breviary record as well would hang one text twice. It stays a liturgical witness of the lesson."
+missing_criteria = ["work-record", "edition-translator-credit"]
+scripture_extents = [{ token = "Luke", first_chapter = 21, first_verse = 25, last_chapter = 21, last_verse = 26 }]
+
+[[sources]]
+id = "rupert-de-div-off-3-2"
+binding_index = 49
+binding_sha256 = "151547a6ed2425779a5f6b3e131cd0869f53e82d80aaf471d5c5211f8900e5e2"
+source_id = "artifact.rupert-of-deutz.de-divinis-officiis.latin-migne-pl-170.ia-djvu-ocr-2e2ca850"
+source_fingerprint = "sha256:7ec56124e31762f147f8aed197516894e92dc2d5ec7de99bcc91a9f11d1a98d3"
+locus = "De divinis officiis III.2 (PL 170 OCR, about lines 3749-3845)"
+relationship = "liturgical-commentary"
+disposition = "deferred"
+reason = "Reread here (hash recomputed and matched here): Rupert's first-Sunday chapter cites Ps 24:1-5 (Introit, Gradual, Offertory), Rom 13:11, 14, Ps 84:13 (the Virgin earth) and the Gospel of the ass (Mt 21) at St Peter's. The Catena owner classes the neighbouring held passages as no-scripture-commentary; here the chant verses are cited, not expounded as lemmata. Not admitted: OCR not collated with page images; no passage record; no fixed boundary; no harvest group for De divinis officiis; borrowed matter not bounded."
+missing_criteria = ["page-image-collation", "passage-record", "natural-excerpt-boundary", "harvest-alias-group", "quoted-text-attribution"]
+scripture_extents = [{ token = "Ps", first_chapter = 24, first_verse = 1, last_chapter = 24, last_verse = 5 }]
+
+[[sources]]
+id = "sicard-mitrale-5-advent-1"
+binding_index = 50
+binding_sha256 = "c5e8e538ba6d6c57d9c70fadff439888942856b8d42882fbb4406fd737a7b388"
+source_id = "artifact.sicard-of-cremona.mitrale.latin-migne-pl-213.ia-djvu-ocr-ea9fd813"
+source_fingerprint = "sha256:f7ef227833c6454f7bea588021ba7c000d14f6dc1220746e710f6f3d8a19f761"
+locus = "Mitrale V, first Sunday of Advent (PL 213 OCR, about lines 14900-15040)"
+relationship = "liturgical-commentary"
+disposition = "deferred"
+reason = "Reread here (hash recomputed and matched here): Sicard reproduces Rupert's chapter in substance (the ass, the Virgin earth of Ps 84:13) and adds the Alleluia Ps 84:8; the two-column OCR is interleaved. Same gaps as Rupert; cite Rupert for what Sicard copies."
+missing_criteria = ["page-image-collation", "passage-record", "natural-excerpt-boundary", "harvest-alias-group", "quoted-text-attribution"]
+scripture_extents = [{ token = "Ps", first_chapter = 24, first_verse = 1, last_chapter = 24, last_verse = 5 }]
+
+[[sources]]
+id = "durandus-rationale-6-advent-1"
+binding_index = 51
+binding_sha256 = "1bb335e05c1e6fa29e1cdc4b05008ecafff31f8223d236e6d6abd64efc087a3e"
+source_id = "artifact.william-durandus.rationale-divinorum-officiorum.1612-lyon-tomus-secundus.ia-djvu-ocr-b9b266dd"
+source_fingerprint = "sha256:5be12620687e1829e19de144d3c79009d8b9dce221c126174799a60e3facbb4a"
+locus = "Rationale VI, first Sunday of Advent (1612 OCR, about lines 1095-1180)"
+relationship = "liturgical-commentary"
+disposition = "deferred"
+reason = "Reread here (hash recomputed and matched here): Durandus cites Ps 24:1-4, Rom 13:11-14 and Ps 84:8, 13, and the Gospels read in different churches (Mt 21:1-9; Mk 1; Lk 21 Erunt signa, joined to Rom 13:11); on the orations he follows Sicard and adds the second coming. Same gaps as Rupert and Sicard."
+missing_criteria = ["page-image-collation", "passage-record", "natural-excerpt-boundary", "harvest-alias-group", "quoted-text-attribution"]
+scripture_extents = [{ token = "Rom", first_chapter = 13, first_verse = 11, last_chapter = 13, last_verse = 14 }]
+
+[[sources]]
+id = "durandus-rationale-6-de-tempore-adventus"
+binding_index = 51
+binding_sha256 = "1bb335e05c1e6fa29e1cdc4b05008ecafff31f8223d236e6d6abd64efc087a3e"
+source_id = "artifact.william-durandus.rationale-divinorum-officiorum.1612-lyon-tomus-secundus.ia-djvu-ocr-b9b266dd"
+source_fingerprint = "sha256:5be12620687e1829e19de144d3c79009d8b9dce221c126174799a60e3facbb4a"
+locus = "Rationale VI, De tempore Adventus (about lines 560-800)"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The chapter on the season's length and meaning read for context; the Catena owner classes it as no-scripture-commentary, and this stage agrees."
+
+[[sources]]
+id = "schuster-sacramentary-1-advent-1-images"
+binding_index = 52
+binding_sha256 = "53ffa32fac8551eeb4d77ff666b99e60f9dbf3df29a86c56ff37e8ec2f1bd6cb"
+source_id = "artifact.ildefonso-schuster.the-sacramentary.1924-burns-oates-washbourne-volume-1-english.ia-original-volume-1-13aa55ad"
+source_fingerprint = "sha256:ebc4de4527c14f714355a5f72f7075cc3e57cb1471b9effa4350c1238a8bbd12"
+locus = "The Sacramentary I, pp. 321-323 (Internet Archive scan)"
+relationship = "liturgical-commentary"
+disposition = "deferred"
+reason = "Read by research on the page images of the registered remote public-domain scan; its receipt (149,350,698 bytes) was re-hashed here and matched. Schuster comments on the Mass as a whole: the Epistle that converted Augustine (Rom 13:13-14), the two comings, the Postcommunion's Ps 47:10. Not admitted: no checked transcription and no passage record; the page images are not retained in the library; no harvest group for The Sacramentary."
+missing_criteria = ["verified-transcription", "passage-record", "retained-page-image", "harvest-alias-group"]
+scripture_extents = [{ token = "Rom", first_chapter = 13, first_verse = 11, last_chapter = 13, last_verse = 14 }]
+
+[[sources]]
+id = "schuster-sacramentary-1-advent-1-text"
+binding_index = 53
+binding_sha256 = "6500aaa478f2730ce48553c6028238b371cdfc4976469bb5f7793db4ab38f59c"
+source_id = "artifact.ildefonso-schuster.the-sacramentary.1924-burns-oates-washbourne-volume-1-english.isidore-machine-text-e78f3515"
+source_fingerprint = "sha256:ba1999084cfbd51b025743c26d07fc6b441d12c5bdd506f9d5ce07c875628280"
+locus = "The Sacramentary I, p. 320 (Isidore machine text)"
+relationship = "liturgical-commentary"
+disposition = "deferred"
+reason = "The tracked machine text (hash recomputed and matched here) of p. 320, the introduction to Advent, which research read only in this text; the optical text is spaced and unchecked. Not admitted: not collated with a page image; no passage record; no harvest group; no single Scripture extent is expounded."
+missing_criteria = ["page-image-collation", "passage-record", "harvest-alias-group", "scripture-extent"]
+scripture_extents = []
+
+[[sources]]
+id = "schuster-isidore-ocr-pdf"
+binding_index = 54
+binding_sha256 = "ee44d747597fb8baa30956f765efa13782a2777bb8af7e2e70c5cae5fa26e09f"
+source_id = "artifact.ildefonso-schuster.the-sacramentary.1924-burns-oates-washbourne-volume-1-english.isidore-ocr-only-e2378715"
+source_fingerprint = "sha256:7ccb0f2181496d3bd7b4079909db4b8b5120b5fc5a9f26f753492d2ff117fdab"
+locus = "PDF pp. 311-313"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The Isidore OCR-only PDF, re-hashed here against the research receipt (10,988,816 bytes) and matched; a rendering of the optical text, used to locate pages, not as commentary."
+
+[[sources]]
+id = "catholic-encyclopedia-jesus-christ-article"
+binding_index = 55
+binding_sha256 = "58b43acc4754d41aa1d262f0bdecab167aa9c65db7c263b160f7199ff292522a"
+source_id = "artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08377a-f81e2c23-article-text"
+source_fingerprint = "sha256:fe5c1682bc9df4a6ffe2e0a61f7ac28267f049a6ffef975b9a78bc795774f656"
+locus = "Maas, Jesus Christ, physical lines 131-134"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "Reference article (hash recomputed and matched here) for the chronology row; not commentary."
+
+[[sources]]
+id = "maas-ninth-journey-passage"
+binding_index = 56
+binding_sha256 = "223ac4b70d7086745b858bda58f12784d5d816c4607e6e3ef38a237c62eefb0a"
+source_id = "passage.catholic-encyclopedia.volume-8.new-york-1910.maas-ninth-journey-olivet-prophecies"
+source_fingerprint = "sha256:8e7dce5aefd9ac207bef92f2b0f013a7761aa2d4a08eeef27ffad6218f7fcd8b"
+locus = "Ninth journey, Holy Week paragraph"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The registered passage the chronology event cites (hash recomputed and matched here); not commentary."
+
+[[sources]]
+id = "lead-cassiodorus-expositio-psalmorum"
+binding_index = 57
+binding_sha256 = "abb9f683b73d96e228279161e4e420ed900764714d016182e65965ffbfc040f6"
+source_id = "work.cassiodorus.expositio-psalmorum"
+locus = "not read"
+relationship = "lead"
+disposition = "lead"
+reason = "Catalog-only lead; not read by research or by this stage (research/scope.md 10)."
+
+[[sources]]
+id = "lead-catena-aurea-luke-21-28-gregory"
+binding_index = 58
+binding_sha256 = "36435489168ee91811675857273b30fa22646e4920df0e355da14adc418de31e"
+source_id = "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.gregory-on-luke-21-28"
+locus = "not read"
+relationship = "lead"
+disposition = "lead"
+reason = "Catalog-only lead; not read by research or by this stage (research/scope.md 10)."
+
+[[sources]]
+id = "lead-jerome-in-matthaeum"
+binding_index = 59
+binding_sha256 = "40dd4db863bf922b912c2b61ff8a38c99b3c97bf04533e846e9a1b3cefa8012d"
+source_id = "work.jerome.commentariorum-in-evangelium-matthaei"
+locus = "not read"
+relationship = "lead"
+disposition = "lead"
+reason = "Catalog-only lead; not read by research or by this stage (research/scope.md 10)."
+
+[[sources]]
+id = "lead-augustine-de-civitate-dei"
+binding_index = 60
+binding_sha256 = "f12f872c6df79652c86673a85ef9d5463bc10391a1e7f4f08f70ab96e6b88c80"
+source_id = "work.augustine.de-civitate-dei"
+locus = "not read"
+relationship = "lead"
+disposition = "lead"
+reason = "Catalog-only lead; not read by research or by this stage (research/scope.md 10)."
+
+[[sources]]
+id = "lead-lapide-in-evangelia"
+binding_index = 61
+binding_sha256 = "808a1e1ac975b801b0992771586a92792b6c9a86d0c35c8b600c9ac433722015"
+source_id = "work.cornelius-a-lapide.commentaria-in-quatuor-evangelia"
+locus = "not read"
+relationship = "lead"
+disposition = "lead"
+reason = "Catalog-only lead; not read by research or by this stage (research/scope.md 10)."
+
+[[sources]]
+id = "lead-lapide-in-paulum"
+binding_index = 62
+binding_sha256 = "f69d9a5ccf918cb88eff39d55ace0994209b0bba751e0b5a611e6b116fa4812a"
+source_id = "work.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas"
+locus = "not read"
+relationship = "lead"
+disposition = "lead"
+reason = "Catalog-only lead; not read by research or by this stage (research/scope.md 10)."
