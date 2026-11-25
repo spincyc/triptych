@@ -891,14 +891,17 @@ def walk_json(value: object, path: str = "$"):
             yield from walk_json(child, f"{path}[{index}]")
 
 
-def walk_strings(value: object, path: str = "$"):
+def walk_strings(value: object, path: str = "$", *, bibliography=None):
     """Yield every string leaf without confusing metadata with object keys."""
     if isinstance(value, dict):
+        excluded = bibliography.get(id(value), ()) if bibliography else ()
         for key, child in value.items():
-            yield from walk_strings(child, f"{path}.{key}")
+            if key in excluded and isinstance(child, str):
+                continue
+            yield from walk_strings(child, f"{path}.{key}", bibliography=bibliography)
     elif isinstance(value, list):
         for index, child in enumerate(value):
-            yield from walk_strings(child, f"{path}[{index}]")
+            yield from walk_strings(child, f"{path}[{index}]", bibliography=bibliography)
     elif isinstance(value, str):
         yield path, value
 
@@ -1250,7 +1253,7 @@ def protected_snippet_findings(value: str, label: str) -> list[str]:
 _HAYSTACK_SEPARATOR = "\x00"
 
 
-def identities_in(value: object, identities: set[str]) -> list[str]:
+def identities_in(value: object, identities: set[str], *, bibliography=None) -> list[str]:
     """Which protected identities appear in any string under *value*.
 
     Asked the obvious way --- for each identity, is it in any of these strings
@@ -1266,7 +1269,7 @@ def identities_in(value: object, identities: set[str]) -> list[str]:
     exact pass normally does no work at all, and when it does find something it
     reports precisely what the loop reported before.
     """
-    strings = [text for _, text in walk_strings(value)]
+    strings = [text for _, text in walk_strings(value, bibliography=bibliography)]
     haystack = _HAYSTACK_SEPARATOR.join(strings)
     return sorted(
         identity
@@ -1894,6 +1897,7 @@ def public_liturgy_findings(
     source_study_bodies: dict[str, str] | None = None,
     *,
     strict_absences: bool = True,
+    bibliography: dict[int, set[str]] | None = None,
     quarantined_text_fingerprints: frozenset[str] | None = None,
 ) -> list[str]:
     """One machine-readable boundary shared by browser, CLI and downloads."""
@@ -1911,9 +1915,15 @@ def public_liturgy_findings(
             findings.append(
                 f"{label} {address}: quarantined English body sha256 {digest}"
             )
-    for identity in identities_in(document, protected_identities | ellc_ids):
+    for identity in identities_in(document, protected_identities | ellc_ids, bibliography=bibliography):
         findings.append(f"{label}: protected witness identity {identity}")
     for address, row in walk_json(document):
+        # This mapping is derived from the original objects and their registered
+        # owners. Unknown fields and all body hashes still receive the full scan.
+        if bibliography and id(row) in bibliography:
+            fields = bibliography[id(row)]
+            row = {key: child for key, child in row.items()
+                   if key not in fields or not isinstance(child, str)}
         if row.get("common_from") is not None:
             findings.extend(
                 common_from_findings(row["common_from"], f"{label} {address}.common_from")
@@ -3016,6 +3026,7 @@ class PublicDataBoundary(unittest.TestCase):
         ellc = ellc_identities()
         source = ellc_source_rows()
         bodies = ellc_bodies(source[2]) if source else {}
+        authority = postconciliar_quarantine_owner(FDLC_INVENTORY)._MissalBibliography()
         failures: list[str] = []
         files = sorted(
             path
@@ -3026,6 +3037,8 @@ class PublicDataBoundary(unittest.TestCase):
         self.assertTrue(files, "no generated Ordinary/Propers data was found")
         for path in files:
             document = json.loads(path.read_text(encoding="utf-8"))
+            parts = path.relative_to(STRUCTURE_ROOT.parent).parts
+            bibliography = authority.metadata(parts, document)
             failures.extend(
                 public_liturgy_findings(
                     document,
@@ -3033,6 +3046,7 @@ class PublicDataBoundary(unittest.TestCase):
                     ellc,
                     str(repository_relative(path)),
                     bodies,
+                    bibliography=bibliography,
                 )
             )
         assert_no_findings(
@@ -4449,6 +4463,40 @@ class RightsMutationBoundary(unittest.TestCase):
                 any("exposes protected identity" in finding for finding in download_failures),
                 download_failures,
             )
+
+    def test_consultation_cannot_authorize_a_body_or_another_owner(self) -> None:
+        authority = postconciliar_quarantine_owner(FDLC_INVENTORY)._MissalBibliography()
+        parts = ("structure", "ordinary", "postconciliar.json")
+        element = "ritus-initiales/introitus"
+        link = authority.sources("ordinary", "postconciliar")[element][0]
+        identity = link["source_id"]
+        self.assertIn(link["rights_status"], {"restricted", "unresolved"})
+        row = {"key": element, "missal_witness_links": [dict(link)]}
+        doc = {"schema": "triptych-ordinary-structure/v1", "calendar": "postconciliar",
+               "sections": [{"elements": [row]}]}
+
+        def scan(fingerprints=frozenset()):
+            return public_liturgy_findings(
+                doc, {identity}, set(), "consultation mutation",
+                bibliography=authority.metadata(parts, doc),
+                quarantined_text_fingerprints=fingerprints,
+            )
+
+        self.assertEqual(scan(), [])
+        digest = hashlib.sha256(link["locus"].encode()).hexdigest()
+        self.assertTrue(any("quarantined English body" in error for error in scan({digest})))
+        for field, payload in (("unexpected_field", dict(link)),
+                               ("latin", {"publication": {"source_ids": [identity]}})):
+            row[field] = payload
+            self.assertTrue(any("protected witness identity" in error for error in scan()), field)
+            del row[field]
+        row["key"] = "another/owner"
+        with self.assertRaisesRegex(ValueError, "consultation"):
+            scan()
+        row["key"] = element
+        row["missal_witness_links"][0]["text"] = "Synthetic, unregistered source text"
+        with self.assertRaisesRegex(ValueError, "consultation"):
+            scan()
 
     def test_public_projection_mutation_rejects_payload_and_private_metadata(self) -> None:
         identity = "artifact.synthetic.mutated-protected-work"
