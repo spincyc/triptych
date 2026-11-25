@@ -189,6 +189,56 @@ events:
             rule: "Date the closing charge within the Olivet discourse in Maas's harmony."
             inputs: [life-of-christ.prophecies-on-mount-olivet]
 
+  - id: life-of-christ.prophecies-in-the-temple-lucan-account
+    title: Jesus foretells the fall of Jerusalem and the coming of the Son of Man, as Luke places the discourse
+    orientation_title: "Jesus foretells Jerusalem's fall and His coming"
+    note: >-
+      Added 2026-11-25 by the Claude research stage (iteration 0) of the First
+      Sunday of Advent (1962), whose Gospel is Luke 21:25-33. The subject is
+      Our Lord's speaking of the discourse as Luke narrates it (Luke
+      21:5-36). Maas's harmony makes it the same Tuesday discourse as
+      life-of-christ.prophecies-on-mount-olivet, and this claim is derived
+      from that one rather than dated afresh, as the closing charge of Mark
+      13:33-37 is. It is held as its own subject only because a setting
+      attaches to one subject: Matthew 24:3 and Mark 13:3 seat the discourse
+      on Mount Olivet, while Luke introduces it with a remark about the
+      Temple (21:5), names no departure, and closes with Jesus teaching in
+      the Temple by day and lodging on Olivet by night (21:37-38). The
+      harmony of the two places is not resolved here. Like the Olivet event,
+      it dates the speaking, not the fall of Jerusalem or the coming it
+      foretells, and no prophetic-referent binding is made.
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis_class: derived
+        orientation_qualification: "Maas's chronology"
+        basis: >-
+          Luke 21:5-7 opens the discourse when some speak of the Temple and
+          the disciples ask when these things shall be; Luke 21:37-38 closes
+          the chapter with Jesus teaching in the Temple by day. A. J. Maas,
+          Jesus Christ, Catholic Encyclopedia VIII (1910), III.B.3, heads the
+          Ninth Journey "February, A.U.C. 782- Passover, 782" and cites Luke
+          17-22 among its chapters; after "The last words of Christ in the
+          Temple", the widow's offering, he closes the Tuesday: "Jesus ended
+          this day by uttering the prophecies concerning the destruction of
+          Jerusalem, His second coming, and the future judgement". The year
+          of Luke's account follows that chronology of the discourse.
+        sources:
+          - bible:douay-rheims:Luke.21.5
+          - bible:douay-rheims:Luke.21.7
+          - bible:douay-rheims:Luke.21.36
+          - bible:douay-rheims:Luke.21.37
+          - bible:douay-rheims:Luke.21.38
+          - passage.catholic-encyclopedia.volume-8.new-york-1910.maas-ninth-journey-olivet-prophecies
+          - passage.catholic-encyclopedia.volume-8.new-york-1910.maas-era-calibration-auc-782
+        date:
+          precision: approximate-year
+          from: {year: 29, era: ad}
+          label: "c. A.D. 29"
+          derivation:
+            rule: "Date Luke's account of the discourse with the Olivet discourse in Maas's harmony."
+            inputs: [life-of-christ.prophecies-on-mount-olivet]
+
   - id: life-of-christ.nativity
     title: The Nativity of Our Lord
     note: >-
