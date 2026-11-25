@@ -848,7 +848,7 @@ withheld_frames:
   basis: >-
     The 1962 edition independently places the Lenten prayer over the people
     (RGMR 506; Ritus servandus XI.2-3) and the preliminary lessons and prayers
-    of the Ember forms and Wednesday of Lent IV. This recension's Ordinary
+    of the Ember forms, Wednesday of Lent IV and Wednesday of Holy Week. This recension's Ordinary
     lacks the corresponding appointments. The reader preserves the inherited
     Proper order until their placement is established for this recension.
   forms:
@@ -859,6 +859,7 @@ withheld_frames:
   - {mass: lent-1-ember-saturday, form_id: longer, proper: First Lesson, occurrence: 1}
   - {mass: lent-1-ember-saturday, form_id: shorter, proper: Lesson, occurrence: 1}
   - {mass: lent-4-wednesday, form_id: main, proper: First Lesson, occurrence: 1}
+  - {mass: holy-wednesday, form_id: main, proper: First Lesson, occurrence: 1}
   - {mass: pentecost-ember-wednesday, form_id: main, proper: First Lesson, occurrence: 1}
   - {mass: pentecost-ember-saturday, form_id: longer, proper: First Lesson, occurrence: 1}
   - {mass: pentecost-ember-saturday, form_id: shorter, proper: Lesson, occurrence: 1}

@@ -536,6 +536,7 @@ CONDITION_PREDICATES = (
     "1962-requiem",
     "1962-ordinary-outside-requiem",
     "1962-usual-agnus-and-peace-prayer",
+    "1962-final-blessing",
     "1962-psalm-42",
     "1962-prayers-at-foot",
     "1962-lavabo-doxology",
@@ -1461,7 +1462,7 @@ def lesson_frame_table(source: dict, sources: Path, name: str) -> list[dict]:
               "gloria", "preparation"}
     seen = set()
     for frame in frames:
-        if not isinstance(frame, dict) or set(frame) != fields:
+        if not isinstance(frame, dict) or set(frame) not in (fields, fields | {"passion"}):
             raise SourceError(f"{name}: lesson frame requires its exact source fields")
         if not all(isinstance(frame[k], str) and frame[k].strip()
                    for k in ("mass", "form_id", "locus", "collect", "reading")):
@@ -1480,12 +1481,112 @@ def lesson_frame_table(source: dict, sources: Path, name: str) -> list[dict]:
         holder = mass if address[1] == "main" and not mass.get("forms") else next(
             (form for form in mass.get("forms", []) if form["id"] == address[1]), {})
         names = [proper["name"] for proper in holder.get("propers", [])]
+        passion = frame.get("passion")
+        if "passion" in frame or address == ("holy-wednesday", "main"):
+            if (address != ("holy-wednesday", "main") or not isinstance(passion, dict)
+                    or set(passion) != {"proper", "locus", "chant_before", "reading_after", "omit", "request", "appointments"}
+                    or not isinstance(passion["request"], dict)
+                    or passion["request"].get("key") != "iube-domine-benedicere"
+                    or passion["proper"] != "Passion according to Luke" or not passion["locus"]
+                    or passion["chant_before"] != "oblatio/munda-cor-meum"
+                    or passion["reading_after"] != "oblatio/dominus-sit-in-corde-meo"
+                    or passion["omit"] != ["oblatio/" + key for key in (
+                        "rubrica-munda-cor-meum", "dominus-vobiscum-ante-evangelium",
+                        "rubrica-evangelium-proprium", "rubrica-post-evangelium",
+                        "laus-tibi-christe", "rubrica-cum-sacerdote", "per-evangelica-dicta")]):
+                raise SourceError(f"{name}: invalid Passion reading or ceremonies for {address}")
+            appointments = passion["appointments"]
+            if (not isinstance(appointments, list) or len(appointments) != 2
+                    or {row.get("mass") for row in appointments if isinstance(row, dict)}
+                    != {"palm-sunday", "holy-tuesday"}):
+                raise SourceError(f"{name}: incomplete 1962 Passion appointments")
+            for row in appointments:
+                common = {"mass", "form_id", "proper", "locus"}
+                palm = row["mass"] == "palm-sunday"
+                fields_for_rite = common | ({"group", "passion_option", "gospel_option", "gospel_proper"} if palm else set())
+                proper = "Passion according to Matthew" if palm else "Passion according to Mark"
+                if (set(row) != fields_for_rite or row["form_id"] != "main"
+                        or row["proper"] != proper or not row["locus"]):
+                    raise SourceError(f"{name}: unbound 1962 Passion appointment {row}")
+                candidates = masses[row["mass"]].get("propers", [])
+                if sum(candidate["name"] == proper for candidate in candidates) != 1:
+                    raise SourceError(f"{name}: missing or ambiguous appointed Passion {proper}")
+                if palm:
+                    choices = [(candidate["name"], info["option"]) for candidate in candidates
+                               if (info := candidate.get("ordinary_disposition", {})).get("group") == row["group"]]
+                    if (row["group"] != "palm-mass-gospel" or choices != [
+                            (proper, row["passion_option"]), (row["gospel_proper"], row["gospel_option"])]):
+                        raise SourceError(f"{name}: Palm Passion and substitute Gospel disagree with the Proper")
         expected = ["Introit", *frame["preliminary"], frame["collect"], frame["reading"],
-                    *frame["chants"], "Gospel"]
+                    *frame["chants"], passion["proper"] if passion else "Gospel"]
         if (frame["preliminary"][0] != "Collect" or frame["collect"] != "Oratio"
                 or names[:len(expected)] != expected
                 or effective_ordinary_frame(mass, holder, str(address))["applicability"] != "full"):
             raise SourceError(f"{name}: lesson frame disagrees with the complete Proper order of {address}")
+    return frames
+
+
+def special_mass_frame_table(source: dict, sources: Path, sections: list[dict], name: str) -> list[dict]:
+    """Verify each exceptional Ordinary against its actual formulary and source elements."""
+    if "special_mass_frames" not in source:
+        return []
+    declarations = source["special_mass_frames"]
+    if source["calendar"] != "roman-1962" or not isinstance(declarations, list) or not declarations:
+        raise SourceError(f"{name}: special_mass_frames requires 1962 source declarations")
+    masses = _calendars.mass_index(_calendars.load_document(sources / "calendars", "roman-1962", effective=False))
+    keys = [e["key"] for section in sections for e in section["elements"]]
+    frames = []
+    seen = set()
+    for row in declarations:
+        required = {"mass", "form_id", "locus", "exclude", "seats"}
+        if not isinstance(row, dict) or not required <= row.keys() <= required | {"include", "exclude_ranges"}:
+            raise SourceError(f"{name}: malformed special Mass frame")
+        address = row["mass"], row["form_id"]
+        mass = masses.get(address[0], {})
+        holder = mass if address[1] == "main" and not mass.get("forms") else next(
+            (form for form in mass.get("forms", []) if form["id"] == address[1]), {})
+        if address in seen or not holder or not row["locus"].strip() or effective_ordinary_frame(mass, holder, str(address))["applicability"] != "full":
+            raise SourceError(f"{name}: missing or duplicate special Mass frame at {address}")
+        seen.add(address)
+        excluded = list(row["exclude"])
+        included = row.get("include", [])
+        for span in row.get("exclude_ranges", []):
+            first, last = span["first"], span["last"]
+            if (first not in keys or last not in keys or first.split("/")[0] != last.split("/")[0]
+                    or keys.index(first) > keys.index(last)):
+                raise SourceError(f"{name}: invalid special Mass frame omission at {address}")
+            excluded.extend(keys[keys.index(first):keys.index(last) + 1])
+        if (len(set(excluded)) != len(excluded) or len(set(included)) != len(included)
+                or not set(excluded + included) <= set(keys) or set(excluded) & set(included)):
+            raise SourceError(f"{name}: invalid special Mass frame elements at {address}")
+        names = [proper["name"] for proper in holder.get("propers", [])]
+        seats = []
+        seated = set()
+        for seat in row["seats"]:
+            fields = {"id", "anchor", "where", "propers"}
+            if (not fields <= seat.keys() <= fields | {"note", "source_url", "before_section"} or
+                    ("before_section" in seat and (seat["before_section"] is not True or seat["where"] != "before")) or
+                    ("note" in seat and (not isinstance(seat["note"], str) or not seat["note"].strip())) or
+                    ("source_url" in seat and not re.fullmatch(r"https://media\.churchmusicassociation\.org/pdf/missale62\.pdf#page=[1-9]\d*", seat["source_url"])) or
+                    not seat["id"] or
+                    seat["id"] in {s["id"] for s in seats} or seat["where"] not in ("before", "after") or
+                    seat["anchor"] not in keys or seat["anchor"] in excluded or not seat["propers"]):
+                raise SourceError(f"{name}: invalid special Mass frame seat at {address}")
+            targets = []
+            for entry in seat["propers"]:
+                target = {"name": entry, "occurrence": 1} if isinstance(entry, str) else entry
+                if (set(target) != {"name", "occurrence"} or type(target["occurrence"]) is not int or
+                        not 1 <= target["occurrence"] <= names.count(target["name"]) or
+                        isinstance(entry, str) and names.count(entry) != 1):
+                    raise SourceError(f"{name}: unverified special Mass frame Proper {entry!r} at {address}")
+                coordinate = target["name"], target["occurrence"]
+                if coordinate in seated:
+                    raise SourceError(f"{name}: duplicate special Mass frame Proper {entry!r} at {address}")
+                seated.add(coordinate)
+                targets.append(target)
+            seats.append({**seat, "propers": targets})
+        frames.append({"mass": address[0], "form_id": address[1], "locus": row["locus"],
+                       "exclude": excluded, "include": included, "seats": seats})
     return frames
 
 
@@ -3689,6 +3790,12 @@ def calendar_structure(sources: Path, path: Path, library: dict[str, dict]) -> d
     appointments = appointment_table(source, name)
     proper_rites = proper_rite_table(source, sources, name)
     lesson_frames = lesson_frame_table(source, sources, name)
+    for frame in lesson_frames:
+        if "passion" in frame:
+            passion = frame["passion"]
+            [passion["request"]] = from_inventory(
+                {"key": "oblatio", "elements": [passion["request"]]}, witnesses,
+                restricted, absences, options, library, name, appointments)
 
     sections = []
     exclusions = []
@@ -3737,6 +3844,7 @@ def calendar_structure(sources: Path, path: Path, library: dict[str, dict]) -> d
         sections.append({"key": key, "name": section.get("name") or key, "elements": elements})
 
     attach_ordinary_witness_links(source, sections, library, name)
+    special_frames = special_mass_frame_table(source, sources, sections, name)
     slots = slot_table(source, sections, name, proper_rites)
     proper_rite_coverage(proper_rites, slots, sections, name)
     appointment_coverage(appointments, sections, name)
@@ -3938,6 +4046,7 @@ def calendar_structure(sources: Path, path: Path, library: dict[str, dict]) -> d
         "appointments": [appointments[key] for key in sorted(appointments)],
         "slots": slots,
         **({"proper_rites": proper_rites} if proper_rites else {}),
+        **({"special_mass_frames": special_frames} if special_frames else {}),
         **({"lesson_frames": lesson_frames} if lesson_frames else {}),
         **lesson_cues(source, library, name),
         **hymn_rule_table(source, sources, name),

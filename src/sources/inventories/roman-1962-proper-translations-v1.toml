@@ -36736,3 +36736,57 @@ lang = "en"
 rights = "project-created"
 text = "Receive the joy of your glory, alleluia, giving thanks to God, alleluia, who has called you to the kingdoms of heaven, alleluia, alleluia, alleluia. Ps. 77:1. My people, heed my law. Incline your ear to the words of my mouth. ℣. Glory to the Father."
 notice = "Original English study translation by Triptych from the 1922 Tours Mame on the stated 1962 chant appointment."
+
+[[entries]]
+mass = "mass-of-the-lords-supper"
+form_id = "main"
+proper = "Without the washing of feet"
+cycle = "all"
+occurrence = 1
+
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "The washing of feet is omitted."
+notice = "Nonspoken editorial direction by Triptych."
+
+[entries.translations.text_structure]
+text_sha256 = "a1d5583e87695bb5c38adc70591427a6074610f8e7e801256593a0a553d4a39c"
+checked = "The entire English line is a nonspoken editorial direction."
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 0
+text = "The washing of feet is omitted."
+
+[[entries]]
+mass = "mass-of-the-lords-supper"
+form_id = "main"
+proper = "Dismissal at the solemn Mass"
+cycle = "all"
+occurrence = 1
+source_latin_sha256 = "1e3c67755d77756324c8bd37377d3a38a7aa36cd0be54b98336dfabe01b6939d"
+source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-24-maundy-evening.maundy-solemn-dismissal"
+source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-24-maundy-evening.maundy-choices-97a362e2", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"]
+
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "The Lord be with you.\nAnd with your spirit.\nLet us bless the Lord.\nThanks be to God."
+notice = "Original study translation by Triptych."
+
+[[entries]]
+mass = "mass-of-the-lords-supper"
+form_id = "main"
+proper = "Dismissal at the permitted Low Mass"
+cycle = "all"
+occurrence = 1
+source_latin_sha256 = "70013f6b82825a40fd31b92f4218beb74b618e69212c36d9da7894bb8d78533c"
+source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-24-maundy-evening.maundy-low-dismissal"
+source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-24-maundy-evening.maundy-choices-97a362e2", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"]
+
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "The Lord be with you.\nAnd with your spirit.\nGo, the Mass is ended.\nThanks be to God."
+notice = "Original study translation by Triptych."

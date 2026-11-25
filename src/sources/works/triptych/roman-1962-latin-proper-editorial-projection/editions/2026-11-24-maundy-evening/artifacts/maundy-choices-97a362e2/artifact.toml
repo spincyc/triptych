@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-24-maundy-evening.maundy-choices-97a362e2"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-24-maundy-evening"
+artifact_type = "editorial-projection"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych releases its original wording for the nonspoken editorial direction and its collation under CC BY 4.0. The complete Latin dialogues are independently public domain in the United States by the 1922 publication date."
+rights_jurisdiction = "United States"
+retrieved = "2026-11-24"
+sha256 = "97a362e298e5a83c63f60414a9adcf7cf1a0bb20b617835e23316c067f8efe58"
+byte_size = 209
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-24-maundy-evening/artifacts/maundy-choices-97a362e2/latin.tsv"
+encoding = "utf-8"
+indexable = true
+projected_from = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+provenance = "Missale Romanum, Tours Mame 1922, Canon conclusion, printed p. 352, PDF p. 466. Cummiskey Philadelphia 1861, Ordo, p. xliv, also prints all four turns, with the two alternative dismissal formulas in the third turn. Missale Romanum 1962, Feria V in Cena Domini, rubrics 34–36 (printed p. 160, PDF p. 241). At the solemn Mass say Benedicamus Domino, then Placeat; omit the blessing and Last Gospel. A Low Mass permitted by the local Ordinary ends in the usual way."
+transformation = "Keep a distinct nonspoken editorial direction and the two complete alternative dismissal dialogues. Select the third turn according to the mode specified in the Missal."

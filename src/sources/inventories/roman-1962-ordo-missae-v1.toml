@@ -117,7 +117,7 @@ not_decided_here = [
   "Which Preface, Communicantes or Hanc igitur a given formulary takes. The formulary's own printed direction is the mass index's `ordinary_appointments`; this file declares only what the frame shows for each appointed option, the dated spans and defaults the book's own Canon headings state (`[[appointments]]`), and a typed stand-in where nothing establishes the appointment.",
   "General ceremonial execution beyond the separately declared source findings. Historical rubrics retain their own edition's authority. The inserted ferial prayer-over-the-people cues have explicit 1962 placement and actor findings at Ritus XI.2-3; their older wording witnesses do not supply those rules.",
   "Whether any element's Latin is the wording the 1962 typical edition prints, except where an element's own provenance declares a collation. The Latin here is this 1861 book's own, transcribed from its facing column; the departures that are known are named on the elements that carry them and in the advisory above. Element-level collations (2026-10-19, `element_provenance` below) cover the Holy Spirit Preface, the head of the common Communicantes and, under C2 gap G19, the Latin of every other element the 1962 Pentecost Missal mode exercises: 85 of those agree word for word and are exact-target; twelve are recorded as variants or abbreviated bodies with their differences named, and stay antecedents. The additional bounded comparisons of 2026-10-20 cover the common Hanc igitur and all eleven held Latin Preface bodies; the findings retain each word variant, abbreviated source extent and unresolved internal form. Only the complete Common Preface and common Hanc receive new word-exact findings here. The source-only Gloria heading and unplaced pre-Postcommunion greeting remain uncollated; no new source occurrence, complete-Ordinary or full-Preface assembly claim follows.",
-  "Where a proper stands that the Ordo Missae does not place. A slot is declared only where the 1962 book states the position in terms; the nine temporal formularies with preliminary lessons are placed by their separate lesson_frames declarations below. The distinct rites of Good Friday and the paschal Vigil remain unplaced, and a page that reads this file must show them in the missal's own order rather than guess at a seat for them.",
+  "Where a proper stands that the Ordo Missae does not place. A slot is declared only where the 1962 book states the position in terms; the ten temporal formularies with preliminary lessons are placed by their separate lesson_frames declarations below. The distinct rites of Good Friday and the paschal Vigil remain unplaced, and a page that reads this file must show them in the missal's own order rather than guess at a seat for them.",
 ]
 
 # ---------------------------------------------------------------- witnesses
@@ -178,7 +178,7 @@ lang = "en"
 label = "The New Roman Missal in Latin and English, by F. X. Lasance and F. A. Walsh (New York: Benziger Brothers), revised edition of 1945, in a printing of about 1955-56"
 rights = "public-domain"
 caution = "A publisher's hand missal, not an approved liturgical translation and never an altar book; nothing here may be used for recitation. Supplies checked historical English for the opening, selected Oblatio, Canon, Communion and conclusion prayers, the proper Hanc igitur of Easter and Pentecost, and the historical Preface bodies explicitly joined here. Historical renderings are not exact 1962 witnesses; the Hanc igitur alone was read against 1962 Latin clause by clause and prints no rubric for the joining of the hands."
-artifacts = [
+artifacts = ["artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.priest-gospel-blessing-request-3fabf5f0",
   "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.requiem-agnus-dei-a7d3db20",
   "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.hanc-igitur-easter-pentecost-checked-english",
   "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.proper-communicantes-heads-en-20261026-57552729",
@@ -199,7 +199,7 @@ lang = "la"
 label = "Lasance/Walsh, The New Roman Missal in Latin and English, 1945 revision, Latin column"
 rights = "public-domain"
 caution = "Historical lay-missal Latin for the three invocations of the Requiem Agnus Dei, printed p. 788."
-artifacts = ["artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.requiem-agnus-dei-a7d3db20"]
+artifacts = ["artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.priest-gospel-blessing-request-3fabf5f0", "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.requiem-agnus-dei-a7d3db20"]
 
 [[witnesses]]
 id = "edition.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929"
@@ -5560,11 +5560,11 @@ conditions = [{ kind = "include-when-any", predicates = ["1962-ordinary-outside-
 
 [[sections.element_conditions]]
 element = "rubrica-benedictio"
-conditions = [{ kind = "include-when-any", predicates = ["1962-ordinary-outside-requiem"], basis = "Missale Romanum 1962, Ritus servandus XIII.1 and RGMR 507–508. This element is omitted or replaced in Masses of the Dead." }]
+conditions = [{ kind = "include-when-any", predicates = ["1962-final-blessing"], basis = "Missale Romanum 1962, Ritus servandus XIII.1 and RGMR 507–508. The evening Mass in Cena Domini omits the blessing in its solemn form and retains it at permitted Low Masses (rubrics 34–36, PDF p. 241)." }]
 
 [[sections.element_conditions]]
 element = "benedicat-vos-omnipotens-deus"
-conditions = [{ kind = "include-when-any", predicates = ["1962-ordinary-outside-requiem"], basis = "Missale Romanum 1962, Ritus servandus XIII.1 and RGMR 507–508. This element is omitted or replaced in Masses of the Dead." }]
+conditions = [{ kind = "include-when-any", predicates = ["1962-final-blessing"], basis = "Missale Romanum 1962, Ritus servandus XIII.1 and RGMR 507–508. The evening Mass in Cena Domini omits the blessing in its solemn form and retains it at permitted Low Masses (rubrics 34–36, PDF p. 241)." }]
 
 [[sections.element_conditions]]
 element = "initium-sancti-evangelii"
@@ -6378,6 +6378,75 @@ chants = ["Tract"]
 gloria = false
 preparation = "kneel-rise"
 
+[[lesson_frames]]
+mass = "holy-wednesday"
+form_id = "main"
+locus = "Missale Romanum 1962, Feria IV Hebdomadae sanctae, printed pp. 147–151 (facsimile PDF pp. 228–232), nos. 879–890. After the Kyrie the first prayer has Oremus, Flectamus genua and Levate. After the Gradual the greeting and Oremus introduce the second prayer without Flectamus genua."
+preliminary = ["Collect", "First Lesson", "Gradual"]
+collect = "Oratio"
+reading = "Second Lesson"
+chants = ["Tract"]
+gloria = false
+preparation = "kneel-rise"
+
+[lesson_frames.passion]
+proper = "Passion according to Luke"
+locus = "Printed p. 148 (facsimile PDF p. 229) refers to p. 136, nos. 8 and 8a (PDF p. 217). The priest reading alone says Munda cor meum and the private blessing. The Passion lacks the usual Gospel greeting and signs. Its ending on printed p. 140 (PDF p. 221) explicitly omits the response, kiss of the book and incensation also on Tuesday and Wednesday."
+chant_before = "oblatio/munda-cor-meum"
+reading_after = "oblatio/dominus-sit-in-corde-meo"
+omit = [
+  "oblatio/rubrica-munda-cor-meum", "oblatio/dominus-vobiscum-ante-evangelium",
+  "oblatio/rubrica-evangelium-proprium", "oblatio/rubrica-post-evangelium",
+  "oblatio/laus-tibi-christe", "oblatio/rubrica-cum-sacerdote", "oblatio/per-evangelica-dicta",
+]
+
+[lesson_frames.passion.request]
+key = "iube-domine-benedicere"
+kind = "prayer"
+speaker = "priest"
+name = "The priest asks for the blessing"
+latin_incipit = "Iube, Domine, benedicere"
+note = "Missale Romanum 1962, printed pp. 136 and 148. The priest who reads the Passion asks God for the blessing. If deacons proclaim the Passion, they ask the celebrant instead (no. 8)."
+
+[lesson_frames.passion.request.latin]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.priest-gospel-blessing-request-3fabf5f0"
+element = "iube-domine-benedicere"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+note = "The three words are independently printed in Mame Tours 1922 and in the registered Lasance facsimile. The historical facing text supplies this private request."
+collation_finding = "All three words agree with the 1962 Missal, p. 136, no. 8a and p. 148, and with the 1922 Tours Mame Missal p. 275 (PDF 389), allowing spelling, stress accents and punctuation. Lasance p. 763, facsimile PDF 761."
+target_wording = "word-exact"
+
+[lesson_frames.passion.request.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.priest-gospel-blessing-request-3fabf5f0"
+element = "iube-domine-benedicere"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "Historical English of Lasance and Walsh, printed p. 763, facsimile PDF 761."
+
+# The 1962 Palm Sunday rite explicitly extends these same ceremonies to
+# Tuesday and Wednesday of Holy Week. Palm rubric 11 appoints the customary
+# Gospel ceremonies only when the celebrant uses its separate permission.
+[[lesson_frames.passion.appointments]]
+mass = "palm-sunday"
+form_id = "main"
+proper = "Passion according to Matthew"
+locus = "Missale Romanum 1962, printed pp. 136–140 (PDF pp. 217–221), nos. 8–11. Private preparation and blessing for the priest reading the Passion, without the ordinary Gospel greeting, signing, response or kiss. The substitute Gospel, Mt 27:45–52, is read more consueto only on the permitted second or third Low Mass."
+group = "palm-mass-gospel"
+passion_option = "passion"
+gospel_option = "second-or-third-low-mass-gospel"
+gospel_proper = "Gospel (vel)"
+
+[[lesson_frames.passion.appointments]]
+mass = "holy-tuesday"
+form_id = "main"
+proper = "Passion according to Mark"
+locus = "Missale Romanum 1962, printed p. 143 (PDF p. 224), no. 5, expressly refers to the Passion preparations on printed p. 136, nos. 8 and 8a. Printed p. 140 also extends the omitted response, kiss and incensation to Tuesday."
+
 # Office-based decisions presume the principal celebration corresponding to its
 # own Office. The shared reader supplies dated Sunday, octave and actual feria
 # facts. A Common, additional commemoration, or an optional votive use cannot
@@ -6560,6 +6629,37 @@ office_creed_only = [
 ]
 
 
+[[special_mass_frames]]
+mass = "mass-of-the-lords-supper"
+form_id = "main"
+locus = "Missale Romanum 1962, Feria V in Cena Domini, rubrics 13–17 and 20–22 (printed pp. 155–158, PDF pp. 236–239). The washing of feet follows the homily where a pastoral reason recommends it. As the washing ends, start antiphon 8, omitting any remaining earlier antiphons as necessary. Missale Romanum 1962, Feria V in Cena Domini, rubrics 34–36 (printed p. 160, PDF p. 241). At the solemn Mass say Benedicamus Domino, then Placeat; omit the blessing and Last Gospel. A Low Mass permitted by the local Ordinary ends in the usual way."
+exclude = ["conclusio/dominus-vobiscum-ite-missa-est", "oblatio/credo-heading", "oblatio/credo-in-unum-deum", "oblatio/et-in-unum-dominum", "oblatio/et-in-spiritum-sanctum"]
+exclude_ranges = [{first = "canon/communicantes-nativitate", last = "canon/forma-corporis"}]
+
+[[special_mass_frames.seats]]
+id = "maundy-mandatum"
+anchor = "oblatio/dominus-vobiscum-ante-offertorium"
+where = "before"
+propers = ["Mandatum Antiphon 1", "Mandatum Antiphon 2", "Mandatum Antiphon 3", "Mandatum Antiphon 4", "Mandatum Antiphon 5", "Mandatum Antiphon 6", "Mandatum Antiphon 7", "Mandatum Antiphon 8", "Prayer of the Mandatum", "Without the washing of feet"]
+
+[[special_mass_frames.seats]]
+id = "maundy-canon"
+anchor = "canon/et-omnium-circumstantium"
+where = "after"
+propers = ["Communicantes", "Hanc igitur", "Quam oblationem", "Qui pridie"]
+
+[[special_mass_frames.seats]]
+id = "maundy-agnus"
+anchor = "communio/rubrica-agnus-dei"
+where = "after"
+propers = ["Agnus Dei"]
+
+[[special_mass_frames.seats]]
+id = "maundy-dismissal"
+anchor = "conclusio/rubrica-inclinatus-ante-altare"
+where = "before"
+propers = ["Dismissal at the solemn Mass", "Dismissal at the permitted Low Mass"]
+
 [ordinary_usage]
 # Exact Mass identities in the 1962 Proprium de Tempore. A saint on the
 # same date keeps its own rite. Holy Week specialized frames govern their
@@ -6570,3 +6670,104 @@ conditional_preparation = ["purificatione-beatae-mariae-virginis", "ash-wednesda
 omitted_preparation = ["easter-vigil"]
 threefold_miserere_nobis = ["chrism-mass", "mass-of-the-lords-supper"]
 last_gospel_omitted = [{mass = "chrism-mass", form = "main"}, {mass = "nativitate-domini-octave", form = "day"}, {mass = "palm-sunday", form = "main"}, {mass = "easter-vigil", form = "main"}]
+
+[[special_mass_frames]]
+mass = "easter-vigil"
+form_id = "main"
+locus = "Missale Romanum 1962, De Missa solemni Vigiliae paschalis, printed pp. 211–215, PDF pp. 292–296, rubrics 1–10."
+exclude_ranges = [
+  {first = "praeparatio/ordinarium-missae-heading", last = "praeparatio/rubrica-benedictio-incensi-et-introitus"},
+  {first = "oblatio/credo-heading", last = "oblatio/et-in-spiritum-sanctum"},
+  {first = "communio/rubrica-agnus-dei", last = "communio/domine-jesu-christe-qui-dixisti"},
+  {first = "conclusio/initium-sancti-evangelii", last = "conclusio/deo-gratias"},
+]
+exclude = ["oblatio/rubrica-offertorium", "praefatio/praefatio-paschalis", "canon/communicantes-pascha", "conclusio/rubrica-communio", "conclusio/dominus-vobiscum-ite-missa-est"]
+include = ["praeparatio/gloria-in-excelsis-heading", "praeparatio/gloria-in-excelsis", "oblatio/gloria-patri", "canon/communicantes-continuatio", "canon/hanc-igitur-pascha-pentecoste"]
+
+[[special_mass_frames.seats]]
+id = "vigil-rites"
+before_section = true
+anchor = "praeparatio/kyrie-eleison"
+where = "before"
+propers = [
+  "Blessing of the New Fire",
+  "Blessing of the Paschal Candle",
+  "Blessing of the Lighted Candle",
+  "Lumen Christi",
+  "Exsultet (Praeconium paschale)",
+  "First Prophecy",
+  "Oration after the First Prophecy",
+  "Second Prophecy",
+  {name = "Tract", occurrence = 1},
+  "Oration after the Second Prophecy",
+  "Third Prophecy",
+  {name = "Tract", occurrence = 2},
+  "Oration after the Third Prophecy",
+  "Fourth Prophecy",
+  {name = "Tract", occurrence = 3},
+  "Oration after the Fourth Prophecy",
+  "Litany of the Saints, first part",
+  "Blessing of the Baptismal Water",
+  "Tract at the Procession to the Font",
+  "Prayer at the Font",
+  "Renewal of Baptismal Promises",
+
+]
+
+[[special_mass_frames.seats]]
+id = "vigil-litany"
+before_section = true
+anchor = "praeparatio/kyrie-eleison"
+where = "before"
+propers = ["Litany of the Saints, second part"]
+note = "As the Litany ends, the cantors begin the Kyrie. The celebrant and ministers approach in white. The altar is kissed and incensed. Bells ring and images are uncovered at the Gloria."
+source_url = "https://media.churchmusicassociation.org/pdf/missale62.pdf#page=292"
+
+[[special_mass_frames.seats]]
+id = "vigil-alleluia"
+anchor = "oblatio/rubrica-munda-cor-meum"
+where = "before"
+propers = ["Alleluia", {name = "Tract", occurrence = 4}]
+note = "The celebrant intones the Alleluia three times at successively higher pitches. The choir repeats it each time. The Gospel procession has incense and no candles."
+source_url = "https://media.churchmusicassociation.org/pdf/missale62.pdf#page=293"
+
+[[special_mass_frames.seats]]
+id = "vigil-preface"
+note = "The night form of the Paschal Preface is appointed. Read its full text in the linked facsimile."
+source_url = "https://media.churchmusicassociation.org/pdf/missale62.pdf#page=315"
+anchor = "praefatio/sanctus-post-praefationem"
+where = "before"
+propers = [
+  "Preface of the Easter Vigil",
+]
+
+[[special_mass_frames.seats]]
+id = "vigil-communicantes"
+note = "The nocturnal Easter Communicantes opens this part of the Canon. Its shared continuation follows."
+source_url = "https://media.churchmusicassociation.org/pdf/missale62.pdf#page=294"
+anchor = "canon/communicantes-continuatio"
+where = "before"
+propers = [
+  "Communicantes of the Easter Vigil",
+]
+
+[[special_mass_frames.seats]]
+id = "vigil-lauds"
+note = "After Communion and the ablutions, Lauds is sung. Psalm 150 and the Benedictus take their antiphons. The Office has no chapter, hymn or versicle here."
+source_url = "https://media.churchmusicassociation.org/pdf/missale62.pdf#page=295"
+anchor = "conclusio/corpus-tuum-domine"
+where = "after"
+propers = [
+  "Antiphon and Psalm at Lauds",
+  "Benedictus",
+]
+
+[[special_mass_frames.seats]]
+id = "vigil-dismissal"
+note = "The greeting precedes the Easter dismissal. Both the dismissal and the response have a double Alleluia. The Placeat and blessing follow."
+source_url = "https://media.churchmusicassociation.org/pdf/missale62.pdf#page=296"
+anchor = "conclusio/rubrica-inclinatus-ante-altare"
+where = "before"
+propers = [
+  "Easter dismissal",
+]

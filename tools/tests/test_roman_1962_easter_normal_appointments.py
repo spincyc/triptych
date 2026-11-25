@@ -73,15 +73,15 @@ const wrong=structuredClone(d.facts);wrong['roman-1962-common-chant-regime'].edi
 console.log('exact three seasonal courses; incompatible choice, unknown and foreign fact controls passed');
 '''
   r=subprocess.run(['node','-e',js,str(ROOT/'src/web/browser/liturgy/ordinary-seating.js')],input=json.dumps(payload),capture_output=True,text=True);self.assertEqual(r.returncode,0,r.stdout+r.stderr)
- def test_holy_wednesday_keeps_explicit_unavailable_frame_and_unframed_order(self):
-  self.assertEqual(self.ms['holy-wednesday']['ordinary_frame']['applicability'],'unavailable')
+ def test_holy_wednesday_uses_the_sourced_frame_and_keeps_both_orations(self):
+  self.assertNotIn('ordinary_frame',self.ms['holy-wednesday'])
   rows,errors=resolve_propers(self.doc,self.ms['holy-wednesday']);self.assertEqual(errors,[])
   ps=[p for _,p,_ in rows];names=[p['name'] for p in ps];self.assertEqual(names[-2:],['Postcommunion','Oratio super populum'])
-  state=assert_current_latin_body_or_gap(self,'holy-wednesday','Oratio super populum',ps[-1])
+  self.assertEqual(ps[-1]['source'],'composed');self.assertTrue(ps[-1]['text'].strip())
   self.assertLess(names.index('Oratio'),names.index('Second Lesson'))
   path=ROOT/'tools/mass-today';loader=importlib.machinery.SourceFileLoader('easter_normal_today',str(path));spec=importlib.util.spec_from_loader(loader.name,loader);today=importlib.util.module_from_spec(spec);sys.modules[spec.name]=today;loader.exec_module(today)
-  self.assertEqual(today.validated_ordinary_frame(self.ms['holy-wednesday']['ordinary_frame'])['applicability'],'unavailable')
+  self.assertEqual(today.validated_ordinary_frame()['applicability'],'full')
   projection=today.language_projection(ps[-1],'la',None)
-  self.assertEqual(projection['available'],state=='present');self.assertEqual(projection['status'],'full-text' if state=='present' else 'unavailable')
-  if state=='present':self.assertEqual(projection['texts'],[{'lang':'la','text':ps[-1]['text']}])
+  self.assertTrue(projection['available']);self.assertEqual(projection['status'],'full-text')
+  self.assertEqual(projection['texts'],[{'lang':'la','text':ps[-1]['text']}])
 if __name__=='__main__':unittest.main()

@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.priest-gospel-blessing-request-3fabf5f0"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+storage = "tracked"
+rights_jurisdiction = "United States"
+retrieved = "2026-11-24"
+encoding = "utf-8"
+indexable = true
+sha256 = "3fabf5f0a34721a9e077ee9b30e7e683953a7e682069b21434c1f241ac3576a6"
+byte_size = 113
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/priest-gospel-blessing-request-3fabf5f0/cue.tsv"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+rights_status = "public-domain"
+rights_basis = "The registered 1945 Lasance/Walsh revision, printed p. 763. United States nonrenewal is documented in src/sources/inventories/lasance-new-roman-missal-rights-v1.toml. The historical Latin is separately witnessed by Mame Tours 1922, printed p. 275, PDF 389."
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+source_url = "https://archive.org/download/fr-lasance-missal-1937/fr-lasance-missal-1937.pdf"
+provenance = "Lasance facsimile PDF 761, printed p. 763, facing columns below Munda cor meum and immediately above Dominus sit in corde. Wednesday in Holy Week, Missale Romanum 1962, printed p. 148, refers to p. 136 no. 8a for the priest reading alone."
+transformation = "Join words divided at line breaks. Preserve the witness spelling, punctuation, and Latin accents. The following blessing and the distinct address to a human celebrant are excluded."

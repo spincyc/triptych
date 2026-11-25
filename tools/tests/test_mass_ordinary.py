@@ -1180,8 +1180,8 @@ class OrdinaryTool(unittest.TestCase):
             "rise": {"la": "Levate.", "en": "Arise."},
         })
         self.assertIn("in silence", cues["lesson_frame_note"]["en"])
-        self.assertEqual(len(frames), 13)
-        self.assertEqual(len({row["mass"] for row in frames}), 9)
+        self.assertEqual(len(frames), 14)
+        self.assertEqual(len({row["mass"] for row in frames}), 10)
         inherited = tool._calendars.mass_index(
             tool._calendars.load_document(sources / "calendars", "roman-pre-1955"))
         for row in frames:
@@ -1199,6 +1199,122 @@ class OrdinaryTool(unittest.TestCase):
         with self.assertRaisesRegex(tool.SourceError, "complete Proper order"):
             tool.lesson_frame_table({**inventory, "lesson_frames": [
                 {**first, "preliminary": first["preliminary"][:-1]}]}, sources, path.name)
+
+    def test_holy_wednesday_seats_the_lessons_passion_and_final_prayer(self):
+        script = r"""
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const S = require('./src/web/browser/liturgy/ordinary-seating.js');
+const [ordinaryPath, massPath] = process.argv.slice(1);
+const ordinary = JSON.parse(fs.readFileSync(ordinaryPath));
+const mass = JSON.parse(fs.readFileSync(massPath)).mass;
+const context = {calendar: ordinary.calendar, mass: mass.key, formId: 'main', properRows: mass.propers};
+const facts = S.predicateFacts({date: '2027-03-24', appointments: mass.ordinary_appointments});
+facts['proper-rite-context'] = context;
+const shown = S.shownElements(ordinary, null, facts);
+const placed = S.seatPropers(mass.propers, S.seats(ordinary, shown, context));
+const events = S.massEvents(shown, placed);
+const propers = events.filter(event => event.kind === 'proper');
+assert(!mass.ordinary_frame || mass.ordinary_frame.applicability === 'full');
+assert.deepEqual(propers.map(event => event.proper.name), [
+  'Introit', 'Collect', 'First Lesson', 'Gradual', 'Oratio', 'Second Lesson', 'Tract',
+  'Passion according to Luke', 'Offertory', 'Secret', 'Communion', 'Postcommunion', 'Oratio super populum'
+]);
+assert(propers.every(event => event.placement === 'seated'));
+assert.deepEqual(propers.slice(1, 8).map(event => event.seat.key), [
+  'preliminary-lessons', 'preliminary-lessons', 'preliminary-lessons',
+  'collecta', 'epistola', 'graduale', 'evangelium'
+]);
+assert.equal(propers[1].seat.lessonPreparation.kneel.la, 'Flectamus genua.');
+assert.equal(propers[4].seat.lessonPreparation.kneel, null);
+assert.equal(propers[12].seat.key, 'oratio-super-populum');
+const order = events.map(event => event.element?.key || event.proper?.name).filter(Boolean);
+const sequence = [
+  'praeparatio/kyrie-eleison-repetitio', 'Collect', 'First Lesson', 'Gradual',
+  'praeparatio/dominus-vobiscum-post-gloriam', 'Oratio', 'Second Lesson', 'Tract',
+  'oblatio/munda-cor-meum', 'oblatio/iube-domine-benedicere', 'oblatio/dominus-sit-in-corde-meo',
+  'Passion according to Luke', 'oblatio/dominus-vobiscum-ante-offertorium',
+  'Postcommunion', 'conclusio/oratio-super-populum-cues', 'Oratio super populum'
+];
+assert.deepEqual(order.filter(label => sequence.includes(label)), sequence);
+const ordinaryKeys = shown.map(row => row.element.key);
+for (const key of ['rubrica-munda-cor-meum', 'dominus-vobiscum-ante-evangelium',
+                   'rubrica-evangelium-proprium', 'rubrica-post-evangelium', 'laus-tibi-christe',
+                   'rubrica-cum-sacerdote', 'per-evangelica-dicta']) {
+  assert(!ordinaryKeys.includes('oblatio/' + key), key);
+}
+const request = shown.find(row => row.element.key === 'oblatio/iube-domine-benedicere').element;
+assert.equal(request.speaker, 'priest');
+assert.deepEqual(Object.fromEntries(request.translations.map(row => [row.lang, row.text])),
+  {la: 'Jube Dómine benedícere.', en: 'Vouchsafe, O Lord, to bless me.'});
+assert(!S.shownElements(ordinary).some(row => row.element.key === request.key));
+"""
+        completed = subprocess.run(
+            ["node", "-e", script, str(DATA / "roman-1962.json"),
+             str(PROPERS / "mass/roman-1962/holy-wednesday.json")],
+            cwd=ROOT, capture_output=True, text=True)
+        self.assertEqual(completed.returncode, 0, completed.stdout + completed.stderr)
+
+    def test_evening_maundy_branches_preserve_the_printed_canon_and_endings(self):
+        script = r"""
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const S = require('./src/web/browser/liturgy/ordinary-seating.js');
+const [ordinaryPath, massPath] = process.argv.slice(1);
+const ordinary = JSON.parse(fs.readFileSync(ordinaryPath));
+const mass = JSON.parse(fs.readFileSync(massPath)).mass;
+const dismissal = 'main/maundy-dismissal';
+const mandatum = 'main/maundy-mandatum';
+for (const choice of [null, 'solemn', 'authorized-low-mass']) {
+  for (const washing of ['with-foot-washing', 'without-foot-washing']) {
+    const choices = {[mandatum]: washing};
+    if (choice) choices[dismissal] = choice;
+    const context = {calendar: ordinary.calendar, mass: mass.key, formId: 'main', choices};
+    const p = S.prepareProperAppointments(mass.propers, context);
+    const rite = {...context, properRows: p.rows, properSelections: p.selections};
+    const facts = S.predicateFacts({date: '2027-03-25', appointments: mass.ordinary_appointments});
+    facts['proper-rite-context'] = rite;
+    const shown = S.shownElements(ordinary, null, facts);
+    const seats = S.seats(ordinary, shown, rite);
+    const placed = S.seatPropers(p.rows, seats, null, p.selections);
+    S.assertCompleteSeating(placed);
+    const events = S.massEvents(shown, placed);
+    const simple = events.flatMap(event => event.kind === 'proper_choice'
+        ? event.options.find(option => option.id === event.selection.option).rows.map(row => row.proper.name)
+        : [event.element?.key || event.proper?.name]).filter(Boolean);
+    const low = choice === 'authorized-low-mass';
+    assert.equal(p.selections[dismissal].option, low ? choice : 'solemn');
+    assert.equal(simple.includes('conclusio/benedicat-vos-omnipotens-deus'), low);
+    assert.equal(simple.includes('conclusio/initium-sancti-evangelii'), low);
+    assert.equal(simple.includes('Hymn at the Translation of the Blessed Sacrament'), !low);
+    assert.equal(simple.includes('Without the washing of feet'), washing === 'without-foot-washing');
+    assert.equal(simple.filter(name => name.startsWith('Mandatum Antiphon')).length, washing === 'with-foot-washing' ? 8 : 0);
+    const required = ['Gospel', washing === 'with-foot-washing' ? 'Prayer of the Mandatum' : 'Without the washing of feet',
+      'oblatio/dominus-vobiscum-ante-offertorium', 'Offertory', 'Secret', 'canon/et-omnium-circumstantium',
+      'Communicantes', 'Hanc igitur', 'Quam oblationem', 'Qui pridie',
+      'communio/rubrica-agnus-dei', 'Agnus Dei', 'communio/domine-jesu-christe-fili-dei-vivi',
+      'Communion', 'Postcommunion', low ? 'Dismissal at the permitted Low Mass' : 'Dismissal at the solemn Mass',
+      'conclusio/placeat-tibi-sancta-trinitas'];
+    assert.deepEqual(simple.filter(name => required.includes(name)), required);
+    assert(!simple.some(name => ['canon/hanc-igitur','canon/forma-corporis','communio/agnus-dei',
+      'communio/domine-jesu-christe-qui-dixisti','conclusio/dominus-vobiscum-ite-missa-est'].includes(name)));
+    for (const event of events.filter(event => event.proper?.name?.startsWith('Hymn at the Translation'))) {
+      assert.equal(event.seat.region, 'after-frame');
+    }
+  }
+}
+"""
+        completed = subprocess.run(
+            ["node", "-e", script, str(DATA / "roman-1962.json"),
+             str(PROPERS / "mass/roman-1962/mass-of-the-lords-supper.json")],
+            cwd=ROOT, capture_output=True, text=True)
+        self.assertEqual(completed.returncode, 0, completed.stdout + completed.stderr)
+
+    def test_palm_and_tuesday_passion_readings_at_both_reader_entrances(self):
+        completed = subprocess.run(
+            ["node", str(ROOT / "tools/tests/roman_1962_passion_readings.cjs"),
+             str(DATA.parent), str(DATA.parent)], cwd=ROOT, capture_output=True, text=True)
+        self.assertEqual(completed.returncode, 0, completed.stdout + completed.stderr)
 
     def test_reading_note_is_literal_optional_language_local_provenance(self) -> None:
         tool = self.tool_module
