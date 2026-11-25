@@ -600,8 +600,6 @@ attested_appointments:
     preface: {option: sancta-cruce, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 297, printed p. 193; expected-target row roman-pre-1955:temporal:slot:feria-3-majoris-hebdomadae:preface-cross"}
   holy-wednesday:
     preface: {option: sancta-cruce, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 304, printed p. 200; expected-target row roman-pre-1955:temporal:slot:feria-4-majoris-hebdomadae:preface-cross"}
-  mass-of-the-lords-supper:
-    preface: {option: sancta-cruce, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 309, printed p. 205; expected-target row roman-pre-1955:temporal:slot:feria-5-in-cena-domini:preface-cross"}
   easter-sunday:
     preface: {option: paschalis, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 456, printed p. 352; expected-target row roman-pre-1955:temporal:slot:dominica-resurrectionis:preface-paschal"}
     communicantes: {option: pascha, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 456, printed p. 352; expected-target row roman-pre-1955:temporal:slot:dominica-resurrectionis:communicantes-paschal"}
@@ -1058,18 +1056,41 @@ sections:
       name: Feria V in Coena Domini
       registry: 1962-T-mass-of-the-lords-supper
       season: holy-week
-      departure: moved
+      ordinary_appointments:
+        preface: {option: sancta-cruce, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 309, printed p. 205; expected-target row roman-pre-1955:temporal:slot:feria-5-in-cena-domini:preface-cross"}
+      ordinary_frame:
+        applicability: unavailable
+        basis: >-
+          The pre-reform Mass ends with the blessing and Last Gospel. Transfer
+          of the Blessed Sacrament, stripping the altars and the Mandatum belong
+          to the subsequent ceremonies. The restored evening Mass places the
+          optional washing after the Gospel and has a different solemn ending.
+          The two orders are visible in the Mame 1922 Missal, printed pp. 201–207
+          (PDF pp. 315–321), and the 1962 Missal, printed pp. 155–160.
+      departure: replaced
       act: maxima-redemptionis-1955
       basis: >-
-        Maxima Redemptionis moved the Mass of the Lord's Supper to the evening;
-        section 7 of the decree carries the provision [aas-47-1955 51905-51908,
-        recorded at roman-holy-week-acts-v1.toml, departure
-        maxima-redemptionis-1955/moved, mass feria-v-in-coena-domini]. The hour
-        the pre-1955 books appoint is NOT ESTABLISHED: the act history's own mass
-        row records `hour = "not established"` for this liturgy, where it fixes an
-        hour for the other three. It is recorded moved because the decree says it
-        moved, and the origin is left unstated rather than inferred from the
-        general rubric on the hours of Mass.
+        The pre-reform Mass and its subsequent ceremonies form a different
+        order from the restored evening Mass. Mame 1922, printed pp. 201–205,
+        places the Offertory after the Gospel, the Last Gospel after the
+        blessing and the transfer after Mass. De Mandato follows the stripping
+        of the altars at printed p. 205. The 1962 Mass places the optional
+        Mandatum after the Gospel and its solemn dismissal before the transfer
+        (rubrics 15 and 34–36). The earlier form has its own facsimile and
+        retains its source-declared incomplete formulary.
+      also:
+      - departure: moved
+        act: maxima-redemptionis-1955
+        basis: >-
+          Maxima Redemptionis moved the Mass of the Lord's Supper to the evening;
+          section 7 of the decree carries the provision [aas-47-1955 51905-51908,
+          recorded at roman-holy-week-acts-v1.toml, departure
+          maxima-redemptionis-1955/moved, mass feria-v-in-coena-domini]. The hour
+          the pre-1955 books appoint is NOT ESTABLISHED: the act history's own mass
+          row records `hour = "not established"` for this liturgy, where it fixes an
+          hour for the other three. It is recorded moved because the decree says it
+          moved, and the origin is left unstated rather than inferred from the
+          general rubric on the hours of Mass.
       text_status:
         state: unavailable
         scope: missal-formulary

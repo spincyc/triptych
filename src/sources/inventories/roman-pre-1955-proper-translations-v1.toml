@@ -2,7 +2,7 @@
 #
 # This sidecar carries no English text and does not restate the parent ledger.
 # The effective pre-1955 calendar replaces the restored Palm Sunday, Good
-# Friday, and Easter Vigil formularies source-side, and removes the later
+# Friday, Holy Thursday and Easter Vigil formularies source-side, and removes the later
 # Chrism Mass, St Joseph the Worker, and the Queenship entirely. (The current parent
 # Queenship records are suppressed by their exact identities below.) Each row below suppresses one exact inherited
 # roman-1962 ledger record that therefore cannot answer a source slot in this
@@ -587,4 +587,144 @@ proper = "Secret"
 cycle = "all"
 occurrence = 1
 reason = "recension-absent"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "entry"
+mass = "mass-of-the-lords-supper"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "entry"
+mass = "mass-of-the-lords-supper"
+form_id = "main"
+proper = "Postcommunion"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "entry"
+mass = "mass-of-the-lords-supper"
+form_id = "main"
+proper = "Secret"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "entry"
+mass = "mass-of-the-lords-supper"
+form_id = "main"
+proper = "Mandatum Antiphon 8"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "entry"
+mass = "mass-of-the-lords-supper"
+form_id = "main"
+proper = "Prayer of the Mandatum"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "entry"
+mass = "mass-of-the-lords-supper"
+form_id = "main"
+proper = "Hymn at the Translation of the Blessed Sacrament"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "entry"
+mass = "mass-of-the-lords-supper"
+form_id = "main"
+proper = "Communicantes"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "entry"
+mass = "mass-of-the-lords-supper"
+form_id = "main"
+proper = "Hanc igitur"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "entry"
+mass = "mass-of-the-lords-supper"
+form_id = "main"
+proper = "Quam oblationem"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "entry"
+mass = "mass-of-the-lords-supper"
+form_id = "main"
+proper = "Qui pridie"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "entry"
+mass = "mass-of-the-lords-supper"
+form_id = "main"
+proper = "Agnus Dei"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "entry"
+mass = "mass-of-the-lords-supper"
+form_id = "main"
+proper = "Without the washing of feet"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "entry"
+mass = "mass-of-the-lords-supper"
+form_id = "main"
+proper = "Dismissal at the solemn Mass"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "entry"
+mass = "mass-of-the-lords-supper"
+form_id = "main"
+proper = "Dismissal at the permitted Low Mass"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
 basis = "calendar-departure"
