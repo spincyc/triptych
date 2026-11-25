@@ -37,18 +37,20 @@ PRE_1955_EXCEPTIONAL_ORDINARY_FRAMES = {
 }
 PRE_1955_GENERATED_NONFULL_ORDINARY_FRAMES = {
     "advent-ember-wednesday": "unavailable",
-    "advent-ember-saturday": "unavailable",
     "lent-1-ember-wednesday": "unavailable",
-    "lent-1-ember-saturday": "unavailable",
     "lent-4-wednesday": "unavailable",
     "holy-wednesday": "unavailable",
     "mass-of-the-lords-supper": "unavailable",
     "pentecost-ember-wednesday": "unavailable",
-    "pentecost-ember-saturday": "unavailable",
     "september-ember-wednesday": "unavailable",
-    "september-ember-saturday": "unavailable",
     **PRE_1955_EXCEPTIONAL_ORDINARY_FRAMES,
 }
+PRE_1955_EMBER_SATURDAYS = (
+    "advent-ember-saturday",
+    "lent-1-ember-saturday",
+    "pentecost-ember-saturday",
+    "september-ember-saturday",
+)
 POSTCONCILIAR_EXCEPTIONAL_ORDINARY_FRAMES = {
     "palm-sunday": "unavailable",
     "mass-of-the-lords-supper": "unavailable",
@@ -483,6 +485,26 @@ class Pre1955OrdinaryFrameIntegrityTest(unittest.TestCase):
                 }
 
                 self.assertEqual(emitted, expected)
+                source_forms = {
+                    (mass["key"], form["id"]): form["ordinary_frame"]
+                    for mass in _calendars.mass_index(source).values()
+                    for form in mass.get("forms", [])
+                    if "ordinary_frame" in form
+                }
+                emitted_forms = {
+                    (mass["key"], form["id"]): form["ordinary_frame"]
+                    for mass in generated["masses"]
+                    for form in mass.get("forms", [])
+                    if "ordinary_frame" in form
+                }
+                self.assertEqual(emitted_forms, source_forms)
+                if calendar == "roman-pre-1955":
+                    for key in PRE_1955_EMBER_SATURDAYS:
+                        self.assertNotIn(key, emitted)
+                        for form_id in ("longer", "shorter"):
+                            frame = emitted_forms[key, form_id]
+                            self.assertEqual(frame["applicability"], "unavailable")
+                            self.assertTrue(frame["basis"].strip())
                 for key, frame in emitted.items():
                     self.assertIn(frame.get("applicability"), ORDINARY_FRAME_APPLICABILITY, key)
                     self.assertTrue(str(frame.get("basis") or "").strip(), key)
