@@ -3,7 +3,7 @@ from pathlib import Path
 from importlib.machinery import SourceFileLoader
 from importlib.util import module_from_spec,spec_from_loader
 from collections import Counter
-import copy,json,sys,tomllib,unittest,yaml
+import copy,hashlib,json,sys,tomllib,unittest,yaml
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _product_data import browser_data_root
 
@@ -66,12 +66,108 @@ class SeasonalAntiphonRecoveryTests(unittest.TestCase):
     for p in self.masses[f'advent-{week}-{day}']['propers']:
      if p['name'] in ('Entrance Antiphon','Communion Antiphon'):self.assertIn('before 17 December',p['notes'])
   self.assertIn('Holy Family fallback',next(p for p in self.masses['christmas-december-30']['propers'] if p['name']=='Entrance Antiphon')['notes'])
- def test_uncited_english_exemplars_are_held_but_no_body_is_published(self):
-  facts=[f for f in self.evidence['rows'] if f['source_citation_cue']=='!uncited'];self.assertEqual(len(facts),11)
-  for f in facts:
-   key={k:f[k] for k in ('mass','form_id','proper','occurrence')};records=[r for r in self.english if all(r.get(k)==v for k,v in key.items()) and r.get('lang')=='en' and r.get('cycle')=='all' and r.get('extent')=='body'];self.assertEqual(len(records),1)
-   r=records[0];self.assertEqual(r['availability'],'unavailable');self.assertEqual(r['reason']['kind'],'rights-withheld');self.assertEqual(r['witness_artifact_id'],ART);self.assertEqual(r['verified_artifact_page'],f['artifact_page']);self.assertEqual(self.check.untranslated_witness_problems('seasonal uncited',r),[])
-   self.assertNotIn('text',r);self.assertNotIn('quarantined_text_sha256',r)
+ def test_uncited_english_exemplars_retain_their_original_restrictions_and_current_sources(self):
+  key_fields = ('mass', 'form_id', 'proper', 'cycle', 'occurrence', 'lang', 'extent')
+  def identity(row):
+   return tuple(row[field] for field in key_fields)
+
+  receipt = Path(__file__).parent / 'fixtures/postconciliar-seasonal-uncited-20261021.json'
+  raw = receipt.read_bytes()
+  self.assertEqual(hashlib.sha256(raw).hexdigest(), '9457848b559edaf973e4ac2c1ddfcfce118bc86e9ada32e041081f97885617a9')
+  historical = {identity(r): r for r in json.loads(raw)['untranslated']}
+  facts = [f for f in self.evidence['rows'] if f['source_citation_cue'] == '!uncited']
+  facts = {(f['mass'], f['form_id'], f['proper'], 'all', f['occurrence'], 'en', 'body'): f for f in facts}
+  self.assertEqual(set(historical), set(facts))
+  self.assertEqual(len(facts), 11)
+  english = tomllib.loads(ENGLISH.read_text())
+  absences = {identity(r): r for r in english['untranslated']}
+  positives = {(r['mass'], r.get('form_id', 'main'), r['proper'], r.get('cycle', 'all'),
+                r.get('occurrence', 1), t['lang'], 'body'): (r, t)
+               for r in english['entries'] for t in r.get('translations', [])}
+  sources, problems = self.owner._source_library_records(ROOT / 'src/sources/calendars')
+  self.assertEqual(problems, [])
+  self.assertEqual((sources[ART]['rights_status'], sources[ART]['sha256']),
+                   ('restricted', self.evidence['witness_sha256']))
+  advent_december_18 = (
+   'public-domain', 'antecedent-printing',
+   'passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-phase2-otherseasonal-advent-december-18-main-entrance-antiphon-all-1-publication',
+   'ec64c42d9e7813a54eab3ca00a4b3a8db47ae3ae736306ee541f237bec2d3c89',
+  )
+  advent_1_friday = (
+   'project-created', 'abridged',
+   'passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-phase2-otherseasonal-ecce-dominus-ninth-responsory-source',
+   'aa4b07dfda8976668996210cdbb6b3021d621366bf2518f0b167001d33f7572f',
+  )
+  lent_3_thursday = (
+   'public-domain', 'antecedent-printing',
+   'passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-otherseasonal-lent-3-thursday-main-entrance-antiphon-all-1-publication',
+   '5b168c961ec155c57ff09ecfacf3e9a35f19bb5d711954ae481ff9ca82102d2b',
+  )
+  easter_3_monday = (
+   'project-created', 'abridged',
+   'passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-verna-1888.gap-campaign-20261114-easter-pentecost-easter-3-monday-main-entrance-antiphon-1-study-source',
+   '42a5f631b719930a54bbd6d299879cef16cfbccced3bee2b1a2241bb3901abfb',
+  )
+  easter_3_wednesday = (
+   'project-created', 'variant',
+   'passage.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-postconciliar-phase2-late-easter-easter-5-wednesday-communion-historical-text',
+   'ea518a19a0d2575defe641dde3d2929ff5e4df02e6ce7b8dee8de82b84b3dbea',
+  )
+  easter_3_friday = (
+   'project-created', 'abridged',
+   'passage.catholic-church.english-completion-20261029-postconciliar-phase2-late-easter-commemoratio-et-suffragia-sanctorum.mexico-1815.english-completion-20261029-postconciliar-phase2-late-easter-easter-5-friday-communion-historical-text',
+   '3946e0fe404b1c217d46ce397e337ec69334c48a8aeb33a7627ea044eb81da94',
+  )
+  easter_5_monday = (
+   'project-created', 'abridged',
+   'passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-verna-1888.gap-campaign-20261114-easter-pentecost-easter-5-monday-main-entrance-antiphon-1-study-source',
+   '42a5f631b719930a54bbd6d299879cef16cfbccced3bee2b1a2241bb3901abfb',
+  )
+  expected = {
+   'advent-december-18': advent_december_18,
+   'advent-1-friday': advent_1_friday,
+   'advent-2-friday': advent_1_friday,
+   'lent-3-thursday': lent_3_thursday,
+   'easter-3-monday': easter_3_monday,
+   'easter-3-wednesday': easter_3_wednesday,
+   'easter-3-friday': easter_3_friday,
+   'easter-5-monday': easter_5_monday,
+   'easter-5-wednesday': easter_3_wednesday,
+   'easter-5-friday': easter_3_friday,
+  }
+  self.assertEqual(set(expected), {k[0] for k in facts} - {'easter-monday'})
+  for key, old in historical.items():
+   with self.subTest(target=key):
+    fact = facts[key]
+    self.assertEqual((old['availability'], old['witness_artifact_id'], old['verified_artifact_page'],
+                      old['verified_printed_page']), ('unavailable', ART, fact['artifact_page'], fact['printed_page']))
+    self.assertEqual(old['reason'], {'kind': 'rights-withheld', 'source_id': ART,
+                                     'surfaces': ['site-display', 'corpus-data', 'public-git', 'command-line', 'download']})
+    self.assertEqual(self.check.untranslated_witness_problems('original uncited appointment', old), [])
+    self.assertNotIn('text', old)
+    self.assertNotIn('quarantined_text_sha256', old)
+    if key[0] == 'easter-monday':
+     self.assertEqual(key[2:5], ('Entrance Antiphon', 'all', 2))
+     self.assertEqual(absences[key], old)
+     self.assertNotIn(key, positives)
+     continue
+    self.assertNotIn(key, absences)
+    record, translation = positives[key]
+    rights, relation, passage, digest = expected[key[0]]
+    self.assertEqual((translation['rights'], record['relation']), (rights, relation))
+    self.assertEqual(hashlib.sha256(translation['text'].encode()).hexdigest(), digest)
+    if rights == 'public-domain':
+     self.assertEqual(record['publication_passage_id'], passage)
+     artifact = record['publication_artifact_id']
+     self.assertEqual(sources[passage]['edition_id'], translation['source_id'])
+     self.assertEqual(sources[artifact]['sha256'], record['publication_artifact_sha256'])
+    else:
+     self.assertEqual(record['ancient_passage_id'], passage)
+     self.assertNotIn('source_id', translation)
+     artifact = record['witness_artifact_id']
+     self.assertEqual(sources[passage]['edition_id'], record['witness_edition_id'])
+    self.assertEqual(sources[passage]['artifact_id'], artifact)
+    self.assertNotEqual(artifact, ART)
  def test_recovery_does_not_select_unproved_formularies_or_erase_existing_repairs(self):
   selected={r['mass'] for r in self.evidence['rows']}
   self.assertFalse(any(k.startswith('christmas-january-') for k in selected));self.assertTrue(selected.isdisjoint({'blessed-virgin-mary-mother-church','good-friday','lent-5','easter-6-wednesday','easter-6-thursday','easter-7-saturday'}))

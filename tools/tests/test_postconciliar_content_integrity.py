@@ -944,6 +944,14 @@ process.stdout.write(JSON.stringify(results));
     def test_mass_today_preserves_rights_copy_when_latin_is_unavailable(self):
         """Human output distinguishes restricted English from absent Latin."""
 
+        target, = [record for record in self.translations["untranslated"]
+                   if (record["mass"], record["form_id"], record["proper"], record["occurrence"])
+                   == ("nativity", "dawn", "Prayer after Communion", 1)]
+        self.assertEqual(target["reason"]["kind"], "rights-withheld")
+        self.assertEqual(target["reason"]["source_id"],
+                         "artifact.catholic-church.missale-romanum.australian-liturgy-us-emissal-2021.publisher-html-4ea52314")
+        self.assertIn("https://rmhealey.com/docs/RMU/#Dec25A", target["note"])
+
         def show(language: str) -> str:
             return subprocess.run(
                 [
@@ -955,7 +963,7 @@ process.stdout.write(JSON.stringify(results));
                     "--calendar",
                     "postconciliar",
                     "--form",
-                    "day",
+                    "dawn",
                     "--lang",
                     language,
                     "--format",
@@ -974,11 +982,15 @@ process.stdout.write(JSON.stringify(results));
             "Latin text unavailable"
         )
         self.assertIn("The Nativity of the Lord", english)
-        self.assertEqual(english.count(restriction), 2)
+        self.assertEqual(english.count(restriction), 1)
+        self.assertEqual(english.rsplit("    Prayer after Communion\n", 1)[1].strip(), restriction)
 
         latin = show("la")
         self.assertIn("The Nativity of the Lord", latin)
-        self.assertRegex(latin, r"(?s)Entrance Antiphon.*?Latin text unavailable")
+        self.assertEqual(latin.rsplit("    Prayer after Communion\n", 1)[1].strip(), "Latin text unavailable")
+        for output in (latin, english):
+            self.assertNotIn(target["reason"]["source_id"], output)
+            self.assertNotIn(target["note"], output)
         self.assertNotIn("rights restricted", latin)
 
     def test_unavailable_translation_identity_is_explicit_and_unique(self):
