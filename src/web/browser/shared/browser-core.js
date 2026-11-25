@@ -1173,7 +1173,7 @@ window.Triptych = (function () {
     document.addEventListener('keydown', (event) => {
       if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
       const target = event.target;
-      if (target && target.closest && target.closest('select, input, textarea, button')) {
+      if (target && target.closest && target.closest('select, input, textarea, button, summary, a, [contenteditable]')) {
         return;
       }
       if (event.key === 'ArrowLeft') step(-1);

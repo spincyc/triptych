@@ -1840,6 +1840,7 @@
   const snippetSets = new WeakMap();
   const snippetProblems = new WeakMap();
   const sourceRecords = new WeakMap();
+  const textStructures = new WeakMap();
 
   function sealText(fields) {
     const made = Object.create(null);
@@ -1953,7 +1954,248 @@
     if (snippets === null) snippetProblems.set(made,
       'The recorded commentary snippets do not identify valid exact passages in this text. The fragment cannot be shown.');
     sourceRecords.set(made, readSourceRecord(ownData(record, 'source_record')));
+    textStructures.set(made, !made.unreadable ? readTextStructure(record, text) : null);
     return made;
+  }
+
+  const PARAGRAPH_KINDS = Object.freeze(['lemma', 'commentary', 'plain']);
+
+  function isSurrogateSafe(text, at) {
+    return !(at > 0 && at < text.length &&
+      /[\uD800-\uDBFF]/.test(text[at - 1]) && /[\uDC00-\uDFFF]/.test(text[at]));
+  }
+
+  function validSpan(pair, min, max, text) {
+    if (!Array.isArray(pair) || pair.length !== 2) return null;
+    const s = ownData(pair, '0'), e = ownData(pair, '1');
+    if (!Number.isSafeInteger(s) || !Number.isSafeInteger(e) ||
+        s < min || e <= s || e > max ||
+        !isSurrogateSafe(text, s) || !isSurrogateSafe(text, e)) return null;
+    return Object.freeze([s, e]);
+  }
+
+  /** Optional additive text_structure sidecar (UTF-16 offsets into verbatim
+   *  `text`). Applied whole or declined whole (guidance/web-data.md): an
+   *  invalid structure never corrupts or blocks plain `text`. */
+  function readTextStructure(record, text) {
+    if (!Object.hasOwn(record, 'text_structure')) return null;
+    const raw = ownData(record, 'text_structure');
+    const obj = bag(raw);
+    if (obj !== raw || ownData(obj, 'version') !== 1) return null;
+    const paras = ownData(obj, 'paragraphs');
+    if (!Array.isArray(paras) || !paras.length) return null;
+    const out = [];
+    for (let i = 0; i < paras.length; i++) {
+      const p = ownData(paras, String(i));
+      const row = bag(p);
+      if (row !== p) return null;
+      const start = ownData(row, 'start'), end = ownData(row, 'end');
+      const kind = ownData(row, 'kind');
+      if (!Number.isSafeInteger(start) || !Number.isSafeInteger(end) ||
+          start < 0 || end <= start || end > text.length ||
+          (out.length && start < out[out.length - 1].end) ||
+          !isSurrogateSafe(text, start) || !isSurrogateSafe(text, end) ||
+          !PARAGRAPH_KINDS.includes(kind)) return null;
+      let speaker = null;
+      if (Object.hasOwn(row, 'speaker')) {
+        speaker = validSpan(ownData(row, 'speaker'), start, end, text);
+        if (!speaker) return null;
+      }
+      let transition = null;
+      if (Object.hasOwn(row, 'transition')) {
+        transition = validSpan(ownData(row, 'transition'), start, end, text);
+        if (!transition) return null;
+      }
+      const notes = [];
+      if (Object.hasOwn(row, 'notes')) {
+        const rawNotes = ownData(row, 'notes');
+        if (!Array.isArray(rawNotes)) return null;
+        for (let j = 0; j < rawNotes.length; j++) {
+          const span = validSpan(ownData(rawNotes, String(j)), start, end, text);
+          if (!span || (notes.length && span[0] < notes[notes.length - 1][1])) return null;
+          notes.push(span);
+        }
+      }
+      out.push(Object.freeze({
+        start, end, kind, speaker, transition, notes: Object.freeze(notes)
+      }));
+    }
+    return Object.freeze({ version: 1, paragraphs: Object.freeze(out) });
+  }
+
+  /** Split plain text on blank lines into non-empty paragraph blocks, preserving
+   *  inline `[ed. note: ...]` spans when present. */
+  function plainBlocks(raw) {
+    if (typeof raw !== 'string' || !raw.trim()) return Object.freeze([]);
+    const parts = raw.split(/\n\s*\n+/).map((p) => p.trim()).filter(Boolean);
+    const out = parts.map((part) => {
+      const notes = [];
+      const re = /\[ed\.\s*note:[^\]]+\]/gi;
+      let match;
+      while ((match = re.exec(part)) !== null) {
+        notes.push(Object.freeze([match.index, match.index + match[0].length]));
+      }
+      return Object.freeze({
+        kind: 'plain', text: part, speaker: null, transition: null,
+        notes: Object.freeze(notes)
+      });
+    });
+    return Object.freeze(out);
+  }
+
+  /** Structured paragraph/lemma/speaker/note blocks for a finalized text body
+   *  (or a UTF-16 `[start, end)` snippet slice inside it). Shared identically
+   *  by the Web UI and Lectern TUI. */
+  function textBlocks(content, range) {
+    if (!contents.has(content) || content.unreadable) return Object.freeze([]);
+    const full = content.text;
+    const lo = range && Number.isSafeInteger(range.start) ? Math.max(0, range.start) : 0;
+    const hi = range && Number.isSafeInteger(range.end) ? Math.min(full.length, range.end) : full.length;
+    if (hi <= lo) return Object.freeze([]);
+    const struct = textStructures.get(content);
+    if (!struct || !struct.paragraphs.length) return plainBlocks(full.slice(lo, hi));
+    const blocks = [];
+    for (const p of struct.paragraphs) {
+      if (p.end <= lo || p.start >= hi) continue;
+      const s = Math.max(p.start, lo), e = Math.min(p.end, hi);
+      if (e <= s) continue;
+      const slice = full.slice(s, e);
+      const lead = slice.length - slice.trimStart().length;
+      const trimmed = slice.trim();
+      if (!trimmed) continue;
+      const base = s + lead;
+      const limit = base + trimmed.length;
+      const rel = (span) => {
+        if (!span) return null;
+        const a = Math.max(span[0], base), b = Math.min(span[1], limit);
+        return b > a ? Object.freeze([a - base, b - base]) : null;
+      };
+      const notes = p.notes.map(rel).filter(Boolean);
+      blocks.push(Object.freeze({
+        kind: p.kind,
+        text: trimmed,
+        speaker: rel(p.speaker),
+        transition: rel(p.transition),
+        notes: Object.freeze(notes)
+      }));
+    }
+    return blocks.length ? Object.freeze(blocks) : plainBlocks(full.slice(lo, hi));
+  }
+
+  function fragmentChapterSpan(fragment, chapter) {
+    const row = bag(fragment);
+    const ch = whole(chapter);
+    if (ch === null) return null;
+    const ext = bag(ownData(row, 'extent'));
+    const fc = whole(ownData(ext, 'first_chapter')), lc = whole(ownData(ext, 'last_chapter'));
+    const fv = whole(ownData(ext, 'first_verse')), lv = whole(ownData(ext, 'last_verse'));
+    if (fc === null || lc === null || ch < fc || ch > lc) return null;
+    const crossesBefore = fc < ch;
+    const crossesAfter = lc > ch;
+    const start = crossesBefore ? 1 : (fv === null ? 1 : fv);
+    const end = crossesAfter ? null : (lv === null ? start : lv);
+    if (end !== null && end < start) return null;
+    return Object.freeze({ start, end, crossesBefore, crossesAfter });
+  }
+
+  /** Map canonical verse numbers in `chapter` to covering fragments from the
+   *  given filtered fragment list. Strictly read-only over validated extents. */
+  function verseCommentaryMap(fragments, chapter, chapterLastVerse) {
+    const ch = whole(chapter);
+    const maxV = whole(chapterLastVerse);
+    const byVerse = Object.create(null);
+    if (ch === null) return Object.freeze({ byVerse: Object.freeze(byVerse), count: 0, verses: Object.freeze([]) });
+    const rows = records(fragments);
+    const acc = new Map();
+    for (const row of rows) {
+      const span = fragmentChapterSpan(row, ch);
+      if (!span) continue;
+      const lo = Math.max(1, span.start);
+      const hi = span.end !== null ? (maxV !== null ? Math.min(span.end, maxV) : span.end)
+        : (maxV !== null ? maxV : lo);
+      if (hi < lo) continue;
+      const id = ident(ownData(row, 'id'));
+      const author = sound(ownData(row, 'author'));
+      for (let v = lo; v <= hi; v += 1) {
+        let entry = acc.get(v);
+        if (!entry) {
+          entry = { ids: [], authors: [] };
+          acc.set(v, entry);
+        }
+        if (id) entry.ids.push(id);
+        if (author && !entry.authors.includes(author)) entry.authors.push(author);
+      }
+    }
+    const verses = Array.from(acc.keys()).sort((a, b) => a - b);
+    for (const v of verses) {
+      const entry = acc.get(v);
+      byVerse[String(v)] = Object.freeze({
+        count: entry.ids.length,
+        fragmentIds: Object.freeze(entry.ids),
+        authors: Object.freeze(entry.authors)
+      });
+    }
+    return Object.freeze({
+      byVerse: Object.freeze(byVerse),
+      count: verses.length,
+      verses: Object.freeze(verses)
+    });
+  }
+
+  /** Order fragments by their opening verse in `chapter`, breaking ties by
+   *  closing verse and preserving prior chronological/spine order. Never
+   *  invents composition dates. */
+  function commentaryByVerse(fragments, chapter) {
+    const ch = whole(chapter);
+    const rows = records(fragments);
+    if (ch === null) return Object.freeze(rows.slice());
+    return Object.freeze(rows.map((row, index) => ({
+      row, index, span: fragmentChapterSpan(row, ch)
+    })).sort((a, b) => {
+      const as = a.span ? a.span.start : Infinity;
+      const bs = b.span ? b.span.start : Infinity;
+      if (as !== bs) return as - bs;
+      const ae = a.span ? (a.span.end === null ? Infinity : a.span.end) : Infinity;
+      const be = b.span ? (b.span.end === null ? Infinity : b.span.end) : Infinity;
+      if (ae !== be) return ae - be;
+      return a.index - b.index;
+    }).map((item) => item.row));
+  }
+
+  function dedupeNotes(notes) {
+    const seen = new Set();
+    const out = [];
+    for (const item of list(notes)) {
+      const text = sound(item);
+      if (text && !seen.has(text)) {
+        seen.add(text);
+        out.push(text);
+      }
+    }
+    return Object.freeze(out);
+  }
+
+  function humanRefusal(problem, bibleLabel) {
+    const text = sound(problem);
+    if (!text) return '';
+    const m = /^([a-z0-9-]+):\s*canonical\s+(\S+)\s+(\d+)\s+spans\s+(\d+-\d+),\s*but this edition prints\s+(\d+-\d+);\s*no chapter correspondence is recorded in its verse aliases\.?$/i.exec(text);
+    if (m) {
+      const name = sound(bibleLabel) || m[1];
+      return name + ' prints ' + m[2] + ' ' + m[3] + ':' + m[5] +
+        ' where the Vulgate prints ' + m[4] +
+        '. Because no verse-by-verse correspondence is recorded for this chapter yet, this edition is not substituted here.';
+    }
+    return text;
+  }
+
+  function humanRecast(note) {
+    const text = sound(note);
+    if (!text) return '';
+    return text
+      .replace(/\bPs\s+(\d+)/g, 'Psalm $1')
+      .replace(/\bPsalms\s+(\d+)/g, 'Psalm $1')
+      .replace(/\bhebrew numbering\b/g, 'Hebrew numbering')
+      .replace(/\bvulgate numbering\b/g, 'Vulgate numbering');
   }
 
   // Optional reviewed offsets are UTF-16, as String.slice uses them. Never
@@ -2232,7 +2474,7 @@
    * unguarded, a fault there took down the whole bootstrap and blamed the
    * catena index.
    */
-  function paragraphPath(layer, edition, bookPath, chapter) {
+  function paragraphPath(layer, edition, bookPath, chapter, token) {
     // A layer that answered 404 is no layer, and that is the absence the page
     // may speak from. The route marks it, because `null` cannot: JSON `null`
     // is a valid document and a 200 carrying it is a file nobody can read,
@@ -2276,6 +2518,23 @@
     // an edition that opens no paragraph here.
     const stated = index.chapter_digits;
     if (stated !== undefined && whole(stated) === null) return null;
+    // When the index lists which chapters carry paragraph breaks, skip chapters
+    // absent from the manifest so unparagraphed chapters incur zero 404 fetches.
+    const bookKey = bookToken(token);
+    if (bookKey && Object.hasOwn(record, 'chapters')) {
+      const chapters = ownData(record, 'chapters');
+      if (bag(chapters) !== chapters) return null;
+      if (!Object.hasOwn(chapters, bookKey)) return '';
+      const present = ownData(chapters, bookKey);
+      if (!Array.isArray(present)) return null;
+      let matched = false;
+      for (let i = 0; i < present.length; i++) {
+        const entry = whole(ownData(present, String(i)));
+        if (entry === null) return null;
+        if (entry === number) matched = true;
+      }
+      if (!matched) return '';
+    }
     return prefix + book + '/' +
       String(number).padStart(whole(stated) || 1, '0') + '.json';
   }
@@ -3344,6 +3603,13 @@
     textAsked: textAsked,
     fragmentRow: fragmentRow,
     textPayload: textPayload,
+    textBlocks: textBlocks,
+    fragmentChapterSpan: fragmentChapterSpan,
+    verseCommentaryMap: verseCommentaryMap,
+    commentaryByVerse: commentaryByVerse,
+    dedupeNotes: dedupeNotes,
+    humanRefusal: humanRefusal,
+    humanRecast: humanRecast,
     matchingSnippets: matchingSnippets,
     sourceRecord: sourceRecord,
     NO_TEXT: NO_TEXT,
