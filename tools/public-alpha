@@ -2155,10 +2155,156 @@ def _address(trail: tuple) -> str:
     )
 
 
+class _MissalBibliography:
+    """Consultation records are checked against their source owners, never as body licenses."""
+
+    LINK_FIELDS = {"source_id", "url", "locus", "edition_label", "scope", "language", "rights_status",
+                   "prayer_roles", "proper_targets", "rite_opening"}
+    CITATION_FIELDS = {"source_id", "rights_status", "edition_label", "locus"}
+
+    def __init__(self):
+        self.tables = {}
+
+    def sources(self, kind, calendar):
+        key = kind, calendar
+        if key in self.tables:
+            return self.tables[key]
+        from importlib.machinery import SourceFileLoader
+        from importlib.util import module_from_spec, spec_from_loader
+        from _proper_latin import _source_library_records
+        tool = "mass-ordinary" if kind == "ordinary" else "mass-propers"
+        loader = SourceFileLoader("_public_alpha_bibliography_" + kind, str(Path(__file__).with_name(tool)))
+        module = module_from_spec(spec_from_loader(loader.name, loader))
+        sys.modules[loader.name] = module
+        loader.exec_module(module)
+        root = ROOT / "src/sources/calendars"
+        if kind == "ordinary":
+            registry = root.parent / "inventories" / (calendar + "-ordo-missae-v1.toml")
+            source = tomllib.loads(registry.read_text(encoding="utf-8"))
+            keys = {key for entry in source.get("ordinary_witness_links", []) for key in entry["elements"]}
+            elements = [{"key": key} for key in keys]
+            records, errors = _source_library_records(root)
+            if errors:
+                raise ValueError("; ".join(errors))
+            module.attach_ordinary_witness_links(source, [{"elements": elements}], records, registry.name)
+            tables = {element["key"]: element["missal_witness_links"] for element in elements}
+        else:
+            document = module.load_calendar(root, calendar)
+            links = module.missal_witness_links(root, calendar, document)
+            tables = (links, module.memorial_prayer_sources(root, calendar, document),
+                      module.january_prayer_sources(root, calendar, document),
+                      module.votive_chant_sources(root, calendar, document, links),
+                      module._calendars.mass_index(document), module.form_id_for_label)
+        self.tables[key] = tables
+        return tables
+
+    def metadata(self, parts, payload):
+        """Return the only bibliographic fields exempt from the body-source identity check."""
+        public = {}
+        if not isinstance(payload, dict) or not isinstance(payload.get("calendar"), str):
+            return public
+        calendar = payload["calendar"]
+        ordinary = parts == ("structure", "ordinary", calendar + ".json")
+        monolith = parts == ("structure", "propers", calendar + ".json")
+        reader = parts == ("structure", "propers", "reader", calendar + ".json")
+        envelope = (len(parts) == 5 and parts[:4] == ("structure", "propers", "mass", calendar))
+        if not (ordinary or monolith or reader or envelope) or not SAFE_TYPED_KEY_RE.fullmatch(calendar):
+            return public
+
+        def check(row, candidates, fields, *, extra=(), language=None):
+            if (not isinstance(row, dict) or not set(row) <= fields | set(extra)
+                    or language and row.get("language") != language
+                    or {k: v for k, v in row.items() if k not in extra} not in candidates):
+                raise ValueError("unregistered or malformed consultation record")
+            public[id(row)] = self.CITATION_FIELDS
+
+        def link_rows(owner, key):
+            if key not in owner:
+                return []
+            if not isinstance(owner[key], list) or not owner[key]:
+                raise ValueError(f"{key} must contain registered source links")
+            return owner[key]
+
+        if ordinary:
+            if payload.get("schema") == "triptych-ordinary-structure/v1":
+                for section in payload.get("sections", []):
+                    for element in section.get("elements", []):
+                        for link in link_rows(element, "missal_witness_links"):
+                            approved = self.sources("ordinary", calendar).get(element.get("key"), [])
+                            check(link, approved, self.LINK_FIELDS | {"languages"})
+            return public
+        schema = "triptych-propers-read-mass/v1" if envelope else "triptych-propers-structure/v1"
+        if payload.get("schema") != schema:
+            return public
+        for mass in ([payload.get("mass")] if envelope else payload.get("masses", [])):
+            if not isinstance(mass, dict):
+                continue
+            owners = [mass, *(mass.get("forms") or [])]
+            if not (any("missal_witness_links" in owner or any(
+                    {"source_consultation", "published_english_source", "published_latin_source"} & proper.keys()
+                    for proper in owner.get("propers", [])) for owner in owners)
+                    or {"off_date_chants", "january_prayer_sources", "memorial_prayer_sources"} & mass.keys()):
+                continue
+            links, memorials, january, votives, source_masses, form_id = self.sources("propers", calendar)
+            key = mass.get("key")
+            for owner in owners:
+                for link in link_rows(owner, "missal_witness_links"):
+                    check(link, links.get((key, owner.get("id", "main")), []), self.LINK_FIELDS)
+                occurrences = defaultdict(int)
+                for proper in owner.get("propers", []):
+                    place = proper.get("form_id") or owner.get("id", "main"), proper.get("name")
+                    occurrences[place] += 1
+                    options = links.get((key, proper.get("form_id") or owner.get("id", "main")), [])
+                    donor = proper.get("taken_from")
+                    if donor and donor.get("mass") in source_masses:
+                        donor_id = form_id(source_masses[donor["mass"]], donor.get("form"))
+                        options = options + links.get((donor["mass"], donor_id), [])
+                    roles = {proper.get("name"), donor.get("proper") if donor else None}
+                    for field, language in (("published_english_source", "en"), ("published_latin_source", "la"),
+                                            ("source_consultation", "la")):
+                        if field in proper:
+                            candidates = [link for link in options if not link.get("proper_targets") or
+                                          any(target["role"] in roles and target["occurrence"] == occurrences[place]
+                                              for target in link["proper_targets"])]
+                            if field == "source_consultation":
+                                appointments = [(p["notes"], f"#page={p['consultation_page']}")
+                                                for p in source_masses[key].get("propers", [])
+                                                if p.get("name") == proper.get("name") and "consultation_page" in p]
+                                if not any(proper[field].get("note") == note and proper[field]["url"].endswith(page)
+                                           for note, page in appointments):
+                                    raise ValueError("unregistered Proper consultation note")
+                            check(proper[field], candidates, self.LINK_FIELDS, language=language,
+                                  extra=("note",) if field == "source_consultation" else ())
+            for chant in link_rows(mass, "off_date_chants"):
+                if chant not in votives.get(key, []):
+                    raise ValueError("unregistered off-date chant appointment")
+                check(chant["source"], [chant["source"]], self.LINK_FIELDS)
+            if "memorial_prayer_sources" in mass:
+                row = mass["memorial_prayer_sources"]
+                check(row, [memorials.get(key)], {"source_id", "url", "locus", "roles", "current_feria",
+                                                   "groups", "rule_source_id"})
+            if "january_prayer_sources" in mass:
+                reference = {d["weekday"]: d for d in january.get(key, {}).get("weekdays", [])}
+                for day in mass["january_prayer_sources"]["weekdays"]:
+                    original = reference.get(day.get("weekday"), {})
+                    citation = {"latin_source_id", "latin_url", "english_source_id", "english_url", "english_locus"}
+                    if (set(day) != set(original) or not citation <= original.keys()
+                            or any(day.get(k) != original[k] for k in citation)):
+                        raise ValueError("unregistered January weekday consultation")
+                    public[id(day)] = {"latin_source_id", "english_source_id", "english_locus"}
+                    if set(day.get("english_prayer_sources", {})) != set(original.get("english_prayer_sources", {})):
+                        raise ValueError("unregistered January prayer phases")
+                    for phase, row in day.get("english_prayer_sources", {}).items():
+                        check(row, [original.get("english_prayer_sources", {}).get(phase)],
+                              {"source_id", "url", "locus", "prayer_roles", "rights_status"})
+        return public
+
+
 class _ConclusionSources:
     """The independently validated authorities used by one public data scan."""
 
     def __init__(self):
+        self.bibliography = _MissalBibliography()
         self.rows = None
         self.owner_model = None
         self.calendars = {}
@@ -2505,6 +2651,10 @@ def _validate_liturgical_public_data(
         or parts[1] not in LITURGICAL_RIGHTS_STRUCTURE_KINDS
     ):
         return hashlib.sha256(raw).hexdigest()
+    try:
+        bibliography = conclusions.bibliography.metadata(parts, payload)
+    except (OSError, ValueError, TypeError, KeyError, AttributeError) as exc:
+        raise ReleaseError(f"{label}: invalid Missal consultation metadata: {exc}") from exc
     protected_identity = protected_source_identity_pattern()
     protected_minimum, protected_markers, protected_ids = (
         protected_source_identity_markers()
@@ -2548,6 +2698,12 @@ def _validate_liturgical_public_data(
             return
         if not isinstance(value, dict):
             return
+        # The complete document already passed the quarantine fingerprint scan.
+        # Only a positively registered link's bibliographic scalars may name
+        # the consulted restricted edition. Its siblings and all bodies still
+        # pass the general rights and protected-identity checks below.
+        if id(value) in bibliography:
+            value = {key: item for key, item in value.items() if key not in bibliography[id(value)]}
         ordinary_absence = (
             parts[1] == "ordinary"
             and ORDINARY_ABSENCE_LOCATION_RE.fullmatch(location)
@@ -2997,7 +3153,9 @@ def _validate_proper_read_calendar(data_root: Path, row: dict, read, fail) -> tu
         for mass in monolith["masses"]:
             if not isinstance(mass, dict) or not isinstance(mass.get("key"), str):
                 fail("reader source has an invalid Mass")
-            descriptor = {key: value for key, value in mass.items() if key not in {"propers", "forms"}}
+            # January prayer bodies and optional off-date chants belong in their Mass envelope.
+            descriptor = {key: value for key, value in mass.items()
+                          if key not in {"propers", "forms", "january_prayer_sources", "off_date_chants"}}
             if "forms" in mass:
                 if not isinstance(mass["forms"], list) or any(not isinstance(form, dict) for form in mass["forms"]):
                     fail("reader source has invalid forms")
@@ -3080,7 +3238,11 @@ def _validate_proper_read_calendar(data_root: Path, row: dict, read, fail) -> tu
         optional_mass_fields = {"forms", "ordinary_appointments", "ordinary_frame", "oration_relation",
                                 "listing"}
         if calendar == "postconciliar":
-            optional_mass_fields.add("proper_source_paths")
+            optional_mass_fields.update({"proper_source_paths", "memorial_prayer_sources", "january_prayer_sources"})
+        if calendar in {"postconciliar", "roman-1962", "roman-pre-1955"}:
+            optional_mass_fields.add("missal_witness_links")
+        if calendar == "roman-1962":
+            optional_mass_fields.add("off_date_chants")
         if calendar == "roman-pre-1955":
             optional_mass_fields.add("recension")
         if (not isinstance(mass, dict)

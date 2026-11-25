@@ -2682,6 +2682,103 @@ class PublicAlphaTest(unittest.TestCase):
                     str(failure.exception),
                 )
 
+    def test_missal_consultation_matches_ordinary_owner_and_preserves_quarantine(self):
+        relative = "src/web/data/structure/ordinary/postconciliar.json"
+        link = {"source_id": "artifact.fixture.icel", "edition_label": "ICEL fixture edition",
+                "locus": "The introductory rites, p. 2", "url": "https://example.org/book.pdf#page=2",
+                "language": "en", "languages": ["en"], "scope": "ordinary", "rights_status": "restricted"}
+        def verify(candidate, owner="introitus/signum"):
+            doc = {"schema": "triptych-ordinary-structure/v1", "calendar": "postconciliar",
+                   "sections": [{"elements": [{"key": owner, "missal_witness_links": [candidate]}]}]}
+            self.write_json(relative, doc)
+            self.tool.validate_liturgical_public_data(self.root / relative)
+
+        table = {"introitus/signum": [link]}
+        with mock.patch.object(self.tool._MissalBibliography, "sources", return_value=table):
+            verify(link)
+            for change in ({"text": "undeclared words"}, {"rights": "public-domain"},
+                           {"edition_label": "unregistered wording"}, {"url": "https://example.org/other"},
+                           {"source_id": "artifact.fixture.unregistered"}, {"rights_status": "public-domain"}):
+                with self.subTest(change=change), self.assertRaisesRegex(self.tool.ReleaseError, "consultation"):
+                    verify(link | change)
+            with self.assertRaisesRegex(self.tool.ReleaseError, "consultation"):
+                verify(link, owner="another/element")
+            quarantined = link | {"locus": self.quarantine_marker}
+            table["introitus/signum"] = [quarantined]
+            with self.assertRaisesRegex(self.tool.ReleaseError, "quarantined English body"):
+                verify(quarantined)
+
+    def test_proper_link_does_not_authorize_a_body_or_another_place(self):
+        relative = "src/web/data/structure/propers/roman-1962.json"
+        artifact = "artifact.example.licensed.fixture.text"
+        self.write("src/sources/works/test/id/editions/test/artifacts/data/artifact.toml",
+                   f'id = "{artifact}"\nedition_id = "edition.id"\nrights_status = "restricted"\n'.encode())
+        link = {"source_id": artifact, "url": "https://example.org/missal#abc", "locus": "Collect",
+                "edition_label": "English Missal", "scope": "form", "language": "en", "rights_status": "restricted"}
+        source = {("test-mass", "main"): [link]}
+        def verify(proper):
+            mass = {"key": "test-mass", "propers": [proper], "missal_witness_links": [link]}
+            self.write_json(relative, {"schema": "triptych-propers-structure/v1", "calendar": "roman-1962",
+                                       "masses": [mass]})
+            self.tool.validate_liturgical_public_data(self.root / relative)
+        proper = {"name": "Collect", "published_english_source": link}
+        with mock.patch.object(self.tool._MissalBibliography, "sources",
+                               return_value=(source, {}, {}, {}, {}, None)):
+            verify(proper)
+            for changed in (proper | {"latin": {"publication": {"source_ids": [artifact]}}},
+                            proper | {"translations": [{"text": "body", "rights_status": "restricted"}]},
+                            {"name": "Collect", "irrelevant_field": link},
+                            {"name": "Collect", "published_latin_source": link},
+                            {"name": "Collect", "published_english_source": link | {"text": "body"}}):
+                with self.subTest(changed=changed), self.assertRaises(self.tool.ReleaseError):
+                    verify(changed)
+
+    def test_auxiliary_missal_links_are_bound_to_the_source_appointment(self):
+        import copy
+        link = {"source_id": "artifact.example.missal", "url": "https://example.org/missal#p1",
+                "locus": "p. 1", "rights_status": "restricted"}
+        full = link | {"scope": "form", "edition_label": "Missal", "language": "la",
+                       "url": "https://example.org/missal#page=1"}
+        phase = link | {"prayer_roles": ["Collect"]}
+        weekday = {"weekday": 1, "latin_source_id": link["source_id"], "latin_url": link["url"],
+                   "english_source_id": link["source_id"], "english_url": link["url"], "english_locus": "p. 1",
+                   "prayers": [{"body": "A separately validated body"}], "english_prayer_sources": {"after-epiphany": phase}}
+        january = {"weekdays": [weekday]}
+        memorial = {key: link[key] for key in ("url", "source_id", "locus")}
+        memorial.update(roles=["Prayer over the Offerings"], groups=[], current_feria=True, rule_source_id="passage.rule")
+        chant = {"id": "votive-chant", "source": full}
+        role = "Preface"
+        targeted = full | {"proper_targets": [{"role": role, "occurrence": 1}]}
+        second = full | {"proper_targets": [{"role": role, "occurrence": 2}]}
+        source = {"propers": [{"name": role, "consultation_page": 1, "notes": "Consult the source."}]}
+        tables = ({("example", "main"): [full, targeted, second]}, {"example": memorial}, {"example": january},
+                  {"example": [chant]}, {"example": source}, None)
+        bibliography = self.tool._MissalBibliography()
+
+        def check(mass):
+            payload = {"schema": "triptych-propers-structure/v1", "calendar": "roman-1962",
+                       "masses": [mass | {"key": "example"}]}
+            return bibliography.metadata(("structure", "propers", "roman-1962.json"), payload)
+
+        with mock.patch.object(bibliography, "sources", return_value=tables):
+            for mass in ({"memorial_prayer_sources": memorial}, {"january_prayer_sources": january},
+                         {"off_date_chants": [chant]},
+                         {"propers": [{"name": role, "source_consultation": full | {"note": "Consult the source."}}]}):
+                self.assertTrue(check(mass))
+            fields = check({"january_prayer_sources": january})
+            self.assertNotIn(id(weekday["prayers"][0]), fields)
+            bad_day = copy.deepcopy(weekday)
+            bad_day["english_prayer_sources"]["after-epiphany"]["url"] = "https://example.org/other"
+            for mass in ({"memorial_prayer_sources": memorial | {"source_id": "artifact.another"}},
+                         {"january_prayer_sources": {"weekdays": [weekday | {"weekday": 2}]}},
+                         {"january_prayer_sources": {"weekdays": [bad_day]}},
+                         {"off_date_chants": [chant | {"id": "different-chant"}]},
+                         {"propers": [{"name": role, "source_consultation": full | {"note": "Injected body"}}]},
+                         {"propers": [{"name": role, "published_latin_source": second}]},
+                         {"propers": [{"name": "Introit", "published_latin_source": targeted}]}):
+                with self.subTest(mass=mass), self.assertRaisesRegex(ValueError, "unregistered"):
+                    check(mass)
+
     def test_protected_ids_match_the_decoded_value_and_exact_token_boundaries(self):
         relative = "src/web/data/structure/propers/identities.json"
         manifest = "src/sources/works/test/id/editions/test/artifacts/data/artifact.toml"
