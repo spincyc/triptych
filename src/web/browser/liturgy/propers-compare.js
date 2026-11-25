@@ -221,9 +221,17 @@
       return unit.sides.some(function (cell) { return cell.status !== 'text-held' ||
         (cell.bibleCitations || []).some(function (citation) { return citation.state === 'refused'; }); });
     });
-    input.coverageNotice.textContent = incomplete
-      ? 'Some compared slots have unavailable text or are absent; each side is identified below.' : '';
-    input.coverageNotice.hidden = !incomplete;
+    const notices = [];
+    if (incomplete) notices.push('Some compared slots have unavailable text or are absent; each side is identified below.');
+    if (alternatives) {
+      const pending = built.view.sides[0].result.unresolvedChoices.map(function (choice) {
+        const event = built.view.sides[0].result.events.find(function (one) { return one.id === choice.id; });
+        return root.Triptych.titleCase(event.group);
+      });
+      if (pending.length) notices.push('Separate source choices remain open: ' + pending.join(', ') + '.');
+    }
+    input.coverageNotice.textContent = notices.join(' ');
+    input.coverageNotice.hidden = !notices.length;
     root.document.title = (built.mass.name || built.mass.key) + ' — Compare — Triptych';
     return { view: built.view, semantic: summary(built.view), semanticIds: built.rendered.semanticIds };
   }
@@ -262,15 +270,13 @@
   }
 
   function heldAlternatives(result) {
-    const groups = (result && result.events || []).filter(function (event) { return event.kind === 'proper-choice'; });
+    const groups = (result && result.events || []).filter(function (event) {
+      return event.kind === 'proper-choice' && event.options.length > 1 && event.options.every(function (option) {
+        return option.events.length === 1 && ['reading-1', 'reading-2', 'gospel'].includes(mappedSlot(option.events[0]));
+      });
+    });
     if (groups.length !== 1) return [];
     const group = groups[0];
-    if (!(group.options || []).every(function (option) {
-      return option.events.length === 1 && option.events.every(function (event) {
-        const slot = mappedSlot(event);
-        return ['reading-1', 'reading-2', 'gospel'].includes(slot);
-      });
-    })) return [];
     return group.options.map(function (option) {
       return { id: group.id + '/' + option.id, label: group.group + ': ' + option.id };
     });

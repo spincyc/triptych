@@ -72,7 +72,7 @@ function assertAlternativePdf(pages, bbox) {
     'both Gospel citations and first words must share a page');
   assert.ok(gospelPage < pages.length - 1, 'the long Gospel remains fragmentable');
   const interiorWordBottoms = assertNoSparseInteriorPages(pages, bbox, 'Compare');
-  for (const id of ['001', '002', '003', '004', '005', '006', '007', '008']) {
+  for (const id of ['006', '007', '008', '009', '010', '011', '012', '013', '014', '015', '016']) {
     assert.ok(pages.join('\n').includes('postconciliar/presentation-lord/' + id),
       'printed alternative source ' + id + ' survives');
   }
@@ -674,7 +674,7 @@ try {
     '&location=compare%2Fproper%2Fgospel', activeCase);
   assert.equal(alternativePrint.before.state.comparison.dimension, 'reading-alternative');
   assert.deepEqual(alternativePrint.before.ids, ['entrance-antiphon','collect','reading-1','responsorial-psalm','reading-2',
-    'gospel-acclamation','gospel','communion-antiphon'].map(id => 'compare/proper/' + id));
+    'gospel-acclamation','gospel','prayer-over-offerings','communion-antiphon','prayer-after-communion'].map(id => 'compare/proper/' + id));
   const alternativeProof = assertAlternativePdf(alternativePrint.pages, alternativePrint.bbox);
   assertions.push({ name: activeCase, status: 'pass', pdf:alternativeProof });
 

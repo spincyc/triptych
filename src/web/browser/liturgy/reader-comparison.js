@@ -51,9 +51,22 @@
     return rest;
   }
 
-  function selectedPropers(result) {
+  // A reading comparison aligns functional slots. A separate source group whose
+  // members are all edition-local stays in the side's original adapter evidence.
+  function localProperChoice(event) {
+    return event && event.kind === 'proper-choice' && event.options.length > 1 &&
+      event.options.every(function (option) {
+        if (option.omission) return option.events.length === 0;
+        return option.events.length > 0 && option.events.every(function (member) {
+          return member.kind === 'proper' && member.semanticSlot.state === 'edition-local-unmapped';
+        });
+      });
+  }
+
+  function selectedPropers(result, localChoices) {
     return result.events.reduce(function (events, event) {
       if (event && event.kind === 'proper') return events.concat([event]);
+      if (localChoices && localChoices.has(event.id)) return events;
       const selected = event && event.kind === 'proper-choice' && event.selection &&
         event.selection.state === 'selected' && event.options.find(function (option) {
           return option.id === event.selection.option;
@@ -84,6 +97,7 @@
     }
 
     const bibleComparison = dimension === 'bible-edition';
+    const localChoicesBySide = [];
     const sides = input.comparison.sides.map(function (descriptor, index) {
       const supplied = input.sides[index];
       const result = supplied && supplied.result;
@@ -99,7 +113,15 @@
           !Array.isArray(result.unresolvedChoices)) {
         fail('side ' + descriptor.id + ' is missing adapter evidence');
       }
-      if (result.unresolvedChoices.length ||
+      const localChoices = new Map((dimension === 'reading-alternative'
+        ? result.events.filter(localProperChoice) : []).map(function (event) {
+        return [event.id, event.selection];
+      }));
+      localChoicesBySide.push(localChoices);
+      if (result.unresolvedChoices.some(function (choice) {
+        const selection = localChoices.get(choice.id);
+        return choice.kind !== 'unresolved-authorized-choice' || !selection || selection.state !== 'required';
+      }) ||
           (result.ordinaryUnresolved || []).length) {
         fail('side ' + descriptor.id + ' has choices that remain unresolved');
       }
@@ -211,6 +233,9 @@
         return group.id;
       });
       if (groups[0] !== groups[1]) fail('reading alternatives must belong to the same held source group');
+      if (!same(Object.fromEntries(localChoicesBySide[0]), Object.fromEntries(localChoicesBySide[1]))) {
+        fail('independent local Proper choices must agree on both reading peers');
+      }
     }
 
     const coordinateAxis = SOURCE_COORDINATE_DIMENSIONS.includes(dimension);
@@ -247,9 +272,9 @@
       });
     }
 
-    const indexed = sides.map(function (side) {
+    const indexed = sides.map(function (side, index) {
       const bySlot = new Map();
-      selectedPropers(side.result).forEach(function (event) {
+      selectedPropers(side.result, localChoicesBySide[index]).forEach(function (event) {
         if (!event || event.kind !== 'proper') {
           fail('only resolved Proper events can be aligned in this slice');
         }

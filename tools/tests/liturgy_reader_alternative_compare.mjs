@@ -20,6 +20,9 @@ const context = Adapters.validationContext({ entrance: 'propers',
   bibles: json('src/web/data/bibles.json'), properIndex: json('src/web/data/structure/propers/index.json'),
   ordinaryIndex: { calendars: [] }, structures: { postconciliar: structure } });
 const group = 'proper-choice/postconciliar/presentation-lord/main/gospel';
+const localGroupIds = ['presentation-candle-lighting', 'presentation-procession-chant']
+  .map(name => group.replace(/gospel$/, name));
+const gospelGroup = result => result.events.find(event => event.id === group);
 const longer = group + '/longer';
 const shorter = group + '/shorter';
 const prefix = '#missal=postconciliar&type=christological&mass=presentation-lord&bible=douay-rheims&orations=la&mode=compare&compare=reading-alternative';
@@ -38,8 +41,9 @@ function request() {
     requestedMode: 'read', options: { ordinary: false, legitimate: {} }, coverage: [],
     unresolvedChoices: [], sourceHooks: [] };
 }
-function adapt(id) {
+function adapt(id, properChoices) {
   const selected = request();
+  if (properChoices) selected.properChoices = properChoices;
   if (id !== undefined) selected.alternative = { id };
   return Adapters.adaptPropers({ request: selected, structure });
 }
@@ -51,13 +55,13 @@ function input() {
 
 test('the production Presentation retains a source-recorded unselected longer/shorter Gospel choice', () => {
   const result = adapt();
-  const choice = result.events.find((event) => event.kind === 'proper-choice');
+  const choice = gospelGroup(result);
   assert.equal(choice.id, group);
   assert.deepEqual(choice.selection, { state: 'required', option: null });
   assert.deepEqual(choice.options.map((option) => option.id), ['longer', 'shorter']);
   assert.deepEqual(choice.options.map((option) => option.events[0].selected.references),
     [['Luke 2:22-40'], ['Luke 2:22-32']]);
-  assert.equal(result.unresolvedChoices.length, 1);
+  assert.deepEqual(result.unresolvedChoices.map(choice => choice.id), [...localGroupIds, group]);
   assert.deepEqual(PropersCompare.heldAlternatives(result).map((one) => one.id), [longer, shorter]);
 });
 
@@ -89,12 +93,12 @@ test('adapters select only the exact held source option without mutating product
   const state = request(); state.alternative = { id: shorter };
   const snapshot = JSON.stringify(state);
   const result = Adapters.adaptPropers({ request: state, structure });
-  const choice = result.events.find((event) => event.kind === 'proper-choice');
+  const choice = gospelGroup(result);
   assert.deepEqual(choice.selection, { state: 'selected', option: 'shorter' });
   assert.equal(result.resolved.alternative, shorter);
-  assert.deepEqual(result.unresolvedChoices, []);
+  assert.deepEqual(result.unresolvedChoices.map(choice => choice.id), localGroupIds);
   const selected = choice.options.find((option) => option.id === 'shorter').events[0];
-  assert.equal(selected.id, 'proper/postconciliar/presentation-lord/007');
+  assert.equal(selected.id, fixture.expected.gospelEvents.shorter);
   assert.ok(selected.sourceHooks.some((hook) => hook.kind === 'proper-choice-option' && hook.id === shorter));
   assert.equal(JSON.stringify(structure), source);
   assert.equal(JSON.stringify(state), snapshot);
@@ -102,20 +106,34 @@ test('adapters select only the exact held source option without mutating product
     shorter.replace('/main/', '/not-held/'), 'shorter']) assert.throws(() => adapt(id), /(?:alternative|Proper choice).*not held/);
 });
 
-test('Compare independently resolves source ordinals 006 and 007 into their one shared Gospel slot', () => {
+test('Compare keeps the independent ceremony choices open and aligns both held Gospel readings', () => {
   const prepared = input();
   const before = JSON.stringify(prepared);
   const view = Comparison.compare(prepared);
   assert.equal(view.calendarResults, null);
   assert.equal(view.dimension, 'reading-alternative');
-  assert.equal(view.units.length, 7);
+  assert.equal(view.units.length, fixture.expected.unitCount);
+  for (const side of view.sides) assert.deepEqual(side.result.unresolvedChoices.map(choice => choice.id), localGroupIds);
   const gospel = view.units.find((unit) => unit.semanticSlot === 'gospel');
   assert.deepEqual(gospel.sides.map((cell) => cell.status), ['text-held', 'text-held']);
   assert.deepEqual(gospel.sides.map((cell) => cell.event.id),
-    ['proper/postconciliar/presentation-lord/006', 'proper/postconciliar/presentation-lord/007']);
+    [fixture.expected.gospelEvents.longer, fixture.expected.gospelEvents.shorter]);
   assert.deepEqual(gospel.sides.map((cell) => cell.event.selected.references),
     [['Luke 2:22-40'], ['Luke 2:22-32']]);
   assert.equal(JSON.stringify(prepared), before);
+});
+
+test('an explicit ceremony selection stays selected on both reading peers', () => {
+  const prepared = input();
+  for (const [index, side] of prepared.sides.entries()) {
+    side.result = adapt(comparison.sides[index].alternative.id, {[localGroupIds[0]]:'printed-antiphon'});
+  }
+  const view = Comparison.compare(prepared);
+  for (const side of view.sides) {
+    const candles = side.result.events.find(event => event.id === localGroupIds[0]);
+    assert.deepEqual(candles.selection, {state:'selected', option:'printed-antiphon'});
+    assert.deepEqual(side.result.unresolvedChoices.map(choice => choice.id), [localGroupIds[1]]);
+  }
 });
 
 test('mixed edition form Bible language cycle options and unrelated source groups fail closed', () => {
@@ -127,7 +145,10 @@ test('mixed edition form Bible language cycle options and unrelated source group
     (p) => { p.sides[1].result.request.cycle = 'B'; },
     (p) => { p.sides[1].result.request.options.legitimate = { creed: 'nicene' }; },
     (p) => { p.comparison.sides[1].alternative.id = group + '/not-held'; },
-    (p) => { p.sides[1].result.events.find((event) => event.kind === 'proper-choice').selection.state = 'required'; }
+    (p) => { gospelGroup(p.sides[1].result).selection.state = 'required'; },
+    (p) => { p.sides[1].result.unresolvedChoices.push({id:'cycle', kind:'unresolved-authorized-choice'}); },
+    (p) => { p.sides[1].result.events.find(e => e.id === localGroupIds[0]).selection =
+      {state:'selected', option:'printed-antiphon'}; }
   ]) { const prepared = input(); mutate(prepared); assert.throws(() => Comparison.compare(prepared)); }
   const unselected = input(); unselected.sides[1].result = adapt();
   assert.throws(() => Comparison.compare(unselected), /choices that remain unresolved/);
@@ -152,10 +173,10 @@ test('semantic locations map to the source choice wrapper and unrelated or multi
   assert.deepEqual(PropersCompare.fromCompareLocation({ kind: 'event', id: 'compare/proper/gospel' }, result),
     { kind: 'event', id: group });
   const unrelated = adapt();
-  unrelated.events.find((event) => event.kind === 'proper-choice').options.forEach((option) => {
+  gospelGroup(unrelated).options.forEach((option) => {
     option.events[0].semanticSlot.identity.id = 'collect';
   });
   assert.deepEqual(PropersCompare.heldAlternatives(unrelated), []);
-  const multiple = adapt(); multiple.events.push(structuredClone(multiple.events.find((event) => event.kind === 'proper-choice')));
+  const multiple = adapt(); multiple.events.push(structuredClone(gospelGroup(multiple)));
   assert.deepEqual(PropersCompare.heldAlternatives(multiple), []);
 });

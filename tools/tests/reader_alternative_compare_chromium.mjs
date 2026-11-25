@@ -163,11 +163,16 @@ try {
   for (const path of [PROPERS, '/src/web/browser/liturgy/propers-reader.html']) {
     await visit(comparison + '&location=compare%2Fproper%2Fgospel', path);
     const value = await evaluate(cdp, `({ outcome: propersReaderDebug.outcome, state: propersReaderDebug.state, semantic: propersReaderDebug.semantic,
+      notice: document.querySelector('#coverage-notice').textContent,
       cells: [...document.querySelectorAll('[data-semantic-event-id="compare/proper/gospel"] .compare-side')].map(node => node.textContent),
       contents: [...document.querySelectorAll('[data-reader-location]')].map(node => node.dataset.readerLocation) })`);
     assert.equal(value.outcome, 'ready'); assert.equal(value.state.civilDate, null);
     assert.deepEqual(value.semantic.sides.map(side => side.id), ['longer', 'shorter']);
-    assert.equal(value.semantic.units.length, 5); assert.equal(value.semantic.calendarResults, null);
+    assert.equal(value.semantic.units.length, 10);
+    for (const side of value.semantic.sides) assert.deepEqual(side.unresolvedChoices.map(choice => choice.id),
+      ['presentation-candle-lighting', 'presentation-procession-chant'].map(name => group.replace(/gospel$/, name)));
+    assert.match(value.notice, /Separate source choices remain open: Presentation Candle Lighting, Presentation Procession Chant/);
+    assert.equal(value.semantic.calendarResults, null);
     assert.match(value.cells[0], /Luke 2:22-40/); assert.match(value.cells[1], /Luke 2:22-32/);
     assert.ok(value.cells.every(text => /Bible reconstruction/.test(text)));
     assert.deepEqual(value.contents, value.semantic.units.map(unit => 'compare/proper/' + unit.semanticSlot));
@@ -211,9 +216,9 @@ try {
   await evaluate(cdp, `(async () => { for (let n = 0; n < 12; n += 1) await new Promise(requestAnimationFrame); })()`);
   await click('[data-reader-action="mode"]'); await click('[data-mode="read"]'); await ready();
   const read = await evaluate(cdp, `({ outcome: propersReaderDebug.outcome, state: propersReaderDebug.state, hash: location.hash,
-    first: document.querySelector('[data-proper-choice-option]')?.dataset.properChoiceOption,
-    selection: document.querySelector('[data-proper-choice]')?.dataset.choiceSelection,
-    unselected: document.querySelector('[data-choice-status="not-selected"]')?.tagName })`);
+    first: document.querySelector('[data-proper-choice=gospel] [data-proper-choice-option]')?.dataset.properChoiceOption,
+    selection: document.querySelector('[data-proper-choice=gospel]')?.dataset.choiceSelection,
+    unselected: document.querySelector('[data-proper-choice=gospel] [data-choice-status="not-selected"]')?.tagName })`);
   assert.equal(read.outcome, 'ready'); assert.equal(read.state.alternative.id, shorter);
   assert.equal(read.state.semanticLocation.eventId, group); assert.equal(read.selection, 'shorter');
   assert.equal(read.first, 'shorter'); assert.equal(read.unselected, 'DETAILS');
