@@ -148,6 +148,11 @@ REVIEWED_20261026_SOURCE_JOINS = {
 }
 
 
+VIGIL_CONSULTATION_ROLES = {
+    "Preface of the Easter Vigil", "Communicantes of the Easter Vigil", "Easter dismissal",
+}
+
+
 class CoverageTests(unittest.TestCase):
     def test_duplicate_witness_and_alias_do_not_inflate_targets_or_available_uses(self):
         witness = {"source_id": "edition.one", "artifact_id": "artifact.one", "label": "Witness"}
@@ -569,10 +574,42 @@ class RealCorpusCoverageTests(unittest.TestCase):
             self.assertEqual((0, 0, 0), (report["unaccounted"], report["unmatched_records"],
                                        report["stale_translation_records"]))
 
+    def test_lenten_prayer_and_chant_source_slots_have_their_own_targets(self):
+        inventory = ROOT / "src/sources/inventories/missal-expected-targets-v1.toml"
+        report = coverage.expectations(inventory, "postconciliar", self.files["postconciliar"]["masses"])
+        prefix = "postconciliar:source-role-gap:"
+        states = {r["id"][len(prefix):]: r["state"] for r in report["targets"]
+                  if r["slice_id"] == "postconciliar-special-role-source-gaps-2026-10-21"}
+        days = {"ash-wednesday", "thursday-after-ash-wednesday", "friday-after-ash-wednesday",
+                "saturday-after-ash-wednesday", "holy-monday", "holy-tuesday", "holy-wednesday"}
+        days.update(f"lent-{week}-{day}" for week in range(1, 6)
+                    for day in ("monday", "tuesday", "wednesday", "thursday", "friday", "saturday"))
+        appointments = {f"{day}:prayer-over-the-people" for day in days}
+        appointments.update(f"ash-wednesday:antiphon-at-the-distribution-of-ashes-{n}" for n in (1, 2, 3))
+        appointments.update({"ash-wednesday:responsory-at-the-distribution-of-ashes",
+                             "presentation-lord:antiphon-while-candles-are-lit",
+                             "presentation-lord:procession-chant-1-with-canticle",
+                             "presentation-lord:procession-chant-2"})
+        self.assertEqual(states, {**dict.fromkeys(appointments, "represented"),
+                                  "chrism-mass:renewal-of-priestly-promises": "unresolved"})
+
     def test_published_english_targets_agree_with_source_identity_census(self):
         for calendar, document in self.files.items():
             source = self.propers.english_coverage(ROOT / "src/sources/calendars", calendar)
-            self.assertEqual(english(document["coverage"])["targets"], source["slots"], calendar)
+            self.assertEqual(english(document["coverage"])["targets"],
+                             source["slots"] + source["outside_the_ledger"], calendar)
+            outside = set()
+            if calendar == "roman-1962":
+                # These printed Vigil appointments link to the facsimile. Their
+                # wording has no project English body in the translation ledger.
+                vigil = next(m for m in document["masses"] if m["key"] == "easter-vigil")
+                for row in vigil["propers"]:
+                    if row.get("source_consultation") and row.get("coverage"):
+                        unit = row["coverage"]
+                        if unit["component"] == "proper-body" and english(unit)["availability"] == "unresolved":
+                            outside.add(row["name"])
+                self.assertEqual(outside, VIGIL_CONSULTATION_ROLES)
+            self.assertEqual(source["outside_the_ledger"], len(outside), calendar)
             self.assertEqual(english(document["coverage"])["available_targets"], source["with_english"], calendar)
             coverage.validate_summary(document["coverage"])
 
@@ -690,10 +727,22 @@ class RealCorpusCoverageTests(unittest.TestCase):
                     "Postcommunion": "d0615d75979ceaa5f7ca2b366c1b584a2b532ded87b65e5e04533a3cfd8e0b37",
                 }[name])
                 self.assertNotIn("Et non fit commemoratio", proper["text"])
-        # The source still inventories the seasonal-votive Tract, but it is
-        # not appointed in October: its old represented join is removed.
-        self.assertNotIn("Tract", propers)
-        self.assertEqual(states[f"{prefix}:slot:p779-l19:tract"], "not-represented")
+    def test_christ_the_king_off_date_tract_and_bounded_source_slots(self):
+        mass = next(m for m in self.files["roman-1962"]["masses"] if m["key"] == "christ-the-king")
+        prefix = "roman-1962:sanctoral-form:p778-l1"
+        report = coverage.expectations(ROOT / "src/sources/inventories/missal-expected-targets-v1.toml",
+                                       "roman-1962", [mass])
+        states = {r["id"]: r["state"] for r in report["targets"] if r["id"].startswith(prefix)}
+        # The Tract belongs to the votive course after Septuagesima. Its
+        # independent source consultation is available outside the October Mass.
+        tract = f"{prefix}:slot:p779-l19:tract"
+        self.assertNotIn("Tract", {row["name"] for row in mass["propers"]})
+        self.assertEqual(states[tract], "represented")
+        source = next(row for row in coverage.published_expectations(report)["standalone_off_date"]
+                      if row["id"] == tract)
+        self.assertEqual((source["off_date_appointment"]["use"], source["off_date_appointment"]["when"]),
+                         ("votive", "after-septuagesima"))
+        self.assertTrue(source["standalone_consultation"]["source"].endswith("#page=779"))
         # Neither printed Alleluia alternative is joined to the held October
         # Alleluia. The held Preface appointment likewise supplies no new join.
         self.assertEqual(sum(row["name"] == "Alleluia" for row in mass["propers"]), 1)
@@ -706,7 +755,7 @@ class RealCorpusCoverageTests(unittest.TestCase):
         bounded = next(row for row in coverage.bounded_form_text_slots(report)
                        if row["mass"] == "christ-the-king")
         self.assertEqual((bounded["lower_bound"], bounded["represented"],
-                          bounded["not_represented"], bounded["unresolved"]), (13, 9, 1, 3))
+                          bounded["not_represented"], bounded["unresolved"]), (13, 10, 0, 3))
         self.assertEqual((bounded["denominator_state"], bounded["expected"],
                           bounded["whole_form_state"]), ("unresolved", None, "unresolved"))
 
@@ -824,7 +873,9 @@ class ExpectedInventoryTests(unittest.TestCase):
         propers = tool("mass-propers")
         for calendar in ("roman-1962", "roman-pre-1955"):
             report = propers.english_coverage(ROOT / "src/sources/calendars", calendar)
-            self.assertEqual((0, 0, 0), (report["outside_the_ledger"], report["unaccounted"], report["unmatched_records"]))
+            expected_outside = len(VIGIL_CONSULTATION_ROLES) if calendar == "roman-1962" else 0
+            self.assertEqual((report["outside_the_ledger"], report["unaccounted"], report["unmatched_records"]),
+                             (expected_outside, 0, 0))
 
     def test_christmas_english_owners_keep_stable_form_ids(self):
         expected = {(form, name) for form in ("night", "dawn", "day")
@@ -833,7 +884,15 @@ class ExpectedInventoryTests(unittest.TestCase):
         positive, absent = current_english_owners()
         actual = {(form, name) for mass, form, name, cycle, occurrence in set(positive) | set(absent)
                   if mass == "nativitate-domini-octave"}
-        self.assertEqual(actual, expected)
+        pages = {"Collect (St Anastasia)": 141, "Secret (St Anastasia)": 143,
+                 "Postcommunion (St Anastasia)": 143}
+        self.assertEqual(actual, expected | {("dawn", name) for name in pages})
+        for name, page in pages.items():
+            row = positive[("nativitate-domini-octave", "dawn", name, "all", 1)]
+            self.assertEqual((row["witness"], row["ia_leaf"], row["collation_result"]),
+                             ("lasance-1945", page, "confirmed"))
+            self.assertTrue(row["publication_artifact_id"].endswith(".christmas-dawn-anastasia-9a76172a"))
+            self.assertEqual([v["rights"] for v in row["translations"]], ["public-domain"])
         for form, name in expected:
             assert_current_english_owner(self, ("nativitate-domini-octave", form, name, "all", 1))
         propers = tool("mass-propers")
@@ -1487,7 +1546,9 @@ state = "unenumerated"
         propers = tool("mass-propers")
         for calendar in ("roman-1962", "roman-pre-1955"):
             report = propers.english_coverage(ROOT / "src/sources/calendars", calendar)
-            for axis in ("unaccounted", "outside_the_ledger", "unmatched_records", "stale_translation_records"):
+            self.assertEqual(report["outside_the_ledger"],
+                             len(VIGIL_CONSULTATION_ROLES) if calendar == "roman-1962" else 0)
+            for axis in ("unaccounted", "unmatched_records", "stale_translation_records"):
                 self.assertEqual(report[axis], 0, (calendar, axis))
 
     def test_theodore_own_orations_have_reviewed_english_accounting(self):
