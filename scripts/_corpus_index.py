@@ -1004,6 +1004,7 @@ def _generate(root, *, full=False, validate_readers=True):
         precomputed = _parallel_hash_and_parse(root, batch_paths, oid_length)
     for path, (mode, oid) in sorted(entries.items()):
         previous = None
+        from_precomputed = False
         if prior is not None:
             try:
                 previous = prior._file_row(path)
@@ -1014,7 +1015,8 @@ def _generate(root, *, full=False, validate_readers=True):
             row = previous
             reused += 1
         elif path in precomputed:
-            row, pre_record = precomputed[path]
+            from_precomputed = True
+            row, pre_record = precomputed.pop(path)
             entries[path] = (row[3], row[4])
             hashed += 1
             if pre_record is not None:
@@ -1034,7 +1036,7 @@ def _generate(root, *, full=False, validate_readers=True):
         file_rows[path] = row
         shards.setdefault(name, []).append(row)
         groups.setdefault(_group(path), set()).add(name)
-        if _SOURCE_PATH.fullmatch(path) and path not in precomputed:
+        if _SOURCE_PATH.fullmatch(path) and not from_precomputed:
             if previous is row:
                 if not hasattr(prior, '_by_path'):
                     prior._by_path = {prior.record_path(identifier): prior._record_row(identifier)
@@ -1056,6 +1058,7 @@ def _generate(root, *, full=False, validate_readers=True):
             if record[0] in records:
                 raise CorpusIndexError(f'duplicate source record ID: {record[0]}')
             records[record[0]] = record
+    del prior, precomputed, changed
     for identifier, row in sorted(records.items()):
         shards.setdefault(_id_shard(identifier), []).append(row)
     output = {}

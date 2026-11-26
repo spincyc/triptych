@@ -74,6 +74,7 @@ Without usable history the stamp is not guessed:
 from __future__ import annotations
 
 import argparse
+from array import array
 import dataclasses
 import datetime as dt
 import functools
@@ -87,6 +88,7 @@ import os
 import re
 import subprocess
 import sys
+import threading
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -185,12 +187,15 @@ def _git(root: Path, *arguments: str) -> str:
     return os.fsdecode(_git_bytes(root, *arguments))
 
 
+_HISTORY_PREFIXES = ("src/gpt", "src/claude", "src/common", "src/sources", "scripts", "tools")
+
+
 class _HistoryPaths:
     """Shorten path lists and answer simplified history walks from one graph read.
 
-    One bit names one commit/parent tree comparison (including roots against
-    the empty tree). Together with each commit's parents, author/committer
-    timestamps and trailers, this reproduces Git's default history
+    One edge index names one commit/parent tree comparison (including roots
+    against the empty tree). Together with each commit's parents, author and
+    committer timestamps, and trailers, this reproduces Git's default history
     simplification (`git log -- <paths>`) in memory without spawning a new
     `git log` walk for every edition in a batch.
     """
@@ -198,10 +203,13 @@ class _HistoryPaths:
     def __init__(self, root: Path):
         self.root = root
         self.tip = _git(root, "rev-parse", "HEAD").strip()
+        self._exact_prefixes = frozenset(_HISTORY_PREFIXES)
+        self._prefixes = tuple(prefix + "/" for prefix in _HISTORY_PREFIXES)
         log = _git(root, "log",
                    f"--format=%x1e%H %at %ct %P%x1f%(trailers:key={TRAILER},valueonly,separator=%x1d)",
                    self.tip)
-        edges = []
+        edges: list[bytes] = []
+        edge_heads: list[bytes] = []
         self.commits: dict[str, tuple[int, int, tuple[str, ...], tuple[tuple[str | None, int], ...]]] = {}
         for record in log.split("\x1e"):
             if not record.strip():
@@ -209,6 +217,7 @@ class _HistoryPaths:
             head, _, trailers_raw = record.partition("\x1f")
             parts = head.split()
             commit = parts[0]
+            commit_bytes = commit.encode("ascii")
             author_time = int(parts[1])
             committer_time = int(parts[2])
             parents = parts[3:]
@@ -216,32 +225,23 @@ class _HistoryPaths:
             commit_edges = []
             if parents:
                 for parent in parents:
-                    bit = 1 << len(edges)
-                    edges.append((commit + " " + parent).encode("ascii"))
-                    commit_edges.append((parent, bit))
+                    idx = len(edges)
+                    edges.append(commit_bytes + b" " + parent.encode("ascii"))
+                    edge_heads.append(commit_bytes)
+                    commit_edges.append((parent, idx))
             else:
-                bit = 1 << len(edges)
-                edges.append(commit.encode("ascii"))
-                commit_edges.append((None, bit))
+                idx = len(edges)
+                edges.append(commit_bytes)
+                edge_heads.append(commit_bytes)
+                commit_edges.append((None, idx))
             self.commits[commit] = (author_time, committer_time, trailers, tuple(commit_edges))
-        # Specify each merge parent separately. -t also records directory
-        # changes when a path used to be a directory. NULs delimit all paths.
-        rows = _git_bytes(root, "diff-tree", "--stdin", "--root", "--no-renames",
-                          "--always", "--format=%x00%H", "--name-only", "-r", "-t", "-z",
-                          input_bytes=b"\n".join(edges) + b"\n")
-        self.changes: dict[str, int] = {}
-        records = rows.removeprefix(b"\0").split(b"\0\0")
-        if len(records) != len(edges):
-            raise RevisionError("git returned incomplete per-parent history")
-        for i, (edge, record) in enumerate(zip(edges, records)):
-            commit, _, names = record.partition(b"\0")
-            if commit != edge.split(b" ", 1)[0]:
-                raise RevisionError("git returned an unexpected history edge")
-            if names:
-                bit = 1 << i
-                for raw in names.removeprefix(b"\n").removesuffix(b"\0").split(b"\0"):
-                    path = os.fsdecode(raw)
-                    self.changes[path] = self.changes.get(path, 0) | bit
+        del log
+        # Specify each merge parent separately, filtered to closure-eligible
+        # prefixes and streamed incrementally so large histories never buffer
+        # the full diff-tree output or allocate multi-kilobit masks per path.
+        self.changes: dict[str, int | array] = {}
+        self._stream_diff_tree(root, edges, edge_heads)
+        del edges, edge_heads
         # Pre-compute first-parent changed files for commits carrying the skip
         # trailer (~140 commits) in one batched diff-tree call so forked
         # children never spawn git subprocesses in Repository.pre_image().
@@ -280,12 +280,122 @@ class _HistoryPaths:
                     )
                     self.pre_images[commit] = (first_parent, changed)
 
+    def _stream_diff_tree(self, root: Path, edges: list[bytes], edge_heads: list[bytes]) -> None:
+        if not edges:
+            return
+        environment = {key: value for key, value in os.environ.items()
+                       if key not in {"GIT_DIR", "GIT_WORK_TREE", "GIT_INDEX_FILE"}}
+        environment["GIT_LITERAL_PATHSPECS"] = "1"
+        try:
+            proc = subprocess.Popen(
+                ["git", "diff-tree", "--stdin", "--root", "--no-renames",
+                 "--always", "--format=%x00%H", "--name-only", "-r", "-t", "-z",
+                 "--", *_HISTORY_PREFIXES],
+                cwd=root, env=environment,
+                stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+            )
+        except OSError as error:
+            raise RevisionError(f"cannot run git: {error}") from error
+
+        write_error: list[OSError] = []
+
+        def feed_stdin() -> None:
+            assert proc.stdin is not None
+            try:
+                for start in range(0, len(edges), 512):
+                    proc.stdin.write(b"\n".join(edges[start:start + 512]) + b"\n")
+                proc.stdin.close()
+            except OSError as error:
+                write_error.append(error)
+                try:
+                    proc.stdin.close()
+                except OSError:
+                    pass
+
+        feeder = threading.Thread(target=feed_stdin, daemon=True)
+        feeder.start()
+        changes = self.changes
+        idx = 0
+        total = len(edge_heads)
+        first_chunk = True
+        buf = b""
+
+        def consume(record: bytes) -> None:
+            nonlocal idx
+            if idx >= total:
+                raise RevisionError("git returned incomplete per-parent history")
+            commit, _, names = record.partition(b"\0")
+            if commit != edge_heads[idx]:
+                raise RevisionError("git returned an unexpected history edge")
+            if names:
+                edge_idx = idx
+                for raw in names.removeprefix(b"\n").removesuffix(b"\0").split(b"\0"):
+                    if not raw:
+                        continue
+                    path = os.fsdecode(raw)
+                    existing = changes.get(path)
+                    if existing is None:
+                        changes[path] = edge_idx
+                    elif type(existing) is int:
+                        changes[path] = array("I", (existing, edge_idx))
+                    else:
+                        existing.append(edge_idx)
+            idx += 1
+
+        assert proc.stdout is not None and proc.stderr is not None
+        try:
+            while True:
+                chunk = proc.stdout.read(1 << 20)
+                if not chunk:
+                    break
+                if first_chunk:
+                    first_chunk = False
+                    chunk = chunk.removeprefix(b"\0")
+                buf += chunk
+                parts = buf.split(b"\0\0")
+                buf = parts.pop()
+                for record in parts:
+                    consume(record)
+            if buf:
+                consume(buf)
+            stderr = proc.stderr.read()
+        finally:
+            proc.stdout.close()
+            proc.stderr.close()
+            feeder.join()
+            returncode = proc.wait()
+        if returncode:
+            raise RevisionError(f"git diff-tree failed: {os.fsdecode(stderr).strip()[-500:]}")
+        if write_error:
+            raise RevisionError(f"cannot write git diff-tree stdin: {write_error[0]}")
+        if idx != total:
+            raise RevisionError("git returned incomplete per-parent history")
+
+    def _covered(self, path: str) -> bool:
+        return path in self._exact_prefixes or path.startswith(self._prefixes)
+
+    def _path_mask(self, path: str) -> int:
+        entry = self.changes.get(path)
+        if entry is None:
+            return 0
+        if type(entry) is int:
+            return 1 << entry
+        mask = 0
+        for idx in entry:
+            mask |= 1 << idx
+        return mask
+
     def reduce(self, paths):
         # Cover the union with real paths from this exact query. Common corpus
         # inputs often have identical histories or are subsumed by another.
-        representatives = {self.changes.get(path, 0): path for path in paths}
-        covered = 0
         kept = []
+        representatives: dict[int, str] = {}
+        for path in paths:
+            if not self._covered(path):
+                kept.append(path)
+                continue
+            representatives[self._path_mask(path)] = path
+        covered = 0
         for mask in sorted(representatives, key=int.bit_count, reverse=True):
             if mask & ~covered:
                 covered |= mask
@@ -293,15 +403,23 @@ class _HistoryPaths:
         return kept
 
     def history(self, paths, revision: str = "HEAD") -> list[tuple[int, str, bool]] | None:
+        if any(not self._covered(path) for path in paths):
+            return None
         start = self.tip if revision == "HEAD" else revision
         if start not in self.commits:
             start = _git(self.root, "rev-parse", "--verify", start + "^{commit}").strip()
             if start not in self.commits:
                 return None
-        mask = 0
+        touched: set[int] = set()
         for path in paths:
-            mask |= self.changes.get(path, 0)
-        if not mask:
+            entry = self.changes.get(path)
+            if entry is None:
+                continue
+            if type(entry) is int:
+                touched.add(entry)
+            else:
+                touched.update(entry)
+        if not touched:
             return []
         seen = {start}
         seq = 0
@@ -311,8 +429,8 @@ class _HistoryPaths:
             _, _, commit = heapq.heappop(heap)
             author_time, _ct, trailers, commit_edges = self.commits[commit]
             if len(commit_edges) == 1:
-                parent, bit = commit_edges[0]
-                if mask & bit:
+                parent, idx = commit_edges[0]
+                if idx in touched:
                     if any(value != TRAILER_NONE for value in trailers):
                         raise RevisionError(
                             f"commit {commit[:12]} carries {TRAILER}: {', '.join(trailers)}; "
@@ -323,7 +441,7 @@ class _HistoryPaths:
                     seq += 1
                     heapq.heappush(heap, (-self.commits[parent][1], seq, parent))
             else:
-                treesame = next((parent for parent, bit in commit_edges if not (mask & bit)), None)
+                treesame = next((parent for parent, idx in commit_edges if idx not in touched), None)
                 if treesame is not None:
                     if treesame not in seen:
                         seen.add(treesame)
@@ -335,7 +453,7 @@ class _HistoryPaths:
                             f"commit {commit[:12]} carries {TRAILER}: {', '.join(trailers)}; "
                             f"{TRAILER_NONE!r} is the only value it may take")
                     result.append((author_time, commit, bool(trailers)))
-                    for parent, _bit in commit_edges:
+                    for parent, _idx in commit_edges:
                         if parent is not None and parent not in seen:
                             seen.add(parent)
                             seq += 1

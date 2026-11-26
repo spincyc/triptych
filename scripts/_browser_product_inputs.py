@@ -644,12 +644,24 @@ def audit(root: Path, product_ids=None, *, log=None) -> dict:
             environment = {"TRIPTYCH_BROWSER_AUDIT_LOG": str(logs),
                            "PYTHONPATH": os.pathsep.join(filter(None, [str(hook), os.environ.get("PYTHONPATH")]))}
             recipes.generate(root, out, [recipe["id"]], environment=environment)
-            events = []
-            for path in sorted(logs.iterdir()):
-                events.extend(json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line)
-            if not any(event["event"] == "open" for event in events):
+            saw_open = False
+
+            def stream_events():
+                nonlocal saw_open
+                for path in sorted(logs.iterdir()):
+                    with path.open("r", encoding="utf-8") as handle:
+                        for line in handle:
+                            if not line.strip():
+                                continue
+                            event = json.loads(line)
+                            if event.get("event") == "open":
+                                saw_open = True
+                            yield event
+
+            judged = _judge(root, recipe, identities[recipe["id"]], stream_events(), products.EXCLUDED)
+            if not saw_open:
                 raise ClosureError(f"{recipe['id']}: the audit hook recorded nothing; it was not installed")
-            report[recipe["id"]] = _judge(root, recipe, identities[recipe["id"]], events, products.EXCLUDED)
+            report[recipe["id"]] = judged
             shutil.rmtree(out, ignore_errors=True)
     return report
 
@@ -702,16 +714,57 @@ def _judge(root: Path, recipe: dict, identity: dict, events: list, excluded=froz
     opened, probed, listed = set(), set(), set()
     outside, listed_outside, ignored, excluded_reads = set(), set(), set(), set()
     unaudited, children = [], []
-    launched = {os.path.basename(event["path"]) for event in events
-                if event["event"] == "spawn" and event["extra"]["via"] == "subprocess.Popen"}
-    touched, where = [], {}
+    launched = set()
+    spawns = []
+    where = {}
+    dir_cache: dict[str, bool] = {}
+
+    def judge_touch(kind, path, origin):
+        name = relative(path)
+        if name is None or _within(name, _PRIVATE):
+            return
+        if PurePosixPath(name).name == CACHE_MARKER and kind == "probe":
+            return  # the harness refusing to write into a sealed cache
+        directory = dir_cache.get(path)
+        if directory is None:
+            directory = os.path.isdir(path) and not os.path.islink(path)
+            dir_cache[path] = directory
+        if kind != "list" and directory and any(private.startswith(name + "/") for private in _PRIVATE):
+            return  # traversing to the producer's private scratch
+        if _within(name, (".scratch", "build", ".git")):
+            ignored.add(name)
+            where.setdefault(name, origin)
+            return
+        if (name.startswith(("scripts/", "tools/")) and "__pycache__" in PurePosixPath(name).parts
+                and PurePosixPath(name).suffix in {".pyc", ".pyo"}):
+            return
+        if kind == "list" or directory:
+            (listed if kind == "list" else probed).add(name)
+            if not covered_directory(name, kind == "list"):
+                key = name or "."
+                listed_outside.add(key)
+                where.setdefault(key, origin)
+            return
+        (opened if kind == "open" else probed).add(name)
+        if name in excluded:
+            excluded_reads.add(name)
+        elif not covered_file(name, kind):
+            outside.add(name)
+            where.setdefault(name, origin)
+
     for event in events:
+        kind = event["event"]
         path = event["path"]
-        if event["event"] != "spawn":
-            if not (event["event"] == "list" and event.get("where") == "import-system"):
-                touched.append((event["event"], path))  # sys.path listings are the import system's
-                where.setdefault(path, event.get("where"))
+        if kind != "spawn":
+            origin = event.get("where")
+            if not (kind == "list" and origin == "import-system"):
+                judge_touch(kind, path, origin)  # sys.path listings are the import system's
             continue
+        if event["extra"]["via"] == "subprocess.Popen":
+            launched.add(os.path.basename(path))
+        spawns.append(event)
+    for event in spawns:
+        path = event["path"]
         extra = event["extra"]
         if extra["via"] != "subprocess.Popen" and os.path.basename(path) in launched:
             continue  # subprocess's own posix_spawn/exec of a recorded Popen
@@ -725,38 +778,16 @@ def _judge(root: Path, recipe: dict, identity: dict, events: list, excluded=froz
             continue
         children.append(child)
         base = extra["cwd"] or str(root)
-        touched.extend(("open", os.path.normpath(os.path.join(base, item))) for item in extra["argv"][1:]
-                       if os.path.join(base, item).startswith(prefix) and os.path.lexists(os.path.join(base, item)))
-    for kind, path in touched:
-        name = relative(path)
-        if name is None or _within(name, _PRIVATE):
-            continue
-        if PurePosixPath(name).name == CACHE_MARKER and kind == "probe":
-            continue  # the harness refusing to write into a sealed cache
-        directory = os.path.isdir(path) and not os.path.islink(path)
-        if kind != "list" and directory and any(private.startswith(name + "/") for private in _PRIVATE):
-            continue  # traversing to the producer's private scratch
-        if _within(name, (".scratch", "build", ".git")):
-            ignored.add(name)
-            continue
-        if (name.startswith(("scripts/", "tools/")) and "__pycache__" in PurePosixPath(name).parts
-                and PurePosixPath(name).suffix in {".pyc", ".pyo"}):
-            continue
-        if kind == "list" or directory:
-            (listed if kind == "list" else probed).add(name)
-            if not covered_directory(name, kind == "list"):
-                listed_outside.add(name or ".")
-            continue
-        (opened if kind == "open" else probed).add(name)
-        if name in excluded:
-            excluded_reads.add(name)
-        elif not covered_file(name, kind):
-            outside.add(name)
+        origin = event.get("where")
+        for item in extra["argv"][1:]:
+            joined = os.path.join(base, item)
+            if joined.startswith(prefix) and os.path.lexists(joined):
+                judge_touch("open", os.path.normpath(joined), origin)
     flagged = outside | listed_outside | ignored
     return {"opened": len(opened), "probed": len(probed), "listed": len(listed), "members": len(members),
             "opened_paths": sorted(opened), "probed_paths": sorted(probed), "listed_paths": sorted(listed),
             "outside": sorted(outside), "listed_outside": sorted(listed_outside),
             "non_canonical": sorted(ignored), "excluded_reads": sorted(excluded_reads),
-            "where": {name: where.get(str(root / name) if name != "." else str(root)) for name in sorted(flagged)},
+            "where": {name: where.get(name) for name in sorted(flagged)},
             "unaudited_children": unaudited, "children": children,
             "ok": not (outside or listed_outside or ignored or unaudited)}

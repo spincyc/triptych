@@ -2904,6 +2904,7 @@ print(json.dumps(results))
 
 def _fork_traces(root_text, requests, jobs, opened, compiled):
     """Fork independent leaf calculations immediately after their common reads."""
+    import gc
     import multiprocessing
     import tempfile
 
@@ -2926,27 +2927,31 @@ def _fork_traces(root_text, requests, jobs, opened, compiled):
         output.write_text(json.dumps(trace), encoding="utf-8")
 
     results = []
-    with tempfile.TemporaryDirectory() as temporary:
-        for start in range(0, len(requests), jobs):
-            paths = [Path(temporary) / str(i)
-                     for i in range(start, min(start + jobs, len(requests)))]
-            workers = []
-            try:
-                for (document, provider), path in zip(requests[start:], paths):
-                    worker = context.Process(target=run, args=(document, provider, path))
-                    worker.start()
-                    workers.append(worker)
-                for worker in workers:
-                    worker.join(200)
-                    if worker.exitcode != 0:
-                        raise ChronologyWiringError("a chronology trace worker failed")
-            finally:
-                for worker in workers:
-                    if worker.is_alive():
-                        worker.terminate()
-                    worker.join()
-                    worker.close()
-            results.extend(json.loads(path.read_text(encoding="utf-8")) for path in paths)
+    gc.freeze()
+    try:
+        with tempfile.TemporaryDirectory() as temporary:
+            for start in range(0, len(requests), jobs):
+                paths = [Path(temporary) / str(i)
+                         for i in range(start, min(start + jobs, len(requests)))]
+                workers = []
+                try:
+                    for (document, provider), path in zip(requests[start:], paths):
+                        worker = context.Process(target=run, args=(document, provider, path))
+                        worker.start()
+                        workers.append(worker)
+                    for worker in workers:
+                        worker.join(200)
+                        if worker.exitcode != 0:
+                            raise ChronologyWiringError("a chronology trace worker failed")
+                finally:
+                    for worker in workers:
+                        if worker.is_alive():
+                            worker.terminate()
+                        worker.join()
+                        worker.close()
+                results.extend(json.loads(path.read_text(encoding="utf-8")) for path in paths)
+    finally:
+        gc.unfreeze()
     return results
 
 

@@ -9,6 +9,7 @@ model is ``scripts/_proper_chronology_page.py``.
 
 from __future__ import annotations
 
+import hashlib
 import os
 import re
 from pathlib import Path
@@ -25,7 +26,7 @@ OUTPUTS = {
 }
 KINDS = ("proper-1962", "proper-postconciliar")
 
-_INPUT_STATE: dict[Path, tuple] = {}
+_INPUT_STATE: dict[Path, bytes] = {}
 _FROZEN_ROOTS: set[Path] = set()
 
 
@@ -80,14 +81,12 @@ _WATCHED = (
 )
 
 
-def _input_state(root: Path, *, workers: int | None = None) -> tuple:
-    """The file identity of every watched input, in path order.
+def _input_state(root: Path, *, workers: int | None = None) -> bytes:
+    """Digest of every watched input's file identity, in path order.
 
     Every operation (each new `Assembly`) asks this, so it is a scandir walk
-    over plain strings: the same files `rglob("*")` reaches -- symlinked
-    directories are not descended, symlinked files are followed -- with the
-    same stat fields, at a fifth of the cost of building and sorting ~67,000
-    Path objects.
+    over plain strings hashed into a 32-byte digest instead of retaining a
+    67,000-element stat tuple in process memory.
     """
     def scan(start: str, suffixes: tuple[str, ...]) -> list[tuple]:
         local: list[tuple] = []
@@ -137,7 +136,10 @@ def _input_state(root: Path, *, workers: int | None = None) -> tuple:
             for d in subdirs:
                 found.extend(scan(d, suffixes))
     found.sort()
-    return tuple(found)
+    digest = hashlib.sha256()
+    for row in found:
+        digest.update(f"{row[0]}\0{row[1]}:{row[2]}:{row[3]}:{row[4]}:{row[5]}\n".encode("utf-8", "surrogateescape"))
+    return digest.digest()
 
 
 def dependency_trace(context) -> dict[str, list[str]]:

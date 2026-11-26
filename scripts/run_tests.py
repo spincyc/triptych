@@ -122,6 +122,28 @@ def _record_durations(results: list[dict]) -> None:
         pass
 
 
+def _worker_init() -> None:
+    # Parallel test workers must not each spawn full-core nested pools.
+    os.environ["PYTHON_CPU_COUNT"] = "1"
+
+
+def _default_jobs(module_count: int) -> int:
+    counter = getattr(os, "process_cpu_count", None) or os.cpu_count
+    cpus = (counter() if callable(counter) else None) or 1
+    cap = cpus
+    try:
+        for line in Path("/proc/meminfo").read_text(encoding="ascii").splitlines():
+            if line.startswith("MemAvailable:"):
+                avail_mib = int(line.split()[1]) // 1024
+                # Budget ~1.5 GiB per concurrent test worker (plus headroom) so
+                # shared hosts running multiple agents stay clear of the OOM killer.
+                cap = min(cap, max(1, (avail_mib - 1536) // 1536))
+                break
+    except (OSError, ValueError):
+        pass
+    return min(module_count, max(1, cap))
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         prog="run-tests",
@@ -129,7 +151,7 @@ def main(argv: list[str] | None = None) -> int:
     )
     parser.add_argument(
         "-j", "--jobs", type=int, default=0,
-        help="worker processes; 0 (the default) picks one per core",
+        help="worker processes; 0 (the default) picks a memory-safe core count",
     )
     parser.add_argument(
         "-p", "--pattern", default="test_*.py",
@@ -154,12 +176,20 @@ def main(argv: list[str] | None = None) -> int:
     recorded = _recorded_durations()
     modules.sort(key=lambda name: -recorded.get(name, 0.0))
 
-    jobs = arguments.jobs or min(len(modules), os.cpu_count() or 1)
+    jobs = arguments.jobs or _default_jobs(len(modules))
     started = time.perf_counter()
     if jobs == 1:
         results = [_run_unit(name) for name in modules]
     else:
-        with ProcessPoolExecutor(max_workers=jobs) as pool:
+        pool_kwargs: dict[str, object] = {
+            "max_workers": jobs,
+            "initializer": _worker_init,
+        }
+        if sys.version_info >= (3, 11):
+            # Recycle workers per module so cached corpora/indexes cannot
+            # accumulate across 120+ test modules inside long-lived workers.
+            pool_kwargs["max_tasks_per_child"] = 1
+        with ProcessPoolExecutor(**pool_kwargs) as pool:
             results = list(pool.map(_run_unit, modules))
     elapsed = time.perf_counter() - started
 

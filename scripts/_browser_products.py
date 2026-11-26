@@ -448,6 +448,7 @@ def _identity_batch(root: Path, recipes=None, *, capture_files=None) -> dict:
         after[key].update(name for name, value in external.items() if value["manifest"] in after[key] or name in after[key])
     if memberships != after or markers != after_markers:
         raise ProductError("canonical input membership changed while hashing")
+    del after, after_markers
     for name in sorted({name for marked in markers.values() for name in marked} - categories.keys()):
         categories[name] = _component(name)
     # Supply optional build-only recovery with already hashed canonical bytes.
@@ -468,6 +469,7 @@ def _identity_batch(root: Path, recipes=None, *, capture_files=None) -> dict:
                     "membership": _sha(_json(keyed)), "count": len(keyed), "source_paths": sorted(members)}
         identity["sha256"] = _sha(_json({name: value for name, value in identity.items() if name != "source_paths"}))
         result[key] = identity
+    del values, categories, memberships, markers, external
     # `source_paths` of the aggregate is the union of family keys: what a held
     # publication context binds as browser-product canonical inputs.
     result[None] = {**_aggregate(result), "source_paths": sorted(names)}
@@ -1329,6 +1331,8 @@ def record(root: Path, *, cache_root=None) -> dict:
     identities = _identity_batch(root, recipes)
     inputs = _commitment(identities[None])
     family_inputs = {recipe["id"]: _commitment(identities[recipe["id"]]) for recipe in recipes}
+    identities_digest = _sha(_json({("" if key is None else key): value for key, value in identities.items()}))
+    del identities
     # Reuse only an exact previous two-build proof, current family identity and
     # complete validated cache. A cache miss always receives two new cold builds.
     retained = {}
@@ -1357,7 +1361,9 @@ def record(root: Path, *, cache_root=None) -> dict:
             products = _family_products(outputs, changed, family_inputs)
         else:
             products = []
-        if identities != _identity_batch(root, recipes) or recipes != _recipes():
+        if (identities_digest != _sha(_json({("" if key is None else key): value
+                                             for key, value in _identity_batch(root, recipes).items()}))
+                or recipes != _recipes()):
             raise ProductError("canonical inputs changed during independent cold builds; descriptor was not written")
         generated = {product["id"]: product for product in products}
         manifest = {"schema": SCHEMA, "inputs": inputs, "recipes": recipes,

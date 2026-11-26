@@ -73,6 +73,9 @@ _DOCUMENTS_UNUSED_WEB = [
     "src/web/browser/scripture",
     "src/web/browser/shared",
     "src/web/browser/sources",
+    "src/web/browser/texts/index.html",
+    "src/web/browser/texts/texts.css",
+    "src/web/browser/texts/texts.js",
 ]
 # Reviewed authority records the proper text pipeline reads by fixed path.
 _LATIN_AUTHORITIES = [
@@ -354,30 +357,40 @@ def generate(root: Path, out: Path, product_ids=None, *, environment=None, cache
         # run one after another they left all but one core idle. Collection
         # stays in recipe order, so which failure is reported, and everything
         # moved into `out`, does not depend on scheduling.
-        order = selected
-        workers = len(selected)
+        # Start the longest producers first (LPT) so web-editions, act-history,
+        # propers, and documents overlap immediately instead of forming a tail,
+        # while bounding concurrent producer processes so cold builds never
+        # launch 13 heavy families and dozens of nested forks simultaneously.
+        priority = {
+            name: index
+            for index, name in enumerate((
+                "web-editions", "act-history", "propers", "documents",
+                "sources", "catena", "encyclicals", "readings", "paragraphs", "law",
+            ))
+        }
+        order = sorted(selected, key=lambda recipe: priority.get(recipe["id"], len(priority)))
         if record_jobs is not None:
-            # Start the longest producers first (LPT) so web-editions, act-history,
-            # propers, and documents overlap immediately instead of forming a tail.
-            priority = {
-                name: index
-                for index, name in enumerate((
-                    "web-editions", "act-history", "propers", "documents",
-                    "sources", "catena", "encyclicals", "readings", "paragraphs", "law",
-                ))
-            }
-            order = sorted(selected, key=lambda recipe: priority.get(recipe["id"], len(priority)))
             workers = min(3, record_jobs, len(selected))
             # Reader forks get their explicit slots below. Nested projection
             # pools inside any one child must not claim those slots again.
             environment["PYTHON_CPU_COUNT"] = "1"
+            web_reader_jobs = record_jobs - workers + 1
+        else:
+            workers = min(4, len(selected))
+            web_reader_jobs = None
+            if len(selected) > 1:
+                counter = getattr(os, "process_cpu_count", None) or os.cpu_count
+                available = (counter() if callable(counter) else None) or 4
+                environment["PYTHON_CPU_COUNT"] = "1"
+                if not cached_editions:
+                    web_reader_jobs = max(1, min(4, available - workers + 1))
         with ThreadPoolExecutor(max_workers=workers) as pool:
             runs = {}
             for recipe in order:
                 name = recipe["id"]
                 options = {"cached_editions": cached_editions} if name == "web-editions" and cached_editions else {}
-                if record_jobs is not None and name == "web-editions":
-                    options["reader_jobs"] = record_jobs - workers + 1
+                if web_reader_jobs is not None and name == "web-editions":
+                    options["reader_jobs"] = web_reader_jobs
                 runs[name] = pool.submit(_run, root, Path(state) / name, recipe, environment, **options)
         for recipe in selected:
             runs[recipe["id"]].result()

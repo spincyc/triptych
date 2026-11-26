@@ -210,6 +210,8 @@ def _check_surface(surface, root, index):
 
 
 def _check_worker(surface, root, identity):
+    # Parallel reader-surface workers share one host; keep nested pools bounded.
+    os.environ['PYTHON_CPU_COUNT'] = '1'
     from _corpus_index import CorpusIndex, CorpusIndexError
     index = CorpusIndex(root, _bind=False)
     if index.identity != identity:

@@ -10,6 +10,7 @@ import functools
 import hashlib
 import ipaddress
 import json
+import math
 import os
 import re
 import sys
@@ -371,7 +372,7 @@ REQUIRED_FIELDS_V2 = {
 }
 
 
-@dataclasses.dataclass(frozen=True)
+@dataclasses.dataclass(frozen=True, slots=True)
 class Record:
     """One parsed source manifest."""
 
@@ -381,7 +382,7 @@ class Record:
     data: dict[str, Any]
 
 
-@dataclasses.dataclass(frozen=True)
+@dataclasses.dataclass(frozen=True, slots=True)
 class Binding:
     """One publication-local source binding."""
 
@@ -457,9 +458,40 @@ def _is_safe_embedded_reference(value: Any) -> bool:
     )
 
 
+_INTERNED_VALUE_KEYS = frozenset({
+    "record_type", "rights_status", "storage_disposition", "storage",
+    "media_type", "encoding", "language", "artifact_type", "work_type",
+    "segment_type", "evidence_status", "inspection_status", "rights_jurisdiction",
+    "availability", "completeness", "kind", "role", "status",
+})
+
+
+def _intern_data(value: Any) -> Any:
+    """Intern repeated TOML field names and enum values without pinning unique IDs/hashes."""
+    if isinstance(value, dict):
+        out: dict[Any, Any] = {}
+        for k, v in value.items():
+            ik = sys.intern(k) if isinstance(k, str) else k
+            if ik in _INTERNED_VALUE_KEYS and isinstance(v, str):
+                out[ik] = sys.intern(v)
+            elif ik == "states" and isinstance(v, list):
+                out[ik] = [sys.intern(x) if isinstance(x, str) else x for x in v]
+            elif isinstance(v, (dict, list)):
+                out[ik] = _intern_data(v)
+            else:
+                out[ik] = v
+        return out
+    if isinstance(value, list):
+        for idx, item in enumerate(value):
+            if isinstance(item, (dict, list)):
+                value[idx] = _intern_data(item)
+        return value
+    return value
+
+
 def _read_toml(library: Library, path: Path) -> dict[str, Any] | None:
     try:
-        return tomllib.loads(path.read_text(encoding="utf-8"))
+        return _intern_data(tomllib.loads(path.read_text(encoding="utf-8")))
     except (OSError, UnicodeError, tomllib.TOMLDecodeError, RecursionError) as error:
         library.error(path, f"cannot parse TOML: {error}")
         return None
@@ -615,19 +647,24 @@ def _path_contains_symlink(path: Path, root: Path) -> bool:
     return False
 
 
+def _path_sort_key(path: str) -> str:
+    """Match Path ordering on str paths without triggering Path.__lt__ parts caches."""
+    return path.replace(os.sep, "\0")
+
+
 @dataclasses.dataclass
 class _SourceTreeScan:
     """Single-pass filesystem inventory of src/sources reused across validation stages."""
 
     all_symlinks: list[Path]
-    canonical_manifests: list[Path]
+    canonical_manifests: list[str]
     symlink_manifests: list[Path]
     nonfile_manifests: list[Path]
     stray_tomls: list[Path]
     symlink_artifact_dirs: list[Path]
     artifact_dir_symlinks: list[Path]
-    artifact_payload_files: list[Path]
-    tree_candidates: list[tuple[Path, tuple[str, ...]]]
+    artifact_payload_files: list[str]
+    tree_candidates: list[tuple[str, tuple[str, ...]]]
 
 
 def _scan_source_tree(library: Library) -> tuple[bool, _SourceTreeScan | None]:
@@ -651,18 +688,18 @@ def _scan_source_tree(library: Library) -> tuple[bool, _SourceTreeScan | None]:
         entry_path: str,
         name: str,
         parts: tuple[str, ...],
-        canonical_manifests: list[Path],
+        canonical_manifests: list[str],
         stray_tomls: list[Path],
-        artifact_payload_files: list[Path],
-        tree_candidates: list[tuple[Path, tuple[str, ...]]],
+        artifact_payload_files: list[str],
+        tree_candidates: list[tuple[str, tuple[str, ...]]],
     ) -> None:
         if _is_canonical_manifest_parts(parts):
-            canonical_manifests.append(Path(entry_path))
+            canonical_manifests.append(entry_path)
             return
         top = parts[0]
         in_artifact = len(parts) >= 8 and top == "works" and parts[3] == "editions" and parts[5] == "artifacts"
         if in_artifact:
-            artifact_payload_files.append(Path(entry_path))
+            artifact_payload_files.append(entry_path)
         dot = name.rfind(".")
         suffix = name[dot:] if dot > 0 else ""
         if top == "works" and suffix == ".toml":
@@ -680,7 +717,7 @@ def _scan_source_tree(library: Library) -> tuple[bool, _SourceTreeScan | None]:
             or (top in ("bibles", "chronology") and suffix == ".tsv")
         ):
             return
-        tree_candidates.append((Path(entry_path), parts))
+        tree_candidates.append((entry_path, parts))
 
     def record_symlink(
         item: os.DirEntry[str],
@@ -704,14 +741,14 @@ def _scan_source_tree(library: Library) -> tuple[bool, _SourceTreeScan | None]:
     def scan_dir(start_dir: str):
         all_symlinks: list[Path] = []
         has_sym_dir = False
-        canonical_manifests: list[Path] = []
+        canonical_manifests: list[str] = []
         symlink_manifests: list[Path] = []
         nonfile_manifests: list[Path] = []
         stray_tomls: list[Path] = []
         symlink_artifact_dirs: list[Path] = []
         artifact_dir_symlinks: list[Path] = []
-        artifact_payload_files: list[Path] = []
-        tree_candidates: list[tuple[Path, tuple[str, ...]]] = []
+        artifact_payload_files: list[str] = []
+        tree_candidates: list[tuple[str, tuple[str, ...]]] = []
         stack = [start_dir]
         while stack:
             current = stack.pop()
@@ -751,14 +788,14 @@ def _scan_source_tree(library: Library) -> tuple[bool, _SourceTreeScan | None]:
 
     all_symlinks: list[Path] = []
     has_sym_dir = False
-    canonical_manifests: list[Path] = []
+    canonical_manifests: list[str] = []
     symlink_manifests: list[Path] = []
     nonfile_manifests: list[Path] = []
     stray_tomls: list[Path] = []
     symlink_artifact_dirs: list[Path] = []
     artifact_dir_symlinks: list[Path] = []
-    artifact_payload_files: list[Path] = []
-    tree_candidates: list[tuple[Path, tuple[str, ...]]] = []
+    artifact_payload_files: list[str] = []
+    tree_candidates: list[tuple[str, tuple[str, ...]]] = []
     sub_tasks: list[str] = []
 
     with os.scandir(source_root_str) as top_listing:
@@ -798,7 +835,7 @@ def _scan_source_tree(library: Library) -> tuple[bool, _SourceTreeScan | None]:
                 )
 
     counter = getattr(os, "process_cpu_count", None) or os.cpu_count
-    workers = min(8, (counter() if callable(counter) else None) or 4)
+    workers = min(4, (counter() if callable(counter) else None) or 4)
     if workers > 1 and len(sub_tasks) >= 8:
         with ThreadPoolExecutor(max_workers=workers) as pool:
             for batch in pool.map(scan_dir, sub_tasks):
@@ -829,16 +866,19 @@ def _scan_source_tree(library: Library) -> tuple[bool, _SourceTreeScan | None]:
     for sym in sorted(all_symlinks):
         library.error(sym, "source-library tree must not contain symbolic links")
 
+    canonical_manifests.sort(key=_path_sort_key)
+    artifact_payload_files.sort(key=_path_sort_key)
+    tree_candidates.sort(key=lambda item: _path_sort_key(item[0]))
     scan = _SourceTreeScan(
         all_symlinks=sorted(all_symlinks),
-        canonical_manifests=sorted(canonical_manifests),
+        canonical_manifests=canonical_manifests,
         symlink_manifests=sorted(symlink_manifests),
         nonfile_manifests=sorted(nonfile_manifests),
         stray_tomls=sorted(stray_tomls),
         symlink_artifact_dirs=sorted(symlink_artifact_dirs),
         artifact_dir_symlinks=sorted(artifact_dir_symlinks),
-        artifact_payload_files=sorted(artifact_payload_files),
-        tree_candidates=sorted(tree_candidates, key=lambda item: item[0]),
+        artifact_payload_files=artifact_payload_files,
+        tree_candidates=tree_candidates,
     )
     return (not has_sym_dir), scan
 
@@ -852,7 +892,7 @@ def _record_manifest_paths(library: Library, *, scan: _SourceTreeScan | None = N
             library.error(path, "source manifest must be a regular file")
         for path in scan.stray_tomls:
             library.error(path, "TOML record is not at a canonical manifest path")
-        return list(scan.canonical_manifests)
+        return [Path(p) for p in scan.canonical_manifests]
     from concurrent.futures import ThreadPoolExecutor
 
     source_root = library.source_root
@@ -967,8 +1007,12 @@ def _record_manifest_paths(library: Library, *, scan: _SourceTreeScan | None = N
 def _validate_record_path(library: Library, record: Record) -> None:
     """Keep every identity at its one canonical schema location."""
 
-    relative = record.path.relative_to(library.source_root)
-    parts = relative.parts
+    source_prefix = str(library.source_root) + os.sep
+    path_str = str(record.path)
+    if path_str.startswith(source_prefix):
+        parts = path_str[len(source_prefix):].split(os.sep)
+    else:
+        parts = record.path.relative_to(library.source_root).parts
     expected_shape = {
         "work": len(parts) == 4
         and parts[0] == "works"
@@ -1005,18 +1049,20 @@ def _validate_record_path(library: Library, record: Record) -> None:
 
 def _parse_toml_batch_forked(
     manifest_paths: list[Path], workers: int
-) -> list[tuple[dict[str, Any] | None, str | None]] | None:
-    """Parse many TOML manifests across forked workers to bypass Python GIL contention."""
+):
+    """Parse many TOML manifests across forked workers, streaming shards to cap RAM."""
     import pickle
     import tempfile
     import threading
 
     if not hasattr(os, "fork") or threading.active_count() != 1:
         return None
-    workers = min(workers, 6, len(manifest_paths))
+    workers = min(workers, 4, len(manifest_paths))
     chunk = (len(manifest_paths) + workers - 1) // workers
     path_strs = [str(p) for p in manifest_paths]
-    with tempfile.TemporaryDirectory(prefix="source-library-toml-") as tmp:
+    tmp_dir = tempfile.TemporaryDirectory(prefix="source-library-toml-")
+    try:
+        tmp = tmp_dir.name
         pids: list[int] = []
         out_files: list[str] = []
         for idx in range(workers):
@@ -1049,12 +1095,28 @@ def _parse_toml_batch_forked(
             if os.waitstatus_to_exitcode(status) != 0:
                 failed = True
         if failed:
+            tmp_dir.cleanup()
             return None
-        parsed: list[tuple[dict[str, Any] | None, str | None]] = []
-        for out_file in out_files:
-            with open(out_file, "rb") as handle:
-                parsed.extend(pickle.load(handle))
-        return parsed
+    except BaseException:
+        tmp_dir.cleanup()
+        raise
+
+    def stream():
+        try:
+            for out_file in out_files:
+                with open(out_file, "rb") as handle:
+                    batch = pickle.load(handle)
+                try:
+                    os.unlink(out_file)
+                except OSError:
+                    pass
+                for data, err in batch:
+                    yield (_intern_data(data) if data is not None else None), err
+                del batch
+        finally:
+            tmp_dir.cleanup()
+
+    return stream()
 
 
 def _load_source_records(library: Library, *, scan: _SourceTreeScan | None = None) -> None:
@@ -1069,32 +1131,36 @@ def _load_source_records(library: Library, *, scan: _SourceTreeScan | None = Non
     manifest_paths = _record_manifest_paths(library, scan=scan)
     counter = getattr(os, "process_cpu_count", None) or os.cpu_count
     workers = min(8, (counter() if callable(counter) else None) or 4)
-    parsed = None
+    parsed_stream = None
     if workers > 1 and len(manifest_paths) >= 512:
-        parsed = _parse_toml_batch_forked(manifest_paths, workers)
+        parsed_stream = _parse_toml_batch_forked(manifest_paths, workers)
 
-    for index, path in enumerate(manifest_paths):
-        if parsed is not None:
-            data, err = parsed[index]
-            if err is not None:
-                library.error(path, err)
+    try:
+        for path in manifest_paths:
+            if parsed_stream is not None:
+                data, err = next(parsed_stream)
+                if err is not None:
+                    library.error(path, err)
+                    continue
+            else:
+                data = _read_toml(library, path)
+                if data is None:
+                    continue
+            common = _validate_common_record(library, path, data)
+            if common is None:
                 continue
-        else:
-            data = _read_toml(library, path)
-            if data is None:
+            record_type, record_id = common
+            record = Record(path=path, record_type=record_type, record_id=record_id, data=data)
+            _validate_strings(library, record)
+            _validate_record_path(library, record)
+            if record_id in library.records:
+                prior = library.relative(library.records[record_id].path)
+                library.error(path, f"duplicate id {record_id}; first declared in {prior}")
                 continue
-        common = _validate_common_record(library, path, data)
-        if common is None:
-            continue
-        record_type, record_id = common
-        record = Record(path=path, record_type=record_type, record_id=record_id, data=data)
-        _validate_strings(library, record)
-        _validate_record_path(library, record)
-        if record_id in library.records:
-            prior = library.relative(library.records[record_id].path)
-            library.error(path, f"duplicate id {record_id}; first declared in {prior}")
-            continue
-        library.records[record_id] = record
+            library.records[record_id] = record
+    finally:
+        if parsed_stream is not None:
+            parsed_stream.close()
 
 
 def _validate_binding_table(
@@ -1453,7 +1519,7 @@ def _exact_artifacts(library: Library, record: Record) -> list[Record]:
 
 
 def _validate_relationships(library: Library) -> None:
-    records_by_path = {record.path: record for record in library.records.values()}
+    records_by_path = {str(record.path): record for record in library.records.values()}
     for record in sorted(library.records.values(), key=lambda item: item.record_id):
         for dependency in _dependency_ids(record):
             if dependency not in library.records:
@@ -1479,12 +1545,11 @@ def _validate_relationships(library: Library) -> None:
             if target is not None and target.record_type != expected_parent:
                 article = "an" if expected_parent[0] in "aeiou" else "a"
                 library.error(record.path, f"{field} must reference {article} {expected_parent} record")
-            enclosing_path = {
-                "edition": record.path.parents[2] / "work.toml",
-                "artifact": record.path.parents[2] / "edition.toml",
-                "segment": record.path.parents[1] / "edition.toml",
-                "passage": record.path.parents[1] / "edition.toml",
-            }[record.record_type]
+            parent_dir = os.path.dirname(os.path.dirname(str(record.path)))
+            if record.record_type in ("edition", "artifact"):
+                parent_dir = os.path.dirname(parent_dir)
+            enclosing_name = "work.toml" if record.record_type == "edition" else "edition.toml"
+            enclosing_path = os.path.join(parent_dir, enclosing_name)
             enclosing = records_by_path.get(enclosing_path)
             if enclosing is None:
                 library.error(
@@ -2130,7 +2195,8 @@ def _validate_artifacts(library: Library, *, scan: _SourceTreeScan | None = None
             library.error(artifact_directory, "artifact directory must not be a symbolic link")
         for entry in scan.artifact_dir_symlinks:
             library.error(entry, "artifact directory must not contain symbolic links")
-        for entry in scan.artifact_payload_files:
+        for entry_str in scan.artifact_payload_files:
+            entry = Path(entry_str)
             if entry.resolve() not in declared_paths:
                 library.error(entry, "artifact payload is not declared by its local artifact manifest")
         return
@@ -2267,7 +2333,22 @@ def _iter_physical_lines(source: Iterable[bytes]) -> Iterable[bytes]:
     yield from source
 
 
-@functools.lru_cache(maxsize=16)
+def _physical_line_count(path: Path) -> int:
+    """Count LF-delimited UTF-8 lines in streaming chunks without retaining strings."""
+    newlines = 0
+    seen_any = False
+    ends_with_nl = False
+    with path.open("r", encoding="utf-8", newline="") as handle:
+        while chunk := handle.read(1024 * 1024):
+            seen_any = True
+            newlines += chunk.count("\n")
+            ends_with_nl = chunk.endswith("\n")
+    if not seen_any:
+        return 0
+    return newlines if ends_with_nl else newlines + 1
+
+
+@functools.lru_cache(maxsize=4)
 def _decoded_physical_lines(path: Path, mtime_ns: int, size: int) -> tuple[str, ...]:
     """Every physical line of one artifact, decoded, kept for the next record.
 
@@ -2394,7 +2475,20 @@ def _validate_passage_locators(library: Library) -> None:
     """Validate ranged segments, passages, and checked transcription segments."""
     source_resolved = library.source_root.resolve()
     resolved_payloads: dict[str, Path | None] = {}
+    line_counts: dict[tuple[Path, int, int], int] = {}
 
+    try:
+        _validate_passage_locators_body(library, source_resolved, resolved_payloads, line_counts)
+    finally:
+        _decoded_physical_lines.cache_clear()
+
+
+def _validate_passage_locators_body(
+    library: Library,
+    source_resolved: Path,
+    resolved_payloads: dict[str, Path | None],
+    line_counts: dict[tuple[Path, int, int], int],
+) -> None:
     for record in sorted(library.records.values(), key=lambda item: item.record_id):
         if record.record_type not in {"segment", "passage"}:
             continue
@@ -2508,13 +2602,20 @@ def _validate_passage_locators(library: Library) -> None:
             continue
         try:
             payload_stat = payload_path.stat()
-            decoded_lines = _decoded_physical_lines(
-                payload_path, payload_stat.st_mtime_ns, payload_stat.st_size
-            )
+            cache_key = (payload_path, payload_stat.st_mtime_ns, payload_stat.st_size)
+            if raw_segments is None:
+                line_count = line_counts.get(cache_key)
+                if line_count is None:
+                    line_count = _physical_line_count(payload_path)
+                    line_counts[cache_key] = line_count
+                decoded_lines = None
+            else:
+                decoded_lines = _decoded_physical_lines(*cache_key)
+                line_count = len(decoded_lines)
+                line_counts[cache_key] = line_count
         except (OSError, UnicodeError) as error:
             library.error(record.path, f"cannot inspect passage physical lines: {error}")
             continue
-        line_count = len(decoded_lines)
         for ordinal, (_start, end) in enumerate(valid_line_ranges, start=1):
             if end > line_count:
                 library.error(
@@ -2569,6 +2670,181 @@ def _validate_passage_locators(library: Library) -> None:
             library.error(record.path, "transcription_segments do not reproduce text exactly after whitespace joining")
 
 
+_ENVELOPE_LIST_SENTINEL: list[Any] = []
+_ENVELOPE_DICT_SENTINEL: dict[str, Any] = {}
+_ENVELOPE_STREAM_THRESHOLD = 4 * 1024 * 1024
+_JSON_WHITESPACE = " \t\r\n"
+
+
+def _load_envelope_json_streaming(
+    entry: Path,
+    keep_keys: frozenset[str],
+    decoder: json.JSONDecoder,
+    *,
+    chunk_size: int = 262144,
+) -> Any:
+    """Validate a large JSON object envelope incrementally without loading the full text."""
+    with entry.open("r", encoding="utf-8") as handle:
+        buf = ""
+        idx = 0
+        eof = False
+
+        def refill(min_chunk: int = chunk_size) -> bool:
+            nonlocal buf, idx, eof
+            if eof:
+                return False
+            if idx > 0:
+                buf = buf[idx:]
+                idx = 0
+            piece = handle.read(min_chunk)
+            if not piece:
+                eof = True
+                return False
+            buf += piece
+            return True
+
+        def skip_ws() -> None:
+            nonlocal idx
+            while True:
+                n = len(buf)
+                while idx < n and buf[idx] in _JSON_WHITESPACE:
+                    idx += 1
+                if idx < n or not refill():
+                    return
+
+        def decode_one() -> Any:
+            nonlocal buf, idx
+            skip_ws()
+            read_size = chunk_size
+            while True:
+                if idx >= len(buf):
+                    if not refill(read_size):
+                        raise ValueError("unexpected end of JSON document")
+                try:
+                    value, end = decoder.raw_decode(buf, idx)
+                except json.JSONDecodeError:
+                    if refill(read_size):
+                        read_size = min(read_size * 2, 4 * 1024 * 1024)
+                        continue
+                    raise
+                if end == len(buf) and refill(read_size):
+                    read_size = min(read_size * 2, 4 * 1024 * 1024)
+                    continue
+                idx = end
+                if idx > chunk_size:
+                    buf = buf[idx:]
+                    idx = 0
+                return value
+
+        skip_ws()
+        if idx >= len(buf) or buf[idx] != "{":
+            # Non-object root or empty file: delegate to standard json.load for exact error/value.
+            handle.seek(0)
+            return json.load(
+                handle,
+                object_pairs_hook=decoder.object_pairs_hook,
+                parse_constant=decoder.parse_constant,
+            )
+        idx += 1
+        top_seen: set[str] = set()
+        result: dict[str, Any] = {}
+        skip_ws()
+        if idx < len(buf) and buf[idx] == "}":
+            idx += 1
+        else:
+            while True:
+                skip_ws()
+                if idx >= len(buf) or buf[idx] != '"':
+                    raise ValueError("expected JSON property name")
+                key = decode_one()
+                if not isinstance(key, str):
+                    raise ValueError("expected JSON property name")
+                if key in top_seen:
+                    raise ValueError(f"duplicate JSON key {key!r}")
+                top_seen.add(key)
+                skip_ws()
+                if idx >= len(buf) or buf[idx] != ":":
+                    raise ValueError("expected ':' after JSON property name")
+                idx += 1
+                skip_ws()
+                if idx < len(buf) and buf[idx] == "[":
+                    idx += 1
+                    skip_ws()
+                    if idx < len(buf) and buf[idx] == "]":
+                        idx += 1
+                    else:
+                        while True:
+                            decode_one()
+                            skip_ws()
+                            if idx < len(buf) and buf[idx] == ",":
+                                idx += 1
+                                continue
+                            if idx < len(buf) and buf[idx] == "]":
+                                idx += 1
+                                break
+                            raise ValueError("expected ',' or ']' in JSON array")
+                    if key in keep_keys:
+                        result[key] = _ENVELOPE_LIST_SENTINEL
+                else:
+                    value = decode_one()
+                    if key in keep_keys:
+                        if isinstance(value, list):
+                            result[key] = _ENVELOPE_LIST_SENTINEL
+                        elif isinstance(value, dict):
+                            result[key] = _ENVELOPE_DICT_SENTINEL
+                        else:
+                            result[key] = value
+                skip_ws()
+                if idx < len(buf) and buf[idx] == ",":
+                    idx += 1
+                    continue
+                if idx < len(buf) and buf[idx] == "}":
+                    idx += 1
+                    break
+                raise ValueError("expected ',' or '}' in JSON object")
+        skip_ws()
+        if idx < len(buf):
+            raise ValueError("trailing data after JSON document")
+        return result
+
+
+def _load_envelope_json(entry: Path, keep_keys: frozenset[str]) -> Any:
+    """Validate full JSON syntax, constants, and unique keys while keeping only envelope keys."""
+
+    def unique_object(pairs: list[tuple[str, Any]]) -> dict[str, Any]:
+        seen: set[str] = set()
+        result: dict[str, Any] = {}
+        for key, value in pairs:
+            if key in seen:
+                raise ValueError(f"duplicate JSON key {key!r}")
+            seen.add(key)
+            if key in keep_keys:
+                if isinstance(value, list):
+                    result[key] = _ENVELOPE_LIST_SENTINEL
+                elif isinstance(value, dict):
+                    result[key] = _ENVELOPE_DICT_SENTINEL
+                else:
+                    result[key] = value
+        return result
+
+    def invalid_constant(value: str) -> Any:
+        raise ValueError(f"invalid JSON number {value}")
+
+    if entry.stat().st_size > _ENVELOPE_STREAM_THRESHOLD:
+        decoder = json.JSONDecoder(
+            object_pairs_hook=unique_object,
+            parse_constant=invalid_constant,
+        )
+        return _load_envelope_json_streaming(entry, keep_keys, decoder)
+
+    with entry.open("r", encoding="utf-8") as handle:
+        return json.load(
+            handle,
+            object_pairs_hook=unique_object,
+            parse_constant=invalid_constant,
+        )
+
+
 def _owned_history_inventory(library: Library, entry: Path, relative: Path) -> bool:
     """Recognize exact editorial JSON owners, never a general JSON exemption.
 
@@ -2608,20 +2884,21 @@ def _owned_history_inventory(library: Library, entry: Path, relative: Path) -> b
     else:
         return False
 
-    def object_unique(pairs):
-        result = {}
-        for key, value in pairs:
-            if key in result:
-                raise ValueError(f"duplicate JSON key {key!r}")
-            result[key] = value
-        return result
-
-    def invalid_constant(value):
-        raise ValueError(f"invalid JSON number {value}")
-
+    required = {
+        "eucharistic-native-book": ("scope", "transcribed_by", "extent_kind", "extent_path", "collation_path"),
+        "eucharistic-book-extent": ("status",),
+        "eucharistic-book-collation": ("status", "reviewer", "checked_on", "binding_sha256", "extent_sha256"),
+        "eucharistic-text-parentage": ("status", "reviewer", "checked_on", "parent_binding_sha256", "child_binding_sha256", "kind", "basis", "scope"),
+        "eucharistic-research-lane-review": ("side", "checked_on", "target_inventory"),
+    }.get(record_type, ())
+    keep_keys = frozenset({
+        "schema_version", "record_type", identity, "title", *arrays, *required,
+        "id", "review_files", "extent_kind", "date", "independent",
+        "complete_extent_verified", "witness_sha256", "unit_sha256",
+        "git_parent_authorized", "text_inheritance", "historical_parentage",
+    })
     try:
-        data = json.loads(entry.read_text(encoding="utf-8"), object_pairs_hook=object_unique,
-                          parse_constant=invalid_constant)
+        data = _load_envelope_json(entry, keep_keys)
     except (OSError, ValueError) as error:
         library.error(entry, f"owned history inventory must be valid JSON: {error}")
         return True
@@ -2631,13 +2908,6 @@ def _owned_history_inventory(library: Library, entry: Path, relative: Path) -> b
             or any(not isinstance(data.get(key), list) for key in arrays)):
         library.error(entry, f"expected schema_version=1 {record_type} ownership envelope")
         return True
-    required = {
-        "eucharistic-native-book": ("scope", "transcribed_by", "extent_kind", "extent_path", "collation_path"),
-        "eucharistic-book-extent": ("status",),
-        "eucharistic-book-collation": ("status", "reviewer", "checked_on", "binding_sha256", "extent_sha256"),
-        "eucharistic-text-parentage": ("status", "reviewer", "checked_on", "parent_binding_sha256", "child_binding_sha256", "kind", "basis", "scope"),
-        "eucharistic-research-lane-review": ("side", "checked_on", "target_inventory"),
-    }.get(record_type, ())
     if any(not _is_string(data.get(key)) for key in required):
         library.error(entry, f"incomplete {record_type} ownership envelope")
     if record_type == "eucharistic-research-lane-review" and (
@@ -2752,21 +3022,9 @@ def _owned_papal_inventory(library: Library, entry: Path, relative: Path) -> boo
     if entry.name not in envelopes:
         return False
 
-    def unique_object(pairs):
-        result = {}
-        for key, value in pairs:
-            if key in result:
-                raise ValueError(f"duplicate JSON key {key!r}")
-            result[key] = value
-        return result
-
-    def invalid_constant(value):
-        raise ValueError(f"invalid JSON number {value}")
-
     schema, fields = envelopes[entry.name]
     try:
-        data = json.loads(entry.read_text(encoding="utf-8"),
-                          object_pairs_hook=unique_object, parse_constant=invalid_constant)
+        data = _load_envelope_json(entry, frozenset({"schema", *fields}))
         if (not isinstance(data, dict) or data.get("schema") != schema
                 or any(not isinstance(data.get(key), kind) for key, kind in fields.items())):
             raise ValueError(f"expected {schema} ownership envelope")
@@ -2797,7 +3055,8 @@ def _validate_source_tree(library: Library, *, scan: _SourceTreeScan | None = No
     if scan is not None:
         for entry in scan.all_symlinks:
             library.error(entry, "source-library tree must not contain symbolic links")
-        for entry, parts in scan.tree_candidates:
+        for entry_str, parts in scan.tree_candidates:
+            entry = Path(entry_str)
             relative = Path(*parts)
             if relative == Path("inventories/noncommercial-permissions-v1.json"):
                 import _reviewed_permissions
@@ -3328,32 +3587,93 @@ def _library_as_json(library: Library) -> dict[str, Any]:
     }
 
 
-def _library_from_json(held: dict[str, Any]) -> Library:
+def _is_json_exact(value: Any) -> bool:
+    """Return True iff *value* survives json.loads(json.dumps(value)) unchanged."""
+    t = type(value)
+    if value is None or t is str or t is int or t is bool:
+        return True
+    if t is float:
+        return math.isfinite(value)
+    if t is list:
+        return all(_is_json_exact(item) for item in value)
+    if t is dict:
+        return all(type(k) is str and _is_json_exact(v) for k, v in value.items())
+    return False
+
+
+def _library_roundtrips_json(library: Library) -> bool:
+    """Verify JSON round-trip exactness in place without building a second Library."""
+    if not (
+        isinstance(library.root, Path)
+        and isinstance(library.source_root, Path)
+        and all(isinstance(path, Path) for path in library.publication_roots)
+        and all(isinstance(path, Path) for path in library.payload_paths)
+        and all(type(err) is str for err in library.errors)
+        and _is_json_exact(library.external_payloads)
+    ):
+        return False
+    for record_id, record in library.records.items():
+        if not (
+            type(record_id) is str
+            and isinstance(record.path, Path)
+            and type(record.record_type) is str
+            and type(record.record_id) is str
+            and _is_json_exact(record.data)
+        ):
+            return False
+    for binding in library.bindings:
+        if not (
+            isinstance(binding.path, Path)
+            and type(binding.document) is str
+            and type(binding.schema) is int
+            and type(binding.ordinal) is int
+            and type(binding.source_id) is str
+            and _is_json_exact(binding.data)
+        ):
+            return False
+    return True
+
+
+def _library_from_json(held: dict[str, Any], *, consume: bool = False) -> Library:
     """Rebuild the library the projection came from."""
+    raw_records = held["records"]
+    records: dict[str, Record] = {}
+    if consume:
+        while raw_records:
+            record_id, row = raw_records.popitem()
+            records[record_id] = Record(
+                path=Path(row["path"]),
+                record_type=sys.intern(row["record_type"]),
+                record_id=row["record_id"],
+                data=_intern_data(row["data"]),
+            )
+    else:
+        for record_id, row in raw_records.items():
+            records[record_id] = Record(
+                path=Path(row["path"]),
+                record_type=sys.intern(row["record_type"]),
+                record_id=row["record_id"],
+                data=row["data"],
+            )
+    bindings = [
+        Binding(
+            path=Path(row["path"]),
+            document=row["document"],
+            schema=row["schema"],
+            ordinal=row["ordinal"],
+            source_id=row["source_id"],
+            data=_intern_data(row["data"]) if consume else row["data"],
+        )
+        for row in held["bindings"]
+    ]
+    if consume:
+        held["bindings"].clear()
     return Library(
         root=Path(held["root"]),
         source_root=Path(held["source_root"]),
         publication_roots=[Path(path) for path in held["publication_roots"]],
-        records={
-            record_id: Record(
-                path=Path(row["path"]),
-                record_type=row["record_type"],
-                record_id=row["record_id"],
-                data=row["data"],
-            )
-            for record_id, row in held["records"].items()
-        },
-        bindings=[
-            Binding(
-                path=Path(row["path"]),
-                document=row["document"],
-                schema=row["schema"],
-                ordinal=row["ordinal"],
-                source_id=row["source_id"],
-                data=row["data"],
-            )
-            for row in held["bindings"]
-        ],
+        records=records,
+        bindings=bindings,
         payload_paths={Path(path) for path in held["payload_paths"]},
         external_payloads=held["external_payloads"],
         errors=list(held["errors"]),
@@ -3417,9 +3737,9 @@ def load_library(
     )
     if entry is not None:
         try:
-            return _library_from_json(
-                json.loads(entry.read_text(encoding="utf-8"))
-            )
+            with entry.open("rb") as handle:
+                held = json.load(handle)
+            return _library_from_json(held, consume=True)
         except (OSError, ValueError, KeyError, TypeError):
             pass
 
@@ -3444,14 +3764,24 @@ def load_library(
         library.errors.sort()
         return library
     _load_source_records(library, scan=source_scan)
+    if source_scan is not None:
+        source_scan.canonical_manifests.clear()
+        source_scan.symlink_manifests.clear()
+        source_scan.nonfile_manifests.clear()
+        source_scan.stray_tomls.clear()
     _load_bindings(library)
     _validate_relationships(library)
     _validate_external_deliveries(library)
     _validate_artifacts(library, scan=source_scan)
+    if source_scan is not None:
+        source_scan.symlink_artifact_dirs.clear()
+        source_scan.artifact_dir_symlinks.clear()
+        source_scan.artifact_payload_files.clear()
     _validate_support_artifact_references(library)
     _validate_passage_locators(library)
     _validate_search_receipts(library)
     _validate_source_tree(library, scan=source_scan)
+    source_scan = None
     _validate_loci(library)
     _validate_work_dates(library)
     _validate_artifact_licenses(library)
@@ -3467,26 +3797,29 @@ def load_library(
     library.errors.sort()
 
     if entry is not None:
+        aside: Path | None = None
         try:
-            held = _library_as_json(library)
-            encoded = json.dumps(held)
-            # Through the JSON TEXT, not the dict `_library_as_json` built:
-            # that dict shares `record.data` by reference, so comparing it back
-            # compared those dicts against themselves and proved nothing about
-            # the part of the library carrying arbitrary parsed TOML.
-            if _library_from_json(json.loads(encoded)) == library:
+            if _library_roundtrips_json(library):
                 entry.parent.mkdir(parents=True, exist_ok=True)
                 # Written aside and renamed: these run in parallel, and a
                 # half-written entry read by a sibling is a wrong answer.
                 aside = entry.with_suffix(f".{os.getpid()}.tmp")
-                aside.write_text(encoded, encoding="utf-8")
+                held = _library_as_json(library)
+                with aside.open("w", encoding="utf-8") as handle:
+                    json.dump(held, handle, separators=(",", ":"), allow_nan=False)
+                del held
                 os.replace(aside, entry)
+                aside = None
                 # Four, not two: this cache writes a `-fp` and a `-nofp` variant per
                 # tree, both in active use, so two leaves no spare at all and any
                 # third fingerprint evicts a live entry.
                 prune_cache(entry.parent, keep=4)
         except (OSError, TypeError, ValueError, RecursionError):
-            pass
+            if aside is not None:
+                try:
+                    aside.unlink(missing_ok=True)
+                except OSError:
+                    pass
 
     return library
 
