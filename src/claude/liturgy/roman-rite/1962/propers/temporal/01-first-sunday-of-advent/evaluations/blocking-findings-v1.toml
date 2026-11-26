@@ -49,13 +49,13 @@ provider = "claude"
 run_id = "77c1ca91ef2d5e93"
 workflow = "proper-study"
 workflow_version = 20
-stage = "homily-review"
+stage = "web-review"
 iteration = 1
 disposition = "PASS"
-standing = 1
+standing = 0
 accepted_count = 0
-advisory_count = 15
-observation_count = 9
+advisory_count = 13
+observation_count = 7
 
 [[stages]]
 stage = "homily-review"
@@ -107,24 +107,15 @@ observation_count = 3
 
 [[stages]]
 stage = "web-review"
-iteration = 0
-disposition = "CHANGES_REQUIRED"
+iteration = 1
+disposition = "PASS"
 run_id = "77c1ca91ef2d5e93"
 workflow = "proper-study"
 workflow_version = 20
-standing = 1
+standing = 0
 accepted_count = 0
-advisory_count = 3
-observation_count = 3
-
-[[findings]]
-stage = "web-review"
-id = "WEB-001"
-severity = "blocking"
-location = "sections/20-lift-up-your-heads.tex:85-88 and 90-94 (web Markdown lines 275, 277); sections/30-coming-through-the-church.tex:237-240 (line 387); sections/40-hour-to-rise.tex:129-135 (line 441); sections/50-mercy-shown-salvation-given.tex:168-172 (line 517)"
-problem = "Register, guidance/editorial.md 'Say what the texts say, plainly' (texts credited with the study's own inferences). In the paragraphs that bring the Mass's other texts into each interpretation, the study's own connection is stated as a fact about a proper text, unmarked, in every one of the four interpretations, while neighbouring connections in the same paragraphs are marked ('If ...', 'would be'). Instances: (1) 20:85-88 'In this Mass Paul's night and Gregory's road ask the same of the hearer, to hurry as the end draws near' - the study's synthesis of Paul, Chrysostom's runners and Gregory's road is credited to 'Paul's night' and 'this Mass'; (2) 20:92-94 'Sung just before the Gospel, it [the Alleluia] is the prayer of the people Gregory describes' - Gregory says nothing of the verse; the identification is the study's; (3) 30:237-240 'Over the gifts the Secret asks for the cleansing that would take that obstacle away' - the Secret asks to be cleansed and made purer; that the cleansing removes Ambrose's eclipse of the moon is the study's link, put into the Secret's request; (4) 40:131-132 'the Offertory's lifted soul is the opposite of that weight' - the contrast with Augustine's sarcina saeculi is the study's, stated as what the Offertory is; (5) 50:170-172 'in this Mass the one waited for is the Christ whom the Alleluia and the Collect have asked for' - the psalm's 'qui te exspectant' addresses God; identifying the one waited for with Christ is the study's inference, stated as the Mass's meaning. The pattern recurs through the document and is not an isolated instance."
-required_result = "Each listed sentence states its connection in the study's own voice as an inference where it is drawn, in varied ordinary words (not one repeated formula such as 'Taken this way'), keeping every attribution and qualification and moving nothing into a Father's mouth; what a source does say (Aquinas on 'in te confido', Bellarmine on waiting, Ambrose on the moon, Gregory on those who sought redemption) stays attributed to him. Plain rewrites: (1) 'Paul tells the Romans it is the hour to rise, Chrysostom urges them to run the harder near the goal, and Gregory says we ought to hasten; Gregory adds that only the friend of the world grieves to see the end come.' (2) 'Gregory's hearers are those who have sought redemption and are then told that it is near; sung just before the Gospel, the Alleluia's request can be heard as theirs.' (3) 'Over the gifts the Secret asks that the holy gifts, cleansing us by their power, bring us purer ad suum princípium, to their source; set beside Ambrose's moon, that cleansing would clear what keeps the Church from the sun's light.' (4) 'Augustine felt the world's baggage press on him like sleep. Against that weight the Offertory, sung after Paul's command, lifts the soul; its next words, Deus meus, in te confído, are the trust Aquinas finds in this verse, placed in God through Christ and not in ourselves.' (5) 'Bellarmine explains such waiting as expectation in the certain hope of help. Since the Alleluia and the Collect have just asked for Christ, the one waited for in this Mass can be understood as he.'"
-repair_target = "study"
+advisory_count = 1
+observation_count = 1
 
 [[advisories]]
 stage = "homily-review"
@@ -224,27 +215,11 @@ required_result = "End the sentence on Gregory's words: 'Of the joys of the heav
 
 [[advisories]]
 stage = "web-review"
-id = "WEB-002"
-severity = "advisory"
-location = "sections/00-opening.tex:63-65 (web Markdown line 26)"
-problem = "'The Scriptural Date and Location appendix (\\ref{sec:date-location})' renders on the web as 'appendix ([9](#sec:date-location))': a link labelled '9' although no heading on the page, in its Contents box or in the reader's section list carries a number. In print the same sentence reads 'appendix ()', because src/common/propers-format.tex sets secnumdepth 0 and the label has no number (checked in a PDF built from these sources into scratch with tools/print-document). The link target is right; the label is meaningless in both outputs and the two outputs disagree."
-required_result = "The sentence names the appendix without a section number in both outputs, for example 'The \\hyperref[sec:date-location]{Scriptural Date and Location} appendix gives the setting and date ...' (a named link in the PDF and on the web) or the plain name without the parenthesis; neither output shows a bare number or empty parentheses."
-
-[[advisories]]
-stage = "web-review"
 id = "WEB-003"
 severity = "advisory"
-location = "sections/05-appointed-texts.tex:94-96 (web Markdown line 91) against sections/20-lift-up-your-heads.tex:81-83 (line 275) and sections/30-coming-through-the-church.tex:217 (line 383); sections/40-hour-to-rise.tex:133 (line 441)"
-problem = "The same text is printed in two forms. The Epistle's English witness, labelled Douay-Rheims (Challoner), reads 'The night is passed And the day is at hand. Let us, therefore cast off the works of darkness and put on the armour of light': this reproduces the repository's Project Gutenberg file (src/sources/bibles/douay-rheims/chapters/Rom/13.json, v. 12), whose capital 'And' and misplaced comma are that file's transcription faults, not Challoner's; the repository's 1899 Challoner-text edition (src/sources/bibles/douay-rheims-american-1899/chapters/Rom/13.json, v. 12) reads 'The night is passed, and the day is at hand. Let us therefore cast off the works of darkness, and put on the armour of light', and the study's own body quotes the verse twice in that corrected form. Likewise 40:133 quotes the Offertory's 'next words' as 'Deus meus, in te confido', where the Offertory printed in the study (05-appointed-texts.tex:195) and the Missal read 'confído'."
-required_result = "The appointed English of Rom 13:12 and the body's quotations of it agree and read as Challoner's verse reads (the witness corrected to Challoner's pointing with the correction recorded in propers/verified.md, or the verse taken from a witness that prints it correctly), and the Offertory's words at 40:133 are quoted in the Missal's form, 'in te confído'."
-
-[[advisories]]
-stage = "web-review"
-id = "WEB-004"
-severity = "advisory"
-location = "sections/20-lift-up-your-heads.tex:145-146 (web Markdown line 289)"
-problem = "Bede's sentence reads 'Coelum igitur et terra et transibit et erit' in the bound artifact (src/sources/works/bede/in-lucae-evangelium-expositio/editions/latin-migne-corpus-corporum-web-2026-07-25/artifacts/luke-21-checked-cd9a5956/text.txt). The study quotes 'coelum et terra et transibit et erit', dropping 'igitur' inside the quotation without the ellipsis it uses for other omissions (e.g. 'Nolite ergo ... diligere')."
-required_result = "The quotation reads 'coelum igitur et terra et transibit et erit', or marks the omission with an ellipsis."
+location = "sections/05-appointed-texts.tex:94-96 (web Markdown line 91) against sections/20-lift-up-your-heads.tex:81-83 (line 275) and sections/30-coming-through-the-church.tex:217 (line 383)"
+problem = "The Offertory half of this standing advisory is repaired (40:133 now reads 'in te confído'). The Rom 13:12 half stands. The appointed-text witness, labelled Douay–Rheims (Challoner), still prints 'The night is passed And the day is at hand. Let us, therefore cast off the works of darkness'. That reproduces the transcription faults of src/sources/bibles/douay-rheims/chapters/Rom/13.json v. 12. The body quotes the same verse twice as 'The night is passed, and the day is at hand. Let us therefore cast off the works of darkness', which is how src/sources/bibles/douay-rheims-american-1899/chapters/Rom/13.json v. 12 reads. So the page prints one verse in two forms, and the labelled witness carries a capital 'And' and a misplaced comma that are not Challoner's."
+required_result = "The appointed English of Rom 13:12 reads as Challoner's verse reads and agrees with the body's two quotations. Either correct the witness to Challoner's pointing and record the correction in propers/verified.md, or take the verse from a registered witness that prints it correctly."
 
 [[observations]]
 stage = "homily-review"
@@ -278,15 +253,5 @@ note = "No print edition was requested, so physical pagination was not judged. T
 
 [[observations]]
 stage = "web-review"
-location = "guidance/liturgy/propers-three-documents.md:433; src/common/propers-format.tex:12"
-note = "The profile licenses '(\\ref{sec:date-location})', but with secnumdepth 0 that reference prints '()' in the proper-format PDF and a pandoc section ordinal on the web; the same construct stands in src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/00-opening.tex:23, 68-twenty-fourth-and-last-after-pentecost/sections/00-opening.tex:43 and two postconciliar GPT openings, so this is a missing criterion for the profile or the converter (a reference to an unnumbered section should render by name), not a fact about this leaf alone."
-
-[[observations]]
-stage = "web-review"
-location = "generated/scriptural-date-location.tex, evidence list (web Markdown lines 583-615)"
-note = "The generated evidence list, which no stage writes or reviews as prose, prints reader-facing production wording ('No date: the chronology corpus has not yet dated this (research pending)'), refers the Psalm 84 elements' historical setting to 'As under Introit: Ps. 24 ...', a different psalm, and sets corpus citation titles with two closing quotes (’David, King,’) in both print and web; these belong to the scriptural-date-location projection and the chronology corpus."
-
-[[observations]]
-stage = "web-review"
-location = "src/sources/works/bede/in-lucae-evangelium-expositio/editions/latin-migne-corpus-corporum-web-2026-07-25/passages/luke-21-33.toml:11-12"
-note = "The shared passage record's text and transcription segment drop 'Coelum igitur' ('... haec ipsa renovantur.  et terra et transibit et erit') against its artifact's 'Coelum igitur et terra et transibit et erit'; this leaf binds the artifact, not the record."
+location = "generated/scriptural-date-location.tex:39 and :44 (web Markdown lines 607 and 613), Evidence for each date, Alleluia and Communion"
+note = "For the two Psalm 84 chants the generated evidence appendix gives the Historical setting as 'As under Introit: Ps. 24:1–3 (Vg.; Heb. 25), Ps. 24:4 (Vg.; Heb. 25)', because both answers are the same 'no date … (research pending)'. A reader can take this to mean Psalm 84 shares Psalm 24's setting. The wording comes from the shared generator, which no stage of this run writes, reviews or repairs."
