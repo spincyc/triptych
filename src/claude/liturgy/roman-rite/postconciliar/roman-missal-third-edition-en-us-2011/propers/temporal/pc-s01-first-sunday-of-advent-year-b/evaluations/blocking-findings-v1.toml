@@ -49,13 +49,13 @@ provider = "claude"
 run_id = "99f04ef5cf9b711b"
 workflow = "proper-study"
 workflow_version = 20
-stage = "homily-review"
-iteration = 1
+stage = "web-review"
+iteration = 0
 disposition = "PASS"
 standing = 0
 accepted_count = 0
-advisory_count = 12
-observation_count = 5
+advisory_count = 13
+observation_count = 8
 
 [[stages]]
 stage = "homily-review"
@@ -104,6 +104,18 @@ standing = 0
 accepted_count = 0
 advisory_count = 1
 observation_count = 2
+
+[[stages]]
+stage = "web-review"
+iteration = 0
+disposition = "PASS"
+run_id = "99f04ef5cf9b711b"
+workflow = "proper-study"
+workflow_version = 20
+standing = 0
+accepted_count = 0
+advisory_count = 1
+observation_count = 3
 
 [[advisories]]
 stage = "homily-review"
@@ -201,6 +213,14 @@ location = "sections/concise/10-commentary.tex lines 354-355 ('The solemn blessi
 problem = "The postconciliar profile allows the Missal's prayers and blessing only a Latin incipit and a description of what they ask. It forbids a rendering of the project's own and any paraphrase of the ICEL text close enough to reconstruct it. The approved English of the Advent blessing's second invocation reads 'may he make you firm in faith, joyful in hope and active in charity'. This wording was checked in a secondary web transcription of the 2010 ICEL Missal (liturgies.net, Advent Mass page), not in the printed altar book. The concise's clause changes only 'joyful' to 'glad', so it reconstructs the ICEL clause in an output whose PDF and web forms the ICEL permission does not clearly cover. The reader is not misled, and the extent is one clause. The concise took the wording from the accepted expansive study (see observation)."
 required_result = "Describe the invocation without the approved English's wording. For example: 'The solemn blessing, where it is used, asks that in this present life the faithful be given faith, hope and charity.' Alternatively, delete the sentence: the blessing's two comings are already given in the themes and the commentary. Make no other change to the paragraph."
 
+[[advisories]]
+stage = "web-review"
+id = "WEB-001"
+severity = "advisory"
+location = "build/web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b.md lines 158, 224 and 410; sources sections/05-appointed-texts.tex line 296, sections/10-texts-in-setting.tex line 222, sections/40-clay-and-faithful-potter.tex line 202"
+problem = "The study describes the second invocation of the Advent solemn blessing as 'firm in faith, glad in hope and active in charity' three times: in the Solemn Blessing locus, in 'The solemn blessing' under Each Text in Its Setting, and in the third interpretation's moral sense. The approved English of that invocation reads 'firm in faith, joyful in hope and active in charity'. SYN-006 found that wording in a secondary transcription of the 2010 ICEL Missal, and it agrees with my own knowledge of the text. The study's clause changes one word, so a reader can reconstruct the protected clause from it. The postconciliar profile allows a prayer or blessing only its Latin incipit and a description of what it asks. It forbids a paraphrase of the ICEL text close enough to reconstruct it. At line 158 the clause is followed by 'No English is printed', and the Scope appendix says the descriptions 'are not translations'. SYN-006 judged the same clause advisory in the concise study, and the synthesis review observed that the expansive study carries it three times. This is the same defect in the canonical reader. The extent is one clause. A reader is not misled about what the blessing asks. The map table already describes the invocation acceptably ('strengthen them in faith, hope and charity')."
+required_result = "Describe the invocation in words that are neither the ICEL clause nor a fresh translation of the Latin, as the map table does. For example: at 05 line 296, 'the second, that he strengthen them in faith, hope and charity in this present life;'. At 10 line 222, 'that they be strengthened in faith, hope and charity;'. At 40 line 202, 'and the solemn blessing asks him to strengthen them in faith, hope and charity.' Change nothing else in those sentences."
+
 [[observations]]
 stage = "research-review"
 location = "research/chronology-table.tex and research/chronology-annotations.tex, row row-440575f29350bca3 (First Reading); scripts/_proper_chronology_inputs.py lines 293 and 298"
@@ -225,3 +245,18 @@ note = "Lookup outcome beyond the successful Mark 13:33-37 row. For 1 Cor 1:3-9 
 stage = "synthesis-review"
 location = "sections/05-appointed-texts.tex line 296, sections/10-texts-in-setting.tex line 222, sections/40-clay-and-faithful-potter.tex line 202 (expansive study, accepted)"
 note = "The expansive study carries the same near-ICEL clause ('firm in faith, glad in hope and active in charity') three times. In 05-appointed-texts it is followed by 'No English is printed.' It lies outside this deliverable and belongs to the study owner. The shared owner's record (shared/formularies/pc-s01-first-sunday-of-advent/propers/verified.md, solemn-blessing row) describes the invocation as 'steadfast in faith, joyful in hope and active in charity', which is also close to the ICEL text."
+
+[[observations]]
+stage = "web-review"
+location = "build/web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b.md lines 19-23 (sections/00-opening.tex lines 14-34)"
+note = "STU-028, a standing advisory, reads worse in the web reader. The Douay-Rheims notice is small type in print but a full body paragraph here, so 'those words' at line 23 stands two full paragraphs after its referent, Descendisti, and directly after the notice's own words."
+
+[[observations]]
+stage = "web-review"
+location = "build/web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b.md lines 533 and 549 (sections/90-apparatus.tex lines 10 and 129-134)"
+note = "The Scope appendix points to instance/manifest.md, research/context.md, propers/verified.md, research/scope.md and research/interpretations.md, as the profile asks, but on the site they are unlinked code spans that a reader cannot open. The same form is in about 50 Claude proper leaves. It is a converter or site capability (linking leaf-relative record paths), not a defect of this leaf."
+
+[[observations]]
+stage = "web-review"
+location = "build/web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b.md lines 465 and 497 (generated/scriptural-date-location.tex evidence items)"
+note = "The generated evidence notes print article titles as ’David, King,’ and ’Chronology of the Life of Jesus Christ,’ with a right quote at each end. The corpus's straight apostrophes render that way, and TeX sets them the same in print. This belongs to the chronology corpus or generator, not to this leaf or the conversion."
