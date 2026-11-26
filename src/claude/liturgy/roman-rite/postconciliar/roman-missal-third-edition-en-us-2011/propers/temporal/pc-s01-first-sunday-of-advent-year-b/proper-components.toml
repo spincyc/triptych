@@ -1,0 +1,241 @@
+schema = 2
+format_contract = "propers-format-v1"
+authority_contract = "authority-standing-v1"
+appointed_text_completeness = "rights-limited"
+presentation_contract = "interpretive-pagination-v1"
+chronology_presentation = "orientation-v3"
+# The twelve keys of instance/manifest.md and propers/verified.md, in
+# liturgical order. The Preface is appointed by the formulary's rubric; the
+# solemn blessing is optional. The Alleluia verse is keyed `acclamation`
+# (research/context.md, Appointed inventory).
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "prayer-over-offerings", "preface", "communion-antiphon", "prayer-after-communion", "solemn-blessing"]
+
+# Physical-page roles of the concise companion's fixed opening
+# (guidance/liturgy/propers-three-documents.md), to be written by the concise
+# author. The chronology role is the generated page; the study's reviewed home
+# for the same chronology is its terminal Scriptural Date and Location
+# appendix (component scriptural-date-location).
+[presentation]
+inventory = "concise-inventory"
+overview = "concise-overview"
+chronology = "concise-date-location"
+themes = "concise-themes"
+commentary = "concise-commentary"
+
+# --- Research study (main.tex) ------------------------------------------------
+
+[[components]]
+key = "opening"
+kind = "front-matter"
+path = "sections/00-opening.tex"
+modes = ["research"]
+depends_on = []
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "prayer-over-offerings", "preface", "communion-antiphon", "prayer-after-communion", "solemn-blessing"]
+references = ["format.tex", "propers/verified.md", "research/context.md", "research/scope.md"]
+
+[[components]]
+key = "appointed-texts"
+kind = "appointed-text"
+path = "sections/05-appointed-texts.tex"
+modes = ["research"]
+depends_on = []
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "prayer-over-offerings", "preface", "communion-antiphon", "prayer-after-communion", "solemn-blessing"]
+references = ["format.tex", "propers/verified.md", "research/context.md"]
+
+[[components]]
+key = "each-element"
+kind = "proper-treatment"
+path = "sections/10-texts-in-setting.tex"
+modes = ["research"]
+depends_on = ["appointed-texts"]
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "prayer-over-offerings", "preface", "communion-antiphon", "prayer-after-communion", "solemn-blessing"]
+references = ["format.tex", "propers/verified.md", "research/context.md", "research/scope.md"]
+
+[[components]]
+key = "rend-the-heavens"
+kind = "interpretive-lane"
+path = "sections/20-rend-the-heavens.tex"
+modes = ["research"]
+depends_on = ["each-element"]
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "prayer-over-offerings", "preface", "communion-antiphon", "prayer-after-communion", "solemn-blessing"]
+references = ["format.tex", "research/interpretations.md", "research/scope.md"]
+
+[[components]]
+key = "watch-at-the-door"
+kind = "interpretive-lane"
+path = "sections/30-watch-at-the-door.tex"
+modes = ["research"]
+depends_on = ["each-element"]
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "prayer-over-offerings", "preface", "communion-antiphon", "prayer-after-communion", "solemn-blessing"]
+references = ["format.tex", "research/interpretations.md", "research/scope.md"]
+
+[[components]]
+key = "clay-and-faithful-potter"
+kind = "interpretive-lane"
+path = "sections/40-clay-and-faithful-potter.tex"
+modes = ["research"]
+depends_on = ["each-element"]
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "prayer-over-offerings", "preface", "communion-antiphon", "prayer-after-communion", "solemn-blessing"]
+references = ["format.tex", "research/interpretations.md", "research/scope.md"]
+
+[[components]]
+key = "comparison"
+kind = "front-matter"
+path = "sections/50-comparison.tex"
+modes = ["research"]
+depends_on = ["rend-the-heavens", "watch-at-the-door", "clay-and-faithful-potter"]
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "prayer-over-offerings", "preface", "communion-antiphon", "prayer-after-communion", "solemn-blessing"]
+references = ["format.tex", "research/interpretations.md"]
+
+# The study's terminal historical appendix, generated from the chronology
+# record. The orations, Preface and blessing carry no biblical date and no key
+# here.
+[[components]]
+key = "scriptural-date-location"
+kind = "front-matter"
+path = "generated/scriptural-date-location.tex"
+modes = ["research"]
+depends_on = []
+element_keys = ["entrance-antiphon", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "communion-antiphon"]
+references = ["format.tex", "research/chronology-annotations.tex", "research/chronology-table.tex", "research/chronology.toml", "research/scope.md"]
+
+[[components]]
+key = "liturgical-resolution"
+kind = "terminal-apparatus"
+path = "sections/85-liturgical-resolution.tex"
+modes = ["research"]
+depends_on = []
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "prayer-over-offerings", "preface", "communion-antiphon", "prayer-after-communion", "solemn-blessing"]
+references = ["format.tex", "instance/manifest.md", "research/context.md", "propers/verified.md"]
+
+[[components]]
+key = "study-apparatus"
+kind = "terminal-apparatus"
+path = "sections/90-apparatus.tex"
+modes = ["research"]
+depends_on = []
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "prayer-over-offerings", "preface", "communion-antiphon", "prayer-after-communion", "solemn-blessing"]
+references = ["format.tex", "propers/verified.md", "research/context.md", "research/scope.md", "research/interpretations.md", "research/source-bindings.toml"]
+
+# --- Concise study (synthesis.tex), written at the derive-synthesis stage ------
+
+[[components]]
+key = "concise-inventory"
+kind = "front-matter"
+path = "sections/concise/01-inventory.tex"
+modes = ["synthesis"]
+depends_on = []
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "prayer-over-offerings", "preface", "communion-antiphon", "prayer-after-communion", "solemn-blessing"]
+references = ["format.tex", "propers/verified.md"]
+
+[[components]]
+key = "concise-overview"
+kind = "front-matter"
+path = "sections/concise/02-overview.tex"
+modes = ["synthesis"]
+depends_on = ["concise-inventory"]
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "prayer-over-offerings", "preface", "communion-antiphon", "prayer-after-communion", "solemn-blessing"]
+references = ["format.tex", "research/interpretations.md"]
+
+[[components]]
+key = "concise-date-location"
+kind = "front-matter"
+path = "generated/scriptural-date-location-page.tex"
+modes = ["synthesis"]
+depends_on = []
+element_keys = ["entrance-antiphon", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "communion-antiphon"]
+references = ["format.tex", "research/chronology-annotations.tex", "research/chronology-table.tex", "research/chronology.toml"]
+
+[[components]]
+key = "concise-themes"
+kind = "front-matter"
+path = "sections/concise/04-themes.tex"
+modes = ["synthesis"]
+depends_on = ["concise-overview"]
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "prayer-over-offerings", "preface", "communion-antiphon", "prayer-after-communion", "solemn-blessing"]
+references = ["format.tex", "research/interpretations.md"]
+
+[[components]]
+key = "concise-commentary"
+kind = "integrated-commentary"
+path = "sections/concise/10-commentary.tex"
+modes = ["synthesis"]
+depends_on = ["concise-themes"]
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "prayer-over-offerings", "preface", "communion-antiphon", "prayer-after-communion", "solemn-blessing"]
+references = ["format.tex", "research/interpretations.md", "research/scope.md"]
+
+[[components]]
+key = "concise-apparatus"
+kind = "terminal-apparatus"
+path = "sections/concise/90-apparatus.tex"
+modes = ["synthesis"]
+depends_on = []
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "prayer-over-offerings", "preface", "communion-antiphon", "prayer-after-communion", "solemn-blessing"]
+references = ["format.tex", "propers/verified.md", "research/scope.md", "research/interpretations.md"]
+
+# --- Homily (homily.tex), written at the derive-homily stage -------------------
+
+[[components]]
+key = "homily-body"
+kind = "homily"
+path = "sections/homily/10-homily.tex"
+modes = ["homily"]
+depends_on = []
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "prayer-over-offerings", "preface", "communion-antiphon", "prayer-after-communion", "solemn-blessing"]
+references = ["format.tex", "propers/verified.md", "research/interpretations.md"]
+
+[[components]]
+key = "homily-note"
+kind = "terminal-apparatus"
+path = "sections/homily/90-note.tex"
+modes = ["homily"]
+depends_on = ["homily-body"]
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "prayer-over-offerings", "preface", "communion-antiphon", "prayer-after-communion", "solemn-blessing"]
+references = ["format.tex", "propers/verified.md", "research/interpretations.md", "research/scope.md"]
+
+# --- Interpretations of the whole Mass ----------------------------------------
+#
+# Lane keys are those of research/interpretations.md. `authors` names every
+# Father, Doctor or saint whose own exegesis the lane's section develops, as
+# src/sources/inventories/author-standing-v1.toml names them; `carrying_authors`
+# names those whose checked reasoning carries the reading in that record.
+# Theophylact, an ecclesiastical writer read only through the Catena aurea, is
+# not cited.
+#
+# rend-the-heavens: Bellarmine supports the psalm, the acclamation and the
+# Communion antiphon; Chrysostom supports on 1 Corinthians 1:7; Gregory and
+# Bede support on the man gone abroad. They do not carry the reading.
+#
+# watch-at-the-door: Aquinas (1 Corinthians 1:8) and Bellarmine (Psalm 24)
+# support the element contributions and do not carry the reading. Bede carries
+# it for Mark 13:34-37 only; his comments on 13:32-33 are Jerome's.
+#
+# clay-and-faithful-potter: Bellarmine (Psalm 79) and Bede (Mark 13:34) support
+# and do not carry the reading.
+
+[[lanes]]
+key = "rend-the-heavens"
+authors = ["Jerome", "Thomas Aquinas", "Augustine of Hippo", "Cyril of Jerusalem", "Robert Bellarmine", "John Chrysostom", "Gregory the Great", "Bede"]
+carrying_authors = ["Jerome", "Augustine of Hippo", "Cyril of Jerusalem", "Thomas Aquinas"]
+sources = ["research/interpretations.md", "research/scope.md", "research/source-bindings.toml"]
+senses = ["literal", "allegorical", "moral", "anagogical"]
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "prayer-over-offerings", "preface", "communion-antiphon", "prayer-after-communion", "solemn-blessing"]
+component_keys = ["rend-the-heavens"]
+
+[[lanes]]
+key = "watch-at-the-door"
+authors = ["Jerome", "John Chrysostom", "Augustine of Hippo", "Gregory the Great", "Bede", "Thomas Aquinas", "Robert Bellarmine"]
+carrying_authors = ["Jerome", "Augustine of Hippo", "Gregory the Great", "John Chrysostom", "Bede"]
+sources = ["research/interpretations.md", "research/scope.md", "research/source-bindings.toml"]
+senses = ["literal", "allegorical", "moral", "anagogical"]
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "prayer-over-offerings", "preface", "communion-antiphon", "prayer-after-communion", "solemn-blessing"]
+component_keys = ["watch-at-the-door"]
+
+[[lanes]]
+key = "clay-and-faithful-potter"
+authors = ["Jerome", "Thomas Aquinas", "Augustine of Hippo", "John Chrysostom", "Robert Bellarmine", "Gregory the Great", "Bede"]
+carrying_authors = ["Jerome", "Thomas Aquinas", "Augustine of Hippo", "John Chrysostom"]
+sources = ["research/interpretations.md", "research/scope.md", "research/source-bindings.toml"]
+senses = ["literal", "allegorical", "moral", "anagogical"]
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "prayer-over-offerings", "preface", "communion-antiphon", "prayer-after-communion", "solemn-blessing"]
+component_keys = ["clay-and-faithful-potter"]

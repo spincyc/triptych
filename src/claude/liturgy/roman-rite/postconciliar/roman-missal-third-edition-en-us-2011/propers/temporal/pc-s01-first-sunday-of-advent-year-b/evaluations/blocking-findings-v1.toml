@@ -1,0 +1,227 @@
+# Blocking findings standing against this publication, the
+# verdicts its evaluation lanes reached, and the observations
+# they recorded outside their own criteria. Written by tpt after
+# each evaluation of this leaf.
+#
+# One record, several stages. Every entry names the stage that
+# raised it, [[stages]] says what each stage last said, and an
+# evaluation replaces its own stage's entries and leaves every
+# other stage's alone -- so what the content evaluation found
+# still stands here after the synthesis evaluation has spoken. A
+# stage that looked and found nothing leaves an empty list
+# rather than no entry: "evaluated, nothing stands" and
+# "nobody has looked" are different facts, per stage.
+#
+# The keys directly below these comments describe the write that
+# last touched this file, and count every stage's entries
+# together. They are its summary line. What a given stage found
+# is in that stage's [[stages]] entry and in the entries naming
+# it -- reading the top-level stage as the record's one stage is
+# the mistake this schema exists to stop.
+#
+# It exists because a run's own results live under build/, which
+# is ignored, which `make clean` and `wt tidy` delete without
+# asking, and which nothing preserves between productions.
+#
+# Nothing reads this back into a run. Carrying findings from one
+# production into the next wants doing where the run's identity
+# can cover it -- a committed record, or this file's hash in the
+# run id and the acceptance audit -- and until then this is a
+# record for people.
+#
+# Escalations -- defects in artifacts no stage of the run may
+# write: guidance, the source library, the tools, the workflow --
+# are written here too, from the run's whole ledger, so that the
+# decision they ask of a maintainer outlives the run directory.
+#
+# Accepted findings are true defects a lane judged not worth a
+# repair round, with the reason it judged so. Advisories are
+# defects that did not merit blocking. Both are here because a
+# verdict that dies with the run is met again by the next cold
+# read as though nobody had ever weighed it, and weighed again --
+# which is how a document in good shape spends a whole iteration
+# budget. A later evaluation reads these before it raises.
+
+standing_findings_schema = 4
+record_type = "standing-blocking-findings"
+document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"
+provider = "claude"
+run_id = "99f04ef5cf9b711b"
+workflow = "proper-study"
+workflow_version = 20
+stage = "homily-review"
+iteration = 1
+disposition = "PASS"
+standing = 0
+accepted_count = 0
+advisory_count = 12
+observation_count = 5
+
+[[stages]]
+stage = "homily-review"
+iteration = 1
+disposition = "PASS"
+run_id = "99f04ef5cf9b711b"
+workflow = "proper-study"
+workflow_version = 20
+standing = 0
+accepted_count = 0
+advisory_count = 2
+observation_count = 0
+
+[[stages]]
+stage = "research-review"
+iteration = 2
+disposition = "PASS"
+run_id = "99f04ef5cf9b711b"
+workflow = "proper-study"
+workflow_version = 20
+standing = 0
+accepted_count = 0
+advisory_count = 1
+observation_count = 1
+
+[[stages]]
+stage = "study-review"
+iteration = 2
+disposition = "PASS"
+run_id = "99f04ef5cf9b711b"
+workflow = "proper-study"
+workflow_version = 20
+standing = 0
+accepted_count = 0
+advisory_count = 8
+observation_count = 2
+
+[[stages]]
+stage = "synthesis-review"
+iteration = 1
+disposition = "PASS"
+run_id = "99f04ef5cf9b711b"
+workflow = "proper-study"
+workflow_version = 20
+standing = 0
+accepted_count = 0
+advisory_count = 1
+observation_count = 2
+
+[[advisories]]
+stage = "homily-review"
+id = "HOM-007"
+severity = "advisory"
+location = "sections/homily/10-homily.tex lines 84-87 ('The refrain ... asks God to turn them and show them his face ... Saint Augustine, preaching on that refrain, explained it in one sentence: ...'); sections/homily/90-note.tex lines 63-64 ('Augustine's one sentence on the refrain')"
+problem = "The speech says Augustine 'explained' the refrain 'in one sentence'. The antecedent of 'it' is the whole refrain, which the speech has just given as asking God to turn his people and to show his face. Augustine's comment on the refrain (En. in Ps. 79.3, the tracked NPNF English) begins with that sentence on 'O God, convert us' ('For averse we have been from Thee, and except Thou convert us, we shall not be converted'). It then goes on at length to 'illumine Thy face': the face that a cloud of flesh veiled and that was acknowledged after the resurrection and ascension. The expansive study states this correctly ('Augustine's comment on it begins with one sentence', sections/40-clay-and-faithful-potter.tex line 102). The homily turns 'begins with' into a claim about the whole of Augustine's comment, and the note repeats it. The sentence reported is accurate, and the listener is not misled about what it says. 'In one sentence' is the only inaccuracy, and it adds an emphasis of brevity that the source does not support. Isolated instance."
+required_result = "Do not claim that one sentence is Augustine's whole explanation. For example: 'Saint Augustine, preaching on that refrain, says of its first words: we have turned away from God, and unless he turns us, we will not be turned.' Or: 'Saint Augustine, preaching on that refrain, begins with one sentence: ...'. In the note, say 'Augustine's sentence on the refrain's \"convert us\"' or 'Augustine on the refrain's first petition' instead of 'Augustine's one sentence on the refrain'."
+
+[[advisories]]
+stage = "homily-review"
+id = "HOM-008"
+severity = "advisory"
+location = "sections/homily/90-note.tex lines 57-58 ('The speech states this as what the texts say and does not stage it as a turn.')"
+problem = "The note is reader-facing apparatus. Its purpose is the audience, the length, the loci, the routes of quotation and the homily's own links. This sentence certifies that the speech meets the three-document profile ('the speech states that change as what the text says, not as a staged turn'). It tells the reader nothing about a source or about delivery. editorial.md, 'State the finding, not the process', says that naming the discipline is itself the defect: compliance should be shown, not narrated. The profile places this judgment in the production audit, where a reviewer checks it, and research/production-review.md already records the change and the detail that makes it possible. Isolated instance. The rest of the paragraph, which gives the difficulty and the textual detail, is useful to a reader who would preach from this note."
+required_result = "Delete the sentence 'The speech states this as what the texts say and does not stage it as a turn.' and leave the paragraph's account of the difficulty and the verses unchanged."
+
+[[advisories]]
+stage = "research-review"
+id = "RES-NEG-002"
+severity = "advisory"
+location = "research/scope.md section 3.2, the row 'Theodoret, Theophylact, Peter Lombard, Rabanus, Origen fragments, Denis, Lyra, Hugh' (line 152); section 3.1, the row 'Albert the Great, Hugh of Saint-Cher, Nicholas of Lyra, Denis the Carthusian' (line 124)."
+problem = "The negative results are right (not opened), but the reasons given for them are not. The 1 Corinthians row says that Theodoret and Theophylact 'are held only inside containers whose extent does not include 1 Corinthians at a read locus'. `tools/tpt commentary-work-index discover --passage \"1 Corinthians 1:3-9\"` reports two holdings. Theophylact's In omnes D. Pauli epistolas is inside the remote Migne PG 124 Latin-column OCR (`artifact.theophylact-of-ohrid.enarratio-in-evangelium-ioannis.migne-pg-124-latin-column-1864.ia-djvu-ocr-9a1fc730`), with the locator '1 Corinthians 1:4 at line 45001'. Theodoret's Interpretatio in xiv epistulas is held whole in the remote PG 82 OCR and facsimile (`...1864-migne-pg82-paris.ia-djvu-ocr-db2067fd`, `...wikimedia-pdf-7d6dd76e`). Both are held at the passage, and neither was opened. Likewise, the Mark row says that Hugh of Saint-Cher is 'not held at this locus or not held at all'. Discover reports his Postillae held in three restricted artifacts, as section 4 correctly says. All three are ecclesiastical writers who could only support a reading, so no reading changes. But a later sweep that trusts these rows would treat available witnesses as unavailable. This is the class of defect RES-NEG-001 cleared for Lapide on Mark."
+required_result = "Restate the 1 Corinthians row. Theophylact (PG 124 Latin column, remote OCR, 1 Cor 1:4 at line 45001) and Theodoret (PG 82, remote OCR and facsimile, the whole commentary) are held at the passage and were not opened; both are ecclesiastical writers and could only support. Restate Hugh in the Mark row as held only in restricted whole-Bible artifacts and not read, as section 4 already says."
+
+[[advisories]]
+stage = "study-review"
+id = "STU-023"
+severity = "advisory"
+location = "sections/20-rend-the-heavens.tex lines 171-173; sections/30-watch-at-the-door.tex lines 218-221"
+problem = "Two closing sentences set a text or a Father beside the argument without saying why it bears on it. editorial.md ('Plain is not flat') asks for the reason one text or Father bears on another, not quotations left side by side. (1) 20:171-173 closes a paragraph on Paul's waiting, Chrysostom's 'Revelation' and Aquinas's 'blessed now in hope' with the Prayer over the Offerings: 'what devotion does in this passing time become the reward of eternal redemption'. Nothing ties it to the waiting. (2) 30:218-221, in the moral sense of the watch: 'Augustine, preaching on the verse the Communion Antiphon sings ... asks that God give increase to the seed he has sown in his hearers'. That is the preacher's own prayer. How it is a moral sense of keeping watch is not stated. Not counted: the clauses STU-016(a)-(c) and STU-017(c) prescribed verbatim (20:170-171 Collect; 30:119-120 Prayer over the Offerings; 30:217 Alleluia). Each is a clause the profile allows for a lightly touched text, and its neighbour supplies the connection. Two instances in a 13,500-word study are not a recurring pattern."
+required_result = "Give each sentence its reason in plain words, or reduce it to a clause where the reason is obvious. For example: (1) 'The Prayer over the Offerings is a prayer of that waiting: it asks that what devotion does in this passing time become the reward of eternal redemption.' (2) Either 'The Communion Antiphon sings that \"our earth shall yield her fruit\"; the fruit the returning master looks for is the work of servants who stayed awake.', stated as the study's own inference and without Augustine, or move Augustine's 84.15 prayer to the third interpretation, where 84.15 already makes its point."
+
+[[advisories]]
+stage = "study-review"
+id = "STU-024"
+severity = "advisory"
+location = "sections/20-rend-the-heavens.tex lines 100-102 and 184-188; sections/40-clay-and-faithful-potter.tex lines 167-170"
+problem = "editorial.md 'Say it once'. Three restatements remain. (1) 20:100-102 repeats the note at 05-appointed-texts.tex 151-155: the son of man ends v. 16 in the Latin and in the US psalm, as it ends v. 18, while a translation from the Hebrew reads 'branch'. (2) The lead (20:7-9) and the Aquinas subsection (20:56-66) already give his three readings of Descendisti and his preference for the Exodus as the literal sense. The strain at 20:184-188 then restates them: 'he keeps the Incarnation as a sense of the words and adds the judgment, and so reads the one verb of three descents: the descent that freed Israel from Egypt, the descent into the womb ..., and the descent to judge'. production-review.md says this content was moved to the strain and not repeated, but the body still holds it. (3) 40:167-170 quotes and translates Bede's 'facultatem tribuit bonis operibus serviendi' again, in the same sense as at 30-watch-at-the-door.tex 159-163. Each is isolated. STU-017's pattern of rosters, formulas and refrains is gone."
+required_result = "Say each thing once. (1) Cut 20:100-102. The psalm note in section 05 already gives the fact. (2) Reduce the strain's first paragraph to the difficulty and its answer, for example: 'Jerome and Aquinas disagree over the verb on which Jerome's answer rests. For Jerome the past tense is the answer; for Aquinas, in the sense he prefers, it is a memory of the Exodus on which the people dare to ask. He keeps the Incarnation among the senses of the word, so Jerome's answer stands, though not as the literal sense.' (3) At 40:167-170 refer to Bede's reading in a clause, for example 'Bede's gloss on the servants' authority, the Spirit's grace given for good works, says the same of the Gospel', without quoting and translating it a second time."
+
+[[advisories]]
+stage = "study-review"
+id = "STU-025"
+severity = "advisory"
+location = "sections/20-rend-the-heavens.tex line 163"
+problem = "'Paul names both comings in one sentence' credits Paul with the study's inference. In 1 Cor 1:4-7 he thanks God for grace given in Christ Jesus and speaks of the Corinthians as 'waiting for the manifestation of our Lord Jesus Christ'. He names gifts given and a revelation awaited, not a first coming. editorial.md: a text does only what texts do. Isolated instance."
+required_result = "Say what the sentence says, for example: 'In one sentence Paul thanks God for gifts already given in Christ and describes the Corinthians as \"waiting for the manifestation of our Lord Jesus Christ\" (1 Cor 1:7).'"
+
+[[advisories]]
+stage = "study-review"
+id = "STU-026"
+severity = "advisory"
+location = "sections/40-clay-and-faithful-potter.tex lines 95-96"
+problem = "'Aquinas cites Jeremiah 18, where the potter remakes a spoiled vessel in his hand.' At Super Isaiam c. 64 [85024] Aquinas quotes Jer 18:6, 'sicut lutum in manu figuli, sic nos in manu Dei', with Job 10:9. He uses them as the people's reason for asking mercy of the Father who made them. The remaking of a spoiled vessel (Jer 18:4) is not his point. The sentence also stands alone at the end of the paragraph and leaves his inference unstated. In the same place Aquinas glosses 'ne irascaris satis' as 'idest nimis, vel secundum quod merita nostra exigunt', which bears on this interpretation's thesis and is not used."
+required_result = "Report what Aquinas adduces and to what end, for example: 'Aquinas gives the people's reason for asking mercy in Jeremiah's words, \"as clay in the hand of the potter, so are we in the hand of God\", and reads \"be not very angry\" as \"not as our merits demand\" (c. 64).' Otherwise cut the sentence."
+
+[[advisories]]
+stage = "study-review"
+id = "STU-027"
+severity = "advisory"
+location = "sections/40-clay-and-faithful-potter.tex lines 43-44"
+problem = "'The hard form is the Latin's, and it is the form the Fathers explained.' The two commentators just reported are Jerome, a Father, and Aquinas, a Doctor whom the study elsewhere does not count among the Fathers. The sentence is also a closer that restates the paragraph's point. Isolated instance."
+required_result = "Name the commentators or cut the sentence, for example: 'Jerome and Aquinas were explaining the harder Latin form.'"
+
+[[advisories]]
+stage = "study-review"
+id = "STU-028"
+severity = "advisory"
+location = "sections/00-opening.tex lines 14-33"
+problem = "'The English proclaimed in the dioceses of the United States does not contain those words' (lines 32-33). Its referent, Descendisti, ends paragraph 1 (line 14). Between them stands the twelve-line small-type Douay-Rheims notice, so in print 'those words' first reads as the notice's own words."
+required_result = "Keep the referent next to its sentence. Either place the notice before paragraph 1 or after line 34 (the end of that paragraph), or name the words: 'The English proclaimed in the dioceses of the United States does not contain \"thou didst come down\": ...'"
+
+[[advisories]]
+stage = "study-review"
+id = "STU-029"
+severity = "advisory"
+location = "sections/90-apparatus.tex lines 81-88"
+problem = "The apparatus lists 'Advent's double character (Universal Norms 39) is the Preface's two comings' among 'Four relations ... stated by the liturgical books'. The shared verified.md Relationship classes table classes 'Universal Norms 39 to the Preface' as a textual observation: two texts of the Missal, each in its own words, with no rubric or norm joining them. The other three are stated relations (Praenotanda 67 and 93; GIRM 61; GIRM 62). This raises a textual observation to a relation the books state."
+required_result = "Say 'Three relations are stated by the liturgical books' and put the Universal Norms and the Preface with the study's observations, for example: 'The Universal Norms (39) and the Preface both speak of two comings, each in its own words.'"
+
+[[advisories]]
+stage = "study-review"
+id = "STU-030"
+severity = "advisory"
+location = "sections/20-rend-the-heavens.tex lines 100 and 112; sections/30-watch-at-the-door.tex line 63; sections/40-clay-and-faithful-potter.tex line 107; sections/90-apparatus.tex line 174"
+problem = "The body cites Bellarmine as 'Explanatio in Psalmos' four times. The only References entry is 'A Commentary on the Book of Psalms, trans. J. O'Sullivan', and it does not give the Latin title. The opening notice sends the reader to 'the translation named in the References', and nothing there matches the cited title."
+required_result = "Make the citation findable. Add the Latin title to the References entry ('Explanatio in Psalmos, as A Commentary on the Book of Psalms, trans. J. O'Sullivan ...') or cite the English title in the body."
+
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-006"
+severity = "advisory"
+location = "sections/concise/10-commentary.tex lines 354-355 ('The solemn blessing, where it is used, asks God to make the faithful firm in faith, glad in hope and active in charity.')"
+problem = "The postconciliar profile allows the Missal's prayers and blessing only a Latin incipit and a description of what they ask. It forbids a rendering of the project's own and any paraphrase of the ICEL text close enough to reconstruct it. The approved English of the Advent blessing's second invocation reads 'may he make you firm in faith, joyful in hope and active in charity'. This wording was checked in a secondary web transcription of the 2010 ICEL Missal (liturgies.net, Advent Mass page), not in the printed altar book. The concise's clause changes only 'joyful' to 'glad', so it reconstructs the ICEL clause in an output whose PDF and web forms the ICEL permission does not clearly cover. The reader is not misled, and the extent is one clause. The concise took the wording from the accepted expansive study (see observation)."
+required_result = "Describe the invocation without the approved English's wording. For example: 'The solemn blessing, where it is used, asks that in this present life the faithful be given faith, hope and charity.' Alternatively, delete the sentence: the blessing's two comings are already given in the themes and the commentary. Make no other change to the paragraph."
+
+[[observations]]
+stage = "research-review"
+location = "research/chronology-table.tex and research/chronology-annotations.tex, row row-440575f29350bca3 (First Reading); scripts/_proper_chronology_inputs.py lines 293 and 298"
+note = "Re-checked this round and still true. The generated Passage cell prints Isaiah in Clementine numbering, 'Is. 63:16b-17; 64:1, 3-8', with no numbering key, while page 1 and the Lectionary cite 63:16b-17, 19b; 64:2-7. The input validator requires each ref to equal its citation and admits the `hebrew` system only for Psalms, so no stage of this run can add a key. What is missing is a generator capability: a numbering key for non-psalm chapter divisions. scope section 8.3 records it."
+
+[[observations]]
+stage = "study-review"
+location = "sections/20-rend-the-heavens.tex 180, 30-watch-at-the-door.tex 186, 40-clay-and-faithful-potter.tex 174"
+note = "The heading 'Where this interpretation strains' was judged a content label for the strongest difficulty that the profile requires each interpretation to address. It is not a forbidden structural meta-label of the 'Thesis' or 'Argument map' kind."
+
+[[observations]]
+stage = "study-review"
+location = "research/production-review.md lines 413-420"
+note = "The substantive text is about 13,580 words, above the profile's 6,000-10,000 planning range, which is not a quota. STU-024's repetitions are the only padding found. The iteration-1 proof was 30 physical pages, within 20-50. No proof was made at iteration 2."
+
+[[observations]]
+stage = "synthesis-review"
+location = "generated/scriptural-date-location-page.tex (page 2) via research/chronology-table.tex; the shared projection, not this synthesis"
+note = "Lookup outcome beyond the successful Mark 13:33-37 row. For 1 Cor 1:3-9 the table gives only the composition and A.D. 56-57, with no place for the writer or the recipients, so the passage-to-place step finds nothing. The Isaiah row prints the Clementine numbering (63:16b-17; 64:1, 3-8), while the concise leads with the Lectionary numbering, so the row is found only through the inventory's Douay parenthesis. The psalm rows mix numbering order: Ps 80 is printed Heb.-first, Pss 24 and 84 Vg.-first, each explicitly labelled."
+
+[[observations]]
+stage = "synthesis-review"
+location = "sections/05-appointed-texts.tex line 296, sections/10-texts-in-setting.tex line 222, sections/40-clay-and-faithful-potter.tex line 202 (expansive study, accepted)"
+note = "The expansive study carries the same near-ICEL clause ('firm in faith, glad in hope and active in charity') three times. In 05-appointed-texts it is followed by 'No English is printed.' It lies outside this deliverable and belongs to the study owner. The shared owner's record (shared/formularies/pc-s01-first-sunday-of-advent/propers/verified.md, solemn-blessing row) describes the invocation as 'steadfast in faith, joyful in hope and active in charity', which is also close to the ICEL text."

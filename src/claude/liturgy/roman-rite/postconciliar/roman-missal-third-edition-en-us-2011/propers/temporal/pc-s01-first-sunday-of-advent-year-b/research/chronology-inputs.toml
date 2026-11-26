@@ -1,0 +1,133 @@
+# Appointment-query input for tools/tpt proper-chronology. It carries citations
+# and ownership only. It authors no date and is not a chronology source.
+# Citations are those of instance/manifest.md and propers/verified.md; Missal
+# elements are owned by the First Sunday of Advent shared owner, Lectionary
+# elements by this leaf.
+#
+# - Entrance antiphon: the Missal's own locator, Cf. Ps 24, 1-3, in Vulgate
+#   numbering (Hebrew 25:1-3). The owner's finding 1 shows an adaptation, so
+#   the relationship is adaptation.
+# - First reading: the Lectionary and the Ordo number Isaiah 63-64 with the
+#   Hebrew chapter division (the Ordo: 63:16b-17, 19b; 64:2b-7; the United
+#   States witnesses: 63:16b-17, 19b; 64:2-7). The vulgate query system is the
+#   Clementine's, which keeps the older division: Lectionary 63:19b is
+#   Clementine 64:1 (the whole verse, the cry to rend the heavens and the
+#   mountains flowing down), and Lectionary 64:2-7 is Clementine 64:3-8. The
+#   query therefore gives the same text in Clementine numbering, the numbering
+#   the Douay-Rheims study text prints. Clementine 64:3 is a whole-verse
+#   envelope: the Ordo reads its second member and the United States text its
+#   first (propers/verified.md, Isaiah 64:2). Clementine 63:19 (Hebrew 63:19a,
+#   omitted) and 64:2 (Hebrew 64:1, omitted) are not queried.
+# - Responsorial psalm: Hebrew numbering, the printed form of the United States
+#   witnesses (Psalm 80; the Ordo prints Ps 79, 2ac et 3b. 15-16. 18-19). The
+#   Hebrew and Vulgate verse numbers of this psalm coincide. The Ordo's members
+#   2a, 2c and 3b are entered, which the readings page's first strophe sings,
+#   although that page's locator says 2-3. The response is v. 4, whose wording
+#   the Ordo gives exactly.
+# - Second reading: 1 Corinthians 1:3-9.
+# - Gospel acclamation: Psalm 84:8 in Vulgate numbering (Hebrew 85:8), as the
+#   Ordo prints it, without Cf., agreeing word for word with the Clementine.
+#   The element is keyed acclamation, as in instance/manifest.md, so the
+#   orientation projection gives it no narrated-event row.
+# - Preface and solemn blessing: composed texts, not Scripture.
+# - Communion antiphon: the Missal prints Ps 84, 13 without Cf., but the
+#   owner's finding 2 shows the opening Etenim omitted, so the relationship is
+#   adaptation.
+schema = 1
+record_type = "proper-chronology-inputs"
+document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"
+calendar = "postconciliar"
+formula = "PC-S01-B"
+shared_owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/formularies/pc-s01-first-sunday-of-advent/propers/verified.md"
+
+[[elements]]
+key = "entrance-antiphon"
+name = "Entrance Antiphon"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/formularies/pc-s01-first-sunday-of-advent/propers/verified.md"
+citations = [
+  { ref = "Cf. Psalm 24:1-3", citation = "Psalm 24:1-3", system = "vulgate", kind = "adaptation" },
+]
+
+[[elements]]
+key = "collect"
+name = "Collect"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/formularies/pc-s01-first-sunday-of-advent/propers/verified.md"
+citations = []
+non_scriptural_reason = "Composed oration with no scriptural locator. Its petition to go out with righteous deeds to meet Christ as he comes, and to be placed at his right hand, echoes several Gospel scenes (the virgins going out to meet the bridegroom, the sheep at the right hand) without being drawn from any one verse, which the page-2 rule excludes."
+
+[[elements]]
+key = "first-reading"
+name = "First Reading"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/propers/verified.md"
+citations = [
+  { ref = "Isaiah 63:16b-17; 64:1, 3-8", citation = "Isaiah 63:16b-17; 64:1, 3-8", system = "vulgate", kind = "appointed" },
+]
+
+[[elements]]
+key = "responsorial-psalm"
+name = "Responsorial Psalm"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/propers/verified.md"
+citations = [
+  { ref = "Psalm 80:2a, 2c, 3b, 15-16, 18-19", citation = "Psalm 80:2a, 2c, 3b, 15-16, 18-19", system = "hebrew", kind = "appointed" },
+  { ref = "Psalm 80:4", citation = "Psalm 80:4", system = "hebrew", kind = "response" },
+]
+
+[[elements]]
+key = "second-reading"
+name = "Second Reading"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/propers/verified.md"
+citations = [
+  { ref = "1 Corinthians 1:3-9", citation = "1 Corinthians 1:3-9", system = "vulgate", kind = "appointed" },
+]
+
+[[elements]]
+key = "acclamation"
+name = "Alleluia Verse"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/propers/verified.md"
+citations = [
+  { ref = "Psalm 84:8", citation = "Psalm 84:8", system = "vulgate", kind = "appointed" },
+]
+
+[[elements]]
+key = "gospel"
+name = "Gospel"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/propers/verified.md"
+citations = [
+  { ref = "Mark 13:33-37", citation = "Mark 13:33-37", system = "vulgate", kind = "appointed" },
+]
+
+[[elements]]
+key = "prayer-over-offerings"
+name = "Prayer over the Offerings"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/formularies/pc-s01-first-sunday-of-advent/propers/verified.md"
+citations = []
+non_scriptural_reason = "Composed oration with no scriptural locator; its offering of gifts drawn from God's own gifts is a commonplace of the Roman orations, not the wording of a verse."
+
+[[elements]]
+key = "preface"
+name = "Preface I of Advent"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/formularies/pc-s01-first-sunday-of-advent/propers/verified.md"
+citations = []
+non_scriptural_reason = "Composed Preface with no scriptural locator. It gives thanks for Christ's two comings; its closing clause agrees in wording with a Verona sacramentary prayer for the Ascension, not with a verse of Scripture."
+
+[[elements]]
+key = "communion-antiphon"
+name = "Communion Antiphon"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/formularies/pc-s01-first-sunday-of-advent/propers/verified.md"
+citations = [
+  { ref = "Psalm 84:13", citation = "Psalm 84:13", system = "vulgate", kind = "adaptation" },
+]
+
+[[elements]]
+key = "prayer-after-communion"
+name = "Prayer after Communion"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/formularies/pc-s01-first-sunday-of-advent/propers/verified.md"
+citations = []
+non_scriptural_reason = "Composed oration with no scriptural locator; its wording agrees with phrases of two Verona sacramentary prayers, not with a verse of Scripture."
+
+[[elements]]
+key = "solemn-blessing"
+name = "Solemn Blessing for Advent"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/formularies/pc-s01-first-sunday-of-advent/propers/verified.md"
+citations = []
+non_scriptural_reason = "Optional composed blessing of three invocations and the Trinitarian blessing, with no scriptural locator; its references to Christ's two comings are not drawn from any one verse."
