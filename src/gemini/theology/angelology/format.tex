@@ -1,0 +1,33 @@
+% Leaf-local preamble for src/gemini/theology/angelology/
+% Shared skeleton, typography, and rights colophon live in common/preamble.tex
+% and the theology-reference-v1 document type.
+
+\usepackage{ragged2e}
+\usepackage{titlesec}
+
+\widowpenalty=10000
+\clubpenalty=10000
+\titleformat{\section}{\Large\bfseries}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{0.6em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{0.5em}{}
+
+\newcommand{\ST}[1]{\emph{ST}~#1}
+\newcommand{\CH}[1]{\emph{CH}~#1}
+\newcommand{\gk}[1]{\textit{#1}}
+
+\newcommand{\angeldossier}[4]{%
+\Needspace{9\baselineskip}%
+\begin{studyframe}
+\textbf{Summa:} #1\par
+\textbf{Grade:} #2\par
+\textbf{Authorities:} #3\par
+\textbf{Contrary opinion:} #4
+\end{studyframe}}
+
+\newcommand{\angeldossiersettled}[3]{%
+\Needspace{8\baselineskip}%
+\begin{studyframe}
+\textbf{Summa:} #1\par
+\textbf{Grade:} #2\par
+\textbf{Authorities:} #3
+\end{studyframe}}

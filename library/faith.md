@@ -51,10 +51,10 @@ Each meditation can be read on its own, including in preparation for death at th
 
 ## Doctrine and Authority
 
-| Publication | ChatGPT | Claude | Focus |
-| --- | --- | --- | --- |
-| **Angelology** | [Angels and the Gift of Being](../pdf/gpt/theology/angelology.pdf) · [Read](../web/gpt/theology/angelology.html) | [The Angels: Nature, Knowledge, Will, Fall, Order, and Ministry](../pdf/claude/theology/angelology.pdf) | Two independent Thomistic treatises on the angels, with the Celestial Hierarchy, the Fathers, and the Church's teaching and prayer. |
-| **How the Catholic Church Teaches** | [PDF](../pdf/gpt/articles/faith/catholic-doctrinal-authority.pdf) · [Read](../web/gpt/articles/faith/catholic-doctrinal-authority.html) | — | Dogma, definitive doctrine, authentic teaching, discipline, theological opinion, their historical development, and the response proper to each. |
+| Publication | ChatGPT | Claude | Gemini | Focus |
+| --- | --- | --- | --- | --- |
+| **Angelology** | [Angels and the Gift of Being](../pdf/gpt/theology/angelology.pdf) · [Read](../web/gpt/theology/angelology.html) | [The Angels: Nature, Knowledge, Will, Fall, Order, and Ministry](../pdf/claude/theology/angelology.pdf) | [The City of Unseen Spirits](../pdf/gemini/theology/angelology.pdf) · [Read](../web/gemini/theology/angelology.html) | Three independent Thomistic treatises on the angels, with the Celestial Hierarchy, the Fathers, and the Church's teaching and prayer. |
+| **How the Catholic Church Teaches** | [PDF](../pdf/gpt/articles/faith/catholic-doctrinal-authority.pdf) · [Read](../web/gpt/articles/faith/catholic-doctrinal-authority.html) | — | — | Dogma, definitive doctrine, authentic teaching, discipline, theological opinion, their historical development, and the response proper to each. |
 
 ## Church, Liturgy, and Modern Controversies
 
