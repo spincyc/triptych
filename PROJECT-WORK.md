@@ -7,6 +7,19 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-11-26.
 
+## Claude postconciliar First Sunday of Advent, Year B, 2026-11-29
+
+<!-- promised-deliverable: claude-pc-s01-advent-year-b-2026-11-29 -->
+
+**In progress: authorized; seeding.** On 2026-11-26 the maintainer asked for
+the Claude Novus Ordo proper-study documents for the upcoming Sunday. Sunday,
+29 November 2026 is the First Sunday of Advent, the first Sunday of Lectionary
+Year B, permanent identity `pc-s01`,
+`liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b`.
+The production plan records the one-provider authorization. This is an
+independent Claude production: the published GPT leaf for the same identity is
+not an input. Publication to `main` has not been authorized.
+
 ## Claude 1962 First Sunday of Advent, 2026-11-29
 
 <!-- promised-deliverable: claude-1962-01-advent-2026-11-29 -->
