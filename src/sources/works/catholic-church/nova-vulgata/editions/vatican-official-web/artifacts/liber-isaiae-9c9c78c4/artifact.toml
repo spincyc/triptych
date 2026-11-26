@@ -1,0 +1,17 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.catholic-church.nova-vulgata.vatican-official-web.liber-isaiae-9c9c78c4"
+edition_id = "edition.catholic-church.nova-vulgata.vatican-official-web"
+artifact_type = "web-page"
+media_type = "text/html"
+storage = "restricted"
+rights_status = "restricted"
+rights_basis = "Official Vatican text, publicly accessible for comparison. No redistribution grant is asserted."
+rights_jurisdiction = "United States"
+source_url = "https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_vt_isaiae_lt.html"
+retrieved = "2026-11-26"
+sha256 = "9c9c78c444de0e449240afdddcb1e4f9839fa11327034d50f4a0f68bb4d68a85"
+byte_size = 204149
+indexable = false
+provenance = "Complete HTTPS response for the Vatican Liber Isaiae page, fetched whole over verified TLS on 2026-11-26 by the research stage of the Claude PC-S01-B proper-study run and hashed locally before it was read; re-hashed and measured by that run's source-registration stage the same day. No model mediated the bytes. The page carries the whole book, chapters 1-66, ending at 66:24."
+notes = "Read at Isaiah 63:15-65:5 for the Lectionary's first reading of the First Sunday of Advent, Year B (the Nova Vulgata's chapter division, in which 63:19b 'Utinam dirumperes caelos et descenderes' closes chapter 63 and 64:1 begins with the burning brushwood). Restricted: the exact bytes are identified, not retained."

@@ -78,7 +78,7 @@ author_aliases:
     Migne's Patrologia Latina 52 does ('SANCTI PETRI CHRYSOLOGI ARCHIEPISCOPI RAVENNATIS'), and the
     harvest names him without it. Both name the bishop of Ravenna whose sermons that volume prints.
 schema: triptych-commentary-fragment-loci/v1
-updated: '2026-11-25'
+updated: '2026-11-26'
 numbering: vulgate
 # ONE TEXT UNDER TWO NAMES (Rule 15). Where the library holds one text as two or
 # more passage records under disputed attributions, the catena hangs it once,
@@ -25449,6 +25449,30 @@ fragments:
     not merely the homily’s opening reference heading. Other scriptural citations are supporting proofs
     and receive no added edges. English translation and historical revision credits are recorded on the
     constituent edition; no Greek original text is represented.'
+- passage_id: passage.john-chrysostom.homilies-on-first-corinthians.ccel-web-2026-09-28.2.1cor-1.7-9
+  work_id: work.john-chrysostom.homilies-on-first-corinthians
+  work_alias:
+    author: John Chrysostom
+    work: Homiliae in epistulam i ad Corinthios
+  numbering: vulgate
+  extent:
+    token: 1Cor
+    first_chapter: 1
+    first_verse: 7
+    last_chapter: 1
+    last_verse: 9
+  composition_date_unestablished: The held Oxford preface in the exact NPNF/CCEL container, physical lines
+    153-169, explicitly says that the date of these homilies is not exactly known while assigning them
+    to Antioch. No independent calendar year was established in this bounded review. This records the
+    project’s present evidence limit, not a claim that scholarly dating is impossible.
+  basis: 'Checked the complete source unit at CCEL container physical lines 727-851: complete numbered
+    sections 4-8, from the verse-7 lemma through the explicit verse-8 and verse-9 lemmata and their exposition
+    (the gifts and the carnal Corinthians; the praise belonging to grace; the revelation awaited; confirmation
+    unto the end; God faithful who called them into the fellowship of his Son), stopping before section
+    9, which leaves the verse for the objection that God ought to compel. Extent follows its actual continuous
+    biblical exposition, not merely the homily’s opening reference heading. Other scriptural citations
+    are supporting proofs and receive no added edges. English translation and historical revision credits
+    are recorded on the constituent edition; no Greek original text is represented.'
 - passage_id: passage.john-chrysostom.homilies-on-colossians.ccel-web-2026-09-05.2.col-1.13-14
   work_id: work.john-chrysostom.homilies-on-colossians
   work_alias:

@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.usccb-chapter-ii-wayback-2026-10-15-b6bc5b79"
+edition_id = "edition.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021"
+artifact_type = "archived-official-html"
+media_type = "text/html"
+storage = "restricted"
+rights_status = "restricted"
+rights_basis = "Internet Archive replay of the official USCCB chapter page, which presents protected ICEL text and USCCB adaptations; neither the official page nor the archival delivery establishes permission for repository redistribution. Exact bytes identified, no tracked payload."
+rights_jurisdiction = "United States"
+source_url = "https://web.archive.org/web/20261015002800id_/https://www.usccb.org/prayer-and-worship/the-mass/general-instruction-of-the-roman-missal/girm-chapter-2"
+provenance = "Complete raw-mode (id_) Internet Archive replay of the official chapter II page as captured at timestamp 20261015002800. Fetched whole twice over verified HTTPS on 2026-11-26 by the context-resolution stage of the Claude PC-S01-B proper-study run, byte-identically; the response was delivered with Content-Encoding gzip (31,013 bytes, SHA-256 0d88e106c814bac0116c4e76c7169ea299b62fcdddab57359c204425736a6ae0), and these are its decoded bytes, hashed locally and re-hashed with the transfer bytes by that run's source-registration stage the same day. Direct requests to the official URL that day, with browser request headers, were answered HTTP 403 with a 15,748-byte challenge page, which was not circumvented. No model mediated the bytes."
+retrieved = "2026-11-26"
+sha256 = "b6bc5b799ad6ddee1c64270dbf3f122706ddbaa1ab94e8daa1f0eb324b15d6eb"
+byte_size = 108769
+indexable = false
+notes = "Chapter II, 'The Structure of the Mass, Its Elements, and Its Parts'. Read at nos. 48, 51, 53, 61, 62, 63, 66, 68, 74 and 87 for the PC-S01-B branch audit. Matches none of the other registered chapter II states by hash; the nearest in size is usccb-chapter-ii-html-2026-10-16-d10afff3 (109,916 bytes). This is a third party's copy of the official page as it stood on the capture date, not a delivery of 26 November 2026. The protected English is described in the leaf's records, not retained."
