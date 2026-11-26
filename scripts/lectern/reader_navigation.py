@@ -43,10 +43,10 @@ def share(surface, route: str) -> None:
 
 def _setting_row(label: str, value: str = "", hotkey: str = "", *, accent: str = "$primary",
                  muted_value: bool = False):
-    """Build a crisp aligned settings row with accented current state and right hotkey hint."""
+    """Build a crisp aligned settings row with high-contrast current state and right hotkey hint."""
     ink = Ink()
     ink(label.ljust(27))
-    val_style = "$text-muted" if muted_value else f"bold {accent}"
+    val_style = "$text-muted" if muted_value else "bold"
     shown_val = value if len(value) <= 32 else value[:31] + "…"
     ink(shown_val.ljust(33), val_style)
     if hotkey:
@@ -76,12 +76,14 @@ class MissalSurface(Surface):
             panel.focus(scroll_visible=False)
 
     def action_focus_reading(self) -> None:
-        browsing = self.has_class("navigation") if self.has_class("compact") else not self.has_class("focus")
+        compact = self.has_class("compact")
+        browsing = self.has_class("navigation") if compact else not self.has_class("focus")
         if browsing:
-            self.show_reading_pane(hide_nav=not self.has_class("compact"))
+            self.show_reading_pane(hide_nav=not compact)
         else:
             self.remove_class("focus")
-            self.add_class("navigation")
+            if compact:
+                self.add_class("navigation")
             self.call_after_refresh(self.query_one(self.BROWSE).focus)
 
     def pair_column_width(self) -> int:
@@ -89,10 +91,12 @@ class MissalSurface(Surface):
         width = self.size.width or (self.app.size.width if self.app else 0)
         if width < 110:
             return 0
-        # Account for panel borders, padding, and side rail when visible.
-        nav_shown = not self.has_class("focus") and not self.has_class("compact")
+        # Account for panel borders (2), horizontal padding (6), scrollbar (1), and side rail when visible.
+        nav_shown = (not self.has_class("focus") and not self.has_class("compact")
+                     and not self.has_class("comparing"))
         rail = 39 if nav_shown else 0
-        return min(130, max(0, width - rail - 8))
+        available = width - rail - 12
+        return min(128, max(0, available))
 
     def source_rows(self) -> list[dict]:
         raise NotImplementedError
@@ -474,9 +478,9 @@ class ReadingNavigation:
         if self.focused and abs(self.focused[1] - box.scroll_y) < 0.5:
             return self.focused[0]
         self.focused = None
+        if box.scroll_y <= 0.5:
+            return self.entries[0][0]
         index = bisect_right(self.entries, box.scroll_y, key=lambda entry: self._height(entry[2], text))
-        # At scroll_y == 0 (above the first event heading because of the celebration header),
-        # report the first unit in view so Contents marks `· here` and Study/Ctrl+O know it.
         return self.entries[index - 1][0] if index else self.entries[0][0]
 
     def current_label(self, box, text) -> str:

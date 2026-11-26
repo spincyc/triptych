@@ -32,7 +32,7 @@ def tone(season: str | None) -> str:
 CLASS_MARKS = {"I": "◆", "II": "◇", "III": "•"}
 NATURE_MARKS = {"solemnity": "◆", "solemnity-or-sunday": "◆", "triduum": "◆", "feast": "◇",
                 "memorial": "•", "sunday": "○"}
-OPEN_ORATION_MARK = "◌"
+OPEN_ORATION_MARK = "·"
 REFUSED = "×"
 
 
@@ -193,9 +193,9 @@ class Day(MissalSurface):
     .day.narrow.compact #day-reading-a, .day.narrow.compact #day-compare { padding: 0 1; }
     .day.narrow #day-compare-body Horizontal { layout: vertical; }
     .day.narrow .compare-side { width: 100%; padding: 0 0 1 0; }
-    .day #day-text-a { max-width: 78; }
+    .day #day-text-a { max-width: 78; width: 100%; }
     .day.bilingual #day-text-a { max-width: 132; width: 100%; }
-    .day.bilingual.narrow #day-text-a { max-width: 78; width: auto; }
+    .day.bilingual.narrow #day-text-a { max-width: 78; width: 100%; }
     """
     DEFAULT_CSS = """
     Day #day-left { width: 36; margin-right: 1; }
@@ -1056,20 +1056,19 @@ class Day(MissalSurface):
         else:
             branches = row.get("branches") or []
             glyph, hue = self.mark(date) or ("", "")
-            width = max(20, (self.query_one("#day-left").size.width or 36) - 6)
+            width = max(24, (self.query_one("#day-left").size.width or 36) - 4)
             lead = f"{short_date} · "
             if len(branches) > 1:
                 summary = f"⑂ {len(branches)} branches"
             elif branches and branches[0].get("choiceRequired"):
                 summary = "⑂ " + (branches[0].get("preview") or "Choice of Mass")
             elif branches and branches[0].get("weekdayOrationOpen"):
-                summary = f"{OPEN_ORATION_MARK} " + (branches[0].get("preview") or "Weekday (open prayers)")
+                summary = branches[0].get("preview") or "Weekday (open prayers)"
             elif branches and branches[0].get("winner"):
-                mark = (glyph.strip() + " ") if glyph.strip() else ""
-                summary = mark + branches[0]["winner"]["name"]
+                summary = branches[0]["winner"]["name"]
             else:
                 summary = branches[0].get("preview") or "Not settled" if branches else "No Mass"
-            ink(lead, "$text-muted")(_trim(summary, max(10, width - len(lead))), hue or "")
+            ink(lead, "$text-muted")(_trim(summary, max(12, width - len(lead))), hue or "")
         preview_widget.update(ink.content())
 
     def where(self) -> str:
@@ -1324,7 +1323,12 @@ class Day(MissalSurface):
         rows = view.get("rows") or []
         pair_w = self.pair_column_width() if self._is_bilingual_spread() else 0
         self._last_pair_width = pair_w
-        rule_w = max(46, min(pair_w or 72, (self.size.width or 78) - 8))
+        term_w = self.size.width or (self.app.size.width if self.app else 78)
+        nav_shown = not self.has_class("compact") and not self.has_class("focus")
+        avail_w = max(24, term_w - (46 if nav_shown else 10))
+        rule_w = min(pair_w or 72, avail_w)
+        ink._pair_width = pair_w
+        ink._rule_width = rule_w
 
         self.navigation.begin((calendar, view["date"]), box, text)
         box.retitle(edition)
@@ -1439,12 +1443,8 @@ class Day(MissalSurface):
                     prefix = row.get("prefix") or ""
                     branch_label = f"{row['option']} · " if prefix else ""
                     self.navigation.mark(prefix + event["id"], branch_label + label, ink)
-                event_kwargs = {"rubrics": self.rubrics, "accent": "$day-color"}
-                if pair_w:
-                    event_kwargs["pair_width"] = pair_w
-                if not emitted_any:
-                    event_kwargs["leading_blank"] = False
-                missal.events(ink, {**context, "events": [event]}, **event_kwargs)
+                ink._leading_blank = emitted_any
+                missal.events(ink, {**context, "events": [event]}, rubrics=self.rubrics, accent="$day-color")
                 emitted_any = True
         # The Ordinary's own advisory, at the foot only in Missal mode when unconfigured.
         if not configured and state.get("ordinary") and (view.get("ordinary") or {}).get("advisory"):

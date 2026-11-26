@@ -457,6 +457,11 @@ class Pick(ModalScreen[str | None]):
     }
     Pick Static { color: $text-muted; padding: 0 0 1 0; }
     Pick OptionList { border: none; background: transparent; padding: 0; height: 1fr; }
+    Pick OptionList > .option-list--option-highlighted {
+        background: $primary 25%;
+        color: $foreground;
+        text-style: bold;
+    }
     Pick.reading-settings > Vertical { max-height: 92%; padding: 0 1; }
     Pick OptionList:focus { border: none; }
     """

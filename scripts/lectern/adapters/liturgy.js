@@ -446,7 +446,9 @@ module.exports = function liturgy(realm) {
             const owns = (element.alternatives || []).some((alt) => alt.group === group.group && alt.option === option.id);
             if (owns || element.variant === option.id) {
               semanticKeys.push(element.key);
-              if (element.applicability || (element.translations || []).some((t) => Object.prototype.hasOwnProperty.call(t, 'applicability'))) {
+              if ((element.conditions && element.conditions.length) || element.applicability ||
+                  (element.translations || []).some((t) => Object.prototype.hasOwnProperty.call(t, 'applicability') ||
+                    (t.conditions && t.conditions.length))) {
                 guarded = true;
               }
             }

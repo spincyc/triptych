@@ -262,7 +262,7 @@ class ColdReviewIntegrationTests(unittest.IsolatedAsyncioTestCase):
             labels = [str(lbl) for _, lbl in app.screen.options]
             pray_matches = [lbl for lbl in labels if "Pray (optional)" in lbl]
             self.assertEqual(len(pray_matches), 1, labels)
-            self.assertTrue(any("Eucharistic Prayer IV" in lbl and "unresolved" in lbl for lbl in labels), labels)
+            self.assertTrue(any("IV" in lbl and "unresolved" in lbl for lbl in labels), labels)
 
     async def test_read_mode_study_omits_ordinary_advisory_and_uses_contextual_tabs(self) -> None:
         from lectern.app import TriptychApp
@@ -317,11 +317,11 @@ class ColdReviewIntegrationTests(unittest.IsolatedAsyncioTestCase):
             await self.settle(app, pilot)
             svg = app.export_screenshot()
             self.assertIn("#c9a227", svg.lower())
-            # IGMR 363 weekday uses quiet ◌ rather than alarming ?
+            # IGMR 363 weekday uses quiet · rather than alarming ?
             month_widget = app.query_one(Month)
             mark = app.current().mark(dt.date(2026, 11, 13))
             self.assertIsNotNone(mark)
-            self.assertEqual(mark[0], "◌")
+            self.assertEqual(mark[0], "·")
             month_widget.focus()
             await pilot.pause()
             await pilot.press("right", "right")

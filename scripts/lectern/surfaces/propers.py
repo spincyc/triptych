@@ -118,6 +118,7 @@ class Propers(MissalSurface):
     ]
     CSS = """
     .propers.focus #propers-left { display: none; }
+    .propers.comparing #propers-left { display: none; }
     .propers.narrow #propers-left { width: 32; }
     .propers.compact #propers-left { display: none; }
     .propers.compact.navigation #propers-left { display: block; width: 1fr; margin-right: 0; }
@@ -126,9 +127,9 @@ class Propers(MissalSurface):
     .propers.compact #propers-reading { padding: 0 1; }
     .propers.narrow #propers-reading { padding: 1 2; }
     .propers.narrow.compact #propers-reading { padding: 0 1; }
-    .propers #propers-text { max-width: 78; }
+    .propers #propers-text { max-width: 78; width: 100%; }
     .propers.bilingual #propers-text, .propers.comparing #propers-text { max-width: 132; width: 100%; }
-    .propers.bilingual.narrow #propers-text, .propers.comparing.narrow #propers-text { max-width: 78; width: auto; }
+    .propers.bilingual.narrow #propers-text, .propers.comparing.narrow #propers-text { max-width: 78; width: 100%; }
     .propers.short #propers-find Input,
     .propers.compact #propers-find Input { height: 1; padding: 0 1; }
     """
@@ -172,7 +173,7 @@ class Propers(MissalSurface):
         self.mount(
             Horizontal(
                 Vertical(
-                    Panel(Static("", id="propers-missals"), Input(placeholder="Title, incipit, citation, MM-DD, witness…",
+                    Panel(Static("", id="propers-missals"), Input(placeholder="Title, incipit, citation, MM-DD",
                                                                    id="propers-query"),
                           Static("", id="propers-status"), title="Find a Formulary", id="propers-find"),
                     Panel(OptionList(id="propers-list"), title="Formularies", id="propers-list-box"),
@@ -398,7 +399,7 @@ class Propers(MissalSurface):
             if row.get("form_name"):
                 ink(f" · {row['form_name']}", "italic")
             if row.get("fixed_date"):
-                ink(f"  {row['fixed_date']}", "$text-muted")
+                ink("  ")(row["fixed_date"], "$text-muted")
             ink.line()
             detail_parts = [row["kind"].replace("-", " ")]
             avail = _format_browse_counts(row.get("coverageCounts") or [])
@@ -540,7 +541,12 @@ class Propers(MissalSurface):
         self.set_class(self._is_wide_spread() and not compared, "bilingual")
         pair_w = self.pair_column_width() if self._is_wide_spread() else 0
         self._last_pair_width = pair_w
-        rule_w = max(46, min(pair_w or 72, (self.size.width or 78) - 8))
+        term_w = self.size.width or (self.app.size.width if self.app else 78)
+        nav_shown = not self.has_class("compact") and not self.has_class("focus") and not compared
+        avail_w = max(24, term_w - (48 if nav_shown else 10))
+        rule_w = min(pair_w or 72, avail_w)
+        ink._pair_width = pair_w
+        ink._rule_width = rule_w
 
         edition = mass.get("editionShort") or view["calendar"]
         box.retitle(edition)
@@ -629,10 +635,7 @@ class Propers(MissalSurface):
                 if missal.is_contents_event(event):
                     label = missal.event_label(event, indent_children=bool(state.get("ordinary")))
                     self.navigation.mark(event["id"], label, ink)
-                event_kwargs = {"rubrics": self.rubrics, "accent": "$propers-color"}
-                if pair_w:
-                    event_kwargs["pair_width"] = pair_w
-                missal.events(ink, {**view, "events": [event]}, **event_kwargs)
+                missal.events(ink, {**view, "events": [event]}, rubrics=self.rubrics, accent="$propers-color")
         text.update(ink.content())
         if self.pending_source_role:
             locations = [event["id"] for event in view.get("events", [])

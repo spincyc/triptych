@@ -256,7 +256,7 @@ class LiturgyParityTests(unittest.TestCase):
             self.assertIn("give unto them rest forevermore", agnus)
             self.assertIn("dona eis réquiem sempitérnam", agnus)
             greeting = held["conclusio/dominus-vobiscum-defunctorum"]["text"]
-            self.assertEqual(greeting["text"], "The Lord be with you.\nR. And with thy spirit.")
+            self.assertEqual(greeting["text"], "P. The Lord be with you.\nR. And with thy spirit.")
             self.assertIn("conclusio/initium-sancti-evangelii", [u["element"] for u in row["ordinaryUnresolved"]])
 
         _, passion = reading("2027-03-14")
@@ -899,7 +899,10 @@ class SurfaceParityTests(unittest.IsolatedAsyncioTestCase):
         from lectern.surfaces.day import Day
         from textual.widgets import OptionList
 
-        app = TriptychApp(start="day", intent={"calendar": "postconciliar", "date": "2027-05-09",
+        # 2027-05-27 pairs a resolved Corpus Christi Thursday branch (with held
+        # witnesses) alongside an unresolved transferred-to-Sunday optional
+        # memorial branch whose witnesses must remain empty.
+        app = TriptychApp(start="day", intent={"calendar": "postconciliar", "date": "2027-05-27",
                                                "orations": "en"})
         async with app.run_test(size=(80, 30)) as pilot:
             await _settle(app, pilot)
@@ -997,8 +1000,8 @@ class SurfaceParityTests(unittest.IsolatedAsyncioTestCase):
             await _settle(app, pilot)
             (after,) = day.views[calendar]["rows"]
             self.assertEqual(after["orationSelection"]["owner"], "ot-1")
-            self.assertFalse(after["branch"]["settled"])
-            self.assertIsNone(after["branch"]["winner"])
+            self.assertTrue(after["branch"]["settled"])
+            self.assertEqual(after["branch"]["winner"]["key"], "ot-1-tuesday")
 
     async def test_day_can_reselect_source_mass_and_forms_with_cli_event_parity(self) -> None:
         from lectern.app import TriptychApp

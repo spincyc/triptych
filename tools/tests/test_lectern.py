@@ -588,7 +588,7 @@ class DrawingTests(unittest.TestCase):
     def test_an_open_choice_is_drawn_open(self) -> None:
         drawn = self.snapshot("--surface", "day", "--date", "2026-10-22", "--calendar", "postconciliar")
         self.assertIn("Nothing is selected for you by order", drawn)
-        self.assertIn("No day is settled here", drawn)
+        self.assertIn("Choose a formulary", drawn)
         # Enter before the reader has moved to an option chooses nothing: the
         # dialog stays, and leaving it leaves the day open.
         pressed = self.snapshot("--surface", "day", "--date", "2026-10-22", "--calendar", "postconciliar",
@@ -596,7 +596,7 @@ class DrawingTests(unittest.TestCase):
         self.assertIn("Nothing is chosen by order", pressed)
         left = self.snapshot("--surface", "day", "--date", "2026-10-22", "--calendar", "postconciliar",
                              "--keys", "s,enter,escape")
-        self.assertIn("No day is settled here", left)
+        self.assertIn("Choose a formulary", left)
 
 
 @unittest.skipUnless(TEXTUAL and NODE, "Textual and node are required for the reader interaction regressions")

@@ -113,7 +113,7 @@ RUN_STYLES = (
     ("is-rubric", "italic $rubric"),
 )
 
-WHITESPACE = re.compile(r"\s+")
+WHITESPACE = re.compile(r"[ \t\r\n\f\v]+")
 _RAW_URL_RE = re.compile(r",?\s*https?://\S+")
 
 
@@ -221,12 +221,12 @@ def _run_style(classes: list[str], tags: list[str], *, ordinary_element: bool = 
 
 def _render_pair_columns(ink: Ink, left_blocks: list[dict], right_blocks: list[dict], *,
                          pair_width: int, accent: str, missal_mode: bool,
-                         seen_notes: set[str] | None) -> None:
-    col_w = max(32, (pair_width - 3) // 2)
+                         seen_notes: set[str] | None, ordinary_element: bool = False) -> None:
+    col_w = max(28, (pair_width - 3) // 2)
     left_ink = blocks(Ink(), left_blocks, accent=accent, missal_mode=missal_mode,
-                      seen_notes=seen_notes, pair_width=0)
+                      seen_notes=seen_notes, pair_width=0, ordinary_element=ordinary_element)
     right_ink = blocks(Ink(), right_blocks, accent=accent, missal_mode=missal_mode,
-                       seen_notes=seen_notes, pair_width=0)
+                       seen_notes=seen_notes, pair_width=0, ordinary_element=ordinary_element)
     left_lines = left_ink.content().wrap(col_w) if left_ink else []
     right_lines = right_ink.content().wrap(col_w) if right_ink else []
     while left_lines and not left_lines[-1].plain.strip():
@@ -247,9 +247,9 @@ def _block_plain(block: dict) -> str:
 
 def _render_block_runs(ink: Ink, block: dict, *, accent: str, missal_mode: bool,
                        action: bool = False, gloss: bool = False, rubric: bool = False,
-                       heading: bool = False) -> None:
+                       heading: bool = False, ordinary_element: bool = False) -> None:
     block_classes = set(block.get("classes") or [])
-    is_ordinary_el = "ordinary-element" in block_classes
+    is_ordinary_el = ordinary_element or ("ordinary-element" in block_classes)
     previous = None
     linked_prayer_hint_added = False
     for run in block.get("runs", []):
@@ -324,7 +324,7 @@ def _render_block_runs(ink: Ink, block: dict, *, accent: str, missal_mode: bool,
 
 def blocks(ink: Ink, items: list[dict], *, accent: str = "$primary", missal_mode: bool = False,
            pair_width: int = 0, seen_notes: set[str] | None = None,
-           dl_label_width: int = 22) -> Ink:
+           dl_label_width: int = 22, ordinary_element: bool = False) -> Ink:
     """The page's blocks, one line group each, styled by the classes they carry."""
     if missal_mode and seen_notes is None:
         seen_notes = getattr(ink, "_seen_notes", None)
@@ -348,12 +348,14 @@ def blocks(ink: Ink, items: list[dict], *, accent: str = "$primary", missal_mode
             if left_blocks and right_blocks:
                 _render_pair_columns(ink, left_blocks, right_blocks,
                                      pair_width=pair_width, accent=accent,
-                                     missal_mode=missal_mode, seen_notes=seen_notes)
+                                     missal_mode=missal_mode, seen_notes=seen_notes,
+                                     ordinary_element=ordinary_element)
                 previous_block = group[-1].get("classes", [])
                 continue
             # Fallback if only one side is present: render sequentially.
             blocks(ink, group, accent=accent, missal_mode=missal_mode,
-                   pair_width=0, seen_notes=seen_notes, dl_label_width=dl_label_width)
+                   pair_width=0, seen_notes=seen_notes, dl_label_width=dl_label_width,
+                   ordinary_element=ordinary_element)
             previous_block = group[-1].get("classes", [])
             continue
 
@@ -371,7 +373,8 @@ def blocks(ink: Ink, items: list[dict], *, accent: str = "$primary", missal_mode
                 continue
             padded_key = (key_text + "  ").ljust(dl_label_width + 2) if len(key_text) <= dl_label_width else key_text + "  "
             ink(padded_key, "bold $text-muted")
-            _render_block_runs(ink, dd_block, accent=accent, missal_mode=missal_mode)
+            _render_block_runs(ink, dd_block, accent=accent, missal_mode=missal_mode,
+                               ordinary_element=ordinary_element)
             ink.line()
             previous_block = dd_block.get("classes", [])
             idx += 2
@@ -407,7 +410,8 @@ def blocks(ink: Ink, items: list[dict], *, accent: str = "$primary", missal_mode
             ink("[ Source translation: " if gloss else "[ ",
                 "italic $text-muted" if gloss else "italic $rubric")
         _render_block_runs(ink, block, accent=accent, missal_mode=missal_mode,
-                           action=action, gloss=gloss, rubric=rubric, heading=heading)
+                           action=action, gloss=gloss, rubric=rubric, heading=heading,
+                           ordinary_element=ordinary_element)
         if action or gloss or rubric:
             ink(" ]", "italic $text-muted" if gloss else "italic $rubric")
         if {"translation-apparatus-closed", "source-local-actor-quotation-closed"} & name_set:
@@ -426,11 +430,27 @@ def ordinary_element(ink: Ink, event: dict, ordinary: dict | None, *, rubrics: b
         return ink
     if "blocks" not in event:
         raise ValueError("Ordinary elements must be set by the shared browser renderer")
-    filtered = [block for block in event["blocks"]
-                if rubrics or ("is-action" not in block.get("classes", [])
-                               and "ordinary-head-rubric" not in block.get("classes", []))]
+    # Collect any locus already printed in the outer element heading so paired
+    # bilingual columns don't repeat a bare `xviii` line below each language label.
+    outer_loci: set[str] = set()
+    for block in event["blocks"]:
+        if block.get("pair") is None and block.get("tag", "").startswith("h"):
+            for run in block.get("runs") or []:
+                if set(run.get("classes") or []) & {"proper-ref", "ordinary-locus"}:
+                    locus = run.get("text", "").strip()
+                    if locus:
+                        outer_loci.add(locus)
+    filtered = []
+    for block in event["blocks"]:
+        bclasses = block.get("classes", [])
+        if not rubrics and ("is-action" in bclasses or "ordinary-head-rubric" in bclasses):
+            continue
+        if (outer_loci and block.get("pair") is not None and block.get("tag", "").startswith("h")
+                and _block_plain(block) in outer_loci):
+            continue
+        filtered.append(block)
     return blocks(ink, filtered, accent=accent, missal_mode=True,
-                  pair_width=pair_width, seen_notes=seen_notes)
+                  pair_width=pair_width, seen_notes=seen_notes, ordinary_element=True)
 
 
 def seat_note(event: dict) -> str | None:
@@ -443,13 +463,14 @@ def seat_note(event: dict) -> str | None:
     return None
 
 
-def events(ink: Ink, view: dict, *, rubrics: bool = True, accent: str = "$primary",
-           pair_width: int = 0, seen_notes: set[str] | None = None,
-           leading_blank: bool = True) -> Ink:
+def events(ink: Ink, view: dict, *, rubrics: bool = True, accent: str = "$primary") -> Ink:
     """Every event of a reading, in the order the reader state gives them."""
     ordinary = view.get("ordinary")
     missal_mode = bool((view.get("state") or {}).get("ordinary"))
-    rule_width = max(54, pair_width or 72)
+    pair_width = getattr(ink, "_pair_width", 0) or 0
+    seen_notes = getattr(ink, "_seen_notes", None)
+    leading_blank = getattr(ink, "_leading_blank", True)
+    rule_width = max(46, min(pair_width or 72, getattr(ink, "_rule_width", 72) or 72))
     for index, event in enumerate(view.get("events") or []):
         kind = event.get("kind")
         if kind == "ordinary-section":
