@@ -104,9 +104,9 @@ source_id = "artifact.isaac-abarbanel.perush-al-ha-torah.warsaw-1862.gen-15-ques
 loci = ["Gen.15.5", "Gen.15.12"]
 role = "direct-witness"
 states = ["cataloged", "acquired", "inspected", "verified"]
-verified_on = "2026-11-25"
+verified_on = "2026-11-26"
 source_fingerprint = "sha256:f06e6f16dd1fd50b50ef1ccde86ee085862bcd4d6f7b6358530fd102b96c0f84"
-context = "Checked Warsaw 1862 Hebrew text of Isaac Abarbanel's prefatory Questions 7 and 16 on Genesis 15: earliest explicit formulation and rejection of waking daytime star-counting."
+context = "Checked Warsaw 1862 Hebrew text of Isaac Abarbanel's opening formula and prefatory Questions 7 and 16 on Genesis 15 (earliest explicit formulation and rejection of waking daytime star-counting; excerpt does not include Abarbanel's body answers)."
 
 [[bindings]]
 source_id = "artifact.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.csel40-2-tei"
@@ -251,122 +251,3 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-11-25"
 source_fingerprint = "sha256:fc0fe651fc1f34b1d124831a6538442a81cd47acb7ec6161c19a7bfb4269aadf"
 context = "St. Thomas Aquinas citing Gen 15:5 (Suspice caelum et numera stellas) among the Abrahamic promises fulfilled in Christ."
-
-[[bindings]]
-source_id = "edition.targum-onkelos.targum-onkelos-torah.sefaria-aramaic"
-loci = ["Gen.15.1", "Gen.15.5", "Gen.15.12", "Gen.15.17"]
-role = "reception"
-states = ["cataloged"]
-context = "Catalog-only edition record for Targum Onkelos on Genesis 15 (summarized without verbatim quotation)."
-
-[[bindings]]
-source_id = "edition.targum-pseudo-jonathan.targum-pseudo-jonathan-torah.etheridge-1862"
-loci = ["Gen.15.1", "Gen.15.5", "Gen.15.12", "Gen.15.17"]
-role = "reception"
-states = ["cataloged"]
-context = "Catalog-only edition record for Targum Pseudo-Jonathan on Genesis 15 (summarized without verbatim quotation)."
-
-[[bindings]]
-source_id = "edition.philo.quis-rerum-divinarum-heres-sit.yonge-1854"
-loci = ["75-89"]
-role = "reception"
-states = ["cataloged"]
-context = "Catalog-only edition record for Philo's treatise on Genesis 15 (summarized; full Yonge OCR is remote)."
-
-[[bindings]]
-source_id = "edition.babylonian-talmud.shabbat.william-davidson-sefaria"
-loci = ["156a"]
-role = "reception"
-states = ["cataloged"]
-context = "Catalog-only edition record for Babylonian Talmud Shabbat 156a ('go out from your astrology'; paraphrased only due to CC BY-NC license on Sefaria English)."
-
-[[bindings]]
-source_id = "edition.babylonian-talmud.pesachim.william-davidson-sefaria"
-loci = ["6b"]
-role = "context"
-states = ["cataloged"]
-context = "Catalog-only edition record for Babylonian Talmud Pesachim 6b (ein muqdam u-me'uchar and Rav Pappa's restriction; paraphrased only)."
-
-[[bindings]]
-source_id = "edition.midrash-rabbah.bereshit-rabbah.sefaria-midrash-rabbah-2022"
-loci = ["44:12"]
-role = "reception"
-states = ["cataloged"]
-context = "Catalog-only edition record for Bereshit Rabbah 44:12 on Genesis 15:5 (astrology and elevation above the vault of heaven)."
-
-[[bindings]]
-source_id = "edition.rashi.perush-al-ha-torah.rosenbaum-silbermann-1929"
-loci = ["Gen.15.5", "Gen.15.17"]
-role = "reception"
-states = ["cataloged"]
-context = "Catalog-only edition record for Rashi on Genesis 15:5 and 15:17."
-
-[[bindings]]
-source_id = "edition.abraham-ibn-ezra.perush-al-ha-torah.piotrkow-1907"
-loci = ["Gen.15.1", "Gen.15.12"]
-role = "reception"
-states = ["cataloged"]
-context = "Catalog-only edition record for Ibn Ezra on Genesis 15 (Piotrkow printing ends at v. 16)."
-
-[[bindings]]
-source_id = "edition.maimonides.moreh-nevukhim.friedlander-1903"
-loci = ["2.46"]
-role = "reception"
-states = ["cataloged"]
-context = "Catalog-only edition record for Maimonides, Guide II.46 on Genesis 15:5 as prophetic vision."
-
-[[bindings]]
-source_id = "edition.david-kimhi.perush-al-ha-torah.munk-hachut-hameshulash"
-loci = ["Gen.15.5", "Gen.15.12", "Gen.15.17"]
-role = "reception"
-states = ["cataloged"]
-context = "Catalog-only edition record for Radak on Genesis 15:5, 12, and 17."
-
-[[bindings]]
-source_id = "edition.nachmanides.perush-al-ha-torah.chavel-1971"
-loci = ["Gen.15.1", "Gen.15.5", "Gen.15.12"]
-role = "reception"
-states = ["cataloged"]
-context = "Catalog-only edition record for Ramban on Genesis 15:1 (daytime vision) and 15:5."
-
-[[bindings]]
-source_id = "edition.hezekiah-ben-manoah.chizkuni.sefaria-hebrew-with-munk-english"
-loci = ["Gen.15.5", "Gen.15.7"]
-role = "reception"
-states = ["cataloged"]
-context = "Catalog-only edition record for Chizkuni on Genesis 15:5 and 15:7 (nighttime opening and chronological separation)."
-
-[[bindings]]
-source_id = "edition.bahya-ben-asher.midrash-rabbeinu-bachya.warsaw-1878"
-loci = ["Gen.15.5"]
-role = "reception"
-states = ["cataloged"]
-context = "Catalog-only edition record for Rabbeinu Bahya on Genesis 15:5."
-
-[[bindings]]
-source_id = "edition.jacob-ben-asher.tur-ha-arokh.hanover-1838"
-loci = ["Gen.15.5"]
-role = "reception"
-states = ["cataloged"]
-context = "Catalog-only edition record for Jacob ben Asher (Tur HaArokh) on Genesis 15:5."
-
-[[bindings]]
-source_id = "edition.malbim.perush-al-ha-torah.wikisource-hebrew"
-loci = ["Gen.15.5"]
-role = "reception"
-states = ["cataloged"]
-context = "Catalog-only edition record for Malbim on Genesis 15:5."
-
-[[bindings]]
-source_id = "edition.naftali-zvi-yehuda-berlin.haamek-davar.vilna-1879"
-loci = ["Gen.15.5"]
-role = "reception"
-states = ["cataloged"]
-context = "Catalog-only edition record for Netziv (Ha'amek Davar) on Genesis 15:5."
-
-[[bindings]]
-source_id = "edition.george-leo-haydock.douay-rheims-with-haydock-commentary.ia-scan-undated"
-loci = ["Gen.15.5", "Gen.15.12"]
-role = "reception"
-states = ["cataloged"]
-context = "Catalog-only edition record for George Leo Haydock on Genesis 15:5 and 15:12."

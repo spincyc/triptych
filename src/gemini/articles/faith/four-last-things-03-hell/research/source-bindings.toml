@@ -52,7 +52,7 @@ source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-f
 role = "direct-witness"
 states = ["cataloged", "acquired", "inspected", "verified"]
 loci = [
-  "Feria V in Cena Domini (Collect)",
+  "Feria V in Coena Domini (Collect)",
   "Feria VI in Parasceve (Collect)",
   "Vigilia Paschalis (Litaniae Sanctorum)",
   "In Commemoratione Omnium Fidelium Defunctorum (Sequentia Dies irae; Offertorium Domine Jesu Christe)",
@@ -180,15 +180,6 @@ verified_on = "2026-11-25"
 source_fingerprint = "sha256:c72d9f88324042269c8b3ece8011d4a9732317bb6ce9105acd5d3690f1794509"
 
 [[bindings]]
-source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-13.english-ccel-web-2026-09-05.ccel-npnf113-text-54274dd9"
-role = "context"
-states = ["cataloged", "acquired", "inspected", "verified"]
-loci = ["Chrysostom, Homilies on Second Thessalonians, Homily 3 (on 2 Thess 1:9)"]
-context = "St. John Chrysostom on 2 Thess 1:9 and the ruin of separation from the face of the Lord."
-verified_on = "2026-11-25"
-source_fingerprint = "sha256:374d296602c0a52e4c252ad0e7704b9c9952d06f6b66b891bb391c8509c390db"
-
-[[bindings]]
 source_id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-7.ccel-web-2026-10-06.ccel-text-56d84cfa"
 role = "direct-witness"
 states = ["cataloged", "acquired", "inspected", "verified"]
@@ -290,8 +281,8 @@ source_fingerprint = "sha256:4bf3afe998c687e14f41c824e9999030dd911161d3699ccd69f
 source_id = "artifact.francis-de-sales.introduction-a-la-vie-devote.pustet-new-york-undated.ia-djvu-text-6cb1dd04"
 role = "direct-witness"
 states = ["cataloged", "acquired", "inspected", "verified"]
-loci = ["Part I, ch. 15 (Sixth Meditation: On Hell)"]
-context = "St. Francis de Sales's Roman Catholic Pustet edition witness for the Sixth Meditation on Hell (pain of loss, Absalom analogy, considerations, affections, and resolutions)."
+loci = ["Part I, ch. 15 (Seventh Meditation: On Hell)"]
+context = "St. Francis de Sales's Roman Catholic Pustet edition witness for the Seventh Meditation on Hell (pain of loss, Absalom analogy, considerations, affections, and resolutions)."
 verified_on = "2026-11-25"
 source_fingerprint = "sha256:1295f78c518b50421c47db2a3d8b00c6d4a4eb23cca8477183a21f02b05cc8a9"
 
@@ -364,8 +355,8 @@ context = "Cataloged Holy See citation for Pope Benedict XVI's encyclical Spe sa
 source_id = "work.augustine.enchiridion-ad-laurentium"
 role = "bibliographic"
 states = ["cataloged"]
-loci = ["112"]
-context = "Cataloged work record for St. Augustine's Enchiridion 112 on alienation from the life of God as the supreme punishment."
+loci = ["112", "113"]
+context = "Cataloged work record for St. Augustine's Enchiridion 112-113 on the misericordes (§112) and perpetual death (mors illa perpetua) as alienation from the life of God (§113)."
 
 [[bindings]]
 source_id = "work.gregory-the-great.dialogi"

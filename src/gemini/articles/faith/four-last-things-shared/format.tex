@@ -82,7 +82,7 @@
   \begingroup
   \setlength{\parindent}{0pt}%
   \setlength{\parskip}{0pt}%
-  {\small\textit{The Four Last Things}\enspace\textperiodcentered\enspace III.\ Hell\par}%
+  {\small\textit{The Four Last Things}\par}%
   \vspace{0.35em}%
   \hrule height 0.35pt
   \vspace{1.1em}%
@@ -93,16 +93,11 @@
 }
 \else
 \newcommand{\FourLastThingsTitlePage}[5]{%
-  \textbf{The Four Last Things --- #1}\par
-  {\Large\bfseries #2}\par
-  \textit{#3}\par
   \begin{quote}
-  ``#4''\par
-  --- #5
+  \itshape ``#4''\par
+  \upshape --- #5
   \end{quote}
 }
 
-\newcommand{\FourLastThingsNavigation}{%
-  \par\textit{The Four Last Things} --- III.\ Hell\par
-}
+\newcommand{\FourLastThingsNavigation}{}
 \fi
