@@ -66,6 +66,7 @@
   const witnessSelect = document.getElementById('reader-witness');
   const browseSelects = [missalSelect, typeSelect, formularySelect, massFormSelect,
     bibleSelect, orationsSelect, witnessSelect].filter(Boolean);
+  const ordinaryControls = window.TriptychSourceChoiceControls.createPropersOrdinaryControls({ T: T });
 
   const cache = new Map();
   let properSearch = null;
@@ -244,9 +245,9 @@
     const label = mode === 'missal' ? 'Missal' : (mode === 'compare' ? 'Compare' :
       (mode === 'study' ? 'Study' : 'Read'));
     const coverageDetails = coverageNotice.closest('.reader-coverage');
-    if (coverageDetails && coverageDetails.dataset.mode !== mode) {
-      coverageDetails.open = mode !== 'missal';
-      coverageDetails.dataset.mode = mode;
+    if (coverageDetails && coverageDetails.dataset.coverageMode !== mode) {
+      coverageDetails.open = false;
+      coverageDetails.dataset.coverageMode = mode;
     }
     shellRoot.dataset.readerMode = mode;
     Study?.syncMode(mode);
@@ -524,50 +525,7 @@
   }
 
   function semanticProjection(result) {
-    if (!result) return null;
-    return {
-      resolved: result.resolved,
-      calendarResult: result.calendarResult,
-      events: (result.events || []).map(function (event) {
-        const projected = {
-          id: event.id, kind: event.kind,
-          semanticSlot: event.semanticSlot || null,
-          editionSlotLabel: event.editionSlotLabel || null,
-          selected: event.selected || null,
-          seat: event.seat || null,
-          speaker: event.speaker || null,
-          action: event.action === true,
-          locus: event.locus || null,
-          sourceHooks: event.sourceHooks || []
-        };
-        if (event.kind === 'proper-choice') {
-          projected.group = event.group;
-          projected.selection = event.selection;
-          projected.choiceBasis = event.choiceBasis;
-          projected.options = (event.options || []).map(function (option) {
-            return {
-              id: option.id,
-              events: (option.events || []).map(function (member) {
-                return {
-                  id: member.id,
-                  kind: member.kind,
-                  semanticSlot: member.semanticSlot || null,
-                  editionSlotLabel: member.editionSlotLabel || null,
-                  selected: member.selected || null,
-                  seat: member.seat || null,
-                  sourceHooks: member.sourceHooks || []
-                };
-              })
-            };
-          });
-        }
-        return projected;
-      }),
-      coverage: result.coverage || [],
-      explicitAbsences: result.explicitAbsences || [],
-      unresolvedChoices: result.unresolvedChoices || [],
-      ordinaryUnresolved: result.ordinaryUnresolved || []
-    };
+    return window.TriptychSourceChoiceControls.projectSemanticResult(result);
   }
 
   function clearSelectionState(outcome) {
@@ -825,7 +783,7 @@
       recension.departureAct && 'Act-history station: ' + recension.departureAct
     ] : []);
     coverageNotice.textContent = [
-      'No form was selected by manifest order.',
+      'No form was selected automatically.',
       recension && recension.notice
     ].filter(Boolean).join(' ');
     coverageNotice.hidden = false;
@@ -1014,21 +972,16 @@
     if (value && groups.some(function (row) { return row.kind === value; })) typeSelect.value = value;
   }
 
-  // Each entry's coverage is the language the Orations control will submit,
-  // so the Orations control must be filled before this list, and a change to
-  // it relabels the list.
   function fillFormularies(groups, kind, value) {
     const group = groups.find(function (row) { return row.kind === kind; });
     const masses = group ? group.masses : [];
     const language = orationsSelect.value || T.SOURCE_LANGUAGE;
     const notes = ListPresentation ? ListPresentation.listNotes(masses) : [];
     T.fillSelect(formularySelect, masses.map(function (mass) {
-      const coverage = (mass.coverage && mass.coverage.languages || []).find(function (row) {
-        return row.lang === language;
-      });
       const mark = ListPresentation ? ListPresentation.listMark(mass, notes) : '';
-      return { value: mass.key, label: (mass.name || mass.key) + (mark ? ' ' + mark : '') + (coverage
-        ? ' — ' + T.orationLanguageLabel(coverage) : ' — coverage not assessed'), group: massGroup(mass) };
+      return { value: mass.key,
+        label: window.TriptychSourceChoiceControls.formularyOptionLabel(T, mass, language, mark),
+        group: massGroup(mass) };
     }));
     showFormularyNotes(notes);
     placeholder(formularySelect, 'Choose a formulary…');
@@ -1088,7 +1041,9 @@
   function fillOrations(structure, mass, language, witness, state) {
     const languages = T.orationLanguagesOf(structure);
     T.fillSelect(orationsSelect, languages.map(function (row) {
-      return { value: row.lang, label: T.orationLanguageLabel(row), title: row.lang };
+      return { value: row.lang,
+        label: T.orationOptionLabel ? T.orationOptionLabel(row) : T.orationLanguageLabel(row),
+        title: T.orationLanguageLabel(row) };
     }));
     orationsSelect.value = languages.some(function (row) { return row.lang === language; })
       ? language : T.SOURCE_LANGUAGE;
@@ -1119,6 +1074,7 @@
 
   function setBrowseEnabled(enabled) {
     browseSelects.forEach(function (control) { control.disabled = !enabled; });
+    ordinaryControls.setEnabled(enabled);
     browseForm.querySelector('.surface-apply').disabled = !enabled;
   }
 
@@ -1126,7 +1082,8 @@
     browseSelects.forEach(function (select) { select.replaceChildren(); });
     witnessField.hidden = true;
     if (massFormField) massFormField.hidden = true;
-    browseStatus.textContent = 'Choose an edition to begin a new, explicit formulary selection.';
+    ordinaryControls.reset();
+    browseStatus.textContent = 'Choose an edition to begin a new formulary selection.';
     setBrowseEnabled(false);
     if (runtime.manifests) {
       fillMissals(runtime.manifests.properIndex.default);
@@ -1138,10 +1095,7 @@
 
   function populateBrowseSurface() {
     const state = runtime.normalized && runtime.normalized.state;
-    if (!state || !runtime.structure) {
-      resetBrowseSurface();
-      return;
-    }
+    if (!state || !runtime.structure) { resetBrowseSurface(); return; }
     const currentMass = state.formulary && state.formulary.id || null;
     const currentType = state.formulary && state.formulary.type || runtime.preferredType ||
       (runtime.groups[0] && runtime.groups[0].kind);
@@ -1155,9 +1109,10 @@
       state.languages.translationWitness || null);
     fillFormularies(runtime.groups, typeSelect.value, currentMass);
     fillMassForms(mass, state.form);
+    ordinaryControls.populate(state, runtime.ordinary);
     browseStatus.textContent = currentMass
-      ? 'Changing missal or type revalidates the formulary and requires another choice when it is not held.'
-      : 'A formulary must be selected. Nothing is chosen by manifest order.';
+      ? 'Changing missal or type revalidates the formulary.'
+      : 'Choose a formulary to read; none is selected automatically.';
     setBrowseEnabled(true);
   }
 
@@ -1168,10 +1123,11 @@
     formularySelect.replaceChildren();
     showFormularyNotes([]);
     fillMassForms(null, null);
+    ordinaryControls.reset();
     orationsSelect.replaceChildren();
     witnessSelect.replaceChildren();
     witnessField.hidden = true;
-    browseStatus.textContent = 'Loading this edition’s formulary list…';
+    browseStatus.textContent = 'Loading formulary list…';
     setBrowseEnabled(false);
     missalSelect.disabled = false;
     let structure;
@@ -1179,7 +1135,7 @@
       structure = await load(structurePath(id));
     } catch (error) {
       if (serial !== runtime.browseSerial) return;
-      browseStatus.textContent = 'This edition could not be loaded. Choose another missal.';
+      browseStatus.textContent = 'Edition could not be loaded. Choose another missal.';
       setBrowseEnabled(false);
       missalSelect.disabled = false;
       return;
@@ -1199,11 +1155,14 @@
     const list = T.el('dl', 'details-list');
     rows.forEach(([label, val]) => {
       if (val === null || val === undefined || val === '') return;
-      list.appendChild(T.el('dt', null, label));
-      const dd = T.el('dd', null);
+      const dt = T.el('dt', null, label), dd = T.el('dd', null);
       if (val?.nodeType) dd.appendChild(val);
-      else dd.textContent = String(val);
-      list.appendChild(dd);
+      else {
+        const text = String(val);
+        dd.textContent = text;
+        if (text.length > 72) { dt.classList.add('is-wide'); dd.classList.add('is-wide'); }
+      }
+      list.append(dt, dd);
     });
     return list;
   }
@@ -1322,6 +1281,7 @@
     ]));
     detailsBody.appendChild(detailsLinkSection('Elsewhere in Triptych', [
       { label: 'The Story of Salvation', href: '../scripture/' },
+      { label: 'Catena Commentary', href: '../catena/' },
       { label: 'How the Missal Changed', href: '../history/' },
       { label: 'This edition on the Missal Timeline', href: editionTimelineHref(state.edition.id) },
       { label: 'Every Document', href: '../texts/' },
@@ -1512,8 +1472,24 @@
             coverageNotice: coverageNotice
           });
         } catch (error) {
-          renderFailure([{ code: 'unsupported-comparison', path: 'compare',
-            message: String(error.message || error) }]);
+          const msg = String(error.message || error);
+          const unresolved = /unresolved/i.test(msg);
+          renderFailure([{ code: 'unsupported-comparison', path: 'compare', message: msg }]);
+          if (unresolved) {
+            const box = reading.querySelector('.candidate-failure');
+            if (box) {
+              const h2 = box.querySelector('h2');
+              if (h2) h2.textContent = 'Resolve choices before comparing';
+              const actions = T.el('div', 'compare-recovery-actions');
+              const back = T.el('button', 'candidate-choice-apply', 'Return to Read to resolve choices');
+              back.type = 'button';
+              back.addEventListener('click', function () {
+                navigate({ mode: 'read' }, Compare?.URL_KEYS, { location: { kind: 'top', id: null }, focus: 'title' });
+              });
+              actions.appendChild(back);
+              box.appendChild(actions);
+            }
+          }
           return;
         }
         if (!compared || serial !== runtime.serial) return;
@@ -1685,10 +1661,12 @@
     const formChanged = massFormField?.hidden === false && current && massFormSelect.value !== current.form;
     if (massFormField?.hidden === false) updates.form = massFormSelect.value;
     updates[PUBLIC_KEYS.translationWitness] = witnessField.hidden ? null : witnessSelect.value;
+    const sameEdition = Boolean(current && current.edition.id === missalSelect.value);
+    ordinaryControls.collectUpdates(updates, runtime.ordinary, sameEdition);
     const removals = ['location', LEGACY_KEYS.cycle, LEGACY_KEYS.alternative, LEGACY_KEYS.translationWitness];
     if (!browseKeepsCurrentFormulary()) removals.push('form', PUBLIC_KEYS.cycle, PUBLIC_KEYS.alternative);
     else if (formChanged) removals.push(PUBLIC_KEYS.cycle, PUBLIC_KEYS.alternative);
-    if (!current || current.edition.id !== missalSelect.value) {
+    if (!sameEdition) {
       removals.push('ordinary-lang');
       (runtime.manifests?.ordinaryIndex?.calendars || []).forEach(row => {
         (row.variants || []).forEach(key => { removals.push(key); });

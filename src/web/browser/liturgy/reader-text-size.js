@@ -101,7 +101,8 @@
     status.setAttribute('aria-live', 'polite');
     status.setAttribute('aria-atomic', 'true');
     section.append(label, select, note, status);
-    const secondary = surface.querySelector('[data-reader-secondary-actions]');
+    const secondary = surface.querySelector('[data-mode-display-options]') ||
+      surface.querySelector('[data-reader-secondary-actions]');
     surface.insertBefore(section, secondary);
 
     let size = readPreference(win);

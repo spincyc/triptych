@@ -36,7 +36,7 @@
     <p class="reader-context">Propers · Read</p>
     <h1 id="formulary-title" class="celebration-title" tabindex="-1">Choose a formulary</h1>
     <p id="formulary-type" class="entry-title"></p>
-    <details class="reader-coverage" open>
+    <details class="reader-coverage">
       <summary>Edition, texts and sources</summary>
       <label class="reader-inline-sources"><input type="checkbox"> Show source notes beside the prayers</label>
     <p id="formulary-meta" class="entry-meta"></p>
@@ -106,7 +106,10 @@
         <div class="surface-field is-wide">
           <label for="reader-formulary">Formulary</label>
           <select id="reader-formulary" name="mass"></select>
-          <p id="reader-formulary-notes" class="surface-note formulary-list-notes" hidden></p>
+          <details id="reader-formulary-notes-wrap" class="formulary-notes-disclosure" hidden>
+            <summary>About movable &amp; resumed Sundays</summary>
+            <p id="reader-formulary-notes" class="surface-note formulary-list-notes" hidden></p>
+          </details>
         </div>
         <div class="surface-field is-wide" id="reader-mass-form-field" hidden>
           <label for="reader-mass-form">Mass form</label>
@@ -124,9 +127,17 @@
           <label for="reader-witness">Translation witness</label>
           <select id="reader-witness" name="translation-witness"></select>
         </div>
+        <div class="surface-field" id="reader-ordinary-lang-field" hidden>
+          <label for="reader-ordinary-lang">Ordinary language</label>
+          <select id="reader-ordinary-lang" name="ordinary-lang"></select>
+        </div>
+        <div class="surface-field" id="reader-ordinary-option-field" hidden>
+          <label for="reader-ordinary-option">Ordinary option</label>
+          <select id="reader-ordinary-option" name="ordinary-option"></select>
+        </div>
         <button class="surface-apply" type="submit">Read this formulary</button>
       </form>
-      <p id="browse-status" class="surface-note" role="status" aria-live="polite" aria-atomic="true">A formulary must be selected. Nothing is chosen by manifest order.</p>
+      <p id="browse-status" class="surface-note" role="status" aria-live="polite" aria-atomic="true">Choose a formulary to read; none is selected automatically.</p>
     </div>
   </dialog>
 

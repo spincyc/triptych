@@ -49,9 +49,9 @@
 .reader-instrument .reader-document .compare-side-title {
   margin: 0 0 0.7rem;
   padding-bottom: 0.4rem;
-  border-bottom: 2px solid var(--instrument-ink);
+  border-bottom: 1px solid var(--instrument-line);
   color: var(--instrument-ink);
-  font: 650 0.84rem/1.4 var(--instrument-sans);
+  font: 600 0.84rem/1.4 var(--instrument-sans);
 }
 
 .reader-instrument .reader-document .compare-side .proper {
@@ -96,13 +96,13 @@
    Language pairs already move their rail to the outer edge. */
 @media screen and (min-width: 72rem) {
   .reader-instrument[data-reader-mode="compare"] .reader-document:not(:has(.text-pair)) {
-    --compare-rail-inset: calc(max(0.75rem, calc(50% - 33rem)) + 5rem);
+    --compare-rail-inset: calc(max(0.75rem, calc(50% - 34.5rem)) + 6.5rem);
     width: min(calc(100% - var(--compare-rail-inset) - 1.5rem), 70rem);
     margin-inline: var(--compare-rail-inset) 1.5rem;
   }
 }
 
-@media (max-width: 52rem) {
+@media screen and (max-width: 52rem) {
   .reader-instrument[data-reader-mode="compare"] .reader-document {
     width: 100%;
     padding-inline: max(1.25rem, var(--reader-safe-left)) max(1.25rem, var(--reader-safe-right));

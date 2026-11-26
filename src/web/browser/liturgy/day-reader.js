@@ -323,6 +323,7 @@
     title.textContent = 'Selection unavailable';
     document.title = 'Selection unavailable — Day — Triptych';
     dateLine.textContent = '';
+    dayIdentity.update({ canStep: false });
     coverageNotice.hidden = true;
     window.dayReaderDebug.error = (errors || []).map(function (one) {
       return { code: one.code || null, path: one.path || '', message: one.message || String(one) };
@@ -597,6 +598,22 @@
     T: T, runtime: runtime, resultMass: resultMass,
     ordinaryVariantGroups: ordinaryVariantGroups, ordinarySelectionMap: ordinarySelectionMap
   });
+  function stepDate(delta) {
+    if (!runtime.normalized) return;
+    readerShell.close({ restoreFocus: false });
+    navigate({ date: Model.shift(runtime.normalized.state.civilDate, delta), mass: null,
+      form: null, 'translation-witness': null, location: null },
+      ['mass', 'form', 'translation-witness', 'location']);
+  }
+  const dayIdentity = window.TriptychSourceChoiceControls.createDayIdentityBar({
+    T: T, onStep: stepDate
+  });
+  if (typeof T.onArrowStep === 'function') {
+    T.onArrowStep(function (delta) {
+      if (!runtime.normalized || readerShell.openSurface() || document.querySelector('dialog[open]')) return;
+      stepDate(delta);
+    });
+  }
 
   function setDateSurfaceEnabled(enabled) { dateControls.setEnabled(enabled); }
   function resetDateSurface() { dateControls.reset(); }
@@ -606,8 +623,15 @@
     const list = T.el('dl', 'details-list');
     rows.forEach(function (row) {
       if (row[1] === null || row[1] === undefined || row[1] === '') return;
-      list.appendChild(T.el('dt', null, row[0]));
-      list.appendChild(T.el('dd', row[2] || null, String(row[1])));
+      const value = String(row[1]);
+      const dt = T.el('dt', null, row[0]);
+      const dd = T.el('dd', row[2] || null, value);
+      if (value.length > 72) {
+        dt.classList.add('is-wide');
+        dd.classList.add('is-wide');
+      }
+      list.appendChild(dt);
+      list.appendChild(dd);
     });
     return list;
   }
@@ -734,10 +758,25 @@
       outcome.appendChild(T.el('p', 'surface-note', messages[runtime.outcome] || 'This selection is not resolved.'));
       detailsBody.appendChild(outcome);
     }
-    detailsBody.appendChild(detailsLinkSection('Related reader', [
-      { label: 'Browse the Propers', href: 'index.html' }
-    ]));
+    const resolvedMass = resultMass(runtime.result);
+    const propersLinks = [];
+    if (resolvedMass && resolvedMass.kind && state.edition && state.edition.id) {
+      const pParams = new URLSearchParams({
+        missal: state.edition.id, type: resolvedMass.kind, mass: resolvedMass.key,
+        bible: state.bible.id, orations: state.languages.orations, mode: 'read'
+      });
+      if (runtime.result.resolved && runtime.result.resolved.form && runtime.result.resolved.form !== 'main') {
+        pParams.set('form', runtime.result.resolved.form);
+      }
+      propersLinks.push({ label: 'Open this formulary in Propers', href: 'index.html#' + pParams.toString() });
+    }
+    propersLinks.push({ label: 'Browse the Propers', href: 'index.html' });
+    detailsBody.appendChild(detailsLinkSection('Related reader', propersLinks));
     detailsBody.appendChild(detailsLinkSection('Elsewhere in Triptych', [
+      { label: 'The Story of Salvation', href: '../scripture/' },
+      { label: 'Catena Commentary', href: '../catena/' },
+      { label: 'How the Missal Changed', href: '../history/' },
+      { label: 'The Source Library', href: '../sources/' },
       { label: 'The Code, Canon by Canon', href: '../law/' },
       { label: 'Every Document', href: '../texts/' }
     ]));
@@ -858,9 +897,10 @@
     window.dayReaderDebug.outcome = runtime.outcome;
     window.dayReaderDebug.outcomeClass = held.outcomeClass || runtime.outcome;
     const coverageDetails = coverageNotice.closest('.reader-coverage');
-    if (coverageDetails && coverageDetails.dataset.mode !== mode) {
-      coverageDetails.open = mode !== 'missal';
-      coverageDetails.dataset.mode = mode;
+    if (coverageDetails && (coverageDetails.dataset.coverageMode !== mode ||
+        held.outcome === 'invalid' || held.outcome === 'unrenderable')) {
+      coverageDetails.open = held.outcome === 'invalid' || held.outcome === 'unrenderable';
+      coverageDetails.dataset.coverageMode = mode || '';
     }
     shellRoot.dataset.readerMode = mode || 'read';
     contextLine.textContent = 'Day · ' + modeLabel(mode);
@@ -981,7 +1021,7 @@
         .map(function (row) { return row.name; }) : []);
     let applicableSlots = slots.filter(function (slot) { return heldNames.has(slot.slot); });
     const withoutHeldSlot = applicableSlots.length === 0;
-    body.appendChild(T.el('h4', null, 'Appointed commemorations'));
+    body.appendChild(T.el('h3', null, 'Appointed commemorations'));
     if (withoutHeldSlot) {
       body.appendChild(reasoningParagraph(
         'This corpus carries no oration slot for the day’s own Mass, so the reader ' +
@@ -1010,7 +1050,7 @@
       return;
     }
     applicableSlots.forEach(function (slot) {
-      body.appendChild(T.el('h5', null, 'What follows the ' + String(slot.slot).toLowerCase()));
+      body.appendChild(T.el('h4', null, 'What follows the ' + String(slot.slot).toLowerCase()));
       if (slot.what) body.appendChild(reasoningParagraph(slot.what, slot.locus));
       const list = T.el('ul', 'reasoning-list');
       subordinate.forEach(function (oration) {
@@ -1044,7 +1084,7 @@
       return event.kind === 'proper' && event.seat && event.seat.locus;
     });
     if (placements.length) {
-      body.appendChild(T.el('h4', null, 'Placement in the Ordinary'));
+      body.appendChild(T.el('h3', null, 'Placement in the Ordinary'));
       const list = T.el('ul', 'reasoning-list');
       placements.forEach(function (event) {
         const item = T.el('li');
@@ -1055,11 +1095,13 @@
       body.appendChild(list);
     }
     if (ordinary.derived_from || ordinary.slots_derived_from) {
-      body.appendChild(T.el('h4', null, 'Ordinary resolution'));
-      if (ordinary.derived_from) body.appendChild(reasoningParagraph(ordinary.derived_from));
+      const notes = T.el('details', 'edition-transcription-notes');
+      notes.appendChild(T.el('summary', null, 'Ordinary resolution — edition & transcription notes'));
+      if (ordinary.derived_from) notes.appendChild(reasoningParagraph(ordinary.derived_from));
       if (ordinary.slots_derived_from) {
-        body.appendChild(reasoningParagraph(ordinary.slots_derived_from));
+        notes.appendChild(reasoningParagraph(ordinary.slots_derived_from));
       }
+      body.appendChild(notes);
     }
     const shownElements = new Set((result.events || []).filter(function (event) {
       return event.kind === 'ordinary-element' || event.kind === 'ordinary_element';
@@ -1073,7 +1115,7 @@
       });
     });
     if (notes.length) {
-      body.appendChild(T.el('h4', null, 'Ordinary source notes'));
+      body.appendChild(T.el('h3', null, 'Ordinary source notes'));
       const list = T.el('ul', 'reasoning-list');
       notes.forEach(function (element) {
         const item = T.el('li');
@@ -1148,7 +1190,7 @@
       return !winner || candidate.id !== winner.id;
     });
     if (others.length) {
-      body.appendChild(T.el('h4', null, 'Also on this date'));
+      body.appendChild(T.el('h3', null, 'Also on this date'));
       const list = T.el('ul', 'reasoning-list');
       others.forEach(function (candidate) {
         const loser = (branch.losers || []).find(function (row) {
@@ -1195,7 +1237,7 @@
       body.appendChild(reasoningParagraph(remark.what, remark.locus));
     });
     (branch.massChoices || []).forEach(function (choice) {
-      body.appendChild(T.el('h4', null, choice.label || 'Source-defined Mass choice'));
+      body.appendChild(T.el('h3', null, choice.label || 'Source-defined Mass choice'));
       body.appendChild(reasoningParagraph(choice.why || choice.what, choice.locus));
       if (choice.latin) body.appendChild(reasoningLatin(choice.latin));
       if (choice.openBecause) body.appendChild(reasoningParagraph(choice.openBecause));
@@ -1519,8 +1561,14 @@
     }]);
 
     const missal = missalRow(state.edition.id);
-    title.textContent = documentChoice.title;
+    const resolvedMass = /^proper-form:/.test(documentChoice.choice.id) &&
+      result.resolved && (assembled.structure.masses || []).find(function (row) {
+        return row.key === result.resolved.formulary;
+      });
+    title.textContent = resolvedMass && resolvedMass.name
+      ? resolvedMass.name : documentChoice.title;
     dateLine.textContent = longDate(assembled.derived.date, assembled.derived.weekday);
+    dayIdentity.update({ canStep: true, derived: assembled.derived, branch: branch, result: result, multiple: false });
     commitOutcomePresentation({
       mode: runtime.mode,
       outcome: 'unresolved',
@@ -1534,116 +1582,22 @@
     });
     coverageNotice.textContent = withRecensionNotice(result, coverageMessage(result));
     coverageNotice.hidden = false;
-    document.title = documentChoice.title + ' — Day — Triptych';
+    document.title = title.textContent + ' — Day — Triptych';
     refreshDetailsAfterOutcome();
   }
 
   function weekdayOrationControl(result, structure, state, prefix) {
-    const choices = Model.weekdayOrationChoices({
-      derived: runtime.derived, rubrics: runtime.rubrics, structure: structure,
-      territory: state.calendar.territory && state.calendar.territory.id || null,
-      mass: state.selectedReadableFormulary && state.selectedReadableFormulary.id || null
+    return window.TriptychSourceChoiceControls.weekdayOrationControl({
+      T: T, Model: Model, runtime: runtime, result: result,
+      structure: structure, state: state, prefix: prefix, navigate: navigate
     });
-    if (!choices) return null;
-    const section = T.el(result.orationSelection ? 'details' : 'section', 'candidate-choice weekday-oration-choice');
-    section.dataset.weekdayOrationChoice = choices.id;
-    if (result.orationSelection) section.appendChild(T.el('summary', null,
-      'Prayers from ' + result.orationSelection.label + ' · ' + choices.locus));
-    const heading = T.el('h2', null, 'Choose prayers for this weekday');
-    heading.id = (prefix || '').replace(/\//g, '-') + 'weekday-oration-heading';
-    if (!result.orationSelection) section.setAttribute('aria-labelledby', heading.id);
-    section.appendChild(heading);
-    section.appendChild(T.el('p', 'candidate-choice-reason',
-      'Choose prayers from an allowed Mass. The readings remain those of this weekday.'));
-    const form = T.el('form', 'candidate-choice-form');
-    const label = T.el('label', null, 'Prayers from');
-    const select = T.el('select');
-    select.name = 'oration-mass';
-    select.appendChild(new Option('Choose a Mass', ''));
-    choices.options.forEach(function (option) { select.appendChild(new Option(option.label, option.id)); });
-    select.value = state.orationMass || '';
-    label.appendChild(select);
-    const apply = T.el('button', 'candidate-choice-apply', 'Read with these prayers');
-    apply.type = 'submit';
-    apply.disabled = !select.value;
-    select.addEventListener('change', function () { apply.disabled = !select.value; });
-    form.appendChild(label);
-    form.appendChild(apply);
-    form.addEventListener('submit', function (event) {
-      event.preventDefault();
-      if (!select.value) return;
-      navigate({'oration-mass': select.value, 'oration-territory': choices.territory, location: null}, ['location'], {
-        location: {kind: 'top', id: null}, focus: {kind: 'day-choice-result'}
-      });
-    });
-    section.appendChild(form);
-    if (result.orationSelection) section.appendChild(T.el('p', 'candidate-choice-locus',
-      'Prayers from ' + result.orationSelection.label + ' · ' + choices.locus + '.'));
-    section.appendChild(T.el('p', 'surface-note', choices.locus +
-      ' permits this choice. Other permitted choices are not yet available here; missing texts remain marked.'));
-    return section;
   }
 
   function dedicationLocationControl(result, structure, state, prefix) {
-    const choices = Model.dedicationAnniversaryChoices({derived: runtime.derived,
-      rubrics: runtime.rubrics, structure: structure,
-      mass: state.selectedReadableFormulary && state.selectedReadableFormulary.id || null,
-      formId: state.form || 'main', territory: state.calendar.territory && state.calendar.territory.id || null});
-    if (!choices) return null;
-    const section = T.el(result.dedicationSelection ? 'details' : 'section', 'candidate-choice dedication-location-choice');
-    if (result.dedicationSelection) section.appendChild(T.el('summary', null,
-      'Confirmed location: ' + result.dedicationSelection.label));
-    const heading = T.el('h2', null, 'Where is this Mass being celebrated?');
-    heading.id = (prefix || '').replace(/\//g, '-') + 'dedication-location-heading';
-    if (!result.dedicationSelection) section.setAttribute('aria-labelledby', heading.id);
-    section.appendChild(heading);
-    section.appendChild(T.el('p', 'candidate-choice-reason',
-      'The Secret depends on whether this Mass is celebrated in the church whose dedication is commemorated. If the location is unknown, leave it unresolved.'));
-    const form = T.el('form', 'candidate-choice-form');
-    const label = T.el('label', null, 'Celebration location');
-    const select = T.el('select');
-    select.name = 'dedication-location';
-    select.appendChild(new Option('Location unknown', ''));
-    choices.options.forEach(function (option) { select.appendChild(new Option(option.label, option.id)); });
-    select.value = result.dedicationSelection && result.dedicationSelection.relation || '';
-    label.appendChild(select);
-    form.appendChild(label);
-    const confirmation = T.el('label', 'candidate-choice-option');
-    const checkbox = T.el('input');
-    checkbox.type = 'checkbox';
-    checkbox.name = 'confirm-dedication-location';
-    confirmation.appendChild(checkbox);
-    confirmation.appendChild(document.createTextNode('I confirm that this is the actual location of this celebration.'));
-    form.appendChild(confirmation);
-    const apply = T.el('button', 'candidate-choice-apply', 'Apply confirmed location');
-    apply.type = 'submit';
-    apply.disabled = true;
-    form.addEventListener('change', function () { apply.disabled = !select.value || !checkbox.checked; });
-    function applyLocation(attestation) {
-      runtime.dedicationAttestation = attestation;
-      runtime.pendingLocation = {kind: 'top', id: null};
-      runtime.pendingFocus = {kind: 'day-choice-result'};
-      renderCandidate();
-    }
-    form.addEventListener('submit', function (event) {
-      event.preventDefault();
-      if (!select.value || !checkbox.checked) return;
-      applyLocation({schema: 'triptych-dedication-location/v1', calendar: choices.calendar,
-        civilDate: choices.civilDate, mass: choices.mass, formId: choices.formId,
-        territory: choices.territory, relation: select.value});
+    return window.TriptychSourceChoiceControls.dedicationLocationControl({
+      T: T, Model: Model, runtime: runtime, result: result,
+      structure: structure, state: state, prefix: prefix, renderCandidate: renderCandidate
     });
-    form.appendChild(apply);
-    section.appendChild(form);
-    if (result.dedicationSelection) {
-      section.appendChild(T.el('p', 'candidate-choice-locus', result.dedicationSelection.label + ' · ' + choices.locus));
-      const reset = T.el('button', null, 'Leave location unresolved');
-      reset.type = 'button';
-      reset.addEventListener('click', function () { applyLocation(null); });
-      section.appendChild(reset);
-    }
-    section.appendChild(T.el('p', 'surface-note',
-      'This confirmation applies only to this celebration while this page is open. A shared link or reload asks for confirmation again.'));
-    return section;
   }
 
   async function buildResultDocument(result, structure, branch, renderContext, isCurrent) {
@@ -1738,11 +1692,14 @@
       }
     });
 
-    // Keep the Mass-wide witness choice beside its first Proper.
+    // Place the Mass-wide witness choice at the top of the reading so it never interrupts mid-Mass prose.
     for (const choice of documentFragment.querySelectorAll('.translation-witness-choice')) {
       if (choice.closest('.proper-choice')) continue;
       const proper = choice.closest('[data-semantic-event-id]');
-      if (proper) proper.after(choice);
+      if (proper && proper.dataset.semanticEventId) {
+        choice.dataset.witnessFirstEvent = proper.dataset.semanticEventId;
+      }
+      documentFragment.prepend(choice);
     }
 
     const notice = coverageMessage(result);
@@ -1839,14 +1796,21 @@
 
     const missal = missalRow(state.edition.id);
     const bible = rows[0] && rows[0].bible;
+    const formattedDate = longDate(assembled.derived.date, assembled.derived.weekday);
     title.textContent = multiple
-      ? 'Held territorial branches'
+      ? formattedDate + ' — Regional Observances'
       : resultHeading(rows[0], assembled.structure);
-    dateLine.textContent = longDate(assembled.derived.date, assembled.derived.weekday);
+    dateLine.textContent = formattedDate;
     const selected = !multiple && state.selectedReadableFormulary && rows[0].result && rows[0].result.resolved;
     if (selected && selected.standing && selected.standing !== 'said') {
       dateLine.textContent += ' · ' + T.titleCase(selected.standing);
     }
+    dayIdentity.update({
+      canStep: true, derived: assembled.derived,
+      branch: multiple ? null : rows[0].branch,
+      result: multiple ? null : rows[0].result,
+      multiple: multiple, branchCount: rows.length
+    });
     const metadata = [
       missal && (missal.edition || missal.label),
       multiple ? rows.length + ' source-defined territorial results' : (rows[0].branch.option || 'Universal'),
@@ -2289,7 +2253,7 @@
           namedDivision(raw.name), null
         );
         sectionNodes.set(raw.key, node);
-        contents.push({ id: prefix + event.id, label: raw.name, element: node, group: 'Rites and divisions' });
+        contents.push({ id: prefix + event.id, label: raw.name, element: node, group: raw.name });
         return node;
       },
       element: function (event) {
@@ -2330,7 +2294,7 @@
               id: prefix + 'ordinary-option/' + group.group,
               label: group.name + ': ' + option.name,
               element: choice,
-              group: 'Options'
+              group: currentDivision || 'Options'
             });
           });
           block.appendChild(node);
@@ -2356,7 +2320,7 @@
             id: prefix + choiceEvent.id,
             label: T.properChoiceLabel(choiceEvent),
             element: node,
-            group: 'Proper choices'
+            group: currentDivision || 'Proper choices'
           });
           return node;
         }
@@ -2379,7 +2343,7 @@
           id: prefix + event.id,
           label: event.editionSlotLabel || proper.name || 'Proper',
           element: node,
-          group: unplaced ? 'Exceptional source-order propers' : 'Appointed propers'
+          group: unplaced ? 'Exceptional source-order propers' : (currentDivision || 'Appointed propers')
         });
         return node;
       }
@@ -2735,7 +2699,7 @@
       runtime.result = multiple ? null : rendered[0].result;
       commitResultDocuments(
         rendered, assembled, normalized.state,
-        Boolean(normalized.state.apparatus && normalized.state.apparatus.why)
+        Boolean(normalized.state.apparatus && normalized.state.apparatus.why) || runtime.mode === 'study'
       );
       populateDateSurface();
       window.dayReaderDebug.semantic = multiple
@@ -2964,25 +2928,13 @@
     } : {}));
   });
 
-  document.getElementById('previous-date').addEventListener('click', function () {
-    if (!runtime.normalized) return;
-    readerShell.close({ restoreFocus: false });
-    navigate({ date: Model.shift(runtime.normalized.state.civilDate, -1), mass: null,
-      form: null, 'translation-witness': null, location: null },
-      ['mass', 'form', 'translation-witness', 'location']);
-  });
+  document.getElementById('previous-date').addEventListener('click', function () { stepDate(-1); });
   document.getElementById('today-date').addEventListener('click', function () {
     readerShell.close({ restoreFocus: false });
     navigate({ date: todayISO(), mass: null, form: null, 'translation-witness': null,
       location: null }, ['mass', 'form', 'translation-witness', 'location']);
   });
-  document.getElementById('next-date').addEventListener('click', function () {
-    if (!runtime.normalized) return;
-    readerShell.close({ restoreFocus: false });
-    navigate({ date: Model.shift(runtime.normalized.state.civilDate, 1), mass: null,
-      form: null, 'translation-witness': null, location: null },
-      ['mass', 'form', 'translation-witness', 'location']);
-  });
+  document.getElementById('next-date').addEventListener('click', function () { stepDate(1); });
 
   DayStudy.bindControls({ runtime: runtime, readerShell: readerShell, navigate: navigate,
     captureModeLocation: captureModeLocation, onModeSwitch: function () {

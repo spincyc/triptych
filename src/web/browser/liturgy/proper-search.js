@@ -157,8 +157,15 @@
     element.textContent = (notes || []).map(function (note) {
       return note.mark + ' ' + note.text;
     }).join(' ');
-    element.hidden = !(notes || []).length;
-    if (element.hidden) select.removeAttribute('aria-describedby');
+    const empty = !(notes || []).length;
+    element.hidden = empty;
+    const wrap = element.parentElement && element.parentElement.classList.contains('formulary-notes-disclosure')
+      ? element.parentElement : null;
+    if (wrap) {
+      wrap.hidden = empty;
+      if (empty) wrap.open = false;
+    }
+    if (empty) select.removeAttribute('aria-describedby');
     else select.setAttribute('aria-describedby', element.id);
   }
 
@@ -221,8 +228,8 @@
       }
       const shown = found.slice(0, LIMIT);
       status.textContent = 'Showing ' + shown.length + ' of ' + found.length +
-        ' form-qualified results in ' + options.editionLabel(edition) +
-        (found.length > LIMIT ? '. Refine the search to see other results.' : '.');
+        (found.length === 1 ? ' Mass in ' : ' Masses in ') + options.editionLabel(edition) +
+        (found.length > LIMIT ? '. Refine your search to see more.' : '.');
       // Marks are the browse list's own: numbered over the whole edition.
       const notes = listNotes(index.rows);
       const list = document.createElement('ol');
@@ -243,8 +250,10 @@
         item.appendChild(link);
         const identity = document.createElement('span');
         identity.className = 'proper-search-identity';
-        identity.textContent = [index.edition_short, row.kind, row.key,
-          'form ' + row.form_id].join(' · ');
+        const kindLabel = row.kind ? row.kind.charAt(0).toUpperCase() + row.kind.slice(1).replace(/-/g, ' ') : '';
+        identity.textContent = [index.edition_short, kindLabel,
+          row.fixed_date ? 'Fixed ' + row.fixed_date : null,
+          row.form_name ? row.form_name : null].filter(Boolean).join(' · ');
         item.appendChild(identity);
         const hit = preview(row, query);
         if (hit) {

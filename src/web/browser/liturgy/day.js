@@ -1159,15 +1159,23 @@
    * 195 times the moment a reader asked the 1962 Ordinary for its Latin. Each
    * key stays on the source row as a stable identifier, not reading prose.
    */
+  const ABSENCE_KIND_PROSE = Object.freeze({
+    'witness-gap': 'not in this source edition',
+    'model-gap': 'appointment not yet modeled',
+    'rights': 'withheld for copyright',
+    'not-applicable': 'not applicable'
+  });
+
   function absenceWord(file, key) {
     if (!key) {
       return 'This Ordinary holds none here and records no reason, which is a ' +
         'defect in its source rather than a silence about the rite.';
     }
     const found = (file.absences || []).find((one) => one.key === key);
-    return found
-      ? absenceLabel(found) + ' (' + String(found.kind || 'unavailable').replace(/-/g, ' ') + ').'
-      : 'The reason for this absence is not recorded.';
+    if (!found) return 'The reason for this absence is not recorded.';
+    const kind = String(found.kind || 'unavailable');
+    const detail = ABSENCE_KIND_PROSE[kind] || kind.replace(/-/g, ' ');
+    return absenceLabel(found).replace(/\.\s*$/, '') + ' — ' + detail + '.';
   }
 
   function absenceLabel(row) {
@@ -1321,7 +1329,8 @@
         ? translations.find((one) => one.lang === language.lang) || null : null));
     if (held) {
       if (held.reading_note) {
-        const note = T.el('p', 'composed-note ordinary-reading-note', held.reading_note);
+        const note = T.el('p', 'composed-note ordinary-reading-note',
+          String(held.reading_note).replace(/Cummiskey,1861\b/g, 'Cummiskey, 1861'));
         note.lang = 'en';
         section.appendChild(note);
       }
@@ -1379,7 +1388,9 @@
     // it is not already the heading: an element the artifact names by its own
     // incipit carries one string in both fields, and printing it twice says the
     // same thing twice under two settings.
-    if (!held && !explicit.suppressIncipit && element.latin_incipit && element.latin_incipit !== element.name) {
+    const noWordsAnywhere = hasNoOrdinaryWords(element, file, 'la') &&
+      (!language || hasNoOrdinaryWords(element, file, language.lang));
+    if (!held && !explicit.suppressIncipit && !noWordsAnywhere && element.latin_incipit && element.latin_incipit !== element.name) {
       const incipit = T.el('p', 'proper-incipit', element.latin_incipit);
       incipit.lang = 'la';
       section.appendChild(incipit);
@@ -1421,9 +1432,18 @@
       if (hasNoOrdinaryWords(element, file, one.lang)) continue;
       if (translations.some((row) => row.lang === one.lang)) continue;
       if (anywhere && (!language || one.lang !== language.lang)) continue;
-      section.appendChild(T.notice(
+      // In monolingual non-Latin reading, do not repeat a second Latin gap card
+      // when the requested language is already explicitly marked absent.
+      if (!options && language && one.lang !== language.lang &&
+          state.textDisplay !== 'latin-and-selected' &&
+          !hasNoOrdinaryWords(element, file, language.lang)) continue;
+      const absenceKey = (element.absent || {})[one.absent];
+      const foundAbsence = absenceKey && (file.absences || []).find((row) => row.key === absenceKey);
+      const notice = T.notice(
         'its ' + T.languageName(one.lang) + '. ' +
-        absenceWord(file, (element.absent || {})[one.absent])));
+        absenceWord(file, absenceKey));
+      if (foundAbsence && foundAbsence.kind) notice.setAttribute('data-absence-kind', foundAbsence.kind);
+      section.appendChild(notice);
     }
     // The note is the transcriber's apparatus — which capital is a drop, where
     // the Latin column prints a cross, which leaf a reading came from. It is
@@ -1507,11 +1527,16 @@
   /** How this frame was arrived at: apparatus, and behind the same toggle. */
   function ordinaryMargin(file) {
     const node = margin('Ordinary resolution');
-    if (file.derived_from) node.appendChild(T.el('p', 'margin-why', file.derived_from));
-    // Where the seats came from. A page that sets one book's propers into
-    // another book's frame owes the reader that sentence.
-    if (file.slots_derived_from) {
-      node.appendChild(T.el('p', 'margin-why', file.slots_derived_from));
+    if (file.derived_from || file.slots_derived_from) {
+      const notes = T.el('details', 'edition-transcription-notes');
+      notes.appendChild(T.el('summary', null, 'Edition & transcription notes'));
+      if (file.derived_from) notes.appendChild(T.el('p', 'margin-why', file.derived_from));
+      // Where the seats came from. A page that sets one book's propers into
+      // another book's frame owes the reader that sentence.
+      if (file.slots_derived_from) {
+        notes.appendChild(T.el('p', 'margin-why', file.slots_derived_from));
+      }
+      node.appendChild(notes);
     }
     return node;
   }

@@ -135,10 +135,15 @@
     let keptSides = [];
     let keptUnits = [];
     let closedCoverage = null;
+    let closedDisclosures = [];
     const reading = function () { return doc.getElementById('reader-document'); };
     function clear() {
       if (closedCoverage) closedCoverage.open = false;
       closedCoverage = null;
+      closedDisclosures.forEach(function (node) {
+        if (node.isConnected) node.open = false;
+      });
+      closedDisclosures = [];
       const current = reading();
       ties.forEach(function (tie) {
         // A reader rerender may have detached the old frame while print was open.
@@ -189,6 +194,12 @@
         closedCoverage = coverage;
         coverage.open = true;
       }
+      current.querySelectorAll('details.study-overview-disclosure').forEach(function (node) {
+        if (!node.open) {
+          node.open = true;
+          closedDisclosures.push(node);
+        }
+      });
       // A short paired text and its own source qualifications travel as one
       // print unit. Long stanzas and readings remain free to paginate.
       current.querySelectorAll('.text-pair > .text-side').forEach(function (side) {
@@ -348,12 +359,185 @@
     const coverage = shell.querySelector('.reader-coverage');
     if (coverage) coverage.appendChild(context);
     else if (reading) reading.before(context);
+
+    // Mount cohesive 1-click Display options & quick Share/Print inside Mode.
+    const modeSurface = shell.querySelector('[data-reader-surface="mode"]');
+    const modeSecondary = modeSurface && modeSurface.querySelector('[data-reader-secondary-actions]');
+    const inlineSourcesInput = shell.querySelector('.reader-inline-sources input');
+    let modePaired = null;
+    let modeScripture = null;
+    let modeRubricsLabel = null;
+    let modeRubrics = null;
+    let modeInlineLabel = null;
+    let modeInline = null;
+    let modeWhyLabel = null;
+    let modeWhy = null;
+    let modeQuickStatus = null;
+
+    function hashUpdate(key, value) {
+      const url = new URL(win.location.href);
+      const params = new URLSearchParams(url.hash.slice(1));
+      if (value === null || value === undefined) params.delete(key);
+      else params.set(key, value);
+      url.hash = params.toString();
+      return url.href;
+    }
+
+    function applyTextDisplay(checked, returnToModeButton) {
+      const state = currentState();
+      if (!state) { syncPresentation(); return; }
+      const capture = win.TriptychReaderTextSize && win.TriptychReaderTextSize.captureLocation;
+      const location = capture && reading ? capture(win, reading) : null;
+      if (win.history) win.history.replaceState(win.history.state, '',
+        textDisplayUrl(win.location, state.textDisplay || 'selected', location));
+      presentationPending = returnToModeButton !== false;
+      win.location.href = textDisplayUrl(win.location,
+        checked ? 'latin-and-selected' : 'selected', location);
+    }
+
+    function applyScriptureCompanion(checked, returnToModeButton) {
+      const state = currentState();
+      if (!state) { syncPresentation(); return; }
+      const capture = win.TriptychReaderTextSize && win.TriptychReaderTextSize.captureLocation;
+      const location = capture && reading ? capture(win, reading) : null;
+      if (win.history) win.history.replaceState(win.history.state, '',
+        scriptureCompanionUrl(win.location, state.scriptureCompanion && state.scriptureCompanion.id || null, location));
+      presentationPending = returnToModeButton !== false;
+      win.location.href = scriptureCompanionUrl(win.location,
+        checked ? 'clementine-vulgate' : null, location);
+    }
+
+    if (modeSurface && modeSecondary && !modeSurface.querySelector('[data-mode-display-options]')) {
+      const displaySection = doc.createElement('section');
+      displaySection.className = 'surface-body mode-display-options';
+      displaySection.dataset.modeDisplayOptions = '';
+      const heading = doc.createElement('h3');
+      heading.textContent = 'Display options';
+      displaySection.appendChild(heading);
+
+      function makeToggle(labelText, attr, id) {
+        const label = doc.createElement('label');
+        label.className = 'mode-display-toggle';
+        const input = doc.createElement('input');
+        input.type = 'checkbox';
+        if (id) input.id = id;
+        if (attr) input.setAttribute(attr, '');
+        label.append(input, doc.createTextNode(labelText));
+        displaySection.appendChild(label);
+        return { label: label, input: input };
+      }
+
+      const pairedRow = makeToggle('Latin alongside prayers', 'data-mode-text-display', 'mode-text-display');
+      modePaired = pairedRow.input;
+      modePaired.addEventListener('change', function () { applyTextDisplay(modePaired.checked, false); });
+
+      const scriptureRow = makeToggle('Latin Vulgate alongside Scripture', 'data-mode-scripture-companion', 'mode-scripture-companion');
+      modeScripture = scriptureRow.input;
+      modeScripture.addEventListener('change', function () { applyScriptureCompanion(modeScripture.checked, false); });
+
+      const rubricsRow = makeToggle('Show Ordinary rubrics', 'data-mode-rubrics', 'mode-rubrics');
+      modeRubricsLabel = rubricsRow.label;
+      modeRubrics = rubricsRow.input;
+      modeRubrics.addEventListener('change', function () {
+        const state = currentState();
+        if (!state) return;
+        const show = modeRubrics.checked;
+        if (doc.body) doc.body.classList.toggle('hides-rubrics', !show);
+        if (state.apparatus) state.apparatus.rubrics = show;
+        if (win.history) win.history.replaceState(win.history.state, '', hashUpdate('rubrics', show ? '1' : '0'));
+      });
+
+      const inlineRow = makeToggle('Show source notes beside prayers', 'data-mode-inline-sources', 'mode-inline-sources');
+      modeInlineLabel = inlineRow.label;
+      modeInline = inlineRow.input;
+      if (inlineSourcesInput) {
+        modeInline.addEventListener('change', function () {
+          inlineSourcesInput.checked = modeInline.checked;
+        });
+        inlineSourcesInput.addEventListener('change', function () {
+          modeInline.checked = inlineSourcesInput.checked;
+        });
+      } else {
+        modeInlineLabel.hidden = true;
+      }
+
+      if (entrance === 'day') {
+        const whyRow = makeToggle('Show “Why this Mass”', 'data-mode-why', 'mode-why');
+        modeWhyLabel = whyRow.label;
+        modeWhy = whyRow.input;
+        modeWhy.addEventListener('change', function () {
+          const state = currentState();
+          if (!state) return;
+          win.location.href = hashUpdate('why', modeWhy.checked ? '1' : '0');
+        });
+      }
+
+      const quickControls = doc.createElement('div');
+      quickControls.className = 'mode-quick-actions';
+      const quickShare = doc.createElement('button');
+      quickShare.type = 'button';
+      quickShare.id = 'mode-share';
+      quickShare.dataset.modeShare = '';
+      quickShare.textContent = 'Share link';
+      const quickPrint = doc.createElement('button');
+      quickPrint.type = 'button';
+      quickPrint.id = 'mode-print';
+      quickPrint.dataset.modePrint = '';
+      quickPrint.textContent = 'Print';
+      quickControls.append(quickShare, quickPrint);
+      modeQuickStatus = doc.createElement('p');
+      modeQuickStatus.className = 'mode-quick-status';
+      modeQuickStatus.setAttribute('role', 'status');
+      modeQuickStatus.setAttribute('aria-live', 'polite');
+      displaySection.append(quickControls, modeQuickStatus);
+
+      quickShare.addEventListener('click', async function () {
+        const state = currentState();
+        if (!state) { modeQuickStatus.textContent = 'Wait for a valid reader selection before sharing.'; return; }
+        if (shell.querySelector('[data-source-local-view="sequence"]')) {
+          modeQuickStatus.textContent = 'Return to the source quotation before sharing.';
+          return;
+        }
+        const url = canonicalUrl(entrance, win.location, win.LiturgyReaderState);
+        modeQuickStatus.textContent = await share({
+          title: shareTitle(entrance, shell, state), url: url,
+          navigator: win.navigator, document: doc, focusTarget: quickShare
+        });
+      });
+      quickPrint.addEventListener('click', function () {
+        if (!currentState()) { modeQuickStatus.textContent = 'Wait for a valid reader selection before printing.'; return; }
+        try { win.print(); modeQuickStatus.textContent = 'Print dialog opened.'; }
+        catch (_error) { modeQuickStatus.textContent = 'Could not open the print dialog.'; }
+      });
+
+      modeSurface.insertBefore(displaySection, modeSecondary);
+    }
+
     function syncPresentation() {
       const state = currentState();
+      const mode = shell.dataset.readerMode || (state && state.requestedMode) || 'read';
       paired.disabled = !state;
       paired.checked = Boolean(state && state.textDisplay === 'latin-and-selected');
       scripturePaired.disabled = !state;
       scripturePaired.checked = Boolean(state && state.scriptureCompanion);
+      if (modePaired) { modePaired.disabled = !state; modePaired.checked = paired.checked; }
+      if (modeScripture) { modeScripture.disabled = !state; modeScripture.checked = scripturePaired.checked; }
+      if (modeRubrics && modeRubricsLabel) {
+        const hasOrdinary = Boolean(state && (state.requestedMode === 'missal' || (state.options && state.options.ordinary)));
+        modeRubricsLabel.hidden = !hasOrdinary;
+        modeRubrics.disabled = !state;
+        modeRubrics.checked = !(state && state.apparatus && state.apparatus.rubrics === false) &&
+          !(doc.body && doc.body.classList.contains('hides-rubrics'));
+      }
+      if (modeInline && modeInlineLabel && inlineSourcesInput) {
+        modeInlineLabel.hidden = mode !== 'read' && mode !== 'missal';
+        modeInline.checked = inlineSourcesInput.checked;
+      }
+      if (modeWhy && modeWhyLabel) {
+        modeWhyLabel.hidden = mode === 'compare';
+        modeWhy.disabled = !state;
+        modeWhy.checked = Boolean(state && state.apparatus && state.apparatus.why);
+      }
       context.textContent = [paired.checked && 'Latin alongside translated prayers',
         scripturePaired.checked && 'Latin Bible companion: Clementine Vulgate (Latin) · Vulgate numbering · Gallican psalter · public domain · Bible text, not the Missal’s wording'].filter(Boolean).join(' · ');
       context.hidden = !paired.checked && !scripturePaired.checked;
@@ -363,29 +547,8 @@
         if (invoker) invoker.focus({ preventScroll: true });
       }
     }
-    paired.addEventListener('change', function () {
-      const state = currentState();
-      if (!state) { syncPresentation(); return; }
-      const capture = win.TriptychReaderTextSize && win.TriptychReaderTextSize.captureLocation;
-      const location = capture && reading ? capture(win, reading) : null;
-      if (win.history) win.history.replaceState(win.history.state, '',
-        textDisplayUrl(win.location, state.textDisplay || 'selected', location));
-      presentationPending = true;
-      win.location.href = textDisplayUrl(win.location,
-        paired.checked ? 'latin-and-selected' : 'selected', location);
-    });
-
-    scripturePaired.addEventListener('change', function () {
-      const state = currentState();
-      if (!state) { syncPresentation(); return; }
-      const capture = win.TriptychReaderTextSize && win.TriptychReaderTextSize.captureLocation;
-      const location = capture && reading ? capture(win, reading) : null;
-      if (win.history) win.history.replaceState(win.history.state, '',
-        scriptureCompanionUrl(win.location, state.scriptureCompanion && state.scriptureCompanion.id || null, location));
-      presentationPending = true;
-      win.location.href = scriptureCompanionUrl(win.location,
-        scripturePaired.checked ? 'clementine-vulgate' : null, location);
-    });
+    paired.addEventListener('change', function () { applyTextDisplay(paired.checked, true); });
+    scripturePaired.addEventListener('change', function () { applyScriptureCompanion(scripturePaired.checked, true); });
 
     shareButton.addEventListener('click', async function () {
       const state = currentState();

@@ -288,7 +288,8 @@ async function snapshot(cdp) {
     witnessChoices: [...document.querySelectorAll('[data-translation-witness-choice]')]
       .map((row) => row.dataset.translationWitnessChoice),
     witnessAnchors: [...document.querySelectorAll('[data-translation-witness-choice]')]
-      .map((row) => row.previousElementSibling?.dataset.semanticEventId ||
+      .map((row) => row.dataset.witnessFirstEvent ||
+        row.previousElementSibling?.dataset.semanticEventId ||
         row.closest('[data-semantic-event-id]')?.dataset.semanticEventId || null),
     witnessOptions: [...document.querySelectorAll('[data-translation-witness]')]
       .map((row) => row.value),

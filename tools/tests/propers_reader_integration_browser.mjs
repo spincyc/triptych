@@ -2056,30 +2056,34 @@ async function assertions(cdp, base) {
 
   await check('Browse formulary coverage follows the Orations language on open and on change', async () => {
     const allSouls = 'commemoratione-omnium-fidelium-defunctorum';
-    const language = (form, name) => {
-      assert.match(form.formularyLabel, new RegExp(' — ' + name + ' — '), JSON.stringify(form.formularyLabel));
-      const other = name === 'English' ? 'Latin' : 'English';
-      assert.ok(!form.formularyLabels.some(label => label.includes(' — ' + other + ' — ')),
-        JSON.stringify(form.formularyLabels));
+    const expectedCount = (form, name) => {
+      assert.match(form.formularyLabel, /\(\d+\/\d+\)$/, JSON.stringify(form.formularyLabel));
+      const match = /\((\d+)\/(\d+)\)$/.exec(form.formularyLabel);
+      assert.ok(match, JSON.stringify(form.formularyLabel));
+      if (name === 'Latin') assert.equal(match[1], match[2], JSON.stringify(form.formularyLabel));
+      else assert.notEqual(match[1], '0', JSON.stringify(form.formularyLabel));
     };
     // A first open after a cold load once read the still-empty Orations control.
     await freshCandidate(cdp, base, STATES.englishWitness);
     await click(cdp, '[data-reader-action="browse"]');
     let form = await browseSnapshot(cdp);
     assert.equal(form.orations, 'en'); assert.equal(form.formulary, allSouls);
-    language(form, 'English');
+    const englishLabel = form.formularyLabel;
+    expectedCount(form, 'English');
     await select(cdp, '#reader-orations', 'la');
     form = await browseSnapshot(cdp);
-    assert.equal(form.formulary, allSouls); language(form, 'Latin');
+    assert.equal(form.formulary, allSouls); expectedCount(form, 'Latin');
+    const latinLabel = form.formularyLabel;
     await select(cdp, '#reader-orations', 'en');
     form = await browseSnapshot(cdp);
-    assert.equal(form.formulary, allSouls); language(form, 'English');
+    assert.equal(form.formulary, allSouls); assert.equal(form.formularyLabel, englishLabel);
     await escape(cdp);
     // A reopen after a route change once read the previous route's language.
     await candidate(cdp, base, STATES.roman); await click(cdp, '[data-reader-action="browse"]');
-    language(await browseSnapshot(cdp), 'Latin'); await escape(cdp);
+    expectedCount(await browseSnapshot(cdp), 'Latin'); await escape(cdp);
     await candidate(cdp, base, STATES.englishWitness); await click(cdp, '[data-reader-action="browse"]');
-    language(await browseSnapshot(cdp), 'English'); await escape(cdp);
+    assert.equal((await browseSnapshot(cdp)).formularyLabel, englishLabel);
+    assert.notEqual(latinLabel, ''); await escape(cdp);
   });
 
   await check('a zero coverage denominator is stated plainly, never as 0 of 0', async () => {
@@ -2088,9 +2092,9 @@ async function assertions(cdp, base) {
     await click(cdp, '[data-reader-action="browse"]');
     const form = await browseSnapshot(cdp);
     const labels = form.formularyLabels.concat(form.orationLabels);
-    assert.ok(!labels.some(label => /\b0 of 0\b/.test(label)), JSON.stringify(labels));
+    assert.ok(!labels.some(label => /\b0 of 0\b|0\/0/.test(label)), JSON.stringify(labels));
     assert.equal(form.formularyLabel,
-      'Monday of the First Week in Ordinary Time — Latin — no composed texts represented');
+      'Monday of the First Week in Ordinary Time (no composed texts)');
     await escape(cdp);
   });
 
@@ -2191,7 +2195,7 @@ async function assertions(cdp, base) {
     assert.equal(form.witnessHidden, false); assert.notEqual(form.witnessDisplay, 'none');
     assert.equal(form.witnesses[0], '');
     assert.deepEqual(form.witnesses.slice(1).sort(), Object.keys(allSoulsEnglishRoles).sort());
-    assert.ok(form.orationLabels.every(label => /represented texts available/.test(label)));
+    assert.ok(form.orationLabels.every(label => /\([\d,]+\/[\d,]+\)|no composed texts/.test(label)));
     for (const [index, id] of form.witnesses.entries()) {
       if (id) assert.ok(form.witnessLabels[index].includes(allSoulsEnglishRoles[id].length + ' of 9 uses'));
     }
@@ -2430,15 +2434,17 @@ async function assertions(cdp, base) {
     })`);
     assert.doesNotMatch(details.text, /sourceHooks|ordinal|hash|reader state|\{.*\}/i);
     assert.deepEqual(details.links.map(row => row.label), [
-      'Open the Day reader', 'The Story of Salvation', 'How the Missal Changed',
-      'Every Document', 'The Source Library', 'The Code, Canon by Canon'
+      'Open the Day reader', 'The Story of Salvation', 'Catena Commentary',
+      'How the Missal Changed', 'Every Document', 'The Source Library',
+      'The Code, Canon by Canon'
     ]);
     assert.match(details.links[0].pathname, /\/liturgy\/day\.html$/);
     assert.match(details.links[1].pathname, /\/scripture\/$/);
-    assert.match(details.links[2].pathname, /\/history\/$/);
-    assert.match(details.links[3].pathname, /\/texts\/$/);
-    assert.match(details.links[4].pathname, /\/sources\/$/);
-    assert.match(details.links[5].pathname, /\/law\/$/);
+    assert.match(details.links[2].pathname, /\/catena\/$/);
+    assert.match(details.links[3].pathname, /\/history\/$/);
+    assert.match(details.links[4].pathname, /\/texts\/$/);
+    assert.match(details.links[5].pathname, /\/sources\/$/);
+    assert.match(details.links[6].pathname, /\/law\/$/);
     assert.deepEqual(await evaluate(cdp,
       `[...document.querySelectorAll('[data-reader-details] .details-section > h3')]
         .map(row => row.textContent.trim())`), [

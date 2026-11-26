@@ -58,7 +58,8 @@
     const T = input.T;
     const event = input.event;
     const selected = input.selected;
-    const missal = input.state && input.state.requestedMode === 'missal';
+    const missal = Boolean(input.state && (input.state.requestedMode === 'missal' ||
+      input.state.options && input.state.options.ordinary));
     const wrapper = input.wrapper;
     wrapper.dataset.properChoice = event.group;
     wrapper.dataset.choiceState = event.selection.state;
@@ -602,7 +603,11 @@
       bibleSelect.value = state.bible.id;
       const languages = T.orationLanguagesOf(runtime.structure);
       T.fillSelect(orationsSelect, languages.map(function (entry) {
-        return { value: entry.lang, label: T.orationLanguageLabel(entry), title: entry.lang };
+        return {
+          value: entry.lang,
+          label: T.orationOptionLabel ? T.orationOptionLabel(entry) : T.orationLanguageLabel(entry),
+          title: T.orationLanguageLabel(entry)
+        };
       }));
       orationsSelect.value = state.languages.orations;
       const readable = (runtime.branch && runtime.branch.readable) || [];
@@ -643,7 +648,8 @@
         T.fillSelect(ordinaryLangSelect, languages.map(function (row) {
           return {
             value: row.lang,
-            label: T.orationLanguageLabel(row)
+            label: T.orationOptionLabel ? T.orationOptionLabel(row) : T.orationLanguageLabel(row),
+            title: T.orationLanguageLabel(row)
           };
         }));
         ordinaryLangSelect.value = state.languages.ordinary || 'en';
@@ -670,7 +676,7 @@
       } else {
         dateStatus.textContent = runtime.branches.length > 1
           ? 'Every held territorial branch is shown; no locality or preferred branch is inferred.'
-          : 'The resolved production result is shown without inferring a locality.';
+          : 'Showing the Universal Roman Calendar; local diocesan feasts are not inferred.';
       }
       setDateSurfaceEnabled(true);
     }
@@ -679,8 +685,349 @@
       reset: resetDateSurface, populate: populateDateSurface });
   }
 
+  function weekdayOrationControl(input) {
+    const { T, Model, runtime, result, structure, state, prefix, navigate } = input;
+    const choices = Model.weekdayOrationChoices({
+      derived: runtime.derived, rubrics: runtime.rubrics, structure: structure,
+      territory: state.calendar.territory && state.calendar.territory.id || null,
+      mass: state.selectedReadableFormulary && state.selectedReadableFormulary.id || null
+    });
+    if (!choices) return null;
+    const section = T.el(result.orationSelection ? 'details' : 'section', 'candidate-choice weekday-oration-choice');
+    section.dataset.weekdayOrationChoice = choices.id;
+    if (result.orationSelection) section.appendChild(T.el('summary', null,
+      'Prayers from ' + result.orationSelection.label + ' · ' + choices.locus));
+    const heading = T.el('h2', null, 'Choose prayers for this weekday');
+    heading.id = (prefix || '').replace(/\//g, '-') + 'weekday-oration-heading';
+    if (!result.orationSelection) section.setAttribute('aria-labelledby', heading.id);
+    section.appendChild(heading);
+    section.appendChild(T.el('p', 'candidate-choice-reason',
+      'Choose prayers from an allowed Mass. The readings remain those of this weekday.'));
+    const form = T.el('form', 'candidate-choice-form');
+    const label = T.el('label', null, 'Prayers from');
+    const select = T.el('select');
+    select.name = 'oration-mass';
+    select.appendChild(new Option('Choose a Mass', ''));
+    choices.options.forEach(function (option) { select.appendChild(new Option(option.label, option.id)); });
+    select.value = state.orationMass || '';
+    label.appendChild(select);
+    const apply = T.el('button', 'candidate-choice-apply', 'Read with these prayers');
+    apply.type = 'submit';
+    apply.disabled = !select.value;
+    select.addEventListener('change', function () { apply.disabled = !select.value; });
+    form.appendChild(label);
+    form.appendChild(apply);
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      if (!select.value) return;
+      navigate({'oration-mass': select.value, 'oration-territory': choices.territory, location: null}, ['location'], {
+        location: {kind: 'top', id: null}, focus: {kind: 'day-choice-result'}
+      });
+    });
+    section.appendChild(form);
+    if (result.orationSelection) section.appendChild(T.el('p', 'candidate-choice-locus',
+      'Prayers from ' + result.orationSelection.label + ' · ' + choices.locus + '.'));
+    section.appendChild(T.el('p', 'surface-note', choices.locus +
+      ' permits this choice. Other permitted choices are not yet available here; missing texts remain marked.'));
+    return section;
+  }
+
+  function dedicationLocationControl(input) {
+    const { T, Model, runtime, result, structure, state, prefix, renderCandidate } = input;
+    const choices = Model.dedicationAnniversaryChoices({derived: runtime.derived,
+      rubrics: runtime.rubrics, structure: structure,
+      mass: state.selectedReadableFormulary && state.selectedReadableFormulary.id || null,
+      formId: state.form || 'main', territory: state.calendar.territory && state.calendar.territory.id || null});
+    if (!choices) return null;
+    const section = T.el(result.dedicationSelection ? 'details' : 'section', 'candidate-choice dedication-location-choice');
+    if (result.dedicationSelection) section.appendChild(T.el('summary', null,
+      'Confirmed location: ' + result.dedicationSelection.label));
+    const heading = T.el('h2', null, 'Where is this Mass being celebrated?');
+    heading.id = (prefix || '').replace(/\//g, '-') + 'dedication-location-heading';
+    if (!result.dedicationSelection) section.setAttribute('aria-labelledby', heading.id);
+    section.appendChild(heading);
+    section.appendChild(T.el('p', 'candidate-choice-reason',
+      'The Secret depends on whether this Mass is celebrated in the church whose dedication is commemorated. If the location is unknown, leave it unresolved.'));
+    const form = T.el('form', 'candidate-choice-form');
+    const label = T.el('label', null, 'Celebration location');
+    const select = T.el('select');
+    select.name = 'dedication-location';
+    select.appendChild(new Option('Location unknown', ''));
+    choices.options.forEach(function (option) { select.appendChild(new Option(option.label, option.id)); });
+    select.value = result.dedicationSelection && result.dedicationSelection.relation || '';
+    label.appendChild(select);
+    form.appendChild(label);
+    const confirmation = T.el('label', 'candidate-choice-option');
+    const checkbox = T.el('input');
+    checkbox.type = 'checkbox';
+    checkbox.name = 'confirm-dedication-location';
+    confirmation.appendChild(checkbox);
+    confirmation.appendChild(root.document.createTextNode('I confirm that this is the actual location of this celebration.'));
+    form.appendChild(confirmation);
+    const apply = T.el('button', 'candidate-choice-apply', 'Apply confirmed location');
+    apply.type = 'submit';
+    apply.disabled = true;
+    form.addEventListener('change', function () { apply.disabled = !select.value || !checkbox.checked; });
+    function applyLocation(attestation) {
+      runtime.dedicationAttestation = attestation;
+      runtime.pendingLocation = {kind: 'top', id: null};
+      runtime.pendingFocus = {kind: 'day-choice-result'};
+      renderCandidate();
+    }
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      if (!select.value || !checkbox.checked) return;
+      applyLocation({schema: 'triptych-dedication-location/v1', calendar: choices.calendar,
+        civilDate: choices.civilDate, mass: choices.mass, formId: choices.formId,
+        territory: choices.territory, relation: select.value});
+    });
+    form.appendChild(apply);
+    section.appendChild(form);
+    if (result.dedicationSelection) {
+      section.appendChild(T.el('p', 'candidate-choice-locus', result.dedicationSelection.label + ' · ' + choices.locus));
+      const reset = T.el('button', 'candidate-choice-apply', 'Leave location unresolved');
+      reset.type = 'button';
+      reset.addEventListener('click', function () { applyLocation(null); });
+      section.appendChild(reset);
+    }
+    section.appendChild(T.el('p', 'surface-note',
+      'This confirmation applies only to this celebration while this page is open. A shared link or reload asks for confirmation again.'));
+    return section;
+  }
+
+  /** Calm liturgical identity strip and inline Prev/Next day buttons for Day. */
+  function createDayIdentityBar(input) {
+    const T = input.T;
+    const doc = root.document;
+    const dateLine = doc.getElementById('celebration-date');
+    const identity = dateLine && dateLine.parentElement;
+    let stepGroup = null;
+    let bar = null;
+    if (dateLine && identity) {
+      const row = doc.createElement('div');
+      row.className = 'reader-date-row';
+      dateLine.before(row);
+      row.appendChild(dateLine);
+      stepGroup = doc.createElement('span');
+      stepGroup.className = 'day-step-controls';
+      stepGroup.hidden = true;
+      const prev = doc.createElement('button');
+      prev.type = 'button';
+      prev.className = 'day-step-btn';
+      prev.dataset.dayStep = 'prev';
+      prev.setAttribute('aria-label', 'Previous day');
+      prev.title = 'Previous day (Left arrow)';
+      prev.textContent = '‹';
+      const next = doc.createElement('button');
+      next.type = 'button';
+      next.className = 'day-step-btn';
+      next.dataset.dayStep = 'next';
+      next.setAttribute('aria-label', 'Next day');
+      next.title = 'Next day (Right arrow)';
+      next.textContent = '›';
+      prev.addEventListener('click', function () { input.onStep(-1); });
+      next.addEventListener('click', function () { input.onStep(1); });
+      stepGroup.append(prev, next);
+      row.appendChild(stepGroup);
+
+      bar = doc.createElement('p');
+      bar.className = 'reader-identity-bar';
+      bar.setAttribute('aria-label', 'Liturgical day identity');
+      bar.hidden = true;
+      row.after(bar);
+    }
+
+    function update(info) {
+      if (!bar || !stepGroup) return;
+      const held = info || {};
+      stepGroup.hidden = !held.canStep;
+      bar.replaceChildren();
+      const branch = held.branch;
+      const derived = held.derived;
+      const result = held.result;
+      const winner = branch && branch.winner;
+      const chips = [];
+      if (winner && winner.color) {
+        const chip = T.el('span', 'identity-chip');
+        const pip = T.el('span', 'vestment-swatch');
+        pip.dataset.color = String(winner.color).toLowerCase();
+        pip.setAttribute('aria-hidden', 'true');
+        chip.append(pip, doc.createTextNode(T.titleCase(winner.color)));
+        chips.push(chip);
+      }
+      const season = (result && result.calendarResult && result.calendarResult.season) ||
+        (branch && branch.season) || (derived && derived.season);
+      const week = (result && result.calendarResult && result.calendarResult.week) ||
+        (derived && derived.week);
+      if (season) {
+        const text = T.titleCase(season) + (week ? ' · Week ' + week : '');
+        chips.push(T.el('span', 'identity-chip', text));
+      }
+      if (winner) {
+        const rank = winner.rank || winner.grade ||
+          (winner.class ? 'Class ' + winner.class +
+            (winner.nature && winner.nature !== 'other' ? ' · ' + T.titleCase(winner.nature) : '')
+            : (winner.nature && winner.nature !== 'other' ? T.titleCase(winner.nature) : null));
+        if (rank) chips.push(T.el('span', 'identity-chip', rank));
+      }
+      const lectionary = result && result.calendarResult && result.calendarResult.lectionary;
+      if (lectionary && (lectionary.sunday || lectionary.weekday)) {
+        const parts = [
+          lectionary.sunday && 'Year ' + lectionary.sunday,
+          lectionary.weekday && 'Weekday ' + lectionary.weekday
+        ].filter(Boolean);
+        if (parts.length) chips.push(T.el('span', 'identity-chip', parts.join(' · ')));
+      }
+      const orations = branch && branch.orations && (branch.orations.all || branch.orations.low_mass) || [];
+      const comms = orations.filter(function (one) { return one && one.position > 1 && one.of_name; });
+      if (comms.length === 1) {
+        chips.push(T.el('span', 'identity-chip is-commemoration', 'Commemoration: ' + comms[0].of_name));
+      } else if (comms.length > 1) {
+        chips.push(T.el('span', 'identity-chip is-commemoration', comms.length + ' commemorations'));
+      }
+      if (held.multiple) {
+        chips.push(T.el('span', 'identity-chip', held.branchCount + ' regional observances'));
+      }
+      chips.forEach(function (chip) { bar.appendChild(chip); });
+      bar.hidden = !chips.length;
+    }
+
+    return Object.freeze({ update: update });
+  }
+
+  /** Ordinary language & option controls for Propers Browse (Missal parity). */
+  function createPropersOrdinaryControls(input) {
+    const T = input.T;
+    const doc = root.document;
+    const langField = doc.getElementById('reader-ordinary-lang-field');
+    const langSelect = doc.getElementById('reader-ordinary-lang');
+    const optField = doc.getElementById('reader-ordinary-option-field');
+    const optSelect = doc.getElementById('reader-ordinary-option');
+
+    function variantGroups(ordinary) {
+      return (ordinary && ordinary.variants || []).filter(function (group) {
+        return group && group.group && Array.isArray(group.options) && group.options.length > 1;
+      });
+    }
+
+    function reset() {
+      if (langField) langField.hidden = true;
+      if (langSelect) langSelect.replaceChildren();
+      if (optField) optField.hidden = true;
+      if (optSelect) optSelect.replaceChildren();
+    }
+
+    function setEnabled(enabled) {
+      if (langSelect) langSelect.disabled = !enabled;
+      if (optSelect) optSelect.disabled = !enabled;
+    }
+
+    function populate(state, ordinary) {
+      reset();
+      if (!langField || !langSelect || !state || state.requestedMode !== 'missal' || !ordinary) return;
+      const languages = T.orationLanguagesOf(ordinary);
+      if (languages.length > 1) {
+        T.fillSelect(langSelect, languages.map(function (row) {
+          return {
+            value: row.lang,
+            label: T.orationOptionLabel ? T.orationOptionLabel(row) : T.orationLanguageLabel(row),
+            title: T.orationLanguageLabel(row)
+          };
+        }));
+        langSelect.value = state.languages && state.languages.ordinary || 'en';
+        langField.hidden = false;
+      }
+      const groups = variantGroups(ordinary);
+      if (optField && optSelect && groups.length === 1) {
+        const group = groups[0];
+        T.fillSelect(optSelect, (group.options || []).map(function (option) {
+          return { value: option.id, label: option.name };
+        }));
+        const selected = state.options && state.options.legitimate && state.options.legitimate[group.group];
+        const fallback = (group.options || []).find(function (option) { return option.default; });
+        if (selected) optSelect.value = selected;
+        else if (fallback) optSelect.value = fallback.id;
+        optField.hidden = false;
+      }
+    }
+
+    function collectUpdates(updates, ordinary, sameEdition) {
+      if (langField && !langField.hidden && langSelect && langSelect.value) {
+        updates['ordinary-lang'] = langSelect.value;
+      }
+      if (sameEdition && optField && !optField.hidden && optSelect && optSelect.value && ordinary) {
+        const groups = variantGroups(ordinary);
+        if (groups.length === 1) updates[groups[0].group] = optSelect.value;
+      }
+    }
+
+    return Object.freeze({ reset: reset, setEnabled: setEnabled,
+      populate: populate, collectUpdates: collectUpdates });
+  }
+
+  /** Compact formulary option label for Propers select dropdowns. */
+  function formularyOptionLabel(T, mass, language, mark) {
+    const coverage = (mass.coverage && mass.coverage.languages || []).find(function (row) {
+      return row.lang === language;
+    });
+    const base = (mass.name || mass.key) + (mark ? ' ' + mark : '');
+    if (!coverage) return base;
+    if (!Number.isInteger(coverage.targets) || coverage.targets === 0) return base + ' (no composed texts)';
+    return base + ' (' + coverage.available_targets + '/' + coverage.targets + ')';
+  }
+
+  /** Shared debug/semantic projection over a resolved adapter result. */
+  function projectSemanticResult(result) {
+    if (!result) return null;
+    return {
+      resolved: result.resolved,
+      calendarResult: result.calendarResult,
+      events: (result.events || []).map(function (event) {
+        const projected = {
+          id: event.id, kind: event.kind,
+          semanticSlot: event.semanticSlot || null,
+          editionSlotLabel: event.editionSlotLabel || null,
+          selected: event.selected || null,
+          seat: event.seat || null,
+          speaker: event.speaker || null,
+          action: event.action === true,
+          locus: event.locus || null,
+          sourceHooks: event.sourceHooks || []
+        };
+        if (event.kind === 'proper-choice') {
+          projected.group = event.group;
+          projected.selection = event.selection;
+          projected.choiceBasis = event.choiceBasis;
+          projected.options = (event.options || []).map(function (option) {
+            return {
+              id: option.id,
+              events: (option.events || []).map(function (member) {
+                return {
+                  id: member.id, kind: member.kind,
+                  semanticSlot: member.semanticSlot || null,
+                  editionSlotLabel: member.editionSlotLabel || null,
+                  selected: member.selected || null,
+                  seat: member.seat || null,
+                  sourceHooks: member.sourceHooks || []
+                };
+              })
+            };
+          });
+        }
+        return projected;
+      }),
+      coverage: result.coverage || [],
+      explicitAbsences: result.explicitAbsences || [],
+      unresolvedChoices: result.unresolvedChoices || [],
+      ordinaryUnresolved: result.ordinaryUnresolved || []
+    };
+  }
+
   return Object.freeze({ adaptProperChoiceRequest: adaptProperChoiceRequest, renderProperChoice: renderProperChoice,
     attachSourcePathChoices: attachSourcePathChoices, attachMemorialPrayers: attachMemorialPrayers,
     januaryPrayerChooser: januaryPrayerChooser, votiveChantChooser: votiveChantChooser,
-    properChoiceRemovals: properChoiceRemovals, createDayDateControls: createDayDateControls });
+    properChoiceRemovals: properChoiceRemovals, createDayDateControls: createDayDateControls,
+    weekdayOrationControl: weekdayOrationControl, dedicationLocationControl: dedicationLocationControl,
+    createDayIdentityBar: createDayIdentityBar, createPropersOrdinaryControls: createPropersOrdinaryControls,
+    formularyOptionLabel: formularyOptionLabel, projectSemanticResult: projectSemanticResult });
 }));
