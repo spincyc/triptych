@@ -281,7 +281,7 @@
    */
   function borrowedFormularies(year, rubrics, isoDate, present) {
     const holdsAMass = present.some(
-      (one) => !(one.basis && one.basis.nature === 'commemoration')
+      (one) => !one.suppressedBy && !(one.basis && one.basis.nature === 'commemoration')
     );
     if (holdsAMass) return [];
     return indexedFerialFormularies(year, rubrics, isoDate);
@@ -377,14 +377,14 @@
     // fifth, sixth and seventh days within the Christmas octave under a fixed
     // date, so the implied octave day was constituted a second time and the two
     // tied at row 17 on every 29, 30 and 31 December in the span.
-    if (present.some((one) => one.basis && one.basis.constitutes_the_day)) return null;
+    if (present.some((one) => !one.suppressedBy && one.basis && one.basis.constitutes_the_day)) return null;
     // A temporal formulary that competes for nothing is not the day's own
     // identity and must not suppress it. The Rogation Mass is placed temporally
     // on Easter +36, +37 and +38 and on 25 April, and RG 81 and RG 88 confine
     // both Litany observances to the Mass, nothing being done in the Office —
     // so it is a Mass said on a day, not the day. Suppressing on origin alone
     // left those four dates every year with no liturgical day at all.
-    if (present.some((one) => one.rule && one.rule.origin === 'temporal' &&
+    if (present.some((one) => !one.suppressedBy && one.rule && one.rule.origin === 'temporal' &&
                               one.basis && one.basis.competes !== false)) return null;
 
     const weekday = weekdayOf(isoDate);
@@ -533,29 +533,83 @@
     });
   }
 
-  function arrivals(year, rubrics, owner, isoDate) {
+  function properSeatDestination(seat, owner, sourceDate) {
+    if (seat.seat_easter_offset != null) {
+      const easter = anchor(owner, 'easter');
+      if (!easter) return null;
+      const offset = Math.round((stamp(sourceDate) - stamp(easter)) / DAY);
+      const window = seat.impeded_when_easter_offset_between || [];
+      if (offset >= window[0] && offset <= window[1]) {
+        return shift(easter, seat.seat_easter_offset);
+      }
+      return null;
+    }
+    if (seat.seat_offset_days != null) {
+      if (!seat.impeded_when_weekday || weekdayOf(sourceDate) === seat.impeded_when_weekday) {
+        return shift(sourceDate, seat.seat_offset_days);
+      }
+    }
+    return null;
+  }
+
+  function matchingProperSeat(rubrics, key, owner, sourceDate) {
+    const transfer = (rubrics.impediment && rubrics.impediment.transfer) || {};
+    for (const seat of transfer.proper_seats || []) {
+      if (seat.key !== key) continue;
+      if (seat.own_date && monthDay(sourceDate) !== seat.own_date) continue;
+      const destination = properSeatDestination(seat, owner, sourceDate);
+      if (destination) return { seat: seat, destination: destination };
+    }
+    return null;
+  }
+
+  function isTransferEligible(rubrics, candidate) {
+    const transfer = (rubrics.impediment && rubrics.impediment.transfer) || {};
+    if ((transfer.applies_to || '').indexOf('solemnit') >= 0) {
+      return candidate.basis && candidate.basis.nature === 'solemnity';
+    }
+    return candidate.basis &&
+      (candidate.basis.class || classOfRow(rubrics, candidate.row)) === 'I' &&
+      candidate.basis.nature === 'feast';
+  }
+
+  function generalTransferConfig(rubrics) {
+    const transfer = (rubrics.impediment && rubrics.impediment.transfer) || {};
+    const dest = transfer.destination || null;
+    if (!dest || dest.computed_here !== true) return null;
+    return {
+      transfer: transfer,
+      destination: dest,
+      blockedClasses: Array.isArray(dest.blocked_classes) ? dest.blocked_classes : null,
+      blockedRowsMax: dest.blocked_rows_max != null ? dest.blocked_rows_max : null,
+      windowDays: dest.max_search_days || 30
+    };
+  }
+
+  function isDayBlockedForTransfer(rubrics, cfg, candidates) {
+    for (const one of candidates) {
+      if (!competes(one)) continue;
+      if (cfg.blockedClasses) {
+        const cls = one.basis.class || classOfRow(rubrics, one.row);
+        if (cfg.blockedClasses.indexOf(cls) >= 0) return true;
+      }
+      if (cfg.blockedRowsMax != null && one.row != null && one.row <= cfg.blockedRowsMax) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  function namedArrivals(year, rubrics, owner, isoDate) {
     const transfer = (rubrics.impediment && rubrics.impediment.transfer) || {};
     const found = [];
     const civilYear = isoDate.slice(0, 4);
 
     for (const seat of transfer.proper_seats || []) {
       const ownDate = civilYear + '-' + seat.own_date;
-      let seatDate = null;
-      let impeded = false;
-
-      if (seat.seat_easter_offset != null) {
-        const easter = anchor(owner, 'easter');
-        if (!easter) continue;
-        seatDate = shift(easter, seat.seat_easter_offset);
-        const window = seat.impeded_when_easter_offset_between || [];
-        const offset = Math.round((stamp(ownDate) - stamp(easter)) / DAY);
-        impeded = offset >= window[0] && offset <= window[1];
-      } else if (seat.seat_offset_days != null) {
-        seatDate = shift(ownDate, seat.seat_offset_days);
-        impeded = !seat.impeded_when_weekday || weekdayOf(ownDate) === seat.impeded_when_weekday;
-      }
-
-      if (!impeded || seatDate !== isoDate) continue;
+      const ownOwner = liturgicalYearFor(year, ownDate);
+      const seatDate = properSeatDestination(seat, ownOwner, ownDate);
+      if (!seatDate || seatDate !== isoDate) continue;
       const held = classify(rubrics, seat.key);
       found.push({
         id: seat.key,
@@ -576,6 +630,284 @@
       if (!found.some((one) => one.key === candidate.key)) found.push(candidate);
     }
     return found;
+  }
+
+  /**
+   * General transfer computation under RG 96-99 (Roman 1962) or NUALC 60
+   * (Postconciliar), gated on `impediment.transfer.destination.computed_here`.
+   *
+   * Because a general transfer lands only on a day free of blocked classes
+   * (Class I/II in 1962; table places 1-8 in Postconciliar), a general arrival
+   * never impedes another transferable feast. Evaluating a stateless sliding
+   * window around `isoDate` is therefore exact and acyclic.
+   */
+  function computeGeneralTransfers(year, rubrics, isoDate) {
+    const cfg = generalTransferConfig(rubrics);
+    if (!cfg) return { arrivals: [], destinations: {} };
+
+    const civilYear = isoDate.slice(0, 4);
+    const yearStart = civilYear + '-01-01';
+    const yearEnd = civilYear + '-12-31';
+    const shiftedStart = shift(isoDate, -cfg.windowDays);
+    const shiftedEnd = shift(isoDate, cfg.windowDays);
+    const startDate = shiftedStart < yearStart ? yearStart : shiftedStart;
+    const endDate = shiftedEnd > yearEnd ? yearEnd : shiftedEnd;
+
+    const transfer = cfg.transfer;
+    const events = [];
+
+    for (let d = startDate; d <= endDate; d = shift(d, 1)) {
+      const dOwner = liturgicalYearFor(year, d);
+      if (blockingRefusalsOn(dOwner, d).length) continue;
+
+      const dHeld = indexCandidates(year, rubrics, d).candidates;
+      const dNamed = namedArrivals(year, rubrics, dOwner, d);
+      const dBase = dHeld.concat(dNamed);
+      if (!dBase.some((one) => isTransferEligible(rubrics, one))) continue;
+
+      const dOpts = optionsToDerive(year, dBase);
+      const runOpts = dOpts.length ? dOpts : [null];
+      const byKey = {};
+
+      for (const opt of runOpts) {
+        const keep = (one) => opt === null || !one.territorial || one.territorial === opt;
+        const set = dBase.filter(keep).map((one) => Object.assign({}, one));
+        const dSeason = seasonOf(dOwner, d);
+        const implied = impliedCandidate(rubrics, dOwner, d, dSeason, set);
+        if (implied) set.unshift(implied);
+        if (sourceUnsettledOn(rubrics, set).length) continue;
+        const gaps = [];
+        const ranked = rank(rubrics, set, gaps);
+        if (gaps.length || !ranked.winner || ranked.choice) continue;
+
+        for (const one of ranked.contest || []) {
+          if (one === ranked.winner) continue;
+          const explicitOmission = one.defeatedBy && one.defeatedBy.override;
+          if (explicitOmission && explicitOmission.omitted_when_with) continue;
+          if (matchingProperSeat(rubrics, one.key, dOwner, d)) continue;
+          if (sundayTransferRuleHolds(transfer.sunday_rule, dOwner, d, ranked.winner) &&
+              transferRuleAppliesTo(transfer.sunday_rule, one)) continue;
+          if (!isTransferEligible(rubrics, one)) continue;
+          if (!byKey[one.key]) byKey[one.key] = { candidate: one, options: [] };
+          byKey[one.key].options.push(opt);
+        }
+      }
+
+      for (const key of Object.keys(byKey)) {
+        const rec = byKey[key];
+        if (dOpts.length && rec.options.length === dOpts.length) {
+          events.push({
+            key: key,
+            candidate: rec.candidate,
+            sourceDate: d,
+            row: rec.candidate.row,
+            territorial: null
+          });
+        } else {
+          for (const opt of rec.options) {
+            events.push({
+              key: key,
+              candidate: rec.candidate,
+              sourceDate: d,
+              row: rec.candidate.row,
+              territorial: opt
+            });
+          }
+        }
+      }
+    }
+
+    if (!events.length) return { arrivals: [], destinations: {} };
+
+    const touchedOpts = [];
+    for (const ev of events) {
+      if (ev.territorial && touchedOpts.indexOf(ev.territorial) < 0) {
+        touchedOpts.push(ev.territorial);
+      }
+    }
+    const simOpts = [];
+    if (!touchedOpts.length) {
+      simOpts.push(null);
+    } else {
+      for (const family of Object.keys(year.territorial || {})) {
+        const options = (year.territorial[family] || {}).options;
+        if (!Array.isArray(options)) continue;
+        if (!options.some((o) => touchedOpts.indexOf(o) >= 0)) continue;
+        for (const o of options) if (simOpts.indexOf(o) < 0) simOpts.push(o);
+      }
+      for (const o of touchedOpts) if (simOpts.indexOf(o) < 0) simOpts.push(o);
+    }
+
+    const placementsByBranch = {};
+    const firstSource = events.reduce(
+      (min, ev) => (ev.sourceDate < min ? ev.sourceDate : min),
+      events[0].sourceDate
+    );
+
+    for (const simOpt of simOpts) {
+      const branchKey = simOpt === null ? '' : simOpt;
+      const simEvents = events.filter(
+        (ev) => ev.territorial === null || ev.territorial === simOpt
+      );
+      const bySource = {};
+      for (const ev of simEvents) {
+        if (!bySource[ev.sourceDate]) bySource[ev.sourceDate] = [];
+        bySource[ev.sourceDate].push(ev);
+      }
+
+      const pending = [];
+      const placed = [];
+      for (let d = firstSource; d <= endDate; d = shift(d, 1)) {
+        if (pending.length) {
+          const dOwner = liturgicalYearFor(year, d);
+          let blocked = blockingRefusalsOn(dOwner, d).length > 0;
+          if (!blocked) {
+            const keep = (one) => simOpt === null || !one.territorial || one.territorial === simOpt;
+            const dBase = indexCandidates(year, rubrics, d).candidates
+              .concat(namedArrivals(year, rubrics, dOwner, d))
+              .filter(keep);
+            const dSeason = seasonOf(dOwner, d);
+            const implied = impliedCandidate(rubrics, dOwner, d, dSeason, dBase);
+            if (implied) dBase.unshift(implied);
+            blocked = isDayBlockedForTransfer(rubrics, cfg, dBase);
+          }
+          if (!blocked) {
+            pending.sort(function (a, b) {
+              return (a.row - b.row) ||
+                (a.sourceDate < b.sourceDate ? -1 : (a.sourceDate > b.sourceDate ? 1 : 0));
+            });
+            const chosen = pending.shift();
+            placed.push({ event: chosen, destDate: d });
+          }
+        }
+        if (bySource[d]) {
+          for (const ev of bySource[d]) pending.push(ev);
+        }
+      }
+      placementsByBranch[branchKey] = placed;
+    }
+
+    const destMap = {};
+    const arrivedOnDate = {};
+    const sourceDestCounts = {};
+
+    for (const simOpt of simOpts) {
+      const branchKey = simOpt === null ? '' : simOpt;
+      destMap[branchKey] = {};
+      for (const row of placementsByBranch[branchKey]) {
+        if (row.event.sourceDate === isoDate) {
+          destMap[branchKey][row.event.key] = row.destDate;
+          if (!sourceDestCounts[row.event.key]) sourceDestCounts[row.event.key] = [];
+          sourceDestCounts[row.event.key].push(row.destDate);
+        }
+        if (row.destDate === isoDate) {
+          const sig = row.event.sourceDate + '|' + row.event.key;
+          if (!arrivedOnDate[sig]) arrivedOnDate[sig] = { event: row.event, options: [] };
+          arrivedOnDate[sig].options.push(simOpt);
+        }
+      }
+    }
+
+    // If every simulated territorial branch places a transfer from `isoDate`
+    // onto the exact same destination date, expose it on the untagged branch
+    // as well so dates without territorial options of their own find it.
+    if (!destMap['']) destMap[''] = {};
+    for (const key of Object.keys(sourceDestCounts)) {
+      const dests = sourceDestCounts[key];
+      if (dests.length === simOpts.length && dests.every((d) => d === dests[0])) {
+        destMap[''][key] = dests[0];
+      }
+    }
+
+    const arrivalsList = [];
+    for (const sig of Object.keys(arrivedOnDate)) {
+      const rec = arrivedOnDate[sig];
+      const ev = rec.event;
+      const unconditional = rec.options.length === simOpts.length;
+      const tags = unconditional ? [null] : rec.options;
+      const held = classify(rubrics, ev.key);
+      for (const tag of tags) {
+        arrivalsList.push({
+          id: ev.key,
+          key: ev.key,
+          name: held.name || ev.key,
+          known: held.known,
+          basis: held.basis,
+          row: held.basis.row,
+          source: 'arrived',
+          arrivedFrom: ev.sourceDate,
+          seat: {
+            locus: cfg.destination.locus || cfg.transfer.locus || null,
+            destination: cfg.destination.rule || null,
+            latin: cfg.destination.latin || null
+          },
+          rule: null,
+          territorial: tag,
+          certain: true
+        });
+      }
+    }
+
+    return { arrivals: arrivalsList, destinations: destMap };
+  }
+
+  function lookupComputedDestination(destinations, option, key) {
+    if (!destinations) return null;
+    const branchKey = option || '';
+    if (destinations[branchKey] && destinations[branchKey][key]) {
+      return destinations[branchKey][key];
+    }
+    if (destinations[''] && destinations[''][key]) {
+      return destinations[''][key];
+    }
+    return null;
+  }
+
+  /**
+   * RG 33: a second- or third-class vigil is omitted outright (penitus omittitur)
+   * if the feast it precedes is transferred or reduced to a commemoration.
+   */
+  function applyVigilLookahead(year, rubrics, isoDate, candidates, option) {
+    const rule = (rubrics.impediment && rubrics.impediment.vigil_dropped) || null;
+    const feasts = rule && rule.feasts;
+    if (!feasts || typeof feasts !== 'object') return candidates;
+
+    const nextDate = shift(isoDate, 1);
+    if (nextDate.slice(0, 4) !== isoDate.slice(0, 4)) return candidates;
+
+    const relevant = candidates.filter(
+      (one) => one.key && Object.prototype.hasOwnProperty.call(feasts, one.key)
+    );
+    if (!relevant.length) return candidates;
+
+    const nextDerived = deriveWithSelection(
+      { year: year, rubrics: rubrics, date: nextDate },
+      null,
+      { skipVigilLookahead: true }
+    );
+    const nextBranch = (nextDerived.options || []).find((b) => b.option === option) ||
+      (nextDerived.options || [])[0];
+    if (!nextBranch || !nextBranch.settled) return candidates;
+
+    return candidates.map(function (one) {
+      if (!one.key || !Object.prototype.hasOwnProperty.call(feasts, one.key)) return one;
+      const feastKey = feasts[one.key];
+      const lost = (nextBranch.losers || []).find(function (l) {
+        return l.id === feastKey &&
+          (l.disposition === 'transferred' || l.disposition === 'commemorated' || l.disposition === 'omitted');
+      });
+      if (!lost) return one;
+      const reason = lost.disposition === 'transferred'
+        ? 'transferred'
+        : (lost.disposition === 'commemorated' ? 'reduced to a commemoration' : 'omitted');
+      return Object.assign({}, one, {
+        suppressedBy: {
+          locus: rule.locus || 'RG 33',
+          why: 'omitted because ' + lost.name + ' on ' + nextDate + ' is ' + reason +
+            (rule.gloss ? ' (' + rule.gloss + ')' : '')
+        }
+      });
+    });
   }
 
   /**
@@ -772,13 +1104,16 @@
    * attach the pair only if that host survives, in either Low or sung use.
    * A missing calendar member cannot be supplied from a name or a Common.
    */
-  function disposeWithInseparable(rubrics, winner, losers, owner, isoDate, sung, remarks, pairs) {
-    if (!pairs.length) return dispose(rubrics, winner, losers, owner, isoDate, sung, remarks);
+  function disposeWithInseparable(rubrics, winner, losers, owner, isoDate, sung, remarks, pairs,
+                                  option, generalDestinations) {
+    if (!pairs.length) {
+      return dispose(rubrics, winner, losers, owner, isoDate, sung, remarks, option, generalDestinations);
+    }
     const companions = new Set(pairs.map(function (pair) { return pair.companion; }));
     const candidates = [winner].concat(losers).filter(Boolean);
     const held = dispose(rubrics, winner, losers.filter(function (one) {
       return !companions.has(one.key);
-    }), owner, isoDate, sung, remarks);
+    }), owner, isoDate, sung, remarks, option, generalDestinations);
     const groups = [];
     const unresolved = [];
     pairs.forEach(function (pair) {
@@ -790,7 +1125,7 @@
         held.losers.push({candidate: companion, id: companion.id, disposition: 'attached',
           locus: pair.locus, why: 'inseparably joined to ' + host.name + ' under one conclusion; counted with it as one prayer'});
       } else if (admitted || (companion && !host &&
-          dispose(rubrics, winner, losers, owner, isoDate, sung, []).commemorations
+          dispose(rubrics, winner, losers, owner, isoDate, sung, [], option, generalDestinations).commemorations
             .indexOf(companion) >= 0)) {
         unresolved.push({what: 'the inseparable Peter-Paul prayer group', scope: 'oration-owner',
           locus: pair.locus, why: 'an admitted inseparable group lacks its source-identified host or companion in this calendar result; no missing member is manufactured'});
@@ -873,6 +1208,11 @@
           what: one.id,
           why: 'the rubrics source carries no assignment rule for this mass, so it cannot be ranked'
         });
+        continue;
+      }
+      if (one.suppressedBy) {
+        contest.push(one);
+        defeated.push(one);
         continue;
       }
       if (!competes(one)) {
@@ -1004,40 +1344,20 @@
    * Decision three: what becomes of the day that lost
    * --------------------------------------------------------------------- */
 
-  function seatFor(rubrics, key) {
-    const transfer = (rubrics.impediment && rubrics.impediment.transfer) || {};
-    return (transfer.proper_seats || []).find((seat) => seat.key === key) || null;
-  }
-
   /** Is this loser carried away by a transfer rather than left on the day? */
-  function transferOf(rubrics, loser, winner, owner, isoDate) {
+  function transferOf(rubrics, loser, winner, owner, isoDate, option, generalDestinations) {
     const transfer = (rubrics.impediment && rubrics.impediment.transfer) || {};
-    const seat = seatFor(rubrics, loser.key);
-    if (seat) {
-      // The seat's own condition decides; it is why `arrivals` finds the feast
-      // on the other end.
-      let destination = null;
-      if (seat.seat_easter_offset != null) {
-        const easter = anchor(owner, 'easter');
-        const offset = easter ? Math.round((stamp(isoDate) - stamp(easter)) / DAY) : null;
-        const window = seat.impeded_when_easter_offset_between || [];
-        if (easter && offset >= window[0] && offset <= window[1]) {
-          destination = shift(easter, seat.seat_easter_offset);
-        }
-      } else if (seat.seat_offset_days != null) {
-        if (!seat.impeded_when_weekday || weekdayOf(isoDate) === seat.impeded_when_weekday) {
-          destination = shift(isoDate, seat.seat_offset_days);
-        }
-      }
-      if (destination) {
-        return {
-          disposition: 'transferred',
-          locus: seat.locus,
-          why: 'transferred as to its own proper seat: ' + seat.destination,
-          destination: destination,
-          latin: seat.latin || null
-        };
-      }
+    const matchedSeat = matchingProperSeat(rubrics, loser.key, owner, isoDate);
+    if (matchedSeat) {
+      const seat = matchedSeat.seat;
+      return {
+        disposition: 'transferred',
+        locus: seat.locus,
+        why: (seat.anticipated ? 'anticipated' : 'transferred') +
+          ' as to its own proper seat: ' + seat.destination,
+        destination: matchedSeat.destination,
+        latin: seat.latin || null
+      };
     }
 
     // NUALC 5 is different from the general "nearest free day" rule: its own
@@ -1056,19 +1376,16 @@
       };
     }
 
-    const eligible = (transfer.applies_to || '').indexOf('solemnit') >= 0
-      ? loser.basis.nature === 'solemnity'
-      : (loser.basis.class || classOfRow(rubrics, loser.row)) === 'I' && loser.basis.nature === 'feast';
-
-    if (!eligible) return null;
+    if (!isTransferEligible(rubrics, loser)) return null;
+    const computedDest = lookupComputedDestination(generalDestinations, option, loser.key);
     return {
       disposition: 'transferred',
-      locus: transfer.locus,
+      locus: (computedDest && transfer.destination && transfer.destination.locus) || transfer.locus,
       why: transfer.destination && transfer.destination.rule
         ? 'transferred to ' + transfer.destination.rule
         : 'transferred',
-      destination: null,
-      destinationNotComputed: transfer.destination ? transfer.destination.why_not : null
+      destination: computedDest,
+      destinationNotComputed: computedDest ? null : (transfer.destination ? transfer.destination.why_not || null : null)
     };
   }
 
@@ -1115,11 +1432,16 @@
           return { locus: block.locus + ' ' + clause.clause, what: clause.what };
         }
       }
+      if (clause.clause === 'c') {
+        if (winner.basis.de_tempore && loser.basis.de_tempore) {
+          return { locus: block.locus + ' ' + clause.clause, what: clause.what };
+        }
+      }
     }
     return null;
   }
 
-  function dispose(rubrics, winner, losers, owner, isoDate, sung, remarks) {
+  function dispose(rubrics, winner, losers, owner, isoDate, sung, remarks, option, generalDestinations) {
     const out = [];
     const admitted = [];
     const ceiling = ceilingFor(rubrics, winner, sung, isoDate);
@@ -1132,13 +1454,23 @@
     // First pass: everything that leaves the day entirely.
     const remaining = [];
     for (const loser of losers) {
+      if (loser.suppressedBy) {
+        out.push({
+          candidate: loser,
+          id: loser.id,
+          disposition: 'omitted',
+          locus: loser.suppressedBy.locus,
+          why: loser.suppressedBy.why
+        });
+        continue;
+      }
       const explicitOmission = loser.defeatedBy && loser.defeatedBy.override;
       if (explicitOmission && explicitOmission.omitted_when_with) {
         out.push({candidate: loser, id: loser.id, disposition: 'omitted',
           locus: explicitOmission.locus, why: explicitOmission.why});
         continue;
       }
-      const moved = transferOf(rubrics, loser, winner, owner, isoDate);
+      const moved = transferOf(rubrics, loser, winner, owner, isoDate, option, generalDestinations);
       if (moved) { out.push(Object.assign({ candidate: loser, id: loser.id }, moved)); continue; }
 
       if (loser.defeatedBy) {
@@ -1756,7 +2088,7 @@
   }
 
   function deriveBranch(rubrics, owner, isoDate, candidates, option, folded, orphanBorrow,
-                        calendarRefusals, orationSelection) {
+                        calendarRefusals, orationSelection, generalDestinations) {
     // Calendar computation owns whether it has enough evidence to appoint a
     // day at all. An active refusal therefore precedes every occurrence rule:
     // a rubrical override cannot turn a computation-layer "neither is chosen"
@@ -1833,11 +2165,13 @@
       .concat(ranked.aside || []);
 
     const pairs = inseparablePairs(rubrics);
-    let low = winner ? disposeWithInseparable(rubrics, winner, losers, owner, isoDate, false, remarks, pairs)
+    let low = winner ? disposeWithInseparable(rubrics, winner, losers, owner, isoDate, false, remarks, pairs,
+                                              option, generalDestinations)
                        : { losers: [], commemorations: [] };
     const commemorates = !(rubrics.commemoration && rubrics.commemoration.exists === false);
     let sung = winner && commemorates
-      ? disposeWithInseparable(rubrics, winner, losers, owner, isoDate, true, [], pairs)
+      ? disposeWithInseparable(rubrics, winner, losers, owner, isoDate, true, [], pairs,
+                               option, generalDestinations)
       : null;
 
     const inseparableRefusals = inseparableUnsettledOn(rubrics, winner, low, sung)
@@ -2050,10 +2384,11 @@
    * The entry point
    * --------------------------------------------------------------------- */
 
-  function deriveWithSelection(input, selection) {
+  function deriveWithSelection(input, selection, internalOpts) {
     const year = input.year;
     const rubrics = input.rubrics;
     const isoDate = input.date;
+    const skipVigil = Boolean(internalOpts && internalOpts.skipVigilLookahead);
 
     if (!year || !rubrics) throw new Error('derive needs both a year file and a rubrics file');
     if (!/^\d{4}-\d{2}-\d{2}$/.test(isoDate || '')) throw new Error('derive needs a YYYY-MM-DD date');
@@ -2063,11 +2398,20 @@
     const blockingRefusals = blockingRefusalsOn(owner, isoDate);
     const season = seasonOf(owner, isoDate);
     const held = indexCandidates(year, rubrics, isoDate);
-    const arrived = arrivals(year, rubrics, owner, isoDate);
+    const named = namedArrivals(year, rubrics, owner, isoDate);
+    const general = computeGeneralTransfers(year, rubrics, isoDate);
+    const arrived = named.concat(
+      general.arrivals.filter(function (one) {
+        return !named.some((n) => n.key === one.key && n.territorial === one.territorial);
+      })
+    );
     const inscribed = held.candidates.concat(arrived);
+    const effectiveInscribed = skipVigil
+      ? inscribed
+      : applyVigilLookahead(year, rubrics, isoDate, inscribed, null);
     // Decided against the inscribed candidates alone. The implied day this
     // borrowing exists to serve must not be what suppresses it.
-    const borrowed = borrowedFormularies(year, rubrics, isoDate, inscribed);
+    const borrowed = borrowedFormularies(year, rubrics, isoDate, effectiveInscribed);
 
     // The implied day is computed per branch, not once. Under the branch where
     // the Ascension has moved to the Sunday it is absent from its Thursday, and
@@ -2075,7 +2419,12 @@
     // computing the implied day before the split would have suppressed it.
   function branchOf(option) {
       const keep = (one) => option === null || !one.territorial || one.territorial === option;
-      const set = inscribed.filter(keep);
+      const baseSet = option === null
+        ? effectiveInscribed.filter(keep)
+        : (skipVigil
+            ? inscribed.filter(keep)
+            : applyVigilLookahead(year, rubrics, isoDate, inscribed.filter(keep), option));
+      const set = baseSet;
       const takes = borrowed.filter(keep);
       const implied = impliedCandidate(rubrics, owner, isoDate, season, set);
       if (implied) {
@@ -2096,7 +2445,8 @@
       }
       return deriveBranch(rubrics, owner, isoDate, set, option, held.folded,
                           implied ? null : (takes[0] || null), blockingRefusals,
-                          selection && selection.territory === option ? selection : null);
+                          selection && selection.territory === option ? selection : null,
+                          general.destinations);
     }
 
     // The borrowed rows carry territorial tags of their own — on the ferias

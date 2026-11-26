@@ -158,6 +158,30 @@ overrides:
     When the movable obligatory memorial of the Immaculate Heart coincides with
     another obligatory memorial, both are retained as optional memorials for
     that year.
+- id: sacred-heart-prevails-over-saint-solemnity
+  key: most-sacred-heart-jesus
+  over_key_matches: '^(nativity-saint-john-baptist|saints-peter-paul-apostles)$'
+  when_same_row: true
+  locus: 'NUALC 59 table 3; CDWDS, Responsa ad dubia, 11 May 2020'
+  why: >-
+    Within table place 3, the solemnity of the Most Sacred Heart of Jesus is a
+    solemnity of the Lord and takes precedence over a coinciding solemnity of a
+    saint in the General Roman Calendar. The impeded solemnity of the saint is
+    transferred under NUALC 60 (or, for the Nativity of St John the Baptist on
+    24 June, anticipated to Thursday 23 June under the CDWDS Responsum of
+    11 May 2020, except where St John the Baptist is patron of the nation,
+    diocese, city, or religious community).
+- id: corpus-christi-prevails-over-saint-solemnity
+  key: corpus-christi
+  over_key_matches: '^nativity-saint-john-baptist$'
+  when_same_row: true
+  locus: 'NUALC 59 table 3; NUALC 60'
+  why: >-
+    Within table place 3, the solemnity of the Most Holy Body and Blood of
+    Christ is a solemnity of the Lord and takes precedence over the coinciding
+    solemnity of the Nativity of St John the Baptist in the branch where Corpus
+    Christi falls on 24 June (Thursday or Sunday). The impeded solemnity of
+    St John the Baptist transfers to the nearest free day under NUALC 60.
 
 # ---------------------------------------------------------------------------
 # The bases.
@@ -683,23 +707,59 @@ impediment:
     locus: NUALC 60
     applies_to: solemnities only
     destination:
+      locus: NUALC 60
       rule: the nearest day free of the days listed under table places 1 to 8
-      computed_here: false
-      why_not: >-
-        The destination depends on the place of every following day and on
-        whether another solemnity has already been moved onto it. This repository
-        does not compute it. The destinations the article fixes by name are
-        computed, because the article states them.
+      computed_here: true
+      blocked_rows_max: 8
+      max_search_days: 30
+      note: >-
+        Computed under NUALC 60 from the General Roman Calendar: an impeded
+        solemnity without a named seat or NUALC 5 Sunday rule moves to the
+        nearest following day free of table places 1 to 8. Particular calendars
+        can introduce proper solemnities or feasts (places 4 and 8) that defer
+        the destination locally.
     proper_seats:
     - key: annunciation-lord
-      locus: NUALC 60
+      locus: NUALC 60; NUALC 5
       own_date: 03-25
-      when: 25 March falls on any day of Holy Week
-      impeded_when_easter_offset_between: [-7, -1]
+      when: 25 March falls on any day of Holy Week, on Easter Sunday, or within
+        the Octave of Easter
+      impeded_when_easter_offset_between: [-7, 7]
       destination: the Monday after the Second Sunday of Easter
       seat_easter_offset: 8
       note: This is not the nearest free day and is not derived from the general rule;
-        it is a specific disposition that overrides it.
+        NUALC 60 and NUALC 5 assign the Annunciation impeded by Holy Week, Easter
+        Sunday, or the Easter Octave to the Monday after the Second Sunday of Easter.
+    - key: saint-joseph-spouse-blessed-virgin-mary
+      locus: 'NUALC 56 f; CDWDS, Notitiae 42 (2006) 96 (Prot. n. 475/06)'
+      own_date: 03-19
+      when: 19 March falls on Palm Sunday or any weekday of Holy Week
+      impeded_when_easter_offset_between: [-7, -1]
+      destination: the Saturday before Palm Sunday
+      seat_easter_offset: -8
+      anticipated: true
+      note: >-
+        Under NUALC 56 f and the CDWDS clarification in Notitiae 42 (2006) 96
+        (Prot. n. 475/06), when 19 March falls in Holy Week (Palm Sunday through
+        Holy Saturday), Saint Joseph is anticipated to the Saturday before Palm
+        Sunday. Where 19 March is not a holy day of obligation, an Episcopal
+        Conference may alternatively transfer it outside Lent; this universal
+        finding aid computes the general Roman anticipation seat.
+    - key: nativity-saint-john-baptist
+      locus: 'CDWDS, Responsa ad dubia, 11 May 2020; NUALC 60'
+      own_date: 06-24
+      when: 24 June coincides with the Solemnity of the Most Sacred Heart of Jesus
+        (Friday after the Second Sunday after Pentecost, Easter + 68)
+      impeded_when_easter_offset_between: [68, 68]
+      destination: Thursday 23 June
+      seat_easter_offset: 67
+      anticipated: true
+      note: >-
+        Under the CDWDS Responsa ad dubia of 11 May 2020, when the Most Sacred
+        Heart of Jesus falls on Friday 24 June, Sacred Heart is celebrated on
+        24 June and the Nativity of St John the Baptist is anticipated to
+        Thursday 23 June (except where St John the Baptist is patron of the
+        nation, diocese, city, or religious community).
     sunday_rule:
       locus: 'NUALC 5'
       what: 'A solemnity occurring on a Sunday of Advent, Lent or Easter goes to the
@@ -713,14 +773,14 @@ impediment:
       seat_offset_days: 1
       destination: 'the following Monday'
     anticipation:
-      locus: NUALC 56 f
-      what: The one movement backwards in the system. Where 19 March is a day of precept
-        and Saint Joseph meets Palm Sunday, the solemnity is anticipated to Saturday
-        18 March; where it is not of precept, the Episcopal Conference may instead move
-        it outside Lent altogether.
-      computed_here: false
-      why_not: Both branches turn on whether the day is of precept in a particular territory,
-        which this repository does not know.
+      locus: 'NUALC 56 f; CDWDS, Notitiae 42 (2006) 96 (Prot. n. 475/06)'
+      what: >-
+        When 19 March falls on Palm Sunday or during Holy Week, Saint Joseph is
+        anticipated to the Saturday before Palm Sunday under the general Roman
+        rule (computed above under proper_seats). Where 19 March is not a day of
+        precept, an Episcopal Conference may instead transfer it outside Lent;
+        that territorial option is not chosen here.
+      computed_here: true
   omission:
     locus: NUALC 60
     gloss: >-
@@ -843,8 +903,12 @@ not_decided_here:
   IGMR 355).
 - The Gloria, the Creed, the readings, the Preface, the Eucharistic Prayer and the
   colour.
-- Whether a solemnity transferred from an earlier date occupies this one, except at
-  the Annunciation's named seat.
+- Transfers deferred further by proper solemnities or feasts (places 4 and 8)
+  not inscribed in the General Roman Calendar, or Conference-specific
+  transfers of Saint Joseph outside Lent where 19 March is not of precept
+  (NUALC 56 f), or local patronal exceptions to the 11 May 2020 Responsum for
+  24 June. Universal NUALC 5, 56 f, and 60 transfers are computed from the
+  General Roman Calendar.
 
 # What this calendar index does not carry, so that a date landing on one of them
 # says so instead of quietly showing the celebration underneath. Each window was
@@ -1098,3 +1162,126 @@ worked_cases:
     readable:
       said: [easter-sunday]
       displaced: [saint-vincent-ferrer-priest]
+- id: annunciation-on-easter-sunday-2035
+  source: NUALC 5; NUALC 60
+  date: '2035-03-25'
+  why: >-
+    Easter 2035 falls on 25 March. Easter Sunday (place 1) impedes the
+    Annunciation (place 3), which transfers to the Monday after the Second
+    Sunday of Easter (2 April 2035).
+  expect:
+    winner: easter-sunday
+    winner_row: 1
+    transferred: [annunciation-lord]
+    settled: true
+- id: annunciation-arrives-after-easter-octave-2035
+  source: NUALC 5; NUALC 60
+  date: '2035-04-02'
+  why: >-
+    The Annunciation impeded on Easter Sunday (25 March 2035) arrives on the
+    Monday after the Second Sunday of Easter (Easter + 8).
+  expect:
+    winner: annunciation-lord
+    winner_row: 3
+    arrived: true
+    settled: true
+- id: saint-joseph-in-holy-week-2035
+  source: 'NUALC 56 f; CDWDS, Notitiae 42 (2006) 96 (Prot. n. 475/06)'
+  date: '2035-03-19'
+  why: >-
+    19 March 2035 is Monday of Holy Week (place 2). Saint Joseph (place 3) is
+    anticipated to the Saturday before Palm Sunday (17 March 2035).
+  expect:
+    winner: holy-monday
+    winner_row: 2
+    transferred: [saint-joseph-spouse-blessed-virgin-mary]
+    settled: true
+- id: saint-joseph-anticipated-before-palm-sunday-2035
+  source: 'NUALC 56 f; CDWDS, Notitiae 42 (2006) 96 (Prot. n. 475/06)'
+  date: '2035-03-17'
+  why: >-
+    Saturday before Palm Sunday (Easter - 8): Saint Joseph arrives by
+    anticipation from Monday of Holy Week (19 March 2035).
+  expect:
+    winner: saint-joseph-spouse-blessed-virgin-mary
+    winner_row: 3
+    arrived: true
+    settled: true
+- id: sacred-heart-prevails-over-john-baptist-2033
+  source: 'NUALC 59 table 3; CDWDS, Responsa ad dubia, 11 May 2020'
+  date: '2033-06-24'
+  why: >-
+    Sacred Heart (solemnity of the Lord, place 3) takes precedence on Friday
+    24 June 2033; the Nativity of St John the Baptist is anticipated to
+    Thursday 23 June.
+  expect:
+    winner: most-sacred-heart-jesus
+    winner_row: 3
+    transferred: [nativity-saint-john-baptist]
+    settled: true
+- id: john-baptist-anticipated-before-sacred-heart-2033
+  source: 'CDWDS, Responsa ad dubia, 11 May 2020; NUALC 60'
+  date: '2033-06-23'
+  why: >-
+    Thursday 23 June 2033 (Easter + 67): the Nativity of St John the Baptist
+    arrives by anticipation from Friday 24 June.
+  expect:
+    winner: nativity-saint-john-baptist
+    winner_row: 3
+    arrived: true
+    settled: true
+- id: corpus-christi-thursday-vs-john-baptist-2038
+  source: NUALC 59 table 3; NUALC 60
+  date: '2038-06-24'
+  why: >-
+    Where Corpus Christi is kept on Thursday (24 June 2038), it takes
+    precedence over the Nativity of St John the Baptist and transfers St John
+    the Baptist to Friday 25 June; where Corpus Christi moves to Sunday,
+    St John the Baptist is kept on 24 June.
+  expect_by_option:
+    corpus-christi-thursday: {winner: corpus-christi, winner_row: 3, transferred: [nativity-saint-john-baptist], settled: true}
+    corpus-christi-transferred-to-sunday: {winner: nativity-saint-john-baptist, winner_row: 3, settled: true}
+- id: john-baptist-arrives-after-corpus-christi-thursday-2038
+  source: NUALC 60
+  date: '2038-06-25'
+  why: >-
+    Under the Thursday Corpus Christi branch only, the Nativity of St John the
+    Baptist arrives on Friday 25 June 2038; under the Sunday branch, St John
+    the Baptist was already kept on 24 June and 25 June remains an Ordinary
+    Time Friday.
+  expect_by_option:
+    corpus-christi-thursday: {winner: nativity-saint-john-baptist, winner_row: 3, arrived: true, settled: true}
+    corpus-christi-transferred-to-sunday: {winner: null, settled: false}
+- id: corpus-christi-sunday-vs-john-baptist-2057
+  source: NUALC 59 table 3; NUALC 60
+  date: '2057-06-24'
+  why: >-
+    Where Corpus Christi is transferred to Sunday (24 June 2057), it takes
+    precedence over the Nativity of St John the Baptist and transfers St John
+    the Baptist to Monday 25 June; where Corpus Christi is kept on Thursday
+    21 June, St John the Baptist takes Sunday 24 June.
+  expect_by_option:
+    corpus-christi-thursday: {winner: nativity-saint-john-baptist, winner_row: 3, settled: true}
+    corpus-christi-transferred-to-sunday: {winner: corpus-christi, winner_row: 3, transferred: [nativity-saint-john-baptist], settled: true}
+- id: sacred-heart-prevails-over-peter-paul-2057
+  source: NUALC 59 table 3; NUALC 60
+  date: '2057-06-29'
+  why: >-
+    Sacred Heart (solemnity of the Lord, place 3) takes precedence on Friday
+    29 June 2057; Ss Peter and Paul transfer under NUALC 60 to Saturday 30 June.
+  expect:
+    winner: most-sacred-heart-jesus
+    winner_row: 3
+    transferred: [saints-peter-paul-apostles]
+    settled: true
+- id: peter-paul-arrives-after-sacred-heart-2057
+  source: NUALC 60
+  date: '2057-06-30'
+  why: >-
+    Saturday 30 June 2057 carries only place 10/12/13 entries (free of places
+    1 to 8), so Ss Peter and Paul arrive under NUALC 60 from 29 June.
+  expect:
+    winner: saints-peter-paul-apostles
+    winner_row: 3
+    arrived: true
+    settled: true
