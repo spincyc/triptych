@@ -26,9 +26,9 @@ SCHEMA = 'triptych-reader-derivations/v1'
 COMMON = ('scripts', 'tools')
 SURFACES = {
     'commentary': ('src/sources', 'src/web/browser/catena/catena-model.js'),
-    'sources': ('src/sources', 'src/gpt', 'src/claude', 'src/common', 'web'),
-    'liturgy': ('src/sources', 'src/gpt', 'src/claude'),
-    'history': ('src/sources', 'src/gpt', 'src/claude', 'src/common', 'web',
+    'sources': ('src/sources', 'src/gpt', 'src/claude', 'src/gemini', 'src/common', 'web'),
+    'liturgy': ('src/sources', 'src/gpt', 'src/claude', 'src/gemini'),
+    'history': ('src/sources', 'src/gpt', 'src/claude', 'src/gemini', 'src/common', 'web',
                 'guidance/liturgical-text-publication-policy.md'),
     'documents': ('src', 'web', 'release/publications', 'workflows/fragments',
                   'workflows/pipelines', 'workflows/schema',

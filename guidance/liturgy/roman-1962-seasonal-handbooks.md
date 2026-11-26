@@ -131,7 +131,15 @@ witness. Name the witness of each prayer and observe its rights. Where
 only the Latin can be reproduced, print that text and identify an
 accessible received translation when available. A suggested intention
 or act of mercy may accompany a prayer. Explain a devotion's origin
-where it first helps the reader.
+where it first helps the reader. Before reproducing a received English
+Collect from Lasance--Walsh (1945), verify the grammatical addressee of its
+conclusion against the 1962 Latin (for example, Lasance p. 107 prints a
+corrupted ending *"Who livest"* on the Second Sunday of Advent against the
+Latin *Qui tecum vivit et regnat in unitate*, whereas Lefebvre 1925 p. 339
+renders it accurately). Likewise collate Breviary canticles offered for
+vocal prayer against a Breviary witness rather than electronic Bible feeds
+alone (`eBible.org latVUC` Luke 1:70 prints the corruption *sicut locutum
+est* for *sicut locutus est*).
 
 Every statement about fasting, abstinence, precept or closed times needs
 a body of law, territory and date. State what applied in the historical

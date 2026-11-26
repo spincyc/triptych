@@ -36,7 +36,7 @@ from _tooling import cached_json, prune_cache, tree_fingerprint  # noqa: E402
 
 # The roots `source-library.load_library` reads, and therefore the roots every
 # derivation over it must be keyed by.
-LIBRARY_ROOTS = ("src/sources", "src/gpt", "src/claude")
+LIBRARY_ROOTS = ("src/sources", "src/gpt", "src/claude", "src/gemini")
 
 
 def sandbox_repository(where: Path) -> Path:

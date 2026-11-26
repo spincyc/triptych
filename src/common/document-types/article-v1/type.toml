@@ -27,6 +27,8 @@ optional_fields = { kicker = "", subkicker = "", subtitle = "", series = "", des
 regions = ["body"]
 optional_regions = ["preamble", "appendices"]
 options = { headings = "sections", contents = "small", widows = "strict", title-page = "kicker", notes = "none", closing = "scriptsize" }
+# When `notes = "endnotes"`, end `body` with `'\clearpage'` so the Notes TOC
+# entry lands on the exact starting page of `\theendnotes`.
 # The structure role of each plain section path in the body region; an
 # entry with other roles spells them: { source = PATH, roles = [...] }.
 section_roles = { body = "argument" }

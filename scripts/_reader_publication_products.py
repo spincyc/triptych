@@ -223,7 +223,7 @@ def resolve(relative: str, root: Path, index) -> bytes | None:
         return body
     if not relative.startswith("web-editions/") or relative == "web-editions/index.json":
         return None
-    match = re.fullmatch(r"web-editions/((?:claude|gpt)/[a-z0-9][a-z0-9./-]*)\.json", relative)
+    match = re.fullmatch(r"web-editions/((?:claude|gemini|gpt)/[a-z0-9][a-z0-9./-]*)\.json", relative)
     if match is None or any(part in {"", ".", ".."} for part in match[1].split("/")):
         raise ValueError("unsafe publication reader path")
     identity = match[1]

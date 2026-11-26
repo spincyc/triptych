@@ -105,3 +105,10 @@ state its checked corpus boundary honestly in `remaining-gaps.md` and the
 terminal scope appendix without placeholder prose or unverified completeness
 claims. Web editions must provide object-level alt text, reading order, and
 textual equivalents without duplicating authoritative prose.
+
+Print editions (`liturgy-reference-v1` over `src/common/preamble.tex`) compile
+with `pdflatex` via `tools/print-document build`. Emit literal
+`\includegraphics{...}` paths inside `\ifdefined\TriptychPrintEdition ... \else
+... \fi`, avoid `\noindent{...}` in style macros (which Pandoc silently drops),
+and declare the family's `shared/` assets as `Makefile` prerequisites so native
+print bundles admit every plate automatically.

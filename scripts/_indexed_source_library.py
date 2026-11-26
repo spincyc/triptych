@@ -45,7 +45,7 @@ class Library:
     def __init__(self, root: Path, index, ids=None) -> None:
         self.root = Path(root)
         self.source_root = self.root / 'src/sources'
-        self.publication_roots = [self.root / 'src/gpt', self.root / 'src/claude']
+        self.publication_roots = [self.root / 'src/gpt', self.root / 'src/claude', self.root / 'src/gemini']
         self.records = Records(self.root, index, ids)
         self.errors: list[str] = []
 

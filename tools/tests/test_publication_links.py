@@ -83,14 +83,14 @@ class RepositoryPublicationLinksTest(unittest.TestCase):
                     providers = {}
                     continue
                 cells = line.strip("|").split("|")
-                if any(cell.strip() in {"ChatGPT", "Claude"} for cell in cells):
-                    providers = {i: {"ChatGPT": "gpt", "Claude": "claude"}[cell.strip()]
+                if any(cell.strip() in {"ChatGPT", "Claude", "Gemini"} for cell in cells):
+                    providers = {i: {"ChatGPT": "gpt", "Claude": "claude", "Gemini": "gemini"}[cell.strip()]
                                  for i, cell in enumerate(cells)
-                                 if cell.strip() in {"ChatGPT", "Claude"}}
+                                 if cell.strip() in {"ChatGPT", "Claude", "Gemini"}}
                 for index, provider in providers.items():
                     with self.subTest(catalog=catalog.name, line=number, provider=provider):
                         self.assertLess(index, len(cells))
-                        for linked in re.findall(r"\.\./(?:pdf|web)/(gpt|claude)/", cells[index]):
+                        for linked in re.findall(r"\.\./(?:pdf|web)/(gpt|claude|gemini)/", cells[index]):
                             self.assertEqual(linked, provider)
 
 

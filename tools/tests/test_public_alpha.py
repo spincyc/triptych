@@ -140,13 +140,13 @@ class PublicAlphaTest(unittest.TestCase):
         path = self.root / relative
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_bytes(data)
-        if (re.fullmatch(r"src/(gpt|claude)/.+/main\.tex", relative)
+        if (re.fullmatch(r"src/(gpt|claude|gemini)/.+/main\.tex", relative)
                 and (self.root / "src/common/document-schemas/registry.toml").is_file()):
             self.ensure_source_manifests()
 
     def ensure_source_manifests(self) -> None:
         from _document_schema import adapter_manifest, dumps_manifest
-        for provider in ("gpt", "claude"):
+        for provider in ("gpt", "claude", "gemini"):
             for main in (self.root / "src" / provider).rglob("main.tex"):
                 path = main.parent / "publication.toml"
                 if not path.exists():

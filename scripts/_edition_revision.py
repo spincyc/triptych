@@ -187,7 +187,7 @@ def _git(root: Path, *arguments: str) -> str:
     return os.fsdecode(_git_bytes(root, *arguments))
 
 
-_HISTORY_PREFIXES = ("src/gpt", "src/claude", "src/common", "src/sources", "scripts", "tools")
+_HISTORY_PREFIXES = ("src/gpt", "src/claude", "src/gemini", "src/common", "src/sources", "scripts", "tools")
 
 
 class _HistoryPaths:
