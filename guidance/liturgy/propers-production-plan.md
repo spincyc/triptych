@@ -255,6 +255,11 @@ nothing else. Publication to main is not part of this decision.
 
 - Authorized 2026-11-25: provider `claude`, identity `liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent`.
 
+The maintainer's later request of 25 November 2026 authorizes publication of
+that accepted Claude three-document set to main. The branch is reconciled with
+main and the deploy gates pass locally before the push. It authorizes nothing
+else.
+
 ### Reference-only publication scope
 
 An additional authorization here replaces full appointed-text reproduction
