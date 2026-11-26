@@ -4,48 +4,55 @@ schema_version = 1
 id = "gemini-six-showcase-publications-2026-11-25"
 owner = "PROJECT-WORK.md"
 promise = "Enable gemini as Triptych's third first-class provider, author six showcase publication lanes under src/gemini/ in parallel isolated subagents (Ark of the Covenant, Postconciliar Illustrated Sanctuary Dictionary, Angelology, 1962 Advent Seasonal Handbook, Discursive Benchmarks, and Reading Metaphysics), cold-review every lane independently, apply warranted guidance improvements, commit coherently, and publish verified changes."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "gemini-provider-infrastructure"
   criterion = "The gemini provider is supported across schemas, document types, metadata checks, staleness, catalog/web readers, print recipes, and public-alpha policy, and the postconciliar pictorial dictionary profile is registered."
   status = "pass"
-  evidence = ["scripts/_document_schema.py", "tools/public-alpha", "tools/check-generation-metadata", "src/common/document-schemas/registry.toml", "guidance/liturgy/postconciliar-pictorial-dictionaries.md", "tests/tools/research-staleness.test"]
+  evidence = ["scripts/_document_schema.py", "tools/public-alpha", "tools/check-generation-metadata", "tools/source-library", "scripts/_browser_product_recipes.py", "scripts/_reader_index.py", "src/common/document-schemas/registry.toml", "guidance/liturgy/postconciliar-pictorial-dictionaries.md", "tests/tools/research-staleness.test"]
 
   [[deliverables.requirements]]
   id = "lane-1-ark-of-the-covenant"
   criterion = "src/gemini/theology/mariology/ark-of-the-covenant passes schema, metadata, TeX build, visual plate audit, and independent cold review."
-  status = "open"
+  status = "pass"
+  evidence = ["src/gemini/theology/mariology/ark-of-the-covenant/publication.toml", "src/gemini/theology/mariology/ark-of-the-covenant/research/source-bindings.toml", "src/gemini/theology/mariology/ark-of-the-covenant/research/artwork-audit.md", "release/publications/gemini/theology/mariology/ark-of-the-covenant.json", "library/mariology.md", "PROJECT-WORK.md"]
 
   [[deliverables.requirements]]
   id = "lane-2-postconciliar-dictionary"
   criterion = "src/gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/ passes schema, metadata, TeX build, visual plate audit, and independent cold review."
-  status = "open"
+  status = "pass"
+  evidence = ["src/gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/comprehensive/publication.toml", "src/gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/research/artwork-manifest.toml", "release/publications/gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/comprehensive.json", "library/novus-ordo-liturgy.md", "PROJECT-WORK.md"]
 
   [[deliverables.requirements]]
   id = "lane-3-angelology"
   criterion = "src/gemini/theology/angelology passes schema, metadata, complete ST I qq. 50-64 and 106-114 census parity, TeX build, and independent cold review."
-  status = "open"
+  status = "pass"
+  evidence = ["src/gemini/theology/angelology/publication.toml", "src/gemini/theology/angelology/research/question-inventory.md", "src/gemini/theology/angelology/appendices/03-article-census.tex", "release/publications/gemini/theology/angelology.json", "library/faith.md", "PROJECT-WORK.md"]
 
   [[deliverables.requirements]]
   id = "lane-4-advent-handbook"
   criterion = "src/gemini/liturgy/roman-rite/1962/seasons/advent passes schema, metadata, TeX build, and independent blind reader and accuracy cold reviews."
-  status = "open"
+  status = "pass"
+  evidence = ["src/gemini/liturgy/roman-rite/1962/seasons/advent/publication.toml", "src/gemini/liturgy/roman-rite/1962/seasons/advent/research/calendar-verification.md", "src/gemini/liturgy/roman-rite/1962/seasons/advent/research/cold-review.md", "release/publications/gemini/liturgy/roman-rite/1962/seasons/advent.json", "library/traditional-latin-mass.md", "PROJECT-WORK.md"]
 
   [[deliverables.requirements]]
   id = "lane-5-discursive-benchmarks"
   criterion = "src/gemini/articles/faith/four-last-things-03-hell, articles/scripture/abraham-and-the-daylight-stars, and articles/scripture/the-linen-cloths-at-the-empty-tomb pass schema, metadata, TeX builds, and independent cold review."
-  status = "open"
+  status = "pass"
+  evidence = ["src/gemini/articles/faith/four-last-things-03-hell/publication.toml", "src/gemini/articles/scripture/abraham-and-the-daylight-stars/publication.toml", "src/gemini/articles/scripture/the-linen-cloths-at-the-empty-tomb/publication.toml", "library/faith.md", "library/scripture.md", "PROJECT-WORK.md"]
 
   [[deliverables.requirements]]
   id = "lane-6-reading-metaphysics"
   criterion = "src/gemini/articles/faith/reading-metaphysics passes vertical-slice cold transfer test, 50-80 page nine-lesson TeX build, schema, metadata, and independent cold acceptance review."
-  status = "open"
+  status = "pass"
+  evidence = ["src/gemini/articles/faith/reading-metaphysics/publication.toml", "src/gemini/articles/faith/reading-metaphysics/research/vertical-slice-review.md", "src/gemini/articles/faith/reading-metaphysics/research/acceptance-tests.md", "release/publications/gemini/articles/faith/reading-metaphysics.json", "library/faith.md", "PROJECT-WORK.md"]
 
   [[deliverables.requirements]]
   id = "cold-review-and-integration"
   criterion = "Every lane completes independent cold review with findings dispositioned, warranted guidance improvements are recorded, and repository deployment gates pass."
-  status = "open"
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "guidance/editorial.md", "guidance/articles.md", "guidance/theology/angelology.md", "guidance/liturgy/roman-1962-seasonal-handbooks.md", "guidance/liturgy/postconciliar-pictorial-dictionaries.md", "release/browser-products.json", "release/public-alpha.json", "src/index/corpus/index.json"]
 
 [[deliverables]]
 id = "claude-1962-01-advent-2026-11-29"
