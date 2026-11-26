@@ -4662,6 +4662,13 @@ sections:
       forms:
       - id: vigil
         name: Vigil Mass
+        celebrated:
+          when: evening-before
+          locus: "Missale Romanum 2002 (registered secondary digital PDF, artifact p. 103), In Nativitate Domini, Ad Missam in Vigilia: this Mass is used on the evening of 24 December, before or after First Vespers of the Nativity. Normae universales de anno liturgico et de calendario n. 11 (passage.catholic-church.normae-universales-de-anno-liturgico-et-de-calendario.latin-missale-romanum-typica-tertia-2002.complete-text, artifact p. 65): a proper vigil Mass is celebrated on the evening of the preceding day, before or after First Vespers."
+        ordinary_appointments:
+          preface:
+            option: nativity-i
+            locus: "Missale Romanum 2002 digital PDF p. 104: Praefatio de Nativitate, pp. 520-522 (Preface I held here; II-III also permitted)."
         propers:
         - name: Entrance Antiphon
           incipit: Hodie scietis
@@ -4774,6 +4781,10 @@ sections:
               source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - id: night
         name: Mass during the Night
+        ordinary_appointments:
+          preface:
+            option: nativity-i
+            locus: "Missale Romanum 2002 digital PDF p. 105: Praefatio de Nativitate, pp. 520-522 (Preface I held here; II-III also permitted)."
         propers:
         - name: Entrance Antiphon
           ordinary_disposition:
@@ -4890,6 +4901,10 @@ sections:
               source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - id: dawn
         name: Mass at Dawn
+        ordinary_appointments:
+          preface:
+            option: nativity-i
+            locus: "Missale Romanum 2002 digital PDF p. 106: Praefatio de Nativitate, pp. 520-522 (Preface I held here; II-III also permitted)."
         propers:
         - name: Entrance Antiphon
           incipit: Lux fulgebit hodie super nos
@@ -5000,6 +5015,10 @@ sections:
               source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - id: day
         name: Mass during the Day
+        ordinary_appointments:
+          preface:
+            option: nativity-i
+            locus: "Missale Romanum 2002 digital PDF p. 106: Praefatio de Nativitate, pp. 520-522 (Preface I held here; II-III also permitted)."
         propers:
         - name: Entrance Antiphon
           incipit: Puer natus est nobis
@@ -5118,6 +5137,10 @@ sections:
       name: The Holy Family of Jesus, Mary, and Joseph
       registry: pc-s06
       season: christmas
+      ordinary_appointments:
+        preface:
+          option: nativity-i
+          locus: "Missale Romanum 2002 digital PDF p. 107: Praefatio de Nativitate, pp. 520-522 (Preface I held here; II-III also permitted)."
       notes: 'The Lectionary citations were read at 200 dpi in the page images of the
         Ordo lectionum Missae, editio typica altera 1981, artifact
         internet-archive-scan-pdf-ed4bc14e, at artifact pages 67-68, printed pages
@@ -5625,6 +5648,10 @@ sections:
       name: Solemnity of Mary, the Holy Mother of God
       registry: pc-s07
       season: christmas
+      ordinary_appointments:
+        preface:
+          option: bvm-i
+          locus: "Missale Romanum 2002 digital PDF p. 111: Praefatio I de beata Maria Virgine (Et te in sollemnitate)."
       notes: 'The Lectionary citations were read at 200 dpi in the page images of the
         Ordo lectionum Missae, editio typica altera 1981, artifact
         internet-archive-scan-pdf-ed4bc14e, at artifact page 68, printed page 14, n. 18.
@@ -5752,6 +5779,10 @@ sections:
       name: Second Sunday after the Nativity
       registry: pc-s08
       season: christmas
+      ordinary_appointments:
+        preface:
+          option: nativity-i
+          locus: "Missale Romanum 2002 digital PDF p. 112: Praefatio de Nativitate, pp. 520-522 (Preface I held here; II-III also permitted)."
       notes: 'The Lectionary citations were read at 200 dpi in the page images of the
         Ordo lectionum Missae, editio typica altera 1981, artifact
         internet-archive-scan-pdf-ed4bc14e, at artifact page 69, printed page 15, n. 19.
@@ -5905,6 +5936,9 @@ sections:
       forms:
       - id: vigil
         name: Vigil Mass
+        celebrated:
+          when: evening-before
+          locus: "Missale Romanum 2002 (registered secondary digital PDF, artifact p. 112), In Epiphania Domini, Ad Missam in Vigilia: this Mass may be used on the evening of the preceding day, before or after First Vespers of the Epiphany. Normae universales de anno liturgico et de calendario n. 11 (passage.catholic-church.normae-universales-de-anno-liturgico-et-de-calendario.latin-missale-romanum-typica-tertia-2002.complete-text, artifact p. 65): a proper vigil Mass is celebrated on the evening of the preceding day, before or after First Vespers."
         propers:
         - name: Entrance Antiphon
           incipit: Surge, Ierusalem
@@ -6455,6 +6489,10 @@ sections:
       name: 2 January, a Weekday of Christmas Time
       registry: 'pc-T-christmas-january-2'
       season: christmas
+      ordinary_appointments:
+        preface:
+          option: nativity-i
+          locus: "Missale Romanum 2002 digital PDF p. 115: Praefatio de Nativitate (pp. 520-522) before Epiphany (Preface I held here; II-III also permitted)."
       propers:
       - name: First Reading
         source: scripture
@@ -6507,6 +6545,10 @@ sections:
       name: 3 January, a Weekday of Christmas Time
       registry: 'pc-T-christmas-january-3'
       season: christmas
+      ordinary_appointments:
+        preface:
+          option: nativity-i
+          locus: "Missale Romanum 2002 digital PDF p. 116: Praefatio de Nativitate (pp. 520-522) before Epiphany (Preface I held here; II-III also permitted)."
       propers:
       - name: First Reading
         source: scripture
@@ -6558,6 +6600,10 @@ sections:
       name: 4 January, a Weekday of Christmas Time
       registry: 'pc-T-christmas-january-4'
       season: christmas
+      ordinary_appointments:
+        preface:
+          option: nativity-i
+          locus: "Missale Romanum 2002 digital PDF p. 117: Praefatio de Nativitate (pp. 520-522) before Epiphany (Preface I held here; II-III also permitted)."
       propers:
       - name: First Reading
         source: scripture
@@ -6604,6 +6650,10 @@ sections:
       name: 5 January, a Weekday of Christmas Time
       registry: 'pc-T-christmas-january-5'
       season: christmas
+      ordinary_appointments:
+        preface:
+          option: nativity-i
+          locus: "Missale Romanum 2002 digital PDF p. 117: Praefatio de Nativitate (pp. 520-522) before Epiphany (Preface I held here; II-III also permitted)."
       propers:
       - name: First Reading
         source: scripture
@@ -7146,6 +7196,10 @@ sections:
       name: The Fifth Day within the Octave of the Nativity of the Lord
       registry: 'pc-T-christmas-december-29'
       season: christmas
+      ordinary_appointments:
+        preface:
+          option: nativity-i
+          locus: "Missale Romanum 2002 digital PDF p. 108: Praefatio de Nativitate, pp. 520-522 (Preface I held here; II-III also permitted)."
       propers:
       - name: Entrance Antiphon
         source: scripture
@@ -7260,6 +7314,10 @@ sections:
       name: The Sixth Day within the Octave of the Nativity of the Lord
       registry: 'pc-T-christmas-december-30'
       season: christmas
+      ordinary_appointments:
+        preface:
+          option: nativity-i
+          locus: "Missale Romanum 2002 digital PDF p. 109: Praefatio de Nativitate, pp. 520-522 (Preface I held here; II-III also permitted)."
       propers:
       - name: Entrance Antiphon
         source: mixed
@@ -7350,6 +7408,10 @@ sections:
       name: The Seventh Day within the Octave of the Nativity of the Lord
       registry: 'pc-T-christmas-december-31'
       season: christmas
+      ordinary_appointments:
+        preface:
+          option: nativity-i
+          locus: "Missale Romanum 2002 digital PDF p. 110: Praefatio de Nativitate, pp. 520-522 (Preface I held here; II-III also permitted)."
       propers:
       - name: Entrance Antiphon
         source: mixed
@@ -9854,6 +9916,10 @@ sections:
       name: Ash Wednesday
       registry: 'pc-T-ash-wednesday'
       season: lent
+      ordinary_appointments:
+        preface:
+          option: lent-iv
+          locus: "Missale Romanum 2002 digital PDF p. 125: Praefatio III vel IV de Quadragesima, pp. 526-527 (Preface IV held here)."
       propers:
       - name: Entrance Antiphon
         source: mixed
@@ -10049,6 +10115,10 @@ sections:
       name: Thursday after Ash Wednesday
       registry: 'pc-T-thursday-after-ash-wednesday'
       season: lent
+      ordinary_appointments:
+        preface:
+          option: lent-iv
+          locus: "Missale Romanum 2002 digital PDF p. 126: Praefatio de Quadragesima, pp. 524-527 (Preface IV for Lenten weekdays/fast days, n. 42 p. 318, held here)."
       propers:
       - name: Entrance Antiphon
         source: scripture
@@ -10189,6 +10259,10 @@ sections:
       name: Friday after Ash Wednesday
       registry: 'pc-T-friday-after-ash-wednesday'
       season: lent
+      ordinary_appointments:
+        preface:
+          option: lent-iv
+          locus: "Missale Romanum 2002 digital PDF p. 127: Praefatio de Quadragesima, pp. 524-527 (Preface IV for Lenten weekdays/fast days, n. 42 p. 318, held here)."
       propers:
       - name: Entrance Antiphon
         source: scripture
@@ -10323,6 +10397,10 @@ sections:
       name: Saturday after Ash Wednesday
       registry: 'pc-T-saturday-after-ash-wednesday'
       season: lent
+      ordinary_appointments:
+        preface:
+          option: lent-iv
+          locus: "Missale Romanum 2002 digital PDF p. 127: Praefatio de Quadragesima, pp. 524-527 (Preface IV for Lenten weekdays/fast days, n. 42 p. 318, held here)."
       propers:
       - name: Entrance Antiphon
         source: mixed
@@ -10443,6 +10521,10 @@ sections:
       name: Monday of the First Week of Lent
       registry: 'pc-T-lent-1-monday'
       season: lent
+      ordinary_appointments:
+        preface:
+          option: lent-iv
+          locus: "Missale Romanum 2002 digital PDF (Lent week 1 monday, pp. 130-156): Praefatio de Quadragesima, pp. 524-527 (Preface IV for Lenten weekdays/fast days, n. 42 p. 318, held here)."
       propers:
       - name: Entrance Antiphon
         source: scripture
@@ -10586,6 +10668,10 @@ sections:
       name: Tuesday of the First Week of Lent
       registry: 'pc-T-lent-1-tuesday'
       season: lent
+      ordinary_appointments:
+        preface:
+          option: lent-iv
+          locus: "Missale Romanum 2002 digital PDF (Lent week 1 tuesday, pp. 130-156): Praefatio de Quadragesima, pp. 524-527 (Preface IV for Lenten weekdays/fast days, n. 42 p. 318, held here)."
       propers:
       - name: Entrance Antiphon
         source: scripture
@@ -10716,6 +10802,10 @@ sections:
       name: Wednesday of the First Week of Lent
       registry: 'pc-T-lent-1-wednesday'
       season: lent
+      ordinary_appointments:
+        preface:
+          option: lent-iv
+          locus: "Missale Romanum 2002 digital PDF (Lent week 1 wednesday, pp. 130-156): Praefatio de Quadragesima, pp. 524-527 (Preface IV for Lenten weekdays/fast days, n. 42 p. 318, held here)."
       propers:
       - name: Entrance Antiphon
         source: mixed
@@ -10854,6 +10944,10 @@ sections:
       name: Thursday of the First Week of Lent
       registry: 'pc-T-lent-1-thursday'
       season: lent
+      ordinary_appointments:
+        preface:
+          option: lent-iv
+          locus: "Missale Romanum 2002 digital PDF (Lent week 1 thursday, pp. 130-156): Praefatio de Quadragesima, pp. 524-527 (Preface IV for Lenten weekdays/fast days, n. 42 p. 318, held here)."
       propers:
       - name: Entrance Antiphon
         source: scripture
@@ -10994,6 +11088,10 @@ sections:
       name: Friday of the First Week of Lent
       registry: 'pc-T-lent-1-friday'
       season: lent
+      ordinary_appointments:
+        preface:
+          option: lent-iv
+          locus: "Missale Romanum 2002 digital PDF (Lent week 1 friday, pp. 130-156): Praefatio de Quadragesima, pp. 524-527 (Preface IV for Lenten weekdays/fast days, n. 42 p. 318, held here)."
       propers:
       - name: Entrance Antiphon
         source: mixed
@@ -11126,6 +11224,10 @@ sections:
       name: Saturday of the First Week of Lent
       registry: 'pc-T-lent-1-saturday'
       season: lent
+      ordinary_appointments:
+        preface:
+          option: lent-iv
+          locus: "Missale Romanum 2002 digital PDF (Lent week 1 saturday, pp. 130-156): Praefatio de Quadragesima, pp. 524-527 (Preface IV for Lenten weekdays/fast days, n. 42 p. 318, held here)."
       propers:
       - name: Entrance Antiphon
         source: scripture
@@ -11253,6 +11355,10 @@ sections:
       name: Monday of the Second Week of Lent
       registry: 'pc-T-lent-2-monday'
       season: lent
+      ordinary_appointments:
+        preface:
+          option: lent-iv
+          locus: "Missale Romanum 2002 digital PDF (Lent week 2 monday, pp. 130-156): Praefatio de Quadragesima, pp. 524-527 (Preface IV for Lenten weekdays/fast days, n. 42 p. 318, held here)."
       propers:
       - name: Entrance Antiphon
         source: scripture
@@ -11391,6 +11497,10 @@ sections:
       name: Tuesday of the Second Week of Lent
       registry: 'pc-T-lent-2-tuesday'
       season: lent
+      ordinary_appointments:
+        preface:
+          option: lent-iv
+          locus: "Missale Romanum 2002 digital PDF (Lent week 2 tuesday, pp. 130-156): Praefatio de Quadragesima, pp. 524-527 (Preface IV for Lenten weekdays/fast days, n. 42 p. 318, held here)."
       propers:
       - name: Entrance Antiphon
         source: mixed
@@ -11518,6 +11628,10 @@ sections:
       name: Wednesday of the Second Week of Lent
       registry: 'pc-T-lent-2-wednesday'
       season: lent
+      ordinary_appointments:
+        preface:
+          option: lent-iv
+          locus: "Missale Romanum 2002 digital PDF (Lent week 2 wednesday, pp. 130-156): Praefatio de Quadragesima, pp. 524-527 (Preface IV for Lenten weekdays/fast days, n. 42 p. 318, held here)."
       propers:
       - name: Entrance Antiphon
         source: scripture
@@ -11649,6 +11763,10 @@ sections:
       name: Thursday of the Second Week of Lent
       registry: 'pc-T-lent-2-thursday'
       season: lent
+      ordinary_appointments:
+        preface:
+          option: lent-iv
+          locus: "Missale Romanum 2002 digital PDF (Lent week 2 thursday, pp. 130-156): Praefatio de Quadragesima, pp. 524-527 (Preface IV for Lenten weekdays/fast days, n. 42 p. 318, held here)."
       propers:
       - name: Entrance Antiphon
         source: scripture
@@ -11772,6 +11890,10 @@ sections:
       name: Friday of the Second Week of Lent
       registry: 'pc-T-lent-2-friday'
       season: lent
+      ordinary_appointments:
+        preface:
+          option: lent-iv
+          locus: "Missale Romanum 2002 digital PDF (Lent week 2 friday, pp. 130-156): Praefatio de Quadragesima, pp. 524-527 (Preface IV for Lenten weekdays/fast days, n. 42 p. 318, held here)."
       propers:
       - name: Entrance Antiphon
         source: scripture
@@ -11911,6 +12033,10 @@ sections:
       name: Saturday of the Second Week of Lent
       registry: 'pc-T-lent-2-saturday'
       season: lent
+      ordinary_appointments:
+        preface:
+          option: lent-iv
+          locus: "Missale Romanum 2002 digital PDF (Lent week 2 saturday, pp. 130-156): Praefatio de Quadragesima, pp. 524-527 (Preface IV for Lenten weekdays/fast days, n. 42 p. 318, held here)."
       propers:
       - name: Entrance Antiphon
         source: mixed
@@ -12034,6 +12160,10 @@ sections:
       name: Monday of the Third Week of Lent
       registry: 'pc-T-lent-3-monday'
       season: lent
+      ordinary_appointments:
+        preface:
+          option: lent-iv
+          locus: "Missale Romanum 2002 digital PDF (Lent week 3 monday, pp. 130-156): Praefatio de Quadragesima, pp. 524-527 (Preface IV for Lenten weekdays/fast days, n. 42 p. 318, held here)."
       proper_source_paths:
       - id: 'lent-3-monday-reading-course'
         form_id: 'main'
@@ -12428,6 +12558,10 @@ sections:
       name: Tuesday of the Third Week of Lent
       registry: 'pc-T-lent-3-tuesday'
       season: lent
+      ordinary_appointments:
+        preface:
+          option: lent-iv
+          locus: "Missale Romanum 2002 digital PDF (Lent week 3 tuesday, pp. 130-156): Praefatio de Quadragesima, pp. 524-527 (Preface IV for Lenten weekdays/fast days, n. 42 p. 318, held here)."
       proper_source_paths:
       - id: 'lent-3-tuesday-reading-course'
         form_id: 'main'
@@ -12822,6 +12956,10 @@ sections:
       name: Wednesday of the Third Week of Lent
       registry: 'pc-T-lent-3-wednesday'
       season: lent
+      ordinary_appointments:
+        preface:
+          option: lent-iv
+          locus: "Missale Romanum 2002 digital PDF (Lent week 3 wednesday, pp. 130-156): Praefatio de Quadragesima, pp. 524-527 (Preface IV for Lenten weekdays/fast days, n. 42 p. 318, held here)."
       proper_source_paths:
       - id: 'lent-3-wednesday-reading-course'
         form_id: 'main'
@@ -13187,6 +13325,10 @@ sections:
       name: Thursday of the Third Week of Lent
       registry: 'pc-T-lent-3-thursday'
       season: lent
+      ordinary_appointments:
+        preface:
+          option: lent-iv
+          locus: "Missale Romanum 2002 digital PDF (Lent week 3 thursday, pp. 130-156): Praefatio de Quadragesima, pp. 524-527 (Preface IV for Lenten weekdays/fast days, n. 42 p. 318, held here)."
       proper_source_paths:
       - id: 'lent-3-thursday-reading-course'
         form_id: 'main'
@@ -13501,6 +13643,10 @@ sections:
       name: Friday of the Third Week of Lent
       registry: 'pc-T-lent-3-friday'
       season: lent
+      ordinary_appointments:
+        preface:
+          option: lent-iv
+          locus: "Missale Romanum 2002 digital PDF (Lent week 3 friday, pp. 130-156): Praefatio de Quadragesima, pp. 524-527 (Preface IV for Lenten weekdays/fast days, n. 42 p. 318, held here)."
       proper_source_paths:
       - id: 'lent-3-friday-reading-course'
         form_id: 'main'
@@ -13887,6 +14033,10 @@ sections:
       name: Saturday of the Third Week of Lent
       registry: 'pc-T-lent-3-saturday'
       season: lent
+      ordinary_appointments:
+        preface:
+          option: lent-iv
+          locus: "Missale Romanum 2002 digital PDF (Lent week 3 saturday, pp. 130-156): Praefatio de Quadragesima, pp. 524-527 (Preface IV for Lenten weekdays/fast days, n. 42 p. 318, held here)."
       proper_source_paths:
       - id: 'lent-3-saturday-reading-course'
         form_id: 'main'
@@ -14249,6 +14399,10 @@ sections:
       name: Monday of the Fourth Week of Lent
       registry: 'pc-T-lent-4-monday'
       season: lent
+      ordinary_appointments:
+        preface:
+          option: lent-iv
+          locus: "Missale Romanum 2002 digital PDF (Lent week 4 monday, pp. 130-156): Praefatio de Quadragesima, pp. 524-527 (Preface IV for Lenten weekdays/fast days, n. 42 p. 318, held here)."
       proper_source_paths:
       - id: 'lent-4-monday-reading-course'
         form_id: 'main'
@@ -14635,6 +14789,10 @@ sections:
       name: Tuesday of the Fourth Week of Lent
       registry: 'pc-T-lent-4-tuesday'
       season: lent
+      ordinary_appointments:
+        preface:
+          option: lent-iv
+          locus: "Missale Romanum 2002 digital PDF (Lent week 4 tuesday, pp. 130-156): Praefatio de Quadragesima, pp. 524-527 (Preface IV for Lenten weekdays/fast days, n. 42 p. 318, held here)."
       proper_source_paths:
       - id: 'lent-4-tuesday-reading-course'
         form_id: 'main'
@@ -15013,6 +15171,10 @@ sections:
       name: Wednesday of the Fourth Week of Lent
       registry: 'pc-T-lent-4-wednesday'
       season: lent
+      ordinary_appointments:
+        preface:
+          option: lent-iv
+          locus: "Missale Romanum 2002 digital PDF (Lent week 4 wednesday, pp. 130-156): Praefatio de Quadragesima, pp. 524-527 (Preface IV for Lenten weekdays/fast days, n. 42 p. 318, held here)."
       proper_source_paths:
       - id: 'lent-4-wednesday-reading-course'
         form_id: 'main'
@@ -15385,6 +15547,10 @@ sections:
       name: Thursday of the Fourth Week of Lent
       registry: 'pc-T-lent-4-thursday'
       season: lent
+      ordinary_appointments:
+        preface:
+          option: lent-iv
+          locus: "Missale Romanum 2002 digital PDF (Lent week 4 thursday, pp. 130-156): Praefatio de Quadragesima, pp. 524-527 (Preface IV for Lenten weekdays/fast days, n. 42 p. 318, held here)."
       proper_source_paths:
       - id: 'lent-4-thursday-reading-course'
         form_id: 'main'
@@ -15764,6 +15930,10 @@ sections:
       name: Friday of the Fourth Week of Lent
       registry: 'pc-T-lent-4-friday'
       season: lent
+      ordinary_appointments:
+        preface:
+          option: lent-iv
+          locus: "Missale Romanum 2002 digital PDF (Lent week 4 friday, pp. 130-156): Praefatio de Quadragesima, pp. 524-527 (Preface IV for Lenten weekdays/fast days, n. 42 p. 318, held here)."
       proper_source_paths:
       - id: 'lent-4-friday-reading-course'
         form_id: 'main'
@@ -16154,6 +16324,10 @@ sections:
       name: Saturday of the Fourth Week of Lent
       registry: 'pc-T-lent-4-saturday'
       season: lent
+      ordinary_appointments:
+        preface:
+          option: lent-iv
+          locus: "Missale Romanum 2002 digital PDF (Lent week 4 saturday, pp. 130-156): Praefatio de Quadragesima, pp. 524-527 (Preface IV for Lenten weekdays/fast days, n. 42 p. 318, held here)."
       proper_source_paths:
       - id: 'lent-4-saturday-reading-course'
         form_id: 'main'
@@ -21521,6 +21695,10 @@ sections:
       name: Easter Sunday of the Resurrection of the Lord
       registry: pc-s17
       season: easter
+      ordinary_appointments:
+        dismissal:
+          option: paschal-double-alleluia
+          locus: "Missale Romanum 2002 digital PDF pp. 225-226 (n. 78) and p. 224 (n. 69, Quod servatur per totam octavam Paschae): Ite, missa est, alleluia, alleluia / Deo gratias, alleluia, alleluia."
       notes: 'The Lectionary citations were read at 200 dpi in the page images of the
         Ordo lectionum Missae, editio typica altera 1981, artifact
         internet-archive-scan-pdf-ed4bc14e, at artifact page 85, printed page 31, n. 42.
@@ -21916,6 +22094,10 @@ sections:
       name: Second Sunday of Easter (Divine Mercy Sunday)
       registry: pc-s18
       season: easter
+      ordinary_appointments:
+        dismissal:
+          option: paschal-double-alleluia
+          locus: "Missale Romanum 2002 digital PDF pp. 231-232 (Dominica II Paschae, closing the Octave of Easter): explicitly prints Ite, missa est, alleluia, alleluia / Deo gratias, alleluia, alleluia."
       notes: 'The Lectionary citations were read at 200 dpi in the page images of the
         Ordo lectionum Missae, editio typica altera 1981, artifact
         internet-archive-scan-pdf-ed4bc14e, at artifact page 86, printed page 32, nn.
@@ -23302,6 +23484,9 @@ sections:
       forms:
       - id: vigil
         name: Vigil Mass
+        celebrated:
+          when: evening-before
+          locus: "Missale Romanum 2002 (registered secondary digital PDF, artifact p. 255), In Ascensione Domini, Ad Missam in Vigilia: this Mass is used on the evening of the preceding day, before or after First Vespers of the Ascension. Normae universales de anno liturgico et de calendario n. 11 (passage.catholic-church.normae-universales-de-anno-liturgico-et-de-calendario.latin-missale-romanum-typica-tertia-2002.complete-text, artifact p. 65): a proper vigil Mass is celebrated on the evening of the preceding day, before or after First Vespers."
         propers:
         - name: Entrance Antiphon
           psalm_numbering: vulgate
@@ -24696,6 +24881,10 @@ sections:
       name: Monday within the Octave of Easter
       registry: 'pc-T-easter-monday'
       season: easter
+      ordinary_appointments:
+        dismissal:
+          option: paschal-double-alleluia
+          locus: "Missale Romanum 2002 digital PDF p. 226 (Feria II infra octavam Paschae) with n. 69 (p. 224, Quod servatur per totam octavam Paschae): Ite, missa est, alleluia, alleluia / Deo gratias, alleluia, alleluia."
       propers:
       - name: Entrance Antiphon
         ordinary_disposition:
@@ -24849,6 +25038,10 @@ sections:
       name: Tuesday within the Octave of Easter
       registry: 'pc-T-easter-tuesday'
       season: easter
+      ordinary_appointments:
+        dismissal:
+          option: paschal-double-alleluia
+          locus: "Missale Romanum 2002 digital PDF pp. 226-227 (Feria III infra octavam Paschae) with n. 69 (p. 224, Quod servatur per totam octavam Paschae): Ite, missa est, alleluia, alleluia / Deo gratias, alleluia, alleluia."
       propers:
       - name: Entrance Antiphon
         source: mixed
@@ -24968,6 +25161,10 @@ sections:
       name: Wednesday within the Octave of Easter
       registry: 'pc-T-easter-wednesday'
       season: easter
+      ordinary_appointments:
+        dismissal:
+          option: paschal-double-alleluia
+          locus: "Missale Romanum 2002 digital PDF pp. 227-228 (Feria IV infra octavam Paschae) with n. 69 (p. 224, Quod servatur per totam octavam Paschae): Ite, missa est, alleluia, alleluia / Deo gratias, alleluia, alleluia."
       propers:
       - name: Entrance Antiphon
         source: mixed
@@ -24990,13 +25187,7 @@ sections:
         notes: "Source appointment antiphonary:easter-wednesday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 59 / printed page 51, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Dated 2026-11-14 (gap campaign p3-easter-pentecost): the Missal's adapted antiphon is its own body beside the retained Scripture citation; no public-domain witness prints it word for word, so its Latin stays an explicit witness gap. Project study English of the adapted body is recorded in the translation overlay."
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          body_status: held-unpublished
-          reasons:
-          - kind: rights-withheld
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glg-b33a3c97
+        text: "Deus, qui nos resurrectionis dominicae annua sollemnitate laetificas, concede propitius, ut, per temporalia festa quae agimus, pervenire ad gaudia aeterna mereamur. Per Dominum."
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glg.htm#hw (FERIA IV INFRA OCTAVAM PASCHAE); Collect. The separately registered 2002 digital Missal confirms the prayer at artifact page 227–228. Correspondence with the 2008 reprint remains unverified."
       - name: First Reading
         source: scripture
@@ -25082,6 +25273,10 @@ sections:
       name: Thursday within the Octave of Easter
       registry: 'pc-T-easter-thursday'
       season: easter
+      ordinary_appointments:
+        dismissal:
+          option: paschal-double-alleluia
+          locus: "Missale Romanum 2002 digital PDF pp. 228-229 (Feria V infra octavam Paschae) with n. 69 (p. 224, Quod servatur per totam octavam Paschae): Ite, missa est, alleluia, alleluia / Deo gratias, alleluia, alleluia."
       propers:
       - name: Entrance Antiphon
         source: mixed
@@ -25189,6 +25384,10 @@ sections:
       name: Friday within the Octave of Easter
       registry: 'pc-T-easter-friday'
       season: easter
+      ordinary_appointments:
+        dismissal:
+          option: paschal-double-alleluia
+          locus: "Missale Romanum 2002 digital PDF p. 229 (Feria VI infra octavam Paschae) with n. 69 (p. 224, Quod servatur per totam octavam Paschae): Ite, missa est, alleluia, alleluia / Deo gratias, alleluia, alleluia."
       propers:
       - name: Entrance Antiphon
         source: mixed
@@ -25308,6 +25507,10 @@ sections:
       name: Saturday within the Octave of Easter
       registry: 'pc-T-easter-saturday'
       season: easter
+      ordinary_appointments:
+        dismissal:
+          option: paschal-double-alleluia
+          locus: "Missale Romanum 2002 digital PDF p. 230 (Sabbato infra octavam Paschae) with n. 69 (p. 224, Quod servatur per totam octavam Paschae): Ite, missa est, alleluia, alleluia / Deo gratias, alleluia, alleluia."
       propers:
       - name: Entrance Antiphon
         source: mixed
@@ -55439,6 +55642,10 @@ sections:
       name: Our Lord Jesus Christ, King of the Universe
       registry: pc-s60
       season: solemnities-of-the-lord
+      ordinary_appointments:
+        preface:
+          option: christ-the-king
+          locus: "Missale Romanum 2002 digital PDF p. 302: Praefatio: De Christo universorum Rege."
       notes: 'The Lectionary citations were read at 200 dpi in the page images of the
         Ordo lectionum Missae, editio typica altera 1981, artifact
         internet-archive-scan-pdf-ed4bc14e, at artifact page 142, printed page 88, nn.
@@ -55630,6 +55837,10 @@ sections:
       date: 01-01
       rank: Solemnity
       kind: marian
+      ordinary_appointments:
+        preface:
+          option: bvm-i
+          locus: "Missale Romanum 2002 digital PDF p. 111: Praefatio I de beata Maria Virgine (Et te in sollemnitate)."
       propers:
       - name: Collect
         incipit: Deus, qui salutis aeternae
@@ -55781,6 +55992,10 @@ sections:
       date: 05-31
       rank: Feast
       kind: marian
+      ordinary_appointments:
+        preface:
+          option: bvm-i
+          locus: "Missale Romanum 2002 digital PDF p. 450: Praefatio I de beata Maria Virgine (Et te in festivitate), p. 547 (or BVM II)."
       notes: 'The Lectionary citations were read at 200 dpi in the page images of the
         Ordo lectionum Missae, editio typica altera 1981, artifact
         internet-archive-scan-pdf-ed4bc14e, at artifact page 343, printed page 289, n.
@@ -56008,6 +56223,9 @@ sections:
       forms:
       - id: vigil
         name: Vigil Mass
+        celebrated:
+          when: evening-before
+          locus: "Missale Romanum 2002 (registered secondary digital PDF, artifact p. 480), In Assumptione B. Mariae Virginis, Ad Missam in Vigilia: this Mass is used on the evening of 14 August, before or after First Vespers of the Assumption. Normae universales de anno liturgico et de calendario n. 11 (passage.catholic-church.normae-universales-de-anno-liturgico-et-de-calendario.latin-missale-romanum-typica-tertia-2002.complete-text, artifact p. 65): a proper vigil Mass is celebrated on the evening of the preceding day, before or after First Vespers."
         propers:
         - name: Entrance Antiphon
           source: composed
@@ -56147,13 +56365,7 @@ sections:
           notes: Source appointment icel2010:AP127:assumption-blessed-virgin-mary:day:Entrance Antiphon:2 checked in the held registered ICEL 2010 Antiphonary, artifact page 127 / printed page 119. Only the own antiphon appointment and its printed citation or uncited status are recorded; compiler Graduale psalm suggestions are excluded. No source wording, exact 2008 Latin body or publication permission is supplied.
         - name: Collect
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glr-2df3c15b
+          text: "Omnipotens sempiterne Deus, qui immaculatam Virginem Mariam, Filii tui Genetricem, corpore et anima ad caelestem gloriam assumpsisti, concede, quæsumus, ut, ad superna semper intenti, ipsius gloriae mereamur esse consortes. Per Dominum."
           notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glr.htm#cig (The Assumption of the Blessed Virgin Mary / Ad Missam in die); Collect. The separately registered 2002 digital Missal confirms the prayer at artifact page 481. Correspondence with the 2008 reprint remains unverified."
         - name: First Reading
           source: scripture
@@ -56232,6 +56444,10 @@ sections:
               source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glr-2df3c15b
           notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glr.htm#cig (The Assumption of the Blessed Virgin Mary / Ad Missam in die); Prayer after Communion. The separately registered 2002 digital Missal confirms the prayer at artifact page 482. Correspondence with the 2008 reprint remains unverified."
     - key: queenship-blessed-virgin-mary
+      ordinary_appointments:
+        preface:
+          option: bvm-i
+          locus: "Missale Romanum 2002 digital PDF p. 485: Praefatio I de beata Maria Virgine (Et te in festivitate), p. 547 (or BVM II)."
       text_status:
         state: partial
         scope: missal-formulary
@@ -56356,6 +56572,10 @@ sections:
       date: 09-08
       rank: Feast
       kind: marian
+      ordinary_appointments:
+        preface:
+          option: bvm-i
+          locus: "Missale Romanum 2002 digital PDF p. 490: Praefatio I de beata Maria Virgine (Et te in Nativitate), p. 547 (or BVM II)."
       notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo
         lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
         at artifact page 359, printed page 305, n. 636. The Ordo prints no De Communi heading
@@ -56537,6 +56757,10 @@ sections:
       date: 09-15
       rank: Memorial
       kind: marian
+      ordinary_appointments:
+        preface:
+          option: bvm-i
+          locus: "Missale Romanum 2002 digital PDF p. 495: Praefatio I de beata Maria Virgine (Et te in festivitate), p. 547 (or BVM II)."
       notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo
         lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
         at artifact page 360, printed page 306, n. 639. The Ordo prints Evangelium huius
@@ -56662,6 +56886,10 @@ sections:
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glr-2df3c15b
         notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/glr.htm#vu (Our Lady of Sorrows / Beatæ Mariæ Virginis Perdolentis); Prayer after Communion. The separately registered 2002 digital Missal confirms the prayer at artifact page 495. Correspondence with the 2008 reprint remains unverified."
     - key: our-lady-rosary
+      ordinary_appointments:
+        preface:
+          option: bvm-i
+          locus: "Missale Romanum 2002 digital PDF p. 505: Praefatio I de beata Maria Virgine (Et te in festivitate), p. 547 (or BVM II)."
       text_status:
         state: partial
         scope: missal-formulary
@@ -57143,12 +57371,7 @@ sections:
       - name: Prayer over the Offerings
         incipit: Ecclesiae tuae
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        text: "Ecclesiae tuae, quæsumus, Domine, dona propitius intuere, quibus non iam aurum, thus et myrrha profertur, sed quod eisdem muneribus declaratur, immolatur et sumitur, Iesus Christus. Qui vivit et regnat in sæcula saeculorum."
       - name: Prayer after Communion
         incipit: "Caelesti lumine, quaesumus, Domine"
         source: composed
@@ -57626,6 +57849,10 @@ sections:
       date: 09-14
       rank: Feast
       kind: christological
+      ordinary_appointments:
+        preface:
+          option: exaltation-cross
+          locus: "Missale Romanum 2002 digital PDF pp. 493-494: Praefatio: De victoria crucis gloriosae (2002 notes Passion Preface I may also be used)."
       notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo
         lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
         at artifact page 359-360, printed page 305-306, n. 638. The Ordo prints no De Communi
@@ -57742,6 +57969,13 @@ sections:
       forms:
       - id: vigil
         name: Vigil Mass
+        celebrated:
+          when: evening-before
+          locus: "Missale Romanum 2002 (registered secondary digital PDF, artifact p. 103), In Nativitate Domini, Ad Missam in Vigilia: this Mass is used on the evening of 24 December, before or after First Vespers of the Nativity. Normae universales de anno liturgico et de calendario n. 11 (passage.catholic-church.normae-universales-de-anno-liturgico-et-de-calendario.latin-missale-romanum-typica-tertia-2002.complete-text, artifact p. 65): a proper vigil Mass is celebrated on the evening of the preceding day, before or after First Vespers."
+        ordinary_appointments:
+          preface:
+            option: nativity-i
+            locus: "Missale Romanum 2002 digital PDF p. 104: Praefatio de Nativitate, pp. 520-522 (Preface I held here; II-III also permitted)."
         propers:
         - name: Entrance Antiphon
           takes_from:
@@ -57810,6 +58044,10 @@ sections:
             proper: Prayer after Communion
       - id: night
         name: Mass during the Night
+        ordinary_appointments:
+          preface:
+            option: nativity-i
+            locus: "Missale Romanum 2002 digital PDF p. 105: Praefatio de Nativitate, pp. 520-522 (Preface I held here; II-III also permitted)."
         propers:
         - name: Entrance Antiphon
           ordinary_disposition:
@@ -57878,6 +58116,10 @@ sections:
             proper: Prayer after Communion
       - id: dawn
         name: Mass at Dawn
+        ordinary_appointments:
+          preface:
+            option: nativity-i
+            locus: "Missale Romanum 2002 digital PDF p. 106: Praefatio de Nativitate, pp. 520-522 (Preface I held here; II-III also permitted)."
         propers:
         - name: Entrance Antiphon
           takes_from:
@@ -57931,6 +58173,10 @@ sections:
             proper: Prayer after Communion
       - id: day
         name: Mass during the Day
+        ordinary_appointments:
+          preface:
+            option: nativity-i
+            locus: "Missale Romanum 2002 digital PDF p. 106: Praefatio de Nativitate, pp. 520-522 (Preface I held here; II-III also permitted)."
         propers:
         - name: Entrance Antiphon
           takes_from:
@@ -60997,6 +61243,10 @@ sections:
       date: 03-19
       rank: Solemnity
       kind: sanctoral
+      ordinary_appointments:
+        preface:
+          option: saint-joseph-solemnity
+          locus: "Missale Romanum 2002 digital PDF pp. 433-434: Praefatio: De missione sancti Ioseph (Et te in sollemnitate beati Ioseph)."
       notes: 'The Lectionary citations were read at 200 dpi in the page images of the
         Ordo lectionum Missae, editio typica altera 1981, artifact
         internet-archive-scan-pdf-ed4bc14e, at artifact page 335, printed page 281, n.
@@ -62455,6 +62705,10 @@ sections:
       date: 05-01
       rank: Optional memorial
       kind: sanctoral
+      ordinary_appointments:
+        preface:
+          option: saint-joseph-commemoration
+          locus: "Missale Romanum 2002 digital PDF p. 442: Praefatio: De missione sancti Ioseph (Et te in commemoratione beati Ioseph)."
       notes: 'The Lectionary citations were read at 200 dpi in the page images of the
         Ordo lectionum Missae, editio typica altera 1981, artifact
         internet-archive-scan-pdf-ed4bc14e, at artifact page 340, printed page 286, n.
@@ -65262,6 +65516,9 @@ sections:
       forms:
       - id: vigil
         name: Vigil Mass
+        celebrated:
+          when: evening-before
+          locus: "Missale Romanum 2002 (registered secondary digital PDF, artifact p. 456), In Nativitate S. Ioannis Baptistae, Ad Missam in Vigilia: this Mass is used on the evening of 23 June, before or after First Vespers of the Solemnity. Normae universales de anno liturgico et de calendario n. 11 (passage.catholic-church.normae-universales-de-anno-liturgico-et-de-calendario.latin-missale-romanum-typica-tertia-2002.complete-text, artifact p. 65): a proper vigil Mass is celebrated on the evening of the preceding day, before or after First Vespers."
         propers:
         - name: Entrance Antiphon
           source: scripture
@@ -65705,6 +65962,9 @@ sections:
       forms:
       - id: vigil
         name: Vigil Mass
+        celebrated:
+          when: evening-before
+          locus: "Missale Romanum 2002 (registered secondary digital PDF, artifact p. 460), Ss. Petri et Pauli, Apostolorum, Ad Missam in Vigilia: this Mass is used on the evening of 28 June, before or after First Vespers of the Solemnity. Normae universales de anno liturgico et de calendario n. 11 (passage.catholic-church.normae-universales-de-anno-liturgico-et-de-calendario.latin-missale-romanum-typica-tertia-2002.complete-text, artifact p. 65): a proper vigil Mass is celebrated on the evening of the preceding day, before or after First Vespers."
         propers:
         - name: Entrance Antiphon
           source: composed
@@ -73726,6 +73986,10 @@ sections:
       forms:
       - id: first
         name: First formulary
+        ordinary_appointments:
+          preface:
+            option: dead-i
+            locus: "Missale Romanum 2002 digital PDF p. 514: Praefatio defunctorum, pp. 563-567 (Preface I held here; II-V also permitted)."
         propers:
         - name: Entrance Antiphon
           source: scripture
@@ -73780,6 +74044,10 @@ sections:
           notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/gls.htm#xp (The Commemoration of All the Faithful Departed (All Souls) / 1 Ant. ad introitum); Prayer after Communion. The separately registered 2002 digital Missal confirms the prayer at artifact page 515. Correspondence with the 2008 reprint remains unverified."
       - id: second
         name: Second formulary
+        ordinary_appointments:
+          preface:
+            option: dead-i
+            locus: "Missale Romanum 2002 digital PDF p. 515: Praefatio defunctorum, pp. 563-567 (Preface I held here; II-V also permitted)."
         propers:
         - name: Entrance Antiphon
           source: mixed
@@ -73833,6 +74101,10 @@ sections:
           notes: "Biblia Clerus, https://www.clerus.org/bibliaclerusonline/en/gls.htm#cj0 (The Commemoration of All the Faithful Departed (All Souls) / 2 Ant. ad introitum); Prayer after Communion. The separately registered 2002 digital Missal confirms the prayer at artifact page 515. Correspondence with the 2008 reprint remains unverified."
       - id: third
         name: Third formulary
+        ordinary_appointments:
+          preface:
+            option: dead-i
+            locus: "Missale Romanum 2002 digital PDF p. 516: Praefatio defunctorum, pp. 563-567 (Preface I held here; II-V also permitted)."
         propers:
         - name: Entrance Antiphon
           source: scripture
@@ -77155,13 +77427,7 @@ sections:
               artifact p. 538).
         - name: Entrance Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glt-427df2b2
+          text: "Ecce tabernaculum Dei cum hominibus! Et habitabit cum eis, et ipsi populus eius erunt, et ipse Deus cum eis erit eorum Deus (T.P. alleluia)."
           notes: 'Outside the dedicated church, Entrance Antiphon, option 2; Missale Romanum (2002), digital PDF artifact
             p. 538. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glt.htm#zs. ICEL English Antiphonary, artifact
             p. 155. Correspondence with the 2008 reprint remains unverified.'
@@ -77292,16 +77558,14 @@ sections:
       forms:
       - id: ordinary-time-1
         name: Ordinary Time, formulary 1 (2002 witness)
+        ordinary_appointments:
+          preface:
+            option: bvm-i
+            locus: "Missale Romanum 2002 digital PDF p. 540: Praefatio I de beata Maria Virgine, p. 547 (or BVM II)."
         propers:
         - name: Entrance Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glt-427df2b2
+          text: "Salve, sancta parens, enixa puerpera Regem, qui caelum terramque regit in sæcula saeculorum."
           notes: 'Ordinary Time, formulary 1, Entrance Antiphon, option 1; Missale Romanum (2002), digital PDF artifact p.
             540. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glt.htm#zu. ICEL English Antiphonary, artifact
             p. 156. Correspondence with the 2008 reprint remains unverified.'
@@ -77327,13 +77591,7 @@ sections:
             Missal confirms the prayer at artifact page 540. Correspondence with the 2008 reprint remains unverified.
         - name: Communion Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glt-427df2b2
+          text: "Beata viscera Mariae Virginis, quae portaverunt aeterni Patris Filium."
           notes: 'Ordinary Time, formulary 1, Communion Antiphon, option 1; Missale Romanum (2002), digital PDF artifact
             p. 540. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glt.htm#zu. ICEL English Antiphonary, artifact
             p. 156. Correspondence with the 2008 reprint remains unverified.'
@@ -77351,28 +77609,20 @@ sections:
             confirms the prayer at artifact page 540. Correspondence with the 2008 reprint remains unverified.
       - id: mary-ordinary-2
         name: Ordinary Time, formulary 2 (2002 witness)
+        ordinary_appointments:
+          preface:
+            option: bvm-i
+            locus: "Missale Romanum 2002 digital PDF p. 541: Praefatio I de beata Maria Virgine, p. 547 (or BVM II)."
         propers:
         - name: Entrance Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glt-427df2b2
+          text: "Beata es, Virgo Maria, quae omnium portasti creatorem; genuisti qui te fecit, et in aeternum permanes Virgo."
           notes: 'Ordinary Time, formulary 2, Entrance Antiphon, option 1; Missale Romanum (2002), digital PDF artifact p.
             540. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glt.htm#zu. ICEL English Antiphonary, artifact
             p. 156. Correspondence with the 2008 reprint remains unverified.'
         - name: Collect
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glt-427df2b2
+          text: "Concede, misericors Deus, fragilitati nostrae praesidium, ut, qui sanctae Dei Genetricis memoriam agimus, intercessionis eius auxilio a nostris iniquitatibus resurgamus. Per Dominum."
           notes: 'Ordinary Time, formulary 2, Collect, option 1; Missale Romanum (2002), digital PDF artifact p. 541. Biblia
             Clerus: https://www.clerus.org/bibliaclerusonline/en/glt.htm#zu. Correspondence with the 2008 reprint remains
             unverified.'
@@ -77406,6 +77656,10 @@ sections:
             reprint remains unverified.'
       - id: mary-ordinary-3
         name: Ordinary Time, formulary 3 (2002 witness)
+        ordinary_appointments:
+          preface:
+            option: bvm-i
+            locus: "Missale Romanum 2002 digital PDF p. 542: Praefatio I de beata Maria Virgine, p. 547 (or BVM II)."
         propers:
         - name: Entrance Antiphon
           source: composed
@@ -77473,6 +77727,10 @@ sections:
             reprint remains unverified.'
       - id: mary-ordinary-4
         name: Ordinary Time, formulary 4 (2002 witness)
+        ordinary_appointments:
+          preface:
+            option: bvm-i
+            locus: "Missale Romanum 2002 digital PDF p. 542: Praefatio I de beata Maria Virgine, p. 547 (or BVM II)."
         propers:
         - name: Entrance Antiphon
           source: composed
@@ -77536,6 +77794,10 @@ sections:
             reprint remains unverified.'
       - id: mary-ordinary-5
         name: Ordinary Time, formulary 5 (2002 witness)
+        ordinary_appointments:
+          preface:
+            option: bvm-i
+            locus: "Missale Romanum 2002 digital PDF p. 543: Praefatio I de beata Maria Virgine, p. 547 (or BVM II)."
         propers:
         - name: Entrance Antiphon
           source: composed
@@ -77591,6 +77853,10 @@ sections:
             reprint remains unverified.'
       - id: mary-ordinary-6
         name: Ordinary Time, formulary 6 (2002 witness)
+        ordinary_appointments:
+          preface:
+            option: bvm-i
+            locus: "Missale Romanum 2002 digital PDF p. 544: Praefatio I de beata Maria Virgine, p. 547 (or BVM II)."
         propers:
         - name: Entrance Antiphon
           source: composed
@@ -77638,6 +77904,10 @@ sections:
             reprint remains unverified.'
       - id: mary-ordinary-7
         name: Ordinary Time, formulary 7 (2002 witness)
+        ordinary_appointments:
+          preface:
+            option: bvm-i
+            locus: "Missale Romanum 2002 digital PDF p. 545: Praefatio I de beata Maria Virgine, p. 547 (or BVM II)."
         propers:
         - name: Entrance Antiphon
           source: composed
@@ -77701,6 +77971,10 @@ sections:
             reprint remains unverified.'
       - id: mary-ordinary-8
         name: Ordinary Time, formulary 8 (2002 witness)
+        ordinary_appointments:
+          preface:
+            option: bvm-i
+            locus: "Missale Romanum 2002 digital PDF p. 545: Praefatio I de beata Maria Virgine, p. 547 (or BVM II)."
         propers:
         - name: Entrance Antiphon
           source: composed
@@ -77764,6 +78038,10 @@ sections:
             reprint remains unverified.'
       - id: mary-advent-1
         name: Advent (2002 witness)
+        ordinary_appointments:
+          preface:
+            option: bvm-i
+            locus: "Missale Romanum 2002 digital PDF p. 546: Praefatio I de beata Maria Virgine, p. 547 (or BVM II)."
         propers:
         - name: Entrance Antiphon
           source: composed
@@ -77849,6 +78127,10 @@ sections:
             https://www.clerus.org/bibliaclerusonline/en/glt.htm#zv. Correspondence with the 2008 reprint remains unverified.'
       - id: mary-nativity-1
         name: Christmas Time (2002 witness)
+        ordinary_appointments:
+          preface:
+            option: bvm-i
+            locus: "Missale Romanum 2002 digital PDF p. 548: Praefatio I de beata Maria Virgine, p. 547 (or BVM II)."
         propers:
         - name: Entrance Antiphon
           source: composed
@@ -77870,13 +78152,7 @@ sections:
               547).
         - name: Entrance Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glt-427df2b2
+          text: "Virgo Dei Genetrix, quem totus non capit orbis, in tua se clausit viscera factus homo."
           notes: 'Christmas Time, Entrance Antiphon, option 2; Missale Romanum (2002), digital PDF artifact p. 547. Biblia
             Clerus: https://www.clerus.org/bibliaclerusonline/en/glt.htm#zw. ICEL English Antiphonary, artifact p. 158. Correspondence
             with the 2008 reprint remains unverified.'
@@ -77937,13 +78213,7 @@ sections:
             remains unverified.'
         - name: Communion Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glt-427df2b2
+          text: "Beata viscera Mariae Virginis, quae portaverunt aeterni Patris Filium."
           notes: 'Christmas Time, Communion Antiphon, option 1; Missale Romanum (2002), digital PDF artifact p. 548. Biblia
             Clerus: https://www.clerus.org/bibliaclerusonline/en/glt.htm#zw. ICEL English Antiphonary, artifact p. 158. Correspondence
             with the 2008 reprint remains unverified.'
@@ -77961,6 +78231,10 @@ sections:
             remains unverified.'
       - id: mary-easter-1
         name: Easter Time (2002 witness)
+        ordinary_appointments:
+          preface:
+            option: bvm-i
+            locus: "Missale Romanum 2002 digital PDF p. 548: Praefatio I de beata Maria Virgine, p. 547 (or BVM II)."
         propers:
         - name: Entrance Antiphon
           source: composed
@@ -78127,13 +78401,7 @@ sections:
               1 (digital PDF artifact p. 549).
         - name: Communion Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glt-427df2b2
+          text: "Ecce merces Sanctorum copiosa est apud Deum: ipsi vero mortui sunt pro Christo, et vivent in aeternum."
           notes: 'Several martyrs outside Easter Time, formulary 1, Communion Antiphon, option 2; Missale Romanum (2002),
             digital PDF artifact p. 549. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glt.htm#z0. ICEL English
             Antiphonary, artifact p. 160. Correspondence with the 2008 reprint remains unverified.'
@@ -78398,13 +78666,7 @@ sections:
               4 (digital PDF artifact p. 552).
         - name: Entrance Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glt-427df2b2
+          text: "Propter testamentum Domini et leges paternas, Sancti Dei perstiterunt in amore fraternitatis: quia unus fuit semper spiritus in eis, et una fides."
           notes: 'Several martyrs outside Easter Time, formulary 4, Entrance Antiphon, option 2; Missale Romanum (2002),
             digital PDF artifact p. 552. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glt.htm#z0. ICEL English
             Antiphonary, artifact p. 161. Correspondence with the 2008 reprint remains unverified.'
@@ -78525,13 +78787,7 @@ sections:
               5 (digital PDF artifact p. 553).
         - name: Entrance Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glt-427df2b2
+          text: "Iustorum animae in manu Dei sunt: et non tanget illos tormentum malitiae. Visi sunt oculis insipientium mori: illi autem sunt in pace."
           notes: 'Several martyrs outside Easter Time, formulary 5, Entrance Antiphon, option 2; Missale Romanum (2002),
             digital PDF artifact p. 553. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glt.htm#z0. ICEL English
             Antiphonary, artifact p. 162. Correspondence with the 2008 reprint remains unverified.'
@@ -78609,13 +78865,7 @@ sections:
               5 (digital PDF artifact p. 553,554).
         - name: Communion Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glt-427df2b2
+          text: "Vestri capilli capitis omnes numerati sunt; nolite timere: multis passeribus meliores estis vos."
           notes: 'Several martyrs outside Easter Time, formulary 5, Communion Antiphon, option 2; Missale Romanum (2002),
             digital PDF artifact p. 554. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glt.htm#z0. ICEL English
             Antiphonary, artifact p. 162. Correspondence with the 2008 reprint remains unverified.'
@@ -78649,13 +78899,7 @@ sections:
         propers:
         - name: Entrance Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glt-427df2b2
+          text: "Iste sanctus pro lege Dei sui certavit usque ad mortem, et a verbis impiorum non timuit; fundatus enim erat supra firmam petram."
           notes: 'One martyr outside Easter Time, formulary 1, Entrance Antiphon, option 1; Missale Romanum (2002), digital
             PDF artifact p. 554. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glt.htm#z1. ICEL English Antiphonary,
             artifact p. 162. Correspondence with the 2008 reprint remains unverified.'
@@ -78896,13 +79140,7 @@ sections:
               2 (digital PDF artifact p. 556).
         - name: Communion Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glt-427df2b2
+          text: "Qui sequitur me, non ambulat in tenebris, sed habebit lumen vitae, dicit Dominus."
           notes: 'One martyr outside Easter Time, formulary 2, Communion Antiphon, option 2; Missale Romanum (2002), digital
             PDF artifact p. 556. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glt.htm#z1. ICEL English Antiphonary,
             artifact p. 163. Correspondence with the 2008 reprint remains unverified.'
@@ -79310,13 +79548,7 @@ sections:
             reprint remains unverified.'
         - name: Communion Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glt-427df2b2
+          text: "Beati qui persecutionem patiuntur propter iustitiam, quoniam ipsorum est regnum caelorum (T.P. alleluia)."
           notes: 'Several missionary martyrs, Communion Antiphon, option 1; Missale Romanum (2002), digital PDF artifact
             p. 560. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glt.htm#a0a. ICEL English Antiphonary, artifact
             p. 165. Correspondence with the 2008 reprint remains unverified.'
@@ -79509,13 +79741,7 @@ sections:
         propers:
         - name: Entrance Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glt-427df2b2
+          text: "Istarum est enim regnum caelorum quae contempserunt vitam mundi, et pervenerunt ad præmia regni et laverunt stolas suas in sanguine Agni (T.P. alleluia)."
           notes: 'A holy woman martyr, Entrance Antiphon, option 1; Missale Romanum (2002), digital PDF artifact p. 561.
             Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glt.htm#a0d. ICEL English Antiphonary, artifact p.
             166. Correspondence with the 2008 reprint remains unverified.'
@@ -79678,25 +79904,13 @@ sections:
             the 2008 reprint remains unverified.'
         - name: Communion Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glu-e4b5126b
+          text: "Pastor bonus animam suam posuit pro ovibus suis (T.P. alleluia)."
           notes: 'A pope or a bishop, formulary 1, Communion Antiphon, option 1; Missale Romanum (2002), digital PDF artifact
             p. 563. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glu.htm#a0f. ICEL English Antiphonary, artifact
             p. 167. Correspondence with the 2008 reprint remains unverified.'
         - name: Prayer after Communion
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glu-e4b5126b
+          text: "Sacramenta quae sumpsimus, Domine Deus noster, in nobis foveant caritatis ardorem, quo beatus N. vehementer accensus pro Ecclesia tua se iugiter impendebat. Per Christum."
           notes: 'A pope or a bishop, formulary 1, Prayer after Communion, option 1; Missale Romanum (2002), digital PDF
             artifact p. 563. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glu.htm#a0f. Correspondence with
             the 2008 reprint remains unverified.'
@@ -79783,13 +79997,7 @@ sections:
             the 2008 reprint remains unverified.'
         - name: Communion Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glu-e4b5126b
+          text: "Domine, tu omnia nosti; tu scis quia amo te (T.P. alleluia)."
           notes: 'A pope or a bishop, formulary 2, Communion Antiphon, option 1; Missale Romanum (2002), digital PDF artifact
             p. 564. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glu.htm#a0f. ICEL English Antiphonary, artifact
             p. 167. Correspondence with the 2008 reprint remains unverified.'
@@ -79913,13 +80121,7 @@ sections:
               p. 565).
         - name: Communion Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glu-e4b5126b
+          text: "Beatus ille servus, quem, cum venerit dominus eius, et pulsaverit ianuam, invenerit vigilantem (T.P. alleluia)."
           notes: 'A bishop, formulary 1, Communion Antiphon, option 2; Missale Romanum (2002), digital PDF artifact p. 565.
             Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glu.htm#a0g. ICEL English Antiphonary, artifact p.
             168. Correspondence with the 2008 reprint remains unverified.'
@@ -80077,13 +80279,7 @@ sections:
         propers:
         - name: Entrance Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glu-e4b5126b
+          text: "Dabo vobis pastores iuxta cor meum, et pascent vos scientia et doctrina (T.P. alleluia)."
           notes: 'Several pastors, Entrance Antiphon, option 1; Missale Romanum (2002), digital PDF artifact p. 567. Biblia
             Clerus: https://www.clerus.org/bibliaclerusonline/en/glu.htm#a0i. ICEL English Antiphonary, artifact p. 168.
             Correspondence with the 2008 reprint remains unverified.'
@@ -80136,13 +80332,7 @@ sections:
             remains unverified.'
         - name: Communion Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glu-e4b5126b
+          text: "Filius hominis non venit ministrari, sed ministrare, et dare animam suam redemptionem pro multis (T.P. alleluia)."
           notes: 'Several pastors, Communion Antiphon, option 1; Missale Romanum (2002), digital PDF artifact p. 567. Biblia
             Clerus: https://www.clerus.org/bibliaclerusonline/en/glu.htm#a0i. ICEL English Antiphonary, artifact p. 169.
             Correspondence with the 2008 reprint remains unverified.'
@@ -80163,13 +80353,7 @@ sections:
         propers:
         - name: Entrance Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glu-e4b5126b
+          text: "Sacerdotes tui, Domine, induant iustitiam, et sancti tui exsultent (T.P. alleluia)."
           notes: 'One pastor, formulary 1, Entrance Antiphon, option 1; Missale Romanum (2002), digital PDF artifact p. 567.
             Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glu.htm#a0j. ICEL English Antiphonary, artifact p.
             169. Correspondence with the 2008 reprint remains unverified.'
@@ -80203,13 +80387,7 @@ sections:
             and no unlisted neighbouring appointment.. This receipt records the 2002 arrangement.'
         - name: Communion Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glu-e4b5126b
+          text: "Beatus servus, quem, cum venerit Dominus, invenerit vigilantem; amen dico vobis, super omnia bona sua constituet eum (T.P. alleluia)."
           notes: 'One pastor, formulary 1, Communion Antiphon, option 1; Missale Romanum (2002), digital PDF artifact p.
             568. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glu.htm#a0j. ICEL English Antiphonary, artifact
             p. 169. Correspondence with the 2008 reprint remains unverified.'
@@ -80221,13 +80399,7 @@ sections:
               p. 568).
         - name: Communion Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glu-e4b5126b
+          text: "Fidelis servus et prudens, quem constituit Dominus super familiam suam, ut det illis in tempore tritici mensuram (T.P. alleluia)."
           notes: 'One pastor, formulary 1, Communion Antiphon, option 2; Missale Romanum (2002), digital PDF artifact p.
             568. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glu.htm#a0j. ICEL English Antiphonary, artifact
             p. 169. Correspondence with the 2008 reprint remains unverified.'
@@ -80254,13 +80426,7 @@ sections:
         propers:
         - name: Entrance Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glu-e4b5126b
+          text: "Spiritus Domini super me: propter quod unxit me, evangelizare pauperibus misit me, sanare contritos corde (T.P. alleluia)."
           notes: 'One pastor, formulary 2, Entrance Antiphon, option 1; Missale Romanum (2002), digital PDF artifact p. 568.
             Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glu.htm#a0j. ICEL English Antiphonary, artifact p.
             169. Correspondence with the 2008 reprint remains unverified.'
@@ -80474,13 +80640,7 @@ sections:
         propers:
         - name: Entrance Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glu-e4b5126b
+          text: "Isti sunt viri sancti, quos elegit Dominus in caritate non ficta; et dedit illis gloriam sempiternam, quorum doctrina fulget Ecclesia (T.P. alleluia)."
           notes: 'Several founders of churches, Entrance Antiphon, option 1; Missale Romanum (2002), digital PDF artifact
             p. 570. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glu.htm#a0m. ICEL English Antiphonary, artifact
             p. 170. Correspondence with the 2008 reprint remains unverified.'
@@ -80669,13 +80829,7 @@ sections:
             reprint remains unverified.'
         - name: Communion Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glu-e4b5126b
+          text: "Ego pascam oves meas, et ego eas accubare faciam, dicit Dominus (T.P. alleluia)."
           notes: 'Missionaries, formulary 1, Communion Antiphon, option 1; Missale Romanum (2002), digital PDF artifact p.
             572. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glu.htm#a0n. ICEL English Antiphonary, artifact
             p. 171. Correspondence with the 2008 reprint remains unverified.'
@@ -80720,13 +80874,7 @@ sections:
         propers:
         - name: Entrance Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glu-e4b5126b
+          text: "Quam pulchri super montes pedes annuntiantis et praedicantis pacem, annuntiantis bonum, praedicantis salutem (T.P. alleluia)!"
           notes: 'Missionaries, formulary 2, Entrance Antiphon, option 1; Missale Romanum (2002), digital PDF artifact p.
             573. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glu.htm#a0n. ICEL English Antiphonary, artifact
             p. 171. Correspondence with the 2008 reprint remains unverified.'
@@ -80933,13 +81081,7 @@ sections:
               PDF artifact p. 574).
         - name: Entrance Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glu-e4b5126b
+          text: "Os iusti meditabitur sapientiam, et lingua eius loquetur iudicium; lex Dei eius in corde ipsius (T.P. alleluia)."
           notes: 'Doctors of the Church, formulary 1, Entrance Antiphon, option 2; Missale Romanum (2002), digital PDF artifact
             p. 574. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glu.htm#a0o. ICEL English Antiphonary, artifact
             p. 173. Correspondence with the 2008 reprint remains unverified.'
@@ -80979,13 +81121,7 @@ sections:
             with the 2008 reprint remains unverified.'
         - name: Communion Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glu-e4b5126b
+          text: "Fidelis servus et prudens, quem constituit Dominus super familiam suam, ut det illis in tempore tritici mensuram (T.P. alleluia)."
           notes: 'Doctors of the Church, formulary 1, Communion Antiphon, option 1; Missale Romanum (2002), digital PDF artifact
             p. 575. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glu.htm#a0o. ICEL English Antiphonary, artifact
             p. 173. Correspondence with the 2008 reprint remains unverified.'
@@ -80997,13 +81133,7 @@ sections:
               PDF artifact p. 575).
         - name: Communion Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glu-e4b5126b
+          text: "Qui meditabitur in lege Domini die ac nocte, dabit fructum suum in tempore suo (T.P. alleluia)."
           notes: 'Doctors of the Church, formulary 1, Communion Antiphon, option 2; Missale Romanum (2002), digital PDF artifact
             p. 575. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glu.htm#a0o. ICEL English Antiphonary, artifact
             p. 173. Correspondence with the 2008 reprint remains unverified.'
@@ -81309,13 +81439,7 @@ sections:
             reprint remains unverified.'
         - name: Communion Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glu-e4b5126b
+          text: "Ecce Sponsus venit: exite obviam Christo Domino (T.P. alleluia)."
           notes: 'One virgin, formulary 1, Communion Antiphon, option 1; Missale Romanum (2002), digital PDF artifact p.
             577. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glu.htm#a0r. ICEL English Antiphonary, artifact
             p. 174. Correspondence with the 2008 reprint remains unverified.'
@@ -81327,13 +81451,7 @@ sections:
               p. 577).
         - name: Communion Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glu-e4b5126b
+          text: "Unam petii a Domino, hanc requiram: ut inhabitem in domo Domini omnibus diebus vitae meae (T.P. alleluia)."
           notes: 'One virgin, formulary 1, Communion Antiphon, option 2; Missale Romanum (2002), digital PDF artifact p.
             577. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glu.htm#a0r. ICEL English Antiphonary, artifact
             p. 174. Correspondence with the 2008 reprint remains unverified.'
@@ -81442,13 +81560,7 @@ sections:
             reprint remains unverified.'
         - name: Communion Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glu-e4b5126b
+          text: "Quinque prudentes virgines acceperunt oleum in vasis suis cum lampadibus. Media autem nocte clamor factus est: Ecce sponsus venit, exite obviam Christo Domino (T.P. alleluia)."
           notes: 'One virgin, formulary 2, Communion Antiphon, option 1; Missale Romanum (2002), digital PDF artifact p.
             579. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glu.htm#a0r. ICEL English Antiphonary, artifact
             p. 175. Correspondence with the 2008 reprint remains unverified.'
@@ -81473,13 +81585,7 @@ sections:
         propers:
         - name: Entrance Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glu-e4b5126b
+          text: "Veni, sponsa Christi, accipe coronam, quam tibi Dominus praeparavit in aeternum (T.P. alleluia)."
           notes: 'One virgin, formulary 3, Entrance Antiphon, option 1; Missale Romanum (2002), digital PDF artifact p. 579.
             Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glu.htm#a0r. ICEL English Antiphonary, artifact p.
             175. Correspondence with the 2008 reprint remains unverified.'
@@ -81573,13 +81679,7 @@ sections:
               p. 579,580).
         - name: Communion Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glu-e4b5126b
+          text: "Media nocte clamor factus est: Ecce sponsus venit, exite obviam ei (T.P. alleluia)."
           notes: 'One virgin, formulary 3, Communion Antiphon, option 2; Missale Romanum (2002), digital PDF artifact p.
             580. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glu.htm#a0r. ICEL English Antiphonary, artifact
             p. 175. Correspondence with the 2008 reprint remains unverified.'
@@ -81629,13 +81729,7 @@ sections:
         propers:
         - name: Entrance Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glu-e4b5126b
+          text: "Confiteantur tibi, Domine, omnia opera tua, et Sancti tui benedicant tibi: gloriam regni tui dicent, et potentiam tuam loquentur (T.P. alleluia)."
           notes: 'Several saints, formulary 1, Entrance Antiphon, option 1; Missale Romanum (2002), digital PDF artifact
             p. 580. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glu.htm#a0u. ICEL English Antiphonary, artifact
             p. 176. Correspondence with the 2008 reprint remains unverified.'
@@ -81665,13 +81759,7 @@ sections:
             reprint remains unverified.'
         - name: Communion Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glu-e4b5126b
+          text: "Iusti epulentur, et exsultent in conspectu Dei, et delectentur in laetitia (T.P. alleluia)."
           notes: 'Several saints, formulary 1, Communion Antiphon, option 1; Missale Romanum (2002), digital PDF artifact
             p. 581. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glu.htm#a0u. ICEL English Antiphonary, artifact
             p. 176. Correspondence with the 2008 reprint remains unverified.'
@@ -81683,13 +81771,7 @@ sections:
               artifact p. 581).
         - name: Communion Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glu-e4b5126b
+          text: "Beati servi illi, quos, cum venerit Dominus, invenerit vigilantes. Amen dico vobis, quod praecinget se, et faciet illos discumbere, et transiens ministrabit illis (T.P. alleluia)."
           notes: 'Several saints, formulary 1, Communion Antiphon, option 2; Missale Romanum (2002), digital PDF artifact
             p. 581. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glu.htm#a0u. ICEL English Antiphonary, artifact
             p. 176. Correspondence with the 2008 reprint remains unverified.'
@@ -81716,13 +81798,7 @@ sections:
         propers:
         - name: Entrance Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glu-e4b5126b
+          text: "Laetabitur iustus in Domino, et sperabit in eo; et laudabuntur omnes recti corde (T.P. alleluia)."
           notes: 'Several saints, formulary 2, Entrance Antiphon, option 1; Missale Romanum (2002), digital PDF artifact
             p. 581. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glu.htm#a0u. ICEL English Antiphonary, artifact
             p. 176. Correspondence with the 2008 reprint remains unverified.'
@@ -81826,13 +81902,7 @@ sections:
         propers:
         - name: Entrance Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glu-e4b5126b
+          text: "Benedictus vir, qui confidit in Domino, et erit Dominus fiducia eius; et erit quasi lignum, quod transplantatur super aquas, quod ad humorem mittit radices suas; et non timebit cum venerit aestus (T.P. alleluia)."
           notes: 'Several saints, formulary 4, Entrance Antiphon, option 1; Missale Romanum (2002), digital PDF artifact
             p. 582. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glu.htm#a0u. ICEL English Antiphonary, artifact
             p. 177. Correspondence with the 2008 reprint remains unverified.'
@@ -81889,13 +81959,7 @@ sections:
         propers:
         - name: Entrance Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glu-e4b5126b
+          text: "In virtute tua, Domine, laetabitur iustus, et super salutare tuum exsultabit vehementer; desiderium animae eius tribuisti ei (T.P. alleluia)."
           notes: 'One saint, formulary 1, Entrance Antiphon, option 1; Missale Romanum (2002), digital PDF artifact p. 583.
             Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glu.htm#a0v. ICEL English Antiphonary, artifact p.
             177. Correspondence with the 2008 reprint remains unverified.'
@@ -81977,13 +82041,7 @@ sections:
         propers:
         - name: Entrance Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glu-e4b5126b
+          text: "Lex veritatis fuit in ore eius et iniquitas non est inventa in labiis eius; in pace et in aequitate ambulavit mecum, et multos avertit ab iniquitate (T.P. alleluia)."
           notes: 'One saint, formulary 2, Entrance Antiphon, option 1; Missale Romanum (2002), digital PDF artifact p. 584.
             Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glu.htm#a0v. ICEL English Antiphonary, artifact p.
             177. Correspondence with the 2008 reprint remains unverified.'
@@ -82013,13 +82071,7 @@ sections:
             reprint remains unverified.'
         - name: Communion Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glu-e4b5126b
+          text: "Beati mundo corde, quoniam ipsi Deum videbunt; beati pacifici, quoniam filii Dei vocabuntur (T.P. alleluia)."
           notes: 'One saint, formulary 2, Communion Antiphon, option 1; Missale Romanum (2002), digital PDF artifact p. 584.
             Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glu.htm#a0v. ICEL English Antiphonary, artifact p.
             178. Correspondence with the 2008 reprint remains unverified.'
@@ -82057,13 +82109,7 @@ sections:
             basis: The 2002 Missal distinguishes 2 Entrance Antiphon options for An abbot (digital PDF artifact p. 585).
         - name: Entrance Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glu-e4b5126b
+          text: "Os iusti meditabitur sapientiam, et lingua eius loquetur iudicium; lex Dei eius in corde ipsius (T.P. alleluia)."
           notes: 'An abbot, Entrance Antiphon, option 2; Missale Romanum (2002), digital PDF artifact p. 585. Biblia Clerus:
             https://www.clerus.org/bibliaclerusonline/en/glu.htm#a0x. ICEL English Antiphonary, artifact p. 178. Correspondence
             with the 2008 reprint remains unverified.'
@@ -82097,13 +82143,7 @@ sections:
             unverified.'
         - name: Communion Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glu-e4b5126b
+          text: "Fidelis servus et prudens, quem constituit Dominus super familiam suam, ut det illis in tempore tritici mensuram (T.P. alleluia)."
           notes: 'An abbot, Communion Antiphon, option 1; Missale Romanum (2002), digital PDF artifact p. 585. Biblia Clerus:
             https://www.clerus.org/bibliaclerusonline/en/glu.htm#a0x. ICEL English Antiphonary, artifact p. 178. Correspondence
             with the 2008 reprint remains unverified.'
@@ -82203,13 +82243,7 @@ sections:
             unverified.'
         - name: Communion Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glu-e4b5126b
+          text: "Qui verbum Dei retinent corde perfecto et optimo, fructum afferunt in patientia (T.P. alleluia)."
           notes: 'A monk, Communion Antiphon, option 1; Missale Romanum (2002), digital PDF artifact p. 586. Biblia Clerus:
             https://www.clerus.org/bibliaclerusonline/en/glu.htm#a0y. ICEL English Antiphonary, artifact p. 178. Correspondence
             with the 2008 reprint remains unverified.'
@@ -82251,13 +82285,7 @@ sections:
         propers:
         - name: Entrance Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glv-96f448d4
+          text: "Ego autem sicut oliva fructifera in domo Dei, speravi in misericordia Dei in aeternum et in sæculum sæculi (T.P. alleluia)."
           notes: 'A nun, Entrance Antiphon, option 1; Missale Romanum (2002), digital PDF artifact p. 586. Biblia Clerus:
             https://www.clerus.org/bibliaclerusonline/en/glv.htm#a0z. ICEL English Antiphonary, artifact p. 179. Correspondence
             with the 2008 reprint remains unverified.'
@@ -82308,13 +82336,7 @@ sections:
             unverified.'
         - name: Communion Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glv-96f448d4
+          text: "Eructavit cor meum verbum bonum, dico ego opera mea Regi (T.P. alleluia)."
           notes: 'A nun, Communion Antiphon, option 1; Missale Romanum (2002), digital PDF artifact p. 587. Biblia Clerus:
             https://www.clerus.org/bibliaclerusonline/en/glv.htm#a0z. ICEL English Antiphonary, artifact p. 179. Correspondence
             with the 2008 reprint remains unverified.'
@@ -82527,13 +82549,7 @@ sections:
             reprint remains unverified.'
         - name: Communion Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glv-96f448d4
+          text: "Gustate et videte quoniam suavis est Dominus: beatus vir, qui sperat in eo (T.P. alleluia)."
           notes: 'Religious, formulary 2, Communion Antiphon, option 1; Missale Romanum (2002), digital PDF artifact p. 589.
             Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glv.htm#a00. ICEL English Antiphonary, artifact p.
             180. Correspondence with the 2008 reprint remains unverified.'
@@ -82545,13 +82561,7 @@ sections:
               p. 589).
         - name: Communion Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glv-96f448d4
+          text: "Beati pauperes spiritu, quoniam ipsorum est regnum caelorum (T.P. alleluia)."
           notes: 'Religious, formulary 2, Communion Antiphon, option 2; Missale Romanum (2002), digital PDF artifact p. 589.
             Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glv.htm#a00. ICEL English Antiphonary, artifact p.
             180. Correspondence with the 2008 reprint remains unverified.'
@@ -82596,13 +82606,7 @@ sections:
               PDF artifact p. 589).
         - name: Entrance Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glv-96f448d4
+          text: "Dispersit, dedit pauperibus: iustitia eius manet in sæculum sæculi, cornu eius exaltabitur in gloria (T.P. alleluia)."
           notes: 'Those who practiced works of mercy, Entrance Antiphon, option 2; Missale Romanum (2002), digital PDF artifact
             p. 589. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glv.htm#a01. ICEL English Antiphonary, artifact
             p. 180. Correspondence with the 2008 reprint remains unverified.'
@@ -82638,13 +82642,7 @@ sections:
             with the 2008 reprint remains unverified.'
         - name: Communion Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glv-96f448d4
+          text: "Maiorem hac dilectionem nemo habet, ut animam suam ponat quis pro amicis suis (T.P. alleluia)."
           notes: 'Those who practiced works of mercy, Communion Antiphon, option 1; Missale Romanum (2002), digital PDF artifact
             p. 590. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glv.htm#a01. ICEL English Antiphonary, artifact
             p. 180. Correspondence with the 2008 reprint remains unverified.'
@@ -82787,13 +82785,7 @@ sections:
             basis: The 2002 Missal distinguishes 2 Communion Antiphon options for Educators (digital PDF artifact p. 591).
         - name: Communion Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glv-96f448d4
+          text: "Qui sequitur me, non ambulat in tenebris, sed habebit lumen vitae, dicit Dominus (T.P. alleluia)."
           notes: 'Educators, Communion Antiphon, option 2; Missale Romanum (2002), digital PDF artifact p. 591. Biblia Clerus:
             https://www.clerus.org/bibliaclerusonline/en/glv.htm#a02. ICEL English Antiphonary, artifact p. 181. Correspondence
             with the 2008 reprint remains unverified.'
@@ -82986,13 +82978,7 @@ sections:
             reprint remains unverified.'
         - name: Communion Antiphon
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            body_status: held-unpublished
-            reasons:
-            - kind: rights-withheld
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-glv-96f448d4
+          text: "Quicumque fecerit voluntatem Patris mei, qui in caelis est, ipse meus frater et soror et mater est, dicit Dominus (T.P. alleluia)."
           notes: 'Holy women, formulary 2, Communion Antiphon, option 1; Missale Romanum (2002), digital PDF artifact p.
             593. Biblia Clerus: https://www.clerus.org/bibliaclerusonline/en/glv.htm#a03. ICEL English Antiphonary, artifact
             p. 182. Correspondence with the 2008 reprint remains unverified.'

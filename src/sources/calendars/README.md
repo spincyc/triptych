@@ -1065,7 +1065,7 @@ owns the canon. Both run inside `make check` and need PyYAML
 | roman-pre-1955 | marian | 1 | 0 | 0 |
 | roman-pre-1955 | sanctoral | 1 | 0 | 0 |
 | roman-1962 | seasonal | 128 | 1440 | 0 |
-| roman-1962 | christological | 8 | 102 | 0 |
+| roman-1962 | christological | 8 | 103 | 0 |
 | roman-1962 | marian | 18 | 169 | 0 |
 | roman-1962 | sanctoral | 307 | 1721 | 0 |
 | roman-1962 | common | 30 | 382 | 0 |
@@ -1096,7 +1096,7 @@ owns the canon. Both run inside `make check` and need PyYAML
 | Measure | roman-pre-1955 | roman-1962 | postconciliar |
 | --- | ---: | ---: | ---: |
 | Masses | 8 | 491 | 621 |
-| Propers | 0 | 3814 | 4680 |
+| Propers | 0 | 3815 | 4680 |
 | — named `Placeholder` | 0 | 0 | 0 |
 | — inside a `forms` block | 0 | 214 | 639 |
 | — carrying a `cycles` mapping | 0 | 0 | 306 |
@@ -1104,7 +1104,7 @@ owns the canon. Both run inside `make check` and need PyYAML
 | Masses holding only placeholders | 0 | 0 | 0 |
 | Masses taking a formulary from another entry | 0 | 166 | 0 |
 | Propers taking their text from another entry | 0 | 109 | 51 |
-| Propers that are not placeholders | 0 | 3814 | 4680 |
+| Propers that are not placeholders | 0 | 3815 | 4680 |
 | — of those, scripture-bearing | 0 | 2296 | 3061 |
 | Encoded passages | 0 | 2787 | 4040 |
 | Distinct books cited | 0 | 58 | 73 |

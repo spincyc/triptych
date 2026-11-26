@@ -1,0 +1,19 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.triptych.postconciliar-coldrev-2026-11-25-propers.2026-11-25-editorial-projection.coldrev-pc-propers-555072ac"
+edition_id = "edition.triptych.postconciliar-coldrev-2026-11-25-propers.2026-11-25-editorial-projection"
+artifact_type = "editorial-projection"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Every Latin word derives from independently registered pre-1931 public-domain witnesses; original study English is project-created and released under CC BY 4.0."
+rights_jurisdiction = "United States"
+sha256 = "555072ac7f32852bfd11a73c3f3a58b2d1f7b7699b4766002c8ce8eab9605267"
+byte_size = 20505
+retrieved = "2026-11-25"
+path = "src/sources/works/triptych/postconciliar-coldrev-2026-11-25-propers/editions/2026-11-25-editorial-projection/artifacts/coldrev-pc-propers-555072ac/propers.tsv"
+encoding = "utf-8"
+indexable = true
+projected_from = ["artifact.catholic-church.antiphonale-romanum.vatican-1912.cmaa-facsimile-815f7393", "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.ia-djvu-text-3a2a496d", "artifact.catholic-church.manuale-ambrosianum.magistretti-pars-altera-1904.ia-djvu-text-4ab2bb36", "artifact.catholic-church.missale-romanum.1889-tournai-desclee-leo-xiii-recognitum.ia-djvu-ocr-715f57fd", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.gap-campaign-20261114-advent-christmas-latin", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-lent-holyweek-latin", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf", "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.temporal-orations-20261112-short-third-person-formula-latin", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-21-psalms-d20e21f8", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-27-isaias-0eb1c68d", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-28-jeremias-b95e824b", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-31-ezechiel-f0675e77", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-44-malachias-8fc54627", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-47-matthew-2d02758d", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-49-luke-28ae5d9a", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-50-john-1542486b", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-73-apocalypse-8f990cb5", "artifact.diocese-of-salisbury.missale-ad-usum-sarum.1861-1883-burntisland-dickinson.ia-djvu-ocr-685c74b2", "artifact.jacques-paul-migne.patrologia-latina-volume-78.latin-migne-pl-78.ia-djvu-ocr-301707e7"]
+provenance = "Each Latin line is collated against a named pre-1931 public-domain witness and compared text-free against the registered 2002 digital Missal PDF; English lines are original project study translations."
+transformation = "Calendar orthography (expand ligatures, remove stress accents, normalize j to i, follow 2002 pointing/capitals); apply independently witnessed pre-1931 conclusion cues or (T.P. alleluia) rubrical cues where declared."

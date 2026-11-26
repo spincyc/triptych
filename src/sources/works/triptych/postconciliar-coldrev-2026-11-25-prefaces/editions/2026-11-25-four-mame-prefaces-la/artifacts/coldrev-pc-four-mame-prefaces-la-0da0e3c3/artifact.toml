@@ -1,0 +1,19 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.triptych.postconciliar-coldrev-2026-11-25-prefaces.2026-11-25-four-mame-prefaces-la.coldrev-pc-four-mame-prefaces-la-0da0e3c3"
+edition_id = "edition.triptych.postconciliar-coldrev-2026-11-25-prefaces.2026-11-25-four-mame-prefaces-la"
+artifact_type = "editorial-projection"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Literal transcription of four ancient Prefaces from Missale Romanum (Tours: Mame, 1922), published before 1931 and in the U.S. public domain."
+sha256 = "0da0e3c3ba6d7f7f8082d2d7ce03aa8e794a1178bebd018a338b98869e908830"
+byte_size = 2914
+retrieved = "2026-11-25"
+path = "src/sources/works/triptych/postconciliar-coldrev-2026-11-25-prefaces/editions/2026-11-25-four-mame-prefaces-la/artifacts/coldrev-pc-four-mame-prefaces-la-0da0e3c3/text.tsv"
+encoding = "utf-8"
+indexable = true
+projected_from = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"]
+provenance = "Visually transcribed on 2026-11-25 from rendered page images of Mame 1922 (artifact pp. 443, 445-446, 450-451) and collated word-for-word against 2002 digital PDF."
+transformation = "Join printed line wraps and strip chant stress accents; retain Mame spelling, ligatures, capitals, punctuation, and *** occasion slot."
