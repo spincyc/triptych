@@ -43,7 +43,7 @@ def freeze_input_state(root: Path) -> None:
 def verify_input_state(root: Path, *, workers: int | None = None) -> bool:
     """Return True when ``root`` still has the exact prepared input state."""
     expected = _INPUT_STATE.get(root)
-    return expected is None or _input_state(root, workers=workers) == expected
+    return expected is None or _input_state_digest(root, workers=workers) == expected
 
 
 def prepare(root: Path, *, workers: int | None = None) -> None:
@@ -62,7 +62,7 @@ def prepare(root: Path, *, workers: int | None = None) -> None:
     import _psalms
     import _psalter
 
-    state = _input_state(root, workers=workers)
+    state = _input_state_digest(root, workers=workers)
     if _INPUT_STATE.get(root) == state:
         return
     for module in (_chronology, wiring, page, _deuterocanon, _psalms, _psalter):
@@ -81,12 +81,14 @@ _WATCHED = (
 )
 
 
-def _input_state(root: Path, *, workers: int | None = None) -> bytes:
-    """Digest of every watched input's file identity, in path order.
+def _scan_input_state(root: Path, *, workers: int | None = None) -> list[tuple]:
+    """The sorted file identity rows of every watched input, in path order.
 
     Every operation (each new `Assembly`) asks this, so it is a scandir walk
-    over plain strings hashed into a 32-byte digest instead of retaining a
-    67,000-element stat tuple in process memory.
+    over plain strings: the same files `rglob("*")` reaches -- symlinked
+    directories are not descended, symlinked files are followed -- with the
+    same stat fields, at a fifth of the cost of building and sorting ~67,000
+    Path objects.
     """
     def scan(start: str, suffixes: tuple[str, ...]) -> list[tuple]:
         local: list[tuple] = []
@@ -136,8 +138,18 @@ def _input_state(root: Path, *, workers: int | None = None) -> bytes:
             for d in subdirs:
                 found.extend(scan(d, suffixes))
     found.sort()
+    return found
+
+
+def _input_state(root: Path, *, workers: int | None = None) -> tuple:
+    """The file identity of every watched input, in path order."""
+    return tuple(_scan_input_state(root, workers=workers))
+
+
+def _input_state_digest(root: Path, *, workers: int | None = None) -> bytes:
+    """32-byte digest of `_input_state` so `_INPUT_STATE` retains no 67k tuple."""
     digest = hashlib.sha256()
-    for row in found:
+    for row in _scan_input_state(root, workers=workers):
         digest.update(f"{row[0]}\0{row[1]}:{row[2]}:{row[3]}:{row[4]}:{row[5]}\n".encode("utf-8", "surrogateescape"))
     return digest.digest()
 
@@ -171,10 +183,10 @@ def _trace_result(value):
 def dependency_traces(contexts, jobs):
     """Read the common corpus once in this batch's fresh audited interpreter."""
     root = contexts[0].root
-    before = _input_state(root)
+    before = _input_state_digest(root)
     requests = [(context.document, context.provider) for context in contexts]
     traces = wiring.batch_computation_reads(requests, root, jobs)
-    if _input_state(root) != before:
+    if _input_state_digest(root) != before:
         raise wiring.ChronologyWiringError("chronology inputs changed during the dependency traces")
     return [_trace_result(trace) for trace in traces]
 
