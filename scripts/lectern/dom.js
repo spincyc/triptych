@@ -214,25 +214,48 @@ const BLOCKS = new Set(['P', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'LI', 'DT', 'DD
 function read(root) {
   const blocks = [];
   let current = null;
+  let nextPairId = 1;
+  function makeBlock(tag, trail) {
+    const block = { tag, classes: trail.classes.slice(), lang: trail.lang, runs: [] };
+    if (trail.pair !== null) {
+      block.pair = trail.pair;
+      block.side = trail.side;
+    }
+    if (trail.studyEventId) block.studyEventId = trail.studyEventId;
+    return block;
+  }
   function open(node, trail) {
-    current = { tag: node.tagName.toLowerCase(), classes: trail.classes.slice(), lang: trail.lang, runs: [] };
+    current = makeBlock(node.tagName.toLowerCase(), trail);
     blocks.push(current);
+  }
+  function pushRun(text, trail) {
+    const run = { text, tags: trail.tags.slice(), classes: trail.classes.slice(), lang: trail.lang };
+    if (trail.href) run.href = trail.href;
+    if (trail.title) run.title = trail.title;
+    current.runs.push(run);
   }
   function walk(node, trail) {
     if (node.nodeType === 3) {
       if (!node.nodeValue) return;
-      if (!current) current = { tag: 'p', classes: trail.classes.slice(), lang: trail.lang, runs: [] }, blocks.push(current);
-      current.runs.push({ text: node.nodeValue, tags: trail.tags.slice(), classes: trail.classes.slice(), lang: trail.lang });
+      if (!current) current = makeBlock('p', trail), blocks.push(current);
+      pushRun(node.nodeValue, trail);
       return;
     }
     if (node.nodeType === 1) {
       const names = node.classList.names;
       // Browser buttons are operated through the terminal's own chooser.
       if (names.includes('visually-hidden') || names.includes('source-local-actor-controls') || node.hasAttribute('hidden')) return;
+      const anchorHref = node.tagName === 'A' ? (node.href || node.getAttribute('href') || '') : '';
+      const anchorTitle = node.tagName === 'A' ? (node.title || node.getAttribute('title') || '') : '';
       const inner = {
         tags: trail.tags.concat(node.localName),
         classes: trail.classes.concat(names),
         lang: node.lang || trail.lang,
+        href: anchorHref || trail.href,
+        title: anchorTitle || trail.title,
+        pair: trail.pair,
+        side: trail.side,
+        studyEventId: (node.dataset && node.dataset.studyEventId) || trail.studyEventId,
       };
       if (node.dataset && node.dataset.cycle) inner.classes.push('cycle-' + node.dataset.cycle);
       // The browser closes routine translation research by default. The
@@ -245,6 +268,23 @@ function read(root) {
         if (summary) walk(summary, inner);
         current = null;
         return;
+      }
+      if (names.includes('text-pair') && inner.pair === null) {
+        const sides = node.children.filter((child) => child.classList && child.classList.contains('text-side'));
+        if (sides.length === 2) {
+          current = null;
+          const pairId = nextPairId++;
+          node.childNodes.forEach((child) => {
+            const sideIndex = sides.indexOf(child);
+            if (sideIndex >= 0) {
+              walk(child, Object.assign({}, inner, { pair: pairId, side: sideIndex }));
+            } else {
+              walk(child, inner);
+            }
+          });
+          current = null;
+          return;
+        }
       }
       if (BLOCKS.has(node.tagName)) {
         const saved = current;
@@ -259,11 +299,10 @@ function read(root) {
       // otherwise every structured turn reaches the terminal without a cue.
       if (names.includes('cue-mark') && node.hasAttribute('data-cue')) {
         if (!current) open(node, inner);
-        current.runs.push({ text: node.getAttribute('data-cue') + ' ',
-          tags: inner.tags.slice(), classes: inner.classes.slice(), lang: inner.lang });
+        pushRun(node.getAttribute('data-cue') + ' ', inner);
       }
       if (node.tagName === 'BR') {
-        if (current) current.runs.push({ text: '\n', tags: inner.tags, classes: inner.classes, lang: inner.lang });
+        if (current) pushRun('\n', inner);
         return;
       }
       // A container that is not itself a block ends the block before it and after it.
@@ -272,10 +311,12 @@ function read(root) {
       node.childNodes.forEach((child) => walk(child, inner));
       // The browser sets a margin between a superscript verse number and the
       // words. A terminal has no CSS margin; keep that gap outside the numbered
-      // run so a verse-per-line consumer does not see a second verse marker.
+      // run so a verse-per-line consumer does not see a second verse marker,
+      // and use a non-breaking space for verse numbers so superscripts never
+      // strand at line ends.
       if ((names.includes('verse-num') || names.includes('ordinary-locus')) && current) {
         const verse = names.includes('verse-num');
-        current.runs.push({ text: verse ? ' ' : '  ', tags: trail.tags.slice(),
+        current.runs.push({ text: verse ? '\u00a0' : '  ', tags: trail.tags.slice(),
           classes: trail.classes.concat(verse ? 'verse-gap' : 'ordinary-locus-gap'), lang: inner.lang });
       }
       if (container) current = null;
@@ -283,7 +324,7 @@ function read(root) {
     }
     if (node.nodeType === 11) node.childNodes.forEach((child) => walk(child, trail));
   }
-  walk(root, { tags: [], classes: [], lang: '' });
+  walk(root, { tags: [], classes: [], lang: '', href: '', title: '', pair: null, side: null, studyEventId: '' });
   return blocks.filter((block) => block.runs.some((run) => run.text.trim()));
 }
 

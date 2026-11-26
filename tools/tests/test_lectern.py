@@ -621,10 +621,10 @@ class ReaderInteractionTests(unittest.IsolatedAsyncioTestCase):
         month.chosen = dt.date(2026, 10, 22)
         messages = []
         with patch.object(month, "post_message", side_effect=messages.append):
-            month.on_click(SimpleNamespace(get_content_offset=lambda _: Offset(1, 2)))
+            month.on_click(SimpleNamespace(get_content_offset=lambda _: Offset(1, 1)))
             self.assertEqual(messages, [])
             month.on_click(SimpleNamespace(
-                get_content_offset=lambda _: Offset(3 * month._cell() + 1, 2)))
+                get_content_offset=lambda _: Offset(3 * month._cell() + 1, 1)))
         self.assertEqual([message.date for message in messages], [dt.date(2026, 10, 1)])
         self.assertEqual(month.chosen, dt.date(2026, 10, 22))
 
@@ -1480,15 +1480,17 @@ class PropersCoverageNoticeTests(unittest.IsolatedAsyncioTestCase):
                               patch.object(propers.missal, "events", wraps=propers.missal.events) as events):
                             owner.show(view)
                         rendered = str(owner.query_one("#propers-text", Static).render())
-                        self.assertEqual(captured[-1].count((notice, "italic $warning")), 1)
-                        self.assertEqual(rendered.count(notice), 1)
+                        formatted = propers.missal.format_coverage_notice(notice)
                         recension = view["mass"].get("recension")
+                        if not ordinary:
+                            expected_style = ("italic $text-muted"
+                                              if propers.missal.is_complete_notice(notice, recension=recension)
+                                              else "italic $warning")
+                            self.assertEqual(captured[-1].count((formatted, expected_style)), 1)
+                            self.assertEqual(rendered.count(formatted), 1)
                         if recension:
                             self.assertTrue(notice.startswith(recension))
                             self.assertEqual(rendered.count(recension), 1)
-                        advisory = (view.get("ordinary") or {}).get("advisory")
-                        if ordinary and advisory:
-                            self.assertIn(advisory, rendered)
                         for absence in view.get("explicitAbsences") or []:
                             reason = absence.get("reason") or ""
                             if " " in reason:

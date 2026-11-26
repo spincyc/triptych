@@ -26,7 +26,11 @@ class CompactReaderTests(unittest.IsolatedAsyncioTestCase):
                 async with app.run_test(size=(width, 40)) as pilot:
                     await self.settle(app, pilot)
                     self.assertEqual(app.query_one("#propers-missals").region.height, 1)
-                    self.assertIn("Postconciliar", str(app.query_one("#propers-missals").render()))
+                    pills = str(app.query_one("#propers-missals").render())
+                    self.assertIn("1962", pills)
+                    self.assertIn("2008", pills)
+                    self.assertIn("1920", pills)
+                    self.assertNotIn("Postconciliar", pills)
                     await pilot.press("c")
                     await self.settle(app, pilot)
                     self.assertNotEqual(app.current().calendar, "roman-1962")

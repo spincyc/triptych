@@ -90,8 +90,11 @@ THEMES = (
         dark=True,
         variables={
             **_variables(True),
-            **{f"{name}-color": "#5a5a70" for name in SURFACE_ACCENTS},
+            **{f"{name}-color": "#b8b8cc" for name in SURFACE_ACCENTS},
             "hotkey": "#ffffff",
+            "footer-key-foreground": "#ffffff",
+            "muted": "#8a8a9e",
+            "rule": "#383848",
         },
     ),
 )

@@ -562,7 +562,8 @@ class SurfaceParityTests(unittest.IsolatedAsyncioTestCase):
                             return value[2:4] == ("proper-choice", (group, "omit"))
                         return value == ("proper-choice", group, "omit")
                     index = next(i for i, (key, _) in enumerate(app.screen.options) if is_omit(key))
-                    app.screen.query_one(OptionList).highlighted = index
+                    picker = app.screen.query_one(OptionList)
+                    picker.highlighted = picker.get_option_index(str(index))
                     await pilot.press("enter")
                     await _settle(app, pilot)
                     self.assertNotIn("witness", reader.selection())
@@ -880,8 +881,9 @@ class SurfaceParityTests(unittest.IsolatedAsyncioTestCase):
             self.assertIsInstance(app.screen, Pick)
             target = ("eucharistic-prayer", "ep-ii")
             picker = app.screen.query_one(OptionList)
-            picker.highlighted = next(index for index, (value, _) in enumerate(app.screen.options)
-                                      if value[2:4] == ("ordinary-variant", target))
+            target_idx = next(index for index, (value, _) in enumerate(app.screen.options)
+                              if value[2:4] == ("ordinary-variant", target))
+            picker.highlighted = picker.get_option_index(str(target_idx))
             await pilot.press("enter")
             await _settle(app, pilot)
             view = day.views["postconciliar"]
@@ -940,7 +942,8 @@ class SurfaceParityTests(unittest.IsolatedAsyncioTestCase):
                     await pilot.press("s")
                     index = next(i for i, (v, label) in enumerate(app.screen.options)
                                  if v[3] == key and "commemorated" in label)
-                    app.screen.query_one(OptionList).highlighted = index
+                    picker = app.screen.query_one(OptionList)
+                    picker.highlighted = picker.get_option_index(str(index))
                     await pilot.press("enter")
                     await _settle(app, pilot)
                     row = day.source_rows()[0]
@@ -956,34 +959,46 @@ class SurfaceParityTests(unittest.IsolatedAsyncioTestCase):
         from lectern.surfaces.day import Day
         from textual.widgets import OptionList
 
-        calendar, date = "postconciliar", "2033-06-24"
+        # 2033-06-24 is settled under CDWDS 2020 / NUALC 60: Sacred Heart wins
+        # on 2033-06-24 and Nativity of St John the Baptist anticipates to 2033-06-23.
+        june24 = bridge.call("liturgy", "day", "postconciliar", "2033-06-24", {})
+        branch24 = june24["day"]["branches"][0]
+        self.assertTrue(branch24["settled"])
+        self.assertEqual(branch24["winner"]["key"], "most-sacred-heart-jesus")
+        displaced = next(r for r in branch24["readable"] if r["key"] == "nativity-saint-john-baptist")
+        self.assertEqual(displaced["disposition"], "transferred")
+        june23 = bridge.call("liturgy", "day", "postconciliar", "2033-06-23", {})
+        branch23 = june23["day"]["branches"][0]
+        self.assertTrue(branch23["settled"])
+        self.assertEqual(branch23["winner"]["key"], "nativity-saint-john-baptist")
+
+        # An unsettled Ordinary Time weekday (IGMR 363 open oration owner) remains
+        # unsettled without appointing a Mass while allowing explicit reading choices.
+        calendar, date = "postconciliar", "2027-01-12"
         app = TriptychApp(start="day", intent={"calendar": calendar, "date": date})
         async with app.run_test(size=(80, 30)) as pilot:
             await _settle(app, pilot)
             day = app.query_one(Day)
             view = day.views[calendar]
-            self.assertEqual(view["title"], "Choose a formulary to read")
-            self.assertFalse(view["day"]["branches"][0]["settled"])
-            self.assertIsNone(view["day"]["branches"][0]["winner"])
-            self.assertEqual(view["rows"][0]["events"], [])
+            (row,) = view["rows"]
+            self.assertFalse(row["branch"]["settled"])
+            self.assertIsNone(row["branch"]["winner"])
+            self.assertEqual(row["resolved"]["standing"], "unresolved")
+            self.assertTrue(row["events"])
+            self.assertIn(row["branch"]["unsettled"][0]["why"], day.query_one("#day-text-a").content.plain)
             await pilot.press("s")
             await _settle(app, pilot)
             self.assertIsInstance(app.screen, Pick)
-            options = [(index, value) for index, (value, _) in enumerate(app.screen.options)
-                       if value[2] == "calendar-reading"]
-            self.assertEqual({value[3] for _, value in options},
-                             {"ot-12-friday", "most-sacred-heart-jesus", "nativity-saint-john-baptist"})
-            app.screen.query_one(OptionList).highlighted = next(
-                index for index, value in options if value[3] == "most-sacred-heart-jesus")
+            picker = app.screen.query_one(OptionList)
+            idx = next(i for i, (val, _) in enumerate(app.screen.options)
+                       if val[2] == "weekday-orations" and val[3] == "ot-1")
+            picker.highlighted = picker.get_option_index(str(idx))
             await pilot.press("enter")
             await _settle(app, pilot)
-            (row,) = day.views[calendar]["rows"]
-            self.assertEqual(Day.resolved_key(row), "most-sacred-heart-jesus")
-            self.assertEqual(row["resolved"]["standing"], "unresolved")
-            self.assertFalse(row["branch"]["settled"])
-            self.assertIsNone(row["branch"]["winner"])
-            self.assertTrue(row["events"])
-            self.assertIn(row["branch"]["unsettled"][0]["why"], day.query_one("#day-text-a").content.plain)
+            (after,) = day.views[calendar]["rows"]
+            self.assertEqual(after["orationSelection"]["owner"], "ot-1")
+            self.assertFalse(after["branch"]["settled"])
+            self.assertIsNone(after["branch"]["winner"])
 
     async def test_day_can_reselect_source_mass_and_forms_with_cli_event_parity(self) -> None:
         from lectern.app import TriptychApp
@@ -1016,7 +1031,8 @@ class SurfaceParityTests(unittest.IsolatedAsyncioTestCase):
                         self.assertNotIn(foreign, [value[3] for _, value in offered])
                         matches = [index for index, value in offered if value[3] == target]
                         self.assertEqual(len(matches), 1, (target, offered))
-                        app.screen.query_one(OptionList).highlighted = matches[0]
+                        picker = app.screen.query_one(OptionList)
+                        picker.highlighted = picker.get_option_index(str(matches[0]))
                         await pilot.press("enter")
                         await _settle(app, pilot)
                         row = day.views[calendar]["rows"][0]

@@ -120,7 +120,7 @@ process.stdout.write(JSON.stringify({
         self.assertNotIn("Versicle.", said)
 
     def test_css_verse_gap_survives_without_creating_an_extra_verse(self) -> None:
-        self.assertEqual(plain(self.result["passage"]), "1 First verse. 2 Second verse. ")
+        self.assertEqual(plain(self.result["passage"]), "1\u00a0First verse. 2\u00a0Second verse. ")
         runs = self.result["passage"][0]["runs"]
         self.assertEqual(sum("verse-num" in run["classes"] for run in runs), 2)
         self.assertEqual(sum("verse-gap" in run["classes"] for run in runs), 2)
@@ -163,12 +163,12 @@ process.stdout.write(JSON.stringify({
 
         ink = blocks(Ink(), self.result["turns"])
         said = "".join(part[0] if isinstance(part, tuple) else part for part in ink.parts)
-        self.assertIn("P Opening.\n℟ Answer.\n℟ A priest answers.\n", said)
+        self.assertIn("P  Opening.\n℟  Answer.\n℟  A priest answers.\n", said)
         self.assertIn("[ A source action. ]", said)
         self.assertIn("[ Source translation: A source gloss. ]", said)
         ink = blocks(Ink(), self.result["passage"])
         said = "".join(part[0] if isinstance(part, tuple) else part for part in ink.parts)
-        self.assertEqual(said, "¹ First verse. ² Second verse. \n")
+        self.assertEqual(said, "¹\u00a0First verse. ²\u00a0Second verse. \n")
         ink = blocks(Ink(), self.result["compactCredits"])
         said = "".join(part[0] if isinstance(part, tuple) else part for part in ink.parts)
         self.assertIn("Translation source, differences and qualifications  (d Study)", said)

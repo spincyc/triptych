@@ -216,11 +216,24 @@ module.exports = function liturgy(realm) {
       }
       days.push({
         date: iso, season: result.season, week: result.week,
-        branches: result.options.map((option) => ({
-          option: option.option || null, settled: option.settled, choiceRequired: Boolean(option.choiceRequired),
-          winner: option.winner ? { name: option.winner.name, nature: option.winner.nature,
-            class: option.winner.class || null, rowLabel: option.winner.rowLabel } : null,
-        })),
+        branches: result.options.map((option) => {
+          const unsettled = option.unsettled || [];
+          const weekdayOrationOpen = Boolean(
+            !option.settled && !option.winner && unsettled.length > 0 &&
+            unsettled.every((item) => /oration owner for an Ordinary Time weekday/i.test(item.what || ''))
+          );
+          const readable = option.readable || [];
+          const preview = option.winner ? option.winner.name
+            : (readable.length === 1 ? readable[0].label
+              : (readable.length > 1 ? readable.map((r) => r.label).join(' / ') : null));
+          return {
+            option: option.option || null, settled: option.settled, choiceRequired: Boolean(option.choiceRequired),
+            weekdayOrationOpen,
+            preview,
+            winner: option.winner ? { name: option.winner.name, nature: option.winner.nature,
+              class: option.winner.class || null, rowLabel: option.winner.rowLabel } : null,
+          };
+        }),
       });
     }
     return { calendar, month: yearMonth, days };
@@ -264,7 +277,18 @@ module.exports = function liturgy(realm) {
       languages.every(language => offer.languages[language] && offer.languages[language].state === 'source-derived-complete');
     const consultations = [proper.source_consultation, proper.published_english_source, proper.published_latin_source]
       .filter((source, i, all) => source && !all.slice(0, i).some(other => other && other.url === source.url));
-    return { blocks: realm.dom.read(section), ...(consultations.length ? {sourceConsultations: consultations} : {}), sourceLocalActorChoice: offer ? {
+    const seenRefs = new Set();
+    const citations = [];
+    for (const cite of T.citationsOf({ propers: [proper] })) {
+      const ref = (cite && (cite.ref || (cite.book && cite.chapter ? `${cite.book} ${cite.chapter}` : ''))) || '';
+      if (ref && !seenRefs.has(ref)) {
+        seenRefs.add(ref);
+        citations.push({ ref, book: cite.book || null, chapter: cite.chapter || null });
+      }
+    }
+    return { blocks: realm.dom.read(section), ...(consultations.length ? {sourceConsultations: consultations} : {}),
+      ...(citations.length ? {citations} : {}),
+      sourceLocalActorChoice: offer ? {
       scope: offer.scope, target: offer.target, available: Boolean(available),
       selected: Boolean(state.sourceLocal1970 && state.sourceLocalActorTarget === event.id),
     } : null };
@@ -409,12 +433,60 @@ module.exports = function liturgy(realm) {
     return match && Array.isArray(match.turns) ? match.turns : [];
   }
 
-  function ordinaryContext(ordinary, state) {
+  function variantApplicability(ordinary, probeFn) {
+    const out = {};
+    if (!ordinary || !probeFn) return out;
+    for (const group of Seating.variantGroupsOf(ordinary)) {
+      const byOption = {};
+      for (const option of group.options || []) {
+        const semanticKeys = [];
+        let guarded = false;
+        for (const section of ordinary.sections || []) {
+          for (const element of section.elements || []) {
+            const owns = (element.alternatives || []).some((alt) => alt.group === group.group && alt.option === option.id);
+            if (owns || element.variant === option.id) {
+              semanticKeys.push(element.key);
+              if (element.applicability || (element.translations || []).some((t) => Object.prototype.hasOwnProperty.call(t, 'applicability'))) {
+                guarded = true;
+              }
+            }
+          }
+        }
+        if (!guarded || !semanticKeys.length) continue;
+        try {
+          const candidate = probeFn(group.group, option.id);
+          if ((candidate.ordinaryUnresolved || []).some((row) => semanticKeys.includes(row.element))) {
+            byOption[option.id] = 'unresolved';
+          } else if (!(candidate.events || []).some((row) => row.kind === 'ordinary-element' && semanticKeys.includes(row.id.replace(/^ordinary-element\//, '')))) {
+            byOption[option.id] = 'inapplicable';
+          } else {
+            byOption[option.id] = 'applicable';
+          }
+        } catch (_error) {
+          byOption[option.id] = 'unresolved';
+        }
+      }
+      if (Object.keys(byOption).length) out[group.group] = byOption;
+    }
+    return out;
+  }
+
+  function ordinaryContext(ordinary, state, applicability) {
     if (!ordinary) return null;
+    const missalMode = Boolean(state && state.ordinary);
+    const appMap = applicability || {};
     return {
-      title: ordinary.title || null, edition: ordinary.edition || null, advisory: ordinary.advisory || null,
+      title: ordinary.title || null, edition: ordinary.edition || null,
+      advisory: missalMode ? (ordinary.advisory || null) : null,
       languages: ordinary.languages || [],
-      variants: Seating.variantGroupsOf(ordinary),
+      variants: Seating.variantGroupsOf(ordinary).map((group) => {
+        const groupApp = appMap[group.group] || {};
+        return Object.assign({}, group, {
+          options: (group.options || []).map((option) => (
+            groupApp[option.id] ? Object.assign({}, option, { applicability: groupApp[option.id] }) : option
+          )),
+        });
+      }),
       selection: Seating.selectionMap(ordinary, state && state.variants || {}),
       absences: (ordinary.absences || []).concat(ordinary.language_absences || []).map((one) => ({
         key: one.key, kind: one.kind || null, label: one.label || null, state: one.state || null,
@@ -522,7 +594,7 @@ module.exports = function liturgy(realm) {
   /* Ask Study's production presenter to write its apparatus against semantic
    * event hosts. The terminal keeps this source-adjacent detail in a dialog;
    * no prose, coverage classification or source inference is recreated here. */
-  function study(result) {
+  function study(result, ordinary) {
     const fragment = document.createDocumentFragment();
     // dom.js intentionally has no browser layout; these are only the event
     // identities the production Study presenter attaches its own notes to.
@@ -534,7 +606,20 @@ module.exports = function liturgy(realm) {
       container.appendChild(host);
     });
     fragment.appendChild(container);
-    return realm.dom.read(Study.attach({ result, fragment, contents: [] }).fragment);
+    const attached = Study.attach({ result, fragment, contents: [] }).fragment;
+    const elements = T.ordinaryElementIndex(ordinary || {});
+    attached.querySelectorAll('.study-event').forEach((node) => {
+      const id = node.dataset && node.dataset.studyEventId || '';
+      const heading = node.querySelector('h3');
+      if (heading && /^Study notes for ordinary-element\//.test(heading.textContent || '')) {
+        const key = id.replace(/^ordinary-element\//, '');
+        const elem = elements.get(key);
+        const human = (elem && (elem.name || elem.latin_incipit)) ||
+          key.split('/').pop().replace(/-/g, ' ').replace(/^\w/, (c) => c.toUpperCase());
+        heading.textContent = 'Study notes for ' + human;
+      }
+    });
+    return realm.dom.read(attached);
   }
 
   /* Read the very source disclosure printed beside each selected Proper.
@@ -543,9 +628,12 @@ module.exports = function liturgy(realm) {
     const mass = (owner.masses || []).find((one) => one.key === resolvedKey(result));
     if (!mass) return [];
     const fragment = document.createDocumentFragment();
-    function append(event) {
+    function append(event, parentId) {
       const proper = sourceProper(event, owner);
       if (!proper) return;
+      const host = T.el('aside', 'study-translation-event');
+      host.dataset.studyEventId = parentId || event.id;
+      let added = false;
       // Study opens the exact quotation disclosure produced by the shared
       // renderer. It does not copy an execution result or reconstruct a source.
       if (state.sourceLocal1970 && event.sourceLocalActorOffer) {
@@ -557,25 +645,28 @@ module.exports = function liturgy(realm) {
         });
         const quotations = rendered.querySelectorAll('.source-local-actor-quotation');
         if (!quotations.length) throw new Error('The selected historical source quotation is unavailable in Study.');
-        fragment.appendChild(T.el('h3', 'proper-name', proper.name || 'Proper'));
+        host.appendChild(T.el('h3', 'proper-name', proper.name || 'Proper'));
         quotations.forEach((quotation) => {
           quotation.setAttribute('open', '');
-          fragment.appendChild(quotation);
+          host.appendChild(quotation);
         });
+        added = true;
       }
       const cycle = event.selected && event.selected.cycle;
       const owners = [proper].concat((cycle ? [cycle] : T.cycleKeysOf(proper)).map((key) => T.cycleOf(proper, key)));
       owners.forEach((textOwner) => {
         const selected = T.orationFor(textOwner, state.orations, state.witness || null);
         if (!selected.source && !selected.caution && !selected.notice) return;
-        fragment.appendChild(T.el('h3', 'proper-name', proper.name || 'Proper'));
-        fragment.appendChild(T.translationCredits(selected, { expanded: true }));
+        host.appendChild(T.el('h3', 'proper-name', proper.name || 'Proper'));
+        host.appendChild(T.translationCredits(selected, { expanded: true }));
+        added = true;
       });
+      if (added) fragment.appendChild(host);
     }
     (result.events || []).forEach((event) => {
-      if (event.kind === 'proper') append(event);
+      if (event.kind === 'proper') append(event, event.id);
       if (event.kind === 'proper-choice') (event.options || []).forEach((option) =>
-        (option.events || []).forEach(append));
+        (option.events || []).forEach((member) => append(member, event.id)));
     });
     return realm.dom.read(fragment);
   }
@@ -595,17 +686,18 @@ module.exports = function liturgy(realm) {
     const bible = bibleFor(state.bible);
     const derived = selectedDay(calendar, iso, state);
     const owner = structure(calendar, dayRootsFor(derived, state));
+    const ordinary = ordinaryFor(calendar, state);
     const branches = state.territory ? derived.options.filter((one) => one.option === state.territory) : derived.options;
     if (!branches.length) throw new Error('the requested territorial branch is not held');
     return branches.map((branch) => {
       const asked = branchRequest(calendar, iso, state, bible, branch, branches);
       const adapted = A.adaptDay({ request: asked, derived, structure: owner, rubrics: rubricsOf(calendar),
-        ordinary: ordinaryFor(calendar, state), nameExecutionUse: options && options.nameExecutionUse || null });
+        ordinary, nameExecutionUse: options && options.nameExecutionUse || null });
       const choice = dayReader().primaryDayChoice(adapted, branch);
       if (choice) return {option: branch.option || null,
         blocks: realm.dom.read(T.el('p', 'candidate-choice-reason', choice.reason))};
       return { option: branch.option || null,
-        blocks: study(adapted).concat(translationApparatus(adapted, owner, Object.assign({}, state, {witness: asked.languages.translationWitness}))) };
+        blocks: study(adapted, ordinary).concat(translationApparatus(adapted, owner, Object.assign({}, state, {witness: asked.languages.translationWitness}))) };
     });
   }
 
@@ -618,9 +710,9 @@ module.exports = function liturgy(realm) {
     if (state.form) asked.form = state.form;
     if (state.cycle) asked.cycle = state.cycle;
     const owner = structure(calendar, key);
-    const result = A.adaptPropers({ request: asked, structure: owner,
-      ordinary: ordinaryFor(calendar, state) });
-    return study(result).concat(translationApparatus(result, owner, state));
+    const ordinary = ordinaryFor(calendar, state);
+    const result = A.adaptPropers({ request: asked, structure: owner, ordinary });
+    return study(result, ordinary).concat(translationApparatus(result, owner, state));
   }
 
   function common(result, adapted) {
@@ -830,6 +922,19 @@ module.exports = function liturgy(realm) {
       row.ordinaryWitnessLinks = T.ordinaryWitnessLinks(ordinary, adapted.events);
       rows.push(row);
     }
+    let applicability = null;
+    if (state.ordinary && ordinary && named.length) {
+      const probeBranch = named[0];
+      const baseAsked = branchRequest(calendar, iso, state, bible, probeBranch, named);
+      applicability = variantApplicability(ordinary, (group, optionId) => {
+        const nextAsked = Object.assign({}, baseAsked, {
+          options: Object.assign({}, baseAsked.options, {
+            legitimate: Object.assign({}, baseAsked.options.legitimate, { [group]: optionId }),
+          }),
+        });
+        return A.adaptDay({ request: nextAsked, derived, structure: owner, rubrics, ordinary });
+      });
+    }
     return {
       entrance: 'day', calendar, date: iso, multiple,
       longDate: page.longDate(derived.date, derived.weekday),
@@ -845,7 +950,7 @@ module.exports = function liturgy(realm) {
         branches: derived.options.map(branchSummary),
       },
       bible: { id: bible.id, label: bible.label, language: bible.language, numbering: bible.numbering },
-      state, ordinary: ordinaryContext(ordinary, state), rows,
+      state, ordinary: ordinaryContext(ordinary, state, applicability), rows,
     };
   }
 
@@ -882,11 +987,22 @@ module.exports = function liturgy(realm) {
     const adapted = A.adaptPropers({ request: asked, structure: owner, ordinary });
     const { mass, context } = massContext(calendar, key);
     Object.assign(runtime, { structure: owner, ordinary, mode: state.ordinary ? 'missal' : 'read' });
+    let applicability = null;
+    if (state.ordinary && ordinary) {
+      applicability = variantApplicability(ordinary, (group, optionId) => {
+        const nextAsked = Object.assign({}, asked, {
+          options: Object.assign({}, asked.options, {
+            legitimate: Object.assign({}, asked.options.legitimate, { [group]: optionId }),
+          }),
+        });
+        return A.adaptPropers({ request: nextAsked, structure: owner, ordinary });
+      });
+    }
     const result = {
       entrance: 'propers', calendar, key,
       votiveChants: mass.off_date_chants || [],
       bible: { id: bible.id, label: bible.label, language: bible.language, numbering: bible.numbering },
-      state, mass: context, ordinary: ordinaryContext(ordinary, state),
+      state, mass: context, ordinary: ordinaryContext(ordinary, state, applicability),
       // the page's own notice, recension first (propers-reader.js:783-795)
       notice: propersReader(editionName).coverageMessage(adapted, mass, owner) || '',
     };
@@ -1219,6 +1335,45 @@ module.exports = function liturgy(realm) {
     return S.find(index, query).map((hit) => hit.ordinal);
   }
 
+  /* Known civil dates in a year where a formulary is appointed or readable. */
+  function formularyDates(calendar, key, yearNum) {
+    const yr = String(yearNum || new Date().getFullYear());
+    const found = [];
+    let yearData;
+    let rubrics;
+    try {
+      yearData = year(calendar, yr + '-01-01');
+      rubrics = rubricsOf(calendar);
+    } catch (_error) {
+      return [];
+    }
+    for (let iso = yr + '-01-01'; iso.slice(0, 4) === yr; iso = M.shift(iso, 1)) {
+      let derived;
+      try {
+        derived = M.derive({ date: iso, year: yearData, rubrics });
+      } catch (_error) {
+        continue;
+      }
+      for (const option of derived.options || []) {
+        const winnerKey = option.winner && ((option.winner.formulary && option.winner.formulary.key) || option.winner.key);
+        const matchReadable = (option.readable || []).find((r) => r.key === key);
+        if (winnerKey === key || matchReadable) {
+          const standing = winnerKey === key ? 'appointed' : (matchReadable && matchReadable.state) || 'readable';
+          found.push({
+            date: iso,
+            longDate: dayReader().longDate(derived.date, derived.weekday),
+            branch: option.option || null,
+            standing,
+          });
+          break;
+        }
+      }
+      if (found.length >= 24) break;
+    }
+    return found;
+  }
+
   return { opening, month, day, propers, compare, comparePropers, studyDay, studyPropers,
-    readerUrl, openReaderLink, catalogue, search, memorialPrayerForms, januaryPrayerReading, votiveChant };
+    readerUrl, openReaderLink, catalogue, search, memorialPrayerForms, januaryPrayerReading, votiveChant,
+    formularyDates };
 };
