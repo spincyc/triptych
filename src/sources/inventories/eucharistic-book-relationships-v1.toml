@@ -1409,3 +1409,792 @@ evidence = [{source_id = "lesley-1755-republication-primary", locus = "Publisher
 comparison_ids = ["mozarabic-1500-1755-benedictio-panis"]
 git_ancestry = false
 text_inheritance = false
+
+# Added 2026-11-25 (R1 eastern-expansion + R2 global-mission + R3 western-uses-orders)
+
+[[sources]]
+id = "rel-charon1908-melkite"
+title = "Cyrille Charon (Korolevsky), Le rite byzantin et la liturgie chrysostomienne dans les patriarcats melkites, Chrysostomika (Rome, 1908), pp. 519–629"
+url = "https://archive.org/details/chrysostomikastu00roma"
+inspection_status = "inspected"
+inspection = "Whole PDF acquired in repository byzantine_greek review; pp. 519–629 read and key tables/pages image-checked (pp. 532, 555, 560, 565, 567, 591, 597, 599, 602–603, 606, 609, 611–615, 623)."
+checked_on = "2026-10-19"
+
+[[sources]]
+id = "rel-melkite-letter-2011"
+title = "Patriarch Gregorios III, Letter on the Liturgy (header 18 Jan 2010; dateline Damascus, 7 March 2011)"
+url = "https://melkitepat.org/eng/gregorios/view/Letter-on-the-Liturgy"
+inspection_status = "inspected"
+inspection = "Complete official HTML acquired and read in repository byzantine_greek review (Preface, ch. 3–4, Appendices I–V)."
+checked_on = "2026-10-19"
+
+[[sources]]
+id = "rel-blaj1775-original"
+title = "Dumnezeeştile Liturghii, Blaj 1775, BCU Cluj BRV 391"
+url = "https://www.bcucluj.ro/synfilebibdigit/patrimoniu/BCUCLUJ_FCS_BRV391.pdf"
+inspection_status = "inspected"
+inspection = "Complete 118-page scan acquired in repository; Cyrillic title leaf PDF p. 3 visually inspected designating second Blaj printing."
+checked_on = "2026-10-20"
+
+[[sources]]
+id = "rel-balan1915-blaj"
+title = "Ioan Bălan, Stabilirea limbei liturgice româneşti (II), Cultura Creștină 5 (1915), no. 5, pp. 137–149"
+url = "https://dspace.bcucluj.ro/jspui/bitstream/123456789/1727/1/BCUCLUJ_FP_279432_1915_005_005.pdf"
+inspection_status = "inspected"
+inspection = "Complete issue acquired and printed pp. 137–149 read in repository byzantine_regional review."
+checked_on = "2026-10-19"
+
+[[sources]]
+id = "rel-macaveiu1932-neagu2019"
+title = "Victor Macaveiu, Postscriptum pentru noul Liturghier, Unirea 42, no. 7 (14 Feb 1932)"
+url = "https://dspace.bcucluj.ro/bitstream/123456789/37771/1/BCUCLUJ_FP_P2628_1932_042_0007.pdf"
+inspection_status = "inspected"
+inspection = "Complete issue acquired and article read in repository byzantine_regional review (corroborated by Neagu 2019 on 1905→1931 succession)."
+checked_on = "2026-10-19"
+
+[[sources]]
+id = "rel-neagu2019-blaj"
+title = "Radu Marius Neagu, study of Victor Macaveiu, Terra Sebus 11 (2019)"
+url = "https://www.cclbsebes.ro/wp-content/uploads/2020/02/Terra-Sebus-11-15-R_M_Neagu.pdf"
+inspection_status = "inspected"
+inspection = "Complete 23-page PDF acquired and 1931 Liturghier discussion read in repository byzantine_regional review."
+checked_on = "2026-10-19"
+
+[[sources]]
+id = "rel-ro-circular2015"
+title = "Romanian Greek Catholic Synod, circular letter of 20 May 2015 on the official Blaj 2014 Liturghier"
+url = "https://www.egco.ro/2015/05/20/scrisoare-circulara-referitoare-la-noua-editie-oficiala-a-liturghierului/"
+inspection_status = "inspected"
+inspection = "Complete official circular HTML acquired and read in repository byzantine_regional review."
+checked_on = "2026-10-19"
+
+[[sources]]
+id = "rel-croatian2018-book"
+title = "Božanska liturgija svetog oca našega Ivana Zlatoustoga (Zagreb: Ordinarijat Križevačke eparhije, Feb 2018)"
+url = "https://drive.google.com/file/d/1a31f1NKfui80czwJLaq6eqIrZ8ACe5Se/view?usp=sharing"
+inspection_status = "inspected"
+inspection = "Complete 104-page PDF acquired in repository; PDF pp. 1, 3, 4 (Izvornik Rome 1970, approval 2 Feb 2017) and 5 (decree 5/2018) directly image-inspected."
+checked_on = "2026-10-19"
+
+[[sources]]
+id = "rel-bogataj2022-slovenian"
+title = "Jan Dominik Bogataj, O novem slovenskem prevodu Božje liturgije, Edinost in dialog 77/2 (2022), pp. 247–264"
+url = "https://www.teof.uni-lj.si/uploads/File/Edinost/77/02/Bogataj1.pdf"
+inspection_status = "inspected"
+inspection = "Tracked publisher PDF inspected in repository at printed pp. 249–250, 257, 259–261, 263."
+checked_on = "2026-10-16"
+
+[[sources]]
+id = "rel-ivancso2008-hungarian"
+title = "István Ivancsó, A magyar Liturgikon a hajdúdorogi egyházmegyében, Athanasiana 27 (2008), pp. 11–28"
+url = "https://epa.oszk.hu/05200/05207/00027/pdf/EPA05207_athanasiana_2008_27.pdf"
+inspection_status = "inspected"
+inspection = "Complete issue acquired and printed pp. 13, 19–25 read in repository hungarian-reception review."
+checked_on = "2026-10-20"
+
+[[sources]]
+id = "rel-huculak1990-slavic"
+title = "L. D. Huculak, The Divine Liturgy of St John Chrysostom in the Kievan Metropolitan Province (1596–1839), Analecta OSBM (Rome, 1990)"
+url = "https://osbm.info/wp-content/uploads/2022/11/47.-Huculak-D.-L.-The-Divine-Liturgy-of-St.-John-Chrysostom-in-the-Kievan-Metr.-Province-1596-1839-cjm.pdf"
+inspection_status = "inspected"
+inspection = "Complete 426-page PDF acquired in repository; Appendix II (pp. 384–401) and Appendix III (pp. 402–404) read."
+checked_on = "2026-10-19"
+
+[[sources]]
+id = "rel-malankara-tiruvalla1960"
+title = "Ṭeksā d-qurbānā (Anaphora of Mar Xystus), Tiruvalla 1960"
+url = "https://archive.malankaralibrary.com/ImageUpload/e409cd1acacfe8d12f994ec61edd79bf.pdf"
+inspection_status = "inspected"
+inspection = "PDF images 1, 2, 4, and 84 visually inspected in repository syriac_malankara review."
+checked_on = "2026-10-19"
+
+[[sources]]
+id = "rel-malankara-tiruvalla1965"
+title = "Ṭeksā d-qurbānā (Anaphora of Mar Xystus), Tiruvalla 1965"
+url = "https://archive.malankaralibrary.com/ImageUpload/712968df3b834d53488fad4238de74bd.pdf"
+inspection_status = "inspected"
+inspection = "PDF images 2–3 (title and imprimatur 2 Feb 1965) visually inspected in repository syriac_malankara review."
+checked_on = "2026-10-19"
+
+[[sources]]
+id = "r2-mexico1561-jcb"
+title = "Missale Romanum Ordinarium (Mexico City: Antonio de Espinosa, September 1561), JCB digitized copy"
+url = "https://archive.org/details/missaleromanumor00cath"
+inspection_status = "inspected"
+inspection = "Verified Archive.org JCB item record and colophon f. 330v ('Missale secundum romane curie ritum... Mexicana impressum... 1561 Mense Septembri') on 2026-11-25."
+checked_on = "2026-11-25"
+
+[[sources]]
+id = "r2-buglio1670-princeton"
+title = "Ludovico Buglio SJ, Missale Romanum Sinice redditum (Beijing 1670), Princeton Scheide 46.1"
+url = "https://dpul.princeton.edu/catalog/9949430753506421"
+inspection_status = "inspected"
+inspection = "Verified Princeton Digital PUL catalog record and Latin title leaf citing Paul V's authority on 2026-11-25."
+checked_on = "2026-11-25"
+
+[[sources]]
+id = "r2-diamper1606-bnp"
+title = "Synodo diocesano da igreja e bispado de Angamale (Coimbra, 1606)"
+url = "http://purl.pt/17493"
+inspection_status = "inspected"
+inspection = "Verified BNP persistent URL purl.pt/17493 for the 1606 Coimbra printing of the 1599 Diamper acts on 2026-11-25."
+checked_on = "2026-11-25"
+
+[[sources]]
+id = "r2-keren2009-blin"
+title = "Bishop Kidane Yebio, History of the translation of the missal into Blin (Keren, 16 June 2009)"
+url = "http://www.eparchyofkeren.com/topics/History.Blin.Mass.pdf"
+inspection_status = "inspected"
+inspection = "Four-page PDF inspected directly in alexandrian.json (pp. 2, 4 visually inspected), naming the 1945 Ge'ez missal as translation base."
+checked_on = "2026-10-17"
+
+[[sources]]
+id = "r3-rel-sedda2019"
+title = "Filippo Sedda, Antonius liturgicus, Il Santo 59 (2019), pp. 298–326"
+url = "https://www.centrostudiantoniani.it/sites/default/files/riviste/pdfs/2019.3.rivista.pdf"
+inspection_status = "inspected"
+inspection = "Repository-inspected (latin-early-sedda2019): pp. 298–319 on Assisi MS 607 base hand and post-1244 hand A2 Haymonian marginal corrections, and p. 326 on Nicholas III's 1263–1280 Roman-curial unification."
+checked_on = "2026-10-20"
+
+[[sources]]
+id = "r3-rel-cistercian1606"
+title = "Missale ad usum Sacri Ordinis Cisterciensis (Paris: Marnef/Cavellat, 1606), BSB bsb10496382"
+url = "https://www.digitale-sammlungen.de/en/view/bsb10496382"
+inspection_status = "inspected"
+inspection = "Repository-inspected (cistercian-1606-bsb-primary): title canvas 1, Annotanda canvases 27–28 (1601/1605 General Chapter Roman-conforming decisions), and Ordinary pp. 180–181 (canvases 234–235) visually checked."
+checked_on = "2026-10-20"
+
+[[sources]]
+id = "r3-rel-king1955"
+title = "Archdale A. King, Liturgies of the Religious Orders (1955), Premonstratensian Rite pp. 176–177, 217–218"
+url = "https://archive.org/details/liturgiesofrelig00king"
+inspection_status = "inspected"
+inspection = "Repository-inspected (canonical-orders:king1955-canonical): printed pp. 176–177 and 217–218 image-inspected documenting Roman Ordinary and scriptural adjustments in the 1622 Premonstratensian missal."
+checked_on = "2026-10-20"
+
+[[sources]]
+id = "r3-rel-lambert1910"
+title = "A. Lambert, Les origines de l'imprimerie à Saragosse (1473–85), Bulletin Hispanique 12 (1910), section VII pp. 42–44"
+url = "https://doi.org/10.3406/hispa.1910.1638"
+inspection_status = "inspected"
+inspection = "Repository-inspected (iberian-huesca-lambert-1910-original-followup): section VII printed pp. 42–44 visually checked in page images showing Huesca 1488 reusing Hurus's 1485 Zaragoza missal sheets with replaced calendar, letter, and colophon."
+checked_on = "2026-10-20"
+
+[[sources]]
+id = "r3-rel-eeles-aberdeen"
+title = "F. C. Eeles, The Blairs Sarum Missal with Aberdeen manuscript calendar, PSAS"
+url = "https://journals.socantscot.org/index.php/psas/article/download/6749/6718/6707"
+inspection_status = "inspected"
+inspection = "Repository-inspected (british-aberdeen-eeles): 21-page article inspected identifying a 1506 Martin Morin Rouen Sarum printed missal adapted via ~100 manuscript calendar and rubric additions for Aberdeen (including 1498 St Nicholas dedication entry)."
+checked_on = "2026-10-20"
+
+[[sources]]
+id = "r3-rel-braga1538"
+title = "Missale Bracarense (Lisbon: Germão Galharde, 16 July 1538), Biblioteca Nacional de Portugal purl.pt/14877"
+url = "https://purl.pt/14877"
+inspection_status = "inspected"
+inspection = "Repository-inspected (western-braga1538-primary): colophon fol. 184v (PDF 364) and Palm blessing fols. 41r–43r visually checked; colophon explicitly states preface notation follows Coimbra cathedral practice."
+checked_on = "2026-10-20"
+
+[[sources]]
+id = "r3-rel-carvalho"
+title = "Joaquim Félix de Carvalho, A liturgia em Braga (printed pp. 162–165)"
+url = "https://ciencia.ucp.pt/ws/files/43665339/1852_article_3991_1_10_20191019.pdf"
+inspection_status = "inspected"
+inspection = "Repository-inspected (latin-uses:carvalho): printed pp. 162–165 (PDF 24–27) visually inspected comparing the 1538 Galharde and 1558 Limpo Braga missals."
+checked_on = "2026-10-20"
+
+[[sources]]
+id = "r3-rel-rozen2023"
+title = "Rozen, study of the c. 1490 Basel Pauline Hermits Missal (GW M23909), Studia Claromontana 30/2 (2023), pp. 89–97"
+url = "https://doi.org/10.21697/sc.2023.30.2.7"
+inspection_status = "inspected"
+inspection = "Repository-inspected (canonical-orders:pauline-rozen2023): whole PDF read and pp. 89, 91, 94–95, 97 image-inspected demonstrating shared Esztergom/Strigonium liturgical base alongside Pauline adaptations."
+checked_on = "2026-10-20"
+
+[[sources]]
+id = "r3-rel-arm-ordo1642"
+title = "Ordo divinae missae Armenorum (Rome, 1642) & Ohanjanyan 2020 (JSAS 27/1, pp. 15–16, 39)"
+url = "https://books.google.com/books?id=ct5lAAAAcAAJ"
+inspection_status = "inspected"
+inspection = "Repository-inspected (armenian-eucharistic-stages:ordo1642 & ohanjanyan2020): PA46–PA49 (printed p. 48) directly image-inspected showing the Westernized Creed wording omitting the traditional Armenian Nicene anathema."
+checked_on = "2026-10-20"
+
+[[sources]]
+id = "r3-rel-findikyan"
+title = "Michael Daniel Findikyan, Armenian Liturgy, New Catholic Encyclopedia"
+url = "https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/armenian-liturgy"
+inspection_status = "inspected"
+inspection = "Repository-inspected (armenian-eucharistic-stages:findikyan): full article read, especially Divine Liturgy paragraphs on late medieval Latin/Dominican introduction of preparatory entrance prayers and Last Gospel conclusion."
+checked_on = "2026-10-20"
+
+[[sources]]
+id = "r3-rel-macomber-pallath"
+title = "William F. Macomber (1966) & Paul Pallath, Eastern Legal Thought (2023), pp. 24–27"
+url = "https://pvpkottayam.in/wp-content/uploads/2024/03/Eastern-Legal-Thought-2023-October.pdf"
+inspection_status = "inspected"
+inspection = "Repository-inspected (stages-malabar-pallath-2023 & chaldean-east-syriac:macomber1966): printed pp. 24–27 visually inspected alongside Macomber 1966 pp. 335–371 documenting East Syriac Addai and Mari ancestry shared by Chaldean and restored 1960 Syro-Malabar books."
+checked_on = "2026-10-20"
+
+[[sources]]
+id = "r3-rel-sharfeh1922"
+title = "Missale Syriacum (Sharfeh, 1922), ULB Bonn digital PDF 3097402 (title, preface pp. 12–15, decree pp. 3–4)"
+url = "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/3097402"
+inspection_status = "inspected"
+inspection = "Repository-inspected (west-syriac-stages-missal1922 & west-syriac-stages-decree1922): PDF 6 title, PDF 8–9 decree (8 December 1922), and PDF 17–18 (printed pp. 12–13) visually checked, explicitly reporting revision of Syriac James against older manuscripts and Greek."
+checked_on = "2026-10-20"
+
+[[sources]]
+id = "r3-rel-tisserant1941"
+title = "Eugène Tisserant, Syro-Malabare (Église), DTC 14.2 (1941), col. 3160 (Pampakuda 1934 Syro-Malankara missal)"
+url = "https://fr.wikisource.org/wiki/Page:Alfred_Vacant_-_Dictionnaire_de_th%C3%A9ologie_catholique,_1908,_Tome_14.2.djvu/829"
+inspection_status = "inspected"
+inspection = "Repository-inspected (west-syriac-stages-tisserant1941): scan p. 829 cols. 3159–3160 visually read, identifying the 1934 Pampakuda Syro-Malankara missal containing the short Syriac Anaphora of James and Xystus."
+checked_on = "2026-10-20"
+
+[[sources]]
+id = "r3-rel-alexandrian-tuki-bausi"
+title = "Raphael Tuki, Missale Copto-Arabicum (Rome, 1736), ULB Bonn 253288; Alessandro Bausi et al., COMSt Bulletin 6/2 (2020)"
+url = "https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/253288"
+inspection_status = "inspected"
+inspection = "Repository-inspected (alexandrian-stages-tuki1736 & alexandrian-stages-bausi2020): Tuki 1736 676-page scan verified containing Bohairic Cyril/Mark alongside Bausi 2020 pp. 127–151 documenting archaic Ge'ez Mark in the Aksumite Collection."
+checked_on = "2026-10-20"
+
+[[sources]]
+id = "r3-rel-lietzmann-chaine"
+title = "Hans Lietzmann (1926, p. 12) & Marius Chaîne, ROC 17 (1912, pp. 228–235): Coptic 1736 vs 1898 Cairo edition"
+url = "https://archive.org/details/revue-de-orient-chretien_1912_17"
+inspection_status = "inspected"
+inspection = "Repository-inspected (coptic-chaine1912 & coptic-lietzmann1926): printed pp. 228–235 (Chaîne) and p. 12 (Lietzmann) visually checked, establishing the 1898 Cairo edition as the successor Catholic Coptic euchologion relocating the intercession before all anaphoras."
+checked_on = "2026-10-20"
+
+[[sources]]
+id = "r3-rel-chaldean-1767-1901"
+title = "Missale Chaldaicum (Rome, 1767) & Proprium/Missale Chaldaicum (Mosul, 1901), RSL & ULB Bonn 3054856"
+url = "https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/3054856"
+inspection_status = "inspected"
+inspection = "Repository-inspected (book-chald-1767 & chaldean-east-syriac:mosul1901-propers): Rome 1767 Propaganda Fide scan (PDF pp. 339, 630–631) and Mosul 1901 Dominican-press edition record inspected."
+checked_on = "2026-10-20"
+
+[[entities]]
+id = "pre-tridentine-roman-curial-tradition"
+kind = "textual-tradition"
+label = "Pre-Tridentine Roman-curial missal tradition"
+family = "roman-curial"
+scope = "Pre-1570 Roman-curial missal textual family ('secundum romane curie ritum'); no single European donor printing is assumed."
+basis = "Espinosa's September 1561 Mexico City colophon explicitly identifies its text as 'Missale secundum romane curie ritum'."
+limitations = "Contextual textual family only; exact European printed exemplar for Espinosa 1561 remains uncollated."
+evidence = [{source_id = "r2-mexico1561-jcb", locus = "Colophon leaf 330v"}]
+
+[[entities]]
+id = "tridentine-roman-missal-tradition"
+kind = "textual-tradition"
+label = "Tridentine Roman Missal Latinizing model"
+family = "roman"
+scope = "Post-1570 Tridentine Roman rubrical and doctrinal framework invoked in early modern missionary contexts; no single printing identified."
+basis = "1606 Coimbra Diamper acts and 1670 Beijing Buglio title leaf explicitly invoke Tridentine Roman liturgical norms/models."
+limitations = "Contextual donor tradition only; exact Roman printing edition used in Goa (1599) or Beijing (1670) remains to collate."
+evidence = [{source_id = "r2-diamper1606-bnp", locus = "1599 Diamper acts (Coimbra 1606)"}, {source_id = "r2-buglio1670-princeton", locus = "Scheide 46.1 Latin title leaf (1670)"}]
+
+[[entities]]
+id = "zaragoza-1485-hurus-missal"
+label = "Paulus Hurus 1485 Zaragoza printed missal sheets"
+kind = "textual-tradition"
+family = "historic-zaragoza-use"
+scope = "Printed body sheets of the 27 October 1485 Zaragoza missal reused in Huesca 1488; modeled as a contextual entity so relationship validation does not depend on unmerged candidate additions."
+basis = "Lambert 1910 section VII (pp. 42–44) directly documents the 1485 Hurus Zaragoza sheets reused in Huesca 1488."
+limitations = "Represents the 1485 Zaragoza printed body sheets; full 1485 copy collation remains open."
+evidence = [{source_id = "r3-rel-lambert1910", locus = "Section VII, printed pp. 42–44"}]
+
+[[entities]]
+id = "sarum-printed-missal-tradition"
+label = "Printed Sarum Missal textual tradition (Rouen/English editions)"
+kind = "textual-tradition"
+family = "sarum"
+scope = "Late-15th/early-16th-century printed Sarum missals (specifically Martin Morin's 1506 Rouen print attested in the Blairs Aberdeen copy) adapted for Scottish use."
+basis = "Eeles identifies the Blairs copy as a 1506 Martin Morin Rouen Sarum print modified with Aberdeen manuscript calendar and rubric entries."
+limitations = "Contextual textual tradition rather than equating Aberdeen use with any single 1487 Sarum printing."
+evidence = [{source_id = "r3-rel-eeles-aberdeen", locus = "Blairs Sarum missal analysis, 21-page PSAS article"}]
+
+[[entities]]
+id = "coimbra-cathedral-preface-chant"
+label = "Coimbra Cathedral preface notation custom"
+kind = "textual-tradition"
+family = "braga"
+scope = "Liturgical chant custom for Mass prefaces associated with Coimbra Cathedral, explicitly cited in the 1538 Braga missal colophon (mapped to the Braga/Portuguese presentation group)."
+basis = "The 16 July 1538 Braga colophon (fol. 184v) explicitly declares that preface musical notation was conformed to Coimbra cathedral practice."
+limitations = "No specific Coimbra manuscript or printed witness is named in the 1538 Braga colophon."
+evidence = [{source_id = "r3-rel-braga1538", locus = "Colophon fol. 184v (PDF 364)"}]
+
+[[entities]]
+id = "latin-western-creed-and-preparatory-prayers"
+label = "Latin Western Creed form and Dominican-mediated preparatory/concluding Mass prayers"
+kind = "textual-tradition"
+family = "roman"
+scope = "Western Latin Nicene-Constantinopolitan Creed text (without the Armenian Nicene anathema) and late medieval Latin/Dominican preparatory entrance prayers (Confiteor/Introibo) and Last Gospel."
+basis = "Inspected 1642 Rome Armenian-Latin Ordo (PA46–PA49) displays the Westernized Creed form, and Findikyan reports medieval Latin/Dominican-mediated introductory and concluding prayers in the Armenian Divine Liturgy."
+limitations = "Contextual donor tradition; no single Latin printing is claimed as direct antigraph."
+evidence = [{source_id = "r3-rel-arm-ordo1642", locus = "PA46–PA49 (printed p. 48)"}, {source_id = "r3-rel-findikyan", locus = "Divine Liturgy: late medieval introduction and conclusion"}]
+
+[[entities]]
+id = "greek-anaphora-of-james"
+label = "Greek Anaphora of St. James textual tradition"
+kind = "textual-tradition"
+family = "West Syriac"
+scope = "Ancient Greek text of the Anaphora of St. James consulted alongside older Syriac manuscripts by Patriarch Ignace Ephrem II Rahmani."
+basis = "The 1922 Sharfeh Missale Syriacum preface (printed p. 12 / PDF 17) explicitly states that Syriac James was corrected against ancient manuscripts and the Greek text."
+limitations = "Preface does not identify which single Greek manuscript or printed edition Rahmani collated for each variant."
+evidence = [{source_id = "r3-rel-sharfeh1922", locus = "Preface printed p. 12 (PDF 17)"}]
+
+[[relationships]]
+id = "karme1612-to-snagov1701-arabic"
+kind = "reception"
+label = "Karmé 1612 Arabic recension printed in Snagov 1701"
+from = "eastern:byzantine-greek-karme1612"
+to = "eastern:byzantine-greek-snagov1701"
+certainty = "sourced"
+scope = "Arabic liturgical column of Snagov 1701 (Greek column separately follows a Venice edition)."
+basis = "Charon (1908) identifies Karmé's 1612 Arabic Liturgikon revision as the Arabic text printed at Snagov in 1701."
+limitations = "Scholarly identification; original 1612 manuscripts and 1701 printing not directly collated by this project."
+evidence = [{source_id = "rel-charon1908-melkite", locus = "Printed pp. 539–555"}]
+comparison_ids = []
+git_ancestry = false
+text_inheritance = false
+
+[[relationships]]
+id = "roman-greek1754-to-melkite1839"
+kind = "borrowing"
+label = "Communion prayers conformed to Roman Greek Euchologion"
+from = "eastern:byz-greek-1754"
+to = "eastern:byzantine-greek-rome1839"
+certainty = "attributed"
+scope = "Communion prayers and Catholic commemoration conformity in Propaganda 1839."
+basis = "Charon (1908) reports that Propaganda 1839 conformed communion prayers to the Roman Greek Euchologion text and introduced papal commemoration."
+limitations = "Attributed to the Roman Greek Euchologion norm (represented by 1754); exact 1839 editorial exemplar copy not directly collated."
+evidence = [{source_id = "rel-charon1908-melkite", locus = "Printed pp. 565–575, table p. 591"}]
+comparison_ids = []
+git_ancestry = false
+text_inheritance = false
+
+[[relationships]]
+id = "melkite1839-to-vienna1862"
+kind = "edition-succession"
+label = "Vienna 1862 reprints Propaganda 1839"
+from = "eastern:byzantine-greek-rome1839"
+to = "eastern:byzantine-greek-vienna1862"
+certainty = "sourced"
+scope = "Whole Liturgikon text and typographic disposition."
+basis = "Charon (1908) confirms Vienna 1862 deliberately reproduces Propaganda 1839 in identical disposition."
+limitations = "No independent leaf-by-leaf collation of 1839 and 1862 originals."
+evidence = [{source_id = "rel-charon1908-melkite", locus = "Printed pp. 575–580, table p. 591"}]
+comparison_ids = []
+git_ancestry = false
+text_inheritance = false
+
+[[relationships]]
+id = "melkite1839-to-beirut1900"
+kind = "edition-succession"
+label = "Rahmé 1900 revises Propaganda 1839 Arabic Liturgikon"
+from = "eastern:byzantine-greek-rome1839"
+to = "eastern:byzantine-greek-beirut1900"
+certainty = "sourced"
+scope = "Arabic rubrics, full diaconal litany, and added pp. 140–141 commemoration formula."
+basis = "Charon (1908) describes Rahmé 1900's restyled rubrics and explicit note contrasting its pp. 140–141 commemoration formula with Propaganda 1839."
+limitations = "Scholarly comparison; original 1839 and 1900 copies uncollated."
+evidence = [{source_id = "rel-charon1908-melkite", locus = "Printed pp. 584–591"}]
+comparison_ids = []
+git_ancestry = false
+text_inheritance = false
+
+[[relationships]]
+id = "choueir1759-to-badaouy1902-apostolos"
+kind = "edition-succession"
+label = "Badaouy 1902 replaces Zakher's Choueir Apostolos"
+from = "eastern:byzantine-greek-epistles1759"
+to = "eastern:byzantine-greek-epistles1902"
+certainty = "sourced"
+scope = "Arabic Epistle lectionary text and Sunday prokeimena."
+basis = "Charon (1908) reports that Badaouy 1902 replaced Zakher's Choueir Arabic biblical text (1759–1859) with the Jesuit Arabic Bible and shortened Sunday prokeimena."
+limitations = "Original 1759/1859 and 1902 Arabic Apostolos volumes not directly collated."
+evidence = [{source_id = "rel-charon1908-melkite", locus = "Printed pp. 594–597"}]
+comparison_ids = []
+git_ancestry = false
+text_inheritance = false
+
+[[relationships]]
+id = "melkite1992-to-melkite2006"
+kind = "edition-succession"
+label = "Experimental 1992 Liturgikon finalized in 2006–2007 corpus"
+from = "eastern:byzantine-greek-experimental1992"
+to = "eastern:byzantine-greek-liturgy2006"
+certainty = "sourced"
+scope = "Patriarchal Book of the Divine Liturgy following 2001 definitive synodal approval."
+basis = "Patriarch Gregorios III's Letter on the Liturgy traces the commission's 1992 experimental book through 2001 definitive synodal approval to the 2006–2007 printed volumes."
+limitations = "Official retrospective; no Arabic textual collation between 1992 and 2006–2007 performed."
+evidence = [{source_id = "rel-melkite-letter-2011", locus = "Chapter 4 §§1–4"}]
+comparison_ids = []
+git_ancestry = false
+text_inheritance = false
+
+[[relationships]]
+id = "blaj1756-to-blaj1775"
+kind = "edition-succession"
+label = "Second Blaj Cyrillic printing succeeds 1756"
+from = "eastern:byz-blaj1756"
+to = "eastern:byz-blaj1775"
+certainty = "sourced"
+scope = "Blaj printing sequence (first to second printing)."
+basis = "Directly inspected 1775 Cyrillic title leaf calls itself the second printing, and Bălan (1915) pairs 1756 and 1775."
+limitations = "Printing sequence only; no substantive body collation between acquired scans."
+evidence = [{source_id = "rel-blaj1775-original", locus = "PDF p. 3, original title leaf"}, {source_id = "rel-balan1915-blaj", locus = "Printed pp. 139–140"}]
+comparison_ids = []
+git_ancestry = false
+text_inheritance = false
+
+[[relationships]]
+id = "blaj1775-to-blaj1807"
+kind = "edition-succession"
+label = "Third Blaj Cyrillic printing succeeds 1775"
+from = "eastern:byz-blaj1775"
+to = "eastern:byzantine-regional-blaj1807"
+certainty = "sourced"
+scope = "Early Antim-based Blaj Cyrillic printing line."
+basis = "Bălan (1915) groups Blaj 1756, 1775, and 1807 as successive closely related early printings."
+limitations = "Original 1807 volume unacquired; printing succession without full text collation."
+evidence = [{source_id = "rel-balan1915-blaj", locus = "Printed pp. 139–140"}]
+comparison_ids = []
+git_ancestry = false
+text_inheritance = false
+
+[[relationships]]
+id = "blaj1870-to-blaj1905"
+kind = "edition-succession"
+label = "Blaj 1905 moderates Blaj 1870 Latinizing wording"
+from = "eastern:byzantine-regional-blaj1870"
+to = "eastern:byzantine-regional-blaj1905"
+certainty = "sourced"
+scope = "Romanian liturgical lexicon and prayer wording."
+basis = "Bălan (1915) documents Blaj 1905's moderation of the 1870 Latinizing vocabulary."
+limitations = "Scholarly comparison; original 1870 and 1905 volumes unacquired."
+evidence = [{source_id = "rel-balan1915-blaj", locus = "Printed pp. 137–149"}]
+comparison_ids = []
+git_ancestry = false
+text_inheritance = false
+
+[[relationships]]
+id = "blaj1905-to-blaj1931"
+kind = "edition-succession"
+label = "Blaj 1931 interdiocesan revision succeeds Blaj 1905"
+from = "eastern:byzantine-regional-blaj1905"
+to = "eastern:byzantine-regional-blaj1931"
+certainty = "sourced"
+scope = "Interdiocesan rubric standardization and stabilized Romanian wording."
+basis = "Neagu (2019) identifies Blaj 1905 as the preceding edition replaced by Blaj 1931, whose Stâna de Vale rubric work is explained by Macaveiu (1932)."
+limitations = "Original 1905 and 1931 volumes unacquired."
+evidence = [{source_id = "rel-neagu2019-blaj", locus = "Discussion of 1931 Liturghier"}, {source_id = "rel-macaveiu1932-neagu2019", locus = "Printed p. 1 onward"}]
+comparison_ids = []
+git_ancestry = false
+text_inheritance = false
+
+[[relationships]]
+id = "blaj1931-to-rome1996"
+kind = "edition-succession"
+label = "Rome 1996 retains Vasile Suciu's 1931 linguistic tradition"
+from = "eastern:byzantine-regional-blaj1931"
+to = "eastern:byzantine-regional-rome1996"
+certainty = "sourced"
+scope = "Romanian Greek Catholic Liturghier linguistic lineage."
+basis = "The 20 May 2015 synodal circular affirms that Rome 1996 maintained the linguistic tradition of Metropolitan Vasile Suciu's 1931 Liturghier."
+limitations = "No page-level collation establishing byte-for-byte identity between 1931 and 1996."
+evidence = [{source_id = "rel-ro-circular2015", locus = "Entire circular (20 May 2015)"}]
+comparison_ids = []
+git_ancestry = false
+text_inheritance = false
+
+[[relationships]]
+id = "rome1996-to-blaj2014"
+kind = "edition-succession"
+label = "Blaj 2014 promulgated as official successor to Rome 1996"
+from = "eastern:byzantine-regional-rome1996"
+to = "eastern:byzantine-regional-blaj2014"
+certainty = "sourced"
+scope = "Official Romanian Greek Catholic Liturghier with Greek-checked language corrections and clarified rubrics."
+basis = "The 20 May 2015 synodal circular explicitly names Rome 1996 as the previous edition and declares Blaj 2014 official."
+limitations = "Original 1996 and 2014 books uncollated by this project."
+evidence = [{source_id = "rel-ro-circular2015", locus = "Entire circular (20 May 2015)"}]
+comparison_ids = []
+git_ancestry = false
+text_inheritance = false
+
+[[relationships]]
+id = "ruthenian1942-to-slovenian2022"
+kind = "reception"
+label = "Rome 1942 Ruthenian Liturgikon translated into Slovenian Služebnik"
+from = "eastern:byz-ruthenian-1942"
+to = "eastern:byzantine-regional-slovenian2022"
+certainty = "sourced"
+scope = "Liturgies of John Chrysostom and Basil the Great (with local Slovene Proskomedia additions)."
+basis = "Bogataj (2022) explicitly documents the Rome 1942 Church Slavonic Ruthenian Liturgikon as the direct exemplar for the 2022–2023 Slovenian translation."
+limitations = "Translation reception for Slovenian faithful of Križevci; does not prove universal 1942 adoption across Serbia."
+evidence = [{source_id = "rel-bogataj2022-slovenian", locus = "Printed pp. 259–261"}]
+comparison_ids = []
+git_ancestry = false
+text_inheritance = false
+
+[[relationships]]
+id = "ruthenian1970-to-croatian2018"
+kind = "reception"
+label = "Rome 1970 Ruthenian Chrysostom translated into Croatian 2018"
+from = "eastern:byzantine-regional-ruthenian1970"
+to = "eastern:byzantine-regional-croatian2018"
+certainty = "sourced"
+scope = "Divine Liturgy of St. John Chrysostom (Križevci Eparchy, five-year ad experimentum)."
+basis = "Directly image-inspected p. 4 of the 2018 Croatian book explicitly names Rome 1970 Grottaferrata Recensio ruthena as its Izvornik."
+limitations = "1970 original colophon uninspected; post-2023 renewal of the Croatian five-year authorization unverified."
+evidence = [{source_id = "rel-croatian2018-book", locus = "PDF/printed pp. 4–5"}]
+comparison_ids = []
+git_ancestry = false
+text_inheritance = false
+
+[[relationships]]
+id = "hungarian1882-to-hungarian1920"
+kind = "edition-succession"
+label = "1920 Hajdúdorog Liturgikon combines and revises 1882/1890 volumes"
+from = "eastern:byzantine-regional-hung1882"
+to = "eastern:byzantine-regional-hung1920"
+certainty = "sourced"
+scope = "Chrysostom liturgy combined with 1890 Basil/Presanctified, revised against Greek with parallel Greek canonical parts."
+basis = "Ivancsó (2008) quotes the 1920 Emlékezetül describing consolidation of 1882/1890 and revision against the Greek."
+limitations = "Original complete 1882 and 1920 books not collated directly."
+evidence = [{source_id = "rel-ivancso2008-hungarian", locus = "Printed pp. 19–21, 24"}]
+comparison_ids = []
+git_ancestry = false
+text_inheritance = false
+
+[[relationships]]
+id = "vilnius1692-to-suprasl1727"
+kind = "reception"
+label = "Post-Zamość Supraśl 1727–1732 follows Żochowski 1692–1695 line"
+from = "eastern:byz-vilnius-suprasl1692-95"
+to = "eastern:byzantine-slavic-suprasl1727-1732"
+certainty = "sourced"
+scope = "Uniate Church Slavonic Sluzhebnik rubric and text line in the Kyivan Metropolitan Province."
+basis = "Huculak (1990) places Supraśl 1727–1732 squarely in the Żochowski (1692–1695) tradition following the Synod of Zamość."
+limitations = "Scholarly classification; RNB OR VII.3.15 not directly collated against NBUV Кир. 5232."
+evidence = [{source_id = "rel-huculak1990-slavic", locus = "Appendix II, pp. 384–401"}]
+comparison_ids = []
+git_ancestry = false
+text_inheritance = false
+
+[[relationships]]
+id = "greek1754-to-pochaiv1788-rubrics"
+kind = "borrowing"
+label = "Selected 1754 Roman Greek rubrical affinities in Pochaiv 1788"
+from = "eastern:byz-greek-1754"
+to = "eastern:byzantine-slavic-pochaiv1788"
+certainty = "attributed"
+scope = "Selected rubrics within the Żochowski-tradition Pochaiv 1788 Liturgiarion."
+basis = "Huculak (1990) notes that Pochaiv 1788 adopts some rubrics similar to Benedict XIV's 1754 Roman Greek Euchologion."
+limitations = "Scholarly observation; direct page-by-page rubric collation against 1754 not performed."
+evidence = [{source_id = "rel-huculak1990-slavic", locus = "Appendix II, pp. 384–401"}]
+comparison_ids = []
+git_ancestry = false
+text_inheritance = false
+
+[[relationships]]
+id = "malankara1960-to-malankara1965"
+kind = "edition-succession"
+label = "Successive Tiruvalla Syriac Xystus Taksa printings"
+from = "eastern:syriac-malankara-mal-tiruvalla-1960"
+to = "eastern:syriac-malankara-mal-tiruvalla-1965"
+certainty = "sourced"
+scope = "Tiruvalla St. Joseph's Press Syriac–Malayalam Mar Xystus Taksa."
+basis = "Directly inspected title and imprimatur leaves of Tiruvalla 1960 (11 May 1960) and Tiruvalla 1965 (2 Feb 1965) under Benedict Mar Gregorios."
+limitations = "Printing sequence only; Syriac bodies not collated for substantive differences."
+evidence = [{source_id = "rel-malankara-tiruvalla1960", locus = "PDF pp. 1–2"}, {source_id = "rel-malankara-tiruvalla1965", locus = "PDF pp. 2–3"}]
+comparison_ids = []
+git_ancestry = false
+text_inheritance = false
+
+[[relationships]]
+id = "china-1615-faculty-to-buglio-1670"
+kind = "reception"
+label = "Buglio 1670 Classical Chinese Missal invokes 1615 Paul V faculty"
+from = "western:china-paul-v-faculty-1615"
+to = "western:china-buglio-missale-sinice-1670"
+certainty = "sourced"
+scope = "Translation authority cited on the 1670 Beijing title page; practical altar confirmation unestablished."
+basis = "Scheide 46.1 Latin title leaf states 'auctoritate Pauli V. Pont. M. Sinice redditum'."
+limitations = "Invocation of 1615 authority does not prove Roman confirmation of the 1670 printed translation or actual celebration."
+evidence = [{source_id = "r2-buglio1670-princeton", locus = "Scheide 46.1 Latin title leaf"}]
+comparison_ids = []
+git_ancestry = false
+text_inheritance = false
+
+[[relationships]]
+id = "geez-1945-to-keren-blin-2008"
+kind = "reception"
+label = "Keren Blin–Ge'ez service book translated from 1945 Ge'ez Catholic missal"
+from = "eastern:alex-geez-1945"
+to = "eastern:alex-keren-blin-geez-mass-2008"
+certainty = "sourced"
+scope = "Eparchy of Keren bilingual Blin–Ge'ez Mass translation base."
+basis = "Bishop Kidane Yebio's 16 June 2009 history explicitly identifies the 1945 Ge'ez missal as the translation base."
+limitations = "Scoped locally to Keren; does not prove Ge'ez source-text revision or nationwide Eritrean adoption."
+evidence = [{source_id = "r2-keren2009-blin", locus = "PDF pp. 2, 4"}]
+comparison_ids = []
+git_ancestry = false
+text_inheritance = false
+
+[[relationships]]
+id = "haymo-to-assisi607-marginal-reception"
+kind = "reception"
+label = "Haymo of Faversham's 1243–1244 Ordo received via marginal corrections in Assisi MS 607"
+from = "western:haymo-curial-ordinal"
+to = "western:latin-early-assisi607-haymo-corrections"
+certainty = "sourced"
+scope = "Post-1244 marginal rubrics, altered oration incipits, and Haymonian Anthony Mass entered by hand A2 on f. 58v and throughout Assisi MS 607."
+basis = "Sedda 2019 directly documents hand A2 systematically conforming the older pre-Haymonian codex to Haymo's Ordo while crossing out superseded forms."
+limitations = "Exact date of hand A2 beyond terminus post quem 1244 is undetermined."
+evidence = [{source_id = "r3-rel-sedda2019", locus = "pp. 315, 317 and n. 43"}]
+comparison_ids = []
+git_ancestry = false
+text_inheritance = false
+
+[[relationships]]
+id = "franciscan-curial-to-nicholasiii-reception"
+kind = "reception"
+label = "Haymonian Franciscan-curial books adopted for Roman urban churches under Nicholas III"
+from = "western:haymo-curial-ordinal"
+to = "western:latin-early-nicholasiii"
+certainty = "attributed"
+scope = "Calendar renewal, square notation, and curial-Franciscan Mass books extended to Roman urban churches during Orsini/Nicholas III's 1263–1280 reform."
+basis = "Sedda 2019 (synthesizing van Dijk and Cambell) attributes the Roman urban churches' unification with papal-curial/Franciscan books to Cardinal Orsini / Pope Nicholas III."
+limitations = "Scholarly synthesis; individual Roman basilica adoption chronologies remain distinct."
+evidence = [{source_id = "r3-rel-sedda2019", locus = "p. 326"}]
+comparison_ids = []
+git_ancestry = false
+text_inheritance = false
+
+[[relationships]]
+id = "roman-pian-to-cistercian-1606-canon"
+kind = "borrowing"
+label = "Roman-conforming Canon and ritual adjustments adopted in the 1606 Cistercian Missal"
+from = "western:roman-1570-rome-faletti-varisco"
+to = "western:cistercian-1606"
+certainty = "sourced"
+scope = "Romanizing revisions enacted by the 1601 and 1605 Cistercian General Chapters, including adjustments in the Canon Memento and select rites."
+basis = "Directly inspected Annotanda (canvases 27–28) and Ordinary (canvases 234–235) of the 1606 Paris Cistercian Missal explicitly document Roman-conforming decisions of 1601 and 1605."
+limitations = "Three selected prayer units were collated in the repository's Cistercian dossier; complete missal body comparison against 1570 remains open."
+evidence = [{source_id = "r3-rel-cistercian1606", locus = "Annotanda canvases 27–28; Ordinary pp. 180–181 (canvases 234–235)"}]
+comparison_ids = []
+git_ancestry = false
+text_inheritance = false
+
+[[relationships]]
+id = "roman-pian-to-premon-1622-ordinary"
+kind = "borrowing"
+label = "Post-Tridentine Roman Ordinary and scriptural adjustments borrowed in the 1622 Premonstratensian Missal"
+from = "western:roman-1570-rome-faletti-varisco"
+to = "western:premon-1622"
+certainty = "attributed"
+scope = "Selected Ordinary and lectionary/proper alignments toward the Pian Roman Missal within the 1622 Premonstratensian revision."
+basis = "Inspected pages of Archdale King (1955, pp. 176–177) document substantive Roman-conforming changes introduced in the 1622 Premonstratensian missal."
+limitations = "Scholarly account inspected; complete original 1622 Premonstratensian printing has not yet been directly collated."
+evidence = [{source_id = "r3-rel-king1955", locus = "Premonstratensian Rite, printed pp. 176–177"}]
+comparison_ids = []
+git_ancestry = false
+text_inheritance = false
+
+[[relationships]]
+id = "braga-1538-to-1558-edition-succession"
+kind = "edition-succession"
+label = "1558 Limpo Braga Missal succeeds the 1538 Galharde Braga Missal"
+from = "western:braga-1538"
+to = "western:braga-1558"
+certainty = "sourced"
+scope = "Consecutive 16th-century printed states of the Braga diocesan missal, with 1558 revising the Ordo and Palm Sunday blessing."
+basis = "Directly inspected Carvalho (pp. 162–165) and 1538 primary colophon document the succession and specific Ordo/Palm Sunday modifications between 1538 and 1558."
+limitations = "Full-book word-for-word collation between 1538 and 1558 beyond Ordo and Palm Sunday remains open."
+evidence = [{source_id = "r3-rel-carvalho", locus = "printed pp. 162–165 (PDF 24–27)"}, {source_id = "r3-rel-braga1538", locus = "Palm blessing fol. 42r–v (PDF 97–98) and colophon fol. 184v"}]
+comparison_ids = []
+git_ancestry = false
+text_inheritance = false
+
+[[relationships]]
+id = "esztergom-pauline-shared-tradition"
+kind = "shared-text"
+label = "Shared Esztergom (Strigonium) and Pauline Hermits Mass formulary heritage"
+from = "western:esztergom-1484"
+to = "western:pauline-ca1490"
+certainty = "sourced"
+scope = "Shared Hungarian/Esztergom liturgical core observed in the c. 1490 Basel printed Pauline Hermits Missal (GW M23909)."
+basis = "Inspected Rozen 2023 (pp. 89–97) analyzes the Pauline Hermits incunable missal in relation to the Esztergom/Strigonium diocesan tradition and copy-specific diocesan adaptations."
+limitations = "Shared diocesan-order liturgical matrix; does not claim mechanical copying from Koberger's 1484 Nuremberg printing."
+evidence = [{source_id = "r3-rel-rozen2023", locus = "printed pp. 89, 91, 94–95, 97"}]
+comparison_ids = []
+git_ancestry = false
+text_inheritance = false
+
+[[relationships]]
+id = "east-syriac-common-ancestry-chaldean-malabar"
+kind = "common-ancestry"
+label = "Chaldean 1767 and restored 1960 Syro-Malabar missals descend from shared East Syriac Addai and Mari tradition"
+from = "eastern:chald-1767"
+to = "eastern:malabar-1960-taksa"
+ancestor_ref = "eucharistic-books:entity:east-syriac-addai-mari"
+certainty = "sourced"
+scope = "Core East Syriac Qurbana structure and Anaphora of Addai and Mari shared across the Mesopotamian Chaldean and Indian Syro-Malabar Catholic churches."
+basis = "Inspected Pallath 2023 (pp. 24–27) and Macomber 1966 (pp. 335–371) establish that both the 1767 Rome Chaldean Missal and the 1960 restored Syro-Malabar Taksa descend from the common East Syriac Addai and Mari tradition."
+limitations = "Both printed editions reflect distinct historical redactions (1767 Propaganda Fide Latinizations vs 1960 Roman restoration commission); common ancestry does not imply textual identity."
+evidence = [{source_id = "r3-rel-macomber-pallath", locus = "Pallath 2023 pp. 24–27; Macomber 1966 pp. 335–371"}, {source_id = "r3-rel-chaldean-1767-1901", locus = "Rome 1767 PDF p. 339 (Addai and Mari)"}]
+comparison_ids = []
+git_ancestry = false
+text_inheritance = false
+
+[[relationships]]
+id = "west-syriac-common-ancestry-syriac-malankara"
+kind = "common-ancestry"
+label = "Syriac Catholic 1922 Sharfeh and Syro-Malankara 1934 Pampakuda missals share West Syriac Anaphora of James heritage"
+from = "eastern:syr-1922"
+to = "eastern:malankara-pampakuda-1934"
+ancestor_ref = "eucharistic-books:entity:syriac-james"
+certainty = "sourced"
+scope = "Shared West Syriac Antiochene Eucharistic heritage centered on the Syriac Anaphora of St. James (full form in 1922; short form alongside Xystus in 1934 Pampakuda)."
+basis = "Inspected 1922 Sharfeh preface and Tisserant DTC 1941 (col. 3160) confirm both editions draw upon the West Syriac Anaphora of St. James tradition while selecting distinct anaphora repertoires."
+limitations = "Does not assert that Pampakuda 1934 copied its anaphora texts directly from Rahmani 1922 (note Rahmani suppressed Xystus, whereas Pampakuda 1934 retained Xystus)."
+evidence = [{source_id = "r3-rel-sharfeh1922", locus = "Preface printed pp. 12–13 (PDF 17–18)"}, {source_id = "r3-rel-tisserant1941", locus = "Scan p. 829, col. 3160 (final missal paragraph)"}]
+comparison_ids = []
+git_ancestry = false
+text_inheritance = false
+
+[[relationships]]
+id = "coptic-geez-common-alexandrian-mark"
+kind = "common-ancestry"
+label = "Bohairic Coptic 1736 Cyril and Ge'ez Aksumite Mark share Alexandrian Anaphora of Mark ancestry"
+from = "eastern:alex-coptic-1736"
+to = "eastern:alex-geez-aksumite-um039"
+ancestor_ref = "eucharistic-books:entity:alexandrian-mark-tradition"
+certainty = "sourced"
+scope = "Alexandrian Eucharistic anaphora of St. Mark preserved in Bohairic as St. Cyril (Tuki 1736) and in archaic Ge'ez within the Aksumite Collection (UM-039)."
+basis = "Inspected Tuki 1736 scan (containing Bohairic Cyril/Mark) and Bausi 2020 (pp. 127–151 documenting archaic Ge'ez Mark) establish common Alexandrian Mark ancestry across Coptic and Ethiopian/Eritrean traditions."
+limitations = "Tuki 1736 is a late printed Catholic Coptic witness whereas UM-039 preserves an archaic Aksumite translation layer; centuries of separate transmission intervene."
+evidence = [{source_id = "r3-rel-alexandrian-tuki-bausi", locus = "Tuki 1736 Cyril section; Bausi 2020 pp. 127, 139, 151"}]
+comparison_ids = []
+git_ancestry = false
+text_inheritance = false
+
+[[relationships]]
+id = "coptic-1736-to-1898-edition-succession"
+kind = "edition-succession"
+label = "1898 Cairo Coptic Catholic Missal succeeds Tuki's 1736 Rome edition"
+from = "eastern:alex-coptic-1736"
+to = "eastern:alex-coptic-1898"
+certainty = "sourced"
+scope = "Successive printed Catholic Coptic euchologia, with 1898 relocating the entire intercession before all three anaphoras."
+basis = "Directly image-inspected Lietzmann (1926, p. 12) and Chaîne (1912, pp. 228–235) identify the 1898 Cairo printing as the successor Catholic Coptic missal altering the placement of the intercessions relative to 1736."
+limitations = "Structural reorganization of the intercession is verified; full textual collation across Basil, Gregory, and Cyril remains open."
+evidence = [{source_id = "r3-rel-lietzmann-chaine", locus = "Chaîne 1912 pp. 228–235; Lietzmann 1926 p. 12"}]
+comparison_ids = []
+git_ancestry = false
+text_inheritance = false

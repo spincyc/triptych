@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-extent",
+  "book_id": "maronite-1908-anaphora",
+  "title": "Ketābā de-qurbānā (Beirut Maronite Press, 1908 second printing of Dibs 1888) — Anaphora of the Twelve Apostles Core — complete constituent extent and page account",
+  "status": "complete",
+  "unresolved": [],
+  "omitted": [],
+  "expected_unit_ids": [
+    "maronite-1908-anaphora.01-opening-dialogue",
+    "maronite-1908-anaphora.02-institution-bread",
+    "maronite-1908-anaphora.03-institution-chalice",
+    "maronite-1908-anaphora.04-epiclesis-call",
+    "maronite-1908-anaphora.05-epiclesis-consecration"
+  ],
+  "scope": "Bounded constituent of the exact same five aligned core units of the Anaphora of the Twelve Apostles (printed inline in the Ordo Communis under running head 'ܡܢ ܢܐܦܘܪ ܐܠܬܠܡܝܕܗ ܐܠܬܢܐܥܫܪܝܗ') in Classical Syriac (syr), located in retained Part 2 (pages-0224-0447-5b0fbb00, PDF 127, 125-122; reversed RTL scan order), enabling a direct 1594 vs 1908 Maronite visual diff.",
+  "pages": [
+    {
+      "witness_id": "maronite-1908-beirut-bonn-part2-pdf",
+      "ranges": [
+        [
+          1,
+          121
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "Post-epiclesis diptychs, fraction, communion, and subsequent anaphoras in Part 2 (reversed RTL scan order)."
+    },
+    {
+      "witness_id": "maronite-1908-beirut-bonn-part2-pdf",
+      "ranges": [
+        [
+          122,
+          122
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "maronite-1908-anaphora.04-epiclesis-call",
+        "maronite-1908-anaphora.05-epiclesis-consecration"
+      ],
+      "description": "Epiclesis threefold Anini Moryo / Kyrie and Consecration/Salvation petitions (printed p. 38 / ܠܚ; top preamble and bottom fruits paragraph excluded)."
+    },
+    {
+      "witness_id": "maronite-1908-beirut-bonn-part2-pdf",
+      "ranges": [
+        [
+          123,
+          123
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "maronite-1908-anaphora.03-institution-chalice"
+      ],
+      "description": "People's Amen concluding Chalice Institution on L1 (printed p. 37 / ܠܙ; Anamnesis and Epiclesis preamble below excluded)."
+    },
+    {
+      "witness_id": "maronite-1908-beirut-bonn-part2-pdf",
+      "ranges": [
+        [
+          124,
+          124
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "maronite-1908-anaphora.03-institution-chalice"
+      ],
+      "description": "Institution of Chalice with 'mysterium fidei' (printed p. 36 / ܠܘ)."
+    },
+    {
+      "witness_id": "maronite-1908-beirut-bonn-part2-pdf",
+      "ranges": [
+        [
+          125,
+          125
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "maronite-1908-anaphora.02-institution-bread"
+      ],
+      "description": "Institution of Bread and People's Amen (printed p. 35 / ܠܗ)."
+    },
+    {
+      "witness_id": "maronite-1908-beirut-bonn-part2-pdf",
+      "ranges": [
+        [
+          126,
+          126
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "Intervening Preface, Sanctus, and Post-Sanctus (printed p. 34 / ܠܕ), excluded to match 1594 bounds."
+    },
+    {
+      "witness_id": "maronite-1908-beirut-bonn-part2-pdf",
+      "ranges": [
+        [
+          127,
+          127
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "maronite-1908-anaphora.01-opening-dialogue"
+      ],
+      "description": "Full Opening Dialogue (printed p. 33 / ܠܓ; intervening rubricated Trinitarian cross-blessing and Preface opening below excluded)."
+    },
+    {
+      "witness_id": "maronite-1908-beirut-bonn-part2-pdf",
+      "ranges": [
+        [
+          128,
+          224
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "Pre-anaphoral Ordo Communis, prefatory matter, and native title leaf at Part 2 PDF 218 / whole-PDF 441."
+    }
+  ]
+}

@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-extent",
+  "book_id": "byzantine-1754-chrysostom-anaphora",
+  "title": "Rome 1754 Propaganda Euchologion: complete strict Anaphora of St. John Chrysostom constituent — complete constituent extent and page account",
+  "status": "complete",
+  "unresolved": [],
+  "omitted": [],
+  "expected_unit_ids": [
+    "unit.byz-1754.chrysostom.01-opening-dialogue",
+    "unit.byz-1754.chrysostom.02-preface-thanksgiving",
+    "unit.byz-1754.chrysostom.03-sanctus-and-asterisk",
+    "unit.byz-1754.chrysostom.04-post-sanctus-institution",
+    "unit.byz-1754.chrysostom.05-anamnesis-oblation",
+    "unit.byz-1754.chrysostom.06-epiclesis",
+    "unit.byz-1754.chrysostom.07-commemoration-of-saints",
+    "unit.byz-1754.chrysostom.08-intercessions-dead-and-church",
+    "unit.byz-1754.chrysostom.09-intercessions-hierarch-and-living",
+    "unit.byz-1754.chrysostom.10-concluding-doxology-and-blessing"
+  ],
+  "scope": "Complete strict Anaphora of St. John Chrysostom in original polytonic Greek from the Deacon's opening call (Ὁ ΔΙΆΚΟΝΟΣ. Στῶμεν καλῶς...) at printed p. 49 (PDF p. 65) through the concluding doxology (Καὶ δὸς ἡμῖν...) and final blessing (Καὶ ἔσται τὰ ἐλέη...) at printed p. 55 (PDF p. 71), immediately preceding the post-Anaphora litany rubric (Ὁ Διάκονος λαβὼν καιρὸν...). Includes all printed prayer text, ekphoneseis, red headings, action rubrics, choir responses where printed, and the printed Roman-communion footnote on p. 54, under declared reading normalization expanding 18th-century Greek typographic ligatures. Excludes pre-Anaphora liturgy (including Creed), post-Anaphora litanies and communion, Basil and Presanctified liturgies, all other Euchologion offices, and page furniture.",
+  "pages": [
+    {
+      "witness_id": "byz-1754-google",
+      "ranges": [
+        [
+          1,
+          64
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "Front matter (including title at PDF p. 7 and preliminary instructions at PDF pp. 9–10), Diataxis, and pre-Anaphora Chrysostom Liturgy through printed p. 48."
+    },
+    {
+      "witness_id": "byz-1754-google",
+      "ranges": [
+        [
+          65,
+          65
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.byz-1754.chrysostom.01-opening-dialogue"
+      ],
+      "description": "Printed p. 49: only the Deacon's call to the Anaphora (Ὁ ΔΙΆΚΟΝΟΣ. Στῶμεν καλῶς...) at the foot belongs to this constituent; earlier litany, kiss of peace, and Creed cue are excluded."
+    },
+    {
+      "witness_id": "byz-1754-google",
+      "ranges": [
+        [
+          66,
+          66
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.byz-1754.chrysostom.01-opening-dialogue",
+        "unit.byz-1754.chrysostom.02-preface-thanksgiving",
+        "unit.byz-1754.chrysostom.03-sanctus-and-asterisk"
+      ],
+      "description": "Printed p. 50: opening dialogue continuation, complete Preface/Thanksgiving, Sanctus ekphonesis, and start of asterisk rubric."
+    },
+    {
+      "witness_id": "byz-1754-google",
+      "ranges": [
+        [
+          67,
+          67
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.byz-1754.chrysostom.03-sanctus-and-asterisk",
+        "unit.byz-1754.chrysostom.04-post-sanctus-institution",
+        "unit.byz-1754.chrysostom.05-anamnesis-oblation"
+      ],
+      "description": "Printed p. 51: end of asterisk rubric, Post-Sanctus and Institution Narrative, and opening of Anamnesis."
+    },
+    {
+      "witness_id": "byz-1754-google",
+      "ranges": [
+        [
+          68,
+          68
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.byz-1754.chrysostom.05-anamnesis-oblation",
+        "unit.byz-1754.chrysostom.06-epiclesis"
+      ],
+      "description": "Printed p. 52: completion of Anamnesis and Oblation, and Epiclesis through start of deacon bowing rubric."
+    },
+    {
+      "witness_id": "byz-1754-google",
+      "ranges": [
+        [
+          69,
+          69
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.byz-1754.chrysostom.06-epiclesis",
+        "unit.byz-1754.chrysostom.07-commemoration-of-saints",
+        "unit.byz-1754.chrysostom.08-intercessions-dead-and-church"
+      ],
+      "description": "Printed p. 53: completion of Epiclesis rubric, post-epiclesis/saints/Ἐξαιρέτως, and opening of diptychs and intercessions."
+    },
+    {
+      "witness_id": "byz-1754-google",
+      "ranges": [
+        [
+          70,
+          70
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.byz-1754.chrysostom.08-intercessions-dead-and-church",
+        "unit.byz-1754.chrysostom.09-intercessions-hierarch-and-living"
+      ],
+      "description": "Printed p. 54: completion of Church intercessions, Ἐν πρώτοις hierarch commemoration with Roman-communion footnote, and intercessions for the living."
+    },
+    {
+      "witness_id": "byz-1754-google",
+      "ranges": [
+        [
+          71,
+          71
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.byz-1754.chrysostom.10-concluding-doxology-and-blessing"
+      ],
+      "description": "Printed p. 55: only the concluding doxology (Καὶ δὸς ἡμῖν...) and blessing (Καὶ ἔσται τὰ ἐλέη...) at the top belong to this constituent; the post-Anaphora litany beginning Ὁ Διάκονος λαβὼν καιρὸν... is excluded."
+    },
+    {
+      "witness_id": "byz-1754-google",
+      "ranges": [
+        [
+          72,
+          488
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "Remainder of Chrysostom Liturgy (Lord's Prayer, Communion, Dismissal), Basil and Presanctified Liturgies, and all other offices and endpapers through PDF p. 488."
+    }
+  ]
+}

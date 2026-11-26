@@ -190,6 +190,33 @@
   line-height: 1.45;
 }
 
+.source-history-links {
+  margin: 0 0 1rem;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--section-line);
+  border-left: 4px solid var(--section-accent);
+  border-radius: var(--radius, 0.2rem);
+  background: var(--section-row);
+  font-size: 0.84rem;
+}
+
+.source-history-title {
+  margin: 0 0 0.35rem;
+  font-size: 0.78rem;
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+  color: var(--section-ink);
+}
+
+.source-history-list {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.source-history-list li {
+  margin: 0.25rem 0;
+}
+
 /* --- Stepping through the passages -------------------------------------- */
 
 .passage-nav {

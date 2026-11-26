@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-collation",
+  "book_id": "chaldean-1767-addai-mari",
+  "title": "Missale Chaldaicum (Rome Propaganda, 1767) — Anaphora of Addai and Mari Core — independent pixel-collation review",
+  "status": "verified",
+  "independent": true,
+  "complete_extent_verified": true,
+  "reviewer": "independent-collator-v2-syriac",
+  "checked_on": "2026-11-25",
+  "binding_sha256": "b8cf86d54d331829dd1d4a014ff8ac7e99b2ff01a3f423876849c2c3368e0dcd",
+  "extent_sha256": "1f2f86f3262a174dac9e60859e2a4c49dc3ff67c0cdf24f9eb2d107a88ef4c75",
+  "witness_sha256": {
+    "chaldean-1767-rome-google-pdf": "4d048b311c7f585e3824061d2d00727ad2e6e236f86ae6a876e4c36036348b5e"
+  },
+  "unit_sha256": {
+    "chaldean-1767-addai-mari.01-opening-dialogue": "3660b59c09250f5a6792e1887cca42a5b889959bd09ad51dd1c16a9434cf69f0",
+    "chaldean-1767-addai-mari.02-preface-gehanta-1": "7ecf12ef5bc340fd3587273c0a4ef677c4465ca0fe0f0f00cecdac3ee089396c",
+    "chaldean-1767-addai-mari.03-sanctus": "0acda64a236264f61a39fc2a01b54b4852fe77ae0ac277031a3d14e1d0becea9",
+    "chaldean-1767-addai-mari.04-post-sanctus-gehanta-2": "755ae9ec33709ced2f7710ec868bdc7a1609260c2784152e229317194cd3a300",
+    "chaldean-1767-addai-mari.05-intercession-gehanta-3": "74bd6a09c05af0a4f2e5d7d1d0d171239d490311906df393750a4987cff7e346",
+    "chaldean-1767-addai-mari.06-anamnesis-oblation": "0d7e2e54568031cdc6df4757b99382f328ec25e92eede9d016d38a896b80b8f9",
+    "chaldean-1767-addai-mari.07-epiclesis-and-qanona": "7c3c9b829ee718afbfd1e71a1f04d7c742a18844fe15a1cde51fde3a4ba907f6",
+    "chaldean-1767-addai-mari.08-institution-narrative": "16f78af63de42298b57b6a0d979b291279ab350d97167fcf33e68ef0108dfd0c"
+  },
+  "scope": "Bounded constituent of the eight core prayers of the Anaphora of Addai and Mari (Opening Dialogue, Preface Gehanta 1, Sanctus, Post-Sanctus Gehanta 2, Intercession Gehanta 3, Anamnesis/Oblation, Epiclesis, and Fraction-placed Institution Narrative) in Classical Syriac (syr), excluding private Kushapa prayers, rubrics, and intervening fraction prayers.",
+  "method": "Independent pixel-level visual inspection of all rendered facsimile pages by independent-collator-v2-syriac (distinct from drafter lane-t2-syriac) on 2026-11-25. Applied 6 pixel-verified correction(s) relative to initial draft; verified every unit boundary, page account (1..634), and SHA-256 hash.",
+  "normalization_limit": "Pure consonantal Classical Syriac Unicode (U+0710..U+072C, UTF-8 NFC) with single ASCII spaces between words and single LF (\\n) line endings, one canonical liturgical unit per line.; All East Syriac and West Syriac vowel points, seyame (U+0308), qushshaya/rukkakha, linea occultans/marhetana, punctuation dots, liturgical crosses, quotation marks, kashidas, catchwords, running heads, signature marks, and page numbers are omitted for scan-safe cross-edition diffing.; Rubrics (red or black stage directions), section headers (e.g. Qanona, Gehanta), speaker labels (priest/deacon/people), abbreviated posture cues (e.g. gehanta bow marker), intervening private Kushapa prayers, diaconal calls outside the main dialogue, and parallel Garshuni/Arabic columns are excluded.; Printed historical orthography, abbreviations (such as abbreviated Sanctus incipits), omissions, and additions are preserved verbatim without harmonizing or supplying words from memory.",
+  "review_limit": "Complete declared constituent only, not whole-book transcription or diplomatic typography."
+}

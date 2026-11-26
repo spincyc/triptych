@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-collation",
+  "book_id": "tarazona-1500-canon-missae",
+  "title": "Tarazona 1500 (Missale Tirasonense): complete strict Canon Missae constituent — independent pixel-collation review",
+  "status": "verified",
+  "independent": true,
+  "complete_extent_verified": true,
+  "reviewer": "independent-collator-v3-alex-west",
+  "checked_on": "2026-11-25",
+  "binding_sha256": "3e8e681728cee39beb213c6e8a9f7fdc25e36a146899010010a82ee549afa8f8",
+  "extent_sha256": "6387f34380e7751f1f18c9a67f55ed557712c1d6d8941021f2778db1c3eebfbd",
+  "witness_sha256": {
+    "tarazona-1500-brocar-pdf": "c6e5dbd8c1b77231ec4f97c77752c3c863bdffe3edc8d4f8b81a1afd279a3cc7"
+  },
+  "unit_sha256": {
+    "unit.tarazona-1500.canon.te-igitur": "37a266b722cd316fc1d4af7fdc4395c302f76c808f138f026addc4317672b48b",
+    "unit.tarazona-1500.canon.memento-vivorum": "e17039c08921ed8d63eb5b5ed0ab2b67b9f1576fdc53d96f632849e465d89c44",
+    "unit.tarazona-1500.canon.communicantes": "2d8c9227c036e64ef32e2fcc5c9354899fe6ffdfce4205d9b005776d4b06a612",
+    "unit.tarazona-1500.canon.hanc-igitur": "d6100540f3234759492d62c46f5bc7673440eb09e38d43a434227f747d6ac275",
+    "unit.tarazona-1500.canon.quam-oblationem": "0eaf16e57e423a0b2d0a05749680dc10d53f5ce48063a1236f98a97b8711626e",
+    "unit.tarazona-1500.canon.qui-pridie": "b173c24073d94225ab21fe9cd9d46ec11e70693c4722a1080de472aeb1b36cf7",
+    "unit.tarazona-1500.canon.simili-modo": "edbdb735ca6529b3c85b6bb13e67ae137d012339bd920aadf0d91a5c65118a61",
+    "unit.tarazona-1500.canon.unde-et-memores": "8818d114a549ab71952a02d29540450f818f09e491f333f9cca6e3c7a9652494",
+    "unit.tarazona-1500.canon.supra-quae": "0fd5143a4946b8a0a96b63af76b276c436f715901dff8e87dbb9e014f7ee8098",
+    "unit.tarazona-1500.canon.supplices": "ee0aff1f756a7b7b7c74e993f0113272d25705a33cc0e2dc6ef30c17cefce442",
+    "unit.tarazona-1500.canon.memento-defunctorum": "80353fba9806277a79dd213986336015c6d006e73e4ca974c3561073a50d0d39",
+    "unit.tarazona-1500.canon.nobis-quoque": "e35a8b7b3f32bdc9ce883566dd964ecd4e1d0300e954da00b51259835e51d7bc",
+    "unit.tarazona-1500.canon.per-quem": "c9e6791d176265abfcbea6a444f85bf6f9034b7ea32955e8ff8e4fa39478eed5",
+    "unit.tarazona-1500.canon.per-ipsum": "7f10928a7d4ed721e75bbd3ffca66c53521c49e5bc84af84ebc6da1e1eafb017",
+    "unit.tarazona-1500.canon.concluding-response": "aed3bf19a2d20667a11b7570a400b15089692e460f28d693799aa1e1c1d4765d"
+  },
+  "scope": "Complete strict Eucharistic Canon of the 13 February 1500 Tarazona-use missal printed at Pamplona by Arnaldo Guillén de Brocar (Bizkaia INC-35, PDF pp. 350-354): from the woodcut initial Te igitur at PDF p. 350 col. 1 through Et uoce alta dicit. Per omnia secula seculorum. R. Amen. at PDF p. 354 col. 1 immediately before Oremus preceptis salutaribus / Pater noster. Includes all printed headings, action rubrics, red N. placeholders and 26 printed crosses (✠) under declared selective Latin reading normalization.",
+  "method": "Independent pixel-level visual inspection of all rendered facsimile pages by independent-collator-v3-alex-west (distinct from drafter AI source transcriber (Lane T3, direct PNG inspection of Tarazona 1500 PDF pp. 350-354)) on 2026-11-25. Applied 25 pixel-verified correction(s) relative to initial draft; verified every unit boundary, page account (1..658), and SHA-256 hash.",
+  "normalization_limit": "Direct reading from 220-dpi rendered PNG images of Tarazona 1500 PDF pp. 350-354. UTF-8 NFC, LF line endings. Standard 1500 Gothic Latin abbreviations expanded silently to reading forms (nasal macrons, -q3 -> -que, -3/-z -> -m/-us in cenatuz/enĩ3/peccatoru3/cuz/aliquaz/societatez/Panez/tuuz, -b9/-9 -> -bus/-us, Tironian ⁊ -> et, ꝝ -> -rum, p̃/ꝓ -> per/pro, oꝑs -> omnipotens, q̃sumus -> quesumus, dñs/dñi/dñm/dñe -> dominus/domini/dominum/domine, nr̃o/nr̃m -> nostro/nostrum, xꝑi/xꝑm -> christi/christum, oẽs -> omnes, Oȓo. -> Oratio., sctĩ/sãcta/sacrosc̃tm -> sancti/sancta/sacrosanctum, bñ -> bene, p̃stas -> prestas, ĩpo -> ipso, p̃ri -> patri, ℟ -> R.). Woodcut display initial + second capital (TE, ME, CO, HA, QU, UN, SU, NO, PE) normalized to sentence case. Long s normalized to s; diagonal line-end hyphens (/) joined. Medieval Latin orthography preserved verbatim (e for ae/oe: Hec, que, celum, eterni, preclare, venie; u/v as printed (Gothic word-initial v / medial u); circunstantium; ij in Cornelij, Laurentij, filij, refrigerij; Grisogoni, Mathia, Symonis, Thadei, Sixti, misterium, propicio). Headings and action rubrics occupy their own lines; printed crosses serialized as ✠ (26 crosses total, preserving word-internal positions).",
+  "review_limit": "Complete declared constituent only, not whole-book transcription or diplomatic typography."
+}

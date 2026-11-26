@@ -1,0 +1,406 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-native-book",
+  "id": "paris-1481-canon-missae",
+  "title": "Paris 1481 (Missale Parisiense): complete strict Canon Missae constituent",
+  "scope": "Complete strict Eucharistic Canon of the 22 September 1481 Paris-use missal printed by Jean Dupré and Didier Huym (BSG OEXV 228 RES, PDF pp. 180-182, including printed fol. lxxx at PDF p. 181): from the opening rubric Junctis manibus se inclinet ante altare. and illuminated Te igitur on PDF p. 180 col. 1 through notated Per omnia secula seculorum. Amen. on PDF p. 182 col. 2 immediately before Oremus. Preceptis salutaribus / Pater noster. Includes all printed action rubrics and 25 illuminated crosses (✠) under declared selective Latin reading normalization.",
+  "transcribed_by": "AI source transcriber (Lane T3, direct PNG inspection of Paris 1481 PDF pp. 180-182)",
+  "stage_ids": [
+    "french-local-round2-paris:book"
+  ],
+  "catalogue_witness_ids": [
+    "western:paris-1481-dupre-huym"
+  ],
+  "components": [
+    "anaphoras"
+  ],
+  "languages": [
+    "la"
+  ],
+  "extent_kind": "constituent",
+  "excluded_book_divisions": [
+    "Notated Et ideo cum angelis... Sanctus. Sanctus. Sanctus. ut supra. on PDF p. 180 col. 1 above Junctis manibus",
+    "Oremus, Preceptis salutaribus, Pater noster, Libera nos, Agnus Dei, communion prayers and all material after Amen on PDF p. 182 col. 2",
+    "Calendar, Temporale, Sanctorale, Prefaces, preparation prayers and colophon outside PDF pp. 180-182",
+    "Folio number (lxxx), illuminated border art, ink colour (red/blue), chant staff/neumes and diplomatic Gothic glyph forms"
+  ],
+  "date": {
+    "kind": "publication",
+    "label": "22 September 1481 Paris publication (Dupré and Huym colophon)",
+    "start_year": 1481,
+    "end_year": 1481,
+    "evidence": [
+      {
+        "source_id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.colophon",
+        "locus": "Closing unnumbered colophon; PDF page 494 (22 September 1481)"
+      }
+    ]
+  },
+  "extent_path": "src/sources/inventories/eucharistic-books/support/paris-1481-canon-missae-extent.json",
+  "collation_path": "src/sources/inventories/eucharistic-books/support/paris-1481-canon-missae-review.json",
+  "witnesses": [
+    {
+      "id": "paris-1481-dupre-huym-pdf",
+      "edition_id": "edition.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym",
+      "artifact_id": "artifact.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.ia-complete-pdf-619ed4e7",
+      "scope_pages": [
+        [
+          180,
+          182
+        ]
+      ],
+      "completeness_evidence": [
+        {
+          "source_id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-facsimile",
+          "locus": "PDF pages 180–182 of 506; complete bounded constituent scope."
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "unit.paris-1481.canon.opening-rubric",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "opening-rubric"
+      ],
+      "source_order": 1,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "rubric",
+      "witness_id": "paris-1481-dupre-huym-pdf",
+      "witness_pages": [
+        [
+          180,
+          180
+        ]
+      ],
+      "passage_id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-opening-rubric",
+      "text_sha256": "223832e5f98658f9c056909b986afb15ef3af183ba5a2941a8b9117af2600dde"
+    },
+    {
+      "unit_id": "unit.paris-1481.canon.te-igitur",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "te-igitur"
+      ],
+      "source_order": 2,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "paris-1481-dupre-huym-pdf",
+      "witness_pages": [
+        [
+          180,
+          180
+        ]
+      ],
+      "passage_id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-te-igitur",
+      "text_sha256": "eea4d7e066cac7c0614dd577b722c92eb976138672492cc376a86fa2b74471dc"
+    },
+    {
+      "unit_id": "unit.paris-1481.canon.memento-vivorum",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "memento-vivorum"
+      ],
+      "source_order": 3,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "paris-1481-dupre-huym-pdf",
+      "witness_pages": [
+        [
+          180,
+          180
+        ]
+      ],
+      "passage_id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-memento-vivorum",
+      "text_sha256": "c41c4e15d14755c1b1bca778b8e2c03dc9aa9efd1da830b859196458232e742b"
+    },
+    {
+      "unit_id": "unit.paris-1481.canon.communicantes",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "communicantes"
+      ],
+      "source_order": 4,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "paris-1481-dupre-huym-pdf",
+      "witness_pages": [
+        [
+          180,
+          180
+        ]
+      ],
+      "passage_id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-communicantes",
+      "text_sha256": "f2bcd4f0ad0de4960d7b163541917a851de09cee464dc268a3d21cf76939ca28"
+    },
+    {
+      "unit_id": "unit.paris-1481.canon.hanc-igitur",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "hanc-igitur"
+      ],
+      "source_order": 5,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "paris-1481-dupre-huym-pdf",
+      "witness_pages": [
+        [
+          180,
+          180
+        ],
+        [
+          181,
+          181
+        ]
+      ],
+      "passage_id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-hanc-igitur",
+      "text_sha256": "fd2db4d7fa455cfd0365f0773f76d38dc87a6ffff7e0e234454f9a184e852bb2"
+    },
+    {
+      "unit_id": "unit.paris-1481.canon.quam-oblationem",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "quam-oblationem"
+      ],
+      "source_order": 6,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "paris-1481-dupre-huym-pdf",
+      "witness_pages": [
+        [
+          181,
+          181
+        ]
+      ],
+      "passage_id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-quam-oblationem",
+      "text_sha256": "2da7b6301fc0938417b64ecac4a7e9c5ee4eb422f00bb04c36b277fb602e14c6"
+    },
+    {
+      "unit_id": "unit.paris-1481.canon.qui-pridie",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "qui-pridie"
+      ],
+      "source_order": 7,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "institution-narrative-with-rubrics",
+      "witness_id": "paris-1481-dupre-huym-pdf",
+      "witness_pages": [
+        [
+          181,
+          181
+        ]
+      ],
+      "passage_id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-qui-pridie",
+      "text_sha256": "65cb9a61791c93e65969799b7e583426fc2870ca321f5105c57b25d3d81f012e"
+    },
+    {
+      "unit_id": "unit.paris-1481.canon.simili-modo",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "simili-modo"
+      ],
+      "source_order": 8,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "institution-narrative-with-rubrics",
+      "witness_id": "paris-1481-dupre-huym-pdf",
+      "witness_pages": [
+        [
+          181,
+          181
+        ]
+      ],
+      "passage_id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-simili-modo",
+      "text_sha256": "b6d0a7f4dbac1956d0da71602ae7bee484abe4ebbbeac593d378dbd456f56318"
+    },
+    {
+      "unit_id": "unit.paris-1481.canon.unde-et-memores",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "unde-et-memores"
+      ],
+      "source_order": 9,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "paris-1481-dupre-huym-pdf",
+      "witness_pages": [
+        [
+          181,
+          181
+        ]
+      ],
+      "passage_id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-unde-et-memores",
+      "text_sha256": "f25dde5331c6ff4a8f1aaf7d3381d5250c9f3dac280f2e643a4a6ca3ebfac6b6"
+    },
+    {
+      "unit_id": "unit.paris-1481.canon.supra-quae",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "supra-quae"
+      ],
+      "source_order": 10,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "paris-1481-dupre-huym-pdf",
+      "witness_pages": [
+        [
+          181,
+          181
+        ]
+      ],
+      "passage_id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-supra-quae",
+      "text_sha256": "0858f2e90f9792db51b7c83c472b274d8bd5e8f099a0c4418aabe79e0a99de47"
+    },
+    {
+      "unit_id": "unit.paris-1481.canon.supplices",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "supplices"
+      ],
+      "source_order": 11,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "paris-1481-dupre-huym-pdf",
+      "witness_pages": [
+        [
+          181,
+          181
+        ],
+        [
+          182,
+          182
+        ]
+      ],
+      "passage_id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-supplices",
+      "text_sha256": "4f78f5db18d3e4b584c7199c6af98afaa75bd37d354133d457e38aad4a818ee2"
+    },
+    {
+      "unit_id": "unit.paris-1481.canon.memento-defunctorum",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "memento-defunctorum"
+      ],
+      "source_order": 12,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "paris-1481-dupre-huym-pdf",
+      "witness_pages": [
+        [
+          182,
+          182
+        ]
+      ],
+      "passage_id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-memento-defunctorum",
+      "text_sha256": "8bc99eaffd6f95b2b9701d164d561228bc4598dc714bd343a15fad4c3a897aae"
+    },
+    {
+      "unit_id": "unit.paris-1481.canon.nobis-quoque",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "nobis-quoque"
+      ],
+      "source_order": 13,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "paris-1481-dupre-huym-pdf",
+      "witness_pages": [
+        [
+          182,
+          182
+        ]
+      ],
+      "passage_id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-nobis-quoque",
+      "text_sha256": "f3caa1cf10a92778d2788af812a5bcb68842f3abaa5e58286915752234ac2d00"
+    },
+    {
+      "unit_id": "unit.paris-1481.canon.per-quem",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "per-quem"
+      ],
+      "source_order": 14,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "paris-1481-dupre-huym-pdf",
+      "witness_pages": [
+        [
+          182,
+          182
+        ]
+      ],
+      "passage_id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-per-quem",
+      "text_sha256": "9bbc44ec632af5961a53f4c0a06f02e0c0ccc51c67d3ab5e575f0a1a58373f4b"
+    },
+    {
+      "unit_id": "unit.paris-1481.canon.per-ipsum",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "per-ipsum"
+      ],
+      "source_order": 15,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "doxology-with-rubrics",
+      "witness_id": "paris-1481-dupre-huym-pdf",
+      "witness_pages": [
+        [
+          182,
+          182
+        ]
+      ],
+      "passage_id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-per-ipsum",
+      "text_sha256": "185c14d278ecb1508e8491cb298003b9f13dfe6a5c7983451cdaf5e1eb62b8c8"
+    },
+    {
+      "unit_id": "unit.paris-1481.canon.concluding-response",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "concluding-response"
+      ],
+      "source_order": 16,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "notated-dialogue",
+      "witness_id": "paris-1481-dupre-huym-pdf",
+      "witness_pages": [
+        [
+          182,
+          182
+        ]
+      ],
+      "passage_id": "passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-concluding-response",
+      "text_sha256": "87f5c096a9eee737830e89c16c65a2233b79f2c3aa28655b1896e626dbd71dfb"
+    }
+  ]
+}

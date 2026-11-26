@@ -1,0 +1,175 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-native-book",
+  "id": "maronite-1908-anaphora",
+  "title": "Ketābā de-qurbānā (Beirut Maronite Press, 1908 second printing of Dibs 1888) — Anaphora of the Twelve Apostles Core",
+  "scope": "Bounded constituent of the exact same five aligned core units of the Anaphora of the Twelve Apostles (printed inline in the Ordo Communis under running head 'ܡܢ ܢܐܦܘܪ ܐܠܬܠܡܝܕܗ ܐܠܬܢܐܥܫܪܝܗ') in Classical Syriac (syr), located in retained Part 2 (pages-0224-0447-5b0fbb00, PDF 127, 125-122; reversed RTL scan order), enabling a direct 1594 vs 1908 Maronite visual diff.",
+  "transcribed_by": "lane-t2-syriac",
+  "stage_ids": [
+    "maronite-dibs1888"
+  ],
+  "catalogue_witness_ids": [
+    "eastern:mar-dibs-1908"
+  ],
+  "components": [
+    "anaphoras"
+  ],
+  "languages": [
+    "syr"
+  ],
+  "extent_kind": "constituent",
+  "excluded_book_divisions": [
+    "Companion split PDF pages-0001-0223-07f785ad (223 pp.: Good Friday Presanctified, back anaphoras, calendar/computus table at whole-PDF 8)",
+    "Remainder of Part 2 after Twelve Apostles Epiclesis (Part 2 PDF 1-121: diptychs, fraction, communion, Roman Church and subsequent anaphoras)",
+    "Intervening Preface/Post-Sanctus (Part 2 PDF 126), intervening rubricated Trinitarian cross-blessing on PDF 127, red Garshuni rubrics, parallel Garshuni columns, Anamnesis (Part 2 PDF 123), secret Epiclesis preamble and closing fruits paragraph (Part 2 PDF 123 bottom, 122 top/bottom)",
+    "Pre-anaphoral Ordo Communis and native Syriac/Arabic title leaf at Part 2 PDF 218 / whole-PDF 441 (Part 2 PDF 128-224)"
+  ],
+  "date": {
+    "kind": "publication",
+    "label": "1908 (second printing of Dibs 1888)",
+    "start_year": 1908,
+    "end_year": 1908,
+    "evidence": [
+      {
+        "source_id": "passage.maronite-church.qurbono.1908-beirut-maronite-press-second-printing.title-and-imprimatur",
+        "locus": "Native title leaf at whole-PDF 441 (Part 2 local PDF 218) and ULB Bonn catalogue record (titleinfo/3088113): Beirut, al-Maṭbaʿa al-Mārūnīya, 1908, second printing (Ṭubiʿa tāniyatan), edited by Yūsuf Ibn-Ilyās ad-Dibs."
+      }
+    ]
+  },
+  "extent_path": "src/sources/inventories/eucharistic-books/support/maronite-1908-anaphora-extent.json",
+  "collation_path": "src/sources/inventories/eucharistic-books/support/maronite-1908-anaphora-review.json",
+  "witnesses": [
+    {
+      "id": "maronite-1908-beirut-bonn-part2-pdf",
+      "edition_id": "edition.maronite-church.qurbono.1908-beirut-maronite-press-second-printing",
+      "artifact_id": "artifact.maronite-church.qurbono.1908-beirut-maronite-press-second-printing.pages-0224-0447-5b0fbb00",
+      "scope_pages": [
+        [
+          122,
+          125
+        ],
+        [
+          127,
+          127
+        ]
+      ],
+      "completeness_evidence": [
+        {
+          "source_id": "passage.maronite-church.qurbono.1908-beirut-maronite-press-second-printing.anaphora-facsimile",
+          "locus": "PDF pages 122–125, 127 of 224; complete bounded constituent scope."
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "maronite-1908-anaphora.01-opening-dialogue",
+      "native_path": [
+        "anaphoras",
+        "twelve-apostles",
+        "01-opening-dialogue"
+      ],
+      "source_order": 1,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "dialogue",
+      "witness_id": "maronite-1908-beirut-bonn-part2-pdf",
+      "witness_pages": [
+        [
+          127,
+          127
+        ]
+      ],
+      "passage_id": "passage.maronite-church.qurbono.1908-beirut-maronite-press-second-printing.anaphora-01-opening-dialogue",
+      "text_sha256": "a3eefa34e66a16a44be5df44bc3d47d0863856c6d2297bdeb46996df45bd7406"
+    },
+    {
+      "unit_id": "maronite-1908-anaphora.02-institution-bread",
+      "native_path": [
+        "anaphoras",
+        "twelve-apostles",
+        "02-institution-bread"
+      ],
+      "source_order": 2,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "institution-narrative",
+      "witness_id": "maronite-1908-beirut-bonn-part2-pdf",
+      "witness_pages": [
+        [
+          125,
+          125
+        ]
+      ],
+      "passage_id": "passage.maronite-church.qurbono.1908-beirut-maronite-press-second-printing.anaphora-02-institution-bread",
+      "text_sha256": "412580bf8f58973cd979bab5855929dc2b06b570167b4aff3c832e51405515a8"
+    },
+    {
+      "unit_id": "maronite-1908-anaphora.03-institution-chalice",
+      "native_path": [
+        "anaphoras",
+        "twelve-apostles",
+        "03-institution-chalice"
+      ],
+      "source_order": 3,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "institution-narrative",
+      "witness_id": "maronite-1908-beirut-bonn-part2-pdf",
+      "witness_pages": [
+        [
+          123,
+          123
+        ],
+        [
+          124,
+          124
+        ]
+      ],
+      "passage_id": "passage.maronite-church.qurbono.1908-beirut-maronite-press-second-printing.anaphora-03-institution-chalice",
+      "text_sha256": "67864aa4bc253b5da845a06bb66cc20f9ba175398a497861df693dadfa976861"
+    },
+    {
+      "unit_id": "maronite-1908-anaphora.04-epiclesis-call",
+      "native_path": [
+        "anaphoras",
+        "twelve-apostles",
+        "04-epiclesis-call"
+      ],
+      "source_order": 4,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "dialogue",
+      "witness_id": "maronite-1908-beirut-bonn-part2-pdf",
+      "witness_pages": [
+        [
+          122,
+          122
+        ]
+      ],
+      "passage_id": "passage.maronite-church.qurbono.1908-beirut-maronite-press-second-printing.anaphora-04-epiclesis-call",
+      "text_sha256": "daaf866467483faa9c73d17ab41717f8c8f6032bba0d88d0249a974083fbd78d"
+    },
+    {
+      "unit_id": "maronite-1908-anaphora.05-epiclesis-consecration",
+      "native_path": [
+        "anaphoras",
+        "twelve-apostles",
+        "05-epiclesis-consecration"
+      ],
+      "source_order": 5,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "maronite-1908-beirut-bonn-part2-pdf",
+      "witness_pages": [
+        [
+          122,
+          122
+        ]
+      ],
+      "passage_id": "passage.maronite-church.qurbono.1908-beirut-maronite-press-second-printing.anaphora-05-epiclesis-consecration",
+      "text_sha256": "7c11417135875f9a032f9276b8b4541289a2e8f66ed02928a1bda59212bbed05"
+    }
+  ]
+}

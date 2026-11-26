@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-extent",
+  "book_id": "syro-malabar-1906-addai-mari",
+  "title": "Ordo Chaldaicus Malabaricae (Puttenpalli, 1906) — Anaphora of Addai and Mari Core — complete constituent extent and page account",
+  "status": "complete",
+  "unresolved": [],
+  "omitted": [],
+  "expected_unit_ids": [
+    "syro-malabar-1906-addai-mari.01-opening-dialogue",
+    "syro-malabar-1906-addai-mari.02-preface-gehanta-1",
+    "syro-malabar-1906-addai-mari.03-sanctus",
+    "syro-malabar-1906-addai-mari.04-post-sanctus-gehanta-2",
+    "syro-malabar-1906-addai-mari.05-intercession-gehanta-3",
+    "syro-malabar-1906-addai-mari.06-anamnesis-oblation",
+    "syro-malabar-1906-addai-mari.07-epiclesis-and-qanona",
+    "syro-malabar-1906-addai-mari.08-institution-narrative"
+  ],
+  "scope": "Bounded constituent of the exact same eight aligned core units of the Anaphora of Addai and Mari in Classical Syriac (syr), preserving Puttenpalli 1906's Fraction-placed Romanized Institution Narrative (PDF 230-229) and enabling a direct 3-way East Syriac diff against Chaldean 1767 and Chaldean 1901.",
+  "pages": [
+    {
+      "witness_id": "syro-malabar-1906-puttenpalli-part1-pdf",
+      "ranges": [
+        [
+          1,
+          228
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "Post-institution fraction, communion, appended Masses, 1905 approval, and 1906 English imprint (PDF 6)."
+    },
+    {
+      "witness_id": "syro-malabar-1906-puttenpalli-part1-pdf",
+      "ranges": [
+        [
+          229,
+          230
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "syro-malabar-1906-addai-mari.08-institution-narrative"
+      ],
+      "description": "Fraction-placed Romanized Institution Narrative (printed pp. 261-262; excludes intervening elevation adoration verse on PDF 230)."
+    },
+    {
+      "witness_id": "syro-malabar-1906-puttenpalli-part1-pdf",
+      "ranges": [
+        [
+          231,
+          231
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "Pre-fraction signing and elevation prayers (printed p. 260)."
+    },
+    {
+      "witness_id": "syro-malabar-1906-puttenpalli-part1-pdf",
+      "ranges": [
+        [
+          232,
+          232
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "Full-page Crucifixion engraving plate prior to Fraction/Institution."
+    },
+    {
+      "witness_id": "syro-malabar-1906-puttenpalli-part1-pdf",
+      "ranges": [
+        [
+          233,
+          233
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "Blank verso facing the Crucifixion engraving plate."
+    },
+    {
+      "witness_id": "syro-malabar-1906-puttenpalli-part1-pdf",
+      "ranges": [
+        [
+          234,
+          234
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "syro-malabar-1906-addai-mari.05-intercession-gehanta-3",
+        "syro-malabar-1906-addai-mari.06-anamnesis-oblation",
+        "syro-malabar-1906-addai-mari.07-epiclesis-and-qanona"
+      ],
+      "description": "Intercession Gehanta 3 continuation, Anamnesis/Oblation, and Epiclesis with Qanona (printed p. 259/ܪܢܛ)."
+    },
+    {
+      "witness_id": "syro-malabar-1906-puttenpalli-part1-pdf",
+      "ranges": [
+        [
+          235,
+          235
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "syro-malabar-1906-addai-mari.04-post-sanctus-gehanta-2",
+        "syro-malabar-1906-addai-mari.05-intercession-gehanta-3"
+      ],
+      "description": "Post-Sanctus Qanona end (top right), excluded Kushapa, and opening of Intercession Gehanta 3 (bottom left; printed p. 258/ܪܢܚ)."
+    },
+    {
+      "witness_id": "syro-malabar-1906-puttenpalli-part1-pdf",
+      "ranges": [
+        [
+          236,
+          236
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "syro-malabar-1906-addai-mari.02-preface-gehanta-1",
+        "syro-malabar-1906-addai-mari.03-sanctus",
+        "syro-malabar-1906-addai-mari.04-post-sanctus-gehanta-2"
+      ],
+      "description": "Preface Gehanta 1 continuation, Qanona, single-word Sanctus incipit, excluded Kushapa, and Post-Sanctus Gehanta 2 (printed p. 257/ܪܢܙ)."
+    },
+    {
+      "witness_id": "syro-malabar-1906-puttenpalli-part1-pdf",
+      "ranges": [
+        [
+          237,
+          237
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "syro-malabar-1906-addai-mari.01-opening-dialogue",
+        "syro-malabar-1906-addai-mari.02-preface-gehanta-1"
+      ],
+      "description": "Opening Dialogue and start of Preface Gehanta 1 (printed p. 256/ܪܢܘ)."
+    },
+    {
+      "witness_id": "syro-malabar-1906-puttenpalli-part1-pdf",
+      "ranges": [
+        [
+          238,
+          257
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "Pre-anaphoral Ordo Missae (Liturgy of the Word, Creed, Offertory)."
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 
 [Return to Liturgy](liturgy.md)
 
-The 1962 Missal and Breviary are the books studied here. The Mass is also known as the *Traditional Latin Mass* or the *Extraordinary Form*.
+The 1962 Missal and Breviary are the books studied here. The Mass is also known as the *Traditional Latin Mass* or the *Extraordinary Form*. Follow this edition’s historical descent and textual comparisons in **[Eucharistic Books Through History (1962 Missale Romanum)](../history/?view=timeline)**.
 
 [Core and reference works](#core-and-reference-works) ·
 [Seasonal handbooks](#seasonal-handbooks) ·

@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-extent",
+  "book_id": "syriac-1843-anaphora",
+  "title": "Missale Syriacum (Rome Propaganda, 1843) — Anaphora of St. James Core — complete constituent extent and page account",
+  "status": "complete",
+  "unresolved": [],
+  "omitted": [],
+  "expected_unit_ids": [
+    "syriac-1843-anaphora.01-preface",
+    "syriac-1843-anaphora.02-sanctus",
+    "syriac-1843-anaphora.03-post-sanctus",
+    "syriac-1843-anaphora.04-institution-narrative",
+    "syriac-1843-anaphora.05-anamnesis",
+    "syriac-1843-anaphora.06-epiclesis"
+  ],
+  "scope": "Bounded constituent of the six core prayers of the Anaphora of St. James (Preface, Sanctus, Post-Sanctus, Institution Narrative, Anamnesis, and Epiclesis) in Classical Syriac (syr), reading the right-hand Syriac column on bilingual Syriac/Garshuni pages (PDF 135, 136, 139, 140 L1) and full-width Syriac on monolingual pages (PDF 136 bottom, 138, 140), excluding the scan-degraded red-ink opening Dialogue line on PDF 135, the Crucifixion engraving plate at PDF 137, Garshuni columns, rubrics, and post-epiclesis diptychs.",
+  "pages": [
+    {
+      "witness_id": "syriac-1843-rome-google-pdf",
+      "ranges": [
+        [
+          1,
+          134
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "Front matter (titles PDF 9-10), Ordo Communis, Presanctified rite, and opening of St. James through Peace/Kiss."
+    },
+    {
+      "witness_id": "syriac-1843-rome-google-pdf",
+      "ranges": [
+        [
+          135,
+          135
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "syriac-1843-anaphora.01-preface"
+      ],
+      "description": "Opening of Preface in Syriac right column (printed p. 104 / ܩܕ; scan-degraded red-ink Dialogue line above and left-column Garshuni excluded)."
+    },
+    {
+      "witness_id": "syriac-1843-rome-google-pdf",
+      "ranges": [
+        [
+          136,
+          136
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "syriac-1843-anaphora.01-preface",
+        "syriac-1843-anaphora.02-sanctus",
+        "syriac-1843-anaphora.03-post-sanctus"
+      ],
+      "description": "Preface continuation (right Syriac column), single-word Sanctus incipit, and full-width Post-Sanctus (printed p. 105 / ܩܗ)."
+    },
+    {
+      "witness_id": "syriac-1843-rome-google-pdf",
+      "ranges": [
+        [
+          137,
+          137
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "Full-page Crucifixion engraving plate preceding Institution Narrative (printed p. 106 unnumbered)."
+    },
+    {
+      "witness_id": "syriac-1843-rome-google-pdf",
+      "ranges": [
+        [
+          138,
+          138
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "syriac-1843-anaphora.04-institution-narrative"
+      ],
+      "description": "Full-width Syriac Institution Narrative of Bread and Chalice (printed p. 107)."
+    },
+    {
+      "witness_id": "syriac-1843-rome-google-pdf",
+      "ranges": [
+        [
+          139,
+          139
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "syriac-1843-anaphora.05-anamnesis"
+      ],
+      "description": "Anamnesis in right-hand Syriac column (printed p. 108; parallel Garshuni left column excluded)."
+    },
+    {
+      "witness_id": "syriac-1843-rome-google-pdf",
+      "ranges": [
+        [
+          140,
+          140
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "syriac-1843-anaphora.05-anamnesis",
+        "syriac-1843-anaphora.06-epiclesis"
+      ],
+      "description": "Final phrase of Anamnesis (L1 right Syriac column) and full-width Epiclesis (printed p. 109; post-epiclesis diptychs below excluded)."
+    },
+    {
+      "witness_id": "syriac-1843-rome-google-pdf",
+      "ranges": [
+        [
+          141,
+          279
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "Diptychs, fraction, communion, remaining six anaphoras, Patriarch Giarve 1840 attestation and imprimaturs (PDF 272), and back matter."
+    }
+  ]
+}

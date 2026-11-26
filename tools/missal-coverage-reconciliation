@@ -23,6 +23,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 import _eucharistic_history as history
 import _eucharistic_stages as stages_owner
+import _eucharistic_texts as texts_owner
 from _tooling import Example, with_examples
 
 
@@ -221,7 +222,8 @@ class Audit:
             for error in library.errors:
                 self.finding("invalid", "source-owner-validation", "tools/source-library", self.message(error))
             try:
-                history.catalogue(self.root / history.DEFAULT_SOURCE, self.root, act_loader=owner("act-history").load)
+                with texts_owner.replay_library(self.root, preloaded=None if library.errors else library):
+                    history.catalogue(self.root / history.DEFAULT_SOURCE, self.root, act_loader=owner("act-history").load)
             except (ValueError, OSError) as error:
                 self.finding("invalid", "history-owner-validation", "tools/act-history catalogue", self.message(error))
         candidates, inventories, sources = {}, {}, {}

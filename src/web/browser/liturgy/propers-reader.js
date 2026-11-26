@@ -1197,19 +1197,35 @@
 
   function definitionList(rows) {
     const list = T.el('dl', 'details-list');
-    rows.forEach(function (row) {
-      if (row[1] === null || row[1] === undefined || row[1] === '') return;
-      list.appendChild(T.el('dt', null, row[0]));
-      list.appendChild(T.el('dd', null, String(row[1])));
+    rows.forEach(([label, val]) => {
+      if (val === null || val === undefined || val === '') return;
+      list.appendChild(T.el('dt', null, label));
+      const dd = T.el('dd', null);
+      if (val?.nodeType) dd.appendChild(val);
+      else dd.textContent = String(val);
+      list.appendChild(dd);
     });
     return list;
+  }
+
+  function actStationLink(actId) {
+    if (!actId) return null;
+    const stationLink = T.el('a', null, actId);
+    stationLink.href = '../history/?view=map&slice=roman-holy-week#station=' + encodeURIComponent(actId);
+    return stationLink;
+  }
+
+  function editionTimelineHref(editionId) {
+    if (editionId === 'roman-1962') return '../history/?view=timeline#tradition=roman-stages-pian&stage=roman-stages-1962-june';
+    if (editionId === 'postconciliar') return '../history/?view=timeline#tradition=roman-stages-postconciliar&stage=roman-stages-2008';
+    return '../history/?view=timeline';
   }
 
   function detailsLinkSection(heading, links) {
     const section = T.el('section', 'details-section');
     section.appendChild(T.el('h3', null, heading));
     const list = T.el('ul');
-    links.forEach(function (link) {
+    links.forEach(link => {
       const item = T.el('li');
       const anchor = T.el('a', null, link.label);
       anchor.href = link.href;
@@ -1221,12 +1237,12 @@
   }
 
   function cycleSummary(result, state) {
-    if (Object.prototype.hasOwnProperty.call(state, 'cycle')) return T.cycleLabel(state.cycle);
+    if (Object.hasOwn(state, 'cycle')) return T.cycleLabel(state.cycle);
     const cycles = [];
-    (result.events || []).forEach(function (event) {
-      if (event.selected && event.selected.kind === 'cycle-alternatives') {
-        event.selected.alternatives.forEach(function (row) {
-          if (cycles.indexOf(row.cycle) < 0) cycles.push(row.cycle);
+    (result.events || []).forEach(event => {
+      if (event.selected?.kind === 'cycle-alternatives') {
+        event.selected.alternatives.forEach(row => {
+          if (!cycles.includes(row.cycle)) cycles.push(row.cycle);
         });
       }
     });
@@ -1235,8 +1251,7 @@
 
   function coverageSummary(result, mass, structure) {
     if (!result) return null;
-    const notice = coverageMessage(result, mass, structure, true);
-    return notice || 'Complete for the selected production state';
+    return coverageMessage(result, mass, structure, true) || 'Complete for the selected production state';
   }
 
   function populateDetails() {
@@ -1253,7 +1268,7 @@
         'The current selection is still loading. Details will follow the committed result.'));
       return;
     }
-    const state = runtime.normalized && runtime.normalized.state;
+    const state = runtime.normalized?.state;
     if (!state) {
       detailsBody.appendChild(T.el('p', 'surface-note',
         'No validated selection is available for the current ' + runtime.outcome + ' outcome.'));
@@ -1263,45 +1278,42 @@
     }
     const missal = missalRow(state.edition.id);
     const bible = bibleRow(state.bible.id);
-    const selectedForm = formRow(
-      runtime.mass, runtime.result && runtime.result.resolved && runtime.result.resolved.form
-    );
+    const selectedForm = formRow(runtime.mass, runtime.result?.resolved?.form);
     const witnessId = state.languages.translationWitness || null;
     const witness = translationWitnessRow(runtime.structure, witnessId);
     const recension = recensionContext(runtime.structure, runtime.mass);
-    const additionalDepartures = recension && recension.additional.map(function (row) {
-      return rightsLabel(row.kind) +
+    const additionalDepartures = recension?.additional.map(row =>
+      rightsLabel(row.kind) +
         (row.act ? ' · Act-history station: ' + row.act : '') +
-        (row.basis ? ' — ' + row.basis : '');
-    }).join(' | ');
+        (row.basis ? ' — ' + row.basis : '')
+    ).join(' | ');
     const selection = T.el('section', 'details-section');
     selection.appendChild(T.el('h3', null, 'Selection'));
     selection.appendChild(definitionList([
-      ['Missal', missal && (missal.edition || missal.label) || state.edition.id],
-      ['Missal qualification', missal && missal.qualification],
-      ['Formulary type', state.formulary && (groupRow(state.formulary.type) || {}).label],
-      ['Formulary', runtime.mass && (runtime.mass.name || runtime.mass.key)],
-      ['Form', selectedForm && (selectedForm.name || selectedForm.id) ||
-        (runtime.mass && (runtime.mass.forms || []).length > 1 ? 'Choice required' : null)],
-      ['Bible', bible && bible.label || state.bible.id],
+      ['Missal', missal?.edition || missal?.label || state.edition.id],
+      ['Missal qualification', missal?.qualification],
+      ['Formulary type', state.formulary && groupRow(state.formulary.type)?.label],
+      ['Formulary', runtime.mass?.name || runtime.mass?.key],
+      ['Form', selectedForm?.name || selectedForm?.id ||
+        ((runtime.mass?.forms || []).length > 1 ? 'Choice required' : null)],
+      ['Bible', bible?.label || state.bible.id],
       ['Orations', T.languageName(state.languages.orations)],
-      ['Translation witness', witnessId && (witness && witness.label || witnessId)],
+      ['Translation witness', witnessId && (witness?.label || witnessId)],
       ['Translation rights', witness && rightsLabel(witness.rights)],
-      ['Translation caution', witness && witness.caution],
+      ['Translation caution', witness?.caution],
       ['Cycle', runtime.result ? cycleSummary(runtime.result, state) : 'Not selected'],
-      ['Historical boundary — stands before', recension && recension.boundaryLabel],
-      ['Recension coverage', recension && recension.coverage],
-      ['Proper recension basis', recension && recension.coverageBasis],
-      ['Proper text source', recension && recension.textSource],
-      ['Inheritance basis', recension && recension.inheritanceBasis],
-      ['Departure', recension && recension.departure &&
-        (rightsLabel(recension.departure) +
-          (recension.departureBasis ? ' — ' + recension.departureBasis : ''))],
-      ['Departure act-history station', recension && recension.departureAct],
+      ['Historical boundary — stands before', recension?.boundaryLabel],
+      ['Recension coverage', recension?.coverage],
+      ['Proper recension basis', recension?.coverageBasis],
+      ['Proper text source', recension?.textSource],
+      ['Inheritance basis', recension?.inheritanceBasis],
+      ['Departure', recension?.departure &&
+        (rightsLabel(recension.departure) + (recension.departureBasis ? ' — ' + recension.departureBasis : ''))],
+      ['Departure act-history station', recension && actStationLink(recension.departureAct)],
       ['Additional departures', additionalDepartures],
       ['Coverage', runtime.result
         ? coverageSummary(runtime.result, runtime.mass, runtime.structure)
-        : (recension && recension.notice || 'No formulary selected')]
+        : (recension?.notice || 'No formulary selected')]
     ]));
     detailsBody.appendChild(selection);
 
@@ -1311,6 +1323,7 @@
     detailsBody.appendChild(detailsLinkSection('Elsewhere in Triptych', [
       { label: 'The Story of Salvation', href: '../scripture/' },
       { label: 'How the Missal Changed', href: '../history/' },
+      { label: 'This edition on the Missal Timeline', href: editionTimelineHref(state.edition.id) },
       { label: 'Every Document', href: '../texts/' },
       { label: 'The Source Library', href: '../sources/' },
       { label: 'The Code, Canon by Canon', href: '../law/' }
@@ -1320,13 +1333,12 @@
   }
 
   function refreshDetailsAfterOutcome() {
-    const resolved = runtime.result && runtime.result.resolved;
-    const links = T.missalWitnessLinks(runtime.mass, resolved && resolved.form)
-      .concat(T.ordinaryWitnessLinks(runtime.ordinary, runtime.result && runtime.result.events));
+    const resolved = runtime.result?.resolved;
+    const links = T.missalWitnessLinks(runtime.mass, resolved?.form)
+      .concat(T.ordinaryWitnessLinks(runtime.ordinary, runtime.result?.events));
     T.displayMissalWitnessLinks(shellRoot, links);
     runtime.detailsLoaded = false;
-    detailsBody.replaceChildren(T.el('p', 'surface-note',
-      'Details load when this surface is opened.'));
+    detailsBody.replaceChildren(T.el('p', 'surface-note', 'Details load when this surface is opened.'));
     if (readerShell.openSurface() === 'details') populateDetails();
   }
 
@@ -1617,31 +1629,29 @@
     if (structure) fillOrations(structure, null, orationsSelect.value, null);
     browseStatus.textContent = 'Choose a formulary of this type; none was selected automatically.';
   });
-  formularySelect.addEventListener('change', function () {
-    const draft = runtime.draftStructure && runtime.draftStructure.calendar === missalSelect.value;
+  formularySelect.addEventListener('change', () => {
+    const draft = runtime.draftStructure?.calendar === missalSelect.value;
     const structure = draft ? runtime.draftStructure : runtime.structure;
     const groups = draft ? runtime.draftGroups : runtime.groups;
     if (structure) {
       const mass = selectedBrowseMass(groups);
-      const current = runtime.normalized && runtime.normalized.state;
-      fillMassForms(mass, browseKeepsCurrentFormulary() && current.form);
+      fillMassForms(mass, browseKeepsCurrentFormulary() && runtime.normalized?.state?.form);
       fillOrations(structure, mass, orationsSelect.value, null);
     }
   });
-  massFormSelect?.addEventListener('change', function () {
-    const current = runtime.normalized && runtime.normalized.state;
+  massFormSelect?.addEventListener('change', () => {
+    const current = runtime.normalized?.state;
     if (!current || !browseKeepsCurrentFormulary() || massFormField.hidden) return;
-    const draft = Object.assign({}, current, { form: massFormSelect.value });
+    const draft = { ...current, form: massFormSelect.value };
     delete draft.properChoices;
     delete draft.alternative;
     delete draft.cycle;
     fillOrations(runtime.structure, runtime.mass, orationsSelect.value, null, draft);
   });
-  orationsSelect.addEventListener('change', function () {
-    const draft = runtime.draftStructure && runtime.draftStructure.calendar === missalSelect.value;
+  orationsSelect.addEventListener('change', () => {
+    const draft = runtime.draftStructure?.calendar === missalSelect.value;
     const structure = draft ? runtime.draftStructure
-      : (runtime.structure && runtime.structure.calendar === missalSelect.value
-        ? runtime.structure : null);
+      : (runtime.structure?.calendar === missalSelect.value ? runtime.structure : null);
     const groups = draft ? runtime.draftGroups : runtime.groups;
     if (structure) {
       fillFormularies(groups, typeSelect.value, formularySelect.value);
@@ -1650,14 +1660,12 @@
   });
 
   function browseKeepsCurrentFormulary() {
-    const state = runtime.normalized && runtime.normalized.state;
-    return Boolean(state && state.formulary &&
-      state.edition.id === missalSelect.value &&
-      state.formulary.type === typeSelect.value &&
-      state.formulary.id === formularySelect.value);
+    const state = runtime.normalized?.state;
+    return Boolean(state?.formulary && state.edition.id === missalSelect.value &&
+      state.formulary.type === typeSelect.value && state.formulary.id === formularySelect.value);
   }
 
-  browseForm.addEventListener('submit', function (event) {
+  browseForm.addEventListener('submit', event => {
     event.preventDefault();
     if (!formularySelect.value) {
       browseStatus.textContent = 'Choose a formulary before applying this selection.';
@@ -1670,32 +1678,21 @@
       return;
     }
     const updates = {
-      missal: missalSelect.value,
-      type: typeSelect.value,
-      mass: formularySelect.value,
-      bible: bibleSelect.value,
-      orations: orationsSelect.value
+      missal: missalSelect.value, type: typeSelect.value, mass: formularySelect.value,
+      bible: bibleSelect.value, orations: orationsSelect.value
     };
-    const current = runtime.normalized && runtime.normalized.state;
-    const formChanged = massFormField?.hidden === false && current &&
-      massFormSelect.value !== current.form;
+    const current = runtime.normalized?.state;
+    const formChanged = massFormField?.hidden === false && current && massFormSelect.value !== current.form;
     if (massFormField?.hidden === false) updates.form = massFormSelect.value;
     updates[PUBLIC_KEYS.translationWitness] = witnessField.hidden ? null : witnessSelect.value;
-    const removals = [
-      'location', LEGACY_KEYS.cycle, LEGACY_KEYS.alternative,
-      LEGACY_KEYS.translationWitness
-    ];
-    if (!browseKeepsCurrentFormulary()) {
-      removals.push('form', PUBLIC_KEYS.cycle, PUBLIC_KEYS.alternative);
-    } else if (formChanged) {
-      removals.push(PUBLIC_KEYS.cycle, PUBLIC_KEYS.alternative);
-    }
+    const removals = ['location', LEGACY_KEYS.cycle, LEGACY_KEYS.alternative, LEGACY_KEYS.translationWitness];
+    if (!browseKeepsCurrentFormulary()) removals.push('form', PUBLIC_KEYS.cycle, PUBLIC_KEYS.alternative);
+    else if (formChanged) removals.push(PUBLIC_KEYS.cycle, PUBLIC_KEYS.alternative);
     if (!current || current.edition.id !== missalSelect.value) {
       removals.push('ordinary-lang');
-      (((runtime.manifests && runtime.manifests.ordinaryIndex || {}).calendars) || [])
-        .forEach(function (row) {
-          (row.variants || []).forEach(function (key) { removals.push(key); });
-        });
+      (runtime.manifests?.ordinaryIndex?.calendars || []).forEach(row => {
+        (row.variants || []).forEach(key => { removals.push(key); });
+      });
     }
     readerShell.close({ restoreFocus: false });
     navigate(updates, removals, {
@@ -1704,50 +1701,38 @@
     });
   });
 
-  contentsList.addEventListener('click', function (event) {
+  contentsList.addEventListener('click', event => {
     const button = event.target.closest('[data-reader-location]');
-    if (!button || !contentsList.contains(button) || !runtime.normalized ||
-        runtime.outcome !== 'ready') return;
-    canonicalize(runtime.normalized, {
-      kind: 'event', id: button.dataset.readerLocation
-    }, true);
+    if (!button || !contentsList.contains(button) || !runtime.normalized || runtime.outcome !== 'ready') return;
+    canonicalize(runtime.normalized, { kind: 'event', id: button.dataset.readerLocation }, true);
   });
 
-  document.querySelector('[data-mode="read"]').addEventListener('click', function () {
-    const current = runtime.normalized && runtime.normalized.state;
-    if (!current || current.requestedMode === 'read') {
-      readerShell.close();
-      return;
-    }
+  document.querySelector('[data-mode="read"]').addEventListener('click', () => {
+    const current = runtime.normalized?.state;
+    if (!current || current.requestedMode === 'read') { readerShell.close(); return; }
     const captured = readerShell.captureSemanticLocation();
     const location = current.requestedMode === 'compare'
       ? Compare.fromCompareLocation(captured, runtime.result)
       : ProperEvents.nearestProperLocation(captured, runtime.result);
     readerShell.close({ restoreFocus: false });
-    navigate({ mode: 'read' }, Compare?.URL_KEYS,
-      { location: location, focus: 'mode' });
+    navigate({ mode: 'read' }, Compare?.URL_KEYS, { location, focus: 'mode' });
   });
 
-  document.querySelector('[data-mode="missal"]')?.addEventListener('click', function () {
-    const current = runtime.normalized && runtime.normalized.state;
-    if (!current || current.requestedMode === 'missal') {
-      readerShell.close();
-      return;
-    }
+  document.querySelector('[data-mode="missal"]')?.addEventListener('click', () => {
+    const current = runtime.normalized?.state;
+    if (!current || current.requestedMode === 'missal') { readerShell.close(); return; }
     const captured = readerShell.captureSemanticLocation();
     const location = current.requestedMode === 'compare'
       ? Compare.fromCompareLocation(captured, runtime.result) : captured;
     readerShell.close({ restoreFocus: false });
-    navigate({ mode: 'missal' }, Compare?.URL_KEYS,
-      { location: location, focus: 'mode' });
+    navigate({ mode: 'missal' }, Compare?.URL_KEYS, { location, focus: 'mode' });
   });
 
   let historyQueued = false;
   function historyRender(event) {
     const explicitLocation = new URLSearchParams(window.location.hash.replace(/^#/, '')).has('location');
-    if (event && event.type === 'popstate' && !explicitLocation &&
-        event.state && Object.prototype.hasOwnProperty.call(event.state, 'propersReaderLocation')) {
-      runtime.pendingLocation = event.state && event.state.propersReaderLocation || null;
+    if (event?.type === 'popstate' && !explicitLocation && event.state && Object.hasOwn(event.state, 'propersReaderLocation')) {
+      runtime.pendingLocation = event.state.propersReaderLocation || null;
       runtime.pendingLocationSet = true;
     } else if (!historyQueued) {
       runtime.pendingLocation = null;
@@ -1755,10 +1740,7 @@
     }
     if (historyQueued) return;
     historyQueued = true;
-    queueMicrotask(function () {
-      historyQueued = false;
-      renderCandidate();
-    });
+    queueMicrotask(() => { historyQueued = false; renderCandidate(); });
   }
   window.addEventListener('popstate', historyRender);
   window.addEventListener('hashchange', historyRender);

@@ -1,0 +1,389 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-native-book",
+  "id": "tarazona-1500-canon-missae",
+  "title": "Tarazona 1500 (Missale Tirasonense): complete strict Canon Missae constituent",
+  "scope": "Complete strict Eucharistic Canon of the 13 February 1500 Tarazona-use missal printed at Pamplona by Arnaldo Guillén de Brocar (Bizkaia INC-35, PDF pp. 350-354): from the woodcut initial Te igitur at PDF p. 350 col. 1 through Et uoce alta dicit. Per omnia secula seculorum. R. Amen. at PDF p. 354 col. 1 immediately before Oremus preceptis salutaribus / Pater noster. Includes all printed headings, action rubrics, red N. placeholders and 26 printed crosses (✠) under declared selective Latin reading normalization.",
+  "transcribed_by": "AI source transcriber (Lane T3, direct PNG inspection of Tarazona 1500 PDF pp. 350-354)",
+  "stage_ids": [
+    "western-originals-batch3:tarazona-1500"
+  ],
+  "catalogue_witness_ids": [
+    "western:iberian-tarazona-1500"
+  ],
+  "components": [
+    "anaphoras"
+  ],
+  "languages": [
+    "la"
+  ],
+  "extent_kind": "constituent",
+  "excluded_book_divisions": [
+    "Mass preparation, Prefaces, and Sanctus before PDF p. 350 (including p. 349)",
+    "Oremus, Preceptis salutaribus, Pater noster, Libera nos, Agnus Dei, communion prayers and all subsequent material from PDF p. 354 col. 1 line 3 onward",
+    "Calendar, Temporale, Sanctorale, Commons, local-use instruction, episcopal arms, modern library card (p. 1) and colophon (p. 656)",
+    "Woodcut initial ornament, Gothic display type sizes, ink colour, gathering signature mark (pp at p. 350 foot) and diplomatic glyph variants"
+  ],
+  "date": {
+    "kind": "publication",
+    "label": "13 February 1500 Pamplona publication (Brocar colophon)",
+    "start_year": 1500,
+    "end_year": 1500,
+    "evidence": [
+      {
+        "source_id": "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.colophon",
+        "locus": "PDF page 656, lower left and upper right columns (xiij February 1500, Pamplona, Arnaldus Guillermus de Broquario)"
+      }
+    ]
+  },
+  "extent_path": "src/sources/inventories/eucharistic-books/support/tarazona-1500-canon-missae-extent.json",
+  "collation_path": "src/sources/inventories/eucharistic-books/support/tarazona-1500-canon-missae-review.json",
+  "witnesses": [
+    {
+      "id": "tarazona-1500-brocar-pdf",
+      "edition_id": "edition.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar",
+      "artifact_id": "artifact.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.bizkaia-pdf-c6e5dbd8",
+      "scope_pages": [
+        [
+          350,
+          354
+        ]
+      ],
+      "completeness_evidence": [
+        {
+          "source_id": "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-facsimile",
+          "locus": "PDF pages 350–354 of 658; complete bounded constituent scope."
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "unit.tarazona-1500.canon.te-igitur",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "te-igitur"
+      ],
+      "source_order": 1,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "tarazona-1500-brocar-pdf",
+      "witness_pages": [
+        [
+          350,
+          350
+        ]
+      ],
+      "passage_id": "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-te-igitur",
+      "text_sha256": "37a266b722cd316fc1d4af7fdc4395c302f76c808f138f026addc4317672b48b"
+    },
+    {
+      "unit_id": "unit.tarazona-1500.canon.memento-vivorum",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "memento-vivorum"
+      ],
+      "source_order": 2,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "tarazona-1500-brocar-pdf",
+      "witness_pages": [
+        [
+          350,
+          350
+        ]
+      ],
+      "passage_id": "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-memento-vivorum",
+      "text_sha256": "e17039c08921ed8d63eb5b5ed0ab2b67b9f1576fdc53d96f632849e465d89c44"
+    },
+    {
+      "unit_id": "unit.tarazona-1500.canon.communicantes",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "communicantes"
+      ],
+      "source_order": 3,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "tarazona-1500-brocar-pdf",
+      "witness_pages": [
+        [
+          350,
+          350
+        ],
+        [
+          351,
+          351
+        ]
+      ],
+      "passage_id": "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-communicantes",
+      "text_sha256": "2d8c9227c036e64ef32e2fcc5c9354899fe6ffdfce4205d9b005776d4b06a612"
+    },
+    {
+      "unit_id": "unit.tarazona-1500.canon.hanc-igitur",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "hanc-igitur"
+      ],
+      "source_order": 4,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "tarazona-1500-brocar-pdf",
+      "witness_pages": [
+        [
+          351,
+          351
+        ]
+      ],
+      "passage_id": "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-hanc-igitur",
+      "text_sha256": "d6100540f3234759492d62c46f5bc7673440eb09e38d43a434227f747d6ac275"
+    },
+    {
+      "unit_id": "unit.tarazona-1500.canon.quam-oblationem",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "quam-oblationem"
+      ],
+      "source_order": 5,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "tarazona-1500-brocar-pdf",
+      "witness_pages": [
+        [
+          351,
+          351
+        ]
+      ],
+      "passage_id": "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-quam-oblationem",
+      "text_sha256": "0eaf16e57e423a0b2d0a05749680dc10d53f5ce48063a1236f98a97b8711626e"
+    },
+    {
+      "unit_id": "unit.tarazona-1500.canon.qui-pridie",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "qui-pridie"
+      ],
+      "source_order": 6,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "institution-narrative-with-rubrics",
+      "witness_id": "tarazona-1500-brocar-pdf",
+      "witness_pages": [
+        [
+          351,
+          351
+        ]
+      ],
+      "passage_id": "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-qui-pridie",
+      "text_sha256": "b173c24073d94225ab21fe9cd9d46ec11e70693c4722a1080de472aeb1b36cf7"
+    },
+    {
+      "unit_id": "unit.tarazona-1500.canon.simili-modo",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "simili-modo"
+      ],
+      "source_order": 7,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "institution-narrative-with-rubrics",
+      "witness_id": "tarazona-1500-brocar-pdf",
+      "witness_pages": [
+        [
+          351,
+          351
+        ],
+        [
+          352,
+          352
+        ]
+      ],
+      "passage_id": "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-simili-modo",
+      "text_sha256": "edbdb735ca6529b3c85b6bb13e67ae137d012339bd920aadf0d91a5c65118a61"
+    },
+    {
+      "unit_id": "unit.tarazona-1500.canon.unde-et-memores",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "unde-et-memores"
+      ],
+      "source_order": 8,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "tarazona-1500-brocar-pdf",
+      "witness_pages": [
+        [
+          352,
+          352
+        ]
+      ],
+      "passage_id": "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-unde-et-memores",
+      "text_sha256": "8818d114a549ab71952a02d29540450f818f09e491f333f9cca6e3c7a9652494"
+    },
+    {
+      "unit_id": "unit.tarazona-1500.canon.supra-quae",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "supra-quae"
+      ],
+      "source_order": 9,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "tarazona-1500-brocar-pdf",
+      "witness_pages": [
+        [
+          352,
+          352
+        ]
+      ],
+      "passage_id": "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-supra-quae",
+      "text_sha256": "0fd5143a4946b8a0a96b63af76b276c436f715901dff8e87dbb9e014f7ee8098"
+    },
+    {
+      "unit_id": "unit.tarazona-1500.canon.supplices",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "supplices"
+      ],
+      "source_order": 10,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "tarazona-1500-brocar-pdf",
+      "witness_pages": [
+        [
+          352,
+          352
+        ],
+        [
+          353,
+          353
+        ]
+      ],
+      "passage_id": "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-supplices",
+      "text_sha256": "ee0aff1f756a7b7b7c74e993f0113272d25705a33cc0e2dc6ef30c17cefce442"
+    },
+    {
+      "unit_id": "unit.tarazona-1500.canon.memento-defunctorum",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "memento-defunctorum"
+      ],
+      "source_order": 11,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "tarazona-1500-brocar-pdf",
+      "witness_pages": [
+        [
+          353,
+          353
+        ]
+      ],
+      "passage_id": "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-memento-defunctorum",
+      "text_sha256": "80353fba9806277a79dd213986336015c6d006e73e4ca974c3561073a50d0d39"
+    },
+    {
+      "unit_id": "unit.tarazona-1500.canon.nobis-quoque",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "nobis-quoque"
+      ],
+      "source_order": 12,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "tarazona-1500-brocar-pdf",
+      "witness_pages": [
+        [
+          353,
+          353
+        ]
+      ],
+      "passage_id": "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-nobis-quoque",
+      "text_sha256": "e35a8b7b3f32bdc9ce883566dd964ecd4e1d0300e954da00b51259835e51d7bc"
+    },
+    {
+      "unit_id": "unit.tarazona-1500.canon.per-quem",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "per-quem"
+      ],
+      "source_order": 13,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "tarazona-1500-brocar-pdf",
+      "witness_pages": [
+        [
+          353,
+          353
+        ]
+      ],
+      "passage_id": "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-per-quem",
+      "text_sha256": "c9e6791d176265abfcbea6a444f85bf6f9034b7ea32955e8ff8e4fa39478eed5"
+    },
+    {
+      "unit_id": "unit.tarazona-1500.canon.per-ipsum",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "per-ipsum"
+      ],
+      "source_order": 14,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "doxology-with-rubrics",
+      "witness_id": "tarazona-1500-brocar-pdf",
+      "witness_pages": [
+        [
+          353,
+          353
+        ]
+      ],
+      "passage_id": "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-per-ipsum",
+      "text_sha256": "7f10928a7d4ed721e75bbd3ffca66c53521c49e5bc84af84ebc6da1e1eafb017"
+    },
+    {
+      "unit_id": "unit.tarazona-1500.canon.concluding-response",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "concluding-response"
+      ],
+      "source_order": 15,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "dialogue",
+      "witness_id": "tarazona-1500-brocar-pdf",
+      "witness_pages": [
+        [
+          354,
+          354
+        ]
+      ],
+      "passage_id": "passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-concluding-response",
+      "text_sha256": "aed3bf19a2d20667a11b7570a400b15089692e460f28d693799aa1e1c1d4765d"
+    }
+  ]
+}

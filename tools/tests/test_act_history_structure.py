@@ -46,8 +46,10 @@ def comparison_paths() -> set[str]:
 
 def expected_file_count() -> int:
     # The three recovered slices retain 505 fragments; coverage adds one
-    # catalogue, one file per comparison and one per bound native constituent.
-    return 506 + len(comparison_paths()) + len(native_text_paths())
+    # catalogue, one thin stage-history projection, one Source Library edition
+    # cross-reference index, one file per comparison and one per bound native
+    # constituent.
+    return 508 + len(comparison_paths()) + len(native_text_paths())
 
 
 def native_text_paths() -> set[str]:
@@ -142,6 +144,16 @@ class ActHistoryStructureTests(unittest.TestCase):
         self.assertIn(f"current: {expected_file_count()} files for 3 slices", checked.stdout)
         projected = self.projection_root
         self.assertTrue((projected / "catalogue.json").is_file())
+        self.assertTrue((projected / "stage-history.json").is_file())
+        stage_history = json.loads((projected / "stage-history.json").read_text())
+        self.assertEqual(stage_history["schema"], "triptych-eucharistic-stage-history/v1")
+        self.assertIn("tradition_taxonomy", stage_history)
+        self.assertIn("by_stage_id", stage_history.get("cross_references", {}))
+        self.assertTrue((projected / "edition-cross-references.json").is_file())
+        edition_xrefs = json.loads((projected / "edition-cross-references.json").read_text())
+        self.assertEqual(edition_xrefs["schema"], "triptych-eucharistic-edition-cross-references/v1")
+        self.assertEqual(edition_xrefs["count"], len(edition_xrefs["editions"]))
+        self.assertGreater(edition_xrefs["count"], 0)
         catalogue = json.loads((projected / "catalogue.json").read_text())
         self.assertEqual(comparison_paths(), {path.relative_to(projected).as_posix()
                                              for path in (projected / "comparisons").rglob("*") if path.is_file()})

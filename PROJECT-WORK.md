@@ -7130,6 +7130,41 @@ authorized rebasing this work and pushing it to `main`, including the automatic
 Pages deployment attempt that a main push triggers.
 The full project remains **in progress**.
 
+**Cold review, all-six-tradition native constituents, Visual Diff Studio & `main` reconciliation, 25 November 2026.**
+The [cold review report](workflows/reviews/missal-cold-review-2026-11-25/REPORT.md)
+documents the cold review and deduplicated reconciliation onto `462f311014`,
+preserving all Batch 4/5 dossiers, 20 prior checked native books, the unreviewed
+Greek Chrysostom drafts, and the browser-product architecture. Three net-new
+deduplicated stage dossiers (`eastern-expansion-2026-11.json`,
+`global-mission-regional-2026-11.json`, `western-uses-orders-2026-11.json`)
+expand the reconciled corpus to **42 dossiers, 278 canonical traditions** (all
+278 indexed in `eucharistic-tradition-taxonomy-v1.toml` across 10 rite families
+and 11 geographic regions), **568 stages** (533 not transcribed, 35 partial, 0
+complete whole books), **175 transitions**, **318 declared research gaps**,
+**2,052 catalogue entries** in 233 groups (458 Eastern, 1,535 Western, 59
+legacy), and **92 typed cross-tradition relationships**. Seventeen independently
+pixel-collated US-public-domain bounded constituents across all six Catholic
+liturgical traditions and seven languages (`la`, `syr`, `grc`, `hy`, `cop`,
+`gez`, `ar`) raise checked native-book constituents from 20 to **37** (540
+canonical units, 24,499 words) and source-hashed witness comparisons from 31 to
+**43**: Byzantine 1754 & 1873 Chrysostom (`grc`), Armenian 1642 & 1823 Badarak
+(`hy`), Coptic 1736 St. Basil (`cop`), Ge'ez 1914/15 Apostles (`gez`), Gregorian
+Hadrianum Wilson 1915 / Stowe Warner 1915 / Paris 1481 / Tarazona 1500 *Canon
+Missae* (`la`), Chaldean 1767 & 1901 and Syro-Malabar 1906 Addai & Mari (`syr`),
+Maronite 1594 & 1908 Twelve Apostles (`syr`), and Syriac Catholic 1843 & 1922
+St. James (`syr`). The History UI adds rite-family pills, region/search/has-text
+discovery, SVG era bands, multi-script typography fallbacks, and an exact Myers
+word-by-word Visual Diff Studio with reproducible `git diff --word-diff=color`
+commands; reverse cross-links connect **84 canonical Source Library editions**
+via `edition-cross-references.json`, `sources/`, `liturgy/{day,propers-reader}`,
+`library/*.md`, and `docs/the-mass.md`. Two independent cold browser builds
+recorded all 13 families (`30,620` files, `295,763,131` bytes), corpus indexes
+(`85,769` files, `60,573` records) and scoped release bindings (19 modified site
+sources) were refreshed, and deployment gates verified prior to fast-forward
+publication to `origin/main`. Whole-book transcription, post-1930 copyrighted
+editions, 318 archival gaps, and copy-to-copy Git parentage remain open; the
+full all-rite project remains **in progress**.
+
 **Main integration published and verified live, 21 October 2026.** The 35-commit feature line
 was rebased onto `edab7fee54e76daac24a1ec6c69141935c32f4c2`, preserving the
 concurrent publication work. The combined source library keeps main's canonical

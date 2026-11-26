@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-collation",
+  "book_id": "geez-1914-apostles-anaphora",
+  "title": "Asmara 1914/15 (Missale Aethiopicum): Anaphora of the Apostles core constituent — independent pixel-collation review",
+  "status": "verified",
+  "independent": true,
+  "complete_extent_verified": true,
+  "reviewer": "independent-collator-v3-alex-west",
+  "checked_on": "2026-11-25",
+  "binding_sha256": "aae6b26f3696b7d8ff466d217a6dd3ec962aa1646abe91b1dbe26b0c8bf42933",
+  "extent_sha256": "3fbd4e889732334fba445b1c08d62e43df21965fbdea17edc32db00e5a2214a2",
+  "witness_sha256": {
+    "geez-asmara-1914-bonn-pdf": "b126e66ae9150799dac65757a503d7d9ebad0ac0368110a1c07847d315dd7c01"
+  },
+  "unit_sha256": {
+    "unit.geez-1914.apostles.opening-dialogue": "83c62c9cea9c631d48f414d46a756e6eec93e4c214b4c31689bbbea54f141fcd",
+    "unit.geez-1914.apostles.preface-and-sanctus": "98d1ebc9bc384a841db51a4fec1a7d11bb6595d773305ff44c65b8e5472a09f0",
+    "unit.geez-1914.apostles.post-sanctus": "ba3492c5684f5e56ab1500757259b87a8cca85c6da7a68c747f8373e0ecb3e55",
+    "unit.geez-1914.apostles.institution-narrative": "f068674aa9070f581b1c43b36649d09f10ba997790bec35b483b48094be3bfeb",
+    "unit.geez-1914.apostles.anamnesis": "77406bca5669b1e91ecc9d034049858ebc97abc9e891b59114779e2a5308c4a9",
+    "unit.geez-1914.apostles.epiclesis-and-doxology": "5141930e86951ce43820514aaf222f82ea73be108ee4f21301af3ccf836ffd94"
+  },
+  "scope": "Bounded Ge'ez Anaphora of the Holy Apostles core constituent of the Asmara Catholic missal (imprint year ፲፱፻፯ = 1914/15; Roman approbation 25 Feb 1913; Asmara imprimatur 12 Apr 1913; ULB Bonn Goussen 1665, PDF pp. 40, 44-45): title and opening Eucharistic dialogue plus opening Preface (ነአኵተከ) on PDF p. 40; Christological preface continuation, Sanctus, Post-Sanctus, Institution Narrative (bread and cup), Anamnesis, Epiclesis (preserving the distinctive Asmara 1914/15 formula በተመጥዎተ፡ ዝንቱ፡ ኅብስት፡ ወጽዋዕ...), unity prayer and concluding doxology/peace on PDF pp. 44-45 (printed pp. ፳፱-፴ / 29-30), terminating at the decorative bar immediately before the Prayer of Fraction (ጸሎተ፡ ፈትቶ) and Our Father on PDF p. 46. Excludes the intervening Alexandrian intercessions and Prayer of Blessing (PDF p. 40 col. 2 lower half through p. 41), blank verso p. 42, and full-page Crucifixion illustration p. 43.",
+  "method": "Independent pixel-level visual inspection of all rendered facsimile pages by independent-collator-v3-alex-west (distinct from drafter AI source transcriber (Lane T3, direct PNG inspection of Asmara 1914/15 PDF pp. 40, 44-45)) on 2026-11-25. Applied 3 pixel-verified correction(s) relative to initial draft; verified every unit boundary, page account (1..181), and SHA-256 hash.",
+  "normalization_limit": "Direct reading from 220-dpi rendered PNG images (and column zooms) of Asmara 1914/15 PDF pp. 40, 44-45. UTF-8 NFC, LTR Ethiopic script (U+1200-U+137F), LF line endings. Preserves native Ge'ez fidel vowel orders, labiovelars (ኰ, ቍ, ኵ, ቍዓ, etc.), and Ethiopic numerals (፪, ፫, ፭, ፮). Standardizes Ethiopic punctuation as printed: wordspace '፡' (U+1361), full stop '።' (U+1362), comma '፣' (U+1363), preface/question stop '፧' (U+1367). Retains printed speaker cues (ይ፡ ካ። = priest, ይ፡ ሕ። = people, ይ፡ ዲ። = deacon, ካ፡ ን። = assistant priest), inline red gesture cues such as (አማሪ) ('pointing') and bracketed [ወእምድኅረ፡ ንስቲት], quotation marks around the consecration words (”...”), and printed crosses as '✠'. Line wraps within speakers/rubrics joined cleanly; each speaker turn or rubric block occupies one physical line. Excludes page numerals (፳፱, ፴), ornament and colour.",
+  "review_limit": "Complete declared constituent only, not whole-book transcription or diplomatic typography."
+}

@@ -1,0 +1,166 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-native-book",
+  "id": "maronite-1594-anaphora",
+  "title": "Missale Chaldaicum iuxta ritum Ecclesiae nationis Maronitarum (Rome Medici, 1594) — Anaphora of the Twelve Apostles Core",
+  "scope": "Bounded constituent of five core units of the Anaphora of the Twelve Apostles (Opening Dialogue, Institution of Bread, Institution of Chalice, Epiclesis Call/Kyrie, and Epiclesis Consecration/Salvation Petition) in Classical Syriac (syr), directly aligned with Beirut 1908; intervening Preface, Post-Sanctus, Anamnesis, secret Epiclesis preamble, and post-epiclesis fruits prayer are excluded due to dense archaic Medici cursive ligatures and structural divergence in 1908's inline Ordo Communis.",
+  "transcribed_by": "lane-t2-syriac",
+  "stage_ids": [
+    "maronite-rome1592-1594"
+  ],
+  "catalogue_witness_ids": [
+    "eastern:mar-1592-94"
+  ],
+  "components": [
+    "anaphoras"
+  ],
+  "languages": [
+    "syr"
+  ],
+  "extent_kind": "constituent",
+  "excluded_book_divisions": [
+    "Latin title (PDF 5), dedication (PDF 7-8), native Syriac title with 1592 imprint (PDF 9), Ordo Communis, and preceding anaphoras (PDF 1-126)",
+    "Intervening Preface, Sanctus, and Post-Sanctus on PDF 127, Last Supper woodcut above Bread on PDF 128, Anamnesis on PDF 129-130 top, secret Epiclesis preamble on PDF 130 mid, and post-epiclesis fruits paragraph on PDF 130 bottom",
+    "Post-epiclesis diptychs, fraction, remaining anaphoras (including Sharar), Latin colophon and examiner approbation (PDF 296), and back matter (PDF 131-300)"
+  ],
+  "date": {
+    "kind": "publication",
+    "label": "1594 (Syriac title 1592)",
+    "start_year": 1594,
+    "end_year": 1594,
+    "evidence": [
+      {
+        "source_id": "passage.maronite-church.qurbono.1594-rome-medici.titles-and-colophon",
+        "locus": "Latin title (PDF 5) and Latin colophon (PDF 296) carry Romae, in Typographia Medicea, 1594; native Syriac title leaf (PDF 9) retains a Latin imprint dated 1592."
+      }
+    ]
+  },
+  "extent_path": "src/sources/inventories/eucharistic-books/support/maronite-1594-anaphora-extent.json",
+  "collation_path": "src/sources/inventories/eucharistic-books/support/maronite-1594-anaphora-review.json",
+  "witnesses": [
+    {
+      "id": "maronite-1594-rome-medici-ia-pdf",
+      "edition_id": "edition.maronite-church.qurbono.1594-rome-medici",
+      "artifact_id": "artifact.maronite-church.qurbono.1594-rome-medici.ia-scan-pdf-dbab3b5b",
+      "scope_pages": [
+        [
+          127,
+          130
+        ]
+      ],
+      "completeness_evidence": [
+        {
+          "source_id": "passage.maronite-church.qurbono.1594-rome-medici.anaphora-facsimile",
+          "locus": "PDF pages 127–130 of 300; complete bounded constituent scope."
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "maronite-1594-anaphora.01-opening-dialogue",
+      "native_path": [
+        "anaphoras",
+        "twelve-apostles",
+        "01-opening-dialogue"
+      ],
+      "source_order": 1,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "dialogue",
+      "witness_id": "maronite-1594-rome-medici-ia-pdf",
+      "witness_pages": [
+        [
+          127,
+          127
+        ]
+      ],
+      "passage_id": "passage.maronite-church.qurbono.1594-rome-medici.anaphora-01-opening-dialogue",
+      "text_sha256": "3bcde386d02ee82c608482a9175674f5827391f75c2e986202ceda2b766b465c"
+    },
+    {
+      "unit_id": "maronite-1594-anaphora.02-institution-bread",
+      "native_path": [
+        "anaphoras",
+        "twelve-apostles",
+        "02-institution-bread"
+      ],
+      "source_order": 2,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "institution-narrative",
+      "witness_id": "maronite-1594-rome-medici-ia-pdf",
+      "witness_pages": [
+        [
+          128,
+          128
+        ]
+      ],
+      "passage_id": "passage.maronite-church.qurbono.1594-rome-medici.anaphora-02-institution-bread",
+      "text_sha256": "56f9b269f417fff64ff32d8728b0666864ad05dfdca5615cf555c0cf012b3517"
+    },
+    {
+      "unit_id": "maronite-1594-anaphora.03-institution-chalice",
+      "native_path": [
+        "anaphoras",
+        "twelve-apostles",
+        "03-institution-chalice"
+      ],
+      "source_order": 3,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "institution-narrative",
+      "witness_id": "maronite-1594-rome-medici-ia-pdf",
+      "witness_pages": [
+        [
+          129,
+          129
+        ]
+      ],
+      "passage_id": "passage.maronite-church.qurbono.1594-rome-medici.anaphora-03-institution-chalice",
+      "text_sha256": "635cde76a9b75a2e0c59c90ea5d0db1f40dd101e494e78f8d513c61b62873067"
+    },
+    {
+      "unit_id": "maronite-1594-anaphora.04-epiclesis-call",
+      "native_path": [
+        "anaphoras",
+        "twelve-apostles",
+        "04-epiclesis-call"
+      ],
+      "source_order": 4,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "dialogue",
+      "witness_id": "maronite-1594-rome-medici-ia-pdf",
+      "witness_pages": [
+        [
+          130,
+          130
+        ]
+      ],
+      "passage_id": "passage.maronite-church.qurbono.1594-rome-medici.anaphora-04-epiclesis-call",
+      "text_sha256": "0f8367841f61f7dd41e73b6d59f72ed534219b326b74d2a1c5bbd5284a49bcd8"
+    },
+    {
+      "unit_id": "maronite-1594-anaphora.05-epiclesis-consecration",
+      "native_path": [
+        "anaphoras",
+        "twelve-apostles",
+        "05-epiclesis-consecration"
+      ],
+      "source_order": 5,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "maronite-1594-rome-medici-ia-pdf",
+      "witness_pages": [
+        [
+          130,
+          130
+        ]
+      ],
+      "passage_id": "passage.maronite-church.qurbono.1594-rome-medici.anaphora-05-epiclesis-consecration",
+      "text_sha256": "7c11417135875f9a032f9276b8b4541289a2e8f66ed02928a1bda59212bbed05"
+    }
+  ]
+}

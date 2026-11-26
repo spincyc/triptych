@@ -1143,6 +1143,44 @@ class CrossInstrumentLinkTest(unittest.TestCase):
     )
     self.assertEqual(reopened["hash"], url[len("../sources/"):])
 
+  def test_liturgy_readers_link_act_stations_to_the_history_map(self):
+    for relative, bindings in (
+      ("liturgy/day.js", {"row": {"act": "maxima-redemptionis-1955"}}),
+      ("liturgy/propers-reader.js", {"actId": "editio-typica-1962"}),
+    ):
+      with self.subTest(instrument=relative):
+        written = probe(probe="assigned", file=relative, anchor="stationLink.href =", bindings=bindings)
+        url = written["value"]
+        self.assertTrue(url.startswith("../history/?view=map"), url)
+        query_and_hash = url.split("?", 1)[1]
+        query_part, hash_part = query_and_hash.split("#", 1)
+        self.assertIn("view=map", query_part)
+        self.assertIn("slice=roman-holy-week", query_part)
+        arriving = probe(probe="core", hash="#" + hash_part)["read"]
+        self.assertEqual(list(arriving), ["station"])
+        self.assertLessEqual(set(arriving), set(HISTORY_VIEW_HASH_KEYS["map"]))
+
+  def test_sources_links_editions_back_to_the_missal_timeline_and_catalogue(self):
+    timeline_url = probe(
+      probe="assigned", file="sources/sources.js",
+      anchor="stageLink.href =",
+      bindings={"st": {"tradition_id": "roman-stages-pian", "id": "roman-stages-1570"}},
+    )["value"]
+    self.assertTrue(timeline_url.startswith("../history/?view=timeline#"), timeline_url)
+    arriving = probe(probe="core", hash="#" + timeline_url.split("#", 1)[1])["read"]
+    self.assertEqual(arriving, {"tradition": "roman-stages-pian", "stage": "roman-stages-1570"})
+    self.assertLessEqual(set(arriving), set(HISTORY_VIEW_HASH_KEYS["timeline"]))
+
+    catalogue_url = probe(
+      probe="assigned", file="sources/sources.js",
+      anchor="recordLink.href =",
+      bindings={"rec": {"id": "western:roman-1570"}},
+    )["value"]
+    self.assertTrue(catalogue_url.startswith("../history/?view=catalogue#"), catalogue_url)
+    arriving_cat = probe(probe="core", hash="#" + catalogue_url.split("#", 1)[1])["read"]
+    self.assertEqual(arriving_cat, {"record": "western:roman-1570"})
+    self.assertLessEqual(set(arriving_cat), set(HISTORY_VIEW_HASH_KEYS["catalogue"]))
+
   def test_every_cross_entrance_deep_link_has_its_two_sided_contract_above(self):
     """Another link needs its own two-sided test; this catches its arrival.
 
@@ -1156,9 +1194,16 @@ class CrossInstrumentLinkTest(unittest.TestCase):
       for line in script.read_text(encoding="utf-8").splitlines():
         if re.search(r"""\.href\s*=\s*['"]\.\./""", line):
           found.append((script.relative_to(BROWSER).as_posix(), line.strip()))
-    self.assertEqual(len(found), 2, found)
-    self.assertCountEqual([relative for relative, _ in found],
-                          ["catena/catena.js", "history/history.js"])
+    expected_files = [
+      "catena/catena.js",
+      "history/history.js",
+      "liturgy/day.js",
+      "liturgy/propers-reader.js",
+      "sources/sources.js",
+      "sources/sources.js",
+      "sources/sources.js",
+    ]
+    self.assertEqual([row[0] for row in found], expected_files, found)
 
 
 @needs_node

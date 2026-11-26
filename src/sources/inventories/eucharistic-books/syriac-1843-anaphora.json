@@ -1,0 +1,192 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-native-book",
+  "id": "syriac-1843-anaphora",
+  "title": "Missale Syriacum (Rome Propaganda, 1843) — Anaphora of St. James Core",
+  "scope": "Bounded constituent of the six core prayers of the Anaphora of St. James (Preface, Sanctus, Post-Sanctus, Institution Narrative, Anamnesis, and Epiclesis) in Classical Syriac (syr), reading the right-hand Syriac column on bilingual Syriac/Garshuni pages (PDF 135, 136, 139, 140 L1) and full-width Syriac on monolingual pages (PDF 136 bottom, 138, 140), excluding the scan-degraded red-ink opening Dialogue line on PDF 135, the Crucifixion engraving plate at PDF 137, Garshuni columns, rubrics, and post-epiclesis diptychs.",
+  "transcribed_by": "lane-t2-syriac",
+  "stage_ids": [
+    "west-syriac-stages-rome1843"
+  ],
+  "catalogue_witness_ids": [
+    "eastern:syr-rome-1843"
+  ],
+  "components": [
+    "anaphoras"
+  ],
+  "languages": [
+    "syr"
+  ],
+  "extent_kind": "constituent",
+  "excluded_book_divisions": [
+    "Front matter, Latin and Syriac titles (PDF 1-10), Ordo Communis, Presanctified rite, and pre-anaphoral prayers of St. James including the scan-degraded red-ink Dialogue line on PDF 135 (PDF 11-135 top)",
+    "Parallel left-hand Garshuni/Arabic column on bilingual pages (PDF 135, 136, 139, 140 L1) and printed speaker/posture rubrics",
+    "Full-page Crucifixion engraving plate before the Institution Narrative (PDF 137)",
+    "Post-epiclesis diptychs, fraction, communion, remaining six anaphoras, Patriarch Giarve 1840 attestation and Roman imprimaturs (PDF 140 bottom-279)"
+  ],
+  "date": {
+    "kind": "publication",
+    "label": "1843",
+    "start_year": 1843,
+    "end_year": 1843,
+    "evidence": [
+      {
+        "source_id": "passage.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.title-and-patriarchal-attestation",
+        "locus": "Latin title and Propaganda Fide 1843 imprint at PDF 10; Syriac title at PDF 9; Patriarch Ignazio Pietro Giarve attestation (Aleppo, 31 August 1840) and Roman imprimaturs at PDF 272."
+      }
+    ]
+  },
+  "extent_path": "src/sources/inventories/eucharistic-books/support/syriac-1843-anaphora-extent.json",
+  "collation_path": "src/sources/inventories/eucharistic-books/support/syriac-1843-anaphora-review.json",
+  "witnesses": [
+    {
+      "id": "syriac-1843-rome-google-pdf",
+      "edition_id": "edition.syriac-catholic-church.missale-syriacum.1843-rome-propaganda",
+      "artifact_id": "artifact.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.google-scan-pdf-4bc875a2",
+      "scope_pages": [
+        [
+          135,
+          136
+        ],
+        [
+          138,
+          140
+        ]
+      ],
+      "completeness_evidence": [
+        {
+          "source_id": "passage.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-facsimile",
+          "locus": "PDF pages 135–136, 138–140 of 279; complete bounded constituent scope."
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "syriac-1843-anaphora.01-preface",
+      "native_path": [
+        "anaphoras",
+        "st-james",
+        "01-preface"
+      ],
+      "source_order": 1,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "syriac-1843-rome-google-pdf",
+      "witness_pages": [
+        [
+          135,
+          136
+        ]
+      ],
+      "passage_id": "passage.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-01-preface",
+      "text_sha256": "75e5e23f56a089974ceca1582aa905ee43f438f78c5b218a4624de9cbcac5ba6"
+    },
+    {
+      "unit_id": "syriac-1843-anaphora.02-sanctus",
+      "native_path": [
+        "anaphoras",
+        "st-james",
+        "02-sanctus"
+      ],
+      "source_order": 2,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "acclamation",
+      "witness_id": "syriac-1843-rome-google-pdf",
+      "witness_pages": [
+        [
+          136,
+          136
+        ]
+      ],
+      "passage_id": "passage.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-02-sanctus",
+      "text_sha256": "8484fb7b28874a3c373a8404fb0d23c2a88e3a515a87a8145a627b6782e8aff0"
+    },
+    {
+      "unit_id": "syriac-1843-anaphora.03-post-sanctus",
+      "native_path": [
+        "anaphoras",
+        "st-james",
+        "03-post-sanctus"
+      ],
+      "source_order": 3,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "syriac-1843-rome-google-pdf",
+      "witness_pages": [
+        [
+          136,
+          136
+        ]
+      ],
+      "passage_id": "passage.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-03-post-sanctus",
+      "text_sha256": "cae663ca7f24065b437130221ca25b4bb567ebde0ff5318d26cc49dcfc9ff641"
+    },
+    {
+      "unit_id": "syriac-1843-anaphora.04-institution-narrative",
+      "native_path": [
+        "anaphoras",
+        "st-james",
+        "04-institution-narrative"
+      ],
+      "source_order": 4,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "institution-narrative",
+      "witness_id": "syriac-1843-rome-google-pdf",
+      "witness_pages": [
+        [
+          138,
+          138
+        ]
+      ],
+      "passage_id": "passage.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-04-institution-narrative",
+      "text_sha256": "b64a5d80487ee26c4eb3a345b149f7540189076157ebc3c46d780099dff06097"
+    },
+    {
+      "unit_id": "syriac-1843-anaphora.05-anamnesis",
+      "native_path": [
+        "anaphoras",
+        "st-james",
+        "05-anamnesis"
+      ],
+      "source_order": 5,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "syriac-1843-rome-google-pdf",
+      "witness_pages": [
+        [
+          139,
+          140
+        ]
+      ],
+      "passage_id": "passage.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-05-anamnesis",
+      "text_sha256": "5fd300f24dbea48f71bf6d57be2fb53c75172230b2936c4daef4307ea00a7f7a"
+    },
+    {
+      "unit_id": "syriac-1843-anaphora.06-epiclesis",
+      "native_path": [
+        "anaphoras",
+        "st-james",
+        "06-epiclesis"
+      ],
+      "source_order": 6,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "syriac-1843-rome-google-pdf",
+      "witness_pages": [
+        [
+          140,
+          140
+        ]
+      ],
+      "passage_id": "passage.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-06-epiclesis",
+      "text_sha256": "c10ee8a2cf4123e7a71e131217efc4a1f02ee421ca6a046fca431fc6ae61dbd6"
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-native-book",
+  "id": "syriac-1922-anaphora",
+  "title": "Missale iuxta ritum Ecclesiae Apostolicae Antiochenae Syrorum (Sharfeh Patriarchal, 1922) — Anaphora of St. James Core",
+  "scope": "Bounded constituent of the exact same six aligned core units of the Anaphora of St. James (Preface, Sanctus, Post-Sanctus, Institution Narrative, Anamnesis, and Epiclesis) in Classical Syriac (syr), enabling a direct 1843 vs 1922 Syriac Catholic visual diff; reads right-hand Syriac column on bilingual pages (PDF 246, 245) and full-width Syriac on monolingual pages (PDF 245 bottom, 244 L1, 241, 240, 239), excluding Dialogue, parallel Garshuni, red rubrics, blank page PDF 243, and Crucifixion engraving plate PDF 242.",
+  "transcribed_by": "lane-t2-syriac",
+  "stage_ids": [
+    "west-syriac-stages-sharfeh1922"
+  ],
+  "catalogue_witness_ids": [
+    "eastern:syr-1922"
+  ],
+  "components": [
+    "anaphoras"
+  ],
+  "languages": [
+    "syr"
+  ],
+  "extent_kind": "constituent",
+  "excluded_book_divisions": [
+    "Latin front matter, Rahmani 8 December 1922 decree, Latin liturgical dissertation, and Arabic/Syriac contents (PDF 1-23), and post-epiclesis diptychs, fraction, communion, remaining six anaphoras, and propers (PDF 24-238)",
+    "Pre-anaphoral Ordo Communis, Dialogue, and Syriac title (PDF 246 top-343; Syriac title at PDF 339)",
+    "Parallel left-hand Garshuni/Arabic columns (PDF 246, 245), red rubrics, editorial 'etc.' (ܗܟܢܐ) cues, silent Sanctus cue line (PDF 245), blank leaf (PDF 243), and Crucifixion engraving plate (PDF 242)"
+  ],
+  "date": {
+    "kind": "publication",
+    "label": "1922",
+    "start_year": 1922,
+    "end_year": 1922,
+    "evidence": [
+      {
+        "source_id": "passage.syriac-catholic-church.missale-syriacum.1922-sharfeh-patriarchal.title-and-patriarchal-prescription",
+        "locus": "Latin title and Sharfeh 1922 imprint at PDF 6; Patriarch Ignatius Ephrem II Rahmani decree dated Beirut, 8 December 1922 at PDF 8-9 (printed pp. 3-4); Syriac title at PDF 339."
+      }
+    ]
+  },
+  "extent_path": "src/sources/inventories/eucharistic-books/support/syriac-1922-anaphora-extent.json",
+  "collation_path": "src/sources/inventories/eucharistic-books/support/syriac-1922-anaphora-review.json",
+  "witnesses": [
+    {
+      "id": "syriac-1922-sharfeh-bonn-pdf",
+      "edition_id": "edition.syriac-catholic-church.missale-syriacum.1922-sharfeh-patriarchal",
+      "artifact_id": "artifact.syriac-catholic-church.missale-syriacum.1922-sharfeh-patriarchal.bonn-scan-pdf-40a6d45f",
+      "scope_pages": [
+        [
+          239,
+          241
+        ],
+        [
+          244,
+          246
+        ]
+      ],
+      "completeness_evidence": [
+        {
+          "source_id": "passage.syriac-catholic-church.missale-syriacum.1922-sharfeh-patriarchal.anaphora-facsimile",
+          "locus": "PDF pages 239–241, 244–246 of 343; complete bounded constituent scope."
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "syriac-1922-anaphora.01-preface",
+      "native_path": [
+        "anaphoras",
+        "st-james",
+        "01-preface"
+      ],
+      "source_order": 1,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "syriac-1922-sharfeh-bonn-pdf",
+      "witness_pages": [
+        [
+          245,
+          245
+        ],
+        [
+          246,
+          246
+        ]
+      ],
+      "passage_id": "passage.syriac-catholic-church.missale-syriacum.1922-sharfeh-patriarchal.anaphora-01-preface",
+      "text_sha256": "7206baeaf95881a56ad43665aa872bb1b75ae70a3b833e3cbddcc960b67ec6d4"
+    },
+    {
+      "unit_id": "syriac-1922-anaphora.02-sanctus",
+      "native_path": [
+        "anaphoras",
+        "st-james",
+        "02-sanctus"
+      ],
+      "source_order": 2,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "acclamation",
+      "witness_id": "syriac-1922-sharfeh-bonn-pdf",
+      "witness_pages": [
+        [
+          245,
+          245
+        ]
+      ],
+      "passage_id": "passage.syriac-catholic-church.missale-syriacum.1922-sharfeh-patriarchal.anaphora-02-sanctus",
+      "text_sha256": "f98b7120e1eb0a3e8f78beec775e81a7a5220697c5b327f597f9dd2236bb3183"
+    },
+    {
+      "unit_id": "syriac-1922-anaphora.03-post-sanctus",
+      "native_path": [
+        "anaphoras",
+        "st-james",
+        "03-post-sanctus"
+      ],
+      "source_order": 3,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "syriac-1922-sharfeh-bonn-pdf",
+      "witness_pages": [
+        [
+          244,
+          244
+        ],
+        [
+          245,
+          245
+        ]
+      ],
+      "passage_id": "passage.syriac-catholic-church.missale-syriacum.1922-sharfeh-patriarchal.anaphora-03-post-sanctus",
+      "text_sha256": "7b72ad496826ebdf7e3cbacfd4cedc10438b84670224d4f4fa22a155156fc252"
+    },
+    {
+      "unit_id": "syriac-1922-anaphora.04-institution-narrative",
+      "native_path": [
+        "anaphoras",
+        "st-james",
+        "04-institution-narrative"
+      ],
+      "source_order": 4,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "institution-narrative",
+      "witness_id": "syriac-1922-sharfeh-bonn-pdf",
+      "witness_pages": [
+        [
+          241,
+          241
+        ]
+      ],
+      "passage_id": "passage.syriac-catholic-church.missale-syriacum.1922-sharfeh-patriarchal.anaphora-04-institution-narrative",
+      "text_sha256": "0f4cc9bc7fc649ced6dabaa02e5e9fdff8dadc7428ef045f44fb41e41200199a"
+    },
+    {
+      "unit_id": "syriac-1922-anaphora.05-anamnesis",
+      "native_path": [
+        "anaphoras",
+        "st-james",
+        "05-anamnesis"
+      ],
+      "source_order": 5,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "syriac-1922-sharfeh-bonn-pdf",
+      "witness_pages": [
+        [
+          240,
+          240
+        ]
+      ],
+      "passage_id": "passage.syriac-catholic-church.missale-syriacum.1922-sharfeh-patriarchal.anaphora-05-anamnesis",
+      "text_sha256": "339010bf49fb023bc08ffb7c88af46c5fc1e8ce986687f38f169aca6b63f08de"
+    },
+    {
+      "unit_id": "syriac-1922-anaphora.06-epiclesis",
+      "native_path": [
+        "anaphoras",
+        "st-james",
+        "06-epiclesis"
+      ],
+      "source_order": 6,
+      "language": "syr",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "syriac-1922-sharfeh-bonn-pdf",
+      "witness_pages": [
+        [
+          239,
+          239
+        ],
+        [
+          240,
+          240
+        ]
+      ],
+      "passage_id": "passage.syriac-catholic-church.missale-syriacum.1922-sharfeh-patriarchal.anaphora-06-epiclesis",
+      "text_sha256": "e1001bd3845466a73c1975a49b0ae56dbc46af8a3035121be3e83dfdca8bf00c"
+    }
+  ]
+}

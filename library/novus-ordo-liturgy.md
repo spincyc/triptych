@@ -2,7 +2,7 @@
 
 [Return to Liturgy](liturgy.md)
 
-The Mass commonly called the *Novus Ordo*, studied in the 2008 Latin Roman Missal, its 2011 U.S. English edition, and the U.S. Lectionary for Mass.
+The Mass commonly called the *Novus Ordo*, studied in the 2008 Latin Roman Missal, its 2011 U.S. English edition, and the U.S. Lectionary for Mass. Follow the postconciliar editions and their relationship to earlier Roman books in **[Eucharistic Books Through History (Postconciliar Roman Missal)](../history/?view=timeline)**.
 
 [Core and reference works](#core-and-reference-works) ·
 [Seasonal handbooks](#seasonal-handbooks) ·
