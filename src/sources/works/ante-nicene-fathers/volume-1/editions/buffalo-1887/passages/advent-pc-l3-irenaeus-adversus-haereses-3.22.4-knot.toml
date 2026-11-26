@@ -1,0 +1,17 @@
+schema = 1
+record_type = "passage"
+id = "passage.ante-nicene-fathers.volume-1.buffalo-1887.advent-pc-l3-irenaeus-adversus-haereses-3.22.4-knot"
+edition_id = "edition.ante-nicene-fathers.volume-1.buffalo-1887"
+artifact_id = "artifact.ante-nicene-fathers.volume-1.buffalo-1887.advent-pc-l3-irenaeus-adversus-haereses-3.22.4-checked-text-d7fd8fef"
+artifact_sha256 = "d7fd8feff59722a817631c38480423a56037adee908b1923962497cdc9f9ddf5"
+locus = "Irenaeus, Against Heresies III.22.4 (closing sentences)"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The last two sentences of III.22.4, printed page 455 (PDF page 473), ending the chapter: the knot of Eve's disobedience loosed by the obedience of Mary. Not an Advent Office reading appointment."
+physical_line_ranges = [[3, 4]]
+text = "And thus also it was that the knot of Eve’s disobedience was loosed by the obedience of Mary. For what the virgin Eve had bound fast through unbelief, this did the virgin Mary set free through faith."
+transcription_segments = [
+  { line = 3, text = "And thus also it was that the knot of Eve’s disobedience was loosed by the obedience of Mary." },
+  { line = 4, text = "For what the virgin Eve had bound fast through unbelief, this did the virgin Mary set free through faith." },
+]
+verified_on = "2026-11-26"
+notes = "The CCEL text agrees. The page's footnote 6 (on the difficulty of the reasoning) belongs to the sentences between the two passages of this artifact, which are not transcribed."

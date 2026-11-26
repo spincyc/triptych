@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.advent-pc-l2-veronense-preface-antecedents-830f5efa"
+edition_id = "edition.catholic-church.sacramentarium-veronense.feltoe-1896"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Literal readings and notes of the Cambridge 1896 Feltoe printing, public domain in the United States by date of publication. Only printed book text is carried."
+rights_jurisdiction = "United States"
+provenance = "Transcribed on 2026-11-26 by advent-pc research lane 2 from page images of the whole parent PDF, fetched over HTTPS with curl on 2026-11-26 from archive.org (registered source_url of the parent artifact); its SHA-256 3b991b133889bbd4803831455bb4f49de30ecb4d8386534cee1f80f79541967a and byte size 19,868,448 equal the registered parent artifact. Printed pp. 21, 22, 159, 162 and 163 = PDF pp. 45, 46, 183, 186 and 187, rendered with pdftoppm at 250 dpi and cropped; every transcribed line was read on the image. No source text passed through a language model."
+retrieved = "2026-11-26"
+sha256 = "830f5efaaa011d0b2fbf415316f0ac5ee33c0475b9e699491db6fd764a02ce6e"
+byte_size = 1292
+path = "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/advent-pc-l2-veronense-preface-antecedents-830f5efa/veronense-preface-antecedents.txt"
+derived_from = "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13"
+transformation = "Read the named printed pages as images and transcribe with one unit per LF-terminated UTF-8 line, each prefixed by a braced locator; preserve wording, spelling, punctuation, Feltoe's daggers and editorial square brackets; abbreviations are kept as their printed letters without the overline (dign, Dns, Ihs Xrs, Ihm Xrm Dnum, N DNI, KAL, IAN); join line-end hyphenation; omit marginal numbers, line numbers, superscript footnote markers and the vertical bar marking a manuscript division. The p. 22 and p. 159 lines are excerpts that stop or start mid-period, as their locators state."
+indexable = true
+encoding = "utf-8"
+notes = "Created by the advent-pc lane-2 research pass (postconciliar Advent handbook). Selected antecedent or witness units only; not a whole-page transcription."

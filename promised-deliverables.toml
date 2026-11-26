@@ -144,6 +144,49 @@ state = "complete"
   evidence = ["PROJECT-WORK.md", "guidance/liturgy/propers-production-plan.md"]
 
 [[deliverables]]
+id = "claude-postconciliar-advent-handbook-2026-11-26"
+owner = "library/novus-ordo-liturgy.md"
+promise = "Author and publish a Claude seasonal handbook for Advent in the postconciliar Roman Rite as used in the United States (Roman Missal third edition, U.S. English 2011; U.S. Lectionary for Mass; Liturgy of the Hours), under guidance/liturgy/postconciliar-seasonal-handbooks.md: a deeply Catholic, patristic, saintly, papal, historical, pedagogical and prayerful handbook with the season's history through the Council and the current books, the Mass and Hours read together, the Fathers, popes and saints, a rule of life and confession, readings and a received prayer for every Sunday cycle and occurring day, and a cold review."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "witnesses-and-research"
+  criterion = "The leaf's research/scope.md records the plan and findings, research/source-audit.md maps every quotation and consequential historical, liturgical and legal claim to a keyed source, and new witnesses are registered in the source library with research/source-bindings.toml binding them; make check-sources passes."
+  status = "pass"
+  evidence = [
+    "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/research/scope.md",
+    "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/research/source-audit.md",
+    "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/research/source-bindings.toml",
+    "src/sources/inventories/source-containment-v1.toml",
+    "src/sources/commentary/held-passage-review.yaml",
+    "THIRD_PARTY.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "handbook-content"
+  criterion = "The leaf liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent holds a body of about 15,000 to 20,000 words with daily readings, prayer texts, scope and references appendices; every quotation agrees with a checked transcription; no ICEL, NABRE or modern Hours English is reproduced; prayers come only from received witnesses; law, custom and counsel are kept apart with body of law, territory and date."
+  status = "pass"
+  evidence = [
+    "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/publication.toml",
+    "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/sections/95-scope.tex",
+    "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/sections/99-references.tex",
+  ]
+
+  [[deliverables.requirements]]
+  id = "cold-review"
+  criterion = "A blind reader review and an independent accuracy review of the draft are dispositioned in the leaf's research/cold-review.md and every accepted finding is fixed."
+  status = "pass"
+  evidence = [
+    "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/research/cold-review.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "installed"
+  criterion = "Document-schema, content-preflight, generation-metadata and web-edition checks pass; the print edition builds and is inspected; the Claude column of the Advent row in library/novus-ordo-liturgy.md links the edition; a release record exists; source inventory, family ledger and corpus index are refreshed; the work is committed on the workspace branch."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "gemini-six-showcase-publications-2026-11-25"
 owner = "PROJECT-WORK.md"
 promise = "Enable gemini as Triptych's third first-class provider, author six showcase publication lanes under src/gemini/ in parallel isolated subagents (Ark of the Covenant, Postconciliar Illustrated Sanctuary Dictionary, Angelology, 1962 Advent Seasonal Handbook, Discursive Benchmarks, and Reading Metaphysics), cold-review every lane independently, apply warranted guidance improvements, commit coherently, and publish verified changes."

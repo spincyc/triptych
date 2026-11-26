@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.nicene-and-post-nicene-fathers.series-2-volume-7.ccel-web-2026-10-06.advent-pc-fix2-gifford-life-of-cyril-priest-catechist-348"
+edition_id = "edition.nicene-and-post-nicene-fathers.series-2-volume-7.ccel-web-2026-10-06"
+artifact_id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-7.ccel-web-2026-10-06.ccel-text-56d84cfa"
+artifact_sha256 = "56d84cfa94dee313af0139e2d7f3d4b5f7fffca40ce0f34794b5f56264964dfd"
+locus = "Gifford, Introduction, chapter I, Life of S. Cyril (Cyril as priest entrusted with the catechumens, about 348)"
+states = ["cataloged", "acquired", "inspected"]
+context = "Edwin Hamilton Gifford's introduction to the Catechetical Lectures in NPNF second series vol. 7: Cyril was a priest, ordained by Bishop Maximus, when in or about 348 he was given the preparation of the candidates for baptism. The transcription stops before the footnote marker [15]; the next sentence (not transcribed) rejects the claim that he delivered the lectures partly as deacon."
+physical_line_ranges = [[292, 296]]
+text = "We have already learned from Jerome that Cyril was admitted to the Priesthood by Maximus. There is no evidence of the exact date of his ordination: but we may safely assume that he was a Priest of some years' standing, when the important duty of preparing the candidates for Baptism was intrusted to him in or about the year 348"
+transcription_segments = [
+  { line = 292, text = "We have already learned from Jerome that Cyril was admitted to the" },
+  { line = 293, text = "Priesthood by Maximus.  There is no evidence of the exact date of his" },
+  { line = 294, text = "ordination:  but we may safely assume that he was a Priest of some" },
+  { line = 295, text = "years' standing, when the important duty of preparing the candidates" },
+  { line = 296, text = "for Baptism was intrusted to him in or about the year 348" },
+]
+notes = "advent-pc-fix2, 2026-11-26. Read in the tracked public-domain CCEL whole text (print basis New York, 1893/1894). Not collated here against the facsimile of the New York edition."

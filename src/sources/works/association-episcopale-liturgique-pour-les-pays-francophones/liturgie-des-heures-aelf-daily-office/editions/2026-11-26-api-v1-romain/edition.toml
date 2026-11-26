@@ -1,0 +1,10 @@
+schema = 1
+record_type = "edition"
+id = "edition.association-episcopale-liturgique-pour-les-pays-francophones.liturgie-des-heures-aelf-daily-office.api-v1-romain-2026-11-26"
+work_id = "work.association-episcopale-liturgique-pour-les-pays-francophones.liturgie-des-heures-aelf-daily-office"
+title = "AELF daily Office JSON service, API v1, zone romain, as retrieved 2026-11-26"
+language = "fr"
+publication = "Association Episcopale Liturgique pour les pays Francophones, https://api.aelf.org/v1/"
+date = "2026-11-26"
+authority = "Association Episcopale Liturgique pour les pays Francophones"
+notes = "Dated web state: every artifact was retrieved by curl over HTTPS on 2026-11-26 (2026-11-29 first by the lane coordinator into lane-3/probe, then again by lane 3; the two byte streams have the same SHA-256). Retrieval bound: dates 27 November to 25 December of 2021, 2022, 2023, 2024, 2025 and 2026 were fetched whole for /lectures (174 documents, every one HTTP 200); 2027 dates answered HTTP 404 on 2026-11-26, so no 2027 Office was observed. /vepres was fetched for 16 to 24 December 2026. Only the documents named by artifact records below are registered; the hashes of all fetched documents are kept in the lane-3 scratch manifests aelf-lectures-sha256.txt and aelf-vepres-sha256.txt, which are research notes and not records. The service gives one second (patristic) reading per day in every document fetched: no document carries an alternative reading field or the words ou bien, au choix or autre lecture."

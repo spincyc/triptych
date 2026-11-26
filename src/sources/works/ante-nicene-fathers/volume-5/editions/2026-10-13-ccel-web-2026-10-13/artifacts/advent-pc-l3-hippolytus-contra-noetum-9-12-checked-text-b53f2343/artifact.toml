@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.ante-nicene-fathers.volume-5.ccel-web-2026-10-13.advent-pc-l3-hippolytus-contra-noetum-9-12-checked-text-b53f2343"
+edition_id = "edition.ante-nicene-fathers.volume-5.ccel-web-2026-10-13"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused extract reproduces a few sentences of the English translation of Hippolytus, Against the Heresy of One Noetus, by J. H. MacMahon (as CCEL attributes it) in The Ante-Nicene Fathers, volume V (Buffalo, 1886), a translation in the United States public domain by date of publication; the parent CCEL download states Rights: Public Domain (its record's rights_basis). The extract keeps only the translation's words and adds no authorship."
+rights_jurisdiction = "United States"
+provenance = "Lane 3 of the postconciliar Advent research (advent-pc-l3): extracted with python3 -I on 2026-11-26 from lines 22815-22886 of the tracked CCEL text artifact.ante-nicene-fathers.volume-5.ccel-web-2026-10-13.ccel-text-a02b61c3 (SHA-256 a02b61c36f07edd406a08138b9797151d6e808cb1618f1cc282fe9db5f6a87f8), read in the repository's tracked copy whose bytes match that hash. No facsimile of ANF V is registered and none was read: the wording is checked against the hashed full text only. No source text passed through a language model."
+retrieved = "2026-11-26"
+sha256 = "b53f2343994160c7b3bc767a83f722f7febc3f337eaf9dbb134fc55a63151c02"
+byte_size = 1916
+path = "src/sources/works/ante-nicene-fathers/volume-5/editions/2026-10-13-ccel-web-2026-10-13/artifacts/advent-pc-l3-hippolytus-contra-noetum-9-12-checked-text-b53f2343/advent-pc-l3-hippolytus-contra-noetum-9-12.txt"
+derived_from = "artifact.ante-nicene-fathers.volume-5.ccel-web-2026-10-13.ccel-text-a02b61c3"
+transformation = "Join the named lines of the hashed CCEL text, remove the bracketed footnote markers [n] and the space each leaves before punctuation, collapse runs of spaces, and set one sentence per LF-terminated UTF-8 line, each prefixed by a braced locator; the wording, spelling, punctuation, straight quotation marks and the translators' round-bracketed supplies are kept exactly as the CCEL text has them."
+indexable = true
+encoding = "utf-8"

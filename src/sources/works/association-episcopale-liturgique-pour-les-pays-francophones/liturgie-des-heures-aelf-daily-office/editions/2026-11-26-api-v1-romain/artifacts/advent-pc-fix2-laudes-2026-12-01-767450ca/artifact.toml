@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.association-episcopale-liturgique-pour-les-pays-francophones.liturgie-des-heures-aelf-daily-office.api-v1-romain-2026-11-26.advent-pc-fix2-laudes-2026-12-01-767450ca"
+edition_id = "edition.association-episcopale-liturgique-pour-les-pays-francophones.liturgie-des-heures-aelf-daily-office.api-v1-romain-2026-11-26"
+artifact_type = "web-service-json"
+media_type = "application/json"
+storage = "restricted"
+rights_status = "restricted"
+rights_basis = "The French liturgical texts served (Scripture in the AELF translation, psalms, responsories, antiphons, hymns, prayers) are copyright AELF and other holders; public availability through an API establishes no repository redistribution basis, so the bytes are identified by hash only and no French wording is tracked or quoted."
+rights_jurisdiction = "France; United States"
+source_url = "https://api.aelf.org/v1/laudes/2026-12-01/romain"
+provenance = "Fetched whole with curl over HTTPS on 2026-11-26 by the advent-pc-fix2 lane of the postconciliar Advent research (HTTP 200, application/json) and hashed with sha256sum before it was read; read locally with python3 -I json. No text passed through a language model. This endpoint was not part of lane 3's retrieval bound (/lectures and /vepres); it was fetched for this one date only."
+retrieved = "2026-11-26"
+sha256 = "767450cac85b93a5dd80e0b364f34d6e3b364d71c9c170cd2d7312dceb26e117"
+byte_size = 23412
+indexable = false
+notes = "Laudes (Morning Prayer) of Tuesday of the First Week of Advent 2026; informations: jour_liturgique_nom = 'de la férie', ligne1 = 'mardi, 1ère Semaine de l'Avent', couleur = 'violet'. The bytes are not retained in Git."

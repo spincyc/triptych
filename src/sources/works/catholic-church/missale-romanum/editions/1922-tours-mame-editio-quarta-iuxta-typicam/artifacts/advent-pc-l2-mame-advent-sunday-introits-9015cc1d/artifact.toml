@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.advent-pc-l2-mame-advent-sunday-introits-9015cc1d"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Latin of the Missale Romanum as printed by Mame, Tours, 1922, public domain in the United States by date of publication. Only the antiphon body is carried."
+rights_jurisdiction = "United States"
+provenance = "Transcribed on 2026-11-26 by advent-pc research lane 2 from page images of the whole parent PDF, fetched over HTTPS with curl on 2026-11-26 from https://archive.org/download/missaleromanum0000unse/missaleromanum0000unse.pdf; its SHA-256 9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005 and byte size 51,720,493 equal the registered parent artifact. Printed pp. 1, 4, 6 and 16 = PDF pp. 115, 118, 120 and 130, rendered with pdftoppm at 600 dpi and cropped; every transcribed line was read on the image. No source text passed through a language model."
+retrieved = "2026-11-26"
+sha256 = "9015cc1da733d8d90108972d5ee50340702541765951aa12c850e996dba7dc85"
+byte_size = 636
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/advent-pc-l2-mame-advent-sunday-introits-9015cc1d/mame-advent-sunday-introits.txt"
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+transformation = "Each line is the antiphon body of one Sunday Introit only, without its psalm verse, Gloria Patri or repetition rubric, prefixed by a braced printed-page locator. Stress accents and the ae ligature are kept as printed; the ornamental or small-capital initial word is given in sentence case; the French-style space before colons is closed up; words and other pointing as printed."
+indexable = true
+encoding = "utf-8"
+notes = "Created by the advent-pc lane-2 research pass (postconciliar Advent handbook). Selected antecedent or witness units only; not a whole-page transcription."

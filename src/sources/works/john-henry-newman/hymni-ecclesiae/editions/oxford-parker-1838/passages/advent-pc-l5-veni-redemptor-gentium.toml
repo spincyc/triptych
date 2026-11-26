@@ -1,0 +1,47 @@
+schema = 1
+record_type = "passage"
+id = "passage.john-henry-newman.hymni-ecclesiae.oxford-parker-1838.advent-pc-l5-veni-redemptor-gentium"
+edition_id = "edition.john-henry-newman.hymni-ecclesiae.oxford-parker-1838"
+artifact_id = "artifact.john-henry-newman.hymni-ecclesiae.oxford-parker-1838.advent-pc-l5-veni-redemptor-gentium-latin-checked-text-8ba4068c"
+artifact_sha256 = "8ba4068c9919535b2749765c821d236d34e42702aa3454d4b7b1e27d646dfdff"
+locus = "Veni Redemptor gentium (Ambrose), whole hymn, Sarum form, in Newman, Hymni ecclesiae (1838), pp. 89-90"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The hymn as printed under HYMNI E BREVIARIO SARISBURIENSI, De Nativitate Domini, Ad Vesperas, printed pp. 89-90 (PDF 103-104); eight stanzas including the doxology."
+physical_line_ranges = [[1, 32]]
+text = "Veni Redemptor gentium, Ostende partum Virginis, Miretur omne sæculum, Talis decet partus Deum. Non ex virili semine Sed mystico spiramine Verbum Dei factum est caro, Fructusque ventris floruit. Alvus tumescit Virginis, Claustra pudoris permanent, Vexilla virtutum micant, Versatur in templo Deus. Procedens è thalamo suo, Pudoris aula regia, Geminæ gigas substantiæ Alacris ut currat viam. Egressus ejus à Patre, Regressus ejus ad Patrem, Excursus usque ad inferos, Recursus ad sedem Dei. Æqualis æterno Patri, Carnis stropheo accingere, Infirma nostri corporis Virtute firmans perpetim. Præsepe jam fulget tuum, Lumenque nox spirat novum, Quod nulla nox interpolet, Fideque jugi luceat. Deo Patri sit gloria, Ejusque soli Filio, Cum Spiritu Paraclito, Et nunc, et imperpetuum."
+transcription_segments = [
+  { line = 1, text = "Veni Redemptor gentium," },
+  { line = 2, text = "Ostende partum Virginis," },
+  { line = 3, text = "Miretur omne sæculum," },
+  { line = 4, text = "Talis decet partus Deum." },
+  { line = 5, text = "Non ex virili semine" },
+  { line = 6, text = "Sed mystico spiramine" },
+  { line = 7, text = "Verbum Dei factum est caro," },
+  { line = 8, text = "Fructusque ventris floruit." },
+  { line = 9, text = "Alvus tumescit Virginis," },
+  { line = 10, text = "Claustra pudoris permanent," },
+  { line = 11, text = "Vexilla virtutum micant," },
+  { line = 12, text = "Versatur in templo Deus." },
+  { line = 13, text = "Procedens è thalamo suo," },
+  { line = 14, text = "Pudoris aula regia," },
+  { line = 15, text = "Geminæ gigas substantiæ" },
+  { line = 16, text = "Alacris ut currat viam." },
+  { line = 17, text = "Egressus ejus à Patre," },
+  { line = 18, text = "Regressus ejus ad Patrem," },
+  { line = 19, text = "Excursus usque ad inferos," },
+  { line = 20, text = "Recursus ad sedem Dei." },
+  { line = 21, text = "Æqualis æterno Patri," },
+  { line = 22, text = "Carnis stropheo accingere," },
+  { line = 23, text = "Infirma nostri corporis" },
+  { line = 24, text = "Virtute firmans perpetim." },
+  { line = 25, text = "Præsepe jam fulget tuum," },
+  { line = 26, text = "Lumenque nox spirat novum," },
+  { line = 27, text = "Quod nulla nox interpolet," },
+  { line = 28, text = "Fideque jugi luceat." },
+  { line = 29, text = "Deo Patri sit gloria," },
+  { line = 30, text = "Ejusque soli Filio," },
+  { line = 31, text = "Cum Spiritu Paraclito," },
+  { line = 32, text = "Et nunc, et imperpetuum." },
+]
+verified_on = "2026-11-26"
+notes = "Sarum form with a Sarum doxology (Deo Patri sit gloria ...). The Ambrosian attribution is supported by the held NPNF2-10 introduction (New York 1896), which says the hymn was quoted by Pope Celestine in 430 in a sermon against the Nestorians; this record does not itself attest authorship. The modern Liturgy of the Hours uses this hymn in late Advent; that appointment is lane 3's to state."

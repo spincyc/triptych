@@ -66077,3 +66077,40 @@ manifest_sha256 = "4a0988577dc152f902382f0f62b74f90bd262a2910e233e59704eb8a5d509
 status = "unresolved"
 basis = "Work description: 'The official issue prints the confirmed proper texts for Saints John XXIII and John Paul II.' Restricted 8-page PDF artifact notes inspection of the Roman Missal heading and Collect."
 unresolved = "Restricted conference periodical issue; its individual newsletter items and appended confirmed liturgical texts are not separately enumerated as constituent works."
+
+[[containers]]
+id = "work.catholic-church.calendarium-romanum-generale"
+manifest_sha256 = "05d024e878acd22aac1a4e8d2bbff4b68ede10e62e36e6a5eb1510eedec99569"
+status = "partial"
+basis = "Container-shaped by derivation: segments of the separately registered Universal Norms point into the scan of its 1969 typical edition. edition.catholic-church.calendarium-romanum-generale.latin-editio-typica-1969 notes: 'Per its p. 4, printed pp. 5-49 are the official documents (the Congregation's decree, Paul VI's Mysterii Paschalis, the Normae in two chapters with the Table of Liturgical Days, and the Calendarium), and pp. 53-177 are the Consilium's Commentarius, expressly non-official.' The calendar itself is the record's own work."
+unresolved = "The Congregation's decree and the Consilium's Commentarius are named in the edition notes but have no library records of their own; their extents are not established."
+
+[[containers.constituents]]
+author = "Catholic Church"
+title = "Normae universales de anno liturgico et de calendario"
+work_id = "work.catholic-church.normae-universales-de-anno-liturgico-et-de-calendario"
+whole = true
+locator = "Calendarium Romanum, editio typica 1969: artifact pp. 11-22"
+basis = "segment segment.catholic-church.normae-universales-de-anno-liturgico-et-de-calendario.latin-calendarium-romanum-1969.advent-pc-l1-calendarium-1969-pages-11-22: 'The Universal Norms (caput I, p. 11, through caput II and the Table of Liturgical Days with nn. 60-61, p. 22) as first printed in the 1969 Calendarium Romanum.'"
+
+[[containers.constituents]]
+author = "Paul VI"
+title = "Mysterii Paschalis"
+work_id = "work.paul-vi.mysterii-paschalis"
+locator = "within printed pp. 5-49 of the 1969 typical edition, as its edition notes record"
+extent_unresolved = "The edition notes name the apostolic letter among the official documents of pp. 5-49 without its own pages, and no segment registers it in this edition."
+basis = "edition.catholic-church.calendarium-romanum-generale.latin-editio-typica-1969 notes (quoted above)."
+
+[[containers]]
+id = "work.jacques-paul-migne.patrologia-latina-volume-194"
+manifest_sha256 = "17ead85970f8484be7d00aa7dd58a7e17bdae97028d0be9283f4b2cf44161339"
+status = "unresolved"
+basis = "Work description: 'The hundred and ninety-fourth volume of Migne's Latin series, which prints, among others, Arno of Reichersberg, John the Deacon, Hugh of Poitiers, Isaac abbot of Stella, and Alcher and Peter de Roya.'"
+unresolved = "The record names authors only, 'among others', and none of their works by title. Its one registered passage is the head-title of Isaac of Stella's section (leaf n845), which names the author and his order, not a work."
+
+[[containers]]
+id = "work.john-of-the-cross.complete-works"
+manifest_sha256 = "9d4659e8a6d2f25d882861623ae98989a3dc7b6ba9a6462ade97161f02b8a47c"
+status = "unresolved"
+basis = "Work description: 'The collected prose, maxims and poems of John of the Cross. The English edition registered here is David Lewis's translation (London 1864).'"
+unresolved = "The record names no work by title. The registered passages of Lewis's volume II cite Spiritual Maxim 70 and the romances headed The Desires of the Holy Fathers, The Incarnation and The Nativity, none of which has a library record of its own; the volume's other works are not enumerated."

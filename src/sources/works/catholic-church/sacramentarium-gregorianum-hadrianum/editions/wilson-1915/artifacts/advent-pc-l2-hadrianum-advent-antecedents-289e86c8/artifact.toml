@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.advent-pc-l2-hadrianum-advent-antecedents-289e86c8"
+edition_id = "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Literal readings and editorial notes of the Henry Bradshaw Society 1915 Wilson printing, public domain in the United States by date of publication. Only printed book text is carried."
+rights_jurisdiction = "United States"
+provenance = "Transcribed on 2026-11-26 by advent-pc research lane 2 from page images of the whole parent PDF, fetched over HTTPS with curl on 2026-11-26 from archive.org (registered source_url of the parent artifact); its SHA-256 96fd93c73f8c9df47b6911981155b8b02cf2f2183ca6e87baad15128682d8681 and byte size 28,655,931 equal the registered parent artifact. Printed pp. 25, 114 and 115 = PDF pp. 83, 172 and 173, rendered with pdftoppm at 300-400 dpi and cropped; every transcribed line was read on the image. The tracked OCR layer was a finding aid only. No source text passed through a language model."
+retrieved = "2026-11-26"
+sha256 = "289e86c894c78b1c2ada4e73e1dcd2f40f80353e9a8beb886e589ddcbe8484ed"
+byte_size = 924
+path = "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/advent-pc-l2-hadrianum-advent-antecedents-289e86c8/hadrianum-advent-antecedents.txt"
+derived_from = "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7"
+transformation = "Read the named printed pages as images and transcribe with one unit per LF-terminated UTF-8 line, each prefixed by a braced locator naming the printed page and, for apparatus, the note number; preserve the edition's lower-case liturgical text, u for v, e-caudata (ę), and its spaced medial points normalised to ' . '; small capitals given as capitals. Folio markers ('/' and '[fo. ...]'), superscript footnote markers and the superscript heading letters (a, b) are omitted; bold lemmata in notes are given as plain text."
+indexable = true
+encoding = "utf-8"
+notes = "Created by the advent-pc lane-2 research pass (postconciliar Advent handbook). Selected antecedent or witness units only; not a whole-page transcription."

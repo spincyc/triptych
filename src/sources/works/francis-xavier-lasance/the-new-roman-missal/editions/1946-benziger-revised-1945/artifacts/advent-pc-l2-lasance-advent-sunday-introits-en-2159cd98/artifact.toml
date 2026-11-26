@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.advent-pc-l2-lasance-advent-sunday-introits-en-2159cd98"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Only the original historical 1937/1945 human English on ordinary numbered pages of the actual 1946 printing, under the registration-level United States nonrenewal finding in src/sources/inventories/lasance-new-roman-missal-rights-v1.toml. Faithful transcription adds no authorship; this English is excluded from the project CC BY 4.0 offer."
+rights_jurisdiction = "United States"
+provenance = "Transcribed on 2026-11-26 by advent-pc research lane 2 from page images of the whole parent PDF, fetched over HTTPS with curl on 2026-11-26 from https://archive.org/download/the-new-roman-missal/The%20New%20Roman%20Missal%20%281945%29_text.pdf; its SHA-256 4573991d962eb6a6391bc2555b8445bdfebd84de1ccffd7828f84e74d308ca77 and byte size 135,628,123 equal the registered parent artifact. Printed pp. 103, 106, 110 and 130 = PDF pp. 113, 116, 120 and 140, rendered with pdftoppm at 200 dpi and cropped; every transcribed line was read on the image. The Latin column is partly lost in the gutter on pp. 110 and 130, so the Latin identity is witnessed by Mame 1922, not by this scan. No source text passed through a language model."
+retrieved = "2026-11-26"
+sha256 = "2159cd98cea7d275d77799134bcc8a351fcf683da5cfdca456dd02c9e18e6fc2"
+byte_size = 700
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/advent-pc-l2-lasance-advent-sunday-introits-en-2159cd98/lasance-advent-sunday-introits-en.txt"
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+transformation = "Each line is one complete historical English Introit antiphon from its ordinary page, prefixed by a braced printed-page locator; the ornamental initial and small capitals are rendered in sentence case; words and punctuation as printed; the following psalm verse, Gloria and rubrics are excluded."
+indexable = true
+encoding = "utf-8"
+notes = "Created by the advent-pc lane-2 research pass (postconciliar Advent handbook). Selected antecedent or witness units only; not a whole-page transcription."

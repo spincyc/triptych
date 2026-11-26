@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.john-henry-newman.hymni-ecclesiae.oxford-parker-1838.advent-pc-l5-veni-redemptor-gentium-latin-checked-text-8ba4068c"
+edition_id = "edition.john-henry-newman.hymni-ecclesiae.oxford-parker-1838"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces Latin printed at Oxford in 1838. A work first published before 1931 is out of United States copyright: that is the line guidance/missals.md section 5 records as current on 1 January 2026, and because it moves every January it is written here as derived for calendar year 2026 and not as a standing rule. It is transcribed from page images and contains no scan markup or text-layer bytes."
+rights_jurisdiction = "United States"
+provenance = "Manual transcription by lane 5 of the postconciliar Advent research of the Latin hymn Veni Redemptor gentium as printed in Newman's Hymni ecclesiae (1838) from the Sarum breviary, De Nativitate Domini, ad Vesperas, read on page images rendered with pdftoppm from a local copy of the exact registered facsimile artifact.john-henry-newman.hymni-ecclesiae.oxford-parker-1838.advent-pc-l5-ia-facsimile-pdf-419ba634 (SHA-256 419ba634afc86f40f2bd6abac20540310f25d360ab83dfe7441bf7505f586286, recomputed with sha256sum and found equal before any page was rendered), on 2026-11-26: printed pp. 89-90 (PDF pp. 103-104). The scan's optical text layer was used only to locate the pages. No source text passed through a language model at any point between the server and this hash."
+retrieved = "2026-11-26"
+sha256 = "8ba4068c9919535b2749765c821d236d34e42702aa3454d4b7b1e27d646dfdff"
+byte_size = 1011
+path = "src/sources/works/john-henry-newman/hymni-ecclesiae/editions/oxford-parker-1838/artifacts/advent-pc-l5-veni-redemptor-gentium-latin-checked-text-8ba4068c/veni-redemptor-gentium-latin.txt"
+derived_from = "artifact.john-henry-newman.hymni-ecclesiae.oxford-parker-1838.advent-pc-l5-ia-facsimile-pdf-419ba634"
+transformation = "Read the named printed pages as images rendered at 200 to 500 dots per inch and cropped where a mark needed settling; one unit per LF-terminated UTF-8 line, each prefixed by a braced locator; one printed verse line per line, the locator giving printed page and stanza number; keep the printed spelling (sæculum, imperpetuum), the ligatures æ and Æ and the accents è and à; set the small-capital opening word (Veni) in ordinary capitalization; omit headings, running heads and page numbers."
+indexable = true
+encoding = "utf-8"
+notes = "32 LF-terminated lines."

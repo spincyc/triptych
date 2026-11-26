@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-12.new-york-1895.advent-pc-l3-leo-epistula-31.2-3-checked-text-dd576df7"
+edition_id = "edition.nicene-and-post-nicene-fathers.series-2-volume-12.new-york-1895"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces a few sentences of Charles Lett Feltoe's English translation of the letters of Leo the Great, published at New York in 1895 in the Nicene and Post-Nicene Fathers, second series, volume XII, which is in the United States public domain by date of publication (the parent facsimile's rights_basis gives the evidence and the reasoning). It is collated against page images rendered from the hashed Internet Archive facsimile and contains no Internet Archive markup or text-layer bytes."
+rights_jurisdiction = "United States"
+provenance = "Lane 3 of the postconciliar Advent research (advent-pc-l3): the sentences were joined from lines 5292-5320 of the tracked CCEL text artifact ccel-text-7bb1db6e of this volume (edition 2026-09-28-ccel-web) with python3 -I and then collated word by word, and corrected where the page differs, against the printed page images of the hashed Internet Archive facsimile ia-facsimile-pdf-131d6797 (SHA-256 131d6797c9cf1c926a6f1b5fc1c0e2fa9e0add433809646dded9b80b267ae2c1) on 2026-11-26, from a local copy fetched whole over HTTPS with curl whose SHA-256 equals that record; the optical text layer was used only to locate the pages. No source text passed through a language model. Printed page 45, PDF page 83 (in the Letters, printed page n is PDF page n+38: printed 44, 45 and 46 read on the folios of PDF pages 82, 83 and 84)."
+retrieved = "2026-11-26"
+sha256 = "dd576df7a67b7d02594a7bc9f8169b42c30ec69cc424a2fca58d3cf9f453981c"
+byte_size = 1666
+path = "src/sources/works/nicene-and-post-nicene-fathers/series-2-volume-12/editions/new-york-1895/artifacts/advent-pc-l3-leo-epistula-31.2-3-checked-text-dd576df7/advent-pc-l3-leo-epistula-31.2-3.txt"
+derived_from = "artifact.nicene-and-post-nicene-fathers.series-2-volume-12.new-york-1895.ia-facsimile-pdf-131d6797"
+transformation = "Read the named printed pages as images rendered at 200 dots per inch from the hashed facsimile with pdftoppm, cropped to half-columns, and set the collated sentences with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced locator; preserve the printed wording, capitalization, spelling, punctuation and typographic quotation marks and apostrophes; set words printed in small capitals (God) in ordinary capitalization; join line-end hyphenation and close the printer's spaces before punctuation; omit running heads, page numbers, section numbers, section summaries, footnote markers and italics."
+indexable = true
+encoding = "utf-8"

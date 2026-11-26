@@ -1,0 +1,20 @@
+schema = 1
+record_type = "passage"
+id = "passage.augustine.sermo-293.1845-migne-pl38.advent-pc-l3-sermo-293.3-parate-viam"
+edition_id = "edition.augustine.sermo-293.1845-migne-pl38"
+artifact_id = "artifact.augustine.sermo-293.1845-migne-pl38.advent-pc-l3-sermo-293.3-parate-viam-checked-text-04fb0b71"
+artifact_sha256 = "04fb0b71f380410936a316f294a5b8aa09f971628815e8172561e318d26cbdaa"
+locus = "293.3"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "From the middle of section 3, PL 38 column 1329 (PDF page 672, leaf n671): the voice of one crying in the wilderness, the voice breaking the silence; what is Prepare the way but pray fittingly, think humbly. Within the reading of the Third Sunday of Advent."
+physical_line_ranges = [[1, 5]]
+text = "Vox clamantis in eremo, vox rumpentis silentium. Parate viam Domino, tanquam diceret, Ego ideo sono, ut illum in cor introducam: sed quo introducam non dignatur venire, nisi viam præparetis. Quid est, Viam parate; nisi, congrue supplicate? Quid est, Viam parate; nisi, humiliter cogitate? Ab ipso accipite humilitatis exemplum."
+transcription_segments = [
+  { line = 1, text = "Vox clamantis in eremo, vox rumpentis silentium." },
+  { line = 2, text = "Parate viam Domino, tanquam diceret, Ego ideo sono, ut illum in cor introducam: sed quo introducam non dignatur venire, nisi viam præparetis." },
+  { line = 3, text = "Quid est, Viam parate; nisi, congrue supplicate?" },
+  { line = 4, text = "Quid est, Viam parate; nisi, humiliter cogitate?" },
+  { line = 5, text = "Ab ipso accipite humilitatis exemplum." },
+]
+verified_on = "2026-11-26"
+notes = "Read on the image at 300 dpi. In the italic Parate viam Domino the type of Domino is damaged on this copy and reads as Donuno at a glance; the reading Domino is certain from the sense and from the same words printed clean two lines above, in the quotation of John 1:23 (Parate viam Domino). The section continues to timuit, which is not transcribed."

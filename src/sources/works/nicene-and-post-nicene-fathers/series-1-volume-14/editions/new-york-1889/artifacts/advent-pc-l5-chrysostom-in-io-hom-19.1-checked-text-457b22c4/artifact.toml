@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-14.new-york-1889.advent-pc-l5-chrysostom-in-io-hom-19.1-checked-text-457b22c4"
+edition_id = "edition.nicene-and-post-nicene-fathers.series-1-volume-14.new-york-1889"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces two sentences of the Nicene and Post-Nicene Fathers English translation, published at New York in 1889, which is in the United States public domain by date of publication. It is derived from page images rendered from the hashed facsimile and contains no scan markup."
+rights_jurisdiction = "United States"
+provenance = "Manual transcription by lane 5 of the postconciliar Advent research of the Nicene and Post-Nicene Fathers English (New York 1889) of Chrysostom's Homily XIX on John, section 1, read on page images rendered with pdftoppm from a local copy of the exact registered facsimile artifact.nicene-and-post-nicene-fathers.series-1-volume-14.new-york-1889.ia-facsimile-pdf-a09a5d18 (SHA-256 a09a5d18db236edcc49db82bf3f927d7f37c06ce3f1d12b0148a1381dcd59c0f, recomputed with sha256sum and found equal before any page was rendered), on 2026-11-26: printed p. 67 (PDF p. 87). The scan's optical text layer was used only to locate the pages. No source text passed through a language model at any point between the server and this hash."
+retrieved = "2026-11-26"
+sha256 = "457b22c4f8913ec905010f7112655c1f410890c9eb5168f6830a9c3388015d8b"
+byte_size = 465
+path = "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-14/editions/new-york-1889/artifacts/advent-pc-l5-chrysostom-in-io-hom-19.1-checked-text-457b22c4/chrysostom-in-io-hom-19.1.txt"
+derived_from = "artifact.nicene-and-post-nicene-fathers.series-1-volume-14.new-york-1889.ia-facsimile-pdf-a09a5d18"
+transformation = "Read the named printed pages as images rendered at 200 to 500 dots per inch and cropped where a mark needed settling; one unit per LF-terminated UTF-8 line, each prefixed by a braced locator; preserve the printed wording, capitalization, spelling, punctuation and typographic quotation marks; join line-end hyphenation and close the printer's spaces before punctuation; omit running heads, page numbers, footnote markers and italics."
+indexable = true
+encoding = "utf-8"
+notes = "2 LF-terminated lines."

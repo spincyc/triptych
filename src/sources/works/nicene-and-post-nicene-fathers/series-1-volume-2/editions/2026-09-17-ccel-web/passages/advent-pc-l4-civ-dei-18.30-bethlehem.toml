@@ -1,0 +1,16 @@
+schema = 1
+record_type = "passage"
+id = "passage.nicene-and-post-nicene-fathers.series-1-volume-2.ccel-web-2026-09-17.advent-pc-l4-civ-dei-18.30-bethlehem"
+edition_id = "edition.nicene-and-post-nicene-fathers.series-1-volume-2.ccel-web-2026-09-17"
+artifact_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-2.ccel-web-2026-09-17.ccel-text-5c973fed"
+artifact_sha256 = "5c973feda803f3e58a88ed7df210b42d436f5466741eb8dbeae713ab56dedae4"
+locus = "Augustine, De civitate Dei XVIII.30 (on Mic. 4:1-3 and 5:2-4)"
+states = ["cataloged", "acquired", "inspected"]
+context = "Book XVIII, chapter 30 (Micah, Jonah and Joel): after Micah 4, Augustine introduces Micah 5:2 as the prophecy of the place of Christ's birth and quotes it whole without further comment."
+physical_line_ranges = [[32432, 32433]]
+text = "This prophet predicts the very place in which Christ was born,"
+transcription_segments = [
+  { line = 32432, text = "This prophet predicts the very place in" },
+  { line = 32433, text = "which Christ was born," },
+]
+notes = "Exact CCEL English digital witness inspected on 2026-11-26 by Advent postconciliar research lane 4; no facsimile collation of these lines and no collation with the Latin. Not verified. CCEL's bracketed footnote markers are excluded from the segments. Augustine's own words here are a single introductory clause; the rest is his Old Latin quotation of Micah."

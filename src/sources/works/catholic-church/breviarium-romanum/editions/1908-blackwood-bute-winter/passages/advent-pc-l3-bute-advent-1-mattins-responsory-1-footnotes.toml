@@ -1,0 +1,22 @@
+schema = 1
+record_type = "passage"
+id = "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.advent-pc-l3-bute-advent-1-mattins-responsory-1-footnotes"
+edition_id = "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908"
+artifact_id = "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.advent-pc-l3-advent-1-mattins-responsory-1-checked-text-6cd46dcc"
+artifact_sha256 = "6cd46dccd48fb32ab5b50036c3a5ed3361a27c6ae0546c5fb3d7f1cc26679183"
+locus = "Proper of the Season, First Sunday in Advent, Mattins, First Responsory, footnotes 3-9; printed p. 214"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Bute's scriptural references for the responsory: the cloud from Ezekiel 38:9; Go ye out to meet Him from Matthew 25:6 (the midnight cry to the wise virgins); Tell us if Thou art He from Matthew 11:3 and Luke 7:19 (John's question); That shalt reign over God's people from 1 Samuel 9:17; the verses from Psalms 48(49):3, 79(80):2 and 23(24):7 (Vulgate numbering as printed)."
+physical_line_ranges = [[11, 17]]
+text = "Ezek. xxxviii. 9. Matth. xxv. 6. Matth. xi. 3; Luke vii. 19. 1 Kings (Sam.) ix. 17. Ps. xlviii. 3. Ps. lxxix. 2. Ps. xxiii. 7."
+transcription_segments = [
+  { line = 11, text = "Ezek. xxxviii. 9." },
+  { line = 12, text = "Matth. xxv. 6." },
+  { line = 13, text = "Matth. xi. 3; Luke vii. 19." },
+  { line = 14, text = "1 Kings (Sam.) ix. 17." },
+  { line = 15, text = "Ps. xlviii. 3." },
+  { line = 16, text = "Ps. lxxix. 2." },
+  { line = 17, text = "Ps. xxiii. 7." },
+]
+verified_on = "2026-11-26"
+notes = "Each line holds the footnote's text; its printed numeral is in the line's locator."

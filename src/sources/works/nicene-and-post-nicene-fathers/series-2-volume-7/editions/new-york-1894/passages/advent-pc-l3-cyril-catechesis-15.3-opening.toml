@@ -1,0 +1,17 @@
+schema = 1
+record_type = "passage"
+id = "passage.nicene-and-post-nicene-fathers.series-2-volume-7.new-york-1894.advent-pc-l3-cyril-catechesis-15.3-opening"
+edition_id = "edition.nicene-and-post-nicene-fathers.series-2-volume-7.new-york-1894"
+artifact_id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-7.new-york-1894.advent-pc-l3-cyril-catechesis-15.3-opening-checked-text-8c361ce1"
+artifact_sha256 = "8c361ce1d719aa2220c09b33ca0e9a74081965441cc888376c1d0815618673dd"
+locus = "Cyril of Jerusalem, Catechesis XV.3 (first two sentences)"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The opening of section 3 of the fifteenth Catechetical Lecture, printed page 105 (PDF page 179), after the clause of the Creed set in small capitals. The Office of Readings of the First Sunday of Advent appoints Catechesis 15.1-3; the AELF Office of 29 November 2026 ends its reading with these two sentences, so with the verified 15.1 and 15.2 passages of this edition they complete the appointed reading's frame."
+physical_line_ranges = [[1, 2]]
+text = "Our Lord Jesus Christ, then, comes from heaven; and He comes with glory at the end of this world, in the last day. For of this world there is to be an end, and this created world is to be re-made anew."
+transcription_segments = [
+  { line = 1, text = "Our Lord Jesus Christ, then, comes from heaven; and He comes with glory at the end of this world, in the last day." },
+  { line = 2, text = "For of this world there is to be an end, and this created world is to be re-made anew." },
+]
+verified_on = "2026-11-26"
+notes = "The CCEL text (lines 16216-16218) agrees in wording; the CCEL extract was cut at re-made anew and the full stop that follows footnote marker 5 on the page is restored. Footnote 5 (the Benedictine Editor's suggestion that Cyril is refuting those who said the Universe was to perish utterly) is omitted."

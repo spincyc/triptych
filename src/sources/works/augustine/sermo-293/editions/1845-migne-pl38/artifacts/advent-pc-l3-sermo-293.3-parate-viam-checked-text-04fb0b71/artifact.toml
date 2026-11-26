@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.augustine.sermo-293.1845-migne-pl38.advent-pc-l3-sermo-293.3-parate-viam-checked-text-04fb0b71"
+edition_id = "edition.augustine.sermo-293.1845-migne-pl38"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The printing reproduced was published at Paris in 1845 (series title page, PDF page 8 of the complete scan, as the Sermo 185 edition records), and a work first published abroad before 1931 is out of United States copyright with no term running; that line is the one guidance/missals.md section 5 records as current on 1 January 2026, written here as derived for calendar year 2026 and not as a standing rule. This focused transcription reproduces only Latin printed by Migne and adds no authorship; it contains no Google or Internet Archive markup, stamp or text-layer bytes."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription by lane 3 of the postconciliar Advent research (advent-pc-l3) from the hashed Internet Archive leaf image advent-pc-l3-ia-leaf-n671-1d83d5e4 (SHA-256 1d83d5e458cbbc2692c0878c73a36efc16358ed0c9f5727ef60c87dac43884c6), read on 2026-11-26 and checked against PDF page 672 of the hashed complete scan of the volume artifact.augustine.sermo-185.1845-migne-pl38.ia-pdf-829acec8 (SHA-256 829acec8f612dccfc909efd9d11d5a8f6e0743cb4951918424792524da5f960d), which shows the same page; the volume's optical text layer was used only to locate the page. PL 38 column 1329. No source text passed through a language model."
+retrieved = "2026-11-26"
+sha256 = "04fb0b71f380410936a316f294a5b8aa09f971628815e8172561e318d26cbdaa"
+byte_size = 419
+path = "src/sources/works/augustine/sermo-293/editions/1845-migne-pl38/artifacts/advent-pc-l3-sermo-293.3-parate-viam-checked-text-04fb0b71/advent-pc-l3-sermo-293.3-parate-viam.txt"
+derived_from = "artifact.augustine.sermo-293.1845-migne-pl38.advent-pc-l3-ia-leaf-n671-1d83d5e4"
+transformation = "Read the leaf on the image, and the same page of the complete scan of the volume rendered at 300 dots per inch in greyscale with pdftoppm and cropped to half-columns, and transcribe the quoted sentences with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced locator (section and column); preserve the printed wording, spelling, capitalization, punctuation and the ligature æ; join line-end hyphenation and close the printer's spaces before punctuation; omit running heads, column numbers, the section numeral, footnote markers, inline scripture references in parentheses and italics."
+indexable = true
+encoding = "utf-8"

@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.bonaventure.legenda-maior-sancti-francisci.london-dent-1904-salter.advent-pc-l5-legenda-maior-x-7-checked-text-7a797f15"
+edition_id = "edition.bonaventure.legenda-maior-sancti-francisci.london-dent-1904-salter"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces E. Gurney Salter's English, published at London in 1904. A work first published before 1931 is out of United States copyright: that is the line guidance/missals.md section 5 records as current on 1 January 2026, and because it moves every January it is written here as derived for calendar year 2026 and not as a standing rule. It is transcribed from page images rendered from the hashed facsimile and contains no Google front matter, scan markup or text-layer bytes."
+rights_jurisdiction = "United States"
+provenance = "Manual transcription by lane 5 of the postconciliar Advent research of E. Gurney Salter's English of Bonaventure, Legenda maior X.7 (the crib at Greccio), read on page images rendered with pdftoppm from a local copy of the exact registered facsimile artifact.bonaventure.legenda-maior-sancti-francisci.london-dent-1904-salter.advent-pc-l5-ia-facsimile-pdf-5423b4ff (SHA-256 5423b4ff6b7bfbcfdf72aab3872ef6b2cb4b74b56c920915edbf96772359f9a1, recomputed with sha256sum and found equal before any page was rendered), on 2026-11-26: printed pp. 110-112 (PDF pp. 125-127). The scan's optical text layer was used only to locate the pages. No source text passed through a language model at any point between the server and this hash."
+retrieved = "2026-11-26"
+sha256 = "7a797f154314e0ff3f3c1f06afb2ae3a34a939fc21e8c9da2c6e8e47b8901b58"
+byte_size = 2049
+path = "src/sources/works/bonaventure/legenda-maior-sancti-francisci/editions/london-dent-1904-salter/artifacts/advent-pc-l5-legenda-maior-x-7-checked-text-7a797f15/legenda-maior-x-7.txt"
+derived_from = "artifact.bonaventure.legenda-maior-sancti-francisci.london-dent-1904-salter.advent-pc-l5-ia-facsimile-pdf-5423b4ff"
+transformation = "Read the named printed pages as images rendered at 200 to 500 dots per inch and cropped where a mark needed settling; one unit per LF-terminated UTF-8 line, each prefixed by a braced locator; preserve the printed wording, spelling (license, ensample), capitalization and punctuation; join line-end hyphenation and close the printer's spaces before punctuation; omit the section number, running heads, page numbers and the side-notes The Presepio at Greccio and A blessing therefrom."
+indexable = true
+encoding = "utf-8"
+notes = "9 LF-terminated lines."

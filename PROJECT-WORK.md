@@ -170,6 +170,36 @@ byte-identical live and in the local build:
 - the three print pages;
 - the Novus Ordo catalog.
 
+## Claude postconciliar Advent handbook, 2026-11-26
+
+<!-- promised-deliverable: claude-postconciliar-advent-handbook-2026-11-26 -->
+
+[*Advent: A Handbook for the Season of the Lord's Coming*](src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/publication.toml)
+is the Claude seasonal handbook for Advent with the Roman Missal, the U.S.
+*Lectionary for Mass* and the *Liturgy of the Hours*. Its body runs to about
+17,700 words in four parts (the coming; keeping Advent; the weeks; toward
+Bethlehem), with daily readings, prayers, About This Book and References; the
+print edition is 45 letter pages. Five research lanes and two source lanes
+registered its witnesses; it was written cold from the evidence and read by
+two independent reviewers, a blind reader and an accuracy reviewer, whose
+findings and dispositions are in `research/cold-review.md`. Collation then
+found sixteen claims without a record; a directed second research pass
+registered a witness for each, and four passages were reworded to their
+records. The audit maps 1,147 rows with no unverified lead; 452 bindings are
+fingerprinted, 187 of them restricted and none reproduced. No 2011 Missal,
+Lectionary, NABRE or Liturgy of the Hours English is printed; post-1975 Holy
+See texts are paraphrased, and a five-word overlap test against the official
+English found no remaining run outside titles and set phrases.
+
+Open leads, none blocking: no U.S. witness names the Office of Readings of Our
+Lady of Guadalupe; no public Latin text of the *Institutio generalis de
+Liturgia Horarum* was found (its English of 1974 serves, paraphrased); whether
+one Mass can satisfy both the Fourth Sunday and Christmas when 24 December is
+a Sunday is left to the parish, for want of a witness; the English edition
+of the Hours is not named in the records; and the Durandus edition of 1568 is
+dated from its record, not its title page. One correction a research lane proposed to an existing inventory note
+was a misreading (the note belongs to another row), and nothing was changed.
+
 ## Gemini six-lane showcase publications and third-provider integration, 2026-11-25
 
 <!-- promised-deliverable: gemini-six-showcase-publications-2026-11-25 -->

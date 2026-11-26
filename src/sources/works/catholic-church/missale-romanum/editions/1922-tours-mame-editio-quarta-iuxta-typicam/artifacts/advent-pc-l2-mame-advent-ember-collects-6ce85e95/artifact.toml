@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.advent-pc-l2-mame-advent-ember-collects-6ce85e95"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Latin of the Missale Romanum as printed by Mame, Tours, 1922, public domain in the United States by date of publication. Only the two prayer bodies with their printed conclusion cues are carried."
+rights_jurisdiction = "United States"
+provenance = "Transcribed on 2026-11-26 by advent-pc research lane 2 from page images of the whole parent PDF, fetched over HTTPS with curl on 2026-11-26 from https://archive.org/download/missaleromanum0000unse/missaleromanum0000unse.pdf; its SHA-256 9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005 and byte size 51,720,493 equal the registered parent artifact. Printed pp. 8 and 12 = PDF pp. 122 and 126, rendered with pdftoppm at 500 dpi and cropped; every transcribed line was read on the image. No source text passed through a language model."
+retrieved = "2026-11-26"
+sha256 = "6ce85e9573d3772f23957533f3fd2047928e562b1246bde2f0bad10bdc48db27"
+byte_size = 376
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/advent-pc-l2-mame-advent-ember-collects-6ce85e95/mame-ember-collects.txt"
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+transformation = "Each line is one complete Oratio of the Advent Ember days, prefixed by a braced printed-page locator. Stress accents and the ae ligature are kept as printed; the ornamental initial with small capitals is given in sentence case; line-end hyphenation joined; the French-style space before colons and semicolons is closed up; words and other pointing as printed."
+indexable = true
+encoding = "utf-8"
+notes = "Created by the advent-pc lane-2 research pass (postconciliar Advent handbook). Selected antecedent or witness units only; not a whole-page transcription."

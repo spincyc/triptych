@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.advent-pc-l3-advent-1-mattins-responsory-1-aspiciens-checked-text-ea55b420"
+edition_id = "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Public domain in the United States by publication date: the book was published by Friedrich Pustet at Ratisbon, New York and Cincinnati in 1888 (MDCCCLXXXVIII; the parent facsimile record and the lane A2 checked transcriptions of this edition give the title-page evidence), and a work published before 1931 is out of United States copyright, the line guidance/missals.md records as current on 1 January 2026, written here as derived for calendar year 2026 and not as a standing rule. This focused transcription reproduces only Latin printed in that book and adds no authorship."
+rights_jurisdiction = "United States"
+provenance = "Transcribed by lane 3 of the postconciliar Advent research (advent-pc-l3) on 2026-11-26 from page images of the exact registered whole PDF artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-pdf (SHA-256 a8a789d4c48003cbfaeb440cc22a6970b96d18d9cb19ea60b2a02c83a53582f0), fetched whole over HTTPS with curl and matched with sha256sum before use. Printed pages 133-134, PDF pages 187-188 (PDF page = printed page + 54, read on the running folios). The Internet Archive text layer was used only to find the pages. No source text passed through a language model."
+retrieved = "2026-11-26"
+sha256 = "ea55b4208aad5dce444e974b3d7519995ddca187108417e4003460e83a98ae9b"
+byte_size = 796
+path = "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/advent-pc-l3-advent-1-mattins-responsory-1-aspiciens-checked-text-ea55b420/advent-pc-l3-advent-1-mattins-responsory-1-aspiciens.txt"
+derived_from = "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-pdf"
+transformation = "Read on page images rendered from the exact registered whole PDF with pdftoppm at 200 dpi, with doubtful marks re-read at 600 dpi. One sense unit (the respond, each verse with its repetenda, each rubric) per LF-terminated UTF-8 line, each prefixed by a braced printed-page locator. Joined: physical line wraps and division hyphens. Removed: the printed acute stress accents. Expanded: the ligatures ae and oe (æ to ae). Kept as printed: spelling (ejus), capitalization, pointing, the diaeresis in Israël, asterisks, and the versicle and response signs, rendered U+2123 and U+211F. Rubrics printed in red are transcribed as plain text. The printer's space before a colon or semicolon is not reproduced."
+indexable = true
+encoding = "utf-8"

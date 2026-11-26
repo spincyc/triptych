@@ -1,0 +1,15 @@
+schema = 1
+record_type = "passage"
+id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.advent-pc-l4-domine-non-sum-dignus-la"
+edition_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-la"
+artifact_sha256 = "8a58f98ad38a0733f8b6b7645ef0f7ccc2a95995d28478d87aa351a7d87fe67d"
+locus = "ordinarium-communio-domine-non-sum-dignus"
+states = ["cataloged", "acquired", "inspected"]
+context = "Row 18 of the Latin communion-rite table (printed page xlii, Internet Archive leaf 52): the priest's Domine, non sum dignus, printed once under a rubric directing it to be said three times."
+physical_line_ranges = [[13, 13]]
+text = "Domine, non sum dignus ut intres sub tectum meum; sed tantum dic verbo, et sanabitur anima mea."
+transcription_segments = [
+  { line = 13, text = "Domine, non sum dignus ut intres sub tectum meum; sed tantum dic verbo, et sanabitur anima mea." },
+]
+notes = "Inspected in the tracked TSV on 2026-11-26; the covering verified passage is passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae. The Missal's words end anima mea where Matt. 8:8 in the Clementine Vulgate ends puer meus. In this 1861 Missal the prayer is the priest's before his own Communion; there is no Ecce Agnus Dei and no Communion of the people on this opening (row note)."

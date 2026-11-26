@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.association-episcopale-liturgique-pour-les-pays-francophones.liturgie-des-heures-aelf-daily-office.api-v1-romain-2026-11-26.advent-pc-fix-lectures-2026-12-12-6919c4a5"
+edition_id = "edition.association-episcopale-liturgique-pour-les-pays-francophones.liturgie-des-heures-aelf-daily-office.api-v1-romain-2026-11-26"
+artifact_type = "web-service-json"
+media_type = "application/json"
+storage = "restricted"
+rights_status = "restricted"
+rights_basis = "The French liturgical texts served (Scripture in the AELF translation, psalms, responsories, antiphons, hymns, prayers and the French translations of patristic readings) are copyright AELF and other holders; public availability through an API establishes no repository redistribution basis, so the bytes are identified by hash only and no French wording is tracked or quoted."
+rights_jurisdiction = "France; United States"
+source_url = "https://api.aelf.org/v1/lectures/2026-12-12/romain"
+provenance = "Fetched whole with curl over HTTPS on 2026-11-26 by the sources-fix lane of the postconciliar Advent research (advent-pc-fix) (HTTP 200, application/json) and hashed with sha256sum before it was read; read locally with python3 -I json. The SHA-256 equals the hash lane 3 recorded for its own fetch of the same date on the same day (lane-3 scratch manifest aelf-lectures-sha256.txt). No text passed through a language model."
+retrieved = "2026-11-26"
+sha256 = "6919c4a50a46f7171932fc8f2699bc55e989f2f891e76f6676c6a183a0ebb61d"
+byte_size = 22184
+indexable = false
+notes = "Office des lectures of 12 December 2026. The informations block reads jour_liturgique_nom = 'de la férie', ligne1 = 'samedi, 2ème Semaine de l'Avent', ligne2 = 'Bienheureuse Vierge Marie de Guadaloupé', ligne3 = 'Mémoire facultative', couleur = 'violet', couleur2 = 'blanc'. The bytes are not retained in Git."

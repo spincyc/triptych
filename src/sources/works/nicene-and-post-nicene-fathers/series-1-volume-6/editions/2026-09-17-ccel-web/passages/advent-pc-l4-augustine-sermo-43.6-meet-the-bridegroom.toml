@@ -1,0 +1,17 @@
+schema = 1
+record_type = "passage"
+id = "passage.nicene-and-post-nicene-fathers.series-1-volume-6.ccel-web-2026-09-17.advent-pc-l4-augustine-sermo-43.6-meet-the-bridegroom"
+edition_id = "edition.nicene-and-post-nicene-fathers.series-1-volume-6.ccel-web-2026-09-17"
+artifact_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-6.ccel-web-2026-09-17.ccel-text-ce371798"
+artifact_sha256 = "ce37179876e5e5c9d8e7a6f1f17b8796c4fdf3ffd2815acb82a1c734c57ecd18"
+locus = "Augustine, Sermon XLIII [XCIII Ben.] on Matt. 25:1, section 6"
+states = ["cataloged", "acquired", "inspected"]
+context = "Augustine's sermon on the ten virgins (NPNF numbering XLIII; Benedictine XCIII; heading at CCEL line 38760). Section 6 (from line 38867) was read whole with the end of section 5; the quoted sentences explain what it is to go and meet the Bridegroom."
+physical_line_ranges = [[38868, 38870]]
+text = "They wished to go to meet the Bridegroom. What is the meaning of \"to go and meet the Bridegroom\"? To go with the heart, to be waiting for his coming."
+transcription_segments = [
+  { line = 38868, text = "They wished to go to meet the Bridegroom. What is" },
+  { line = 38869, text = "the meaning of \"to go and meet the Bridegroom\"? To go with the heart," },
+  { line = 38870, text = "to be waiting for his coming." },
+]
+notes = "Exact CCEL English digital witness inspected on 2026-11-26 by Advent postconciliar research lane 4; no facsimile collation of these lines and no collation with the Latin. Not verified. CCEL's bracketed footnote markers are excluded from the segments."

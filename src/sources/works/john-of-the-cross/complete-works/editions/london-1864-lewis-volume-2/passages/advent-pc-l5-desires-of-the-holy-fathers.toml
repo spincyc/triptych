@@ -1,0 +1,26 @@
+schema = 1
+record_type = "passage"
+id = "passage.john-of-the-cross.complete-works.london-1864-lewis-volume-2.advent-pc-l5-desires-of-the-holy-fathers"
+edition_id = "edition.john-of-the-cross.complete-works.london-1864-lewis-volume-2"
+artifact_id = "artifact.john-of-the-cross.complete-works.london-1864-lewis-volume-2.advent-pc-l5-john-of-the-cross-lewis-checked-text-29b3bdd9"
+artifact_sha256 = "29b3bdd937a6c6845e88c1235997f283d28c4b7b1576e800056b83a0403468ed"
+locus = "John of the Cross, romance The Desires of the Holy Fathers, stanzas I, V-VI (Lewis 1864, vol. II, pp. 426-427)"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "From the romance headed The Desires of the Holy Fathers, printed pp. 426-427 (PDF 448-449): the Old Testament saints' longing for the Bridegroom, with Isaiah's cries (rend the heavens; rain down the Just One)."
+physical_line_ranges = [[2, 13]]
+text = "When the ancient Saints were waiting, Hope came down to their relief, And made lighter by its presence The sore pressure of their grief. ‘Hasten, then, Thy work, and finish; Send Him, Lord, Whom Thou wilt send,’ Was the cry of one. Another’s, ‘O that He the heavens would rend!’ ‘That I might behold His coming, And my wail be turned to mirth; Let the clouds rain down the Just One, So long desired on the earth;’"
+transcription_segments = [
+  { line = 2, text = "When the ancient Saints were waiting," },
+  { line = 3, text = "Hope came down to their relief," },
+  { line = 4, text = "And made lighter by its presence" },
+  { line = 5, text = "The sore pressure of their grief." },
+  { line = 6, text = "‘Hasten, then, Thy work, and finish;" },
+  { line = 7, text = "Send Him, Lord, Whom Thou wilt send,’" },
+  { line = 8, text = "Was the cry of one. Another’s," },
+  { line = 9, text = "‘O that He the heavens would rend!’" },
+  { line = 10, text = "‘That I might behold His coming," },
+  { line = 11, text = "And my wail be turned to mirth;" },
+  { line = 12, text = "Let the clouds rain down the Just One," },
+  { line = 13, text = "So long desired on the earth;’" },
+]
+verified_on = "2026-11-26"

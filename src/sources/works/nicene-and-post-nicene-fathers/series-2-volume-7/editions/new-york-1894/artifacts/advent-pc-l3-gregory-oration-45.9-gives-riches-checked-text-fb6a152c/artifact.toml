@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-7.new-york-1894.advent-pc-l3-gregory-oration-45.9-gives-riches-checked-text-fb6a152c"
+edition_id = "edition.nicene-and-post-nicene-fathers.series-2-volume-7.new-york-1894"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces a few sentences of Charles Gordon Browne and James Edward Swallow's English translation of the Orations of Gregory Nazianzen, published at New York in 1894 in the Nicene and Post-Nicene Fathers, second series, volume VII, which is in the United States public domain by date of publication (the parent facsimile's rights_basis gives the evidence and the reasoning). It is collated against page images rendered from the hashed Internet Archive facsimile and contains no Internet Archive markup or text-layer bytes."
+rights_jurisdiction = "United States"
+provenance = "Lane 3 of the postconciliar Advent research (advent-pc-l3): the sentences were joined from the lines of the tracked CCEL text artifact ccel-text-56d84cfa of this volume (edition 2026-10-06-ccel-web) with python3 -I and then collated word by word, and corrected where the page differs, against the printed page images of the hashed Internet Archive facsimile ia-facsimile-pdf-5d94f176 (SHA-256 5d94f1762d7a5ca4c0852f9766eb7a87a916f7467de6a2316489f4749075d286) on 2026-11-26, from a local copy fetched whole over HTTPS with curl whose SHA-256 equals that record; the facsimile's optical text layer was used only to locate the pages. No source text passed through a language model. Printed page 426, PDF page 500."
+retrieved = "2026-11-26"
+sha256 = "fb6a152cf49726817354735e36d58aeafad4b999c2746eff4b0d19f468eafe7c"
+byte_size = 662
+path = "src/sources/works/nicene-and-post-nicene-fathers/series-2-volume-7/editions/new-york-1894/artifacts/advent-pc-l3-gregory-oration-45.9-gives-riches-checked-text-fb6a152c/advent-pc-l3-gregory-oration-45.9-gives-riches.txt"
+derived_from = "artifact.nicene-and-post-nicene-fathers.series-2-volume-7.new-york-1894.ia-facsimile-pdf-5d94f176"
+transformation = "Read the named printed pages as images rendered at 200 dots per inch from the hashed facsimile with pdftoppm, cropped to half-columns, and set the collated sentences with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced locator; preserve the printed wording, capitalization, spelling, punctuation and typographic quotation marks and apostrophes; join line-end hyphenation and close the printer's spaces before punctuation; omit running heads, page numbers, section numbers, section summaries, footnote markers and italics."
+indexable = true
+encoding = "utf-8"

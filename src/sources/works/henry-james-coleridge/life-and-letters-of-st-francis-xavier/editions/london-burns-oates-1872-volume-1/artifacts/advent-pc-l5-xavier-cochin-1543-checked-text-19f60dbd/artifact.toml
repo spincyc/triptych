@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.henry-james-coleridge.life-and-letters-of-st-francis-xavier.london-burns-oates-1872-volume-1.advent-pc-l5-xavier-cochin-1543-checked-text-19f60dbd"
+edition_id = "edition.henry-james-coleridge.life-and-letters-of-st-francis-xavier.london-burns-oates-1872-volume-1"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces Henry James Coleridge's English, published at London in 1872. A work first published before 1931 is out of United States copyright: that is the line guidance/missals.md section 5 records as current on 1 January 2026, and because it moves every January it is written here as derived for calendar year 2026 and not as a standing rule. The printed [All rights reserved.] notice of 1872 has no United States effect today. It is transcribed from page images and contains no Google stamp, scan markup or text-layer bytes."
+rights_jurisdiction = "United States"
+provenance = "Manual transcription by lane 5 of the postconciliar Advent research of Coleridge's English of Francis Xavier's letter to the Society at Rome, Cochin, 31 December 1543, read on page images rendered with pdftoppm from a local copy of the exact registered facsimile artifact.henry-james-coleridge.life-and-letters-of-st-francis-xavier.london-burns-oates-1872-volume-1.advent-pc-l5-ia-facsimile-pdf-bff0a1cc (SHA-256 bff0a1ccc640eed1761bc143d11026d3b2e5261cb43da83f6fcc52b68905bcae, recomputed with sha256sum and found equal before any page was rendered), on 2026-11-26: printed pp. 155-156 (PDF pp. 187-188); the dating line From Cochin, Dec. 31, 1543 read on printed p. 163 (PDF 195). The scan's optical text layer was used only to locate the pages. No source text passed through a language model at any point between the server and this hash."
+retrieved = "2026-11-26"
+sha256 = "19f60dbd910297feb6fb5e613a94b77db85e66f62f56d9f77ef53eed751d882d"
+byte_size = 1356
+path = "src/sources/works/henry-james-coleridge/life-and-letters-of-st-francis-xavier/editions/london-burns-oates-1872-volume-1/artifacts/advent-pc-l5-xavier-cochin-1543-checked-text-19f60dbd/xavier-cochin-1543.txt"
+derived_from = "artifact.henry-james-coleridge.life-and-letters-of-st-francis-xavier.london-burns-oates-1872-volume-1.advent-pc-l5-ia-facsimile-pdf-bff0a1cc"
+transformation = "Read the named printed pages as images rendered at 200 to 500 dots per inch and cropped where a mark needed settling; one unit per LF-terminated UTF-8 line, each prefixed by a braced locator; preserve the printed wording, spelling (labour, every where), capitalization, punctuation and typographic quotation marks and apostrophes; join line-end hyphenation (learn-ing, multi-tude, ac-count, con-siderations, whither-soever) and close the printer's spaces before punctuation; omit running heads, page numbers, footnote markers and italics; the last line is the text of footnote 13."
+indexable = true
+encoding = "utf-8"
+notes = "6 LF-terminated lines."

@@ -1,0 +1,16 @@
+schema = 1
+record_type = "passage"
+id = "passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.advent-pc-l4-pseudo-origen-on-matthew-8-8"
+edition_id = "edition.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel"
+artifact_id = "artifact.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.text-130e334a"
+artifact_sha256 = "130e334a0e087ba2ff7f2afc9f803921b4d1de16ed45d682c1756c0c14e3cd67"
+locus = "Matthew 8:8, Pseudo-Origen (Hom. in div. 5), as the Catena gives it"
+states = ["cataloged", "acquired", "inspected"]
+context = "The Catena's Pseudo-Origen on Lord, I am not worthy: when the Lord's Body is eaten and drunk, the Lord enters under one's roof, and one should say, Lord, I am not worthy."
+physical_line_ranges = [[2160, 2160]]
+text = "Pseudo-Origen, Hom. in div. 5: And now also when the heads of Churches, holy men and acceptable to God, enter your roof, then in them the Lord also enters, and do you think of yourself as receiving the Lord. And when you eat and drink the Lord’s Body then the Lord enters under your roof, and you then should humble yourself, saying, “Lord, I am not worthy.” For where He enters unworthily, there He enters to the condemnation of him who receives Him."
+transcription_segments = [
+  { line = 2160, text = "Pseudo-Origen, Hom. in div. 5: And now also when the heads of Churches, holy men and acceptable to God, enter your roof, then in them the Lord also enters, and do you think of yourself as receiving the Lord. And when you eat and drink the Lord’s Body" },
+  { line = 2160, text = "then the Lord enters under your roof, and you then should humble yourself, saying, “Lord, I am not worthy.” For where He enters unworthily, there He enters to the condemnation of him who receives Him." },
+]
+notes = "Exact CCEL English digital witness of the Oxford Catena inspected on 2026-11-26; no facsimile collation and no collation with the Latin. Not verified. Attribute as the Catena gives it. The 1842 English editor's bracketed note (beginning ed. note: and citing the Liturgy of St. John Chrysostom, Andrewes and the Anglican Communion Service) and the comma after it are excluded; the text therefore runs Body then the Lord enters, and a quotation across that point marks the omission. The label names a Latin homily transmitted under Origen's name, not Origen."

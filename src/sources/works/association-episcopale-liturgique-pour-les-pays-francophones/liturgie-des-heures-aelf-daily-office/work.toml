@@ -1,0 +1,9 @@
+schema = 1
+record_type = "work"
+id = "work.association-episcopale-liturgique-pour-les-pays-francophones.liturgie-des-heures-aelf-daily-office"
+title = "La liturgie des Heures (AELF daily Office)"
+responsible = "Association Episcopale Liturgique pour les pays Francophones"
+work_type = "liturgical-office-web-service"
+alternate_titles = ["AELF Office des lectures", "AELF Vêpres", "api.aelf.org"]
+languages = ["fr"]
+description = "The daily Liturgy of the Hours in the French liturgical translation as served by the AELF, the liturgical association of the French-speaking bishops' conferences, through its public JSON service, one document per office and date (Office des lectures at /v1/lectures/YYYY-MM-DD/romain; Vêpres at /v1/vepres/YYYY-MM-DD/romain), zone romain being the general Roman calendar as AELF applies it. It is an official francophone witness to which readings, responsories and antiphons the present Roman Office appoints on a day; it is not the Latin Liturgia Horarum and not the U.S. Liturgy of the Hours, and its hymns are those of the French book. A locus is office and date."

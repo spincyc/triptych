@@ -1,0 +1,22 @@
+schema = 1
+record_type = "passage"
+id = "passage.john-of-the-cross.complete-works.london-1864-lewis-volume-2.advent-pc-l5-the-same-subject-annunciation"
+edition_id = "edition.john-of-the-cross.complete-works.london-1864-lewis-volume-2"
+artifact_id = "artifact.john-of-the-cross.complete-works.london-1864-lewis-volume-2.advent-pc-l5-john-of-the-cross-lewis-checked-text-29b3bdd9"
+artifact_sha256 = "29b3bdd937a6c6845e88c1235997f283d28c4b7b1576e800056b83a0403468ed"
+locus = "John of the Cross, romance The Same Subject (the Annunciation), stanzas I-II (Lewis 1864, vol. II, p. 431)"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Opening stanzas of the romance headed The Same Subject, which follows The Incarnation, printed p. 431 (PDF 453)."
+physical_line_ranges = [[14, 21]]
+text = "God then summoned the Archangel Holy Gabriel—him He sent To the Blessed Virgin Mary To obtain the Maid’s consent. She consented: in that instant The mysterious work was done, And the Trinity a body Wrought and fashioned for the Son."
+transcription_segments = [
+  { line = 14, text = "God then summoned the Archangel" },
+  { line = 15, text = "Holy Gabriel—him He sent" },
+  { line = 16, text = "To the Blessed Virgin Mary" },
+  { line = 17, text = "To obtain the Maid’s consent." },
+  { line = 18, text = "She consented: in that instant" },
+  { line = 19, text = "The mysterious work was done," },
+  { line = 20, text = "And the Trinity a body" },
+  { line = 21, text = "Wrought and fashioned for the Son." },
+]
+verified_on = "2026-11-26"

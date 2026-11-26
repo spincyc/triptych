@@ -1,0 +1,21 @@
+schema = 1
+record_type = "passage"
+id = "passage.nicene-and-post-nicene-fathers.series-1-volume-6.ccel-web-2026-09-17.advent-pc-fix2-riddle-harmonies-tatian-diatessaron"
+edition_id = "edition.nicene-and-post-nicene-fathers.series-1-volume-6.ccel-web-2026-09-17"
+artifact_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-6.ccel-web-2026-09-17.ccel-text-ce371798"
+artifact_sha256 = "ce37179876e5e5c9d8e7a6f1f17b8796c4fdf3ffd2815acb82a1c734c57ecd18"
+locus = "M. B. Riddle, Introductory Essay to Augustine's Harmony of the Gospels, section Harmonies of the Gospels (Tatian)"
+states = ["cataloged", "acquired", "inspected"]
+context = "In his survey of Gospel harmonies, Riddle names Tatian's Diatessaron (dated between A.D. 153 and 170) as the earliest attempt at a Harmony of the four Gospels, and notes that a commentary on it by Ephraem the Syrian, surviving in Armenian, allowed Zahn to reconstruct much of its text. Supports the descriptor that the Diatessaron is a harmony of the four Gospels, and connects it to Ephrem's commentary read in the Office of Readings."
+physical_line_ranges = [[7070, 7076]]
+text = "The earliest attempt at constructing a Harmony was that of Tatian [494] (died A.D. 172). The date of its appearance was between A.D. 153 and 170; and its title, Diatessaron, furnishes abundant evidence of the early acceptance of our four canonical Gospels. Our knowledge of this work was, until recently, very slight. But the discovery of an Armenian translation of a commentary upon it, by Ephraem the Syrian, has enabled Zahn to reconstruct a large part of the text."
+transcription_segments = [
+  { line = 7070, text = "The earliest attempt at constructing a Harmony was that of Tatian [494]" },
+  { line = 7071, text = "(died A.D. 172). The date of its appearance was between A.D. 153 and" },
+  { line = 7072, text = "170; and its title, Diatessaron, furnishes abundant evidence of the" },
+  { line = 7073, text = "early acceptance of our four canonical Gospels. Our knowledge of this" },
+  { line = 7074, text = "work was, until recently, very slight. But the discovery of an Armenian" },
+  { line = 7075, text = "translation of a commentary upon it, by Ephraem the Syrian, has enabled" },
+  { line = 7076, text = "Zahn to reconstruct a large part of the text." },
+]
+notes = "advent-pc-fix2, 2026-11-26. Read in the tracked public-domain CCEL whole text (header: New York, 1886 print basis). The footnote marker [494] is kept as printed in the CCEL line; the preceding paragraph (lines 7059-7060) speaks of a Harmony of the four Gospels. Not collated here against a facsimile."

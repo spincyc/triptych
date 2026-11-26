@@ -1,0 +1,18 @@
+schema = 1
+record_type = "passage"
+id = "passage.nicene-and-post-nicene-fathers.series-2-volume-7.ccel-web-2026-10-06.advent-pc-fix2-gifford-life-of-cyril-lectures-before-episcopate"
+edition_id = "edition.nicene-and-post-nicene-fathers.series-2-volume-7.ccel-web-2026-10-06"
+artifact_id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-7.ccel-web-2026-10-06.ccel-text-56d84cfa"
+artifact_sha256 = "56d84cfa94dee313af0139e2d7f3d4b5f7fffca40ce0f34794b5f56264964dfd"
+locus = "Gifford, Introduction, chapter I, Life of S. Cyril (the lectures delivered three or four years before he succeeded Maximus)"
+states = ["cataloged", "acquired", "inspected"]
+context = "Gifford's introduction in NPNF second series vol. 7: Cyril delivered the Catechetical Lectures as a priest, and within three or four years afterwards was chosen to succeed Maximus as bishop of Jerusalem (the next paragraph dates his consecration near his letter to Constantius of 7 May 351). Supports the descriptor that Cyril gave his catecheses before he became bishop."
+physical_line_ranges = [[308, 311]]
+text = "This is also implied in the fact, that within three or four years after delivering his Catechetical Lectures to the candidates for Baptism, he was chosen to succeed Maximus in the See of Jerusalem."
+transcription_segments = [
+  { line = 308, text = "This is also implied in the" },
+  { line = 309, text = "fact, that within three or four years after delivering his Catechetical" },
+  { line = 310, text = "Lectures to the candidates for Baptism, he was chosen to succeed" },
+  { line = 311, text = "Maximus in the See of Jerusalem." },
+]
+notes = "advent-pc-fix2, 2026-11-26. Read in the tracked public-domain CCEL whole text. The sentence's opening, This is also implied, refers to the preceding statement that he preached immediately before the bishop. Not collated here against the facsimile."

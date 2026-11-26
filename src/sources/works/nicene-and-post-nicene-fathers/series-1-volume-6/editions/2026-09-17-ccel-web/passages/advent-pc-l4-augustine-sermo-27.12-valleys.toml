@@ -1,0 +1,18 @@
+schema = 1
+record_type = "passage"
+id = "passage.nicene-and-post-nicene-fathers.series-1-volume-6.ccel-web-2026-09-17.advent-pc-l4-augustine-sermo-27.12-valleys"
+edition_id = "edition.nicene-and-post-nicene-fathers.series-1-volume-6.ccel-web-2026-09-17"
+artifact_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-6.ccel-web-2026-09-17.ccel-text-ce371798"
+artifact_sha256 = "ce37179876e5e5c9d8e7a6f1f17b8796c4fdf3ffd2815acb82a1c734c57ecd18"
+locus = "Augustine, Sermon XXVII [LXXVII Ben.] on Matt. 15:21, section 12"
+states = ["cataloged", "acquired", "inspected"]
+context = "Augustine's sermon on the Canaanite woman (heading at CCEL line 32945), section 12 (from line 33213): the centurion beside the woman as a second example of humility; the quoted sentences follow his quotation of Matt. 8:8."
+physical_line_ranges = [[33228, 33231]]
+text = "He did not receive Him into his house, but he had received Him already in his heart. The more humble, the more capacious, and the more full. For the hills drive back the water, but the valleys are filled by it."
+transcription_segments = [
+  { line = 33228, text = "He did not" },
+  { line = 33229, text = "receive Him into his house, but he had received Him already in his" },
+  { line = 33230, text = "heart. The more humble, the more capacious, and the more full. For the" },
+  { line = 33231, text = "hills drive back the water, but the valleys are filled by it." },
+]
+notes = "Exact CCEL English digital witness inspected on 2026-11-26 by Advent postconciliar research lane 4; no facsimile collation of these lines and no collation with the Latin. Not verified. CCEL's bracketed footnote markers are excluded from the segments. The sermon's Gospel is Matt. 15:21-28, not Matt. 8; Augustine brings in the centurion as a parallel."

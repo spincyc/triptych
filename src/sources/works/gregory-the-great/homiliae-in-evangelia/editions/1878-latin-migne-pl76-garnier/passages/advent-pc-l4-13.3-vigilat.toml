@@ -1,0 +1,18 @@
+schema = 1
+record_type = "passage"
+id = "passage.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.advent-pc-l4-13.3-vigilat"
+edition_id = "edition.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878"
+artifact_id = "artifact.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.advent-pc-l4-13.3-vigilat-checked-text-8d1f1fa1"
+artifact_sha256 = "8d1f1fa109c75cc3bf603943dfa42ca15eb55bc24fb3d9448840b3b87b66291c"
+locus = "13.3"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "PL 76 col. 1124 C-D, facsimile PDF page 562, right column. Homily XIII (on Luke 12:35-40), section 3: on Beati sunt servi illi, quos cum venerit dominus invenerit vigilantes, the three kinds of watching, joined to 1 Cor. 15:34 and Rom. 13:11. Read from Unde et protinus subditur to surgere, before 4. Sed veniens dominus."
+physical_line_ranges = [[1, 3]]
+text = "{13.3} Unde et protinus subditur: Beati sunt servi illi, quos cum venerit dominus, invenerit vigilantes. {13.3} Vigilat qui ad aspectum veri luminis mentis oculos apertos tenet, vigilat qui servat operando quod credit, vigilat qui a se torporis et negligentiæ tenebras repellit. {13.3} Hinc etenim Paulus dicit: Evigilate, justi, et nolite peccare. Hinc rursus ait: Hora est jam nos de somno surgere."
+transcription_segments = [
+  { line = 1, text = "{13.3} Unde et protinus subditur: Beati sunt servi illi, quos cum venerit dominus, invenerit vigilantes." },
+  { line = 2, text = "{13.3} Vigilat qui ad aspectum veri luminis mentis oculos apertos tenet, vigilat qui servat operando quod credit, vigilat qui a se torporis et negligentiæ tenebras repellit." },
+  { line = 3, text = "{13.3} Hinc etenim Paulus dicit: Evigilate, justi, et nolite peccare. Hinc rursus ait: Hora est jam nos de somno surgere." },
+]
+verified_on = "2026-11-26"
+notes = "The printer set dominus,invenerit without a space; it is supplied. Scriptural references printed in parentheses are omitted: (I Cor. xv, 34) after peccare and (Rom. xiii, 11) after surgere. The three vigilat clauses recur, with autem and commas added, in Bede's commentary on Mark 13:37 (artifact.bede.in-marci-evangelium-expositio.2026-10-13-latin-wikisource-migne.latin-text-b8197766, line 405), followed there by the same two Pauline texts. OCR (ia-djvu-text-13c0bbad) was used only to find the page."

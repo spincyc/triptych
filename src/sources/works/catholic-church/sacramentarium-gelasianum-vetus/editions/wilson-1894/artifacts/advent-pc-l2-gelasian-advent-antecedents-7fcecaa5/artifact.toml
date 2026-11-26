@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.advent-pc-l2-gelasian-advent-antecedents-7fcecaa5"
+edition_id = "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Literal readings and editorial notes of the Oxford 1894 Wilson printing, public domain in the United States by date of publication. Only printed book text is carried."
+rights_jurisdiction = "United States"
+provenance = "Transcribed on 2026-11-26 by advent-pc research lane 2 from page images of the whole parent PDF, fetched over HTTPS with curl on 2026-11-26 from https://archive.org (registered source_url of the parent artifact); its SHA-256 006a38a39250d39c9745acfb4f4a098374027e719dc7ad7e32972fa6a82489bc and byte size 13,625,474 equal the registered parent artifact. Printed pp. 217-220 = PDF pp. 310-313, rendered with pdftoppm at 200 dpi and cropped; every transcribed line was read on the image. No source text passed through a language model."
+retrieved = "2026-11-26"
+sha256 = "7fcecaa5db89b701d3e5bf82ad5344a670e976b30c0fdc6f8c51e3ed77baf887"
+byte_size = 1753
+path = "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/advent-pc-l2-gelasian-advent-antecedents-7fcecaa5/gelasian-advent-antecedents.txt"
+derived_from = "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.internet-archive-pdf-006a38a3"
+transformation = "Read the named printed pages as images of the parent artifact and transcribe the quoted extent with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced locator naming the printed page and, for apparatus, the note number; preserve wording, spelling, capitalization and punctuation; join line-end hyphenation; small capitals given as capitals. Superscript footnote markers, marginal witness sigla and marginal numbers (683, 684) and the printed gamma after 'Per.' are omitted. Note 1 on p. 218 is excerpted: only its sentence (a) and sentence (e) are given, each on its own line."
+indexable = true
+encoding = "utf-8"
+notes = "Created by the advent-pc lane-2 research pass (postconciliar Advent handbook). Selected antecedent or witness units only; not a whole-page transcription."

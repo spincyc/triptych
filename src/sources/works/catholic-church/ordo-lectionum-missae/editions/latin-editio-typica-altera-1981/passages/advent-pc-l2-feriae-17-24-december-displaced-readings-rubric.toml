@@ -1,0 +1,12 @@
+schema = 2
+record_type = "passage"
+id = "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.advent-pc-l2-feriae-17-24-december-displaced-readings-rubric"
+edition_id = "edition.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981"
+artifact_id = "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e"
+artifact_sha256 = "ed4bc14e6c5f885be9cb220f4edbdd23c1db749b53c1489058d6e54cfaf7fd0d"
+locus = "feriae-adventus-17-24-decembris/rubric-before-193"
+artifact_page_ranges = [[164, 164]]
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The italic rubric under the heading Feriae Adventus a die 17 ad diem 24 decembris, printed p. 110, before n. 193. Its sense, paraphrased and not quoted: the following readings are used on the days to which they are assigned; readings omitted because a Sunday occurs may be resumed or anticipated on another day, especially in place of readings that happen to be assigned to that year's Sunday. The same page prints n. 193 with the responsorial psalm cited as Ps 71 (Vulgate numbering)."
+verified_on = "2026-11-26"
+notes = "advent-pc lane 2. The whole restricted PDF was re-fetched with curl on 2026-11-26 from its registered source_url; SHA-256 equals the registered artifact. Artifact page 164 was rendered with pdftoppm at 200 dpi and read on the image. The artifact is restricted and not indexable, so this record carries no quotation; the paraphrase in context is the project's."

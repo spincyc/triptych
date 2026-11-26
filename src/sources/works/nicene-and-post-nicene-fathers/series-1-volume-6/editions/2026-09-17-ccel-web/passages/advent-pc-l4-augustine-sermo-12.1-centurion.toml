@@ -1,0 +1,17 @@
+schema = 1
+record_type = "passage"
+id = "passage.nicene-and-post-nicene-fathers.series-1-volume-6.ccel-web-2026-09-17.advent-pc-l4-augustine-sermo-12.1-centurion"
+edition_id = "edition.nicene-and-post-nicene-fathers.series-1-volume-6.ccel-web-2026-09-17"
+artifact_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-6.ccel-web-2026-09-17.ccel-text-ce371798"
+artifact_sha256 = "ce37179876e5e5c9d8e7a6f1f17b8796c4fdf3ffd2815acb82a1c734c57ecd18"
+locus = "Augustine, Sermon XII [LXII Ben.] on Matt. 8:8, section 1"
+states = ["cataloged", "acquired", "inspected"]
+context = "The opening of Augustine's sermon on I am not worthy that thou shouldest come under my roof (heading at CCEL line 28426): by calling himself unworthy the centurion showed himself worthy that Christ should come into his heart."
+physical_line_ranges = [[28440, 28442]]
+text = "By calling himself unworthy, he showed himself worthy for Christ to come not into his house, but into his heart."
+transcription_segments = [
+  { line = 28440, text = "By calling himself unworthy," },
+  { line = 28441, text = "he showed himself worthy for Christ to come not into his house, but" },
+  { line = 28442, text = "into his heart." },
+]
+notes = "Exact CCEL English digital witness inspected on 2026-11-26 by Advent postconciliar research lane 4; no facsimile collation of these lines and no collation with the Latin. Not verified. CCEL's bracketed footnote markers are excluded from the segments."

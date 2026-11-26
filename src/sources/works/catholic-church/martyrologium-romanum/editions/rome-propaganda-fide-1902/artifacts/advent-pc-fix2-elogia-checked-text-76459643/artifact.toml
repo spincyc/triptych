@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.martyrologium-romanum.rome-propaganda-fide-1902.advent-pc-fix2-elogia-checked-text-76459643"
+edition_id = "edition.catholic-church.martyrologium-romanum.rome-propaganda-fide-1902"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Public domain in the United States by publication date: the title page of this copy prints ROMAE EX TYPOGRAPHIA POLYGLOTTA S. C. DE PROPAGANDA FIDE MCMII, as recorded on the sibling transcription in this edition. A work first published before 1931 is out of United States copyright: that is the line guidance/missals.md section 5 records as current on 1 January 2026, and because it moves every January it is written here as derived for calendar year 2026 and not as a standing rule. This focused transcription reproduces only Latin printed in that book and adds no authorship."
+rights_jurisdiction = "United States"
+provenance = "Manual transcription by the advent-pc fix2 pass of the 1902 Roman Martyrology's day headings and the elogia of St Cyril of Jerusalem (18 March), St Cyprian (14 and 16 September), St John of the Cross (24 November and 14 December) and St Francis Xavier (3 December), read on page images rendered with pdftoppm from a local copy of the exact registered facsimile artifact.catholic-church.martyrologium-romanum.rome-propaganda-fide-1902.ia-pdf-494d71f0 (SHA-256 494d71f0270c09b7e1ddc361616a0837ffc7f1cf92ad1f413cc973aa85f21693, recomputed with sha256sum and found equal before any page was rendered), on 2026-11-26: printed pp. 39, 137, 138, 177, 182, 187, 188 (PDF pp. 109, 207, 208, 247, 252, 257, 258; printed page = PDF page minus 70 on each of these pages, checked against the running heads). The scan's optical text layer was used only to locate the pages. No source text passed through a language model at any point between the server and this hash."
+retrieved = "2026-11-26"
+sha256 = "764596436cf28ac89f69ef94667034975e2d88a56088ac3d44422635861ea01d"
+byte_size = 1595
+path = "src/sources/works/catholic-church/martyrologium-romanum/editions/rome-propaganda-fide-1902/artifacts/advent-pc-fix2-elogia-checked-text-76459643/advent-pc-fix2-elogia-latin.txt"
+derived_from = "artifact.catholic-church.martyrologium-romanum.rome-propaganda-fide-1902.ia-pdf-494d71f0"
+transformation = "Read the named printed pages as images rendered at 300 dots per inch, with every elogium and day heading reread on 600 dots-per-inch crops and one mark (the comma after clari on printed p. 182) settled on a further enlarged crop; one unit per LF-terminated UTF-8 line, each prefixed by a braced printed-page locator; one unit is a day heading without its Luna formula and epact tables, or one whole elogium (an indented paragraph of the printed day), so the two-sentence Cyprian elogium of 14 September stands on one line; only the named elogia of each day are transcribed, the others are omitted, and the 14 December heading (p. 187) is followed directly by the ninth elogium of that day (p. 188); join line wraps and division hyphens; remove the printed acute stress accents; expand the ligatures (ae for the ae-ligature, oe for the oe-ligature), following the sibling transcriptions in this edition; keep spelling (Jerosolymis, oecumenica, cujus, Theresiae), capitalization and pointing; the large initial letter of each first elogium is set as an ordinary capital; the printer's space before a colon, semicolon or comma is not reproduced."
+indexable = true
+encoding = "utf-8"
+notes = "13 LF-terminated lines, all ASCII after normalization. Day positions: line 2 is the first elogium of 18 March; line 4 the third and line 5 the fourth elogium of 14 September; line 7 the first elogium of 16 September; line 9 the first elogium of 24 November; line 11 the first elogium of 3 December; line 13 the ninth elogium of 14 December. No reading was left uncertain."

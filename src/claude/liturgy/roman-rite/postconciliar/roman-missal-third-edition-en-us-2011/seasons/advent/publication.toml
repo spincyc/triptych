@@ -1,0 +1,47 @@
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"
+
+[document]
+type = "liturgy-reference-v1"
+
+[document.main]
+pdftitle = "Advent: A Handbook for the Season of the Lord's Coming"
+pdfsubject = "A handbook for keeping Advent with the Roman Missal, the Lectionary for Mass and the Liturgy of the Hours in the dioceses of the United States: going out to meet the Lord; his two comings; how the Church came to keep the season; watching, prayer, penance and mercy, a rule for the season and confession; the weeks of Advent, the last days from 17 December with the O antiphons, the Fourth Sunday and the holy night, with the Fathers, saints and popes on each; Bethlehem, the swaddling bands and the wonderful exchange; with daily readings and the prayers of the season."
+pdfkeywords = "Advent, Roman Missal, Lectionary for Mass, Liturgy of the Hours, Church Fathers, O Antiphons, Immaculate Conception, Our Lady of Guadalupe, Angelus, confession"
+title-style = "series-detail"
+series-line = 'A Triptych Seasonal Handbook'
+title = 'Advent'
+subtitle = "A Handbook for the Season of the Lord's Coming"
+title-detail = '''The Roman Missal, the \textit{Lectionary for Mass}\\[0.35em]
+and the \textit{Liturgy of the Hours}\\[0.35em]
+in the dioceses of the United States'''
+title-notice = '''For the Church's law and the services of your own church, follow your
+parish and its calendar; \textit{About This Book} says what this book draws on.'''
+body = [
+  'sections/05-to-the-reader',
+  'sections/10-go-out-to-meet-him',
+  'sections/12-two-comings',
+  'sections/14-history',
+  'sections/20-watch',
+  'sections/22-prayer',
+  'sections/24-penance-and-mercy',
+  'sections/26-rule-of-life',
+  'sections/28-confession',
+  'sections/30-first-week',
+  'sections/31-second-week',
+  'sections/32-third-week',
+  'sections/33-last-days',
+  'sections/34-fourth-sunday',
+  'sections/36-vigil-and-night',
+  'sections/40-house-of-bread',
+  'sections/42-swaddling-bands',
+  'sections/44-wonderful-exchange',
+  'sections/48-the-holy-night',
+]
+apparatus = [
+  'sections/90-daily-readings',
+  'sections/92-prayers',
+  { source = 'sections/95-scope', roles = ['scope-appendix'] },
+  { source = 'sections/99-references', roles = ['references'] },
+]

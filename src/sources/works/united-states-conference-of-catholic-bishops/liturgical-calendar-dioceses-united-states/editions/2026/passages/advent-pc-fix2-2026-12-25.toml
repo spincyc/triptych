@@ -1,0 +1,11 @@
+schema = 2
+record_type = "passage"
+id = "passage.united-states-conference-of-catholic-bishops.liturgical-calendar-dioceses-united-states.2026.advent-pc-fix2-2026-12-25"
+edition_id = "edition.united-states-conference-of-catholic-bishops.liturgical-calendar-dioceses-united-states.2026"
+artifact_id = "artifact.united-states-conference-of-catholic-bishops.liturgical-calendar-dioceses-united-states.2026.usccb-pdf-4bd9add0"
+artifact_sha256 = "4bd9add07512396a2323aa977bc4816a5fad6348262e12740bcee97c77372d02"
+locus = "artifact p. 49 (printed p. 47): December 25, 2026, The Nativity of the Lord (Christmas)"
+artifact_page_ranges = [[49, 49]]
+states = ["cataloged", "acquired", "inspected"]
+context = "The entry reads: 25 Fri THE NATIVITY OF THE LORD (Christmas), white; Solemnity [Holyday of Obligation]; Vigil: Is 62:1-5/Acts 13:16-17, 22-25/Mt 1:1-25 or 1:18-25 (13); Night: Is 9:1-6/Ti 2:11-14/Lk 2:1-14 (14); Dawn: Is 62:11-12/Ti 3:4-7/Lk 2:15-20 (15); Day: Is 52:7-10/Heb 1:1-6/Jn 1:1-18 or 1:1-5, 9-14 (16) Pss Prop. Four Masses with Lectionary nos. 13-16; the Vigil Gospel has a longer form (the genealogy, Mt 1:1-25) and a shorter (Mt 1:18-25); the Day Gospel has a longer (Jn 1:1-18) and a shorter (Jn 1:1-5, 9-14) form. The preceding entry, 24 Thu Advent Weekday, gives only Morning: 2 Sm 7:1-5, 8b-12, 14a, 16/Lk 1:67-79 (200)."
+notes = "Registered by the advent-pc-fix2 lane on 2026-11-26. Read in the text layer of the hash-matched whole PDF (lane-2 scratch copy, SHA-256 equal to this artifact): the lane-2 extraction 2026cal.txt (SHA-256 d4797f3711b183aab3de4384af6bb0f1263003cbebdecdeca7e7bc0b55d66e35) was reproduced byte for byte by pdftotext -layout from that PDF, and the page was located with per-page pdftotext. Restricted: citations only, no Lectionary wording. Lines 1914-1919 of the extraction (24 December at 1912-1913)."

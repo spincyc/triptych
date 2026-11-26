@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.luis-laso-de-la-vega.huei-tlamahuicoltica.mexico-juan-ruiz-1649.advent-pc-l5-cuix-amo-nican-nica-checked-text-6255a02b"
+edition_id = "edition.luis-laso-de-la-vega.huei-tlamahuicoltica.mexico-juan-ruiz-1649"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces Nahuatl printed at Mexico in 1649, in the United States public domain by date of publication. A work first published before 1931 is out of United States copyright: that is the line guidance/missals.md section 5 records as current on 1 January 2026, and because it moves every January it is written here as derived for calendar year 2026 and not as a standing rule. It is transcribed from page images and reproduces no image."
+rights_jurisdiction = "United States"
+provenance = "Manual transcription by lane 5 of the postconciliar Advent research of the Nahuatl of the Virgin's words to Juan Diego in the 1649 Huei tlamahuiçoltica (the narrative known as Nican mopohua), read on page images rendered with pdftoppm from a local copy of the exact registered facsimile artifact.luis-laso-de-la-vega.huei-tlamahuicoltica.mexico-juan-ruiz-1649.advent-pc-l5-ia-facsimile-pdf-1f5580f7 (SHA-256 1f5580f78d0fffad8e093600db13a603ac8745ab199059de8c54ea972e398ef6, recomputed with sha256sum and found equal before any page was rendered), on 2026-11-26: the leaf signed B and headed 5 (PDF p. 21). The scan's optical text layer was used only to locate the pages. No source text passed through a language model at any point between the server and this hash."
+retrieved = "2026-11-26"
+sha256 = "6255a02b61b1745da22f10140ae5ad96532b988fe5d562e8b3999039ae546ee6"
+byte_size = 98
+path = "src/sources/works/luis-laso-de-la-vega/huei-tlamahuicoltica/editions/mexico-juan-ruiz-1649/artifacts/advent-pc-l5-cuix-amo-nican-nica-checked-text-6255a02b/cuix-amo-nican-nica.txt"
+derived_from = "artifact.luis-laso-de-la-vega.huei-tlamahuicoltica.mexico-juan-ruiz-1649.advent-pc-l5-ia-facsimile-pdf-1f5580f7"
+transformation = "Read the named printed pages as images rendered at 200 to 500 dots per inch and cropped where a mark needed settling; one unit per LF-terminated UTF-8 line, each prefixed by a braced locator; preserve the printed letters, accents (àmo, nicà, nècauhyotitlan, ticà), ç, capitalization (nimoNantzin) and word division; the printed question mark, of the shape this press uses, is set as ?; join the line-end hyphenation nècauhyoti-tlan and close the printer's space before the question mark; omit the signature and headline."
+indexable = true
+encoding = "utf-8"
+notes = "2 LF-terminated lines."

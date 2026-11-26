@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.ante-nicene-fathers.volume-1.buffalo-1887.advent-pc-l3-diognetus-8-9-checked-text-a1d4aed9"
+edition_id = "edition.ante-nicene-fathers.volume-1.buffalo-1887"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces a few sentences of the English translation of the Epistle of Mathetes to Diognetus, published at Buffalo in 1887 in The Ante-Nicene Fathers, volume I, which is in the United States public domain by date of publication: a work first published before 1931 is out of United States copyright, the line guidance/missals.md records as current on 1 January 2026, written here as derived for calendar year 2026 and not as a standing rule (the parent facsimile record gives the title-page evidence). It is collated against page images rendered from that hashed Internet Archive facsimile and contains no Internet Archive markup or text-layer bytes."
+rights_jurisdiction = "United States"
+provenance = "Lane 3 of the postconciliar Advent research (advent-pc-l3): the sentences were joined from the lines of the tracked CCEL text artifact.ante-nicene-fathers.volume-1.ccel-web-2026-10-13.ccel-text-ee9c7f0a with python3 -I (wrapped lines joined, the [n] footnote markers removed) and every word and mark was then collated, and corrected where the page differs, against the printed page images of the hashed Internet Archive facsimile artifact.ante-nicene-fathers.volume-1.buffalo-1887.ia-facsimile-pdf-b50e358e (SHA-256 b50e358eebf85f06794c4dba16777eb6d27a35688a6c7a828b46c9d2190be8cc) on 2026-11-26, from a local copy fetched whole over HTTPS with curl whose SHA-256 equals that record. The facsimile's optical text layer was used only to locate the pages. No source text passed through a language model. Printed page 28, PDF page 46 (printed page n is PDF page n+18 in this range, read on the running folios)."
+retrieved = "2026-11-26"
+sha256 = "a1d4aed9e3e6723ccee5f2d0ef7c524b13b3ac1d86c46b060007ab84525d5754"
+byte_size = 3848
+path = "src/sources/works/ante-nicene-fathers/volume-1/editions/buffalo-1887/artifacts/advent-pc-l3-diognetus-8-9-checked-text-a1d4aed9/advent-pc-l3-diognetus-8-9.txt"
+derived_from = "artifact.ante-nicene-fathers.volume-1.buffalo-1887.ia-facsimile-pdf-b50e358e"
+transformation = "Read the named printed pages as images rendered at 200 dots per inch from the hashed facsimile with pdftoppm, cropped to half-columns, and set the collated sentences with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced locator (book.chapter.section or chapter, and printed page); preserve the printed wording, capitalization, spelling (including the ligature in Æons and quæ), punctuation, square and round brackets, and typographic quotation marks and apostrophes; join line-end hyphenation and close the printer's spaces before punctuation; omit running heads, page numbers, section numbers, chapter summaries, footnotes, footnote markers and italics."
+indexable = true
+encoding = "utf-8"

@@ -1,0 +1,18 @@
+schema = 1
+record_type = "passage"
+id = "passage.jacques-paul-migne.patrologia-latina-volume-24.paris-1865.advent-pc-l4-in-isaiam-4-11.1-virga"
+edition_id = "edition.jacques-paul-migne.patrologia-latina-volume-24.paris-1865"
+artifact_id = "artifact.jacques-paul-migne.patrologia-latina-volume-24.paris-1865.advent-pc-l4-in-isaiam-4-11-1-2-checked-text-170623d8"
+artifact_sha256 = "170623d8f930200e6af2a0a5d309b28c931d2749f659187fb3b7b1ca0d632c4e"
+locus = "column-147"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Jerome, Commentarii in Isaiam, book IV, on Isa. 11:1. PL 24 col. 147, lower half of the left column, facsimile PDF page 78. After the lemma of Isa. 11:1-2 and the statement that the whole prophecy to the burden of Babylon is of Christ, Jerome gives the Jewish reading of the rod and the flower (both the Lord: power of the reigning, beauty) and his own: the rod is the holy Virgin Mary, the flower is the Lord and Saviour."
+physical_line_ranges = [[1, 3]]
+text = "{IV, Is 11:1} Virgam et florem de radice Jesse, ipsum Dominum Judæi interpretantur: quod scilicet in virga regnantis potentia, in flore pulchritudo monstretur. {IV, Is 11:1} Nos autem virgam de radice Jesse sanctam Mariam Virginem intelligamus, quæ nullum habuit sibi fruticem cohærentem; de qua et supra legimus: Ecce Virgo concipiet et pariet filium. {IV, Is 11:1} Et florem Dominum Salvatorem, qui dicit in Cantico canticorum: Ego flos campi et lilium convallium."
+transcription_segments = [
+  { line = 1, text = "{IV, Is 11:1} Virgam et florem de radice Jesse, ipsum Dominum Judæi interpretantur: quod scilicet in virga regnantis potentia, in flore pulchritudo monstretur." },
+  { line = 2, text = "{IV, Is 11:1} Nos autem virgam de radice Jesse sanctam Mariam Virginem intelligamus, quæ nullum habuit sibi fruticem cohærentem; de qua et supra legimus: Ecce Virgo concipiet et pariet filium." },
+  { line = 3, text = "{IV, Is 11:1} Et florem Dominum Salvatorem, qui dicit in Cantico canticorum: Ego flos campi et lilium convallium." },
+]
+verified_on = "2026-11-26"
+notes = "Omitted: (Isa. vii, 14) after filium; (Cant. ii, 1) after convallium. Ecce Virgo concipiet et pariet filium and Ego flos campi et lilium convallium print in italics. The scan of this page is coarse and some letters are broken or filled (for example the c of consurget prints like an e, the f of fruticem like an I); readings were settled at 300 dots per inch against the sense and the letter forms elsewhere on the page. Book IV: running heads LIB. IV on the facing pages; book V begins with the burden of Babylon (Isa. 13). OCR was used only to find the page."

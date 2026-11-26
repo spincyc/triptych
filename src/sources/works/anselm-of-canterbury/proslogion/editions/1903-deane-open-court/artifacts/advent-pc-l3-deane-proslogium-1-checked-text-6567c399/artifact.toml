@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.anselm-of-canterbury.proslogion.deane-open-court-1903.advent-pc-l3-deane-proslogium-1-checked-text-6567c399"
+edition_id = "edition.anselm-of-canterbury.proslogion.deane-open-court-1903"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces a few sentences of Sidney Norton Deane's English translation of Anselm's Proslogium, published at Chicago by the Open Court Publishing Company in 1903, which is in the United States public domain by date of publication (the parent facsimile's rights_basis gives the evidence and the reasoning). It is transcribed from page images rendered from the hashed Internet Archive facsimile and contains no Internet Archive markup or text-layer bytes."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription by lane 3 of the postconciliar Advent research (advent-pc-l3) on 2026-11-26 from the printed page images of the hashed Internet Archive facsimile artifact.anselm-of-canterbury.proslogion.deane-open-court-1903.advent-pc-l3-ia-facsimile-pdf-07060b85 (SHA-256 07060b85613faa2e6b743b326addb3b85a2a9ef2b46190a2a28456e0e6e14bd5); the item's OCR text was used only to locate the pages. No source text passed through a language model. Printed pages 3 and 6, PDF pages 45 and 48."
+retrieved = "2026-11-26"
+sha256 = "6567c399a3838849ca50edbb1ca9e47dbeb13eb9c1d955ef8ba97e2da66fa228"
+byte_size = 1134
+path = "src/sources/works/anselm-of-canterbury/proslogion/editions/1903-deane-open-court/artifacts/advent-pc-l3-deane-proslogium-1-checked-text-6567c399/advent-pc-l3-deane-proslogium-1.txt"
+derived_from = "artifact.anselm-of-canterbury.proslogion.deane-open-court-1903.advent-pc-l3-ia-facsimile-pdf-07060b85"
+transformation = "Read the named printed pages as images rendered with pdftoppm from the hashed facsimile and transcribe the quoted sentences with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced locator (chapter and printed page); preserve the printed wording, capitalization, spelling, punctuation and the bracketed scripture reference as printed in round brackets; set the opening word printed in small capitals (UP) as Up; join line-end hyphenation and close the printer's spaces before punctuation; omit running heads, page numbers, chapter headings and footnotes."
+indexable = true
+encoding = "utf-8"

@@ -1,0 +1,18 @@
+schema = 1
+record_type = "passage"
+id = "passage.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.advent-pc-l4-12.6-crastinum"
+edition_id = "edition.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878"
+artifact_id = "artifact.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.advent-pc-l4-12.6-crastinum-checked-text-26fec86e"
+artifact_sha256 = "26fec86ef62ff38f2c2ea08f3d513233d50be0eaf7c04fb68457d616ad20a26c"
+locus = "12.6"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "PL 76 col. 1121 D (foot of the left column) to col. 1122 A (head of the right column), facsimile PDF page 561. Homily XII (on Matt. 25:1-13), the opening of section 6: Gregory's reading of Vigilate itaque, quia nescitis diem neque horam. The day is hidden because God, who promised pardon to the penitent, did not promise tomorrow to the sinner. Read from 6. Ubi apte to praevidere, before Ecce hunc ipsum diem."
+physical_line_ranges = [[1, 3]]
+text = "{12.6} Ubi apte quoque generalis ad discipulos exhortatio subinfertur, cum dicitur: Vigilate itaque, quia nescitis diem neque horam. {12.6} Quia post peccata Deus. pœnitentiam suscipit, si sciret quisque de præsenti sæculo quo temporis exiret, aliud tempus voluptatibus, atque aliud pœnitentiæ aptare potuisset. {12.6} Sed qui pœnitenti veniam spopondit, peccanti diem crastinum non promisit. Semper ergo extremum diem debemus metuere, quem nunquam possumus prævidere."
+transcription_segments = [
+  { line = 1, text = "{12.6} Ubi apte quoque generalis ad discipulos exhortatio subinfertur, cum dicitur: Vigilate itaque, quia nescitis diem neque horam." },
+  { line = 2, text = "{12.6} Quia post peccata Deus. pœnitentiam suscipit, si sciret quisque de præsenti sæculo quo temporis exiret, aliud tempus voluptatibus, atque aliud pœnitentiæ aptare potuisset." },
+  { line = 3, text = "{12.6} Sed qui pœnitenti veniam spopondit, peccanti diem crastinum non promisit. Semper ergo extremum diem debemus metuere, quem nunquam possumus prævidere." },
+]
+verified_on = "2026-11-26"
+notes = "Section 6 opens at the foot of col. 1121; its first words were read on the image with the section number. The column ends Quia post peccata Deus. with a full stop after Deus, which breaks the sentence (Quia post peccata Deus poenitentiam suscipit, ...); read at 1200 dots per inch, it is a printed full stop and is kept as printed. The print reads quo temporis exiret; the Wikisource witness of these homilies (gregory-whole.txt) reads quo tempore exiret. The italic lemma (Matt. 25:13) is not marked. OCR (ia-djvu-text-13c0bbad) was used only to find the page."

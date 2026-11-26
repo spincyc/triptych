@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.nicene-and-post-nicene-fathers.series-1-volume-10.new-york-1888.advent-pc-l4-chrysostom-in-mt-hom-78.1-2"
+edition_id = "edition.nicene-and-post-nicene-fathers.series-1-volume-10.new-york-1888"
+artifact_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-10.new-york-1888.advent-pc-l4-chrysostom-in-mt-78-checked-text-afdae096"
+artifact_sha256 = "afdae09619b595c8e0fead0264044e8e8939b1421907ebb6daa3de81c061b285"
+locus = "Chrysostom, In Matthaeum, Homily LXXVIII.1-2 (on Matt. 25:1-13)"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Chrysostom on the ten virgins: the lamps are virginity, the oil is almsgiving; those who sell the oil are the poor, who are found here and not then; the poor are the hope of salvation and the oil must be gathered now. Read on printed page 470 (right column, from But by lamps here) and printed page 471 (left column, through but this), rendered from the hashed facsimile; section 2 begins at Seest thou what great profit."
+physical_line_ranges = [[1, 4]]
+text = "{78.1} But by lamps here, He meaneth the gift itself of virginity, the purity of holiness; and by oil, humanity, almsgiving, succor to them that are in need. {78.1} \"But go to them that sell, and buy.\" And who are they that sell? The poor. And where are these? Here, and then should they have sought them, not at that time. {78.2} Seest thou what great profit arises to us from the poor? shouldest thou take them away, thou wouldest take away the great hope of our salvation. {78.2} Wherefore here must we get together the oil, that it may be useful to us there, when the time calls us. For that is not the time of collecting it, but this."
+transcription_segments = [
+  { line = 1, text = "{78.1} But by lamps here, He meaneth the gift itself of virginity, the purity of holiness; and by oil, humanity, almsgiving, succor to them that are in need." },
+  { line = 2, text = "{78.1} \"But go to them that sell, and buy.\" And who are they that sell? The poor. And where are these? Here, and then should they have sought them, not at that time." },
+  { line = 3, text = "{78.2} Seest thou what great profit arises to us from the poor? shouldest thou take them away, thou wouldest take away the great hope of our salvation." },
+  { line = 4, text = "{78.2} Wherefore here must we get together the oil, that it may be useful to us there, when the time calls us. For that is not the time of collecting it, but this." },
+]
+verified_on = "2026-11-26"
+notes = "Printed page 470 sets the homily's long lemma (Matt. 25:1-30) across both columns above the text. The CCEL electronic witness agrees in wording with every transcribed sentence."

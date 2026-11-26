@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.john-paul-ii.homily-2000-09-03-beatification.2026-11-26-advent-pc-fix2-english-vatican-web.advent-pc-fix2-official-html-773eaa39"
+edition_id = "edition.john-paul-ii.homily-2000-09-03-beatification.2026-11-26-advent-pc-fix2-english-vatican-web"
+artifact_type = "official-html"
+media_type = "text/html"
+storage = "restricted"
+rights_status = "restricted"
+rights_basis = "The Vatican portal's legal notes limit portal content to personal and non-profit viewing and reserve copyright to Libreria Editrice Vaticana and the Dicastery for Communication; no repository redistribution permission was established."
+source_url = "https://www.vatican.va/content/john-paul-ii/en/homilies/2000/documents/hf_jp-ii_hom_20000903_beatification.html"
+provenance = "Complete official English Holy See HTML response fetched with curl over HTTPS on 2026-11-26 by the advent-pc-fix2 lane (HTTP 200, text/html) and hashed with sha256sum before it was read; read locally after stripping markup with python3 -I. No text passed through a language model."
+retrieved = "2026-11-26"
+sha256 = "773eaa39633b673a09ff29730ed0260cd9df0d1e63227670069c24816686e141"
+byte_size = 43507
+indexable = false
+notes = "The complete delivery is identified; restricted bytes are not retained."

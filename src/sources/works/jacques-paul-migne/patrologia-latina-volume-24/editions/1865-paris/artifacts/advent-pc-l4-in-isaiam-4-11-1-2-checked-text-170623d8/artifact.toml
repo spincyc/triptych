@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.jacques-paul-migne.patrologia-latina-volume-24.paris-1865.advent-pc-l4-in-isaiam-4-11-1-2-checked-text-170623d8"
+edition_id = "edition.jacques-paul-migne.patrologia-latina-volume-24.paris-1865"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces a few sentences of Jerome's Latin commentary on Isaiah as printed in Migne's Patrologia Latina 24 (Paris, 1865), which is in the United States public domain by date of publication (the parent scan's rights_basis gives the reasoning). It is transcribed from page images rendered from the hashed Internet Archive scan and contains no optical-text bytes and none of the editors' footnotes."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription collated against the page image of PDF page 78 (PL 24 cols. 147-148) of the hashed Internet Archive scan internet-archive-pdf-e55e8bd2 (re-fetched whole on 2026-11-26; SHA-256 equal to the registered scan) on 2026-11-26; the optical text was used only to locate the page."
+retrieved = "2026-11-26"
+sha256 = "170623d8f930200e6af2a0a5d309b28c931d2749f659187fb3b7b1ca0d632c4e"
+byte_size = 1233
+path = "src/sources/works/jacques-paul-migne/patrologia-latina-volume-24/editions/1865-paris/artifacts/advent-pc-l4-in-isaiam-4-11-1-2-checked-text-170623d8/jerome-in-isaiam-4-11-1-2.txt"
+derived_from = "artifact.jacques-paul-migne.patrologia-latina-volume-24.paris-1865.internet-archive-pdf-e55e8bd2"
+transformation = "Read the named page as images rendered at 300 dots per inch (600 and 1200 dots per inch for faint or doubtful letters and punctuation) from the hashed scan with pdftoppm, and transcribe the quoted sentences with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced locator; preserve the printed wording, Migne's orthography (j, the ae and oe ligatures, capitals) and punctuation, including printed punctuation that departs from the sense; close the printer's spaces before colons, semicolons and question marks and supply the space the printer omitted after a comma or between words set solid; join line-end hyphenation; omit italics, the bold earlier-edition page numbers embedded in the text, footnote markers, scriptural references printed in parentheses, column letters and running heads, all of which are recorded in the passage notes."
+indexable = true
+encoding = "utf-8"

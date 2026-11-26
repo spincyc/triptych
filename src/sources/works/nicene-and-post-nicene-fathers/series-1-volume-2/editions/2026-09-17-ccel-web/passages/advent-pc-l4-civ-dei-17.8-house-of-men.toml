@@ -1,0 +1,20 @@
+schema = 1
+record_type = "passage"
+id = "passage.nicene-and-post-nicene-fathers.series-1-volume-2.ccel-web-2026-09-17.advent-pc-l4-civ-dei-17.8-house-of-men"
+edition_id = "edition.nicene-and-post-nicene-fathers.series-1-volume-2.ccel-web-2026-09-17"
+artifact_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-2.ccel-web-2026-09-17.ccel-text-5c973fed"
+artifact_sha256 = "5c973feda803f3e58a88ed7df210b42d436f5466741eb8dbeae713ab56dedae4"
+locus = "Augustine, De civitate Dei XVII.8 (on 2 Sam. 7:12-16)"
+states = ["cataloged", "acquired", "inspected"]
+context = "Book XVII, chapter 8, on the promise to David of a son who would build the house: Augustine argues the son is promised after David's death and so is Christ, who builds a house of men."
+physical_line_ranges = [[30010, 30015]]
+text = "For however long the interval of time might be before Jesus Christ came, beyond doubt it was after the death of king David, to whom He was so promised, that He behoved to come, who should build an house of God, not of wood and stone, but of men, such as we rejoice He does build. For to this house, that is, to believers, the apostle saith, \"The temple of God is holy, which temple ye are.\""
+transcription_segments = [
+  { line = 30010, text = "For however long the interval of time might be before" },
+  { line = 30011, text = "Jesus Christ came, beyond doubt it was after the death of king David," },
+  { line = 30012, text = "to whom He was so promised, that He behoved to come, who should build" },
+  { line = 30013, text = "an house of God, not of wood and stone, but of men, such as we rejoice" },
+  { line = 30014, text = "He does build.  For to this house, that is, to believers, the apostle" },
+  { line = 30015, text = "saith, \"The temple of God is holy, which temple ye are.\"" },
+]
+notes = "Exact CCEL English digital witness inspected on 2026-11-26 by Advent postconciliar research lane 4; no facsimile collation of these lines and no collation with the Latin. Not verified. CCEL's bracketed footnote markers are excluded from the segments."

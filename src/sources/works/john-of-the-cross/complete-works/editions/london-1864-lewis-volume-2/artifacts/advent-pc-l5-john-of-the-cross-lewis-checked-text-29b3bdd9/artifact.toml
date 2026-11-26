@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.john-of-the-cross.complete-works.london-1864-lewis-volume-2.advent-pc-l5-john-of-the-cross-lewis-checked-text-29b3bdd9"
+edition_id = "edition.john-of-the-cross.complete-works.london-1864-lewis-volume-2"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces David Lewis's English, published at London in 1864. A work first published before 1931 is out of United States copyright: that is the line guidance/missals.md section 5 records as current on 1 January 2026, and because it moves every January it is written here as derived for calendar year 2026 and not as a standing rule. It is transcribed from page images rendered from the hashed facsimile and contains no scan markup or text-layer bytes."
+rights_jurisdiction = "United States"
+provenance = "Manual transcription by lane 5 of the postconciliar Advent research of David Lewis's English of John of the Cross: Spiritual Maxim 70 and stanzas of the romances on the Incarnation, read on page images rendered with pdftoppm from a local copy of the exact registered facsimile artifact.john-of-the-cross.complete-works.london-1864-lewis-volume-2.advent-pc-l5-ia-facsimile-pdf-9411f2af (SHA-256 9411f2af32ac60a1b7ca901af39c39e508476d56bfd069862caf6678d5dceb28, recomputed with sha256sum and found equal before any page was rendered), on 2026-11-26: printed pp. 354, 426-427, 431 and 432 (PDF pp. 376, 448-449, 453, 454). The scan's optical text layer was used only to locate the pages. No source text passed through a language model at any point between the server and this hash."
+retrieved = "2026-11-26"
+sha256 = "29b3bdd937a6c6845e88c1235997f283d28c4b7b1576e800056b83a0403468ed"
+byte_size = 1614
+path = "src/sources/works/john-of-the-cross/complete-works/editions/london-1864-lewis-volume-2/artifacts/advent-pc-l5-john-of-the-cross-lewis-checked-text-29b3bdd9/john-of-the-cross-lewis.txt"
+derived_from = "artifact.john-of-the-cross.complete-works.london-1864-lewis-volume-2.advent-pc-l5-ia-facsimile-pdf-9411f2af"
+transformation = "Read the named printed pages as images rendered at 200 to 500 dots per inch and cropped where a mark needed settling; one unit per LF-terminated UTF-8 line, each prefixed by a braced locator; the maxim is one sense unit on one line; verse is one printed verse line per line, its locator giving printed page and stanza number; preserve wording, capitalization, spelling (marvellous) and punctuation, with quotation marks and apostrophes set as the typographic marks the page prints; set small-capital opening words (When, God) in ordinary capitalization; close the printer's spaces before punctuation (finish ;, rend !, consented :); omit titles, stanza numerals, running heads and page numbers."
+indexable = true
+encoding = "utf-8"
+notes = "37 LF-terminated lines."

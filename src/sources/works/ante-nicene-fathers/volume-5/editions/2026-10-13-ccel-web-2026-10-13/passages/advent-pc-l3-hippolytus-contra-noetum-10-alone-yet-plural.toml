@@ -1,0 +1,21 @@
+schema = 1
+record_type = "passage"
+id = "passage.ante-nicene-fathers.volume-5.ccel-web-2026-10-13.advent-pc-l3-hippolytus-contra-noetum-10-alone-yet-plural"
+edition_id = "edition.ante-nicene-fathers.volume-5.ccel-web-2026-10-13"
+artifact_id = "artifact.ante-nicene-fathers.volume-5.ccel-web-2026-10-13.advent-pc-l3-hippolytus-contra-noetum-9-12-checked-text-b53f2343"
+artifact_sha256 = "b53f2343994160c7b3bc767a83f722f7febc3f337eaf9dbb134fc55a63151c02"
+locus = "Hippolytus, Against the Heresy of One Noetus 10 (opening, to He was the All)"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The opening of section 10 (CCEL lines 22824-22832), within the reading of 23 December: God, subsisting alone, yet existed in plurality."
+physical_line_ranges = [[3, 8]]
+text = "God, subsisting alone, and having nothing contemporaneous with Himself, determined to create the world. And conceiving the world in mind, and willing and uttering the word, He made it; and straightway it appeared, formed as it had pleased Him. For us, then, it is sufficient simply to know that there was nothing contemporaneous with God. Beside Him there was nothing; but He, while existing alone, yet existed in plurality. For He was neither without reason, nor wisdom, nor power, nor counsel. And all things were in Him, and He was the All."
+transcription_segments = [
+  { line = 3, text = "God, subsisting alone, and having nothing contemporaneous with Himself, determined to create the world." },
+  { line = 4, text = "And conceiving the world in mind, and willing and uttering the word, He made it; and straightway it appeared, formed as it had pleased Him." },
+  { line = 5, text = "For us, then, it is sufficient simply to know that there was nothing contemporaneous with God." },
+  { line = 6, text = "Beside Him there was nothing; but He, while existing alone, yet existed in plurality." },
+  { line = 7, text = "For He was neither without reason, nor wisdom, nor power, nor counsel." },
+  { line = 8, text = "And all things were in Him, and He was the All." },
+]
+verified_on = "2026-11-26"
+notes = "Checked against the hashed CCEL full text only; see the artifact's provenance."

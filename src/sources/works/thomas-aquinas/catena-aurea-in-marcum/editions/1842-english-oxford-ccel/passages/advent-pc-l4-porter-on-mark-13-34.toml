@@ -1,0 +1,16 @@
+schema = 1
+record_type = "passage"
+id = "passage.thomas-aquinas.catena-aurea-in-marcum.1842-english-oxford-ccel.advent-pc-l4-porter-on-mark-13-34"
+edition_id = "edition.thomas-aquinas.catena-aurea-in-marcum.1842-english-oxford-ccel"
+artifact_id = "artifact.thomas-aquinas.catena-aurea-in-marcum.1842-english-oxford-ccel.text-790ed587"
+artifact_sha256 = "790ed587e6cd6ec86df02f97ee8494fb2ddb31923361b972d423aaa318139bbf"
+locus = "Mark 13:34, under the label Greg., Hom in Evan, 9, as the Catena gives it"
+states = ["cataloged", "acquired", "inspected"]
+context = "The Catena's comment on the man taking a far journey and the porter commanded to watch, under the label Greg, Hom in Evan, 9."
+physical_line_ranges = [[2470, 2471]]
+text = "Greg, Hom in Evan, 9: For the earth is properly the place for the flesh, which was as it were carried away to a far country, when it was placed by our Redeemer in the heavens. “And he gave his servants power over every work,” when, by giving to His faithful ones the grace of the Holy Ghost, He gave them the power of serving every good work. He has also ordered the porter to watch, because He commanded the order of pastors to have a care over the Church committed to them. Not only, however, those of us who rule over Churches, but all are required to watch the doors of their hearts, lest the evil suggestions of the devil enter into them, and lest our Lord find us sleeping."
+transcription_segments = [
+  { line = 2470, text = "Greg, Hom in Evan, 9: For the earth is properly the place for the flesh, which was as it were carried away to a far country, when it was placed by our Redeemer in the heavens. “And he gave his servants power over every work,” when, by giving to His faithful ones the grace of the Holy Ghost, He gave them the power of serving every good work." },
+  { line = 2471, text = "He has also ordered the porter to watch, because He commanded the order of pastors to have a care over the Church committed to them. Not only, however, those of us who rule over Churches, but all are required to watch the doors of their hearts, lest the evil suggestions of the devil enter into them, and lest our Lord find us sleeping." },
+]
+notes = "Exact CCEL English digital witness of the Oxford Catena inspected on 2026-11-26; no facsimile collation and no collation with the Latin. Not verified. Attribute as the Catena gives it. MISATTRIBUTION: only the first sentence (the earth as the place of the flesh) is Gregory's (Hom. 9.1); the rest is Bede's own exposition of Mark 13:34-37 (Bede, In Marci evangelium, artifact line 404-405 of latin-text-b8197766: Janitori quoque praecepit ut vigilaret ... Universi januas cordium nostrorum ... servare jubemur). Cite it as the Catena's text, not as Gregory."

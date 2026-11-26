@@ -1,0 +1,18 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.catholic-church.institutio-generalis-de-liturgia-horarum.2026-11-26-advent-pc-fix2-english-1974-liturgyoffice-web.advent-pc-fix2-liturgyoffice-pdf-8cc5d8e4"
+edition_id = "edition.catholic-church.institutio-generalis-de-liturgia-horarum.2026-11-26-advent-pc-fix2-english-1974-liturgyoffice-web"
+artifact_type = "official-pdf"
+media_type = "application/pdf"
+storage = "restricted"
+rights_status = "restricted"
+rights_basis = "The PDF's colophon reserves all rights in the English translation (© 1974, the Hierarchies of Australia, England and Wales, Ireland); public download establishes no repository redistribution basis. Identified by hash only; paraphrase and locator use only."
+rights_jurisdiction = "United Kingdom; United States"
+source_url = "https://liturgyoffice.org/Resources/Rites/GILH.pdf"
+provenance = "Fetched whole with curl over HTTPS on 2026-11-26 by the advent-pc-fix2 lane (HTTP 200, application/pdf, content-length 299238, last-modified Wed, 10 Jun 2015 08:40:52 GMT) and hashed with sha256sum before it was read; read locally in its embedded digital text layer (pdftotext -layout). No text passed through a language model."
+retrieved = "2026-11-26"
+sha256 = "8cc5d8e4db14bbb91fd0f64c468c842e5e46ec22cf6cd3854fbe48f6130f5f85"
+byte_size = 299238
+page_count = 42
+indexable = false
+notes = "Digitally typeset (Adobe InDesign CS2, 2006), 42 pages, A4; contents, chapters one to five (nn. 1-284 with source notes), colophon. Artifact page = printed page + 3 in the pages read (printed 13 = artifact 16; printed 34 = artifact 37). Only the registered pages were read. The bytes are not retained in Git."

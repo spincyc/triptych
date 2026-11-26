@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.association-episcopale-liturgique-pour-les-pays-francophones.liturgie-des-heures-aelf-daily-office.api-v1-romain-2026-11-26.advent-pc-l3-lectures-2026-12-02-0c378c63"
+edition_id = "edition.association-episcopale-liturgique-pour-les-pays-francophones.liturgie-des-heures-aelf-daily-office.api-v1-romain-2026-11-26"
+artifact_type = "web-service-json"
+media_type = "application/json"
+storage = "restricted"
+rights_status = "restricted"
+rights_basis = "The French liturgical texts served (Scripture in the AELF translation, psalms, responsories, antiphons, hymns, prayers and the French translations of patristic readings) are copyright AELF and other holders; public availability through an API establishes no repository redistribution basis, so the bytes are identified by hash only and no French wording is tracked or quoted."
+rights_jurisdiction = "France; United States"
+source_url = "https://api.aelf.org/v1/lectures/2026-12-02/romain"
+provenance = "Fetched whole with curl over HTTPS on 2026-11-26 by lane 3 of the postconciliar Advent research (HTTP 200) and hashed with sha256sum before it was read; read locally with python3 -I json. No text passed through a language model."
+retrieved = "2026-11-26"
+sha256 = "0c378c63cec67dba59dea8a3182d06eef6ebc027c386fedfbafff5f03fd6467e"
+byte_size = 17186
+indexable = false
+notes = "Registered as the witness for key advent-1-wednesday: Wednesday of week 1. The document's informations block names the day jour_liturgique_nom = 'de la férie', fete = 'de la férie', temps_liturgique = 'avent', annee = None. Office: lectures. The bytes are not retained in Git."

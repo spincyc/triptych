@@ -310,6 +310,36 @@ retains the historical edition’s uncorrected OCR for discovery. The page image
 on pp. 71–72 control the retelling. The edition record distinguishes Taylor’s
 editorial credit from the unidentified translator. [Edition and rights](src/sources/works/thomas-nimmo-taylor/soeur-therese-of-lisieux/editions/burns-oates-fifteenth-thousand/edition.toml)
 
+For the Claude edition of the postconciliar Advent handbook (26 November 2026),
+the source library retains short checked transcriptions, read by hand against
+page images, from: Wilson's Gelasian (Oxford, 1894) and Gregorian (Henry
+Bradshaw Society, 1915) sacramentaries and Feltoe's Veronense (Cambridge,
+1896); the *Missale Romanum* printed at Tours in 1922; Lasance and Walsh's *New
+Roman Missal* (New York, 1946 printing of the 1945 revision), its ordinary-page
+English only, on that work's United States nonrenewal basis described below;
+the 1888 *Breviarium Romanum* and Bute's *Roman Breviary* (1908); the Roman
+Martyrology of 1902; Newman's *Hymni Ecclesiae* (Oxford, 1838) and the *Hymnal
+Noted* (London, 1851); the *Ante-Nicene* and *Nicene and Post-Nicene Fathers*;
+Migne's *Patrologia Latina*; Deane's Anselm (Chicago, 1903); Salter's
+Bonaventure (London, 1904); Coleridge's *Life and Letters of St. Francis
+Xavier* (London, 1872); Lewis's John of the Cross; the bilingual *Ineffabilis
+Deus* (1855); the Baltimore provincial councils (Baltimore, 1851); the Nahuatl
+*Huei tlamahuiçoltica* (Mexico, 1649); and pp. 71–72 of Taylor's Thérèse
+(above). Each artifact record states its basis. One further transcription, of
+the *Normae universales de anno liturgico et de calendario* (Vatican City,
+1969), is retained on the qualified basis of
+`src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml`, whose
+limits its artifact record repeats; the handbook paraphrases it and quotes none
+of it. The handbook cites the *Lectionary for Mass for Use in the Dioceses of
+the United States*, the Roman Missal of 2011 and the present *Liturgy of the
+Hours* by place only, and paraphrases the documents of the Holy See from the
+Second Vatican Council onward and the English of the General Instruction of the
+Liturgy of the Hours; the restricted pages and files read for those citations
+and paraphrases, including pages of the Holy See's and the Association
+épiscopale liturgique pour les pays francophones' websites, are recorded by
+hash and are not redistributed. Their historical wording keeps its own status
+and is not offered under Triptych's CC BY 4.0 licence.
+
 ## Liturgical and Scriptural Texts
 
 Scripture, Missal formularies, Orders of Mass, rubrics, chants, and texts from

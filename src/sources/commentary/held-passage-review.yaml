@@ -1,5 +1,5 @@
 schema: triptych-catena-held-passage-review/v1
-reviewed_on: '2026-11-19'
+reviewed_on: '2026-11-26'
 scope: 'Bounded record-level review of every pre-change unmapped passage with explicit text: 114 verified
   records and 202 inspected records, plus ten Luther passages removed from the active mapping. The controlling
   metadata, text, context and notes determine these dispositions. This is not new image collation, work-wide
@@ -15,7 +15,12 @@ scope: 'Bounded record-level review of every pre-change unmapped passage with ex
   (NPNF volumes, Patrologia Latina 54, Bute''s Breviary) whose constituent author is eligible, which the
   gate reads under the container''s scope and so does not require. A 2026-11-19 record-level review of
   the second Advent-primer intake adds two Augustine Christmas sermons and two Gregory Homily I sections that
-  take no fragment edge, and the Homily XX heading with its apparatus footnotes.'
+  take no fragment edge, and the Homily XX heading with its apparatus footnotes. A 2026-11-26 record-level
+  review of the postconciliar Advent handbook intake adds two Augustine Sermo 293 sections, Bonaventure''s
+  Greccio chapter, three Gregory homily sections from Patrologia Latina 76 and nine units of the 1842 Oxford
+  Catena Aurea in the CCEL transcription, whose edition credits its translators: ten take a fragment edge, the
+  Greccio narrative expounds no lemma, and four record the address, multiple-locus, boundary or attribution
+  question that blocks an edge.'
 reviews:
 - passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.100
   passage_sha256: e61208a6fd4feee8b60fe9f08c88b5f253f0dbe6365aac1912ac790fe9fadea9
@@ -2973,3 +2978,126 @@ reviews:
     place and day. It states where and when the homily was delivered and quotes or expounds no verse; the printed
     lection Luke 3:1-11 that follows is not part of the unit. No edge is inferred; this bounded finding concerns
     the heading, not the homily.
+- passage_id: passage.augustine.sermo-293.1845-migne-pl38.advent-pc-l3-sermo-293.3-parate-viam
+  passage_sha256: 784b272970e40feaf9182ffb75a886b0bb96349457015acb78e7b764cec8369f
+  disposition: needs-admission
+  basis: 'The verified excerpt from the middle of section 3 quotes the Baptist''s cry Vox clamantis in eremo ... Parate
+    viam Domino and expounds it clause by clause (Quid est, Viam parate; nisi, congrue supplicate? ... humiliter cogitate?);
+    in substance that is direct exposition and would take an edge. It cannot take one as it stands. The record''s
+    notes place the cry in Augustine''s quotation of John 1:23, but his wording is not the held Clementine John 1:23
+    (Ego vox clamantis in deserto: Dirigite viam Domini); Parate viam Domini is the form of Isaiah 40:3 and its synoptic
+    citations (Matthew 3:3, Mark 1:3, Luke 3:4), and the printed reference that would settle the address lies outside
+    the transcribed excerpt. Its last sentence also introduces the example of humility that the untranscribed rest
+    of the section gives. The library holds no work-aliases group for Sermo 293, no English edition and no translation-absences
+    row for it, and the work record states no composed date. Settle the address and boundary on the page and register
+    those records before adding an edge.'
+- passage_id: passage.augustine.sermo-293.1845-migne-pl38.advent-pc-l3-sermo-293.3-vox-verbum
+  passage_sha256: a2c7ca03fb50945b5b934cc6b65af6a16fb48cb462126835ed43ff4590dd3c31
+  disposition: deferred-multiple-loci
+  basis: The verified opening of section 3 contrasts John the voice with Christ the Word (Vox Joannes, Verbum Christus
+    ... Vox sine verbo aurem pulsat, cor non ædificat). It quotes in principio erat Verbum (John 1:1) for the Word
+    and takes the voice from the Baptist's self-designation (John 1:23), which the excerpt does not quote. It directly
+    relates two separated Johannine loci; a single John 1:1-23 extent would overstate it, and neither verse alone
+    carries the relation. Preserve the excerpt pending reviewed multiple-locus support. Admission would also need
+    a work-aliases group, an English holding or translation-absences row and a composition-date declaration for Sermo
+    293, none of which the library holds.
+- passage_id: passage.bonaventure.legenda-maior-sancti-francisci.london-dent-1904-salter.advent-pc-l5-greccio
+  passage_sha256: 3711fe231af1fe86a85bd78712a4f0b0f5dfc79fac13284afbef108526f650b7
+  disposition: no-scripture-commentary
+  basis: 'The verified whole of Legenda maior X.7 in Salter''s English narrates Francis''s Christmas at Greccio: the
+    papal licence, the manger with hay, ox and ass, the Gospel he chanted as deacon, his preaching on the Child of
+    Bethlehem, John of Greccio''s vision and the healing hay. It is hagiographical narrative; it quotes and expounds
+    no biblical lemma, and the manger, ox and ass are details of the scene, not an exposition of Luke 2:7 or Isaiah
+    1:3. No edge is inferred from the Nativity narrative or the season. The existing evidence state is preserved.'
+- passage_id: passage.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.advent-pc-l4-12.6-crastinum
+  passage_sha256: 3fb33fb0dbbb407ff5230912c4468bed3c15a46d48f6367992703555c9e92729
+  disposition: direct-commentary
+  basis: 'The verified opening of Homily XII section 6 quotes Vigilate itaque, quia nescitis diem neque horam and
+    expounds why the day is hidden: pardon is promised to the penitent, tomorrow is not promised to the sinner. The
+    lemma was checked against the held Clementine Matthew 25:13; the excerpt is one fragment at that natural extent,
+    and the work''s composition date is declared unestablished. The Matthew 25:13 edge is added in fragment-loci.yaml.'
+- passage_id: passage.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.advent-pc-l4-13.3-vigilat
+  passage_sha256: 4e1b571c412c2543c3aeef4452c66f2d1efd601c1d3ac8089432e4749dbe2459
+  disposition: direct-commentary
+  basis: The verified Homily XIII section 3 quotes Beati sunt servi illi, quos cum venerit dominus, invenerit vigilantes
+    and expounds vigilantes as three kinds of watching; the Pauline texts are prooftexts and take no edge. The lemma
+    was checked against the held Clementine Luke 12:37. The record's notes show that Bede reuses the three vigilat
+    clauses on Mark 13:37; that borrowing creates no edge on Mark. The Luke 12:37 edge is added in fragment-loci.yaml.
+- passage_id: passage.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.advent-pc-l4-29.10-saltus
+  passage_sha256: 18f0e95788ba1dddf3a5e377097238e91a4b23c449438d15a0af0d0227b82e61
+  disposition: direct-commentary
+  basis: The verified passage of the Ascension Homily XXIX section 10 quotes Ecce iste venit saliens in montibus,
+    et transiliens colles and expounds the leaps from heaven to the womb, manger, cross, tomb and heaven. The lemma
+    was checked against the held Clementine Canticle 2:8; Psalm 18:6 and Canticle 1:3 support the application and
+    take no edge, nor does the homily's Marcan lection. The edge records what Gregory expounds; the record's notes
+    say he does not connect the verse with the Visitation. The Canticle 2:8 edge is added in fragment-loci.yaml.
+- passage_id: passage.thomas-aquinas.catena-aurea-in-marcum.1842-english-oxford-ccel.advent-pc-l4-augustine-ep-199-on-mark-13-37
+  passage_sha256: 788c7e57cf09c7b4f412fcd443e567d83df07e95158c91924d5d894f52544c56
+  disposition: direct-commentary
+  basis: 'The whole Catena comment labelled Augustine, Epist., 199, 3 expounds What I say unto you I say unto all,
+    Watch: the last day comes to each at his death. The 1842 Mark edition credits John Dalgairns as translator, so
+    it passes the translation-credit gate that blocks the 1874 Catena units; inspection is of the CCEL wording only.
+    The Mark 13:37 edge is added in fragment-loci.yaml.'
+- passage_id: passage.thomas-aquinas.catena-aurea-in-marcum.1842-english-oxford-ccel.advent-pc-l4-porter-on-mark-13-34
+  passage_sha256: 4467150705d20ebdf1fe6758d074d3d7fcead9a5b73988d4204cf3f9c2314b2a
+  disposition: needs-admission
+  basis: 'The comment the Catena labels Greg, Hom in Evan, 9, in its block on Mark 13:32-37, expounds the man taking
+    a far journey, the servants'' power over every work and the porter commanded to watch (Mark 13:34), and would
+    take an edge; the 1842 Mark edition credits its translator. Two things block it. Attribution: the record''s notes
+    report, and the held Latin of Bede''s In Marci (artifact.bede.in-marci-evangelium-expositio.2026-10-13-latin-wikisource-migne.latin-text-b8197766,
+    lines 404-405) confirms, that apart from its first sentence (reported as Gregory''s Hom. 9.1, which Bede also
+    carries) the comment is Bede''s exposition; a hung row must carry that correction of the Catena''s label (Rule
+    7) rather than present the whole as Gregory''s. Extent: its closing charge that all must watch the doors of their
+    hearts lest the Lord find them sleeping is Bede''s exposition of Mark 13:36-37, so the natural extent is unsettled
+    between Mark 13:34 and 13:34-37. Settle both before adding the edge.'
+- passage_id: passage.thomas-aquinas.catena-aurea-in-marcum.1842-english-oxford-ccel.advent-pc-l4-theophylact-on-mark-13-35
+  passage_sha256: 48afddd444f167858bde5f185d27c373d562dc6ba70153c460e6caa22c58e235
+  disposition: direct-commentary
+  basis: The whole Catena comment labelled Theophylact expounds ye know not and the four watches (even, midnight,
+    cockcrow, morning) as the ages of a life. The 1842 Mark edition credits John Dalgairns as translator; Theophylact
+    is quoted inside Aquinas's compilation, whose author identity and eligibility govern. Inspection is of the CCEL
+    wording only. The Mark 13:35 edge is added in fragment-loci.yaml.
+- passage_id: passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.advent-pc-l4-augustine-on-matthew-25-13
+  passage_sha256: e47fc1e7114b2b192430d041810cc09108e5e3aa4a119d21994e6f55652878eb
+  disposition: direct-commentary
+  basis: 'The whole Catena comment labelled Aug. expounds ye know neither the day nor the hour: neither the Bridegroom''s
+    coming nor one''s own death is known. The 1842 Matthew edition credits Mark Pattison as translator, so it passes
+    the translation-credit gate that blocks the 1874 Catena units; inspection is of the CCEL wording only. The Matthew
+    25:13 edge is added in fragment-loci.yaml.'
+- passage_id: passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.advent-pc-l4-augustine-on-matthew-8-8
+  passage_sha256: 5fc424e77d3b257ab2cab17602dcb1954652e4bb6cfcbda17d335f290f9a8f60
+  disposition: direct-commentary
+  basis: 'The whole Catena comment labelled Aug. expounds Lord, I am not worthy that thou shouldest come under my
+    roof: confessing himself unworthy, the centurion was worthy that Christ should enter his heart. The 1842 Matthew
+    edition credits Mark Pattison as translator; inspection is of the CCEL wording only. The Matthew 8:8 edge is added
+    in fragment-loci.yaml.'
+- passage_id: passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.advent-pc-l4-chrysostom-on-matthew-25-40
+  passage_sha256: 2a5956bbf5c4a321ef8cff9059adf45d4bb579cf27ece2934099ea10434b4f02
+  disposition: direct-commentary
+  basis: The whole Catena comment labelled Chrys. expounds the least of these my brethren as the lowly and every baptized
+    believer. The 1842 Matthew edition credits Mark Pattison as translator; inspection is of the CCEL wording only.
+    The fuller NPNF Homily LXXIX text is a separate record of another work and is not affected. The Matthew 25:40
+    edge is added in fragment-loci.yaml.
+- passage_id: passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.advent-pc-l4-hilary-and-chrysostom-on-matthew-25-9
+  passage_sha256: 205b050846dd47f14125dc33e77335bedc514c807a7172ea7f42938e89c84b25
+  disposition: direct-commentary
+  basis: 'The two consecutive Catena comments labelled Hilary and Chrys. expound go ye rather to them that sell: the
+    sellers are the poor, and the oil of alms is stored here. The 1842 Matthew edition credits Mark Pattison as translator;
+    inspection is of the CCEL wording only. The Matthew 25:9 edge is added in fragment-loci.yaml.'
+- passage_id: passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.advent-pc-l4-origen-on-matthew-25-33
+  passage_sha256: c45374a326e92ec8e7575eca6cb96162897211d0776b0eb21fba9468c8b91346
+  disposition: needs-boundary-review
+  basis: 'The record holds only the first sentence of the comment the Catena labels Origen in its block on Matthew
+    25:31-45: the King''s right hand as the recompense of right works and the left as torment (Matthew 25:33). The
+    same CCEL line continues that comment, under no new label, onto Then shall the King say ... Come and ye blessed
+    of my Father (Matthew 25:34), and the record''s locus names Matthew 25:33-34, which its text does not reach. Restore
+    the whole comment for a Matthew 25:33-34 edge, or bound the record''s locus to the first sentence and Matthew
+    25:33, before admission; the 1842 Matthew edition''s translator credit is not in question.'
+- passage_id: passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.advent-pc-l4-pseudo-origen-on-matthew-8-8
+  passage_sha256: 96410a872bc1377a6de3cc9f0ccb668d584f6736fde6f820aa8291638740d9e7
+  disposition: direct-commentary
+  basis: 'The whole Catena comment labelled Pseudo-Origen, Hom. in div. 5 expounds the centurion''s Lord, I am not
+    worthy: whoever receives holy men or the Lord''s Body receives the Lord under his roof; the label''s pseudonymity
+    is retained as the Catena gives it. The excluded 1842 editor''s bracketed note is not the Catena''s text. The
+    1842 Matthew edition credits Mark Pattison as translator; inspection is of the CCEL wording only. The Matthew
+    8:8 edge is added in fragment-loci.yaml.'
