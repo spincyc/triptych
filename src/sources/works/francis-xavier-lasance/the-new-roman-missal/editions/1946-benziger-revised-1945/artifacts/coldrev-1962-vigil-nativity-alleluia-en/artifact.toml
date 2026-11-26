@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-vigil-nativity-alleluia-en"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Only the ordinary-page historical English of the 1946 printing of Lasance/Walsh 1945 revised edition (printed p. 134, ordinary numbered page outside excluded inserts 1298a-n and 1302a-d), under the registered United States nonrenewal finding for A 110108 and A 192159 in src/sources/inventories/lasance-new-roman-missal-rights-v1.toml. Faithful transcription adds no authorship."
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+transformation = "Join physical wraps and line-end hyphenation (Tomor-row -> Tomorrow); render barred versicle sign as V.; preserve words, capitals, and pointing exactly as printed."
+provenance = "Read directly on 200 dpi page image of Lasance 1946 PDF p. 144 (printed p. 134, Christmas Eve) on 2026-11-25. Facing Latin agrees word-for-word with Mame 1922 p. 18 and Missale Romanum 1962 p. 15 no. 102."
+retrieved = "2026-11-25"
+sha256 = "fc48f189d0d6e4701c1b1c937c56a20ff73beff926e7ab757e90f934ba1597b9"
+byte_size = 237
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/coldrev-1962-vigil-nativity-alleluia-en/text.tsv"
+encoding = "utf-8"
+indexable = true
+notes = "Conditional Sunday Alleluia for vigil-nativity-lord from Lasance 1946 printed p. 134 / PDF p. 144."

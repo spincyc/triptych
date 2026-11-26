@@ -8,7 +8,7 @@ recension_id = "roman-1962"
 calendar = "roman-1962"
 target_edition_id = "edition.catholic-church.missale-romanum.vatican-typica-1962"
 target_artifact_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
-as_of = "2026-08-26"
+as_of = "2026-11-25"
 status = "partial"
 completeness_claim = "not-established"
 central_catalog = "src/sources/calendars/recensions.json"
@@ -92,6 +92,28 @@ artifact_ids = ["artifact.catholic-church.missale-romanum.vatican-typica-1962.cm
 record = "src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml"
 establishes = "The repository's United States rights position for the target facsimile and its distinction between preexisting text and the edition's own modern matter."
 does_not_establish = "The facsimile's unresolved rights state is not permission to publish page images, protected editorial matter, the 1955 or 1960 revisions, or post-1920 additions from that artifact."
+
+[[evidence]]
+id = "cold-review-sourcing-remediation-2026-11-25"
+domains = ["propers", "ordinary", "translations", "provenance"]
+grade = "page-image"
+edition_ids = [
+  "edition.catholic-church.missale-romanum.vatican-typica-1962",
+  "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
+  "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946",
+  "edition.catholic-church.graduale-romanum.typis-vaticanis-1908",
+  "edition.catholic-church.antiphonale-romanum.vatican-1912",
+]
+artifact_ids = [
+  "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+  "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+  "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d",
+  "artifact.catholic-church.graduale-romanum.typis-vaticanis-1908.cmaa-pdf-8fb83706",
+  "artifact.catholic-church.antiphonale-romanum.vatican-1912.cmaa-facsimile-815f7393",
+]
+record = "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml"
+establishes = "Page-image remediation on 2026-11-25 replaced all raw JSON locator strings in the 1962 Latin provenance ledger, upgraded lent-3-thursday Introit and Maundy Thursday Pange lingua to exact-target collation, added the conditional Sunday Alleluia Crastina die on vigil-nativity-lord (printed p. 15 no. 102) with Mame 1922 Latin and Lasance 1946 English, upgraded 15 Ordinary Latin elements to word-exact against 1962 and 8 high-visibility Ordinary English elements to Lasance 1946, and recovered page-image-verified Lasance 1946 historical English for study-only Proper targets."
+does_not_establish = "Does not alter missal-expected-targets-v1.toml (where roman-1962:sanctoral-form:p701-l18 still awaits calendar_mass_key = 'vigil-saint-lawrence') or workflows/reviews/.../authority-v5.json (which hashes conceptione-immaculata-beatae-mariae-virginis Secret's Latin provenance entry and awaits coordinator hash refresh to upgrade it to exact-target); does not treat the structural branch label Without the washing of feet or the 3 non-matching Ordinary Latin elements as exact-target; and confers no ecclesiastical approval on historical English witnesses."
 
 [[limitations]]
 id = "expected-universe-not-modeled"

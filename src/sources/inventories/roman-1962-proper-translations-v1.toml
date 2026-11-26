@@ -32403,14 +32403,25 @@ form_id = "main"
 proper = "Postcommunion"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "ed4359d8a448e3b060be85eac19eef773e1a8090c9aeba62cc7fce4e0520a3a0"
-source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.epiphania-domini-postcommunion"
-source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.repair-2-orations-bd3c92ec", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
-translation_review = "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/translation-review.json"
+witness = "lasance-1945-printing-1946"
+printed_page = "178"
+ia_leaf = 187
+ia_leaf_range = [187, 187]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-epiphania-domini-postcommunion-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed p. 178 / PDF p. 188 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-epiphania-domini-postcommunion-publish"
+witness_note = "Own-appointment historical witness on ordinary printed p. 178 (PDF p. 188, IA leaf 187). Facing Latin Praesta quaesumus, omnipotens Deus ... Per Dominum matches Missale Romanum 1962 word-for-word (intellegentia/intelligentia spelling only); own-book through-our-lord conclusion cue preserved literally. Retained Latin UTF-8 SHA-256 ed4359d8a448e3b060be85eac19eef773e1a8090c9aeba62cc7fce4e0520a3a0."
+
 [[entries.translations]]
 lang = "en"
-rights = "project-created"
-text = "Grant, we ask, almighty God, that with purified minds we may understand what we celebrate in solemn worship. Through the Lord.\n"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Grant, we beseech Thee O almighty God, by the understanding of hearts made pure we may comprehend that which by solemn rite we celebrate. Through our Lord."
+
 
 [[entries]]
 mass = "transfiguratione-domini-nostri-iesu-christi"
@@ -32418,14 +32429,25 @@ form_id = "main"
 proper = "Postcommunion"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "88a6a3fc61575d142e7cda68d82daa43f4a02e94d73bbce8ff5545fc329a2166"
-source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.transfiguratione-domini-nostri-iesu-christi-postcommunion"
-source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.repair-2-orations-bd3c92ec", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
-translation_review = "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/translation-review.json"
+witness = "lasance-1945-printing-1946"
+printed_page = "1144"
+ia_leaf = 1153
+ia_leaf_range = [1153, 1153]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-transfiguratione-domini-postcommunion-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed p. 1144 / PDF p. 1154 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-transfiguratione-domini-postcommunion-publish"
+witness_note = "Own-appointment historical witness on ordinary printed p. 1144 (PDF p. 1154, IA leaf 1153). Facing Latin petition matches Missale Romanum 1962 word-for-word (intellegentia/intelligentia and eumdem/eundem spellings only); own-book through-the-same conclusion cue preserved literally. Retained Latin UTF-8 SHA-256 88a6a3fc61575d142e7cda68d82daa43f4a02e94d73bbce8ff5545fc329a2166."
+
 [[entries.translations]]
 lang = "en"
-rights = "project-created"
-text = "Grant, we ask, almighty God, that with purified minds we may understand the most sacred mysteries of your Son’s Transfiguration, which we celebrate in solemn worship. Through the same Lord of ours.\n"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Grant, we beseech Thee, O almighty God, that with the understanding of a purified mind we may follow those sacred mysteries of Thy Son's transfiguration which we celebrate with our solemn office. Through the same."
+
 
 [[entries]]
 mass = "nativitate-domini-octave"
@@ -32448,14 +32470,25 @@ form_id = "main"
 proper = "Secret"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "cbfe896505fd560a713fcfdc4bf0fbea2f01768b17d5429d965e6afe25ada8f4"
-source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.commune-unius-martyris-1-secret"
-source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.commons-1-orations-349a24c2", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
-translation_review = "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/translation-review.json"
+witness = "lasance-1945-printing-1946"
+printed_page = "1331"
+ia_leaf = 1352
+ia_leaf_range = [1352, 1352]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-commune-unius-martyris-1-secret-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed p. 1331 / PDF p. 1353 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-commune-unius-martyris-1-secret-publish"
+witness_note = "Historical Common-of-Saints witness on ordinary printed p. 1331 (PDF p. 1353, IA leaf 1352), where the complete Secret Hostias tibi with Per Dominum / Through our Lord cue is printed in full (matching the 1962 Common of One Martyr-Bishop petition word-for-word and the same through-our-lord conclusion family). Retained Latin UTF-8 SHA-256 cbfe896505fd560a713fcfdc4bf0fbea2f01768b17d5429d965e6afe25ada8f4."
+
 [[entries.translations]]
 lang = "en"
-rights = "project-created"
-text = "Graciously accept, Lord, the sacrifices dedicated to you in honor of the merits of blessed N., your Martyr and Bishop, and grant that they may provide us with lasting help. Through our Lord Jesus Christ, your Son, who lives and reigns with you in unity.\n"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Graciously receive, O Lord, the Sacred Victim we, by the merits of blessed N., thy martyr and bishop, dedicate to Thee; and grant that it may be to us an everlasting help. Through our Lord."
+
 
 [[entries]]
 mass = "commune-doctorum-non-pontificis"
@@ -34568,11 +34601,25 @@ form_id = "main"
 proper = "Gradual"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "b033c784f42d2ef1691c9eca8956abdaccdf41ee83d37da1f4d2de6dc5c76a5a"
-source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.assumption-chants-20261029-vigil-assumption-gradual"
-source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.assumption-chants-four-20261029", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.assumption-chants-pages-20261029"]
-translation_review = "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-4c60b608947d0f10.json"
-translations = [{lang = "en", rights = "project-created", text = "Blessed and worthy of veneration are you, Virgin Mary, who, with your virginity untouched, were found to be the Mother of the Savior. V. Virgin Mother of God, he whom the whole world cannot contain enclosed himself in your womb, having become man.\n"}]
+witness = "lasance-1945-printing-1946"
+printed_page = "1107"
+ia_leaf = 1116
+ia_leaf_range = [1116, 1116]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-vigil-assumption-gradual-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed p. 1107 / PDF p. 1117 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-vigil-assumption-gradual-publish"
+witness_note = "Historical witness on ordinary printed p. 1107 (PDF p. 1117, IA leaf 1116), explicitly cross-referenced from Vigil of the Assumption printed p. 1156 ('Gradual (without the Alleluia and verse) from the same Mass [Mount Carmel]'). Facing Latin agrees word-for-word with Missale Romanum 1962. Retained Latin UTF-8 SHA-256 b033c784f42d2ef1691c9eca8956abdaccdf41ee83d37da1f4d2de6dc5c76a5a."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Blessed and venerable art thou, O Virgin Mary, who, without spot, wast found the Mother of the Saviour. V. Virgin Mother of God, He Whom the whole world containeth not, being made man, shut Himself in thy womb."
+
 
 [[entries]]
 mass = "vigil-assumption"
@@ -34580,11 +34627,25 @@ form_id = "main"
 proper = "Offertory"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "ec01a2ea00ea15b6d9e8a0527c5ee54433f3a42be4e6ed2104b314af059c233f"
-source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.assumption-chants-20261029-vigil-assumption-offertory"
-source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.assumption-chants-four-20261029", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.assumption-chants-pages-20261029"]
-translation_review = "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-4c60b608947d0f10.json"
-translations = [{lang = "en", rights = "project-created", text = "Blessed are you, Virgin Mary, who bore the Creator of all; you gave birth to him who made you, and you remain a Virgin forever.\n"}]
+witness = "lasance-1945-printing-1946"
+printed_page = "1157"
+ia_leaf = 1166
+ia_leaf_range = [1166, 1166]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-vigil-assumption-offertory-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed p. 1157 / PDF p. 1167 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-vigil-assumption-offertory-publish"
+witness_note = "Own-appointment historical witness on ordinary printed p. 1157 (PDF p. 1167, IA leaf 1166). Facing Latin agrees word-for-word with Missale Romanum 1962. Retained Latin UTF-8 SHA-256 ec01a2ea00ea15b6d9e8a0527c5ee54433f3a42be4e6ed2104b314af059c233f."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Blessed art thou, O Virgin Mary, who didst bear the Creator of all things: thou didst bring forth Him Who made thee, and remainest forever a virgin."
+
 
 [[entries]]
 mass = "vigil-assumption"
@@ -34592,11 +34653,25 @@ form_id = "main"
 proper = "Communion"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "7083e0d7d8b0fcfa0708cfb40cfab85450b47d45cd1eb029bc930197e49ec979"
-source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.assumption-chants-20261029-vigil-assumption-communion"
-source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.assumption-chants-four-20261029", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.assumption-chants-pages-20261029"]
-translation_review = "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-4c60b608947d0f10.json"
-translations = [{lang = "en", rights = "project-created", text = "Blessed is the womb of the Virgin Mary, which bore the Son of the eternal Father.\n"}]
+witness = "lasance-1945-printing-1946"
+printed_page = "1157"
+ia_leaf = 1166
+ia_leaf_range = [1166, 1166]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-vigil-assumption-communion-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed p. 1157 / PDF p. 1167 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-vigil-assumption-communion-publish"
+witness_note = "Own-appointment historical witness on ordinary printed p. 1157 (PDF p. 1167, IA leaf 1166). Facing Latin agrees word-for-word with Missale Romanum 1962. Retained Latin UTF-8 SHA-256 7083e0d7d8b0fcfa0708cfb40cfab85450b47d45cd1eb029bc930197e49ec979."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Blessed is the womb of the Virgin Mary, which bore the Son of the eternal Father."
+
 
 [[entries]]
 mass = "assumptione-beatae-mariae-virginis"
@@ -34628,11 +34703,25 @@ form_id = "main"
 proper = "Gradual"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "b033c784f42d2ef1691c9eca8956abdaccdf41ee83d37da1f4d2de6dc5c76a5a"
-source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.visitation-five-chants-20261029-gradual"
-source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.visitation-five-chants-20261029", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.visitation-five-chants-20261029-pages"]
-translation_review = "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-5d75e48dc833c728.json"
-translations = [{lang = "en", rights = "project-created", text = "Blessed and venerable are you, Virgin Mary, who were found the Savior's mother without violation of virginity. V. Virgin Mother of God, he whom the whole world cannot contain enclosed himself in your womb, made man.\n"}]
+witness = "lasance-1945-printing-1946"
+printed_page = "1088-1089"
+ia_leaf = 1097
+ia_leaf_range = [1097, 1098]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-visitatione-bmv-gradual-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed pp. 1088-1089 / PDF pp. 1098-1099 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-visitatione-bmv-gradual-publish"
+witness_note = "Own-appointment historical witness on ordinary printed pp. 1088-1089 (PDF pp. 1098-1099, IA leaves 1097-1098). Facing Latin agrees word-for-word with Missale Romanum 1962. Retained Latin UTF-8 SHA-256 b033c784f42d2ef1691c9eca8956abdaccdf41ee83d37da1f4d2de6dc5c76a5a."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Blessed and venerable art thou, O Virgin Mary, who without spot wast found the Mother of the Saviour. V. O Virgin Mother of God, He, Whom the whole world can not contain, hath shut Himself within thy womb, becoming man."
+
 
 [[entries]]
 mass = "visitatione-beatae-mariae-virginis"
@@ -34640,11 +34729,25 @@ form_id = "main"
 proper = "Alleluia"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "d7bfad3dcd2f6a0bc54fa4096ec36182323346929ea3ecf3ba7331de88baf54b"
-source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.visitation-five-chants-20261029-alleluia"
-source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.visitation-five-chants-20261029", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.visitation-five-chants-20261029-pages"]
-translation_review = "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-5d75e48dc833c728.json"
-translations = [{lang = "en", rights = "project-created", text = "Alleluia, alleluia. V. Happy are you, holy Virgin Mary, and most worthy of every praise: for from you has arisen the sun of righteousness, Christ our God. Alleluia.\n"}]
+witness = "lasance-1945-printing-1946"
+printed_page = "1089"
+ia_leaf = 1098
+ia_leaf_range = [1098, 1098]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-visitatione-bmv-alleluia-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed p. 1089 / PDF p. 1099 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-visitatione-bmv-alleluia-publish"
+witness_note = "Own-appointment historical witness on ordinary printed p. 1089 (PDF p. 1099, IA leaf 1098). Facing Latin agrees word-for-word with Missale Romanum 1962. Retained Latin UTF-8 SHA-256 d7bfad3dcd2f6a0bc54fa4096ec36182323346929ea3ecf3ba7331de88baf54b."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Alleluia, alleluia. V. Happy art thou, O sacred Virgin Mary, and most worthy of all praise, for out of thee hath risen the sun of justice, Christ, our God. Alleluia."
+
 
 [[entries]]
 mass = "visitatione-beatae-mariae-virginis"
@@ -34652,11 +34755,25 @@ form_id = "main"
 proper = "Offertory"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "ec01a2ea00ea15b6d9e8a0527c5ee54433f3a42be4e6ed2104b314af059c233f"
-source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.visitation-five-chants-20261029-offertory"
-source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.visitation-five-chants-20261029", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.visitation-five-chants-20261029-pages"]
-translation_review = "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-5d75e48dc833c728.json"
-translations = [{lang = "en", rights = "project-created", text = "Blessed are you, Virgin Mary, who bore the Creator of all: you brought forth him who made you, and you remain a virgin for ever.\n"}]
+witness = "lasance-1945-printing-1946"
+printed_page = "1089-1090"
+ia_leaf = 1098
+ia_leaf_range = [1098, 1099]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-visitatione-bmv-offertory-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed pp. 1089-1090 / PDF pp. 1099-1100 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-visitatione-bmv-offertory-publish"
+witness_note = "Own-appointment historical witness on ordinary printed pp. 1089-1090 (PDF pp. 1099-1100, IA leaves 1098-1099). Facing Latin agrees word-for-word with Missale Romanum 1962. Retained Latin UTF-8 SHA-256 ec01a2ea00ea15b6d9e8a0527c5ee54433f3a42be4e6ed2104b314af059c233f."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Blessed art thou, O Virgin Mary, who didst bear the Creator of all things; thou didst bring forth Him Who made thee, and remainest a virgin forever."
+
 
 [[entries]]
 mass = "visitatione-beatae-mariae-virginis"
@@ -34664,11 +34781,25 @@ form_id = "main"
 proper = "Communion"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "7083e0d7d8b0fcfa0708cfb40cfab85450b47d45cd1eb029bc930197e49ec979"
-source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.visitation-five-chants-20261029-communion"
-source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.visitation-five-chants-20261029", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.visitation-five-chants-20261029-pages"]
-translation_review = "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-5d75e48dc833c728.json"
-translations = [{lang = "en", rights = "project-created", text = "Blessed is the womb of the Virgin Mary, which bore the Son of the eternal Father.\n"}]
+witness = "lasance-1945-printing-1946"
+printed_page = "1090"
+ia_leaf = 1099
+ia_leaf_range = [1099, 1099]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-visitatione-bmv-communion-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed p. 1090 / PDF p. 1100 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-visitatione-bmv-communion-publish"
+witness_note = "Own-appointment historical witness on ordinary printed p. 1090 (PDF p. 1100, IA leaf 1099). Facing Latin agrees word-for-word with Missale Romanum 1962. Retained Latin UTF-8 SHA-256 7083e0d7d8b0fcfa0708cfb40cfab85450b47d45cd1eb029bc930197e49ec979."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Blessed is the womb of the Virgin Mary, which bore the Son of the eternal Father."
+
 
 [[entries]]
 mass = "commune-confessoris-pontificis-1"
@@ -34676,11 +34807,25 @@ form_id = "main"
 proper = "Alleluia (Tempore paschali)"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "2559a4a8615ec155e161374509641a35a77725abad2bafebc0f323c61eed01d5"
-source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-common-paschal-commune-confessoris-pontificis-1-paschal-alleluia"
-source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-common-paschal", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-common-paschal-pages"]
-translation_review = "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-84c816e278ede03f.json"
-translations = [{lang = "en", rights = "project-created", text = "Alleluia, alleluia. V. You are a priest for ever, according to the order of Melchizedek. Alleluia. V. This is the priest whom the Lord has crowned. Alleluia.\n"}]
+witness = "lasance-1945-printing-1946"
+printed_page = "1338-1339"
+ia_leaf = 1359
+ia_leaf_range = [1359, 1360]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-commune-confessoris-pontificis-1-alleluia-pt-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed pp. 1338-1339 / PDF pp. 1360-1361 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-commune-confessoris-pontificis-1-alleluia-pt-publish"
+witness_note = "Own-appointment historical witness on ordinary printed pp. 1338-1339 (PDF pp. 1360-1361, IA leaves 1359-1360). Facing Latin Tu es sacerdos / Hic est sacerdos agrees word-for-word with Missale Romanum 1962; printed scripture locator Ps. 109, 4. omitted to match 1962 body. Retained Latin UTF-8 SHA-256 2559a4a8615ec155e161374509641a35a77725abad2bafebc0f323c61eed01d5."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Alleluia, alleluia. V. Thou art a priest forever according to the order of Melchisedech. Alleluia. V. This is the priest whom the Lord hath crowned. Alleluia."
+
 
 [[entries]]
 mass = "commune-non-virginum-1"
@@ -34688,11 +34833,25 @@ form_id = "main"
 proper = "Alleluia (Tempore paschali)"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "0880a742829a12fa7d70a13ca1132ff6dc0ac5cb90ddcf3766430a4bc47d6e0b"
-source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-common-paschal-commune-non-virginum-1-paschal-alleluia"
-source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-common-paschal", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-common-paschal-pages"]
-translation_review = "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-84c816e278ede03f.json"
-translations = [{lang = "en", rights = "project-created", text = "Alleluia, alleluia. V. In your splendor and beauty, press forward; advance prosperously and reign. Alleluia. V. For the sake of truth, gentleness, and justice; and your right hand will guide you wonderfully. Alleluia.\n"}]
+witness = "lasance-1945-printing-1946"
+printed_page = "1380-1381"
+ia_leaf = 1401
+ia_leaf_range = [1401, 1402]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-commune-non-virginum-1-alleluia-pt-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed pp. 1380-1381 / PDF pp. 1402-1403 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-commune-non-virginum-1-alleluia-pt-publish"
+witness_note = "Own-appointment historical witness on ordinary printed pp. 1380-1381 (PDF pp. 1402-1403, IA leaves 1401-1402). Facing Latin Specie tua / Propter veritatem agrees word-for-word with Missale Romanum 1962; printed scripture locator Ps. 44, 5. omitted to match 1962 body. Retained Latin UTF-8 SHA-256 0880a742829a12fa7d70a13ca1132ff6dc0ac5cb90ddcf3766430a4bc47d6e0b."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Alleluia, alleluia. V. With thy comeliness and thy beauty set out, proceed prosperously, and reign. Alleluia. V. Because of truth, and meekness, and justice: and thy right hand shall conduct thee wonderfully. Alleluia."
+
 
 [[entries]]
 mass = "commune-non-virginum-2"
@@ -34700,11 +34859,25 @@ form_id = "main"
 proper = "Alleluia (Tempore paschali)"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "0880a742829a12fa7d70a13ca1132ff6dc0ac5cb90ddcf3766430a4bc47d6e0b"
-source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-common-paschal-commune-non-virginum-2-paschal-alleluia"
-source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-common-paschal", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-common-paschal-pages"]
-translation_review = "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-84c816e278ede03f.json"
-translations = [{lang = "en", rights = "project-created", text = "Alleluia, alleluia. V. In your splendor and beauty, press forward; advance prosperously and reign. Alleluia. V. For the sake of truth, gentleness, and justice; and your right hand will guide you wonderfully. Alleluia.\n"}]
+witness = "lasance-1945-printing-1946"
+printed_page = "1380-1381"
+ia_leaf = 1401
+ia_leaf_range = [1401, 1402]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-commune-non-virginum-2-alleluia-pt-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed pp. 1380-1381 / PDF pp. 1402-1403 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-commune-non-virginum-2-alleluia-pt-publish"
+witness_note = "Historical Common of Holy Women witness on ordinary printed pp. 1380-1381 (PDF pp. 1402-1403, IA leaves 1401-1402), explicitly shared by the second Common of Holy Women (Cognovi) for Paschaltime; facing Latin agrees word-for-word with Missale Romanum 1962. Retained Latin UTF-8 SHA-256 0880a742829a12fa7d70a13ca1132ff6dc0ac5cb90ddcf3766430a4bc47d6e0b."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Alleluia, alleluia. V. With thy comeliness and thy beauty set out, proceed prosperously, and reign. Alleluia. V. Because of truth, and meekness, and justice: and thy right hand shall conduct thee wonderfully. Alleluia."
+
 
 [[entries]]
 mass = "commemoratione-s-pauli-apostoli"
@@ -34724,11 +34897,25 @@ form_id = "main"
 proper = "Alleluia"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "9a58127790f85750dce7fa2e1414c70b452addbc8d6ca57158169228e4b86f9d"
-source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-saints-dedicatione-s-michaelis-archangeli-alleluia-1"
-source_latin_publication_source_ids = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-saints-chant-pages-59c31d7f", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a", "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-saints-chant-latin-10b19922"]
-translation_review = "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-48324af3c5584c78.json"
-translations = [{lang = "en", rights = "project-created", text = "Alleluia, alleluia. ℣. Holy Michael the Archangel, defend us in battle, so that we may not perish at the fearful judgment. Alleluia.\n"}]
+witness = "lasance-1945-printing-1946"
+printed_page = "1214"
+ia_leaf = 1225
+ia_leaf_range = [1225, 1225]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-dedicatione-s-michaelis-alleluia-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed p. 1214 / PDF p. 1226 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-dedicatione-s-michaelis-alleluia-publish"
+witness_note = "Own-appointment historical witness on ordinary printed p. 1214 (PDF p. 1226, IA leaf 1225). Facing Latin agrees word-for-word with Missale Romanum 1962. Retained Latin UTF-8 SHA-256 9a58127790f85750dce7fa2e1414c70b452addbc8d6ca57158169228e4b86f9d."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Alleluia, alleluia. V. Holy archangel Michael, defend us in battle: that we perish not in the dreadful judgment. Alleluia."
+
 
 [[entries]]
 mass = "exaltatione-s-crucis"
@@ -34736,11 +34923,25 @@ form_id = "main"
 proper = "Alleluia"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "053e88719c2628d057eee596d3bd691250bc256b39d1f85c40bb4a30d6a08c5b"
-source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-saints-exaltatione-s-crucis-alleluia-1"
-source_latin_publication_source_ids = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-saints-chant-pages-59c31d7f", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a", "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-saints-chant-latin-10b19922"]
-translation_review = "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-48324af3c5584c78.json"
-translations = [{lang = "en", rights = "project-created", text = "Alleluia, alleluia. ℣. Sweet wood, bearing sweet nails and sweet burdens: you alone were worthy to support the King and Lord of heaven. Alleluia.\n"}]
+witness = "lasance-1945-printing-1946"
+printed_page = "1196"
+ia_leaf = 1207
+ia_leaf_range = [1207, 1207]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-exaltatione-s-crucis-alleluia-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed p. 1196 / PDF p. 1208 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-exaltatione-s-crucis-alleluia-publish"
+witness_note = "Own-appointment historical witness on ordinary printed p. 1196 (PDF p. 1208, IA leaf 1207). Facing Latin Dulce lignum agrees word-for-word with Missale Romanum 1962. Retained Latin UTF-8 SHA-256 053e88719c2628d057eee596d3bd691250bc256b39d1f85c40bb4a30d6a08c5b."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Alleluia, alleluia. V. Sweet the wood, sweet the nails, sweet the load that hangs thereon: to bear up the King and Lord of heaven nought was worthy save thou, O holy cross. Alleluia."
+
 
 [[entries]]
 mass = "exaltatione-s-crucis"
@@ -34748,11 +34949,25 @@ form_id = "main"
 proper = "Communion"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "6a24ef64591a9dc57f751c8b736cf45960045fea20e0dff0a29c491ea3ccb16e"
-source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-saints-exaltatione-s-crucis-communion-1"
-source_latin_publication_source_ids = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-saints-chant-pages-59c31d7f", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a", "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-saints-chant-latin-10b19922"]
-translation_review = "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-48324af3c5584c78.json"
-translations = [{lang = "en", rights = "project-created", text = "By the sign of the Cross, deliver us from our enemies, our God.\n"}]
+witness = "lasance-1945-printing-1946"
+printed_page = "1197"
+ia_leaf = 1208
+ia_leaf_range = [1208, 1208]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-exaltatione-s-crucis-communion-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed p. 1197 / PDF p. 1209 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-exaltatione-s-crucis-communion-publish"
+witness_note = "Own-appointment historical witness on ordinary printed p. 1197 (PDF p. 1209, IA leaf 1208). Facing Latin Per signum Crucis agrees word-for-word with Missale Romanum 1962. Retained Latin UTF-8 SHA-256 6a24ef64591a9dc57f751c8b736cf45960045fea20e0dff0a29c491ea3ccb16e."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Through the sign of the cross deliver us from our enemies, O our God."
+
 
 [[entries]]
 mass = "exaltatione-s-crucis"
@@ -34772,11 +34987,25 @@ form_id = "main"
 proper = "Communion"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "64555ed5d6c0a1211ff4672c1475711fd04ed57e2a50bbb8f87583698c75ec73"
-source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-saints-s-agathae-virginis-martyris-communion-1"
-source_latin_publication_source_ids = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-saints-chant-pages-59c31d7f", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a", "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-saints-chant-latin-10b19922"]
-translation_review = "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-48324af3c5584c78.json"
-translations = [{lang = "en", rights = "project-created", text = "I invoke the living God himself, who was pleased to heal me of every wound and restore my breast to my chest.\n"}]
+witness = "lasance-1945-printing-1946"
+printed_page = "912-913"
+ia_leaf = 921
+ia_leaf_range = [921, 922]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-s-agathae-communion-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed pp. 912-913 / PDF pp. 922-923 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-s-agathae-communion-publish"
+witness_note = "Own-appointment historical witness on ordinary printed pp. 912-913 (PDF pp. 922-923, IA leaves 921-922). Facing Latin agrees word-for-word with Missale Romanum 1962. Retained Latin UTF-8 SHA-256 64555ed5d6c0a1211ff4672c1475711fd04ed57e2a50bbb8f87583698c75ec73."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "He that hath deigned to heal me of every wound, and to restore to me my breast, upon Him I call, the living God."
+
 
 [[entries]]
 mass = "s-agathae-virginis-martyris"
@@ -34784,11 +35013,25 @@ form_id = "main"
 proper = "Introit"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "ab73acc887d97d6c0b1fea0cabe6c4fe0476098cb267d8aeb4601b10d432b470"
-source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-saints-s-agathae-virginis-martyris-introit-1"
-source_latin_publication_source_ids = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-saints-chant-pages-59c31d7f", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a", "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-saints-chant-latin-10b19922"]
-translation_review = "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-48324af3c5584c78.json"
-translations = [{lang = "en", rights = "project-created", text = "Let us all rejoice in the Lord, celebrating a feast day in honor of blessed Agatha, Virgin and Martyr. At her passion the angels rejoice and praise the Son of God. My heart overflows with a good word; I speak of my works to the King. ℣. Glory to the Father.\n"}]
+witness = "lasance-1945-printing-1946"
+printed_page = "909"
+ia_leaf = 918
+ia_leaf_range = [918, 918]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-s-agathae-introit-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed p. 909 / PDF p. 919 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-s-agathae-introit-publish"
+witness_note = "Own-appointment historical witness on ordinary printed p. 909 (PDF p. 919, IA leaf 918). Facing Latin agrees word-for-word with Missale Romanum 1962; inline Ps. 44, 2. omitted to match 1962 body. Retained Latin UTF-8 SHA-256 ab73acc887d97d6c0b1fea0cabe6c4fe0476098cb267d8aeb4601b10d432b470."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Let us all rejoice in the Lord, celebrating the feast in honor of blessed Agatha, Virgin and Martyr, for whose passion the angels rejoice and praise with one accord the Son of God. My heart hath uttered a good word: I speak my works to the King. V. Glory."
+
 
 [[entries]]
 mass = "s-agnetis-virginis-martyris"
@@ -34796,11 +35039,25 @@ form_id = "main"
 proper = "Tract"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "a64d9dbe246d814837f4846854a35330e28b67aff941db93e800252afe4ce4de"
-source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-saints-s-agnetis-virginis-martyris-tract-1"
-source_latin_publication_source_ids = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-saints-chant-pages-59c31d7f", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a", "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-saints-chant-latin-10b19922"]
-translation_review = "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-48324af3c5584c78.json"
-translations = [{lang = "en", rights = "project-created", text = "Come, bride of Christ, receive the crown which the Lord has prepared for you for eternity; for love of him you shed your blood. ℣. You have loved justice and hated wickedness; therefore God, your God, has anointed you with the oil of gladness above your companions. ℣. In your splendor and beauty, press onward, advance with success, and reign.\n"}]
+witness = "lasance-1945-printing-1946"
+printed_page = "1571"
+ia_leaf = 1602
+ia_leaf_range = [1602, 1602]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-s-agnetis-tract-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed p. 1571 / PDF p. 1603 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-s-agnetis-tract-publish"
+witness_note = "Historical witness on ordinary printed p. 1571 (PDF p. 1603, IA leaf 1602), giving all three verses of the Virgin-Martyr Tract Veni sponsa Christi with versicle signs intact. Facing Latin agrees word-for-word with Missale Romanum 1962; inline Ps. 44. omitted to match 1962 body. Retained Latin UTF-8 SHA-256 a64d9dbe246d814837f4846854a35330e28b67aff941db93e800252afe4ce4de."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Come, O spouse of Christ, receive the crown which the Lord hath prepared for thee forever: for the love of Whom thou didst shed thy blood. V. Thou hast loved justice, and hated iniquity: therefore God, thy God, hath anointed thee with the oil of gladness above thy fellows. V. With thy comeliness and thy beauty set out, proceed prosperously, and reign."
+
 
 [[entries]]
 mass = "s-andreae-apostoli"
@@ -34808,11 +35065,25 @@ form_id = "main"
 proper = "Alleluia"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "204c56ec7bf5219a1e781b0c0243dbadd3b7958beb09aa05c405b5a98e458567"
-source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-saints-s-andreae-apostoli-alleluia-1"
-source_latin_publication_source_ids = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-saints-chant-pages-59c31d7f", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a", "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-saints-chant-latin-10b19922"]
-translation_review = "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-48324af3c5584c78.json"
-translations = [{lang = "en", rights = "project-created", text = "Alleluia, alleluia. ℣. The Lord has loved Andrew as a sweet fragrance. Alleluia.\n"}]
+witness = "lasance-1945-printing-1946"
+printed_page = "836"
+ia_leaf = 845
+ia_leaf_range = [845, 845]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-s-andreae-apostoli-alleluia-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed p. 836 / PDF p. 846 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-s-andreae-apostoli-alleluia-publish"
+witness_note = "Own-appointment historical witness on ordinary printed p. 836 (PDF p. 846, IA leaf 845). Facing Latin agrees word-for-word with Missale Romanum 1962. Retained Latin UTF-8 SHA-256 204c56ec7bf5219a1e781b0c0243dbadd3b7958beb09aa05c405b5a98e458567."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Alleluia, alleluia. V. The Lord loved Andrew for an odor of sweetness. Alleluia."
+
 
 [[entries]]
 mass = "s-bartholomaei-apostoli"
@@ -34820,11 +35091,25 @@ form_id = "main"
 proper = "Alleluia"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "484a81566e5f094d022e12fbfb9fabcafed397198ebcd2d41946da3766633b4d"
-source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-saints-s-bartholomaei-apostoli-alleluia-1"
-source_latin_publication_source_ids = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-saints-chant-pages-59c31d7f", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a", "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-saints-chant-latin-10b19922"]
-translation_review = "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-48324af3c5584c78.json"
-translations = [{lang = "en", rights = "project-created", text = "Alleluia, alleluia. ℣. The glorious choir of the Apostles praises you, Lord. Alleluia.\n"}]
+witness = "lasance-1945-printing-1946"
+printed_page = "1171"
+ia_leaf = 1182
+ia_leaf_range = [1182, 1182]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-s-bartholomaei-apostoli-alleluia-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed p. 1171 / PDF p. 1183 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-s-bartholomaei-apostoli-alleluia-publish"
+witness_note = "Own-appointment historical witness on ordinary printed p. 1171 (PDF p. 1183, IA leaf 1182). Facing Latin agrees word-for-word with Missale Romanum 1962. Retained Latin UTF-8 SHA-256 484a81566e5f094d022e12fbfb9fabcafed397198ebcd2d41946da3766633b4d."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Alleluia, alleluia. V. Thee, the glorious choir of the apostles doth praise, O Lord. Alleluia."
+
 
 [[entries]]
 mass = "s-francisci-paula-confessoris"
@@ -34856,11 +35141,25 @@ form_id = "main"
 proper = "Alleluia"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "04cb875c5ae8e287c78bae2c1ea45fa6e1a3b7b83b0da5ec97426707f3ce8f99"
-source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-saints-s-iosaphat-episcopi-martyris-alleluia-1"
-source_latin_publication_source_ids = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-saints-chant-pages-59c31d7f", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a", "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-saints-chant-latin-10b19922"]
-translation_review = "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-48324af3c5584c78.json"
-translations = [{lang = "en", rights = "project-created", text = "Alleluia, alleluia. ℣. This is the priest whom the Lord has crowned. Alleluia.\n"}]
+witness = "lasance-1945-printing-1946"
+printed_page = "1288"
+ia_leaf = 1305
+ia_leaf_range = [1305, 1305]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-s-iosaphat-alleluia-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed p. 1288 / PDF p. 1306 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-s-iosaphat-alleluia-publish"
+witness_note = "Own-appointment historical witness on ordinary printed p. 1288 (PDF p. 1306, IA leaf 1305). Facing Latin agrees word-for-word with Missale Romanum 1962. Retained Latin UTF-8 SHA-256 04cb875c5ae8e287c78bae2c1ea45fa6e1a3b7b83b0da5ec97426707f3ce8f99."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Alleluia, alleluia. V. This is the priest whom the Lord hath crowned. Alleluia."
+
 
 [[entries]]
 mass = "s-iosaphat-episcopi-martyris"
@@ -34880,11 +35179,25 @@ form_id = "main"
 proper = "Alleluia"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "04cb875c5ae8e287c78bae2c1ea45fa6e1a3b7b83b0da5ec97426707f3ce8f99"
-source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-saints-s-polycarpi-episcopi-martyris-alleluia-1"
-source_latin_publication_source_ids = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-saints-chant-pages-59c31d7f", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a", "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-saints-chant-latin-10b19922"]
-translation_review = "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-48324af3c5584c78.json"
-translations = [{lang = "en", rights = "project-created", text = "Alleluia, alleluia. ℣. This is the priest whom the Lord has crowned. Alleluia.\n"}]
+witness = "lasance-1945-printing-1946"
+printed_page = "1307"
+ia_leaf = 1328
+ia_leaf_range = [1328, 1328]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-s-polycarpi-alleluia-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed p. 1307 / PDF p. 1329 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-s-polycarpi-alleluia-publish"
+witness_note = "Historical Common-of-a-Martyr-Bishop witness on ordinary printed p. 1307 (PDF p. 1329, IA leaf 1328), explicitly cross-referenced from St. Polycarp (Jan. 26). Facing Latin agrees word-for-word with Missale Romanum 1962. Retained Latin UTF-8 SHA-256 04cb875c5ae8e287c78bae2c1ea45fa6e1a3b7b83b0da5ec97426707f3ce8f99."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Alleluia, alleluia. V. This is the priest whom the Lord hath crowned. Alleluia."
+
 
 [[entries]]
 mass = "ss-ianuarii-episcopi-sociorum-martyrum"
@@ -34892,11 +35205,25 @@ form_id = "main"
 proper = "Alleluia"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "951612c858793d57c1470245e7a2d9de1a610213933396020f67189dc3ccd5c9"
-source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-saints-ss-ianuarii-episcopi-sociorum-martyrum-alleluia-1"
-source_latin_publication_source_ids = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-saints-chant-pages-59c31d7f", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a", "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-saints-chant-latin-10b19922"]
-translation_review = "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-48324af3c5584c78.json"
-translations = [{lang = "en", rights = "project-created", text = "Alleluia, alleluia. ℣. The army of martyrs, clothed in white, praises you, O Lord. Alleluia.\n"}]
+witness = "lasance-1945-printing-1946"
+printed_page = "1326"
+ia_leaf = 1347
+ia_leaf_range = [1347, 1347]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-ss-ianuarii-alleluia-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed p. 1326 / PDF p. 1348 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-ss-ianuarii-alleluia-publish"
+witness_note = "Historical Common-of-Martyrs witness on ordinary printed p. 1326 (PDF p. 1348, IA leaf 1347), explicitly cross-referenced from Sts. Januarius and Companions (Sept. 19). Facing Latin agrees word-for-word with Missale Romanum 1962. Retained Latin UTF-8 SHA-256 951612c858793d57c1470245e7a2d9de1a610213933396020f67189dc3ccd5c9."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Alleluia, alleluia. V. The white-robed army of martyrs praiseth Thee, O Lord. Alleluia."
+
 
 [[entries]]
 mass = "ss-ioannis-pauli-martyrum"
@@ -34916,11 +35243,25 @@ form_id = "main"
 proper = "Alleluia"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "94e92cd10d9edfff79dd075c5ef417918bcbfc75a68c264a772f19bc9a2f3204"
-source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-saints-ss-nerei-achillei-domitillae-virginis-atque-alleluia-1"
-source_latin_publication_source_ids = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-saints-chant-pages-59c31d7f", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a", "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-saints-chant-latin-10b19922"]
-translation_review = "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-48324af3c5584c78.json"
-translations = [{lang = "en", rights = "project-created", text = "Alleluia, alleluia. ℣. This is the true brotherhood that overcame the sins of the world: it followed Christ and, glorious, possesses the kingdoms of heaven. Alleluia. ℣. The army of martyrs, clothed in white, praises you, O Lord. Alleluia.\n"}]
+witness = "lasance-1945-printing-1946"
+printed_page = "1017-1018"
+ia_leaf = 1026
+ia_leaf_range = [1026, 1027]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-ss-nerei-achillei-domitillae-alleluia-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed pp. 1017-1018 / PDF pp. 1027-1028 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-ss-nerei-achillei-domitillae-alleluia-publish"
+witness_note = "Own-appointment historical witness on ordinary printed pp. 1017-1018 (PDF pp. 1027-1028, IA leaves 1026-1027). Facing Latin agrees word-for-word with Missale Romanum 1962 Paschal Alleluia (occurrence 1). Retained Latin UTF-8 SHA-256 94e92cd10d9edfff79dd075c5ef417918bcbfc75a68c264a772f19bc9a2f3204."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Alleluia, alleluia. V. This is a true brotherhood, which hath overcome the sins of the world: it hath followed Christ, laying hold upon the heavenly kingdom. Alleluia. V. The white-robed army of martyrs praiseth Thee, O Lord. Alleluia."
+
 
 [[entries]]
 mass = "ss-nerei-achillei-domitillae-virginis-atque"
@@ -34952,11 +35293,25 @@ form_id = "main"
 proper = "Offertory"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "f8ceb6b7db4d08b1209f3e798107a8971d2df7a90b2f93ccdc65c17c071d4c4d"
-source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.dolors-chants-20261029-offertory"
-source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.dolors-chants-20261029", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.dolors-chants-pages-20261029"]
-translation_review = "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-efa778a15bb9fd60.json"
-translations = [{lang = "en", rights = "project-created", text = "Remember, Virgin Mother of God, when you stand in the Lord’s presence, to speak for our good, so that he may turn his wrath away from us.\n"}]
+witness = "lasance-1945-printing-1946"
+printed_page = "972"
+ia_leaf = 981
+ia_leaf_range = [981, 981]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-comm-septem-dolorum-bmv-offertory-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed p. 972 / PDF p. 982 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-comm-septem-dolorum-bmv-offertory-publish"
+witness_note = "Own-appointment historical witness on ordinary printed p. 972 (PDF p. 982, IA leaf 981). Facing Latin agrees word-for-word with Missale Romanum 1962. Retained Latin UTF-8 SHA-256 f8ceb6b7db4d08b1209f3e798107a8971d2df7a90b2f93ccdc65c17c071d4c4d."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Remember, O Virgin Mother of God, when thou standest in the presence of the Lord, that thou speak good things for us and turn His wrath from us."
+
 
 [[entries]]
 mass = "septem-dolorum-beatae-mariae-virginis"
@@ -34964,11 +35319,25 @@ form_id = "main"
 proper = "Gradual"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "9dc199d1471c68765a3503bb26ff6538057baaabc9ec049128565af9597e2273"
-source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.dolors-chants-20261029-gradual"
-source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.dolors-chants-20261029", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.dolors-chants-pages-20261029"]
-translation_review = "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-efa778a15bb9fd60.json"
-translations = [{lang = "en", rights = "project-created", text = "You are sorrowful and worthy of tears, Virgin Mary, standing beside the Cross of the Lord Jesus, your Son, the Redeemer. V. Virgin Mother of God, the author of life, whom the whole world cannot contain, bears this torment of the cross, having become man.\n"}]
+witness = "lasance-1945-printing-1946"
+printed_page = "968"
+ia_leaf = 977
+ia_leaf_range = [977, 977]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-septem-dolorum-bmv-gradual-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed p. 968 / PDF p. 978 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-septem-dolorum-bmv-gradual-publish"
+witness_note = "Historical witness on ordinary printed p. 968 (PDF p. 978, IA leaf 977), explicitly cross-referenced from Sept. 15 Seven Dolors (printed p. 1198 / PDF p. 1210). Facing Latin agrees word-for-word with Missale Romanum 1962. Retained Latin UTF-8 SHA-256 9dc199d1471c68765a3503bb26ff6538057baaabc9ec049128565af9597e2273."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Sorrowful and tearful art thou, O Virgin Mary, standing by the cross of the Lord Jesus, thy Son and Redeemer. V. O Virgin Mother of God, He Whom the whole earth containeth not, the Author of life, made man, beareth this anguish of the cross."
+
 
 [[entries]]
 mass = "septem-dolorum-beatae-mariae-virginis"
@@ -34988,11 +35357,25 @@ form_id = "main"
 proper = "Offertory"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "f8ceb6b7db4d08b1209f3e798107a8971d2df7a90b2f93ccdc65c17c071d4c4d"
-source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.dolors-chants-20261029-offertory"
-source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.dolors-chants-20261029", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.dolors-chants-pages-20261029"]
-translation_review = "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-efa778a15bb9fd60.json"
-translations = [{lang = "en", rights = "project-created", text = "Remember, Virgin Mother of God, when you stand in the Lord’s presence, to speak for our good, so that he may turn his wrath away from us.\n"}]
+witness = "lasance-1945-printing-1946"
+printed_page = "972"
+ia_leaf = 981
+ia_leaf_range = [981, 981]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-septem-dolorum-bmv-offertory-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed p. 972 / PDF p. 982 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-septem-dolorum-bmv-offertory-publish"
+witness_note = "Historical witness on ordinary printed p. 972 (PDF p. 982, IA leaf 981), explicitly cross-referenced from Sept. 15 Seven Dolors (printed p. 1198). Facing Latin agrees word-for-word with Missale Romanum 1962. Retained Latin UTF-8 SHA-256 f8ceb6b7db4d08b1209f3e798107a8971d2df7a90b2f93ccdc65c17c071d4c4d."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Remember, O Virgin Mother of God, when thou standest in the presence of the Lord, that thou speak good things for us and turn His wrath from us."
+
 
 [[entries]]
 mass = "septem-dolorum-beatae-mariae-virginis"
@@ -35000,11 +35383,25 @@ form_id = "main"
 proper = "Communion"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "db0aac9e056f48ecbc02ab7ae7041b781a74f4c871d4b9c5704207d48d350fff"
-source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.dolors-chants-20261029-communion"
-source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.dolors-chants-20261029", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.dolors-chants-pages-20261029"]
-translation_review = "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-efa778a15bb9fd60.json"
-translations = [{lang = "en", rights = "project-created", text = "Blessed are the senses of the blessed Virgin Mary, which merited the palm of martyrdom beneath the Lord’s Cross without death.\n"}]
+witness = "lasance-1945-printing-1946"
+printed_page = "972"
+ia_leaf = 981
+ia_leaf_range = [981, 981]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-septem-dolorum-bmv-communion-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed p. 972 / PDF p. 982 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-septem-dolorum-bmv-communion-publish"
+witness_note = "Historical witness on ordinary printed p. 972 (PDF p. 982, IA leaf 981), explicitly cross-referenced from Sept. 15 Seven Dolors (printed p. 1198). Facing Latin agrees word-for-word with Missale Romanum 1962. Retained Latin UTF-8 SHA-256 db0aac9e056f48ecbc02ab7ae7041b781a74f4c871d4b9c5704207d48d350fff."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Happy the senses of the blessed Virgin Mary, which without death earned the palm of martyrdom beneath the cross of our Lord."
+
 
 [[entries]]
 mass = "pentecost-monday"
@@ -35012,11 +35409,34 @@ form_id = "main"
 proper = "Alleluia"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "0367bd2e0df88cd1676668e882362427a809d1ce324571383b2b7ff7038290c5"
-source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pentecost-four-chants-20261029-pentecost-monday-alleluia"
-source_latin_publication_source_ids = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.pentecost-four-chants-20261029-pages", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.pentecost-four-chants-20261029-checked-latin-0097a922", "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pentecost-four-chants-20261029-d074f957"]
-translation_review = "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-1c335bcfb01efaf2.json"
-translations = [{lang = "en", rights = "project-created", text = "Alleluia, alleluia. V. The Apostles were speaking in various tongues of the mighty works of God. Alleluia. (Here one genuflects) V. Come, Holy Spirit, fill the hearts of your faithful, and kindle in them the fire of your love.\n", text_structure = {text_sha256 = "cb86c1f1c312417d8d7a7c89acf590f901aa6cae6019f830a58891e1ee65c07b", checked = "Project study translation carries the separately proved genuflection direction as a rubric, not words said.", actions = [{kind = "rubric", offset = 107, text = "(Here one genuflects)"}]}}]
+witness = "lasance-1945-printing-1946"
+printed_page = "603"
+ia_leaf = 612
+ia_leaf_range = [612, 612]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-pentecost-monday-alleluia-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed p. 603 / PDF p. 613 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-pentecost-monday-alleluia-publish"
+witness_note = "Own-appointment historical witness on ordinary printed p. 603 (PDF p. 613, IA leaf 612). Facing Latin agrees word-for-word with Missale Romanum 1962; printed scripture locator Acts 2, 4. omitted to match 1962 body, and inline genuflection direction (here all kneel) recorded in text_structure. Retained Latin UTF-8 SHA-256 0367bd2e0df88cd1676668e882362427a809d1ce324571383b2b7ff7038290c5."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Alleluia, alleluia. V. The apostles spoke in divers tongues the wonderful works of God. Alleluia. V. (here all kneel). Come, O Holy Spirit, fill the hearts of Thy faithful; and kindle in them the fire of Thy love."
+
+[entries.translations.text_structure]
+text_sha256 = "beccc33963b4c1dcbd58b599f1541390b7bd2cfe6d8c183a82ad8ee640f68f7c"
+checked = "Read 2026-11-25 on the registered Lasance 1946 facsimile page image at artifact p. 613 (printed p. 603, IA leaf 612), 150 dpi: the genuflection direction (here all kneel) is set in italic within parentheses as an inline rubric."
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 101
+text = "(here all kneel)"
+
 
 [[entries]]
 mass = "pentecost-tuesday"
@@ -35024,11 +35444,34 @@ form_id = "main"
 proper = "Alleluia"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "fbf79f5d5b08dac49fa0ec75941e1eb118cae38f61e7ce0e78073d4649e6eca0"
-source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pentecost-four-chants-20261029-pentecost-tuesday-alleluia"
-source_latin_publication_source_ids = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.pentecost-four-chants-20261029-pages", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.pentecost-four-chants-20261029-checked-latin-0097a922", "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pentecost-four-chants-20261029-d074f957"]
-translation_review = "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-1c335bcfb01efaf2.json"
-translations = [{lang = "en", rights = "project-created", text = "Alleluia, alleluia. V. The Holy Spirit will teach you whatever I have said to you. Alleluia. (Here one genuflects) V. Come, Holy Spirit, fill the hearts of your faithful, and kindle in them the fire of your love.\n", text_structure = {text_sha256 = "f162543c22cdcc9b2fff88790dc5c92f4296dac0e9397162cf547ad24eb6f904", checked = "Project study translation carries the separately proved genuflection direction as a rubric, not words said.", actions = [{kind = "rubric", offset = 93, text = "(Here one genuflects)"}]}}]
+witness = "lasance-1945-printing-1946"
+printed_page = "606"
+ia_leaf = 615
+ia_leaf_range = [615, 615]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-pentecost-tuesday-alleluia-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed p. 606 / PDF p. 616 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-pentecost-tuesday-alleluia-publish"
+witness_note = "Own-appointment historical witness on ordinary printed p. 606 (PDF p. 616, IA leaf 615). Facing Latin agrees word-for-word with Missale Romanum 1962; printed scripture locator John 14, 26. omitted to match 1962 body, and inline genuflection direction (Here all kneel) recorded in text_structure. Retained Latin UTF-8 SHA-256 fbf79f5d5b08dac49fa0ec75941e1eb118cae38f61e7ce0e78073d4649e6eca0."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Alleluia, alleluia. V. The Holy Ghost shall teach you whatsoever I shall have said to you. Alleluia. (Here all kneel). V. Come, O Holy Spirit, fill the hearts of Thy faithful; and kindle in them the fire of Thy love."
+
+[entries.translations.text_structure]
+text_sha256 = "4733df45a52197971c9fa531128d5836f51862d532a128e55ad99493a242fe7a"
+checked = "Read 2026-11-25 on the registered Lasance 1946 facsimile page image at artifact p. 616 (printed p. 606, IA leaf 615), 150 dpi: the genuflection direction (Here all kneel) is set in italic within parentheses as an inline rubric."
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 101
+text = "(Here all kneel)"
+
 
 [[entries]]
 mass = "pentecost-thursday"
@@ -35036,11 +35479,34 @@ form_id = "main"
 proper = "Alleluia"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "07a11efbf246ebc70e8cca88745bf63c55a9a6fddeba17516254f3ecfc83d924"
-source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pentecost-four-chants-20261029-pentecost-thursday-alleluia"
-source_latin_publication_source_ids = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.pentecost-four-chants-20261029-pages", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.pentecost-four-chants-20261029-checked-latin-0097a922", "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pentecost-four-chants-20261029-d074f957"]
-translation_review = "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-1c335bcfb01efaf2.json"
-translations = [{lang = "en", rights = "project-created", text = "Alleluia, alleluia. V. Send forth your Spirit, and they will be created; and you will renew the face of the earth. Alleluia. (Here one genuflects) V. Come, Holy Spirit, fill the hearts of your faithful, and kindle in them the fire of your love.\n", text_structure = {text_sha256 = "248589bce014b7628f00df6bada37436473ddecbe0ad018be0d705c817865c98", checked = "Project study translation carries the separately proved genuflection direction as a rubric, not words said.", actions = [{kind = "rubric", offset = 125, text = "(Here one genuflects)"}]}}]
+witness = "lasance-1945-printing-1946"
+printed_page = "612"
+ia_leaf = 621
+ia_leaf_range = [621, 621]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-pentecost-thursday-alleluia-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed p. 612 / PDF p. 622 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-pentecost-thursday-alleluia-publish"
+witness_note = "Own-appointment historical witness on ordinary printed p. 612 (PDF p. 622, IA leaf 621). Facing Latin agrees word-for-word with Missale Romanum 1962; printed scripture locator Ps. 103, 30. omitted to match 1962 body, and inline genuflection direction (here all kneel) recorded in text_structure. Retained Latin UTF-8 SHA-256 07a11efbf246ebc70e8cca88745bf63c55a9a6fddeba17516254f3ecfc83d924."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Alleluia, alleluia. V. Send forth Thy Spirit, and they shall be created; and Thou shalt renew the face of the earth. Alleluia. V. (here all kneel). Come, O Holy Spirit, fill the hearts of Thy faithful; and kindle in them the fire of Thy love."
+
+[entries.translations.text_structure]
+text_sha256 = "04eb805aec0791a243f698b92da13dd1e6c1f5121148f1063b1ece6e02835d82"
+checked = "Read 2026-11-25 on the registered Lasance 1946 facsimile page image at artifact p. 622 (printed p. 612, IA leaf 621), 150 dpi: the genuflection direction (here all kneel) is set in italic within parentheses as an inline rubric."
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 130
+text = "(here all kneel)"
+
 
 [[entries]]
 mass = "pentecost-ember-friday"
@@ -35048,11 +35514,34 @@ form_id = "main"
 proper = "Alleluia"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "650d8c57cb2e5b76b60e20c1353b70209bb36567cae0fbd4cd125533ec50f51f"
-source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pentecost-four-chants-20261029-pentecost-ember-friday-alleluia"
-source_latin_publication_source_ids = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.pentecost-four-chants-20261029-pages", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.pentecost-four-chants-20261029-checked-latin-0097a922", "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pentecost-four-chants-20261029-d074f957"]
-translation_review = "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-1c335bcfb01efaf2.json"
-translations = [{lang = "en", rights = "project-created", text = "Alleluia, alleluia. V. O Lord, how good and gentle your Spirit is within us! Alleluia. (Here one genuflects) V. Come, Holy Spirit, fill the hearts of your faithful, and kindle in them the fire of your love.\n", text_structure = {text_sha256 = "a05cf68975c03c775ce83ecd3fb6236f05c6c0c7bdced93516c7ebe6b179ec74", checked = "Project study translation carries the separately proved genuflection direction as a rubric, not words said.", actions = [{kind = "rubric", offset = 87, text = "(Here one genuflects)"}]}}]
+witness = "lasance-1945-printing-1946"
+printed_page = "615"
+ia_leaf = 624
+ia_leaf_range = [624, 624]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-pentecost-ember-friday-alleluia-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed p. 615 / PDF p. 625 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-pentecost-ember-friday-alleluia-publish"
+witness_note = "Own-appointment historical witness on ordinary printed p. 615 (PDF p. 625, IA leaf 624). Facing Latin agrees word-for-word with Missale Romanum 1962; printed scripture locator Wis. 12, 1. omitted to match 1962 body, and inline genuflection direction (here all kneel) recorded in text_structure. Retained Latin UTF-8 SHA-256 650d8c57cb2e5b76b60e20c1353b70209bb36567cae0fbd4cd125533ec50f51f."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Alleluia, alleluia. V. O how good and sweet, O Lord, is Thy spirit within us. Alleluia. V. (here all kneel) Come, O Holy Spirit, fill the hearts of Thy faithful; and kindle in them the fire of Thy love."
+
+[entries.translations.text_structure]
+text_sha256 = "de65dd0a9fae403e24d191a1b065a85b6f2d3b09942786af594edd3519e6767f"
+checked = "Read 2026-11-25 on the registered Lasance 1946 facsimile page image at artifact p. 625 (printed p. 615, IA leaf 624), 150 dpi: the genuflection direction (here all kneel) is set in italic within parentheses as an inline rubric."
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 91
+text = "(here all kneel)"
+
 
 [[entries]]
 mass = "palm-sunday"
@@ -35084,11 +35573,25 @@ form_id = "main"
 proper = "Introit"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "b88ee0082ae7dc4b9d8199df2660d98c9f31ac691153825b791eccbe898973a1"
-source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-temporal4-epiphany-ferial-introit"
-source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-temporal4-epiphany-ferial-introit", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-temporal4-epiphany-ferial-introit"]
-translation_review = "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-9c33ee46ae774254.json"
-translations = [{lang = "en", rights = "project-created", text = "I saw a man seated on a lofty throne, whom a multitude of angels adores, singing together: behold, the name of his dominion is eternal. Shout joyfully to God, all the earth; serve the Lord with gladness. V. Glory be to the Father.\n"}]
+witness = "lasance-1945-printing-1946"
+printed_page = "182"
+ia_leaf = 191
+ia_leaf_range = [191, 191]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-first-sunday-after-epiphany-introit-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed p. 182 / PDF p. 192 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-first-sunday-after-epiphany-introit-publish"
+witness_note = "Own-appointment historical witness on ordinary printed p. 182 (PDF p. 192, IA leaf 191). Facing Latin agrees word-for-word with Missale Romanum 1962; inline Ps. 99, 1. omitted to match 1962 body. Retained Latin UTF-8 SHA-256 b88ee0082ae7dc4b9d8199df2660d98c9f31ac691153825b791eccbe898973a1."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Upon a high throne I saw a man sitting, whom a multitude of angels adore singing together: Behold Him the name of Whose empire is to eternity. Sing joyfully to God, all the earth: serve the Lord with gladness. V. Glory."
+
 
 [[entries]]
 mass = "lent-3-thursday"
@@ -35096,11 +35599,25 @@ form_id = "main"
 proper = "Introit"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "1d4a94ffd65472aee0499469153e1f9e9f4781c043c5879d2936631dd96f7fab"
-source_latin_passage_id = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-temporal4-lent3-thursday-introit"
-source_latin_publication_source_ids = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-temporal4-lent3-thursday-introit"]
-translation_review = "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-9c33ee46ae774254.json"
-translations = [{lang = "en", rights = "project-created", text = "I am the salvation of the people, says the Lord: in whatever distress they cry to me, I will hear them; and I will be their Lord for ever. Listen, my people, to my law; incline your ear to the words of my mouth. V. Glory be to the Father.\n"}]
+witness = "lasance-1945-printing-1946"
+printed_page = "310"
+ia_leaf = 319
+ia_leaf_range = [319, 319]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-lent-3-thursday-introit-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed p. 310 / PDF p. 320 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-lent-3-thursday-introit-publish"
+witness_note = "Own-appointment historical witness on ordinary printed p. 310 (PDF p. 320, IA leaf 319). Facing Latin agrees word-for-word with Missale Romanum 1962; inline Ps. 77, 1. omitted to match 1962 body. Retained Latin UTF-8 SHA-256 1d4a94ffd65472aee0499469153e1f9e9f4781c043c5879d2936631dd96f7fab."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "I am the salvation of the people, saith the Lord: from whatever tribulation they shall cry to Me, I will hear them; and I will be their Lord forever. Attend, O My people, to My law; incline your ear to the words of My mouth. V. Glory."
+
 
 [[entries]]
 mass = "vigil-of-the-ascension"
@@ -35132,11 +35649,25 @@ form_id = "main"
 proper = "Alleluia"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "2052000136b1bd96cf9ba1b291ce00bdaf16584b9e5137d1b0411fed9bce6d59"
-source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.marian-ancient-20261029-purificatione-beatae-mariae-virginis-alleluia"
-source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.marian-ancient-chants-20261029", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.marian-ancient-chant-pages-20261029"]
-translation_review = "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-67e4c9bacba07630.json"
-translations = [{lang = "en", rights = "project-created", text = "Alleluia, alleluia. V. The old man carried the Child; the Child in turn ruled the old man. Alleluia.\n"}]
+witness = "lasance-1945-printing-1946"
+printed_page = "907"
+ia_leaf = 916
+ia_leaf_range = [916, 916]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-purificatione-bmv-alleluia-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed p. 907 / PDF p. 917 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-purificatione-bmv-alleluia-publish"
+witness_note = "Own-appointment historical witness on ordinary printed p. 907 (PDF p. 917, IA leaf 916). Facing Latin agrees word-for-word with Missale Romanum 1962. Retained Latin UTF-8 SHA-256 2052000136b1bd96cf9ba1b291ce00bdaf16584b9e5137d1b0411fed9bce6d59."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Alleluia, alleluia. V. The old man carried the child: but the child ruled the old man. Alleluia."
+
 
 [[entries]]
 mass = "apparitione-beatae-mariae-virginis-immaculatae"
@@ -35144,11 +35675,25 @@ form_id = "main"
 proper = "Alleluia"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "91337d0cf0edc66a48252ab292a3ab43af628a07e01718014c0e353faff992eb"
-source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.marian-ancient-20261029-apparitione-beatae-mariae-virginis-immaculatae-alleluia"
-source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.marian-ancient-chants-20261029", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.marian-ancient-chant-pages-20261029"]
-translation_review = "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-67e4c9bacba07630.json"
-translations = [{lang = "en", rights = "project-created", text = "Alleluia, alleluia. V. Show me your face; let your voice sound in my ears, for your voice is sweet and your face is lovely. Alleluia.\n"}]
+witness = "lasance-1945-printing-1946"
+printed_page = "917"
+ia_leaf = 926
+ia_leaf_range = [926, 926]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-apparitione-bmv-alleluia-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed p. 917 / PDF p. 927 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-apparitione-bmv-alleluia-publish"
+witness_note = "Own-appointment historical witness on ordinary printed p. 917 (PDF p. 927, IA leaf 926). Facing Latin agrees word-for-word with Missale Romanum 1962. Retained Latin UTF-8 SHA-256 91337d0cf0edc66a48252ab292a3ab43af628a07e01718014c0e353faff992eb."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Alleluia, alleluia. V. Show me thy face, let thy voice sound in my ears, for thy voice is sweet and thy face comely. Alleluia."
+
 
 [[entries]]
 mass = "apparitione-beatae-mariae-virginis-immaculatae"
@@ -35156,11 +35701,25 @@ form_id = "main"
 proper = "Tract"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "11cc2c66ace36713c5d0389d34648dc912312d9507fb6f35de04eacc226b3a3d"
-source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.marian-ancient-20261029-apparitione-beatae-mariae-virginis-immaculatae-tract"
-source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.marian-ancient-chants-20261029", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.marian-ancient-chant-pages-20261029"]
-translation_review = "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-67e4c9bacba07630.json"
-translations = [{lang = "en", rights = "project-created", text = "You are the glory of Jerusalem, you are the joy of Israel, you are the honor of our people. V. You are wholly beautiful, Mary, and the stain of original sin is not in you. V. Blessed are you, holy Virgin Mary, most worthy of every praise, who crushed the serpent's head with your virgin foot.\n"}]
+witness = "lasance-1945-printing-1946"
+printed_page = "917"
+ia_leaf = 926
+ia_leaf_range = [926, 926]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-apparitione-bmv-tract-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed p. 917 / PDF p. 927 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-apparitione-bmv-tract-publish"
+witness_note = "Own-appointment historical witness on ordinary printed p. 917 (PDF p. 927, IA leaf 926). Facing Latin agrees word-for-word with Missale Romanum 1962; printed scripture locator Cant. 4, 7. omitted to match 1962 body. Retained Latin UTF-8 SHA-256 11cc2c66ace36713c5d0389d34648dc912312d9507fb6f35de04eacc226b3a3d."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Thou art the glory of Jerusalem, thou art the joy of Israel, thou art the honor of our people. V. All fair art thou, Mary, and the stain of original sin is not in thee. V. Happy art thou, Virgin Mary, and most worthy of all praise, who with thy virgin foot hast crushed the serpent's head."
+
 
 [[entries]]
 mass = "annuntiatio-beatae-mariae-virginis"
@@ -35180,11 +35739,25 @@ form_id = "main"
 proper = "Gradual"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "b033c784f42d2ef1691c9eca8956abdaccdf41ee83d37da1f4d2de6dc5c76a5a"
-source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.marian-ancient-20261029-sanctissimi-nominis-beatae-mariae-virginis-gradual"
-source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.marian-ancient-chants-20261029", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.marian-ancient-chant-pages-20261029"]
-translation_review = "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-67e4c9bacba07630.json"
-translations = [{lang = "en", rights = "project-created", text = "Blessed and worthy of veneration are you, Virgin Mary, who, with your chastity untouched, were found to be the mother of the Savior. V. Virgin Mother of God, he whom the whole world cannot contain enclosed himself within your womb, becoming man.\n"}]
+witness = "lasance-1945-printing-1946"
+printed_page = "1194"
+ia_leaf = 1205
+ia_leaf_range = [1205, 1205]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-sanctissimi-nominis-bmv-gradual-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed p. 1194 / PDF p. 1206 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-sanctissimi-nominis-bmv-gradual-publish"
+witness_note = "Own-appointment historical witness on ordinary printed p. 1194 (PDF p. 1206, IA leaf 1205). Facing Latin agrees word-for-word with Missale Romanum 1962. Retained Latin UTF-8 SHA-256 b033c784f42d2ef1691c9eca8956abdaccdf41ee83d37da1f4d2de6dc5c76a5a."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "O Virgin Mary, blessed and venerable art thou: who, remaining immaculate, didst become the Mother of the Saviour. V. Virgin Mother of God, He, Whom the whole world doth not contain, shut Himself in Thy womb, being made man."
+
 
 [[entries]]
 mass = "sanctissimi-nominis-beatae-mariae-virginis"
@@ -35192,11 +35765,25 @@ form_id = "main"
 proper = "Alleluia"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "854e720e747dae939d7478b23f7fa6ee911aa1b52abec7000e176c8dbaba4276"
-source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.marian-ancient-20261029-sanctissimi-nominis-beatae-mariae-virginis-alleluia"
-source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.marian-ancient-chants-20261029", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.marian-ancient-chant-pages-20261029"]
-translation_review = "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-67e4c9bacba07630.json"
-translations = [{lang = "en", rights = "project-created", text = "Alleluia, alleluia. V. After giving birth, Virgin, you remained inviolate: Mother of God, intercede for us. Alleluia.\n"}]
+witness = "lasance-1945-printing-1946"
+printed_page = "1194"
+ia_leaf = 1205
+ia_leaf_range = [1205, 1205]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-sanctissimi-nominis-bmv-alleluia-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed p. 1194 / PDF p. 1206 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-sanctissimi-nominis-bmv-alleluia-publish"
+witness_note = "Own-appointment historical witness on ordinary printed p. 1194 (PDF p. 1206, IA leaf 1205). Facing Latin agrees word-for-word with Missale Romanum 1962. Retained Latin UTF-8 SHA-256 854e720e747dae939d7478b23f7fa6ee911aa1b52abec7000e176c8dbaba4276."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Alleluia, alleluia. V. After childbirth thou didst remain a virgin inviolate: Mother of God, intercede for us. Alleluia."
+
 
 [[entries]]
 mass = "sanctissimi-nominis-beatae-mariae-virginis"
@@ -35204,11 +35791,25 @@ form_id = "main"
 proper = "Communion"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "7083e0d7d8b0fcfa0708cfb40cfab85450b47d45cd1eb029bc930197e49ec979"
-source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.marian-ancient-20261029-sanctissimi-nominis-beatae-mariae-virginis-communion"
-source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.marian-ancient-chants-20261029", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.marian-ancient-chant-pages-20261029"]
-translation_review = "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-67e4c9bacba07630.json"
-translations = [{lang = "en", rights = "project-created", text = "Blessed is the womb of the Virgin Mary, which bore the Son of the eternal Father.\n"}]
+witness = "lasance-1945-printing-1946"
+printed_page = "1195"
+ia_leaf = 1206
+ia_leaf_range = [1206, 1206]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-sanctissimi-nominis-bmv-communion-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed p. 1195 / PDF p. 1207 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-sanctissimi-nominis-bmv-communion-publish"
+witness_note = "Own-appointment historical witness on ordinary printed p. 1195 (PDF p. 1207, IA leaf 1206). Facing Latin agrees word-for-word with Missale Romanum 1962. Retained Latin UTF-8 SHA-256 7083e0d7d8b0fcfa0708cfb40cfab85450b47d45cd1eb029bc930197e49ec979."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Blessed is the womb of the virgin Mary, which bore the Son of the eternal Father."
+
 
 [[entries]]
 mass = "beatae-mariae-virginis-a-rosario"
@@ -36631,15 +37232,25 @@ form_id = "first"
 proper = "Gradual"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "0a0f79f5129fc8d101946bdaefce9223f049d309d8b7379da4b535aa79d35a5e"
-source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-24-four-esdras-chants.requiem-gradual-la"
-source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-24-four-esdras-chants.four-esdras-chants-fc0518ed", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"]
+witness = "lasance-1945-printing-1946"
+printed_page = "1503"
+ia_leaf = 1526
+ia_leaf_range = [1526, 1526]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-all-souls-first-gradual-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed p. 1503 / PDF p. 1527 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-all-souls-first-gradual-publish"
+witness_note = "Own-appointment historical witness on ordinary printed p. 1503 (PDF p. 1527, IA leaf 1526). Facing Latin Requiem aeternam / In memoria aeterna agrees word-for-word with Missale Romanum 1962; inline Ps. 111, 7. omitted to match 1962 body. Retained Latin UTF-8 SHA-256 0a0f79f5129fc8d101946bdaefce9223f049d309d8b7379da4b535aa79d35a5e."
 
 [[entries.translations]]
 lang = "en"
-rights = "project-created"
-text = "Grant them eternal rest, O Lord, and let perpetual light shine on them. ℣. Ps. 111:7. The righteous person will be remembered for ever and will not fear bad news."
-notice = "Original English study translation by Triptych from the 1922 Tours Mame on the stated 1962 chant appointment."
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Eternal rest give to them, O Lord; and let perpetual light shine upon them. V. The just shall be in everlasting remembrance; he shall not fear the evil hearing."
+
 
 [[entries]]
 mass = "commemoratione-omnium-fidelium-defunctorum"
@@ -36647,15 +37258,25 @@ form_id = "second"
 proper = "Gradual"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "0a0f79f5129fc8d101946bdaefce9223f049d309d8b7379da4b535aa79d35a5e"
-source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-24-four-esdras-chants.requiem-gradual-la"
-source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-24-four-esdras-chants.four-esdras-chants-fc0518ed", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"]
+witness = "lasance-1945-printing-1946"
+printed_page = "1503"
+ia_leaf = 1526
+ia_leaf_range = [1526, 1526]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-all-souls-second-gradual-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed p. 1503 / PDF p. 1527 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-all-souls-second-gradual-publish"
+witness_note = "Historical Requiem Gradual witness on ordinary printed p. 1503 (PDF p. 1527, IA leaf 1526), explicitly cross-referenced for the second Mass of All Souls; facing Latin agrees word-for-word with Missale Romanum 1962. Retained Latin UTF-8 SHA-256 0a0f79f5129fc8d101946bdaefce9223f049d309d8b7379da4b535aa79d35a5e."
 
 [[entries.translations]]
 lang = "en"
-rights = "project-created"
-text = "Grant them eternal rest, O Lord, and let perpetual light shine on them. ℣. Ps. 111:7. The righteous person will be remembered for ever and will not fear bad news."
-notice = "Original English study translation by Triptych from the 1922 Tours Mame on the stated 1962 chant appointment."
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Eternal rest give to them, O Lord; and let perpetual light shine upon them. V. The just shall be in everlasting remembrance; he shall not fear the evil hearing."
+
 
 [[entries]]
 mass = "commemoratione-omnium-fidelium-defunctorum"
@@ -36663,15 +37284,25 @@ form_id = "third"
 proper = "Gradual"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "0a0f79f5129fc8d101946bdaefce9223f049d309d8b7379da4b535aa79d35a5e"
-source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-24-four-esdras-chants.requiem-gradual-la"
-source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-24-four-esdras-chants.four-esdras-chants-fc0518ed", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"]
+witness = "lasance-1945-printing-1946"
+printed_page = "1503"
+ia_leaf = 1526
+ia_leaf_range = [1526, 1526]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-all-souls-third-gradual-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed p. 1503 / PDF p. 1527 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-all-souls-third-gradual-publish"
+witness_note = "Historical Requiem Gradual witness on ordinary printed p. 1503 (PDF p. 1527, IA leaf 1526), explicitly cross-referenced for the third Mass of All Souls; facing Latin agrees word-for-word with Missale Romanum 1962. Retained Latin UTF-8 SHA-256 0a0f79f5129fc8d101946bdaefce9223f049d309d8b7379da4b535aa79d35a5e."
 
 [[entries.translations]]
 lang = "en"
-rights = "project-created"
-text = "Grant them eternal rest, O Lord, and let perpetual light shine on them. ℣. Ps. 111:7. The righteous person will be remembered for ever and will not fear bad news."
-notice = "Original English study translation by Triptych from the 1922 Tours Mame on the stated 1962 chant appointment."
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Eternal rest give to them, O Lord; and let perpetual light shine upon them. V. The just shall be in everlasting remembrance; he shall not fear the evil hearing."
+
 
 [[entries]]
 mass = "commemoratione-omnium-fidelium-defunctorum"
@@ -36727,15 +37358,25 @@ form_id = "main"
 proper = "Introit"
 cycle = "all"
 occurrence = 1
-source_latin_sha256 = "eca762245d411b734dfd75f45e2b2043f60af2c4d2f2e1ca5b2ed18d2d9d1115"
-source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-24-four-esdras-chants.pentecost-tuesday-introit-la"
-source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-24-four-esdras-chants.four-esdras-chants-fc0518ed", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"]
+witness = "lasance-1945-printing-1946"
+printed_page = "605"
+ia_leaf = 614
+ia_leaf_range = [614, 614]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-pentecost-tuesday-introit-verify"
+collated = "Independently read on 150 dpi page image of Lasance 1946 printed p. 605 / PDF p. 615 and collated word-for-word against Missale Romanum 1962 Latin target on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-propers-lasance-en"
+publication_artifact_sha256 = "054da1eb53aa80859168f848542cdc51abd4e03cffb7584c1adf2b14e06dbc82"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-proper-pentecost-tuesday-introit-publish"
+witness_note = "Own-appointment historical witness on ordinary printed p. 605 (PDF p. 615, IA leaf 614). Facing Latin agrees word-for-word with Missale Romanum 1962 (including Ps. 77, 1.). Retained Latin UTF-8 SHA-256 eca762245d411b734dfd75f45e2b2043f60af2c4d2f2e1ca5b2ed18d2d9d1115."
 
 [[entries.translations]]
 lang = "en"
-rights = "project-created"
-text = "Receive the joy of your glory, alleluia, giving thanks to God, alleluia, who has called you to the kingdoms of heaven, alleluia, alleluia, alleluia. Ps. 77:1. My people, heed my law. Incline your ear to the words of my mouth. ℣. Glory to the Father."
-notice = "Original English study translation by Triptych from the 1922 Tours Mame on the stated 1962 chant appointment."
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Receive the joy of your glory, alleluia; giving thanks to God, alleluia; Who hath called you to a heavenly kingdom, alleluia, alleluia, alleluia. Ps. 77, 1. Attend, O My people, to My law; incline your ears to the words of My mouth. V. Glory."
+
 
 [[entries]]
 mass = "mass-of-the-lords-supper"
@@ -36880,3 +37521,25 @@ lang = "en"
 rights = "public-domain"
 source_id = "edition.alexander-mazzinelli.the-office-of-holy-week.baltimore-kelly-piet-1870"
 text = "℣. Go, Mass is ended, alleluia, alleluia.\n℟. Thanks be to God, alleluia, alleluia."
+
+[[entries]]
+mass = "vigil-nativity-lord"
+form_id = "main"
+proper = "Alleluia"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945-printing-1946"
+printed_page = "134"
+ia_leaf = 143
+ia_leaf_range = [143, 143]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-vigil-nativity-alleluia-en-verify"
+collated = "Independently read on 200 dpi page image of Lasance 1946 printed p. 134 / PDF p. 144 and collated word-for-word against Missale Romanum 1962 printed p. 15 no. 102 on 2026-11-25"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-vigil-nativity-alleluia-en"
+publication_artifact_sha256 = "fc48f189d0d6e4701c1b1c937c56a20ff73beff926e7ab757e90f934ba1597b9"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-vigil-nativity-alleluia-en-publish"
+witness_note = "Own-appointment historical witness on ordinary printed p. 134 (PDF p. 144, IA leaf 143) under Christmas Eve, headed 'If this vigil falls on a Sunday, the following alleluia and V. are added.'. Facing Latin matches Missale Romanum 1962 printed p. 15 no. 102 word-for-word (salvátor/Salvátor case and Allelúja/Allelúia orthography only). Retained Latin UTF-8 SHA-256 22d9ff958c6353b07c90911bf8b22175bc5137b0ff0277b4f258bc728e24ff20."
+translations = [
+  { lang = "en", rights = "public-domain", source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946", text = "Alleluia, alleluia. V. Tomorrow shall the iniquity of earth be wiped out; and the Saviour of the world shall reign over us. Alleluia." },
+]

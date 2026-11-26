@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.coldrev-1962-ordinary-exact-latin"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Only Latin already printed in the 1922 Tours Mame Missale Romanum is transcribed (pre-1931 United States public domain). Faithful transcription with declared typographical normalization adds no authorship and is excluded from Triptych CC BY 4.0."
+provenance = "Registered Mame 1922 PDF (sha256 9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005) rendered at 200 dpi at artifact pages 392, 443-447, 449-452, 456-457 (printed pp. 278, 329-333, 335-338, 342-343) and visually collated word-for-word against CMAA 1962 PDF (sha256 648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a) at artifact pages 303, 365-370, 374-375, 377, 388 on 2026-11-25."
+retrieved = "2026-11-25"
+sha256 = "1645ebbba2c00fc5aa65630ca6b2c6c269b9cd0197c6053777bbc3c48c2ae3a0"
+byte_size = 5787
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/coldrev-1962-ordinary-exact-latin/text.tsv"
+encoding = "utf-8"
+indexable = true
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+transformation = "Join physical wraps and discretionary line-end hyphens; expand ae/oe ligatures and strip stress accents; normalize decorative initials and small-cap incipits to sentence case; preserve source lexical words, j spellings, punctuation, and printed cross glyph (✠); omit red action-rubric words and nonspoken headings."
+notes = "Thirteen complete Ordinary of the Mass Latin prayers (Lavabo Gloria Patri, Suscipiat, 9 complete Prefaces, Simili modo, and chalice consecration form) replacing abbreviated or split 1861 Cummiskey Latin; every unit collated word-exact against Missale Romanum 1962 on 2026-11-25."
