@@ -1,0 +1,35 @@
+[document]
+type = "four-last-things-v1"
+pdftitle = "The Four Last Things, III: Depart from Me"
+pdfsubject = "Discursive Catholic study of Hell: Scripture, liturgy, councils, Fathers, Doctors, and the saints"
+numeral = "Part III"
+title = "Depart from Me"
+subtitle = "Hell, Eternal Separation, and the Fear That Guards the Soul"
+epigraph = 'Depart from me, you cursed, into everlasting fire, which was prepared for the devil and his angels. [\ldots] And these shall go into everlasting punishment: but the just, into life everlasting.'
+epigraph-source = "Matthew 25:41, 46 (Douay-Rheims)"
+
+[document.main]
+front = "epigraph"
+notes = "endnotes"
+closing = "unindented"
+body = [
+  "sections/01-closing-year",
+  "sections/02-confession-of-the-church",
+  "sections/03-pain-of-loss",
+  "sections/04-unquenchable-fire",
+  "sections/05-worm-darkness-obstinacy",
+  "sections/06-eternity-and-risen-body",
+  "sections/07-narrow-gate",
+  "sections/08-martyrs-and-saints",
+  "sections/09-holy-fear-and-grace",
+  "sections/10-liturgy-examination-prayer",
+]
+appendices = [
+  { source = "sections/85-graded-teaching", roles = ["argument"] },
+  { source = "sections/90-scope", roles = ["scope-appendix"] },
+  { source = "sections/95-references", roles = ["references"] },
+]
+
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"

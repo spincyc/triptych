@@ -1,0 +1,108 @@
+% Shared format for the Gemini Four Last Things series.
+% Loaded by src/common/document-types/four-last-things-v1/main.template.tex
+% after common/preamble, ragged2e, titlesec, and endnotes.
+\def\TriptychPrintEdition{}
+
+\ifdefined\TriptychPrintEdition
+\geometry{letterpaper,margin=0.85in}
+\setlength{\columnsep}{0.3in}
+\setlength{\parindent}{1.15em}
+\setlength{\parskip}{0.22em}
+\linespread{1.06}
+\raggedbottom
+\widowpenalty=10000
+\clubpenalty=10000
+
+\titleformat{\section}{\large\bfseries\RaggedRight}{\thesection.}{0.55em}{}
+\titlespacing*{\section}{0pt}{1.35em plus 0.3em minus 0.15em}{0.45em}
+\titleformat{\subsection}{\normalsize\bfseries\RaggedRight}{\thesubsection}{0.5em}{}
+\titlespacing*{\subsection}{0pt}{1.0em plus 0.2em minus 0.1em}{0.3em}
+
+\renewcommand{\notesname}{Notes}
+\renewcommand{\enoteformat}{%
+  \rightskip=0pt \leftskip=0pt \parindent=0pt \parskip=0.3em
+  \makebox[1.8em][r]{\theenmark.\hspace{0.45em}}%
+}
+
+\renewenvironment{quote}{%
+  \list{}{%
+    \leftmargin=1.15em
+    \rightmargin=0.45em
+    \topsep=0.45em
+    \partopsep=0pt
+    \parsep=0.25em
+    \itemsep=0pt
+  }%
+  \item\relax
+}{\endlist}
+
+\renewenvironment{threestable}[3]{%
+  \small
+  \begin{longtable}{>{\bfseries\raggedright\arraybackslash}p{0.37\linewidth}>{\raggedright\arraybackslash}p{0.21\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}}
+  \toprule
+  \textbf{#1} & \textbf{#2} & \textbf{#3}\\
+  \midrule
+  \endhead
+}{%
+  \bottomrule
+  \end{longtable}%
+}
+
+\newcommand{\FourLastThingsTitlePage}[5]{%
+  \thispagestyle{empty}%
+  \begingroup
+  \setlength{\parindent}{0pt}%
+  \setlength{\parskip}{0pt}%
+  \vspace*{0.14\textheight}%
+  \begin{center}
+    {\normalsize\scshape The Four Last Things\enspace\textperiodcentered\enspace #1\par}%
+    \vspace{1.2em}%
+    {\rule{0.38\textwidth}{0.45pt}\par}%
+    \vspace{1.8em}%
+    {\Huge\bfseries #2\par}%
+    \vspace{0.9em}%
+    {\large\itshape #3\par}%
+    \vspace{2.4em}%
+    {\rule{0.22\textwidth}{0.35pt}\par}%
+    \vspace{2.0em}%
+    \begin{minipage}{0.76\textwidth}
+      \RaggedRight
+      \normalsize\itshape ``#4''\par
+      \vspace{0.6em}%
+      \raggedleft\normalfont\small --- #5\par
+    \end{minipage}
+  \end{center}
+  \vfill
+  \endgroup
+  \clearpage
+  \pagenumbering{roman}%
+}
+
+\newcommand{\FourLastThingsNavigation}{%
+  \begingroup
+  \setlength{\parindent}{0pt}%
+  \setlength{\parskip}{0pt}%
+  {\small\textit{The Four Last Things}\enspace\textperiodcentered\enspace III.\ Hell\par}%
+  \vspace{0.35em}%
+  \hrule height 0.35pt
+  \vspace{1.1em}%
+  \endgroup
+  \tableofcontents
+  \clearpage
+  \twocolumn
+}
+\else
+\newcommand{\FourLastThingsTitlePage}[5]{%
+  \textbf{The Four Last Things --- #1}\par
+  {\Large\bfseries #2}\par
+  \textit{#3}\par
+  \begin{quote}
+  ``#4''\par
+  --- #5
+  \end{quote}
+}
+
+\newcommand{\FourLastThingsNavigation}{%
+  \par\textit{The Four Last Things} --- III.\ Hell\par
+}
+\fi

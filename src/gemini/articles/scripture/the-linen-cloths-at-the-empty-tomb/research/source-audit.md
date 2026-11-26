@@ -1,0 +1,40 @@
+# Source Audit — The Linen Cloths at the Empty Tomb
+
+All evidence underlying this publication was inspected directly in the provider-neutral source library (`src/sources/bibles/`, `src/sources/calendars/`, and `src/sources/works/`) on 2026-11-25. Machine-checkable source bindings and live cryptographic fingerprints are recorded in `research/source-bindings.toml`.
+
+## Primary Evidence Verification Summary
+
+### 1. Scripture, Greek Lemmas, and Textual Criticism
+- **Douay--Rheims (Challoner) & Clementine Vulgate:** Verified verbatim across John 20:1--18, John 11:43--44, John 19:38--42, Luke 4:17--20, Luke 19:20, Luke 23:53--56, Luke 24:1--14, 21--24, 34, 41, Matt 27:59--66, Matt 28:11--15, Mark 15:46, Mark 16:1--8, Acts 10:11, 11:5, 19:12, and Rom 6:9.
+- **English Translation Comparison:** Verified verbatim in King James Version (1611), Revised Version (1895), Catholic Public Domain Version, and World English Bible (Catholic Edition) at John 20:5--9, John 11:44, Luke 19:20, Luke 24:12, and Acts 19:12. Confirmed that neither Douay--Rheims nor KJV uses "folded" at John 20:7 ("wrapped up" / "wrapped together") and that modern versions adopting "folded" drop "napkin".
+- **Greek New Testament & Lemma Counts:** Checked directly in Robinson--Pierpont RP2018 Unicode CSV (including inline `{NA ...}` divergence notes) for Matthew, Mark, Luke, John, and Acts, and SBLGNT v1.2 for Luke 19:20, 23:53, 24:10--13. Complete NT lemma counts verified directly in MorphGNT SBLGNT v6.12 (`lemma-field.txt`): `entylisso` = 3, `othonion` = 5, `othone` = 2, `soudarion` = 4, `keiria` = 1, `sindon` = 6, `eneileo` = 1, `perideo` = 1, `parakypto` = 5, `ptysso` = 1, `anaptysso` = 1.
+- **Textual Status of Luke 24:12:** Verified directly in Westcott and Hort (1882, Appendix p. 71): omitted by D, Old Latin *a b e r1*, Eusebius's Canons; attested by *c ff2*, Old Syriac, Eusebius *Ad Marinum*, and Alexandrian/Byzantine witnesses (later reinforced by P75).
+- **Lexicography:** Checked directly in Joseph Henry Thayer's corrected edition at *entylisso* (p. 219), *othonion* (p. 439), and *soudarion* (p. 581).
+
+### 2. Patristic, Medieval, and Catholic Commentators
+- **St. John Chrysostom:** Homilies 85.4, 86.1, and 87 on John verified in NPNF I.14 (New York, 1889, trans. Charles Marriott). Anti-theft argument from myrrh gluing linen "not less firmly than lead", order vs. haste, humility of John regarding Peter's thoroughness, and Resurrection faith of both Apostles.
+- **St. Cyril of Alexandria:** Book XII on John 20:1--9 verified in *Library of Fathers* vol. 2 (1885, trans. Thomas Randell, pp. 649--651). Two witnesses under the Law; Resurrection inferred from "the bundle of linen clothes" (without separate mention of *soudarion*).
+- **St. Ambrose:** *Expositio evangelii secundum Lucam* X.179 verified in Migne PL 15 via *Corpus Corporum*. Positive reading of both Peter and John.
+- **St. Augustine:** *Tractates on John* 49.24, 120.7--9, and 121.1 verified in NPNF I.7 (1888, trans. Gibb & Innes) and Latin of 120.9 via `augustinus.it`. *De Consensu Evangelistarum* III.23--25 (§§ 59, 68--70) verified in NPNF I.6 (trans. Salmond). Explicit disagreement with Resurrection-faith reading of John 20:8 grounded in v. 9; reconciliation of *sindon*/*othonia* and Luke 24:12 / John 20:5--8.
+- **St. Gregory the Great:** *Homiliae in Evangelia* 22.3--5 verified in Migne PL 76 via *Corpus Corporum*, plus excerpt on *sudarium* and Synagogue/Gentile typology in Aquinas's *Catena Aurea in Ioannem* (pp. 595--596). Combines mystical exegesis of rolled-up *sudarium* (22.3--4) with Augustine's taken-body reading of v. 8 (22.5).
+- **St. Bede the Venerable:** *In Lucae evangelium expositio* VI on Luke 24:12 verified in Migne PL 92 col. 625B via *Corpus Corporum*. Harmonizes Peter stooping (Luke) and entering before John (John).
+- **Blessed Theophylact of Ohrid:** *Enarratio in Evangelium Ioannis* 20 verified in Migne PG 124 facing Latin column (cols. 289--291, OCR with 4 checked character repairs; Greek column uncollated). Reproduces Chrysostom's anti-theft proof (*non minus bitumine*) while following Augustine on v. 8!
+- **St. Thomas Aquinas:** *Super Evangelium S. Ioannis Lectura* cap. 20, lect. 1 verified in *Corpus Thomisticum* Latin (anti-theft + balanced juxtaposition of Augustine and Chrysostom on *credidit*, with pluperfect reading of v. 9). *Catena Aurea in Ioannem* checked on John 11:44 (pp. 382--383) and John 20:1--10 (pp. 593--596) in Oxford 1874 OCR.
+- **Cornelius a Lapide:** Checked in Grant/Mossman 1908 English translation OCR, vol. 5 (John 11:44, pp. 409--410) and vol. 6 (John 20:1--11, pp. 255--257). Surveys both camps and assigns *credidit* (Resurrection) properly to John alone while Peter departs wondering.
+
+### 3. Magisterial and Liturgical Witnesses
+- **Catechism of the Council of Trent:** Checked in Donovan's 1829 English translation OCR, Part I, Article III (p. 41: coming forth from the closed and sealed sepulchre) and Article V (pp. 53--54: contrast between earlier resuscitations to mortal life and Christ's immortal Resurrection, quoting Rom 6:9).
+- **Roman Rite Liturgy:** Checked in `src/sources/calendars/roman-1962/propers.yaml` (*Victimae paschali laudes* and Easter Saturday Gospel John 20:1--9) and `src/sources/calendars/postconciliar/propers.yaml` (OLM 1981 no. 42, Easter Sunday Gospel John 20:1--9); Edward Caswall's 1849 literary translation verified in `lyra-catholica` (`missal-sequences-en.tsv`, pp. 233--234).
+
+### 4. Rabbinic, Classical, Hebraist, and Modern Witnesses
+- **Mishnah & Babylonian Talmud:** Checked *m. Berakhot* 8:3 (Torat Emet Hebrew via Sefaria), *b. Berakhot* 52b and 42a (Abraham Cohen 1921 via Sefaria), and *m. Sanhedrin* 6:1 (Sefaria Community CC0 checked beside Torat Emet Hebrew). Establishes: (a) table napkin is *mappah*, regulated solely for moisture ritual purity; (b) meal end is marked by table/tray removal; (c) attested *sudarin* signal is judicial (halting capital execution).
+- **Classical Antiquities:** Checked William Smith (1875, s.v. *Mantele*) and Suetonius (*Nero* 22.2, trans. Rolfe) via LacusCurtius checked texts.
+- **John Lightfoot:** Checked passage record for Gandell 1859 Oxford edition vol. 3 (OCR ceiling recorded): John 20 lemmata run Ver. 1, Ver. 5 (*Bava Bathra*), Ver. 12--29 with zero note on Ver. 7; "napkin" occurs only twice in 4 volumes, both at John 11:44.
+- **Modern Exegesis:** Checked Henry Latham (*The Risen Master*, 1905 reprint, pp. 34, 43) and Brooke Foss Westcott (*The Gospel according to St. John*, ed. Arthur Westcott, 1908, vol. 2, p. 339, distinguishing Arthur Westcott's editorial footnotes).
+- **Modern Digital Circulation:** Checked passage records for *Jerusalem Perspective* (David Bivin, site publication date 7 Oct 2006 in 7 Mar 2013 Wayback capture), *RecipesAndMore* list archive (21 May 2007, msg 14227), *TruthOrFiction* (inline update 28 Jan 2008 / byline 17 Mar 2015), and *GotQuestions* (consulted 25 July 2026). All copyrighted web pages are treated analytically without bulk verbatim reproduction.
+
+## Recorded Source Ceilings and Disagreements
+- Non-critical electronic Latin transcriptions (Augustine `augustinus.it`, Ambrose/Gregory/Bede Migne via *Corpus Corporum*, Aquinas *Corpus Thomisticum*) are noted explicitly in `sections/90-scope.tex`.
+- Theophylact's PG 124 Latin column (uncollated Greek; 4 OCR repairs) and Lightfoot's OCR text (potential recognition miss caveat) are capped at `inspected` in `source-bindings.toml` and explicitly disclosed in Appendix B.
+- The 6-year lag between *Jerusalem Perspective*'s printed publication date (2006-10-07) and earliest Wayback capture (2013-03-07), plus *TruthOrFiction*'s dual date (2008-01-28 / 2015-03-17), are disclosed directly in Section 4 and Appendix B.
+- Patristic disagreement on John 20:8 (Chrysostom/Cyril/Ambrose/Lapide vs. Augustine/Gregory/Theophylact, with Aquinas retaining both) is preserved intact without false harmonization.

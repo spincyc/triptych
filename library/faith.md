@@ -28,12 +28,12 @@
 
 Each meditation can be read on its own, including in preparation for death at the close of the liturgical year.
 
-| Subject | ChatGPT | Claude | Focus |
-| --- | --- | --- | --- |
-| **Death** | [The Hour That Cannot Be Delegated](../web/gpt/articles/faith/four-last-things-01-death.html) · [PDF](../pdf/gpt/articles/faith/four-last-things-01-death.pdf) | [The Debt of Nature](../web/claude/articles/faith/four-last-things-01-death.html) · [PDF](../pdf/claude/articles/faith/four-last-things-01-death.pdf) | Mortality, preparation, grief, and Christ's victory over death. |
-| **Judgment** | [The Truth of a Life](../web/gpt/articles/faith/four-last-things-02-judgment.html) · [PDF](../pdf/gpt/articles/faith/four-last-things-02-judgment.pdf) | [What Death Does Not Finish](../web/claude/articles/faith/four-last-things-02-judgment.html) · [PDF](../pdf/claude/articles/faith/four-last-things-02-judgment.pdf) | Particular and final judgment, justice, mercy, and purification. |
-| **Hell** | [Hell: Eternal Punishment and the Call to Conversion](../web/gpt/articles/faith/four-last-things-03-hell.html) · [PDF](../pdf/gpt/articles/faith/four-last-things-03-hell.pdf) | [The Fire That Is Not Extinguished](../web/claude/articles/faith/four-last-things-03-hell.html) · [PDF](../pdf/claude/articles/faith/four-last-things-03-hell.pdf) | Eternal punishment, the loss of God, repentance, and perseverance in grace. |
-| **Heaven** | [The End for Which We Were Made](../web/gpt/articles/faith/four-last-things-04-heaven.html) · [PDF](../pdf/gpt/articles/faith/four-last-things-04-heaven.pdf) | [Then Face to Face](../web/claude/articles/faith/four-last-things-04-heaven.html) · [PDF](../pdf/claude/articles/faith/four-last-things-04-heaven.pdf) | Communion with God and the saints, bodily resurrection, and renewed creation. |
+| Subject | ChatGPT | Claude | Gemini | Focus |
+| --- | --- | --- | --- | --- |
+| **Death** | [The Hour That Cannot Be Delegated](../web/gpt/articles/faith/four-last-things-01-death.html) · [PDF](../pdf/gpt/articles/faith/four-last-things-01-death.pdf) | [The Debt of Nature](../web/claude/articles/faith/four-last-things-01-death.html) · [PDF](../pdf/claude/articles/faith/four-last-things-01-death.pdf) | — | Mortality, preparation, grief, and Christ's victory over death. |
+| **Judgment** | [The Truth of a Life](../web/gpt/articles/faith/four-last-things-02-judgment.html) · [PDF](../pdf/gpt/articles/faith/four-last-things-02-judgment.pdf) | [What Death Does Not Finish](../web/claude/articles/faith/four-last-things-02-judgment.html) · [PDF](../pdf/claude/articles/faith/four-last-things-02-judgment.pdf) | — | Particular and final judgment, justice, mercy, and purification. |
+| **Hell** | [Hell: Eternal Punishment and the Call to Conversion](../web/gpt/articles/faith/four-last-things-03-hell.html) · [PDF](../pdf/gpt/articles/faith/four-last-things-03-hell.pdf) | [The Fire That Is Not Extinguished](../web/claude/articles/faith/four-last-things-03-hell.html) · [PDF](../pdf/claude/articles/faith/four-last-things-03-hell.pdf) | [Depart from Me](../web/gemini/articles/faith/four-last-things-03-hell.html) · [PDF](../pdf/gemini/articles/faith/four-last-things-03-hell.pdf) | Eternal punishment, the loss of God, repentance, and perseverance in grace. |
+| **Heaven** | [The End for Which We Were Made](../web/gpt/articles/faith/four-last-things-04-heaven.html) · [PDF](../pdf/gpt/articles/faith/four-last-things-04-heaven.pdf) | [Then Face to Face](../web/claude/articles/faith/four-last-things-04-heaven.html) · [PDF](../pdf/claude/articles/faith/four-last-things-04-heaven.pdf) | — | Communion with God and the saints, bodily resurrection, and renewed creation. |
 
 ## Sacraments, Virtue, and Spiritual Life
 

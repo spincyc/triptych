@@ -1,0 +1,35 @@
+[document]
+type = "article-v1"
+pdftitle = "Abraham and the Daylight Stars"
+pdfsubject = "Single-passage Scriptural study of Genesis 15:5, 12, 17-18"
+kicker = "Scripture"
+subkicker = "A Single-Passage Study"
+title = "Abraham and the Daylight Stars"
+subtitle = "Testing the Hour of the Promise in Genesis 15 Against the Hebrew Text, the Ancient Versions, and Jewish and Christian Interpretation"
+notes = "endnotes"
+notes-font = '\footnotesize'
+notes-parskip = "0pt"
+tocdepth = "1"
+
+[document.main]
+body = [
+  "sections/01-the-tension-in-genesis-15",
+  "sections/02-hebrew-grammar-and-narrative-time",
+  "sections/03-ancient-versions-and-second-temple-readers",
+  "sections/04-rabbinic-and-medieval-jewish-exegesis",
+  "sections/05-patristic-and-catholic-tradition",
+  "sections/06-new-testament-echoes-and-the-modern-claim",
+  "sections/07-believing-before-sunset",
+  '\clearpage',
+]
+appendices = [
+  '\clearpage',
+  { source = "sections/80-witness-register", roles = ["argument"] },
+  '\clearpage',
+  { source = "sections/90-scope", roles = ["scope-appendix"] },
+  { source = "sections/95-references", roles = ["references"] },
+]
+
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"
