@@ -68,6 +68,7 @@ Epistle and Gospel. Its chants come from the Twenty-third Sunday after
 Pentecost. The winter guide is planned. [1962 Missal, RGMR 298](https://www.clerus.org/bibliaclerusonline/fr/irt.htm)
 
 <!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent -->
+<!-- triptych-publication-id: claude:liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent -->
 <!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/39-trinity-sunday -->
 <!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/41-second-after-pentecost -->
 <!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/43-third-after-pentecost -->
@@ -117,7 +118,7 @@ Pentecost. The winter guide is planned. [1962 Missal, RGMR 298](https://www.cler
 
 | ID | Sunday | ChatGPT | Claude |
 | ---: | --- | --- | --- |
-| 01 | **First Sunday of Advent** | [Full Study Guide](../web/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent.html) · [Synthesis](../web/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent-synthesis.html) · [Homily](../web/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent-homily.html) | Planned |
+| 01 | **First Sunday of Advent** | [Full Study Guide](../web/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent.html) · [Synthesis](../web/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent-synthesis.html) · [Homily](../web/gpt/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent-homily.html) | [Full Study Guide](../web/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent.html) · [Synthesis](../web/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent-synthesis.html) · [Homily](../web/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent-homily.html) |
 | 02 | **Second Sunday of Advent** | Planned | Planned |
 | 03 | **Third Sunday of Advent** | Planned | Planned |
 | 04 | **Fourth Sunday of Advent** | Planned | Planned |

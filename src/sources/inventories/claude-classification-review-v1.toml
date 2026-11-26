@@ -1,8 +1,8 @@
 classification_schema = 1
 record_type = "publication-source-classification-review"
-audited_on = "2026-11-18"
-publication_snapshot = "sha256:eabf7a22a0a0a078120f974501b5b7be42793463203fbe2b5c36c61a4bcae088"
-classification_snapshot = "sha256:f29469264e127844f41bef2701ead7edab2076a3e0ecd6c687bd3498f485f817"
+audited_on = "2026-11-25"
+publication_snapshot = "sha256:18c2f6e6539dbb749343f85edaede79dd516d4a7f20a1923a745841d8bac058b"
+classification_snapshot = "sha256:98d9cd59a751d6f8703f328b8224c276c3f995cacb9b20d64300f07741c7ec02"
 
 [[classifications]]
 document = "articles/canon-law/clerical-celibacy-chastity-and-continence"
@@ -119,6 +119,10 @@ source_categories = ["canon-law", "dataset-survey", "historical-primary", "insti
 [[classifications]]
 document = "liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"
 source_categories = ["canon-law", "finding-aid", "historical-primary", "liturgical", "magisterial", "patristic", "prayer-devotional", "scholastic", "scripture", "secondary"]
+
+[[classifications]]
+document = "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "patristic", "repository-internal", "scholastic", "scripture", "secondary"]
 
 [[classifications]]
 document = "liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost"

@@ -891,3 +891,84 @@ against this run: pass. `tools/check-generation-metadata` and
 introduces Chrysostom's scene on Rom 13:12 as "a household before dawn"
 (`sections/40-hour-to-rise.tex`, the paragraph on v. 12; owner: the study).
 The homily no longer repeats it.
+
+## Install-publication, iteration 0 (25 November 2026)
+
+**Completed reviews.** The engine's recorded results for this run, by stage.
+The SHA-256 is that of the accepting result as the run state records it. At
+installation every sealed review's current input object still equalled the
+object it accepted: the research, study, synthesis, homily and web review
+seals, recomputed with the pipeline's own `scripts/_proper_study.py seal`
+commands, are identical to the inputs each accepting review sealed.
+
+| Review | Iterations and dispositions | Accepting result SHA-256 |
+| --- | --- | --- |
+| Research review | 0 changes required (3 blocking, 3 advisories); 1 pass, no finding | `36a2e62c11ea057315f51eb65f8546170b0cd56e00d4edd489399e276be2cdd4` |
+| Study review | 0-2 changes required (6, 1 and 1 blocking); 3 pass, 3 advisories; 4 pass after the web review reopened the study, 6 advisories | `a1b84d7dac839786c6f6bf98ff7ef826750867a1810602024d15ede1556ce683` |
+| Synthesis review | 0 changes required (3 blocking); 1 pass, 3 advisories; 2 pass, 5 advisories | `e31bb5133bfe7b61d46c3092a3744609691bed96e2d8fe026811effdc0bfd7bc` |
+| Homily review | 0 pass, 5 advisories; 1 pass, 1 advisory | `6ff1daa9081ff60932a12a50b323f7da21967ab4e93d8313f6da01e2377a4e00` |
+| Artifact gates | 0 pass; 1 pass | `8d6a7c139b783c8489d67a5012f7cc8e3099b15e615f90603c523961611646cd` |
+| Web review | 0 changes required (WEB-001 blocking, 3 advisories); 1 pass, 1 advisory (WEB-003), 1 observation | `b8dc6b467e125cd1567f1b028c84e8b323cc4adb99e47e12dbbe3f19792efb65` |
+
+**Web edition.** Nothing is installed: the site converts the study and its
+companions from their canonical TeX when it is built. A fresh conversion of
+the canonical study with `tools/tpt web-edition --provider claude` into this
+stage's scratch area is byte-identical to the reviewed conversion
+`build/web/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent.md`
+(SHA-256 `77e7f790c65f89fb0d8aea79c00fa7c3a96bc55bbb1167333857e7c4c95d28ab`,
+equal to `research/web-artifact.json` and to the bytes web review 1 judged);
+its stamp is the committed author time of the leaf, `2026-11-26T01:51:31Z`.
+`web-edition.toml` now records the web review as the canonical reader's
+inspection (`inspected`, `inspected_by`, `inspection`, with that conversion
+hash). Web review 0 compared the full reader with its sources and rendered it
+in headless Chromium at 1280 and 390 px; web review 1 judged the repaired
+conversion, compared every changed line and five sections by word order, and
+rendered it again at 1280 px and in a 390 px frame. Neither rendered the
+publication-reader shell or a full site build, and the inspection record says
+so. Those three fields lie outside the identities the reviews seal, and
+`reviewed` is unchanged. The synthesis and homily readers are
+converter-verified: no review of their own conversions ran, so no companion
+inspection is recorded.
+
+**Release records and catalog.** `make add-publication` with
+`PROVIDER=claude`, `STATUS=alpha` and `CATALOG=library/traditional-latin-mass.md`
+created the three records under
+`release/publications/claude/liturgy/roman-rite/1962/propers/temporal/` for
+the bare ID, `-synthesis` and `-homily`; none existed before. Each is `alpha`
+under the standing authorization `perpetual-public-repository-2026`. In
+`library/traditional-latin-mass.md`, row 01's Claude cell, which read
+`Planned`, now links Full Study Guide, Synthesis and Homily to the three
+readers in the document type's output order; no PDF is linked, because none
+is published. The page gains the one publication marker
+`claude:liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent`
+(the release's primary provider is `gpt`, so a Claude marker carries its
+provider prefix). The ChatGPT cell of row 01 and the existing unprefixed
+marker are unchanged; no other row and no other provider's entry was changed.
+
+**Checks before the shared records.** `tools/tpt web-edition check --leaf`
+for this leaf: 3 reader outputs convert with every fidelity audit.
+`tools/tpt check-web-edition` for the leaf: valid, 1 eligible. The
+publication-phase `scripts/_proper_study.py check` in source mode for
+29 November 2026, with the presentation, format, authority, orientation and
+orientation-v3 requirements: pass.
+
+**Shared records.** The Claude publication inventory and its classification
+review, the source-family ledger, the browser-product descriptor and the
+scoped release bindings each bind this file's bytes, so this stage refreshes
+them after this entry is written, in that order. Their outcomes are reported
+in the stage's result and in the run record, not here. The publication gate
+decides acceptance.
+
+**Review findings and observations (not repaired here).** The web review's
+standing advisory WEB-003 keeps its Rom 13:12 half: the appointed-text
+witness labelled Challoner prints the verse with the transcription faults of
+the tracked Douay chapter, while the body quotes it as the 1899 American
+edition reads (owner: the study and its witness record). Its observation on
+the generated Scriptural Date and Location evidence, which refers the two
+Psalm 84 chants' historical setting to "As under Introit: Ps. 24", belongs to
+the shared chronology generator. The generated evidence also writes article
+titles in straight TeX quotes, which print and web set with a closing mark at
+each end (owner: the chronology projection). The study's "a household before
+dawn" for Chrysostom on Rom 13:12 stands as advisory STU-025 for the study.
+The standing advisories of every review remain in
+`evaluations/blocking-findings-v1.toml` for their owners.
