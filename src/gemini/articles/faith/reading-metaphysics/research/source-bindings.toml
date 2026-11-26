@@ -1,0 +1,68 @@
+schema = 2
+record_type = "bindings"
+document = "articles/faith/reading-metaphysics"
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.summa-theologiae.2006-english-dominicans-gutenberg-prima.pg17611-body-9c99a67a"
+loci = [
+  "I.1.2.corpus",
+  "I.1.8.reply-2",
+  "I.2.1.objection-1",
+  "I.2.1.sed-contra",
+  "I.2.1.corpus",
+  "I.2.1.reply-1",
+  "I.2.1.reply-2",
+  "I.2.2.corpus",
+  "I.2.2.reply-1",
+  "I.2.2.reply-2",
+  "I.2.3.corpus",
+  "I.3.1.corpus",
+  "I.3.2.corpus",
+  "I.3.4.corpus",
+  "I.4.1.corpus",
+  "I.8.1.corpus",
+  "I.9.1.corpus",
+  "I.13.3.corpus",
+  "I.13.5.corpus",
+  "I.14.1.corpus",
+  "I.44.1.corpus",
+  "I.44.2.corpus",
+  "I.46.2.objection-6",
+  "I.46.2.objection-7",
+  "I.46.2.corpus",
+  "I.46.2.reply-6",
+  "I.46.2.reply-7",
+]
+role = "direct-witness"
+states = ["cataloged", "inspected"]
+source_fingerprint = "sha256:c17b98dc58cabd0086fc556359882738be070d90f21f2dbaebe7f8676128b3e7"
+context = "Public-domain English Dominican translation of the Prima Pars inspected directly in the tracked artifact for worked passages, exercises, the Phase 1 cold-transfer test (I.8.1.corpus), and the final pencil test (I.9.1.corpus); cross-checked against the Leonine Latin anchor for I.46.2.reply-7."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.de-ente-et-essentia.1933-latin-corpus-thomisticum-2026-09-29.oee-historical-latin-aa6b1de0"
+loci = ["1", "4"]
+role = "direct-witness"
+states = ["cataloged", "inspected"]
+source_fingerprint = "sha256:abc4c485ce30b7b7ffa6d89b54f682f54383016890362e88c3e95aee6ce11ac6"
+context = "Latin text of De ente et essentia inspected directly in the tracked artifact for Lesson 1 (ens said in two ways, ch. 1) and Lessons 4-5 and 8 (the intellectus essentiae argument and esse dependence, ch. 4)."
+
+[[bindings]]
+source_id = "edition.john-of-damascus.de-fide-orthodoxa.1899-salmond-english-web-2026-09-29"
+loci = ["I.1", "I.3"]
+role = "context"
+states = ["cataloged"]
+context = "Background witness for the patristic maxim on naturally implanted knowledge of God cited by Aquinas in ST I, q. 2, a. 1, Objection 1 and qualified in Reply 1 (Lesson 2, Worked Passage 2)."
+
+[[bindings]]
+source_id = "edition.aristotle.ethica-nicomachea.english-ross-1925-mit-web-2026-07-27"
+loci = ["VI.3, 1139b18-1139b22", "VI.6, 1140b31-1141a8"]
+role = "context"
+states = ["cataloged"]
+context = "Oxford Ross translation witness for Aristotle's account of episteme and nous cited in Lesson 0, Lesson 6, and Appendix A."
+
+[[bindings]]
+source_id = "work.thomas-aquinas.summa-contra-gentiles"
+loci = ["I.13"]
+role = "context"
+states = ["cataloged"]
+context = "Catalog-level reference for parallel ordered-movers and ordered-efficient-causes discussions (SCG I, c. 13, nn. 14, 15, 33) noted in Lessons 4, 7, 8, and Appendix A."

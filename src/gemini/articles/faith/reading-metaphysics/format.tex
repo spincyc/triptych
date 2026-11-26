@@ -1,0 +1,39 @@
+\def\TriptychPrintEdition{}
+\ifdefined\TriptychPrintEdition
+  \usepackage{amsmath}
+  \usepackage{amssymb}
+  \setcounter{section}{-1}
+  \newcommand{\keeppair}{\Needspace{7\baselineskip}}
+  \newcommand{\logicop}[1]{\mathrm{#1}}
+  \newcommand{\lall}{\forall}
+  \newcommand{\lex}{\exists}
+  \newcommand{\limp}{\to}
+  \newcommand{\lneg}{\neg}
+  \newcommand{\landop}{\land}
+  \newcommand{\lneqop}{\neq}
+  \newcommand{\lin}{\in}
+  \newcommand{\lbox}{\Box}
+  \newcommand{\ldiam}{\Diamond}
+  \newcommand{\lquad}{\quad}
+  \newcommand{\lthin}{\,}
+  \newcommand{\lmed}{\;}
+  \newcommand{\ldisplay}[1]{\[#1\]}
+  \newcommand{\linline}[1]{$#1$}
+\else
+  \newcommand{\keeppair}{}
+  \newcommand{\logicop}[1]{#1}
+  \newcommand{\lall}{∀}
+  \newcommand{\lex}{∃}
+  \newcommand{\limp}{→ }
+  \newcommand{\lneg}{¬}
+  \newcommand{\landop}{∧ }
+  \newcommand{\lneqop}{≠ }
+  \newcommand{\lin}{∈ }
+  \newcommand{\lbox}{□}
+  \newcommand{\ldiam}{◇}
+  \newcommand{\lquad}{ }
+  \newcommand{\lthin}{ }
+  \newcommand{\lmed}{ }
+  \newcommand{\ldisplay}[1]{\par\noindent\texttt{#1}\par}
+  \newcommand{\linline}[1]{#1}
+\fi

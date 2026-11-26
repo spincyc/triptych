@@ -24,6 +24,12 @@
 | **Against the Instrumentalists** | [PDF](../pdf/gpt/articles/faith/against-the-instrumentalists.pdf) · [Read](../web/gpt/articles/faith/against-the-instrumentalists.html) | [PDF](../pdf/claude/articles/faith/against-the-instrumentalists.pdf) · [Read](../web/claude/articles/faith/against-the-instrumentalists.html) | Why measurement alone cannot settle what is real or rationally knowable. |
 | **In Defense of the Particular** | [PDF](../pdf/gpt/articles/faith/in-defense-of-the-particular.pdf) · [Read](../web/gpt/articles/faith/in-defense-of-the-particular.html) | [PDF](../pdf/claude/articles/faith/in-defense-of-the-particular.pdf) · [Read](../web/claude/articles/faith/in-defense-of-the-particular.html) | How God's universal causality acts through concrete election, Incarnation, providence, sacraments, and neighbor. |
 
+## Philosophical Reading
+
+| Publication | ChatGPT | Claude | Gemini | Focus |
+| --- | --- | --- | --- | --- |
+| **Reading Metaphysics** | — | — | [PDF](../pdf/gemini/articles/faith/reading-metaphysics.pdf) · [Read](../web/gemini/articles/faith/reading-metaphysics.html) | A nine-lesson guide to interrogating classical Catholic metaphysical texts through six ordinary questions. |
+
 ## The Four Last Things
 
 Each meditation can be read on its own, including in preparation for death at the close of the liturgical year.

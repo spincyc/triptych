@@ -1,0 +1,38 @@
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"
+
+[document]
+type = "article-v1"
+pdftitle = 'Reading Metaphysics: What Is Being Claimed, and Why Should I Believe It?'
+pdfsubject = 'A nine-lesson practical guide to reading classical Catholic metaphysical texts through six ordinary questions'
+title-page = "stacked"
+title = 'Reading Metaphysics'
+subtitle = 'What Is Being Claimed, and Why Should I Believe It?'
+description = 'A Nine-Lesson Guide to Interrogating Classical Metaphysical Texts'
+note = 'A Triptych study guide in philosophical reading. See Scope, Method, and Qualifications for edition boundaries and attributions.'
+tocdepth = "1"
+notes = "none"
+
+[document.main]
+body = [
+  'sections/00-opening',
+  'sections/01-lesson-0',
+  'sections/02-lesson-1',
+  'sections/03-lesson-2',
+  'sections/04-lesson-3',
+  'sections/05-lesson-4',
+  'sections/06-lesson-5',
+  'sections/07-lesson-6',
+  'sections/08-lesson-7',
+  'sections/09-lesson-8',
+  '\clearpage',
+]
+appendices = [
+  'sections/80-appendix-historical-sources',
+  '\clearpage',
+  'sections/85-appendix-analysis-sheet',
+  '\clearpage',
+  { source = 'sections/90-scope-method-qualifications', roles = ['scope-appendix'] },
+  { source = 'sections/99-references', roles = ['references'] },
+]
