@@ -1558,10 +1558,12 @@ window.Triptych = (function () {
   /** The label an orations control gives one of those languages. */
   function orationLanguageLabel(entry) {
     // A zero denominator is not a ratio: "0 of 0" reads as a total absence.
+    // Once a missal's orations/translations are complete, omit the "N of M" ratio.
     return languageName(entry.lang) + (!Number.isInteger(entry.targets)
       ? ' — coverage not assessed'
       : entry.targets === 0 ? ' — no composed texts represented'
-        : ' — ' + entry.available_targets + ' of ' + entry.targets + ' represented texts available');
+        : entry.available_targets >= entry.targets ? ''
+          : ' — ' + entry.available_targets + ' of ' + entry.targets + ' represented texts available');
   }
 
   /** Compact select-option label so dropdowns stay readable without truncation. */
@@ -1569,6 +1571,7 @@ window.Triptych = (function () {
     const name = languageName(entry.lang);
     if (!Number.isInteger(entry.targets)) return name + ' (unassessed)';
     if (entry.targets === 0) return name + ' (no texts)';
+    if (entry.available_targets >= entry.targets) return name;
     return name + ' (' + entry.available_targets.toLocaleString('en-US') + '/' +
       entry.targets.toLocaleString('en-US') + ')';
   }
@@ -1782,11 +1785,15 @@ window.Triptych = (function () {
     const row = report && (report.languages || []).find(function (entry) { return entry.lang === language; });
     return (row && row.witnesses || []).map(function (witness) {
       const displayLabel = cleanWitnessDisplayLabel(witness.label);
-      return Object.assign({}, witness, { label: displayLabel + ' — ' + witness.available +
-        ' of ' + row.occurrences + ' uses' +
-        (witness.relationships && witness.relationships.length ? '; ' + witness.relationships.map(function (value) {
-          return COVERAGE_RELATIONSHIPS[value] || value;
-        }).join(', ') : '') });
+      const complete = Number.isInteger(row.occurrences) && row.occurrences > 0 &&
+        witness.available >= row.occurrences;
+      const rel = witness.relationships && witness.relationships.length ? witness.relationships.map(function (value) {
+        return COVERAGE_RELATIONSHIPS[value] || value;
+      }).join(', ') : '';
+      const suffix = complete
+        ? (rel ? ' — ' + rel : '')
+        : ' — ' + witness.available + ' of ' + row.occurrences + ' uses' + (rel ? '; ' + rel : '');
+      return Object.assign({}, witness, { label: displayLabel + suffix });
     });
   }
 

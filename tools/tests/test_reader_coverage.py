@@ -191,10 +191,12 @@ class ReaderCoverageTests(unittest.TestCase):
     def test_zero_denominator_label_is_plain_rather_than_a_ratio(self):
         labels = node(op="label", entries=[
             {"lang": "la", "targets": 0, "available_targets": 0},
+            {"lang": "la", "targets": 1487, "available_targets": 1487},
             {"lang": "en", "targets": 3, "available_targets": 0},
             {"lang": "en"}])
         self.assertEqual(labels, [
             "Latin — no composed texts represented",
+            "Latin",
             "English — 0 of 3 represented texts available",
             "English — coverage not assessed"])
 

@@ -1707,9 +1707,10 @@
     }
     T.fillSelect(ordinaryLangSelect, offered.map((one) => ({
       value: one.lang,
-      label: T.languageName(one.lang) + (one.held
-        ? ' — ' + one.held + ' of ' + one.elements
-        : ' — none held'),
+      label: T.languageName(one.lang) + (!one.held
+        ? ' — none held'
+        : one.held >= one.elements ? ''
+          : ' — ' + one.held + ' of ' + one.elements),
       title: one.lang
     })));
     const chosen = chosenLanguage(file);

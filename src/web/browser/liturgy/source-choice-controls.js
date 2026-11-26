@@ -973,6 +973,7 @@
     const base = (mass.name || mass.key) + (mark ? ' ' + mark : '');
     if (!coverage) return base;
     if (!Number.isInteger(coverage.targets) || coverage.targets === 0) return base + ' (no composed texts)';
+    if (coverage.available_targets >= coverage.targets) return base;
     return base + ' (' + coverage.available_targets + '/' + coverage.targets + ')';
   }
 

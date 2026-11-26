@@ -224,6 +224,16 @@ export function verifyRealWitnesses(structure, root) {
   }
   const english = T.orationLanguagesOf(structure).find(row => row.lang === 'en');
   assert.equal(T.orationLanguageLabel(english),
-    `English — ${english.available_targets} of ${english.targets} represented texts available`);
+    english.available_targets >= english.targets && english.targets > 0
+      ? 'English'
+      : `English — ${english.available_targets} of ${english.targets} represented texts available`);
+  assert.equal(T.orationOptionLabel(english),
+    english.available_targets >= english.targets && english.targets > 0
+      ? 'English'
+      : `English (${english.available_targets.toLocaleString('en-US')}/${english.targets.toLocaleString('en-US')})`);
+  assert.equal(T.orationLanguageLabel({ lang: 'en', targets: 10, available_targets: 4 }),
+    'English — 4 of 10 represented texts available');
+  assert.equal(T.orationOptionLabel({ lang: 'en', targets: 10, available_targets: 4 }),
+    'English (4/10)');
   return ['canonical-witness-aliases', 'partial-witness-no-fallback', 'report-language-labels'];
 }
