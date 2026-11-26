@@ -5,13 +5,13 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-11-25.
+Last reconciled: 2026-11-26.
 
 ## Claude 1962 First Sunday of Advent, 2026-11-29
 
 <!-- promised-deliverable: claude-1962-01-advent-2026-11-29 -->
 
-**Accepted and archived; integration with `main` in progress.** On 2026-11-25
+**Complete: pushed to `main`, deployed and verified live.** On 2026-11-25
 the maintainer asked for the Claude 1962 proper-study documents for the
 upcoming Sunday, and later the same day authorized publication to `main`.
 
@@ -55,6 +55,44 @@ no existing opt-in could clear. `tools/proper-study-run-archive` gained
 `--redact-worker-scratch DIR`, with receipt schema 4. The run is archived in
 the leaf; the driver's account, with the defects left for other owners, is
 [CYCLES.md](workflows/reviews/claude-1962-01-production-2026-11-25/CYCLES.md).
+
+After acceptance, the tooling change (`2b312d527a`), the publication
+authorization (`0fe0793ebf`) and the archive (`7ec6cc56a5`) were committed.
+
+`origin/main` had moved by ten tooling and performance commits, so they were
+merged (`87e006bd80`). Every conflict was a derived value: the product
+record, the release manifest's site-source hashes and the rights digest.
+Main changed shared chronology scripts in the study's source closure, so the
+merge commit moved the study's derived "Last revised" stamp. A trial merge
+before acceptance had shown main's converter otherwise reproduces the
+reviewed conversion byte for byte.
+
+These were then refreshed over the merged tree:
+- the corpus and reader indexes (`590d34ee4e`);
+- browser products, 13 products and 30,451 files (`b48de02222`);
+- release bindings, 70 changes including the source records the publication
+  now cites (`11dfc61f29`);
+- the corpus index once more (`6f35e9fcf9`), because it records the release
+  manifest's bytes. The bindings do not cover `src/index/`, so this was the
+  fixed point.
+
+On `6f35e9fcf9` these local gates passed:
+- `make check-deployment-sources`;
+- `make public-site`, with no staging-scan fault this time;
+- `public-alpha verify --deployment-target github-pages`;
+- `make check-release-bindings`, with 0 stale.
+
+`native-print-compile` typeset all three editions, 46 pages under runtime
+`wasmtex-2026-47ff73bab1a2e548`, and passed.
+
+`6f35e9fcf9` reached `main` as a fast-forward from `462f311014`. Pages run
+[45764417759](https://github.com/spincyc/triptych/actions/runs/45764417759)
+passed the deployment source checks, the canonical index check, all eight
+print-compile shards, print-verify, build and deploy. These pages are
+byte-identical live and in the local build:
+- the three web readers;
+- the study's print page;
+- the Traditional Latin Mass catalog.
 
 ## Postconciliar Advent and the seasonal catalogs, 2026-11-23
 
