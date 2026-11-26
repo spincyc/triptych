@@ -5738,7 +5738,7 @@ def render_page(
         head_extra=reader_head,
         body_extra=(
             '<script src="' + relative_link(output_relative, "shared/catalogue-navigation.js")
-            + '"></script>' if catalogue else ""
+            + '" defer></script>' if catalogue else ""
         ) + reader_body + body_extra,
         actions=actions,
     )
@@ -5867,7 +5867,11 @@ BROWSER_TITLE_RE = re.compile(r"<title>(.*?)</title>", re.DOTALL)
 BROWSER_HEAD_RE = re.compile(r"<head>(.*?)</head>", re.DOTALL)
 BROWSER_BODY_RE = re.compile(r"<body([^>]*)>(.*?)</body>", re.DOTALL)
 BROWSER_STYLESHEET_RE = re.compile(r'<link rel="stylesheet" href="[^"]+">')
-BROWSER_SCRIPT_RE = re.compile(r'<script src="[^"]+"></script>')
+BROWSER_PRELOAD_RE = re.compile(
+    r'<link rel="preload" href="[^"]+" as="fetch"(?:\s+crossorigin(?:="anonymous")?)?>'
+)
+BROWSER_SCRIPT_RE = re.compile(r'<script src="[^"]+"(?:\s+defer)?></script>')
+BROWSER_DEFER_SCRIPT_RE = re.compile(r'<script src="([^"]+)"></script>')
 BROWSER_SKIP_LINK_RE = re.compile(r'<a class="skip-link" href="[^"]+">.*?</a>\s*', re.DOTALL)
 BROWSER_BODY_CLASS_RE = re.compile(r'\bclass="([^"]*)"')
 BROWSER_MAIN_RE = re.compile(r"<main[\s>]")
@@ -5884,9 +5888,64 @@ BROWSER_HEAD_ALLOWED_RE = re.compile(
       | <meta\ name="robots"\ content="[^"]*">
       | <title>.*?</title>
       | <link\ rel="stylesheet"\ href="[^"]+">
+      | <link\ rel="preload"\ href="[^"]+"\ as="fetch"(?:\s+crossorigin(?:="anonymous")?)?>
     )\s*""",
     re.DOTALL | re.VERBOSE,
 )
+# Unconditional first-hop JSON manifests fetched on boot by each browser page.
+# Emitted as `<link rel="preload" as="fetch" crossorigin="anonymous">` only when
+# present in the published site's `browse/` tree so verification stays exact.
+BROWSER_PAGE_PRELOADS: dict[str, tuple[str, ...]] = {
+    "liturgy/day.html": (
+        "browse/bibles.json",
+        "browse/structure/propers/index.json",
+        "browse/structure/ordinary/index.json",
+        "browse/structure/rubrics/index.json",
+    ),
+    "liturgy/day-reader.html": (
+        "browse/bibles.json",
+        "browse/structure/propers/index.json",
+        "browse/structure/ordinary/index.json",
+        "browse/structure/rubrics/index.json",
+    ),
+    "liturgy/index.html": (
+        "browse/bibles.json",
+        "browse/structure/propers/index.json",
+        "browse/structure/ordinary/index.json",
+    ),
+    "liturgy/propers-reader.html": (
+        "browse/bibles.json",
+        "browse/structure/propers/index.json",
+        "browse/structure/ordinary/index.json",
+    ),
+    "catena/index.html": (
+        "browse/structure/catena/index.json",
+        "browse/bibles.json",
+        "browse/structure/paragraphs/index.json",
+    ),
+    "encyclicals/index.html": (
+        "browse/encyclicals/index.json",
+    ),
+    "law/index.html": (
+        "browse/structure/act-history/code-of-canon-law.json",
+    ),
+    "scripture/index.html": (
+        "browse/bibles.json",
+        "browse/structure/readings/narrative-spine.json",
+    ),
+    "scripture/track.html": (
+        "browse/bibles.json",
+        "browse/structure/readings/narrative-spine.json",
+    ),
+    "sources/index.html": (
+        "browse/structure/sources/index.json",
+        "browse/bibles.json",
+        "browse/structure/sources/catalogue/0000.json",
+    ),
+    "texts/index.html": (
+        "browse/structure/documents/corpus.json",
+    ),
+}
 BROWSER_DESCRIPTION_RE = re.compile(r'<meta name="description" content="([^"]*)">')
 BROWSER_ROBOTS_RE = re.compile(r'<meta name="robots" content="([^"]*)">')
 
@@ -5916,6 +5975,7 @@ def browser_page_parts(source_path: Path, output_relative: str) -> dict:
     stylesheets = BROWSER_STYLESHEET_RE.findall(head)
     if not stylesheets:
         raise ReleaseError(f"{label}: declares no stylesheet of its own")
+    preloads = BROWSER_PRELOAD_RE.findall(head)
 
     body_attributes, body = body_match.group(1), body_match.group(2)
     scripts = BROWSER_SCRIPT_RE.findall(body)
@@ -5959,7 +6019,7 @@ def browser_page_parts(source_path: Path, output_relative: str) -> dict:
         "title": title_match.group(1).strip(),
         "declared_description": html.unescape(declared.group(1)) if declared else "",
         "declared_robots": declared_robots.group(1) if declared_robots else "",
-        "head_extra": "".join(f"\n  {link}" for link in stylesheets),
+        "head_extra": "".join(f"\n  {link}" for link in (*preloads, *stylesheets)),
         "body_extra": "".join(f"\n  {script}" for script in scripts),
         "content": content.strip("\n"),
         "page_class": " ".join(classes),
@@ -6017,8 +6077,21 @@ def render_browser_page(
     preview: bool,
     authorization: dict,
     pdf_aliases: dict[str, str] | None = None,
+    available_data: set[str] | frozenset[str] | None = None,
 ) -> str:
     parts = browser_page_parts(source_path, output_relative)
+    head_extra = parts["head_extra"]
+    if available_data:
+        preload_tags = [
+            f'\n  <link rel="preload" href="{relative_link(output_relative, target)}" as="fetch" crossorigin="anonymous">'
+            for target in BROWSER_PAGE_PRELOADS.get(output_relative, ())
+            if target in available_data
+        ]
+        if preload_tags:
+            head_extra = "".join(preload_tags) + head_extra
+    body_extra = BROWSER_DEFER_SCRIPT_RE.sub(
+        r'<script src="\1" defer></script>', parts["body_extra"]
+    )
     if pdf_aliases is None:
         pdf_aliases = publication_routes(()) if re.search(r'''\bhref\s*=\s*["'][^"']*pdf/''', parts["content"]) else {}
     return wrap_in_layout(
@@ -6030,8 +6103,8 @@ def render_browser_page(
         rewrite_pdf_hrefs(parts["content"], output_relative, pdf_aliases),
         preview,
         authorization,
-        head_extra=parts["head_extra"],
-        body_extra=parts["body_extra"],
+        head_extra=head_extra,
+        body_extra=body_extra,
         declared_description=parts["declared_description"],
         declared_robots=parts["declared_robots"],
         content_element=parts["content_element"],
@@ -7382,12 +7455,14 @@ def _verify_snapshot_contents(
 
     errors.extend(verify_print_pages(output, preview, expected_authorization, publication_prints))
     errors.extend(verify_native_tex_files(output))
-    for output_relative, source in sorted(web_browser_pages().items()):
+    browser_pages = web_browser_pages()
+    available_data = set(web_data_files()) if browser_pages else set()
+    for output_relative, source in sorted(browser_pages.items()):
         html_path = output / output_relative
         if html_path.is_file() and html_path.read_text(
             encoding="utf-8", errors="replace"
         ) != render_browser_page(
-            source, output_relative, preview, expected_authorization, pdf_aliases
+            source, output_relative, preview, expected_authorization, pdf_aliases, available_data
         ):
             errors.append(f"{output_relative}: rendered page does not match its approved source")
 
@@ -7976,7 +8051,9 @@ def assemble_web_data(
         return
     if pdf_aliases is None:
         pdf_aliases = publication_routes(())
-    for destination_relative, source in sorted(web_data_files().items()):
+    data_files = web_data_files()
+    available_data = set(data_files)
+    for destination_relative, source in sorted(data_files.items()):
         projection = projected_web_data(destination_relative, source, pdf_aliases)
         if projection is None:
             writer.copy(source, destination_relative)
@@ -7985,7 +8062,9 @@ def assemble_web_data(
     for output_relative, source in sorted(web_browser_pages().items()):
         writer.text(
             output_relative,
-            render_browser_page(source, output_relative, preview, authorization, pdf_aliases),
+            render_browser_page(
+                source, output_relative, preview, authorization, pdf_aliases, available_data
+            ),
         )
 
 

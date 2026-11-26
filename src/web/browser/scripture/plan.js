@@ -228,12 +228,9 @@
   }
 
   async function start() {
-    // The manifest is not needed to describe the plan, but loading it is what
-    // decides whether a data root can be reached at all; without it a page
-    // opened off disk would report a missing plan rather than a missing corpus.
-    await T.loadBibles();
-
-    const loaded = await P.load();
+    // Load the Bible manifest and reading plan in parallel; both share the
+    // bootstrap inline fallback when opened off disk.
+    const [, loaded] = await Promise.all([T.loadBibles(), P.load()]);
     if (!loaded.ok) {
       T.fail(loaded.message);
       return;

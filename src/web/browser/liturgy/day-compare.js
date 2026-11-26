@@ -99,7 +99,7 @@
         primary.edition.id === peer.edition.id) {
       throw new Error('Day Compare side identities disagree with the selected state');
     }
-    const peerDerived = await derivePeer({
+    const peerDerived = input.peerDerived || await derivePeer({
       peer: peer.calendar.id, date: comparison.anchor.civilDate,
       load: input.load, Model: input.Model
     });
@@ -236,6 +236,7 @@
     const T = root.Triptych;
     const built = await build({
       state: input.state, derived: input.assembled.derived,
+      peerDerived: input.assembled.peerDerived,
       structures: input.assembled.structures, load: input.load,
       Model: root.MassAssembly, Adapters: root.LiturgyReaderStateAdapters,
       T: T, bibles: runtime.bibles, missals: runtime.missals,

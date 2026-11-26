@@ -533,9 +533,10 @@
       parsed: parsed, derived: derived, mode: requestedMode, needsOrdinary: needsOrdinary
     }) : load('structure/propers/' + missal + '.json');
     let peerStructure = null;
+    let peerDerived = null;
     if (peer) {
       const offset = loadsOrdinary ? 3 : 2;
-      const peerDerived = Model.derive({ date: preliminary.date,
+      peerDerived = Model.derive({ date: preliminary.date,
         rubrics: rows[offset], year: rows[offset + 1] });
       peerStructure = DayReadPayload ? DayReadPayload.loadStructure({
         load: load, index: manifests.propersIndex, missal: peer,
@@ -586,6 +587,7 @@
     });
     return {
       derived: derived,
+      peerDerived: peerDerived,
       rubrics: rows[0],
       structure: structure,
       structures: structures,
@@ -2654,48 +2656,33 @@
       let branchFailures = 0;
       const branchErrors = [];
       try {
+        const tasks = [];
+        const { rubrics, derived, structure } = assembled;
         for (let branchIndex = 0; branchIndex < assembled.derived.options.length; branchIndex += 1) {
-          const branch = assembled.derived.options[branchIndex];
-          const branchState = Adapters.dayBranchRequest(normalized.state, branch, assembled.derived.options);
-          const prefix = locationPrefix(branch, multiple);
-          try {
-            const result = Adapters.adaptDay({
-              rubrics: assembled.rubrics,
-              request: branchState,
-              derived: assembled.derived,
-              structure: assembled.structure,
-              ordinary: runtime.ordinary
-            });
-            if (primaryDayChoice(result, branch)) {
-              const row = {
-                branch: branch, result: result, prefix: prefix, state: branchState,
-                unresolved: true
-              };
-              rendered.push(row);
-              continue;
+          const branch = derived.options[branchIndex];
+          tasks.push((async () => {
+            const branchState = Adapters.dayBranchRequest(normalized.state, branch, assembled.derived.options);
+            const prefix = locationPrefix(branch, multiple);
+            try {
+              const result = Adapters.adaptDay({ rubrics, request: branchState, derived, structure, ordinary: runtime.ordinary });
+              if (primaryDayChoice(result, branch)) return { ok: true, row: { branch, result, prefix, state: branchState, unresolved: true } };
+              if (!result.resolved) throw new Error('the production result leaves its formulary unresolved');
+              const row = await buildResultDocument(result, structure, branch,
+                { state: branchState, mode: runtime.mode, ordinary: runtime.ordinary, locationPrefix: prefix },
+                () => serial === runtime.serial);
+              if (!row || serial !== runtime.serial) return { superseded: true };
+              row.prefix = prefix; row.state = branchState;
+              return { ok: true, row };
+            } catch (error) {
+              return { ok: false, error, row: failedBranchDocument(branch, prefix, error) };
             }
-            if (!result.resolved) {
-              throw new Error('the production result leaves its formulary unresolved');
-            }
-            const row = await buildResultDocument(
-              result, assembled.structure, branch,
-              {
-                state: branchState,
-                mode: runtime.mode,
-                ordinary: runtime.ordinary,
-                locationPrefix: prefix
-              },
-              function () { return serial === runtime.serial; }
-            );
-            if (!row || serial !== runtime.serial) return;
-            row.prefix = prefix;
-            row.state = branchState;
-            rendered.push(row);
-          } catch (error) {
-            branchFailures += 1;
-            branchErrors.push(error);
-            rendered.push(failedBranchDocument(branch, prefix, error));
-          }
+          })());
+        }
+        const rows = await Promise.all(tasks);
+        if (serial !== runtime.serial || rows.some(e => e.superseded)) return;
+        for (const entry of rows) {
+          if (!entry.ok) { branchFailures += 1; branchErrors.push(entry.error); }
+          rendered.push(entry.row);
         }
       } catch (error) {
         if (serial !== runtime.serial) return;

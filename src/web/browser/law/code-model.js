@@ -204,8 +204,13 @@ window.TriptychCode = (function () {
     return (row.line || groupOf(row) || '') + '/' + canonOf(row);
   }
 
-  /** Group index rows into canons, each with its paragraph rows in order. */
-  function canons(rows) {
+  const canonIndexCache = new WeakMap();
+
+  function canonIndex(rows) {
+    if (Array.isArray(rows)) {
+      const cached = canonIndexCache.get(rows);
+      if (cached && cached.length === rows.length) return cached;
+    }
     const found = new Map();
     (rows || []).forEach(function (row) {
       const canon = canonOf(row);
@@ -222,8 +227,28 @@ window.TriptychCode = (function () {
       }
       found.get(key).rows.push(row);
     });
-    found.forEach(function (entry) { entry.rows.sort(byOrder); });
-    return Array.from(found.values());
+    const byCanon = new Map();
+    found.forEach(function (entry) {
+      entry.rows.sort(byOrder);
+      let bucket = byCanon.get(entry.canon);
+      if (!bucket) {
+        bucket = [];
+        byCanon.set(entry.canon, bucket);
+      }
+      bucket.push(entry);
+    });
+    const indexed = {
+      length: Array.isArray(rows) ? rows.length : 0,
+      list: Array.from(found.values()),
+      byCanon: byCanon
+    };
+    if (Array.isArray(rows)) canonIndexCache.set(rows, indexed);
+    return indexed;
+  }
+
+  /** Group index rows into canons, each with its paragraph rows in order. */
+  function canons(rows) {
+    return canonIndex(rows).list.slice();
   }
 
   /**
@@ -237,13 +262,12 @@ window.TriptychCode = (function () {
    */
   function find(rows, cited) {
     if (!cited) return [];
-    return canons(rows)
-      .filter(function (entry) { return entry.canon === cited.canon; })
-      .map(function (entry) {
-        return cited.paragraph
-          ? Object.assign({}, entry, { asked: cited.paragraph })
-          : entry;
-      });
+    const matched = canonIndex(rows).byCanon.get(cited.canon) || [];
+    return matched.map(function (entry) {
+      return cited.paragraph
+        ? Object.assign({}, entry, { asked: cited.paragraph })
+        : entry;
+    });
   }
 
   /** Free-text search, for the reader who is not citing but looking. */

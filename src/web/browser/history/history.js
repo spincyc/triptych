@@ -835,6 +835,26 @@
       (changed.units_changed || 0) + (changed.unestablished || 0);
   }
 
+  const catalogueHaystacks = new WeakMap();
+
+  function batchHost(target) {
+    return typeof document.createDocumentFragment === 'function' ? document.createDocumentFragment() : target;
+  }
+
+  function flushBatch(target, host) {
+    if (host !== target) target.appendChild(host);
+  }
+
+  function catalogueHaystack(row) {
+    let text = catalogueHaystacks.get(row);
+    if (text === undefined) {
+      text = [row.title, row.family, row.presentation_group && row.presentation_group.label, row.date_label, row.id,
+        JSON.stringify(row.source_record)].join(' ').toLocaleLowerCase();
+      catalogueHaystacks.set(row, text);
+    }
+    return text;
+  }
+
   function draw() {
     const stations = spine.stations || [];
     T.clear(map);
@@ -844,9 +864,19 @@
       return;
     }
     const panels = M.panelLayout(stations, spine.lines);
+    const outgoingExternal = new Map();
+    panels.forEach(function (other) {
+      other.edges.forEach(function (edge) {
+        if (!edge.external) return;
+        let bucket = outgoingExternal.get(edge.from);
+        if (!bucket) { bucket = []; outgoingExternal.set(edge.from, bucket); }
+        bucket.push(edge);
+      });
+    });
+    const fragment = batchHost(map);
     map.setAttribute('aria-label', 'The acts this record carries: ' + stations.length + ' stations in dated line panels');
-    map.appendChild(T.el('h2', null, 'Recorded historical lines'));
-    map.appendChild(T.el('p', 'panel-note',
+    fragment.appendChild(T.el('h2', null, 'Recorded historical lines'));
+    fragment.appendChild(T.el('p', 'panel-note',
       'Read dates downward within each line. Spacing separates recorded stations, not elapsed years. ' +
       'Separate starting points mark the limits of this record, not independent historical origins. ' +
       'An ending here does not establish suppression or extinction.'));
@@ -862,7 +892,8 @@
       });
       contents.appendChild(link);
     });
-    map.appendChild(contents);
+    fragment.appendChild(contents);
+    const panelViews = [];
     panels.forEach(function (panel) {
       const section = T.el('section', 'route-panel');
       section.id = panel.id;
@@ -907,13 +938,11 @@
           ref.addEventListener('click', function (event) { event.preventDefault(); open(edge.from); revealDetail(); });
           item.appendChild(ref);
         });
-        panels.forEach(function (other) {
-          other.edges.filter(function (edge) { return edge.external && edge.from === node.id; }).forEach(function (edge) {
-            const ref = T.el('a', 'route-reference', 'Linked to ' + edge.toTitle + ' · line ' + edge.toPanel);
-            ref.href = '#station=' + encodeURIComponent(edge.to);
-            ref.addEventListener('click', function (event) { event.preventDefault(); open(edge.to); revealDetail(); });
-            item.appendChild(ref);
-          });
+        (outgoingExternal.get(node.id) || []).forEach(function (edge) {
+          const ref = T.el('a', 'route-reference', 'Linked to ' + edge.toTitle + ' · line ' + edge.toPanel);
+          ref.href = '#station=' + encodeURIComponent(edge.to);
+          ref.addEventListener('click', function (event) { event.preventDefault(); open(edge.to); revealDetail(); });
+          item.appendChild(ref);
         });
         if (station.parent_kind === 'use-continuity' || station.parent_kind === 'line-order') item.appendChild(
           T.el('p', 'route-reference', 'Sequence in this record; textual descent is not established by this link.'));
@@ -924,37 +953,60 @@
       body.appendChild(canvas);
       body.appendChild(labels);
       section.appendChild(body);
-      map.appendChild(section);
-      function paint() {
-        const heights = {};
-        Array.from(labels.children).forEach(function (item, i) {
-          heights[panel.nodes[i].id] = item.getBoundingClientRect().height;
-        });
-        const measured = M.panelLayout(stations, spine.lines, heights).find(function (p) { return p.line === panel.line; });
-        T.clear(canvas);
-        canvas.setAttribute('height', measured.height);
-        canvas.setAttribute('viewBox', '0 0 ' + measured.textX + ' ' + measured.height);
-        measured.edges.forEach(function (edge) {
-          const station = byId.get(edge.to);
-          const classes = 'track track-evidence-' + (station.parent_kind || 'unstated') + (edge.reception ? ' track-reception' : '') +
-            ((station.via_unrepresented || []).length ? ' track-gap' : '');
-          const path = svg('path', {d:edge.path, class:classes, 'data-from':edge.from, 'data-to':edge.to,
-            'aria-label': (edge.reception ? 'Documented reception' : 'Recorded parent link') +
-              ' from ' + edge.fromTitle + ' to ' + edge.toTitle});
-          canvas.appendChild(path);
-          if (edge.reception) canvas.appendChild(svg('path', {d:edge.path, class:'track-reception-core'}));
-        });
-        measured.nodes.forEach(function (node) {
-          const station = byId.get(node.id);
-          const group = svg('g', {class:'kind-' + M.kindOf(station, kindsStated)});
-          if (receptionsOf(station).length) group.appendChild(svg('circle', {cx:node.x,cy:node.y,r:14,class:'station-interchange-ring'}));
-          group.appendChild(svg('circle', {cx:node.x,cy:node.y,r:8,class:'station-mark'}));
-          canvas.appendChild(group);
-        });
-      }
-      paint();
-      if (typeof ResizeObserver !== 'undefined') new ResizeObserver(paint).observe(labels);
+      fragment.appendChild(section);
+      panelViews.push({ panel: panel, canvas: canvas, labels: labels });
     });
+    flushBatch(map, fragment);
+    function paintCanvas(canvas, measured) {
+      T.clear(canvas);
+      canvas.setAttribute('height', measured.height);
+      canvas.setAttribute('viewBox', '0 0 ' + measured.textX + ' ' + measured.height);
+      measured.edges.forEach(function (edge) {
+        const station = byId.get(edge.to);
+        const classes = 'track track-evidence-' + (station.parent_kind || 'unstated') + (edge.reception ? ' track-reception' : '') +
+          ((station.via_unrepresented || []).length ? ' track-gap' : '');
+        const path = svg('path', {d:edge.path, class:classes, 'data-from':edge.from, 'data-to':edge.to,
+          'aria-label': (edge.reception ? 'Documented reception' : 'Recorded parent link') +
+            ' from ' + edge.fromTitle + ' to ' + edge.toTitle});
+        canvas.appendChild(path);
+        if (edge.reception) canvas.appendChild(svg('path', {d:edge.path, class:'track-reception-core'}));
+      });
+      measured.nodes.forEach(function (node) {
+        const station = byId.get(node.id);
+        const group = svg('g', {class:'kind-' + M.kindOf(station, kindsStated)});
+        if (receptionsOf(station).length) group.appendChild(svg('circle', {cx:node.x,cy:node.y,r:14,class:'station-interchange-ring'}));
+        group.appendChild(svg('circle', {cx:node.x,cy:node.y,r:8,class:'station-mark'}));
+        canvas.appendChild(group);
+      });
+    }
+    function paintAll() {
+      const heights = {};
+      panelViews.forEach(function (view) {
+        Array.from(view.labels.children).forEach(function (item, i) {
+          heights[view.panel.nodes[i].id] = item.getBoundingClientRect().height;
+        });
+      });
+      const measuredByLine = new Map(
+        M.panelLayout(stations, spine.lines, heights).map(function (p) { return [p.line, p]; })
+      );
+      panelViews.forEach(function (view) {
+        const measured = measuredByLine.get(view.panel.line);
+        if (measured) paintCanvas(view.canvas, measured);
+      });
+    }
+    paintAll();
+    if (typeof ResizeObserver !== 'undefined') {
+      let paintQueued = false;
+      const observer = new ResizeObserver(function () {
+        if (paintQueued) return;
+        paintQueued = true;
+        requestAnimationFrame(function () {
+          paintQueued = false;
+          paintAll();
+        });
+      });
+      panelViews.forEach(function (view) { observer.observe(view.labels); });
+    }
     map.setAttribute('aria-busy', 'false');
   }
 
@@ -2603,15 +2655,18 @@
         query.value = search;
         const terms = search.toLocaleLowerCase().split(/\s+/).filter(Boolean);
         const rows = data.entries.filter(function (row) {
-          const haystack = [row.title, row.family, row.presentation_group && row.presentation_group.label, row.date_label, row.id,
-            JSON.stringify(row.source_record)].join(' ').toLocaleLowerCase();
-          return (!selectedFamily || row.family === selectedFamily ||
-            'group:' + (row.presentation_group ? row.presentation_group.id : 'unmapped:' + row.family) === selectedFamily) &&
-            terms.every(function (term) { return haystack.indexOf(term) !== -1; });
+          if (selectedFamily && row.family !== selectedFamily &&
+              'group:' + (row.presentation_group ? row.presentation_group.id : 'unmapped:' + row.family) !== selectedFamily) {
+            return false;
+          }
+          if (!terms.length) return true;
+          const haystack = catalogueHaystack(row);
+          return terms.every(function (term) { return haystack.indexOf(term) !== -1; });
         });
         T.clear(results);
         status.textContent = rows.length + ' of ' + data.entries.length + ' source records shown.';
-        if (!rows.length) results.appendChild(T.el('p', null, 'No records match these filters. Clear the search or choose another tradition.'));
+        const fragment = batchHost(results);
+        if (!rows.length) fragment.appendChild(T.el('p', null, 'No records match these filters. Clear the search or choose another tradition.'));
         const sections = [
           { title: 'Chronological books and reforms', rows: rows.filter(function (row) { return row.chronology; })
             .sort(function (a, b) { return a.chronology.start - b.chronology.start || a.title.localeCompare(b.title); }) },
@@ -2619,8 +2674,8 @@
         ];
         sections.forEach(function (section) {
           if (!section.rows.length) return;
-          results.appendChild(T.el('h3', 'catalogue-period', section.title + ' (' + section.rows.length + ')'));
-          if (section.title === 'Chronological books and reforms') results.appendChild(T.el('p','panel-note',
+          fragment.appendChild(T.el('h3', 'catalogue-period', section.title + ' (' + section.rows.length + ')'));
+          if (section.title === 'Chronological books and reforms') fragment.appendChild(T.el('p','panel-note',
             'Read from earlier to later recorded dates. ○ marks a historical book candidate; ● marks an edition or reform linked to a historical line. ' +
             'Date ranges retain their source qualifications. Adjacent entries do not imply descent.'));
           const list = T.el('ul', 'catalogue-list');
@@ -2652,8 +2707,9 @@
             item.appendChild(body);
             list.appendChild(item);
           });
-          results.appendChild(list);
+          fragment.appendChild(list);
         });
+        flushBatch(results, fragment);
         const selectedRow = data.entries.find(function (row) { return row.id === record; });
         T.clear(panel);
         panel.hidden = !record;
@@ -2754,6 +2810,7 @@
       const byStage=new Map(history.stages.map(function (s) { return [s.id,s]; }));
       const byTransition=new Map(history.transitions.map(function (t) { return [t.id,t]; }));
       const bySource=new Map(history.sources.map(function (s) { return [s.id,s]; }));
+      const byEntry=new Map(data.entries.map(function (e) { return [e.id,e]; }));
       const words=function (value) { return String(value || '').replace(/-/g,' '); };
       const keys=M.stageLayout(history);
       const allOption=T.el('option',null,'All traditions on a shared year axis'); allOption.value='all'; traditionControl.appendChild(allOption);
@@ -2886,7 +2943,7 @@
         citation(stage.evidence,detail);
         const witnessLinks=T.el('ul','stage-witness-links');
         stage.witness_ids.forEach(function (id) {
-          const row=data.entries.find(function (entry) { return entry.id===id; });
+          const row=byEntry.get(id);
           const item=T.el('li');
           if (row) {
             const link=T.el('a',null,row.title+' · '+row.date_label); link.href=historyURL('catalogue',null,catalogueHash('','',id)); item.appendChild(link);
@@ -2982,73 +3039,81 @@
         status.textContent=(current.start===null ? 'No dated states; see unpositioned records below. ' : 'Showing '+current.start+'–'+current.end+': ')+model.counts.visible+' dated states; '+model.counts.outsideWindow+' dated states outside this window. '+
           'Date brackets are uncertainty bounds, not lifespans.';
         if (!model.lanes.length) status.textContent='This tradition is not in the current stage record: '+current.tradition;
-        const drawing=svg('svg',{viewBox:'0 0 '+model.width+' '+model.height,width:model.width,height:model.height,'class':'stage-timeline',role:'group','aria-label':'Book states on a proportional year axis'});
-        const defs=svg('defs',{}),marker=svg('marker',{id:'stage-arrow',viewBox:'0 0 12 12',refX:21,refY:6,markerWidth:12,markerHeight:12,markerUnits:'userSpaceOnUse',orient:'auto'});
-        marker.appendChild(svg('path',{d:'M 0 0 L 12 6 L 0 12 z',fill:'#666'})); defs.appendChild(marker); drawing.appendChild(defs);
-        model.axis.ticks.forEach(function (tick) {
-          drawing.appendChild(svg('path',{d:'M '+tick.x+' 60 V '+model.height,stroke:'#ddd','stroke-width':1}));
-          const label=svg('text',{x:tick.x,y:40,'text-anchor':'middle','font-size':18}); label.textContent=String(tick.year); drawing.appendChild(label);
-        });
-        const axisTitle=svg('text',{x:24,y:40,'font-size':18}); axisTitle.textContent='Year · same scale in every lane'; drawing.appendChild(axisTitle);
-        model.lanes.forEach(function (lane) {
-          drawing.appendChild(svg('path',{d:'M 15 '+lane.top+' H '+(model.width-15),stroke:'#aaa','stroke-width':1}));
-          lane.labelLines.forEach(function (line,i) { const label=svg('text',{x:18,y:lane.top+28+i*22,'font-size':18,'font-weight':600}); label.textContent=line; drawing.appendChild(label); });
-          const count=svg('text',{x:18,y:lane.top+40+lane.labelLines.length*22,'font-size':14}); count.textContent=lane.visibleCount+' dated states in this window'; drawing.appendChild(count);
-          const section=T.el('section','timeline-list-lane'); section.appendChild(T.el('h3',null,lane.label));
-          section.appendChild(T.el('p','panel-note',lane.tradition.scope));
-          if (lane.tradition.coverage_note) section.appendChild(T.el('p','panel-note',lane.tradition.coverage_note));
-          lane.nodes.forEach(function (node) { section.appendChild(readingCard(node.stage)); }); list.appendChild(section);
-        });
-        const transitionKeys=svg('g',{'data-layer':'transition-keys'});
-        model.edges.forEach(function (edge) {
-          const linkAttrs={href:'#'+new URLSearchParams(timelinePairs({...current,stage:null,transition:edge.id}).filter(function (p) { return p[1]; })),
-            'aria-label':edge.key+' '+words(edge.transition.kind)+': '+edge.transition.summary+'; '+edge.style.label};
-          const link=svg('a',linkAttrs);
-          link.addEventListener('click',function (event) { event.preventDefault(); select('transition',edge.id); });
-          link.appendChild(svg('path',{d:edge.path,fill:'none',stroke:'#666','stroke-width':edge.style.width,'stroke-dasharray':edge.style.dash,'marker-end':'url(#stage-arrow)','data-transition':edge.id}));
-          const title=svg('title',{}); title.textContent=edge.key+' · '+edge.transition.summary+' · '+edge.style.label; link.appendChild(title);
-          const keyLink=svg('a',linkAttrs);
-          keyLink.id='timeline-chart-transition-'+edge.id;
-          if (current.transition===edge.id) keyLink.setAttribute('aria-current','true');
-          keyLink.addEventListener('click',function (event) { event.preventDefault(); select('transition',edge.id); });
-          keyLink.appendChild(svg('rect',{x:edge.keyLabel.x-34,y:edge.keyLabel.y-13,width:38,height:17,fill:'#fffdf8'}));
-          const key=svg('text',{x:edge.keyLabel.x,y:edge.keyLabel.y,'text-anchor':'end','font-size':12,fill:'#444','data-transition-key':edge.id}); key.textContent=edge.key; keyLink.appendChild(key);
-          transitionKeys.appendChild(keyLink);
-          [['from',edge.fromOutside,edge.fromPoint,edge.fromStage,edge.fromKey],['to',edge.toOutside,edge.toPoint,edge.toStage,edge.toKey]].forEach(function (end) {
-            if (!end[1]) return;
-            const point=end[2],stage=end[3],left=point.x+230>model.width;
-            const year=stage.start_year===null ? 'undated' : stage.start_year===stage.end_year ? String(stage.start_year) : stage.start_year+'–'+stage.end_year;
-            link.appendChild(svg('circle',{cx:point.x,cy:point.y,r:4,fill:'#fffdf8',stroke:'#666','data-continuation':stage.id}));
-            const label=svg('text',{x:point.x+(left ? -8 : 8),y:point.y-10,'font-size':12,'text-anchor':left ? 'end' : 'start'});
-            label.textContent=(end[0]==='from' ? 'From ' : 'To ')+end[4]+' · '+year+' · outside this view'; link.appendChild(label);
+        if (presentation.value==='list') {
+          const listFragment=batchHost(list);
+          model.lanes.forEach(function (lane) {
+            const section=T.el('section','timeline-list-lane'); section.appendChild(T.el('h3',null,lane.label));
+            section.appendChild(T.el('p','panel-note',lane.tradition.scope));
+            if (lane.tradition.coverage_note) section.appendChild(T.el('p','panel-note',lane.tradition.coverage_note));
+            lane.nodes.forEach(function (node) { section.appendChild(readingCard(node.stage)); }); listFragment.appendChild(section);
           });
-          drawing.appendChild(link);
-        });
-        drawing.appendChild(transitionKeys);
-        model.lanes.forEach(function (lane) { lane.nodes.forEach(function (node) {
-          const stage=node.stage,link=svg('a',{href:'#'+new URLSearchParams(timelinePairs({...current,stage:stage.id,transition:null}).filter(function (p) { return p[1]; })),
-            'data-stage':stage.id,'aria-label':stage.label+'; '+stage.date_label+'; '+stage.status+'; text '+stage.text_coverage});
-          link.id='timeline-chart-stage-'+stage.id;
-          if (current.stage===stage.id) link.setAttribute('aria-current','true');
-          link.addEventListener('click',function (event) { event.preventDefault(); select('stage',stage.id); });
-          link.appendChild(svg('rect',{x:node.labelX-7,y:node.labelY-17,width:node.cardWidth+14,height:node.cardHeight,rx:4,fill:'#fffdf8',stroke:'#ded8cb'}));
-          if (stage.start_year!==stage.end_year) link.appendChild(svg('path',{
-            d:(node.clippedStart ? 'M '+(node.xStart+4)+' '+(node.y-5)+' l -4 5 4 5' : 'M '+node.xStart+' '+(node.y-6)+' V '+(node.y+6))+
-              ' M '+node.xStart+' '+node.y+' H '+node.xEnd+
-              (node.clippedEnd ? ' M '+(node.xEnd-4)+' '+(node.y-5)+' l 4 5 -4 5' : ' M '+node.xEnd+' '+(node.y-6)+' V '+(node.y+6)),
-            fill:'none',stroke:'currentColor','stroke-width':2,'stroke-dasharray':'4 3','data-date-range':'date-uncertainty','data-date-clipped':(node.clippedStart ? 'start ' : '')+(node.clippedEnd ? 'end' : '')}));
-          link.appendChild(svg(stage.status==='provisional' ? 'path' : 'circle',stage.status==='provisional'
-            ? {d:'M '+node.x+' '+(node.y-7)+' l 7 7 -7 7 -7 -7 z',fill:'#fff',stroke:'currentColor','stroke-width':2}
-            : {cx:node.x,cy:node.y,r:6,fill:'currentColor'}));
-          const keyLeft=node.x+48>model.width;
-          const key=svg('text',{x:node.x+(keyLeft ? -14 : 14),y:node.y-10,'text-anchor':keyLeft ? 'end' : 'start','font-size':12}); key.textContent=node.key; link.appendChild(key);
-          let y=node.labelY;
-          [node.labelLines,node.dateLines,node.scopeLines,node.coverageLines,node.changeLines].forEach(function (lines,group) {
-            lines.forEach(function (line) { const text=svg('text',{x:node.labelX,y:y,'font-size':group===0 ? 16 : 14,'font-weight':group===0 ? 600 : 400}); text.textContent=line; link.appendChild(text); y+=node.leading; });
+          flushBatch(list, listFragment);
+        } else {
+          const drawing=svg('svg',{viewBox:'0 0 '+model.width+' '+model.height,width:model.width,height:model.height,'class':'stage-timeline',role:'group','aria-label':'Book states on a proportional year axis'});
+          const defs=svg('defs',{}),marker=svg('marker',{id:'stage-arrow',viewBox:'0 0 12 12',refX:21,refY:6,markerWidth:12,markerHeight:12,markerUnits:'userSpaceOnUse',orient:'auto'});
+          marker.appendChild(svg('path',{d:'M 0 0 L 12 6 L 0 12 z',fill:'#666'})); defs.appendChild(marker); drawing.appendChild(defs);
+          model.axis.ticks.forEach(function (tick) {
+            drawing.appendChild(svg('path',{d:'M '+tick.x+' 60 V '+model.height,stroke:'#ddd','stroke-width':1}));
+            const label=svg('text',{x:tick.x,y:40,'text-anchor':'middle','font-size':18}); label.textContent=String(tick.year); drawing.appendChild(label);
           });
-          drawing.appendChild(link);
-        }); });
-        chart.appendChild(drawing); chart.setAttribute('aria-busy','false');
+          const axisTitle=svg('text',{x:24,y:40,'font-size':18}); axisTitle.textContent='Year · same scale in every lane'; drawing.appendChild(axisTitle);
+          model.lanes.forEach(function (lane) {
+            drawing.appendChild(svg('path',{d:'M 15 '+lane.top+' H '+(model.width-15),stroke:'#aaa','stroke-width':1}));
+            lane.labelLines.forEach(function (line,i) { const label=svg('text',{x:18,y:lane.top+28+i*22,'font-size':18,'font-weight':600}); label.textContent=line; drawing.appendChild(label); });
+            const count=svg('text',{x:18,y:lane.top+40+lane.labelLines.length*22,'font-size':14}); count.textContent=lane.visibleCount+' dated states in this window'; drawing.appendChild(count);
+          });
+          const transitionKeys=svg('g',{'data-layer':'transition-keys'});
+          model.edges.forEach(function (edge) {
+            const linkAttrs={href:'#'+new URLSearchParams(timelinePairs({...current,stage:null,transition:edge.id}).filter(function (p) { return p[1]; })),
+              'aria-label':edge.key+' '+words(edge.transition.kind)+': '+edge.transition.summary+'; '+edge.style.label};
+            const link=svg('a',linkAttrs);
+            link.addEventListener('click',function (event) { event.preventDefault(); select('transition',edge.id); });
+            link.appendChild(svg('path',{d:edge.path,fill:'none',stroke:'#666','stroke-width':edge.style.width,'stroke-dasharray':edge.style.dash,'marker-end':'url(#stage-arrow)','data-transition':edge.id}));
+            const title=svg('title',{}); title.textContent=edge.key+' · '+edge.transition.summary+' · '+edge.style.label; link.appendChild(title);
+            const keyLink=svg('a',linkAttrs);
+            keyLink.id='timeline-chart-transition-'+edge.id;
+            if (current.transition===edge.id) keyLink.setAttribute('aria-current','true');
+            keyLink.addEventListener('click',function (event) { event.preventDefault(); select('transition',edge.id); });
+            keyLink.appendChild(svg('rect',{x:edge.keyLabel.x-34,y:edge.keyLabel.y-13,width:38,height:17,fill:'#fffdf8'}));
+            const key=svg('text',{x:edge.keyLabel.x,y:edge.keyLabel.y,'text-anchor':'end','font-size':12,fill:'#444','data-transition-key':edge.id}); key.textContent=edge.key; keyLink.appendChild(key);
+            transitionKeys.appendChild(keyLink);
+            [['from',edge.fromOutside,edge.fromPoint,edge.fromStage,edge.fromKey],['to',edge.toOutside,edge.toPoint,edge.toStage,edge.toKey]].forEach(function (end) {
+              if (!end[1]) return;
+              const point=end[2],stage=end[3],left=point.x+230>model.width;
+              const year=stage.start_year===null ? 'undated' : stage.start_year===stage.end_year ? String(stage.start_year) : stage.start_year+'–'+stage.end_year;
+              link.appendChild(svg('circle',{cx:point.x,cy:point.y,r:4,fill:'#fffdf8',stroke:'#666','data-continuation':stage.id}));
+              const label=svg('text',{x:point.x+(left ? -8 : 8),y:point.y-10,'font-size':12,'text-anchor':left ? 'end' : 'start'});
+              label.textContent=(end[0]==='from' ? 'From ' : 'To ')+end[4]+' · '+year+' · outside this view'; link.appendChild(label);
+            });
+            drawing.appendChild(link);
+          });
+          drawing.appendChild(transitionKeys);
+          model.lanes.forEach(function (lane) { lane.nodes.forEach(function (node) {
+            const stage=node.stage,link=svg('a',{href:'#'+new URLSearchParams(timelinePairs({...current,stage:stage.id,transition:null}).filter(function (p) { return p[1]; })),
+              'data-stage':stage.id,'aria-label':stage.label+'; '+stage.date_label+'; '+stage.status+'; text '+stage.text_coverage});
+            link.id='timeline-chart-stage-'+stage.id;
+            if (current.stage===stage.id) link.setAttribute('aria-current','true');
+            link.addEventListener('click',function (event) { event.preventDefault(); select('stage',stage.id); });
+            link.appendChild(svg('rect',{x:node.labelX-7,y:node.labelY-17,width:node.cardWidth+14,height:node.cardHeight,rx:4,fill:'#fffdf8',stroke:'#ded8cb'}));
+            if (stage.start_year!==stage.end_year) link.appendChild(svg('path',{
+              d:(node.clippedStart ? 'M '+(node.xStart+4)+' '+(node.y-5)+' l -4 5 4 5' : 'M '+node.xStart+' '+(node.y-6)+' V '+(node.y+6))+
+                ' M '+node.xStart+' '+node.y+' H '+node.xEnd+
+                (node.clippedEnd ? ' M '+(node.xEnd-4)+' '+(node.y-5)+' l 4 5 -4 5' : ' M '+node.xEnd+' '+(node.y-6)+' V '+(node.y+6)),
+              fill:'none',stroke:'currentColor','stroke-width':2,'stroke-dasharray':'4 3','data-date-range':'date-uncertainty','data-date-clipped':(node.clippedStart ? 'start ' : '')+(node.clippedEnd ? 'end' : '')}));
+            link.appendChild(svg(stage.status==='provisional' ? 'path' : 'circle',stage.status==='provisional'
+              ? {d:'M '+node.x+' '+(node.y-7)+' l 7 7 -7 7 -7 -7 z',fill:'#fff',stroke:'currentColor','stroke-width':2}
+              : {cx:node.x,cy:node.y,r:6,fill:'currentColor'}));
+            const keyLeft=node.x+48>model.width;
+            const key=svg('text',{x:node.x+(keyLeft ? -14 : 14),y:node.y-10,'text-anchor':keyLeft ? 'end' : 'start','font-size':12}); key.textContent=node.key; link.appendChild(key);
+            let y=node.labelY;
+            [node.labelLines,node.dateLines,node.scopeLines,node.coverageLines,node.changeLines].forEach(function (lines,group) {
+              lines.forEach(function (line) { const text=svg('text',{x:node.labelX,y:y,'font-size':group===0 ? 16 : 14,'font-weight':group===0 ? 600 : 400}); text.textContent=line; link.appendChild(text); y+=node.leading; });
+            });
+            drawing.appendChild(link);
+          }); });
+          chart.appendChild(drawing);
+        }
+        chart.setAttribute('aria-busy','false');
         chart.hidden=presentation.value==='list'; list.hidden=presentation.value!=='list';
         [['timeline-unpositioned-list',model.unpositioned],['timeline-provisional-list',model.provisional]].forEach(function (pair) {
           const host=document.getElementById(pair[0]); T.clear(host);

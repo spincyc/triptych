@@ -36,6 +36,7 @@
     let sections = [];
     let current = null;
     let scheduled = false;
+    let refreshScheduled = false;
     let shareField = null;
 
     function inset() {
@@ -45,22 +46,34 @@
     }
 
     function refresh() {
+      refreshScheduled = false;
       sections = [];
-      const seen = new Set();
+      const byId = new Map();
       if (toc) toc.querySelectorAll('a[href]').forEach(function (link) {
         try {
           const address = new URL(link.href, location.href);
           if (address.origin !== location.origin || address.pathname !== location.pathname ||
               address.search !== location.search || !address.hash) return;
           const id = decodeURIComponent(address.hash.slice(1));
-          const target = document.getElementById(id);
-          if (!target || !(target === content || content.contains(target))) return;
-          if (!seen.has(id)) sections.push({ id, target, links: [], margin: parseFloat(getComputedStyle(target).scrollMarginTop) || 0 });
-          seen.add(id);
-          sections.find(function (section) { return section.id === id; }).links.push(link);
+          let section = byId.get(id);
+          if (!section) {
+            const target = document.getElementById(id);
+            if (!target || !(target === content || content.contains(target))) return;
+            section = { id, target, links: [], margin: parseFloat(getComputedStyle(target).scrollMarginTop) || 0 };
+            byId.set(id, section);
+            sections.push(section);
+          }
+          section.links.push(link);
         } catch (_) { /* A malformed fragment never selects a different section. */ }
       });
+      current = null;
       schedule();
+    }
+
+    function scheduleRefresh() {
+      if (refreshScheduled) return;
+      refreshScheduled = true;
+      requestAnimationFrame(refresh);
     }
 
     function update() {
@@ -69,15 +82,19 @@
       // Opening prose belongs to the page until a named section is reached.
       let active = null;
       for (const section of sections) {
-        if (section.target.getBoundingClientRect().top <= Math.max(threshold, section.margin + 2)) active = section;
+        if (section.target.getBoundingClientRect().top <= Math.max(threshold, section.margin + 2)) {
+          active = section;
+        } else {
+          break;
+        }
       }
       if (active !== current) {
-        sections.forEach(function (section) {
-          section.links.forEach(function (link) {
-            if (section === active) link.setAttribute('aria-current', 'location');
-            else link.removeAttribute('aria-current');
-          });
-        });
+        if (current) {
+          current.links.forEach(function (link) { link.removeAttribute('aria-current'); });
+        }
+        if (active) {
+          active.links.forEach(function (link) { link.setAttribute('aria-current', 'location'); });
+        }
         current = active;
       }
       if (progress) {
@@ -180,7 +197,7 @@
       resize.observe(content);
     }
     if ('MutationObserver' in window) {
-      const changes = new MutationObserver(refresh);
+      const changes = new MutationObserver(scheduleRefresh);
       changes.observe(content, {childList: true, subtree: true});
       if (toc) changes.observe(toc, {childList: true, subtree: true});
     }

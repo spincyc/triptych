@@ -308,10 +308,17 @@
     return parts.join(', ');
   }
 
+  let allTally = null;
+
+  function wholeTally() {
+    if (!allTally) allTally = M.tally(catalogue.encyclicals || []);
+    return allTally;
+  }
+
   function tallyText(rows) {
     const whole = catalogue.counts || {};
     const counted = M.tally(rows);
-    const all = M.tally(catalogue.encyclicals || []);
+    const all = wholeTally();
     const range = all.first !== null ? ', ' + all.first + '–' + all.last : '';
     let text = count(whole.encyclicals || 0, 'encyclical') + range + ' · ' +
       count(whole.with_local_text || 0, 'with a source reader here', 'with a source reader here') + ' · ' +
@@ -326,7 +333,7 @@
 
   function showEnglishTally() {
     if (!englishTally) return;
-    const all = M.tally(catalogue.encyclicals || []);
+    const all = wholeTally();
     const english = all.english;
     englishTally.textContent = english.complete + ' of ' + all.encyclicals + ' have complete English: ' +
       english.source_complete + ' with a source reader, ' +
@@ -497,6 +504,7 @@
       provenanceMethod.textContent = provenanceRecord.method;
       summaryMethod.hidden = false;
     }
+    allTally = M.tally(catalogue.encyclicals || []);
     buildHead();
     showEnglishTally();
     fill();
@@ -521,7 +529,15 @@
     });
     if (placeholder) placeholder.remove();
     table.hidden = false;
-    window.addEventListener('resize', updateScrollHint);
+    let resizeQueued = false;
+    window.addEventListener('resize', function () {
+      if (resizeQueued) return;
+      resizeQueued = true;
+      window.requestAnimationFrame(function () {
+        resizeQueued = false;
+        updateScrollHint();
+      });
+    }, { passive: true });
     render();
   }
 

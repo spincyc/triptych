@@ -14,44 +14,71 @@
       .replace(/[^a-z0-9]+/g, ' ').trim().replace(/\s+/g, ' ');
   }
 
-  function fieldText(row) {
-    return [row.name, row.key, row.kind, row.season, row.fixed_date,
-      row.form_name, row.form_id]
-      .concat((row.incipits || []).map(function (item) { return item.text; }))
-      .concat((row.citations || []).map(function (item) { return item.ref; }))
+  const rowCache = new WeakMap();
+
+  function prepared(row) {
+    let entry = rowCache.get(row);
+    if (entry) return entry;
+    const name = normalized(row.name);
+    const key = normalized(row.key);
+    const incipits = (row.incipits || []).map(function (item) { return normalized(item.text); });
+    const citations = (row.citations || []).map(function (item) { return normalized(item.ref); });
+    const fields = [name, key, normalized(row.kind), normalized(row.season),
+      normalized(row.fixed_date), normalized(row.form_name), normalized(row.form_id)]
+      .concat(incipits)
+      .concat(citations)
       // Public witness labels only, as the status line promises: a witness's
       // machine id can carry a date (an artifact made 2026-11-14), and a
       // civil-date query must never match a mass through it.
-      .concat((row.witnesses || []).map(function (item) { return item.label; }))
-      .map(normalized).join(' ');
+      .concat((row.witnesses || []).map(function (item) { return normalized(item.label); }))
+      .join(' ');
+    entry = { fields: fields, name: name, key: key, incipits: incipits, citations: citations };
+    rowCache.set(row, entry);
+    return entry;
+  }
+
+  function matchesPrepared(entry, tokens) {
+    for (let i = 0; i < tokens.length; i += 1) {
+      if (!entry.fields.includes(tokens[i])) return false;
+    }
+    return true;
   }
 
   function matches(row, query) {
     const tokens = normalized(query).split(' ').filter(Boolean);
     if (!tokens.length) return false;
-    const fields = fieldText(row);
-    return tokens.every(function (token) { return fields.includes(token); });
+    return matchesPrepared(prepared(row), tokens);
   }
 
-  function score(row, query) {
-    const wanted = normalized(query);
-    const name = normalized(row.name);
-    if (name === wanted || normalized(row.key) === wanted) return 0;
-    if (name.startsWith(wanted)) return 1;
-    if (name.includes(wanted)) return 2;
-    if ((row.incipits || []).some(function (item) { return normalized(item.text).includes(wanted); })) return 3;
-    if ((row.citations || []).some(function (item) { return normalized(item.ref).includes(wanted); })) return 4;
+  function scorePrepared(entry, wanted) {
+    if (entry.name === wanted || entry.key === wanted) return 0;
+    if (entry.name.startsWith(wanted)) return 1;
+    if (entry.name.includes(wanted)) return 2;
+    for (let i = 0; i < entry.incipits.length; i += 1) {
+      if (entry.incipits[i].includes(wanted)) return 3;
+    }
+    for (let i = 0; i < entry.citations.length; i += 1) {
+      if (entry.citations[i].includes(wanted)) return 4;
+    }
     return 5;
   }
 
   function find(index, query) {
-    if (!index || !Array.isArray(index.rows) || !normalized(query)) return [];
-    return index.rows.map(function (row, ordinal) {
-      return { row: row, ordinal: ordinal, score: score(row, query) };
-    }).filter(function (result) { return matches(result.row, query); })
-      .sort(function (left, right) {
-        return left.score - right.score || left.ordinal - right.ordinal;
-      });
+    if (!index || !Array.isArray(index.rows)) return [];
+    const wanted = normalized(query);
+    if (!wanted) return [];
+    const tokens = wanted.split(' ');
+    const results = [];
+    for (let ordinal = 0; ordinal < index.rows.length; ordinal += 1) {
+      const row = index.rows[ordinal];
+      const entry = prepared(row);
+      if (matchesPrepared(entry, tokens)) {
+        results.push({ row: row, ordinal: ordinal, score: scorePrepared(entry, wanted) });
+      }
+    }
+    return results.sort(function (left, right) {
+      return left.score - right.score || left.ordinal - right.ordinal;
+    });
   }
 
   function preview(row, query) {

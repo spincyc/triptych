@@ -74,8 +74,19 @@
       .replace(/œ/g, 'oe');
   }
 
+  const titleKeyCache = new WeakMap();
+  const labelsCache = new WeakMap();
+  const haystackCache = new WeakMap();
+
   function titleKey(row) {
-    return fold(row.title).replace(/^[^a-z0-9]+/, '');
+    if (row && typeof row === 'object') {
+      const cached = titleKeyCache.get(row);
+      if (cached !== undefined) return cached;
+      const computed = fold(row.title).replace(/^[^a-z0-9]+/, '');
+      titleKeyCache.set(row, computed);
+      return computed;
+    }
+    return fold(row && row.title).replace(/^[^a-z0-9]+/, '');
   }
 
   function languagesOf(row) {
@@ -128,6 +139,21 @@
   }
 
   function haystack(row, labels) {
+    if (row && typeof row === 'object' && labels && typeof labels === 'object') {
+      let byLabels = haystackCache.get(row);
+      if (byLabels && byLabels.has(labels)) return byLabels.get(labels);
+      const computed = buildHaystack(row, labels);
+      if (!byLabels) {
+        byLabels = new WeakMap();
+        haystackCache.set(row, byLabels);
+      }
+      byLabels.set(labels, computed);
+      return computed;
+    }
+    return buildHaystack(row, labels || {});
+  }
+
+  function buildHaystack(row, labels) {
     const parts = [row.title, row.subject, row.description, row.pope, row.year, row.date,
       longDate(row.date), row.no_local_text_reason];
     for (const reader of row.readers || []) {
@@ -139,7 +165,7 @@
     return fold(parts.filter(function (part) { return part !== null && part !== undefined; }).join('   '));
   }
 
-  function matches(row, state, labels) {
+  function matches(row, state, labels, words) {
     if (state.pope && row.pope_id !== state.pope) return false;
     switch (state.text) {
       case 'la': if (!hasLanguage(row, 'la')) return false; break;
@@ -153,22 +179,29 @@
       case 'none': if ((row.readers || []).length) return false; break;
       default: break;
     }
-    const words = fold(state.find).split(/\s+/).filter(Boolean);
-    if (!words.length) return true;
+    const tokens = words || fold(state.find).split(/\s+/).filter(Boolean);
+    if (!tokens.length) return true;
     const text = haystack(row, labels || {});
-    return words.every(function (word) { return text.indexOf(word) >= 0; });
+    return tokens.every(function (word) { return text.indexOf(word) >= 0; });
   }
 
   function labelsOf(catalogue) {
-    const labels = {};
-    for (const language of catalogue.languages || []) labels[language.code] = language.label;
-    return labels;
+    if (catalogue && typeof catalogue === 'object') {
+      const cached = labelsCache.get(catalogue);
+      if (cached) return cached;
+      const labels = {};
+      for (const language of catalogue.languages || []) labels[language.code] = language.label;
+      labelsCache.set(catalogue, labels);
+      return labels;
+    }
+    return {};
   }
 
   function narrow(catalogue, state) {
     const labels = labelsOf(catalogue);
+    const words = fold(state.find).split(/\s+/).filter(Boolean);
     return (catalogue.encyclicals || []).filter(function (row) {
-      return matches(row, state, labels);
+      return matches(row, state, labels, words);
     });
   }
 

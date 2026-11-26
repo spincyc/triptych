@@ -92,23 +92,66 @@
       throw new Error('Invalid Sources discovery');
     }
     const file = Object.assign({}, input, { works: [] });
+    const CONCURRENCY = 8;
+    const fetched = new Array(input.shards.length);
+    const inflight = new Map();
     let loaded = 0;
-    let pending = null;
+
+    function flush() {
+      while (loaded < input.shards.length && fetched[loaded]) {
+        file.works.push.apply(file.works, fetched[loaded]);
+        fetched[loaded] = null;
+        loaded += 1;
+      }
+    }
+
+    function loadShard(index) {
+      if (index < loaded || fetched[index]) return Promise.resolve();
+      if (inflight.has(index)) return inflight.get(index);
+      const shard = input.shards[index];
+      if (!shard) return Promise.reject(new Error('Sources discovery is incomplete'));
+      const promise = load(shard.path).then(function (body) {
+        const works = catalogue(body).works;
+        if (!Array.isArray(works) || works.length !== shard.works) throw new Error('Sources shard count differs');
+        fetched[index] = works;
+        flush();
+      }).finally(function () {
+        inflight.delete(index);
+      });
+      inflight.set(index, promise);
+      return promise;
+    }
+
     async function ensure(count) {
       const wanted = Math.min(count, input.counted.works);
-      while (file.works.length < wanted) {
-        if (!pending) {
-          const shard = input.shards[loaded];
-          if (!shard) throw new Error('Sources discovery is incomplete');
-          pending = load(shard.path).then(function (body) {
-            const works = catalogue(body).works;
-            if (!Array.isArray(works) || works.length !== shard.works) throw new Error('Sources shard count differs');
-            file.works.push.apply(file.works, works);
-            loaded += 1;
-          }).finally(function () { pending = null; });
-        }
-        await pending;
+      flush();
+      if (file.works.length >= wanted) return file;
+      let end = loaded;
+      let total = file.works.length;
+      while (end < input.shards.length && total < wanted) {
+        total += input.shards[end].works;
+        end += 1;
       }
+      if (total < wanted) throw new Error('Sources discovery is incomplete');
+      let next = loaded;
+      let firstError = null;
+      async function worker() {
+        while (next < end) {
+          const index = next;
+          next += 1;
+          try {
+            await loadShard(index);
+          } catch (error) {
+            if (!firstError) firstError = error;
+          }
+        }
+      }
+      const slots = Math.min(CONCURRENCY, end - loaded);
+      const workers = [];
+      for (let i = 0; i < slots; i += 1) workers.push(worker());
+      await Promise.all(workers);
+      flush();
+      if (firstError) throw firstError;
       return file;
     }
     return { file: file, ensure: ensure, all: function () { return ensure(input.counted.works); },

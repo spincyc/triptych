@@ -380,6 +380,15 @@
     );
     if (errors.length || !missal || !bible) return { ok: false, errors: errors };
 
+    const requestedMode = Object.prototype.hasOwnProperty.call(parsed.recognized, 'mode') ? parsed.recognized.mode : 'read';
+    const wantsOrdinary = requestedMode === 'missal' || parsed.present.indexOf('ordinary-lang') >= 0 ||
+      (parsed.variantKeys || []).some(function (k) { return parsed.present.indexOf(k) >= 0; });
+    const loadsOrdinary = wantsOrdinary || missal === 'roman-1962';
+    const ordEntry = loadsOrdinary && (manifests.ordinaryIndex.calendars || []).find(function (r) { return r.calendar === missal; });
+    const ordPending = ordEntry ? load(ordinaryPath(missal)).then(
+      function (v) { return { ok: true, value: v }; }, function (e) { return { ok: false, error: e }; }
+    ) : null;
+
     let structure;
     try {
       if (!ReadPayload && manifests.properIndexRaw.missals.some(function (row) { return row.reader_index; })) {
@@ -392,48 +401,28 @@
         index: manifests.properIndexRaw, load: load, monolith: structurePath(missal) })
         : await load(structurePath(missal));
     } catch (error) {
-      return { ok: false, errors: [{
-        code: 'candidate-load', path: 'missal', message: String(error.message || error)
-      }] };
+      return { ok: false, errors: [{ code: 'candidate-load', path: 'missal', message: String(error.message || error) }] };
     }
     if (serial !== runtime.serial) return { superseded: true };
     if (!structure || structure.calendar !== missal || !(structure.masses || []).length) {
-      return { ok: false, errors: [{
-        code: 'unsupported-edition', path: 'missal',
-        message: 'the requested edition has no matching production Proper structure'
-      }] };
+      return { ok: false, errors: [{ code: 'unsupported-edition', path: 'missal',
+        message: 'the requested edition has no matching production Proper structure' }] };
     }
-    const requestedMode = Object.prototype.hasOwnProperty.call(parsed.recognized, 'mode')
-      ? parsed.recognized.mode : 'read';
-    const wantsOrdinary = requestedMode === 'missal' ||
-      parsed.present.indexOf('ordinary-lang') >= 0 ||
-      (parsed.variantKeys || []).some(function (key) { return parsed.present.indexOf(key) >= 0; });
-    // Source-bound Proper rites remain readable without an Ordinary frame.
-    const loadsOrdinary = wantsOrdinary || missal === 'roman-1962';
     let ordinary = null;
     if (loadsOrdinary) {
-      const entry = (manifests.ordinaryIndex.calendars || []).find(function (row) {
-        return row.calendar === missal;
-      });
-      if (!entry) {
-        return { ok: false, errors: [{
-          code: 'ordinary-missing', path: 'missal',
-          message: 'the selected edition has no production Ordinary'
-        }] };
+      if (!ordEntry) {
+        return { ok: false, errors: [{ code: 'ordinary-missing', path: 'missal',
+          message: 'the selected edition has no production Ordinary' }] };
       }
-      try {
-        ordinary = await load(ordinaryPath(missal));
-      } catch (error) {
-        return { ok: false, errors: [{
-          code: 'candidate-load', path: 'ordinary', message: String(error.message || error)
-        }] };
+      const res = await ordPending;
+      if (!res.ok) {
+        return { ok: false, errors: [{ code: 'candidate-load', path: 'ordinary', message: String(res.error.message || res.error) }] };
       }
+      ordinary = res.value;
       if (serial !== runtime.serial) return { superseded: true };
       if (!ordinary || ordinary.calendar !== missal) {
-        return { ok: false, errors: [{
-          code: 'unsupported-edition', path: 'ordinary',
-          message: 'the requested edition has no matching production Ordinary structure'
-        }] };
+        return { ok: false, errors: [{ code: 'unsupported-edition', path: 'ordinary',
+          message: 'the requested edition has no matching production Ordinary structure' }] };
       }
     }
     const languages = T.orationLanguagesOf(structure);

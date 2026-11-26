@@ -460,7 +460,10 @@
    * its history is its own file. A three-paragraph canon costs three small
    * files and nothing else in the Code.
    */
+  let lookupToken = 0;
+
   function openCanon(entry) {
+    const token = ++lookupToken;
     opened = { canon: entry.canon, line: entry.line, asked: entry.asked || null };
     T.clear(canonView);
     canonView.setAttribute('aria-busy', 'true');
@@ -474,6 +477,7 @@
         .then(function (history) { return { row: row, history: history }; })
         .catch(function (error) { return { row: row, error: error }; });
     })).then(function (loaded) {
+      if (token !== lookupToken) return;
       T.clear(canonView);
       canonView.setAttribute('aria-busy', 'false');
 
@@ -530,7 +534,9 @@
     // The index has not been fetched. Fetch it, then resolve properly; the
     // alternative is composing a path and showing a paragraph with no canon
     // around it.
+    const token = ++lookupToken;
     loadIndex().then(function () {
+      if (token !== lookupToken) return;
       if (byUnit.has(unit)) openUnit(unit);
       else {
         T.clear(canonView);
@@ -538,7 +544,10 @@
         canonView.appendChild(T.el('p', 'weak',
           'This record carries no unit called ' + unit + '.'));
       }
-    }).catch(reportIndexFailure);
+    }).catch(function (error) {
+      if (token !== lookupToken) return;
+      reportIndexFailure(error);
+    });
   }
 
   /* ------------------------------------------------------------------------
@@ -581,10 +590,12 @@
   function lookUp(text) {
     const typed = String(text || '').trim();
     if (!typed) return;
+    const token = ++lookupToken;
     canonView.setAttribute('aria-busy', 'true');
     T.clear(canonView);
     canonView.appendChild(T.el('p', 'placeholder', 'Looking up ' + typed + '…'));
     loadIndex().then(function (rows) {
+      if (token !== lookupToken) return;
       const cited = C.parseCitation(typed);
       let found = cited ? C.find(rows, cited) : [];
       if (!found.length) {
@@ -604,7 +615,10 @@
         return;
       }
       renderChoices(typed, cited, chosen, line);
-    }).catch(reportIndexFailure);
+    }).catch(function (error) {
+      if (token !== lookupToken) return;
+      reportIndexFailure(error);
+    });
   }
 
   function renderChoices(typed, cited, entries, line) {

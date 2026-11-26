@@ -10,6 +10,8 @@
     const body = table.tBodies[0];
     if (!region || !body) return;
 
+    const normalize = value => value.normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("en").trim();
     const pairs = Array.from(body.querySelectorAll(".dictionary-row")).map(row => {
       const detailRow = row.nextElementSibling;
       const details = detailRow?.querySelector("details.dictionary-details");
@@ -19,6 +21,7 @@
         figures: Array.from(details.querySelectorAll("figure[id]")),
         images: Array.from(row.querySelectorAll(".dictionary-image-toggle")),
         toggle: row.querySelector(".dictionary-row-toggle"),
+        searchText: normalize(row.dataset.search || row.textContent),
         image: null,
         opener: null
       };
@@ -34,8 +37,6 @@
     const sortButtons = Array.from(table.querySelectorAll("[data-dictionary-sort]"));
     const scrollHint = document.querySelector(".dictionary-scroll-hint");
     const collator = new Intl.Collator("en", { sensitivity: "base", numeric: true });
-    const normalize = value => value.normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("en").trim();
     let active = null;
 
     function sync(pair) {
@@ -86,8 +87,7 @@
       for (const pair of pairs) {
         const matchesGroup = !selectedGroup || selectedGroup === "all" ||
           pair.row.dataset.group === selectedGroup;
-        const text = normalize(pair.row.dataset.search || pair.row.textContent);
-        const show = matchesGroup && words.every(word => text.includes(word));
+        const show = matchesGroup && words.every(word => pair.searchText.includes(word));
         if (!show && pair.details.open) close(pair);
         pair.row.hidden = !show;
         sync(pair);

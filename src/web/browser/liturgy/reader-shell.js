@@ -51,6 +51,13 @@
     let updateQueued = false;
     let visualRevealTimer = null;
 
+    const masthead = shell.querySelector('.reader-masthead');
+    const identity = shell.querySelector('.reader-identity');
+    const locusOut = shell.querySelector('[data-reader-locus]');
+    const locusMaj = locusOut && locusOut.querySelector('[data-reader-locus-major]');
+    const locusUnit = locusOut && locusOut.querySelector('[data-reader-locus-unit]');
+    const locusSep = locusOut && locusOut.querySelector('.reader-locus-separator');
+
     function currentSection() {
       if (!sections.length) return null;
       const line = Math.max(80, Math.min(window.innerHeight * 0.38, 280));
@@ -65,14 +72,11 @@
     function currentLocus() {
       if (!loci.length) return null;
       const line = Math.max(80, Math.min(window.innerHeight * 0.38, 280));
-      let winner = null;
-      let nearestTop = -Infinity;
+      let winner = null, nearestTop = -Infinity;
       for (const item of loci) {
         const top = item.element.getBoundingClientRect().top;
-        if (top <= line && top > nearestTop) {
-          winner = item;
-          nearestTop = top;
-        }
+        if (top > line) break;
+        if (top > nearestTop) { winner = item; nearestTop = top; }
       }
       return winner || loci[0];
     }
@@ -85,46 +89,35 @@
       );
     }
 
-    function isReadingHeadingVisible(node) {
+    function isReadingHeadingVisible(node, topEdge) {
       if (!node) return false;
-      const masthead = shell.querySelector('.reader-masthead');
-      const topEdge = masthead && getComputedStyle(masthead).position === 'sticky'
-        ? masthead.getBoundingClientRect().bottom : 0;
       const box = node.getBoundingClientRect();
       return box.bottom > topEdge && box.top < window.innerHeight;
     }
 
     function updateLocus() {
-      const output = shell.querySelector('[data-reader-locus]');
-      if (!output) return;
-      const identity = shell.querySelector('.reader-identity');
-      const masthead = shell.querySelector('.reader-masthead');
-      const identityEdge = masthead && getComputedStyle(masthead).position === 'sticky'
+      if (!locusOut) return;
+      const edge = masthead && getComputedStyle(masthead).position === 'sticky'
         ? masthead.getBoundingClientRect().bottom : 0;
-      const identityVisible = identity && identity.getBoundingClientRect().bottom > identityEdge + 8;
-      if (identityVisible || !loci.length) {
-        output.hidden = true;
-        output.classList.remove('has-unit');
+      if ((identity && identity.getBoundingClientRect().bottom > edge + 8) || !loci.length) {
+        locusOut.hidden = true;
+        locusOut.classList.remove('has-unit');
         return;
       }
       const active = currentLocus();
-      const headingVisible = isReadingHeadingVisible(locusHeading(active));
-      const majorHeadingVisible = headingVisible && active && active.element.matches('.ordinary-division');
-      if (majorHeadingVisible) {
-        output.hidden = true;
-        output.classList.remove('has-unit');
+      const headingVisible = isReadingHeadingVisible(locusHeading(active), edge);
+      if (headingVisible && active && active.element.matches('.ordinary-division')) {
+        locusOut.hidden = true;
+        locusOut.classList.remove('has-unit');
         return;
       }
-      const major = output.querySelector('[data-reader-locus-major]');
-      const unit = output.querySelector('[data-reader-locus-unit]');
-      const separator = output.querySelector('.reader-locus-separator');
-      major.textContent = active.major;
-      unit.textContent = active.unit || '';
+      locusMaj.textContent = active.major;
+      locusUnit.textContent = active.unit || '';
       const hasUnit = Boolean(active.unit && active.unit !== active.major && !headingVisible);
-      unit.hidden = !hasUnit;
-      if (separator) separator.hidden = !hasUnit;
-      output.classList.toggle('has-unit', hasUnit);
-      output.hidden = false;
+      locusUnit.hidden = !hasUnit;
+      if (locusSep) locusSep.hidden = !hasUnit;
+      locusOut.classList.toggle('has-unit', hasUnit);
+      locusOut.hidden = false;
     }
 
     function captureSemanticLocation() {

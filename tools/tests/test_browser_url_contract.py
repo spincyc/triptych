@@ -1297,26 +1297,13 @@ class KnownDefectsTest(unittest.TestCase):
   would change, so whoever fixes it deletes the test deliberately.
   """
 
-  def test_the_document_corpus_rewrites_the_hash_on_every_keystroke(self):
-    """CONFIRMED. `texts/texts.js` binds `input`, and `render` ends by writing.
-
-    `T.writeHash` assigns `window.location.hash`, and assigning a new fragment
-    pushes a history entry, so typing a six-letter search leaves six entries in
-    the reader's Back button. A fix would debounce the write, or write through
-    `history.replaceState` while the field has focus.
-
-    WEAK on the binding: `findInput.addEventListener('input', render)` is
-    top-level wiring. The two halves either side of it are executed.
-    """
+  def test_the_document_corpus_debounces_and_replaces_hash_while_typing(self):
+    """FIXED. `texts/texts.js` debounces `findInput` and replaces the hash while typing."""
     source = text_of("texts/texts.js")
-    self.assertIn("findInput.addEventListener('input', render);", source)
+    self.assertIn("window.setTimeout(", source)
     render = probe(probe="functionSource", file="texts/texts.js", name="render")
+    self.assertIn("T.replaceHash(", render["text"])
     self.assertIn("T.writeHash(", render["text"])
-    # Executed: each distinct write is an assignment to location.hash.
-    typed = probe(probe="core", writes=[
-      [["find", "d"]], [["find", "de"]], [["find", "de "]], [["find", "de c"]],
-    ])
-    self.assertEqual(typed["hash"], "#find=de%20c")
 
   def test_the_track_writes_a_history_entry_for_every_arrow_key_step(self):
     """CONFIRMED. One keydown is one step, and one step is one hash write.

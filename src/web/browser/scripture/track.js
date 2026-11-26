@@ -792,7 +792,7 @@
    * --------------------------------------------------------------------- */
 
   async function start() {
-    const loaded = await T.loadBibles();
+    const [loaded, plan] = await Promise.all([T.loadBibles(), P.load()]);
     if (!loaded.ok) {
       T.fail(loaded.message);
       return;
@@ -807,7 +807,6 @@
       : state.bibles[0].id;
     bibleSelect.value = state.bibleId;
 
-    const plan = await P.load();
     if (!plan.ok) {
       T.fail(plan.message);
       return;

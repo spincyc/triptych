@@ -435,7 +435,8 @@
    * The pass
    * --------------------------------------------------------------------- */
 
-  function render() {
+  function render(options) {
+    const replace = Boolean(options && options.replace);
     const state = readState();
     const rows = M.order(M.narrow(catalogue.works, state), state.sort);
     const counted = M.tally(rows);
@@ -445,8 +446,13 @@
     if (!rows.length) {
       list.appendChild(T.el('p', 'placeholder',
         'Nothing in the corpus matches those choices. Widen one of them.'));
+    } else if (typeof document.createDocumentFragment === 'function') {
+      const fragment = document.createDocumentFragment();
+      for (const row of rows) fragment.appendChild(workCard(row));
+      list.appendChild(fragment);
+    } else {
+      for (const row of rows) list.appendChild(workCard(row));
     }
-    for (const row of rows) list.appendChild(workCard(row));
     list.setAttribute('aria-busy', 'false');
 
     // "of 178" appears only while the list is narrowed. Printing it against the
@@ -477,8 +483,10 @@
     // that was no longer in effect and a reload put it back. An unnarrowed
     // corpus is a state like any other, and the address has to be able to
     // reach it.
-    if (pairs.some(function (pair) { return pair[1]; })) T.writeHash(pairs);
-    else clearHash();
+    if (pairs.some(function (pair) { return pair[1]; })) {
+      if (replace) T.replaceHash(pairs);
+      else T.writeHash(pairs);
+    } else clearHash();
   }
 
   /* No choice is in effect, so the address carries no fragment.
@@ -587,8 +595,15 @@
       control.addEventListener('change', render);
     }
     findInput.disabled = false;
-    findInput.addEventListener('input', render);
+    let findPending = null;
+    findInput.addEventListener('input', function () {
+      window.clearTimeout(findPending);
+      findPending = window.setTimeout(function () {
+        render({ replace: true });
+      }, 120);
+    });
     T.onHashChange(function () {
+      window.clearTimeout(findPending);
       restore();
       render();
     });

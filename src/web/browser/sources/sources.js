@@ -284,6 +284,22 @@
    * The reader
    * ------------------------------------------------------------------ */
 
+  const editionCache = new Map();
+  const passageCache = new Map();
+
+  async function loadCached(cache, limit, path) {
+    if (cache.has(path)) {
+      const value = cache.get(path);
+      cache.delete(path);
+      cache.set(path, value);
+      return value;
+    }
+    const value = await T.loadJSON(path);
+    cache.set(path, value);
+    if (cache.size > limit) cache.delete(cache.keys().next().value);
+    return value;
+  }
+
   async function openEdition(work, edition, wantedPassage, canonicalize) {
     printReady = false;
     printing.invalidate();
@@ -305,7 +321,7 @@
 
     let payload;
     try {
-      payload = await T.loadJSON(path);
+      payload = await loadCached(editionCache, 24, path);
     } catch (error) {
       if (!T.isCurrentRender(token)) return;
       T.clear(elements.reader);
@@ -566,7 +582,7 @@
     body.appendChild(T.el('p', 'placeholder', 'Loading ' + passage.words + ' words…'));
     let text;
     try {
-      text = await T.loadJSON(passage.text_path);
+      text = await loadCached(passageCache, 96, passage.text_path);
     } catch (error) {
       if (!T.isCurrentRender(token)) return;
       body.removeChild(body.lastChild);
@@ -784,7 +800,7 @@
   async function followPassage(passageId) {
     let pointer;
     try {
-      pointer = await T.loadJSON((spine.texts || '') + passageId + '.json');
+      pointer = await loadCached(passageCache, 96, (spine.texts || '') + passageId + '.json');
     } catch (error) {
       return null;
     }
