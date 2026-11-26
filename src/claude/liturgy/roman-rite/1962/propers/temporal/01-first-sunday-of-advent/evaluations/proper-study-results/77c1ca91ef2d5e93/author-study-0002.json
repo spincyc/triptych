@@ -1,0 +1,19 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/main.tex",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "STU-015",
+      "note": "All listed disclaimers and join formulas are removed in sections 20, 30, 40 and 50, as are the related 'In Augustine's terms' and 'On Rupert's and Bellarmine's reading'. The markers are varied and each states a reason. Each lane was reread straight through for a replacement frame. Lane 1 also drops the word 'gloss' and quotes Gregory's Levare itaque capita sentence (I.1.3).",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 2,
+  "notes": [
+    "Files changed this iteration (the leaf is untracked): sections/10-each-element.tex, sections/20-lift-up-your-heads.tex, sections/30-coming-through-the-church.tex, sections/40-hour-to-rise.tex, sections/50-mercy-shown-salvation-given.tex, sections/60-comparison.tex, sections/90-apparatus.tex, generation-metadata.tex (author-study iteration 2 contribution line added), research/production-review.md (iteration 2 section), all under src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/.",
+    "Research defects reported, not repaired (owner: research): STU-017 (the interpretations.md hour-to-rise Collect row still says surgere). STU-019 research side: research/scope.md (the rows at lines 164 and 205, and section 8.5) and interpretations.md L503 still record Sicard as reproducing Rupert and Durandus as adding the second-coming clause. Sicard's Erunt signa paragraph (OCR artifact ia-djvu-ocr-ea9fd813, lines ~15045-15062) gives both, and Durandus copies it.",
+    "Web probe: build/tpt-runs/77c1ca91ef2d5e93/artifacts/author-study-2/web-probe (converted without error). No print proof this iteration."
+  ],
+  "stage": "author-study",
+  "summary": "Repaired STU-015 across the four interpretations: every listed disclaimer of what a Father did not say is deleted, along with the rotating join formulas ('Read together', 'Heard with', 'Set beside', 'Taken together', 'Read so', 'On X's reading' and the like). Each link the study draws is now stated once where it is drawn, with the reason the texts bear on each other: the Mass's order, a conditional on a Father's premise, a shared word (liberaret/liberante, apparuit/apparebit, misericordia), or a plain comparison in the study's voice. The finding's rewrites (1)-(6) are used. Advisories STU-016 and STU-018 are cleared, and so is the study side of STU-019: Sicard's Erunt signa paragraph was verified in the tracked PL 213 OCR, and Sicard is now credited with the Epistle fitted to the Gospel and with the flesh/good-works reading, with Durandus copying him. STU-017 is a research row and was left alone. All study checks, content preflight (with provenance-matches-run) and the web-edition probe pass."
+}

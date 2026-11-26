@@ -1,0 +1,19 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/main.tex",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "STU-020",
+      "note": "Clause naming the other Mass and its Gospel removed from sections/50 (the sentence now reads 'Sicard of Cremona repeats the reading (\\work{Mitrale} V).'); grep confirms no other Gospel, chant or Mass is named in the opening, interpretations or comparison.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 3,
+  "notes": [
+    "Files changed (all under src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/): sections/20-lift-up-your-heads.tex, sections/30-coming-through-the-church.tex, sections/40-hour-to-rise.tex, sections/50-mercy-shown-salvation-given.tex, sections/60-comparison.tex, generation-metadata.tex (author-study iteration 3 contribution line added), research/production-review.md (iteration 3 section).",
+    "Research-owned advisories still open for research re-entry: STU-017 (interpretations.md hour-to-rise Collect row surgere claim) and STU-019 (scope.md L164, L205, section 8.5; interpretations.md L503-504 on Sicard's Erunt signa paragraph and Durandus).",
+    "Web probe written to build/tpt-runs/77c1ca91ef2d5e93/artifacts/author-study-3/web-probe; no print proof made."
+  ],
+  "stage": "author-study",
+  "summary": "Repaired STU-020 exactly as required: the fourth interpretation's Sicard sentence now reads 'Sicard of Cremona repeats the reading (Mitrale V).', and no other Gospel, chant or Mass is named outside the scope appendix's one clause. Advisories were handled with sentence-level edits, each checked against its source: STU-022 (a)-(g), with Aquinas Super Ps. 24 nn. 1 and 4 and Confessions VIII.5.12 re-fetched and hash-matched to their registered artifacts; STU-023's comparison now states the real difference; STU-021 settled by deleting the verb link. Research advisories STU-017 and STU-019 are left to research. Content check, every preflight check, provenance-matches-run and the web-edition probe pass."
+}

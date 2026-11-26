@@ -1,0 +1,23 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/main.tex",
+  "disposition": "PASS",
+  "files_to_commit": [
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/00-opening.tex",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/20-lift-up-your-heads.tex",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/30-coming-through-the-church.tex",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/40-hour-to-rise.tex",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/50-mercy-shown-salvation-given.tex",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/generation-metadata.tex",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/production-review.md"
+  ],
+  "finding_dispositions": [
+    {
+      "id": "WEB-001",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 4,
+  "notes": "Web probe at build/tpt-runs/77c1ca91ef2d5e93/artifacts/author-study-4/web-probe. evaluations/blocking-findings-v1.toml and research/web-artifact.json were already modified/untracked before this stage and were not touched. Concise and homily components carry none of the changed sentences. No print proof made.",
+  "stage": "author-study",
+  "summary": "Repaired WEB-001: each of the five sentences now states the study's own link once, in its own voice and in different words where it is drawn (lane 1 'Set next to Gregory's road ... can be heard as one call'; lane 1 Alleluia 'Because it is sung just before the Gospel ... can stand as'; lane 2 the Secret quoted as it asks, then 'If Ambrose's figure is brought to this prayer'; lane 3 'Against that weight one may set the Offertory'; lane 4 'since the Alleluia and the Collect ask for Christ, the one waited for ... may be understood as Christ'), with attributions to Chrysostom, Gregory, Ambrose, Aquinas and Bellarmine kept. Also cleared advisories WEB-002 (opening now \\hyperref[sec:date-location]{Scriptural Date and Location} appendix), WEB-003's Offertory accent (in te conf\u00eddo) and WEB-004 (Bede's 'coelum igitur et terra ...' restored); Rom 13:12 Douay witness left as printed per brief. Added this iteration's contribution line to generation-metadata.tex and an iteration-4 section to research/production-review.md. Checks: document-types refresh --check current; _proper_study.py content/research/source with presentation, format, authority, orientation-v3, source-dispositions pass; check-content-preflight research edition all pass plus provenance-matches-run; check-generation-metadata and check-web-edition valid; web-edition probe converted without error."
+}

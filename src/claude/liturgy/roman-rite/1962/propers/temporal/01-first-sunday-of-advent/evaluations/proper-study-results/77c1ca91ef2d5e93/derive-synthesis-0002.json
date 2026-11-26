@@ -1,0 +1,13 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/synthesis.tex",
+  "disposition": "PASS",
+  "files_to_commit": [
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/concise/10-commentary.tex",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/generation-metadata.tex",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/production-review.md"
+  ],
+  "iteration": 2,
+  "notes": "PRIOR/CARRIED/ADVISORY findings headers were empty; no finding_dispositions owed. Checks: document-types refresh --check current; _proper_study.py check content/synthesis/source with presentation, format, authority, orientation-v3, source-dispositions pass; check-proper-components content and artifacts (on the proof build) pass; every check-content-preflight check of the synthesis edition incl. provenance-matches-run pass; check-generation-metadata and check-web-edition valid. Unrequested author proof via tools/print-document build into the worker scratch dir: 12 pages, zref markers p1/p1/p2/p3-4/p5, no overfull/underfull or undefined refs; PDF sha256 d2374aae...a5ec27 (the tool's build tree went to the gitignored .scratch/print-document/e6ab5db41552b69c/). Left for other owners (recorded in production-review.md): expansive 40-hour-to-rise.tex still has the STU-024 unmarked links, mirrored in the concise at the Alleluia ('asks for that salvation as a gift') and the Secret ('asks God for a cleansing like it'), kept in step with the unchanged study; 40-hour-to-rise.tex L31 and homily 10-homily.tex L77 still say 'a household' (STU-025/HOM-003). The author-study-4 record's sentence that the concise carries none of the five sentences (STU-026) was not edited, being the study owner's entry; the new iteration-2 entry states the facts.",
+  "stage": "derive-synthesis",
+  "summary": "Brought the concise commentary into step with the expansive study's WEB-001 repairs: the Paul's night / Gregory's road link and the Offertory-versus-sarcina contrast are now drawn by the first and third interpretations in the concise's own voice (with Gregory's 'hasten to them' given its object, the joys of the heavenly homeland, as his text has it), the Secret sentence no longer puts the removal of Ambrose's obstacle into the Secret's request, and Chrysostom's scene is no longer 'a household' but what people do each morning, waking their neighbour. Only sections/concise/10-commentary.tex changed (+16 words); contribution line and production-review entry added."
+}

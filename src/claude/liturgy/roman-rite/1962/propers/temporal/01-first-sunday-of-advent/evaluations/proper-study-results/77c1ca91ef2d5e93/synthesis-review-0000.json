@@ -1,0 +1,456 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "SYN-001",
+      "location": "sections/concise/10-commentary.tex L294-338 (The lifted soul and those who wait); L373-381 (What the earth yields, final paragraph); L385-413 (The Collect, the Secret and the Postcommunion)",
+      "problem": "In three places the commentary recaps the interpretations in successive blocks instead of making them meet on a question. L296-297 announces that 'each interpretation hears it in its own way' and L373 that 'The other interpretations take the fruit their own ways'; each is followed by 'In the first ... In the second ... In the third ... In the fourth' paragraphs or clauses that never refer to one another. On Psalm 24 (L299-338) three of the authors answer the same question, what the soul is lifted from and toward: Gregory raises the mind 'to the joys of the heavenly homeland' (L301-303), Augustine lifts a soul 'trodden down ... with carnal longings' (L313-314), and Aquinas calls prayer 'the ascent of the mind to God' (L324). The concise never sets these answers beside each other. The Postcommunion (L403-413) gets four one-line verdicts strung by ordinal. The Secret paragraph (L393-401) sets Gregory, Ambrose, Paul and Schuster side by side one sentence apiece, and two of the four are not tied to an interpretation. The fragment asks whether authors meet within each question or are merely recapped in successive blocks. The signs, lift-your-heads, coming, hour and earth (L340-371) sections show the document doing this properly; these three passages do not.",
+      "repair_target": "synthesis",
+      "required_result": "Rebuild each of the three passages around the question its texts raise, with the authors compared on it, and delete the announcing sentences at L296-297 and L373. For Psalm 24: state the question, what the soul is lifted from and toward. Then compare the answers. Gregory and Aquinas both make the lifting a raising of the mind, Gregory to the homeland while the world ends, Aquinas to God in prayer. Augustine hears the Church lifting a soul pressed down by carnal longings, in the age of trial the Gospel describes. Bellarmine's waiting 'in the certain hope of assistance' says what the waiting rests on. For the Postcommunion: one paragraph on what the 'coming solemnities of our restoration' are. Schuster and Aquinas's Advent reading give Christmas; the first interpretation adds the restoration Cyril says the second coming completes. Treat the mercy asked for together with this, rather than as four labelled one-liners. For the Secret: say how the readings differ on where the cleansing comes from, the gifts (Secret), tears and amendment (Gregory), or the hearer's own casting off (Paul). For the fruit: compare how each interpretation reads the harvest against the two explanations just given. Keep every attribution and qualification now in these passages.",
+      "severity": "blocking"
+    },
+    {
+      "id": "SYN-002",
+      "location": "sections/concise/10-commentary.tex L317-322; L437-439 (against L74-85); L406-409; L324-326",
+      "problem": "Compression has moved the study's own words into an author's mouth, or dropped a qualification the expansive study keeps. (a) L317-322: 'Aquinas ... says of them, Per has enim vias venit dominus ad nos, \"for by these ways the Lord comes to us\" (Super Ps. 24, n. 4), above all by the commandment of charity'. The charity clause hangs on the quotation and reads as Aquinas's. The records give n. 4 as the ways being the commandments, the paths the counsels, and per has vias, with nothing on charity (research/scope.md L152; research/interpretations.md L218-221). The expansive study puts the clause in its own voice: 'That is a coming in the present, by the commandments and above all the commandment of charity' (sections/30-coming-through-the-church.tex L208-210). (b) L437-439: 'On present events the first two disagree outright'. This contradicts the concise's own L74 ('The disagreement with Gregory is real, and both sides narrow it') and the expansive comparison ('Gregory's own distinction between the herald and the judge narrows that disagreement without removing it', sections/60-comparison.tex L16-17). The closing summary drops the qualification and stages a sharper conflict than the sources hold. (c) L406-409: 'the birth the prayer prepares to keep begins the restoration that the second coming completes' and 'the temple ... is one place of Christ's daily coming'. The expansive study writes 'would then begin' (sections/20-lift-up-your-heads.tex L161) and 'would be one place' (sections/30-coming-through-the-church.tex L260), marking both as its own extensions of Cyril and Augustine; the concise states them as fact. (d), lesser: L324-326 'the lifted soul is prayer, \"the ascent of the mind to God,\" as Aquinas calls it'. In the expansive study (sections/40-hour-to-rise.tex L122-123) and in research/scope.md L145, Aquinas reads the lifting as the preparation for prayer.",
+      "repair_target": "synthesis",
+      "required_result": "(a) Separate the clause from Aquinas. For example: 'Aquinas takes the ways the Introit and Gradual ask to be shown for the commandments and says of them, \"for by these ways the Lord comes to us\" (Super Ps. 24, n. 4). That is a coming in the present, of the kind the two Fathers find in the Gospel.' Either drop 'above all by the commandment of charity' or keep it as the study's inference, plainly marked as such. (b) For example: 'On present events the first two differ: Gregory reads the disasters of his time as heralds of the judge, though as unlike him as a herald is unlike a judge; Augustine warns that dating the end from such things is a dangerous error.' (c) Restore the conditional ('would then begin'; 'would be one place of'), or otherwise mark both as the interpretation's inference. (d) For example: 'In the third, Aquinas reads the lifted soul as the preparation for prayer, which is, in St John Damascene's words, \"the ascent of the mind to God\".'",
+      "severity": "blocking"
+    },
+    {
+      "id": "SYN-003",
+      "location": "sections/concise/10-commentary.tex L282, L296, L342-343, L354-355, L385, L399-401, L410-412 (each restating sections/concise/04-themes.tex L52-53, L47-49, L134-135, L133-134, L56-57, L122-125, L142-143 respectively)",
+      "problem": "The commentary repeatedly opens or closes a point by restating what the themes pages have just told the reader, sometimes in the same words. The fragment asks the commentary to go beyond the thematic opening rather than repeat its conclusions, and editorial.md's 'Say it once' forbids carrying a phrase from section to section as a refrain. Instances: Psalm 24 'sung at the entrance, after the Epistle and at the offering' (L296), already 'sung three times' at themes L47-49. 'The commentators disagree about the Communion's earth and fruit' (L342), already 'divides the commentators' at themes L134-135. 'His psalter had \"the Lord will give sweetness\"' (L354-355), already 'Augustine's psalter read suavitatem, \"sweetness\"' at themes L133-134. 'the threatening dangers of our sins' quoted again (L385), from themes L56-57. Schuster's 'worthily receive him who is its Author' quoted again (L400), from themes L124-125. 'the mercy the Church asked God to show in the Alleluia she now asks to receive' (L410-411), already 'there the Church asks God to show his mercy, and here she asks to receive it' at themes L142-143. The Collect addressed to the Son (L282), already at themes L52-53. There are seven instances through the commentary, a recurring pattern.",
+      "repair_target": "synthesis",
+      "required_result": "Each commentary passage starts from what is new and refers back briefly where it must. Examples: L354-357 'Augustine finds in the verse the grace given to the believer. His psalter had \"the Lord will give sweetness.\" He takes ...' becomes 'Augustine finds in the verse the grace given to the believer. He takes ...'. L410-413 becomes 'In the fourth, if the mercy now received is, as Augustine said, the persuasion that all a man's good is from God, the communicant asks to receive that.' L342-343 becomes 'Rupert of Deutz, expounding the chant in his commentary on the Mass, reads it of the Incarnation ...', with the disagreement shown by the comparison at L366-371 rather than announced. L296-297 is cut (see SYN-001). L385 and L399-401 refer to the Collect's petition and to Schuster's 'Author' without quoting them again. No fact or attribution is lost, because each stays in the themes pages.",
+      "severity": "blocking"
+    },
+    {
+      "id": "SYN-004",
+      "location": "sections/concise/10-commentary.tex L210-212, L284-285, L299, L374-375; sections/concise/04-themes.tex L92",
+      "problem": "These are isolated register lapses against editorial.md 'Say what the texts say, plainly', not a habit. Two credit texts with links the study draws. L210-212 says the Collect's last words 'use the verb of Augustine's question and name the deliverer he named': the Collect addresses the Son, and the tie to Augustine's deliverer is the study's. L374-375 says 'the Communion names another harvest and puts its cause first', where the expansive study has 'promises'. Three assert significance or use metaphor: 'In the first, the verb decides.' (L299); 'The Alleluia verse is the height of that prayer' (themes L92); and 'places Augustine's two gifts on the Mass's two horizons' (L284-285).",
+      "required_result": "Plain rewrites, for example: L210-212: 'its last words, te liber\u00e1nte salv\u00e1ri, \"that we may be saved, with thee setting us free,\" ask Christ for the deliverance Augustine asked for with the same verb.' L374-375: 'the Communion promises another harvest, and its first words are of the Lord's gift: \"The Lord will give goodness.\"' L299: drop 'the verb decides' and begin 'The Introit sings Ad te lev\u00e1vi and the Gospel commands lev\u00e1te c\u00e1pita vestra, the same verb, and Gregory says what the command means'. Themes L92: 'The Alleluia takes the verse that asks: ...'. L284-285: 'The fourth interpretation also relates Augustine's two gifts to two things the Mass looks toward: the Postcommunion's coming feast ... and the Gospel's Son of man in majesty'.",
+      "severity": "advisory"
+    },
+    {
+      "id": "SYN-005",
+      "location": "sections/concise/10-commentary.tex L417-429 (The four senses compared)",
+      "problem": "The comparison gives an anagogical sense for the first (L420), second (L423-424) and fourth (L428-429) interpretations but none for the third. The expansive study's distillation has one: 'The day of glory comes nearer every day, and the one who has put on Christ goes out to meet it as soldier and bridegroom' (sections/40-hour-to-rise.tex L203-205). Ambrose's clouds lose the prophets. L423 reads 'the saints and the flesh taken of the Virgin (Ambrose)', but L147 and Exp. in Luc. X.42 ('Nubes sunt omnes prophetae') make the prophets first.",
+      "required_result": "Add one clause giving the third interpretation's anagogy: the day of glory nearer each day, met by one who has put on Christ (Chrysostom; Aquinas on the Apostle's day of glory). Write 'the prophets and saints, and the flesh taken of the Virgin (Ambrose)'.",
+      "severity": "advisory"
+    },
+    {
+      "id": "SYN-006",
+      "location": "sections/concise/01-inventory.tex L11 (Introit row); sections/concise/04-themes.tex L36-37; sections/concise/90-apparatus.tex L24",
+      "problem": "The map quotes the Introit as 'To thee have I lifted up my soul. In thee, O my God, I put my trust ... none of them that wait on thee shall be confounded', with the Douay's 'O Lord' silently removed. The apparatus says the chants are quoted in the Douay-Rheims. The display rule in propers/verified.md L357-361 is: 'Give the Douay, attributed, and say that the Missal lacks the vocative and reads exsp\u00e9ctant.' The themes note exsp\u00e9ctant (L44-46), but nothing tells the reader the vocative was removed. The English agrees with the Latin, so the Mass is not misrepresented.",
+      "required_result": "Either quote the Douay whole ('To thee, O Lord, have I lifted up my soul ...') and say once that the Missal's antiphon has no 'O Lord', or keep the shortened form and say so once in the apparatus's English note, for example: 'the Introit and Offertory antiphon are given in the Douay without its \"O Lord\", which the Missal lacks'.",
+      "severity": "advisory"
+    },
+    {
+      "id": "SYN-007",
+      "location": "sections/concise/04-themes.tex L111-113 (inherited from sections/10-each-element.tex L148)",
+      "problem": "'Two sayings sealed by Amen close the lesson' reads as if each saying is sealed by Amen. Only v. 32 opens 'Amen dico vobis'; v. 33, 'C\u00e6lum et terra trans\u00edbunt ...', is a separate sentence (propers/verified.md L174-175). The expansive study has the same wording.",
+      "required_result": "For example: 'Two sayings close the lesson. The first is introduced by Amen: this generation will not pass till all is done; then heaven and earth will pass, but Christ's words will not.' Correct the expansive sentence at sections/10-each-element.tex L148 to match when the study is next touched.",
+      "severity": "advisory"
+    },
+    {
+      "id": "SYN-008",
+      "location": "sections/concise/04-themes.tex L15-29; sections/concise/10-commentary.tex L132 (first ordinal), L299-338, L373-381, L388-413, L417-443",
+      "problem": "The commentary names the interpretations by ordinal throughout, 'the second interpretation' first at L132 and bare 'In the first' and 'In the fourth' from L299 onward. Neither the overview, whose rows are by sense, nor the themes, which introduce the four by their authors in order but without numbers (L15-29), tells the reader which number is which. The mapping can be recovered by counting the author pairs in the themes paragraph. Augustine, however, belongs to both the second and the fourth, so the bare ordinals at L299-338 and L403-413 force the reader to look back.",
+      "required_result": "Number the four once where the themes paragraph introduces them, for example: 'In the first interpretation, St Gregory the Great reads ...; in the second, St Ambrose and St Augustine read ...'. Alternatively, replace the bare ordinals in the commentary with a short descriptive name.",
+      "severity": "advisory"
+    },
+    {
+      "id": "SYN-009",
+      "location": "sections/concise/04-themes.tex L12-13, L115-116; sections/concise/01-inventory.tex L42; sections/concise/90-apparatus.tex L52-53",
+      "problem": "Four small wording defects. (a) 'and by the parable of the fig tree that the kingdom of God is (Lk 21:28, 31)': leaving out 'at hand' makes the clause read as unfinished. (b) 'Gregory preached on this Gospel in Rome, from a text that read \"in the clouds.\"' is a fact the concise never uses; the commentary never returns to the plural. (c) 'RG 111 a' in the map footnote is never expanded for the reader. (d) 'Blessed Ildefonso Schuster is Blessed' says nothing.",
+      "required_result": "(a) 'that the kingdom of God is near'. (b) Cut the sentence, or say what follows from the plural. (c) Expand to 'Rubricae generales 111 a', or define the abbreviation in the apparatus. (d) State Schuster's standing once, in the profile's authority wording, without repeating the title. For example: 'Rupert of Deutz, Sicard of Cremona, William Durandus and Bl. Ildefonso Schuster are ecclesiastical writers; they are cited in support ...'.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "observations": [
+    {
+      "location": "generated/scriptural-date-location-page.tex via research/chronology-annotations.tex, Gospel row 'Luke 21:25--33'",
+      "note": "Page-2 lookup performed. Passage Lk 21:25-33 gives the occurrence 'Jesus foretells Jerusalem's fall and His coming', the place 'Jerusalem, by the Temple in Luke's narrative; Mount Olivet in Matthew and Mark', and the date 'c. A.D. 29 (derived; Maas's chronology)', with Luke's composition shown as disputed (c. A.D. 70, or before Acts and the end of Paul's Roman imprisonment). The lookup succeeds and the sheet is usable."
+    },
+    {
+      "location": "research/chronology-annotations.tex, Epistle row 'Rom. 13:11--14' (rendered on generated/scriptural-date-location-page.tex)",
+      "note": "The Epistle row gives only 'Composition: The Epistle to the Romans, Proposals span A.D. 57--58'. It names no place of writing and does not mark the place unknown, so a passage-to-place lookup for the Epistle returns nothing. This is a shared-projection matter, not a synthesis defect."
+    },
+    {
+      "location": "synthesis.tex (whole concise study)",
+      "note": "No print edition was requested, so physical pagination (map and four sense rows on page 1, page 2 alone, themes on pages 3-4, commentary from page 5, 10-12 pages in all) was not judged. The opening blocks are present in the required order, separated by clearpage. The themes (about 1,520 words), commentary (about 4,850) and apparatus (about 930) are close in size to the other published Claude 1962 concise studies."
+    }
+  ],
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-inventory",
+          "kind": "front-matter",
+          "path": "sections/concise/01-inventory.tex",
+          "references": [
+            "propers/verified.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "concise-inventory"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-overview",
+          "kind": "front-matter",
+          "path": "sections/concise/02-overview.tex",
+          "references": [
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "communion"
+          ],
+          "key": "concise-date-location",
+          "kind": "front-matter",
+          "path": "generated/scriptural-date-location-page.tex",
+          "references": [
+            "research/chronology-annotations.tex",
+            "research/chronology-table.tex",
+            "research/chronology.toml"
+          ]
+        },
+        {
+          "depends_on": [
+            "concise-overview"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-themes",
+          "kind": "front-matter",
+          "path": "sections/concise/04-themes.tex",
+          "references": [
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "concise-themes"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-commentary",
+          "kind": "integrated-commentary",
+          "path": "sections/concise/10-commentary.tex",
+          "references": [
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/concise/90-apparatus.tex",
+          "references": [
+            "propers/verified.md",
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Gregory the Great",
+            "Cyril of Alexandria",
+            "Cyril of Jerusalem",
+            "Bede",
+            "Augustine of Hippo"
+          ],
+          "carrying_authors": [
+            "Gregory the Great",
+            "Cyril of Alexandria"
+          ],
+          "component_keys": [
+            "lift-up-your-heads"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "lift-up-your-heads",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "Ambrose of Milan",
+            "John Chrysostom",
+            "Bede",
+            "Cyril of Jerusalem",
+            "Thomas Aquinas",
+            "Gregory the Great",
+            "Cyril of Alexandria"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "Ambrose of Milan"
+          ],
+          "component_keys": [
+            "coming-through-the-church"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "coming-through-the-church",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Augustine of Hippo",
+            "Robert Bellarmine",
+            "William Durandus",
+            "Sicard of Cremona"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Thomas Aquinas"
+          ],
+          "component_keys": [
+            "hour-to-rise"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "hour-to-rise",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "Robert Bellarmine",
+            "Cyril of Jerusalem",
+            "Gregory the Great",
+            "Rupert of Deutz",
+            "Sicard of Cremona",
+            "William Durandus"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "mercy-shown-salvation-given"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "mercy-shown-salvation-given",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+    "files": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/generated/scriptural-date-location-page.tex": "3f86da982f378890791b4eb9efefb80e22e3cc244eaf6cf1a22eda233b4b98a5",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/propers/verified.md": "3c90f7ac0b35ef8383c5a10051cab66215bdba441eb3ed5d89ce9b7e3c46dc81",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/chronology-annotations.tex": "d97c42e6f8d41f293b74359bae260c217191711959da818c148e250908dcfdbb",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/chronology-table.tex": "ac86d4d8ea0b62a23d8dcd80e49dbac9d3bc239e29808d560556842069901493",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/chronology.toml": "ab0c3952aae70539f225e8bf17d6e617e5110b05f10606f2c87fee08bb4f2119",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/interpretations.md": "e5fc460ef158eedee3ebdf80add2cb04ea9e5d637a2f288cd1db2510278088a0",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/scope.md": "3841053dcc5b665414baeed453076048d744fff0318007dac50fa706ccb48ae0",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/concise/01-inventory.tex": "f919dea3653f1f4e048a56f979f96e76dcf9c2aa6837688a1604dda18cf74967",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/concise/02-overview.tex": "a80adf8c57c79f255066e6942cffdfbc1eeb850a13e5c1ab87484fbb10cfc2e5",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/concise/04-themes.tex": "9fc39a95a86685c4ca6e50a62669d33b101f8f078e880c13d941bac3a04c2529",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/concise/10-commentary.tex": "45f0a6e658053f6b492c8e433223264c8da3289617c1b0df7d1a0a5434616d73",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/concise/90-apparatus.tex": "a51ab2e3d6f18da1ceb8aae69a9824d109dc3606e1642889cabe237e3f9877e2",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/synthesis.tex": "16ba22fa45b50a94aaad8e1298272186ff85c40ba987e96a83caa1a5970a0a18",
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "20",
+            "9829722276b1a1f662a2c7a4f5e7e2562394d5ef83911bb94d8b729393f1feec",
+            "77c1ca91ef2d5e93",
+            "81696af68345984cc763e2f6f2771c4185ceb1b1",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "synthesis",
+    "schema": 1
+  },
+  "stage": "synthesis-review",
+  "summary": "Artifact: the Claude concise study (synthesis.tex) of the 1962 First Sunday of Advent: the map, the overview, the generated page 2, the themes, the commentary and the apparatus under sections/concise/. I read it whole and recovered each of the four interpretations' answers from its prose before opening the accepted expansive study. I then compared it with the expansive sections, research/interpretations.md, research/scope.md and propers/verified.md, and checked its quotations against the tracked texts: Gregory, Hom. in Ev. I.1; Schuster, pp. 321-323; Ambrose, Exp. in Luc. X.37-42; Augustine, En. in Ps. 84.9 and 84.15; Bellarmine on Ps 24 and Ps 84; Sicard, Mitrale V; Chrysostom, Hom. in Rom. 24 and Hom. in Mt. 77; and Cyril of Alexandria, sermon 139. Every checked quotation and locus agrees with its source, and the concise introduces no source-dependent claim absent from the expansive study. Page-2 lookup, performed: the Gospel, Lk 21:25-33, resolves to the narrated event (Jesus foretells Jerusalem's fall and his coming), the place (Jerusalem, by the Temple, in Luke; Mount Olivet in Matthew and Mark) and the date (c. A.D. 29, derived from Maas), with Luke's composition disputed. The sheet is usable; the Epistle row's missing place is recorded as an observation for the shared projection. Limits: Aquinas's Super Rom. and Super Ps., Augustine's Letter 199 and the Latin Confessions are restricted or remote, so their quotations were checked only against the passage and scope records. No print edition was requested, so pagination was not judged. Word counts are in line with the other published Claude concise studies. Verdict: CHANGES_REQUIRED, all three blocking findings owned by synthesis. The signs, lifted-head, coming, hour and nearness sections make the authors meet, but the Psalm 24, fruit and orations passages recap the interpretations one after another (SYN-001). Compression attaches the study's charity clause to Aquinas's quotation and hardens qualified claims (SYN-002). The commentary repeatedly restates the themes pages (SYN-003). Six further findings are advisory."
+}

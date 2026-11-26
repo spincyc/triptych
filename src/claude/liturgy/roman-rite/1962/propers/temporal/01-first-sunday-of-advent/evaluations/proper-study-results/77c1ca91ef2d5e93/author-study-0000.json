@@ -1,0 +1,41 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/main.tex",
+  "disposition": "PASS",
+  "iteration": 0,
+  "notes": {
+    "checks": [
+      "tools/tpt document-types refresh --check: current",
+      "scripts/_proper_study.py check content/research with presentation, format, authority, orientation-v3, source mode: pass",
+      "check-content-preflight research edition: references-used, identifiers-resolve, bindings-valid, restricted-not-reproduced, relation-coverage, unquoted-not-quoted, structural-meta-labels, house-voice, chronology-record-current, chronology-annotations-current, chronology-claims-supported, provenance-matches-run: all pass",
+      "tools/tpt web-edition probe to build/tpt-runs/77c1ca91ef2d5e93/artifacts/author-study-0/web-probe: converted"
+    ],
+    "extent": "Substantive exposition about 11,150 words (opening, settings, four interpretations, comparison); scratch pdfLaTeX proof 27 letter pages, no errors or overfull boxes (stub revision stamp; not a cold print review; tools/print-document refused because synthesis.tex is absent).",
+    "files_to_commit": [
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/publication.toml",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/proper-components.toml",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/generation-metadata.tex",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/web-edition.toml",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/main.tex",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/generated/scriptural-date-location.tex",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/production-review.md",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/00-opening.tex",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/05-appointed-texts.tex",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/10-each-element.tex",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/20-lift-up-your-heads.tex",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/30-coming-through-the-church.tex",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/40-hour-to-rise.tex",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/50-mercy-shown-salvation-given.tex",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/60-comparison.tex",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/90-apparatus.tex"
+    ],
+    "finding_dispositions": "none owed (PRIOR, CARRIED and ADVISORY findings empty)",
+    "only_main_declared": "publication.toml declares [document] and [document.main] only; [document.synthesis] and [document.homily] are left for their stages, though proper-components.toml declares their components.",
+    "shared_defects": [
+      "src/common/propers-format.tex maps the versicle sign U+2123 but not the response sign U+211F; 1962 conclusions printed whole fail under pdfLaTeX, so the leaf prints 'R.~Amen' as leaf 61 does (owner: shared propers format).",
+      "tools/print-document build --edition main for a proper-study leaf refuses while synthesis.tex is absent, so author-study proofs cannot use it (owner: print-document).",
+      "Research-stage shared defects in research/scope.md section 11 stand (Latin ledger rows, Bernard standing row, commentator index locus, stale chronology manifest, Olivet setting)."
+    ]
+  },
+  "stage": "author-study",
+  "summary": "Authored the complete expansive source-first study (complete appointed-text mode) of the 1962 First Sunday of Advent: opening and map, Latin of all ten elements with Douay/Lasance English and one proper-<key> anchor each, each text in its setting, four whole-Mass interpretations each with its own four senses (lift-up-your-heads: Gregory + Cyril of Alexandria; coming-through-the-church: Ambrose + Augustine, each Father's sun/moon/stars kept to himself; hour-to-rise: Chrysostom + Aquinas, Aquinas's order kept; mercy-shown-salvation-given: Augustine + Bellarmine, the two-gifts/two-comings link stated in the study's voice with En. Ps. 24.10 cited), a comparison, scope appendix and References; publication.toml ([document], [document.main]), schema-2 proper-components.toml with future concise/homily components, presentation roles and 4 lanes with carrying_authors, generation metadata with this iteration's contribution line, web-edition.toml (eligible) and research/production-review.md. document-types refresh generated main.tex and the date appendix. All study-preflight checks pass, the web probe converts, and a scratch pdfLaTeX proof is 27 pages with no errors."
+}

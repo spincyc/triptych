@@ -1,0 +1,20 @@
+{
+  "bootstrap_version": 1,
+  "instructions": "EXECUTION POLICY: PROGRAM GATE\n\nThis stage is run by tpt. Do not start any subagent for it.\n\n1. This stage is a program gate. No AI worker runs it.\n2. Run: tools/tpt proper-study liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent advance 77c1ca91ef2d5e93 --run-gate\n3. Follow the next packet tpt emits.\n4. Stop only at ACCEPTED or BLOCKED.",
+  "iteration": 0,
+  "normalized_args": {
+    "audience": "adult parish assembly",
+    "date": "2026-11-29",
+    "proper": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+    "provider": "claude",
+    "research_handoff": "none"
+  },
+  "packet_hash": "93af3a814fe91b650c7701ab86a8462a917c972f6015f78637adc64f42c2caee",
+  "packet_path": "build/tpt-runs/77c1ca91ef2d5e93/packets/scope-gate-0000.txt",
+  "repo_commit": "81696af68345984cc763e2f6f2771c4185ceb1b1",
+  "run_id": "77c1ca91ef2d5e93",
+  "stage": "scope-gate",
+  "workflow_digest": "9829722276b1a1f662a2c7a4f5e7e2562394d5ef83911bb94d8b729393f1feec",
+  "workflow_id": "proper-study",
+  "workflow_version": 20
+}

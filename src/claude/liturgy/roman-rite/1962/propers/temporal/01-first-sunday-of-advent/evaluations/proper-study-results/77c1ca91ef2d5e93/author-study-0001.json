@@ -1,0 +1,40 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/main.tex",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "STU-001",
+      "note": "Lane 1: Epistle (Gregory's festinare and Chrysostom's runners), Alleluia (Gregory's redemptio quam quaesistis), Postcommunion (Cyril's restoration), Collect and Secret beside Gregory I.1.6. Lane 2: Epistle (Aquinas's nights and day of grace), Alleluia (Augustine 84.9), Secret (Ambrose's moon), Communion (Ep. 199.45 fruit-bearing cloud with 199.25/Isa 5:6, and 84.15), Offertory named. Lane 3: Alleluia (Aquinas's tempus misericordiae), Offertory (Super Ps. 24 n.1 with Conf. VIII.5.12), Communion (Durandus). Lane 4: Epistle (Aquinas's Advent sense, salus scilicet Christus), Offertory waiting, Collect and Secret with reasons. Each inference is marked once in ordinary words, with the wording varied.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-002",
+      "note": "Lane 2 opens on Hesychius's claim (199.36) and teaches 199.25-26, 34-35, 36-37 and 39, then 199.41-42 and 45. Lane 1 now cites 199.34-35 and 199.37 for what each actually says. The 'this generation' puzzle is gone from the opening. Chrysostom is stated to read the discourse literally, and he is no longer placed inside the figurative reading.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-003",
+      "note": "Lane retitled. The opening of lane 3, the Confessions paragraph, the moral sense, the comparison sentence and its table cell, and the study's opening question were all rewritten. The link to the Collect now runs through quis me liberaret / te liberante salvari and is stated once as an inference.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-004",
+      "note": "Allegorical sense: the hidden first coming and the open second (Cyril; Gregory I.1.2), and the elect finding the one they love (Gregory I.1.3, now also in the body). The resurrection and the renewed creation now appear only in the anagogical sense, and the summer sentence only once.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-005",
+      "note": "All four sentences were removed or recast as the review proposed. Both positions remain stated.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-006",
+      "note": "10 L210, 30 L103-104, 30 L120-121, and 40 L81-84 and L148-152 were deleted or replaced as proposed. 50 L156-157 went with the rewritten closing subsection, and 20 L130 was cut to its first clause.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "notes": "Paths changed in the leaf src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/ (the whole leaf is still uncommitted): sections/00-opening.tex, 10-each-element.tex, 20-lift-up-your-heads.tex, 30-coming-through-the-church.tex, 40-hour-to-rise.tex, 50-mercy-shown-salvation-given.tex, 60-comparison.tex and 90-apparatus.tex; generation-metadata.tex (this iteration's contribution line added); research/production-review.md (iteration 1 entry). main.tex and the manifests are unchanged. Evidence was re-read at the cited loci. These registered remote pages were fetched again into the worker scratch area and their hashes matched: Ep. 199 (5b570f96), Aquinas cro12 (1c3db878) and cps21 (5e8fdbbe), and Confessions VIII (be90ce92). Chrysostom Hom. in Mt. 76 was read on New Advent but is not bound, so the prose cites only Hom. 77, which is bound. The web probe output is at build/tpt-runs/77c1ca91ef2d5e93/artifacts/author-study-1/web-probe. One research defect is left for routing: research/interpretations.md (hour-to-rise, Collect row) still says the Collect asks God to exercise the Epistle's verb surgere. Research owns that record and it was not edited. The substantive prose is now about 13,490 words, up from about 11,150. That is above the 6,000-10,000 planning range, which is not a quota.",
+  "stage": "author-study",
+  "summary": "Revised the expansive study against study review 0. Each interpretation now uses the texts it had left out at the point where its argument needs them (STU-001); the two roll-call closers are replaced with reasons. Lane 2 now opens on Hesychius's claim and walks through Augustine's reasoning in Ep. 199.25-26, 34-37 and 39-45, and lane 1's citation is corrected; Chrysostom is now cited for 'this generation' only (STU-002). Lane 3, the opening and the comparison no longer say the Collect asks God to rouse us; the link to the Collect now runs through te liberante, marked as the study's own inference (STU-003). Lane 1 has a distinct allegorical sense (STU-004). The harmonisation and restating sentences named in STU-005 and STU-006 are gone. Advisories STU-007 to STU-014 are all cleared. Every check passes: refresh --check, the proper-study content check, all content-preflight checks including provenance, and the web-edition probe. An author proof compiles to 30 pages with no errors."
+}

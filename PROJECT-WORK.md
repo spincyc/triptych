@@ -11,15 +11,50 @@ Last reconciled: 2026-11-25.
 
 <!-- promised-deliverable: claude-1962-01-advent-2026-11-29 -->
 
-**In progress: authorized; seeding.** On 2026-11-25 the maintainer asked for
-the Claude 1962 proper-study documents for the upcoming Sunday. Sunday,
-29 November 2026 is the First Sunday of Advent (I class), permanent identity
-`01`, `liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent`.
-The computed calendar also lists St Saturninus; the dated context settles
-whether he is commemorated. The production plan records the one-provider
-authorization. This is an independent Claude production: the published GPT
-leaf for the same identity is not an input. Publication to `main` has not
-been authorized.
+**Accepted and archived; integration with `main` in progress.** On 2026-11-25
+the maintainer asked for the Claude 1962 proper-study documents for the
+upcoming Sunday, and later the same day authorized publication to `main`.
+
+Sunday, 29 November 2026 is the First Sunday of Advent (I class, violet),
+permanent identity `01`,
+`liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent`. St
+Saturninus's ordinary commemoration is not admitted on an I-class Sunday (RG
+109, 111 a). The production plan records both authorizations. This is an
+independent Claude production: the published GPT leaf for the same identity
+was closed to every stage and is not an input.
+
+Run `77c1ca91ef2d5e93` (`proper-study` v20) was seeded at the authorization
+commit `81696af683`. It reached ACCEPTED with 50 packets, 50 results and 18
+interventions, with no escalations. It went through seven cycles; six were
+content defects found by cold reviews:
+- research once: Gregory's six sections, Augustine's and Ambrose's figures merged, and the "two comings" link;
+- the study three times: whole-Mass coverage and register, then the disclaimer-plus-label overcorrection, then a commentator's other Mass named outside the scope appendix;
+- the concise study once;
+- web review once, WEB-001: five of the study's own links stated as facts about the texts. This reopened the study. The study, concise study and homily were then each repaired and passed review on the first try.
+
+The seventh was the driver's session ending during installation; the
+installer was resumed and re-verified its edits.
+
+| Commit | What it holds |
+| --- | --- |
+| `df614e24db` | the commentary corpus regenerated at the base, which was stale on main |
+| `6284b8727e` | source registrations |
+| `7d290f7814` | the leaf |
+| `8e60db2893` | the WEB-001 repair; edition stamp `2026-11-26T01:51:31Z` |
+| `0a7d731bf1` | the web receipt |
+| `a7612f0561` | installation: catalog row 01's Claude cell, three release records, products re-recorded, 68 bindings refreshed |
+
+Thirteen advisories stand. STU-025 (the expansive study still calls
+Chrysostom's neighbours "a household") and STU-024 (one unmarked link at the
+Alleluia) are worth a first revision.
+
+Archiving needed one tooling change made after acceptance, as
+`workflows/OPERATOR.md` provides. Two build-artifacts results named the
+driver's external worker scratch directory in `validation.worker_logs`, which
+no existing opt-in could clear. `tools/proper-study-run-archive` gained
+`--redact-worker-scratch DIR`, with receipt schema 4. The run is archived in
+the leaf; the driver's account, with the defects left for other owners, is
+[CYCLES.md](workflows/reviews/claude-1962-01-production-2026-11-25/CYCLES.md).
 
 ## Postconciliar Advent and the seasonal catalogs, 2026-11-23
 

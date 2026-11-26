@@ -1,0 +1,39 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/synthesis.tex",
+  "disposition": "PASS",
+  "files_to_commit": [
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/concise/10-commentary.tex",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/concise/04-themes.tex",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/concise/90-apparatus.tex",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/generation-metadata.tex",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/production-review.md"
+  ],
+  "finding_dispositions": [
+    {
+      "id": "SYN-001",
+      "note": "Psalm 24 rebuilt around what the soul is lifted from and toward (Gregory and Aquinas compared, Augustine on what it leaves), the ways (Aquinas vs Bellarmine) and the waiting (Gregory's contrast vs Bellarmine's certain hope); fruit passage compares the first three interpretations against the two explanations; orations compare where the cleansing comes from and treat the Postcommunion feast and mercy in one paragraph. All attributions and qualifications kept.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "SYN-002",
+      "note": "(a) The registered page was refetched and its SHA-256 matched before reading. n. 4 contains 'maxime per praeceptum caritatis', so the review's premise was wrong. The whole sentence is now quoted and translated, so the clause is visibly Aquinas's. (b) herald/judge qualification restored; (c) 'would then begin' and 'would be one place' restored, and Schuster's Author 'would be' as in the study; (d) preparation for prayer, with Damascene's words.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "SYN-003",
+      "note": "Removed the commentary's restatements of the themes pages on: Psalm 24 sung three times; the commentators' division over the Communion; Augustine's 'sweetness'; the Collect's address to the Son and its 'stir up his power'; the Collect's petition; Schuster's 'worthily receive'; and the mercy shown and received. Each now refers back briefly or starts from what is new.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "notes": [
+    "Unchanged: synthesis.tex, publication.toml, the generated page 2, the map and the overview. 'tools/tpt document-types refresh --check' reports current.",
+    "Checks run: _proper_study.py content check for the synthesis and research editions, source mode, with the presentation, format, authority and orientation-v3 requirements: pass. check-proper-components, content and artifacts phases (synthesis): pass. check-content-preflight for the synthesis edition and for the whole leaf, provenance-matches-run included: pass. check-web-edition: valid.",
+    "Author proof (make doc, provider claude, built in the worker scratch area): 12 pages. Markers: inventory, overview and four senses on p1; chronology on p2; themes on pp3-4; commentary starts on p5. No overfull or underfull box and no undefined reference. PDF SHA-256 e2620755e79c876f0a70a5dcbd58e9dbe7a23e16d200c4e67c690f70e79d5e4d, aux 77bceb7985375a0455e6c7b3f8da2c8141c2d61d2d1911d00865a5e4ba6601a5, log 60419300e9abd427320b8d15c9ce675610883586b1a2f77ca7227d9d8de28296. This is not an independent print acceptance.",
+    "Word counts: commentary 5,175 (was 4,890); substantive body about 7,300 words. Recorded in production-review.md.",
+    "Upstream points for routing, not repaired. (1) Study: sections/10-each-element.tex near L148 still says 'two sayings sealed by Amen' (SYN-007); only v. 32 opens with Amen. (2) Research: research/scope.md (reception matrix, Super Ps. 24 n. 4 row) and research/interpretations.md (second interpretation, Gradual bullet) leave out Aquinas's 'maxime per praeceptum caritatis'. That omission is what led SYN-002(a) to its mistaken premise. (3) Study, minor: the expansive sentence in sections/30-coming-through-the-church.tex near L208-210 ('by the commandments and above all the commandment of charity') is supported by n. 4, so it is not a study defect, but it does not mark the clause as Aquinas's.",
+    "Shared defect still open: tools/print-document build for the synthesis edition refuses while homily.tex is absent ('input has no existing file: .../homily.tex'), so the proof was made with make doc. Owner: the print-document recipe loader."
+  ],
+  "stage": "derive-synthesis",
+  "summary": "Revised the concise study after synthesis review 0. The Psalm 24, fruit and orations passages are rebuilt so the interpretations are compared on one question each, and the announcing sentences are cut (SYN-001). Compression errors are corrected (SYN-002): a refetch of the registered Corpus Thomisticum page (SHA-256 matched) shows that Super Ps. 24 n. 4 itself reads 'Per has enim vias venit dominus ad nos, maxime per praeceptum caritatis', so the charity clause is now quoted as Aquinas's own words; the conditionals and Gregory's herald/judge qualification are restored, and Aquinas's lifting is given as preparation for prayer. Seven restatements of the themes pages are removed (SYN-003). Advisories SYN-004 to SYN-009 are cleared within the concise files. 12-page author proof with page markers 1/2/3-4/5 intact; all content checks pass."
+}

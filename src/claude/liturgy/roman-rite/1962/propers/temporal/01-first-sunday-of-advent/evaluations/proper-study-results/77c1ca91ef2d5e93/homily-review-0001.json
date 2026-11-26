@@ -1,0 +1,304 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "HOM-006",
+      "location": "sections/homily/10-homily.tex L32-34, L38-39, L45-47, L125-126",
+      "problem": "Four sentences in the Gregory passages are hard for a listener to follow on one hearing, though each is accurate to the source. (1) L32-34, 'He makes known the blows that come before its end, so that...': the sentence before has 'Gregory says' inside it, so 'He' can be heard as Gregory rather than the Lord, and 'its' as the Lord's end rather than the world's. (2) L38-39, '\"Do not love, my brothers,\" he says, \"what you see cannot stand for long.\"': 'he says' splits the relative clause, so a hearer takes 'what you see' as the object of 'Do not love' and is left with 'cannot stand for long' as a fragment. Gregory's 'quem' (I.1.5) refers back to mundum, so the world can be named. (3) L45-47, 'they will soon find the one they love, while the one they did not love passes away': 'the one they did not love' is Gregory's 'is quem non amaverunt', the world. In English it sounds like a person. The previous Sunday's Claude homily renders the same clause 'what they did not love'. (4) L125-126, 'Gregory reads the fruit of the world as its ruin, for the world grows in order to fall': Gregory's step is not spoken. In I.1.3, as summer is known from the fruit of the trees, so the kingdom is known to be near from the world's ruin. Without it, 'the fruit of the world' comes straight after the fig tree with nothing to connect them. Each slip is small, the movement stays intelligible and nothing is misattributed, so the defect does not block.",
+      "required_result": "Make each sentence clear on one hearing without changing its source or attribution. Plain rewrites: (1) 'The Lord makes known the blows that come before the world's end, so that if we will not fear God in quiet, we may at least fear his judgment when we are worn down by blows.' (2) '\"Do not love, my brothers,\" he says, \"a world that you see cannot stand for long.\"' (quem taken as the world, its antecedent), or as paraphrase: 'So he tells his people not to love a world they can see will not stand for long.' (3) '...because they will soon find the one they love, while the world they did not love passes away.' (4) 'Gregory explains the likeness: as the fruit on the trees tells us that summer is near, the ruin of the world tells us that the kingdom is near, for the world grows only to fall.' If (2) changes from quotation to paraphrase, update the note's I.1.5 entry to match.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 1,
+  "observations": [
+    {
+      "location": "sections/homily/10-homily.tex L45-50, against src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/homily/10-homily.tex (closing paragraph)",
+      "note": "This is still true, as at iteration 0. The previous Sunday's Claude homily ends on the same sentence of Gregory, Hom. in Ev. I.1.3 (those who love God rejoice at the world's end because they soon find him whom they love). This homily, on the verse Gregory is expounding, makes that sentence its central argument, so a listener to the series hears it on two Sundays running."
+    },
+    {
+      "location": "sections/homily/90-note.tex (whole)",
+      "note": "The note is now about 1,945 words against a 1,384-word spoken body, by a plain count with comments and commands removed. It was about 1,750 at iteration 0, and it is the longest homily note in the Claude series, where the others run from 793 to 1,841 words by the same count. 'What the text changes' and much of 'Connections that are the homily's own' repeat research/production-review.md. The profile asks for a 'brief' note but sets no measure, so this may be a missing criterion rather than a defect of this leaf."
+    },
+    {
+      "location": "sections/homily/10-homily.tex L119-122, against the closing invitations of src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany, 67-resumed-sixth-after-epiphany and 68-twenty-fourth-after-pentecost sections/homily/10-homily.tex",
+      "note": "Four Claude 1962 homilies in a row tie their one response to a coming moment of the Mass ('So before you come to the altar today, forgive...'; 'So when you come to Communion today, ask for this...'; 'Before Communion today, then, forgive...'; here 'The same words return at the Offertory. When they do, lift up to Christ...'). Here the response is earned: the Offertory repeats the Introit's 'levavi', which shares its verb with the Gospel's 'levate', and the response takes up Augustine's 'presently' and the Collect's 'set free'. The profile's reading test compares invitations by their wording, and nothing in it names a recurring shape. That may be a missing criterion."
+    }
+  ],
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "homily-body",
+          "kind": "homily",
+          "path": "sections/homily/10-homily.tex",
+          "references": [
+            "propers/verified.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "homily-body"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "homily-note",
+          "kind": "terminal-apparatus",
+          "path": "sections/homily/90-note.tex",
+          "references": [
+            "propers/verified.md",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Gregory the Great",
+            "Cyril of Alexandria",
+            "Cyril of Jerusalem",
+            "Bede",
+            "Augustine of Hippo"
+          ],
+          "carrying_authors": [
+            "Gregory the Great",
+            "Cyril of Alexandria"
+          ],
+          "component_keys": [
+            "lift-up-your-heads"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "lift-up-your-heads",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "Ambrose of Milan",
+            "John Chrysostom",
+            "Bede",
+            "Cyril of Jerusalem",
+            "Thomas Aquinas",
+            "Gregory the Great",
+            "Cyril of Alexandria"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "Ambrose of Milan"
+          ],
+          "component_keys": [
+            "coming-through-the-church"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "coming-through-the-church",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Augustine of Hippo",
+            "Robert Bellarmine",
+            "William Durandus",
+            "Sicard of Cremona"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Thomas Aquinas"
+          ],
+          "component_keys": [
+            "hour-to-rise"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "hour-to-rise",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "Robert Bellarmine",
+            "Cyril of Jerusalem",
+            "Gregory the Great",
+            "Rupert of Deutz",
+            "Sicard of Cremona",
+            "William Durandus"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "mercy-shown-salvation-given"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "mercy-shown-salvation-given",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+    "files": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/homily.tex": "95fa4f1c0eec214be73522b8080a5b873ed186029a9720749387880cd893c2cd",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/propers/verified.md": "3c90f7ac0b35ef8383c5a10051cab66215bdba441eb3ed5d89ce9b7e3c46dc81",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/interpretations.md": "e5fc460ef158eedee3ebdf80add2cb04ea9e5d637a2f288cd1db2510278088a0",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/scope.md": "3841053dcc5b665414baeed453076048d744fff0318007dac50fa706ccb48ae0",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/homily/10-homily.tex": "174b21d5827d82dad1db5d2c2519e6eb530b0b576639e0e586feff4b52d5c4e5",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/homily/90-note.tex": "3778736b57c634a307195215e5142c1f57cd35c60fa5225fd65a844095a4a53f",
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec",
+      "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "20",
+            "9829722276b1a1f662a2c7a4f5e7e2562394d5ef83911bb94d8b729393f1feec",
+            "77c1ca91ef2d5e93",
+            "81696af68345984cc763e2f6f2771c4185ceb1b1",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "Cold review of the homily src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/homily.tex (spoken body sections/homily/10-homily.tex, note sections/homily/90-note.tex). All ten sealed input hashes were recomputed and match REVIEW_INPUTS. I read the body straight through as a listener would hear it, then checked it against the reviewed first and third interpretations (sections/20, sections/40) and research/interpretations.md. It makes one exegetical argument. The same signs make men wither and tell the disciples to lift their heads, and Gregory (Hom. in Ev. I.1.3) puts the difference in what each loves. Augustine (Conf. VIII.5.12) shows a man who loves the world, knows the hour and still does not rise. The Collect asks Christ to come and set him free. The argument needs Lk 21:26/28, Rom 13:11-14a, the Gradual, the Collect and the Introit/Offertory, and would not survive replacing these readings with unrelated ones. There is one response, in the second person and earned by the Offertory antiphon, and the speech ends in hope. It has no Latin, dates, anecdote, clerical identity, composed prayer, maxim closer, slogan or inventory. Every quotation and paraphrase was checked at its locus: Gregory I.1.1, I.1.3 and I.1.5 in the registered Wikisource Latin (dc25dd69, hash matched); Chrysostom, Hom. in Rom. 24 on 13:11, 12 and 14, in the NPNF vol. 11 text (8bdb50c6, hash matched, lines 46732-46866); Confessions VIII.5.12 and VIII.12.29 in Pilkington (21000696, hash matched, lines 11115-11140 and 11828-11874); the Douay-Rheims verses of Lk 21:20-31, Rom 13:11-14, Ps 24:1-3, Ps 84:8 and Jas 4:4 (hashes matched); the Lasance Collect and Secret against propers/verified.md and the retrieved.txt text layer. I found no misattribution and no hidden disagreement that matters to the argument. The speech does not use Gregory's present calamities, so Augustine's Letter 199 objection is not needed, and the note says so. Each link the preacher draws in his own voice is recorded in the note as the homily's own. The spoken word count of 1,384 was recomputed exactly. At 120-130 words a minute that is 10.6-11.5 minutes, by arithmetic only; no delivery was timed or claimed. check-content-preflight for the homily edition passes every check. HOM-001 to HOM-005 (iteration-0 advisories) are resolved in the current text. One advisory remains, HOM-006: four sentences that a listener hearing them once cannot easily follow. Limits: no print export or web reader was reviewed; Lasance was checked in its text layer and verified.md, not the page images; Chrysostom only in English. Verdict: PASS."
+}

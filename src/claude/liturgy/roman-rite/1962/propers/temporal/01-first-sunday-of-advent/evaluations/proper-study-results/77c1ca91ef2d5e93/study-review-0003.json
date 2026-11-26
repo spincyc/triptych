@@ -1,0 +1,507 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "STU-021",
+      "location": "sections/30-coming-through-the-church.tex L229-235",
+      "problem": "Partly repaired. The two sentences linking apparuit (1 Jn 3:2) to Ecclesia non apparebit (Ep. 199.39) are deleted, and the Alleluia paragraph now ends on Augustine's words at En. in Ps. 84.9 (Jam quidem sumus, sed per fidem: sumus quidem in spe, nondum sumus in re; checked in the registered Migne/Wikisource passage) and his quotation of St John. The paragraph still does not say what the Alleluia gives this interpretation. It follows Aquinas's day of grace ('Christ has come, and he still comes to each one who believes', L225-227) and leaves the reader to draw the already/not-yet parallel. The same Latin and the same verse of St John are developed fully in the fourth interpretation (50 L34-39), which is their fullest home (propers-three-documents.md, 'Give each substantial argument one fullest home'; editorial.md, Plain is not flat: a reviser 'replaces it with the plain connection it was gesturing at'). Isolated instance.",
+      "required_result": "Add one plain sentence in the study's own voice saying what the verse contributes here, for example: 'Sung between the lessons, the verse is the prayer of a Church in that state: Christ has come to her and comes in her by faith, and what she will be has not yet appeared.' Alternatively, keep only the clause this interpretation uses (sons of God already, by faith, not yet in reality) and leave the quotation of 1 Jn 3:2 to the fourth interpretation.",
+      "severity": "advisory"
+    },
+    {
+      "id": "STU-017",
+      "location": "research/interpretations.md L322-325 (hour-to-rise, 'What each element contributes', Collect row)",
+      "problem": "Unchanged since study review 1. The research record still says that 'The verb that the Epistle addresses to us (s\u00fargere) the Collect asks God to exercise'. The Collect's verbs are excita and veni. The study no longer reasons this way (40 L9-13, L97-102; 60 L22-25), and the row is not reader-facing.",
+      "required_result": "When research is next re-entered, rewrite the row to say what the Collect asks: that Christ stir up his power and come, so that we may be snatched from danger te protegente and saved te liberante. Record the link the study actually draws, between Augustine's miserum ergo me quis liberaret (Conf. VIII.5.12, after Rom 7:24) and the Collect's te liberante, and remove the surgere claim.",
+      "severity": "advisory"
+    },
+    {
+      "id": "STU-019",
+      "location": "research/scope.md L164 (Communion row, Sicard), L205 (Collect row, Rupert; Sicard; Durandus), section 8.5 (L388-401); research/interpretations.md L503-504",
+      "problem": "Unchanged. The study credits Sicard with the Epistle fitted to the Erunt signa Gospel and with the flesh-and-good-works reading of the Communion, and says Durandus copies him (40 L141-144, L165-168; 50 L145-148; 90 L77-78). The tracked PL 213 OCR (artifact ia-djvu-ocr-ea9fd813, Mitrale V) confirms this. It reads 'Quaedam vero Ecclesiae legunt Evangelium: Erunt signa ... cui adaptatur epistola ... benignitatem, id est affectum bonum, et terra nostra, scilicet caro, dabit fructum suum, id est opera bona. Orationes etiam congrue secundo adaptari possunt adventui.' The research record still says only that Sicard reproduces Rupert's reading (scope.md L164). It says that Durandus 'adds' the second-coming clause on the orations (L205; section 8.5 L397-398), although Sicard already has it. And it says that Rupert and Sicard are to be cited only for the elements they share (interpretations.md L503-504). The reviewed research therefore does not record the Sicard passage on which the study now rests.",
+      "required_result": "When research is next re-entered, record Sicard's Erunt signa paragraph in research/scope.md: the Epistle fitted to Prope est regnum Dei by Propior est nostra salus; benignitas as affectus bonus, the earth as caro and the fruit as opera bona; and the orations fitted to the second coming. Note that Durandus copies it, correct 'adds' at L205 and in section 8.5, and bring the citation rule at interpretations.md L503-504 into line with the scope appendix's one clause.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 3,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "opening",
+          "kind": "front-matter",
+          "path": "sections/00-opening.tex",
+          "references": [
+            "propers/verified.md",
+            "research/context.md",
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "appointed-texts",
+          "kind": "appointed-text",
+          "path": "sections/05-appointed-texts.tex",
+          "references": [
+            "propers/verified.md",
+            "research/context.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "appointed-texts"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "each-element",
+          "kind": "proper-treatment",
+          "path": "sections/10-each-element.tex",
+          "references": [
+            "propers/verified.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "lift-up-your-heads",
+          "kind": "interpretive-lane",
+          "path": "sections/20-lift-up-your-heads.tex",
+          "references": [
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "coming-through-the-church",
+          "kind": "interpretive-lane",
+          "path": "sections/30-coming-through-the-church.tex",
+          "references": [
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "hour-to-rise",
+          "kind": "interpretive-lane",
+          "path": "sections/40-hour-to-rise.tex",
+          "references": [
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "mercy-shown-salvation-given",
+          "kind": "interpretive-lane",
+          "path": "sections/50-mercy-shown-salvation-given.tex",
+          "references": [
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "lift-up-your-heads",
+            "coming-through-the-church",
+            "hour-to-rise",
+            "mercy-shown-salvation-given"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "comparison",
+          "kind": "front-matter",
+          "path": "sections/60-comparison.tex",
+          "references": [
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "communion"
+          ],
+          "key": "scriptural-date-location",
+          "kind": "front-matter",
+          "path": "generated/scriptural-date-location.tex",
+          "references": [
+            "research/chronology-annotations.tex",
+            "research/chronology-table.tex",
+            "research/chronology.toml",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "study-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/90-apparatus.tex",
+          "references": [
+            "propers/verified.md",
+            "research/context.md",
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Gregory the Great",
+            "Cyril of Alexandria",
+            "Cyril of Jerusalem",
+            "Bede",
+            "Augustine of Hippo"
+          ],
+          "carrying_authors": [
+            "Gregory the Great",
+            "Cyril of Alexandria"
+          ],
+          "component_keys": [
+            "lift-up-your-heads"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "lift-up-your-heads",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "Ambrose of Milan",
+            "John Chrysostom",
+            "Bede",
+            "Cyril of Jerusalem",
+            "Thomas Aquinas",
+            "Gregory the Great",
+            "Cyril of Alexandria"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "Ambrose of Milan"
+          ],
+          "component_keys": [
+            "coming-through-the-church"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "coming-through-the-church",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Augustine of Hippo",
+            "Robert Bellarmine",
+            "William Durandus",
+            "Sicard of Cremona"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Thomas Aquinas"
+          ],
+          "component_keys": [
+            "hour-to-rise"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "hour-to-rise",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "Robert Bellarmine",
+            "Cyril of Jerusalem",
+            "Gregory the Great",
+            "Rupert of Deutz",
+            "Sicard of Cremona",
+            "William Durandus"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "mercy-shown-salvation-given"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "mercy-shown-salvation-given",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+    "files": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/generated/scriptural-date-location.tex": "0c97bb4c4f9d68596b7ba65b9bfc969316a92aafc9c6c31aeccec08cba26e8ea",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/main.tex": "208af1be4ee3de2e5bf3c086bbd90348f6df34d1c106d90bbd129afb7eba3d49",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/propers/verified.md": "3c90f7ac0b35ef8383c5a10051cab66215bdba441eb3ed5d89ce9b7e3c46dc81",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/chronology-annotations.tex": "d97c42e6f8d41f293b74359bae260c217191711959da818c148e250908dcfdbb",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/chronology-table.tex": "ac86d4d8ea0b62a23d8dcd80e49dbac9d3bc239e29808d560556842069901493",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/chronology.toml": "ab0c3952aae70539f225e8bf17d6e617e5110b05f10606f2c87fee08bb4f2119",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/context.md": "5d353f045023498ecb14def80ee31e45d5efb301894a8e7140b6a2a2f3162911",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/interpretations.md": "e5fc460ef158eedee3ebdf80add2cb04ea9e5d637a2f288cd1db2510278088a0",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/scope.md": "3841053dcc5b665414baeed453076048d744fff0318007dac50fa706ccb48ae0",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/source-bindings.toml": "20766e8fdd395453ce5178d616964922851a4a8cc2c190d2338539cb671063c3",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/00-opening.tex": "85b8c88c86c6f31806a77c3c5c115cd5a71b83d79deb7601d2f197eb8f302f01",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/05-appointed-texts.tex": "6e0e4fd4c38cb70e899b9c82679d0b4e80eb0aa255e8a7b49348cc8e68288d11",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/10-each-element.tex": "1d2e426b53dd01162a30cdf7b4d9378ba0ac6a90039c77d3bf27a6899caf8378",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/20-lift-up-your-heads.tex": "2872fdeaac71e3700922cf08987fa92c874f3ce65f5b08271e3162618f032e36",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/30-coming-through-the-church.tex": "ad4f8748b3174c8c88f61a18195192ec20c8e258fad80c70216300a977e8f914",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/40-hour-to-rise.tex": "54ef9a98d707f2bbe5561cfad7b12847b384a9189921d8a6ed2afe234742a585",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/50-mercy-shown-salvation-given.tex": "2d13663541815c1994fca32739657859b113e6610e5c0159bf2cc841b364a2bc",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/60-comparison.tex": "8402725c864709e993fca8887e899b43f02bfcbf9bda10654a093547cf296698",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/90-apparatus.tex": "15731d3a67959d9ac93cc36eed82053a5efd345f22d4b21a11b62908c16bd28c",
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "20",
+            "9829722276b1a1f662a2c7a4f5e7e2562394d5ef83911bb94d8b729393f1feec",
+            "77c1ca91ef2d5e93",
+            "81696af68345984cc763e2f6f2771c4185ceb1b1",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "study",
+    "schema": 1
+  },
+  "stage": "study-review",
+  "summary": "Cold review, iteration 3, of the expansive study src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent (main.tex; complete appointed-text mode, Full PDF, consistent with research and with no reference-only authorization). All 22 sealed inputs were rehashed and match REVIEW_INPUTS. I read the whole REVIEW_SCOPE (sections 20, 30, 40, 50 and 60 in full, generation-metadata.tex, research/production-review.md) together with the unchanged opening, each-element and apparatus sections for context, and compared every rewritten sentence with its iteration-2 form in the run's author-study-2 and author-study-3 web probes. STU-020 is repaired: lane 4 now reads 'Sicard of Cremona repeats the reading (Mitrale V)', and no other Gospel, chant or Mass is named in the opening, interpretations or comparison (searched); the scope appendix keeps its one clause. Standing advisories STU-022 (a)-(g) and STU-023 are cleared, and STU-021 is partly cleared. I checked each rewrite at its locus. Gregory, Hom. in Ev. I.1.3 (tracked Wikisource text): the friend of the world (Jas 4:4) and 'Quod autem calcari mundus ac despici debeat, Redemptor noster provida comparatione manifestat'. Aquinas, Super Ps. 24 nn. 1 and 4 (Corpus Thomisticum response refetched, SHA-256 5e8fdbbe... matched): 'Per has enim vias venit dominus ad nos, maxime per praeceptum caritatis', said of the ways, which are the precepts; and 'ideo dicit, in te Deus meus confido. 2 Cor. 3: fiduciam talem habemus per Christum ad Deum'. Confessions VIII.5.12 (Latin Library page refetched, be90ce92... matched): 'miserum ergo me quis liberaret de corpore mortis huius nisi gratia tua'. Schuster p. 322 (tracked machine text): 'that we may worthily receive him who is its Author', now credited to Schuster and not to the Secret. Sicard, Mitrale V (tracked PL 213 OCR): the Virgin reading of the Communion and the Erunt signa paragraph. No rewrite moves the study's inference into a Father's mouth or drops a qualification. Consequential-difficulty tests: lane 2, Letter 199.36-45 (augustinus.it refetched, 5b570f96... matched). Augustine reasons from history (199.34-35) and from 1 Thess 5:3 (199.36-37) that the signs fit the Church better, takes Cant 6:9 for 'Ecclesia est enim sol et luna et stellae' (199.39), hesitates over the cloud (199.41-42) and reads the daily coming in the Church (199.45). The prose at 30 L66-130 teaches the question and his inference in that order and is accurate. Lane 4, En. in Ps. 84.9 (registered passage): 'Dedit enim nobis Christum, sed hominem: ... daturus est Deum' answers why the Church still asks for Christ, and 50 L18-39 makes it intelligible. Lane 3, Super Rom. 13 lect. 3 (cro12 refetched, 1c3db878... matched): the Apostle's two nearnesses, the Advent sense (salus scilicet Christus, ex persona omnium fidelium), tempus misericordiae and the three nights are rendered accurately at 40 L54-79 and L150-158. Limits: no print export was built or inspected; Rupert, Sicard and Durandus were checked only in optical text; prose that no reviser has touched was not re-derived for fresh findings. Verdict: PASS. No blocking defect remains. Three advisories stand: STU-021, the residual of the lane-2 Alleluia paragraph; and STU-017 and STU-019, research-record rows left unchanged for research to correct when research is next re-entered."
+}

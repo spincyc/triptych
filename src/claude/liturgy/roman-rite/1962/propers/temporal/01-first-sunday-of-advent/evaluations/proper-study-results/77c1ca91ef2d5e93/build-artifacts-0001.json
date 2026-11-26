@@ -1,0 +1,71 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/publication.toml",
+  "disposition": "PASS",
+  "iteration": 1,
+  "notes": "Defects found: none. I made no source, schema, evidence or prose change. Paths the driver commits at the source checkpoint (all changed by earlier stages since commit 7d290f7814; this stage added none) are the modified leaf files: evaluations/blocking-findings-v1.toml, generation-metadata.tex, homily.tex, publication.toml, research/production-review.md, sections/00-opening.tex, sections/20-lift-up-your-heads.tex, sections/30-coming-through-the-church.tex, sections/40-hour-to-rise.tex, sections/50-mercy-shown-salvation-given.tex, sections/concise/10-commentary.tex, sections/homily/10-homily.tex and sections/homily/90-note.tex, all under src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/. research/web-artifact.json (untracked) is generate-web 0's receipt. Following the dispatch envelope, I left it alone and do not count it as a source change. The inherited base-state failures (check-source-containment on the two periodical-issue records; check-publication-inventories pending install-publication) were not exercised or repaired.",
+  "stage": "build-artifacts",
+  "summary": "I validated the three declared outputs (bare study, -synthesis, -homily) of the single publication.toml owner at src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent, after the web-review-0 return through author-study 4, derive-synthesis 2 and derive-homily 1. `tools/document-schema check ... --phase content --run-gates` exited 0 with 1 document, 3 outputs and 0 content schema errors, and its generation, proper-components and proper-content gates all passed. `tools/document-schema identities` exited 0 with status ok. `document-types refresh --check` reports the leaf current, and `document-types render` for main, synthesis and homily matches the on-disk entrypoints byte for byte. Fresh reruns of 41 gates all passed (41/41): the content preflight checks and component contract for the research, synthesis and homily editions, the artifacts-phase source-output contract, and check-web-edition. The review closure holds. Since the homily-review-0001 baseline the only file in the leaf that changed is evaluations/blocking-findings-v1.toml. No research or propers evidence file has changed since research-review-0001, and the evidence identity is unchanged from build-artifacts 0. The packet requests no print export, so I ran no TeX, PDF or raster work. I edited no file in the leaf.",
+  "validation": {
+    "components": "proper-components.toml has schema 2, appointed_text_completeness complete, presentation interpretive-pagination-v1, format propers-format-v1, authority authority-standing-v1 and chronology orientation-v3. The publication.toml regions place research components in the order opening, appointed-texts, each-element, four interpretive lanes, comparison, generated scriptural-date-location and study-apparatus; synthesis components in the order inventory, overview, generated date-location page, themes, commentary and apparatus; and homily components in the order body and note. Each rendered entrypoint inputs the same files in the same order.",
+    "document_schema_check": {
+      "command": "tools/document-schema check --provider claude --document liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent --phase content --run-gates",
+      "documents": 1,
+      "errors": 0,
+      "exit": 0,
+      "outputs": 3,
+      "owning_gates": {
+        "generation": "pass (1 canonical record, 0 inherited)",
+        "proper-components": "pass (1 manifest)",
+        "proper-content": "pass (bindings-valid 62; chronology-annotations/claims/record current, 7 elements, 13 assertions, 16 orientation rows in research and synthesis; house-voice 23 files; references-used 42/42; relation-coverage 4 lanes x 4 senses; restricted-not-reproduced 62 bound, 3 restricted, none reproduced; structural-meta-labels 108 inspected; unquoted-not-quoted 0)"
+      }
+    },
+    "entrypoints": {
+      "document_types_refresh_check": "current",
+      "generated_sha256": {
+        "generated/scriptural-date-location-page.tex": "3f86da982f378890791b4eb9efefb80e22e3cc244eaf6cf1a22eda233b4b98a5",
+        "generated/scriptural-date-location.tex": "0c97bb4c4f9d68596b7ba65b9bfc969316a92aafc9c6c31aeccec08cba26e8ea"
+      },
+      "render_matches_disk_sha256": {
+        "homily.tex": "95fa4f1c0eec214be73522b8080a5b873ed186029a9720749387880cd893c2cd",
+        "main.tex": "208af1be4ee3de2e5bf3c086bbd90348f6df34d1c106d90bbd129afb7eba3d49",
+        "synthesis.tex": "16ba22fa45b50a94aaad8e1298272186ff85c40ba987e96a83caa1a5970a0a18"
+      }
+    },
+    "fresh_gate_reruns": "41/41 pass. For each of the research, synthesis and homily editions: the component contract (scripts/_proper_study.py check --phase content --require-presentation --require-format --require-authority --require-orientation --require-orientation-v3 --mode source) and 12 check-content-preflight checks (bindings-valid, chronology-record-current, chronology-annotations-current, chronology-claims-supported, restricted-not-reproduced, references-used, relation-coverage, house-voice, identifiers-resolve, structural-meta-labels, unquoted-not-quoted, provenance-matches-run). Then the artifacts-phase source-output contract (scripts/_proper_study.py check --phase artifacts ...) and tools/check-web-edition (1 eligible, 0 conditional, 0 ineligible).",
+    "identities": {
+      "command": "tools/document-schema identities --provider claude --document liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+      "content_inputs": 32,
+      "content_sha256": "f34e7e53b42678d0bc0427556d1930899d0e7d3e7f2770eddf3550897e348dcd",
+      "evidence_inputs": 176,
+      "evidence_sha256": "bb1195691bc1621b08496e6638a9d565a3fbe54d2bbd91c5bb29e959bff3c2b7",
+      "exit": 0,
+      "id": "claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+      "limitations": [
+        "Source identity does not establish semantic or rendered review acceptance.",
+        "Evidence identity covers audit/binding metadata and controlling source-record ancestry, not external witness payload verification."
+      ],
+      "outputs": {
+        "canonical": "0385ed35dd8e7927bde9823bec11fd8c11976e5eb41d8a5623db6d74942b030e",
+        "homily": "04b0a6ddbf70be9c06e4ba3b1daff2316f4e7559b1d99a0468dca31305734b95",
+        "synthesis": "cb9221188612f14e7a78b28bb75d0c8fdd5755461677a594ae147fb6194ade43"
+      },
+      "render_inputs": 1812,
+      "render_sha256": "e8b099e4581ce443e3cf2e162b64998dae6ad3ebf21772053f4087c6e0ca90e8",
+      "status": "ok"
+    },
+    "manifests_sha256": {
+      "evaluations/blocking-findings-v1.toml": "793fac29f4117d1c643ce77fed6552197397c819d58103211da3eedf64071108",
+      "generation-metadata.tex": "662cc56fd8de007cbd86501187acb7fd9a149ccf3a861cd093cd21ae53b2c880",
+      "proper-components.toml": "fd74a7f5466692ba4843be47a0c05856061a44122dc9e29f9cd938aafe68f6ee",
+      "publication.toml": "5d156f73cd02e97825157a7a4a44117dc10eda629ad42eae525484f6db2b868f",
+      "research/chronology.toml": "ab0c3952aae70539f225e8bf17d6e617e5110b05f10606f2c87fee08bb4f2119",
+      "research/production-review.md": "625a5d9d01f75df18e92cfb031307fc233c16b524d90638d58d70047953873f7",
+      "research/review-dependencies.toml": "88ecd81f6067bae372ca89f6452b70eef94af69c2fd9177e733ff9569f08337d",
+      "web-edition.toml": "3348f2174b92244d45d7cea3a7b9275530180e135d8e9acf6f9c900342efa92d"
+    },
+    "metadata": "generation-metadata.tex records run 77c1ca91ef2d5e93, proper-study v20, digest 9829722276b1..., seed 81696af683. It carries 10 claude-opus-5-5 contribution lines: author-study 0-4, derive-synthesis 0-2 and derive-homily 0-1. The provenance-matches-run gate passed for all three editions. Since the checkpoint, the publication.toml diff touches only [document.homily].pdfsubject, and homily.tex mirrors that change.",
+    "print_export": "not requested by the packet; no tools/print-document, TeX, PDF or pdf-review raster run",
+    "review_closure": "Final reviews: research-review-0001 PASS (0 findings); study-review-0004 PASS (6 advisory); synthesis-review-0002 PASS (5 advisory); homily-review-0001 PASS (1 advisory). The web-review-0000 blocking finding WEB-001 was routed to author-study 4, after which study, synthesis and homily were re-derived and re-reviewed to PASS. There are no escalations. Leaf hashes compared against each engine scope baseline show what changed since each review. Since homily-review: only evaluations/blocking-findings-v1.toml (engine-written). Since synthesis-review: only homily-owned files (homily sections, homily.tex, the [document.homily] pdfsubject), generation-metadata.tex and production-review.md. Since study-review: those files plus sections/concise/10-commentary.tex, which synthesis-review-0002 reviewed. Since research-review: no research/* or propers/* evidence file changed, only downstream study, synthesis and homily files and the untracked web receipt.",
+    "worker_logs": "<worker-scratch>/build-artifacts-1 (check.log, check.json, identities.log, refresh-check.log, render-{main,synthesis,homily}.tex, rerun.log)"
+  }
+}
