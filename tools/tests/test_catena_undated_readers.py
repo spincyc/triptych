@@ -185,7 +185,7 @@ class UndatedTerminalTest(unittest.TestCase):
         from lectern.surfaces.catena import Catena, FragmentReading
         row = {"id": "fixture.unknown", "author": "Test author", "work": "Test work", "date": None,
                "composition_date_status": "unestablished", "composition_date_basis": REASON_A,
-               "locator": "Test location", "extent": "Genesis 1:1", "spans": False,
+               "locator": "Test location", "extent": "Genesis 1:1", "spans": False, "review": "verified",
                "chip": "Latin — the author’s own", "text_words": 5, "edition": "Test witness",
                "edition_published": "", "translators": [], "rights": "public-domain",
                "attribution": "", "rights_basis": "", "reviewNote": ""}
@@ -200,7 +200,18 @@ class UndatedTerminalTest(unittest.TestCase):
                         await pilot.pause(0.05)
                     owner = app.current()
                     self.assertIsNotNone(owner)
-                    owner.current = {"chain": {"fragments": [row]}}
+                    owner.current = {
+                        "book": {"token": "Gen", "name": "Genesis", "chapters": 50},
+                        "chapter": 1,
+                        "reference": "Genesis 1",
+                        "voice": "",
+                        "voices": [{"value": "", "label": "Everything held"}],
+                        "unfetched": "",
+                        "scripture": {"ok": False, "problem": ""},
+                        "chain": {"heading": "1 fragment", "fragments": [row], "notes": [], "total": 1, "shown": 1},
+                        "leads": [],
+                        "blocked": [],
+                    }
                     owner.open_reading(0, row, {"missing": True, "date_basis": REASON_A})
                     await pilot.pause()
                     docked = owner._reader_text
