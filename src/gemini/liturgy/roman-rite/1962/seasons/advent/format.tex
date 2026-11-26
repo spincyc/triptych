@@ -1,0 +1,34 @@
+% Keeping Advent (Gemini edition): leaf-local typesetting settings.
+% Presentation only; all claims belong in the sections and research records.
+%
+% Web-eligible leaf: uses no landscape environment, no multicols, no TikZ,
+% and no paired-minipage layout.
+
+\usepackage{xurl}
+
+\setlength{\emergencystretch}{3.0em}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+% Keep Collect, Antiphon, and Prayer boxes intact on a single page.
+\renewtcolorbox{massbox}[1]{
+  enhanced,
+  colback=white,
+  colframe=black,
+  colbacktitle=white,
+  coltitle=black,
+  boxrule=0.55pt,
+  sharp corners,
+  left=7pt,
+  right=7pt,
+  top=4pt,
+  bottom=4pt,
+  toptitle=3pt,
+  bottomtitle=3pt,
+  titlerule=0.45pt,
+  before skip=8pt,
+  after skip=8pt,
+  title={#1},
+  fonttitle=\small\bfseries
+}

@@ -22,19 +22,19 @@ The 1962 Missal and Breviary are the books studied here. The Mass is also known 
 
 ## Seasonal Handbooks
 
-| Season and opening | ChatGPT | Claude | Focus |
-| --- | --- | --- | --- |
-| **Advent**<br>First Vespers of the First Sunday of Advent | [Advent: Keeping Watch for Christ](../web/gpt/liturgy/roman-rite/1962/seasons/advent.html) | [Advent: A Primer for the Season of the Lord's Coming](../web/claude/liturgy/roman-rite/1962/seasons/advent.html) | Mass, the Hours and daily prayer through Christmas Eve. |
-| **Christmas**<br>First Vespers of the Nativity | Planned | Planned | The three Christmas Masses and the saints of the octave. |
-| **Epiphany**<br>First Vespers of Epiphany | Planned | Planned | The Magi, Christ’s baptism and the wedding at Cana. |
-| **Time after Epiphany**<br>January 14 | Planned | Planned | The Sunday Gospels before Septuagesima. |
-| **Septuagesima**<br>First Vespers of Septuagesima Sunday | Planned | Planned | Three Sundays of preparation for Lent. |
-| **Lent**<br>Matins of Ash Wednesday | Planned | Planned | The fast and preparation for baptism. |
-| **Passiontide**<br>First Vespers of Passion Sunday | Planned | Planned | The Passion, Holy Week and the Sacred Triduum. |
-| **Easter**<br>Mass of the Easter Vigil | Planned | Planned | Baptism, the octave and the appearances of the risen Christ. |
-| **Ascensiontide**<br>First Vespers of the Ascension | Planned | Planned | Christ’s return to the Father and the wait for Pentecost. |
-| **Octave of Pentecost**<br>Mass of the Vigil of Pentecost | Planned | Planned | The gift of the Holy Spirit and the Ember Days. |
-| **Time after Pentecost**<br>First Vespers of Trinity Sunday | Planned | Planned | The Sunday Gospels and the Sundays resumed from after Epiphany. |
+| Season and opening | ChatGPT | Claude | Gemini | Focus |
+| --- | --- | --- | --- | --- |
+| **Advent**<br>First Vespers of the First Sunday of Advent | [Advent: Keeping Watch for Christ](../web/gpt/liturgy/roman-rite/1962/seasons/advent.html) | [Advent: A Primer for the Season of the Lord's Coming](../web/claude/liturgy/roman-rite/1962/seasons/advent.html) | [Keeping Advent: A Companion to the 1962 Roman Rite](../web/gemini/liturgy/roman-rite/1962/seasons/advent.html) · [PDF](../pdf/gemini/liturgy/roman-rite/1962/seasons/advent.pdf) | Mass, the Hours and daily prayer through Christmas Eve. |
+| **Christmas**<br>First Vespers of the Nativity | Planned | Planned | Planned | The three Christmas Masses and the saints of the octave. |
+| **Epiphany**<br>First Vespers of Epiphany | Planned | Planned | Planned | The Magi, Christ’s baptism and the wedding at Cana. |
+| **Time after Epiphany**<br>January 14 | Planned | Planned | Planned | The Sunday Gospels before Septuagesima. |
+| **Septuagesima**<br>First Vespers of Septuagesima Sunday | Planned | Planned | Planned | Three Sundays of preparation for Lent. |
+| **Lent**<br>Matins of Ash Wednesday | Planned | Planned | Planned | The fast and preparation for baptism. |
+| **Passiontide**<br>First Vespers of Passion Sunday | Planned | Planned | Planned | The Passion, Holy Week and the Sacred Triduum. |
+| **Easter**<br>Mass of the Easter Vigil | Planned | Planned | Planned | Baptism, the octave and the appearances of the risen Christ. |
+| **Ascensiontide**<br>First Vespers of the Ascension | Planned | Planned | Planned | Christ’s return to the Father and the wait for Pentecost. |
+| **Octave of Pentecost**<br>Mass of the Vigil of Pentecost | Planned | Planned | Planned | The gift of the Holy Spirit and the Ember Days. |
+| **Time after Pentecost**<br>First Vespers of Trinity Sunday | Planned | Planned | Planned | The Sunday Gospels and the Sundays resumed from after Epiphany. |
 
 [General Rubrics, nos. 71–77](https://archive.org/download/sim_acta-apostolicae-sedis_1960-08-15_52_10/sim_acta-apostolicae-sedis_1960-08-15_52_10.pdf#page=19)
 
@@ -114,7 +114,7 @@ Pentecost. The winter guide is planned. [1962 Missal, RGMR 298](https://www.cler
 <!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-and-last-after-pentecost -->
 <!-- triptych-publication-id: claude:liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost -->
 
-*Advent handbook* · [ChatGPT](../web/gpt/liturgy/roman-rite/1962/seasons/advent.html) · [Claude](../web/claude/liturgy/roman-rite/1962/seasons/advent.html) <!-- triptych-publication-reference: liturgy/roman-rite/1962/seasons/advent --> <!-- triptych-publication-reference: claude:liturgy/roman-rite/1962/seasons/advent -->
+*Advent handbook* · [ChatGPT](../web/gpt/liturgy/roman-rite/1962/seasons/advent.html) · [Claude](../web/claude/liturgy/roman-rite/1962/seasons/advent.html) · [Gemini](../web/gemini/liturgy/roman-rite/1962/seasons/advent.html) <!-- triptych-publication-reference: liturgy/roman-rite/1962/seasons/advent --> <!-- triptych-publication-reference: claude:liturgy/roman-rite/1962/seasons/advent --> <!-- triptych-publication-reference: gemini:liturgy/roman-rite/1962/seasons/advent -->
 
 | ID | Sunday | ChatGPT | Claude |
 | ---: | --- | --- | --- |
