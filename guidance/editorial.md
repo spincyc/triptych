@@ -535,6 +535,11 @@ rectangles.
 
 Non-papal publications using `src/common/preamble.tex` compile with `pdflatex`
 via `tools/print-document build` (`xelatex` is reserved for papal editions).
+Browser-native print bundles (`tools/native-print-compile`) compile against the
+pinned runtime manifest (`src/common/native-tex-runtime.json`), so avoid
+unbundled font or TikZ extensions (such as `amssymb`'s `msam10` symbols or
+`\usetikzlibrary{patterns}`) and verify new leaves with
+`tools/native-print-compile prepare` and `compile`.
 Write literal `\includegraphics{...}` paths directly inside print-only branches
 (`\ifdefined\TriptychPrintEdition ... \else ... \fi`) without macro-argument
 indirection so native print bundles and revision-timestamp closures discover

@@ -1,7 +1,6 @@
 \def\TriptychPrintEdition{}
 \ifdefined\TriptychPrintEdition
   \usepackage{amsmath}
-  \usepackage{amssymb}
   \setcounter{section}{-1}
   \newcommand{\keeppair}{\Needspace{7\baselineskip}}
   \newcommand{\logicop}[1]{\mathrm{#1}}
@@ -12,8 +11,8 @@
   \newcommand{\landop}{\land}
   \newcommand{\lneqop}{\neq}
   \newcommand{\lin}{\in}
-  \newcommand{\lbox}{\Box}
-  \newcommand{\ldiam}{\Diamond}
+  \newcommand{\lbox}{\mathord{\tikz[baseline=-0.05ex]{\draw[line width=0.45pt] (0,0) rectangle (1.15ex,1.15ex);}}}
+  \newcommand{\ldiam}{\mathord{\tikz[baseline=-0.05ex]{\draw[line width=0.45pt] (0.65ex,0)--(1.3ex,0.65ex)--(0.65ex,1.3ex)--(0,0.65ex)--cycle;}}}
   \newcommand{\lquad}{\quad}
   \newcommand{\lthin}{\,}
   \newcommand{\lmed}{\;}
