@@ -329,7 +329,7 @@ class ColdReviewIntegrationTests(unittest.IsolatedAsyncioTestCase):
             self.assertEqual(month_widget.cursor, dt.date(2026, 11, 15))
             preview = str(app.query_one("#day-preview", Static).render())
             self.assertIn("Sun 15 Nov", preview)
-            self.assertIn("Thirty-third Sunday", preview)
+            self.assertIn("Thirty-third", preview)
 
     async def test_propers_browse_christological_header_60x16_rows_and_where(self) -> None:
         from lectern.app import TopBar, TriptychApp

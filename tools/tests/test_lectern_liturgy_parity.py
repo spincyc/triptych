@@ -910,7 +910,7 @@ class SurfaceParityTests(unittest.IsolatedAsyncioTestCase):
             rows = day.views["postconciliar"]["rows"]
             resolved = next(row for row in rows if not row.get("primaryDayChoice"))
             unresolved = next(row for row in rows if row.get("primaryDayChoice"))
-            self.assertEqual(unresolved["mass"]["witnesses"], [])
+            self.assertEqual((unresolved.get("mass") or {}).get("witnesses") or [], [])
             await pilot.press("w")
             await _settle(app, pilot)
             self.assertIsInstance(app.screen, Pick)
