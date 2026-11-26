@@ -2834,7 +2834,19 @@
   }
 
   function captureModeLocation(targetMode) {
-    const location = readerShell.captureSemanticLocation();
+    const currentEvent = runtime.normalized && runtime.normalized.state &&
+      runtime.normalized.state.semanticLocation && runtime.normalized.state.semanticLocation.eventId;
+    let location = null;
+    if (currentEvent && runtime.mode !== 'compare' && window.scrollY > 8) {
+      const anchored = Array.from(reading.querySelectorAll('[data-semantic-location]')).find(function (node) {
+        return node.dataset.semanticLocation === currentEvent;
+      });
+      if (anchored) {
+        const top = anchored.getBoundingClientRect().top;
+        if (top >= 40 && top <= 120) location = { kind: 'event', id: currentEvent };
+      }
+    }
+    if (!location) location = readerShell.captureSemanticLocation();
     if (runtime.mode === 'compare') {
       return DayCompare.fromCompareLocation(location, runtime.result);
     }

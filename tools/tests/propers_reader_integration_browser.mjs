@@ -1049,8 +1049,9 @@ async function assertions(cdp, base) {
 
     await candidate(cdp, base, STATES.pre1955Supper);
     value = await snapshot(cdp);
-    assert.match(value.source, /inherited partial/i);
-    assert.match(value.source, /Departure: Moved/);
+    assert.match(value.source, /Departure stated by this recension/i);
+    assert.match(value.source, /Departure: Replaced/);
+    assert.match(value.source, /Also: Moved/);
     await cdp.send('Emulation.setEmulatedMedia', { media: 'print' });
     assert.notEqual(await evaluate(cdp,
       `getComputedStyle(document.querySelector('#formulary-source')).display`), 'none');
@@ -1510,7 +1511,8 @@ async function assertions(cdp, base) {
       sides: [...document.querySelectorAll('#reader-document .compare-unit')]
         .map(row => [...row.querySelectorAll('.compare-side')]
           .map(side => [side.dataset.compareSide, side.dataset.compareStatus])),
-      ordinaryLoads: propersReaderDebug.loads['structure/ordinary/roman-1962.json'] || 0,
+      ordinaryLoads: (propersReaderDebug.loads['structure/ordinary/roman-1962-rites.json'] ||
+        propersReaderDebug.loads['structure/ordinary/roman-1962.json'] || 0),
       hash: location.hash
     }))()`);
     assert.equal(value.outcome, 'ready');
@@ -1732,7 +1734,8 @@ async function assertions(cdp, base) {
         .map(row => row.dataset.readerLocation),
       ordinaryCount: document.querySelectorAll('#reader-document .ordinary-element').length,
       properCount: document.querySelectorAll('#reader-document > .ordinary-frame > .proper:not(.ordinary-element)').length,
-      ordinaryLoads: propersReaderDebug.loads['structure/ordinary/roman-1962.json'] || 0,
+      ordinaryLoads: (propersReaderDebug.loads['structure/ordinary/roman-1962-rites.json'] ||
+        propersReaderDebug.loads['structure/ordinary/roman-1962.json'] || 0),
       hash: location.hash
     }))()`);
     assert.equal(value.outcome, 'ready');
@@ -1764,7 +1767,8 @@ async function assertions(cdp, base) {
     await waitFor(cdp, `propersReaderDebug.ready && propersReaderDebug.state?.requestedMode === 'read'`, 'Propers Read mode');
     const read = await evaluate(cdp, `({
       state: propersReaderDebug.state,
-      ordinaryLoads: propersReaderDebug.loads['structure/ordinary/roman-1962.json'] || 0,
+      ordinaryLoads: (propersReaderDebug.loads['structure/ordinary/roman-1962-rites.json'] ||
+        propersReaderDebug.loads['structure/ordinary/roman-1962.json'] || 0),
       ordinaryNodes: document.querySelectorAll('#reader-document .ordinary-element').length,
       hash: location.hash
     })`);
@@ -2055,35 +2059,46 @@ async function assertions(cdp, base) {
   });
 
   await check('Browse formulary coverage follows the Orations language on open and on change', async () => {
+    // Complete 1962 formularies omit redundant (N/N) ratios in both languages.
     const allSouls = 'commemoratione-omnium-fidelium-defunctorum';
-    const expectedCount = (form, name) => {
-      assert.match(form.formularyLabel, /\(\d+\/\d+\)$/, JSON.stringify(form.formularyLabel));
-      const match = /\((\d+)\/(\d+)\)$/.exec(form.formularyLabel);
-      assert.ok(match, JSON.stringify(form.formularyLabel));
-      if (name === 'Latin') assert.equal(match[1], match[2], JSON.stringify(form.formularyLabel));
-      else assert.notEqual(match[1], '0', JSON.stringify(form.formularyLabel));
-    };
-    // A first open after a cold load once read the still-empty Orations control.
     await freshCandidate(cdp, base, STATES.englishWitness);
     await click(cdp, '[data-reader-action="browse"]');
     let form = await browseSnapshot(cdp);
     assert.equal(form.orations, 'en'); assert.equal(form.formulary, allSouls);
-    const englishLabel = form.formularyLabel;
-    expectedCount(form, 'English');
+    assert.doesNotMatch(form.formularyLabel, /\(\d+\/\d+\)$/, JSON.stringify(form.formularyLabel));
     await select(cdp, '#reader-orations', 'la');
     form = await browseSnapshot(cdp);
-    assert.equal(form.formulary, allSouls); expectedCount(form, 'Latin');
+    assert.equal(form.formulary, allSouls);
+    assert.doesNotMatch(form.formularyLabel, /\(\d+\/\d+\)$/, JSON.stringify(form.formularyLabel));
+    await escape(cdp);
+
+    // Partial formularies show (N/M) ratios that follow the Orations language
+    // on cold open, on select change, and on reopen after route changes.
+    const nativity = 'nativity-lord';
+    const postNativityEn = hash({ missal: 'postconciliar', type: 'christological', mass: nativity,
+      bible: 'douay-rheims', orations: 'en' });
+    const postNativityLa = hash({ missal: 'postconciliar', type: 'christological', mass: nativity,
+      bible: 'douay-rheims', orations: 'la' });
+    await freshCandidate(cdp, base, postNativityEn);
+    await click(cdp, '[data-reader-action="browse"]');
+    form = await browseSnapshot(cdp);
+    assert.equal(form.orations, 'en'); assert.equal(form.formulary, nativity);
+    const englishLabel = form.formularyLabel;
+    assert.match(englishLabel, /\(\d+\/\d+\)$/, JSON.stringify(englishLabel));
+    await select(cdp, '#reader-orations', 'la');
+    form = await browseSnapshot(cdp);
+    assert.equal(form.formulary, nativity);
     const latinLabel = form.formularyLabel;
+    assert.match(latinLabel, /\(\d+\/\d+\)$/, JSON.stringify(latinLabel));
+    assert.notEqual(latinLabel, englishLabel);
     await select(cdp, '#reader-orations', 'en');
     form = await browseSnapshot(cdp);
-    assert.equal(form.formulary, allSouls); assert.equal(form.formularyLabel, englishLabel);
+    assert.equal(form.formulary, nativity); assert.equal(form.formularyLabel, englishLabel);
     await escape(cdp);
-    // A reopen after a route change once read the previous route's language.
-    await candidate(cdp, base, STATES.roman); await click(cdp, '[data-reader-action="browse"]');
-    expectedCount(await browseSnapshot(cdp), 'Latin'); await escape(cdp);
-    await candidate(cdp, base, STATES.englishWitness); await click(cdp, '[data-reader-action="browse"]');
-    assert.equal((await browseSnapshot(cdp)).formularyLabel, englishLabel);
-    assert.notEqual(latinLabel, ''); await escape(cdp);
+    await candidate(cdp, base, postNativityLa); await click(cdp, '[data-reader-action="browse"]');
+    assert.equal((await browseSnapshot(cdp)).formularyLabel, latinLabel); await escape(cdp);
+    await candidate(cdp, base, postNativityEn); await click(cdp, '[data-reader-action="browse"]');
+    assert.equal((await browseSnapshot(cdp)).formularyLabel, englishLabel); await escape(cdp);
   });
 
   await check('a zero coverage denominator is stated plainly, never as 0 of 0', async () => {
@@ -2195,7 +2210,8 @@ async function assertions(cdp, base) {
     assert.equal(form.witnessHidden, false); assert.notEqual(form.witnessDisplay, 'none');
     assert.equal(form.witnesses[0], '');
     assert.deepEqual(form.witnesses.slice(1).sort(), Object.keys(allSoulsEnglishRoles).sort());
-    assert.ok(form.orationLabels.every(label => /\([\d,]+\/[\d,]+\)|no composed texts/.test(label)));
+    // Complete roman-1962 oration languages omit redundant (N/M) counts.
+    assert.deepEqual(form.orationLabels, ['Latin', 'English']);
     for (const [index, id] of form.witnesses.entries()) {
       if (id) assert.ok(form.witnessLabels[index].includes(allSoulsEnglishRoles[id].length + ' of 9 uses'));
     }
