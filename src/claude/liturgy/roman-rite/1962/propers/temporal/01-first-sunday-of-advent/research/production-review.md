@@ -653,3 +653,241 @@ restricted-not-reproduced and provenance-matches-run against this run: pass.
 **For other owners (not repaired here).** None new. The study-review
 advisories STU-017, STU-019 and STU-021 and the synthesis-review advisories
 SYN-010 to SYN-012 stand for their owners.
+
+## Author-study, iteration 4 (25 November 2026)
+
+**Scope.** Repair of the one blocking finding of web review 0 (WEB-001), with
+the sentence-level corrections of the advisories WEB-002, WEB-004 and the
+Offertory accent of WEB-003. No research record, manifest, generated file or
+companion component was changed except the generation record, which gains
+this iteration's contribution line.
+
+- WEB-001: in each of the five places the study's own link between two texts
+  is now marked once, in its own voice and in different words, where it is
+  drawn, and what a source says stays with that source. Lane 1: Paul's night
+  and Chrysostom's runners, "set next to Gregory's road", "can be heard as
+  one call to the hearer"; the Alleluia, "because it is sung just before the
+  Gospel", "can stand as" the prayer of those Gregory describes. Lane 2: the
+  Secret's request is quoted as the Secret makes it, and the link to
+  Ambrose's moon follows as a conditional ("If Ambrose's figure is brought to
+  this prayer"). Lane 3: "Against that weight one may set the Offertory";
+  the trust in *Deus meus, in te confído* stays Aquinas's (*Super Ps.* 24
+  n. 1). Lane 4: Bellarmine's account of waiting stays his, and "since the
+  Alleluia and the Collect ask for Christ, the one waited for in this Mass
+  may be understood as Christ." No disclaimer about what a Father did not say
+  was added.
+- WEB-002: the opening names the appendix as
+  `\hyperref[sec:date-location]{Scriptural Date and Location}`, a named link
+  in both outputs with no number or empty parentheses.
+- WEB-003: the Offertory's words in the third interpretation read
+  *in te confído*, as the appointed text and the Missal print them. The Douay
+  witness of Rom 13:12 in the appointed-text section is left as its witness
+  prints it.
+- WEB-004: Bede's sentence reads *coelum igitur et terra et transibit et
+  erit*, "heaven and earth, then, will both pass away and be", as the bound
+  checked Latin of *In Lucae evangelium expositio* VI prints it.
+
+**Evidence read this iteration.** Chrysostom, *Hom. in Rom.* 24 on Rom 13:11
+(the registered NPNF passage, lines 46732-46768); Bede on Lk 21:33 (the bound
+checked Latin text); Ambrose X.37 and the Secret as the study already quotes
+them; the scope matrix rows for Aquinas *Super Ps.* 24 nn. 1-2 and
+Bellarmine. No source was newly fetched.
+
+**Extent.** Five sentence-level rewrites and three corrections; the net change
+is about a dozen words. Approximate words by source file (TeX control words
+removed, braces split): opening 1,110; appointed texts 1,820; each text in its
+setting 2,030; the four interpretations 2,730, 3,060, 2,210 and 2,210;
+comparison 540; scope and References 1,370.
+
+**Checks run.** `tools/tpt document-types refresh --check` (current);
+`scripts/_proper_study.py check`, content phase, research edition, source
+mode, with presentation, format, authority, orientation-v3 and
+source-dispositions requirements (passed); `tools/tpt check-content-preflight`,
+research edition, every check, and provenance-matches-run against this run
+(all passed); `tools/check-generation-metadata` and `tools/check-web-edition`
+(valid); `tools/tpt web-edition` probe into the run's author-study-4 artifact
+area (converted without error; the appendix link renders with its name). No
+print proof was made this iteration.
+
+**For other owners (not repaired here).** None new. The concise study and the
+homily carry none of the five sentences or the three corrected forms.
+
+## Derive-synthesis, iteration 2 (25 November 2026)
+
+**Scope.** The concise study brought into step with the expansive study as
+author-study 4 changed it for web review 0 (WEB-001), and one retelling
+corrected. Files changed: `sections/concise/10-commentary.tex`; one
+contribution line in `generation-metadata.tex`; and this entry. The map, the
+overview, the themes pages, the concise apparatus, `publication.toml`,
+`synthesis.tex` and the generated page 2 are unchanged
+(`tools/tpt document-types refresh --check`: current). The expansive study,
+the homily and the research records are unchanged.
+
+**Changes.** Each changed sentence was reread against its source and against
+the sentences on either side.
+
+- The link between Paul's night and Gregory's road (WEB-001 instance 1),
+  which the concise commentary stated in the earlier form ("Paul's night and
+  Gregory's road ask the same of the hearer"), is now the first
+  interpretation's: it "sets Paul's night beside Gregory's road and takes them
+  as one call to the hearer". Gregory's own words stay his, now with their
+  object named as he gives it (*Nos autem qui coelestis patriae gaudia aeterna
+  cognovimus, festinare ad ea quantocius debemus*, Hom. in Ev. I.1.3, tracked
+  Wikisource text): "Of the joys of the heavenly homeland Gregory says, 'we
+  ought to hasten to them as fast as we can'".
+- The contrast between the Offertory's lifted soul and Augustine's *sarcina
+  saeculi* (instance 4), stated as what the antiphon's lifted soul is, is now
+  drawn by the third interpretation: "this interpretation sets its lifted soul
+  against that weight."
+- The second interpretation's sentence on the Secret, which put the removal
+  of Ambrose's obstacle into the Secret's request in the form the study had
+  before instance 3 was repaired, now reads "the cleansing the Secret asks for
+  would take them away".
+- Chrysostom's scene on Rom 13:12 is no longer "a household before dawn". In
+  the registered NPNF passage (*Hom. in Rom.* 24, on v. 12) he says "this is
+  what is done in the things of this life" and describes waking one's
+  neighbour; the concise now reads "For the night far spent Chrysostom points
+  to what people do each morning", followed by the same quotation.
+
+Instances 2 and 5 were already stated in the concise as the first and fourth
+interpretations' links ("The first interpretation hears in it ...", "That
+interpretation also names the one awaited ..."), and the concise carries none
+of the three corrected forms of WEB-002 to WEB-004. No source, locus or claim
+was added.
+
+**Extent.** By a plain token count with TeX commands and comments removed,
+quoted Latin and English included (this iteration's count, slightly stricter
+than iteration 1's): inventory and note 300; overview 225; Themes and Movement
+1,529; commentary 5,170 (5,154 before this iteration); scope appendix and
+References 973. The substantive body, page 1 through the commentary, is about
+7,200 words.
+
+**Author proof (not requested).** `tools/print-document build`, synthesis
+edition, into this stage's scratch area: 12 physical pages; the settled
+auxiliary file places the inventory, the overview and its four sense markers
+on physical page 1, the chronology on page 2, the themes from page 3 to page 4
+and the commentary's start on page 5; no overfull or underfull box and no
+undefined reference in the log. PDF SHA-256
+`d2374aaecfce069455b1c7be3a7586febce7e5e49423e71d651e5ffd63a5ec27`, aux
+`77bceb7985375a0455e6c7b3f8da2c8141c2d61d2d1911d00865a5e4ba6601a5`, log
+`b1299c16030118915df14c9b2e9ddbe596f66827589f85c468c449aee4d4bd26`; the PDF
+carries an uncommitted-sources revision line. An author proof is not an
+independent full-page print acceptance.
+
+**Author checks run.** `scripts/_proper_study.py check --phase content`,
+synthesis edition, source mode, with the presentation, format, authority,
+orientation-v3 and source-dispositions requirements: pass. `tools/tpt
+check-proper-components --phase content --edition synthesis`, and `--phase
+artifacts` on the proof build: pass. Every `check-content-preflight` check of
+the synthesis edition, with provenance-matches-run for this run: pass.
+`tools/check-generation-metadata` and `tools/check-web-edition` for the leaf:
+valid.
+
+**For other owners (not repaired here).** The expansive study's two
+remaining unmarked links (`sections/40-hour-to-rise.tex`, the Alleluia's
+"salvation Paul has just called nearer" and "The Secret asks God for a
+cleansing like it") have counterparts in the concise commentary ("Between the
+lessons the Alleluia asks for that salvation as a gift"; "the Secret asks God
+for a cleansing like it"). They follow the reviewed study as it stands and
+were left as they are; if the study's owner marks them, the concise should
+follow. The expansive study (`sections/40-hour-to-rise.tex`) and the homily
+still retell Chrysostom's neighbours as "a household" (owners: the study and
+the homily).
+
+## Derive-homily, iteration 1 (25 November 2026)
+
+**Scope.** The homily brought into step with the expansive study as
+author-study 4 changed it for web review 0 (WEB-001) and the concise study as
+derive-synthesis 2 followed it, with the advisories of homily review 0
+(HOM-001 to HOM-005) settled by sentence-level edits. Files changed: the
+spoken body (`sections/homily/10-homily.tex`), the terminal note
+(`sections/homily/90-note.tex`), the `[document.homily]` PDF subject in
+`publication.toml`, `homily.tex` as `tools/tpt document-types refresh`
+rewrote it from that subject, one contribution line in
+`generation-metadata.tex`, and this entry. Both studies, their entrypoints,
+the manifest and the other research records are unchanged. No source, locus
+or Father was added.
+
+**Changes.** Each changed sentence was reread against its source and against
+the sentences on either side, as a listener hearing it once.
+
+- The two links of WEB-001 that the homily repeats are now spoken as the
+  preacher's, in the way the studies now mark them: the Alleluia "can stand
+  as the prayer" of those who have sought the redemption Gregory says is near
+  (it was "That is the prayer"), and "We can hear the same haste in the
+  Epistle, where St Paul tells the Romans" (it was "St Paul asks the same
+  haste of the Romans"). The note's list of the homily's own connections says
+  the same. The other three WEB-001 links (Ambrose's moon and the Secret, the
+  Offertory against Augustine's weight, Bellarmine's one waited for) are not
+  in the homily.
+- HOM-003: Chrysostom's scene on Rom 13:12 is introduced as "what we all do
+  before dawn", followed by his "we wake our neighbour" (NPNF, *Hom. in Rom.*
+  24, on v. 12, "we each of us awake our neighbor", registered text hash
+  matched); the PDF subject now reads "neighbours waking before dawn".
+  "Then Gregory comes to the command" is now "Gregory also explains the
+  command", which asserts no order: he expounds Lk 21:28 at I.1.3, before the
+  aging body of I.1.5.
+- HOM-004: the two sentences that assumed a choir now hold at a sung or a Low
+  Mass. "The Gradual sang …, and the choir will sing it again at the
+  offering" is "The Gradual prayed …, and its words come back in the
+  Offertory" (the Offertory antiphon repeats Ps 24:3, *univérsi, qui te
+  exspéctant, non confundéntur*); "the chant's word" is "the Gradual's word";
+  "The same words will be sung again as the gifts are offered. When you hear
+  them" is "The same words return at the Offertory. When they do". The note's
+  "Audience and occasion" states that the speech names no singer or choir.
+- HOM-001: the Augustine paragraph now gives the sentence with which
+  *Confessions* VIII.5.12 opens the image it retells, "He says the things of
+  the world weighed on him as sleep does, and he found the weight sweet"
+  (Pilkington: "with the baggage of the world was I sweetly burdened, as when
+  in slumber"; the expansive study quotes the Latin *sarcina saeculi … dulciter
+  premebar* at the same locus). The note lists it as paraphrased and records
+  the step from Gregory's love of the world to it as the preacher's.
+- HOM-002: the response now reads "lift up to Christ whatever still holds you
+  while you answer him 'presently,' and ask him, as the Collect asked, to
+  come and set you free from it", so that what is lifted up is what binds the
+  hearer and not the call; the note describes it in those words.
+- HOM-005: the Secret's sentence opens with the plain connection in the
+  preacher's voice, "We need to be cleansed of our sins as well", joining it
+  to the sins the Collect names; the note records that clause as the
+  preacher's.
+
+**What the text changes.** As at iteration 0: Gregory's *levate capita, id
+est exhilarate corda, quia dum finitur mundus, cui amici non estis, prope fit
+redemptio quam quaesistis* (I.1.3) and the Gradual's *exspéctant* beside the
+Gospel's *exspectatióne*, then the Epistle's command beside Augustine's sweet
+burden and his "presently", answered by the Collect's *te liberánte salvári*.
+The added Augustine sentence speaks the step from love of the world to the
+sleeper's delay that the note had claimed and the speech had left unsaid.
+
+**Length and pace.** The spoken body is about 1,380 words (1,384 by a plain
+word count of the component with comments and LaTeX commands removed; 1,354
+before this iteration), about 10.6 to 11.5 minutes at an unhurried 120 to 130
+words a minute. That is an estimate by arithmetic; no one has delivered or
+timed the homily. It was read through in full, silently, for sense and ease
+of speech; no audible rehearsal took place.
+
+**Author proof.** `tools/print-document build`, homily edition, into this
+stage's scratch area: 4 physical pages, letter; no overfull or underfull box
+and no undefined reference in the log; the title and spoken body fill pages
+1-2 in two columns, and the note, References, revision line and rights
+colophon run on pages 3-4. PDF SHA-256
+`56f5fe3d27987faec0a66d3cfe2a181d118857dfd60808dab6d5f2e7686c5599`; it
+carries an uncommitted-sources revision line. Every page was inspected at
+reduced resolution. An author proof is not an independent full-page print
+acceptance.
+
+**Author checks run.** `tools/tpt document-types refresh --check`: current.
+`scripts/_proper_study.py check --phase content --mode source` for the
+homily, synthesis and research editions, with the presentation, format,
+authority, orientation-v3 and source-dispositions requirements: pass.
+`tools/tpt check-proper-components --phase content --edition homily`: pass.
+`tools/tpt document-schema check --phase content`: no content schema errors.
+Every `check-content-preflight` check of the homily edition, including
+references-used (6 entries, every one used) and provenance-matches-run
+against this run: pass. `tools/check-generation-metadata` and
+`tools/check-web-edition` for the leaf: valid.
+
+**For other owners (not repaired here).** The expansive study still
+introduces Chrysostom's scene on Rom 13:12 as "a household before dawn"
+(`sections/40-hour-to-rise.tex`, the paragraph on v. 12; owner: the study).
+The homily no longer repeats it.

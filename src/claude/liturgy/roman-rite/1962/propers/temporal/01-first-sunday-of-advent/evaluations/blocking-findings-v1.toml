@@ -50,24 +50,24 @@ run_id = "77c1ca91ef2d5e93"
 workflow = "proper-study"
 workflow_version = 20
 stage = "homily-review"
-iteration = 0
+iteration = 1
 disposition = "PASS"
-standing = 0
+standing = 1
 accepted_count = 0
-advisory_count = 11
-observation_count = 5
+advisory_count = 15
+observation_count = 9
 
 [[stages]]
 stage = "homily-review"
-iteration = 0
+iteration = 1
 disposition = "PASS"
 run_id = "77c1ca91ef2d5e93"
 workflow = "proper-study"
 workflow_version = 20
 standing = 0
 accepted_count = 0
-advisory_count = 5
-observation_count = 2
+advisory_count = 1
+observation_count = 3
 
 [[stages]]
 stage = "research-review"
@@ -83,137 +83,210 @@ observation_count = 0
 
 [[stages]]
 stage = "study-review"
-iteration = 3
+iteration = 4
 disposition = "PASS"
 run_id = "77c1ca91ef2d5e93"
 workflow = "proper-study"
 workflow_version = 20
 standing = 0
 accepted_count = 0
-advisory_count = 3
+advisory_count = 6
 observation_count = 0
 
 [[stages]]
 stage = "synthesis-review"
-iteration = 1
+iteration = 2
 disposition = "PASS"
 run_id = "77c1ca91ef2d5e93"
 workflow = "proper-study"
 workflow_version = 20
 standing = 0
 accepted_count = 0
+advisory_count = 5
+observation_count = 3
+
+[[stages]]
+stage = "web-review"
+iteration = 0
+disposition = "CHANGES_REQUIRED"
+run_id = "77c1ca91ef2d5e93"
+workflow = "proper-study"
+workflow_version = 20
+standing = 1
+accepted_count = 0
 advisory_count = 3
 observation_count = 3
 
-[[advisories]]
-stage = "homily-review"
-id = "HOM-001"
-severity = "advisory"
-location = "sections/homily/10-homily.tex L88-99 (Augustine paragraph) and L117-119 (the response), against L51-52 (the thesis); sections/homily/90-note.tex L56-60"
-problem = "The preacher states the thesis in his own voice at L51-52: the men who wither and the disciples who look up see the same signs, 'and what divides them is what they love' (from Gregory, Hom. in Ev. I.1.3). The response at L117-119 asks the hearer to bring to Christ what he has been answering with 'presently'. The step between the two is never spoken. The Augustine paragraph turns on knowing the hour and not rising, and on 'the force of habit'. It leaves out the sentence with which Confessions VIII.5.12 opens the image it retells: 'Thus with the baggage of the world was I sweetly burdened, as when in slumber' (NPNF I.1, Pilkington; registered CCEL text line 11115, hash 21000696 matched). The expansive study uses that sentence (sections/40-hour-to-rise.tex L129-131, sarcina saeculi). Without it the second half (Paul, Chrysostom, Augustine, the Collect) reaches the listener as a sermon on delay, joined to the first half only by Gregory's 'haste'. The note says the speech changes the hearer's understanding by turning 'a hearer who loves the world and knows it' to the Collect's petition (90-note L56-60), but only half of that is spoken. The movement remains intelligible and nothing is misattributed. Isolated instance."
-required_result = "In the Augustine paragraph, give Augustine's own reason for the sleep in one plain clause, so that the listener hears the delay as the love Gregory named. For example, at L89-91: 'St Augustine describes that state in his Confessions. The world lay on him like a sweet weight, he says, as sleep does; he was like a man who wants to wake and sinks back into a heavy sleep…'. The response may name the same thing (see HOM-002). Keep the attribution to VIII.5.12 in the note."
+[[findings]]
+stage = "web-review"
+id = "WEB-001"
+severity = "blocking"
+location = "sections/20-lift-up-your-heads.tex:85-88 and 90-94 (web Markdown lines 275, 277); sections/30-coming-through-the-church.tex:237-240 (line 387); sections/40-hour-to-rise.tex:129-135 (line 441); sections/50-mercy-shown-salvation-given.tex:168-172 (line 517)"
+problem = "Register, guidance/editorial.md 'Say what the texts say, plainly' (texts credited with the study's own inferences). In the paragraphs that bring the Mass's other texts into each interpretation, the study's own connection is stated as a fact about a proper text, unmarked, in every one of the four interpretations, while neighbouring connections in the same paragraphs are marked ('If ...', 'would be'). Instances: (1) 20:85-88 'In this Mass Paul's night and Gregory's road ask the same of the hearer, to hurry as the end draws near' - the study's synthesis of Paul, Chrysostom's runners and Gregory's road is credited to 'Paul's night' and 'this Mass'; (2) 20:92-94 'Sung just before the Gospel, it [the Alleluia] is the prayer of the people Gregory describes' - Gregory says nothing of the verse; the identification is the study's; (3) 30:237-240 'Over the gifts the Secret asks for the cleansing that would take that obstacle away' - the Secret asks to be cleansed and made purer; that the cleansing removes Ambrose's eclipse of the moon is the study's link, put into the Secret's request; (4) 40:131-132 'the Offertory's lifted soul is the opposite of that weight' - the contrast with Augustine's sarcina saeculi is the study's, stated as what the Offertory is; (5) 50:170-172 'in this Mass the one waited for is the Christ whom the Alleluia and the Collect have asked for' - the psalm's 'qui te exspectant' addresses God; identifying the one waited for with Christ is the study's inference, stated as the Mass's meaning. The pattern recurs through the document and is not an isolated instance."
+required_result = "Each listed sentence states its connection in the study's own voice as an inference where it is drawn, in varied ordinary words (not one repeated formula such as 'Taken this way'), keeping every attribution and qualification and moving nothing into a Father's mouth; what a source does say (Aquinas on 'in te confido', Bellarmine on waiting, Ambrose on the moon, Gregory on those who sought redemption) stays attributed to him. Plain rewrites: (1) 'Paul tells the Romans it is the hour to rise, Chrysostom urges them to run the harder near the goal, and Gregory says we ought to hasten; Gregory adds that only the friend of the world grieves to see the end come.' (2) 'Gregory's hearers are those who have sought redemption and are then told that it is near; sung just before the Gospel, the Alleluia's request can be heard as theirs.' (3) 'Over the gifts the Secret asks that the holy gifts, cleansing us by their power, bring us purer ad suum princípium, to their source; set beside Ambrose's moon, that cleansing would clear what keeps the Church from the sun's light.' (4) 'Augustine felt the world's baggage press on him like sleep. Against that weight the Offertory, sung after Paul's command, lifts the soul; its next words, Deus meus, in te confído, are the trust Aquinas finds in this verse, placed in God through Christ and not in ourselves.' (5) 'Bellarmine explains such waiting as expectation in the certain hope of help. Since the Alleluia and the Collect have just asked for Christ, the one waited for in this Mass can be understood as he.'"
+repair_target = "study"
 
 [[advisories]]
 stage = "homily-review"
-id = "HOM-002"
+id = "HOM-006"
 severity = "advisory"
-location = "sections/homily/10-homily.tex L117-119; sections/homily/90-note.tex L84-87"
-problem = "The one practicable response reads: 'When you hear them, lift up to Christ whatever you have been answering with \"presently,\" and ask him, as the Collect asked, to come and set you free from it.' In the speech, what Augustine answered with 'presently' was God's call, 'Awake, thou that sleepest' (L91-93). Heard once, 'whatever you have been answering with \"presently\"' names the call, or the duty put off, so 'set you free from it' asks to be freed from the call rather than from what holds the hearer back. A listener can work out the intended sense, but the sentence on which the application rests takes a second thought to parse. The profile asks for a response 'said once, in ordinary words'."
-required_result = "Make the object of the response the thing that binds the hearer, in ordinary words. For example: 'When you hear them, lift up to Christ the thing you keep saying \"presently\" to giving up, and ask him, as the Collect asked, to come and set you free from it.' Or: '…lift up to Christ whatever still holds you while you answer him \"presently,\" and ask him…'. Change the matching description in 90-note.tex L84-87 so that it describes the response as spoken."
+location = "sections/homily/10-homily.tex L32-34, L38-39, L45-47, L125-126"
+problem = "Four sentences in the Gregory passages are hard for a listener to follow on one hearing, though each is accurate to the source. (1) L32-34, 'He makes known the blows that come before its end, so that...': the sentence before has 'Gregory says' inside it, so 'He' can be heard as Gregory rather than the Lord, and 'its' as the Lord's end rather than the world's. (2) L38-39, '\"Do not love, my brothers,\" he says, \"what you see cannot stand for long.\"': 'he says' splits the relative clause, so a hearer takes 'what you see' as the object of 'Do not love' and is left with 'cannot stand for long' as a fragment. Gregory's 'quem' (I.1.5) refers back to mundum, so the world can be named. (3) L45-47, 'they will soon find the one they love, while the one they did not love passes away': 'the one they did not love' is Gregory's 'is quem non amaverunt', the world. In English it sounds like a person. The previous Sunday's Claude homily renders the same clause 'what they did not love'. (4) L125-126, 'Gregory reads the fruit of the world as its ruin, for the world grows in order to fall': Gregory's step is not spoken. In I.1.3, as summer is known from the fruit of the trees, so the kingdom is known to be near from the world's ruin. Without it, 'the fruit of the world' comes straight after the fig tree with nothing to connect them. Each slip is small, the movement stays intelligible and nothing is misattributed, so the defect does not block."
+required_result = "Make each sentence clear on one hearing without changing its source or attribution. Plain rewrites: (1) 'The Lord makes known the blows that come before the world's end, so that if we will not fear God in quiet, we may at least fear his judgment when we are worn down by blows.' (2) '\"Do not love, my brothers,\" he says, \"a world that you see cannot stand for long.\"' (quem taken as the world, its antecedent), or as paraphrase: 'So he tells his people not to love a world they can see will not stand for long.' (3) '...because they will soon find the one they love, while the world they did not love passes away.' (4) 'Gregory explains the likeness: as the fruit on the trees tells us that summer is near, the ruin of the world tells us that the kingdom is near, for the world grows only to fall.' If (2) changes from quotation to paraphrase, update the note's I.1.5 entry to match."
 
 [[advisories]]
-stage = "homily-review"
-id = "HOM-003"
+stage = "study-review"
+id = "STU-024"
 severity = "advisory"
-location = "sections/homily/10-homily.tex L77 and L40; publication.toml L60 ([document.homily] pdfsubject)"
-problem = "Two retold details do not match the source. (a) L77 introduces Chrysostom's illustration as 'a household before dawn'. In Homilies on Romans 24, on 13:12 (NPNF I.11, registered CCEL text lines 46774-46778, hash 8bdb50c6 matched), the people are neighbours: 'we each of us awake our neighbor, although it be night still … we hasten one another'. The speech's next sentence says 'we wake our neighbour', the note has 'the neighbours woken before dawn' (90-note L134), and the three-document profile retells the scene as 'neighbors stirring and dressing before dawn'. The word comes from the reviewed studies (sections/40-hour-to-rise.tex L31; sections/concise/10-commentary.tex L186), where the quotation follows at once. Spoken aloud, 'household' sets up a family scene that Chrysostom's own words then contradict, and the PDF subject repeats it. (b) L40, 'Then Gregory comes to the command', follows the aging-body comparison, which is Hom. in Ev. I.1.5. Gregory expounds the command at I.1.3, earlier in the sermon (registered Wikisource Latin, line 17, before line 19). 'Then' asserts an order his homily does not have. Both points are small and mislead no one on doctrine. Isolated."
-required_result = "(a) At L77 write, for example, 'Chrysostom also describes neighbours waking one another before dawn.' In the pdfsubject in publication.toml, replace 'household before dawn' with, for example, 'neighbours waking before dawn'. (b) At L40 write, for example, 'Gregory also explains the command.' or 'Earlier in the same sermon Gregory explains the command.' If the studies are re-entered, their owners can correct sections/40-hour-to-rise.tex L31 and sections/concise/10-commentary.tex L186 the same way."
+location = "sections/40-hour-to-rise.tex L150-152 (and, lesser, L160-161)"
+problem = "One unmarked instance of the WEB-001 pattern remains after the repair, in a paragraph WEB-001 did not list (guidance/editorial.md, 'A text does what texts do': texts credited with the study's own inferences). L150-152: 'Between the two lessons the Alleluia asks, salutáre tuum da nobis, \"grant us thy salvation\": the salvation Paul has just called nearer is asked for as God's gift.' The Alleluia asks for 'thy salvation'. That this is the salvation Paul calls nearer in Rom 13:11 is the study's link, drawn through Aquinas's Advent sense (Super Rom. 13 lect. 3, 'nostra salus scilicet Christus') and Augustine's 'salutare tuum, Christum tuum' (En. in Ps. 84.9). The sentence states it as what the Alleluia asks, unmarked. The next sentence marks its own extension ('If Paul's words bear that sense'). A lesser instance is at L160-161, 'The Secret asks God for a cleansing like it'. The likeness to Paul's casting off is the study's comparison, and it is placed inside the Secret's request. The five sentences WEB-001 listed are repaired, and no other unmarked instance was found in the four interpretations, so this is an isolated instance."
+required_result = "State each link in the study's own voice where it is drawn, without the colon that turns it into the Alleluia's content and without another 'If ...' formula. For example, at L150-152: 'Between the two lessons the Alleluia asks, salutáre tuum da nobis, \"grant us thy salvation.\" Sung after the Epistle, the request can be taken as asking God to give the salvation Paul has just called nearer.' At L160-163: 'Paul makes the casting off of the works of darkness the hearers' own task. The Secret also asks for cleansing, but asks it of the holy gifts: that poténti virtúte, \"by their mighty power,\" they make us mundátos and purióres, cleansed and purer.'"
 
 [[advisories]]
-stage = "homily-review"
-id = "HOM-004"
+stage = "study-review"
+id = "STU-025"
 severity = "advisory"
-location = "sections/homily/10-homily.tex L52-54 and L116-117; sections/homily/90-note.tex L12-19"
-problem = "The speech assumes a sung Mass with a choir: 'The Gradual sang …, and the choir will sing it again at the offering' (L52-54), and 'The same words will be sung again as the gifts are offered' (L116-117). At a Low Mass the priest reads the Gradual and the Offertory and there is no choir, so read verbatim there both sentences are false. The note's 'Audience and occasion' paragraph names the Mass 'said on Sunday 29 November 2026'. It records that the speech follows the Gospel and treats the Offertory and Secret as still to come, but not that it assumes a sung Mass. The body must be speakable verbatim at the occasion the note declares."
-required_result = "Either reword the two places so that they hold at any Mass of the day, for example 'The Gradual prayed, \"None of them that wait on thee shall be confounded,\" and the same words return at the offering.' and 'The same words return as the gifts are offered.', or state in 90-note.tex L12-19 that the speech assumes a sung Mass with a choir."
+location = "sections/40-hour-to-rise.tex L31"
+problem = "'The night far spent becomes, in Chrysostom's hands, a household before dawn.' In Homilies on Romans 24, on v. 12 (registered CCEL passage, lines 46774-46778, artifact 8bdb50c6), the people are neighbours: 'we each of us awake our neighbor, although it be night still ... we hasten one another'. The quotation that follows at once contradicts the frame sentence. The three-document profile retells the scene as 'neighbors stirring and dressing before dawn' and asks a reviewer to check what an illustration's characters do. HOM-003 found the same word in the homily and named this line for the study's owner if the study was re-entered. It was re-entered at iteration 4, and the line is unchanged. Isolated."
+required_result = "Retell the scene as Chrysostom gives it, for example: 'Chrysostom describes neighbours waking one another as the night ends.' Keep the quotation that follows."
 
 [[advisories]]
-stage = "homily-review"
-id = "HOM-005"
+stage = "study-review"
+id = "STU-026"
 severity = "advisory"
-location = "sections/homily/10-homily.tex L107-109"
-problem = "The Secret gets one sentence, which ends the Collect paragraph without saying how it relates to it: '…the Church asks Christ to come and set us free so that we can. At the offering the Secret will ask that the holy mysteries, \"cleansing us by their mighty power,\" make us come more pure before God, who is their author.' If the sentence is deleted, nothing the argument uses is lost, and as it stands the listener must work out why the Secret follows the Collect. The note lists the Secret among the texts on which each step of the argument rests (90-note L60-62). Editorial.md, 'Plain is not flat': a reviser does not leave texts side by side without stating the plain connection. Isolated."
-required_result = "Either give the reason in one plain clause in the preacher's voice, for example: 'The cleansing we need is asked of the sacrament as well: at the offering the Secret will ask that the holy mysteries, \"cleansing us by their mighty power,\" make us come more pure before God, who is their author.' Or cut the sentence and remove the Secret from the note's statements of the texts the speech uses (90-note L16-18, L60-62, L95-97)."
+location = "research/production-review.md L712-713 (Author-study, iteration 4, 'For other owners (not repaired here)')"
+problem = "The record says: 'None new. The concise study and the homily carry none of the five sentences or the three corrected forms.' The concise commentary carries two of the five WEB-001 sentences in substance. sections/concise/10-commentary.tex L222-225 reads 'In the first interpretation, Paul's night and Gregory's road ask the same of the hearer, to hurry as the end draws near ...; Gregory adds that only the friend of the world grieves to see it come' (instance 1, in the form the study has now repaired). L323-327 reads '... When the antiphon returns at the offering, after Paul's command to rise, its lifted soul is the opposite of that weight' (instance 4). Whether the concise's framing ('In the first interpretation', 'The third finds') is enough is for the synthesis owner to judge. The study's audit record, however, states a check whose result is false, and it tells the next owner of the concise that nothing needs looking at (contract: an upstream defect found while deriving is reported for the following reviewer; only claim verification actually performed)."
+required_result = "When the study's owner next writes the record, replace the sentence with an accurate one. For example: 'The concise commentary still carries instances 1 and 4 in their earlier form (sections/concise/10-commentary.tex L222-225 and L323-327), for the synthesis owner; the homily carries none of the five, and neither companion carries the three corrected forms.'"
 
 [[advisories]]
 stage = "study-review"
 id = "STU-021"
 severity = "advisory"
 location = "sections/30-coming-through-the-church.tex L229-235"
-problem = "Partly repaired. The two sentences linking apparuit (1 Jn 3:2) to Ecclesia non apparebit (Ep. 199.39) are deleted, and the Alleluia paragraph now ends on Augustine's words at En. in Ps. 84.9 (Jam quidem sumus, sed per fidem: sumus quidem in spe, nondum sumus in re; checked in the registered Migne/Wikisource passage) and his quotation of St John. The paragraph still does not say what the Alleluia gives this interpretation. It follows Aquinas's day of grace ('Christ has come, and he still comes to each one who believes', L225-227) and leaves the reader to draw the already/not-yet parallel. The same Latin and the same verse of St John are developed fully in the fourth interpretation (50 L34-39), which is their fullest home (propers-three-documents.md, 'Give each substantial argument one fullest home'; editorial.md, Plain is not flat: a reviser 'replaces it with the plain connection it was gesturing at'). Isolated instance."
+problem = "Unchanged in author-study iteration 4. The Alleluia paragraph ends on Augustine's words at En. in Ps. 84.9 ('Jam quidem sumus, sed per fidem: sumus quidem in spe, nondum sumus in re'; checked again in the tracked Migne/Wikisource passage record 84-9) and his quotation of 1 Jn 3:2. It still does not say what the Alleluia gives this interpretation. It follows Aquinas's day of grace ('Christ has come, and he still comes to each one who believes', L225-227) and leaves the reader to draw the already/not-yet parallel. The same Latin and the same verse of St John are developed fully in the fourth interpretation (50 L34-39), which is their fullest home (propers-three-documents.md: give each substantial argument one fullest home; editorial.md, Plain is not flat). Isolated instance."
 required_result = "Add one plain sentence in the study's own voice saying what the verse contributes here, for example: 'Sung between the lessons, the verse is the prayer of a Church in that state: Christ has come to her and comes in her by faith, and what she will be has not yet appeared.' Alternatively, keep only the clause this interpretation uses (sons of God already, by faith, not yet in reality) and leave the quotation of 1 Jn 3:2 to the fourth interpretation."
 
 [[advisories]]
 stage = "study-review"
 id = "STU-017"
 severity = "advisory"
-location = "research/interpretations.md L322-325 (hour-to-rise, 'What each element contributes', Collect row)"
-problem = "Unchanged since study review 1. The research record still says that 'The verb that the Epistle addresses to us (súrgere) the Collect asks God to exercise'. The Collect's verbs are excita and veni. The study no longer reasons this way (40 L9-13, L97-102; 60 L22-25), and the row is not reader-facing."
-required_result = "When research is next re-entered, rewrite the row to say what the Collect asks: that Christ stir up his power and come, so that we may be snatched from danger te protegente and saved te liberante. Record the link the study actually draws, between Augustine's miserum ergo me quis liberaret (Conf. VIII.5.12, after Rom 7:24) and the Collect's te liberante, and remove the surgere claim."
+location = "research/interpretations.md L322-324 (hour-to-rise, 'What each element contributes', Collect row)"
+problem = "Unchanged since study review 1. Research was not re-entered in this round. The research record still says that 'The verb that the Epistle addresses to us (súrgere) the Collect asks God to exercise'. The Collect's verbs are excita and veni. The study no longer reasons this way (40 L9-13, L97-102; 60 L22-25), and the row is not reader-facing."
+required_result = "When research is next re-entered, rewrite the row to say what the Collect asks: that Christ stir up his power and come, so that we may be snatched from danger te protegénte and saved te liberánte. Record the link the study actually draws, between Augustine's miserum ergo me quis liberaret (Conf. VIII.5.12, after Rom 7:24) and the Collect's te liberánte, and remove the súrgere claim."
 
 [[advisories]]
 stage = "study-review"
 id = "STU-019"
 severity = "advisory"
 location = "research/scope.md L164 (Communion row, Sicard), L205 (Collect row, Rupert; Sicard; Durandus), section 8.5 (L388-401); research/interpretations.md L503-504"
-problem = "Unchanged. The study credits Sicard with the Epistle fitted to the Erunt signa Gospel and with the flesh-and-good-works reading of the Communion, and says Durandus copies him (40 L141-144, L165-168; 50 L145-148; 90 L77-78). The tracked PL 213 OCR (artifact ia-djvu-ocr-ea9fd813, Mitrale V) confirms this. It reads 'Quaedam vero Ecclesiae legunt Evangelium: Erunt signa ... cui adaptatur epistola ... benignitatem, id est affectum bonum, et terra nostra, scilicet caro, dabit fructum suum, id est opera bona. Orationes etiam congrue secundo adaptari possunt adventui.' The research record still says only that Sicard reproduces Rupert's reading (scope.md L164). It says that Durandus 'adds' the second-coming clause on the orations (L205; section 8.5 L397-398), although Sicard already has it. And it says that Rupert and Sicard are to be cited only for the elements they share (interpretations.md L503-504). The reviewed research therefore does not record the Sicard passage on which the study now rests."
+problem = "Unchanged. Research was not re-entered in this round. The study credits Sicard with the Epistle fitted to the Erunt signa Gospel and with the reading of the Communion as flesh and good works, and says Durandus copies him (40 L141-144, L165-168; 50 L145-148; 90 L77-78). The tracked PL 213 OCR of Mitrale V confirms this ('Quaedam vero Ecclesiae legunt Evangelium: Erunt signa ... cui adaptatur epistola ... benignitatem, id est affectum bonum, et terra nostra, scilicet caro, dabit fructum suum, id est opera bona. Orationes etiam congrue secundo adaptari possunt adventui.'). The research record still says only that Sicard reproduces Rupert's reading (scope.md L164). It says that Durandus 'adds' the second-coming clause on the orations (L205; section 8.5), although Sicard already has it. And it says to cite Rupert and Sicard only for the elements they share (interpretations.md L503-504). The reviewed research therefore does not record the Sicard passage on which the study rests."
 required_result = "When research is next re-entered, record Sicard's Erunt signa paragraph in research/scope.md: the Epistle fitted to Prope est regnum Dei by Propior est nostra salus; benignitas as affectus bonus, the earth as caro and the fruit as opera bona; and the orations fitted to the second coming. Note that Durandus copies it, correct 'adds' at L205 and in section 8.5, and bring the citation rule at interpretations.md L503-504 into line with the scope appendix's one clause."
 
 [[advisories]]
 stage = "synthesis-review"
 id = "SYN-010"
 severity = "advisory"
-location = "sections/concise/10-commentary.tex L300-301, L309-310, L316 (The lifted soul and those who wait)"
-problem = "The rebuilt Psalm 24 unit opens 'The Introit's psalmist lifts his soul to God, and three of the authors take up from what and toward what it is lifted', and later says 'Gregory and Aquinas speak of where the soul goes'. Gregory says nothing of the psalmist's soul. Hom. in Ev. I.1.3 explains the Gospel's levate capita ('Levare itaque capita est mentes nostras ad gaudia patriae coelestis erigere'). The tie to the Introit is the first interpretation's, as the expansive study marks it (sections/20-lift-up-your-heads.tex L215-222: 'If that is the command, the psalmist in the Introit's first line is already doing what the Gospel asks'). The next clause ('Gregory, explaining the Gospel's leváte') and L311-313 restore the right attribution, so a careful reader is not misled, but the two framing sentences credit Gregory with a reading of the psalm that the study draws. The comparison itself is sound. Aquinas, Super Ps. 24 n. 1, has 'per erectionem mentis in Deum', which matches Gregory's 'mentes ... erigere' exactly; only the framing over-credits Gregory. Isolated instance."
-required_result = "Make the framing true of each author, for example at L300-301: 'The Introit's psalmist lifts his soul to God, and the Gospel tells the disciples to lift their heads. Three authors say what the lifting is, and from what or toward what.' At L316: 'Gregory and Aquinas speak of where the mind is raised; Augustine, of what the soul leaves.' Keep L311-313, which marks the link between the psalmist and the Gospel's command as the first interpretation's."
+location = "sections/concise/10-commentary.tex L301-302, L310-311, L317 (The lifted soul and those who wait)"
+problem = "Unchanged since iteration 1; only the line numbers moved by one. The unit opens 'The Introit's psalmist lifts his soul to God, and three of the authors take up from what and toward what it is lifted' (L301-302). It later says 'Both make the lifting a raising of the mind' (L310-311) and 'Gregory and Aquinas speak of where the soul goes' (L317). Gregory says nothing of the psalmist's soul. Hom. in Ev. I.1.3 explains the Gospel's levate ('Levare itaque capita est mentes nostras ad gaudia patriae coelestis erigere'). The tie to the Introit belongs to the first interpretation, and L312-314 say so correctly. The framing sentences still credit Gregory with a reading of the psalm. This is an isolated instance."
+required_result = "Make the framing true of each author. For example, at L301-302: 'The Introit's psalmist lifts his soul to God, and the Gospel tells the disciples to lift their heads. Three authors say what the lifting is, and from what or toward what.' At L317: 'Gregory and Aquinas speak of where the mind is raised; Augustine, of what the soul leaves.' Keep L312-314, which give the link between the psalmist and the Gospel's command to the first interpretation."
 
 [[advisories]]
 stage = "synthesis-review"
 id = "SYN-011"
 severity = "advisory"
-location = "sections/concise/10-commentary.tex L403-421 (The Collect, the Secret and the Postcommunion, first paragraph)"
-problem = "The topic sentence 'The interpretations differ on where the cleansing from sin comes from' (L406-407) does not match what the paragraph shows. In all four interpretations the cleansing comes from the gifts the Secret names. The first and third set the Secret beside what Gregory and Paul tell the sinner to do, and L413-415 says they 'make the same contrast'; the second says what the cleansing removes, and the fourth what it prepares for. The sentence presents complementary uses as a disagreement, which the three-document profile forbids ('Neither smooth incompatible identifications into one account nor dramatize complementary emphases as a dispute'). Two smaller points in the same paragraph. First, 'the Secret asks the cleansing of the gifts themselves' (L411) can be read as asking that the gifts be cleansed; the expansive study has 'asks for the cleansing from the holy gifts themselves' (sections/20-lift-up-your-heads.tex L209-210). Second, the opening quotation of Schuster's paraphrase of the Collect (L403-405) restates a petition the themes pages already explain (04-themes.tex L57-59), and the parallel it seems to set up, 'by his power' beside the Secret's 'by their mighty power', is never drawn. The paragraph came from the repair of SYN-001 and SYN-003. Isolated instance."
-required_result = "Replace the topic sentence with one the paragraph supports, for example: 'The interpretations set the Secret's cleansing beside different things: the first and third beside what Gregory and Paul tell the sinner to do, the second beside what the cleansing takes away, the fourth beside what it prepares for.' At L411 write 'and the Secret asks for the cleansing that the gifts themselves give.' Open the paragraph with the Secret ('The Secret asks the holy gifts to cleanse us poténti virtúte, by their mighty power.') and drop the Schuster sentence, since L408 already refers to 'the danger the Collect names'. Alternatively, keep the Schuster sentence and say in a clause what the two powers have to do with each other."
+location = "sections/concise/10-commentary.tex L404-422 (The Collect, the Secret and the Postcommunion, first paragraph): topic sentence L407-408; L411-412; Schuster sentence L404-406"
+problem = "Unchanged since iteration 1 except at L418-419, where the second interpretation's sentence on the Secret now correctly reads 'the cleansing the Secret asks for would take them away'. The topic sentence 'The interpretations differ on where the cleansing from sin comes from' still does not match what the paragraph shows. In all four interpretations the cleansing comes from the gifts the Secret names. The first and third set the Secret beside what Gregory and Paul tell the sinner to do, and L414-416 says they 'make the same contrast'. The second says what the cleansing removes, and the fourth what it prepares for. The sentence presents complementary uses as a disagreement. Two smaller points remain. 'The Secret asks the cleansing of the gifts themselves' (L411-412) can be read as asking that the gifts be cleansed. The opening Schuster paraphrase of the Collect (L404-406) sets up a parallel between 'by his power' and 'by their mighty power' that the paragraph never draws. This is an isolated instance."
+required_result = "Replace the topic sentence with one the paragraph supports. For example: 'The interpretations set the Secret's cleansing beside different things: the first and third beside what Gregory and Paul tell the sinner to do, the second beside what the cleansing takes away, the fourth beside what it prepares for.' At L411-412 write 'and the Secret asks for the cleansing that the gifts themselves give.' Either open with the Secret and drop the Schuster sentence, or keep it and say in a clause what the two powers have to do with each other."
 
 [[advisories]]
 stage = "synthesis-review"
 id = "SYN-012"
 severity = "advisory"
-location = "sections/concise/10-commentary.tex L30-32; L222-225; L469-470 (against L378 and L386-387)"
-problem = "Three small defects. (a) L30-32: 'He counts what his hearers had seen, nation rising against nation, earthquakes, pestilence, and \"fiery battle lines in the sky\"'. Gregory (Hom. in Ev. I.1.1, tracked Wikisource passage) says that earthquakes overthrowing cities are heard of from other parts of the world ('ex aliis mundi partibus scitis quam frequenter audivimus') and that pestilences are suffered ('patimur'). Only the strife of nations and the fiery battle lines are 'seen' ('cernimus', 'vidimus'). The expansive study keeps this distinction (sections/20-lift-up-your-heads.tex L28-34). (b) L222-225: 'for \"we ought to hasten to them as fast as we can\" (I.1.3)'. Here 'them' has no antecedent in the concise. Gregory's 'ea' are 'coelestis patriae gaudia aeterna', the joys of the heavenly homeland, which the concise first mentions only at L302-303. (c) L469-470: the commentary's last sentence ('The fourth alone sets the two explanations of the Communion's earth against each other; the second and third read its fruit as good works without the dispute') repeats what the earth unit has just said at L378 and L386-387. Editorial.md, 'Say it once': a closing comparison compares; it does not re-argue each section."
-required_result = "(a) For example: 'He counts what his hearers had seen or heard of: nation rising against nation, earthquakes reported from other lands, pestilence without end, and \"fiery battle lines in the sky\" before Italy fell to the sword of the heathen'. (b) For example: 'for, knowing the joys of the heavenly homeland, \"we ought to hasten to them as fast as we can\" (I.1.3)'. (c) Cut the last sentence, or replace it with a comparison the earth unit has not already made."
+location = "sections/concise/10-commentary.tex L30-32; L469-471 (against L378-388)"
+problem = "Two of the three small defects recorded at iteration 1 remain. (a) L30-32: 'He counts what his hearers had seen, nation rising against nation, earthquakes, pestilence, and \"fiery battle lines in the sky\"'. Checked again in the tracked Wikisource text of Hom. in Ev. I.1.1. Gregory says the strife of nations is seen ('cernimus') and the fiery battle lines were seen ('vidimus'). Earthquakes are heard of from other parts of the world ('ex aliis mundi partibus scitis quam frequenter audivimus'), and pestilences are suffered ('patimur'). (b), the missing antecedent of 'them', was repaired this round: L224-225 now read 'Of the joys of the heavenly homeland Gregory says'. (c) L469-471, the commentary's last sentence, repeats what the earth unit says at L379-388. editorial.md, 'Say it once': a closing comparison compares and does not re-argue."
+required_result = "(a) For example: 'He counts what his hearers had seen or heard of: nation rising against nation, earthquakes reported from other lands, pestilence without end, and \"fiery battle lines in the sky\" before Italy fell to the sword of the heathen'. (c) Cut the last sentence, or replace it with a comparison the earth unit has not already made."
+
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-013"
+severity = "advisory"
+location = "sections/concise/10-commentary.tex L210-214 (the Collect's te liberánte salvári) and L247 (the Alleluia)"
+problem = "The concise now marks the counterparts of WEB-001's five sentences as the interpretations' inferences, but two links that are the study's own are still stated as what a text asks. (1) L211-214: the Collect's last words 'ask Christ, with the same verb, for the deliverance Augustine asked for'. The verb (liberaret / liberánte) is the same, and the deliverer is Christ in both. That the Collect's request to be saved from 'the threatening dangers of our sins' is the deliverance Augustine sought from his bondage (Conf. VIII.5.12) is the third interpretation's inference. The study is narrower: it says the Collect's words 'use the same verb and name the same deliverer' (sections/40-hour-to-rise.tex L100-102). (2) L247: 'Between the lessons the Alleluia asks for that salvation as a gift', where 'that salvation' is Paul's salus as Aquinas expounds it at L230-240. The Alleluia's salutáre and Paul's salus are different words, and identifying them is the study's link. The counterpart is sections/40-hour-to-rise.tex L150-152, which study review passed after the WEB-001 repair. The derive-synthesis record names it as following the reviewed study. These are two mild residues in a document where the pattern is otherwise repaired, so they are isolated and not recurring."
+required_result = "State each as a fact about the text or mark it as the interpretation's inference, without moving it into a Father's mouth. Plain rewrites: (1) 'Its last words, te liberánte salvári, \"that we may be saved, with thee setting us free,\" ask Christ, with the verb of Augustine's question, to set us free.' (2) 'Between the lessons the Alleluia asks, \"grant us thy salvation,\" and the interpretations hear the request in different ways.' The next sentences already say how. If the study's owner later marks its L150-152, the concise follows it."
+
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-014"
+severity = "advisory"
+location = "sections/concise/10-commentary.tex L225-226 (against L98-99 and L347-348)"
+problem = "The sentence rewritten this round ends 'and he adds that only the friend of the world grieves to see the end come'. The commentary has already given this point in full at L98-99 ('Whoever does not rejoice as the end approaches shows, by St James's rule, that he is the world's friend'), and L347-348 recall it again ('whose ruin, Gregory has said, grieves only those who love it'), where it does work in the argument. At L225-226 it adds nothing (editorial.md, 'Say it once'; 'Let the source have the last word'). 'Adds' also misplaces it. In I.1.3 the friend-of-the-world sentences ('Qui ergo appropinquante mundi fine non gaudet, amicum se illius esse testatur ... Ex mundi enim destructione lugere eorum est ...') come before 'Nos autem qui coelestis patriae gaudia aeterna cognovimus, festinare ad ea quantocius debemus', not after it. This is an isolated instance."
+required_result = "End the sentence on Gregory's words: 'Of the joys of the heavenly homeland Gregory says, \"we ought to hasten to them as fast as we can\" (I.1.3).' Keep L98-99 as the point's one full statement."
+
+[[advisories]]
+stage = "web-review"
+id = "WEB-002"
+severity = "advisory"
+location = "sections/00-opening.tex:63-65 (web Markdown line 26)"
+problem = "'The Scriptural Date and Location appendix (\\ref{sec:date-location})' renders on the web as 'appendix ([9](#sec:date-location))': a link labelled '9' although no heading on the page, in its Contents box or in the reader's section list carries a number. In print the same sentence reads 'appendix ()', because src/common/propers-format.tex sets secnumdepth 0 and the label has no number (checked in a PDF built from these sources into scratch with tools/print-document). The link target is right; the label is meaningless in both outputs and the two outputs disagree."
+required_result = "The sentence names the appendix without a section number in both outputs, for example 'The \\hyperref[sec:date-location]{Scriptural Date and Location} appendix gives the setting and date ...' (a named link in the PDF and on the web) or the plain name without the parenthesis; neither output shows a bare number or empty parentheses."
+
+[[advisories]]
+stage = "web-review"
+id = "WEB-003"
+severity = "advisory"
+location = "sections/05-appointed-texts.tex:94-96 (web Markdown line 91) against sections/20-lift-up-your-heads.tex:81-83 (line 275) and sections/30-coming-through-the-church.tex:217 (line 383); sections/40-hour-to-rise.tex:133 (line 441)"
+problem = "The same text is printed in two forms. The Epistle's English witness, labelled Douay-Rheims (Challoner), reads 'The night is passed And the day is at hand. Let us, therefore cast off the works of darkness and put on the armour of light': this reproduces the repository's Project Gutenberg file (src/sources/bibles/douay-rheims/chapters/Rom/13.json, v. 12), whose capital 'And' and misplaced comma are that file's transcription faults, not Challoner's; the repository's 1899 Challoner-text edition (src/sources/bibles/douay-rheims-american-1899/chapters/Rom/13.json, v. 12) reads 'The night is passed, and the day is at hand. Let us therefore cast off the works of darkness, and put on the armour of light', and the study's own body quotes the verse twice in that corrected form. Likewise 40:133 quotes the Offertory's 'next words' as 'Deus meus, in te confido', where the Offertory printed in the study (05-appointed-texts.tex:195) and the Missal read 'confído'."
+required_result = "The appointed English of Rom 13:12 and the body's quotations of it agree and read as Challoner's verse reads (the witness corrected to Challoner's pointing with the correction recorded in propers/verified.md, or the verse taken from a witness that prints it correctly), and the Offertory's words at 40:133 are quoted in the Missal's form, 'in te confído'."
+
+[[advisories]]
+stage = "web-review"
+id = "WEB-004"
+severity = "advisory"
+location = "sections/20-lift-up-your-heads.tex:145-146 (web Markdown line 289)"
+problem = "Bede's sentence reads 'Coelum igitur et terra et transibit et erit' in the bound artifact (src/sources/works/bede/in-lucae-evangelium-expositio/editions/latin-migne-corpus-corporum-web-2026-07-25/artifacts/luke-21-checked-cd9a5956/text.txt). The study quotes 'coelum et terra et transibit et erit', dropping 'igitur' inside the quotation without the ellipsis it uses for other omissions (e.g. 'Nolite ergo ... diligere')."
+required_result = "The quotation reads 'coelum igitur et terra et transibit et erit', or marks the omission with an ellipsis."
 
 [[observations]]
 stage = "homily-review"
-location = "sections/homily/10-homily.tex L44-49, against src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/homily/10-homily.tex (closing paragraph)"
-note = "The previous Sunday's Claude homily (Twenty-fourth after Pentecost, 22 November 2026) ends on the same sentence of Gregory, Hom. in Ev. I.1.3: those who love God rejoice at the world's end because they soon find him whom they love. This homily makes that sentence its central argument. The two invitations differ, and the sentence belongs here, since Lk 21:28 is the verse Gregory is expounding. A listener to the series therefore hears it on consecutive Sundays because the earlier homily borrowed it, not because this one repeats it."
+location = "sections/homily/10-homily.tex L45-50, against src/claude/liturgy/roman-rite/1962/propers/temporal/68-twenty-fourth-after-pentecost/sections/homily/10-homily.tex (closing paragraph)"
+note = "This is still true, as at iteration 0. The previous Sunday's Claude homily ends on the same sentence of Gregory, Hom. in Ev. I.1.3 (those who love God rejoice at the world's end because they soon find him whom they love). This homily, on the verse Gregory is expounding, makes that sentence its central argument, so a listener to the series hears it on two Sundays running."
 
 [[observations]]
 stage = "homily-review"
 location = "sections/homily/90-note.tex (whole)"
-note = "The note runs to about 1,750 words with its References. That is longer than the 1,354-word spoken body and the longest homily note in the Claude series (the others run from 740 to 1,743 words). The profile asks for a 'brief' source-and-delivery note but sets no measure, and the per-quotation inventory of translations and paraphrases is what has made the notes grow across the series. This may be a missing criterion rather than a defect of this leaf."
+note = "The note is now about 1,945 words against a 1,384-word spoken body, by a plain count with comments and commands removed. It was about 1,750 at iteration 0, and it is the longest homily note in the Claude series, where the others run from 793 to 1,841 words by the same count. 'What the text changes' and much of 'Connections that are the homily's own' repeat research/production-review.md. The profile asks for a 'brief' note but sets no measure, so this may be a missing criterion rather than a defect of this leaf."
+
+[[observations]]
+stage = "homily-review"
+location = "sections/homily/10-homily.tex L119-122, against the closing invitations of src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany, 67-resumed-sixth-after-epiphany and 68-twenty-fourth-after-pentecost sections/homily/10-homily.tex"
+note = "Four Claude 1962 homilies in a row tie their one response to a coming moment of the Mass ('So before you come to the altar today, forgive...'; 'So when you come to Communion today, ask for this...'; 'Before Communion today, then, forgive...'; here 'The same words return at the Offertory. When they do, lift up to Christ...'). Here the response is earned: the Offertory repeats the Introit's 'levavi', which shares its verb with the Gospel's 'levate', and the response takes up Augustine's 'presently' and the Collect's 'set free'. The profile's reading test compares invitations by their wording, and nothing in it names a recurring shape. That may be a missing criterion."
 
 [[observations]]
 stage = "synthesis-review"
-location = "generated/scriptural-date-location-page.tex via research/chronology-table.tex and research/chronology-annotations.tex: Alleluia row (Ps. 84:8), Communion row (Ps. 84:13), Introit row (Ps. 24:1--3, 24:4)"
-note = "First page-2 lookup: the passage Ps 84:8. The row 'Alleluia: Ps. 84:8 (Vg.; Heb. 85)' gives the Historical setting as 'Occasion date unresolved' and the Composition as 'The Psalms of the Sons of Korah, c. 740--536 B.C. (Korahite collection estimate)'. Passage and date are easy to pair, but no place is given, nor is the place marked unknown; the Communion row (Ps 84:13) is the same. Second lookup: Ps 24:1-3 (Introit) gives David's reign, Hebron then Jerusalem, c. 1055--1015 B.C. (usual chronology; Corbett also reports dates 30--50 years later), with composition before c. 165 B.C. Both lookups succeed for passage, occurrence and date. The missing place on the Korahite rows, like the Epistle row's noted at iteration 0, is a matter for the shared projection, not for this synthesis."
+location = "generated/scriptural-date-location-page.tex via research/chronology-table.tex and research/chronology-annotations.tex: Gospel rows (row-03a893478d4fede6, row-ec61c0aa1cf6d38e) and Epistle row (row-63f2e0b4f00a20c1)"
+note = "Page-2 lookups. First, the passage Lk 21:25-33. The row 'Gospel: Luke 21:25--33' gives the event ('Jesus foretells Jerusalem's fall and His coming'), the place ('Jerusalem, by the Temple in Luke's narrative; Mount Olivet in Matthew and Mark') and 'c. A.D. 29 (derived; Maas's chronology)'. The row beneath gives the Gospel's composition as 'Disputed: c. A.D. 70; Before Acts and the end of Paul's Roman imprisonment'. Passage, event, place and date pair at a glance, so the lookup succeeds. Second, the passage Rom 13:11-14. The row gives 'Composition: The Epistle to the Romans' and 'Proposals span A.D. 57--58'. Passage and date pair, but no place of writing is given or marked unknown, and the row cites 13:11--14 for a lesson that stops at 14a. Both belong to the shared projection, not to this synthesis, as the iteration-0 and iteration-1 lookups also recorded."
 
 [[observations]]
 stage = "synthesis-review"
-location = "sections/concise/10-commentary.tex L329-333; research/scope.md L152; research/interpretations.md L219; sections/30-coming-through-the-church.tex L206-211"
-note = "SYN-002(a) was resolved by verification rather than deletion. The registered Corpus Thomisticum response for Super Psalmos 21-30 (refetched, SHA-256 and byte size matching the artifact record) reads at Super Ps. 24 n. 4 'Per has enim vias venit dominus ad nos, maxime per praeceptum caritatis', so the concise now attributes the charity clause to Aquinas correctly. The research records quote n. 4 only as far as 'ad nos', and the expansive study gives the clause in its own voice ('by the commandments and above all the commandment of charity'). Both upstream owners could be aligned with the source when next touched."
+location = "sections/concise/10-commentary.tex L186-188 against sections/40-hour-to-rise.tex L31 and sections/homily/10-homily.tex"
+note = "The concise now retells Chrysostom's scene on Rom 13:12 as the registered NPNF vol. 11 text has it (artifact ccel-text-8bdb50c6 near line 46773: 'For this is what is done in the things of this life ... we each of us awake our neighbor'). The expansive study still frames it as 'a household before dawn', which is STU-025, standing for the study's owner, and the derive-synthesis record says the homily does too. On this point the concise is more exact than its upstream. It is a correction, not a new claim."
 
 [[observations]]
 stage = "synthesis-review"
 location = "synthesis.tex (whole concise study)"
-note = "No print edition was requested, so physical pagination was not judged. The opening blocks are in the established order, separated by clearpage. A plain count with LaTeX commands and comments removed gives about 1,550 words for the themes, 5,120 for the commentary and 940 for the apparatus, in agreement with the production record."
+note = "No print edition was requested, so physical pagination was not judged. The opening blocks are in the established order (inventory and overview, clearpage, generated page 2, clearpage, themes, clearpage, commentary, apparatus, generation record). This round's edits add about 16 words to the commentary. The derive-synthesis record reports an author proof of 12 pages with the markers on pages 1, 2, 3-4 and 5, which this review did not rebuild or inspect."
+
+[[observations]]
+stage = "web-review"
+location = "guidance/liturgy/propers-three-documents.md:433; src/common/propers-format.tex:12"
+note = "The profile licenses '(\\ref{sec:date-location})', but with secnumdepth 0 that reference prints '()' in the proper-format PDF and a pandoc section ordinal on the web; the same construct stands in src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/00-opening.tex:23, 68-twenty-fourth-and-last-after-pentecost/sections/00-opening.tex:43 and two postconciliar GPT openings, so this is a missing criterion for the profile or the converter (a reference to an unnumbered section should render by name), not a fact about this leaf alone."
+
+[[observations]]
+stage = "web-review"
+location = "generated/scriptural-date-location.tex, evidence list (web Markdown lines 583-615)"
+note = "The generated evidence list, which no stage writes or reviews as prose, prints reader-facing production wording ('No date: the chronology corpus has not yet dated this (research pending)'), refers the Psalm 84 elements' historical setting to 'As under Introit: Ps. 24 ...', a different psalm, and sets corpus citation titles with two closing quotes (’David, King,’) in both print and web; these belong to the scriptural-date-location projection and the chronology corpus."
+
+[[observations]]
+stage = "web-review"
+location = "src/sources/works/bede/in-lucae-evangelium-expositio/editions/latin-migne-corpus-corporum-web-2026-07-25/passages/luke-21-33.toml:11-12"
+note = "The shared passage record's text and transcription segment drop 'Coelum igitur' ('... haec ipsa renovantur.  et terra et transibit et erit') against its artifact's 'Coelum igitur et terra et transibit et erit'; this leaf binds the artifact, not the record."
