@@ -223,19 +223,23 @@ def _check_all(root, jobs):
     if jobs == 1:
         for surface in ORDER:
             _check_surface(surface, root, index)
+        report = _refresh_unlocked(root, check=True, expected_identity=index.identity)
     else:
-        # The producers install process-local path and cache policies. Each
-        # worker reads the root bound above, and authenticates every shard it uses.
-        from concurrent.futures import ProcessPoolExecutor
+        # Submit heaviest surfaces first and overlap the read-only full corpus
+        # hash/parse check beside the surface workers, still surfacing any
+        # surface mismatch before accepting the report.
+        from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
         from multiprocessing import get_context
+        priority = {'documents': 0, 'commentary': 1, 'sources': 2, 'history': 3, 'liturgy': 4}
+        scheduled = sorted(ORDER, key=lambda name: priority.get(name, 99))
         # A fresh interpreter needs no fork-server socket in the caller's TMPDIR.
-        with ProcessPoolExecutor(max_workers=min(jobs, len(ORDER)), mp_context=get_context('spawn')) as pool:
-            checks = [pool.submit(_check_worker, surface, root, index.identity) for surface in ORDER]
+        with (ProcessPoolExecutor(max_workers=min(jobs, len(scheduled)), mp_context=get_context('spawn')) as pool,
+              ThreadPoolExecutor(max_workers=1) as full_check):
+            checks = [pool.submit(_check_worker, surface, root, index.identity) for surface in scheduled]
+            refresh_future = full_check.submit(_refresh_unlocked, root, check=True, expected_identity=index.identity)
             for check in checks:
                 check.result()
-    # Independently hash every source, parse every record, and compare all
-    # shard bytes and the complete root to the snapshot used by the producers.
-    report = _refresh_unlocked(root, check=True, expected_identity=index.identity)
+            report = refresh_future.result()
     return {**report, 'reader_surfaces': list(ORDER), 'reader_reused': []}
 
 

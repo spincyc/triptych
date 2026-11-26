@@ -30,8 +30,10 @@ no calendar formulary, no reviewed appointment input -- never filled.
 
 from __future__ import annotations
 
+import os
 import re
 import tomllib
+from concurrent.futures import ThreadPoolExecutor
 from functools import lru_cache
 from pathlib import Path
 
@@ -120,23 +122,170 @@ DISPOSITION_WORDS = {"preferred": "preferred", "alternate": "alternative", "disp
 # --- Source labels -------------------------------------------------------------
 
 
+_ID_LINE_RE = re.compile(r'^id = "', re.M)
+_SEGMENT_PART_RE = re.compile(r"[a-z0-9][a-z0-9-]*\Z")
+
+
+def _direct_source_record(root: str, source: str) -> dict | None:
+    """Resolve one canonical source-library TOML directly before any full walk."""
+    import _document_schema
+    candidate = _document_schema._canonical_source_path(Path(root), source)
+    if candidate is None or not candidate.is_file():
+        return None
+    try:
+        data = tomllib.loads(candidate.read_text(encoding="utf-8"))
+    except (OSError, UnicodeError, tomllib.TOMLDecodeError):
+        return None
+    return data if isinstance(data, dict) and data.get("id") == source else None
+
+
+_ID_BYTES_RE = re.compile(rb'^\s*id\s*=\s*"([^"\\\r\n]+)"\s*(?:#[^\r\n]*)?$', re.M)
+
+
+class _LazySourceRecords(dict):
+    """Mapping from source id to parsed TOML, resolving directly before any full walk."""
+
+    def __init__(self, root: str, paths: dict[str, str] | None = None):
+        super().__init__()
+        self._root = root
+        self._paths: dict[str, str] | None = paths
+
+    def _ensure_paths(self) -> dict[str, str]:
+        if self._paths is None:
+            self._paths = _scan_source_record_paths(self._root)
+        return self._paths
+
+    def _load(self, key: str) -> dict | None:
+        if super().__contains__(key):
+            return super().__getitem__(key)
+        if self._paths is None:
+            direct = _direct_source_record(self._root, key)
+            if direct is not None:
+                super().__setitem__(key, direct)
+                return direct
+        paths = self._ensure_paths()
+        path_str = paths.get(key)
+        if path_str is None:
+            return None
+        try:
+            with open(path_str, "rb") as handle:
+                data = tomllib.loads(handle.read().decode("utf-8"))
+        except (OSError, UnicodeError, tomllib.TOMLDecodeError):
+            return None
+        super().__setitem__(key, data)
+        return data
+
+    def __contains__(self, key: object) -> bool:
+        if not isinstance(key, str):
+            return False
+        if super().__contains__(key):
+            return True
+        if self._paths is not None:
+            return key in self._paths
+        return self._load(key) is not None
+
+    def __len__(self) -> int:
+        return len(self._ensure_paths())
+
+    def __getitem__(self, key: str) -> dict:
+        value = self._load(key)
+        if value is None:
+            raise KeyError(key)
+        return value
+
+    def get(self, key: str, default=None):
+        if not isinstance(key, str):
+            return default
+        value = self._load(key)
+        return default if value is None else value
+
+
+def _extract_id(path_str: str) -> str | None:
+    try:
+        with open(path_str, "rb") as handle:
+            head = handle.read(1024)
+        match = _ID_BYTES_RE.search(head)
+        if match is not None:
+            return match.group(1).decode("utf-8")
+        if b'id = "' not in head:
+            with open(path_str, "rb") as handle:
+                raw = handle.read()
+            if b'id = "' not in raw:
+                return None
+            match = _ID_BYTES_RE.search(raw)
+            if match is not None:
+                return match.group(1).decode("utf-8")
+            data = tomllib.loads(raw.decode("utf-8"))
+        else:
+            with open(path_str, "rb") as handle:
+                data = tomllib.loads(handle.read().decode("utf-8"))
+        ident = data.get("id")
+        return ident if isinstance(ident, str) else None
+    except (OSError, UnicodeError, tomllib.TOMLDecodeError):
+        return None
+
+
+def _scan_source_record_paths(root: str) -> dict[str, str]:
+    import _document_schema
+    existing = _document_schema._SOURCE_INDEX.get(Path(root))
+    if existing is not None and not isinstance(existing, _document_schema._LazySourceIndex):
+        return {ident: str(path) for ident, path in existing.items()}
+    base = Path(root) / "src/sources/works"
+    if not base.is_dir():
+        return {}
+
+    def scan(start: str) -> list[tuple[str, str]]:
+        found: list[tuple[str, str]] = []
+        stack = [start]
+        while stack:
+            current = stack.pop()
+            try:
+                listing = os.scandir(current)
+            except OSError:
+                continue
+            with listing:
+                for entry in listing:
+                    if entry.is_dir(follow_symlinks=False):
+                        stack.append(entry.path)
+                    elif entry.name.endswith(".toml") and entry.is_file():
+                        ident = _extract_id(entry.path)
+                        if ident is not None:
+                            found.append((entry.path, ident))
+        return found
+
+    top_dirs: list[str] = []
+    items: list[tuple[str, str]] = []
+    with os.scandir(base) as listing:
+        for entry in listing:
+            if entry.is_dir(follow_symlinks=False):
+                top_dirs.append(entry.path)
+            elif entry.name.endswith(".toml") and entry.is_file():
+                ident = _extract_id(entry.path)
+                if ident is not None:
+                    items.append((entry.path, ident))
+    counter = getattr(os, "process_cpu_count", None) or os.cpu_count
+    workers = min(8, (counter() if callable(counter) else None) or 4)
+    if workers > 1 and len(top_dirs) >= 8:
+        with ThreadPoolExecutor(max_workers=workers) as pool:
+            for batch in pool.map(scan, top_dirs):
+                items.extend(batch)
+    else:
+        for directory in top_dirs:
+            items.extend(scan(directory))
+    items.sort(key=lambda row: row[0])
+    paths: dict[str, str] = {}
+    for path_str, identifier in items:
+        paths[identifier] = path_str
+    return paths
+
+
 @lru_cache(maxsize=4)
 def _source_records(root: str) -> dict[str, dict]:
     """Every source-library record, by id, read from the library's own tree."""
-    records: dict[str, dict] = {}
     base = Path(root) / "src/sources/works"
-    for path in sorted(base.rglob("*.toml")):
-        text = path.read_text(encoding="utf-8")
-        if not re.search(r'^id = "', text, re.M):
-            continue
-        try:
-            data = tomllib.loads(text)
-        except tomllib.TOMLDecodeError:
-            continue
-        identifier = data.get("id")
-        if isinstance(identifier, str):
-            records[identifier] = data
-    return records
+    if not base.is_dir():
+        return _LazySourceRecords(root, {})
+    return _LazySourceRecords(root)
 
 
 @lru_cache(maxsize=4)
@@ -201,12 +350,24 @@ def source_label(source: str, root: Path = wiring.ROOT) -> str:
         _, edition, locus = (source.split(":", 2) + ["", ""])[:3]
         title = _bible_titles(str(root)).get(edition)
         return f"{title}, {_locus(locus)}" if title and locus else source
-    records = _source_records(str(root))
-    record = records.get(source)
+    root_str = str(root)
+    record = _direct_source_record(root_str, source)
     if record is None:
-        return source
-    kind = record.get("record_type")
-    edition = record if kind == "edition" else records.get(record.get("edition_id", ""))
+        records = _source_records(root_str)
+        record = records.get(source)
+        if record is None:
+            return source
+        kind = record.get("record_type")
+        edition = record if kind == "edition" else records.get(record.get("edition_id", ""))
+    else:
+        kind = record.get("record_type")
+        if kind == "edition":
+            edition = record
+        else:
+            edition_id = record.get("edition_id", "")
+            edition = _direct_source_record(root_str, edition_id) if isinstance(edition_id, str) and edition_id else None
+            if edition is None and isinstance(edition_id, str) and edition_id:
+                edition = _source_records(root_str).get(edition_id)
     if edition is None:
         return str(record.get("title") or source)
     title = str(edition.get("title") or source)

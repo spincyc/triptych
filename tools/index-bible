@@ -199,9 +199,22 @@ SOURCE_ROOT = ROOT / "src" / "sources" / "works"
 ELISION = " ... "
 SPACING = re.compile(r"\s+")
 
-# The source-index registry has one low-dependency owner for all alias readers.
+# The source-index registry and text resolver have low-dependency owners
+# shared with projections that do not invoke calendar indexing.
 from _bible_editions import EDITIONS, browser_print_offer
 from _bible_artifacts import select_book_index
+from _bible_reader import (
+    Bible,
+    Divergences,
+    load_aliases,
+    load_books,
+    load_verses,
+    manifest_document,
+    normalize,
+    other_numberings,
+    read_tsv,
+    sole,
+)
 
 # A psalm reference resolves against a psalter, and the Latin psalters differ in
 # wording where they agree in numbering, so numbering alone cannot identify the
@@ -238,317 +251,8 @@ def sibling(name: str):
     return module
 
 
-def read_tsv(path: Path) -> list[dict[str, str]]:
-    with path.open(encoding="utf-8", newline="") as handle:
-        return list(csv.DictReader(handle, delimiter="\t"))
-
-
-def sole(root: Path, prefix: str, suffix: str) -> Path:
-    """The one file under a `<prefix>-<hash>/` artifact directory."""
-    found = sorted(root.glob(f"{prefix}-*/*{suffix}"))
-    if len(found) != 1:
-        raise ValueError(f"expected exactly one {prefix} artifact under {root}, found {len(found)}")
-    return found[0]
-
-
-def normalize(name: str) -> str:
-    return SPACING.sub(" ", name.replace(".", " ").strip()).casefold()
-
-
-def load_books(artifacts: Path) -> dict[str, str]:
-    """Map every name a calendar might print to this edition's book token.
-
-    The Douay-Rheims prints Vulgate book names and the calendars print modern
-    ones, and the trap is not the spelling but the Kings shift: Douay 1 and 2
-    Kings are modern 1 and 2 Samuel, and Douay 3 and 4 Kings are modern 1 and
-    2 Kings. The edition's own book index carries both columns, so the mapping
-    is read from it rather than restated here. Modern names are claimed first
-    so that an alternate spelling can never take a name a modern name owns.
-    """
-    selected = select_book_index(artifacts.parent)
-    if selected is None:
-        raise ValueError(f"no book-index artifact under {artifacts}")
-    rows = read_tsv(selected)
-    if not rows:
-        raise ValueError("the edition's book index is empty")
-    names: dict[str, str] = {}
-    for row in rows:
-        names[normalize(row["modern_name"])] = row["token"]
-    for row in rows:
-        token = row["token"]
-        aliases = [token, row["douay_title"], *row["alternate_names"].split(";")]
-        # "Psalms" is the calendars' book name; "Psalm" is how a citation reads.
-        if token == "Ps":
-            aliases.append("Psalm")
-        for alias in aliases:
-            key = normalize(alias)
-            if key and key not in names:
-                names[key] = token
-    return names
-
-
-def load_verses(artifacts: Path) -> dict[tuple[str, int, int], str]:
-    verses: dict[tuple[str, int, int], str] = {}
-    files = sorted(artifacts.glob("verse-text-*/*.tsv"))
-    if not files:
-        raise ValueError(f"no verse-text artifacts under {artifacts}")
-    for path in files:
-        for row in read_tsv(path):
-            verses[(row["book"], int(row["chapter"]), int(row["verse"]))] = row["text"]
-    return verses
-
-
-def load_aliases(artifacts: Path):
-    """The locus a citation names, and the verse of this edition that carries it.
-
-    Two things are recorded here. A verse this edition merged away resolves to
-    the verse its text now stands in. A locus this edition does not carry under
-    that book at all resolves to nothing: `resolves_to` is empty, and the
-    lookup refuses instead of returning whatever the edition happens to print
-    at those numbers. The King James Version needs the second kind because its
-    canon is shaped differently — a Vulgate citation of Daniel 3:29 means the
-    Prayer of Azarias, which this edition prints as a separate book, while its
-    own Daniel 3:29 is Nabuchodonosor's decree and is real text at real numbers.
-
-    Read through `_projection` rather than parsed here, so that the rules this
-    resolver follows and the rules the edition's projection reports are the same
-    rules. They were two parsers of one file, and this one ignored the `kind`
-    column, so a kind with no projection meaning resolved here as a plain merge
-    while the projection refused to describe it at all.
-    """
-    return alias_table(artifacts.parent)
-
-
-class Bible:
-    """One edition's text, addressed the way a citation addresses it."""
-
-    def __init__(self, artifacts: Path) -> None:
-        self.books = load_books(artifacts)
-        self.verses = load_verses(artifacts)
-        self.aliases = load_aliases(artifacts)
-        self.alias_notes = {
-            row.cited_locus: row.note
-            for row in alias_rows(artifacts.parent)
-            if not row.resolves_to
-        }
-        # A chapter's verse numbers are not always 1..n. Where the Vulgate
-        # splits a Hebrew psalm the Douay-Rheims prints the second part with
-        # the numbering it had before the split: Psalm 115 runs 10-19 and
-        # Psalm 147 runs 12-20. Both bounds are therefore read from the text.
-        self.chapters: dict[tuple[str, int], tuple[int, int]] = {}
-        for token, chapter, verse in self.verses:
-            here = (token, chapter)
-            low, high = self.chapters.get(here, (verse, verse))
-            self.chapters[here] = (min(low, verse), max(high, verse))
-        self._load_open_bounds()
-
-    def _load_open_bounds(self) -> None:
-        """Derive cited open bounds from this edition's native membership."""
-        # Open endpoints follow recorded cited loci, not a guessed offset.
-        # In particular a renumbered tail can carry the printed final verse
-        # under a later cited number. Fully remapped chapters (such as the
-        # Clementine's Psalms 115 and 147) also have a recorded first number.
-        self.open_bounds: dict[tuple[str, int], tuple[int, int]] = {}
-        recorded: dict[tuple[str, int], dict[int, tuple | None]] = {}
-        for (token, chapter, verse), target in self.aliases.items():
-            recorded.setdefault((token, chapter), {})[verse] = target
-        for (token, chapter), aliases in recorded.items():
-            bounds = self.chapters.get((token, chapter))
-            if bounds is None:
-                continue  # The missing-chapter branch in span owns this case.
-            base, bound = bounds
-            printed = {
-                (token, chapter, verse)
-                for verse in range(base, bound + 1)
-                if (token, chapter, verse) in self.verses
-            }
-            if printed <= set(aliases.values()):
-                # Every carrier is explicitly addressed; retaining the printed
-                # prefix here would duplicate it or address a nonexistent gap.
-                self.open_bounds[(token, chapter)] = (min(aliases), max(aliases))
-            elif any(target is not None and target[:2] != (token, chapter)
-                     for target in aliases.values()):
-                # A partial chapter carried across chapters or books needs its
-                # full recorded domain. Full native coverage above can use its
-                # recorded cited bounds, including a preceding-chapter verse.
-                continue
-            else:
-                first = [verse for verse, target in aliases.items()
-                         if target == (token, chapter, base)]
-                last = [verse for verse, target in aliases.items()
-                        if target == (token, chapter, bound)]
-                self.open_bounds[(token, chapter)] = (
-                    min([base, *first]), max([bound, *last])
-                )
-
-    def token(self, book: str) -> str | None:
-        return self.books.get(normalize(book))
-
-    def carrier(self, token: str, chapter: int, verse: int) -> tuple | None:
-        """The locus of this edition that carries a cited one, or None.
-
-        The alias table is read first and its answer is final, including a
-        recorded refusal. An edition can print real text at numbers a citation
-        does not mean, and preferring what it prints is exactly how such a
-        locus resolves to the wrong words with nothing to report.
-
-        Two cited loci can share one carrier, because that is what a merged
-        verse is; a range naming both must still read the words once.
-        """
-        here = (token, chapter, verse)
-        if here in self.aliases:
-            merged = self.aliases[here]
-            return None if merged is None or merged not in self.verses else merged
-        return here if here in self.verses else None
-
-    def verse(self, token: str, chapter: int, verse: int) -> str | None:
-        """The text this edition carries at a cited locus, or None."""
-        found = self.carrier(token, chapter, verse)
-        return None if found is None else self.verses[found]
-
-    def refusal(self, token: str, chapter: int, verse: int, bounds: tuple) -> str:
-        """Why a cited locus has no text here, in terms a maintainer can act on.
-
-        The three cases want three different repairs and must not read alike. A
-        locus the edition's own alias table refuses is settled data. A locus
-        outside the verses the chapter prints is a numbering mismatch, and the
-        repair is a row in this edition's verse aliases or a correction in the
-        calendar. A gap inside the printed range is a hole in the artifact.
-        """
-        base, bound = bounds
-        if (token, chapter, verse) in self.aliases:
-            note = self.alias_notes.get(f"{token}.{chapter}.{verse}")
-            detail = f" ({note})" if note else ""
-            return f"{token} {chapter}:{verse}{detail} {NOT_CARRIED}"
-        if verse > bound:
-            return (
-                f"{token} {chapter}:{verse} is past {token} {chapter}:{bound}, the last "
-                f"verse this edition prints in that chapter; record where this edition "
-                f"carries it in its verse aliases, or correct the citation"
-            )
-        if verse < base:
-            return (
-                f"{token} {chapter}:{verse} is before {token} {chapter}:{base}, the first "
-                f"verse this edition prints in that chapter; record where this edition "
-                f"carries it in its verse aliases, or correct the citation"
-            )
-        return f"{token} {chapter}:{verse} is missing"
-
-    def span(self, token: str, span: dict) -> tuple[list[str], str, tuple, tuple]:
-        """The verses one range names, with the locus each end resolved to.
-
-        A converted range arrives in this edition's addressing. Explicit
-        endpoints stand as cited; open endpoints also consult the edition's
-        recorded aliases for the printed chapter's first and last carriers.
-
-        Every verse the range names is looked up, including one past the last
-        the chapter prints. Clamping the range to what the edition happens to
-        carry is how a citation of a verse this edition does not have comes to
-        return the neighbouring verses and read as a success; it also puts the
-        clamp ahead of the alias table, so an edition that recorded where it
-        carries the merged verse could never be consulted.
-        """
-        begin = span.get("begin") or {}
-        end = span.get("end") or begin
-        first = begin.get("chapter")
-        last = end.get("chapter", first)
-        if first is None:
-            return [], "range has no chapter", (), ()
-        texts: list[str] = []
-        opened: tuple = ()
-        closed: tuple = ()
-        carried: tuple = ()
-        for chapter in range(int(first), int(last) + 1):
-            bounds = self.chapters.get((token, chapter))
-            if bounds is None:
-                # The edition prints no chapter of that number, and that is not
-                # the end of the question: its alias table may record where it
-                # carries those verses, which is precisely what a book divided
-                # differently needs. Refusing here consulted `self.chapters`
-                # ahead of the aliases — the same ordering defect as the verse
-                # clamp, one level up, and it kept tracked concordance rows for
-                # Esther and Daniel permanently out of reach.
-                recorded = sorted(
-                    verse
-                    for (held, held_chapter, verse) in self.aliases
-                    if held == token and held_chapter == chapter
-                )
-                if not recorded:
-                    return [], f"{token} has no chapter {chapter}", (), ()
-                bounds = (recorded[0], recorded[-1])
-            base, bound = self.open_bounds.get((token, chapter), bounds)
-            low = begin.get("verse") if chapter == int(first) else None
-            high = end.get("verse") if chapter == int(last) else None
-            low = base if low is None else int(low)
-            high = bound if high is None else int(high)
-            for verse in range(low, high + 1):
-                # A verse part ("6a") cannot be cut without editorial judgment,
-                # so the whole verse stands and the citation keeps the part.
-                found = self.carrier(token, chapter, verse)
-                if found is None:
-                    return [], self.refusal(token, chapter, verse, bounds), (), ()
-                closed = (chapter, verse)
-                opened = opened or closed
-                # A range naming both a merged verse and the verse it was
-                # merged into reaches the same words twice; print them once.
-                if found == carried:
-                    continue
-                carried = found
-                texts.append(self.verses[found])
-        return texts, "", opened, closed
-
-    def passage(self, token: str, ranges: list) -> tuple[str, str]:
-        parts: list[str] = []
-        previous: tuple = ()
-        for span in ranges:
-            texts, problem, opened, closed = self.span(token, span)
-            if problem:
-                return "", problem
-            if parts and opened:
-                abuts = previous == (opened[0], opened[1] - 1)
-                parts.append(" " if abuts else ELISION)
-            parts.append(" ".join(texts))
-            previous = closed or previous
-        text = SPACING.sub(" ", "".join(parts)).strip()
-        return text, "" if text else "no text found"
-
-
-# Where a calendar's citations do not address the text an edition in Vulgate
-# numbering prints. The postconciliar Lectionary cites the Nova Vulgata, which
-# divides Joel, Malachi and parts of Isaiah differently, and the reference that
-# results is not merely wrong but resolvable: `Joel 3:1-5` returns the valley of
-# Josaphat instead of the outpoured spirit, and nothing counts it as a failure.
-#
-# The correspondence is recorded per citation in the calendar rather than
-# derived, because this library tracks no witness of the Nova Vulgata. There is
-# nothing here to compile a concordance from, and a remembered one would
-# mis-resolve exactly as quietly as the mismatch it replaced.
-# Every other numbering an indexed edition can be in, taken from the editions
-# themselves so that registering one in a numbering nothing has ruled on cannot
-# pass unnoticed: a divergent locus must say where each of these stands.
-def other_numberings() -> tuple[str, ...]:
-    return tuple(
-        sorted(
-            {str(edition["numbering"]) for edition in EDITIONS.values()} - {RESOLVED_IN}
-        )
-    )
-
-
-class Divergences(_SharedDivergences):
-    """Compatibility entry point using this tool's registered numbering set."""
-
-    def __init__(
-        self,
-        calendar: str,
-        document: dict,
-        entries: list[dict],
-        canon,
-        numbering: str = RESOLVED_IN,
-    ) -> None:
-        super().__init__(
-            calendar, document, entries, canon, numbering,
-            numberings=other_numberings(),
-        )
+# Shared read-only Bible text resolver and manifest helpers live in
+# scripts/_bible_reader.py and are imported above.
 
 
 def citation(
@@ -972,34 +676,6 @@ def summary(name: str, built: dict, path: Path, arguments: argparse.Namespace) -
         "unresolved": built["unresolved"] if arguments.verbose else len(built["unresolved"]),
         "status": "ok",
     }
-
-
-def manifest_document(servable) -> dict:
-    """The public offer, using an explicit inventory of available editions.
-
-    A reader may supply tracked inventory membership even when a sparse
-    checkout has not materialized an offered chapter yet.
-    """
-    offered = [
-        {
-            "id": name,
-            "label": str(edition.get("label") or edition["edition"]),
-            "edition": str(edition["edition"]),
-            "source_id": str(edition["source_id"]),
-            "print": browser_print_offer(name),
-            "language": str(edition["language"]),
-            "numbering": str(edition["numbering"]),
-            "psalter": str(edition["psalter"]),
-            "psalm_titles": str(edition["psalm_titles"]),
-            "loci": addressing(str(edition["numbering"]), str(edition["psalm_titles"])),
-            "rights": str(edition["rights"]),
-        }
-        for name, edition in sorted(
-            EDITIONS.items(), key=lambda row: (row[1].get("rank", 999), row[0])
-        )
-        if edition["publishable"] and name in servable
-    ]
-    return {"bibles": offered}
 
 
 def run_manifest(arguments: argparse.Namespace) -> dict:

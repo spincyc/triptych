@@ -366,15 +366,17 @@ class WorkerSelectionTests(unittest.TestCase):
         convert.assert_not_called()
 
     def test_indexed_worker_captures_canonical_reads_and_checks_converter_pin(self):
+        import _reader_publication_products as pub_reader
         dependencies = {"src/gpt/articles/faith/example/main.tex": "source-hash"}
         index = mock.Mock()
         index.verified_reads.return_value = nullcontext(dependencies)
         with (mock.patch("_corpus_index.CorpusIndex", return_value=index) as factory,
-              mock.patch.object(DRIVER.sys, "stdin", io.StringIO(json.dumps(self.row))),
-              mock.patch.object(DRIVER.sys, "stdout", io.StringIO()) as output,
+              mock.patch.object(pub_reader, "_tool", return_value=DRIVER),
+              mock.patch.object(pub_reader.sys, "stdin", io.StringIO(json.dumps(self.row))),
+              mock.patch.object(pub_reader.sys, "stdout", io.StringIO()) as output,
               mock.patch.object(DRIVER, "pinned_pandoc") as pinned,
               mock.patch.object(DRIVER, "selected_product_record", return_value={"id": self.identity}) as selected):
-            self.assertEqual(DRIVER.product_row_json(self.identity, indexed=True), 0)
+            self.assertEqual(pub_reader._indexed_product_row_json(self.identity), 0)
         factory.assert_called_once_with(ROOT)
         pinned.assert_called_once()
         selected.assert_called_once_with(self.identity, self.row)

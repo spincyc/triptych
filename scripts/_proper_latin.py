@@ -30,7 +30,7 @@ import tomllib
 
 import _calendars
 import _qualified_public_domain
-from _corpus_index import session_derived
+from _session_derivations import session_derived
 from _tooling import code_fingerprint, prune_cache, tree_fingerprint
 
 

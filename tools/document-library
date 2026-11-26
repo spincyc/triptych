@@ -1047,11 +1047,11 @@ def _serialise(payload: dict) -> str:
 
 
 def run_structure(arguments: argparse.Namespace) -> dict:
-    rows, by_key = selected(arguments)
-    built = catalogue(rows, by_key)
     out = (committed_data_root(ROOT) if arguments.check and arguments.out is None else working_data_root(ROOT) if arguments.out is None else Path(arguments.out))
     if not arguments.check:
         out = assert_working_output(ROOT, out)
+    rows, by_key = selected(arguments)
+    built = catalogue(rows, by_key)
     target = out / STRUCTURE_RELATIVE
     serialised = _serialise(built)
     if arguments.check:

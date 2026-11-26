@@ -37,23 +37,26 @@ function inside(base, file) {
 }
 
 let offered = null;
-let responseBuffer = Buffer.alloc(0);
+const headerBuf = Buffer.allocUnsafe(5);
+function readExact(fd, target) {
+  let offset = 0;
+  while (offset < target.length) {
+    const count = fs.readSync(fd, target, offset, target.length - offset, null);
+    if (!count) throw new Error('the indexed-reader owner closed its response pipe');
+    offset += count;
+  }
+}
 function indexedText(relative) {
   process.stdout.write(JSON.stringify({reader_data: true, path: relative}) + '\n');
-  for (;;) {
-    const newline = responseBuffer.indexOf(10);
-    if (newline !== -1) {
-      const line = responseBuffer.subarray(0, newline).toString('utf8');
-      responseBuffer = responseBuffer.subarray(newline + 1);
-      const response = JSON.parse(line);
-      if (!response.ok) throw new Error(response.error || 'indexed data was refused');
-      return response.text;
-    }
-    const chunk = Buffer.allocUnsafe(65536);
-    const count = fs.readSync(DATA_FD, chunk, 0, chunk.length, null);
-    if (!count) throw new Error('the indexed-reader owner closed its response pipe');
-    responseBuffer = Buffer.concat([responseBuffer, chunk.subarray(0, count)]);
-  }
+  readExact(DATA_FD, headerBuf);
+  const status = headerBuf[0];
+  const length = headerBuf.readUInt32BE(1);
+  if (status === 0) return null;
+  const payload = length ? Buffer.allocUnsafe(length) : Buffer.alloc(0);
+  if (length) readExact(DATA_FD, payload);
+  if (status === 2) throw new Error(payload.toString('utf8') || 'indexed data was refused');
+  if (status !== 1) throw new Error(`unexpected indexed-reader response status: ${status}`);
+  return payload.toString('utf8');
 }
 /* Only an edition the published manifest offers is served, as the deploy
  * copies only those (guidance/web-data.md, "Assembling the site"). */

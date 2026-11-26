@@ -3876,6 +3876,7 @@ SHARED_CACHES = frozenset((
 # What this process shares with the conversions it forks: the work tree's
 # revision state (`repository`), and whether it ever converted a leaf.
 _SHARED: dict = {}
+_SHARE_WORKERS: int | None = None
 
 
 def share_parent_state() -> None:
@@ -3901,6 +3902,7 @@ def share_parent_state() -> None:
     from document_projections import scriptural_date_location
 
     corpus = ROOT / "src/sources/chronology"
+    io_workers = _SHARE_WORKERS
 
     def repository():
         state = _edition_revision.Repository(ROOT)
@@ -3910,8 +3912,8 @@ def share_parent_state() -> None:
         _SHARED["repository"] = state
 
     for step in (
-        lambda: scriptural_date_location.prepare(ROOT),
-        lambda: _document_schema._source_index(ROOT),
+        lambda: scriptural_date_location.prepare(ROOT, workers=io_workers),
+        lambda: _document_schema._warm_source_index(ROOT),
         lambda: _proper_chronology_page._source_records(str(ROOT)),
         lambda: _proper_chronology_page._bible_titles(str(ROOT)),
         _proper_chronology_page._book_short_names,
@@ -3970,6 +3972,11 @@ def _convert_in_child(row: dict, base: Path):
         os.dup2(log, 2)
         os.close(log)
         try:
+            # The parent verified the shared chronology/source input state once
+            # before forking and verifies it again after all children exit, so
+            # each of the ~165 liturgy forks avoids re-statting ~70,000 files.
+            from document_projections import scriptural_date_location
+            scriptural_date_location.freeze_input_state(ROOT)
             record = product_record(row)
         except ConversionError as error:
             sys.stderr.write(str(error))
@@ -4014,15 +4021,20 @@ def convert_rows(rows: list[dict], *, jobs: int | None = None) -> list[dict]:
     the whole set, with every failing output named. A single output has
     nothing to share, so it forks from the unwarmed parent.
     """
+    global _SHARE_WORKERS
+    workers = max(1, jobs or getattr(os, "process_cpu_count", os.cpu_count)() or 1)
     if len(rows) > 1:
-        share_parent_state()
+        _SHARE_WORKERS = workers
+        try:
+            share_parent_state()
+        finally:
+            _SHARE_WORKERS = None
     held = parent_leaf_state()
     if held:
         raise ConversionError("refusing to fork conversions from a parent holding leaf state: "
                               + ", ".join(held))
     if threading.active_count() != 1:
         raise ConversionError("conversions fork only from a single-threaded parent")
-    workers = max(1, jobs or getattr(os, "process_cpu_count", os.cpu_count)() or 1)
     outcomes: list[tuple[dict | None, str] | None] = [None] * len(rows)
     running: dict[int, int] = {}
     with tempfile.TemporaryDirectory(prefix="web-editions-") as scratch:
@@ -4034,11 +4046,26 @@ def convert_rows(rows: list[dict], *, jobs: int | None = None) -> list[dict]:
 
         sys.stdout.flush()
         sys.stderr.flush()
+        # Schedule the largest source trees first so multi-megabyte documents
+        # (e.g. angelology) overlap with shorter conversions instead of forming
+        # a single-worker straggler tail. Outcomes stay in original row order.
+        def _row_weight(index: int) -> int:
+            entrypoint = rows[index].get("entrypoint")
+            if not entrypoint:
+                return 0
+            try:
+                entry = ROOT / entrypoint
+                return sum(p.stat().st_size for p in entry.parent.glob("*.tex") if p.is_file())
+            except OSError:
+                return 0
+
+        schedule = sorted(range(len(rows)), key=_row_weight, reverse=True) if len(rows) > 1 else [0]
         # Frozen objects are never traversed by a child's collector, so the
         # shared state stays shared instead of being copied into every child.
         gc.freeze()
         try:
-            for index, row in enumerate(rows):
+            for index in schedule:
+                row = rows[index]
                 while len(running) >= workers:
                     reap()
                 pid = os.fork()
@@ -4053,6 +4080,10 @@ def convert_rows(rows: list[dict], *, jobs: int | None = None) -> list[dict]:
                 os.kill(pid, signal.SIGKILL)
             for pid in running:
                 os.waitpid(pid, 0)
+    if len(rows) > 1:
+        from document_projections import scriptural_date_location
+        if not scriptural_date_location.verify_input_state(ROOT, workers=workers):
+            raise ConversionError("shared chronology/source inputs changed during batch conversion")
     failures, records = [], []
     for row, (record, error) in zip(rows, outcomes):
         if record is None:
@@ -4164,7 +4195,7 @@ def selected_product_record(identity: str, row: dict) -> dict:
     return product_record(current)
 
 
-def product_row_json(identity: str, *, indexed: bool = False) -> int:
+def product_row_json(identity: str) -> int:
     """Recheck the parent's selected row without rediscovering every reader.
 
     The fresh interpreter still owns all conversion state and fidelity audits.
@@ -4172,15 +4203,7 @@ def product_row_json(identity: str, *, indexed: bool = False) -> int:
     """
     try:
         row = json.load(sys.stdin)
-        if indexed:
-            from _corpus_index import CorpusIndex
-            index = CorpusIndex(ROOT)
-            with index.verified_reads() as dependencies:
-                pinned_pandoc()
-                record = selected_product_record(identity, row)
-            record = {"record": record, "dependencies": dependencies}
-        else:
-            record = selected_product_record(identity, row)
+        record = selected_product_record(identity, row)
     except (ConversionError, OSError, ValueError) as error:
         print(f"web-edition: {error}", file=sys.stderr)
         return 1
@@ -4242,8 +4265,6 @@ def main() -> int:
         return product_json(sys.argv[2])
     if sys.argv[1:2] == ["--product-row-json"] and len(sys.argv) == 3:
         return product_row_json(sys.argv[2])
-    if sys.argv[1:2] == ["--indexed-product-row-json"] and len(sys.argv) == 3:
-        return product_row_json(sys.argv[2], indexed=True)
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--provider", required=True)
     parser.add_argument("documents", nargs="*")

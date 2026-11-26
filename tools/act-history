@@ -3895,14 +3895,17 @@ def build_structure_projection(sources: tuple[Path, ...], out: Path) -> dict:
             target = root / declaration["projection_path"]
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_bytes(eucharistic_history.json_bytes(payload))
+        adapter_cache: dict[str, dict] = {}
         for declaration in catalogue["comparisons"]:
             comparison = eucharistic_history.compare(
                 routing, ROOT, declaration["id"], ventilator=ventilate, act_loader=load,
-                catalogue_context=catalogue,
+                catalogue_context=catalogue, verify_context=False, adapter_cache=adapter_cache,
             )
             eucharistic_history.write_comparison(
                 comparison, root / declaration["projection_path"],
             )
+        if catalogue["comparisons"]:
+            eucharistic_history.verify_comparison_batch(ROOT, catalogue, adapter_cache)
     with _open_directory_path(root, create=False) as (root_fd, safe_root):
         files = structure_files(root_fd, safe_root)
     return {
@@ -4168,7 +4171,6 @@ OCTILINEARISE = "octi < {path} | transitmap > {stem}.svg"
 # record's own, and the origin belongs to the tool that publishes to it, which
 # the release-binding checker loads for the same reason.
 RELEASE_RECORD = ROOT / "release" / "public-alpha.json"
-PUBLIC_ALPHA = ROOT / "tools" / "public-alpha"
 WEB_BROWSER = ROOT / "src" / "web" / "browser"
 TWIN_PAGE = WEB_BROWSER / "history" / "index.html"
 
@@ -4318,24 +4320,12 @@ def release_identity() -> str:
 
 
 def site() -> tuple[str, str]:
-    """The published origin and the site's name, asked of the tool that owns them.
-
-    tools/public-alpha declares the one origin the site is reached at, and
-    the release-binding checker already loads it rather than copying it. A second
-    copy of an origin is a second chance to print a URL nobody can follow.
-    """
-    loader = importlib.machinery.SourceFileLoader("triptych_public_alpha", str(PUBLIC_ALPHA))
-    spec = importlib.util.spec_from_loader(loader.name, loader)
-    if spec is None or spec.loader is None:
-        return "", ""
-    module = importlib.util.module_from_spec(spec)
-    try:
-        spec.loader.exec_module(module)
-        origin = module.SITE_ORIGIN
-        name = module.SITE_NAME
-    except Exception:  # the renderer owns the origin; an unreadable one is no origin
-        return "", ""
-    return (origin if isinstance(origin, str) else ""), (name if isinstance(name, str) else "")
+    """The published origin and the site's name, from their single owner."""
+    from _site_identity import SITE_NAME, SITE_ORIGIN
+    return (
+        SITE_ORIGIN if isinstance(SITE_ORIGIN, str) else "",
+        SITE_NAME if isinstance(SITE_NAME, str) else "",
+    )
 
 
 def twin_url(origin: str, slice_id: str) -> str:

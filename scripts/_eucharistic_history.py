@@ -980,13 +980,32 @@ def _verify_comparison_inputs(root: Path, inputs: dict, stage_inputs) -> None:
             raise HistoryError(f"stage history: {error}") from error
 
 
+def verify_comparison_batch(root: Path, catalogue_context: dict,
+                            adapters: dict[str, dict]) -> None:
+    """Verify all shared catalogue, stage, and adapter inputs once after a batch."""
+    root = root.resolve()
+    inputs = {row["path"]: row for row in catalogue_context["inputs"]}
+    for payload in adapters.values():
+        verify_adapter(payload, root)
+        for row in payload["inputs"]:
+            name = row["path"]
+            if name in inputs and json_bytes(inputs[name]) != json_bytes(row):
+                raise HistoryError(f"comparison inputs disagree for {name}")
+            inputs[name] = row
+    _verify_comparison_inputs(root, inputs, catalogue_context["stage_history"]["inputs"])
+
+
 def compare(source: Path, root: Path, identifier: str, *, ventilator,
             adapter_loader=None, supported_adapters=None, act_loader=None,
-            catalogue_context=None) -> dict:
+            catalogue_context=None, verify_context: bool = True,
+            adapter_cache: dict | None = None) -> dict:
     """Compare witnesses, optionally reusing this projection's checked catalogue.
 
     A supplied context is bounded to one invocation and rechecked before and
     after adapter loading; it grants no persistent validation exemption.
+    When ``verify_context=False`` is passed by a batch structure builder, the
+    caller owns verifying the shared context and cached adapters once across
+    the batch via ``verify_comparison_batch``.
     """
     root = root.resolve()
     data, inputs = route(source, root)
@@ -1039,7 +1058,7 @@ def compare(source: Path, root: Path, identifier: str, *, ventilator,
         related = [row for row in context["relationships"] if identifier in row["comparison_ids"]]
         collect(context["inputs"], inputs, "path")
         stage_inputs = context["stage_history"]["inputs"]
-        if catalogue_context is not None:
+        if catalogue_context is not None and verify_context:
             _verify_comparison_inputs(root, inputs, stage_inputs)
 
     for side in ("left", "right"):
@@ -1056,8 +1075,13 @@ def compare(source: Path, root: Path, identifier: str, *, ventilator,
         if adapter not in supported_adapters:
             raise HistoryError(f"unknown text adapter: {adapter!r}")
         if adapter not in loaded:
-            payload = adapter_loader(adapter, root)
-            verify_adapter(payload, root)
+            if adapter_cache is not None and adapter in adapter_cache:
+                payload = adapter_cache[adapter]
+            else:
+                payload = adapter_loader(adapter, root)
+                verify_adapter(payload, root)
+                if adapter_cache is not None:
+                    adapter_cache[adapter] = payload
             loaded[adapter] = payload
         payload = loaded[adapter]
         units = {unit["unit_id"]: unit for unit in payload["units"]}
@@ -1096,9 +1120,10 @@ def compare(source: Path, root: Path, identifier: str, *, ventilator,
     if unresolved:
         raise HistoryError("comparison source_refs are not in its checked source owners: " + ", ".join(unresolved))
     # Revalidate after both sides are loaded; no result may mix changing inputs.
-    for payload in loaded.values():
-        verify_adapter(payload, root)
-    _verify_comparison_inputs(root, inputs, stage_inputs)
+    if verify_context:
+        for payload in loaded.values():
+            verify_adapter(payload, root)
+        _verify_comparison_inputs(root, inputs, stage_inputs)
     for relative in ("scripts/_eucharistic_history.py", "scripts/_eucharistic_stages.py", "tools/act-history"):
         tool_inputs[relative] = fingerprint(TOOL_ROOT, TOOL_ROOT / relative)
     unified = "".join(difflib.unified_diff(

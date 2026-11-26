@@ -150,43 +150,69 @@ def _regular_bytecode(name):
             and PurePosixPath(name).suffix in {".pyc", ".pyo"})
 
 
+def _io_workers() -> int:
+    counter = getattr(os, "process_cpu_count", None) or os.cpu_count
+    count = (counter() if callable(counter) else None) or 4
+    return max(1, min(8, count))
+
+
 def _paths(root: Path, trees, files, excludes=()) -> set[str]:
     """Physical membership includes ignored/new canonical inputs, without Git HEAD."""
-    result = set()
+    workers = _io_workers()
 
-    def walk(directory: int, prefix: str):
+    def walk(directory: int, prefix: str, out: set[str], allow_parallel: bool) -> None:
         before = os.fstat(directory)
-        for entry in sorted(os.scandir(directory), key=lambda value: value.name):
-            # scandir supplies a single directory entry; its only possible
-            # forbidden character under the product path grammar is backslash.
-            if "\\" in entry.name:
-                raise ProductError(f"unsafe browser product path: {prefix + entry.name!r}")
-            name = prefix + entry.name
-            if _excluded_namespace(name) or any(name == path or name.startswith(path + "/") for path in excludes):
-                continue
-            original = entry.stat(follow_symlinks=False)
-            if stat.S_ISDIR(original.st_mode):
-                child = os.open(entry.name, os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW, dir_fd=directory)
-                try:
-                    if not safe_files._same_inode(original, os.fstat(child)):
-                        raise ProductError(f"canonical directory changed: {name}")
-                    walk(child, name + "/")
-                    safe_files._require_entry(directory, entry.name, child)
-                finally:
-                    os.close(child)
-            elif stat.S_ISREG(original.st_mode):
-                if name not in EXCLUDED and not _regular_bytecode(name):
-                    result.add(name)
-            else:
-                raise ProductError(f"canonical input must be a regular file or directory: {name}")
+        subdirs = []
+        with os.scandir(directory) as listing:
+            for entry in listing:
+                # scandir supplies a single directory entry; its only possible
+                # forbidden character under the product path grammar is backslash.
+                if "\\" in entry.name:
+                    raise ProductError(f"unsafe browser product path: {prefix + entry.name!r}")
+                name = prefix + entry.name
+                if _excluded_namespace(name) or (excludes and any(name == path or name.startswith(path + "/") for path in excludes)):
+                    continue
+                original = entry.stat(follow_symlinks=False)
+                if stat.S_ISDIR(original.st_mode):
+                    subdirs.append((entry.name, original, name))
+                elif stat.S_ISREG(original.st_mode):
+                    if name not in EXCLUDED and not _regular_bytecode(name):
+                        out.add(name)
+                else:
+                    raise ProductError(f"canonical input must be a regular file or directory: {name}")
+
+        def walk_child(entry_name: str, original, name: str, target: set[str], child_parallel: bool) -> None:
+            child = os.open(entry_name, os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW, dir_fd=directory)
+            try:
+                if not safe_files._same_inode(original, os.fstat(child)):
+                    raise ProductError(f"canonical directory changed: {name}")
+                walk(child, name + "/", target, child_parallel)
+                safe_files._require_entry(directory, entry_name, child)
+            finally:
+                os.close(child)
+
+        if allow_parallel and workers > 1 and len(subdirs) >= 16:
+            def run_sub(item):
+                local: set[str] = set()
+                walk_child(item[0], item[1], item[2], local, False)
+                return local
+
+            with ThreadPoolExecutor(max_workers=min(workers, len(subdirs))) as pool:
+                for local in pool.map(run_sub, subdirs):
+                    out.update(local)
+        else:
+            for entry_name, original, name in subdirs:
+                walk_child(entry_name, original, name, out, allow_parallel)
+
         if safe_files._file_stamp(before) != safe_files._file_stamp(os.fstat(directory)):
             raise ProductError(f"canonical membership changed: {prefix}")
 
+    result: set[str] = set()
     try:
         for tree in trees:
             try:
                 with safe_files._open_directory(root, tree) as directory:
-                    walk(directory, tree + "/")
+                    walk(directory, tree + "/", result, True)
             except FileNotFoundError:
                 continue
         for name in files:
@@ -301,25 +327,47 @@ def _visit_files(root: Path, names, visit_file) -> None:
                 raise ProductError(f"input path descends through another declared file: {name}")
         node[leaf] = None
 
-    def visit(descriptor, children, prefix):
+    workers = _io_workers() if getattr(visit_file, "_parallel", False) else 1
+
+    def visit_dir(descriptor, leaf, descendants, name, allow_parallel):
+        original = os.stat(leaf, dir_fd=descriptor, follow_symlinks=False)
+        child = os.open(leaf, os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW, dir_fd=descriptor)
+        try:
+            if not safe_files._same_inode(original, os.fstat(child)):
+                raise ProductError(f"canonical directory changed: {name}")
+            visit(child, descendants, name + "/", allow_parallel)
+            safe_files._require_entry(descriptor, leaf, child)
+        finally:
+            os.close(child)
+
+    def _subtree_size(node) -> int:
+        total = 0
+        for child in node.values():
+            total += 1 if child is None else _subtree_size(child)
+        return total
+
+    def visit(descriptor, children, prefix, allow_parallel):
+        subdirs = []
         for leaf, descendants in children.items():
             name = prefix + leaf
             if descendants is not None:
-                original = os.stat(leaf, dir_fd=descriptor, follow_symlinks=False)
-                child = os.open(leaf, os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW, dir_fd=descriptor)
-                try:
-                    if not safe_files._same_inode(original, os.fstat(child)):
-                        raise ProductError(f"canonical directory changed: {name}")
-                    visit(child, descendants, name + "/")
-                    safe_files._require_entry(descriptor, leaf, child)
-                finally:
-                    os.close(child)
-                continue
-            visit_file(descriptor, leaf, name)
+                subdirs.append((leaf, descendants, name))
+            else:
+                visit_file(descriptor, leaf, name)
+        if allow_parallel and workers > 1 and len(subdirs) >= 16:
+            ordered = sorted(subdirs, key=lambda item: _subtree_size(item[1]), reverse=True)
+            with ThreadPoolExecutor(max_workers=min(workers, len(ordered))) as pool:
+                futures = [pool.submit(visit_dir, descriptor, leaf, descendants, name, False)
+                           for leaf, descendants, name in ordered]
+                for future in futures:
+                    future.result()
+        else:
+            for leaf, descendants, name in subdirs:
+                visit_dir(descriptor, leaf, descendants, name, allow_parallel)
 
     try:
         with safe_files._open_directory(Path("/"), root.as_posix().lstrip("/")) as descriptor:
-            visit(descriptor, tree, "")
+            visit(descriptor, tree, "", workers > 1)
     except (OSError, safe_files.SafeFileError) as error:
         raise ProductError(f"cannot read product input: {error}") from error
 
@@ -339,6 +387,7 @@ def _input_hashes(root: Path, names: set[str]) -> dict:
         else:
             digest, size = safe_files._file_hash_at(descriptor, leaf, name)
         values[name] = {"path": name, "sha256": digest, "bytes": size}
+    hash_file._parallel = len(names) >= 256
     _visit_files(root, names, hash_file)
     return values
 
@@ -615,37 +664,60 @@ def cache_directory(root: Path, cache_root=None) -> Path:
     return _absolute(path if path.is_absolute() else root / path)
 
 
-def _inventory(target: Path) -> dict:
+def _inventory(target: Path, *, allow_parallel: bool = True) -> dict:
     """Hash exact JSON membership using descriptor-relative, no-follow opens."""
     target = _safe_directory(target)
-    files = {}
-    def walk(directory, prefix):
+    workers = _io_workers() if allow_parallel else 1
+
+    def walk(directory, prefix, out, can_parallel):
         before = os.fstat(directory)
-        for entry in sorted(os.scandir(directory), key=lambda value: value.name):
+        with os.scandir(directory) as listing:
+            entries = sorted(listing, key=lambda value: value.name)
+        subdirs = []
+        for entry in entries:
             name = _relative(prefix + entry.name)
             original = entry.stat(follow_symlinks=False)
             if stat.S_ISDIR(original.st_mode):
-                child = os.open(entry.name, os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW, dir_fd=directory)
-                try:
-                    if not safe_files._same_inode(original, os.fstat(child)):
-                        raise ProductError(f"product directory changed: {name}")
-                    count_before = len(files)
-                    walk(child, name + "/")
-                    if len(files) == count_before:
-                        raise ProductError(f"unexpected empty browser product directory: {name}")
-                    safe_files._require_entry(directory, entry.name, child)
-                finally:
-                    os.close(child)
+                subdirs.append((entry.name, original, name))
             elif stat.S_ISREG(original.st_mode) and original.st_nlink == 1 and name.endswith(".json"):
                 digest, size = safe_files._file_hash_at(directory, entry.name, name)
-                files[name] = {"sha256": digest, "bytes": size}
+                out[name] = {"sha256": digest, "bytes": size}
             else:
                 raise ProductError(f"unexpected or unsafe product output: {name}")
+
+        def walk_child(entry_name, original, name, dest, child_parallel):
+            child = os.open(entry_name, os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW, dir_fd=directory)
+            try:
+                if not safe_files._same_inode(original, os.fstat(child)):
+                    raise ProductError(f"product directory changed: {name}")
+                count_before = len(dest)
+                walk(child, name + "/", dest, child_parallel)
+                if len(dest) == count_before:
+                    raise ProductError(f"unexpected empty browser product directory: {name}")
+                safe_files._require_entry(directory, entry_name, child)
+            finally:
+                os.close(child)
+
+        if can_parallel and workers > 1 and len(subdirs) >= 8:
+            def run_sub(item):
+                local = {}
+                walk_child(item[0], item[1], item[2], local, False)
+                return local
+
+            with ThreadPoolExecutor(max_workers=min(workers, len(subdirs))) as pool:
+                for local in pool.map(run_sub, subdirs):
+                    out.update(local)
+        else:
+            for entry_name, original, name in subdirs:
+                walk_child(entry_name, original, name, out, can_parallel)
+
         if safe_files._file_stamp(before) != safe_files._file_stamp(os.fstat(directory)):
             raise ProductError("product membership changed during verification")
+
+    files = {}
     try:
         with safe_files._open_directory(Path("/"), target.as_posix().lstrip("/")) as descriptor:
-            walk(descriptor, "")
+            walk(descriptor, "", files, workers > 1)
     except (OSError, safe_files.SafeFileError) as error:
         raise ProductError(f"cannot verify product outputs: {error}") from error
     if not files:
@@ -729,10 +801,11 @@ def _cache_keys(parent: Path) -> set[str]:
     return keys
 
 
-def _cache_entry_data(parent: Path, key: str) -> Path:
+def _cache_entry_data(parent: Path, key: str, *, _keys_checked: bool = False) -> Path:
     _digest(key)
     parent = _absolute(parent)
-    _cache_keys(parent)
+    if not _keys_checked:
+        _cache_keys(parent)
     target = parent / key
     _safe_directory(target)
     with safe_files._open_directory(Path("/"), target.as_posix().lstrip("/")) as descriptor:
@@ -741,8 +814,8 @@ def _cache_entry_data(parent: Path, key: str) -> Path:
     return _safe_directory(target / "data")
 
 
-def _cache_data(root, product, cache_root=None):
-    return _cache_entry_data(cache_directory(root, cache_root), product["key"])
+def _cache_data(root, product, cache_root=None, *, _keys_checked: bool = False):
+    return _cache_entry_data(cache_directory(root, cache_root), product["key"], _keys_checked=_keys_checked)
 
 
 def validate_candidate_entry(cache_root: Path, key: str, hint: dict) -> dict:
@@ -778,12 +851,25 @@ def check(root: Path, *, cache_root=None, product_ids=None) -> dict:
     before = _read(root, MANIFEST_RELATIVE)
     manifest = _validate_manifest(_decode(before))
     _current(root, manifest)
-    for product in _selected(manifest, product_ids):
-        target = _cache_data(root, product, cache_root)
-        _compare(_inventory(target), product["files"])
+    parent = cache_directory(root, cache_root)
+    _cache_keys(parent)
+    targets = list(_selected(manifest, product_ids))
     if product_ids is None:
-        aggregate = {"key": products_identity(manifest), "files": _expected(manifest)}
-        _compare(_inventory(_cache_data(root, aggregate, cache_root)), aggregate["files"])
+        targets.append({"key": products_identity(manifest), "files": _expected(manifest)})
+    workers = _io_workers()
+    if workers > 1 and len(targets) > 1:
+        def check_one(item):
+            target = _cache_entry_data(parent, item["key"], _keys_checked=True)
+            _compare(_inventory(target, allow_parallel=False), item["files"])
+
+        with ThreadPoolExecutor(max_workers=min(workers, len(targets))) as pool:
+            futures = [pool.submit(check_one, item) for item in targets]
+            for future in futures:
+                future.result()
+    else:
+        for item in targets:
+            target = _cache_entry_data(parent, item["key"], _keys_checked=True)
+            _compare(_inventory(target), item["files"])
     _current(root, manifest)
     if before != _read(root, MANIFEST_RELATIVE):
         raise ProductError("browser product descriptor changed during check")
@@ -835,8 +921,10 @@ def verified_products(root: Path, *, cache_root=None, product_ids=None) -> Itera
     with tempfile.TemporaryDirectory(prefix="verified-", dir=_scratch(root)) as temporary:
         snapshot = Path(temporary) / "data"
         snapshot.mkdir()
-        for product in selected:
-            target = _cache_data(root, product, cache_root)
+        parent = cache_directory(root, cache_root)
+        _cache_keys(parent)
+        def copy_and_verify(product):
+            target = _cache_entry_data(parent, product["key"], _keys_checked=True)
             def copy_file(descriptor, leaf, name):
                 body = safe_files._read_file_at(descriptor, leaf, name)
                 identity = product["files"][name]
@@ -846,7 +934,16 @@ def verified_products(root: Path, *, cache_root=None, product_ids=None) -> Itera
                 destination.parent.mkdir(parents=True, exist_ok=True)
                 destination.write_bytes(body)
             _visit_files(target, product["files"], copy_file)
-            _compare(_inventory(target), product["files"])
+            _compare(_inventory(target, allow_parallel=False), product["files"])
+        workers = _io_workers()
+        if workers > 1 and len(selected) > 1:
+            with ThreadPoolExecutor(max_workers=min(workers, len(selected))) as pool:
+                futures = [pool.submit(copy_and_verify, product) for product in selected]
+                for future in futures:
+                    future.result()
+        else:
+            for product in selected:
+                copy_and_verify(product)
         if before != _read(root, MANIFEST_RELATIVE):
             raise ProductError("browser product descriptor changed before private snapshot")
         result = VerifiedProducts(snapshot, {name: snapshot / name for name in expected},

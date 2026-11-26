@@ -126,17 +126,19 @@ def _definition(text: str, name: str) -> str:
     return found[0]
 
 
-def dictionary_artwork(root: Path, provider: str, canonical: str) -> tuple[set[str], set[str]]:
-    """Return one dictionary edition's typeset artwork and the sources choosing it.
+def dictionary_artworks(root: Path, provider: str, leaves) -> dict[str, tuple[set[str], set[str]]]:
+    """Return typeset artwork and selection inputs for multiple dictionary editions.
 
-    The generator selects records and plates. Within a plate, a hero or tall
-    card shows its record's first artwork and every other card its first two
-    distinct artworks; fixed matter contributes its literal graphics.
+    Validates the shared inventory and resolves canonical source-note lookups
+    once across the requested leaves instead of repeating them per edition.
     """
     root = Path(root).resolve()
-    _need(provider == "gpt" and canonical.startswith(DICTIONARY + "/"), "no canonical sanctuary dictionary owner")
-    leaf = canonical.removeprefix(DICTIONARY + "/")
-    _need(leaf in DICTIONARY_LEAVES, "unknown sanctuary dictionary edition: " + canonical)
+    _need(provider == "gpt", "no canonical sanctuary dictionary owner")
+    requested = list(leaves)
+    for leaf in requested:
+        _need(leaf in DICTIONARY_LEAVES, "unknown sanctuary dictionary edition: " + DICTIONARY + "/" + str(leaf))
+    if not requested:
+        return {}
     owner = root / "src" / provider / DICTIONARY
     generator = _module(root / "tools/render-sanctuary-dictionary", "_native_print_dictionary_generator")
     checker = _module(owner / "shared/schema/validate_inventory.py", "_native_print_dictionary_validator")
@@ -150,70 +152,97 @@ def dictionary_artwork(root: Path, provider: str, canonical: str) -> tuple[set[s
     validator.validate(record_paths)
     _need(not validator.problems, "\n".join(str(problem) for problem in validator.problems))
     records = {key: data for key, (_, data) in validator.records.items()}
-    editions = [row for row in selections["editions"] if row["id"] == DICTIONARY_LEAVES[leaf]]
-    _need(len(editions) == 1, "unknown or duplicate canonical dictionary edition")
-    edition = editions[0]
     alpha = generator.canonical_alpha_assets(manifest)
-    chosen = sorted((record for record in records.values()
-                     if generator.alpha_selected(record, edition, alpha)
-                     and record["id"] not in generator.PUBLIC_RENDER_HOLD_IDS),
-                    key=lambda record: (record.get("sort_name", record["preferred_english_name"]).casefold(), record["id"]))
-    _need(bool(chosen), "canonical dictionary edition selects no admitted records")
-    generated = "\n".join(generator.dense_edition_tex(chosen, edition, generator.resolve_artwork_render_owners(records)))
+    render_owners = generator.resolve_artwork_render_owners(records)
     renderer = _clean((owner / "shared/generated-record-renderer.tex").read_text(encoding="utf-8"))
     style = _clean((owner / "shared/dictionary-format.tex").read_text(encoding="utf-8"))
     preamble = _clean((root / "src/common/preamble.tex").read_text(encoding="utf-8"))
-    main = _clean((owner / leaf / "main.tex").read_text(encoding="utf-8"))
-    values, placed = [], []
-    fixed = [_definition(style, "DictionaryTitle"), _definition(style, "DictionaryTerminalMatter"),
-             _definition(preamble, "TriptychRightsNotice")]
-    if leaf == "comprehensive":
-        fixed.append(_definition(main, "RSDOpeningComposition"))
-    starts = list(re.finditer(r"\\(RSD[A-Za-z]+PlateStart)\b", generated))
-    for index, start in enumerate(starts):
-        _, body_start = _arguments(generated, start.end(), 2)
-        body = generated[body_start:starts[index + 1].start() if index + 1 < len(starts) else len(generated)]
-        ends = re.findall(r"\\(RSD[A-Za-z]+PlateEnd)\b", body)
-        _need(len(ends) == 1, "canonical dictionary plate has an ambiguous end")
-        fixed += [_definition(renderer, start[1]).split(r"\begin{tabular}", 1)[0], _definition(renderer, ends[0])]
-        objects = list(_calls(body, "RSDObjectRecord", 3))
-        for ordinal, (record, begin, _) in enumerate(objects):
-            finish = objects[ordinal + 1][1] if ordinal + 1 < len(objects) else len(body)
-            previous = body.rfind(r"\RSDEndObjectRecord", 0, begin)
-            prefix = body[previous + len(r"\RSDEndObjectRecord") if previous >= 0 else 0:begin]
-            single = bool(re.search(r"\\RSDStory(?:Tall)?HeroNext\b", prefix)) or r"\RSDTallCardNext" in prefix
-            artworks = []
-            for args, _, _ in _calls(body[begin:finish], "RSDArtwork", 8):
-                if args[7] == record[0] and args[2] not in artworks:
-                    artworks.append(args[2])
-            values += artworks[:1 if single else 2]
-            placed.append(record[0])
-    _need(len(placed) == len(set(placed)) and set(placed) == {record["id"] for record in chosen},
-          "canonical plates differ from the selected dictionary record universe")
-    prefix = DICTIONARY + "/"
-    for text in fixed:
-        for value in _GRAPHICS.findall(text):
-            _need(value.strip().startswith(prefix), "dictionary artwork outside its owner: " + value)
-            values.append(value.strip()[len(prefix):])
+    fixed_base = [_definition(style, "DictionaryTitle"), _definition(style, "DictionaryTerminalMatter"),
+                  _definition(preamble, "TriptychRightsNotice")]
     expected = {row["path"]: row.get("technical", {}).get("sha256") for row in manifest.get("asset_files", [])}
-    selected = set()
-    for value in values:
-        value = generator.canonical_asset_path(value.strip())
-        path = owner / value
-        _need(path.is_file() and not path.is_symlink() and path.resolve().is_relative_to(owner.resolve())
-              and path.suffix.lower() in {".png", ".jpg", ".jpeg", ".svg"},
-              "required canonical dictionary artwork is missing or unsupported: " + value)
-        _need(not expected.get(value) or hashlib.sha256(path.read_bytes()).hexdigest() == expected[value],
-              "canonical dictionary artwork identity changed: " + value)
-        selected.add(_relative(root, path))
-    inputs = {_relative(root, path) for path in (
+    shared_inputs = {_relative(root, path) for path in (
         *record_paths, schema_path, selections_path, manifest_path, root / "tools/render-sanctuary-dictionary",
         owner / "shared/schema/validate_inventory.py", owner / "shared/dictionary-format.tex",
         owner / "shared/generated-record-renderer.tex", owner / "shared/schema/object-record-api.tex",
-        owner / "shared/publication-shell.tex", root / "src/common/preamble.tex", owner / leaf / "main.tex",
-        owner / leaf / "generation-metadata.tex", owner / leaf / "publication.toml")}
-    inputs.update(_relative(root, path) for path in generator.source_note_inputs(root, chosen))
-    return selected, inputs | {HELPER}
+        owner / "shared/publication-shell.tex", root / "src/common/preamble.tex")}
+    verified_assets: dict[str, str] = {}
+    lookup = generator._source_note_lookup(root)
+    prefix = DICTIONARY + "/"
+    owner_resolved = owner.resolve()
+    out: dict[str, tuple[set[str], set[str]]] = {}
+    for leaf in requested:
+        editions = [row for row in selections["editions"] if row["id"] == DICTIONARY_LEAVES[leaf]]
+        _need(len(editions) == 1, "unknown or duplicate canonical dictionary edition")
+        edition = editions[0]
+        chosen = sorted((record for record in records.values()
+                         if generator.alpha_selected(record, edition, alpha)
+                         and record["id"] not in generator.PUBLIC_RENDER_HOLD_IDS),
+                        key=lambda record: (record.get("sort_name", record["preferred_english_name"]).casefold(), record["id"]))
+        _need(bool(chosen), "canonical dictionary edition selects no admitted records")
+        generated = "\n".join(generator.dense_edition_tex(chosen, edition, render_owners))
+        main = _clean((owner / leaf / "main.tex").read_text(encoding="utf-8"))
+        values, placed = [], []
+        fixed = list(fixed_base)
+        if leaf == "comprehensive":
+            fixed.append(_definition(main, "RSDOpeningComposition"))
+        starts = list(re.finditer(r"\\(RSD[A-Za-z]+PlateStart)\b", generated))
+        for index, start in enumerate(starts):
+            _, body_start = _arguments(generated, start.end(), 2)
+            body = generated[body_start:starts[index + 1].start() if index + 1 < len(starts) else len(generated)]
+            ends = re.findall(r"\\(RSD[A-Za-z]+PlateEnd)\b", body)
+            _need(len(ends) == 1, "canonical dictionary plate has an ambiguous end")
+            fixed += [_definition(renderer, start[1]).split(r"\begin{tabular}", 1)[0], _definition(renderer, ends[0])]
+            objects = list(_calls(body, "RSDObjectRecord", 3))
+            for ordinal, (record, begin, _) in enumerate(objects):
+                finish = objects[ordinal + 1][1] if ordinal + 1 < len(objects) else len(body)
+                previous = body.rfind(r"\RSDEndObjectRecord", 0, begin)
+                prefix_text = body[previous + len(r"\RSDEndObjectRecord") if previous >= 0 else 0:begin]
+                single = bool(re.search(r"\\RSDStory(?:Tall)?HeroNext\b", prefix_text)) or r"\RSDTallCardNext" in prefix_text
+                artworks = []
+                for args, _, _ in _calls(body[begin:finish], "RSDArtwork", 8):
+                    if args[7] == record[0] and args[2] not in artworks:
+                        artworks.append(args[2])
+                values += artworks[:1 if single else 2]
+                placed.append(record[0])
+        _need(len(placed) == len(set(placed)) and set(placed) == {record["id"] for record in chosen},
+              "canonical plates differ from the selected dictionary record universe")
+        for text in fixed:
+            for value in _GRAPHICS.findall(text):
+                _need(value.strip().startswith(prefix), "dictionary artwork outside its owner: " + value)
+                values.append(value.strip()[len(prefix):])
+        selected = set()
+        for value in values:
+            value = generator.canonical_asset_path(value.strip())
+            relative_asset = verified_assets.get(value)
+            if relative_asset is None:
+                path = owner / value
+                _need(path.is_file() and not path.is_symlink() and path.resolve().is_relative_to(owner_resolved)
+                      and path.suffix.lower() in {".png", ".jpg", ".jpeg", ".svg"},
+                      "required canonical dictionary artwork is missing or unsupported: " + value)
+                _need(not expected.get(value) or hashlib.sha256(path.read_bytes()).hexdigest() == expected[value],
+                      "canonical dictionary artwork identity changed: " + value)
+                relative_asset = _relative(root, path)
+                verified_assets[value] = relative_asset
+            selected.add(relative_asset)
+        inputs = set(shared_inputs)
+        inputs.update(_relative(root, path) for path in (
+            owner / leaf / "main.tex", owner / leaf / "generation-metadata.tex", owner / leaf / "publication.toml"))
+        inputs.update(_relative(root, path) for path in generator.source_note_inputs(root, chosen, lookup=lookup))
+        out[leaf] = (selected, inputs | {HELPER})
+    return out
+
+
+def dictionary_artwork(root: Path, provider: str, canonical: str) -> tuple[set[str], set[str]]:
+    """Return one dictionary edition's typeset artwork and the sources choosing it.
+
+    The generator selects records and plates. Within a plate, a hero or tall
+    card shows its record's first artwork and every other card its first two
+    distinct artworks; fixed matter contributes its literal graphics.
+    """
+    _need(provider == "gpt" and canonical.startswith(DICTIONARY + "/"), "no canonical sanctuary dictionary owner")
+    leaf = canonical.removeprefix(DICTIONARY + "/")
+    _need(leaf in DICTIONARY_LEAVES, "unknown sanctuary dictionary edition: " + canonical)
+    return dictionary_artworks(root, provider, (leaf,))[leaf]
 
 
 # --- Altar-server guides ------------------------------------------------------

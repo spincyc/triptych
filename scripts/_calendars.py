@@ -28,6 +28,7 @@ import copy
 import hashlib
 import json
 import os
+import pickle
 import re
 import tomllib
 from _tooling import prune_cache
@@ -449,7 +450,13 @@ def validate_appointment_when(value: object) -> dict:
     return {"fact": value["fact"], "in": list(values)}
 
 
-def validate_proper_appointment_facts(value: object, calendar: str, *, document: dict | None = None) -> dict:
+def validate_proper_appointment_facts(
+    value: object,
+    calendar: str,
+    *,
+    document: dict | None = None,
+    masses: dict[str, dict] | None = None,
+) -> dict:
     if not isinstance(value, dict) or not value:
         raise ValueError(f"{PROPER_APPOINTMENT_FACTS} must be a nonempty mapping")
     for identifier, fact in value.items():
@@ -476,7 +483,7 @@ def validate_proper_appointment_facts(value: object, calendar: str, *, document:
             bindings = fact["mass_values"]
             if not isinstance(bindings, dict) or not bindings:
                 raise ValueError(f"appointment fact {identifier!r} mass_values must be a nonempty mapping")
-            known_masses = mass_index(document) if document is not None else None
+            known_masses = masses if masses is not None else (mass_index(document) if document is not None else None)
             for mass, binding in bindings.items():
                 if not isinstance(mass, str) or not ORDINARY_DISPOSITION_ID.fullmatch(mass):
                     raise ValueError(f"appointment fact {identifier!r} mass_values requires exact source Mass keys")
@@ -589,12 +596,20 @@ def validate_appointment_overrides(value: object) -> list[dict]:
     return value
 
 
-def _appointment_contract_problems(document: dict, key: str, entries: list[tuple[str, dict, dict | None]]) -> list[str]:
+def _appointment_contract_problems(
+    document: dict,
+    key: str,
+    entries: list[tuple[str, dict, dict | None]],
+    *,
+    masses: dict[str, dict] | None = None,
+) -> list[str]:
     problems = []
     facts = document.get(PROPER_APPOINTMENT_FACTS)
     if facts is not None:
         try:
-            validate_proper_appointment_facts(facts, str(document.get("calendar") or ""), document=document)
+            validate_proper_appointment_facts(
+                facts, str(document.get("calendar") or ""), document=document, masses=masses
+            )
         except ValueError as error:
             return [f"mass {key}: {error}"]
     for _, proper, _ in entries:
@@ -907,19 +922,25 @@ _YAML_CACHE_FLOOR = 256 * 1024
 # Generous on purpose: an entry is a parsed copy of a file that already exists.
 _YAML_CACHE_KEEP = 128
 _VERIFIED_PARSE_CACHE = ContextVar("calendar_verified_parse_cache", default=None)
+_VERIFIED_PARSE_DISK_DIR = ContextVar("calendar_verified_parse_disk_dir", default=None)
 
 
 @contextmanager
-def verified_parse_cache(cache):
+def verified_parse_cache(cache, *, disk_dir: Path | None = None):
     """Reuse parsing of exact bytes within an indexed reader's lifetime.
 
     The caller owns verification of every canonical read. No timestamp or old
     parsed value may avoid that read, and callers receive independent objects.
+    When `disk_dir` is supplied, parsed JSON payloads for large verified inputs
+    may also be persisted under that disposable cache directory strictly keyed
+    by the verified SHA-256 digest of the canonical bytes.
     """
     token = _VERIFIED_PARSE_CACHE.set(cache)
+    disk_token = _VERIFIED_PARSE_DISK_DIR.set(Path(disk_dir) if disk_dir is not None else None)
     try:
         yield
     finally:
+        _VERIFIED_PARSE_DISK_DIR.reset(disk_token)
         _VERIFIED_PARSE_CACHE.reset(token)
 
 
@@ -1036,13 +1057,62 @@ def parse_toml(body: bytes):
 
 
 def _verified_parse(verified, body: bytes, kind: str, parse):
-    key = (kind, hashlib.sha256(body).digest())
-    if key not in verified:
+    digest = hashlib.sha256(body).digest()
+    key = (kind, digest)
+    held = verified.get(key)
+    if held is None:
+        disk_dir = _VERIFIED_PARSE_DISK_DIR.get()
+        entry = None
+        if disk_dir is not None and len(body) >= _YAML_CACHE_FLOOR:
+            hex_digest = digest.hex()
+            entry = disk_dir / hex_digest[:2] / f"{_YAML_CACHE_VERSION}-{kind}-{hex_digest}.json"
+            try:
+                encoded = entry.read_text(encoding="utf-8")
+                parsed = json.loads(encoded)
+                if len(verified) >= _YAML_CACHE_KEEP:
+                    verified.pop(next(iter(verified)))
+                verified[key] = ("json", encoded)
+                return parsed
+            except (OSError, ValueError):
+                pass
         parsed = parse(body.decode("utf-8"))
+        try:
+            encoded = json.dumps(parsed)
+            roundtrip = json.loads(encoded)
+            if roundtrip == parsed:
+                held = ("json", encoded)
+                if entry is not None:
+                    try:
+                        entry.parent.mkdir(parents=True, exist_ok=True)
+                        aside = entry.with_suffix(f".{os.getpid()}.tmp")
+                        aside.write_text(encoded, encoding="utf-8")
+                        os.replace(aside, entry)
+                        prune_cache(disk_dir, keep=_YAML_CACHE_KEEP, pattern="**/*.json")
+                    except OSError:
+                        pass
+                if len(verified) >= _YAML_CACHE_KEEP:
+                    verified.pop(next(iter(verified)))
+                verified[key] = held
+                return roundtrip
+        except (TypeError, ValueError, RecursionError):
+            pass
+        try:
+            held = ("pickle", pickle.dumps(parsed, protocol=pickle.HIGHEST_PROTOCOL))
+        except (pickle.PicklingError, TypeError, AttributeError):
+            held = ("obj", parsed)
         if len(verified) >= _YAML_CACHE_KEEP:
             verified.pop(next(iter(verified)))
-        verified[key] = parsed
-    return copy.deepcopy(verified[key])
+        verified[key] = held
+    mode, payload = held
+    if mode == "json":
+        return json.loads(payload)
+    if mode == "pickle":
+        return pickle.loads(payload)
+    return copy.deepcopy(payload)
+
+
+_PROCESS_PARSE_CACHE: dict[tuple[str, bytes], tuple[str, object]] = {}
+_PROCESS_PARSE_KEEP = 16
 
 
 def _cached_parse(path: Path, kind: str, parse):
@@ -1057,7 +1127,40 @@ def _cached_parse(path: Path, kind: str, parse):
         except (OSError, ValueError):
             pass
 
-    document = parse(path.read_text(encoding="utf-8"))
+    body = path.read_bytes()
+    if entry is None and len(body) >= _YAML_CACHE_FLOOR:
+        # Even with disk caching disabled (cold builds), verify live bytes by
+        # SHA-256 and reuse the parsed structure within this process so multi-MB
+        # ledgers are not re-parsed repeatedly from identical bytes.
+        digest = hashlib.sha256(body).digest()
+        key = (kind, digest)
+        held = _PROCESS_PARSE_CACHE.get(key)
+        if held is None:
+            parsed = parse(body.decode("utf-8"))
+            try:
+                encoded = json.dumps(parsed)
+                roundtrip = json.loads(encoded)
+                if roundtrip == parsed:
+                    if len(_PROCESS_PARSE_CACHE) >= _PROCESS_PARSE_KEEP:
+                        _PROCESS_PARSE_CACHE.pop(next(iter(_PROCESS_PARSE_CACHE)))
+                    _PROCESS_PARSE_CACHE[key] = ("json", encoded)
+                    return roundtrip
+            except (TypeError, ValueError, RecursionError):
+                pass
+            try:
+                packed = pickle.dumps(parsed, protocol=pickle.HIGHEST_PROTOCOL)
+                if len(_PROCESS_PARSE_CACHE) >= _PROCESS_PARSE_KEEP:
+                    _PROCESS_PARSE_CACHE.pop(next(iter(_PROCESS_PARSE_CACHE)))
+                _PROCESS_PARSE_CACHE[key] = ("pickle", packed)
+                return pickle.loads(packed)
+            except (pickle.PicklingError, TypeError, AttributeError):
+                return parsed
+        mode, payload = held
+        if mode == "json":
+            return json.loads(payload)
+        return pickle.loads(payload)
+
+    document = parse(body.decode("utf-8"))
 
     if entry is not None:
         try:
@@ -2373,6 +2476,7 @@ def resolve_propers(
     chain: tuple[str, ...] = (),
     *,
     appointments: bool = False,
+    masses: dict[str, dict] | None = None,
 ) -> tuple[list[tuple[str, dict, dict | None]], list[str]]:
     """A mass's propers as appointed, following every `takes_from` to its text.
 
@@ -2391,6 +2495,8 @@ def resolve_propers(
     """
     key = str(mass.get("key") or "")
     problems: list[str] = []
+    if masses is None:
+        masses = mass_index(document)
     raw_local_propers = [
         proper
         for proper in (mass.get("propers") or [])
@@ -2438,7 +2544,7 @@ def resolve_propers(
         overrides = local_propers
         local_override_families = common_set_local_override_families(mass, overrides)
         base, common_families, reference_problems = _resolve_reference(
-            document, mass, reference, chain, local_override_families
+            document, mass, reference, chain, local_override_families, masses=masses
         )
         problems.extend(reference_problems)
         try:
@@ -2471,7 +2577,7 @@ def resolve_propers(
             resolved.append((label, proper, provenance))
             continue
         taken, terminal, trouble = _resolve_proper(
-            document, key, proper, inner, chain, source_form=label
+            document, key, proper, inner, chain, source_form=label, masses=masses
         )
         problems.extend(trouble)
         if taken is not None:
@@ -2487,7 +2593,7 @@ def resolve_propers(
                     source = {**source, "latin_ending": inner["latin_ending"], "citation": inner["citation"]}
             resolved.append((label, taken, source))
     problems.extend(ordinary_disposition_group_problems(key, resolved))
-    problems.extend(_appointment_contract_problems(document, key, resolved))
+    problems.extend(_appointment_contract_problems(document, key, resolved, masses=masses))
     problems.extend(_proper_source_path_problems(document, mass, resolved))
     if appointments:
         resolved = [(label, _public_appointment_proper(proper), provenance) for label, proper, provenance in resolved]
@@ -2848,6 +2954,8 @@ def _resolve_reference(
     reference: dict,
     chain: tuple[str, ...],
     local_override_families: set[str],
+    *,
+    masses: dict[str, dict] | None = None,
 ) -> tuple[list[tuple[str, dict, dict | None]], set[str], list[str]]:
     key = str(mass.get("key") or "")
     where = f"mass {key}"
@@ -2859,7 +2967,9 @@ def _resolve_reference(
     if target_key in chain:
         route = " -> ".join((*chain, key, target_key))
         return [], set(), [f"{where}: {TAKES_FROM} closes a cycle: {route}"]
-    target = mass_index(document).get(target_key)
+    if masses is None:
+        masses = mass_index(document)
+    target = masses.get(target_key)
     if target is None:
         return [], set(), [f"{where}: {TAKES_FROM} names mass {target_key!r}, which this calendar has no entry for"]
     chosen_propers, common_families, set_problems = _common_set_propers(
@@ -2886,7 +2996,7 @@ def _resolve_reference(
     raw_target_propers = [proper for proper in target.get("propers") or [] if isinstance(proper, dict)]
     originals = {id(raw): appointed for raw, appointed in zip(raw_target_propers, _appointment_rows(target, "", raw_target_propers))}
     filtered_target["propers"] = [originals[id(proper)] for proper in chosen_propers]
-    inherited, problems = resolve_propers(document, filtered_target, (*chain, key))
+    inherited, problems = resolve_propers(document, filtered_target, (*chain, key), masses=masses)
     problems = [*set_problems, *problems]
     citation = str(reference.get("citation") or "")
     # Where the text is PRINTED, not the first hop toward it.
@@ -2924,6 +3034,7 @@ def _resolve_proper(
     chain: tuple[str, ...],
     *,
     source_form: str = "",
+    masses: dict[str, dict] | None = None,
 ) -> tuple[dict | None, dict | None, list[str]]:
     name = str(proper.get("name") or "")
     where = f"mass {key} proper {name!r}"
@@ -2931,6 +3042,8 @@ def _resolve_proper(
     if not isinstance(target_key, str) or not target_key:
         return None, None, [f"{where}: {TAKES_FROM} needs the key of the mass it takes from"]
     form = str(reference.get("form") or "")
+    if masses is None:
+        masses = mass_index(document)
     if target_key == key:
         # A book may print one proper once and direct a later sibling form back
         # to it. The explicit, different form is a complete target, not the
@@ -2940,7 +3053,7 @@ def _resolve_proper(
         if not form or form == source_form:
             route = " -> ".join((*chain, key, target_key))
             return None, None, [f"{where}: {TAKES_FROM} closes a cycle: {route}"]
-        target = mass_index(document).get(target_key)
+        target = masses.get(target_key)
         if target is None:  # Defensive: the referring mass came from this index.
             return None, None, [
                 f"{where}: {TAKES_FROM} names mass {target_key!r}, which this calendar has no entry for"
@@ -2969,13 +3082,13 @@ def _resolve_proper(
     if target_key in chain:
         route = " -> ".join((*chain, key, target_key))
         return None, None, [f"{where}: {TAKES_FROM} closes a cycle: {route}"]
-    target = mass_index(document).get(target_key)
+    target = masses.get(target_key)
     if target is None:
         return None, None, [
             f"{where}: {TAKES_FROM} names mass {target_key!r}, which this calendar has no entry for"
         ]
     wanted = str(reference.get("proper") or name)
-    entries, problems = resolve_propers(document, target, (*chain, key))
+    entries, problems = resolve_propers(document, target, (*chain, key), masses=masses)
     for label, found, terminal in entries:
         if str(found.get("name")) == wanted and (not form or label == form):
             # The reference names where the text is printed; the wrapper names

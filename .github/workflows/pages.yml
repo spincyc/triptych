@@ -67,9 +67,12 @@ jobs:
           fetch-depth: 0
           filter: blob:none
 
-      # Changed-path Bloom filters accelerate the edition revision queries.
+      # Changed-path Bloom filters accelerate the edition revision queries, and
+      # Git's untracked cache avoids rescanning ~67,000 directories on status.
       - name: Index changed paths in Git history
-        run: git rev-parse HEAD | git commit-graph write --stdin-commits --changed-paths
+        run: |
+          git config core.untrackedCache true
+          git rev-parse HEAD | git commit-graph write --stdin-commits --changed-paths
 
       - name: Set up Python
         uses: actions/setup-python@v6
@@ -202,10 +205,13 @@ jobs:
           fetch-depth: 0
           filter: blob:none
 
-      # Changed-path Bloom filters accelerate the edition revision queries.
+      # Changed-path Bloom filters accelerate the edition revision queries, and
+      # Git's untracked cache avoids rescanning ~67,000 directories on status.
       - &source-history
         name: Index changed paths in Git history
-        run: git rev-parse HEAD | git commit-graph write --stdin-commits --changed-paths
+        run: |
+          git config core.untrackedCache true
+          git rev-parse HEAD | git commit-graph write --stdin-commits --changed-paths
 
       - &source-python
         name: Set up Python
@@ -279,9 +285,12 @@ jobs:
           fetch-depth: 0
           filter: blob:none
 
-      # Changed-path Bloom filters accelerate the edition revision queries.
+      # Changed-path Bloom filters accelerate the edition revision queries, and
+      # Git's untracked cache avoids rescanning ~67,000 directories on status.
       - name: Index changed paths in Git history
-        run: git rev-parse HEAD | git commit-graph write --stdin-commits --changed-paths
+        run: |
+          git config core.untrackedCache true
+          git rev-parse HEAD | git commit-graph write --stdin-commits --changed-paths
 
       - name: Set up Python
         uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6

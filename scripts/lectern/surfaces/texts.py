@@ -128,8 +128,15 @@ class Texts(Surface):
 
     @work(thread=True, exclusive=True, group="texts-start")
     def start(self) -> None:
+        from concurrent.futures import ThreadPoolExecutor
+
         try:
-            opening = bridge.call(ADAPTER, "opening")
+            # Probe the locked renderer and pandoc off the UI thread beside the
+            # catalogue load so welcome() paints without freezing the event loop.
+            with ThreadPoolExecutor(max_workers=1) as pool:
+                probe = pool.submit(webedition.unavailable)
+                opening = bridge.call(ADAPTER, "opening")
+                probe.result()
         except Refused as refusal:
             self.deliver(self.fail, str(refusal))
             return

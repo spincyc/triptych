@@ -25,7 +25,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from _browser_products import ProductError, assert_working_output, committed_data_root, working_data_root  # noqa: E402
 
 import _calendars  # noqa: E402
-from _corpus_index import session_derived  # noqa: E402
+from _session_derivations import session_derived  # noqa: E402
 import _missal_coverage  # noqa: E402
 import _oration_execution  # noqa: E402
 import _name_execution  # noqa: E402
@@ -479,7 +479,12 @@ def cycle_owners(proper: dict) -> list[tuple[str, str, dict]]:
     ]
 
 
-def appointed_propers(document: dict, mass: dict) -> list[tuple[str, dict, dict | None]]:
+def appointed_propers(
+    document: dict,
+    mass: dict,
+    *,
+    owner_masses: dict[str, dict] | None = None,
+) -> list[tuple[str, dict, dict | None]]:
     """The propers a mass actually appoints, references followed.
 
     `propers_of` reads what the entry *carries*; this reads what the day *uses*.
@@ -492,7 +497,9 @@ def appointed_propers(document: dict, mass: dict) -> list[tuple[str, dict, dict 
     the calendar-mass check, so a reference the browser resolves and a reference
     the gate accepts cannot come apart.
     """
-    entries, problems = _calendars.resolve_propers(document, mass, appointments=True)
+    entries, problems = _calendars.resolve_propers(
+        document, mass, appointments=True, masses=owner_masses
+    )
     if problems:
         raise ValueError("; ".join(dict.fromkeys(problems)))
     return entries
@@ -1931,9 +1938,10 @@ def validate_study_translation_binding(
         raise ValueError(f"{path}: bound study English requires a project-created translation without source_id")
 
     document, records, sources = context or study_translation_source_context(calendar, root)
-    identity = translation_record_identity(entry, document)
+    owner_masses = _calendars.mass_index(document)
+    identity = translation_record_identity(entry, document, owner_masses=owner_masses)
     mass_key, form_id, name, cycle, occurrence = identity
-    mass = _calendars.mass_index(document).get(mass_key)
+    mass = owner_masses.get(mass_key)
     if mass is None:
         raise ValueError(f"{path}: study translation names no Latin source mass {mass_key!r}")
     form = ""
@@ -1951,7 +1959,7 @@ def validate_study_translation_binding(
     proper = owners[occurrence - 1]
     carried = sanitize_source_proper(
         document, (mass_key, form, name), (*identity[:3], occurrence),
-        proper, records, SURFACES,
+        proper, records, SURFACES, owner_masses=owner_masses,
     )
     candidates = ([carried] if cycle == CYCLE_ALL else
                   [one for _, key, one in cycle_owners(carried) if key == cycle])
@@ -2084,7 +2092,10 @@ INHERITED_INAPPLICABLE_REASONS = {
 
 
 def translation_record_identity(
-    entry: dict, document: dict | None = None
+    entry: dict,
+    document: dict | None = None,
+    *,
+    owner_masses: dict[str, dict] | None = None,
 ) -> tuple[str, str, str, str, int]:
     """Canonical nontext identity shared by inherited ledger records.
 
@@ -2137,11 +2148,12 @@ def translation_record_identity(
                 raise ValueError("translation target form must be a string")
             display_form_id = FORM_ID_MAIN
             if label:
-                if document is None:
+                if document is None and owner_masses is None:
                     raise ValueError(
                         f"translation target form {label!r} requires its owning calendar"
                     )
-                owner_mass = _calendars.mass_index(document).get(entry["mass"])
+                masses_map = owner_masses if owner_masses is not None else _calendars.mass_index(document)
+                owner_mass = masses_map.get(entry["mass"])
                 if owner_mass is None:
                     raise ValueError(
                         f"translation target names no source mass {entry['mass']!r}"
@@ -2159,8 +2171,9 @@ def translation_record_identity(
         label = raw_label
         if not label:
             form_id = FORM_ID_MAIN
-        elif document is not None:
-            owner_mass = _calendars.mass_index(document).get(str(entry.get("mass") or ""))
+        elif document is not None or owner_masses is not None:
+            masses_map = owner_masses if owner_masses is not None else _calendars.mass_index(document)
+            owner_mass = masses_map.get(str(entry.get("mass") or ""))
             if owner_mass is None:
                 raise ValueError(
                     f"translation target names no source mass {entry.get('mass')!r}"
@@ -2696,7 +2709,9 @@ def effective_translation_identities(
     owner_masses = _calendars.mass_index(document)
     identities: set[tuple[str, str, str, str, int]] = set()
     for _, mass in masses_of(document):
-        for form, proper, taken_from in appointed_propers(document, mass):
+        for form, proper, taken_from in appointed_propers(
+            document, mass, owner_masses=owner_masses
+        ):
             if proper.get("name") == PLACEHOLDER:
                 continue
             identity = source_slot_identity(
@@ -2787,7 +2802,9 @@ def scripture_translation_targets(document: dict) -> set[tuple[str, str, str, st
     targets = set()
     owner_masses = _calendars.mass_index(document)
     for _, mass in masses_of(document):
-        for form, proper, taken_from in appointed_propers(document, mass):
+        for form, proper, taken_from in appointed_propers(
+            document, mass, owner_masses=owner_masses
+        ):
             identity = source_slot_identity(document, mass, form, proper, taken_from,
                                             owner_masses=owner_masses)
             owners = cycle_owners(proper)
@@ -2799,16 +2816,33 @@ def scripture_translation_targets(document: dict) -> set[tuple[str, str, str, st
     return targets
 
 
+from contextvars import ContextVar as _ContextVar
+
+_STRUCTURE_TARGETS: _ContextVar[dict[tuple[str, str], set[tuple[str, str, str, str, int]]] | None] = _ContextVar(
+    "mass_propers_structure_targets", default=None
+)
+_STRUCTURE_OVERLAYS: _ContextVar[dict[tuple[str, str], tuple[dict, dict, list, dict]] | None] = _ContextVar(
+    "mass_propers_structure_overlays", default=None
+)
+
+
 def calendar_scripture_targets(root: Path, calendar: str) -> set[tuple[str, str, str, str, int]]:
     """`scripture_translation_targets` of one loaded calendar.
 
     The targets cover every Mass of the calendar, so an indexed reader reuses
     them for each selected Mass it opens (`_corpus_index.session_derived`).
     """
-    return session_derived(
+    scoped = _STRUCTURE_TARGETS.get()
+    cache_key = (str(root), calendar)
+    if scoped is not None and cache_key in scoped:
+        return scoped[cache_key]
+    result = session_derived(
         ("mass-propers/scripture-translation-targets", str(root), calendar),
         lambda: scripture_translation_targets(load_calendar(root, calendar)),
     )
+    if scoped is not None:
+        scoped[cache_key] = result
+    return result
 
 
 def scripture_body_translation_problems(
@@ -2972,9 +3006,16 @@ def translation_overlay(
     """
     import tomllib
 
+    scoped_overlays = _STRUCTURE_OVERLAYS.get() if mass_keys is None else None
+    overlay_cache_key = (str(root), calendar)
+    if scoped_overlays is not None and overlay_cache_key in scoped_overlays:
+        return scoped_overlays[overlay_cache_key]
     owners = translation_ledger_calendars(calendar, root)
     if not owners:
-        return {}, {}, [], {}
+        empty = ({}, {}, [], {})
+        if scoped_overlays is not None:
+            scoped_overlays[overlay_cache_key] = empty
+        return empty
     scripture_targets = calendar_scripture_targets(root, calendar)
     owner_scripture_targets = {calendar: scripture_targets}
     overlay: dict[tuple[str, str, str, str, int], dict] = {}
@@ -3133,7 +3174,9 @@ def translation_overlay(
                                      if mass_keys is None else study_translation_source_context(
                                          owner, root, mass_keys=mass_keys))
                 validate_study_translation_binding(entry, owner, root, path, context=study_context)
-            identity = translation_record_identity(entry, owner_document)
+            identity = translation_record_identity(
+                entry, owner_document, owner_masses=raw_owner_mass_index
+            )
             if identity in owner_scripture_targets[owner] or "scripture_body_source" in entry:
                 if identity not in owner_scripture_targets[owner]:
                     raise ValueError(f"{path}: Scripture body translation has no exact Scripture target")
@@ -3212,7 +3255,10 @@ def translation_overlay(
             raise ValueError("; ".join(problems))
         overlay[identity] = projected
 
-    return overlay, untranslated, stale, witnesses
+    result = (overlay, untranslated, stale, witnesses)
+    if scoped_overlays is not None:
+        scoped_overlays[overlay_cache_key] = result
+    return result
 
 
 def overlay_key(
@@ -3343,6 +3389,8 @@ def sanitize_source_proper(
     proper: dict,
     records: dict,
     surfaces,
+    *,
+    owner_masses: dict[str, dict] | None = None,
 ) -> dict:
     """Use the exact source-owned Latin ordinal, including repeated bodies.
 
@@ -3351,7 +3399,7 @@ def sanitize_source_proper(
     ordinal from the identified source prefix rather than choosing a same-word
     record by hash or using an English ordinal in the Latin ledger.
     """
-    source_mass = _calendars.mass_index(document)[key[0]]
+    source_mass = (owner_masses if owner_masses is not None else _calendars.mass_index(document))[key[0]]
     rows, trouble = _calendars._form_propers(source_mass, key[1])
     if trouble:
         raise ValueError(f"mass {key[0]}: {trouble}")
@@ -3797,9 +3845,10 @@ def missal_witness_links(root: Path, calendar: str, document: dict) -> dict:
             if scope != "form" or not isinstance(targets, list) or not targets:
                 raise ValueError(f"{path.name}: invalid Proper witness targets for {key}")
             if key not in target_roles:
-                mass = next(m for _, m in masses_of(document) if m["key"] == key[0])
-                target_roles[key] = {(p.get("name"), source_slot_identity(document, mass, form, p, taken)[3])
-                                     for form, p, taken in appointed_propers(document, mass)
+                owner_masses = _calendars.mass_index(document)
+                mass = owner_masses[key[0]]
+                target_roles[key] = {(p.get("name"), source_slot_identity(document, mass, form, p, taken, owner_masses=owner_masses)[3])
+                                     for form, p, taken in appointed_propers(document, mass, owner_masses=owner_masses)
                                      if form_id_for_label(mass, form) == key[1]}
             for target in targets:
                 if (not isinstance(target, dict) or set(target) != {"role", "occurrence"} or
@@ -4002,7 +4051,7 @@ def votive_chant_sources(root: Path, calendar: str, document: dict, witness_link
                  "label": f"{role} {season}", "source": link}
         if common := row.get("off_date_common"):
             donor = masses[common["mass"]]
-            same_role = [(index, proper) for index, (_, proper, _) in enumerate(appointed_propers(document, donor))
+            same_role = [(index, proper) for index, (_, proper, _) in enumerate(appointed_propers(document, donor, owner_masses=masses))
                          if proper.get("name") == role]
             if len(same_role) != 1 or donor.get("key") == key or type(common["page"]) is not int:
                 raise ValueError(f"{row['id']}: ambiguous Common chant")
@@ -4019,6 +4068,20 @@ def votive_chant_sources(root: Path, calendar: str, document: dict, witness_link
     return results
 
 
+_CITATIONS_TOOL = None
+
+
+def _citations_tool():
+    global _CITATIONS_TOOL
+    if _CITATIONS_TOOL is None:
+        loader = SourceFileLoader("_structure_citations", str(ROOT / "tools" / "citations"))
+        spec = spec_from_loader(loader.name, loader)
+        canon = module_from_spec(spec)
+        loader.exec_module(canon)
+        _CITATIONS_TOOL = canon
+    return _CITATIONS_TOOL
+
+
 def calendar_structure(root: Path, calendar: str, tokens: dict[str, str], *,
                        mass_keys: set[str] | None = None,
                        translation_order: list[dict] | None = None) -> dict:
@@ -4029,6 +4092,7 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str], *,
     derived from a selection must never masquerade as calendar-wide totals.
     """
     document = load_calendar(root, calendar)
+    owner_masses = _calendars.mass_index(document)
     selected = None
     source_keys = None
     if mass_keys is not None:
@@ -4041,8 +4105,8 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str], *,
         selected = [(kind, mass) for kind, mass in selected if mass["key"] in mass_keys]
         source_keys = set(mass_keys)
         for _, mass in selected:
-            for form, proper, taken in appointed_propers(document, mass):
-                source_keys.add(source_slot_identity(document, mass, form, proper, taken)[0])
+            for form, proper, taken in appointed_propers(document, mass, owner_masses=owner_masses):
+                source_keys.add(source_slot_identity(document, mass, form, proper, taken, owner_masses=owner_masses)[0])
     owner = sys.modules.get(__name__) or __import__("types").SimpleNamespace(**globals())
     execution_sources = (_oration_execution.load_sources(root, calendar, owner)
                          if mass_keys is None or mass_keys & set(_oration_execution.HOSTS) else {})
@@ -4080,22 +4144,31 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str], *,
     source = document.get("psalm_numbering")
     if source not in SYSTEMS:
         raise ValueError(f"{calendar} declares unknown psalm numbering {source!r}")
-    loader = SourceFileLoader("_structure_citations", str(ROOT / "tools" / "citations"))
-    spec = spec_from_loader(loader.name, loader)
-    canon = module_from_spec(spec)
-    loader.exec_module(canon)
-    entries = [
-        entry
-        for _, mass in masses_of(document)
-        for entry, _ in numbered_entries(mass, source)
-    ]
-    divergences = {
-        target: Divergences(
-            calendar, document, entries, canon, target,
-            numberings=tuple(system for system in SYSTEMS if system != RESOLVED_IN),
-        )
-        for target in SYSTEMS
-    }
+    canon = _citations_tool()
+
+    def build_divergences():
+        entries = [
+            entry
+            for _, mass in masses_of(document)
+            for entry, _ in numbered_entries(mass, source)
+        ]
+        built = {
+            target: Divergences(
+                calendar, document, entries, canon, target,
+                numberings=tuple(system for system in SYSTEMS if system != RESOLVED_IN),
+            )
+            for target in SYSTEMS
+        }
+        # Divergences uses canon only during __init__ validation; clear the
+        # module reference so session_derived can clone the pure lookup tables.
+        for item in built.values():
+            item.canon = None
+        return built
+
+    divergences = session_derived(
+        ("mass-propers/divergences", str(root), calendar),
+        build_divergences,
+    )
     listings = list_presentation(document)
     masses = []
     for kind, mass in (selected if selected is not None else masses_of(document)):
@@ -4112,7 +4185,7 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str], *,
         )
         latin_inherited = bool(text_from) and text_from != calendar
         for proper_index, (form, proper, taken_from) in enumerate(
-            appointed_propers(document, mass), 1
+            appointed_propers(document, mass, owner_masses=owner_masses), 1
         ):
             # A borrowed proper is looked up under the mass that prints it; the
             # rule and its reason live on `overlay_key`. Twelve such rows sat in
@@ -4120,7 +4193,7 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str], *,
             # and one of them had already drifted from its twin.
             key = overlay_key(mass, form, proper, taken_from)
             identity = source_slot_identity(
-                document, mass, form, proper, taken_from
+                document, mass, form, proper, taken_from, owner_masses=owner_masses
             )
             absence_records = matching_untranslated_records(
                 proper,
@@ -4133,7 +4206,7 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str], *,
             )
             carried = sanitize_source_proper(
                 document, key, identity, carried, latin_records,
-                STRUCTURE_SURFACES,
+                STRUCTURE_SURFACES, owner_masses=owner_masses,
             )
             carried = apply_appointed_latin_ending(carried, taken_from)
 
@@ -4642,11 +4715,12 @@ def contributed_bodies(structure: dict) -> int:
     return total
 
 
-def reader_structure(structure: dict) -> dict:
+def reader_structure(structure: dict, *, structure_body: str | None = None) -> dict:
     """Navigation and qualifications from the public projection, without bodies."""
     # The thin bytes determine the shared reader generation. Bind the complete
     # served structure too, so a body-only edit cannot reuse that generation.
-    source_sha256 = hashlib.sha256(_serialise_structure(structure).encode("utf-8")).hexdigest()
+    body = _serialise_structure(structure) if structure_body is None else structure_body
+    source_sha256 = hashlib.sha256(body.encode("utf-8")).hexdigest()
     result = dict(structure, reader_index=True, source_sha256=source_sha256)
     result["masses"] = []
     for mass in structure["masses"]:
@@ -4825,85 +4899,93 @@ def run_structure(arguments: argparse.Namespace) -> dict:
     names = [arguments.calendar] if arguments.calendar else calendars(root)
     written, counts, refused, withheld, withheld_latin = [], {}, [], [], []
     files: dict[Path, str] = {}
-    for name in names:
-        built = calendar_structure(root, name, tokens)
-        for mass in built["masses"]:
-            for proper in mass["propers"]:
-                latin = proper.get("latin")
-                if isinstance(latin, dict) and latin.get("withheld"):
-                    withheld_latin.append(
-                        f"{name} {mass.get('key')}/{proper.get('name')}: "
-                        f"{latin.get('reason') or 'publication unresolved'}"
-                    )
-                for course in CYCLE_KEYS:
-                    for cycle, owner in (proper.get(course) or {}).items():
-                        latin = owner.get("latin") if isinstance(owner, dict) else None
-                        if isinstance(latin, dict) and latin.get("withheld"):
-                            withheld_latin.append(
-                                f"{name} {mass.get('key')}/{proper.get('name')} "
-                                f"{course}:{cycle}: "
-                                f"{latin.get('reason') or 'publication unresolved'}"
-                            )
-        # Counted from the source, before the structure pass drops them: the
-        # structure file is what the site serves, so anything filtered out of it
-        # cannot be counted from it afterwards.
-        document = load_calendar(root, name)
-        for section in (document.get("sections") or {}).values():
-            for mass in section.get("masses") or []:
-                for proper_name, lang, source_id, rights in withheld_translations(mass):
-                    withheld.append(
-                        f"{name} {mass.get('key')}/{proper_name}: {lang} from "
-                        f"{source_id or 'no source'} withheld "
-                        f"({rights or 'no rights basis stated'})"
-                    )
-        # `--out` is the data root the page is served from, so both generators
-        # take the same one: the manifest lands at its head and the structure
-        # files under `structure/`.
-        path = propers_dir / f"{name}.json"
-        refuse_symlink_output(out, path)
-        structure_body = _serialise_structure(built)
-        files[path] = structure_body
-        written.append(str(path))
-        reader = reader_structure(built)
-        generation = hashlib.sha256((_compact(reader) + "\n").encode("utf-8")).hexdigest()
-        reader_path = reader_dir / f"{name}.json"
-        refuse_symlink_output(out, reader_path)
-        files[reader_path] = _compact(dict(reader, generation=generation)) + "\n"
-        written.append(str(reader_path))
-        catalog, mass_payloads = read_payloads(built, generation)
-        catalog_path = catalog_dir / f"{name}.json"
-        refuse_symlink_output(out, catalog_path)
-        files[catalog_path] = _serialise_structure(catalog)
-        written.append(str(catalog_path))
-        calendar_mass_dir = mass_dir / name
-        refuse_symlink_output(out, calendar_mass_dir)
-        for key, payload in mass_payloads.items():
-            mass_path = calendar_mass_dir / f"{key}.json"
-            refuse_symlink_output(out, mass_path)
-            files[mass_path] = _compact(payload) + "\n"
-            written.append(str(mass_path))
-        search_path = search_dir / f"{name}.json"
-        refuse_symlink_output(out, search_path)
-        files[search_path] = _serialise(search_structure(built))
-        written.append(str(search_path))
-        cited = [
-            citation
-            for mass in built["masses"]
-            for proper in mass["propers"]
-            for rows in [
-                proper["citations"],
-                *(
-                    cycle["citations"]
-                    for key in CYCLE_KEYS
-                    for cycle in (proper.get(key) or {}).values()
-                ),
+    built_by_name: dict[str, dict] = {}
+    targets_token = _STRUCTURE_TARGETS.set({})
+    overlays_token = _STRUCTURE_OVERLAYS.set({})
+    try:
+        for name in names:
+            built = calendar_structure(root, name, tokens)
+            built_by_name[name] = built
+            for mass in built["masses"]:
+                for proper in mass["propers"]:
+                    latin = proper.get("latin")
+                    if isinstance(latin, dict) and latin.get("withheld"):
+                        withheld_latin.append(
+                            f"{name} {mass.get('key')}/{proper.get('name')}: "
+                            f"{latin.get('reason') or 'publication unresolved'}"
+                        )
+                    for course in CYCLE_KEYS:
+                        for cycle, owner in (proper.get(course) or {}).items():
+                            latin = owner.get("latin") if isinstance(owner, dict) else None
+                            if isinstance(latin, dict) and latin.get("withheld"):
+                                withheld_latin.append(
+                                    f"{name} {mass.get('key')}/{proper.get('name')} "
+                                    f"{course}:{cycle}: "
+                                    f"{latin.get('reason') or 'publication unresolved'}"
+                                )
+            # Counted from the source, before the structure pass drops them: the
+            # structure file is what the site serves, so anything filtered out of it
+            # cannot be counted from it afterwards.
+            document = load_calendar(root, name)
+            for section in (document.get("sections") or {}).values():
+                for mass in section.get("masses") or []:
+                    for proper_name, lang, source_id, rights in withheld_translations(mass):
+                        withheld.append(
+                            f"{name} {mass.get('key')}/{proper_name}: {lang} from "
+                            f"{source_id or 'no source'} withheld "
+                            f"({rights or 'no rights basis stated'})"
+                        )
+            # `--out` is the data root the page is served from, so both generators
+            # take the same one: the manifest lands at its head and the structure
+            # files under `structure/`.
+            path = propers_dir / f"{name}.json"
+            refuse_symlink_output(out, path)
+            structure_body = _serialise_structure(built)
+            files[path] = structure_body
+            written.append(str(path))
+            reader = reader_structure(built, structure_body=structure_body)
+            generation = hashlib.sha256((_compact(reader) + "\n").encode("utf-8")).hexdigest()
+            reader_path = reader_dir / f"{name}.json"
+            refuse_symlink_output(out, reader_path)
+            files[reader_path] = _compact(dict(reader, generation=generation)) + "\n"
+            written.append(str(reader_path))
+            catalog, mass_payloads = read_payloads(built, generation)
+            catalog_path = catalog_dir / f"{name}.json"
+            refuse_symlink_output(out, catalog_path)
+            files[catalog_path] = _serialise_structure(catalog)
+            written.append(str(catalog_path))
+            calendar_mass_dir = mass_dir / name
+            refuse_symlink_output(out, calendar_mass_dir)
+            for key, payload in mass_payloads.items():
+                mass_path = calendar_mass_dir / f"{key}.json"
+                refuse_symlink_output(out, mass_path)
+                files[mass_path] = _compact(payload) + "\n"
+                written.append(str(mass_path))
+            search_path = search_dir / f"{name}.json"
+            refuse_symlink_output(out, search_path)
+            files[search_path] = _serialise(search_structure(built))
+            written.append(str(search_path))
+            cited = [
+                citation
+                for mass in built["masses"]
+                for proper in mass["propers"]
+                for rows in [
+                    proper["citations"],
+                    *(
+                        cycle["citations"]
+                        for key in CYCLE_KEYS
+                        for cycle in (proper.get(key) or {}).values()
+                    ),
+                ]
+                for citation in rows
             ]
-            for citation in rows
-        ]
-        counts[name] = {"masses": len(built["masses"]), "citations": len(cited)}
-        refused.extend(
-            f"{name} {c['ref']}: {c['unresolved']}" for c in cited if c["unresolved"]
-        )
+            counts[name] = {"masses": len(built["masses"]), "citations": len(cited)}
+            refused.extend(
+                f"{name} {c['ref']}: {c['unresolved']}" for c in cited if c["unresolved"]
+            )
+    finally:
+        _STRUCTURE_OVERLAYS.reset(overlays_token)
+        _STRUCTURE_TARGETS.reset(targets_token)
 
     # The manifest lists what is THERE, not what was built this run. A run
     # scoped by `--calendar` into the site's own data root must still name every
@@ -4921,7 +5003,7 @@ def run_structure(arguments: argparse.Namespace) -> dict:
         # Offered only where the missal contributes actual text of its own;
         # a structure of placeholders and inherited bodies stays data, not a
         # choice (promise missal-reader-contribution-filter).
-        served = json.loads(files[where] if where in files else where.read_text(encoding="utf-8"))
+        served = built_by_name[name] if name in built_by_name else json.loads(where.read_text(encoding="utf-8"))
         if contributed_bodies(served) <= 0:
             continue
         document = load_calendar(root, name)
@@ -5446,6 +5528,7 @@ def english_coverage(root: Path, calendar: str) -> dict | None:
         return None
     ledger_calendar = ledger_calendars[-1]
     document = load_calendar(root, calendar)
+    owner_masses = _calendars.mass_index(document)
     families = {slot_family(key[2]) for key in overlay} | {
         slot_family(key[2]) for key in untranslated
     }
@@ -5458,12 +5541,14 @@ def english_coverage(root: Path, calendar: str) -> dict | None:
     ] = {}
     composed: set[tuple[str, str, str, str, int]] = set()
     for _, mass in masses_of(document):
-        for form, proper, taken_from in appointed_propers(document, mass):
+        for form, proper, taken_from in appointed_propers(
+            document, mass, owner_masses=owner_masses
+        ):
             if proper.get("name") == PLACEHOLDER:
                 continue
             legacy_key = overlay_key(mass, form, proper, taken_from)
             source_identity = source_slot_identity(
-                document, mass, form, proper, taken_from
+                document, mass, form, proper, taken_from, owner_masses=owner_masses
             )
             units = coverage_slot_units(proper, source_identity, body_targets)
             for identity, owner in units:
@@ -5639,7 +5724,9 @@ def latin_recension_coverage(
     ] = {}
     owner_masses = _calendars.mass_index(document)
     for _, mass in masses_of(document):
-        for form, proper, taken_from in appointed_propers(document, mass):
+        for form, proper, taken_from in appointed_propers(
+            document, mass, owner_masses=owner_masses
+        ):
             if proper.get("name") == PLACEHOLDER:
                 continue
             if proper_sources(proper) <= {"scripture"}:
@@ -5734,8 +5821,9 @@ def finding_aid_coverage(
     resolved = direct = referenced = empty = 0
     errors = []
     unresolved_common_sets = []
+    effective_masses = _calendars.mass_index(effective)
     for _, mass in masses_of(effective):
-        entries, problems = _calendars.resolve_propers(effective, mass)
+        entries, problems = _calendars.resolve_propers(effective, mass, masses=effective_masses)
         resolved += len(entries)
         direct += sum(provenance is None for _, _, provenance in entries)
         referenced += sum(provenance is not None for _, _, provenance in entries)

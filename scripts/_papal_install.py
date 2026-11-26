@@ -102,7 +102,7 @@ def _filename(source):
     return (PDF_ROOT / ((source.get("date") or "unknown-date") + "--" + safe + "--" + token + ".pdf")).as_posix()
 
 
-def _validate_pass(row, audit, review, reports=None):
+def _validate_pass(row, audit, review, reports=None, *, report_hashes=None):
     """Reuse the collector's exact PDF/receipt/page/report/reuse proof gate."""
     projected = copy.deepcopy(review)
     if reports is not None:
@@ -111,17 +111,13 @@ def _validate_pass(row, audit, review, reports=None):
             proof["prior_report"] = reports[proof["prior_report"]]["path"]
     data = {"schema": collection.REVIEW_SCHEMA, "frozen_receipt_sha256": audit["frozen_receipt_sha256"],
             "documents": [projected]}
-    scratch = ROOT / ".scratch/papal-install"
-    scratch.mkdir(parents=True, exist_ok=True)
-    with tempfile.TemporaryDirectory(dir=scratch) as directory:
-        path = Path(directory) / "review.json"
-        path.write_bytes(_payload(data))
-        selected = copy.deepcopy(row)
-        selected["page_review"] = {"status": "not-recorded"}
-        try:
-            collection._reviews([selected], [path], ROOT)
-        except collection.PapalCollectionError as error:
-            raise PapalInstallError(f"{row['id']} ({row['language']}): {error}") from error
+    selected = copy.deepcopy(row)
+    selected["page_review"] = {"status": "not-recorded"}
+    hashes = {} if report_hashes is None else report_hashes
+    try:
+        collection._validate_review_batch([selected], data, ROOT, seen=set(), report_hashes=hashes)
+    except collection.PapalCollectionError as error:
+        raise PapalInstallError(f"{row['id']} ({row['language']}): {error}") from error
     _require(selected["page_review"]["status"] == "pass", "installation requires complete layout PASS evidence")
     return selected["page_review"]
 
@@ -161,9 +157,18 @@ def check_release_metadata(plan=None):
         _require(row["pdf"] not in owned and row["pdf"] == _filename(row["source"]),
                  "duplicate released identity or unexpected historical filename")
         owned[row["pdf"]] = row
+    archived_cache = {}
+
+    def verify_archived(ref):
+        key = (ref.get("path"), ref.get("sha256"), ref.get("bytes"))
+        if key not in archived_cache:
+            archived_cache[key] = _archived(ref)
+        return archived_cache[key]
+
+    report_hashes = {}
     for ref in release["evidence"]:
         if not ref["path"].startswith(_snapshot_store.PREFIX):
-            _archived(ref)
+            verify_archived(ref)
         else:
             records.validate_ref(ref)
     frozen_plan = records.header(release["source_plan"])
@@ -204,10 +209,10 @@ def check_release_metadata(plan=None):
                  and row["review"]["original_receipt_sha256"] == review.get("receipt_sha256", audit["frozen_receipt_sha256"]),
                  "release review receipt provenance disagrees")
         for ref in row["review"]["reports"].values():
-            _archived(ref)
+            verify_archived(ref)
         fake = {"id": key[0], "language": key[1], "pdf_sha256": row["pdf_sha256"], "pages": row["pages"],
                 "status": "compiled", "receipt_sha256": receipt_sha, "files": {}}
-        _validate_pass(fake, audit, review, row["review"]["reports"])
+        _validate_pass(fake, audit, review, row["review"]["reports"], report_hashes=report_hashes)
     known_states = {collection._identity(row): row for row in release["delivery_states"]}
     uninstalled = []
     for key, source in active.items():
