@@ -1,0 +1,74 @@
+schema_version = 1
+id = "pc-obj-sanctuary-bells"
+category = "service-and-incense"
+sort_order = 503
+plate_id = "pc-plt-06-service"
+composition_plate_ids = []
+plate_position = "Bottom left, four-cup mounted brass altar bell (Plate VI)"
+preferred_english_name = "Sanctuary Bells"
+latin_headword = "Campanula"
+alternate_english_names = ["Altar Bell", "Sanctus Bell"]
+alternate_latin_names = ["Parva campanula"]
+pronunciation_key = "kahm-PAH-noo-lah"
+
+[edition_disposition]
+edition_locale = "2008-latin-2011-us-english"
+as_of = "2026-11-25"
+disposition = "optional"
+scope_level = "customary"
+territorial_note = ""
+
+[identification]
+summary = "Sanctuary bells are a small hand bell or multi-cup brass chime rung optionally by a server during the Eucharistic Prayer to alert the congregation to the consecration."
+appearance = "Four tuned, flared brass bell cups hang from the arms of a horizontal cruciform yoke topped by a central turned vertical handle, though single hand bells and three-cup sets are also common."
+placement_and_use = "When used according to local custom, the sanctuary bell rests on the credence table or beside the servers’ kneeling place before the Eucharistic Prayer. Shortly before the consecration—customarily as the priest extends his hands over the gifts at the epiclesis—an instituted acolyte or altar server may give a crisp signal on the bell, and likewise ring it at each showing of the consecrated Host and Chalice (GIRM 150). Bells remain silent from the conclusion of the Gloria at the Evening Mass of the Lord’s Supper on Holy Thursday until the Gloria of the Easter Vigil."
+liturgical_colors = "Not governed by the seasonal color cycle; usually polished cast brass or bronze."
+
+[ministers_and_handling]
+ordinary_ministers = ["altar-server", "instituted-acolyte"]
+prepares = ["sacristan", "altar-server"]
+server_boundary = "handles"
+server_boundary_summary = "An altar server rings the sanctuary bell cleanly and reverently shortly before the consecration and at each elevation according to local parish custom (GIRM 150), setting it down quietly without rattling the cups."
+safety_warning = ""
+
+[audience_text]
+altar_server = "Place the bell quietly beside your kneeling spot before the Eucharistic Prayer so you never have to reach across the sanctuary during the Canon. Following your parish’s custom under GIRM 150, give one brief, clear ring when the priest spreads his hands over the bread and wine at the epiclesis, and ring clearly as he elevates the Host and again as he elevates the Chalice. Damp the bell rims softly against your hand or the carpet when setting it down so the clappers do not jingle."
+sacristan = "Set the clean, intact sanctuary bell on the credence table or at the servers’ station whenever parish custom uses it (GIRM 150). Check that the clappers hang freely and are securely pinned, and remove all sanctuary bells from the sanctuary after the Gloria on Holy Thursday evening until the Easter Vigil."
+general_reader = "During the hushed stillness of the Eucharistic Prayer, the clear ring of small brass sanctuary bells draws the attention of the entire assembly toward the altar at the moment of consecration. Under GIRM 150, ringing the bell shortly before the consecration and at the elevations of the Host and Chalice is an optional practice governed by local custom."
+
+[relationships]
+confusable_with = []
+related_objects = ["pc-obj-credence-table", "pc-obj-altar", "pc-obj-thurible"]
+
+[symbolism]
+has_sourced_symbolism = false
+text = ""
+evidence_class = "none-practical"
+attribution = ""
+
+[counterpart_1962]
+relationship = "optional"
+locus_1962 = "Missale Romanum (1962), Rubricae Generales n. 528; Ritus Servandus VII.8, VIII.6, X.6"
+comparison = "Whereas the 1962 Roman Missal required a small bell on the Epistle-side table and prescribed ringing at the Sanctus and elevations (RG 528; RS VII.8, VIII.6), the 2002/2008 GIRM makes the bell optional according to local custom—shortly before the consecration and at each showing of the Host and Chalice—omitting the mandatory Sanctus and Communion rings (GIRM 150)."
+
+[historical_transition]
+is_superseded = false
+period_range = ""
+controlling_act = ""
+current_status = ""
+
+[audiences]
+comprehensive = true
+altar_server = true
+sacristan = true
+general_reader = true
+
+[sources]
+note_key = "N27"
+primary_loci = ["GIRM 150"]
+source_bindings = [
+  "work.catholic-church.institutio-generalis-missalis-romani",
+  "work.catholic-church.missale-romanum",
+]
+verification_state = "checked-against-primary-and-official-witness"
+rights_note = "Original analytical description; no protected liturgical wording reproduced verbatim."

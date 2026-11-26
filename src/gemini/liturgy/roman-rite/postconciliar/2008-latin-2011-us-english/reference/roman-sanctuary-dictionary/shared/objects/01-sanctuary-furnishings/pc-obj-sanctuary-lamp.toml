@@ -1,0 +1,79 @@
+schema_version = 1
+id = "pc-obj-sanctuary-lamp"
+category = "sanctuary-furnishings"
+sort_order = 106
+plate_id = "pc-plt-02-furnishings"
+composition_plate_ids = ["pc-plt-01-sanctuary"]
+plate_position = "Suspended beside the tabernacle at bottom right (Plate II) and in the rear niche (Plate I)"
+preferred_english_name = "Sanctuary Lamp"
+latin_headword = "Lampas peculiaris"
+alternate_english_names = ["Tabernacle Lamp", "Presence Lamp"]
+alternate_latin_names = ["Lampas sanctuarii", "Lucerna"]
+pronunciation_key = "LAHM-pahs peh-koo-lee-AH-rees"
+
+[edition_disposition]
+edition_locale = "2008-latin-2011-us-english"
+as_of = "2026-11-25"
+disposition = "required"
+scope_level = "universal-roman"
+territorial_note = ""
+
+[identification]
+summary = "The sanctuary lamp is the dedicated oil or wax lamp kept burning continuously near the tabernacle to announce and honor the Eucharistic presence of Christ."
+appearance = "Shown at bottom right of Plate II and beside the recessed rear niche in Plate I as a rounded metal lamp bowl suspended on three chains from a ceiling mount or wall bracket, cradling a cylindrical glass globe (traditionally red or clear) that shields a living oil or beeswax flame."
+placement_and_use = "Universal Roman law and canon law require a special lamp, nourished by oil or wax rather than an electric bulb, to shine permanently day and night beside every tabernacle in which the Most Holy Eucharist is reserved (GIRM 316; CIC can. 940). It is extinguished only when the tabernacle is completely emptied of the Blessed Sacrament, notably from the Mass of the Lord's Supper on Holy Thursday evening until reservation resumes at the Easter Vigil."
+liturgical_colors = "Not governed by the seasonal vestment colors; custom commonly uses a red glass globe (or clear glass) so the living flame stands out unmistakably near the tabernacle."
+
+[ministers_and_handling]
+ordinary_ministers = ["priest", "sacristan"]
+prepares = ["sacristan"]
+server_boundary = "recognizes-only"
+server_boundary_summary = "Servers look to the burning sanctuary lamp as the unmistakable sign that Christ is reserved in the tabernacle and never light, move, or extinguish it during Mass; any maintenance outside Mass follows sacristan direction with fire-safety care."
+safety_warning = "Never extinguish, move, or adjust the sanctuary lamp during Mass, and never extinguish it while the Blessed Sacrament remains reserved in the tabernacle. If assisting the sacristan outside Mass to replace a sanctuary candle or oil vessel, allow hot glass and oil to cool safely, guard against open flame, and never open the tabernacle."
+
+[audience_text]
+altar_server = "Whenever you enter the sanctuary, glance first toward the hanging sanctuary lamp beside the tabernacle. Its steady living flame tells you immediately that the Blessed Sacrament is reserved inside, signaling when to genuflect before the tabernacle. Servers never light, extinguish, or touch the sanctuary lamp during Mass; if the sacristan asks for help replenishing it outside Mass, handle hot glass and open flame with patience and care."
+sacristan = "Inspect the sanctuary lamp daily so that a living oil or wax flame—never a substitute electric light—shines without interruption whenever the Eucharist is reserved (GIRM 316; CIC can. 940). Replace seven-day or fourteen-day beeswax cylinders or refill oil reservoirs before the flame burns low, letting heated glass cool before handling and keeping spare wicks and globes clean. Extinguish and remove the flame only when the tabernacle has been completely emptied, as on Good Friday."
+general_reader = "Hanging quietly beside the tabernacle, the sanctuary lamp is the Church's silent beacon announcing that Christ is sacramentally present inside. Fed continuously by real oil or wax in fidelity to ancient biblical and Roman custom, its single steadfast flame invites every worshiper entering the church to pause, genuflect, and pray before the Lord."
+
+[relationships]
+confusable_with = ["pc-obj-altar-candles"]
+related_objects = ["pc-obj-tabernacle", "pc-obj-altar-candles"]
+
+[symbolism]
+has_sourced_symbolism = true
+text = "The continuously burning oil or wax lamp openly signals Christ's abiding sacramental presence in the tabernacle and renders silent honor to Him day and night, echoing the perpetual lamp commanded before the Old Covenant sanctuary in Ex 27:20–21 (“Command the children of Israel that they bring thee the purest oil of the olives, and beaten with a pestle: that a lamp may burn always, In the tabernacle of the testimony, without the veil that hangs before the testimony”) and Lev 24:2–3 (“to furnish the lamps continually, Without the veil of the testimony in the tabernacle of the covenant”)."
+evidence_class = "liturgical-source"
+attribution = "GIRM 316; CIC (1983) can. 940; Ex 27:20–21; Lev 24:2–3"
+
+[counterpart_1962]
+relationship = "continued"
+locus_1962 = "Codex Iuris Canonici (1917) can. 1271"
+comparison = "Postconciliar discipline continues the 1917/1962 requirement without interruption: both CIC (1917) can. 1271 and CIC (1983) can. 940 together with GIRM 316 require a special living flame of oil or wax to burn continually before or near the tabernacle whenever the Eucharist is reserved."
+
+[historical_transition]
+is_superseded = false
+period_range = ""
+controlling_act = ""
+current_status = ""
+
+[audiences]
+comprehensive = true
+altar_server = true
+sacristan = true
+general_reader = true
+
+[sources]
+note_key = "N06"
+primary_loci = [
+  "GIRM 316",
+  "CIC (1983) can. 940",
+]
+source_bindings = [
+  "edition.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002",
+  "edition.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021",
+  "edition.catholic-church.codex-iuris-canonici-1983.latin-vatican-web-codex-2026-07-25",
+  "edition.catholic-church.codex-iuris-canonici-1917.vatican-polyglot-1918",
+]
+verification_state = "checked-against-primary-and-official-witness"
+rights_note = "Original analytical description; no protected liturgical wording reproduced verbatim."

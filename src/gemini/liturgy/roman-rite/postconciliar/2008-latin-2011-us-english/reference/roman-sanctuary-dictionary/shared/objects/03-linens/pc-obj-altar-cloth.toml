@@ -1,0 +1,76 @@
+schema_version = 1
+id = "pc-obj-altar-cloth"
+category = "linens"
+sort_order = 301
+plate_id = "pc-plt-04-linens"
+composition_plate_ids = ["pc-plt-01-sanctuary", "pc-plt-02-furnishings"]
+plate_position = "Bottom right corner drape (Plate IV); dressing the altar (Plates I--II)"
+preferred_english_name = "Altar Cloth"
+latin_headword = "Mappa"
+alternate_english_names = ["Fair linen", "Altar linen"]
+alternate_latin_names = ["Mappa altaris", "Mappae", "Tobalea"]
+pronunciation_key = "MAHP-pah"
+
+[edition_disposition]
+edition_locale = "2008-latin-2011-us-english"
+as_of = "2026-11-25"
+disposition = "required"
+scope_level = "universal-roman"
+territorial_note = "In the Dioceses of the United States of America, the confirmed territorial adaptation at GIRM 304 permits additional altar cloths beneath or alongside the primary cloth to bear other colors of Christian honorific or festive significance, provided the uppermost cloth covering the mensa is always white."
+
+[identification]
+summary = "A clean white linen cloth dressing the top surface of the altar for every celebration of Mass."
+appearance = "At bottom right of Plate IV, a finely hemmed corner of smooth white linen drapes cleanly over the stone edge of the mensa; Plates I and II show it dressing the entire freestanding altar. Proportioned to the altar's shape and size, it may bear restrained hemstitching, woven bands, or subtle lace suited to noble simplicity."
+placement_and_use = "Laid smoothly over the altar mensa before Mass so that at least one clean white cloth always covers the table of sacrifice (GIRM 117, 304). Any under-cloths—including festive colored under-cloths permitted in United States dioceses—lie neatly beneath the white uppermost cloth. Until the Preparation of the Gifts, the dressed mensa remains uncluttered, holding no cruets, stands, or loose papers (GIRM 306)."
+liturgical_colors = "Always white for the required uppermost cloth (GIRM 117, 304); in the United States, additional under-cloths may employ other liturgical or festive colors of Christian honorific significance (US GIRM 304)."
+
+[ministers_and_handling]
+ordinary_ministers = ["bishop", "priest", "deacon"]
+prepares = ["sacristan", "instituted-acolyte", "altar-server"]
+server_boundary = "prepares"
+server_boundary_summary = "Servers may assist the sacristan in laying or smoothing a clean altar cloth before Mass with clean hands, keeping wax, ink, and unauthorized items off the mensa and reporting any spill of the Precious Blood immediately to the priest or deacon."
+safety_warning = "Never blot or wash a spill of the Precious Blood on the altar cloth yourself; notify the priest or deacon at once so the spot is washed with water and the ablution poured into the sacrarium (GIRM 280; RS 120). Guard the linen against candle flames and molten wax."
+
+[audience_text]
+altar_server = "Look at bottom right of Plate IV and across the altar on Plates I and II: the smooth white altar cloth covers the mensa for every Mass. If asked to help smooth or lay a fresh cloth before Mass, make sure your hands are spotless and never lean on the covered altar. When extinguishing altar candles after Mass, use a snuffer so hot wax never splatters on the white linen. If a drop of the Precious Blood ever falls onto the altar cloth, never try to wipe it yourself—alert the priest or deacon right away."
+sacristan = "Verify before every Mass that at least one spotless, freshly pressed white linen altar cloth covers the mensa cleanly and matches the altar's proportions (GIRM 117, 304). Where your parish uses the United States adaptation permitting festive colored under-cloths beneath the white top cloth (US GIRM 304), align hems evenly with no wrinkled layers. Inspect regularly for wax drips or stains, and if the Precious Blood has touched the altar cloth, wash the affected area first by hand and pour the rinse water into the sacrarium or clean earth before ordinary laundering (GIRM 280; RS 120)."
+general_reader = "Before Mass begins, the bare stone or wood altar is vested in clean white linen. The Church prescribes at least one white altar cloth out of reverence for the memorial of Christ's sacrifice and the Eucharistic banquet offered upon the mensa (GIRM 117, 304). In the United States, parishes may layer additional cloths of festive Christian colors underneath, while always keeping white as the uppermost cloth."
+
+[relationships]
+confusable_with = ["pc-obj-corporal", "pc-obj-lavabo-towel"]
+related_objects = ["pc-obj-altar", "pc-obj-corporal", "pc-obj-altar-candles"]
+
+[symbolism]
+has_sourced_symbolism = true
+text = "The white altar cloth expresses reverence for the celebration of the Lord's memorial and the sacred banquet in which his Body and Blood are offered. In the scholastic tradition of St. Thomas Aquinas, the clean linen dressing the altar also evokes the burial cloth of Christ—“And Joseph taking the body wrapped it up in a clean linen cloth” (Matt 27:59)—calling to mind purity of conscience and the Passion of the Lord."
+evidence_class = "liturgical-source"
+attribution = "GIRM 304; St. Thomas Aquinas, Summa Theologiae III, q. 83, a. 3, ad 7; Matt 27:59"
+
+[counterpart_1962]
+relationship = "materially changed"
+locus_1962 = "Missale Romanum (1962), Rubricae Generales 526"
+comparison = "The 1962 Roman Missal required three clean blessed white linen cloths covering the altar, with the uppermost cloth reaching the ground at both sides (RG 526). Postconciliar law requires at least one white cloth suited to the altar's shape and size (GIRM 117, 304), while the United States adaptation permits additional festive colored under-cloths beneath the white top cloth."
+
+[historical_transition]
+is_superseded = false
+period_range = ""
+controlling_act = ""
+current_status = ""
+
+[audiences]
+comprehensive = true
+altar_server = true
+sacristan = true
+general_reader = true
+
+[sources]
+note_key = "N15"
+primary_loci = ["GIRM 117, 304 (with USCCB territorial adaptation)", "GIRM 280, 306", "Redemptionis Sacramentum 120"]
+source_bindings = [
+  "edition.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002",
+  "edition.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021",
+  "passage.catholic-church.missale-romanum.vatican-typica-1962.rubricae-generales-altar-preparation",
+  "work.thomas-aquinas.summa-theologiae",
+]
+verification_state = "checked-against-primary-and-official-witness"
+rights_note = "Original analytical description; no protected liturgical wording reproduced verbatim."

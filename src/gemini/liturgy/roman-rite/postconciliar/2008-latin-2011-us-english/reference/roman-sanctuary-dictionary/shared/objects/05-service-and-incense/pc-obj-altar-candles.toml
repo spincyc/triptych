@@ -1,0 +1,75 @@
+schema_version = 1
+id = "pc-obj-altar-candles"
+category = "service-and-incense"
+sort_order = 502
+plate_id = "pc-plt-01-sanctuary"
+composition_plate_ids = ["pc-plt-01-sanctuary"]
+plate_position = "See Plate I, flanking the freestanding altar"
+preferred_english_name = "Altar Candles"
+latin_headword = "Candelabra cum cereis"
+alternate_english_names = ["Altar Candlesticks", "Processional Candles"]
+alternate_latin_names = ["Cerei", "Candelabra"]
+pronunciation_key = "kahn-deh-LAH-brah koom CHEH-reh-ees"
+
+[edition_disposition]
+edition_locale = "2008-latin-2011-us-english"
+as_of = "2026-11-25"
+disposition = "required"
+scope_level = "universal-roman"
+territorial_note = "GIRM 117 and 307 are universal Roman norms without a separate territorial insertion for the United States. Guidance of the USCCB Committee on Divine Worship maintains real living flames of wax or oil rather than electric lights."
+
+[identification]
+summary = "Altar candles are lighted wax or oil candles mounted in dignified candlesticks on or around the altar for every liturgical celebration, as well as paired candlesticks carried in processions."
+appearance = "Two slender footed candlesticks bearing tall white wax tapers flank the central crucifix on the freestanding altar in Plate I, each fitted with a shallow wax bobeche to catch melted drips."
+placement_and_use = "At every celebration of Mass, lighted candles are placed on or around the altar: at least two candlesticks, or four or six especially for Sunday Mass and Holy Days of Obligation, and seven when the Diocesan Bishop celebrates (GIRM 117). Candlesticks are arranged harmoniously with the architecture of the altar and sanctuary so that they never obstruct the assembly’s clear view of what takes place upon the mensa (GIRM 307). Two lighted candles also accompany the processional cross at the entrance procession and flank the Book of the Gospels during the Gospel procession and proclamation at the ambo (GIRM 120b, 133, 175)."
+liturgical_colors = "Not governed by the seasonal color cycle; candles are traditionally white or unbleached natural beeswax, mounted in brass, bronze, silver, wood, or stone candlesticks."
+
+[ministers_and_handling]
+ordinary_ministers = ["instituted-acolyte", "altar-server"]
+prepares = ["sacristan", "altar-server"]
+server_boundary = "handles"
+server_boundary_summary = "Servers light altar candles shortly before Mass, extinguish them cleanly with a snuffer afterward, and carry processional and Gospel candles upright at matching heights without bowing or genuflecting while holding them (GIRM 120b, 133, 274)."
+safety_warning = "Keep open flames well clear of hair, albs, ribbons, vestments, and the pages of the Roman Missal. Carry processional candles strictly upright, watch for dripping hot wax, and extinguish every flame with a brass snuffer rather than blowing melted wax onto the white altar cloth."
+
+[audience_text]
+altar_server = "Light the altar candles before Mass with a lighting taper and extinguish them afterward with a snuffer—never blow them out across the white linen cloth. When carrying a candle beside the processional cross or flanking the ambo for the Gospel, hold your candlestick upright at the same height as your partner’s, omit bows and genuflects while holding it (GIRM 274), and keep the open flame safely away from hair, sleeves, and books."
+sacristan = "Set out the required number of trimmed wax or oil candles (two, four, or six, and seven when the Diocesan Bishop presides, GIRM 117) on or around the altar without blocking sightlines across the mensa (GIRM 307). Inspect oil followers or wax tubes for adequate fuel, clean hardened wax from drip shields, and keep a taper lighter and snuffer ready in the sacristy."
+general_reader = "Lighted candles burn on or near the altar at every Mass, scaling from two on ordinary weekdays to four or six on Sundays and solemnities, and seven when the Diocesan Bishop celebrates (GIRM 117). Carried alongside the cross at the entrance and around the ambo for the Gospel, their living flames honor the presence of Christ in His Word and His Eucharistic sacrifice."
+
+[relationships]
+confusable_with = ["pc-obj-sanctuary-lamp"]
+related_objects = ["pc-obj-altar", "pc-obj-processional-cross", "pc-obj-book-of-the-gospels", "pc-obj-altar-cloth"]
+
+[symbolism]
+has_sourced_symbolism = true
+text = "Candles are lighted at every liturgical celebration to express reverence and festive honor before God (GIRM 117, 307). Their living flame recalls Christ, who declares in the Gospel, “I am the light of the world. He that followeth me walketh not in darkness, but shall have the light of life” (John 8:12)."
+evidence_class = "liturgical-source"
+attribution = "GIRM 117, 307; John 8:12"
+
+[counterpart_1962]
+relationship = "materially changed"
+locus_1962 = "Missale Romanum (1962), Rubricae Generales n. 527; Ritus Servandus II.5, VI.5; Fortescue (1943), pp. 17, 89–90"
+comparison = "Both the 1962 Roman Missal (RG 527) and the 2002/2008 GIRM (117, 307) scale candle counts from two up to six, or seven for the Diocesan Bishop. In 1962, altar candlesticks stood directly on the altar or its gradine flanking the central crucifix, supplemented by separate Sanctus and elevation torches; postconciliar GIRM 117, 122, and 307 permit candlesticks to stand either on or around the altar—including processional candlesticks placed near it—so that the faithful maintain an unobstructed view of the altar table."
+
+[historical_transition]
+is_superseded = false
+period_range = ""
+controlling_act = ""
+current_status = ""
+
+[audiences]
+comprehensive = true
+altar_server = true
+sacristan = true
+general_reader = true
+
+[sources]
+note_key = "N26"
+primary_loci = ["GIRM 117", "GIRM 120b", "GIRM 122", "GIRM 133", "GIRM 175", "GIRM 274", "GIRM 307"]
+source_bindings = [
+  "work.catholic-church.institutio-generalis-missalis-romani",
+  "work.catholic-church.missale-romanum",
+  "work.adrian-fortescue.ceremonies-of-the-roman-rite-described",
+]
+verification_state = "checked-against-primary-and-official-witness"
+rights_note = "Original analytical description; no protected liturgical wording reproduced verbatim."

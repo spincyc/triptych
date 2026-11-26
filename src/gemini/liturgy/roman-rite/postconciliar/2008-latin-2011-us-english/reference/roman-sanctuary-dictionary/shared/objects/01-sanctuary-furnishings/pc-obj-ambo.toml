@@ -1,0 +1,81 @@
+schema_version = 1
+id = "pc-obj-ambo"
+category = "sanctuary-furnishings"
+sort_order = 102
+plate_id = "pc-plt-02-furnishings"
+composition_plate_ids = ["pc-plt-01-sanctuary"]
+plate_position = "Top right (Plate II); left foreground (Plate I)"
+preferred_english_name = "Ambo"
+latin_headword = "Ambo"
+alternate_english_names = ["Lectern of the Word"]
+alternate_latin_names = ["Lectrinum"]
+pronunciation_key = "AHM-boh"
+
+[edition_disposition]
+edition_locale = "2008-latin-2011-us-english"
+as_of = "2026-11-25"
+disposition = "required"
+scope_level = "universal-roman"
+territorial_note = ""
+
+[identification]
+summary = "The ambo is the stationary architectural stand in the sanctuary reserved exclusively for proclaiming the Word of God during the liturgy."
+appearance = "Depicted in Plate II as a permanent paneled stone structure resting on a molded base with a rear minister's step and an inclined book desk sized for the Lectionary or Book of the Gospels, and placed in the left foreground of Plate I in clear visual harmony with the freestanding altar."
+placement_and_use = "Universal Roman law prescribes a permanent, stationary ambo—never a lightweight movable lectern—positioned so that the attention of the faithful turns naturally toward it during the Liturgy of the Word and ministers can be clearly seen and heard (GIRM 309; Ordo lectionum Missae 32–34). Only the Scripture readings, the Responsorial Psalm, and the Easter Proclamation (Exsultet) are proclaimed from the ambo, together with the homily and the intentions of the Universal Prayer; parish announcements, commentary, and the leading of general singing belong at a separate stand elsewhere."
+liturgical_colors = "Normally left in its unadorned stone or wood architectural finish; where local custom drapes an ambo antependium or hanging, it follows the liturgical color of the day (GIRM 346)."
+
+[ministers_and_handling]
+ordinary_ministers = ["bishop", "priest", "deacon", "instituted-lector"]
+prepares = ["sacristan", "instituted-lector", "altar-server"]
+server_boundary = "recognizes-only"
+server_boundary_summary = "Servers flank the ambo with lighted candles and incense during the Gospel proclamation and may confirm before Mass that the Lectionary rests open upon the desk, but never proclaim readings or lead prayers from the ambo unless separately deputed as readers."
+safety_warning = "Watch the rear step of the ambo when moving into place with lighted Gospel candles or a smoking thurible, keeping flames well clear of the microphone, Lectionary pages, and ministers' vestments."
+
+[audience_text]
+altar_server = "The permanent stone or wood ambo stands toward the front of the sanctuary for the Liturgy of the Word. Before Mass, you may check that the Lectionary is open to the right page on its sloped desk, and during the Gospel procession you walk ahead with lighted candles or the thurible and stand neatly beside the ambo facing the deacon or priest. Keep an eye on the step behind the ambo when carrying lighted candles, and remember that altar servers do not read from the ambo unless separately scheduled as readers."
+sacristan = "Before Mass, place the Lectionary—never a disposable booklet—neatly upon the ambo desk and open it to the appointed first reading (GIRM 118b, 349). Confirm that the desk is clear of parish announcements, music folders, and stray papers, that any lighting or microphone works cleanly without obstructing the Book of the Gospels, and that a separate lectern stands outside the ambo's focal area for a commentator or song leader when needed (GIRM 309)."
+general_reader = "Because Catholic worship nourishes the faithful at two tables—the table of God's Word and the table of Christ's Body—the postconciliar sanctuary pairs its central altar with a solid, stationary ambo. Built to match the altar's dignity rather than serving as a utilitarian podium, the ambo is set apart strictly for Scripture, the Responsorial Psalm, the Easter Proclamation, the homily, and the Prayer of the Faithful, drawing the entire assembly's gaze when God speaks through the sacred readings."
+
+[relationships]
+confusable_with = ["pc-obj-missal-stand"]
+related_objects = ["pc-obj-lectionary", "pc-obj-book-of-the-gospels", "pc-obj-altar", "pc-obj-altar-candles", "pc-obj-thurible"]
+
+[symbolism]
+has_sourced_symbolism = true
+text = "The General Instruction pairs the ambo with the altar as the two tables of the Mass—the table of God's Word and the table of Christ's Body—directing that the dignity of Sacred Scripture be honored by a fixed, noble place toward which the congregation naturally turns. Its prominence visibly echoes the Psalmist's confession in Ps 118:105 [Heb 119:105]: “Thy word is a lamp to my feet, and a light to my paths.”"
+evidence_class = "liturgical-source"
+attribution = "GIRM 28, 309; Ordo lectionum Missae (1981) Praenotanda 32–34; Ps 118:105 [Heb 119:105]"
+
+[counterpart_1962]
+relationship = "newly provided"
+locus_1962 = "Missale Romanum (1962), Ritus Servandus VI.4–5 (no fixed sanctuary ambo prescribed)"
+comparison = "The 1962 Roman Missal did not prescribe a permanent sanctuary ambo: at Low Mass the priest read the Epistle and Gospel from opposite corners of the altar, and at Solemn Mass the subdeacon and deacon sang them from the sanctuary floor with the subdeacon holding the Gospel book (RS VI.4–5). Postconciliar law restores a dedicated stationary ambo as a standard architectural appointment of every sanctuary (Inter Oecumenici 96; GIRM 309)."
+
+[historical_transition]
+is_superseded = false
+period_range = ""
+controlling_act = ""
+current_status = ""
+
+[audiences]
+comprehensive = true
+altar_server = true
+sacristan = true
+general_reader = true
+
+[sources]
+note_key = "N02"
+primary_loci = [
+  "GIRM 28, 118b, 130–136, 175, 196, 309",
+  "Ordo lectionum Missae (1981) Praenotanda 32–34",
+  "Inter Oecumenici (1964) 96",
+]
+source_bindings = [
+  "edition.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002",
+  "edition.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021",
+  "edition.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981",
+  "edition.holy-see.acta-apostolicae-sedis.volume-56-1964",
+  "edition.catholic-church.missale-romanum.vatican-typica-1962",
+]
+verification_state = "checked-against-primary-and-official-witness"
+rights_note = "Original analytical description; no protected liturgical wording reproduced verbatim."

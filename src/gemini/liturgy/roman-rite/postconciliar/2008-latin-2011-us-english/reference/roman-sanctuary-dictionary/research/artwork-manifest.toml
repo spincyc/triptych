@@ -1,0 +1,341 @@
+schema_version = 1
+manifest_id = "pc-roman-sanctuary-artwork-manifest"
+owner = "src/gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary"
+asset_root = "shared/artwork/graphite"
+status = "bounded-alpha-verified"
+as_of = "2026-11-25"
+visual_contract = "Monochrome 8-bit grayscale graphite pencil drawings on seamless pure white (#FFFFFF) ground; zero embedded text, letters, numbers, arrows, borders, or color washes; TeX owns all headwords, position keys, scale notices, and monochrome liturgical-color keys."
+
+[[artworks]]
+id = "pc-art-01-sanctuary-composition"
+plate_id = "pc-plt-01-sanctuary"
+view = "composition"
+hard_case = "full-sanctuary-composition"
+scale_mode = "not-to-common-scale"
+boundary_treatment = "page-ground"
+object_ids = ["pc-obj-altar", "pc-obj-ambo", "pc-obj-presidential-chair", "pc-obj-credence-table", "pc-obj-tabernacle", "pc-obj-sanctuary-lamp", "pc-obj-altar-cloth", "pc-obj-altar-candles", "pc-obj-processional-cross", "pc-obj-cruets"]
+purpose = "Opening full postconciliar sanctuary composition illustrating spatial relationships among freestanding altar, permanent ambo, presidential chair, credence table, and recessed tabernacle with sanctuary lamp."
+depicted_state = "Freestanding stone altar dressed with white linen cloth, two candles, and crucifix; stone ambo in left foreground; wooden presidential chair and credence table at right; solid tabernacle in recessed niche with hanging sanctuary lamp; no altar rail, gradines, or altar cards."
+generator = "gemini-3.1-flash-image via Antigravity generate_image tool"
+generated_on = "2026-11-25"
+corrections = ["None required after initial generation; full-size visual audit confirmed zero baked text, pure white margins, and accurate postconciliar sanctuary arrangement."]
+baked_content_audit = "passed: zero text, letters, numerals, arrows, color, or frames"
+rights = "Project-owned generated monochrome illustration (CC BY 4.0); no third-party photographs or copyrighted art incorporated."
+review_state = "approved"
+[artworks.received]
+width_px = 1200
+height_px = 896
+color_mode = "RGB"
+bytes = 602085
+sha256 = "d4002ba5f51996cf927564ee831ad0fde8c17b52e5f5de4032479c9e52e9374b"
+[artworks.normalized]
+path = "shared/artwork/graphite/pc-art-01-sanctuary-composition.png"
+width_px = 1200
+height_px = 896
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 320981
+sha256 = "8d26f74fa6d8f3e44ba868b2350da042088d1d679d309cdd40cba655d4f65135"
+border_min = 255
+border_mean = 255.0
+
+[[artworks]]
+id = "pc-art-02-altar-ambo-chair"
+plate_id = "pc-plt-02-furnishings"
+view = "comparison"
+hard_case = "dense-comparison-plate"
+scale_mode = "not-to-common-scale"
+boundary_treatment = "page-ground"
+object_ids = ["pc-obj-altar", "pc-obj-ambo", "pc-obj-presidential-chair", "pc-obj-tabernacle", "pc-obj-sanctuary-lamp"]
+purpose = "Four-subject architectural comparison of principal postconciliar sanctuary furnishings."
+depicted_state = "Top left: freestanding altar with white cloth; top right: carved stone ambo with step and sloped ledge; bottom left: dignified wooden presidential chair; bottom right: solid double-door tabernacle on stone pedestal with hanging sanctuary lamp."
+generator = "gemini-3.1-flash-image via Antigravity generate_image tool"
+generated_on = "2026-11-25"
+corrections = ["None required after initial generation; full-size visual audit passed."]
+baked_content_audit = "passed: zero text, letters, numerals, arrows, color, or frames"
+rights = "Project-owned generated monochrome illustration (CC BY 4.0)."
+review_state = "approved"
+[artworks.received]
+width_px = 1200
+height_px = 896
+color_mode = "RGB"
+bytes = 444264
+sha256 = "7a674f76b45b66a3b19947f68df1b94f1c249e314c356ce463884a3d939d9749"
+[artworks.normalized]
+path = "shared/artwork/graphite/pc-art-02-altar-ambo-chair.png"
+width_px = 1200
+height_px = 896
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 124088
+sha256 = "84e53bfbfd70a546640adde5e2ea5d5edf13678a57783bcbeeb18b72d81420cc"
+border_min = 255
+border_mean = 255.0
+
+[[artworks]]
+id = "pc-art-03-sacred-vessels"
+plate_id = "pc-plt-03-vessels"
+view = "comparison"
+hard_case = "reflective-metal-vessels"
+scale_mode = "not-to-common-scale"
+boundary_treatment = "page-ground"
+object_ids = ["pc-obj-chalice", "pc-obj-paten", "pc-obj-ciborium", "pc-obj-flagon", "pc-obj-communion-cup", "pc-obj-pyx"]
+purpose = "Reflective-metal comparison plate distinguishing chalice, wide paten, lidded ciborium, wine flagon, Communion cup, and pocket pyx."
+depicted_state = "Top row left to right: chalice, wide shallow paten, lidded footed ciborium with cross finial; bottom row left to right: pitcher-style wine flagon, simpler footed Communion cup, hinged pocket pyx shown open."
+generator = "gemini-3.1-flash-image via Antigravity generate_image tool"
+generated_on = "2026-11-25"
+corrections = ["None required after initial generation; specular graphite reflections and vessel morphology verified clean."]
+baked_content_audit = "passed: zero text, letters, numerals, arrows, color, or frames"
+rights = "Project-owned generated monochrome illustration (CC BY 4.0)."
+review_state = "approved"
+[artworks.received]
+width_px = 1200
+height_px = 896
+color_mode = "RGB"
+bytes = 397129
+sha256 = "9062151442eecff18cb9ccd3867c5523db43c38e8e6491616428bcb7f842caa2"
+[artworks.normalized]
+path = "shared/artwork/graphite/pc-art-03-sacred-vessels.png"
+width_px = 1200
+height_px = 896
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 185917
+sha256 = "cdbba37ba00e6660aafa4f25e25e335d45911171707cae0e97bbeafd4ef3a3a9"
+border_min = 255
+border_mean = 255.0
+
+[[artworks]]
+id = "pc-art-04-white-linens"
+plate_id = "pc-plt-04-linens"
+view = "comparison"
+hard_case = "white-on-white-linens"
+scale_mode = "not-to-common-scale"
+boundary_treatment = "page-ground"
+object_ids = ["pc-obj-corporal", "pc-obj-purificator", "pc-obj-pall", "pc-obj-lavabo-towel", "pc-obj-altar-cloth"]
+purpose = "White-on-white textile study differentiating altar linens by fold geometry, stiffening, hem detail, and stitched cross placement."
+depicted_state = "Top left: unfolded square corporal showing 3x3 crease grid and front edge cross paired with folded square corporal; top right: oblong purificator folded lengthwise in thirds with stitched cross visible near the lower folded end; bottom left: rigid square pall; bottom center: softly folded lavabo towel; bottom right: hemmed white altar cloth corner draped over stone mensa."
+generator = "gemini-3.1-flash-image via Antigravity generate_image tool"
+generated_on = "2026-11-25"
+corrections = ["None required after initial generation; all five linens remain cleanly legible on white stock after 8-bit grayscale normalization."]
+baked_content_audit = "passed: zero text, letters, numerals, arrows, color, or frames"
+rights = "Project-owned generated monochrome illustration (CC BY 4.0)."
+review_state = "approved"
+[artworks.received]
+width_px = 1200
+height_px = 896
+color_mode = "RGB"
+bytes = 492886
+sha256 = "c895336d5c4435e76d2fbba71ba82acdfbc3dd84e49168794ae99f9ed49406a6"
+[artworks.normalized]
+path = "shared/artwork/graphite/pc-art-04-white-linens.png"
+width_px = 1200
+height_px = 896
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 271907
+sha256 = "ff6750e0e6169acf6cc92594a83e865fb1f9dc0ff4180c402b4b733325952b9b"
+border_min = 255
+border_mean = 255.0
+
+[[artworks]]
+id = "pc-art-05-liturgical-books"
+plate_id = "pc-plt-05-books"
+view = "comparison"
+hard_case = "dense-comparison-plate"
+scale_mode = "relative-proportions-shown"
+boundary_treatment = "page-ground"
+object_ids = ["pc-obj-roman-missal", "pc-obj-missal-stand", "pc-obj-lectionary", "pc-obj-book-of-the-gospels", "pc-obj-book-of-the-chair"]
+purpose = "Proportional and binding comparison of the postconciliar Roman Missal, Lectionary, ornate Book of the Gospels, Book of the Chair, and Missal Stand."
+depicted_state = "Top left: thick Roman Missal open with ribbons and edge tabs on low angled stand (abstract line shading, zero text); top right: tall closed Lectionary; bottom left: ornate Book of the Gospels with metal corner bosses and embossed cross; bottom right: slimmer ceremonial binder Book of the Chair."
+generator = "gemini-3.1-flash-image via Antigravity generate_image tool"
+generated_on = "2026-11-25"
+corrections = ["First request returned HTTP 503 capacity error; retry succeeded cleanly with zero pseudo-text on open pages or bindings."]
+baked_content_audit = "passed: zero text, letters, numerals, arrows, color, or frames"
+rights = "Project-owned generated monochrome illustration (CC BY 4.0)."
+review_state = "approved"
+[artworks.received]
+width_px = 1200
+height_px = 896
+color_mode = "RGB"
+bytes = 695169
+sha256 = "93cc08a686833193e5bdc055908cd71cce6a68e62254a095595723d0bc9cd077"
+[artworks.normalized]
+path = "shared/artwork/graphite/pc-art-05-liturgical-books.png"
+width_px = 1200
+height_px = 896
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 422821
+sha256 = "e43520dd5ba863fa46a1ef8d2c4ceee5326eb499c15eb8179054cd5204489974"
+border_min = 255
+border_mean = 255.0
+
+[[artworks]]
+id = "pc-art-06-service-cruets-bells"
+plate_id = "pc-plt-06-service"
+view = "comparison"
+hard_case = "dense-comparison-plate"
+scale_mode = "not-to-common-scale"
+boundary_treatment = "page-ground"
+object_ids = ["pc-obj-cruets", "pc-obj-lavabo-towel", "pc-obj-processional-cross", "pc-obj-sanctuary-bells", "pc-obj-aspergillum-aspersorium"]
+purpose = "Service equipment comparison featuring transparent glass cruets, lavabo vessel set, processional cross with corpus, four-bell sanctuary chime, and holy-water aspergillum and aspersorium."
+depicted_state = "Top left: pair of glass cruets with stoppers on oval tray; top center: lavabo pitcher and finger basin; top right: processional cross with sculpted corpus and blank cross top; bottom left: four-cup mounted brass sanctuary bell; bottom right: metal aspersorium bucket and perforated aspergillum."
+generator = "gemini-3.1-flash-image via Antigravity generate_image tool"
+generated_on = "2026-11-25"
+corrections = ["v1 rejected on full-size visual audit: (1) processional cross titulus contained baked 'INRI' lettering violating zero-text contract; (2) sanctuary bell depicted two impossibly fused hand bells. Regenerated as v2 with clean four-cup sanctuary chime and letter-free crucifix; v2 passed."]
+baked_content_audit = "passed: zero text, letters, numerals, arrows, color, or frames"
+rights = "Project-owned generated monochrome illustration (CC BY 4.0)."
+review_state = "approved"
+[artworks.received]
+width_px = 1200
+height_px = 896
+color_mode = "RGB"
+bytes = 431733
+sha256 = "dedd006f55fe35644a0834af26100bb9b65f1b34f05a4bffac6bcd80d500aa73"
+[artworks.normalized]
+path = "shared/artwork/graphite/pc-art-06-service-cruets-bells.png"
+width_px = 1200
+height_px = 896
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 213409
+sha256 = "8a8d95838336fe810f5aa304072ffd45889b07cc1b8ff7c229adeb08603e4f27"
+border_min = 255
+border_mean = 255.0
+
+[[artworks]]
+id = "pc-art-07-incense-set"
+plate_id = "pc-plt-07-incense"
+view = "detail"
+hard_case = "reflective-metal-vessels"
+scale_mode = "not-to-common-scale"
+boundary_treatment = "page-ground"
+object_ids = ["pc-obj-thurible", "pc-obj-incense-boat"]
+purpose = "Closed and open-lid construction study of the chained thurible paired with the open incense boat and spoon."
+depicted_state = "Left: closed metal thurible suspended on outer rim chains (two visible in profile) and central lid-lifting chain; center: open-lid detail revealing removable inner charcoal fire-pan; right: footed boat-shaped navicula with hinged half-lid open showing incense grains, plus long-handled metal spoon."
+generator = "gemini-3.1-flash-image via Antigravity generate_image tool"
+generated_on = "2026-11-25"
+corrections = ["None required after initial generation; chain count, fire-pan inset, and boat hinge geometry verified accurate."]
+baked_content_audit = "passed: zero text, letters, numerals, arrows, color, or frames"
+rights = "Project-owned generated monochrome illustration (CC BY 4.0)."
+review_state = "approved"
+[artworks.received]
+width_px = 1200
+height_px = 896
+color_mode = "RGB"
+bytes = 443203
+sha256 = "17e7e2bb81e8472057102664dbd17a6362fad07365e7efa09cfcb5323e19d46b"
+[artworks.normalized]
+path = "shared/artwork/graphite/pc-art-07-incense-set.png"
+width_px = 1200
+height_px = 896
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 203218
+sha256 = "a323e592191c7a47cf5343e3e951d0d828e7cceeea4b5c029469cb1c3832b75b"
+border_min = 255
+border_mean = 255.0
+
+[[artworks]]
+id = "pc-art-08-priest-deacon-vesture"
+plate_id = "pc-plt-08-vesture-ordained"
+view = "worn"
+hard_case = "worn-vestment-study"
+scale_mode = "common-scale-figures"
+boundary_treatment = "page-ground"
+object_ids = ["pc-obj-alb", "pc-obj-cincture", "pc-obj-amice", "pc-obj-stole", "pc-obj-chasuble", "pc-obj-dalmatic"]
+purpose = "Worn liturgical vestment comparison establishing exact postconciliar distinctions between priestly vesture (straight stole under chasuble) and diaconal vesture (diagonal stole from left shoulder to right hip beneath dalmatic)."
+depicted_state = "Left: priest in alb, amice, straight hanging stole, and Y-orphrey chasuble; center: deacon in alb, cincture, and diagonal stole from left shoulder to right hip without dalmatic; right: deacon in alb and sleeved dalmatic over diagonal stole peeking at deacon's right side; far right insets: folded amice with ties and coiled tasseled cincture."
+generator = "gemini-3.1-flash-image via Antigravity generate_image tool"
+generated_on = "2026-11-25"
+corrections = [
+  "v1 rejected on liturgical audit: diaconal stole was erroneously drawn over the outside of the dalmatic instead of underneath it (contrary to GIRM 340).",
+  "v2 rejected on anatomical consistency audit: center deacon correctly showed diagonal stole from left shoulder to right hip, but right dalmatic figure showed peeking stole fringe on deacon's left side.",
+  "v3 corrected via targeted image edit relocating peeking stole fringe beneath deacon's right hem to match center figure; v3 passed full audit."
+]
+baked_content_audit = "passed: zero text, letters, numerals, arrows, color, or frames"
+rights = "Project-owned generated monochrome illustration (CC BY 4.0)."
+review_state = "approved"
+[artworks.received]
+width_px = 1200
+height_px = 896
+color_mode = "RGB"
+bytes = 472946
+sha256 = "80c99ebf6e2aa267d52d016ce5eb3f177d9a0473337642d86e545aea8976c128"
+[artworks.normalized]
+path = "shared/artwork/graphite/pc-art-08-priest-deacon-vesture.png"
+width_px = 1200
+height_px = 896
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 240266
+sha256 = "591ef299af54f90738064c71a864df8916f87137c3090d7cb708ed49f49d6562"
+border_min = 255
+border_mean = 255.0
+
+[[artworks]]
+id = "pc-art-09-black-cassock-surplice-cope"
+plate_id = "pc-plt-09-vesture-choir-solemn"
+view = "worn"
+hard_case = "black-garment-contrast"
+scale_mode = "common-scale-figures"
+boundary_treatment = "page-ground"
+object_ids = ["pc-obj-cassock-surplice", "pc-obj-cope", "pc-obj-humeral-veil"]
+purpose = "High-contrast monochrome garment plate showing deep black cassock under white pleated surplice alongside semicircular cope and properly enveloped humeral veil."
+depicted_state = "Left: clerical choir dress (deep charcoal-black buttoned cassock beneath bright pleated white surplice); center: three-quarter rear view of semicircular cope with hood shield and tassel over white alb; right: priest in alb and stole wearing fringed humeral veil wrapping completely around both hands holding a closed lidded ciborium."
+generator = "gemini-3.1-flash-image via Antigravity generate_image tool"
+generated_on = "2026-11-25"
+corrections = ["v1 rejected on liturgical audit: priest held an uncovered chalice bare-handed while the humeral veil hung unused beside his arms. Regenerated as v2 with cloth of humeral veil properly enveloping both hands around a closed lidded ciborium; v2 passed."]
+baked_content_audit = "passed: zero text, letters, numerals, arrows, color, or frames"
+rights = "Project-owned generated monochrome illustration (CC BY 4.0)."
+review_state = "approved"
+[artworks.received]
+width_px = 1200
+height_px = 896
+color_mode = "RGB"
+bytes = 545507
+sha256 = "d02a086ad6639bc0a067ea3f2ceeba00e3fcbc6d2f820510824e7af87692db32"
+[artworks.normalized]
+path = "shared/artwork/graphite/pc-art-09-black-cassock-surplice-cope.png"
+width_px = 1200
+height_px = 896
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 290184
+sha256 = "cf8d77041ff8c4a3e1c4a8ac3484e7d0d3829d46c869d6f0d5b9c020e8151709"
+border_min = 255
+border_mean = 255.0
+
+[[artworks]]
+id = "pc-art-10-communion-triduum-vessels"
+plate_id = "pc-plt-10-communion-sacramental"
+view = "composition"
+hard_case = "dense-comparison-plate"
+scale_mode = "not-to-common-scale"
+boundary_treatment = "page-ground"
+object_ids = ["pc-obj-communion-cup", "pc-obj-ciborium", "pc-obj-chalice", "pc-obj-paten", "pc-obj-corporal", "pc-obj-purificator", "pc-obj-holy-oils-stocks", "pc-obj-baptismal-font"]
+purpose = "In-use Communion under both kinds arrangement on an unfolded corporal alongside holy-oils stocks and carved octagonal baptismal font."
+depicted_state = "Top: unfolded corporal holding principal chalice, paten, veiled covered ciborium, and two Communion cups each paired with a folded purificator; bottom left: three blank polished metal cylindrical holy-oils stocks on tray (zero engraved letters); bottom right: carved octagonal stone baptismal font with domed cover slightly ajar."
+generator = "gemini-3.1-flash-image via Antigravity generate_image tool"
+generated_on = "2026-11-25"
+corrections = ["None required after initial generation; verified zero engraved abbreviations on oil stocks and clean vessel arrangement on corporal."]
+baked_content_audit = "passed: zero text, letters, numerals, arrows, color, or frames"
+rights = "Project-owned generated monochrome illustration (CC BY 4.0)."
+review_state = "approved"
+[artworks.received]
+width_px = 1200
+height_px = 896
+color_mode = "RGB"
+bytes = 529090
+sha256 = "f46132df06b8836ad1cef45abfd73329c08f28beeb415169834ebe6f67735f57"
+[artworks.normalized]
+path = "shared/artwork/graphite/pc-art-10-communion-triduum-vessels.png"
+width_px = 1200
+height_px = 896
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 196396
+sha256 = "7e7ea6f62b73d1c13f47316e9b5a37e9af29487b843ce235155d9a39e4887ef9"
+border_min = 255
+border_mean = 255.0

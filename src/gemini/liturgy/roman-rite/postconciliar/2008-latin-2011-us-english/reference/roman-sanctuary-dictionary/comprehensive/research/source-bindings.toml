@@ -1,0 +1,137 @@
+schema = 2
+record_type = "bindings"
+document = "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/comprehensive"
+
+[[bindings]]
+source_id = "edition.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002"
+loci = ["117", "118", "118(c)", "119", "274", "279", "283", "287", "295", "301", "304", "307", "309", "315", "316", "327", "329", "335", "336", "339", "346", "389", "390"]
+role = "official-control"
+states = ["cataloged"]
+context = "Governing universal Latin third typical edition IGMR controlling Latin headwords and universal sanctuary, vessel, linen, book, service, and vestment norms. Repository metadata is text-free (restricted); Chapters III--VI loci were checked externally against official Vatican/USCCB online texts on 2026-11-25."
+
+[[bindings]]
+source_id = "edition.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021"
+loci = ["28", "51", "117", "118", "118(c)", "119", "274", "283", "295", "301", "304", "307", "309", "315", "316", "327", "329", "335", "336", "339", "346", "390"]
+role = "official-control"
+states = ["cataloged"]
+context = "Governing United States English GIRM (effective 27 Nov 2011; emended through 22 Oct 2021 under Prot. n. 394/21) controlling formal USCCB adaptations (nos. 283, 301, 304, 329, 339, 346e, 346h). Repository records are text-free (restricted); Chapters III--VI checked externally on usccb.org on 2026-11-25."
+
+[[bindings]]
+source_id = "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+loci = ["Order of Mass", "Holy Thursday", "Easter Vigil", "Appendix II"]
+role = "official-control"
+states = ["cataloged"]
+context = "Third typical edition of the postconciliar Roman Missal (2002) establishing liturgical context for sanctuary appointments, sprinkling rite, Holy Thursday transfer, and Chrism/Easter Vigil rites."
+
+[[bindings]]
+source_id = "edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008"
+loci = ["2008 emended reprint"]
+role = "currentness-control"
+states = ["cataloged"]
+context = "Declared Latin typical reprint (2008). Catalog-only in src/sources/; stability of IGMR sanctuary articles verified through the Notitiae 44 (2008) nos. 503--504 notice and variations works bound below."
+
+[[bindings]]
+source_id = "work.holy-see.reimpressio-emendata-missalis-romani-notice-2008"
+loci = ["Notitiae 44 (2008) 367-388"]
+role = "currentness-control"
+states = ["cataloged"]
+context = "Establishes the legal status of the 2008 reimpressio emendata as an emended reprint of the third typical edition rather than a fourth typical edition."
+
+[[bindings]]
+source_id = "work.holy-see.variationes-et-additiones-missalis-romani-2008"
+loci = ["Notitiae 44 (2008) 367-388"]
+role = "currentness-control"
+states = ["cataloged"]
+context = "Records the 2008 textual and rubrical variations, confirming continuity of the 2002 IGMR sanctuary, vessel, linen, book, and vestment provisions."
+
+[[bindings]]
+source_id = "edition.catholic-church.missale-romanum.vatican-typica-1970"
+loci = ["1970 IGMR 142-152, 262, 270, 276, 290-291, 301"]
+role = "context"
+states = ["cataloged"]
+context = "First postconciliar typical edition (26 Mar 1970) used strictly in the separated chronological historical section documenting superseded postconciliar transitions (subdeacon/tunicle, vessel materials, altar cross, tabernacle, chalice veil)."
+
+[[bindings]]
+source_id = "edition.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981"
+loci = ["Praenotanda 32-37, 69, 103-107"]
+role = "official-control"
+states = ["cataloged"]
+context = "Governs the standalone multi-volume Lectionary cycle (A/B/C, I/II), ambo dignity, and the dedicated Book of the Gospels."
+
+[[bindings]]
+source_id = "edition.catholic-church.codex-iuris-canonici-1983.english-vatican-web-codex-2026-07-25"
+loci = ["canon-230", "canon-847", "canon-858", "canon-910", "canon-938", "canon-939", "canon-940", "canon-1003", "canon-1235", "canon-1236", "canon-1237", "canon-1238", "canon-1239"]
+role = "official-control"
+states = ["cataloged"]
+context = "Universal canonical law governing instituted lay ministries, holy oils, parish baptismal fonts, ministers of Communion, tabernacle/pyx/sanctuary lamp, and fixed/movable altars."
+
+[[bindings]]
+source_id = "edition.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23"
+loci = ["34-35", "50-56", "122-128"]
+role = "official-control"
+states = ["cataloged"]
+context = "Conciliar mandate for revision of the Roman Missal, Scripture proclamation, Communion under both kinds, and noble simplicity in sacred art and vesture."
+
+[[bindings]]
+source_id = "edition.paul-vi.missale-romanum-constitutio.english-vatican-web-2026-07-25"
+loci = ["complete-text"]
+role = "context"
+states = ["cataloged"]
+context = "Apostolic Constitution (3 April 1969) promulgating the postconciliar Roman Missal and Lectionary separation."
+
+[[bindings]]
+source_id = "edition.paul-vi.ministeria-quaedam.latin-vatican-web-2026-07-27"
+loci = ["intro", "I-IV", "effective-date"]
+role = "context"
+states = ["cataloged"]
+context = "Controls the suppression of the subdiaconate and minor orders and the institution of lay Lector and Acolyte ministries (effective 1 Jan 1973; explaining the superseded subdeacon's tunicle and changed humeral veil role)."
+
+[[bindings]]
+source_id = "edition.catholic-church.missale-romanum.vatican-typica-1962"
+loci = ["RG 133-137, 503, 526-528", "RS I-X", "Ordo ad aspergendam"]
+role = "analogue"
+states = ["cataloged"]
+context = "Primary 1962 Roman Missal witness collated directly for every object's explicit 1962 counterpart relationship; never imported as postconciliar law."
+
+[[bindings]]
+source_id = "edition.catholic-church.rubricae-breviarii-et-missalis-romani.latin-aas-52-1960"
+loci = ["131", "137", "526-528"]
+role = "analogue"
+states = ["cataloged"]
+context = "1960 Codex Rubricarum incorporated into the 1962 Missal governing 1962 vestments, altar dressing, and sanctuary preparation for direct edition comparison."
+
+[[bindings]]
+source_id = "edition.adrian-fortescue.ceremonies-of-the-roman-rite-described.seventh-revised-1943"
+loci = ["pp. 8-10, 17, 37-40, 71, 78-81, 89-90"]
+role = "analogue"
+states = ["cataloged"]
+context = "Preconciliar Roman ceremonial witness corroborating 1962 sedilia, credence, processional cross, asperges, and torch distinctions."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.summa-theologiae.english-dominicans-gutenberg-tertia-2006.pg19950-body-4597132e"
+loci = ["III.83.3.corpus", "III.83.4.corpus", "III.83.5.corpus"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:44bb2918bacdd01a424eae980d78ad285fcea31c85426a00800aafd120952178"
+context = "Public-domain Dominican English text inspected directly in src/sources/ for grounded scholastic symbolism of altar, chalice, paten, corporal, incense, cross, and handwashing."
+
+[[bindings]]
+source_id = "edition.amalarius-of-metz.liber-de-ordine-antiphonarii.latin-migne-pl-105"
+loci = ["Liber Officialis II.17-24"]
+role = "lead"
+states = ["cataloged"]
+context = "Carolingian liturgical treatise consulted strictly for explicitly labeled medieval vestment allegory, kept separate from official GIRM norms."
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-usccb-second-2019"
+loci = ["1237-1243", "1294-1300"]
+role = "official-control"
+states = ["cataloged"]
+context = "Catechetical synthesis of Baptism and Sacred Chrism anointing cited alongside CIC can. 847 and 858."
+
+[[bindings]]
+source_id = "work.united-states-conference-of-catholic-bishops.guidelines-publication-liturgical-books"
+loci = ["title-and-copyright-pages"]
+role = "rights-control"
+states = ["cataloged"]
+context = "Establishes rights and non-verbatim-reproduction boundaries for United States liturgical texts (2025 printing, eff. 29 Nov 2026)."

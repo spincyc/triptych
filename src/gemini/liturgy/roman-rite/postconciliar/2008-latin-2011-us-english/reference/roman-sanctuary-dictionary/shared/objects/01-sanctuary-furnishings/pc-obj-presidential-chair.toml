@@ -1,0 +1,81 @@
+schema_version = 1
+id = "pc-obj-presidential-chair"
+category = "sanctuary-furnishings"
+sort_order = 103
+plate_id = "pc-plt-02-furnishings"
+composition_plate_ids = ["pc-plt-01-sanctuary"]
+plate_position = "Bottom left (Plate II); rear right (Plate I)"
+preferred_english_name = "Presidential Chair"
+latin_headword = "Sedes sacerdotis celebrantis"
+alternate_english_names = ["Chair for the Priest Celebrant", "Presider's Chair"]
+alternate_latin_names = ["Sedes"]
+pronunciation_key = "SEH-dehs sah-chehr-DOH-tees cheh-leh-BRAHN-tees"
+
+[edition_disposition]
+edition_locale = "2008-latin-2011-us-english"
+as_of = "2026-11-25"
+disposition = "required"
+scope_level = "universal-roman"
+territorial_note = ""
+
+[identification]
+summary = "The presidential chair is the single seat appointed for the priest celebrant from which he presides over the liturgical assembly and leads its opening and closing prayers."
+appearance = "Shown at bottom left of Plate II as a dignified wooden armchair with an arched paneled high backrest, sturdy armrests, and squared legs, and positioned at rear right in Plate I beside the credence table—clearly superior to server seating yet deliberately devoid of canopy, royal steps, or throne-like ornament."
+placement_and_use = "Under universal Roman law, the chair is best set at the head of the sanctuary facing the congregation unless architectural distance or a centrally placed tabernacle behind the altar makes another clear position more suitable (GIRM 310). From this seat the priest conducts the Introductory Rites (including the Collect), listens to the Scripture readings and may preach the homily, leads the Universal Prayer, and concludes Mass with the Prayer after Communion and dismissal (GIRM 124, 127–130, 165–167). The Roman Missal—or, in the United States, the lighter Book of the Chair—and any needed hymnal are prepared beside it (GIRM 118a). In a cathedral church, the diocesan bishop presides from his permanent cathedra rather than a presbyteral chair (Caeremoniale Episcoporum 1984)."
+liturgical_colors = "Left in its natural wood or neutral upholstered finish without seasonal color changes."
+
+[ministers_and_handling]
+ordinary_ministers = ["priest", "bishop"]
+prepares = ["sacristan", "altar-server"]
+server_boundary = "clergy-reserved"
+server_boundary_summary = "Reserved strictly to the priest celebrant (or bishop when celebrating outside his cathedral); altar servers never sit in the presidential chair and approach it solely to hold the Roman Missal or Book of the Chair during prayers."
+safety_warning = ""
+
+[audience_text]
+altar_server = "The stately single wooden armchair in the sanctuary belongs exclusively to the presiding priest—servers never sit in it, even before or after Mass. Your main job here as book-bearer is to step cleanly beside or in front of the priest when he stands for the Collect, the conclusion of the Prayer of the Faithful, and the Prayer after Communion, holding the Roman Missal or the lighter Book of the Chair steady at a comfortable reading angle without blocking his view of the congregation."
+sacristan = "Before Mass, set the marked Roman Missal—or the official United States Excerpts from the Roman Missal (Book of the Chair)—along with a hymnal or worship aid neatly on a small stand beside the presidential chair (GIRM 118a). Verify that the chair sits cleanly in its appointed place with clear floor space in front for the book-bearer, and keep loose notes, water bottles, or clutter out of sight."
+general_reader = "In the postconciliar Roman sanctuary, the priest celebrant presides over the opening prayers, the Liturgy of the Word, and the final blessing from a distinct single chair before moving to the altar for the Liturgy of the Eucharist. Its noble simplicity expresses the priest's spiritual office of leading the assembly in prayer as head of the local gathering, while deliberately avoiding the canopy or trappings of a royal throne."
+
+[relationships]
+confusable_with = []
+related_objects = ["pc-obj-book-of-the-chair", "pc-obj-roman-missal", "pc-obj-credence-table", "pc-obj-altar"]
+
+[symbolism]
+has_sourced_symbolism = true
+text = "The General Instruction assigns the presidential chair a clear functional sign value: it manifests the priest celebrant's office of presiding over the gathered assembly and directing its prayer, while explicitly excluding any likeness to a royal throne."
+evidence_class = "liturgical-source"
+attribution = "GIRM 310"
+
+[counterpart_1962]
+relationship = "materially changed"
+locus_1962 = "Missale Romanum (1962), Ritus Servandus VI.4; Caeremoniale Episcoporum (1948) I.12–13; Fortescue (1943), pp. 8–9"
+comparison = "In the 1962 Roman Rite, presbyteral seating consisted of a three-seat bench (sedilia) placed along the Epistle side of the sanctuary solely for sitting during sung chants and lessons while all orations were spoken at the altar. Postconciliar law replaces those lateral seats with a focal single chair from which the priest leads the Introductory Rites, Liturgy of the Word, and Concluding Rites (Inter Oecumenici 92; GIRM 310)."
+
+[historical_transition]
+is_superseded = false
+period_range = ""
+controlling_act = ""
+current_status = ""
+
+[audiences]
+comprehensive = true
+altar_server = true
+sacristan = true
+general_reader = true
+
+[sources]
+note_key = "N03"
+primary_loci = [
+  "GIRM 118a, 124, 127–130, 165–167, 310",
+  "Inter Oecumenici (1964) 92",
+  "Caeremoniale Episcoporum (1984)",
+]
+source_bindings = [
+  "edition.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002",
+  "edition.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021",
+  "edition.holy-see.acta-apostolicae-sedis.volume-56-1964",
+  "edition.catholic-church.caeremoniale-episcoporum.marietti-third-after-typical-1948",
+  "edition.adrian-fortescue.ceremonies-of-the-roman-rite-described.seventh-revised-1943",
+]
+verification_state = "checked-against-primary-and-official-witness"
+rights_note = "Original analytical description; no protected liturgical wording reproduced verbatim."

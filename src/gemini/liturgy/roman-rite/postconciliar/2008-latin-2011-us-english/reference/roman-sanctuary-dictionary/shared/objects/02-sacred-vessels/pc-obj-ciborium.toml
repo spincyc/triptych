@@ -1,0 +1,82 @@
+schema_version = 1
+id = "pc-obj-ciborium"
+category = "sacred-vessels"
+sort_order = 203
+plate_id = "pc-plt-03-vessels"
+composition_plate_ids = ["pc-plt-10-communion-sacramental"]
+plate_position = "Top right (Plate III); draped in a white veil at rear right of the corporal (Plate X)"
+preferred_english_name = "Ciborium"
+latin_headword = "Pyxis"
+alternate_english_names = ["Host Vessel", "Covered Ciborium"]
+alternate_latin_names = ["Ciborium", "Vas"]
+pronunciation_key = "PEEK-sees"
+
+[edition_disposition]
+edition_locale = "2008-latin-2011-us-english"
+as_of = "2026-11-25"
+disposition = "provided"
+scope_level = "universal-roman"
+territorial_note = "While universal law prescribes precious metal gilded inside where less precious than gold (GIRM 328), the United States adaptation at GIRM 329 permits ciboria to be crafted from other solid, noble, non-breaking, non-absorbent materials such as ebony or hard woods; fragile ceramic, clay, and glass remain strictly prohibited (Redemptionis Sacramentum 117)."
+
+[identification]
+summary = "The ciborium is the lidded sacred cup or deep bowl used to consecrate, distribute, and reserve the Sacred Hosts in the tabernacle."
+appearance = "Depicted at top right of Plate III as a wide-bowled footed metal vessel with a fitted domed cover crowned by a small upright cross finial; Plate X shows a covered ciborium draped with a white silk ciborium veil at the back right of the corporal, and Plate IX (right) illustrates a priest holding a lidded ciborium enveloped in a humeral veil."
+placement_and_use = "The Latin third typical edition of the General Instruction uses pyxis / pyxides (GIRM 118c, 306, 329; CIC can. 939) where the official English text renders “ciborium” and “ciboria.” Unconsecrated ciboria holding hosts for the congregation are prepared on the credence table or carried in the Procession of the Gifts, and empty ciboria may be brought to the altar at the Fraction Rite if needed for distribution (GIRM 118c, 139; USCCB Norms 37). Any ciborium used for tabernacle reservation requires a fitted cover, and reserved hosts must be renewed frequently (CIC can. 939). A white silk veil (conopaeum) over a reserved ciborium remains a reverent custom though not universally mandated by GIRM. Every ciborium is blessed before use (GIRM 333) and purified after Communion strictly by the priest, deacon, or instituted acolyte (GIRM 279; RS 119; USCCB Norms 53)."
+liturgical_colors = "Precious metal gilded inside (or approved solid noble material under US GIRM 329); customary reservation veil is white."
+
+[ministers_and_handling]
+ordinary_ministers = ["bishop", "priest", "deacon", "instituted-acolyte", "extraordinary-minister"]
+prepares = ["sacristan", "deacon", "instituted-acolyte", "altar-server"]
+server_boundary = "prepares"
+server_boundary_summary = "Servers may set empty, unconsecrated ciboria on the credence table before Mass and bring empty ciboria to the altar at the Preparation of the Gifts or Fraction Rite when directed (USCCB Norms 37). Servers never open the tabernacle, never carry a ciborium containing consecrated hosts, and never purify a ciborium after Communion (GIRM 279; RS 119)."
+safety_warning = "Never open, lift, or carry a ciborium containing the Blessed Sacrament unless ordained, instituted as an acolyte, or formally deputed as an extraordinary minister of Holy Communion for distribution; never wash an unpurified ciborium."
+
+[audience_text]
+altar_server = "Tell a ciborium from a chalice immediately by its wider, shallower bowl and its fitted domed lid topped with a small cross. You may carry an empty or unconsecrated ciborium to the altar at the Preparation of the Gifts or bring extra empty bowls at the Lamb of God when instructed. Once hosts are consecrated, or whenever a ciborium comes from the tabernacle, never open it, carry it, or wash it—only the priest, deacon, or instituted acolyte purifies sacred vessels, and extraordinary ministers approach the altar only after the priest communicates."
+sacristan = "Ensure every ciborium is blessed (GIRM 333), clean, dry, and fitted with a tight cover if used for reservation in the tabernacle (CIC can. 939). Check that porous earthenware, clay, and glass vessels are excluded (RS 117), and rotate reserved hosts regularly so consecrated hosts remain fresh. Leave used ciboria covered on a corporal after Mass for purification exclusively by the priest, deacon, or instituted acolyte (GIRM 279; USCCB Norms 53)."
+general_reader = "Shaped like a broad footed cup with a cross-topped lid, the ciborium holds the consecrated Hosts during distribution of Holy Communion and safeguards the Blessed Sacrament inside the tabernacle for the sick and for adoration. While the Latin Missal continues to call it by the ancient word pyxis, English usage distinguishes the larger altar ciborium from the small pocket pyx carried to the homebound."
+
+[relationships]
+confusable_with = ["pc-obj-chalice", "pc-obj-paten", "pc-obj-pyx"]
+related_objects = ["pc-obj-tabernacle", "pc-obj-corporal", "pc-obj-humeral-veil", "pc-obj-hist-fragile-vessels-pouring"]
+
+[symbolism]
+has_sourced_symbolism = false
+text = ""
+evidence_class = "none-practical"
+attribution = ""
+
+[counterpart_1962]
+relationship = "continued"
+locus_1962 = "Missale Romanum (1962), Ritus Servandus II.3, VII.3, X.6; CIC (1917) can. 1269"
+comparison = "Both the 1962 Roman Missal (using Latin pyxis or vas) and the 2008/2011 IGMR (continuing Latin pyxis, rendered “ciborium” in English) appoint a blessed covered vessel for consecrating, distributing, and reserving the Sacred Hosts. Postconciliar norms expand distribution use to broad dignified bowls alongside stemmed ciboria, admit approved non-metal solid noble materials in the United States (US GIRM 329), and treat the silk ciborium veil as customary rather than universally mandated."
+
+[historical_transition]
+is_superseded = false
+period_range = ""
+controlling_act = ""
+current_status = ""
+
+[audiences]
+comprehensive = true
+altar_server = true
+sacristan = true
+general_reader = true
+
+[sources]
+note_key = "N10"
+primary_loci = [
+  "GIRM 118c, 163, 279, 306, 327–329, 333",
+  "USCCB GIRM 329",
+  "CIC (1983) can. 939",
+  "Redemptionis Sacramentum 117–119",
+  "USCCB Norms for Holy Communion under Both Kinds (2011) 37, 53",
+]
+source_bindings = [
+  "edition.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002",
+  "edition.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021",
+  "edition.catholic-church.codex-iuris-canonici-1983.english-vatican-web-codex-2026-07-25",
+  "edition.catholic-church.missale-romanum.vatican-typica-1962",
+]
+verification_state = "checked-against-primary-and-official-witness"
+rights_note = "Original analytical description; no protected liturgical wording reproduced verbatim."

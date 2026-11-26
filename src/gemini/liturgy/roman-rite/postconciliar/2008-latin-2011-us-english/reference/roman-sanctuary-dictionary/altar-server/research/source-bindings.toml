@@ -1,0 +1,38 @@
+schema = 2
+record_type = "bindings"
+document = "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/altar-server"
+
+[[bindings]]
+source_id = "edition.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002"
+loci = ["100", "107", "117", "118", "119", "193", "274", "279", "283", "307", "327", "336", "339"]
+role = "official-control"
+states = ["cataloged"]
+context = "Universal Latin third typical edition IGMR governing server boundaries, processions, credence preparation, incensation, vesture, and purification limits."
+
+[[bindings]]
+source_id = "edition.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021"
+loci = ["51", "100", "107", "117", "118", "119", "274", "279", "283", "307", "327", "336", "339"]
+role = "official-control"
+states = ["cataloged"]
+context = "United States English GIRM (effective 27 Nov 2011; emended through 22 Oct 2021) governing U.S. altar-server attire (no. 339), Communion under both kinds, and purification boundaries."
+
+[[bindings]]
+source_id = "edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008"
+loci = ["2008 emended reprint"]
+role = "currentness-control"
+states = ["cataloged"]
+context = "Declared Latin typical reprint (2008), collated via Notitiae 44 (2008) nos. 503--504."
+
+[[bindings]]
+source_id = "edition.catholic-church.codex-iuris-canonici-1983.english-vatican-web-codex-2026-07-25"
+loci = ["canon-230", "canon-847", "canon-858", "canon-910", "canon-938", "canon-939", "canon-940"]
+role = "official-control"
+states = ["cataloged"]
+context = "Canonical basis distinguishing ordained ministers, instituted acolytes and lectors, extraordinary ministers of Holy Communion, and altar servers."
+
+[[bindings]]
+source_id = "work.united-states-conference-of-catholic-bishops.guidelines-publication-liturgical-books"
+loci = ["title-and-copyright-pages"]
+role = "rights-control"
+states = ["cataloged"]
+context = "Rights and non-verbatim-reproduction control for this use-derived edition (2025 printing, eff. 29 Nov 2026)."

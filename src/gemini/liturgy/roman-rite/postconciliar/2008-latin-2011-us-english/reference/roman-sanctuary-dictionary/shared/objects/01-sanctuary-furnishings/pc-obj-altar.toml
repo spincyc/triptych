@@ -1,0 +1,82 @@
+schema_version = 1
+id = "pc-obj-altar"
+category = "sanctuary-furnishings"
+sort_order = 101
+plate_id = "pc-plt-02-furnishings"
+composition_plate_ids = ["pc-plt-01-sanctuary"]
+plate_position = "Top left (Plate II); center (Plate I)"
+preferred_english_name = "Altar"
+latin_headword = "Altare"
+alternate_english_names = ["Altar Table", "Mensa"]
+alternate_latin_names = ["Mensa Domini", "Altare fixum", "Altare mobile"]
+pronunciation_key = "ahl-TAH-reh"
+
+[edition_disposition]
+edition_locale = "2008-latin-2011-us-english"
+as_of = "2026-11-25"
+disposition = "required"
+scope_level = "universal-roman"
+territorial_note = "In the Dioceses of the United States of America, the Bishops' Conference adaptation to GIRM 301 permits a fixed altar table to be crafted from dignified, solid, well-worked wood rather than natural stone, provided the structure remains permanently immovable; United States GIRM 304 likewise allows festive colored cloths beneath the required white uppermost cloth."
+
+[identification]
+summary = "The altar is the sacred table at the heart of the sanctuary upon which the Sacrifice of the Cross is made present under sacramental signs and the people of God gather for the Eucharistic banquet."
+appearance = "Shown in Plate II as a freestanding rectangular stone table resting on twin paneled pedestals with molded plinths and dressed smoothly in an overhanging white linen cloth, and in Plate I centered in the sanctuary with two lighted candles and a crucifix—free of gradines, altar cards, or an attached rail."
+placement_and_use = "Universal Roman law recommends a single fixed altar in newly built churches, set apart from the rear wall so ministers may walk around it and celebrate Mass facing the people wherever possible (GIRM 299, 303), while the Holy See clarified on 25 September 2000 (Prot. N. 2036/00/L) that this expresses pastoral desirability rather than a juridical ban on historical wall-attached altars or celebration facing the apse. A fixed altar is solemnly dedicated by the bishop (GIRM 300; CIC can. 1235), with relics of saints fittingly placed beneath it rather than recessed into the mensa (GIRM 302). From the start of Mass until the Preparation of the Gifts, only the Book of the Gospels rests upon the dressed mensa; during the Liturgy of the Eucharist, only the corporal, sacred vessels, Roman Missal, and necessary items appear there (GIRM 306)."
+liturgical_colors = "Always covered on top with at least one clean white cloth (GIRM 117, 304); in the United States, additional under-cloths of seasonal or festive colors are permitted beneath the white cloth (US GIRM 304)."
+
+[ministers_and_handling]
+ordinary_ministers = ["bishop", "priest", "deacon"]
+prepares = ["sacristan", "deacon", "instituted-acolyte", "altar-server"]
+server_boundary = "recognizes-only"
+server_boundary_summary = "Servers venerate the altar with a profound bow on approaching or departing (genuflecting instead if the Blessed Sacrament is reserved in the sanctuary), place the Roman Missal and unconsecrated vessels upon it at the Preparation of the Gifts when needed, and never lean upon, clutter, or kiss the mensa (kissing the altar belongs to the bishop, priest, and deacon)."
+safety_warning = "Keep the altar table clear of spare papers, cruets, and extraneous items (GIRM 306), guard against candle flames and dripping wax near the white cloth, and notify the priest or deacon immediately if any Precious Blood is spilled—never attempt to blot or wash a spill yourself (GIRM 280)."
+
+[audience_text]
+altar_server = "The freestanding altar at the center of the sanctuary is the sacred table where Christ's sacrifice is offered. Whenever you arrive at or leave the sanctuary during Mass, make a profound bow to the altar (or genuflect if the tabernacle with the Blessed Sacrament stands in the sanctuary, except when carrying the processional cross or lighted candles). At the Preparation of the Gifts, bring the Roman Missal, folded linens, and empty sacred vessels cleanly to the edge of the mensa when no deacon or instituted acolyte does so. Never lean on the altar, leave cruets sitting on the cloth, or kiss the mensa—venerating the altar with a kiss belongs to the bishop, priest, and deacon."
+sacristan = "Ensure the mensa is clean, level, and dressed with at least one smoothly pressed white linen cloth proportioned to the altar's shape (GIRM 117, 304); where United States festive under-cloths are used (US GIRM 304), verify that the uppermost cloth remains white. Before Mass begins, keep the mensa completely bare of cruets, Missal stands, spare bulletins, and loose papers so that only the Book of the Gospels rests there during the Liturgy of the Word (GIRM 306). Inspect the mensa after Mass for wax drips and confirm that any Precious Blood spill has been tended exclusively by the priest or deacon (GIRM 280)."
+general_reader = "Standing at the focal center of the church, the altar is both the sacrificial table of Calvary made present in the Mass and the banquet table of the Lord's Body and Blood. Postconciliar churches ordinarily build one freestanding fixed altar—traditionally of natural stone, or in the United States also of dignified solid wood—so the priest can move around it and face the gathered assembly where architecture allows. Stripped of clutter before the offertory and clothed in crisp white linen, the altar directs every eye to the Eucharistic offering."
+
+[relationships]
+confusable_with = ["pc-obj-credence-table"]
+related_objects = ["pc-obj-altar-cloth", "pc-obj-altar-candles", "pc-obj-processional-cross", "pc-obj-corporal", "pc-obj-ambo", "pc-obj-tabernacle"]
+
+[symbolism]
+has_sourced_symbolism = true
+text = "The Church reveres the altar as the sign of Christ Himself—both Priest and Victim—and as the table of the Lord where the Sacrifice of the Cross is made present under sacramental signs. A fixed stone altar permanently signifies Christ the Living Stone, recalling 1 Pet 2:4 (“Unto whom coming, as to a living stone, rejected indeed by men but chosen and made honourable by God:”), 1 Cor 10:4 (“and the rock was Christ.”), and Heb 13:10 (“We have an altar whereof they have no power to eat who serve the tabernacle.”). St. Thomas Aquinas similarly teaches that the altar signifies Christ Himself and, when made of stone, calls to mind both Christ the Rock and the stone sepulchre in which His body rested."
+evidence_class = "liturgical-source"
+attribution = "GIRM 296, 298; 1 Pet 2:4; 1 Cor 10:4; Heb 13:10; St. Thomas Aquinas, Summa Theologiae III, q. 83, a. 3"
+
+[counterpart_1962]
+relationship = "materially changed"
+locus_1962 = "Missale Romanum (1962), Rubricae Generales 526–527; Ritus Servandus II.2, IV.5, V.3"
+comparison = "Whereas the 1962 Roman Missal ordinarily presupposed a stone altar (or recessed consecrated altar stone holding relics inside the mensa) dressed with three cloths, candlesticks, central crucifix, three altar cards, and normally the tabernacle, the 2008/2011 Missal recommends a single freestanding altar wherever possible (GIRM 299, 303), deposits saints' relics beneath the altar (GIRM 302), clears the mensa of altar cards and extraneous items (GIRM 306), and in the United States permits solid wood for a fixed altar mensa (US GIRM 301)."
+
+[historical_transition]
+is_superseded = false
+period_range = ""
+controlling_act = ""
+current_status = ""
+
+[audiences]
+comprehensive = true
+altar_server = true
+sacristan = true
+general_reader = true
+
+[sources]
+note_key = "N01"
+primary_loci = [
+  "GIRM 273–274, 280, 296–308",
+  "USCCB GIRM 301, 304",
+  "CIC (1983) cann. 1235–1239",
+  "CDWDS Response Prot. N. 2036/00/L (25 Sept 2000)",
+]
+source_bindings = [
+  "edition.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002",
+  "edition.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021",
+  "edition.catholic-church.codex-iuris-canonici-1983.latin-vatican-web-codex-2026-07-25",
+  "edition.catholic-church.missale-romanum.vatican-typica-1962",
+  "edition.thomas-aquinas.summa-theologiae.english-dominicans-gutenberg-tertia-2006",
+]
+verification_state = "checked-against-primary-and-official-witness"
+rights_note = "Original analytical description; no protected liturgical wording reproduced verbatim."

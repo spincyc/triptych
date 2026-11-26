@@ -1,0 +1,78 @@
+schema_version = 1
+id = "pc-obj-flagon"
+category = "sacred-vessels"
+sort_order = 207
+plate_id = "pc-plt-03-vessels"
+composition_plate_ids = []
+plate_position = "Bottom left, tall slender pitcher with curved handle and pouring lip (Plate III)"
+preferred_english_name = "Flagon"
+latin_headword = "Lagoena"
+alternate_english_names = ["Wine Pitcher", "Offertory Carafe"]
+alternate_latin_names = ["Lagena", "Ampulla maior"]
+pronunciation_key = "lah-JEH-nah"
+
+[edition_disposition]
+edition_locale = "2008-latin-2011-us-english"
+as_of = "2026-11-25"
+disposition = "permitted"
+scope_level = "diocesan-or-local"
+territorial_note = "In United States parishes celebrating Communion under both kinds, a flagon is permitted strictly as a pre-consecration transport vessel in the Procession of the Gifts; Redemptionis Sacramentum 106 and the 2011 USCCB Norms strictly prohibit consecrating wine in a flagon or pouring the Precious Blood from a flagon into Communion cups after consecration."
+
+[identification]
+summary = "The flagon is a larger pitcher or carafe permitted solely for carrying unconsecrated wine in the Procession of the Gifts and pouring it into chalices before the Eucharistic Prayer begins."
+appearance = "Illustrated at bottom left of Plate III as a tall, slender footed metal pitcher with a graceful side handle and pronounced pouring lip—visibly distinct from a chalice or Communion cup by its spout, handle, and carafe silhouette."
+placement_and_use = "When a large assembly celebrates Communion under both kinds, representatives of the faithful may carry unconsecrated wine forward in a dignified flagon during the Procession of the Gifts (GIRM 73, 140). At the Preparation of the Gifts, the priest or deacon pours all wine intended for consecration from the flagon into the principal chalice and supplementary Communion chalices, and the empty flagon is removed immediately to the credence table before the Eucharistic Prayer starts (GIRM 306). A flagon is never a sacred vessel for consecration and never holds the Precious Blood: Redemptionis Sacramentum 106 forbids both containing the Blood of Christ in flagons or bowls and pouring the consecrated Precious Blood from one vessel into another."
+liturgical_colors = "Clear glass, crystal, or noble metal (non-consecrated transport vessel)."
+
+[ministers_and_handling]
+ordinary_ministers = ["faithful", "priest", "deacon", "instituted-acolyte", "altar-server"]
+prepares = ["sacristan", "altar-server"]
+server_boundary = "handles"
+server_boundary_summary = "Servers may set the flagon at the gifts table before Mass, receive the unconsecrated flagon from the priest or deacon at the foot of the altar, and remove the empty flagon promptly from the altar to the credence table before the Eucharistic Prayer begins."
+safety_warning = "Strict liturgical boundary (Redemptionis Sacramentum 106): never leave a flagon containing wine on the altar during the Eucharistic Prayer, never treat a flagon as a chalice, and never allow the consecrated Precious Blood to be poured from a flagon into Communion cups."
+
+[audience_text]
+altar_server = "A flagon is simply a large wine pitcher used to bring unconsecrated wine up the aisle in the Procession of the Gifts when many Communion cups are needed. Receive it cleanly from the priest or deacon at the sanctuary steps, bring it to the altar so the priest or deacon can pour all the wine into the chalices before the Eucharistic Prayer starts, and immediately carry the empty flagon back to the credence table. A flagon must never remain on the altar during the consecration (RS 106)."
+sacristan = "Fill the flagon with the measured quantity of valid grape wine required for the Communion chalices and place it on the gifts table in the nave before Mass. Never substitute a flagon for blessed Communion chalices on the altar: all wine to be consecrated must be poured into nonabsorbent blessed chalices before the Eucharistic Prayer begins (GIRM 306, 330; RS 106; USCCB Norms 35–38)."
+general_reader = "Because larger Sunday congregations often receive Holy Communion from several chalices, parishes frequently use a tall pitcher called a flagon to carry the unconsecrated wine forward in the Procession of the Gifts. Church law draws a sharp line here: the flagon serves solely to bring wine to the altar before the Eucharistic Prayer, where it is poured into true chalices; it is never left on the altar to hold or pour the consecrated Blood of Christ (Redemptionis Sacramentum 106)."
+
+[relationships]
+confusable_with = ["pc-obj-chalice", "pc-obj-communion-cup", "pc-obj-cruets"]
+related_objects = ["pc-obj-credence-table", "pc-obj-hist-fragile-vessels-pouring"]
+
+[symbolism]
+has_sourced_symbolism = false
+text = ""
+evidence_class = "none-practical"
+attribution = ""
+
+[counterpart_1962]
+relationship = "no established counterpart"
+locus_1962 = "Missale Romanum (1962), Rubricae Generales 528 (negative witness: small wine and water cruets only)"
+comparison = "The 1962 Roman Missal had no counterpart to a wine flagon because lay Communion was distributed under the species of bread alone and small cruets on the credence table sufficed (RG 528). The flagon emerged with the postconciliar gifts procession and Communion under both kinds, and was strictly restricted to pre-consecration wine transport by Redemptionis Sacramentum 106 (2004)."
+
+[historical_transition]
+is_superseded = false
+period_range = ""
+controlling_act = ""
+current_status = ""
+
+[audiences]
+comprehensive = true
+altar_server = true
+sacristan = true
+general_reader = true
+
+[sources]
+note_key = "N14"
+primary_loci = [
+  "GIRM 73, 118c, 140, 306, 328–330",
+  "Redemptionis Sacramentum 106, 117",
+  "USCCB Norms for Holy Communion under Both Kinds (2011) 35–38",
+]
+source_bindings = [
+  "edition.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021",
+  "edition.catholic-church.missale-romanum.vatican-typica-1962",
+]
+verification_state = "checked-against-primary-and-official-witness"
+rights_note = "Original analytical description; no protected liturgical wording reproduced verbatim."

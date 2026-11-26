@@ -1,0 +1,80 @@
+schema_version = 1
+id = "pc-obj-paten"
+category = "sacred-vessels"
+sort_order = 202
+plate_id = "pc-plt-03-vessels"
+composition_plate_ids = ["pc-plt-10-communion-sacramental"]
+plate_position = "Top center (Plate III); front center of the unfolded corporal (Plate X)"
+preferred_english_name = "Paten"
+latin_headword = "Patena"
+alternate_english_names = ["Eucharistic Paten", "Large Paten"]
+alternate_latin_names = ["Patena maior"]
+pronunciation_key = "pah-TEH-nah"
+
+[edition_disposition]
+edition_locale = "2008-latin-2011-us-english"
+as_of = "2026-11-25"
+disposition = "required"
+scope_level = "universal-roman"
+territorial_note = "Under the United States adaptation to GIRM 329, patens (along with ciboria and pyxes) may be crafted either from precious metal (GIRM 328) or from other solid, noble materials such as ebony or hard woods that do not break easily, deteriorate, or absorb liquids."
+
+[identification]
+summary = "The paten is the shallow circular sacred dish on which the Eucharistic bread is offered, consecrated, broken during the Fraction Rite, and presented at Holy Communion."
+appearance = "Rendered at top center of Plate III as a wide, gently dished circular metal plate with a broad rim and slightly recessed central well; Plate X shows it resting at the front center of the unfolded corporal before the principal chalice."
+placement_and_use = "Universal Roman law recommends a paten sufficiently wide to hold the Eucharistic bread not only for the priest and deacon, but also for the other ministers and the faithful, manifesting the unity of the one bread (GIRM 331). Before the Preparation of the Gifts, the paten rests either on the credence table or in the Procession of the Gifts; during the Eucharistic Prayer it rests on the unfolded corporal (GIRM 118c, 139, 306). After Communion, any particles are carefully gathered and the paten is purified strictly by the priest, deacon, or instituted acolyte (GIRM 278–279; RS 119). Distinguish the Eucharistic paten holding the host from the separate Communion-plate (patina pro Communione fidelium), retained by GIRM 118c and Redemptionis Sacramentum 93 to be held beneath communicants' chins so no fragment falls."
+liturgical_colors = "Precious metal (gilded surface) or, under USCCB GIRM 329, approved solid noble non-absorbent material."
+
+[ministers_and_handling]
+ordinary_ministers = ["bishop", "priest", "deacon"]
+prepares = ["sacristan", "deacon", "instituted-acolyte", "altar-server"]
+server_boundary = "prepares"
+server_boundary_summary = "Servers may bring the unconsecrated paten and hosts to the altar at the Preparation of the Gifts (GIRM 139) and hold the separate Communion-plate level under communicants' chins during distribution (GIRM 118c; RS 93). Servers never touch consecrated hosts on the paten and never purify either the paten or the Communion-plate after Communion (GIRM 278–279; RS 119)."
+safety_warning = "If holding a Communion-plate during Holy Communion, keep it completely level beneath each communicant's chin without tipping it, and hand it back to the priest, deacon, or instituted acolyte at the altar or credence table so any particles are purified properly."
+
+[audience_text]
+altar_server = "Before the Eucharistic Prayer, you may carry the unconsecrated paten from the credence table to the altar if no deacon or instituted acolyte serves. Once the bread is consecrated, never touch the paten or attempt to brush particles off it. Do not confuse the Eucharistic paten with the Communion-plate (the handled plate held by a server under the chin of communicants): keep the Communion-plate steady and flat throughout distribution, and return it to the priest, deacon, or instituted acolyte for purification."
+sacristan = "Confirm that the paten has been blessed (GIRM 333) and is made of precious metal (GIRM 328) or an approved solid non-breaking, non-absorbent material such as hardwood under USCCB GIRM 329—never earthenware, clay, or glass (RS 117). Size the paten generously when the parish uses a single large host broken for concelebrants and faithful (GIRM 331), and place the separate Communion-plate cleanly on the credence table whenever it is used (GIRM 118c; RS 93)."
+general_reader = "The shallow circular dish that rests beside the chalice holds the bread that becomes the Body of Christ. While earlier practice used a small disc sized for the priest's host alone, the postconciliar Roman Missal encourages a broader paten able to hold the bread for priest, ministers, and faithful together, giving visible expression to St. Paul's teaching that many share one bread (GIRM 331; 1 Cor 10:17)."
+
+[relationships]
+confusable_with = ["pc-obj-ciborium", "pc-obj-pyx"]
+related_objects = ["pc-obj-chalice", "pc-obj-corporal", "pc-obj-purificator", "pc-obj-hist-fragile-vessels-pouring"]
+
+[symbolism]
+has_sourced_symbolism = true
+text = "Together with the chalice, the paten receives special honor as the receptacle of the Eucharistic Bread (GIRM 327). A larger paten holding hosts for priest, deacon, ministers, and assembly visibly expresses 1 Cor 10:17 (“For we, being many, are one bread, one body: all that partake of one bread.”). St. Thomas Aquinas pairs the paten with the chalice as a figure of the tomb that held the Lord's Body, grounding the demand for noble, unbreakable material in reverence for Christ."
+evidence_class = "liturgical-source"
+attribution = "GIRM 327, 331; 1 Cor 10:17; St. Thomas Aquinas, Summa Theologiae III, q. 83, a. 3, obj. 6 & ad 6"
+
+[counterpart_1962]
+relationship = "materially changed"
+locus_1962 = "Missale Romanum (1962), Ritus Servandus I.1, VII.9, X.1–2, X.7"
+comparison = "In the 1962 Roman Missal, the paten was a small flat gilded metal disc consecrated by a bishop, sized for the celebrant's single host, kissed and used to sign the celebrant at the Libera nos, and held veiled by the subdeacon at Solemn Mass (RS I.1, VII.9, X.1–2). The 2008/2011 GIRM omits the signing and kissing at the Libera nos, introduces a broad paten fittingly holding hosts for clergy and faithful alike (GIRM 331), and under USCCB GIRM 329 admits solid noble non-metal materials."
+
+[historical_transition]
+is_superseded = false
+period_range = ""
+controlling_act = ""
+current_status = ""
+
+[audiences]
+comprehensive = true
+altar_server = true
+sacristan = true
+general_reader = true
+
+[sources]
+note_key = "N09"
+primary_loci = [
+  "GIRM 118c, 139, 155, 278–279, 306, 327–329, 331, 333",
+  "USCCB GIRM 329",
+  "Redemptionis Sacramentum 93, 117–119",
+]
+source_bindings = [
+  "edition.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002",
+  "edition.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021",
+  "edition.catholic-church.missale-romanum.vatican-typica-1962",
+  "edition.thomas-aquinas.summa-theologiae.english-dominicans-gutenberg-tertia-2006",
+]
+verification_state = "checked-against-primary-and-official-witness"
+rights_note = "Original analytical description; no protected liturgical wording reproduced verbatim."

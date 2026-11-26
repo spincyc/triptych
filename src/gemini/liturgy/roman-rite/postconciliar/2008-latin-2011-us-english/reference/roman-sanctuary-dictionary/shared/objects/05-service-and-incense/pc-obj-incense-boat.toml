@@ -1,0 +1,75 @@
+schema_version = 1
+id = "pc-obj-incense-boat"
+category = "service-and-incense"
+sort_order = 506
+plate_id = "pc-plt-07-incense"
+composition_plate_ids = []
+plate_position = "Right, boat-shaped vessel with hinged half-lid open and spoon beside base (Plate VII)"
+preferred_english_name = "Incense Boat"
+latin_headword = "Navicula"
+alternate_english_names = ["Incense Boat and Spoon"]
+alternate_latin_names = ["Navicula cum cochleari"]
+pronunciation_key = "nah-VEE-koo-lah"
+
+[edition_disposition]
+edition_locale = "2008-latin-2011-us-english"
+as_of = "2026-11-25"
+disposition = "optional"
+scope_level = "universal-roman"
+territorial_note = ""
+
+[identification]
+summary = "The incense boat is a small lidded metal container with a companion spoon used to hold unburned resin incense grains and transfer them onto the glowing charcoal of the thurible."
+appearance = "Shaped like a miniature hull resting on a flared pedestal foot, the vessel features a hinged half-lid lifted by a side knob to reveal granular resin incense inside, accompanied by a slender long-handled metal spoon resting beside its base."
+placement_and_use = "Whenever incense is employed during Mass, Benediction, or solemn Liturgy of the Hours (GIRM 120, 276–277), the incense boat accompanies the thurible. A dedicated boat-bearer—or the thurifer holding the boat in the left hand when serving alone—presents the opened vessel to the priest or deacon so that the priest may spoon resin grains onto the hot coals and bless them silently with the Sign of the Cross (GIRM 277)."
+liturgical_colors = "Not governed by the seasonal color cycle; finished in matching brass, bronze, pewter, or silver to pair with the thurible."
+
+[ministers_and_handling]
+ordinary_ministers = ["priest", "deacon", "instituted-acolyte", "altar-server"]
+prepares = ["sacristan", "altar-server"]
+server_boundary = "presents"
+server_boundary_summary = "The boat-bearer (or lone thurifer) opens the hinged lid and offers the spoon handle toward the priest or deacon before each imposition of incense, closing the lid promptly before walking so resin grains do not spill on sanctuary steps (GIRM 277)."
+safety_warning = ""
+
+[audience_text]
+altar_server = "Walk quietly beside the thurifer with the incense boat closed until you approach the priest or deacon. Flip the hinged half-lid open and offer the handle of the small spoon toward the priest so he can transfer incense grains onto the charcoal cleanly, then close the lid before stepping away so hard resin granules never scatter across the floor."
+sacristan = "Fill the incense boat about halfway with dry, properly sized resin grains before Mass—overfilling makes the lid jam and causes spills during processions. Store the companion spoon securely with the boat and brush away fine resin dust from the hinge periodically so the cover opens smoothly."
+general_reader = "Named navicula in Latin for its classic miniature-ship silhouette, the incense boat is the practical companion vessel to the thurible. Filled with aromatic frankincense or myrrh resin granules and fitted with a small spoon, it allows the priest to place fresh grains onto the charcoal before each incensation."
+
+[relationships]
+confusable_with = []
+related_objects = ["pc-obj-thurible"]
+
+[symbolism]
+has_sourced_symbolism = false
+text = ""
+evidence_class = "none-practical"
+attribution = ""
+
+[counterpart_1962]
+relationship = "continued"
+locus_1962 = "Missale Romanum (1962), Ritus Servandus IV.4, VII.10"
+comparison = "Both the 1962 Roman Missal (RS IV.4, VII.10) and the 2002/2008 GIRM (120, 276–277) pair the incense boat and spoon with the thurible. In postconciliar practice, the priest imposes incense silently with a Sign of the Cross rather than speaking the 1962 blessing formula, and neither the spoon nor the celebrant’s hand is kissed at the presentation."
+
+[historical_transition]
+is_superseded = false
+period_range = ""
+controlling_act = ""
+current_status = ""
+
+[audiences]
+comprehensive = true
+altar_server = true
+sacristan = true
+general_reader = true
+
+[sources]
+note_key = "N30"
+primary_loci = ["GIRM 120", "GIRM 144", "GIRM 276", "GIRM 277", "Caeremoniale Episcoporum (1984)"]
+source_bindings = [
+  "work.catholic-church.institutio-generalis-missalis-romani",
+  "work.catholic-church.missale-romanum",
+  "work.catholic-church.caeremoniale-episcoporum",
+]
+verification_state = "checked-against-primary-and-official-witness"
+rights_note = "Original analytical description; no protected liturgical wording reproduced verbatim."

@@ -1,0 +1,81 @@
+schema_version = 1
+id = "pc-obj-credence-table"
+category = "sanctuary-furnishings"
+sort_order = 104
+plate_id = "pc-plt-01-sanctuary"
+composition_plate_ids = ["pc-plt-01-sanctuary"]
+plate_position = "See Plate I, far right beside the presidential chair"
+preferred_english_name = "Credence Table"
+latin_headword = "Abacus"
+alternate_english_names = ["Side Table", "Credence"]
+alternate_latin_names = ["Credentia", "Mensa credentiae"]
+pronunciation_key = "AH-bah-koos"
+
+[edition_disposition]
+edition_locale = "2008-latin-2011-us-english"
+as_of = "2026-11-25"
+disposition = "required"
+scope_level = "universal-roman"
+territorial_note = ""
+
+[identification]
+summary = "The credence table is the side table set in a convenient corner of the sanctuary to hold sacred vessels, altar linens, cruets, and lavabo articles off the altar until they are needed."
+appearance = "Shown at the far right of Plate I beside the presidential chair as a compact, four-legged rectangular wooden side table with a lower shelf, carrying the paired glass cruets on their tray and folded white linens neatly stacked below."
+placement_and_use = "GIRM 118c appoints the credence table (abacus) as the preparation station for every Mass with a congregation, holding the chalice, folded corporal, purificator, optional pall and chalice veil, paten, ciboria, bread and wine cruets (unless carried in the Procession of Gifts), vessel of blessed water for the Sunday sprinkling rite, Communion-plate, and lavabo pitcher, basin, and towel. Keeping these items on the credence table preserves an uncluttered altar mensa until the Preparation of the Gifts (GIRM 139, 306). After Communion or immediately after Mass, sacred vessels may also be purified at the credence table by a priest, deacon, or instituted acolyte (GIRM 279)."
+liturgical_colors = "Ordinarily dressed with a plain clean white linen cloth, without seasonal color changes."
+
+[ministers_and_handling]
+ordinary_ministers = ["priest", "deacon", "instituted-acolyte"]
+prepares = ["sacristan", "instituted-acolyte", "altar-server"]
+server_boundary = "prepares"
+server_boundary_summary = "Servers help arrange clean unconsecrated vessels, linens, cruets, and lavabo equipment on the credence table before Mass, carry needed items to the altar at the Preparation of the Gifts, and bring the water cruet for purification without touching unpurified sacred vessels."
+safety_warning = "After Communion, never purify sacred vessels at the credence table and never disturb unpurified vessels left suitably covered upon a corporal there; purification belongs strictly to the priest, deacon, or instituted acolyte (GIRM 279; Redemptionis Sacramentum 119; USCCB Norms 53)."
+
+[audience_text]
+altar_server = "Think of the credence table at the side of the sanctuary as your staging station during Mass. Before the procession, check that the unconsecrated chalice, folded linens, cruets, lavabo pitcher, basin, towel, and Communion-plate are arranged neatly with room to work. At the Preparation of the Gifts, bring the vessels, linens, cruets, and lavabo smoothly to the altar and return empty cruets right back to the credence table so nothing crowds the altar cloth. After Communion, bring the water cruet if asked, but never touch or wash any unpurified vessel resting on a corporal."
+sacristan = "Cover the credence table with a clean white linen cloth and verify every item listed in GIRM 118c: blessed principal chalice with folded corporal, purificator, optional pall and chalice veil; paten and any extra ciboria or Communion chalices with one purificator apiece; stoppered wine and water cruets on their tray; lavabo pitcher, basin, and finger towel; Communion-plate; and aspersorium when the sprinkling rite is scheduled. Leave open space on the tabletop so the priest, deacon, or instituted acolyte can purify vessels cleanly on a corporal after Communion or after Mass (GIRM 279)."
+general_reader = "Tucked unobtrusively to one side of the sanctuary, the credence table performs an essential practical service: it holds the chalice, paten, cruets, handwashing basin, and altar linens before they are brought to the altar at the offertory. By staging every necessary article within quiet reach of the servers and clergy, it allows the main altar table to remain visually calm and uncluttered until the Liturgy of the Eucharist begins."
+
+[relationships]
+confusable_with = ["pc-obj-altar"]
+related_objects = ["pc-obj-chalice", "pc-obj-paten", "pc-obj-cruets", "pc-obj-corporal", "pc-obj-purificator", "pc-obj-lavabo-towel"]
+
+[symbolism]
+has_sourced_symbolism = false
+text = ""
+evidence_class = "none-practical"
+attribution = ""
+
+[counterpart_1962]
+relationship = "continued"
+locus_1962 = "Missale Romanum (1962), Rubricae Generales 528; Ritus Servandus II.5; Caeremoniale Episcoporum (1948) I.12"
+comparison = "Both the 1962 Roman Missal (RG 528; RS II.5) and the 2008/2011 GIRM (118c, 139, 279) appoint a sanctuary side table (abacus) for cruets, lavabo articles, Communion-plate, and vessels. In postconciliar Mass with a congregation, its role expands because the chalice and linens also ordinarily wait there until the Preparation of the Gifts (rather than being carried to the altar by the priest at the start of Low Mass) and vessel purification commonly takes place at the credence table (GIRM 279)."
+
+[historical_transition]
+is_superseded = false
+period_range = ""
+controlling_act = ""
+current_status = ""
+
+[audiences]
+comprehensive = true
+altar_server = true
+sacristan = true
+general_reader = true
+
+[sources]
+note_key = "N04"
+primary_loci = [
+  "GIRM 118c, 139, 163, 178, 190, 192, 279, 306",
+  "Redemptionis Sacramentum (2004) 119",
+  "USCCB Norms for Communion under Both Kinds (2011) 53",
+]
+source_bindings = [
+  "edition.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002",
+  "edition.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021",
+  "edition.acta-papal-archives.aas.096.2004-acta-aas-096",
+  "edition.catholic-church.missale-romanum.vatican-typica-1962",
+  "edition.catholic-church.caeremoniale-episcoporum.marietti-third-after-typical-1948",
+]
+verification_state = "checked-against-primary-and-official-witness"
+rights_note = "Original analytical description; no protected liturgical wording reproduced verbatim."

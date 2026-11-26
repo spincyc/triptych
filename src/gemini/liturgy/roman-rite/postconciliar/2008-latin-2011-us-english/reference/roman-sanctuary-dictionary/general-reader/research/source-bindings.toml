@@ -1,0 +1,53 @@
+schema = 2
+record_type = "bindings"
+document = "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/general-reader"
+
+[[bindings]]
+source_id = "edition.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002"
+loci = ["117", "118", "119", "274", "295", "307", "309", "315", "316", "327", "335", "336", "346"]
+role = "official-control"
+states = ["cataloged"]
+context = "Governing universal Latin third typical edition IGMR for sanctuary objects, vessels, linens, books, and vestments."
+
+[[bindings]]
+source_id = "edition.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021"
+loci = ["28", "51", "274", "283", "301", "304", "329", "339", "346"]
+role = "official-control"
+states = ["cataloged"]
+context = "Governing United States English GIRM (2011; emended 2021) for reader-facing identities, territorial norms, and liturgical colors."
+
+[[bindings]]
+source_id = "edition.catholic-church.missale-romanum.vatican-typica-1962"
+loci = ["RG 133-137, 503, 526-528", "RS I-X"]
+role = "analogue"
+states = ["cataloged"]
+context = "Direct 1962 Roman Missal comparison witness supporting the continuity and change summaries for every object."
+
+[[bindings]]
+source_id = "edition.paul-vi.ministeria-quaedam.latin-vatican-web-2026-07-27"
+loci = ["intro", "I-IV", "effective-date"]
+role = "context"
+states = ["cataloged"]
+context = "Controls the concise historical overview of postconciliar ministry and vesture transitions (effective 1 Jan 1973)."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.summa-theologiae.english-dominicans-gutenberg-tertia-2006.pg19950-body-4597132e"
+loci = ["III.83.3.corpus", "III.83.4.corpus", "III.83.5.corpus"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:44bb2918bacdd01a424eae980d78ad285fcea31c85426a00800aafd120952178"
+context = "Public-domain Dominican English text inspected directly in src/sources/ for brief sourced symbolism of altar, vessels, corporal, incense, and cross."
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-usccb-second-2019"
+loci = ["1237-1243", "1294-1300"]
+role = "official-control"
+states = ["cataloged"]
+context = "Catechetical synthesis of Baptism and Sacred Chrism anointing."
+
+[[bindings]]
+source_id = "work.united-states-conference-of-catholic-bishops.guidelines-publication-liturgical-books"
+loci = ["title-and-copyright-pages"]
+role = "rights-control"
+states = ["cataloged"]
+context = "Rights and non-verbatim-reproduction control for this use-derived edition (2025 printing, eff. 29 Nov 2026)."

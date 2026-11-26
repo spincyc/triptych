@@ -1,0 +1,76 @@
+schema_version = 1
+id = "pc-obj-chasuble"
+category = "vesture-and-ministry"
+sort_order = 605
+plate_id = "pc-plt-08-vesture-ordained"
+composition_plate_ids = []
+plate_position = "Left figure, Y-orphrey outer vestment of priest celebrant (Plate VIII)"
+preferred_english_name = "Chasuble"
+latin_headword = "Casula"
+alternate_english_names = ["Mass Vestment"]
+alternate_latin_names = ["Planeta"]
+pronunciation_key = "KAH-zoo-lah"
+
+[edition_disposition]
+edition_locale = "2008-latin-2011-us-english"
+as_of = "2026-11-25"
+disposition = "required"
+scope_level = "universal-roman"
+territorial_note = "While universal Roman law requires the chasuble for the priest celebrant at Mass (GIRM 337; RS 123–124), USCCB adaptations at GIRM 346e and 346h permit white, violet, or black chasubles at funeral Masses and Masses for the Dead, and gold or silver chasubles on more solemn occasions."
+
+[identification]
+summary = "The chasuble is the full-draping sleeveless outer vestment proper to a bishop or priest celebrating Mass and sacred rites immediately joined to Mass."
+appearance = "Worn over the white alb, amice, and straight stole by the priest on the left of Plate VIII, this ample Gothic-cut chasuble drapes evenly over shoulders and arms without separate sleeves and is accented down the chest and over the shoulders by a woven Y-shaped orphrey band."
+placement_and_use = "Unless the rubrics provide otherwise, the chasuble is always worn by the priest celebrant—and by the principal celebrant at a concelebrated Mass—over the alb and stole at Mass and during actions directly connected with Mass, such as the Sunday sprinkling rite, Ash Wednesday imposition of ashes, and the final commendation at a funeral Mass (GIRM 337; RS 123; Tres abhinc annos 26). Concelebrating priests other than the principal celebrant wear the chasuble as well, omitting it only for a just reason such as a large gathering of priests or a scarcity of vestments, in which case they wear the stole over the alb (GIRM 209; RS 124). Deacons, instituted ministers, extraordinary ministers of Holy Communion, and altar servers never wear a chasuble (RS 126). Its nobility derives from quality fabric and graceful form rather than lavish ornament (GIRM 344), following the seasonal color cycle of GIRM 346."
+liturgical_colors = "Follows GIRM 346: white, red, green, violet, rose (Gaudete and Laetare Sundays), black where customary for Masses for the Dead, and—in the United States under USCCB GIRM 346e and 346h—white, violet, or black for funerals and gold or silver on more solemn occasions."
+
+[ministers_and_handling]
+ordinary_ministers = ["bishop", "priest"]
+prepares = ["sacristan"]
+server_boundary = "clergy-reserved"
+server_boundary_summary = "Strictly reserved to bishops and priests celebrating or concelebrating Mass (GIRM 337); deacons, instituted acolytes, instituted lectors, extraordinary ministers, and altar servers never wear a chasuble (RS 126). During Mass, servers keep lighted candles and hot thuribles safely clear of its wide flowing drape."
+safety_warning = ""
+
+[audience_text]
+altar_server = "The chasuble is the sleeveless, flowing outer vestment worn exclusively by the bishop or priest celebrating Mass (GIRM 337). Compare it with the deacon’s rectangular sleeved dalmatic on the right of Plate VIII and the open-fronted cope in Plate IX. Servers never wear a chasuble (RS 126); take extra care during the elevation, Gospel, and incensations not to brush candle flames or a hot censer against its broad folds."
+sacristan = "Lay out a clean, blessed chasuble of the appointed liturgical color (GIRM 335, 346; US 346e, 346h) paired with its matching priestly stole over wide contoured hangers so the shoulders never crease. For concelebrated Masses, prepare matching chasubles for concelebrants wherever available, reserving omission solely for genuine necessity (GIRM 209; RS 124)."
+general_reader = "Enveloping the priest from shoulders to shins, the chasuble is the unmistakable outer garment of the Eucharistic celebrant at Mass (GIRM 337). Its seasonal color—white for Easter and Christmas, red for Pentecost and martyrs, green for Ordinary Time, violet for Advent and Lent, rose twice a year, and black, white, or gold where appointed—sets the visual tone of the day’s celebration (GIRM 346)."
+
+[relationships]
+confusable_with = ["pc-obj-dalmatic", "pc-obj-cope"]
+related_objects = ["pc-obj-alb", "pc-obj-stole", "pc-obj-amice", "pc-obj-cincture"]
+
+[symbolism]
+has_sourced_symbolism = true
+text = "The chasuble is the outer liturgical sign proper to the priest celebrant’s presidential and sacrificial office at Mass (GIRM 335, 337). In devotional tradition distinct from the General Instruction, the traditional Roman sacristy vesting prayer echoes Christ’s words, “For my yoke is sweet and my burden light” (Matt 11:30), Christian tradition connects its all-enveloping mantle with charity—“But above all these things have charity, which is the bond of perfection” (Col 3:14)—and Amalarius of Metz sees in it the works of justice and holiness."
+evidence_class = "liturgical-source"
+attribution = "GIRM 335, 337; Matt 11:30; Col 3:14; traditional Roman sacristy vesting prayer (Ad Casulam); Amalarius of Metz, Liber Officialis II.19"
+
+[counterpart_1962]
+relationship = "continued"
+locus_1962 = "Missale Romanum (1962), Rubricae Generales nn. 133–134, 137; Ritus Servandus I.4; Praeparatio ad Missam (Ad Casulam)"
+comparison = "Both the 1962 Roman Missal (RG 133–134; RS I.4) and the 2002/2008 GIRM (119a, 337) prescribe the chasuble as the proper Mass vestment of the priest celebrant over alb and stole. Postconciliar rubrics additionally allow the chasuble for rites immediately joined to Mass such as the Sunday sprinkling, Ash Wednesday ashes, and funeral commendation (Tres abhinc annos 26; GIRM 337), emphasize graceful form and noble fabric over heavy ornament (GIRM 344), and introduce a narrow omission faculty for non-principal concelebrants in genuine need (GIRM 209; RS 124)."
+
+[historical_transition]
+is_superseded = false
+period_range = ""
+controlling_act = ""
+current_status = ""
+
+[audiences]
+comprehensive = true
+altar_server = true
+sacristan = true
+general_reader = true
+
+[sources]
+note_key = "N35"
+primary_loci = ["GIRM 119a", "GIRM 209", "GIRM 335", "GIRM 337", "GIRM 344", "GIRM 346 (USCCB 346e, 346h)", "Redemptionis Sacramentum 123–124, 126–127", "Tres abhinc annos (1967) 26"]
+source_bindings = [
+  "work.catholic-church.institutio-generalis-missalis-romani",
+  "work.catholic-church.missale-romanum",
+  "work.catholic-church.rubricae-breviarii-et-missalis-romani",
+  "work.amalarius-of-metz.liber-de-ordine-antiphonarii",
+]
+verification_state = "checked-against-primary-and-official-witness"
+rights_note = "Original analytical description; no protected liturgical wording reproduced verbatim."

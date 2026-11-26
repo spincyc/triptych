@@ -1,0 +1,76 @@
+schema_version = 1
+id = "pc-obj-corporal"
+category = "linens"
+sort_order = 302
+plate_id = "pc-plt-04-linens"
+composition_plate_ids = ["pc-plt-10-communion-sacramental"]
+plate_position = "Top left, shown unfolded in a 3x3 crease grid and folded beside it (Plate IV); beneath vessels (Plate X)"
+preferred_english_name = "Corporal"
+latin_headword = "Corporale"
+alternate_english_names = ["Altar corporal"]
+alternate_latin_names = ["Palla corporalis"]
+pronunciation_key = "kor-poh-RAH-leh"
+
+[edition_disposition]
+edition_locale = "2008-latin-2011-us-english"
+as_of = "2026-11-25"
+disposition = "required"
+scope_level = "universal-roman"
+territorial_note = "Universal Roman law requires a corporal beneath all Eucharistic vessels on the altar (GIRM 118c, 139, 306) and beneath unpurified vessels awaiting post-Mass purification (GIRM 279; USCCB Norms for Holy Communion under Both Kinds 53). While GIRM 118c commends the optional chalice veil, it does not mention the stiff burse, which remains purely a traditional accessory."
+
+[identification]
+summary = "A square white linen cloth unfolded at the center of the altar during the Preparation of the Gifts so that every vessel holding the Body and Blood of Christ rests upon it and any sacred fragment is safely gathered."
+appearance = "At top left of Plate IV, the corporal appears both unfolded in a crisp three-by-three crease grid of nine equal squares and folded flat beside it; Plate X shows it spread beneath the principal chalice, paten, veiled ciborium, and Communion cups. Woven of fine white linen with a hemmed edge, it ordinarily bears a small stitched cross near the front center border facing the celebrant."
+placement_and_use = "Prepared neatly folded on the credence table (GIRM 118c), brought to the altar at the Preparation of the Gifts, and spread open at the center of the mensa by the deacon, instituted acolyte, or priest (GIRM 139, 178, 190). After Communion and vessel purification, the minister folds the sides carefully inward—enclosing the upper surface inside—so no microscopic particle of the Sacred Host can scatter (GIRM 183, 192). Unpurified vessels left on the altar or credence table after Mass likewise rest suitably covered on a corporal (GIRM 279)."
+liturgical_colors = "Always pure white linen (customarily marked with a small white or red embroidered cross near the front edge)."
+
+[ministers_and_handling]
+ordinary_ministers = ["bishop", "priest", "deacon", "instituted-acolyte"]
+prepares = ["sacristan", "deacon", "instituted-acolyte", "altar-server"]
+server_boundary = "prepares"
+server_boundary_summary = "Servers may set a clean, folded corporal on the credence table before Mass and bring it to the altar at the Preparation of the Gifts when no deacon or instituted acolyte serves; after consecration, servers never shake, refold carelessly, or wash a used corporal, and move a folded corporal flat and level only when directed after purification."
+safety_warning = "A used corporal may hold fine particles of the Sacred Host. Never shake it out or wash it directly in an ordinary sink; first soak and hand-rinse it in a dedicated basin and pour that first rinse water into the sacrarium or directly into clean earth before ordinary laundering (RS 120)."
+
+[audience_text]
+altar_server = "Recognize the corporal on Plate IV by its square shape, crisp nine-square fold grid, and small cross near the front edge—never confuse it with the narrow triple-folded purificator or the soft lavabo towel. Before Mass, set the clean folded corporal on the credence table; at the Preparation of the Gifts, carry it neatly to the altar if no deacon or instituted acolyte is serving. Once consecrated hosts have rested upon it, never snap, shake, or pick it up casually; let the priest, deacon, or instituted acolyte fold it inward, and carry it flat only if instructed."
+sacristan = "Starch corporals lightly and press them crisply into nine equal squares folded inward—bottom over middle, top over middle, right over middle, left over middle—so the inner surface stays protected and the front cross aligns toward the celebrant when opened. Prepare one clean corporal on the credence table for Mass (GIRM 118c) and keep spare clean corporals ready for vessels awaiting post-Mass purification (GIRM 279) or Eucharistic Exposition. After Mass, strictly follow Redemptionis Sacramentum 120: soak and hand-rinse used corporals first in a dedicated basin and pour the first rinse water into the sacrarium or clean earth before ordinary washing and ironing. Note that while GIRM 118c praises the chalice veil, it does not list a stiff burse."
+general_reader = "Named from the Latin word corpus (“body”), this square of crisp white linen lies directly beneath the chalice, paten, and ciboria during the Eucharistic Prayer and Communion. Unfolded at the Preparation of the Gifts and folded inward afterward, it safeguards even the tiniest particle of the Sacred Host and recalls the clean linen shroud of Christ's burial."
+
+[relationships]
+confusable_with = ["pc-obj-purificator", "pc-obj-pall", "pc-obj-lavabo-towel", "pc-obj-altar-cloth"]
+related_objects = ["pc-obj-altar", "pc-obj-chalice", "pc-obj-paten", "pc-obj-ciborium", "pc-obj-communion-cup", "pc-obj-credence-table"]
+
+[symbolism]
+has_sourced_symbolism = true
+text = "Named from the Latin corpus (“body”), the corporal is made of pure white linen because Christ's body was wrapped in a clean linen shroud at his burial: “And Joseph taking the body wrapped it up in a clean linen cloth” (Matt 27:59; cf. John 20:6, “and saw the linen cloths lying”). Following ancient Roman tradition expounded by St. Thomas Aquinas, the white linen signifies purity of conscience and recalls the Passion of Christ."
+evidence_class = "scriptural-patristic"
+attribution = "St. Thomas Aquinas, Summa Theologiae III, q. 83, a. 3, ad 7 (citing De Consecr. dist. 1); Matt 27:59; John 20:6"
+
+[counterpart_1962]
+relationship = "continued"
+locus_1962 = "Missale Romanum (1962), Ritus Servandus I.1, II.2, VI.7"
+comparison = "The square white linen corporal folded inward in nine squares continues directly from the 1962 Roman Missal (RS I.1). In postconciliar Mass with a congregation, it is placed on the altar at the Preparation of the Gifts rather than drawn from a stiff burse at the start of Low Mass (1962 RS II.2), and GIRM 118c no longer mandates a burse."
+
+[historical_transition]
+is_superseded = false
+period_range = ""
+controlling_act = ""
+current_status = ""
+
+[audiences]
+comprehensive = true
+altar_server = true
+sacristan = true
+general_reader = true
+
+[sources]
+note_key = "N16"
+primary_loci = ["GIRM 118c, 139, 163, 178, 183, 190, 192, 279--280, 306", "Redemptionis Sacramentum 120", "USCCB Norms for Holy Communion under Both Kinds (2011) 53"]
+source_bindings = [
+  "edition.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002",
+  "edition.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021",
+  "passage.catholic-church.missale-romanum.vatican-typica-1962.ritus-servandus-chalice-and-paten-preparation",
+  "work.thomas-aquinas.summa-theologiae",
+]
+verification_state = "checked-against-primary-and-official-witness"
+rights_note = "Original analytical description; no protected liturgical wording reproduced verbatim."

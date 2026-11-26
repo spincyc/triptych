@@ -1,0 +1,76 @@
+schema_version = 1
+id = "pc-obj-processional-cross"
+category = "service-and-incense"
+sort_order = 501
+plate_id = "pc-plt-06-service"
+composition_plate_ids = ["pc-plt-01-sanctuary"]
+plate_position = "Top right, bearing sculpted corpus on wooden staff (Plate VI); altar cross at center (Plate I)"
+preferred_english_name = "Processional Cross"
+latin_headword = "Crux processionalis"
+alternate_english_names = ["Altar Cross", "Crucifix"]
+alternate_latin_names = ["Crux cum figura Christi crucifixi"]
+pronunciation_key = "krooks proh-ches-see-oh-NAH-lees"
+
+[edition_disposition]
+edition_locale = "2008-latin-2011-us-english"
+as_of = "2026-11-25"
+disposition = "required"
+scope_level = "universal-roman"
+territorial_note = ""
+
+[identification]
+summary = "The processional cross is a tall staff-mounted crucifix carried at the head of liturgical processions and often stationed beside the altar to serve as the single altar cross during Mass."
+appearance = "A Latin cross bearing the sculpted figure of Christ crucified is fitted into a ringed socket atop a slender cylindrical wooden or metal staff, matching the standing altar crucifix shown at the center of the mensa in Plate I."
+placement_and_use = "During the entrance procession, an instituted acolyte or altar server carries the processional cross between two ministers bearing lighted candles (GIRM 120b). On reaching the sanctuary, the cross may be set in a floor stand near the altar to serve as the altar cross, in which case it must be the only cross present; otherwise it is placed away in a dignified spot while a separate crucifix remains clearly visible on or near the altar (GIRM 117, 122, 308). It is fitting that the cross with the figure of Christ crucified remain near the altar even outside liturgical celebrations (GIRM 308)."
+liturgical_colors = "Not governed by the seasonal color cycle; crafted in dignified wood, brass, bronze, silver, or other noble metal with a visible sculpted corpus."
+
+[ministers_and_handling]
+ordinary_ministers = ["instituted-acolyte", "altar-server"]
+prepares = ["sacristan", "altar-server"]
+server_boundary = "carries"
+server_boundary_summary = "The cross-bearer carries the processional cross upright with the figure of Christ facing forward, omits bowing and genuflecting while holding it (GIRM 274), and sets it securely in its floor stand near the altar or puts it away if another altar cross already stands there (GIRM 122)."
+safety_warning = "Do not bow or genuflect while holding the processional cross (GIRM 274), both to honor the rubric and to prevent the tall staff from pitching forward. Keep the staff clear of low doorways and hanging lights, and confirm that its weighted floor stand is level and stable before releasing it."
+
+[audience_text]
+altar_server = "As cross-bearer (crucifer), hold the staff upright with both hands at a steady height so the sculpted figure of Christ faces forward as you lead the ministers behind the thurifer. Never bow or genuflect while carrying the cross (GIRM 274). Once you reach the sanctuary, seat the staff firmly in its floor stand near the altar—or put it away cleanly if a separate altar crucifix is already stationed on or beside the altar (GIRM 122)."
+sacristan = "Ensure that a cross bearing a clear figure of Christ crucified is prepared for the entrance procession or already stationed visibly on or near the altar (GIRM 117, 308). Check that the socket joint is tight and that the sanctuary floor stand is weighted, unobstructed, and does not duplicate an existing altar crucifix (GIRM 122)."
+general_reader = "At the beginning of Mass, the processional cross leads the entrance of the ministers into the sanctuary, directing the eyes of the assembly to Christ crucified. In the postconciliar Roman Rite, this carried crucifix frequently stands beside the altar throughout Mass as the single altar cross, keeping the saving Passion of the Lord visibly present at the heart of Eucharistic worship (GIRM 122, 308)."
+
+[relationships]
+confusable_with = []
+related_objects = ["pc-obj-altar", "pc-obj-altar-candles", "pc-obj-thurible", "pc-obj-hist-1970-sanctuary-clarifications"]
+
+[symbolism]
+has_sourced_symbolism = true
+text = "The cross adorned with the figure of Christ crucified remains visibly before the assembly during Mass and outside liturgical celebrations so as to recall the saving Passion of the Lord (GIRM 308). St. Paul proclaims, “But we preach Christ crucified” (1 Cor 1:23) and “But God forbid that I should glory, save in the cross of our Lord Jesus Christ” (Gal 6:14), through whom God reconciles all things, “making peace through the blood of his cross” (Col 1:20). St. Thomas Aquinas affirms that the consecration of the Eucharist, the acceptance of the sacrifice, and all its fruits flow from the virtue of the Cross of Christ."
+evidence_class = "liturgical-source"
+attribution = "GIRM 308; 1 Cor 1:23; Gal 6:14; Col 1:20; St. Thomas Aquinas, Summa Theologiae III, q. 83, a. 5, ad 3"
+
+[counterpart_1962]
+relationship = "changed use"
+locus_1962 = "Missale Romanum (1962), Rubricae Generales n. 527; Fortescue (1943), pp. 17, 71, 78–79"
+comparison = "Whereas the 1962 Roman Missal required a separate crucifix standing in the center of the altar (RG 527) and did not ordinarily prescribe a carried cross at a priest’s High Mass entrance, the 2002/2008 GIRM assigns the processional cross with the figure of Christ crucified a regular place in the entrance procession (GIRM 120b) and permits it to stand near the altar as the sole altar cross (GIRM 122, 308). The 2002 third typical edition also restored the explicit requirement of the sculpted corpus that had been omitted in the 1970 and 1975 editions."
+
+[historical_transition]
+is_superseded = false
+period_range = ""
+controlling_act = ""
+current_status = ""
+
+[audiences]
+comprehensive = true
+altar_server = true
+sacristan = true
+general_reader = true
+
+[sources]
+note_key = "N25"
+primary_loci = ["GIRM 117", "GIRM 120b", "GIRM 122", "GIRM 188", "GIRM 274", "GIRM 308"]
+source_bindings = [
+  "work.catholic-church.institutio-generalis-missalis-romani",
+  "work.catholic-church.missale-romanum",
+  "work.adrian-fortescue.ceremonies-of-the-roman-rite-described",
+  "work.thomas-aquinas.summa-theologiae",
+]
+verification_state = "checked-against-primary-and-official-witness"
+rights_note = "Original analytical description; no protected liturgical wording reproduced verbatim."

@@ -1,0 +1,76 @@
+schema_version = 1
+id = "pc-obj-alb"
+category = "vesture-and-ministry"
+sort_order = 601
+plate_id = "pc-plt-08-vesture-ordained"
+composition_plate_ids = ["pc-plt-09-vesture-choir-solemn"]
+plate_position = "Worn beneath chasuble, diagonal stole, and dalmatic across all three figures (Plate VIII), and under cope and humeral veil (Plate IX)"
+preferred_english_name = "Alb"
+latin_headword = "Alba"
+alternate_english_names = ["White Tunic"]
+alternate_latin_names = ["Tunica alba"]
+pronunciation_key = "AHL-bah"
+
+[edition_disposition]
+edition_locale = "2008-latin-2011-us-english"
+as_of = "2026-11-25"
+disposition = "required"
+scope_level = "universal-roman"
+territorial_note = "While GIRM 336 establishes the alb universally for all ordained and instituted ministers, the USCCB adaptation at GIRM 339 permits acolytes, altar servers, readers, and other lay ministers in the Dioceses of the United States to wear either the alb or other dignified attire suited to liturgical service."
+
+[identification]
+summary = "The alb is the full-length white liturgical tunic that serves as the common sacred garment of all ordained and instituted ministers of every rank."
+appearance = "Cut to ankle length with full-length sleeves in plain white linen or woven fabric, the alb appears beneath the priest’s chasuble, the center deacon’s diagonal stole and cincture, and the right deacon’s dalmatic in Plate VIII, as well as under the cope and humeral veil in Plate IX."
+placement_and_use = "Under universal Roman law, bishops, priests, deacons, instituted acolytes, and instituted lectors wear the alb as their shared liturgical garment (GIRM 336; RS 121–122). It is tied at the waist with a cincture unless tailored to fit neatly without one, and preceded by an amice whenever its neckline leaves ordinary clothing visible at the collar (GIRM 336; Caeremoniale Episcoporum 65). A surplice—even worn over a cassock—may never be substituted for the alb when a chasuble, a dalmatic, or a stole alone is worn (GIRM 336). In the United States, altar servers, readers, and extraordinary ministers of Holy Communion may wear the alb or other dignified clothing approved by diocesan norm (US GIRM 339), but lay ministers never add a stole, dalmatic, or chasuble over it (RS 126)."
+liturgical_colors = "Always white (GIRM 336), regardless of the liturgical season."
+
+[ministers_and_handling]
+ordinary_ministers = ["bishop", "priest", "deacon", "instituted-acolyte", "instituted-lector", "extraordinary-minister", "altar-server"]
+prepares = ["sacristan", "altar-server"]
+server_boundary = "handles"
+server_boundary_summary = "Altar servers may wear a clean white alb hemmed at ankle height (tied with a cincture if unfitted) where parish custom appoints it under US GIRM 339, hanging it neatly after Mass and never wearing clerical insignia over it (RS 126)."
+safety_warning = "Choose an alb whose hem clears your shoes cleanly at ankle height; an overly long hem catches on sanctuary steps and creates a serious tripping hazard, especially when carrying lighted candles, cruets, or a hot thurible."
+
+[audience_text]
+altar_server = "If your parish vests altar servers in albs (US GIRM 339), pick one that reaches your ankles without brushing the floor so you never trip on sanctuary steps. Make sure ordinary shirt collars and long sleeves stay neatly covered, fasten a cincture at the waist if the alb is not tailored to fit smoothly (GIRM 336), and hang your alb straight on a hanger after Mass. Remember that servers, instituted acolytes, instituted lectors, and extraordinary ministers of Holy Communion never wear a stole over an alb (RS 126)."
+sacristan = "Stock clean, freshly pressed white albs across sizes for clergy, instituted acolytes and lectors, and servers, inspecting hems, collars, and cuffs regularly for wax drips or fraying. Keep clergy albs organized separately from server albs and verify that wide-necked albs are paired with clean amices and cinctures in the sacristy (GIRM 336)."
+general_reader = "Beneath the colorful outer vestments of priest and deacon, every ordained and instituted minister in the sanctuary wears the same ankle-length white alb (GIRM 336). In the United States, altar servers and lay readers often wear the alb as well (US GIRM 339), visually uniting everyone who ministers around the altar in the white garment of Christian Baptism."
+
+[relationships]
+confusable_with = ["pc-obj-cassock-surplice"]
+related_objects = ["pc-obj-cincture", "pc-obj-amice", "pc-obj-stole", "pc-obj-chasuble", "pc-obj-dalmatic", "pc-obj-cope", "pc-obj-humeral-veil"]
+
+[symbolism]
+has_sourced_symbolism = true
+text = "As the single white garment shared by ordained and instituted ministers of every rank, the alb outwardly recalls baptismal dignity in Christ (GIRM 335–336), echoing St. Paul, “For as many of you as have been baptized in Christ have put on Christ” (Gal 3:27), and the saints who “have washed their robes and have made them white in the blood of the Lamb” (Apoc 7:14). Outside the norms of the General Instruction, the traditional Roman sacristy vesting prayer asks the Lord to make the minister pure and white in the blood of the Lamb, and Amalarius of Metz interprets the loose linen tunic as Christian freedom and bodily discipline."
+evidence_class = "liturgical-source"
+attribution = "GIRM 335–336; Gal 3:27; Apoc 7:13–14; traditional Roman sacristy vesting prayer (Ad Albam); Amalarius of Metz, Liber Officialis II.18"
+
+[counterpart_1962]
+relationship = "changed use"
+locus_1962 = "Missale Romanum (1962), Rubricae Generales Tit. XIX.1; Ritus Servandus I.2–3, II.1, VI.8; Praeparatio ad Missam (Ad Albam)"
+comparison = "In the 1962 Roman Missal, the alb was worn solely by ordained sacred ministers at Mass (bishop, priest, deacon, and subdeacon, RS I.2–3), while altar servers and minor clerics wore cassock and surplice (RS II.1, VI.8). Under the 2002/2008 GIRM, the alb becomes the universal common garment of all ordained and instituted ministers, may never be replaced by a surplice under a chasuble, dalmatic, or stole alone (GIRM 336), and in the United States is also permitted for altar servers, readers, and other lay ministers (US GIRM 339)."
+
+[historical_transition]
+is_superseded = false
+period_range = ""
+controlling_act = ""
+current_status = ""
+
+[audiences]
+comprehensive = true
+altar_server = true
+sacristan = true
+general_reader = true
+
+[sources]
+note_key = "N31"
+primary_loci = ["GIRM 119", "GIRM 335", "GIRM 336", "GIRM 339 (USCCB)", "Redemptionis Sacramentum 121–122, 126", "Caeremoniale Episcoporum (1984) 65"]
+source_bindings = [
+  "work.catholic-church.institutio-generalis-missalis-romani",
+  "work.catholic-church.missale-romanum",
+  "work.catholic-church.caeremoniale-episcoporum",
+  "work.amalarius-of-metz.liber-de-ordine-antiphonarii",
+]
+verification_state = "checked-against-primary-and-official-witness"
+rights_note = "Original analytical description; no protected liturgical wording reproduced verbatim."

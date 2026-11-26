@@ -1,0 +1,78 @@
+schema_version = 1
+id = "pc-obj-roman-missal"
+category = "liturgical-books"
+sort_order = 401
+plate_id = "pc-plt-05-books"
+composition_plate_ids = []
+plate_position = "Top left, open with edge tabs and ribbons on a low stand (Plate V)"
+preferred_english_name = "Roman Missal"
+latin_headword = "Missale Romanum"
+alternate_english_names = ["Altar Missal", "Sacramentary (1974--2011 U.S. usage)"]
+alternate_latin_names = ["Missale"]
+pronunciation_key = "mees-SAH-leh roh-MAH-noom"
+
+[edition_disposition]
+edition_locale = "2008-latin-2011-us-english"
+as_of = "2026-11-25"
+disposition = "required"
+scope_level = "universal-roman"
+territorial_note = "In the Dioceses of the United States of America, the approved vernacular edition is The Roman Missal, Third Edition (USCCB, effective 27 November 2011), translating the 2002/2008 Latin third typical edition in its entirety (GIRM 389) and incorporating confirmed United States adaptations and the 2021 emendations."
+
+[identification]
+summary = "The principal liturgical book of the Roman Rite containing the Order of Mass, Eucharistic Prayers, Prefaces, presidential prayers, antiphons, and rubrics proclaimed by the priest celebrant."
+appearance = "At top left of Plate V, the heavy altar Missal lies open flat in two-column pages on a low wooden stand, fitted with durable side tabs along both fore-edges and multiple fringed silk ribbon markers. Ordinarily bound in red leather or cloth with sturdy sewing, it is thicker and heavier than the other sanctuary volumes shown in relative proportion on Plate V."
+placement_and_use = "Prepared beside the presidential chair before Mass (GIRM 118a, unless the Book of the Chair is used for chair prayers) and placed on the altar at the Preparation of the Gifts so the priest prays the Prayer over the Offerings, Preface, Eucharistic Prayer, and Communion rites directly from it (GIRM 139, 306). After the purification of vessels, it may return to the presidential chair for the Prayer after Communion and Solemn Blessing (GIRM 165--167, 306)."
+liturgical_colors = "Customarily bound in dignified red leather or cloth with restrained tooling; the binding does not change by liturgical season."
+
+[ministers_and_handling]
+ordinary_ministers = ["bishop", "priest"]
+prepares = ["sacristan", "deacon", "instituted-acolyte", "altar-server"]
+server_boundary = "presents"
+server_boundary_summary = "Servers check ribbon markers before Mass as directed, hold the open Roman Missal steady at chest or reading height for the priest at the presidential chair when no stand or Book of the Chair is used, place it cleanly on the altar at the Preparation of the Gifts, and remove it after purification when instructed."
+safety_warning = "Support the heavy altar Missal evenly with both hands or braced cleanly against your upper chest—never by one cover—so the binding does not tear or slip. Never set loose announcements, bulletins, or unapproved sheets atop the Missal or on the altar mensa (GIRM 306)."
+
+[audience_text]
+altar_server = "Look at top left of Plate V: the Roman Missal is the thick, tabbed ritual book with multiple fringed ribbons resting on the low stand. Before Mass, verify with the priest or sacristan that every ribbon marks the exact page for the day's prayers. When holding the Missal for the priest at the presidential chair, brace the spine firmly with both hands at an easy reading angle without blocking his view; at the Preparation of the Gifts, place it squarely on its stand to the left of the corporal, never touching or covering the corporal."
+sacristan = "Always prepare the complete, officially approved Roman Missal—never loose sheets or disposable binders—setting side tabs and ribbon markers cleanly for the Collect, Prayer over the Offerings, proper Preface, appointed Eucharistic Prayer, Prayer after Communion, and any Solemn Blessing or Prayer over the People (GIRM 118a, 349, 389). Stage the Missal beside the presidential chair (or on the credence table whenever the Book of the Chair is used at the chair) so the altar mensa remains bare until the Preparation of the Gifts (GIRM 306)."
+general_reader = "Whenever the priest prays the opening Collect at his chair or offers the Eucharistic Prayer at the altar, he reads from the Roman Missal—the Church's authoritative book of Mass prayers. While the Lectionary on the ambo holds the Scripture readings, the Missal gathers the prayers offered by the priest in the name of the entire Church across every season and feast, crafted with lasting dignity and beauty to honor the sacred liturgy (GIRM 349)."
+
+[relationships]
+confusable_with = ["pc-obj-book-of-the-chair", "pc-obj-lectionary", "pc-obj-book-of-the-gospels"]
+related_objects = ["pc-obj-missal-stand", "pc-obj-presidential-chair", "pc-obj-altar", "pc-obj-book-of-the-chair"]
+
+[symbolism]
+has_sourced_symbolism = true
+text = "The General Instruction of the Roman Missal teaches that liturgical books serve as signs and symbols of heavenly realities, requiring that the Roman Missal be crafted with genuine worth, dignity, and beauty to honor the Eucharistic prayer of the Church."
+evidence_class = "liturgical-source"
+attribution = "GIRM 349"
+
+[counterpart_1962]
+relationship = "materially changed"
+locus_1962 = "Missale Romanum (1962), Rubricae Generales 527; Ritus Servandus I.1, II.4--5, VI.5, XI.1"
+comparison = "The 1962 Missale Romanum was a plenary altar book holding all presidential orations, chants, Epistles, and Gospels, remaining on the altar throughout Mass and carried between the Epistle and Gospel corners (RG 527; RS VI.5, XI.1). In the postconciliar Roman Rite, the Scripture readings are separated into the Lectionary and Book of the Gospels, while the Missal serves at the presidential chair and rests on the altar only from the Preparation of the Gifts through purification (GIRM 118a, 139, 306)."
+
+[historical_transition]
+is_superseded = false
+period_range = ""
+controlling_act = ""
+current_status = ""
+
+[audiences]
+comprehensive = true
+altar_server = true
+sacristan = true
+general_reader = true
+
+[sources]
+note_key = "N20"
+primary_loci = ["GIRM 30, 118a, 139, 147, 189, 306, 349, 389", "Postquam Summus Pontifex (2021) 2--3, 40"]
+source_bindings = [
+  "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002",
+  "edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008",
+  "edition.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021",
+  "passage.catholic-church.missale-romanum.vatican-typica-1962.rubricae-generales-altar-preparation",
+  "passage.catholic-church.missale-romanum.vatican-typica-1962.ritus-servandus-sacristy-preparation-and-reverence",
+  "work.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.decree-implementing-canon-838-2021",
+]
+verification_state = "checked-against-primary-and-official-witness"
+rights_note = "Original analytical description; no protected liturgical wording reproduced verbatim."

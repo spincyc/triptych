@@ -1,0 +1,76 @@
+schema_version = 1
+id = "pc-obj-stole"
+category = "vesture-and-ministry"
+sort_order = 604
+plate_id = "pc-plt-08-vesture-ordained"
+composition_plate_ids = ["pc-plt-09-vesture-choir-solemn"]
+plate_position = "Hanging straight below priest's chasuble at left; worn diagonally from left shoulder to right hip on center deacon and beneath right deacon's dalmatic with tip peeking at his right hem (Plate VIII)"
+preferred_english_name = "Stole"
+latin_headword = "Stola"
+alternate_english_names = ["Priestly Stole", "Diaconal Stole"]
+alternate_latin_names = []
+pronunciation_key = "STOH-lah"
+
+[edition_disposition]
+edition_locale = "2008-latin-2011-us-english"
+as_of = "2026-11-25"
+disposition = "required"
+scope_level = "universal-roman"
+territorial_note = "While the stole’s wearing and reservation to ordained ministers follow universal Roman law (GIRM 340; RS 123–126), USCCB adaptations at GIRM 346e and 346h permit white, violet, or black stoles for funerals and Masses for the Dead, and gold or silver stoles on more solemn occasions."
+
+[identification]
+summary = "The stole is the long woven band of liturgical color worn exclusively by ordained ministers—bishops, priests, and deacons—as the outward insignia of Holy Orders."
+appearance = "A narrow scarf-like woven band finished with matching fringed ends hangs straight in twin parallel panels beneath the priest’s chasuble on the left of Plate VIII, crosses diagonally from left shoulder to right hip on the center deacon, and peeks cleanly beneath the right hem of the dalmatic on the right deacon."
+placement_and_use = "At Mass, the priest wears the stole around his neck hanging straight down in front of his chest—not crossed over the breast—over the alb and beneath the chasuble, matching the bishop’s manner (GIRM 337, 340). The deacon wears the stole diagonally from his left shoulder across his chest and back to be fastened at his right side, always beneath the dalmatic when the dalmatic is worn (GIRM 338, 340). A priest or deacon may never celebrate Mass wearing only a stole over ordinary street clothes or a monastic habit without the alb and appointed outer vestment, nor may a surplice replace the alb when only a stole is worn (GIRM 336; RS 123–126). Laypersons—including instituted acolytes, instituted lectors, extraordinary ministers of Holy Communion, and altar servers—are strictly prohibited from wearing a stole (RS 126). The stole follows the seasonal color of the day (GIRM 346): white, red, green, violet, rose (Gaudete and Laetare Sundays), black where customary, or festive gold or silver in the United States."
+liturgical_colors = "Follows GIRM 346 seasonal colors: white, red, green, violet, rose (Third Sunday of Advent and Fourth Sunday of Lent), black where customary for Masses for the Dead, and—under USCCB GIRM 346e and 346h—white, violet, or black for funerals and gold or silver on more solemn occasions."
+
+[ministers_and_handling]
+ordinary_ministers = ["bishop", "priest", "deacon"]
+prepares = ["sacristan"]
+server_boundary = "clergy-reserved"
+server_boundary_summary = "Strictly reserved to bishops, priests, and deacons; altar servers, instituted acolytes, instituted lectors, and extraordinary ministers of Holy Communion never wear a stole (RS 126). A sacristan lays out the matching seasonal priestly or diaconal stole cleanly in the sacristy."
+safety_warning = ""
+
+[audience_text]
+altar_server = "Watch how the stole immediately identifies who is ordained in the sanctuary: a bishop or priest wears the stole around his neck hanging straight down in front beneath the chasuble, while a deacon wears it diagonally from his left shoulder to his right hip beneath the dalmatic (GIRM 340). Never put on a stole yourself—neither altar servers, instituted acolytes, instituted lectors, nor extraordinary ministers of Holy Communion may ever wear clerical insignia (RS 126)."
+sacristan = "Lay out the matching seasonal priestly stole with every chasuble and the matching diaconal stole (tailored to fasten cleanly at the right hip) with every dalmatic, checking GIRM 346 and the United States color options for funerals and solemnities (US GIRM 346e, 346h). Hang stoles flat or draped cleanly without creasing embroidered orphreys, and keep a violet and white sacramental stole ready for Confessions and pastoral visits."
+general_reader = "More than any other garment, the woven stole identifies an ordained minister at a glance. In the postconciliar Roman Rite, both bishop and priest wear it hanging straight down in front of the chest, while the deacon wears it sash-like from his left shoulder to his right hip under the dalmatic (GIRM 340)."
+
+[relationships]
+confusable_with = ["pc-obj-cincture", "pc-obj-humeral-veil"]
+related_objects = ["pc-obj-alb", "pc-obj-chasuble", "pc-obj-dalmatic", "pc-obj-cope", "pc-obj-hist-subdeacon-tunicle-maniple"]
+
+[symbolism]
+has_sourced_symbolism = true
+text = "The stole outwardly signifies ordained ministry within the Body of Christ, distinguishing episcopal and presbyteral order from diaconal order by the manner in which it is worn (GIRM 335, 340). In devotional tradition distinct from the General Instruction, the traditional Roman sacristy vesting prayer asks the Lord to restore the robe of immortality lost by our first parents, while Amalarius of Metz sees in the stole the sweet yoke of the Gospel (Matt 11:29–30)."
+evidence_class = "liturgical-source"
+attribution = "GIRM 335, 340; traditional Roman sacristy vesting prayer (Ad Stolam); Matt 11:29–30; Amalarius of Metz, Liber Officialis II.20"
+
+[counterpart_1962]
+relationship = "changed use"
+locus_1962 = "Missale Romanum (1962), Rubricae Generales n. 137; Ritus Servandus I.3–4; Praeparatio ad Missam (Ad Stolam)"
+comparison = "While the deacon’s diagonal wearing from left shoulder to right hip continues unchanged from 1962, the 1962 Roman Missal required a priest celebrating Mass to cross the stole across his breast and anchor it with the cincture, reserving straight hanging to bishops and prelates (RS I.3–4). Under GIRM 340, every priest now wears the stole hanging straight down in front of his chest."
+
+[historical_transition]
+is_superseded = false
+period_range = ""
+controlling_act = ""
+current_status = ""
+
+[audiences]
+comprehensive = true
+altar_server = true
+sacristan = true
+general_reader = true
+
+[sources]
+note_key = "N34"
+primary_loci = ["GIRM 119", "GIRM 336", "GIRM 337", "GIRM 338", "GIRM 340", "GIRM 346 (USCCB 346e, 346h)", "Redemptionis Sacramentum 123–126"]
+source_bindings = [
+  "work.catholic-church.institutio-generalis-missalis-romani",
+  "work.catholic-church.missale-romanum",
+  "work.catholic-church.rubricae-breviarii-et-missalis-romani",
+  "work.amalarius-of-metz.liber-de-ordine-antiphonarii",
+]
+verification_state = "checked-against-primary-and-official-witness"
+rights_note = "Original analytical description; no protected liturgical wording reproduced verbatim."
