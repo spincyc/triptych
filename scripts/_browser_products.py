@@ -1113,14 +1113,20 @@ def _refresh_history_fingerprints(body: bytes, name: str, inputs: dict) -> bytes
         payload = _decode(body)
         if not isinstance(payload, dict):
             return None
-        groups = [payload.get("inputs")]
-        if name.endswith("/catalogue.json"):
+        if name.endswith("/stage-history.json"):
             stages = payload.get("stage_history")
             if not isinstance(stages, dict):
                 return None
-            groups.append(stages.get("inputs"))
+            groups = [stages.get("inputs")]
         else:
-            groups.append(payload.get("tool_inputs"))
+            groups = [payload.get("inputs")]
+            if name.endswith("/catalogue.json"):
+                stages = payload.get("stage_history")
+                if not isinstance(stages, dict):
+                    return None
+                groups.append(stages.get("inputs"))
+            else:
+                groups.append(payload.get("tool_inputs"))
         for rows in groups:
             if not isinstance(rows, list):
                 return None
@@ -1130,9 +1136,9 @@ def _refresh_history_fingerprints(body: bytes, name: str, inputs: dict) -> bytes
                 record = inputs.get(row["path"])
                 if record is not None and set(row) == {"path", "sha256", "byte_size"}:
                     row.update(sha256=record["sha256"], byte_size=record["bytes"])
-        # The history producer uses two-space JSON. Formatting changes are
+        # The history producer uses compact JSON. Formatting changes are
         # ordinary misses, since the current proof checks the complete bytes.
-        return (json.dumps(payload, ensure_ascii=False, sort_keys=True, indent=2) + "\n").encode()
+        return (json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n").encode()
     except (ProductError, RecursionError, UnicodeError):
         return None
 
@@ -1151,7 +1157,7 @@ def _recover_history_candidate(root, product, entries, cache_root, inputs):
         if previous.keys() != wanted.keys():
             continue
         changed = [name for name in wanted if previous[name] != wanted[name]]
-        if any(not re.fullmatch(r"structure/act-history/(?:catalogue|comparisons/[a-z0-9-]+)\.json", name)
+        if any(not re.fullmatch(r"structure/act-history/(?:catalogue|stage-history|comparisons/[a-z0-9-]+)\.json", name)
                or previous[name]["bytes"] > 2 * wanted[name]["bytes"] for name in changed):
             continue
         with tempfile.TemporaryDirectory(prefix="history-", dir=_scratch(root)) as temporary:

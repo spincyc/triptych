@@ -1935,6 +1935,7 @@
    * Its chronology and source states come from the generator. In particular,
    * sorting records never supplies a parent edge or admits a new station. */
   const CATALOGUE = 'structure/act-history/catalogue.json';
+  const STAGE_HISTORY = 'structure/act-history/stage-history.json';
   let catalogueData = null;
 
   function catalogueValid(data) {
@@ -2745,6 +2746,24 @@
     }
   }
 
+  function stageHistoryEnvelopeValid(data) {
+    if (catalogueValid(data)) return true;
+    const object = function (value) { return value && typeof value === 'object' && !Array.isArray(value); };
+    const string = function (value) { return typeof value === 'string'; };
+    if (!object(data) || data.schema !== 'triptych-eucharistic-stage-history/v1' ||
+        !Array.isArray(data.entries) || !Array.isArray(data.comparisons)) return false;
+    const ids = new Set();
+    return data.entries.every(function (row) {
+      if (!object(row) || !row.id || ids.has(row.id)) return false;
+      ids.add(row.id);
+      if (!string(row.id) || !string(row.title) || !string(row.date_label)) return false;
+      if (row.act_ref !== null && (!object(row.act_ref) ||
+          !/^[a-z0-9][a-z0-9-]*$/.test(row.act_ref.slice || '') ||
+          !/^[a-z0-9][a-z0-9-]*$/.test(row.act_ref.station_id || ''))) return false;
+      return true;
+    });
+  }
+
   function stageHistoryValid(history) {
     if (!history || history.schema !== 'triptych-eucharistic-stages/v1' ||
         !['traditions','sources','stages','transitions','gaps'].every(function (key) { return Array.isArray(history[key]); })) return false;
@@ -2800,8 +2819,13 @@
     const leadControl=document.getElementById('timeline-leads'),presentation=document.getElementById('timeline-presentation');
     let data,history,current,model;
     try {
-      data=await T.loadJSON(CATALOGUE); T.doneBootstrapping();
-      if (!catalogueValid(data) || !stageHistoryValid(data.stage_history)) throw Error('The historical stage projection is missing or malformed.');
+      try {
+        data=await T.loadJSON(STAGE_HISTORY);
+      } catch (_fallbackError) {
+        data=await T.loadJSON(CATALOGUE);
+      }
+      T.doneBootstrapping();
+      if (!stageHistoryEnvelopeValid(data) || !stageHistoryValid(data.stage_history)) throw Error('The historical stage projection is missing or malformed.');
       history=data.stage_history;
       if (!history.stages.length) {
         status.textContent='No historical book stages have yet been established in this projection.';

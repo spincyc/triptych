@@ -505,14 +505,11 @@
       });
     const needsOrdinary = requestedMode === 'missal' ||
       (requestedMode === 'study' && parsed.recognized.ordinary === '1') || explicitOrdinary;
-    // Proper rites use the source Ordinary catalog even in unframed Read.
-    // Loading metadata does not request or render the Ordinary.
     const loadsOrdinary = needsOrdinary || missal === 'roman-1962';
-    const paths = [
-      'structure/rubrics/' + missal + '.json',
-      'structure/calendar/' + missal + '/' + year + '.json'
-    ];
-    if (loadsOrdinary) paths.push('structure/ordinary/' + missal + '.json');
+    const ordRow = loadsOrdinary && !needsOrdinary &&
+      (manifests.ordinaryIndex.calendars || []).find(r => r.calendar === missal);
+    const paths = ['structure/rubrics/' + missal + '.json', 'structure/calendar/' + missal + '/' + year + '.json'];
+    if (loadsOrdinary) paths.push(ordRow?.proper_rites_file || 'structure/ordinary/' + missal + '.json');
     const peer = requestedMode === 'compare' ? parsed.recognized['peer-missal'] : null;
     if (peer) paths.push('structure/rubrics/' + peer + '.json',
       'structure/calendar/' + peer + '/' + year + '.json');

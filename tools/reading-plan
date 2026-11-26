@@ -330,7 +330,7 @@ def run_structure(arguments: argparse.Namespace) -> dict:
         target = out / "structure" / "readings" / f"{path.stem}.json"
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(
-            json.dumps(built, ensure_ascii=False, sort_keys=True, indent=1) + "\n",
+            json.dumps(built, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n",
             encoding="utf-8",
         )
         written.append(str(target))

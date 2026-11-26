@@ -53,11 +53,14 @@ class PublicationReaderTests(unittest.TestCase):
 
     def test_catalogue_opens_only_tracked_metadata_without_a_producer(self):
         body = b'{"schema":"triptych-document-catalogue/v1", "works":[]}\n'
+        contribs = b'{"schema":"triptych-document-contributions/v1", "contributions":{}}\n'
         self.index.files[reader.CATALOG] = body
+        self.index.files[reader.CONTRIBUTIONS] = contribs
         with mock.patch.object(reader, "_tool", side_effect=AssertionError("producer loaded")):
             self.assertEqual(reader.resolve("structure/documents/corpus.json", ROOT, self.index), body)
-        self.assertEqual(self.index.reads, [reader.READERS, reader.CATALOG])
-        self.history.assert_called_once()
+            self.assertEqual(reader.resolve("structure/documents/contributions.json", ROOT, self.index), contribs)
+        self.assertEqual(self.index.reads, [reader.READERS, reader.CATALOG, reader.READERS, reader.CONTRIBUTIONS])
+        self.assertEqual(self.history.call_count, 2)
 
     def test_selected_worker_rechecks_all_consumed_inputs_and_preserves_exact_bytes(self):
         with self.worker() as worker:
@@ -108,6 +111,7 @@ class PublicationReaderTests(unittest.TestCase):
         catalogue = {"schema": "triptych-document-catalogue/v1", "works": [
             {"editions": [{"revised": "2026-01-01T00:00:00Z"}]}]}
         owner = SimpleNamespace(catalogue=mock.Mock(return_value=catalogue),
+                                split_contributions=lambda value: (value, {"schema": "triptych-document-contributions/v1", "contributions": {}}),
                                 _serialise=lambda value: json.dumps(value) + "\n")
         converter = SimpleNamespace(reader_outputs=mock.Mock(return_value=[self.row]))
         with mock.patch("_corpus.documents", return_value=(document,)) as documents, \
@@ -117,6 +121,7 @@ class PublicationReaderTests(unittest.TestCase):
         documents.assert_called_once_with(root=ROOT)
         owner.catalogue.assert_called_once_with((document,), {document.key: document}, root=ROOT)
         self.assertEqual(json.loads(files[reader.CATALOG]), catalogue)
+        self.assertEqual(json.loads(files[reader.CONTRIBUTIONS])["schema"], "triptych-document-contributions/v1")
         self.assertEqual(json.loads(files[reader.READERS])["readers"], {self.identity: self.row})
         self.assertEqual(json.loads(files[reader.READERS])["generation_commit"], self.head)
         self.assertNotIn(b'"markdown"', files[reader.READERS])
@@ -131,6 +136,7 @@ class PublicationReaderTests(unittest.TestCase):
 
     def test_independent_check_preserves_the_valid_recorded_history_anchor(self):
         owner = SimpleNamespace(catalogue=lambda *args, **kwargs: {"works": []},
+                                split_contributions=lambda value: (value, {"schema": "triptych-document-contributions/v1", "contributions": {}}),
                                 _serialise=lambda value: json.dumps(value))
         converter = SimpleNamespace(reader_outputs=lambda: [])
         base = "b" * 40

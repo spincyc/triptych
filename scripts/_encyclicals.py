@@ -572,7 +572,7 @@ def render(index_path: Path, release_path: Path, root: Path = ROOT) -> str:
             + shown + more
         )
     catalogue = browser_catalogue(index, index_bytes)
-    return json.dumps(catalogue, ensure_ascii=False, indent=1, sort_keys=True) + "\n"
+    return json.dumps(catalogue, ensure_ascii=False, separators=(",", ":"), sort_keys=True) + "\n"
 
 
 def output_path(out_root: Path) -> Path:

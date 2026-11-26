@@ -1042,8 +1042,41 @@ def catalogue(rows: tuple[Document, ...], by_key: dict[tuple[str, str], Document
     }
 
 
+CONTRIBUTIONS_RELATIVE = Path("structure") / "documents" / "contributions.json"
+CONTRIBUTIONS_SCHEMA = "triptych-document-contributions/v1"
+
+
+def split_contributions(built: dict) -> tuple[dict, dict]:
+    """Separate per-edition authorship ledgers so the main catalogue stays compact."""
+    contributions: dict[str, list[dict]] = {}
+    slim_works: list[dict] = []
+    for work in built["works"]:
+        slim_editions: list[dict] = []
+        for edition in work["editions"]:
+            if "contributions" in edition:
+                key = f"{edition['provider']}/{work['leaf']}"
+                entries = edition["contributions"]
+                contributions[key] = entries
+                slim_edition = {k: v for k, v in edition.items() if k != "contributions"}
+                slim_edition["contributions_count"] = len(entries)
+                slim_editions.append(slim_edition)
+            else:
+                slim_editions.append(edition)
+        slim_works.append({**work, "editions": slim_editions})
+    slim_corpus = {
+        **built,
+        "contributions_path": CONTRIBUTIONS_RELATIVE.as_posix(),
+        "works": slim_works,
+    }
+    contributions_doc = {
+        "schema": CONTRIBUTIONS_SCHEMA,
+        "contributions": contributions,
+    }
+    return slim_corpus, contributions_doc
+
+
 def _serialise(payload: dict) -> str:
-    return json.dumps(payload, ensure_ascii=False, sort_keys=True, indent=1) + "\n"
+    return json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n"
 
 
 def run_structure(arguments: argparse.Namespace) -> dict:
@@ -1052,22 +1085,27 @@ def run_structure(arguments: argparse.Namespace) -> dict:
         out = assert_working_output(ROOT, out)
     rows, by_key = selected(arguments)
     built = catalogue(rows, by_key)
+    slim_corpus, contributions_doc = split_contributions(built)
     target = out / STRUCTURE_RELATIVE
-    serialised = _serialise(built)
+    contrib_target = out / CONTRIBUTIONS_RELATIVE
+    serialised = _serialise(slim_corpus)
+    contrib_serialised = _serialise(contributions_doc)
     if arguments.check:
-        if not target.is_file():
-            raise CorpusError(f"{target} does not exist; run `document-library structure`")
-        if target.read_text(encoding="utf-8") != serialised:
-            # Re-record with tools/browser-products record; this is advice,
-            # not a tool dependency (that producer calls this catalogue).
-            raise CorpusError(
-                f"{target} has drifted from the sources; "
-                "explicitly re-record the verified browser products as described "
-                "in guidance/web-data.md"
-            )
+        for path, expected in ((target, serialised), (contrib_target, contrib_serialised)):
+            if not path.is_file():
+                raise CorpusError(f"{path} does not exist; run `document-library structure`")
+            if path.read_text(encoding="utf-8") != expected:
+                # Re-record with tools/browser-products record; this is advice,
+                # not a tool dependency (that producer calls this catalogue).
+                raise CorpusError(
+                    f"{path} has drifted from the sources; "
+                    "explicitly re-record the verified browser products as described "
+                    "in guidance/web-data.md"
+                )
         return {**built["counted"], "current": str(target), "status": "ok"}
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(serialised, encoding="utf-8")
+    contrib_target.write_text(contrib_serialised, encoding="utf-8")
     return {**built["counted"], "written": str(target), "status": "ok"}
 
 

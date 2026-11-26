@@ -4049,6 +4049,43 @@ def calendar_structure(sources: Path, path: Path, library: dict[str, dict]) -> d
     }
 
 
+def proper_rites_structure(one: dict) -> dict | None:
+    """Minimal Ordinary projection for Read mode when a calendar declares proper_rites.
+
+    Carries only the proper_rites table, each rite's slot, the adjacent cue and
+    anchor elements that `ordinary-seating.js` validates, plus language and
+    variant headers for validationContext — ~9 KB instead of the full 1 MB Ordinary.
+    """
+    rites = one.get("proper_rites")
+    if not rites:
+        return None
+    rite_ids = {rite["id"] for rite in rites}
+    slots = [slot for slot in one["slots"] if slot.get("rite") in rite_ids]
+    flat_elements = [element for section in one["sections"] for element in section["elements"]]
+    kept_indices: set[int] = set()
+    kept_elements: list[dict] = []
+    for idx, element in enumerate(flat_elements):
+        if any(
+            cond.get("kind") == "include-when-proper-rite" and cond.get("rite") in rite_ids
+            for cond in (element.get("conditions") or [])
+        ):
+            if idx not in kept_indices:
+                kept_indices.add(idx)
+                kept_elements.append({"key": element["key"], "conditions": element["conditions"]})
+            if idx + 1 < len(flat_elements) and (idx + 1) not in kept_indices:
+                kept_indices.add(idx + 1)
+                kept_elements.append({"key": flat_elements[idx + 1]["key"]})
+    return {
+        "schema": OUT_SCHEMA,
+        "calendar": one["calendar"],
+        "languages": one["languages"],
+        "variants": one["variants"],
+        "proper_rites": rites,
+        "slots": slots,
+        "sections": [{"key": "proper-rites", "elements": kept_elements}],
+    }
+
+
 def index_file(built: list[dict]) -> dict:
     return {
         "schema": OUT_SCHEMA,
@@ -4062,6 +4099,11 @@ def index_file(built: list[dict]) -> dict:
                 "elements": sum(len(section["elements"]) for section in one["sections"]),
                 "variants": [entry["group"] for entry in one["variants"]],
                 "slots": len(one["slots"]),
+                **(
+                    {"proper_rites_file": f"structure/ordinary/{one['calendar']}-rites.json"}
+                    if one.get("proper_rites")
+                    else {}
+                ),
             }
             for one in built
         ],
@@ -4079,6 +4121,9 @@ def relative_paths(built: list[dict], whole: bool) -> dict[str, dict]:
     files = {"structure/ordinary/index.json": index_file(built)} if whole else {}
     for one in built:
         files["structure/ordinary/" + one["calendar"] + ".json"] = one
+        rites = proper_rites_structure(one)
+        if rites is not None:
+            files["structure/ordinary/" + one["calendar"] + "-rites.json"] = rites
     return files
 
 

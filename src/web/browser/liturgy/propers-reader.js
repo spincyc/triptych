@@ -125,16 +125,12 @@
   }
 
   function structurePath(id) {
-    const row = runtime.manifests && runtime.manifests.properIndexRaw.missals.find(function (one) {
-      return one.id === id;
-    });
-    if (row && row.reader_index) return window.LiturgyReaderProperPayload.indexPath(id, row);
+    const row = runtime.manifests?.properIndexRaw.missals.find(one => one.id === id);
+    if (row?.reader_index) return window.LiturgyReaderProperPayload.indexPath(id, row);
     return 'structure/propers/' + id + '.json';
   }
 
-  function ordinaryPath(id) {
-    return 'structure/ordinary/' + id + '.json';
-  }
+  function ordinaryPath(id) { return 'structure/ordinary/' + id + '.json'; }
 
   function described(entry) {
     if (typeof entry === 'string') {
@@ -152,9 +148,9 @@
     const rows = ((index && (index.missals || index.calendars)) || []).map(described);
     const override = T.params.get('missals');
     if (!override) return rows;
-    return override.split(',').map(function (id) { return id.trim(); }).filter(Boolean).map(function (id) {
-      return rows.find(function (row) { return row.id === id; }) || described(id);
-    });
+    return override.split(',').map(id => id.trim()).filter(Boolean).map(
+      id => rows.find(row => row.id === id) || described(id)
+    );
   }
 
   async function loadManifests() {
@@ -164,22 +160,21 @@
     runtime.bibles = loaded[0].bibles;
     runtime.missals = allowedMissals(loaded[1]);
     if (!runtime.missals.length) throw new Error('the selected data root offers no Propers editions');
-    const declared = loaded[1] && loaded[1].default;
-    const landing = runtime.missals.some(function (row) { return row.id === declared; })
-      ? declared : runtime.missals[0].id;
+    const declared = loaded[1]?.default;
+    const landing = runtime.missals.some(row => row.id === declared) ? declared : runtime.missals[0].id;
     runtime.manifests = {
       bibles: { bibles: runtime.bibles },
       properIndexRaw: loaded[1],
-      properIndex: { default: landing, missals: runtime.missals.map(function (row) {
-        return { id: row.id, edition: row.edition, edition_short: row.label };
-      }) },
+      properIndex: { default: landing, missals: runtime.missals.map(
+        row => ({ id: row.id, edition: row.edition, edition_short: row.label })
+      ) },
       ordinaryIndex: loaded[2]
     };
     return runtime.manifests;
   }
 
   function massDate(mass) {
-    const found = /^(\d{2})-(\d{2})$/.exec(String((mass && mass.date) || ''));
+    const found = /^(\d{2})-(\d{2})$/.exec(String(mass?.date || ''));
     if (!found) return null;
     const month = Number(found[1]);
     const day = Number(found[2]);
@@ -200,30 +195,20 @@
 
   function groupByKind(masses) {
     const held = new Map();
-    (masses || []).forEach(function (mass) {
+    (masses || []).forEach(mass => {
       const kind = mass.kind || 'other';
       if (!held.has(kind)) held.set(kind, []);
       held.get(kind).push(mass);
     });
-    const keys = KIND_SEQUENCE.filter(function (kind) { return held.has(kind); }).concat(
-      Array.from(held.keys()).filter(function (kind) { return KIND_SEQUENCE.indexOf(kind) < 0; })
+    const keys = KIND_SEQUENCE.filter(kind => held.has(kind)).concat(
+      Array.from(held.keys()).filter(kind => KIND_SEQUENCE.indexOf(kind) < 0)
     );
-    return keys.map(function (kind) {
-      return { kind: kind, label: KIND_LABELS[kind] || T.titleCase(kind), masses: held.get(kind) };
-    });
+    return keys.map(kind => ({ kind, label: KIND_LABELS[kind] || T.titleCase(kind), masses: held.get(kind) }));
   }
 
-  function missalRow(id) {
-    return runtime.missals.find(function (row) { return row.id === id; }) || null;
-  }
-
-  function bibleRow(id) {
-    return runtime.bibles.find(function (row) { return row.id === id; }) || null;
-  }
-
-  function groupRow(kind) {
-    return runtime.groups.find(function (row) { return row.kind === kind; }) || null;
-  }
+  function missalRow(id) { return runtime.missals.find(row => row.id === id) || null; }
+  function bibleRow(id) { return runtime.bibles.find(row => row.id === id) || null; }
+  function groupRow(kind) { return runtime.groups.find(row => row.kind === kind) || null; }
 
   function editionName(id) {
     const row = missalRow(id);
@@ -231,15 +216,13 @@
   }
 
   function formRow(mass, id) {
-    if (!mass || !id) return null;
-    return (mass.forms || []).find(function (row) { return row && row.id === id; }) || null;
+    return mass && id ? (mass.forms || []).find(row => row && row.id === id) || null : null;
   }
 
   function translationWitnessRow(structure, id) {
-    if (!structure || !id) return null;
-    return (structure.translations || []).find(function (row) {
-      return row && (row.source_id || row.source || 'project-created') === id;
-    }) || null;
+    return structure && id ? (structure.translations || []).find(
+      row => row && (row.source_id || row.source || 'project-created') === id
+    ) || null : null;
   }
 
   function rightsLabel(value) {
@@ -380,14 +363,13 @@
     );
     if (errors.length || !missal || !bible) return { ok: false, errors: errors };
 
-    const requestedMode = Object.prototype.hasOwnProperty.call(parsed.recognized, 'mode') ? parsed.recognized.mode : 'read';
-    const wantsOrdinary = requestedMode === 'missal' || parsed.present.indexOf('ordinary-lang') >= 0 ||
-      (parsed.variantKeys || []).some(function (k) { return parsed.present.indexOf(k) >= 0; });
+    const requestedMode = Object.hasOwn(parsed.recognized, 'mode') ? parsed.recognized.mode : 'read';
+    const wantsOrdinary = requestedMode === 'missal' || parsed.present.includes('ordinary-lang') ||
+      (parsed.variantKeys || []).some(k => parsed.present.includes(k));
     const loadsOrdinary = wantsOrdinary || missal === 'roman-1962';
-    const ordEntry = loadsOrdinary && (manifests.ordinaryIndex.calendars || []).find(function (r) { return r.calendar === missal; });
-    const ordPending = ordEntry ? load(ordinaryPath(missal)).then(
-      function (v) { return { ok: true, value: v }; }, function (e) { return { ok: false, error: e }; }
-    ) : null;
+    const ordEntry = loadsOrdinary && (manifests.ordinaryIndex.calendars || []).find(r => r.calendar === missal);
+    const ordPath = !wantsOrdinary && ordEntry?.proper_rites_file || ordinaryPath(missal);
+    const ordPending = ordEntry ? load(ordPath).then(v => ({ ok: true, value: v }), e => ({ ok: false, error: e })) : null;
 
     let structure;
     try {

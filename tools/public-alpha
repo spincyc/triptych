@@ -1723,7 +1723,7 @@ def projected_document_catalogue(
                         target += "?print=1"
                     issue.setdefault("targets", {})["print"] = target
                     issue.setdefault("available", {})["print"] = True
-    return json.dumps(corpus, ensure_ascii=False, indent=1, sort_keys=True) + "\n"
+    return json.dumps(corpus, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n"
 
 
 def projected_encyclicals_catalogue(
@@ -1750,7 +1750,7 @@ def projected_encyclicals_catalogue(
             reader.pop("pdf", None)
             reader.pop("pdf_sha256", None)
             reader.pop("pages", None)
-    return json.dumps(catalogue, ensure_ascii=False, indent=1, sort_keys=True) + "\n"
+    return json.dumps(catalogue, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n"
 
 
 def projected_web_data(
@@ -5941,6 +5941,9 @@ BROWSER_PAGE_PRELOADS: dict[str, tuple[str, ...]] = {
         "browse/structure/sources/index.json",
         "browse/bibles.json",
         "browse/structure/sources/catalogue/0000.json",
+    ),
+    "history/index.html": (
+        "browse/structure/act-history/stage-history.json",
     ),
     "texts/index.html": (
         "browse/structure/documents/corpus.json",

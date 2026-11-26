@@ -2325,7 +2325,7 @@ def _serialise(payload: Any) -> str:
     sort, and the check that used the other then reports drift no generator
     caused — or misses the drift a generator did.
     """
-    return json.dumps(payload, ensure_ascii=False, indent=1, sort_keys=True) + "\n"
+    return json.dumps(payload, ensure_ascii=False, separators=(",", ":"), sort_keys=True) + "\n"
 
 
 def _orphans(directory: Path, files: dict[Path, str]) -> list[Path]:

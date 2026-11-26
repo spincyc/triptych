@@ -147,6 +147,10 @@ def build_reader_indexes(root: Path, index=None) -> dict[str, bytes]:
             "structure/rubrics/index.json": rubrics.index_document(built_rubrics),
             "structure/ordinary/index.json": ordinary.index_file(built_ordinary),
         }
+        for one in built_ordinary:
+            rites = ordinary.proper_rites_structure(one)
+            if rites is not None:
+                manifests[f"structure/ordinary/{one['calendar']}-rites.json"] = rites
         files[MANIFESTS] = _json(manifests)
         return files
 
@@ -172,6 +176,11 @@ def resolve(relative: str, root: Path, index) -> bytes | None:
             "structure/propers/index.json", "structure/calendar/index.json",
             "structure/rubrics/index.json", "structure/ordinary/index.json"}:
         return _json(json.loads(index.read(MANIFESTS))[relative])
+    if re.fullmatch(rf"structure/ordinary/{_SLUG}-rites\.json", relative):
+        manifests = json.loads(index.read(MANIFESTS))
+        if relative in manifests:
+            return _json(manifests[relative])
+        raise ValueError(f"ordinary proper-rites projection is absent: {relative}")
     chapter = re.fullmatch(rf"({_SLUG})/chapters/([A-Za-z0-9]+)/([1-9][0-9]*)\.json", relative)
     if chapter:
         offered = json.loads(index.read(MANIFESTS))["bibles.json"]["bibles"]

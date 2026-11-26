@@ -225,6 +225,8 @@ def _resolve(relative: str, root: Path, index) -> bytes | None:
     with _sources(root, index) as (act, history):
         if selected == "catalogue.json":
             return history.json_bytes(_catalogue(root, index, act, history))
+        if selected == "stage-history.json":
+            return history.json_bytes(history.stage_history_projection(_catalogue(root, index, act, history)))
         if len(parts) == 2 and parts[0] == "native-texts":
             identifier = "native-book:" + parts[1].removesuffix(".json")
             # Refuse an unadvertised native selection before loading its text.

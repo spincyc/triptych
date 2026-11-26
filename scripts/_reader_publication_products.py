@@ -19,6 +19,7 @@ import sys
 import time
 
 CATALOG = "src/index/documents/corpus.json"
+CONTRIBUTIONS = "src/index/documents/contributions.json"
 READERS = "src/index/documents/readers.json"
 SCHEMA = "triptych-publication-reader-index/v1"
 _TOOLS = {}
@@ -136,7 +137,9 @@ def build_reader_indexes(root: Path, *, generation_commit: str | None = None) ->
     readers = _tool(root, "web-edition").reader_outputs()
     if _clean_history_head(root) != current_head:
         raise ValueError("publication history changed during metadata generation; refresh again")
-    return {CATALOG: owner._serialise(catalogue).encode("utf-8"),
+    slim_corpus, contributions_doc = owner.split_contributions(catalogue)
+    return {CATALOG: owner._serialise(slim_corpus).encode("utf-8"),
+            CONTRIBUTIONS: owner._serialise(contributions_doc).encode("utf-8"),
             READERS: _json({"schema": SCHEMA, "generation_commit": generation_commit, "readers": {
                 row["provider"] + "/" + row["document"]: row for row in readers}})}
 
@@ -210,6 +213,13 @@ def resolve(relative: str, root: Path, index) -> bytes | None:
         catalogue = json.loads(body)
         if not isinstance(catalogue, dict) or catalogue.get("schema") != "triptych-document-catalogue/v1":
             raise ValueError("invalid publication discovery index")
+        return body
+    if relative == "structure/documents/contributions.json":
+        _discovery(root, index)
+        body = index.read(CONTRIBUTIONS)
+        contributions = json.loads(body)
+        if not isinstance(contributions, dict) or contributions.get("schema") != "triptych-document-contributions/v1":
+            raise ValueError("invalid publication contributions index")
         return body
     if not relative.startswith("web-editions/") or relative == "web-editions/index.json":
         return None

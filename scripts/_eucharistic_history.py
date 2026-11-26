@@ -21,6 +21,7 @@ from urllib.parse import quote, urlsplit
 from _source_delivery_policy import external_source_identity
 
 SCHEMA = "triptych-eucharistic-history/v1"
+STAGE_HISTORY_SCHEMA = "triptych-eucharistic-stage-history/v1"
 CORPUS_SCHEMA = "triptych-eucharistic-corpus/v1"
 COMPARISON_SCHEMA = "triptych-eucharistic-witness-comparison/v1"
 NATIVE_TEXT_SCHEMA = "triptych-eucharistic-native-text/v1"
@@ -43,7 +44,7 @@ class HistoryError(ValueError):
 
 
 def json_bytes(value: object) -> bytes:
-    return (json.dumps(value, ensure_ascii=False, sort_keys=True, indent=2, default=str) + "\n").encode()
+    return (json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":"), default=str) + "\n").encode()
 
 
 def digest(payload: bytes) -> str:
@@ -561,6 +562,47 @@ def native_text(adapter_id: str, root: Path) -> dict:
             "sources": [{key: sources[identifier][key] for key in source_fields if key in sources[identifier]}
                         for identifier in sorted(cited)],
             "units": units}
+
+
+def stage_history_projection(payload: dict) -> dict:
+    """Thin projection for the default Timeline view: stages, comparisons, and witness links only."""
+    stage_history = payload["stage_history"]
+    witness_ids = {
+        wid
+        for stage in stage_history.get("stages", [])
+        for wid in stage.get("witness_ids", [])
+    }
+    entries = [
+        {
+            "id": row["id"],
+            "title": row["title"],
+            "date_label": row["date_label"],
+            "act_ref": row["act_ref"],
+        }
+        for row in payload.get("entries", [])
+        if row["id"] in witness_ids
+    ]
+    return {
+        "schema": STAGE_HISTORY_SCHEMA,
+        "scope_ref": payload["scope_ref"],
+        "counts": payload["counts"],
+        "stage_history": {k: v for k, v in stage_history.items() if k != "inputs"},
+        "comparisons": payload.get("comparisons", []),
+        "entries": entries,
+    }
+
+
+def write_stage_history(payload: dict, out: Path, *, check: bool = False) -> dict:
+    wanted = json_bytes(payload)
+    if check:
+        if not out.is_file() or out.is_symlink() or out.read_bytes() != wanted:
+            raise HistoryError(f"stage-history projection differs or is missing: {out}")
+    else:
+        if out.is_symlink():
+            raise HistoryError("refusing a symlink stage-history output")
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_bytes(wanted)
+    return {"schema": STAGE_HISTORY_SCHEMA, "counts": payload["counts"], "current" if check else "written": str(out)}
 
 
 def write_catalogue(payload: dict, out: Path, *, check: bool = False) -> dict:

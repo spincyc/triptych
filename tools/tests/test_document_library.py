@@ -46,8 +46,10 @@ def run(*argv: str) -> subprocess.CompletedProcess:
 def _generated_catalogue() -> Path:
     tool = _load_tool()
     rows, by_key = tool.selected(SimpleNamespace(provider=None, sort="leaf"))
+    slim_corpus, contributions_doc = tool.split_contributions(tool.catalogue(rows, by_key))
     GENERATED.parent.mkdir(parents=True, exist_ok=True)
-    GENERATED.write_text(tool._serialise(tool.catalogue(rows, by_key)), "utf-8")
+    GENERATED.write_text(tool._serialise(slim_corpus), "utf-8")
+    (GENERATED.parent / "contributions.json").write_text(tool._serialise(contributions_doc), "utf-8")
     return GENERATED
 
 

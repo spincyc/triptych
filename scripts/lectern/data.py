@@ -164,7 +164,7 @@ class ReaderData:
         if name in self._memory:
             self._memory.move_to_end(name)
             return self._memory[name]
-        if name == "structure/documents/corpus.json" or name.startswith("web-editions/"):
+        if name in ("structure/documents/corpus.json", "structure/documents/contributions.json") or name.startswith("web-editions/"):
             from _reader_publication_products import verify_history
             verify_history(self.root, self.index)
         code = self._code_identity()

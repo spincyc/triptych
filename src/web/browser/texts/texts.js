@@ -42,6 +42,20 @@
 
   let catalogue = null;
   let opened = null;
+  let contributionsPromise = null;
+
+  function loadContributions() {
+    if (!contributionsPromise) {
+      const path = (catalogue && catalogue.contributions_path) || 'structure/documents/contributions.json';
+      contributionsPromise = T.loadJSON(path).then(function (doc) {
+        return (doc && doc.contributions) || {};
+      }).catch(function () {
+        contributionsPromise = null;
+        return null;
+      });
+    }
+    return contributionsPromise;
+  }
 
   /* ------------------------------------------------------------------------
    * Reading the record
@@ -375,6 +389,19 @@
     }
 
     detail.appendChild(T.el('h3', 'record-heading', 'Authorship'));
+    function renderContributions(host, entries) {
+      if (entries && entries.length) {
+        for (const contribution of entries) {
+          const block = T.el('div', 'contribution');
+          block.appendChild(T.el('p', 'contribution-model', contribution.model));
+          block.appendChild(line('Configuration', contribution.qualifiers));
+          block.appendChild(line('Agent and runtime', contribution.runtime));
+          host.appendChild(block);
+        }
+      } else {
+        host.appendChild(T.notice('this document records no contribution at all.'));
+      }
+    }
     if (edition.inherits) {
       detail.appendChild(
         line('Inherited from', edition.inherits)
@@ -384,16 +411,24 @@
         'its ledger rather than a copy of it. The models listed for it are that ' +
         'document’s; open that document for the roles they took.'
       ));
-    } else if ((edition.contributions || []).length) {
-      for (const contribution of edition.contributions) {
-        const block = T.el('div', 'contribution');
-        block.appendChild(T.el('p', 'contribution-model', contribution.model));
-        block.appendChild(line('Configuration', contribution.qualifiers));
-        block.appendChild(line('Agent and runtime', contribution.runtime));
-        detail.appendChild(block);
-      }
+    } else if (Array.isArray(edition.contributions)) {
+      renderContributions(detail, edition.contributions);
+    } else if (edition.contributions_count === 0) {
+      renderContributions(detail, []);
     } else {
-      detail.appendChild(T.notice('this document records no contribution at all.'));
+      const authHost = T.el('div', 'contribution-host');
+      authHost.appendChild(T.el('p', 'record-line', 'Loading authorship ledger…'));
+      detail.appendChild(authHost);
+      const contribKey = edition.provider + '/' + work.leaf;
+      loadContributions().then(function (map) {
+        if (opened !== key) return;
+        T.clear(authHost);
+        if (!map) {
+          authHost.appendChild(T.notice('the authorship ledger could not be loaded.'));
+          return;
+        }
+        renderContributions(authHost, map[contribKey] || []);
+      });
     }
 
     detail.scrollIntoView({ block: 'nearest' });

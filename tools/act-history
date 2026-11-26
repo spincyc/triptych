@@ -3888,6 +3888,10 @@ def build_structure_projection(sources: tuple[Path, ...], out: Path) -> dict:
     if routing.is_file():
         catalogue = eucharistic_history.catalogue(routing, ROOT, act_loader=load)
         eucharistic_history.write_catalogue(catalogue, root / "catalogue.json")
+        eucharistic_history.write_stage_history(
+            eucharistic_history.stage_history_projection(catalogue),
+            root / "stage-history.json",
+        )
         for declaration in catalogue["native_texts"]:
             payload = eucharistic_history.native_text(declaration["adapter_id"], ROOT)
             if payload["binding_sha256"] != declaration["binding_sha256"]:

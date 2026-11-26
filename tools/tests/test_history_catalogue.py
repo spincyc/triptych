@@ -76,6 +76,10 @@ const Triptych = {
   loadJSON: async path => {
     calls.push(path);
     if (input.missing) throw Error('HTTP 404');
+    if (path === 'structure/act-history/stage-history.json') {
+      if (input.catalogue_only) throw Error('HTTP 404');
+      return Object.hasOwn(input, 'stage_data') ? input.stage_data : input.data;
+    }
     if (path === 'structure/act-history/catalogue.json') return input.data;
     if (input.fragments && Object.hasOwn(input.fragments, path)) {
       if (input.defer_native && path.includes('/native-texts/')) return new Promise(resolve=>pending.push(()=>resolve(input.fragments[path])));
@@ -429,7 +433,7 @@ class TimelineControllerTests(unittest.TestCase):
         got=self.drive(search="")
         self.assertFalse(got["timelineHidden"])
         self.assertTrue(got["mapHidden"])
-        self.assertEqual(got["calls"],["structure/act-history/catalogue.json"])
+        self.assertEqual(got["calls"],["structure/act-history/stage-history.json"])
         self.assertEqual(got["timelineSelection"]["tradition"],"fixture-line")
         self.assertIn("standing rubric is replaced",got["timeline-chart"]["text"])
         self.assertIn("view=map",got["navigation"])
@@ -565,9 +569,9 @@ class TimelineControllerTests(unittest.TestCase):
         for mobile in (False,True):
             with self.subTest(mobile=mobile):
                 closed=self.drive(history,mobile=mobile,fragments=fragments,hash="#stage=second")
-                self.assertEqual(closed["calls"],["structure/act-history/catalogue.json"])
+                self.assertEqual(closed["calls"],["structure/act-history/stage-history.json"])
                 got=self.drive(history,mobile=mobile,fragments=fragments,hash="#stage=second",actions=[dict(do="native-text")])
-                self.assertEqual(got["calls"],["structure/act-history/catalogue.json",*fragments])
+                self.assertEqual(got["calls"],["structure/act-history/stage-history.json",*fragments])
                 shown=got["timeline-detail"]
                 self.assertEqual([row["text"] for row in shown["nativeTexts"]],[unit["text"] for unit in payload["units"]])
                 self.assertEqual([row["attrs"] for row in shown["nativeTexts"]],
@@ -664,14 +668,14 @@ class TimelineControllerTests(unittest.TestCase):
         for mobile in (False, True):
             with self.subTest(mobile=mobile):
                 closed = self.drive(history, mobile=mobile, fragments=fragments, hash="#stage=second")
-                self.assertEqual(["structure/act-history/catalogue.json"], closed["calls"])
+                self.assertEqual(["structure/act-history/stage-history.json"], closed["calls"])
                 self.assertEqual(bindings, [e["attrs"]["data-text-binding"] for e in closed["timeline-detail"]["elements"]
                                             if "data-text-binding" in e["attrs"]])
                 for payload in payloads:
                     self.assertIn("Read available source text: " + payload["title"], closed["timeline-detail"]["text"])
                 only_second = self.drive(history, mobile=mobile, fragments=fragments, hash="#stage=second",
                                          actions=[dict(do="native-text", binding=bindings[1])])
-                self.assertEqual(["structure/act-history/catalogue.json", list(fragments)[1]], only_second["calls"])
+                self.assertEqual(["structure/act-history/stage-history.json", list(fragments)[1]], only_second["calls"])
                 self.assertEqual([u["text"] for u in payloads[1]["units"]],
                                  [u["text"] for u in only_second["timeline-detail"]["nativeTexts"]])
                 both = self.drive(history, mobile=mobile, fragments=fragments, hash="#stage=second",
@@ -696,7 +700,7 @@ class TimelineControllerTests(unittest.TestCase):
                 elif defect == "title": stage["text_projections"][1]["title"] = ""
                 else: stage["text_coverage"] = "complete"
                 got = self.drive(changed, fragments=fragments, hash="#stage=second")
-                self.assertEqual(["structure/act-history/catalogue.json"], got["calls"])
+                self.assertEqual(["structure/act-history/stage-history.json"], got["calls"])
                 self.assertEqual([], got["timeline-detail"]["nativeTexts"])
                 self.assertIn("invalid routing metadata", got["timeline-detail"]["text"])
 
@@ -785,7 +789,7 @@ class TimelineControllerTests(unittest.TestCase):
         history,fragments=native_reading_fixture()
         history["stages"][1]["text_projection_path"]="../../unreviewed.json"
         got=self.drive(history,fragments=fragments,hash="#stage=second")
-        self.assertEqual(got["calls"],["structure/act-history/catalogue.json"])
+        self.assertEqual(got["calls"],["structure/act-history/stage-history.json"])
         self.assertIn("invalid routing metadata",got["timeline-detail"]["text"])
 
     def test_selecting_state_reveals_change_loci_witness_and_independent_text_status(self):
@@ -988,14 +992,21 @@ class TimelineControllerTests(unittest.TestCase):
                     fragment="structure/act-history/"+row["projection_path"]
                     options=dict(data=data,hash="#transition="+transition["id"],fragments={fragment:payload})
                     closed=self.drive(history,**options)
-                    self.assertEqual(closed["calls"],["structure/act-history/catalogue.json"])
+                    self.assertEqual(closed["calls"],["structure/act-history/stage-history.json"])
                     opened=self.drive(history,**options,actions=[dict(do="stage-comparison",index=index)])
-                    self.assertEqual(opened["calls"],["structure/act-history/catalogue.json",fragment])
+                    self.assertEqual(opened["calls"],["structure/act-history/stage-history.json",fragment])
                     self.assertEqual(opened["timeline-detail"]["texts"],
                                      [payload["left"]["joined_source_text"],payload["right"]["joined_source_text"]])
                     self.assertIn(payload["unified_diff"],opened["timeline-detail"]["text"])
                     exercised.append(identifier)
         self.assertTrue(exercised,"final stage history must retain its declared source-text comparisons")
+
+    def test_timeline_falls_back_to_catalogue_when_stage_history_slice_is_absent(self):
+        got=self.drive(catalogue_only=True,search="")
+        self.assertEqual(got["calls"],["structure/act-history/stage-history.json","structure/act-history/catalogue.json"])
+        self.assertFalse(got["timelineHidden"])
+        self.assertEqual(got["timelineSelection"]["tradition"],"fixture-line")
+        self.assertIn("standing rubric is replaced",got["timeline-chart"]["text"])
 
     def test_initial_timeline_transport_failure_claims_no_fallback(self):
         got=self.drive(missing=True)

@@ -47,6 +47,7 @@ module.exports = function texts(realm) {
   ];
 
   let loading = null;
+  let contribLoading = null;
   function catalogue() {
     if (!loading) {
       loading = T.loadJSON(CATALOGUE).then((file) => {
@@ -57,6 +58,14 @@ module.exports = function texts(realm) {
       loading.catch(() => { loading = null; });
     }
     return loading;
+  }
+  function contributions(file) {
+    if (!contribLoading) {
+      const target = file.contributions_path || 'structure/documents/contributions.json';
+      contribLoading = T.loadJSON(target).then((doc) => (doc && doc.contributions) || {});
+      contribLoading.catch(() => { contribLoading = null; });
+    }
+    return contribLoading;
   }
 
   /* Whether a path the catalogue records is present in this checkout. PDFs
@@ -293,11 +302,22 @@ module.exports = function texts(realm) {
           'its ledger rather than a copy of it. The models listed for it are that ' +
           'document’s; open that document for the roles they took.',
       };
-    } else if ((edition.contributions || []).length) {
-      authorship = { contributions: edition.contributions.map((one) => ({
-        model: one.model, qualifiers: one.qualifiers, runtime: one.runtime })) };
     } else {
-      authorship = { notice: 'this document records no contribution at all.' };
+      let entries = edition.contributions;
+      if (!Array.isArray(entries)) {
+        if (edition.contributions_count === 0) {
+          entries = [];
+        } else {
+          const map = await contributions(file);
+          entries = map[edition.provider + '/' + work.leaf] || [];
+        }
+      }
+      if (entries.length) {
+        authorship = { contributions: entries.map((one) => ({
+          model: one.model, qualifiers: one.qualifiers, runtime: one.runtime })) };
+      } else {
+        authorship = { notice: 'this document records no contribution at all.' };
+      }
     }
 
     return {

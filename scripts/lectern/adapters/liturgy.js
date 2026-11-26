@@ -107,6 +107,14 @@ module.exports = function liturgy(realm) {
     return Payload.hydrateSync({ structure: data(path), roots, load: data });
   }
   const ordinaryOf = (calendar) => optional('structure/ordinary/' + calendar + '.json');
+  function properRitesOf(calendar) {
+    const index = optional('structure/ordinary/index.json');
+    const row = index && (index.calendars || []).find((one) => one.calendar === calendar);
+    return (row && row.proper_rites_file && optional(row.proper_rites_file)) || ordinaryOf(calendar);
+  }
+  const ordinaryFor = (calendar, state) => (
+    state.ordinary ? ordinaryOf(calendar) : (calendar === 'roman-1962' ? properRitesOf(calendar) : null)
+  );
 
   function opening() {
     const rubrics = data('structure/rubrics/index.json');
@@ -592,7 +600,7 @@ module.exports = function liturgy(realm) {
     return branches.map((branch) => {
       const asked = branchRequest(calendar, iso, state, bible, branch, branches);
       const adapted = A.adaptDay({ request: asked, derived, structure: owner, rubrics: rubricsOf(calendar),
-        ordinary: (state.ordinary || calendar === 'roman-1962') ? ordinaryOf(calendar) : null, nameExecutionUse: options && options.nameExecutionUse || null });
+        ordinary: ordinaryFor(calendar, state), nameExecutionUse: options && options.nameExecutionUse || null });
       const choice = dayReader().primaryDayChoice(adapted, branch);
       if (choice) return {option: branch.option || null,
         blocks: realm.dom.read(T.el('p', 'candidate-choice-reason', choice.reason))};
@@ -611,7 +619,7 @@ module.exports = function liturgy(realm) {
     if (state.cycle) asked.cycle = state.cycle;
     const owner = structure(calendar, key);
     const result = A.adaptPropers({ request: asked, structure: owner,
-      ordinary: (state.ordinary || calendar === 'roman-1962') ? ordinaryOf(calendar) : null });
+      ordinary: ordinaryFor(calendar, state) });
     return study(result).concat(translationApparatus(result, owner, state));
   }
 
@@ -723,7 +731,7 @@ module.exports = function liturgy(realm) {
     const bible = bibleFor(state.bible);
     const derived = selectedDay(calendar, iso, state);
     const owner = structure(calendar, dayRootsFor(derived, state));
-    const ordinary = (state.ordinary || calendar === 'roman-1962') ? ordinaryOf(calendar) : null;
+    const ordinary = ordinaryFor(calendar, state);
     const rubrics = rubricsOf(calendar);
     const page = dayReader();
     Object.assign(runtime, { structure: owner, ordinary, mode: state.ordinary ? 'missal' : 'read' });
@@ -865,7 +873,7 @@ module.exports = function liturgy(realm) {
     const owner = structure(calendar, key);
     const found = (owner.masses || []).find((one) => one.key === key);
     if (!found) throw new Error('no Mass ' + key + ' in ' + calendar);
-    const ordinary = (state.ordinary || calendar === 'roman-1962') ? ordinaryOf(calendar) : null;
+    const ordinary = ordinaryFor(calendar, state);
     const asked = Object.assign(request('propers', calendar, state, bible), {
       civilDate: null, formulary: { id: key, type: found.kind || null },
     });
@@ -1059,7 +1067,7 @@ module.exports = function liturgy(realm) {
         for (const branch of derived.options) {
           const branchRequest = A.dayBranchRequest(asked, branch, derived.options);
           A.adaptDay({ request: branchRequest, derived, structure: owner, rubrics: rubricsOf(calendar),
-            ordinary: (state.ordinary || calendar === 'roman-1962') ? ordinaryOf(calendar) : null });
+            ordinary: ordinaryFor(calendar, state) });
         }
       } else {
         const mass = (structure(calendar, anchor).masses || []).find((one) => one.key === anchor);
@@ -1068,7 +1076,7 @@ module.exports = function liturgy(realm) {
         asked.formulary = { id: anchor, type: mass.kind || null };
         if (state.form) asked.form = state.form;
         if (state.cycle) asked.cycle = state.cycle;
-        A.adaptPropers({ request: asked, structure: structure(calendar), ordinary: (state.ordinary || calendar === 'roman-1962') ? ordinaryOf(calendar) : null });
+        A.adaptPropers({ request: asked, structure: structure(calendar), ordinary: ordinaryFor(calendar, state) });
       }
     }
     if (state.location) asked.semanticLocation = { eventId: state.location };
