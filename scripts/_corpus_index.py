@@ -170,8 +170,14 @@ def _group(path):
     return parts[0] if len(parts) > 1 else '@root'
 
 
-def _path_shard(path):
-    return 'paths/' + _sha(_group(path).encode())[:20] + '-' + str(int(_sha(path.encode())[0], 16) % 4) + '.jsonl'
+_PATH_SHARD_SPLIT_THRESHOLD = 1500
+
+
+def _path_shard(path, *, split=False):
+    prefix = 'paths/' + _sha(_group(path).encode())[:20]
+    if not split:
+        return prefix + '.jsonl'
+    return prefix + '-' + str(int(_sha(path.encode())[0], 16) % 4) + '.jsonl'
 
 
 def _id_shard(identifier):
@@ -616,7 +622,12 @@ class CorpusIndex:
 
     def _file_row(self, relative):
         relative = _relative(os.fspath(relative))
-        return self._shard(_path_shard(relative))[relative]
+        names = self._groups.get(_group(relative))
+        if not names:
+            raise KeyError(relative)
+        if len(names) == 1:
+            return self._shard(names[0])[relative]
+        return self._shard(_path_shard(relative, split=True))[relative]
 
     @_integrity_operation
     def metadata(self, relative):
@@ -995,7 +1006,7 @@ def _generate(root, *, full=False, validate_readers=True):
     prior = None
     if not full and (root / INDEX / 'index.json').exists():
         prior = CorpusIndex(root, _bind=False)
-    shards, groups, records, file_rows = {}, {}, {}, {}
+    shards, groups, by_group, records, file_rows = {}, {}, {}, {}, {}
     hashed = parsed = reused = 0
     oid_length = len(next(iter(entries.values()))[1]) if entries else 40
     precomputed = {}
@@ -1032,10 +1043,8 @@ def _generate(root, *, full=False, validate_readers=True):
             oid = _blob(data, oid_length)
             entries[path] = (mode, oid)
             row = [path, _sha(data), len(data), mode, oid]
-        name = _path_shard(path)
         file_rows[path] = row
-        shards.setdefault(name, []).append(row)
-        groups.setdefault(_group(path), set()).add(name)
+        by_group.setdefault(_group(path), []).append(row)
         if _SOURCE_PATH.fullmatch(path) and not from_precomputed:
             if previous is row:
                 if not hasattr(prior, '_by_path'):
@@ -1059,6 +1068,13 @@ def _generate(root, *, full=False, validate_readers=True):
                 raise CorpusIndexError(f'duplicate source record ID: {record[0]}')
             records[record[0]] = record
     del prior, precomputed, changed
+    for group, rows in by_group.items():
+        split = len(rows) > _PATH_SHARD_SPLIT_THRESHOLD
+        for row in rows:
+            name = _path_shard(row[0], split=split)
+            shards.setdefault(name, []).append(row)
+            groups.setdefault(group, set()).add(name)
+    del by_group
     for identifier, row in sorted(records.items()):
         shards.setdefault(_id_shard(identifier), []).append(row)
     output = {}
