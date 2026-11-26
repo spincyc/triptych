@@ -2,22 +2,22 @@
  "editorial_approval": false,
  "inputs": {
   "families": {
-   "act-history": "6ce6fa707892e9af65f2f8af0e14448890e26ea1bd3418bdcf23a7f385abf572",
+   "act-history": "09a7cf6d12b35a9188b08bf9d24f9144185d57ce3561e8bfb914bf7a5fc21b97",
    "bibles": "085df60ad01a835eb80822924d0b2a475700fc5652893aedfc43fe4bece37707",
    "calendar": "610c4592bf177aa6f7745dd20d39dc3d6d53c7c9cf67257ad3d472340cf5358c",
-   "catena": "9fb386fda357fd105e77d02079129356d3922b34c6edb17ce1e2f013822d96e4",
-   "documents": "acf4eb24b683045a4b8e1e481f029dbf6f7a6f09d09b56406bba80e8c7e1bf07",
+   "catena": "605bcd04c51672fe11babaa743277aaab0e79ed2bff1c6a5423977eb2efe7961",
+   "documents": "a67dae6cd74523841edf6181c681e6cf866f077cbe7b1b19c26823f8f156d6da",
    "encyclicals": "a560901362ebf6fcffe1b14e67d4a03f0864d402dfbe96f1fe43501a4494fecd",
-   "ordinary": "c27b6956842ae75d98e2219dbc3e95d80301dc78ad31c4ca7712ec8f80d9c1d4",
-   "paragraphs": "8453710ea47a2fff08283bc28c4b1d86f2ba6cb461ecf4f414cf09a8dcebf0bf",
-   "propers": "e1a8c88fad9205ae842e7b9b858c3614b36994d5d471355ea6f258a8a7689b15",
-   "readings": "2e0563b460b78c27e877ed6417d76d5a96b1425781396ac866c828f23688c0e5",
+   "ordinary": "f709b7ef72385d5ad73373aac52dba610a05268170b741ae6cc998b119f765f7",
+   "paragraphs": "fd705886e71db404ad721583575ccd09edea9bc20e01f2b64fb688f9a1783ae4",
+   "propers": "73455ddf8d85e1029b4b9c125410f4962e062ca5778ed3b9dc8681110705a9f1",
+   "readings": "c9bfb14633e9f130cea722fb8619af9a6bcafa8d2fea40a953835316261ea553",
    "rubrics": "c11e9f57d1b5ad043a03b4235a986a3fd48aca570243e327e01cbc83f2953438",
-   "sources": "544fee39e2769539c6df85e34e339a783ec5760c7c7f38e5fd0f1c39c588beeb",
-   "web-editions": "a765c5ffd338e1abf84d6f3e7c3feef8f58f9e143c11f2e15166c2cf598eefaf"
+   "sources": "bf403747f59b392442aac9e89c5d21b24302cb6cd89f5a7a94c4c26f783a59be",
+   "web-editions": "5764ce37fc1bfbf6d5c5a3683328142f8f144a4fb303f4940b391a73c25ae1ca"
   },
   "schema": "triptych-browser-product-aggregate-inputs/v1",
-  "sha256": "9e29fdb2ef6253041319da3f98eca94d514bf1a97dc68692c132446fc2d185a9"
+  "sha256": "5b223b49020b2a9fcd66036c0493706c27c477218362cb57911d846146e029cc"
  },
  "products": [
   {
@@ -67,12 +67,12 @@
    "path_set_sha256": "410846e35c045235205d43b4779485537ff1d8c54041679b06f76628bc0575b2"
   },
   {
-   "bytes": 26230356,
-   "count": 558,
+   "bytes": 35806877,
+   "count": 588,
    "files": {
     "structure/act-history/catalogue.json": {
-     "bytes": 9482107,
-     "sha256": "6af3c22dad4e799c00f82f6d7e3f77cee5cedc1d098e2ea52d199c31801bad23"
+     "bytes": 10511323,
+     "sha256": "3b5c350407040d9a4ab00d27da4089500602ef7b682d7206a12dd595c544e72d"
     },
     "structure/act-history/code-of-canon-law.json": {
      "bytes": 64570,
@@ -1134,129 +1134,181 @@
      "bytes": 118172,
      "sha256": "59a3710f057624d871e680abc0a2706fb24aa9ae08e385a870c1d21f10cf4225"
     },
+    "structure/act-history/comparisons/armenian-1642-1823-badarak-anaphora.json": {
+     "bytes": 423690,
+     "sha256": "efc344eeb13c212847853f02caad7f70b3dfe704d25ef68c2c82617eba9e8604"
+    },
     "structure/act-history/comparisons/brightman-1896-greek-basil-chrysostom-anamnesis-oblation.json": {
-     "bytes": 249228,
-     "sha256": "8a10bde7077d98c76e978f17bf4a112d8d2dd992aaa5587f34a234fef6dabdae"
+     "bytes": 329764,
+     "sha256": "2fc686ad0b64d034e258f5651724d91d5ba77cf4376f7ac8b62e63920fa29455"
     },
     "structure/act-history/comparisons/brightman-1896-greek-basil-chrysostom-invocation-gifts.json": {
-     "bytes": 256298,
-     "sha256": "e9607cf7c2a6a26800d13051d929242ac8e1ecd40dbf3fe93bf524fae27c477c"
+     "bytes": 336834,
+     "sha256": "e4e5260abd1b7f3212f2ac6b97f921811aff00b699c7d11d1d77f027f6008117"
     },
     "structure/act-history/comparisons/brightman-1896-greek-basil-james-anamnesis-oblation.json": {
-     "bytes": 257793,
-     "sha256": "1cfd743a76f5294a3662039074745e6713a85c420d4bc91aced4f94526299062"
+     "bytes": 338329,
+     "sha256": "1f9785c6f8d1beac37e3c0c854cb92dc44e8ecb73af70d7212bafcb1ee81c52d"
     },
     "structure/act-history/comparisons/brightman-1896-greek-basil-james-invocation-gifts.json": {
-     "bytes": 263005,
-     "sha256": "e6533b1b945bf16664b1238a1e951dc60e09b6badb63fd718055e25bf5d0054d"
+     "bytes": 343541,
+     "sha256": "b405efd3d2e4cddad69272f7d36e1fc309c75b47cd484f7027543b3284a7dcee"
     },
     "structure/act-history/comparisons/brightman-1896-greek-chrysostom-james-anamnesis-oblation.json": {
-     "bytes": 257046,
-     "sha256": "007e857094f5070f7b14678cd4bb81853c87cb21e06edfd1f437c29fc7d38fdb"
+     "bytes": 337582,
+     "sha256": "25d78984e846de8436b4e605a20ae05404d611c02fc17862c87c5de20a1a6b26"
     },
     "structure/act-history/comparisons/brightman-1896-greek-chrysostom-james-invocation-gifts.json": {
-     "bytes": 258341,
-     "sha256": "66870e3f17ef95e457be0917f8c58f6cebcf44ca310d8a559ed8df711e8a81b3"
+     "bytes": 338877,
+     "sha256": "a2991a4ca4b5604d5d034533b5de627cbeb01728fed125eae3e46f406f8740ed"
+    },
+    "structure/act-history/comparisons/byzantine-1754-1873-chrysostom-anaphora.json": {
+     "bytes": 511275,
+     "sha256": "27cfa75569d54aa0c8f6edea6ee0296949c697c0944319f5a5037babdf24c8f2"
     },
     "structure/act-history/comparisons/carmelite-1574-1621-october-05-calendar.json": {
-     "bytes": 229817,
-     "sha256": "1b1df6ff1051a74a0a37b03b12023f29abf02c746479693f9c4efcdbb5e59e45"
+     "bytes": 310353,
+     "sha256": "d70bc46de433ec6d02ad7f1b2ab3ddca6738ee82cd0ad4471fd445f567509d61"
+    },
+    "structure/act-history/comparisons/chaldean-1767-to-1901-addai-mari.json": {
+     "bytes": 382464,
+     "sha256": "2c1f243a0106c102019fdf6ec14d7990847b072b2ab508a00b39a67e8785cc2c"
+    },
+    "structure/act-history/comparisons/chaldean-1767-to-syro-malabar-1906-addai-mari.json": {
+     "bytes": 383162,
+     "sha256": "e3961f053c915257b5031f266c136f79ed54f7e2df0c3ef81d40902ff0ce758c"
+    },
+    "structure/act-history/comparisons/chaldean-1901-to-syro-malabar-1906-addai-mari.json": {
+     "bytes": 388078,
+     "sha256": "2ae277841f2d93cc58d4c561f39befd5921b8e2f48c7a3f94ec6f575646786f0"
     },
     "structure/act-history/comparisons/cistercian-1606-1657-canon-constituents.json": {
-     "bytes": 721792,
-     "sha256": "86d4980fe410a0151661782d370a82e9ef539d1d2e1e25be65a99745c1c741c5"
+     "bytes": 802328,
+     "sha256": "926b602fbb69f0a1ff99c775916c5f5da07a6644d8edaa7a5e995823330039ff"
     },
     "structure/act-history/comparisons/cistercian-1606-1657-confiteor.json": {
-     "bytes": 304667,
-     "sha256": "9b59141cb7da0070c8ddbbafad7d63e1236e9e5bae50860d86e30f447244e823"
+     "bytes": 385203,
+     "sha256": "9d0803aeab5f67aa49cf19be23701aaa9fc388b5687445054319810377ba7f12"
     },
     "structure/act-history/comparisons/cistercian-1606-1657-offertory-constituents.json": {
-     "bytes": 396226,
-     "sha256": "b60d5ec88966847919dcc3795121e90182565da61e3386478ab399bb25e853ed"
+     "bytes": 476762,
+     "sha256": "4e1617ee498e6a69c0157ab8f71ec327f902348597e64e3dc0dd3bf406e1dec4"
     },
     "structure/act-history/comparisons/cistercian-1606-1657-orate-response.json": {
-     "bytes": 306083,
-     "sha256": "099b86161126f7aed07359ecc605ea9f26994062ae341c306d5b7b533253d1e0"
+     "bytes": 386619,
+     "sha256": "740efbc6627b136b085521184712a5ee99d34fc5d650dc969e4a714e58d251f0"
     },
     "structure/act-history/comparisons/cistercian-1606-1657-pater-noster-first-chant.json": {
-     "bytes": 358331,
-     "sha256": "a1c79bcb18689b2cde8b6f13069b2f768c9dd65fb611782014b8a8493382da50"
+     "bytes": 438867,
+     "sha256": "624fb5f8c1ef95d699087812cbabcf7a41287c6dc0e0bc0f973350bc97711542"
     },
     "structure/act-history/comparisons/cistercian-1606-1657-suscipe-trinitas.json": {
-     "bytes": 307108,
-     "sha256": "7a5176966a4e95394991a11d1b7a71b44890a51e6225914614e2c07e5a5a15de"
+     "bytes": 387644,
+     "sha256": "269cc9bce212057db1f8a8721e1740d52cf6269abf5d2b475d74a12475da3a2b"
     },
     "structure/act-history/comparisons/dominican-1550-1604-suscepimus-collect.json": {
-     "bytes": 229435,
-     "sha256": "c910e0ea1fa7209617f0198e661d4853f02d64ad306bc509f8365eb463da55ad"
+     "bytes": 309971,
+     "sha256": "604e5525c37874d66cc82821929be873f7730db7ee60bbe44aa559dd21ceb335"
+    },
+    "structure/act-history/comparisons/gregorian-hadrianum-to-roman-1570-canon-missae.json": {
+     "bytes": 436326,
+     "sha256": "54056b9576bad68fca1cd1570b098391b43c4896dae67a621bf9b14d9bd3dfda"
+    },
+    "structure/act-history/comparisons/maronite-1594-to-1908-twelve-apostles.json": {
+     "bytes": 330156,
+     "sha256": "f3be9f70de7fe141f11ed689ab6db0146de8c7a2ed4dadf6955557f6d6e5b128"
     },
     "structure/act-history/comparisons/mozarabic-1500-1755-benedictio-panis.json": {
-     "bytes": 263611,
-     "sha256": "5299156e863740c3313cfc4aae5642c87c27f9022f38b53bbe5edb94d665dc18"
+     "bytes": 344147,
+     "sha256": "f5b79c1f450dc4490e2054207d460528c41cd5b3ddac1297d2b71863cd7b3842"
     },
     "structure/act-history/comparisons/mozarabic-1500-1804-benedictio-panis.json": {
-     "bytes": 262617,
-     "sha256": "3a7839f6de186aadc484197b7c780612956ed8582e44bf75dc23030f395c658a"
+     "bytes": 343153,
+     "sha256": "ff4287ea8c6bd4f7b7268b6e083f6380ce25f93b22e359b9bbf4d49d78d00e78"
     },
     "structure/act-history/comparisons/mozarabic-1755-1804-benedictio-panis.json": {
-     "bytes": 261247,
-     "sha256": "efd64d322e88913a8379cbbc216c48cd193c09212de45fc2fee91eb875a28e63"
+     "bytes": 341783,
+     "sha256": "e77cb5b2fb03bfc50a0ce21ce67dabfa6ac0475869b738a8782933920f9fabd8"
+    },
+    "structure/act-history/comparisons/paris-1481-to-roman-1570-canon-missae.json": {
+     "bytes": 445756,
+     "sha256": "86c5e41833aa32f2a48db34a80efbfbc69fd169633a5972bf1dc5bb441f50fa1"
+    },
+    "structure/act-history/comparisons/paris-1481-to-tarazona-1500-canon-missae.json": {
+     "bytes": 427988,
+     "sha256": "0d453f1e39fbb49e044bfd7543a9c31e37f5cc1d585503e9d32c572be79c8d32"
     },
     "structure/act-history/comparisons/roman-canon-memento-wilson-r-and-cummiskey-1861.json": {
-     "bytes": 265764,
-     "sha256": "d22bdd6d53899ce1de30f7f5b618554e37979ac44820a446cd8f6a7fae430b4a"
+     "bytes": 344414,
+     "sha256": "6ea3d83e1a040cd4b053153755901b76198775af9926ec0f9c77210252617f4c"
     },
     "structure/act-history/comparisons/roman-hanc-igitur-gelasian-and-cummiskey-1861.json": {
-     "bytes": 272558,
-     "sha256": "460248f76b212f7d0fc761d4f12f767623debf6f0f9bb682d3edf68e0ce5d161"
+     "bytes": 353094,
+     "sha256": "94980630ae4245aa722c1ccac4ebeaa298e78f83f99e940c3849e4d048dcd0e1"
     },
     "structure/act-history/comparisons/roman-hanc-igitur-gelasian-and-stowe.json": {
-     "bytes": 251000,
-     "sha256": "e846039af9c83792fdf35995dc6d640e4302e508098daf1050ae5724c86b9caf"
+     "bytes": 329805,
+     "sha256": "cd6254fd4da37320dbb8daa9dedff78cce7bfe8fc30b47977416f75649d8e7a3"
     },
     "structure/act-history/comparisons/roman-hanc-igitur-gregorian-and-cummiskey-1861.json": {
-     "bytes": 268076,
-     "sha256": "6abffad6055084db6d49d7266b6f2a8927820991e92d7d64f0db9974d813ecbb"
+     "bytes": 347465,
+     "sha256": "98db3f3929f4db40634831419065e7ee6afddc9d4e857d5c92e5c60cf7cdbbb7"
     },
     "structure/act-history/comparisons/roman-hanc-igitur-gregorian-and-gelasian.json": {
-     "bytes": 240514,
-     "sha256": "5ff7d2e152dbdb5b51551866ed7d34c9a0bb6b958aa8d789b310ae712f1ab8c8"
+     "bytes": 319903,
+     "sha256": "15f27a4ee762846a7a7e14a757c835fa5c5f9347057ff2e67a8218ddd0409b62"
     },
     "structure/act-history/comparisons/roman-hanc-igitur-gregorian-and-stowe.json": {
-     "bytes": 246328,
-     "sha256": "f443e9fa34496556a3f5f6e2138b42c570499a764d65b7f70bcdc89b79f41655"
+     "bytes": 323986,
+     "sha256": "84f44c50efe9af96abffbb72aa171ce41700d45da7a5ea620d18d967984fcaae"
     },
     "structure/act-history/comparisons/roman-hanc-igitur-stowe-and-cummiskey-1861.json": {
-     "bytes": 278513,
-     "sha256": "0eabc25aea84958c78dcb784086f0c3f7a90809d469c7b1057b4e28f9a34fcaa"
+     "bytes": 357318,
+     "sha256": "6638cd0b6ae2a608f373f89a19f1a0de6e6885df6cba2183f12102900b26c7e6"
     },
     "structure/act-history/comparisons/roman-quam-oblationem-gelasian-and-cummiskey-1861.json": {
-     "bytes": 272155,
-     "sha256": "cdfb03ee5372394be4fade88840a21729d01b2e8c28d9b4c015eb88118800f3a"
+     "bytes": 352691,
+     "sha256": "32a4abacbe0cfa1e1ca35fc35138630373b786be587b9a81d139f5dbf0600f6a"
     },
     "structure/act-history/comparisons/roman-quam-oblationem-gelasian-and-stowe.json": {
-     "bytes": 247173,
-     "sha256": "c14595af6c08346624a977dbf89d412e18d28f78566d1ffcde71fa2947ce8f29"
+     "bytes": 325978,
+     "sha256": "209c37bc093972e94bab0be74addf4cd2b4eea1531057f37038c51402944f6a4"
     },
     "structure/act-history/comparisons/roman-quam-oblationem-gregorian-and-cummiskey-1861.json": {
-     "bytes": 268248,
-     "sha256": "301cff4762007256da0ac48ef09797068181cb9fbd4d721ee4ca76d5b37167ca"
+     "bytes": 347637,
+     "sha256": "9aaf25bf7e672327007f2b1260f606ea05502bde33cfdcd90f850e73c766ab49"
     },
     "structure/act-history/comparisons/roman-quam-oblationem-gregorian-and-gelasian.json": {
-     "bytes": 240815,
-     "sha256": "56fc19c357a3a88b4088d31a51cb0a797b8137598bb99a24737ba2bbe0031781"
+     "bytes": 320204,
+     "sha256": "52be2f200ccda398b195959c659c8a99d8340a2cba5777b3c85fdf2530c8625b"
     },
     "structure/act-history/comparisons/roman-quam-oblationem-gregorian-and-stowe.json": {
-     "bytes": 243108,
-     "sha256": "11e69928abc3e54987a87d5a3d6b21cebc61957886ef582889aca863c9a89324"
+     "bytes": 320766,
+     "sha256": "b843ca0554c808827dca364280fa686c14de9ee79dda72236997d29161569fa7"
     },
     "structure/act-history/comparisons/roman-quam-oblationem-stowe-and-cummiskey-1861.json": {
-     "bytes": 274557,
-     "sha256": "5afb448966bd0bbff8bd5f368f976d6526542b69bd3bdf7b74af2cc6460e1857"
+     "bytes": 353362,
+     "sha256": "76276d49de2c50adc5a39e47d720029b60e6ef87e0bd001bd36e67d007f250a4"
     },
     "structure/act-history/comparisons/roman-sanctus-stowe-and-cummiskey-1861.json": {
-     "bytes": 275241,
-     "sha256": "4bc413b0f4013c6643cc7d4e7bc3734ab3d958f94b125e3dd746b5e2a0a6198d"
+     "bytes": 354046,
+     "sha256": "64dccacddad6a5f1127bee90d8317815153079567054c3fc16a1fcd8c6c7a2d2"
+    },
+    "structure/act-history/comparisons/stowe-missal-to-roman-1570-canon-missae.json": {
+     "bytes": 459957,
+     "sha256": "887eb9b71a62358fe67ced01fb3245d4cef3354fd7ed6cec242846440a410ae3"
+    },
+    "structure/act-history/comparisons/syriac-1843-to-1922-st-james.json": {
+     "bytes": 377609,
+     "sha256": "f4b10c9b931e0e5d465a9b002a0babe362e3d24396a67b02aa3b2bc270334be7"
+    },
+    "structure/act-history/comparisons/tarazona-1500-to-roman-1570-canon-missae.json": {
+     "bytes": 437822,
+     "sha256": "1aeb49b98a02426b20397d43521f40250baf83624606bd189aa07b140249e661"
+    },
+    "structure/act-history/edition-cross-references.json": {
+     "bytes": 61906,
+     "sha256": "41e02c5bf98aef7332dfb1a5383f001ab96dcfb32d97f9883ce2f6c80d959583"
     },
     "structure/act-history/index.json": {
      "bytes": 337,
@@ -1958,6 +2010,30 @@
      "bytes": 16419,
      "sha256": "ac1fead392956d2492a438667cb3e053f25645edf322a57b9b81fb3022eefc1c"
     },
+    "structure/act-history/native-texts/armenian-1642-badarak-anaphora.json": {
+     "bytes": 26912,
+     "sha256": "259d4707189d7c181cac655f31dfe87a7cee449d20bd2ed4097f4ba4f80c19aa"
+    },
+    "structure/act-history/native-texts/armenian-1823-badarak-anaphora.json": {
+     "bytes": 26385,
+     "sha256": "5608ac475b90394349d03ded26f479561b50f66e65425b6ae65860353e2a2ce2"
+    },
+    "structure/act-history/native-texts/byzantine-1754-chrysostom-anaphora.json": {
+     "bytes": 36208,
+     "sha256": "c9a8715567c3970cee2b4d7bfa7b276b490b51c60ebc9de6f5b2e2540be21fba"
+    },
+    "structure/act-history/native-texts/byzantine-1873-chrysostom-anaphora.json": {
+     "bytes": 37767,
+     "sha256": "c849630c3ec5dbf0dac08a4ce87b935b7b7986c50a354b1f6e6d4eb2d9b73ab5"
+    },
+    "structure/act-history/native-texts/chaldean-1767-addai-mari.json": {
+     "bytes": 20889,
+     "sha256": "d67c1934f85f68fbf48cda2c1672cf8f4ab8a22148c3497ed6cd492d311c06d8"
+    },
+    "structure/act-history/native-texts/chaldean-1901-addai-mari.json": {
+     "bytes": 21841,
+     "sha256": "6b29db6f98d1b451fda9e54d672a45262eca79c9bfe4f68bc5931cc06dd65ae4"
+    },
     "structure/act-history/native-texts/cistercian-1606-canon.json": {
      "bytes": 62472,
      "sha256": "81a1a07420f2c42d4581cf53bee6bd088cc6d46b993c7322ace1cd9e398b8b59"
@@ -1982,6 +2058,10 @@
      "bytes": 18615,
      "sha256": "1a06892e5e6936be7237c596ff0c248f83f712132a2eecdaa55b41ef999145fd"
     },
+    "structure/act-history/native-texts/coptic-1736-basil-anaphora.json": {
+     "bytes": 38130,
+     "sha256": "2752e76706c3e73c6edc624912e977415cb3def9d0d90bd11821e1feb5cce50c"
+    },
     "structure/act-history/native-texts/dominican-1550-canon.json": {
      "bytes": 28323,
      "sha256": "e11c6469b78e12d0b98322e744eee070c304a30adf4f20b5e9c42482d9ca4b6d"
@@ -1997,6 +2077,22 @@
     "structure/act-history/native-texts/dominican-1604-canon.json": {
      "bytes": 30696,
      "sha256": "ab4499c5ac3f58d4480af52271a4565b31d6fdfc108773d36fc205c9f970c765"
+    },
+    "structure/act-history/native-texts/geez-1914-apostles-anaphora.json": {
+     "bytes": 24520,
+     "sha256": "f1c030054acc23988b47962e6ca1d8721205817a51737160844541160b3d9c0d"
+    },
+    "structure/act-history/native-texts/gregorian-wilson-1915-canon-missae.json": {
+     "bytes": 29072,
+     "sha256": "c150962e1e5fa13366705495347a526d2038adb6055236bf20f9d43cc01f17c4"
+    },
+    "structure/act-history/native-texts/maronite-1594-anaphora.json": {
+     "bytes": 13087,
+     "sha256": "3c9676f3f94b72cf1b7ac213aeebb9dad0957c3efba1d4927f2b337861c714fc"
+    },
+    "structure/act-history/native-texts/maronite-1908-anaphora.json": {
+     "bytes": 15045,
+     "sha256": "5154cddae6f6f89b424386512375263a0769a48bf0ecf11f37e9019ae1925606"
     },
     "structure/act-history/native-texts/mozarabic-1500-benedictio-panis.json": {
      "bytes": 16722,
@@ -2022,6 +2118,10 @@
      "bytes": 37473,
      "sha256": "2d2fad242b4a984c13b715401885b8a38c234694436c67c69b15aef9b5814171"
     },
+    "structure/act-history/native-texts/paris-1481-canon-missae.json": {
+     "bytes": 33471,
+     "sha256": "2b904a7394cc54319ffd51dc06c2ca4c10ad96dc9772aad60a09f70ad4a14cd6"
+    },
     "structure/act-history/native-texts/roman-1570-canon-missae.json": {
      "bytes": 32793,
      "sha256": "ae16975007b4058d6acdc7b852a95a47d0e236f49bab686e6b206e91572917eb"
@@ -2033,6 +2133,26 @@
     "structure/act-history/native-texts/roman-1635-canon-missae.json": {
      "bytes": 36870,
      "sha256": "b613a3ed8a11e04cd489b543d7f50aefe8ca8c06ad83886a1ff688eebdb11c7f"
+    },
+    "structure/act-history/native-texts/stowe-warner-1915-canon-missae.json": {
+     "bytes": 35053,
+     "sha256": "1af2a8771af49988eb07422220a4f4a572edbbd4fb550ee719b2f8245b390bb9"
+    },
+    "structure/act-history/native-texts/syriac-1843-anaphora.json": {
+     "bytes": 19601,
+     "sha256": "c888da8f3853273fa7e02c412a95ad57f372fc2b1df676d4c37ff03e6feafe94"
+    },
+    "structure/act-history/native-texts/syriac-1922-anaphora.json": {
+     "bytes": 19769,
+     "sha256": "92847740c25de4345681e3b538a52218d34cc49579cec4b7121b0cc2fd070830"
+    },
+    "structure/act-history/native-texts/syro-malabar-1906-addai-mari.json": {
+     "bytes": 23621,
+     "sha256": "a1433240f7769a5eb1baa78687a6e4fa2315605d94d5305b56801411e2de029e"
+    },
+    "structure/act-history/native-texts/tarazona-1500-canon-missae.json": {
+     "bytes": 32211,
+     "sha256": "2f9850bf3e5cf3d82bcaba34310aafb36f7f34855510d0cd46d3b61c7319dc81"
     },
     "structure/act-history/native-texts/tuki-1736-arabic-creed.json": {
      "bytes": 11481,
@@ -2299,23 +2419,23 @@
      "sha256": "720be3e54c403836c56feddbd5cb4bf199d00087bdf9513dbe52efeca3032cf1"
     },
     "structure/act-history/stage-history.json": {
-     "bytes": 2458555,
-     "sha256": "86b556e1e130f45f55012c8f95f33aa47d0adfa618c156b70aa1b6dd627e0295"
+     "bytes": 3010358,
+     "sha256": "c8d37656d83aad4744785bfdc2e227470a9184901719dfd5dbf509b072f0c311"
     }
    },
    "id": "act-history",
    "inputs": {
-    "content": "9a67fdedd8db75e84800710027c964255b7596a599cdd4eb214b5df0368361a8",
-    "count": 81004,
-    "generator": "d7f56c2b376d2b049d5b45b9bf312941aed804e416c4720e76ce9ee432a99e73",
+    "content": "8e7b0eaa0c6d529eb40255ba849960f5ed47c4c7fb241ffa6d385c98144019e5",
+    "count": 81267,
+    "generator": "a9ae7dd7757136dde67a789a94411f19438de0b8c9941f09d717370795386865",
     "lock": "62ed728e10b17c7b6dfeb6374c13b017114a326e33d3fc30e66f4b6576f87306",
-    "membership": "82c185eace842d9e73fa2c68a4c5f83b56e165f774c1497954a22f9af0a37f04",
-    "rights": "f0974942c4f41b849dec75d72b8ceba724b9eef950678eb7798287f790f964bf",
+    "membership": "ba80f3ed25e35555888274a91a2596bfbcf7adb27605fcf2a1f159f763d3fd78",
+    "rights": "dee76887767fcb04a64b40f05cba55e3f2b9aca7f462236d4d1af1361605a70b",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "6ce6fa707892e9af65f2f8af0e14448890e26ea1bd3418bdcf23a7f385abf572"
+    "sha256": "09a7cf6d12b35a9188b08bf9d24f9144185d57ce3561e8bfb914bf7a5fc21b97"
    },
-   "key": "9935db88187851f99143fdf8a31885bcc3d41c8a683409c6a525b4a00f5a21c8",
-   "path_set_sha256": "e625e311de612d5995d13b08dc4bdb45e107828c865dbbf6de0c7cfb4edc3946"
+   "key": "8da8c4490473fbe6a5af553abcabbfb13467ab3f206ff812cb87714dce95746d",
+   "path_set_sha256": "bf96ba68f0f15e963a36714405e693a908618271986222bcc04818b4dbed28bf"
   },
   {
    "bytes": 18752165,
@@ -13331,16 +13451,16 @@
    },
    "id": "catena",
    "inputs": {
-    "content": "50c9197448a6e65148283f2d776f83887dd3c32391d7c97872dba5a52af1f028",
-    "count": 75002,
+    "content": "78cb0c3e4045b70b4729500590c5cad4ed474a535fbbab1418c81b9107671201",
+    "count": 75265,
     "generator": "198c7257449f549c2a56005b498ac83b9ea2e37e8db4708163fcd42457256ef6",
     "lock": "62ed728e10b17c7b6dfeb6374c13b017114a326e33d3fc30e66f4b6576f87306",
-    "membership": "347e9bcb6a1dafc0caefb253f43ebe447889d10643dae5979ceefd1d9648a68b",
-    "rights": "091d24d64c481177f148778837d959d17577145570cb3eedb15366e94933acb0",
+    "membership": "94e8cda3af8419531d2ce230c346b2fdf9fe8f68815261959cadd1dfd1ab71a2",
+    "rights": "b289c1f9183548fe5ccd6007286aacaaf463abbff36d2253f5e355e77ad6b503",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "9fb386fda357fd105e77d02079129356d3922b34c6edb17ce1e2f013822d96e4"
+    "sha256": "605bcd04c51672fe11babaa743277aaab0e79ed2bff1c6a5423977eb2efe7961"
    },
-   "key": "7bb1be178acccbba415bbeb2e54871f0681aa2872c1fd58f7800a5a3c6c69754",
+   "key": "e94ea2021e238aac9558d6faf72e8617f1055dad828f8c0e688d237f652b730f",
    "path_set_sha256": "a236b269f873e4f740c4e37a97136a274d861d7b575d43530063baa866ee8fd0"
   },
   {
@@ -13358,16 +13478,16 @@
    },
    "id": "documents",
    "inputs": {
-    "content": "b85f5440aabd0d0a2a4ceb727d5278c765ce6b9c3a2e2790e3a28be53262d614",
-    "count": 81478,
+    "content": "855132b653e25759dd9d7c30b90f237bd63f822b505a4d47b9c31441d7e3d104",
+    "count": 81741,
     "generator": "55ce187c7766c39e5b2e7da980ac3a6e52e5fcaaacb8ed1e0a0a088af8d06a5c",
     "lock": "62ed728e10b17c7b6dfeb6374c13b017114a326e33d3fc30e66f4b6576f87306",
-    "membership": "160be297a0177d94936db6de9d96b974de2d1c1c7b6aeec8cf59f596bb9e6132",
-    "rights": "28f43b3ee5bd200154316610c570e61ac9c600ea505a81dc801de5218f0f708c",
+    "membership": "cd877ad426d2a9f4cd9921e92745be8d9e8ba6487c4a2424ad43c27100935aad",
+    "rights": "65e1979a207d24b8d513cab507061a7bb02742cb7a90a9742f46fd10caa9fb7c",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "acf4eb24b683045a4b8e1e481f029dbf6f7a6f09d09b56406bba80e8c7e1bf07"
+    "sha256": "a67dae6cd74523841edf6181c681e6cf866f077cbe7b1b19c26823f8f156d6da"
    },
-   "key": "289b49624251101235a2a9c29088af6d687e320e4a0e08715cd7eddf4fd6f565",
+   "key": "7e2fd18f65f5b3a512b9bee382df99f117c04a30d95998494c8854e456057ca6",
    "path_set_sha256": "522c959d6aab45538028b331526badc4ee43e7cc4dc863d2f3996e4354ee2f31"
   },
   {
@@ -13397,16 +13517,16 @@
    },
    "id": "ordinary",
    "inputs": {
-    "content": "7082c48003b6e5abbb0d48a8f9044187200494213fd4dde7aa8b35adcbc440e9",
-    "count": 74991,
+    "content": "225b533882a5875ae18a4d28c29627feca1d892e6efc7560a820706155615fbf",
+    "count": 75254,
     "generator": "2d94b92a521c8a8600796a306f7b685454099e3a6a2e33ac5d5df83f5032793b",
     "lock": "62ed728e10b17c7b6dfeb6374c13b017114a326e33d3fc30e66f4b6576f87306",
-    "membership": "e0a6450c03c00c38e6d00d35c0694e2e71aad6b8528d45c0c69787a78b9d14b3",
-    "rights": "091d24d64c481177f148778837d959d17577145570cb3eedb15366e94933acb0",
+    "membership": "56ad46d497bff56da973fa3131982a052499669190ed01daa49074fc6c1c22d3",
+    "rights": "b289c1f9183548fe5ccd6007286aacaaf463abbff36d2253f5e355e77ad6b503",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "c27b6956842ae75d98e2219dbc3e95d80301dc78ad31c4ca7712ec8f80d9c1d4"
+    "sha256": "f709b7ef72385d5ad73373aac52dba610a05268170b741ae6cc998b119f765f7"
    },
-   "key": "d93c3065cae07d40ed260c2995605071f44a14f8a7b5b8d88303e35556f41718",
+   "key": "4ee2207cab6a9a0d6ba1e3a1ad03dccbda0c3232e2d36b6bb982c6cf44beee44",
    "path_set_sha256": "c7867302dc5091e3fe00ebe7e15107e58dfc90a5af1d19e9bc75a6e805816b42"
   },
   {
@@ -35608,16 +35728,16 @@
    },
    "id": "paragraphs",
    "inputs": {
-    "content": "7082c48003b6e5abbb0d48a8f9044187200494213fd4dde7aa8b35adcbc440e9",
-    "count": 75001,
+    "content": "225b533882a5875ae18a4d28c29627feca1d892e6efc7560a820706155615fbf",
+    "count": 75264,
     "generator": "198c7257449f549c2a56005b498ac83b9ea2e37e8db4708163fcd42457256ef6",
     "lock": "62ed728e10b17c7b6dfeb6374c13b017114a326e33d3fc30e66f4b6576f87306",
-    "membership": "df8a8feaf778d661249adc5ebb75d5e88492d20c0e76680015ead92918193c78",
-    "rights": "091d24d64c481177f148778837d959d17577145570cb3eedb15366e94933acb0",
+    "membership": "8a741dee0350639ae2b3203eff2ccd174fb81403497e42ac818dc8bc85e249ce",
+    "rights": "b289c1f9183548fe5ccd6007286aacaaf463abbff36d2253f5e355e77ad6b503",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "8453710ea47a2fff08283bc28c4b1d86f2ba6cb461ecf4f414cf09a8dcebf0bf"
+    "sha256": "fd705886e71db404ad721583575ccd09edea9bc20e01f2b64fb688f9a1783ae4"
    },
-   "key": "433ea0a449be93143871d48fbf45beb7217323b771a289940812bfc1ce13c346",
+   "key": "97ffb05ea367e83f86b16b525af208572c58d3ac6814b86901b5c2e70a522b1b",
    "path_set_sha256": "9de3712da5253ae1811b47967cb17448685f69729faff8a58c640179f9049796"
   },
   {
@@ -42083,16 +42203,16 @@
    },
    "id": "propers",
    "inputs": {
-    "content": "e89697f73428e61b767064db4c24f70655c9bb9083b59bd787f0fc01744ac66f",
-    "count": 80910,
+    "content": "c2a1d638ce2d8e7e4b972f0aeeadf00a8343297e394fed8279ace563fd816bfd",
+    "count": 81173,
     "generator": "3272b8b0ffd33ab46c63b2c68ba3cbf5d20cb16bdf88a21e9a2d3b78bfd8159e",
     "lock": "62ed728e10b17c7b6dfeb6374c13b017114a326e33d3fc30e66f4b6576f87306",
-    "membership": "96466064bfd1a650045a5cd27b9aeae3c43a50640381e9c7d6a9163e4698688c",
-    "rights": "f14028a5bc794166d2c60bdf2a78e585e7b10a2ee17c72b433f0475fd1c6446a",
+    "membership": "a36d06a391efb1b851a560b055ba84387663681e03b7bd8d4d78d8a2759b1598",
+    "rights": "80fc771b6709eedf10df07c4a37b15f9550188e76a39d473a5c837174c75c47e",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "e1a8c88fad9205ae842e7b9b858c3614b36994d5d471355ea6f258a8a7689b15"
+    "sha256": "73455ddf8d85e1029b4b9c125410f4962e062ca5778ed3b9dc8681110705a9f1"
    },
-   "key": "abdadb1ed291d2a911ae1ee49ba5bb8c8ef246537235f5a57f2fbf4b72b3b576",
+   "key": "64ddcf85eab00a333dd1ef249342d884743056afb7b0f809e351661e36850211",
    "path_set_sha256": "69d8d806df7f37465747d0bb1d6f8f78e4f45cf891fcd3884e121255c5b97ae4"
   },
   {
@@ -42106,16 +42226,16 @@
    },
    "id": "readings",
    "inputs": {
-    "content": "7082c48003b6e5abbb0d48a8f9044187200494213fd4dde7aa8b35adcbc440e9",
-    "count": 74988,
+    "content": "225b533882a5875ae18a4d28c29627feca1d892e6efc7560a820706155615fbf",
+    "count": 75251,
     "generator": "3b9508de88386a64b2db2e1d9d5613c6b6abfd8ac0ba5c081cc44680b649b1ac",
     "lock": "62ed728e10b17c7b6dfeb6374c13b017114a326e33d3fc30e66f4b6576f87306",
-    "membership": "36f09f6f4f2879bac923221423524ab11b6c47dce528ec6cd32f32eb19790ea6",
-    "rights": "091d24d64c481177f148778837d959d17577145570cb3eedb15366e94933acb0",
+    "membership": "0808d34087f87401a93300511d89bc3780fd70333fd67681a52164c9f8ffea63",
+    "rights": "b289c1f9183548fe5ccd6007286aacaaf463abbff36d2253f5e355e77ad6b503",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "2e0563b460b78c27e877ed6417d76d5a96b1425781396ac866c828f23688c0e5"
+    "sha256": "c9bfb14633e9f130cea722fb8619af9a6bcafa8d2fea40a953835316261ea553"
    },
-   "key": "37cb20789ed6187f4cbd949f2479fed270bfef9bd89d781649beeaa82c3ec05c",
+   "key": "8690b6ee77c820cc7afb7408ce5747c037dec7e4237470c75c3fef55c4470728",
    "path_set_sha256": "508b7a8e33c837e26653f6d32011065feafebd126ee7022fefa70a2cccadeabf"
   },
   {
@@ -42154,8 +42274,8 @@
    "path_set_sha256": "b33143518fe47bc2375691f3ef5f78ffee0bc633c3fbb8507344ae056d6b7216"
   },
   {
-   "bytes": 71708107,
-   "count": 19676,
+   "bytes": 72549297,
+   "count": 19829,
    "files": {
     "structure/sources/catalogue/0000.json": {
      "bytes": 68393,
@@ -42171,7 +42291,7 @@
     },
     "structure/sources/catalogue/0003.json": {
      "bytes": 58481,
-     "sha256": "49ae9ba0d74410969ef1146500c931b5323b813cee3baec4e7229ad3dd163fe6"
+     "sha256": "638275101c3f1172ee6986864eeb7cd566fa26ec00ac89b427c052df97fe8292"
     },
     "structure/sources/catalogue/0004.json": {
      "bytes": 64961,
@@ -42210,8 +42330,8 @@
      "sha256": "e5aeb2fac823eaacce1749beda8936d718c8a6d0f06d8c47365a38e8018f3ab7"
     },
     "structure/sources/catalogue/0013.json": {
-     "bytes": 78970,
-     "sha256": "a25182374a3101fcae66d2fcb3c25d9e67785ccf10ed6c3b460df8e9224c6f9e"
+     "bytes": 78973,
+     "sha256": "fca8eef8db16d8e9c87850b6d3ba3719bb7ef7073ecffa51ca2f1870570f72c7"
     },
     "structure/sources/catalogue/0014.json": {
      "bytes": 97041,
@@ -42238,16 +42358,16 @@
      "sha256": "1724a6b613341384bb9737d092bd69816115861c20d93b29497d2bc7d086d055"
     },
     "structure/sources/catalogue/0020.json": {
-     "bytes": 74959,
-     "sha256": "706021f39fec535077f2d16e22037782d6244354ed97d0a20c46bcf211a7b44e"
+     "bytes": 74962,
+     "sha256": "f22c532a1c216f3eb57d1f78b70a9e87aa7f55012dc67c9b826f3f362724de25"
     },
     "structure/sources/catalogue/0021.json": {
-     "bytes": 78799,
-     "sha256": "16b11fefac7f0f178be49156e7c878ca924d85e14101345df0a08188b417ed8f"
+     "bytes": 78801,
+     "sha256": "cb76125a2be184dd499639cb879cb701b916fdf2fe40aa160d71e3559f27b827"
     },
     "structure/sources/catalogue/0022.json": {
      "bytes": 109426,
-     "sha256": "f176b0d293ff8994de296c5794370b58c100af3db5c64bb648c81af85da94080"
+     "sha256": "d6c0a6251be986b9381e779cd0504cf267296b18fe0c3071d9eed87000c1137b"
     },
     "structure/sources/catalogue/0023.json": {
      "bytes": 164395,
@@ -42255,7 +42375,7 @@
     },
     "structure/sources/catalogue/0024.json": {
      "bytes": 77562,
-     "sha256": "a47ddd9d3172ee7e3a353667539db78efda11035bcb4e0a123b6e4cc3d2e5122"
+     "sha256": "7681b5099d95d6bbe59f7189b0b093f514e1c1e86e879fe66ddab3975eee317e"
     },
     "structure/sources/catalogue/0025.json": {
      "bytes": 91911,
@@ -42298,8 +42418,8 @@
      "sha256": "8c944d12443258f0c5025e1779849e696578b54df11190dec7ec1cc94e02a848"
     },
     "structure/sources/catalogue/0035.json": {
-     "bytes": 104523,
-     "sha256": "fd20d12bcac9863a7e4c2d5305401c0f24aee9df5ce109634ae2a82e6e004b12"
+     "bytes": 104525,
+     "sha256": "dad517d802431d090a04005f50adef7d3c30fce2757e3369f32c8c7f83d38809"
     },
     "structure/sources/catalogue/0036.json": {
      "bytes": 77270,
@@ -42355,7 +42475,7 @@
     },
     "structure/sources/catalogue/0049.json": {
      "bytes": 62021,
-     "sha256": "d169a7116ff3f960e8f84bf944061406b9a6d31048dd0e13ccee106371b46d6f"
+     "sha256": "a455cf4784c416980bb1e77fb7edda9b918c6750506a34955352a74243c5dca5"
     },
     "structure/sources/catalogue/0050.json": {
      "bytes": 49070,
@@ -42486,8 +42606,8 @@
      "sha256": "88b76f058facb16e54d033e453827ecc04abe3747cef55119cbd18d2536827b8"
     },
     "structure/sources/catalogue/0082.json": {
-     "bytes": 73972,
-     "sha256": "6cc5eb95a462adc9f9ebc5547f895db4bd928a65361bb8c0f0cc26249ebaec6b"
+     "bytes": 73974,
+     "sha256": "da1e40f5c59f37e84697c603353c545511086b9c54aef7483704542c22a95c63"
     },
     "structure/sources/catalogue/0083.json": {
      "bytes": 82603,
@@ -52454,16 +52574,16 @@
      "sha256": "09be0539d06cdecef5da7fbb89be27ab6e9e8fbeeec83ba9dc61310c8e6ef597"
     },
     "structure/sources/editions/armenian-church/lyturgia-armena/1823-1823-venice-san-lazzaro.json": {
-     "bytes": 6077,
-     "sha256": "59712235b5f5503cb57a370ab360f5988b0188a4d7d413c22e32bf6720f22cf9"
+     "bytes": 36572,
+     "sha256": "4fd67fe3870174dbb82c580acc5beb52581f2c82193402f4e11bb4928049e178"
     },
     "structure/sources/editions/armenian-church/ministerium-missae/1677-1677-rome-propaganda-armenian.json": {
      "bytes": 1021,
      "sha256": "7b5aa25e84107a6deb7910b772ee03cb3ea94a0abf43631222277f823e0418f3"
     },
     "structure/sources/editions/armenian-church/ordo-divinae-missae-armenorum/1642-1642-rome-propaganda.json": {
-     "bytes": 6056,
-     "sha256": "a4f3aba92f80ca9b4c5a0feff43c43e219b9c24de0acc275d6d9ce66f111f0a8"
+     "bytes": 36734,
+     "sha256": "5b3b1e74bcc72c1f6c9d83773344a15013f73a951f2a47b4dc7ab7763db870f9"
     },
     "structure/sources/editions/armenian-church/rituale-armenorum/1905-clarendon-1905.json": {
      "bytes": 2693,
@@ -69870,16 +69990,16 @@
      "sha256": "196ec37c509bee858f1771154bb531ad744925dde70c710deef66018cf68ac52"
     },
     "structure/sources/editions/catholic-church/sacramentarium-gregorianum-hadrianum/1915-wilson-1915.json": {
-     "bytes": 58345,
-     "sha256": "877d113e0ce200efce96919e80806c3933bfe4971772cb14332308a5a934cce2"
+     "bytes": 97114,
+     "sha256": "21affed0a32c950cbb8c9c512f53959ad00297bd9ebbdab7c068245d9212a3a3"
     },
     "structure/sources/editions/catholic-church/sacramentarium-veronense/1896-feltoe-1896.json": {
      "bytes": 80829,
      "sha256": "d4bae64e5564024aabad7fb2862a1c34b08ab69cbde29232c4d6aa0e0cfa8130"
     },
     "structure/sources/editions/catholic-church/stowe-missal/1915-1915-warner-vol-2.json": {
-     "bytes": 15658,
-     "sha256": "e262a1fc06ace57ccc361586695bc8f5adc2d47a716771f5f5db8d99d85ea3c8"
+     "bytes": 67874,
+     "sha256": "98482be53c99d5bbe92ccd95606c559feb0d30c86e3660bc3256f6a98760104c"
     },
     "structure/sources/editions/catholic-church/vulgata-clementina/1598-ebible-latvuc.json": {
      "bytes": 163155,
@@ -69974,12 +70094,12 @@
      "sha256": "b31eb12a6b869de0c72b67c9b7ad9a9cd9148074c440c5b3cdcf722c51f6a003"
     },
     "structure/sources/editions/chaldean-catholic-church/missale/1767-1767-rome-propaganda.json": {
-     "bytes": 4608,
-     "sha256": "10880d989397ba60eeba331df37d45333c8e7f526b5cbb0b47f8fdcaf8f68c00"
+     "bytes": 27529,
+     "sha256": "7ee2e38523365b0d6c78797d1d8b69c6ce2adbeecadd037a4402512abdb2aec4"
     },
     "structure/sources/editions/chaldean-catholic-church/missale/1901-1901-mosul-dominican.json": {
-     "bytes": 3889,
-     "sha256": "36c12c81e1948ea4881dadeab8db01fbb98d2a47a10cf11878dd52a7606ee230"
+     "bytes": 26810,
+     "sha256": "e542d0d7050707824c1b3915e8e7273b6395014ff54cd86d8c77732e3fcc2bf9"
     },
     "structure/sources/editions/chaldean-catholic-church/proprium-missarum/1901-1901-mosul-dominican.json": {
      "bytes": 3007,
@@ -70194,8 +70314,8 @@
      "sha256": "eb143bc0a6439d9194d59c2cd36169ab6d78a359a27c3247c935def9274148e0"
     },
     "structure/sources/editions/coptic-catholic-church/missale-copto-arabicum/1736-1736-rome-tuki.json": {
-     "bytes": 10556,
-     "sha256": "9f6c7ca7f246969185df7d9db4e6a6ec0d78fffbd21ad7654d7e231fe8b7328e"
+     "bytes": 40902,
+     "sha256": "95afaeffcf2682eea761c0db14677f879cf7a322c0aa7f1099b5c850c08b16c4"
     },
     "structure/sources/editions/cornelius-a-lapide/commentaria-in-omnes-divi-pauli-epistolas/1614-antwerp-1614.json": {
      "bytes": 7203,
@@ -70374,8 +70494,8 @@
      "sha256": "aaf9de388360c330d8176bd974fdb58a439c130569641ab2016eb02b20fb2f75"
     },
     "structure/sources/editions/diocese-of-paris/missale-parisiense/1481-1481-paris-dupre-huym.json": {
-     "bytes": 7548,
-     "sha256": "802421c8c6eb5b35e43b9a9630590b86f5baadab12e49d2bb0555cf81c6370b8"
+     "bytes": 57364,
+     "sha256": "94c7eabe532f458bb57da9b5681c3170775ced6a602d3a993189657f8270d23b"
     },
     "structure/sources/editions/diocese-of-paris/missale-parisiense/1738-1738-paris-bibliopolae.json": {
      "bytes": 4297,
@@ -70390,8 +70510,8 @@
      "sha256": "0cebb89a4cd13f4b1e2e5bdd4e30de1fcb2ec01772395ec1730213eeed964435"
     },
     "structure/sources/editions/diocese-of-tarazona/missale-tirasonense/1500-1500-pamplona-brocar.json": {
-     "bytes": 10245,
-     "sha256": "1c9fe215d0ed0e547020aacadedfba8c6d7aed843d7f479c534d74f531488ac3"
+     "bytes": 57035,
+     "sha256": "d3195b0efb6ad3f096519fbf9b74e0b43723524161d8d0c33fd0d63cd50ab0ae"
     },
     "structure/sources/editions/diocese-of-tarbes/mandement-apparition-lourdes-1862/1870-lasserre-1870.json": {
      "bytes": 2007,
@@ -70534,8 +70654,8 @@
      "sha256": "a6b12cc89bbe4bc9f1a4ed9357b2ddf7214d808d7050ae907723b14dced1b544"
     },
     "structure/sources/editions/ethiopian-catholic-church/missale-aethiopicum-asmara/1914-1914-1915-asmara-ethiopian-1907.json": {
-     "bytes": 2232,
-     "sha256": "ebc7165dcf932aad12140412c0e2e5533c02f94d15e2bd4b00f784e90fef0e7e"
+     "bytes": 22803,
+     "sha256": "33cdbc9b23a03c03c99f26e4be928497cd807d14ba0889a8d81dac2ac1707e07"
     },
     "structure/sources/editions/eugene-cummiskey/roman-missal-english-laity/1843-philadelphia-1843.json": {
      "bytes": 14296,
@@ -75854,12 +75974,12 @@
      "sha256": "46c39d0e9dd116e09c058489a4a84742e184bc140e63c45fa7217afa641a814b"
     },
     "structure/sources/editions/holy-see/euchologion/1754-1754-rome-propaganda.json": {
-     "bytes": 45224,
-     "sha256": "4a7274d8f7ca733cbd323667aefe0f6293895cbc4a5e895846e0d7ae3c1b9b4e"
+     "bytes": 83921,
+     "sha256": "f39fd2d47ae0b7e64fdca4c73ce78a9ab27129173cbab220006f11ca6aadccbf"
     },
     "structure/sources/editions/holy-see/euchologion/1873-1873-rome-propaganda.json": {
-     "bytes": 49979,
-     "sha256": "b87ec54673206813ced6a11d674afed89cefc783f9c66447048e8eec3fc62aab"
+     "bytes": 81547,
+     "sha256": "7a54aac039d42df19d8f3d7f803103318497fc6d313974b98850e5ebe1d3351a"
     },
     "structure/sources/editions/holy-see/formation-and-ministry-of-permanent-deacons-1998/2026-english-vatican-web-2026-07-25.json": {
      "bytes": 7556,
@@ -77178,12 +77298,12 @@
      "sha256": "807017b802eed2de26e33eb5b7511d54786bc0329e46397caea85bcaa130b4ab"
     },
     "structure/sources/editions/maronite-church/qurbono/1594-1594-rome-medici.json": {
-     "bytes": 4089,
-     "sha256": "303d9448384e69fb04b899e7ab8948dce1a97ef0ff0b10535009378727899a86"
+     "bytes": 19752,
+     "sha256": "4341b5504b93ea7323992f738174bec4d77cd407325526f467ef9283972ec224"
     },
     "structure/sources/editions/maronite-church/qurbono/1908-1908-beirut-maronite-press-second-printing.json": {
-     "bytes": 7472,
-     "sha256": "63d466eb47f9609b4fdf7fcdc20da5601aa5d1fe9efa71f7f936a8cf88a1821b"
+     "bytes": 24709,
+     "sha256": "fc58a04cedee708737034aa8322b07f6dd313ca635c09a98e0750b7936184503"
     },
     "structure/sources/editions/martin-gardner/mathematical-games-1962-01/2026-2026-09-05-publisher-landing-web-2026-09-05.json": {
      "bytes": 1364,
@@ -99566,12 +99686,12 @@
      "sha256": "46fee67df0e8eb2e06db9114a859df8f85159b5e4341b6db4fec3e1ae2342fde"
     },
     "structure/sources/editions/syriac-catholic-church/missale-syriacum/1843-1843-rome-propaganda.json": {
-     "bytes": 5051,
-     "sha256": "8459d3f2cd8b4da89bac8875c80b69d8d98bb8d6652ace796a86d0a2d45ffd4e"
+     "bytes": 22665,
+     "sha256": "0d809c82f6b78ff8075a50e1d438329e792940ccc7f4a9a95f28db403a29ba88"
     },
     "structure/sources/editions/syriac-catholic-church/missale-syriacum/1922-1922-sharfeh-patriarchal.json": {
-     "bytes": 6168,
-     "sha256": "8b859c2aea140b46e3af22d1029c76732172a7e9c4121e44745f6cbd760fdc93"
+     "bytes": 24504,
+     "sha256": "8f13eba4828b31650453d508e40d4ae49bbfdd8af2e94c2d375476dfd5460494"
     },
     "structure/sources/editions/syriac-catholic-church/missale/1881-1881-mosul-dominican-nouvelle-edition.json": {
      "bytes": 3615,
@@ -99586,8 +99706,8 @@
      "sha256": "d56d1c3a53d02bc703ae5190cd58e2be1e0b6bda607e0eb2f79c10dca3aef5b8"
     },
     "structure/sources/editions/syro-malabar-catholic-church/ordo-chaldaicus/1906-1906-puttenpalli-mar-thoma-shliha.json": {
-     "bytes": 8975,
-     "sha256": "52df245a7fd0b0d9b076f01894e9b6f7e24c9440035f6ff7cf69f2f1ca8f6be8"
+     "bytes": 34048,
+     "sha256": "9a0722e4d8636bf840fbe94aff32b84e063906b9eeff2de87273db8c2b3fad1d"
     },
     "structure/sources/editions/syro-malabar-catholic-church/preparation-for-qurbana/1898-1898-mannanam-mar-yusuf.json": {
      "bytes": 3070,
@@ -100771,7 +100891,7 @@
     },
     "structure/sources/index.json": {
      "bytes": 199740,
-     "sha256": "788d622ecfa52834a43a3ab78a53d3025b0612f39dfaa68100acc7b67413156c"
+     "sha256": "42ac0e04de411e2d8d56def0d54030cbded39d9fba7211cf66ef027f199f54b5"
     },
     "structure/sources/text/passage.a-a-lings.our-favorite-novenas.benziger-1897.approbation.json": {
      "bytes": 1686,
@@ -103476,6 +103596,54 @@
     "structure/sources/text/passage.archdiocese-of-toledo.officia-propria-sanctorum.1626-madrid-typographia-regia.three-cross-antiphons-checked-20261030.json": {
      "bytes": 1700,
      "sha256": "d98680d881004bc5d38e6a51c9e183db3bd8dde84f16f8c49c6006795f5de6b1"
+    },
+    "structure/sources/text/passage.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-01-opening-dialogue.json": {
+     "bytes": 1836,
+     "sha256": "1652718638359b74edff9c039b801684d4119cc121462801cad63776f4721e6e"
+    },
+    "structure/sources/text/passage.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-02-preface-thanksgiving.json": {
+     "bytes": 2390,
+     "sha256": "de1fecd72c744bd6a58075bb0cac71a0a3bbc0ebec22c37b23dc56f34a4e1730"
+    },
+    "structure/sources/text/passage.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-03-sanctus.json": {
+     "bytes": 1613,
+     "sha256": "c41e30dea7f327cc15a09b7caba9a332a82a94daf00133ea0cc18586addaebfc"
+    },
+    "structure/sources/text/passage.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-04-post-sanctus-institution.json": {
+     "bytes": 4255,
+     "sha256": "eb33e240b91b88997bd4e57c971ea861e078e58f572b5d381943c94dc2e860d2"
+    },
+    "structure/sources/text/passage.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-05-anamnesis-oblation.json": {
+     "bytes": 3499,
+     "sha256": "939ed2aaf8d03e75cd81dcf47a7cc327e63be958378c2a5dda9e6517bd8c21a7"
+    },
+    "structure/sources/text/passage.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-06-epiclesis.json": {
+     "bytes": 3265,
+     "sha256": "f6c90ab75ae9a1aebd4e1f5b0cd8e023e799ddf8c4407d9d32b0fec41381c586"
+    },
+    "structure/sources/text/passage.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-01-opening-dialogue.json": {
+     "bytes": 1981,
+     "sha256": "a40098bcba042ea05dd4b417da205b8064ad50d44b06f055afbbfe1a27cd0c32"
+    },
+    "structure/sources/text/passage.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-02-preface-thanksgiving.json": {
+     "bytes": 2223,
+     "sha256": "e8a559054a230723f614e2ea34c4c21de83fdcd8ee605c71acb311b746581561"
+    },
+    "structure/sources/text/passage.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-03-sanctus.json": {
+     "bytes": 1929,
+     "sha256": "6052550e61a8f7aafe4899663fc9e360394f12d6320d07cf1eabec3d6474f5ef"
+    },
+    "structure/sources/text/passage.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-04-post-sanctus-institution.json": {
+     "bytes": 4893,
+     "sha256": "bc8a6f52c5441998b81342bdd89612ce5dc3ca4cac237621e5ca184b54973630"
+    },
+    "structure/sources/text/passage.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-05-anamnesis-oblation.json": {
+     "bytes": 4013,
+     "sha256": "67352d818eac4cf7c26aa008bba8c85c2e5d2fa33f7cd7598f8db07a626d7847"
+    },
+    "structure/sources/text/passage.armenian-church.ordo-divinae-missae-armenorum.1642-rome-propaganda.badarak-anaphora-06-epiclesis.json": {
+     "bytes": 2439,
+     "sha256": "a7688195a3aee1b687720653192453cb356d4e388cb8b8a879e042d70effa2d2"
     },
     "structure/sources/text/passage.augustine.de-civitate-dei.dods-1871.10.5-6.json": {
      "bytes": 1018,
@@ -108401,6 +108569,62 @@
      "bytes": 1514,
      "sha256": "744e2229bcc194fe219fecd0dcac9868e68f779758961e617409c79d23bf7831"
     },
+    "structure/sources/text/passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-communicantes.json": {
+     "bytes": 1891,
+     "sha256": "1743df17936e49ca77998a466f1c45d685ba9ac2efb1be2b9c1dff506c8f36fa"
+    },
+    "structure/sources/text/passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-concluding-response.json": {
+     "bytes": 1411,
+     "sha256": "79824c352b6f84c6a1a1f1bf9d4326a113ad8f67d938ad340c99ff42a13a9ff4"
+    },
+    "structure/sources/text/passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-hanc-igitur.json": {
+     "bytes": 1619,
+     "sha256": "5f6e614c8ede479f5ca0fd8f3f84f45c0a3bc5064bfd8c7cd19b556ff71b03a6"
+    },
+    "structure/sources/text/passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-memento-vivorum.json": {
+     "bytes": 1666,
+     "sha256": "c80ba5fbfced748b22a848a3e54a9b8a2bdb6a7da39b45f29bc2b6b127e26d7d"
+    },
+    "structure/sources/text/passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-nobis-quoque.json": {
+     "bytes": 1810,
+     "sha256": "ed53ea1163b6b45caf9d576b885e4570146d3828845e63643c167a43e957566e"
+    },
+    "structure/sources/text/passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-per-ipsum.json": {
+     "bytes": 1469,
+     "sha256": "90f89f6e85746946b7cef0a2a5def1640df9f3a3060c78b0a3e972ffb8667e51"
+    },
+    "structure/sources/text/passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-per-quem.json": {
+     "bytes": 1449,
+     "sha256": "2587006315d0cb9d6ce234853cf255e2874f53f84f6dd1aee27ed8be83fb0ee2"
+    },
+    "structure/sources/text/passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-quam-oblationem.json": {
+     "bytes": 1570,
+     "sha256": "ffa54bd5b6be021d77a5135cc8e5b0dd64c668c599e5647f77330cfe38d6419b"
+    },
+    "structure/sources/text/passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-qui-pridie.json": {
+     "bytes": 1612,
+     "sha256": "a34719867485fb4992f6fd29e918fd32f1944234e1426ae56ff0c15d94bb5c34"
+    },
+    "structure/sources/text/passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-simili-modo.json": {
+     "bytes": 1756,
+     "sha256": "afb95d989ffa8089e51604ee1b3db6794a398462e586340c2dea3ed9289a318d"
+    },
+    "structure/sources/text/passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-supplices.json": {
+     "bytes": 1664,
+     "sha256": "1ac7b0274ab41f808a4dc73015139df16a32c2ccfaeb605ed27aae85a2219f01"
+    },
+    "structure/sources/text/passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-supra-quae.json": {
+     "bytes": 1631,
+     "sha256": "32c09e759658f785f835fda25cb8d985696fd0ea2cf7af1c33c8e94bd3eff4cb"
+    },
+    "structure/sources/text/passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-te-igitur.json": {
+     "bytes": 1729,
+     "sha256": "f3ef833e4bc1037e51a6637834aeb8a9142a69c886d56a9f04f12db02ce06188"
+    },
+    "structure/sources/text/passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-unde-et-memores.json": {
+     "bytes": 1730,
+     "sha256": "7b00a8059ffd8092788652c719447c42a505f69730000bf4c9028469d75fa727"
+    },
     "structure/sources/text/passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-quam-oblationem.json": {
      "bytes": 1354,
      "sha256": "14ec0b4031eb338c6148de1c5ff7f62dd9158125670dda90755ec0d04067ec9b"
@@ -108481,6 +108705,70 @@
      "bytes": 1588,
      "sha256": "da594501c153e3b87cc8e145afeee40c538f63d77b80a975e53197f9b358903d"
     },
+    "structure/sources/text/passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-communicantes.json": {
+     "bytes": 2508,
+     "sha256": "3d0c4798ef1c12cae232cd3ae680488572fb9b361630555e3ce6797a5f9b3568"
+    },
+    "structure/sources/text/passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-concluding-response.json": {
+     "bytes": 1337,
+     "sha256": "947553df647e5f16b3c203b5d7462906b61f8bfea065c51ff6497c45e309a28b"
+    },
+    "structure/sources/text/passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-hanc-igitur.json": {
+     "bytes": 1844,
+     "sha256": "604c96550591f10fb23629fba50cbef2c1459f35857220f894a2d8a1eb9d662a"
+    },
+    "structure/sources/text/passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-memento-defunctorum.json": {
+     "bytes": 3093,
+     "sha256": "033007b0e4213ced2dca57557c251d582170b3fe4a039d0a9b0290b21dc135a0"
+    },
+    "structure/sources/text/passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-memento-vivorum.json": {
+     "bytes": 2519,
+     "sha256": "badf021bc68fc034cd34ae1350c39ed4b31c90e7395dc01b384b655bd8850540"
+    },
+    "structure/sources/text/passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-nobis-quoque.json": {
+     "bytes": 1745,
+     "sha256": "248ea8258223481929ab66c69ea878aeffae941f40df2842ca231d6efdd50d29"
+    },
+    "structure/sources/text/passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-opening-rubric.json": {
+     "bytes": 1323,
+     "sha256": "64a091c6f81413eac57db48a7671aee96a8f1e1d13fd24f2628b15324cb03e39"
+    },
+    "structure/sources/text/passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-per-ipsum.json": {
+     "bytes": 1401,
+     "sha256": "743162efce8de6c2c7b9c6f97bf47c0378464f9d3c2a5c6a9265a7184e7bff5a"
+    },
+    "structure/sources/text/passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-per-quem.json": {
+     "bytes": 1388,
+     "sha256": "4831130609b2e9735e54022ae7aefd97762ed10876dc48a601ab0d2c8e49f6c4"
+    },
+    "structure/sources/text/passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-quam-oblationem.json": {
+     "bytes": 1497,
+     "sha256": "134cafb96afce5c02e62fcd55c588781b9b1cfdf6643563a98709447b8e7f107"
+    },
+    "structure/sources/text/passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-qui-pridie.json": {
+     "bytes": 1563,
+     "sha256": "89a73b4357ab9c2b26779ee728706804909451770ba6fa1dd0a3346d5ce78d0c"
+    },
+    "structure/sources/text/passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-simili-modo.json": {
+     "bytes": 1825,
+     "sha256": "7ee93d70ebedc5ed0d17095332a2a898d521e1296f88415ac98eaa62f67efd35"
+    },
+    "structure/sources/text/passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-supplices.json": {
+     "bytes": 1570,
+     "sha256": "550663327722287792e3dc92e579d39615ef0435795f4872807c16a1e36d4b8f"
+    },
+    "structure/sources/text/passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-supra-quae.json": {
+     "bytes": 1557,
+     "sha256": "553edc1d7c789f5420707c4b6666b846ee1ebbbff202a9d0bb795bb0b8a94243"
+    },
+    "structure/sources/text/passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-te-igitur.json": {
+     "bytes": 1778,
+     "sha256": "ea0f689ca2e2859c83a45c6608ccf82eaa1195c1d79de0e55ce1c569efea6f74"
+    },
+    "structure/sources/text/passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-missae-unde-et-memores.json": {
+     "bytes": 1662,
+     "sha256": "700ff814bd2d0ce419886c87f559080b9f5bdf373454a2e7556759c2c823edae"
+    },
     "structure/sources/text/passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-quam-oblationem.json": {
      "bytes": 1245,
      "sha256": "3f506098b1e075b688a491e56350376ee2af309476842c1a34f717ce65434024"
@@ -108532,6 +108820,70 @@
     "structure/sources/text/passage.catholic-encyclopedia.volume-8.new-york-1910.maas-second-journey-cana.json": {
      "bytes": 5197,
      "sha256": "218f88da5c7973b5de759a8973ae6c119cad56d5f23356331852044512486db5"
+    },
+    "structure/sources/text/passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-01-opening-dialogue.json": {
+     "bytes": 1599,
+     "sha256": "cd4979e6ba661c91772190934f03219d390270b1688b2aa9b43e188a7edef37f"
+    },
+    "structure/sources/text/passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-02-preface-gehanta-1.json": {
+     "bytes": 1981,
+     "sha256": "f622d22842392949e3e6e402fcc325c8431e6ba1bdd1b06a754a086b6f16fe3c"
+    },
+    "structure/sources/text/passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-03-sanctus.json": {
+     "bytes": 1246,
+     "sha256": "0218e37714e086e0e679a104186d85c2583d712764aec57324d9cca84000eb9e"
+    },
+    "structure/sources/text/passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-04-post-sanctus-gehanta-2.json": {
+     "bytes": 1924,
+     "sha256": "48acd1e3d6a8a305d14ed4fe2e35bc5f0f2f05faa658da1662a98a7b2613c5ec"
+    },
+    "structure/sources/text/passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-05-intercession-gehanta-3.json": {
+     "bytes": 2276,
+     "sha256": "f8ae0d66aa9b2c5282d69241254e797f20286bfae86586e93bf7d34f1880a672"
+    },
+    "structure/sources/text/passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-06-anamnesis-oblation.json": {
+     "bytes": 1671,
+     "sha256": "c1918226533bfa6cedc584f651dcaa23db9d6662842868c01f7c66e451fe55e6"
+    },
+    "structure/sources/text/passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-07-epiclesis-and-qanona.json": {
+     "bytes": 1949,
+     "sha256": "5d794062c46bc959dc887997802fac3f82ee298d03a1764a5741691f52b1b652"
+    },
+    "structure/sources/text/passage.chaldean-catholic-church.missale.1767-rome-propaganda.addai-mari-08-institution-narrative.json": {
+     "bytes": 2109,
+     "sha256": "a868f38ce9869820083506dff860f43906accf37375354d8a4e2ee3dd9741cea"
+    },
+    "structure/sources/text/passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-01-opening-dialogue.json": {
+     "bytes": 1598,
+     "sha256": "90790249eb575e9cc4b5f7773823e30b7a69a222eb24aa6cf55449e354e4c35d"
+    },
+    "structure/sources/text/passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-02-preface-gehanta-1.json": {
+     "bytes": 1993,
+     "sha256": "fe70cd8f3d7362849eaf725bc2223411e61ce0e71fd4c1eb7d879a49f254f94e"
+    },
+    "structure/sources/text/passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-03-sanctus.json": {
+     "bytes": 1457,
+     "sha256": "1045d45de7bf89190210abb7f4041822fce6f8838148117d3d83666a1eba49f6"
+    },
+    "structure/sources/text/passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-04-post-sanctus-gehanta-2.json": {
+     "bytes": 1921,
+     "sha256": "dadb700b2bd29854e1d4d279682c4d8f43ec97c54ec5874dc5e7186e51218a58"
+    },
+    "structure/sources/text/passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-05-intercession-gehanta-3.json": {
+     "bytes": 2272,
+     "sha256": "3626794023183d62e96f894693656dc3658238d0c0f714fd8ce243d204164074"
+    },
+    "structure/sources/text/passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-06-anamnesis-oblation.json": {
+     "bytes": 1683,
+     "sha256": "1d071b4d6fdccc70cd2ace46a5621dc99284e7a738e7acbf1db59024cffc024d"
+    },
+    "structure/sources/text/passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-07-epiclesis-and-qanona.json": {
+     "bytes": 1975,
+     "sha256": "1a97c7cca5ccb05566bf0ef1f86aa44524dfa6500f4576b8d903966ecbb0d7a0"
+    },
+    "structure/sources/text/passage.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-08-institution-narrative.json": {
+     "bytes": 2786,
+     "sha256": "af7f7b7cb84761c0da314839a9f1657ad0f2b2779e3e38bcff2cd7b9240e0446"
     },
     "structure/sources/text/passage.church-of-england.authorized-version-of-the-bible.gutenberg-ebook-10.jn-20.7.json": {
      "bytes": 881,
@@ -109317,6 +109669,38 @@
      "bytes": 1707,
      "sha256": "61bd2823ae6443c5292a26815fd4eea9ed788d959e8cbeda07a2cd2a50cfb868"
     },
+    "structure/sources/text/passage.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-coptic-anamnesis.json": {
+     "bytes": 3579,
+     "sha256": "5e451e6c03891c0bf40b1398b411c47954d10c289e55ab3fed8f279c9d02bc51"
+    },
+    "structure/sources/text/passage.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-coptic-epiclesis.json": {
+     "bytes": 3951,
+     "sha256": "bc7ed6b5eba7f1d35156a1d15067a5d43469601cc927e115eaf2bb56fc6bb6fd"
+    },
+    "structure/sources/text/passage.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-coptic-institution-narrative.json": {
+     "bytes": 4947,
+     "sha256": "97c7c5944623a68176a6dee07f6ce9eebd7255e2a46811e22c6c19b6decc8e6f"
+    },
+    "structure/sources/text/passage.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-coptic-opening-dialogue.json": {
+     "bytes": 2696,
+     "sha256": "b8c090b1fb1a0e63fcb434e094eb14cd1987fae6b900fef68332192a4a711f53"
+    },
+    "structure/sources/text/passage.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-coptic-post-sanctus.json": {
+     "bytes": 4854,
+     "sha256": "aac3c688fed206549b810f056d5878005b9e3fbb6a4aa3f2db20b73e58a70722"
+    },
+    "structure/sources/text/passage.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-coptic-pre-sanctus-hymns.json": {
+     "bytes": 5363,
+     "sha256": "ffd55aedad1a2856b1c595ff9ab9fd600cd502b3e27b08892f2c03ba7c015099"
+    },
+    "structure/sources/text/passage.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-coptic-preface.json": {
+     "bytes": 3375,
+     "sha256": "644e7bcb71a0b3c546cb224c34d69068b33ed1f971dbdd5d7e0d34e087a5e743"
+    },
+    "structure/sources/text/passage.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-coptic-sanctus.json": {
+     "bytes": 1685,
+     "sha256": "905a3befb4553b8d7b936843821e9ff3964b4259172b57f2be8c1c52e06be716"
+    },
     "structure/sources/text/passage.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.creed-arabic.json": {
      "bytes": 2493,
      "sha256": "2330739523dd9d8ff347fcffdd0608552e02b5f5a94a320d915e8f139f5e99e7"
@@ -109368,6 +109752,130 @@
     "structure/sources/text/passage.cyril-of-alexandria.commentary-on-john.english-pusey-randell-lfc-1874-1885.book-12-jn-20.1-9.json": {
      "bytes": 2082,
      "sha256": "4a110b81becea574dada26e79a37a77c00be2fb83df4c10026432821f0bb21bc"
+    },
+    "structure/sources/text/passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-communicantes.json": {
+     "bytes": 1850,
+     "sha256": "124064a2c3527c63dec22aed189ee88f5473b07e2e39db53b316956cb0f6a24e"
+    },
+    "structure/sources/text/passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-concluding-response.json": {
+     "bytes": 1351,
+     "sha256": "32bde3b63bd105f50ea7a64767ff60802003206b19c85d7ed70fc287686b955c"
+    },
+    "structure/sources/text/passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-hanc-igitur.json": {
+     "bytes": 1603,
+     "sha256": "d582eab06116861f003dd3c1ad4f7a4f1c5976b07a9fdc83a93569d49c2a66bb"
+    },
+    "structure/sources/text/passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-memento-defunctorum.json": {
+     "bytes": 1664,
+     "sha256": "a31ba9cfa6e4a91dd8b192d0678a8a8a8aa6fba908b9b288146518105efb2cb6"
+    },
+    "structure/sources/text/passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-memento-vivorum.json": {
+     "bytes": 1744,
+     "sha256": "d2a919e0077947ff5cd4c264911b514331c3c238b69976a800e725a71202b205"
+    },
+    "structure/sources/text/passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-nobis-quoque.json": {
+     "bytes": 1797,
+     "sha256": "625e7d7421c7c61d2c23382fd96f58710f8e6354113fecb80e38ea194f451e29"
+    },
+    "structure/sources/text/passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-opening-rubric.json": {
+     "bytes": 1345,
+     "sha256": "cd5b6874a02f0071715767baa3683b06e47ebd9e00bda3388dfb7eb603d4905e"
+    },
+    "structure/sources/text/passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-per-ipsum.json": {
+     "bytes": 1571,
+     "sha256": "0a2ba2641d33c27d735414da69f72daaeb6e5b6a86320a3881175a16a2ce2e46"
+    },
+    "structure/sources/text/passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-per-quem.json": {
+     "bytes": 1538,
+     "sha256": "7e31137470dca32ce5e54f084207bc3cc5c74dd24c4c8a78d26e2a2845f6d02e"
+    },
+    "structure/sources/text/passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-quam-oblationem.json": {
+     "bytes": 1559,
+     "sha256": "79ec4add4130aa1f00c5601143c57f25c6d4f4c2237a5a9978a11d14a23f4210"
+    },
+    "structure/sources/text/passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-qui-pridie.json": {
+     "bytes": 1767,
+     "sha256": "8e0fc4da27f94f34a6237754db0453e202336d89c8bef317ce9947f0a18da1e0"
+    },
+    "structure/sources/text/passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-simili-modo.json": {
+     "bytes": 1890,
+     "sha256": "b597f26e4ceda7dec7a2c3b47c57c58e4e8df4365f49b7b7b690f12b95f6996e"
+    },
+    "structure/sources/text/passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-supplices.json": {
+     "bytes": 1748,
+     "sha256": "e72a0deeb4a24fdade5f530cab246b2b46654b281cf0074fe9e5972b20f95a57"
+    },
+    "structure/sources/text/passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-supra-quae.json": {
+     "bytes": 1572,
+     "sha256": "8e0ef63c9ed7897b23f00a03dc6793bf48bde8986ae848ca210f2345b63d6094"
+    },
+    "structure/sources/text/passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-te-igitur.json": {
+     "bytes": 1856,
+     "sha256": "d1e4801f1c5b38f7f755a0b0ffaf6747fc13f4dd8bfea6a975c932522fe91854"
+    },
+    "structure/sources/text/passage.diocese-of-paris.missale-parisiense.1481-paris-dupre-huym.canon-missae-unde-et-memores.json": {
+     "bytes": 1849,
+     "sha256": "3149a8229e8b4f1ccbc81f5ae905e78135f8022771a52acc7b1d08e184bde8f2"
+    },
+    "structure/sources/text/passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-communicantes.json": {
+     "bytes": 1879,
+     "sha256": "113fb59939d0279ebb0e72e1962800ea2a1f2a39989997bc296f7a32ad386106"
+    },
+    "structure/sources/text/passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-concluding-response.json": {
+     "bytes": 1387,
+     "sha256": "4a759ab010b52b382e1956c7aaa5d42d43d3edac62a834985a5498f1f60a39ff"
+    },
+    "structure/sources/text/passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-hanc-igitur.json": {
+     "bytes": 1590,
+     "sha256": "37fbd9dfba659bc00866acf5b54f5a0c4839b4f9fe96e9653dbb9116ec7cf043"
+    },
+    "structure/sources/text/passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-memento-defunctorum.json": {
+     "bytes": 1629,
+     "sha256": "eef806a212e751920da8cd346fb4ff99dbf8fcbf1563f0360c567a5ab40aa23b"
+    },
+    "structure/sources/text/passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-memento-vivorum.json": {
+     "bytes": 1667,
+     "sha256": "7da8d80cc34e35c3c165055ce81eb476d310901dd83eaff56afd8a77b1d17d34"
+    },
+    "structure/sources/text/passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-nobis-quoque.json": {
+     "bytes": 1856,
+     "sha256": "0d473b768011a093e10d14ae0d37d9484f8fc216dcb23290e5e54da7ab157fb0"
+    },
+    "structure/sources/text/passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-per-ipsum.json": {
+     "bytes": 1497,
+     "sha256": "8ec7e2c085cb4c5d2ad87ba7b786d77b4f617769db598e364ced501feb6f25fa"
+    },
+    "structure/sources/text/passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-per-quem.json": {
+     "bytes": 1448,
+     "sha256": "a44eb1a208e7ecc0c4012d7b1668a140f819528d20e9218abca4073c90732190"
+    },
+    "structure/sources/text/passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-quam-oblationem.json": {
+     "bytes": 1557,
+     "sha256": "5ecaa90397d35d1629b8575deebb932ca6d05dd0fa2bf4d37af9b1933cce7442"
+    },
+    "structure/sources/text/passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-qui-pridie.json": {
+     "bytes": 1630,
+     "sha256": "9e514692441044d3a59fec77aaa4ba67a1b44673bd7c6fc373cc2760a1e52282"
+    },
+    "structure/sources/text/passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-simili-modo.json": {
+     "bytes": 1781,
+     "sha256": "462ab8b11673d40c0455b6b715da9258a8dcf2c38d5ca17d68b150aae74d2f68"
+    },
+    "structure/sources/text/passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-supplices.json": {
+     "bytes": 1690,
+     "sha256": "19266268e4973ca5f89edc133aef8249f62f227a9e743aed0f1fb9594111da86"
+    },
+    "structure/sources/text/passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-supra-quae.json": {
+     "bytes": 1583,
+     "sha256": "652abe71b1e9bb9a0f9a0bc3e1f2e5a06a8edbbdc93ae8acaeb51bf29f032018"
+    },
+    "structure/sources/text/passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-te-igitur.json": {
+     "bytes": 1795,
+     "sha256": "5fbf9a9fc79074c774ed087d069f6dfe688371d440d016f684fd4528d8ee8a19"
+    },
+    "structure/sources/text/passage.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.canon-missae-unde-et-memores.json": {
+     "bytes": 1703,
+     "sha256": "26e434e32644adc790c7c71de3e4322b5854fc30e1415b4d7be68371cfa6681d"
     },
     "structure/sources/text/passage.diocese-of-trieste-and-capodistria.proprium-missarum.1859-trieste-coen.barbarigo-collect.json": {
      "bytes": 1314,
@@ -109564,6 +110072,30 @@
     "structure/sources/text/passage.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.zach-9.9-10.json": {
      "bytes": 1565,
      "sha256": "91c6bfa352f444b730435ae85d6d7f6a43cfeaa3727f55ab41ef5716c2b0f327"
+    },
+    "structure/sources/text/passage.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-anamnesis.json": {
+     "bytes": 2172,
+     "sha256": "9cde3cc35bab2d9ebbe1b0b40e540530ccd11619e97a24b5df475a186ce1a0bc"
+    },
+    "structure/sources/text/passage.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-epiclesis-and-doxology.json": {
+     "bytes": 3780,
+     "sha256": "782cd8f2824e9f5eb5f2564e1fbdd2dfdb8afd79f16eab127def502af4fd0724"
+    },
+    "structure/sources/text/passage.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-institution-narrative.json": {
+     "bytes": 3532,
+     "sha256": "7ea403701d9fadde7e4574a3935843f7755ed91f25b584219402af877920b10b"
+    },
+    "structure/sources/text/passage.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-opening-dialogue.json": {
+     "bytes": 2150,
+     "sha256": "182e4acce33bcb17617bffffc2cbf36fb687e35d1dbf9ac1fd10ee20c78309ea"
+    },
+    "structure/sources/text/passage.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-post-sanctus.json": {
+     "bytes": 2762,
+     "sha256": "89411356b633a3f6ab0bccbf62ca23530dc6000d5af4ba7a04f4015a7f5f0f32"
+    },
+    "structure/sources/text/passage.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-preface-and-sanctus.json": {
+     "bytes": 3853,
+     "sha256": "cffa623f516628612fa9bee91c2077ac809fc4ce3a3a809e527adb06c0600beb"
     },
     "structure/sources/text/passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.epiph-02.postcommunion.json": {
      "bytes": 1235,
@@ -110109,6 +110641,46 @@
      "bytes": 1484,
      "sha256": "834ad45eefa81f5f395f9c88e848eeee957afb6373401705d29759c7e9ddc19e"
     },
+    "structure/sources/text/passage.holy-see.euchologion.1754-rome-propaganda.chrysostom-anaphora-01-opening-dialogue.json": {
+     "bytes": 2137,
+     "sha256": "51d1b0b78b7d33be22e0c55b37fd5ed1e66a6d3819eb6171534a26a1724a1384"
+    },
+    "structure/sources/text/passage.holy-see.euchologion.1754-rome-propaganda.chrysostom-anaphora-02-preface-thanksgiving.json": {
+     "bytes": 2935,
+     "sha256": "c5c31282eb0d44079596f018ace5ed9f2ecce95e6fdd82fea040c602b9ee496d"
+    },
+    "structure/sources/text/passage.holy-see.euchologion.1754-rome-propaganda.chrysostom-anaphora-03-sanctus-and-asterisk.json": {
+     "bytes": 1613,
+     "sha256": "f92a672edc4db2296f84a36490ae542e24853cb1760f55049944f45890313658"
+    },
+    "structure/sources/text/passage.holy-see.euchologion.1754-rome-propaganda.chrysostom-anaphora-04-post-sanctus-institution.json": {
+     "bytes": 3621,
+     "sha256": "175a8132c47fb1b5c1084f85727f35847b4d38b8e3b64d15d61d9a8ae8513907"
+    },
+    "structure/sources/text/passage.holy-see.euchologion.1754-rome-propaganda.chrysostom-anaphora-05-anamnesis-oblation.json": {
+     "bytes": 1812,
+     "sha256": "1b873c4fd5b681d302328833eeec9a72e3f1b1e89f9b477b225d7b9393fab2f9"
+    },
+    "structure/sources/text/passage.holy-see.euchologion.1754-rome-propaganda.chrysostom-anaphora-06-epiclesis.json": {
+     "bytes": 3854,
+     "sha256": "0bab37dd245535370cc715bd5e6250b740e196daec140d8805af036f124a1a07"
+    },
+    "structure/sources/text/passage.holy-see.euchologion.1754-rome-propaganda.chrysostom-anaphora-07-commemoration-of-saints.json": {
+     "bytes": 2573,
+     "sha256": "e309b4cd324ca4dab936a65257dba068a4567354aec6173b4e38c9bb5610c255"
+    },
+    "structure/sources/text/passage.holy-see.euchologion.1754-rome-propaganda.chrysostom-anaphora-08-intercessions-dead-and-church.json": {
+     "bytes": 3896,
+     "sha256": "771140a489fc204b19362223da0037a6dd0e1e5ff1709735808b6105bc9044f0"
+    },
+    "structure/sources/text/passage.holy-see.euchologion.1754-rome-propaganda.chrysostom-anaphora-09-intercessions-hierarch-and-living.json": {
+     "bytes": 2911,
+     "sha256": "b7d27ab0105581ad932cb8a64ba7bdf614f52bc326bca8beb134ead6f58c58ec"
+    },
+    "structure/sources/text/passage.holy-see.euchologion.1754-rome-propaganda.chrysostom-anaphora-10-concluding-doxology-and-blessing.json": {
+     "bytes": 1878,
+     "sha256": "a931b84b0e3bae4439da48006cf3bc036580bf302628601a5b64cdb4ecf71a22"
+    },
     "structure/sources/text/passage.holy-see.euchologion.1754-rome-propaganda.chrysostom-anaphora-anamnesis-oblation.json": {
      "bytes": 1664,
      "sha256": "bfc2381a6b6448a08869cf2751b4a48ce0cdcc95c6ee875b703161aede6c4ff1"
@@ -110180,6 +110752,46 @@
     "structure/sources/text/passage.holy-see.euchologion.1754-rome-propaganda.chrysostom-anaphora-sanctus.json": {
      "bytes": 1422,
      "sha256": "6da81558a65b3230f767c4491b1fd98410503ccbaefc65f6108ae056643d0b0c"
+    },
+    "structure/sources/text/passage.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-01-opening-dialogue.json": {
+     "bytes": 2395,
+     "sha256": "d95deb5c9ffda92d3c77de03da9e9536c31d851b8e35fc45e99a71616d27bdb6"
+    },
+    "structure/sources/text/passage.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-02-preface-thanksgiving.json": {
+     "bytes": 2958,
+     "sha256": "94ee7e12f8d12ae0560dec060da54520b58f659610add7b55270c06d1cdb1a87"
+    },
+    "structure/sources/text/passage.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-03-sanctus-and-asterisk.json": {
+     "bytes": 1965,
+     "sha256": "3b97f88061214d1ab1366163fbd16ea371fd1fbb123ea6761195c2617d23e1a7"
+    },
+    "structure/sources/text/passage.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-04-post-sanctus-institution.json": {
+     "bytes": 3617,
+     "sha256": "376347e5a8a81d5b385284c2fb2e851aba58060187b6c125b4e8320a17b41a7f"
+    },
+    "structure/sources/text/passage.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-05-anamnesis-oblation.json": {
+     "bytes": 2048,
+     "sha256": "1857ffaecda7d5d7fb3cb4e631443e6ae9c8cd43150133dcf72a69871978a21b"
+    },
+    "structure/sources/text/passage.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-06-epiclesis.json": {
+     "bytes": 4418,
+     "sha256": "c99f99fd910a5c7138ef2fb056454140c7e34fb84cd2d5a3a70fa6d1e8312a5d"
+    },
+    "structure/sources/text/passage.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-07-commemoration-of-saints.json": {
+     "bytes": 3169,
+     "sha256": "b03de3e15c9f27e718a1f5fe9ffe02a32031b6f19cf4c82aee7e666e6d5bbd92"
+    },
+    "structure/sources/text/passage.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-08-intercessions-dead-and-church.json": {
+     "bytes": 3913,
+     "sha256": "6134976b02724787a18c3ba36bd9ae49a821ae7f4378e0bf1e98c24a23ef7384"
+    },
+    "structure/sources/text/passage.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-09-intercessions-hierarch-and-living.json": {
+     "bytes": 3065,
+     "sha256": "dd3788ca1faaf4175693df2a16af972fcbac759e619be190aa0f42cfe2012c34"
+    },
+    "structure/sources/text/passage.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-10-concluding-doxology-and-blessing.json": {
+     "bytes": 2001,
+     "sha256": "f2603c085fe8bbef219e691b3b41765fb6fd76bbe62e2c88d3ea3b7fb12209e5"
     },
     "structure/sources/text/passage.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-anamnesis-oblation.json": {
      "bytes": 1685,
@@ -111500,6 +112112,46 @@
     "structure/sources/text/passage.mansi.sacrorum-conciliorum-collectio.florence-1759-tomus-3.tomus-3-coll-633-635.json": {
      "bytes": 2210,
      "sha256": "4e4979ed73e36e0e24aad2db59bc9e4bcf0e1b679b1e72906f41328bba0e87cb"
+    },
+    "structure/sources/text/passage.maronite-church.qurbono.1594-rome-medici.anaphora-01-opening-dialogue.json": {
+     "bytes": 1276,
+     "sha256": "00bafa62ea260c16e7339da1e5375f4a710029ff61ae5f7643eea9f4a6750358"
+    },
+    "structure/sources/text/passage.maronite-church.qurbono.1594-rome-medici.anaphora-02-institution-bread.json": {
+     "bytes": 1531,
+     "sha256": "76ea6f9a9554df84748d20f7b3fafed1bd43fd96d74982e489f13e69d37903ca"
+    },
+    "structure/sources/text/passage.maronite-church.qurbono.1594-rome-medici.anaphora-03-institution-chalice.json": {
+     "bytes": 1630,
+     "sha256": "dbe0fcb70b652bebdfcaa715a2b0f02530ab6fa60943dd70186092e2b5d3585c"
+    },
+    "structure/sources/text/passage.maronite-church.qurbono.1594-rome-medici.anaphora-04-epiclesis-call.json": {
+     "bytes": 1257,
+     "sha256": "59ee4d1d1816c10a683d7fd1becbad49f1eb7b9b53f254312df9bb1123e5a52a"
+    },
+    "structure/sources/text/passage.maronite-church.qurbono.1594-rome-medici.anaphora-05-epiclesis-consecration.json": {
+     "bytes": 1454,
+     "sha256": "ca744b7581681fe06f910d1a9a7d45e4e054e8f51e9164be71bdae5059982ebf"
+    },
+    "structure/sources/text/passage.maronite-church.qurbono.1908-beirut-maronite-press-second-printing.anaphora-01-opening-dialogue.json": {
+     "bytes": 1739,
+     "sha256": "237a7bfd90b8814d5bbbb94a9849fa86f3507c7fb9cf1b56bcc66b4f195d5270"
+    },
+    "structure/sources/text/passage.maronite-church.qurbono.1908-beirut-maronite-press-second-printing.anaphora-02-institution-bread.json": {
+     "bytes": 1693,
+     "sha256": "bffe52fa24d8475b5ce94809e4f91654af9c1cfb807b5d3c64a84d4137210b97"
+    },
+    "structure/sources/text/passage.maronite-church.qurbono.1908-beirut-maronite-press-second-printing.anaphora-03-institution-chalice.json": {
+     "bytes": 1783,
+     "sha256": "76a8433298c11e8bfa7065d7fb8e1efda92c8f38b2874b7f8d03bbb884ec7120"
+    },
+    "structure/sources/text/passage.maronite-church.qurbono.1908-beirut-maronite-press-second-printing.anaphora-04-epiclesis-call.json": {
+     "bytes": 1533,
+     "sha256": "057738a09c8bbbce2f2b08fe7d9f6bd3f15bc6cf6f3e345ff286126ab4ae0a3e"
+    },
+    "structure/sources/text/passage.maronite-church.qurbono.1908-beirut-maronite-press-second-printing.anaphora-05-epiclesis-consecration.json": {
+     "bytes": 1598,
+     "sha256": "6070b6c4f44462eddd67f3832e5478e929b630254ceacd2ec8133d41d7c2e72f"
     },
     "structure/sources/text/passage.martin-luther.lectures-on-genesis.lenker-minneapolis-1904.genesis-1.json": {
      "bytes": 193285,
@@ -113756,6 +114408,86 @@
     "structure/sources/text/passage.suetonius.de-vita-caesarum.english-rolfe-loeb-lacuscurtius-web-2026-07-25.nero-22.2.json": {
      "bytes": 1031,
      "sha256": "4f724afc8cdec34b86bc999f1e85922cbe5ed91e974fd2fdc4f16fd9010224b2"
+    },
+    "structure/sources/text/passage.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-01-preface.json": {
+     "bytes": 2275,
+     "sha256": "c2b5347f928e0b1a7c05866123d3938d7ab1aaa266363453bf1f06ca07c4c208"
+    },
+    "structure/sources/text/passage.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-02-sanctus.json": {
+     "bytes": 1253,
+     "sha256": "5cf68f9a5db7fa9ddbab4925d84164cc85e0fb4a6d6e80619c180f9e1df4fa0c"
+    },
+    "structure/sources/text/passage.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-03-post-sanctus.json": {
+     "bytes": 2384,
+     "sha256": "bfddd8a4d13fd618242a1aa540230956c8ef5cd917fe2a003fc241cd02e8a70d"
+    },
+    "structure/sources/text/passage.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-04-institution-narrative.json": {
+     "bytes": 2343,
+     "sha256": "314e16edf66ea152724a36012ec391282b9d521d60f5ec29a380f8489502613e"
+    },
+    "structure/sources/text/passage.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-05-anamnesis.json": {
+     "bytes": 2599,
+     "sha256": "973886fc55bc1e8009c91d552fc2b3d403fbc6e1b69ee514bbcd2765bbac70ce"
+    },
+    "structure/sources/text/passage.syriac-catholic-church.missale-syriacum.1843-rome-propaganda.anaphora-06-epiclesis.json": {
+     "bytes": 2558,
+     "sha256": "535510a09ff2df3faeec8f948ba3a6c7475c4db6529127f00dfb7611022b4856"
+    },
+    "structure/sources/text/passage.syriac-catholic-church.missale-syriacum.1922-sharfeh-patriarchal.anaphora-01-preface.json": {
+     "bytes": 2342,
+     "sha256": "32fc50becdffd296f3d38576ecf9e31803f39077b19def97250b0063c6c2da35"
+    },
+    "structure/sources/text/passage.syriac-catholic-church.missale-syriacum.1922-sharfeh-patriarchal.anaphora-02-sanctus.json": {
+     "bytes": 1347,
+     "sha256": "d11da94dbff1d2164825cc208ecbc4d3337bc52d835091cb742f24af15530ef6"
+    },
+    "structure/sources/text/passage.syriac-catholic-church.missale-syriacum.1922-sharfeh-patriarchal.anaphora-03-post-sanctus.json": {
+     "bytes": 2389,
+     "sha256": "68695b1d54bef13566a665b50619c10914973a38b5620f076e630744c5dedefc"
+    },
+    "structure/sources/text/passage.syriac-catholic-church.missale-syriacum.1922-sharfeh-patriarchal.anaphora-04-institution-narrative.json": {
+     "bytes": 2331,
+     "sha256": "678e1cef43bea15fa194d504b3f18d35cac588f86333ead4d98825e8fa8db11c"
+    },
+    "structure/sources/text/passage.syriac-catholic-church.missale-syriacum.1922-sharfeh-patriarchal.anaphora-05-anamnesis.json": {
+     "bytes": 2502,
+     "sha256": "fbd5eb756589acd2b74dfb965eb16a29c7f67b39e39bf7e6c4d5cfd25462ed80"
+    },
+    "structure/sources/text/passage.syriac-catholic-church.missale-syriacum.1922-sharfeh-patriarchal.anaphora-06-epiclesis.json": {
+     "bytes": 2637,
+     "sha256": "945de6dc2c6db209c46adf782a745802cd2ae633f4c4b03522064059548e325a"
+    },
+    "structure/sources/text/passage.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.addai-mari-01-opening-dialogue.json": {
+     "bytes": 1744,
+     "sha256": "a3ce088338d63f497b306c12e709521254c0121b72639f4031180adcec6a09dd"
+    },
+    "structure/sources/text/passage.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.addai-mari-02-preface-gehanta-1.json": {
+     "bytes": 2103,
+     "sha256": "e2e6b1c29b3ce910cd471f37f44c6ef3eb7c9190e6cac9996fc7818dc76e9f0a"
+    },
+    "structure/sources/text/passage.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.addai-mari-03-sanctus.json": {
+     "bytes": 1370,
+     "sha256": "fd080f5353f7d0814f13c9bbfe357b35a1a19091a96c644a5b5e79b7de11dca7"
+    },
+    "structure/sources/text/passage.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.addai-mari-04-post-sanctus-gehanta-2.json": {
+     "bytes": 2073,
+     "sha256": "0676d3a2ee0a940759121c34ddd8dce90af2e77180d575e862887bdd34fa769a"
+    },
+    "structure/sources/text/passage.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.addai-mari-05-intercession-gehanta-3.json": {
+     "bytes": 2367,
+     "sha256": "3c4314535912832c1b2e685295105d4e25c0095bd9ed6c57f6980f9d889d7b7e"
+    },
+    "structure/sources/text/passage.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.addai-mari-06-anamnesis-oblation.json": {
+     "bytes": 1812,
+     "sha256": "3cef6f347e0460c2820f2348b17a936e16a7db627acf4acd2c0fd500de919bbf"
+    },
+    "structure/sources/text/passage.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.addai-mari-07-epiclesis-and-qanona.json": {
+     "bytes": 2096,
+     "sha256": "3c2abc260d6622a6257ba509910dce1e7b75db66e74162682278db984bee2c48"
+    },
+    "structure/sources/text/passage.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.addai-mari-08-institution-narrative.json": {
+     "bytes": 2181,
+     "sha256": "41721c9c471302a5505d591d680b048c3ac7442c8ceb8a2285c41846e190d886"
     },
     "structure/sources/text/passage.teresa-of-avila.libro-de-la-vida.lewis-zimmerman-1904.32.6-11.json": {
      "bytes": 8766,
@@ -120864,17 +121596,17 @@
    },
    "id": "sources",
    "inputs": {
-    "content": "905400716e4f571fe57d47e7f18b5bb636c85d3ecd47a289e3c68bb96dbe80c5",
-    "count": 81001,
+    "content": "e419232d1ba42a095a7f99d04964d7f6f7e923a4315fb35b23d127bd7e5ddffb",
+    "count": 81264,
     "generator": "9d20860b07840439d1bc12a04152c531b9b77e3ebaf7b98f740e6b7819005d7b",
     "lock": "62ed728e10b17c7b6dfeb6374c13b017114a326e33d3fc30e66f4b6576f87306",
-    "membership": "5342d378835aa95e56dab6867cfbb1e3d555ae7af42a801d42dc5ebcf3683446",
-    "rights": "06cd8c105f20f017d72234e90c310d91f3c18a3b9fa8ff1f78ba602edf83c888",
+    "membership": "fc623f5aab5d474c784dfef50baee013ae0ae4f1877a23b4b37fa1950c6f0d9d",
+    "rights": "16242189d02ad8e7583b3df746eaee8c6f37a5715c4f4f23acba2d52fd8dce99",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "544fee39e2769539c6df85e34e339a783ec5760c7c7f38e5fd0f1c39c588beeb"
+    "sha256": "bf403747f59b392442aac9e89c5d21b24302cb6cd89f5a7a94c4c26f783a59be"
    },
-   "key": "e1ca2183c1a0c04ba15c7c031a43e927286d11a042e3b321f636c05de80ea02d",
-   "path_set_sha256": "528823c22e7b93ab34228a95ecf6917d591b251bb481aed1659099841bbf26d9"
+   "key": "4e6d21413268dc8141590cc4623c15ca4f714a213c0fb3e7b002c5dc6d76f6e0",
+   "path_set_sha256": "8efc16e532b965af6bfc07d385e04739b02de1795c2b5040ebcf68f174f086a8"
   },
   {
    "bytes": 28319233,
@@ -122071,16 +122803,16 @@
    },
    "id": "web-editions",
    "inputs": {
-    "content": "3806b5438616f8ce53c1c8c86465e034f90cf140eefad491e0db5e1a6068d89c",
-    "count": 81384,
+    "content": "10a28eb7e8b2be0d180ed5c7eff62a33159d15ccd3373e028d5408ae2ffd8c1c",
+    "count": 81647,
     "generator": "4d3aed5b4509456f81a299a78a1ee336cc4181cd13d63cbd9440eef0ecf1e7cb",
     "lock": "62ed728e10b17c7b6dfeb6374c13b017114a326e33d3fc30e66f4b6576f87306",
-    "membership": "bdcb4d2ea9b574a97d70ba665d35a1627160fd0409c16a1fac44697fcca01670",
-    "rights": "28f43b3ee5bd200154316610c570e61ac9c600ea505a81dc801de5218f0f708c",
+    "membership": "d7a9521b1e7636065fc6c8c83bc1fac15f5f3df37d83271dd6d0b62958956918",
+    "rights": "65e1979a207d24b8d513cab507061a7bb02742cb7a90a9742f46fd10caa9fb7c",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "a765c5ffd338e1abf84d6f3e7c3feef8f58f9e143c11f2e15166c2cf598eefaf"
+    "sha256": "5764ce37fc1bfbf6d5c5a3683328142f8f144a4fb303f4940b391a73c25ae1ca"
    },
-   "key": "64a4dd1ca4b7c281b600f848b1e038b3ed82c7bf11992d7097c455ad35febd75",
+   "key": "d2d53f6996d2640933e65824153e3808336b5c0d3b526823b7b5533da173802b",
    "path_set_sha256": "1851fe42264913028fab21614d8cf1ca59f8f1a3a92c32a6671c15fe8bcf0d89"
   }
  ],
