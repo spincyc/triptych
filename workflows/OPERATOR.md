@@ -518,8 +518,32 @@ operation-handle and artifact-path policies in that fixed order, with original
 and archived file hashes and per-policy JSON-pointer counts. `record.md`
 declares the derivative. The verified native run, packets and acceptance remain
 unchanged. Without this option, existing default exports and schema-1/2
-derivatives retain their behavior and bytes. Archive tooling changes belong
-after terminal acceptance, not inside a live sealed run.
+derivatives retain their behavior and bytes.
+
+`--redact-worker-scratch DIR` is a fourth, independent opt-in. It is for the
+worker scratch directory the driver assigns outside the checkout, which results
+may name: in notes, or in fields such as `validation.worker_logs`.
+- DIR must be an existing absolute directory that is neither the repository,
+  inside it, nor an ancestor of it.
+- Where DIR begins a path token in any string of a retained result, outside
+  source URLs, it becomes `<worker-scratch>`.
+- A path that traverses out of DIR refuses, and so does every other absolute
+  path, sibling prefixes included.
+- Packets, seeds, interventions and terminal reports are never rewritten.
+
+Receipt schema 4 lists the enabled policies in fixed order: notes path,
+operation handle, artifact path, worker scratch. It records every changed JSON
+pointer with its count, and the original and archived hashes, without
+recording DIR itself. Because DIR is not recorded, an archive made with this
+option is reproduced by passing the same DIR again. The test suite's
+committed-archive reproduction covers schemas 1 to 3 only.
+
+The privacy audit treats an angle-bracketed template root such as
+`<document_root>/` or `<worker scratch>/` as prose, not as a machine path.
+
+Archive tooling changes belong after terminal acceptance, not inside a live
+sealed run. The worker-scratch option was added after run `77c1ca91ef2d5e93`
+reached ACCEPTED, for the paths its workers left in `validation.worker_logs`.
 
 While a run is live, land nothing that its stages do not own. The
 `proper-study-v4` and `proper-study-v5` research seals cover every module the chronology

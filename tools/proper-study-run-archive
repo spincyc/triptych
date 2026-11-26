@@ -82,9 +82,17 @@ ARTIFACT_PATH_POLICY = "repository-root-prefix-in-result-artifact-path-v1"
 ARTIFACT_PATH_OPERATION = (
     "remove current repository root plus separator from a canonical top-level result artifact_path"
 )
+WORKER_SCRATCH_POLICY = "declared-worker-scratch-prefix-in-result-strings-v1"
+WORKER_SCRATCH_PLACEHOLDER = "<worker-scratch>"
+WORKER_SCRATCH_OPERATION = (
+    "replace the declared worker scratch directory, which lies outside the repository, "
+    "with <worker-scratch> where it begins a path token in any retained result string"
+)
 OPERATION_HANDLE = re.compile(r"\baggregate\s+session\s*[0-9]+\b", re.I)
 HTTP_URL = re.compile(r"https?://[^\s<>\"'`]+", re.I)
-PLACEHOLDER_PATH = re.compile(r"<[A-Za-z_][A-Za-z0-9_-]*>/[^\s<>\"'`]*")
+# A template root such as <repo>/ or <worker scratch>/ is prose, not a machine
+# path; single spaces between name words are allowed, nothing else.
+PLACEHOLDER_PATH = re.compile(r"<[A-Za-z_][A-Za-z0-9_-]*(?: [A-Za-z0-9_-]+)*>/[^\s<>\"'`]*")
 FILESYSTEM_PATH = re.compile(
     r"(?<![\w./\\])/+[^/\s\"'`<>()[\]{},;|\\][^\s\"'`<>()[\]{},;|\\]*"
     r"|(?<!\w)[A-Za-z]:[\\/]"
@@ -475,14 +483,80 @@ def relative_artifact_path(value: str, root: Path) -> tuple[str, int]:
     return suffix, 1
 
 
+def worker_scratch_directory(root: Path, value: str) -> str:
+    """The driver's declared worker scratch directory, checked before any replacement.
+
+    Workers write probes and logs to a scratch directory the driver assigns
+    outside the checkout, and some results name it. The directory must exist,
+    be absolute, and be neither the repository, inside it, nor an ancestor of
+    it, so that the placeholder can never stand for a repository path.
+    """
+    if not value or not os.path.isabs(value) or "\0" in value:
+        raise ArchiveError("--redact-worker-scratch must name an absolute directory")
+    directory = os.path.normpath(value)
+    if directory in ("/", "//") or not Path(directory).is_dir():
+        raise ArchiveError("--redact-worker-scratch must name an existing directory")
+    repository = root.resolve()
+    for candidate in {Path(directory), Path(directory).resolve()}:
+        if (candidate == repository or candidate.is_relative_to(repository)
+                or repository.is_relative_to(candidate)):
+            raise ArchiveError("--redact-worker-scratch must name a directory outside the "
+                               "repository that does not contain it")
+    return directory
+
+
+def redact_worker_scratch(value: str, directory: str) -> tuple[str, int]:
+    """Replace the declared scratch directory where it begins a path token."""
+    pattern = re.compile(r"(?<![\w./\\])" + re.escape(directory)
+                         + r"(?=/|$|[\s\"'`<>()[\]{},;|\\])")
+
+    def placeholder(match):
+        suffix = re.match(r"[^\s\"'`<>()[\]{},;|\\]*", match.string[match.end():]).group()
+        if ".." in suffix.split("/"):
+            raise ArchiveError("a worker scratch path leaves the declared directory; "
+                               "no derivative was written")
+        return WORKER_SCRATCH_PLACEHOLDER
+
+    pieces, count, start = [], 0, 0
+    for match in HTTP_URL.finditer(value):
+        text, changed = pattern.subn(placeholder, value[start:match.start()])
+        pieces.extend((text, match.group()))
+        count += changed
+        start = match.end()
+    text, changed = pattern.subn(placeholder, value[start:])
+    return "".join([*pieces, text]), count + changed
+
+
+def redact_worker_scratch_tree(value, pointer: str, directory: str, changed: list) -> object:
+    """Apply the worker-scratch policy to every string of a result, recording pointers."""
+    if isinstance(value, str):
+        redacted, count = redact_worker_scratch(value, directory)
+        if count:
+            changed.append({"json_pointer": pointer, "replacements": count,
+                            "policy": WORKER_SCRATCH_POLICY})
+        return redacted
+    if isinstance(value, list):
+        return [redact_worker_scratch_tree(item, f"{pointer}/{index}", directory, changed)
+                for index, item in enumerate(value)]
+    if isinstance(value, dict):
+        return {key: redact_worker_scratch_tree(
+                    item, pointer + "/" + key.replace("~", "~0").replace("/", "~1"),
+                    directory, changed)
+                for key, item in value.items()}
+    return value
+
+
 def derivative(root: Path, archive: Archive, files: dict[str, bytes], *,
                redact_repository_paths: bool = True,
                redact_operation_handles: bool = False,
-               relativize_artifact_paths: bool = False) -> tuple[dict[str, bytes], dict]:
+               relativize_artifact_paths: bool = False,
+               worker_scratch: str | None = None) -> tuple[dict[str, bytes], dict]:
     """An explicit public derivative of verified native bytes, never a new verdict."""
     output = dict(files)
     changes = {}
     prefix = root.resolve().as_posix() + "/"
+    per_policy = (redact_operation_handles or relativize_artifact_paths
+                  or worker_scratch is not None)
     operations = []
     if redact_repository_paths:
         operations.append((REDACTION_POLICY, PATH_OPERATION,
@@ -506,7 +580,7 @@ def derivative(root: Path, archive: Archive, files: dict[str, bytes], *,
                 redacted, count = transform(redacted)
                 if count:
                     change = {"json_pointer": pointer, "replacements": count}
-                    if redact_operation_handles or relativize_artifact_paths:
+                    if per_policy:
                         change["policy"] = policy
                     changed.append(change)
             if redacted == value:
@@ -521,6 +595,8 @@ def derivative(root: Path, archive: Archive, files: dict[str, bytes], *,
                 data["artifact_path"] = relative
                 changed.append({"json_pointer": "/artifact_path", "replacements": count,
                                 "policy": ARTIFACT_PATH_POLICY})
+        if worker_scratch is not None:
+            data = redact_worker_scratch_tree(data, "", worker_scratch, changed)
         if changed:
             output[row.result_file] = (json.dumps(data, ensure_ascii=False, sort_keys=True,
                                                  indent=2) + "\n").encode("utf-8")
@@ -534,14 +610,18 @@ def derivative(root: Path, archive: Archive, files: dict[str, bytes], *,
                    "archived_sha256": sha256(output[name]), "changes": changes.get(name, [])}
                   for name in sorted(files)],
     }
-    if redact_operation_handles or relativize_artifact_paths:
-        receipt["schema"] = 3 if relativize_artifact_paths else 2
+    if per_policy:
+        receipt["schema"] = (4 if worker_scratch is not None
+                             else 3 if relativize_artifact_paths else 2)
         del receipt["policy"], receipt["operation"]
         receipt["operations"] = [{"policy": policy, "operation": description}
                                  for policy, description, _transform in operations]
         if relativize_artifact_paths:
             receipt["operations"].append(
                 {"policy": ARTIFACT_PATH_POLICY, "operation": ARTIFACT_PATH_OPERATION})
+        if worker_scratch is not None:
+            receipt["operations"].append(
+                {"policy": WORKER_SCRATCH_POLICY, "operation": WORKER_SCRATCH_OPERATION})
     return output, receipt
 
 
@@ -571,6 +651,21 @@ def record_text(archive: Archive, cycles: str, receipt: dict | None = None) -> s
                           "top-level `notes` strings with `<operation-handle>`")
         scopes.append("removal of current-repository-root prefixes in canonical "
                       "top-level `artifact_path` strings")
+        redaction_note = "The only permitted changes are " + "; ".join(scopes) + ". "
+    elif receipt is not None and receipt["schema"] == 4:
+        policies = {operation["policy"] for operation in receipt["operations"]}
+        scopes = []
+        if REDACTION_POLICY in policies:
+            scopes.append("removal of current-repository-root prefixes in top-level `notes` strings")
+        if OPERATION_HANDLE_POLICY in policies:
+            scopes.append("replacement of recognized `aggregate session` decimal handles in "
+                          "top-level `notes` strings with `<operation-handle>`")
+        if ARTIFACT_PATH_POLICY in policies:
+            scopes.append("removal of current-repository-root prefixes in canonical "
+                          "top-level `artifact_path` strings")
+        scopes.append("replacement of the driver's declared worker scratch directory, outside "
+                      "the repository, with `<worker-scratch>` where it begins a path in any "
+                      "result string")
         redaction_note = "The only permitted changes are " + "; ".join(scopes) + ". "
     lines = [
         "# Actual engine results",
@@ -691,12 +786,15 @@ def shown(root: Path, path: Path) -> str:
 def archive_run(root: Path, run_id: str, cycles: str, output: str | None,
                 *, redact_repository_paths: bool = False,
                 redact_operation_handles: bool = False,
-                relativize_artifact_paths: bool = False) -> tuple[Path, Archive]:
+                relativize_artifact_paths: bool = False,
+                redact_worker_scratch: str | None = None) -> tuple[Path, Archive]:
     if Path(cycles).is_absolute() or ".." in PurePosixPath(cycles).parts or not cycles:
         raise ArchiveError(
             "--cycles must be a repository-relative path, because record.md is "
             f"tracked and names it: {cycles!r}"
         )
+    scratch = (worker_scratch_directory(root, redact_worker_scratch)
+               if redact_worker_scratch is not None else None)
     archive = collect(root, run_id)
     dest = destination(root, archive, output)
     files = dict(archive.files)
@@ -707,11 +805,13 @@ def archive_run(root: Path, run_id: str, cycles: str, output: str | None,
             root, archive.proper, verb, archive.run_id, archive.disposition
         )
     receipt = None
-    if redact_repository_paths or redact_operation_handles or relativize_artifact_paths:
+    if (redact_repository_paths or redact_operation_handles or relativize_artifact_paths
+            or scratch is not None):
         files, receipt = derivative(root, archive, files,
                                     redact_repository_paths=redact_repository_paths,
                                     redact_operation_handles=redact_operation_handles,
-                                    relativize_artifact_paths=relativize_artifact_paths)
+                                    relativize_artifact_paths=relativize_artifact_paths,
+                                    worker_scratch=scratch)
         files[REDACTION_RECEIPT] = (json.dumps(receipt, ensure_ascii=False, sort_keys=True,
                                             indent=2) + "\n").encode("utf-8")
     else:
@@ -752,6 +852,11 @@ def main(argv: list[str] | None = None) -> int:
             "artifact_path naming a canonical current-repository descendant loses the\n"
             "exact checkout prefix. Traversal and symlink escapes refuse. Receipt schema 3\n"
             "records per-policy changes; without this flag schemas 1 and 2 stay unchanged.\n\n"
+            "--redact-worker-scratch DIR is a fourth opt-in: DIR, the driver's worker\n"
+            "scratch directory, must exist outside the checkout and must not contain it.\n"
+            "Where DIR begins a path token in any retained result string it becomes\n"
+            "<worker-scratch>; traversal out of DIR refuses, and other absolute paths\n"
+            "still refuse. Receipt schema 4 records every changed JSON pointer.\n\n"
             "--output DIR writes the same archive to DIR instead of the leaf, which\n"
             "is how an archive is checked: archive an already-archived run to a\n"
             "scratch directory and `diff -r` it against the committed copy."
@@ -786,6 +891,13 @@ def main(argv: list[str] | None = None) -> int:
         "record exact original/archived hashes and per-policy JSON pointers",
     )
     parser.add_argument(
+        "--redact-worker-scratch",
+        metavar="DIR",
+        help="replace DIR, the driver's worker scratch directory outside this checkout, with "
+        "<worker-scratch> where it begins a path in any retained result string; record "
+        "per-policy JSON pointers and hashes",
+    )
+    parser.add_argument(
         "--root",
         metavar="DIR",
         default=str(ROOT),
@@ -799,7 +911,8 @@ def main(argv: list[str] | None = None) -> int:
         dest, archive = archive_run(root, args.run_id, args.cycles, args.output,
                                     redact_repository_paths=args.redact_repository_paths,
                                     redact_operation_handles=args.redact_operation_handles,
-                                    relativize_artifact_paths=args.relativize_artifact_paths)
+                                    relativize_artifact_paths=args.relativize_artifact_paths,
+                                    redact_worker_scratch=args.redact_worker_scratch)
     except ArchiveError as error:
         print(f"{ERROR}{error}", file=sys.stderr)
         return 1

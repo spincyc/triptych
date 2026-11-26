@@ -610,6 +610,129 @@ class ArtifactPathDerivativeTests(Fixture):
         self.assertEqual(tree(self.run_dir), native)
 
 
+class WorkerScratchTests(Fixture):
+    """The driver's declared worker scratch directory, outside the checkout."""
+
+    def setUp(self) -> None:
+        super().setUp()
+        self.outside = tempfile.TemporaryDirectory(dir=self.root.parent)
+        self.workers = Path(self.outside.name) / "run01" / "workers"
+        self.workers.mkdir(parents=True)
+
+    def tearDown(self) -> None:
+        self.outside.cleanup()
+        super().tearDown()
+
+    def test_existing_options_still_refuse_worker_scratch_paths(self) -> None:
+        self.retained_result(validation={"worker_logs": f"{self.workers}/build-artifacts-0"})
+        for options in ({}, {"redact_repository_paths": True},
+                        {"redact_repository_paths": True, "redact_operation_handles": True,
+                         "relativize_artifact_paths": True}):
+            with self.subTest(options=options):
+                self.assertIn("private absolute filesystem path", self.refusal(**options))
+
+    def test_the_declared_directory_becomes_a_placeholder_in_any_result_string(self) -> None:
+        path, original = self.retained_result(
+            notes=f"Probes in {self.workers}/research-0/chron-base/. and "
+                  f"{self.workers}/research-0/fetch; see https://example.test/a/b.",
+            validation={"worker_logs": f"{self.workers}/build-artifacts-0 (check.json, rerun.log)",
+                        "passed": True},
+            review_inputs={"files": {"src/sources/work.toml": "b" * 64}})
+        native, original_bytes = tree(self.run_dir), path.read_bytes()
+        dest = self.archived(redact_worker_scratch=str(self.workers))
+        self.assertEqual(json.loads((dest / path.name).read_text()), {
+            **original,
+            "notes": "Probes in <worker-scratch>/research-0/chron-base/. and "
+                     "<worker-scratch>/research-0/fetch; see https://example.test/a/b.",
+            "validation": {"worker_logs": "<worker-scratch>/build-artifacts-0 (check.json, rerun.log)",
+                           "passed": True}})
+        self.assertEqual(tree(self.run_dir), native)
+        receipt = json.loads((dest / ARCHIVER.REDACTION_RECEIPT).read_text())
+        self.assertEqual((receipt["schema"], receipt["run_id"]), (4, RUN))
+        self.assertEqual(receipt["operations"], [
+            {"policy": ARCHIVER.WORKER_SCRATCH_POLICY,
+             "operation": ARCHIVER.WORKER_SCRATCH_OPERATION}])
+        row = next(item for item in receipt["files"] if item["path"] == path.name)
+        self.assertEqual(row, {
+            "path": path.name, "native_sha256": sha(original_bytes),
+            "archived_sha256": sha((dest / path.name).read_bytes()),
+            "changes": [
+                {"json_pointer": "/notes", "replacements": 2,
+                 "policy": ARCHIVER.WORKER_SCRATCH_POLICY},
+                {"json_pointer": "/validation/worker_logs", "replacements": 1,
+                 "policy": ARCHIVER.WORKER_SCRATCH_POLICY}]})
+        for item in receipt["files"]:
+            if item["path"] != path.name:
+                self.assertEqual(item["native_sha256"], item["archived_sha256"])
+        record = (dest / "record.md").read_text()
+        self.assertIn("`<worker-scratch>`", record)
+        self.assertIn(row["archived_sha256"], record)
+        private = str(self.outside.name).encode()
+        self.assertFalse(any(private in data for data in tree(dest).values()))
+
+    def test_policies_combine_in_fixed_order(self) -> None:
+        path, original = self.retained_result(
+            artifact_path=f"{self.root}/research/evidence.md",
+            notes=f"Read {self.root}/research/audit.md and {self.workers}/x.log; "
+                  "aggregate session12345.")
+        dest = self.archived(redact_repository_paths=True, redact_operation_handles=True,
+                             relativize_artifact_paths=True,
+                             redact_worker_scratch=str(self.workers))
+        self.assertEqual(json.loads((dest / path.name).read_text()), {
+            **original, "artifact_path": "research/evidence.md",
+            "notes": "Read research/audit.md and <worker-scratch>/x.log; <operation-handle>."})
+        receipt = json.loads((dest / ARCHIVER.REDACTION_RECEIPT).read_text())
+        self.assertEqual(receipt["schema"], 4)
+        self.assertEqual([row["policy"] for row in receipt["operations"]], [
+            ARCHIVER.REDACTION_POLICY, ARCHIVER.OPERATION_HANDLE_POLICY,
+            ARCHIVER.ARTIFACT_PATH_POLICY, ARCHIVER.WORKER_SCRATCH_POLICY])
+
+    def test_the_declared_directory_must_be_an_existing_external_absolute_directory(self) -> None:
+        inside = self.root / "inside"
+        inside.mkdir()
+        self.retained_result(notes=f"{self.workers}/x.log")
+        for value in ("run01/workers", str(self.workers / "absent"), str(self.root),
+                      str(inside), str(self.root.parent), "/"):
+            with self.subTest(value=value):
+                self.assertIn("--redact-worker-scratch", self.refusal(redact_worker_scratch=value))
+
+    def test_traversal_sibling_prefixes_and_other_paths_still_refuse(self) -> None:
+        sibling = Path(str(self.workers) + "-other")
+        sibling.mkdir()
+        for value in (f"{self.workers}/../elsewhere/x.log", f"{sibling}/x.log",
+                      f"{self.root.parent}/x.log", f"see {self.workers}/x.log and /etc/hosts"):
+            with self.subTest(value=value):
+                self.build()
+                self.retained_result(validation={"log": value})
+                self.refusal(redact_worker_scratch=str(self.workers))
+
+    def test_reproduction_is_deterministic_and_preserves_native_state(self) -> None:
+        self.retained_result(validation={"worker_logs": f"{self.workers}/b"})
+        before = tree(self.run_dir)
+        first = self.archived(output=self.root / "first", redact_worker_scratch=str(self.workers))
+        second = self.archived(output=self.root / "second", redact_worker_scratch=str(self.workers))
+        self.assertEqual(tree(first), tree(second))
+        self.assertEqual(tree(self.run_dir), before)
+
+    def test_cli_wires_the_worker_scratch_policy(self) -> None:
+        path, _ = self.retained_result(validation={"worker_logs": f"{self.workers}/b"})
+        with mock.patch("builtins.print"):
+            result = ARCHIVER.main([RUN, "--cycles", CYCLES, "--root", str(self.root),
+                                    "--redact-worker-scratch", str(self.workers)])
+        self.assertEqual(result, 0)
+        self.assertEqual(json.loads((self.leaf_archive / path.name).read_text())
+                         ["validation"]["worker_logs"], "<worker-scratch>/b")
+
+    def test_a_spaced_template_root_is_prose_but_a_path_after_a_space_is_not(self) -> None:
+        path, _ = self.retained_result(notes="Proof: --out <worker scratch>/proof, 4 pages.")
+        original = path.read_bytes()
+        dest = self.archived(output=self.root / "first")
+        self.assertEqual((dest / path.name).read_bytes(), original)
+        self.build()
+        self.retained_result(notes="Proof: <worker scratch> /home/fixture/proof")
+        self.assertIn("private absolute filesystem path", self.refusal())
+
+
 class OperationHandleTests(Fixture):
     # Synthetic fixture identifiers, never live execution handles.
     handle = "aggregate session12345"
