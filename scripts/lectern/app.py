@@ -118,7 +118,7 @@ class Help(ModalScreen[None]):
         section("everywhere", (
             ("1 … 8", "switch surface: day, propers, catena, scripture, texts, sources, history, law"),
             ("tab, shift+tab", "move between panes"),
-            ("f", "show or hide navigation; on narrow screens, switch between navigation and reading"),
+            ("f", "show or hide navigation panes; on compact Day/Propers, switch between navigation and reading"),
             ("ctrl+p", "command palette: every surface and action, searchable"),
             ("T", "next theme: triptych, vellum, compline"),
             ("?", "this help"),

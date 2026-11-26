@@ -165,6 +165,28 @@ class CatenaAdapterTests(unittest.TestCase):
         with self.assertRaisesRegex(Refused, "verse selection is invalid"):
             bridge.call("catena", "body", "Phil", 1, "", ident, "21x")
 
+    def test_catena_view_carries_spans_verse_map_by_verse_order_and_human_recast(self) -> None:
+        mark = bridge.call("catena", "view", "Mark", 1, "douay-rheims", "")
+        self.assertTrue(mark["scripture"]["canonicalAligned"])
+        self.assertIsNotNone(mark["verse_commentary"])
+        self.assertEqual(mark["verse_commentary"]["count"], 45)
+        self.assertEqual(mark["chain"]["fragments"][0]["span"],
+                         {"start": 1, "end": 1, "crossesBefore": False, "crossesAfter": False})
+        self.assertEqual(sorted(mark["chain"]["by_verse_order"]),
+                         list(range(len(mark["chain"]["fragments"]))))
+        body = bridge.call("catena", "body", "Mark", 1, "", mark["chain"]["fragments"][1]["id"], "2-3")
+        self.assertFalse(body["missing"])
+        self.assertTrue(any(block["kind"] == "lemma" for block in body["blocks"]))
+        self.assertTrue(any(block["speaker"] for block in body["blocks"]))
+        self.assertTrue(body["snippets"])
+        self.assertTrue(body["snippets"][0]["blocks"])
+        # Under a recast shift (Psalm 50 -> KJV Psalm 51), verse_commentary is withheld and recast is humanized.
+        recast = bridge.call("catena", "view", "Ps", 50, "king-james-version", "")
+        self.assertFalse(recast["scripture"]["canonicalAligned"])
+        self.assertIsNone(recast["verse_commentary"])
+        self.assertIn("Psalm 51", recast["scripture"]["note"])
+        self.assertIn("Hebrew numbering", recast["scripture"]["note"])
+
 
 @unittest.skipUnless(NODE, "node is not installed; the reader's derivations run the browser's models under node")
 class LiturgyAdapterTests(unittest.TestCase):

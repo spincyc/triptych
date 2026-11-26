@@ -560,6 +560,41 @@ and distinguished the three Oxford excerpts of Bede at Luke 2:7 in both
 readers. Those excerpts share a printed locator; their checked textual bases
 identify the swaddling clothes, the manger and the inn.
 
+### Side-by-side reading, verse linkage and structured prose — 2026-11-26
+
+At `60rem` (960px) and above the Scripture column is now sticky and
+independently scrollable (`position: sticky`, `max-height: calc(100dvh - 2rem)`,
+`overflow-y: auto`) beside the commentary chain, so `1024×768` and wider
+viewports read Scripture alongside long commentary without losing the passage.
+When a chapter's displayed numbering matches its canonical Vulgate numbering
+directly (single native part, no recast note and no Rule 4 refusal), commented
+verses expose interactive `.verse-trigger` buttons that toggle `#verses=` focus,
+and opening or hovering a commentary fragment highlights and container-scrolls
+its canonical verse span in the Scripture pane without jumping outer page
+scroll. Under recast numbering or a Rule 4 refusal, no canonical verse numbers
+are stamped onto native text.
+
+Fragment bodies and reviewed snippets render through the shared fail-closed
+`CatenaModel.textBlocks` helper into `<blockquote class="fragment-lemma">`,
+`<p class="fragment-para">`, `<strong class="speaker-name">`,
+`<em class="lemma-transition">` and `<span class="ed-note">` nodes while
+preserving verbatim `textContent` across whitespace-only block separators.
+Single-author chapters (such as Aquinas's *Catena Aurea* chapters on Matthew
+and Mark) open their sole author group on arrival while multi-author chapters
+continue to arrive closed; a compact toolbar provides `By author` / `By verse`
+ordering and `Expand all` / `Collapse all`. Checked paired English stands after
+the original-language prose, left-aligned, without repeating the parent's author
+and work header. Verbose `Date —`, `Extent —` and deduplicated `Excerpt —`
+notes fold inside `Editorial & dating notes`, while licence acknowledgements
+stay above the prose and edition provenance stays visible beneath it. Passing
+the book token to `CatenaModel.paragraphPath` consults the paragraph manifest
+so unparagraphed chapters issue zero 404 requests.
+
+At this checkpoint, gzip-9 payloads measure **6,039 bytes** for `catena.css`
+(**4,474** declarations only) and **13,864 bytes** for `catena.js` (**13,507**
+without comments); the regression ceilings in `tools/tests/test_catena_production.py`
+are `6,400 / 4,700` and `14,600 / 14,200` bytes respectively (~5% headroom).
+
 ### Verse-specific excerpts within a held passage — 2026-11-08
 
 A long admitted fragment can carry reviewed internal Scripture links in

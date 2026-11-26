@@ -243,7 +243,8 @@ class PassageReadersTest(unittest.TestCase):
 
         async def settled(app, pilot):
             for _ in range(100):
-                if not any(not worker.is_finished for worker in app.workers):
+                if not app.starting and app.current() is not None and not any(
+                        not worker.is_finished for worker in app.workers):
                     await pilot.pause(0.05)
                     return
                 await pilot.pause(0.05)
@@ -253,6 +254,7 @@ class PassageReadersTest(unittest.TestCase):
             with patch.object(Catena, "start", lambda _: None), patch("lectern.bridge.call", side_effect=call):
                 app = TriptychApp(start="catena")
                 async with app.run_test(size=(140, 42)) as pilot:
+                    await settled(app, pilot)
                     owner = app.current()
                     owner.opened_with(opening)
                     await settled(app, pilot)
@@ -297,27 +299,38 @@ class PassageBrowserTest(unittest.TestCase):
         from ._product_data import browser_data_root
         from lectern.app import TriptychApp
         from lectern.surfaces.catena import Catena
-        from textual.widgets import OptionList
+        from textual.widgets import OptionList, Static
 
         data = browser_data_root()
-        request = {"id": 1, "adapter": "catena", "fn": "view",
-                   "args": ["Luke", 24, "douay-rheims", "translation:en", "50-53"]}
+        # Luke 24:50-53 holds Aquinas's English Catena Aurea; Bede on Luke gained a
+        # partial English counterpart so its absence moved to also_found.
+        luke_req = {"id": 1, "adapter": "catena", "fn": "view",
+                    "args": ["Luke", 24, "douay-rheims", "translation:en", "50-53"]}
+        luke_done = subprocess.run([NODE, str(ROOT / "scripts/lectern/bridge.js"), str(data)],
+                                   input=json.dumps(luke_req) + "\n", capture_output=True, text=True, check=True)
+        luke_reply = json.loads(luke_done.stdout)
+        self.assertTrue(luke_reply["ok"], luke_reply)
+        luke_view = luke_reply["value"]
+        self.assertEqual(len(luke_view["chain"]["fragments"]), 1)
+        self.assertIn("Aquinas", luke_view["chain"]["fragments"][0]["author"])
+
+        # Genesis 1:1-5 holds admitted English fragments alongside chapter translation
+        # research notes (including Bede's In principium Genesis).
+        request = {"id": 2, "adapter": "catena", "fn": "view",
+                   "args": ["Gen", 1, "douay-rheims", "translation:en", "1-5"]}
         done = subprocess.run([NODE, str(ROOT / "scripts/lectern/bridge.js"), str(data)],
                               input=json.dumps(request) + "\n", capture_output=True, text=True, check=True)
         reply = json.loads(done.stdout)
         self.assertTrue(reply["ok"], reply)
         view = reply["value"]
-        if not view.get("chain", {}).get("fragments"):
-            self.skipTest("Selected fixture predates the admitted Luke English fragment")
-        self.assertEqual(len(view["chain"]["fragments"]), 1)
-        self.assertIn("Aquinas", view["chain"]["fragments"][0]["author"])
+        self.assertGreater(len(view["chain"]["fragments"]), 0)
         self.assertTrue(any("Bede" in row["author"] for row in view["chain"]["absences"]["rows"]))
 
-        route = "/src/web/browser/catena/index.html?data=/src/web/data#book=Luke&chapter=24&bible=douay-rheims&voice=translation%3Aen&verses=50-53"
+        route = "/src/web/browser/catena/index.html?data=/src/web/data#book=Gen&chapter=1&bible=douay-rheims&voice=translation%3Aen&verses=1-5"
         seen = drive({"acts": [{"do": "navigate", "url": route},
             wait("document.querySelector('.author') && document.querySelector('.absence-note')"),
             act("({author:document.querySelector('.author').textContent,absence:document.querySelector('.absence-note').textContent,order:!!(document.querySelector('.author').compareDocumentPosition(document.querySelector('.absence-note')) & Node.DOCUMENT_POSITION_FOLLOWING)})", "order")]})["order"]
-        self.assertIn("Aquinas", seen["author"])
+        self.assertTrue(seen["author"].strip())
         self.assertIn("Bede", seen["absence"])
         self.assertTrue(seen["order"])
 
@@ -325,15 +338,28 @@ class PassageBrowserTest(unittest.TestCase):
             with patch.object(Catena, "start", lambda _: None):
                 app = TriptychApp(start="catena")
                 async with app.run_test(size=(140, 42)) as pilot:
+                    for _ in range(100):
+                        if not app.starting and app.current() is not None:
+                            break
+                        await pilot.pause(0.05)
                     owner = app.current()
                     owner.show(view)
                     await pilot.pause()
                     listing = owner.query_one("#catena-chain-list", OptionList)
                     rows = [listing.get_option_at_index(i) for i in range(listing.option_count)]
                     author = next(i for i, row in enumerate(rows) if row.id == "grp-0")
-                    absence = next(i for i, row in enumerate(rows) if "Bede" in str(row.prompt))
+                    absence = next(i for i, row in enumerate(rows) if row.id == "open-absences")
                     self.assertLess(author, absence)
                     self.assertEqual(owner.opened_groups, set())
+                    await pilot.press("a")
+                    await pilot.pause()
+                    self.assertTrue(owner.has_class("absences-shown"))
+                    notes = str(owner.query_one("#catena-absences-text", Static).render())
+                    self.assertIn("Bede", notes)
+                    # Single-author Luke 24:50-53 auto-opens its sole author group.
+                    owner.show(luke_view)
+                    await pilot.pause()
+                    self.assertEqual(owner.opened_groups, {0})
         asyncio.run(terminal())
 
     def test_real_keyboard_focus_history_bounds_and_lazy_source_text(self):

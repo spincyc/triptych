@@ -143,7 +143,7 @@ module.exports = function catena(realm) {
         chapter: (nativeBook, number) => T.loadChapter(bible.id, nativeBook, number),
         paragraphs: (nativeBook, number) => {
           const native = canon.books.find((one) => one.token === nativeBook);
-          const path = M.paragraphPath(paragraphs, bible.id, M.bag(native).path, number);
+          const path = M.paragraphPath(paragraphs, bible.id, M.bag(native).path, number, nativeBook);
           return path === null ? Promise.resolve({ unfetched: true })
             : path ? cached(path, ABSENT).then(
               (file) => (file === ABSENT ? undefined : file), () => ({ unfetched: true }))
@@ -175,9 +175,20 @@ module.exports = function catena(realm) {
       bible.label + '. The commentary keeps its canonical address.'
     ) : '';
 
+    const canonicalAligned = !!(
+      reading.ok &&
+      !refusal &&
+      !reading.note &&
+      reading.parts.length === 1 &&
+      reading.parts[0].book === book.token &&
+      reading.parts[0].chapter === chapter &&
+      !(book.token === 'Ps' && bible.psalm_titles === 'unnumbered')
+    );
+
     let scripture;
+    let lastCanonicalVerse = null;
     if (!reading.ok) {
-      scripture = { ok: false, problem: reading.problem };
+      scripture = { ok: false, problem: M.humanRefusal(reading.problem, bible.label), canonicalAligned: false };
     } else {
       const sections = reading.parts.map((part) => {
         const read = M.chapterReading(part.verses, part.marks);
@@ -193,13 +204,20 @@ module.exports = function catena(realm) {
         return { label: part.label, verseCount: read.lines.length,
           paragraphs: paragraphsOut, note: M.paragraphNote(read) };
       });
+      if (canonicalAligned && sections.length === 1 && sections[0].paragraphs.length) {
+        const lastPara = sections[0].paragraphs[sections[0].paragraphs.length - 1];
+        if (lastPara.verses.length) {
+          lastCanonicalVerse = lastPara.verses[lastPara.verses.length - 1].number;
+        }
+      }
       scripture = {
         ok: true, verseCount: sections.reduce((sum, part) => sum + part.verseCount, 0),
-        sections, note: reading.note,
+        sections, note: M.humanRecast(reading.note), canonicalAligned,
       };
     }
 
     let chain = null;
+    let verse_commentary = null;
     if (!missing) { // catena.js:425
       const all = M.chapterFragments(file);
       const shown = selection.visible;
@@ -227,17 +245,29 @@ module.exports = function catena(realm) {
         rights_basis: row.rights_basis, review: row.review, text_refused: row.text_refused,
         text_note: row.text_note,
         extent: M.formatExtent(row.extent, book.name),
+        span: M.fragmentChapterSpan(row, chapter),
         spans: M.spansChapters(row.extent),
         chip: M.languageChip(row),
         reviewNote: row.review && row.review !== 'verified' ? row.review + ', not collated' : '', // catena.js:369
       });
-      const fragments = M.commentaryGroups(shown).flatMap((group) => group.fragments).map((row) => ({
-        ...describe(row),
-        englishVersions: M.englishVersions(row, all).map(({ fragment, coverage, basis }) => ({
-          fragment: describe(fragment), coverage, basis,
-        })),
-      }));
-      chain = { heading, notes, total: all.length, shown: shown.length, absences, fragments,
+      const ordered = M.commentaryGroups(shown).flatMap((group) => group.fragments);
+      const indexOfRow = new Map(ordered.map((row, idx) => [row, idx]));
+      const by_verse_order = M.commentaryByVerse(ordered, chapter).map((row) => indexOfRow.get(row));
+      const fragments = ordered.map((row) => {
+        const versions = M.englishVersions(row, all);
+        const labels = M.englishVersionLabels(versions, book.name);
+        return {
+          ...describe(row),
+          englishVersions: versions.map(({ fragment, coverage, basis }, i) => ({
+            fragment: describe(fragment), coverage, basis, label: labels[i] || '',
+          })),
+        };
+      });
+      if (canonicalAligned) {
+        verse_commentary = M.verseCommentaryMap(ordered, chapter, lastCanonicalVerse);
+      }
+      chain = { heading, notes: M.dedupeNotes(notes), total: all.length, shown: shown.length,
+        absences, fragments, by_verse_order,
         authors: selection.authors, availability: selection.availability, contextNote: selection.contextNote };
     }
 
@@ -259,6 +289,7 @@ module.exports = function catena(realm) {
       tally: summary,
       refusal,
       scripture,
+      verse_commentary,
       chain,
       leads,
       blocked,
@@ -296,13 +327,22 @@ module.exports = function catena(realm) {
     const { canon } = await start();
     const book = canon.books.find((one) => one.token === token);
     const snippets = say.missing ? [] : M.matchingSnippets(content, token, chapter, verses).map((snippet) => ({
-      id: snippet.id, text: snippet.text, locator: snippet.locator, basis: snippet.basis,
+      id: snippet.id, text: snippet.text,
+      blocks: M.textBlocks(content, { start: snippet.start, end: snippet.end }),
+      start: snippet.start, end: snippet.end,
+      locator: snippet.locator, basis: snippet.basis,
       extent: M.formatExtent(snippet.extent, book.name),
     }));
+    const notes = say.missing ? [] : M.dedupeNotes(
+      [content.basis].concat(snippets.map((snippet) => snippet.basis))
+    );
     return {
       missing: say.missing,
       said: say.said,
+      text: say.missing ? '' : say.said,
+      blocks: say.missing ? [] : M.textBlocks(content),
       basis: say.missing ? '' : content.basis,
+      notes,
       date_basis: say.missing ? '' : content.date_basis,
       acknowledgement: content.present ? content.acknowledgement : '',
       acknowledgement_broken: content.present ? content.acknowledgement_broken : false,

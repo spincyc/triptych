@@ -120,6 +120,13 @@ class ReaderLayoutTests(unittest.IsolatedAsyncioTestCase):
         async with app.run_test(size=(140, 42)) as pilot:
             await self.settle(app, pilot)
             self.assertEqual(app.focused.id, "catena-chain-list")
+            # Tab switches directly from chain to Scripture in one keypress.
+            await pilot.press("tab")
+            await pilot.pause()
+            self.assertEqual(app.focused.id, "catena-scripture")
+            await pilot.press("shift+tab")
+            await pilot.pause()
+            self.assertEqual(app.focused.id, "catena-chain-list")
             await pilot.press("enter")
             await self.settle(app, pilot)
             self.assertIn("▾ Basil of Caesarea", _text(app, styles=False))

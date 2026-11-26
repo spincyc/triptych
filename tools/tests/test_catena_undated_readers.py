@@ -1,12 +1,13 @@
 """Explicitly undated commentary stays outside the dated chronological chain."""
 from pathlib import Path
+import asyncio
 import importlib.util
 import json
 import subprocess
 import sys
 import tempfile
 import unittest
-from unittest.mock import PropertyMock, patch
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[2]
 if __package__:
@@ -180,25 +181,44 @@ process.stdout.write(JSON.stringify({
 class UndatedTerminalTest(unittest.TestCase):
     def test_date_label_and_reason_survive_a_missing_text_without_duplication(self):
         sys.path.insert(0, str(ROOT / "scripts"))
-        from lectern.surfaces.catena import Catena
+        from lectern.app import TriptychApp
+        from lectern.surfaces.catena import Catena, FragmentReading
         row = {"id": "fixture.unknown", "author": "Test author", "work": "Test work", "date": None,
                "composition_date_status": "unestablished", "composition_date_basis": REASON_A,
                "locator": "Test location", "extent": "Genesis 1:1", "spans": False,
                "chip": "Latin — the author’s own", "text_words": 5, "edition": "Test witness",
                "edition_published": "", "translators": [], "rights": "public-domain",
                "attribution": "", "rights_basis": "", "reviewNote": ""}
-        owner = Catena()
-        owner.current = {"chain": {"fragments": [row]}}
-        screens = []
-        from types import SimpleNamespace
-        app = SimpleNamespace(push_screen=lambda screen, callback: screens.append(screen))
-        with patch.object(Catena, "app", new_callable=PropertyMock, return_value=app):
-            owner.open_reading(0, row, {"missing": True, "date_basis": REASON_A})
-        text = screens[0].body.plain
-        self.assertIn(LABEL, text)
-        self.assertEqual(text.count(REASON_A), 1)
-        self.assertIn("The text of this fragment could not be loaded.", text)
-        self.assertIn("source library: fixture.unknown", text)
+
+        async def exercise():
+            with patch.object(Catena, "start", lambda _: None):
+                app = TriptychApp(start="catena")
+                async with app.run_test(size=(140, 42)) as pilot:
+                    for _ in range(100):
+                        if not app.starting and app.current() is not None:
+                            break
+                        await pilot.pause(0.05)
+                    owner = app.current()
+                    self.assertIsNotNone(owner)
+                    owner.current = {"chain": {"fragments": [row]}}
+                    owner.open_reading(0, row, {"missing": True, "date_basis": REASON_A})
+                    await pilot.pause()
+                    docked = owner._reader_text
+                    for text in (docked,):
+                        self.assertIn(LABEL, text)
+                        self.assertEqual(text.count(REASON_A), 1)
+                        self.assertIn("The text of this fragment could not be loaded.", text)
+                        self.assertIn("source library: fixture.unknown", text)
+                    await pilot.press("z")
+                    await pilot.pause()
+                    self.assertIsInstance(app.screen, FragmentReading)
+                    zoomed = app.screen.body.plain
+                    self.assertIn(LABEL, zoomed)
+                    self.assertEqual(zoomed.count(REASON_A), 1)
+                    self.assertIn("The text of this fragment could not be loaded.", zoomed)
+                    self.assertIn("source library: fixture.unknown", zoomed)
+
+        asyncio.run(exercise())
 
 
 

@@ -173,34 +173,59 @@ differences do not create another liturgical model or substitute source text.
 ## Catena commentary
 
 Press `i` to find a chapter with held commentary. Type a book name, canonical
-token or reference, or Tab to **Chapters with English excerpts** and press
-Space. Each result gives the chapter’s excerpt count and how many are in
+token or reference, or Tab to **Chapters with English excerpts** (`☐` / `☑`) and
+press Space. Each result gives the chapter’s excerpt count and how many are in
 English. Enter opens a single match or focuses the results for selection.
 Opening a result shows the whole chapter in all commentary voices and keeps
-your author exclusions. `g` accepts any canonical reference.
-In a narrow terminal under 27 rows, the Scripture and commentary panes use
-the available height. Press `f` to bring back the chapter strip and research
-leads. A manual pane choice survives resizing.
+your author exclusions. `g` accepts any canonical reference, `h`/`l` (or
+`←`/`→`) step chapters, `[`/`]` step books, and `j`/`k` (or `↑`/`↓`) scroll and
+move in Scripture, chain, commentary, and drawers. Below 130 columns the books
+sidebar auto-collapses to give Scripture a wider reading measure (`G` toggles
+it). Below 90 columns Scripture stacks above commentary while keeping Scripture
+visible even in cramped terminals (`f` toggles the chapter strip and books
+sidebar; manual pane choices survive resizing).
 
-`B` chooses a named Scripture edition with its language and numbering.
-`V` chooses a commentary voice available at this chapter. Lowercase `b` and
-`v` cycle through the same choices. Commentary ranges use Vulgate numbering.
+`B` chooses a named Scripture edition with its language and numbering; `V`
+chooses a commentary voice available at this chapter; lowercase `b` and `v`
+cycle through the same choices while preserving your Scripture scroll position
+and chain selection on Bible switches. `r` focuses commentary on a Vulgate
+verse or range, highlighting and scrolling those verses in Scripture when
+canonical numbering applies; `x` excludes or restores authors; `o` toggles the
+chain between **By author** and **By verse** order. `Tab` switches directly
+between commentary and Scripture in one keypress. Single-author chapters (such
+as Catena Aurea Gospel chapters) arrive open; multi-author chapters arrive with
+authors closed (`A` opens or closes all authors).
+
+Press `Enter` on a fragment to read it side-by-side inside the docked
+commentary pane directly beside the visible, verse-highlighted Scripture text
+(with structured Catena Aurea lemmas, bold patristic speaker attributions,
+muted transitions, and dim editorial notes). `n` and `p` step to the next or
+previous fragment in place while syncing Scripture’s highlight and scroll. Press
+`z` to zoom the commentary to fullscreen and `z` or `Esc` to return to
+side-by-side; `Esc` or `Backspace` closes the commentary pane and returns focus
+to that fragment in the chain.
 
 Where a held fragment declares reviewed passage excerpts, opening it shows the
 excerpts matching the selected canonical chapter or verse range. The shared
 browser model validates and slices the unchanged source text; each excerpt
 keeps its own extent, locator and selection basis. Press `c` to read the complete
-source passage and press it again to return to the excerpts. `s` still opens the
-same passage in the Source Library; `n` and `p` walk the commentary chain.
+source passage (scrolling near the matched excerpt) and press it again to
+return to the excerpts. `s` opens the current passage in the Source Library.
 Without an applicable excerpt the reader shows the complete natural fragment.
-Required acknowledgements stay visible in both views.
+Required licences (`Licence:`) always remain visible above the prose.
 
-When a source passage has a reviewed link to an English version, press `e`
-to open it. If several editions are linked, select one by its edition and
-locator. The English reading identifies whether it covers the whole source
-passage or an excerpt and gives the recorded reason for the link. It opens
-with its own translator, licence, extent and source-library action. Esc
-returns to the source-language reading.
+When a source passage has a reviewed link to an English version, press `e` to
+toggle paired English inline beside the original text (letting you read
+Scripture, original Latin, and English simultaneously). If several editions are
+linked, select one in the picker by its edition, locator, and distinguishing
+clause. Each English reading keeps its own translator, licence, extent, and
+source-library action.
+
+Acquisition leads live in a separate dashed-border drawer toggled with `L`
+(hidden by default when held fragments exist, and shown automatically on
+chapters with no held fragments). Under a translation voice, translation
+research notes live in a scrollable drawer toggled with `a` or by selecting the
+research-notes item at the bottom of the chain.
 
 ## Source Library
 
