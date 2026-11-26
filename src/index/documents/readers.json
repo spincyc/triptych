@@ -1,5 +1,5 @@
 {
- "generation_commit": "2d22bbb3a80fe97de80853e326d02354b64fbd24",
+ "generation_commit": "87e006bd80c275fe08d9f5a4de3409af524de51f",
  "readers": {
   "claude/articles/canon-law/clerical-celibacy-chastity-and-continence": {
    "canonical": "articles/canon-law/clerical-celibacy-chastity-and-continence",
@@ -1338,6 +1338,156 @@
    "release_status": "alpha",
    "source_format": "latex",
    "title": "The Ordinary of the Mass: The Unchanging Texts of the 1962 Missale Romanum"
+  },
+  "claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent": {
+   "canonical": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+    "eligibility": "eligible",
+    "inspected": "2026-11-25",
+    "inspected_by": "Anthropic Claude (claude-opus-5-5): proper-study v20 run 77c1ca91ef2d5e93 independent web-review iterations 0 and 1",
+    "inspection": "Iteration 0 reconverted the leaf with every converter fidelity audit and reproduced the reviewed bytes, compared the complete canonical Markdown with the canonical TeX by an independent word-stream comparison, checked the Latin against propers/verified.md, the Douay English against the tracked Bible chapters and 37 Latin quotations against the tracked patristic texts, and rendered the page through the site renderer, site.css, publication-reader.css and reader scripts in headless Chromium at 1280 and 390 px (headings, four interpretations each with its own four senses, quotations, tables, appointed-text anchors, internal links, overflow, TeX debris, revision stamp and rights colophon). Iteration 1 judged the repaired conversion: it reconverted current sources to identical bytes, compared every changed line with its TeX and its earlier form, checked by word order that every word of sections 00, 20, 30, 40 and 50 is in the page, and rendered it again in headless Chromium at 1280 px and in a 390 px frame (conversion SHA-256 77e7f790c65f89fb0d8aea79c00fa7c3a96bc55bbb1167333857e7c4c95d28ab). The publication-reader shell, full-site assembly, the synthesis and homily readers and all PDFs were outside this inspection.",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-25",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/generation-metadata.tex",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/main.tex",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/proper-components.toml"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+    "src/common"
+   ],
+   "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+   "edition": "main",
+   "entrypoint": "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/main.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+   "kind": "proper-1962",
+   "provider": "claude",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "The First Sunday of Advent: A Study of the Proper in the 1962 Roman Missal"
+  },
+  "claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent-homily": {
+   "canonical": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent-homily"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+    "eligibility": "eligible",
+    "inspected": "2026-11-25",
+    "inspected_by": "Anthropic Claude (claude-opus-5-5): proper-study v20 run 77c1ca91ef2d5e93 independent web-review iterations 0 and 1",
+    "inspection": "Iteration 0 reconverted the leaf with every converter fidelity audit and reproduced the reviewed bytes, compared the complete canonical Markdown with the canonical TeX by an independent word-stream comparison, checked the Latin against propers/verified.md, the Douay English against the tracked Bible chapters and 37 Latin quotations against the tracked patristic texts, and rendered the page through the site renderer, site.css, publication-reader.css and reader scripts in headless Chromium at 1280 and 390 px (headings, four interpretations each with its own four senses, quotations, tables, appointed-text anchors, internal links, overflow, TeX debris, revision stamp and rights colophon). Iteration 1 judged the repaired conversion: it reconverted current sources to identical bytes, compared every changed line with its TeX and its earlier form, checked by word order that every word of sections 00, 20, 30, 40 and 50 is in the page, and rendered it again in headless Chromium at 1280 px and in a 390 px frame (conversion SHA-256 77e7f790c65f89fb0d8aea79c00fa7c3a96bc55bbb1167333857e7c4c95d28ab). The publication-reader shell, full-site assembly, the synthesis and homily readers and all PDFs were outside this inspection.",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-25",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/generation-metadata.tex",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/homily.tex",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/proper-components.toml"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+    "src/common"
+   ],
+   "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent-homily",
+   "edition": "homily",
+   "entrypoint": "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/homily.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent-homily",
+   "kind": "proper-1962",
+   "provider": "claude",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "The First Sunday of Advent: Lift Up Your Heads"
+  },
+  "claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent-synthesis": {
+   "canonical": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent-synthesis"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+    "eligibility": "eligible",
+    "inspected": "2026-11-25",
+    "inspected_by": "Anthropic Claude (claude-opus-5-5): proper-study v20 run 77c1ca91ef2d5e93 independent web-review iterations 0 and 1",
+    "inspection": "Iteration 0 reconverted the leaf with every converter fidelity audit and reproduced the reviewed bytes, compared the complete canonical Markdown with the canonical TeX by an independent word-stream comparison, checked the Latin against propers/verified.md, the Douay English against the tracked Bible chapters and 37 Latin quotations against the tracked patristic texts, and rendered the page through the site renderer, site.css, publication-reader.css and reader scripts in headless Chromium at 1280 and 390 px (headings, four interpretations each with its own four senses, quotations, tables, appointed-text anchors, internal links, overflow, TeX debris, revision stamp and rights colophon). Iteration 1 judged the repaired conversion: it reconverted current sources to identical bytes, compared every changed line with its TeX and its earlier form, checked by word order that every word of sections 00, 20, 30, 40 and 50 is in the page, and rendered it again in headless Chromium at 1280 px and in a 390 px frame (conversion SHA-256 77e7f790c65f89fb0d8aea79c00fa7c3a96bc55bbb1167333857e7c4c95d28ab). The publication-reader shell, full-site assembly, the synthesis and homily readers and all PDFs were outside this inspection.",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-25",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/generation-metadata.tex",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/proper-components.toml",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/synthesis.tex"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+    "src/common"
+   ],
+   "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent-synthesis",
+   "edition": "synthesis",
+   "entrypoint": "src/claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/synthesis.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:claude/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent-synthesis",
+   "kind": "proper-1962",
+   "provider": "claude",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "The First Sunday of Advent: A Concise Study of the Proper in the 1962 Roman Missal"
   },
   "claude/liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost": {
    "canonical": "liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost",
