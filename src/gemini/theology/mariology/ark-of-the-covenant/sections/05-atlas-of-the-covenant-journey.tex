@@ -1,6 +1,6 @@
 \section{Cartographic Study: From Sinai to the Hill Country of Judea}
 
-The God of Israel did not reveal himself in a mythic nowhere. The Ark moved across real limestone ridges, coastal plains, river fords, and terraced hills; and centuries later, the Virgin who carried the eternal Word rose in haste from Nazareth in Galilee and walked down through those same highlands into a town of Judah. Mapping those journeys side by side clarifies the sheer concrete weight of salvation history, provided the map stays scrupulously honest about what Scripture locates and what it leaves unlocated. Every line below connects attested stations of the biblical narrative rather than claiming recovered ancient roads, and traditional or unlocated houses---the household of Obed-edom, the unnamed town of Zachary and Elizabeth, and the cave of 2 Maccabees 2---are marked distinctly from established archaeological anchors.
+The God of Israel did not reveal Himself in a mythic nowhere. The Ark moved across real limestone ridges, coastal plains, river fords, and terraced hills; and centuries later, the Virgin who carried the eternal Word rose in haste from Nazareth in Galilee and walked down through those same highlands into a town of Judah. Mapping those journeys side by side clarifies the sheer concrete weight of salvation history, provided the map stays scrupulously honest about what Scripture locates and what it leaves unlocated. Every line below connects attested stations of the biblical narrative rather than claiming recovered ancient roads, and traditional or unlocated houses---the household of Obed-edom, the unnamed town of Zechariah and Elizabeth, and the cave of 2 Maccabees 2---are marked distinctly from established archaeological anchors.
 
 \ifdefined\TriptychPrintEdition
 \clearpage
@@ -11,7 +11,7 @@ The God of Israel did not reveal himself in a mythic nowhere. The Ark moved acro
     {\includegraphics[width=0.87\linewidth]{theology/mariology/ark-of-the-covenant/artwork/ark-journey-map-graphite.png}};
   \begin{scope}[x={(map.south east)}, y={(map.north west)}]
     % Subtle geographic water & terrain labels
-    \node[font=\scriptsize\itshape, text=black!55, align=center] at (0.39, 0.565) {Mediterranean\\Sea};
+    \node[font=\scriptsize\itshape, text=black!55, align=center] at (0.390, 0.605) {Mediterranean\\Sea};
     \node[font=\tiny\itshape, text=black!55, rotate=-56] at (0.21, 0.16) {Gulf of Suez};
     \node[font=\tiny\itshape, text=black!55, rotate=74] at (0.565, 0.15) {Gulf of Aqaba};
     \node[font=\tiny\itshape, text=black!55] at (0.31, 0.29) {Sinai Peninsula};
@@ -29,11 +29,12 @@ The God of Israel did not reveal himself in a mythic nowhere. The Ark moved acro
     \draw[draw=black, line width=0.95pt, -{Stealth[length=1.9mm]}]
       (0.755, 0.615) -- (0.722, 0.646);
 
-    % Mary's Visitation route: double white-cored line from Nazareth to Hill Country of Judea
-    \draw[draw=black, line width=1.65pt]
-      (0.660, 0.845) .. controls (0.640, 0.79) and (0.635, 0.72) .. (0.648, 0.612);
+    % Mary's Visitation route: double white-cored line from Nazareth to Hill Country of Judea with arrowhead & hollow terminus
+    \draw[draw=black, line width=1.65pt, -{Stealth[length=2.0mm]}]
+      (0.660, 0.845) .. controls (0.640, 0.79) and (0.635, 0.72) .. (0.648, 0.618);
     \draw[draw=white, line width=0.7pt]
-      (0.660, 0.845) .. controls (0.640, 0.79) and (0.635, 0.72) .. (0.648, 0.612);
+      (0.660, 0.845) .. controls (0.640, 0.79) and (0.635, 0.72) .. (0.647, 0.628);
+    \filldraw[fill=white, draw=black, line width=0.65pt] (0.648, 0.612) circle (1.9pt);
 
     % Regional station markers
     \filldraw[fill=white, draw=black, line width=0.7pt] (0.40, 0.11) circle (2.2pt);
@@ -95,6 +96,12 @@ The God of Israel did not reveal himself in a mythic nowhere. The Ark moved acro
     \draw[draw=black, line width=0.9pt, -{Stealth[length=1.6mm]}] (0.529, 0.358) -- (0.571, 0.326);
     \draw[draw=black, line width=0.9pt, -{Stealth[length=1.6mm]}] (0.571, 0.326) -- (0.636, 0.337);
 
+    % Visitation southern approach entering inset from north to Hill Country (trad. Ein Karem)
+    \draw[draw=black, line width=1.35pt, -{Stealth[length=1.6mm]}]
+      (0.555, 0.995) .. controls (0.562, 0.74) and (0.572, 0.50) .. (0.579, 0.275);
+    \draw[draw=white, line width=0.55pt]
+      (0.555, 0.995) .. controls (0.562, 0.74) and (0.572, 0.50) .. (0.578, 0.285);
+
     % Station dots (filled = anchored, hollow = unlocated/tradition)
     \foreach \px/\py in {0.829/0.453, 0.750/0.432, 0.614/0.874, 0.636/0.674, 0.339/0.642, 0.161/0.305, 0.268/0.200, 0.314/0.395, 0.411/0.305, 0.529/0.358, 0.636/0.337} {
       \filldraw[fill=black, draw=black] (\px, \py) circle (1.6pt);
@@ -106,13 +113,14 @@ The God of Israel did not reveal himself in a mythic nowhere. The Ark moved acro
     % Clean non-overlapping labels with crisp hairline pointers
     \node[font=\tiny\bfseries, fill=white, inner sep=0.7pt, anchor=west] at (0.635, 0.895) {Ebal \& Gerizim};
     \node[font=\tiny\bfseries, fill=white, inner sep=0.7pt, anchor=west] at (0.662, 0.690) {Shiloh};
-    \node[font=\tiny, fill=white, inner sep=0.7pt, anchor=east] at (0.318, 0.668) {Aphek / Ebenezer};
-    \node[font=\tiny, fill=white, inner sep=0.7pt, anchor=east] at (0.145, 0.320) {Ashdod};
+    \node[font=\tiny, fill=white, inner sep=0.7pt, anchor=south] at (0.339, 0.675) {Aphek / Ebenezer};
+    \node[font=\tiny, fill=white, inner sep=0.7pt, anchor=west] at (0.032, 0.245) {Ashdod};
+    \draw[draw=black!60, line width=0.35pt] (0.125, 0.260) -- (0.155, 0.299);
     \node[font=\tiny, fill=white, inner sep=0.7pt, anchor=north] at (0.255, 0.172) {Gath};
     \node[font=\tiny, fill=white, inner sep=0.7pt, anchor=south] at (0.298, 0.422) {Ekron};
     \node[font=\tiny, fill=white, inner sep=0.7pt, anchor=north] at (0.405, 0.275) {Beth-shemesh};
-    \node[font=\tiny, fill=white, inner sep=0.7pt, anchor=south] at (0.495, 0.448) {Kiriath-jearim};
-    \draw[draw=black!60, line width=0.35pt] (0.505, 0.436) -- (0.526, 0.365);
+    \node[font=\tiny, fill=white, inner sep=0.7pt, anchor=south] at (0.465, 0.455) {Kiriath-jearim};
+    \draw[draw=black!60, line width=0.35pt] (0.495, 0.443) -- (0.526, 0.365);
 
     \node[font=\tiny\bfseries, fill=white, inner sep=0.7pt, anchor=south west] at (0.652, 0.358) {Jerusalem / Zion};
     \node[font=\tiny\itshape, fill=white, inner sep=0.7pt, anchor=east] at (0.97, 0.165) {Obed-edom (unlocated)};
@@ -129,8 +137,8 @@ The God of Israel did not reveal himself in a mythic nowhere. The Ark moved acro
 \end{tikzpicture}
 \end{center}\nopagebreak[4]
 \else
-\begin{studybox}{Plate V description: Regional map and central Judah detail}
-The print edition displays a portrait monochrome graphite shaded-relief map spanning the Sinai Peninsula, the Gulfs of Suez and Aqaba, the Dead Sea and Jordan Rift, the Philistine coastal plain, the central hill country of Judah and Samaria, and Lower Galilee around Nazareth and the Sea of Galilee. A dashed wilderness line runs north from the traditional Sinai massif through Kadesh-barnea toward the Transjordan plateau opposite Jericho. A magnified inset over the open Mediterranean quadrant details the central stations: the Jordan crossing at Gilgal, Jericho, Mounts Ebal and Gerizim, Shiloh, Aphek/Ebenezer, the Philistine circuit through Ashdod, Gath, and Ekron (noting Brenton's Septuagint reading Ashkelon at 1 Sam 5:10), the ascent through Beth-shemesh and Kiriath-jearim, the unlocated Judean house of Obed-edom, and Mount Zion in Jerusalem. A distinct white-cored double line traces Mary's Visitation ascent from Nazareth southward to the unnamed hill-country town of Judah (traditionally identified with Ein Karem), while Mount Nebo stands east of the northern Dead Sea as the horizon of 2 Maccabees 2:4.
+\begin{studybox}{Plate V: Regional Map and Central Judah Detail}
+A portrait shaded-relief map spans the Sinai Peninsula, the Gulfs of Suez and Aqaba, the Dead Sea and Jordan Rift, the Philistine coastal plain, the central hill country of Judah and Samaria, and Lower Galilee around Nazareth and the Sea of Galilee. A dashed wilderness line runs north from the traditional Sinai massif through Kadesh-barnea toward the Transjordan plateau opposite Jericho. A magnified inset over the open Mediterranean quadrant details the central stations: the Jordan crossing at Gilgal, Jericho, Mounts Ebal and Gerizim, Shiloh, Aphek/Ebenezer, the Philistine circuit through Ashdod, Gath, and Ekron (noting Brenton's Septuagint reading Ashkelon at 1 Sam 5:10), the ascent through Beth-shemesh and Kiriath-jearim, the unlocated Judean house of Obed-edom, and Mount Zion in Jerusalem. A distinct white-cored double line traces Mary's Visitation ascent from Nazareth southward to the unnamed hill-country town of Judah (traditionally identified with Ein Karem), while Mount Nebo stands east of the northern Dead Sea as the horizon of 2 Maccabees 2:4.
 \end{studybox}
 \fi
 
@@ -140,7 +148,7 @@ The print edition displays a portrait monochrome graphite shaded-relief map span
 
 \subsection{Complete Station-by-Station Textual Itinerary}
 
-The table below gives the complete geographic and evidentiary counterpart to Plate V, ordering every station narrated for the earthly Ark and juxtaposing it with the New-Covenant stations of the Incarnation and Visitation.
+The table below orders every station narrated for the earthly Ark and sets it beside the New-Covenant stations of the Incarnation and Visitation.
 
 \begin{fourstable}{Station}{Scripture}{Geographic Status}{Role in the Covenant Arc}
 1.~Mount Sinai (Horeb) &
@@ -154,22 +162,22 @@ Wilderness transit corridor across Sinai and Negev; exact camp paths unrecovered
 Kohathites bear the shrouded Ark three days ahead to seek a resting place; Moses cries ``Arise, O Lord.'' \\
 \addlinespace[0.3em]
 3.~Jordan Crossing and Gilgal &
-Jos 3:3--17; 4:7--11, 19 &
+Josh 3:3--17; 4:7--11, 19 &
 Lower Jordan plain northeast of Jericho; exact ford unlocated. &
 Floodwaters heap up at the touch of the priests' feet; the Ark stands in the dry bed until Israel crosses. \\
 \addlinespace[0.3em]
 4.~Jericho &
-Jos 6:4--16 &
+Josh 6:4--16 &
 Anchored at Tell es-Sultan in the Jordan valley. &
 Sevenfold procession of the Ark and trumpets brings down the fortified walls. \\
 \addlinespace[0.3em]
 5.~Mounts Ebal and Gerizim &
-Jos 8:30--35 &
+Josh 8:30--35 &
 Anchored flanking Shechem in the central hill country. &
 Israel stands on either side of the Ark as Joshua reads the blessings and curses of the law. \\
 \addlinespace[0.3em]
 6.~Shiloh (and Bethel variant) &
-Jos 18:1; Judg 20:18, 26--28; 1 Sam 1--4 &
+Josh 18:1; Judg 20:18, 26--28; 1 Sam 1--4 &
 Anchored at Khirbet Seilun in Ephraim. MT/LXX Judg 20 places the assembly at Bethel; CV/DR identify 20:18 as Shiloh. &
 First settled highland sanctuary; Samuel ministers beside the Ark until its presumptuous removal into battle. \\
 \addlinespace[0.3em]
@@ -211,7 +219,7 @@ Ark enters beneath the monumental cherubim with only the two tablets inside; las
 14.~Mount of Moses (Nebo) &
 2 Macc 2:1--8; Deut 34:1 &
 Transjordan ridge overlooking the Dead Sea; cave explicitly declared unknown. &
-Tradition of Jeremiah concealing the Ark until God gathers his people in mercy; earthly itinerary ends here. \\
+Tradition of Jeremiah concealing the Ark until God gathers His people in mercy; earthly itinerary ends here. \\
 \addlinespace[0.3em]
 15.~Nazareth to Hill Country of Judea &
 Luke 1:26--56 &
@@ -219,7 +227,7 @@ Nazareth anchored in Lower Galilee; Luke leaves the Judean town unnamed (Christi
 The Spirit overshadows the Virgin; bearing the incarnate Lord, she ascends in haste, awakens John's leap and Elizabeth's cry, and remains about three months. \\
 \addlinespace[0.3em]
 16.~Opened Temple in Heaven &
-Apoc 11:19--12:6 &
+Rev 11:19--12:6 &
 Eschatological and heavenly horizon, not a terrestrial coordinate. &
 The Ark of the Covenant appears in the opened heavenly temple, immediately followed by the Woman clothed with the sun. \\
 \end{fourstable}

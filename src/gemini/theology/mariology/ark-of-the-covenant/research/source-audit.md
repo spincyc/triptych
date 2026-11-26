@@ -31,22 +31,20 @@
 - **Irenaeus of Lyons**, *Adversus haereses* III.22.4 & V.19.1 (`ANF` Vol. 1 + Buffalo 1887 passage witness).
 - **Athanasius of Alexandria**, *Orations against the Arians* III.14, 29, 33 (`NPNF` Series II, Vol. 4).
 - **Cyril of Jerusalem**, *Catechesis* X.19 & **Gregory of Nazianzus**, *Epistle 101* (`NPNF` Series II, Vol. 7).
-- **Gregory of Nyssa**, *Life of Moses* & *In Diem Natalem* on Luke 1:35 (via Aquinas, *Catena Aurea in Lucam*, Oxford 1843/1865).
+- **Gregory of Nyssa**, *Life of Moses* on Luke 1:35, plus a shadow reflection transmitted under his name (*In Diem Natalem*) via Aquinas, *Catena Aurea in Lucam*, Oxford 1843/1865 (where the Oxford margin flags `non occ.` beside the *In Diem Natalem* extract).
 - **Ambrose of Milan**, *De Spiritu Sancto* III.11.79--80, *De Virginibus* II.2.15--18, *De Officiis* I.50.260 (`NPNF` Series II, Vol. 10), and *Expositio Evangelii secundum Lucam* Book II (CSEL 32/4 checked texts II.19, II.26; Migne PL 15 II.1, 5--7, 23, 25, 29).
-- **Jerome**, *Contra Helvidium* cc. 5, 8, 10 (via Aquinas, *Catena Aurea in Matthaeum*, Oxford 1842).
+- **Jerome**, *Commentary on Matthew* (on Matt 1:25) and *Contra Helvidium* cc. 5, 8, 10 (via Aquinas, *Catena Aurea in Matthaeum*, Oxford 1842).
 - **Augustine of Hippo**, *Enarrationes in Psalmos* on Ps 131(132):8 (`NPNF` I, Vol. 8), *De natura et gratia* 36(42) & *De nuptiis et concupiscentia* I.12--13 (`NPNF` I, Vol. 5), *De consensu Evangelistarum* II.1.3 & *Sermon 51* §§18, 30 (`NPNF` I, Vol. 6), *Sermo* 185.1 (Migne PL 38 checked text).
 - **Cyril of Alexandria**, *Commentary on Luke* Sermon I (Payne Smith, Oxford 1859).
-- **Leo the Great**, *Sermon XXI* §1 (`NPNF` II, Vol. 12).
 - **Gregory the Great**, *Homiliae in Evangelia* VIII.1 (`8.1-bethlehem-checked-text-3f9b22a4`, Migne PL 76 col. 1104 A--B, Garnier 1878).
 - **John of Damascus**, *De fide orthodoxa* III.12 & IV.14 (`NPNF` II, Vol. 9).
-- **Venerable Bede**, *Explanatio Apocalypsis* Book II on Rev 11:19--12:1 (Marshall, Oxford/London 1878).
+- **Venerable Bede**, *Explanatio Apocalypsis* Book II on Rev 11:19--12:1 (Marshall, Oxford/London 1878), and exposition of Luke 1:35 (via Aquinas, *Catena Aurea in Lucam*, Oxford 1843/1865).
 - **Bernard of Clairvaux**, *Super Missus est* II.7 & IV.8 and *Vigil of the Nativity* (Washbourne, London 1909).
 - **Thomas Aquinas**, *Summa theologiae* III, qq. 27--30 & q. 35 (English Dominicans, 1920).
 - **Robert Bellarmine**, *Commentary on the Psalms* on Ps 131(132):7--8 (O'Sullivan, Dublin 1866).
 - **Cornelius a Lapide**, *Commentaria in Quatuor Evangelia* Vol. 4 on Luke 1:35, 43, 46, 56 (Mossman, Edinburgh 1908).
-- **Alphonsus Liguori**, *The Incarnation, Birth, and Infancy of Jesus Christ* Vol. 4 (Grimm, 1886).
 - **Second Council of Constantinople (553)** Canons VI & XIV (via Hefele, Vol. 4, 1895); **Council of Trent (1546--1547)** Sess. V §6 & Sess. VI Canon XXIII (Devin-Adair 1912); **Pius IX**, *Ineffabilis Deus* (1854 Roman Latin & 1855 Murphy Baltimore bilingual); **Leo XIII**, *Quamquam pluries* (1889 Latin, ASS 22).
-- **Liturgical Books:** `src/sources/calendars/roman-1962/propers.yaml`, `src/sources/calendars/postconciliar/propers.yaml`, Pustet 1862 Assumption chants, Lasance New Roman Missal, and *The Raccolta* (1910, No. 189) for the Litany of Loreto.
+- **Liturgical Books and Received Prayers:** `src/sources/calendars/roman-1962/propers.yaml`, `src/sources/calendars/postconciliar/propers.yaml`, Pustet 1862 Assumption chants, Lasance New Roman Missal, and *The Raccolta* (1910: No. 75, *Mysteries of the Holy Childhood*, pp. 61--62; No. 189, *Litany of Loreto*, pp. 167--170).
 - **Secondary Reference:** 1910 *Catholic Encyclopedia* Vol. 7 ("Immaculate Conception") for the historical summary of Bl. John Duns Scotus (*III Sent.*, d. 3).
 
 ### 2.2 Cataloged / Metadata-Only Witnesses (No Local Tracked Bytes; Summarized Without Fabricated Quotations)
@@ -54,7 +52,7 @@
 - Pius XII, *Munificentissimus Deus* (1 Nov 1950, AAS 42, pp. 753--771, §44).
 - Second Vatican Council, *Lumen gentium* (21 Nov 1964, §§52--69, esp. 53, 56, 60--62) and *Dei Verbum* (18 Nov 1965, §§11--12).
 - Catechism of the Catholic Church (§§65--67, 499, 963--975, esp. 970).
-- Paul VI (*Signum Magnum*, *Marialis Cultus*), John Paul II (*Redemptoris Mater*, *Redemptoris Custos*), Benedict XVI (*Verbum Domini*), Francis (*Patris Corde*).
+- Paul VI (*Marialis Cultus*), John Paul II (*Redemptoris Custos*), Francis (*Patris Corde*).
 - Dicastery for the Doctrine of the Faith, *Mater Populi Fidelis* (approved by Pope Leo XIV 7 Oct 2025; published 4 Nov 2025).
 - John of Damascus, *Homilies on the Dormition* (Allies 1898 — catalog-only; no local artifact).
 
