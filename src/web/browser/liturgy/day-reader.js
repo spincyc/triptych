@@ -1289,7 +1289,7 @@
   function primaryDayChoice(result, branch) {
     const selected = result.request && result.request.selectedReadableFormulary;
     return (result.unresolvedChoices || []).find(function (one) {
-      if (/^proper-form:/.test(one.id) || one.id === 'calendar-reading' || one.id === 'calendar-formulary') return true;
+      if (one.id === 'calendar-formulary' || one.id === 'calendar-reading' || /^proper-form:/.test(one.id)) return true;
       const choice = sourceDayChoice(branch, one.id);
       if (!choice) return false;
       // An independent local observance remains open while another listed
