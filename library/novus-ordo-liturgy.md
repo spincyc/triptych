@@ -32,6 +32,8 @@ The Mass commonly called the *Novus Ordo*, studied in the 2008 Latin Roman Missa
 <a id="sanctuary-pictorial-dictionaries"></a>
 ## Sanctuary Pictorial Dictionaries
 
+[Browse pictures and definitions](postconciliar-sanctuary-picture-dictionary.html)
+
 | Edition | ChatGPT | Claude | Gemini | Focus |
 | --- | --- | --- | --- | --- |
 | **Comprehensive dictionary** | — | — | [PDF](../pdf/gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/comprehensive.pdf) · [Read](../web/gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/comprehensive.html) | Complete postconciliar sanctuary inventory (2008 Latin / 2011 U.S. English, emended 2021), universal and U.S. norms, 1962 comparisons, and separated superseded transitions. |

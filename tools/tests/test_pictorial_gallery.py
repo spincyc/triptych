@@ -9,6 +9,7 @@ from html.parser import HTMLParser
 import importlib.machinery
 import importlib.util
 from pathlib import Path
+import re
 import tempfile
 import tomllib
 import unittest
@@ -488,6 +489,668 @@ class PictorialObjectDetailsTest(unittest.TestCase):
         self.assertTrue(any(path.endswith("vatican-typica-1962/edition.toml") for path in citation["inputs"]))
         fallback = self.tool._pictorial_source_reference({"binding": "legacy.exact-reference", "locus": "p. 4"}, {})
         self.assertEqual(fallback, {"label": "legacy.exact-reference", "locus": "p. 4", "inputs": set()})
+
+
+class PostconciliarPictorialGalleryTest(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.tool = load_tool()
+        cls.cards = cls.tool.postconciliar_pictorial_gallery_data()
+        cls.objects = cls.tool.postconciliar_pictorial_objects()
+        cls.rows = cls.tool.postconciliar_pictorial_dictionary_rows(cls.cards, cls.objects)
+
+    def render_dictionary(self) -> str:
+        with (
+            mock.patch.object(self.tool, "postconciliar_pictorial_gallery_data", return_value=self.cards),
+            mock.patch.object(self.tool, "postconciliar_pictorial_objects", return_value=self.objects),
+            mock.patch.object(self.tool, "native_print_pages", return_value={"readers": {}}),
+        ):
+            return self.tool.render_postconciliar_pictorial_gallery(False, {})
+
+    def test_approved_plates_verify_exact_sha256_bytes_and_dimensions(self) -> None:
+        self.assertEqual(len(self.cards), 10)
+        self.assertEqual(len({card["destination"] for card in self.cards}), 10)
+        bound = self.tool.postconciliar_pictorial_gallery_source_paths()
+        for card in self.cards:
+            data = card["source"].read_bytes()
+            self.assertEqual(hashlib.sha256(data).hexdigest(), card["sha256"])
+            self.assertEqual(len(data), card["bytes"])
+            self.assertEqual(self.tool.png_dimensions(card["source"]), (card["width"], card["height"]))
+            self.assertTrue(
+                card["destination"].startswith(
+                    self.tool.POSTCONCILIAR_PICTORIAL_GALLERY_ASSET_ROOT.as_posix() + "/"
+                )
+            )
+            self.assertIn(card["source_relative"], bound)
+        self.assertIn(self.tool.POSTCONCILIAR_PICTORIAL_MANIFEST_RELATIVE.as_posix(), bound)
+        self.assertIn(self.tool.POSTCONCILIAR_PICTORIAL_PLATES_RELATIVE.as_posix(), bound)
+        self.assertIn(self.tool.POSTCONCILIAR_PICTORIAL_SCHEMA_RELATIVE.as_posix(), bound)
+        self.assertIn("release/public-alpha/" + self.tool.PICTORIAL_SCRIPT_ASSET, bound)
+        self.assertTrue(self.tool.postconciliar_pictorial_object_source_paths() <= bound)
+
+    def test_expected_artifact_includes_postconciliar_gallery_without_regressing_1962(self) -> None:
+        with ExitStack() as stack:
+            for name in (
+                "included_document_pages", "included_web_figures", "source_print_pages",
+                "publication_reader_routes", "web_data_files", "web_browser_pages",
+            ):
+                stack.enter_context(mock.patch.object(self.tool, name, return_value={}))
+            stack.enter_context(mock.patch.object(self.tool, "native_print_pages", return_value={"pages": {}}))
+            stack.enter_context(mock.patch.object(self.tool, "native_tex_catalog", return_value={"assets": {}}))
+            expected = self.tool.expected_artifact_files({}, {}, False, {})
+        pc_pngs = {
+            path
+            for path in expected
+            if path.startswith(self.tool.POSTCONCILIAR_PICTORIAL_GALLERY_ASSET_ROOT.as_posix() + "/")
+        }
+        self.assertEqual(pc_pngs, {card["destination"] for card in self.cards})
+        self.assertIn(self.tool.POSTCONCILIAR_PICTORIAL_GALLERY_OUTPUT, expected)
+        self.assertIn(self.tool.PICTORIAL_GALLERY_OUTPUT, expected)
+        self.assertIn(self.tool.PICTORIAL_SCRIPT_ASSET, expected)
+
+    def test_novus_ordo_shelf_gallery_link_resolves_to_generated_route(self) -> None:
+        with mock.patch.object(self.tool, "web_data_manifest_path", return_value=REPOSITORY_ROOT):
+            self.assertEqual(
+                self.tool.source_to_output(
+                    "library/novus-ordo-liturgy.md",
+                    "library/novus-ordo-liturgy.html",
+                    "postconciliar-sanctuary-picture-dictionary.html",
+                    set(),
+                ),
+                "postconciliar-sanctuary-picture-dictionary.html",
+            )
+
+    def test_superseded_forms_are_strictly_separated_from_current_objects(self) -> None:
+        current = [row for row in self.rows if not row["is_superseded"]]
+        superseded = [row for row in self.rows if row["is_superseded"]]
+        self.assertEqual(len(current), 40)
+        self.assertEqual(len(superseded), 3)
+        self.assertEqual(
+            {row["object"]["id"] for row in superseded},
+            {
+                "pc-obj-hist-subdeacon-tunicle-maniple",
+                "pc-obj-hist-fragile-vessels-pouring",
+                "pc-obj-hist-1970-sanctuary-clarifications",
+            },
+        )
+        # All superseded rows sit together in the final grouping and never carry a current plate.
+        self.assertEqual([row["group"] for row in superseded], ["Superseded postconciliar forms"] * 3)
+        self.assertEqual([row["group_id"] for row in superseded], ["superseded-postconciliar"] * 3)
+        self.assertTrue(all(row["primary_plate"] is None and not row["shared_plates"] for row in superseded))
+        self.assertTrue(all(row["primary_plate"] is not None for row in current))
+        self.assertEqual(self.rows[-3:], superseded)
+
+        # Groupings remain contiguous in canonical order.
+        groups = [row["group_id"] for row in self.rows]
+        for group in set(groups):
+            indices = [idx for idx, value in enumerate(groups) if value == group]
+            self.assertEqual(indices, list(range(min(indices), max(indices) + 1)))
+
+    def test_rendered_table_supports_sanctuary_dictionary_js_and_complete_content(self) -> None:
+        rendered = self.render_dictionary()
+        markup = DictionaryMarkup(rendered)
+        tables = markup.find("table", "sanctuary-table")
+        self.assertEqual(len(tables), 1)
+        table = tables[0]
+        headers = [
+            DictionaryMarkup.text(node)
+            for node in markup.find("th")
+            if node["attrs"].get("scope") == "col"
+        ]
+        self.assertEqual(headers[:3], ["Picture", "Object", "Grouping"])
+        self.assertEqual(headers[3].replace(" ", "").casefold(), "identification/use")
+        self.assertEqual(len(headers), 4)
+
+        primary = markup.find("tr", "dictionary-row")
+        detail = markup.find("tr", "dictionary-detail-row")
+        self.assertEqual(len(primary), len(self.rows))
+        self.assertEqual(len(detail), len(self.rows))
+        self.assertTrue(all(any(parent is table for parent in row["parents"]) for row in primary + detail))
+
+        # Toolbar controls match sanctuary-dictionary.js selectors.
+        self.assertEqual(len(markup.find("div", "dictionary-toolbar")), 1)
+        search_inputs = [node for node in markup.find("input") if "data-dictionary-search" in node["attrs"]]
+        group_selects = [node for node in markup.find("select") if "data-dictionary-group" in node["attrs"]]
+        self.assertEqual(len(search_inputs), 1)
+        self.assertEqual(len(group_selects), 1)
+        option_values = [node["attrs"].get("value") for node in markup.find("option")]
+        self.assertIn("superseded-postconciliar", option_values)
+        self.assertEqual(option_values[-1], "superseded-postconciliar")
+
+        # Unique IDs and resolvable local fragments.
+        ids = [node["attrs"]["id"] for node in markup.nodes if "id" in node["attrs"]]
+        self.assertEqual(len(ids), len(set(ids)))
+        for node in markup.find("a"):
+            href = node["attrs"].get("href", "")
+            if href.startswith("#"):
+                self.assertIn(href[1:], ids)
+
+        # Every verified plate PNG is referenced and every image carries alt/width/height.
+        image_sources = {node["attrs"]["src"] for node in markup.find("img")}
+        self.assertEqual(image_sources, {"../" + card["destination"] for card in self.cards})
+        for img in markup.find("img"):
+            self.assertTrue(img["attrs"].get("alt"))
+            self.assertEqual(img["attrs"].get("width"), "1200")
+            self.assertEqual(img["attrs"].get("height"), "896")
+
+        # Every toggle points to an existing detail row and figure ID inside that detail row.
+        for toggle in markup.find("a", "dictionary-image-toggle"):
+            detail_id = toggle["attrs"].get("data-detail")
+            view_id = toggle["attrs"].get("data-image")
+            self.assertIn(detail_id, ids)
+            self.assertIn(view_id, ids)
+            figures = [node for node in markup.find("figure") if node["attrs"].get("id") == view_id]
+            self.assertEqual(len(figures), 1)
+            self.assertTrue(any(parent["attrs"].get("id") == detail_id for parent in figures[0]["parents"]))
+
+        # Multi-plate objects render composition plates inside their own row with no cross-row jump.
+        altar_row = next(
+            node for node in primary if node["attrs"].get("id") == "gallery-pc-obj-altar"
+        )
+        altar_toggles = [
+            node
+            for node in markup.find("a", "dictionary-image-toggle")
+            if altar_row in node["parents"]
+        ]
+        self.assertEqual(
+            [node["attrs"].get("data-image") for node in altar_toggles],
+            [
+                "view-pc-obj-altar-pc-plt-02-furnishings",
+                "view-pc-obj-altar-pc-plt-01-sanctuary",
+            ],
+        )
+        altar_detail = next(
+            node for node in detail if node["attrs"].get("id") == "details-pc-obj-altar"
+        )
+        altar_figures = [
+            node["attrs"].get("id")
+            for node in markup.find("figure")
+            if altar_detail in node["parents"]
+        ]
+        self.assertEqual(
+            altar_figures,
+            [
+                "view-pc-obj-altar-pc-plt-02-furnishings",
+                "view-pc-obj-altar-pc-plt-01-sanctuary",
+            ],
+        )
+        altar_links = [
+            node["attrs"].get("href")
+            for node in markup.find("a")
+            if altar_detail in node["parents"]
+        ]
+        self.assertIn("#view-pc-obj-altar-pc-plt-01-sanctuary", altar_links)
+        self.assertNotIn("#view-pc-obj-credence-table-pc-plt-01-sanctuary", altar_links)
+
+        # Human-readable labels are indexed into data-search.
+        altar_search = altar_row["attrs"].get("data-search", "")
+        self.assertIn("Universal Roman law", altar_search)
+        self.assertIn("Required", altar_search)
+        self.assertTrue(
+            any("USCCB territorial adaptation" in node["attrs"].get("data-search", "") for node in primary)
+        )
+        self.assertTrue(
+            any(
+                "Server recognizes only; does not handle" in node["attrs"].get("data-search", "")
+                for node in primary
+            )
+        )
+
+        # Key domain facets and dynamic closing metadata survive cleanly in rendered HTML.
+        self.assertIn("United States territorial note:", rendered)
+        self.assertIn("Server boundary", rendered)
+        self.assertIn("1962 Roman Missal counterpart", rendered)
+        self.assertIn("Shared compositions:", rendered)
+        self.assertIn("Historically superseded (1967–1972):", rendered)
+        self.assertIn("No Latin typical edition", rendered)
+        self.assertNotIn('lang="la">Excerpts from the Roman Missal', rendered)
+        self.assertIn("across 10 monochrome graphite plates", rendered)
+        self.assertIn("All 10 monochrome graphite plates are original project-created illustrations.", rendered)
+        self.assertIn("as of 2026-11-25", rendered)
+        self.assertIn('href="../license.html"', rendered)
+        self.assertIn('href="../third-party.html"', rendered)
+        self.assertIn('href="sanctuary-picture-dictionary.html"', rendered)
+        scripts = [
+            node
+            for node in markup.find("script")
+            if node["attrs"].get("src") == "../" + self.tool.PICTORIAL_SCRIPT_ASSET
+        ]
+        self.assertEqual(len(scripts), 1)
+        self.assertIn("defer", scripts[0]["attrs"])
+
+    def test_tampered_hash_unapproved_art_and_unsafe_paths_are_refused(self) -> None:
+        with self.assertRaises(self.tool.ReleaseError):
+            self.tool._resolve_postconciliar_pictorial_asset_path("../outside.png", "test asset")
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            owner = root / self.tool.POSTCONCILIAR_PICTORIAL_ROOT_RELATIVE
+            owner.mkdir(parents=True)
+            outside = root / "outside.png"
+            outside.write_bytes(b"\x89PNG\r\n\x1a\n")
+            (owner / "link.png").symlink_to(outside)
+            with mock.patch.object(self.tool, "ROOT", root):
+                with self.assertRaises(self.tool.ReleaseError):
+                    self.tool._resolve_postconciliar_pictorial_asset_path("link.png", "test asset")
+
+        # Tampered manifest SHA-256 and unapproved review_state fail closed.
+        manifest_path = REPOSITORY_ROOT / self.tool.POSTCONCILIAR_PICTORIAL_MANIFEST_RELATIVE
+        manifest = tomllib.loads(manifest_path.read_text(encoding="utf-8"))
+        bad_hash = deepcopy(manifest)
+        bad_hash["artworks"][0]["normalized"]["sha256"] = "0" * 64
+        real_loader = self.tool._load_postconciliar_pictorial_toml
+
+        def load_tampered(relative):
+            if relative == self.tool.POSTCONCILIAR_PICTORIAL_MANIFEST_RELATIVE:
+                return bad_hash
+            return real_loader(relative)
+
+        with mock.patch.object(self.tool, "_load_postconciliar_pictorial_toml", side_effect=load_tampered):
+            with self.assertRaisesRegex(self.tool.ReleaseError, "hash mismatch"):
+                self.tool.postconciliar_pictorial_gallery_data()
+
+        unapproved = deepcopy(manifest)
+        unapproved["artworks"][0]["review_state"] = "draft"
+
+        def load_unapproved(relative):
+            if relative == self.tool.POSTCONCILIAR_PICTORIAL_MANIFEST_RELATIVE:
+                return unapproved
+            return real_loader(relative)
+
+        with mock.patch.object(self.tool, "_load_postconciliar_pictorial_toml", side_effect=load_unapproved):
+            with self.assertRaisesRegex(self.tool.ReleaseError, "not approved"):
+                self.tool.postconciliar_pictorial_gallery_data()
+
+    def test_symlinked_ancestor_directories_are_refused(self) -> None:
+        # Symlinked research/, shared/schema/, shared/objects/, object subdir, and shared/artwork/
+        # must all fail closed via _safe_contained_path.
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            outside = root / "outside"
+            outside.mkdir()
+            (outside / "artwork-manifest.toml").write_text("schema_version = 1\n", encoding="utf-8")
+            (outside / "inventory-schema.toml").write_text("schema_version = 1\n", encoding="utf-8")
+            (outside / "pc-obj-fake.toml").write_text('id = "pc-obj-fake"\n', encoding="utf-8")
+            (outside / "plate.png").write_bytes(b"\x89PNG\r\n\x1a\n")
+
+            owner = root / self.tool.POSTCONCILIAR_PICTORIAL_ROOT_RELATIVE
+            (owner / "shared").mkdir(parents=True)
+            (owner / "research").symlink_to(outside)
+            (owner / "shared/schema").symlink_to(outside)
+            (owner / "shared/objects").symlink_to(outside)
+            (owner / "shared/artwork").symlink_to(outside)
+
+            with mock.patch.object(self.tool, "ROOT", root):
+                with self.assertRaisesRegex(self.tool.ReleaseError, "symbolic link"):
+                    self.tool._load_postconciliar_pictorial_toml(
+                        self.tool.POSTCONCILIAR_PICTORIAL_MANIFEST_RELATIVE
+                    )
+                with self.assertRaisesRegex(self.tool.ReleaseError, "symbolic link"):
+                    self.tool._load_postconciliar_pictorial_toml(
+                        self.tool.POSTCONCILIAR_PICTORIAL_SCHEMA_RELATIVE
+                    )
+                with self.assertRaisesRegex(self.tool.ReleaseError, "symbolic link"):
+                    self.tool.postconciliar_pictorial_object_source_paths()
+                with self.assertRaisesRegex(self.tool.ReleaseError, "symbolic link"):
+                    self.tool._resolve_postconciliar_pictorial_asset_path(
+                        "shared/artwork/plate.png", "test asset"
+                    )
+
+            # Also verify symlinked subdirectory inside a real shared/objects/ directory.
+            (owner / "shared/objects").unlink()
+            (owner / "shared/objects").mkdir()
+            (owner / "shared/objects/01-linked").symlink_to(outside)
+            with mock.patch.object(self.tool, "ROOT", root):
+                with self.assertRaisesRegex(self.tool.ReleaseError, "symbolic link"):
+                    self.tool.postconciliar_pictorial_object_source_paths()
+
+    def test_png_bytes_dimensions_and_bool_values_are_refused(self) -> None:
+        manifest_path = REPOSITORY_ROOT / self.tool.POSTCONCILIAR_PICTORIAL_MANIFEST_RELATIVE
+        manifest = tomllib.loads(manifest_path.read_text(encoding="utf-8"))
+        real_loader = self.tool._load_postconciliar_pictorial_toml
+
+        def assert_manifest_rejected(mutated: dict, pattern: str) -> None:
+            def loader(relative):
+                if relative == self.tool.POSTCONCILIAR_PICTORIAL_MANIFEST_RELATIVE:
+                    return mutated
+                return real_loader(relative)
+
+            with mock.patch.object(self.tool, "_load_postconciliar_pictorial_toml", side_effect=loader):
+                with self.assertRaisesRegex(self.tool.ReleaseError, pattern):
+                    self.tool.postconciliar_pictorial_gallery_data()
+
+        bad_bytes = deepcopy(manifest)
+        bad_bytes["artworks"][0]["normalized"]["bytes"] += 1
+        assert_manifest_rejected(bad_bytes, "byte count mismatch")
+
+        bad_width = deepcopy(manifest)
+        bad_width["artworks"][0]["normalized"]["width_px"] += 1
+        assert_manifest_rejected(bad_width, "IHDR dimensions mismatch")
+
+        bad_height = deepcopy(manifest)
+        bad_height["artworks"][0]["normalized"]["height_px"] += 1
+        assert_manifest_rejected(bad_height, "IHDR dimensions mismatch")
+
+        # bool is a subclass of int in Python and must be rejected explicitly.
+        bool_bytes = deepcopy(manifest)
+        bool_bytes["artworks"][0]["normalized"]["bytes"] = True
+        assert_manifest_rejected(bool_bytes, "positive integer")
+
+        bool_width = deepcopy(manifest)
+        bool_width["artworks"][0]["normalized"]["width_px"] = True
+        assert_manifest_rejected(bool_width, "positive integer")
+
+    def test_manifest_plate_and_object_integrity_errors_are_refused(self) -> None:
+        manifest_path = REPOSITORY_ROOT / self.tool.POSTCONCILIAR_PICTORIAL_MANIFEST_RELATIVE
+        plates_path = REPOSITORY_ROOT / self.tool.POSTCONCILIAR_PICTORIAL_PLATES_RELATIVE
+        schema_path = REPOSITORY_ROOT / self.tool.POSTCONCILIAR_PICTORIAL_SCHEMA_RELATIVE
+        manifest = tomllib.loads(manifest_path.read_text(encoding="utf-8"))
+        plates_cfg = tomllib.loads(plates_path.read_text(encoding="utf-8"))
+        schema = tomllib.loads(schema_path.read_text(encoding="utf-8"))
+        real_loader = self.tool._load_postconciliar_pictorial_toml
+
+        def with_overrides(overrides: dict, fn, pattern: str) -> None:
+            def loader(relative):
+                if relative in overrides:
+                    return overrides[relative]
+                return real_loader(relative)
+
+            with mock.patch.object(self.tool, "_load_postconciliar_pictorial_toml", side_effect=loader):
+                with self.assertRaisesRegex(self.tool.ReleaseError, pattern):
+                    fn()
+
+        # Missing plate in artwork-manifest.toml.
+        missing_plate = deepcopy(manifest)
+        missing_plate["artworks"] = missing_plate["artworks"][:-1]
+        with_overrides(
+            {self.tool.POSTCONCILIAR_PICTORIAL_MANIFEST_RELATIVE: missing_plate},
+            self.tool.postconciliar_pictorial_gallery_data,
+            "missing approved artwork",
+        )
+
+        # Duplicate plate / artwork entry in artwork-manifest.toml and plates-and-editions.toml.
+        dup_manifest = deepcopy(manifest)
+        dup_manifest["artworks"].append(deepcopy(dup_manifest["artworks"][0]))
+        with_overrides(
+            {self.tool.POSTCONCILIAR_PICTORIAL_MANIFEST_RELATIVE: dup_manifest},
+            self.tool.postconciliar_pictorial_gallery_data,
+            "duplicate postconciliar artwork id",
+        )
+        dup_plate_cfg = deepcopy(plates_cfg)
+        dup_plate_cfg["plates"].append(deepcopy(dup_plate_cfg["plates"][0]))
+        with_overrides(
+            {self.tool.POSTCONCILIAR_PICTORIAL_PLATES_RELATIVE: dup_plate_cfg},
+            self.tool.postconciliar_pictorial_gallery_data,
+            "duplicate postconciliar plate id",
+        )
+
+        # Duplicate object_ids inside a single artwork.
+        dup_obj_ids = deepcopy(manifest)
+        dup_obj_ids["artworks"][0]["object_ids"].append(dup_obj_ids["artworks"][0]["object_ids"][0])
+        with_overrides(
+            {self.tool.POSTCONCILIAR_PICTORIAL_MANIFEST_RELATIVE: dup_obj_ids},
+            self.tool.postconciliar_pictorial_gallery_data,
+            "repeats object_ids",
+        )
+
+        # Current object omitted from its primary plate's object_ids.
+        missing_primary_member = deepcopy(manifest)
+        plate_02 = next(a for a in missing_primary_member["artworks"] if a["plate_id"] == "pc-plt-02-furnishings")
+        plate_02["object_ids"] = [oid for oid in plate_02["object_ids"] if oid != "pc-obj-altar"]
+        with_overrides(
+            {self.tool.POSTCONCILIAR_PICTORIAL_MANIFEST_RELATIVE: missing_primary_member},
+            self.tool.postconciliar_pictorial_gallery_data,
+            "missing from its primary plate",
+        )
+
+        # Malformed plate_id and artwork_id values rejected against schema id_patterns.
+        bad_plate_id = deepcopy(manifest)
+        bad_plate_id["artworks"][0]["plate_id"] = "INVALID_PLATE"
+        with_overrides(
+            {self.tool.POSTCONCILIAR_PICTORIAL_MANIFEST_RELATIVE: bad_plate_id},
+            self.tool.postconciliar_pictorial_gallery_data,
+            "invalid plate_id",
+        )
+        bad_art_id = deepcopy(manifest)
+        bad_art_id["artworks"][0]["id"] = "INVALID_ART"
+        with_overrides(
+            {self.tool.POSTCONCILIAR_PICTORIAL_MANIFEST_RELATIVE: bad_art_id},
+            self.tool.postconciliar_pictorial_gallery_data,
+            "invalid or duplicate postconciliar artwork id",
+        )
+        bad_plate_cfg_art = deepcopy(plates_cfg)
+        bad_plate_cfg_art["plates"][0]["artwork_id"] = "INVALID_ART"
+        with_overrides(
+            {self.tool.POSTCONCILIAR_PICTORIAL_PLATES_RELATIVE: bad_plate_cfg_art},
+            self.tool.postconciliar_pictorial_gallery_data,
+            "invalid artwork_id",
+        )
+
+        # Missing required TOML keys raise ReleaseError, never raw KeyError.
+        missing_norm = deepcopy(manifest)
+        del missing_norm["artworks"][0]["normalized"]
+        with_overrides(
+            {self.tool.POSTCONCILIAR_PICTORIAL_MANIFEST_RELATIVE: missing_norm},
+            self.tool.postconciliar_pictorial_gallery_data,
+            "must be a table",
+        )
+        missing_short_label = deepcopy(plates_cfg)
+        del missing_short_label["plates"][0]["short_label"]
+        with_overrides(
+            {self.tool.POSTCONCILIAR_PICTORIAL_PLATES_RELATIVE: missing_short_label},
+            self.tool.postconciliar_pictorial_gallery_data,
+            "missing or invalid string field 'short_label'",
+        )
+        no_as_of_manifest = deepcopy(manifest)
+        no_as_of_manifest.pop("as_of", None)
+        no_as_of_schema = deepcopy(schema)
+        no_as_of_schema["edition_context"].pop("as_of", None)
+        with_overrides(
+            {
+                self.tool.POSTCONCILIAR_PICTORIAL_MANIFEST_RELATIVE: no_as_of_manifest,
+                self.tool.POSTCONCILIAR_PICTORIAL_SCHEMA_RELATIVE: no_as_of_schema,
+            },
+            self.tool.postconciliar_pictorial_gallery_data,
+            "missing or invalid string field 'as_of'",
+        )
+
+        # Object-level validation: malformed plate_id, missing summary, unknown related/confusable IDs.
+        altar_rel = next(
+            p for p in self.tool.postconciliar_pictorial_object_source_paths() if p.endswith("pc-obj-altar.toml")
+        )
+        altar_pure = self.tool.PurePosixPath(altar_rel)
+        altar_record = real_loader(altar_pure)
+
+        bad_obj_plate = deepcopy(altar_record)
+        bad_obj_plate["plate_id"] = "NOT_A_PLATE"
+        with_overrides({altar_pure: bad_obj_plate}, self.tool.postconciliar_pictorial_objects, "invalid plate_id")
+
+        missing_summary = deepcopy(altar_record)
+        del missing_summary["identification"]["summary"]
+        with_overrides(
+            {altar_pure: missing_summary},
+            self.tool.postconciliar_pictorial_objects,
+            "missing or invalid string field 'summary'",
+        )
+
+        bad_related = deepcopy(altar_record)
+        bad_related["relationships"]["related_objects"].append("pc-obj-nonexistent")
+        with_overrides(
+            {altar_pure: bad_related},
+            self.tool.postconciliar_pictorial_objects,
+            "unknown object 'pc-obj-nonexistent'",
+        )
+
+        bad_confusable = deepcopy(altar_record)
+        bad_confusable["relationships"]["confusable_with"].append("pc-obj-typo")
+        with_overrides(
+            {altar_pure: bad_confusable},
+            self.tool.postconciliar_pictorial_objects,
+            "unknown object 'pc-obj-typo'",
+        )
+
+        # Case-insensitive "no latin typical edition" never wraps text in lang="la".
+        cased_objects = deepcopy(self.objects)
+        cased_objects[0]["latin_headword"] = "NO LATIN TYPICAL EDITION (U.S. excerpt)"
+        with (
+            mock.patch.object(self.tool, "postconciliar_pictorial_gallery_data", return_value=self.cards),
+            mock.patch.object(self.tool, "postconciliar_pictorial_objects", return_value=cased_objects),
+            mock.patch.object(self.tool, "native_print_pages", return_value={"readers": {}}),
+        ):
+            rendered_cased = self.tool.render_postconciliar_pictorial_gallery(False, {})
+        self.assertNotIn('lang="la">NO LATIN TYPICAL EDITION', rendered_cased)
+
+    def test_superseded_object_with_plate_is_refused(self) -> None:
+        bad_objects = deepcopy(self.objects)
+        superseded = next(obj for obj in bad_objects if obj["historical_transition"]["is_superseded"])
+        superseded["plate_id"] = "pc-plt-01-sanctuary"
+        bad_cards = deepcopy(self.cards)
+        bad_cards[0]["object_ids"].append(superseded["id"])
+        with self.assertRaisesRegex(self.tool.ReleaseError, "superseded"):
+            self.tool.postconciliar_pictorial_dictionary_rows(bad_cards, bad_objects)
+
+    def test_build_and_verify_roundtrip_enforces_exact_gallery_and_png_bytes(self) -> None:
+        from tools.tests import test_public_alpha as fixtures
+
+        fixture = fixtures.PublicAlphaTest(methodName="runTest")
+        fixture.setUp()
+        self.addCleanup(fixture.doCleanups)
+        tool = fixture.tool
+
+        # Add license, third-party, and postconciliar catalog routes so verify_links checks every link.
+        fixture.write("LICENSE", b"# License\n\nProject license text.\n")
+        fixture.write("THIRD_PARTY.md", b"# Third-Party Notice\n\nThird-party notice text.\n")
+        fixture.write(
+            "library/novus-ordo-liturgy.md",
+            b"# The Postconciliar Roman Rite\n\n"
+            b"[Browse pictures and definitions](postconciliar-sanctuary-picture-dictionary.html)\n",
+        )
+        fixture.write(
+            "release/public-alpha/" + tool.PICTORIAL_SCRIPT_ASSET,
+            (REPOSITORY_ROOT / "release/public-alpha" / tool.PICTORIAL_SCRIPT_ASSET).read_bytes(),
+        )
+        tool.PAGE_MAP.update(
+            {
+                "LICENSE": "license.html",
+                "THIRD_PARTY.md": "third-party.html",
+                "library/novus-ordo-liturgy.md": "library/novus-ordo-liturgy.html",
+            }
+        )
+        tool.SITE_SOURCE_PATHS.update({"LICENSE", "THIRD_PARTY.md", "library/novus-ordo-liturgy.md"})
+
+        # Seed a minimal valid postconciliar dictionary (1 plate, 2 current objects, 1 superseded form).
+        owner_rel = tool.POSTCONCILIAR_PICTORIAL_ROOT_RELATIVE.as_posix()
+        src_owner = REPOSITORY_ROOT / owner_rel
+        fixture.write(
+            owner_rel + "/shared/schema/inventory-schema.toml",
+            (src_owner / "shared/schema/inventory-schema.toml").read_bytes(),
+        )
+        incense_png_rel = "shared/artwork/graphite/pc-art-07-incense-set.png"
+        png_bytes = (src_owner / incense_png_rel).read_bytes()
+        fixture.write(owner_rel + "/" + incense_png_rel, png_bytes)
+        png_sha = hashlib.sha256(png_bytes).hexdigest()
+        png_w, png_h = tool.png_dimensions(src_owner / incense_png_rel)
+
+        fixture.write(
+            owner_rel + "/research/artwork-manifest.toml",
+            (
+                'schema_version = 1\n'
+                'manifest_id = "pc-test"\n'
+                'as_of = "2026-11-25"\n'
+                '[[artworks]]\n'
+                'id = "pc-art-07-incense-set"\n'
+                'plate_id = "pc-plt-07-incense"\n'
+                'view = "detail"\n'
+                'scale_mode = "not-to-common-scale"\n'
+                'object_ids = ["pc-obj-thurible", "pc-obj-incense-boat"]\n'
+                'purpose = "Incense study."\n'
+                'depicted_state = "Thurible and incense boat."\n'
+                'rights = "Project-owned generated monochrome illustration (CC BY 4.0)."\n'
+                'review_state = "approved"\n'
+                '[artworks.normalized]\n'
+                f'path = "{incense_png_rel}"\n'
+                f'width_px = {png_w}\n'
+                f'height_px = {png_h}\n'
+                f'bytes = {len(png_bytes)}\n'
+                f'sha256 = "{png_sha}"\n'
+            ).encode("utf-8"),
+        )
+        fixture.write(
+            owner_rel + "/shared/schema/plates-and-editions.toml",
+            (
+                'schema_version = 1\n'
+                '[[plates]]\n'
+                'id = "pc-plt-07-incense"\n'
+                'short_label = "Plate VII"\n'
+                'header_label = "Plate VII --- Incense Equipment"\n'
+                'artwork_id = "pc-art-07-incense-set"\n'
+                'scale_notice = "Not to common scale"\n'
+                'position_key = "Left: thurible; right: incense boat."\n'
+                'web_alt_description = "Monochrome graphite study of a thurible and incense boat."\n'
+            ).encode("utf-8"),
+        )
+        allowed_ids = {
+            "pc-obj-thurible",
+            "pc-obj-incense-boat",
+            "pc-obj-hist-subdeacon-tunicle-maniple",
+        }
+
+        def filter_relationships(text: str) -> str:
+            def replace_list(match: re.Match[str]) -> str:
+                kept = [
+                    item
+                    for item in re.findall(r'"([^"]+)"', match.group(2))
+                    if item in allowed_ids
+                ]
+                return f'{match.group(1)} = [' + ", ".join(f'"{item}"' for item in kept) + "]"
+
+            return re.sub(
+                r"(?m)^(confusable_with|related_objects)\s*=\s*(\[[^\]]*\])",
+                replace_list,
+                text,
+            )
+
+        for obj_rel in (
+            "shared/objects/05-service-and-incense/pc-obj-thurible.toml",
+            "shared/objects/05-service-and-incense/pc-obj-incense-boat.toml",
+            "shared/objects/08-superseded-postconciliar/pc-obj-hist-subdeacon-tunicle-maniple.toml",
+        ):
+            filtered = filter_relationships((src_owner / obj_rel).read_text(encoding="utf-8"))
+            fixture.write(owner_rel + "/" + obj_rel, filtered.encode("utf-8"))
+
+        fixture.authorize_current_inputs()
+        fixture.write_manifest()
+        publications = tool.publication_map(fixture.manifest)
+        output = tool.build_site(fixture.manifest, publications, preview=False)
+        tool.verify_output(fixture.manifest, publications, output, preview=False)
+
+        gallery_html = output / tool.POSTCONCILIAR_PICTORIAL_GALLERY_OUTPUT
+        self.assertTrue(gallery_html.is_file())
+        self.assertTrue((output / tool.PICTORIAL_SCRIPT_ASSET).is_file())
+        expected_png = output / (
+            tool.POSTCONCILIAR_PICTORIAL_GALLERY_ASSET_ROOT
+            / f"{png_sha[:16]}-pc-art-07-incense-set.png"
+        ).as_posix()
+        self.assertTrue(expected_png.is_file())
+        shelf_html = (output / "library/novus-ordo-liturgy.html").read_text(encoding="utf-8")
+        self.assertIn('href="postconciliar-sanctuary-picture-dictionary.html"', shelf_html)
+
+        # Single-plate closing note uses proper singular phrasing and dynamic as_of.
+        original_html = gallery_html.read_text(encoding="utf-8")
+        self.assertIn("across 1 monochrome graphite plate", original_html)
+        self.assertIn("1 historically superseded postconciliar form", original_html)
+        self.assertIn("This monochrome graphite plate is an original project-created illustration.", original_html)
+        self.assertIn("as of 2026-11-25", original_html)
+
+        # Mutating the built gallery HTML must fail byte-for-byte re-render verification.
+        gallery_html.write_text(original_html + "<!-- tamper -->", encoding="utf-8")
+        with self.assertRaisesRegex(tool.ReleaseError, "generated gallery does not match canonical inputs"):
+            tool.verify_output(fixture.manifest, publications, output, preview=False)
+        gallery_html.write_text(original_html, encoding="utf-8")
+
+        # Mutating the copied PNG must fail SHA-256 verification.
+        expected_png.write_bytes(png_bytes + b"tamper")
+        with self.assertRaisesRegex(tool.ReleaseError, "gallery PNG does not match canonical bytes"):
+            tool.verify_output(fixture.manifest, publications, output, preview=False)
 
 
 if __name__ == "__main__":

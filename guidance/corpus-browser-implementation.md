@@ -97,8 +97,11 @@ records that it "left the reading pages without the site's header, navigation,
 footer and stylesheet," so a reader who followed a link from the library
 arrived somewhere that did not look like the same site.
 
-**Structured data to HTML.** One page, `library/sanctuary-picture-dictionary.html`,
-composed in Python from TOML records by `render_pictorial_gallery` (`:2672`).
+**Structured data to HTML.** One page at the A0 base, `library/sanctuary-picture-dictionary.html`,
+composed in Python from TOML records by `render_pictorial_gallery` (`:2672`), joined since
+2026-11-27 by `library/postconciliar-sanctuary-picture-dictionary.html` composed from the
+postconciliar artwork manifest, plate schema, and object TOML records by
+`render_postconciliar_pictorial_gallery`.
 
 Everything else in the artifact is `shutil.copyfile`: PDFs, licence texts,
 `site.css`, the two PNGs, the gallery images, the whole of `src/web/data/`, and
@@ -118,7 +121,8 @@ byte with what was built.
 | `/about.html`, `/contributing.html`, `/license.html`, `/third-party.html`, `/404.html` | Markdown | repository root, `release/public-alpha/404.md` | same |
 | `/docs/{bibles,the-mass,reading-and-commentary}.html` | Markdown | `docs/*.md` | same |
 | `/library/<16 shelves>.html` | Markdown | `library/*.md` | `render_source_page` → `filter_catalog:1821` → `rewrite_links:1973` → `remove_private_catalog_columns:2006` |
-| `/library/sanctuary-picture-dictionary.html` | Generated | artwork manifest TOML | `render_pictorial_gallery:2672` |
+| `/library/sanctuary-picture-dictionary.html` | Generated | 1962 artwork manifest & object TOML | `render_pictorial_gallery` |
+| `/library/postconciliar-sanctuary-picture-dictionary.html` | Generated (since 2026-11-27) | postconciliar artwork manifest, plate schema & object TOML | `render_postconciliar_pictorial_gallery` |
 | `/web/<provider>/<leaf>.html` ×105 | Markdown | tracked `web/**/*.md` | `document_pages:294` → `render_source_page` |
 | `/liturgy/{index,day,day-reader,propers-reader,reader-visual-reset-day,reader-visual-reset-propers}.html` | Standalone HTML | `src/web/browser/liturgy/` | `web_browser_pages:616` → `render_browser_page:2625` |
 | `/scripture/{index,track}.html` | Standalone HTML | `src/web/browser/scripture/` | same |

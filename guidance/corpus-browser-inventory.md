@@ -52,7 +52,7 @@ refusal or absence states.
 | Utility | `/about.html`, `/contributing.html`, `/license.html`, `/third-party.html`, `/404.html` | Consumer, contribution, legal, recovery | fixed Markdown and layout |
 | Method studies | `/docs/bibles.html`, `/docs/the-mass.html`, `/docs/reading-and-commentary.html` | Reader | fixed Markdown |
 | Library | sixteen `/library/*.html` routes, including seven portals and nine child catalogues | Catalogue | `library/*.md`, catalogue rewrite |
-| Picture dictionary | `/library/sanctuary-picture-dictionary.html` | special Catalogue/Reader | sanctuary inventory, artwork manifest, gallery renderer |
+| Picture dictionary | `/library/sanctuary-picture-dictionary.html` (and `/library/postconciliar-sanctuary-picture-dictionary.html` since 2026-11-27) | special Catalogue/Reader | sanctuary inventories, artwork manifests, gallery renderers |
 | Publication readers | 105 `/web/{provider}/{leaf}.html` routes (266 since 2026-11-04) | Reader | `web-editions` product converted from canonical TeX at build time, shared renderer |
 | Liturgy | `/liturgy/`, `/liturgy/day.html` | protected Liturgical Instrument | liturgy source, generated calendars/Propers/Bibles |
 | Scripture | `/scripture/`, `/scripture/track.html` | Reader/Instrument | reading-plan and Bible projections |
@@ -102,7 +102,7 @@ migration supplies compatibility.
 - Static publication Readers have a sound source/reflow pipeline but no local
   contents, direct canonical-PDF action, citation-return enhancement, or
   browser accessibility matrix.
-- The current sanctuary gallery publishes 100 original PNGs totalling about
+- The 1962 sanctuary gallery publishes 100 original PNGs totalling about
   49.3 MB and loses material source, audience, and depicted-state
   qualifications in its public projection.
 - No general site stylesheet owns forced colors or browser-Instrument print.

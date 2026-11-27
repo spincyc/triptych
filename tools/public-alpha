@@ -151,6 +151,27 @@ PICTORIAL_OBJECTS_RELATIVE = PICTORIAL_ROOT_RELATIVE / "shared/objects"
 PICTORIAL_GALLERY_OUTPUT = "library/sanctuary-picture-dictionary.html"
 PICTORIAL_SCRIPT_ASSET = "assets/sanctuary-dictionary.js"
 PICTORIAL_GALLERY_ASSET_ROOT = PurePosixPath("assets/pictorial-gallery")
+POSTCONCILIAR_PICTORIAL_ROOT_RELATIVE = PurePosixPath(
+    "src/gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary"
+)
+POSTCONCILIAR_PICTORIAL_MANIFEST_RELATIVE = (
+    POSTCONCILIAR_PICTORIAL_ROOT_RELATIVE / "research/artwork-manifest.toml"
+)
+POSTCONCILIAR_PICTORIAL_PLATES_RELATIVE = (
+    POSTCONCILIAR_PICTORIAL_ROOT_RELATIVE / "shared/schema/plates-and-editions.toml"
+)
+POSTCONCILIAR_PICTORIAL_SCHEMA_RELATIVE = (
+    POSTCONCILIAR_PICTORIAL_ROOT_RELATIVE / "shared/schema/inventory-schema.toml"
+)
+POSTCONCILIAR_PICTORIAL_OBJECTS_RELATIVE = (
+    POSTCONCILIAR_PICTORIAL_ROOT_RELATIVE / "shared/objects"
+)
+POSTCONCILIAR_PICTORIAL_GALLERY_OUTPUT = (
+    "library/postconciliar-sanctuary-picture-dictionary.html"
+)
+POSTCONCILIAR_PICTORIAL_GALLERY_ASSET_ROOT = PurePosixPath(
+    "assets/postconciliar-pictorial-gallery"
+)
 
 # The browser resolves bibles.json, structure/<kind>/<id>.json and
 # <edition>/chapters/<BookToken>/<n>.json against one configurable root, so the
@@ -1573,6 +1594,388 @@ def pictorial_gallery_source_paths() -> set[str]:
         paths.add(card["source_relative"])
         paths.update(source for definition in card["definitions"]
                      for citation in definition["citations"] for source in citation["inputs"])
+    return paths
+
+
+def _safe_contained_path(
+    root: Path, owner_root: Path, relative: PurePosixPath, label: str
+) -> Path:
+    """Resolve a path inside owner_root/root, rejecting symlinks on every component."""
+    if (
+        relative.is_absolute()
+        or not relative.parts
+        or any(part in {"", ".", ".."} for part in relative.parts)
+    ):
+        raise ReleaseError(f"{label} is not a safe relative path: {relative.as_posix()!r}")
+    try:
+        owner_rel = owner_root.relative_to(root)
+    except ValueError as exc:
+        raise ReleaseError(f"{label} owner root leaves repository") from exc
+    current = root
+    for part in (*owner_rel.parts, *relative.parts):
+        current = current / part
+        if current.is_symlink():
+            raise ReleaseError(f"{label} traverses a symbolic link: {current}")
+    try:
+        resolved = current.resolve()
+        resolved.relative_to(owner_root.resolve())
+        resolved.relative_to(root.resolve())
+    except ValueError as exc:
+        raise ReleaseError(f"{label} leaves the dictionary or repository: {relative.as_posix()!r}") from exc
+    return current
+
+
+def _require_mapping(value: object, label: str) -> dict:
+    if not isinstance(value, dict):
+        raise ReleaseError(f"{label} must be a table")
+    return value
+
+
+def _require_nonempty_str(mapping: dict, key: str, label: str) -> str:
+    value = mapping.get(key)
+    if not isinstance(value, str) or not value.strip():
+        raise ReleaseError(f"{label}: missing or invalid string field {key!r}")
+    return value
+
+
+def _require_positive_int(mapping: dict, key: str, label: str) -> int:
+    value = mapping.get(key)
+    if type(value) is not int or value <= 0:
+        raise ReleaseError(f"{label}: field {key!r} must be a positive integer")
+    return value
+
+
+def _compile_schema_pattern(patterns: dict, key: str, default: str) -> re.Pattern[str]:
+    raw = patterns.get(key, default)
+    if not isinstance(raw, str) or not raw:
+        raise ReleaseError(f"postconciliar schema id_patterns.{key} must be a regex string")
+    try:
+        return re.compile(raw)
+    except re.error as exc:
+        raise ReleaseError(f"postconciliar schema id_patterns.{key} is invalid regex: {exc}") from exc
+
+
+def postconciliar_pictorial_object_source_paths() -> set[str]:
+    owner_root = ROOT / POSTCONCILIAR_PICTORIAL_ROOT_RELATIVE
+    objects_rel = POSTCONCILIAR_PICTORIAL_OBJECTS_RELATIVE.relative_to(
+        POSTCONCILIAR_PICTORIAL_ROOT_RELATIVE
+    )
+    objects_dir = _safe_contained_path(
+        ROOT, owner_root, objects_rel, "postconciliar objects directory"
+    )
+    if not objects_dir.exists():
+        return set()
+    if not objects_dir.is_dir():
+        raise ReleaseError(
+            f"postconciliar objects path is not a directory: {POSTCONCILIAR_PICTORIAL_OBJECTS_RELATIVE.as_posix()}"
+        )
+    paths: set[str] = set()
+    for dirpath, dirnames, filenames in os.walk(objects_dir, followlinks=False):
+        current_dir = Path(dirpath)
+        dirnames.sort()
+        for dirname in dirnames:
+            child_dir = current_dir / dirname
+            rel_dir = PurePosixPath(child_dir.relative_to(owner_root).as_posix())
+            _safe_contained_path(ROOT, owner_root, rel_dir, f"postconciliar objects subdirectory {dirname!r}")
+        for filename in sorted(filenames):
+            if not filename.endswith(".toml"):
+                continue
+            file_path = current_dir / filename
+            rel_file = PurePosixPath(file_path.relative_to(owner_root).as_posix())
+            checked = _safe_contained_path(
+                ROOT, owner_root, rel_file, f"postconciliar object record {filename!r}"
+            )
+            if not checked.is_file():
+                raise ReleaseError(f"postconciliar object record is not a regular file: {rel_file.as_posix()}")
+            paths.add(checked.relative_to(ROOT).as_posix())
+    return paths
+
+
+def _resolve_postconciliar_pictorial_asset_path(value: str, label: str) -> Path:
+    if not isinstance(value, str) or not value.strip():
+        raise ReleaseError(f"{label} is missing a relative asset path")
+    candidate = PurePosixPath(value)
+    owner_root = ROOT / POSTCONCILIAR_PICTORIAL_ROOT_RELATIVE
+    path = _safe_contained_path(ROOT, owner_root, candidate, label)
+    if not path.is_file() or path.suffix.lower() != ".png":
+        raise ReleaseError(f"{label} is unsafe, missing, or not PNG: {value!r}")
+    return path
+
+
+def _load_postconciliar_pictorial_toml(relative: PurePosixPath) -> dict:
+    owner_root = ROOT / POSTCONCILIAR_PICTORIAL_ROOT_RELATIVE
+    try:
+        rel_to_owner = relative.relative_to(POSTCONCILIAR_PICTORIAL_ROOT_RELATIVE)
+    except ValueError as exc:
+        raise ReleaseError(
+            f"postconciliar dictionary record leaves owner root: {relative.as_posix()}"
+        ) from exc
+    path = _safe_contained_path(ROOT, owner_root, rel_to_owner, relative.as_posix())
+    if not path.is_file():
+        raise ReleaseError(f"missing or unsafe postconciliar dictionary record: {relative.as_posix()}")
+    try:
+        data = tomllib.loads(path.read_text(encoding="utf-8"))
+    except (OSError, tomllib.TOMLDecodeError) as exc:
+        raise ReleaseError(f"cannot read {relative.as_posix()}: {exc}") from exc
+    return _require_mapping(data, relative.as_posix())
+
+
+def postconciliar_pictorial_objects() -> list[dict]:
+    """Load and validate canonical postconciliar sanctuary object records."""
+    schema = _load_postconciliar_pictorial_toml(POSTCONCILIAR_PICTORIAL_SCHEMA_RELATIVE)
+    enums = _require_mapping(schema.get("controlled_enums"), "inventory-schema.controlled_enums")
+    patterns = _require_mapping(schema.get("id_patterns"), "inventory-schema.id_patterns")
+    obj_id_re = _compile_schema_pattern(patterns, "object_id", r"^pc-obj-[a-z0-9]+(?:-[a-z0-9]+)*$")
+    plate_id_re = _compile_schema_pattern(patterns, "plate_id", r"^pc-plt-[0-9]{2}-[a-z0-9]+(?:-[a-z0-9]+)*$")
+    valid_categories = set(enums.get("categories", ()))
+    valid_dispositions = set(enums.get("dispositions", ()))
+    valid_scopes = set(enums.get("scope_levels", ()))
+    valid_ministers = set(enums.get("ministers", ()))
+    valid_boundaries = set(enums.get("server_boundaries", ()))
+    valid_counterparts = set(enums.get("counterpart_1962_relationships", ()))
+
+    objects: dict[str, dict] = {}
+    for source_relative in sorted(postconciliar_pictorial_object_source_paths()):
+        record = _load_postconciliar_pictorial_toml(PurePosixPath(source_relative))
+        object_id = record.get("id")
+        if not isinstance(object_id, str) or not obj_id_re.fullmatch(object_id) or object_id in objects:
+            raise ReleaseError(f"invalid or duplicate postconciliar object id in {source_relative}")
+        _require_positive_int(record, "sort_order", object_id)
+        _require_nonempty_str(record, "preferred_english_name", object_id)
+        category = record.get("category")
+        if category not in valid_categories:
+            raise ReleaseError(f"{object_id}: invalid postconciliar category {category!r}")
+        ed = _require_mapping(record.get("edition_disposition"), f"{object_id}.edition_disposition")
+        disposition = ed.get("disposition")
+        if disposition not in valid_dispositions:
+            raise ReleaseError(f"{object_id}: invalid disposition {disposition!r}")
+        if ed.get("scope_level") not in valid_scopes:
+            raise ReleaseError(f"{object_id}: invalid scope_level {ed.get('scope_level')!r}")
+        ident = _require_mapping(record.get("identification"), f"{object_id}.identification")
+        _require_nonempty_str(ident, "summary", f"{object_id}.identification")
+        mh = _require_mapping(record.get("ministers_and_handling"), f"{object_id}.ministers_and_handling")
+        if mh.get("server_boundary") not in valid_boundaries:
+            raise ReleaseError(f"{object_id}: invalid server_boundary {mh.get('server_boundary')!r}")
+        _require_nonempty_str(mh, "server_boundary_summary", f"{object_id}.ministers_and_handling")
+        for role_field in ("ordinary_ministers", "prepares"):
+            roles = mh.get(role_field)
+            if not isinstance(roles, list):
+                raise ReleaseError(f"{object_id}: {role_field} must be a list")
+            for role in roles:
+                if role not in valid_ministers:
+                    raise ReleaseError(f"{object_id}: invalid {role_field} role {role!r}")
+        c62 = _require_mapping(record.get("counterpart_1962"), f"{object_id}.counterpart_1962")
+        if c62.get("relationship") not in valid_counterparts:
+            raise ReleaseError(f"{object_id}: invalid 1962 counterpart relationship {c62.get('relationship')!r}")
+        _require_nonempty_str(c62, "comparison", f"{object_id}.counterpart_1962")
+        _require_mapping(record.get("symbolism"), f"{object_id}.symbolism")
+        rels = _require_mapping(record.get("relationships"), f"{object_id}.relationships")
+        for rel_field in ("confusable_with", "related_objects"):
+            refs = rels.get(rel_field, [])
+            if not isinstance(refs, list) or not all(isinstance(ref, str) for ref in refs):
+                raise ReleaseError(f"{object_id}: relationships.{rel_field} must be a list of strings")
+        ht = _require_mapping(record.get("historical_transition"), f"{object_id}.historical_transition")
+        raw_is_superseded = ht.get("is_superseded", False)
+        if not isinstance(raw_is_superseded, bool):
+            raise ReleaseError(f"{object_id}: historical_transition.is_superseded must be boolean")
+        is_superseded = raw_is_superseded
+        if is_superseded or disposition == "superseded" or category == "superseded-postconciliar":
+            if not (is_superseded and disposition == "superseded" and category == "superseded-postconciliar"):
+                raise ReleaseError(
+                    f"{object_id}: superseded form must set is_superseded=true, "
+                    "disposition='superseded', and category='superseded-postconciliar'"
+                )
+            if str(record.get("plate_id", "")).strip():
+                raise ReleaseError(f"{object_id}: superseded form must not carry a current plate_id")
+            if record.get("composition_plate_ids"):
+                raise ReleaseError(f"{object_id}: superseded form must not carry composition_plate_ids")
+            for key in ("period_range", "controlling_act", "current_status"):
+                _require_nonempty_str(ht, key, f"{object_id}.historical_transition")
+        else:
+            plate_id = _require_nonempty_str(record, "plate_id", object_id)
+            if not plate_id_re.fullmatch(plate_id):
+                raise ReleaseError(f"{object_id}: invalid plate_id {plate_id!r}")
+            comp_ids = record.get("composition_plate_ids", [])
+            if not isinstance(comp_ids, list) or not all(
+                isinstance(cid, str) and plate_id_re.fullmatch(cid) for cid in comp_ids
+            ):
+                raise ReleaseError(f"{object_id}: invalid composition_plate_ids")
+            _require_nonempty_str(record, "plate_position", object_id)
+        sources = _require_mapping(record.get("sources"), f"{object_id}.sources")
+        loci = sources.get("primary_loci")
+        if not isinstance(loci, list) or not loci or not all(isinstance(x, str) and x.strip() for x in loci):
+            raise ReleaseError(f"{object_id}: missing or invalid sources.primary_loci")
+        objects[object_id] = record
+
+    if not objects:
+        raise ReleaseError("postconciliar pictorial dictionary has no canonical object records")
+    for object_id, record in objects.items():
+        rels = record["relationships"]
+        for rel_field in ("confusable_with", "related_objects"):
+            for ref in rels.get(rel_field, ()):
+                if ref not in objects:
+                    raise ReleaseError(
+                        f"{object_id}: relationships.{rel_field} references unknown object {ref!r}"
+                    )
+    return sorted(objects.values(), key=lambda item: (item["sort_order"], item["id"]))
+
+
+def postconciliar_pictorial_gallery_data() -> list[dict]:
+    """Load and cryptographically verify approved postconciliar dictionary plates."""
+    schema = _load_postconciliar_pictorial_toml(POSTCONCILIAR_PICTORIAL_SCHEMA_RELATIVE)
+    patterns = _require_mapping(schema.get("id_patterns"), "inventory-schema.id_patterns")
+    plate_id_re = _compile_schema_pattern(patterns, "plate_id", r"^pc-plt-[0-9]{2}-[a-z0-9]+(?:-[a-z0-9]+)*$")
+    art_id_re = _compile_schema_pattern(patterns, "artwork_id", r"^pc-art-[0-9]{2}-[a-z0-9]+(?:-[a-z0-9]+)*$")
+    manifest = _load_postconciliar_pictorial_toml(POSTCONCILIAR_PICTORIAL_MANIFEST_RELATIVE)
+    manifest_as_of = manifest.get("as_of")
+    if not isinstance(manifest_as_of, str) or not manifest_as_of.strip():
+        schema_ctx = _require_mapping(schema.get("edition_context", {}), "inventory-schema.edition_context")
+        manifest_as_of = _require_nonempty_str(schema_ctx, "as_of", "inventory-schema.edition_context")
+    plates_cfg = _load_postconciliar_pictorial_toml(POSTCONCILIAR_PICTORIAL_PLATES_RELATIVE)
+    objects_by_id = {obj["id"]: obj for obj in postconciliar_pictorial_objects()}
+
+    raw_plates = plates_cfg.get("plates")
+    if not isinstance(raw_plates, list) or not raw_plates:
+        raise ReleaseError("postconciliar plates-and-editions.toml declares no plates")
+    plates_by_id: dict[str, dict] = {}
+    for index, plate in enumerate(raw_plates, 1):
+        plate = _require_mapping(plate, f"plates[{index}]")
+        plate_id = _require_nonempty_str(plate, "id", f"plates[{index}]")
+        if not plate_id_re.fullmatch(plate_id) or plate_id in plates_by_id:
+            raise ReleaseError(f"invalid or duplicate postconciliar plate id: {plate_id!r}")
+        art_ref = _require_nonempty_str(plate, "artwork_id", plate_id)
+        if not art_id_re.fullmatch(art_ref):
+            raise ReleaseError(f"{plate_id}: invalid artwork_id {art_ref!r}")
+        for key in ("short_label", "header_label", "scale_notice", "position_key", "web_alt_description"):
+            _require_nonempty_str(plate, key, plate_id)
+        plates_by_id[plate_id] = plate
+
+    raw_artworks = manifest.get("artworks")
+    if not isinstance(raw_artworks, list) or not raw_artworks:
+        raise ReleaseError("postconciliar artwork-manifest.toml declares no artworks")
+
+    cards: list[dict] = []
+    seen_destinations: set[str] = set()
+    seen_plates: set[str] = set()
+    seen_art_ids: set[str] = set()
+    for index, artwork in enumerate(raw_artworks, 1):
+        artwork = _require_mapping(artwork, f"artworks[{index}]")
+        art_id = _require_nonempty_str(artwork, "id", f"artworks[{index}]")
+        if not art_id_re.fullmatch(art_id) or art_id in seen_art_ids:
+            raise ReleaseError(f"invalid or duplicate postconciliar artwork id: {art_id!r}")
+        seen_art_ids.add(art_id)
+        if artwork.get("review_state") != "approved":
+            raise ReleaseError(f"{art_id}: postconciliar artwork is not approved for gallery publication")
+        plate_id = _require_nonempty_str(artwork, "plate_id", art_id)
+        if not plate_id_re.fullmatch(plate_id):
+            raise ReleaseError(f"{art_id}: invalid plate_id {plate_id!r}")
+        plate = plates_by_id.get(plate_id)
+        if plate is None or plate.get("artwork_id") != art_id:
+            raise ReleaseError(f"{art_id}: artwork does not match a declared plate in plates-and-editions.toml")
+        if plate_id in seen_plates:
+            raise ReleaseError(f"{plate_id}: duplicate artwork entry for postconciliar plate")
+        seen_plates.add(plate_id)
+
+        normalized = _require_mapping(artwork.get("normalized"), f"{art_id}.normalized")
+        path = _resolve_postconciliar_pictorial_asset_path(
+            _require_nonempty_str(normalized, "path", f"{art_id}.normalized"),
+            f"{art_id} normalized asset",
+        )
+        expected_hash = normalized.get("sha256")
+        if not isinstance(expected_hash, str) or not SHA256_RE.fullmatch(expected_hash):
+            raise ReleaseError(f"{art_id}: missing valid normalized SHA-256")
+        actual_hash = sha256(path)
+        if actual_hash != expected_hash:
+            raise ReleaseError(f"{art_id}: normalized PNG hash mismatch")
+        expected_bytes = _require_positive_int(normalized, "bytes", f"{art_id}.normalized")
+        actual_bytes = path.stat().st_size
+        if expected_bytes != actual_bytes:
+            raise ReleaseError(f"{art_id}: normalized PNG byte count mismatch")
+        width = _require_positive_int(normalized, "width_px", f"{art_id}.normalized")
+        height = _require_positive_int(normalized, "height_px", f"{art_id}.normalized")
+        if png_dimensions(path) != (width, height):
+            raise ReleaseError(f"{art_id}: normalized PNG IHDR dimensions mismatch manifest")
+
+        raw_object_ids = artwork.get("object_ids")
+        if not isinstance(raw_object_ids, list) or not raw_object_ids or not all(
+            isinstance(oid, str) for oid in raw_object_ids
+        ):
+            raise ReleaseError(f"{art_id}: postconciliar artwork declares invalid or empty object_ids")
+        object_ids = list(raw_object_ids)
+        if len(object_ids) != len(set(object_ids)):
+            raise ReleaseError(f"{art_id}: postconciliar artwork repeats object_ids")
+        for object_id in object_ids:
+            obj = objects_by_id.get(object_id)
+            if obj is None:
+                raise ReleaseError(f"{art_id}: unknown postconciliar object id {object_id!r}")
+            if obj["historical_transition"]["is_superseded"]:
+                raise ReleaseError(f"{art_id}: superseded form {object_id!r} may not appear on a current plate")
+
+        source_relative = path.relative_to(ROOT).as_posix()
+        destination = (
+            POSTCONCILIAR_PICTORIAL_GALLERY_ASSET_ROOT
+            / f"{actual_hash[:16]}-{path.name}"
+        ).as_posix()
+        if destination in seen_destinations:
+            raise ReleaseError(f"{art_id}: duplicate postconciliar gallery destination {destination}")
+        seen_destinations.add(destination)
+        cards.append(
+            {
+                "id": art_id,
+                "plate_id": plate_id,
+                "as_of": manifest_as_of.strip(),
+                "short_label": plate["short_label"],
+                "header_label": plate["header_label"],
+                "scale_notice": plate["scale_notice"],
+                "scale_mode": str(artwork.get("scale_mode", "not-to-common-scale")),
+                "view": str(artwork.get("view", "comparison")),
+                "position_key": plate["position_key"],
+                "web_alt_description": plate["web_alt_description"],
+                "purpose": str(artwork.get("purpose", "")),
+                "depicted_state": str(artwork.get("depicted_state", "")),
+                "rights": str(artwork.get("rights", "")).strip(),
+                "source": path,
+                "source_relative": source_relative,
+                "destination": destination,
+                "sha256": actual_hash,
+                "bytes": actual_bytes,
+                "width": width,
+                "height": height,
+                "object_ids": object_ids,
+            }
+        )
+
+    missing_plates = sorted(set(plates_by_id) - seen_plates)
+    if missing_plates:
+        raise ReleaseError(
+            "postconciliar plates missing approved artwork: " + ", ".join(missing_plates)
+        )
+    cards_by_plate = {card["plate_id"]: card for card in cards}
+    for obj in objects_by_id.values():
+        if obj["historical_transition"]["is_superseded"]:
+            continue
+        primary_card = cards_by_plate.get(obj["plate_id"])
+        if primary_card is None:
+            raise ReleaseError(f"{obj['id']}: references undeclared primary plate {obj['plate_id']!r}")
+        if obj["id"] not in primary_card["object_ids"]:
+            raise ReleaseError(
+                f"{obj['id']}: current object is missing from its primary plate {obj['plate_id']!r} object_ids"
+            )
+    cards.sort(key=lambda item: item["plate_id"])
+    return cards
+
+
+def postconciliar_pictorial_gallery_source_paths() -> set[str]:
+    if not (ROOT / POSTCONCILIAR_PICTORIAL_MANIFEST_RELATIVE).is_file():
+        return set()
+    paths = {
+        POSTCONCILIAR_PICTORIAL_MANIFEST_RELATIVE.as_posix(),
+        POSTCONCILIAR_PICTORIAL_PLATES_RELATIVE.as_posix(),
+        POSTCONCILIAR_PICTORIAL_SCHEMA_RELATIVE.as_posix(),
+        "release/public-alpha/" + PICTORIAL_SCRIPT_ASSET,
+    } | postconciliar_pictorial_object_source_paths()
+    for card in postconciliar_pictorial_gallery_data():
+        paths.add(card["source_relative"])
     return paths
 
 
@@ -3734,6 +4137,7 @@ def site_source_paths(manifest: dict | None = None) -> set[str]:
         set(SITE_SOURCE_PATHS)
         | reader_markdown
         | pictorial_gallery_source_paths()
+        | postconciliar_pictorial_gallery_source_paths()
         | browser
         | publication_inputs
         | source_inputs
@@ -4741,10 +5145,16 @@ def expected_artifact_files(
     authorization: dict,
 ) -> set[str]:
     expected = set(PAGE_MAP.values())
-    if (ROOT / PICTORIAL_MANIFEST_RELATIVE).is_file():
+    has_1962_pictorial = (ROOT / PICTORIAL_MANIFEST_RELATIVE).is_file()
+    has_postconciliar_pictorial = (ROOT / POSTCONCILIAR_PICTORIAL_MANIFEST_RELATIVE).is_file()
+    if has_1962_pictorial:
         expected.add(PICTORIAL_GALLERY_OUTPUT)
-        expected.add(PICTORIAL_SCRIPT_ASSET)
         expected.update(card["destination"] for card in pictorial_gallery_data())
+    if has_postconciliar_pictorial:
+        expected.add(POSTCONCILIAR_PICTORIAL_GALLERY_OUTPUT)
+        expected.update(card["destination"] for card in postconciliar_pictorial_gallery_data())
+    if has_1962_pictorial or has_postconciliar_pictorial:
+        expected.add(PICTORIAL_SCRIPT_ASSET)
     expected.update(included_document_pages(set(included)).values())
     expected.update(web_figure_route(figure) for figure in included_web_figures(set(included)))
     expected.update(source_print_pages())
@@ -4995,6 +5405,12 @@ def source_to_output(
         and resolved_text == PICTORIAL_GALLERY_OUTPUT
     ):
         destination = PICTORIAL_GALLERY_OUTPUT
+    if (
+        destination is None
+        and (ROOT / POSTCONCILIAR_PICTORIAL_MANIFEST_RELATIVE).is_file()
+        and resolved_text == POSTCONCILIAR_PICTORIAL_GALLERY_OUTPUT
+    ):
+        destination = POSTCONCILIAR_PICTORIAL_GALLERY_OUTPUT
     if destination is None and resolved_text in artifact_license_source_paths():
         license_path = ROOT.joinpath(*resolved.parts)
         if license_path.is_file():
@@ -6776,6 +7192,549 @@ def render_pictorial_gallery(preview: bool, authorization: dict) -> str:
                        body_extra=f'<script src="{script}" defer></script>')
 
 
+POSTCONCILIAR_PICTORIAL_GROUPS = (
+    ("sanctuary-furnishings", "Sanctuary furnishings"),
+    ("sacred-vessels", "Sacred vessels"),
+    ("linens", "Altar and vessel linens"),
+    ("liturgical-books", "Liturgical books"),
+    ("service-and-incense", "Service and incense"),
+    ("vesture-and-ministry", "Vesture and ministry"),
+    ("sacramental-adjacent", "Sacramental and adjacent rites"),
+    ("superseded-postconciliar", "Superseded postconciliar forms"),
+)
+POSTCONCILIAR_MINISTER_LABELS = {
+    "bishop": "Bishop",
+    "priest": "Priest",
+    "deacon": "Deacon",
+    "instituted-acolyte": "Instituted acolyte",
+    "instituted-lector": "Instituted lector",
+    "extraordinary-minister": "Extraordinary minister of Holy Communion",
+    "altar-server": "Altar server",
+    "sacristan": "Sacristan",
+    "faithful": "Faithful",
+    "subdeacon-historical": "Subdeacon (pre-1973 Latin Rite)",
+}
+POSTCONCILIAR_SERVER_BOUNDARY_LABELS = {
+    "handles": "Server handles directly",
+    "carries": "Server carries in procession or movement",
+    "presents": "Server carries and presents to priest or deacon",
+    "prepares": "Server prepares or sets in place before or during Mass",
+    "moves-only-by-direction": "Server moves only at celebrant’s or sacristan’s direction",
+    "recognizes-only": "Server recognizes only; does not handle",
+    "clergy-reserved": "Clergy-reserved; server does not touch",
+    "superseded-historical": "Historically superseded; not used in current practice",
+}
+POSTCONCILIAR_SCOPE_LABELS = {
+    "universal-roman": "Universal Roman law",
+    "territorial-usccb": "USCCB territorial adaptation",
+    "diocesan-or-local": "Diocesan or local selection",
+    "customary": "Documented custom",
+    "historically-superseded": "Historically superseded postconciliar form",
+}
+POSTCONCILIAR_DISPOSITION_LABELS = {
+    "required": "Required",
+    "provided": "Provided",
+    "permitted": "Permitted",
+    "optional": "Optional",
+    "territorial adaptation": "Territorial adaptation",
+    "local selection": "Local selection",
+    "customary": "Customary",
+    "superseded": "Superseded",
+    "not applicable": "Not applicable",
+    "unresolved": "Unresolved",
+}
+
+
+def _clean_postconciliar_text(text: str) -> str:
+    """Normalize plain TeX dash conventions to Unicode typographic dashes for HTML."""
+    cleaned = text.replace(" --- ", " — ").replace("---", "—")
+    return re.sub(r"(?<!-)--(?!-)", "–", cleaned)
+
+
+def postconciliar_pictorial_dictionary_rows(
+    cards: list[dict], objects: list[dict]
+) -> list[dict]:
+    """Assemble deterministically ordered table rows for the postconciliar gallery."""
+    group_index = {
+        slug: (order, label)
+        for order, (slug, label) in enumerate(POSTCONCILIAR_PICTORIAL_GROUPS)
+    }
+    cards_by_plate = {card["plate_id"]: card for card in cards}
+    objects_by_id: dict[str, dict] = {}
+    for obj in objects:
+        object_id = obj["id"]
+        if object_id in objects_by_id:
+            raise ReleaseError(f"postconciliar dictionary repeats object id: {object_id}")
+        if obj["category"] not in group_index:
+            raise ReleaseError(f"postconciliar dictionary object has unmapped category: {object_id}")
+        objects_by_id[object_id] = obj
+
+    for object_id, obj in objects_by_id.items():
+        rels = obj.get("relationships", {})
+        for rel_field in ("confusable_with", "related_objects"):
+            for ref in rels.get(rel_field, ()):
+                if ref not in objects_by_id:
+                    raise ReleaseError(
+                        f"postconciliar object {object_id} references unknown {rel_field} object: {ref}"
+                    )
+
+    for card in cards:
+        if len(card["object_ids"]) != len(set(card["object_ids"])):
+            raise ReleaseError(f"postconciliar plate {card['plate_id']} repeats object_ids")
+        for object_id in card["object_ids"]:
+            if object_id not in objects_by_id:
+                raise ReleaseError(
+                    f"postconciliar plate {card['plate_id']} references missing object: {object_id}"
+                )
+            if objects_by_id[object_id]["historical_transition"]["is_superseded"]:
+                raise ReleaseError(
+                    f"postconciliar plate {card['plate_id']} may not include superseded form: {object_id}"
+                )
+
+    ordered = sorted(
+        objects_by_id.values(),
+        key=lambda obj: (group_index[obj["category"]][0], obj["sort_order"], obj["id"]),
+    )
+
+    referenced_plates: set[str] = set()
+    for obj in ordered:
+        if obj["historical_transition"]["is_superseded"]:
+            continue
+        plate_id = obj["plate_id"]
+        if plate_id not in cards_by_plate:
+            raise ReleaseError(
+                f"postconciliar object {obj['id']} references unknown plate: {plate_id}"
+            )
+        if obj["id"] not in cards_by_plate[plate_id]["object_ids"]:
+            raise ReleaseError(
+                f"postconciliar object {obj['id']} is missing from its primary plate {plate_id} object_ids"
+            )
+        referenced_plates.add(plate_id)
+
+    missing_owners = sorted(set(cards_by_plate) - referenced_plates)
+    if missing_owners:
+        raise ReleaseError(
+            "postconciliar plates have no primary owning object: " + ", ".join(missing_owners)
+        )
+
+    cards_by_object: dict[str, list[dict]] = defaultdict(list)
+    for card in cards:
+        for object_id in card["object_ids"]:
+            cards_by_object[object_id].append(card)
+
+    group_counters: Counter[str] = Counter()
+    rows: list[dict] = []
+    for obj in ordered:
+        category = obj["category"]
+        group_order, group_label = group_index[category]
+        object_order = group_counters[category]
+        group_counters[category] += 1
+        is_superseded = bool(obj["historical_transition"]["is_superseded"])
+        primary_plate = None
+        primary_view_id = ""
+        plate_views: list[dict] = []
+        shared_plates: list[dict] = []
+        if not is_superseded:
+            plate_id = obj["plate_id"]
+            primary_plate = cards_by_plate[plate_id]
+            primary_view_id = f"view-{obj['id']}-{plate_id}"
+            plate_views.append(
+                {
+                    "card": primary_plate,
+                    "view_id": primary_view_id,
+                    "is_primary": True,
+                }
+            )
+            extra_plate_ids: list[str] = []
+            for candidate in obj.get("composition_plate_ids", []):
+                if candidate not in cards_by_plate:
+                    raise ReleaseError(
+                        f"postconciliar object {obj['id']} references unknown composition plate: {candidate}"
+                    )
+                if candidate != plate_id and candidate not in extra_plate_ids:
+                    extra_plate_ids.append(candidate)
+            for card in cards_by_object.get(obj["id"], ()):
+                cid = card["plate_id"]
+                if cid != plate_id and cid not in extra_plate_ids:
+                    extra_plate_ids.append(cid)
+            extra_plate_ids.sort()
+            for pid in extra_plate_ids:
+                comp_card = cards_by_plate[pid]
+                comp_view_id = f"view-{obj['id']}-{pid}"
+                plate_views.append(
+                    {
+                        "card": comp_card,
+                        "view_id": comp_view_id,
+                        "is_primary": False,
+                    }
+                )
+                shared_plates.append(
+                    {
+                        "plate_id": pid,
+                        "view_id": comp_view_id,
+                        "short_label": comp_card["short_label"],
+                        "header_label": _clean_postconciliar_text(comp_card["header_label"]),
+                    }
+                )
+
+        rows.append(
+            {
+                "object": obj,
+                "group": group_label,
+                "group_id": category,
+                "group_order": group_order,
+                "object_order": object_order,
+                "is_superseded": is_superseded,
+                "primary_plate": primary_plate,
+                "primary_view_id": primary_view_id,
+                "plate_views": plate_views,
+                "shared_plates": shared_plates,
+            }
+        )
+    return rows
+
+
+def postconciliar_pictorial_definition_notes(
+    row: dict, objects_by_id: dict[str, dict]
+) -> str:
+    escape = html.escape
+    clean = _clean_postconciliar_text
+    obj = row["object"]
+    ed = obj["edition_disposition"]
+    ident = obj["identification"]
+    mh = obj["ministers_and_handling"]
+    sym = obj["symbolism"]
+    c62 = obj["counterpart_1962"]
+    ht = obj["historical_transition"]
+    rels = obj["relationships"]
+    sources = obj["sources"]
+
+    parts: list[str] = []
+    if row["is_superseded"]:
+        parts.append(
+            f'<p><strong>Historical transition (superseded):</strong> '
+            f'{escape(clean(ht["period_range"]))} — {escape(clean(ht["controlling_act"]))}.</p>'
+        )
+        parts.append(
+            f'<p><strong>Current discipline (2008/2011):</strong> '
+            f'{escape(clean(ht["current_status"]))}</p>'
+        )
+
+    scope_label = POSTCONCILIAR_SCOPE_LABELS.get(ed["scope_level"], ed["scope_level"])
+    parts.append(
+        f'<p><strong>Disposition (2008 Latin / 2011 U.S.):</strong> '
+        f'{escape(ed["disposition"])} ({escape(scope_label)}).</p>'
+    )
+    if ed.get("territorial_note"):
+        parts.append(
+            f'<p><strong>United States territorial note:</strong> '
+            f'{escape(clean(ed["territorial_note"]))}</p>'
+        )
+
+    ministers = ", ".join(
+        POSTCONCILIAR_MINISTER_LABELS.get(role, role) for role in mh.get("ordinary_ministers", [])
+    )
+    prepares = ", ".join(
+        POSTCONCILIAR_MINISTER_LABELS.get(role, role) for role in mh.get("prepares", [])
+    )
+    boundary_label = POSTCONCILIAR_SERVER_BOUNDARY_LABELS.get(
+        mh["server_boundary"], mh["server_boundary"]
+    )
+    parts.append(
+        f'<p><strong>Ordinary ministers:</strong> {escape(ministers)}. '
+        f'<strong>Prepared by:</strong> {escape(prepares)}.</p>'
+    )
+    parts.append(
+        f'<p><strong>Server boundary ({escape(boundary_label)}):</strong> '
+        f'{escape(clean(mh["server_boundary_summary"]))}</p>'
+    )
+    if mh.get("safety_warning"):
+        parts.append(
+            f'<p><strong>Handling and safety:</strong> {escape(clean(mh["safety_warning"]))}</p>'
+        )
+
+    parts.append(
+        f'<p><strong>1962 Roman Missal counterpart ({escape(c62["relationship"])}):</strong> '
+        f'{escape(clean(c62["comparison"]))}</p>'
+    )
+
+    if row["shared_plates"]:
+        shared_links = " · ".join(
+            f'<a href="#{escape(item["view_id"], quote=True)}">{escape(item["header_label"])}</a>'
+            for item in row["shared_plates"]
+        )
+        parts.append(f'<p><strong>Shared compositions:</strong> {shared_links}.</p>')
+
+    parts.append("<details><summary>Appearance, placement, symbolism, and sources</summary>")
+    alt_names: list[str] = []
+    if obj.get("alternate_english_names"):
+        alt_names.extend(escape(clean(name)) for name in obj["alternate_english_names"])
+    if obj.get("alternate_latin_names"):
+        alt_names.extend(
+            f'<span class="gallery-latin" lang="la">{escape(clean(name))}</span>'
+            for name in obj["alternate_latin_names"]
+        )
+    if alt_names:
+        parts.append(f'<p><strong>Also called:</strong> {"; ".join(alt_names)}.</p>')
+    if obj.get("pronunciation_key"):
+        parts.append(
+            f'<p><strong>Ecclesiastical Latin pronunciation:</strong> '
+            f'{escape(clean(obj["pronunciation_key"]))}</p>'
+        )
+    if ident.get("appearance"):
+        parts.append(f'<p><strong>Appearance:</strong> {escape(clean(ident["appearance"]))}</p>')
+    if ident.get("placement_and_use"):
+        parts.append(
+            f'<p><strong>Placement and use:</strong> {escape(clean(ident["placement_and_use"]))}</p>'
+        )
+    colors = str(ident.get("liturgical_colors", "")).strip()
+    if colors and colors != "Not applicable.":
+        parts.append(f'<p><strong>Liturgical colors:</strong> {escape(clean(colors))}</p>')
+    if sym.get("has_sourced_symbolism") and sym.get("text"):
+        attribution = f' ({escape(clean(sym["attribution"]))})' if sym.get("attribution") else ""
+        parts.append(
+            f'<p><strong>Symbolism:</strong> {escape(clean(sym["text"]))}{attribution}</p>'
+        )
+    for field, heading in (
+        ("confusable_with", "Distinguish from"),
+        ("related_objects", "Related entries"),
+    ):
+        linked = [
+            f'<a href="#gallery-{escape(ref, quote=True)}">{escape(objects_by_id[ref]["preferred_english_name"])}</a>'
+            for ref in rels.get(field, [])
+        ]
+        if linked:
+            parts.append(f'<p><strong>{heading}:</strong> {" · ".join(linked)}.</p>')
+    loci = list(sources.get("primary_loci", []))
+    if loci or c62.get("locus_1962"):
+        parts.append('<ul aria-label="Sources">')
+        parts.extend(f"<li>{escape(clean(locus))}</li>" for locus in loci)
+        if c62.get("locus_1962"):
+            parts.append(
+                f'<li>1962 counterpart witness — {escape(clean(c62["locus_1962"]))}</li>'
+            )
+        parts.append("</ul>")
+    parts.append("</details>")
+    return "".join(parts)
+
+
+def render_postconciliar_pictorial_gallery(preview: bool, authorization: dict) -> str:
+    cards = postconciliar_pictorial_gallery_data()
+    objects = postconciliar_pictorial_objects()
+    objects_by_id = {obj["id"]: obj for obj in objects}
+    rows = postconciliar_pictorial_dictionary_rows(cards, objects)
+    escape = html.escape
+    clean = _clean_postconciliar_text
+
+    options = "".join(
+        f'<option value="{escape(row["group_id"], quote=True)}">{escape(row["group"])}</option>'
+        for index, row in enumerate(rows)
+        if index == 0 or row["group_id"] != rows[index - 1]["group_id"]
+    )
+    current_count = sum(1 for row in rows if not row["is_superseded"])
+    superseded_count = sum(1 for row in rows if row["is_superseded"])
+    as_of = (
+        next((card.get("as_of") for card in cards if card.get("as_of")), None)
+        or next((obj["edition_disposition"].get("as_of") for obj in objects if obj["edition_disposition"].get("as_of")), "")
+    )
+    as_of_clause = f", as of {escape(str(as_of))}" if as_of else ""
+    plate_word = "plate" if len(cards) == 1 else "plates"
+    superseded_word = "form" if superseded_count == 1 else "forms"
+    plates_sentence = (
+        "This monochrome graphite plate is an original project-created illustration. "
+        if len(cards) == 1
+        else f"All {len(cards)} monochrome graphite plates are original project-created illustrations. "
+    )
+    blocks = [
+        "# Postconciliar Sanctuary Picture Dictionary",
+        "",
+        "Objects of the postconciliar Roman sanctuary under the 2008 Latin third typical edition "
+        "and the 2011 United States Roman Missal, arranged by use, with historically superseded "
+        "postconciliar forms separated in their own grouping. Select a drawing to enlarge it. "
+        "Details include plate positions, United States territorial notes, server handling "
+        "boundaries, 1962 Roman Missal comparisons, and primary sources.",
+        "",
+        '<div class="dictionary-toolbar" hidden>',
+        '<label>Find an entry<input type="search" data-dictionary-search '
+        'placeholder="English or Latin name, status, or use" autocomplete="off"></label>',
+        '<label>Grouping<select data-dictionary-group><option value="">All groupings</option>'
+        + options
+        + "</select></label>",
+        "</div>",
+        '<p class="dictionary-scroll-hint" id="dictionary-scroll-hint">'
+        "Scroll horizontally for identification and use.</p>",
+        '<div class="dictionary-table-region" role="region" tabindex="0" '
+        'aria-label="Postconciliar sanctuary dictionary" aria-describedby="dictionary-scroll-hint">',
+        '<table class="sanctuary-table" aria-label="Postconciliar sanctuary picture dictionary entries">',
+        f'<caption><output id="dictionary-result-count">{len(rows)} entries</output></caption>',
+        '<thead><tr><th scope="col">Picture</th>'
+        '<th scope="col"><button data-dictionary-sort="name" disabled>Object</button></th>',
+        '<th scope="col" aria-sort="ascending"><button data-dictionary-sort="group" disabled>Grouping</button></th>'
+        '<th scope="col">Identification / use</th></tr></thead><tbody>',
+    ]
+
+    for row in rows:
+        obj = row["object"]
+        object_id = obj["id"]
+        object_id_attr = escape(object_id, quote=True)
+        name = obj["preferred_english_name"]
+        detail_id = "details-" + object_id
+        detail_id_attr = escape(detail_id, quote=True)
+        group_id_attr = escape(row["group_id"], quote=True)
+        thumbnails: list[str] = []
+        figures: list[str] = []
+
+        for plate_view in row["plate_views"]:
+            card = plate_view["card"]
+            view_id_attr = escape(plate_view["view_id"], quote=True)
+            caption = clean(card["header_label"])
+            url = "../" + escape(card["destination"], quote=True)
+            thumb_alt = f"{name} on {caption}"
+            thumb_img = (
+                f'<img src="{url}" width="{card["width"]}" height="{card["height"]}" '
+                f'loading="lazy" decoding="async" alt="{escape(thumb_alt, quote=True)}">'
+            )
+            full_img = (
+                f'<img src="{url}" width="{card["width"]}" height="{card["height"]}" '
+                f'loading="lazy" decoding="async" alt="{escape(clean(card["web_alt_description"]), quote=True)}">'
+            )
+            thumbnails.append(
+                f'<a class="dictionary-image-toggle" href="{url}" '
+                f'data-detail="{detail_id_attr}" data-image="{view_id_attr}" '
+                f'aria-label="{escape("View " + caption + " for " + name, quote=True)}">{thumb_img}</a>'
+            )
+            related_on_plate = " · ".join(
+                f'<a href="#gallery-{escape(other_id, quote=True)}">{escape(objects_by_id[other_id]["preferred_english_name"])}</a>'
+                for other_id in card["object_ids"]
+                if other_id != object_id and other_id in objects_by_id
+            )
+            rights_html = (
+                '<details class="gallery-rights"><summary>Image credit</summary>'
+                f'<p class="gallery-rights">{escape(clean(card["rights"]))}</p></details>'
+                if card["rights"]
+                else ""
+            )
+            figures.append(
+                f'<figure id="{view_id_attr}">{full_img}<figcaption>'
+                f'<strong>{escape(caption)}</strong>'
+                f'<p><strong>Position:</strong> {escape(clean(obj["plate_position"]))}. '
+                f'<strong>Scale:</strong> {escape(clean(card["scale_notice"]))}.</p>'
+                f'<p><strong>Plate key:</strong> {escape(clean(card["position_key"]))}</p>'
+                + (f"<p>Also shown on this plate: {related_on_plate}.</p>" if related_on_plate else "")
+                + rights_html
+                + "</figcaption></figure>"
+            )
+
+        if thumbnails:
+            picture = '<div class="dictionary-thumbnails">' + "".join(thumbnails) + "</div>"
+        else:
+            picture = (
+                '<span class="dictionary-shared-picture">'
+                "Superseded form (no current plate)</span>"
+            )
+
+        latin = obj.get("latin_headword", "")
+        if "no latin typical edition" in latin.casefold():
+            latin_text = '<span class="gallery-latin">No Latin typical edition</span>'
+        elif latin:
+            latin_text = f'<span class="gallery-latin" lang="la">{escape(latin)}</span>'
+        else:
+            latin_text = ""
+
+        summary = clean(obj["identification"]["summary"])
+        if row["is_superseded"]:
+            period = clean(obj["historical_transition"]["period_range"])
+            definition_html = (
+                f'<p class="dictionary-definition"><strong>Historically superseded ({escape(period)}):</strong> '
+                f"{escape(summary)}</p>"
+            )
+        else:
+            definition_html = f'<p class="dictionary-definition">{escape(summary)}</p>'
+
+        ed = obj["edition_disposition"]
+        mh = obj["ministers_and_handling"]
+        disposition = ed["disposition"]
+        scope_level = ed["scope_level"]
+        server_boundary = mh["server_boundary"]
+        search_terms = [
+            name,
+            latin,
+            *obj.get("alternate_english_names", ()),
+            *obj.get("alternate_latin_names", ()),
+            row["group"],
+            disposition,
+            POSTCONCILIAR_DISPOSITION_LABELS.get(disposition, disposition),
+            scope_level,
+            POSTCONCILIAR_SCOPE_LABELS.get(scope_level, scope_level),
+            server_boundary,
+            POSTCONCILIAR_SERVER_BOUNDARY_LABELS.get(server_boundary, server_boundary),
+            obj["counterpart_1962"]["relationship"],
+            summary,
+            *obj["sources"].get("primary_loci", ()),
+        ]
+        search = " ".join(term for term in search_terms if term)
+        views_html = (
+            '<div class="dictionary-views">' + "".join(figures) + "</div>"
+            if figures
+            else ""
+        )
+        blocks.extend(
+            [
+                f'<tr class="dictionary-row" id="gallery-{object_id_attr}" '
+                f'data-name="{escape(name, quote=True)}" '
+                f'data-group="{group_id_attr}" data-group-order="{row["group_order"]}" '
+                f'data-object-order="{row["object_order"]}" '
+                f'data-search="{escape(search, quote=True)}">',
+                f'<td>{picture}</td><th scope="row">{escape(name)} {latin_text}<br>'
+                f'<a class="dictionary-row-toggle" href="#{detail_id_attr}" '
+                f'aria-label="{escape("Details about " + name, quote=True)}">Details</a></th>',
+                f'<td>{escape(row["group"])}</td><td>{definition_html}</td></tr>',
+                f'<tr class="dictionary-detail-row" id="{detail_id_attr}"><td colspan="4">',
+                '<details class="dictionary-details">'
+                f'<summary>More about {escape(name)}</summary><div class="dictionary-detail-content">',
+                views_html + '<div class="dictionary-notes">',
+                postconciliar_pictorial_definition_notes(row, objects_by_id),
+                "</div></div></details></td></tr>",
+            ]
+        )
+
+    companion_1962 = (
+        ' See also the <a href="sanctuary-picture-dictionary.html">'
+        "1962 Sanctuary Picture Dictionary</a> for the 1962 Roman Rite."
+        if (ROOT / PICTORIAL_MANIFEST_RELATIVE).is_file()
+        else ""
+    )
+    blocks.extend(
+        [
+            '<tr class="dictionary-empty" hidden><td colspan="4">'
+            '<p class="dictionary-empty-message">No entries match. Try a shorter search or another grouping.</p>'
+            "</td></tr>",
+            "</tbody></table></div>",
+            '<details class="gallery-note"><summary>About the illustrations, editions, and sources</summary>',
+            f"<p>This gallery presents {current_count} current sanctuary furnishings, sacred vessels, linens, "
+            f"liturgical books, service items, and vestments of the postconciliar Roman Rite "
+            f"(2008 Latin third typical edition and 2011 United States Roman Missal{as_of_clause}) "
+            f"across {len(cards)} monochrome graphite {plate_word}, together with {superseded_count} historically "
+            f"superseded postconciliar {superseded_word} separated into their own grouping and never conflated with "
+            "current norms. Forms from the 1962 Roman Missal appear only in explicit comparison fields "
+            "and source notes." + companion_1962 + "</p>",
+            f"<p>{plates_sentence}"
+            'Project-created content follows the <a href="../license.html">Triptych licensing statement</a>. '
+            'Source and third-party material follows the <a href="../third-party.html">third-party material notice</a>; '
+            "this is a study reference, not an official liturgical book or local direction.</p></details>",
+        ]
+    )
+    script = relative_link(POSTCONCILIAR_PICTORIAL_GALLERY_OUTPUT, PICTORIAL_SCRIPT_ASSET)
+    return render_page(
+        POSTCONCILIAR_PICTORIAL_MANIFEST_RELATIVE.as_posix(),
+        "\n".join(blocks) + "\n",
+        POSTCONCILIAR_PICTORIAL_GALLERY_OUTPUT,
+        preview,
+        authorization,
+        body_extra=f'<script src="{script}" defer></script>',
+    )
+
+
 class LinkParser(HTMLParser):
     def __init__(self) -> None:
         super().__init__(convert_charrefs=True)
@@ -7469,7 +8428,9 @@ def _verify_snapshot_contents(
         ):
             errors.append(f"{output_relative}: rendered page does not match its approved source")
 
-    if (ROOT / PICTORIAL_MANIFEST_RELATIVE).is_file():
+    has_1962_pictorial = (ROOT / PICTORIAL_MANIFEST_RELATIVE).is_file()
+    has_postconciliar_pictorial = (ROOT / POSTCONCILIAR_PICTORIAL_MANIFEST_RELATIVE).is_file()
+    if has_1962_pictorial:
         gallery_path = output / PICTORIAL_GALLERY_OUTPUT
         expected_gallery = render_pictorial_gallery(preview, expected_authorization)
         if gallery_path.is_file() and gallery_path.read_text(
@@ -7477,6 +8438,19 @@ def _verify_snapshot_contents(
         ) != expected_gallery:
             errors.append(f"{PICTORIAL_GALLERY_OUTPUT}: generated gallery does not match canonical inputs")
         for card in pictorial_gallery_data():
+            artifact_path = output / card["destination"]
+            if artifact_path.is_file() and sha256(artifact_path) != card["sha256"]:
+                errors.append(f"{card['destination']}: gallery PNG does not match canonical bytes")
+    if has_postconciliar_pictorial:
+        gallery_path = output / POSTCONCILIAR_PICTORIAL_GALLERY_OUTPUT
+        expected_gallery = render_postconciliar_pictorial_gallery(preview, expected_authorization)
+        if gallery_path.is_file() and gallery_path.read_text(
+            encoding="utf-8", errors="replace"
+        ) != expected_gallery:
+            errors.append(
+                f"{POSTCONCILIAR_PICTORIAL_GALLERY_OUTPUT}: generated gallery does not match canonical inputs"
+            )
+        for card in postconciliar_pictorial_gallery_data():
             artifact_path = output / card["destination"]
             if artifact_path.is_file() and sha256(artifact_path) != card["sha256"]:
                 errors.append(f"{card['destination']}: gallery PNG does not match canonical bytes")
@@ -7491,7 +8465,7 @@ def _verify_snapshot_contents(
             for source_relative in artifact_license_source_paths()
         ],
     ]
-    if (ROOT / PICTORIAL_MANIFEST_RELATIVE).is_file():
+    if has_1962_pictorial or has_postconciliar_pictorial:
         static_sources.append((TEMPLATE_ROOT / PICTORIAL_SCRIPT_ASSET, output / PICTORIAL_SCRIPT_ASSET))
     for source_path, artifact_path in static_sources:
         if artifact_path.is_file() and sha256(artifact_path) != sha256(source_path):
@@ -8088,9 +9062,15 @@ def _build_site_contents(
         license_path = ROOT / source_relative
         writer.copy(license_path, source_relative)
 
-    if (ROOT / PICTORIAL_MANIFEST_RELATIVE).is_file():
+    has_1962_pictorial = (ROOT / PICTORIAL_MANIFEST_RELATIVE).is_file()
+    has_postconciliar_pictorial = (ROOT / POSTCONCILIAR_PICTORIAL_MANIFEST_RELATIVE).is_file()
+    if has_1962_pictorial or has_postconciliar_pictorial:
         writer.copy(TEMPLATE_ROOT / PICTORIAL_SCRIPT_ASSET, PICTORIAL_SCRIPT_ASSET)
+    if has_1962_pictorial:
         for card in pictorial_gallery_data():
+            writer.copy(card["source"], card["destination"])
+    if has_postconciliar_pictorial:
+        for card in postconciliar_pictorial_gallery_data():
             writer.copy(card["source"], card["destination"])
 
     assemble_web_data(writer, preview, authorization, pdf_aliases)
@@ -8128,10 +9108,15 @@ def _build_site_contents(
         digest, status = writer.files[relative]
         if digest != asset["sha256"] or status.st_size != asset["bytes"]:
             raise ReleaseError(f"{relative}: written native TeX payload differs from its exact byte pins")
-    if (ROOT / PICTORIAL_MANIFEST_RELATIVE).is_file():
+    if has_1962_pictorial:
         writer.text(
             PICTORIAL_GALLERY_OUTPUT,
             render_pictorial_gallery(preview, authorization),
+        )
+    if has_postconciliar_pictorial:
+        writer.text(
+            POSTCONCILIAR_PICTORIAL_GALLERY_OUTPUT,
+            render_postconciliar_pictorial_gallery(preview, authorization),
         )
 
     artifact_manifest = artifact_manifest_data(manifest, included, preview)
