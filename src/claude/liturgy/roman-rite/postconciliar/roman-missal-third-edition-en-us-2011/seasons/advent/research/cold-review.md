@@ -191,6 +191,18 @@ prints is the *Rorate* Introit, an antiphon without a conclusion. The Lasance
 Collects consulted for *Festina* and *Concede* were read against the Tours
 Latin, and none of their conclusions was faulty. The book does not print them.
 
+*Main's later rules.* Main moved on while this pass ran, and the branch was
+rebuilt on it again the same day. Two of its newer rules touch this book:
+
+- older manuals and Breviaries are to be spoken of in the past tense of their
+  period, with any later revision checked. The book's sentences on the older
+  Breviary already were, except one new sentence of About This Book ("where the
+  older Breviary reads his homilies"), now corrected. No indulgence or revised
+  discipline is stated as present.
+- the web conversion's TeX rules. The leaf defines no macro, sets no appendix
+  prefix of its own, and begins every References item at column 0; the web
+  edition shows no empty appendix heading.
+
 After these changes the quotation script, run over every section against a
 freshly built corpus, finds:
 
