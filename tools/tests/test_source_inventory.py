@@ -871,7 +871,7 @@ class SourceInventoryTests(unittest.TestCase):
             "--audited-on",
             "2026-07-22",
             "--provider",
-            "gemini",
+            "unknown",
         )
 
         self.assertEqual(result.returncode, 2)
@@ -883,7 +883,7 @@ class SourceInventoryTests(unittest.TestCase):
         path = self.root / self.inventory
         path.write_text(
             path.read_text(encoding="utf-8").replace(
-                'provider = "gpt"', 'provider = "gemini"', 1
+                'provider = "gpt"', 'provider = "unknown"', 1
             ),
             encoding="utf-8",
         )
@@ -891,7 +891,61 @@ class SourceInventoryTests(unittest.TestCase):
         result = self.run_tool("check", self.inventory.as_posix())
 
         self.assertEqual(result.returncode, 1)
-        self.assertIn("provider must be one of: claude, gpt", result.stderr)
+        self.assertIn("provider must be one of: claude, gemini, gpt", result.stderr)
+
+    def test_bootstrap_and_check_support_gemini_and_postconciliar_dictionary_owner(self) -> None:
+        family = (
+            "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/"
+            "reference/roman-sanctuary-dictionary"
+        )
+        document = f"{family}/comprehensive"
+        self.write(f"src/gemini/{document}/main.tex", "Comprehensive\n")
+        shared_obj = self.write(
+            f"src/gemini/{family}/shared/objects/01-sanctuary-furnishings/pc-obj-altar.toml",
+            'id = "pc-obj-altar"\n',
+        )
+        manifest = self.write(
+            f"src/gemini/{family}/research/artwork-manifest.toml",
+            "schema_version = 1\n",
+        )
+        gemini_inventory = Path("src/sources/inventories/gemini-publications-v1.toml")
+
+        result = self.run_tool(
+            "bootstrap",
+            gemini_inventory.as_posix(),
+            "--audited-on",
+            "2026-11-27",
+            "--provider",
+            "gemini",
+        )
+
+        self.assertEqual(result.returncode, 0, result.stderr)
+        inventory = tomllib.loads(
+            (self.root / gemini_inventory).read_text(encoding="utf-8")
+        )
+        self.assertEqual(inventory["provider"], "gemini")
+        self.assertEqual(inventory["discovery_rule"], "src/gemini/**/main.tex")
+        owner_id = (
+            "owner.liturgy.roman-rite.postconciliar."
+            "2008-latin-2011-us-english.roman-sanctuary-dictionary"
+        )
+        self.assertIn(owner_id, [owner["id"] for owner in inventory["owners"]])
+        for shared_path in (shared_obj, manifest):
+            row = next(
+                item
+                for item in inventory["files"]
+                if item["path"] == shared_path.relative_to(self.root).as_posix()
+            )
+            self.assertEqual(row["owners"], [owner_id])
+        document_row = next(
+            item for item in inventory["documents"] if item["id"] == document
+        )
+        self.assertIn(
+            {"id": owner_id, "relationship": "source-owner"},
+            document_row["record_owners"],
+        )
+        checked = self.run_tool("check", gemini_inventory.as_posix())
+        self.assertEqual(checked.returncode, 0, checked.stderr)
 
     def test_check_derives_consistency_from_the_declared_provider(self) -> None:
         self.bootstrap()

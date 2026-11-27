@@ -513,6 +513,8 @@ check-publication-inventories: check-source-graph
 		case "$$inventory" in \
 			*/claude-publications-v1.toml) \
 				review=src/sources/inventories/claude-classification-review-v1.toml ;; \
+			*/gemini-publications-v1.toml) \
+				review=src/sources/inventories/gemini-classification-review-v1.toml ;; \
 			*) review=src/sources/inventories/classification-review-v1.toml ;; \
 		esac; \
 		$(PYTHON) $(SOURCE_INVENTORY_TOOL) check --review "$$review" "$$inventory"; \

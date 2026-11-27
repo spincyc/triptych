@@ -184,6 +184,9 @@ SERVER_TRAINING_OWNER = "owner.liturgy.roman-rite.1962.altar-server-guides"
 SANCTUARY_DICTIONARY_OWNER = (
     "owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"
 )
+POSTCONCILIAR_SANCTUARY_DICTIONARY_OWNER = (
+    "owner.liturgy.roman-rite.postconciliar.2008-latin-2011-us-english.roman-sanctuary-dictionary"
+)
 COMMON_TYPESETTING_OWNER = "owner.typesetting.common"
 FOUR_LAST_THINGS_OWNER = "owner.articles.faith.four-last-things"
 FOUR_LAST_THINGS_DOCUMENTS = {
@@ -244,6 +247,13 @@ PROVIDER_NONPUBLICATION_OWNERS = (
         "id": SANCTUARY_DICTIONARY_OWNER,
         "roots": [
             "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary",
+        ],
+        "kind": "shared-render-owner",
+    },
+    {
+        "id": POSTCONCILIAR_SANCTUARY_DICTIONARY_OWNER,
+        "roots": [
+            "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary",
         ],
         "kind": "shared-render-owner",
     },
@@ -487,6 +497,15 @@ def _document_shape(document: str, provider: str = DEFAULT_PROVIDER) -> tuple[st
     ):
         edges.append(
             {"id": SANCTUARY_DICTIONARY_OWNER, "relationship": "source-owner"}
+        )
+    if document.startswith(
+        "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/"
+    ):
+        edges.append(
+            {
+                "id": POSTCONCILIAR_SANCTUARY_DICTIONARY_OWNER,
+                "relationship": "source-owner",
+            }
         )
     if document == "liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass":
         edges.append({"id": "theology/sacraments", "relationship": "render-import"})
